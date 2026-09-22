@@ -1,0 +1,35 @@
+# QFN56, 7x7mm body (Chapter 7 "Packaging"). Pitch, body height, and
+# exposed-pad size were not present as extractable text (mechanical
+# drawing figures only) -- left unspecified rather than guessed.
+schema_version: "0.1"
+kind: package
+id: standards/QFN56-ESP32-S2
+
+family: qfn
+lead_count: 56
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 7.0
+    unit: mm
+  body_length:
+    nominal: 7.0
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/lead_count":
+    - source: espressif/esp32-s2_datasheet_en@rev1.9
+      locator: "Table 2-1 Pin Overview"
+  "/dimensions/body_width":
+    - source: espressif/esp32-s2_datasheet_en@rev1.9
+      locator: "Chapter 7 Packaging: \"QFN56 (7x7 mm) package\""
+  "/dimensions/body_length":
+    - source: espressif/esp32-s2_datasheet_en@rev1.9
+      locator: "Chapter 7 Packaging: \"QFN56 (7x7 mm) package\""

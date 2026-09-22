@@ -1,0 +1,39 @@
+# Murata GRM188 series (0603 / 1608 metric case) body dimensions.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP0603-GRM188
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.6
+    min: 1.5
+    max: 1.7
+    unit: mm
+  body_width:
+    nominal: 0.8
+    min: 0.7
+    max: 0.9
+    unit: mm
+  body_height:
+    nominal: 0.8
+    min: 0.6
+    max: 1.0
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: murata/C02E-16
+  "/dimensions/body_width":
+    - source: murata/C02E-16
+  "/dimensions/body_height":
+    - source: murata/C02E-16

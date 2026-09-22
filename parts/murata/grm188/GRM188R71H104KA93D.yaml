@@ -1,0 +1,23 @@
+# 100 nF, X7R, 50V, +/-10%, 0603 MLCC. Confirmed Obsolete/EOL by
+# multiple independent distributors (Digikey, Mouser, LCSC, Octopart) --
+# recorded honestly rather than assumed active, per Historical
+# Preservation (Architecture Specification section 4.5): an obsolete
+# part is still real data worth keeping.
+schema_version: "0.1"
+kind: part
+id: murata/GRM188R71H104KA93D
+
+manufacturer: murata
+mpn: GRM188R71H104KA93D
+
+device: murata/GRM188-X7R
+package: standards/CHIP0603-GRM188
+
+existence:
+  status: verified
+
+lifecycle:
+  status: obsolete
+
+sources:
+  - murata/C02E-16

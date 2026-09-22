@@ -1,0 +1,59 @@
+# RP2350A / RP2354A package: 60-pin QFN, 7x7mm, JEDEC-style drawing
+# (product brief page 6). "BSC"/reference values are recorded as the
+# nominal with no min/max (they are basic dimensions by definition, not
+# a manufacturing tolerance range).
+schema_version: "0.1"
+kind: package
+id: standards/QFN60-RP2350A
+
+family: qfn
+lead_count: 60
+
+pitch:
+  nominal: 0.4
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 7.0
+    unit: mm
+  body_length:
+    nominal: 7.0
+    unit: mm
+  body_height:
+    nominal: 0.85
+    min: 0.8
+    max: 0.9
+    unit: mm
+  exposed_pad:
+    width:
+      nominal: 3.4
+      min: 3.35
+      max: 3.45
+      unit: mm
+    length:
+      nominal: 3.4
+      min: 3.35
+      max: 3.45
+      unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/pitch":
+    - source: raspberrypi/RP-008374-DS@rev1
+      locator: "Page 6, package outline table, dimension e"
+  "/dimensions/body_width":
+    - source: raspberrypi/RP-008374-DS@rev1
+      locator: "Page 6, dimension D/E"
+  "/dimensions/body_length":
+    - source: raspberrypi/RP-008374-DS@rev1
+      locator: "Page 6, dimension D/E"
+  "/dimensions/body_height":
+    - source: raspberrypi/RP-008374-DS@rev1
+      locator: "Page 6, dimension A"
+  "/dimensions/exposed_pad":
+    - source: raspberrypi/RP-008374-DS@rev1
+      locator: "Page 6, dimension D2/E2"

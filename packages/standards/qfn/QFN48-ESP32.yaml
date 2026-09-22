@@ -1,0 +1,65 @@
+# ESP32-D0WD-V3 (current bare-chip variant) package: QFN48, 5x5mm,
+# 0.35mm pitch. Older NRND/EOL ESP32 variants (ESP32-D0WD, -D0WDQ6) use
+# a different 6x6mm QFN -- not modeled here, since D0WD-V3 is current.
+schema_version: "0.1"
+kind: package
+id: standards/QFN48-ESP32
+
+family: qfn
+lead_count: 48
+
+pitch:
+  nominal: 0.35
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 5.0
+    min: 4.95
+    max: 5.05
+    unit: mm
+  body_length:
+    nominal: 5.0
+    min: 4.95
+    max: 5.05
+    unit: mm
+  body_height:
+    nominal: 0.85
+    min: 0.8
+    max: 0.9
+    unit: mm
+  exposed_pad:
+    width:
+      nominal: 3.7
+      min: 3.65
+      max: 3.75
+      unit: mm
+    length:
+      nominal: 3.7
+      min: 3.65
+      max: 3.75
+      unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/lead_count":
+    - source: espressif/esp32_datasheet_en@rev5.3
+      locator: "Table 1-1 ESP32 Series Comparison"
+  "/pitch":
+    - source: espressif/esp32_datasheet_en@rev5.3
+      locator: "Section 6 Packaging, Figure 6-2 dimension table, dimension e"
+  "/dimensions/body_width":
+    - source: espressif/esp32_datasheet_en@rev5.3
+      locator: "Figure 6-2 dimension table, dimension D"
+  "/dimensions/body_length":
+    - source: espressif/esp32_datasheet_en@rev5.3
+      locator: "Figure 6-2 dimension table, dimension E"
+  "/dimensions/body_height":
+    - source: espressif/esp32_datasheet_en@rev5.3
+      locator: "Figure 6-2 dimension table, dimension A"
+  "/dimensions/exposed_pad":
+    - source: espressif/esp32_datasheet_en@rev5.3
+      locator: "Figure 6-2 dimension table, dimensions D2/E2"

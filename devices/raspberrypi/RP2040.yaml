@@ -1,0 +1,110 @@
+# Pinout transcribed from RP2040 Datasheet (Raspberry Pi Ltd), Chapter
+# 5.5.2, Tables 615-621 (56 numbered pins, all confirmed) plus the
+# central exposed pad (datasheet numbers it pin 57; represented here as
+# the "EP" key per Canonical Data Specification section 14, matching
+# how the QFN geometry generator keys its Exposed Pad Lead).
+#
+# `type` is this dataset's categorization of the datasheet's own "Type"
+# column (Digital IO / Digital In / Analogue / Power / Ground), not a
+# verbatim datasheet field.
+schema_version: "0.1"
+kind: device
+id: raspberrypi/RP2040
+
+manufacturer: raspberrypi
+family: RP2040
+
+pins:
+  "1":  { name: IOVDD, type: power }
+  "2":  { name: GPIO0, type: io }
+  "3":  { name: GPIO1, type: io }
+  "4":  { name: GPIO2, type: io }
+  "5":  { name: GPIO3, type: io }
+  "6":  { name: GPIO4, type: io }
+  "7":  { name: GPIO5, type: io }
+  "8":  { name: GPIO6, type: io }
+  "9":  { name: GPIO7, type: io }
+  "10": { name: IOVDD, type: power }
+  "11": { name: GPIO8, type: io }
+  "12": { name: GPIO9, type: io }
+  "13": { name: GPIO10, type: io }
+  "14": { name: GPIO11, type: io }
+  "15": { name: GPIO12, type: io }
+  "16": { name: GPIO13, type: io }
+  "17": { name: GPIO14, type: io }
+  "18": { name: GPIO15, type: io }
+  "19": { name: TESTEN, type: reserved }
+  "20": { name: XIN, type: clock }
+  "21": { name: XOUT, type: clock }
+  "22": { name: IOVDD, type: power }
+  "23": { name: DVDD, type: power }
+  "24": { name: SWCLK, type: clock }
+  "25": { name: SWD, type: io }
+  "26": { name: RUN, type: reset }
+  "27": { name: GPIO16, type: io }
+  "28": { name: GPIO17, type: io }
+  "29": { name: GPIO18, type: io }
+  "30": { name: GPIO19, type: io }
+  "31": { name: GPIO20, type: io }
+  "32": { name: GPIO21, type: io }
+  "33": { name: IOVDD, type: power }
+  "34": { name: GPIO22, type: io }
+  "35": { name: GPIO23, type: io }
+  "36": { name: GPIO24, type: io }
+  "37": { name: GPIO25, type: io }
+  "38": { name: GPIO26, type: io, alternate_functions: [ADC0] }
+  "39": { name: GPIO27, type: io, alternate_functions: [ADC1] }
+  "40": { name: GPIO28, type: io, alternate_functions: [ADC2] }
+  "41": { name: GPIO29, type: io, alternate_functions: [ADC3] }
+  "42": { name: IOVDD, type: power }
+  "43": { name: ADC_AVDD, type: power }
+  "44": { name: VREG_VIN, type: power }
+  "45": { name: VREG_VOUT, type: power }
+  "46": { name: USB_DM, type: io }
+  "47": { name: USB_DP, type: io }
+  "48": { name: USB_VDD, type: power }
+  "49": { name: IOVDD, type: power }
+  "50": { name: DVDD, type: power }
+  "51": { name: QSPI_SD3, type: io }
+  "52": { name: QSPI_SCLK, type: clock }
+  "53": { name: QSPI_SD0, type: io }
+  "54": { name: QSPI_SD2, type: io }
+  "55": { name: QSPI_SD1, type: io }
+  "56": { name: QSPI_CSn, type: io }
+  "EP": { name: GND, type: ground }
+
+# Silicon revisions confirmed to exist (page 130: bootrom v1/v2/v3 <->
+# B0/B1/B2), with B2 the current shipping marking ("RP2-B2", page 610).
+# No pinout/pin-behavior difference between revisions is documented in
+# the datasheet's pinout chapter, so no overrides are recorded -- an
+# absence, not a gap. Revision-detection register (SYSINFO CHIP_ID,
+# base 0x40000000 + offset 0x00) is confirmed to exist, but the
+# per-revision numeric field values were not found in the pages
+# checked, so `mask`/`value` are left unset rather than invented.
+revisions:
+  rev-b0:
+    manufacturer_revision: "B0"
+    detection:
+      - method: device_register
+        register: CHIP_ID
+  rev-b1:
+    manufacturer_revision: "B1"
+    detection:
+      - method: device_register
+        register: CHIP_ID
+  rev-b2:
+    manufacturer_revision: "B2"
+    detection:
+      - method: device_register
+        register: CHIP_ID
+
+provenance:
+  "/pins/1/name":
+    - source: raspberrypi/RP-008371-DS@rev1
+      locator: "Chapter 5.5.2, Table 615-621"
+  "/pins/EP/name":
+    - source: raspberrypi/RP-008371-DS@rev1
+      locator: "\"Common ground connection via central pad\""
+  "/revisions":
+    - source: raspberrypi/RP-008371-DS@rev1
+      page: 130

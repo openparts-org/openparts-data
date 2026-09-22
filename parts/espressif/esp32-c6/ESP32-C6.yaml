@@ -1,0 +1,24 @@
+# RISC-V single-core, Wi-Fi 6, QFN40, no in-package flash.
+schema_version: "0.1"
+kind: part
+id: espressif/ESP32-C6
+
+manufacturer: espressif
+mpn: ESP32-C6
+
+device: espressif/ESP32-C6
+package: standards/QFN40-ESP32-C6
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - espressif/esp32-c6_datasheet_en@rev1.5
+
+provenance:
+  "/lifecycle/status":
+    - source: espressif/esp32-c6_datasheet_en@rev1.5
+      locator: "Datasheet Versioning table, p.81: \"Official release\""

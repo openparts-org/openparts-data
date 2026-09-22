@@ -1,0 +1,25 @@
+# Single-core Xtensa LX7 with native USB OTG, QFN56, no in-package
+# flash/PSRAM. existence.status is `probable` rather than `verified`:
+# research repeatedly fetching the same datasheet page returned
+# inconsistent pin-table row counts (see devices/espressif/ESP32-S2.yaml
+# for detail), so the pinout -- while mostly consistent -- has one
+# unresolved gap that a primary PDF re-check should close before this
+# is upgraded to `verified`.
+schema_version: "0.1"
+kind: part
+id: espressif/ESP32-S2
+
+manufacturer: espressif
+mpn: ESP32-S2
+
+device: espressif/ESP32-S2
+package: standards/QFN56-ESP32-S2
+
+existence:
+  status: probable
+
+lifecycle:
+  status: active
+
+sources:
+  - espressif/esp32-s2_datasheet_en@rev1.9

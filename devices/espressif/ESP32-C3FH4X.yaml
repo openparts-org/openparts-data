@@ -1,0 +1,65 @@
+# ESP32-C3FH4X bonding variant specifically (16 usable GPIO -- pins
+# 19-24 are "not bonded"/nc on this variant per datasheet footnote 9,
+# unlike the base ESP32-C3/FH4/FN4/FH8X which bond those as GPIO12-17).
+# XTAL_32K_P/N (pins 4/5) reclassified `clock` for consistency with the
+# rest of this dataset's crystal-pin handling (see ESP32-S2 device file
+# for the same note).
+schema_version: "0.1"
+kind: device
+id: espressif/ESP32-C3FH4X
+
+manufacturer: espressif
+family: ESP32-C3
+
+pins:
+  "1":  { name: LNA_IN, type: analog }
+  "2":  { name: VDD3P3, type: power }
+  "3":  { name: VDD3P3, type: power }
+  "4":  { name: XTAL_32K_P, type: clock }
+  "5":  { name: XTAL_32K_N, type: clock }
+  "6":  { name: GPIO2, type: io }
+  "7":  { name: CHIP_EN, type: reset }
+  "8":  { name: GPIO3, type: io }
+  "9":  { name: MTMS, type: io }
+  "10": { name: MTDI, type: io }
+  "11": { name: VDD3P3_RTC, type: power }
+  "12": { name: MTCK, type: io }
+  "13": { name: MTDO, type: io }
+  "14": { name: GPIO8, type: io }
+  "15": { name: GPIO9, type: io }
+  "16": { name: GPIO10, type: io }
+  "17": { name: VDD3P3_CPU, type: power }
+  "18": { name: VDD_SPI, type: power }
+  "19": { name: SPIHD, type: nc }
+  "20": { name: SPIWP, type: nc }
+  "21": { name: SPICS0, type: nc }
+  "22": { name: SPICLK, type: nc }
+  "23": { name: SPID, type: nc }
+  "24": { name: SPIQ, type: nc }
+  "25": { name: GPIO18, type: io }
+  "26": { name: GPIO19, type: io }
+  "27": { name: U0RXD, type: io }
+  "28": { name: U0TXD, type: io }
+  "29": { name: XTAL_N, type: clock }
+  "30": { name: XTAL_P, type: clock }
+  "31": { name: VDDA, type: power }
+  "32": { name: VDDA, type: power }
+  "EP": { name: GND, type: ground }
+
+# This bonding variant ships specifically with chip revision v1.1
+# (Table 1-1); the base ESP32-C3/FH4/FN4/FH8X parts use v0.4 instead --
+# not recorded here since this Device represents the FH4X variant only.
+revisions:
+  rev-v1.1:
+    manufacturer_revision: "v1.1"
+
+provenance:
+  "/pins/1/name":
+    - source: espressif/esp32-c3_datasheet_en@rev2.4
+      locator: "Table 2-1 Pin Overview, p.16-17"
+  "/pins/EP/name":
+    - source: espressif/esp32-c3_datasheet_en@rev2.4
+      locator: "Consolidated pin table, pin 33 = GND (exposed pad)"
+  "/revisions":
+    - source: espressif/esp32-c3_datasheet_en@rev2.4
+      locator: "Table 1-1 ESP32-C3 Series Comparison, p.12"

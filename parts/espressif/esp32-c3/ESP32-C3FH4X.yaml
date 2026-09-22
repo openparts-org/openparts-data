@@ -1,0 +1,26 @@
+# RISC-V single-core, QFN32, 4MB in-package flash, 16 usable GPIO,
+# chip revision v1.1. Currently Espressif's "Recommended" ESP32-C3
+# variant (ESP32-C3FN4 is EOL, ESP32-C3FH4AZ is NRND).
+schema_version: "0.1"
+kind: part
+id: espressif/ESP32-C3FH4X
+
+manufacturer: espressif
+mpn: ESP32-C3FH4X
+
+device: espressif/ESP32-C3FH4X
+package: standards/QFN32-ESP32-C3
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - espressif/esp32-c3_datasheet_en@rev2.4
+
+provenance:
+  "/lifecycle/status":
+    - source: espressif/esp32-c3_datasheet_en@rev2.4
+      locator: "Table 1-1: status \"Recommended\""

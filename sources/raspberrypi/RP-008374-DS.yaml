@@ -1,0 +1,16 @@
+schema_version: "0.1"
+kind: source
+id: raspberrypi/RP-008374-DS@rev1
+
+publisher: raspberrypi
+document_id: RP-008374-DS
+document_type: datasheet
+# Titled "Product Brief" by Raspberry Pi, but it carries authoritative
+# JEDEC-style mechanical package drawings and a full pin table (the same
+# role the RP2040 full Datasheet plays), so `datasheet` fits better than
+# `product_page` here.
+
+revision: "1"
+date: "2024-08"
+
+url: "https://datasheets.raspberrypi.com/rp2350/rp2350-product-brief.pdf"

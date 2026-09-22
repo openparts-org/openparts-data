@@ -1,0 +1,98 @@
+# RP2350A pinout cross-checked between the official Product Brief's pin
+# legend (text) and Raspberry Pi's own official "Minimal KiCAD" design
+# archive's schematic symbol for RP2350 (an authored Raspberry Pi file,
+# not third-party), since the product brief's pinout page is a spatial
+# diagram that doesn't extract as clean text.
+schema_version: "0.1"
+kind: device
+id: raspberrypi/RP2350A
+
+manufacturer: raspberrypi
+family: RP2350
+
+pins:
+  "1":  { name: IOVDD, type: power }
+  "2":  { name: GPIO0, type: io }
+  "3":  { name: GPIO1, type: io }
+  "4":  { name: GPIO2, type: io }
+  "5":  { name: GPIO3, type: io }
+  "6":  { name: DVDD, type: power }
+  "7":  { name: GPIO4, type: io }
+  "8":  { name: GPIO5, type: io }
+  "9":  { name: GPIO6, type: io }
+  "10": { name: GPIO7, type: io }
+  "11": { name: IOVDD, type: power }
+  "12": { name: GPIO8, type: io }
+  "13": { name: GPIO9, type: io }
+  "14": { name: GPIO10, type: io }
+  "15": { name: GPIO11, type: io }
+  "16": { name: GPIO12, type: io }
+  "17": { name: GPIO13, type: io }
+  "18": { name: GPIO14, type: io }
+  "19": { name: GPIO15, type: io }
+  "20": { name: IOVDD, type: power }
+  "21": { name: XIN, type: clock }
+  "22": { name: XOUT, type: clock }
+  "23": { name: DVDD, type: power }
+  "24": { name: SWCLK, type: clock }
+  "25": { name: SWDIO, type: io }
+  "26": { name: RUN, type: reset }
+  "27": { name: GPIO16, type: io }
+  "28": { name: GPIO17, type: io }
+  "29": { name: GPIO18, type: io }
+  "30": { name: IOVDD, type: power }
+  "31": { name: GPIO19, type: io }
+  "32": { name: GPIO20, type: io }
+  "33": { name: GPIO21, type: io }
+  "34": { name: GPIO22, type: io }
+  "35": { name: GPIO23, type: io }
+  "36": { name: GPIO24, type: io }
+  "37": { name: GPIO25, type: io }
+  "38": { name: IOVDD, type: power }
+  "39": { name: DVDD, type: power }
+  "40": { name: GPIO26, type: io, alternate_functions: [ADC0] }
+  "41": { name: GPIO27, type: io, alternate_functions: [ADC1] }
+  "42": { name: GPIO28, type: io, alternate_functions: [ADC2] }
+  "43": { name: GPIO29, type: io, alternate_functions: [ADC3] }
+  "44": { name: ADC_AVDD, type: power }
+  "45": { name: IOVDD, type: power }
+  "46": { name: VREG_AVDD, type: power }
+  "47": { name: VREG_PGND, type: ground }
+  "48": { name: VREG_LX, type: output }
+  "49": { name: VREG_VIN, type: power }
+  "50": { name: VREG_FB, type: input }
+  "51": { name: USB_DM, type: io }
+  "52": { name: USB_DP, type: io }
+  "53": { name: USB_OTP_VDD, type: power }
+  "54": { name: QSPI_IOVDD, type: power }
+  "55": { name: QSPI_SD3, type: io }
+  "56": { name: QSPI_SCLK, type: clock }
+  "57": { name: QSPI_SD0, type: io }
+  "58": { name: QSPI_SD2, type: io }
+  "59": { name: QSPI_SD1, type: io }
+  "60": { name: QSPI_SS, type: io }
+  "EP": { name: GND, type: ground }
+
+# Die marking photographed in the product brief reads "RP2350A0A2" --
+# the "A2" stepping code, consistent with the publicly known RP2350 A2
+# silicon revision. No earlier-stepping documentation or pin-table
+# difference was found in this source, so only A2 is recorded, with no
+# overrides. (A later research pass claimed to find A3/A4 steppings with
+# specific CHIP_ID.REVISION register values in a "full datasheet" --
+# that claim was not independently verified against a primary source we
+# actually reviewed, so it is deliberately not included here rather than
+# risk recording an unverified register value as fact.)
+revisions:
+  rev-a2:
+    manufacturer_revision: "A2"
+
+provenance:
+  "/pins/1/name":
+    - source: raspberrypi/RP-008374-DS@rev1
+      locator: "Pin legend / RP2350 Minimal KiCad schematic symbol"
+  "/pins/EP/name":
+    - source: raspberrypi/RP-008374-DS@rev1
+      locator: "\"GND -- single external ground connection ... exposed pad\""
+  "/revisions":
+    - source: raspberrypi/RP-008374-DS@rev1
+      locator: "Package photo, die marking \"RP2350A0A2\""

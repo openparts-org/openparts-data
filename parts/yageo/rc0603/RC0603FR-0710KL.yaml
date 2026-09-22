@@ -1,0 +1,22 @@
+# 10 kOhm, 1%, general-purpose thick-film chip resistor. MPN structure
+# and active lifecycle status confirmed via multiple independent
+# distributor listings (Digikey, LCSC, Farnell) in addition to Yageo's
+# own component-documentation page.
+schema_version: "0.1"
+kind: part
+id: yageo/RC0603FR-0710KL
+
+manufacturer: yageo
+mpn: RC0603FR-0710KL
+
+device: yageo/RC0603-GENERAL-PURPOSE
+package: standards/CHIP0603-RC
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - yageo/PYU-RC_GROUP@rev51

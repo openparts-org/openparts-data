@@ -1,0 +1,42 @@
+# QFN40, 5x5mm body (Table 1-1, Section 7 "Packaging", p.78). Pin pitch,
+# package height, and exposed-pad size are NOT included: they live only
+# in the mechanical outline drawing (Figure 7-1), which is embedded as a
+# vector/raster graphic in the PDF and was not machine-extractable as
+# text. Left unspecified rather than guessed -- this means the QFN
+# generator cannot produce geometry for this package until those
+# dimensions are confirmed (e.g. by consulting the drawing directly),
+# which is intentional: Testing and Quality Specification section 7
+# separates registration from operation -- a Part can be validated and
+# recorded even when CAD generation must be blocked on missing data.
+schema_version: "0.1"
+kind: package
+id: standards/QFN40-ESP32-C6
+
+family: qfn
+lead_count: 40
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 5.0
+    unit: mm
+  body_length:
+    nominal: 5.0
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/lead_count":
+    - source: espressif/esp32-c6_datasheet_en@rev1.5
+      locator: "Table 1-1, p.13"
+  "/dimensions/body_width":
+    - source: espressif/esp32-c6_datasheet_en@rev1.5
+      locator: "Section 7 Packaging, p.78"
+  "/dimensions/body_length":
+    - source: espressif/esp32-c6_datasheet_en@rev1.5
+      locator: "Section 7 Packaging, p.78"

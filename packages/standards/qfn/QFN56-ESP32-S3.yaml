@@ -1,0 +1,39 @@
+# QFN56, 7x7mm body (Chapter 7 Packaging, p.77, Figure 7-1). "All
+# ESP32-S3 chip variants have identical land pattern except
+# ESP32-S3FH4R2, which has a bigger EPAD" -- not modeled here (base
+# ESP32-S3 only). Pitch, body height, and exposed-pad size are not
+# included: they live only in the mechanical outline drawing, which is
+# embedded as a vector/raster graphic and was not machine-extractable
+# as text.
+schema_version: "0.1"
+kind: package
+id: standards/QFN56-ESP32-S3
+
+family: qfn
+lead_count: 56
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 7.0
+    unit: mm
+  body_length:
+    nominal: 7.0
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/lead_count":
+    - source: espressif/esp32-s3_datasheet_en@rev2.2
+      locator: "Figure 7-1 caption, p.77: \"QFN56 (7x7 mm) Package\""
+  "/dimensions/body_width":
+    - source: espressif/esp32-s3_datasheet_en@rev2.2
+      locator: "Figure 7-1 caption, p.77"
+  "/dimensions/body_length":
+    - source: espressif/esp32-s3_datasheet_en@rev2.2
+      locator: "Figure 7-1 caption, p.77"

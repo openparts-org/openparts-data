@@ -1,0 +1,22 @@
+# Dual-core Xtensa LX7, no in-package flash/PSRAM, QFN56. Currently
+# active: Table 1-1 marks only ESP32-S3R2, ESP32-S3R8V, and (as of
+# v2.1) ESP32-S3R2's successor note as End of Life -- the base
+# ESP32-S3 part carries no such marking.
+schema_version: "0.1"
+kind: part
+id: espressif/ESP32-S3
+
+manufacturer: espressif
+mpn: ESP32-S3
+
+device: espressif/ESP32-S3
+package: standards/QFN56-ESP32-S3
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - espressif/esp32-s3_datasheet_en@rev2.2

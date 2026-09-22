@@ -1,0 +1,22 @@
+# Dual-core Xtensa LX6, no in-package flash/PSRAM -- the current bare
+# chip variant of the original ESP32 line (ESP32-D0WD, -D0WDQ6,
+# -S0WD are NRND; ESP32-D0WDR2-V3 is EOL, superseded by
+# ESP32-D0WDRH2-V3).
+schema_version: "0.1"
+kind: part
+id: espressif/ESP32-D0WD-V3
+
+manufacturer: espressif
+mpn: ESP32-D0WD-V3
+
+device: espressif/ESP32-D0WD-V3
+package: standards/QFN48-ESP32
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - espressif/esp32_datasheet_en@rev5.3

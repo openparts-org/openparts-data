@@ -1,0 +1,38 @@
+# QFN32, 5x5mm body (title page, Table 1-1). Pitch and exposed-pad size
+# were only available from secondary (non-primary-source) corroboration
+# in this research pass -- deliberately left unset rather than recorded
+# as "probable" numbers, since Dimension has no per-field confidence
+# marker: a value present here would read as equally confirmed as the
+# body size, which it is not.
+schema_version: "0.1"
+kind: package
+id: standards/QFN32-ESP32-C3
+
+family: qfn
+lead_count: 32
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 5.0
+    unit: mm
+  body_length:
+    nominal: 5.0
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/lead_count":
+    - source: espressif/esp32-c3_datasheet_en@rev2.4
+      locator: "Table 2-1 Pin Overview, p.16-17"
+  "/dimensions/body_width":
+    - source: espressif/esp32-c3_datasheet_en@rev2.4
+      locator: "Title page / Table 1-1"
+  "/dimensions/body_length":
+    - source: espressif/esp32-c3_datasheet_en@rev2.4
+      locator: "Title page / Table 1-1"

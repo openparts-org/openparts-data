@@ -1,0 +1,27 @@
+# Dual Cortex-M33/Hazard3 (RISC-V) microcontroller, QFN-60, no internal
+# flash. The base variant of the RP2350 family (RP2350B has 48 GPIO in a
+# QFN-80; RP2354A/B add 2MB in-package flash) -- picked as the primary
+# part to model per the product brief's own comparison table.
+schema_version: "0.1"
+kind: part
+id: raspberrypi/RP2350A
+
+manufacturer: raspberrypi
+mpn: RP2350A
+
+device: raspberrypi/RP2350A
+package: standards/QFN60-RP2350A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - raspberrypi/RP-008374-DS@rev1
+
+provenance:
+  "/lifecycle/status":
+    - source: raspberrypi/RP-008374-DS@rev1
+      locator: "\"We expect RP2350 to remain in production until at least January 2045\""

@@ -1,0 +1,44 @@
+# RP2040 datasheet section 5.5.2 / Figure (page 12 caption, page 608):
+# "QFN-56 7x7mm (reduced ePad size)", 0.4mm pitch. The datasheet notes
+# an exposed pad exists but its outline drawing with numeric callouts is
+# an embedded figure, not extractable text -- width/length and body
+# height are therefore left unspecified rather than guessed (the QFN
+# generator falls back to an internal approximate body height, and
+# simply omits the exposed pad from the generated geometry when its
+# dimensions are unknown).
+schema_version: "0.1"
+kind: package
+id: standards/QFN56-RP2040
+
+family: qfn
+lead_count: 56
+
+pitch:
+  nominal: 0.4
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 7.0
+    unit: mm
+  body_length:
+    nominal: 7.0
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/lead_count":
+    - source: raspberrypi/RP-008371-DS@rev1
+      locator: "Section 5.5.2 package description"
+  "/pitch":
+    - source: raspberrypi/RP-008371-DS@rev1
+      locator: "Section 5.5.2, \"standard 0.4mm QFN-56 footprints\""
+  "/dimensions/body_width":
+    - source: raspberrypi/RP-008371-DS@rev1
+      locator: "\"QFN-56 7x7mm (reduced ePad size)\""
+  "/dimensions/body_length":
+    - source: raspberrypi/RP-008371-DS@rev1
+      locator: "\"QFN-56 7x7mm (reduced ePad size)\""

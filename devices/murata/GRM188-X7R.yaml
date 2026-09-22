@@ -1,0 +1,10 @@
+schema_version: "0.1"
+kind: device
+id: murata/GRM188-X7R
+
+manufacturer: murata
+family: GRM188
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

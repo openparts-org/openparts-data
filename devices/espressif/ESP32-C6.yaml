@@ -1,0 +1,77 @@
+# QFN40 (bare-chip ESP32-C6, no in-package flash). Pinout from Table 2-1
+# "QFN40 Pin Overview" (pp.16-17) + Table 2-13 "Power Pins" (p.29) for
+# the exposed pad. The QFN32 in-package-flash variants (ESP32-C6FH4/
+# -C6FH8) have a different, shorter pin table -- not modeled here.
+schema_version: "0.1"
+kind: device
+id: espressif/ESP32-C6
+
+manufacturer: espressif
+family: ESP32-C6
+
+pins:
+  "1":  { name: ANT, type: analog }
+  "2":  { name: VDDA3P3, type: power }
+  "3":  { name: VDDA3P3, type: power }
+  "4":  { name: CHIP_PU, type: reset }
+  "5":  { name: VDDPST1, type: power }
+  "6":  { name: XTAL_32K_P, type: clock }
+  "7":  { name: XTAL_32K_N, type: clock }
+  "8":  { name: GPIO2, type: io }
+  "9":  { name: GPIO3, type: io }
+  "10": { name: MTMS, type: io, alternate_functions: [GPIO4] }
+  "11": { name: MTDI, type: io, alternate_functions: [GPIO5] }
+  "12": { name: MTCK, type: io, alternate_functions: [GPIO6] }
+  "13": { name: MTDO, type: io, alternate_functions: [GPIO7] }
+  "14": { name: GPIO8, type: io }
+  "15": { name: GPIO9, type: io }
+  "16": { name: GPIO10, type: io }
+  "17": { name: GPIO11, type: io }
+  "18": { name: GPIO12, type: io, alternate_functions: [USB_D_MINUS] }
+  "19": { name: GPIO13, type: io, alternate_functions: [USB_D_PLUS] }
+  "20": { name: SPICS0, type: io, alternate_functions: [GPIO24] }
+  "21": { name: SPIQ, type: io, alternate_functions: [GPIO25] }
+  "22": { name: SPIWP, type: io, alternate_functions: [GPIO26] }
+  "23": { name: VDD_SPI, type: power, alternate_functions: [GPIO27] }
+  "24": { name: SPIHD, type: io, alternate_functions: [GPIO28] }
+  "25": { name: SPICLK, type: io, alternate_functions: [GPIO29] }
+  "26": { name: SPID, type: io, alternate_functions: [GPIO30] }
+  "27": { name: GPIO15, type: io }
+  "28": { name: VDDPST2, type: power }
+  "29": { name: U0TXD, type: io, alternate_functions: [GPIO16] }
+  "30": { name: U0RXD, type: io, alternate_functions: [GPIO17] }
+  "31": { name: SDIO_CMD, type: io, alternate_functions: [GPIO18] }
+  "32": { name: SDIO_CLK, type: io, alternate_functions: [GPIO19] }
+  "33": { name: SDIO_DATA0, type: io, alternate_functions: [GPIO20] }
+  "34": { name: SDIO_DATA1, type: io, alternate_functions: [GPIO21] }
+  "35": { name: SDIO_DATA2, type: io, alternate_functions: [GPIO22] }
+  "36": { name: SDIO_DATA3, type: io, alternate_functions: [GPIO23] }
+  "37": { name: VDDA1, type: power }
+  "38": { name: XTAL_N, type: clock }
+  "39": { name: XTAL_P, type: clock }
+  "40": { name: VDDA2, type: power }
+  "EP": { name: GND, type: ground }
+
+# Three chip revisions confirmed to ship under the same part number
+# (v0.0/v0.1/v0.2, Table 1-1). The datasheet defers revision
+# identification and erratum detail to a separate "ESP32-C6 Series SoC
+# Errata" document (not fetched); its own pin tables show no
+# per-revision variation, so no overrides are recorded here.
+revisions:
+  rev-v0.0:
+    manufacturer_revision: "v0.0"
+  rev-v0.1:
+    manufacturer_revision: "v0.1"
+  rev-v0.2:
+    manufacturer_revision: "v0.2"
+
+provenance:
+  "/pins/1/name":
+    - source: espressif/esp32-c6_datasheet_en@rev1.5
+      locator: "Table 2-1 QFN40 Pin Overview, p.16-17"
+  "/pins/EP/name":
+    - source: espressif/esp32-c6_datasheet_en@rev1.5
+      locator: "Table 2-13 Power Pins, p.29: \"External ground connection\""
+  "/revisions":
+    - source: espressif/esp32-c6_datasheet_en@rev1.5
+      locator: "Table 1-1, p.13; Section 1.3 Chip Revision"

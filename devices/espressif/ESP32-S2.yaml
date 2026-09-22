@@ -1,0 +1,84 @@
+# Pinout for pins 1-56, consistent across repeated fetches of Table 2-1
+# "Pin Overview". A possible additional pin 57 (exposed pad / GND) is
+# NOT recorded here: independent fetches of the same datasheet page
+# disagreed on whether a 57th row exists, and that discrepancy could not
+# be resolved without the primary PDF (rather than its HTML mirror).
+# Recorded honestly as absent pending confirmation, instead of guessing
+# which fetch was right (Agent Ingestion Specification section 5:
+# "Search result snippetだけをPrimary Evidenceとして採用しない" /
+# never resolve a conflicting source silently).
+#
+# XTAL_32K_P/N (pins 21/22) and XTAL_N/XTAL_P (pins 52/53) are
+# categorized `clock` here (crystal oscillator pins) rather than the
+# fetch's literal "io"/"analog" Type-column label, for consistency with
+# how every other chip in this dataset classifies its crystal pins --
+# an assembler judgment call, not a verbatim datasheet field.
+schema_version: "0.1"
+kind: device
+id: espressif/ESP32-S2
+
+manufacturer: espressif
+family: ESP32-S2
+
+pins:
+  "1":  { name: VDDA, type: power }
+  "2":  { name: LNA_IN, type: analog }
+  "3":  { name: VDD3P3, type: power }
+  "4":  { name: VDD3P3, type: power }
+  "5":  { name: GPIO0, type: io }
+  "6":  { name: GPIO1, type: io }
+  "7":  { name: GPIO2, type: io }
+  "8":  { name: GPIO3, type: io }
+  "9":  { name: GPIO4, type: io }
+  "10": { name: GPIO5, type: io }
+  "11": { name: GPIO6, type: io }
+  "12": { name: GPIO7, type: io }
+  "13": { name: GPIO8, type: io }
+  "14": { name: GPIO9, type: io }
+  "15": { name: GPIO10, type: io }
+  "16": { name: GPIO11, type: io }
+  "17": { name: GPIO12, type: io }
+  "18": { name: GPIO13, type: io }
+  "19": { name: GPIO14, type: io }
+  "20": { name: VDD3P3_RTC, type: power }
+  "21": { name: XTAL_32K_P, type: clock }
+  "22": { name: XTAL_32K_N, type: clock }
+  "23": { name: DAC_1, type: analog }
+  "24": { name: DAC_2, type: analog }
+  "25": { name: GPIO19, type: io }
+  "26": { name: GPIO20, type: io }
+  "27": { name: VDD3P3_RTC_IO, type: power }
+  "28": { name: GPIO21, type: io }
+  "29": { name: SPICS1, type: io }
+  "30": { name: VDD_SPI, type: power }
+  "31": { name: SPIHD, type: io }
+  "32": { name: SPIWP, type: io }
+  "33": { name: SPICS0, type: io }
+  "34": { name: SPICLK, type: clock }
+  "35": { name: SPIQ, type: io }
+  "36": { name: SPID, type: io }
+  "37": { name: GPIO33, type: io }
+  "38": { name: GPIO34, type: io }
+  "39": { name: GPIO35, type: io }
+  "40": { name: GPIO36, type: io }
+  "41": { name: GPIO37, type: io }
+  "42": { name: GPIO38, type: io }
+  "43": { name: MTCK, type: io }
+  "44": { name: MTDO, type: io }
+  "45": { name: VDD3P3_CPU, type: power }
+  "46": { name: MTDI, type: io }
+  "47": { name: MTMS, type: io }
+  "48": { name: U0TXD, type: io }
+  "49": { name: U0RXD, type: io }
+  "50": { name: GPIO45, type: io }
+  "51": { name: VDDA, type: power }
+  "52": { name: XTAL_N, type: clock }
+  "53": { name: XTAL_P, type: clock }
+  "54": { name: VDDA, type: power }
+  "55": { name: GPIO46, type: io }
+  "56": { name: CHIP_PU, type: reset }
+
+provenance:
+  "/pins/1/name":
+    - source: espressif/esp32-s2_datasheet_en@rev1.9
+      locator: "Table 2-1 Pin Overview"
