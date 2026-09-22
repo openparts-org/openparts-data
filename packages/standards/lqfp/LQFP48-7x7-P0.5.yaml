@@ -1,0 +1,42 @@
+# EXAMPLE / FICTIONAL DATA -- a generic JEDEC-style LQFP48 package used
+# only to drive the OpenParts vertical-slice demo.
+schema_version: "0.1"
+kind: package
+id: standards/LQFP48-7x7-P0.5
+
+family: lqfp
+lead_count: 48
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 7.0
+    min: 6.9
+    max: 7.1
+    unit: mm
+  body_length:
+    nominal: 7.0
+    min: 6.9
+    max: 7.1
+    unit: mm
+  body_height:
+    nominal: 1.4
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lqfp
+
+provenance:
+  "/dimensions/body_width":
+    - source: exemplar/EX-DS-0001@rev1
+      page: 3
+      locator: "Table 2, package outline"
+
+  "/dimensions/body_length":
+    - source: exemplar/EX-DS-0001@rev1
+      page: 3
+      locator: "Table 2, package outline"

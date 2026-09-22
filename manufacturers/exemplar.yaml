@@ -1,0 +1,11 @@
+# EXAMPLE / FICTIONAL DATA. "exemplar" is not a real manufacturer -- it
+# exists only to drive the OpenParts vertical-slice pipeline end-to-end
+# without fabricating facts about a real company or product.
+schema_version: "0.1"
+kind: manufacturer
+id: exemplar
+
+name: Exemplar Semiconductor (fictional)
+
+website:
+  url: "https://example.invalid/exemplar"

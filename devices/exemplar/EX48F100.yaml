@@ -1,0 +1,85 @@
+# EXAMPLE / FICTIONAL DATA -- a fictional 48-pin microcontroller device
+# used only to drive the OpenParts vertical-slice demo. Not a real product.
+schema_version: "0.1"
+kind: device
+id: exemplar/EX48F100
+
+manufacturer: exemplar
+family: EX48
+
+pins:
+  "1":  { name: VBAT, type: power }
+  "2":  { name: PC13, type: io, alternate_functions: [RTC_OUT, TAMP1] }
+  "3":  { name: PC14, type: io }
+  "4":  { name: PC15, type: io }
+  "5":  { name: VSS,  type: ground }
+  "6":  { name: VDD,  type: power }
+  "7":  { name: NRST, type: reset }
+  "8":  { name: PA0,  type: analog, alternate_functions: [ADC1_IN0] }
+  "9":  { name: PA1,  type: analog }
+  "10": { name: PA2,  type: io }
+  "11": { name: PA3,  type: io }
+  "12": { name: PA4,  type: analog }
+  "13": { name: PA5,  type: analog }
+  "14": { name: PA6,  type: io }
+  "15": { name: PA7,  type: io }
+  "16": { name: VSS,  type: ground }
+  "17": { name: VDD,  type: power }
+  "18": { name: PB0,  type: io }
+  "19": { name: PB1,  type: io }
+  "20": { name: PB2,  type: io }
+  "21": { name: PB10, type: io }
+  "22": { name: PB11, type: io }
+  "23": { name: VSS,  type: ground }
+  "24": { name: VDD,  type: power }
+  "25": { name: PB12, type: io }
+  "26": { name: PB13, type: io }
+  "27": { name: PB14, type: io }
+  "28": { name: PB15, type: io }
+  "29": { name: PC6,  type: io }
+  "30": { name: PC7,  type: io }
+  "31": { name: PC8,  type: io }
+  "32": { name: PC9,  type: io }
+  "33": { name: PA8,  type: io }
+  "34": { name: PA9,  type: io }
+  "35": { name: PA10, type: io }
+  "36": { name: PA11, type: io }
+  "37": { name: PA12, type: io }
+  "38": { name: PA13, type: io, alternate_functions: [SWDIO] }
+  "39": { name: VSS,  type: ground }
+  "40": { name: VDD,  type: power }
+  "41": { name: PA14, type: io, alternate_functions: [SWCLK] }
+  "42": { name: VSS,  type: ground }
+  "43": { name: PC10, type: io }
+  "44": { name: PC11, type: io }
+  "45": { name: PC12, type: io }
+  "46": { name: PD2,  type: io }
+  "47": { name: PB3,  type: io }
+  "48": { name: PB4,  type: io }
+
+# Two fictional silicon revisions to exercise Effective Model overrides
+# (Architecture Specification section 10, Canonical Data Specification
+# section 17-19). Only rev-b differs from the base: pin 42 changes from
+# a plain ground pin to a power-down-reset control pin. Every other pin,
+# and rev-a itself, stay untouched by the override.
+revisions:
+  rev-a:
+    manufacturer_revision: "A"
+
+  rev-b:
+    manufacturer_revision: "B"
+    detection:
+      - method: device_register
+        register: DBGMCU_IDCODE
+        mask: "0xffff0000"
+        value: "0x20000000"
+    overrides:
+      pins:
+        "42":
+          name: PDR_ON
+
+provenance:
+  "/pins/1/name":
+    - source: exemplar/EX-DS-0001@rev1
+      page: 12
+      locator: "Table 5, pin definitions"

@@ -1,0 +1,28 @@
+# EXAMPLE / FICTIONAL DATA -- not a real manufacturer or part. Provided
+# solely as sample input to exercise the OpenParts vertical-slice
+# pipeline end-to-end. existence.status is "unverified" accordingly --
+# this MPN has not been confirmed against any real primary source.
+schema_version: "0.1"
+kind: part
+id: exemplar/EX48F100Q6
+
+manufacturer: exemplar
+mpn: EX48F100Q6
+
+device: exemplar/EX48F100
+package: standards/LQFP48-7x7-P0.5
+
+existence:
+  status: unverified
+
+lifecycle:
+  status: active
+
+sources:
+  - exemplar/EX-DS-0001@rev1
+
+provenance:
+  "/mpn":
+    - source: exemplar/EX-DS-0001@rev1
+      page: 1
+      locator: "Ordering information table"
