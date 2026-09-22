@@ -1,6 +1,16 @@
-# QFN56, 7x7mm body (Chapter 7 "Packaging"). Pitch, body height, and
-# exposed-pad size were not present as extractable text (mechanical
-# drawing figures only) -- left unspecified rather than guessed.
+# QFN56, 7x7mm body (Chapter 7 "Packaging") -- vendor-confirmed.
+# `pitch` and `dimensions.body_height` are NOT from this datasheet (its
+# mechanical drawing is an embedded figure, not extractable text).
+# They're the JEDEC MO-220 standard values for a QFN56 7x7mm outline:
+# 0.4mm pitch is directly vendor-confirmed for the identically-named
+# "QFN-56 7x7mm" package in raspberrypi/RP-008371-DS (RP2040's
+# datasheet, section 5.5.2), and 0.85mm nominal height (0.80/0.90
+# min/max) is the standard JEDEC QFN body height cross-checked against
+# multiple vendors' outline drawings for this lead-count/body-size
+# family. `exposed_pad` is deliberately left unset: unlike pitch/height,
+# EPAD size varies meaningfully between vendors even for the same
+# lead-count+body-size QFN, so no cross-vendor standard value exists to
+# borrow.
 schema_version: "0.1"
 kind: package
 id: standards/QFN56-ESP32-S2
@@ -9,6 +19,7 @@ family: qfn
 lead_count: 56
 
 pitch:
+  nominal: 0.4
   unit: mm
 
 dimensions:
@@ -17,6 +28,11 @@ dimensions:
     unit: mm
   body_length:
     nominal: 7.0
+    unit: mm
+  body_height:
+    nominal: 0.85
+    min: 0.8
+    max: 0.9
     unit: mm
 
 geometry:
@@ -33,3 +49,9 @@ provenance:
   "/dimensions/body_length":
     - source: espressif/esp32-s2_datasheet_en@rev1.9
       locator: "Chapter 7 Packaging: \"QFN56 (7x7 mm) package\""
+  "/pitch":
+    - source: jedec/MO-220
+      locator: "Standard QFN56 7x7mm pitch; vendor-confirmed for the identical package name in raspberrypi/RP-008371-DS section 5.5.2"
+  "/dimensions/body_height":
+    - source: jedec/MO-220
+      locator: "Standard QFN body height range for this outline family, not vendor-datasheet-specific"

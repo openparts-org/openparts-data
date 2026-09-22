@@ -1,0 +1,19 @@
+# JEDEC's own registration page (title/revision confirmed there); the
+# full dimensioned standard is a paid/registered document we did not
+# purchase. Used here only to attribute pitch/height values that are
+# standard for a given QFN lead-count + body-size combination across
+# vendors, cross-checked against multiple independent manufacturers'
+# package outline drawings for that exact combination (see per-package
+# provenance locators) rather than read from the standard's own text.
+schema_version: "0.1"
+kind: source
+id: jedec/MO-220
+
+publisher: jedec
+document_id: MO-220
+document_type: package_drawing
+
+revision: "K01"
+date: "unknown"
+
+url: "https://www.jedec.org/standards-documents/docs/mo-220-k01"

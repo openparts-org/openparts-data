@@ -32,6 +32,20 @@ while IFS= read -r -d '' f; do
   fi
 done < <(find "$ROOT/devices" "$ROOT/packages" "$ROOT/sources" -name '*.yaml' -print0 2>/dev/null)
 
+# Any of the three documents (Part/Device/Package) may cite a Source in
+# its own `provenance:` block, independent of the Part's `sources:`
+# list (e.g. a Package citing a JEDEC standard drawing that the Part
+# itself never references). Rather than hand-parse every provenance
+# block, just supply every known Source file to every check -- the
+# validator only uses this as a "does this id resolve" set, so handing
+# it more sources than strictly needed is harmless, and it matches how
+# openparts-server itself validates (against its whole loaded Source
+# set, not a per-request subset).
+all_source_args=()
+while IFS= read -r -d '' f; do
+  all_source_args+=(--source "$f")
+done < <(find "$ROOT/sources" -name '*.yaml' -print0 2>/dev/null)
+
 status=0
 part_count=0
 
@@ -48,32 +62,8 @@ while IFS= read -r -d '' part; do
     continue
   fi
 
-  source_args=()
-  in_sources=0
-  while IFS= read -r line; do
-    if [[ "$line" =~ ^sources: ]]; then
-      in_sources=1
-      continue
-    fi
-    if [[ $in_sources -eq 1 ]]; then
-      if [[ "$line" =~ ^[[:space:]]*-[[:space:]]*(.+)$ ]]; then
-        src_id="${BASH_REMATCH[1]}"
-        src_id="${src_id%\"}"
-        src_id="${src_id#\"}"
-        src_path="${ID_TO_PATH[$src_id]:-}"
-        if [[ -n "$src_path" ]]; then
-          source_args+=(--source "$src_path")
-        else
-          echo "WARN $part: source \"$src_id\" not found under sources/"
-        fi
-      else
-        in_sources=0
-      fi
-    fi
-  done < "$part"
-
   echo "Validating $part"
-  if ! $CLI validate --part "$part" --device "$device_path" --package "$package_path" "${source_args[@]}"; then
+  if ! $CLI validate --part "$part" --device "$device_path" --package "$package_path" "${all_source_args[@]}"; then
     status=1
   fi
 done < <(find "$ROOT/parts" -name '*.yaml' -print0)

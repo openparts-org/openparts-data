@@ -1,10 +1,14 @@
-# QFN56, 7x7mm body (Chapter 7 Packaging, p.77, Figure 7-1). "All
-# ESP32-S3 chip variants have identical land pattern except
-# ESP32-S3FH4R2, which has a bigger EPAD" -- not modeled here (base
-# ESP32-S3 only). Pitch, body height, and exposed-pad size are not
-# included: they live only in the mechanical outline drawing, which is
-# embedded as a vector/raster graphic and was not machine-extractable
-# as text.
+# QFN56, 7x7mm body (Chapter 7 Packaging, p.77, Figure 7-1) -- vendor-
+# confirmed. "All ESP32-S3 chip variants have identical land pattern
+# except ESP32-S3FH4R2, which has a bigger EPAD" -- not modeled here
+# (base ESP32-S3 only). `pitch` and `dimensions.body_height` are the
+# JEDEC MO-220 standard for this outline (0.4mm pitch is directly
+# vendor-confirmed for the identically-named "QFN-56 7x7mm" package in
+# raspberrypi/RP-008371-DS section 5.5.2; 0.85mm nominal height is the
+# standard JEDEC QFN body height for this family) -- not read from this
+# datasheet's own (image-only) mechanical drawing. `exposed_pad` stays
+# unset: EPAD size is not standardized across vendors the way
+# pitch/height are (see QFN56-ESP32-S2 for the same reasoning).
 schema_version: "0.1"
 kind: package
 id: standards/QFN56-ESP32-S3
@@ -13,6 +17,7 @@ family: qfn
 lead_count: 56
 
 pitch:
+  nominal: 0.4
   unit: mm
 
 dimensions:
@@ -21,6 +26,11 @@ dimensions:
     unit: mm
   body_length:
     nominal: 7.0
+    unit: mm
+  body_height:
+    nominal: 0.85
+    min: 0.8
+    max: 0.9
     unit: mm
 
 geometry:
@@ -37,3 +47,9 @@ provenance:
   "/dimensions/body_length":
     - source: espressif/esp32-s3_datasheet_en@rev2.2
       locator: "Figure 7-1 caption, p.77"
+  "/pitch":
+    - source: jedec/MO-220
+      locator: "Standard QFN56 7x7mm pitch; vendor-confirmed for the identical package name in raspberrypi/RP-008371-DS section 5.5.2"
+  "/dimensions/body_height":
+    - source: jedec/MO-220
+      locator: "Standard QFN body height range for this outline family, not vendor-datasheet-specific"

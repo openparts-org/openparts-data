@@ -1,0 +1,11 @@
+# Not a component manufacturer -- included so package outline standards
+# (e.g. MO-220 for QFN) can be cited as a proper Source rather than left
+# as an unattributed comment.
+schema_version: "0.1"
+kind: manufacturer
+id: jedec
+
+name: JEDEC Solid State Technology Association
+
+website:
+  url: "https://www.jedec.org"

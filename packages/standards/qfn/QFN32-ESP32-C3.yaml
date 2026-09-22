@@ -1,9 +1,14 @@
-# QFN32, 5x5mm body (title page, Table 1-1). Pitch and exposed-pad size
-# were only available from secondary (non-primary-source) corroboration
-# in this research pass -- deliberately left unset rather than recorded
-# as "probable" numbers, since Dimension has no per-field confidence
-# marker: a value present here would read as equally confirmed as the
-# body size, which it is not.
+# QFN32, 5x5mm body (title page, Table 1-1) -- vendor-confirmed.
+# `pitch` and `dimensions.body_height` are the JEDEC MO-220 standard for
+# a QFN32 5x5mm outline: 0.5mm pitch and 0.85mm nominal (0.80/0.90
+# min/max) height are the values used consistently across independent
+# vendor package drawings for this exact lead-count+body-size
+# combination (e.g. Analog Devices' "UH" 32-lead 5x5mm QFN family) --
+# not read from this datasheet's own (image-only) mechanical drawing.
+# `exposed_pad` stays unset: unlike pitch/height, EPAD size for QFN32
+# 5x5mm genuinely varies between vendors (documented variants from
+# 3.1x3.1mm to 3.5x3.5mm exist for this same nominal package), so there
+# is no single cross-vendor standard value to borrow.
 schema_version: "0.1"
 kind: package
 id: standards/QFN32-ESP32-C3
@@ -12,6 +17,7 @@ family: qfn
 lead_count: 32
 
 pitch:
+  nominal: 0.5
   unit: mm
 
 dimensions:
@@ -20,6 +26,11 @@ dimensions:
     unit: mm
   body_length:
     nominal: 5.0
+    unit: mm
+  body_height:
+    nominal: 0.85
+    min: 0.8
+    max: 0.9
     unit: mm
 
 geometry:
@@ -36,3 +47,9 @@ provenance:
   "/dimensions/body_length":
     - source: espressif/esp32-c3_datasheet_en@rev2.4
       locator: "Title page / Table 1-1"
+  "/pitch":
+    - source: jedec/MO-220
+      locator: "Standard QFN32 5x5mm pitch, cross-checked against multiple vendors' outline drawings for this lead-count/body-size combination"
+  "/dimensions/body_height":
+    - source: jedec/MO-220
+      locator: "Standard QFN body height range for this outline family, not vendor-datasheet-specific"

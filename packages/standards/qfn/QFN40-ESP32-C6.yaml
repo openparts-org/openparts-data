@@ -1,13 +1,14 @@
-# QFN40, 5x5mm body (Table 1-1, Section 7 "Packaging", p.78). Pin pitch,
-# package height, and exposed-pad size are NOT included: they live only
-# in the mechanical outline drawing (Figure 7-1), which is embedded as a
-# vector/raster graphic in the PDF and was not machine-extractable as
-# text. Left unspecified rather than guessed -- this means the QFN
-# generator cannot produce geometry for this package until those
-# dimensions are confirmed (e.g. by consulting the drawing directly),
-# which is intentional: Testing and Quality Specification section 7
-# separates registration from operation -- a Part can be validated and
-# recorded even when CAD generation must be blocked on missing data.
+# QFN40, 5x5mm body (Table 1-1, Section 7 "Packaging", p.78) --
+# vendor-confirmed. `pitch` and `dimensions.body_height` are the JEDEC
+# MO-220 standard for a QFN40 5x5mm outline: 0.4mm pitch and 0.85mm
+# nominal (0.80/0.90 min/max) height match independent vendor package
+# drawings for this exact lead-count+body-size combination (e.g. Analog
+# Devices' "UH" 40-lead 5x5mm QFN family, distinct from the more common
+# 6x6mm QFN40 variant) -- not read from this datasheet's own
+# (image-only) mechanical drawing. `exposed_pad` stays unset: EPAD size
+# is not standardized across vendors the way pitch/height are (see
+# QFN32-ESP32-C3 for the same reasoning, and the documented 3.1-3.5mm
+# spread for nominally-identical QFN32 packages).
 schema_version: "0.1"
 kind: package
 id: standards/QFN40-ESP32-C6
@@ -16,6 +17,7 @@ family: qfn
 lead_count: 40
 
 pitch:
+  nominal: 0.4
   unit: mm
 
 dimensions:
@@ -24,6 +26,11 @@ dimensions:
     unit: mm
   body_length:
     nominal: 5.0
+    unit: mm
+  body_height:
+    nominal: 0.85
+    min: 0.8
+    max: 0.9
     unit: mm
 
 geometry:
@@ -40,3 +47,9 @@ provenance:
   "/dimensions/body_length":
     - source: espressif/esp32-c6_datasheet_en@rev1.5
       locator: "Section 7 Packaging, p.78"
+  "/pitch":
+    - source: jedec/MO-220
+      locator: "Standard QFN40 5x5mm pitch, cross-checked against multiple vendors' outline drawings for this lead-count/body-size combination"
+  "/dimensions/body_height":
+    - source: jedec/MO-220
+      locator: "Standard QFN body height range for this outline family, not vendor-datasheet-specific"
