@@ -1,0 +1,42 @@
+# Data PR CI (Testing and Quality Specification section 12): validates
+# every changed Part (and, since the initial dataset is small, every
+# Part -- section 12 also says to prefer full validation while the
+# dataset is small) against its referenced Device/Package/Sources using
+# the openparts-validator crate from the sibling `openparts` repository.
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out openparts-data
+        uses: actions/checkout@v4
+        with:
+          path: openparts-data
+
+      - name: Check out openparts
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/openparts
+          path: openparts
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: openparts
+
+      - name: Build openparts-cli
+        run: cargo build --manifest-path openparts/Cargo.toml -p openparts-cli
+
+      - name: Validate every Part
+        working-directory: openparts-data
+        env:
+          OPENPARTS_CLI: ../openparts/target/debug/openparts
+        run: ./scripts/validate.sh
