@@ -1,0 +1,70 @@
+# Real SOT-23 (JEDEC TO-236, onsemi CASE 318 STYLE 21) dimensions,
+# confirmed from the "PACKAGE DIMENSIONS" table (page 6) of onsemi's
+# 2N7002E datasheet (2N7002E/D, Rev. 8, Oct 2023).
+#
+# Field-to-symbol mapping (openparts-mcad's `sot` generator, not a
+# datasheet-stated label): the datasheet's own dimension symbols are D
+# (2.80/2.90/3.04mm) and E (1.20/1.30/1.40mm), with lead pitch e =
+# 1.78/1.90/2.04mm. `sot.rs` places its two same-side leads
+# `pitch` apart, and separates the two lead ROWS by `dimensions.
+# body_length` -- so `body_length` must be the SHORT dimension (E,
+# 1.30mm, the axis separating the 2-lead row from the 1-lead row), and
+# `body_width` the LONG one (D, 2.90mm, the axis the 2-lead row's pitch
+# runs along; not otherwise load-bearing in the generator, kept
+# consistent for a physically sensible body box). Confirmed correct by
+# cross-checking the generator's resulting lead-tip span against the
+# datasheet's own HE ("lead-tip-to-lead-tip span across rows") value of
+# 2.10/2.40/2.64mm: this mapping gives ~2.2mm, close to nominal HE; the
+# reversed mapping gives ~3.8mm, clearly wrong.
+schema_version: "0.1"
+kind: package
+id: standards/SOT23-2.90x1.30-P1.90
+
+family: sot
+lead_count: 3
+lead_layout: [2, 1]
+
+pitch:
+  nominal: 1.90
+  min: 1.78
+  max: 2.04
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.30
+    min: 1.20
+    max: 1.40
+    unit: mm
+  body_width:
+    nominal: 2.90
+    min: 2.80
+    max: 3.04
+    unit: mm
+  body_height:
+    nominal: 1.00
+    min: 0.89
+    max: 1.11
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: sot
+
+provenance:
+  "/pitch":
+    - source: onsemi/2N7002E-D
+      page: 6
+      locator: "PACKAGE DIMENSIONS table, symbol \"e\""
+  "/dimensions/body_length":
+    - source: onsemi/2N7002E-D
+      page: 6
+      locator: "PACKAGE DIMENSIONS table, symbol \"E\" -- see field-mapping note above for why E (not D) is body_length for this generator"
+  "/dimensions/body_width":
+    - source: onsemi/2N7002E-D
+      page: 6
+      locator: "PACKAGE DIMENSIONS table, symbol \"D\" -- see field-mapping note above for why D (not E) is body_width for this generator"
+  "/dimensions/body_height":
+    - source: onsemi/2N7002E-D
+      page: 6
+      locator: "PACKAGE DIMENSIONS table, symbol \"A\""

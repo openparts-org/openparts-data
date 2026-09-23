@@ -1,0 +1,78 @@
+# MSPM0G3507, Cortex-M0+, 128KB flash / 32KB SRAM. Same datasheet
+# documents both an LQFP48 and a QFN48 ("VQFN") package option sharing
+# an IDENTICAL pin map (confirmed via Table 6-2 "Pin Attributes",
+# pages 11-14, whose "PIN NUMBER" column is explicitly headed "48
+# LQFP, VQFN") -- this Device applies to either package. Cross-checked
+# a second way against Figure 6-3 "48-Pin PT (LQFP) (Top View)"
+# (page 8); all 48 pins matched exactly, zero discrepancies.
+#
+# `name` uses the composite label as printed in the pin diagram (e.g.
+# "PA0/FCC_IN"). Every pin also carries an extensive digital
+# alternate-function mux (UART/SPI/I2C/timer/CAN, via IOMUX PINCMx
+# registers, Table 6-2) not individually modeled here -- out of scope
+# for this pass, same policy as this dataset's other MCU pin tables.
+schema_version: "0.1"
+kind: device
+id: ti/MSPM0G3507
+
+manufacturer: ti
+family: MSPM0G350x
+
+pins:
+  "1":  { name: PA0/FCC_IN, type: io }
+  "2":  { name: PA1, type: io }
+  "3":  { name: PA28, type: io }
+  "4":  { name: NRST, type: reset }
+  "5":  { name: PA31/CLK_OUT, type: io }
+  "6":  { name: VDD, type: power }
+  "7":  { name: VSS, type: ground }
+  "8":  { name: PA2/ROSC, type: io }
+  "9":  { name: PA3/COMP1_OUT/LFXIN, type: io }
+  "10": { name: PA4/LFCLK_IN/LFXOUT, type: io }
+  "11": { name: PA5/HFXIN/FCC_IN, type: io }
+  "12": { name: PA6/HFCLK_IN/HFXOUT, type: io }
+  "13": { name: PA7/CLK_OUT, type: io }
+  "14": { name: PB2, type: io }
+  "15": { name: PB3, type: io }
+  "16": { name: PA8, type: io }
+  "17": { name: PA9/RTC_OUT/CLK_OUT, type: io }
+  "18": { name: PA10/CLK_OUT, type: io }
+  "19": { name: PA11, type: io }
+  "20": { name: PB6, type: io }
+  "21": { name: PB7, type: io }
+  "22": { name: PB8, type: io }
+  "23": { name: PB9, type: io }
+  "24": { name: PB14, type: io }
+  "25": { name: PB15, type: io }
+  "26": { name: PB16, type: io }
+  "27": { name: PA12/FCC_IN, type: io }
+  "28": { name: PA13, type: io }
+  "29": { name: PA14/CLK_OUT/A0_12, type: io }
+  "30": { name: PA15/A1_0, type: io }
+  "31": { name: PA16/A1_1/FCC_IN, type: io }
+  "32": { name: PA17/A1_2, type: io }
+  "33": { name: PA18/A1_3, type: io }
+  "34": { name: PA19/SWDIO, type: io }
+  "35": { name: PA20/SWCLK, type: clock }
+  "36": { name: PB17/A1_4, type: io }
+  "37": { name: PB18/A1_5, type: io }
+  "38": { name: PB19/A1_6, type: io }
+  "39": { name: PA21/A1_7/VREF-, type: io }
+  "40": { name: PA22/CLK_OUT/A0_7, type: io }
+  "41": { name: PB20/A0_6, type: io }
+  "42": { name: PB24/A0_5, type: io }
+  "43": { name: PA23/VREF+, type: io }
+  "44": { name: PA24/A0_3, type: io }
+  "45": { name: PA25/A0_2/OPA0_IN1+, type: io }
+  "46": { name: PA26/A0_1, type: io }
+  "47": { name: PA27/RTC_OUT/A0_0, type: io }
+  "48": { name: VCORE, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SLASEX6C
+      page: 11
+      locator: "Table 6-2 \"Pin Attributes\" (pages 11-14), column \"48 LQFP, VQFN\""
+    - source: ti/SLASEX6C
+      page: 8
+      locator: "Figure 6-3 \"48-Pin PT (LQFP) (Top View)\" (visual cross-check, all 48 pins matched exactly)"

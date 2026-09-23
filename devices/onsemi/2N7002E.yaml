@@ -1,0 +1,25 @@
+# N-channel enhancement-mode small-signal MOSFET, 60V VDSS / 310mA ID.
+# Pin assignment confirmed from the "MARKING DIAGRAM & PIN ASSIGNMENT"
+# diagram (page 1) and independently cross-checked against the CASE 318
+# STYLE 21 outline sheet's own style list (page 7: "STYLE 21: PIN 1.
+# GATE / 2. SOURCE / 3. DRAIN") -- exact match, no discrepancy.
+schema_version: "0.1"
+kind: device
+id: onsemi/2N7002E
+
+manufacturer: onsemi
+family: 2N7002E
+
+pins:
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/2N7002E-D
+      page: 1
+      locator: "\"MARKING DIAGRAM & PIN ASSIGNMENT\""
+    - source: onsemi/2N7002E-D
+      page: 7
+      locator: "CASE 318 outline sheet, \"STYLE 21: PIN 1. GATE / 2. SOURCE / 3. DRAIN\""

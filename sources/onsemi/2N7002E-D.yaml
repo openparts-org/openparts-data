@@ -1,0 +1,16 @@
+# Official onsemi datasheet. Content verified directly (not summarized)
+# via pypdf text extraction, with pypdfium2 page-image rendering used to
+# cross-check the graphical pinout/footprint diagrams pypdf could not
+# capture as text.
+schema_version: "0.1"
+kind: source
+id: onsemi/2N7002E-D
+
+publisher: onsemi
+document_id: 2N7002E/D
+document_type: datasheet
+
+revision: "8"
+date: "2023-10"
+
+url: "https://www.onsemi.com/download/data-sheet/pdf/2n7002e-d.pdf"

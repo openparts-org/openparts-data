@@ -1,0 +1,22 @@
+# 100nF (0.1uF), X7R dielectric, +/-10% tolerance, 16VDC ceramic chip
+# capacitor. Capacitance/tolerance/voltage/dielectric codes decoded per
+# the general datasheet's Ordering Information legend (page 2) and
+# independently confirmed against the part-specific spec sheet's own
+# directly-stated values (page 1: "Capacitance 0.1uF", "Tolerance 10%",
+# "Voltage DC 16 VDC", "Temp. Coefficient X7R") -- both agree exactly.
+schema_version: "0.1"
+kind: device
+id: kemet/C0402C104K
+
+manufacturer: kemet
+family: C0402C
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+
+provenance:
+  "/pins":
+    - source: kemet/C1002_X7R
+      page: 2
+      locator: "Ordering Information legend: capacitance code \"104\" = 0.1uF, tolerance \"K\" = +/-10%, voltage \"4\" = 16VDC, dielectric \"R\" = X7R"

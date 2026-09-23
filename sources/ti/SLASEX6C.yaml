@@ -1,0 +1,17 @@
+# Official TI datasheet for the MSPM0G350x family. Content verified
+# directly (not summarized) via pypdf + pdfplumber text/table
+# extraction of the real 127-page PDF, including coordinate-based
+# reconstruction of the rotated pin-diagram labels (cross-checked
+# against the structured pin-mapping table, zero discrepancies).
+schema_version: "0.1"
+kind: source
+id: ti/SLASEX6C
+
+publisher: ti
+document_id: SLASEX6C
+document_type: datasheet
+
+revision: "C"
+date: "2025-10"
+
+url: "https://www.ti.com/lit/ds/symlink/mspm0g3507.pdf"

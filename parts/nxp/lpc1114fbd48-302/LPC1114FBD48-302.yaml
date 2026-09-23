@@ -1,0 +1,43 @@
+# MPN confirmed directly from Table 1 "Ordering information" (page 5):
+# "LPC1114FBD48/302 | LQFP48 | LQFP48: plastic low profile quad flat
+# package; 48 leads; body 7 x 7 x 1.4 mm | SOT313-2". Ordering-options
+# breakdown (Table 2, page 7): LPC1100L series, 32KB flash, 8KB SRAM,
+# power profiles enabled, F temp grade (-40 to +85C, footnote [1] p.8).
+#
+# lifecycle.status: active is confirmed from the datasheet's own
+# "Data sheet status" table (Section 18.1, page 124): this document is
+# labeled "Product data sheet" on its cover, and the status legend
+# states "Product [short] data sheet -> Production -> This document
+# contains the product specification" (the other two possible labels,
+# "Objective"/"Preliminary", map to Development/Qualification instead).
+# The same page's footnote [3] adds the standard caveat that product
+# status may have changed since publication -- recorded honestly, not
+# omitted.
+schema_version: "0.1"
+kind: part
+id: nxp/LPC1114FBD48-302
+
+manufacturer: nxp
+mpn: LPC1114FBD48/302
+
+device: nxp/LPC1114-302
+package: standards/LQFP48-7x7-P0.5
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - nxp/LPC111X
+
+provenance:
+  "/existence":
+    - source: nxp/LPC111X
+      page: 5
+      locator: "Table 1, \"Ordering information\""
+  "/lifecycle":
+    - source: nxp/LPC111X
+      page: 124
+      locator: "Section 18.1 \"Data sheet status\": cover labeled \"Product data sheet\" -> \"Production\" per the status legend; footnote [3] notes status may have changed since publication"

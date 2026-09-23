@@ -1,0 +1,25 @@
+# Official Infineon datasheet for the XMC1100 AB-step series. Content
+# verified directly (not summarized) via pypdf text extraction, with
+# pypdfium2 page-image rendering used to visually cross-check the
+# package-outline drawing and pin diagram (WebFetch's built-in
+# extraction failed on this PDF; downloaded and parsed directly per the
+# verified-data-entry skill).
+#
+# The fetch URL's filename slug reads "v01_09", but the document's own
+# title page/footers/Revision History all consistently stamp "V2.1,
+# 2025-06-30" -- recorded here as the in-document revision (trusted
+# over the URL slug, which is very likely just a stale CDN filename),
+# per this dataset's policy of not silently picking between conflicting
+# signals without disclosing the conflict.
+schema_version: "0.1"
+kind: source
+id: infineon/xmc1100-datasheet-v2.1
+
+publisher: infineon
+document_id: IFX-zyd1719306839235
+document_type: datasheet
+
+revision: "2.1"
+date: "2025-06-30"
+
+url: "https://www.infineon.com/dgdl/Infineon-xmc1100_AB-DataSheet-v01_09-EN.pdf?fileId=5546d4624a0bf290014a4bdaff9325bd"

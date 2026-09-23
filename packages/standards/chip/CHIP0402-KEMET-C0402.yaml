@@ -1,0 +1,48 @@
+# KEMET 0402 (EIA)/1005 (metric) case size, confirmed from the general
+# X7R MLCC family datasheet's "Dimensions" table (page 3) and
+# independently cross-checked against the part-specific auto-generated
+# spec sheet for C0402C104K4RACTU (page 1) -- both agree exactly.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP0402-KEMET-C0402
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.00
+    min: 0.95
+    max: 1.05
+    unit: mm
+  body_width:
+    nominal: 0.50
+    min: 0.45
+    max: 0.55
+    unit: mm
+  body_height:
+    nominal: 0.50
+    min: 0.45
+    max: 0.55
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: kemet/C1002_X7R
+      page: 3
+      locator: "Dimensions table, EIA 0402/Metric 1005 row, symbol \"L\" (1.00mm +/-0.05mm)"
+  "/dimensions/body_width":
+    - source: kemet/C1002_X7R
+      page: 3
+      locator: "Dimensions table, EIA 0402/Metric 1005 row, symbol \"W\" (0.50mm +/-0.05mm)"
+  "/dimensions/body_height":
+    - source: kemet/C1002_X7R
+      page: 9
+      locator: "Table 2A, thickness code \"BB\", case 0402: \"0.50 +/- 0.05mm\" (the only thickness code listed for 0402 in this table)"

@@ -1,0 +1,68 @@
+# Infineon PG-VQFN-24-19 ("very thin QFN"), 4x4mm body, 0.5mm pitch --
+# confirmed from the XMC1100 datasheet's Figure 25 package-outline
+# drawing (page 49) and Table 33 thermal-characteristics table
+# (exposed-pad size, page 46).
+#
+# body_height and exposed_pad width/length are recorded as the single
+# value the datasheet actually states (a bare "0.9 MAX" for height, no
+# separate min/nominal; a bare "2.7 x 2.7" for the exposed pad, no
+# stated tolerance) -- not padded out with an invented min/nominal/max
+# spread.
+schema_version: "0.1"
+kind: package
+id: standards/QFN24-XMC1100
+
+family: qfn
+lead_count: 24
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 4.0
+    min: 3.9
+    max: 4.1
+    unit: mm
+  body_length:
+    nominal: 4.0
+    min: 3.9
+    max: 4.1
+    unit: mm
+  body_height:
+    max: 0.9
+    unit: mm
+  exposed_pad:
+    width:
+      nominal: 2.7
+      unit: mm
+    length:
+      nominal: 2.7
+      unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/pitch":
+    - source: infineon/xmc1100-datasheet-v2.1
+      page: 49
+      locator: "Figure 25 package-outline drawing, dimension line \"5 x 0.5 = 2.5\""
+  "/dimensions/body_width":
+    - source: infineon/xmc1100-datasheet-v2.1
+      page: 49
+      locator: "Figure 25, top-view/side-view dimension \"4 +/- 0.1\" (same value both axes, square body)"
+  "/dimensions/body_length":
+    - source: infineon/xmc1100-datasheet-v2.1
+      page: 49
+      locator: "Figure 25, top-view/side-view dimension \"4 +/- 0.1\" (same value both axes, square body)"
+  "/dimensions/body_height":
+    - source: infineon/xmc1100-datasheet-v2.1
+      page: 49
+      locator: "Figure 25, side-view dimension \"0.9 MAX.\" -- no separate min/nominal given"
+  "/dimensions/exposed_pad":
+    - source: infineon/xmc1100-datasheet-v2.1
+      page: 46
+      locator: "Table 33 \"Thermal Characteristics of the Packages\", row \"Exposed Die Pad Dimensions Ex x Ey ... Max. 2.7 x 2.7 mm\" -- no separate tolerance given"

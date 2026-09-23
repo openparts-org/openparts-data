@@ -1,0 +1,17 @@
+# KEMET Electronics Corporation is operated as part of YAGEO Group
+# (confirmed directly from its own datasheet headers/footers: served
+# from search.kemet.com, "YAGEOGroup.com" branding throughout, part
+# spec sheet copyright "(c) 2006-2026 YAGEO"). Kept as its own
+# manufacturer entry since parts are branded/sold as KEMET (MPN scheme,
+# datasheet title, distributor listings all use "KEMET"), not YAGEO --
+# yageo.yaml already exists in this dataset as a separate, distinct
+# manufacturer for YAGEO's own directly-branded parts (e.g. RC-series
+# chip resistors).
+schema_version: "0.1"
+kind: manufacturer
+id: kemet
+
+name: KEMET Electronics Corporation (a YAGEO Group brand)
+
+website:
+  url: "https://www.kemet.com"

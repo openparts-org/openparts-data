@@ -1,0 +1,81 @@
+# LPC1114FBD48/302: ARM Cortex-M0, LPC1100L series, 32KB flash / 8KB
+# SRAM, power profiles enabled, -40 to +85C ("F" temp grade). Pinout is
+# specific to Table 8 ("LPC1100 and LPC1100L series: LPC1113/14 pin
+# description table (LQFP48 package)", pages 29-32) -- this table
+# applies to the /301 and /302 ordering options specifically; the
+# LPC1100XL-series /303 variant uses a different pin table (Table 10)
+# with an extended timer-mux pinout, so it is a different Device, not
+# modeled here.
+#
+# `name` uses the pin diagram's own composite label (Fig. 3, page 13),
+# e.g. "PIO2_6" or "RESET/PIO0_0" as printed, not a single selected
+# function. `type` reflects the pin's primary/default role; most pins
+# are multi-function GPIO (`io`) with additional analog/timer/UART/etc.
+# alternate functions available via the IOCONFIG block (Table 6-2-style
+# mux, not individually modeled here -- out of scope for this pass,
+# same policy as this dataset's other MCU pin tables).
+schema_version: "0.1"
+kind: device
+id: nxp/LPC1114-302
+
+manufacturer: nxp
+family: LPC1114
+
+pins:
+  "1":  { name: PIO2_6, type: io }
+  "2":  { name: PIO2_0/DTR/SSEL1, type: io }
+  "3":  { name: RESET/PIO0_0, type: reset }
+  "4":  { name: PIO0_1/CLKOUT/CT32B0_MAT2, type: io }
+  "5":  { name: VSS, type: ground }
+  "6":  { name: XTALIN, type: clock }
+  "7":  { name: XTALOUT, type: clock }
+  "8":  { name: VDD, type: power }
+  "9":  { name: PIO1_8/CT16B1_CAP0, type: io }
+  "10": { name: PIO0_2/SSEL0/CT16B0_CAP0, type: io }
+  "11": { name: PIO2_7, type: io }
+  "12": { name: PIO2_8, type: io }
+  "13": { name: PIO2_1/DSR/SCK1, type: io }
+  "14": { name: PIO0_3, type: io }
+  "15": { name: PIO0_4/SCL, type: io }
+  "16": { name: PIO0_5/SDA, type: io }
+  "17": { name: PIO1_9/CT16B1_MAT0, type: io }
+  "18": { name: PIO3_4, type: io }
+  "19": { name: PIO2_4, type: io }
+  "20": { name: PIO2_5, type: io }
+  "21": { name: PIO3_5, type: io }
+  "22": { name: PIO0_6/SCK0, type: io }
+  "23": { name: PIO0_7/CTS, type: io }
+  "24": { name: PIO2_9, type: io }
+  "25": { name: PIO2_10, type: io }
+  "26": { name: PIO2_2/DCD/MISO1, type: io }
+  "27": { name: PIO0_8/MISO0/CT16B0_MAT0, type: io }
+  "28": { name: PIO0_9/MOSI0/CT16B0_MAT1, type: io }
+  "29": { name: SWCLK/PIO0_10/SCK0/CT16B0_MAT2, type: io }
+  "30": { name: PIO1_10/AD6/CT16B1_MAT1, type: io, alternate_functions: [AD6] }
+  "31": { name: PIO2_11/SCK0, type: io }
+  "32": { name: R/PIO0_11/AD0/CT32B0_MAT3, type: io, alternate_functions: [AD0] }
+  "33": { name: R/PIO1_0/AD1/CT32B1_CAP0, type: io, alternate_functions: [AD1] }
+  "34": { name: R/PIO1_1/AD2/CT32B1_MAT0, type: io, alternate_functions: [AD2] }
+  "35": { name: R/PIO1_2/AD3/CT32B1_MAT1, type: io, alternate_functions: [AD3] }
+  "36": { name: PIO3_0/DTR, type: io }
+  "37": { name: PIO3_1/DSR, type: io }
+  "38": { name: PIO2_3/RI/MOSI1, type: io }
+  "39": { name: SWDIO/PIO1_3/AD4/CT32B1_MAT2, type: io, alternate_functions: [AD4] }
+  "40": { name: PIO1_4/AD5/CT32B1_MAT3/WAKEUP, type: io, alternate_functions: [AD5] }
+  "41": { name: VSS, type: ground }
+  "42": { name: PIO1_11/AD7, type: io, alternate_functions: [AD7] }
+  "43": { name: PIO3_2/DCD, type: io }
+  "44": { name: VDD, type: power }
+  "45": { name: PIO1_5/RTS/CT32B0_CAP0, type: io }
+  "46": { name: PIO1_6/RXD/CT32B0_MAT0, type: io }
+  "47": { name: PIO1_7/TXD/CT32B0_MAT1, type: io }
+  "48": { name: PIO3_3/RI, type: io }
+
+provenance:
+  "/pins":
+    - source: nxp/LPC111X
+      page: 29
+      locator: "Table 8, \"LPC1100 and LPC1100L series: LPC1113/14 pin description table (LQFP48 package)\", spans pages 29-32 (exact per-pin page not individually tracked)"
+    - source: nxp/LPC111X
+      page: 13
+      locator: "Figure 3, pin configuration diagram (visual cross-check, all 48 pins matched exactly)"

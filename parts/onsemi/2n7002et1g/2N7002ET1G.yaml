@@ -1,0 +1,41 @@
+# MPN confirmed directly from the real ordering table on page 1
+# ("ORDERING INFORMATION"): "2N7002ET1G ... SOT-23 (Pb-Free) ... 3000 /
+# Tape & Reel". Three other MPNs share the same silicon/package in that
+# same table (S2N7002ET1G, 2N7002ET7G, S2N7002ET7G), differing only in
+# reel quantity and (S-prefix) AEC-Q101 automotive qualification --
+# 2N7002ET1G picked as the plain, non-automotive, standard-reel-size
+# variant.
+#
+# lifecycle.status: active is NOT stated in the datasheet itself (the
+# 8-page PDF has no lifecycle-status field anywhere) -- it is read from
+# onsemi's own live product page instead, a secondary (but
+# manufacturer-first-party) source, not a datasheet page citation.
+# Disclosed honestly rather than presented as datasheet-confirmed.
+schema_version: "0.1"
+kind: part
+id: onsemi/2N7002ET1G
+
+manufacturer: onsemi
+mpn: 2N7002ET1G
+
+device: onsemi/2N7002E
+package: standards/SOT23-2.90x1.30-P1.90
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - onsemi/2N7002E-D
+
+provenance:
+  "/existence":
+    - source: onsemi/2N7002E-D
+      page: 1
+      locator: "\"ORDERING INFORMATION\" table"
+  "/lifecycle":
+    - source: onsemi/2N7002E-D
+      page: 1
+      locator: "Not stated in the datasheet itself -- status read from onsemi's live product page (onsemi.com/products/discrete-power-modules/mosfets/2n7002e), which lists 2N7002ET1G as \"Active\""

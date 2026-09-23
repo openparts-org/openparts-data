@@ -1,0 +1,44 @@
+# MPN: "XMC1100-Q024F0032" is the exact base derivative code confirmed
+# directly from Table 1 "Synopsis of XMC1100 Device Types" (page 6):
+# VQFN-24 package, 32KB flash, 16KB SRAM. The datasheet itself states
+# (page 5, section 1.1 Ordering Information) "For ordering codes for
+# the XMC1100 please contact your sales representative or local
+# distributor" -- it does NOT spell out a full orderable string with a
+# silicon-step suffix in this table. Infineon's own live product-catalog
+# page (infineon.com/part/XMC1100-Q024F0032-AB) lists the fully
+# suffixed orderable part as "XMC1100-Q024F0032-AB" ("AB" matching the
+# datasheet's own title, "XMC1100 AB-Step"), but that suffix is not
+# itself datasheet-table-confirmed -- so the MPN field below uses the
+# datasheet-confirmed base code, not the catalog-page suffixed string.
+#
+# lifecycle.status: not stated explicitly anywhere in the datasheet (no
+# "Product Preview"/"Advance Information"/"Preliminary"/"NRND"/
+# "Obsolete" language found on the title page, Ordering Information,
+# Quality Declaration, or Revision History sections). Left as unknown
+# rather than inferred from the document's "Datasheet" title or its
+# active revision cadence (V1.8 in 2016 through V2.1 in 2025-06-30),
+# which are suggestive but not an explicit statement.
+schema_version: "0.1"
+kind: part
+id: infineon/XMC1100-Q024F0032
+
+manufacturer: infineon
+mpn: XMC1100-Q024F0032
+
+device: infineon/XMC1100-Q024F0032
+package: standards/QFN24-XMC1100
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - infineon/xmc1100-datasheet-v2.1
+
+provenance:
+  "/existence":
+    - source: infineon/xmc1100-datasheet-v2.1
+      page: 6
+      locator: "Table 1 \"Synopsis of XMC1100 Device Types\""

@@ -1,0 +1,37 @@
+# MPN confirmed directly from KEMET's own part-specific spec sheet
+# title/header: "C0402C104K4RACTU". That same document explicitly lists
+# "C0402C104K4RAC7867" as an "Alias" of the identical physical part
+# (same series/case/electrical spec, differing only in packaging
+# C-Spec suffix) -- both orderable codes refer to the same component.
+#
+# lifecycle.status: no explicit production-status statement was found
+# in either the general datasheet or the part-specific spec sheet (both
+# fully read, no lifecycle field present in either). Distributor
+# listings (Digikey/Mouser/TME/Arrow/TTI) suggest current availability
+# but were not independently fetched/verified as a primary source, so
+# lifecycle is left unset here rather than guessed, per this dataset's
+# honesty discipline.
+schema_version: "0.1"
+kind: part
+id: kemet/C0402C104K4RACTU
+
+manufacturer: kemet
+mpn: C0402C104K4RACTU
+
+device: kemet/C0402C104K
+package: standards/CHIP0402-KEMET-C0402
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - kemet/C1002_X7R
+
+provenance:
+  "/existence":
+    - source: kemet/C1002_X7R
+      page: 1
+      locator: "Part-specific spec sheet title/header: \"C0402C104K4RACTU\", with \"C0402C104K4RAC7867\" listed as an Alias of the same part"

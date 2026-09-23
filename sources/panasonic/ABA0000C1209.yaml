@@ -1,0 +1,29 @@
+# Official Panasonic Industry "FC-A series" radial-lead aluminum
+# electrolytic capacitor catalog sheet. Content verified directly (not
+# summarized) via pypdf text extraction (layout mode, to preserve table
+# columns); WebFetch's built-in extraction failed on this PDF.
+#
+# The PDF's own /Title metadata says "FC series catalog" (a naming
+# inconsistency in Panasonic's own file metadata) -- the visible
+# in-document content on every page unambiguously reads "FC-A series" /
+# "Radial Lead Type", which is used here.
+#
+# Two different dates appear and are not reconciled: PDF /ModDate is
+# 2025-10-31, but every page's footer also prints a content-revision-
+# looking date "01-Sep-25" (2025-09-01) next to a safety-contact notice.
+# `date` below uses the page-footer content date, since /ModDate more
+# plausibly reflects a file re-export than a content revision; recorded
+# honestly as a judgment call, not a directly-stated single "revision
+# date" field.
+schema_version: "0.1"
+kind: source
+id: panasonic/ABA0000C1209
+
+publisher: panasonic
+document_id: ABA0000C1209
+document_type: datasheet
+
+revision: "ABA0000C1209"
+date: "2025-09-01"
+
+url: "https://industrial.panasonic.com/cdbs/www-data/pdf/RDF0000/ABA0000C1209.pdf"

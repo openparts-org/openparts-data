@@ -1,0 +1,57 @@
+# XMC1100 AB-step, VQFN-24 variant, 32KB flash / 16KB SRAM. Pinout
+# confirmed two independent ways: Table 6 "Package Pin Mapping" (pages
+# 13-14, structured function/pin-number table) and a visual re-read of
+# Figure 6 "XMC1100 PG-VQFN-24 Pin Configuration (top view)" (page 11)
+# -- both matched exactly, pin-for-pin.
+#
+# Pad-type key (Table 5/6, page 12, datasheet's own definitions):
+# STD_INOUT = standard bidirectional digital I/O; STD_INOUT/AN =
+# bidirectional I/O with analog input capability; STD_IN/AN =
+# input-only pad with analog input capability; High Current =
+# bidirectional I/O with a high-current driver.
+schema_version: "0.1"
+kind: device
+id: infineon/XMC1100-Q024F0032
+
+manufacturer: infineon
+family: XMC1100
+
+pins:
+  "1":  { name: P2.0, type: io }
+  "2":  { name: P2.1, type: io }
+  "3":  { name: P2.2, type: input }
+  "4":  { name: P2.6, type: input }
+  "5":  { name: P2.7/P2.8, type: input }
+  "6":  { name: P2.9, type: input }
+  "7":  { name: P2.10, type: io }
+  "8":  { name: P2.11, type: io }
+  "9":  { name: VSSP/VSS, type: ground }
+  "10": { name: VDDP/VDD, type: power }
+  "11": { name: P1.3, type: io }
+  "12": { name: P1.2, type: io }
+  "13": { name: P1.1, type: io }
+  "14": { name: P1.0, type: io }
+  "15": { name: P0.0, type: io }
+  "16": { name: P0.5, type: io }
+  "17": { name: P0.6, type: io }
+  "18": { name: P0.7, type: io }
+  "19": { name: P0.8, type: io }
+  "20": { name: P0.9, type: io }
+  "21": { name: P0.12, type: io }
+  "22": { name: P0.13, type: io }
+  "23": { name: P0.14, type: io }
+  "24": { name: P0.15, type: io }
+  "EP": { name: VSSP, type: ground }
+
+provenance:
+  "/pins":
+    - source: infineon/xmc1100-datasheet-v2.1
+      page: 13
+      locator: "Table 6 \"Package Pin Mapping\", VQFN-24 column (pages 13-14)"
+    - source: infineon/xmc1100-datasheet-v2.1
+      page: 11
+      locator: "Figure 6, \"XMC1100 PG-VQFN-24 Pin Configuration (top view)\" (visual cross-check, all 24 pins + EP matched exactly)"
+  "/pins/EP":
+    - source: infineon/xmc1100-datasheet-v2.1
+      page: 14
+      locator: "Table 6: \"connected internally to VSSP... mandatory to connect the exposed pad to the board ground\""

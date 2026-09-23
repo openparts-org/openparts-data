@@ -1,0 +1,38 @@
+# MPN confirmed directly from the "Characteristics list" ordering table
+# (page 3), row: rated voltage 6.3V, capacitance 330uF, phiD 6.3,
+# L 11.2, "Part No. EEUFC0J331S( )" -- the "( )" is where an optional
+# taping-suffix letter (B or H) goes for taped variants; the base
+# straight-lead part is EEUFC0J331S with nothing inserted.
+#
+# lifecycle.status: left as unknown, not "active". The same ordering
+# table (pages 3-4) explicitly flags 6 other, unrelated rows (larger
+# case sizes/capacitances) as "EOL" (End of life) via a dedicated
+# column -- EEUFC0J331S carries no such flag -- but that is an absence
+# of a negative marker, not a positive "active"/"in production"
+# statement, and the datasheet's page-1 disclaimer notes generically
+# that "some part numbers are discontinued" without naming which ones.
+# Not distributor-verified.
+schema_version: "0.1"
+kind: part
+id: panasonic/EEUFC0J331S
+
+manufacturer: panasonic
+mpn: EEUFC0J331S
+
+device: panasonic/EEUFC0J331
+package: standards/RADIAL-D6.3x11.2-P2.5
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - panasonic/ABA0000C1209
+
+provenance:
+  "/existence":
+    - source: panasonic/ABA0000C1209
+      page: 3
+      locator: "\"Characteristics list\" table, \"Part No.\" column: \"EEUFC0J331S( )\""

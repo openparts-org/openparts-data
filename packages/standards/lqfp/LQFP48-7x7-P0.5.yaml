@@ -3,6 +3,26 @@
 # this exact mechanical outline can reference this same package. Values
 # confirmed from STMicroelectronics DS5319 Rev 18, section 6.8 "LQFP48
 # package information", Table 61 "LQFP48 mechanical data" (page 101).
+#
+# Cross-checked against a second, unrelated manufacturer's own
+# package-outline drawing: NXP's LPC111X datasheet (Rev. 9.2), Fig. 60
+# "Package outline SOT313-2 (LQFP48)" (page 109), JEDEC outline MS-026.
+# pitch (0.5mm) and body_height/A2 (min 1.35 / max 1.45mm) match this
+# file's values exactly. body_width/body_length: NXP states a narrower
+# tolerance band for D/E, min 6.9 / max 7.1mm, vs. this file's
+# ST-sourced min 6.8 / max 7.2mm -- same 7.0mm nominal, but the two
+# datasheets don't agree on the tolerance width. Recorded here as an
+# honest discrepancy rather than silently merged or picked; this file's
+# numeric values are left as ST's own (unchanged), since that's the
+# already-validated source for this entry -- not a claim that NXP's
+# narrower band is wrong.
+#
+# Cross-checked against a third manufacturer's own package-outline
+# drawing: Texas Instruments' MSPM0G3507 datasheet (SLASEX6C, Rev. C),
+# package "PT0048A" (page 114). Body-only D1xE1: min 6.8 / max 7.2mm
+# (exact match to this file's ST-sourced values); A2 body thickness:
+# min 1.35 / max 1.45mm (exact match); pitch: 0.5mm (exact match). No
+# discrepancy with this file's values.
 schema_version: "0.1"
 kind: package
 id: standards/LQFP48-7x7-P0.5

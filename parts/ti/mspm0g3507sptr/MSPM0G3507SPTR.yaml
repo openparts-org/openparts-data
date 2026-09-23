@@ -1,0 +1,39 @@
+# MPN confirmed directly from Table 5-1 "Device Comparison" (page 6:
+# "MSPM0G3507SPTR ... LQFP (0.5mm pitch) [9mm x 9mm]") and the Package
+# Option Addendum ordering table (page 97: "MSPM0G3507SPTR | Active
+# Production | LQFP (PT) | 48 ... -40 to 125 | M0G3507S").
+#
+# lifecycle.status: active is confirmed directly from the datasheet's
+# own Package Option Addendum table (page 97), literal field
+# "Status(1): Active Production" -- a real datasheet-stated status
+# field, not an inference. Also consistent with the device-nomenclature
+# section (page 77): the "M0" platform code denotes "Fully qualified
+# production device" (vs. "X"/"XMS" for experimental).
+schema_version: "0.1"
+kind: part
+id: ti/MSPM0G3507SPTR
+
+manufacturer: ti
+mpn: MSPM0G3507SPTR
+
+device: ti/MSPM0G3507
+package: standards/LQFP48-7x7-P0.5
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLASEX6C
+
+provenance:
+  "/existence":
+    - source: ti/SLASEX6C
+      page: 6
+      locator: "Table 5-1 \"Device Comparison\""
+  "/lifecycle":
+    - source: ti/SLASEX6C
+      page: 97
+      locator: "Package Option Addendum table, field \"Status(1): Active Production\""

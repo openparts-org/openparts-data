@@ -1,0 +1,18 @@
+# Official NXP datasheet, covering the whole LPC1110/11/12/13/14/15
+# family across 3 sub-series and 6 packages. Content verified directly
+# (not summarized) via pypdf + pdfplumber text/table extraction of the
+# real 127-page PDF (WebFetch's built-in extraction failed on this
+# file; downloaded and parsed directly per the verified-data-entry
+# skill).
+schema_version: "0.1"
+kind: source
+id: nxp/LPC111X
+
+publisher: nxp
+document_id: LPC111X
+document_type: datasheet
+
+revision: "9.2"
+date: "2014-03-26"
+
+url: "https://www.nxp.com/docs/en/data-sheet/LPC111X.pdf"
