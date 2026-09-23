@@ -1,0 +1,117 @@
+# Pinout transcribed from Nordic Semiconductor nRF52840 Product
+# Specification 4413_417 v1.11, section 7.1.2 "QFN48 pin assignments"
+# (Table 62, pages 930-931). Not the aQFN73 variant (section 7.1.1) --
+# aQFN73 uses BGA-style alphanumeric ball positions (an area-array
+# package, e.g. "A8", "B1"), which openparts-mcad's QFN generator
+# cannot represent (it only models perimeter packages with
+# sequentially-numbered leads); QFN48 uses real sequential 1-48
+# perimeter numbering that fits the existing generator directly. Real,
+# separately orderable part -- not a substitute or approximation (see
+# parts/nordic/nrf52840/nRF52840-QFAA-F-R.yaml's own note on the
+# QFN48-specific limitations this variant carries: no USBD, VDD/VDDH
+# shorted internally).
+#
+# `name` uses each pin's GPIO port.pin label (e.g. "P0.00") where one
+# exists; a handful of pins (SWDIO/SWDCLK/ANT/XC1/XC2/NC/DCC/DEC1-6 and
+# the VDD/VSS/VSS_PA supply pins) have no GPIO name at all, per the
+# table's own "Pin Name" column.
+#
+# `type: clock` is used only for XC1/XC2 (the 32MHz crystal pins, no
+# GPIO name, Table 62's own Function column: "Analog input") -- P0.00/
+# XL1 and P0.01/XL2 (the 32.768kHz crystal pins) keep `type: io` since
+# they DO have a real GPIO name, mirroring this dataset's STM32F103C8
+# PC14-OSC32_IN/PC15-OSC32_OUT precedent (a dedicated non-GPIO
+# oscillator pin is `clock`; a GPIO pin that merely defaults to an
+# oscillator function is `io`).
+#
+# `alternate_functions` is populated only with each pin's AINx analog
+# input channel where the table lists one (P0.02/.03/.04/.05/.28/.29/
+# .30/.31) -- not the full TRACEDATA/TRACECLK/NFC/QSPI alternate-
+# function set also present on these and other pins, out of scope for
+# this pass, matching this dataset's other MCU devices.
+#
+# The exposed die pad (Table 62: "Die pad VSS ... must be connected to
+# ground") is modeled as pin key "EP" per Canonical Data Specification
+# section 14, matching RP2040's own exposed-pad convention -- its
+# numeric footprint outline isn't given in this document either (see
+# the package file), so it produces no separate footprint lead, only
+# the electrical fact that it exists and must be grounded.
+schema_version: "0.1"
+kind: device
+id: nordic/nRF52840
+
+manufacturer: nordic
+family: nRF52840
+
+pins:
+  "1":  { name: DEC1, type: power }
+  "2":  { name: P0.00, type: io }
+  "3":  { name: P0.01, type: io }
+  "4":  { name: P0.04, type: io, alternate_functions: [AIN2] }
+  "5":  { name: P0.05, type: io, alternate_functions: [AIN3] }
+  "6":  { name: P0.07, type: io }
+  "7":  { name: P0.08, type: io }
+  "8":  { name: P1.08, type: io }
+  "9":  { name: P1.09, type: io }
+  "10": { name: P0.11, type: io }
+  "11": { name: P0.12, type: io }
+  "12": { name: VDD, type: power }
+  "13": { name: P0.13, type: io }
+  "14": { name: P0.14, type: io }
+  "15": { name: P0.17, type: io }
+  "16": { name: P0.18, type: io }
+  "17": { name: VDD, type: power }
+  "18": { name: P0.19, type: io }
+  "19": { name: P0.20, type: io }
+  "20": { name: P0.21, type: io }
+  "21": { name: P0.22, type: io }
+  "22": { name: P0.23, type: io }
+  "23": { name: P0.24, type: io }
+  "24": { name: P1.00, type: io }
+  "25": { name: VDD, type: power }
+  "26": { name: SWDIO, type: io }
+  "27": { name: SWDCLK, type: input }
+  "28": { name: NC, type: nc }
+  "29": { name: P0.09, type: io }
+  "30": { name: P0.10, type: io }
+  "31": { name: ANT, type: passive }
+  "32": { name: VSS_PA, type: ground }
+  "33": { name: DEC6, type: power }
+  "34": { name: DEC3, type: power }
+  "35": { name: XC1, type: clock }
+  "36": { name: XC2, type: clock }
+  "37": { name: VDD, type: power }
+  "38": { name: P1.15, type: io }
+  "39": { name: P0.03, type: io, alternate_functions: [AIN1] }
+  "40": { name: P0.02, type: io, alternate_functions: [AIN0] }
+  "41": { name: P0.28, type: io, alternate_functions: [AIN4] }
+  "42": { name: P0.29, type: io, alternate_functions: [AIN5] }
+  "43": { name: P0.30, type: io, alternate_functions: [AIN6] }
+  "44": { name: P0.31, type: io, alternate_functions: [AIN7] }
+  "45": { name: VSS, type: ground }
+  "46": { name: DEC4, type: power }
+  "47": { name: DCC, type: power }
+  "48": { name: VDD, type: power }
+  "EP": { name: VSS, type: ground }
+
+provenance:
+  "/pins/1/name":
+    - source: nordic/4413_417@v1.11
+      page: 930
+      locator: "Table 62, \"QFN48 pin assignments\", \"Left side of the chip\" (pins 1-12)"
+  "/pins/13/name":
+    - source: nordic/4413_417@v1.11
+      page: 930
+      locator: "Table 62, \"Bottom side of chip\" (pins 13-24)"
+  "/pins/25/name":
+    - source: nordic/4413_417@v1.11
+      page: 930
+      locator: "Table 62, \"Right side of the chip\" (pins 25-36)"
+  "/pins/37/name":
+    - source: nordic/4413_417@v1.11
+      page: 931
+      locator: "Table 62, \"Top side of the chip\" (pins 37-48)"
+  "/pins/EP/name":
+    - source: nordic/4413_417@v1.11
+      page: 931
+      locator: "Table 62, \"Backside of the chip\", \"Die pad\""

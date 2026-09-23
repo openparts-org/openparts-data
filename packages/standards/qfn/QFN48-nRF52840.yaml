@@ -1,0 +1,57 @@
+# nRF52840's QFN48 variant (order code prefix "QF"): 6x6mm, 0.4mm pitch
+# -- a different, larger body than ESP32's own QFN48
+# (standards/QFN48-ESP32.yaml, 5x5mm/0.35mm pitch), confirming QFN48
+# body size isn't standardized across vendors the way LQFP/SOIC are, so
+# this is its own device-specific package file rather than a shared
+# generic one (matching QFN48-ESP32.yaml's own precedent).
+#
+# Confirmed from Nordic nRF52840 Product Specification 4413_417 v1.11,
+# Table 103 "Package variant codes" (page 976): "QF QFN 6 x 6 48 0.4".
+#
+# No `body_height`/`exposed_pad` dimensions given anywhere in this
+# document (unlike RP2040's QFN56, which documents an exposed pad
+# exists but also leaves its numeric outline unspecified for the same
+# reason) -- left unset here rather than guessed; the QFN generator
+# falls back to its own internal approximate body height and omits the
+# exposed pad from generated geometry when these are absent, matching
+# how RP2040's own QFN56 package is already handled.
+schema_version: "0.1"
+kind: package
+id: standards/QFN48-nRF52840
+
+family: qfn
+lead_count: 48
+
+pitch:
+  nominal: 0.4
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 6.0
+    unit: mm
+  body_length:
+    nominal: 6.0
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/lead_count":
+    - source: nordic/4413_417@v1.11
+      page: 976
+      locator: "Table 103, \"Package variant codes\", row \"QF\""
+  "/pitch":
+    - source: nordic/4413_417@v1.11
+      page: 976
+      locator: "Table 103, \"Package variant codes\", row \"QF\""
+  "/dimensions/body_width":
+    - source: nordic/4413_417@v1.11
+      page: 976
+      locator: "Table 103, \"Package variant codes\", row \"QF\" (\"6 x 6\")"
+  "/dimensions/body_length":
+    - source: nordic/4413_417@v1.11
+      page: 976
+      locator: "Table 103, \"Package variant codes\", row \"QF\" (\"6 x 6\")"

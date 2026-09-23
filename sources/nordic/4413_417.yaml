@@ -1,0 +1,23 @@
+# Official Nordic Semiconductor Product Specification for nRF52840.
+# Downloaded from a DigiKey-hosted copy (mm.digikey.com) -- Nordic's own
+# infocenter.nordicsemi.com direct link was not tried in this session,
+# but the content's own title page and every page footer are stamped
+# "4413_417 v1.11 / 2024-10-01", Nordic's own document/revision
+# numbering, giving high confidence this is the genuine document rather
+# than an altered copy. Content verified via pypdf text extraction
+# (this document's pin-assignment tables, unlike the AVR datasheets
+# used for this dataset's other Microchip parts, extracted cleanly as
+# real text -- no rotated diagram or undecodable embedded font was hit
+# here).
+schema_version: "0.1"
+kind: source
+id: nordic/4413_417@v1.11
+
+publisher: nordic
+document_id: "4413_417"
+document_type: datasheet
+
+revision: "1.11"
+date: "2024-10-01"
+
+url: "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6469/NRF52840-DK.pdf"

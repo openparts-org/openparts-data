@@ -1,0 +1,45 @@
+# MPN confirmed directly from the real order code table (Table 112,
+# page 978): "nRF52840-QFAA-F-R" -- QF (QFN48 package, Table 103) + AA
+# (1024kB flash / 256kB RAM, Table 104) + F (preprogrammed-firmware
+# build code family) + R (13" reel container code). Chosen over the
+# QIAA (aQFN73) order codes since this dataset's Device/Package model
+# the QFN48 variant specifically (see devices/nordic/nRF52840.yaml's
+# own note on why).
+#
+# Real, documented package limitations for this specific variant
+# (section 7.5.1, page 970): the QFN48 package does not support USBD,
+# and VDD/VDDH are short-circuited inside the package (so only Normal
+# Voltage supply mode is usable, not High Voltage mode) -- not modeled
+# as separate Canonical Data fields (no schema field for it yet), noted
+# here so the limitation isn't silently lost.
+#
+# lifecycle.status: active is not an explicit datasheet statement --
+# this document has no "product in full production" style phrase
+# anywhere in the pages checked, and no EOL/NRND notice was found for
+# this specific order code (unlike several QIAA/aQFN73 order codes in
+# the same table, explicitly marked "Not recommended for new designs").
+# Treated as a reasonable inference, not a directly-confirmed fact.
+schema_version: "0.1"
+kind: part
+id: nordic/nRF52840-QFAA-F-R
+
+manufacturer: nordic
+mpn: nRF52840-QFAA-F-R
+
+device: nordic/nRF52840
+package: standards/QFN48-nRF52840
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - nordic/4413_417@v1.11
+
+provenance:
+  "/existence":
+    - source: nordic/4413_417@v1.11
+      page: 978
+      locator: "Table 112, \"nRF52840 order codes\""
