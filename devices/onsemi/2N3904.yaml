@@ -1,0 +1,25 @@
+# NPN general-purpose amplifier/switch, TO-92. Pinout confirmed
+# directly from the "MARKING DIAGRAM" (page 1): "1: Emitter / 2: Base /
+# 3: Collector", bottom view with leads down, left to right -- also
+# cross-checked against the CASE 135AN mechanical drawing (page 7),
+# which numbers the leads 1/2/3 left-to-right in the same order.
+schema_version: "0.1"
+kind: device
+id: onsemi/2N3904
+
+manufacturer: onsemi
+family: 2N3904
+
+pins:
+  "1": { name: Emitter, type: passive }
+  "2": { name: Base, type: passive }
+  "3": { name: Collector, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/2N3904-D
+      page: 1
+      locator: "\"MARKING DIAGRAM\": \"1: Emitter / 2: Base / 3: Collector\""
+    - source: onsemi/2N3904-D
+      page: 7
+      locator: "CASE 135AN drawing, leads numbered 1/2/3 left-to-right (cross-check, matches)"

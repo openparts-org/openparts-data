@@ -1,0 +1,42 @@
+# MPN: "FC-135" is the base/model designator confirmed on every page of
+# the datasheet and on the physical part-marking photo (page 1). This
+# is NOT a single fully-instantiated orderable string -- Epson's own
+# ordering scheme ("[1] Product Number / Product Name", page 2) builds
+# a full order code from this base model plus customer-specified load
+# capacitance (7/9/12.5pF) and tolerance, e.g. the datasheet's own
+# worked example: "FC-135  32.768000kHz  12.5  +20.0-20.0". Recording
+# "FC-135" here as the base designator, disclosed honestly as a family
+# code rather than a single fixed MPN, since the primary datasheet
+# itself gives no single fixed string.
+#
+# lifecycle.status: left as unknown -- no explicit production-status
+# sentence for FC-135 exists in the datasheet (only a marketing note
+# that it "has been used worldwide since its release in 2002", page 1).
+# A separate Epson ordering guide labels sibling packages FC-145/FC-255
+# "Discontinued" with no such label on FC-135 -- suggestive, but an
+# absence-of-label inference, not a direct statement, so not upgraded
+# to "active".
+schema_version: "0.1"
+kind: part
+id: epson/FC-135
+
+manufacturer: epson
+mpn: FC-135
+
+device: epson/FC-135
+package: standards/CHIP-FC135
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - epson/FC-135_E_Ver2.0
+
+provenance:
+  "/existence":
+    - source: epson/FC-135_E_Ver2.0
+      page: 1
+      locator: "Title, Description, and physical part-marking photo"

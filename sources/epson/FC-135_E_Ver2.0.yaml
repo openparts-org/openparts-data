@@ -1,0 +1,21 @@
+# Official Epson datasheet for the FC-135 32.768kHz crystal unit.
+# Content verified directly (not summarized) via pypdf text extraction,
+# with a pypdfium2 page render (page 1, the outline drawing and
+# terminal assignment, vector art absent from the text layer).
+#
+# No explicit issued/revised date field exists in the document body;
+# `date` below uses the copyright-line year ("(c)Seiko Epson
+# Corporation 2025", page 8) as the closest available signal, disclosed
+# as such rather than presented as a stated publication date.
+schema_version: "0.1"
+kind: source
+id: epson/FC-135_E_Ver2.0
+
+publisher: epson
+document_id: FC-135_E_Ver2.0
+document_type: datasheet
+
+revision: "2.0"
+date: "2025"
+
+url: "https://download.epsondevice.com/td/pdf/app/FC-135_en.pdf"

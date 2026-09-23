@@ -1,0 +1,16 @@
+# Official Kingbright datasheet for APT1608EC. Content verified
+# directly (not summarized) via pypdf text extraction, with a
+# pypdfium2 page render (page 1, the mechanical outline drawing and
+# polarity-mark diagram, vector art absent from the text layer).
+schema_version: "0.1"
+kind: source
+id: kingbright/DSAD0924
+
+publisher: kingbright
+document_id: "DSAD0924"
+document_type: datasheet
+
+revision: "V.18A"
+date: "2022-02-19"
+
+url: "https://www.kingbrightusa.com/images/catalog/spec/apt1608ec.pdf"

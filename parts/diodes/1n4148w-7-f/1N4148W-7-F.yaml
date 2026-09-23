@@ -1,0 +1,36 @@
+# MPN confirmed directly from the "Ordering Information" table (page 1,
+# Note 4): "1N4148W-7-F | SOD123 | 3,000 | Tape & Reel". Sibling MPNs in
+# the same table (BAV16W-7-F, 1N4148WQ-7-F automotive, 1N4148W-13-F
+# larger reel) are the identical part with different branding/reel
+# size/automotive qualification.
+#
+# lifecycle.status: left as unknown -- read the entire 5-page datasheet
+# and found no explicit production-status statement anywhere. The
+# manufacturer's own product page (which would carry a status field)
+# was attempted but is behind a Cloudflare JS challenge and could not
+# be read -- not guessed as "active" from the September 2024 revision
+# date alone.
+schema_version: "0.1"
+kind: part
+id: diodes/1N4148W-7-F
+
+manufacturer: diodes
+mpn: 1N4148W-7-F
+
+device: diodes/1N4148W
+package: standards/CHIP-SOD123-DIODES
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - diodes/DS30086
+
+provenance:
+  "/existence":
+    - source: diodes/DS30086
+      page: 1
+      locator: "\"Ordering Information\" table, Note 4"

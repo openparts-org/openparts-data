@@ -1,0 +1,34 @@
+# MPN confirmed directly from the "PARTS TABLE" (page 1): base part
+# number "1N4148" (packaging/ordering codes "1N4148-TAP"/"1N4148TR" for
+# tape-and-reel exist too, but "1N4148" itself is the datasheet's own
+# base orderable designation used throughout).
+#
+# lifecycle.status: left as unknown -- the full 4-page datasheet was
+# read and contains no explicit production-status statement. A
+# secondary check of Vishay's product page found no lifecycle badge
+# either (and was not independently verified as thoroughly as the PDF),
+# so this is not upgraded to "active" from the Nov-2024 revision date.
+schema_version: "0.1"
+kind: part
+id: vishay/1N4148
+
+manufacturer: vishay
+mpn: 1N4148
+
+device: vishay/1N4148
+package: standards/AXIAL-DO35-1N4148
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - vishay/81857
+
+provenance:
+  "/existence":
+    - source: vishay/81857
+      page: 1
+      locator: "\"PARTS TABLE\""

@@ -1,0 +1,51 @@
+# Murata LQG18HN series (EIA 0603 / metric 1608 case, per the "18" size
+# code embedded in the part number and confirmed by measured dimensions
+# matching that industry-standard case -- the literal strings "0603"
+# and "1608" do not appear in Murata's own reference-spec PDF text,
+# so that case-size label itself is an inference from dimensions +
+# distributor corroboration, not a directly-read fact; the dimensions
+# themselves are directly read).
+schema_version: "0.1"
+kind: package
+id: standards/CHIP0603-LQG18HN
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.6
+    min: 1.45
+    max: 1.75
+    unit: mm
+  body_width:
+    nominal: 0.8
+    min: 0.65
+    max: 0.95
+    unit: mm
+  body_height:
+    nominal: 0.8
+    min: 0.65
+    max: 0.95
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: murata/JELF243B_0002Y-01
+      page: 2
+      locator: "Section 5 \"Appearance and Dimensions\" diagram, length 1.6+/-0.15mm"
+  "/dimensions/body_width":
+    - source: murata/JELF243B_0002Y-01
+      page: 2
+      locator: "Section 5 \"Appearance and Dimensions\" diagram, width 0.8+/-0.15mm"
+  "/dimensions/body_height":
+    - source: murata/JELF243B_0002Y-01
+      page: 2
+      locator: "Section 5 \"Appearance and Dimensions\" diagram, height/thickness 0.8+/-0.15mm"

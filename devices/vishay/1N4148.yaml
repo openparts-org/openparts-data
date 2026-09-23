@@ -1,0 +1,18 @@
+# Small-signal fast switching diode, DO-35. Polarity (pin 1 = cathode,
+# pin 2 = anode) follows this dataset's `axial` generator's own
+# convention (grounded in a real KiCad DO-41 reference footprint, see
+# openparts-mcad's axial.rs) and the near-universal band-marks-cathode
+# diode convention -- this specific research pass did not independently
+# re-confirm the cathode-band position from the 1N4148 datasheet's own
+# marking diagram, so this is disclosed as convention-consistent, not
+# separately datasheet-confirmed for this exact part.
+schema_version: "0.1"
+kind: device
+id: vishay/1N4148
+
+manufacturer: vishay
+family: 1N4148
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

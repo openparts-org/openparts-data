@@ -1,0 +1,27 @@
+# High Efficiency Red diffused 5mm through-hole LED. Cathode confirmed
+# from the datasheet's own side-view drawing (page 1: "Cathode" label
+# on the lead nearer the flange's flat-cut marking).
+#
+# Pin numbering (1=Anode, 2=Cathode) follows this dataset's `radial`
+# generator's own established polarity convention (pin 1 = positive,
+# on the left -- set for radial electrolytic capacitors, per
+# openparts-mcad's radial.rs) rather than the datasheet's own "upper
+# lead" framing (which describes a drawing orientation, not a pin
+# numbering scheme) -- applied here for consistency with every other
+# part reusing this family.
+schema_version: "0.1"
+kind: device
+id: kingbright/WP7113ID
+
+manufacturer: kingbright
+family: WP7113ID
+
+pins:
+  "1": { name: Anode, type: passive }
+  "2": { name: Cathode, type: passive }
+
+provenance:
+  "/pins":
+    - source: kingbright/DSAF0012
+      page: 1
+      locator: "Side-view \"PACKAGE DIMENSIONS\" drawing, \"Cathode\" label"

@@ -1,0 +1,31 @@
+# MPN confirmed directly: page 1 header/title, Selection Guide table
+# (Part Number column), and repeated in the page header on pages 2-4.
+#
+# lifecycle.status: left as unknown -- the 4-page datasheet was fully
+# searched (Obsolete/NRND/Active/Discontinued/Status/Lifecycle) with no
+# hits; only generic "specifications subject to change" boilerplate
+# exists (page 4), which is not a lifecycle statement.
+schema_version: "0.1"
+kind: part
+id: kingbright/APT1608EC
+
+manufacturer: kingbright
+mpn: APT1608EC
+
+device: kingbright/APT1608EC
+package: standards/CHIP0603-APT1608EC
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - kingbright/DSAD0924
+
+provenance:
+  "/existence":
+    - source: kingbright/DSAD0924
+      page: 1
+      locator: "Title/header and \"Selection Guide\" table, Part Number column"

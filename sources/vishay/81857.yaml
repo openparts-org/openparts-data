@@ -1,0 +1,16 @@
+# Official Vishay datasheet for 1N4148. Content verified directly (not
+# summarized) via pypdf text extraction (curl download) plus a
+# pypdfium2 page render (page 3, the mechanical dimension drawing,
+# which is vector art absent from the text layer).
+schema_version: "0.1"
+kind: source
+id: vishay/81857
+
+publisher: vishay
+document_id: "81857"
+document_type: datasheet
+
+revision: "1.6"
+date: "2024-11-07"
+
+url: "https://www.vishay.com/docs/81857/1n4148.pdf"

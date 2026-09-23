@@ -1,0 +1,34 @@
+# MPN confirmed directly from the "ORDERING INFORMATION" table
+# (page 6): "2N3904BU | TO-92-3 LF (Pb-Free) | 10000 Units / Bulk Bag".
+# Sibling MPNs in the same table (2N3904TA/TAR/TF/TFR) are the same
+# part in different packaging/shipping formats (fan-fold, tape & reel).
+#
+# lifecycle.status: left as unknown -- all 9 pages were searched
+# (obsolete/NRND/active/discontinued/status/life cycle) with zero
+# hits. The current Oct-2024 revision date and populated ordering
+# table are suggestive of active production but not an explicit
+# statement, so not upgraded to "active".
+schema_version: "0.1"
+kind: part
+id: onsemi/2N3904BU
+
+manufacturer: onsemi
+mpn: 2N3904BU
+
+device: onsemi/2N3904
+package: standards/TO92-2N3904
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/2N3904-D
+
+provenance:
+  "/existence":
+    - source: onsemi/2N3904-D
+      page: 6
+      locator: "\"ORDERING INFORMATION\" table"

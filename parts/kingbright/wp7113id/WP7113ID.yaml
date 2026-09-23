@@ -1,0 +1,33 @@
+# MPN confirmed directly: page 1 title block and "Selection Guide"
+# table (Part Number column), repeated in every page's header/footer.
+#
+# lifecycle.status: left as unknown -- all 5 pages were read in full
+# (description, features, applications, package dimensions, selection
+# guide, absolute max ratings, electrical/optical characteristics,
+# technical data, wave soldering, precautionary notes) with no
+# production-status language found; only a generic "specifications
+# subject to change" disclaimer exists, not a lifecycle statement.
+schema_version: "0.1"
+kind: part
+id: kingbright/WP7113ID
+
+manufacturer: kingbright
+mpn: WP7113ID
+
+device: kingbright/WP7113ID
+package: standards/RADIAL-WP7113ID
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - kingbright/DSAF0012
+
+provenance:
+  "/existence":
+    - source: kingbright/DSAF0012
+      page: 1
+      locator: "Title block and \"Selection Guide\" table, Part Number column"

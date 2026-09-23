@@ -1,0 +1,22 @@
+# Fast switching small-signal diode, SOD123. Polarity confirmed
+# directly from the datasheet's "Mechanical Data" section: "Polarity:
+# Cathode Band" -- the banded end is the cathode. The precise spatial
+# relationship between the printed marking code and the band itself was
+# not visually confirmed (garbled/graphical-only in extraction), only
+# the textual "cathode = banded end" fact.
+schema_version: "0.1"
+kind: device
+id: diodes/1N4148W
+
+manufacturer: diodes
+family: 1N4148W
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: diodes/DS30086
+      page: 1
+      locator: "\"Mechanical Data\": \"Polarity: Cathode Band\""

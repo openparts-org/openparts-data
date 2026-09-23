@@ -1,0 +1,22 @@
+# Official Murata reference specification for the LQG18HN chip
+# inductor series. Content verified directly (not summarized) via
+# pypdf text extraction, with a pypdfium2 page render (page 2, the
+# dimension diagram, vector art absent from the text layer).
+#
+# No explicit "Rev."/issue-date field is printed in the document body;
+# `date` below uses the PDF's own /CreationDate metadata (2025-09-19),
+# disclosed as PDF-metadata-derived, not a datasheet-stated publication
+# date -- same honesty convention used for other sources this session
+# with the same gap (e.g. nichicon/CAT.8100M).
+schema_version: "0.1"
+kind: source
+id: murata/JELF243B_0002Y-01
+
+publisher: murata
+document_id: JELF243B_0002Y-01
+document_type: reference_manual
+
+revision: "JELF243B_0002Y-01"
+date: "2025-09-19"
+
+url: "https://pim.murata.com/asset/pim4/inductor/JELF243B-0002_PDF_INDUCTOR"

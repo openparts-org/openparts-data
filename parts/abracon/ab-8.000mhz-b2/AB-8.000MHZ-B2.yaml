@@ -1,0 +1,41 @@
+# MPN: "AB-8.000MHZ-B2" does NOT appear literally printed anywhere in
+# the primary Abracon datasheet (which only gives the generic
+# templated part-numbering scheme, page 2, not a table of literal
+# orderable SKUs). This exact string was found via a distributor
+# listing (DigiKey) and then independently verified to decode
+# correctly against the primary datasheet's own numbering rules (page
+# 2): "B" = -20 to +70C operating temp, "2" = +/-20ppm frequency
+# tolerance, no CL/stability digits -> standard 18pF/+/-100ppm
+# defaults (page 1). existence.status is set to "probable" rather than
+# "verified" to reflect this: real, correctly-formed, and consistent
+# with the primary source's own rules, but not itself read off a
+# primary-source ordering table.
+#
+# lifecycle.status: left as unknown -- no production-status language
+# appears in the primary 4-page datasheet. A distributor listing
+# separately shows "Lifecycle Status: Active" but that is distributor
+# inventory metadata, not manufacturer-datasheet-confirmed.
+schema_version: "0.1"
+kind: part
+id: abracon/AB-8.000MHZ-B2
+
+manufacturer: abracon
+mpn: AB-8.000MHZ-B2
+
+device: abracon/AB-8MHZ
+package: standards/RADIAL-HC49U-AB
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - abracon/ab-hc49u
+
+provenance:
+  "/existence":
+    - source: abracon/ab-hc49u
+      page: 2
+      locator: "Part-numbering guide rules used to decode/verify the MPN (not a literal ordering-table read -- see comment above)"

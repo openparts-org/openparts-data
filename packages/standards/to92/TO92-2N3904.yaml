@@ -1,0 +1,61 @@
+# onsemi 2N3904 straight-lead TO-92 (JEDEC CASE 135AN), confirmed from
+# the "MECHANICAL CASE OUTLINE / PACKAGE DIMENSIONS" drawing (page 7).
+# Text extraction on this page returned only title-block boilerplate
+# (the dimensions are vector art), so the drawing was rendered to an
+# image (pypdfium2, 4x) and read directly.
+#
+# `nominal` below is this dataset's own midpoint of each stated
+# min/max range (the datasheet gives only min/max on this drawing, no
+# separate nominal) -- disclosed as derived, not datasheet-stated. Note
+# the drawing's own informal title text ("TO-92 3 4.825x4.76") is a
+# rounded label that happens to match these computed midpoints closely,
+# corroborating (not proving) the mapping.
+schema_version: "0.1"
+kind: package
+id: standards/TO92-2N3904
+
+family: to92
+lead_count: 3
+
+pitch:
+  nominal: 1.27
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 4.76
+    min: 4.32
+    max: 5.20
+    unit: mm
+  body_length:
+    nominal: 3.62
+    min: 3.05
+    max: 4.19
+    unit: mm
+  body_height:
+    nominal: 4.825
+    min: 4.32
+    max: 5.33
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: to92
+
+provenance:
+  "/pitch":
+    - source: onsemi/2N3904-D
+      page: 7
+      locator: "CASE 135AN drawing, boxed (basic) lead-pitch dimension 1.27mm (pin1-pin2/pin2-pin3); total span pin1-pin3 boxed as 2.54mm, consistent"
+  "/dimensions/body_width":
+    - source: onsemi/2N3904-D
+      page: 7
+      locator: "CASE 135AN drawing, front elevation, width across the flat face: max 5.20mm / min 4.32mm"
+  "/dimensions/body_length":
+    - source: onsemi/2N3904-D
+      page: 7
+      locator: "CASE 135AN drawing, D-shape cross-section view, depth from flat face to rounded back: max 4.19mm / min 3.05mm"
+  "/dimensions/body_height":
+    - source: onsemi/2N3904-D
+      page: 7
+      locator: "CASE 135AN drawing, front elevation, can height (excludes lead length below body): max 5.33mm / min 4.32mm"

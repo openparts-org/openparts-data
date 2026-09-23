@@ -1,0 +1,52 @@
+# Kingbright APT1608EC, metric 1608 (1.6x0.8mm) case -- the datasheet
+# states this size explicitly but never the EIA imperial code "0603"
+# anywhere in its text (that equivalence is standard outside knowledge,
+# not a read fact). The datasheet gives only single nominal dimensions
+# plus one blanket tolerance note ("Tolerance is +/-0.1mm unless
+# otherwise noted", page 1, Note 2) -- no separate min/max table exists.
+# min/max below are this dataset's own arithmetic (nominal +/- 0.1mm),
+# not Kingbright-printed values; disclosed as derived, not confirmed.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP0603-APT1608EC
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.6
+    min: 1.5
+    max: 1.7
+    unit: mm
+  body_width:
+    nominal: 0.8
+    min: 0.7
+    max: 0.9
+    unit: mm
+  body_height:
+    nominal: 0.75
+    min: 0.65
+    max: 0.85
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: kingbright/DSAD0924
+      page: 1
+      locator: "Top-view mechanical drawing, \"1.6(0.063)\" dimension; min/max derived from the blanket +/-0.1mm tolerance note (Note 2), not separately stated"
+  "/dimensions/body_width":
+    - source: kingbright/DSAD0924
+      page: 1
+      locator: "Top-view mechanical drawing, \"0.8(0.031)\" dimension; min/max derived from the blanket +/-0.1mm tolerance note (Note 2)"
+  "/dimensions/body_height":
+    - source: kingbright/DSAD0924
+      page: 1
+      locator: "Side-view mechanical drawing, \"0.75(0.029)\" dimension; min/max derived from the blanket +/-0.1mm tolerance note (Note 2)"

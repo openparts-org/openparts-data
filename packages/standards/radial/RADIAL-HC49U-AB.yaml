@@ -1,0 +1,66 @@
+# Abracon "AB" series HC-49/U through-hole crystal can. Confirmed from
+# the outline drawing (page 3) and the matching dimension summary box
+# printed on every page header ("11.5 x 5.0 x 13.46mm").
+#
+# The real HC-49/U can is genuinely OVAL (stadium-shaped), not
+# circular: 11.5mm (long axis) x 5.0mm (short axis), unlike this
+# dataset's other `radial` parts (electrolytic capacitors, a dome LED)
+# which are all real circular cylinders. `radial.rs`'s generator only
+# reads `dimensions.body_width` for the can's diameter (a true circle
+# has no separate width/length) -- both body_width/body_length below
+# are set to the LARGER real dimension (11.5mm) so the generated
+# cylinder is a conservative bounding envelope rather than an
+# undersized one; this is a deliberate, disclosed approximation of a
+# non-circular can, not an error.
+schema_version: "0.1"
+kind: package
+id: standards/RADIAL-HC49U-AB
+
+family: radial
+lead_count: 2
+
+pitch:
+  nominal: 4.88
+  min: 4.68
+  max: 5.08
+  unit: mm
+
+dimensions:
+  # `nominal` set equal to each dimension's datasheet-stated max (no
+  # min/nominal given for any of these three) -- the `radial` generator
+  # requires a nominal body_width to build geometry at all, and would
+  # otherwise silently fall back to a generic default for body_height.
+  body_length:
+    nominal: 11.5
+    max: 11.5
+    unit: mm
+  body_width:
+    nominal: 11.5
+    max: 11.5
+    unit: mm
+  body_height:
+    nominal: 13.46
+    max: 13.46
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: radial
+
+provenance:
+  "/pitch":
+    - source: abracon/ab-hc49u
+      page: 3
+      locator: "Outline drawing, lead pitch \"0.192in +/- 0.008in\" (4.88mm +/- 0.20mm)"
+  "/dimensions/body_length":
+    - source: abracon/ab-hc49u
+      page: 1
+      locator: "Per-page dimension summary box \"11.5 x 5.0 x 13.46mm\" -- long axis of the oval can (max only, no min/nominal given); see comment above for why body_length=body_width=11.5mm here"
+  "/dimensions/body_width":
+    - source: abracon/ab-hc49u
+      page: 1
+      locator: "Per-page dimension summary box \"11.5 x 5.0 x 13.46mm\" -- long axis of the oval can (max only, no min/nominal given); see comment above"
+  "/dimensions/body_height":
+    - source: abracon/ab-hc49u
+      page: 1
+      locator: "Per-page dimension summary box \"11.5 x 5.0 x 13.46mm\" -- can height (max only, no min/nominal given)"

@@ -1,0 +1,22 @@
+# Real KiCad footprint reference file, used only to source the axial
+# lead-forming pitch, which Vishay's own 1N4148 datasheet (see
+# vishay/81857) does not state at all -- DO-35's leads are shipped
+# straight (25.4mm min per side) and only get a "pitch" once a board
+# assembler bends and forms them, so no datasheet states one. This is
+# the same "grounded in a real KiCad reference footprint, not invented"
+# policy this project has used for every other family's own generator
+# defaults (e.g. radial.rs's drill/pad-size constants), applied here to
+# a real per-package DATA field instead of a code constant, since pitch
+# varies per real package.
+schema_version: "0.1"
+kind: source
+id: kicad/DO35-P7.62mm
+
+publisher: "KiCad Library Team"
+document_id: "D_DO-35_SOD27_P7.62mm_Horizontal"
+document_type: package_drawing
+
+revision: "master"
+date: "unknown"
+
+url: "https://github.com/KiCad/kicad-footprints/blob/master/Diode_THT.pretty/D_DO-35_SOD27_P7.62mm_Horizontal.kicad_mod"

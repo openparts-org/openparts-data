@@ -1,0 +1,20 @@
+# 10nH, +/-5%, multilayer wirewound chip inductor. Confirmed from the
+# "Part Number and Rating" table (page 1): inductance 10nH, tolerance
+# J (+/-5%), Q min 12, DCR max 0.30 ohm, SRF min 3500MHz, rated current
+# 650mA.
+schema_version: "0.1"
+kind: device
+id: murata/LQG18HN10N
+
+manufacturer: murata
+family: LQG18HN
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+
+provenance:
+  "/pins":
+    - source: murata/JELF243B_0002Y-01
+      page: 1
+      locator: "Section 3 \"Part Number and Rating\" table, row LQG18HN10NJ00D"

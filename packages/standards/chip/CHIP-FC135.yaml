@@ -1,0 +1,52 @@
+# Epson FC-135, 3.2x1.5mm 2-terminal SMD crystal can -- confirmed as
+# genuinely 2-pad (not the more common 4-pad SMD crystal/oscillator
+# style) by visually inspecting the datasheet's own outline drawing and
+# pin-connection table (both pads are crystal electrodes, no separate
+# GND/mechanical pad exists).
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-FC135
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 3.2
+    min: 3.1
+    max: 3.3
+    unit: mm
+  body_width:
+    nominal: 1.5
+    min: 1.4
+    max: 1.6
+    unit: mm
+  body_height:
+    # `nominal` set equal to the datasheet's stated max (0.9mm), not a
+    # midpoint (no min given) -- the `chip` generator falls back to a
+    # generic 0.45mm default when nominal is absent, which would
+    # silently discard this real 0.9mm fact; using it directly instead.
+    nominal: 0.9
+    max: 0.9
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: epson/FC-135_E_Ver2.0
+      page: 1
+      locator: "Outline drawing, \"3.2 +/- 0.1mm\""
+  "/dimensions/body_width":
+    - source: epson/FC-135_E_Ver2.0
+      page: 1
+      locator: "Outline drawing, \"1.5 +/- 0.1mm\""
+  "/dimensions/body_height":
+    - source: epson/FC-135_E_Ver2.0
+      page: 1
+      locator: "Outline drawing, \"t = 0.9mm Max.\" -- no min/nominal stated"

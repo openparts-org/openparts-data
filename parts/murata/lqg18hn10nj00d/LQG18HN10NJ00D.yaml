@@ -1,0 +1,35 @@
+# MPN confirmed directly from the "Part Number and Rating" table
+# (page 1, Section 3): "LQG18HN10NJ00D | 10nH | +/-5% | 12 | 0.30 |
+# 3500 | 650mA".
+#
+# lifecycle.status: left as unknown. This document is a technical
+# reference spec, not a catalog/status page, and carries no lifecycle
+# field. Murata's own live product-detail page is a JS-rendered SPA
+# that could not be fetched/read to check a status field directly;
+# distributor search-result snippets (Mouser/DigiKey/Newark/RS/TME)
+# suggest current availability but were not independently verified, so
+# not upgraded to "active".
+schema_version: "0.1"
+kind: part
+id: murata/LQG18HN10NJ00D
+
+manufacturer: murata
+mpn: LQG18HN10NJ00D
+
+device: murata/LQG18HN10N
+package: standards/CHIP0603-LQG18HN
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - murata/JELF243B_0002Y-01
+
+provenance:
+  "/existence":
+    - source: murata/JELF243B_0002Y-01
+      page: 1
+      locator: "Section 3 \"Part Number and Rating\" table"

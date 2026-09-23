@@ -1,0 +1,21 @@
+# High Efficiency Red SMD chip LED (GaAsP on GaP), 1.6x0.8mm. Polarity
+# confirmed from the page-1 schematic symbol (cathode bar adjacent to
+# pin 1's lead) and the mechanical drawing's own "Polarity mark"
+# leader-line label pointing at the pin-1-side internal marking -- both
+# agree: pin 1 = cathode, pin 2 = anode.
+schema_version: "0.1"
+kind: device
+id: kingbright/APT1608EC
+
+manufacturer: kingbright
+family: APT1608EC
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: kingbright/DSAD0924
+      page: 1
+      locator: "Schematic symbol (cathode bar at pin 1) and mechanical drawing's \"Polarity mark\" label"

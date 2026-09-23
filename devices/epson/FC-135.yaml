@@ -1,0 +1,23 @@
+# 32.768kHz tuning-fork quartz crystal unit. Confirmed 2-pad, both
+# crystal electrodes (no GND/mechanical pad) -- Pin Connection table
+# (page 1): "#1 X'tal", "#2 X'tal" (the datasheet names both pins
+# identically, since a 2-terminal crystal is electrically symmetric;
+# named "XTAL1"/"XTAL2" here only to satisfy this dataset's
+# distinct-pin-name requirement, not because the datasheet
+# distinguishes them).
+schema_version: "0.1"
+kind: device
+id: epson/FC-135
+
+manufacturer: epson
+family: FC-135
+
+pins:
+  "1": { name: "XTAL1", type: passive }
+  "2": { name: "XTAL2", type: passive }
+
+provenance:
+  "/pins":
+    - source: epson/FC-135_E_Ver2.0
+      page: 1
+      locator: "\"Outline Drawing and Terminal Assignment\" / Pin Connection table"

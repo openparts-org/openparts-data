@@ -1,0 +1,21 @@
+# Official Kingbright datasheet for WP7113ID. Content verified directly
+# (not summarized) via pypdf text extraction, with a pypdfium2 page
+# render (page 1, the package-dimensions drawing, vector art absent
+# from the text layer).
+#
+# The footer date "01/08/2026" has no stated DD/MM vs MM/DD format;
+# recorded here as 2026-01-08 (MM/DD, matching the US-site convention
+# and predating today), disclosed as an inference, not a confirmed
+# format.
+schema_version: "0.1"
+kind: source
+id: kingbright/DSAF0012
+
+publisher: kingbright
+document_id: "DSAF0012"
+document_type: datasheet
+
+revision: "V.14A"
+date: "2026-01-08"
+
+url: "https://www.kingbrightusa.com/images/catalog/spec/wp7113id.pdf"

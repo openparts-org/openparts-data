@@ -1,0 +1,15 @@
+# 8MHz fundamental-mode quartz crystal, HC-49/U. A crystal's 2
+# terminals are electrically symmetric/undifferentiated (confirmed:
+# the datasheet's own outline drawing labels both leads only by
+# position, no anode/cathode-style distinction) -- named XTAL1/XTAL2
+# only to satisfy this dataset's distinct-pin-name requirement.
+schema_version: "0.1"
+kind: device
+id: abracon/AB-8MHZ
+
+manufacturer: abracon
+family: AB
+
+pins:
+  "1": { name: "XTAL1", type: passive }
+  "2": { name: "XTAL2", type: passive }

@@ -1,0 +1,16 @@
+# Official onsemi datasheet for 2N3904. Content verified directly (not
+# summarized) via pypdf text extraction, with pypdfium2 page renders
+# (pages 1, 7, 8) for the mechanical outline drawing (vector art absent
+# from the text layer on page 7).
+schema_version: "0.1"
+kind: source
+id: onsemi/2N3904-D
+
+publisher: onsemi
+document_id: 2N3904/D
+document_type: datasheet
+
+revision: "3"
+date: "2024-10"
+
+url: "https://www.onsemi.com/pdf/datasheet/2n3904-d.pdf"

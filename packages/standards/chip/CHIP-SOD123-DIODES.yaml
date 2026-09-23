@@ -1,0 +1,59 @@
+# SOD123 package, confirmed from Diodes Incorporated's BAV16W/1N4148W
+# datasheet (DS30086 Rev 31-2), page 4, "Package Outline Dimensions"
+# table (symbols D/E/A, Min/Typ/Max as given).
+#
+# The datasheet's raw table gives only axis labels (D, E, A, ...) with
+# no accompanying spatial diagram in the extracted text, so the D<->
+# body_length / E<->body_width mapping below is an inference from
+# internal numeric consistency (He, "overall length incl. leads",
+# 3.55-3.85mm, is only slightly larger than E, 2.55-2.85mm -- consistent
+# with E being the long/length axis the leads extend from; D,
+# 1.40-1.70mm, has no such "extended" counterpart, consistent with it
+# being the short/width axis), not a directly-read diagram. Disclosed
+# as probable, not fully confirmed; body_height (symbol A) is
+# unambiguous (a conventional height/thickness symbol in every SOD/SOT
+# drawing) and is confirmed.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-SOD123-DIODES
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 2.65
+    min: 2.55
+    max: 2.85
+    unit: mm
+  body_width:
+    nominal: 1.55
+    min: 1.40
+    max: 1.70
+    unit: mm
+  body_height:
+    nominal: 1.05
+    min: 1.00
+    max: 1.35
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: diodes/DS30086
+      page: 4
+      locator: "Package Outline Dimensions table (SOD123), symbol \"E\" -- axis mapping inferred from He/E consistency, not a directly-read diagram (see comment above)"
+  "/dimensions/body_width":
+    - source: diodes/DS30086
+      page: 4
+      locator: "Package Outline Dimensions table (SOD123), symbol \"D\" -- axis mapping inferred, see comment above"
+  "/dimensions/body_height":
+    - source: diodes/DS30086
+      page: 4
+      locator: "Package Outline Dimensions table (SOD123), symbol \"A\""

@@ -1,0 +1,53 @@
+# Kingbright WP7113ID, 5mm (T-1 3/4) dome LED. Confirmed from the
+# "PACKAGE DIMENSIONS" drawing (page 1, rendered to an image and read
+# directly, since it's vector art).
+#
+# The real part has two distinct diameters: the 5mm lens/dome itself,
+# and a wider 5.9mm mounting flange where the leads exit. body_width/
+# body_length below use the 5mm dome (matching the "T-1 3/4 (5mm)"
+# naming and universal "5mm LED" convention), not the flange -- both
+# values are real and datasheet-confirmed, this is a deliberate choice
+# disclosed here, not an omission.
+schema_version: "0.1"
+kind: package
+id: standards/RADIAL-WP7113ID
+
+family: radial
+lead_count: 2
+
+pitch:
+  nominal: 2.54
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 5.0
+    unit: mm
+  body_width:
+    nominal: 5.0
+    unit: mm
+  body_height:
+    nominal: 8.6
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: radial
+
+provenance:
+  "/pitch":
+    - source: kingbright/DSAF0012
+      page: 1
+      locator: "\"PACKAGE DIMENSIONS\" drawing, lead pitch 2.54mm (0.1in) -- also shown on the \"Recommended PCB Layout\" diagram"
+  "/dimensions/body_length":
+    - source: kingbright/DSAF0012
+      page: 1
+      locator: "\"PACKAGE DIMENSIONS\" drawing, lens/dome diameter phi5mm (0.197in) -- chosen over the 5.9mm flange diameter also shown on the same drawing, see comment above"
+  "/dimensions/body_width":
+    - source: kingbright/DSAF0012
+      page: 1
+      locator: "\"PACKAGE DIMENSIONS\" drawing, lens/dome diameter phi5mm (0.197in), see comment above"
+  "/dimensions/body_height":
+    - source: kingbright/DSAF0012
+      page: 1
+      locator: "\"PACKAGE DIMENSIONS\" drawing, body length (dome tip to flange face, excludes leads) 8.6mm (0.339in)"
