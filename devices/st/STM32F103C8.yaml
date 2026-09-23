@@ -1,0 +1,108 @@
+# Pinout transcribed from STMicroelectronics DS5319 Rev 18, section 3
+# "Pinouts and pin description", Table 5 "Medium-density STM32F103xx
+# pin definitions" (pages 28-33), using the "LQFP48/UFQFPN48" pin-number
+# column specifically (this table covers 7 packages in one grid; other
+# columns' pin numbers do not apply here). Cross-checked against Figure
+# 8 "STM32F103xx performance line LQFP48 pinout" (page 26): both give
+# the same 48-name set with no discrepancy.
+#
+# `name` uses the package-pinout label (Figure 8), e.g. "PA13" rather
+# than Table 5's "Main function (after reset)" column value
+# ("JTMS/SWDIO" for that same pin) -- PA13/PA14/PA15/PB3/PB4 default to
+# JTAG-DP functions at reset per the datasheet and must be remapped in
+# software to use as plain GPIO; not modeled here.
+#
+# `type: clock` is used only for OSC_IN/OSC_OUT (pins 5-6), whose Table
+# 5 Type column is the single-direction "I"/"O" (not "I/O") -- distinct
+# from PC14-OSC32_IN/PC15-OSC32_OUT (pins 3-4), which Table 5 marks
+# "I/O" (full GPIO, defaulting to the 32kHz oscillator function), so
+# those are `type: io` instead, matching the table's own distinction.
+#
+# `alternate_functions` is populated only for the 10 pins whose Table 5
+# "Default" alternate-function column includes an ADCxx_INy signal
+# (PA0-PA7, PB0, PB1) -- deliberately not the full peripheral remap
+# matrix (SPI/USART/TIM/CAN/etc. sharing these and other pins), which
+# is out of scope for this pass; see Table 5's own "Alternate functions"
+# columns for the complete mapping if needed later.
+schema_version: "0.1"
+kind: device
+id: st/STM32F103C8
+
+manufacturer: st
+family: STM32F103
+
+pins:
+  "1":  { name: VBAT, type: power }
+  "2":  { name: PC13-TAMPER-RTC, type: io }
+  "3":  { name: PC14-OSC32_IN, type: io }
+  "4":  { name: PC15-OSC32_OUT, type: io }
+  "5":  { name: OSC_IN, type: clock }
+  "6":  { name: OSC_OUT, type: clock }
+  "7":  { name: NRST, type: reset }
+  "8":  { name: VSSA, type: ground }
+  "9":  { name: VDDA, type: power }
+  "10": { name: PA0-WKUP, type: io, alternate_functions: [ADC12_IN0] }
+  "11": { name: PA1, type: io, alternate_functions: [ADC12_IN1] }
+  "12": { name: PA2, type: io, alternate_functions: [ADC12_IN2] }
+  "13": { name: PA3, type: io, alternate_functions: [ADC12_IN3] }
+  "14": { name: PA4, type: io, alternate_functions: [ADC12_IN4] }
+  "15": { name: PA5, type: io, alternate_functions: [ADC12_IN5] }
+  "16": { name: PA6, type: io, alternate_functions: [ADC12_IN6] }
+  "17": { name: PA7, type: io, alternate_functions: [ADC12_IN7] }
+  "18": { name: PB0, type: io, alternate_functions: [ADC12_IN8] }
+  "19": { name: PB1, type: io, alternate_functions: [ADC12_IN9] }
+  "20": { name: PB2, type: io }
+  "21": { name: PB10, type: io }
+  "22": { name: PB11, type: io }
+  "23": { name: VSS_1, type: ground }
+  "24": { name: VDD_1, type: power }
+  "25": { name: PB12, type: io }
+  "26": { name: PB13, type: io }
+  "27": { name: PB14, type: io }
+  "28": { name: PB15, type: io }
+  "29": { name: PA8, type: io }
+  "30": { name: PA9, type: io }
+  "31": { name: PA10, type: io }
+  "32": { name: PA11, type: io }
+  "33": { name: PA12, type: io }
+  "34": { name: PA13, type: io }
+  "35": { name: VSS_2, type: ground }
+  "36": { name: VDD_2, type: power }
+  "37": { name: PA14, type: io }
+  "38": { name: PA15, type: io }
+  "39": { name: PB3, type: io }
+  "40": { name: PB4, type: io }
+  "41": { name: PB5, type: io }
+  "42": { name: PB6, type: io }
+  "43": { name: PB7, type: io }
+  "44": { name: BOOT0, type: input }
+  "45": { name: PB8, type: io }
+  "46": { name: PB9, type: io }
+  "47": { name: VSS_3, type: ground }
+  "48": { name: VDD_3, type: power }
+
+provenance:
+  "/pins/1/name":
+    - source: st/DS5319@rev18
+      page: 28
+      locator: "Table 5, LQFP48/UFQFPN48 pin numbers 1-9"
+  "/pins/10/name":
+    - source: st/DS5319@rev18
+      page: 29
+      locator: "Table 5, LQFP48/UFQFPN48 pin numbers 10-19"
+  "/pins/20/name":
+    - source: st/DS5319@rev18
+      page: 30
+      locator: "Table 5, LQFP48/UFQFPN48 pin numbers 20-28"
+  "/pins/29/name":
+    - source: st/DS5319@rev18
+      page: 31
+      locator: "Table 5, LQFP48/UFQFPN48 pin numbers 29-36"
+  "/pins/37/name":
+    - source: st/DS5319@rev18
+      page: 32
+      locator: "Table 5, LQFP48/UFQFPN48 pin numbers 37-44"
+  "/pins/45/name":
+    - source: st/DS5319@rev18
+      page: 33
+      locator: "Table 5, LQFP48/UFQFPN48 pin numbers 45-48"

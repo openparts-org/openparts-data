@@ -1,0 +1,22 @@
+# Official STMicroelectronics datasheet for STM32F103x8/STM32F103xB.
+# Content verified directly (not summarized) via pypdf text extraction
+# of a copy matching the "DS5319 Rev 18" document ID stamped in the
+# header of every page ("March 2022 DS5319 Rev 18" on page 1) --
+# st.com's own /resource/en/datasheet/ endpoint currently serves a
+# newer Rev 20 (July 2025) that this session could not fetch directly
+# (connection reset), so `revision`/`date` below reflect the Rev 18
+# copy actually read, not st.com's current revision. `url` still points
+# at st.com's canonical (latest) resource page per this dataset's
+# convention of citing the manufacturer's own URL.
+schema_version: "0.1"
+kind: source
+id: st/DS5319@rev18
+
+publisher: st
+document_id: DS5319
+document_type: datasheet
+
+revision: "18"
+date: "2022-03"
+
+url: "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf"

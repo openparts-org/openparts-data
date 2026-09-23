@@ -1,0 +1,36 @@
+# MPN decoded per DS5319 Rev 18 section 7 "Ordering information scheme"
+# (page 107): STM32 F 103 C 8 T 6 = Arm 32-bit MCU family / general-
+# purpose / performance line / 48-pin / 64KB Flash / LQFP package /
+# industrial temperature range -40 to 85C. The "C8" (48-pin, 64KB Flash)
+# combination is this Part's Device; "T" (LQFP) is its Package -- other
+# real orderable MPNs share the same Device with a different Package
+# (e.g. "...U6" = UFQFPN48) or a different Part with the same Package
+# (e.g. "...R6" = 64-pin LQFP64, a different Device).
+schema_version: "0.1"
+kind: part
+id: st/STM32F103C8T6
+
+manufacturer: st
+mpn: STM32F103C8T6
+
+device: st/STM32F103C8
+package: standards/LQFP48-7x7-P0.5
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - st/DS5319@rev18
+
+provenance:
+  "/existence":
+    - source: st/DS5319@rev18
+      page: 107
+      locator: "Section 7, \"Ordering information scheme\" example \"STM32 F 103 C 8 T 7\""
+  "/lifecycle":
+    - source: st/DS5319@rev18
+      page: 1
+      locator: "\"This is information on a product in full production.\""

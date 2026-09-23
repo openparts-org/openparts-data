@@ -1,0 +1,56 @@
+# Generic JEDEC-standard 48-pin LQFP, 7x7mm body, 0.5mm pitch -- not
+# tied to one manufacturer's die, so any other 48-pin LQFP part sharing
+# this exact mechanical outline can reference this same package. Values
+# confirmed from STMicroelectronics DS5319 Rev 18, section 6.8 "LQFP48
+# package information", Table 61 "LQFP48 mechanical data" (page 101).
+schema_version: "0.1"
+kind: package
+id: standards/LQFP48-7x7-P0.5
+
+family: lqfp
+lead_count: 48
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 7.0
+    min: 6.8
+    max: 7.2
+    unit: mm
+
+  body_length:
+    nominal: 7.0
+    min: 6.8
+    max: 7.2
+    unit: mm
+
+  body_height:
+    nominal: 1.4
+    min: 1.35
+    max: 1.45
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lqfp
+
+provenance:
+  "/pitch":
+    - source: st/DS5319@rev18
+      page: 102
+      locator: "Table 61, symbol \"e\""
+  "/dimensions/body_width":
+    - source: st/DS5319@rev18
+      page: 102
+      locator: "Table 61, symbol \"E1\""
+  "/dimensions/body_length":
+    - source: st/DS5319@rev18
+      page: 101
+      locator: "Table 61, symbol \"D1\""
+  "/dimensions/body_height":
+    - source: st/DS5319@rev18
+      page: 101
+      locator: "Table 61, symbol \"A2\""
