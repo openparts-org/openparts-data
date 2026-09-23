@@ -1,0 +1,26 @@
+# Official Nichicon datasheet for the UVR series ("Miniature Sized.
+# Standard series for entertainment electronics."). Content verified
+# directly (not summarized) via pypdf text extraction of the real PDF
+# fetched from Nichicon's own part page for UVR1C471MPD
+# (https://www.nichicon.com/en-us/part/uvr1c471mpd/9173/), which links
+# to this exact URL.
+#
+# The document has no printed revision number in its own text -- only
+# the catalog number "CAT.8100M" stamped on every page -- so
+# `revision` uses that catalog number, same convention as
+# murata/C02E-16. `date` is the PDF's own `/CreationDate` metadata
+# (2023-08-23), recorded honestly as PDF-metadata-derived rather than
+# a datasheet-stated publication date, since no such date appears in
+# the document's visible text.
+schema_version: "0.1"
+kind: source
+id: nichicon/CAT.8100M
+
+publisher: nichicon
+document_id: CAT.8100M
+document_type: datasheet
+
+revision: "CAT.8100M"
+date: "2023-08-23"
+
+url: "https://www.nichicon.com/getmedia/fbce3bfe-2a92-4d81-8c8d-1bee760e082f/e-uvr.pdf"

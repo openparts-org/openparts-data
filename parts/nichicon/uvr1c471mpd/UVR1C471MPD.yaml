@@ -1,0 +1,37 @@
+# MPN confirmed directly from the real ordering table on page 2 of the
+# UVR datasheet ("16 (1C)" voltage row, "470" capacitance row: case
+# size "8x11.5", part number "UVR1C471MPD"). Also confirmed as a real,
+# currently-listed catalog part via Nichicon's own part page
+# (https://www.nichicon.com/en-us/part/uvr1c471mpd/9173/), which is
+# where this datasheet PDF's URL was found.
+#
+# lifecycle.status: active is not an explicit datasheet statement --
+# this document (CAT.8100M, PDF-metadata date 2023-08-23) has no "full
+# production"/EOL-style phrase anywhere in its 4 pages. Treated as a
+# reasonable inference from the part's current listing on Nichicon's
+# own live part-lookup page, not a directly-confirmed fact -- same
+# honesty caveat as ATtiny85-20SU's part record.
+schema_version: "0.1"
+kind: part
+id: nichicon/UVR1C471MPD
+
+manufacturer: nichicon
+mpn: UVR1C471MPD
+
+device: nichicon/UVR1C471M
+package: standards/RADIAL-D8.0x11.5-P3.5
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - nichicon/CAT.8100M
+
+provenance:
+  "/existence":
+    - source: nichicon/CAT.8100M
+      page: 2
+      locator: "UVR ordering table, rated voltage 16 (code 1C), rated capacitance 470uF row: \"UVR1C471MPD\""

@@ -1,0 +1,55 @@
+# Nichicon UVR series case size "8x11.5" (φD x L, mm): diameter and
+# lead pitch (P) read directly from the dimension table printed on
+# page 1 of the UVR datasheet (the "φD / P / φd" table, case-size
+# column "8"). Body height uses the case's "L" (11.5mm) from the same
+# case-size notation, confirmed against the UVR1C471MPD ordering-table
+# row on page 2 ("470 8x11.5 ... UVR1C471MPD").
+#
+# `φd` (lead diameter, 0.6mm for this case size) is not modeled here:
+# this package's `radial` generator (openparts-mcad) uses its own
+# fixed drill/pad-size defaults taken from a real KiCad reference
+# footprint, not a datasheet-sourced lead diameter -- same policy as
+# every other family's generator-internal defaults.
+schema_version: "0.1"
+kind: package
+id: standards/RADIAL-D8.0x11.5-P3.5
+
+family: radial
+lead_count: 2
+
+pitch:
+  nominal: 3.5
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 8.0
+    unit: mm
+  body_width:
+    nominal: 8.0
+    unit: mm
+  body_height:
+    nominal: 11.5
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: radial
+
+provenance:
+  "/pitch":
+    - source: nichicon/CAT.8100M
+      page: 1
+      locator: "Dimension table (φD / P / φd), case size column \"8\""
+  "/dimensions/body_length":
+    - source: nichicon/CAT.8100M
+      page: 2
+      locator: "UVR1C471MPD ordering row, \"Case Size φD×L (mm)\" = \"8×11.5\""
+  "/dimensions/body_width":
+    - source: nichicon/CAT.8100M
+      page: 2
+      locator: "UVR1C471MPD ordering row, \"Case Size φD×L (mm)\" = \"8×11.5\""
+  "/dimensions/body_height":
+    - source: nichicon/CAT.8100M
+      page: 2
+      locator: "UVR1C471MPD ordering row, \"Case Size φD×L (mm)\" = \"8×11.5\""
