@@ -1,0 +1,28 @@
+# Official Microchip "Data Sheet Complete" for ATmega48A/PA/88A/PA/
+# 168A/PA/328/P (covers ATmega328P). Downloaded directly from
+# ww1.microchip.com (no mirror needed). `document_id`/`revision` from
+# the document's own printed footer stamp ("DS40002061B-page N" on
+# every page) and section 41.1 "Rev. B - 09/2020" (page 646).
+#
+# The Packaging Information section (e.g. page 636) uses an embedded
+# symbol font that pypdf's text extraction cannot decode (returns
+# "/g22/g21/g16/g47..." glyph-index placeholders instead of characters)
+# -- per the verified-data-entry skill, this was NOT treated as
+# readable text (an earlier pattern-matching guess at the glyph codes
+# was discarded); the page was rendered to a PNG image and read
+# directly instead. The Pin Configuration figure (page 12) was also
+# read this way for the same reason (rotated/mirrored per-pin label
+# text, unreliable to reconstruct from raw text-extraction coordinates
+# alone).
+schema_version: "0.1"
+kind: source
+id: microchip/DS40002061@revB
+
+publisher: microchip
+document_id: DS40002061
+document_type: datasheet
+
+revision: "B"
+date: "2020-09"
+
+url: "https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf"

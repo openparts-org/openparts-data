@@ -1,0 +1,84 @@
+# Pinout transcribed from Microchip datasheet DS40002061 Rev B, Figure
+# 1-1 "Pinout ATmega48A/PA/88A/PA/168A/PA/328/P" (page 12), specifically
+# its "32 TQFP Top View" diagram (the same 8-pin-per-side pinout is also
+# shared by the 32-pad VQFN package, per the same figure). Read from a
+# rendered image of the page, not raw text extraction -- the diagram's
+# per-pin labels are drawn rotated/mirrored along three of the four
+# edges, which pypdf/pdfplumber's coordinate-based text extraction
+# could not be reliably reordered back into pin sequence, per the
+# verified-data-entry skill's guidance to fall back to reading a
+# rendered image directly rather than guess from ambiguous extraction.
+#
+# `name` uses each pin's Port B/C/D GPIO label (e.g. "PB5"), matching
+# the diagram's primary (non-parenthesized) label. ADC6/ADC7/AREF have
+# no GPIO port name at all -- confirmed via section 1.1.9 (page 14):
+# "ADC7:6 (TQFP and VQFN Package Only) ... these pins are powered from
+# the analog supply and serve as 10-bit ADC channels" -- so those three
+# are `type: analog` rather than `io`.
+#
+# `alternate_functions` is populated only with each pin's ADC input
+# channel where one exists on a Port-named pin (PC0-PC5) -- not the
+# full PCINTn/OCxx/SPI/USART/TWI/comparator alternate-function set also
+# present on these and other pins, out of scope for this pass.
+schema_version: "0.1"
+kind: device
+id: microchip/ATmega328P
+
+manufacturer: microchip
+family: ATmega48A/PA/88A/PA/168A/PA/328/P
+
+pins:
+  "1":  { name: PD3, type: io }
+  "2":  { name: PD4, type: io }
+  "3":  { name: GND, type: ground }
+  "4":  { name: VCC, type: power }
+  "5":  { name: GND, type: ground }
+  "6":  { name: VCC, type: power }
+  "7":  { name: PB6, type: io }
+  "8":  { name: PB7, type: io }
+  "9":  { name: PD5, type: io }
+  "10": { name: PD6, type: io }
+  "11": { name: PD7, type: io }
+  "12": { name: PB0, type: io }
+  "13": { name: PB1, type: io }
+  "14": { name: PB2, type: io }
+  "15": { name: PB3, type: io }
+  "16": { name: PB4, type: io }
+  "17": { name: PB5, type: io }
+  "18": { name: AVCC, type: power }
+  "19": { name: ADC6, type: analog }
+  "20": { name: AREF, type: analog }
+  "21": { name: GND, type: ground }
+  "22": { name: ADC7, type: analog }
+  "23": { name: PC0, type: io, alternate_functions: [ADC0] }
+  "24": { name: PC1, type: io, alternate_functions: [ADC1] }
+  "25": { name: PC2, type: io, alternate_functions: [ADC2] }
+  "26": { name: PC3, type: io, alternate_functions: [ADC3] }
+  "27": { name: PC4, type: io, alternate_functions: [ADC4] }
+  "28": { name: PC5, type: io, alternate_functions: [ADC5] }
+  "29": { name: PC6, type: io }
+  "30": { name: PD0, type: io }
+  "31": { name: PD1, type: io }
+  "32": { name: PD2, type: io }
+
+provenance:
+  "/pins/1/name":
+    - source: microchip/DS40002061@revB
+      page: 12
+      locator: "Figure 1-1, \"32 TQFP Top View\", pins 1-8 (left edge)"
+  "/pins/9/name":
+    - source: microchip/DS40002061@revB
+      page: 12
+      locator: "Figure 1-1, \"32 TQFP Top View\", pins 9-16 (bottom edge)"
+  "/pins/17/name":
+    - source: microchip/DS40002061@revB
+      page: 12
+      locator: "Figure 1-1, \"32 TQFP Top View\", pins 17-24 (right edge)"
+  "/pins/25/name":
+    - source: microchip/DS40002061@revB
+      page: 12
+      locator: "Figure 1-1, \"32 TQFP Top View\", pins 25-32 (top edge)"
+  "/pins/19/type":
+    - source: microchip/DS40002061@revB
+      page: 14
+      locator: "Section 1.1.9, \"ADC7:6 (TQFP and VQFN Package Only)\""

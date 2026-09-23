@@ -1,0 +1,36 @@
+# MPN confirmed directly from the real ordering table, not decoded from
+# a generic naming legend: section 38.8 "ATmega328P" (page 635) lists
+# "ATmega328P-AU" as a real orderable code -- 20 MHz, 1.8-5.5V,
+# "32A" (TQFP32) package, Industrial -40C to +85C.
+#
+# lifecycle.status: active is not an explicit datasheet statement --
+# this document has no "product in full production" style phrase
+# anywhere in the pages checked, and no EOL/NRND notice was found
+# either. Treated as a reasonable inference from the part's continued
+# real-world availability (it remains one of the most common AVR MCUs
+# in production designs as of this document's own 2020-09 revision
+# date), not a directly-confirmed fact.
+schema_version: "0.1"
+kind: part
+id: microchip/ATmega328P-AU
+
+manufacturer: microchip
+mpn: ATmega328P-AU
+
+device: microchip/ATmega328P
+package: standards/TQFP32-7x7-P0.8
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - microchip/DS40002061@revB
+
+provenance:
+  "/existence":
+    - source: microchip/DS40002061@revB
+      page: 635
+      locator: "Section 38.8, \"ATmega328P\" ordering table"

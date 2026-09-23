@@ -1,0 +1,63 @@
+# Generic JEDEC-standard 32-lead TQFP, 7x7mm body, 0.8mm pitch -- not
+# tied to one manufacturer's die, so any other 32-pin TQFP part sharing
+# this exact mechanical outline can reference this same package. Values
+# confirmed from Microchip datasheet DS40002061 Rev B, section 39.1
+# "32A" package drawing (page 636, Microchip Technology Drawing
+# C04-074B) -- read from a rendered image of the page, not text
+# extraction (see sources/microchip/DS40002061.yaml for why).
+#
+# Unlike this dataset's other packages so far, this drawing states a
+# real datasheet Nominal for every dimension used here (E1/D1 = body,
+# A2 = body height), not just Min/Max -- no derived midpoint needed.
+schema_version: "0.1"
+kind: package
+id: standards/TQFP32-7x7-P0.8
+
+# `family: lqfp` deliberately, not a separate "tqfp" -- openparts-mcad
+# has no distinct TQFP generator, and TQFP/LQFP are the same 4-sided
+# gull-wing lead geometry, differing only in overall body-height class
+# (already captured by `dimensions.body_height` below), not lead shape
+# or numbering convention.
+family: lqfp
+lead_count: 32
+
+pitch:
+  nominal: 0.8
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 7.0
+    unit: mm
+
+  body_length:
+    nominal: 7.0
+    unit: mm
+
+  body_height:
+    nominal: 1.0
+    min: 0.95
+    max: 1.05
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lqfp
+
+provenance:
+  "/pitch":
+    - source: microchip/DS40002061@revB
+      page: 636
+      locator: "Table, symbol \"e\" (\"0.80 BSC\")"
+  "/dimensions/body_width":
+    - source: microchip/DS40002061@revB
+      page: 636
+      locator: "Table, symbol \"E1\" (\"7.00 BSC\")"
+  "/dimensions/body_length":
+    - source: microchip/DS40002061@revB
+      page: 636
+      locator: "Table, symbol \"D1\" (\"7.00 BSC\")"
+  "/dimensions/body_height":
+    - source: microchip/DS40002061@revB
+      page: 636
+      locator: "Table, symbol \"A2\" (Min 0.95 / Nom 1.00 / Max 1.05)"
