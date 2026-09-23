@@ -1,0 +1,40 @@
+# MPN confirmed directly from the real ordering table (not decoded from
+# a generic naming legend): section 25.3 "ATtiny85" (page 206) lists
+# "ATtiny85-20SU" as a real orderable code -- 20 MHz, 2.7-5.5V, 8S2
+# (EIAJ SOIC) package, Industrial -40C to +85C, U = matte tin finish,
+# no tape-and-reel suffix.
+#
+# lifecycle.status: active is not an explicit datasheet statement --
+# unlike the STM32F103 datasheet's own "product in full production"
+# header line, this 2013-dated document (revision Q) has no equivalent
+# phrase anywhere in the pages checked, and no EOL/NRND notice was
+# found either. Treated as a reasonable inference from the part's
+# continued real-world availability, not a directly-confirmed fact.
+schema_version: "0.1"
+kind: part
+id: microchip/ATtiny85-20SU
+
+manufacturer: microchip
+mpn: ATtiny85-20SU
+
+device: microchip/ATtiny85
+package: standards/SOIC8-5.3x5.2-P1.27
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - microchip/2586@revQ
+
+provenance:
+  "/existence":
+    - source: microchip/2586@revQ
+      page: 206
+      locator: "Section 25.3, \"ATtiny85\" ordering table"
+  "/package":
+    - source: microchip/2586@revQ
+      page: 206
+      locator: "Section 25.3 ordering table: package \"8S2\" for this ordering code (not \"S8S1\", which ATtiny85's own table does not list)"

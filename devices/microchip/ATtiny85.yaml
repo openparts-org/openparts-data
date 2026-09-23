@@ -1,0 +1,40 @@
+# Pinout transcribed from Atmel/Microchip datasheet 2586Q, Figure 1-1
+# "Pinout ATtiny25/45/85" (page 2, PDIP/SOIC/TSSOP row of the figure --
+# same 8-pin arrangement shared by ATtiny25/45/85; ATtiny85 specifically
+# has 8K Flash per the Features list on page 1).
+#
+# `name` uses each pin's Port B GPIO label (e.g. "PB5"), matching Figure
+# 1-1's primary (non-parenthesized) label, not any one of its several
+# bracketed alternate functions.
+#
+# `alternate_functions` is populated only with each pin's ADC input
+# channel where one exists (confirmed via Table 10-3 "Port B Pins
+# Alternate Functions", page 60) -- not the full alternate-function set
+# (RESET/dW/PCINTn/XTAL/CLKI/CLKO/OCxx/SPI/USI/analog-comparator/etc.
+# also listed in that same table), which is out of scope for this pass.
+schema_version: "0.1"
+kind: device
+id: microchip/ATtiny85
+
+manufacturer: microchip
+family: ATtiny25/45/85
+
+pins:
+  "1": { name: PB5, type: io, alternate_functions: [ADC0] }
+  "2": { name: PB3, type: io, alternate_functions: [ADC3] }
+  "3": { name: PB4, type: io, alternate_functions: [ADC2] }
+  "4": { name: GND, type: ground }
+  "5": { name: PB0, type: io }
+  "6": { name: PB1, type: io }
+  "7": { name: PB2, type: io, alternate_functions: [ADC1] }
+  "8": { name: VCC, type: power }
+
+provenance:
+  "/pins/1/name":
+    - source: microchip/2586@revQ
+      page: 2
+      locator: "Figure 1-1, \"Pinout ATtiny25/45/85\" (PDIP/SOIC/TSSOP)"
+  "/pins/1/alternate_functions":
+    - source: microchip/2586@revQ
+      page: 60
+      locator: "Table 10-3, \"Port B Pins Alternate Functions\""

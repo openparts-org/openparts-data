@@ -1,0 +1,67 @@
+# Generic EIAJ EDR-7320, 0.208" body, 8-lead SOIC -- not tied to one
+# manufacturer's die, so any other 8-pin wide-body EIAJ SOIC part
+# sharing this exact mechanical outline can reference this same
+# package. Values confirmed from Atmel/Microchip datasheet 2586Q
+# (ATtiny25/45/85), section 26.2 "8S2" package drawing (page 208).
+#
+# Not to be confused with the narrower JEDEC MS-012 "S8S1" 0.150"-body
+# SOIC drawn in the same datasheet (section 26.3) -- ATtiny85's own
+# ordering table (section 25.3, page 206) lists it only in the 8S2
+# (EIAJ) and 8P3 (PDIP)/20M1 (QFN) packages, not S8S1, unlike its
+# siblings ATtiny25/ATtiny45 (sections 25.1/25.2), which do offer S8S1.
+#
+# The drawing gives Min/Max only for every dimension (no datasheet-
+# stated Nominal/BSC except `pitch`, marked "1.27 BSC"). `nominal`
+# below is this session's own midpoint of the confirmed Min/Max range,
+# not a value the datasheet states directly.
+schema_version: "0.1"
+kind: package
+id: standards/SOIC8-5.3x5.2-P1.27
+
+family: soic
+lead_count: 8
+
+pitch:
+  nominal: 1.27
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 5.29
+    min: 5.18
+    max: 5.40
+    unit: mm
+
+  body_length:
+    nominal: 5.24
+    min: 5.13
+    max: 5.35
+    unit: mm
+
+  body_height:
+    nominal: 1.93
+    min: 1.70
+    max: 2.16
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: soic
+
+provenance:
+  "/pitch":
+    - source: microchip/2586@revQ
+      page: 208
+      locator: "Table \"COMMON DIMENSIONS\", symbol \"e\" (\"1.27 BSC\")"
+  "/dimensions/body_width":
+    - source: microchip/2586@revQ
+      page: 208
+      locator: "Table \"COMMON DIMENSIONS\", symbol \"E1\" (Min 5.18 / Max 5.40); nominal is this dataset's own midpoint, not datasheet-stated"
+  "/dimensions/body_length":
+    - source: microchip/2586@revQ
+      page: 208
+      locator: "Table \"COMMON DIMENSIONS\", symbol \"D\" (Min 5.13 / Max 5.35); nominal is this dataset's own midpoint, not datasheet-stated"
+  "/dimensions/body_height":
+    - source: microchip/2586@revQ
+      page: 208
+      locator: "Table \"COMMON DIMENSIONS\", symbol \"A\" (Min 1.70 / Max 2.16); nominal is this dataset's own midpoint, not datasheet-stated"
