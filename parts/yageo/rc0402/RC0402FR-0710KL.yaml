@@ -1,0 +1,25 @@
+# 10 kOhm, 1%, general-purpose thick-film chip resistor. MPN decodes
+# per the datasheet's own "Ordering Information - Global Part Number"
+# scheme (page 2): RC + 0402(size) + F(+/-1% tolerance) + R(paper
+# taping reel) + 07(7" reel, standard power) + 10K(resistance) + L
+# (default code). Active lifecycle confirmed via multiple independent
+# distributor listings (LCSC C60490, DigiKey 311-10.0KLRCT-ND, RS
+# Online, JLCPCB).
+schema_version: "0.1"
+kind: part
+id: yageo/RC0402FR-0710KL
+
+manufacturer: yageo
+mpn: RC0402FR-0710KL
+
+device: yageo/RC0402-GENERAL-PURPOSE
+package: standards/CHIP0402-RC
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - yageo/PYU-RC_GROUP@V14

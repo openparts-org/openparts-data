@@ -1,0 +1,40 @@
+# Littelfuse's own dimensions figure gives nominal values only for this
+# "Nano2" ceramic chip fuse body, no min/max tolerance stated.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-NANO2-451
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 6.10
+    unit: mm
+  body_width:
+    nominal: 2.69
+    unit: mm
+  body_height:
+    nominal: 1.45
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: littelfuse/451-453-SERIES@2010-07-13
+      page: 60
+      locator: "\"Dimensions\" figure"
+  "/dimensions/body_width":
+    - source: littelfuse/451-453-SERIES@2010-07-13
+      page: 60
+      locator: "\"Dimensions\" figure"
+  "/dimensions/body_height":
+    - source: littelfuse/451-453-SERIES@2010-07-13
+      page: 60
+      locator: "\"Dimensions\" figure"

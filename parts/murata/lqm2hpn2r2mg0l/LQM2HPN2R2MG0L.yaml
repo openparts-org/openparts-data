@@ -1,0 +1,24 @@
+# 2.2 uH, +/-20%, multilayer chip inductor. DC resistance typ. 0.080
+# Ohm / max 0.10 Ohm, self-resonant frequency min 40MHz, rated current
+# 1.3A (85C) / 0.97A (125C), per Section 3 "Part Number and Rating"
+# table (page 1) of the datasheet. Confirmed real and current via
+# Murata's own product line plus independent distributor listings
+# (Farnell, RS Online).
+schema_version: "0.1"
+kind: part
+id: murata/LQM2HPN2R2MG0L
+
+manufacturer: murata
+mpn: LQM2HPN2R2MG0L
+
+device: murata/LQM2HPN2R2MG0
+package: standards/CHIP-LQM2HPN
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - murata/JELF243B_0019R-01

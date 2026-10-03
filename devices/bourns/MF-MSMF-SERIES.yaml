@@ -1,0 +1,14 @@
+# A 2-terminal PTC resettable fuse has no polarity/electrical role
+# beyond "passive" and no meaningful pin names beyond its terminal
+# number -- same reasoning as this dataset's chip resistor devices.
+schema_version: "0.1"
+kind: device
+id: bourns/MF-MSMF-SERIES
+
+manufacturer: bourns
+category: fuse
+family: MF-MSMF
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

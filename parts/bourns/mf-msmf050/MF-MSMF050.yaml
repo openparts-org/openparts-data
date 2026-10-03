@@ -1,0 +1,23 @@
+# PTC resettable fuse, 1812 case, Vmax 15V, Ihold 0.50A, Itrip 1.00A.
+# Confirmed real and current via a direct row in Bourns' own
+# MF-MSMF-series datasheet part-number table (no "-2" or other suffix:
+# the initially-assumed "MF-MSMF050-2" MPN does not exist, only
+# /16X-/60X trip-current suffixes do, which MF-MSMF050 itself predates).
+schema_version: "0.1"
+kind: part
+id: bourns/MF-MSMF050
+
+manufacturer: bourns
+mpn: MF-MSMF050
+
+device: bourns/MF-MSMF-SERIES
+package: standards/CHIP1812-MF-MSMF050
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - bourns/MF-MSMF@revBE

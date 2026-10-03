@@ -1,0 +1,23 @@
+# 451 series Nano2 SMD fuse, 4.00A / 125V, ceramic body, nominal
+# resistance 0.0160 Ohm. Confirmed real and current via the datasheet's
+# own electrical-characteristics table (amp code "004." = 4.00A) and a
+# direct listing in Mouser's catalog as 0451004.MRL (the initially
+# assumed "0451002.MRL" was not found in that catalog).
+schema_version: "0.1"
+kind: part
+id: littelfuse/0451004.MRL
+
+manufacturer: littelfuse
+mpn: 0451004.MRL
+
+device: littelfuse/451-SERIES
+package: standards/CHIP-NANO2-451
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - littelfuse/451-453-SERIES@2010-07-13

@@ -1,0 +1,23 @@
+# 1 kOhm, 1%, general-purpose thick-film chip resistor. MPN decodes
+# identically to RC0402FR-0710KL: RC + 1206(size) + F + R + 07 +
+# 1K(resistance) + L. Active lifecycle confirmed via multiple
+# independent distributor listings (LCSC C131398, DigiKey
+# 311-1.00KFRCT-ND, RS Online).
+schema_version: "0.1"
+kind: part
+id: yageo/RC1206FR-071KL
+
+manufacturer: yageo
+mpn: RC1206FR-071KL
+
+device: yageo/RC1206-GENERAL-PURPOSE
+package: standards/CHIP1206-RC
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - yageo/PYU-RC_GROUP@V14

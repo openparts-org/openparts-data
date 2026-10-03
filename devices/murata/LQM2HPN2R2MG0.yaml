@@ -1,0 +1,14 @@
+schema_version: "0.1"
+kind: device
+id: murata/LQM2HPN2R2MG0
+
+manufacturer: murata
+category: inductor
+family: LQM2HPN
+
+# A 2-terminal chip inductor has no polarity/electrical role beyond
+# "passive" and no meaningful pin names beyond its terminal number,
+# same as the existing LQG18HN10N device.
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

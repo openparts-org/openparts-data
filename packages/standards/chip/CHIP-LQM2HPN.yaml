@@ -1,0 +1,46 @@
+# Body dimension drawing applies to the whole LQM2HPN_G0 series
+# regardless of inductance value.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-LQM2HPN
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 2.5
+    min: 2.3
+    max: 2.7
+    unit: mm
+  body_width:
+    nominal: 2.0
+    min: 1.8
+    max: 2.2
+    unit: mm
+  body_height:
+    nominal: 0.9
+    min: 0.8
+    max: 1.0
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: murata/JELF243B_0019R-01
+      page: 2
+      locator: "Section 5 \"Appearance and Dimensions\""
+  "/dimensions/body_width":
+    - source: murata/JELF243B_0019R-01
+      page: 2
+      locator: "Section 5 \"Appearance and Dimensions\""
+  "/dimensions/body_height":
+    - source: murata/JELF243B_0019R-01
+      page: 2
+      locator: "Section 5 \"Appearance and Dimensions\""

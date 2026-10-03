@@ -1,0 +1,44 @@
+schema_version: "0.1"
+kind: package
+id: standards/CHIP1206-RC
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 3.10
+    min: 3.00
+    max: 3.20
+    unit: mm
+  body_width:
+    nominal: 1.60
+    min: 1.50
+    max: 1.70
+    unit: mm
+  body_height:
+    nominal: 0.55
+    min: 0.45
+    max: 0.65
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: yageo/PYU-RC_GROUP@V14
+      page: 4
+      locator: "Table 1 \"DIMENSION\""
+  "/dimensions/body_width":
+    - source: yageo/PYU-RC_GROUP@V14
+      page: 4
+      locator: "Table 1 \"DIMENSION\""
+  "/dimensions/body_height":
+    - source: yageo/PYU-RC_GROUP@V14
+      page: 4
+      locator: "Table 1 \"DIMENSION\""
