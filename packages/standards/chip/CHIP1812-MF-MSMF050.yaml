@@ -1,7 +1,10 @@
 # Bourns' own "Product Dimensions" table gives min/max only for this
-# package (Style 1, single-terminal-per-end), no nominal -- not
-# computed here (Canonical Data Specification section 7: omit rather
-# than invent).
+# package (Style 1, single-terminal-per-end), no nominal. `nominal`
+# below is this dataset's own midpoint of each stated min/max range,
+# disclosed as derived rather than datasheet-stated -- the same
+# technique already established in this dataset by
+# AXIAL-DO35-1N4148/TO92-2N3904 for the same "generator needs a
+# nominal, source only gives min/max" situation.
 schema_version: "0.1"
 kind: package
 id: standards/CHIP1812-MF-MSMF050
@@ -14,14 +17,17 @@ pitch:
 
 dimensions:
   body_length:
+    nominal: 4.55
     min: 4.37
     max: 4.73
     unit: mm
   body_width:
+    nominal: 3.24
     min: 3.07
     max: 3.41
     unit: mm
   body_height:
+    nominal: 0.70
     min: 0.55
     max: 0.85
     unit: mm
@@ -34,12 +40,12 @@ provenance:
   "/dimensions/body_length":
     - source: bourns/MF-MSMF@revBE
       page: 4
-      locator: "\"Product Dimensions\" table, MF-MSMF050 row, Style 1"
+      locator: "\"Product Dimensions\" table, MF-MSMF050 row, Style 1 -- nominal is this dataset's computed midpoint, see comment above"
   "/dimensions/body_width":
     - source: bourns/MF-MSMF@revBE
       page: 4
-      locator: "\"Product Dimensions\" table, MF-MSMF050 row, Style 1"
+      locator: "\"Product Dimensions\" table, MF-MSMF050 row, Style 1 -- nominal is this dataset's computed midpoint, see comment above"
   "/dimensions/body_height":
     - source: bourns/MF-MSMF@revBE
       page: 4
-      locator: "\"Product Dimensions\" table, MF-MSMF050 row, Style 1"
+      locator: "\"Product Dimensions\" table, MF-MSMF050 row, Style 1 -- nominal is this dataset's computed midpoint, see comment above"
