@@ -1,0 +1,45 @@
+# Bourns SF-0603SP series, EIA 0603/1608 time-lag fuse body.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP0603-BOURNS-SF050
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.6
+    min: 1.5
+    max: 1.7
+    unit: mm
+  body_width:
+    nominal: 0.8
+    min: 0.7
+    max: 0.9
+    unit: mm
+  body_height:
+    nominal: 0.45
+    min: 0.35
+    max: 0.55
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: bourns/SF-0603SP
+      page: 2
+      locator: "\"Product Dimensions\" diagram, length 1.6 +/-0.1mm"
+  "/dimensions/body_width":
+    - source: bourns/SF-0603SP
+      page: 2
+      locator: "\"Product Dimensions\" diagram, width 0.8 +/-0.1mm"
+  "/dimensions/body_height":
+    - source: bourns/SF-0603SP
+      page: 2
+      locator: "\"Product Dimensions\" diagram, height 0.45 +/-0.1mm"

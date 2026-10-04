@@ -1,0 +1,24 @@
+# Through-hole tubular crystal can, both wire leads exiting one end
+# (per the datasheet's own drawing) -- physically the same can shape as
+# this dataset's other `radial` family parts (electrolytic caps, dome
+# LEDs, the HC-49/U crystal can), not a true `axial` part. Lead count
+# not explicitly stated as "2" in words anywhere in the document, but
+# the drawing shows exactly 2 parallel leads and the electrical table
+# implies no 3rd/4th pin.
+schema_version: "0.1"
+kind: device
+id: ecs/ECS-200-18-9X
+
+manufacturer: ecs
+category: crystal
+family: "3x9X"
+
+pins:
+  "1": { name: "XTAL1", type: passive }
+  "2": { name: "XTAL2", type: passive }
+
+provenance:
+  "/pins":
+    - source: ecs/ECS-3x10X-3x9X
+      page: 1
+      locator: "Figure 2 \"3x9X\" outline drawing, 2 parallel wire leads"

@@ -1,0 +1,47 @@
+# Epson FC-12M, 2-pad SMD crystal can. Width's tolerance value is
+# present in the source but was garbled by PDF text extraction
+# (vector-drawing text out of reading order) -- recorded as nominal
+# only, not guessing a tolerance. Height is MAX-only (0.6mm); nominal
+# set equal to that max, same "closest usable single number" technique
+# as AXIAL-DO35-1N4148's body_height.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-EPSON-FC12M
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 2.05
+    min: 2.00
+    max: 2.10
+    unit: mm
+  body_width:
+    nominal: 1.2
+    unit: mm
+  body_height:
+    nominal: 0.6
+    max: 0.6
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: epson/FC-12M-DS
+      page: 1
+      locator: "Section 3 \"External dimensions\", length 2.05 +/-0.05mm"
+  "/dimensions/body_width":
+    - source: epson/FC-12M-DS
+      page: 1
+      locator: "Section 3 \"External dimensions\", width ~1.2mm -- tolerance garbled in extraction, see comment above"
+  "/dimensions/body_height":
+    - source: epson/FC-12M-DS
+      page: 1
+      locator: "Section 3 \"External dimensions\", height 0.6mm MAX, no min/nominal stated -- see comment above"

@@ -1,0 +1,51 @@
+# Littelfuse 1206L series, 1206-case PTC resettable fuse. The
+# outline drawing directly labels A=length, B=width, C=thickness (not
+# inferred). A/B are shared across the whole 1206L series; C
+# (thickness) varies by current rating and is specific to the 050 row.
+# `nominal` on each is this dataset's own midpoint of the stated
+# min/max (no nominal given in the source), disclosed as derived --
+# same technique as AXIAL-DO35-1N4148/TO92-2N3904.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP1206-LITTELFUSE-1206L050
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 3.20
+    min: 3.00
+    max: 3.40
+    unit: mm
+  body_width:
+    nominal: 1.65
+    min: 1.50
+    max: 1.80
+    unit: mm
+  body_height:
+    nominal: 0.60
+    min: 0.45
+    max: 0.75
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: littelfuse/1206L
+      page: 4
+      locator: "\"Dimensions\" section, outline drawing, symbol \"A\" -- nominal is this dataset's computed midpoint, see comment above"
+  "/dimensions/body_width":
+    - source: littelfuse/1206L
+      page: 4
+      locator: "\"Dimensions\" section, outline drawing, symbol \"B\" -- nominal is this dataset's computed midpoint, see comment above"
+  "/dimensions/body_height":
+    - source: littelfuse/1206L
+      page: 4
+      locator: "\"Dimensions\" section, outline drawing, symbol \"C\", 1206L050 row -- nominal is this dataset's computed midpoint, see comment above"

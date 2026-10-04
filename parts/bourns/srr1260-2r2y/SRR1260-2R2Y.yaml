@@ -1,0 +1,22 @@
+# 2.2uH, +/-30%, shielded SMD power inductor. Q 20 typ, SRF 70MHz typ,
+# RDC max 10.5mOhm, Irms max 8.20A, Isat typ 8.50A, per the Electrical
+# Specifications table. Confirmed real/active directly in Bourns' own
+# live datasheet.
+schema_version: "0.1"
+kind: part
+id: bourns/SRR1260-2R2Y
+
+manufacturer: bourns
+mpn: SRR1260-2R2Y
+
+device: bourns/SRR1260-2R2Y
+package: standards/CHIP-BOURNS-SRR1260
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - bourns/SRR1260

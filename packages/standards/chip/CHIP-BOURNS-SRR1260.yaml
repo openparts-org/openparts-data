@@ -1,0 +1,48 @@
+# Bourns SRR1260 series, shielded SMD power inductor, square chip
+# footprint (outer envelope -- the drawing's smaller 5.0mm/7.0mm
+# callouts are an inner/base feature and pad spacing respectively, not
+# the body envelope, and are not used here).
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-BOURNS-SRR1260
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 12.5
+    min: 12.2
+    max: 12.8
+    unit: mm
+  body_width:
+    nominal: 12.5
+    min: 12.2
+    max: 12.8
+    unit: mm
+  body_height:
+    nominal: 6.0
+    min: 5.5
+    max: 6.5
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: bourns/SRR1260
+      page: 1
+      locator: "\"Product Dimensions\" section, 12.5 +/-0.3mm outer-footprint callout"
+  "/dimensions/body_width":
+    - source: bourns/SRR1260
+      page: 1
+      locator: "\"Product Dimensions\" section, 12.5 +/-0.3mm outer-footprint callout"
+  "/dimensions/body_height":
+    - source: bourns/SRR1260
+      page: 1
+      locator: "\"Product Dimensions\" section, side-view 6.0 +/-0.5mm callout"

@@ -1,0 +1,22 @@
+# 32.768kHz +/-20ppm, 6.0pF load capacitance, 2-pad SMD crystal unit.
+# Ordering code X1A0000610021xx (xx = packing-quantity code).
+# Confirmed real/active via distributor listings (RS Online) and
+# Seiko Epson's own datasheet.
+schema_version: "0.1"
+kind: part
+id: epson/FC-12M
+
+manufacturer: epson
+mpn: FC-12M
+
+device: epson/FC-12M
+package: standards/CHIP-EPSON-FC12M
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - epson/FC-12M-DS

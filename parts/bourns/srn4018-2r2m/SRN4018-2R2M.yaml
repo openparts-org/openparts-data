@@ -1,0 +1,22 @@
+# 2.2uH, +/-20%, semi-shielded power inductor. DCR max 0.044 Ohm,
+# Irms max 2.9A, Isat 3.0A, per the Electrical Specifications table
+# (page 1). Confirmed real/active directly in Bourns' own live
+# datasheet.
+schema_version: "0.1"
+kind: part
+id: bourns/SRN4018-2R2M
+
+manufacturer: bourns
+mpn: SRN4018-2R2M
+
+device: bourns/SRN4018-2R2M
+package: standards/CHIP-BOURNS-SRN4018
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - bourns/SRN4018

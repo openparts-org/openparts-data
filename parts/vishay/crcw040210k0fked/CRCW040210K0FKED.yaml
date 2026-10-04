@@ -1,0 +1,24 @@
+# 10 kOhm, +/-1%, 0402 thick-film chip resistor. Confirmed real/active
+# via RS Online and other distributor listings; the literal-value MPN
+# style ("10K0") is a documented Vishay convention shown elsewhere in
+# the cited datasheet, though not as a literal row for this exact MPN
+# in that (2003-vintage) printing -- the body dimensions apply to the
+# whole 0402/CRCW case size regardless of resistance value.
+schema_version: "0.1"
+kind: part
+id: vishay/CRCW040210K0FKED
+
+manufacturer: vishay
+mpn: CRCW040210K0FKED
+
+device: vishay/CRCW0402-GENERAL-PURPOSE
+package: standards/CHIP0402-CRCW
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - vishay/20008

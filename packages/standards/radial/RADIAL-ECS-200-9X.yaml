@@ -1,0 +1,52 @@
+# ECS "3x9X" tubular crystal can. Both leads exit one end (radial-style,
+# like RADIAL-HC49U-AB), a true circular cylinder (not oval), so
+# body_length=body_width=diameter, matching the `radial` generator's
+# convention for a circular can.
+#
+# Diameter and length are both MAX-only in the source (no min/nominal);
+# `nominal` is set equal to each max, same "closest usable single
+# number" technique as RADIAL-HC49U-AB uses for the same gap. Pitch is
+# left unspecified: no lead-spacing dimension is given anywhere in this
+# document (both leads exit together, close together, with no stated
+# spacing figure, unlike HC-49/U's explicit pitch dimension).
+schema_version: "0.1"
+kind: package
+id: standards/RADIAL-ECS-200-9X
+
+family: radial
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 3.2
+    max: 3.2
+    unit: mm
+  body_width:
+    nominal: 3.2
+    max: 3.2
+    unit: mm
+  body_height:
+    nominal: 9.0
+    max: 9.0
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: radial
+
+provenance:
+  "/dimensions/body_length":
+    - source: ecs/ECS-3x10X-3x9X
+      page: 1
+      locator: "\"DIMENSIONS (mm)\", Figure 2 \"3x9X\", diameter phi3.2mm MAX -- see comment above"
+  "/dimensions/body_width":
+    - source: ecs/ECS-3x10X-3x9X
+      page: 1
+      locator: "\"DIMENSIONS (mm)\", Figure 2 \"3x9X\", diameter phi3.2mm MAX -- see comment above"
+  "/dimensions/body_height":
+    - source: ecs/ECS-3x10X-3x9X
+      page: 1
+      locator: "\"DIMENSIONS (mm)\", Figure 2 \"3x9X\", body length 9mm MAX -- see comment above"

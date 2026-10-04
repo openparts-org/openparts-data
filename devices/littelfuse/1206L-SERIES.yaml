@@ -1,0 +1,13 @@
+# 2-terminal PTC resettable fuse -- same reasoning as the existing
+# bourns/MF-MSMF-SERIES and littelfuse/451-SERIES devices.
+schema_version: "0.1"
+kind: device
+id: littelfuse/1206L-SERIES
+
+manufacturer: littelfuse
+category: fuse
+family: 1206L
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

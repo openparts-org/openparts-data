@@ -1,0 +1,19 @@
+schema_version: "0.1"
+kind: device
+id: bourns/SRR1260-2R2Y
+
+manufacturer: bourns
+category: inductor
+family: SRR1260
+
+# 2-terminal shielded SMD power inductor, confirmed via the page-2
+# "Electrical Schematic" (single inductor symbol, 2 leads/circles).
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+
+provenance:
+  "/pins":
+    - source: bourns/SRR1260
+      page: 2
+      locator: "Electrical Schematic"

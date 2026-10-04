@@ -1,0 +1,13 @@
+# 2-terminal time-lag one-time fuse -- same reasoning as the existing
+# bourns/MF-MSMF-SERIES device.
+schema_version: "0.1"
+kind: device
+id: bourns/SF-0603SP-SERIES
+
+manufacturer: bourns
+category: fuse
+family: SF-0603SP
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

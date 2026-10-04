@@ -1,0 +1,16 @@
+# Covers the whole frequency-configurable "3X10X/3X9X" family rather
+# than one fixed MPN; ECS-200-18-9X itself is confirmed via ECS's own
+# product page plus this family datasheet's dimension drawing for the
+# "3x9X" package variant.
+schema_version: "0.1"
+kind: source
+id: ecs/ECS-3x10X-3x9X
+
+publisher: ecs
+document_id: "ECS-3x10X 3x9X"
+document_type: datasheet
+
+revision: "2017"
+date: "2017"
+
+url: "https://ecsxtal.com/store/pdf/ECS-3x10X%203x9X.pdf"

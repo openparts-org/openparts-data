@@ -1,0 +1,19 @@
+schema_version: "0.1"
+kind: device
+id: bourns/SRN4018-2R2M
+
+manufacturer: bourns
+category: inductor
+family: SRN4018
+
+# 2-terminal semi-shielded power inductor, confirmed via the page-1
+# "Electrical Schematic" (single inductor symbol, 2 leads).
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+
+provenance:
+  "/pins":
+    - source: bourns/SRN4018
+      page: 1
+      locator: "Electrical Schematic"

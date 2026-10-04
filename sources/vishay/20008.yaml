@@ -1,0 +1,22 @@
+# Fetched via an RS Online-hosted mirror of Vishay's own PDF, not a
+# paraphrase. MPN naming caveat: this 2003-vintage document's own
+# "Ordering Information" table only shows the older 4-digit EIA
+# resistance-code format, not the "10K0" decimal-substitution style
+# used by CRCW040210K0FKED -- that literal-value style is a documented
+# Vishay convention shown elsewhere in this same document, and the part
+# is widely distributor-listed, but it isn't a literal row in this
+# table. The body dimensions themselves apply to the whole 0402/CRCW
+# case size regardless of resistance value, so this gap doesn't affect
+# them.
+schema_version: "0.1"
+kind: source
+id: vishay/20008
+
+publisher: vishay
+document_id: "20008"
+document_type: datasheet
+
+revision: "28-Apr-03"
+date: "2003-04-28"
+
+url: "https://docs.rs-online.com/0191/0900766b8002d7d8.pdf"

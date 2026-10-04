@@ -1,0 +1,20 @@
+# 32.768kHz 2-pad SMD crystal. Confirmed genuinely 2-pad from the
+# datasheet's own "Internal connection (TOP VIEW)" diagram, labeled
+# pads #1 and #2.
+schema_version: "0.1"
+kind: device
+id: epson/FC-12M
+
+manufacturer: epson
+category: crystal
+family: FC-12M
+
+pins:
+  "1": { name: "XTAL1", type: passive }
+  "2": { name: "XTAL2", type: passive }
+
+provenance:
+  "/pins":
+    - source: epson/FC-12M-DS
+      page: 1
+      locator: "\"Internal connection (TOP VIEW)\" diagram, pads #1 and #2"

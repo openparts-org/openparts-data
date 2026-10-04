@@ -1,0 +1,23 @@
+# Through-hole tubular quartz crystal, "3x9X" package, 18pF load
+# capacitance. MPN not found as a literal string inside the family
+# datasheet (which covers the whole frequency-configurable 3X10X/3X9X
+# line rather than one fixed part), but confirmed real/current via
+# ECS's own product page plus distributor listings.
+schema_version: "0.1"
+kind: part
+id: "ecs/ECS-200-18-9X"
+
+manufacturer: ecs
+mpn: "ECS-200-18-9X"
+
+device: ecs/ECS-200-18-9X
+package: standards/RADIAL-ECS-200-9X
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ecs/ECS-3x10X-3x9X

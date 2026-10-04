@@ -1,0 +1,48 @@
+# Bourns SRN4018 series, semi-shielded power inductor, square chip
+# footprint (the drawing gives two matching 4.0mm callouts for
+# length/width). Height is MAX-only (1.88mm, SRN4018-R82Y to -2R7M
+# height group) -- `nominal` set equal to that max, same "closest
+# usable single number" technique as AXIAL-DO35-1N4148's body_height.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-BOURNS-SRN4018
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 4.0
+    min: 3.8
+    max: 4.2
+    unit: mm
+  body_width:
+    nominal: 4.0
+    min: 3.8
+    max: 4.2
+    unit: mm
+  body_height:
+    nominal: 1.88
+    max: 1.88
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: bourns/SRN4018
+      page: 1
+      locator: "\"Product Dimensions\" section, 4.0 +/-0.2mm callout"
+  "/dimensions/body_width":
+    - source: bourns/SRN4018
+      page: 1
+      locator: "\"Product Dimensions\" section, 4.0 +/-0.2mm callout"
+  "/dimensions/body_height":
+    - source: bourns/SRN4018
+      page: 1
+      locator: "\"Product Dimensions\" section, SRN4018-R82Y to -2R7M height group \"MAX. 1.88 (.074)\" -- no min/nominal stated, see comment above"

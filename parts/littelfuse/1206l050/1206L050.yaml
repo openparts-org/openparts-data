@@ -1,0 +1,21 @@
+# PTC resettable fuse, 1206 case, Ihold 0.50A, Itrip 1.00A, Vmax 6Vdc.
+# Confirmed real/active as a direct row in Littelfuse's own electrical
+# characteristics table.
+schema_version: "0.1"
+kind: part
+id: littelfuse/1206L050
+
+manufacturer: littelfuse
+mpn: 1206L050
+
+device: littelfuse/1206L-SERIES
+package: standards/CHIP1206-LITTELFUSE-1206L050
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - littelfuse/1206L
