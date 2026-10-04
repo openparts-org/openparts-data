@@ -1,0 +1,25 @@
+# TO-92 NPN general-purpose BJT. Pin order confirmed from the marking
+# diagram (page 1) and cross-checked against the mechanical outline
+# doc's own style table (98ASB42022B, page 7: "STYLE 17: PIN 1.
+# COLLECTOR / 2. BASE / 3. EMITTER").
+schema_version: "0.1"
+kind: device
+id: onsemi/BC547-SERIES
+
+manufacturer: onsemi
+category: transistor
+family: BC547
+
+pins:
+  "1": { name: Collector, type: passive }
+  "2": { name: Base, type: passive }
+  "3": { name: Emitter, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/BC546-D
+      page: 1
+      locator: "Marking diagram"
+    - source: onsemi/98ASB42022B
+      page: 7
+      locator: "STYLE 17 pin table"

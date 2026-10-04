@@ -1,0 +1,23 @@
+# 10uF, +/-10%, 16V solid tantalum capacitor, EIA Case B. MPN decodes
+# per Kemet's own Ordering Information table: T=Tantalum, 491=series,
+# B=case, 106=10uF, K=+/-10%, 016=16V, A=N/A failure rate, T=matte-tin
+# termination. Confirmed real and current via RS Online, Farnell,
+# Lion Circuits, Ciiva listings.
+schema_version: "0.1"
+kind: part
+id: kemet/T491B106K016AT
+
+manufacturer: kemet
+mpn: T491B106K016AT
+
+device: kemet/T491B-TANTALUM
+package: standards/CHIP-T491B
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - kemet/T2005_T491

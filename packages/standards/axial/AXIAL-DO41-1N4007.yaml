@@ -1,0 +1,59 @@
+# Vishay 1N4007 (DO-41 / DO-204AL) axial-leaded diode. Lead pitch
+# follows this dataset's existing DO-35 convention (a real KiCad
+# reference footprint's pad spacing, not a datasheet fact -- DO-41
+# leads also ship straight with no forming/pitch dimension in the
+# datasheet).
+#
+# `nominal` for body diameter is this dataset's own midpoint of the
+# datasheet's stated min/max (disclosed as derived, not a Vishay-stated
+# value), same technique used for AXIAL-DO35-1N4148.
+#
+# `body_height` (axial body length) is deliberately OMITTED: this
+# datasheet's PACKAGE OUTLINE DIMENSIONS drawing (page 4) gives no
+# number for it at all -- only two "1.0 (25.4) MIN." callouts, which are
+# lead lengths either side of the body, not the body length itself. No
+# supplementary Vishay mechanical drawing could be found. Per this
+# dataset's "omit rather than invent" rule, this leaves footprint/STEP/
+# STL generation 422ing on the missing dimension until a real source
+# for it turns up.
+schema_version: "0.1"
+kind: package
+id: standards/AXIAL-DO41-1N4007
+
+family: axial
+lead_count: 2
+
+pitch:
+  nominal: 7.62
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 4.65
+    min: 4.1
+    max: 5.2
+    unit: mm
+  body_length:
+    nominal: 4.65
+    min: 4.1
+    max: 5.2
+    unit: mm
+  body_height:
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: axial
+
+provenance:
+  "/pitch":
+    - source: kicad/DO35-P7.62mm
+      locator: "Real KiCad DO-35/DO-41 reference footprint's own pad-to-pad spacing (0.3in/7.62mm) -- not a Vishay datasheet fact"
+  "/dimensions/body_width":
+    - source: vishay/88503
+      page: 4
+      locator: "PACKAGE OUTLINE DIMENSIONS (DO-41/DO-204AL) drawing, body diameter min 0.160in(4.1mm) / max 0.205in(5.2mm)"
+  "/dimensions/body_length":
+    - source: vishay/88503
+      page: 4
+      locator: "PACKAGE OUTLINE DIMENSIONS (DO-41/DO-204AL) drawing, body diameter min 0.160in(4.1mm) / max 0.205in(5.2mm)"

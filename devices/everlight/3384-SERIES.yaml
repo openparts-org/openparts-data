@@ -1,0 +1,23 @@
+# 5mm (T-1 3/4) round THT white LED. The outline drawing explicitly
+# labels only the longer lead "(ANODE)"; the shorter lead has no
+# printed label in this document. Recorded as cathode by elimination --
+# a 2-lead LED has exactly one anode and one cathode by definition, so
+# this is not a guess about which role the second lead plays, only
+# about the printed word for it.
+schema_version: "0.1"
+kind: device
+id: everlight/3384-SERIES
+
+manufacturer: everlight
+category: led
+family: "3384"
+
+pins:
+  "1": { name: Anode, type: passive }
+  "2": { name: Cathode, type: passive }
+
+provenance:
+  "/pins":
+    - source: everlight/DLE-0001270
+      page: 2
+      locator: "Package Dimensions outline drawing, longer lead labeled \"(ANODE)\""

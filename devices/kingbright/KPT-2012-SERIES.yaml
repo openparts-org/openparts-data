@@ -1,0 +1,24 @@
+# 0805 SMD chip LED. Polarity confirmed from the outline drawing's
+# diode-polarity glyphs, keyed by color-suffix group: the "SY, H, E, I,
+# SG, Y" group (which KPT-2012EC's "E" suffix falls into) has pin 1 =
+# anode, pin 2 = cathode -- the "SR" suffix group is explicitly noted
+# as reversed, so don't assume this mapping for other KPT-2012 color
+# variants. Cross-checked against page 6's tape drawing, which labels
+# one reel position "CATHODE", consistent with pin 2.
+schema_version: "0.1"
+kind: device
+id: kingbright/KPT-2012-SERIES
+
+manufacturer: kingbright
+category: led
+family: KPT-2012
+
+pins:
+  "1": { name: Anode, type: passive }
+  "2": { name: Cathode, type: passive }
+
+provenance:
+  "/pins":
+    - source: kingbright/KPT-2012
+      page: 1
+      locator: "Outline drawing polarity glyphs, \"E\"-suffix group"

@@ -1,0 +1,22 @@
+# SOT-23 NPN transistor, Tape & Reel. Commonly referenced in the trade
+# as "BC817-40"; confirmed real and current as "BC81740MTF" in
+# onsemi's own order-table. Not the same part as Diodes Inc's
+# second-sourced BC817-40-7-F.
+schema_version: "0.1"
+kind: part
+id: onsemi/BC81740MTF
+
+manufacturer: onsemi
+mpn: BC81740MTF
+
+device: onsemi/BC817-SERIES
+package: standards/SOT23-2.92x1.30-P1.90-BC817
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - onsemi/BC818-D

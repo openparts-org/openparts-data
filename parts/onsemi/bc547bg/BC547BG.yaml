@@ -1,0 +1,22 @@
+# TO-92 NPN general-purpose BJT, Pb-Free/bulk. Confirmed real and
+# current in the datasheet's orderable-parts table -- note the plain
+# "BC547B" (no "G" suffix) is NOT listed, only the Pb-Free "-G"
+# variants (BC547BG, BC547BRL1G, BC547BZL1G).
+schema_version: "0.1"
+kind: part
+id: onsemi/BC547BG
+
+manufacturer: onsemi
+mpn: BC547BG
+
+device: onsemi/BC547-SERIES
+package: standards/TO92-BC547
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - onsemi/BC546-D

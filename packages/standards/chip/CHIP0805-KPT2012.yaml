@@ -1,0 +1,42 @@
+# Kingbright KPT-2012 series, 2.0x1.2mm SMD chip LED. Only a general
+# tolerance (+/-0.1mm, per Note 2) applies dataset-wide in this
+# document, not a per-dimension min/max row -- recorded as nominal only
+# rather than computing a per-dimension range from the general note.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP0805-KPT2012
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 2.0
+    unit: mm
+  body_width:
+    nominal: 1.25
+    unit: mm
+  body_height:
+    nominal: 0.75
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: kingbright/KPT-2012
+      page: 1
+      locator: "\"Package Dimensions\" outline drawing, \"2(.079)\""
+  "/dimensions/body_width":
+    - source: kingbright/KPT-2012
+      page: 1
+      locator: "\"Package Dimensions\" outline drawing, \"1.25(.049)\""
+  "/dimensions/body_height":
+    - source: kingbright/KPT-2012
+      page: 1
+      locator: "\"Package Dimensions\" outline drawing, \"0.75(.029)\""

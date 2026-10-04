@@ -1,0 +1,64 @@
+# onsemi/Fairchild BC817-40, SOT-23 (JEDEC TO-236), drawing MA03DREV10
+# (page 5, Figure 6). Close to the existing standards/SOT23-2.90x1.30-
+# P1.90 package but NOT identical: this drawing's height is "1.20mm
+# MAX", which exceeds that package's documented max of 1.11mm -- kept
+# as its own package per this dataset's per-source-package convention
+# (see the separate CHIP0603-* packages for the same pattern).
+#
+# Field mapping follows SOT23-2.90x1.30-P1.90's own established
+# convention: body_width = D (the long/pitch axis), body_length = E
+# (the short axis separating the 2-lead row from the 1-lead row).
+#
+# `nominal` on body_height is set equal to the datasheet's stated max
+# (1.20mm) -- no min or nominal given on this drawing -- same
+# "closest usable single number" technique as AXIAL-DO35-1N4148's
+# body_height.
+schema_version: "0.1"
+kind: package
+id: standards/SOT23-2.92x1.30-P1.90-BC817
+
+family: sot
+lead_count: 3
+lead_layout: [2, 1]
+
+pitch:
+  nominal: 1.90
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.30
+    min: 1.15
+    max: 1.50
+    unit: mm
+  body_width:
+    nominal: 2.92
+    min: 2.72
+    max: 3.12
+    unit: mm
+  body_height:
+    nominal: 1.20
+    max: 1.20
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: sot
+
+provenance:
+  "/pitch":
+    - source: onsemi/BC818-D
+      page: 5
+      locator: "Figure 6, drawing MA03DREV10 -- pitch not separately dimensioned on this drawing; reuses the SOT-23 standard 1.90mm pitch already confirmed for SOT23-2.90x1.30-P1.90"
+  "/dimensions/body_length":
+    - source: onsemi/BC818-D
+      page: 5
+      locator: "Figure 6, drawing MA03DREV10, symbol \"E\": 1.30 +0.20/-0.15mm -- see field-mapping note above"
+  "/dimensions/body_width":
+    - source: onsemi/BC818-D
+      page: 5
+      locator: "Figure 6, drawing MA03DREV10, symbol \"D\": 2.92 +/-0.20mm -- see field-mapping note above"
+  "/dimensions/body_height":
+    - source: onsemi/BC818-D
+      page: 5
+      locator: "Figure 6, drawing MA03DREV10, symbol \"A\": 1.20mm MAX, no min/nominal stated -- see comment above"

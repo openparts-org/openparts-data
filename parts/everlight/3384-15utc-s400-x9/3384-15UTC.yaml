@@ -1,0 +1,24 @@
+# 5mm (T-1 3/4) round THT white LED (InGaN/Sapphire, phosphor-
+# converted), water clear lens. The datasheet/distributor listing pairs
+# this with a secondary designation "S400-X9" (comma-separated in the
+# source filename, not a single slash-containing MPN) -- "3384-15UTC"
+# is used here as the primary MPN. Confirmed real and current via the
+# Everlight technical data sheet itself (Device Number DLE-0001270).
+schema_version: "0.1"
+kind: part
+id: everlight/3384-15UTC
+
+manufacturer: everlight
+mpn: 3384-15UTC
+
+device: everlight/3384-SERIES
+package: standards/RADIAL-3384-EVERLIGHT
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - everlight/DLE-0001270

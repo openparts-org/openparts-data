@@ -1,0 +1,26 @@
+# Schottky diode, SOD123. Confirmed real and current via the
+# Ordering Information table ("B0540W-7-F", page 1) of a Diodes
+# Incorporated datasheet document DS30138 Rev. 14-2 (January 2024) --
+# fetched from a URL named for a different part (BAT54) on diodes.com;
+# the document's own content identifies as DS30138/B0540W, which is
+# what's cited here. Reuses the existing SOD123 package already
+# established for 1N4148W (same manufacturer, same case, matching
+# dimension ranges confirmed independently).
+schema_version: "0.1"
+kind: part
+id: diodes/B0540W
+
+manufacturer: diodes
+mpn: B0540W
+
+device: diodes/B0540W
+package: standards/CHIP-SOD123-DIODES
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - diodes/DS30138

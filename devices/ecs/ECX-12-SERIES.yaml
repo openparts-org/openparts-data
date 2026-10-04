@@ -1,0 +1,23 @@
+# 32.768kHz SMD tuning fork crystal, 2-pad (confirmed via the
+# datasheet's own "PAD CONNECTIONS" table: Pad 1 = In/Out, Pad 2 =
+# Out/In -- both are crystal electrodes, no GND/case pad, unlike
+# Abracon's ABM8/ABM10 series which are 4-pad). Electrically symmetric,
+# named XTAL1/XTAL2 only to satisfy this dataset's distinct-pin-name
+# requirement, same as abracon/AB-8MHZ.
+schema_version: "0.1"
+kind: device
+id: ecs/ECX-12-SERIES
+
+manufacturer: ecs
+category: crystal
+family: ECX-12
+
+pins:
+  "1": { name: "XTAL1", type: passive }
+  "2": { name: "XTAL2", type: passive }
+
+provenance:
+  "/pins":
+    - source: ecs/ECX_12
+      page: 1
+      locator: "\"PAD CONNECTIONS\" table"

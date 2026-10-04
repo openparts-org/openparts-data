@@ -1,0 +1,22 @@
+# General-purpose axial rectifier diode, DO-41. Polarity (pin 1 =
+# cathode, pin 2 = anode) follows this dataset's established convention
+# for Vishay axial diodes (see vishay/1N4148) and the band-marks-cathode
+# convention confirmed for this part on page 1 of the datasheet
+# ("Cathode Band").
+schema_version: "0.1"
+kind: device
+id: vishay/1N4007
+
+manufacturer: vishay
+category: diode
+family: 1N4007
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: vishay/88503
+      page: 1
+      locator: "\"MAXIMUM RATINGS\"/marking section, cathode band"

@@ -1,0 +1,17 @@
+# Fetched from diodes.com/assets/Datasheets/BAT54.pdf, but the document
+# content itself identifies as DS30138 Rev. 14-2 for B0540W -- the URL
+# name and document content disagree (stale/shared asset path or
+# redirect on Diodes Inc's own site). Flagged, not hidden: `document_id`
+# below reflects the content actually read, not the URL's filename.
+schema_version: "0.1"
+kind: source
+id: diodes/DS30138
+
+publisher: diodes
+document_id: DS30138
+document_type: datasheet
+
+revision: "14-2"
+date: "2024-01"
+
+url: "https://www.diodes.com/assets/Datasheets/BAT54.pdf"

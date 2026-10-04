@@ -1,0 +1,55 @@
+# Everlight 3384-15UTC/S400-X9, 5mm (T-1 3/4) round THT LED. Same
+# dual-diameter situation as RADIAL-WP7113ID: the datasheet gives both
+# a 5.0mm lens/dome diameter and a wider 5.6mm flange diameter.
+# body_length/body_width use the 5.0mm lens diameter (matching the
+# "5.0mm Round LED" naming and RADIAL-WP7113ID's own precedent), not
+# the flange.
+schema_version: "0.1"
+kind: package
+id: standards/RADIAL-3384-EVERLIGHT
+
+family: radial
+lead_count: 2
+
+pitch:
+  nominal: 2.54
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 5.0
+    min: 4.8
+    max: 5.2
+    unit: mm
+  body_width:
+    nominal: 5.0
+    min: 4.8
+    max: 5.2
+    unit: mm
+  body_height:
+    nominal: 8.6
+    min: 8.3
+    max: 8.9
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: radial
+
+provenance:
+  "/pitch":
+    - source: everlight/DLE-0001270
+      page: 2
+      locator: "Package Dimensions drawing, lead spacing 2.54mm"
+  "/dimensions/body_length":
+    - source: everlight/DLE-0001270
+      page: 2
+      locator: "Package Dimensions drawing, lens diameter 5.0 +/-0.2mm -- chosen over the 5.6mm flange diameter, see comment above"
+  "/dimensions/body_width":
+    - source: everlight/DLE-0001270
+      page: 2
+      locator: "Package Dimensions drawing, lens diameter 5.0 +/-0.2mm, see comment above"
+  "/dimensions/body_height":
+    - source: everlight/DLE-0001270
+      page: 2
+      locator: "Package Dimensions drawing, dome length (flange to lens tip) 8.6 +/-0.3mm"

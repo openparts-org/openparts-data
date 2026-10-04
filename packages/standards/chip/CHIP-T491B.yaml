@@ -1,0 +1,45 @@
+# Kemet T491 series, EIA 3528-21 "Case B" molded tantalum chip body.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-T491B
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 3.5
+    min: 3.3
+    max: 3.7
+    unit: mm
+  body_width:
+    nominal: 2.8
+    min: 2.6
+    max: 3.0
+    unit: mm
+  body_height:
+    nominal: 1.9
+    min: 1.7
+    max: 2.1
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: kemet/T2005_T491
+      page: 4
+      locator: "\"Dimensions - Millimeters (Inches)\" table, row \"B / EIA 3528-21\""
+  "/dimensions/body_width":
+    - source: kemet/T2005_T491
+      page: 4
+      locator: "\"Dimensions - Millimeters (Inches)\" table, row \"B / EIA 3528-21\""
+  "/dimensions/body_height":
+    - source: kemet/T2005_T491
+      page: 4
+      locator: "\"Dimensions - Millimeters (Inches)\" table, row \"B / EIA 3528-21\""

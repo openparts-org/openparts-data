@@ -1,0 +1,20 @@
+# Schottky diode, SOD123 -- same package as the existing 1N4148W device
+# (reuses standards/CHIP-SOD123-DIODES). Polarity confirmed from the
+# datasheet's "Mechanical Data" section: "Polarity: Cathode Band".
+schema_version: "0.1"
+kind: device
+id: diodes/B0540W
+
+manufacturer: diodes
+category: diode
+family: B0540W
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: diodes/DS30138
+      page: 1
+      locator: "\"Mechanical Data\": \"Polarity: Cathode Band\""

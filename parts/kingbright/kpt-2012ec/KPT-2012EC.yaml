@@ -1,0 +1,21 @@
+# High Efficiency Red (GaAsP/GaP) 0805 SMD LED, water clear lens.
+# Confirmed real and current as a direct line item in Kingbright's own
+# KPT-2012 series selection-guide table, and on RS Online.
+schema_version: "0.1"
+kind: part
+id: kingbright/KPT-2012EC
+
+manufacturer: kingbright
+mpn: KPT-2012EC
+
+device: kingbright/KPT-2012-SERIES
+package: standards/CHIP0805-KPT2012
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - kingbright/KPT-2012

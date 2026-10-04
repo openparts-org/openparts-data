@@ -1,0 +1,22 @@
+# Solid tantalum capacitor, polarized. Cathode(-)/Anode(+) end
+# markings confirmed from the datasheet's own outline drawing ("CATHODE
+# (-) END VIEW" / "ANODE (+) END VIEW", page 4) -- modeled the same way
+# as this dataset's other polarized chip-shaped parts (e.g.
+# nichicon/UVR1C471M).
+schema_version: "0.1"
+kind: device
+id: kemet/T491B-TANTALUM
+
+manufacturer: kemet
+category: capacitor
+family: T491B
+
+pins:
+  "1": { name: "+", type: passive }
+  "2": { name: "-", type: passive }
+
+provenance:
+  "/pins":
+    - source: kemet/T2005_T491
+      page: 4
+      locator: "Outline drawing, \"CATHODE (-) END VIEW\" / \"ANODE (+) END VIEW\""

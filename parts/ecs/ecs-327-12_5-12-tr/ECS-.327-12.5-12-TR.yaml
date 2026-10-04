@@ -1,0 +1,23 @@
+# 32.768kHz +/-20ppm tuning fork crystal, 12.5pF load capacitance,
+# ECX-12 package, tape and reel. MPN decodes per the datasheet's own
+# Part Numbering Guide: .327=32.768kHz, 12.5=load cap, -12=ECX-12
+# package, TR=3K/reel tape-and-reel. Confirmed real and current via
+# ECS Inc's own live product page.
+schema_version: "0.1"
+kind: part
+id: "ecs/ECS-.327-12.5-12-TR"
+
+manufacturer: ecs
+mpn: "ECS-.327-12.5-12-TR"
+
+device: ecs/ECX-12-SERIES
+package: standards/CHIP-ECX12
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ecs/ECX_12

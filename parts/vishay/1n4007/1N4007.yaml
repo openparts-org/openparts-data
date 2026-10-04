@@ -1,0 +1,21 @@
+# General-purpose axial rectifier diode, DO-41, 1000V VRRM. Confirmed
+# real and current directly in the datasheet's MAXIMUM RATINGS table
+# (page 1, VRRM=1000V column).
+schema_version: "0.1"
+kind: part
+id: vishay/1N4007
+
+manufacturer: vishay
+mpn: 1N4007
+
+device: vishay/1N4007
+package: standards/AXIAL-DO41-1N4007
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - vishay/88503

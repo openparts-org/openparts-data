@@ -1,0 +1,14 @@
+schema_version: "0.1"
+kind: device
+id: murata/GRM155-X7R
+
+manufacturer: murata
+category: capacitor
+family: GRM155
+
+# A 2-terminal non-polarized MLCC has no polarity/electrical role
+# beyond "passive" and no meaningful pin names beyond its terminal
+# number, same as the existing GRM188-X7R device.
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

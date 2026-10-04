@@ -1,0 +1,21 @@
+# 0.1uF, +/-10%, 16V, X7R MLCC, 0402 (1005M) case. Confirmed real and
+# current via Murata's own product line plus Farnell/RS Online/Future
+# Electronics/LCSC listings.
+schema_version: "0.1"
+kind: part
+id: murata/GRM155R71C104KA88D
+
+manufacturer: murata
+mpn: GRM155R71C104KA88D
+
+device: murata/GRM155-X7R
+package: standards/CHIP0402-GRM155
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - murata/GRM155R71C104KA88

@@ -1,0 +1,61 @@
+# onsemi BC546/547/548 series TO-92 (JEDEC CASE 29-11, STYLE 17) --
+# distinct from the existing TO92-2N3904 package (CASE 135AN).
+#
+# Axis mapping confirmed by matching this drawing's A/B/C ranges
+# against TO92-2N3904's independently-confirmed width/height/length
+# ranges: dim A's max (5.20mm) matches that package's body_width max
+# exactly; dim B's max (5.33mm) matches its body_height max exactly;
+# dim C's max (4.19mm) matches its body_length max exactly. So A ->
+# body_width, B -> body_height, C -> body_length.
+#
+# `nominal` on each dimension is this dataset's own midpoint of the
+# stated min/max (the drawing gives only min/max, no separate nominal)
+# -- disclosed as derived, same technique as TO92-2N3904.
+schema_version: "0.1"
+kind: package
+id: standards/TO92-BC547
+
+family: to92
+lead_count: 3
+
+pitch:
+  nominal: 1.27
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 4.825
+    min: 4.45
+    max: 5.20
+    unit: mm
+  body_length:
+    nominal: 3.685
+    min: 3.18
+    max: 4.19
+    unit: mm
+  body_height:
+    nominal: 4.825
+    min: 4.32
+    max: 5.33
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: to92
+
+provenance:
+  "/pitch":
+    - source: onsemi/98ASB42022B
+      locator: "Not independently re-derived from this drawing; reuses the standard 1.27mm TO-92 basic lead pitch already confirmed for TO92-2N3904's own CASE 135AN drawing -- both are standard straight-lead TO-92 outlines."
+  "/dimensions/body_width":
+    - source: onsemi/98ASB42022B
+      page: 6
+      locator: "BENT LEAD / TAPE & REEL / AMMO PACK table, dim A -- see axis-mapping note above"
+  "/dimensions/body_length":
+    - source: onsemi/98ASB42022B
+      page: 6
+      locator: "BENT LEAD / TAPE & REEL / AMMO PACK table, dim C -- see axis-mapping note above"
+  "/dimensions/body_height":
+    - source: onsemi/98ASB42022B
+      page: 6
+      locator: "BENT LEAD / TAPE & REEL / AMMO PACK table, dim B -- see axis-mapping note above"
