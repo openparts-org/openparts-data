@@ -1,0 +1,13 @@
+schema_version: "0.1"
+kind: device
+id: vishay/CRCW0603-GENERAL-PURPOSE
+
+manufacturer: vishay
+category: resistor
+family: CRCW0603
+
+# A 2-terminal resistor has no polarity/electrical role beyond "passive"
+# and no meaningful pin names beyond its terminal number.
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

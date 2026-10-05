@@ -1,0 +1,42 @@
+# Kingbright APT1608SGC, 1.6x0.8mm SMD chip LED. Nominal-only dimensions
+# from the PACKAGE DIMENSIONS drawing; the only tolerance stated is the
+# datasheet's general +/-0.1mm note, so no per-dimension min/max is
+# recorded rather than computing one from that general note.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP0603-APT1608SGC
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.6
+    unit: mm
+  body_width:
+    nominal: 0.8
+    unit: mm
+  body_height:
+    nominal: 0.75
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: kingbright/DSAD0932
+      page: 1
+      locator: "\"PACKAGE DIMENSIONS\" drawing, length 1.6"
+  "/dimensions/body_width":
+    - source: kingbright/DSAD0932
+      page: 1
+      locator: "\"PACKAGE DIMENSIONS\" drawing, width 0.8"
+  "/dimensions/body_height":
+    - source: kingbright/DSAD0932
+      page: 1
+      locator: "\"PACKAGE DIMENSIONS\" drawing, thickness 0.75(0.029)"

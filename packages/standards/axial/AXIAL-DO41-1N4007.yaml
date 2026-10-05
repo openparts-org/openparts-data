@@ -4,18 +4,15 @@
 # leads also ship straight with no forming/pitch dimension in the
 # datasheet).
 #
-# `nominal` for body diameter is this dataset's own midpoint of the
-# datasheet's stated min/max (disclosed as derived, not a Vishay-stated
-# value), same technique used for AXIAL-DO35-1N4148.
+# Dimensions read from the PACKAGE OUTLINE DIMENSIONS drawing (page 4):
+#   0.107 (2.7) / 0.080 (2.0) DIA.   -> body diameter, 2.0-2.7mm
+#   0.205 (5.2) / 0.160 (4.1)        -> axial body length, 4.1-5.2mm
+#   1.0 (25.4) MIN. (x2)             -> lead lengths, not body
 #
-# `body_height` (axial body length) is deliberately OMITTED: this
-# datasheet's PACKAGE OUTLINE DIMENSIONS drawing (page 4) gives no
-# number for it at all -- only two "1.0 (25.4) MIN." callouts, which are
-# lead lengths either side of the body, not the body length itself. No
-# supplementary Vishay mechanical drawing could be found. Per this
-# dataset's "omit rather than invent" rule, this leaves footprint/STEP/
-# STL generation 422ing on the missing dimension until a real source
-# for it turns up.
+# Mapped the same way as AXIAL-DO35-1N4148: body_width and body_length
+# are the diameter, body_height is the axial body length. `nominal`
+# values are this dataset's own midpoints of the stated min/max
+# (disclosed as derived, not Vishay-stated).
 schema_version: "0.1"
 kind: package
 id: standards/AXIAL-DO41-1N4007
@@ -29,16 +26,19 @@ pitch:
 
 dimensions:
   body_width:
-    nominal: 4.65
-    min: 4.1
-    max: 5.2
+    nominal: 2.35
+    min: 2.0
+    max: 2.7
     unit: mm
   body_length:
+    nominal: 2.35
+    min: 2.0
+    max: 2.7
+    unit: mm
+  body_height:
     nominal: 4.65
     min: 4.1
     max: 5.2
-    unit: mm
-  body_height:
     unit: mm
 
 geometry:
@@ -52,8 +52,12 @@ provenance:
   "/dimensions/body_width":
     - source: vishay/88503
       page: 4
-      locator: "PACKAGE OUTLINE DIMENSIONS (DO-41/DO-204AL) drawing, body diameter min 0.160in(4.1mm) / max 0.205in(5.2mm)"
+      locator: "PACKAGE OUTLINE DIMENSIONS (DO-41), \"0.107 (2.7) / 0.080 (2.0) DIA.\""
   "/dimensions/body_length":
     - source: vishay/88503
       page: 4
-      locator: "PACKAGE OUTLINE DIMENSIONS (DO-41/DO-204AL) drawing, body diameter min 0.160in(4.1mm) / max 0.205in(5.2mm)"
+      locator: "PACKAGE OUTLINE DIMENSIONS (DO-41), \"0.107 (2.7) / 0.080 (2.0) DIA.\" (circular body, so length = diameter)"
+  "/dimensions/body_height":
+    - source: vishay/88503
+      page: 4
+      locator: "PACKAGE OUTLINE DIMENSIONS (DO-41), \"0.205 (5.2) / 0.160 (4.1)\" axial body length"

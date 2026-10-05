@@ -1,0 +1,22 @@
+# PNP general-purpose transistor, SOT-23 (Case 318, Style 6). Active in
+# the datasheet's ordering table (MMBT3906LT1G and LT3G). Reuses the
+# existing SOT-23 2.90x1.30 package: the case drawing's dimensions
+# (98ASB42226B, page 1) match SOT23-2.90x1.30-P1.90's values exactly.
+schema_version: "0.1"
+kind: part
+id: onsemi/MMBT3906LT1G
+
+manufacturer: onsemi
+mpn: MMBT3906LT1G
+
+device: onsemi/MMBT3906
+package: standards/SOT23-2.90x1.30-P1.90
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - onsemi/MMBT3906-D

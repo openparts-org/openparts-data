@@ -1,0 +1,13 @@
+# 2-terminal fast-acting SMD fuse -- same reasoning as the existing
+# bourns/MF-MSMF-SERIES and littelfuse/1206L-SERIES devices.
+schema_version: "0.1"
+kind: device
+id: bourns/SF-1206F-SERIES
+
+manufacturer: bourns
+category: fuse
+family: SF-1206F
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

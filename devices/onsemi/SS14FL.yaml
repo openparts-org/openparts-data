@@ -1,0 +1,20 @@
+# 1A, 40V Schottky barrier rectifier, SOD-123FL. Polarity from the
+# datasheet's own schematic symbol (pin 1 = Cathode, pin 2 = Anode) and
+# "Band Indicates Cathode" note (page 1).
+schema_version: "0.1"
+kind: device
+id: onsemi/SS14FL
+
+manufacturer: onsemi
+category: diode
+family: SS14FL
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/SS14FL-D
+      page: 1
+      locator: "Schematic symbol (1=Cathode, 2=Anode) and \"Band Indicates Cathode\""

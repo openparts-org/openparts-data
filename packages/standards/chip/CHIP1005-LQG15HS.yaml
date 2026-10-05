@@ -1,0 +1,46 @@
+# Murata LQG15HS series, 1.0 x 0.5 x 0.5mm chip inductor body, from the
+# "5. Appearance and Dimensions" table (page 4).
+schema_version: "0.1"
+kind: package
+id: standards/CHIP1005-LQG15HS
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.0
+    min: 0.95
+    max: 1.05
+    unit: mm
+  body_width:
+    nominal: 0.5
+    min: 0.45
+    max: 0.55
+    unit: mm
+  body_height:
+    nominal: 0.5
+    min: 0.45
+    max: 0.55
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: murata/JELF243B_0010V-01
+      page: 4
+      locator: "Section 5 \"Appearance and Dimensions\", length 1.0 +/-0.05mm"
+  "/dimensions/body_width":
+    - source: murata/JELF243B_0010V-01
+      page: 4
+      locator: "Section 5 \"Appearance and Dimensions\", width 0.5 +/-0.05mm"
+  "/dimensions/body_height":
+    - source: murata/JELF243B_0010V-01
+      page: 4
+      locator: "Section 5 \"Appearance and Dimensions\", height 0.5 +/-0.05mm"

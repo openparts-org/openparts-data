@@ -1,0 +1,23 @@
+# 2.2nH +/-0.3nH, multilayer chip inductor, 1005 body. Q min 8, DCR max
+# 0.09 Ohm, SRF min 6000MHz, rated current 900mA, per the datasheet's
+# electrical characteristics table (page 2). The "0402" case name is
+# from a distributor listing, not this specification document, so it is
+# not recorded here.
+schema_version: "0.1"
+kind: part
+id: murata/LQG15HS2N2S02D
+
+manufacturer: murata
+mpn: LQG15HS2N2S02D
+
+device: murata/LQG15HS2N2
+package: standards/CHIP1005-LQG15HS
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - murata/JELF243B_0010V-01

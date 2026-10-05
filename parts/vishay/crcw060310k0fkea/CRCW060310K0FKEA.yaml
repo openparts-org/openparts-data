@@ -1,0 +1,22 @@
+# 10 kOhm, +/-1%, 0603 thick-film chip resistor, 7" reel. MPN decodes
+# per the datasheet's own "Part Number and Product Description" section
+# (page 3): CRCW | 0603 | 10K0 (10 kOhm) | F (+/-1%) | K (+/-100ppm/K) |
+# EA (7" reel, 5000 pcs).
+schema_version: "0.1"
+kind: part
+id: vishay/CRCW060310K0FKEA
+
+manufacturer: vishay
+mpn: CRCW060310K0FKEA
+
+device: vishay/CRCW0603-GENERAL-PURPOSE
+package: standards/CHIP0603-CRCW
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - vishay/20035

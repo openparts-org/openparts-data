@@ -1,0 +1,21 @@
+# 1A, 50V general-purpose rectifier, DO-41. Confirmed real via the
+# datasheet's ordering table. Reuses the DO-41 package already defined
+# for Vishay's 1N4007 (identical JEDEC DO-41 case).
+schema_version: "0.1"
+kind: part
+id: onsemi/1N4001
+
+manufacturer: onsemi
+mpn: 1N4001
+
+device: onsemi/1N4001
+package: standards/AXIAL-DO41-1N4007
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - onsemi/1N4001-D

@@ -1,0 +1,20 @@
+# 1A, 40V Schottky barrier rectifier, SOD-123FL. Confirmed real via the
+# datasheet's ordering table.
+schema_version: "0.1"
+kind: part
+id: onsemi/SS14FL
+
+manufacturer: onsemi
+mpn: SS14FL
+
+device: onsemi/SS14FL
+package: standards/CHIP-SOD123FL-SS14FL
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - onsemi/SS14FL-D

@@ -1,0 +1,48 @@
+# onsemi SS14FL, SOD-123FL. The datasheet's case drawing (98AON13725G)
+# gives min/max only, no nominal. `nominal` below is this dataset's own
+# midpoint of each stated range, disclosed as derived -- same technique
+# as TO92-2N3904 and AXIAL-DO35-1N4148.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-SOD123FL-SS14FL
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 2.75
+    min: 2.50
+    max: 3.00
+    unit: mm
+  body_width:
+    nominal: 1.73
+    min: 1.50
+    max: 1.95
+    unit: mm
+  body_height:
+    nominal: 0.94
+    min: 0.80
+    max: 1.08
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: onsemi/SS14FL-D
+      page: 4
+      locator: "Case drawing 98AON13725G table, symbol \"D\" -- nominal is this dataset's computed midpoint"
+  "/dimensions/body_width":
+    - source: onsemi/SS14FL-D
+      page: 4
+      locator: "Case drawing 98AON13725G table, symbol \"E\" -- nominal is this dataset's computed midpoint"
+  "/dimensions/body_height":
+    - source: onsemi/SS14FL-D
+      page: 4
+      locator: "Case drawing 98AON13725G table, symbol \"A\" -- nominal is this dataset's computed midpoint"

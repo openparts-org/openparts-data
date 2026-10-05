@@ -1,0 +1,20 @@
+# 2.5A, 65VDC fast-acting SMD fuse, 1206 case. Electrical row confirmed
+# directly in the datasheet's electrical characteristics table (page 1).
+schema_version: "0.1"
+kind: part
+id: bourns/SF-1206F250M-2
+
+manufacturer: bourns
+mpn: SF-1206F250M-2
+
+device: bourns/SF-1206F-SERIES
+package: standards/CHIP1206-SF-1206F
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - bourns/SF-1206F-M

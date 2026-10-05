@@ -1,0 +1,24 @@
+# 1 kOhm, +/-1%, 0805 general-purpose thick-film chip resistor. MPN
+# decodes per the RC_L datasheet's own Ordering Information scheme
+# (page 2): RC + 0805(size) + F(+/-1%) + R(paper taping) + 07(7" reel)
+# + 1K(resistance, K = decimal point) + L. Reuses the same yageo
+# datasheet as RC0402/RC1206. Not cross-checked against a distributor
+# listing for this exact MPN, per the research report.
+schema_version: "0.1"
+kind: part
+id: yageo/RC0805FR-071KL
+
+manufacturer: yageo
+mpn: RC0805FR-071KL
+
+device: yageo/RC0805-GENERAL-PURPOSE
+package: standards/CHIP0805-RC
+
+existence:
+  status: probable
+
+lifecycle:
+  status: active
+
+sources:
+  - yageo/PYU-RC_GROUP@V14

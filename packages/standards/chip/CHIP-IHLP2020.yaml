@@ -1,0 +1,47 @@
+# Vishay IHLP-2020BZ-A1 shielded power inductor, square 5.18mm footprint.
+# Height is stated as max only (2.0mm, page 2 "DIMENSIONS"), so `nominal`
+# is set equal to that max -- same technique as AXIAL-DO35-1N4148's
+# body_height.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-IHLP2020
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 5.18
+    min: 4.926
+    max: 5.434
+    unit: mm
+  body_width:
+    nominal: 5.18
+    min: 4.926
+    max: 5.434
+    unit: mm
+  body_height:
+    nominal: 2.0
+    max: 2.0
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: vishay/34302
+      page: 2
+      locator: "\"DIMENSIONS\" table, body 5.18 +/-0.254mm (derived min/max)"
+  "/dimensions/body_width":
+    - source: vishay/34302
+      page: 2
+      locator: "\"DIMENSIONS\" table, body 5.18 +/-0.254mm (derived min/max)"
+  "/dimensions/body_height":
+    - source: vishay/34302
+      page: 2
+      locator: "\"DIMENSIONS\" table, height max 2.0mm, no min/nominal stated"

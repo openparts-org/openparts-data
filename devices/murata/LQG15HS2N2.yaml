@@ -1,0 +1,14 @@
+schema_version: "0.1"
+kind: device
+id: murata/LQG15HS2N2
+
+manufacturer: murata
+category: inductor
+family: LQG15HS
+
+# 2-terminal chip inductor, 2 electrodes confirmed from the datasheet's
+# dimensions figure. Same value-specific device convention as the other
+# Murata inductors in this dataset.
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

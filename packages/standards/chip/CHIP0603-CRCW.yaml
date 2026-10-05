@@ -1,0 +1,48 @@
+# Vishay CRCW0603 thick-film chip resistor. Dimensions from the datasheet's
+# "DIMENSIONS AND MASS" table (page 11, D11/CRCW0603). L is stated
+# asymmetrically (+0.10/-0.05), so min/max are derived from the stated
+# nominal and tolerance accordingly.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP0603-CRCW
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.55
+    min: 1.50
+    max: 1.65
+    unit: mm
+  body_width:
+    nominal: 0.85
+    min: 0.75
+    max: 0.95
+    unit: mm
+  body_height:
+    nominal: 0.45
+    min: 0.40
+    max: 0.50
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: vishay/20035
+      page: 11
+      locator: "\"DIMENSIONS AND MASS\" table, D11/CRCW0603, L = 1.55 +0.10/-0.05mm"
+  "/dimensions/body_width":
+    - source: vishay/20035
+      page: 11
+      locator: "\"DIMENSIONS AND MASS\" table, D11/CRCW0603, W = 0.85 +/-0.10mm"
+  "/dimensions/body_height":
+    - source: vishay/20035
+      page: 11
+      locator: "\"DIMENSIONS AND MASS\" table, D11/CRCW0603, H = 0.45 +/-0.05mm"

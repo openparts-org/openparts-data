@@ -1,0 +1,22 @@
+# Super Bright Green 0603 SMD chip LED. The datasheet's bottom view
+# shows a "Polarity mark" on the pin-1 side, the same drawing convention
+# as the existing APT1608EC (red), where pin 1 = cathode -- disclosed as
+# convention-consistent, not separately re-confirmed from the word
+# "cathode" (which this datasheet does not print).
+schema_version: "0.1"
+kind: device
+id: kingbright/APT1608SGC
+
+manufacturer: kingbright
+category: led
+family: APT1608SGC
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: kingbright/DSAD0932
+      page: 1
+      locator: "Bottom view \"Polarity mark\" on pin-1 side, schematic 1-2 -- see comment above"

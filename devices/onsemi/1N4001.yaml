@@ -1,0 +1,20 @@
+# 1A, 50V general-purpose rectifier, DO-41. Polarity from the datasheet's
+# case drawing ("STYLE 1: PIN 1. CATHODE (POLARITY BAND) / 2. ANODE")
+# and "Cathode Indicated by Polarity Band" note (page 1).
+schema_version: "0.1"
+kind: device
+id: onsemi/1N4001
+
+manufacturer: onsemi
+category: diode
+family: 1N4001
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/1N4001-D
+      page: 6
+      locator: "Case drawing 98ASB42045B, STYLE 1 pin table, \"PIN 1. CATHODE (POLARITY BAND) / 2. ANODE\""

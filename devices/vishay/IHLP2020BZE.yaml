@@ -1,0 +1,20 @@
+# Shielded power inductor, IHLP-2020BZ-A1 (AEC-Q200). Two terminal pads
+# confirmed from the datasheet's typical pad layout (left and right
+# pads only; not a 4-pad part).
+schema_version: "0.1"
+kind: device
+id: vishay/IHLP2020BZE
+
+manufacturer: vishay
+category: inductor
+family: IHLP2020BZE
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+
+provenance:
+  "/pins":
+    - source: vishay/34302
+      page: 2
+      locator: "\"Typical pad layout\" -- two pads"

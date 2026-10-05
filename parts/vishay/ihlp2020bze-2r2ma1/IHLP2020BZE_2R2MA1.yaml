@@ -1,0 +1,20 @@
+# 2.2uH +/-20%, AEC-Q200 shielded power inductor, IHLP-2020BZ-A1.
+# Electrical values confirmed in the datasheet's electrical table (page 1).
+schema_version: "0.1"
+kind: part
+id: vishay/IHLP2020BZE_2R2MA1
+
+manufacturer: vishay
+mpn: IHLP2020BZE_2R2MA1
+
+device: vishay/IHLP2020BZE
+package: standards/CHIP-IHLP2020
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - vishay/34302
