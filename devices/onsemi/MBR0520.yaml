@@ -1,0 +1,20 @@
+# 0.5A, 20V Schottky barrier rectifier, SOD-123. Polarity: "Cathode Band"
+# on page 1, and the case drawing's STYLE 1 pin table on page 4 gives
+# PIN 1 = CATHODE, PIN 2 = ANODE.
+schema_version: "0.1"
+kind: device
+id: onsemi/MBR0520
+
+manufacturer: onsemi
+category: diode
+family: MBR0520
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/MBR0520-D
+      page: 4
+      locator: "Case 98ASB42927B STYLE 1: PIN 1 CATHODE, PIN 2 ANODE"

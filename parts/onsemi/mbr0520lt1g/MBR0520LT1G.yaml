@@ -1,0 +1,20 @@
+# 0.5A 20V Schottky, SOD-123, Pb-free. Confirmed in the datasheet's
+# ordering table.
+schema_version: "0.1"
+kind: part
+id: onsemi/MBR0520LT1G
+
+manufacturer: onsemi
+mpn: MBR0520LT1G
+
+device: onsemi/MBR0520
+package: standards/CHIP-SOD123-MBR0520
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - onsemi/MBR0520-D

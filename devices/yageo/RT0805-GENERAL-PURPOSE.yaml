@@ -1,0 +1,11 @@
+schema_version: "0.1"
+kind: device
+id: yageo/RT0805-GENERAL-PURPOSE
+
+manufacturer: yageo
+category: resistor
+family: RT0805
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

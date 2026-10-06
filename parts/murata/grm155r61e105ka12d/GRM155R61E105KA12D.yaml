@@ -1,0 +1,19 @@
+# 1uF 25V X5R 0402 MLCC. Listed at element14 NZ.
+schema_version: "0.1"
+kind: part
+id: murata/GRM155R61E105KA12D
+
+manufacturer: murata
+mpn: GRM155R61E105KA12D
+
+device: murata/GRM155-R61
+package: standards/CHIP0402-GRM155
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - murata/GRM155R61E105KA12

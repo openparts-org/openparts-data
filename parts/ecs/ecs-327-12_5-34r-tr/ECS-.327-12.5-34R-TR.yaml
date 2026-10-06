@@ -1,0 +1,20 @@
+# 32.768kHz, 12.5pF, ECX-34R 2-pad SMD crystal, tape & reel. Product
+# page and datasheet checked; no distributor listing, so probable.
+schema_version: "0.1"
+kind: part
+id: "ecs/ECS-.327-12.5-34R-TR"
+
+manufacturer: ecs
+mpn: "ECS-.327-12.5-34R-TR"
+
+device: ecs/ECX-34R-SERIES
+package: standards/CHIP-ECX31B
+
+existence:
+  status: probable
+
+lifecycle:
+  status: active
+
+sources:
+  - ecs/ECX-34R

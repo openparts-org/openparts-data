@@ -1,0 +1,47 @@
+# onsemi MBR0520 SOD-123 body, from case drawing 98ASB42927B (page 4),
+# which prints MIN/NOM/MAX for each dimension. Different from the Diodes
+# Inc SOD-123 in CHIP-SOD123-DIODES, so kept as its own package.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-SOD123-MBR0520
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 2.69
+    min: 2.54
+    max: 2.84
+    unit: mm
+  body_width:
+    nominal: 1.60
+    min: 1.40
+    max: 1.80
+    unit: mm
+  body_height:
+    nominal: 1.17
+    min: 0.94
+    max: 1.35
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: onsemi/MBR0520-D
+      page: 4
+      locator: "Case 98ASB42927B table, symbol \"E\""
+  "/dimensions/body_width":
+    - source: onsemi/MBR0520-D
+      page: 4
+      locator: "Case 98ASB42927B table, symbol \"D\""
+  "/dimensions/body_height":
+    - source: onsemi/MBR0520-D
+      page: 4
+      locator: "Case 98ASB42927B table, symbol \"A\""

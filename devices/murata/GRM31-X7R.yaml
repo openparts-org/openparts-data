@@ -1,0 +1,12 @@
+# 10uF X7R 1206 MLCC. Non-polarized two-terminal part.
+schema_version: "0.1"
+kind: device
+id: murata/GRM31-X7R
+
+manufacturer: murata
+category: capacitor
+family: GRM31
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

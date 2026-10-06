@@ -1,0 +1,46 @@
+# KEMET T494 Case C (EIA 6032-28) tantalum body, from the Standard T494
+# Dimensions table (page 27). Tolerances +/-0.3mm on all three.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-KEMET-T494C
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 6.0
+    min: 5.7
+    max: 6.3
+    unit: mm
+  body_width:
+    nominal: 3.2
+    min: 2.9
+    max: 3.5
+    unit: mm
+  body_height:
+    nominal: 2.5
+    min: 2.2
+    max: 2.8
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: kemet/T494-SERIES
+      page: 27
+      locator: "Standard T494 Dimensions, Case C, L 6.0 +/-0.3mm"
+  "/dimensions/body_width":
+    - source: kemet/T494-SERIES
+      page: 27
+      locator: "Standard T494 Dimensions, Case C, W 3.2 +/-0.3mm"
+  "/dimensions/body_height":
+    - source: kemet/T494-SERIES
+      page: 27
+      locator: "Standard T494 Dimensions, Case C, H 2.5 +/-0.3mm"

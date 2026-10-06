@@ -1,0 +1,20 @@
+# Solid tantalum capacitor, polarized, Case C (6032-28). Polarity from
+# the page-27 outline drawing: "CATHODE (-) END VIEW" / "ANODE (+) END
+# VIEW", so pin 1 = +, pin 2 = -.
+schema_version: "0.1"
+kind: device
+id: kemet/T494C-TANTALUM
+
+manufacturer: kemet
+category: capacitor
+family: T494C
+
+pins:
+  "1": { name: "+", type: passive }
+  "2": { name: "-", type: passive }
+
+provenance:
+  "/pins":
+    - source: kemet/T494-SERIES
+      page: 27
+      locator: "Outline drawing, \"CATHODE (-) END VIEW\" / \"ANODE (+) END VIEW\""

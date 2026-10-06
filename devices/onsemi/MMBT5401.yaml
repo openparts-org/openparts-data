@@ -1,0 +1,20 @@
+# PNP high-voltage SOT-23 transistor. Pin numbers printed on the device
+# diagram (page 1): 1 = Base, 2 = Emitter, 3 = Collector.
+schema_version: "0.1"
+kind: device
+id: onsemi/MMBT5401
+
+manufacturer: onsemi
+category: transistor
+family: MMBT5401
+
+pins:
+  "1": { name: Base, type: passive }
+  "2": { name: Emitter, type: passive }
+  "3": { name: Collector, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/MMBT5401-D
+      page: 1
+      locator: "Device diagram, pins 1=BASE, 2=EMITTER, 3=COLLECTOR"

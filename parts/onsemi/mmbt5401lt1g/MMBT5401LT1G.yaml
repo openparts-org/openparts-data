@@ -1,0 +1,21 @@
+# PNP high-voltage transistor, SOT-23, Pb-free. Confirmed in the
+# datasheet's ordering table. Reuses the existing SOT-23 2.90x1.30
+# package (case 318, drawing 98ASB42226B).
+schema_version: "0.1"
+kind: part
+id: onsemi/MMBT5401LT1G
+
+manufacturer: onsemi
+mpn: MMBT5401LT1G
+
+device: onsemi/MMBT5401
+package: standards/SOT23-2.90x1.30-P1.90
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - onsemi/MMBT5401-D

@@ -1,0 +1,46 @@
+# Murata GRM31 1206 MLCC body, from the Shape table (page 1). Tolerances
+# +/-0.2mm on all three dimensions, so min/max are nominal -/+ 0.2.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP1206-GRM31
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 3.2
+    min: 3.0
+    max: 3.4
+    unit: mm
+  body_width:
+    nominal: 1.6
+    min: 1.4
+    max: 1.8
+    unit: mm
+  body_height:
+    nominal: 1.6
+    min: 1.4
+    max: 1.8
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: murata/GRM31CR71E106KA12
+      page: 1
+      locator: "Shape table, L 3.2 +/-0.2mm"
+  "/dimensions/body_width":
+    - source: murata/GRM31CR71E106KA12
+      page: 1
+      locator: "Shape table, W 1.6 +/-0.2mm"
+  "/dimensions/body_height":
+    - source: murata/GRM31CR71E106KA12
+      page: 1
+      locator: "Shape table, T 1.6 +/-0.2mm"

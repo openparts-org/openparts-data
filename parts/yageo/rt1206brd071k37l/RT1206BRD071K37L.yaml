@@ -1,0 +1,19 @@
+# 1.37 kOhm +/-0.1%, 1206 RT series. Listed at Future Electronics.
+schema_version: "0.1"
+kind: part
+id: yageo/RT1206BRD071K37L
+
+manufacturer: yageo
+mpn: RT1206BRD071K37L
+
+device: yageo/RT1206-GENERAL-PURPOSE
+package: standards/CHIP1206-RC
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - yageo/RT-SERIES-V1

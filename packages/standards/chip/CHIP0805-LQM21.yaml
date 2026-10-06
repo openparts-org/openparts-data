@@ -1,0 +1,46 @@
+# Murata LQM21 0805 inductor body, Shape table (page 1). Tolerances as
+# stated (+/-0.15 on L and W, +/-0.1 on T).
+schema_version: "0.1"
+kind: package
+id: standards/CHIP0805-LQM21
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 2.0
+    min: 1.85
+    max: 2.15
+    unit: mm
+  body_width:
+    nominal: 1.25
+    min: 1.10
+    max: 1.40
+    unit: mm
+  body_height:
+    nominal: 0.9
+    min: 0.8
+    max: 1.0
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: murata/LQM21PN2R2MGS
+      page: 1
+      locator: "Shape table, L 2.0 +/-0.15mm"
+  "/dimensions/body_width":
+    - source: murata/LQM21PN2R2MGS
+      page: 1
+      locator: "Shape table, W 1.25 +/-0.15mm"
+  "/dimensions/body_height":
+    - source: murata/LQM21PN2R2MGS
+      page: 1
+      locator: "Shape table, T 0.9 +/-0.1mm"

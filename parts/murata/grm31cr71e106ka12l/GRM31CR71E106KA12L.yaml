@@ -1,0 +1,19 @@
+# 10uF 25V X7R 1206 MLCC. Listed at element14 UK.
+schema_version: "0.1"
+kind: part
+id: murata/GRM31CR71E106KA12L
+
+manufacturer: murata
+mpn: GRM31CR71E106KA12L
+
+device: murata/GRM31-X7R
+package: standards/CHIP1206-GRM31
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - murata/GRM31CR71E106KA12

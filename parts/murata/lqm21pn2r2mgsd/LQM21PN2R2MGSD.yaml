@@ -1,0 +1,20 @@
+# 2.2uH +/-20%, 0805 inductor, taped. Same series is listed at RS; the
+# exact MPN was not confirmed in a listing, so status is probable.
+schema_version: "0.1"
+kind: part
+id: murata/LQM21PN2R2MGSD
+
+manufacturer: murata
+mpn: LQM21PN2R2MGSD
+
+device: murata/LQM21-PN2R2
+package: standards/CHIP0805-LQM21
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - murata/LQM21PN2R2MGS

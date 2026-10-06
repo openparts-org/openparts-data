@@ -1,0 +1,12 @@
+# 2.2uH chip inductor, 0805. Two terminal electrodes, no printed pin numbers.
+schema_version: "0.1"
+kind: device
+id: murata/LQM21-PN2R2
+
+manufacturer: murata
+category: inductor
+family: LQM21
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

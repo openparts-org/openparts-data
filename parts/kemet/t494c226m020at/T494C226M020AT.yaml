@@ -1,0 +1,19 @@
+# 22uF 20V tantalum, Case C, 100% Sn termination (AT). Listed at dasenic.
+schema_version: "0.1"
+kind: part
+id: kemet/T494C226M020AT
+
+manufacturer: kemet
+mpn: T494C226M020AT
+
+device: kemet/T494C-TANTALUM
+package: standards/CHIP-KEMET-T494C
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - kemet/T494-SERIES
