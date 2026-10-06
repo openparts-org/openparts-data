@@ -1,0 +1,48 @@
+# Vishay DO-214AC (SMA) body. Dimensions are only given as min/max in the
+# datasheet's outline table (page 3), so `nominal` is this dataset's
+# midpoint of each range, disclosed as derived -- same technique as the
+# other min/max-only packages.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-SMA-DO214AC
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 4.245
+    min: 3.99
+    max: 4.50
+    unit: mm
+  body_width:
+    nominal: 2.665
+    min: 2.54
+    max: 2.79
+    unit: mm
+  body_height:
+    nominal: 2.135
+    min: 1.98
+    max: 2.29
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: vishay/88711
+      page: 3
+      locator: "Package outline table, body length 0.157(3.99) min / 0.177(4.50) max -- nominal is this dataset's midpoint"
+  "/dimensions/body_width":
+    - source: vishay/88711
+      page: 3
+      locator: "Package outline table, body width 0.100(2.54) min / 0.110(2.79) max -- nominal is this dataset's midpoint"
+  "/dimensions/body_height":
+    - source: vishay/88711
+      page: 3
+      locator: "Package outline table, body height 0.078(1.98) min / 0.090(2.29) max -- nominal is this dataset's midpoint"

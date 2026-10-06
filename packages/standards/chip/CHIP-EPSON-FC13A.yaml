@@ -1,0 +1,46 @@
+# Epson FC-13A 2-pad crystal, 3.2 x 1.5 mm body. Height is max-only (0.9mm
+# on the brief sheet's External dimensions), so `nominal` equals that max,
+# the same technique as the other max-only crystal packages.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-EPSON-FC13A
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 3.2
+    min: 3.1
+    max: 3.3
+    unit: mm
+  body_width:
+    nominal: 1.5
+    min: 1.4
+    max: 1.6
+    unit: mm
+  body_height:
+    nominal: 0.9
+    max: 0.9
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: epson/FC-13A-BRIEF
+      page: 1
+      locator: "External dimensions, 3.2 +/-0.1mm"
+  "/dimensions/body_width":
+    - source: epson/FC-13A-BRIEF
+      page: 1
+      locator: "External dimensions, 1.5 +/-0.1mm"
+  "/dimensions/body_height":
+    - source: epson/FC-13A-BRIEF
+      page: 1
+      locator: "External dimensions, 0.9 Max, no min stated"

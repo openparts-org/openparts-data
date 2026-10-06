@@ -1,0 +1,21 @@
+# N-channel small-signal MOSFET, SOT-23 (Case 318, Style 21). Pin numbers
+# and roles are printed on the datasheet's circuit symbol and pin
+# assignment: 1 = Gate, 2 = Source, 3 = Drain.
+schema_version: "0.1"
+kind: device
+id: onsemi/BSS138
+
+manufacturer: onsemi
+category: transistor
+family: BSS138
+
+pins:
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/BSS138-D
+      page: 1
+      locator: "Circuit symbol and pin assignment (1=Gate, 2=Source, 3=Drain)"

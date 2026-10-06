@@ -1,0 +1,21 @@
+# N-channel MOSFET, SOT-23, Pb-free, tape & reel. Confirmed in the
+# datasheet's ordering table. Reuses the existing SOT-23 2.90x1.30
+# package (the case drawing 98ASB42226B matches it exactly).
+schema_version: "0.1"
+kind: part
+id: onsemi/BSS138LT1G
+
+manufacturer: onsemi
+mpn: BSS138LT1G
+
+device: onsemi/BSS138
+package: standards/SOT23-2.90x1.30-P1.90
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - onsemi/BSS138-D

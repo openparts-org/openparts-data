@@ -1,0 +1,21 @@
+# S1M-E3/5AT, 1A 1000V SMA rectifier, tape & reel. Confirmed listed by a
+# distributor (RS Delivers). Not in the datasheet's own ordering table,
+# so status is kept at verified for the distributor listing only.
+schema_version: "0.1"
+kind: part
+id: vishay/S1M-E3/5AT
+
+manufacturer: vishay
+mpn: S1M-E3/5AT
+
+device: vishay/S1M
+package: standards/CHIP-SMA-DO214AC
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - vishay/88711

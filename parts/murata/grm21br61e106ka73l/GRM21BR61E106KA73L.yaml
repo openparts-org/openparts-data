@@ -1,0 +1,20 @@
+# 10uF, +/-10%, 25V, X5R 0805 MLCC, 180mm reel (L = packaging code).
+# Listed by a distributor (Farnell) and "In Production" in the datasheet.
+schema_version: "0.1"
+kind: part
+id: murata/GRM21BR61E106KA73L
+
+manufacturer: murata
+mpn: GRM21BR61E106KA73L
+
+device: murata/GRM21-X5R
+package: standards/CHIP0805-GRM21
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - murata/GRM21BR61E106KA73

@@ -1,0 +1,13 @@
+# 10uF, 25V, X5R 0805 MLCC. Non-polarized two-terminal part -- same
+# reasoning as the other Murata MLCCs in this dataset.
+schema_version: "0.1"
+kind: device
+id: murata/GRM21-X5R
+
+manufacturer: murata
+category: capacitor
+family: GRM21
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

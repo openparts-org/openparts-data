@@ -1,0 +1,23 @@
+# 6.8uF, 4V, Case A tantalum. The MPN is assembled from the datasheet's
+# Table 1 ordering row ("T495A685(1)004A(2)E2K0") by filling the two
+# placeholder characters with the K and T codes of the same ordering
+# scheme, so the string is not a verbatim table row. Status is therefore
+# probable, not verified.
+schema_version: "0.1"
+kind: part
+id: kemet/T495A685K004ATE2K0
+
+manufacturer: kemet
+mpn: T495A685K004ATE2K0
+
+device: kemet/T495A-TANTALUM
+package: standards/CHIP-KEMET-T495A
+
+existence:
+  status: probable
+
+lifecycle:
+  status: active
+
+sources:
+  - kemet/T2009_T495

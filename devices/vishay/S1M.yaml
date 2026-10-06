@@ -1,0 +1,22 @@
+# 1A, 1000V surface-mount glass-passivated rectifier, DO-214AC (SMA).
+# Polarity from the datasheet's "Color band denotes cathode end" note
+# (page 1) and its "Cathode Band" figure (page 3). No pin numbers are
+# printed, so 1 = Cathode and 2 = Anode follow the same convention as the
+# other two-terminal diodes in this dataset (1N4148, 1N4007).
+schema_version: "0.1"
+kind: device
+id: vishay/S1M
+
+manufacturer: vishay
+category: diode
+family: S1M
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: vishay/88711
+      page: 1
+      locator: "\"Polarity: Color band denotes cathode end\""

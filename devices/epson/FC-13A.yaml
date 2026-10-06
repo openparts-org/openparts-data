@@ -1,0 +1,19 @@
+# 32.768kHz automotive-grade (AEC-Q200) 2-pad SMD crystal. Pad roles
+# confirmed from the brief sheet's internal-connection TOP VIEW (#1, #2).
+schema_version: "0.1"
+kind: device
+id: epson/FC-13A
+
+manufacturer: epson
+category: crystal
+family: FC-13A
+
+pins:
+  "1": { name: "XTAL1", type: passive }
+  "2": { name: "XTAL2", type: passive }
+
+provenance:
+  "/pins":
+    - source: epson/FC-13A-BRIEF
+      page: 1
+      locator: "Internal connection (TOP VIEW), pads #1 and #2"

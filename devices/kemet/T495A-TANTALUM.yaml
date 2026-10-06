@@ -1,0 +1,20 @@
+# Solid tantalum capacitor, polarized, EIA 3216-18 (Case A). Polarity from
+# the datasheet's own "CATHODE (-) END VIEW" / "ANODE (+) END VIEW"
+# drawing (page 4): pin 1 = +, pin 2 = -, same convention as T491B.
+schema_version: "0.1"
+kind: device
+id: kemet/T495A-TANTALUM
+
+manufacturer: kemet
+category: capacitor
+family: T495A
+
+pins:
+  "1": { name: "+", type: passive }
+  "2": { name: "-", type: passive }
+
+provenance:
+  "/pins":
+    - source: kemet/T2009_T495
+      page: 4
+      locator: "Outline drawing, \"CATHODE (-) END VIEW\" / \"ANODE (+) END VIEW\""

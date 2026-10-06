@@ -1,0 +1,20 @@
+# 32.768kHz automotive crystal (AEC-Q200), 3.2 x 1.5 x 0.9 mm, 2 pads.
+# Confirmed from Epson's own brief sheet; no distributor listing checked.
+schema_version: "0.1"
+kind: part
+id: epson/FC-13A
+
+manufacturer: epson
+mpn: FC-13A
+
+device: epson/FC-13A
+package: standards/CHIP-EPSON-FC13A
+
+existence:
+  status: probable
+
+lifecycle:
+  status: active
+
+sources:
+  - epson/FC-13A-BRIEF

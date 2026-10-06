@@ -1,0 +1,55 @@
+# Everlight 7343-2UYC/S400-AX, 5mm round THT LED. Same convention as
+# RADIAL-3384-EVERLIGHT: lens diameter for body length/width, dome length
+# (flange to lens tip) for body height. The lens diameter reading came
+# from a rotated drawing view, so treat its last digit with some caution.
+schema_version: "0.1"
+kind: package
+id: standards/RADIAL-7343-EVERLIGHT
+
+family: radial
+lead_count: 2
+
+pitch:
+  nominal: 2.54
+  min: 2.29
+  max: 2.79
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 5.0
+    min: 4.8
+    max: 5.2
+    unit: mm
+  body_width:
+    nominal: 5.0
+    min: 4.8
+    max: 5.2
+    unit: mm
+  body_height:
+    nominal: 8.65
+    min: 8.40
+    max: 8.90
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: radial
+
+provenance:
+  "/pitch":
+    - source: everlight/DLE-734-090
+      page: 2
+      locator: "Package dimensions drawing, lead spacing 2.54 +/-0.25mm"
+  "/dimensions/body_length":
+    - source: everlight/DLE-734-090
+      page: 2
+      locator: "Package dimensions drawing, lens diameter 5.0 +/-0.2mm"
+  "/dimensions/body_width":
+    - source: everlight/DLE-734-090
+      page: 2
+      locator: "Package dimensions drawing, lens diameter 5.0 +/-0.2mm"
+  "/dimensions/body_height":
+    - source: everlight/DLE-734-090
+      page: 2
+      locator: "Package dimensions drawing, dome length 8.65 +/-0.25mm"

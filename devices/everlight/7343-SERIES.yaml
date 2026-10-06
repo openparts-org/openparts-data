@@ -1,0 +1,19 @@
+# 5mm round THT Super Yellow LED. Pin roles are labeled on the datasheet
+# drawing: (1) Anode, (2) Cathode.
+schema_version: "0.1"
+kind: device
+id: everlight/7343-SERIES
+
+manufacturer: everlight
+category: led
+family: "7343"
+
+pins:
+  "1": { name: Anode, type: passive }
+  "2": { name: Cathode, type: passive }
+
+provenance:
+  "/pins":
+    - source: everlight/DLE-734-090
+      page: 2
+      locator: "Package dimensions drawing, \"(1) Anode\" and \"(2) Cathode\""

@@ -1,0 +1,21 @@
+# 5mm round Super Yellow THT LED. Only the datasheet itself was checked;
+# no distributor listing for this exact MPN was confirmed, so status
+# stays probable.
+schema_version: "0.1"
+kind: part
+id: everlight/7343-2UYC/S400-AX
+
+manufacturer: everlight
+mpn: 7343-2UYC/S400-AX
+
+device: everlight/7343-SERIES
+package: standards/RADIAL-7343-EVERLIGHT
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - everlight/DLE-734-090
