@@ -1,0 +1,20 @@
+# 3mm round THT green LED, low-current L-934 variant. Confirmed listed
+# at Newark.
+schema_version: "0.1"
+kind: part
+id: kingbright/L-934LGD
+
+manufacturer: kingbright
+mpn: L-934LGD
+
+device: kingbright/L-934-SERIES
+package: standards/RADIAL-L934-KINGBRIGHT
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - kingbright/2-L934L

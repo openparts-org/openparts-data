@@ -1,0 +1,13 @@
+# 2-terminal fast-acting SMD fuse, 0402. Same reasoning as the other
+# Bourns fuse devices.
+schema_version: "0.1"
+kind: device
+id: bourns/SF-0402F-SERIES
+
+manufacturer: bourns
+category: fuse
+family: SF-0402F
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

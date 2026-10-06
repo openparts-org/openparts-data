@@ -1,0 +1,12 @@
+# 1.0uH +/-30%, shielded SMD power inductor. 2-terminal, two bottom pads.
+schema_version: "0.1"
+kind: device
+id: bourns/SRU1028-1R0Y
+
+manufacturer: bourns
+category: inductor
+family: SRU1028
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

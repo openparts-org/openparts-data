@@ -1,0 +1,46 @@
+# Bourns SRU1028 shielded power inductor, 10 x 10 x 2.8 mm footprint.
+# Dimensions from the Product Dimensions drawing (page 1), +/-0.3mm each.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-BOURNS-SRU1028
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 10.0
+    min: 9.7
+    max: 10.3
+    unit: mm
+  body_width:
+    nominal: 10.0
+    min: 9.7
+    max: 10.3
+    unit: mm
+  body_height:
+    nominal: 2.8
+    min: 2.5
+    max: 3.1
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: bourns/SRU1028
+      page: 1
+      locator: "Product Dimensions, 10.0 +/-0.3mm"
+  "/dimensions/body_width":
+    - source: bourns/SRU1028
+      page: 1
+      locator: "Product Dimensions, 10.0 +/-0.3mm"
+  "/dimensions/body_height":
+    - source: bourns/SRU1028
+      page: 1
+      locator: "Product Dimensions, 2.8 +/-0.3mm"

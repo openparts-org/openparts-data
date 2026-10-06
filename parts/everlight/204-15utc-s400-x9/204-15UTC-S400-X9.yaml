@@ -1,0 +1,20 @@
+# 3mm round THT white LED. Listed at LCSC, Mouser and Arrow. The slash
+# is part of the MPN as published, same as the existing 7343 series.
+schema_version: "0.1"
+kind: part
+id: everlight/204-15UTC/S400-X9
+
+manufacturer: everlight
+mpn: 204-15UTC/S400-X9
+
+device: everlight/204-SERIES
+package: standards/RADIAL-204-EVERLIGHT
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - everlight/DLE-0004797

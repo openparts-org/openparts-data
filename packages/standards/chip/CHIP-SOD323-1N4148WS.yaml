@@ -1,0 +1,46 @@
+# Diodes Inc SOD-323 (1N4148WS, DS30097), from the SOD323 package table
+# (page 4). Nominal values are the datasheet's own "typ" column.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-SOD323-1N4148WS
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.70
+    min: 1.60
+    max: 1.80
+    unit: mm
+  body_width:
+    nominal: 1.30
+    min: 1.20
+    max: 1.40
+    unit: mm
+  body_height:
+    nominal: 1.05
+    min: 1.00
+    max: 1.10
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: diodes/DS30097
+      page: 4
+      locator: "SOD323 package table, symbol \"E\""
+  "/dimensions/body_width":
+    - source: diodes/DS30097
+      page: 4
+      locator: "SOD323 package table, symbol \"D\""
+  "/dimensions/body_height":
+    - source: diodes/DS30097
+      page: 4
+      locator: "SOD323 package table, symbol \"A2\""

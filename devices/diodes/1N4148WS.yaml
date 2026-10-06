@@ -1,0 +1,20 @@
+# Fast switching small-signal diode, SOD-323. Pin numbers printed on the
+# circuit diagram (1 = cathode-bar side, 2 = anode); polarity confirmed
+# from the "Polarity: Cathode Band" mechanical-data entry.
+schema_version: "0.1"
+kind: device
+id: diodes/1N4148WS
+
+manufacturer: diodes
+category: diode
+family: 1N4148WS
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: diodes/DS30097
+      page: 1
+      locator: "Circuit diagram pins 1/2; \"Polarity: Cathode Band\""

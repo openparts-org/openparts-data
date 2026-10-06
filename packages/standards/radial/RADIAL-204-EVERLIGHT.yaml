@@ -1,0 +1,52 @@
+# Everlight 204-15UTC/S400-X9 3mm round LED (lens 3.0 +/-0.2, dome 5.2
+# +/-0.3, both from the drawing on page 6). Lead spacing 2.54 is nominal
+# only; the tolerance is not stated per dimension.
+schema_version: "0.1"
+kind: package
+id: standards/RADIAL-204-EVERLIGHT
+
+family: radial
+lead_count: 2
+
+pitch:
+  nominal: 2.54
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 3.0
+    min: 2.8
+    max: 3.2
+    unit: mm
+  body_width:
+    nominal: 3.0
+    min: 2.8
+    max: 3.2
+    unit: mm
+  body_height:
+    nominal: 5.2
+    min: 4.9
+    max: 5.5
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: radial
+
+provenance:
+  "/pitch":
+    - source: everlight/DLE-0004797
+      page: 6
+      locator: "Drawing lead spacing 2.54mm"
+  "/dimensions/body_length":
+    - source: everlight/DLE-0004797
+      page: 6
+      locator: "Drawing lens diameter 3.0 +/-0.2mm"
+  "/dimensions/body_width":
+    - source: everlight/DLE-0004797
+      page: 6
+      locator: "Drawing lens diameter 3.0 +/-0.2mm"
+  "/dimensions/body_height":
+    - source: everlight/DLE-0004797
+      page: 6
+      locator: "Drawing flange to lens tip 5.2 +/-0.3mm"

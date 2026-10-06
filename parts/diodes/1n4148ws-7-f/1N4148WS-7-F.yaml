@@ -1,0 +1,20 @@
+# Fast switching small-signal diode, SOD-323, 7-inch reel. Confirmed in
+# the datasheet's ordering table.
+schema_version: "0.1"
+kind: part
+id: diodes/1N4148WS-7-F
+
+manufacturer: diodes
+mpn: 1N4148WS-7-F
+
+device: diodes/1N4148WS
+package: standards/CHIP-SOD323-1N4148WS
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - diodes/DS30097

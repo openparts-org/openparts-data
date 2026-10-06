@@ -1,0 +1,21 @@
+# NPN general-purpose transistor, SOT-23, Pb-free, tape & reel. Confirmed
+# in the datasheet's ordering table (page 6). Reuses the existing SOT-23
+# package (98ASB42226B matches it exactly).
+schema_version: "0.1"
+kind: part
+id: onsemi/MMBT2222ALT1G
+
+manufacturer: onsemi
+mpn: MMBT2222ALT1G
+
+device: onsemi/MMBT2222
+package: standards/SOT23-2.90x1.30-P1.90
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - onsemi/MMBT2222-D

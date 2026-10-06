@@ -1,0 +1,20 @@
+# 32.768kHz 2-pad tuning fork crystal, 1.6 x 1.0 mm. Pad roles from the
+# datasheet's PAD CONNECTIONS table (page 1): In/Out and Out/In, both
+# crystal electrodes. Named XTAL1/XTAL2 like the other crystals.
+schema_version: "0.1"
+kind: device
+id: ecs/ECX-16-SERIES
+
+manufacturer: ecs
+category: crystal
+family: ECX-16
+
+pins:
+  "1": { name: "XTAL1", type: passive }
+  "2": { name: "XTAL2", type: passive }
+
+provenance:
+  "/pins":
+    - source: ecs/ECX-16
+      page: 1
+      locator: "PAD CONNECTIONS table"

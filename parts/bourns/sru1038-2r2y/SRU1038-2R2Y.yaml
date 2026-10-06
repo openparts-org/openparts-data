@@ -1,0 +1,21 @@
+# 2.2uH +/-30%, shielded power inductor, 10x10x3.8mm. Electrical values
+# and dimensions as stated on the datasheet. Status probable: no
+# distributor listing for this exact MPN was checked.
+schema_version: "0.1"
+kind: part
+id: bourns/SRU1038-2R2Y
+
+manufacturer: bourns
+mpn: SRU1038-2R2Y
+
+device: bourns/SRU1038-2R2Y
+package: standards/CHIP-BOURNS-SRU1038
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - bourns/SRU1038

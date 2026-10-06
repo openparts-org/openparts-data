@@ -1,0 +1,19 @@
+# 1.0uH +/-30%, shielded power inductor, 10x10x2.8mm. Listed on Newark.
+schema_version: "0.1"
+kind: part
+id: bourns/SRU1028-1R0Y
+
+manufacturer: bourns
+mpn: SRU1028-1R0Y
+
+device: bourns/SRU1028-1R0Y
+package: standards/CHIP-BOURNS-SRU1028
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - bourns/SRU1028

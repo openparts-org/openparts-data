@@ -1,0 +1,20 @@
+# 10 kOhm +/-1%, 0805 thick-film chip resistor. Listed at DigiKey, Newark,
+# Farnell and RS.
+schema_version: "0.1"
+kind: part
+id: vishay/CRCW080510K0FKEA
+
+manufacturer: vishay
+mpn: CRCW080510K0FKEA
+
+device: vishay/CRCW0805-GENERAL-PURPOSE
+package: standards/CHIP0805-CRCW
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - vishay/20035

@@ -1,0 +1,47 @@
+# Bourns SF-0402F fast-acting fuse body, from the Product Dimensions
+# table (page 2). Terminal electrodes (0.2 +/-0.1) are not body
+# dimensions.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP0402-SF-0402F
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.0
+    min: 0.9
+    max: 1.1
+    unit: mm
+  body_width:
+    nominal: 0.52
+    min: 0.47
+    max: 0.57
+    unit: mm
+  body_height:
+    nominal: 0.35
+    min: 0.30
+    max: 0.40
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: bourns/SF-0402F
+      page: 2
+      locator: "Product Dimensions, L 1.0 +/-0.1mm"
+  "/dimensions/body_width":
+    - source: bourns/SF-0402F
+      page: 2
+      locator: "Product Dimensions, W 0.52 +/-0.05mm"
+  "/dimensions/body_height":
+    - source: bourns/SF-0402F
+      page: 2
+      locator: "Product Dimensions, H 0.35 +/-0.05mm"

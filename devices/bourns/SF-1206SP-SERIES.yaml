@@ -1,0 +1,13 @@
+# 2-terminal time-lag SMD fuse. Same reasoning as the other Bourns fuse
+# devices in this dataset.
+schema_version: "0.1"
+kind: device
+id: bourns/SF-1206SP-SERIES
+
+manufacturer: bourns
+category: fuse
+family: SF-1206SP
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

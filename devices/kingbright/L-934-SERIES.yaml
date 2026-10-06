@@ -1,0 +1,19 @@
+# 3mm round THT green LED. Pin roles labeled on the datasheet drawing:
+# 1 = ANODE, 2 = CATHODE.
+schema_version: "0.1"
+kind: device
+id: kingbright/L-934-SERIES
+
+manufacturer: kingbright
+category: led
+family: L-934
+
+pins:
+  "1": { name: Anode, type: passive }
+  "2": { name: Cathode, type: passive }
+
+provenance:
+  "/pins":
+    - source: kingbright/2-L934L
+      page: 1
+      locator: "Drawing labels \"1 ANODE\" / \"2 CATHODE\""

@@ -1,0 +1,21 @@
+# 32.768kHz 2-pad SMD crystal, ECX-31B, tape and reel. Probable: a
+# distributor product page lists this exact MPN, but no order table
+# in the datasheet was checked.
+schema_version: "0.1"
+kind: part
+id: "ecs/ECS-.327-12.5-34B-TR"
+
+manufacturer: ecs
+mpn: "ECS-.327-12.5-34B-TR"
+
+device: ecs/ECX-31B-SERIES
+package: standards/CHIP-ECX31B
+
+existence:
+  status: probable
+
+lifecycle:
+  status: active
+
+sources:
+  - ecs/ECX-31B

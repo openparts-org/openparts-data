@@ -1,0 +1,20 @@
+# 0.50A, 32VDC fast-acting SMD fuse, 0402. Electrical row confirmed on
+# page 1. Probable: no distributor listing checked.
+schema_version: "0.1"
+kind: part
+id: bourns/SF-0402F050-2
+
+manufacturer: bourns
+mpn: SF-0402F050-2
+
+device: bourns/SF-0402F-SERIES
+package: standards/CHIP0402-SF-0402F
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - bourns/SF-0402F

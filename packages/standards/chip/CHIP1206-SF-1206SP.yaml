@@ -1,0 +1,46 @@
+# Bourns SF-1206SP time-lag fuse body, from the Product Dimensions table
+# (page 2). Terminal electrodes (0.5 +/-0.3) are not body dimensions.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP1206-SF-1206SP
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 3.1
+    min: 3.0
+    max: 3.2
+    unit: mm
+  body_width:
+    nominal: 1.55
+    min: 1.45
+    max: 1.65
+    unit: mm
+  body_height:
+    nominal: 0.6
+    min: 0.5
+    max: 0.7
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: bourns/SF-1206SP
+      page: 2
+      locator: "Product Dimensions, L 3.1 +/-0.1mm"
+  "/dimensions/body_width":
+    - source: bourns/SF-1206SP
+      page: 2
+      locator: "Product Dimensions, W 1.55 +/-0.1mm"
+  "/dimensions/body_height":
+    - source: bourns/SF-1206SP
+      page: 2
+      locator: "Product Dimensions, H 0.6 +/-0.1mm"

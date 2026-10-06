@@ -1,0 +1,47 @@
+# Yageo RC0201 chip resistor body, from the Dimensions section of the
+# RC0201 specification (page 1). Electrode dimensions (B1, B2) are not
+# body dimensions and are not used.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP0201-RC
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 0.6
+    min: 0.57
+    max: 0.63
+    unit: mm
+  body_width:
+    nominal: 0.3
+    min: 0.27
+    max: 0.33
+    unit: mm
+  body_height:
+    nominal: 0.23
+    min: 0.20
+    max: 0.26
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: yageo/RC0201-SPEC
+      page: 1
+      locator: "Dimensions, L 0.6 +/-0.03mm"
+  "/dimensions/body_width":
+    - source: yageo/RC0201-SPEC
+      page: 1
+      locator: "Dimensions, W 0.3 +/-0.03mm"
+  "/dimensions/body_height":
+    - source: yageo/RC0201-SPEC
+      page: 1
+      locator: "Dimensions, T 0.23 +/-0.03mm"

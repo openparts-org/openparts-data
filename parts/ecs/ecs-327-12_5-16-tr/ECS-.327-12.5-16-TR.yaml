@@ -1,0 +1,21 @@
+# 32.768kHz, 12.5pF, ECX-16 2-pad tuning fork crystal, tape and reel.
+# MPN from the part-numbering guide example. Probable: manufacturer
+# product page only, no distributor listing checked.
+schema_version: "0.1"
+kind: part
+id: "ecs/ECS-.327-12.5-16-TR"
+
+manufacturer: ecs
+mpn: "ECS-.327-12.5-16-TR"
+
+device: ecs/ECX-16-SERIES
+package: standards/CHIP-ECX16
+
+existence:
+  status: probable
+
+lifecycle:
+  status: active
+
+sources:
+  - ecs/ECX-16

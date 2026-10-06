@@ -1,0 +1,20 @@
+# 0.50A, 63VDC time-lag SMD fuse, 1206. Electrical row confirmed on
+# page 1; listed at DigiKey and Mouser.
+schema_version: "0.1"
+kind: part
+id: bourns/SF-1206SP050-2
+
+manufacturer: bourns
+mpn: SF-1206SP050-2
+
+device: bourns/SF-1206SP-SERIES
+package: standards/CHIP1206-SF-1206SP
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - bourns/SF-1206SP

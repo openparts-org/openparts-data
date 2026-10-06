@@ -1,0 +1,12 @@
+schema_version: "0.1"
+kind: device
+id: vishay/CRCW0805-GENERAL-PURPOSE
+
+manufacturer: vishay
+category: resistor
+family: CRCW0805
+
+# A 2-terminal resistor has no polarity/electrical role beyond "passive".
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
