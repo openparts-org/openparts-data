@@ -6,6 +6,9 @@
 # generator falls back to an internal approximate body height, and
 # simply omits the exposed pad from the generated geometry when its
 # dimensions are unknown).
+# Lead dimensions (overall_*, standoff, lead_*) added as a candidate change for
+# human review (Agent Ingestion Specification); values copied as printed --
+# where the table has no nominal only min/max are recorded.
 schema_version: "0.1"
 kind: package
 id: standards/QFN56-RP2040
@@ -23,6 +26,23 @@ dimensions:
     unit: mm
   body_length:
     nominal: 7.0
+    unit: mm
+  lead_width:
+    nominal: 0.18
+    min: 0.13
+    max: 0.23
+    unit: mm
+  lead_length:
+    nominal: 0.4
+    min: 0.3
+    max: 0.5
+    unit: mm
+  lead_thickness:
+    nominal: 0.203
+    unit: mm
+  standoff:
+    min: 0.0
+    max: 0.05
     unit: mm
 
 geometry:
@@ -42,3 +62,19 @@ provenance:
   "/dimensions/body_length":
     - source: raspberrypi/RP-008371-DS@rev1
       locator: "\"QFN-56 7x7mm (reduced ePad size)\""
+  "/dimensions/lead_width":
+    - source: raspberrypi/RP-008371-DS@rev1
+      page: 608
+      locator: "Section 5.1 Package, Figure 166 dimension table, symbol \"b\""
+  "/dimensions/lead_length":
+    - source: raspberrypi/RP-008371-DS@rev1
+      page: 608
+      locator: "Section 5.1 Package, Figure 166 dimension table, symbol \"L\""
+  "/dimensions/lead_thickness":
+    - source: raspberrypi/RP-008371-DS@rev1
+      page: 608
+      locator: "Section 5.1 Package, Figure 166 dimension table, symbol \"A3\" (0.203 REF)"
+  "/dimensions/standoff":
+    - source: raspberrypi/RP-008371-DS@rev1
+      page: 608
+      locator: "Section 5.1 Package, Figure 166 dimension table, symbol \"A1\" (no nom)"

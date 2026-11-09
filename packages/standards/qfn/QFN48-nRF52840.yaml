@@ -15,6 +15,9 @@
 # falls back to its own internal approximate body height and omits the
 # exposed pad from generated geometry when these are absent, matching
 # how RP2040's own QFN56 package is already handled.
+# Lead dimensions (overall_*, standoff, lead_*) added as a candidate change for
+# human review (Agent Ingestion Specification); values copied as printed --
+# where the table has no nominal only min/max are recorded.
 schema_version: "0.1"
 kind: package
 id: standards/QFN48-nRF52840
@@ -32,6 +35,24 @@ dimensions:
     unit: mm
   body_length:
     nominal: 6.0
+    unit: mm
+  lead_width:
+    nominal: 0.2
+    min: 0.15
+    max: 0.25
+    unit: mm
+  lead_length:
+    nominal: 0.4
+    min: 0.35
+    max: 0.45
+    unit: mm
+  lead_thickness:
+    nominal: 0.203
+    unit: mm
+  standoff:
+    nominal: 0.035
+    min: 0.0
+    max: 0.05
     unit: mm
 
 geometry:
@@ -55,3 +76,19 @@ provenance:
     - source: nordic/4413_417@v1.11
       page: 976
       locator: "Table 103, \"Package variant codes\", row \"QF\" (\"6 x 6\")"
+  "/dimensions/lead_width":
+    - source: nordic/4413_417@v1.11
+      page: 937
+      locator: "Section 7.2.2, Table 65 \"QFN48 dimensions in millimeters\", symbol \"b\""
+  "/dimensions/lead_length":
+    - source: nordic/4413_417@v1.11
+      page: 937
+      locator: "Section 7.2.2, Table 65 \"QFN48 dimensions in millimeters\", symbol \"L\""
+  "/dimensions/lead_thickness":
+    - source: nordic/4413_417@v1.11
+      page: 937
+      locator: "Section 7.2.2, Table 65 \"QFN48 dimensions in millimeters\", symbol \"A3\" (nominal only)"
+  "/dimensions/standoff":
+    - source: nordic/4413_417@v1.11
+      page: 937
+      locator: "Section 7.2.2, Table 65 \"QFN48 dimensions in millimeters\", symbol \"A1\""

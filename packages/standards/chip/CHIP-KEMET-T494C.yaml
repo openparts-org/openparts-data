@@ -27,6 +27,8 @@ dimensions:
     max: 2.8
     unit: mm
 
+construction: tantalum_molded
+
 geometry:
   type: parametric
   generator: chip
@@ -44,3 +46,7 @@ provenance:
     - source: kemet/T494-SERIES
       page: 27
       locator: "Standard T494 Dimensions, Case C, H 2.5 +/-0.3mm"
+  "/construction":
+    - source: kemet/T494-SERIES
+      page: 4
+      locator: "CONSTRUCTION drawing labels \"Molded Case\", \"Tantalum (Ta2O5)\"; series title \"SOLID TANTALUM CHIP CAPACITORS\""

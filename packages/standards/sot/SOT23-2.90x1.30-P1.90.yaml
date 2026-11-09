@@ -16,6 +16,11 @@
 # datasheet's own HE ("lead-tip-to-lead-tip span across rows") value of
 # 2.10/2.40/2.64mm: this mapping gives ~2.2mm, close to nominal HE; the
 # reversed mapping gives ~3.8mm, clearly wrong.
+# Lead dimensions (overall_*, standoff, lead_*) added as a candidate change for
+# human review (Agent Ingestion Specification); values copied as printed --
+# where the table has no nominal only min/max are recorded.
+# Read from onsemi's identical Rev. 8 file at onsemi.cn (the onsemi.com URL
+# returned Access Denied). body_height above is already the drawing's A.
 schema_version: "0.1"
 kind: package
 id: standards/SOT23-2.90x1.30-P1.90
@@ -46,6 +51,31 @@ dimensions:
     min: 0.89
     max: 1.11
     unit: mm
+  overall_length:
+    nominal: 2.4
+    min: 2.1
+    max: 2.64
+    unit: mm
+  standoff:
+    nominal: 0.06
+    min: 0.01
+    max: 0.1
+    unit: mm
+  lead_width:
+    nominal: 0.44
+    min: 0.37
+    max: 0.5
+    unit: mm
+  lead_length:
+    nominal: 0.43
+    min: 0.3
+    max: 0.55
+    unit: mm
+  lead_thickness:
+    nominal: 0.14
+    min: 0.08
+    max: 0.2
+    unit: mm
 
 geometry:
   type: parametric
@@ -68,3 +98,23 @@ provenance:
     - source: onsemi/2N7002E-D
       page: 6
       locator: "PACKAGE DIMENSIONS table, symbol \"A\""
+  "/dimensions/overall_length":
+    - source: onsemi/2N7002E-D
+      page: 6
+      locator: "PACKAGE DIMENSIONS table (CASE 318 ISSUE AU), symbol \"HE\" -- the leads exit across body_length (E), see field-mapping note above"
+  "/dimensions/standoff":
+    - source: onsemi/2N7002E-D
+      page: 6
+      locator: "PACKAGE DIMENSIONS table (CASE 318 ISSUE AU), symbol \"A1\""
+  "/dimensions/lead_width":
+    - source: onsemi/2N7002E-D
+      page: 6
+      locator: "PACKAGE DIMENSIONS table (CASE 318 ISSUE AU), symbol \"b\""
+  "/dimensions/lead_length":
+    - source: onsemi/2N7002E-D
+      page: 6
+      locator: "PACKAGE DIMENSIONS table (CASE 318 ISSUE AU), symbol \"L\""
+  "/dimensions/lead_thickness":
+    - source: onsemi/2N7002E-D
+      page: 6
+      locator: "PACKAGE DIMENSIONS table (CASE 318 ISSUE AU), symbol \"c\""

@@ -14,6 +14,11 @@
 # stated Nominal/BSC except `pitch`, marked "1.27 BSC"). `nominal`
 # below is this session's own midpoint of the confirmed Min/Max range,
 # not a value the datasheet states directly.
+# Lead dimensions (overall_*, standoff, lead_*) added as a candidate change for
+# human review (Agent Ingestion Specification); values copied as printed --
+# where the table has no nominal only min/max are recorded.
+# overall_height is not recorded separately: body_height above is already
+# this drawing's overall height A (the drawing gives no A2).
 schema_version: "0.1"
 kind: package
 id: standards/SOIC8-5.3x5.2-P1.27
@@ -43,6 +48,26 @@ dimensions:
     min: 1.70
     max: 2.16
     unit: mm
+  overall_width:
+    min: 7.7
+    max: 8.26
+    unit: mm
+  standoff:
+    min: 0.05
+    max: 0.25
+    unit: mm
+  lead_width:
+    min: 0.35
+    max: 0.48
+    unit: mm
+  lead_length:
+    min: 0.51
+    max: 0.85
+    unit: mm
+  lead_thickness:
+    min: 0.15
+    max: 0.35
+    unit: mm
 
 geometry:
   type: parametric
@@ -65,3 +90,23 @@ provenance:
     - source: microchip/2586@revQ
       page: 208
       locator: "Table \"COMMON DIMENSIONS\", symbol \"A\" (Min 1.70 / Max 2.16); nominal is this dataset's own midpoint, not datasheet-stated"
+  "/dimensions/overall_width":
+    - source: microchip/2586@revQ
+      page: 208
+      locator: "Table \"COMMON DIMENSIONS\", symbol \"E\" (Min 7.70 / Max 8.26)"
+  "/dimensions/standoff":
+    - source: microchip/2586@revQ
+      page: 208
+      locator: "Table \"COMMON DIMENSIONS\", symbol \"A1\" (Min/Max only)"
+  "/dimensions/lead_width":
+    - source: microchip/2586@revQ
+      page: 208
+      locator: "Table \"COMMON DIMENSIONS\", symbol \"b\" (Min/Max only; plated terminal, note 4)"
+  "/dimensions/lead_length":
+    - source: microchip/2586@revQ
+      page: 208
+      locator: "Table \"COMMON DIMENSIONS\", symbol \"L\" (Min/Max only)"
+  "/dimensions/lead_thickness":
+    - source: microchip/2586@revQ
+      page: 208
+      locator: "Table \"COMMON DIMENSIONS\", symbol \"C\" (Min/Max only; plated terminal, note 4)"

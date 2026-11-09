@@ -1,0 +1,20 @@
+# Official STMicroelectronics datasheet for STM32F103x8/STM32F103xB,
+# Rev 20 (July 2025) -- the revision st.com currently serves. Added as a
+# separate Source (Canonical Data Specification section 24) because the
+# lead dimensions recorded on standards/LQFP48-7x7-P0.5 were read from
+# this revision (Table 62 "LQFP48 - Mechanical data", PDF page 99), and
+# the page/table numbering differs from Rev 18 (Table 61, page 101-102).
+# Read from https://www.st.com/resource/en/datasheet/cd00161566.pdf
+# (ST's own URL for DS5319; the stm32f103c8.pdf alias timed out).
+schema_version: "0.1"
+kind: source
+id: st/DS5319@rev20
+
+publisher: st
+document_id: DS5319
+document_type: datasheet
+
+revision: "20"
+date: "2025-07"
+
+url: "https://www.st.com/resource/en/datasheet/cd00161566.pdf"

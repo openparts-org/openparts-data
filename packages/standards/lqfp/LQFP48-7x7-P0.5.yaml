@@ -23,6 +23,11 @@
 # (exact match to this file's ST-sourced values); A2 body thickness:
 # min 1.35 / max 1.45mm (exact match); pitch: 0.5mm (exact match). No
 # discrepancy with this file's values.
+# Lead dimensions (overall_*, standoff, lead_*) added as a candidate change for
+# human review (Agent Ingestion Specification); values copied as printed --
+# where the table has no nominal only min/max are recorded.
+# They come from DS5319 Rev 20 (st/DS5319@rev20), not the Rev 18 copy the
+# body dimensions cite; Rev 20 states D1/E1 as 7.00 BSC.
 schema_version: "0.1"
 kind: package
 id: standards/LQFP48-7x7-P0.5
@@ -52,6 +57,33 @@ dimensions:
     min: 1.35
     max: 1.45
     unit: mm
+  overall_width:
+    nominal: 9.0
+    unit: mm
+  overall_length:
+    nominal: 9.0
+    unit: mm
+  overall_height:
+    max: 1.6
+    unit: mm
+  standoff:
+    min: 0.05
+    max: 0.15
+    unit: mm
+  lead_width:
+    nominal: 0.22
+    min: 0.17
+    max: 0.27
+    unit: mm
+  lead_length:
+    nominal: 0.6
+    min: 0.45
+    max: 0.75
+    unit: mm
+  lead_thickness:
+    min: 0.09
+    max: 0.2
+    unit: mm
 
 geometry:
   type: parametric
@@ -74,3 +106,31 @@ provenance:
     - source: st/DS5319@rev18
       page: 101
       locator: "Table 61, symbol \"A2\""
+  "/dimensions/overall_width":
+    - source: st/DS5319@rev20
+      page: 99
+      locator: "Table 62 \"LQFP48 - Mechanical data\", symbol \"E\" (9.00 BSC)"
+  "/dimensions/overall_length":
+    - source: st/DS5319@rev20
+      page: 99
+      locator: "Table 62 \"LQFP48 - Mechanical data\", symbol \"D\" (9.00 BSC)"
+  "/dimensions/overall_height":
+    - source: st/DS5319@rev20
+      page: 99
+      locator: "Table 62 \"LQFP48 - Mechanical data\", symbol \"A\" (max only)"
+  "/dimensions/standoff":
+    - source: st/DS5319@rev20
+      page: 99
+      locator: "Table 62 \"LQFP48 - Mechanical data\", symbol \"A1\" (no typ)"
+  "/dimensions/lead_width":
+    - source: st/DS5319@rev20
+      page: 99
+      locator: "Table 62 \"LQFP48 - Mechanical data\", symbol \"b\""
+  "/dimensions/lead_length":
+    - source: st/DS5319@rev20
+      page: 99
+      locator: "Table 62 \"LQFP48 - Mechanical data\", symbol \"L\""
+  "/dimensions/lead_thickness":
+    - source: st/DS5319@rev20
+      page: 99
+      locator: "Table 62 \"LQFP48 - Mechanical data\", symbol \"c\" (no typ)"

@@ -41,6 +41,8 @@ dimensions:
     max: 5.2
     unit: mm
 
+construction: molded
+
 geometry:
   type: parametric
   generator: axial
@@ -61,3 +63,7 @@ provenance:
     - source: vishay/88503
       page: 4
       locator: "PACKAGE OUTLINE DIMENSIONS (DO-41), \"0.205 (5.2) / 0.160 (4.1)\" axial body length"
+  "/construction":
+    - source: vishay/88503
+      page: 1
+      locator: "MECHANICAL DATA: \"Case: DO-41 (DO-204AL), molded epoxy body\""
