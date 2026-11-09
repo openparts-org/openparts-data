@@ -1,0 +1,17 @@
+# Bourns SRU1038 series datasheet as served on 2026-11-10 (4 pages).
+# Revision from the footer "REV. 02/26" (read via pdftotext; page 1
+# rendered to check the Product Dimensions drawing and the
+# Electrical Specifications table). Added as a separate Source because
+# the existing bourns/SRU1038 record does not pin this revision.
+schema_version: "0.1"
+kind: source
+id: bourns/SRU1038@rev02-26
+
+publisher: bourns
+document_id: "SRU1038"
+document_type: datasheet
+
+revision: "02/26"
+date: "2026-02"
+
+url: "https://www.bourns.com/docs/Product-Datasheets/SRU1038.pdf"

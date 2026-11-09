@@ -1,0 +1,106 @@
+# TI RHB0032E, VQFN-32, 5x5 mm body, 0.5 mm pitch, 1 mm max height.
+# All values read from the rendered "PACKAGE OUTLINE RHB0032E" drawing
+# (4223442/B 08/2019) in the MSPM0L130x datasheet SLASEX0D, PDF page
+# 72. Body D/E given only as 4.9/5.1 limits, so no nominal recorded.
+# The nominal 5.0 comes from Table 5-1 "Device Comparison" (page 5),
+# "32 VQFN [5 mm x 5 mm]", footnote (4) "a nominal value"; the outline
+# drawing itself gives only the 4.9/5.1 limits.
+schema_version: "0.1"
+kind: package
+id: manufacturers/ti/RHB0032E
+
+family: qfn
+lead_count: 32
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 5.0
+    min: 4.9
+    max: 5.1
+    unit: mm
+  body_length:
+    nominal: 5.0
+    min: 4.9
+    max: 5.1
+    unit: mm
+  body_height:
+    max: 1.0
+    unit: mm
+  standoff:
+    min: 0.0
+    max: 0.05
+    unit: mm
+  exposed_pad:
+    width:
+      nominal: 3.45
+      min: 3.35
+      max: 3.55
+      unit: mm
+    length:
+      nominal: 3.45
+      min: 3.35
+      max: 3.55
+      unit: mm
+  lead_width:
+    min: 0.2
+    max: 0.3
+    unit: mm
+  lead_length:
+    min: 0.3
+    max: 0.5
+    unit: mm
+  lead_thickness:
+    nominal: 0.2
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/pitch":
+    - source: ti/SLASEX0D
+      page: 72
+      locator: "PACKAGE OUTLINE RHB0032E, \"28X 0.5\""
+  "/dimensions/body_width":
+    - source: ti/SLASEX0D
+      page: 72
+      locator: "PACKAGE OUTLINE RHB0032E, top view width 4.9/5.1"
+    - source: ti/SLASEX0D
+      page: 5
+      locator: "Table 5-1 \"Device Comparison\", MSPM0L1306xRHB \"32 VQFN [5 mm x 5 mm]\"; footnote (4): \"The package size ... is a nominal value\" -- nominal"
+  "/dimensions/body_length":
+    - source: ti/SLASEX0D
+      page: 72
+      locator: "PACKAGE OUTLINE RHB0032E, top view length 4.9/5.1"
+    - source: ti/SLASEX0D
+      page: 5
+      locator: "Table 5-1 \"Device Comparison\", MSPM0L1306xRHB \"32 VQFN [5 mm x 5 mm]\"; footnote (4): \"The package size ... is a nominal value\" -- nominal"
+  "/dimensions/body_height":
+    - source: ti/SLASEX0D
+      page: 72
+      locator: "PACKAGE OUTLINE RHB0032E, side view \"1 MAX\""
+  "/dimensions/standoff":
+    - source: ti/SLASEX0D
+      page: 72
+      locator: "PACKAGE OUTLINE RHB0032E, side view 0.00/0.05"
+  "/dimensions/exposed_pad":
+    - source: ti/SLASEX0D
+      page: 72
+      locator: "PACKAGE OUTLINE RHB0032E, exposed thermal pad \"□3.45±0.1\""
+  "/dimensions/lead_width":
+    - source: ti/SLASEX0D
+      page: 72
+      locator: "PACKAGE OUTLINE RHB0032E, \"32X 0.2/0.3\""
+  "/dimensions/lead_length":
+    - source: ti/SLASEX0D
+      page: 72
+      locator: "PACKAGE OUTLINE RHB0032E, \"32X 0.3/0.5\""
+  "/dimensions/lead_thickness":
+    - source: ti/SLASEX0D
+      page: 72
+      locator: "PACKAGE OUTLINE RHB0032E, side detail \"(0.2) TYP\" (reference value)"

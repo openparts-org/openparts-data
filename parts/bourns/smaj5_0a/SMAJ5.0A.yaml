@@ -1,0 +1,30 @@
+# SMAJ5.0A: "How to Order" (page 1) decodes SMAJ 5.0 A with a blank reel
+# suffix as the 13-inch reel ("-H" = 7 inch); the part number is listed
+# verbatim in the page-2 table. Package: Product Dimensions (page 3)
+# A 3.99-4.50, B 2.54-2.79, G 1.98-2.29 equal the existing
+# CHIP-SMA-DO214AC body ranges (Vishay 88711) exactly, so it is reused.
+# The same page states "Case ... Molded plastic". No lifecycle statement.
+schema_version: "0.1"
+kind: part
+id: bourns/SMAJ5.0A
+
+manufacturer: bourns
+mpn: SMAJ5.0A
+
+device: bourns/SMAJ5.0A
+package: standards/CHIP-SMA-DO214AC
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - bourns/SMAJ
+
+provenance:
+  "/existence":
+    - source: bourns/SMAJ
+      page: 2
+      locator: "Electrical table row \"SMAJ5.0A | HE | SMAJ5.0CA | TE ...\"; page-1 \"How to Order\" (blank = 13 inch reel)"

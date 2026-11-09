@@ -1,0 +1,35 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCAS218X PDF page 13, addendum dated 10-Nov-2025): "SN74LVC245APWR | Active | Production | TSSOP (PW) | 20 | 2000 | LARGE T&R | ... | -40 to 125 | LC245A".
+# lifecycle "active" is that table's Status column.
+schema_version: "0.1"
+kind: part
+id: ti/SN74LVC245APWR
+
+manufacturer: ti
+mpn: SN74LVC245APWR
+
+device: ti/SN74LVC245A
+package: standards/TSSOP20-4.4x6.5-P0.65-TI-PW
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SCAS218X
+
+provenance:
+  "/existence":
+    - source: ti/SCAS218X
+      page: 13
+      locator: "Package Option Addendum, Packaging Information table, row \"SN74LVC245APWR\""
+  "/lifecycle":
+    - source: ti/SCAS218X
+      page: 13
+      locator: "Package Option Addendum, row \"SN74LVC245APWR\", Status \"Active\""
+  "/package":
+    - source: ti/SCAS218X
+      page: 13
+      locator: "Package Option Addendum, row \"SN74LVC245APWR\", \"TSSOP (PW) | 20\"; outline PW0020A (4220206/A, identical to SCES642L page 28) on page 29"

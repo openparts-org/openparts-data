@@ -1,0 +1,35 @@
+# ESP32-H2FH2S: ESP32-H2 in QFN32 (4x4mm) with 2 MB in-package Quad SPI
+# flash, -40~105 C ambient, security enhanced ("S") -- decoded per
+# Figure 1-1 "ESP32-H2 Series Nomenclature" and listed in Table 1-1
+# "ESP32-H2 Series Comparison" (datasheet v1.3, page 11).
+# lifecycle: the datasheet is v1.3, which the "Datasheet Versioning"
+# table (page 66) defines as "Official release ... for products in mass
+# production"; no NRND/EOL watermark on the title page.
+schema_version: "0.1"
+kind: part
+id: espressif/ESP32-H2FH2S
+
+manufacturer: espressif
+mpn: ESP32-H2FH2S
+
+device: espressif/ESP32-H2
+package: standards/QFN32-ESP32-H2
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - espressif/esp32-h2_datasheet_en@rev1.3
+
+provenance:
+  "/existence":
+    - source: espressif/esp32-h2_datasheet_en@rev1.3
+      page: 11
+      locator: "Table 1-1 \"ESP32-H2 Series Comparison\", row \"ESP32-H2FH2S\""
+  "/lifecycle/status":
+    - source: espressif/esp32-h2_datasheet_en@rev1.3
+      page: 66
+      locator: "\"Datasheet Versioning\": v1.0 and higher = \"Official release\" for products in mass production"

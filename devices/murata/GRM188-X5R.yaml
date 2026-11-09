@@ -1,0 +1,14 @@
+# Murata GRM188 (0603 / 1608M) X5R (temperature characteristic code R6)
+# general-purpose MLCC, series-level device; value-specific MPNs are
+# Parts. R6 = X5R per murata/C02E-16 'Part Numbering' (PDF p5).
+schema_version: "0.1"
+kind: device
+id: murata/GRM188-X5R
+
+manufacturer: murata
+category: capacitor
+family: GRM188
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

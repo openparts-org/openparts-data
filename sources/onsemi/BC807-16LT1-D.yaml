@@ -1,0 +1,18 @@
+# onsemi BC807-16L/-25L/-40L datasheet, Publication Order Number
+# BC807-16LT1/D, Rev. 17 (March 2023), 10 pages. Read via pdftotext.
+# It names the package "SOT-23 CASE 318 STYLE 6" but contains no
+# outline drawing; onsemi's separate outline document
+# (98ASB42226B) returned an HTML "Technical Documentation" page instead
+# of a PDF when fetched, so it was not read.
+schema_version: "0.1"
+kind: source
+id: onsemi/BC807-16LT1-D
+
+publisher: onsemi
+document_id: BC807-16LT1/D
+document_type: datasheet
+
+revision: "17"
+date: "2023-03"
+
+url: "https://www.onsemi.com/download/data-sheet/pdf/bc807-16lt1-d.pdf"

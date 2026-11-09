@@ -1,0 +1,51 @@
+# KEMET C0805C X7R MLCC body, thickness code DH. L/W from kemet/C1002_X7R
+# PDF p3 'Dimensions - Millimeters' table; T from Table 2A (PDF p9)
+# thickness code DH. Band width B is not modelled by the chip
+# generator and is left out.
+# For 0805 values >= 2.2 uF: Dimensions table footnote 3 'For capacitance
+# values >= 2.2 uF add 0.10 (0.004) to the length tolerance dimension',
+# so L = 2.00 +/-0.30 mm.
+schema_version: "0.1"
+kind: package
+id: manufacturers/kemet/C0805-DH-L2U2
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 2.00
+    min: 1.70
+    max: 2.30
+    unit: mm
+  body_width:
+    nominal: 1.25
+    min: 1.05
+    max: 1.45
+    unit: mm
+  body_height:
+    nominal: 1.25
+    min: 1.05
+    max: 1.45
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: kemet/C1002_X7R
+      page: 3
+      locator: "Dimensions table, EIA 0805 row, L = 2.00 +/-0.30 mm (base +/-0.20; footnote 3: >= 2.2 uF add 0.10 to length tolerance)"
+  "/dimensions/body_width":
+    - source: kemet/C1002_X7R
+      page: 3
+      locator: "Dimensions table, EIA 0805 row, W = 1.25 +/-0.20 mm"
+  "/dimensions/body_height":
+    - source: kemet/C1002_X7R
+      page: 9
+      locator: "Table 2A, thickness code DH, case 0805: 1.25 +/- 0.20 mm"

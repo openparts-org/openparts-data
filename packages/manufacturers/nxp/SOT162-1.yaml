@@ -1,0 +1,102 @@
+# NXP SOT162-1, SO16 (plastic small outline, 16 leads, body width
+# 7.5 mm; JEDEC MS-013). All values from the "SO16 ... SOT162-1"
+# package outline in the NXP PCF8574/PCF8574A data sheet Rev. 5, page 20
+# (mm row of the DIMENSIONS table). Only max/min are given for body and
+# lead dimensions, so only min/max are recorded (the soic generator,
+# which needs a body nominal, skips this package).
+# body_width = E, body_length = D, overall_width = HE, body_height = A2,
+# overall_height = A (max only), standoff = A1, lead_width = bp,
+# lead_thickness = c, lead_length = Lp (L 1.4 reference not modelled).
+schema_version: "0.1"
+kind: package
+id: manufacturers/nxp/SOT162-1
+
+family: soic
+lead_count: 16
+
+pitch:
+  nominal: 1.27
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 7.4
+    max: 7.6
+    unit: mm
+  body_length:
+    min: 10.1
+    max: 10.5
+    unit: mm
+  body_height:
+    min: 2.25
+    max: 2.45
+    unit: mm
+  overall_width:
+    min: 10.00
+    max: 10.65
+    unit: mm
+  overall_height:
+    max: 2.65
+    unit: mm
+  standoff:
+    min: 0.1
+    max: 0.3
+    unit: mm
+  lead_width:
+    min: 0.36
+    max: 0.49
+    unit: mm
+  lead_length:
+    min: 0.4
+    max: 1.1
+    unit: mm
+  lead_thickness:
+    min: 0.23
+    max: 0.32
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: soic
+
+provenance:
+  "/pitch":
+    - source: nxp/PCF8574_PCF8574A@rev5
+      page: 20
+      locator: "SOT162-1 DIMENSIONS table (mm), \"e 1.27\""
+  "/dimensions/body_width":
+    - source: nxp/PCF8574_PCF8574A@rev5
+      page: 20
+      locator: "SOT162-1 DIMENSIONS table (mm), \"E 7.6 / 7.4\" (note 1)"
+  "/dimensions/body_length":
+    - source: nxp/PCF8574_PCF8574A@rev5
+      page: 20
+      locator: "SOT162-1 DIMENSIONS table (mm), \"D 10.5 / 10.1\" (note 1)"
+  "/dimensions/body_height":
+    - source: nxp/PCF8574_PCF8574A@rev5
+      page: 20
+      locator: "SOT162-1 DIMENSIONS table (mm), \"A2 2.45 / 2.25\""
+  "/dimensions/overall_width":
+    - source: nxp/PCF8574_PCF8574A@rev5
+      page: 20
+      locator: "SOT162-1 DIMENSIONS table (mm), \"HE 10.65 / 10.00\""
+  "/dimensions/overall_height":
+    - source: nxp/PCF8574_PCF8574A@rev5
+      page: 20
+      locator: "SOT162-1 DIMENSIONS table (mm), \"A max. 2.65\""
+  "/dimensions/standoff":
+    - source: nxp/PCF8574_PCF8574A@rev5
+      page: 20
+      locator: "SOT162-1 DIMENSIONS table (mm), \"A1 0.3 / 0.1\""
+  "/dimensions/lead_width":
+    - source: nxp/PCF8574_PCF8574A@rev5
+      page: 20
+      locator: "SOT162-1 DIMENSIONS table (mm), \"bp 0.49 / 0.36\""
+  "/dimensions/lead_length":
+    - source: nxp/PCF8574_PCF8574A@rev5
+      page: 20
+      locator: "SOT162-1 DIMENSIONS table (mm), \"Lp 1.1 / 0.4\""
+  "/dimensions/lead_thickness":
+    - source: nxp/PCF8574_PCF8574A@rev5
+      page: 20
+      locator: "SOT162-1 DIMENSIONS table (mm), \"c 0.32 / 0.23\""

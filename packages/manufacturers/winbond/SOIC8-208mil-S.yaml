@@ -1,0 +1,117 @@
+# Winbond 8-pin SOIC 208-mil (package code S), 1.27 mm pitch. All values
+# from section 10.1 "8-Pin SOIC 208-mil (Package Code S)" of the
+# W25Q128JV datasheet Revision F, PDF page 68 (printed page 67); the
+# page was rendered and the drawing/table read from the image.
+#
+# The drawing dimensions the body twice: D1/E1 (5.13/5.23/5.33) at the
+# top of the molding and D/E (5.18/5.28/5.38) at its base. Following
+# the soic convention body_width = E1, body_length = D1 is used; D/E are
+# noted here, not modelled. overall_width = H (lead tip to tip),
+# body_height = A2, overall_height = A, standoff = A1, lead_width = b,
+# lead_thickness = C, lead_length = L. All MIN/NOM/MAX as printed.
+#
+# Not merged into standards/SOIC8-5.3x5.2-P1.27 (Microchip 8S2): the
+# limits differ (e.g. E1 5.18-5.40 there vs 5.13-5.33 here).
+schema_version: "0.1"
+kind: package
+id: manufacturers/winbond/SOIC8-208mil-S
+
+family: soic
+lead_count: 8
+
+pitch:
+  nominal: 1.27
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 5.23
+    min: 5.13
+    max: 5.33
+    unit: mm
+  body_length:
+    nominal: 5.23
+    min: 5.13
+    max: 5.33
+    unit: mm
+  body_height:
+    nominal: 1.80
+    min: 1.70
+    max: 1.91
+    unit: mm
+  overall_width:
+    nominal: 7.90
+    min: 7.70
+    max: 8.10
+    unit: mm
+  overall_height:
+    nominal: 1.95
+    min: 1.75
+    max: 2.16
+    unit: mm
+  standoff:
+    nominal: 0.15
+    min: 0.05
+    max: 0.25
+    unit: mm
+  lead_width:
+    nominal: 0.42
+    min: 0.35
+    max: 0.48
+    unit: mm
+  lead_length:
+    nominal: 0.65
+    min: 0.50
+    max: 0.80
+    unit: mm
+  lead_thickness:
+    nominal: 0.20
+    min: 0.19
+    max: 0.25
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: soic
+
+provenance:
+  "/pitch":
+    - source: winbond/W25Q128JV@revF
+      page: 68
+      locator: "Section 10.1 table, \"e 1.27 BSC\""
+  "/dimensions/body_width":
+    - source: winbond/W25Q128JV@revF
+      page: 68
+      locator: "Section 10.1 table, \"E1 5.13 / 5.23 / 5.33\" (mm)"
+  "/dimensions/body_length":
+    - source: winbond/W25Q128JV@revF
+      page: 68
+      locator: "Section 10.1 table, \"D1 5.13 / 5.23 / 5.33\" (mm)"
+  "/dimensions/body_height":
+    - source: winbond/W25Q128JV@revF
+      page: 68
+      locator: "Section 10.1 table, \"A2 1.70 / 1.80 / 1.91\" (mm)"
+  "/dimensions/overall_width":
+    - source: winbond/W25Q128JV@revF
+      page: 68
+      locator: "Section 10.1 table, \"H 7.70 / 7.90 / 8.10\" (mm)"
+  "/dimensions/overall_height":
+    - source: winbond/W25Q128JV@revF
+      page: 68
+      locator: "Section 10.1 table, \"A 1.75 / 1.95 / 2.16\" (mm)"
+  "/dimensions/standoff":
+    - source: winbond/W25Q128JV@revF
+      page: 68
+      locator: "Section 10.1 table, \"A1 0.05 / 0.15 / 0.25\" (mm)"
+  "/dimensions/lead_width":
+    - source: winbond/W25Q128JV@revF
+      page: 68
+      locator: "Section 10.1 table, \"b 0.35 / 0.42 / 0.48\" (mm)"
+  "/dimensions/lead_length":
+    - source: winbond/W25Q128JV@revF
+      page: 68
+      locator: "Section 10.1 table, \"L 0.50 / 0.65 / 0.80\" (mm)"
+  "/dimensions/lead_thickness":
+    - source: winbond/W25Q128JV@revF
+      page: 68
+      locator: "Section 10.1 table, \"C 0.19 / 0.20 / 0.25\" (mm)"

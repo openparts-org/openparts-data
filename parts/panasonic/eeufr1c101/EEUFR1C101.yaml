@@ -1,0 +1,29 @@
+# Straight-lead EEUFR1C101: the "( )" in the ordering table is
+# where the B/H taping letter goes (page 4 note), empty for bulk
+# straight leads -- same reading as panasonic/EEUFC0J331S.
+# lifecycle unknown: no status statement for this row.
+schema_version: "0.1"
+kind: part
+id: panasonic/EEUFR1C101
+
+manufacturer: panasonic
+mpn: EEUFR1C101
+
+device: panasonic/EEUFR1C101
+package: standards/RADIAL-D5.0x11-P2.0
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - panasonic/ABA0000C1259
+
+provenance:
+  "/existence":
+    - source: panasonic/ABA0000C1259
+      page: 4
+      locator: "\"Characteristics list\" table, Part No. column: \"EEUFR1C101( )\" (phiD 5.0, L 11.0)"
+

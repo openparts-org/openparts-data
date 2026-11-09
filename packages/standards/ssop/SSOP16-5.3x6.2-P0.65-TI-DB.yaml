@@ -1,0 +1,99 @@
+# 16-lead SSOP, 5.3 mm body, 0.65 mm pitch (TI "DB", JEDEC MO-150
+# referenced by the drawing's note 4). All values read from the rendered
+# "PACKAGE OUTLINE DB0016A" drawing (4220763/A 05/2022, "SSOP - 2 mm max
+# height") in the SN74HC595 datasheet SCLS041J, PDF page 24.
+#
+# Named with the -TI-DB suffix because the numbers are TI's drawing
+# tolerances, not the JEDEC table itself. The drawing gives E1 and D only
+# as limits: `nominal` for body_width/body_length is this dataset's own
+# midpoint, not datasheet-stated. Lead span E is printed "8.2/7.4 TYP"
+# and recorded as min/max only. Only the overall height A (2 MAX) is
+# given -- no A2 -- so it is recorded as overall_height max, with no
+# body_height. Standoff is "0.05 MIN" only.
+# Oddity: the E1 dimension is labelled "NOTE 4", but this drawing's note
+# 4 is "Reference JEDEC registration MO-150" (it has no interlead-flash
+# note) -- recorded as printed.
+schema_version: "0.1"
+kind: package
+id: standards/SSOP16-5.3x6.2-P0.65-TI-DB
+
+family: ssop
+lead_count: 16
+
+pitch:
+  nominal: 0.65
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 5.0
+    max: 5.6
+    unit: mm
+  body_length:
+    min: 5.9
+    max: 6.5
+    unit: mm
+  overall_width:
+    min: 7.4
+    max: 8.2
+    unit: mm
+  overall_height:
+    max: 2.0
+    unit: mm
+  standoff:
+    min: 0.05
+    unit: mm
+  lead_width:
+    min: 0.22
+    max: 0.38
+    unit: mm
+  lead_length:
+    min: 0.55
+    max: 0.95
+    unit: mm
+  lead_thickness:
+    min: 0.09
+    max: 0.25
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: ssop
+
+provenance:
+  "/pitch":
+    - source: ti/SCLS041J
+      page: 24
+      locator: "PACKAGE OUTLINE DB0016A (4220763/A), \"14X 0.65\" (boxed basic dimension)"
+  "/dimensions/body_width":
+    - source: ti/SCLS041J
+      page: 24
+      locator: "PACKAGE OUTLINE DB0016A, body width \"5.6/5.0 NOTE 4\" (datum B); no nominal stated (min/max only)"
+  "/dimensions/body_length":
+    - source: ti/SCLS041J
+      page: 24
+      locator: "PACKAGE OUTLINE DB0016A, body length \"6.5/5.9 NOTE 3\" (datum A); no nominal stated (min/max only)"
+  "/dimensions/overall_width":
+    - source: ti/SCLS041J
+      page: 24
+      locator: "PACKAGE OUTLINE DB0016A, lead tip span \"8.2/7.4 TYP\" (min/max only)"
+  "/dimensions/overall_height":
+    - source: ti/SCLS041J
+      page: 24
+      locator: "PACKAGE OUTLINE DB0016A, DETAIL A \"2 MAX\""
+  "/dimensions/standoff":
+    - source: ti/SCLS041J
+      page: 24
+      locator: "PACKAGE OUTLINE DB0016A, DETAIL A \"0.05 MIN\""
+  "/dimensions/lead_width":
+    - source: ti/SCLS041J
+      page: 24
+      locator: "PACKAGE OUTLINE DB0016A, \"16X 0.38/0.22\""
+  "/dimensions/lead_length":
+    - source: ti/SCLS041J
+      page: 24
+      locator: "PACKAGE OUTLINE DB0016A, DETAIL A \"0.95/0.55\""
+  "/dimensions/lead_thickness":
+    - source: ti/SCLS041J
+      page: 24
+      locator: "PACKAGE OUTLINE DB0016A, side view \"0.25/0.09\""

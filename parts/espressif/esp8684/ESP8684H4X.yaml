@@ -1,0 +1,36 @@
+# ESP8684H4X (ESP32-C2 series): QFN24 4x4mm, 4 MB in-package flash,
+# -40~105 C, chip revision v2.0 -- Table 1 "ESP8684 Series Member
+# Comparison" (datasheet v2.3, PDF page 11, printed 10). Footnote 6:
+# the "X" code is the upgraded version of the earlier ESP8684H4 (v1.2
+# and earlier), which is not modelled here.
+# lifecycle: datasheet v2.3 is an "Official release ... for products in
+# mass production" per the "Datasheet Versioning" table (PDF page 55);
+# no NRND/EOL watermark on the title page.
+schema_version: "0.1"
+kind: part
+id: espressif/ESP8684H4X
+
+manufacturer: espressif
+mpn: ESP8684H4X
+
+device: espressif/ESP8684
+package: standards/QFN24-ESP8684
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - espressif/esp8684_datasheet_en@rev2.3
+
+provenance:
+  "/existence":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 11
+      locator: "Table 1 \"ESP8684 Series Member Comparison\", row \"ESP8684H4X\""
+  "/lifecycle/status":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 55
+      locator: "\"Datasheet Versioning\": v1.0 and higher = \"Official release\" for products in mass production"

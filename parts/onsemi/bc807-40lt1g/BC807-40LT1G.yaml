@@ -1,0 +1,32 @@
+# BC807-40LT1G: 3000-piece tape & reel, marking 5C, from the page-2
+# ORDERING INFORMATION table ("SOT-23 (Pb-Free)"). Package: the datasheet
+# says "SOT-23 CASE 318 STYLE 6" but has no outline drawing, and the
+# separate outline PDF (98ASB42226B) was not retrievable as a PDF. It
+# reuses SOT23-2.90x1.30-P1.90, which was read from onsemi's CASE 318
+# drawing (ISSUE AU) in 2N7002E/D -- same onsemi case number, but the
+# dimensions were NOT re-read from a document about this part; flagged
+# for review. No lifecycle statement in the datasheet.
+schema_version: "0.1"
+kind: part
+id: onsemi/BC807-40LT1G
+
+manufacturer: onsemi
+mpn: BC807-40LT1G
+
+device: onsemi/BC807-SERIES
+package: standards/SOT23-2.90x1.30-P1.90
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/BC807-16LT1-D
+
+provenance:
+  "/existence":
+    - source: onsemi/BC807-16LT1-D
+      page: 2
+      locator: "ORDERING INFORMATION table: \"BC807-40LT1G | 5C | SOT-23 (Pb-Free) | 3000 / Tape & Reel\""

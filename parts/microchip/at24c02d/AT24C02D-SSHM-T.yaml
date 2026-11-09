@@ -1,0 +1,37 @@
+# MPN "AT24C02D-SSHM-T" confirmed from the ordering information of microchip/DS20006100@revB
+# (page 39). Device microchip/AT24C02D, package standards/SOIC8-3.90x4.90-P1.27.
+# Package reused: standards/SOIC8-3.90x4.90-P1.27 (Microchip C04-057-SN);
+# the Rev L drawing on DS20006100B page 27 prints the same values.
+# Only this AT24C02D SOIC code appears in the datasheet's Examples
+# table; other suffixes (-SSHM-B, -PUM) are decodable from the naming
+# legend but not listed for AT24C02D, so they are not added.
+# lifecycle: not stated in the datasheet; no first-party lifecycle page
+# was read, so it is recorded as unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/AT24C02D-SSHM-T
+
+manufacturer: microchip
+mpn: "AT24C02D-SSHM-T"
+
+device: microchip/AT24C02D
+package: standards/SOIC8-3.90x4.90-P1.27
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20006100@revB
+
+provenance:
+  "/existence":
+    - source: microchip/DS20006100@revB
+      page: 39
+      locator: "Section 12 Product Identification System, Examples table row \"AT24C02D-SSHM-T  SOIC  SN  SS  Tape and Reel  Industrial\""
+  "/package":
+    - source: microchip/DS20006100@revB
+      page: 27
+      locator: "Package drawing \"8-Lead Plastic Small Outline (SN) - Narrow, 3.90 mm (.150 In.) Body [SOIC]\", C04-00057-SN Rev L; its table (e 1.27 BSC, A max 1.75, A2 min 1.25, A1 0.10-0.25, E 6.00 BSC, E1 3.90 BSC, D 4.90 BSC, L 0.40-1.27, c 0.17-0.25, b 0.31-0.51) matches standards/SOIC8-3.90x4.90-P1.27 value for value"

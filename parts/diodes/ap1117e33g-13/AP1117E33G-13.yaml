@@ -1,0 +1,39 @@
+# AP1117E33G-13: DS31009 Rev. 24-3 "Ordering Information" (page 7). The
+# table lists "AP1117EXXG-13  -20 to +125°C  E  SOT223 ... 2500/Tape &
+# Reel  -13"; the part-number key above it gives E = SOT223, 33 = 3.3V,
+# G = Green, 13 = Tape & Reel, so XX = 33 yields AP1117E33G-13 (the MPN
+# is composed from the key, not printed in full -- flagged for review).
+# lifecycle nrnd: every page carries the banner "NOT RECOMMENDED FOR NEW
+# DESIGN / USE AZ1117C/E".
+schema_version: "0.1"
+kind: part
+id: diodes/AP1117E33G-13
+
+manufacturer: diodes
+mpn: AP1117E33G-13
+
+device: diodes/AP1117-3.3
+package: standards/SOT223-3.5x6.5-P2.3-TabPin2-Diodes
+
+existence:
+  status: verified
+
+lifecycle:
+  status: nrnd
+
+sources:
+  - diodes/DS31009
+
+provenance:
+  "/existence":
+    - source: diodes/DS31009
+      page: 7
+      locator: "\"Ordering Information\": key (E: SOT223, 33: 3.3V, G: Green, 13: Tape & Reel) and table row \"AP1117EXXG-13\""
+  "/lifecycle":
+    - source: diodes/DS31009
+      page: 1
+      locator: "Page banner \"NOT RECOMMENDED FOR NEW DESIGN / USE AZ1117C/E\" (repeated on every page)"
+  "/package":
+    - source: diodes/DS31009
+      page: 8
+      locator: "\"Package Outline Dimensions (1) Package Type: SOT223\""

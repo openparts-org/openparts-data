@@ -1,0 +1,35 @@
+# MPN confirmed from the "Product Identification System" (DS20001203W
+# page 40), example f): "24LC256-I/SN: ...Industrial Temp., 2.5V, SOIC package".
+# Package code SN = "Plastic Small Outline - Narrow, 3.90 mm Body,
+# 8-lead (SOIC)" (same page) -> drawing C04-057-SN (page 25).
+# The id replaces the "/" of the MPN with "-" (precedent:
+# nxp/LPC1114FBD48-302); mpn keeps the real string.
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/24LC256-I-SN
+
+manufacturer: microchip
+mpn: 24LC256-I/SN
+
+device: microchip/24LC256
+package: standards/SOIC8-3.90x4.90-P1.27
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001203@revW
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001203@revW
+      page: 40
+      locator: "Product Identification System, example f) \"24LC256-I/SN\""
+  "/package":
+    - source: microchip/DS20001203@revW
+      page: 40
+      locator: "Product Identification System, Package \"SN = Plastic Small Outline - Narrow, 3.90 mm Body, 8-lead (SOIC)\""

@@ -1,0 +1,35 @@
+# TLP291, CTR rank GB. The order code "TLP291(GB,E" is the datasheet's
+# own ordering example (page 2, Note 1 of the CTR rank table: "Specify
+# both the part number and a rank in this format when ordering (e.g.)
+# rank GB: TLP291 (GB,E"). That is an ordering format, not an ordering
+# table of available codes, and Toshiba's TLP291 product page shows no
+# orderable-part list in its static HTML -- so existence is `probable`.
+# Lifecycle is `unknown` (not stated in either source).
+schema_version: "0.1"
+kind: part
+id: "toshiba/TLP291(GB,E"
+
+manufacturer: toshiba
+mpn: "TLP291(GB,E"
+
+device: toshiba/TLP291
+package: manufacturers/toshiba/11-3C1
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - toshiba/TLP291-datasheet-en
+
+provenance:
+  "/existence":
+    - source: toshiba/TLP291-datasheet-en
+      page: 2
+      locator: "CTR rank table, Note 1: \"(e.g.) rank GB: TLP291 (GB,E\""
+  "/package":
+    - source: toshiba/TLP291-datasheet-en
+      page: 1
+      locator: "\"TLP291 is housed in the SO4 package\"; outline drawing TOSHIBA 11-3C1"

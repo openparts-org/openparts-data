@@ -1,0 +1,48 @@
+# KEMET C0603C X7R MLCC body, thickness code CF. L/W from kemet/C1002_X7R
+# PDF p3 'Dimensions - Millimeters' table; T from Table 2A (PDF p9)
+# thickness code CF. Band width B is not modelled by the chip
+# generator and is left out.
+schema_version: "0.1"
+kind: package
+id: manufacturers/kemet/C0603-CF
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.60
+    min: 1.45
+    max: 1.75
+    unit: mm
+  body_width:
+    nominal: 0.80
+    min: 0.65
+    max: 0.95
+    unit: mm
+  body_height:
+    nominal: 0.80
+    min: 0.73
+    max: 0.87
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: kemet/C1002_X7R
+      page: 3
+      locator: "Dimensions table, EIA 0603 row, L = 1.60 +/-0.15 mm"
+  "/dimensions/body_width":
+    - source: kemet/C1002_X7R
+      page: 3
+      locator: "Dimensions table, EIA 0603 row, W = 0.80 +/-0.15 mm"
+  "/dimensions/body_height":
+    - source: kemet/C1002_X7R
+      page: 9
+      locator: "Table 2A, thickness code CF, case 0603: 0.80 +/- 0.07 mm"

@@ -1,0 +1,24 @@
+# LM317L 3-terminal adjustable positive regulator (100 mA). Pin
+# numbers for the LP (TO-92) package from SLCS144G "LP PACKAGE (TOP
+# VIEW)" (page 3: 1 INPUT, 2 OUTPUT, 3 ADJUSTMENT) and Table 4-1 "Pin
+# Functions", LP column (same page), whose TYPE column gives I/O/I.
+# Only the 3-pin LP pinout is recorded here (the D/PW/PK packages
+# number the same functions differently).
+schema_version: "0.1"
+kind: device
+id: ti/LM317L
+
+manufacturer: ti
+category: other
+family: LM317L
+
+pins:
+  "1": { name: INPUT, type: input }
+  "2": { name: OUTPUT, type: output }
+  "3": { name: ADJUSTMENT, type: input }
+
+provenance:
+  "/pins":
+    - source: ti/SLCS144G
+      page: 3
+      locator: "\"LP PACKAGE (TOP VIEW)\" and Table 4-1 \"Pin Functions\", LP column"

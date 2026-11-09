@@ -1,0 +1,45 @@
+# MPN from the SLVS543S package option addendum (PDF page 36):
+# "TL431AIDR Active Production SOIC (D) | 8 2500 | LARGE T&R ... -40 to
+# 85". lifecycle "Active" is TI's own status column in that same table.
+# Package: TI D0008A (SOIC, 4214825/C) references JEDEC MS-012
+# variation AA and gives ranges only (no nominals), which the soic
+# generator cannot draw without inventing a nominal. It therefore uses
+# standards/SOIC8-3.90x4.90-P1.27 (Microchip C04-057-SN): its basic
+# values E1 3.90 / D 4.90 / E 6.00 / e 1.27 lie inside D0008A E1
+# 3.81-3.98 / D 4.81-5.00 / E 5.80-6.19 / e 1.27, and b 0.31-0.51 and
+# A max 1.75 are identical. Flagged for reviewer: cross-vendor reuse
+# justified by the same JEDEC outline, not identical tolerance tables
+# (TI L 0.41-1.27 / c 0.11-0.25 vs Microchip L 0.40-1.27 / c 0.17-0.25).
+# (D0008A outline in this datasheet: PDF page 67.)
+schema_version: "0.1"
+kind: part
+id: ti/TL431AIDR
+
+manufacturer: ti
+mpn: TL431AIDR
+
+device: ti/TL431-D
+package: standards/SOIC8-3.90x4.90-P1.27
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLVS543S
+
+provenance:
+  "/existence":
+    - source: ti/SLVS543S
+      page: 36
+      locator: "Package option addendum table, row \"TL431AIDR\" (SOIC (D) | 8)"
+  "/lifecycle":
+    - source: ti/SLVS543S
+      page: 36
+      locator: "Package option addendum table, row \"TL431AIDR\", Status \"Active\""
+  "/package":
+    - source: ti/SLVS543S
+      page: 67
+      locator: "D0008A package outline (SOIC, MS-012 AA) -- compared against the referenced package, see header"

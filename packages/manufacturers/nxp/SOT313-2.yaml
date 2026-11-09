@@ -1,0 +1,119 @@
+# NXP SOT313-2, LQFP48, body 7 x 7 x 1.4 mm, 0.5 mm pitch (JEDEC
+# MS-026). All values from the "DIMENSIONS" table of Fig 40 "Package
+# outline SOT313-2 (LQFP48)", NXP LPC84x data sheet Rev. 2.1, page 83.
+# Not merged into standards/LQFP48-7x7-P0.5: NXP states D/E 6.9-7.1,
+# HD/HE 8.85-9.15, c 0.12-0.18 and A1 0.05-0.20, which differ from the
+# ST-sourced values held there. The table gives only min/max (no
+# nominal) for these, so only min/max are recorded (body: see below).
+# The nominal 7.0 is the body size in the outline title ("body 7 x 7 x
+# 1.4 mm", also Table 1 "Ordering information"); the dimension table
+# itself gives only min/max.
+schema_version: "0.1"
+kind: package
+id: manufacturers/nxp/SOT313-2
+
+family: lqfp
+lead_count: 48
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 7.0
+    min: 6.9
+    max: 7.1
+    unit: mm
+  body_length:
+    nominal: 7.0
+    min: 6.9
+    max: 7.1
+    unit: mm
+  body_height:
+    min: 1.35
+    max: 1.45
+    unit: mm
+  overall_width:
+    min: 8.85
+    max: 9.15
+    unit: mm
+  overall_length:
+    min: 8.85
+    max: 9.15
+    unit: mm
+  overall_height:
+    max: 1.6
+    unit: mm
+  standoff:
+    min: 0.05
+    max: 0.20
+    unit: mm
+  lead_width:
+    min: 0.17
+    max: 0.27
+    unit: mm
+  lead_length:
+    min: 0.45
+    max: 0.75
+    unit: mm
+  lead_thickness:
+    min: 0.12
+    max: 0.18
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lqfp
+
+provenance:
+  "/pitch":
+    - source: nxp/LPC84x@rev2.1
+      page: 83
+      locator: "Fig 40 SOT313-2 DIMENSIONS table, \"e\" 0.5"
+  "/dimensions/body_width":
+    - source: nxp/LPC84x@rev2.1
+      page: 83
+      locator: "Fig 40 SOT313-2 DIMENSIONS table, \"E(1)\" 6.9/7.1"
+    - source: nxp/LPC84x@rev2.1
+      page: 83
+      locator: "SOT313-2 drawing title \"LQFP48: plastic low profile quad flat package; ... body 7 x 7 x 1.4 mm\" (also Table 1, page 4) -- nominal"
+  "/dimensions/body_length":
+    - source: nxp/LPC84x@rev2.1
+      page: 83
+      locator: "Fig 40 SOT313-2 DIMENSIONS table, \"D(1)\" 6.9/7.1"
+    - source: nxp/LPC84x@rev2.1
+      page: 83
+      locator: "SOT313-2 drawing title \"LQFP48: plastic low profile quad flat package; ... body 7 x 7 x 1.4 mm\" (also Table 1, page 4) -- nominal"
+  "/dimensions/body_height":
+    - source: nxp/LPC84x@rev2.1
+      page: 83
+      locator: "Fig 40 SOT313-2 DIMENSIONS table, \"A2\" 1.35/1.45"
+  "/dimensions/overall_width":
+    - source: nxp/LPC84x@rev2.1
+      page: 83
+      locator: "Fig 40 SOT313-2 DIMENSIONS table, \"HE\" 8.85/9.15"
+  "/dimensions/overall_length":
+    - source: nxp/LPC84x@rev2.1
+      page: 83
+      locator: "Fig 40 SOT313-2 DIMENSIONS table, \"HD\" 8.85/9.15"
+  "/dimensions/overall_height":
+    - source: nxp/LPC84x@rev2.1
+      page: 83
+      locator: "Fig 40 SOT313-2 DIMENSIONS table, \"A max.\" 1.6"
+  "/dimensions/standoff":
+    - source: nxp/LPC84x@rev2.1
+      page: 83
+      locator: "Fig 40 SOT313-2 DIMENSIONS table, \"A1\" 0.05/0.20"
+  "/dimensions/lead_width":
+    - source: nxp/LPC84x@rev2.1
+      page: 83
+      locator: "Fig 40 SOT313-2 DIMENSIONS table, \"bp\" 0.17/0.27"
+  "/dimensions/lead_length":
+    - source: nxp/LPC84x@rev2.1
+      page: 83
+      locator: "Fig 40 SOT313-2 DIMENSIONS table, \"Lp\" 0.45/0.75 (foot length; \"L\" = 1 is the overall lead length)"
+  "/dimensions/lead_thickness":
+    - source: nxp/LPC84x@rev2.1
+      page: 83
+      locator: "Fig 40 SOT313-2 DIMENSIONS table, \"c\" 0.12/0.18"

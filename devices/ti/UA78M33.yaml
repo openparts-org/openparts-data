@@ -1,0 +1,32 @@
+# uA78M 500-mA fixed regulator, 3.3-V option (UA78M33C / UA78M33I).
+# Pins from SLVS059V Table 4-1 "Pin Functions" (page 3): COMMON 2
+# ("Ground"), INPUT 1, OUTPUT 3 -- one table for both DCY (SOT-223) and
+# KVU (TO-252). Figures 4-1/4-2 (page 3) label the tab "COMMON" without
+# a number; the outline drawings DCY0004A (page 32) and KVU0003A (page
+# 38) label the tab "4". Pin "4" = COMMON is therefore the tab, keyed by
+# the drawings' number (flagged for review in the package files).
+schema_version: "0.1"
+kind: device
+id: ti/UA78M33
+
+manufacturer: ti
+category: other
+family: UA78M
+
+pins:
+  "1": { name: INPUT, type: power }
+  "2": { name: COMMON, type: ground }
+  "3": { name: OUTPUT, type: power }
+  "4": { name: COMMON, type: ground }
+
+provenance:
+  "/pins":
+    - source: ti/SLVS059V
+      page: 3
+      locator: "Table 4-1 \"Pin Functions\" (COMMON 2, INPUT 1, OUTPUT 3)"
+    - source: ti/SLVS059V
+      page: 3
+      locator: "Figure 4-1 \"DCY Package, 3-Pin SOT-223\" / Figure 4-2 \"KVU Package, 3-Pin TO-252\" (Top View): tab labelled \"COMMON\""
+    - source: ti/SLVS059V
+      page: 38
+      locator: "KVU0003A outline, bottom view: tab labelled \"4\" (also DCY0004A, page 32)"

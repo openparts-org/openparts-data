@@ -1,0 +1,36 @@
+# RP2350B: RP2350 in the 10x10mm QFN-80 package, no in-package flash,
+# 48 GPIO / 8 analogue inputs (RP2350 Datasheet RP-008373-DS rev 3,
+# Table 1 "RP2350 device family", PDF page 14). Mirrors parts/raspberrypi/
+# rp2350/RP2350A.yaml: the MPN is the product name in that table; no
+# reel/tray order-code table exists in either document.
+# Lifecycle: the Product Brief states "We expect RP2350 to remain in
+# production until at least January 2045" (PDF page 3), family-wide.
+schema_version: "0.1"
+kind: part
+id: raspberrypi/RP2350B
+
+manufacturer: raspberrypi
+mpn: RP2350B
+
+device: raspberrypi/RP2350B
+package: standards/QFN80-RP2350B
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - raspberrypi/RP-008373-DS@rev3
+  - raspberrypi/RP-008374-DS@rev1
+
+provenance:
+  "/existence":
+    - source: raspberrypi/RP-008373-DS@rev3
+      page: 14
+      locator: "Table 1 \"RP2350 device family\", row \"RP2350B QFN-80 None 48 8\""
+  "/lifecycle/status":
+    - source: raspberrypi/RP-008374-DS@rev1
+      page: 3
+      locator: "\"We expect RP2350 to remain in production until at least January 2045\""

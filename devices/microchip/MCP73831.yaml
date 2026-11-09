@@ -1,0 +1,28 @@
+# Single-cell Li-Ion/Li-Po charge controller, SOT-23-5 pinout. From
+# DS20001984H Table 3-1 "Pin Function Tables" (page 11), SOT-23-5
+# column, cross-checked with the "Package Types" SOT-23-5 figure on
+# page 1 (STAT 1, VSS 2, VBAT 3 on one side; VDD 4, PROG 5 opposite).
+# The DFN pinout differs and is not covered by this device.
+schema_version: "0.1"
+kind: device
+id: microchip/MCP73831
+
+manufacturer: microchip
+category: other
+family: MCP73831/2
+
+pins:
+  "1": { name: STAT, type: output }
+  "2": { name: VSS, type: ground }
+  "3": { name: VBAT, type: power }
+  "4": { name: VDD, type: power }
+  "5": { name: PROG, type: analog }
+
+provenance:
+  "/pins":
+    - source: microchip/DS20001984@revH
+      page: 11
+      locator: "Table 3-1 \"Pin Function Tables\", SOT-23-5 column"
+    - source: microchip/DS20001984@revH
+      page: 1
+      locator: "\"Package Types\", MCP73831/2 SOT-23-5"

@@ -1,0 +1,28 @@
+# LM2903B dual differential comparator (open-collector outputs). Pinout
+# from SLCS005AH Figure 4-1 "D, DGK, JG, P, PS, DDF or PW Package 8-Pin"
+# (page 3) and cross-checked against Table 4-1 "Pin Functions" (same
+# page), whose I/O column gives Output/Input/--; GND and VCC are typed
+# ground/power from their descriptions ("Ground", "Positive Supply").
+schema_version: "0.1"
+kind: device
+id: ti/LM2903B
+
+manufacturer: ti
+category: other
+family: LM2903B
+
+pins:
+  "1": { name: 1OUT, type: output }
+  "2": { name: 1IN-, type: input }
+  "3": { name: 1IN+, type: input }
+  "4": { name: GND, type: ground }
+  "5": { name: 2IN+, type: input }
+  "6": { name: 2IN-, type: input }
+  "7": { name: 2OUT, type: output }
+  "8": { name: VCC, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SLCS005AH
+      page: 3
+      locator: "Figure 4-1 (8-pin SOIC/VSSOP/PDIP/SO/TSSOP top view) and Table 4-1 \"Pin Functions\""

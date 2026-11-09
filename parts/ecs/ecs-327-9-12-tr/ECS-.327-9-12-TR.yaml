@@ -1,0 +1,30 @@
+# 32.768 kHz ECX-12 tuning-fork crystal, tape and reel. MPN listed in
+# the ECS product page's Ordering & Quality table; it also decodes per
+# the datasheet's PART NUMBERING GUIDE (ecs/ECX_12). Device and package are
+# the series' existing ones (same ECX-12 datasheet revision). lifecycle
+# unknown: neither page states a production status.
+schema_version: "0.1"
+kind: part
+id: "ecs/ECS-.327-9-12-TR"
+
+manufacturer: ecs
+mpn: "ECS-.327-9-12-TR"
+
+device: ecs/ECX-12-SERIES
+package: standards/CHIP-ECX12
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - ecs/ECX_12
+  - ecs/ECX-12-product-page
+
+provenance:
+  "/existence":
+    - source: ecs/ECX-12-product-page
+      page: 1
+      locator: "Ordering & Quality table row \"ECS-.327-9-12-TR\": 12 2.00mm x 1.20mm 32.768 kHz +/-20ppm 9pF"

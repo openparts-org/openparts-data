@@ -1,0 +1,33 @@
+# ATmega32U4-MU: listed in section 33.2 "ATmega32U4" ordering table
+# (datasheet 7766J, page 422): 16 MHz, 2.7-5.5V, external XTAL default
+# oscillator, package 44PW (QFN44, 7x7mm, 0.5mm pitch),
+# Industrial (-40 to +85 C).
+# lifecycle: not stated in the datasheet; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/ATmega32U4-MU
+
+manufacturer: microchip
+mpn: ATmega32U4-MU
+
+device: microchip/ATmega32U4
+package: standards/QFN44-7x7-P0.5-EP5.2
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/7766@revJ
+
+provenance:
+  "/existence":
+    - source: microchip/7766@revJ
+      page: 422
+      locator: "Section 33.2 \"ATmega32U4\" ordering table, \"ATmega32U4-MU\""
+  "/package":
+    - source: microchip/7766@revJ
+      page: 422
+      locator: "Section 33.2 ordering table, package column + \"Package Type\" legend"

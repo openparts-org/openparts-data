@@ -1,0 +1,16 @@
+# Abracon ABS07 32.768kHz SMD crystal datasheet (6 pages). Read via
+# pdftotext plus a render of page 4 ("Mechanical Dimensions", vector
+# drawing). Every page footer: "REVISED: 08-10-22" (MM-DD-YY), used as
+# the revision label.
+schema_version: "0.1"
+kind: source
+id: abracon/ABS07
+
+publisher: abracon
+document_id: ABS07
+document_type: datasheet
+
+revision: "08-10-22"
+date: "2022-08-10"
+
+url: "https://abracon.com/Resonators/ABS07.pdf"

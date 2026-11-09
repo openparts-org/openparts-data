@@ -1,0 +1,20 @@
+# 1N5818 Schottky barrier rectifier, DO-41 (Vishay 88525). Pin 1 = cathode
+# (band end) per this dataset's axial convention (KiCad D_DO-*, pin 1
+# at the band); the datasheet itself does not number the leads.
+schema_version: "0.1"
+kind: device
+id: vishay/1N5818
+
+manufacturer: vishay
+category: diode
+family: 1N5818
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: vishay/88525
+      page: 1
+      locator: "MECHANICAL DATA: \"Polarity: color band denotes the cathode end\""

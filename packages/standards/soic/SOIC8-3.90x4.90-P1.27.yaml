@@ -1,0 +1,103 @@
+# 8-lead narrow (3.90 mm) SOIC. All values from Microchip drawing
+# C04-057-SN Rev D ("8-Lead Plastic Small Outline (SN) - Narrow, 3.90 mm
+# (.150 In.) Body [SOIC]"), dimension table on DS20001203W page 25,
+# copied as printed (millimetres; BSC values recorded as nominal,
+# min/max-only rows recorded as min/max only, no invented nominal).
+#
+# Also used by TI parts in the D (D0008A) package: TI's D0008A drawing
+# (4214825/C, e.g. SLOS068AB page 63) references JEDEC MS-012 variation
+# AA and states ranges only (E1 3.81-3.98, D 4.81-5.00, E 5.80-6.19,
+# e 1.27, b 0.31-0.51, L 0.41-1.27, A1 0.10-0.25, A max 1.75); every
+# Microchip basic value lies inside those ranges. See the part files.
+#
+# body_height: the table gives only A2 min 1.25 (no max/nominal);
+# recorded as min only. Chamfer h, L1 (REF) and angles are not modelled.
+schema_version: "0.1"
+kind: package
+id: standards/SOIC8-3.90x4.90-P1.27
+
+family: soic
+lead_count: 8
+
+pitch:
+  nominal: 1.27
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 3.90
+    unit: mm
+  body_length:
+    nominal: 4.90
+    unit: mm
+  body_height:
+    min: 1.25
+    unit: mm
+  overall_width:
+    nominal: 6.00
+    unit: mm
+  overall_height:
+    max: 1.75
+    unit: mm
+  standoff:
+    min: 0.10
+    max: 0.25
+    unit: mm
+  lead_width:
+    min: 0.31
+    max: 0.51
+    unit: mm
+  lead_length:
+    min: 0.40
+    max: 1.27
+    unit: mm
+  lead_thickness:
+    min: 0.17
+    max: 0.25
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: soic
+
+provenance:
+  "/pitch":
+    - source: microchip/DS20001203@revW
+      page: 25
+      locator: "C04-057-SN Rev D dimension table, \"Pitch e 1.27 BSC\""
+  "/dimensions/body_width":
+    - source: microchip/DS20001203@revW
+      page: 25
+      locator: "C04-057-SN Rev D dimension table, \"Molded Package Width E1 3.90 BSC\""
+  "/dimensions/body_length":
+    - source: microchip/DS20001203@revW
+      page: 25
+      locator: "C04-057-SN Rev D dimension table, \"Overall Length D 4.90 BSC\""
+  "/dimensions/body_height":
+    - source: microchip/DS20001203@revW
+      page: 25
+      locator: "C04-057-SN Rev D dimension table, \"Molded Package Thickness A2\" (Min 1.25 only)"
+  "/dimensions/overall_width":
+    - source: microchip/DS20001203@revW
+      page: 25
+      locator: "C04-057-SN Rev D dimension table, \"Overall Width E 6.00 BSC\""
+  "/dimensions/overall_height":
+    - source: microchip/DS20001203@revW
+      page: 25
+      locator: "C04-057-SN Rev D dimension table, \"Overall Height A\" (Max 1.75 only)"
+  "/dimensions/standoff":
+    - source: microchip/DS20001203@revW
+      page: 25
+      locator: "C04-057-SN Rev D dimension table, \"Standoff A1\" (Min 0.10 / Max 0.25)"
+  "/dimensions/lead_width":
+    - source: microchip/DS20001203@revW
+      page: 25
+      locator: "C04-057-SN Rev D dimension table, \"Lead Width b\" (Min 0.31 / Max 0.51)"
+  "/dimensions/lead_length":
+    - source: microchip/DS20001203@revW
+      page: 25
+      locator: "C04-057-SN Rev D dimension table, \"Foot Length L\" (Min 0.40 / Max 1.27)"
+  "/dimensions/lead_thickness":
+    - source: microchip/DS20001203@revW
+      page: 25
+      locator: "C04-057-SN Rev D dimension table, \"Lead Thickness c\" (Min 0.17 / Max 0.25)"

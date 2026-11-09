@@ -1,0 +1,21 @@
+# PNP general-purpose transistor (BC807-16L/-25L/-40L, gain groups),
+# SOT-23 CASE 318 STYLE 6. Pins from the page-1 pin drawing text
+# "COLLECTOR 3 / BASE 1 / EMITTER 2" -- same numbering as BC817-SERIES.
+schema_version: "0.1"
+kind: device
+id: onsemi/BC807-SERIES
+
+manufacturer: onsemi
+category: transistor
+family: BC807
+
+pins:
+  "1": { name: Base, type: passive }
+  "2": { name: Emitter, type: passive }
+  "3": { name: Collector, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/BC807-16LT1-D
+      page: 1
+      locator: "Pin drawing beside the title: \"COLLECTOR 3\", \"BASE 1\", \"EMITTER 2\"; package \"SOT-23 CASE 318 STYLE 6\""

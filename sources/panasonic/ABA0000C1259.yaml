@@ -1,0 +1,18 @@
+# Panasonic Industry "Aluminum Electrolytic Capacitors, Radial Lead
+# Type, FR-A series" catalog sheet (13 pages). Read via pdftotext
+# -layout plus a render of the page-1 "Dimensions" drawing (tolerances
+# are vector text next to the drawing). Every page footer prints
+# "01-Sep-25"; no separate revision number, so the document code is the
+# revision label (same convention as panasonic/ABA0000C1209).
+schema_version: "0.1"
+kind: source
+id: panasonic/ABA0000C1259
+
+publisher: panasonic
+document_id: ABA0000C1259
+document_type: datasheet
+
+revision: "ABA0000C1259"
+date: "2025-09-01"
+
+url: "https://industrial.panasonic.com/cdbs/www-data/pdf/RDF0000/ABA0000C1259.pdf"

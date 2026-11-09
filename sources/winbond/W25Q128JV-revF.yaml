@@ -1,0 +1,19 @@
+# Official Winbond W25Q128JV datasheet ("3V 128M-bit serial flash memory
+# with dual/quad SPI", Industrial & Industrial Plus grade). Cover page:
+# "Publication Release Date: March 27, 2018 / Revision F". Downloaded
+# from winbond.com's resource-files URL below (the documentation portal
+# link redirects through a JavaScript page) and read with pdftotext;
+# package pages rendered to images and read directly. Page numbers in
+# provenance are PDF page indices (printed page = PDF page - 1).
+schema_version: "0.1"
+kind: source
+id: winbond/W25Q128JV@revF
+
+publisher: winbond
+document_id: W25Q128JV
+document_type: datasheet
+
+revision: "F"
+date: "2018-03"
+
+url: "https://www.winbond.com/resource-files/w25q128jv%20revf%2003272018%20plus.pdf"

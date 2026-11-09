@@ -1,0 +1,32 @@
+# Programmable shunt reference, D (SOIC-8) pinout. The TL431 pinout is
+# package-specific (the P/PS/PW 8-pin pinout differs: ANODE only on
+# pin 6, NC on 2/3/4/5/7), so this device covers the D package only.
+# From SLVS543S page 4: "TL431, TL431A, TL431B . . . D (SOIC) PACKAGE
+# (TOP VIEW)" and Table 5-1 "Pin Functions" (TL431x, D column:
+# CATHODE 1, REF 8, ANODE 2, 3, 6, 7). Pins 4/5 are "NC - No internal
+# connection". ANODE is typed `ground` from Table 5-1: "Common pin,
+# normally connected to ground" (needed anyway: repeated signal names
+# are rejected by pin.duplicate_name unless power/ground/nc).
+schema_version: "0.1"
+kind: device
+id: ti/TL431-D
+
+manufacturer: ti
+category: other
+family: TL431
+
+pins:
+  "1": { name: CATHODE, type: passive }
+  "2": { name: ANODE, type: ground }
+  "3": { name: ANODE, type: ground }
+  "4": { name: NC, type: nc }
+  "5": { name: NC, type: nc }
+  "6": { name: ANODE, type: ground }
+  "7": { name: ANODE, type: ground }
+  "8": { name: REF, type: analog }
+
+provenance:
+  "/pins":
+    - source: ti/SLVS543S
+      page: 4
+      locator: "\"D (SOIC) PACKAGE (TOP VIEW)\" diagram and Table 5-1 \"Pin Functions\", TL431x D column"

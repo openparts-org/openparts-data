@@ -1,0 +1,19 @@
+# Panasonic Industry "Precision Thick Film Chip Resistors, ERJ type"
+# catalog sheet (8 pages). Read via pdftotext -layout plus a render of
+# page 2 (part-number explanation) and page 4 (dimension drawing).
+# Pages 1-4 carry the footer date "29-May-25" (pages 5-8 older dates,
+# 10-May-24 / 30-Jun-23); the latest footer date is used as `date`. No
+# separate revision number is printed, so the document code is used as
+# the revision label (same convention as panasonic/ABA0000C1209).
+schema_version: "0.1"
+kind: source
+id: panasonic/AOA0000C304
+
+publisher: panasonic
+document_id: AOA0000C304
+document_type: datasheet
+
+revision: "AOA0000C304"
+date: "2025-05-29"
+
+url: "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"

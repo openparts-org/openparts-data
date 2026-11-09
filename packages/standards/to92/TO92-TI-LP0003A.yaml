@@ -1,0 +1,82 @@
+# NOTE (2026-11-10): the derived midpoint nominals mentioned below have
+# been removed -- only the min/max the source states are recorded
+# (Canonical Data Specification 7, 20.1). Generators draw a min/max-only
+# dimension at its midpoint without storing it (openparts-mcad
+# defaults::required).
+# TI LP0003A "TO-92 - 5.34 mm max height" (drawing 4215214/C 04/2025,
+# JEDEC TO-226 variation AA per its note 4), read from the rendered
+# outline page of SNIS159H (page 31); the same drawing is page 45 of
+# SNVS754O.
+#
+# Mapping (as TO92-2N3904/TO92-BC547): body_width = width across the
+# flat face (5.21/4.44), body_height = body height above the lead exit
+# (5.34/4.32), body_length = flat-face-to-round-back depth in the
+# bottom view (4.19/3.17). The drawing gives only max/min, but the to92
+# generator requires a nominal for body_width/body_length: `nominal`
+# on those three is this dataset's midpoint, DERIVED, not printed (same
+# technique as the existing to92 packages). Pitch "2X 1.27 +/- 0.13".
+# Lead width (0.55/0.38) and thickness (0.43/0.35) min/max only.
+schema_version: "0.1"
+kind: package
+id: standards/TO92-TI-LP0003A
+
+family: to92
+lead_count: 3
+
+pitch:
+  nominal: 1.27
+  min: 1.14
+  max: 1.40
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 4.44
+    max: 5.21
+    unit: mm
+  body_length:
+    min: 3.17
+    max: 4.19
+    unit: mm
+  body_height:
+    min: 4.32
+    max: 5.34
+    unit: mm
+  lead_width:
+    min: 0.38
+    max: 0.55
+    unit: mm
+  lead_thickness:
+    min: 0.35
+    max: 0.43
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: to92
+
+provenance:
+  "/pitch":
+    - source: ti/SNIS159H
+      page: 31
+      locator: "LP0003A straight lead option, \"2X 1.27 +/- 0.13\""
+  "/dimensions/body_width":
+    - source: ti/SNIS159H
+      page: 31
+      locator: "LP0003A front view, width 5.21/4.44 -- no nominal stated (min/max only)"
+  "/dimensions/body_length":
+    - source: ti/SNIS159H
+      page: 31
+      locator: "LP0003A bottom view, depth 4.19/3.17 -- no nominal stated (min/max only)"
+  "/dimensions/body_height":
+    - source: ti/SNIS159H
+      page: 31
+      locator: "LP0003A front view, body height 5.34/4.32 -- no nominal stated (min/max only)"
+  "/dimensions/lead_width":
+    - source: ti/SNIS159H
+      page: 31
+      locator: "LP0003A front view, \"3X 0.55/0.38\""
+  "/dimensions/lead_thickness":
+    - source: ti/SNIS159H
+      page: 31
+      locator: "LP0003A side view, \"3X 0.43/0.35\""

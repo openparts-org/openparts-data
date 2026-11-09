@@ -1,0 +1,117 @@
+# 44-lead TQFP, 10x10x1.0mm body, 0.8mm pitch -- Atmel drawing "ML"
+# rev J (02/06/2014), "Refer to JEDEC Drawing MS-026, Variation ACB".
+# All values from the COMMON DIMENSIONS table in ATmega16U4/32U4
+# datasheet 7766J, section 34.1 "TQFP44", page 423 (read from a rendered
+# image). D1/E1 (body) -> body_width/length, D/E (lead span) ->
+# overall_width/length, A2 -> body_height, A (max only) ->
+# overall_height, A1 -> standoff (no nominal), C -> lead_thickness.
+# `family: lqfp` for the same reason as standards/TQFP32-7x7-P0.8.
+schema_version: "0.1"
+kind: package
+id: standards/TQFP44-10x10-P0.8
+
+family: lqfp
+lead_count: 44
+
+pitch:
+  nominal: 0.8
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 10.0
+    min: 9.9
+    max: 10.1
+    unit: mm
+  body_length:
+    nominal: 10.0
+    min: 9.9
+    max: 10.1
+    unit: mm
+  body_height:
+    nominal: 1.0
+    min: 0.95
+    max: 1.05
+    unit: mm
+  overall_width:
+    nominal: 12.0
+    min: 11.75
+    max: 12.25
+    unit: mm
+  overall_length:
+    nominal: 12.0
+    min: 11.75
+    max: 12.25
+    unit: mm
+  overall_height:
+    max: 1.2
+    unit: mm
+  standoff:
+    min: 0.05
+    max: 0.15
+    unit: mm
+  lead_width:
+    nominal: 0.37
+    min: 0.3
+    max: 0.45
+    unit: mm
+  lead_length:
+    nominal: 0.6
+    min: 0.45
+    max: 0.75
+    unit: mm
+  lead_thickness:
+    nominal: 0.17
+    min: 0.09
+    max: 0.2
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lqfp
+
+provenance:
+  "/pitch":
+    - source: microchip/7766@revJ
+      page: 423
+      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol e (0.80 TYP)"
+  "/dimensions/body_width":
+    - source: microchip/7766@revJ
+      page: 423
+      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol D1/E1"
+  "/dimensions/body_length":
+    - source: microchip/7766@revJ
+      page: 423
+      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol D1/E1"
+  "/dimensions/body_height":
+    - source: microchip/7766@revJ
+      page: 423
+      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol A2"
+  "/dimensions/overall_width":
+    - source: microchip/7766@revJ
+      page: 423
+      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol D/E"
+  "/dimensions/overall_length":
+    - source: microchip/7766@revJ
+      page: 423
+      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol D/E"
+  "/dimensions/overall_height":
+    - source: microchip/7766@revJ
+      page: 423
+      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol A (max only)"
+  "/dimensions/standoff":
+    - source: microchip/7766@revJ
+      page: 423
+      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol A1 (no nominal)"
+  "/dimensions/lead_width":
+    - source: microchip/7766@revJ
+      page: 423
+      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol b"
+  "/dimensions/lead_length":
+    - source: microchip/7766@revJ
+      page: 423
+      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol L"
+  "/dimensions/lead_thickness":
+    - source: microchip/7766@revJ
+      page: 423
+      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol C"

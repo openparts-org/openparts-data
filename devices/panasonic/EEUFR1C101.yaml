@@ -1,0 +1,23 @@
+# Panasonic FR-A series 100 uF (code 101), 16 V (code 1C), +/-20 %
+# aluminium electrolytic capacitor (codes per the page-3 "Explanation of
+# part numbers"). Pin 1 = + / pin 2 = - follows this dataset's radial
+# convention (IPC-7351B / KiCad CP_Radial, pin 1 positive); the
+# datasheet does not number the leads -- its page-1 drawing marks the
+# leads only with "+" and "-" symbols.
+schema_version: "0.1"
+kind: device
+id: panasonic/EEUFR1C101
+
+manufacturer: panasonic
+category: capacitor
+family: FR-A
+
+pins:
+  "1": { name: "+", type: passive }
+  "2": { name: "-", type: passive }
+
+provenance:
+  "/pins":
+    - source: panasonic/ABA0000C1259
+      page: 1
+      locator: "\"Dimensions\" drawing, lead polarity symbols (+) / (-)"

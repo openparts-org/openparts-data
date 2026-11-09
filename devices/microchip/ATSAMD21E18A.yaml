@@ -1,0 +1,60 @@
+# ATSAMD21E18A (SAM D21E, 256KB flash / 32KB SRAM, variant A) pinout for
+# the 32-pin QFN32/TQFP32 packages, from data sheet DS40001882L section
+# 5.5.1 "QFN32 / TQFP32" (SAM D21ExxA/B/D, page 23), cross-checked
+# against Table 7-1 "PORT Function Multiplexing" SAMD2xE pin column
+# (pages 28-29). Same type conventions as devices/microchip/ATSAMD21G18A
+# (oscillator-capable port pins PA00/PA01/PA14/PA15 stay `io`).
+# `alternate_functions` lists only ADC AIN[n] channels from Table 7-1.
+# Exposed pad of the QFN32 (page 1107): connection not stated anywhere
+# in the data sheet, so no "EP" pin is recorded.
+schema_version: "0.1"
+kind: device
+id: microchip/ATSAMD21E18A
+
+manufacturer: microchip
+category: microcontroller
+family: SAM D21
+
+pins:
+  "1":  { name: PA00, type: io }
+  "2":  { name: PA01, type: io }
+  "3":  { name: PA02, type: io, alternate_functions: [AIN0] }
+  "4":  { name: PA03, type: io, alternate_functions: [AIN1] }
+  "5":  { name: PA04, type: io, alternate_functions: [AIN4] }
+  "6":  { name: PA05, type: io, alternate_functions: [AIN5] }
+  "7":  { name: PA06, type: io, alternate_functions: [AIN6] }
+  "8":  { name: PA07, type: io, alternate_functions: [AIN7] }
+  "9":  { name: VDDANA, type: power }
+  "10": { name: GND, type: ground }
+  "11": { name: PA08, type: io, alternate_functions: [AIN16] }
+  "12": { name: PA09, type: io, alternate_functions: [AIN17] }
+  "13": { name: PA10, type: io, alternate_functions: [AIN18] }
+  "14": { name: PA11, type: io, alternate_functions: [AIN19] }
+  "15": { name: PA14, type: io }
+  "16": { name: PA15, type: io }
+  "17": { name: PA16, type: io }
+  "18": { name: PA17, type: io }
+  "19": { name: PA18, type: io }
+  "20": { name: PA19, type: io }
+  "21": { name: PA22, type: io }
+  "22": { name: PA23, type: io }
+  "23": { name: PA24, type: io }
+  "24": { name: PA25, type: io }
+  "25": { name: PA27, type: io }
+  "26": { name: RESET, type: reset }
+  "27": { name: PA28, type: io }
+  "28": { name: GND, type: ground }
+  "29": { name: VDDCORE, type: power }
+  "30": { name: VDDIN, type: power }
+  "31": { name: PA30, type: io }
+  "32": { name: PA31, type: io }
+
+provenance:
+  "/pins/1/name":
+    - source: microchip/DS40001882@revL
+      page: 23
+      locator: "Section 5.5.1 \"QFN32 / TQFP32\" pinout (SAM D21ExxA/B/D), all 32 pins"
+  "/pins/3/alternate_functions":
+    - source: microchip/DS40001882@revL
+      page: 28
+      locator: "Table 7-1 \"PORT Function Multiplexing ...\", SAMD2xE column + ADC column"

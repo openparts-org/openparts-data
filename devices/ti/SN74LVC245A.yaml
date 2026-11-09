@@ -1,0 +1,45 @@
+# Octal bus transceiver with 3-state outputs. Pin map from the "Pin
+# Functions" table (SCAS218X page 3, column "DB, DGV, DW, NS, PW, and
+# RGY") and the "DB, DGV, DW, N, NS, OR PW PACKAGE (TOP VIEW)" diagram
+# on the same page: all 20 pins match. Same numbering for DB (SSOP) and
+# PW (TSSOP). OE carries an overbar (active low) in the datasheet; the
+# name here is written without it. VCC is printed "V" with subscript
+# "CC".
+schema_version: "0.1"
+kind: device
+id: ti/SN74LVC245A
+
+manufacturer: ti
+category: other
+family: SN74LVC245A
+
+pins:
+  "1":  { name: DIR, type: input }
+  "2":  { name: A1, type: io }
+  "3":  { name: A2, type: io }
+  "4":  { name: A3, type: io }
+  "5":  { name: A4, type: io }
+  "6":  { name: A5, type: io }
+  "7":  { name: A6, type: io }
+  "8":  { name: A7, type: io }
+  "9":  { name: A8, type: io }
+  "10": { name: GND, type: ground }
+  "11": { name: B8, type: io }
+  "12": { name: B7, type: io }
+  "13": { name: B6, type: io }
+  "14": { name: B5, type: io }
+  "15": { name: B4, type: io }
+  "16": { name: B3, type: io }
+  "17": { name: B2, type: io }
+  "18": { name: B1, type: io }
+  "19": { name: OE, type: input }
+  "20": { name: VCC, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SCAS218X
+      page: 3
+      locator: "\"Pin Functions\" table, column \"DB, DGV, DW, NS, PW, and RGY\""
+    - source: ti/SCAS218X
+      page: 3
+      locator: "\"DB, DGV, DW, N, NS, OR PW PACKAGE (TOP VIEW)\" (cross-check, all 20 pins matched)"

@@ -1,0 +1,23 @@
+# LS Q976.01, Chip LED 0603, super red, dominant 633 nm (InGaAlP).
+# The datasheet names the terminals ("cathode" / "anode" on the page-12
+# bottom view) but does NOT number them. Keys "1"/"2" are this
+# dataset's numbering, chosen as pin 1 = cathode to match the chip LED
+# convention used by the Kingbright records -- a dataset convention,
+# not a datasheet fact.
+schema_version: "0.1"
+kind: device
+id: osram/LS-Q976.01
+
+manufacturer: osram
+category: led
+family: "Chip LED 0603"
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: osram/LS-Q976.01@v1.2
+      page: 12
+      locator: "Dimensional Drawing, bottom view terminals labelled \"cathode\" and \"anode\"; top view \"cathode mark\""

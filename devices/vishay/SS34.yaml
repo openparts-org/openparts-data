@@ -1,0 +1,21 @@
+# 40V 3A Schottky barrier rectifier, SMC (DO-214AB). Polarity from
+# MECHANICAL DATA (page 1): "Polarity: color band denotes the cathode
+# end"; the page-1 package image labels "Cathode" / "Anode". Pin 1 =
+# cathode (banded end) per this dataset's diode convention.
+schema_version: "0.1"
+kind: device
+id: vishay/SS34
+
+manufacturer: vishay
+category: diode
+family: SS3x
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: vishay/88751
+      page: 1
+      locator: "MECHANICAL DATA, \"Polarity: color band denotes the cathode end\""

@@ -1,0 +1,108 @@
+# 48-lead TQFP, 7x7x1.0mm body, 0.5mm pitch -- Microchip "48-Lead
+# Plastic Thin Quad Flatpack (Y8) - 7x7x1.0 mm Body [TQFP]", drawing
+# C04-300-Y8 Rev D sheet 2, in SAM D21/DA1 data sheet DS40001882L
+# section 44.1.6 "48-Pin TQFP" (page 1088), dimension table read as text.
+# Not the same as standards/LQFP48-7x7-P0.5: same footprint span but the
+# LQFP body is 1.4mm thick (A2 1.35-1.45), this TQFP is 1.0mm (A2
+# 0.95-1.05), so it is a separate package.
+# `family: lqfp` for the same reason as standards/TQFP32-7x7-P0.8.
+schema_version: "0.1"
+kind: package
+id: standards/TQFP48-7x7-P0.5
+
+family: lqfp
+lead_count: 48
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 7.0
+    unit: mm
+  body_length:
+    nominal: 7.0
+    unit: mm
+  body_height:
+    nominal: 1.0
+    min: 0.95
+    max: 1.05
+    unit: mm
+  overall_width:
+    nominal: 9.0
+    unit: mm
+  overall_length:
+    nominal: 9.0
+    unit: mm
+  overall_height:
+    max: 1.2
+    unit: mm
+  standoff:
+    min: 0.05
+    max: 0.15
+    unit: mm
+  lead_width:
+    nominal: 0.22
+    min: 0.17
+    max: 0.27
+    unit: mm
+  lead_length:
+    nominal: 0.6
+    min: 0.45
+    max: 0.75
+    unit: mm
+  lead_thickness:
+    min: 0.09
+    max: 0.16
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lqfp
+
+provenance:
+  "/pitch":
+    - source: microchip/DS40001882@revL
+      page: 1088
+      locator: "Section 44.1.6, drawing C04-300-Y8 sheet 2, \"Pitch e 0.50 BSC\""
+  "/dimensions/body_width":
+    - source: microchip/DS40001882@revL
+      page: 1088
+      locator: "C04-300-Y8 sheet 2, \"Molded Package Width E1 7.00 BSC\""
+  "/dimensions/body_length":
+    - source: microchip/DS40001882@revL
+      page: 1088
+      locator: "C04-300-Y8 sheet 2, \"Molded Package Length D1 7.00 BSC\""
+  "/dimensions/body_height":
+    - source: microchip/DS40001882@revL
+      page: 1088
+      locator: "C04-300-Y8 sheet 2, \"Molded Package Thickness A2\""
+  "/dimensions/overall_width":
+    - source: microchip/DS40001882@revL
+      page: 1088
+      locator: "C04-300-Y8 sheet 2, \"Overall Width E 9.00 BSC\""
+  "/dimensions/overall_length":
+    - source: microchip/DS40001882@revL
+      page: 1088
+      locator: "C04-300-Y8 sheet 2, \"Overall Length D 9.00 BSC\""
+  "/dimensions/overall_height":
+    - source: microchip/DS40001882@revL
+      page: 1088
+      locator: "C04-300-Y8 sheet 2, \"Overall Height A\" (max only)"
+  "/dimensions/standoff":
+    - source: microchip/DS40001882@revL
+      page: 1088
+      locator: "C04-300-Y8 sheet 2, \"Standoff A1\" (no nominal)"
+  "/dimensions/lead_width":
+    - source: microchip/DS40001882@revL
+      page: 1088
+      locator: "C04-300-Y8 sheet 2, \"Terminal Width b\""
+  "/dimensions/lead_length":
+    - source: microchip/DS40001882@revL
+      page: 1088
+      locator: "C04-300-Y8 sheet 2, \"Terminal Length L\""
+  "/dimensions/lead_thickness":
+    - source: microchip/DS40001882@revL
+      page: 1088
+      locator: "C04-300-Y8 sheet 2, \"Terminal Thickness c\" (no nominal)"

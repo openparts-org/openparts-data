@@ -1,0 +1,26 @@
+# Everlight 19-217/R6C-P1Q2/6T brilliant red chip LED (Iv 45-112 mcd @20mA).
+# "6T" reel: 6000 pcs per reel (page 8). lifecycle unknown.
+schema_version: "0.1"
+kind: part
+id: "everlight/19-217/R6C-P1Q2/6T"
+
+manufacturer: everlight
+mpn: "19-217/R6C-P1Q2/6T"
+
+device: everlight/19-217-R6C-P1Q2
+package: manufacturers/everlight/CHIP-EVERLIGHT-19-217
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - everlight/DSE-0025716
+
+provenance:
+  "/existence":
+    - source: everlight/DSE-0025716
+      page: 1
+      locator: "Title block \"19-217/R6C-P1Q2/6T\" (repeated in every page header)"

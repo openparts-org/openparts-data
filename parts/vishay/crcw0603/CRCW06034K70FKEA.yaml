@@ -1,0 +1,35 @@
+# 4.7 kOhm, +/-1%, +/-100 ppm/K, CRCW0603 thick-film chip resistor.
+# MPN decoded per vishay/20035 PDF p3 'PART NUMBER AND PRODUCT DESCRIPTION':
+# CRCW | 0603 | 4K70 | F (+/-1%) | K (+/-100 ppm/K) | EA (7" reel, 5000 pcs).
+# Value is E24 inside the 1 Ohm - 10 MOhm +/-1% E24;E96 range (PDF p2).
+# Lifecycle not stated in the datasheet -> unknown.
+schema_version: "0.1"
+kind: part
+id: vishay/CRCW06034K70FKEA
+
+manufacturer: vishay
+mpn: CRCW06034K70FKEA
+
+device: vishay/CRCW0603-GENERAL-PURPOSE
+package: standards/CHIP0603-CRCW
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - vishay/20035
+
+provenance:
+  "/existence":
+    - source: vishay/20035
+      page: 3
+      locator: "'PART NUMBER AND PRODUCT DESCRIPTION': CRCW0603562RFKEA / CRCW06030000Z0EA; RESISTANCE R = decimal, K = thousand, M = million, 0000 = jumper; TOLERANCE F = +/-1%, Z = jumper; TCR K = +/-100 ppm/K, 0 = jumper"
+    - source: vishay/20035
+      page: 2
+      locator: "'TEMPERATURE COEFFICIENT AND RESISTANCE RANGE': D11/CRCW0603 e3 and D10/CRCW0402 e3: +/-100 ppm/K, +/-1%, 1 Ohm to 10 MOhm, E24; E96; Jumper <= 20 mOhm, 0 Ohm"
+    - source: vishay/20035
+      page: 3
+      locator: "'PACKAGING' table: D11/CRCW0603 e3 EA = ET1 5000 pcs 7\" paper tape; D10/CRCW0402 e3 ED = ET7 10 000 pcs 7\""

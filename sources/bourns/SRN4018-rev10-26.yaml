@@ -1,0 +1,17 @@
+# Bourns SRN4018 series datasheet as served on 2026-11-10 (3 pages).
+# Revision from the footer "REV. 10/26" (read via pdftotext; page 1
+# rendered to check the Product Dimensions drawing and the
+# Electrical Specifications table). Added as a separate Source because
+# the existing bourns/SRN4018 record does not pin this revision.
+schema_version: "0.1"
+kind: source
+id: bourns/SRN4018@rev10-26
+
+publisher: bourns
+document_id: "SRN4018"
+document_type: datasheet
+
+revision: "10/26"
+date: "2026-10"
+
+url: "https://www.bourns.com/docs/Product-Datasheets/SRN4018.pdf"

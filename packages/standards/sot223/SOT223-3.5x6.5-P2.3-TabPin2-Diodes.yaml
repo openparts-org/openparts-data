@@ -1,0 +1,132 @@
+# Diodes Incorporated SOT223 (3 leads + tab), from DS31009 Rev. 24-3
+# (AP1117) page 8, "Package Outline Dimensions (1) Package Type: SOT223"
+# table (Dim / Min / Max / Typ). Typ values are printed by the source and
+# recorded as nominal.
+#
+# Tab number: the source does not give the tab a number of its own. Page 1
+# "Pin Assignments" SOT223 (Top View) numbers the leads 3 VIN / 2 VOUT /
+# 1 Adj (GND) and says "Tab is VOUT"; VOUT is pin 2 in the "Pin
+# Descriptions" table (page 2). The tab is therefore numbered "2" (two
+# pads numbered 2, as KiCad's SOT-223-3_TabPin2).
+#
+# Symbol mapping: E (3.45-3.55, across the leads in the side view) ->
+# body_width; D (6.45-6.55, along the lead row) -> body_length; E1
+# (6.90-7.10, lead toe to tab toe) -> overall_width; b1 -> tab_width;
+# b2 -> lead_width; C -> lead_thickness; e1 2.30 -> pitch.
+# "A" (1.55-1.65) is drawn in the end view from the top of the body down
+# to the A1 reference line (A1 is dimensioned separately from the seating
+# plane), so it is recorded as body_height, not overall_height. Q
+# (0.84-0.94) has no field and is left out.
+schema_version: "0.1"
+kind: package
+id: standards/SOT223-3.5x6.5-P2.3-TabPin2-Diodes
+
+family: sot223
+lead_count: 3
+
+pitch:
+  nominal: 2.30
+  unit: mm
+
+tab:
+  number: "2"
+
+dimensions:
+  body_width:
+    nominal: 3.50
+    min: 3.45
+    max: 3.55
+    unit: mm
+  body_length:
+    nominal: 6.50
+    min: 6.45
+    max: 6.55
+    unit: mm
+  body_height:
+    nominal: 1.60
+    min: 1.55
+    max: 1.65
+    unit: mm
+  overall_width:
+    nominal: 7.00
+    min: 6.90
+    max: 7.10
+    unit: mm
+  standoff:
+    nominal: 0.05
+    min: 0.010
+    max: 0.15
+    unit: mm
+  lead_width:
+    nominal: 0.70
+    min: 0.60
+    max: 0.80
+    unit: mm
+  lead_length:
+    nominal: 0.95
+    min: 0.85
+    max: 1.05
+    unit: mm
+  lead_thickness:
+    nominal: 0.25
+    min: 0.20
+    max: 0.30
+    unit: mm
+  tab_width:
+    nominal: 3.00
+    min: 2.90
+    max: 3.10
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: sot223
+
+provenance:
+  "/pitch":
+    - source: diodes/DS31009
+      page: 8
+      locator: "\"Package Outline Dimensions\" SOT223 table, Dim \"e1\" (Typ 2.30; e = 4.60)"
+  "/tab":
+    - source: diodes/DS31009
+      page: 1
+      locator: "\"Pin Assignments\" SOT223 (Top View): leads 3 VIN, 2 VOUT, 1 Adj (GND); \"Tab is VOUT\""
+    - source: diodes/DS31009
+      page: 2
+      locator: "\"Pin Descriptions\" table: pin 2 = VOUT"
+  "/dimensions/body_width":
+    - source: diodes/DS31009
+      page: 8
+      locator: "SOT223 table, Dim \"E\" (3.45 / 3.55 / Typ 3.50)"
+  "/dimensions/body_length":
+    - source: diodes/DS31009
+      page: 8
+      locator: "SOT223 table, Dim \"D\" (6.45 / 6.55 / Typ 6.50)"
+  "/dimensions/body_height":
+    - source: diodes/DS31009
+      page: 8
+      locator: "SOT223 table, Dim \"A\" (1.55 / 1.65 / Typ 1.60); drawn above the A1 line, see header"
+  "/dimensions/overall_width":
+    - source: diodes/DS31009
+      page: 8
+      locator: "SOT223 table, Dim \"E1\" (6.90 / 7.10 / Typ 7.00)"
+  "/dimensions/standoff":
+    - source: diodes/DS31009
+      page: 8
+      locator: "SOT223 table, Dim \"A1\" (0.010 / 0.15 / Typ 0.05)"
+  "/dimensions/lead_width":
+    - source: diodes/DS31009
+      page: 8
+      locator: "SOT223 table, Dim \"b2\" (0.60 / 0.80 / Typ 0.70)"
+  "/dimensions/lead_length":
+    - source: diodes/DS31009
+      page: 8
+      locator: "SOT223 table, Dim \"L\" (0.85 / 1.05 / Typ 0.95)"
+  "/dimensions/lead_thickness":
+    - source: diodes/DS31009
+      page: 8
+      locator: "SOT223 table, Dim \"C\" (0.20 / 0.30 / Typ 0.25)"
+  "/dimensions/tab_width":
+    - source: diodes/DS31009
+      page: 8
+      locator: "SOT223 table, Dim \"b1\" (2.90 / 3.10 / Typ 3.00)"

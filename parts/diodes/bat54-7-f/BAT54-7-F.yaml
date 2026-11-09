@@ -1,0 +1,27 @@
+# BAT54-7-F: 3,000-piece reel MPN from the DS11005 ordering table.
+# Package outline: DS11005 page 4 (the source of
+# SOT23-2.90x1.30-P1.83-DIODES). No lifecycle statement in the document.
+schema_version: "0.1"
+kind: part
+id: diodes/BAT54-7-F
+
+manufacturer: diodes
+mpn: BAT54-7-F
+
+device: diodes/BAT54
+package: standards/SOT23-2.90x1.30-P1.83-DIODES
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - diodes/DS11005
+
+provenance:
+  "/existence":
+    - source: diodes/DS11005
+      page: 1
+      locator: "Ordering Information table: \"BAT54-7-F | SOT23 (Standard) | 3,000 | Tape & Reel\""

@@ -1,0 +1,34 @@
+# MPN "PCF8574AP" confirmed from the ordering information of nxp/PCF8574_PCF8574A@rev5
+# (page 2). Device nxp/PCF8574A, package manufacturers/nxp/SOT38-4.
+# MPN is NXP's type number; Table 2 "Ordering options" (page 2) lists
+# its orderable codes (packing suffix ,112/,512/,518).
+# lifecycle: not stated in the datasheet; no first-party lifecycle page
+# was read, so it is recorded as unknown.
+schema_version: "0.1"
+kind: part
+id: nxp/PCF8574AP
+
+manufacturer: nxp
+mpn: "PCF8574AP"
+
+device: nxp/PCF8574A
+package: manufacturers/nxp/SOT38-4
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - nxp/PCF8574_PCF8574A@rev5
+
+provenance:
+  "/existence":
+    - source: nxp/PCF8574_PCF8574A@rev5
+      page: 2
+      locator: "Table 1 \"Ordering information\", type number \"PCF8574AP\" (DIP16 ... SOT38-4); Table 2 \"Ordering options\" lists its orderable codes"
+  "/package":
+    - source: nxp/PCF8574_PCF8574A@rev5
+      page: 2
+      locator: "Table 1: package DIP16 ... SOT38-4"

@@ -1,0 +1,30 @@
+# 32.768 kHz ECX-16 tuning-fork crystal, tape and reel. MPN listed in
+# the ECS product page's Ordering & Quality table; it also decodes per
+# the datasheet's PART NUMBERING GUIDE (ecs/ECX-16). Device and package are
+# the series' existing ones (same ECX-16 datasheet revision). lifecycle
+# unknown: neither page states a production status.
+schema_version: "0.1"
+kind: part
+id: "ecs/ECS-.327-7-16-TR"
+
+manufacturer: ecs
+mpn: "ECS-.327-7-16-TR"
+
+device: ecs/ECX-16-SERIES
+package: standards/CHIP-ECX16
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - ecs/ECX-16
+  - ecs/ECX-16-product-page
+
+provenance:
+  "/existence":
+    - source: ecs/ECX-16-product-page
+      page: 1
+      locator: "Ordering & Quality table row \"ECS-.327-7-16-TR\": 16 1.60mm x 1.00mm 32.768 kHz +/-20ppm 7pF"

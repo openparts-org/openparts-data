@@ -1,0 +1,17 @@
+# Official Microchip MCP23017/MCP23S17 datasheet. Footer stamp
+# "DS20001952D-page N" (document DS20001952, revision D); Appendix A
+# lists "Revision D (June 2022)". Downloaded directly from the URL below
+# and read with pdftotext; the package-drawing pages use an encoded
+# font, so they were rendered to images and read from the image.
+schema_version: "0.1"
+kind: source
+id: microchip/DS20001952@revD
+
+publisher: microchip
+document_id: DS20001952
+document_type: datasheet
+
+revision: "D"
+date: "2022-06"
+
+url: "https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP23017-Data-Sheet-DS20001952.pdf"

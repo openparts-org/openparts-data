@@ -1,0 +1,29 @@
+# 10.0uH +/-20%, Q 32 typ, SRF 21.00MHz typ, RDC max 20.0mOhm, Irms max 5.50A,
+# Isat typ 5.50A, per the Electrical Specifications table (page 1).
+# Package reused: this revision's Product Dimensions drawing gives the
+# same numbers as standards/CHIP-BOURNS-SRR1260 (one drawing for the whole series).
+# lifecycle unknown: the datasheet makes no production-status statement.
+schema_version: "0.1"
+kind: part
+id: "bourns/SRR1260-100M"
+
+manufacturer: bourns
+mpn: "SRR1260-100M"
+
+device: bourns/SRR1260-SERIES
+package: standards/CHIP-BOURNS-SRR1260
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - bourns/SRR1260@rev03-26
+
+provenance:
+  "/existence":
+    - source: bourns/SRR1260@rev03-26
+      page: 1
+      locator: "Electrical Specifications table, Part Number row \"SRR1260-100M\""

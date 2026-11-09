@@ -1,0 +1,15 @@
+# KEMET C0603C commercial-grade X7R MLCC, EIA 0603 (1608 metric), series-level
+# device; value-specific MPNs are Parts (thickness differs per value, so
+# each Part points at the matching thickness-code package). Dielectric
+# code R = X7R per kemet/C1002_X7R PDF p2 'Ordering Information'.
+schema_version: "0.1"
+kind: device
+id: kemet/C0603C-X7R
+
+manufacturer: kemet
+category: capacitor
+family: C0603C
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

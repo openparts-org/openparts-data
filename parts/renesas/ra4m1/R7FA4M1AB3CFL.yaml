@@ -1,0 +1,34 @@
+# MPN from RA4M1 datasheet Table 1.13 "Product list" (page 10):
+# R7FA4M1AB3CFL, package code PLQP0048KB-B (the only code listed for it),
+# 256 KB code flash, -40 to +105 C. Figure 1.2 (page 9) decodes "FL" as
+# "LQFP 48 pins". Packing/production suffix not added (see CFM file).
+#
+# lifecycle: the datasheet has no status field; left unknown.
+schema_version: "0.1"
+kind: part
+id: renesas/R7FA4M1AB3CFL
+
+manufacturer: renesas
+mpn: R7FA4M1AB3CFL
+
+device: renesas/R7FA4M1AB-LQFP48
+package: manufacturers/renesas/PLQP0048KB-B
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - renesas/R01DS0355EJ0110
+
+provenance:
+  "/existence":
+    - source: renesas/R01DS0355EJ0110
+      page: 10
+      locator: "Table 1.13 \"Product list\", row R7FA4M1AB3CFL"
+  "/package":
+    - source: renesas/R01DS0355EJ0110
+      page: 10
+      locator: "Table 1.13 \"Product list\", row R7FA4M1AB3CFL, column \"Package code\""

@@ -1,0 +1,35 @@
+# LM78L05ACZ/NOPB: TO-92 (LP), 3 pins, 1800 / BULK, op temp -40 to 125
+# C, status "Active", from the PACKAGE OPTION ADDENDUM (dated
+# 10-Oct-2026) appended to SNVS754O.
+schema_version: "0.1"
+kind: part
+id: ti/LM78L05ACZ/NOPB
+
+manufacturer: ti
+mpn: LM78L05ACZ/NOPB
+
+device: ti/LM78L05-LP
+package: standards/TO92-TI-LP0003A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SNVS754O
+
+provenance:
+  "/existence":
+    - source: ti/SNVS754O
+      page: 33
+      locator: "PACKAGE OPTION ADDENDUM, PACKAGING INFORMATION row \"LM78L05ACZ/NOPB | Active | Production | TO-92 (LP) | 3 | 1800 | BULK\""
+  "/lifecycle":
+    - source: ti/SNVS754O
+      page: 33
+      locator: "Same row, Status column \"Active\" (addendum dated 10-Oct-2026)"
+  "/package":
+    - source: ti/SNVS754O
+      page: 45
+      locator: "LP0003A outline (identical drawing 4215214/C to SNIS159H page 31)"

@@ -1,0 +1,13 @@
+# Panasonic ERJ3EK precision thick film chip resistor (0603, 0.1 W,
+# +/-1 %). Non-polarized 2-terminal part; terminals numbered only.
+schema_version: "0.1"
+kind: device
+id: panasonic/ERJ3EK
+
+manufacturer: panasonic
+category: resistor
+family: ERJ3EK
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

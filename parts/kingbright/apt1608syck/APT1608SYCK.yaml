@@ -1,0 +1,28 @@
+# APT1608SYCK 1.6x0.8mm chip LED. Package reused: page-1 drawing gives
+# the same 1.6 x 0.8 x 0.75mm (+/-0.1 blanket tolerance) as
+# APT1608EC's CHIP0603-APT1608EC. lifecycle unknown.
+schema_version: "0.1"
+kind: part
+id: kingbright/APT1608SYCK
+
+manufacturer: kingbright
+mpn: APT1608SYCK
+
+device: kingbright/APT1608SYCK
+package: standards/CHIP0603-APT1608EC
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - kingbright/DSAD0931
+
+provenance:
+  "/existence":
+    - source: kingbright/DSAD0931
+      page: 1
+      locator: "SELECTION GUIDE table, Part Number column"
+

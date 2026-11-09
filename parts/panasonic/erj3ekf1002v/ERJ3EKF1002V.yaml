@@ -1,0 +1,32 @@
+# 10 kOhm +/-1 % ERJ3EK (0603), V packaging. Written without hyphen as
+# the datasheet's part-number boxes show it (Panasonic's catalog form
+# "ERJ-3EKF1002V" adds a hyphen). Not printed literally: built from
+# the page-2 part-number explanation; ERJ3EK's ratings row (page 3)
+# gives 10 to 1 M Ohm, E24/E96 at +/-1 %. existence: probable.
+# lifecycle unknown: ERJ3EK carries no NRFND mark (only ERJ8E/14/12/1T
+# do), but absence of a mark is not an active statement.
+schema_version: "0.1"
+kind: part
+id: panasonic/ERJ3EKF1002V
+
+manufacturer: panasonic
+mpn: ERJ3EKF1002V
+
+device: panasonic/ERJ3EK
+package: standards/CHIP0603-ERJ3E
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - panasonic/AOA0000C304
+
+provenance:
+  "/existence":
+    - source: panasonic/AOA0000C304
+      page: 2
+      locator: "Explanation of part numbers: ERJ | 3EK (0603, 0.1 W) | F (+/-1%) | 1002 (10 kOhm, the page-2 example \"1002 -> 10 kOhm\") | V (punched carrier taping 4 mm pitch, 5,000 pcs, Part No. ERJ3EK)"
+

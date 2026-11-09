@@ -1,0 +1,21 @@
+# Abracon ABS07 32.768kHz tuning-fork crystal (standard options: 12.5pF
+# CL, +/-20ppm, -40..+85C). The page-4 "CONNECTIONS" symbol is a plain
+# 2-terminal crystal with no pin numbers or GND pad; the electrodes are
+# electrically symmetric, named XTAL1/XTAL2 only for distinct names.
+schema_version: "0.1"
+kind: device
+id: abracon/ABS07-32.768KHZ
+
+manufacturer: abracon
+category: crystal
+family: ABS07
+
+pins:
+  "1": { name: "XTAL1", type: passive }
+  "2": { name: "XTAL2", type: passive }
+
+provenance:
+  "/pins":
+    - source: abracon/ABS07
+      page: 4
+      locator: "Mechanical Dimensions, \"CONNECTIONS\" diagram (2-terminal crystal symbol)"

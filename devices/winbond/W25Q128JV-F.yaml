@@ -1,0 +1,36 @@
+# W25Q128JV 128M-bit SPI flash, 16-pin SOIC 300-mil pin numbering
+# (package code F; it adds a dedicated /RESET pin and six N/C pins, so
+# it is a separate device file from the 8-pin numbering). Transcribed
+# from section 3.5 "Pin Description SOIC 300-mil" (PDF page 7, printed
+# page 6), cross-checked against Figure 1c on the same page.
+schema_version: "0.1"
+kind: device
+id: winbond/W25Q128JV-F
+
+manufacturer: winbond
+category: other
+family: W25Q128JV
+
+pins:
+  "1": { name: /HOLD or /RESET, type: io, alternate_functions: [IO3] }
+  "2": { name: VCC, type: power }
+  "3": { name: /RESET, type: reset }
+  "4": { name: N/C, type: nc }
+  "5": { name: N/C, type: nc }
+  "6": { name: N/C, type: nc }
+  "7": { name: /CS, type: input }
+  "8": { name: DO, type: io, alternate_functions: [IO1] }
+  "9": { name: /WP, type: io, alternate_functions: [IO2] }
+  "10": { name: GND, type: ground }
+  "11": { name: N/C, type: nc }
+  "12": { name: N/C, type: nc }
+  "13": { name: N/C, type: nc }
+  "14": { name: N/C, type: nc }
+  "15": { name: DI, type: io, alternate_functions: [IO0] }
+  "16": { name: CLK, type: input }
+
+provenance:
+  "/pins":
+    - source: winbond/W25Q128JV@revF
+      page: 7
+      locator: "Section 3.5 \"Pin Description SOIC 300-mil\" table and Figure 1c"

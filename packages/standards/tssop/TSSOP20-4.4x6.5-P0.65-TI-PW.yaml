@@ -1,0 +1,98 @@
+# 20-lead TSSOP, 4.4 mm body, 0.65 mm pitch (TI "PW", JEDEC MO-153
+# referenced by the drawing's note 5). All values read from the rendered
+# "PACKAGE OUTLINE PW0020A" drawing (4220206/A 02/2017, "TSSOP - 1.2 mm
+# max height") in the TXS0108E datasheet SCES642L, PDF page 28. The same
+# drawing (identical number/revision and values) is printed in the
+# SN74LVC245A datasheet SCAS218X, PDF page 29.
+#
+# Named with the -TI-PW suffix because the numbers are TI's drawing
+# tolerances, not the JEDEC table itself. The drawing gives E1 and D only
+# as limits: `nominal` for body_width/body_length is this dataset's own
+# midpoint, not datasheet-stated. Lead span E is printed "6.6/6.2 TYP"
+# and recorded as min/max only. Only the overall height A (1.2 MAX) is
+# given -- no A2 -- so it is recorded as overall_height max, with no
+# body_height. Lead thickness is the reference value "(0.15) TYP".
+schema_version: "0.1"
+kind: package
+id: standards/TSSOP20-4.4x6.5-P0.65-TI-PW
+
+family: tssop
+lead_count: 20
+
+pitch:
+  nominal: 0.65
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 4.3
+    max: 4.5
+    unit: mm
+  body_length:
+    min: 6.4
+    max: 6.6
+    unit: mm
+  overall_width:
+    min: 6.2
+    max: 6.6
+    unit: mm
+  overall_height:
+    max: 1.2
+    unit: mm
+  standoff:
+    min: 0.05
+    max: 0.15
+    unit: mm
+  lead_width:
+    min: 0.19
+    max: 0.30
+    unit: mm
+  lead_length:
+    min: 0.50
+    max: 0.75
+    unit: mm
+  lead_thickness:
+    nominal: 0.15
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: tssop
+
+provenance:
+  "/pitch":
+    - source: ti/SCES642L
+      page: 28
+      locator: "PACKAGE OUTLINE PW0020A (4220206/A), \"18X 0.65\" (boxed basic dimension)"
+  "/dimensions/body_width":
+    - source: ti/SCES642L
+      page: 28
+      locator: "PACKAGE OUTLINE PW0020A, body width \"4.5/4.3 NOTE 4\" (datum B); no nominal stated (min/max only)"
+  "/dimensions/body_length":
+    - source: ti/SCES642L
+      page: 28
+      locator: "PACKAGE OUTLINE PW0020A, body length \"6.6/6.4 NOTE 3\" (datum A); no nominal stated (min/max only)"
+  "/dimensions/overall_width":
+    - source: ti/SCES642L
+      page: 28
+      locator: "PACKAGE OUTLINE PW0020A, lead tip span \"6.6/6.2 TYP\" (min/max only)"
+  "/dimensions/overall_height":
+    - source: ti/SCES642L
+      page: 28
+      locator: "PACKAGE OUTLINE PW0020A, side view \"1.2 MAX\""
+  "/dimensions/standoff":
+    - source: ti/SCES642L
+      page: 28
+      locator: "PACKAGE OUTLINE PW0020A, DETAIL A \"0.15/0.05\""
+  "/dimensions/lead_width":
+    - source: ti/SCES642L
+      page: 28
+      locator: "PACKAGE OUTLINE PW0020A, \"20X 0.30/0.19\""
+  "/dimensions/lead_length":
+    - source: ti/SCES642L
+      page: 28
+      locator: "PACKAGE OUTLINE PW0020A, DETAIL A \"0.75/0.50\""
+  "/dimensions/lead_thickness":
+    - source: ti/SCES642L
+      page: 28
+      locator: "PACKAGE OUTLINE PW0020A, side detail \"(0.15) TYP\" (reference value)"

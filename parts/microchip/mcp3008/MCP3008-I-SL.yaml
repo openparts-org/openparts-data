@@ -1,0 +1,32 @@
+# MPN "MCP3008-I/SL" confirmed from the ordering information of microchip/DS20001295@revE
+# (page 40). Device microchip/MCP3008, package manufacturers/microchip/SOIC16-SL-C04-108C.
+# lifecycle: not stated in the datasheet; no first-party lifecycle page
+# was read, so it is recorded as unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP3008-I-SL
+
+manufacturer: microchip
+mpn: "MCP3008-I/SL"
+
+device: microchip/MCP3008
+package: manufacturers/microchip/SOIC16-SL-C04-108C
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001295@revE
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001295@revE
+      page: 40
+      locator: "Product Identification System, example h) \"MCP3008-I/SL: Industrial Temperature, SOIC package\""
+  "/package":
+    - source: microchip/DS20001295@revE
+      page: 36
+      locator: "Product Identification System \"SL = Plastic SOIC (150 mil Body), 14-lead, 16-lead\" -> 16-lead drawing C04-108C (pages 35-36)"

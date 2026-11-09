@@ -1,0 +1,37 @@
+# MPN read from the Package Option Addendum (SLASEX0D PDF page 81,
+# dated 9-Sep-2026): "MSPM0L1306SRHBR | Active | Production | VQFN
+# (RHB) | 32 | 3000 | LARGE T&R | ... | -40 to 125". Table 5-1 "Device
+# Comparison" (page 5) lists MSPM0L1306xRHB, 64/4 KB, 32 VQFN [5 mm x
+# 5 mm].
+schema_version: "0.1"
+kind: part
+id: ti/MSPM0L1306SRHBR
+
+manufacturer: ti
+mpn: MSPM0L1306SRHBR
+
+device: ti/MSPM0L1306-RHB
+package: manufacturers/ti/RHB0032E
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLASEX0D
+
+provenance:
+  "/existence":
+    - source: ti/SLASEX0D
+      page: 81
+      locator: "Package Option Addendum, row \"MSPM0L1306SRHBR\""
+  "/lifecycle":
+    - source: ti/SLASEX0D
+      page: 81
+      locator: "Package Option Addendum, row \"MSPM0L1306SRHBR\", Status \"Active\""
+  "/package":
+    - source: ti/SLASEX0D
+      page: 72
+      locator: "PACKAGE OUTLINE RHB0032E; ordering row \"VQFN (RHB) | 32\" on page 81"

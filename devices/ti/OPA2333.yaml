@@ -1,0 +1,35 @@
+# Dual 1.8-V micropower zero-drift CMOS op amp. Pin map from "Pin
+# Functions: OPA2333" (SBOS351E page 4, column "SOIC, VSSOP") and the
+# "OPA2333 D or DGK Package, 8-Pin SOIC or VSSOP, Top View" diagram on
+# the same page: all 8 pins match. Same assignment for D (SOIC) and DGK
+# (VSSOP); the DRB (VSON) exposed pad is not covered.
+# Names: the datasheet's minus signs are written as ASCII "-". Signal
+# pins are typed analog (op-amp inputs/outputs); V+ and V- are typed
+# power because the table describes both as power supplies ("Positive
+# (highest)" / "Negative (lowest) power supply"), not ground.
+schema_version: "0.1"
+kind: device
+id: ti/OPA2333
+
+manufacturer: ti
+category: other
+family: OPAx333
+
+pins:
+  "1": { name: "OUT A", type: analog }
+  "2": { name: "-IN A", type: analog }
+  "3": { name: "+IN A", type: analog }
+  "4": { name: "V-", type: power }
+  "5": { name: "+IN B", type: analog }
+  "6": { name: "-IN B", type: analog }
+  "7": { name: "OUT B", type: analog }
+  "8": { name: "V+", type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SBOS351E
+      page: 4
+      locator: "\"Pin Functions: OPA2333\" table, column \"SOIC, VSSOP\""
+    - source: ti/SBOS351E
+      page: 4
+      locator: "\"OPA2333 D or DGK Package, 8-Pin SOIC or VSSOP, Top View\" (cross-check, all 8 pins matched)"

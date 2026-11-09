@@ -1,0 +1,35 @@
+# MPN from RA2E1 datasheet Table 1.12 "Product list (1 of 2)" (page 8):
+# R7FA2E1A92DNE, package code PWQN0048KC-A (the only code listed for it), 128 KB
+# code flash, -40 to +85 C. (The -CFL LQFP48 MPNs were not added: the table lists
+# two package codes, PLQP0048KB-B and PLQP0048KL-A, for one MPN, so the
+# physical package is not determined by the MPN alone.)
+#
+# lifecycle: the datasheet has no status field; left unknown.
+schema_version: "0.1"
+kind: part
+id: renesas/R7FA2E1A92DNE
+
+manufacturer: renesas
+mpn: R7FA2E1A92DNE
+
+device: renesas/R7FA2E1A9-QFN48
+package: manufacturers/renesas/PWQN0048KC-A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - renesas/R01DS0386EJ0180
+
+provenance:
+  "/existence":
+    - source: renesas/R01DS0386EJ0180
+      page: 8
+      locator: "Table 1.12 \"Product list (1 of 2)\", row R7FA2E1A92DNE"
+  "/package":
+    - source: renesas/R01DS0386EJ0180
+      page: 8
+      locator: "Table 1.12 \"Product list (1 of 2)\", row R7FA2E1A92DNE, column \"Package code\""

@@ -1,0 +1,44 @@
+# ATSAMD21E18A-AU: decoded with section 3 "SAM D21 Ordering Information"
+# (DS40001882L page 15): ATSAMD 21 E 18 A - AU = SAM D21, 32 pins,
+# 256KB flash, default variant A, package type "A = TQFP", package grade
+# "U = -40 - 85C Matte Sn Plating", tray. Table 2-1 "Configuration
+# Summary" (page 13) lists ATSAMD21E18A in "TQFP, QFN" 32-pin packages.
+# existence is "probable", not "verified": the exact string
+# "ATSAMD21E18A-AU" does not appear in any ordering table of this data
+# sheet (only the SIL2 code "ATSAMD21E18A-AU-SLL", Table 42-3, page
+# 1065); it is assembled from the ordering-code scheme, whose note 1
+# says "Not all combinations are valid".
+# Package reuse: DS40001882L section 44.1.10 "32-Pin TQFP" (drawing
+# C04-074 Rev C, page 1103) gives e 0.80, A max 1.20, A1 0.05-0.15,
+# A2 0.95/1.00/1.05, L 0.45/0.60/0.75, D/E 9.00, D1/E1 7.00, b
+# 0.30/0.37/0.45 -- identical to standards/TQFP32-7x7-P0.8 (read from
+# the ATmega328P data sheet). That drawing gives no lead thickness c.
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/ATSAMD21E18A-AU
+
+manufacturer: microchip
+mpn: ATSAMD21E18A-AU
+
+device: microchip/ATSAMD21E18A
+package: standards/TQFP32-7x7-P0.8
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40001882@revL
+
+provenance:
+  "/existence":
+    - source: microchip/DS40001882@revL
+      page: 15
+      locator: "Section 3 \"SAM D21 Ordering Information\" code scheme; Table 2-1 Configuration Summary (page 13); Table 42-3 \"ATSAMD21E18A-AU-SLL\" (page 1065)"
+  "/package":
+    - source: microchip/DS40001882@revL
+      page: 15
+      locator: "Section 3, Package Type \"A = TQFP\""

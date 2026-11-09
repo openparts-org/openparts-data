@@ -1,0 +1,89 @@
+# RA4M1 (R7FA4M1AB: 256 KB code flash, 8 KB data flash, 32 KB SRAM) in
+# the 48-pin LQFP. Pin names are the labels of Figure 1.7 "Pin assignment
+# for 48-pin LQFP (top view)" (page 20). Pin numbers cross-checked by
+# script against "1.7 Pin Lists" (pages 23-26), column "LQFP48", I/O-port /
+# power-system columns: all 48 pins matched, zero discrepancies.
+# Pin types: VSS/VSS_USB/AVSS0 ground; VCC/VCC_USB/VCC_USB_LDO/AVCC0/VBATT/VCL
+# power (VCL is the internal-regulator capacitor pin); RES reset; P200, P214
+# and P215 input (the datasheet's notes "Except for ports P200, P214, P215,
+# which are input ports"); every other port io. Peripheral alternate
+# functions (Pin Lists columns) are not modelled, same policy as the other
+# MCU devices in this dataset.
+schema_version: "0.1"
+kind: device
+id: renesas/R7FA4M1AB-LQFP48
+
+manufacturer: renesas
+category: microcontroller
+family: RA4M1
+
+pins:
+  "1":  { name: P400, type: io }
+  "2":  { name: VBATT, type: power }
+  "3":  { name: VCL, type: power }
+  "4":  { name: P215/XCIN, type: input }
+  "5":  { name: P214/XCOUT, type: input }
+  "6":  { name: VSS, type: ground }
+  "7":  { name: P213/XTAL, type: io }
+  "8":  { name: P212/EXTAL, type: io }
+  "9":  { name: VCC, type: power }
+  "10": { name: P409, type: io }
+  "11": { name: P408, type: io }
+  "12": { name: P407, type: io }
+  "13": { name: VSS_USB, type: ground }
+  "14": { name: P915/USB_DM, type: io }
+  "15": { name: P914/USB_DP, type: io }
+  "16": { name: VCC_USB, type: power }
+  "17": { name: VCC_USB_LDO, type: power }
+  "18": { name: P206, type: io }
+  "19": { name: RES, type: reset }
+  "20": { name: P201/MD, type: io }
+  "21": { name: P200, type: input }
+  "22": { name: P302, type: io }
+  "23": { name: P301, type: io }
+  "24": { name: P300/TCK/SWCLK, type: io }
+  "25": { name: P108/TMS/SWDIO, type: io }
+  "26": { name: P109/TDO/SWO, type: io }
+  "27": { name: P110/TDI, type: io }
+  "28": { name: P111, type: io }
+  "29": { name: P112, type: io }
+  "30": { name: VCC, type: power }
+  "31": { name: VSS, type: ground }
+  "32": { name: P104, type: io }
+  "33": { name: P103, type: io }
+  "34": { name: P102, type: io }
+  "35": { name: P101, type: io }
+  "36": { name: P100, type: io }
+  "37": { name: P500, type: io }
+  "38": { name: P015, type: io }
+  "39": { name: P014, type: io }
+  "40": { name: P013/VREFL, type: io }
+  "41": { name: P012/VREFH, type: io }
+  "42": { name: AVCC0, type: power }
+  "43": { name: AVSS0, type: ground }
+  "44": { name: P011/VREFL0, type: io }
+  "45": { name: P010/VREFH0, type: io }
+  "46": { name: P002, type: io }
+  "47": { name: P001, type: io }
+  "48": { name: P000, type: io }
+
+provenance:
+  "/pins":
+    - source: renesas/R01DS0355EJ0110
+      page: 20
+      locator: "Figure 1.7 \"Pin assignment for 48-pin LQFP (top view)\""
+    - source: renesas/R01DS0355EJ0110
+      page: 23
+      locator: "1.7 Pin Lists (pages 23-26), column \"LQFP48\" (cross-check, all 48 pins matched)"
+  "/pins/4/type":
+    - source: renesas/R01DS0355EJ0110
+      page: 35
+      locator: "Table 2.9 \"I/O VOH, VOL (3)\" Note 1: \"Except for ports P200, P214, P215, which are input ports\""
+  "/pins/5/type":
+    - source: renesas/R01DS0355EJ0110
+      page: 35
+      locator: "Table 2.9 \"I/O VOH, VOL (3)\" Note 1: \"Except for ports P200, P214, P215, which are input ports\""
+  "/pins/21/type":
+    - source: renesas/R01DS0355EJ0110
+      page: 35
+      locator: "Table 2.9 \"I/O VOH, VOL (3)\" Note 1: \"Except for ports P200, P214, P215, which are input ports\""

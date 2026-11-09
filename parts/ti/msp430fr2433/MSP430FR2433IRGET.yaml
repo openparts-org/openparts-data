@@ -1,0 +1,37 @@
+# MPN read from the Package Option Addendum (SLASE59F PDF page 81,
+# dated 10-Nov-2025): "MSP430FR2433IRGET | Active | Production | VQFN
+# (RGE) | 24 | 250 | SMALL T&R | -40 to 85 | FR2433". Device family member
+# MSP430FR2433IRGE also listed in Table 3-1 "Device Comparison"
+# (page 7). lifecycle "active" is that table's Status column.
+schema_version: "0.1"
+kind: part
+id: ti/MSP430FR2433IRGET
+
+manufacturer: ti
+mpn: MSP430FR2433IRGET
+
+device: ti/MSP430FR2433
+package: manufacturers/ti/RGE0024H
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLASE59F
+
+provenance:
+  "/existence":
+    - source: ti/SLASE59F
+      page: 81
+      locator: "Package Option Addendum, Packaging Information table, row \"MSP430FR2433IRGET\""
+  "/lifecycle":
+    - source: ti/SLASE59F
+      page: 81
+      locator: "Package Option Addendum, row \"MSP430FR2433IRGET\", Status \"Active\""
+  "/package":
+    - source: ti/SLASE59F
+      page: 81
+      locator: "Package Option Addendum, row \"MSP430FR2433IRGET\", \"VQFN (RGE) | 24\"; outline RGE0024H on page 89"

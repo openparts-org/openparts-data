@@ -1,0 +1,32 @@
+# MPN "MCP9700T-H/TT" confirmed from the ordering information of microchip/DS20001942@revL
+# (page 23). Device microchip/MCP9700, package manufacturers/microchip/SOT23-3-TT-C04-104C.
+# lifecycle: not stated in the datasheet; no first-party lifecycle page
+# was read, so it is recorded as unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP9700T-H-TT
+
+manufacturer: microchip
+mpn: "MCP9700T-H/TT"
+
+device: microchip/MCP9700
+package: manufacturers/microchip/SOT23-3-TT-C04-104C
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001942@revL
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001942@revL
+      page: 23
+      locator: "Product Identification System, example g) \"MCP9700T-H/TT: ... Tape and Reel, High Temperature, 3LD SOT-23 package\""
+  "/package":
+    - source: microchip/DS20001942@revL
+      page: 16
+      locator: "Package legend \"TT = 3LD SOT-23 Package\" (page 23) -> drawing C04-104 (TT) Rev C (pages 16-17)"

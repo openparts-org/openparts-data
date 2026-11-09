@@ -1,0 +1,68 @@
+# Kingbright APT2012 chip LED, 2.0 x 1.25 x 0.75 mm. Identical page-1
+# drawings in DSAD0943 (APT2012EC) and DSAA8210 (APT2012SGC). Nominals
+# only are printed; min/max apply the blanket +/-0.1 tolerance note.
+schema_version: "0.1"
+kind: package
+id: manufacturers/kingbright/CHIP-KINGBRIGHT-APT2012
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 2.0
+    min: 1.9
+    max: 2.1
+    unit: mm
+  body_width:
+    nominal: 1.25
+    min: 1.15
+    max: 1.35
+    unit: mm
+  body_height:
+    nominal: 0.75
+    min: 0.65
+    max: 0.85
+    unit: mm
+  lead_length:
+    nominal: 0.4
+    min: 0.3
+    max: 0.5
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: kingbright/DSAD0943
+      page: 1
+      locator: "PACKAGE DIMENSIONS side view \"2(0.079)\"; min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.1)"
+    - source: kingbright/DSAA8210
+      page: 1
+      locator: "PACKAGE DIMENSIONS side view \"2(0.079)\" (same drawing)"
+  "/dimensions/body_width":
+    - source: kingbright/DSAD0943
+      page: 1
+      locator: "PACKAGE DIMENSIONS top view \"1.25(0.049)\"; min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.1)"
+    - source: kingbright/DSAA8210
+      page: 1
+      locator: "PACKAGE DIMENSIONS top view \"1.25(0.049)\" (same drawing)"
+  "/dimensions/body_height":
+    - source: kingbright/DSAD0943
+      page: 1
+      locator: "PACKAGE DIMENSIONS side view \"0.75(0.03)\"; min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.1)"
+    - source: kingbright/DSAA8210
+      page: 1
+      locator: "PACKAGE DIMENSIONS side view \"0.75(0.03)\" (same drawing)"
+  "/dimensions/lead_length":
+    - source: kingbright/DSAD0943
+      page: 1
+      locator: "PACKAGE DIMENSIONS bottom view terminals \"0.4(0.016)\" each side; min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.1)"
+    - source: kingbright/DSAA8210
+      page: 1
+      locator: "PACKAGE DIMENSIONS bottom view terminals \"0.4(0.016)\" each side (same drawing)"

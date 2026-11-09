@@ -1,0 +1,39 @@
+# ATSAMD21G18A-AU: decoded with section 3 "SAM D21 Ordering Information"
+# (DS40001882L page 15): ATSAMD 21 G 18 A - AU = SAM D21, 48 pins,
+# 256KB flash, default variant A, package type "A = TQFP", package grade
+# "U = -40 - 85C Matte Sn Plating", tray. Table 2-1 "Configuration
+# Summary" (page 13) lists ATSAMD21G18A in "TQFP, QFN" 48-pin packages.
+# existence is "probable", not "verified": the exact string
+# "ATSAMD21G18A-AU" does not appear in any ordering table of this data
+# sheet (only the SIL2 code "ATSAMD21G18A-AU-SLL", Table 42-2, page
+# 1065); it is assembled from the ordering-code scheme, whose note 1
+# says "Not all combinations are valid".
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/ATSAMD21G18A-AU
+
+manufacturer: microchip
+mpn: ATSAMD21G18A-AU
+
+device: microchip/ATSAMD21G18A
+package: standards/TQFP48-7x7-P0.5
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40001882@revL
+
+provenance:
+  "/existence":
+    - source: microchip/DS40001882@revL
+      page: 15
+      locator: "Section 3 \"SAM D21 Ordering Information\" code scheme; Table 2-1 Configuration Summary (page 13); Table 42-2 \"ATSAMD21G18A-AU-SLL\" (page 1065)"
+  "/package":
+    - source: microchip/DS40001882@revL
+      page: 15
+      locator: "Section 3, Package Type \"A = TQFP\""

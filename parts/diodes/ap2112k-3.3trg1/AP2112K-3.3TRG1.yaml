@@ -1,0 +1,33 @@
+# MPN confirmed from the "Ordering Information" table (DS39724 Rev 2-2
+# page 12): "SOT25 | -40 to +85C | 3.3V | AP2112K-3.3TRG1 | G3P |
+# 3000/7\" Tape & Reel". (The task listed "AP2112K-3.3"; the orderable
+# code in the table is AP2112K-3.3TRG1: TR = tape & reel, G1 = green.)
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.1"
+kind: part
+id: diodes/AP2112K-3.3TRG1
+
+manufacturer: diodes
+mpn: AP2112K-3.3TRG1
+
+device: diodes/AP2112K
+package: standards/SOT25-3.00x1.60-P0.95-DIODES
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - diodes/DS39724
+
+provenance:
+  "/existence":
+    - source: diodes/DS39724
+      page: 12
+      locator: "\"Ordering Information\" table, SOT25 3.3V row \"AP2112K-3.3TRG1\""
+  "/package":
+    - source: diodes/DS39724
+      page: 14
+      locator: "\"Package Outline Dimensions\" SOT25"

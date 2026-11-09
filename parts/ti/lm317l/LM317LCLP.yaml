@@ -1,0 +1,36 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SLCS144G
+# (page 22): "LM317LCLP Active Production TO-92 (LP) | 3 1000 | BULK ... 0 to 125". Lifecycle "Active" is read from the
+# same row's Status column (TI's own addendum inside the datasheet).
+# Package: TO-92 (LP), outline LP0003A drawing 4215214/C 04/2025 on page 33 -- the same drawing revision already recorded as standards/TO92-TI-LP0003A (from SNIS159H), reused unchanged. Straight leads: per LP0003A note 5a the straight-lead option ships in bulk, matching this MPN's BULK carrier.
+schema_version: "0.1"
+kind: part
+id: ti/LM317LCLP
+
+manufacturer: ti
+mpn: LM317LCLP
+
+device: ti/LM317L
+package: standards/TO92-TI-LP0003A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLCS144G
+
+provenance:
+  "/existence":
+    - source: ti/SLCS144G
+      page: 22
+      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row LM317LCLP"
+  "/lifecycle":
+    - source: ti/SLCS144G
+      page: 22
+      locator: "PACKAGE OPTION ADDENDUM, row LM317LCLP, Status column \"Active\""
+  "/package":
+    - source: ti/SLCS144G
+      page: 22
+      locator: "PACKAGE OPTION ADDENDUM, row LM317LCLP, Package column"

@@ -1,0 +1,57 @@
+# Kingbright APHHS1005 chip LED, 1.0 x 0.5 mm, 0.5 mm thick (page-1
+# drawing of DSAJ8746). Only nominals are printed; min/max apply the
+# drawing's own blanket "Tolerance is +/-0.1(0.004") unless otherwise
+# noted" (Note 2), the same way as CHIP0603-APT1608EC.
+schema_version: "0.1"
+kind: package
+id: manufacturers/kingbright/CHIP-KINGBRIGHT-APHHS1005
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.0
+    min: 0.9
+    max: 1.1
+    unit: mm
+  body_width:
+    nominal: 0.5
+    min: 0.4
+    max: 0.6
+    unit: mm
+  body_height:
+    nominal: 0.5
+    min: 0.4
+    max: 0.6
+    unit: mm
+  lead_length:
+    nominal: 0.4
+    min: 0.3
+    max: 0.5
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: kingbright/DSAJ8746
+      page: 1
+      locator: "PACKAGE DIMENSIONS top view \"1(0.039)\"; min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.1)"
+  "/dimensions/body_width":
+    - source: kingbright/DSAJ8746
+      page: 1
+      locator: "PACKAGE DIMENSIONS top view \"0.5(0.02)\"; min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.1)"
+  "/dimensions/body_height":
+    - source: kingbright/DSAJ8746
+      page: 1
+      locator: "PACKAGE DIMENSIONS side view \"0.5(0.02)\"; min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.1)"
+  "/dimensions/lead_length":
+    - source: kingbright/DSAJ8746
+      page: 1
+      locator: "PACKAGE DIMENSIONS bottom view terminals \"0.4(0.016)\" each side; min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.1)"

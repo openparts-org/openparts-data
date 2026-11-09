@@ -1,0 +1,37 @@
+# 1000 pF, X7R, 50 V, +/-10%, 0805 commercial-grade MLCC, 7" reel unmarked (TU).
+# MPN assembled from kemet/C1002_X7R PDF p2 'Ordering Information' code segments
+# (C | 0805 | C | 102 | K | 5 | R | A | C | TU) and checked
+# available in Table 1A (PDF p4, rendered and read as an image) with
+# thickness code DN -> package manufacturers/kemet/C0805-DN.
+# The exact string is not printed in the datasheet (built from the code
+# system). Lifecycle not stated -> unknown.
+schema_version: "0.1"
+kind: part
+id: kemet/C0805C102K5RACTU
+
+manufacturer: kemet
+mpn: C0805C102K5RACTU
+
+device: kemet/C0805C-X7R
+package: manufacturers/kemet/C0805-DN
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - kemet/C1002_X7R
+
+provenance:
+  "/existence":
+    - source: kemet/C1002_X7R
+      page: 2
+      locator: "Ordering Information: C | case size | C = standard | capacitance code (two significant digits + number of zeros, pF) | J/K/M tolerance | voltage 9 = 6.3, 8 = 10, 4 = 16, 3 = 25, 5 = 50 | R = X7R | A = N/A | C = 100% matte Sn | TU = 7\" reel/unmarked (Packaging C-Spec table)"
+    - source: kemet/C1002_X7R
+      page: 4
+      locator: "Table 1A Capacitance Range/Selection Waterfall (0402-1206 Case Sizes): row 1000pF/102, C0805C column 50 V (code 5): DN; K tolerance listed"
+    - source: kemet/C1002_X7R
+      page: 2
+      locator: "Packaging C-Spec Ordering Options Table: 7\" Reel/Unmarked = TU"

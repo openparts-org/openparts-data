@@ -1,0 +1,23 @@
+# LM35 precision centigrade temperature sensor, LP (3-pin TO-92)
+# package pinout. Pin Functions table (page 3), TO92 column: +VS = 1,
+# VOUT = 2, GND = 3; matches the "LP Package 3-Pin TO-92 (Bottom View)"
+# drawing on the same page. Pin numbers differ by package (TO-220 has
+# GND on 2), hence a package-specific device.
+schema_version: "0.1"
+kind: device
+id: ti/LM35-LP
+
+manufacturer: ti
+category: other
+family: LM35
+
+pins:
+  "1": { name: +VS, type: power }
+  "2": { name: VOUT, type: output }
+  "3": { name: GND, type: ground }
+
+provenance:
+  "/pins":
+    - source: ti/SNIS159H
+      page: 3
+      locator: "Pin Functions table, TO92 column (+VS 1, VOUT 2, GND 3)"

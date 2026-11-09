@@ -1,0 +1,126 @@
+# Diodes Incorporated "SOT23 (Standard)" outline, read from the rendered
+# Package Outline Dimensions figure + table (columns are Min / Max /
+# Typ -- in that order) of DS11005 Rev. 35-2 page 4. The identical table
+# (every value) is printed in DMG2305UX DS36196 Rev. 8-2 page 5.
+#
+# Not the onsemi package: pitch e1 is 1.83 typ (1.78-2.05), A 1.025 typ.
+# Field mapping as SOT23-2.90x1.30-P1.90: body_width = D, body_length =
+# E1, overall_length = E, pitch = e1, body_height = A2, overall_height
+# = A, standoff = A1, lead_width = b, lead_thickness = c, lead_length =
+# L (foot length at the gauge plane; L1 is not recorded).
+# "Typ" is recorded as nominal.
+schema_version: "0.1"
+kind: package
+id: standards/SOT23-2.90x1.30-P1.83-DIODES
+
+family: sot
+lead_count: 3
+lead_layout: [2, 1]
+
+pitch:
+  nominal: 1.83
+  min: 1.78
+  max: 2.05
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 2.90
+    min: 2.80
+    max: 3.00
+    unit: mm
+  body_length:
+    nominal: 1.30
+    min: 1.20
+    max: 1.40
+    unit: mm
+  body_height:
+    nominal: 0.975
+    min: 0.85
+    max: 1.10
+    unit: mm
+  overall_height:
+    nominal: 1.025
+    min: 0.90
+    max: 1.15
+    unit: mm
+  overall_length:
+    nominal: 2.40
+    min: 2.25
+    max: 2.55
+    unit: mm
+  standoff:
+    nominal: 0.05
+    min: 0.00
+    max: 0.10
+    unit: mm
+  lead_width:
+    nominal: 0.40
+    min: 0.30
+    max: 0.51
+    unit: mm
+  lead_length:
+    nominal: 0.40
+    min: 0.25
+    max: 0.55
+    unit: mm
+  lead_thickness:
+    nominal: 0.11
+    min: 0.080
+    max: 0.202
+    unit: mm
+
+construction: molded
+
+geometry:
+  type: parametric
+  generator: sot
+
+provenance:
+  "/construction":
+    - source: diodes/DS11005
+      page: 1
+      locator: "Mechanical Data: \"Package Material: Molded Plastic, 'Green' Molding Compound.\""
+  "/pitch":
+    - source: diodes/DS11005
+      page: 4
+      locator: "SOT23 (Standard) table, \"e1\""
+    - source: diodes/DS36196
+      page: 5
+      locator: "SOT23 (Standard) table, \"e1\" (identical)"
+  "/dimensions/body_width":
+    - source: diodes/DS11005
+      page: 4
+      locator: "SOT23 (Standard) table, \"D\""
+  "/dimensions/body_length":
+    - source: diodes/DS11005
+      page: 4
+      locator: "SOT23 (Standard) table, \"E1\" (body across the lead rows)"
+  "/dimensions/body_height":
+    - source: diodes/DS11005
+      page: 4
+      locator: "SOT23 (Standard) table, \"A2\""
+  "/dimensions/overall_height":
+    - source: diodes/DS11005
+      page: 4
+      locator: "SOT23 (Standard) table, \"A\""
+  "/dimensions/overall_length":
+    - source: diodes/DS11005
+      page: 4
+      locator: "SOT23 (Standard) table, \"E\" (lead-tip span)"
+  "/dimensions/standoff":
+    - source: diodes/DS11005
+      page: 4
+      locator: "SOT23 (Standard) table, \"A1\""
+  "/dimensions/lead_width":
+    - source: diodes/DS11005
+      page: 4
+      locator: "SOT23 (Standard) table, \"b\""
+  "/dimensions/lead_length":
+    - source: diodes/DS11005
+      page: 4
+      locator: "SOT23 (Standard) table, \"L\" (foot length from the gauge-plane side view)"
+  "/dimensions/lead_thickness":
+    - source: diodes/DS11005
+      page: 4
+      locator: "SOT23 (Standard) table, \"c\""

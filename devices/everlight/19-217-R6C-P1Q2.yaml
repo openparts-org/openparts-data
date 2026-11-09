@@ -1,0 +1,20 @@
+# Brilliant red (AlGaInP) 0603-size chip LED. Everlight numbers the pads
+# the other way round from Kingbright: pad 1 = anode (+), pad 2 =
+# cathode (-), per the page-6 polarity symbol.
+schema_version: "0.1"
+kind: device
+id: everlight/19-217-R6C-P1Q2
+
+manufacturer: everlight
+category: led
+family: "19-217"
+
+pins:
+  "1": { name: Anode, type: passive }
+  "2": { name: Cathode, type: passive }
+
+provenance:
+  "/pins":
+    - source: everlight/DSE-0025716
+      page: 6
+      locator: "Package Dimension, Polarity symbol: \"+ (1)\" anode, \"- (2)\" cathode; bottom view \"Cathode Mask\" at pad 2"

@@ -1,0 +1,36 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SLRS027T
+# (page 23): "ULN2003ANSR Active Production SOP (NS) | 16 2000 | LARGE T&R ... -40 to 70". Lifecycle "Active" is read from the
+# same row's Status column (TI's own addendum inside the datasheet).
+# Package: SOP (NS), outline NS0016A on page 31 -> manufacturers/ti/NS0016A.
+schema_version: "0.1"
+kind: part
+id: ti/ULN2003ANSR
+
+manufacturer: ti
+mpn: ULN2003ANSR
+
+device: ti/ULN2003A
+package: manufacturers/ti/NS0016A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLRS027T
+
+provenance:
+  "/existence":
+    - source: ti/SLRS027T
+      page: 23
+      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row ULN2003ANSR"
+  "/lifecycle":
+    - source: ti/SLRS027T
+      page: 23
+      locator: "PACKAGE OPTION ADDENDUM, row ULN2003ANSR, Status column \"Active\""
+  "/package":
+    - source: ti/SLRS027T
+      page: 23
+      locator: "PACKAGE OPTION ADDENDUM, row ULN2003ANSR, Package column"

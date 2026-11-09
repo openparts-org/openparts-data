@@ -1,0 +1,35 @@
+# MPN from RA4M1 datasheet Table 1.13 "Product list" (page 10):
+# R7FA4M1AB3CFM, package code PLQP0064KB-C (the only code listed for it),
+# 256 KB code flash, -40 to +105 C. Figure 1.2 (page 9) decodes "FM" as
+# "LQFP 64 pins". The packing/production suffix ("#AA0" in Figure 1.2's
+# example) is not part of this table entry and is not added here.
+#
+# lifecycle: the datasheet has no status field; left unknown.
+schema_version: "0.1"
+kind: part
+id: renesas/R7FA4M1AB3CFM
+
+manufacturer: renesas
+mpn: R7FA4M1AB3CFM
+
+device: renesas/R7FA4M1AB-LQFP64
+package: manufacturers/renesas/PLQP0064KB-C
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - renesas/R01DS0355EJ0110
+
+provenance:
+  "/existence":
+    - source: renesas/R01DS0355EJ0110
+      page: 10
+      locator: "Table 1.13 \"Product list\", row R7FA4M1AB3CFM"
+  "/package":
+    - source: renesas/R01DS0355EJ0110
+      page: 10
+      locator: "Table 1.13 \"Product list\", row R7FA4M1AB3CFM, column \"Package code\""

@@ -1,0 +1,17 @@
+# Official TI LM317L datasheet. Downloaded from the TI symlink URL
+# below; revision read from the page header "SLCS144G - JULY 2004 -
+# REVISED AUGUST 2026". 39 PDF pages; read with pdftotext -layout, the
+# LP0003A outline (page 33, drawing 4215214/C 04/2025) also rendered
+# and read as an image. Page numbers are PDF page indices.
+schema_version: "0.1"
+kind: source
+id: ti/SLCS144G
+
+publisher: ti
+document_id: SLCS144G
+document_type: datasheet
+
+revision: "G"
+date: "2026-08"
+
+url: "https://www.ti.com/lit/ds/symlink/lm317l.pdf"

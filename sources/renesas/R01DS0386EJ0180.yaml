@@ -1,0 +1,18 @@
+# Official Renesas "RA2E1 Datasheet", document R01DS0386EJ0180,
+# Rev.1.80, Sep 30, 2026 (as printed on the title page and every page
+# footer). Downloaded from Renesas's own document URL below (served as
+# application/pdf, 121 pages) and read with pdftotext (-layout and
+# -bbox for the pin-list table columns) plus pdftoppm renders of the
+# pin-assignment figures and Appendix 2 package drawings.
+schema_version: "0.1"
+kind: source
+id: renesas/R01DS0386EJ0180
+
+publisher: renesas
+document_id: R01DS0386EJ0180
+document_type: datasheet
+
+revision: "1.80"
+date: "2026-09-30"
+
+url: "https://www.renesas.com/en/document/dst/ra2e1-group-datasheet"

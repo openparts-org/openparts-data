@@ -1,0 +1,36 @@
+# LM1117 800-mA LDO, fixed 3.3-V output option. Pins from SNOS412Q
+# Table 6-1 "Pin Functions" (page 3): ADJ/GND 1, VIN 3, VOUT "2, 4"
+# (SOT-223 column) / "2 , TAB" (TO-252 column). Pin 1's description:
+# "Adjust pin for adjustable output option. Ground pin for fixed output
+# option" -- this fixed-output device therefore types it ground (name kept
+# as printed). Pin 4 is the tab (VOUT); for TO-252 the pin table says
+# "TAB" while outline NDP0003B (page 41) labels the tab "4" -- this
+# device keys the tab as "4" for both packages, see
+# packages/standards/dpak/TO252-6.1x6.5-P2.29-TabPin4-TI-NDP.yaml.
+# Cross-checked against Figure 6-1 (DCY) and Figure 6-4 (NDP) top views
+# (page 3: INPUT / OUTPUT / ADJ/GND top to bottom, "Tab is VOUT").
+schema_version: "0.1"
+kind: device
+id: ti/LM1117-3.3
+
+manufacturer: ti
+category: other
+family: LM1117
+
+pins:
+  "1": { name: ADJ/GND, type: ground }
+  "2": { name: VOUT, type: power }
+  "3": { name: VIN, type: power }
+  "4": { name: VOUT, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SNOS412Q
+      page: 3
+      locator: "Table 6-1 \"Pin Functions\" (SOT-223 column: ADJ/GND 1, VIN 3, VOUT 2, 4; TO-252 column: VOUT \"2 , TAB\")"
+    - source: ti/SNOS412Q
+      page: 3
+      locator: "Figure 6-1 \"DCY Package, 4-Pin SOT\" and Figure 6-4 \"NDP Package, 3-Pin TO-252\" (Top View), \"Tab is VOUT\""
+    - source: ti/SNOS412Q
+      page: 41
+      locator: "NDP0003B outline, bottom view: tab labelled \"4\" (TO-252 tab number, see header)"

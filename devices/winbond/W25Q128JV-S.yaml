@@ -1,0 +1,29 @@
+# W25Q128JV 128M-bit SPI flash, 8-pin SOIC 208-mil / WSON pin numbering
+# (package codes S/P/E). Transcribed from section 3.3 "Pin Description
+# SOIC 208-mil, WSON 6x5-mm / 8x6-mm" (PDF page 6, printed page 5),
+# cross-checked against Figure 1a on the same page. Pin names use the
+# datasheet's Standard-SPI name; the Quad-SPI IOn name is kept as an
+# alternate function.
+schema_version: "0.1"
+kind: device
+id: winbond/W25Q128JV-S
+
+manufacturer: winbond
+category: other
+family: W25Q128JV
+
+pins:
+  "1": { name: /CS, type: input }
+  "2": { name: DO, type: io, alternate_functions: [IO1] }
+  "3": { name: /WP, type: io, alternate_functions: [IO2] }
+  "4": { name: GND, type: ground }
+  "5": { name: DI, type: io, alternate_functions: [IO0] }
+  "6": { name: CLK, type: input }
+  "7": { name: /HOLD or /RESET, type: io, alternate_functions: [IO3] }
+  "8": { name: VCC, type: power }
+
+provenance:
+  "/pins":
+    - source: winbond/W25Q128JV@revF
+      page: 6
+      locator: "Section 3.3 \"Pin Description SOIC 208-mil, WSON 6x5-mm / 8x6-mm\" table and Figure 1a"

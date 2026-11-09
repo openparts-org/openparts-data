@@ -1,0 +1,82 @@
+# ATmega32U4 pinout from datasheet 7766J, Figure 1-1 "Pinout" (page 3,
+# rendered and read as an image; labels are rotated). The figure is
+# titled "44-pin QFN/TQFP", so the same numbering applies to the -AU
+# (TQFP44) and -MU (QFN44) Parts.
+# Pin types from section 2.2 "Pin Descriptions" (pages 5-7): UCAP is the
+# USB regulator output ("connected to an external capacitor") -> power;
+# VBUS is a "USB VBUS monitor input" -> input; AREF "analog reference
+# pin (input)" -> analog; XTAL1/XTAL2 -> clock.
+# `alternate_functions` lists only the ADC channels shown in the figure;
+# PB5/PB6 are cut off in the figure ("ADC..."), their channels (ADC12,
+# ADC13) come from section 10.3.2 "Alternate Functions of Port B" Table
+# 10-3 (page 74).
+# Exposed pad: the QFN44 drawing (page 424) shows a D2/E2 pad, but no
+# page of this datasheet states what it must be connected to, so no
+# "EP" pin is recorded (unknown, not guessed as GND).
+schema_version: "0.1"
+kind: device
+id: microchip/ATmega32U4
+
+manufacturer: microchip
+category: microcontroller
+family: megaAVR
+
+pins:
+  "1":  { name: PE6, type: io }
+  "2":  { name: UVCC, type: power }
+  "3":  { name: D-, type: io }
+  "4":  { name: D+, type: io }
+  "5":  { name: UGND, type: ground }
+  "6":  { name: UCAP, type: power }
+  "7":  { name: VBUS, type: input }
+  "8":  { name: PB0, type: io }
+  "9":  { name: PB1, type: io }
+  "10": { name: PB2, type: io }
+  "11": { name: PB3, type: io }
+  "12": { name: PB7, type: io }
+  "13": { name: RESET, type: reset }
+  "14": { name: VCC, type: power }
+  "15": { name: GND, type: ground }
+  "16": { name: XTAL2, type: clock }
+  "17": { name: XTAL1, type: clock }
+  "18": { name: PD0, type: io }
+  "19": { name: PD1, type: io }
+  "20": { name: PD2, type: io }
+  "21": { name: PD3, type: io }
+  "22": { name: PD5, type: io }
+  "23": { name: GND, type: ground }
+  "24": { name: AVCC, type: power }
+  "25": { name: PD4, type: io, alternate_functions: [ADC8] }
+  "26": { name: PD6, type: io, alternate_functions: [ADC9] }
+  "27": { name: PD7, type: io, alternate_functions: [ADC10] }
+  "28": { name: PB4, type: io, alternate_functions: [ADC11] }
+  "29": { name: PB5, type: io, alternate_functions: [ADC12] }
+  "30": { name: PB6, type: io, alternate_functions: [ADC13] }
+  "31": { name: PC6, type: io }
+  "32": { name: PC7, type: io }
+  "33": { name: PE2, type: io }
+  "34": { name: VCC, type: power }
+  "35": { name: GND, type: ground }
+  "36": { name: PF7, type: io, alternate_functions: [ADC7] }
+  "37": { name: PF6, type: io, alternate_functions: [ADC6] }
+  "38": { name: PF5, type: io, alternate_functions: [ADC5] }
+  "39": { name: PF4, type: io, alternate_functions: [ADC4] }
+  "40": { name: PF1, type: io, alternate_functions: [ADC1] }
+  "41": { name: PF0, type: io, alternate_functions: [ADC0] }
+  "42": { name: AREF, type: analog }
+  "43": { name: GND, type: ground }
+  "44": { name: AVCC, type: power }
+
+provenance:
+  "/pins/1/name":
+    - source: microchip/7766@revJ
+      page: 3
+      locator: "Figure 1-1 \"Pinout\" (44-pin QFN/TQFP), all 44 pins"
+  "/pins/2/type":
+    - source: microchip/7766@revJ
+      page: 5
+      locator: "Section 2.2 \"Pin Descriptions\" (2.2.1-2.2.18)"
+  "/pins/29/alternate_functions":
+    - source: microchip/7766@revJ
+      page: 74
+      locator: "Table 10-3 \"Port B Pins Alternate Functions\", PB5 ADC12 / PB6 ADC13"

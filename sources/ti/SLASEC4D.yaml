@@ -1,0 +1,18 @@
+# Official TI datasheet for MSP430FR2355/2353/2155/2153. Downloaded
+# from the TI symlink URL below and read via pdftotext -layout (146
+# pages); the PT0048A package-outline page (PDF page 139) was rendered
+# and read visually. Revision "D" / date from the document header
+# "SLASEC4D - MAY 2018 - REVISED DECEMBER 2019". The appended Package
+# Option Addendum is dated 7-Nov-2026 (PDF page 124).
+schema_version: "0.1"
+kind: source
+id: ti/SLASEC4D
+
+publisher: ti
+document_id: SLASEC4D
+document_type: datasheet
+
+revision: "D"
+date: "2019-12"
+
+url: "https://www.ti.com/lit/ds/symlink/msp430fr2355.pdf"

@@ -1,0 +1,20 @@
+# Official TI datasheet for ULN2002A/ULN2003A/ULN2003AI/ULQ2003A/
+# ULN2004A/ULQ2004A. Downloaded from the TI symlink URL below; revision
+# read from the page header "SLRS027T - DECEMBER 1976 - REVISED MARCH
+# 2025". 42 PDF pages; read with pdftotext -layout, the NS0016A outline
+# (page 31, drawing 4220735/A 12/2021) also rendered (pdftoppm) and read
+# as an image. This revision carries outline drawings only for NS, DYY
+# and PW -- not for D (SOIC-16) or N (PDIP-16), so those packages are
+# not taken from it. Page numbers are PDF page indices.
+schema_version: "0.1"
+kind: source
+id: ti/SLRS027T
+
+publisher: ti
+document_id: SLRS027T
+document_type: datasheet
+
+revision: "T"
+date: "2025-03"
+
+url: "https://www.ti.com/lit/ds/symlink/uln2003a.pdf"

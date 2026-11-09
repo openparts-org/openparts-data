@@ -1,0 +1,17 @@
+# Official TI datasheet for LM158/LM258/LM358/LM2904 (incl. LM358).
+# Downloaded from the TI symlink URL below; revision read from the page
+# header "SLOS068AB - JUNE 1976 - REVISED OCTOBER 2024". Text read with
+# pdftotext -layout; the D0008A package outline (PDF page 63) was
+# rendered to an image and read directly.
+schema_version: "0.1"
+kind: source
+id: ti/SLOS068AB
+
+publisher: ti
+document_id: SLOS068AB
+document_type: datasheet
+
+revision: "AB"
+date: "2024-10"
+
+url: "https://www.ti.com/lit/ds/symlink/lm358.pdf"

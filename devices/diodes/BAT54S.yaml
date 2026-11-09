@@ -1,0 +1,25 @@
+# Dual series Schottky diode, SOT23 (Standard). From the page-1
+# "BAT54S" connection drawing (rendered at 400 dpi): left diode anode on
+# the bottom-left lead, cathode to the top lead; right diode anode from
+# the top lead, cathode on the bottom-right lead -- so the top lead is
+# the common cathode(1)/anode(2) node. Pin numbers are not printed;
+# numbers follow this dataset's sot convention (1 bottom-left,
+# 2 bottom-right, 3 top) -- position-derived, flagged for review.
+schema_version: "0.1"
+kind: device
+id: diodes/BAT54S
+
+manufacturer: diodes
+category: diode
+family: BAT54
+
+pins:
+  "1": { name: Anode1, type: passive }
+  "2": { name: Cathode2, type: passive }
+  "3": { name: Cathode1/Anode2, type: passive }
+
+provenance:
+  "/pins":
+    - source: diodes/DS11005
+      page: 1
+      locator: "Connection drawing labelled \"BAT54S\" under \"SOT23 (Standard)\"; position-derived numbering, see header"

@@ -1,0 +1,49 @@
+# ATmega328P in the 28-pin SPDIP (28P3). The 28-pin pinout differs from
+# the 32-pin TQFP one recorded in microchip/ATmega328P, hence a separate
+# device. Read from a rendered image of DS40002061B Figure 1-1 "Pinout
+# ATmega48A/PA/88A/PA/168A/PA/328/P", "28 SPDIP" diagram (page 12).
+# Names use the primary (non-parenthesized) label; alternate functions
+# recorded only for the ADC channels of PC0-PC5, as in the TQFP device.
+schema_version: "0.1"
+kind: device
+id: microchip/ATmega328P-SPDIP28
+
+manufacturer: microchip
+category: microcontroller
+family: ATmega48A/PA/88A/PA/168A/PA/328/P
+
+pins:
+  "1":  { name: PC6, type: io }
+  "2":  { name: PD0, type: io }
+  "3":  { name: PD1, type: io }
+  "4":  { name: PD2, type: io }
+  "5":  { name: PD3, type: io }
+  "6":  { name: PD4, type: io }
+  "7":  { name: VCC, type: power }
+  "8":  { name: GND, type: ground }
+  "9":  { name: PB6, type: io }
+  "10": { name: PB7, type: io }
+  "11": { name: PD5, type: io }
+  "12": { name: PD6, type: io }
+  "13": { name: PD7, type: io }
+  "14": { name: PB0, type: io }
+  "15": { name: PB1, type: io }
+  "16": { name: PB2, type: io }
+  "17": { name: PB3, type: io }
+  "18": { name: PB4, type: io }
+  "19": { name: PB5, type: io }
+  "20": { name: AVCC, type: power }
+  "21": { name: AREF, type: analog }
+  "22": { name: GND, type: ground }
+  "23": { name: PC0, type: io, alternate_functions: [ADC0] }
+  "24": { name: PC1, type: io, alternate_functions: [ADC1] }
+  "25": { name: PC2, type: io, alternate_functions: [ADC2] }
+  "26": { name: PC3, type: io, alternate_functions: [ADC3] }
+  "27": { name: PC4, type: io, alternate_functions: [ADC4] }
+  "28": { name: PC5, type: io, alternate_functions: [ADC5] }
+
+provenance:
+  "/pins":
+    - source: microchip/DS40002061@revB
+      page: 12
+      locator: "Figure 1-1, \"28 SPDIP\" diagram (rendered image)"

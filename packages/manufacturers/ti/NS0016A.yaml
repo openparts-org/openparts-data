@@ -1,0 +1,93 @@
+# TI NS0016A "SOP - 2.00 mm max height" (drawing 4220735/A 12/2021),
+# 16-lead 5.3 mm-body SOP, read from the rendered outline page of
+# SLRS027T (page 31). Millimetres as printed.
+#
+# Body E1 5.2-5.4 and D 10.0-10.4 are ranges only -- no nominal is
+# recorded (canonical-data 20.1); the soic generator currently needs a
+# body nominal, so this package does not render a 3D model/footprint.
+# Lead thickness is printed "0.15 TYP" and recorded as nominal. The
+# "(1.25)" reference dimension in Detail A is not recorded.
+schema_version: "0.1"
+kind: package
+id: manufacturers/ti/NS0016A
+
+family: soic
+lead_count: 16
+
+pitch:
+  nominal: 1.27
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 5.2
+    max: 5.4
+    unit: mm
+  body_length:
+    min: 10.0
+    max: 10.4
+    unit: mm
+  overall_width:
+    min: 7.4
+    max: 8.2
+    unit: mm
+  overall_height:
+    max: 2.00
+    unit: mm
+  standoff:
+    min: 0.1
+    max: 0.3
+    unit: mm
+  lead_width:
+    min: 0.35
+    max: 0.51
+    unit: mm
+  lead_length:
+    min: 0.55
+    max: 1.05
+    unit: mm
+  lead_thickness:
+    nominal: 0.15
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: soic
+
+provenance:
+  "/pitch":
+    - source: ti/SLRS027T
+      page: 31
+      locator: "NS0016A outline, \"14X 1.27\" (basic)"
+  "/dimensions/body_width":
+    - source: ti/SLRS027T
+      page: 31
+      locator: "NS0016A outline, body width \"5.4 / 5.2\" (note 4)"
+  "/dimensions/body_length":
+    - source: ti/SLRS027T
+      page: 31
+      locator: "NS0016A outline, body length \"10.4 / 10.0\" (note 3)"
+  "/dimensions/overall_width":
+    - source: ti/SLRS027T
+      page: 31
+      locator: "NS0016A outline, lead-tip span \"8.2 / 7.4 TYP\""
+  "/dimensions/overall_height":
+    - source: ti/SLRS027T
+      page: 31
+      locator: "NS0016A outline, \"2.00 MAX\""
+  "/dimensions/standoff":
+    - source: ti/SLRS027T
+      page: 31
+      locator: "NS0016A Detail A, \"0.3 / 0.1\""
+  "/dimensions/lead_width":
+    - source: ti/SLRS027T
+      page: 31
+      locator: "NS0016A outline, \"16X 0.51 / 0.35\""
+  "/dimensions/lead_length":
+    - source: ti/SLRS027T
+      page: 31
+      locator: "NS0016A Detail A, foot length \"1.05 / 0.55\""
+  "/dimensions/lead_thickness":
+    - source: ti/SLRS027T
+      page: 31
+      locator: "NS0016A side view, \"0.15 TYP\""

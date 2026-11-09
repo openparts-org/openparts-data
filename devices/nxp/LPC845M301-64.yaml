@@ -1,0 +1,90 @@
+# LPC845M301 (Cortex-M0+, 64KB flash / 16KB SRAM), LQFP64 (SOT314-2)
+# pin map. Read from Table 4 "Pin description" (LPC84x Rev. 2.1, pages
+# 12-16), column "LQFP64" (VDD on 7;26;39 and VSS on 8;25;40 as listed
+# there). Names are the Table 4 "Symbol" strings (fixed-pin functions
+# only; movable switch-matrix functions not modelled). Cross-checked
+# visually against Fig 4 "Pin configuration LQFP64 package" (page 8):
+# all 64 pins match. Separate device from nxp/LPC845M301-48 because the
+# LQFP64 numbering differs.
+schema_version: "0.1"
+kind: device
+id: nxp/LPC845M301-64
+
+manufacturer: nxp
+category: microcontroller
+family: LPC84x
+
+pins:
+  "1":  { name: PIO1_8/CAPT_YL, type: io }
+  "2":  { name: PIO0_13/ADC_10, type: io }
+  "3":  { name: PIO1_9/CAPT_YH, type: io }
+  "4":  { name: PIO0_12, type: io }
+  "5":  { name: RESET/PIO0_5, type: reset }
+  "6":  { name: PIO0_4/ADC_11/TRSTN/WAKEUP, type: io }
+  "7":  { name: VDD, type: power }
+  "8":  { name: VSS, type: ground }
+  "9":  { name: PIO1_12, type: io }
+  "10": { name: PIO0_28/WKTCLKIN, type: io }
+  "11": { name: PIO1_13, type: io }
+  "12": { name: SWCLK/PIO0_3/TCK, type: io }
+  "13": { name: PIO0_31/CAPT_X0, type: io }
+  "14": { name: SWDIO/PIO0_2/TMS, type: io }
+  "15": { name: PIO1_0/CAPT_X1, type: io }
+  "16": { name: PIO0_11/I2C0_SDA, type: io }
+  "17": { name: PIO0_10/I2C0_SCL, type: io }
+  "18": { name: PIO1_1/CAPT_X2, type: io }
+  "19": { name: PIO0_16, type: io }
+  "20": { name: PIO1_2/CAPT_X3, type: io }
+  "21": { name: PIO0_27, type: io }
+  "22": { name: PIO1_14, type: io }
+  "23": { name: PIO0_26, type: io }
+  "24": { name: PIO1_15, type: io }
+  "25": { name: VSS, type: ground }
+  "26": { name: VDD, type: power }
+  "27": { name: PIO0_25, type: io }
+  "28": { name: PIO0_24, type: io }
+  "29": { name: PIO1_3/CAPT_X4, type: io }
+  "30": { name: PIO0_15, type: io }
+  "31": { name: PIO1_4/CAPT_X5, type: io }
+  "32": { name: PIO0_1/ACMP_I2/CLKIN/TDI, type: io }
+  "33": { name: PIO0_9/XTALOUT, type: io }
+  "34": { name: PIO0_8/XTALIN, type: io }
+  "35": { name: PIO1_5/CAPT_X6, type: io }
+  "36": { name: PIO1_16, type: io }
+  "37": { name: PIO1_17, type: io }
+  "38": { name: PIO1_6/CAPT_X7, type: io }
+  "39": { name: VDD, type: power }
+  "40": { name: VSS, type: ground }
+  "41": { name: VREFN, type: analog }
+  "42": { name: VREFP, type: analog }
+  "43": { name: PIO1_18, type: io }
+  "44": { name: PIO1_19, type: io }
+  "45": { name: PIO0_7/ADC_0, type: io }
+  "46": { name: PIO0_6/ADC_1/ACMPVREF, type: io }
+  "47": { name: PIO1_7/CAPT_X8, type: io }
+  "48": { name: PIO0_0/ACMP_I1/TDO, type: io }
+  "49": { name: PIO0_14/ACMP_I3/ADC_2, type: io }
+  "50": { name: PIO0_29/DACOUT_1, type: io }
+  "51": { name: PIO0_23/ADC_3/ACMP_I4, type: io }
+  "52": { name: VDDA, type: power }
+  "53": { name: VSSA, type: ground }
+  "54": { name: PIO0_30/ACMP_I5, type: io }
+  "55": { name: PIO0_22/ADC_4, type: io }
+  "56": { name: PIO1_20, type: io }
+  "57": { name: PIO0_21/ADC_5, type: io }
+  "58": { name: PIO0_20/ADC_6, type: io }
+  "59": { name: PIO1_21, type: io }
+  "60": { name: PIO0_19/ADC_7, type: io }
+  "61": { name: PIO0_18/ADC_8, type: io }
+  "62": { name: PIO1_11, type: io }
+  "63": { name: PIO0_17/ADC_9/DACOUT_0, type: io }
+  "64": { name: PIO1_10, type: io }
+
+provenance:
+  "/pins":
+    - source: nxp/LPC84x@rev2.1
+      page: 12
+      locator: "Table 4 \"Pin description\" (pages 12-16), column \"LQFP64\""
+    - source: nxp/LPC84x@rev2.1
+      page: 8
+      locator: "Fig 4 \"Pin configuration LQFP64 package\" (cross-check, all 64 pins matched)"

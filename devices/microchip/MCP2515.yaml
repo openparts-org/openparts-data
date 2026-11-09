@@ -1,0 +1,39 @@
+# Stand-alone CAN controller with SPI. Pin numbers for the 18-lead PDIP/
+# SOIC from DS20001801K Table 1-1 "Pinout Description" (page 4),
+# "PDIP/SOIC Pin #" column. Active-low pins (TX0RTS/TX1RTS/TX2RTS,
+# RX0BF/RX1BF, INT, CS, RESET) carry an overbar in the datasheet; the
+# names here are written without it. The TSSOP/QFN pinouts differ and
+# are not covered by this device.
+schema_version: "0.1"
+kind: device
+id: microchip/MCP2515
+
+manufacturer: microchip
+category: other
+family: MCP2515
+
+pins:
+  "1":  { name: TXCAN, type: output }
+  "2":  { name: RXCAN, type: input }
+  "3":  { name: CLKOUT, type: output }
+  "4":  { name: TX0RTS, type: input }
+  "5":  { name: TX1RTS, type: input }
+  "6":  { name: TX2RTS, type: input }
+  "7":  { name: OSC2, type: clock }
+  "8":  { name: OSC1, type: clock }
+  "9":  { name: VSS, type: ground }
+  "10": { name: RX1BF, type: output }
+  "11": { name: RX0BF, type: output }
+  "12": { name: INT, type: output }
+  "13": { name: SCK, type: clock }
+  "14": { name: SI, type: input }
+  "15": { name: SO, type: output }
+  "16": { name: CS, type: input }
+  "17": { name: RESET, type: reset }
+  "18": { name: VDD, type: power }
+
+provenance:
+  "/pins":
+    - source: microchip/DS20001801@revK
+      page: 4
+      locator: "Table 1-1 \"Pinout Description\", \"PDIP/SOIC Pin #\" column and I/O/P type column"

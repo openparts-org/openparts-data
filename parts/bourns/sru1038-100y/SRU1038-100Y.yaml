@@ -1,0 +1,29 @@
+# 10.0uH +/-30%, Q 24, SRF 20.0MHz typ, RDC max 35.0mOhm, Irms max 3.80A,
+# Isat typ 3.60A, per the Electrical Specifications table (page 1).
+# Package reused: this revision's Product Dimensions drawing gives the
+# same numbers as standards/CHIP-BOURNS-SRU1038 (one drawing for the whole series).
+# lifecycle unknown: the datasheet makes no production-status statement.
+schema_version: "0.1"
+kind: part
+id: "bourns/SRU1038-100Y"
+
+manufacturer: bourns
+mpn: "SRU1038-100Y"
+
+device: bourns/SRU1038-SERIES
+package: standards/CHIP-BOURNS-SRU1038
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - bourns/SRU1038@rev02-26
+
+provenance:
+  "/existence":
+    - source: bourns/SRU1038@rev02-26
+      page: 1
+      locator: "Electrical Specifications table, Part Number row \"SRU1038-100Y\""

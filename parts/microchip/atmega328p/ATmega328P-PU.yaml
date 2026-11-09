@@ -1,0 +1,33 @@
+# MPN confirmed from the ordering table, section 38.8 "ATmega328P"
+# (DS40002061B page 635): "ATmega328P-PU" -- 20 MHz, 1.8-5.5V,
+# Industrial (-40C to 85C), package 28P3 ("28-lead, 0.300\" Wide,
+# Skinny Plastic Dual Inline Package (SPDIP)").
+# lifecycle: not stated in the datasheet; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/ATmega328P-PU
+
+manufacturer: microchip
+mpn: ATmega328P-PU
+
+device: microchip/ATmega328P-SPDIP28
+package: standards/DIP28-W7.62-P2.54
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40002061@revB
+
+provenance:
+  "/existence":
+    - source: microchip/DS40002061@revB
+      page: 635
+      locator: "Section 38.8 \"ATmega328P\" ordering table, \"ATmega328P-PU\" / 28P3"
+  "/package":
+    - source: microchip/DS40002061@revB
+      page: 644
+      locator: "Section 39.4 \"28P3\" package drawing (C04-070B)"

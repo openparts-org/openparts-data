@@ -1,0 +1,17 @@
+# Official Microchip datasheet for MCP73831/2 Li-Ion charge management
+# controllers. Downloaded directly from ww1.microchip.com (URL below).
+# document_id/revision from the printed footer "DS20001984H-page N".
+# Text read with pdftotext -layout; the "Package Types" pinout (page 1)
+# and the OT outline drawing (page 22) were rendered and read as images.
+schema_version: "0.1"
+kind: source
+id: microchip/DS20001984@revH
+
+publisher: microchip
+document_id: DS20001984
+document_type: datasheet
+
+revision: "H"
+date: "2020-06"
+
+url: "https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP73831-Family-Data-Sheet-DS20001984H.pdf"

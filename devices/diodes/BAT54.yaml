@@ -1,0 +1,26 @@
+# 30V / 200mA single Schottky diode, SOT23 (Standard). From the page-1
+# "BAT54" connection drawing (rendered at 400 dpi): the diode runs from
+# the bottom-left lead (anode, triangle base) to the top lead (cathode,
+# bar side); the bottom-right lead is not connected to anything.
+# Pin numbers are not printed; numbers follow this dataset's sot
+# convention (1 bottom-left, 2 bottom-right, 3 top). The drawing is
+# not itself labelled "top view" (it sits next to a "Top View" photo)
+# -- flagged for review.
+schema_version: "0.1"
+kind: device
+id: diodes/BAT54
+
+manufacturer: diodes
+category: diode
+family: BAT54
+
+pins:
+  "1": { name: Anode, type: passive }
+  "2": { name: NC, type: nc }
+  "3": { name: Cathode, type: passive }
+
+provenance:
+  "/pins":
+    - source: diodes/DS11005
+      page: 1
+      locator: "Connection drawing labelled \"BAT54\" under \"SOT23 (Standard)\"; position-derived numbering, see header"

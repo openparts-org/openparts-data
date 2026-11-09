@@ -1,0 +1,32 @@
+# MPN "W25Q128JVFIQ" confirmed from the ordering information of winbond/W25Q128JV@revF
+# (page 76). Device winbond/W25Q128JV-F, package manufacturers/winbond/SOIC16-300mil-F.
+# lifecycle: not stated in the datasheet; no first-party lifecycle page
+# was read, so it is recorded as unknown.
+schema_version: "0.1"
+kind: part
+id: winbond/W25Q128JVFIQ
+
+manufacturer: winbond
+mpn: "W25Q128JVFIQ"
+
+device: winbond/W25Q128JV-F
+package: manufacturers/winbond/SOIC16-300mil-F
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - winbond/W25Q128JV@revF
+
+provenance:
+  "/existence":
+    - source: winbond/W25Q128JV@revF
+      page: 76
+      locator: "Section 11.1 \"Valid Part Numbers and Top Side Marking\", W25Q128JV-IQ table, product number \"W25Q128JVFIQ\" (PDF page 76, printed page 75)"
+  "/package":
+    - source: winbond/W25Q128JV@revF
+      page: 76
+      locator: "Same table: package \"F\" = \"SOIC-16 300-mil\"; outline in section 10.2"

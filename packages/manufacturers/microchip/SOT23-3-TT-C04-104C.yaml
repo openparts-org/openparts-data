@@ -1,0 +1,120 @@
+# 3-lead SOT-23 (Microchip package code TT). All values from Microchip
+# drawing C04-104 (TT) Rev C, "3-Lead Plastic Small Outline Transistor
+# (TT) [SOT-23]", dimension table on sheet 2 = PDF page 17 of
+# DS20001942L (MCP970X); sheet 1 (page 16) shows pins 1 and 2 on one
+# edge and pin 3 (N) alone on the opposite edge. Pages rendered and read
+# as images (encoded font).
+#
+# Not merged into standards/SOT23-2.90x1.30-P1.90: Microchip states
+# D 2.67/2.90/3.05, E1 1.16/1.30/1.40, E 2.10-2.64, A2 0.79/0.95/1.02,
+# L 0.13/0.50/0.60, b 0.30-0.54, which differ from the onsemi values
+# held there.
+#
+# Mapping (same as the existing SOT-23 packages, for the `sot`
+# generator): pitch = e1 (outside lead pitch, pin 1 to pin 2, 1.90 BSC;
+# the 0.95 BSC e is pin to centre line), body_width = D (long axis),
+# body_length = E1 (short axis, across the two lead rows),
+# overall_length = E (lead tip to lead tip across the rows).
+schema_version: "0.1"
+kind: package
+id: manufacturers/microchip/SOT23-3-TT-C04-104C
+
+family: sot
+lead_count: 3
+lead_layout: [2, 1]
+
+pitch:
+  nominal: 1.90
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 2.90
+    min: 2.67
+    max: 3.05
+    unit: mm
+  body_length:
+    nominal: 1.30
+    min: 1.16
+    max: 1.40
+    unit: mm
+  body_height:
+    nominal: 0.95
+    min: 0.79
+    max: 1.02
+    unit: mm
+  overall_length:
+    min: 2.10
+    max: 2.64
+    unit: mm
+  overall_height:
+    min: 0.89
+    max: 1.12
+    unit: mm
+  standoff:
+    min: 0.01
+    max: 0.10
+    unit: mm
+  lead_width:
+    min: 0.30
+    max: 0.54
+    unit: mm
+  lead_length:
+    nominal: 0.50
+    min: 0.13
+    max: 0.60
+    unit: mm
+  lead_thickness:
+    min: 0.08
+    max: 0.20
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: sot
+
+provenance:
+  "/lead_layout":
+    - source: microchip/DS20001942@revL
+      page: 16
+      locator: "C04-104 (TT) Rev C sheet 1, top view: leads 1 and 2 on one edge, lead N (3) alone on the opposite edge"
+  "/pitch":
+    - source: microchip/DS20001942@revL
+      page: 17
+      locator: "C04-104 (TT) Rev C sheet 2 table, \"Outside Lead Pitch e1 1.90 BSC\""
+  "/dimensions/body_width":
+    - source: microchip/DS20001942@revL
+      page: 17
+      locator: "C04-104 (TT) Rev C sheet 2 table, \"Overall Length D 2.67 / 2.90 / 3.05\""
+  "/dimensions/body_length":
+    - source: microchip/DS20001942@revL
+      page: 17
+      locator: "C04-104 (TT) Rev C sheet 2 table, \"Molded Package Width E1 1.16 / 1.30 / 1.40\""
+  "/dimensions/body_height":
+    - source: microchip/DS20001942@revL
+      page: 17
+      locator: "C04-104 (TT) Rev C sheet 2 table, \"Molded Package Thickness A2 0.79 / 0.95 / 1.02\""
+  "/dimensions/overall_length":
+    - source: microchip/DS20001942@revL
+      page: 17
+      locator: "C04-104 (TT) Rev C sheet 2 table, \"Overall Width E 2.10 / - / 2.64\""
+  "/dimensions/overall_height":
+    - source: microchip/DS20001942@revL
+      page: 17
+      locator: "C04-104 (TT) Rev C sheet 2 table, \"Overall Height A 0.89 / - / 1.12\""
+  "/dimensions/standoff":
+    - source: microchip/DS20001942@revL
+      page: 17
+      locator: "C04-104 (TT) Rev C sheet 2 table, \"Standoff A1 0.01 / - / 0.10\""
+  "/dimensions/lead_width":
+    - source: microchip/DS20001942@revL
+      page: 17
+      locator: "C04-104 (TT) Rev C sheet 2 table, \"Lead Width b 0.30 / - / 0.54\""
+  "/dimensions/lead_length":
+    - source: microchip/DS20001942@revL
+      page: 17
+      locator: "C04-104 (TT) Rev C sheet 2 table, \"Foot Length L 0.13 / 0.50 / 0.60\""
+  "/dimensions/lead_thickness":
+    - source: microchip/DS20001942@revL
+      page: 17
+      locator: "C04-104 (TT) Rev C sheet 2 table, \"Lead Thickness c 0.08 / - / 0.20\""

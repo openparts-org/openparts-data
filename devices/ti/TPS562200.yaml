@@ -1,0 +1,28 @@
+# TPS562200 synchronous step-down converter. Pinout from SLVSCB0E Figure
+# 5-1 "DDC Package 6 Pin (SOT) Top View" and Table 5-1 "Pin Functions"
+# (page 4; the table has no I/O column, so types follow each pin's
+# description: GND "Ground pin" -> ground; VIN "Input voltage supply
+# pin" -> power; VFB "feedback input" and EN "Enable input" -> input;
+# VBST "Supply input for the high-side NFET gate drive" -> power; SW
+# "Switch node connection" -> passive).
+schema_version: "0.1"
+kind: device
+id: ti/TPS562200
+
+manufacturer: ti
+category: other
+family: TPS56x200
+
+pins:
+  "1": { name: GND, type: ground }
+  "2": { name: SW, type: passive }
+  "3": { name: VIN, type: power }
+  "4": { name: VFB, type: input }
+  "5": { name: EN, type: input }
+  "6": { name: VBST, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SLVSCB0E
+      page: 4
+      locator: "Figure 5-1 \"DDC Package 6 Pin (SOT) Top View\" and Table 5-1 \"Pin Functions\""

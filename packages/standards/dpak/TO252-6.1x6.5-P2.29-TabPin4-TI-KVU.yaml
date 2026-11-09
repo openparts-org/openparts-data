@@ -1,0 +1,135 @@
+# TI KVU (TO-252, 3 lead positions + tab), outline drawing KVU0003A,
+# drawing number 4218915/A 02/2017 ("Reference JEDEC registration
+# TO-252"), SLVS059V (uA78M) page 38, read from the rendered drawing.
+#
+# Frame: leads on the left (-X), tab on the right (+X), lead 1 at the
+# top, as in the drawing's top view. Lead 2 (centre) is the short stub
+# ("1.02 / 0.61" from the body), recorded as trimmed.
+#
+# TAB NUMBER (flagged for review): the drawing labels the exposed thermal
+# pad / tab "4" (bottom view). The pin configuration (page 3, Figure 4-2)
+# labels the tab "COMMON" without a number, and Table 4-1 lists only
+# pins 1-3; the addendum says "TO-252 (KVU) | 3". "4" -- the only number
+# the source prints for the tab -- is used, and the ti/UA78M33 device
+# keys pin "4" = COMMON.
+#
+# Dimension mapping: 9.40-10.41 -> overall_width; 5.97-6.22 (datum B to
+# tab-side body edge) -> body_width; 0.89-1.27 -> tab_length; 6.35-6.70
+# (datum A) -> body_length; 4.953-5.460 -> tab_width (note 3: "Shape may
+# vary per different assembly sites"); "2.52 MAX" -> overall_height;
+# Detail A 0.00-0.13 -> standoff; Detail A 1.40-1.78 -> lead_length;
+# 0.46-0.61 lead section -> lead_thickness. Left out: tab thickness
+# 0.46-0.61, "5.21 MIN" / "4.32 MIN" exposed thermal pad size, the 0.51
+# gage plane.
+schema_version: "0.1"
+kind: package
+id: standards/TO252-6.1x6.5-P2.29-TabPin4-TI-KVU
+
+family: dpak
+lead_count: 3
+
+pitch:
+  nominal: 2.29
+  unit: mm
+
+tab:
+  number: "4"
+  trimmed_leads: ["2"]
+
+dimensions:
+  body_width:
+    min: 5.97
+    max: 6.22
+    unit: mm
+  body_length:
+    min: 6.35
+    max: 6.70
+    unit: mm
+  overall_width:
+    min: 9.40
+    max: 10.41
+    unit: mm
+  overall_height:
+    max: 2.52
+    unit: mm
+  standoff:
+    min: 0.00
+    max: 0.13
+    unit: mm
+  lead_width:
+    min: 0.635
+    max: 0.890
+    unit: mm
+  lead_length:
+    min: 1.40
+    max: 1.78
+    unit: mm
+  lead_thickness:
+    min: 0.46
+    max: 0.61
+    unit: mm
+  tab_width:
+    min: 4.953
+    max: 5.460
+    unit: mm
+  tab_length:
+    min: 0.89
+    max: 1.27
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: dpak
+
+provenance:
+  "/pitch":
+    - source: ti/SLVS059V
+      page: 38
+      locator: "KVU0003A outline (4218915/A), top view, basic dimension \"2.29\" (lead 1-3 span basic \"4.58\")"
+  "/tab":
+    - source: ti/SLVS059V
+      page: 38
+      locator: "KVU0003A outline, bottom view: exposed thermal pad labelled \"4\"; top view: lead 2 is the short stub \"1.02 / 0.61\" from the body (trimmed)"
+    - source: ti/SLVS059V
+      page: 3
+      locator: "Figure 4-2 \"KVU Package, 3-Pin TO-252 (Top View)\": tab labelled \"COMMON\" (no number); Table 4-1 lists pins 1-3 only -- see header"
+  "/dimensions/body_width":
+    - source: ti/SLVS059V
+      page: 38
+      locator: "KVU0003A outline, top view, datum B to tab-side body edge \"6.22 / 5.97\""
+  "/dimensions/body_length":
+    - source: ti/SLVS059V
+      page: 38
+      locator: "KVU0003A outline, top view, datum A \"6.70 / 6.35\""
+  "/dimensions/overall_width":
+    - source: ti/SLVS059V
+      page: 38
+      locator: "KVU0003A outline, top view, lead toe to tab end \"10.41 / 9.40\""
+  "/dimensions/overall_height":
+    - source: ti/SLVS059V
+      page: 38
+      locator: "KVU0003A outline, side view \"2.52 MAX\""
+  "/dimensions/standoff":
+    - source: ti/SLVS059V
+      page: 38
+      locator: "KVU0003A outline, \"DETAIL A TYPICAL\" \"0.13 / 0.00\""
+  "/dimensions/lead_width":
+    - source: ti/SLVS059V
+      page: 38
+      locator: "KVU0003A outline, top view \"3X 0.890 / 0.635\""
+  "/dimensions/lead_length":
+    - source: ti/SLVS059V
+      page: 38
+      locator: "KVU0003A outline, \"DETAIL A TYPICAL\" foot \"1.78 / 1.40\""
+  "/dimensions/lead_thickness":
+    - source: ti/SLVS059V
+      page: 38
+      locator: "KVU0003A outline, side view, lead \"0.61 / 0.46\""
+  "/dimensions/tab_width":
+    - source: ti/SLVS059V
+      page: 38
+      locator: "KVU0003A outline, top view, tab \"5.460 / 4.953\" (note 3)"
+  "/dimensions/tab_length":
+    - source: ti/SLVS059V
+      page: 38
+      locator: "KVU0003A outline, top view, body edge to tab end \"1.27 / 0.89\""

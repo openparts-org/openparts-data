@@ -1,0 +1,18 @@
+# Official TI datasheet "LM1117 800-mA, Low-Dropout Linear Regulator"
+# (SNOS412Q, revised January 2023), 47 pages, downloaded from the URL
+# below. Read with pdftotext -layout; pinout figures, Table 6-1 and the
+# NDP0003B / DCY0004A outline drawings were also rendered and read as
+# images. Page numbers are PDF page indices (= printed page numbers on
+# the numbered pages).
+schema_version: "0.1"
+kind: source
+id: ti/SNOS412Q
+
+publisher: ti
+document_id: SNOS412Q
+document_type: datasheet
+
+revision: "Q"
+date: "2023-01"
+
+url: "https://www.ti.com/lit/ds/symlink/lm1117.pdf"

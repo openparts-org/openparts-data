@@ -1,0 +1,17 @@
+# Official Diodes Incorporated datasheet "AP1117/AP1117I 1A dropout
+# positive adjustable or fixed-mode regulator", document number DS31009
+# Rev. 24 - 3 (footer date March 2015), 10 pages, downloaded from the URL
+# below. Every page carries the banner "NOT RECOMMENDED FOR NEW DESIGN /
+# USE AZ1117C/E". Only the SOT223 package remains in this revision.
+schema_version: "0.1"
+kind: source
+id: diodes/DS31009
+
+publisher: diodes
+document_id: DS31009
+document_type: datasheet
+
+revision: "24-3"
+date: "2015-03"
+
+url: "https://www.diodes.com/assets/Datasheets/AP1117.pdf"

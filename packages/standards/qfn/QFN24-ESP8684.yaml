@@ -1,0 +1,112 @@
+# ESP8684 (ESP32-C2) package: QFN24, 4x4mm, 0.5mm pitch (6 leads per
+# side), 2.8x2.8mm exposed die attach pad. Values from the dimension
+# table of Figure 8 "QFN24 (4x4 mm) Package", ESP8684 datasheet v2.3,
+# PDF page 53 (printed 52), read from a rendered image of the drawing.
+# The table separates A (total thickness 0.8/0.85/0.9) from A2 (mold
+# thickness, nominal 0.65 only, min/max "---"), so body_height = A2 and
+# overall_height = A. Note 1 says "REFER TO JEDEC MO-220".
+# The page text says pins are numbered "in a clockwise order"; Figure 3
+# (pin layout, top view) and the bottom-view drawing both show the usual
+# counter-clockwise numbering (1-6 down the left side), which is what the
+# qfn generator draws.
+schema_version: "0.1"
+kind: package
+id: standards/QFN24-ESP8684
+
+family: qfn
+lead_count: 24
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 4.0
+    unit: mm
+  body_length:
+    nominal: 4.0
+    unit: mm
+  body_height:
+    nominal: 0.65
+    unit: mm
+  overall_height:
+    nominal: 0.85
+    min: 0.8
+    max: 0.9
+    unit: mm
+  standoff:
+    nominal: 0.02
+    min: 0.0
+    max: 0.05
+    unit: mm
+  lead_width:
+    nominal: 0.25
+    min: 0.2
+    max: 0.3
+    unit: mm
+  lead_length:
+    nominal: 0.3
+    min: 0.2
+    max: 0.4
+    unit: mm
+  lead_thickness:
+    nominal: 0.203
+    unit: mm
+  exposed_pad:
+    width:
+      nominal: 2.8
+      min: 2.7
+      max: 2.9
+      unit: mm
+    length:
+      nominal: 2.8
+      min: 2.7
+      max: 2.9
+      unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/pitch":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 53
+      locator: "Figure 8 dimension table, LEAD PITCH e (0.5 BSC)"
+  "/dimensions/body_width":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 53
+      locator: "Figure 8 dimension table, BODY SIZE X, D (4 BSC)"
+  "/dimensions/body_length":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 53
+      locator: "Figure 8 dimension table, BODY SIZE Y, E (4 BSC)"
+  "/dimensions/body_height":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 53
+      locator: "Figure 8 dimension table, MOLD THICKNESS A2 (nominal only)"
+  "/dimensions/overall_height":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 53
+      locator: "Figure 8 dimension table, TOTAL THICKNESS A"
+  "/dimensions/standoff":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 53
+      locator: "Figure 8 dimension table, STAND OFF A1"
+  "/dimensions/lead_width":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 53
+      locator: "Figure 8 dimension table, LEAD WIDTH b"
+  "/dimensions/lead_length":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 53
+      locator: "Figure 8 dimension table, LEAD LENGTH L"
+  "/dimensions/lead_thickness":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 53
+      locator: "Figure 8 dimension table, L/F THICKNESS A3 (0.203 REF)"
+  "/dimensions/exposed_pad":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 53
+      locator: "Figure 8 dimension table, EP SIZE D2/E2"

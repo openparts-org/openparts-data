@@ -1,0 +1,29 @@
+# UF4007 ultrafast rectifier (Vishay 88755). Base part number as in
+# vishay/1N4007; page-4 DO-41 outline identical to
+# standards/AXIAL-DO41-1N4007 (2.0-2.7mm dia, 4.1-5.2mm long), reused.
+# lifecycle unknown: no status statement.
+schema_version: "0.1"
+kind: part
+id: vishay/UF4007
+
+manufacturer: vishay
+mpn: UF4007
+
+device: vishay/UF4007
+package: standards/AXIAL-DO41-1N4007
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - vishay/88755
+
+provenance:
+  "/existence":
+    - source: vishay/88755
+      page: 2
+      locator: "ORDERING INFORMATION (Example): UF4007-E3/54, UF4007-E3/73, UF4007-M3/54, UF4007-M3/73"
+

@@ -1,0 +1,23 @@
+# TLP785 photocoupler (IRED + phototransistor), 4 pins. Pin assignment
+# from "Pin Configurations (top view)" on page 1 of the TLP785
+# datasheet (2026-04-07): 1 Anode, 2 Cathode, 3 Emitter, 4 Collector.
+# All typed passive (diode/transistor terminals, no I/O stated).
+schema_version: "0.1"
+kind: device
+id: toshiba/TLP785
+
+manufacturer: toshiba
+category: other
+family: TLP785
+
+pins:
+  "1": { name: ANODE, type: passive }
+  "2": { name: CATHODE, type: passive }
+  "3": { name: EMITTER, type: passive }
+  "4": { name: COLLECTOR, type: passive }
+
+provenance:
+  "/pins":
+    - source: toshiba/TLP785-datasheet-en
+      page: 1
+      locator: "\"Pin Configurations (top view)\": 1 Anode, 2 Cathode, 3 Emitter, 4 Collector"

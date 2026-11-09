@@ -1,0 +1,105 @@
+# RA4M1 (R7FA4M1AB: 256 KB code flash, 8 KB data flash, 32 KB SRAM) in
+# the 64-pin LQFP. Pin names are the labels of Figure 1.5 "Pin assignment
+# for 64-pin LQFP (top view)" (page 18). Pin numbers cross-checked by
+# script against "1.7 Pin Lists" (pages 23-26), column "LQFP64", I/O-port /
+# power-system columns: all 64 pins matched, zero discrepancies.
+# Pin types: VSS/VSS_USB/AVSS0 ground; VCC/VCC_USB/VCC_USB_LDO/AVCC0/VBATT/VCL
+# power (VCL is the internal-regulator capacitor pin); RES reset; P200, P214
+# and P215 input (the datasheet's notes "Except for ports P200, P214, P215,
+# which are input ports"); every other port io. Peripheral alternate
+# functions (Pin Lists columns) are not modelled, same policy as the other
+# MCU devices in this dataset.
+schema_version: "0.1"
+kind: device
+id: renesas/R7FA4M1AB-LQFP64
+
+manufacturer: renesas
+category: microcontroller
+family: RA4M1
+
+pins:
+  "1":  { name: P400, type: io }
+  "2":  { name: P401, type: io }
+  "3":  { name: P402, type: io }
+  "4":  { name: VBATT, type: power }
+  "5":  { name: VCL, type: power }
+  "6":  { name: P215/XCIN, type: input }
+  "7":  { name: P214/XCOUT, type: input }
+  "8":  { name: VSS, type: ground }
+  "9":  { name: P213/XTAL, type: io }
+  "10": { name: P212/EXTAL, type: io }
+  "11": { name: VCC, type: power }
+  "12": { name: P411, type: io }
+  "13": { name: P410, type: io }
+  "14": { name: P409, type: io }
+  "15": { name: P408, type: io }
+  "16": { name: P407, type: io }
+  "17": { name: VSS_USB, type: ground }
+  "18": { name: P915/USB_DM, type: io }
+  "19": { name: P914/USB_DP, type: io }
+  "20": { name: VCC_USB, type: power }
+  "21": { name: VCC_USB_LDO, type: power }
+  "22": { name: P206, type: io }
+  "23": { name: P205, type: io }
+  "24": { name: P204, type: io }
+  "25": { name: RES, type: reset }
+  "26": { name: P201/MD, type: io }
+  "27": { name: P200, type: input }
+  "28": { name: P304, type: io }
+  "29": { name: P303, type: io }
+  "30": { name: P302, type: io }
+  "31": { name: P301, type: io }
+  "32": { name: P300/TCK/SWCLK, type: io }
+  "33": { name: P108/TMS/SWDIO, type: io }
+  "34": { name: P109/TDO/SWO, type: io }
+  "35": { name: P110/TDI, type: io }
+  "36": { name: P111, type: io }
+  "37": { name: P112, type: io }
+  "38": { name: P113, type: io }
+  "39": { name: VCC, type: power }
+  "40": { name: VSS, type: ground }
+  "41": { name: P107, type: io }
+  "42": { name: P106, type: io }
+  "43": { name: P105, type: io }
+  "44": { name: P104, type: io }
+  "45": { name: P103, type: io }
+  "46": { name: P102, type: io }
+  "47": { name: P101, type: io }
+  "48": { name: P100, type: io }
+  "49": { name: P500, type: io }
+  "50": { name: P501, type: io }
+  "51": { name: P502, type: io }
+  "52": { name: P015, type: io }
+  "53": { name: P014, type: io }
+  "54": { name: P013/VREFL, type: io }
+  "55": { name: P012/VREFH, type: io }
+  "56": { name: AVCC0, type: power }
+  "57": { name: AVSS0, type: ground }
+  "58": { name: P011/VREFL0, type: io }
+  "59": { name: P010/VREFH0, type: io }
+  "60": { name: P004, type: io }
+  "61": { name: P003, type: io }
+  "62": { name: P002, type: io }
+  "63": { name: P001, type: io }
+  "64": { name: P000, type: io }
+
+provenance:
+  "/pins":
+    - source: renesas/R01DS0355EJ0110
+      page: 18
+      locator: "Figure 1.5 \"Pin assignment for 64-pin LQFP (top view)\""
+    - source: renesas/R01DS0355EJ0110
+      page: 23
+      locator: "1.7 Pin Lists (pages 23-26), column \"LQFP64\" (cross-check, all 64 pins matched)"
+  "/pins/6/type":
+    - source: renesas/R01DS0355EJ0110
+      page: 35
+      locator: "Table 2.9 \"I/O VOH, VOL (3)\" Note 1: \"Except for ports P200, P214, P215, which are input ports\""
+  "/pins/7/type":
+    - source: renesas/R01DS0355EJ0110
+      page: 35
+      locator: "Table 2.9 \"I/O VOH, VOL (3)\" Note 1: \"Except for ports P200, P214, P215, which are input ports\""
+  "/pins/27/type":
+    - source: renesas/R01DS0355EJ0110
+      page: 35
+      locator: "Table 2.9 \"I/O VOH, VOL (3)\" Note 1: \"Except for ports P200, P214, P215, which are input ports\""

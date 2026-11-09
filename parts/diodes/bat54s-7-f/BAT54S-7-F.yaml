@@ -1,0 +1,27 @@
+# BAT54S-7-F: 3,000-piece reel MPN from the DS11005 ordering table
+# (BAT54S-7-F-N is the same part from a specific fab/assembly site).
+# No lifecycle statement in the document.
+schema_version: "0.1"
+kind: part
+id: diodes/BAT54S-7-F
+
+manufacturer: diodes
+mpn: BAT54S-7-F
+
+device: diodes/BAT54S
+package: standards/SOT23-2.90x1.30-P1.83-DIODES
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - diodes/DS11005
+
+provenance:
+  "/existence":
+    - source: diodes/DS11005
+      page: 1
+      locator: "Ordering Information table: \"BAT54S-7-F | SOT23 (Standard) | 3,000 | Tape & Reel\""

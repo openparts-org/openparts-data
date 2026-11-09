@@ -1,0 +1,58 @@
+# MSP430FR2433, 16-bit MSP430 with 15.5KB FRAM / 4KB SRAM. Pin map for
+# the 24-pin RGE (VQFN) package read from Table 4-1 "Pin Attributes"
+# (SLASE59F pages 10-11, "PIN NUMBER RGE" column) and cross-checked
+# against Figure 4-1 "24-Pin RGE Package (Top View)" (page 8): all 24
+# pins match. `name` uses the composite label printed in Figure 4-1.
+# Alternate functions beyond those in the composite name are not
+# modelled. The YQW (DSBGA) package is not covered here.
+#
+# EP: Table 4-2 "Signal Descriptions" (page 14) lists "VQFN thermal
+# pad ... Connection to VSS is recommended" -- it does not say the pad
+# is internally connected, so it is typed passive, not ground.
+schema_version: "0.1"
+kind: device
+id: ti/MSP430FR2433
+
+manufacturer: ti
+category: microcontroller
+family: MSP430FR2xx
+
+pins:
+  "1":  { name: RST/NMI/SBWTDIO, type: reset }
+  "2":  { name: TEST/SBWTCK, type: input }
+  "3":  { name: P1.4/UCA0TXD/UCA0SIMO/TA1.2/TCK/A4/VREF+, type: io }
+  "4":  { name: P1.5/UCA0RXD/UCA0SOMI/TA1.1/TMS/A5, type: io }
+  "5":  { name: P1.6/UCA0CLK/TA1CLK/TDI/TCLK/A6, type: io }
+  "6":  { name: P1.7/UCA0STE/SMCLK/TDO/A7, type: io }
+  "7":  { name: P1.0/UCB0STE/TA0CLK/A0/Veref+, type: io }
+  "8":  { name: P1.1/UCB0CLK/TA0.1/A1, type: io }
+  "9":  { name: P1.2/UCB0SIMO/UCB0SDA/TA0.2/A2/Veref-, type: io }
+  "10": { name: P1.3/UCB0SOMI/UCB0SCL/MCLK/A3, type: io }
+  "11": { name: P2.2/ACLK, type: io }
+  "12": { name: P3.0, type: io }
+  "13": { name: P2.3, type: io }
+  "14": { name: P3.1/UCA1STE, type: io }
+  "15": { name: P2.4/UCA1CLK, type: io }
+  "16": { name: P2.5/UCA1RXD/UCA1SOMI, type: io }
+  "17": { name: P2.6/UCA1TXD/UCA1SIMO, type: io }
+  "18": { name: DVSS, type: ground }
+  "19": { name: P2.7, type: io }
+  "20": { name: P3.2, type: io }
+  "21": { name: P2.0/XOUT, type: io }
+  "22": { name: P2.1/XIN, type: io }
+  "23": { name: DVSS, type: ground }
+  "24": { name: DVCC, type: power }
+  "EP": { name: VQFN thermal pad, type: passive }
+
+provenance:
+  "/pins":
+    - source: ti/SLASE59F
+      page: 10
+      locator: "Table 4-1 \"Pin Attributes\" (pages 10-11), column \"PIN NUMBER RGE\""
+    - source: ti/SLASE59F
+      page: 8
+      locator: "Figure 4-1 \"24-Pin RGE Package (Top View)\" (cross-check, all 24 pins matched)"
+  "/pins/EP":
+    - source: ti/SLASE59F
+      page: 14
+      locator: "Table 4-2 \"Signal Descriptions\", row \"VQFN Pad / VQFN thermal pad ... Connection to VSS is recommended\""

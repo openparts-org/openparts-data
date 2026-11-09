@@ -1,0 +1,18 @@
+# Diodes Incorporated BAT54 /A /C /S datasheet, document DS11005
+# Rev. 35-2 (October 2026, 5 pages). Read via pdftotext; pages 1 and 4
+# rendered (pdftoppm) to read the per-variant connection drawings and the
+# SOT23 (Standard) outline figure. Note: the existing source
+# diodes/DS30138 was fetched from ".../Datasheets/BAT54.pdf" but is the
+# B0540W document; this one is the real BAT54 document (ds11005.pdf).
+schema_version: "0.1"
+kind: source
+id: diodes/DS11005
+
+publisher: diodes
+document_id: DS11005
+document_type: datasheet
+
+revision: "35-2"
+date: "2026-10"
+
+url: "https://www.diodes.com/assets/Datasheets/ds11005.pdf"

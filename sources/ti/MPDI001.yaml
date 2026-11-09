@@ -1,0 +1,19 @@
+# TI "MECHANICAL DATA" sheet for the P (R-PDIP-T8) 8-pin plastic DIP,
+# served by ti.com as MPDI001 (PDF title "Plastic Dual-in-Line Package
+# Lead Pitch= 0.100(2,54) Pkg.Thick.=0.250(6.35)"). The drawing on PDF
+# page 1 is an image; it was rendered and read directly. Drawing number
+# and revision as printed in the frame: "4040082/E 04/2010"; note C:
+# "Falls within JEDEC MS-001 variation BA". The LM358/NE555 datasheets
+# list the P package in their addenda but do not include this drawing.
+schema_version: "0.1"
+kind: source
+id: ti/MPDI001
+
+publisher: ti
+document_id: MPDI001
+document_type: package_drawing
+
+revision: "E"
+date: "2010-04"
+
+url: "https://www.ti.com/lit/pdf/mpdi001"

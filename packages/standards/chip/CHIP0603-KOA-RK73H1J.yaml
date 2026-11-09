@@ -1,0 +1,62 @@
+# KOA RK73H, size code "1J" (EIA 0603 per the datasheet's own
+# "Parentheses indicate EIA package size codes" note). Read from the
+# rendered page-1 "dimensions and construction" table, row "1J (0603)"
+# (not the separate "1J AT" anti-sulfur row, whose c/d differ).
+#   L .063+/-.008 (1.6+/-0.2)  W .031+/-.004 (0.8+/-0.1)
+#   c .012+/-.004 (0.3+/-0.1)  d .012+/-.004 (0.3+/-0.1)
+#   t .018+/-.004 (0.45+/-0.1)
+# c (top electrode length) is recorded as lead_length; the bottom
+# electrode d has the same value for this size.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP0603-KOA-RK73H1J
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.6
+    min: 1.4
+    max: 1.8
+    unit: mm
+  body_width:
+    nominal: 0.8
+    min: 0.7
+    max: 0.9
+    unit: mm
+  body_height:
+    nominal: 0.45
+    min: 0.35
+    max: 0.55
+    unit: mm
+  lead_length:
+    nominal: 0.3
+    min: 0.2
+    max: 0.4
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: koa/RK73H
+      page: 1
+      locator: "\"dimensions and construction\" table, row 1J (0603), column L: \".063+/-.008 (1.6+/-0.2)\""
+  "/dimensions/body_width":
+    - source: koa/RK73H
+      page: 1
+      locator: "\"dimensions and construction\" table, row 1J (0603), column W: \".031+/-.004 (0.8+/-0.1)\""
+  "/dimensions/body_height":
+    - source: koa/RK73H
+      page: 1
+      locator: "\"dimensions and construction\" table, rows 1J/1J AT (0603), column t: \".018+/-.004 (0.45+/-0.1)\""
+  "/dimensions/lead_length":
+    - source: koa/RK73H
+      page: 1
+      locator: "\"dimensions and construction\" table, row 1J (0603), column c (top electrode): \".012+/-.004 (0.3+/-0.1)\""

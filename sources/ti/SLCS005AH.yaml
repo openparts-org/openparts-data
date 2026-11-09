@@ -1,0 +1,20 @@
+# Official TI datasheet for LM393B/LM2903B/LM193/LM293/LM293A/LM393/
+# LM393A/LM2903/LM2903V. Downloaded from the TI symlink URL below (the
+# lm2903 symlink serves the byte-identical file); revision read from the
+# page header "SLCS005AH - OCTOBER 1979 - REVISED APRIL 2025". 56 PDF
+# pages; read with pdftotext -layout. The appended PACKAGE OPTION
+# ADDENDUM (pages 23-29) is dated 25-Sep-2026 and the D0008A outline
+# (page 43) is drawing 4214825/C 02/2019. Page numbers are PDF page
+# indices.
+schema_version: "0.1"
+kind: source
+id: ti/SLCS005AH
+
+publisher: ti
+document_id: SLCS005AH
+document_type: datasheet
+
+revision: "AH"
+date: "2025-04"
+
+url: "https://www.ti.com/lit/ds/symlink/lm393.pdf"

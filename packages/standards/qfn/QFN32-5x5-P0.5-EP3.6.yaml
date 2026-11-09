@@ -1,0 +1,103 @@
+# 32-lead VQFN, 5x5mm, 0.5mm pitch, 3.60x3.60mm exposed pad --
+# Microchip "32-Lead Very Thin Plastic Quad Flat, No Lead Package (S8B)
+# - 5x5 mm Body [VQFN] With 3.60 mm Exposed Pad; Atmel Legacy Global
+# Package Code ZKV", drawing C04-21402 Rev A sheet 2, in SAM D21/DA1
+# data sheet DS40001882L section 44.1.11 "32-Pin VQFN" (page 1107),
+# dimension table read as text. A (overall height) is recorded as
+# body_height, as on the other QFN packages. Not the same outline as
+# standards/QFN32-ESP32-C3 (no exposed pad recorded there, different
+# lead length).
+schema_version: "0.1"
+kind: package
+id: standards/QFN32-5x5-P0.5-EP3.6
+
+family: qfn
+lead_count: 32
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 5.0
+    unit: mm
+  body_length:
+    nominal: 5.0
+    unit: mm
+  body_height:
+    nominal: 0.9
+    min: 0.8
+    max: 1.0
+    unit: mm
+  standoff:
+    nominal: 0.02
+    min: 0.0
+    max: 0.05
+    unit: mm
+  lead_width:
+    nominal: 0.25
+    min: 0.18
+    max: 0.3
+    unit: mm
+  lead_length:
+    nominal: 0.4
+    min: 0.3
+    max: 0.5
+    unit: mm
+  lead_thickness:
+    nominal: 0.2
+    unit: mm
+  exposed_pad:
+    width:
+      nominal: 3.6
+      min: 3.5
+      max: 3.7
+      unit: mm
+    length:
+      nominal: 3.6
+      min: 3.5
+      max: 3.7
+      unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/pitch":
+    - source: microchip/DS40001882@revL
+      page: 1107
+      locator: "Section 44.1.11, drawing C04-21402 sheet 2, \"Pitch e 0.50 BSC\""
+  "/dimensions/body_width":
+    - source: microchip/DS40001882@revL
+      page: 1107
+      locator: "C04-21402 sheet 2, \"Overall Width E 5.00 BSC\""
+  "/dimensions/body_length":
+    - source: microchip/DS40001882@revL
+      page: 1107
+      locator: "C04-21402 sheet 2, \"Overall Length D 5.00 BSC\""
+  "/dimensions/body_height":
+    - source: microchip/DS40001882@revL
+      page: 1107
+      locator: "C04-21402 sheet 2, \"Overall Height A\""
+  "/dimensions/standoff":
+    - source: microchip/DS40001882@revL
+      page: 1107
+      locator: "C04-21402 sheet 2, \"Standoff A1\""
+  "/dimensions/lead_width":
+    - source: microchip/DS40001882@revL
+      page: 1107
+      locator: "C04-21402 sheet 2, \"Terminal Width b\""
+  "/dimensions/lead_length":
+    - source: microchip/DS40001882@revL
+      page: 1107
+      locator: "C04-21402 sheet 2, \"Terminal Length L\""
+  "/dimensions/lead_thickness":
+    - source: microchip/DS40001882@revL
+      page: 1107
+      locator: "C04-21402 sheet 2, \"Terminal Thickness A3 0.20 REF\""
+  "/dimensions/exposed_pad":
+    - source: microchip/DS40001882@revL
+      page: 1107
+      locator: "C04-21402 sheet 2, \"Exposed Pad Length D2\" / \"Exposed Pad Width E2\""

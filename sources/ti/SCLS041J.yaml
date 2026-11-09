@@ -1,0 +1,17 @@
+# Official TI datasheet for SN54HC595/SN74HC595. Downloaded from the TI symlink URL
+# below; revision read from the page header "SCLS041J - DECEMBER 1982 - REVISED OCTOBER 2021". Text read with
+# pdftotext -layout; the pin-configuration page and the package outline
+# drawings named in the package files were rendered to images and read
+# directly. Page numbers in this dataset are PDF page indices.
+schema_version: "0.1"
+kind: source
+id: ti/SCLS041J
+
+publisher: ti
+document_id: SCLS041J
+document_type: datasheet
+
+revision: "J"
+date: "2021-10"
+
+url: "https://www.ti.com/lit/ds/symlink/sn74hc595.pdf"

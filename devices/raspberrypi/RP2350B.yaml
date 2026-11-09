@@ -1,0 +1,129 @@
+# RP2350B pinout (QFN-80) transcribed from the RP2350 Datasheet
+# RP-008373-DS rev 3, section 14.8.2.2 "Pin list", "QFN-80 Number"
+# column of Table 1674 (GPIO, PDF pages 1333-1334), Table 1675 (QSPI,
+# p1334), Tables 1676-1679 (crystal, misc, USB, power, PDF pages
+# 1335-1336). A script checked that the table assigns each of pins 1-80
+# exactly once. Cross-checked against the "80QFN pinout" diagram in the
+# Product Brief RP-008374-DS rev 1 (PDF page 7): same names at the same
+# numbers (the diagram also prints a stray "GPIO11" label between pins
+# 15 and 16, which the datasheet table does not support -- ignored).
+#
+# Conventions follow devices/raspberrypi/RP2350A.yaml: GPIOxx_ADCy pins
+# are named GPIOxx with ADCy as an alternate function (on QFN-80 the
+# ADC inputs are GPIO40-47, not GPIO26-29); XIN/XOUT/SWCLK/QSPI_SCLK are
+# `clock`; the "GND -- Ground connection via central exposed pad"
+# (Table 1679) is pin key "EP".
+# RP2354B (2MB in-package flash) shares this pinout per section 14.3 but
+# is a different device; not modelled here.
+schema_version: "0.1"
+kind: device
+id: raspberrypi/RP2350B
+
+manufacturer: raspberrypi
+category: microcontroller
+family: RP2350
+
+pins:
+  "1": { name: GPIO4, type: io }
+  "2": { name: GPIO5, type: io }
+  "3": { name: GPIO6, type: io }
+  "4": { name: GPIO7, type: io }
+  "5": { name: IOVDD, type: power }
+  "6": { name: GPIO8, type: io }
+  "7": { name: GPIO9, type: io }
+  "8": { name: GPIO10, type: io }
+  "9": { name: GPIO11, type: io }
+  "10": { name: DVDD, type: power }
+  "11": { name: GPIO12, type: io }
+  "12": { name: GPIO13, type: io }
+  "13": { name: GPIO14, type: io }
+  "14": { name: GPIO15, type: io }
+  "15": { name: IOVDD, type: power }
+  "16": { name: GPIO16, type: io }
+  "17": { name: GPIO17, type: io }
+  "18": { name: GPIO18, type: io }
+  "19": { name: GPIO19, type: io }
+  "20": { name: GPIO20, type: io }
+  "21": { name: GPIO21, type: io }
+  "22": { name: GPIO22, type: io }
+  "23": { name: GPIO23, type: io }
+  "24": { name: IOVDD, type: power }
+  "25": { name: GPIO24, type: io }
+  "26": { name: GPIO25, type: io }
+  "27": { name: GPIO26, type: io }
+  "28": { name: GPIO27, type: io }
+  "29": { name: IOVDD, type: power }
+  "30": { name: XIN, type: clock }
+  "31": { name: XOUT, type: clock }
+  "32": { name: DVDD, type: power }
+  "33": { name: SWCLK, type: clock }
+  "34": { name: SWDIO, type: io }
+  "35": { name: RUN, type: reset }
+  "36": { name: GPIO28, type: io }
+  "37": { name: GPIO29, type: io }
+  "38": { name: GPIO30, type: io }
+  "39": { name: GPIO31, type: io }
+  "40": { name: GPIO32, type: io }
+  "41": { name: IOVDD, type: power }
+  "42": { name: GPIO33, type: io }
+  "43": { name: GPIO34, type: io }
+  "44": { name: GPIO35, type: io }
+  "45": { name: GPIO36, type: io }
+  "46": { name: GPIO37, type: io }
+  "47": { name: GPIO38, type: io }
+  "48": { name: GPIO39, type: io }
+  "49": { name: GPIO40, type: io, alternate_functions: [ADC0] }
+  "50": { name: IOVDD, type: power }
+  "51": { name: DVDD, type: power }
+  "52": { name: GPIO41, type: io, alternate_functions: [ADC1] }
+  "53": { name: GPIO42, type: io, alternate_functions: [ADC2] }
+  "54": { name: GPIO43, type: io, alternate_functions: [ADC3] }
+  "55": { name: GPIO44, type: io, alternate_functions: [ADC4] }
+  "56": { name: GPIO45, type: io, alternate_functions: [ADC5] }
+  "57": { name: GPIO46, type: io, alternate_functions: [ADC6] }
+  "58": { name: GPIO47, type: io, alternate_functions: [ADC7] }
+  "59": { name: ADC_AVDD, type: power }
+  "60": { name: IOVDD, type: power }
+  "61": { name: VREG_AVDD, type: power }
+  "62": { name: VREG_PGND, type: ground }
+  "63": { name: VREG_LX, type: output }
+  "64": { name: VREG_VIN, type: power }
+  "65": { name: VREG_FB, type: input }
+  "66": { name: USB_DM, type: io }
+  "67": { name: USB_DP, type: io }
+  "68": { name: USB_OTP_VDD, type: power }
+  "69": { name: QSPI_IOVDD, type: power }
+  "70": { name: QSPI_SD3, type: io }
+  "71": { name: QSPI_SCLK, type: clock }
+  "72": { name: QSPI_SD0, type: io }
+  "73": { name: QSPI_SD2, type: io }
+  "74": { name: QSPI_SD1, type: io }
+  "75": { name: QSPI_SS, type: io }
+  "76": { name: IOVDD, type: power }
+  "77": { name: GPIO0, type: io }
+  "78": { name: GPIO1, type: io }
+  "79": { name: GPIO2, type: io }
+  "80": { name: GPIO3, type: io }
+  "EP": { name: GND, type: ground }
+
+provenance:
+  "/pins/1/name":
+    - source: raspberrypi/RP-008373-DS@rev3
+      page: 1333
+      locator: "Table 1674 \"GPIO pins\", QFN-80 Number column (continued on p1334)"
+  "/pins/70/name":
+    - source: raspberrypi/RP-008373-DS@rev3
+      page: 1334
+      locator: "Table 1675 \"QSPI pins\", QFN-80 Number column"
+  "/pins/30/name":
+    - source: raspberrypi/RP-008373-DS@rev3
+      page: 1335
+      locator: "Tables 1676-1678 (crystal, miscellaneous, USB pins), QFN-80 Number column"
+  "/pins/5/name":
+    - source: raspberrypi/RP-008373-DS@rev3
+      page: 1335
+      locator: "Table 1679 \"Power supply pins\", QFN-80 Number(s) column"
+  "/pins/EP/name":
+    - source: raspberrypi/RP-008373-DS@rev3
+      page: 1336
+      locator: "Table 1679, \"GND ... Ground connection via central exposed pad\""

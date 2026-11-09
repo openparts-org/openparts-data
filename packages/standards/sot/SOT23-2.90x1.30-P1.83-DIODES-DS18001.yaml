@@ -1,0 +1,126 @@
+# Diodes Incorporated SOT23 outline as printed in the BZX84C datasheet
+# DS18001 Rev. 33-2 (Feb 2018) page 4: an older letter-coded table
+# (A, B, C ... M; columns Min / Max / Typ). Close to but NOT identical to
+# SOT23-2.90x1.30-P1.83-DIODES (span C 2.30-2.50 vs E 2.25-2.55, lead
+# width 0.37-0.51 vs 0.30-0.51, K/K1/J/M ranges differ), so kept
+# separate, as the dataset does for per-source outlines.
+#
+# Letter meaning read from the rendered drawing (not from the table
+# alone): H = body length along the two-lead row (-> body_width),
+# B = body across the rows (-> body_length), C = lead-tip span
+# (-> overall_length), G = two-lead row spacing (-> pitch), K = body
+# height (-> body_height), K1 = overall height, J = standoff, A = lead
+# width, M = lead thickness, L1 = foot length at the gauge plane
+# (-> lead_length). "Typ" recorded as nominal.
+schema_version: "0.1"
+kind: package
+id: standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001
+
+family: sot
+lead_count: 3
+lead_layout: [2, 1]
+
+pitch:
+  nominal: 1.83
+  min: 1.78
+  max: 2.05
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 2.90
+    min: 2.80
+    max: 3.00
+    unit: mm
+  body_length:
+    nominal: 1.30
+    min: 1.20
+    max: 1.40
+    unit: mm
+  body_height:
+    nominal: 0.975
+    min: 0.890
+    max: 1.00
+    unit: mm
+  overall_height:
+    nominal: 1.025
+    min: 0.903
+    max: 1.10
+    unit: mm
+  overall_length:
+    nominal: 2.40
+    min: 2.30
+    max: 2.50
+    unit: mm
+  standoff:
+    nominal: 0.05
+    min: 0.013
+    max: 0.10
+    unit: mm
+  lead_width:
+    nominal: 0.40
+    min: 0.37
+    max: 0.51
+    unit: mm
+  lead_length:
+    nominal: 0.40
+    min: 0.25
+    max: 0.55
+    unit: mm
+  lead_thickness:
+    nominal: 0.110
+    min: 0.085
+    max: 0.150
+    unit: mm
+
+construction: molded
+
+geometry:
+  type: parametric
+  generator: sot
+
+provenance:
+  "/construction":
+    - source: diodes/DS18001
+      page: 1
+      locator: "Mechanical Data: \"Case Material: Molded Plastic.\""
+  "/pitch":
+    - source: diodes/DS18001
+      page: 4
+      locator: "SOT23 table, \"G\" (spacing of the two same-side leads in the drawing)"
+  "/dimensions/body_width":
+    - source: diodes/DS18001
+      page: 4
+      locator: "SOT23 table, \"H\""
+  "/dimensions/body_length":
+    - source: diodes/DS18001
+      page: 4
+      locator: "SOT23 table, \"B\""
+  "/dimensions/body_height":
+    - source: diodes/DS18001
+      page: 4
+      locator: "SOT23 table, \"K\""
+  "/dimensions/overall_height":
+    - source: diodes/DS18001
+      page: 4
+      locator: "SOT23 table, \"K1\""
+  "/dimensions/overall_length":
+    - source: diodes/DS18001
+      page: 4
+      locator: "SOT23 table, \"C\""
+  "/dimensions/standoff":
+    - source: diodes/DS18001
+      page: 4
+      locator: "SOT23 table, \"J\""
+  "/dimensions/lead_width":
+    - source: diodes/DS18001
+      page: 4
+      locator: "SOT23 table, \"A\""
+  "/dimensions/lead_length":
+    - source: diodes/DS18001
+      page: 4
+      locator: "SOT23 table, \"L1\" (foot length at the gauge plane)"
+  "/dimensions/lead_thickness":
+    - source: diodes/DS18001
+      page: 4
+      locator: "SOT23 table, \"M\""

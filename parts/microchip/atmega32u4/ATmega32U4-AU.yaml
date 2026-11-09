@@ -1,0 +1,33 @@
+# ATmega32U4-AU: listed in section 33.2 "ATmega32U4" ordering table
+# (datasheet 7766J, page 422): 16 MHz, 2.7-5.5V, external XTAL default
+# oscillator, package 44ML (TQFP44, 10x10mm, 0.8mm pitch),
+# Industrial (-40 to +85 C).
+# lifecycle: not stated in the datasheet; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/ATmega32U4-AU
+
+manufacturer: microchip
+mpn: ATmega32U4-AU
+
+device: microchip/ATmega32U4
+package: standards/TQFP44-10x10-P0.8
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/7766@revJ
+
+provenance:
+  "/existence":
+    - source: microchip/7766@revJ
+      page: 422
+      locator: "Section 33.2 \"ATmega32U4\" ordering table, \"ATmega32U4-AU\""
+  "/package":
+    - source: microchip/7766@revJ
+      page: 422
+      locator: "Section 33.2 ordering table, package column + \"Package Type\" legend"

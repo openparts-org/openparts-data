@@ -1,0 +1,43 @@
+# MPN from the SLFS022K package option addendum (PDF page 21):
+# "NE555P Active Production PDIP (P) | 8 50 | TUBE ... 0 to 70".
+# lifecycle "Active" is TI's own status column in that same table.
+# Package: TI P (R-PDIP-T8), MPDI001 drawing 4040082/E, note C "Falls
+# within JEDEC MS-001 variation BA", gives ranges only (body 9.02-10.16 x
+# 6.10-6.60, lead span 7.62-8.26 E, pitch 2.54, A max 5.08). It uses
+# standards/DIP8-W7.62-P2.54 (Atmel 8P3, also "JEDEC MS-001 Variation
+# BA"; eA 0.300 BSC row spacing). Flagged for reviewer: same JEDEC
+# outline, tolerance tables not identical (8P3 E1 max .280 vs TI .260,
+# A max .210 vs TI .200).
+schema_version: "0.1"
+kind: part
+id: ti/NE555P
+
+manufacturer: ti
+mpn: NE555P
+
+device: ti/NE555
+package: standards/DIP8-W7.62-P2.54
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLFS022K
+  - ti/MPDI001
+
+provenance:
+  "/existence":
+    - source: ti/SLFS022K
+      page: 21
+      locator: "Package option addendum table, row \"NE555P\" (PDIP (P) | 8)"
+  "/lifecycle":
+    - source: ti/SLFS022K
+      page: 21
+      locator: "Package option addendum table, row \"NE555P\", Status \"Active\""
+  "/package":
+    - source: ti/MPDI001
+      page: 1
+      locator: "P (R-PDIP-T8) drawing 4040082/E, note C (JEDEC MS-001 BA) -- compared against the referenced package, see header"

@@ -1,0 +1,32 @@
+# MPN from Table 1 "Ordering information" (LPC84x Rev. 2.1, page 4):
+# "LPC845M301JBD48  LQFP48 ... body 7 x 7 x 1.4 mm ... SOT313-2", and Table 2 "Ordering options" (page 4: 64KB
+# flash, 16KB SRAM). The data sheet carries no lifecycle status, so
+# lifecycle is unknown.
+schema_version: "0.1"
+kind: part
+id: nxp/LPC845M301JBD48
+
+manufacturer: nxp
+mpn: LPC845M301JBD48
+
+device: nxp/LPC845M301-48
+package: manufacturers/nxp/SOT313-2
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - nxp/LPC84x@rev2.1
+
+provenance:
+  "/existence":
+    - source: nxp/LPC84x@rev2.1
+      page: 4
+      locator: "Table 1 \"Ordering information\", row \"LPC845M301JBD48\""
+  "/package":
+    - source: nxp/LPC84x@rev2.1
+      page: 4
+      locator: "Table 1 \"Ordering information\", row \"LPC845M301JBD48\", Version column; outline on page 83"

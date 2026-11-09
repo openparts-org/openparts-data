@@ -1,0 +1,14 @@
+# Samsung CL10A106KP8: 10 uF, X5R, 10 Vdc, +/-10 %, 0603 MLCC (decoded
+# with the catalog's part-numbering tables, MLCC_2512 pp6-7, and
+# matching the product page's Characteristics). Non-polarized.
+schema_version: "0.1"
+kind: device
+id: samsung/CL10A106KP8
+
+manufacturer: samsung
+category: capacitor
+family: CL10
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

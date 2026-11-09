@@ -1,0 +1,43 @@
+# MPN read from the Package Option Addendum (SLASEC4D PDF page 124,
+# dated 7-Nov-2026): "MSP430FR2355TPTR | Active | Production | LQFP (PT)
+# | 48 | 1000 | LARGE T&R | -40 to 105 | 430FR2355". Also named in Figure 4-1 (page
+# 10) / Table 3-1 (page 8, MSP430FR2355PT, 48 PT (LQFP)).
+#
+# Package: TI outline PT0048A (4215159/B 11/2023, PDF page 139) gives
+# E1/D1 6.8-7.2, A2 1.35-1.45, b 0.17-0.27, L 0.45-0.75, A 1.6 MAX,
+# pitch 0.5 -- the same limits as standards/LQFP48-7x7-P0.5 (whose
+# header already records PT0048A as a matching cross-check). TI gives
+# E/D as 8.8-9.2 and A1 only as "0.05 MIN" where the shared package
+# holds ST's 9.00 BSC and 0.05-0.15; not a contradiction, noted here.
+schema_version: "0.1"
+kind: part
+id: ti/MSP430FR2355TPTR
+
+manufacturer: ti
+mpn: MSP430FR2355TPTR
+
+device: ti/MSP430FR2355
+package: standards/LQFP48-7x7-P0.5
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLASEC4D
+
+provenance:
+  "/existence":
+    - source: ti/SLASEC4D
+      page: 124
+      locator: "Package Option Addendum, row \"MSP430FR2355TPTR\""
+  "/lifecycle":
+    - source: ti/SLASEC4D
+      page: 124
+      locator: "Package Option Addendum, row \"MSP430FR2355TPTR\", Status \"Active\""
+  "/package":
+    - source: ti/SLASEC4D
+      page: 139
+      locator: "PACKAGE OUTLINE PT0048A (LQFP, 48 pins, 0.5 pitch); ordering row \"LQFP (PT) | 48\" on page 124"

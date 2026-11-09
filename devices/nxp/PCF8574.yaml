@@ -1,0 +1,36 @@
+# PCF8574 remote 8-bit I/O expander for I2C-bus, DIP16/SO16 pin numbering
+# (the SSOP20 numbering differs and is not covered). Transcribed from
+# Table 3 "Pin description", DIP16/SO16 column (page 4), cross-checked
+# against Fig 3/Fig 4 pin configurations on the same page. PCF8574 and
+# PCF8574A share the pinout; they differ in I2C slave address.
+schema_version: "0.1"
+kind: device
+id: nxp/PCF8574
+
+manufacturer: nxp
+category: other
+family: PCF8574/PCF8574A
+
+pins:
+  "1": { name: A0, type: input }
+  "2": { name: A1, type: input }
+  "3": { name: A2, type: input }
+  "4": { name: P0, type: io }
+  "5": { name: P1, type: io }
+  "6": { name: P2, type: io }
+  "7": { name: P3, type: io }
+  "8": { name: VSS, type: ground }
+  "9": { name: P4, type: io }
+  "10": { name: P5, type: io }
+  "11": { name: P6, type: io }
+  "12": { name: P7, type: io }
+  "13": { name: INT, type: output }
+  "14": { name: SCL, type: input }
+  "15": { name: SDA, type: io }
+  "16": { name: VDD, type: power }
+
+provenance:
+  "/pins":
+    - source: nxp/PCF8574_PCF8574A@rev5
+      page: 4
+      locator: "Table 3 \"Pin description\", DIP16/SO16 column; Fig 3/Fig 4"

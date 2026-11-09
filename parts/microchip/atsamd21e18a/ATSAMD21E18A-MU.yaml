@@ -1,0 +1,40 @@
+# ATSAMD21E18A-MU: decoded with section 3 "SAM D21 Ordering Information"
+# (DS40001882L page 15): ATSAMD 21 E 18 A - MU = SAM D21, 32 pins,
+# 256KB flash, default variant A, package type "M = VQFN", package grade
+# "U = -40 - 85C Matte Sn Plating", tray. Table 2-1 "Configuration
+# Summary" (page 13) lists ATSAMD21E18A in "TQFP, QFN" 32-pin packages.
+# existence is "probable", not "verified": the exact string
+# "ATSAMD21E18A-MU" does not appear in any ordering table of this data
+# sheet (only the SIL2 code "ATSAMD21E18A-MU-SLL", Table 42-3, page
+# 1065); it is assembled from the ordering-code scheme, whose note 1
+# says "Not all combinations are valid".
+# Package: section 44.1.11 "32-Pin VQFN" (page 1107).
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/ATSAMD21E18A-MU
+
+manufacturer: microchip
+mpn: ATSAMD21E18A-MU
+
+device: microchip/ATSAMD21E18A
+package: standards/QFN32-5x5-P0.5-EP3.6
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40001882@revL
+
+provenance:
+  "/existence":
+    - source: microchip/DS40001882@revL
+      page: 15
+      locator: "Section 3 \"SAM D21 Ordering Information\" code scheme; Table 2-1 Configuration Summary (page 13); Table 42-3 \"ATSAMD21E18A-MU-SLL\" (page 1065)"
+  "/package":
+    - source: microchip/DS40001882@revL
+      page: 15
+      locator: "Section 3, Package Type \"M = VQFN\""

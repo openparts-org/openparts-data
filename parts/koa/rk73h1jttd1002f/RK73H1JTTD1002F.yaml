@@ -1,0 +1,31 @@
+# 10 kOhm +/-1 % RK73H 0603, Sn termination, TD (4mm-pitch punched
+# paper) taping. The literal MPN is not printed in the datasheet; it is
+# built from the page-1 "ordering information" scheme, and 10 kOhm /
+# F is inside the RK73H1J F+/-1% range on page 2 ("10 Ohm - 1 MOhm").
+# Hence existence: probable (same rule as abracon/AB-8.000MHZ-B2).
+# lifecycle unknown: no production-status statement in the sheet.
+schema_version: "0.1"
+kind: part
+id: koa/RK73H1JTTD1002F
+
+manufacturer: koa
+mpn: RK73H1JTTD1002F
+
+device: koa/RK73H1J
+package: standards/CHIP0603-KOA-RK73H1J
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - koa/RK73H
+
+provenance:
+  "/existence":
+    - source: koa/RK73H
+      page: 1
+      locator: "ordering information scheme: RK73H | 1J | (nil, standard) | T (Sn) | TD (4mm pitch punch paper) | 1002 (3 significant figures + multiplier = 10.0 kOhm) | F (+/-1%)"
+

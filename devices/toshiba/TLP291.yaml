@@ -1,0 +1,23 @@
+# TLP291 photocoupler (IRED + phototransistor) in SO4. Pin assignment
+# from "Pin Configuration" on page 1 of the TLP291 datasheet
+# (2019-5-27): 1 ANODE, 2 CATHODE, 3 EMITTER, 4 COLLECTOR. All typed
+# passive.
+schema_version: "0.1"
+kind: device
+id: toshiba/TLP291
+
+manufacturer: toshiba
+category: other
+family: TLP291
+
+pins:
+  "1": { name: ANODE, type: passive }
+  "2": { name: CATHODE, type: passive }
+  "3": { name: EMITTER, type: passive }
+  "4": { name: COLLECTOR, type: passive }
+
+provenance:
+  "/pins":
+    - source: toshiba/TLP291-datasheet-en
+      page: 1
+      locator: "\"Pin Configuration\" (TLP291): 1 ANODE, 2 CATHODE, 3 EMITTER, 4 COLLECTOR"

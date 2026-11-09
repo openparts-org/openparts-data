@@ -1,0 +1,28 @@
+# DMG2305UX-7: 3,000-piece reel MPN from the DS36196 ordering table
+# (DMG2305UX-13 is the 10,000 reel). SOT23 (Standard) outline on page 5
+# matches SOT23-2.90x1.30-P1.83-DIODES value for value. No lifecycle
+# statement in the document.
+schema_version: "0.1"
+kind: part
+id: diodes/DMG2305UX-7
+
+manufacturer: diodes
+mpn: DMG2305UX-7
+
+device: diodes/DMG2305UX
+package: standards/SOT23-2.90x1.30-P1.83-DIODES
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - diodes/DS36196
+
+provenance:
+  "/existence":
+    - source: diodes/DS36196
+      page: 1
+      locator: "Ordering Information table: \"DMG2305UX-7 | Standard | SOT23 (Standard) | 3,000/Tape & Reel\""

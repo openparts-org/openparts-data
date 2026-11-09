@@ -1,0 +1,26 @@
+# 4.7uH +/-20%, Q 12 typ, SRF 35MHz typ, DCR max 0.084 Ohm, Irms 1.9A, Isat 2.0A, per the Electrical Specifications table (page 1).
+# lifecycle unknown: the datasheet makes no production-status statement.
+schema_version: "0.1"
+kind: part
+id: "bourns/SRN4018-4R7M"
+
+manufacturer: bourns
+mpn: "SRN4018-4R7M"
+
+device: bourns/SRN4018-SERIES
+package: manufacturers/bourns/CHIP-BOURNS-SRN4018-H1.80
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - bourns/SRN4018@rev10-26
+
+provenance:
+  "/existence":
+    - source: bourns/SRN4018@rev10-26
+      page: 1
+      locator: "Electrical Specifications table, Part Number row \"SRN4018-4R7M\""

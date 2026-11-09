@@ -1,0 +1,16 @@
+# Official AOS datasheet (5 pages), read via pdftotext and a page-1
+# render (pdftoppm) for the SOT23 top-view pin drawing. The datasheet
+# carries no package outline and no ordering table -- the outline is
+# AOS's separate document PO-00001 (sources/aos/PO-00001.yaml).
+schema_version: "0.1"
+kind: source
+id: aos/AO3400A-DS
+
+publisher: aos
+document_id: AO3400A
+document_type: datasheet
+
+revision: "3.1"
+date: "2023-07"
+
+url: "https://www.aosmd.com/res/datasheets/AO3400A.pdf"

@@ -1,0 +1,34 @@
+# The datasheet has no ordering table and the MPN printed on it is the
+# bare device name "AO3400A" (title, every page header). AOS's product page
+# for it returned a 404 when checked, so existence is "probable": the
+# current first-party datasheet exists, but no orderable-part listing
+# was read. No lifecycle recorded (not stated in anything read).
+# Package: datasheet page 1 says "SOT23"; AOS's SOT23 outline is
+# PO-00001 (linked from aosmd.com/packaging), the datasheet itself does
+# not name the outline document -- the link between them is by package
+# name only.
+schema_version: "0.1"
+kind: part
+id: aos/AO3400A
+
+manufacturer: aos
+mpn: AO3400A
+
+device: aos/AO3400A
+package: standards/SOT23-2.90x1.60-P1.90-AOS
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - aos/AO3400A-DS
+  - aos/PO-00001
+
+provenance:
+  "/existence":
+    - source: aos/AO3400A-DS
+      page: 1
+      locator: "Title \"AO3400A\" and package \"SOT23\"; no ordering table in the document"

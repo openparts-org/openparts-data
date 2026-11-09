@@ -1,0 +1,41 @@
+# TLP785, CTR rank GB, LF6 surface-mount lead form (drawing 11-5L106,
+# datasheet page 4). The order code "TLP785(GB-LF6,F" is listed under
+# "Orderable part number (example)" on Toshiba's TLP785 product page
+# (toshiba.semicon-storage.com/ap-en/.../detail.TLP785.html), and the
+# datasheet's rank table (page 2) defines Rank GB. That page states the
+# listed numbers are "representative part numbers only, which may not
+# be available for sale in the precise form shown", and the datasheet
+# has no ordering table of complete order codes (page 7 only gives the
+# format, e.g. "TLP785(BL-TP6,F") -- so existence is `probable`, not
+# `verified`. Lifecycle is `unknown` (neither source states one).
+#
+# The plain through-hole DIP4 form (11-5L1, page 1) is not added: no
+# first-party source lists a complete order code for it.
+schema_version: "0.1"
+kind: part
+id: "toshiba/TLP785(GB-LF6,F"
+
+manufacturer: toshiba
+mpn: "TLP785(GB-LF6,F"
+
+device: toshiba/TLP785
+package: manufacturers/toshiba/11-5L106
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - toshiba/TLP785-datasheet-en
+
+provenance:
+  "/existence":
+    - source: toshiba/TLP785-datasheet-en
+      page: 7
+      locator: "Section 6 \"Ordering Information\" gives the order-code format (example \"TLP785(BL-TP6,F\"); the exact code \"TLP785(GB-LF6,F\" is from the product page's representative \"Orderable part number (example)\" list, not from this document"
+  "/package":
+    - source: toshiba/TLP785-datasheet-en
+      page: 4
+      locator: "\"Surface-Mount Lead Form Option\", drawing \"TLP785(LF6)\" 11-5L106"

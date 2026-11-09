@@ -1,0 +1,30 @@
+# 256-Kbit I2C serial EEPROM (2.5V 24LC256 of the 24AA256/24LC256/
+# 24FC256 family). Pinout from DS20001203W Table 2-1 "Pin Function
+# Table" (page 7), PDIP/SOIC columns (identical), cross-checked with the
+# "8-Lead SOIC/SOIJ/TSSOP (Top View)" package-types figure on page 1.
+schema_version: "0.1"
+kind: device
+id: microchip/24LC256
+
+manufacturer: microchip
+category: other
+family: 24AA256/24LC256/24FC256
+
+pins:
+  "1": { name: A0, type: input }
+  "2": { name: A1, type: input }
+  "3": { name: A2, type: input }
+  "4": { name: VSS, type: ground }
+  "5": { name: SDA, type: io }
+  "6": { name: SCL, type: clock }
+  "7": { name: WP, type: input }
+  "8": { name: VCC, type: power }
+
+provenance:
+  "/pins":
+    - source: microchip/DS20001203@revW
+      page: 7
+      locator: "Table 2-1 \"Pin Function Table\", SOIC column"
+    - source: microchip/DS20001203@revW
+      page: 1
+      locator: "Package Types, \"8-Lead SOIC/SOIJ/TSSOP (Top View)\""

@@ -1,0 +1,36 @@
+# 36-V, 16-bit I2C current/voltage/power monitor. Pin map from Table 4-1
+# "Pin Functions" (SBOS547C page 3) and Figure 4-1 "DGS Package 10-Pin
+# VSSOP Top View" (same page): all 10 pins match.
+# Types: the table's Type column says "Analog" for both GND and VS; GND
+# is typed ground and VS power from their descriptions ("Ground." /
+# "Power supply, 2.7V to 5.5V."). SCL ("Digital input", "Serial bus
+# clock line") is typed clock; Alert (open-drain "Digital output") output.
+# The datasheet's minus sign in IN- is written as ASCII "-".
+schema_version: "0.1"
+kind: device
+id: ti/INA226
+
+manufacturer: ti
+category: other
+family: INA226
+
+pins:
+  "1":  { name: A1, type: input }
+  "2":  { name: A0, type: input }
+  "3":  { name: Alert, type: output }
+  "4":  { name: SDA, type: io }
+  "5":  { name: SCL, type: clock }
+  "6":  { name: VS, type: power }
+  "7":  { name: GND, type: ground }
+  "8":  { name: VBUS, type: analog }
+  "9":  { name: "IN-", type: analog }
+  "10": { name: "IN+", type: analog }
+
+provenance:
+  "/pins":
+    - source: ti/SBOS547C
+      page: 3
+      locator: "Table 4-1 \"Pin Functions\""
+    - source: ti/SBOS547C
+      page: 3
+      locator: "Figure 4-1 \"DGS Package 10-Pin VSSOP Top View\" (cross-check, all 10 pins matched)"

@@ -1,0 +1,32 @@
+# 1N5818 Schottky rectifier (Vishay 88525). Base part number as in the
+# datasheet's rating tables (orderable codes add -E3/54 or -E3/73,
+# page 2 ORDERING INFORMATION example), same convention as
+# vishay/1N4007. Package: the page-3 DO-41 (DO-204AL) outline is
+# identical (dia 0.080-0.107in / 2.0-2.7mm, length 0.160-0.205in /
+# 4.1-5.2mm) to standards/AXIAL-DO41-1N4007's Vishay 88503 drawing, so
+# that package is reused. lifecycle unknown: no status statement.
+schema_version: "0.1"
+kind: part
+id: vishay/1N5818
+
+manufacturer: vishay
+mpn: 1N5818
+
+device: vishay/1N5818
+package: standards/AXIAL-DO41-1N4007
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - vishay/88525
+
+provenance:
+  "/existence":
+    - source: vishay/88525
+      page: 1
+      locator: "MAXIMUM RATINGS table, column 1N5818"
+

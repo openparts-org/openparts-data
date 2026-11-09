@@ -1,0 +1,17 @@
+# Official Diodes Incorporated datasheet for AP2112 (600mA CMOS LDO with
+# enable), downloaded from diodes.com (URL below). Footer: "Document
+# number: DS39724 Rev. 2 - 2", "June 2017". Text read with pdftotext
+# -layout; pin assignments (page 1) and the SOT25 outline (page 14)
+# were rendered and read as images.
+schema_version: "0.1"
+kind: source
+id: diodes/DS39724
+
+publisher: diodes
+document_id: DS39724
+document_type: datasheet
+
+revision: "2-2"
+date: "2017-06"
+
+url: "https://www.diodes.com/assets/Datasheets/AP2112.pdf"

@@ -1,0 +1,33 @@
+# MPN from RA2E1 datasheet Table 1.12 "Product list (1 of 2)" (page 8):
+# R7FA2E1A93CNH, package code PWQN0032KE-A (the only code listed for it), 128 KB
+# code flash, -40 to +105 C.
+#
+# lifecycle: the datasheet has no status field; left unknown.
+schema_version: "0.1"
+kind: part
+id: renesas/R7FA2E1A93CNH
+
+manufacturer: renesas
+mpn: R7FA2E1A93CNH
+
+device: renesas/R7FA2E1A9-QFN32
+package: manufacturers/renesas/PWQN0032KE-A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - renesas/R01DS0386EJ0180
+
+provenance:
+  "/existence":
+    - source: renesas/R01DS0386EJ0180
+      page: 8
+      locator: "Table 1.12 \"Product list (1 of 2)\", row R7FA2E1A93CNH"
+  "/package":
+    - source: renesas/R01DS0386EJ0180
+      page: 8
+      locator: "Table 1.12 \"Product list (1 of 2)\", row R7FA2E1A93CNH, column \"Package code\""

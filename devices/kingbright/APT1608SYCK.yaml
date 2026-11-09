@@ -1,0 +1,21 @@
+# Kingbright APT1608SYCK super bright yellow (AlGaInP) 1.6x0.8mm chip
+# LED. Pin numbers are printed by the datasheet itself: the page-1
+# schematic symbol "1 -|<- 2" (cathode bar at 1) and the bottom-view
+# drawing labels "1"/"2" with the "Polarity mark" at pin 1.
+schema_version: "0.1"
+kind: device
+id: kingbright/APT1608SYCK
+
+manufacturer: kingbright
+category: led
+family: APT1608
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: kingbright/DSAD0931
+      page: 1
+      locator: "Schematic symbol \"1 -|<- 2\" and bottom-view drawing pin labels 1/2 with \"Polarity mark\""

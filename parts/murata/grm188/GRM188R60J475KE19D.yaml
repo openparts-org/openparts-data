@@ -1,0 +1,33 @@
+# 4.7 uF, X5R, 6.3 V, +/-10%, 0603 MLCC. MPN printed verbatim in the murata/C02E-16 catalog
+# (Cat.No.C02E-16, 2010 edition) part-number table on PDF page 48
+# (printed page 46); fields decoded per 'Part Numbering' (PDF p4-6):
+# dimension-T code '8' = 0.8 mm, matching the reused package.
+# Catalog is a 2010 edition: lifecycle not confirmed from a current
+# first-party page (Murata's site is a JS app) -> unknown.
+schema_version: "0.1"
+kind: part
+id: murata/GRM188R60J475KE19D
+
+manufacturer: murata
+mpn: GRM188R60J475KE19D
+
+device: murata/GRM188-X5R
+package: standards/CHIP0603-GRM188
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - murata/C02E-16
+
+provenance:
+  "/existence":
+    - source: murata/C02E-16
+      page: 4
+      locator: "PDF pages 4-6 (printed 2-4) 'Part Numbering': GR M 18 8 B1 1H 102 K A01 D; e dimensions 15 = 1.0x0.5 mm <0402>, 18 = 1.6x0.8 mm <0603>; r dimension T 5 = 0.5 mm, 8 = 0.8 mm; t R6 = X5R, R7 = X7R; y 0J = 6.3 V, 1A = 10 V, 1C = 16 V, 1E = 25 V, 1H = 50 V; u three-digit pF code"
+    - source: murata/C02E-16
+      page: 48
+      locator: "PDF page 48 (printed 46): X5R(R6) table, 1.6x0.8(18)<0603>, row 4.7uF(475) +/-10%(K), column 6.3(0J)"

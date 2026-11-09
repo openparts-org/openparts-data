@@ -1,0 +1,78 @@
+# RA2E1 (R7FA2E1A9: 128 KB code flash, 4 KB data flash, 16 KB SRAM) in
+# the 32-pin HWQFN. Pin names are the labels of Figure 1.7 "Pin
+# assignment for LQFP/QFN 32-pin (top view)" (page 19); LQFP and QFN
+# share this pinout. Pin numbers cross-checked by script against Table
+# 1.15 "Pin list" (pages 21-23), column "32-pin LQFP/QFN": all 32 pins
+# matched, zero discrepancies.
+#
+# No "EP" pin: the figure only says "Exposed die pad of QFN is recommended
+# to connect to VSS or Open" -- that is a board recommendation, not a
+# stated internal connection, so the pad's net is left unknown.
+# Pin types: VSS/VSS_USB/AVSS0 ground; VCC/VCC_USB/VCC_USB_LDO/AVCC0/VBATT/VCL
+# power (VCL is the internal-regulator capacitor pin); RES reset; P200, P214
+# and P215 input (the datasheet's notes "Except for ports P200, P214, P215,
+# which are input ports"); every other port io. Peripheral alternate
+# functions (Pin Lists columns) are not modelled, same policy as the other
+# MCU devices in this dataset.
+schema_version: "0.1"
+kind: device
+id: renesas/R7FA2E1A9-QFN32
+
+manufacturer: renesas
+category: microcontroller
+family: RA2E1
+
+pins:
+  "1":  { name: VCL, type: power }
+  "2":  { name: P215/XCIN, type: input }
+  "3":  { name: P214/XCOUT, type: input }
+  "4":  { name: VSS, type: ground }
+  "5":  { name: P213/XTAL, type: io }
+  "6":  { name: P212/EXTAL, type: io }
+  "7":  { name: VCC, type: power }
+  "8":  { name: P407, type: io }
+  "9":  { name: P914, type: io }
+  "10": { name: P913, type: io }
+  "11": { name: P208, type: io }
+  "12": { name: P207, type: io }
+  "13": { name: RES, type: reset }
+  "14": { name: P201/MD, type: io }
+  "15": { name: P200, type: input }
+  "16": { name: P300/SWCLK, type: io }
+  "17": { name: P108/SWDIO, type: io }
+  "18": { name: P109, type: io }
+  "19": { name: P110, type: io }
+  "20": { name: P112, type: io }
+  "21": { name: P103, type: io }
+  "22": { name: P102, type: io }
+  "23": { name: P101, type: io }
+  "24": { name: P100, type: io }
+  "25": { name: P015, type: io }
+  "26": { name: P014, type: io }
+  "27": { name: P013, type: io }
+  "28": { name: P012, type: io }
+  "29": { name: AVCC0, type: power }
+  "30": { name: AVSS0, type: ground }
+  "31": { name: P011/VREFL0, type: io }
+  "32": { name: P010/VREFH0, type: io }
+
+provenance:
+  "/pins":
+    - source: renesas/R01DS0386EJ0180
+      page: 19
+      locator: "Figure 1.7 \"Pin assignment for LQFP/QFN 32-pin (top view)\""
+    - source: renesas/R01DS0386EJ0180
+      page: 21
+      locator: "Table 1.15 \"Pin list\" (pages 21-23), column \"32-pin LQFP/QFN\" (cross-check, all 32 pins matched)"
+  "/pins/2/type":
+    - source: renesas/R01DS0386EJ0180
+      page: 32
+      locator: "Table 2.9 \"I/O VOH, VOL (3)\" Note 1: \"Except for Ports P200, P214, and P215, which are input ports\""
+  "/pins/3/type":
+    - source: renesas/R01DS0386EJ0180
+      page: 32
+      locator: "Table 2.9 \"I/O VOH, VOL (3)\" Note 1: \"Except for Ports P200, P214, and P215, which are input ports\""
+  "/pins/15/type":
+    - source: renesas/R01DS0386EJ0180
+      page: 32
+      locator: "Table 2.9 \"I/O VOH, VOL (3)\" Note 1: \"Except for Ports P200, P214, and P215, which are input ports\""

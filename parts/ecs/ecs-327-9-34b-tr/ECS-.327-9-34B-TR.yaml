@@ -1,0 +1,30 @@
+# 32.768 kHz ECX-31B tuning-fork crystal, tape and reel. MPN listed in
+# the ECS product page's Ordering & Quality table; it also decodes per
+# the datasheet's PART NUMBERING GUIDE (ecs/ECX-31B). Device and package are
+# the series' existing ones (same ECX-31B datasheet revision). lifecycle
+# unknown: neither page states a production status.
+schema_version: "0.1"
+kind: part
+id: "ecs/ECS-.327-9-34B-TR"
+
+manufacturer: ecs
+mpn: "ECS-.327-9-34B-TR"
+
+device: ecs/ECX-31B-SERIES
+package: standards/CHIP-ECX31B
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - ecs/ECX-31B
+  - ecs/ECX-31B-product-page
+
+provenance:
+  "/existence":
+    - source: ecs/ECX-31B-product-page
+      page: 1
+      locator: "Ordering & Quality table row \"ECS-.327-9-34B-TR\": 34B 3.20mm x 1.50mm 32.768 kHz +/-20ppm 9pF"

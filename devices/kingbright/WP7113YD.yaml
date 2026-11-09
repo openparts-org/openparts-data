@@ -1,0 +1,24 @@
+# Kingbright WP7113YD Yellow diffused T-1 3/4 (5mm) LED. Cathode identified from
+# the page-1 PACKAGE DIMENSIONS drawing ("Cathode" label on one lead;
+# flat on the flange). Pin 1 = Cathode follows the skill's radial-LED
+# convention (KiCad LED_D5.0mm, pin 1 = cathode, which is also what the
+# radial LED 3D template draws). NOTE: the older kingbright/WP7113ID
+# device numbers pin 1 = Anode; the two conventions disagree in the
+# dataset (reported, not changed here).
+schema_version: "0.1"
+kind: device
+id: kingbright/WP7113YD
+
+manufacturer: kingbright
+category: led
+family: WP7113
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: kingbright/DSAF2448
+      page: 1
+      locator: "PACKAGE DIMENSIONS drawing, \"Cathode\" lead label"

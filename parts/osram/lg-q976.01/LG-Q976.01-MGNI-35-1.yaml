@@ -1,0 +1,32 @@
+# LG Q976.01-MGNI-35-1 (ordering code Q65113A5260),
+# green, dominant 573 nm (InGaAlP). The MPN contains a
+# space as published; the id replaces it with "-".
+schema_version: "0.1"
+kind: part
+id: "osram/LG-Q976.01-MGNI-35-1"
+
+manufacturer: osram
+mpn: "LG Q976.01-MGNI-35-1"
+
+device: osram/LG-Q976.01
+package: manufacturers/osram/CHIP-OSRAM-Q976.01
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - osram/LG-Q976.01@v1.3
+  - osram/LG-Q976.01-product-page
+
+provenance:
+  "/existence":
+    - source: osram/LG-Q976.01@v1.3
+      page: 3
+      locator: "Ordering Information table: type \"LG Q976.01-MGNI-35-1\", Iv 18 ... 45 mcd @ 20 mA, ordering code Q65113A5260"
+  "/lifecycle":
+    - source: osram/LG-Q976.01-product-page
+      page: 1
+      locator: "Lifecycle status badge \"Full production\""

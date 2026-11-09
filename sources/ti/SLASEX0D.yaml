@@ -1,0 +1,18 @@
+# Official TI datasheet for MSPM0L134x/MSPM0L130x. Downloaded from the
+# TI symlink URL below and read via pdftotext -layout (89 pages); the
+# pin diagram page (PDF page 6) and the RHB0032E outline (PDF page 72)
+# were rendered and read visually. Revision "D" / date from the header
+# "SLASEX0D - OCTOBER 2022 - REVISED JANUARY 2024". The appended Package
+# Option Addendum is dated 9-Sep-2026 (PDF pages 81-82).
+schema_version: "0.1"
+kind: source
+id: ti/SLASEX0D
+
+publisher: ti
+document_id: SLASEX0D
+document_type: datasheet
+
+revision: "D"
+date: "2024-01"
+
+url: "https://www.ti.com/lit/ds/symlink/mspm0l1306.pdf"

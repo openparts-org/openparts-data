@@ -1,0 +1,27 @@
+# AP1117 1A LDO, fixed 3.3-V option (AP1117E33...). Pins from DS31009
+# Rev. 24-3 "Pin Descriptions" (page 2): 1 Adj (GND) "Ground only for
+# Fixed-Mode", 2 VOUT, 3 VIN; cross-checked against page 1 "Pin
+# Assignments" SOT223 (Top View) 3 VIN / 2 VOUT / 1 Adj (GND), "Tab is
+# VOUT". The tab carries pin number 2 in the package
+# (standards/SOT223-3.5x6.5-P2.3-TabPin2-Diodes), so no extra pin here.
+schema_version: "0.1"
+kind: device
+id: diodes/AP1117-3.3
+
+manufacturer: diodes
+category: other
+family: AP1117
+
+pins:
+  "1": { name: Adj (GND), type: ground }
+  "2": { name: VOUT, type: power }
+  "3": { name: VIN, type: power }
+
+provenance:
+  "/pins":
+    - source: diodes/DS31009
+      page: 2
+      locator: "\"Pin Descriptions\" table (1 Adj (GND), 2 VOUT, 3 VIN)"
+    - source: diodes/DS31009
+      page: 1
+      locator: "\"Pin Assignments\" SOT223 (Top View), \"Tab is VOUT\""

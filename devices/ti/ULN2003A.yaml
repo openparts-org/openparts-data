@@ -1,0 +1,37 @@
+# ULN2003A 7-channel Darlington transistor array. Pinout from SLRS027T
+# Figure 4-1 "D, N, NS, and PW Package 16-Pin" (page 3) and Table 4-1
+# "Pin Functions" (same page): nB = Input, nC = Output per its I/O
+# column. E ("Common emitter shared by all channels") and COM ("Common
+# cathode node for flyback diodes") have "--" in the I/O column and are
+# recorded as passive rather than guessed as ground/power.
+schema_version: "0.1"
+kind: device
+id: ti/ULN2003A
+
+manufacturer: ti
+category: other
+family: ULN2003A
+
+pins:
+  "1": { name: 1B, type: input }
+  "2": { name: 2B, type: input }
+  "3": { name: 3B, type: input }
+  "4": { name: 4B, type: input }
+  "5": { name: 5B, type: input }
+  "6": { name: 6B, type: input }
+  "7": { name: 7B, type: input }
+  "8": { name: E, type: passive }
+  "9": { name: COM, type: passive }
+  "10": { name: 7C, type: output }
+  "11": { name: 6C, type: output }
+  "12": { name: 5C, type: output }
+  "13": { name: 4C, type: output }
+  "14": { name: 3C, type: output }
+  "15": { name: 2C, type: output }
+  "16": { name: 1C, type: output }
+
+provenance:
+  "/pins":
+    - source: ti/SLRS027T
+      page: 3
+      locator: "Figure 4-1 (16-pin top view) and Table 4-1 \"Pin Functions\""

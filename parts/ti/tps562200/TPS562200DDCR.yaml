@@ -1,0 +1,36 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SLVSCB0E
+# (page 29): "TPS562200DDCR Active Production SOT-23-THIN (DDC) | 6 3000 | LARGE T&R ... -40 to 125". Lifecycle "Active" is read from the
+# same row's Status column (TI's own addendum inside the datasheet).
+# Package: SOT-23-THIN (DDC), outline DDC0006A on page 33 -> manufacturers/ti/DDC0006A (page 1 says DRL; see the source file note).
+schema_version: "0.1"
+kind: part
+id: ti/TPS562200DDCR
+
+manufacturer: ti
+mpn: TPS562200DDCR
+
+device: ti/TPS562200
+package: manufacturers/ti/DDC0006A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLVSCB0E
+
+provenance:
+  "/existence":
+    - source: ti/SLVSCB0E
+      page: 29
+      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row TPS562200DDCR"
+  "/lifecycle":
+    - source: ti/SLVSCB0E
+      page: 29
+      locator: "PACKAGE OPTION ADDENDUM, row TPS562200DDCR, Status column \"Active\""
+  "/package":
+    - source: ti/SLVSCB0E
+      page: 29
+      locator: "PACKAGE OPTION ADDENDUM, row TPS562200DDCR, Package column"

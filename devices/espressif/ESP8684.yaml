@@ -1,0 +1,72 @@
+# ESP8684 (ESP32-C2) QFN24 pinout from the ESP8684 datasheet v2.3,
+# Table 2 "Pin Overview" (PDF pages 14-15), cross-checked against
+# Figure 3 "Pin Layout (Top View)" (PDF page 13) -- same names at the
+# same numbers. Pin 25 "GND -- External ground connection" (Table 8
+# "Power Pins", PDF page 21) is the exposed pad, pin key "EP".
+# Both Table 1 part numbers (ESP8684H2X, ESP8684H4X) share this pin
+# table; they differ only in in-package flash size.
+#
+# `alternate_functions`: the GPIO number from Table 4 "IO MUX Pin
+# Functions" (PDF pages 16-17) where the pin name is not GPIOn, plus
+# ADC1_CHx from Table 6 "Analog Functions" (PDF page 18). FSPI
+# functions are not listed. CHIP_EN is typed IO in Table 2 but is the
+# chip enable (Table 7: "Low: off, disables the chip"), so `reset`, as
+# on the other Espressif devices; XTAL_P/N `clock`, ANT `analog`.
+schema_version: "0.1"
+kind: device
+id: espressif/ESP8684
+
+manufacturer: espressif
+category: microcontroller
+family: ESP32-C2
+
+pins:
+  "1":  { name: ANT, type: analog }
+  "2":  { name: VDDA3P3, type: power }
+  "3":  { name: VDDA3P3, type: power }
+  "4":  { name: GPIO0, type: io, alternate_functions: [ADC1_CH0] }
+  "5":  { name: GPIO1, type: io, alternate_functions: [ADC1_CH1] }
+  "6":  { name: GPIO2, type: io, alternate_functions: [ADC1_CH2] }
+  "7":  { name: CHIP_EN, type: reset }
+  "8":  { name: GPIO3, type: io, alternate_functions: [ADC1_CH3] }
+  "9":  { name: MTMS, type: io, alternate_functions: [GPIO4, ADC1_CH4] }
+  "10": { name: MTDI, type: io, alternate_functions: [GPIO5] }
+  "11": { name: VDD3P3_RTC, type: power }
+  "12": { name: MTCK, type: io, alternate_functions: [GPIO6] }
+  "13": { name: MTDO, type: io, alternate_functions: [GPIO7] }
+  "14": { name: GPIO8, type: io }
+  "15": { name: GPIO9, type: io }
+  "16": { name: GPIO10, type: io }
+  "17": { name: VDD3P3_CPU, type: power }
+  "18": { name: GPIO18, type: io }
+  "19": { name: U0RXD, type: io, alternate_functions: [GPIO19] }
+  "20": { name: U0TXD, type: io, alternate_functions: [GPIO20] }
+  "21": { name: VDDA, type: power }
+  "22": { name: XTAL_N, type: clock }
+  "23": { name: XTAL_P, type: clock }
+  "24": { name: VDDA, type: power }
+  "EP": { name: GND, type: ground }
+
+# Table 1 lists chip revision v2.0 for both current part numbers
+# (footnote 6: the older ESP8684H2/H4 codes were v1.2 and earlier).
+revisions:
+  rev-v2.0:
+    manufacturer_revision: "v2.0"
+
+provenance:
+  "/pins/1/name":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 14
+      locator: "Table 2 \"Pin Overview\", pins 1-20 (pins 21-25 on page 15)"
+  "/pins/9/alternate_functions":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 16
+      locator: "Table 4 \"IO MUX Pin Functions\" GPIO name column; Table 6 \"Analog Functions\" (page 18)"
+  "/pins/EP/name":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 21
+      locator: "Table 8 \"Power Pins\", pin 25 \"GND -- External ground connection\""
+  "/revisions":
+    - source: espressif/esp8684_datasheet_en@rev2.3
+      page: 11
+      locator: "Table 1 \"ESP8684 Series Member Comparison\", Chip Revision column"

@@ -1,0 +1,37 @@
+# UA78M33CKVURG3: SLVS059V package option addendum (page 26) row
+# "UA78M33CKVURG3  Active  Production  TO-252 (KVU) | 3  2500 | LARGE
+# T&R ... 0 to 125  78M33C". Package KVU = outline KVU0003A (page 38).
+# Tab numbered "4" from the drawing; the pinout only labels it "COMMON"
+# (see the package file).
+schema_version: "0.1"
+kind: part
+id: ti/UA78M33CKVURG3
+
+manufacturer: ti
+mpn: UA78M33CKVURG3
+
+device: ti/UA78M33
+package: standards/TO252-6.1x6.5-P2.29-TabPin4-TI-KVU
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLVS059V
+
+provenance:
+  "/existence":
+    - source: ti/SLVS059V
+      page: 26
+      locator: "Package option addendum table, row \"UA78M33CKVURG3\" (TO-252 (KVU) | 3)"
+  "/lifecycle":
+    - source: ti/SLVS059V
+      page: 26
+      locator: "Package option addendum table, row \"UA78M33CKVURG3\", Status \"Active\""
+  "/package":
+    - source: ti/SLVS059V
+      page: 38
+      locator: "KVU0003A package outline (4218915/A)"

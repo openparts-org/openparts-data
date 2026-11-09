@@ -1,0 +1,19 @@
+# ESP8684 Series Datasheet v2.3 (Revision History, PDF page 58:
+# "2026-01-06 v2.3"). ESP8684 is the ESP32-C2 chip series: "The ESP8684
+# chip series belongs to the ESP32-C2 group" (title page). Read from
+# Espressif's own documentation host (the esp32-c2_datasheet_en.pdf URL
+# returns a 404 page there).
+# Page numbers cited from this Source are PDF page indices; the printed
+# page number is one lower (e.g. Figure 8 on PDF page 53 is printed 52).
+schema_version: "0.1"
+kind: source
+id: espressif/esp8684_datasheet_en@rev2.3
+
+publisher: espressif
+document_id: esp8684_datasheet_en
+document_type: datasheet
+
+revision: "2.3"
+date: "2026-01-06"
+
+url: "https://documentation.espressif.com/esp8684_datasheet_en.pdf"

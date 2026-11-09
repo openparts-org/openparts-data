@@ -1,0 +1,17 @@
+# Bourns SRR1260 series datasheet as served on 2026-11-10 (4 pages).
+# Revision from the footer "REV. 03/26" (read via pdftotext; page 1
+# rendered to check the Product Dimensions drawing and the
+# Electrical Specifications table). Added as a separate Source because
+# the existing bourns/SRR1260 record does not pin this revision.
+schema_version: "0.1"
+kind: source
+id: bourns/SRR1260@rev03-26
+
+publisher: bourns
+document_id: "SRR1260"
+document_type: datasheet
+
+revision: "03/26"
+date: "2026-03"
+
+url: "https://www.bourns.com/docs/Product-Datasheets/SRR1260.pdf"

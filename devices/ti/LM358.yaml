@@ -1,0 +1,29 @@
+# Dual operational amplifier (LM358, not the LM358A/LM358B variants).
+# Pinout from SLOS068AB Figure 4-1 "D, DDF, DGK, P, PS, PW, and JG
+# Package" (8-pin top view) and Table 4-1 "Pin Functions" column
+# "SOIC, SOT23-8, VSSOP, CDIP, PDIP, SO, TSSOP" (page 3) -- the same
+# 8-pin assignment applies to the D (SOIC) and P (PDIP) packages.
+# Names: the datasheet's minus signs are written as ASCII "-".
+schema_version: "0.1"
+kind: device
+id: ti/LM358
+
+manufacturer: ti
+category: other
+family: LM358
+
+pins:
+  "1": { name: OUT1, type: analog }
+  "2": { name: IN1-, type: analog }
+  "3": { name: IN1+, type: analog }
+  "4": { name: V-, type: ground }
+  "5": { name: IN2+, type: analog }
+  "6": { name: IN2-, type: analog }
+  "7": { name: OUT2, type: analog }
+  "8": { name: V+, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SLOS068AB
+      page: 3
+      locator: "Figure 4-1 (8-pin top view) and Table 4-1 \"Pin Functions\", SOIC/PDIP column"

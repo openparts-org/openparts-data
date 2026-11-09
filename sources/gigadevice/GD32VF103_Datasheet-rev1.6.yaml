@@ -1,0 +1,17 @@
+# Official GigaDevice GD32VF103 (RISC-V) datasheet, fetched from GigaDevice's
+# GD32 MCU site (gd32mcu.com). Read via pdftotext -layout; the revision
+# and date are taken from Table 7-1 "Revision history" (PDF page 85):
+# "1.6 ... Jun.7, 2022" (latest entry). 87 PDF pages. PDF page index =
+# printed page number + 1.
+schema_version: "0.1"
+kind: source
+id: gigadevice/GD32VF103_Datasheet@rev1.6
+
+publisher: gigadevice
+document_id: GD32VF103_Datasheet
+document_type: datasheet
+
+revision: "1.6"
+date: "2022-06-07"
+
+url: "https://www.gd32mcu.com/data/documents/datasheet/GD32VF103_Datasheet_Rev1.6.pdf"

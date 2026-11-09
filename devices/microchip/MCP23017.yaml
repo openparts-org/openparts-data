@@ -1,0 +1,63 @@
+# MCP23017 16-bit I2C I/O expander, SPDIP/SOIC/SSOP pin numbering (the
+# 28-lead SOIC and SPDIP share it; the QFN uses different numbers and is
+# not covered by this device file). Transcribed from Table 2-1 "Pinout
+# Description", SOIC/SPDIP/SSOP column (page 11), cross-checked against
+# the "Package Types" pin diagrams on page 1.
+#
+# Pin 11 and 14 are "NC" on MCP23017 (CS/SO on the SPI sibling
+# MCP23S17). GPA7/GPB7 are listed as type I/O in the table, but the
+# description says "Output only (MCP23017)" -- recorded as output.
+schema_version: "0.1"
+kind: device
+id: microchip/MCP23017
+
+manufacturer: microchip
+category: other
+family: MCP23017/MCP23S17
+
+pins:
+  "1": { name: GPB0, type: io }
+  "2": { name: GPB1, type: io }
+  "3": { name: GPB2, type: io }
+  "4": { name: GPB3, type: io }
+  "5": { name: GPB4, type: io }
+  "6": { name: GPB5, type: io }
+  "7": { name: GPB6, type: io }
+  "8": { name: GPB7, type: output }
+  "9": { name: VDD, type: power }
+  "10": { name: VSS, type: ground }
+  "11": { name: NC, type: nc }
+  "12": { name: SCK, type: input }
+  "13": { name: SDA, type: io }
+  "14": { name: NC, type: nc }
+  "15": { name: A0, type: input }
+  "16": { name: A1, type: input }
+  "17": { name: A2, type: input }
+  "18": { name: RESET, type: reset }
+  "19": { name: INTB, type: output }
+  "20": { name: INTA, type: output }
+  "21": { name: GPA0, type: io }
+  "22": { name: GPA1, type: io }
+  "23": { name: GPA2, type: io }
+  "24": { name: GPA3, type: io }
+  "25": { name: GPA4, type: io }
+  "26": { name: GPA5, type: io }
+  "27": { name: GPA6, type: io }
+  "28": { name: GPA7, type: output }
+
+provenance:
+  "/pins":
+    - source: microchip/DS20001952@revD
+      page: 11
+      locator: "Table 2-1 \"Pinout Description\", SOIC/SPDIP/SSOP column"
+    - source: microchip/DS20001952@revD
+      page: 1
+      locator: "Package Types, MCP23017 SPDIP/SOIC/SSOP diagram"
+  "/pins/8/type":
+    - source: microchip/DS20001952@revD
+      page: 11
+      locator: "Table 2-1, GPB7: \"Bidirectional I/O pin ... Output only (MCP23017)\""
+  "/pins/28/type":
+    - source: microchip/DS20001952@revD
+      page: 11
+      locator: "Table 2-1, GPA7: \"Bidirectional I/O pin ... Output only (MCP23017)\""

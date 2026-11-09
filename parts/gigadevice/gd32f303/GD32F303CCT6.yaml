@@ -1,0 +1,31 @@
+# MPN confirmed from Table 6-1 "Part ordering code for GD32F303xx devices" (PDF page 98): "GD32F303CCT6 | 256 | LQFP48 | Green".
+# lifecycle: the datasheet carries no production-status statement, so it
+# is left unknown.
+schema_version: "0.1"
+kind: part
+id: gigadevice/GD32F303CCT6
+
+manufacturer: gigadevice
+mpn: GD32F303CCT6
+
+device: gigadevice/GD32F303CC
+package: manufacturers/gigadevice/LQFP48-7x7-P0.5
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - gigadevice/GD32F303xx_Datasheet@rev2.0
+
+provenance:
+  "/existence":
+    - source: gigadevice/GD32F303xx_Datasheet@rev2.0
+      page: 98
+      locator: "Table 6-1 \"Part ordering code for GD32F303xx devices\", row GD32F303CCT6"
+  "/package":
+    - source: gigadevice/GD32F303xx_Datasheet@rev2.0
+      page: 98
+      locator: "Table 6-1 \"Part ordering code for GD32F303xx devices\", row GD32F303CCT6, Package column"

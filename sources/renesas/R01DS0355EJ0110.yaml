@@ -1,0 +1,20 @@
+# Official Renesas "RA4M1 Group Datasheet", document R01DS0355EJ0110,
+# Rev.1.10, Sep 29, 2023 (as printed on the title page and every page
+# footer). Downloaded from Renesas's own document URL below (served as
+# application/pdf, 131 pages) and read with pdftotext (-layout and
+# -bbox for the pin-list table columns) plus pdftoppm renders of the
+# pin-assignment figures and Appendix 1 package drawings.
+# Renesas document numbers embed the revision ("...EJ0110" = Rev.1.10),
+# so the id carries it the same way ti/SLASEX6C does.
+schema_version: "0.1"
+kind: source
+id: renesas/R01DS0355EJ0110
+
+publisher: renesas
+document_id: R01DS0355EJ0110
+document_type: datasheet
+
+revision: "1.10"
+date: "2023-09-29"
+
+url: "https://www.renesas.com/en/document/dst/ra4m1-group-datasheet"

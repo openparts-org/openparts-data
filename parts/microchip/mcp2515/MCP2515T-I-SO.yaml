@@ -1,0 +1,34 @@
+# MPN confirmed from the "Product Identification System" (DS20001801K
+# page 93), example e): "MCP2515T-I/SO: ...Industrial Temperature, 18-Lead SOIC
+# package". Package code SO = "Plastic SOIC (7.50 mm Body), 18-Lead"
+# -> drawing C04-051D (pages 81-82).
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real string.
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP2515T-I-SO
+
+manufacturer: microchip
+mpn: MCP2515T-I/SO
+
+device: microchip/MCP2515
+package: standards/SOIC18-7.50x11.55-P1.27
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001801@revK
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001801@revK
+      page: 93
+      locator: "Product Identification System, example e) \"MCP2515T-I/SO\""
+  "/package":
+    - source: microchip/DS20001801@revK
+      page: 93
+      locator: "Product Identification System, Package \"SO = Plastic SOIC (7.50 mm Body), 18-Lead\""

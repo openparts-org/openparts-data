@@ -1,0 +1,21 @@
+# SRN4018 series 2-terminal SMD power inductor, shared by every value
+# in the series' Electrical Specifications table (the inductance value
+# is the only per-MPN difference; it lives in the part comment).
+# The older per-MPN device (e.g. the 2R2 value's) holds the same pins.
+schema_version: "0.1"
+kind: device
+id: bourns/SRN4018-SERIES
+
+manufacturer: bourns
+category: inductor
+family: "SRN4018"
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+
+provenance:
+  "/pins":
+    - source: bourns/SRN4018@rev10-26
+      page: 1
+      locator: "Electrical Schematic (single inductor symbol, 2 terminals)"

@@ -1,0 +1,38 @@
+# LM1117DTX-3.3/NOPB: SNOS412Q package option addendum (page 23) row
+# "LM1117DTX-3.3/NOPB  Active  Production  TO-252 (NDP) | 3  2500 |
+# LARGE T&R ... 0 to 125  LM1117". lifecycle "Active" is TI's own
+# status column. Package NDP = outline NDP0003B (page 41).
+# Tab number conflict (pin table "2 , TAB" vs drawing "4") is described
+# in the package file; this part uses the drawing's "4".
+schema_version: "0.1"
+kind: part
+id: ti/LM1117DTX-3.3/NOPB
+
+manufacturer: ti
+mpn: LM1117DTX-3.3/NOPB
+
+device: ti/LM1117-3.3
+package: standards/TO252-6.1x6.5-P2.29-TabPin4-TI-NDP
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SNOS412Q
+
+provenance:
+  "/existence":
+    - source: ti/SNOS412Q
+      page: 23
+      locator: "Package option addendum table, row \"LM1117DTX-3.3/NOPB\" (TO-252 (NDP) | 3)"
+  "/lifecycle":
+    - source: ti/SNOS412Q
+      page: 23
+      locator: "Package option addendum table, row \"LM1117DTX-3.3/NOPB\", Status \"Active\""
+  "/package":
+    - source: ti/SNOS412Q
+      page: 41
+      locator: "NDP0003B package outline (4219870/A)"

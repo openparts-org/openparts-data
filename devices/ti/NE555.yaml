@@ -1,0 +1,27 @@
+# Precision timer. Pinout from SLFS022K section 4 "Pin Configuration and
+# Functions" (page 3): "NE555...D, P, PS, OR PW PACKAGE (TOP VIEW)" and
+# Table 4-1 "Pin Functions" (D/P/PS/PW/JG column). Same 8-pin
+# assignment for the D (SOIC) and P (PDIP) packages.
+schema_version: "0.1"
+kind: device
+id: ti/NE555
+
+manufacturer: ti
+category: other
+family: xx555
+
+pins:
+  "1": { name: GND, type: ground }
+  "2": { name: TRIG, type: input }
+  "3": { name: OUT, type: output }
+  "4": { name: RESET, type: reset }
+  "5": { name: CONT, type: analog }
+  "6": { name: THRES, type: input }
+  "7": { name: DISCH, type: output }
+  "8": { name: VCC, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SLFS022K
+      page: 3
+      locator: "\"NE555...D, P, PS, OR PW PACKAGE (TOP VIEW)\" and Table 4-1 \"Pin Functions\""

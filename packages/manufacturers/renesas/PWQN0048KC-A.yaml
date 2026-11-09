@@ -1,0 +1,98 @@
+# Renesas PWQN0048KC-A (JEITA P-HWQFN048-7x7-0.50), 48-pin HWQFN, 7x7 mm,
+# 0.5 mm pitch, exposed die pad. Values copied from the dimension table
+# of the RA2E1 datasheet's Figure A2.6 "HWQFN 48-pin" (page 94). In this drawing E is the
+# horizontal body size (X) and D the vertical (Y); E2/D2 the exposed pad.
+# No A2 in the table, so body_height holds A (max only). A3 is printed as
+# "0.203 REF." and recorded as a nominal. D/E/e are BSC (nominal only).
+schema_version: "0.1"
+kind: package
+id: manufacturers/renesas/PWQN0048KC-A
+
+family: qfn
+lead_count: 48
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 7.0
+    unit: mm
+  body_length:
+    nominal: 7.0
+    unit: mm
+  body_height:
+    max: 0.8
+    unit: mm
+  standoff:
+    nominal: 0.02
+    min: 0.0
+    max: 0.05
+    unit: mm
+  lead_width:
+    nominal: 0.25
+    min: 0.2
+    max: 0.3
+    unit: mm
+  lead_length:
+    nominal: 0.4
+    min: 0.3
+    max: 0.5
+    unit: mm
+  lead_thickness:
+    nominal: 0.203
+    unit: mm
+  exposed_pad:
+    width:
+      nominal: 5.3
+      min: 5.25
+      max: 5.35
+      unit: mm
+    length:
+      nominal: 5.3
+      min: 5.25
+      max: 5.35
+      unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/pitch":
+    - source: renesas/R01DS0386EJ0180
+      page: 94
+      locator: "Appendix 2 Figure A2.6 \"HWQFN 48-pin\" (PWQN0048KC-A) dimension table, symbol \"e\""
+  "/dimensions/body_width":
+    - source: renesas/R01DS0386EJ0180
+      page: 94
+      locator: "Appendix 2 Figure A2.6 \"HWQFN 48-pin\" (PWQN0048KC-A) dimension table, symbol \"E\""
+  "/dimensions/body_length":
+    - source: renesas/R01DS0386EJ0180
+      page: 94
+      locator: "Appendix 2 Figure A2.6 \"HWQFN 48-pin\" (PWQN0048KC-A) dimension table, symbol \"D\""
+  "/dimensions/body_height":
+    - source: renesas/R01DS0386EJ0180
+      page: 94
+      locator: "Appendix 2 Figure A2.6 \"HWQFN 48-pin\" (PWQN0048KC-A) dimension table, symbol \"A\""
+  "/dimensions/standoff":
+    - source: renesas/R01DS0386EJ0180
+      page: 94
+      locator: "Appendix 2 Figure A2.6 \"HWQFN 48-pin\" (PWQN0048KC-A) dimension table, symbol \"A1\""
+  "/dimensions/lead_width":
+    - source: renesas/R01DS0386EJ0180
+      page: 94
+      locator: "Appendix 2 Figure A2.6 \"HWQFN 48-pin\" (PWQN0048KC-A) dimension table, symbol \"b\""
+  "/dimensions/lead_length":
+    - source: renesas/R01DS0386EJ0180
+      page: 94
+      locator: "Appendix 2 Figure A2.6 \"HWQFN 48-pin\" (PWQN0048KC-A) dimension table, symbol \"L\""
+  "/dimensions/lead_thickness":
+    - source: renesas/R01DS0386EJ0180
+      page: 94
+      locator: "Appendix 2 Figure A2.6 \"HWQFN 48-pin\" (PWQN0048KC-A) dimension table, symbol \"A3\""
+  "/dimensions/exposed_pad":
+    - source: renesas/R01DS0386EJ0180
+      page: 94
+      locator: "Appendix 2 Figure A2.6 \"HWQFN 48-pin\" (PWQN0048KC-A) dimension table, symbol \"E2 (width) / D2 (length)\""

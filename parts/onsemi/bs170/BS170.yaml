@@ -1,0 +1,32 @@
+# BS170: "TO-92 (TO-226) (Pb-Free), 1000 Unit/Tube" from the page-2
+# ORDERING INFORMATION table (BS170RLRAG is the tape & reel version).
+# Package: the datasheet says "CASE 29 STYLE 30" but has no outline.
+# Reuses TO92-BC547 (onsemi CASE 29-11, 98ASB42022B Issue AM); the same
+# drawing is embedded in P2N2222A/D pages 6-7, whose straight-lead A/B/C
+# ranges equal that package's values. Link is by case number only.
+# No lifecycle statement in the datasheet.
+schema_version: "0.1"
+kind: part
+id: onsemi/BS170
+
+manufacturer: onsemi
+mpn: BS170
+
+device: onsemi/BS170
+package: standards/TO92-BC547
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/BS170-D
+  - onsemi/P2N2222A-D
+
+provenance:
+  "/existence":
+    - source: onsemi/BS170-D
+      page: 2
+      locator: "ORDERING INFORMATION table: \"BS170 | TO-92 (TO-226) (Pb-Free) | 1000 Unit/Tube\""

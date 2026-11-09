@@ -1,0 +1,17 @@
+# Official TI datasheet for OPA333/OPA2333. Downloaded from the TI symlink URL
+# below; revision read from the page header "SBOS351E - MARCH 2006 - REVISED DECEMBER 2015". Text read with
+# pdftotext -layout; the pin-configuration page and the package outline
+# drawings named in the package files were rendered to images and read
+# directly. Page numbers in this dataset are PDF page indices.
+schema_version: "0.1"
+kind: source
+id: ti/SBOS351E
+
+publisher: ti
+document_id: SBOS351E
+document_type: datasheet
+
+revision: "E"
+date: "2015-12"
+
+url: "https://www.ti.com/lit/ds/symlink/opa2333.pdf"

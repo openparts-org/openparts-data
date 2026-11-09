@@ -1,0 +1,107 @@
+# Winbond 16-pin SOIC 300-mil (package code F), 1.27 mm pitch. All
+# values from section 10.2 "16-Pin SOIC 300-mil (Package Code F)" of the
+# W25Q128JV datasheet Revision F, PDF page 69 (printed page 68); page
+# rendered and read from the image. body_width = E1, body_length = D,
+# overall_width = E, body_height = A2 (NOM 2.31 only), overall_height
+# = A, standoff = A1 (min/max only), lead_width = b, lead_thickness = C,
+# lead_length = L. Values as printed.
+schema_version: "0.1"
+kind: package
+id: manufacturers/winbond/SOIC16-300mil-F
+
+family: soic
+lead_count: 16
+
+pitch:
+  nominal: 1.27
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 7.49
+    min: 7.39
+    max: 7.59
+    unit: mm
+  body_length:
+    nominal: 10.31
+    min: 10.08
+    max: 10.49
+    unit: mm
+  body_height:
+    nominal: 2.31
+    unit: mm
+  overall_width:
+    nominal: 10.31
+    min: 10.01
+    max: 10.64
+    unit: mm
+  overall_height:
+    nominal: 2.49
+    min: 2.36
+    max: 2.64
+    unit: mm
+  standoff:
+    min: 0.10
+    max: 0.30
+    unit: mm
+  lead_width:
+    nominal: 0.41
+    min: 0.33
+    max: 0.51
+    unit: mm
+  lead_length:
+    nominal: 0.81
+    min: 0.38
+    max: 1.27
+    unit: mm
+  lead_thickness:
+    nominal: 0.23
+    min: 0.18
+    max: 0.28
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: soic
+
+provenance:
+  "/pitch":
+    - source: winbond/W25Q128JV@revF
+      page: 69
+      locator: "Section 10.2 table, \"e 1.27 BSC\""
+  "/dimensions/body_width":
+    - source: winbond/W25Q128JV@revF
+      page: 69
+      locator: "Section 10.2 table, \"E1 7.39 / 7.49 / 7.59\" (mm)"
+  "/dimensions/body_length":
+    - source: winbond/W25Q128JV@revF
+      page: 69
+      locator: "Section 10.2 table, \"D 10.08 / 10.31 / 10.49\" (mm)"
+  "/dimensions/body_height":
+    - source: winbond/W25Q128JV@revF
+      page: 69
+      locator: "Section 10.2 table, \"A2 --- / 2.31 / ---\" (mm, nominal only)"
+  "/dimensions/overall_width":
+    - source: winbond/W25Q128JV@revF
+      page: 69
+      locator: "Section 10.2 table, \"E 10.01 / 10.31 / 10.64\" (mm)"
+  "/dimensions/overall_height":
+    - source: winbond/W25Q128JV@revF
+      page: 69
+      locator: "Section 10.2 table, \"A 2.36 / 2.49 / 2.64\" (mm)"
+  "/dimensions/standoff":
+    - source: winbond/W25Q128JV@revF
+      page: 69
+      locator: "Section 10.2 table, \"A1 0.10 / --- / 0.30\" (mm)"
+  "/dimensions/lead_width":
+    - source: winbond/W25Q128JV@revF
+      page: 69
+      locator: "Section 10.2 table, \"b 0.33 / 0.41 / 0.51\" (mm)"
+  "/dimensions/lead_length":
+    - source: winbond/W25Q128JV@revF
+      page: 69
+      locator: "Section 10.2 table, \"L 0.38 / 0.81 / 1.27\" (mm)"
+  "/dimensions/lead_thickness":
+    - source: winbond/W25Q128JV@revF
+      page: 69
+      locator: "Section 10.2 table, \"C 0.18 / 0.23 / 0.28\" (mm)"

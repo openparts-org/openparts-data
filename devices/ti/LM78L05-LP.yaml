@@ -1,0 +1,23 @@
+# LM78L05 5V 100mA fixed linear regulator, LP (3-pin TO-92) pinout.
+# Table 4-1 Pin Functions (page 3), TO-92 column: VOUT = 1, GND = 2,
+# VIN = 3; matches "Figure 4-3. LP Package 3-Pin TO-92 Bottom View".
+# Per the feature list (page 1), TO-92 is offered with the "legacy chip"
+# only.
+schema_version: "0.1"
+kind: device
+id: ti/LM78L05-LP
+
+manufacturer: ti
+category: other
+family: LM78L
+
+pins:
+  "1": { name: VOUT, type: output }
+  "2": { name: GND, type: ground }
+  "3": { name: VIN, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SNVS754O
+      page: 3
+      locator: "Table 4-1 Pin Functions, TO-92 column (VOUT 1, GND 2, VIN 3); Figure 4-3"

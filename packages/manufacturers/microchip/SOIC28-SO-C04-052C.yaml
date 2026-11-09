@@ -1,0 +1,99 @@
+# 28-lead wide SOIC, 7.50 mm body, 1.27 mm pitch. All values from
+# Microchip drawing C04-052C ("28-Lead Plastic Small Outline (SO) -
+# Wide, 7.50 mm Body [SOIC]"), dimension table on sheet 2 = PDF page 31
+# of DS20001952D (MCP23017). The page text uses an encoded font, so the
+# page was rendered and the table read from the image.
+#
+# Copied as printed: BSC values as nominal; min/max-only rows as
+# min/max only. body_height is A2 (MIN 2.05 only, no NOM/MAX printed);
+# overall_height is A (MAX 2.65 only). Chamfer h, L1 (REF) and angles
+# are not modelled.
+schema_version: "0.1"
+kind: package
+id: manufacturers/microchip/SOIC28-SO-C04-052C
+
+family: soic
+lead_count: 28
+
+pitch:
+  nominal: 1.27
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 7.50
+    unit: mm
+  body_length:
+    nominal: 17.90
+    unit: mm
+  body_height:
+    min: 2.05
+    unit: mm
+  overall_width:
+    nominal: 10.30
+    unit: mm
+  overall_height:
+    max: 2.65
+    unit: mm
+  standoff:
+    min: 0.10
+    max: 0.30
+    unit: mm
+  lead_width:
+    min: 0.31
+    max: 0.51
+    unit: mm
+  lead_length:
+    min: 0.40
+    max: 1.27
+    unit: mm
+  lead_thickness:
+    min: 0.18
+    max: 0.33
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: soic
+
+provenance:
+  "/pitch":
+    - source: microchip/DS20001952@revD
+      page: 31
+      locator: "C04-052C sheet 2 table, \"Pitch e 1.27 BSC\""
+  "/dimensions/body_width":
+    - source: microchip/DS20001952@revD
+      page: 31
+      locator: "C04-052C sheet 2 table, \"Molded Package Width E1 7.50 BSC\""
+  "/dimensions/body_length":
+    - source: microchip/DS20001952@revD
+      page: 31
+      locator: "C04-052C sheet 2 table, \"Overall Length D 17.90 BSC\""
+  "/dimensions/body_height":
+    - source: microchip/DS20001952@revD
+      page: 31
+      locator: "C04-052C sheet 2 table, \"Molded Package Thickness A2\" (MIN 2.05 only)"
+  "/dimensions/overall_width":
+    - source: microchip/DS20001952@revD
+      page: 31
+      locator: "C04-052C sheet 2 table, \"Overall Width E 10.30 BSC\""
+  "/dimensions/overall_height":
+    - source: microchip/DS20001952@revD
+      page: 31
+      locator: "C04-052C sheet 2 table, \"Overall Height A\" (MAX 2.65 only)"
+  "/dimensions/standoff":
+    - source: microchip/DS20001952@revD
+      page: 31
+      locator: "C04-052C sheet 2 table, \"Standoff A1 0.10 / - / 0.30\""
+  "/dimensions/lead_width":
+    - source: microchip/DS20001952@revD
+      page: 31
+      locator: "C04-052C sheet 2 table, \"Lead Width b 0.31 / - / 0.51\""
+  "/dimensions/lead_length":
+    - source: microchip/DS20001952@revD
+      page: 31
+      locator: "C04-052C sheet 2 table, \"Foot Length L 0.40 / - / 1.27\""
+  "/dimensions/lead_thickness":
+    - source: microchip/DS20001952@revD
+      page: 31
+      locator: "C04-052C sheet 2 table, \"Lead Thickness c 0.18 / - / 0.33\""

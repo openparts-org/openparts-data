@@ -1,0 +1,25 @@
+# 5.1V (VZ 4.8-5.4V) 350mW Zener diode, SOT23. VZ from the Electrical
+# Characteristics table row "BZX84C5V1" (page 2, marking Z2). Pins from
+# the page-1 "Device Schematic" (rendered at 400 dpi): Zener anode on
+# the bottom-left lead, cathode (bent bar) to the top lead, bottom-right
+# lead unconnected. Pin numbers are not printed; numbers follow this
+# dataset's sot convention (1 bottom-left, 2 bottom-right, 3 top) --
+# position-derived, flagged for review.
+schema_version: "0.1"
+kind: device
+id: diodes/BZX84C5V1
+
+manufacturer: diodes
+category: diode
+family: BZX84C
+
+pins:
+  "1": { name: Anode, type: passive }
+  "2": { name: NC, type: nc }
+  "3": { name: Cathode, type: passive }
+
+provenance:
+  "/pins":
+    - source: diodes/DS18001
+      page: 1
+      locator: "\"Device Schematic\" drawing next to the SOT23 Top View photo; position-derived numbering, see header"

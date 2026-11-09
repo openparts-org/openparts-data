@@ -1,0 +1,98 @@
+# TI D0008A "SOIC - 1.75 mm max height" (drawing 4214825/C 02/2019,
+# JEDEC MS-012 variation AA per its note 5), read from the rendered
+# outline page of SLCS005AH (page 43). Controlling dimensions are
+# inches; the bracketed millimetre values are recorded as printed.
+#
+# The drawing states ranges only for the body (E1 3.81-3.98, D
+# 4.81-5.00) -- no nominal is recorded (canonical-data 20.1). Not the
+# same as standards/SOIC8-3.90x4.90-P1.27 (Microchip C04-057-SN BSC
+# values; e.g. its lead thickness 0.17-0.25 vs this drawing's
+# 0.13-0.25), so not reused. Note: the soic generator currently needs
+# a body nominal, so this package does not render a 3D model/footprint.
+# Pitch "6X .050 [1.27]" is basic. The A1 range is printed ".004-.010
+# [0.11-0.25]" and recorded as printed.
+schema_version: "0.1"
+kind: package
+id: manufacturers/ti/D0008A
+
+family: soic
+lead_count: 8
+
+pitch:
+  nominal: 1.27
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 3.81
+    max: 3.98
+    unit: mm
+  body_length:
+    min: 4.81
+    max: 5.00
+    unit: mm
+  overall_width:
+    min: 5.80
+    max: 6.19
+    unit: mm
+  overall_height:
+    max: 1.75
+    unit: mm
+  standoff:
+    min: 0.11
+    max: 0.25
+    unit: mm
+  lead_width:
+    min: 0.31
+    max: 0.51
+    unit: mm
+  lead_length:
+    min: 0.41
+    max: 1.27
+    unit: mm
+  lead_thickness:
+    min: 0.13
+    max: 0.25
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: soic
+
+provenance:
+  "/pitch":
+    - source: ti/SLCS005AH
+      page: 43
+      locator: "D0008A outline, \"6X .050 [1.27]\" (basic)"
+  "/dimensions/body_width":
+    - source: ti/SLCS005AH
+      page: 43
+      locator: "D0008A outline, body width \".150-.157 [3.81-3.98]\" (note 4)"
+  "/dimensions/body_length":
+    - source: ti/SLCS005AH
+      page: 43
+      locator: "D0008A outline, body length \".189-.197 [4.81-5.00]\" (note 3)"
+  "/dimensions/overall_width":
+    - source: ti/SLCS005AH
+      page: 43
+      locator: "D0008A outline, lead-tip span \".228-.244 TYP [5.80-6.19]\""
+  "/dimensions/overall_height":
+    - source: ti/SLCS005AH
+      page: 43
+      locator: "D0008A outline, \".069 MAX [1.75]\""
+  "/dimensions/standoff":
+    - source: ti/SLCS005AH
+      page: 43
+      locator: "D0008A outline, standoff \".004-.010 [0.11-0.25]\""
+  "/dimensions/lead_width":
+    - source: ti/SLCS005AH
+      page: 43
+      locator: "D0008A outline, \"8X .012-.020 [0.31-0.51]\""
+  "/dimensions/lead_length":
+    - source: ti/SLCS005AH
+      page: 43
+      locator: "D0008A Detail A, foot length \".016-.050 [0.41-1.27]\""
+  "/dimensions/lead_thickness":
+    - source: ti/SLCS005AH
+      page: 43
+      locator: "D0008A outline, lead thickness \".005-.010 TYP [0.13-0.25]\""

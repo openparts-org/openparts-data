@@ -1,0 +1,30 @@
+# 100 nF X7R 16 V +/-10 % 0402 MLCC, packaging code C (cardboard 7"
+# reel, catalog p8). Literal MPN listed on Samsung's product page.
+# lifecycle: the product page shows "Status: Mass Production".
+schema_version: "0.1"
+kind: part
+id: samsung/CL05B104KO5NNNC
+
+manufacturer: samsung
+mpn: CL05B104KO5NNNC
+
+device: samsung/CL05B104KO5
+package: standards/CHIP0402-SAMSUNG-CL05-T5
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - samsung/CL05B104KO5NNN
+  - samsung/MLCC_2512
+
+provenance:
+  "/existence":
+    - source: samsung/CL05B104KO5NNN
+      locator: "\"List of part numbers with package codes\": CL05B104KO5NNNC"
+  "/lifecycle":
+    - source: samsung/CL05B104KO5NNN
+      locator: "Characteristics, \"Status: Mass Production\""

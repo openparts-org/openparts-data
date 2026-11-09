@@ -1,0 +1,33 @@
+# MPN "MCP23017T-E/SO" confirmed from the ordering information of microchip/DS20001952@revD
+# (page 38). Device microchip/MCP23017, package manufacturers/microchip/SOIC28-SO-C04-052C.
+# Package: Microchip drawing C04-052C (DS20001952D pages 30-31).
+# lifecycle: not stated in the datasheet; no first-party lifecycle page
+# was read, so it is recorded as unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP23017T-E-SO
+
+manufacturer: microchip
+mpn: "MCP23017T-E/SO"
+
+device: microchip/MCP23017
+package: manufacturers/microchip/SOIC28-SO-C04-052C
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001952@revD
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001952@revD
+      page: 38
+      locator: "Product Identification System, example e) \"MCP23017T-E/SO: Tape and Reel, Extended Temperature, 28-Lead SOIC package\""
+  "/package":
+    - source: microchip/DS20001952@revD
+      page: 38
+      locator: "Product Identification System, \"SO = Plastic Small Outline, Wide, 7.50 mm Body, SOIC, 28-Lead\" -> drawing C04-052C (pages 30-31)"

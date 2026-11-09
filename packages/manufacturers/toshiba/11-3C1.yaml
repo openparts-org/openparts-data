@@ -1,0 +1,88 @@
+# Toshiba SO4 outline 11-3C1 (4-lead small-outline photocoupler
+# package), read from the rendered drawing on page 1 of the TLP291
+# datasheet (2019-5-27). Millimetres; values with a printed tolerance
+# are recorded as nominal plus the resulting min/max.
+#
+# soic mapping: pins 1-2 on one side, 3-4 on the other (pin 1 opposite
+# pin 4, numbering counter-clockwise in the top view). body_width =
+# 4.55 (+0.25/-0.15) across the rows, body_length = 2.6 (+0.25/-0.15)
+# along the rows, overall_width = lead-tip span 7.0 +/- 0.4, pitch the
+# boxed (basic) 1.27.
+#
+# overall_height 2.1 +/- 0.1 is the seating-plane-to-top height. Not
+# recorded: the parenthesised reference values (0.1) standoff and
+# (0.15) lead thickness; lead length is printed only as "0.5min".
+schema_version: "0.1"
+kind: package
+id: manufacturers/toshiba/11-3C1
+
+family: soic
+lead_count: 4
+
+pitch:
+  nominal: 1.27
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 4.55
+    min: 4.40
+    max: 4.80
+    unit: mm
+  body_length:
+    nominal: 2.6
+    min: 2.45
+    max: 2.85
+    unit: mm
+  overall_width:
+    nominal: 7.0
+    min: 6.6
+    max: 7.4
+    unit: mm
+  overall_height:
+    nominal: 2.1
+    min: 2.0
+    max: 2.2
+    unit: mm
+  lead_width:
+    nominal: 0.38
+    min: 0.28
+    max: 0.48
+    unit: mm
+  lead_length:
+    min: 0.5
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: soic
+
+provenance:
+  "/pitch":
+    - source: toshiba/TLP291-datasheet-en
+      page: 1
+      locator: "Package drawing 11-3C1 (Unit: mm), boxed basic lead pitch \"1.27\""
+  "/dimensions/body_width":
+    - source: toshiba/TLP291-datasheet-en
+      page: 1
+      locator: "Package drawing 11-3C1, top view, body \"4.55 +0.25/-0.15\" across the lead rows"
+  "/dimensions/body_length":
+    - source: toshiba/TLP291-datasheet-en
+      page: 1
+      locator: "Package drawing 11-3C1, top view, body \"2.6 +0.25/-0.15\" along the lead rows"
+  "/dimensions/overall_width":
+    - source: toshiba/TLP291-datasheet-en
+      page: 1
+      locator: "Package drawing 11-3C1, side view, lead-tip span \"7.0 +/- 0.4\""
+  "/dimensions/overall_height":
+    - source: toshiba/TLP291-datasheet-en
+      page: 1
+      locator: "Package drawing 11-3C1, side view, height \"2.1 +/- 0.1\""
+  "/dimensions/lead_width":
+    - source: toshiba/TLP291-datasheet-en
+      page: 1
+      locator: "Package drawing 11-3C1, end view, lead width \"0.38 +/- 0.1\""
+  "/dimensions/lead_length":
+    - source: toshiba/TLP291-datasheet-en
+      page: 1
+      locator: "Package drawing 11-3C1, side view, foot \"0.5min\""

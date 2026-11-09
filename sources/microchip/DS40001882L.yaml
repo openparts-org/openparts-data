@@ -1,0 +1,20 @@
+# Official Microchip "SAM D21/DA1 Family Complete Data Sheet". Downloaded
+# directly from ww1.microchip.com (URL below). document_id/revision from
+# the printed footer "DS40001882L - N" on every page; date from section
+# 48.1 "Revision History": "Revision L - February 2026" (PDF page 1140).
+# PDF page indices equal the printed footer page numbers. Text read with
+# pdftotext -layout (pin-mux and package dimension tables extract as
+# clean text); the QFN48/TQFP48 pinout (page 20) was rendered and read
+# as an image and matched against the text extraction.
+schema_version: "0.1"
+kind: source
+id: microchip/DS40001882@revL
+
+publisher: microchip
+document_id: DS40001882
+document_type: datasheet
+
+revision: "L"
+date: "2026-02"
+
+url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf"

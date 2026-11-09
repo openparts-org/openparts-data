@@ -1,0 +1,150 @@
+# GigaDevice 64-pin LQFP, 10x10mm body, 0.5mm pitch. Values copied
+# from the package-dimension tables of two GigaDevice datasheets, which
+# print identical numbers: GD32VF103 Rev 1.6 Table 5-2 "LQFP64 package dimensions" (PDF page
+# 76) and GD32F303xx Rev 2.0 Table 5-3 "LQFP64 package dimensions" (PDF page 92).
+#
+# Not merged into a standards/ package: GigaDevice's D1/E1 tolerance
+# (9.90-10.10) and b (0.18-0.26) differ from the existing ST-sourced
+# standards LQFP outline, so the dimensions do not match exactly.
+# Where the table gives no "Typ", only min/max are recorded. b and c are
+# the "with plating" values (section B-B); b1/c1 (base metal), A3, eB, L1
+# and theta are not recorded (no canonical field).
+schema_version: "0.1"
+kind: package
+id: manufacturers/gigadevice/LQFP64-10x10-P0.5
+
+family: lqfp
+lead_count: 64
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 10.00
+    min: 9.90
+    max: 10.10
+    unit: mm
+  body_length:
+    nominal: 10.00
+    min: 9.90
+    max: 10.10
+    unit: mm
+  body_height:
+    nominal: 1.40
+    min: 1.35
+    max: 1.45
+    unit: mm
+  overall_width:
+    nominal: 12.00
+    min: 11.80
+    max: 12.20
+    unit: mm
+  overall_length:
+    nominal: 12.00
+    min: 11.80
+    max: 12.20
+    unit: mm
+  overall_height:
+    max: 1.60
+    unit: mm
+  standoff:
+    min: 0.05
+    max: 0.15
+    unit: mm
+  lead_width:
+    min: 0.18
+    max: 0.26
+    unit: mm
+  lead_length:
+    min: 0.45
+    max: 0.75
+    unit: mm
+  lead_thickness:
+    min: 0.13
+    max: 0.17
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lqfp
+
+provenance:
+  "/pitch":
+    - source: gigadevice/GD32VF103_Datasheet@rev1.6
+      page: 76
+      locator: 'Table 5-2 "LQFP64 package dimensions", symbol "e"'
+    - source: gigadevice/GD32F303xx_Datasheet@rev2.0
+      page: 92
+      locator: 'Table 5-3 "LQFP64 package dimensions", symbol "e"'
+  "/dimensions/body_width":
+    - source: gigadevice/GD32VF103_Datasheet@rev1.6
+      page: 76
+      locator: 'Table 5-2 "LQFP64 package dimensions", symbol "E1"'
+    - source: gigadevice/GD32F303xx_Datasheet@rev2.0
+      page: 92
+      locator: 'Table 5-3 "LQFP64 package dimensions", symbol "E1"'
+  "/dimensions/body_length":
+    - source: gigadevice/GD32VF103_Datasheet@rev1.6
+      page: 76
+      locator: 'Table 5-2 "LQFP64 package dimensions", symbol "D1"'
+    - source: gigadevice/GD32F303xx_Datasheet@rev2.0
+      page: 92
+      locator: 'Table 5-3 "LQFP64 package dimensions", symbol "D1"'
+  "/dimensions/body_height":
+    - source: gigadevice/GD32VF103_Datasheet@rev1.6
+      page: 76
+      locator: 'Table 5-2 "LQFP64 package dimensions", symbol "A2"'
+    - source: gigadevice/GD32F303xx_Datasheet@rev2.0
+      page: 92
+      locator: 'Table 5-3 "LQFP64 package dimensions", symbol "A2"'
+  "/dimensions/overall_width":
+    - source: gigadevice/GD32VF103_Datasheet@rev1.6
+      page: 76
+      locator: 'Table 5-2 "LQFP64 package dimensions", symbol "E"'
+    - source: gigadevice/GD32F303xx_Datasheet@rev2.0
+      page: 92
+      locator: 'Table 5-3 "LQFP64 package dimensions", symbol "E"'
+  "/dimensions/overall_length":
+    - source: gigadevice/GD32VF103_Datasheet@rev1.6
+      page: 76
+      locator: 'Table 5-2 "LQFP64 package dimensions", symbol "D"'
+    - source: gigadevice/GD32F303xx_Datasheet@rev2.0
+      page: 92
+      locator: 'Table 5-3 "LQFP64 package dimensions", symbol "D"'
+  "/dimensions/overall_height":
+    - source: gigadevice/GD32VF103_Datasheet@rev1.6
+      page: 76
+      locator: 'Table 5-2 "LQFP64 package dimensions", symbol "A" (max only)'
+    - source: gigadevice/GD32F303xx_Datasheet@rev2.0
+      page: 92
+      locator: 'Table 5-3 "LQFP64 package dimensions", symbol "A" (max only)'
+  "/dimensions/standoff":
+    - source: gigadevice/GD32VF103_Datasheet@rev1.6
+      page: 76
+      locator: 'Table 5-2 "LQFP64 package dimensions", symbol "A1" (no typ)'
+    - source: gigadevice/GD32F303xx_Datasheet@rev2.0
+      page: 92
+      locator: 'Table 5-3 "LQFP64 package dimensions", symbol "A1" (no typ)'
+  "/dimensions/lead_width":
+    - source: gigadevice/GD32VF103_Datasheet@rev1.6
+      page: 76
+      locator: 'Table 5-2 "LQFP64 package dimensions", symbol "b" (no typ)'
+    - source: gigadevice/GD32F303xx_Datasheet@rev2.0
+      page: 92
+      locator: 'Table 5-3 "LQFP64 package dimensions", symbol "b" (no typ)'
+  "/dimensions/lead_length":
+    - source: gigadevice/GD32VF103_Datasheet@rev1.6
+      page: 76
+      locator: 'Table 5-2 "LQFP64 package dimensions", symbol "L" (no typ)'
+    - source: gigadevice/GD32F303xx_Datasheet@rev2.0
+      page: 92
+      locator: 'Table 5-3 "LQFP64 package dimensions", symbol "L" (no typ)'
+  "/dimensions/lead_thickness":
+    - source: gigadevice/GD32VF103_Datasheet@rev1.6
+      page: 76
+      locator: 'Table 5-2 "LQFP64 package dimensions", symbol "c" (no typ)'
+    - source: gigadevice/GD32F303xx_Datasheet@rev2.0
+      page: 92
+      locator: 'Table 5-3 "LQFP64 package dimensions", symbol "c" (no typ)'

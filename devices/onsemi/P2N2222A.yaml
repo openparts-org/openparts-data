@@ -1,0 +1,26 @@
+# NPN amplifier transistor, TO-92 CASE 29 STYLE 17. Pins from the page-1
+# symbol labels (COLLECTOR 1, BASE 2, EMITTER 3), cross-checked against
+# the embedded CASE 29-11 style list on page 7: "STYLE 17: PIN 1.
+# COLLECTOR 2. BASE 3. EMITTER" -- match. Note this is NOT the 2N3904
+# EBC order.
+schema_version: "0.1"
+kind: device
+id: onsemi/P2N2222A
+
+manufacturer: onsemi
+category: transistor
+family: P2N2222A
+
+pins:
+  "1": { name: Collector, type: passive }
+  "2": { name: Base, type: passive }
+  "3": { name: Emitter, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/P2N2222A-D
+      page: 1
+      locator: "Symbol labels \"COLLECTOR 1\", \"BASE 2\", \"EMITTER 3\"; \"CASE 29 STYLE 17\""
+    - source: onsemi/P2N2222A-D
+      page: 7
+      locator: "CASE 29-11 style list, \"STYLE 17: PIN 1. COLLECTOR 2. BASE 3. EMITTER\""

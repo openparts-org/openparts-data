@@ -1,0 +1,22 @@
+# MCP9700 linear active thermistor IC (analog temperature sensor), SOT-23-3
+# and TO-92-3 pin numbering (both columns are identical; the SC70-5
+# numbering differs and is not covered). Transcribed from Table 3-1
+# "Pin Function Table" (page 9), SOT-23 column.
+schema_version: "0.1"
+kind: device
+id: microchip/MCP9700
+
+manufacturer: microchip
+category: other
+family: MCP970X
+
+pins:
+  "1": { name: VDD, type: power }
+  "2": { name: VOUT, type: analog }
+  "3": { name: GND, type: ground }
+
+provenance:
+  "/pins":
+    - source: microchip/DS20001942@revL
+      page: 9
+      locator: "Table 3-1 \"Pin Function Table\", SOT-23 column"

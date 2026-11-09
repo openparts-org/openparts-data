@@ -1,0 +1,103 @@
+# 44-lead VQFN, 7x7x1mm body, 0.5mm pitch, 5.2mm exposed pad -- Atmel
+# drawing "PW" rev H (02/17/2012), "Refer to JEDEC Drawing MO-220,
+# Variation VKKD-1". Values from the COMMON DIMENSIONS table in
+# ATmega16U4/32U4 datasheet 7766J, section 34.2 "QFN44", page 424 (read
+# from a rendered image). A has only min 0.80 / max 1.00 (no nominal) and
+# is recorded as body_height (no separate mold thickness is given);
+# A1 has only nominal 0.02 / max 0.05.
+schema_version: "0.1"
+kind: package
+id: standards/QFN44-7x7-P0.5-EP5.2
+
+family: qfn
+lead_count: 44
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 7.0
+    min: 6.9
+    max: 7.1
+    unit: mm
+  body_length:
+    nominal: 7.0
+    min: 6.9
+    max: 7.1
+    unit: mm
+  body_height:
+    min: 0.8
+    max: 1.0
+    unit: mm
+  standoff:
+    nominal: 0.02
+    max: 0.05
+    unit: mm
+  lead_width:
+    nominal: 0.23
+    min: 0.18
+    max: 0.3
+    unit: mm
+  lead_length:
+    nominal: 0.55
+    min: 0.45
+    max: 0.65
+    unit: mm
+  lead_thickness:
+    nominal: 0.2
+    unit: mm
+  exposed_pad:
+    width:
+      nominal: 5.2
+      min: 5.0
+      max: 5.4
+      unit: mm
+    length:
+      nominal: 5.2
+      min: 5.0
+      max: 5.4
+      unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/pitch":
+    - source: microchip/7766@revJ
+      page: 424
+      locator: "Section 34.2 QFN44, COMMON DIMENSIONS, symbol e (0.50 BSC)"
+  "/dimensions/body_width":
+    - source: microchip/7766@revJ
+      page: 424
+      locator: "Section 34.2 QFN44, COMMON DIMENSIONS, symbol D/E"
+  "/dimensions/body_length":
+    - source: microchip/7766@revJ
+      page: 424
+      locator: "Section 34.2 QFN44, COMMON DIMENSIONS, symbol D/E"
+  "/dimensions/body_height":
+    - source: microchip/7766@revJ
+      page: 424
+      locator: "Section 34.2 QFN44, COMMON DIMENSIONS, symbol A (no nominal)"
+  "/dimensions/standoff":
+    - source: microchip/7766@revJ
+      page: 424
+      locator: "Section 34.2 QFN44, COMMON DIMENSIONS, symbol A1 (no min)"
+  "/dimensions/lead_width":
+    - source: microchip/7766@revJ
+      page: 424
+      locator: "Section 34.2 QFN44, COMMON DIMENSIONS, symbol b"
+  "/dimensions/lead_length":
+    - source: microchip/7766@revJ
+      page: 424
+      locator: "Section 34.2 QFN44, COMMON DIMENSIONS, symbol L"
+  "/dimensions/lead_thickness":
+    - source: microchip/7766@revJ
+      page: 424
+      locator: "Section 34.2 QFN44, COMMON DIMENSIONS, symbol A3 (0.20 REF)"
+  "/dimensions/exposed_pad":
+    - source: microchip/7766@revJ
+      page: 424
+      locator: "Section 34.2 QFN44, COMMON DIMENSIONS, symbol D2/E2"

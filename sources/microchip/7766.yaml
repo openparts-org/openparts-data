@@ -1,0 +1,20 @@
+# Atmel (now Microchip) ATmega16U4/ATmega32U4 datasheet. Downloaded
+# directly from ww1.microchip.com (URL below). `document_id`/`revision`
+# from the printed footer stamp on every page,
+# "Atmel-7766J-USB-ATmega16U4/32U4-Datasheet_04/2016" (document 7766,
+# revision J, April 2016). Text read with pdftotext -layout; the pinout
+# (Figure 1-1, page 3) and both package drawings (pages 423-424) were
+# rendered to images and read, since their labels are rotated/graphic.
+# PDF page indices equal the printed page numbers.
+schema_version: "0.1"
+kind: source
+id: microchip/7766@revJ
+
+publisher: microchip
+document_id: "7766"
+document_type: datasheet
+
+revision: "J"
+date: "2016-04"
+
+url: "https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf"

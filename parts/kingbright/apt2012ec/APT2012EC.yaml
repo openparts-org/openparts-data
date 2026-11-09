@@ -1,0 +1,26 @@
+# APT2012EC: High Efficiency Red (GaAsP/GaP) chip LED, Kingbright datasheet DSAD0943.
+# lifecycle unknown: no production-status statement in the datasheet.
+schema_version: "0.1"
+kind: part
+id: "kingbright/APT2012EC"
+
+manufacturer: kingbright
+mpn: "APT2012EC"
+
+device: kingbright/APT2012EC
+package: manufacturers/kingbright/CHIP-KINGBRIGHT-APT2012
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - kingbright/DSAD0943
+
+provenance:
+  "/existence":
+    - source: kingbright/DSAD0943
+      page: 1
+      locator: "Title and SELECTION GUIDE table, Part Number column"

@@ -1,0 +1,61 @@
+# Abracon ABS07, 3.2x1.5mm 2-terminal SMD 32.768kHz crystal. Confirmed
+# 2-pad from the page-4 "Mechanical Dimensions" drawing (rendered):
+# bottom view shows exactly two hatched terminals, and the
+# "CONNECTIONS" symbol is a plain 2-terminal crystal (no GND pad).
+#   body 0.126+/-0.004 (3.2+/-0.1) x 0.059+/-0.004 (1.50+/-0.1)
+#   H: "0.9 mm max." for ABS07 (0.65 max is the separate ABS071)
+#   terminal 0.024 (0.6) "2x" along the long axis, no tolerance
+# Height: only a max is stated, so no nominal is recorded (the chip
+# generator will fall back to its own default height when drawing).
+# construction left out: page 1 says "Seam sealed ceramic package",
+# which is neither a fired MLCC-style ceramic body nor a metal can in
+# this dataset's vocabulary.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP-ABRACON-ABS07
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 3.2
+    min: 3.1
+    max: 3.3
+    unit: mm
+  body_width:
+    nominal: 1.5
+    min: 1.4
+    max: 1.6
+    unit: mm
+  body_height:
+    max: 0.9
+    unit: mm
+  lead_length:
+    nominal: 0.6
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: abracon/ABS07
+      page: 4
+      locator: "Mechanical Dimensions, top view: \"0.126+/-0.004 (3.2+/-0.1)\""
+  "/dimensions/body_width":
+    - source: abracon/ABS07
+      page: 4
+      locator: "Mechanical Dimensions, top view: \"0.059+/-0.004 (1.50+/-0.1)\""
+  "/dimensions/body_height":
+    - source: abracon/ABS07
+      page: 4
+      locator: "Mechanical Dimensions, Part Number / Height (H) table: ABS07 \"0.9 mm max.\""
+  "/dimensions/lead_length":
+    - source: abracon/ABS07
+      page: 4
+      locator: "Mechanical Dimensions, bottom view: terminal length \"0.024 2x (0.6)\""

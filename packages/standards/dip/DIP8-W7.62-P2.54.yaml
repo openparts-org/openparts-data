@@ -1,0 +1,90 @@
+# 8-lead 300 mil plastic DIP. Values from Atmel/Microchip drawing 8P3
+# Rev B ("8P3, 8-lead, 0.300\" Wide Body, Plastic Dual In-line Package
+# (PDIP)"), section 26.1 of datasheet 2586Q, page 207. Note 1 of that
+# drawing: "refer to JEDEC Drawing MS-001, Variation BA".
+#
+# The table is in inches; values below are exact unit conversions
+# (x 25.4) of the printed MIN/NOM/MAX, nothing else.
+#
+# `dip` generator convention: body_width is the ROW SPACING, taken from
+# "eA 0.300 BSC" (= 7.62 mm), not the molded width E1 (.240/.250/.280).
+# body_length = D (.355/.365/.400), body_height = A2 (.115/.130/.195),
+# overall_height = A (max .210 only). The drawing gives no A1, so no
+# standoff. L (tip to seating plane) is a through-hole lead length, not
+# the gull-wing foot length `lead_length` means; left out.
+#
+# Also used by TI parts in the P (R-PDIP-T8) package: TI MPDI001
+# (4040082/E) is likewise "within JEDEC MS-001 variation BA". See the
+# part files for the comparison.
+schema_version: "0.1"
+kind: package
+id: standards/DIP8-W7.62-P2.54
+
+family: dip
+lead_count: 8
+
+pitch:
+  nominal: 2.54
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 7.62
+    unit: mm
+  body_length:
+    nominal: 9.271
+    min: 9.017
+    max: 10.16
+    unit: mm
+  body_height:
+    nominal: 3.302
+    min: 2.921
+    max: 4.953
+    unit: mm
+  overall_height:
+    max: 5.334
+    unit: mm
+  lead_width:
+    nominal: 0.4572
+    min: 0.3556
+    max: 0.5588
+    unit: mm
+  lead_thickness:
+    nominal: 0.254
+    min: 0.2032
+    max: 0.3556
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: dip
+
+provenance:
+  "/pitch":
+    - source: microchip/2586@revQ
+      page: 207
+      locator: "8P3 \"COMMON DIMENSIONS\" (inches), \"e 0.100 BSC\" -> 2.54 mm"
+  "/dimensions/body_width":
+    - source: microchip/2586@revQ
+      page: 207
+      locator: "8P3 \"COMMON DIMENSIONS\" (inches), \"eA 0.300 BSC\" (row spacing, note 4) -> 7.62 mm; dip generator's body_width is the row spacing"
+  "/dimensions/body_length":
+    - source: microchip/2586@revQ
+      page: 207
+      locator: "8P3 \"COMMON DIMENSIONS\" (inches), \"D 0.355 / 0.365 / 0.400\" (note 3)"
+  "/dimensions/body_height":
+    - source: microchip/2586@revQ
+      page: 207
+      locator: "8P3 \"COMMON DIMENSIONS\" (inches), \"A2 0.115 / 0.130 / 0.195\""
+  "/dimensions/overall_height":
+    - source: microchip/2586@revQ
+      page: 207
+      locator: "8P3 \"COMMON DIMENSIONS\" (inches), \"A\" (MAX 0.210 only)"
+  "/dimensions/lead_width":
+    - source: microchip/2586@revQ
+      page: 207
+      locator: "8P3 \"COMMON DIMENSIONS\" (inches), \"b 0.014 / 0.018 / 0.022\""
+  "/dimensions/lead_thickness":
+    - source: microchip/2586@revQ
+      page: 207
+      locator: "8P3 \"COMMON DIMENSIONS\" (inches), \"c 0.008 / 0.010 / 0.014\""

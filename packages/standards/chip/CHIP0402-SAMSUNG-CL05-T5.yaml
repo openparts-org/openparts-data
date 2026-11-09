@@ -1,0 +1,51 @@
+# Samsung Electro-Mechanics CL05B104KO5NNN (size code "05" = 0402/1005 inch/mm per the
+# catalog's SIZE CODE table, samsung/MLCC_2512 p6), thickness code
+# "5". L/W from the per-part product page (the catalog has no L/W
+# table for standard parts); T from both the product page and the
+# catalog THICKNESS CODE table (p7), which agree. Bandwidth (BW) is not
+# given on the product page or for standard parts in the catalog, so
+# lead_length is left out.
+schema_version: "0.1"
+kind: package
+id: standards/CHIP0402-SAMSUNG-CL05-T5
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.0
+    min: 0.95
+    max: 1.05
+    unit: mm
+  body_width:
+    nominal: 0.5
+    min: 0.45
+    max: 0.55
+    unit: mm
+  body_height:
+    nominal: 0.5
+    min: 0.45
+    max: 0.55
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: samsung/CL05B104KO5NNN
+      locator: "Size table, \"L Size\": \"1.00+/-0.05mm\""
+  "/dimensions/body_width":
+    - source: samsung/CL05B104KO5NNN
+      locator: "Size table, \"W Size\": \"0.50+/-0.05mm\""
+  "/dimensions/body_height":
+    - source: samsung/CL05B104KO5NNN
+      locator: "Size table, \"T Size\": \"0.50+/-0.05mm\""
+    - source: samsung/MLCC_2512
+      page: 7
+      locator: "Part Numbering, 7 THICKNESS CODE table, size 0402/1005, code 5: 0.50 +/-0.05 (the unstarred row; the starred +0.0/-0.1 row is footnoted as applying only to L/Y/F in the 12th code)"

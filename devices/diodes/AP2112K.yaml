@@ -1,0 +1,27 @@
+# 600mA CMOS LDO with enable, SOT25 pinout. From DS39724 Rev 2-2 "Pin
+# Descriptions" table (page 2, SOT25 column: VIN 1, GND 2, EN 3, VOUT 5)
+# and "Pin Assignments" SOT25 top view (page 1, which labels pin 4
+# "NC"). The SOT89-5 and SO-8 pinouts differ.
+schema_version: "0.1"
+kind: device
+id: diodes/AP2112K
+
+manufacturer: diodes
+category: other
+family: AP2112
+
+pins:
+  "1": { name: VIN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: EN, type: input }
+  "4": { name: NC, type: nc }
+  "5": { name: VOUT, type: power }
+
+provenance:
+  "/pins":
+    - source: diodes/DS39724
+      page: 2
+      locator: "\"Pin Descriptions\" table, SOT25 column"
+    - source: diodes/DS39724
+      page: 1
+      locator: "\"Pin Assignments\", SOT25 (Top View)"

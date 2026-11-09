@@ -1,0 +1,30 @@
+# P2N2222AG: "TO-92, 5000 Units/Bulk" from the page-1 ORDERING
+# INFORMATION table (bulk = the straight-lead option of CASE 29-11).
+# Reuses TO92-BC547: that package's body ranges (A 4.45-5.20, B
+# 4.32-5.33, C 3.18-4.19) equal the STRAIGHT LEAD / BULK PACK table on
+# page 6 of this document, and pitch G 1.15-1.39 brackets its 1.27.
+# No lifecycle statement in the datasheet.
+schema_version: "0.1"
+kind: part
+id: onsemi/P2N2222AG
+
+manufacturer: onsemi
+mpn: P2N2222AG
+
+device: onsemi/P2N2222A
+package: standards/TO92-BC547
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/P2N2222A-D
+
+provenance:
+  "/existence":
+    - source: onsemi/P2N2222A-D
+      page: 1
+      locator: "ORDERING INFORMATION table: \"P2N2222AG | TO-92 | 5000 Units/Bulk\""

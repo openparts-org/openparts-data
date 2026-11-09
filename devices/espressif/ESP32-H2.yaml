@@ -1,0 +1,75 @@
+# ESP32-H2 (QFN32) pinout from the ESP32-H2 datasheet v1.3, Table 2-1
+# "Pin Overview" (pages 13-14), cross-checked against Figure 2-1 "Pin
+# Layout" (page 12; the figure misprints pin 13 as "GPO11", the table
+# says GPIO11) and Table 2-7 "Power Pins" (page 20) for pin 33 = GND,
+# "External ground connection" (the exposed pad; pin key "EP").
+# Both orderable variants in Table 1-1 (ESP32-H2FH2S, ESP32-H2FH4S) use
+# this one QFN32 pin table; they differ only in in-package flash size,
+# so both Parts share this Device.
+#
+# `alternate_functions`: the pin's GPIO number from Table 2-3 "IO MUX
+# Pin Functions" (pages 15-16) where the pin name is not already GPIOn,
+# plus the analog function from Table 2-5 "Analog Functions" (page 17:
+# ADC1_CHx, ZCDx, USB_D-/USB_D+). The FSPI IO MUX functions are not
+# listed. XTAL_32K_P/N are typed `io` because Table 2-1 types them IO
+# (GPIO13/GPIO14); XTAL_P/N are `clock` (Table 2-6 analog pins, no GPIO).
+schema_version: "0.1"
+kind: device
+id: espressif/ESP32-H2
+
+manufacturer: espressif
+category: microcontroller
+family: ESP32-H2
+
+pins:
+  "1":  { name: VDD3P3, type: power }
+  "2":  { name: VDD3P3, type: power }
+  "3":  { name: GPIO0, type: io }
+  "4":  { name: GPIO1, type: io, alternate_functions: [ADC1_CH0] }
+  "5":  { name: MTMS, type: io, alternate_functions: [GPIO2, ADC1_CH1] }
+  "6":  { name: MTDO, type: io, alternate_functions: [GPIO3, ADC1_CH2] }
+  "7":  { name: MTCK, type: io, alternate_functions: [GPIO4, ADC1_CH3] }
+  "8":  { name: MTDI, type: io, alternate_functions: [GPIO5, ADC1_CH4] }
+  "9":  { name: VDDPST1, type: power }
+  "10": { name: GPIO8, type: io }
+  "11": { name: GPIO9, type: io }
+  "12": { name: GPIO10, type: io, alternate_functions: [ZCD0] }
+  "13": { name: GPIO11, type: io, alternate_functions: [ZCD1] }
+  "14": { name: GPIO12, type: io }
+  "15": { name: XTAL_32K_P, type: io, alternate_functions: [GPIO13] }
+  "16": { name: XTAL_32K_N, type: io, alternate_functions: [GPIO14] }
+  "17": { name: CHIP_EN, type: reset }
+  "18": { name: VBAT, type: power }
+  "19": { name: VDDA_PMU, type: power }
+  "20": { name: VDDPST2, type: power }
+  "21": { name: GPIO22, type: io }
+  "22": { name: U0RXD, type: io, alternate_functions: [GPIO23] }
+  "23": { name: U0TXD, type: io, alternate_functions: [GPIO24] }
+  "24": { name: GPIO25, type: io }
+  "25": { name: GPIO26, type: io, alternate_functions: [USB_D-] }
+  "26": { name: GPIO27, type: io, alternate_functions: [USB_D+] }
+  "27": { name: VDD3P3, type: power }
+  "28": { name: XTAL_N, type: clock }
+  "29": { name: XTAL_P, type: clock }
+  "30": { name: VDD3P3, type: power }
+  "31": { name: VDD3P3, type: power }
+  "32": { name: ANT, type: analog }
+  "EP": { name: GND, type: ground }
+
+provenance:
+  "/pins/1/name":
+    - source: espressif/esp32-h2_datasheet_en@rev1.3
+      page: 13
+      locator: "Table 2-1 \"Pin Overview\", pins 1-14"
+  "/pins/15/name":
+    - source: espressif/esp32-h2_datasheet_en@rev1.3
+      page: 14
+      locator: "Table 2-1 \"Pin Overview\" (cont'd), pins 15-33"
+  "/pins/5/alternate_functions":
+    - source: espressif/esp32-h2_datasheet_en@rev1.3
+      page: 15
+      locator: "Table 2-3 \"IO MUX Pin Functions\" (IO MUX/GPIO name column) and Table 2-5 \"Analog Functions\" (page 17)"
+  "/pins/EP/name":
+    - source: espressif/esp32-h2_datasheet_en@rev1.3
+      page: 20
+      locator: "Table 2-7 \"Power Pins\", pin 33 \"GND -- External ground connection\""

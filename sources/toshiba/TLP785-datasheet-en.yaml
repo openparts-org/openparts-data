@@ -1,0 +1,21 @@
+# Official Toshiba TLP785/TLP785F datasheet (English), downloaded from
+# the "Data sheet/English" link on Toshiba's TLP785 product page
+# (docget.jsp?did=10569). Toshiba prints no document number or revision
+# letter; the revision is identified by the date in every page footer,
+# "2026-04-07" ("Start of commercial production 2010-11" on page 1). 15
+# PDF pages; read with pdftotext -layout. Package drawings on page 1
+# (11-5L1 DIP4) and page 4 (11-5L106 LF6 surface-mount lead form) are
+# vector art and were rendered (pdftoppm, 300-400 dpi) and read as
+# images. Page numbers are PDF page indices.
+schema_version: "0.1"
+kind: source
+id: toshiba/TLP785-datasheet-en
+
+publisher: toshiba
+document_id: TLP785_datasheet_en
+document_type: datasheet
+
+revision: "2026-04-07"
+date: "2026-04-07"
+
+url: "https://toshiba.semicon-storage.com/info/docget.jsp?did=10569&prodName=TLP785"

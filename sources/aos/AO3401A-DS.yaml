@@ -1,0 +1,15 @@
+# Official AOS datasheet (5 pages), read via pdftotext and a page-1
+# render (pdftoppm) for the SOT23 top-view pin drawing. No package
+# outline and no ordering table in this document.
+schema_version: "0.1"
+kind: source
+id: aos/AO3401A-DS
+
+publisher: aos
+document_id: AO3401A
+document_type: datasheet
+
+revision: "3.1"
+date: "2023-12"
+
+url: "https://www.aosmd.com/res/datasheets/AO3401A.pdf"

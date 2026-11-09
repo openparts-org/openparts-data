@@ -1,0 +1,23 @@
+# Official TI datasheet for TPS562200/TPS563200. Downloaded from the TI
+# symlink URL below; revision read from the page header "SLVSCB0E -
+# JANUARY 2014 - REVISED MAY 2023". 36 PDF pages; read with pdftotext
+# -layout, the DDC0006A outline (page 33, drawing 4214841/E 08/2024)
+# also rendered and read as an image. Page numbers are PDF page indices.
+#
+# Inconsistency inside this document: the page-1 "Device Information"
+# table lists the package as "DRL (SOT-236, 6)", while the pin diagram
+# (page 4, "DDC Package 6 Pin (SOT)"), the orderable addendum (page 29,
+# "SOT-23-THIN (DDC) | 6") and the only outline drawing (DDC0006A) all
+# say DDC. The parts here follow the ordering table and the drawing.
+schema_version: "0.1"
+kind: source
+id: ti/SLVSCB0E
+
+publisher: ti
+document_id: SLVSCB0E
+document_type: datasheet
+
+revision: "E"
+date: "2023-05"
+
+url: "https://www.ti.com/lit/ds/symlink/tps563200.pdf"

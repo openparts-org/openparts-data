@@ -1,0 +1,45 @@
+# 8-bit bidirectional level-shifting voltage translator. Pin map for the
+# 20-pin PW (TSSOP) package read from Table 4-1 "Pin Functions" (SCES642L
+# page 4, column "PW, RGY, DGS") and cross-checked against Figure 4-3
+# "PW or DGS Package, 20-Pin TSSOP or 20-Pin VSSOP (Top View)" (page 3):
+# all 20 pins match. The same numbering applies to DGS and RGY; the RGY
+# thermal pad and the ZXY/NME ball packages are not covered here.
+# Types from the table's TYPE column (I/O -> io, I -> input, P -> power).
+schema_version: "0.1"
+kind: device
+id: ti/TXS0108E
+
+manufacturer: ti
+category: other
+family: TXS0108E
+
+pins:
+  "1":  { name: A1, type: io }
+  "2":  { name: VCCA, type: power }
+  "3":  { name: A2, type: io }
+  "4":  { name: A3, type: io }
+  "5":  { name: A4, type: io }
+  "6":  { name: A5, type: io }
+  "7":  { name: A6, type: io }
+  "8":  { name: A7, type: io }
+  "9":  { name: A8, type: io }
+  "10": { name: OE, type: input }
+  "11": { name: GND, type: ground }
+  "12": { name: B8, type: io }
+  "13": { name: B7, type: io }
+  "14": { name: B6, type: io }
+  "15": { name: B5, type: io }
+  "16": { name: B4, type: io }
+  "17": { name: B3, type: io }
+  "18": { name: B2, type: io }
+  "19": { name: VCCB, type: power }
+  "20": { name: B1, type: io }
+
+provenance:
+  "/pins":
+    - source: ti/SCES642L
+      page: 4
+      locator: "Table 4-1 \"Pin Functions\", column \"PW, RGY, DGS\""
+    - source: ti/SCES642L
+      page: 3
+      locator: "Figure 4-3 \"PW or DGS Package, 20-Pin TSSOP or 20-Pin VSSOP (Top View)\" (cross-check, all 20 pins matched)"

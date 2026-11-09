@@ -1,0 +1,30 @@
+# 10 uF X5R 10 V +/-10 % 0603 MLCC, packaging code C (cardboard 7"
+# reel, catalog p8). Literal MPN listed on Samsung's product page.
+# lifecycle: the product page shows "Status: Mass Production".
+schema_version: "0.1"
+kind: part
+id: samsung/CL10A106KP8NNNC
+
+manufacturer: samsung
+mpn: CL10A106KP8NNNC
+
+device: samsung/CL10A106KP8
+package: standards/CHIP0603-SAMSUNG-CL10-T8
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - samsung/CL10A106KP8NNN
+  - samsung/MLCC_2512
+
+provenance:
+  "/existence":
+    - source: samsung/CL10A106KP8NNN
+      locator: "\"List of part numbers with package codes\": CL10A106KP8NNNC"
+  "/lifecycle":
+    - source: samsung/CL10A106KP8NNN
+      locator: "Characteristics, \"Status: Mass Production\""

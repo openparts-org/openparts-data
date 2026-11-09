@@ -1,0 +1,109 @@
+# 5-lead SOT-23. Values from Microchip drawing C04-091-OT Rev F
+# ("5-Lead Plastic Small Outline Transistor (OT) [SOT23]"), dimension
+# table on DS20001984H page 23, copied as printed (mm; BSC values as
+# nominal, min/max-only rows as min/max only).
+#
+# Pin numbering per the top view on page 22 and the "Package Types"
+# figure on page 1: pins 1-2-3 along one long edge left to right, pin 4
+# opposite pin 3, pin 5 ("N") opposite pin 1 (counter-clockwise), the
+# two upper leads at e1 = 1.90 BSC apart. lead_layout [3, 2] records the
+# 3/2 split only.
+#
+# Field mapping for the `sot` generator (leads exit across
+# body_length): body_length = E1 1.60 (molded width across the rows),
+# body_width = D 2.90, overall_length = E 2.80 (lead-tip span).
+schema_version: "0.1"
+kind: package
+id: standards/SOT23-5-2.90x1.60-P0.95
+
+family: sot
+lead_count: 5
+lead_layout: [3, 2]
+
+pitch:
+  nominal: 0.95
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 2.90
+    unit: mm
+  body_length:
+    nominal: 1.60
+    unit: mm
+  body_height:
+    min: 0.89
+    max: 1.30
+    unit: mm
+  overall_length:
+    nominal: 2.80
+    unit: mm
+  overall_height:
+    min: 0.90
+    max: 1.45
+    unit: mm
+  standoff:
+    max: 0.15
+    unit: mm
+  lead_width:
+    min: 0.20
+    max: 0.51
+    unit: mm
+  lead_length:
+    min: 0.30
+    max: 0.60
+    unit: mm
+  lead_thickness:
+    min: 0.08
+    max: 0.26
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: sot
+
+provenance:
+  "/pitch":
+    - source: microchip/DS20001984@revH
+      page: 23
+      locator: "C04-091-OT Rev F table, \"Pitch e 0.95 BSC\" (outside lead pitch e1 1.90 BSC)"
+  "/lead_layout":
+    - source: microchip/DS20001984@revH
+      page: 22
+      locator: "C04-091-OT Rev F sheet 1 TOP VIEW: three leads (1, 2, ...) on one edge, two (incl. N) on the other"
+  "/dimensions/body_width":
+    - source: microchip/DS20001984@revH
+      page: 23
+      locator: "C04-091-OT Rev F table, \"Overall Length D 2.90 BSC\""
+  "/dimensions/body_length":
+    - source: microchip/DS20001984@revH
+      page: 23
+      locator: "C04-091-OT Rev F table, \"Molded Package Width E1 1.60 BSC\""
+  "/dimensions/body_height":
+    - source: microchip/DS20001984@revH
+      page: 23
+      locator: "C04-091-OT Rev F table, \"Molded Package Thickness A2\" (Min 0.89 / Max 1.30)"
+  "/dimensions/overall_length":
+    - source: microchip/DS20001984@revH
+      page: 23
+      locator: "C04-091-OT Rev F table, \"Overall Width E 2.80 BSC\" (lead-tip span across the rows)"
+  "/dimensions/overall_height":
+    - source: microchip/DS20001984@revH
+      page: 23
+      locator: "C04-091-OT Rev F table, \"Overall Height A\" (Min 0.90 / Max 1.45)"
+  "/dimensions/standoff":
+    - source: microchip/DS20001984@revH
+      page: 23
+      locator: "C04-091-OT Rev F table, \"Standoff A1\" (Max 0.15 only)"
+  "/dimensions/lead_width":
+    - source: microchip/DS20001984@revH
+      page: 23
+      locator: "C04-091-OT Rev F table, \"Lead Width b\" (Min 0.20 / Max 0.51)"
+  "/dimensions/lead_length":
+    - source: microchip/DS20001984@revH
+      page: 23
+      locator: "C04-091-OT Rev F table, \"Foot Length L\" (Min 0.30 / Max 0.60)"
+  "/dimensions/lead_thickness":
+    - source: microchip/DS20001984@revH
+      page: 23
+      locator: "C04-091-OT Rev F table, \"Lead Thickness c\" (Min 0.08 / Max 0.26)"

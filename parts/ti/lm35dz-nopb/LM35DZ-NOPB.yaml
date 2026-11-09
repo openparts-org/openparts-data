@@ -1,0 +1,31 @@
+# LM35DZ/NOPB: TO-92 (LP), 3 pins, 1800 / BULK, op temp 0 to 100 C,
+# status "Active", from the PACKAGE OPTION ADDENDUM (dated 18-Sep-2026)
+# appended to SNIS159H. Bulk = straight-lead option (LP0003A note 5a).
+schema_version: "0.1"
+kind: part
+id: ti/LM35DZ/NOPB
+
+manufacturer: ti
+mpn: LM35DZ/NOPB
+
+device: ti/LM35-LP
+package: standards/TO92-TI-LP0003A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SNIS159H
+
+provenance:
+  "/existence":
+    - source: ti/SNIS159H
+      page: 23
+      locator: "PACKAGE OPTION ADDENDUM, PACKAGING INFORMATION row \"LM35DZ/NOPB | Active | Production | TO-92 (LP) | 3 | 1800 | BULK\""
+  "/lifecycle":
+    - source: ti/SNIS159H
+      page: 23
+      locator: "Same row, Status column \"Active\" (addendum dated 18-Sep-2026)"

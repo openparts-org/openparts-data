@@ -1,0 +1,35 @@
+# MPN confirmed from the ordering table, section 25.3 "ATtiny85" (2586Q
+# page 206): "ATtiny85-20PU" -- 20 MHz, 2.7-5.5V, Industrial -40C to
+# +85C, package 8P3 ("8-lead, 0.300\" Wide, Plastic Dual Inline Package
+# (PDIP)"), U = matte tin. Same 8-pin pinout as the SOIC part
+# (Figure 1-1 "PDIP/SOIC/TSSOP"), so it reuses microchip/ATtiny85.
+# lifecycle: no production-status statement in the 2013 datasheet;
+# unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/ATtiny85-20PU
+
+manufacturer: microchip
+mpn: ATtiny85-20PU
+
+device: microchip/ATtiny85
+package: standards/DIP8-W7.62-P2.54
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/2586@revQ
+
+provenance:
+  "/existence":
+    - source: microchip/2586@revQ
+      page: 206
+      locator: "Section 25.3, \"ATtiny85\" ordering table, \"ATtiny85-20PU\" / 8P3"
+  "/package":
+    - source: microchip/2586@revQ
+      page: 207
+      locator: "Section 26.1 \"8P3\" package drawing"
