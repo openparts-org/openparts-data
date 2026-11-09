@@ -1,3 +1,8 @@
+# NOTE (2026-11-10): the derived midpoint nominals mentioned below have
+# been removed -- only the min/max the source states are recorded
+# (Canonical Data Specification 7, 20.1). Generators draw a min/max-only
+# dimension at its midpoint without storing it (openparts-mcad
+# defaults::required).
 # Littelfuse 1206L series, 1206-case PTC resettable fuse. The
 # outline drawing directly labels A=length, B=width, C=thickness (not
 # inferred). A/B are shared across the whole 1206L series; C
@@ -17,17 +22,14 @@ pitch:
 
 dimensions:
   body_length:
-    nominal: 3.20
     min: 3.00
     max: 3.40
     unit: mm
   body_width:
-    nominal: 1.65
     min: 1.50
     max: 1.80
     unit: mm
   body_height:
-    nominal: 0.60
     min: 0.45
     max: 0.75
     unit: mm
@@ -40,12 +42,12 @@ provenance:
   "/dimensions/body_length":
     - source: littelfuse/1206L
       page: 4
-      locator: "\"Dimensions\" section, outline drawing, symbol \"A\" -- nominal is this dataset's computed midpoint, see comment above"
+      locator: "\"Dimensions\" section, outline drawing, symbol \"A\" -- no nominal stated (min/max only)"
   "/dimensions/body_width":
     - source: littelfuse/1206L
       page: 4
-      locator: "\"Dimensions\" section, outline drawing, symbol \"B\" -- nominal is this dataset's computed midpoint, see comment above"
+      locator: "\"Dimensions\" section, outline drawing, symbol \"B\" -- no nominal stated (min/max only)"
   "/dimensions/body_height":
     - source: littelfuse/1206L
       page: 4
-      locator: "\"Dimensions\" section, outline drawing, symbol \"C\", 1206L050 row -- nominal is this dataset's computed midpoint, see comment above"
+      locator: "\"Dimensions\" section, outline drawing, symbol \"C\", 1206L050 row -- no nominal stated (min/max only)"

@@ -1,3 +1,8 @@
+# NOTE (2026-11-10): the derived midpoint nominals mentioned below have
+# been removed -- only the min/max the source states are recorded
+# (Canonical Data Specification 7, 20.1). Generators draw a min/max-only
+# dimension at its midpoint without storing it (openparts-mcad
+# defaults::required).
 # Generic EIAJ EDR-7320, 0.208" body, 8-lead SOIC -- not tied to one
 # manufacturer's die, so any other 8-pin wide-body EIAJ SOIC part
 # sharing this exact mechanical outline can reference this same
@@ -32,19 +37,16 @@ pitch:
 
 dimensions:
   body_width:
-    nominal: 5.29
     min: 5.18
     max: 5.40
     unit: mm
 
   body_length:
-    nominal: 5.24
     min: 5.13
     max: 5.35
     unit: mm
 
   body_height:
-    nominal: 1.93
     min: 1.70
     max: 2.16
     unit: mm
@@ -81,15 +83,15 @@ provenance:
   "/dimensions/body_width":
     - source: microchip/2586@revQ
       page: 208
-      locator: "Table \"COMMON DIMENSIONS\", symbol \"E1\" (Min 5.18 / Max 5.40); nominal is this dataset's own midpoint, not datasheet-stated"
+      locator: "Table \"COMMON DIMENSIONS\", symbol \"E1\" (Min 5.18 / Max 5.40); no nominal stated (min/max only)"
   "/dimensions/body_length":
     - source: microchip/2586@revQ
       page: 208
-      locator: "Table \"COMMON DIMENSIONS\", symbol \"D\" (Min 5.13 / Max 5.35); nominal is this dataset's own midpoint, not datasheet-stated"
+      locator: "Table \"COMMON DIMENSIONS\", symbol \"D\" (Min 5.13 / Max 5.35); no nominal stated (min/max only)"
   "/dimensions/body_height":
     - source: microchip/2586@revQ
       page: 208
-      locator: "Table \"COMMON DIMENSIONS\", symbol \"A\" (Min 1.70 / Max 2.16); nominal is this dataset's own midpoint, not datasheet-stated"
+      locator: "Table \"COMMON DIMENSIONS\", symbol \"A\" (Min 1.70 / Max 2.16); no nominal stated (min/max only)"
   "/dimensions/overall_width":
     - source: microchip/2586@revQ
       page: 208
