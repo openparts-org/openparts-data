@@ -1,0 +1,21 @@
+# Würth Elektronik datasheet for order code 150060BS75000 ("WL-SMCW SMT Mono-color Chip LED Waterclear"),
+# 8 pages, A4 landscape. we-online.com refuses curl (HTTP 403,
+# Akamai); fetched once with WebFetch, which saved the original PDF
+# (PDFlib-generated, author "Würth Elektronik eiSos GmbH & Co. KG").
+# Read with pdftotext -raw plus a 200 dpi render of page 1 (the
+# dimension drawing and schematic are vector art). The title block on
+# every page carries CHECKED "PLD", REVISION "002.009", DATE
+# "2019-02-26" (YYYY-MM-DD), ORDER CODE "150060BS75000", STATUS "Valid" (the
+# document's release status -- not read as a product lifecycle status).
+schema_version: "0.1"
+kind: source
+id: wurth/150060BS75000-DS
+
+publisher: wurth
+document_id: "150060BS75000"
+document_type: datasheet
+
+revision: "002.009"
+date: "2019-02-26"
+
+url: "https://www.we-online.com/components/products/datasheet/150060BS75000.pdf"

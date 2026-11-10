@@ -1,0 +1,41 @@
+# TC4427A, E temperature range (-40 C to +85 C), Plastic SOIC, (150 mil Body), 8-lead.
+# existence: probable -- the MPN is assembled from the part-numbering legend in the
+# "PRODUCT IDENTIFICATION SYSTEM" (DS20001423J page 23), not an
+# orderable list; the Microchip product page (which lists orderable
+# codes) refused curl and WebFetch (403).
+# Package: OA -> drawing C04-057C "8-Lead Plastic Small Outline (OA) -
+# Narrow, 3.90 mm Body [SOIC]" (pages 18-19, rendered and read as an
+# image). Every number of its table matches standards/SOIC8-3.90x4.90-
+# P1.27 (built from C04-057-SN Rev D in DS20001203W): e 1.27 BSC, A max
+# 1.75, A2 min 1.25, A1 0.10-0.25, E 6.00 BSC, E1 3.90 BSC, D 4.90 BSC,
+# L 0.40-1.27, c 0.17-0.25, b 0.31-0.51 -> reused (validate with
+# --source sources/microchip/DS20001203W.yaml).
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/TC4427AEOA
+
+manufacturer: microchip
+mpn: TC4427AEOA
+
+device: microchip/TC4427A
+package: standards/SOIC8-3.90x4.90-P1.27
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001423@revJ
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001423@revJ
+      page: 23
+      locator: "PRODUCT IDENTIFICATION SYSTEM, assembled from the legend: Device TC4427A + Temperature E + Package OA"
+  "/package":
+    - source: microchip/DS20001423@revJ
+      page: 23
+      locator: "PRODUCT IDENTIFICATION SYSTEM, Package \"OA = Plastic SOIC, (150 mil Body), 8-lead\""

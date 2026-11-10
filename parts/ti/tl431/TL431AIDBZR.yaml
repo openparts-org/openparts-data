@@ -1,0 +1,37 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SLVS543S PDF page 35, addendum dated 18-Sep-2026):
+# "TL431AIDBZR | Active | Production | SOT-23 (DBZ) | 3 | 3000 | LARGE T&R | ... | -40 to 85 | (T3AG, TAI3, TAIS, ...".
+# lifecycle "active" is that table's Status column.
+# Package: SOT-23 (DBZ) | 3, outline DBZ0003A (4214838/F) on page 62.
+schema_version: "0.1"
+kind: part
+id: ti/TL431AIDBZR
+
+manufacturer: ti
+mpn: "TL431AIDBZR"
+
+device: ti/TL431-DBZ
+package: manufacturers/ti/DBZ0003A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLVS543S
+
+provenance:
+  "/existence":
+    - source: ti/SLVS543S
+      page: 35
+      locator: "Package Option Addendum, Packaging Information table, row \"TL431AIDBZR\""
+  "/lifecycle":
+    - source: ti/SLVS543S
+      page: 35
+      locator: "Package Option Addendum, row \"TL431AIDBZR\", Status \"Active\""
+  "/package":
+    - source: ti/SLVS543S
+      page: 35
+      locator: "Package Option Addendum, row \"TL431AIDBZR\", \"SOT-23 (DBZ) | 3\"; outline DBZ0003A (4214838/F) on page 62"

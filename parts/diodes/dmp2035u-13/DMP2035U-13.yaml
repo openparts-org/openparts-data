@@ -1,0 +1,35 @@
+# DMP2035U-13: DS31830 Rev. 11-2 "Ordering Information" (page 1), SOT23
+# (Standard), 10,000 13" Tape & Reel. Package: the page-6 SOT23 (Standard)
+# table (A 0.90-1.15/1.025, A1 0.00-0.10/0.05, A2 0.85-1.10/0.975,
+# b 0.30-0.51/0.40, c 0.080-0.202/0.11, D 2.80-3.00/2.90, E 2.25-2.55/
+# 2.40, E1 1.20-1.40/1.30, e1 1.78-2.05/1.83, L 0.25-0.55/0.40) matches
+# standards/SOT23-2.90x1.30-P1.83-DIODES value for value, so it is
+# reused. No lifecycle statement in the document.
+schema_version: "0.1"
+kind: part
+id: diodes/DMP2035U-13
+
+manufacturer: diodes
+mpn: DMP2035U-13
+
+device: diodes/DMP2035U
+package: standards/SOT23-2.90x1.30-P1.83-DIODES
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - diodes/DS31830
+
+provenance:
+  "/existence":
+    - source: diodes/DS31830
+      page: 1
+      locator: "Ordering Information: \"DMP2035U-13 | SOT23 (Standard) | 10,000 13\" Tape & Reel\""
+  "/package":
+    - source: diodes/DS31830
+      page: 6
+      locator: "Package Outline Dimensions SOT23 (Standard) table (identical to DS11005's) -- reused package, see header"

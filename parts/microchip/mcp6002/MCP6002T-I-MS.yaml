@@ -1,0 +1,37 @@
+# MCP6002 in the 8-lead MSOP (MS). DS20001733L page 47 "Product
+# Identification System", example f). Package code MS -> drawing
+# C04-111C (pages 34-35).
+# existence is "probable": the MPN appears only as an ordering
+# *example* of the Product Identification System, not in an orderable
+# list (Microchip product pages are JavaScript apps and were not read).
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real
+# string. lifecycle: no production-status statement in the datasheet;
+# unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP6002T-I-MS
+
+manufacturer: microchip
+mpn: "MCP6002T-I/MS"
+
+device: microchip/MCP6002
+package: manufacturers/microchip/MSOP8-MS-C04-111C
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001733@revL
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001733@revL
+      page: 47
+      locator: "Product Identification System, example f) \"MCP6002T-I/MS: Tape and Reel, Industrial Temperature, 8-Lead MSOP Package\""
+  "/package":
+    - source: microchip/DS20001733@revL
+      page: 47
+      locator: "Product Identification System, Package \"MS = Plastic MSOP, 8-Lead\"; drawing C04-111C pages 34-35"

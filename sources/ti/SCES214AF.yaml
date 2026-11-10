@@ -1,0 +1,19 @@
+# Official TI datasheet for SN74LVC1G04. Downloaded 2026-11-10 from the TI
+# symlink URL below; revision read from the page header "SCES214AF - APRIL 1999 - REVISED OCTOBER 2025".
+# 47 PDF pages; text read with pdftotext -layout, the pin-configuration
+# figure(s) and the package outline drawings named in the package files
+# were rendered (pdftoppm) and read as images. Page numbers in this
+# dataset are PDF page indices. The PACKAGE OPTION ADDENDUM at the end
+# of the PDF is dated 23-Oct-2026 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SCES214AF
+
+publisher: ti
+document_id: SCES214AF
+document_type: datasheet
+
+revision: "AF"
+date: "2025-10"
+
+url: "https://www.ti.com/lit/ds/symlink/sn74lvc1g04.pdf"

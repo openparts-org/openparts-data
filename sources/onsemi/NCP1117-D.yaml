@@ -1,0 +1,24 @@
+# Official onsemi datasheet "NCP1117, NCP1117I, NCV1117 -- 1.0 A
+# Low-Dropout Positive Fixed and Adjustable Voltage Regulators",
+# Publication Order Number NCP1117/D, footer "August, 2021 - Rev. 31",
+# 20 pages, downloaded with curl from the URL below on 2026-11-10 (HTTP
+# 200, a real PDF -- the onsemi 403 noted in the skill did not occur).
+# Read with pdftotext -layout; pages 17-18 (case outlines, image-only
+# tables) rendered with pdftoppm. Page numbers are PDF page indices.
+#
+# The PDF as served carries newer case-outline pages than its own
+# revision date: page 17 "SOT-223 CASE 318H ISSUE B, DATE 13 MAY 2020"
+# (document 98ASH70634A) and pages 18-19 "DPAK-3 6.10x6.54x2.28, 2.29P
+# CASE 369C ISSUE L, DATE 24 AUG 2026" (document 98AON10527D).
+schema_version: "0.1"
+kind: source
+id: onsemi/NCP1117-D
+
+publisher: onsemi
+document_id: NCP1117/D
+document_type: datasheet
+
+revision: "31"
+date: "2021-08"
+
+url: "https://www.onsemi.com/pdf/datasheet/ncp1117-d.pdf"

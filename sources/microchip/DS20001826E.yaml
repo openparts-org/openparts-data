@@ -1,0 +1,19 @@
+# Official Microchip datasheet for the MCP1700 low quiescent current
+# LDO. Downloaded 2026-11-10 from the ww1.microchip.com URL below (30
+# PDF pages; the aemDocuments path for a revision F/G/H did not exist).
+# document_id/revision from the printed footer "DS20001826E-page N";
+# footer copyright "2005-2018"; Appendix A "Revision E (November 2018)". Printed page numbers equal the PDF page
+# indices. Text read with pdftotext -layout; the SOT-23 (TT) drawing
+# C04-104B (page 18) was rendered and read as an image.
+schema_version: "0.1"
+kind: source
+id: microchip/DS20001826@revE
+
+publisher: microchip
+document_id: DS20001826
+document_type: datasheet
+
+revision: "E"
+date: "2018-11"
+
+url: "https://ww1.microchip.com/downloads/en/DeviceDoc/MCP1700-Low-Quiescent-Current-LDO-20001826E.pdf"

@@ -1,0 +1,18 @@
+# Official Diodes Incorporated datasheet "AZ1117C" (1A low dropout
+# linear regulator), Document number DS36676 Rev. 5 - 2, footer
+# "September 2022", 24 pages, downloaded from the URL below. Read with
+# pdftotext -layout; page 2 (Pin Assignments) and page 13 (SOT223
+# outline, drawn upside down in the side view) rendered with pdftoppm.
+# Page numbers are PDF page indices (= printed "N of 24").
+schema_version: "0.1"
+kind: source
+id: diodes/DS36676
+
+publisher: diodes
+document_id: DS36676
+document_type: datasheet
+
+revision: "5-2"
+date: "2022-09"
+
+url: "https://www.diodes.com/assets/Datasheets/AZ1117C.pdf"

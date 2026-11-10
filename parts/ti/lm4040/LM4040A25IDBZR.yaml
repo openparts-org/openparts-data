@@ -1,0 +1,37 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SLOS456Q PDF page 32, addendum dated 18-Sep-2026):
+# "LM4040A25IDBZR | Active | Production | SOT-23 (DBZ) | 3 | 3000 | LARGE T&R | ... | -40 to 85 | (4NG3, 4NGU)".
+# lifecycle "active" is that table's Status column.
+# Package: SOT-23 (DBZ) | 3, outline DBZ0003A (4214838/F) on page 53.
+schema_version: "0.1"
+kind: part
+id: ti/LM4040A25IDBZR
+
+manufacturer: ti
+mpn: "LM4040A25IDBZR"
+
+device: ti/LM4040-DBZ
+package: manufacturers/ti/DBZ0003A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLOS456Q
+
+provenance:
+  "/existence":
+    - source: ti/SLOS456Q
+      page: 32
+      locator: "Package Option Addendum, Packaging Information table, row \"LM4040A25IDBZR\""
+  "/lifecycle":
+    - source: ti/SLOS456Q
+      page: 32
+      locator: "Package Option Addendum, row \"LM4040A25IDBZR\", Status \"Active\""
+  "/package":
+    - source: ti/SLOS456Q
+      page: 32
+      locator: "Package Option Addendum, row \"LM4040A25IDBZR\", \"SOT-23 (DBZ) | 3\"; outline DBZ0003A (4214838/F) on page 53"

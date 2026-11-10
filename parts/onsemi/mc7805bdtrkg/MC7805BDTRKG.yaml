@@ -1,0 +1,32 @@
+# MC7805BDTRKG: MC7805B (5.0 V, TJ -40 to +125 C), DPAK (Pb-free), 2500 / Tape & Reel,
+# printed verbatim in MC7800/D Rev. 29 ORDERING INFORMATION (page 21).
+# Package: "DPAK-3 DT SUFFIX CASE 369C" (page 1), outline pages 26-27.
+# No lifecycle statement for this MPN.
+schema_version: "0.1"
+kind: part
+id: onsemi/MC7805BDTRKG
+
+manufacturer: onsemi
+mpn: MC7805BDTRKG
+
+device: onsemi/MC7805B
+package: manufacturers/onsemi/TO252-6.10x6.54-P2.29-369C-TabPin4
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/MC7800-D
+
+provenance:
+  "/existence":
+    - source: onsemi/MC7800-D
+      page: 21
+      locator: "ORDERING INFORMATION: \"MC7805BDTRKG | 5.0 V | TJ = -40C to +125C | DPAK | 2500 / Tape & Reel\""
+  "/package":
+    - source: onsemi/MC7800-D
+      page: 26
+      locator: "DPAK-3 6.10x6.54x2.28, 2.29P CASE 369C ISSUE L outline (98AON10527D); page 1 \"DPAK-3 DT SUFFIX CASE 369C\""

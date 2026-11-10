@@ -1,0 +1,17 @@
+# Official Diodes Incorporated datasheet "DMP2035U P-Channel
+# Enhancement Mode MOSFET", Document number DS31830 Rev. 11 - 2, footer
+# "June 2025", 7 pages, downloaded from the URL below. Read with
+# pdftotext -layout and a page-1 render (pdftoppm) for the "Top View"
+# pin drawing.
+schema_version: "0.1"
+kind: source
+id: diodes/DS31830
+
+publisher: diodes
+document_id: DS31830
+document_type: datasheet
+
+revision: "11-2"
+date: "2025-06"
+
+url: "https://www.diodes.com/assets/Datasheets/DMP2035U.pdf"

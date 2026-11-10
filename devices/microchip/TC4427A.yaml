@@ -1,0 +1,33 @@
+# TC4427A: 1.5 A dual non-inverting MOSFET driver. Pin map from Table
+# 3-1 "PIN FUNCTION TABLE" (DS20001423J page 8), column "PDIP, MSOP,
+# SOIC", cross-checked with "Package Types" on page 1 (8-Pin
+# MSOP/PDIP/SOIC, TC4427A column: pin 7 OUT A, pin 5 OUT B). One pin map
+# covers PDIP, MSOP and SOIC; the 6x5 DFN-S (EP pin 9) is not covered.
+# Table 3-1 note 1 "Duplicate pins must be connected" -- the only
+# duplicated name is NC (no connection).
+schema_version: "0.1"
+kind: device
+id: microchip/TC4427A
+
+manufacturer: microchip
+category: other
+family: TC4426A/TC4427A/TC4428A
+
+pins:
+  "1": { name: NC, type: nc }
+  "2": { name: "IN A", type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: "IN B", type: input }
+  "5": { name: "OUT B", type: output }
+  "6": { name: VDD, type: power }
+  "7": { name: "OUT A", type: output }
+  "8": { name: NC, type: nc }
+
+provenance:
+  "/pins":
+    - source: microchip/DS20001423@revJ
+      page: 8
+      locator: "Table 3-1 \"PIN FUNCTION TABLE\", column \"PDIP, MSOP, SOIC\""
+    - source: microchip/DS20001423@revJ
+      page: 1
+      locator: "\"Package Types\", 8-Pin MSOP/PDIP/SOIC, TC4427A column (cross-check)"

@@ -1,0 +1,18 @@
+# Official Diodes Incorporated datasheet "DMN2041L N-Channel
+# Enhancement Mode MOSFET", Document number DS31962 Rev. 4 - 3, footer
+# "January 2019", 6 pages, downloaded from the URL below. Every page
+# carries the banner "NOT RECOMMENDED FOR NEW DESIGN / USE DMN2040U".
+# Read with pdftotext -layout and a page-1 render (pdftoppm) for the
+# "Top View" pin drawing.
+schema_version: "0.1"
+kind: source
+id: diodes/DS31962
+
+publisher: diodes
+document_id: DS31962
+document_type: datasheet
+
+revision: "4-3"
+date: "2019-01"
+
+url: "https://www.diodes.com/assets/Datasheets/DMN2041L.pdf"

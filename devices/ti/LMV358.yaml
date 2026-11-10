@@ -1,0 +1,34 @@
+# Dual low-voltage op amp, 8-pin pinout of the D, DDU, DGK and PW
+# packages. From SLOS263Y Table 5-1 "Pin Functions: LMV358" (page 3),
+# checked against Figure 5-1 "D, DDU, DGK, and PW Packages" (same
+# page). Pin 1 is printed "OUT" (not "1OUT") in both the table and the
+# figure; kept as printed. GND is "Negative supply" and VCC+ "Positive
+# supply": both typed power (GND is the negative rail, as V- on
+# ti/OPA2333). Minus signs written as ASCII "-". The LMV358A is a
+# different device (separate datasheet) and is not covered.
+schema_version: "0.1"
+kind: device
+id: ti/LMV358
+
+manufacturer: ti
+category: other
+family: LMV3xx
+
+pins:
+  "1": { name: OUT, type: analog }
+  "2": { name: "1IN-", type: analog }
+  "3": { name: "1IN+", type: analog }
+  "4": { name: GND, type: power }
+  "5": { name: "2IN+", type: analog }
+  "6": { name: "2IN-", type: analog }
+  "7": { name: 2OUT, type: analog }
+  "8": { name: "VCC+", type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SLOS263Y
+      page: 3
+      locator: "Table 5-1 \"Pin Functions: LMV358\""
+    - source: ti/SLOS263Y
+      page: 3
+      locator: "Figure 5-1 \"D, DDU, DGK, and PW Packages, 8-Pin SOIC, VSSOP, and TSSOP (Top View)\" (all 8 pins matched)"

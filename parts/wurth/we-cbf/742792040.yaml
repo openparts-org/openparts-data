@@ -1,0 +1,28 @@
+# Order code printed verbatim in the datasheet's own title block
+# ("ORDER CODE 742792040", every page) -> existence verified.
+# lifecycle: the title block "STATUS Valid" is the document's release
+# status, not a product lifecycle statement; unknown.
+schema_version: "0.1"
+kind: part
+id: wurth/742792040
+
+manufacturer: wurth
+mpn: "742792040"
+
+device: wurth/742792040
+package: manufacturers/wurth/CHIP0805-WE-CBF-H0.9
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - wurth/742792040-DS
+
+provenance:
+  "/existence":
+    - source: wurth/742792040-DS
+      page: 1
+      locator: "Title block, \"ORDER CODE 742792040\", \"SIZE/TYPE 0805\""

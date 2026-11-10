@@ -1,0 +1,31 @@
+# Dual 1-MHz RRIO op amp, 8-pin pinout shared by the D (SOIC), DGK
+# (VSSOP), PW (TSSOP) and DDF (SOT-23-8) packages. From SBOS833R Table
+# 6-3 "Pin Functions: TLV9002" (page 8), checked against Figure 6-6
+# "TLV9002 D, DGK, PW, DDF Package" (same page). The DSG (WSON) thermal
+# pad is not covered. Minus signs written as ASCII "-".
+schema_version: "0.1"
+kind: device
+id: ti/TLV9002
+
+manufacturer: ti
+category: other
+family: TLV900x
+
+pins:
+  "1": { name: OUT1, type: analog }
+  "2": { name: "IN1-", type: analog }
+  "3": { name: "IN1+", type: analog }
+  "4": { name: "V-", type: power }
+  "5": { name: "IN2+", type: analog }
+  "6": { name: "IN2-", type: analog }
+  "7": { name: OUT2, type: analog }
+  "8": { name: "V+", type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SBOS833R
+      page: 8
+      locator: "Table 6-3 \"Pin Functions: TLV9002\""
+    - source: ti/SBOS833R
+      page: 8
+      locator: "Figure 6-6 \"TLV9002 D, DGK, PW, DDF Package 8-Pin SOIC, VSSOP, TSSOP, SOT-23 Top View\" (all 8 pins matched)"

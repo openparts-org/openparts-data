@@ -1,0 +1,33 @@
+# 600-mA, 2-uA IQ LDO, fixed-output RT9080 (without SNS pin), TSOT-23-5
+# pinout. From DS9080-09 section 8 "Functional Pin Description" (page
+# 4), column "TSOT-23-5": VIN 1, GND 2, EN 3, NC 4, VOUT 5, checked
+# against section 7 "Pin Configuration (TOP VIEW)" TSOT-23-5 (same
+# page). Pin 4 is "SNS" on the RT9080N only and "NC" ("No internal
+# connection") on the RT9080, which this device covers. The ZQFN-4L
+# pin map differs and is not covered.
+# Conflict noted: the table prints pin 3's name as "1EN"; the pin
+# configuration figure, the block diagram and the table's own
+# description ("Enable control input") use "EN", which is used here.
+schema_version: "0.1"
+kind: device
+id: richtek/RT9080-TSOT23-5
+
+manufacturer: richtek
+category: other
+family: RT9080
+
+pins:
+  "1": { name: VIN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: EN, type: input }
+  "4": { name: NC, type: nc }
+  "5": { name: VOUT, type: power }
+
+provenance:
+  "/pins":
+    - source: richtek/DS9080-09
+      page: 4
+      locator: "8 \"Functional Pin Description\", column \"TSOT-23-5\" (pin 4: \"NC\" row, RT9080 without SNS)"
+    - source: richtek/DS9080-09
+      page: 4
+      locator: "7 \"Pin Configuration\" (TOP VIEW), TSOT-23-5"

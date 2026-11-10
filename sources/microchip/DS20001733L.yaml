@@ -1,0 +1,19 @@
+# Official Microchip datasheet for MCP6001/1R/1U/2/4 (1 MHz low-power
+# op amps). Downloaded 2026-11-10 from the ww1.microchip.com URL below
+# (50 PDF pages). document_id/revision from the printed footer
+# "DS20001733L-page N"; the footer copyright is "2002-2020"; Appendix A "Revision L (March 2020)". Printed page
+# numbers equal the PDF page indices. Text read with pdftotext -layout;
+# the MSOP (MS) drawing C04-111C (pages 34-35) was rendered and read as
+# an image (several other package pages use an encoded font).
+schema_version: "0.1"
+kind: source
+id: microchip/DS20001733@revL
+
+publisher: microchip
+document_id: DS20001733
+document_type: datasheet
+
+revision: "L"
+date: "2020-03"
+
+url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MSLD/ProductDocuments/DataSheets/MCP6001-1R-1U-2-4-1-MHz-Low-Power-Op-Amp-DS20001733L.pdf"

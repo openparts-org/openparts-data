@@ -1,0 +1,22 @@
+# Official Microchip "ATmega4808/4809 Data Sheet" (Complete Datasheet),
+# 560 pages. Downloaded directly from ww1.microchip.com (URL below) with
+# curl (revisions A and B are also on ww1; D-F returned 403/not found,
+# and the product page refused curl and WebFetch, so C is the newest
+# revision found). document_id/revision from the printed footer
+# "DS40002173C-page N"; date from section 36.1 "Rev. C - 02/2021"
+# (page 548). PDF page index = printed page number. Read with
+# pdftotext -layout: the pinout figure (page 17), I/O multiplexing table
+# (pages 19-20), Table 34-1 (page 521) and the C04-300-PT / C04-494
+# dimension tables (pages 540, 543) all extract as clean text.
+schema_version: "0.1"
+kind: source
+id: microchip/DS40002173@revC
+
+publisher: microchip
+document_id: DS40002173
+document_type: datasheet
+
+revision: "C"
+date: "2021-02"
+
+url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega4808-09-DataSheet-DS40002173C.pdf"

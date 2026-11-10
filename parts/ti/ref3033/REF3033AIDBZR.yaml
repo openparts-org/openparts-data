@@ -1,0 +1,37 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SBVS032K PDF page 28, addendum dated 11-Jul-2026):
+# "REF3033AIDBZR | Active | Production | SOT-23 (DBZ) | 3 | 3000 | LARGE T&R | ... | -40 to 125 | R30D".
+# lifecycle "active" is that table's Status column.
+# Package: SOT-23 (DBZ) | 3, outline DBZ0003A (4214838/F) on page 34.
+schema_version: "0.1"
+kind: part
+id: ti/REF3033AIDBZR
+
+manufacturer: ti
+mpn: "REF3033AIDBZR"
+
+device: ti/REF3033
+package: manufacturers/ti/DBZ0003A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SBVS032K
+
+provenance:
+  "/existence":
+    - source: ti/SBVS032K
+      page: 28
+      locator: "Package Option Addendum, Packaging Information table, row \"REF3033AIDBZR\""
+  "/lifecycle":
+    - source: ti/SBVS032K
+      page: 28
+      locator: "Package Option Addendum, row \"REF3033AIDBZR\", Status \"Active\""
+  "/package":
+    - source: ti/SBVS032K
+      page: 28
+      locator: "Package Option Addendum, row \"REF3033AIDBZR\", \"SOT-23 (DBZ) | 3\"; outline DBZ0003A (4214838/F) on page 34"

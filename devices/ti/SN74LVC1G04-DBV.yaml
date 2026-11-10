@@ -1,0 +1,28 @@
+# Single inverter gate, 5-pin pinout of the DBV (SOT-23-5), DCK and DRL
+# packages. From SCES214AF "Pin Functions" table (page 3), column
+# "DBV, DCK, DRL": NC 1, A 2, GND 3, Y 4, VCC 5, checked against the
+# "DBV PACKAGE (TOP VIEW)" figure (same page). The DSF/DRY/YZP/YZV/DPW
+# pin maps differ and are not covered.
+schema_version: "0.1"
+kind: device
+id: ti/SN74LVC1G04-DBV
+
+manufacturer: ti
+category: other
+family: SN74LVC1G04
+
+pins:
+  "1": { name: NC, type: nc }
+  "2": { name: A, type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: Y, type: output }
+  "5": { name: VCC, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SCES214AF
+      page: 3
+      locator: "\"Pin Functions\" table, column \"DBV, DCK, DRL\""
+    - source: ti/SCES214AF
+      page: 3
+      locator: "\"DBV PACKAGE (TOP VIEW)\" figure"

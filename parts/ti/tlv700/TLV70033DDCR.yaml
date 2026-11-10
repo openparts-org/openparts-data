@@ -1,0 +1,37 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SLVSA00E PDF page 23, addendum dated 10-Nov-2025):
+# "TLV70033DDCR | Active | Production | SOT-23-THIN (DDC) | 5 | 3000 | LARGE T&R | ... | -40 to 125 | ODN".
+# lifecycle "active" is that table's Status column.
+# Package: SOT-23-THIN (DDC) | 5, outline DDC0005A (4220752/C) on page 36.
+schema_version: "0.1"
+kind: part
+id: ti/TLV70033DDCR
+
+manufacturer: ti
+mpn: "TLV70033DDCR"
+
+device: ti/TLV700-DDC
+package: manufacturers/ti/DDC0005A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLVSA00E
+
+provenance:
+  "/existence":
+    - source: ti/SLVSA00E
+      page: 23
+      locator: "Package Option Addendum, Packaging Information table, row \"TLV70033DDCR\""
+  "/lifecycle":
+    - source: ti/SLVSA00E
+      page: 23
+      locator: "Package Option Addendum, row \"TLV70033DDCR\", Status \"Active\""
+  "/package":
+    - source: ti/SLVSA00E
+      page: 23
+      locator: "Package Option Addendum, row \"TLV70033DDCR\", \"SOT-23-THIN (DDC) | 5\"; outline DDC0005A (4220752/C) on page 36"

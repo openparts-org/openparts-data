@@ -1,0 +1,39 @@
+# SMAJ5.0A-E3/61: printed verbatim under "PREFERRED P/N" in 88390
+# "ORDERING INFORMATION (Example)" (page 3): unit weight 0.064 g,
+# package code 61, 1800 per 7" reel; MECHANICAL DATA defines "Base
+# P/N-E3 - RoHS-compliant, commercial grade". The table is titled
+# "(Example)" but the MPN is printed, not composed -- flagged for review.
+# Package: the page-5 SMA (DO-214AC) outline gives body 0.157-0.177
+# (3.99-4.50) x 0.100-0.110 (2.54-2.79), height 0.078-0.090 (1.98-2.29)
+# in (mm) -- the three dimensions standards/CHIP-SMA-DO214AC records,
+# value for value, so it is reused. No lifecycle statement.
+schema_version: "0.1"
+kind: part
+id: vishay/SMAJ5.0A-E3-61
+
+manufacturer: vishay
+mpn: SMAJ5.0A-E3/61
+
+device: vishay/SMAJ5.0A
+package: standards/CHIP-SMA-DO214AC
+
+# existence is `probable`: the MPN is printed only as an ordering *example*,
+# not in an orderable list (openparts/skills/add-part section 2).
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - vishay/88390
+
+provenance:
+  "/existence":
+    - source: vishay/88390
+      page: 3
+      locator: "ORDERING INFORMATION (Example): \"SMAJ5.0A-E3/61 | 0.064 | 61 | 1800 | 7\" diameter plastic tape and reel\""
+  "/package":
+    - source: vishay/88390
+      page: 5
+      locator: "PACKAGE OUTLINE DIMENSIONS SMA (DO-214AC) -- reused package, see header"

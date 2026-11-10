@@ -1,0 +1,130 @@
+# onsemi SOT-223 CASE 318H ISSUE B (98ASH70634A, DATE 13 MAY 2020), as
+# printed in NCP1117/D Rev. 31 page 17, read from the rendered drawing
+# and its MILLIMETERS table (MIN / NOM / MAX).
+#
+# TAB NUMBER: the outline's top view numbers the leads 1 2 3 and the tab
+# "4". The datasheet's page-1 PIN CONFIGURATION labels the tab only
+# "Tab" and says "Heatsink tab is connected to Pin 2." -- the drawing's
+# "4" is the only number the source prints for the tab, so tab = "4"
+# and the device keys pin "4" as the Output (cf. ti/UA78M33 + KVU).
+#
+# Not onsemi's CASE 318E (BCP56 etc.: A 1.50-1.75, b1 2.90-3.20) and not
+# the Diodes SOT223 drawings (E 3.45-3.55 / 3.30-3.70 with different
+# lead and height values): its own package.
+#
+# Symbol mapping (frame: leads left, tab right): E1 (3.30/3.50/3.70,
+# body across the lead direction) -> body_width; D (6.30/6.50/6.70,
+# along the lead row) -> body_length; E (6.70/7.00/7.30, lead toe to
+# tab toe) -> overall_width; b -> lead_width; b1 -> tab_width;
+# c -> lead_thickness (no nominal printed); L (0.25 MIN only, foot in
+# DETAIL A) -> lead_length min only; A1 -> standoff; A ("1.80" MAX only,
+# no A2 in the table) -> body_height max only. e "2.30 BSC" -> pitch.
+# Left out: angle 0-10 deg, the recommended footprint.
+schema_version: "0.1"
+kind: package
+id: manufacturers/onsemi/SOT223-3.5x6.5-P2.3-318H-TabPin4
+
+family: sot223
+lead_count: 3
+
+pitch:
+  nominal: 2.30
+  unit: mm
+
+tab:
+  number: "4"
+
+dimensions:
+  body_width:
+    nominal: 3.50
+    min: 3.30
+    max: 3.70
+    unit: mm
+  body_length:
+    nominal: 6.50
+    min: 6.30
+    max: 6.70
+    unit: mm
+  body_height:
+    max: 1.80
+    unit: mm
+  overall_width:
+    nominal: 7.00
+    min: 6.70
+    max: 7.30
+    unit: mm
+  standoff:
+    nominal: 0.06
+    min: 0.02
+    max: 0.11
+    unit: mm
+  lead_width:
+    nominal: 0.74
+    min: 0.60
+    max: 0.88
+    unit: mm
+  lead_length:
+    min: 0.25
+    unit: mm
+  lead_thickness:
+    min: 0.24
+    max: 0.35
+    unit: mm
+  tab_width:
+    nominal: 3.00
+    min: 2.90
+    max: 3.10
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: sot223
+
+provenance:
+  "/pitch":
+    - source: onsemi/NCP1117-D
+      page: 17
+      locator: "CASE 318H ISSUE B MILLIMETERS table, DIM \"e\" \"2.30 BSC\""
+  "/tab":
+    - source: onsemi/NCP1117-D
+      page: 17
+      locator: "CASE 318H TOP VIEW: leads numbered 1 2 3, tab numbered \"4\""
+    - source: onsemi/NCP1117-D
+      page: 1
+      locator: "PIN CONFIGURATION SOT-223 (Top View): tab labelled \"Tab\"; \"Heatsink tab is connected to Pin 2.\""
+  "/dimensions/body_width":
+    - source: onsemi/NCP1117-D
+      page: 17
+      locator: "CASE 318H table, DIM \"E1\" (3.30 / 3.50 / 3.70)"
+  "/dimensions/body_length":
+    - source: onsemi/NCP1117-D
+      page: 17
+      locator: "CASE 318H table, DIM \"D\" (6.30 / 6.50 / 6.70)"
+  "/dimensions/body_height":
+    - source: onsemi/NCP1117-D
+      page: 17
+      locator: "CASE 318H table, DIM \"A\" (MAX 1.80 only; no A2)"
+  "/dimensions/overall_width":
+    - source: onsemi/NCP1117-D
+      page: 17
+      locator: "CASE 318H table, DIM \"E\" (6.70 / 7.00 / 7.30), lead toe to tab toe in the TOP VIEW"
+  "/dimensions/standoff":
+    - source: onsemi/NCP1117-D
+      page: 17
+      locator: "CASE 318H table, DIM \"A1\" (0.02 / 0.06 / 0.11)"
+  "/dimensions/lead_width":
+    - source: onsemi/NCP1117-D
+      page: 17
+      locator: "CASE 318H table, DIM \"b\" (0.60 / 0.74 / 0.88)"
+  "/dimensions/lead_length":
+    - source: onsemi/NCP1117-D
+      page: 17
+      locator: "CASE 318H table, DIM \"L\" (MIN 0.25 only), foot in DETAIL A"
+  "/dimensions/lead_thickness":
+    - source: onsemi/NCP1117-D
+      page: 17
+      locator: "CASE 318H table, DIM \"c\" (0.24 / --- / 0.35)"
+  "/dimensions/tab_width":
+    - source: onsemi/NCP1117-D
+      page: 17
+      locator: "CASE 318H table, DIM \"b1\" (2.90 / 3.00 / 3.10)"

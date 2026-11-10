@@ -1,0 +1,19 @@
+# Official TI datasheet for INA180/INA2180/INA4180. Downloaded 2026-11-10 from the TI
+# symlink URL below; revision read from the page header "SBOS741H - APRIL 2017 - REVISED JULY 2022".
+# 53 PDF pages; text read with pdftotext -layout, the pin-configuration
+# figure(s) and the package outline drawings named in the package files
+# were rendered (pdftoppm) and read as images. Page numbers in this
+# dataset are PDF page indices. The PACKAGE OPTION ADDENDUM at the end
+# of the PDF is dated 1-Nov-2026 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SBOS741H
+
+publisher: ti
+document_id: SBOS741H
+document_type: datasheet
+
+revision: "H"
+date: "2022-07"
+
+url: "https://www.ti.com/lit/ds/symlink/ina180.pdf"

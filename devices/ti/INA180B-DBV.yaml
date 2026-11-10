@@ -1,0 +1,29 @@
+# Single-channel current-sense amplifier, SOT-23-5 "Pinout B" (used by
+# the INA180B1..B4 devices per Table 5-1 note 1). From SBOS741H Table
+# 6-1 "Pin Functions: INA180 (Single Channel)" (page 4), column
+# "SOT-23 Pinout B": IN+ 1, GND 2, IN- 3, OUT 4, VS 5, checked against
+# Figure 6-2 "INA180: DBV Package 5-Pin SOT-23 (Pinout B) Top View".
+# Minus sign written as ASCII "-".
+schema_version: "0.1"
+kind: device
+id: ti/INA180B-DBV
+
+manufacturer: ti
+category: other
+family: INA180
+
+pins:
+  "1": { name: "IN+", type: analog }
+  "2": { name: GND, type: ground }
+  "3": { name: "IN-", type: analog }
+  "4": { name: OUT, type: analog }
+  "5": { name: VS, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SBOS741H
+      page: 4
+      locator: "Table 6-1 \"Pin Functions: INA180 (Single Channel)\", column \"SOT-23 Pinout B\""
+    - source: ti/SBOS741H
+      page: 4
+      locator: "Figure 6-2 \"INA180: DBV Package 5-Pin SOT-23 (Pinout B) Top View\""

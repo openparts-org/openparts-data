@@ -1,0 +1,105 @@
+# 8-lead MSOP (Microchip package code MS). All values from Microchip
+# drawing C04-111C "8-Lead Plastic Micro Small Outline Package (MS)
+# [MSOP]", dimension table on sheet 2 = PDF page 35 of DS20001733L
+# (MCP6001/1R/1U/2/4); sheet 1 (page 34) shows pin 1 at the hatched
+# corner, pins 1..N/2 along one long edge. Both pages rendered and read
+# as images. Millimetres, copied as printed (BSC values as nominal,
+# min/max-only rows as min/max only).
+#
+# Not merged into standards/MSOP8-3.0x3.0-P0.65-TI-DGK: that TI drawing
+# gives E1/D 2.9-3.1 ranges, span 4.75-5.05, b 0.25-0.38, L 0.4-0.7,
+# c 0.13-0.23, while this one has E1/D 3.00 BSC, E 4.90 BSC, b
+# 0.22-0.40, L 0.40/0.60/0.80, c 0.08-0.23 and an A2 row.
+# The footprint "L1 0.95 REF" is not recorded.
+schema_version: "0.1"
+kind: package
+id: manufacturers/microchip/MSOP8-MS-C04-111C
+
+family: msop
+lead_count: 8
+
+pitch:
+  nominal: 0.65
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 3.00
+    unit: mm
+  body_length:
+    nominal: 3.00
+    unit: mm
+  body_height:
+    nominal: 0.85
+    min: 0.75
+    max: 0.95
+    unit: mm
+  overall_width:
+    nominal: 4.90
+    unit: mm
+  overall_height:
+    max: 1.10
+    unit: mm
+  standoff:
+    min: 0.00
+    max: 0.15
+    unit: mm
+  lead_width:
+    min: 0.22
+    max: 0.40
+    unit: mm
+  lead_length:
+    nominal: 0.60
+    min: 0.40
+    max: 0.80
+    unit: mm
+  lead_thickness:
+    min: 0.08
+    max: 0.23
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: msop
+
+provenance:
+  "/pitch":
+    - source: microchip/DS20001733@revL
+      page: 35
+      locator: "C04-111C sheet 2 table, \"Pitch e 0.65 BSC\""
+  "/dimensions/body_width":
+    - source: microchip/DS20001733@revL
+      page: 35
+      locator: "C04-111C sheet 2 table, \"Molded Package Width E1 3.00 BSC\""
+  "/dimensions/body_length":
+    - source: microchip/DS20001733@revL
+      page: 35
+      locator: "C04-111C sheet 2 table, \"Overall Length D 3.00 BSC\""
+  "/dimensions/body_height":
+    - source: microchip/DS20001733@revL
+      page: 35
+      locator: "C04-111C sheet 2 table, \"Molded Package Thickness A2 0.75 / 0.85 / 0.95\""
+  "/dimensions/overall_width":
+    - source: microchip/DS20001733@revL
+      page: 35
+      locator: "C04-111C sheet 2 table, \"Overall Width E 4.90 BSC\""
+  "/dimensions/overall_height":
+    - source: microchip/DS20001733@revL
+      page: 35
+      locator: "C04-111C sheet 2 table, \"Overall Height A - / - / 1.10\""
+  "/dimensions/standoff":
+    - source: microchip/DS20001733@revL
+      page: 35
+      locator: "C04-111C sheet 2 table, \"Standoff A1 0.00 / - / 0.15\""
+  "/dimensions/lead_width":
+    - source: microchip/DS20001733@revL
+      page: 35
+      locator: "C04-111C sheet 2 table, \"Lead Width b 0.22 / - / 0.40\""
+  "/dimensions/lead_length":
+    - source: microchip/DS20001733@revL
+      page: 35
+      locator: "C04-111C sheet 2 table, \"Foot Length L 0.40 / 0.60 / 0.80\""
+  "/dimensions/lead_thickness":
+    - source: microchip/DS20001733@revL
+      page: 35
+      locator: "C04-111C sheet 2 table, \"Lead Thickness c 0.08 / - / 0.23\""

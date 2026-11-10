@@ -1,0 +1,148 @@
+# onsemi DPAK-3 6.10x6.54x2.28, 2.29P, CASE 369C ISSUE L (98AON10527D,
+# DATE 24 AUG 2026), read from the rendered drawing and MILLIMETERS
+# table (MIN / NOM / MAX) in MC7800/D Rev. 29 page 26; the identical
+# drawing and table (every value) are printed in NCP1117/D Rev. 31
+# page 18.
+#
+# TAB NUMBER: the outline's 3-D view and TOP VIEW number the tab "4"
+# (leads 1 2 3). MC7800/D page 1 states it outright: "Heatsink surface
+# (shown as terminal 4 in case outline drawing) is connected to Pin 2."
+# NCP1117/D page 1 labels the DPAK tab "Tab" and says "Heatsink tab is
+# connected to Pin 2." Tab = "4". Lead 2 (centre) is drawn as a stub
+# cut at the body in the TOP VIEW and BOTTOM VIEW -> trimmed.
+#
+# Symbol mapping (frame: leads left, tab right, as TO252-...-TI-KVU):
+# D (5.97/6.10/6.22, TOP VIEW from datum B / tab-side body edge to the
+# lead-side edge) -> body_width; E (6.35/6.54/6.73, along the lead row)
+# -> body_length; H (9.40/9.91/10.41, lead toe to tab end) ->
+# overall_width; L3 (0.89-1.27, body edge to tab end) -> tab_length;
+# b3 (4.57/5.02/5.46) -> tab_width; b -> lead_width; c -> lead_thickness;
+# L (1.40/1.59/1.78, DETAIL A foot) -> lead_length; A1 -> standoff; A
+# (2.18/2.28/2.38; the table has no A2) -> body_height. e "2.29 BSC" ->
+# pitch. Left out: b2 (wider lead shoulder), c2 (tab thickness), L1
+# "2.90 REF", L2 "0.51 BSC" gauge plane, L4, Z (thermal-pad contour,
+# note 3 "optional"), the alternate constructions.
+schema_version: "0.1"
+kind: package
+id: manufacturers/onsemi/TO252-6.10x6.54-P2.29-369C-TabPin4
+
+family: dpak
+lead_count: 3
+
+pitch:
+  nominal: 2.29
+  unit: mm
+
+tab:
+  number: "4"
+  trimmed_leads: ["2"]
+
+dimensions:
+  body_width:
+    nominal: 6.10
+    min: 5.97
+    max: 6.22
+    unit: mm
+  body_length:
+    nominal: 6.54
+    min: 6.35
+    max: 6.73
+    unit: mm
+  body_height:
+    nominal: 2.28
+    min: 2.18
+    max: 2.38
+    unit: mm
+  overall_width:
+    nominal: 9.91
+    min: 9.40
+    max: 10.41
+    unit: mm
+  standoff:
+    min: 0.00
+    max: 0.13
+    unit: mm
+  lead_width:
+    nominal: 0.76
+    min: 0.63
+    max: 0.89
+    unit: mm
+  lead_length:
+    nominal: 1.59
+    min: 1.40
+    max: 1.78
+    unit: mm
+  lead_thickness:
+    nominal: 0.54
+    min: 0.46
+    max: 0.61
+    unit: mm
+  tab_width:
+    nominal: 5.02
+    min: 4.57
+    max: 5.46
+    unit: mm
+  tab_length:
+    min: 0.89
+    max: 1.27
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: dpak
+
+provenance:
+  "/pitch":
+    - source: onsemi/MC7800-D
+      page: 26
+      locator: "CASE 369C ISSUE L MILLIMETERS table, DIM \"e\" \"2.29 BSC\""
+  "/tab":
+    - source: onsemi/MC7800-D
+      page: 1
+      locator: "DPAK-3 DT SUFFIX CASE 369C: \"Heatsink surface (shown as terminal 4 in case outline drawing) is connected to Pin 2.\""
+    - source: onsemi/MC7800-D
+      page: 26
+      locator: "CASE 369C 3-D view and TOP VIEW: tab numbered \"4\", leads 1 2 3, lead 2 drawn as a stub cut at the body"
+    - source: onsemi/NCP1117-D
+      page: 1
+      locator: "PIN CONFIGURATION DPAK (Top View): tab labelled \"Tab\"; \"Heatsink tab is connected to Pin 2.\""
+  "/dimensions/body_width":
+    - source: onsemi/MC7800-D
+      page: 26
+      locator: "CASE 369C table, DIM \"D\" (5.97 / 6.10 / 6.22), TOP VIEW datum B to lead-side body edge"
+  "/dimensions/body_length":
+    - source: onsemi/MC7800-D
+      page: 26
+      locator: "CASE 369C table, DIM \"E\" (6.35 / 6.54 / 6.73)"
+  "/dimensions/body_height":
+    - source: onsemi/MC7800-D
+      page: 26
+      locator: "CASE 369C table, DIM \"A\" (2.18 / 2.28 / 2.38); no A2 in the table"
+  "/dimensions/overall_width":
+    - source: onsemi/MC7800-D
+      page: 26
+      locator: "CASE 369C table, DIM \"H\" (9.40 / 9.91 / 10.41)"
+  "/dimensions/standoff":
+    - source: onsemi/MC7800-D
+      page: 26
+      locator: "CASE 369C table, DIM \"A1\" (0.00 / --- / 0.13)"
+  "/dimensions/lead_width":
+    - source: onsemi/MC7800-D
+      page: 26
+      locator: "CASE 369C table, DIM \"b\" (0.63 / 0.76 / 0.89)"
+  "/dimensions/lead_length":
+    - source: onsemi/MC7800-D
+      page: 26
+      locator: "CASE 369C table, DIM \"L\" (1.40 / 1.59 / 1.78), DETAIL A"
+  "/dimensions/lead_thickness":
+    - source: onsemi/MC7800-D
+      page: 26
+      locator: "CASE 369C table, DIM \"c\" (0.46 / 0.54 / 0.61)"
+  "/dimensions/tab_width":
+    - source: onsemi/MC7800-D
+      page: 26
+      locator: "CASE 369C table, DIM \"b3\" (4.57 / 5.02 / 5.46)"
+  "/dimensions/tab_length":
+    - source: onsemi/MC7800-D
+      page: 26
+      locator: "CASE 369C table, DIM \"L3\" (0.89 / --- / 1.27)"

@@ -1,0 +1,37 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SBOS107A PDF page 13, addendum dated 13-Feb-2026):
+# "OPA344NA/3K | Active | Production | SOT-23 (DBV) | 5 | 3000 | LARGE T&R | ... | -40 to 85 | B44".
+# lifecycle "active" is that table's Status column.
+# Package: SOT-23 (DBV) | 5, outline DBV0005A (4214839/K) on page 19.
+schema_version: "0.1"
+kind: part
+id: ti/OPA344NA-3K
+
+manufacturer: ti
+mpn: "OPA344NA/3K"
+
+device: ti/OPA344-DBV
+package: manufacturers/ti/DBV0005A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SBOS107A
+
+provenance:
+  "/existence":
+    - source: ti/SBOS107A
+      page: 13
+      locator: "Package Option Addendum, Packaging Information table, row \"OPA344NA/3K\""
+  "/lifecycle":
+    - source: ti/SBOS107A
+      page: 13
+      locator: "Package Option Addendum, row \"OPA344NA/3K\", Status \"Active\""
+  "/package":
+    - source: ti/SBOS107A
+      page: 13
+      locator: "Package Option Addendum, row \"OPA344NA/3K\", \"SOT-23 (DBV) | 5\"; outline DBV0005A (4214839/K) on page 19"

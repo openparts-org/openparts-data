@@ -1,0 +1,19 @@
+# Official TI datasheet for LM4040A/B/C/D. Downloaded 2026-11-10 from the TI
+# symlink URL below; revision read from the page header "SLOS456Q - JANUARY 2005 - REVISED APRIL 2026".
+# 62 PDF pages; text read with pdftotext -layout, the pin-configuration
+# figure(s) and the package outline drawings named in the package files
+# were rendered (pdftoppm) and read as images. Page numbers in this
+# dataset are PDF page indices. The PACKAGE OPTION ADDENDUM at the end
+# of the PDF is dated 18-Sep-2026 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SLOS456Q
+
+publisher: ti
+document_id: SLOS456Q
+document_type: datasheet
+
+revision: "Q"
+date: "2026-04"
+
+url: "https://www.ti.com/lit/ds/symlink/lm4040.pdf"

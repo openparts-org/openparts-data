@@ -1,0 +1,29 @@
+# 500-mA LDO with active discharge (all fixed voltages), DBV (SOT-23-5)
+# pinout. From SBVS320D Table 4-1 "Pin Functions" (page 3), DBV column:
+# IN 1, GND 2, EN 3, NC 4, OUT 5, checked against Figure 4-2 "DBV
+# Package, 5-Pin SOT-23 (Top View)" (same page). The DYD/DQN/DRV pin
+# maps (with thermal pad) are not covered. NC is "No internal
+# connection". IN/OUT typed power, as for ti/LM1117-3.3.
+schema_version: "0.1"
+kind: device
+id: ti/TLV755P-DBV
+
+manufacturer: ti
+category: other
+family: TLV755P
+
+pins:
+  "1": { name: IN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: EN, type: input }
+  "4": { name: NC, type: nc }
+  "5": { name: OUT, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SBVS320D
+      page: 3
+      locator: "Table 4-1 \"Pin Functions\", column \"DBV\""
+    - source: ti/SBVS320D
+      page: 3
+      locator: "Figure 4-2 \"DBV Package, 5-Pin SOT-23 (Top View)\""

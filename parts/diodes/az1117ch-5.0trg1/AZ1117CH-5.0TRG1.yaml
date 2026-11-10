@@ -1,0 +1,33 @@
+# AZ1117CH-5.0TRG1: 5.0 V fixed, SOT223 "H" package, 4000/Tape & Reel,
+# marking GH15E, printed verbatim in DS36676 Rev. 5-2 "Ordering
+# Information" (page 11). (The assignment's "AZ1117CH-3.3" is the
+# family name; the orderable MPN carries the TRG1 suffix.) No lifecycle
+# statement in the document.
+schema_version: "0.1"
+kind: part
+id: diodes/AZ1117CH-5.0TRG1
+
+manufacturer: diodes
+mpn: AZ1117CH-5.0TRG1
+
+device: diodes/AZ1117C-5.0
+package: manufacturers/diodes/SOT223-3.5x6.5-P2.3-TabPin2-DS36676
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - diodes/DS36676
+
+provenance:
+  "/existence":
+    - source: diodes/DS36676
+      page: 11
+      locator: "Ordering Information: \"SOT223 | AZ1117CH-5.0TRG1 | GH15E | 4000/Tape & Reel\""
+  "/package":
+    - source: diodes/DS36676
+      page: 13
+      locator: "\"Package Outline Dimensions (1) Package Type: SOT223\""

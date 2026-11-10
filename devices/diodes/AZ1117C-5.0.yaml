@@ -1,0 +1,30 @@
+# AZ1117C 1A LDO, fixed 5.0 V option, SOT223 "H" package
+# (AZ1117CH-5.0TRG1). Pins from DS36676 Rev. 5-2 page 2 "Pin
+# Assignments" SOT223/ H Package (Top View): 1 ADJ/GND, 2 OUTPUT,
+# 3 INPUT, tab labelled "VOUT"; page 3 Functional Block Diagram key
+# "A for TO252-2 Series/SOT223 (H)/SOT89 (R)": INPUT 3, OUTPUT 2,
+# ADJ/GND 1. The tab carries pin number 2 in the package
+# (manufacturers/diodes/SOT223-3.5x6.5-P2.3-TabPin2-DS36676), so no extra
+# pin. NOT valid for the SOT223 "H2" package (1 INPUT, 2 ADJ/GND,
+# 3 OUTPUT).
+schema_version: "0.1"
+kind: device
+id: diodes/AZ1117C-5.0
+
+manufacturer: diodes
+category: other
+family: AZ1117C
+
+pins:
+  "1": { name: ADJ/GND, type: ground }
+  "2": { name: OUTPUT, type: power }
+  "3": { name: INPUT, type: power }
+
+provenance:
+  "/pins":
+    - source: diodes/DS36676
+      page: 2
+      locator: "\"Pin Assignments\" SOT223/ H Package (Top View): 3 INPUT, 2 OUTPUT, 1 ADJ/GND, tab \"VOUT\""
+    - source: diodes/DS36676
+      page: 3
+      locator: "\"Functional Block Diagram\" pin numbers A(B){C}, A for SOT223 (H): INPUT 3, OUTPUT 2, ADJ/GND 1"

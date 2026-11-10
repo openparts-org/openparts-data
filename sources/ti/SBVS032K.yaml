@@ -1,0 +1,19 @@
+# Official TI datasheet for REF30/REF30E (REF3012...REF3040). Downloaded 2026-11-10 from the TI
+# symlink URL below; revision read from the page header "SBVS032K - MARCH 2002 - REVISED DECEMBER 2025".
+# 37 PDF pages; text read with pdftotext -layout, the pin-configuration
+# figure(s) and the package outline drawings named in the package files
+# were rendered (pdftoppm) and read as images. Page numbers in this
+# dataset are PDF page indices. The PACKAGE OPTION ADDENDUM at the end
+# of the PDF is dated 11-Jul-2026 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SBVS032K
+
+publisher: ti
+document_id: SBVS032K
+document_type: datasheet
+
+revision: "K"
+date: "2025-12"
+
+url: "https://www.ti.com/lit/ds/symlink/ref30.pdf"

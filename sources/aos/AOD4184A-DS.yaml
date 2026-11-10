@@ -1,0 +1,18 @@
+# Official AOS datasheet "AOD4184A 40V N-Channel MOSFET", footer
+# "Rev1.0 : September 2023", 6 pages, downloaded from the URL below.
+# Read via pdftotext and a page-1 render (pdftoppm) for the "TO252
+# DPAK" Top View / Bottom View pin images. No package outline and no
+# ordering table in this document -- the outline is AOS's separate
+# PO-00009 (sources/aos/PO-00009.yaml).
+schema_version: "0.1"
+kind: source
+id: aos/AOD4184A-DS
+
+publisher: aos
+document_id: AOD4184A
+document_type: datasheet
+
+revision: "1.0"
+date: "2023-09"
+
+url: "https://www.aosmd.com/res/datasheets/AOD4184A.pdf"

@@ -1,0 +1,30 @@
+# Raspberry Pi Pico, order code SC0916: the second code printed for the
+# model "Raspberry Pi Pico" in the Pico datasheet's Appendix A.2
+# "Ordering code" (Table 6, PDF page 25; EAN 0617588405587, beside
+# SC0915). The table doesn't say how the two codes differ, so this part
+# shares SC0915's device and package. lifecycle unknown: no
+# production-status statement.
+schema_version: "0.1"
+kind: part
+id: raspberrypi/SC0916
+
+manufacturer: raspberrypi
+mpn: SC0916
+
+device: raspberrypi/PICO
+package: standards/MODULE40-21x51-P2.54-PICO
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - raspberrypi/RP-008307-DS@rev2
+
+provenance:
+  "/existence":
+    - source: raspberrypi/RP-008307-DS@rev2
+      page: 25
+      locator: "Appendix A.2 Ordering code, Table 6: second row of \"Raspberry Pi Pico\": \"SC0916  0617588405587\""

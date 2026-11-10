@@ -1,0 +1,43 @@
+# MCP1700, 3.3 V output, 2% tolerance, extended temperature, in the
+# 3-lead SOT-23 (TT). DS20001826E page 28 "Product Identification
+# System", SOT-23 example g). Package code TT -> drawing C04-104B
+# (page 18), whose table matches manufacturers/microchip/
+# SOT23-3-TT-C04-104C (Rev C, from DS20001942L) number for number: e
+# 0.95 BSC, e1 1.90 BSC, A 0.89-1.12, A2 0.79/0.95/1.02, A1 0.01-0.10,
+# E 2.10-2.64, E1 1.16/1.30/1.40, D 2.67/2.90/3.05, L 0.13/0.50/0.60,
+# c 0.08-0.20, b 0.30-0.54 -- reused (numbers compared, not revision
+# letters).
+# existence is "probable": the MPN appears only as an ordering
+# *example* of the Product Identification System, not in an orderable
+# list (Microchip product pages are JavaScript apps and were not read).
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real
+# string. lifecycle: no production-status statement in the datasheet;
+# unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP1700T-3302E-TT
+
+manufacturer: microchip
+mpn: "MCP1700T-3302E/TT"
+
+device: microchip/MCP1700-TT
+package: manufacturers/microchip/SOT23-3-TT-C04-104C
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001826@revE
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001826@revE
+      page: 28
+      locator: "Product Identification System, SOT-23 Package example g) \"MCP1700T-3302E/TT: 3.3V VOUT\""
+  "/package":
+    - source: microchip/DS20001826@revE
+      page: 28
+      locator: "Product Identification System, Package \"TT = Plastic Small Outline Transistor (SOT-23), 3-lead\"; drawing C04-104B page 18"

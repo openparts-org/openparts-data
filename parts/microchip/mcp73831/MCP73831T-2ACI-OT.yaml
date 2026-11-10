@@ -14,8 +14,10 @@ mpn: MCP73831T-2ACI/OT
 device: microchip/MCP73831
 package: standards/SOT23-5-2.90x1.60-P0.95
 
+# existence is `probable`: the MPN is printed only as an ordering *example*,
+# not in an orderable list (openparts/skills/add-part section 2).
 existence:
-  status: verified
+  status: probable
 
 lifecycle:
   status: unknown

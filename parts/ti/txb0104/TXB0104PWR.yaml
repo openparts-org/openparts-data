@@ -1,0 +1,37 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SCES650K PDF page 29, addendum dated 28-Jul-2026):
+# "TXB0104PWR | Active | Production | TSSOP (PW) | 14 | 2000 | LARGE T&R | ... | -40 to 85 | YE04".
+# lifecycle "active" is that table's Status column.
+# Package: TSSOP (PW) | 14, outline PW0014A (4220202/B) on page 52.
+schema_version: "0.1"
+kind: part
+id: ti/TXB0104PWR
+
+manufacturer: ti
+mpn: "TXB0104PWR"
+
+device: ti/TXB0104-PW
+package: manufacturers/ti/PW0014A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SCES650K
+
+provenance:
+  "/existence":
+    - source: ti/SCES650K
+      page: 29
+      locator: "Package Option Addendum, Packaging Information table, row \"TXB0104PWR\""
+  "/lifecycle":
+    - source: ti/SCES650K
+      page: 29
+      locator: "Package Option Addendum, row \"TXB0104PWR\", Status \"Active\""
+  "/package":
+    - source: ti/SCES650K
+      page: 29
+      locator: "Package Option Addendum, row \"TXB0104PWR\", \"TSSOP (PW) | 14\"; outline PW0014A (4220202/B) on page 52"

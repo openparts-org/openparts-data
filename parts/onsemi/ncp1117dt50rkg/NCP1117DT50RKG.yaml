@@ -1,0 +1,33 @@
+# NCP1117DT50RKG: 5.0 V fixed, DPAK (Pb-Free), 2500 / Tape & Reel, printed
+# verbatim in NCP1117/D Rev. 31 "ORDERING INFORMATION - (NCP1117)"
+# (page 12). Package: "DPAK DT SUFFIX CASE 369C" (page 1); the 369C
+# ISSUE L outline in this PDF (page 18) is identical to the one in
+# MC7800/D page 26 that the package cites. No lifecycle statement.
+schema_version: "0.1"
+kind: part
+id: onsemi/NCP1117DT50RKG
+
+manufacturer: onsemi
+mpn: NCP1117DT50RKG
+
+device: onsemi/NCP1117-5.0
+package: manufacturers/onsemi/TO252-6.10x6.54-P2.29-369C-TabPin4
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/NCP1117-D
+
+provenance:
+  "/existence":
+    - source: onsemi/NCP1117-D
+      page: 12
+      locator: "ORDERING INFORMATION - (NCP1117): \"NCP1117DT50RKG | 5.0 | DPAK (Pb-Free) | 2500 / Tape & Reel\""
+  "/package":
+    - source: onsemi/NCP1117-D
+      page: 18
+      locator: "DPAK-3 CASE 369C ISSUE L outline (98AON10527D); page 1 \"DPAK DT SUFFIX CASE 369C\""

@@ -1,0 +1,39 @@
+# Raspberry Pi Pico W, order code SC0918. The Pico W datasheet's Appendix
+# A.2 "Ordering code" (Table 1, PDF page 20) prints it "SCO918" -- with a
+# letter O (and "SCO919" for the Pico WH) -- while Raspberry Pi's
+# Product Information Portal page for the Pico W lists "SC0918, SC0919"
+# with a digit zero, matching the SC09xx codes of the Pico (SC0915-17).
+# The digit form is used; the datasheet spelling is a typo.
+# Package: the Pico W's SMT footprint (castellated pads plus the
+# mid-board SWCLK/GND/SWDIO pads). lifecycle unknown: no
+# production-status statement in these sources.
+schema_version: "0.1"
+kind: part
+id: raspberrypi/SC0918
+
+manufacturer: raspberrypi
+mpn: SC0918
+
+device: raspberrypi/PICO-W
+package: standards/MODULE40-21x51-P2.54-PICO-W
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - raspberrypi/RP-008312-DS@rev2
+  - raspberrypi/PIP-686-pico-w
+
+provenance:
+  "/existence":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 20
+      locator: "Appendix A.2 Ordering code, Table 1: \"Raspberry Pi Pico W  SCO918  5056561803173\" (letter O as printed)"
+    - source: raspberrypi/PIP-686-pico-w
+      locator: "Page header under \"Raspberry Pi Pico W\": \"SC0918, SC0919\""
+  "/mpn":
+    - source: raspberrypi/PIP-686-pico-w
+      locator: "\"SC0918\" with a digit zero"

@@ -1,0 +1,37 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SBOS741H PDF page 32, addendum dated 1-Nov-2026):
+# "INA180A1IDBVR | Active | Production | SOT-23 (DBV) | 5 | 3000 | LARGE T&R | ... | -40 to 125 | 18ID".
+# lifecycle "active" is that table's Status column.
+# Package: SOT-23 (DBV) | 5, outline DBV0005A (4214839/K) on page 47.
+schema_version: "0.1"
+kind: part
+id: ti/INA180A1IDBVR
+
+manufacturer: ti
+mpn: "INA180A1IDBVR"
+
+device: ti/INA180A-DBV
+package: manufacturers/ti/DBV0005A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SBOS741H
+
+provenance:
+  "/existence":
+    - source: ti/SBOS741H
+      page: 32
+      locator: "Package Option Addendum, Packaging Information table, row \"INA180A1IDBVR\""
+  "/lifecycle":
+    - source: ti/SBOS741H
+      page: 32
+      locator: "Package Option Addendum, row \"INA180A1IDBVR\", Status \"Active\""
+  "/package":
+    - source: ti/SBOS741H
+      page: 32
+      locator: "Package Option Addendum, row \"INA180A1IDBVR\", \"SOT-23 (DBV) | 5\"; outline DBV0005A (4214839/K) on page 47"

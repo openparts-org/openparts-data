@@ -1,0 +1,42 @@
+# ATmega4809, 48 KB/6 KB, 48-pin TQFP, 20 MHz, 1.8-5.5V, -40°C to +125°C, Tray:
+# MPN printed verbatim in Table 34-1 "Available Product Numbers"
+# (DS40002173C page 521) -> existence verified.
+# Package TQFP -> section 35.8, drawing C04-300-PT Rev D (pages
+# 539-540). Every number of its table matches standards/TQFP48-7x7-
+# P0.5 (built from C04-300-Y8 Rev D in DS40001882L): e 0.50 BSC, A max
+# 1.20, A1 0.05-0.15, A2 0.95/1.00/1.05, D/E 9.00 BSC, D1/E1 7.00 BSC,
+# b 0.17/0.22/0.27, c 0.09-0.16, L 0.45/0.60/0.75 -> reused (validate
+# with --source sources/microchip/DS40001882L.yaml).
+# lifecycle: no production-status statement in the datasheet and the
+# product page refused curl and WebFetch; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/ATmega4809-AF
+
+manufacturer: microchip
+mpn: ATmega4809-AF
+
+device: microchip/ATmega4809-48
+package: standards/TQFP48-7x7-P0.5
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40002173@revC
+
+provenance:
+  "/existence":
+    - source: microchip/DS40002173@revC
+      page: 521
+      locator: "Table 34-1 \"Available Product Numbers\", row \"ATmega4809-AF\""
+  "/package":
+    - source: microchip/DS40002173@revC
+      page: 521
+      locator: "Table 34-1, \"Pin Count 48\", \"Package Type TQFP\""
+    - source: microchip/DS40002173@revC
+      page: 540
+      locator: "Section 35.8 \"48-Pin TQFP\", drawing C04-300-PT Rev D sheet 2"

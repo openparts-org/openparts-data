@@ -1,0 +1,109 @@
+# TI DBZ0003A "SOT-23 - 1.12 mm max height" (3-lead SOT-23; drawing
+# 4214838/F 08/2024, JEDEC TO-236 "except minimum foot length" per its
+# note 3), read from the rendered outline page of SBVS032K (PDF page
+# 34). Millimetres as printed. The same drawing revision (identical
+# text) is in SLOS456Q p53 and SLVS543S p62; this package cites
+# SBVS032K only.
+#
+# Top view: pins 1 and 2 on one edge ("1.9" basic apart, "0.95" basic
+# from pin 1 to the centre line), pin 3 alone on the opposite edge --
+# lead_layout [2, 1]. As for the other SOT-23-3 packages in this
+# dataset, pitch = the 1.9 outside lead pitch (pin 1 to pin 2).
+#
+# Field mapping for the `sot` generator: body_width = 3.04/2.80 (long
+# side, along the pin 1-2 row, datum A), body_length = 1.4/1.2 (molded
+# width across the rows, datum B), overall_length = 2.64/2.10 (lead-tip
+# span). Ranges only, no nominal. Only "1.12 MAX" is given for the
+# height; the side-view "(0.95)" is a reference value and is not
+# recorded (no A2). Standoff "0.10/0.01 TYP", foot "0.6/0.2 TYP", lead
+# thickness "0.20/0.08 TYP" recorded as those ranges.
+schema_version: "0.1"
+kind: package
+id: manufacturers/ti/DBZ0003A
+
+family: sot
+lead_count: 3
+lead_layout: [2, 1]
+
+pitch:
+  nominal: 1.9
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 2.80
+    max: 3.04
+    unit: mm
+  body_length:
+    min: 1.2
+    max: 1.4
+    unit: mm
+  overall_length:
+    min: 2.10
+    max: 2.64
+    unit: mm
+  overall_height:
+    max: 1.12
+    unit: mm
+  standoff:
+    min: 0.01
+    max: 0.10
+    unit: mm
+  lead_width:
+    min: 0.3
+    max: 0.5
+    unit: mm
+  lead_length:
+    min: 0.2
+    max: 0.6
+    unit: mm
+  lead_thickness:
+    min: 0.08
+    max: 0.20
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: sot
+
+provenance:
+  "/pitch":
+    - source: ti/SBVS032K
+      page: 34
+      locator: "PACKAGE OUTLINE DBZ0003A (4214838/F), \"1.9\" basic between pins 1 and 2 (\"0.95\" basic pin 1 to centre)"
+  "/lead_layout":
+    - source: ti/SBVS032K
+      page: 34
+      locator: "DBZ0003A top view: leads 1 and 2 on the left edge, lead 3 alone on the right edge"
+  "/dimensions/body_width":
+    - source: ti/SBVS032K
+      page: 34
+      locator: "DBZ0003A, body length \"3.04 / 2.80\" (datum A) -- see field-mapping note"
+  "/dimensions/body_length":
+    - source: ti/SBVS032K
+      page: 34
+      locator: "DBZ0003A, molded body width \"1.4 / 1.2\" (datum B) -- see field-mapping note"
+  "/dimensions/overall_length":
+    - source: ti/SBVS032K
+      page: 34
+      locator: "DBZ0003A, lead-tip span \"2.64 / 2.10\""
+  "/dimensions/overall_height":
+    - source: ti/SBVS032K
+      page: 34
+      locator: "DBZ0003A side view, \"1.12 MAX\""
+  "/dimensions/standoff":
+    - source: ti/SBVS032K
+      page: 34
+      locator: "DBZ0003A side view, \"0.10 / 0.01 TYP\""
+  "/dimensions/lead_width":
+    - source: ti/SBVS032K
+      page: 34
+      locator: "DBZ0003A, \"3X 0.5 / 0.3\""
+  "/dimensions/lead_length":
+    - source: ti/SBVS032K
+      page: 34
+      locator: "DBZ0003A lead detail, \"0.6 / 0.2 TYP\""
+  "/dimensions/lead_thickness":
+    - source: ti/SBVS032K
+      page: 34
+      locator: "DBZ0003A lead detail, \"0.20 / 0.08 TYP\""

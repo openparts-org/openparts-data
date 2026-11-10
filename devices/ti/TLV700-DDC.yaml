@@ -1,0 +1,29 @@
+# 200-mA low-IQ LDO (all fixed voltages), DDC (SOT-23-THIN 5) pinout.
+# From SLVSA00E "Pin Functions" table (page 4), column "SOT": IN 1,
+# GND 2, EN 3, NC 4, OUT 5, checked against the "DDC Package 5-Pin SOT
+# Top View" figure (same page), where pin 4 is drawn "N/C" with note
+# "(1) No connection"; the table name "NC" is used. The SC70 (DCK)
+# column has the same numbers but is not covered here.
+schema_version: "0.1"
+kind: device
+id: ti/TLV700-DDC
+
+manufacturer: ti
+category: other
+family: TLV700
+
+pins:
+  "1": { name: IN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: EN, type: input }
+  "4": { name: NC, type: nc }
+  "5": { name: OUT, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SLVSA00E
+      page: 4
+      locator: "\"Pin Functions\" table, column \"SOT\""
+    - source: ti/SLVSA00E
+      page: 4
+      locator: "\"DDC Package 5-Pin SOT Top View\" figure"

@@ -1,0 +1,34 @@
+# Raspberry Pi Pico, order code SC0915: printed in the Pico datasheet's
+# Appendix A.2 "Ordering code" (Table 6, PDF page 25) against the model
+# "Raspberry Pi Pico" (EAN 5056561801445). The same row lists a second
+# code, SC0916 (EAN 0617588405587), for the same model -- see SC0916.yaml.
+# The Pico H (SC0917, pre-soldered headers and a 3-pin debug connector)
+# is not added: the datasheet draws no outline or footprint for it.
+#
+# Package: the Pico's recommended SMT footprint (castellated pads plus
+# the D1-D3 debug pads). lifecycle unknown: the datasheet makes no
+# production-status statement.
+schema_version: "0.1"
+kind: part
+id: raspberrypi/SC0915
+
+manufacturer: raspberrypi
+mpn: SC0915
+
+device: raspberrypi/PICO
+package: standards/MODULE40-21x51-P2.54-PICO
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - raspberrypi/RP-008307-DS@rev2
+
+provenance:
+  "/existence":
+    - source: raspberrypi/RP-008307-DS@rev2
+      page: 25
+      locator: "Appendix A.2 Ordering code, Table 6: \"Raspberry Pi Pico  SC0915  5056561801445\""

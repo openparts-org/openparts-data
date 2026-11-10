@@ -1,0 +1,32 @@
+# I2C current/power monitor, D (SOIC-8) pinout. From SBOS448G "Pin
+# Functions" table (page 3), column "SOIC", checked against the "D
+# Package 8-Pin SOIC Top View" figure (same page). The DCN (SOT-23-8)
+# pinout is reversed (IN+ 1 ... A1 8) and is not covered. Minus sign
+# written as ASCII "-". SDA is "Digital I/O" -> io; SCL, A0, A1
+# "Digital Input" -> input; GND/VS typed ground/power.
+schema_version: "0.1"
+kind: device
+id: ti/INA219-D
+
+manufacturer: ti
+category: other
+family: INA219
+
+pins:
+  "1": { name: A1, type: input }
+  "2": { name: A0, type: input }
+  "3": { name: SDA, type: io }
+  "4": { name: SCL, type: input }
+  "5": { name: VS, type: power }
+  "6": { name: GND, type: ground }
+  "7": { name: "IN-", type: analog }
+  "8": { name: "IN+", type: analog }
+
+provenance:
+  "/pins":
+    - source: ti/SBOS448G
+      page: 3
+      locator: "\"Pin Functions\" table, column \"SOIC\""
+    - source: ti/SBOS448G
+      page: 3
+      locator: "\"D Package 8-Pin SOIC Top View\" figure (all 8 pins matched)"

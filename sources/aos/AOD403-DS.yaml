@@ -1,0 +1,17 @@
+# Official AOS datasheet "AOD403/AOI403 30V P-Channel MOSFET", footer
+# "Rev.10.1: January 2024", 6 pages, downloaded from the URL below.
+# Read via pdftotext and a page-1 render (pdftoppm) for the "TO252 DPAK"
+# and "TO-251A IPAK" Top View / Bottom View pin images. No package
+# outline and no ordering table in this document.
+schema_version: "0.1"
+kind: source
+id: aos/AOD403-DS
+
+publisher: aos
+document_id: AOD403
+document_type: datasheet
+
+revision: "10.1"
+date: "2024-01"
+
+url: "https://www.aosmd.com/res/datasheets/AOD403.pdf"

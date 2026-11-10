@@ -1,0 +1,39 @@
+# ATmega4809, 48 KB/6 KB, 48-pin VQFN, 20 MHz, 1.8-5.5V, -40°C to +85°C, Tray:
+# MPN printed verbatim in Table 34-1 "Available Product Numbers"
+# (DS40002173C page 521) -> existence verified.
+# Package VQFN -> section 35.9, drawing C04-494 Rev A (pages 542-543).
+# The wettable-flank VQFN (section 35.10) is a different drawing and
+# is not what -MU/-MF are mapped to here: Table 34-1 only says "VQFN".
+# lifecycle: no production-status statement in the datasheet and the
+# product page refused curl and WebFetch; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/ATmega4809-MU
+
+manufacturer: microchip
+mpn: ATmega4809-MU
+
+device: microchip/ATmega4809-48
+package: manufacturers/microchip/VQFN48-6x6-P0.4-EP4.1-C04-494
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40002173@revC
+
+provenance:
+  "/existence":
+    - source: microchip/DS40002173@revC
+      page: 521
+      locator: "Table 34-1 \"Available Product Numbers\", row \"ATmega4809-MU\""
+  "/package":
+    - source: microchip/DS40002173@revC
+      page: 521
+      locator: "Table 34-1, \"Pin Count 48\", \"Package Type VQFN\""
+    - source: microchip/DS40002173@revC
+      page: 543
+      locator: "Section 35.9 \"48-Pin VQFN\", drawing C04-494 Rev A"

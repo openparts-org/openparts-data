@@ -1,0 +1,39 @@
+# RT9080, 3.3 V fixed output, Richtek Green, TSOT-23-5. "RT9080-33GJ5"
+# is printed verbatim in the RT9080 product page's orderable SKU list
+# (JSON-LD "offers", fetched 2026-11-10) -> existence verified. Its
+# fields decode with the DS9080-09 "2 Ordering Information" legend
+# (page 1): RT9080 = without SNS pin, 33 = 3.3V, G = Richtek Green
+# Policy compliant, J5 = TSOT-23-5. lifecycle: neither source states a
+# production status; unknown.
+schema_version: "0.1"
+kind: part
+id: richtek/RT9080-33GJ5
+
+manufacturer: richtek
+mpn: RT9080-33GJ5
+
+device: richtek/RT9080-TSOT23-5
+package: manufacturers/richtek/TSOT23-5-DS9080
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - richtek/DS9080-09
+  - richtek/RT9080-product-page
+
+provenance:
+  "/existence":
+    - source: richtek/RT9080-product-page
+      page: 1
+      locator: "JSON-LD Product \"RT9080\", offers sku \"RT9080-33GJ5\""
+    - source: richtek/DS9080-09
+      page: 1
+      locator: "2 Ordering Information legend: \"Package Type J5: TSOT-23-5\", \"Output Voltage 33 : 3.3V\", \"G: Richtek Green Policy Compliant\", \"RT9080: Without SNS Pin\""
+  "/package":
+    - source: richtek/DS9080-09
+      page: 1
+      locator: "2 Ordering Information, \"J5: TSOT-23-5\"; outline 19.1 TSOT-23-5 on page 17"

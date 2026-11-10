@@ -1,0 +1,158 @@
+# Raspberry Pi Pico W board as a surface-mount module: the recommended
+# SMT footprint (Pico W datasheet RP-008312-DS rev 2, section 2.2,
+# Figure 5, PDF page 10) with the board outline and holes of Figure 3
+# (PDF page 7). Every value is a printed callout, the datasheet text, or
+# (where said so in the locator) arithmetic between printed callouts.
+# Pico 2 W (RP-008304-DS rev 3, Figures 3 and 5, PDF pages 7 and 10)
+# prints the same numbers for every value here, so the Pico 2 W part uses
+# this package too.
+#
+# Differs from the Pico's package: the three SWD debug pads sit
+# mid-board (19.8 mm above the antenna end), not at the board end, and
+# are 1.5748 mm pads. Figure 4 (pin numbering) labels them SWCLK, GND,
+# SWDIO left to right (no D1-D3 numbers), so those labels are the pad
+# numbers; Figure 5 calls them pads E, F, G. E is a 1.5748 mm square,
+# F and G are 1.5748 mm circles: the generator draws all three as
+# squares (its SMD pads are rectangles). Figure 7 shows them as
+# through-hole pads, but no drill is stated, so they are SMD lands here.
+# Left out as for the Pico: test points TP1-TP6 and the USB shell pads
+# A-D, and the 14 mm x 9 mm antenna keep-out (section 2.2.1) -- the
+# family has no keep-out areas yet.
+schema_version: "0.1"
+kind: package
+id: standards/MODULE40-21x51-P2.54-PICO-W
+
+family: module
+lead_count: 40
+aux_pads: [SWCLK, GND, SWDIO]
+
+pitch:
+  nominal: 2.54
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 21
+    unit: mm
+  body_length:
+    nominal: 51
+    unit: mm
+  body_height:
+    nominal: 1
+    unit: mm
+  overall_width:
+    nominal: 22.58
+    unit: mm
+  lead_width:
+    nominal: 1.6
+    unit: mm
+  lead_length:
+    nominal: 3.2
+    unit: mm
+  row_spacing:
+    nominal: 17.78
+    unit: mm
+  hole_diameter:
+    nominal: 1
+    unit: mm
+  aux_pad_width:
+    nominal: 1.5748
+    unit: mm
+  aux_pad_length:
+    nominal: 1.5748
+    unit: mm
+  aux_row_x:
+    nominal: 13.6241
+    unit: mm
+  aux_row_y:
+    nominal: 19.8
+    unit: mm
+  mounting_hole_diameter:
+    nominal: 2.1
+    min: 2.05
+    max: 2.15
+    unit: mm
+  mounting_hole_spacing:
+    nominal: 11.4
+    unit: mm
+  mounting_hole_inset:
+    nominal: 2
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: module
+
+provenance:
+  "/lead_count":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 8
+      locator: "Figure 4 (pin numbering): pins 1-20 down the left edge, 21-40 up the right edge"
+  "/aux_pads":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 8
+      locator: "Figure 4: debug pads labelled SWCLK (square), GND, SWDIO left to right"
+  "/pitch":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 7
+      locator: "Section 2: \"40 main user pins on a 2.54 mm (0.1\") pitch grid\"; Figure 3 \"2.54\""
+  "/dimensions/body_width":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 7
+      locator: "Section 2: \"single sided 51 mm x 21 mm x 1 mm PCB\"; Figure 3 \"21\""
+  "/dimensions/body_length":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 7
+      locator: "Section 2: \"51 mm x 21 mm x 1 mm\"; Figure 3 \"51\""
+  "/dimensions/body_height":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 7
+      locator: "Section 2: \"51 mm x 21 mm x 1 mm PCB\" (the board alone)"
+  "/dimensions/overall_width":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 10
+      locator: "Figure 5 (SMT footprint): \"22.58\" across the outer ends of the two pad rows"
+  "/dimensions/lead_width":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 7
+      locator: "Figure 3: \"1.6\" pad width along the edge; Figure 5 (page 10): pad end radius \"R0.8\", and (49.86 - 46.66) / 2 = 1.6"
+  "/dimensions/lead_length":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 10
+      locator: "Figure 5: (\"22.58\" outer - \"16.18\" inner pad span) / 2 = 3.2; the land reaches \"0.79\" past the board edge"
+  "/dimensions/row_spacing":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 7
+      locator: "Figure 3: \"17.78\" between the pin hole rows"
+  "/dimensions/hole_diameter":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 7
+      locator: "Section 2: \"with 1 mm holes\"; Figure 3: two \"diameter 1\" callouts (pin hole and edge castellation)"
+  "/dimensions/aux_pad_width":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 10
+      locator: "Figure 5 notes: \"E PAD : 1.5748mm square\", \"F PAD : 1.5748mm diameter circle\", \"G PAD : 1.5748mm diameter circle\""
+  "/dimensions/aux_pad_length":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 10
+      locator: "Figure 5 notes: E 1.5748 mm square, F/G 1.5748 mm diameter circles"
+  "/dimensions/aux_row_x":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 10
+      locator: "Figure 5 notes (origin bottom left): \"F PAD ... Centre at 13.6241,19.8\" (E at 11.0841, G at 16.1641); Figure 3 (page 7): \"7.3759\" from the right edge = 21 - 13.6241"
+  "/dimensions/aux_row_y":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 10
+      locator: "Figure 5 notes: E, F, G centred at y = 19.8 from the bottom-left origin; Figure 3 (page 7): \"19.8\""
+  "/dimensions/mounting_hole_diameter":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 7
+      locator: "Section 2: \"four 2.1 mm (+/- 0.05 mm) drilled mounting holes\"; Figure 3 \"diameter 2.1\""
+  "/dimensions/mounting_hole_spacing":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 7
+      locator: "Figure 3: \"11.4\" between the hole centres"
+  "/dimensions/mounting_hole_inset":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 7
+      locator: "Figure 3: \"2\" from the top edge and \"2\" from the bottom edge to the hole centres"

@@ -1,0 +1,23 @@
+# Official Microchip datasheet "TC4426A/TC4427A/TC4428A 1.5A Dual
+# High-Speed Power MOSFET Drivers", 26 pages. Downloaded directly from
+# ww1.microchip.com (URL below) with curl; the aemDocuments-style URLs
+# and the product page (microchip.com/en-us/product/TC4427A, 403 with
+# curl and WebFetch) were not reachable, so this may not be the newest
+# revision. document_id/revision from the printed footer
+# "DS20001423J-page N"; date from Appendix A "Revision J (July 2014)"
+# (page 21). PDF page index = printed page number. Pin table read as
+# text (page 8); the package drawings use an encoded font: the PDIP
+# (C04-018D, page 17) and SOIC (C04-057C, pages 18-19) sheets were
+# rendered (100-220 dpi) and read as images.
+schema_version: "0.1"
+kind: source
+id: microchip/DS20001423@revJ
+
+publisher: microchip
+document_id: DS20001423
+document_type: datasheet
+
+revision: "J"
+date: "2014-07"
+
+url: "https://ww1.microchip.com/downloads/en/DeviceDoc/20001423J.pdf"

@@ -1,0 +1,41 @@
+# MCP6001 (VOUT 1 pinout) in the 5-lead SOT-23 (OT). DS20001733L page
+# 47 "Product Identification System", example b). Package code OT ->
+# drawing C04-091-OT Rev F (pages 24-25), whose table (page 25) matches
+# standards/SOT23-5-2.90x1.60-P0.95 (C04-091-OT Rev F from
+# DS20001984H) number for number: e 0.95 BSC, e1 1.90 BSC, A
+# 0.90-1.45, A2 0.89-1.30, A1 max 0.15, E 2.80 BSC, E1 1.60 BSC, D 2.90
+# BSC, L 0.30-0.60, c 0.08-0.26, b 0.20-0.51 -- reused.
+# existence is "probable": the MPN appears only as an ordering
+# *example* of the Product Identification System, not in an orderable
+# list (Microchip product pages are JavaScript apps and were not read).
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real
+# string. lifecycle: no production-status statement in the datasheet;
+# unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP6001T-I-OT
+
+manufacturer: microchip
+mpn: "MCP6001T-I/OT"
+
+device: microchip/MCP6001
+package: standards/SOT23-5-2.90x1.60-P0.95
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001733@revL
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001733@revL
+      page: 47
+      locator: "Product Identification System, example b) \"MCP6001T-I/OT: Tape and Reel, Industrial Temperature, 5-Lead SOT-23 Package\""
+  "/package":
+    - source: microchip/DS20001733@revL
+      page: 47
+      locator: "Product Identification System, Package \"OT = Plastic Small Outline Transistor (SOT-23), 5-Lead (MCP6001, MCP6001R, MCP6001U)\""

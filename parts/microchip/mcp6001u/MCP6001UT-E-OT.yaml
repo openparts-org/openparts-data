@@ -1,0 +1,39 @@
+# MCP6001U (VIN+ 1 / VOUT 4 pinout) in the 5-lead SOT-23 (OT).
+# DS20001733L page 47 "Product Identification System", example d).
+# Package code OT -> drawing C04-091-OT Rev F (pages 24-25), identical
+# number for number to standards/SOT23-5-2.90x1.60-P0.95 (see
+# MCP6001T-I-OT) -- reused.
+# existence is "probable": the MPN appears only as an ordering
+# *example* of the Product Identification System, not in an orderable
+# list (Microchip product pages are JavaScript apps and were not read).
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real
+# string. lifecycle: no production-status statement in the datasheet;
+# unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP6001UT-E-OT
+
+manufacturer: microchip
+mpn: "MCP6001UT-E/OT"
+
+device: microchip/MCP6001U
+package: standards/SOT23-5-2.90x1.60-P0.95
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001733@revL
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001733@revL
+      page: 47
+      locator: "Product Identification System, example d) \"MCP6001UT-E/OT: Tape and Reel, Extended Temperature, 5-Lead SOT-23 Package\""
+  "/package":
+    - source: microchip/DS20001733@revL
+      page: 47
+      locator: "Product Identification System, Package \"OT = Plastic Small Outline Transistor (SOT-23), 5-Lead (MCP6001, MCP6001R, MCP6001U)\""

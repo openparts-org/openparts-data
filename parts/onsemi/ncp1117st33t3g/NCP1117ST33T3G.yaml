@@ -1,0 +1,32 @@
+# NCP1117ST33T3G: 3.3 V fixed, SOT-223 (Pb-Free), 4000 / Tape & Reel, printed
+# verbatim in NCP1117/D Rev. 31 "ORDERING INFORMATION - (NCP1117)"
+# (page 12). Package: "SOT-223 ST SUFFIX CASE 318H" (page 1), outline
+# page 17. No lifecycle statement for this MPN in the document.
+schema_version: "0.1"
+kind: part
+id: onsemi/NCP1117ST33T3G
+
+manufacturer: onsemi
+mpn: NCP1117ST33T3G
+
+device: onsemi/NCP1117-3.3
+package: manufacturers/onsemi/SOT223-3.5x6.5-P2.3-318H-TabPin4
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/NCP1117-D
+
+provenance:
+  "/existence":
+    - source: onsemi/NCP1117-D
+      page: 12
+      locator: "ORDERING INFORMATION - (NCP1117): \"NCP1117ST33T3G | 3.3 | SOT-223 (Pb-Free) | 4000 / Tape & Reel\""
+  "/package":
+    - source: onsemi/NCP1117-D
+      page: 17
+      locator: "SOT-223 CASE 318H ISSUE B outline (98ASH70634A); page 1 \"SOT-223 ST SUFFIX CASE 318H\""

@@ -1,0 +1,24 @@
+# 20V P-channel enhancement-mode MOSFET with gate protection diode,
+# SOT23 (Standard). Pin numbers are NOT printed in DS31830: the page-1
+# "Top View" box drawing labels the single top lead D, the bottom-left
+# lead G and the bottom-right lead S. Numbers map those positions onto
+# this dataset's sot convention (1 bottom-left, 2 bottom-right, 3 top),
+# as diodes/DMG2305UX -- position-derived, flagged for review.
+schema_version: "0.1"
+kind: device
+id: diodes/DMP2035U
+
+manufacturer: diodes
+category: transistor
+family: DMP2035U
+
+pins:
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }
+
+provenance:
+  "/pins":
+    - source: diodes/DS31830
+      page: 1
+      locator: "Right-hand \"Top View\" box drawing (G bottom-left, S bottom-right, D top); no pin numbers printed -- see header"

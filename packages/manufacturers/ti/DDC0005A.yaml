@@ -1,0 +1,107 @@
+# TI DDC0005A "SOT-23 - 1.1 max height" (SOT-23-THIN 5-lead; drawing
+# 4220752/C 08/2024, JEDEC MO-193 per its note 3), read from the
+# rendered outline page of SLVSA00E (PDF page 36). Millimetres as
+# printed.
+#
+# Top view: pins 1-2-3 down the left edge, pin 4 opposite pin 3 and
+# pin 5 opposite pin 1 (counter-clockwise) -- lead_layout [3, 2]; the
+# outer leads are "1.9" basic apart, adjacent leads "0.95" basic.
+#
+# Field mapping for the `sot` generator (leads exit across
+# body_length): body_width = 3.05/2.75 (along the rows, datum A),
+# body_length = 1.75/1.45 (molded width across the rows, datum B),
+# overall_length = 3.05/2.55 (lead-tip span). Ranges only, no nominal.
+# Standoff "0.1/0.0 TYP", foot "0.6/0.3 TYP" and lead thickness
+# "0.20/0.12 TYP" recorded as those ranges. Not the same as DDC0006A
+# (6 leads) or DBV0005A (1.45 max height, span 3.0/2.6).
+schema_version: "0.1"
+kind: package
+id: manufacturers/ti/DDC0005A
+
+family: sot
+lead_count: 5
+lead_layout: [3, 2]
+
+pitch:
+  nominal: 0.95
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 2.75
+    max: 3.05
+    unit: mm
+  body_length:
+    min: 1.45
+    max: 1.75
+    unit: mm
+  overall_length:
+    min: 2.55
+    max: 3.05
+    unit: mm
+  overall_height:
+    min: 0.7
+    max: 1.1
+    unit: mm
+  standoff:
+    min: 0.0
+    max: 0.1
+    unit: mm
+  lead_width:
+    min: 0.3
+    max: 0.5
+    unit: mm
+  lead_length:
+    min: 0.3
+    max: 0.6
+    unit: mm
+  lead_thickness:
+    min: 0.12
+    max: 0.20
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: sot
+
+provenance:
+  "/pitch":
+    - source: ti/SLVSA00E
+      page: 36
+      locator: "PACKAGE OUTLINE DDC0005A (4220752/C), \"0.95\" basic (\"1.9\" basic across pins 1-3)"
+  "/lead_layout":
+    - source: ti/SLVSA00E
+      page: 36
+      locator: "DDC0005A top view: leads 1, 2, 3 on the left edge, 5 (top) and 4 (bottom) on the right edge"
+  "/dimensions/body_width":
+    - source: ti/SLVSA00E
+      page: 36
+      locator: "DDC0005A, body length along the rows \"3.05 / 2.75\" (datum A) -- see field-mapping note"
+  "/dimensions/body_length":
+    - source: ti/SLVSA00E
+      page: 36
+      locator: "DDC0005A, molded body width \"1.75 / 1.45\" (datum B) -- see field-mapping note"
+  "/dimensions/overall_length":
+    - source: ti/SLVSA00E
+      page: 36
+      locator: "DDC0005A, lead-tip span \"3.05 / 2.55\""
+  "/dimensions/overall_height":
+    - source: ti/SLVSA00E
+      page: 36
+      locator: "DDC0005A side view, height \"1.1 / 0.7\""
+  "/dimensions/standoff":
+    - source: ti/SLVSA00E
+      page: 36
+      locator: "DDC0005A side view, \"0.1 / 0.0 TYP\""
+  "/dimensions/lead_width":
+    - source: ti/SLVSA00E
+      page: 36
+      locator: "DDC0005A, \"5X 0.5 / 0.3\""
+  "/dimensions/lead_length":
+    - source: ti/SLVSA00E
+      page: 36
+      locator: "DDC0005A lead detail, \"0.6 / 0.3 TYP\""
+  "/dimensions/lead_thickness":
+    - source: ti/SLVSA00E
+      page: 36
+      locator: "DDC0005A lead detail, \"0.20 / 0.12 TYP\""

@@ -1,0 +1,19 @@
+# Official TI datasheet for LMV358/LMV321/LMV324/LMV324S. Downloaded 2026-11-10 from the TI
+# symlink URL below; revision read from the page header "SLOS263Y - AUGUST 1999 - REVISED AUGUST 2023".
+# 53 PDF pages; text read with pdftotext -layout, the pin-configuration
+# figure(s) and the package outline drawings named in the package files
+# were rendered (pdftoppm) and read as images. Page numbers in this
+# dataset are PDF page indices. The PACKAGE OPTION ADDENDUM at the end
+# of the PDF is dated 20-Aug-2026 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SLOS263Y
+
+publisher: ti
+document_id: SLOS263Y
+document_type: datasheet
+
+revision: "Y"
+date: "2023-08"
+
+url: "https://www.ti.com/lit/ds/symlink/lmv358.pdf"

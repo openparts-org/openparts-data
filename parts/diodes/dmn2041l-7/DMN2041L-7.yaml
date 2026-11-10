@@ -1,0 +1,40 @@
+# DMN2041L-7: the only MPN in DS31962 Rev. 4-3 "Ordering Information"
+# (page 1), SOT23, 3000/Tape & Reel. lifecycle nrnd: every page carries
+# "NOT RECOMMENDED FOR NEW DESIGN / USE DMN2040U".
+# Package: the page-5 SOT23 table (letter codes A..M, Min / Max / Typ)
+# matches standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001 value for value
+# (A 0.37-0.51/0.40, B 1.20-1.40/1.30, C 2.30-2.50/2.40, G 1.78-2.05/1.83,
+# H 2.80-3.00/2.90, J 0.013-0.10/0.05, K 0.890-1.00/0.975, K1 0.903-1.10/
+# 1.025, L1 0.25-0.55/0.40, M 0.085-0.150/0.110), so it is reused.
+schema_version: "0.1"
+kind: part
+id: diodes/DMN2041L-7
+
+manufacturer: diodes
+mpn: DMN2041L-7
+
+device: diodes/DMN2041L
+package: standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001
+
+existence:
+  status: verified
+
+lifecycle:
+  status: nrnd
+
+sources:
+  - diodes/DS31962
+
+provenance:
+  "/existence":
+    - source: diodes/DS31962
+      page: 1
+      locator: "Ordering Information: \"DMN2041L-7 | SOT23 | 3000/Tape & Reel\""
+  "/lifecycle":
+    - source: diodes/DS31962
+      page: 1
+      locator: "Banner \"NOT RECOMMENDED FOR NEW DESIGN / USE DMN2040U\" (every page)"
+  "/package":
+    - source: diodes/DS31962
+      page: 5
+      locator: "Package Outline Dimensions SOT23 table (identical to DS18001's) -- reused package, see header"

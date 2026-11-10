@@ -1,0 +1,26 @@
+# MC7805B 5.0 V, 1.0 A positive regulator (TJ -40 to +125 C grade).
+# MC7800/D Rev. 29 page 1 gives one pin list for TO-220, D2PAK-3 and
+# DPAK-3: "Pin 1. Input 2. Ground 3. Output", and for DPAK/D2PAK
+# "Heatsink surface (shown as terminal 4 in case outline drawing) is
+# connected to Pin 2." -> pin "4" = Ground. Pin types: Input/Output
+# power, Ground ground (repeat allowed). In the DPAK, lead 2 is trimmed
+# at the body (no pad).
+schema_version: "0.1"
+kind: device
+id: onsemi/MC7805B
+
+manufacturer: onsemi
+category: other
+family: MC7800
+
+pins:
+  "1": { name: Input, type: power }
+  "2": { name: Ground, type: ground }
+  "3": { name: Output, type: power }
+  "4": { name: Ground, type: ground }
+
+provenance:
+  "/pins":
+    - source: onsemi/MC7800-D
+      page: 1
+      locator: "Pinout box: \"Pin 1. Input 2. Ground 3. Output\"; \"Heatsink surface (shown as terminal 4 in case outline drawing) is connected to Pin 2.\""

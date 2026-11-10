@@ -1,0 +1,37 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SBVS320D PDF page 28, addendum dated 8-Nov-2026):
+# "TLV75533PDBVR | Active | Production | SOT-23 (DBV) | 5 | 3000 | LARGE T&R | ... | -40 to 125 | 1FWF".
+# lifecycle "active" is that table's Status column.
+# Package: SOT-23 (DBV) | 5, outline DBV0005A (4214839/K) on page 44.
+schema_version: "0.1"
+kind: part
+id: ti/TLV75533PDBVR
+
+manufacturer: ti
+mpn: "TLV75533PDBVR"
+
+device: ti/TLV755P-DBV
+package: manufacturers/ti/DBV0005A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SBVS320D
+
+provenance:
+  "/existence":
+    - source: ti/SBVS320D
+      page: 28
+      locator: "Package Option Addendum, Packaging Information table, row \"TLV75533PDBVR\""
+  "/lifecycle":
+    - source: ti/SBVS320D
+      page: 28
+      locator: "Package Option Addendum, row \"TLV75533PDBVR\", Status \"Active\""
+  "/package":
+    - source: ti/SBVS320D
+      page: 28
+      locator: "Package Option Addendum, row \"TLV75533PDBVR\", \"SOT-23 (DBV) | 5\"; outline DBV0005A (4214839/K) on page 44"

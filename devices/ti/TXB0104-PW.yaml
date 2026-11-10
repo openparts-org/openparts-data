@@ -1,0 +1,37 @@
+# 4-bit bidirectional voltage-level translator, 14-pin pinout of the D
+# (SOIC), PW (TSSOP) and DYY packages. From SCES650K Table 4-1 "Pin
+# Functions" (page 4), column "D, PW", checked against Figure 4-4
+# "D/PW/DYY Package, 14-Pin SOIC/TSSOP/SOT (Top View)" (page 3). NC is
+# "No connection. Not internally connected."
+schema_version: "0.1"
+kind: device
+id: ti/TXB0104-PW
+
+manufacturer: ti
+category: other
+family: TXB0104
+
+pins:
+  "1": { name: VCCA, type: power }
+  "2": { name: A1, type: io }
+  "3": { name: A2, type: io }
+  "4": { name: A3, type: io }
+  "5": { name: A4, type: io }
+  "6": { name: NC, type: nc }
+  "7": { name: GND, type: ground }
+  "8": { name: OE, type: input }
+  "9": { name: NC, type: nc }
+  "10": { name: B4, type: io }
+  "11": { name: B3, type: io }
+  "12": { name: B2, type: io }
+  "13": { name: B1, type: io }
+  "14": { name: VCCB, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SCES650K
+      page: 4
+      locator: "Table 4-1 \"Pin Functions\", column \"D, PW\""
+    - source: ti/SCES650K
+      page: 3
+      locator: "Figure 4-4 \"D/PW/DYY Package, 14-Pin SOIC/TSSOP/SOT (Top View)\" (all 14 pins matched)"

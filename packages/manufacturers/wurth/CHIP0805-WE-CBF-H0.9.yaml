@@ -1,0 +1,60 @@
+# Würth WE-CBF 0805 ferrite bead outline ("SIZE/TYPE 0805"), from the
+# page-1 "Dimensions: [mm]" drawing of 742792040 (rendered at 150 dpi):
+# top view terminal band "0,5 ±0,3", side view "2,0 ±0,2", its end
+# view "0,9 ±0,2" (height) and a lower view "1,2 ±0,2" (width). The
+# id carries the 0.9 mm height because WE-CBF heights are per order
+# code; only 742792040 was checked. min/max are the printed
+# tolerances applied.
+schema_version: "0.1"
+kind: package
+id: manufacturers/wurth/CHIP0805-WE-CBF-H0.9
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 2.0
+    min: 1.8
+    max: 2.2
+    unit: mm
+  body_width:
+    nominal: 1.2
+    min: 1.0
+    max: 1.4
+    unit: mm
+  body_height:
+    nominal: 0.9
+    min: 0.7
+    max: 1.1
+    unit: mm
+  lead_length:
+    nominal: 0.5
+    min: 0.2
+    max: 0.8
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: wurth/742792040-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" side view, length \"2,0 ±0,2\""
+  "/dimensions/body_width":
+    - source: wurth/742792040-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" lower view, width \"1,2 ±0,2\""
+  "/dimensions/body_height":
+    - source: wurth/742792040-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" end view beside the side view, height \"0,9 ±0,2\""
+  "/dimensions/lead_length":
+    - source: wurth/742792040-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" top view, terminal band \"0,5 ±0,3\""

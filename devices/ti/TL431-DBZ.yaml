@@ -1,0 +1,28 @@
+# Programmable shunt reference, DBZ (SOT-23-3) pinout. Differs from the
+# D (SOIC) pinout of ti/TL431-D and from the TL432 DBZ pinout (REF 1,
+# CATHODE 2). From SLVS543S Table 5-1 "Pin Functions" (page 4), TL431x
+# DBZ column: CATHODE 1, REF 2, ANODE 3, checked against the figure
+# "TL431, TL431A, TL431B . . . DBZ (SOT-23-3) PACKAGE (TOP VIEW)" on the
+# same page. Types as for ti/TL431-D (ANODE ground: "Common pin,
+# normally connected to ground").
+schema_version: "0.1"
+kind: device
+id: ti/TL431-DBZ
+
+manufacturer: ti
+category: other
+family: TL431
+
+pins:
+  "1": { name: CATHODE, type: passive }
+  "2": { name: REF, type: analog }
+  "3": { name: ANODE, type: ground }
+
+provenance:
+  "/pins":
+    - source: ti/SLVS543S
+      page: 4
+      locator: "Table 5-1 \"Pin Functions\", TL431x column \"DBZ\""
+    - source: ti/SLVS543S
+      page: 4
+      locator: "\"TL431, TL431A, TL431B . . . DBZ (SOT-23-3) PACKAGE (TOP VIEW)\""

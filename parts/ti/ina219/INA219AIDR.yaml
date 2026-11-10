@@ -1,0 +1,37 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SBOS448G PDF page 29, addendum dated 5-Mar-2026):
+# "INA219AIDR | Active | Production | SOIC (D) | 8 | 2500 | LARGE T&R | ... | -40 to 125 | I219A".
+# lifecycle "active" is that table's Status column.
+# Package: SOIC (D) | 8, outline D0008A (4214825/C, same numbers as the reused package) on page 33.
+schema_version: "0.1"
+kind: part
+id: ti/INA219AIDR
+
+manufacturer: ti
+mpn: "INA219AIDR"
+
+device: ti/INA219-D
+package: manufacturers/ti/D0008A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SBOS448G
+
+provenance:
+  "/existence":
+    - source: ti/SBOS448G
+      page: 29
+      locator: "Package Option Addendum, Packaging Information table, row \"INA219AIDR\""
+  "/lifecycle":
+    - source: ti/SBOS448G
+      page: 29
+      locator: "Package Option Addendum, row \"INA219AIDR\", Status \"Active\""
+  "/package":
+    - source: ti/SBOS448G
+      page: 29
+      locator: "Package Option Addendum, row \"INA219AIDR\", \"SOIC (D) | 8\"; outline D0008A (4214825/C, same numbers as the reused package) on page 33"

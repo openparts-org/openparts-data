@@ -1,0 +1,22 @@
+# Official onsemi datasheet "MC7800, MC7800A, MC7800AE, NCV7800 --
+# Voltage Regulators - Positive 1.0 A", Publication Order Number
+# MC7800/D, footer "November, 2021 - Rev. 29", 29 pages, downloaded with
+# curl from the URL below on 2026-11-10. Read with pdftotext -layout;
+# page 26 (DPAK case outline table) rendered with pdftoppm. Page numbers
+# are PDF page indices.
+#
+# Like NCP1117/D, the served PDF carries the current DPAK outline
+# "CASE 369C ISSUE L, DATE 24 AUG 2026" (98AON10527D), pages 26-27,
+# value-for-value identical to the copy in NCP1117/D pages 18-19.
+schema_version: "0.1"
+kind: source
+id: onsemi/MC7800-D
+
+publisher: onsemi
+document_id: MC7800/D
+document_type: datasheet
+
+revision: "29"
+date: "2021-11"
+
+url: "https://www.onsemi.com/pdf/datasheet/mc7800-d.pdf"

@@ -1,0 +1,37 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SBOS833R PDF page 40, addendum dated 25-Sep-2026):
+# "TLV9002IDGKR | Active | Production | VSSOP (DGK) | 8 | 2500 | LARGE T&R | ... | -40 to 125 | (1GNX, OBBI)".
+# lifecycle "active" is that table's Status column.
+# Package: VSSOP (DGK) | 8, outline DGK0008A (4214862/A, identical to the drawing behind the reused package) on page 97.
+schema_version: "0.1"
+kind: part
+id: ti/TLV9002IDGKR
+
+manufacturer: ti
+mpn: "TLV9002IDGKR"
+
+device: ti/TLV9002
+package: standards/MSOP8-3.0x3.0-P0.65-TI-DGK
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SBOS833R
+
+provenance:
+  "/existence":
+    - source: ti/SBOS833R
+      page: 40
+      locator: "Package Option Addendum, Packaging Information table, row \"TLV9002IDGKR\""
+  "/lifecycle":
+    - source: ti/SBOS833R
+      page: 40
+      locator: "Package Option Addendum, row \"TLV9002IDGKR\", Status \"Active\""
+  "/package":
+    - source: ti/SBOS833R
+      page: 40
+      locator: "Package Option Addendum, row \"TLV9002IDGKR\", \"VSSOP (DGK) | 8\"; outline DGK0008A (4214862/A, identical to the drawing behind the reused package) on page 97"

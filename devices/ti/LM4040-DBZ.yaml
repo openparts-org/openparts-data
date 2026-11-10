@@ -1,0 +1,32 @@
+# Precision micropower shunt voltage reference (LM4040A/B/C/D, all
+# voltages), DBZ (SOT-23-3) pinout. From SLOS456Q Table 5-1 "Pin
+# Functions" (page 4), DBZ column: CATHODE 1, ANODE 2, "*" 3, checked
+# against Figure 5-1 "DBZ Package 3-Pin SOT-23 Top View" (same page;
+# "+" on pin 1, "-" on pin 2, "*" on pin 3). The DCK and TO-92 pin maps
+# differ and are not covered.
+# Pin 3 is named "*" in the datasheet ("Must float or connect to
+# anode") and kept as printed; typed passive (it has no stated
+# function). ANODE is typed ground as for ti/TL431-D ("Common pin,
+# normally connected to ground"); CATHODE passive. category other (an
+# IC in SOT-23, as ti/TL431-D) -- not drawn as a diode.
+schema_version: "0.1"
+kind: device
+id: ti/LM4040-DBZ
+
+manufacturer: ti
+category: other
+family: LM4040
+
+pins:
+  "1": { name: CATHODE, type: passive }
+  "2": { name: ANODE, type: ground }
+  "3": { name: "*", type: passive }
+
+provenance:
+  "/pins":
+    - source: ti/SLOS456Q
+      page: 4
+      locator: "Table 5-1 \"Pin Functions\", column \"DBZ\""
+    - source: ti/SLOS456Q
+      page: 4
+      locator: "Figure 5-1 \"DBZ Package 3-Pin SOT-23 Top View\""

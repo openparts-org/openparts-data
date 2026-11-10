@@ -1,0 +1,33 @@
+# Dual 1-MHz low-power op amp, 8-lead pinout of the MSOP, PDIP and SOIC
+# packages. From DS20001733L Table 3-1 "Pin Function Table" (page 11),
+# column "MCP6002 8-Lead MSOP, PDIP, SOIC", checked against the
+# "Package Types" figure "MCP6002 8-Lead PDIP, SOIC, MSOP" (page 1).
+# The 2x3 DFN adds an exposed pad (EP 9) and is not covered. Table 3-1
+# writes the channel-A pins "VOUT, VOUTA" / "VIN-, VINA-" / "VIN+,
+# VINA+"; the MCP6002 names VOUTA/VINA-/VINA+ from the figure are used.
+schema_version: "0.1"
+kind: device
+id: microchip/MCP6002
+
+manufacturer: microchip
+category: other
+family: MCP6001/1R/1U/2/4
+
+pins:
+  "1": { name: VOUTA, type: analog }
+  "2": { name: "VINA-", type: analog }
+  "3": { name: "VINA+", type: analog }
+  "4": { name: VSS, type: power }
+  "5": { name: "VINB+", type: analog }
+  "6": { name: "VINB-", type: analog }
+  "7": { name: VOUTB, type: analog }
+  "8": { name: VDD, type: power }
+
+provenance:
+  "/pins":
+    - source: microchip/DS20001733@revL
+      page: 11
+      locator: "Table 3-1 \"Pin Function Table\", column \"MCP6002 8-Lead MSOP, PDIP, SOIC\""
+    - source: microchip/DS20001733@revL
+      page: 1
+      locator: "\"Package Types\", MCP6002 8-Lead PDIP, SOIC, MSOP (all 8 pins matched)"

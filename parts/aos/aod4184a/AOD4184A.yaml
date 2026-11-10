@@ -1,0 +1,35 @@
+# The datasheet has no ordering table; the MPN printed on it is the
+# device name "AOD4184A" (title, every page). No orderable-part listing was
+# read, so existence is "probable" (as aos/AO3400A). No lifecycle
+# recorded. Package: datasheet page 1 says "TO252 DPAK"; AOS's TO252
+# outline is PO-00009 (aosmd.com package path); the datasheet itself
+# does not name the outline document -- linked by package name only.
+schema_version: "0.1"
+kind: part
+id: aos/AOD4184A
+
+manufacturer: aos
+mpn: AOD4184A
+
+device: aos/AOD4184A
+package: manufacturers/aos/TO252-6.10x6.60-P2.29-PO-00009-TabPin4
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - aos/AOD4184A-DS
+  - aos/PO-00009
+
+provenance:
+  "/existence":
+    - source: aos/AOD4184A-DS
+      page: 1
+      locator: "Title \"AOD4184A\" and package \"TO252 DPAK\"; no ordering table in the document"
+  "/package":
+    - source: aos/PO-00009
+      page: 1
+      locator: "\"TO252 PACKAGE OUTLINE\" PO-00009 Version X (linked by the datasheet's package name \"TO252\")"

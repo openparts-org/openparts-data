@@ -1,0 +1,30 @@
+# NCP1117 1.0 A LDO, fixed 3.3 V option (NCP1117ST33T3G SOT-223,
+# NCP1117DT33RKG DPAK). NCP1117/D Rev. 31 page 1 PIN CONFIGURATION
+# gives one pin list for both packages: "Pin: 1. Adjust/Ground
+# 2. Output 3. Input", and "Heatsink tab is connected to Pin 2." Both
+# case outlines (318H page 17, 369C page 18) number the tab "4", so pin
+# "4" = Output (the tab), typed power like pin 2 (a regulator's tab
+# repeating VOUT). In the DPAK, lead 2 is trimmed at the body (no pad);
+# its Output connection reaches the board through the tab.
+schema_version: "0.1"
+kind: device
+id: onsemi/NCP1117-3.3
+
+manufacturer: onsemi
+category: other
+family: NCP1117
+
+pins:
+  "1": { name: Adjust/Ground, type: ground }
+  "2": { name: Output, type: power }
+  "3": { name: Input, type: power }
+  "4": { name: Output, type: power }
+
+provenance:
+  "/pins":
+    - source: onsemi/NCP1117-D
+      page: 1
+      locator: "PIN CONFIGURATION (SOT-223 and DPAK Top View): \"Pin: 1. Adjust/Ground 2. Output 3. Input\"; \"Heatsink tab is connected to Pin 2.\""
+    - source: onsemi/NCP1117-D
+      page: 17
+      locator: "CASE 318H TOP VIEW: tab numbered \"4\" (also CASE 369C, page 18)"

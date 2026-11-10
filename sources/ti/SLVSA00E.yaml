@@ -1,0 +1,19 @@
+# Official TI datasheet for TLV700. Downloaded 2026-11-10 from the TI
+# symlink URL below; revision read from the page header "SLVSA00E - SEPTEMBER 2009 - REVISED APRIL 2015".
+# 42 PDF pages; text read with pdftotext -layout, the pin-configuration
+# figure(s) and the package outline drawings named in the package files
+# were rendered (pdftoppm) and read as images. Page numbers in this
+# dataset are PDF page indices. The PACKAGE OPTION ADDENDUM at the end
+# of the PDF is dated 10-Nov-2025 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SLVSA00E
+
+publisher: ti
+document_id: SLVSA00E
+document_type: datasheet
+
+revision: "E"
+date: "2015-04"
+
+url: "https://www.ti.com/lit/ds/symlink/tlv700.pdf"

@@ -1,0 +1,81 @@
+# Würth WL-SMCW 0603 chip LED outline ("SIZE/TYPE 0603" in the title
+# block). Read from the page-1 "Dimensions: [mm]" drawing of 150060RS75000,
+# rendered at 200 dpi; the drawings of 150060GS75000, 150060BS75000, 150060YS75000 carry the identical
+# numbers (checked in each document's text layer), so each is cited.
+# Dimensions are printed as nominal +/- tolerance; min/max below are
+# that printed tolerance applied (e.g. "1,6 ±0,1").
+# The bottom view's "0,7 ±0,1" is the gap between the two
+# terminals and "0,3 ±0,1" the substrate thickness; neither is a
+# modelled dimension, and no terminal length is dimensioned, so
+# lead_length is left out (not derived by subtraction).
+schema_version: "0.1"
+kind: package
+id: manufacturers/wurth/CHIP0603-WL-SMCW
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.6
+    min: 1.5
+    max: 1.7
+    unit: mm
+  body_width:
+    nominal: 0.8
+    min: 0.7
+    max: 0.9
+    unit: mm
+  body_height:
+    nominal: 0.7
+    min: 0.6
+    max: 0.8
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: wurth/150060RS75000-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" side view, length \"1,6 ±0,1\""
+    - source: wurth/150060GS75000-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" side view, length \"1,6 ±0,1\""
+    - source: wurth/150060BS75000-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" side view, length \"1,6 ±0,1\""
+    - source: wurth/150060YS75000-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" side view, length \"1,6 ±0,1\""
+  "/dimensions/body_width":
+    - source: wurth/150060RS75000-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" view with the \"Polarity Mark\" label, width \"0,8 ±0,1\""
+    - source: wurth/150060GS75000-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" view with the \"Polarity Mark\" label, width \"0,8 ±0,1\""
+    - source: wurth/150060BS75000-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" view with the \"Polarity Mark\" label, width \"0,8 ±0,1\""
+    - source: wurth/150060YS75000-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" view with the \"Polarity Mark\" label, width \"0,8 ±0,1\""
+  "/dimensions/body_height":
+    - source: wurth/150060RS75000-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" end view, overall height \"0,7 ±0,1\""
+    - source: wurth/150060GS75000-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" end view, overall height \"0,7 ±0,1\""
+    - source: wurth/150060BS75000-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" end view, overall height \"0,7 ±0,1\""
+    - source: wurth/150060YS75000-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" end view, overall height \"0,7 ±0,1\""

@@ -1,0 +1,73 @@
+# Würth WE-CBF 0603 ferrite bead outline ("SIZE/TYPE 0603"), from the
+# page-1 "Dimensions: [mm]" drawing of 742792641 (rendered at 150 dpi);
+# 742792651's drawing carries the identical numbers. Views: top view
+# with the terminal band "0,3 ±0,2", side view "1,6±0,2" with its end
+# view "0,8±0,2" (height), and a lower view "0,8±0,2" (width; this
+# view and the top view have the same vertical extent). Only these two
+# order codes were checked -- other WE-CBF 0603 values may differ.
+# min/max are the printed tolerances applied.
+schema_version: "0.1"
+kind: package
+id: manufacturers/wurth/CHIP0603-WE-CBF
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.6
+    min: 1.4
+    max: 1.8
+    unit: mm
+  body_width:
+    nominal: 0.8
+    min: 0.6
+    max: 1.0
+    unit: mm
+  body_height:
+    nominal: 0.8
+    min: 0.6
+    max: 1.0
+    unit: mm
+  lead_length:
+    nominal: 0.3
+    min: 0.1
+    max: 0.5
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: wurth/742792641-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" side view, length \"1,6±0,2\""
+    - source: wurth/742792651-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" side view, length \"1,6±0,2\""
+  "/dimensions/body_width":
+    - source: wurth/742792641-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" lower view, width \"0,8±0,2\""
+    - source: wurth/742792651-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" lower view, width \"0,8±0,2\""
+  "/dimensions/body_height":
+    - source: wurth/742792641-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" end view beside the side view, height \"0,8±0,2\""
+    - source: wurth/742792651-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" end view beside the side view, height \"0,8±0,2\""
+  "/dimensions/lead_length":
+    - source: wurth/742792641-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" top view, terminal band \"0,3 ±0,2\""
+    - source: wurth/742792651-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" top view, terminal band \"0,3 ±0,2\""

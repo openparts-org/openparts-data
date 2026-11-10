@@ -1,0 +1,37 @@
+# Raspberry Pi Pico 2 W, order code SC1633 -- existence: probable. The
+# Pico 2 W datasheet (RP-008304-DS rev 3) has no ordering-code table.
+# Raspberry Pi's Product Information Portal page for the Pico 2 W lists
+# two codes, "SC1633, SC1634", without saying which is the bare board and
+# which the version with headers; SC1633 is taken as the bare board only
+# by the pattern of the other boards' printed tables (Pico SC0915/
+# Pico H SC0917, Pico W SC0918/WH SC0919, Pico 2 SC1631/with headers
+# SC1632: the bare board has the lower code). Not printed anywhere as
+# "Pico 2 W = SC1633", so not verified.
+#
+# Package: the Pico 2 W's Figures 3 and 5 (PDF pages 7 and 10) print the
+# same numbers as the Pico W's, so it shares the Pico W package.
+# lifecycle unknown: no production-status statement.
+schema_version: "0.1"
+kind: part
+id: raspberrypi/SC1633
+
+manufacturer: raspberrypi
+mpn: SC1633
+
+device: raspberrypi/PICO-2-W
+package: standards/MODULE40-21x51-P2.54-PICO-W
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - raspberrypi/RP-008304-DS@rev3
+  - raspberrypi/PIP-1088-pico-2-w
+
+provenance:
+  "/existence":
+    - source: raspberrypi/PIP-1088-pico-2-w
+      locator: "Page header under \"Raspberry Pi Pico 2 W\": \"SC1633, SC1634\" (which code is which variant is not stated)"

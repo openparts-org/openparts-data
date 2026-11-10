@@ -1,0 +1,35 @@
+# TC4427A, E temperature range (-40 C to +85 C), Plastic DIP (300 mil Body), 8-lead.
+# existence: probable -- the MPN is an ordering example in the
+# "PRODUCT IDENTIFICATION SYSTEM" (DS20001423J page 23), not an
+# orderable list; the Microchip product page (which lists orderable
+# codes) refused curl and WebFetch (403).
+# Package: PA -> drawing C04-018D (page 17).
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/TC4427AEPA
+
+manufacturer: microchip
+mpn: TC4427AEPA
+
+device: microchip/TC4427A
+package: manufacturers/microchip/PDIP8-PA-C04-018D
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001423@revJ
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001423@revJ
+      page: 23
+      locator: "PRODUCT IDENTIFICATION SYSTEM, printed as ordering example b) \"TC4427AEPA\""
+  "/package":
+    - source: microchip/DS20001423@revJ
+      page: 23
+      locator: "PRODUCT IDENTIFICATION SYSTEM, Package \"PA = Plastic DIP (300 mil Body), 8-lead\""

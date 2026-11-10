@@ -1,0 +1,24 @@
+# Würth WL-SMCW 0603 mono-color chip LED, Green (InGaN chip, per
+# "Optical Properties": "Chip Technology InGaN", "Emitting Color
+# Green", datasheet page 1). Polarity from the page-1 "Schematic":
+# the diode symbol is labelled "-" / "1" at the cathode bar and "+" /
+# "2" at the anode, and the dimension drawing numbers the terminals 1
+# and 2 with the "Polarity Mark" at terminal 1 -> pin 1 = Cathode,
+# pin 2 = Anode.
+schema_version: "0.1"
+kind: device
+id: wurth/150060GS75000
+
+manufacturer: wurth
+category: led
+family: WL-SMCW
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: wurth/150060GS75000-DS
+      page: 1
+      locator: "\"Schematic:\" diode symbol, \"- 1\" at the cathode and \"+ 2\" at the anode; dimension drawing terminal numbers 1/2 and \"Polarity Mark\""

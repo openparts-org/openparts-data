@@ -1,0 +1,23 @@
+# SMAJ5.0A 400 W unidirectional TRANSZORB transient voltage suppressor
+# (VWM 5.0 V), SMA (DO-214AC). Polarity from 88390 page 1: the package
+# image labels "Cathode" / "Anode" (unidirectional) and MECHANICAL DATA
+# says "Polarity: for unidirectional types the band denotes cathode
+# end". No pin numbers are printed, so 1 = Cathode and 2 = Anode follow
+# the dataset's two-terminal diode convention (vishay/S1M, vishay/SS34).
+schema_version: "0.1"
+kind: device
+id: vishay/SMAJ5.0A
+
+manufacturer: vishay
+category: diode
+family: SMAJ
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: vishay/88390
+      page: 1
+      locator: "MECHANICAL DATA \"Polarity: for unidirectional types the band denotes cathode end\"; SMA (DO-214AC) image \"Cathode / Anode (unidirectional)\""

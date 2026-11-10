@@ -1,0 +1,31 @@
+# Single 1-MHz RRIO op amp, DBV (SOT-23-5) pinout. From SBOS833R Table
+# 6-1 "Pin Functions: TLV9001" (page 7), column "SOT-23, SC70(T)",
+# checked against Figure 6-1 "TLV9001 DBV, TLV9001T DCK Package"
+# (same page): OUT 1, V- 2, IN+ 3, IN- 4, V+ 5 (pin 5 opposite pin 1,
+# pin 4 opposite pin 3). The TLV9001 DCK/DRL and TLV9001U DBV pinout
+# (IN+ 1, OUT 4) differs and is not covered. Minus signs written as
+# ASCII "-". Signal pins typed analog, V+/V- power (V- is "Negative
+# (low) supply or ground"), as for ti/OPA2333.
+schema_version: "0.1"
+kind: device
+id: ti/TLV9001-DBV
+
+manufacturer: ti
+category: other
+family: TLV900x
+
+pins:
+  "1": { name: OUT, type: analog }
+  "2": { name: "V-", type: power }
+  "3": { name: "IN+", type: analog }
+  "4": { name: "IN-", type: analog }
+  "5": { name: "V+", type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SBOS833R
+      page: 7
+      locator: "Table 6-1 \"Pin Functions: TLV9001\", column \"SOT-23, SC70(T)\""
+    - source: ti/SBOS833R
+      page: 7
+      locator: "Figure 6-1 \"TLV9001 DBV, TLV9001T DCK Package 5-Pin SOT-23, SC70 Top View\" (all 5 pins matched)"

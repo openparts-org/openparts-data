@@ -1,0 +1,21 @@
+# Würth Elektronik datasheet for order code 742792641 ("WE-CBF SMT EMI Suppression Ferrite Bead"),
+# 8 pages, A4 landscape. we-online.com refuses curl (HTTP 403,
+# Akamai); fetched once with WebFetch, which saved the original PDF
+# (PDFlib-generated, author "Würth Elektronik eiSos GmbH & Co. KG").
+# Read with pdftotext -raw plus a 200 dpi render of page 1 (the
+# dimension drawing and schematic are vector art). The title block on
+# every page carries CHECKED "MBH", REVISION "005.010", DATE
+# "2020-10-01" (YYYY-MM-DD), ORDER CODE "742792641", STATUS "Valid" (the
+# document's release status -- not read as a product lifecycle status).
+schema_version: "0.1"
+kind: source
+id: wurth/742792641-DS
+
+publisher: wurth
+document_id: "742792641"
+document_type: datasheet
+
+revision: "005.010"
+date: "2020-10-01"
+
+url: "https://www.we-online.com/components/products/datasheet/742792641.pdf"

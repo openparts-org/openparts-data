@@ -1,0 +1,142 @@
+# Alpha & Omega "TO252 PACKAGE OUTLINE", Document No. PO-00009 Version X
+# (note 5 "REFER TO JEDEC TO-252 (AA)"), read from a rendered image of
+# the drawing and its DIMENSION IN MM table (MIN / NOM / MAX).
+# Close to onsemi CASE 369C but not identical (H max 10.500 vs 10.41,
+# L 1.270-2.032 vs 1.40-1.78, A1 max 0.200 vs 0.13, ...): its own package.
+#
+# TAB NUMBER: the top view numbers the leads 1 2 3 and the bottom view
+# (Detail B) numbers the tab "4"; lead 2 is drawn as a stub cut at the
+# body in both views -> trimmed. Tab = "4" (the only number the source
+# prints for it).
+#
+# Symbol mapping (frame: leads left, tab right): D (5.969/6.096/6.223,
+# tab-side body edge to lead-side edge) -> body_width; E (6.350/6.604/
+# 6.800, along the lead row) -> body_length; H (9.398/10.033/10.500,
+# lead toe to tab end) -> overall_width; L3 (0.889/1.016/1.270, body to
+# tab end) -> tab_length; b2 (4.953/5.340/5.500, the tab in the top
+# view) -> tab_width; b -> lead_width; c -> lead_thickness; L (1.270/
+# 1.520/2.032, note 2 "measured in gauge plane") -> lead_length; A1 ->
+# standoff; A (2.184/2.286/2.400) -> overall_height. e "2.286 BSC" ->
+# pitch. Left out: A2 (0.889-1.170, dimensioned at the tab's top in the
+# side view -- not the body thickness, so neither body_height nor A2 is
+# recorded), b1 (lead shoulder), c1 (tab thickness), D1/E1 (exposed
+# pad on the underside), L1 "2.921 REF.", L2, L4, e1 (= 2 x e).
+schema_version: "0.1"
+kind: package
+id: manufacturers/aos/TO252-6.10x6.60-P2.29-PO-00009-TabPin4
+
+family: dpak
+lead_count: 3
+
+pitch:
+  nominal: 2.286
+  unit: mm
+
+tab:
+  number: "4"
+  trimmed_leads: ["2"]
+
+dimensions:
+  body_width:
+    nominal: 6.096
+    min: 5.969
+    max: 6.223
+    unit: mm
+  body_length:
+    nominal: 6.604
+    min: 6.350
+    max: 6.800
+    unit: mm
+  overall_width:
+    nominal: 10.033
+    min: 9.398
+    max: 10.500
+    unit: mm
+  overall_height:
+    nominal: 2.286
+    min: 2.184
+    max: 2.400
+    unit: mm
+  standoff:
+    min: 0.000
+    max: 0.200
+    unit: mm
+  lead_width:
+    nominal: 0.762
+    min: 0.635
+    max: 0.889
+    unit: mm
+  lead_length:
+    nominal: 1.520
+    min: 1.270
+    max: 2.032
+    unit: mm
+  lead_thickness:
+    nominal: 0.508
+    min: 0.450
+    max: 0.610
+    unit: mm
+  tab_width:
+    nominal: 5.340
+    min: 4.953
+    max: 5.500
+    unit: mm
+  tab_length:
+    nominal: 1.016
+    min: 0.889
+    max: 1.270
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: dpak
+
+provenance:
+  "/pitch":
+    - source: aos/PO-00009
+      page: 1
+      locator: "DIMENSION IN MM table, \"e\" \"2.286 BSC\""
+  "/tab":
+    - source: aos/PO-00009
+      page: 1
+      locator: "Bottom view (Detail B): tab numbered \"4\"; top view leads 1 2 3, lead 2 drawn as a short stub at the body"
+  "/dimensions/body_width":
+    - source: aos/PO-00009
+      page: 1
+      locator: "DIMENSION IN MM table, \"D\" (5.969 / 6.096 / 6.223)"
+  "/dimensions/body_length":
+    - source: aos/PO-00009
+      page: 1
+      locator: "DIMENSION IN MM table, \"E\" (6.350 / 6.604 / 6.800)"
+  "/dimensions/overall_width":
+    - source: aos/PO-00009
+      page: 1
+      locator: "DIMENSION IN MM table, \"H\" (9.398 / 10.033 / 10.500)"
+  "/dimensions/overall_height":
+    - source: aos/PO-00009
+      page: 1
+      locator: "DIMENSION IN MM table, \"A\" (2.184 / 2.286 / 2.400)"
+  "/dimensions/standoff":
+    - source: aos/PO-00009
+      page: 1
+      locator: "DIMENSION IN MM table, \"A1\" (0.000 / --- / 0.200)"
+  "/dimensions/lead_width":
+    - source: aos/PO-00009
+      page: 1
+      locator: "DIMENSION IN MM table, \"b\" (0.635 / 0.762 / 0.889)"
+  "/dimensions/lead_length":
+    - source: aos/PO-00009
+      page: 1
+      locator: "DIMENSION IN MM table, \"L\" (1.270 / 1.520 / 2.032); note 2 \"DIMENSION L IS MEASURED IN GAUGE PLANE\""
+  "/dimensions/lead_thickness":
+    - source: aos/PO-00009
+      page: 1
+      locator: "DIMENSION IN MM table, \"c\" (0.450 / 0.508 / 0.610)"
+  "/dimensions/tab_width":
+    - source: aos/PO-00009
+      page: 1
+      locator: "DIMENSION IN MM table, \"b2\" (4.953 / 5.340 / 5.500), tab width in the top view"
+  "/dimensions/tab_length":
+    - source: aos/PO-00009
+      page: 1
+      locator: "DIMENSION IN MM table, \"L3\" (0.889 / 1.016 / 1.270)"

@@ -1,0 +1,24 @@
+# Raspberry Pi Pico Datasheet ("An RP2040-based microcontroller board").
+# Downloaded from Raspberry Pi's own URL
+# (datasheets.raspberrypi.com/pico/pico-datasheet.pdf), which redirected
+# to pip-assets.raspberrypi.com/categories/610-raspberry-pi-pico/
+# documents/RP-008307-DS-2-pico-datasheet.pdf (PDF, 31 pages, title
+# "Raspberry Pi Pico Datasheet"). `document_id`/`revision` split from
+# that asset filename. Colophon: "Release 21, Build date 03/07/2026,
+# Build version d4e0f1799616"; the build date is day/month/year --
+# Appendix D "Documentation Release History" lists the newest entry as
+# "D.1. 03 July 2026" (and the PDF creation date is 2026-07-03).
+# Page numbers cited from this Source are PDF page indices; the printed
+# page number in the footer is one lower.
+schema_version: "0.1"
+kind: source
+id: raspberrypi/RP-008307-DS@rev2
+
+publisher: raspberrypi
+document_id: RP-008307-DS
+document_type: datasheet
+
+revision: "2"
+date: "2026-07-03"
+
+url: "https://datasheets.raspberrypi.com/pico/pico-datasheet.pdf"

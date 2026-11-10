@@ -1,0 +1,29 @@
+# Order code printed verbatim in the datasheet's own title block
+# ("ORDER CODE 150060RS75000", every page) -> existence verified.
+# lifecycle: the title block "STATUS Valid" is the document's release
+# status, not a product lifecycle statement; the we-online.com product
+# pages were not readable (403), so lifecycle is unknown.
+schema_version: "0.1"
+kind: part
+id: wurth/150060RS75000
+
+manufacturer: wurth
+mpn: "150060RS75000"
+
+device: wurth/150060RS75000
+package: manufacturers/wurth/CHIP0603-WL-SMCW
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - wurth/150060RS75000-DS
+
+provenance:
+  "/existence":
+    - source: wurth/150060RS75000-DS
+      page: 1
+      locator: "Title block, \"ORDER CODE 150060RS75000\", \"SIZE/TYPE 0603\""

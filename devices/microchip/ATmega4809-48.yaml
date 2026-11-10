@@ -1,0 +1,86 @@
+# ATmega4809 in the 48-pin packages (TQFP48 and VQFN48 share one pin
+# map). Pin names/numbers from section 4.1 "Multiplexed Signals",
+# column "TQFP48/VQFN48" (DS40002173C pages 19-20), cross-checked pin
+# for pin against Figure "3.4 48-Pin VQFN/TQFP" (page 17). The 40-pin
+# PDIP numbers pins differently and is not covered.
+#
+# Types: VDD/AVDD power, GND ground, port pins io. UPDI (pin 41, the
+# programming/debug pin per the figure's "Programming, debug" legend)
+# is typed io (single-wire bidirectional interface). PF6 is typed io
+# with RESET as alternate function (table column "Special").
+# alternate_functions carry only the "Special" and "ADC0" columns
+# (the "TWI" marker in the Special column is not a signal name: skipped);
+# USART/SPI/TWI/TCA/TCB/EVSYS/CCL/AC mappings are not modelled.
+#
+# Exposed pad (VQFN only): page 18 says the centre pad "can be
+# connected to PCB ground or left electrically unconnected" -- it does
+# not say what it connects to inside, so no EP pin.
+schema_version: "0.1"
+kind: device
+id: microchip/ATmega4809-48
+
+manufacturer: microchip
+category: microcontroller
+family: megaAVR 0-series
+
+pins:
+  "1":  { name: PA5, type: io }
+  "2":  { name: PA6, type: io }
+  "3":  { name: PA7, type: io, alternate_functions: [CLKOUT] }
+  "4":  { name: PB0, type: io }
+  "5":  { name: PB1, type: io }
+  "6":  { name: PB2, type: io }
+  "7":  { name: PB3, type: io }
+  "8":  { name: PB4, type: io }
+  "9":  { name: PB5, type: io }
+  "10": { name: PC0, type: io }
+  "11": { name: PC1, type: io }
+  "12": { name: PC2, type: io }
+  "13": { name: PC3, type: io }
+  "14": { name: VDD, type: power }
+  "15": { name: GND, type: ground }
+  "16": { name: PC4, type: io }
+  "17": { name: PC5, type: io }
+  "18": { name: PC6, type: io }
+  "19": { name: PC7, type: io }
+  "20": { name: PD0, type: io, alternate_functions: [AIN0] }
+  "21": { name: PD1, type: io, alternate_functions: [AIN1] }
+  "22": { name: PD2, type: io, alternate_functions: [AIN2] }
+  "23": { name: PD3, type: io, alternate_functions: [AIN3] }
+  "24": { name: PD4, type: io, alternate_functions: [AIN4] }
+  "25": { name: PD5, type: io, alternate_functions: [AIN5] }
+  "26": { name: PD6, type: io, alternate_functions: [AIN6] }
+  "27": { name: PD7, type: io, alternate_functions: [VREFA, AIN7] }
+  "28": { name: AVDD, type: power }
+  "29": { name: GND, type: ground }
+  "30": { name: PE0, type: io, alternate_functions: [AIN8] }
+  "31": { name: PE1, type: io, alternate_functions: [AIN9] }
+  "32": { name: PE2, type: io, alternate_functions: [AIN10] }
+  "33": { name: PE3, type: io, alternate_functions: [AIN11] }
+  "34": { name: PF0, type: io, alternate_functions: [TOSC1] }
+  "35": { name: PF1, type: io, alternate_functions: [TOSC2] }
+  "36": { name: PF2, type: io, alternate_functions: [AIN12] }
+  "37": { name: PF3, type: io, alternate_functions: [AIN13] }
+  "38": { name: PF4, type: io, alternate_functions: [AIN14] }
+  "39": { name: PF5, type: io, alternate_functions: [AIN15] }
+  "40": { name: PF6, type: io, alternate_functions: [RESET] }
+  "41": { name: UPDI, type: io }
+  "42": { name: VDD, type: power }
+  "43": { name: GND, type: ground }
+  "44": { name: PA0, type: io, alternate_functions: [EXTCLK] }
+  "45": { name: PA1, type: io }
+  "46": { name: PA2, type: io }
+  "47": { name: PA3, type: io }
+  "48": { name: PA4, type: io }
+
+provenance:
+  "/pins":
+    - source: microchip/DS40002173@revC
+      page: 19
+      locator: "Section 4.1 \"Multiplexed Signals\", column \"TQFP48/VQFN48\", rows PA0-PF5"
+    - source: microchip/DS40002173@revC
+      page: 20
+      locator: "Section 4.1 table (continued), rows PF4-GND (pins 38-43)"
+    - source: microchip/DS40002173@revC
+      page: 17
+      locator: "Section 3.4 \"48-Pin VQFN/TQFP\" pinout figure (cross-check)"
