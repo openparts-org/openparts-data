@@ -1,0 +1,119 @@
+# onsemi "SOT-23/SUPERSOT-23, 3 LEAD, 1.4x2.9" CASE 527AG ISSUE A
+# (document 98AON34319E, DATE 09 DEC 2019), as printed in FDN340P/D
+# Rev. 9 page 5 (also NDS331N/D Rev. 8 page 8 and FDN337N/D Rev. 5
+# page 5: a 100 dpi render of the drawing area of all three pages is
+# pixel-identical). Read from a 300 dpi render of the MIN / NOM / MAX
+# table (image-only).
+#
+# Not onsemi's CASE 318 (standards/SOT23-2.90x1.30-P1.90): wider body
+# E1 1.20/1.40/1.52 vs E 1.20/1.30/1.40, and A, A1, b, c, L all differ.
+#
+# Symbol mapping (sot generator convention, see
+# standards/SOT23-2.90x1.30-P1.90): D (2.80/2.92/3.04, along the
+# two-lead row) -> body_width; E1 (body across the rows) ->
+# body_length; E (lead-tip span) -> overall_length; e1 "1.90 BSC"
+# (pins 1-2 spacing; e "0.95 BSC" is half of it) -> pitch; A (no A2 in
+# the table) -> body_height; A1 -> standoff; b -> lead_width; c ->
+# lead_thickness; L (foot, DETAIL A) -> lead_length. The top view
+# numbers the bottom-left lead "1" and bottom-right "2".
+# Left out: reference values (0.29), (0.94), (0.56) -- parenthesised in
+# the drawing, not in the table; the land pattern.
+schema_version: "0.1"
+kind: package
+id: manufacturers/onsemi/SOT23-2.92x1.40-P1.90-527AG
+
+family: sot
+lead_count: 3
+lead_layout: [2, 1]
+
+pitch:
+  nominal: 1.90
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 2.92
+    min: 2.80
+    max: 3.04
+    unit: mm
+  body_length:
+    nominal: 1.40
+    min: 1.20
+    max: 1.52
+    unit: mm
+  body_height:
+    nominal: 0.95
+    min: 0.85
+    max: 1.12
+    unit: mm
+  overall_length:
+    nominal: 2.51
+    min: 2.31
+    max: 2.71
+    unit: mm
+  standoff:
+    nominal: 0.05
+    min: 0.00
+    max: 0.10
+    unit: mm
+  lead_width:
+    nominal: 0.435
+    min: 0.370
+    max: 0.508
+    unit: mm
+  lead_length:
+    nominal: 0.38
+    min: 0.33
+    max: 0.43
+    unit: mm
+  lead_thickness:
+    nominal: 0.150
+    min: 0.085
+    max: 0.180
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: sot
+
+provenance:
+  "/lead_layout":
+    - source: onsemi/FDN340P-D
+      page: 5
+      locator: "CASE 527AG TOP VIEW: two leads (numbered 1, 2) on the bottom edge, one lead on the top edge"
+  "/pitch":
+    - source: onsemi/FDN340P-D
+      page: 5
+      locator: "CASE 527AG table, DIM \"e1\" \"1.90 BSC\" (pins 1-2 spacing in the TOP VIEW)"
+  "/dimensions/body_width":
+    - source: onsemi/FDN340P-D
+      page: 5
+      locator: "CASE 527AG table, DIM \"D\" (2.80 / 2.92 / 3.04)"
+  "/dimensions/body_length":
+    - source: onsemi/FDN340P-D
+      page: 5
+      locator: "CASE 527AG table, DIM \"E1\" (1.20 / 1.40 / 1.52), body across the lead rows"
+  "/dimensions/body_height":
+    - source: onsemi/FDN340P-D
+      page: 5
+      locator: "CASE 527AG table, DIM \"A\" (0.85 / 0.95 / 1.12); no A2 in the table"
+  "/dimensions/overall_length":
+    - source: onsemi/FDN340P-D
+      page: 5
+      locator: "CASE 527AG table, DIM \"E\" (2.31 / 2.51 / 2.71), lead-tip span in the TOP VIEW"
+  "/dimensions/standoff":
+    - source: onsemi/FDN340P-D
+      page: 5
+      locator: "CASE 527AG table, DIM \"A1\" (0.00 / 0.05 / 0.10)"
+  "/dimensions/lead_width":
+    - source: onsemi/FDN340P-D
+      page: 5
+      locator: "CASE 527AG table, DIM \"b\" (0.370 / 0.435 / 0.508)"
+  "/dimensions/lead_length":
+    - source: onsemi/FDN340P-D
+      page: 5
+      locator: "CASE 527AG table, DIM \"L\" (0.33 / 0.38 / 0.43), foot in DETAIL A"
+  "/dimensions/lead_thickness":
+    - source: onsemi/FDN340P-D
+      page: 5
+      locator: "CASE 527AG table, DIM \"c\" (0.085 / 0.150 / 0.180)"

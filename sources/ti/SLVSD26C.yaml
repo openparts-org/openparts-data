@@ -1,0 +1,19 @@
+# Official TI datasheet "TPS54202 4.5V to 28V Input, 2A Output, EMI Friendly Synchronous Step-Down Converter". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SLVSD26C - APRIL 2016 - REVISED FEBRUARY 2026". 31 PDF pages; text read with pdftotext -layout; the
+# pin-configuration figure and the package outline drawings named in
+# the package/part files were checked against the rendered pages where
+# noted. Page numbers in this dataset are PDF page indices. The PACKAGE
+# OPTION ADDENDUM at the end of the PDF is dated 7-Oct-2025.
+schema_version: "0.1"
+kind: source
+id: ti/SLVSD26C
+
+publisher: ti
+document_id: SLVSD26C
+document_type: datasheet
+
+revision: "C"
+date: "2026-02"
+
+url: "https://www.ti.com/lit/ds/symlink/tps54202.pdf"

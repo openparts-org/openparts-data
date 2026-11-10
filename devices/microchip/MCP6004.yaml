@@ -1,0 +1,39 @@
+# Quad 1-MHz low-power op amp, 14-lead PDIP/SOIC/TSSOP pinout. From
+# DS20001733L Table 3-1 "Pin Function Table" (page 11), column "MCP6004
+# PDIP, SOIC, TSSOP", checked against the "Package Types" figure
+# "MCP6004 14-Lead PDIP, SOIC, TSSOP" (page 1). Table 3-1 writes the
+# channel-A pins "VOUT, VOUTA" / "VIN-, VINA-" / "VIN+, VINA+"; the
+# MCP6004 names VOUTA/VINA-/VINA+ are used (as microchip/MCP6002). Types
+# as microchip/MCP6002.
+schema_version: "0.1"
+kind: device
+id: microchip/MCP6004
+
+manufacturer: microchip
+category: other
+family: "MCP6001/1R/1U/2/4"
+
+pins:
+  "1":  { name: VOUTA, type: analog }
+  "2":  { name: "VINA-", type: analog }
+  "3":  { name: "VINA+", type: analog }
+  "4":  { name: VDD, type: power }
+  "5":  { name: "VINB+", type: analog }
+  "6":  { name: "VINB-", type: analog }
+  "7":  { name: VOUTB, type: analog }
+  "8":  { name: VOUTC, type: analog }
+  "9":  { name: "VINC-", type: analog }
+  "10": { name: "VINC+", type: analog }
+  "11": { name: VSS, type: power }
+  "12": { name: "VIND+", type: analog }
+  "13": { name: "VIND-", type: analog }
+  "14": { name: VOUTD, type: analog }
+
+provenance:
+  "/pins":
+    - source: microchip/DS20001733@revL
+      page: 11
+      locator: "Table 3-1 \"Pin Function Table\", column \"MCP6004 PDIP, SOIC, TSSOP\""
+    - source: microchip/DS20001733@revL
+      page: 1
+      locator: "\"Package Types\" figure \"MCP6004 14-Lead PDIP, SOIC, TSSOP\" (cross-check)"

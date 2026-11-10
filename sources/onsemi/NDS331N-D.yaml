@@ -1,0 +1,19 @@
+# Official onsemi datasheet "N-Channel Logic Level Enhancement Mode Field Effect Transistor -- NDS331N",
+# Publication Order Number NDS331N/D, footer "October, 2024 - Rev. 8", 9 pages,
+# downloaded with curl on 2026-11-10 (HTTP 200, `file`: PDF).
+# Read with pdftotext -layout; outline tables (image-only) rendered with
+# pdftoppm. Page numbers are PDF page indices.
+# Page 8 is the SOT-23/SUPERSOT-23 CASE 527AG ISSUE A outline
+# (98AON34319E, DATE 09 DEC 2019).
+schema_version: "0.1"
+kind: source
+id: onsemi/NDS331N-D
+
+publisher: onsemi
+document_id: NDS331N/D
+document_type: datasheet
+
+revision: "8"
+date: "2024-10"
+
+url: "https://www.onsemi.com/pdf/datasheet/nds331n-d.pdf"

@@ -1,0 +1,29 @@
+# LM321 single op amp, 5-pin DBV (SOT-23) pinout. From SNOS935C "Pin
+# Functions" table (page 3), checked against the rendered "DBV Package
+# 5-Pin SOT-23 Top View" figure (same page, an image): +IN 1, V- 2, -IN
+# 3, OUTPUT 4, V+ 5 (pin 5 opposite pin 1, pin 4 opposite pin 3). Minus
+# signs written as ASCII "-". Inputs typed analog and supplies power (V-
+# is "Negative (lowest) power supply"), as for ti/TLV9001-DBV.
+schema_version: "0.1"
+kind: device
+id: ti/LM321-DBV
+
+manufacturer: ti
+category: other
+family: LM321
+
+pins:
+  "1": { name: "+IN", type: analog }
+  "2": { name: "V-", type: power }
+  "3": { name: "-IN", type: analog }
+  "4": { name: OUTPUT, type: analog }
+  "5": { name: "V+", type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SNOS935C
+      page: 3
+      locator: "\"Pin Functions\" table (NAME / NO.)"
+    - source: ti/SNOS935C
+      page: 3
+      locator: "\"DBV Package 5-Pin SOT-23 Top View\" figure, rendered (all 5 pins matched)"

@@ -1,0 +1,31 @@
+# TLV62568P (power-good version) 1-A synchronous buck converter, 6-pin
+# SOT23-6 (DDC) pinout. From SLVSD89B "Pin Functions" table (page 3),
+# column "SOT23-6", checked against the rendered "SOT23-6 DDC Package
+# (Top View)" figure (same page): EN 1, GND 2, SW 3 along the bottom,
+# VIN 4, PG 5, FB 6 back along the top (6 above 1). PG is "Power good
+# open drain output pin for TLV62568P" -> output. Other types as
+# ti/TLV62568-DBV.
+schema_version: "0.1"
+kind: device
+id: ti/TLV62568P-DDC
+
+manufacturer: ti
+category: other
+family: TLV62568
+
+pins:
+  "1": { name: EN, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: SW, type: passive }
+  "4": { name: VIN, type: power }
+  "5": { name: PG, type: output }
+  "6": { name: FB, type: input }
+
+provenance:
+  "/pins":
+    - source: ti/SLVSD89B
+      page: 3
+      locator: "\"Pin Functions\" table, column \"SOT23-6\""
+    - source: ti/SLVSD89B
+      page: 3
+      locator: "\"SOT23-6 DDC Package (Top View)\" figure, rendered (all 6 pins matched)"

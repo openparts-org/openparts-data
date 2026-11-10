@@ -1,0 +1,21 @@
+# Official TI datasheet "LM3671/-Q1 2-MHz, 600-mA Step-Down DC-DC Converter". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SNVS294S - NOVEMBER 2004 - REVISED MAY 2016". 38 PDF pages; text read with pdftotext -layout; the
+# pin-configuration figure and the package outline drawings named in
+# the package/part files were checked against the rendered pages where
+# noted. Page numbers in this dataset are PDF page indices. The PACKAGE
+# OPTION ADDENDUM at the end of the PDF is dated 14-Apr-2026.
+# The embedded DBV0005A outline is drawing 4214839/K 08/2024, newer
+# than the datasheet revision.
+schema_version: "0.1"
+kind: source
+id: ti/SNVS294S
+
+publisher: ti
+document_id: SNVS294S
+document_type: datasheet
+
+revision: "S"
+date: "2016-05"
+
+url: "https://www.ti.com/lit/ds/symlink/lm3671.pdf"

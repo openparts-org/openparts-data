@@ -1,0 +1,43 @@
+# MPN from the "Product Identification System" (DS21709J page 29),
+# example e) "24LC02B-E/SN: Extended Temperature, 2.5V, SOIC package".
+# existence is "probable": the MPN appears only as an ordering example
+# of the Product Identification System, not in an orderable list
+# (Microchip product pages answer 403 and were not read). Package:
+# drawing C04-057B "8-Lead Plastic Small Outline (SN) - Narrow, 3.90 mm
+# Body [SOIC]", page 15 (rendered). Every row of that table (e 1.27 BSC,
+# A max 1.75, A2 min 1.25, A1 0.10-0.25, E 6.00 BSC, E1 3.90 BSC, D 4.90
+# BSC, L 0.40-1.27, c 0.17-0.25, b 0.31-0.51) equals
+# standards/SOIC8-3.90x4.90-P1.27, so that package is reused. The id
+# replaces the "/" of the MPN with "-"; mpn keeps the real string.
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/24LC02B-E-SN
+
+manufacturer: microchip
+mpn: "24LC02B-E/SN"
+
+device: microchip/24LC02B
+package: standards/SOIC8-3.90x4.90-P1.27
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS21709@revJ
+
+provenance:
+  "/existence":
+    - source: microchip/DS21709@revJ
+      page: 29
+      locator: "Product Identification System, example e) \"24LC02B-E/SN: Extended Temperature, 2.5V, SOIC package\""
+  "/package":
+    - source: microchip/DS21709@revJ
+      page: 29
+      locator: "Product Identification System, Package \"SN = Plastic SOIC (3.90 mm body), 8-lead\""
+    - source: microchip/DS21709@revJ
+      page: 15
+      locator: "drawing C04-057B \"8-Lead Plastic Small Outline (SN) - Narrow, 3.90 mm Body [SOIC]\", page 15 (rendered)"

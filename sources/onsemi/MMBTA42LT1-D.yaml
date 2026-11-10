@@ -1,0 +1,19 @@
+# Official onsemi datasheet "High Voltage Transistors, NPN Silicon -- MMBTA42L, SMMBTA42L, MMBTA43L",
+# Publication Order Number MMBTA42LT1/D, footer "September, 2026 - Rev. 15", 8 pages,
+# downloaded with curl on 2026-11-10 (HTTP 200, `file`: PDF).
+# Read with pdftotext -layout; outline tables (image-only) rendered with
+# pdftoppm. Page numbers are PDF page indices.
+# Page 4 is the ORDERING INFORMATION table; page 6 the SOT-23 CASE 318
+# ISSUE AU outline (98ASB42226B, DATE 14 AUG 2024), page 7 its STYLE list.
+schema_version: "0.1"
+kind: source
+id: onsemi/MMBTA42LT1-D
+
+publisher: onsemi
+document_id: MMBTA42LT1/D
+document_type: datasheet
+
+revision: "15"
+date: "2026-09"
+
+url: "https://www.onsemi.com/pdf/datasheet/mmbta42lt1-d.pdf"

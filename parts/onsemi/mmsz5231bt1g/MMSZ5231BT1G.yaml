@@ -1,0 +1,38 @@
+# MMSZ5231BT1G: 5.1 V zener (VZ 4.85 / 5.1 / 5.36 V @ 20 mA), marking E1,
+# SOD-123. The ORDERING INFORMATION table (page 1) gives only the
+# pattern "MMSZ52xxBT1G, SZMMSZ52xxBT1G | SOD-123 (Pb-Free) | 3,000 / Tape
+# & Reel"; the full string is printed verbatim in the "Device*" column
+# of the page-3 Electrical Characteristics table, which is not an
+# ordering table -- so existence is "probable" (flagged for review).
+# Package: the CASE 425 ISSUE H outline (98ASB42927B, DATE 29 FEB 2024,
+# page 7) renders pixel-identical to MBR0520LT1/D Rev. 7 page 4, which
+# standards/CHIP-SOD123-MBR0520 was read from (E 2.54/2.69/2.84,
+# D 1.40/1.60/1.80, A 0.94/1.17/1.35 re-read here too). Reused; the
+# package cites onsemi/MBR0520-D. No lifecycle statement.
+schema_version: "0.1"
+kind: part
+id: onsemi/MMSZ5231BT1G
+
+manufacturer: onsemi
+mpn: MMSZ5231BT1G
+
+device: onsemi/MMSZ5221B-SERIES
+package: standards/CHIP-SOD123-MBR0520
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/MMSZ5221BT1-D
+
+provenance:
+  "/existence":
+    - source: onsemi/MMSZ5221BT1-D
+      page: 1
+      locator: "ORDERING INFORMATION table pattern row \"MMSZ52xxBT1G, SZMMSZ52xxBT1G | SOD-123 (Pb-Free) | 3,000 / Tape & Reel\""
+    - source: onsemi/MMSZ5221BT1-D
+      page: 3
+      locator: "Electrical Characteristics table, Device* column: \"MMSZ5231BT1G\", marking \"E1\", VZ 4.85 / 5.1 / 5.36 V"

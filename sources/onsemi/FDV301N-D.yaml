@@ -1,0 +1,20 @@
+# Official onsemi datasheet "Digital FET, N-Channel -- FDV301N, FDV301N-F169",
+# Publication Order Number FDV301N/D, footer "May, 2025 - Rev. 10", 8 pages,
+# downloaded with curl on 2026-11-10 (HTTP 200, `file`: PDF).
+# Read with pdftotext -layout; outline tables (image-only) rendered with
+# pdftoppm. Page numbers are PDF page indices.
+# Page 1 calls the package "SOT-23 CASE 318-08"; page 6 is the SOT-23
+# CASE 318 ISSUE AU outline (98ASB42226B, DATE 14 AUG 2024), page 7 its
+# STYLE list.
+schema_version: "0.1"
+kind: source
+id: onsemi/FDV301N-D
+
+publisher: onsemi
+document_id: FDV301N/D
+document_type: datasheet
+
+revision: "10"
+date: "2025-05"
+
+url: "https://www.onsemi.com/pdf/datasheet/fdv301n-d.pdf"

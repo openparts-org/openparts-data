@@ -1,0 +1,44 @@
+# CD4051B single 8-channel analog multiplexer/demultiplexer, 16-pin pin
+# map of the E (PDIP), M (SOIC), NS (SOP) and PW (TSSOP) packages (and
+# CDIP). From SCHS047O Table 4-1 "Pin Functions CD4051B" (page 3),
+# checked against Figure 4-1 "CD4051B E, M, NS, and PW Package, 16-Pin
+# PDIP, CDIP, SOIC, SOP, and TSSOP (Top View)" (same page). Pin names
+# condensed from the table ("CH 4 IN/OUT" -> CH4_IN/OUT, "COM OUT/IN" ->
+# COM_OUT/IN). Types: switch channels and COM (I/O, analog switch
+# terminals) -> analog; INH and A/B/C (I) -> input; VDD "Positive power
+# input" and VEE "Negative power input" -> power; VSS "Ground" ->
+# ground.
+schema_version: "0.1"
+kind: device
+id: ti/CD4051B
+
+manufacturer: ti
+category: other
+family: CD405xB
+
+pins:
+  "1":  { name: "CH4_IN/OUT", type: analog }
+  "2":  { name: "CH6_IN/OUT", type: analog }
+  "3":  { name: "COM_OUT/IN", type: analog }
+  "4":  { name: "CH7_IN/OUT", type: analog }
+  "5":  { name: "CH5_IN/OUT", type: analog }
+  "6":  { name: INH, type: input }
+  "7":  { name: VEE, type: power }
+  "8":  { name: VSS, type: ground }
+  "9":  { name: C, type: input }
+  "10": { name: B, type: input }
+  "11": { name: A, type: input }
+  "12": { name: "CH3_IN/OUT", type: analog }
+  "13": { name: "CH0_IN/OUT", type: analog }
+  "14": { name: "CH1_IN/OUT", type: analog }
+  "15": { name: "CH2_IN/OUT", type: analog }
+  "16": { name: VDD, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SCHS047O
+      page: 3
+      locator: "Table 4-1 \"Pin Functions CD4051B\""
+    - source: ti/SCHS047O
+      page: 3
+      locator: "Figure 4-1 \"CD4051B E, M, NS, and PW Package ... (Top View)\" (all 16 pins matched)"

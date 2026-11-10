@@ -1,0 +1,19 @@
+# Official AOS datasheet "AO3407 30V P-Channel MOSFET" (5 pages), footer
+# "Rev 5.1: July 2023", downloaded with curl on 2026-11-10 (HTTP 200, `file`: PDF).
+# Read via pdftotext and a page-1 render (pdftoppm) for the SOT23 top-view
+# pin drawing. The datasheet carries no package outline and no ordering
+# table -- the outline is AOS's separate document PO-00001
+# (sources/aos/PO-00001.yaml, re-downloaded 2026-11-10: still
+# "Version N").
+schema_version: "0.1"
+kind: source
+id: aos/AO3407-DS
+
+publisher: aos
+document_id: AO3407
+document_type: datasheet
+
+revision: "5.1"
+date: "2023-07"
+
+url: "https://www.aosmd.com/res/datasheets/AO3407.pdf"

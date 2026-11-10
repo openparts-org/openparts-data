@@ -1,0 +1,46 @@
+# MPN from the "Product Identification System" (DS20001822J page 32),
+# Device "25LC256: 256 Kbit, 2.5V, 64-Byte Page, SPI Serial EEPROM",
+# Tape and Reel option blank (tube), Temperature "I = -40C to +85C
+# (Industrial)", Package "SN". existence is "probable": the MPN appears
+# only assembled from the part-number legend (not as an example) of the
+# Product Identification System, not in an orderable list (Microchip
+# product pages answer 403 and were not read). Package: drawing
+# C04-057-SN Rev F, dimension table page 22 (sheet 1 page 21). That
+# table (text) has the same numbers, row for row, as
+# standards/SOIC8-3.90x4.90-P1.27 (read from C04-057-SN Rev D in
+# DS20001203W page 25), so that package is reused. The "(NON-
+# AUTOMOTIVE)" legend was used; the examples list only 25LC256-I/P,
+# 25LC256T-E/ST, 25LC256XT-I/ST for the 25LC256. The id replaces the "/"
+# of the MPN with "-"; mpn keeps the real string. lifecycle: no
+# production-status statement in the datasheet; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/25LC256-I-SN
+
+manufacturer: microchip
+mpn: "25LC256-I/SN"
+
+device: microchip/25LC256
+package: standards/SOIC8-3.90x4.90-P1.27
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001822@revJ
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001822@revJ
+      page: 32
+      locator: "Product Identification System, Device \"25LC256: 256 Kbit, 2.5V, 64-Byte Page, SPI Serial EEPROM\", Tape and Reel option blank (tube), Temperature \"I = -40C to +85C (Industrial)\", Package \"SN\""
+  "/package":
+    - source: microchip/DS20001822@revJ
+      page: 32
+      locator: "Product Identification System, Package \"SN = Plastic Small Outline - Narrow, 3.90 mm Body, 8-lead (SOIC)\""
+    - source: microchip/DS20001822@revJ
+      page: 22
+      locator: "drawing C04-057-SN Rev F, dimension table page 22 (sheet 1 page 21)"

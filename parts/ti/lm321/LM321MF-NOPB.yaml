@@ -1,0 +1,44 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SNOS935C PDF page 16, addendum dated 10-Nov-2025): "LM321MF/NOPB |
+# Active | Production | SOT-23 (DBV) | 5 | 1000 | SMALL T&R | Yes |
+# NIPDAU | SN | Level-1-260C-UNLIM | -40 to 85". lifecycle "active" is
+# that table's Status column. Package: SOT-23 (DBV) | 5, outline
+# DBV0005A (4214839/K 08/2024) on page 19. Its pdftotext -layout text
+# matches ti/SBOS833R page 94 (where manufacturers/ti/DBV0005A was read)
+# line for line, so the package is reused. The id replaces the "/" of
+# the MPN with "-".
+schema_version: "0.1"
+kind: part
+id: ti/LM321MF-NOPB
+
+manufacturer: ti
+mpn: "LM321MF/NOPB"
+
+device: ti/LM321-DBV
+package: manufacturers/ti/DBV0005A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SNOS935C
+
+provenance:
+  "/existence":
+    - source: ti/SNOS935C
+      page: 16
+      locator: "Package Option Addendum, Packaging Information table, row \"LM321MF/NOPB\""
+  "/lifecycle":
+    - source: ti/SNOS935C
+      page: 16
+      locator: "Package Option Addendum, row \"LM321MF/NOPB\", Status \"Active\""
+  "/package":
+    - source: ti/SNOS935C
+      page: 16
+      locator: "Package Option Addendum, row \"LM321MF/NOPB\", \"SOT-23 (DBV) | 5\""
+    - source: ti/SNOS935C
+      page: 19
+      locator: "PACKAGE OUTLINE DBV0005A (4214839/K 08/2024)"

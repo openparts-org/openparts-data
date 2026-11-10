@@ -1,0 +1,37 @@
+# 4.7 kOhm +/-1 % ERJ3EK (0603), V packaging (punched carrier 4 mm pitch,
+# 5,000 pcs). Written without hyphen like panasonic/ERJ3EKF1002V (the
+# datasheet's part-number boxes have none). Not printed literally:
+# assembled from the page-2 part-number explanation (ERJ|3EK|F|4701|V);
+# 4.7 kOhm is an E24 value inside the page-3 ERJ3EK range 10 to 1 M
+# (E24,E96) -> existence probable. Page 2 notes "Please check the
+# Ratings for the presence/absence of part numbers": checked. The
+# fetched PDF (2026-11-10) still carries the 29-May-25 footers of
+# panasonic/AOA0000C304, so that source is reused. lifecycle unknown:
+# ERJ3EK carries no NRFND mark, but absence is not an active statement.
+schema_version: "0.1"
+kind: part
+id: panasonic/ERJ3EKF4701V
+
+manufacturer: panasonic
+mpn: ERJ3EKF4701V
+
+device: panasonic/ERJ3EK
+package: standards/CHIP0603-ERJ3E
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - panasonic/AOA0000C304
+
+provenance:
+  "/existence":
+    - source: panasonic/AOA0000C304
+      page: 2
+      locator: "Explanation of part numbers, ERJ XGN...3EK...1TN series +/-1 %: ERJ | 3EK (0603, 0.1 W) | F (+/-1 %) | resistance value (first three digits significant, last = number of zeros; example 1002 -> 10 kOhm) | V (punched carrier taping 4 mm pitch, 5,000 pcs; Part No. ERJ3EK); 4701 = 4.7 kOhm"
+    - source: panasonic/AOA0000C304
+      page: 3
+      locator: "Ratings <+/-1 %>, row ERJ3EK (0603): 0.1 W, 75 V, 150 V, +/-1, resistance range \"10 to 1 M (E24,E96)\", +/-100 x10^-6/K, Grade 0 (no NRFND mark on this row)"

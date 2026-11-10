@@ -1,0 +1,60 @@
+# Würth WCAP-CSGP 0402 MLCC outline, from the page-1 "Dimensions: [mm]"
+# drawing (rendered at 150 dpi) of 885012205037.
+# Views as in manufacturers/wurth/CHIP0603-WE-CBF: upper view with the
+# terminal band "0,25 +0,05/-0,10", side view length "1,0 ±0,05" with its end
+# view height "0,5 ±0,05", lower view width "0,5 ±0,05".
+# Only these order codes were checked -- other WCAP-CSGP values of this
+# size may have another thickness. min/max are the printed tolerances.
+schema_version: "0.1"
+kind: package
+id: manufacturers/wurth/CHIP0402-WCAP-CSGP-T0.5
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.0
+    min: 0.95
+    max: 1.05
+    unit: mm
+  body_width:
+    nominal: 0.5
+    min: 0.45
+    max: 0.55
+    unit: mm
+  body_height:
+    nominal: 0.5
+    min: 0.45
+    max: 0.55
+    unit: mm
+  lead_length:
+    nominal: 0.25
+    min: 0.15
+    max: 0.3
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: wurth/885012205037-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" side view, length \"1,0 ±0,05\""
+  "/dimensions/body_width":
+    - source: wurth/885012205037-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" lower view (first-angle: top view), width \"0,5 ±0,05\""
+  "/dimensions/body_height":
+    - source: wurth/885012205037-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" end view beside the side view, height \"0,5 ±0,05\""
+  "/dimensions/lead_length":
+    - source: wurth/885012205037-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" upper view, terminal band \"0,25 +0,05/-0,10\""

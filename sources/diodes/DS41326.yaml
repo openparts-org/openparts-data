@@ -1,0 +1,19 @@
+# Official Diodes Incorporated datasheet "AP63200/AP63201/AP63203/
+# AP63205 3.8V to 32V input, 2A low IQ synchronous buck with enhanced
+# EMI reduction", Document number DS41326 Rev. 3 - 2, footer
+# "November 2024", 18 pages, downloaded 2026-11-10 from the URL below.
+# Read with pdftotext -layout; page 1 (Pin Assignments) and page 17
+# (TSOT26 Package Outline Dimensions) rendered with pdftoppm. Page
+# numbers are PDF page indices (= printed "N of 18").
+schema_version: "0.1"
+kind: source
+id: diodes/DS41326
+
+publisher: diodes
+document_id: DS41326
+document_type: datasheet
+
+revision: "3-2"
+date: "2024-11"
+
+url: "https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf"

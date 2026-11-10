@@ -1,0 +1,22 @@
+# KOA Speer RK73H thick film chip resistor catalog sheet (2 pages,
+# printed catalog pages 23-24), fetched 2026-11-10 with curl from the same
+# URL as koa/RK73H. Page 1 still carries footer "10/26/25", but page 2
+# now carries "01/27/26" and the PDF was created 2026-01-27 (pdfinfo
+# CreationDate), so it is recorded as a newer revision instead of
+# re-using koa/RK73H. Read via pdftotext -layout plus a 250 dpi render of
+# the page-2 "applications and ratings" table. Page 1's 1J (0603)
+# dimension row reads the same as recorded in
+# standards/CHIP0603-KOA-RK73H1J (L .063+/-.008, W .031+/-.004,
+# c/d .012+/-.004, t .018+/-.004).
+schema_version: "0.1"
+kind: source
+id: koa/RK73H@rev2026-01-27
+
+publisher: koa
+document_id: "RK73H"
+document_type: datasheet
+
+revision: "p1 10/26/25, p2 01/27/26"
+date: "2026-01-27"
+
+url: "https://www.koaspeer.com/pdfs/RK73H.pdf"

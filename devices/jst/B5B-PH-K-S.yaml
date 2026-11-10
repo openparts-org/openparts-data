@@ -1,0 +1,18 @@
+# JST PH shrouded wire-to-board header, top entry, through-hole,
+# 5 circuits (jst/ePH page 3, Model No. table: B5B-PH-K-S, No. of circuits
+# 5). The sheet names no signals: each circuit is named by its number
+# (No. 1 circuit as marked on the drawings), all passive.
+schema_version: "0.1"
+kind: device
+id: jst/B5B-PH-K-S
+
+manufacturer: jst
+category: connector
+family: PH
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive }
+  "4": { name: "4", type: passive }
+  "5": { name: "5", type: passive }

@@ -1,0 +1,32 @@
+# MMBTA42LT1G: 300 V NPN transistor, SOT-23, 3,000/reel, marking 1D,
+# from the page-4 ORDERING INFORMATION table. No lifecycle statement.
+# Package: the datasheet's SOT-23 CASE 318 ISSUE AU outline (98ASB42226B,
+# DATE 14 AUG 2024, page 6) renders pixel-identical (100 dpi crop of the
+# drawing and table, same md5) to the page standards/SOT23-2.90x1.30-P1.90
+# was read from (2N7002E/D Rev. 8 page 6, re-downloaded 2026-11-10); every
+# table row was also re-read from a 150 dpi render. Reused; the package
+# cites onsemi/2N7002E-D.
+schema_version: "0.1"
+kind: part
+id: onsemi/MMBTA42LT1G
+
+manufacturer: onsemi
+mpn: MMBTA42LT1G
+
+device: onsemi/MMBTA42
+package: standards/SOT23-2.90x1.30-P1.90
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/MMBTA42LT1-D
+
+provenance:
+  "/existence":
+    - source: onsemi/MMBTA42LT1-D
+      page: 4
+      locator: "ORDERING INFORMATION table: \"MMBTA42LT1G | 1D | SOT-23 (Pb-Free) | 3,000 / Tape & Reel\""

@@ -1,0 +1,34 @@
+# 100 nF X7R 25 V +/-10% 0603 general-purpose MLCC (WCAP-CSGP).
+# Order code printed verbatim in the datasheet's own title block
+# ("ORDER CODE 885012206071", every page) -> existence verified; the
+# value/voltage cell is the page-1 Electrical Properties table of the
+# same per-code datasheet (Würth publishes one PDF per order code).
+# lifecycle: the title block "STATUS Valid" is the document's release
+# status, not a product lifecycle statement; unknown.
+schema_version: "0.1"
+kind: part
+id: wurth/885012206071
+
+manufacturer: wurth
+mpn: "885012206071"
+
+device: wurth/WCAP-CSGP-0603-X7R
+package: manufacturers/wurth/CHIP0603-WCAP-CSGP-T0.8
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - wurth/885012206071-DS
+
+provenance:
+  "/existence":
+    - source: wurth/885012206071-DS
+      page: 1
+      locator: "Title block, \"ORDER CODE 885012206071\", \"WCAP-CSGP Ceramic Capacitors 0603\", TECHNICAL REFERENCE \"X7R0603104K025DFCT10000\""
+    - source: wurth/885012206071-DS
+      page: 1
+      locator: "\"Electrical Properties\": Capacitance C 100 nF +/-10%; Rated Voltage VR 25 V (DC) max.; \"General Information\": Ceramic Type X7R Class II"

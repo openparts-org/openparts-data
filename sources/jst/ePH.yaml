@@ -1,0 +1,26 @@
+# JST "PH CONNECTOR" catalogue sheet (English), 5 pages, A4 portrait:
+# "2.0 mm pitch/Wire-to-Board connectors/Crimp style and Mating style".
+# Fetched once with WebFetch (jst-mfg.com); the PDF is encrypted with
+# copy/print allowed, read with pdftotext -layout and 200-500 dpi renders
+# of pages 1 and 3 (drawings). The sheet carries no document number or
+# revision: `revision`/`date` record the PDF's own creation date
+# (metadata, 2026-01-27 JST). PDF page index = the printed page number.
+# Used: page 1 "PC board layout and Assembly layout (Through-hole type)"
+# top entry type (note 1: viewed from the connector mounting surface;
+# note 3: the dimensions are for reference only), page 3 "Header
+# (Through-hole type)" top entry drawing, Model No. table and "Material
+# and Surface finish" ("Post: Copper alloy, tin-plated", "Base housing:
+# PA, natural (white)"), page 5 "Model number allocation" (B..Top entry
+# type, K = clinched, Color S = Natural (White)).
+schema_version: "0.1"
+kind: source
+id: jst/ePH
+
+publisher: jst
+document_id: "ePH"
+document_type: datasheet
+
+revision: "unversioned (PDF created 2026-01-27)"
+date: "2026-01-27"
+
+url: "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf"

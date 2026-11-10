@@ -1,0 +1,22 @@
+# Samsung Electro-Mechanics product page for CL21A226MAQNNN# (the "#" is the
+# packaging code). Read as raw HTML (curl, tags stripped). Page shows:
+# status "NRND"; packaging codes listed: E, F, G, R;
+# size 0805 (2012); L 2.00+/-0.15mm, W 1.25+/-0.15mm, T 1.25+/-0.15mm; X5R(-55 ~ +85);
+# capacitance 22.0uF, tolerance +/-20%, rated voltage 25 Vdc.
+# A live page, not a revisioned document: `revision`/`date` record its
+# own "Created : 2026/11/10 11:11:17" KST stamp at the time it was read. No page
+# numbers apply (single HTML page).
+# The page carries a caution box: "Status of this part : NRND",
+# "Replacement / Recommended part : CL21A226MAYNNN#".
+schema_version: "0.1"
+kind: source
+id: samsung/CL21A226MAQNNN
+
+publisher: samsung
+document_id: "CL21A226MAQNNN#"
+document_type: product_page
+
+revision: "retrieved 2026-11-10"
+date: "2026-11-10"
+
+url: "https://product.samsungsem.com/mlcc/CL21A226MAQNNN.do"

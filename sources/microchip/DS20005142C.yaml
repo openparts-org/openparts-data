@@ -1,0 +1,22 @@
+# Official Microchip datasheet "23A1024/23LC1024 1Mbit SPI Serial SRAM
+# with SDI and SQI Interface". Downloaded 2026-11-10 directly from
+# ww1.microchip.com (URL below; HTTP 200). document_id / revision from
+# the printed footer "DS20005142C-page N"; the Revision History lists
+# "Revision C (January 2015)". 32 PDF pages; text read with pdftotext
+# -layout. Page numbers in this dataset are PDF page indices (they equal
+# the printed page numbers). Package pages 20-25 were rendered
+# (pdftoppm) and read as images. Revisions D/E exist per third-party
+# listings, but the guessed first-party file names answered 301 (not
+# 200); revision C is what was read.
+schema_version: "0.1"
+kind: source
+id: microchip/DS20005142@revC
+
+publisher: microchip
+document_id: DS20005142
+document_type: datasheet
+
+revision: "C"
+date: "2015-01"
+
+url: "https://ww1.microchip.com/downloads/en/DeviceDoc/20005142C.pdf"

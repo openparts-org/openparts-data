@@ -1,0 +1,21 @@
+# Würth Elektronik datasheet for order code 885012206095 ("WCAP-CSGP Ceramic
+# Capacitors 0603"), 9 pages, A4 landscape. we-online.com refuses curl
+# (HTTP 403); fetched once with WebFetch, which saved the original PDF.
+# Read with pdftotext -layout plus a 150 dpi render of page 1 (the
+# dimension drawing is vector art with rotated text). Title block on
+# every page: CHECKED "PSL", REVISION "002.000", DATE "2021-01-03"
+# (YYYY-MM-DD), TECHNICAL REFERENCE "X7R0603104K050DFCT10000", ORDER CODE
+# "885012206095", SIZE/TYPE "0603", STATUS "Valid" (the document's
+# release status -- not read as a product lifecycle status).
+schema_version: "0.1"
+kind: source
+id: wurth/885012206095-DS
+
+publisher: wurth
+document_id: "885012206095"
+document_type: datasheet
+
+revision: "002.000"
+date: "2021-01-03"
+
+url: "https://www.we-online.com/components/products/datasheet/885012206095.pdf"

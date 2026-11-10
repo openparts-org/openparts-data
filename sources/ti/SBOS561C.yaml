@@ -1,0 +1,19 @@
+# Official TI datasheet "TLV320x 40ns, microPOWER, Push-Pull Output Comparators". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SBOS561C - MARCH 2012 - REVISED MAY 2024". 40 PDF pages; text read with pdftotext -layout; the
+# pin-configuration figure and the package outline drawings named in
+# the package/part files were checked against the rendered pages where
+# noted. Page numbers in this dataset are PDF page indices. The PACKAGE
+# OPTION ADDENDUM at the end of the PDF is dated 20-Aug-2026.
+schema_version: "0.1"
+kind: source
+id: ti/SBOS561C
+
+publisher: ti
+document_id: SBOS561C
+document_type: datasheet
+
+revision: "C"
+date: "2024-05"
+
+url: "https://www.ti.com/lit/ds/symlink/tlv3201.pdf"

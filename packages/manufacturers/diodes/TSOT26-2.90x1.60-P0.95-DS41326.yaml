@@ -1,0 +1,124 @@
+# Diodes TSOT26 (6-lead thin SOT-23), from "Package Outline Dimensions"
+# on page 17 of DS41326 Rev. 3-2 (AP63200/1/3/5, November 2024),
+# rendered and read with the table text. Millimetres ("All Dimensions in
+# mm"). The table uses JEDEC-style letters here (A, A1, A2, D, E, E1, b,
+# c, e, e1, L, L2), checked against the arrows: D is the body length
+# along the lead rows, E1 the molded width, E the lead-tip span, A2 the
+# body thickness, A1 the standoff. Columns are Min / Max / Typ.
+#
+# Pin numbering is not printed on the outline; it is taken from the
+# "Pin Assignments" top view (page 1: 1 FB, 2 EN, 3 VIN down one side,
+# 6 BST, 5 SW, 4 GND opposite) and the marking diagram (page 16: 1 2 3
+# along the bottom, 6 5 4 along the top) -- the generator's
+# counter-clockwise [3, 3] layout.
+#
+# Mapping for the `sot` generator (leads exit across body_length):
+# body_width = D 2.800/2.900 typ/3.000, body_length = E1 1.500/1.600
+# typ/1.700, overall_length = E "2.800 BSC", body_height = A2
+# 0.840-0.900, overall_height = A max 1.00, standoff = A1 0.010-0.100,
+# lead_width = b 0.300-0.450, lead_thickness = c 0.120-0.200,
+# lead_length = L 0.30-0.50. "Typ" values recorded as nominal; rows
+# without a Typ are min/max only. Not modelled: L2 0.250 BSC (gauge
+# plane), angles.
+schema_version: "0.1"
+kind: package
+id: manufacturers/diodes/TSOT26-2.90x1.60-P0.95-DS41326
+
+family: sot
+lead_count: 6
+lead_layout: [3, 3]
+
+pitch:
+  nominal: 0.95
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 2.800
+    nominal: 2.900
+    max: 3.000
+    unit: mm
+  body_length:
+    min: 1.500
+    nominal: 1.600
+    max: 1.700
+    unit: mm
+  body_height:
+    min: 0.840
+    max: 0.900
+    unit: mm
+  overall_length:
+    nominal: 2.800
+    unit: mm
+  overall_height:
+    max: 1.00
+    unit: mm
+  standoff:
+    min: 0.010
+    max: 0.100
+    unit: mm
+  lead_width:
+    min: 0.300
+    max: 0.450
+    unit: mm
+  lead_length:
+    min: 0.30
+    max: 0.50
+    unit: mm
+  lead_thickness:
+    min: 0.120
+    max: 0.200
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: sot
+
+provenance:
+  "/pitch":
+    - source: diodes/DS41326
+      page: 17
+      locator: "TSOT26 table, e \"0.950 BSC\" (e1 \"1.900 BSC\")"
+  "/lead_layout":
+    - source: diodes/DS41326
+      page: 1
+      locator: "Pin Assignments, TSOT26 TOP VIEW: 1 FB, 2 EN, 3 VIN on one side, 6 BST, 5 SW, 4 GND opposite"
+    - source: diodes/DS41326
+      page: 16
+      locator: "Marking Information, TSOT26 (Top View): 1 2 3 along the bottom, 6 5 4 along the top"
+  "/dimensions/body_width":
+    - source: diodes/DS41326
+      page: 17
+      locator: "TSOT26 table, D \"2.800 / 3.000 / 2.900\" (Min/Max/Typ) -- see mapping note"
+  "/dimensions/body_length":
+    - source: diodes/DS41326
+      page: 17
+      locator: "TSOT26 table, E1 \"1.500 / 1.700 / 1.600\" (Min/Max/Typ) -- see mapping note"
+  "/dimensions/body_height":
+    - source: diodes/DS41326
+      page: 17
+      locator: "TSOT26 table, A2 \"0.840 / 0.900 / -\""
+  "/dimensions/overall_length":
+    - source: diodes/DS41326
+      page: 17
+      locator: "TSOT26 table, E \"2.800 BSC\" (lead-tip span) -- see mapping note"
+  "/dimensions/overall_height":
+    - source: diodes/DS41326
+      page: 17
+      locator: "TSOT26 table, A \"- / 1.00 / -\""
+  "/dimensions/standoff":
+    - source: diodes/DS41326
+      page: 17
+      locator: "TSOT26 table, A1 \"0.010 / 0.100 / -\""
+  "/dimensions/lead_width":
+    - source: diodes/DS41326
+      page: 17
+      locator: "TSOT26 table, b \"0.300 / 0.450 / -\""
+  "/dimensions/lead_length":
+    - source: diodes/DS41326
+      page: 17
+      locator: "TSOT26 table, L \"0.30 / 0.50 / -\""
+  "/dimensions/lead_thickness":
+    - source: diodes/DS41326
+      page: 17
+      locator: "TSOT26 table, c \"0.120 / 0.200 / -\""

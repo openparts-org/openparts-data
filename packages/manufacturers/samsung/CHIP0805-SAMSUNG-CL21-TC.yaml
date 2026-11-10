@@ -1,0 +1,50 @@
+# Samsung Electro-Mechanics CL21 (0805/2012), thickness code C, 9th code
+# N (normal). L/W/T from the CL21B104KBCNNN product page: L 2.00+/-0.10,
+# W 1.25+/-0.10, T 0.85+/-0.10 mm; T also matches the catalog THICKNESS
+# CODE table (samsung/MLCC_2512 p7, rendered: 0805 C 0.85 +/-0.10). The
+# catalog has no L/W table for standard parts. BW not given: lead_length
+# left out.
+schema_version: "0.1"
+kind: package
+id: manufacturers/samsung/CHIP0805-SAMSUNG-CL21-TC
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 2.0
+    min: 1.9
+    max: 2.1
+    unit: mm
+  body_width:
+    nominal: 1.25
+    min: 1.15
+    max: 1.35
+    unit: mm
+  body_height:
+    nominal: 0.85
+    min: 0.75
+    max: 0.95
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: samsung/CL21B104KBCNNN
+      locator: "Size table, \"L Size\": \"2.00+/-0.10mm\""
+  "/dimensions/body_width":
+    - source: samsung/CL21B104KBCNNN
+      locator: "Size table, \"W Size\": \"1.25+/-0.10mm\""
+  "/dimensions/body_height":
+    - source: samsung/CL21B104KBCNNN
+      locator: "Size table, \"T Size\": \"0.85+/-0.10mm\""
+    - source: samsung/MLCC_2512
+      page: 7
+      locator: "Part Numbering, 7 THICKNESS CODE table (rendered), size 0805/2012, code C: 0.85 +/-0.10 (the unstarred row)"

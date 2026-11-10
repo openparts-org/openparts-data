@@ -1,0 +1,34 @@
+# 25LC256 256-Kbit SPI serial EEPROM, standard 8-lead pinout of the
+# PDIP, SOIC and (non-rotated) TSSOP packages. From DS20001822J Table
+# 2-1 "Pin Function Table" (page 6), columns PDIP/SOIC, checked against
+# the "Package Types" figure "PDIP/SOIC" (page 1). The rotated TSSOP
+# (25LC256X) and DFN-S (exposed pad) are not covered. Overbars of CS and
+# HOLD (active low) are not represented in the name. Types: CS, WP, SI,
+# SCK, HOLD -> input; SO -> output; VSS "Ground" -> ground; VCC "Supply
+# Voltage" -> power.
+schema_version: "0.1"
+kind: device
+id: microchip/25LC256
+
+manufacturer: microchip
+category: other
+family: "25AA256/25LC256"
+
+pins:
+  "1": { name: CS, type: input }
+  "2": { name: SO, type: output }
+  "3": { name: WP, type: input }
+  "4": { name: VSS, type: ground }
+  "5": { name: SI, type: input }
+  "6": { name: SCK, type: input }
+  "7": { name: HOLD, type: input }
+  "8": { name: VCC, type: power }
+
+provenance:
+  "/pins":
+    - source: microchip/DS20001822@revJ
+      page: 6
+      locator: "Table 2-1 \"Pin Function Table\", columns \"PDIP\" and \"SOIC\""
+    - source: microchip/DS20001822@revJ
+      page: 1
+      locator: "\"Package Types (not to scale)\" figure \"PDIP/SOIC\" (all 8 pins matched)"

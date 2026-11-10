@@ -1,0 +1,45 @@
+# LM339 quad differential comparator (open-collector outputs), 14-pin
+# pin map of the D, DB, N, NS, PW, DYY and J packages. From SLCS006Z
+# Table 5-1 "Pin Functions" (page 4), column "D, DB, N, NS, PW, DYY, J",
+# checked against Figure 5-1 "D, DB, N, NS, PW Packages 14-Pin SOIC,
+# SSOP, PDIP, SOP, TSSOP Top View" (same page; the figure writes
+# 1OUT/2IN- etc. for the table's OUT1/IN2-, same pin numbers). Names
+# follow the table; table footnote 1: "Some manufacturers transpose the
+# names of channels 1 & 2. Electrically the pinouts are identical" (the
+# table's description column for pins 1, 2, 4-7 even names the other
+# comparator). Minus signs written as ASCII "-". VCC "Positive supply"
+# -> power, GND "Negative supply" -> ground. The datasheet covers
+# LM139/239/339/2901 with one pin table; the 16-pad WQFN (RTE) numbering
+# differs and is not covered.
+schema_version: "0.1"
+kind: device
+id: ti/LM339
+
+manufacturer: ti
+category: other
+family: "LMx39/LM2901"
+
+pins:
+  "1":  { name: OUT1, type: output }
+  "2":  { name: OUT2, type: output }
+  "3":  { name: VCC, type: power }
+  "4":  { name: "IN2-", type: input }
+  "5":  { name: "IN2+", type: input }
+  "6":  { name: "IN1-", type: input }
+  "7":  { name: "IN1+", type: input }
+  "8":  { name: "IN3-", type: input }
+  "9":  { name: "IN3+", type: input }
+  "10": { name: "IN4-", type: input }
+  "11": { name: "IN4+", type: input }
+  "12": { name: GND, type: ground }
+  "13": { name: OUT4, type: output }
+  "14": { name: OUT3, type: output }
+
+provenance:
+  "/pins":
+    - source: ti/SLCS006Z
+      page: 4
+      locator: "Table 5-1 \"Pin Functions\", column \"D, DB, N, NS, PW, DYY, J\""
+    - source: ti/SLCS006Z
+      page: 4
+      locator: "Figure 5-1 \"D, DB, N, NS, PW Packages 14-Pin SOIC, SSOP, PDIP, SOP, TSSOP Top View\" (all 14 pins matched)"

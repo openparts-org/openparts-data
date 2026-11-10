@@ -1,0 +1,72 @@
+# Würth WCAP-CSGP 0603 MLCC outline, from the page-1 "Dimensions: [mm]"
+# drawing (rendered at 150 dpi) of 885012206095 and 885012206071 (identical numbers).
+# Views as in manufacturers/wurth/CHIP0603-WE-CBF: upper view with the
+# terminal band "0,4 ±0,15", side view length "1,6 ±0,1" with its end
+# view height "0,80 ±0,07", lower view width "0,8 ±0,1".
+# Only these order codes were checked -- other WCAP-CSGP values of this
+# size may have another thickness. min/max are the printed tolerances.
+schema_version: "0.1"
+kind: package
+id: manufacturers/wurth/CHIP0603-WCAP-CSGP-T0.8
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.6
+    min: 1.5
+    max: 1.7
+    unit: mm
+  body_width:
+    nominal: 0.8
+    min: 0.7
+    max: 0.9
+    unit: mm
+  body_height:
+    nominal: 0.8
+    min: 0.73
+    max: 0.87
+    unit: mm
+  lead_length:
+    nominal: 0.4
+    min: 0.25
+    max: 0.55
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: wurth/885012206095-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" side view, length \"1,6 ±0,1\""
+    - source: wurth/885012206071-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" side view, length \"1,6 ±0,1\""
+  "/dimensions/body_width":
+    - source: wurth/885012206095-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" lower view (first-angle: top view), width \"0,8 ±0,1\""
+    - source: wurth/885012206071-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" lower view (first-angle: top view), width \"0,8 ±0,1\""
+  "/dimensions/body_height":
+    - source: wurth/885012206095-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" end view beside the side view, height \"0,80 ±0,07\""
+    - source: wurth/885012206071-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" end view beside the side view, height \"0,80 ±0,07\""
+  "/dimensions/lead_length":
+    - source: wurth/885012206095-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" upper view, terminal band \"0,4 ±0,15\""
+    - source: wurth/885012206071-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" upper view, terminal band \"0,4 ±0,15\""

@@ -1,0 +1,29 @@
+# PZT2222AT1G: NPN transistor, SOT-223, 1,000/reel, from the page-1
+# ORDERING INFORMATION table. Its CASE 318E-04 ISSUE R outline (page 5)
+# is pixel-identical to 98ASB42680B, which the package cites. No
+# lifecycle statement.
+schema_version: "0.1"
+kind: part
+id: onsemi/PZT2222AT1G
+
+manufacturer: onsemi
+mpn: PZT2222AT1G
+
+device: onsemi/PZT2222A
+package: manufacturers/onsemi/SOT223-3.5x6.5-P2.3-318E-TabPin4
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/PZT2222AT1-D
+  - onsemi/98ASB42680B
+
+provenance:
+  "/existence":
+    - source: onsemi/PZT2222AT1-D
+      page: 1
+      locator: "ORDERING INFORMATION table: \"PZT2222AT1G | SOT-223 (Pb-Free) | 1,000 Tape & Reel\""

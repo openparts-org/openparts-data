@@ -1,0 +1,33 @@
+# FDV301N: 25 V N-channel digital FET, SOT-23, 3000/reel, from the page-1
+# ORDERING INFORMATION table (the page-1 heading says "CASE 318-08").
+# No lifecycle statement.
+# Package: the datasheet's SOT-23 CASE 318 ISSUE AU outline (98ASB42226B,
+# DATE 14 AUG 2024, page 6) renders pixel-identical (100 dpi crop of the
+# drawing and table, same md5) to the page standards/SOT23-2.90x1.30-P1.90
+# was read from (2N7002E/D Rev. 8 page 6, re-downloaded 2026-11-10); every
+# table row was also re-read from a 150 dpi render. Reused; the package
+# cites onsemi/2N7002E-D.
+schema_version: "0.1"
+kind: part
+id: onsemi/FDV301N
+
+manufacturer: onsemi
+mpn: FDV301N
+
+device: onsemi/FDV301N
+package: standards/SOT23-2.90x1.30-P1.90
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/FDV301N-D
+
+provenance:
+  "/existence":
+    - source: onsemi/FDV301N-D
+      page: 1
+      locator: "ORDERING INFORMATION table: \"FDV301N, FDV301N-F169 | SOT-23-3 (Pb-Free, Halide-Free) | 3000 / Tape & Reel\""

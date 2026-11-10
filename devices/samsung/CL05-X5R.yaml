@@ -1,0 +1,17 @@
+# Samsung Electro-Mechanics CL05 MLCC, size 0402 (1005), dielectric code
+# A = X5R (-55 to +85 C, +/-15 %) (samsung/MLCC_2512 p6 SIZE CODE and
+# DIELECTRIC CODE tables). Series-level device: value/voltage-specific
+# MPNs are Parts, each pointing at the package of its thickness and
+# size-control code. Non-polarized; terminals numbered only.
+# Parts: CL05A105KA5NQN#, CL05A475MP5NRN#.
+schema_version: "0.1"
+kind: device
+id: samsung/CL05-X5R
+
+manufacturer: samsung
+category: capacitor
+family: CL05
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

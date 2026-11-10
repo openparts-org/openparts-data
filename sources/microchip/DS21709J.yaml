@@ -1,0 +1,20 @@
+# Official Microchip datasheet "24AA02/24LC02B 2K I2C Serial EEPROM".
+# Downloaded 2026-11-10 directly from ww1.microchip.com (URL below; HTTP
+# 200). document_id / revision from the printed footer "DS21709J-page
+# N"; the Revision History lists "Revision J (02/2009)". 32 PDF pages;
+# text read with pdftotext -layout. Page numbers in this dataset are PDF
+# page indices (they equal the printed page numbers). Package pages
+# 14-25 use an encoded font and were rendered (pdftoppm) and read as
+# images.
+schema_version: "0.1"
+kind: source
+id: microchip/DS21709@revJ
+
+publisher: microchip
+document_id: DS21709
+document_type: datasheet
+
+revision: "J"
+date: "2009-02"
+
+url: "https://ww1.microchip.com/downloads/en/DeviceDoc/21709J.pdf"

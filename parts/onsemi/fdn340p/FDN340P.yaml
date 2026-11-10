@@ -1,0 +1,27 @@
+# FDN340P: -20 V P-channel MOSFET, SOT-23/SUPERSOT-23 (CASE 527AG, outline
+# page 5), 3000/reel, from the page-2 PACKAGE MARKING AND ORDERING
+# INFORMATION table. No lifecycle statement.
+schema_version: "0.1"
+kind: part
+id: onsemi/FDN340P
+
+manufacturer: onsemi
+mpn: FDN340P
+
+device: onsemi/FDN340P
+package: manufacturers/onsemi/SOT23-2.92x1.40-P1.90-527AG
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/FDN340P-D
+
+provenance:
+  "/existence":
+    - source: onsemi/FDN340P-D
+      page: 2
+      locator: "PACKAGE MARKING AND ORDERING INFORMATION table: \"FDN340P | 340 | SOT-23 (Pb-Free) | 7″ | 8 mm | 3000 / Tape & Reel\""

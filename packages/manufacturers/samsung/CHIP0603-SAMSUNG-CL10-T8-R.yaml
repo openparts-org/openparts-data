@@ -1,0 +1,46 @@
+# Samsung Electro-Mechanics CL10 (0603/1608), thickness code 8, 9th code
+# "R" (size control: 0603/1608 +/-0.20 per samsung/MLCC_2512 p8). L/W/T
+# from the CL10A226MQ8NRN product page: L 1.60+/-0.20, W 0.80+/-0.20,
+# T 0.80+/-0.20 mm (wider than standards/CHIP0603-SAMSUNG-CL10-T8's
+# +/-0.10, so that package is not reused). BW not given: lead_length left out.
+schema_version: "0.1"
+kind: package
+id: manufacturers/samsung/CHIP0603-SAMSUNG-CL10-T8-R
+
+family: chip
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.6
+    min: 1.4
+    max: 1.8
+    unit: mm
+  body_width:
+    nominal: 0.8
+    min: 0.6
+    max: 1.0
+    unit: mm
+  body_height:
+    nominal: 0.8
+    min: 0.6
+    max: 1.0
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: chip
+
+provenance:
+  "/dimensions/body_length":
+    - source: samsung/CL10A226MQ8NRN
+      locator: "Size table, \"L Size\": \"1.60+/-0.20mm\""
+  "/dimensions/body_width":
+    - source: samsung/CL10A226MQ8NRN
+      locator: "Size table, \"W Size\": \"0.80+/-0.20mm\""
+  "/dimensions/body_height":
+    - source: samsung/CL10A226MQ8NRN
+      locator: "Size table, \"T Size\": \"0.80+/-0.20mm\""

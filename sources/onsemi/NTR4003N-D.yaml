@@ -1,0 +1,19 @@
+# Official onsemi datasheet "MOSFET - Single, N-Channel, Small Signal, SOT-23, 30 V, 0.56 A -- NTR4003N",
+# Publication Order Number NTR4003N/D, footer "January, 2026 - Rev. 6", 8 pages,
+# downloaded with curl on 2026-11-10 (HTTP 200, `file`: PDF).
+# Read with pdftotext -layout; outline tables (image-only) rendered with
+# pdftoppm. Page numbers are PDF page indices.
+# Page 6 is the SOT-23 CASE 318 ISSUE AU outline (98ASB42226B, DATE 14 AUG
+# 2024), page 7 its STYLE list.
+schema_version: "0.1"
+kind: source
+id: onsemi/NTR4003N-D
+
+publisher: onsemi
+document_id: NTR4003N/D
+document_type: datasheet
+
+revision: "6"
+date: "2026-01"
+
+url: "https://www.onsemi.com/pdf/datasheet/ntr4003n-d.pdf"

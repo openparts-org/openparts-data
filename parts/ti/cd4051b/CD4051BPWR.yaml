@@ -1,0 +1,44 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SCHS047O PDF page 23, addendum dated 26-Sep-2026): "CD4051BPWR |
+# Active | Production | TSSOP (PW) | 16 | 2000 | LARGE T&R | Yes |
+# NIPDAU | Level-1-260C-UNLIM | -55 to 125 | CM051B". lifecycle "active"
+# is that table's Status column. Package: TSSOP (PW) | 16, outline
+# PW0016A (4220204/B 12/2023) on page 32. Its pdftotext -layout text
+# matches the outline page standards/TSSOP16-4.4x5.0-P0.65-TI-PW was
+# read from (ti/SCLS041J page 34) line for line, and every number of
+# that package equals the drawing, so it is reused.
+schema_version: "0.1"
+kind: part
+id: ti/CD4051BPWR
+
+manufacturer: ti
+mpn: "CD4051BPWR"
+
+device: ti/CD4051B
+package: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SCHS047O
+
+provenance:
+  "/existence":
+    - source: ti/SCHS047O
+      page: 23
+      locator: "Package Option Addendum, Packaging Information table, row \"CD4051BPWR\""
+  "/lifecycle":
+    - source: ti/SCHS047O
+      page: 23
+      locator: "Package Option Addendum, row \"CD4051BPWR\", Status \"Active\""
+  "/package":
+    - source: ti/SCHS047O
+      page: 23
+      locator: "Package Option Addendum, row \"CD4051BPWR\", \"TSSOP (PW) | 16\""
+    - source: ti/SCHS047O
+      page: 32
+      locator: "PACKAGE OUTLINE PW0016A (4220204/B 12/2023)"

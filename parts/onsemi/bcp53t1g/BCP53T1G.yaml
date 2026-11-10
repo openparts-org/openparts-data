@@ -1,0 +1,29 @@
+# BCP53T1G: -80 V PNP medium-power transistor, SOT-223, 1000/reel, from
+# the page-1 ORDERING INFORMATION table. Its CASE 318E-04 ISSUE R outline
+# (page 6) is pixel-identical to 98ASB42680B, which the package cites.
+# No lifecycle statement.
+schema_version: "0.1"
+kind: part
+id: onsemi/BCP53T1G
+
+manufacturer: onsemi
+mpn: BCP53T1G
+
+device: onsemi/BCP53
+package: manufacturers/onsemi/SOT223-3.5x6.5-P2.3-318E-TabPin4
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/BCP53T1-D
+  - onsemi/98ASB42680B
+
+provenance:
+  "/existence":
+    - source: onsemi/BCP53T1-D
+      page: 1
+      locator: "ORDERING INFORMATION table: \"BCP53T1G | SOT-223 (Pb-Free) | 1000/Tape & Reel\""

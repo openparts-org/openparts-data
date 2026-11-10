@@ -1,0 +1,19 @@
+# Official onsemi datasheet "NPN Silicon Planar Epitaxial Transistor -- PZT2222A",
+# Publication Order Number PZT2222AT1/D, footer "July, 2024 - Rev. 12", 7 pages,
+# downloaded with curl on 2026-11-10 (HTTP 200, `file`: PDF).
+# Read with pdftotext -layout; outline tables (image-only) rendered with
+# pdftoppm. Page numbers are PDF page indices.
+# Pages 5-6 are the SOT-223 (TO-261) CASE 318E-04 ISSUE R outline
+# (98ASB42680B, DATE 02 OCT 2018), page 6 its STYLE list.
+schema_version: "0.1"
+kind: source
+id: onsemi/PZT2222AT1-D
+
+publisher: onsemi
+document_id: PZT2222AT1/D
+document_type: datasheet
+
+revision: "12"
+date: "2024-07"
+
+url: "https://www.onsemi.com/pdf/datasheet/pzt2222at1-d.pdf"

@@ -1,0 +1,20 @@
+# Official onsemi datasheet "PNP Silicon Epitaxial Transistors -- BCP53 Series",
+# Publication Order Number BCP53T1/D, footer "November, 2025 - Rev. 15", 8 pages,
+# downloaded with curl on 2026-11-10 (HTTP 200, `file`: PDF).
+# Read with pdftotext -layout; outline tables (image-only) rendered with
+# pdftoppm. Page numbers are PDF page indices.
+# Page 1 has the ORDERING INFORMATION table; pages 6-7 the SOT-223 (TO-261)
+# CASE 318E-04 ISSUE R outline (98ASB42680B, DATE 02 OCT 2018), page 7
+# its STYLE list.
+schema_version: "0.1"
+kind: source
+id: onsemi/BCP53T1-D
+
+publisher: onsemi
+document_id: BCP53T1/D
+document_type: datasheet
+
+revision: "15"
+date: "2025-11"
+
+url: "https://www.onsemi.com/pdf/datasheet/bcp53t1-d.pdf"

@@ -1,0 +1,130 @@
+# onsemi "SOT-223 (TO-261)" CASE 318E-04 ISSUE R (document 98ASB42680B,
+# DATE 02 OCT 2018), read from the separate case-outline PDF page 1
+# (MILLIMETERS table MIN / NOM / MAX, image-only, rendered at 300 dpi).
+# The same page is embedded in BCP53T1/D Rev. 15 page 6 and PZT2222AT1/D
+# Rev. 12 page 5 (pixel-identical 100 dpi renders of the drawing area).
+#
+# Not onsemi's CASE 318H (manufacturers/onsemi/SOT223-...-318H-TabPin4:
+# A 1.80 max only, b 0.60/0.74/0.88, b1 2.90/3.00/3.10, L 0.25 min) and
+# not the Diodes/TI SOT-223 drawings: its own package.
+#
+# TAB NUMBER: the TOP VIEW numbers the leads 1 2 3 and the tab "4";
+# STYLE 1 (page 2) lists "4. COLLECTOR", same as pin 2.
+#
+# Symbol mapping (frame: leads left, tab right; as for 318H): E
+# (3.30/3.50/3.70, body across the lead direction) -> body_width; D
+# (6.30/6.50/6.70, along the lead row) -> body_length; He (lead toe to
+# tab toe) -> overall_width; b -> lead_width; b1 -> tab_width; c ->
+# lead_thickness; L ("0.20" MIN only, the flat foot in DETAIL A) ->
+# lead_length min only; A1 -> standoff; A (no A2 in the table) ->
+# body_height; e "2.30 BSC" -> pitch.
+# Left out: L1 (1.50/1.75/2.00, body edge to lead tip -- not the foot),
+# angle 0-10 deg, the recommended mounting footprint.
+schema_version: "0.1"
+kind: package
+id: manufacturers/onsemi/SOT223-3.5x6.5-P2.3-318E-TabPin4
+
+family: sot223
+lead_count: 3
+
+pitch:
+  nominal: 2.30
+  unit: mm
+
+tab:
+  number: "4"
+
+dimensions:
+  body_width:
+    nominal: 3.50
+    min: 3.30
+    max: 3.70
+    unit: mm
+  body_length:
+    nominal: 6.50
+    min: 6.30
+    max: 6.70
+    unit: mm
+  body_height:
+    nominal: 1.63
+    min: 1.50
+    max: 1.75
+    unit: mm
+  overall_width:
+    nominal: 7.00
+    min: 6.70
+    max: 7.30
+    unit: mm
+  standoff:
+    nominal: 0.06
+    min: 0.02
+    max: 0.10
+    unit: mm
+  lead_width:
+    nominal: 0.75
+    min: 0.60
+    max: 0.89
+    unit: mm
+  lead_length:
+    min: 0.20
+    unit: mm
+  lead_thickness:
+    nominal: 0.29
+    min: 0.24
+    max: 0.35
+    unit: mm
+  tab_width:
+    nominal: 3.06
+    min: 2.90
+    max: 3.20
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: sot223
+
+provenance:
+  "/pitch":
+    - source: onsemi/98ASB42680B
+      page: 1
+      locator: "CASE 318E-04 MILLIMETERS table, DIM \"e\" \"2.30 BSC\""
+  "/tab":
+    - source: onsemi/98ASB42680B
+      page: 1
+      locator: "CASE 318E-04 TOP VIEW: leads numbered 1 2 3, tab numbered \"4\""
+  "/dimensions/body_width":
+    - source: onsemi/98ASB42680B
+      page: 1
+      locator: "CASE 318E-04 table, DIM \"E\" (3.30 / 3.50 / 3.70)"
+  "/dimensions/body_length":
+    - source: onsemi/98ASB42680B
+      page: 1
+      locator: "CASE 318E-04 table, DIM \"D\" (6.30 / 6.50 / 6.70)"
+  "/dimensions/body_height":
+    - source: onsemi/98ASB42680B
+      page: 1
+      locator: "CASE 318E-04 table, DIM \"A\" (1.50 / 1.63 / 1.75); no A2 in the table"
+  "/dimensions/overall_width":
+    - source: onsemi/98ASB42680B
+      page: 1
+      locator: "CASE 318E-04 table, DIM \"He\" (6.70 / 7.00 / 7.30), lead toe to tab toe in the TOP VIEW"
+  "/dimensions/standoff":
+    - source: onsemi/98ASB42680B
+      page: 1
+      locator: "CASE 318E-04 table, DIM \"A1\" (0.02 / 0.06 / 0.10)"
+  "/dimensions/lead_width":
+    - source: onsemi/98ASB42680B
+      page: 1
+      locator: "CASE 318E-04 table, DIM \"b\" (0.60 / 0.75 / 0.89)"
+  "/dimensions/lead_length":
+    - source: onsemi/98ASB42680B
+      page: 1
+      locator: "CASE 318E-04 table, DIM \"L\" (MIN 0.20 only; NOM/MAX \"---\"), foot in DETAIL A"
+  "/dimensions/lead_thickness":
+    - source: onsemi/98ASB42680B
+      page: 1
+      locator: "CASE 318E-04 table, DIM \"c\" (0.24 / 0.29 / 0.35)"
+  "/dimensions/tab_width":
+    - source: onsemi/98ASB42680B
+      page: 1
+      locator: "CASE 318E-04 table, DIM \"b1\" (2.90 / 3.06 / 3.20)"

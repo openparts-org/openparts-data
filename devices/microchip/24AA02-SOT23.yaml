@@ -1,0 +1,28 @@
+# 24AA02 2-Kbit I2C serial EEPROM (1.7 V), 5-lead SOT-23 (OT) pinout.
+# From DS21709J Table 2-1 "Pin Function Table" (page 5), column SOT23,
+# checked against the "Package Types" figure "SOT-23/SC-70" (page 1):
+# SCL 1, VSS 2, SDA 3 along one side, VCC 4 opposite pin 3, WP 5
+# opposite pin 1. Types as microchip/24LC02B.
+schema_version: "0.1"
+kind: device
+id: microchip/24AA02-SOT23
+
+manufacturer: microchip
+category: other
+family: "24AA02/24LC02B"
+
+pins:
+  "1": { name: SCL, type: input }
+  "2": { name: VSS, type: ground }
+  "3": { name: SDA, type: io }
+  "4": { name: VCC, type: power }
+  "5": { name: WP, type: input }
+
+provenance:
+  "/pins":
+    - source: microchip/DS21709@revJ
+      page: 5
+      locator: "Table 2-1 \"Pin Function Table\", column \"SOT23\""
+    - source: microchip/DS21709@revJ
+      page: 1
+      locator: "\"Package Types\" figure \"SOT-23/SC-70\" (all 5 pins matched)"

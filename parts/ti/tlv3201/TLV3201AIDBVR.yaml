@@ -1,0 +1,43 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SBOS561C PDF page 23, addendum dated 20-Aug-2026): "TLV3201AIDBVR |
+# Active | Production | SOT-23 (DBV) | 5 | 3000 | LARGE T&R | Yes | SN |
+# Level-1-260C-UNLIM". lifecycle "active" is that table's Status column.
+# Package: SOT-23 (DBV) | 5, outline DBV0005A (4214839/K 08/2024) on
+# page 28. Its pdftotext -layout text matches the outline page the
+# package was read from (ti/SBOS833R page 94) line for line, so
+# manufacturers/ti/DBV0005A is reused.
+schema_version: "0.1"
+kind: part
+id: ti/TLV3201AIDBVR
+
+manufacturer: ti
+mpn: "TLV3201AIDBVR"
+
+device: ti/TLV3201-DBV
+package: manufacturers/ti/DBV0005A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SBOS561C
+
+provenance:
+  "/existence":
+    - source: ti/SBOS561C
+      page: 23
+      locator: "Package Option Addendum, Packaging Information table, row \"TLV3201AIDBVR\""
+  "/lifecycle":
+    - source: ti/SBOS561C
+      page: 23
+      locator: "Package Option Addendum, row \"TLV3201AIDBVR\", Status \"Active\""
+  "/package":
+    - source: ti/SBOS561C
+      page: 23
+      locator: "Package Option Addendum, row \"TLV3201AIDBVR\", \"SOT-23 (DBV) | 5\""
+    - source: ti/SBOS561C
+      page: 28
+      locator: "PACKAGE OUTLINE DBV0005A (4214839/K 08/2024)"

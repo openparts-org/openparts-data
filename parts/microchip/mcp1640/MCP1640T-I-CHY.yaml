@@ -1,0 +1,43 @@
+# MPN from the "Product Identification System" (DS20002234D page 29),
+# example i) "MCP1640T-I/CHY: 0.65V, PWM/PFM True Disconnect Sync Reg.,
+# 6LD SOT-23 pkg. Tape and Reel". existence is "probable": the MPN
+# appears only as an ordering example of the Product Identification
+# System, not in an orderable list (Microchip product pages answer 403
+# and were not read). Package: drawing C04-028B "6-Lead Plastic Small
+# Outline Transistor (CHY) [SOT-23]", page 22 (text). Every row of that
+# table equals manufacturers/microchip/SOT23-6-CH-C04-028B (read from
+# DS22039D page 44, the same drawing number), so that package is reused.
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real
+# string. lifecycle: no production-status statement in the datasheet;
+# unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP1640T-I-CHY
+
+manufacturer: microchip
+mpn: "MCP1640T-I/CHY"
+
+device: microchip/MCP1640-SOT23
+package: manufacturers/microchip/SOT23-6-CH-C04-028B
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20002234@revD
+
+provenance:
+  "/existence":
+    - source: microchip/DS20002234@revD
+      page: 29
+      locator: "Product Identification System, example i) \"MCP1640T-I/CHY: 0.65V, PWM/PFM True Disconnect Sync Reg., 6LD SOT-23 pkg. Tape and Reel\""
+  "/package":
+    - source: microchip/DS20002234@revD
+      page: 29
+      locator: "Product Identification System, Package \"CHY* = Plastic Small Outline Transistor (SOT-23), 6-lead\" (\"*Y = Nickel palladium gold manufacturing designator\")"
+    - source: microchip/DS20002234@revD
+      page: 22
+      locator: "drawing C04-028B \"6-Lead Plastic Small Outline Transistor (CHY) [SOT-23]\", page 22 (text)"

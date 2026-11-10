@@ -1,0 +1,20 @@
+# Samsung Electro-Mechanics product page for CL10B104KB8NNN# (the "#" is the
+# packaging code). Read as raw HTML (curl, tags stripped). Page shows:
+# status "Mass Production"; packaging codes listed: C, D, E, L, O;
+# size 0603 (1608); L 1.60+/-0.10mm, W 0.80+/-0.10mm, T 0.80+/-0.10mm; X7R(-55 ~ +125);
+# capacitance 100.0nF, tolerance +/-10%, rated voltage 50 Vdc.
+# A live page, not a revisioned document: `revision`/`date` record its
+# own "Created : 2026/11/10 11:11:02" KST stamp at the time it was read. No page
+# numbers apply (single HTML page).
+schema_version: "0.1"
+kind: source
+id: samsung/CL10B104KB8NNN
+
+publisher: samsung
+document_id: "CL10B104KB8NNN#"
+document_type: product_page
+
+revision: "retrieved 2026-11-10"
+date: "2026-11-10"
+
+url: "https://product.samsungsem.com/mlcc/CL10B104KB8NNN.do"

@@ -1,0 +1,29 @@
+# Model number printed verbatim in the XH sheet's ordering table
+# (jst/eXH page 5, "Header" Top entry type, Model No. "Without boss"
+# column, 10 circuits) -> existence verified. "-A": no colour letter =
+# natural (white), no M = without boss (page 9 "Model number allocation").
+# lifecycle: the sheet states no production status -> unknown.
+schema_version: "0.1"
+kind: part
+id: jst/B10B-XH-A
+
+manufacturer: jst
+mpn: "B10B-XH-A"
+
+device: jst/B10B-XH-A
+package: manufacturers/jst/XH-Header-Top-1x10-P2.50
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - jst/eXH
+
+provenance:
+  "/existence":
+    - source: jst/eXH
+      page: 5
+      locator: "\"Header\", Top entry type Model No. table, No. of circuits 10, Without boss: \"B10B-XH-A\""

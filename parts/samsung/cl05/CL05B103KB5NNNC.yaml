@@ -1,0 +1,43 @@
+# 10.0nF X7R 50 V +/-10% 0402 MLCC, packaging code C
+# (C (cardboard tape, normal 7" reel), catalog p8). Literal MPN listed on Samsung's
+# product page (existence verified); fields decoded with the catalog
+# part-numbering legend (samsung/MLCC_2512 pp6-8), which matches the
+# page's Characteristics. Package: the page's L/W/T (1.00+/-0.05 / 0.50+/-0.05 / 0.50+/-0.05 mm)
+# equal the reused CHIP0402-SAMSUNG-CL05-T5 number for number.
+# lifecycle: the product page shows "Status: Mass Production".
+schema_version: "0.1"
+kind: part
+id: samsung/CL05B103KB5NNNC
+
+manufacturer: samsung
+mpn: CL05B103KB5NNNC
+
+device: samsung/CL05-X7R
+package: standards/CHIP0402-SAMSUNG-CL05-T5
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - samsung/CL05B103KB5NNN
+  - samsung/MLCC_2512
+
+provenance:
+  "/existence":
+    - source: samsung/MLCC_2512
+      page: 6
+      locator: "Part Numbering: 1 SERIES CODE CL; 2 SIZE CODE 05 = 0402/1005; 3 DIELECTRIC CODE B = X7R; 4 CAPACITANCE CODE 103 (2 significant digits plus number of zeros, pF)"
+    - source: samsung/MLCC_2512
+      page: 7
+      locator: "Part Numbering: 5 TOLERANCE K = +/-10%; 6 RATED VOLTAGE B = 50Vdc; 7 THICKNESS CODE 5"
+    - source: samsung/MLCC_2512
+      page: 8
+      locator: "Part Numbering: 8 DESIGN CODE N (Ni/Cu/Ni-Sn, Normal); 9 N = Normal; 10 CONTROL CODE N = Standard; 11 PACKAGING CODE C (cardboard tape, normal 7\" reel)"
+    - source: samsung/CL05B103KB5NNN
+      locator: "\"List of part numbers with package codes\": CL05B103KB5NNNC; Characteristics: X7R(-55 ~ +125), Capacitance 10.0nF, Tolerance +/-10%, Rated Voltage 50Vdc"
+  "/lifecycle":
+    - source: samsung/CL05B103KB5NNN
+      locator: "Characteristics, \"Status: Mass Production\""

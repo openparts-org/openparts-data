@@ -1,0 +1,21 @@
+# Official TI datasheet "LM339B, LM2901B, LM339, LM239, LM139, LM2901 Quad Differential Comparators". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SLCS006Z - OCTOBER 1979 - REVISED MAY 2025". 54 PDF pages; text read with pdftotext -layout; the
+# pin-configuration figure and the package outline drawings named in
+# the package/part files were checked against the rendered pages where
+# noted. Page numbers in this dataset are PDF page indices. The PACKAGE
+# OPTION ADDENDUM at the end of the PDF is dated 18-May-2026.
+# The same document is served at the lm2901 symlink (identical
+# revision header).
+schema_version: "0.1"
+kind: source
+id: ti/SLCS006Z
+
+publisher: ti
+document_id: SLCS006Z
+document_type: datasheet
+
+revision: "Z"
+date: "2025-05"
+
+url: "https://www.ti.com/lit/ds/symlink/lm339.pdf"

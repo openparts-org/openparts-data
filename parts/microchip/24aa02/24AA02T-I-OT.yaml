@@ -1,0 +1,42 @@
+# MPN from the "Product Identification System" (DS21709J page 29),
+# example c) "24AA02T-I/OT: Industrial Temperature, 1.7V, SOT-23
+# package, tape and reel". existence is "probable": the MPN appears only
+# as an ordering example of the Product Identification System, not in an
+# orderable list (Microchip product pages answer 403 and were not read).
+# Package: drawing C04-091B "5-Lead Plastic Small Outline Transistor
+# (OT) [SOT-23]", page 19 (rendered).
+# manufacturers/microchip/SOT23-5-OT-C04-091B was created from that
+# page. The id replaces the "/" of the MPN with "-"; mpn keeps the real
+# string. lifecycle: no production-status statement in the datasheet;
+# unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/24AA02T-I-OT
+
+manufacturer: microchip
+mpn: "24AA02T-I/OT"
+
+device: microchip/24AA02-SOT23
+package: manufacturers/microchip/SOT23-5-OT-C04-091B
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS21709@revJ
+
+provenance:
+  "/existence":
+    - source: microchip/DS21709@revJ
+      page: 29
+      locator: "Product Identification System, example c) \"24AA02T-I/OT: Industrial Temperature, 1.7V, SOT-23 package, tape and reel\""
+  "/package":
+    - source: microchip/DS21709@revJ
+      page: 29
+      locator: "Product Identification System, Package \"OT = SOT-23, 5-lead (Tape and Reel only)\""
+    - source: microchip/DS21709@revJ
+      page: 19
+      locator: "drawing C04-091B \"5-Lead Plastic Small Outline Transistor (OT) [SOT-23]\", page 19 (rendered)"

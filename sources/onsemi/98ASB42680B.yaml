@@ -1,0 +1,21 @@
+# onsemi's separate mechanical case-outline document "SOT-223 (TO-261)
+# CASE 318E-04 ISSUE R, DATE 02 OCT 2018", document number 98ASB42680B,
+# 2 pages (page 1 drawing and MILLIMETERS table, page 2 STYLE 1-13 and
+# generic marking), downloaded with curl from the URL below on
+# 2026-11-10 (HTTP 200, PDF; metadata title "98ASB42680B.revr",
+# CreationDate 2024-08-16). The table is image-only: read from a
+# 300 dpi pdftoppm render. The same page is embedded in BCP53T1/D
+# Rev. 15 (page 6) and PZT2222AT1/D Rev. 12 (page 5): a 100 dpi render
+# of the drawing area of all three pages is pixel-identical (same md5).
+schema_version: "0.1"
+kind: source
+id: onsemi/98ASB42680B
+
+publisher: onsemi
+document_id: 98ASB42680B
+document_type: package_drawing
+
+revision: "R"
+date: "2018-10-02"
+
+url: "https://www.onsemi.com/download/package-drawing/pdf/318E-04.pdf"

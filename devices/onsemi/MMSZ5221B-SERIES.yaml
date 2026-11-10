@@ -1,0 +1,25 @@
+# MMSZ52xxBT1G zener series (500 mW, SOD-123): one device for every
+# voltage in the datasheet -- the value is carried by the Part (MPN).
+# Pins from the page-1 symbol ("1 Cathode", "2 Anode", "SOD-123 CASE
+# 425 STYLE 1") and STYLE 1 on the outline page (PIN 1. CATHODE
+# 2. ANODE).
+schema_version: "0.1"
+kind: device
+id: onsemi/MMSZ5221B-SERIES
+
+manufacturer: onsemi
+category: diode
+family: MMSZ52
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/MMSZ5221BT1-D
+      page: 1
+      locator: "Symbol: \"1 Cathode\", \"2 Anode\"; \"SOD-123 CASE 425 STYLE 1\""
+    - source: onsemi/MMSZ5221BT1-D
+      page: 7
+      locator: "CASE 425 STYLE 1: \"PIN 1. CATHODE 2. ANODE\""

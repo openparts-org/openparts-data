@@ -1,0 +1,20 @@
+# Official onsemi datasheet "Zener Voltage Regulators, 500 mW SOD-123 Surface Mount -- MMSZ52xxxT1G Series",
+# Publication Order Number MMSZ5221BT1/D, footer "March, 2024 - Rev. 17", 8 pages,
+# downloaded with curl on 2026-11-10 (HTTP 200, `file`: PDF).
+# Read with pdftotext -layout; outline tables (image-only) rendered with
+# pdftoppm. Page numbers are PDF page indices.
+# Page 3 is the Electrical Characteristics table (one row per device
+# order number); page 7 the SOD-123 CASE 425 ISSUE H outline
+# (98ASB42927B, DATE 29 FEB 2024, with STYLE 1).
+schema_version: "0.1"
+kind: source
+id: onsemi/MMSZ5221BT1-D
+
+publisher: onsemi
+document_id: MMSZ5221BT1/D
+document_type: datasheet
+
+revision: "17"
+date: "2024-03"
+
+url: "https://www.onsemi.com/pdf/datasheet/mmsz5221bt1-d.pdf"

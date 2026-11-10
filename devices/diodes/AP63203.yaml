@@ -1,0 +1,32 @@
+# AP63203 (fixed 3.3 V, 1.1 MHz) 2-A synchronous buck converter, TSOT26
+# pinout (the datasheet gives one pin table for AP63200/1/3/5). From
+# DS41326 "Pin Descriptions" (page 2), checked against the "Pin
+# Assignments" TOP VIEW (page 1): FB 1, EN 2, VIN 3, GND 4, SW 5, BST 6.
+# Types from the descriptions: FB "Feedback sensing terminal" -> input,
+# EN "Enable Input" -> input, VIN "Power Input" -> power, GND "Power
+# Ground" -> ground, SW "Power Switching Output" -> passive, BST "High-
+# Side Gate Drive Boost Input" -> power.
+schema_version: "0.1"
+kind: device
+id: diodes/AP63203
+
+manufacturer: diodes
+category: other
+family: AP6320x
+
+pins:
+  "1": { name: FB, type: input }
+  "2": { name: EN, type: input }
+  "3": { name: VIN, type: power }
+  "4": { name: GND, type: ground }
+  "5": { name: SW, type: passive }
+  "6": { name: BST, type: power }
+
+provenance:
+  "/pins":
+    - source: diodes/DS41326
+      page: 2
+      locator: "\"Pin Descriptions\" table"
+    - source: diodes/DS41326
+      page: 1
+      locator: "\"Pin Assignments\" TOP VIEW, TSOT26 (all 6 pins matched)"

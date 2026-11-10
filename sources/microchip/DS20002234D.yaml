@@ -1,0 +1,20 @@
+# Official Microchip datasheet "MCP1640/B/C/D 0.65V Start-up Synchronous
+# Boost Regulator with True Output Disconnect or Input/Output Bypass
+# Option". Downloaded 2026-11-10 directly from ww1.microchip.com (URL
+# below; HTTP 200). document_id / revision from the printed footer
+# "DS20002234D-page N"; the Revision History lists "Revision D
+# (September 2015)". 32 PDF pages; text read with pdftotext -layout.
+# Page numbers in this dataset are PDF page indices (they equal the
+# printed page numbers). The dimension tables extract as clean text.
+schema_version: "0.1"
+kind: source
+id: microchip/DS20002234@revD
+
+publisher: microchip
+document_id: DS20002234
+document_type: datasheet
+
+revision: "D"
+date: "2015-09"
+
+url: "https://ww1.microchip.com/downloads/en/DeviceDoc/20002234D.pdf"

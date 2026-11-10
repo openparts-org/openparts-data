@@ -1,0 +1,29 @@
+# BZX84CxxxLT1G zener series (250 mW, SOT-23): one device for every
+# voltage in the datasheet -- the value is carried by the Part (MPN).
+# Pins from the Electrical Characteristics heading "(Pinout: 1-Anode,
+# 2-No Connection, 3-Cathode)", the page-1 symbol (3 Cathode, 1 Anode,
+# "CASE 318 STYLE 8") and STYLE 8 on page 8 -- all agree.
+schema_version: "0.1"
+kind: device
+id: onsemi/BZX84C-SERIES
+
+manufacturer: onsemi
+category: diode
+family: BZX84C
+
+pins:
+  "1": { name: Anode, type: passive }
+  "2": { name: NC, type: nc }
+  "3": { name: Cathode, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/BZX84C2V4LT1-D
+      page: 3
+      locator: "Electrical Characteristics heading: \"(Pinout: 1-Anode, 2-No Connection, 3-Cathode)\""
+    - source: onsemi/BZX84C2V4LT1-D
+      page: 1
+      locator: "Symbol: 3 Cathode, 1 Anode; \"SOT-23 CASE 318 STYLE 8\""
+    - source: onsemi/BZX84C2V4LT1-D
+      page: 8
+      locator: "CASE 318 STYLE 8: \"PIN 1. ANODE 2. NO CONNECTION 3. CATHODE\""

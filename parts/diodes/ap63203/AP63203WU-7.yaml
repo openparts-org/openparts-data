@@ -1,0 +1,36 @@
+# MPN printed in the "Ordering Information" orderable-part table
+# (DS41326 Rev. 3-2 page 16): "AP63203WU-7 | TSOT26 | PWM/PFM | 1100kHz
+# | 3.3V | WU | 3000 | 7in Tape & Reel". Package TSOT26 outline on page
+# 17 -> manufacturers/diodes/TSOT26-2.90x1.60-P0.95-DS41326. lifecycle:
+# no production-status statement in the datasheet; unknown.
+schema_version: "0.1"
+kind: part
+id: diodes/AP63203WU-7
+
+manufacturer: diodes
+mpn: "AP63203WU-7"
+
+device: diodes/AP63203
+package: manufacturers/diodes/TSOT26-2.90x1.60-P0.95-DS41326
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - diodes/DS41326
+
+provenance:
+  "/existence":
+    - source: diodes/DS41326
+      page: 16
+      locator: "\"Ordering Information\" table, row \"AP63203WU-7 | TSOT26 | PWM/PFM | 1100kHz | 3.3V | WU | 3000 | 7 in Tape & Reel\" (inch mark written as in)"
+  "/package":
+    - source: diodes/DS41326
+      page: 16
+      locator: "\"Ordering Information\", row \"AP63203WU-7\", Package \"TSOT26\", Package Code \"WU\""
+    - source: diodes/DS41326
+      page: 17
+      locator: "\"Package Outline Dimensions\", TSOT26"

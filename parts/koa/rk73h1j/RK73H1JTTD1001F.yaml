@@ -1,0 +1,35 @@
+# 1 kOhm +/-1 % RK73H 0603 (1J), Sn termination, TD (4mm-pitch punched
+# paper) taping. Not printed literally: assembled from the page-1
+# "ordering information" scheme (RK73H | 1J | nil | T | TD | 1001 | F);
+# 1 kOhm is an E24 value inside the page-2 RK73H1J F+/-1% E-24/E-96
+# range -> existence probable. Cites koa/RK73H@rev2026-01-27 (page 2
+# of the current PDF is dated 01/27/26). lifecycle unknown: no
+# production-status statement. Package reused: the 1J dimension row
+# matches standards/CHIP0603-KOA-RK73H1J number for number.
+schema_version: "0.1"
+kind: part
+id: koa/RK73H1JTTD1001F
+
+manufacturer: koa
+mpn: RK73H1JTTD1001F
+
+device: koa/RK73H1J
+package: standards/CHIP0603-KOA-RK73H1J
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - koa/RK73H@rev2026-01-27
+
+provenance:
+  "/existence":
+    - source: koa/RK73H@rev2026-01-27
+      page: 1
+      locator: "\"ordering information\": RK73H | Size 1J | Characteristics Nil: Standard | Termination Material T: Sn | Packaging TD: 4mm pitch punch paper | Nominal Resistance 3 significant figures + 1 multiplier | Tolerance F: +/-1% (example RK73H2BTTD1003F); 1001 = 1 kOhm"
+    - source: koa/RK73H@rev2026-01-27
+      page: 2
+      locator: "\"applications and ratings\" table (rendered), RK73H1J (0603) 0.125W row, T.C.R. +/-100: F+/-1% E-24, E-96 \"10Ohm - 1kOhm\""

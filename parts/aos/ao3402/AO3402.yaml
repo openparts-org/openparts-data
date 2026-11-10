@@ -1,0 +1,32 @@
+# The datasheet has no ordering table and the MPN printed on it is the
+# bare device name "AO3402" (title, every page header), so existence is
+# "probable" (as for aos/AO3400A): no orderable-part listing was read.
+# No lifecycle recorded. Package: datasheet page 1 says "SOT23"; AOS's
+# SOT23 outline is PO-00001 (Version N, re-downloaded 2026-11-10) --
+# the datasheet does not name the outline document, the link is by
+# package name only (as for AO3400A/AO3401A).
+schema_version: "0.1"
+kind: part
+id: aos/AO3402
+
+manufacturer: aos
+mpn: AO3402
+
+device: aos/AO3402
+package: standards/SOT23-2.90x1.60-P1.90-AOS
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - aos/AO3402-DS
+  - aos/PO-00001
+
+provenance:
+  "/existence":
+    - source: aos/AO3402-DS
+      page: 1
+      locator: "Title \"AO3402\" and package \"SOT23\"; no ordering table in the document"

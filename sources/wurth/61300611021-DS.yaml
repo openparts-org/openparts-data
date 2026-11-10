@@ -1,0 +1,27 @@
+# Würth Elektronik datasheet for order code 61300611021 ("WR-PHD Angled Pin
+# Header"), 7 pages, A4 landscape. Fetched once with WebFetch (curl gets
+# 403 from we-online.com), which saved the original PDF (author "Würth
+# Elektronik eiSos GmbH & Co. KG", title "61300611021 Datasheet WR-PHD
+# Angled Pin Header"). Read with pdftotext -layout plus 150-400 dpi
+# renders of page 1 (the side view and hole diameter are rotated text).
+# The title block carries REVISION "003.000", DATE "2025-11-08"
+# (YYYY-MM-DD), ORDER CODE "61300611021", STATUS "Valid" (the document's
+# release status, not a product lifecycle status). PDF page index =
+# printed page number ("1/7" on page 1). First-angle projection (title
+# block): the view above the front view is the bottom view, the one
+# below it the top view; the "Recommended Hole Pattern" matches the top
+# view (pin "1" at the right, the housing outline below the holes).
+# Page 1's drawing text is identical, apart from Pins/L/Pl, across the
+# 2/3/4/6/10-pin datasheets of this batch (pdftotext -layout diff).
+schema_version: "0.1"
+kind: source
+id: wurth/61300611021-DS
+
+publisher: wurth
+document_id: "61300611021"
+document_type: datasheet
+
+revision: "003.000"
+date: "2025-11-08"
+
+url: "https://www.we-online.com/components/products/datasheet/61300611021.pdf"

@@ -1,0 +1,29 @@
+# Model number printed verbatim in the PH sheet's ordering table
+# (jst/ePH page 3, "Header (Through-hole type)", Top entry type column,
+# 6 circuits) -> existence verified. "-K-S": clinched, colour S =
+# natural (white) (page 5 "Model number allocation").
+# lifecycle: the sheet states no production status -> unknown.
+schema_version: "0.1"
+kind: part
+id: jst/B6B-PH-K-S
+
+manufacturer: jst
+mpn: "B6B-PH-K-S"
+
+device: jst/B6B-PH-K-S
+package: manufacturers/jst/PH-Header-Top-1x06-P2.00
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - jst/ePH
+
+provenance:
+  "/existence":
+    - source: jst/ePH
+      page: 3
+      locator: "\"Header (Through-hole type)\" Model No. table, No. of circuits 6, Top entry type: \"B6B-PH-K-S\""

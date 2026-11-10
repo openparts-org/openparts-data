@@ -1,0 +1,29 @@
+# TLV3201 single push-pull comparator, 5-pin DBV (SOT-23) / DCK (SC70)
+# pinout. From SBOS561C "Pin Functions: TLV3201" (page 3), checked
+# against Figure 5-1 "TLV3201 DCK and DBV Packages 5-Pin SC70-5 and
+# SOT-23 Top View" (same page): OUT 1, GND 2, IN+ 3, IN- 4, VCC 5. Minus
+# sign written as ASCII "-". GND "Negative supply, ground" -> ground,
+# VCC -> power.
+schema_version: "0.1"
+kind: device
+id: ti/TLV3201-DBV
+
+manufacturer: ti
+category: other
+family: TLV320x
+
+pins:
+  "1": { name: OUT, type: output }
+  "2": { name: GND, type: ground }
+  "3": { name: "IN+", type: input }
+  "4": { name: "IN-", type: input }
+  "5": { name: VCC, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SBOS561C
+      page: 3
+      locator: "\"Pin Functions: TLV3201\" table"
+    - source: ti/SBOS561C
+      page: 3
+      locator: "Figure 5-1 \"TLV3201 DCK and DBV Packages 5-Pin SC70-5 and SOT-23 Top View\" (all 5 pins matched)"

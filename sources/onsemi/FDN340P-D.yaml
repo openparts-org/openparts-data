@@ -1,0 +1,20 @@
+# Official onsemi datasheet "MOSFET - Single, P-Channel, POWERTRENCH, Logic Level -- FDN340P",
+# Publication Order Number FDN340P/D, footer "May, 2025 - Rev. 9", 6 pages,
+# downloaded with curl on 2026-11-10 (HTTP 200, `file`: PDF).
+# Read with pdftotext -layout; outline tables (image-only) rendered with
+# pdftoppm. Page numbers are PDF page indices.
+# Page 2 is the PACKAGE MARKING AND ORDERING INFORMATION table; page 5 the
+# SOT-23/SUPERSOT-23 CASE 527AG ISSUE A outline (98AON34319E, DATE 09 DEC
+# 2019).
+schema_version: "0.1"
+kind: source
+id: onsemi/FDN340P-D
+
+publisher: onsemi
+document_id: FDN340P/D
+document_type: datasheet
+
+revision: "9"
+date: "2025-05"
+
+url: "https://www.onsemi.com/pdf/datasheet/fdn340p-d.pdf"

@@ -1,0 +1,44 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SNVS294S PDF page 26, addendum dated 14-Apr-2026): "LM3671MF-3.3/NOPB
+# | Active | Production | SOT-23 (DBV) | 5 | 1000 | SMALL T&R | Yes | SN
+# | Level-1-260C-UNLIM | -40 to 85 | SJEB". lifecycle "active" is that
+# table's Status column. Package: SOT-23 (DBV) | 5, outline DBV0005A
+# (4214839/K 08/2024) on page 33. Its pdftotext -layout text matches
+# ti/SBOS833R page 94 (where manufacturers/ti/DBV0005A was read) line
+# for line, so the package is reused. The id replaces the "/" of the MPN
+# with "-".
+schema_version: "0.1"
+kind: part
+id: ti/LM3671MF-3.3-NOPB
+
+manufacturer: ti
+mpn: "LM3671MF-3.3/NOPB"
+
+device: ti/LM3671-DBV
+package: manufacturers/ti/DBV0005A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SNVS294S
+
+provenance:
+  "/existence":
+    - source: ti/SNVS294S
+      page: 26
+      locator: "Package Option Addendum, Packaging Information table, row \"LM3671MF-3.3/NOPB\""
+  "/lifecycle":
+    - source: ti/SNVS294S
+      page: 26
+      locator: "Package Option Addendum, row \"LM3671MF-3.3/NOPB\", Status \"Active\""
+  "/package":
+    - source: ti/SNVS294S
+      page: 26
+      locator: "Package Option Addendum, row \"LM3671MF-3.3/NOPB\", \"SOT-23 (DBV) | 5\""
+    - source: ti/SNVS294S
+      page: 33
+      locator: "PACKAGE OUTLINE DBV0005A (4214839/K 08/2024)"

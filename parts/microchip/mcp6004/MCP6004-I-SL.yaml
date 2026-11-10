@@ -1,0 +1,42 @@
+# MPN from the "Product Identification System" (DS20001733L page 47),
+# example b) "MCP6004-I/SL: Industrial Temperature, 14-Lead SOIC
+# Package". existence is "probable": the MPN appears only as an ordering
+# example of the Product Identification System, not in an orderable list
+# (Microchip product pages answer 403 and were not read). Package:
+# drawing C04-065-SL Rev D, dimension table page 39 (sheet 1 page 38).
+# That table (text) has the same numbers, row for row, as
+# manufacturers/microchip/SOIC14-SL-C04-065D (read from DS40002204A,
+# also C04-065-SL Rev D), so that package is reused. The id replaces the
+# "/" of the MPN with "-"; mpn keeps the real string. lifecycle: no
+# production-status statement in the datasheet; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP6004-I-SL
+
+manufacturer: microchip
+mpn: "MCP6004-I/SL"
+
+device: microchip/MCP6004
+package: manufacturers/microchip/SOIC14-SL-C04-065D
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001733@revL
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001733@revL
+      page: 47
+      locator: "Product Identification System, example b) \"MCP6004-I/SL: Industrial Temperature, 14-Lead SOIC Package\""
+  "/package":
+    - source: microchip/DS20001733@revL
+      page: 47
+      locator: "Product Identification System, Package \"SL = Plastic SOIC (3.90 body), 14-Lead\""
+    - source: microchip/DS20001733@revL
+      page: 39
+      locator: "drawing C04-065-SL Rev D, dimension table page 39 (sheet 1 page 38)"

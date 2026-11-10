@@ -1,0 +1,19 @@
+# Official onsemi datasheet "Switching Transistor, PNP Silicon -- MMBT4403L, SMMBT4403L",
+# Publication Order Number MMBT4403LT1/D, footer "October, 2024 - Rev. 14", 9 pages,
+# downloaded with curl on 2026-11-10 (HTTP 200, `file`: PDF).
+# Read with pdftotext -layout; outline tables (image-only) rendered with
+# pdftoppm. Page numbers are PDF page indices.
+# Page 7 is the SOT-23 CASE 318 ISSUE AU outline (98ASB42226B, DATE 14 AUG
+# 2024), page 8 its STYLE list.
+schema_version: "0.1"
+kind: source
+id: onsemi/MMBT4403LT1-D
+
+publisher: onsemi
+document_id: MMBT4403LT1/D
+document_type: datasheet
+
+revision: "14"
+date: "2024-10"
+
+url: "https://www.onsemi.com/pdf/datasheet/mmbt4403lt1-d.pdf"

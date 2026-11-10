@@ -1,0 +1,31 @@
+# TPS563201 3-A synchronous step-down converter, 6-pin SOT (DDC) pinout.
+# From SLVSD90B Table 4-1 "Pin Functions" (page 3), checked against
+# Figure 4-1 "DDC Package 6-Pin SOT Top View" (same page): GND 1, SW 2,
+# VIN 3 down one side, VFB 4, EN 5, VBST 6 up the other (6 opposite 1)
+# -- the same map as ti/TPS563200. Types as ti/TPS563200: GND -> ground,
+# SW -> passive, VIN -> power, VFB and EN -> input, VBST (gate-drive
+# supply input; the table marks it O) -> power.
+schema_version: "0.1"
+kind: device
+id: ti/TPS563201
+
+manufacturer: ti
+category: other
+family: TPS56320x
+
+pins:
+  "1": { name: GND, type: ground }
+  "2": { name: SW, type: passive }
+  "3": { name: VIN, type: power }
+  "4": { name: VFB, type: input }
+  "5": { name: EN, type: input }
+  "6": { name: VBST, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SLVSD90B
+      page: 3
+      locator: "Table 4-1 \"Pin Functions\""
+    - source: ti/SLVSD90B
+      page: 3
+      locator: "Figure 4-1 \"DDC Package 6-Pin SOT Top View\" (all 6 pins matched)"

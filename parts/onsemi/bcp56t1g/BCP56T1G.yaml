@@ -1,0 +1,30 @@
+# BCP56T1G: 80 V NPN medium-power transistor, SOT-223, 1000/reel, marking
+# BH, from the page-5 ORDERING INFORMATION table. The datasheet has no
+# outline; the package is read from onsemi's CASE 318E-04 drawing
+# 98ASB42680B (the datasheet's page-1 "SOT-223 CASE 318E STYLE 1"). No
+# lifecycle statement.
+schema_version: "0.1"
+kind: part
+id: onsemi/BCP56T1G
+
+manufacturer: onsemi
+mpn: BCP56T1G
+
+device: onsemi/BCP56
+package: manufacturers/onsemi/SOT223-3.5x6.5-P2.3-318E-TabPin4
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/BCP56T1-D
+  - onsemi/98ASB42680B
+
+provenance:
+  "/existence":
+    - source: onsemi/BCP56T1-D
+      page: 5
+      locator: "ORDERING INFORMATION table: \"BCP56T1G | BH | SOT-223 (Pb-Free) | 1000 / Tape & Reel\" (not in the DISCONTINUED rows)"

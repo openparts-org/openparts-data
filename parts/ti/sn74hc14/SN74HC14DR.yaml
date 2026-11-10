@@ -1,0 +1,42 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SCLS085L PDF page 16, addendum dated 18-Sep-2026): "SN74HC14DR |
+# Active | Production | SOIC (D) | 14 | 2500 | LARGE T&R | Yes | NIPDAU
+# | SN | Level-1-260C-UNLIM | -40 to 85 | HC14". lifecycle "active" is
+# that table's Status column. Package: SOIC (D) | 14, outline D0014A
+# (4220718/A 09/2016) on page 22. manufacturers/ti/D0014A was created
+# from this page.
+schema_version: "0.1"
+kind: part
+id: ti/SN74HC14DR
+
+manufacturer: ti
+mpn: "SN74HC14DR"
+
+device: ti/SN74HC14
+package: manufacturers/ti/D0014A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SCLS085L
+
+provenance:
+  "/existence":
+    - source: ti/SCLS085L
+      page: 16
+      locator: "Package Option Addendum, Packaging Information table, row \"SN74HC14DR\""
+  "/lifecycle":
+    - source: ti/SCLS085L
+      page: 16
+      locator: "Package Option Addendum, row \"SN74HC14DR\", Status \"Active\""
+  "/package":
+    - source: ti/SCLS085L
+      page: 16
+      locator: "Package Option Addendum, row \"SN74HC14DR\", \"SOIC (D) | 14\""
+    - source: ti/SCLS085L
+      page: 22
+      locator: "PACKAGE OUTLINE D0014A (4220718/A 09/2016)"

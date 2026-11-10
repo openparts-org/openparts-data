@@ -1,0 +1,28 @@
+# NDS331N: 20 V N-channel MOSFET, SOT-23/SUPERSOT-23 (CASE 527AG, outline
+# page 8 -- pixel-identical to the FDN340P/D page 5 the package was read
+# from), 3000/reel, from the page-1 ORDERING INFORMATION table. No
+# lifecycle statement.
+schema_version: "0.1"
+kind: part
+id: onsemi/NDS331N
+
+manufacturer: onsemi
+mpn: NDS331N
+
+device: onsemi/NDS331N
+package: manufacturers/onsemi/SOT23-2.92x1.40-P1.90-527AG
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/NDS331N-D
+
+provenance:
+  "/existence":
+    - source: onsemi/NDS331N-D
+      page: 1
+      locator: "ORDERING INFORMATION table: \"NDS331N | SOT-23-3/SUPERSOT-23 (Pb-Free) | 3000 / Tape & Reel\""

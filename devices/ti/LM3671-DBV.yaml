@@ -1,0 +1,32 @@
+# LM3671 2-MHz 600-mA step-down converter, 5-pin DBV (SOT-23) pinout;
+# covers the fixed-voltage (-1.2 ... -3.3) and ADJ versions (same pins;
+# FB goes to the output capacitor or to a divider). From SNVS294S "Pin
+# Functions" table (page 3), column "SOT-23", checked against the
+# rendered "DBV Package 5 Pin SOT-23 Top View" figure (same page): VIN
+# 1, GND 2, EN 3 along the bottom, FB 4 above pin 3, SW 5 above pin 1.
+# Types from the table's TYPE column: Power -> power, Ground -> ground,
+# Digital (EN) -> input, Analog (FB) -> analog, SW ("Switching node",
+# Analog) -> passive.
+schema_version: "0.1"
+kind: device
+id: ti/LM3671-DBV
+
+manufacturer: ti
+category: other
+family: LM3671
+
+pins:
+  "1": { name: VIN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: EN, type: input }
+  "4": { name: FB, type: analog }
+  "5": { name: SW, type: passive }
+
+provenance:
+  "/pins":
+    - source: ti/SNVS294S
+      page: 3
+      locator: "\"Pin Functions\" table, column \"SOT-23\""
+    - source: ti/SNVS294S
+      page: 3
+      locator: "\"DBV Package 5 Pin SOT-23 Top View\" figure, rendered (all 5 pins matched)"

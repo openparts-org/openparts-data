@@ -1,0 +1,44 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SLVSD89B PDF page 18, addendum dated 15-Jul-2026): "TLV62568PDDCR |
+# Active | Production | SOT-23-THIN (DDC) | 6 | 3000 | LARGE T&R | Yes |
+# Call TI | Sn | Level-1-260C-UNLIM | -40 to 125 | (9X9, 9XW)".
+# lifecycle "active" is that table's Status column. Package: SOT-23-THIN
+# (DDC) | 6, outline DDC0006A (4214841/E 08/2024) on page 28. Its
+# pdftotext -layout text matches the outline page the package was read
+# from (ti/SLVSCB0E page 33) line for line, so manufacturers/ti/DDC0006A
+# is reused.
+schema_version: "0.1"
+kind: part
+id: ti/TLV62568PDDCR
+
+manufacturer: ti
+mpn: "TLV62568PDDCR"
+
+device: ti/TLV62568P-DDC
+package: manufacturers/ti/DDC0006A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLVSD89B
+
+provenance:
+  "/existence":
+    - source: ti/SLVSD89B
+      page: 18
+      locator: "Package Option Addendum, Packaging Information table, row \"TLV62568PDDCR\""
+  "/lifecycle":
+    - source: ti/SLVSD89B
+      page: 18
+      locator: "Package Option Addendum, row \"TLV62568PDDCR\", Status \"Active\""
+  "/package":
+    - source: ti/SLVSD89B
+      page: 18
+      locator: "Package Option Addendum, row \"TLV62568PDDCR\", \"SOT-23-THIN (DDC) | 6\""
+    - source: ti/SLVSD89B
+      page: 28
+      locator: "PACKAGE OUTLINE DDC0006A (4214841/E 08/2024)"

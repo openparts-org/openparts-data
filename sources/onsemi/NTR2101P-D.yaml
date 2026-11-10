@@ -1,0 +1,19 @@
+# Official onsemi datasheet "MOSFET - Single P-Channel, Small Signal, SOT-23, -8.0 V, -3.7 A -- NTR2101P",
+# Publication Order Number NTR2101P/D, footer "January, 2025 - Rev. 8", 8 pages,
+# downloaded with curl on 2026-11-10 (HTTP 200, `file`: PDF).
+# Read with pdftotext -layout; outline tables (image-only) rendered with
+# pdftoppm. Page numbers are PDF page indices.
+# Page 6 is the SOT-23 CASE 318 ISSUE AU outline (98ASB42226B, DATE 14 AUG
+# 2024), page 7 its STYLE list.
+schema_version: "0.1"
+kind: source
+id: onsemi/NTR2101P-D
+
+publisher: onsemi
+document_id: NTR2101P/D
+document_type: datasheet
+
+revision: "8"
+date: "2025-01"
+
+url: "https://www.onsemi.com/pdf/datasheet/ntr2101p-d.pdf"

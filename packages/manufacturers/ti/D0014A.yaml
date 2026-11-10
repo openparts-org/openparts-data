@@ -1,0 +1,98 @@
+# TI D0014A "SOIC - 1.75 mm max height" (14-lead SOIC, drawing
+# 4220718/A 09/2016, JEDEC MS-012 variation AB per its note 5), read
+# from the rendered outline page of SCLS085L (PDF page 22).
+# Millimetres as printed. The same drawing revision (pdftotext -layout
+# text identical line for line) is also in SLCS006Z page 43.
+#
+# Ranges only for the body: E1 "4.0/3.8 NOTE 4" (body_width), D
+# "8.75/8.55 NOTE 3" (body_length); lead span "6.2/5.8 TYP" recorded
+# as min/max. No nominal is recorded (canonical-data 20.1). Only the
+# overall height "1.75 MAX" is given -- no A2 -- so it is recorded as
+# overall_height max with no body_height (as manufacturers/ti/D0008A).
+# Pitch "12X 1.27" (basic); "2X 7.62" basic is pin 1 to pin 7.
+# Pins 1-7 down the left edge, 8-14 up the right edge (top view).
+schema_version: "0.1"
+kind: package
+id: manufacturers/ti/D0014A
+
+family: soic
+lead_count: 14
+
+pitch:
+  nominal: 1.27
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 3.8
+    max: 4.0
+    unit: mm
+  body_length:
+    min: 8.55
+    max: 8.75
+    unit: mm
+  overall_width:
+    min: 5.8
+    max: 6.2
+    unit: mm
+  overall_height:
+    max: 1.75
+    unit: mm
+  standoff:
+    min: 0.10
+    max: 0.25
+    unit: mm
+  lead_width:
+    min: 0.31
+    max: 0.51
+    unit: mm
+  lead_length:
+    min: 0.40
+    max: 1.27
+    unit: mm
+  lead_thickness:
+    min: 0.13
+    max: 0.25
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: soic
+
+provenance:
+  "/pitch":
+    - source: ti/SCLS085L
+      page: 22
+      locator: "PACKAGE OUTLINE D0014A (4220718/A), \"12X 1.27\" (basic); \"2X 7.62\" basic"
+  "/dimensions/body_width":
+    - source: ti/SCLS085L
+      page: 22
+      locator: "D0014A, body width \"4.0 / 3.8 NOTE 4\" (datum B)"
+  "/dimensions/body_length":
+    - source: ti/SCLS085L
+      page: 22
+      locator: "D0014A, body length \"8.75 / 8.55 NOTE 3\" (datum A)"
+  "/dimensions/overall_width":
+    - source: ti/SCLS085L
+      page: 22
+      locator: "D0014A, lead-tip span \"6.2 / 5.8 TYP\" (min/max only)"
+  "/dimensions/overall_height":
+    - source: ti/SCLS085L
+      page: 22
+      locator: "D0014A side view, \"1.75 MAX\""
+  "/dimensions/standoff":
+    - source: ti/SCLS085L
+      page: 22
+      locator: "D0014A DETAIL A, standoff \"0.25 / 0.10\""
+  "/dimensions/lead_width":
+    - source: ti/SCLS085L
+      page: 22
+      locator: "D0014A, \"14X 0.51 / 0.31\""
+  "/dimensions/lead_length":
+    - source: ti/SCLS085L
+      page: 22
+      locator: "D0014A DETAIL A, foot length \"1.27 / 0.40\""
+  "/dimensions/lead_thickness":
+    - source: ti/SCLS085L
+      page: 22
+      locator: "D0014A, lead thickness \"0.25 / 0.13 TYP\""

@@ -1,0 +1,32 @@
+# MMBT4401LT1G: NPN switching transistor, SOT-23, 3,000/reel, marking
+# 2X, from the page-7 ORDERING INFORMATION table. No lifecycle statement.
+# Package: the datasheet's SOT-23 CASE 318 ISSUE AU outline (98ASB42226B,
+# DATE 14 AUG 2024, page 9) renders pixel-identical (100 dpi crop of the
+# drawing and table, same md5) to the page standards/SOT23-2.90x1.30-P1.90
+# was read from (2N7002E/D Rev. 8 page 6, re-downloaded 2026-11-10); every
+# table row was also re-read from a 150 dpi render. Reused; the package
+# cites onsemi/2N7002E-D.
+schema_version: "0.1"
+kind: part
+id: onsemi/MMBT4401LT1G
+
+manufacturer: onsemi
+mpn: MMBT4401LT1G
+
+device: onsemi/MMBT4401
+package: standards/SOT23-2.90x1.30-P1.90
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/MMBT4401LT1-D
+
+provenance:
+  "/existence":
+    - source: onsemi/MMBT4401LT1-D
+      page: 7
+      locator: "ORDERING INFORMATION table: \"MMBT4401LT1G | 2X | SOT-23 (Pb-Free) | 3,000 / Tape & Reel\""

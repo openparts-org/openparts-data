@@ -1,0 +1,27 @@
+# JST "XH CONNECTOR" catalogue sheet (English), 9 pages, A4 portrait:
+# "2.5 mm pitch/Wire-to-Board connectors/Crimp style and Mating style".
+# Fetched once with WebFetch (jst-mfg.com); the PDF is AES-256
+# encrypted with copy/print allowed, read with pdftotext -layout and
+# 200-400 dpi renders of pages 2 and 5 (drawings). The sheet carries no
+# document number or revision: `revision`/`date` record the PDF's own
+# creation date (Adobe InDesign/Distiller metadata, 2025-07-30 JST).
+# PDF page index = the printed page number ("-1-" .. "-9-").
+# Used: page 2 "PC board layout and Assembly layout" (top entry type,
+# <2 circuits or more>; note 1: viewed from the connector mounting
+# surface; note 4: the hole dimensions are reference values), page 5
+# "Header" (top entry type drawing and its Model No. table, "Material
+# and Surface finish": "Post: Brass, copper-undercoated, tin-plated",
+# "Wafer: PA 66, natural (white)"), page 9 "Model number allocation"
+# (Header: B..Top entry type, no colour letter = Natural (White)).
+schema_version: "0.1"
+kind: source
+id: jst/eXH
+
+publisher: jst
+document_id: "eXH"
+document_type: datasheet
+
+revision: "unversioned (PDF created 2025-07-30)"
+date: "2025-07-30"
+
+url: "https://www.jst-mfg.com/product/pdf/eng/eXH.pdf"

@@ -1,0 +1,21 @@
+# 20 V N-channel MOSFET, SOT-23/SUPERSOT-23 (CASE 527AG). Page 1
+# MARKING DIAGRAM numbers the leads: 1 = Gate, 2 = Source, 3 = Drain
+# (the 527AG outline also numbers the bottom-left lead 1, bottom-right 2).
+schema_version: "0.1"
+kind: device
+id: onsemi/NDS331N
+
+manufacturer: onsemi
+category: transistor
+family: NDS331N
+
+pins:
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/NDS331N-D
+      page: 1
+      locator: "MARKING DIAGRAM: Drain 3 (top), 1 Gate, 2 Source (bottom)"

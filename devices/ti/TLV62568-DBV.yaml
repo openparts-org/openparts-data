@@ -1,0 +1,30 @@
+# TLV62568 1-A synchronous buck converter, 5-pin SOT23-5 (DBV) pinout.
+# From SLVSD89B "Pin Functions" table (page 3), column "SOT23-5",
+# checked against the rendered "SOT23-5 DBV Package (Top View)" figure
+# (same page): EN 1, GND 2, SW 3 along the bottom, VIN 4 above pin 3, FB
+# 5 above pin 1. Types from the I/O/PWR column and descriptions: EN (I)
+# -> input, GND -> ground, SW ("Switch pin") -> passive, VIN -> power,
+# FB (I) -> input.
+schema_version: "0.1"
+kind: device
+id: ti/TLV62568-DBV
+
+manufacturer: ti
+category: other
+family: TLV62568
+
+pins:
+  "1": { name: EN, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: SW, type: passive }
+  "4": { name: VIN, type: power }
+  "5": { name: FB, type: input }
+
+provenance:
+  "/pins":
+    - source: ti/SLVSD89B
+      page: 3
+      locator: "\"Pin Functions\" table, column \"SOT23-5\""
+    - source: ti/SLVSD89B
+      page: 3
+      locator: "\"SOT23-5 DBV Package (Top View)\" figure, rendered (all 5 pins matched)"

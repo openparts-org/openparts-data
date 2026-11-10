@@ -1,0 +1,17 @@
+# Würth WCAP-CSGP general-purpose MLCC, size 0805, X7R Class II
+# (-55 up to +125 C, +/-15 %), per the "General Information" table of
+# each order code's datasheet. Series-level device: value-specific order
+# codes are Parts (885012207098). Non-polarized; the
+# datasheet does not number the terminals, so they are 1 and 2 in the
+# chip generator's X order.
+schema_version: "0.1"
+kind: device
+id: wurth/WCAP-CSGP-0805-X7R
+
+manufacturer: wurth
+category: capacitor
+family: WCAP-CSGP
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

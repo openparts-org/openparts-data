@@ -1,0 +1,19 @@
+# Official onsemi datasheet "EEPROM Serial 256-Kb I2C CAT24C256",
+# Publication Order Number CAT24C256/D, footer "February, 2022 - Rev. 16".
+# Downloaded 2026-11-10 from the URL below (curl; checked with `file`,
+# a 13-page PDF). Text read with pdftotext -layout; page 1 (pin
+# configuration) rendered. The SOIC-8 outline CASE 751BD ISSUE O
+# (DATE 19 DEC 2008, document 98AON34272E) is on page 11. Page numbers
+# are PDF page indices.
+schema_version: "0.1"
+kind: source
+id: onsemi/CAT24C256-D
+
+publisher: onsemi
+document_id: CAT24C256/D
+document_type: datasheet
+
+revision: "16"
+date: "2022-02"
+
+url: "https://www.onsemi.com/pdf/datasheet/cat24c256-d.pdf"

@@ -1,0 +1,110 @@
+# 14-lead TSSOP, 4.4 mm body, 0.65 mm pitch (Microchip package code ST).
+# Microchip drawing C04-087 Rev D ("14-Lead Thin Shrink Small Outline
+# Package [ST] 4.4 mm Body [TSSOP]"), sheet 1 (top/side views) on
+# DS20001733L page 41 and the dimension table (sheet 2) on page 42; both
+# extract as text. Copied as printed: BSC values as nominal, MIN/NOM/MAX
+# rows with all three, min/max-only rows as min/max only.
+#
+# body_width = E1 4.30/4.40/4.50, body_length = D "Overall Length"
+# 4.90/5.00/5.10, overall_width = E 6.40 BSC, body_height = A2
+# 0.80/1.00/1.05, overall_height = A max 1.20, standoff = A1 0.05-0.15,
+# lead_width = b 0.19-0.30, lead_thickness = c 0.09-0.20, lead_length =
+# L "Terminal Length" 0.45/0.60/0.75. Not modelled: L1 1.00 REF, bend
+# radii R1/R2, angles. Pins 1..7 along one long edge, N = 14 opposite
+# pin 1 (top view, page 41).
+schema_version: "0.1"
+kind: package
+id: manufacturers/microchip/TSSOP14-ST-C04-087D
+
+family: tssop
+lead_count: 14
+
+pitch:
+  nominal: 0.65
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 4.30
+    nominal: 4.40
+    max: 4.50
+    unit: mm
+  body_length:
+    min: 4.90
+    nominal: 5.00
+    max: 5.10
+    unit: mm
+  body_height:
+    min: 0.80
+    nominal: 1.00
+    max: 1.05
+    unit: mm
+  overall_width:
+    nominal: 6.40
+    unit: mm
+  overall_height:
+    max: 1.20
+    unit: mm
+  standoff:
+    min: 0.05
+    max: 0.15
+    unit: mm
+  lead_width:
+    min: 0.19
+    max: 0.30
+    unit: mm
+  lead_length:
+    min: 0.45
+    nominal: 0.60
+    max: 0.75
+    unit: mm
+  lead_thickness:
+    min: 0.09
+    max: 0.20
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: tssop
+
+provenance:
+  "/pitch":
+    - source: microchip/DS20001733@revL
+      page: 42
+      locator: "C04-087 Rev D dimension table, Pitch e \"0.65 BSC\""
+  "/dimensions/body_width":
+    - source: microchip/DS20001733@revL
+      page: 42
+      locator: "C04-087 Rev D, Molded Package Width E1 \"4.30 / 4.40 / 4.50\""
+  "/dimensions/body_length":
+    - source: microchip/DS20001733@revL
+      page: 42
+      locator: "C04-087 Rev D, Overall Length D \"4.90 / 5.00 / 5.10\""
+  "/dimensions/body_height":
+    - source: microchip/DS20001733@revL
+      page: 42
+      locator: "C04-087 Rev D, Molded Package Thickness A2 \"0.80 / 1.00 / 1.05\""
+  "/dimensions/overall_width":
+    - source: microchip/DS20001733@revL
+      page: 42
+      locator: "C04-087 Rev D, Overall Width E \"6.40 BSC\""
+  "/dimensions/overall_height":
+    - source: microchip/DS20001733@revL
+      page: 42
+      locator: "C04-087 Rev D, Overall Height A \"- / - / 1.20\""
+  "/dimensions/standoff":
+    - source: microchip/DS20001733@revL
+      page: 42
+      locator: "C04-087 Rev D, Standoff A1 \"0.05 / - / 0.15\""
+  "/dimensions/lead_width":
+    - source: microchip/DS20001733@revL
+      page: 42
+      locator: "C04-087 Rev D, Terminal Width b \"0.19 / - / 0.30\""
+  "/dimensions/lead_length":
+    - source: microchip/DS20001733@revL
+      page: 42
+      locator: "C04-087 Rev D, Terminal Length L \"0.45 / 0.60 / 0.75\""
+  "/dimensions/lead_thickness":
+    - source: microchip/DS20001733@revL
+      page: 42
+      locator: "C04-087 Rev D, Terminal Thickness c \"0.09 / - / 0.20\""

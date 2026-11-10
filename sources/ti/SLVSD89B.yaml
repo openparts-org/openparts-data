@@ -1,0 +1,21 @@
+# Official TI datasheet "TLV62568 1-A High Efficiency Synchronous Buck Converter in SOT Package". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SLVSD89B - NOVEMBER 2016 - REVISED NOVEMBER 2017". 31 PDF pages; text read with pdftotext -layout; the
+# pin-configuration figure and the package outline drawings named in
+# the package/part files were checked against the rendered pages where
+# noted. Page numbers in this dataset are PDF page indices. The PACKAGE
+# OPTION ADDENDUM at the end of the PDF is dated 15-Jul-2026.
+# The embedded outlines DBV0005A (4214839/K 08/2024) and DDC0006A
+# (4214841/E 08/2024) are newer than the datasheet revision.
+schema_version: "0.1"
+kind: source
+id: ti/SLVSD89B
+
+publisher: ti
+document_id: SLVSD89B
+document_type: datasheet
+
+revision: "B"
+date: "2017-11"
+
+url: "https://www.ti.com/lit/ds/symlink/tlv62568.pdf"

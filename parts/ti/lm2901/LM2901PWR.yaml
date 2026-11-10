@@ -1,0 +1,43 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SLCS006Z PDF page 28, addendum dated 18-May-2026): "LM2901PWR |
+# Active | Production | TSSOP (PW) | 14 | 2000 | LARGE T&R | Yes |
+# NIPDAU | SN | Level-1-260C-UNLIM | -40 to 125 | L2901". lifecycle
+# "active" is that table's Status column. Package: TSSOP (PW) | 14,
+# outline PW0014A (4220202/B 12/2023) on page 51. Its pdftotext -layout
+# text matches ti/SCES650K page 52 (where manufacturers/ti/PW0014A was
+# read) line for line, so the package is reused.
+schema_version: "0.1"
+kind: part
+id: ti/LM2901PWR
+
+manufacturer: ti
+mpn: "LM2901PWR"
+
+device: ti/LM2901
+package: manufacturers/ti/PW0014A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLCS006Z
+
+provenance:
+  "/existence":
+    - source: ti/SLCS006Z
+      page: 28
+      locator: "Package Option Addendum, Packaging Information table, row \"LM2901PWR\""
+  "/lifecycle":
+    - source: ti/SLCS006Z
+      page: 28
+      locator: "Package Option Addendum, row \"LM2901PWR\", Status \"Active\""
+  "/package":
+    - source: ti/SLCS006Z
+      page: 28
+      locator: "Package Option Addendum, row \"LM2901PWR\", \"TSSOP (PW) | 14\""
+    - source: ti/SLCS006Z
+      page: 51
+      locator: "PACKAGE OUTLINE PW0014A (4220202/B 12/2023)"

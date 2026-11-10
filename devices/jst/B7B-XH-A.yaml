@@ -1,0 +1,20 @@
+# JST XH shrouded wire-to-board header, top entry, 7 circuits
+# (jst/eXH page 5, Model No. table: B7B-XH-A, No. of circuits 7). The
+# sheet names no signals: each circuit is named by its number (No. 1
+# circuit as marked on the drawings), all passive.
+schema_version: "0.1"
+kind: device
+id: jst/B7B-XH-A
+
+manufacturer: jst
+category: connector
+family: XH
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive }
+  "4": { name: "4", type: passive }
+  "5": { name: "5", type: passive }
+  "6": { name: "6", type: passive }
+  "7": { name: "7", type: passive }

@@ -1,0 +1,42 @@
+# MPN from the "Product Identification System" (DS21298E page 37),
+# example b) "MCP3204-BI/SL: +/-1 LSB INL, Industrial Temperature, SOIC
+# package". existence is "probable": the MPN appears only as an ordering
+# example of the Product Identification System, not in an orderable list
+# (Microchip product pages answer 403 and were not read). Package:
+# 14-lead drawing C04-065B "14-Lead Plastic Small Outline (SL) - Narrow,
+# 3.90 mm Body [SOIC]", page 28 (rendered). Every row of that table
+# equals manufacturers/microchip/SOIC14-SL-C04-065B (read from DS21897B,
+# the same drawing number; c 0.17-0.25), so that package is reused. The
+# id replaces the "/" of the MPN with "-"; mpn keeps the real string.
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP3204-BI-SL
+
+manufacturer: microchip
+mpn: "MCP3204-BI/SL"
+
+device: microchip/MCP3204
+package: manufacturers/microchip/SOIC14-SL-C04-065B
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS21298@revE
+
+provenance:
+  "/existence":
+    - source: microchip/DS21298@revE
+      page: 37
+      locator: "Product Identification System, example b) \"MCP3204-BI/SL: +/-1 LSB INL, Industrial Temperature, SOIC package\""
+  "/package":
+    - source: microchip/DS21298@revE
+      page: 37
+      locator: "Product Identification System, Package \"SL = Plastic SOIC (150 mil Body), 14-lead, 16-lead\""
+    - source: microchip/DS21298@revE
+      page: 28
+      locator: "14-lead drawing C04-065B \"14-Lead Plastic Small Outline (SL) - Narrow, 3.90 mm Body [SOIC]\", page 28 (rendered)"

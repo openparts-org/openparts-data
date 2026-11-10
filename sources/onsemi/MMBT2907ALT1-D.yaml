@@ -1,0 +1,19 @@
+# Official onsemi datasheet "General Purpose Transistors, PNP Silicon -- MMBT2907AL, SMMBT2907AL",
+# Publication Order Number MMBT2907ALT1/D, footer "August, 2024 - Rev. 16", 8 pages,
+# downloaded with curl on 2026-11-10 (HTTP 200, `file`: PDF).
+# Read with pdftotext -layout; outline tables (image-only) rendered with
+# pdftoppm. Page numbers are PDF page indices.
+# Page 6 is the SOT-23 CASE 318 ISSUE AU outline (98ASB42226B, DATE 14 AUG
+# 2024), page 7 its STYLE list.
+schema_version: "0.1"
+kind: source
+id: onsemi/MMBT2907ALT1-D
+
+publisher: onsemi
+document_id: MMBT2907ALT1/D
+document_type: datasheet
+
+revision: "16"
+date: "2024-08"
+
+url: "https://www.onsemi.com/pdf/datasheet/mmbt2907alt1-d.pdf"

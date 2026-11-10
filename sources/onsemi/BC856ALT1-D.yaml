@@ -1,0 +1,20 @@
+# Official onsemi datasheet "BC856ALT1G Series -- General Purpose Transistors, PNP Silicon",
+# Publication Order Number BC856ALT1/D, footer "April, 2023 - Rev. 17", 9 pages,
+# downloaded with curl on 2026-11-10 (HTTP 200, `file`: PDF).
+# Read with pdftotext -layout; outline tables (image-only) rendered with
+# pdftoppm. Page numbers are PDF page indices.
+# Page 6 is the ORDERING INFORMATION table; page 7 the SOT-23 CASE 318
+# ISSUE AU outline (98ASB42226B, DATE 14 AUG 2024 -- newer than the
+# datasheet revision), page 8 its STYLE list.
+schema_version: "0.1"
+kind: source
+id: onsemi/BC856ALT1-D
+
+publisher: onsemi
+document_id: BC856ALT1/D
+document_type: datasheet
+
+revision: "17"
+date: "2023-04"
+
+url: "https://www.onsemi.com/pdf/datasheet/bc856alt1-d.pdf"

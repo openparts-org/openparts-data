@@ -1,0 +1,25 @@
+# 30V N-channel enhancement MOSFET, SOT23 (datasheet page 1 title). Pin
+# numbers are NOT printed in the datasheet or in the PO-00001 outline:
+# the page-1 "SOT23 Top View" drawing shows G at the bottom-left lead
+# (next to the moulded pin-1 dot), S at the bottom-right lead and D on
+# the single top lead. Numbered in this dataset's sot convention (pin 1
+# bottom-left, 2 bottom-right, 3 top), as for aos/AO3400A --
+# position-derived, flagged for review.
+schema_version: "0.1"
+kind: device
+id: aos/AO3402
+
+manufacturer: aos
+category: transistor
+family: AO3402
+
+pins:
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }
+
+provenance:
+  "/pins":
+    - source: aos/AO3402-DS
+      page: 1
+      locator: "\"SOT23 Top View\" drawing: G bottom-left (pin-1 dot side), S bottom-right, D top. No pin numbers printed; numbering is position-derived (see header)"

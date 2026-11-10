@@ -1,0 +1,43 @@
+# 10.0uF X5R 25 V +/-10% 0805 MLCC, packaging code E
+# (E (embossed tape, normal 7" reel), catalog p8). Literal MPN listed on Samsung's
+# product page (existence verified); fields decoded with the catalog
+# part-numbering legend (samsung/MLCC_2512 pp6-8), which matches the
+# page's Characteristics. Package: the page's L/W/T (2.00+/-0.20 / 1.25+/-0.20 / 1.25+/-0.20 mm)
+# -> CHIP0805-SAMSUNG-CL21-TY.
+# lifecycle: the product page shows "Status: Mass Production".
+schema_version: "0.1"
+kind: part
+id: samsung/CL21A106KAYNNNE
+
+manufacturer: samsung
+mpn: CL21A106KAYNNNE
+
+device: samsung/CL21-X5R
+package: manufacturers/samsung/CHIP0805-SAMSUNG-CL21-TY
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - samsung/CL21A106KAYNNN
+  - samsung/MLCC_2512
+
+provenance:
+  "/existence":
+    - source: samsung/MLCC_2512
+      page: 6
+      locator: "Part Numbering: 1 SERIES CODE CL; 2 SIZE CODE 21 = 0805/2012; 3 DIELECTRIC CODE A = X5R; 4 CAPACITANCE CODE 106 (2 significant digits plus number of zeros, pF)"
+    - source: samsung/MLCC_2512
+      page: 7
+      locator: "Part Numbering: 5 TOLERANCE K = +/-10%; 6 RATED VOLTAGE A = 25Vdc; 7 THICKNESS CODE Y"
+    - source: samsung/MLCC_2512
+      page: 8
+      locator: "Part Numbering: 8 DESIGN CODE N (Ni/Cu/Ni-Sn, Normal); 9 N = Normal; 10 CONTROL CODE N = Standard; 11 PACKAGING CODE E (embossed tape, normal 7\" reel)"
+    - source: samsung/CL21A106KAYNNN
+      locator: "\"List of part numbers with package codes\": CL21A106KAYNNNE; Characteristics: X5R(-55 ~ +85), Capacitance 10.0uF, Tolerance +/-10%, Rated Voltage 25Vdc"
+  "/lifecycle":
+    - source: samsung/CL21A106KAYNNN
+      locator: "Characteristics, \"Status: Mass Production\""

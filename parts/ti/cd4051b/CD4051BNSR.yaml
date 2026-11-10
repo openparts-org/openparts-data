@@ -1,0 +1,43 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SCHS047O PDF page 23, addendum dated 26-Sep-2026): "CD4051BNSR |
+# Active | Production | SOP (NS) | 16 | 2000 | LARGE T&R | Yes | NIPDAU
+# | Level-1-260C-UNLIM | -55 to 125 | CD4051B". lifecycle "active" is
+# that table's Status column. Package: SOP (NS) | 16, outline NS0016A
+# (4220735/A 12/2021) on page 36. Its pdftotext -layout text matches the
+# outline page the package was read from (ti/SLRS027T page 31) line for
+# line, so manufacturers/ti/NS0016A is reused.
+schema_version: "0.1"
+kind: part
+id: ti/CD4051BNSR
+
+manufacturer: ti
+mpn: "CD4051BNSR"
+
+device: ti/CD4051B
+package: manufacturers/ti/NS0016A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SCHS047O
+
+provenance:
+  "/existence":
+    - source: ti/SCHS047O
+      page: 23
+      locator: "Package Option Addendum, Packaging Information table, row \"CD4051BNSR\""
+  "/lifecycle":
+    - source: ti/SCHS047O
+      page: 23
+      locator: "Package Option Addendum, row \"CD4051BNSR\", Status \"Active\""
+  "/package":
+    - source: ti/SCHS047O
+      page: 23
+      locator: "Package Option Addendum, row \"CD4051BNSR\", \"SOP (NS) | 16\""
+    - source: ti/SCHS047O
+      page: 36
+      locator: "PACKAGE OUTLINE NS0016A (4220735/A 12/2021)"

@@ -1,0 +1,33 @@
+# TPS54202 2-A synchronous step-down converter, 6-pin SOT-23 (DDC)
+# pinout. From SLVSD26C Table 4-1 "Pin Functions" (page 3), checked
+# against Figure 4-1 "6-Pin SOT-23 DDC Package (Top View)" (same page):
+# GND 1, SW 2, VIN 3 down one side, FB 4, EN 5, BOOT 6 up the other (6
+# opposite 1). Types from the TYPE column and descriptions, as for
+# ti/TPS563200: GND -> ground, SW "Switch node" -> passive, VIN "Input
+# voltage supply pin" -> power, FB and EN (I) -> input, BOOT "Supply
+# input for the high-side NFET gate drive circuit" -> power (the table
+# marks it O).
+schema_version: "0.1"
+kind: device
+id: ti/TPS54202
+
+manufacturer: ti
+category: other
+family: TPS54202
+
+pins:
+  "1": { name: GND, type: ground }
+  "2": { name: SW, type: passive }
+  "3": { name: VIN, type: power }
+  "4": { name: FB, type: input }
+  "5": { name: EN, type: input }
+  "6": { name: BOOT, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SLVSD26C
+      page: 3
+      locator: "Table 4-1 \"Pin Functions\""
+    - source: ti/SLVSD26C
+      page: 3
+      locator: "Figure 4-1 \"6-Pin SOT-23 DDC Package (Top View)\" (all 6 pins matched)"

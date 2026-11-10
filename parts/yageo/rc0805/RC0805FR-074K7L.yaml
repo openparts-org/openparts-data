@@ -1,0 +1,39 @@
+# 4.7 kOhm +/-1%, RC0805 general-purpose thick-film chip resistor, 7" paper reel.
+# MPN assembled from the yageo/PYU-RC_GROUP@V14 (V.14, 2025-11-14) PDF p2
+# 'ORDERING INFORMATION' legend: RC | 0805 | F | R (paper taping reel) |
+# - (TCR per spec) | 07 (7" reel, standard power) | 4K7 | L.
+# The literal string is not printed (the only printed code is the
+# ordering example RC0402JR-07100KL) -> existence probable.
+# Value is an E24 value inside the 1% (E24/E96) range of Table 2 (PDF p5).
+# 7" paper reel offered for RC0805 in Table 4 (PDF p7). Lifecycle not
+# stated -> unknown. Package: Table 1 RC0805 row, same for every value.
+schema_version: "0.1"
+kind: part
+id: yageo/RC0805FR-074K7L
+
+manufacturer: yageo
+mpn: RC0805FR-074K7L
+
+device: yageo/RC0805-GENERAL-PURPOSE
+package: standards/CHIP0805-RC
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - yageo/PYU-RC_GROUP@V14
+
+provenance:
+  "/existence":
+    - source: yageo/PYU-RC_GROUP@V14
+      page: 2
+      locator: "ORDERING INFORMATION - GLOBAL PART NUMBER: RC XXXX X X X XX XXXX L; (1) size; (2) F = +/-1.0%, J = +/-5.0% (for jumper ordering, use code of J); (3) R = Paper taping reel; (4) '-' = Based on spec.; (5) 07 = 7 inch dia. Reel & Standard power; (6) letter R/K/M is decimal point (97R6, 9K76, 1M); (7) L default code"
+    - source: yageo/PYU-RC_GROUP@V14
+      page: 5
+      locator: "Table 2 RC0805 row, 1/8 W (standard power): 1% (E24/E96) 1 Ohm <= R <= 10 MOhm"
+    - source: yageo/PYU-RC_GROUP@V14
+      page: 7
+      locator: "Table 4 \"Packing style and packaging quantity\": RC0805 paper taping reel (R) 7\" (178 mm): 5000"

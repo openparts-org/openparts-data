@@ -1,0 +1,20 @@
+# Samsung Electro-Mechanics product page for CL05C101JB5NNN# (the "#" is the
+# packaging code). Read as raw HTML (curl, tags stripped). Page shows:
+# status "Mass Production"; packaging codes listed: 2, C, D, O;
+# size 0402 (1005); L 1.00+/-0.05mm, W 0.50+/-0.05mm, T 0.50+/-0.05mm; C0G(-55 ~ +125);
+# capacitance 100.0pF, tolerance +/-5%, rated voltage 50 Vdc.
+# A live page, not a revisioned document: `revision`/`date` record its
+# own "Created : 2026/11/10 11:10:57" KST stamp at the time it was read. No page
+# numbers apply (single HTML page).
+schema_version: "0.1"
+kind: source
+id: samsung/CL05C101JB5NNN
+
+publisher: samsung
+document_id: "CL05C101JB5NNN#"
+document_type: product_page
+
+revision: "retrieved 2026-11-10"
+date: "2026-11-10"
+
+url: "https://product.samsungsem.com/mlcc/CL05C101JB5NNN.do"

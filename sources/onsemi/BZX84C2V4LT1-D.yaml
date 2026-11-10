@@ -1,0 +1,21 @@
+# Official onsemi datasheet "Zener Voltage Regulators, 250 mW SOT-23 Surface Mount -- BZX84BxxxLT1G, BZX84CxxxLT1G Series, SZ...",
+# Publication Order Number BZX84C2V4LT1/D, footer "August, 2021 - Rev. 23", 9 pages,
+# downloaded with curl on 2026-11-10 (HTTP 200, `file`: PDF).
+# Read with pdftotext -layout; outline tables (image-only) rendered with
+# pdftoppm. Page numbers are PDF page indices.
+# Page 3 is the Electrical Characteristics table (one row per device
+# order number); page 7 the SOT-23 CASE 318 ISSUE AU outline
+# (98ASB42226B, DATE 14 AUG 2024 -- newer than the datasheet revision),
+# page 8 its STYLE list.
+schema_version: "0.1"
+kind: source
+id: onsemi/BZX84C2V4LT1-D
+
+publisher: onsemi
+document_id: BZX84C2V4LT1/D
+document_type: datasheet
+
+revision: "23"
+date: "2021-08"
+
+url: "https://www.onsemi.com/pdf/datasheet/bzx84c2v4lt1-d.pdf"
