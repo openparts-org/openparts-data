@@ -1,0 +1,38 @@
+# MPN "MCP4922-E/SL" is PROBABLE: printed only as ordering example d)
+# in the Product Identification System of microchip/DS21897@revB (page 39).
+# Package: SL = C04-065B (page 34) -> manufacturers/microchip/
+# SOIC14-SL-C04-065B (new).
+# lifecycle: not stated in the datasheet; no first-party lifecycle page
+# was read (microchip.com product pages return "Access Denied"), so it
+# is recorded as unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP4922-E-SL
+
+manufacturer: microchip
+mpn: "MCP4922-E/SL"
+
+device: microchip/MCP4922
+package: manufacturers/microchip/SOIC14-SL-C04-065B
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS21897@revB
+
+provenance:
+  "/existence":
+    - source: microchip/DS21897@revB
+      page: 39
+      locator: "Product Identification System, example d) \"MCP4922-E/SL: Extended Temperature, 14LD SOIC package.\""
+  "/package":
+    - source: microchip/DS21897@revB
+      page: 39
+      locator: "Product Identification System, Package \"SL = Plastic SOIC (150 mil Body), 14-lead\""
+    - source: microchip/DS21897@revB
+      page: 34
+      locator: "\"14-Lead Plastic Small Outline (SL) - Narrow, 3.90 mm Body [SOIC]\", Microchip Technology Drawing C04-065B (dimension table)"

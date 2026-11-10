@@ -1,0 +1,33 @@
+# CAN FD transceiver TCAN1042H (also TCAN1042HG: same pin column), D
+# (SOIC-8) pin map from Table 6-1 "Pin Functions" column "(H), (G),
+# (HG)" and Figure 6-1 (SLLSES7D page 5); all 8 pins match. The "V"
+# variants (pin 5 = VIO) are a different pin map and not covered. The
+# GND footnote about the DRB thermal pad does not apply to the D
+# package. STB (standby mode control input) typed input; pin 5 "NC" (no
+# connect) typed nc.
+schema_version: "0.1"
+kind: device
+id: ti/TCAN1042H
+
+manufacturer: ti
+category: other
+family: TCAN1042H
+
+pins:
+  "1":  { name: TXD, type: input }
+  "2":  { name: GND, type: ground }
+  "3":  { name: VCC, type: power }
+  "4":  { name: RXD, type: output }
+  "5":  { name: NC, type: nc }
+  "6":  { name: CANL, type: io }
+  "7":  { name: CANH, type: io }
+  "8":  { name: STB, type: input }
+
+provenance:
+  "/pins":
+    - source: ti/SLLSES7D
+      page: 5
+      locator: "Table 6-1 \"Pin Functions\", column \"(H), (G), (HG)\""
+    - source: ti/SLLSES7D
+      page: 5
+      locator: "Figure 6-1 \"D Package for Base, (H), (G) and (HG) Devices 8 PIN (SOIC) Top View\" (cross-check)"

@@ -1,0 +1,64 @@
+# MSPM0G1507 (Cortex-M0+, 128 KB flash / 32 KB SRAM) in the 28-pin DGS28
+# (VSSOP) package. Pin map read from Figure 6-6 "28-Pin DGS28 (VSSOP) (Top
+# View)" (SLASEW9E page 10, rendered) and cross-checked pin for pin
+# against Table 6-2 "Pin Attributes" (pages 13-17, column "28 VSSOP"): all
+# 28 pins match. Other packages number pins differently and are not
+# covered. No exposed pad (DGS0028A has none).
+#
+# Names are the port/supply names of the figure labels; the other figure
+# labels (clock, SWD, ADC channel Ax_y, VREF, RTC_OUT, FCC_IN) are
+# recorded as alternate_functions exactly as that figure prints them (the
+# same pin carries different label subsets in different package figures).
+# The digital mux (PINCMx) functions and the analog comparator/OPA inputs
+# of Table 6-2 are not modelled. Types: VDD and VCORE (regulated core
+# supply output, Table 6-3) power, VSS ground, NRST reset, port pins io
+# (PA0/PA1 are 5V-tolerant open-drain per Table 6-2, still typed io). The
+# MSPM0G1506/1505 share these pin maps but are separate devices, not
+# covered. Figure 6-6 labels PA24 without "A0_3" and PA22 with an extra
+# "CLK_OUT" compared with Figure 6-5; recorded as printed.
+schema_version: "0.1"
+kind: device
+id: ti/MSPM0G1507-DGS28
+
+manufacturer: ti
+category: microcontroller
+family: MSPM0G150x
+
+pins:
+  "1":  { name: PA26, type: io, alternate_functions: [A0_1] }
+  "2":  { name: PA27, type: io, alternate_functions: [RTC_OUT, A0_0] }
+  "3":  { name: VCORE, type: power }
+  "4":  { name: PA0, type: io }
+  "5":  { name: PA1, type: io }
+  "6":  { name: NRST, type: reset }
+  "7":  { name: VDD, type: power }
+  "8":  { name: VSS, type: ground }
+  "9":  { name: PA2, type: io, alternate_functions: [ROSC] }
+  "10": { name: PA3, type: io, alternate_functions: [LFXIN] }
+  "11": { name: PA4, type: io, alternate_functions: [LFCLK_IN, LFXOUT] }
+  "12": { name: PA5, type: io, alternate_functions: [HFXIN, FCC_IN] }
+  "13": { name: PA6, type: io, alternate_functions: [HFCLK_IN, HFXOUT] }
+  "14": { name: PA9, type: io, alternate_functions: [RTC_OUT, CLK_OUT] }
+  "15": { name: PA10, type: io, alternate_functions: [CLK_OUT] }
+  "16": { name: PA11, type: io }
+  "17": { name: PA14, type: io, alternate_functions: [CLK_OUT, A0_12] }
+  "18": { name: PA15, type: io, alternate_functions: [A1_0] }
+  "19": { name: PA16, type: io, alternate_functions: [A1_1, FCC_IN] }
+  "20": { name: PA17, type: io, alternate_functions: [A1_2] }
+  "21": { name: PA18, type: io, alternate_functions: [A1_3] }
+  "22": { name: PA19, type: io, alternate_functions: [SWDIO] }
+  "23": { name: PA20, type: io, alternate_functions: [SWCLK] }
+  "24": { name: PA21, type: io, alternate_functions: [A1_7, VREF-] }
+  "25": { name: PA22, type: io, alternate_functions: [CLK_OUT, A0_7] }
+  "26": { name: PA23, type: io, alternate_functions: [VREF+] }
+  "27": { name: PA24, type: io }
+  "28": { name: PA25, type: io, alternate_functions: [A0_2] }
+
+provenance:
+  "/pins":
+    - source: ti/SLASEW9E
+      page: 10
+      locator: "Figure 6-6 \"28-Pin DGS28 (VSSOP) (Top View)\""
+    - source: ti/SLASEW9E
+      page: 13
+      locator: "Table 6-2 \"Pin Attributes\" (pages 13-17), column \"28 VSSOP\" (cross-check, all 28 pins matched)"

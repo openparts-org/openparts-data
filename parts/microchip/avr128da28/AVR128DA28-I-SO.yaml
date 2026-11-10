@@ -1,0 +1,42 @@
+# AVR128DA28-I/SO: 128 KB/16 KB, 28 pins, SOIC, 1.8-5.5V, -40°C to +85°C,
+# tube. MPN printed verbatim in the ordering table (DS40002183E page 650)
+# -> existence verified. Package -> section 40.4 "28-Pin SOIC", drawing
+# C04-052C (pages 658-660, images; table rendered from page 659). Every
+# number of its table matches manufacturers/microchip/SOIC28-SO- C04-052C
+# (built from DS20001952D): e 1.27 BSC, A max 2.65, A2 min 2.05, A1
+# 0.10-0.30, E 10.30 BSC, E1 7.50 BSC, D 17.90 BSC, L 0.40-1.27, c
+# 0.18-0.33, b 0.31-0.51 -> reused (validate with --source
+# sources/microchip/DS20001952D.yaml). lifecycle: no production-status
+# statement in the datasheet and the Microchip product page refused curl
+# and WebFetch (403); unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/AVR128DA28-I-SO
+
+manufacturer: microchip
+mpn: "AVR128DA28-I/SO"
+
+device: microchip/AVR128DA28
+package: manufacturers/microchip/SOIC28-SO-C04-052C
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40002183@revE
+
+provenance:
+  "/existence":
+    - source: microchip/DS40002183@revE
+      page: 650
+      locator: "Section 39 ordering table (continued), Ordering Code row \"AVR128DA28-I/SO\""
+  "/package":
+    - source: microchip/DS40002183@revE
+      page: 650
+      locator: "Ordering table row \"AVR128DA28-I/SO\", \"28\", \"SOIC\""
+    - source: microchip/DS40002183@revE
+      page: 659
+      locator: "Section 40.4 \"28-Pin SOIC\", drawing C04-052C sheet 2 (rendered image)"

@@ -1,0 +1,41 @@
+# MPN "PCF8563T/5" confirmed in Table 1 "Ordering information" of
+# nxp/PCF8563@rev11.1 (page 5): "PCF8563T/5 SO8 ... SOT96-1". MPN is
+# NXP's type number (no packing suffix), as for the existing PCF8574
+# parts. Unlike PCF8563T/F4 and PCF8563TS/4, this row carries no
+# footnote [1] ("Not recommended for new designs"); the datasheet states
+# no lifecycle for it, so lifecycle is unknown.
+# Package: Figure 30 (page 38, rendered) SOT96-1, issue date 03-02-18:
+# every mm value (A 1.75 max, A1 0.10-0.25, A2 1.25-1.45, bp 0.36-0.49,
+# c 0.19-0.25, D 4.8-5.0, E 3.8-4.0, e 1.27, HE 5.8-6.2, Lp 0.4-1.0)
+# equals manufacturers/nxp/SOT96-1 (read from LM75B Rev. 6.1); reused.
+schema_version: "0.1"
+kind: part
+id: nxp/PCF8563T-5
+
+manufacturer: nxp
+mpn: "PCF8563T/5"
+
+device: nxp/PCF8563
+package: manufacturers/nxp/SOT96-1
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - nxp/PCF8563@rev11.1
+
+provenance:
+  "/existence":
+    - source: nxp/PCF8563@rev11.1
+      page: 5
+      locator: "Table 1 \"Ordering information\", type number \"PCF8563T/5\" (SO8, SOT96-1)"
+  "/package":
+    - source: nxp/PCF8563@rev11.1
+      page: 5
+      locator: "Table 1 \"Ordering information\", row PCF8563T/5, Package Version \"SOT96-1\""
+    - source: nxp/PCF8563@rev11.1
+      page: 38
+      locator: "Figure 30 \"Package outline SOT96-1 (SO8) of PCF8563T\", DIMENSIONS table (mm)"

@@ -1,0 +1,105 @@
+# 20-lead VQFN, 3x3 mm, 0.4 mm pitch, 1.7x1.7 mm exposed pad: Microchip
+# drawing C04-21380 Rev A, "20-Lead Very Thin Plastic Quad Flat, No Lead
+# Package (REB) - 3x3 mm Body [VQFN] With 1.7 mm Exposed Pad; Atmel Legacy
+# Global Package Code ZCL", DS40002204A section 39.4, dimension table on
+# page 577 (text). body_height = A (no A2 given). lead_thickness = A3
+# "0.203 REF" -- a reference value, marked REF in the table. K (min 0.20)
+# and the pin-1 chamfer CH (0.35 REF) are not modelled.
+schema_version: "0.1"
+kind: package
+id: manufacturers/microchip/VQFN20-3x3-P0.4-EP1.7-C04-21380
+
+family: qfn
+lead_count: 20
+
+pitch:
+  nominal: 0.4
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 3.00
+    unit: mm
+  body_length:
+    nominal: 3.00
+    unit: mm
+  body_height:
+    nominal: 0.85
+    min: 0.80
+    max: 0.90
+    unit: mm
+  standoff:
+    nominal: 0.035
+    min: 0.00
+    max: 0.05
+    unit: mm
+  lead_width:
+    nominal: 0.20
+    min: 0.15
+    max: 0.25
+    unit: mm
+  lead_length:
+    nominal: 0.40
+    min: 0.35
+    max: 0.45
+    unit: mm
+  lead_thickness:
+    nominal: 0.203
+    unit: mm
+  exposed_pad:
+    width:
+      nominal: 1.70
+      min: 1.60
+      max: 1.80
+      unit: mm
+    length:
+      nominal: 1.70
+      min: 1.60
+      max: 1.80
+      unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/lead_count":
+    - source: microchip/DS40002204@revA
+      page: 577
+      locator: "C04-21380 Rev A sheet 2 table, \"Number of Terminals N 20\""
+  "/pitch":
+    - source: microchip/DS40002204@revA
+      page: 577
+      locator: "C04-21380 Rev A sheet 2 table, \"Pitch e 0.40 BSC\""
+  "/dimensions/body_width":
+    - source: microchip/DS40002204@revA
+      page: 577
+      locator: "C04-21380 Rev A sheet 2 table, \"Overall Width E 3.00 BSC\""
+  "/dimensions/body_length":
+    - source: microchip/DS40002204@revA
+      page: 577
+      locator: "C04-21380 Rev A sheet 2 table, \"Overall Length D 3.00 BSC\""
+  "/dimensions/body_height":
+    - source: microchip/DS40002204@revA
+      page: 577
+      locator: "C04-21380 Rev A sheet 2 table, \"Overall Height A 0.80 / 0.85 / 0.90\""
+  "/dimensions/standoff":
+    - source: microchip/DS40002204@revA
+      page: 577
+      locator: "C04-21380 Rev A sheet 2 table, \"Standoff A1 0.00 / 0.035 / 0.05\""
+  "/dimensions/lead_width":
+    - source: microchip/DS40002204@revA
+      page: 577
+      locator: "C04-21380 Rev A sheet 2 table, \"Terminal Width b 0.15 / 0.20 / 0.25\""
+  "/dimensions/lead_length":
+    - source: microchip/DS40002204@revA
+      page: 577
+      locator: "C04-21380 Rev A sheet 2 table, \"Terminal Length L 0.35 / 0.40 / 0.45\""
+  "/dimensions/lead_thickness":
+    - source: microchip/DS40002204@revA
+      page: 577
+      locator: "C04-21380 Rev A sheet 2 table, \"Terminal Thickness A3 0.203 REF\" (reference value)"
+  "/dimensions/exposed_pad":
+    - source: microchip/DS40002204@revA
+      page: 577
+      locator: "C04-21380 Rev A sheet 2 table, \"Exposed Pad Width E2\" and \"Exposed Pad Length D2\" 1.60 / 1.70 / 1.80"

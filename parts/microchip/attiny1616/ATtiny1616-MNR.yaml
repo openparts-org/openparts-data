@@ -1,0 +1,39 @@
+# ATtiny1616-MNR: 16 KB/2 KB, 20 pins, 20 MHz, 1.8V to 5.5V, VQFN, -40°C
+# to +105°C, tape & reel. MPN printed verbatim in section 38.1 "Product
+# Information" (DS40002204A page 566) -> existence verified. Package "M" =
+# VQFN -> section 39.4 "20-Pin VQFN", drawing C04-21380 Rev A (pages
+# 576-577) -> new package
+# manufacturers/microchip/VQFN20-3x3-P0.4-EP1.7-C04-21380. lifecycle: no
+# production-status statement in the datasheet and the Microchip product
+# page refused curl and WebFetch (403); unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/ATtiny1616-MNR
+
+manufacturer: microchip
+mpn: ATtiny1616-MNR
+
+device: microchip/ATtiny1616-VQFN20
+package: manufacturers/microchip/VQFN20-3x3-P0.4-EP1.7-C04-21380
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40002204@revA
+
+provenance:
+  "/existence":
+    - source: microchip/DS40002204@revA
+      page: 566
+      locator: "Section 38.1 \"Product Information\", Ordering Code row \"ATtiny1616-MNR\""
+  "/package":
+    - source: microchip/DS40002204@revA
+      page: 566
+      locator: "Section 38.1, row \"ATtiny1616-MNR\", \"Pin Count 20\", \"Package Type VQFN\""
+    - source: microchip/DS40002204@revA
+      page: 577
+      locator: "Section 39.4 \"20-Pin VQFN\", drawing C04-21380 Rev A sheet 2"

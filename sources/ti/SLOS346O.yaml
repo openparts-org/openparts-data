@@ -1,0 +1,20 @@
+# Official TI datasheet "SN65HVD23x 3.3-V CAN bus transceivers (SN65HVD230/231/232)". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SLOS346O - MARCH 2001 - REVISED APRIL 2018". 43 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawing named in the
+# part file were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 5-Mar-2026 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SLOS346O
+
+publisher: ti
+document_id: SLOS346O
+document_type: datasheet
+
+revision: "O"
+date: "2018-04"
+
+url: "https://www.ti.com/lit/ds/symlink/sn65hvd230.pdf"

@@ -1,0 +1,32 @@
+# High-speed CAN transceiver with VIO pin (MCP2562), PDIP/SOIC pin map
+# from Table 1-2 "MCP2561/2 Pinout", column "MCP2562 PDIP, SOIC"
+# (DS20005167C page 4), checked against the "Package Types" MCP2562
+# PDIP, SOIC figure (page 1); all 8 pins match. The 3x3 DFN adds EP 9
+# and is not covered. VIO ("Digital I/O Supply Pin") typed power, STBY
+# ("Standby Mode Input") input.
+schema_version: "0.1"
+kind: device
+id: microchip/MCP2562
+
+manufacturer: microchip
+category: other
+family: MCP2561/2
+
+pins:
+  "1":  { name: TXD, type: input }
+  "2":  { name: VSS, type: ground }
+  "3":  { name: VDD, type: power }
+  "4":  { name: RXD, type: output }
+  "5":  { name: VIO, type: power }
+  "6":  { name: CANL, type: io }
+  "7":  { name: CANH, type: io }
+  "8":  { name: STBY, type: input }
+
+provenance:
+  "/pins":
+    - source: microchip/DS20005167@revC
+      page: 4
+      locator: "Table 1-2 \"MCP2561/2 Pinout\", column \"MCP2562 PDIP, SOIC\""
+    - source: microchip/DS20005167@revC
+      page: 1
+      locator: "\"Package Types\" figure, MCP2562 PDIP, SOIC (cross-check)"

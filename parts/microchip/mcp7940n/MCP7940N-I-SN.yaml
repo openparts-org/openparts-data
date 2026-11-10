@@ -1,0 +1,40 @@
+# MPN "MCP7940N-I/SN" is PROBABLE: it is printed only as an ordering
+# example (a) in the Product Identification System of microchip/DS20005010@revH
+# (page 54; "Not every possible ordering combination is listed").
+# Package: SN = C04-057-SN Rev D (pages 39-40), the same drawing and
+# revision, with identical table values, as standards/SOIC8-3.90x4.90-P1.27;
+# reused.
+# lifecycle: not stated in the datasheet; no first-party lifecycle page
+# was read (microchip.com product pages return "Access Denied"), so it
+# is recorded as unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP7940N-I-SN
+
+manufacturer: microchip
+mpn: "MCP7940N-I/SN"
+
+device: microchip/MCP7940N
+package: standards/SOIC8-3.90x4.90-P1.27
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20005010@revH
+
+provenance:
+  "/existence":
+    - source: microchip/DS20005010@revH
+      page: 54
+      locator: "Product Identification System, example a) \"MCP7940N-I/SN: Industrial Temperature, SOIC package.\""
+  "/package":
+    - source: microchip/DS20005010@revH
+      page: 54
+      locator: "Product Identification System, Package \"SN = 8-Lead Plastic Small Outline (3.90 mm body)\""
+    - source: microchip/DS20005010@revH
+      page: 40
+      locator: "\"8-Lead Plastic Small Outline (SN) - Narrow, 3.90 mm (.150 In.) Body [SOIC]\", Microchip Technology Drawing No. C04-057-SN Rev D Sheet 2 of 2 (dimension table)"

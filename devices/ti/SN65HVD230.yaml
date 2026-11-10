@@ -1,0 +1,32 @@
+# 3.3-V CAN transceiver (SN65HVD230), 8-pin SOIC (D) pin map. All 8
+# pins match between the "Pin Functions" table and the SN65HVD230D /
+# SN65HVD231D top-view figure (SLOS346O page 5). D (transmit data input,
+# also called TXD) and R (receive data output, RXD) keep the datasheet
+# names. Vref ("VCC / 2 reference output pin", type O) typed analog; RS
+# (mode select input) typed input.
+schema_version: "0.1"
+kind: device
+id: ti/SN65HVD230
+
+manufacturer: ti
+category: other
+family: SN65HVD230
+
+pins:
+  "1":  { name: D, type: input }
+  "2":  { name: GND, type: ground }
+  "3":  { name: VCC, type: power }
+  "4":  { name: R, type: output }
+  "5":  { name: Vref, type: analog }
+  "6":  { name: CANL, type: io }
+  "7":  { name: CANH, type: io }
+  "8":  { name: RS, type: input }
+
+provenance:
+  "/pins":
+    - source: ti/SLOS346O
+      page: 5
+      locator: "\"Pin Functions\" table (pins 1-8; rows Vref/RS for SN65HVD230 and SN65HVD231)"
+    - source: ti/SLOS346O
+      page: 5
+      locator: "\"SN65HVD230D (Marked as VP230) / SN65HVD231D (Marked as VP231) Top View\" figure (cross-check)"

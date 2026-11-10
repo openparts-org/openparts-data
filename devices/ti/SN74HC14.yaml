@@ -1,0 +1,36 @@
+# Hex Schmitt-trigger inverter SN74HC14, 14-pin pin map (D, DB, N, NS,
+# PW, J, W) from the "Pin Functions" table (SCLS085L page 3) checked
+# against Figure 4-1 (same page); all 14 pins match. The FK (LCCC)
+# numbering differs and is not covered.
+schema_version: "0.1"
+kind: device
+id: ti/SN74HC14
+
+manufacturer: ti
+category: other
+family: SNx4HC14
+
+pins:
+  "1":  { name: 1A, type: input }
+  "2":  { name: 1Y, type: output }
+  "3":  { name: 2A, type: input }
+  "4":  { name: 2Y, type: output }
+  "5":  { name: 3A, type: input }
+  "6":  { name: 3Y, type: output }
+  "7":  { name: GND, type: ground }
+  "8":  { name: 4Y, type: output }
+  "9":  { name: 4A, type: input }
+  "10": { name: 5Y, type: output }
+  "11": { name: 5A, type: input }
+  "12": { name: 6Y, type: output }
+  "13": { name: 6A, type: input }
+  "14": { name: VCC, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SCLS085L
+      page: 3
+      locator: "\"Pin Functions\" table, column \"D, DB, N, NS, PW, J, or W\""
+    - source: ti/SCLS085L
+      page: 3
+      locator: "Figure 4-1 \"D, DB, N, NS, PW, J, or W Package 14-Pin ... Top View\" (cross-check)"

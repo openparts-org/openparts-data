@@ -1,0 +1,18 @@
+# Official Microchip datasheet "MCP4921/4922 12-Bit DAC with SPI Interface". Downloaded
+# 2026-11-10 directly from ww1.microchip.com (URL below). document_id /
+# revision from the printed footer "DS21897B-page N"; Revision History lists "Revision B (February 2007)".
+# 42 PDF pages; text read with pdftotext -layout. Page numbers in this
+# dataset are PDF page indices (they equal the printed page numbers).
+# The SN (C04-057B, page 32) and SL (C04-065B, page 34) dimension tables extract as clean text (the table header misspells "MILLMETERS").
+schema_version: "0.1"
+kind: source
+id: microchip/DS21897@revB
+
+publisher: microchip
+document_id: DS21897
+document_type: datasheet
+
+revision: "B"
+date: "2007-02"
+
+url: "https://ww1.microchip.com/downloads/en/DeviceDoc/21897B.pdf"

@@ -1,3 +1,6 @@
+# NOTE (2026-11-10): out of date below -- the generators now draw a
+# min/max-only dimension at its midpoint (never stored; openparts-mcad
+# defaults::required), so this package does generate a footprint and model.
 # TI DDC0006A "SOT-23 - 1.1 max height" (SOT-23-THIN 6-lead; drawing
 # 4214841/E 08/2024, JEDEC MO-193 per its note 3), read from the
 # rendered outline page of SLVSCB0E (page 33). Millimetres as printed.

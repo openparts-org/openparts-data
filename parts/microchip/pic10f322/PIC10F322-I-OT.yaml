@@ -1,0 +1,49 @@
+# PIC10F322-I/OT: industrial temperature (-40 to +85 C), 6-lead SOT-23,
+# tube/standard packaging. existence: probable -- the datasheet has no
+# table of orderable codes, only the "PRODUCT IDENTIFICATION SYSTEM"
+# legend (DS40001585D page 191: Device PIC10F322, Temperature I, Package
+# OT = SOT-23); this MPN was assembled from that legend (its examples are
+# "PIC10LF320T - I/OT", "PIC10F322 - I/P", "PIC10F322 - E/MC"). The
+# product page returned 403 to curl and WebFetch. Package -> "6-Lead
+# Plastic Small Outline Transistor (OT) [SOT-23]", drawing C04-028B (page
+# 183, image, rendered at 220 dpi). Every number of its table matches
+# manufacturers/microchip/SOT23-6-CH-C04-028B (built from the same drawing
+# in DS22039D, where Microchip calls the package "CH"): e 0.95 BSC, e1
+# 1.90 BSC, A 0.90-1.45, A2 0.89-1.30, A1 0.00-0.15, E 2.20-3.20, E1
+# 1.30-1.80, D 2.70-3.10, L 0.10-0.60, L1 0.35-0.80, c 0.08-0.26, b
+# 0.20-0.51, and the same top view (1-2-3 bottom left to right, 4 top
+# right, N top left) -> reused (validate with --source
+# sources/microchip/DS22039D.yaml). lifecycle: no production-status
+# statement in the datasheet and the Microchip product page refused curl
+# and WebFetch (403); unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/PIC10F322-I-OT
+
+manufacturer: microchip
+mpn: "PIC10F322-I/OT"
+
+device: microchip/PIC10F322-SOT23
+package: manufacturers/microchip/SOT23-6-CH-C04-028B
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40001585@revD
+
+provenance:
+  "/existence":
+    - source: microchip/DS40001585@revD
+      page: 191
+      locator: "PRODUCT IDENTIFICATION SYSTEM legend: Device \"PIC10F322\", Temperature Range \"I = -40C to +85C\", Package \"OT = SOT-23\" (assembled from the legend)"
+  "/package":
+    - source: microchip/DS40001585@revD
+      page: 191
+      locator: "PRODUCT IDENTIFICATION SYSTEM, Package \"OT = SOT-23\""
+    - source: microchip/DS40001585@revD
+      page: 183
+      locator: "\"6-Lead Plastic Small Outline Transistor (OT) [SOT-23]\", drawing C04-028B (rendered image)"

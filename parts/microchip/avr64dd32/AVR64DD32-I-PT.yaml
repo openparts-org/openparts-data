@@ -1,0 +1,43 @@
+# AVR64DD32-I/PT: 64 KB/8 KB, 32 pins, TQFP, -40°C to +85°C, tray. MPN
+# printed verbatim in Table 40-1 "Available Product Numbers" (DS40002315C
+# page 649) -> existence verified. Package "PT = TQFP32" (Figure 40-1,
+# page 650) -> section 41 "32-Pin TQFP", drawing C04-074-PT Rev D (pages
+# 667-668). Every number of its table matches standards/TQFP32-7x7-P0.8
+# (built from C04-074B in DS40002061B): e 0.80 BSC, A max 1.20, A1
+# 0.05-0.15, A2 0.95/1.00/1.05, L 0.45/0.60/0.75, E/D 9.00 BSC, E1/D1 7.00
+# BSC, b 0.30/0.37/0.45 -> reused (validate with --source
+# sources/microchip/DS40002061.yaml). The C04-074-PT Rev D table has no
+# lead thickness c row; the package's c (0.09-0.20) comes from C04-074B.
+# lifecycle: no production-status statement in the datasheet and the
+# Microchip product page refused curl and WebFetch (403); unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/AVR64DD32-I-PT
+
+manufacturer: microchip
+mpn: "AVR64DD32-I/PT"
+
+device: microchip/AVR64DD32
+package: standards/TQFP32-7x7-P0.8
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40002315@revC
+
+provenance:
+  "/existence":
+    - source: microchip/DS40002315@revC
+      page: 649
+      locator: "Table 40-1 \"Available Product Numbers\", row \"AVR64DD32-I/PT\""
+  "/package":
+    - source: microchip/DS40002315@revC
+      page: 649
+      locator: "Table 40-1, row \"AVR64DD32-I/PT\", \"32\", \"TQFP\""
+    - source: microchip/DS40002315@revC
+      page: 668
+      locator: "Section \"32-Pin TQFP\", drawing C04-074-PT Rev D sheet 2"

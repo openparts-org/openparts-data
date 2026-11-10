@@ -1,0 +1,43 @@
+# ATtiny202-SSNR: 2 KB/128B, 8 pins, 20 MHz, 1.8V to 5.5V, SOIC, -40°C to
+# +105°C, tape & reel (suffix R). MPN printed verbatim in section 35.1
+# "Product Information" (DS40002318A page 493) -> existence verified.
+# Package "SS" = SOIC150 (Product Identification System, page 494) ->
+# section 36.2 "8-Pin SOIC", drawing C04-057-SN Rev F (pages 496-497).
+# Every number of its table matches standards/SOIC8-3.90x4.90-P1.27 (built
+# from C04-057-SN Rev D in DS20001203W): e 1.27 BSC, A max 1.75, A2 min
+# 1.25, A1 0.10-0.25, E 6.00 BSC, E1 3.90 BSC, D 4.90 BSC, L 0.40-1.27, c
+# 0.17-0.25, b 0.31-0.51 -> reused (validate with --source
+# sources/microchip/DS20001203W.yaml). lifecycle: no production-status
+# statement in the datasheet and the Microchip product page refused curl
+# and WebFetch (403); unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/ATtiny202-SSNR
+
+manufacturer: microchip
+mpn: ATtiny202-SSNR
+
+device: microchip/ATtiny202
+package: standards/SOIC8-3.90x4.90-P1.27
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40002318@revA
+
+provenance:
+  "/existence":
+    - source: microchip/DS40002318@revA
+      page: 493
+      locator: "Section 35.1 \"Product Information\", Ordering Code row \"ATtiny202-SSNR\""
+  "/package":
+    - source: microchip/DS40002318@revA
+      page: 493
+      locator: "Section 35.1, row \"ATtiny202-SSNR\", \"Pin Count 8\", \"Package Type SOIC\""
+    - source: microchip/DS40002318@revA
+      page: 497
+      locator: "Section \"8-Pin SOIC\", drawing C04-057-SN Rev F sheet 2"

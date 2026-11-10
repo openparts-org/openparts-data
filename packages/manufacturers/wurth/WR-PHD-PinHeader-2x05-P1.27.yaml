@@ -1,0 +1,116 @@
+# Würth WR-PHD pin header, 2 x 5, 1.27 mm pitch, straight THT
+# (order code 62201021121), from the page-1 drawing of wurth/62201021121-DS (rev 003.001).
+# min/max are the printed tolerances applied to the printed value.
+# Numbering: the bottom view labels row "1" and row "2" at the
+# first column; the hole pattern (component side) shows "1" bottom-left,
+# "2" above it and "End" at the far end of row 2, i.e. odd pins in
+# one row, even pins in the other, pin 2 beside pin 1 -- the `header`
+# generator's zig-zag (pin 1 top-left, pin 2 to its right after a
+# 90 degree turn).
+# No land pattern is given, only the recommended hole: the footprint pad
+# is the hole plus the generator's annular-ring default. The housing has
+# no pin-1 mark in the drawing.
+# The hole pattern's values carry its "General tolerance ±0.05"
+# (applied as min/max); where the outline views give a looser
+# tolerance for the same pitch, the hole pattern's is recorded.
+schema_version: "0.1"
+kind: package
+id: manufacturers/wurth/WR-PHD-PinHeader-2x05-P1.27
+
+family: header
+lead_count: 10
+lead_layout: [2, 5]
+
+pitch:
+  nominal: 1.27
+  min: 1.22
+  max: 1.32
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 3.4
+    min: 3.25
+    max: 3.55
+    unit: mm
+  body_length:
+    nominal: 6.35
+    min: 6.05
+    max: 6.65
+    unit: mm
+  body_height:
+    nominal: 1.5
+    min: 1.35
+    max: 1.65
+    unit: mm
+  lead_width:
+    nominal: 0.4
+    min: 0.35
+    max: 0.45
+    unit: mm
+  mating_length:
+    nominal: 3.8
+    min: 3.6
+    max: 4
+    unit: mm
+  tail_length:
+    nominal: 2.3
+    min: 2.1
+    max: 2.5
+    unit: mm
+  row_spacing:
+    nominal: 1.27
+    min: 1.22
+    max: 1.32
+    unit: mm
+  hole_diameter:
+    nominal: 0.65
+    min: 0.6
+    max: 0.7
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: header
+
+provenance:
+  "/pitch":
+    - source: wurth/62201021121-DS
+      page: 1
+      locator: "\"Recommended Hole Pattern: [mm]\", pitch \"1,27\" with \"General tolerance ±0,05\" (\"Dimensions: [mm]\" view above the front view (first-angle projection: the bottom view) gives \"1,27 ±0,15\")"
+  "/lead_layout":
+    - source: wurth/62201021121-DS
+      page: 1
+      locator: "\"Article Properties\" Pins 10; \"Recommended Hole Pattern: [mm]\": 2 rows, labelled \"1\", \"2\" and \"End\""
+  "/dimensions/body_width":
+    - source: wurth/62201021121-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" view below the front view (first-angle projection: the top view), housing width \"3,4 ±0,15\""
+  "/dimensions/body_length":
+    - source: wurth/62201021121-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" front view, housing length \"L ±0,3\"; \"Article Properties\" Length L = 6.35 mm"
+  "/dimensions/body_height":
+    - source: wurth/62201021121-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" side view (right of the front view), housing height \"1,5 ±0,15\""
+  "/dimensions/lead_width":
+    - source: wurth/62201021121-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" view above the front view (first-angle projection: the bottom view), square pin \"□ 0,40 ±0.05\""
+  "/dimensions/mating_length":
+    - source: wurth/62201021121-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" side view (right of the front view), housing top to pin tip \"3,8 ±0,2\""
+  "/dimensions/tail_length":
+    - source: wurth/62201021121-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" side view (right of the front view), housing underside to tail end \"2,3 ±0,2\""
+  "/dimensions/row_spacing":
+    - source: wurth/62201021121-DS
+      page: 1
+      locator: "\"Recommended Hole Pattern: [mm]\", rows \"1,27\" apart with \"General tolerance ±0,05\" (\"Dimensions: [mm]\" view below the front view (first-angle projection: the top view) gives \"1,27 ±0,15\")"
+  "/dimensions/hole_diameter":
+    - source: wurth/62201021121-DS
+      page: 1
+      locator: "\"Recommended Hole Pattern: [mm]\", hole \"Ø 0,65\" with \"General tolerance ±0,05\""

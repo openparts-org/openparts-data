@@ -1,0 +1,31 @@
+# 3.3-V CAN FD transceiver TCAN332, D/DCN pin map from Table 4-1 "Pin
+# Functions" column "TCAN332" and Figure 4-2 (SLLSEQ7F page 4); all 8
+# pins match. Pins 5 and 8 are "NC - No Connect - Not internally
+# connected" (typed nc). The other TCAN33x variants use pins 5/8 for
+# SHDN/S/STB/FAULT and are not covered.
+schema_version: "0.1"
+kind: device
+id: ti/TCAN332
+
+manufacturer: ti
+category: other
+family: TCAN33x
+
+pins:
+  "1":  { name: TXD, type: input }
+  "2":  { name: GND, type: ground }
+  "3":  { name: VCC, type: power }
+  "4":  { name: RXD, type: output }
+  "5":  { name: NC, type: nc }
+  "6":  { name: CANL, type: io }
+  "7":  { name: CANH, type: io }
+  "8":  { name: NC, type: nc }
+
+provenance:
+  "/pins":
+    - source: ti/SLLSEQ7F
+      page: 4
+      locator: "Table 4-1 \"Pin Functions\", column \"TCAN332\""
+    - source: ti/SLLSEQ7F
+      page: 4
+      locator: "Figure 4-2 \"TCAN332 D, DCN Packages, 8-Pin SOIC, SOT-23, (Top View)\" (cross-check)"

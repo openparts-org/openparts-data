@@ -1,0 +1,42 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SCLS078H
+# (page 16): "SN74HC04PWR Active Production TSSOP (PW) | 14 2000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 85 HC04".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet, dated 23-Oct-2026).
+# Package: TSSOP (PW), outline PW0014A (4220202/B) on page 31 ->
+# manufacturers/ti/PW0014A. Its pdftotext text matches the outline page the package
+# was read from (ti/SCES650K page 52) line for line, so the package is reused.
+schema_version: "0.1"
+kind: part
+id: ti/SN74HC04PWR
+
+manufacturer: ti
+mpn: SN74HC04PWR
+
+device: ti/SN74HC04
+package: manufacturers/ti/PW0014A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SCLS078H
+
+provenance:
+  "/existence":
+    - source: ti/SCLS078H
+      page: 16
+      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74HC04PWR"
+  "/lifecycle":
+    - source: ti/SCLS078H
+      page: 16
+      locator: "PACKAGE OPTION ADDENDUM, row SN74HC04PWR, Status column \"Active\""
+  "/package":
+    - source: ti/SCLS078H
+      page: 16
+      locator: "PACKAGE OPTION ADDENDUM, row SN74HC04PWR, Package column \"TSSOP (PW)\""
+    - source: ti/SCLS078H
+      page: 31
+      locator: "PACKAGE OUTLINE PW0014A (4220202/B)"

@@ -1,0 +1,20 @@
+# Official TI datasheet "ADS111x ultra-small, low-power, I2C-compatible, 860-SPS, 16-bit ADCs". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SBAS444E - MAY 2009 - REVISED DECEMBER 2024". 57 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawing named in the
+# part file were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 14-Oct-2025 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SBAS444E
+
+publisher: ti
+document_id: SBAS444E
+document_type: datasheet
+
+revision: "E"
+date: "2024-12"
+
+url: "https://www.ti.com/lit/ds/symlink/ads1115.pdf"

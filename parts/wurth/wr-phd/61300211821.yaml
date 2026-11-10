@@ -1,0 +1,29 @@
+# Order code printed verbatim in the datasheet's own title block
+# ("ORDER CODE 61300211821", every page) -> existence verified.
+# lifecycle: the title block "STATUS Valid" is the document's release
+# status, not a product lifecycle statement; the we-online.com product
+# pages were not read (403 to curl), so lifecycle is unknown.
+schema_version: "0.1"
+kind: part
+id: wurth/61300211821
+
+manufacturer: wurth
+mpn: "61300211821"
+
+device: wurth/61300211821
+package: manufacturers/wurth/WR-PHD-Socket-1x02-P2.54
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - wurth/61300211821-DS
+
+provenance:
+  "/existence":
+    - source: wurth/61300211821-DS
+      page: 1
+      locator: "Title block, \"ORDER CODE 61300211821\", \"DESCRIPTION WR-PHD Socket Header\""

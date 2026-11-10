@@ -1,0 +1,21 @@
+# Official TI datasheet "MSPM0G150x Mixed-Signal Microcontrollers"
+# (MSPM0G1507/1506/1505), 135 pages. Downloaded with curl from the TI
+# symlink URL below. Revision "E" / date from the header "SLASEW9E -
+# FEBRUARY 2023 - REVISED OCTOBER 2025". The appended PACKAGE OPTION
+# ADDENDUM is dated 8-Apr-2026 (PDF pages 107-108). PDF page index =
+# printed page number. Read with pdftotext -layout (Table 6-2 "Pin
+# Attributes" pages 13-17, Table 6-3 page 22, addendum); the pin diagrams
+# (pages 8-10) and the DGS0028A / RHB0032E outlines (pages 121, 129) were
+# rendered and read as images.
+schema_version: "0.1"
+kind: source
+id: ti/SLASEW9E
+
+publisher: ti
+document_id: SLASEW9E
+document_type: datasheet
+
+revision: "E"
+date: "2025-10"
+
+url: "https://www.ti.com/lit/ds/symlink/mspm0g1507.pdf"

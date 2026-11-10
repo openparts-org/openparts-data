@@ -1,0 +1,22 @@
+# Official Microchip "PIC12(L)F1840" Data Sheet, 397 pages. Downloaded
+# directly from ww1.microchip.com (URL below) with curl; 40001441G/H.pdf
+# were not found (301 redirect), so F is the newest revision found.
+# document_id/revision from the printed footer "DS40001441F-page N"; date
+# from Appendix A "Revision F (4/2015)". PDF page index = printed page
+# number. Figure 1 / Table 1 (page 3) rendered and read as an image; the
+# C04-018D PDIP table (page 383) read as text; the C04-057C SOIC table
+# (page 385) is an image and was rendered. The ordering section is only a
+# "PRODUCT IDENTIFICATION SYSTEM" legend with examples (page 395) -- no
+# table of orderable codes.
+schema_version: "0.1"
+kind: source
+id: microchip/DS40001441@revF
+
+publisher: microchip
+document_id: DS40001441
+document_type: datasheet
+
+revision: "F"
+date: "2015-04"
+
+url: "https://ww1.microchip.com/downloads/en/DeviceDoc/40001441F.pdf"

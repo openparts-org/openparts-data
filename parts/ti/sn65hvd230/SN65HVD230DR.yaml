@@ -1,0 +1,42 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SLOS346O
+# (page 36): "SN65HVD230DR Active Production SOIC (D) | 8 2500 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 VP230".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet, dated 5-Mar-2026).
+# Package: SOIC (D), outline D0008A (4214825/C) on page 40 ->
+# manufacturers/ti/D0008A. Its pdftotext text matches the outline page the package
+# was read from (ti/SLCS005AH page 43) line for line, so the package is reused.
+schema_version: "0.1"
+kind: part
+id: ti/SN65HVD230DR
+
+manufacturer: ti
+mpn: SN65HVD230DR
+
+device: ti/SN65HVD230
+package: manufacturers/ti/D0008A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLOS346O
+
+provenance:
+  "/existence":
+    - source: ti/SLOS346O
+      page: 36
+      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN65HVD230DR"
+  "/lifecycle":
+    - source: ti/SLOS346O
+      page: 36
+      locator: "PACKAGE OPTION ADDENDUM, row SN65HVD230DR, Status column \"Active\""
+  "/package":
+    - source: ti/SLOS346O
+      page: 36
+      locator: "PACKAGE OPTION ADDENDUM, row SN65HVD230DR, Package column \"SOIC (D)\""
+    - source: ti/SLOS346O
+      page: 40
+      locator: "PACKAGE OUTLINE D0008A (4214825/C)"

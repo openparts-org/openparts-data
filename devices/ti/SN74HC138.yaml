@@ -1,0 +1,39 @@
+# 3-to-8 decoder SN74HC138, 16-pin pin map from the "Pin Functions"
+# table (SCLS107G page 3) checked against the rendered 16-pin top view
+# (same page); all 16 pins match. G2A/G2B are active low (overbar;
+# written without it). The FK (LCCC) numbering differs and is not
+# covered.
+schema_version: "0.1"
+kind: device
+id: ti/SN74HC138
+
+manufacturer: ti
+category: other
+family: SNx4HC138
+
+pins:
+  "1":  { name: A, type: input }
+  "2":  { name: B, type: input }
+  "3":  { name: C, type: input }
+  "4":  { name: G2A, type: input }
+  "5":  { name: G2B, type: input }
+  "6":  { name: G1, type: input }
+  "7":  { name: Y7, type: output }
+  "8":  { name: GND, type: ground }
+  "9":  { name: Y6, type: output }
+  "10": { name: Y5, type: output }
+  "11": { name: Y4, type: output }
+  "12": { name: Y3, type: output }
+  "13": { name: Y2, type: output }
+  "14": { name: Y1, type: output }
+  "15": { name: Y0, type: output }
+  "16": { name: VCC, type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SCLS107G
+      page: 3
+      locator: "\"Pin Functions\" table, column \"SOIC, SSOP, PDIP, SO, TSSOP, CDIP, CFP\""
+    - source: ti/SCLS107G
+      page: 3
+      locator: "\"SOIC, SSOP, PDIP, SO, TSSOP, CDIP, or CFP Package 16-Pin D, DB, N, NS, PW, J or W Top View\" figure (cross-check, rendered)"

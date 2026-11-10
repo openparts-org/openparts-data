@@ -1,0 +1,118 @@
+# 6-lead SOT-23 (Microchip package code CH). All values from Microchip
+# drawing C04-028B, "6-Lead Plastic Small Outline Transistor (CH)
+# [SOT-23]", PDF page 44 of DS22039D (MCP4725), rendered and read as an
+# image (millimetres). Every row is MIN/MAX only except the BSC pitches;
+# no nominal is recorded.
+#
+# Top view: pins 1, 2, 3 left to right along the bottom edge (pin 1 at
+# the laser-mark ID), pin 4 top right and N (= 6) top left -- the
+# generator's counter-clockwise [3, 3] layout.
+#
+# Mapping (as manufacturers/microchip/SOT23-3-TT-C04-104C for the `sot`
+# generator): pitch = e (0.95 BSC, adjacent leads; e1 1.90 BSC is
+# pin 1 to pin 3), body_width = D "Overall Length" 2.70-3.10 (long axis,
+# along the rows), body_length = E1 "Molded Package Width" 1.30-1.80
+# (across the rows), overall_length = E "Overall Width" 2.20-3.20 (lead
+# tip to lead tip across the rows), body_height = A2 0.89-1.30,
+# overall_height = A 0.90-1.45, standoff = A1 0.00-0.15, lead_length = L
+# "Foot Length" 0.10-0.60, lead_thickness = c 0.08-0.26, lead_width = b
+# 0.20-0.51. Not modelled: L1 "Footprint" 0.35-0.80, foot angle 0-30 deg.
+schema_version: "0.1"
+kind: package
+id: manufacturers/microchip/SOT23-6-CH-C04-028B
+
+family: sot
+lead_count: 6
+lead_layout: [3, 3]
+
+pitch:
+  nominal: 0.95
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 2.70
+    max: 3.10
+    unit: mm
+  body_length:
+    min: 1.30
+    max: 1.80
+    unit: mm
+  body_height:
+    min: 0.89
+    max: 1.30
+    unit: mm
+  overall_length:
+    min: 2.20
+    max: 3.20
+    unit: mm
+  overall_height:
+    min: 0.90
+    max: 1.45
+    unit: mm
+  standoff:
+    min: 0.00
+    max: 0.15
+    unit: mm
+  lead_width:
+    min: 0.20
+    max: 0.51
+    unit: mm
+  lead_length:
+    min: 0.10
+    max: 0.60
+    unit: mm
+  lead_thickness:
+    min: 0.08
+    max: 0.26
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: sot
+
+provenance:
+  "/pitch":
+    - source: microchip/DS22039@revD
+      page: 44
+      locator: "C04-028B table, \"Pitch e 0.95 BSC\" (adjacent leads; \"Outside Lead Pitch e1 1.90 BSC\")"
+  "/lead_layout":
+    - source: microchip/DS22039@revD
+      page: 44
+      locator: "C04-028B top view: leads 1, 2, 3 left to right on the bottom edge, 4 top right, N top left"
+  "/dimensions/body_width":
+    - source: microchip/DS22039@revD
+      page: 44
+      locator: "C04-028B table, \"Overall Length D\" 2.70 / - / 3.10 (long axis) -- see mapping note"
+  "/dimensions/body_length":
+    - source: microchip/DS22039@revD
+      page: 44
+      locator: "C04-028B table, \"Molded Package Width E1\" 1.30 / - / 1.80 -- see mapping note"
+  "/dimensions/body_height":
+    - source: microchip/DS22039@revD
+      page: 44
+      locator: "C04-028B table, \"Molded Package Thickness A2\" 0.89 / - / 1.30"
+  "/dimensions/overall_length":
+    - source: microchip/DS22039@revD
+      page: 44
+      locator: "C04-028B table, \"Overall Width E\" 2.20 / - / 3.20 (lead-tip span)"
+  "/dimensions/overall_height":
+    - source: microchip/DS22039@revD
+      page: 44
+      locator: "C04-028B table, \"Overall Height A\" 0.90 / - / 1.45"
+  "/dimensions/standoff":
+    - source: microchip/DS22039@revD
+      page: 44
+      locator: "C04-028B table, \"Standoff A1\" 0.00 / - / 0.15"
+  "/dimensions/lead_width":
+    - source: microchip/DS22039@revD
+      page: 44
+      locator: "C04-028B table, \"Lead Width b\" 0.20 / - / 0.51"
+  "/dimensions/lead_length":
+    - source: microchip/DS22039@revD
+      page: 44
+      locator: "C04-028B table, \"Foot Length L\" 0.10 / - / 0.60"
+  "/dimensions/lead_thickness":
+    - source: microchip/DS22039@revD
+      page: 44
+      locator: "C04-028B table, \"Lead Thickness c\" 0.08 / - / 0.26"

@@ -1,0 +1,65 @@
+# AVR128DA28 in the 28-pin packages (SPDIP, SSOP and SOIC share one pin
+# map: section 2.1 "28-Pin SPDIP, SSOP and SOIC"). Pin names/numbers from
+# section 3.1 "I/O Multiplexing", column "SPDIP28/SOIC28/SSOP28"
+# (DS40002183E pages 18-19, rendered and read as images), cross-checked
+# pin for pin against the pinout figure (page 14).
+#
+# Types: VDD/AVDD power, GND ground, port pins io. PF6 is typed input
+# (table note 5 "Input-only") with RESET as alternate function. UPDI is a
+# dedicated programming/debug pin, typed io (single-wire bidirectional
+# interface). Page 14/16 note: "For the AVR DA Family, the VDD and AVDD
+# are internally connected (no separate power domains)" -- the names
+# differ, so no connected_to is recorded. alternate_functions carry only
+# the "Special" and "ADC0" columns (the "TWI" marker in the Special column
+# is not a signal name: skipped); PTC/AC/DAC/ZCD/USART/SPI/TWI/
+# TCA/TCB/TCD/EVSYS/CCL mappings are not modelled. PF0/PF1 ADC0 inputs
+# AIN16/AIN17 are "Positive input-only" (table note 6).
+schema_version: "0.1"
+kind: device
+id: microchip/AVR128DA28
+
+manufacturer: microchip
+category: microcontroller
+family: "AVR DA"
+
+pins:
+  "1":  { name: PA7, type: io, alternate_functions: [CLKOUT] }
+  "2":  { name: PC0, type: io }
+  "3":  { name: PC1, type: io }
+  "4":  { name: PC2, type: io }
+  "5":  { name: PC3, type: io }
+  "6":  { name: PD0, type: io, alternate_functions: [AIN0] }
+  "7":  { name: PD1, type: io, alternate_functions: [AIN1] }
+  "8":  { name: PD2, type: io, alternate_functions: [AIN2] }
+  "9":  { name: PD3, type: io, alternate_functions: [AIN3] }
+  "10": { name: PD4, type: io, alternate_functions: [AIN4] }
+  "11": { name: PD5, type: io, alternate_functions: [AIN5] }
+  "12": { name: PD6, type: io, alternate_functions: [AIN6] }
+  "13": { name: PD7, type: io, alternate_functions: [VREFA, AIN7] }
+  "14": { name: AVDD, type: power }
+  "15": { name: GND, type: ground }
+  "16": { name: PF0, type: io, alternate_functions: [XTAL32K1, AIN16] }
+  "17": { name: PF1, type: io, alternate_functions: [XTAL32K2, AIN17] }
+  "18": { name: PF6, type: input, alternate_functions: [RESET] }
+  "19": { name: UPDI, type: io }
+  "20": { name: VDD, type: power }
+  "21": { name: GND, type: ground }
+  "22": { name: PA0, type: io, alternate_functions: [EXTCLK] }
+  "23": { name: PA1, type: io }
+  "24": { name: PA2, type: io }
+  "25": { name: PA3, type: io }
+  "26": { name: PA4, type: io }
+  "27": { name: PA5, type: io }
+  "28": { name: PA6, type: io }
+
+provenance:
+  "/pins":
+    - source: microchip/DS40002183@revE
+      page: 18
+      locator: "Section 3.1 \"I/O Multiplexing\", column \"SPDIP28/SOIC28/SSOP28\", columns \"Special\" and \"ADC0\""
+    - source: microchip/DS40002183@revE
+      page: 19
+      locator: "Section 3.1 table (continued), rows PF0-GND"
+    - source: microchip/DS40002183@revE
+      page: 14
+      locator: "Section 2.1 \"28-Pin SPDIP, SSOP and SOIC\" pinout figure (cross-check)"

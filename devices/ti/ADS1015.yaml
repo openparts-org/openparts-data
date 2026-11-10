@@ -1,0 +1,35 @@
+# ADS1015 4-channel I2C delta-sigma ADC, pin map for the RUG, DYN and
+# DGS packages (the table covers all three) from Table 5-1 "Pin
+# Functions: RUG, DYN, and DGS Packages" column "ADS1015" (SBAS473F page 3),
+# checked against Figure 5-2 (same page); all 10 pins match. GND and
+# VDD are type "Analog" in the table; typed ground/power from their
+# descriptions ("Ground", "Power supply"). SCL ("Serial clock input")
+# typed clock, ALERT/RDY (open-drain digital output) output, SDA io.
+schema_version: "0.1"
+kind: device
+id: ti/ADS1015
+
+manufacturer: ti
+category: other
+family: ADS101x
+
+pins:
+  "1":  { name: ADDR, type: input }
+  "2":  { name: "ALERT/RDY", type: output }
+  "3":  { name: GND, type: ground }
+  "4":  { name: AIN0, type: analog }
+  "5":  { name: AIN1, type: analog }
+  "6":  { name: AIN2, type: analog }
+  "7":  { name: AIN3, type: analog }
+  "8":  { name: VDD, type: power }
+  "9":  { name: SDA, type: io }
+  "10": { name: SCL, type: clock }
+
+provenance:
+  "/pins":
+    - source: ti/SBAS473F
+      page: 3
+      locator: "Table 5-1 \"Pin Functions: RUG, DYN, and DGS Packages\", column \"ADS1015\""
+    - source: ti/SBAS473F
+      page: 3
+      locator: "Figure 5-2 \"DYN and DGS Packages, 10-Pin (Top View)\" (cross-check)"

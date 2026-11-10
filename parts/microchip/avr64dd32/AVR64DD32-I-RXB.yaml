@@ -1,0 +1,38 @@
+# AVR64DD32-I/RXB: 64 KB/8 KB, 32 pins, VQFN, -40°C to +85°C, tray. MPN
+# printed verbatim in Table 40-1 "Available Product Numbers" (DS40002315C
+# page 649) -> existence verified. Package "RXB = VQFN32" (Figure 40-1,
+# page 650) -> drawing C04-21395-RXB Rev C (pages 664-665) -> new package
+# manufacturers/microchip/VQFN32-5x5-P0.5-EP3.1-C04-21395-RXB. lifecycle:
+# no production-status statement in the datasheet and the Microchip
+# product page refused curl and WebFetch (403); unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/AVR64DD32-I-RXB
+
+manufacturer: microchip
+mpn: "AVR64DD32-I/RXB"
+
+device: microchip/AVR64DD32
+package: manufacturers/microchip/VQFN32-5x5-P0.5-EP3.1-C04-21395-RXB
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40002315@revC
+
+provenance:
+  "/existence":
+    - source: microchip/DS40002315@revC
+      page: 649
+      locator: "Table 40-1 \"Available Product Numbers\", row \"AVR64DD32-I/RXB\""
+  "/package":
+    - source: microchip/DS40002315@revC
+      page: 649
+      locator: "Table 40-1, row \"AVR64DD32-I/RXB\", \"32\", \"VQFN\""
+    - source: microchip/DS40002315@revC
+      page: 665
+      locator: "Section \"32-Pin VQFN\", drawing C04-21395-RXB Rev C sheet 2"

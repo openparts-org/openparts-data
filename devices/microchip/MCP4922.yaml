@@ -1,0 +1,38 @@
+# 12-bit dual-channel SPI DAC (MCP4922), 14-pin PDIP/SOIC/TSSOP pin map
+# from Table 3-1 "Pin Function Table", column "MCP4922 Pin No."
+# (DS21897B page 15), checked against the "14-Pin PDIP, SOIC, TSSOP"
+# figure under "Package Types" (page 1). Pins 2, 6 and 7 are "NC - No
+# Connection" (typed nc). CS and SHDN are active low (overbar; written
+# without it). SCK typed clock, VREFx/VOUTx analog, AVSS ground.
+schema_version: "0.1"
+kind: device
+id: microchip/MCP4922
+
+manufacturer: microchip
+category: other
+family: MCP492X
+
+pins:
+  "1":  { name: VDD, type: power }
+  "2":  { name: NC, type: nc }
+  "3":  { name: CS, type: input }
+  "4":  { name: SCK, type: clock }
+  "5":  { name: SDI, type: input }
+  "6":  { name: NC, type: nc }
+  "7":  { name: NC, type: nc }
+  "8":  { name: LDAC, type: input }
+  "9":  { name: SHDN, type: input }
+  "10": { name: VOUTB, type: analog }
+  "11": { name: VREFB, type: analog }
+  "12": { name: AVSS, type: ground }
+  "13": { name: VREFA, type: analog }
+  "14": { name: VOUTA, type: analog }
+
+provenance:
+  "/pins":
+    - source: microchip/DS21897@revB
+      page: 15
+      locator: "Table 3-1 \"Pin Function Table\", column \"MCP4922 Pin No.\""
+    - source: microchip/DS21897@revB
+      page: 1
+      locator: "\"Package Types\" 14-Pin PDIP, SOIC, TSSOP figure (cross-check)"

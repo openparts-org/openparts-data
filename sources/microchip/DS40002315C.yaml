@@ -1,0 +1,22 @@
+# Official Microchip "AVR64DD32/28 Complete Datasheet", 674 pages.
+# Downloaded directly from ww1.microchip.com (URL below, the un-suffixed
+# "Complete" file name, which served revision C; the older
+# "...-Prelim-DataSheet-DS40002315A/B.pdf" also exist). document_id/
+# revision from the printed footer "DS40002315C - N"; date from the
+# revision history "Rev. C - 02/2024" (page 670). PDF page index = printed
+# page number. Ordering table 40-1 (page 649) and the C04-21395- RXB /
+# C04-074-PT tables (pages 665, 668) read with pdftotext -layout; the
+# pinout (page 16) and I/O multiplexing table (pages 17-18) were rendered
+# and read as images.
+schema_version: "0.1"
+kind: source
+id: microchip/DS40002315@revC
+
+publisher: microchip
+document_id: DS40002315
+document_type: datasheet
+
+revision: "C"
+date: "2024-02"
+
+url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/AVR64DD32-28-Complete-DataSheet-DS40002315.pdf"

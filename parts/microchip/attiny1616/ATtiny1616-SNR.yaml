@@ -1,0 +1,39 @@
+# ATtiny1616-SNR: 16 KB/2 KB, 20 pins, 20 MHz, 1.8V to 5.5V, SOIC, -40°C
+# to +105°C, tape & reel. MPN printed verbatim in section 38.1 "Product
+# Information" (DS40002204A page 566) -> existence verified. Package "S" =
+# SOIC300 (page 566 legend) -> section 39.3 "20-Pin SOIC", drawing
+# C04-094C (pages 572-573, images) -> new package
+# manufacturers/microchip/SOIC20-SO-C04-094C. lifecycle: no
+# production-status statement in the datasheet and the Microchip product
+# page refused curl and WebFetch (403); unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/ATtiny1616-SNR
+
+manufacturer: microchip
+mpn: ATtiny1616-SNR
+
+device: microchip/ATtiny1616-SOIC20
+package: manufacturers/microchip/SOIC20-SO-C04-094C
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40002204@revA
+
+provenance:
+  "/existence":
+    - source: microchip/DS40002204@revA
+      page: 566
+      locator: "Section 38.1 \"Product Information\", Ordering Code row \"ATtiny1616-SNR\""
+  "/package":
+    - source: microchip/DS40002204@revA
+      page: 566
+      locator: "Section 38.1, row \"ATtiny1616-SNR\", \"Pin Count 20\", \"Package Type SOIC\""
+    - source: microchip/DS40002204@revA
+      page: 573
+      locator: "Section 39.3 \"20-Pin SOIC\", drawing C04-094C sheet 2"

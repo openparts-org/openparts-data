@@ -1,0 +1,38 @@
+# PIC10F322 in the 6-pin SOT-23 (OT). The 8-pin PDIP/DFN numbers pins
+# differently (Figure 2) and is not covered. Pin names/numbers from Table
+# 1 "6 AND 8-PIN ALLOCATION TABLE", column "6-Pin" (DS40001585D page 3),
+# cross-checked against Figure 1 "6-PIN DIAGRAM" (same page).
+#
+# Types: VDD power, VSS ground, RA0-RA2 io. RA3 is typed input: Table 1-2
+# (page 8) gives RA3 "General purpose input" with no output type, and the
+# family table notes "One pin is input-only". alternate_functions carry
+# only the "Analog", "Basic" and "ICSP" columns of Table 1;
+# PWM/CWG/NCO/CLC/IOC/T0CKI/INT mappings are not modelled. The PIC10LF322
+# (low-voltage variant) is not covered.
+schema_version: "0.1"
+kind: device
+id: microchip/PIC10F322-SOT23
+
+manufacturer: microchip
+category: microcontroller
+family: "PIC10(L)F320/322"
+
+pins:
+  "1":  { name: RA0, type: io, alternate_functions: [AN0, ICSPDAT] }
+  "2":  { name: VSS, type: ground }
+  "3":  { name: RA1, type: io, alternate_functions: [AN1, CLKIN, ICSPCLK] }
+  "4":  { name: RA2, type: io, alternate_functions: [AN2, CLKR] }
+  "5":  { name: VDD, type: power }
+  "6":  { name: RA3, type: input, alternate_functions: [MCLR, VPP] }
+
+provenance:
+  "/pins":
+    - source: microchip/DS40001585@revD
+      page: 3
+      locator: "Table 1 \"6 AND 8-PIN ALLOCATION TABLE, PIC10(L)F320/322\", column \"6-Pin\", columns \"Analog\", \"Basic\" and \"ICSP\""
+    - source: microchip/DS40001585@revD
+      page: 3
+      locator: "Figure 1 \"6-PIN DIAGRAM, PIC10(L)F320/322\", SOT-23 (cross-check)"
+    - source: microchip/DS40001585@revD
+      page: 8
+      locator: "Table 1-2 \"PIC10(L)F320/322 PINOUT DESCRIPTION\", row RA3 \"General purpose input\""

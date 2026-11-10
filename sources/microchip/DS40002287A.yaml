@@ -1,0 +1,20 @@
+# Official Microchip "ATtiny212/214/412/414/416" Complete Datasheet, 585
+# pages. Downloaded directly from ww1.microchip.com (URL below) with curl;
+# revisions B-E of the same file name were not found (301 redirect).
+# document_id/revision from the printed footer "DS40002287A-page N"; date
+# from the revision history "Rev. A - 12/2020" (page 571). PDF page index
+# = printed page number. Read with pdftotext -layout: pinout (page 14),
+# Table 5-2 (page 18), ordering table 37.1 (page 554), C04-057-SN table
+# (page 558).
+schema_version: "0.1"
+kind: source
+id: microchip/DS40002287@revA
+
+publisher: microchip
+document_id: DS40002287
+document_type: datasheet
+
+revision: "A"
+date: "2020-12"
+
+url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny212-214-412-414-416-DataSheet-DS40002287A.pdf"

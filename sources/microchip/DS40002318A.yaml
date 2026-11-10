@@ -1,0 +1,21 @@
+# Official Microchip "ATtiny202/204/402/404/406" Complete Datasheet, 522
+# pages. Downloaded directly from ww1.microchip.com (URL below) with curl;
+# revisions B-E of the same file name returned the 301 "not found"
+# redirect, so A is the newest revision found. document_id/revision from
+# the printed footer "DS40002318A-page N"; date from section 37.1 "Rev. A
+# - 04/2021" (page 510). PDF page index = printed page number. Read with
+# pdftotext -layout: pinout (page 13), Table 5-2 (page 17), ordering table
+# 35.1 (page 493) and the C04-057-SN / C04-065-SL tables (pages 497, 500)
+# extract as clean text.
+schema_version: "0.1"
+kind: source
+id: microchip/DS40002318@revA
+
+publisher: microchip
+document_id: DS40002318
+document_type: datasheet
+
+revision: "A"
+date: "2021-04"
+
+url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny202-204-402-404-406-DataSheet-DS40002318A.pdf"

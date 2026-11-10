@@ -1,0 +1,41 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SCES195N
+# (page 13): "SN74LVC2G04DBVR Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 (C045, C04F, C04K,".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet, dated 3-Jul-2026).
+# Package: SOT-23 (DBV), outline DBV0006A (4214840/G) on page 22 ->
+# manufacturers/ti/DBV0006A. Read from this datasheet's rendered outline page.
+schema_version: "0.1"
+kind: part
+id: ti/SN74LVC2G04DBVR
+
+manufacturer: ti
+mpn: SN74LVC2G04DBVR
+
+device: ti/SN74LVC2G04
+package: manufacturers/ti/DBV0006A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SCES195N
+
+provenance:
+  "/existence":
+    - source: ti/SCES195N
+      page: 13
+      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74LVC2G04DBVR"
+  "/lifecycle":
+    - source: ti/SCES195N
+      page: 13
+      locator: "PACKAGE OPTION ADDENDUM, row SN74LVC2G04DBVR, Status column \"Active\""
+  "/package":
+    - source: ti/SCES195N
+      page: 13
+      locator: "PACKAGE OPTION ADDENDUM, row SN74LVC2G04DBVR, Package column \"SOT-23 (DBV)\""
+    - source: ti/SCES195N
+      page: 22
+      locator: "PACKAGE OUTLINE DBV0006A (4214840/G)"

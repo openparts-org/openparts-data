@@ -1,0 +1,36 @@
+# MPN read from the PACKAGE OPTION ADDENDUM (SLASEW9E PDF page 107, dated
+# 8-Apr-2026): "MSPM0G1507SDGS28R | Active | Production | VSSOP (DGS) | 28
+# | 5000 | LARGE T&R | Yes | NIPDAU | Level-2-260C-1 YEAR | -40 to 125".
+# Package: new manufacturers/ti/DGS0028A from the outline on page 121.
+schema_version: "0.1"
+kind: part
+id: ti/MSPM0G1507SDGS28R
+
+manufacturer: ti
+mpn: MSPM0G1507SDGS28R
+
+device: ti/MSPM0G1507-DGS28
+package: manufacturers/ti/DGS0028A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLASEW9E
+
+provenance:
+  "/existence":
+    - source: ti/SLASEW9E
+      page: 107
+      locator: "PACKAGE OPTION ADDENDUM (8-Apr-2026), Orderable part number \"MSPM0G1507SDGS28R\""
+  "/lifecycle":
+    - source: ti/SLASEW9E
+      page: 107
+      locator: "PACKAGE OPTION ADDENDUM, row \"MSPM0G1507SDGS28R\", Status \"Active\", Material type \"Production\""
+  "/package":
+    - source: ti/SLASEW9E
+      page: 121
+      locator: "PACKAGE OUTLINE DGS0028A (4226365/A 10/2020); addendum row \"VSSOP (DGS) | 28\""

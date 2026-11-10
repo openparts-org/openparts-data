@@ -1,0 +1,90 @@
+# AVR128DA48 in the 48-pin packages (TQFP and VQFN share one pin map:
+# section 2.3 "48-Pin VQFN and TQFP"). Pin names/numbers from section 3.1
+# "I/O Multiplexing", column "VQFN48/TQFP48" (DS40002183E pages 18-19,
+# rendered and read as images), cross-checked pin for pin against the
+# pinout figure (page 16).
+#
+# Types: VDD/AVDD power, GND ground, port pins io. PF6 is typed input
+# (table note 5 "Input-only") with RESET as alternate function. UPDI is a
+# dedicated programming/debug pin, typed io (single-wire bidirectional
+# interface). Page 14/16 note: "For the AVR DA Family, the VDD and AVDD
+# are internally connected (no separate power domains)" -- the names
+# differ, so no connected_to is recorded. alternate_functions carry only
+# the "Special" and "ADC0" columns (the "TWI" marker in the Special column
+# is not a signal name: skipped); PTC/AC/DAC/ZCD/USART/SPI/TWI/
+# TCA/TCB/TCD/EVSYS/CCL mappings are not modelled. PF0-PF5 ADC0 inputs
+# AIN16-AIN21 are "Positive input-only" (table note 6).
+#
+# Exposed pad (VQFN only): section 4.1.1 "Special Consideration for
+# Packages with Center Pad" (page 20) says the pad "is not electrically
+# connected to the internal circuit of the chip" -> no EP pin (the
+# footprint still gets the pad).
+schema_version: "0.1"
+kind: device
+id: microchip/AVR128DA48
+
+manufacturer: microchip
+category: microcontroller
+family: "AVR DA"
+
+pins:
+  "1":  { name: PA5, type: io }
+  "2":  { name: PA6, type: io }
+  "3":  { name: PA7, type: io, alternate_functions: [CLKOUT] }
+  "4":  { name: PB0, type: io }
+  "5":  { name: PB1, type: io }
+  "6":  { name: PB2, type: io }
+  "7":  { name: PB3, type: io }
+  "8":  { name: PB4, type: io }
+  "9":  { name: PB5, type: io }
+  "10": { name: PC0, type: io }
+  "11": { name: PC1, type: io }
+  "12": { name: PC2, type: io }
+  "13": { name: PC3, type: io }
+  "14": { name: VDD, type: power }
+  "15": { name: GND, type: ground }
+  "16": { name: PC4, type: io }
+  "17": { name: PC5, type: io }
+  "18": { name: PC6, type: io }
+  "19": { name: PC7, type: io }
+  "20": { name: PD0, type: io, alternate_functions: [AIN0] }
+  "21": { name: PD1, type: io, alternate_functions: [AIN1] }
+  "22": { name: PD2, type: io, alternate_functions: [AIN2] }
+  "23": { name: PD3, type: io, alternate_functions: [AIN3] }
+  "24": { name: PD4, type: io, alternate_functions: [AIN4] }
+  "25": { name: PD5, type: io, alternate_functions: [AIN5] }
+  "26": { name: PD6, type: io, alternate_functions: [AIN6] }
+  "27": { name: PD7, type: io, alternate_functions: [VREFA, AIN7] }
+  "28": { name: AVDD, type: power }
+  "29": { name: GND, type: ground }
+  "30": { name: PE0, type: io, alternate_functions: [AIN8] }
+  "31": { name: PE1, type: io, alternate_functions: [AIN9] }
+  "32": { name: PE2, type: io, alternate_functions: [AIN10] }
+  "33": { name: PE3, type: io, alternate_functions: [AIN11] }
+  "34": { name: PF0, type: io, alternate_functions: [XTAL32K1, AIN16] }
+  "35": { name: PF1, type: io, alternate_functions: [XTAL32K2, AIN17] }
+  "36": { name: PF2, type: io, alternate_functions: [AIN18] }
+  "37": { name: PF3, type: io, alternate_functions: [AIN19] }
+  "38": { name: PF4, type: io, alternate_functions: [AIN20] }
+  "39": { name: PF5, type: io, alternate_functions: [AIN21] }
+  "40": { name: PF6, type: input, alternate_functions: [RESET] }
+  "41": { name: UPDI, type: io }
+  "42": { name: VDD, type: power }
+  "43": { name: GND, type: ground }
+  "44": { name: PA0, type: io, alternate_functions: [EXTCLK] }
+  "45": { name: PA1, type: io }
+  "46": { name: PA2, type: io }
+  "47": { name: PA3, type: io }
+  "48": { name: PA4, type: io }
+
+provenance:
+  "/pins":
+    - source: microchip/DS40002183@revE
+      page: 18
+      locator: "Section 3.1 \"I/O Multiplexing\", column \"VQFN48/TQFP48\", columns \"Special\" and \"ADC0\""
+    - source: microchip/DS40002183@revE
+      page: 19
+      locator: "Section 3.1 table (continued), rows PE0-GND"
+    - source: microchip/DS40002183@revE
+      page: 16
+      locator: "Section 2.3 \"48-Pin VQFN and TQFP\" pinout figure (cross-check)"

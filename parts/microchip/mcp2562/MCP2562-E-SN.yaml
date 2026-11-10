@@ -1,0 +1,43 @@
+# MPN "MCP2562-E/SN" is PROBABLE: assembled from the Product
+# Identification System legend of microchip/DS20005167@revC (page 27); the
+# examples there show only MCP2561 SOIC codes (MCP2561-E/SN,
+# MCP2561T-E/SN, ...), and the marking table (page 17) lists MCP2562
+# only in DFN (MCP2562-E/MF ...).
+# Package: SN = C04-057C (page 23, rendered): every row (e 1.27 BSC,
+# A max 1.75, A2 min 1.25, A1 0.10-0.25, E 6.00 BSC, E1 3.90 BSC, D 4.90
+# BSC, L 0.40-1.27, c 0.17-0.25, b 0.31-0.51) equals
+# standards/SOIC8-3.90x4.90-P1.27 (C04-057-SN Rev D), so it is reused.
+# lifecycle: not stated in the datasheet; no first-party lifecycle page
+# was read (microchip.com product pages return "Access Denied"), so it
+# is recorded as unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP2562-E-SN
+
+manufacturer: microchip
+mpn: "MCP2562-E/SN"
+
+device: microchip/MCP2562
+package: standards/SOIC8-3.90x4.90-P1.27
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20005167@revC
+
+provenance:
+  "/existence":
+    - source: microchip/DS20005167@revC
+      page: 27
+      locator: "Product Identification System: Device \"MCP2562\", Temperature Range \"E = -40C to +125C (Extended)\", Package \"SN = Plastic Small Outline - Narrow, 3.90 mm Body, 8-lead\" (assembled from the legend; the examples list only MCP2561 SOIC codes)"
+  "/package":
+    - source: microchip/DS20005167@revC
+      page: 27
+      locator: "Product Identification System, Package \"SN\""
+    - source: microchip/DS20005167@revC
+      page: 23
+      locator: "\"8-Lead Plastic Small Outline (SN) - Narrow, 3.90 mm Body [SOIC]\", Microchip Technology Drawing No. C04-057C Sheet 2 of 2 (dimension table)"

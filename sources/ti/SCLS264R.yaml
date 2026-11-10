@@ -1,0 +1,20 @@
+# Official TI datasheet "SNx4AHCT125 quadruple bus buffer gates with 3-state outputs". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SCLS264R - DECEMBER 1995 - REVISED FEBRUARY 2024". 41 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawing named in the
+# part file were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 7-Nov-2026 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SCLS264R
+
+publisher: ti
+document_id: SCLS264R
+document_type: datasheet
+
+revision: "R"
+date: "2024-02"
+
+url: "https://www.ti.com/lit/ds/symlink/sn74ahct125.pdf"

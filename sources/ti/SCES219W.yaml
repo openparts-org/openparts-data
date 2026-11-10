@@ -1,0 +1,20 @@
+# Official TI datasheet "SN74LVC1G32 single 2-input positive-OR gate". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SCES219W - APRIL 1999 - REVISED AUGUST 2026". 51 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawing named in the
+# part file were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 5-Nov-2026 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SCES219W
+
+publisher: ti
+document_id: SCES219W
+document_type: datasheet
+
+revision: "W"
+date: "2026-08"
+
+url: "https://www.ti.com/lit/ds/symlink/sn74lvc1g32.pdf"

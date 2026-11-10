@@ -1,0 +1,22 @@
+# Würth WR-PHD THT Straight Dual Pin Header, 2 x 5 (10 pins), 1.27 mm pitch
+# (wurth/62201021121-DS page 1, "Article Properties" Pins 10). The datasheet names no
+# signals: each pin is named by its number, all passive.
+schema_version: "0.1"
+kind: device
+id: wurth/62201021121
+
+manufacturer: wurth
+category: connector
+family: WR-PHD
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive }
+  "4": { name: "4", type: passive }
+  "5": { name: "5", type: passive }
+  "6": { name: "6", type: passive }
+  "7": { name: "7", type: passive }
+  "8": { name: "8", type: passive }
+  "9": { name: "9", type: passive }
+  "10": { name: "10", type: passive }

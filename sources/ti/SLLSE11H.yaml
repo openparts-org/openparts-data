@@ -1,0 +1,20 @@
+# Official TI datasheet "SN65HVD7x 3.3-V RS-485 transceivers (SN65HVD72/75/78)". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SLLSE11H - MARCH 2012 - REVISED MARCH 2019". 47 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawing named in the
+# part file were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 15-Jul-2026 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SLLSE11H
+
+publisher: ti
+document_id: SLLSE11H
+document_type: datasheet
+
+revision: "SLLSE11H"
+date: "2019-03"
+
+url: "https://www.ti.com/lit/ds/symlink/sn65hvd72.pdf"

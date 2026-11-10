@@ -1,0 +1,40 @@
+# MPN "MCP4921-E/SN" is PROBABLE: printed only as ordering example c)
+# in the Product Identification System of microchip/DS21897@revB (page 39).
+# Package: SN = C04-057B (page 32): every table value (e 1.27 BSC, A
+# max 1.75, A2 min 1.25, A1 0.10-0.25, E 6.00 BSC, E1 3.90 BSC, D 4.90
+# BSC, L 0.40-1.27, c 0.17-0.25, b 0.31-0.51) equals
+# standards/SOIC8-3.90x4.90-P1.27 (C04-057-SN Rev D), so it is reused.
+# lifecycle: not stated in the datasheet; no first-party lifecycle page
+# was read (microchip.com product pages return "Access Denied"), so it
+# is recorded as unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP4921-E-SN
+
+manufacturer: microchip
+mpn: "MCP4921-E/SN"
+
+device: microchip/MCP4921
+package: standards/SOIC8-3.90x4.90-P1.27
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS21897@revB
+
+provenance:
+  "/existence":
+    - source: microchip/DS21897@revB
+      page: 39
+      locator: "Product Identification System, example c) \"MCP4921-E/SN: Extended Temperature, 8LD SOIC package.\""
+  "/package":
+    - source: microchip/DS21897@revB
+      page: 39
+      locator: "Product Identification System, Package \"SN = Plastic SOIC, (150 mil Body), 8-lead\""
+    - source: microchip/DS21897@revB
+      page: 32
+      locator: "\"8-Lead Plastic Small Outline (SN) - Narrow, 3.90 mm Body [SOIC]\", Microchip Technology Drawing C04-057B (dimension table)"

@@ -1,0 +1,30 @@
+# 12-bit I2C DAC with EEPROM (MCP4725), SOT-23-6 pin map from Table
+# 3-1 "Pin Function Table" (DS22039D page 13), checked against the
+# "Package Type SOT-23-6" figure on page 1 (VOUT 1, VSS 2, VDD 3 on one
+# side; SDA 4, SCL 5, A0 6 on the other); all 6 pins match. VOUT typed
+# analog, SCL ("I2C Serial Clock Input") clock, A0 (address bit select)
+# input.
+schema_version: "0.1"
+kind: device
+id: microchip/MCP4725
+
+manufacturer: microchip
+category: other
+family: MCP4725
+
+pins:
+  "1":  { name: VOUT, type: analog }
+  "2":  { name: VSS, type: ground }
+  "3":  { name: VDD, type: power }
+  "4":  { name: SDA, type: io }
+  "5":  { name: SCL, type: clock }
+  "6":  { name: A0, type: input }
+
+provenance:
+  "/pins":
+    - source: microchip/DS22039@revD
+      page: 13
+      locator: "Table 3-1 \"Pin Function Table\", column \"MCP4725 SOT-23\""
+    - source: microchip/DS22039@revD
+      page: 1
+      locator: "\"Package Type SOT-23-6\" figure (cross-check)"

@@ -1,0 +1,25 @@
+# Würth Elektronik datasheet for order code 61300811121 ("WR-PHD Pin Header"),
+# 6 pages, A4 landscape. we-online.com refuses curl (HTTP 403);
+# fetched once with WebFetch, which saved the original PDF (PDFlib,
+# author "Würth Elektronik eiSos GmbH & Co. KG", title "61300811121
+# Datasheet WR-PHD Pin Header"). Read with pdftotext -layout/-raw plus 110-300 dpi
+# renders of page 1 (the drawing is vector art; the hole diameter and
+# side-view dimensions are rotated text). The title block on every page
+# carries REVISION "003.000", DATE "2023-01-08" (YYYY-MM-DD), ORDER CODE
+# "61300811121", STATUS "Valid" (the document's release status, not a
+# product lifecycle status). PDF page index = printed page number
+# ("1/6" on page 1). The drawing is in first-angle projection (title
+# block symbol): the view above the front view is the bottom view, the
+# one below it the top view.
+schema_version: "0.1"
+kind: source
+id: wurth/61300811121-DS
+
+publisher: wurth
+document_id: "61300811121"
+document_type: datasheet
+
+revision: "003.000"
+date: "2023-01-08"
+
+url: "https://www.we-online.com/components/products/datasheet/61300811121.pdf"

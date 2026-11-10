@@ -1,0 +1,22 @@
+# Official Microchip "PIC10(L)F320/322" Data Sheet, 193 pages. Downloaded
+# directly from ww1.microchip.com (URL below) with curl; 40001585E.pdf was
+# not found (301 redirect). document_id/revision from the printed footer
+# "DS40001585D-page N"; date from the revision history "Revision D
+# (11/2015)". PDF page index = printed page number. Pin diagram and Table
+# 1 (page 3) and Table 1-2 (page 8) read with pdftotext -layout; the
+# C04-028B SOT-23 drawing (page 183) is an image and was rendered at 220
+# dpi. The ordering section is only a "PRODUCT IDENTIFICATION SYSTEM"
+# legend with examples (page 191). The Microchip product page returned 403
+# to curl and WebFetch.
+schema_version: "0.1"
+kind: source
+id: microchip/DS40001585@revD
+
+publisher: microchip
+document_id: DS40001585
+document_type: datasheet
+
+revision: "D"
+date: "2015-11"
+
+url: "https://ww1.microchip.com/downloads/en/DeviceDoc/40001585D.pdf"

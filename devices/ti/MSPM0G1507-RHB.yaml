@@ -1,0 +1,77 @@
+# MSPM0G1507 (Cortex-M0+, 128 KB flash / 32 KB SRAM) in the 32-pin RHB
+# (VQFN) package. Pin map read from Figure 6-5 "32-Pin RHB (VQFN) (Top
+# View)" (SLASEW9E page 10, rendered) and cross-checked pin for pin
+# against Table 6-2 "Pin Attributes" (pages 13-17, column "32 VQFN"): all
+# 32 pins match. Other packages (LQFP64/48, VQFN48/24, VSSOP28, DSBGA28)
+# number pins differently and are not covered.
+#
+# Names are the port/supply names of the figure labels; the other figure
+# labels (clock, SWD, ADC channel Ax_y, VREF, RTC_OUT, FCC_IN) are
+# recorded as alternate_functions exactly as that figure prints them (the
+# same pin carries different label subsets in different package figures).
+# The digital mux (PINCMx) functions and the analog comparator/OPA inputs
+# of Table 6-2 are not modelled. Types: VDD and VCORE (regulated core
+# supply output, Table 6-3) power, VSS ground, NRST reset, port pins io
+# (PA0/PA1 are 5V-tolerant open-drain per Table 6-2, still typed io). The
+# MSPM0G1506/1505 share these pin maps but are separate devices, not
+# covered.
+#
+# EP: Table 6-3 "Signal Descriptions" (page 22), row "QFN Pad": "QFN
+# package exposed thermal pad. TI recommends connection to VSS." --
+# recommended, not stated as internally connected, so typed passive (as
+# ti/MSPM0L1306-RHB).
+schema_version: "0.1"
+kind: device
+id: ti/MSPM0G1507-RHB
+
+manufacturer: ti
+category: microcontroller
+family: MSPM0G150x
+
+pins:
+  "1":  { name: PA0, type: io, alternate_functions: [FCC_IN] }
+  "2":  { name: PA1, type: io }
+  "3":  { name: NRST, type: reset }
+  "4":  { name: VDD, type: power }
+  "5":  { name: VSS, type: ground }
+  "6":  { name: PA2, type: io, alternate_functions: [ROSC] }
+  "7":  { name: PA3, type: io, alternate_functions: [LFXIN] }
+  "8":  { name: PA4, type: io, alternate_functions: [LFCLK_IN, LFXOUT] }
+  "9":  { name: PA5, type: io, alternate_functions: [HFXIN, FCC_IN] }
+  "10": { name: PA6, type: io, alternate_functions: [HFCLK_IN, HFXOUT] }
+  "11": { name: PA7, type: io, alternate_functions: [CLK_OUT] }
+  "12": { name: PA8, type: io }
+  "13": { name: PA9, type: io, alternate_functions: [RTC_OUT, CLK_OUT] }
+  "14": { name: PA10, type: io, alternate_functions: [CLK_OUT] }
+  "15": { name: PA11, type: io }
+  "16": { name: PA12, type: io, alternate_functions: [FCC_IN] }
+  "17": { name: PA13, type: io }
+  "18": { name: PA14, type: io, alternate_functions: [CLK_OUT, A0_12] }
+  "19": { name: PA15, type: io, alternate_functions: [A1_0] }
+  "20": { name: PA16, type: io, alternate_functions: [A1_1, FCC_IN] }
+  "21": { name: PA17, type: io, alternate_functions: [A1_2] }
+  "22": { name: PA18, type: io, alternate_functions: [A1_3] }
+  "23": { name: PA19, type: io, alternate_functions: [SWDIO] }
+  "24": { name: PA20, type: io, alternate_functions: [SWCLK] }
+  "25": { name: PA21, type: io, alternate_functions: [A1_7, VREF-] }
+  "26": { name: PA22, type: io, alternate_functions: [A0_7] }
+  "27": { name: PA23, type: io, alternate_functions: [VREF+] }
+  "28": { name: PA24, type: io, alternate_functions: [A0_3] }
+  "29": { name: PA25, type: io, alternate_functions: [A0_2] }
+  "30": { name: PA26, type: io, alternate_functions: [A0_1] }
+  "31": { name: PA27, type: io, alternate_functions: [RTC_OUT, A0_0] }
+  "32": { name: VCORE, type: power }
+  "EP":  { name: QFN Pad, type: passive }
+
+provenance:
+  "/pins":
+    - source: ti/SLASEW9E
+      page: 10
+      locator: "Figure 6-5 \"32-Pin RHB (VQFN) (Top View)\""
+    - source: ti/SLASEW9E
+      page: 13
+      locator: "Table 6-2 \"Pin Attributes\" (pages 13-17), column \"32 VQFN\" (cross-check, all 32 pins matched)"
+  "/pins/EP":
+    - source: ti/SLASEW9E
+      page: 22
+      locator: "Table 6-3 \"Signal Descriptions\", row \"QFN Pad\": \"QFN package exposed thermal pad. TI recommends connection to VSS.\""

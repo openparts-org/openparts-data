@@ -1,0 +1,20 @@
+# Official TI datasheet "SN74LVC2G04 dual inverter gate". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SCES195N - APRIL 1999 - REVISED AUGUST 2015". 31 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawing named in the
+# part file were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 3-Jul-2026 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SCES195N
+
+publisher: ti
+document_id: SCES195N
+document_type: datasheet
+
+revision: "N"
+date: "2015-08"
+
+url: "https://www.ti.com/lit/ds/symlink/sn74lvc2g04.pdf"

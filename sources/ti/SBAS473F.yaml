@@ -1,0 +1,20 @@
+# Official TI datasheet "ADS101x ultra-small, low-power, I2C-compatible, 3.3-kSPS, 12-bit ADCs". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SBAS473F - MAY 2009 - REVISED JANUARY 2025". 50 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawing named in the
+# part file were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 7-Nov-2025 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SBAS473F
+
+publisher: ti
+document_id: SBAS473F
+document_type: datasheet
+
+revision: "F"
+date: "2025-01"
+
+url: "https://www.ti.com/lit/ds/symlink/ads1015.pdf"

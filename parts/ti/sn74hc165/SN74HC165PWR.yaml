@@ -1,0 +1,42 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SCLS116H
+# (page 17): "SN74HC165PWR Active Production TSSOP (PW) | 16 2000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 HC165".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet, dated 23-Oct-2026).
+# Package: TSSOP (PW), outline PW0016A (4220204/B) on page 33 ->
+# standards/TSSOP16-4.4x5.0-P0.65-TI-PW. Its pdftotext text matches the outline page the package
+# was read from (ti/SCLS041J page 34) line for line, so the package is reused.
+schema_version: "0.1"
+kind: part
+id: ti/SN74HC165PWR
+
+manufacturer: ti
+mpn: SN74HC165PWR
+
+device: ti/SN74HC165
+package: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SCLS116H
+
+provenance:
+  "/existence":
+    - source: ti/SCLS116H
+      page: 17
+      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74HC165PWR"
+  "/lifecycle":
+    - source: ti/SCLS116H
+      page: 17
+      locator: "PACKAGE OPTION ADDENDUM, row SN74HC165PWR, Status column \"Active\""
+  "/package":
+    - source: ti/SCLS116H
+      page: 17
+      locator: "PACKAGE OPTION ADDENDUM, row SN74HC165PWR, Package column \"TSSOP (PW)\""
+    - source: ti/SCLS116H
+      page: 33
+      locator: "PACKAGE OUTLINE PW0016A (4220204/B)"

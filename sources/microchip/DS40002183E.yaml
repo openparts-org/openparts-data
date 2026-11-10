@@ -1,0 +1,22 @@
+# Official Microchip "AVR128DA28/32/48/64(S)" Complete Data Sheet, 700
+# pages. Downloaded directly from ww1.microchip.com (URL below, the
+# un-suffixed file name, which served revision E; the B and C file names
+# also exist). document_id/revision from the printed footer "DS40002183E -
+# N"; date from section 41.1 "Rev. E - 09/2024" (TOC page 12). PDF page
+# index = printed page number. Pinouts (pages 14, 16), ordering table
+# (pages 649-650), C04-073 / C04-494 / C04-300-PT tables (pages 662, 674,
+# 680) read with pdftotext -layout; the I/O multiplexing table (pages
+# 18-19) and the C04-052C SOIC table (page 659, image) were rendered and
+# read as images.
+schema_version: "0.1"
+kind: source
+id: microchip/DS40002183@revE
+
+publisher: microchip
+document_id: DS40002183
+document_type: datasheet
+
+revision: "E"
+date: "2024-09"
+
+url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/AVR128DA28-32-48-64-Data-Sheet-DS40002183.pdf"

@@ -1,0 +1,20 @@
+# Official Microchip "ATtiny3216/3217" Complete Datasheet, 588 pages.
+# Downloaded directly from ww1.microchip.com (URL below) with curl;
+# revisions B-E of the same file name were not found (301 redirect).
+# document_id/revision from the printed footer "DS40002205A-page N"; date
+# from section 41.1 "Rev. A - 05/2020" (page 576). PDF page index =
+# printed page number. Pinout (page 14), Table 5-1 (page 16) and ordering
+# table 38.1 (page 565) read with pdftotext -layout; the 20-lead SOIC
+# drawing C04-094C (page 568) is an image and was rendered.
+schema_version: "0.1"
+kind: source
+id: microchip/DS40002205@revA
+
+publisher: microchip
+document_id: DS40002205
+document_type: datasheet
+
+revision: "A"
+date: "2020-05"
+
+url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny3216-17-DataSheet-DS40002205A.pdf"

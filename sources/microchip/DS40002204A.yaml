@@ -1,0 +1,21 @@
+# Official Microchip "ATtiny1614/1616/1617" Complete Datasheet, 598 pages.
+# Downloaded directly from ww1.microchip.com (URL below) with curl;
+# revisions B-E of the same file name were not found (301 redirect).
+# document_id/revision from the printed footer "DS40002204A-page N"; date
+# from section 41.1 "Rev. A - 05/2020". PDF page index = printed page
+# number. Pinouts (pages 14-16), ordering table 38.1 (page 566),
+# C04-065-SL (page 569) and C04-21380 (page 577) tables read with
+# pdftotext -layout; Table 5-1 (page 18) and the C04-094C 20-lead SOIC
+# table (page 573, an image) were rendered and read as images.
+schema_version: "0.1"
+kind: source
+id: microchip/DS40002204@revA
+
+publisher: microchip
+document_id: DS40002204
+document_type: datasheet
+
+revision: "A"
+date: "2020-05"
+
+url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny1614-16-17-DataSheet-DS40002204A.pdf"

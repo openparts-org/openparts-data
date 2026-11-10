@@ -1,0 +1,25 @@
+# Würth Elektronik datasheet for order code 61300611821 ("WR-PHD Socket Header"),
+# 8 pages, A4 landscape. we-online.com refuses curl (HTTP 403);
+# fetched once with WebFetch, which saved the original PDF (PDFlib,
+# author "Würth Elektronik eiSos GmbH & Co. KG", title "61300611821
+# Datasheet WR-PHD Socket Header"). Read with pdftotext -layout/-raw plus 110-300 dpi
+# renders of page 1 (the drawing is vector art; the hole diameter and
+# side-view dimensions are rotated text). The title block on every page
+# carries REVISION "002.001", DATE "2024-04-10" (YYYY-MM-DD), ORDER CODE
+# "61300611821", STATUS "Valid" (the document's release status, not a
+# product lifecycle status). PDF page index = printed page number
+# ("1/8" on page 1). The drawing is in first-angle projection (title
+# block symbol): the view above the front view is the bottom view, the
+# one below it the top view.
+schema_version: "0.1"
+kind: source
+id: wurth/61300611821-DS
+
+publisher: wurth
+document_id: "61300611821"
+document_type: datasheet
+
+revision: "002.001"
+date: "2024-04-10"
+
+url: "https://www.we-online.com/components/products/datasheet/61300611821.pdf"

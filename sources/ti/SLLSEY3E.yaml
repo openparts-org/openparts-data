@@ -1,0 +1,20 @@
+# Official TI datasheet "THVD14x0 3.3-V to 5-V RS-485 transceivers with surge protection". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SLLSEY3E - MAY 2018 - REVISED MAY 2019". 54 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawing named in the
+# part file were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 15-Jul-2026 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SLLSEY3E
+
+publisher: ti
+document_id: SLLSEY3E
+document_type: datasheet
+
+revision: "SLLSEY3E"
+date: "2019-05"
+
+url: "https://www.ti.com/lit/ds/symlink/thvd1450.pdf"

@@ -1,0 +1,43 @@
+# AVR128DA48-I/6LX: 128 KB/16 KB, 48 pins, VQFN, 1.8-5.5V, -40°C to +85°C,
+# tray. MPN printed verbatim in the ordering table (DS40002183E page 649)
+# -> existence verified. Package -> section 40.9 "48-Pin VQFN", drawing
+# C04-494 Rev B (pages 673-674). Every modelled number of its table
+# matches manufacturers/microchip/VQFN48-6x6-P0.4-EP4.1-C04-494 (built
+# from C04-494 Rev A in DS40002173C): e 0.40 BSC, A 0.80/0.85/0.90, A1
+# 0.00/0.02/0.05, A3 0.20 REF, D/E 6.00 BSC, D2/E2 4.00/4.10/4.20, b
+# 0.15/0.20/0.25, L 0.30/0.40/0.50 (CH 0.35 REF and K 0.55 REF are not
+# modelled in either) -> reused (validate with --source
+# sources/microchip/DS40002173C.yaml). lifecycle: no production-status
+# statement in the datasheet and the Microchip product page refused curl
+# and WebFetch (403); unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/AVR128DA48-I-6LX
+
+manufacturer: microchip
+mpn: "AVR128DA48-I/6LX"
+
+device: microchip/AVR128DA48
+package: manufacturers/microchip/VQFN48-6x6-P0.4-EP4.1-C04-494
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40002183@revE
+
+provenance:
+  "/existence":
+    - source: microchip/DS40002183@revE
+      page: 649
+      locator: "Section 39 ordering table, Ordering Code row \"AVR128DA48-I/6LX\""
+  "/package":
+    - source: microchip/DS40002183@revE
+      page: 649
+      locator: "Ordering table row \"AVR128DA48-I/6LX\", \"48\", \"VQFN\""
+    - source: microchip/DS40002183@revE
+      page: 674
+      locator: "Section 40.9 \"48-Pin VQFN\", drawing C04-494 Rev B sheet 2"

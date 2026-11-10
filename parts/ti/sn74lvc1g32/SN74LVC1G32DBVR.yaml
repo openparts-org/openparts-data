@@ -1,0 +1,42 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SCES219W
+# (page 20): "SN74LVC1G32DBVR Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R Yes NIPDAU | SN Level-1-260C-UNLIM -40 to 125 (C325, C32F, C32J,".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet, dated 5-Nov-2026).
+# Package: SOT-23 (DBV), outline DBV0005A (4214839/K) on page 28 ->
+# manufacturers/ti/DBV0005A. Its pdftotext text matches the outline page the package
+# was read from (ti/SBOS833R page 94) line for line, so the package is reused.
+schema_version: "0.1"
+kind: part
+id: ti/SN74LVC1G32DBVR
+
+manufacturer: ti
+mpn: SN74LVC1G32DBVR
+
+device: ti/SN74LVC1G32-DBV
+package: manufacturers/ti/DBV0005A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SCES219W
+
+provenance:
+  "/existence":
+    - source: ti/SCES219W
+      page: 20
+      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74LVC1G32DBVR"
+  "/lifecycle":
+    - source: ti/SCES219W
+      page: 20
+      locator: "PACKAGE OPTION ADDENDUM, row SN74LVC1G32DBVR, Status column \"Active\""
+  "/package":
+    - source: ti/SCES219W
+      page: 20
+      locator: "PACKAGE OPTION ADDENDUM, row SN74LVC1G32DBVR, Package column \"SOT-23 (DBV)\""
+    - source: ti/SCES219W
+      page: 28
+      locator: "PACKAGE OUTLINE DBV0005A (4214839/K)"

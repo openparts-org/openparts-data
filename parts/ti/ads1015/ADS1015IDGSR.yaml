@@ -1,0 +1,42 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SBAS473F
+# (page 39): "ADS1015IDGSR Active Production VSSOP (DGS) | 10 2500 | LARGE T&R Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 BRPI".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet, dated 7-Nov-2025).
+# Package: VSSOP (DGS), outline DGS0010A (4221984/A) on page 47 ->
+# standards/MSOP10-3.0x3.0-P0.5-TI-DGS. Its pdftotext text matches the outline page the package
+# was read from (ti/SBOS547C page 38) line for line, so the package is reused.
+schema_version: "0.1"
+kind: part
+id: ti/ADS1015IDGSR
+
+manufacturer: ti
+mpn: ADS1015IDGSR
+
+device: ti/ADS1015
+package: standards/MSOP10-3.0x3.0-P0.5-TI-DGS
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SBAS473F
+
+provenance:
+  "/existence":
+    - source: ti/SBAS473F
+      page: 39
+      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row ADS1015IDGSR"
+  "/lifecycle":
+    - source: ti/SBAS473F
+      page: 39
+      locator: "PACKAGE OPTION ADDENDUM, row ADS1015IDGSR, Status column \"Active\""
+  "/package":
+    - source: ti/SBAS473F
+      page: 39
+      locator: "PACKAGE OPTION ADDENDUM, row ADS1015IDGSR, Package column \"VSSOP (DGS)\""
+    - source: ti/SBAS473F
+      page: 47
+      locator: "PACKAGE OUTLINE DGS0010A (4221984/A)"

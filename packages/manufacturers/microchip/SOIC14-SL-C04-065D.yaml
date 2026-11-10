@@ -1,0 +1,104 @@
+# 14-lead narrow (3.90 mm) SOIC, Microchip drawing C04-065-SL Rev D
+# ("14-Lead Plastic Small Outline (SL) - Narrow, 3.90 mm Body [SOIC]"),
+# dimension table on DS40002204A page 569 (text). The same Rev D table
+# with identical numbers is printed in DS40002318A page 500 and
+# DS40002287A page 561. Copied as printed: BSC values as nominal,
+# min/max-only rows as min/max only. body_height = A2 (MIN 1.25 only),
+# overall_height = A (MAX 1.75 only). Chamfer h, L1 (1.04 REF) and the
+# angles are not modelled. Not manufacturers/microchip/SOIC14-SL-C04-065B
+# (drawing Rev B in DS21897B): that table gives lead thickness c
+# 0.17-0.25, this Rev D table c 0.10-0.25 -- every other row is the same,
+# but the numbers differ, so a separate package.
+schema_version: "0.1"
+kind: package
+id: manufacturers/microchip/SOIC14-SL-C04-065D
+
+family: soic
+lead_count: 14
+
+pitch:
+  nominal: 1.27
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 3.90
+    unit: mm
+  body_length:
+    nominal: 8.65
+    unit: mm
+  body_height:
+    min: 1.25
+    unit: mm
+  overall_width:
+    nominal: 6.00
+    unit: mm
+  overall_height:
+    max: 1.75
+    unit: mm
+  standoff:
+    min: 0.10
+    max: 0.25
+    unit: mm
+  lead_width:
+    min: 0.31
+    max: 0.51
+    unit: mm
+  lead_length:
+    min: 0.40
+    max: 1.27
+    unit: mm
+  lead_thickness:
+    min: 0.10
+    max: 0.25
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: soic
+
+provenance:
+  "/lead_count":
+    - source: microchip/DS40002204@revA
+      page: 569
+      locator: "C04-065-SL Rev D sheet 2 table, \"Number of Pins N 14\""
+  "/pitch":
+    - source: microchip/DS40002204@revA
+      page: 569
+      locator: "C04-065-SL Rev D sheet 2 table, \"Pitch e 1.27 BSC\""
+  "/dimensions/body_width":
+    - source: microchip/DS40002204@revA
+      page: 569
+      locator: "C04-065-SL Rev D sheet 2 table, \"Molded Package Width E1 3.90 BSC\""
+  "/dimensions/body_length":
+    - source: microchip/DS40002204@revA
+      page: 569
+      locator: "C04-065-SL Rev D sheet 2 table, \"Overall Length D 8.65 BSC\""
+  "/dimensions/body_height":
+    - source: microchip/DS40002204@revA
+      page: 569
+      locator: "C04-065-SL Rev D sheet 2 table, \"Molded Package Thickness A2\" (MIN 1.25 only)"
+  "/dimensions/overall_width":
+    - source: microchip/DS40002204@revA
+      page: 569
+      locator: "C04-065-SL Rev D sheet 2 table, \"Overall Width E 6.00 BSC\""
+  "/dimensions/overall_height":
+    - source: microchip/DS40002204@revA
+      page: 569
+      locator: "C04-065-SL Rev D sheet 2 table, \"Overall Height A\" (MAX 1.75 only)"
+  "/dimensions/standoff":
+    - source: microchip/DS40002204@revA
+      page: 569
+      locator: "C04-065-SL Rev D sheet 2 table, \"Standoff A1 0.10 / - / 0.25\""
+  "/dimensions/lead_width":
+    - source: microchip/DS40002204@revA
+      page: 569
+      locator: "C04-065-SL Rev D sheet 2 table, \"Lead Width b 0.31 / - / 0.51\""
+  "/dimensions/lead_length":
+    - source: microchip/DS40002204@revA
+      page: 569
+      locator: "C04-065-SL Rev D sheet 2 table, \"Foot Length L 0.40 / - / 1.27\""
+  "/dimensions/lead_thickness":
+    - source: microchip/DS40002204@revA
+      page: 569
+      locator: "C04-065-SL Rev D sheet 2 table, \"Lead Thickness c 0.10 / - / 0.25\""

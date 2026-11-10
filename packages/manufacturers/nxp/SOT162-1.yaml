@@ -1,3 +1,6 @@
+# NOTE (2026-11-10): out of date below -- the generators now draw a
+# min/max-only dimension at its midpoint (never stored; openparts-mcad
+# defaults::required), so this package does generate a footprint and model.
 # NXP SOT162-1, SO16 (plastic small outline, 16 leads, body width
 # 7.5 mm; JEDEC MS-013). All values from the "SO16 ... SOT162-1"
 # package outline in the NXP PCF8574/PCF8574A data sheet Rev. 5, page 20

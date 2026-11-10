@@ -1,0 +1,16 @@
+# Würth WR-PHD Pin Header, 1 x 4 (4 pins), 2.54 mm pitch
+# (wurth/61300411121-DS page 1, "Article Properties" Pins 4). The datasheet names no
+# signals: each pin is named by its number, all passive.
+schema_version: "0.1"
+kind: device
+id: wurth/61300411121
+
+manufacturer: wurth
+category: connector
+family: WR-PHD
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive }
+  "4": { name: "4", type: passive }

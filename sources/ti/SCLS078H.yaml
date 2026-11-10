@@ -1,0 +1,20 @@
+# Official TI datasheet "SNx4HC04 hex inverters". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SCLS078H - DECEMBER 1982 - REVISED APRIL 2021". 38 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawing named in the
+# part file were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 23-Oct-2026 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SCLS078H
+
+publisher: ti
+document_id: SCLS078H
+document_type: datasheet
+
+revision: "H"
+date: "2021-04"
+
+url: "https://www.ti.com/lit/ds/symlink/sn74hc04.pdf"

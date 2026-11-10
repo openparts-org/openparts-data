@@ -1,0 +1,29 @@
+# Dual inverter SN74LVC2G04, 6-pin pin map from the "Pin Functions"
+# table (SCES195N page 3) checked against the "DBV Package 6-Pin SOT-23
+# Top View" figure (same page; DCK/DRL figures identical): 1A 1, GND 2,
+# 2A 3 down the left edge, 2Y 4, VCC 5, 1Y 6 up the right edge. The
+# YZP (DSBGA) ball map is not covered.
+schema_version: "0.1"
+kind: device
+id: ti/SN74LVC2G04
+
+manufacturer: ti
+category: other
+family: SN74LVC2G04
+
+pins:
+  "1":  { name: 1A, type: input }
+  "2":  { name: GND, type: ground }
+  "3":  { name: 2A, type: input }
+  "4":  { name: 2Y, type: output }
+  "5":  { name: VCC, type: power }
+  "6":  { name: 1Y, type: output }
+
+provenance:
+  "/pins":
+    - source: ti/SCES195N
+      page: 3
+      locator: "\"Pin Functions\" table (NAME / NO.)"
+    - source: ti/SCES195N
+      page: 3
+      locator: "\"DBV Package 6-Pin SOT-23 Top View\" figure (cross-check)"

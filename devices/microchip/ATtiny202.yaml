@@ -1,0 +1,36 @@
+# ATtiny202 (8-pin SOIC, the only package offered for it per the ordering
+# table). Pin names/numbers from Table 5-2 "PORT Function Multiplexing,
+# Eight Pins", column "SOIC 8-Pin" (DS40002318A page 17), cross-checked
+# pin for pin against section 4.1 "8-Pin SOIC" pinout (page 13).
+#
+# Types: VDD power, GND ground, port pins io. PA0 carries RESET/UPDI
+# (programming/debug) as alternate functions per the table's
+# "Other/Special" column. alternate_functions carry only the
+# "Other/Special" and "ADC0" columns; AC/USART/SPI/TWI/TCA/TCB/CCL
+# mappings are not modelled.
+schema_version: "0.1"
+kind: device
+id: microchip/ATtiny202
+
+manufacturer: microchip
+category: microcontroller
+family: "tinyAVR 0-series"
+
+pins:
+  "1":  { name: VDD, type: power }
+  "2":  { name: PA6, type: io, alternate_functions: [AIN6] }
+  "3":  { name: PA7, type: io, alternate_functions: [AIN7] }
+  "4":  { name: PA1, type: io, alternate_functions: [AIN1] }
+  "5":  { name: PA2, type: io, alternate_functions: [EVOUT0, AIN2] }
+  "6":  { name: PA0, type: io, alternate_functions: [RESET, UPDI, AIN0] }
+  "7":  { name: PA3, type: io, alternate_functions: [EXTCLK, AIN3] }
+  "8":  { name: GND, type: ground }
+
+provenance:
+  "/pins":
+    - source: microchip/DS40002318@revA
+      page: 17
+      locator: "Table 5-2 \"PORT Function Multiplexing, Eight Pins\", column \"SOIC 8-Pin\", columns \"Other/Special\" and \"ADC0\""
+    - source: microchip/DS40002318@revA
+      page: 13
+      locator: "Section 4.1 \"8-Pin SOIC\" pinout figure (cross-check)"

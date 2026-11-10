@@ -1,0 +1,42 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SLLSE11H
+# (page 28): "SN65HVD72DR Active Production SOIC (D) | 8 2500 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 HVD72".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet, dated 15-Jul-2026).
+# Package: SOIC (D), outline D0008A (4214825/C) on page 37 ->
+# manufacturers/ti/D0008A. Its pdftotext text matches the outline page the package
+# was read from (ti/SLCS005AH page 43) line for line, so the package is reused.
+schema_version: "0.1"
+kind: part
+id: ti/SN65HVD72DR
+
+manufacturer: ti
+mpn: SN65HVD72DR
+
+device: ti/SN65HVD72
+package: manufacturers/ti/D0008A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLLSE11H
+
+provenance:
+  "/existence":
+    - source: ti/SLLSE11H
+      page: 28
+      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN65HVD72DR"
+  "/lifecycle":
+    - source: ti/SLLSE11H
+      page: 28
+      locator: "PACKAGE OPTION ADDENDUM, row SN65HVD72DR, Status column \"Active\""
+  "/package":
+    - source: ti/SLLSE11H
+      page: 28
+      locator: "PACKAGE OPTION ADDENDUM, row SN65HVD72DR, Package column \"SOIC (D)\""
+    - source: ti/SLLSE11H
+      page: 37
+      locator: "PACKAGE OUTLINE D0008A (4214825/C)"

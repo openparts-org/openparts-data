@@ -1,0 +1,25 @@
+# Würth Elektronik datasheet for order code 61301021821 ("WR-PHD Dual Socket Header"),
+# 7 pages, A4 landscape. we-online.com refuses curl (HTTP 403);
+# fetched once with WebFetch, which saved the original PDF (PDFlib,
+# author "Würth Elektronik eiSos GmbH & Co. KG", title "61301021821
+# Datasheet WR-PHD Dual Socket Header"). Read with pdftotext -layout/-raw plus 110-300 dpi
+# renders of page 1 (the drawing is vector art; the hole diameter and
+# side-view dimensions are rotated text). The title block on every page
+# carries REVISION "001.004", DATE "2022-07-11" (YYYY-MM-DD), ORDER CODE
+# "61301021821", STATUS "Valid" (the document's release status, not a
+# product lifecycle status). PDF page index = printed page number
+# ("1/7" on page 1). The drawing is in first-angle projection (title
+# block symbol): the view above the front view is the bottom view, the
+# one below it the top view.
+schema_version: "0.1"
+kind: source
+id: wurth/61301021821-DS
+
+publisher: wurth
+document_id: "61301021821"
+document_type: datasheet
+
+revision: "001.004"
+date: "2022-07-11"
+
+url: "https://www.we-online.com/components/products/datasheet/61301021821.pdf"

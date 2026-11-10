@@ -1,0 +1,20 @@
+# Official TI datasheet "TCAN1042H/HG/HV/HGV fault-protected CAN transceivers with CAN FD". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SLLSES7D - MARCH 2016 - REVISED OCTOBER 2021". 41 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawing named in the
+# part file were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 9-Nov-2025 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SLLSES7D
+
+publisher: ti
+document_id: SLLSES7D
+document_type: datasheet
+
+revision: "SLLSES7D"
+date: "2021-10"
+
+url: "https://www.ti.com/lit/ds/symlink/tcan1042h.pdf"

@@ -1,0 +1,46 @@
+# PIC12F1840-I/SN: industrial temperature (-40 to +85 C), SOIC 8-lead,
+# tube. existence: probable -- the datasheet has no table of orderable
+# codes, only the "PRODUCT IDENTIFICATION SYSTEM" legend (DS40001441F page
+# 395: Device PIC12F1840, Temperature I, Package SN = SOIC 8-Lead); this
+# MPN was assembled from that legend (its examples are "PIC12F1840 - I/P"
+# and "PIC12F1840 - E/SN"). The product page returned 403 to curl and
+# WebFetch. Package -> "8-Lead Plastic Small Outline (SN) - Narrow, 3.90
+# mm Body [SOIC]", drawing C04-057C (page 385, image, rendered). Every
+# number of its table matches standards/SOIC8-3.90x4.90-P1.27 (C04-057-SN
+# Rev D, DS20001203W): e 1.27 BSC, A max 1.75, A2 min 1.25, A1 0.10-0.25,
+# E 6.00 BSC, E1 3.90 BSC, D 4.90 BSC, L 0.40-1.27, c 0.17-0.25, b
+# 0.31-0.51 -> reused (validate with --source
+# sources/microchip/DS20001203W.yaml). lifecycle: no production-status
+# statement in the datasheet and the Microchip product page refused curl
+# and WebFetch (403); unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/PIC12F1840-I-SN
+
+manufacturer: microchip
+mpn: "PIC12F1840-I/SN"
+
+device: microchip/PIC12F1840
+package: standards/SOIC8-3.90x4.90-P1.27
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40001441@revF
+
+provenance:
+  "/existence":
+    - source: microchip/DS40001441@revF
+      page: 395
+      locator: "PRODUCT IDENTIFICATION SYSTEM legend: Device \"PIC12F1840\", Temperature Range \"I = -40C to +85C\", Package \"SN = SOIC, 8-Lead\" (assembled from the legend)"
+  "/package":
+    - source: microchip/DS40001441@revF
+      page: 395
+      locator: "PRODUCT IDENTIFICATION SYSTEM, Package \"SN = SOIC, 8-Lead\""
+    - source: microchip/DS40001441@revF
+      page: 385
+      locator: "\"8-Lead Plastic Small Outline (SN) - Narrow, 3.90 mm Body [SOIC]\", drawing C04-057C sheet 2 (rendered image)"

@@ -1,0 +1,18 @@
+# Official Microchip datasheet "MCP2561/2 High-Speed CAN Transceiver". Downloaded
+# 2026-11-10 directly from ww1.microchip.com (URL below). document_id /
+# revision from the printed footer "DS20005167C-page N"; Revision History lists "Revision C (July 2014)".
+# 30 PDF pages; text read with pdftotext -layout. Page numbers in this
+# dataset are PDF page indices (they equal the printed page numbers).
+# The 8-lead SOIC (SN) drawing (C04-057C, pages 22-23) and the PDIP/DFN pages use an encoded font; they were rendered (pdftoppm) and read as images.
+schema_version: "0.1"
+kind: source
+id: microchip/DS20005167@revC
+
+publisher: microchip
+document_id: DS20005167
+document_type: datasheet
+
+revision: "C"
+date: "2014-07"
+
+url: "https://ww1.microchip.com/downloads/en/DeviceDoc/20005167C.pdf"

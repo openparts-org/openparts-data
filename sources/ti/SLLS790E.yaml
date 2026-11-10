@@ -1,0 +1,20 @@
+# Official TI datasheet "TRS3232E 3-V to 5.5-V multichannel RS-232 line driver/receiver with +/-15-kV ESD protection". Downloaded 2026-11-10 from
+# the TI symlink URL below; revision read from the page header
+# "SLLS790E - JUNE 2007 - REVISED DECEMBER 2024". 40 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawing named in the
+# part file were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 26-May-2026 (newer than the datasheet revision).
+schema_version: "0.1"
+kind: source
+id: ti/SLLS790E
+
+publisher: ti
+document_id: SLLS790E
+document_type: datasheet
+
+revision: "E"
+date: "2024-12"
+
+url: "https://www.ti.com/lit/ds/symlink/trs3232e.pdf"

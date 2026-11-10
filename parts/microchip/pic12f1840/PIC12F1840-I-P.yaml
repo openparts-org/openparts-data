@@ -1,0 +1,46 @@
+# PIC12F1840-I/P: industrial temperature (-40 to +85 C), 8-lead PDIP,
+# tube. existence: probable -- printed only as ordering example b)
+# "PIC12F1840 - I/P" ("Industrial temperature PDIP package") under the
+# "PRODUCT IDENTIFICATION SYSTEM" legend (DS40001441F page 395); the
+# datasheet has no table of orderable codes and the product page returned
+# 403 to curl and WebFetch. Package "P = Plastic DIP" -> "8-Lead Plastic
+# Dual In-Line (P) - 300 mil Body [PDIP]", drawing C04-018D (pages
+# 382-383, text, inches). Every number of its table matches
+# manufacturers/microchip/PDIP8-PA- C04-018D (built from C04-018D in
+# DS20001423J): e .100 BSC, A max .210, A2 .115/.130/.195, A1 min .015, E
+# .290/.310/.325, E1 .240/.250/.280, D .348/.365/.400, L .115/.130/.150, c
+# .008/.010/.015, b1 .040/.060/.070, b .014/.018/.022, eB max .430 ->
+# reused (validate with --source sources/microchip/DS20001423J.yaml).
+# lifecycle: no production-status statement in the datasheet and the
+# Microchip product page refused curl and WebFetch (403); unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/PIC12F1840-I-P
+
+manufacturer: microchip
+mpn: "PIC12F1840-I/P"
+
+device: microchip/PIC12F1840
+package: manufacturers/microchip/PDIP8-PA-C04-018D
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS40001441@revF
+
+provenance:
+  "/existence":
+    - source: microchip/DS40001441@revF
+      page: 395
+      locator: "PRODUCT IDENTIFICATION SYSTEM, example b) \"PIC12F1840 - I/P\" (ordering example)"
+  "/package":
+    - source: microchip/DS40001441@revF
+      page: 395
+      locator: "PRODUCT IDENTIFICATION SYSTEM, Package \"P = Plastic DIP\""
+    - source: microchip/DS40001441@revF
+      page: 383
+      locator: "\"8-Lead Plastic Dual In-Line (P) - 300 mil Body [PDIP]\", drawing C04-018D sheet 2"

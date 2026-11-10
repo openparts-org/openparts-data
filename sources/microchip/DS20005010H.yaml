@@ -1,0 +1,18 @@
+# Official Microchip datasheet "MCP7940N Battery-Backed I2C Real-Time Clock/Calendar with SRAM". Downloaded
+# 2026-11-10 directly from ww1.microchip.com (URL below). document_id /
+# revision from the printed footer "DS20005010H-page N"; Revision History lists "Revision H (10/2019)".
+# 56 PDF pages; text read with pdftotext -layout. Page numbers in this
+# dataset are PDF page indices (they equal the printed page numbers).
+# The C04-057-SN Rev D dimension table (page 40) extracts as clean text.
+schema_version: "0.1"
+kind: source
+id: microchip/DS20005010@revH
+
+publisher: microchip
+document_id: DS20005010
+document_type: datasheet
+
+revision: "H"
+date: "2019-10"
+
+url: "https://ww1.microchip.com/downloads/en/DeviceDoc/20005010H.pdf"

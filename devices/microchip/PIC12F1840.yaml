@@ -1,0 +1,43 @@
+# PIC12F1840 (PDIP, SOIC, DFN and UDFN share one 8-pin map: Figure 1
+# "8-PIN DIAGRAM FOR PIC12(L)F1840", "PDIP, SOIC, DFN, UDFN"). Pin
+# names/numbers from Table 1 "8-PIN ALLOCATION TABLE" (DS40001441F page 3,
+# rendered and read as an image), cross-checked against Figure 1 on the
+# same page.
+#
+# Types: VDD power, VSS ground, RA0-RA2/RA4/RA5 io. RA3 is typed input:
+# section 12.2.1 (page 100) "The exception is RA3, which is input only and
+# its TRIS bit will always read as '1'". alternate_functions carry only
+# the "ADC" and "Basic" columns of Table 1 (ICSPDAT/ICSPCLK/MCLR/VPP/
+# OSCx/CLKIN/CLKOUT/CLKR); the debug aliases ICDDAT and "ICPCLK" (as
+# printed) and the Reference/Cap Sense/Comparator/SR Latch/Timer/ECCP/
+# EUSART/MSSP/IOC/Modulator columns are not modelled. The PIC12LF1840
+# (low-voltage variant) has the same pin map but is not covered here.
+schema_version: "0.1"
+kind: device
+id: microchip/PIC12F1840
+
+manufacturer: microchip
+category: microcontroller
+family: "PIC12(L)F1840"
+
+pins:
+  "1":  { name: VDD, type: power }
+  "2":  { name: RA5, type: io, alternate_functions: [OSC1, CLKIN] }
+  "3":  { name: RA4, type: io, alternate_functions: [AN3, OSC2, CLKOUT, CLKR] }
+  "4":  { name: RA3, type: input, alternate_functions: [MCLR, VPP] }
+  "5":  { name: RA2, type: io, alternate_functions: [AN2] }
+  "6":  { name: RA1, type: io, alternate_functions: [AN1, ICSPCLK] }
+  "7":  { name: RA0, type: io, alternate_functions: [AN0, ICSPDAT] }
+  "8":  { name: VSS, type: ground }
+
+provenance:
+  "/pins":
+    - source: microchip/DS40001441@revF
+      page: 3
+      locator: "Table 1 \"8-PIN ALLOCATION TABLE (PIC12(L)F1840)\", columns \"8-Pin PDIP/SOIC/DFN/UDFN\", \"ADC\" and \"Basic\""
+    - source: microchip/DS40001441@revF
+      page: 3
+      locator: "Figure 1 \"8-PIN DIAGRAM FOR PIC12(L)F1840\" (cross-check)"
+    - source: microchip/DS40001441@revF
+      page: 100
+      locator: "Section 12.2.1 \"DATA REGISTER\" (PORTA): \"RA3, which is input only\""

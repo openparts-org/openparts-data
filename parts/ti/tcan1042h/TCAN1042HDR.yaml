@@ -1,0 +1,42 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SLLSES7D
+# (page 33): "TCAN1042HDR Active Production SOIC (D) | 8 2500 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -55 to 125 1042".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet, dated 9-Nov-2025).
+# Package: SOIC (D), outline D0008A (4214825/C) on page 38 ->
+# manufacturers/ti/D0008A. Its pdftotext text matches the outline page the package
+# was read from (ti/SLCS005AH page 43) line for line, so the package is reused.
+schema_version: "0.1"
+kind: part
+id: ti/TCAN1042HDR
+
+manufacturer: ti
+mpn: TCAN1042HDR
+
+device: ti/TCAN1042H
+package: manufacturers/ti/D0008A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLLSES7D
+
+provenance:
+  "/existence":
+    - source: ti/SLLSES7D
+      page: 33
+      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row TCAN1042HDR"
+  "/lifecycle":
+    - source: ti/SLLSES7D
+      page: 33
+      locator: "PACKAGE OPTION ADDENDUM, row TCAN1042HDR, Status column \"Active\""
+  "/package":
+    - source: ti/SLLSES7D
+      page: 33
+      locator: "PACKAGE OPTION ADDENDUM, row TCAN1042HDR, Package column \"SOIC (D)\""
+    - source: ti/SLLSES7D
+      page: 38
+      locator: "PACKAGE OUTLINE D0008A (4214825/C)"

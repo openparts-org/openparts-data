@@ -1,0 +1,43 @@
+# MPN "MCP4725A0T-E/CH" is PROBABLE: printed as ordering example a) in
+# the Product Identification System of microchip/DS22039@revD (page 47)
+# and in the package-marking part-number table (page 43), but not in an
+# orderable list. A0 = default address option, T = tape and reel.
+# Package: CH = C04-028B (page 44) -> manufacturers/microchip/
+# SOT23-6-CH-C04-028B (new).
+# lifecycle: not stated in the datasheet; no first-party lifecycle page
+# was read (microchip.com product pages return "Access Denied"), so it
+# is recorded as unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP4725A0T-E-CH
+
+manufacturer: microchip
+mpn: "MCP4725A0T-E/CH"
+
+device: microchip/MCP4725
+package: manufacturers/microchip/SOT23-6-CH-C04-028B
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS22039@revD
+
+provenance:
+  "/existence":
+    - source: microchip/DS22039@revD
+      page: 47
+      locator: "Product Identification System, example a) \"MCP4725A0T-E/CH: Tape and Reel, Extended Temp., 6LD SOT-23 pkg. Address Option = A0\""
+    - source: microchip/DS22039@revD
+      page: 43
+      locator: "Package Marking Information, 6-Lead SOT-23 \"Part Number\" table, row \"MCP4725A0T-E/CH\", Code A0 (00)"
+  "/package":
+    - source: microchip/DS22039@revD
+      page: 47
+      locator: "Product Identification System, Package \"CH = Plastic Small Outline Transistor (SOT-23-6), 6-lead\""
+    - source: microchip/DS22039@revD
+      page: 44
+      locator: "\"6-Lead Plastic Small Outline Transistor (CH) [SOT-23]\", Microchip Technology Drawing C04-028B"

@@ -1,0 +1,32 @@
+# 12-bit single-channel SPI DAC (MCP4921), 8-pin PDIP/SOIC/MSOP pin map
+# from Table 3-1 "Pin Function Table", column "MCP4921 Pin No."
+# (DS21897B page 15), checked against the "8-Pin PDIP, SOIC, MSOP"
+# figure under "Package Types" (page 1); all 8 pins match. CS is active
+# low (overbar; written without it). SCK typed clock, VREFA/VOUTA
+# analog, AVSS ("Analog ground") ground.
+schema_version: "0.1"
+kind: device
+id: microchip/MCP4921
+
+manufacturer: microchip
+category: other
+family: MCP492X
+
+pins:
+  "1":  { name: VDD, type: power }
+  "2":  { name: CS, type: input }
+  "3":  { name: SCK, type: clock }
+  "4":  { name: SDI, type: input }
+  "5":  { name: LDAC, type: input }
+  "6":  { name: VREFA, type: analog }
+  "7":  { name: AVSS, type: ground }
+  "8":  { name: VOUTA, type: analog }
+
+provenance:
+  "/pins":
+    - source: microchip/DS21897@revB
+      page: 15
+      locator: "Table 3-1 \"Pin Function Table\", column \"MCP4921 Pin No.\""
+    - source: microchip/DS21897@revB
+      page: 1
+      locator: "\"Package Types\" 8-Pin PDIP, SOIC, MSOP figure (cross-check)"

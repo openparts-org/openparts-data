@@ -1,0 +1,72 @@
+# AVR64DD32 in the 32-pin packages (TQFP and VQFN share one pin map:
+# section 2.3 "32-Pin VQFN and TQFP"). Pin names/numbers from section 3.1
+# "I/O Multiplexing", column "VQFN32 / TQFP32" (DS40002315C pages 17-18,
+# rendered and read as images), cross-checked pin for pin against the
+# pinout figure (page 16, rendered).
+#
+# Types: VDD/VDDIO2 power (VDDIO2 supplies the PORTC MVIO domain per the
+# figure legend), GND ground, port pins io. PF6 is typed input (table note
+# 5 "Input-only") with RESET as alternate function; PF7 carries UPDI
+# (programming/debug). alternate_functions carry only the "Special" and
+# "ADC0" columns (the "TWI Fm+" marker is not a signal name: skipped);
+# AC/DAC/ZCD/USART/SPI/TWI/TCA/TCB/TCD/EVSYS/CCL mappings are not
+# modelled. PC0-PC3 ADC inputs AIN28-AIN31 are available only when MVIO is
+# disabled (table note 6).
+#
+# Exposed pad (VQFN only): section 4.1.1 "Special Consideration for
+# Packages with Center Pad" (page 19) says the pad "is not electrically
+# connected to the internal circuit of the chip" -> no EP pin (the
+# footprint still gets the pad).
+schema_version: "0.1"
+kind: device
+id: microchip/AVR64DD32
+
+manufacturer: microchip
+category: microcontroller
+family: "AVR DD"
+
+pins:
+  "1":  { name: PA3, type: io, alternate_functions: [AIN23] }
+  "2":  { name: PA4, type: io, alternate_functions: [AIN24] }
+  "3":  { name: PA5, type: io, alternate_functions: [AIN25] }
+  "4":  { name: PA6, type: io, alternate_functions: [AIN26] }
+  "5":  { name: PA7, type: io, alternate_functions: [CLKOUT, AIN27] }
+  "6":  { name: PC0, type: io, alternate_functions: [AIN28] }
+  "7":  { name: PC1, type: io, alternate_functions: [AIN29] }
+  "8":  { name: PC2, type: io, alternate_functions: [AIN30] }
+  "9":  { name: PC3, type: io, alternate_functions: [AIN31] }
+  "10": { name: VDDIO2, type: power }
+  "11": { name: PD1, type: io, alternate_functions: [AIN1] }
+  "12": { name: PD2, type: io, alternate_functions: [AIN2] }
+  "13": { name: PD3, type: io, alternate_functions: [AIN3] }
+  "14": { name: PD4, type: io, alternate_functions: [AIN4] }
+  "15": { name: PD5, type: io, alternate_functions: [AIN5] }
+  "16": { name: PD6, type: io, alternate_functions: [AIN6] }
+  "17": { name: PD7, type: io, alternate_functions: [VREFA, AIN7] }
+  "18": { name: VDD, type: power }
+  "19": { name: GND, type: ground }
+  "20": { name: PF0, type: io, alternate_functions: [XTAL32K1, AIN16] }
+  "21": { name: PF1, type: io, alternate_functions: [XTAL32K2, AIN17] }
+  "22": { name: PF2, type: io, alternate_functions: [AIN18] }
+  "23": { name: PF3, type: io, alternate_functions: [AIN19] }
+  "24": { name: PF4, type: io, alternate_functions: [AIN20] }
+  "25": { name: PF5, type: io, alternate_functions: [AIN21] }
+  "26": { name: PF6, type: input, alternate_functions: [RESET] }
+  "27": { name: PF7, type: io, alternate_functions: [UPDI] }
+  "28": { name: VDD, type: power }
+  "29": { name: GND, type: ground }
+  "30": { name: PA0, type: io, alternate_functions: [XTALHF1, EXTCLK] }
+  "31": { name: PA1, type: io, alternate_functions: [XTALHF2] }
+  "32": { name: PA2, type: io, alternate_functions: [AIN22] }
+
+provenance:
+  "/pins":
+    - source: microchip/DS40002315@revC
+      page: 17
+      locator: "Section 3.1 \"I/O Multiplexing\", column \"VQFN32 / TQFP32\", columns \"Special\" and \"ADC0\""
+    - source: microchip/DS40002315@revC
+      page: 18
+      locator: "Section 3.1 table (continued), rows PF6-GND"
+    - source: microchip/DS40002315@revC
+      page: 16
+      locator: "Section 2.3 \"32-Pin VQFN and TQFP\" pinout figure (cross-check)"

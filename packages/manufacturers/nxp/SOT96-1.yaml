@@ -1,3 +1,6 @@
+# NOTE (2026-11-10): out of date below -- the generators now draw a
+# min/max-only dimension at its midpoint (never stored; openparts-mcad
+# defaults::required), so this package does generate a footprint and model.
 # NXP SOT96-1, SO8 (plastic small outline, 8 leads, body width 3.9 mm;
 # JEDEC MS-012). All values from Fig 21 "Package outline SOT96-1 (SO8)"
 # of the NXP LM75B data sheet Rev. 6.1, page 23 (mm row of the

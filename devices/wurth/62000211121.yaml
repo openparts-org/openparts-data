@@ -1,0 +1,14 @@
+# Würth WR-PHD THT Straight Single Pin Header, 1 x 2 (2 pins), 2.00 mm pitch
+# (wurth/62000211121-DS page 1, "Article Properties" Pins 2). The datasheet names no
+# signals: each pin is named by its number, all passive.
+schema_version: "0.1"
+kind: device
+id: wurth/62000211121
+
+manufacturer: wurth
+category: connector
+family: WR-PHD
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

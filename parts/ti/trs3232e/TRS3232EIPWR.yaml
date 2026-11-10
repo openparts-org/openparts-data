@@ -1,0 +1,42 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SLLS790E
+# (page 18): "TRS3232EIPWR Active Production TSSOP (PW) | 16 2000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 RS32EI".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet, dated 26-May-2026).
+# Package: TSSOP (PW), outline PW0016A (4220204/B) on page 33 ->
+# standards/TSSOP16-4.4x5.0-P0.65-TI-PW. Its pdftotext text matches the outline page the package
+# was read from (ti/SCLS041J page 34) line for line, so the package is reused.
+schema_version: "0.1"
+kind: part
+id: ti/TRS3232EIPWR
+
+manufacturer: ti
+mpn: TRS3232EIPWR
+
+device: ti/TRS3232E
+package: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLLS790E
+
+provenance:
+  "/existence":
+    - source: ti/SLLS790E
+      page: 18
+      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row TRS3232EIPWR"
+  "/lifecycle":
+    - source: ti/SLLS790E
+      page: 18
+      locator: "PACKAGE OPTION ADDENDUM, row TRS3232EIPWR, Status column \"Active\""
+  "/package":
+    - source: ti/SLLS790E
+      page: 18
+      locator: "PACKAGE OPTION ADDENDUM, row TRS3232EIPWR, Package column \"TSSOP (PW)\""
+    - source: ti/SLLS790E
+      page: 33
+      locator: "PACKAGE OUTLINE PW0016A (4220204/B)"
