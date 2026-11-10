@@ -12,8 +12,10 @@ package: standards/CHIP0805-RC
 existence:
   status: verified
 
+# lifecycle is `unknown`: distributor listings are not a first-party
+# lifecycle source (openparts/skills/add-part section 2).
 lifecycle:
-  status: active
+  status: unknown
 
 sources:
   - yageo/RT-SERIES-V1

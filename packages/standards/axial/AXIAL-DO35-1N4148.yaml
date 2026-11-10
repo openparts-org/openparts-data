@@ -1,3 +1,7 @@
+# NOTE (2026-11-10): nominals this dataset had derived (a min/max
+# midpoint, or a copy of a lone max/min) were removed; only what the
+# source prints is recorded. Generators draw a min/max-only dimension at
+# its midpoint and a lone limit at that limit, without storing either.
 # Vishay 1N4148 (DO-35 / DO-204AH) axial-leaded diode. Body
 # length/diameter confirmed from Vishay's own mechanical drawing
 # (81857 Rev 1.6, page 3); lead pitch is NOT a datasheet fact (DO-35
@@ -28,12 +32,10 @@ pitch:
 
 dimensions:
   body_width:
-    nominal: 1.625
     min: 1.5
     max: 1.75
     unit: mm
   body_length:
-    nominal: 1.625
     min: 1.5
     max: 1.75
     unit: mm
@@ -43,7 +45,6 @@ dimensions:
     # `axial` generator requires a nominal value to build geometry at
     # all. The real fact is "<=3.4mm"; this is the closest usable
     # single number, not a separately-confirmed nominal.
-    nominal: 3.4
     max: 3.4
     unit: mm
 

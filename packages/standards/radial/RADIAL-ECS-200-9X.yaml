@@ -1,3 +1,7 @@
+# NOTE (2026-11-10): nominals this dataset had derived (a min/max
+# midpoint, or a copy of a lone max/min) were removed; only what the
+# source prints is recorded. Generators draw a min/max-only dimension at
+# its midpoint and a lone limit at that limit, without storing either.
 # ECS "3x9X" tubular crystal can. Both leads exit one end (radial-style,
 # like RADIAL-HC49U-AB), a true circular cylinder (not oval), so
 # body_length=body_width=diameter, matching the `radial` generator's
@@ -21,15 +25,12 @@ pitch:
 
 dimensions:
   body_length:
-    nominal: 3.2
     max: 3.2
     unit: mm
   body_width:
-    nominal: 3.2
     max: 3.2
     unit: mm
   body_height:
-    nominal: 9.0
     max: 9.0
     unit: mm
 

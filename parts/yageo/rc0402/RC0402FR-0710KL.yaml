@@ -18,8 +18,10 @@ package: standards/CHIP0402-RC
 existence:
   status: verified
 
+# lifecycle is `unknown`: distributor listings are not a first-party
+# lifecycle source (openparts/skills/add-part section 2).
 lifecycle:
-  status: active
+  status: unknown
 
 sources:
   - yageo/PYU-RC_GROUP@V14

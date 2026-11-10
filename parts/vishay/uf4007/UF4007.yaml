@@ -12,8 +12,11 @@ mpn: UF4007
 device: vishay/UF4007
 package: standards/AXIAL-DO41-1N4007
 
+# existence is `probable`: the MPN is assembled from the part-numbering
+# legend (or printed only as an example), not listed verbatim in an
+# orderable list (openparts/skills/add-part section 2).
 existence:
-  status: verified
+  status: probable
 
 lifecycle:
   status: unknown

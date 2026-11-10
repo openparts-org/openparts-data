@@ -1,3 +1,7 @@
+# NOTE (2026-11-10): nominals this dataset had derived (a min/max
+# midpoint, or a copy of a lone max/min) were removed; only what the
+# source prints is recorded. Generators draw a min/max-only dimension at
+# its midpoint and a lone limit at that limit, without storing either.
 # Vishay IHLP-2020BZ-A1 shielded power inductor, square 5.18mm footprint.
 # Height is stated as max only (2.0mm, page 2 "DIMENSIONS"), so `nominal`
 # is set equal to that max -- same technique as AXIAL-DO35-1N4148's
@@ -24,7 +28,6 @@ dimensions:
     max: 5.434
     unit: mm
   body_height:
-    nominal: 2.0
     max: 2.0
     unit: mm
 

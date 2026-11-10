@@ -12,8 +12,11 @@ mpn: "MCP3008T-E/SL"
 device: microchip/MCP3008
 package: manufacturers/microchip/SOIC16-SL-C04-108C
 
+# existence is `probable`: the MPN is assembled from the part-numbering
+# legend (or printed only as an example), not listed verbatim in an
+# orderable list (openparts/skills/add-part section 2).
 existence:
-  status: verified
+  status: probable
 
 lifecycle:
   status: unknown

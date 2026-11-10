@@ -15,8 +15,11 @@ mpn: C0603C103K5RACTU
 device: kemet/C0603C-X7R
 package: manufacturers/kemet/C0603-CG
 
+# existence is `probable`: the MPN is assembled from the part-numbering
+# legend (or printed only as an example), not listed verbatim in an
+# orderable list (openparts/skills/add-part section 2).
 existence:
-  status: verified
+  status: probable
 
 lifecycle:
   status: unknown

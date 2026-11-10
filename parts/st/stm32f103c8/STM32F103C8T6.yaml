@@ -16,8 +16,11 @@ mpn: STM32F103C8T6
 device: st/STM32F103C8
 package: standards/LQFP48-7x7-P0.5
 
+# existence is `probable`: the MPN is assembled from the part-numbering
+# legend (or printed only as an example), not listed verbatim in an
+# orderable list (openparts/skills/add-part section 2).
 existence:
-  status: verified
+  status: probable
 
 lifecycle:
   status: active

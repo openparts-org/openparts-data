@@ -1,3 +1,7 @@
+# NOTE (2026-11-10): nominals this dataset had derived (a min/max
+# midpoint, or a copy of a lone max/min) were removed; only what the
+# source prints is recorded. Generators draw a min/max-only dimension at
+# its midpoint and a lone limit at that limit, without storing either.
 # Epson FC-135, 3.2x1.5mm 2-terminal SMD crystal can -- confirmed as
 # genuinely 2-pad (not the more common 4-pad SMD crystal/oscillator
 # style) by visually inspecting the datasheet's own outline drawing and
@@ -29,7 +33,6 @@ dimensions:
     # midpoint (no min given) -- the `chip` generator falls back to a
     # generic 0.45mm default when nominal is absent, which would
     # silently discard this real 0.9mm fact; using it directly instead.
-    nominal: 0.9
     max: 0.9
     unit: mm
 

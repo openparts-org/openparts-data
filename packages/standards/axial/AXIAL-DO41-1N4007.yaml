@@ -1,3 +1,7 @@
+# NOTE (2026-11-10): nominals this dataset had derived (a min/max
+# midpoint, or a copy of a lone max/min) were removed; only what the
+# source prints is recorded. Generators draw a min/max-only dimension at
+# its midpoint and a lone limit at that limit, without storing either.
 # Vishay 1N4007 (DO-41 / DO-204AL) axial-leaded diode. Lead pitch
 # follows this dataset's existing DO-35 convention (a real KiCad
 # reference footprint's pad spacing, not a datasheet fact -- DO-41
@@ -26,17 +30,14 @@ pitch:
 
 dimensions:
   body_width:
-    nominal: 2.35
     min: 2.0
     max: 2.7
     unit: mm
   body_length:
-    nominal: 2.35
     min: 2.0
     max: 2.7
     unit: mm
   body_height:
-    nominal: 4.65
     min: 4.1
     max: 5.2
     unit: mm

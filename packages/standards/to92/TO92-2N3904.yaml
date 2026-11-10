@@ -1,3 +1,7 @@
+# NOTE (2026-11-10): nominals this dataset had derived (a min/max
+# midpoint, or a copy of a lone max/min) were removed; only what the
+# source prints is recorded. Generators draw a min/max-only dimension at
+# its midpoint and a lone limit at that limit, without storing either.
 # onsemi 2N3904 straight-lead TO-92 (JEDEC CASE 135AN), confirmed from
 # the "MECHANICAL CASE OUTLINE / PACKAGE DIMENSIONS" drawing (page 7).
 # Text extraction on this page returned only title-block boilerplate
@@ -23,17 +27,14 @@ pitch:
 
 dimensions:
   body_width:
-    nominal: 4.76
     min: 4.32
     max: 5.20
     unit: mm
   body_length:
-    nominal: 3.62
     min: 3.05
     max: 4.19
     unit: mm
   body_height:
-    nominal: 4.825
     min: 4.32
     max: 5.33
     unit: mm

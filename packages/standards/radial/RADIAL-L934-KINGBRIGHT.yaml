@@ -1,3 +1,7 @@
+# NOTE (2026-11-10): nominals this dataset had derived (a min/max
+# midpoint, or a copy of a lone max/min) were removed; only what the
+# source prints is recorded. Generators draw a min/max-only dimension at
+# its midpoint and a lone limit at that limit, without storing either.
 # Kingbright L-934 series 3mm round LED. Lens diameter 2.8 (top) / 2.7
 # (bottom) min/max; `nominal` is this dataset's midpoint, disclosed as
 # derived. Dome height 4.6 +/-0.3 from the same drawing. The flange
@@ -17,17 +21,14 @@ pitch:
 
 dimensions:
   body_length:
-    nominal: 2.75
     min: 2.7
     max: 2.8
     unit: mm
   body_width:
-    nominal: 2.75
     min: 2.7
     max: 2.8
     unit: mm
   body_height:
-    nominal: 4.6
     min: 4.3
     max: 4.9
     unit: mm

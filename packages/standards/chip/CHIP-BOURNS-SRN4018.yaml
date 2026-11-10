@@ -1,3 +1,7 @@
+# NOTE (2026-11-10): nominals this dataset had derived (a min/max
+# midpoint, or a copy of a lone max/min) were removed; only what the
+# source prints is recorded. Generators draw a min/max-only dimension at
+# its midpoint and a lone limit at that limit, without storing either.
 # Bourns SRN4018 series, semi-shielded power inductor, square chip
 # footprint (the drawing gives two matching 4.0mm callouts for
 # length/width). Height is MAX-only (1.88mm, SRN4018-R82Y to -2R7M
@@ -25,7 +29,6 @@ dimensions:
     max: 4.2
     unit: mm
   body_height:
-    nominal: 1.88
     max: 1.88
     unit: mm
 

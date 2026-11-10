@@ -1,3 +1,7 @@
+# NOTE (2026-11-10): nominals this dataset had derived (a min/max
+# midpoint, or a copy of a lone max/min) were removed; only what the
+# source prints is recorded. Generators draw a min/max-only dimension at
+# its midpoint and a lone limit at that limit, without storing either.
 # ECS ECX-12 package, 2-pad SMD tuning fork crystal can.
 # `nominal` on body_height is set equal to the datasheet's stated max
 # (0.6mm) -- no min given on this drawing -- same "closest usable
@@ -24,7 +28,6 @@ dimensions:
     max: 1.3
     unit: mm
   body_height:
-    nominal: 0.6
     max: 0.6
     unit: mm
 

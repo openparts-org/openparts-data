@@ -1,3 +1,7 @@
+# NOTE (2026-11-10): nominals this dataset had derived (a min/max
+# midpoint, or a copy of a lone max/min) were removed; only what the
+# source prints is recorded. Generators draw a min/max-only dimension at
+# its midpoint and a lone limit at that limit, without storing either.
 # onsemi BC546/547/548 series TO-92 (JEDEC CASE 29-11, STYLE 17) --
 # distinct from the existing TO92-2N3904 package (CASE 135AN).
 #
@@ -24,17 +28,14 @@ pitch:
 
 dimensions:
   body_width:
-    nominal: 4.825
     min: 4.45
     max: 5.20
     unit: mm
   body_length:
-    nominal: 3.685
     min: 3.18
     max: 4.19
     unit: mm
   body_height:
-    nominal: 4.825
     min: 4.32
     max: 5.33
     unit: mm

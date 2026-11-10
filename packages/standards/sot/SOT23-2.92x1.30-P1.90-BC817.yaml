@@ -1,3 +1,7 @@
+# NOTE (2026-11-10): nominals this dataset had derived (a min/max
+# midpoint, or a copy of a lone max/min) were removed; only what the
+# source prints is recorded. Generators draw a min/max-only dimension at
+# its midpoint and a lone limit at that limit, without storing either.
 # onsemi/Fairchild BC817-40, SOT-23 (JEDEC TO-236), drawing MA03DREV10
 # (page 5, Figure 6). Close to the existing standards/SOT23-2.90x1.30-
 # P1.90 package but NOT identical: this drawing's height is "1.20mm
@@ -40,7 +44,6 @@ dimensions:
     max: 3.12
     unit: mm
   body_height:
-    nominal: 1.20
     max: 1.20
     unit: mm
   overall_length:

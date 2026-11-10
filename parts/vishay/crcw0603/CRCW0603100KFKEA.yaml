@@ -13,8 +13,11 @@ mpn: CRCW0603100KFKEA
 device: vishay/CRCW0603-GENERAL-PURPOSE
 package: standards/CHIP0603-CRCW
 
+# existence is `probable`: the MPN is assembled from the part-numbering
+# legend (or printed only as an example), not listed verbatim in an
+# orderable list (openparts/skills/add-part section 2).
 existence:
-  status: verified
+  status: probable
 
 lifecycle:
   status: unknown

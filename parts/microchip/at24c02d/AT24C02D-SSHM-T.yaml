@@ -17,8 +17,11 @@ mpn: "AT24C02D-SSHM-T"
 device: microchip/AT24C02D
 package: standards/SOIC8-3.90x4.90-P1.27
 
+# existence is `probable`: the MPN is assembled from the part-numbering
+# legend (or printed only as an example), not listed verbatim in an
+# orderable list (openparts/skills/add-part section 2).
 existence:
-  status: verified
+  status: probable
 
 lifecycle:
   status: unknown

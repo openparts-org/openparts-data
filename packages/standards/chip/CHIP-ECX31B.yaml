@@ -1,3 +1,7 @@
+# NOTE (2026-11-10): nominals this dataset had derived (a min/max
+# midpoint, or a copy of a lone max/min) were removed; only what the
+# source prints is recorded. Generators draw a min/max-only dimension at
+# its midpoint and a lone limit at that limit, without storing either.
 # ECS ECX-31B 32.768kHz 2-pad SMD crystal, 3.2 x 1.5 mm body. Height is
 # max-only (0.9mm), `nominal` set to that max, same technique as the
 # other max-only crystal packages.
@@ -23,7 +27,6 @@ dimensions:
     max: 1.6
     unit: mm
   body_height:
-    nominal: 0.9
     max: 0.9
     unit: mm
 
