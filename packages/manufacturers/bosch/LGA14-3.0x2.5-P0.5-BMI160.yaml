@@ -1,0 +1,109 @@
+# Bosch Sensortec BMI160 14-pin LGA 2.5 x 3.0 x 0.83 mm, read from Figure 41
+# "Packaging outline dimensions" (section 5.1, page 106) of
+# BST-BMI160-DS000-09. Text: "Unless otherwise specified tolerance =
+# decimal +-0.05 mm"; body 3.00 x 2.50 printed boxed without tolerance ->
+# recorded with the stated +-0.05.
+# Frame: 3.00 horizontal (body_width, X), 2.50 vertical. Bottom view: pin 1
+# top-right (PIN 1 ID), 1-4 down the right edge, 5-7 along the bottom
+# right-to-left, 8-11 up the left, 12-14 along the top; mirrored, the top
+# view (Figure 31, page 101) runs counter-clockwise from the top of the
+# left edge -> lead_layout [4, 3, 4, 3].
+# Pitch 0.50 (boxed, columns: boxed 1.50 across 4 pads; rows boxed 1.00
+# across 3 pads, centred on the centre line). Terminals "0.475X0.25+-0.05
+# (14X)": 0.475 inward on every side. Edge to pad: reference "(0.1)".
+# Heights: side view 0.83+-0.05 (overall), 0.70+-0.05 (mold body), "(0.13)"
+# reference substrate (not recorded).
+# Not drawn by the generator: the "PIN 1 ID (0.25X0.09)" pad. Note on the
+# page: "Pin1 marker is internally connected to Pin1. It must not be
+# connected to a different signal than Pin1."
+schema_version: "0.1"
+kind: package
+id: bosch/LGA14-3.0x2.5-P0.5-BMI160
+
+family: lga
+lead_count: 14
+lead_layout: [4, 3, 4, 3]
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 3.0
+    min: 2.95
+    max: 3.05
+    unit: mm
+  body_length:
+    nominal: 2.5
+    min: 2.45
+    max: 2.55
+    unit: mm
+  body_height:
+    nominal: 0.7
+    min: 0.65
+    max: 0.75
+    unit: mm
+  overall_height:
+    nominal: 0.83
+    min: 0.78
+    max: 0.88
+    unit: mm
+  lead_length:
+    nominal: 0.475
+    min: 0.425
+    max: 0.525
+    unit: mm
+  lead_width:
+    nominal: 0.25
+    min: 0.2
+    max: 0.3
+    unit: mm
+  lead_inset:
+    nominal: 0.1
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lga
+
+provenance:
+  "/pitch":
+    - source: bosch/BST-BMI160-DS000-09
+      page: 106
+      locator: "Figure 41 bottom view, boxed 0.50 (and boxed 1.50 / 1.00 outer-pad spacings)"
+  "/lead_layout":
+    - source: bosch/BST-BMI160-DS000-09
+      page: 106
+      locator: "Figure 41 bottom view numbering 1, 4, 5, 7, 8, 11, 12, 14"
+    - source: bosch/BST-BMI160-DS000-09
+      page: 101
+      locator: "Figure 31 pin-out top view: 1-4 left, 5-7 bottom, 8-11 right, 12-14 top"
+  "/dimensions/body_width":
+    - source: bosch/BST-BMI160-DS000-09
+      page: 106
+      locator: "Figure 41 top view, 3.00 (general tolerance +-0.05 mm stated on the page)"
+  "/dimensions/body_length":
+    - source: bosch/BST-BMI160-DS000-09
+      page: 106
+      locator: "Figure 41 top view, 2.50 (general tolerance +-0.05 mm)"
+  "/dimensions/body_height":
+    - source: bosch/BST-BMI160-DS000-09
+      page: 106
+      locator: "Figure 41 side view, 0.70 +-0.05"
+  "/dimensions/overall_height":
+    - source: bosch/BST-BMI160-DS000-09
+      page: 106
+      locator: "Figure 41 side view, 0.83 +-0.05"
+  "/dimensions/lead_length":
+    - source: bosch/BST-BMI160-DS000-09
+      page: 106
+      locator: "Figure 41 bottom view, 0.475X0.25+-0.05 (14X): 0.475 inward"
+  "/dimensions/lead_width":
+    - source: bosch/BST-BMI160-DS000-09
+      page: 106
+      locator: "Figure 41 bottom view, 0.475X0.25+-0.05 (14X): 0.25 across"
+  "/dimensions/lead_inset":
+    - source: bosch/BST-BMI160-DS000-09
+      page: 106
+      locator: "Figure 41 bottom view, reference (0.1) edge to pad"

@@ -1,0 +1,30 @@
+# BMP384: Bosch Sensortec's product name, used by distributors as the MPN.
+# existence: probable -- the datasheet names the product and gives the
+# Bosch technical reference code "0 273 017 015" on its title page, but neither the
+# datasheet nor the product page prints "BMP384" in an ordering table.
+# lifecycle: unknown (no first-party status statement found).
+# Package: drawing of this datasheet (page 48).
+schema_version: "0.1"
+kind: part
+id: bosch/BMP384
+
+manufacturer: bosch
+mpn: "BMP384"
+
+device: bosch/BMP384
+package: bosch/LGA10-2.0x2.0-P0.5-BMP384
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - bosch/BST-BMP384-DS003-11
+
+provenance:
+  "/existence":
+    - source: bosch/BST-BMP384-DS003-11
+      page: 1
+      locator: "title page: product BMP384, technical reference code 0 273 017 015 (no ordering table)"

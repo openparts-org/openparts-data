@@ -1,0 +1,91 @@
+# GCT USB4085 USB 2.0 Type-C receptacle, "Dip Type, PCB Top Mount":
+# 16 through-hole contacts in two rows + 4 plated shell slots, from
+# gct/USB4085-DWG (revision B, 28/02/23): page 2 "Recommended PCB
+# Layout", page 1 views.
+# Frame (usb_c): top view, X right, Y up, opening toward +Y; the source
+# layout (opening at the bottom) is turned 180° (x -> -x, y -> -y).
+# Origin: centre line / front slot centres. Arithmetic in "/pads".
+# Shell: "8.94" wide, "9.17±0.30" long (top view), "3.16" high (side
+# view); front face "4.25" in front of the front tab centres (side view;
+# the shell overhangs the line drawn "1.74" in front of the front slots
+# in the layout): centre y = 4.25 - 9.17/2 = -0.335. 
+# Values printed without a tolerance carry the title block's general
+# tolerance (not recorded as min/max).
+# Tail lengths are not recorded (generator default drawn).
+schema_version: "0.1"
+kind: package
+id: manufacturers/gct/USB4085
+
+family: usb_c
+lead_count: 20
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 8.94
+    unit: mm
+  body_length:
+    nominal: 9.17
+    min: 8.87
+    max: 9.47
+    unit: mm
+  body_height:
+    nominal: 3.16
+    unit: mm
+  body_offset:
+    nominal: -0.335
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: usb_c
+
+pads:
+  - { number: "A1", x: 2.975, y: -4.36, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "A4", x: 2.125, y: -4.36, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "A5", x: 1.275, y: -4.36, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "A6", x: 0.425, y: -4.36, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "A7", x: -0.425, y: -4.36, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "A8", x: -1.275, y: -4.36, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "A9", x: -2.125, y: -4.36, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "A12", x: -2.975, y: -4.36, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "B12", x: 2.975, y: -3.01, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "B9", x: 2.125, y: -3.01, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "B8", x: 1.275, y: -3.01, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "B7", x: 0.425, y: -3.01, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "B6", x: -0.425, y: -3.01, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "B5", x: -1.275, y: -3.01, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "B4", x: -2.125, y: -3.01, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "B1", x: -2.975, y: -3.01, width: 0.65, length: 0.65, drill: 0.4 }
+  - { number: "SHELL", x: 4.325, y: -3.38, width: 0.9, length: 2.4, drill: 0.6, drill_length: 2.1 }
+  - { number: "SHELL", x: -4.325, y: -3.38, width: 0.9, length: 2.4, drill: 0.6, drill_length: 2.1 }
+  - { number: "SHELL", x: 4.325, y: 0.0, width: 0.9, length: 1.7, drill: 0.6, drill_length: 1.4 }
+  - { number: "SHELL", x: -4.325, y: 0.0, width: 0.9, length: 1.7, drill: 0.6, drill_length: 1.4 }
+
+provenance:
+  "/lead_count":
+    - source: gct/USB4085-DWG
+      page: 2
+      locator: "\"Recommended PCB Layout\": 16 plated contact holes (A1..A12 row, B12..B1 row) + 4 plated shell slots"
+  "/pads":
+    - source: gct/USB4085-DWG
+      page: 2
+      locator: "\"Recommended PCB Layout\" (page 2; as viewed from component side, tolerance ±0.05), drawn with the opening at the bottom; turned 180° so the opening faces +Y (x -> -x, y -> -y; rotation, not mirror). Origin: X centre line, Y front shell slot centres. Contact holes \"16x Ø0.65\" land, \"16x Ø0.40\" drill, two rows: A row (A1 A4 A5 A6 A7 A8 A9 A12, left to right) and B row (B12 B9 B8 B7 B6 B5 B4 B1) on the same vertical centre lines. X: \"5.95\" A1 to A12 -> ±2.975; \"4.25\" A4 to A9 -> ±2.125; \"2.55\" A5 to A8 -> ±1.275; pitch \"0.85\" -> A6/A7 ±0.425; then x -> -x. Y: rear slot centres \"3.38\" behind the front ones; A row \"0.98\" behind and B row \"0.37\" in front of the rear slot centres (\"1.35\" between rows): A y = -(3.38 + 0.98) = -4.36, B y = -(3.38 - 0.37) = -3.01. Shell slots (pin \"SHELL\"): \"8.65\" between centres -> x ±4.325; land width \"4x 0.90\", slot width \"4x 0.60\"; rear y -3.38, land \"2x 2.40\", slot \"2x 2.10\"; front y 0, land \"2x 1.70\", slot \"2x 1.40\". No other holes."
+  "/dimensions/body_width":
+    - source: gct/USB4085-DWG
+      page: 1
+      locator: "Top view, shell width \"8.94\""
+  "/dimensions/body_length":
+    - source: gct/USB4085-DWG
+      page: 1
+      locator: "Top view, shell length \"9.17±0.30\""
+  "/dimensions/body_height":
+    - source: gct/USB4085-DWG
+      page: 1
+      locator: "Side view, shell height \"3.16\""
+  "/dimensions/body_offset":
+    - source: gct/USB4085-DWG
+      page: 1
+      locator: "Side view: front face to front tab centre \"4.25\", tab to tab \"3.38\"; shell length \"9.17\": centre y = 4.25 - 9.17/2 = -0.335 (opening toward +Y)"

@@ -1,0 +1,18 @@
+# Bosch Sensortec datasheet, downloaded directly from bosch-sensortec.com
+# (link on the product page). Title page: "Document revision 2.3",
+# "Document number BST-BMA400-DS000-14", "Document release date July 2025". The PDF page
+# index equals the printed "N | total" page number. Text read with
+# pdftotext -layout; package drawings are images and were rendered with
+# pdftoppm and read visually.
+schema_version: "0.1"
+kind: source
+id: bosch/BST-BMA400-DS000-14
+
+publisher: bosch
+document_id: "BST-BMA400-DS000-14"
+document_type: datasheet
+
+revision: "2.3"
+date: "2025-07"
+
+url: "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bma400-ds000.pdf"

@@ -1,0 +1,215 @@
+# TDK InvenSense 14 Lead LGA (2.5x3x0.91) mm NiAu pad finish, section 10.2
+# "PACKAGE DIMENSIONS": drawing on one page, "DIMENSIONS IN MILLIMETERS"
+# table on the next.
+# Read from ICM-42688-P DS-000347 rev 1.9 (pages 54-55). The same
+# drawing and table appear in ICM-42605 DS-000292 rev 1.7 (pp 52-53),
+# ICM-42686-P DS-000348 rev 1.4 (pp 55-56), ICM-42688-V DS-000439 rev 1.1
+# (pp 56-57) and IIM-42652 DS-000440 rev 1.3 (pp 57-58): the tables'
+# pdftotext rows diff identical; the drawings were compared on renders
+# (same dimensions, not pixel-identical).
+# Frame: E = 3 BSC is the horizontal top-view dimension (body_width, X), D
+# = 2.5 BSC vertical (body_length). Top view: pin 1 top-left (A1 corner
+# index), 1-4 down the left, 5-7 bottom, 8-11 up the right, 12-14 top,
+# counter-clockwise (also the "Pin Out Diagram" figure in section 4.1)
+# -> lead_layout [4, 3, 4, 3].
+# Lead pitch e 0.5 BSC; D1 1.5 BSC (4-pad columns), E1 1 BSC (3-pad
+# rows), SD 0.25 BSC body centre to contact pin (centred). Lead width W
+# 0.2/0.25/0.3, lead length L 0.425/0.475/0.525, the same on all sides.
+# Body edge to terminal: "(0.10)" reference on both axes of the bottom
+# view; the BSC-style "2X 1.1625" (column centre from body centre) and
+# "2X 0.9125" (row centre) agree: 1.5 - 1.1625 - 0.475/2 = 0.10 and
+# 1.25 - 0.9125 - 0.2375 = 0.10.
+# Heights: A (total) 0.85/0.91/0.97; A2 mold thickness 0.8 REF -> body_height
+# (reference value, so marked); A1 substrate 0.105 REF not recorded.
+# Not drawn by the generator: the "A1 CORNER INDEX AREA" pad (0.25 x 0.09
+# reference) next to pin 1.
+schema_version: "0.1"
+kind: package
+id: tdk/LGA14-3.0x2.5-P0.5-H0.91
+
+family: lga
+lead_count: 14
+lead_layout: [4, 3, 4, 3]
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 3.0
+    unit: mm
+  body_length:
+    nominal: 2.5
+    unit: mm
+  body_height:
+    nominal: 0.8
+    unit: mm
+  overall_height:
+    nominal: 0.91
+    min: 0.85
+    max: 0.97
+    unit: mm
+  lead_length:
+    nominal: 0.475
+    min: 0.425
+    max: 0.525
+    unit: mm
+  lead_width:
+    nominal: 0.25
+    min: 0.2
+    max: 0.3
+    unit: mm
+  lead_inset:
+    nominal: 0.1
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lga
+
+provenance:
+  "/pitch":
+    - source: tdk/DS-000347@rev1.9
+      page: 55
+      locator: "Lead Pitch e 0.5 BSC"
+    - source: tdk/DS-000292@rev1.7
+      page: 53
+      locator: "Lead Pitch e 0.5 BSC"
+    - source: tdk/DS-000348@rev1.4
+      page: 56
+      locator: "Lead Pitch e 0.5 BSC"
+    - source: tdk/DS-000439@rev1.1
+      page: 57
+      locator: "Lead Pitch e 0.5 BSC"
+    - source: tdk/DS-000440@rev1.3
+      page: 58
+      locator: "Lead Pitch e 0.5 BSC"
+  "/lead_layout":
+    - source: tdk/DS-000347@rev1.9
+      page: 54
+      locator: "top and bottom view pin numbers 1, 4, 5, 7, 8, 11, 12, 14; Lead Count n 14"
+    - source: tdk/DS-000292@rev1.7
+      page: 52
+      locator: "top and bottom view pin numbers 1, 4, 5, 7, 8, 11, 12, 14; Lead Count n 14"
+    - source: tdk/DS-000348@rev1.4
+      page: 55
+      locator: "top and bottom view pin numbers 1, 4, 5, 7, 8, 11, 12, 14; Lead Count n 14"
+    - source: tdk/DS-000439@rev1.1
+      page: 56
+      locator: "top and bottom view pin numbers 1, 4, 5, 7, 8, 11, 12, 14; Lead Count n 14"
+    - source: tdk/DS-000440@rev1.3
+      page: 57
+      locator: "top and bottom view pin numbers 1, 4, 5, 7, 8, 11, 12, 14; Lead Count n 14"
+  "/dimensions/body_width":
+    - source: tdk/DS-000347@rev1.9
+      page: 55
+      locator: "Body Size E 3 BSC (horizontal in the top view)"
+    - source: tdk/DS-000292@rev1.7
+      page: 53
+      locator: "Body Size E 3 BSC (horizontal in the top view)"
+    - source: tdk/DS-000348@rev1.4
+      page: 56
+      locator: "Body Size E 3 BSC (horizontal in the top view)"
+    - source: tdk/DS-000439@rev1.1
+      page: 57
+      locator: "Body Size E 3 BSC (horizontal in the top view)"
+    - source: tdk/DS-000440@rev1.3
+      page: 58
+      locator: "Body Size E 3 BSC (horizontal in the top view)"
+  "/dimensions/body_length":
+    - source: tdk/DS-000347@rev1.9
+      page: 55
+      locator: "Body Size D 2.5 BSC"
+    - source: tdk/DS-000292@rev1.7
+      page: 53
+      locator: "Body Size D 2.5 BSC"
+    - source: tdk/DS-000348@rev1.4
+      page: 56
+      locator: "Body Size D 2.5 BSC"
+    - source: tdk/DS-000439@rev1.1
+      page: 57
+      locator: "Body Size D 2.5 BSC"
+    - source: tdk/DS-000440@rev1.3
+      page: 58
+      locator: "Body Size D 2.5 BSC"
+  "/dimensions/body_height":
+    - source: tdk/DS-000347@rev1.9
+      page: 55
+      locator: "Mold Thickness A2 0.8 REF (reference value)"
+    - source: tdk/DS-000292@rev1.7
+      page: 53
+      locator: "Mold Thickness A2 0.8 REF (reference value)"
+    - source: tdk/DS-000348@rev1.4
+      page: 56
+      locator: "Mold Thickness A2 0.8 REF (reference value)"
+    - source: tdk/DS-000439@rev1.1
+      page: 57
+      locator: "Mold Thickness A2 0.8 REF (reference value)"
+    - source: tdk/DS-000440@rev1.3
+      page: 58
+      locator: "Mold Thickness A2 0.8 REF (reference value)"
+  "/dimensions/overall_height":
+    - source: tdk/DS-000347@rev1.9
+      page: 55
+      locator: "Total Thickness A 0.85/0.91/0.97"
+    - source: tdk/DS-000292@rev1.7
+      page: 53
+      locator: "Total Thickness A 0.85/0.91/0.97"
+    - source: tdk/DS-000348@rev1.4
+      page: 56
+      locator: "Total Thickness A 0.85/0.91/0.97"
+    - source: tdk/DS-000439@rev1.1
+      page: 57
+      locator: "Total Thickness A 0.85/0.91/0.97"
+    - source: tdk/DS-000440@rev1.3
+      page: 58
+      locator: "Total Thickness A 0.85/0.91/0.97"
+  "/dimensions/lead_length":
+    - source: tdk/DS-000347@rev1.9
+      page: 55
+      locator: "Lead Length L 0.425/0.475/0.525"
+    - source: tdk/DS-000292@rev1.7
+      page: 53
+      locator: "Lead Length L 0.425/0.475/0.525"
+    - source: tdk/DS-000348@rev1.4
+      page: 56
+      locator: "Lead Length L 0.425/0.475/0.525"
+    - source: tdk/DS-000439@rev1.1
+      page: 57
+      locator: "Lead Length L 0.425/0.475/0.525"
+    - source: tdk/DS-000440@rev1.3
+      page: 58
+      locator: "Lead Length L 0.425/0.475/0.525"
+  "/dimensions/lead_width":
+    - source: tdk/DS-000347@rev1.9
+      page: 55
+      locator: "Lead Width W 0.2/0.25/0.3"
+    - source: tdk/DS-000292@rev1.7
+      page: 53
+      locator: "Lead Width W 0.2/0.25/0.3"
+    - source: tdk/DS-000348@rev1.4
+      page: 56
+      locator: "Lead Width W 0.2/0.25/0.3"
+    - source: tdk/DS-000439@rev1.1
+      page: 57
+      locator: "Lead Width W 0.2/0.25/0.3"
+    - source: tdk/DS-000440@rev1.3
+      page: 58
+      locator: "Lead Width W 0.2/0.25/0.3"
+  "/dimensions/lead_inset":
+    - source: tdk/DS-000347@rev1.9
+      page: 54
+      locator: "bottom view, reference (0.10) body edge to terminal; = 1.5 - 1.1625 - 0.2375 from the 2X 1.1625 dimension"
+    - source: tdk/DS-000292@rev1.7
+      page: 52
+      locator: "bottom view, reference (0.10) body edge to terminal; = 1.5 - 1.1625 - 0.2375 from the 2X 1.1625 dimension"
+    - source: tdk/DS-000348@rev1.4
+      page: 55
+      locator: "bottom view, reference (0.10) body edge to terminal; = 1.5 - 1.1625 - 0.2375 from the 2X 1.1625 dimension"
+    - source: tdk/DS-000439@rev1.1
+      page: 56
+      locator: "bottom view, reference (0.10) body edge to terminal; = 1.5 - 1.1625 - 0.2375 from the 2X 1.1625 dimension"
+    - source: tdk/DS-000440@rev1.3
+      page: 57
+      locator: "bottom view, reference (0.10) body edge to terminal; = 1.5 - 1.1625 - 0.2375 from the 2X 1.1625 dimension"

@@ -1,0 +1,25 @@
+# OMRON B3F 6 x 6 mm through-hole tactile switch without ground terminal
+# (B3F-10xx, B3F-10x2-G; SPST-NO, 4 terminals). The datasheet names no
+# signals: pins are named by the numbers in "Terminal Arrangement/Internal
+# Connections (Top View)", which joins 4 and 3 on one line and 2 and 1 on
+# the other, the switch between the lines -> 3 is internally connected to
+# 4, 1 to 2 (connected_to).
+schema_version: "0.1"
+kind: device
+id: omron/B3F-1000
+
+manufacturer: omron
+category: other
+family: B3F
+
+pins:
+  "1": { name: "1", type: passive, connected_to: "2" }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive, connected_to: "4" }
+  "4": { name: "4", type: passive }
+
+provenance:
+  "/pins":
+    - source: omron/A070-E1-08
+      page: 4
+      locator: "\"Standard, Flat Plunger Type (without Ground Terminal)\", \"Terminal Arrangement/Internal Connections (Top View)\": 4-3 joined, 2-1 joined, switch between"

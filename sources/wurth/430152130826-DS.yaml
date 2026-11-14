@@ -1,0 +1,25 @@
+# Würth Elektronik datasheet for order code 430152130826 ("WS-TASV SMT Tact
+# Switch", 6 x 6 mm, H 13 mm, ØD 3 mm, operation force 260 g, actuator
+# White), 6 pages, A4 landscape. we-online.com refuses curl (HTTP 403);
+# fetched once with WebFetch, which saved the original PDF (PDFlib, author
+# "Würth Elektronik eiSos GmbH & Co. KG", title "430152130826 Datasheet WS-TASV
+# SMT Tact Switch"). Read with pdftotext -layout plus 110-600 dpi renders
+# of page 1 (vector drawing; rotated dimension text). Title block on every
+# page: REVISION "002.002", DATE "2020-06-04" (YYYY-MM-DD), ORDER CODE
+# "430152130826", STATUS "Valid" (document release status), SIZE/TYPE "6 x 6 mm",
+# GENERAL TOLERANCE "DIN ISO 2768-1m", first-angle projection. PDF page
+# index = printed page ("1/6"). The page-1 drawing is generic for all 18
+# WS-TASV 6x6 SMD order codes: `pdftotext -layout` of page 1 is identical
+# across them except the order code and the "Dimensions" table (H, ØD).
+schema_version: "0.1"
+kind: source
+id: wurth/430152130826-DS
+
+publisher: wurth
+document_id: "430152130826"
+document_type: datasheet
+
+revision: "002.002"
+date: "2020-06-04"
+
+url: "https://www.we-online.com/components/products/datasheet/430152130826.pdf"

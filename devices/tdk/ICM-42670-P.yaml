@@ -1,0 +1,37 @@
+# TDK InvenSense ICM-42670-P, 14-pin LGA. Pin names as printed in Table 9
+# "Signal Descriptions" / Pin Name column (section 4.1, page 18) of DS-000451;
+# numbers checked against the "Pin Out Diagram" figure. The table has no
+# I/O-type column: types are taken from the descriptions -- "power supply
+# voltage"/"IO power supply voltage" -> power, "Power supply ground" ->
+# ground, RESV -> reserved, chip select and serial clock (slave inputs)
+# -> input, interrupt pins -> output; FSYNC frame sync input -> input, multi-function data pins
+# -> io.
+schema_version: "0.1"
+kind: device
+id: tdk/ICM-42670-P
+
+manufacturer: tdk
+category: other
+family: "ICM-42670-P"
+
+pins:
+  "1": { name: "AP_SDO / AP_AD0", type: io }
+  "2": { name: "RESV", type: reserved }
+  "3": { name: "RESV", type: reserved }
+  "4": { name: "INT1 / INT", type: output }
+  "5": { name: "VDDIO", type: power }
+  "6": { name: "GND", type: ground }
+  "7": { name: "FSYNC", type: input }
+  "8": { name: "VDD", type: power }
+  "9": { name: "INT2", type: output }
+  "10": { name: "RESV", type: reserved }
+  "11": { name: "RESV", type: reserved }
+  "12": { name: "AP_CS", type: input }
+  "13": { name: "AP_SCL / AP_SCLK", type: input }
+  "14": { name: "AP_SDA / AP_SDIO / AP_SDI", type: io }
+
+provenance:
+  "/pins":
+    - source: tdk/DS-000451@rev1.2
+      page: 18
+      locator: "Table 9 Signal Descriptions; Pin Out Diagram figure"

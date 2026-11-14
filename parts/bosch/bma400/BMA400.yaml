@@ -1,0 +1,30 @@
+# BMA400: Bosch Sensortec's product name, used by distributors as the MPN.
+# existence: probable -- the datasheet names the product and gives the
+# Bosch technical reference code "0 273 141 275" on its title page, but neither the
+# datasheet nor the product page prints "BMA400" in an ordering table.
+# lifecycle: unknown (no first-party status statement found).
+# Package: drawing of this datasheet (page 111).
+schema_version: "0.1"
+kind: part
+id: bosch/BMA400
+
+manufacturer: bosch
+mpn: "BMA400"
+
+device: bosch/BMA400
+package: bosch/LGA12-2.0x2.0-P0.5-BMA400
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - bosch/BST-BMA400-DS000-14
+
+provenance:
+  "/existence":
+    - source: bosch/BST-BMA400-DS000-14
+      page: 1
+      locator: "title page: product BMA400, technical reference code 0 273 141 275 (no ordering table)"

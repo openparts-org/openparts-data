@@ -1,0 +1,97 @@
+# Bosch Sensortec BMP581 10-pin metal-lid LGA 2.0 x 2.0 mm, max 0.80 mm,
+# read from Figure 30 "BMP581 bottom view" and Figure 29 top view (section
+# 8.1, page 68) and Figure 31 side view (page 69) of BST-BMP581-DS004-13.
+# Footnote 8: "UNLESS OTHERWISE SPECIFIED DIMENSIONS ARE IN MILLIMETERS,
+# TOLERANCES +-0.05"; values without their own tolerance are nominal only.
+# In this outline drawing pins 1-2 are on the right edge of the bottom
+# view (PIN 1 CORNER top-right), 3-5 along the bottom, 6-7 on the left,
+# 8-10 along the top, i.e. clockwise in the bottom view = counter-clockwise
+# from the top of the left edge in the top view -> lead_layout
+# [2, 3, 2, 3] with no rotation. (The pin-out Figure 23 on page 46 draws
+# the package rotated 90 deg, pins 1-2 on the top edge; same order.)
+# Pitch: boxed 0.5 between the 2 side pads, boxed 1 across the 3-pad rows.
+# Terminals 0.275 (inward) x 0.25: "0.275 x 0.25 (4x)" side pads and
+# "0.25x0.275 (6x)" row pads; measured on a 600 dpi render, the side pads
+# are longer in X and the row pads longer in Y. Boxed 1.525 between pad
+# centres across the body. Edge to pad 0.1+-0.08.
+# Height: "max. 0.80" (side view) -> body_height max only. The section 8.2
+# landing pattern (footprint +25 um per side) is not used: the footprint
+# is generated from the terminals.
+schema_version: "0.1"
+kind: package
+id: bosch/LGA10-2.0x2.0-P0.5-BMP581
+
+family: lga
+lead_count: 10
+lead_layout: [2, 3, 2, 3]
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 2.0
+    min: 1.9
+    max: 2.1
+    unit: mm
+  body_length:
+    nominal: 2.0
+    min: 1.9
+    max: 2.1
+    unit: mm
+  body_height:
+    max: 0.8
+    unit: mm
+  lead_length:
+    nominal: 0.275
+    unit: mm
+  lead_width:
+    nominal: 0.25
+    unit: mm
+  lead_inset:
+    nominal: 0.1
+    min: 0.02
+    max: 0.18
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lga
+
+provenance:
+  "/pitch":
+    - source: bosch/BST-BMP581-DS004-13
+      page: 68
+      locator: "Figure 30 bottom view, boxed 0.5 (side pads) and boxed 1 (three row pads)"
+  "/lead_layout":
+    - source: bosch/BST-BMP581-DS004-13
+      page: 68
+      locator: "Figure 30 bottom view numbering: 1-2 right edge, 3-5 bottom, 6-7 left, 8-10 top (clockwise from the bottom = counter-clockwise from the top)"
+    - source: bosch/BST-BMP581-DS004-13
+      page: 46
+      locator: "Figure 23 pin-out top/bottom view and Table 28 pin description"
+  "/dimensions/body_width":
+    - source: bosch/BST-BMP581-DS004-13
+      page: 68
+      locator: "Figure 29 top view, 2 +-0.1"
+  "/dimensions/body_length":
+    - source: bosch/BST-BMP581-DS004-13
+      page: 68
+      locator: "Figure 29 top view, 2 +-0.1"
+  "/dimensions/body_height":
+    - source: bosch/BST-BMP581-DS004-13
+      page: 69
+      locator: "Figure 31 side view, max. 0.80"
+  "/dimensions/lead_length":
+    - source: bosch/BST-BMP581-DS004-13
+      page: 68
+      locator: "Figure 30 bottom view, 0.275 x 0.25 (4x) and 0.25x0.275 (6x): 0.275 inward"
+  "/dimensions/lead_width":
+    - source: bosch/BST-BMP581-DS004-13
+      page: 68
+      locator: "Figure 30 bottom view, 0.275 x 0.25 (4x) and 0.25x0.275 (6x): 0.25 across"
+  "/dimensions/lead_inset":
+    - source: bosch/BST-BMP581-DS004-13
+      page: 68
+      locator: "Figure 30 bottom view, 0.1 +-0.08 body edge to pad (both directions)"

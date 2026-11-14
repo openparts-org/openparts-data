@@ -1,0 +1,30 @@
+# IIM-42652: printed verbatim in the "ORDERING INFORMATION" table on page 1 of
+# DS-000440 rev 1.3 (PART IIM-42652, -40 to +105 C, 14-pin LGA; dagger = RoHS and
+# Green-compliant) -> existence verified.
+# lifecycle: unknown (the datasheet's "unless the product is in mass
+# production" is boilerplate, not a status; the product page gives none).
+schema_version: "0.1"
+kind: part
+id: tdk/IIM-42652
+
+manufacturer: tdk
+mpn: "IIM-42652"
+
+device: tdk/IIM-42652
+package: tdk/LGA14-3.0x2.5-P0.5-H0.91
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - tdk/DS-000440@rev1.3
+  - tdk/DS-000347@rev1.9
+
+provenance:
+  "/existence":
+    - source: tdk/DS-000440@rev1.3
+      page: 1
+      locator: "ORDERING INFORMATION table, PART IIM-42652"

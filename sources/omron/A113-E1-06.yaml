@@ -1,0 +1,20 @@
+# OMRON "Tactile Switch (SMT) B3FS" datasheet, Cat. No. A113-E1-06,
+# "© OMRON Corporation 2007-2019" (last page), 4 pages, from
+# https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf (curl,
+# 2026-11-14; PDF title "B3FS", CreationDate 2019-07-11, ModDate
+# 2019-07-26 -- no printed date; `date` is the ModDate). PDF page index =
+# printed page number. Page 1 "List of Models" is the orderable model
+# table; page 3 "Dimensions" the drawings, PCB pads and terminal
+# arrangement (top view).
+schema_version: "0.1"
+kind: source
+id: omron/A113-E1-06
+
+publisher: omron
+document_id: "A113-E1"
+document_type: datasheet
+
+revision: "06"
+date: "2019-07-26"
+
+url: "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"

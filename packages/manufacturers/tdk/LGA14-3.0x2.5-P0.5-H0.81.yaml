@@ -1,0 +1,105 @@
+# TDK InvenSense 14 Lead LGA (2.5x3x0.81) mm NiAu pad finish, section 10.2
+# "PACKAGE DIMENSIONS": drawing on one page, "DIMENSIONS IN MILLIMETERS"
+# table on the next.
+# Read from ICM-45686 DS-000577 rev 1.0 (pages 52-53). Terminal geometry
+# as the 0.91 mm package (tdk/LGA14-3.0x2.5-P0.5-H0.91); only the
+# thickness differs (table rows "Edge Ball Center to Center" and an empty
+# "SE --- BSC" row are printed as such).
+# Frame: E = 3 BSC is the horizontal top-view dimension (body_width, X), D
+# = 2.5 BSC vertical (body_length). Top view: pin 1 top-left (A1 corner
+# index), 1-4 down the left, 5-7 bottom, 8-11 up the right, 12-14 top,
+# counter-clockwise (also the "Pin Out Diagram" figure in section 4.1)
+# -> lead_layout [4, 3, 4, 3].
+# Lead pitch e 0.5 BSC; D1 1.5 BSC (4-pad columns), E1 1 BSC (3-pad
+# rows), SD 0.25 BSC body centre to contact pin (centred). Lead width W
+# 0.2/0.25/0.3, lead length L 0.425/0.475/0.525, the same on all sides.
+# Body edge to terminal: "(0.10)" reference on both axes of the bottom
+# view; the BSC-style "2X 1.1625" (column centre from body centre) and
+# "2X 0.9125" (row centre) agree: 1.5 - 1.1625 - 0.475/2 = 0.10 and
+# 1.25 - 0.9125 - 0.2375 = 0.10.
+# Heights: A (total) 0.76/0.81/0.86; A2 mold thickness 0.7 REF -> body_height
+# (reference value, so marked); A1 substrate 0.105 REF not recorded.
+# Not drawn by the generator: the "A1 CORNER INDEX AREA" pad (0.25 x 0.09
+# reference) next to pin 1.
+schema_version: "0.1"
+kind: package
+id: tdk/LGA14-3.0x2.5-P0.5-H0.81
+
+family: lga
+lead_count: 14
+lead_layout: [4, 3, 4, 3]
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 3.0
+    unit: mm
+  body_length:
+    nominal: 2.5
+    unit: mm
+  body_height:
+    nominal: 0.7
+    unit: mm
+  overall_height:
+    nominal: 0.81
+    min: 0.76
+    max: 0.86
+    unit: mm
+  lead_length:
+    nominal: 0.475
+    min: 0.425
+    max: 0.525
+    unit: mm
+  lead_width:
+    nominal: 0.25
+    min: 0.2
+    max: 0.3
+    unit: mm
+  lead_inset:
+    nominal: 0.1
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lga
+
+provenance:
+  "/pitch":
+    - source: tdk/DS-000577@rev1.0
+      page: 53
+      locator: "Lead Pitch e 0.5 BSC"
+  "/lead_layout":
+    - source: tdk/DS-000577@rev1.0
+      page: 52
+      locator: "top and bottom view pin numbers; Lead Count n 14"
+  "/dimensions/body_width":
+    - source: tdk/DS-000577@rev1.0
+      page: 53
+      locator: "Body Size E 3 BSC"
+  "/dimensions/body_length":
+    - source: tdk/DS-000577@rev1.0
+      page: 53
+      locator: "Body Size D 2.5 BSC"
+  "/dimensions/body_height":
+    - source: tdk/DS-000577@rev1.0
+      page: 53
+      locator: "Mold Thickness A2 0.7 REF (reference value)"
+  "/dimensions/overall_height":
+    - source: tdk/DS-000577@rev1.0
+      page: 53
+      locator: "Total Thickness A 0.76/0.81/0.86"
+  "/dimensions/lead_length":
+    - source: tdk/DS-000577@rev1.0
+      page: 53
+      locator: "Lead Length L 0.425/0.475/0.525"
+  "/dimensions/lead_width":
+    - source: tdk/DS-000577@rev1.0
+      page: 53
+      locator: "Lead Width W 0.2/0.25/0.3"
+  "/dimensions/lead_inset":
+    - source: tdk/DS-000577@rev1.0
+      page: 52
+      locator: "bottom view, reference (0.10) body edge to terminal; = 1.5 - 1.1625 - 0.2375 from the 2X 1.1625 dimension"

@@ -1,0 +1,100 @@
+# Bosch Sensortec BMP384 10-pin metal-lid LGA 2.0 x 2.0 x 0.95 mm, read from
+# Figure 26 "Package outline dimensions BMP384" (section 7.1, page 48) of
+# BST-BMP384-DS003-11, rendered at 500 dpi (the drawing is a low-resolution
+# image; the boxed column spacing reads "1.515" and is consistent with the
+# printed pad and edge values: 2 x (1.00 - 0.100 - 0.285/2) = 1.515).
+# Same terminal frame as the BMP390 package: pins 1-2 on the top edge in
+# the datasheet (Figure 23 pin-out top view, counter-clockwise from the
+# right end of the top edge), rotated 90 deg here so pin 1 is at the top
+# of the left edge -> lead_layout [2, 3, 2, 3]; rotate the footprint 90 deg
+# to match the datasheet orientation.
+# Pitch 0.500 on all sides (boxed 1.000 across 3 side pads, boxed 0.500
+# between the 2-pad pins). Terminals 0.285+-0.03 (inward) x 0.270+-0.02
+# (across) on every side (6x 0.285 x 0.270 side pads, 4x 0.270 x 0.285).
+# Edge to pad 0.100+-0.05. Note under the figure: general tolerances
+# +-50 um. Section 7.2: the outline bottom view is the suggested landing
+# pattern. Only the overall height 0.95+-0.05 is printed -> body_height.
+schema_version: "0.1"
+kind: package
+id: bosch/LGA10-2.0x2.0-P0.5-BMP384
+
+family: lga
+lead_count: 10
+lead_layout: [2, 3, 2, 3]
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 2.0
+    min: 1.9
+    max: 2.1
+    unit: mm
+  body_length:
+    nominal: 2.0
+    min: 1.9
+    max: 2.1
+    unit: mm
+  body_height:
+    nominal: 0.95
+    min: 0.9
+    max: 1.0
+    unit: mm
+  lead_length:
+    nominal: 0.285
+    min: 0.255
+    max: 0.315
+    unit: mm
+  lead_width:
+    nominal: 0.27
+    min: 0.25
+    max: 0.29
+    unit: mm
+  lead_inset:
+    nominal: 0.1
+    min: 0.05
+    max: 0.15
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lga
+
+provenance:
+  "/pitch":
+    - source: bosch/BST-BMP384-DS003-11
+      page: 48
+      locator: "Figure 26 bottom view, boxed 1.000 across three side pads and boxed 0.500 between the 2-pad pins"
+  "/lead_layout":
+    - source: bosch/BST-BMP384-DS003-11
+      page: 48
+      locator: "Figure 26 bottom view (2 pads on the pin-1/2 edge and its opposite, 3 on the others), rotated 90 deg so pins 1-2 form the left edge"
+    - source: bosch/BST-BMP384-DS003-11
+      page: 45
+      locator: "Figure 23 pin-out top view (image) and Table 50: 1 VDDIO ... 10 VDD, counter-clockwise from the top edge"
+  "/dimensions/body_width":
+    - source: bosch/BST-BMP384-DS003-11
+      page: 48
+      locator: "Figure 26 top view, 2.00+-0.10"
+  "/dimensions/body_length":
+    - source: bosch/BST-BMP384-DS003-11
+      page: 48
+      locator: "Figure 26 top view, 2.00+-0.10"
+  "/dimensions/body_height":
+    - source: bosch/BST-BMP384-DS003-11
+      page: 48
+      locator: "Figure 26 side view, 0.95+-0.05"
+  "/dimensions/lead_length":
+    - source: bosch/BST-BMP384-DS003-11
+      page: 48
+      locator: "Figure 26 bottom view, 0.285+-0.03 (6x side pads, 4x row pads; inward)"
+  "/dimensions/lead_width":
+    - source: bosch/BST-BMP384-DS003-11
+      page: 48
+      locator: "Figure 26 bottom view, 0.270+-0.02 (6x, 4x; across)"
+  "/dimensions/lead_inset":
+    - source: bosch/BST-BMP384-DS003-11
+      page: 48
+      locator: "Figure 26 bottom view, 0.100+-0.05 body edge to pad (both directions)"

@@ -1,0 +1,19 @@
+# Würth Elektronik product-series page "WR-USB Type C Connectors" (live
+# HTML), read 2026-11-14 with WebFetch (curl gets 403 from we-online.com).
+# It lists 14 order codes with Application/Type/Gender/Pins/Mount and a
+# Status; for 629722000214 (USB 2.0, Type C, Horizontal, Receptacle, 16
+# pins, SMT, PCB thickness 0.8 mm) the Status is "Active" -- "Production is active. Expected lifetime: >10
+# years." A live page, not a revisioned document: revision/date record
+# the retrieval date. No page numbers apply (page: 1 = the single page).
+schema_version: "0.1"
+kind: source
+id: wurth/WR-USB-TYPE-C-product-page
+
+publisher: wurth
+document_id: "INPUT_OUTPUT_WR_USB_TYPE_C"
+document_type: product_page
+
+revision: "retrieved 2026-11-14"
+date: "2026-11-14"
+
+url: "https://www.we-online.com/en/components/products/INPUT_OUTPUT_WR_USB_TYPE_C"

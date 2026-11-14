@@ -1,0 +1,115 @@
+# Bosch Sensortec BMI270 14-pin LGA 3.0 x 2.5 x 0.83 mm, read from section
+# 8.1 "Package outline dimensions" (page 143) of BST-BMI270-DS000-08: the
+# DIMENSIONAL REFERENCES table and the drawing (bottom view "(Flip
+# Vertical)", pad details 0.475 x 0.250 / 0.250 x 0.475).
+# Frame: D = 3.00 is the horizontal top-view dimension (body_width, X),
+# E = 2.50 vertical (body_length, Y). 4 pads on each short (left/right)
+# edge, 3 on each long edge. Pin-out top view (7.1, page 134): 1-4 down
+# the left edge from the top, 5-7 bottom left-to-right, 8-11 up the right,
+# 12-14 top right-to-left -> lead_layout [4, 3, 4, 3].
+# Pitch e = 0.50 BSC on all sides, D1 1.00 BSC (3-pad rows), columns
+# symmetric about the centre line (two pads each side). Terminals
+# 0.475 (inward) x 0.250 on every side (detail views); "b" in the table
+# refers to the metallized pad detail. L1 (package edge to pad) 0.100 nom,
+# 0.074 min, no max.
+# Heights: A 0.79/0.83/0.87 (overall), A2 0.68/0.70/0.72 (body above the
+# pads), A1 0.11/0.13/0.15 (seating plane to package bottom).
+# Not drawn by the generator: the non-electrical "PIN 1 INDEX" pad
+# (0.250 x 0.090) beside pin 1.
+schema_version: "0.1"
+kind: package
+id: bosch/LGA14-3.0x2.5-P0.5-BMI270
+
+family: lga
+lead_count: 14
+lead_layout: [4, 3, 4, 3]
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 3.0
+    min: 2.95
+    max: 3.05
+    unit: mm
+  body_length:
+    nominal: 2.5
+    min: 2.45
+    max: 2.55
+    unit: mm
+  body_height:
+    nominal: 0.7
+    min: 0.68
+    max: 0.72
+    unit: mm
+  overall_height:
+    nominal: 0.83
+    min: 0.79
+    max: 0.87
+    unit: mm
+  standoff:
+    nominal: 0.13
+    min: 0.11
+    max: 0.15
+    unit: mm
+  lead_length:
+    nominal: 0.475
+    unit: mm
+  lead_width:
+    nominal: 0.25
+    unit: mm
+  lead_inset:
+    nominal: 0.1
+    min: 0.074
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lga
+
+provenance:
+  "/pitch":
+    - source: bosch/BST-BMI270-DS000-08
+      page: 143
+      locator: "DIMENSIONAL REFERENCES, e 0.50 BSC"
+  "/lead_layout":
+    - source: bosch/BST-BMI270-DS000-08
+      page: 143
+      locator: "bottom view, 4 pads on the E edges, 3 on the D edges"
+    - source: bosch/BST-BMI270-DS000-08
+      page: 134
+      locator: "7.1 Pin-out top view: 1-4 left, 5-7 bottom, 8-11 right, 12-14 top"
+  "/dimensions/body_width":
+    - source: bosch/BST-BMI270-DS000-08
+      page: 143
+      locator: "DIMENSIONAL REFERENCES, D 2.95/3.00/3.05 (horizontal in the top view)"
+  "/dimensions/body_length":
+    - source: bosch/BST-BMI270-DS000-08
+      page: 143
+      locator: "DIMENSIONAL REFERENCES, E 2.45/2.50/2.55"
+  "/dimensions/body_height":
+    - source: bosch/BST-BMI270-DS000-08
+      page: 143
+      locator: "DIMENSIONAL REFERENCES, A2 0.68/0.70/0.72"
+  "/dimensions/overall_height":
+    - source: bosch/BST-BMI270-DS000-08
+      page: 143
+      locator: "DIMENSIONAL REFERENCES, A 0.79/0.83/0.87"
+  "/dimensions/standoff":
+    - source: bosch/BST-BMI270-DS000-08
+      page: 143
+      locator: "DIMENSIONAL REFERENCES, A1 0.11/0.13/0.15 (detail A: seating plane to package)"
+  "/dimensions/lead_length":
+    - source: bosch/BST-BMI270-DS000-08
+      page: 143
+      locator: "pad detail views, 0.475 x 0.250 and 0.250 x 0.475: 0.475 inward"
+  "/dimensions/lead_width":
+    - source: bosch/BST-BMI270-DS000-08
+      page: 143
+      locator: "pad detail views: 0.250 across"
+  "/dimensions/lead_inset":
+    - source: bosch/BST-BMI270-DS000-08
+      page: 143
+      locator: "DIMENSIONAL REFERENCES, L1 0.074 min / 0.100 nom (3xL1, 4xL1 in the bottom view)"

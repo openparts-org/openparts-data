@@ -1,0 +1,32 @@
+# BMI330: Bosch Sensortec's product name, used by distributors as the MPN.
+# existence: probable -- the datasheet names the product and gives the
+# Bosch sales part number "0 273 017 061" on its title page, but neither the
+# datasheet nor the product page prints "BMI330" in an ordering table.
+# lifecycle: unknown (no first-party status statement found).
+# Package: shared with BMI323 -- this datasheet's Figures 44/45 (page 212)
+# are pixel-identical.
+schema_version: "0.1"
+kind: part
+id: bosch/BMI330
+
+manufacturer: bosch
+mpn: "BMI330"
+
+device: bosch/BMI330
+package: bosch/LGA14-3.0x2.5-P0.5-BMI323
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - bosch/BST-BMI330-DS000-03
+  - bosch/BST-BMI323-DS000-13
+
+provenance:
+  "/existence":
+    - source: bosch/BST-BMI330-DS000-03
+      page: 1
+      locator: "title page: product BMI330, sales part number 0 273 017 061 (no ordering table)"

@@ -1,0 +1,25 @@
+# OMRON B3FS 6 x 6 mm SMT tactile switch (SPST-NO, 4 terminals). The
+# datasheet names no signals: pins are named by the numbers in "Terminal
+# Arrangement/Internal Connection (Top View)", which joins 4 and 3 on one
+# line and 2 and 1 on the other, the switch between the lines -> 3 is
+# internally connected to 4, 1 to 2 (connected_to). Same diagram for all
+# three 6 x 6 mm drawings on page 3.
+schema_version: "0.1"
+kind: device
+id: omron/B3FS-1000
+
+manufacturer: omron
+category: other
+family: B3FS
+
+pins:
+  "1": { name: "1", type: passive, connected_to: "2" }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive, connected_to: "4" }
+  "4": { name: "4", type: passive }
+
+provenance:
+  "/pins":
+    - source: omron/A113-E1-06
+      page: 3
+      locator: "\"Terminal Arrangement/Internal Connection (Top View)\": 4-3 joined, 2-1 joined, switch between"

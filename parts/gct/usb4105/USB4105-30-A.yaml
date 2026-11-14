@@ -1,0 +1,28 @@
+# MPN assembled from the drawing's "Ordering Grid" -> existence
+# probable: the grid is a part-numbering legend, not an orderable list
+# (gct.co product pages answer with a Cloudflare challenge; not read).
+# lifecycle unknown: the drawing states none.
+schema_version: "0.1"
+kind: part
+id: gct/USB4105-30-A
+
+manufacturer: gct
+mpn: "USB4105-30-A"
+
+device: gct/USB4105
+package: manufacturers/gct/USB4105
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - gct/USB4105-DWG
+
+provenance:
+  "/existence":
+    - source: gct/USB4105-DWG
+      page: 1
+      locator: "\"Ordering Grid\": USB4105-XX-A-XXX; Contact Plating GF = Gold Flash (standard), 15 = 15µ\" Gold, 30 = 30µ\" Gold; Packing Options A = Tape & Reel; Shell Stake Length \"S\" Blank = 0.95mm, 060 = 0.60mm, 120 = 1.20mm"

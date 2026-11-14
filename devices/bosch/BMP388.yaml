@@ -1,0 +1,30 @@
+# Bosch Sensortec BMP388 barometric pressure sensor, 10-pin LGA. Pin names
+# and I/O types from Table 50 "Pin description" (section 6.1, page 46) of
+# BST-BMP388-DS001-07 (Supply -> power, In -> input, In/Out -> io, Out -> output,
+# VSS "Ground" -> ground); numbers checked against Figure 23 "Pin-out top
+# and bottom view" on the same page. The three VSS pins are all ground.
+schema_version: "0.1"
+kind: device
+id: bosch/BMP388
+
+manufacturer: bosch
+category: other
+family: "BMP3"
+
+pins:
+  "1": { name: "VDDIO", type: power }
+  "2": { name: "SCK", type: input }
+  "3": { name: "VSS", type: ground }
+  "4": { name: "SDI", type: io }
+  "5": { name: "SDO", type: io }
+  "6": { name: "CSB", type: input }
+  "7": { name: "INT", type: output }
+  "8": { name: "VSS", type: ground }
+  "9": { name: "VSS", type: ground }
+  "10": { name: "VDD", type: power }
+
+provenance:
+  "/pins":
+    - source: bosch/BST-BMP388-DS001-07
+      page: 46
+      locator: "Table 50 Pin description; Figure 23 pin-out"

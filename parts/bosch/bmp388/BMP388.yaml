@@ -1,0 +1,33 @@
+# BMP388: Bosch Sensortec's product name, used by distributors as the MPN.
+# existence: probable -- the datasheet names the product and gives the
+# Bosch technical reference code "0 273 300 511" on its title page, but neither the
+# datasheet nor the product page prints "BMP388" in an ordering table; bosch-sensortec.com no longer has a BMP388
+# product page (404).
+# lifecycle: unknown (no first-party status statement found).
+# Package: shared with BMP390 -- this datasheet's Figure 26 (page 49) has the
+# same numbers.
+schema_version: "0.1"
+kind: part
+id: bosch/BMP388
+
+manufacturer: bosch
+mpn: "BMP388"
+
+device: bosch/BMP388
+package: bosch/LGA10-2.0x2.0-P0.5-BMP390
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - bosch/BST-BMP388-DS001-07
+  - bosch/BST-BMP390-DS002-07
+
+provenance:
+  "/existence":
+    - source: bosch/BST-BMP388-DS001-07
+      page: 1
+      locator: "title page: product BMP388, technical reference code 0 273 300 511 (no ordering table)"

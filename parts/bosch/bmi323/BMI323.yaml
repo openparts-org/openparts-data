@@ -1,0 +1,31 @@
+# BMI323: Bosch Sensortec's product name, used by distributors as the MPN.
+# existence: probable -- the datasheet names the product and gives the
+# Bosch sales part number "0 273 017 028" on its title page, but neither the
+# datasheet nor the product page prints "BMI323" in an ordering table; the product page's
+# schema.org data gives model "BMI323", sku "0 273 017 028".
+# lifecycle: unknown (no first-party status statement found).
+# Package: drawing of this datasheet (page 212).
+schema_version: "0.1"
+kind: part
+id: bosch/BMI323
+
+manufacturer: bosch
+mpn: "BMI323"
+
+device: bosch/BMI323
+package: bosch/LGA14-3.0x2.5-P0.5-BMI323
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - bosch/BST-BMI323-DS000-13
+
+provenance:
+  "/existence":
+    - source: bosch/BST-BMI323-DS000-13
+      page: 1
+      locator: "title page: product BMI323, sales part number 0 273 017 028 (no ordering table)"

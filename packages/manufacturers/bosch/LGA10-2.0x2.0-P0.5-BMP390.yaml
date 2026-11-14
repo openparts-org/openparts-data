@@ -1,0 +1,131 @@
+# Bosch Sensortec 10-pin metal-lid LGA 2.0 x 2.0 x 0.75 mm (BMP390, BMP388).
+# Read from Figure 26 "Package outline dimensions" (section 7.1, page 49) of
+# BST-BMP390-DS002-07; the BMP388 datasheet BST-BMP388-DS001-07 page 49
+# carries the same drawing with the same numbers (compared value by value
+# on rendered images; not pixel-identical, the figure is shifted). Note
+# under the figure: "General tolerances are +-50 um (linear)"; values
+# without a printed tolerance are recorded as nominal only.
+#
+# Terminal frame: the bottom view puts pins 1-2 on the TOP edge (2 pads),
+# 3-5 / 8-10 on the side edges (3 pads), and Figure 23 (pin-out, top view)
+# numbers them counter-clockwise starting at the right end of the top
+# edge. This package is the same land rotated 90 deg counter-clockwise so
+# pin 1 is at the top of the left edge (generator convention): left = 1-2,
+# bottom = 3-5, right = 6-7, top = 8-10 -> lead_layout [2, 3, 2, 3].
+# Rotate the footprint by 90 deg to match the datasheet's orientation.
+# All four sides use one 0.500 pitch (boxed 1.000 across the 3-pad
+# columns, boxed 0.500 between the 2-pad pins), centred on the body.
+# Terminals: 0.275 x 0.250 (6x, side columns) and 0.250 x 0.275 (4x,
+# 2-pad rows) -- 0.275 along the inward direction on every side, 0.250
+# across. Columns 1.525 apart (boxed, centre to centre): 2.00/2 - 1.525/2
+# - 0.275/2 = 0.100 = the printed "0.100+-0.05" edge-to-pad distance.
+# Section 7.2: "Bosch Sensortec suggests the BMP390 outline Dimensions
+# (see 7.1 - bottom view) as landing pattern."
+# Height: only the overall 0.75+-0.05 is printed -> body_height.
+schema_version: "0.1"
+kind: package
+id: bosch/LGA10-2.0x2.0-P0.5-BMP390
+
+family: lga
+lead_count: 10
+lead_layout: [2, 3, 2, 3]
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 2.0
+    min: 1.95
+    max: 2.05
+    unit: mm
+  body_length:
+    nominal: 2.0
+    min: 1.95
+    max: 2.05
+    unit: mm
+  body_height:
+    nominal: 0.75
+    min: 0.7
+    max: 0.8
+    unit: mm
+  lead_length:
+    nominal: 0.275
+    unit: mm
+  lead_width:
+    nominal: 0.25
+    unit: mm
+  lead_inset:
+    nominal: 0.1
+    min: 0.05
+    max: 0.15
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lga
+
+provenance:
+  "/pitch":
+    - source: bosch/BST-BMP390-DS002-07
+      page: 49
+      locator: "Figure 26 bottom view: boxed 1.000 across the three side pads (pitch 0.500) and boxed 0.500 between the two pads of the 2-pad edges"
+    - source: bosch/BST-BMP388-DS001-07
+      page: 49
+      locator: "Figure 26 bottom view: boxed 1.000 across the three side pads (pitch 0.500) and boxed 0.500 between the two pads of the 2-pad edges"
+  "/lead_layout":
+    - source: bosch/BST-BMP390-DS002-07
+      page: 49
+      locator: "Figure 26 bottom view, 2 pads on the pin-1/2 edge and its opposite, 3 on the other two; rotated 90 deg so pins 1-2 form the left edge (see header)"
+    - source: bosch/BST-BMP388-DS001-07
+      page: 49
+      locator: "Figure 26 bottom view, 2 pads on the pin-1/2 edge and its opposite, 3 on the other two; rotated 90 deg so pins 1-2 form the left edge (see header)"
+    - source: bosch/BST-BMP390-DS002-07
+      page: 46
+      locator: "Figure 23 pin-out top view: 1-2 top edge (1 at the right), 3-5 left, 6-7 bottom, 8-10 right -- counter-clockwise"
+    - source: bosch/BST-BMP388-DS001-07
+      page: 46
+      locator: "Figure 23 pin-out top view, same arrangement"
+  "/dimensions/body_width":
+    - source: bosch/BST-BMP390-DS002-07
+      page: 49
+      locator: "Figure 26 top view, 2.00+-0.05"
+    - source: bosch/BST-BMP388-DS001-07
+      page: 49
+      locator: "Figure 26 top view, 2.00+-0.05"
+  "/dimensions/body_length":
+    - source: bosch/BST-BMP390-DS002-07
+      page: 49
+      locator: "Figure 26 top view, 2.00+-0.05"
+    - source: bosch/BST-BMP388-DS001-07
+      page: 49
+      locator: "Figure 26 top view, 2.00+-0.05"
+  "/dimensions/body_height":
+    - source: bosch/BST-BMP390-DS002-07
+      page: 49
+      locator: "Figure 26 side view, 0.75+-0.05"
+    - source: bosch/BST-BMP388-DS001-07
+      page: 49
+      locator: "Figure 26 side view, 0.75+-0.05"
+  "/dimensions/lead_length":
+    - source: bosch/BST-BMP390-DS002-07
+      page: 49
+      locator: "Figure 26 bottom view, pad sizes 0.275X0.250 (6x) and 0.250X0.275 (4x): 0.275 along the inward direction"
+    - source: bosch/BST-BMP388-DS001-07
+      page: 49
+      locator: "Figure 26 bottom view, pad sizes 0.275X0.250 (6x) and 0.250X0.275 (4x): 0.275 along the inward direction"
+  "/dimensions/lead_width":
+    - source: bosch/BST-BMP390-DS002-07
+      page: 49
+      locator: "Figure 26 bottom view, pad sizes 0.275X0.250 (6x) and 0.250X0.275 (4x): 0.250 across"
+    - source: bosch/BST-BMP388-DS001-07
+      page: 49
+      locator: "Figure 26 bottom view, pad sizes 0.275X0.250 (6x) and 0.250X0.275 (4x): 0.250 across"
+  "/dimensions/lead_inset":
+    - source: bosch/BST-BMP390-DS002-07
+      page: 49
+      locator: "Figure 26 bottom view, 0.100+-0.05 body edge to pad (both directions); consistent with boxed 1.525 column spacing: 1.00 - 0.7625 - 0.1375 = 0.100"
+    - source: bosch/BST-BMP388-DS001-07
+      page: 49
+      locator: "Figure 26 bottom view, 0.100+-0.05 body edge to pad (both directions); consistent with boxed 1.525 column spacing: 1.00 - 0.7625 - 0.1375 = 0.100"

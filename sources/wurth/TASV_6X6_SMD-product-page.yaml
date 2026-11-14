@@ -1,0 +1,22 @@
+# Würth Elektronik product page "WS-TASV SMT Tact Switch 6x6 mm"
+# (page title "WS-TASV SMT Tact Switch 6x6 mm | Electromechanical
+# Components | Würth Elektronik Product Catalog"). curl gets HTTP 403;
+# read once with WebFetch on 2026-11-14. The order-code table lists 18
+# order codes (430152043826 ... 430152130836, 430182043816 ...
+# 430182130816), each with a "Status" column reading "Active" with the
+# tooltip text "Production is active. Expected lifetime: >10 years."
+# (quoted verbatim for 430182043816 and 430152130836; the page summary
+# gave "Active" for all 18). A live page, not a revisioned document:
+# revision/date record the retrieval date; no page numbers apply.
+schema_version: "0.1"
+kind: source
+id: wurth/TASV_6X6_SMD-product-page
+
+publisher: wurth
+document_id: "TASV_6X6_SMD"
+document_type: product_page
+
+revision: "retrieved 2026-11-14"
+date: "2026-11-14"
+
+url: "https://www.we-online.com/en/components/products/TASV_6X6_SMD"

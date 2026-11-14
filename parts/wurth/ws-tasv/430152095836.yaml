@@ -1,0 +1,34 @@
+# Würth WS-TASV SMT tact switch 6 x 6 mm, H 9.5 mm, ØD 3 mm,
+# operation force 360 g ±50g, actuator Salmon, electrical life 200000
+# cycles (wurth/430152095836-DS pages 1-2). Order code printed in the
+# datasheet's own title block -> existence verified. Lifecycle "Active"
+# from the we-online.com series product page (Status column).
+schema_version: "0.1"
+kind: part
+id: wurth/430152095836
+
+manufacturer: wurth
+mpn: "430152095836"
+
+device: wurth/WS-TASV-6x6-SMD
+package: manufacturers/wurth/WS-TASV-6x6-SMD-H9.5
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - wurth/430152095836-DS
+  - wurth/430182095816-DS
+  - wurth/TASV_6X6_SMD-product-page
+
+provenance:
+  "/existence":
+    - source: wurth/430152095836-DS
+      page: 1
+      locator: "Title block, \"ORDER CODE 430152095836\", \"DESCRIPTION WS-TASV SMT Tact Switch\""
+  "/lifecycle":
+    - source: wurth/TASV_6X6_SMD-product-page
+      locator: "Order-code table, row 430152095836, Status \"Active\" (\"Production is active. Expected lifetime: >10 years.\")"

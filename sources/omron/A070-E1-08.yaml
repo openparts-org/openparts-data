@@ -1,0 +1,20 @@
+# OMRON "Tactile Switch B3F" datasheet, Cat. No. A070-E1-08 (printed on
+# the last page), 9 pages, from
+# https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf (curl,
+# 2026-11-14; PDF title "B3F", CreationDate 2014-09-18, ModDate
+# 2015-01-22 -- the document prints no date; `date` is the ModDate).
+# PDF page index = printed page number. Page 1 "List of Models" is the
+# orderable model table; page 4 "Dimensions" holds the 6 x 6 mm drawings,
+# PCB processing dimensions and terminal arrangements (top view).
+schema_version: "0.1"
+kind: source
+id: omron/A070-E1-08
+
+publisher: omron
+document_id: "A070-E1"
+document_type: datasheet
+
+revision: "08"
+date: "2015-01-22"
+
+url: "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf"

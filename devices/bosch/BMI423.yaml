@@ -1,0 +1,38 @@
+# Bosch Sensortec BMI423 6-axis IMU, 14-pin LGA. Pin names and I/O types
+# from Table 59 "Pin-out and pin connections" (page 281) of
+# BST-BMI423-DS002-03 (Digital I/O -> io, Supply -> power, Ground ->
+# ground; CSB and SCx are typed "Digital I/O" in this table). Pins 2, 3,
+# 10, 11 are "NC" ("DNC or VDDIO") -> nc. Numbers checked against
+# Figures 33/34 (page 280), which label pins 2/3/10/11 "DNC".
+schema_version: "0.1"
+kind: device
+id: bosch/BMI423
+
+manufacturer: bosch
+category: other
+family: "BMI4"
+
+pins:
+  "1": { name: "SDO", type: io }
+  "2": { name: "NC", type: nc }
+  "3": { name: "NC", type: nc }
+  "4": { name: "INT1", type: io }
+  "5": { name: "VDDIO", type: power }
+  "6": { name: "GNDIO", type: ground }
+  "7": { name: "GND", type: ground }
+  "8": { name: "VDD", type: power }
+  "9": { name: "INT2", type: io }
+  "10": { name: "NC", type: nc }
+  "11": { name: "NC", type: nc }
+  "12": { name: "CSB", type: io }
+  "13": { name: "SCx", type: io }
+  "14": { name: "SDx", type: io }
+
+provenance:
+  "/pins":
+    - source: bosch/BST-BMI423-DS002-03
+      page: 281
+      locator: "Table 59 Pin-out and pin connections"
+    - source: bosch/BST-BMI423-DS002-03
+      page: 280
+      locator: "Figures 33/34 pin-out"

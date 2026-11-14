@@ -1,0 +1,18 @@
+# Bosch Sensortec datasheet, downloaded directly from bosch-sensortec.com
+# (link on the product page). Title page: "Document revision 1.1",
+# "Document number BST-BMI423-DS002-03", "Document release date Nov 5th 2026". The PDF page
+# index equals the printed "N | total" page number. Text read with
+# pdftotext -layout; package drawings are images and were rendered with
+# pdftoppm and read visually.
+schema_version: "0.1"
+kind: source
+id: bosch/BST-BMI423-DS002-03
+
+publisher: bosch
+document_id: "BST-BMI423-DS002-03"
+document_type: datasheet
+
+revision: "1.1"
+date: "2026-11"
+
+url: "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmi423-ds002.pdf"

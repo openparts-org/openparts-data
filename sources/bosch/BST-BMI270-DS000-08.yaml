@@ -1,0 +1,18 @@
+# Bosch Sensortec datasheet, downloaded directly from bosch-sensortec.com
+# (link on the product page). Title page: "Document revision 1.6",
+# "Document number BST-BMI270-DS000-08", "Document release date March 2026". The PDF page
+# index equals the printed "N | total" page number. Text read with
+# pdftotext -layout; package drawings are images and were rendered with
+# pdftoppm and read visually.
+schema_version: "0.1"
+kind: source
+id: bosch/BST-BMI270-DS000-08
+
+publisher: bosch
+document_id: "BST-BMI270-DS000-08"
+document_type: datasheet
+
+revision: "1.6"
+date: "2026-03"
+
+url: "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmi270-ds000.PDF"

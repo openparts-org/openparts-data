@@ -1,0 +1,20 @@
+# Bosch Sensortec datasheet, downloaded directly from bosch-sensortec.com
+# (link on the product page). Title page: "Document revision 1.0",
+# "Document number BST-BMP384-DS003-11", "Document release date November 2020".
+# The document history (p57) lists revisions 0.1-1.0; revision 1.0 is
+# dated 16.11.2020. The PDF page
+# index equals the printed "N | total" page number. Text read with
+# pdftotext -layout; package drawings are images and were rendered with
+# pdftoppm and read visually.
+schema_version: "0.1"
+kind: source
+id: bosch/BST-BMP384-DS003-11
+
+publisher: bosch
+document_id: "BST-BMP384-DS003-11"
+document_type: datasheet
+
+revision: "1.0"
+date: "2020-11"
+
+url: "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp384-ds003.pdf"

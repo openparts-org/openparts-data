@@ -1,0 +1,31 @@
+# BMI160: Bosch Sensortec's product name, used by distributors as the MPN.
+# existence: probable -- the datasheet names the product and gives the
+# Bosch technical reference code "0 273 141 187" on its title page, but neither the
+# datasheet nor the product page prints "BMI160" in an ordering table; bosch-sensortec.com no longer has a BMI160
+# product page (404).
+# lifecycle: unknown (no first-party status statement found).
+# Package: drawing of this datasheet (page 106).
+schema_version: "0.1"
+kind: part
+id: bosch/BMI160
+
+manufacturer: bosch
+mpn: "BMI160"
+
+device: bosch/BMI160
+package: bosch/LGA14-3.0x2.5-P0.5-BMI160
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - bosch/BST-BMI160-DS000-09
+
+provenance:
+  "/existence":
+    - source: bosch/BST-BMI160-DS000-09
+      page: 1
+      locator: "title page: product BMI160, technical reference code 0 273 141 187 (no ordering table)"

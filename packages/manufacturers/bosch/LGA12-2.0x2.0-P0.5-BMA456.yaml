@@ -1,0 +1,94 @@
+# Bosch Sensortec BMA456 12-pin LGA 2.0 x 2.0 mm, read from section 8.1
+# "Package outline dimensions" (page 92) of BST-BMA456-DS000-09.
+# Bottom view: pins 1-4 down the right edge (PIN1 CORNER top-right), 5-6
+# along the bottom, 7-10 up the left edge, 11-12 along the top; mirrored to
+# the top view (pin-out page 88) that is pins 1-4 down the left edge
+# from the top, 5-6 bottom, 7-10 up the right, 11-12 top right-to-left:
+# counter-clockwise -> lead_layout [4, 2, 4, 2]. The corner pads (1, 4, 7,
+# 10) belong to the 4-pad columns.
+# Pitch: "(6x) 0.50" boxed along the columns (boxed 1.50 between the outer
+# pads) and boxed "0.50 (2x)" between the two pads of each 2-pad row --
+# one pitch, every side centred. Terminals: 0.290x0.280 (8x, columns) and
+# 0.280X0.290 (4x, rows), i.e. 0.29 inward x 0.28 across on every side
+# (the drawing's note on the BMA456 page says the same).
+# Edge to pad: reference "(0.10)" at the right edge; consistent with the
+# boxed "1.51 (2x)" column spacing: 2.00/2 - 1.51/2 - 0.29/2 = 0.10.
+# KNOWN DEVIATION (5 um): the row pads are drawn at the corner pads' Y
+# ("0.750" from the centre to pin 1), while the generator, with one inset
+# for all sides, places them at 1.00 - 0.10 - 0.145 = 0.755.
+# Body 2.00 x 2.00 (boxed basic). Height: side view "0.65+-0.05" (overall; "(0.55)" reference not
+# used) -> body_height.
+schema_version: "0.1"
+kind: package
+id: bosch/LGA12-2.0x2.0-P0.5-BMA456
+
+family: lga
+lead_count: 12
+lead_layout: [4, 2, 4, 2]
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 2.0
+    unit: mm
+  body_length:
+    nominal: 2.0
+    unit: mm
+  body_height:
+    nominal: 0.65
+    min: 0.6
+    max: 0.7
+    unit: mm
+  lead_length:
+    nominal: 0.29
+    unit: mm
+  lead_width:
+    nominal: 0.28
+    unit: mm
+  lead_inset:
+    nominal: 0.1
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lga
+
+provenance:
+  "/pitch":
+    - source: bosch/BST-BMA456-DS000-09
+      page: 92
+      locator: "bottom view, (6x) 0.50 boxed (columns) and 0.50 (2x) boxed (rows)"
+  "/lead_layout":
+    - source: bosch/BST-BMA456-DS000-09
+      page: 92
+      locator: "bottom view numbering 1-4 right, 5-6 bottom, 7-10 left, 11-12 top (mirrored: counter-clockwise in the top view)"
+    - source: bosch/BST-BMA456-DS000-09
+      page: 88
+      locator: "7.1 Pin-out, top view and bottom view figures"
+  "/dimensions/body_width":
+    - source: bosch/BST-BMA456-DS000-09
+      page: 92
+      locator: "top view, 2.00 (boxed basic)"
+  "/dimensions/body_length":
+    - source: bosch/BST-BMA456-DS000-09
+      page: 92
+      locator: "top view, 2.00 (boxed basic)"
+  "/dimensions/body_height":
+    - source: bosch/BST-BMA456-DS000-09
+      page: 92
+      locator: "side view, 0.65+-0.05"
+  "/dimensions/lead_length":
+    - source: bosch/BST-BMA456-DS000-09
+      page: 92
+      locator: "bottom view, 0.290x0.280 (8x) and 0.280X0.290 (4x): 0.29 inward"
+  "/dimensions/lead_width":
+    - source: bosch/BST-BMA456-DS000-09
+      page: 92
+      locator: "bottom view, 0.290x0.280 (8x) and 0.280X0.290 (4x): 0.28 across"
+  "/dimensions/lead_inset":
+    - source: bosch/BST-BMA456-DS000-09
+      page: 92
+      locator: "bottom view, reference (0.10) edge to pad; = 1.00 - 1.51/2 - 0.29/2 from the boxed 1.51 (2x) column spacing"

@@ -1,0 +1,25 @@
+# Würth Elektronik datasheet for order code 629722000214 ("WR-COM USB 2.0
+# Horizontal Receptacle SMT", 16 pins), 8 pages, A4 landscape.
+# we-online.com refuses curl (HTTP 403); fetched once with WebFetch,
+# which saved the original PDF (title "629722000214 Datasheet WR-COM USB
+# 2.0 Horizontal Receptacle SMT", created 2025-09-04). Read with
+# pdftotext -layout and 500 dpi renders of page 1 (dimension text in the
+# drawing is vector; rotated values read from the renders). The title
+# block on every page carries REVISION "002.000", DATE "2025-09-04"
+# (YYYY-MM-DD), ORDER CODE "629722000214", STATUS "Valid" (the document's
+# release status). PDF page index = printed page ("1/8"). Page 1:
+# "Dimensions" and "Recommended Land Pattern" (general tolerance ±0.05,
+# "Scale 7:1", the product edge at the bottom of the figure); page 2:
+# "Pin Assignment" table.
+schema_version: "0.1"
+kind: source
+id: wurth/629722000214-DS
+
+publisher: wurth
+document_id: "629722000214"
+document_type: datasheet
+
+revision: "002.000"
+date: "2025-09-04"
+
+url: "https://www.we-online.com/components/products/datasheet/629722000214.pdf"

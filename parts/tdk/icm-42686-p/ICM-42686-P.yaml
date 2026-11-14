@@ -1,0 +1,30 @@
+# ICM-42686-P: printed verbatim in the "ORDERING INFORMATION" table on page 1 of
+# DS-000348 rev 1.4 (PART ICM-42686-P, -40 to +85 C, 2.5x3mm 14-Pin LGA; dagger = RoHS and
+# Green-compliant) -> existence verified.
+# lifecycle: unknown (the datasheet's "unless the product is in mass
+# production" is boilerplate, not a status; the product page gives none).
+schema_version: "0.1"
+kind: part
+id: tdk/ICM-42686-P
+
+manufacturer: tdk
+mpn: "ICM-42686-P"
+
+device: tdk/ICM-42686-P
+package: tdk/LGA14-3.0x2.5-P0.5-H0.91
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - tdk/DS-000348@rev1.4
+  - tdk/DS-000347@rev1.9
+
+provenance:
+  "/existence":
+    - source: tdk/DS-000348@rev1.4
+      page: 1
+      locator: "ORDERING INFORMATION table, PART ICM-42686-P"

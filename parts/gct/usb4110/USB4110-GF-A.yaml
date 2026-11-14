@@ -1,0 +1,28 @@
+# MPN assembled from the drawing's "Ordering Grid" -> existence
+# probable: the grid is a part-numbering legend, not an orderable list
+# (gct.co product pages answer with a Cloudflare challenge; not read).
+# lifecycle unknown: the drawing states none.
+schema_version: "0.1"
+kind: part
+id: gct/USB4110-GF-A
+
+manufacturer: gct
+mpn: "USB4110-GF-A"
+
+device: gct/USB4110
+package: manufacturers/gct/USB4110
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - gct/USB4110-DWG
+
+provenance:
+  "/existence":
+    - source: gct/USB4110-DWG
+      page: 1
+      locator: "\"Ordering Grid\": USB4110-GF-A; Contact Plating GF = Gold Flash (the only option); Packing Options A = Tape & Reel (1,200 per reel)"

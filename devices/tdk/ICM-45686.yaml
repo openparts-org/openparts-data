@@ -1,0 +1,38 @@
+# TDK InvenSense ICM-45686, 14-pin LGA. Pin names as printed in the pin table (pages 27-30; Figure 4 Pin Out Diagram on page 31)
+# "Signal Descriptions" / Pin Name column (section 4.1, page 27) of DS-000577;
+# numbers checked against the "Pin Out Diagram" figure. The table has no
+# I/O-type column: types are taken from the descriptions -- "power supply
+# voltage"/"IO power supply voltage" -> power, "Power supply ground" ->
+# ground, RESV -> reserved, chip select and serial clock (slave inputs)
+# -> input, interrupt pins -> output (pin 9 doubles as FSYNC/CLKIN input -> io); pins 2, 3, 10, 11 are RESV in single-interface mode and AUX1/I2C-master
+# signals otherwise -> io, multi-function data pins
+# -> io.
+schema_version: "0.1"
+kind: device
+id: tdk/ICM-45686
+
+manufacturer: tdk
+category: other
+family: "ICM-45686"
+
+pins:
+  "1": { name: "AP_SDO / AP_AD0", type: io }
+  "2": { name: "RESV / AUX1_SDIO / AUX1_SDI / MAS_DA", type: io }
+  "3": { name: "RESV / AUX1_SCLK / MAS_CLK", type: io }
+  "4": { name: "INT1 / INT", type: output }
+  "5": { name: "VDDIO", type: power }
+  "6": { name: "GND", type: ground }
+  "7": { name: "RESV", type: reserved }
+  "8": { name: "VDD", type: power }
+  "9": { name: "INT2 / FSYNC / CLKIN", type: io }
+  "10": { name: "RESV / AUX1_CS", type: io }
+  "11": { name: "RESV / AUX1_SDO", type: io }
+  "12": { name: "AP_CS", type: input }
+  "13": { name: "AP_SCL / AP_SCLK", type: input }
+  "14": { name: "AP_SDA / AP_SDIO / AP_SDI", type: io }
+
+provenance:
+  "/pins":
+    - source: tdk/DS-000577@rev1.0
+      page: 27
+      locator: "the pin table (pages 27-30; Figure 4 Pin Out Diagram on page 31) Signal Descriptions; Pin Out Diagram figure"

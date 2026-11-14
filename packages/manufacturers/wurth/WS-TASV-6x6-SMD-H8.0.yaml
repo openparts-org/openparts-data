@@ -1,0 +1,100 @@
+# Würth WS-TASV SMT tact switch 6 x 6 mm, H 8 mm (order codes
+# 430182080816, 430152080826, 430152080836), read from the page-1
+# drawing of wurth/430182080816-DS (rev 002.002, 2020-06-04). The same
+# generic drawing (text-identical) is in the other two datasheets; they
+# differ only in force and actuator colour.
+# Orientation: the drawing already shows the terminals exiting left and
+# right with the 4,5 pitch along Y -- no rotation. First-angle projection:
+# the view above the front view is the bottom view (numbers 3 1 / 4 2),
+# the Recommended Land Pattern is the component side (1 3 / 2 4).
+# Values as printed; ± tolerances become min/max. Untoleranced values
+# (□ 6,2, 9,0, 0,7, 4,5) are nominal only (general tolerance DIN ISO
+# 2768-1m not expanded).
+# Left out: lead_length (the foot length is not dimensioned -- the
+# generator's pad is then housing edge to toe), standoff (the "0,15"
+# front-view dimension is not clearly a standoff), lead_thickness.
+# The recommended land pattern (pads 1,3 x 1,55, 6,4 / 9,5 across) is
+# not representable in this family: the footprint pads are the terminal
+# feet, not the recommended lands.
+schema_version: "0.1"
+kind: package
+id: manufacturers/wurth/WS-TASV-6x6-SMD-H8.0
+
+family: tact_switch_smd
+lead_count: 4
+pad_order: ["1", "2", "4", "3"]
+
+pitch:
+  nominal: 4.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 6.2
+    unit: mm
+  body_length:
+    nominal: 6.2
+    unit: mm
+  body_height:
+    nominal: 3.3
+    min: 3.15
+    max: 3.45
+    unit: mm
+  overall_height:
+    nominal: 8.0
+    min: 7.85
+    max: 8.15
+    unit: mm
+  overall_width:
+    nominal: 9.0
+    unit: mm
+  lead_width:
+    nominal: 0.7
+    unit: mm
+  actuator_diameter:
+    nominal: 3.0
+    min: 2.8
+    max: 3.2
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: tact_switch_smd
+
+provenance:
+  "/pitch":
+    - source: wurth/430182080816-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" upper view (first-angle projection: the bottom view), terminal centre to centre \"4,5\"; \"Recommended Land Pattern: [mm]\" pad centre to centre \"4,5\""
+  "/pad_order":
+    - source: wurth/430182080816-DS
+      page: 1
+      locator: "\"Recommended Land Pattern: [mm]\" (component side): \"1\" top-left, \"3\" top-right, \"2\" bottom-left, \"4\" bottom-right -> positions TL, BL, BR, TR = 1, 2, 4, 3; the bottom view above the front view shows the mirror image (3 1 / 4 2)"
+  "/dimensions/body_width":
+    - source: wurth/430182080816-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" lowest view (top view), housing \"□ 6,2\" (square; no tolerance printed, general tolerance DIN ISO 2768-1m not applied)"
+  "/dimensions/body_length":
+    - source: wurth/430182080816-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" lowest view (top view), housing \"□ 6,2\" (square)"
+  "/dimensions/body_height":
+    - source: wurth/430182080816-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" side view, seating plane to housing (cover) top \"3,3 ± 0,15\""
+  "/dimensions/overall_height":
+    - source: wurth/430182080816-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" side view, seating plane to actuator top \"H ± 0,15\"; \"Dimensions\" table \"Height H 8 mm\""
+  "/dimensions/overall_width":
+    - source: wurth/430182080816-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" upper view (bottom view), terminal toe to toe \"9,0\""
+  "/dimensions/lead_width":
+    - source: wurth/430182080816-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" upper view (bottom view), terminal width \"0,7\""
+  "/dimensions/actuator_diameter":
+    - source: wurth/430182080816-DS
+      page: 1
+      locator: "\"Dimensions: [mm]\" front view, actuator top \"ØD ±0,2\"; \"Dimensions\" table \"Diameter ØD 3 mm\" (the actuator base is \"Ø 3,5 ±0,2\")"

@@ -1,0 +1,42 @@
+# Würth WR-COM USB 2.0 Type-C receptacle, horizontal SMT, 16 contacts
+# (wurth/629722000214-DS page 2 "Pin Assignment": names as printed).
+# The land pattern (page 1) puts two contacts on each outer pad, labelled
+# "A1 B12", "A4 B9", "B4 A9", "B1 A12": the footprint numbers those pads
+# with the A label; the B contact is connected_to it. The shell slots
+# are not numbered or named in the source: pin "S1" "Shield" (the
+# material table calls the shell "Shielding").
+schema_version: "0.1"
+kind: device
+id: wurth/629722000214
+
+manufacturer: wurth
+category: connector
+family: WR-COM
+
+pins:
+  "A1": { name: Ground, type: ground }
+  "A4": { name: VBUS, type: power }
+  "A5": { name: CC1, type: passive }
+  "A6": { name: D+1, type: passive }
+  "A7": { name: D-1, type: passive }
+  "A8": { name: SBU1, type: passive }
+  "A9": { name: VBUS, type: power }
+  "A12": { name: Ground, type: ground }
+  "B12": { name: Ground, type: ground, connected_to: "A1" }
+  "B9": { name: VBUS, type: power, connected_to: "A4" }
+  "B8": { name: SBU2, type: passive }
+  "B7": { name: D-2, type: passive }
+  "B6": { name: D+2, type: passive }
+  "B5": { name: CC2, type: passive }
+  "B4": { name: VBUS, type: power, connected_to: "A9" }
+  "B1": { name: Ground, type: ground, connected_to: "A12" }
+  "S1": { name: Shield, type: passive }
+
+provenance:
+  "/pins":
+    - source: wurth/629722000214-DS
+      page: 2
+      locator: "\"Pin Assignment\" table: A1 Ground, A4 VBUS, A5 CC1, A6 D+1, A7 D-1, A8 SBU1, A9 VBUS, A12 Ground; B12 Ground, B9 VBUS, B8 SBU2, B7 D-2, B6 D+2, B5 CC2, B4 VBUS, B1 Ground"
+    - source: wurth/629722000214-DS
+      page: 1
+      locator: "\"Recommended Land Pattern\": shared pads labelled \"A1 B12\", \"A4 B9\", \"B4 A9\", \"B1 A12\" (connected_to); shell slots unlabelled (S1)"

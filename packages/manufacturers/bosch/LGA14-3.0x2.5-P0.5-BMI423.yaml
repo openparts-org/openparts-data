@@ -1,0 +1,100 @@
+# Bosch Sensortec BMI423 14-pin LGA 3.00 x 2.50 x 0.83 mm, read from Table
+# 60 "Basic mechanical parameter specification" (section 9.1, page 284) of
+# BST-BMI423-DS002-03, with Figure 40 bottom view (page 285).
+# Frame: D (Length, 3.00) horizontal = body_width, E (Width, 2.50)
+# vertical. Figure 40 bottom view: pin 1 top-right (PIN 1 INDEX), 1-4 down
+# the right edge, 5-7 bottom right-to-left, 8-11 up the left, 12-14 top;
+# mirrored that is the Figure 33 top view (page 280): counter-clockwise
+# from the top of the left edge -> lead_layout [4, 3, 4, 3].
+# CONFLICT: Figure 38 (outline top view, page 284) points "PIN 1" at the
+# bottom-right corner; Figures 33 (pin-out top view) and 40 (bottom view)
+# agree with each other and are used.
+# Pitch e 0.50 (basic), D1 1.00 (3-pad rows), E1 1.50 (4-pad columns), all
+# centred. Pad length L 0.425/0.475/0.525, pad width b 0.20/0.25/0.30,
+# L1 "Distance package to pad" 0.05/0.10/0.15 ("L1 (All sides)").
+# Height F 0.78/0.83/0.88 (overall) -> body_height.
+# Not drawn by the generator: the "PIN 1 INDEX (0.25X0.09)" pad.
+schema_version: "0.1"
+kind: package
+id: bosch/LGA14-3.0x2.5-P0.5-BMI423
+
+family: lga
+lead_count: 14
+lead_layout: [4, 3, 4, 3]
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 3.0
+    min: 2.95
+    max: 3.05
+    unit: mm
+  body_length:
+    nominal: 2.5
+    min: 2.45
+    max: 2.55
+    unit: mm
+  body_height:
+    nominal: 0.83
+    min: 0.78
+    max: 0.88
+    unit: mm
+  lead_length:
+    nominal: 0.475
+    min: 0.425
+    max: 0.525
+    unit: mm
+  lead_width:
+    nominal: 0.25
+    min: 0.2
+    max: 0.3
+    unit: mm
+  lead_inset:
+    nominal: 0.1
+    min: 0.05
+    max: 0.15
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lga
+
+provenance:
+  "/pitch":
+    - source: bosch/BST-BMI423-DS002-03
+      page: 284
+      locator: "Table 60, e 0.50 (basic spacing between centers)"
+  "/lead_layout":
+    - source: bosch/BST-BMI423-DS002-03
+      page: 285
+      locator: "Figure 40 bottom view numbering 1-14"
+    - source: bosch/BST-BMI423-DS002-03
+      page: 280
+      locator: "Figure 33 pin-out top view"
+  "/dimensions/body_width":
+    - source: bosch/BST-BMI423-DS002-03
+      page: 284
+      locator: "Table 60, Length D 2.95/3.00/3.05"
+  "/dimensions/body_length":
+    - source: bosch/BST-BMI423-DS002-03
+      page: 284
+      locator: "Table 60, Width E 2.45/2.50/2.55"
+  "/dimensions/body_height":
+    - source: bosch/BST-BMI423-DS002-03
+      page: 284
+      locator: "Table 60, Height F 0.78/0.83/0.88"
+  "/dimensions/lead_length":
+    - source: bosch/BST-BMI423-DS002-03
+      page: 284
+      locator: "Table 60, Pad length L 0.425/0.475/0.525"
+  "/dimensions/lead_width":
+    - source: bosch/BST-BMI423-DS002-03
+      page: 284
+      locator: "Table 60, Pad width b 0.20/0.25/0.30"
+  "/dimensions/lead_inset":
+    - source: bosch/BST-BMI423-DS002-03
+      page: 284
+      locator: "Table 60, Distance package to pad L1 0.05/0.10/0.15"
