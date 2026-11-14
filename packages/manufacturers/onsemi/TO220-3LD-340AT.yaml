@@ -1,0 +1,116 @@
+# onsemi TO-220-3LD, CASE 340AT ISSUE B (98AON13818G, DATE 08 AUG
+# 2022), read from 110-250 dpi renders of the standalone outline. The
+# MILLIMETERS table prints MIN and MAX only (NOM "--") and covers two
+# supplier shapes ("A"/"B"); note A "REFERENCE JEDEC, TO-220, VARIATION
+# AB". Front view numbers the leads "1 2 3" left to right, the back
+# view "3 2 1". No STYLE list (pin functions come from the datasheets).
+#
+# Mapping (frame to220): E (9.65-10.67) -> body_width; A (4.00-4.70,
+# side view) -> body_length; D1 (8.13-9.40, datum C at the body
+# underside to the molding top) -> body_height; D (13.90-16.30, tab top
+# to body underside) -> overall_height; b (0.55-1.00) -> lead_width;
+# c (0.36-0.60) -> lead_thickness; L (12.70-14.04, body underside to
+# lead tip) -> tail_length; P (3.50-4.00) -> mounting_hole_diameter;
+# Q (2.50-3.40, tab top to hole centre) -> mounting_hole_inset.
+# PITCH (flagged): "e" is printed 2.40 - 2.67 with no nominal and no
+# BSC value, so pitch records min/max only; the generator draws the
+# midpoint 2.535 (the JEDEC TO-220AB reference is not used to invent a
+# nominal).
+# Left out: body_offset (not printed; min/max-only arithmetic not
+# attempted -> generator default), A1 (gauge-dependent, note F), A2,
+# b2/b4 (lead shoulder), D2/D3/E1/H1 (tab outline), L1, z/z1 REF, angle.
+schema_version: "0.1"
+kind: package
+id: manufacturers/onsemi/TO220-3LD-340AT
+
+family: to220
+lead_count: 3
+
+pitch:
+  min: 2.40
+  max: 2.67
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 9.65
+    max: 10.67
+    unit: mm
+  body_length:
+    min: 4.0
+    max: 4.7
+    unit: mm
+  body_height:
+    min: 8.13
+    max: 9.4
+    unit: mm
+  overall_height:
+    min: 13.9
+    max: 16.3
+    unit: mm
+  lead_width:
+    min: 0.55
+    max: 1.0
+    unit: mm
+  lead_thickness:
+    min: 0.36
+    max: 0.6
+    unit: mm
+  tail_length:
+    min: 12.7
+    max: 14.04
+    unit: mm
+  mounting_hole_diameter:
+    min: 3.5
+    max: 4.0
+    unit: mm
+  mounting_hole_inset:
+    min: 2.5
+    max: 3.4
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: to220
+
+provenance:
+  "/pitch":
+    - source: onsemi/98AON13818G
+      page: 1
+      locator: "MILLIMETERS table, \"e\" (2.40 / -- / 2.67); back view \"e\""
+  "/dimensions/body_width":
+    - source: onsemi/98AON13818G
+      page: 1
+      locator: "MILLIMETERS table, \"E\" (9.65 / -- / 10.67)"
+  "/dimensions/body_length":
+    - source: onsemi/98AON13818G
+      page: 1
+      locator: "MILLIMETERS table, \"A\" (4.00 / -- / 4.70), side view"
+  "/dimensions/body_height":
+    - source: onsemi/98AON13818G
+      page: 1
+      locator: "MILLIMETERS table, \"D1\" (8.13 / -- / 9.40), front view datum C to molding top"
+  "/dimensions/overall_height":
+    - source: onsemi/98AON13818G
+      page: 1
+      locator: "MILLIMETERS table, \"D\" (13.90 / -- / 16.30), front view tab top to body underside"
+  "/dimensions/lead_width":
+    - source: onsemi/98AON13818G
+      page: 1
+      locator: "MILLIMETERS table, \"b\" (0.55 / -- / 1.00)"
+  "/dimensions/lead_thickness":
+    - source: onsemi/98AON13818G
+      page: 1
+      locator: "MILLIMETERS table, \"c\" (0.36 / -- / 0.60)"
+  "/dimensions/tail_length":
+    - source: onsemi/98AON13818G
+      page: 1
+      locator: "MILLIMETERS table, \"L\" (12.70 / -- / 14.04)"
+  "/dimensions/mounting_hole_diameter":
+    - source: onsemi/98AON13818G
+      page: 1
+      locator: "MILLIMETERS table, \"P\" (3.50 / -- / 4.00)"
+  "/dimensions/mounting_hole_inset":
+    - source: onsemi/98AON13818G
+      page: 1
+      locator: "MILLIMETERS table, \"Q\" (2.50 / -- / 3.40), tab top to hole centre"

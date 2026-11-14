@@ -1,0 +1,31 @@
+# LM317 1.5-A adjustable regulator, KTT (TO-263) pinout. SLVS044Z
+# "Pin Functions, Metal Can Packages" (page 5), TO-263 column: ADJUST 1,
+# OUTPUT "2, TAB", INPUT 3; Figure 5-3 "KTT Package, 3-Pin TO-263 (Top
+# View)". The tab is keyed "4" -- the number outline KTT0003B (page 42)
+# prints on it -- and, being listed with pin 2 as OUTPUT, carries
+# connected_to "2".
+schema_version: "0.1"
+kind: device
+id: ti/LM317-KTT
+
+manufacturer: ti
+category: other
+family: LM317
+
+pins:
+  "1": { name: "ADJUST", type: input }
+  "2": { name: "OUTPUT", type: power }
+  "3": { name: "INPUT", type: power }
+  "4": { name: "OUTPUT", type: power, connected_to: "2" }
+
+provenance:
+  "/pins":
+    - source: ti/SLVS044Z
+      page: 5
+      locator: "\"Pin Functions, Metal Can Packages\", TO-263 column: ADJUST 1, INPUT 3, OUTPUT \"2, TAB\""
+    - source: ti/SLVS044Z
+      page: 5
+      locator: "Figure 5-3 \"KTT Package, 3-Pin TO-263 (Top View)\""
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B outline, bottom view: tab / exposed thermal pad labelled \"4\""

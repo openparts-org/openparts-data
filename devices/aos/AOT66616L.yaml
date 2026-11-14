@@ -1,0 +1,29 @@
+# AOT66616L N-channel MOSFET, TO-220 (AOS PO-00015). Datasheet AOT66616L
+# page 1 "TO220" Top View image labels the leads G D S (leads pointing
+# away, molded face up) and the Bottom View image labels the tab D; no
+# pin numbers are printed anywhere (neither in the datasheet nor in
+# PO-00015). Numbers follow the to220 frame (front view, leads down,
+# pin 1 left): 1 = Gate, 2 = Drain, 3 = Source -- position-derived,
+# flagged for review. The tab (drain) is not a footprint pad in a
+# vertical TO-220 and is not listed as a pin.
+schema_version: "0.1"
+kind: device
+id: aos/AOT66616L
+
+manufacturer: aos
+category: transistor
+family: AOT66616L
+
+pins:
+  "1": { name: Gate, type: passive }
+  "2": { name: Drain, type: passive }
+  "3": { name: Source, type: passive }
+
+provenance:
+  "/pins":
+    - source: aos/AOT66616L-DS
+      page: 1
+      locator: "\"TO220\" Top View / Bottom View images: leads G D S, tab D; no pin numbers printed -- see header"
+    - source: aos/PO-00015
+      page: 1
+      locator: "TOP VIEW: three leads at \"2X e\"; no numbers printed"

@@ -1,0 +1,18 @@
+# Diodes Incorporated datasheet "DFLS240 Schottky Barrier Rectifier, PowerDI123",
+# document number DS30519 Rev. 5 - 2, footer date "May 2022".
+# Downloaded with curl from diodes.com (first-party, HTTP 200, checked to
+# be a PDF with this document number on page 1); read with pdftotext
+# -layout and rendered (pdftoppm) for the outline drawing. Page numbers
+# cited are PDF page indices (= printed "n of N").
+schema_version: "0.1"
+kind: source
+id: diodes/DS30519
+
+publisher: diodes
+document_id: DS30519
+document_type: datasheet
+
+revision: "5-2"
+date: "2022-05"
+
+url: "https://www.diodes.com/assets/Datasheets/DFLS240.pdf"

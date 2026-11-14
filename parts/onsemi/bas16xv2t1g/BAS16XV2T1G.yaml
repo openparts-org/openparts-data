@@ -1,0 +1,33 @@
+# BAS16XV2T1G: printed verbatim in the datasheet's ORDERING INFORMATION
+# table (page 1), so existence is "verified". No lifecycle statement for
+# this OPN, so lifecycle is unknown.
+# Package: page-4 CASE 502 (98AON11524D), standards/SOD523-ONSEMI-502
+# (read from this page).
+schema_version: "0.1"
+kind: part
+id: onsemi/BAS16XV2T1G
+
+manufacturer: onsemi
+mpn: BAS16XV2T1G
+
+device: onsemi/BAS16XV2
+package: standards/SOD523-ONSEMI-502
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/BAS16XV2T1-D
+
+provenance:
+  "/existence":
+    - source: onsemi/BAS16XV2T1-D
+      page: 1
+      locator: "ORDERING INFORMATION: \"BAS16XV2T1G | SOD-523 | 3000 / Tape & Reel\""
+  "/package":
+    - source: onsemi/BAS16XV2T1-D
+      page: 4
+      locator: "MECHANICAL CASE OUTLINE -- see header"

@@ -1,0 +1,20 @@
+# Official TI datasheet "TPS7A470x 36V, 1A, 4uVRMS, RF LDO Voltage Regulator"
+# (SBVS204G, revised May 2026), 32 pages, downloaded 2026-11-14 with curl
+# from the URL below (file checked: PDF, title page names SBVS204G). Read
+# with pdftotext -layout; pin configuration figures and the outline
+# drawings RGW0020A (page 29) were rendered and read as images. The PACKAGE OPTION
+# ADDENDUM inside this PDF is dated 12-Jan-2026 (newer than the datasheet
+# revision; PDF CreationDate 2026). Page numbers are PDF page indices
+# (= the printed page numbers on numbered pages).
+schema_version: "0.1"
+kind: source
+id: ti/SBVS204G
+
+publisher: ti
+document_id: SBVS204G
+document_type: datasheet
+
+revision: "G"
+date: "2026-05"
+
+url: "https://www.ti.com/lit/ds/symlink/tps7a47.pdf"

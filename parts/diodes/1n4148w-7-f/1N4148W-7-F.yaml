@@ -10,6 +10,13 @@
 # was attempted but is behind a Cloudflare JS challenge and could not
 # be read -- not guessed as "active" from the September 2024 revision
 # date alone.
+# 2026-11-14: package repointed from standards/CHIP-SOD123-DIODES
+# (family chip, body only; deleted) to
+# manufacturers/diodes/SOD123-2.65x1.55-DS30139.
+# Package check (2026-11-14): the SOD123 "Package Outline Dimensions"
+# table on page 4 of DS30086 Rev. 32-2 (October 2026) is identical, row for
+# row (Min/Max/Typ; drawing rendered, axis arrows read), to
+# manufacturers/diodes/SOD123-2.65x1.55-DS30139 (DS30139 page 4), so that package is reused.
 schema_version: "0.1"
 kind: part
 id: diodes/1N4148W-7-F
@@ -18,7 +25,7 @@ manufacturer: diodes
 mpn: 1N4148W-7-F
 
 device: diodes/1N4148W
-package: standards/CHIP-SOD123-DIODES
+package: manufacturers/diodes/SOD123-2.65x1.55-DS30139
 
 existence:
   status: verified
@@ -28,9 +35,14 @@ lifecycle:
 
 sources:
   - diodes/DS30086
+  - diodes/DS30086@rev32-2
 
 provenance:
   "/existence":
     - source: diodes/DS30086
       page: 1
       locator: "\"Ordering Information\" table, Note 4"
+  "/package":
+    - source: diodes/DS30086@rev32-2
+      page: 4
+      locator: "SOD123 Package Outline Dimensions table (Min/Max/Typ) -- identical to the reused package, see header"

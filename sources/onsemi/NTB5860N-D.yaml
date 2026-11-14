@@ -1,0 +1,21 @@
+# onsemi datasheet NTB5860N/D Rev. 2 (8 pages), downloaded with curl
+# from the URL below and read via pdftotext -layout plus page renders.
+# Power MOSFET 60 V N-Channel, D2PAK and TO-220 (NTB5860N, NTP5860N,
+# NVB5860N). PDF page 1 is an "ON Semiconductor is now onsemi" cover;
+# printed page N = PDF page N+1 -- pages below are PDF pages. PDF page
+# 2: pin assignments (TO-220AB CASE 221A STYLE 5; D2PAK CASE 418B STYLE
+# 2: 1 Gate, 2 Drain, 3 Source, 4 Drain); PDF page 6: ORDERING
+# INFORMATION; PDF pages 7-8: older outlines CASE 221A-09 ISSUE AF and
+# CASE 418B-04 ISSUE J.
+schema_version: "0.1"
+kind: source
+id: onsemi/NTB5860N-D
+
+publisher: onsemi
+document_id: NTB5860N/D
+document_type: datasheet
+
+revision: "2"
+date: "2012-09"
+
+url: "https://www.onsemi.com/pdf/datasheet/ntb5860n-d.pdf"

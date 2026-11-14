@@ -1,0 +1,24 @@
+# NSR0320MW2T1G 1 A 20 V Schottky barrier diode, SOD-323 (CASE 477).
+# Pins
+# from the page-1 symbol ("1 CATHODE", "2 ANODE") and CASE 477 STYLE 1
+# (page 3).
+schema_version: "0.1"
+kind: device
+id: onsemi/NSR0320MW2
+
+manufacturer: onsemi
+category: diode
+family: NSR0320MW2
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/NSR0320MW2T1-D
+      page: 1
+      locator: "Symbol: \"1 CATHODE\" / \"2 ANODE\""
+    - source: onsemi/NSR0320MW2T1-D
+      page: 3
+      locator: "CASE 477 STYLE 1: \"PIN 1. CATHODE (POLARITY BAND) 2. ANODE\""

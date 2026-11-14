@@ -1,0 +1,23 @@
+# MBRS2040LT3G 2 A 40 V Schottky power rectifier, SMB (CASE 403A). Page
+# 1
+# says "Cathode Polarity Band"; the CASE 403A outline has no STYLE list.
+# No pin numbers are printed for this part, so 1 = Cathode and 2 = Anode
+# follow the dataset's two-terminal diode convention (pin 1 at the
+# banded end).
+schema_version: "0.1"
+kind: device
+id: onsemi/MBRS2040L
+
+manufacturer: onsemi
+category: diode
+family: MBRS2040L
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/MBRS2040LT3-D
+      page: 1
+      locator: "\"Cathode Polarity Band\""

@@ -1,0 +1,22 @@
+# Schottky barrier rectifier, PowerDI123 (DS30519).
+# Polarity from the page-1 Mechanical Data ("Terminal Connections: Cathode Band").
+# The datasheet names the terminals only by the cathode band and
+# prints no pin numbers: numbered in the generator's position
+# convention (pin 1 at -X), cathode = 1, anode = 2.
+schema_version: "0.1"
+kind: device
+id: diodes/DFLS240
+
+manufacturer: diodes
+category: diode
+family: DFLS
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: diodes/DS30519
+      page: 1
+      locator: "Mechanical Data: \"Terminal Connections: Cathode Band\"; numbering by generator convention, see header"

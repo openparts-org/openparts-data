@@ -1,0 +1,30 @@
+# uA7805 1.5-A fixed 5-V regulator, KTT (TO-263) pinout. SLVS056P "Pin
+# Functions" (page 3): COMMON 2, INPUT 1, OUTPUT 3; "KTT (TO-263)
+# PACKAGE (TOP VIEW)" labels the tab COMMON without a number. SLVS056P
+# has no KTT outline; the tab is keyed "4", the number the KTT0003B
+# outline (SLVS044Z page 42) prints on it.
+schema_version: "0.1"
+kind: device
+id: ti/UA7805-KTT
+
+manufacturer: ti
+category: other
+family: UA7805
+
+pins:
+  "1": { name: "INPUT", type: power }
+  "2": { name: "COMMON", type: ground }
+  "3": { name: "OUTPUT", type: power }
+  "4": { name: "COMMON", type: ground }
+
+provenance:
+  "/pins":
+    - source: ti/SLVS056P
+      page: 3
+      locator: "\"Pin Functions\" table: COMMON 2, INPUT 1, OUTPUT 3"
+    - source: ti/SLVS056P
+      page: 3
+      locator: "\"KTT (TO-263) PACKAGE (TOP VIEW)\": tab labelled COMMON"
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B outline, bottom view: tab labelled \"4\""

@@ -1,0 +1,40 @@
+# MCP1640 boost regulator, 8-lead 2x3 DFN (MC). MPN printed as example
+# b) of the "Product Identification System" (DS20002234D page 29): "MCP1640T-I/MC:
+# 0.65V, PWM/PFM True Disconnect Sync Reg., 8LD-DFN pkg. Tape and Reel". existence is "probable": an ordering example, not an orderable
+# list (Microchip product pages answer 403). Package MC = "Plastic Dual
+# Flat, No Lead (2x3 DFN), 8-lead" -> drawing C04-123C (page 24, every
+# row equal to the C04-123C table read from DS20001984H page 20, so
+# manufacturers/microchip/DFN8-2x3-P0.5-MC-C04-123C is reused). The id
+# replaces "/" with "-". lifecycle: not stated; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP1640T-I-MC
+
+manufacturer: microchip
+mpn: "MCP1640T-I/MC"
+
+device: microchip/MCP1640-DFN8
+package: manufacturers/microchip/DFN8-2x3-P0.5-MC-C04-123C
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20002234@revD
+  - microchip/DS20001984@revH
+
+provenance:
+  "/existence":
+    - source: microchip/DS20002234@revD
+      page: 29
+      locator: "Product Identification System, example b) \"MCP1640T-I/MC: 0.65V, PWM/PFM True Disconnect Sync Reg., 8LD-DFN pkg. Tape and Reel\""
+  "/package":
+    - source: microchip/DS20002234@revD
+      page: 29
+      locator: "Product Identification System, Package \"MC =Plastic Dual Flat, No Lead (2x3 DFN), 8-lead\""
+    - source: microchip/DS20002234@revD
+      page: 24
+      locator: "drawing C04-123C \"8-Lead Plastic Dual Flat, No Lead Package (MC) - 2x3x0.9 mm Body [DFN]\" (rendered; identical to DS20001984H page 20)"

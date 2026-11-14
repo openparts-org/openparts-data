@@ -1,0 +1,40 @@
+# MCP73831/2 Li-Ion/Li-Po charge controller, 8-lead 2x3 DFN (MC)
+# pinout; used by the MCP73832 parts, the only DFN MPNs the datasheet
+# prints (the pin table is shared by MCP73831/2). From DS20001984H Table
+# 3-1 "Pin Function Tables" (page 11), column "DFN", checked against the
+# "Package Types" figure "MCP73831/2 2x3 DFN*" (page 1): VDD 1, VDD 2,
+# VBAT 3, VBAT 4, STAT 5, VSS 6, NC 7, PROG 8, EP 9.
+# Exposed pad: Table 3-1 "EP Exposed Thermal Pad (EP); must be connected
+# to VSS" and section 3.6 "An internal electrical connection exists
+# between the Exposed Thermal Pad (EP) and the VSS pin" -> key "EP"
+# (generator convention for the table's pin 9), name VSS, type ground,
+# connected_to pin 6. VDD 1/2 and VBAT 3/4 share names (power pins).
+# Types as in microchip/MCP73831 (SOT-23-5): VDD/VBAT power, STAT
+# output, VSS ground, PROG analog; NC "No Connection" -> nc.
+schema_version: "0.1"
+kind: device
+id: microchip/MCP73832-DFN8
+
+manufacturer: microchip
+category: other
+family: MCP73831/2
+
+pins:
+  "1": { name: VDD, type: power }
+  "2": { name: VDD, type: power }
+  "3": { name: VBAT, type: power }
+  "4": { name: VBAT, type: power }
+  "5": { name: STAT, type: output }
+  "6": { name: VSS, type: ground }
+  "7": { name: NC, type: nc }
+  "8": { name: PROG, type: analog }
+  "EP": { name: VSS, type: ground, connected_to: "6" }
+
+provenance:
+  "/pins":
+    - source: microchip/DS20001984@revH
+      page: 11
+      locator: "Table 3-1 \"Pin Function Tables\", DFN column (pins 1-9, 9 = EP); section 3.6 \"Exposed Thermal Pad (EP)\": internal electrical connection between EP and VSS"
+    - source: microchip/DS20001984@revH
+      page: 1
+      locator: "\"Package Types\", MCP73831/2 2x3 DFN*"

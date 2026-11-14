@@ -1,0 +1,41 @@
+# AOT240L: printed verbatim in the page-1 "Orderable Part Number" table of
+# AOS datasheet AOT240L (Rev 3.1: April 2024) -> existence verified.
+# Lifecycle from the AOS product page (fetched 2026-11-14):
+# "product_status":"Full Production" -> active.
+# Package: datasheet "TO-220"; the product page links AOS's
+# TO220 outline (PO-00015) as this product's package document.
+schema_version: "0.1"
+kind: part
+id: aos/AOT240L
+
+manufacturer: aos
+mpn: AOT240L
+
+device: aos/AOT240L
+package: manufacturers/aos/TO220-10.03x4.45-P2.54-PO-00015
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - aos/AOT240L-DS
+  - aos/AOT240L-product-page
+  - aos/PO-00015
+
+provenance:
+  "/existence":
+    - source: aos/AOT240L-DS
+      page: 1
+      locator: "Orderable Part Number table: \"AOT240L | TO-220 | Tube | 1000\""
+  "/lifecycle":
+    - source: aos/AOT240L-product-page
+      locator: "Embedded product JSON \"product_status\":\"Full Production\""
+  "/package":
+    - source: aos/AOT240L-product-page
+      locator: "\"packages\": \"TO220\", package_pdf .../packaging_information/TO220.pdf"
+    - source: aos/PO-00015
+      page: 1
+      locator: "\"TO220 PACKAGE OUTLINE\" PO-00015 Version N"

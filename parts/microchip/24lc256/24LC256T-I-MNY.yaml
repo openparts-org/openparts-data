@@ -1,0 +1,41 @@
+# 24LC256 256-Kbit I2C EEPROM, tape and reel, industrial, package MNY. existence is
+# "probable": the MPN is assembled from the "Product Identification
+# System" legend (DS20001203W page 40: Device "24LC256", Tape and Reel
+# "T = Tape and Reel", Temperature "I = -40C to +85C (Industrial)",
+# Package "MNY = Plastic Dual Flat, No Lead Package - 2x3x0.8 mm Body,
+# 8-lead (TDFN)"); the examples print no MNY part. Pin numbers of the TDFN column of Table 2-1
+# (page 7) equal the SOIC column, so microchip/24LC256 applies; the
+# exposed pad "can be connected to VSS or left floating" (note 1) -- no
+# EP pin. Package drawing on page 31 (note: the legend says 0.8 mm for
+# MNY, the drawing 0.75 mm; the drawing is used). lifecycle: unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/24LC256T-I-MNY
+
+manufacturer: microchip
+mpn: "24LC256T-I/MNY"
+
+device: microchip/24LC256
+package: manufacturers/microchip/TDFN8-2x3-P0.5-MN-C04-129C
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001203@revW
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001203@revW
+      page: 40
+      locator: "Product Identification System legend: Device \"24LC256\", option \"T\", Temperature \"I\", Package \"MNY\" (assembled, not printed)"
+  "/package":
+    - source: microchip/DS20001203@revW
+      page: 40
+      locator: "Product Identification System, Package \"MNY = Plastic Dual Flat, No Lead Package - 2x3x0.8 mm Body, 8-lead (TDFN)\""
+    - source: microchip/DS20001203@revW
+      page: 31
+      locator: "drawing C04-129C sheet 2 \"8-Lead Plastic Dual Flat, No Lead Package (MN) - 2x3x0.75mm Body [TDFN]\""

@@ -1,0 +1,19 @@
+# Official AOS datasheet "AOT240L/AOB240L/AOTF240L 40V N-Channel MOSFET", footer "Rev 3.1: April 2024", 7 pages,
+# downloaded from the URL below and read via pdftotext plus a page-1
+# render (pdftoppm) of the package images. Page 1 carries the
+# "Orderable Part Number | Package Type | Form | Minimum Order Quantity"
+# table and the Top View / Bottom View package images (pins labelled
+# G, D, S; no pin numbers). No package outline in this document -- the
+# outlines are AOS's separate PO-00015 (TO220) and PO-00005 (TO263).
+schema_version: "0.1"
+kind: source
+id: aos/AOT240L-DS
+
+publisher: aos
+document_id: AOT240L
+document_type: datasheet
+
+revision: "3.1"
+date: "2024-04"
+
+url: "https://www.aosmd.com/res/datasheets/AOT240L.pdf"

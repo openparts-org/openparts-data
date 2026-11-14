@@ -1,0 +1,37 @@
+# MJE13007G: printed verbatim in MJE13007/D Rev. 10 ORDERING
+# INFORMATION (page 1) -> existence verified.
+# Package: datasheet page 1 "CASE 221A"; outline from the standalone
+# drawing 98ASB42148B.
+# No lifecycle statement for this MPN.
+schema_version: "0.1"
+kind: part
+id: onsemi/MJE13007G
+
+manufacturer: onsemi
+mpn: MJE13007G
+
+device: onsemi/MJE13007
+package: manufacturers/onsemi/TO220-10.10x4.45-P2.54-221A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/MJE13007-D
+  - onsemi/98ASB42148B
+
+provenance:
+  "/existence":
+    - source: onsemi/MJE13007-D
+      page: 1
+      locator: "ORDERING INFORMATION: \"MJE13007G | TO-220 (Pb-Free) | 50 Units / Rail\""
+  "/package":
+    - source: onsemi/MJE13007-D
+      page: 1
+      locator: "Package callout \"CASE 221A\""
+    - source: onsemi/98ASB42148B
+      page: 1
+      locator: "CASE 221A outline"

@@ -1,0 +1,19 @@
+# Diodes Incorporated BAV16W/1N4148W datasheet, footer "Document number:
+# DS30086 Rev. 32 - 2", "October 2026", 5 pages, downloaded with curl on
+# 2026-11-14 (`file`: PDF). Newer than diodes/DS30086 (Rev. 31-2), hence
+# its own Source. Read with pdftotext -layout; the page-4 "Package
+# Outline Dimensions" SOD123 drawing rendered with pdftoppm. Page
+# numbers
+# are PDF page indices (= printed "n of 5").
+schema_version: "0.1"
+kind: source
+id: diodes/DS30086@rev32-2
+
+publisher: diodes
+document_id: "DS30086"
+document_type: datasheet
+
+revision: "32-2"
+date: "2026-10"
+
+url: "https://www.diodes.com/datasheet/download/1N4148W.pdf"

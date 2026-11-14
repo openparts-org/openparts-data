@@ -1,0 +1,116 @@
+# onsemi SOD-123 2-LEAD, 1.60x2.69x1.16, CASE 425 ISSUE H, DOCUMENT
+# NUMBER 98ASB42927B (DATE 29 FEB 2024), page 4 of MBR0520LT1/D (October,
+# 2024 - Rev. 7). The outline is an image: read from the rendered page
+# (pdftoppm), MILLIMETER MIN/NOM/MAX (controlling dimension: mm).
+# Letters from the drawing's arrows: E = body along the leads (top view,
+# body_length), D = body across (body_width), H = lead-tip span (side
+# view, overall_length), b = lead width (end view), c = lead thickness
+# ("-" / "-" / 0.15: max only), L = foot ("0.25 REF."), A = seating plane
+# to top (overall_height), A1 = standoff, A2 = body ("1.16 REF.").
+# Reference values (REF.) are recorded as the nominal the table marks
+# them with. STYLE 1: PIN 1. CATHODE, 2. ANODE.
+# The same outline page renders pixel-identical (pdftoppm -r 100 crop,
+# md5) in MMSZ5221BT1/D Rev. 17 page 7, MMSZ4678T1/D Rev. 13 page 6 and
+# MBR130T1/D Rev. 6 page 5.
+# Supersedes standards/CHIP-SOD123-MBR0520 (family chip), deleted in this
+# change.
+# construction: molded -- page 1 Mechanical Characteristics "Case: Epoxy,
+# Molded".
+schema_version: "0.1"
+kind: package
+id: standards/SOD123-ONSEMI-425
+
+family: sod
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 2.69
+    min: 2.54
+    max: 2.84
+    unit: mm
+  body_width:
+    nominal: 1.6
+    min: 1.4
+    max: 1.8
+    unit: mm
+  body_height:
+    nominal: 1.16
+    unit: mm
+  overall_height:
+    nominal: 1.17
+    min: 0.94
+    max: 1.35
+    unit: mm
+  overall_length:
+    nominal: 3.68
+    min: 3.56
+    max: 3.86
+    unit: mm
+  lead_width:
+    nominal: 0.61
+    min: 0.51
+    max: 0.71
+    unit: mm
+  lead_length:
+    nominal: 0.25
+    unit: mm
+  lead_thickness:
+    max: 0.15
+    unit: mm
+  standoff:
+    nominal: 0.05
+    min: 0.0
+    max: 0.1
+    unit: mm
+
+construction: molded
+
+geometry:
+  type: parametric
+  generator: sod
+
+provenance:
+  "/construction":
+    - source: onsemi/MBR0520-D
+      page: 1
+      locator: "Mechanical Characteristics: \"Case: Epoxy, Molded\""
+  "/dimensions/body_length":
+    - source: onsemi/MBR0520-D
+      page: 4
+      locator: "CASE 425 table, E 2.54 / 2.69 / 2.84"
+  "/dimensions/body_width":
+    - source: onsemi/MBR0520-D
+      page: 4
+      locator: "CASE 425 table, D 1.40 / 1.60 / 1.80"
+  "/dimensions/body_height":
+    - source: onsemi/MBR0520-D
+      page: 4
+      locator: "CASE 425 table, A2 \"1.16 REF.\" (reference value, marked REF. in the table)"
+  "/dimensions/overall_height":
+    - source: onsemi/MBR0520-D
+      page: 4
+      locator: "CASE 425 table, A 0.94 / 1.17 / 1.35"
+  "/dimensions/overall_length":
+    - source: onsemi/MBR0520-D
+      page: 4
+      locator: "CASE 425 table, H 3.56 / 3.68 / 3.86 (side view, lead tip to lead tip)"
+  "/dimensions/lead_width":
+    - source: onsemi/MBR0520-D
+      page: 4
+      locator: "CASE 425 table, b 0.51 / 0.61 / 0.71"
+  "/dimensions/lead_length":
+    - source: onsemi/MBR0520-D
+      page: 4
+      locator: "CASE 425 table, L \"0.25 REF.\" (reference value, marked REF. in the table)"
+  "/dimensions/lead_thickness":
+    - source: onsemi/MBR0520-D
+      page: 4
+      locator: "CASE 425 table, c - / - / 0.15 (max only)"
+  "/dimensions/standoff":
+    - source: onsemi/MBR0520-D
+      page: 4
+      locator: "CASE 425 table, A1 0.00 / 0.05 / 0.10"

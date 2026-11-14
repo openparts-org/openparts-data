@@ -1,0 +1,107 @@
+# onsemi SMC 2-LEAD, CASE 403AC ISSUE B, DOCUMENT NUMBER 98AON97675F
+# (DATE 27 JUL 2017), page 4 of MBRS340T3/D (August, 2021 - Rev. 15).
+# Table read with pdftotext -layout and checked on the rendered page,
+# MILLIMETERS MIN/MAX only (no nominal column; controlling dimension:
+# inches).
+# Letters from the drawing's arrows: E = body along the terminal axis
+# (top view, body_length), D = body across (body_width), HE = lead-tip
+# span (overall_length), b = terminal width (end view), c = lead
+# thickness, L = folded foot (lead_length), A2 = body thickness
+# (body_height), A = overall height, A1 = standoff. No STYLE list.
+# construction: molded -- page 1 "Case: Epoxy, Molded, Epoxy Meets UL 94
+# V-0".
+schema_version: "0.1"
+kind: package
+id: standards/DO214AB-ONSEMI-403AC
+
+family: do214
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    min: 6.6
+    max: 7.15
+    unit: mm
+  body_width:
+    min: 5.55
+    max: 6.25
+    unit: mm
+  body_height:
+    min: 1.9
+    max: 2.41
+    unit: mm
+  overall_height:
+    min: 1.95
+    max: 2.61
+    unit: mm
+  overall_length:
+    min: 7.75
+    max: 8.15
+    unit: mm
+  lead_width:
+    min: 2.9
+    max: 3.2
+    unit: mm
+  lead_length:
+    min: 0.75
+    max: 1.6
+    unit: mm
+  lead_thickness:
+    min: 0.15
+    max: 0.41
+    unit: mm
+  standoff:
+    min: 0.05
+    max: 0.2
+    unit: mm
+
+construction: molded
+
+geometry:
+  type: parametric
+  generator: do214
+
+provenance:
+  "/construction":
+    - source: onsemi/MBRS340T3-D
+      page: 1
+      locator: "Mechanical Characteristics: \"Case: Epoxy, Molded, Epoxy Meets UL 94 V-0\""
+  "/dimensions/body_length":
+    - source: onsemi/MBRS340T3-D
+      page: 4
+      locator: "CASE 403AC table, E 6.60 / 7.15 mm (0.260 / 0.281 in) -- min/max only"
+  "/dimensions/body_width":
+    - source: onsemi/MBRS340T3-D
+      page: 4
+      locator: "CASE 403AC table, D 5.55 / 6.25 mm -- min/max only"
+  "/dimensions/body_height":
+    - source: onsemi/MBRS340T3-D
+      page: 4
+      locator: "CASE 403AC table, A2 1.90 / 2.41 mm -- min/max only"
+  "/dimensions/overall_height":
+    - source: onsemi/MBRS340T3-D
+      page: 4
+      locator: "CASE 403AC table, A 1.95 / 2.61 mm"
+  "/dimensions/overall_length":
+    - source: onsemi/MBRS340T3-D
+      page: 4
+      locator: "CASE 403AC table, HE 7.75 / 8.15 mm"
+  "/dimensions/lead_width":
+    - source: onsemi/MBRS340T3-D
+      page: 4
+      locator: "CASE 403AC table, b 2.90 / 3.20 mm"
+  "/dimensions/lead_length":
+    - source: onsemi/MBRS340T3-D
+      page: 4
+      locator: "CASE 403AC table, L 0.75 / 1.60 mm (folded foot)"
+  "/dimensions/lead_thickness":
+    - source: onsemi/MBRS340T3-D
+      page: 4
+      locator: "CASE 403AC table, c 0.15 / 0.41 mm"
+  "/dimensions/standoff":
+    - source: onsemi/MBRS340T3-D
+      page: 4
+      locator: "CASE 403AC table, A1 0.05 / 0.20 mm"

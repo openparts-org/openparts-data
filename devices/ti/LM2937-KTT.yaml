@@ -1,0 +1,30 @@
+# LM2937 500-mA LDO (all fixed voltages), KTT (TO-263) pinout. SNVS100F
+# "Pin Functions" (page 3), KTT column: INPUT 1, GND 2, OUTPUT 3, GND TAB
+# -- "The TAB is internally connected to device pin 2 (GND)" ->
+# connected_to "2". Tab keyed "4" as printed on outline KTT0003B (page
+# 29); the table's DCY column also numbers the tab 4.
+schema_version: "0.1"
+kind: device
+id: ti/LM2937-KTT
+
+manufacturer: ti
+category: other
+family: LM2937
+
+pins:
+  "1": { name: "INPUT", type: power }
+  "2": { name: "GND", type: ground }
+  "3": { name: "OUTPUT", type: power }
+  "4": { name: "GND", type: ground, connected_to: "2" }
+
+provenance:
+  "/pins":
+    - source: ti/SNVS100F
+      page: 3
+      locator: "\"Pin Functions\", KTT column: INPUT 1, GND 2, OUTPUT 3, GND TAB (\"internally connected to device pin 2 (GND)\")"
+    - source: ti/SNVS100F
+      page: 3
+      locator: "\"DDPAK/TO-263 Surface-Mount Package (KTT) Top View\""
+    - source: ti/SNVS100F
+      page: 29
+      locator: "KTT0003B outline, bottom view: tab labelled \"4\""

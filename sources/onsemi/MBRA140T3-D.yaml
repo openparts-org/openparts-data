@@ -1,0 +1,20 @@
+# Official onsemi datasheet, Publication Order Number MBRA140T3/D,
+# footer
+# "February, 2020 - Rev. 12", 6 pages, downloaded with curl on
+# 2026-11-14 (HTTP 200,
+# `file`: PDF). Read with pdftotext -layout; the image-only case outline
+# rendered with pdftoppm. Page numbers are PDF page indices.
+# Outline: page 5: SMA CASE 403D ISSUE J (98AON04079D, DATE 22 OCT 2021)
+# with STYLE 1.
+schema_version: "0.1"
+kind: source
+id: onsemi/MBRA140T3-D
+
+publisher: onsemi
+document_id: "MBRA140T3/D"
+document_type: datasheet
+
+revision: "12"
+date: "2020-02"
+
+url: "https://www.onsemi.com/pdf/datasheet/mbra140t3-d.pdf"

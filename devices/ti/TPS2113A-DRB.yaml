@@ -1,0 +1,33 @@
+# TPS2113A auto-switching power mux, DRB (SON-8) pinout. SBVS045C Table
+# 1 "TERMINAL FUNCTIONS" (page 7): STAT 1, EN 2, VSNS 3, ILIM 4, GND 5,
+# IN2 6, OUT 7, IN1 8; "DRB PACKAGE SON-8 (TOP VIEW)" (same page). The
+# thermal "Pad" row: "DRB package only. Connect to GND." -- a
+# recommendation, not an internal connection -> key "EP", type
+# passive. IN1/IN2/OUT are the power-switch terminals -> power.
+schema_version: "0.1"
+kind: device
+id: ti/TPS2113A-DRB
+
+manufacturer: ti
+category: other
+family: TPS2113A
+
+pins:
+  "1": { name: "STAT", type: output }
+  "2": { name: "EN", type: input }
+  "3": { name: "VSNS", type: input }
+  "4": { name: "ILIM", type: input }
+  "5": { name: "GND", type: ground }
+  "6": { name: "IN2", type: power }
+  "7": { name: "OUT", type: power }
+  "8": { name: "IN1", type: power }
+  "EP": { name: "Pad", type: passive }
+
+provenance:
+  "/pins":
+    - source: ti/SBVS045C
+      page: 7
+      locator: "Table 1 \"TERMINAL FUNCTIONS\": STAT 1, EN 2, VSNS 3, ILIM 4, GND 5, IN2 6, OUT 7, IN1 8, Pad (DRB only, \"Connect to GND\")"
+    - source: ti/SBVS045C
+      page: 7
+      locator: "\"DRB PACKAGE SON-8 (TOP VIEW)\""

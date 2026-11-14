@@ -1,0 +1,38 @@
+# MPN "W25Q128JVPJM" printed in the ordering table of winbond/W25Q128JV@revF
+# (section 11.1, W25Q128JV-IM/JM valid part numbers, PDF page 77, printed 76) under
+# "WSON-8 6x5-mm" -> existence verified. Package code P = "WSON8 6x5-mm"
+# (section 11 legend, PDF page 75), outline section 10.3. Device
+# winbond/W25Q128JV-S already covers the WSON 6x5/8x6 pad numbering
+# (section 3.3 is shared by SOIC 208-mil and both WSON packages).
+# lifecycle: not stated; unknown.
+schema_version: "0.1"
+kind: part
+id: winbond/W25Q128JVPJM
+
+manufacturer: winbond
+mpn: "W25Q128JVPJM"
+
+device: winbond/W25Q128JV-S
+package: manufacturers/winbond/WSON8-6x5-P1.27-P
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - winbond/W25Q128JV@revF
+
+provenance:
+  "/existence":
+    - source: winbond/W25Q128JV@revF
+      page: 77
+      locator: "Section 11.1 \"Valid Part Numbers and Top Side Marking\", W25Q128JV-IM/JM table, package \"WSON-8 6x5-mm\", product number \"W25Q128JVPJM\" (PDF page 77, printed page 76)"
+  "/package":
+    - source: winbond/W25Q128JV@revF
+      page: 75
+      locator: "Section 11 ordering legend: \"P = WSON8 6x5-mm\" (PDF page 75)"
+    - source: winbond/W25Q128JV@revF
+      page: 70
+      locator: "Section 10.3 \"8-Pad WSON 6x5-mm (Package Code P)\""

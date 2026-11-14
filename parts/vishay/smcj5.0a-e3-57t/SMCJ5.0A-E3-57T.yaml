@@ -1,0 +1,38 @@
+# SMCJ5.0A-E3/57T: printed verbatim in the ordering *example* table. The
+# table is titled "ORDERING INFORMATION (Example)", so existence is
+# "probable" (add-part section 2). No lifecycle statement in the
+# document.
+# Package: page-5 SMC (DO-214AB) outline is identical, row for row
+# (pdftotext -layout diff), to Vishay 88751 page 3, so
+# standards/DO214AB-VISHAY-88751 is reused.
+schema_version: "0.1"
+kind: part
+id: vishay/SMCJ5.0A-E3-57T
+
+manufacturer: vishay
+mpn: "SMCJ5.0A-E3/57T"
+
+device: vishay/SMCJ-A-SERIES
+package: standards/DO214AB-VISHAY-88751
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - vishay/88394
+
+provenance:
+  "/existence":
+    - source: vishay/88394
+      page: 3
+      locator: "ORDERING INFORMATION (Example): \"SMCJ5.0A-E3/57T | 0.211 | 57T | 850 | 7\" diameter plastic tape and reel\""
+    - source: vishay/88394
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS row \"(+)SMCJ5.0A (5) | GDE | GDE | 6.40 | 7.07 | 10 | 5.0\"; page-1 MECHANICAL DATA: \"Base P/N-E3 - RoHS-compliant, commercial grade\""
+  "/package":
+    - source: vishay/88394
+      page: 5
+      locator: "PACKAGE OUTLINE DIMENSIONS -- see header"

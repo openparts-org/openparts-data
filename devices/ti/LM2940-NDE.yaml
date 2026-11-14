@@ -1,0 +1,25 @@
+# LM2940 1-A LDO (LM2940-N, all fixed voltages), NDE (TO-220) pinout.
+# SNVS769J "Pin Functions" (page 3), NDE column: IN 1, GND 2, OUT 3, GND
+# 4; Figure "TO-220 (NDE) Package 4 Pins Front View". NDE's pin 4 is the
+# tab, which on a TO-220 is not a board pad: pins 1-3 only.
+schema_version: "0.1"
+kind: device
+id: ti/LM2940-NDE
+
+manufacturer: ti
+category: other
+family: LM2940
+
+pins:
+  "1": { name: "IN", type: power }
+  "2": { name: "GND", type: ground }
+  "3": { name: "OUT", type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SNVS769J
+      page: 3
+      locator: "\"Pin Functions\", NDE column: IN 1, GND 2, OUT 3, GND 4 (tab)"
+    - source: ti/SNVS769J
+      page: 3
+      locator: "\"TO-220 (NDE) Package 4 Pins Front View\""

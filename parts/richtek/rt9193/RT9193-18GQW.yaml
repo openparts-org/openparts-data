@@ -1,0 +1,42 @@
+# RT9193, 1.8V fixed output, Richtek Green, WDFN-6L 2x2. "RT9193-18GQW" is
+# printed verbatim in the RT9193 product page's orderable SKU list
+# (JSON-LD "offers", fetched 2026-11-14) -> existence verified. Fields
+# decode with the DS9193-18 "Ordering Information" legend (page 1):
+# 18 = 1.8V, G = Green (Halogen Free and Pb Free), QW = WDFN-6L 2x2
+# (W-Type). lifecycle: neither source states a production status;
+# unknown.
+schema_version: "0.1"
+kind: part
+id: richtek/RT9193-18GQW
+
+manufacturer: richtek
+mpn: "RT9193-18GQW"
+
+device: richtek/RT9193-WDFN6
+package: manufacturers/richtek/WDFN6-2x2-P0.65-DS9193
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - richtek/DS9193-18
+  - richtek/RT9193-product-page
+
+provenance:
+  "/existence":
+    - source: richtek/RT9193-product-page
+      page: 1
+      locator: "JSON-LD Product \"RT9193\", offers sku \"RT9193-18GQW\""
+    - source: richtek/DS9193-18
+      page: 1
+      locator: "Ordering Information legend: \"QW : WDFN-6L 2x2 (W-Type)\", \"G : Green (Halogen Free and Pb Free)\", Output Voltage \"18 : 1.8V\""
+  "/package":
+    - source: richtek/DS9193-18
+      page: 1
+      locator: "Ordering Information, Package Type \"QW : WDFN-6L 2x2 (W-Type)\""
+    - source: richtek/DS9193-18
+      page: 13
+      locator: "\"W-Type 6L DFN 2x2 Package\" outline"

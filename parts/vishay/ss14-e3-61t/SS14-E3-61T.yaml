@@ -1,0 +1,39 @@
+# SS14-E3/61T: composed from the base P/N SS14 (listed on page 1) with
+# the "-E3" suffix rule and a package code printed in the ordering
+# example table. The table is titled "ORDERING INFORMATION (Example)",
+# so existence is "probable" (add-part section 2). No lifecycle
+# statement in the document.
+# Package: page-4 SMA (DO-214AC) outline is identical, row for row
+# (pdftotext -layout diff), to Vishay 88711 page 3, so
+# standards/DO214AC-VISHAY-88711 is reused.
+schema_version: "0.1"
+kind: part
+id: vishay/SS14-E3-61T
+
+manufacturer: vishay
+mpn: "SS14-E3/61T"
+
+device: vishay/SS12-SERIES
+package: standards/DO214AC-VISHAY-88711
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - vishay/88746
+
+provenance:
+  "/existence":
+    - source: vishay/88746
+      page: 2
+      locator: "ORDERING INFORMATION (Example): \"SS16-E3/61T | 0.064 | 61T | 1800 | 7\" diameter plastic tape and reel\""
+    - source: vishay/88746
+      page: 1
+      locator: "MAXIMUM RATINGS table column \"SS14\"; MECHANICAL DATA: \"Base P/N-E3 - RoHS-compliant, commercial grade\""
+  "/package":
+    - source: vishay/88746
+      page: 4
+      locator: "PACKAGE OUTLINE DIMENSIONS -- see header"

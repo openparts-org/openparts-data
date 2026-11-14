@@ -1,0 +1,34 @@
+# MCP1700 low quiescent current LDO, 6-lead 2x2 DFN (MAY) pinout. From
+# DS20001826E Table 3-1 "Pin Function Table" (page 11), column "2x2
+# DFN-6": VIN 1, NC 2/4/5, GND 3, VOUT 6, EP 7; checked against the
+# "Package Types" figure "2x2 DFN-6*" (page 1).
+# Exposed pad: section 3.5 "There is an internal electrical connection
+# between the Exposed Thermal Pad (EP) and the GND pin" -> key "EP"
+# (the table's pin 7), name GND, type ground, connected_to pin 3.
+# NC "No Connect" (section 3.4: "No internal connection") -> nc.
+# VIN/VOUT power, as in microchip/MCP1700-TT.
+schema_version: "0.1"
+kind: device
+id: microchip/MCP1700-MAY
+
+manufacturer: microchip
+category: other
+family: MCP1700
+
+pins:
+  "1": { name: VIN, type: power }
+  "2": { name: NC, type: nc }
+  "3": { name: GND, type: ground }
+  "4": { name: NC, type: nc }
+  "5": { name: NC, type: nc }
+  "6": { name: VOUT, type: power }
+  "EP": { name: GND, type: ground, connected_to: "3" }
+
+provenance:
+  "/pins":
+    - source: microchip/DS20001826@revE
+      page: 11
+      locator: "Table 3-1 \"Pin Function Table\", column \"2x2 DFN-6\"; section 3.5 \"Exposed Thermal Pad (EP)\""
+    - source: microchip/DS20001826@revE
+      page: 1
+      locator: "\"Package Types\", 2x2 DFN-6*"

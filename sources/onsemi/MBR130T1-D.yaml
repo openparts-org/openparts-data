@@ -1,0 +1,19 @@
+# Official onsemi datasheet, Publication Order Number MBR130T1/D, footer
+# "June, 2025 - Rev. 6", 6 pages, downloaded with curl on 2026-11-14
+# (HTTP 200,
+# `file`: PDF). Read with pdftotext -layout; the image-only case outline
+# rendered with pdftoppm. Page numbers are PDF page indices.
+# Outline: page 5: SOD-123 CASE 425 ISSUE H (98ASB42927B) with STYLE 1,
+# pixel-identical to MBR0520LT1/D page 4.
+schema_version: "0.1"
+kind: source
+id: onsemi/MBR130T1-D
+
+publisher: onsemi
+document_id: "MBR130T1/D"
+document_type: datasheet
+
+revision: "6"
+date: "2025-06"
+
+url: "https://www.onsemi.com/pdf/datasheet/mbr130t1-d.pdf"

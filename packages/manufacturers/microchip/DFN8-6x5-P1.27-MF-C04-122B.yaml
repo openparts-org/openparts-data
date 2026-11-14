@@ -1,0 +1,107 @@
+# 8-lead DFN-S, 6x5 mm, 1.27 mm pitch, exposed pad: Microchip drawing
+# C04-122B "8-Lead Plastic Dual Flat, No Lead Package (MF) - 6x5 mm Body
+# [DFN-S]", DS20001203W page 17 (rendered image; text layer encoded).
+# Frame: D (5.00, along the terminal rows) = body_length (Y), E (6.00,
+# across the rows) = body_width (X); exposed pad E2 = width (X), D2 =
+# length (Y). body_height = A (no A2). lead_thickness = A3 "0.20 REF"
+# (reference value). K (min 0.20) not modelled.
+# Not merged with C04-122 Rev C (25AA256/25LC256 DS20001822J): Rev C has
+# A1 nominal 0.02 (here 0.01) and b 0.30/0.40/0.50 (here 0.35/0.40/0.48).
+schema_version: "0.1"
+kind: package
+id: manufacturers/microchip/DFN8-6x5-P1.27-MF-C04-122B
+
+family: dfn
+lead_count: 8
+
+pitch:
+  nominal: 1.27
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 6.00
+    unit: mm
+  body_length:
+    nominal: 5.00
+    unit: mm
+  body_height:
+    nominal: 0.85
+    min: 0.80
+    max: 1.00
+    unit: mm
+  standoff:
+    nominal: 0.01
+    min: 0.00
+    max: 0.05
+    unit: mm
+  lead_width:
+    nominal: 0.40
+    min: 0.35
+    max: 0.48
+    unit: mm
+  lead_length:
+    nominal: 0.60
+    min: 0.50
+    max: 0.75
+    unit: mm
+  lead_thickness:
+    nominal: 0.20
+    unit: mm
+  exposed_pad:
+    width:
+      nominal: 2.30
+      min: 2.20
+      max: 2.40
+      unit: mm
+    length:
+      nominal: 4.00
+      min: 3.90
+      max: 4.10
+      unit: mm
+
+geometry:
+  type: parametric
+  generator: dfn
+
+provenance:
+  "/lead_count":
+    - source: microchip/DS20001203@revW
+      page: 17
+      locator: "drawing C04-122B table, \"Number of Pins N 8\""
+  "/pitch":
+    - source: microchip/DS20001203@revW
+      page: 17
+      locator: "drawing C04-122B table, \"Pitch e 1.27 BSC\""
+  "/dimensions/body_width":
+    - source: microchip/DS20001203@revW
+      page: 17
+      locator: "drawing C04-122B table, \"Overall Width E 6.00 BSC\" (across the terminal rows)"
+  "/dimensions/body_length":
+    - source: microchip/DS20001203@revW
+      page: 17
+      locator: "drawing C04-122B table, \"Overall Length D 5.00 BSC\" (along the terminal rows)"
+  "/dimensions/body_height":
+    - source: microchip/DS20001203@revW
+      page: 17
+      locator: "drawing C04-122B table, \"Overall Height A 0.80 / 0.85 / 1.00\""
+  "/dimensions/standoff":
+    - source: microchip/DS20001203@revW
+      page: 17
+      locator: "drawing C04-122B table, \"Standoff A1 0.00 / 0.01 / 0.05\""
+  "/dimensions/lead_width":
+    - source: microchip/DS20001203@revW
+      page: 17
+      locator: "drawing C04-122B table, \"Contact Width b 0.35 / 0.40 / 0.48\""
+  "/dimensions/lead_length":
+    - source: microchip/DS20001203@revW
+      page: 17
+      locator: "drawing C04-122B table, \"Contact Length L 0.50 / 0.60 / 0.75\""
+  "/dimensions/lead_thickness":
+    - source: microchip/DS20001203@revW
+      page: 17
+      locator: "drawing C04-122B table, \"Contact Thickness A3 0.20 REF\" (reference value)"
+  "/dimensions/exposed_pad":
+    - source: microchip/DS20001203@revW
+      page: 17
+      locator: "drawing C04-122B table, \"Exposed Pad Width E2 2.20 / 2.30 / 2.40\" (across the rows) and \"Exposed Pad Length D2 3.90 / 4.00 / 4.10\" (along the rows)"

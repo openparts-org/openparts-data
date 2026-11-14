@@ -1,0 +1,33 @@
+# MBR120ESFT1G: printed verbatim in the datasheet's ORDERING INFORMATION
+# table (page 1), so existence is "verified". No lifecycle statement for
+# this OPN, so lifecycle is unknown.
+# Package: page-5 CASE 498 (98AON11184D), standards/SOD123FL-ONSEMI-498
+# (read from this page).
+schema_version: "0.1"
+kind: part
+id: onsemi/MBR120ESFT1G
+
+manufacturer: onsemi
+mpn: MBR120ESFT1G
+
+device: onsemi/MBR120ESF
+package: standards/SOD123FL-ONSEMI-498
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/MBR120ESFT1-D
+
+provenance:
+  "/existence":
+    - source: onsemi/MBR120ESFT1-D
+      page: 1
+      locator: "ORDERING INFORMATION: \"MBR120ESFT1G | SOD-123FL (Pb-Free) | 3,000 / Tape & Reel\""
+  "/package":
+    - source: onsemi/MBR120ESFT1-D
+      page: 5
+      locator: "MECHANICAL CASE OUTLINE -- see header"

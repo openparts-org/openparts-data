@@ -1,0 +1,37 @@
+# NTP5864NG: printed verbatim in NTP5864N/D Rev. 1 ORDERING
+# INFORMATION (page 1) -> existence verified.
+# Package: datasheet page 1 "CASE 221A"; outline from the standalone
+# drawing 98ASB42148B.
+# No lifecycle statement for this MPN.
+schema_version: "0.1"
+kind: part
+id: onsemi/NTP5864NG
+
+manufacturer: onsemi
+mpn: NTP5864NG
+
+device: onsemi/NTP5864N
+package: manufacturers/onsemi/TO220-10.10x4.45-P2.54-221A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/NTP5864N-D
+  - onsemi/98ASB42148B
+
+provenance:
+  "/existence":
+    - source: onsemi/NTP5864N-D
+      page: 1
+      locator: "ORDERING INFORMATION: \"NTP5864NG | TO-220 (Pb-Free) | 50 Units / Rail\""
+  "/package":
+    - source: onsemi/NTP5864N-D
+      page: 1
+      locator: "Package callout \"CASE 221A\""
+    - source: onsemi/98ASB42148B
+      page: 1
+      locator: "CASE 221A outline"

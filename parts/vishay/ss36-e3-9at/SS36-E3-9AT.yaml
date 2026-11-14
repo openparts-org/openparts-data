@@ -1,0 +1,37 @@
+# SS36-E3/9AT: printed verbatim in the ordering *example* table. The
+# table is titled "ORDERING INFORMATION (Example)", so existence is
+# "probable" (add-part section 2). No lifecycle statement in the
+# document.
+# Package: page-3 SMC (DO-214AB) outline, standards/DO214AB-VISHAY-88751
+# (read from this page).
+schema_version: "0.1"
+kind: part
+id: vishay/SS36-E3-9AT
+
+manufacturer: vishay
+mpn: "SS36-E3/9AT"
+
+device: vishay/SS32-SERIES
+package: standards/DO214AB-VISHAY-88751
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - vishay/88751
+
+provenance:
+  "/existence":
+    - source: vishay/88751
+      page: 2
+      locator: "ORDERING INFORMATION (Example): \"SS36-E3/9AT | 0.235 | 9AT | 3500 | 13\" diameter plastic tape and reel\""
+    - source: vishay/88751
+      page: 1
+      locator: "MAXIMUM RATINGS table column \"SS36\"; MECHANICAL DATA: \"Base P/N-E3 - RoHS-compliant, commercial grade\""
+  "/package":
+    - source: vishay/88751
+      page: 3
+      locator: "PACKAGE OUTLINE DIMENSIONS -- see header"

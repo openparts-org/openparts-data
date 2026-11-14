@@ -1,0 +1,34 @@
+# MBRS2040LT3G: printed verbatim in the datasheet's ORDERING INFORMATION
+# table (page 1), so existence is "verified". No lifecycle statement for
+# this OPN, so lifecycle is unknown.
+# Package: page-6 CASE 403A (98ASB42669B) renders pixel-identical to
+# MBRS140T3/D page 6 (pdftoppm -r 100 crop, md5), so standards/DO214AA-
+# ONSEMI-403A is reused.
+schema_version: "0.1"
+kind: part
+id: onsemi/MBRS2040LT3G
+
+manufacturer: onsemi
+mpn: MBRS2040LT3G
+
+device: onsemi/MBRS2040L
+package: standards/DO214AA-ONSEMI-403A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/MBRS2040LT3-D
+
+provenance:
+  "/existence":
+    - source: onsemi/MBRS2040LT3-D
+      page: 1
+      locator: "ORDERING INFORMATION: \"MBRS2040LT3G | SMB (Pb-Free) | 2,500 / Tape & Reel\""
+  "/package":
+    - source: onsemi/MBRS2040LT3-D
+      page: 6
+      locator: "MECHANICAL CASE OUTLINE -- see header"

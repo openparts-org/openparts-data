@@ -5,8 +5,11 @@
 # "Pins A0, A1 and A2 are not used by the 24XX02. (No internal
 # connections)") -> type nc, names kept. SDA "Serial Address/Data I/O"
 # -> io, SCL -> input, WP "Write-Protect Input" -> input, VSS -> ground,
-# VCC -> power. The DFN/TDFN pads and the 5-lead SOT-23/SC-70 numbering
-# are not covered (see microchip/24AA02-SOT23).
+# VCC -> power. The 2x3 DFN (MC) and TDFN (MNY) columns of Table 2-1
+# give the same numbers as SOIC (pins 1-8), so this device also covers
+# them; DS21709J says nothing about the exposed pad -> no EP pin. The
+# 5-lead SOT-23/SC-70 numbering is not covered (see
+# microchip/24AA02-SOT23).
 schema_version: "0.1"
 kind: device
 id: microchip/24LC02B
@@ -33,3 +36,6 @@ provenance:
     - source: microchip/DS21709@revJ
       page: 1
       locator: "\"Package Types\" figure \"SOIC, TSSOP\" (all 8 pins matched)"
+    - source: microchip/DS21709@revJ
+      page: 5
+      locator: "Table 2-1 \"Pin Function Table\", columns \"DFN\" and \"TDFN\" (same numbers as SOIC)"

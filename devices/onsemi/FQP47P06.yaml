@@ -1,0 +1,28 @@
+# -60 V P-channel QFET MOSFET FQP47P06, TO-220-3LD CASE 340AT. The datasheet (FQP47P06-D) prints the
+# lead functions only as "G D S" labels on the page-1 3-D package image
+# (no numbers) and the outline 98AON13818G has no STYLE list; its front
+# view numbers the leads 1 2 3 left to right. Reading the image as the
+# front view: 1 = Gate, 2 = Drain, 3 = Source -- position-derived,
+# flagged for review. The tab (drain on a TO-220) is not a footprint pad
+# of a vertical TO-220 and is not listed.
+schema_version: "0.1"
+kind: device
+id: onsemi/FQP47P06
+
+manufacturer: onsemi
+category: transistor
+family: FQP47P06
+
+pins:
+  "1": { name: Gate, type: passive }
+  "2": { name: Drain, type: passive }
+  "3": { name: Source, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/FQP47P06-D
+      page: 1
+      locator: "TO-220-3LD image, leads labelled \"G D S\"; no numbers"
+    - source: onsemi/98AON13818G
+      page: 1
+      locator: "Front view leads numbered \"1 2 3\" left to right"

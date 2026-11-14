@@ -1,0 +1,20 @@
+# Official TI datasheet "uA78xx Fixed Positive Voltage Regulators"
+# (SLVS056P, revised January 2015), 28 pages, downloaded 2026-11-14 with curl
+# from the URL below (file checked: PDF, title page names SLVS056P). Read
+# with pdftotext -layout; pin configuration figures and the outline
+# drawings KCS0003B (page 24; no KTT drawing in this PDF) were rendered and read as images. The PACKAGE OPTION
+# ADDENDUM inside this PDF is dated 10-Nov-2025 (newer than the datasheet
+# revision; PDF CreationDate 2026). Page numbers are PDF page indices
+# (= the printed page numbers on numbered pages).
+schema_version: "0.1"
+kind: source
+id: ti/SLVS056P
+
+publisher: ti
+document_id: SLVS056P
+document_type: datasheet
+
+revision: "P"
+date: "2015-01"
+
+url: "https://www.ti.com/lit/ds/symlink/ua78.pdf"

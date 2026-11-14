@@ -1,0 +1,41 @@
+# AOB66935L: printed verbatim in the page-1 "Orderable Part Number" table of
+# AOS datasheet AOB66935L (Rev.1.0: January 2024) -> existence verified.
+# Lifecycle from the AOS product page (fetched 2026-11-14):
+# "product_status":"Full Production" -> active.
+# Package: datasheet "TO-263"; the product page links AOS's
+# TO263 outline (PO-00005) as this product's package document.
+schema_version: "0.1"
+kind: part
+id: aos/AOB66935L
+
+manufacturer: aos
+mpn: AOB66935L
+
+device: aos/AOB66935L
+package: manufacturers/aos/TO263-9.14x10.03-P2.54-PO-00005-TabPin4
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - aos/AOB66935L-DS
+  - aos/AOB66935L-product-page
+  - aos/PO-00005
+
+provenance:
+  "/existence":
+    - source: aos/AOB66935L-DS
+      page: 1
+      locator: "Orderable Part Number table: \"AOB66935L | TO-263 | Tape & Reel | 800\""
+  "/lifecycle":
+    - source: aos/AOB66935L-product-page
+      locator: "Embedded product JSON \"product_status\":\"Full Production\""
+  "/package":
+    - source: aos/AOB66935L-product-page
+      locator: "\"packages\": \"TO263\", package_pdf .../packaging_information/TO263.pdf"
+    - source: aos/PO-00005
+      page: 1
+      locator: "\"TO263(D2PAK) PACKAGE OUTLINE\" PO-00005 Version N"

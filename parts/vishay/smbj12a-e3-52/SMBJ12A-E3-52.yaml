@@ -1,0 +1,38 @@
+# SMBJ12A-E3/52: composed from the base P/N SMBJ12A (listed on page 2)
+# with the "-E3" suffix rule and a package code printed in the ordering
+# example table. The table is titled "ORDERING INFORMATION (Example)",
+# so existence is "probable" (add-part section 2). No lifecycle
+# statement in the document.
+# Package: page-5 SMB (DO-214AA) outline, standards/DO214AA-VISHAY-88392
+# (read from this page).
+schema_version: "0.1"
+kind: part
+id: vishay/SMBJ12A-E3-52
+
+manufacturer: vishay
+mpn: "SMBJ12A-E3/52"
+
+device: vishay/SMBJ-A-SERIES
+package: standards/DO214AA-VISHAY-88392
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - vishay/88392
+
+provenance:
+  "/existence":
+    - source: vishay/88392
+      page: 3
+      locator: "ORDERING INFORMATION (Example): \"SMBJ5.0A-E3/52 | 0.106 | 52 | 750 | 7\" diameter plastic tape and reel\""
+    - source: vishay/88392
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS row \"(+)SMBJ12A | LE | BE | 13.3 | 14.7 | 1.0 | 12\"; page-1 MECHANICAL DATA: \"Base P/N-E3 - RoHS-compliant, commercial grade\""
+  "/package":
+    - source: vishay/88392
+      page: 5
+      locator: "PACKAGE OUTLINE DIMENSIONS -- see header"

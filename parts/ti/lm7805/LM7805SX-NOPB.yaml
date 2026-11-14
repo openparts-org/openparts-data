@@ -1,0 +1,36 @@
+# LM7805SX/NOPB: SNOSBT0L PACKAGE OPTION ADDENDUM (page 23) row "LM7805SX/NOPB
+# Active  Production  DDPAK/ TO-263 (KTT) | 3" -- MPN printed verbatim in TI's orderable
+# list (existence verified); lifecycle "Active" is TI's own Status column.
+# Package KTT = outline KTT0003B (SNOSBT0L page 29).
+schema_version: "0.1"
+kind: part
+id: ti/LM7805SX/NOPB
+
+manufacturer: ti
+mpn: LM7805SX/NOPB
+
+device: ti/LM7805-KTT
+package: manufacturers/ti/KTT0003B
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SNOSBT0L
+
+provenance:
+  "/existence":
+    - source: ti/SNOSBT0L
+      page: 23
+      locator: "Package option addendum table, row \"LM7805SX/NOPB\" (DDPAK/ TO-263 (KTT) | 3)"
+  "/lifecycle":
+    - source: ti/SNOSBT0L
+      page: 23
+      locator: "Package option addendum table, row \"LM7805SX/NOPB\", Status \"Active\""
+  "/package":
+    - source: ti/SNOSBT0L
+      page: 29
+      locator: "KTT0003B package outline"

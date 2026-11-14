@@ -1,0 +1,22 @@
+# Bi-directional single-channel TVS/ESD diode, X1-DFN1006-2 (DS35427).
+# Pin names and numbers from the page-1 "Device Schematic" (rendered):
+# "Pin 1" and "Pin 2" with back-to-back diodes between them -- the
+# device is symmetrical, there is no cathode/anode, so the pins carry
+# the datasheet's own labels.
+schema_version: "0.1"
+kind: device
+id: diodes/D5V0L1B2LP
+
+manufacturer: diodes
+category: diode
+family: D5V0L1B2LP
+
+pins:
+  "1": { name: Pin1, type: passive }
+  "2": { name: Pin2, type: passive }
+
+provenance:
+  "/pins":
+    - source: diodes/DS35427
+      page: 1
+      locator: "Device Schematic: \"Pin 1\" and \"Pin 2\", bi-directional (back-to-back) TVS between them"

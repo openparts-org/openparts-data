@@ -1,0 +1,102 @@
+# Diodes X1-DFN1006-2, from "Package Outline Dimensions" on page 4 of
+# DS35427 Rev. 10-2 (D5V0L1B2LP, September 2026), drawing rendered at
+# 250 dpi and read with the table. Columns Min / Max / Typ. Two
+# terminals at the ends of the long side: D (0.95-1.075) is the body
+# across the two terminal "rows" (X, dfn body_width), E (0.55-0.675)
+# the body along them (Y), L (0.20-0.30) terminal length along X, b
+# (0.45-0.55) terminal width along Y, e "0.65" Typ the terminal centre
+# distance (recorded as pitch; with one terminal per side the generator
+# does not use it for placement), A total height (no A2: body_height),
+# A1 standoff. No terminal thickness (A3) is printed.
+#
+# Pin 1: the bottom view marks "Pin #1 ID" (corner chamfer R) on the
+# right-hand terminal, i.e. the left terminal seen from the top -- the
+# generator's pin-1-left convention.
+#
+# Approximation: the bottom view shows the terminals slightly inset from
+# the body ends (e 0.65 + L 0.25 = 0.90 < D 1.00); the dfn generator
+# draws terminals flush with the body edge, so its terminal centres sit
+# about 0.05 mm further out than drawn. Not modelled: R 0.05-0.15
+# pin-1 chamfer, tolerances aaa/bbb/ccc.
+schema_version: "0.1"
+kind: package
+id: manufacturers/diodes/X1-DFN1006-2-DS35427
+
+family: dfn
+lead_count: 2
+
+pitch:
+  nominal: 0.65
+  unit: mm
+
+construction: molded
+
+dimensions:
+  body_width:
+    min: 0.95
+    nominal: 1.00
+    max: 1.075
+    unit: mm
+  body_length:
+    min: 0.55
+    nominal: 0.60
+    max: 0.675
+    unit: mm
+  body_height:
+    min: 0.47
+    nominal: 0.50
+    max: 0.53
+    unit: mm
+  standoff:
+    min: 0.00
+    nominal: 0.03
+    max: 0.05
+    unit: mm
+  lead_width:
+    min: 0.45
+    nominal: 0.50
+    max: 0.55
+    unit: mm
+  lead_length:
+    min: 0.20
+    nominal: 0.25
+    max: 0.30
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: dfn
+
+provenance:
+  "/pitch":
+    - source: diodes/DS35427
+      page: 4
+      locator: "X1-DFN1006-2 table, e \"-- / -- / 0.65\" (terminal centre to centre)"
+  "/construction":
+    - source: diodes/DS35427
+      page: 1
+      locator: "Mechanical Data: \"Package Material: Molded Plastic, “Green” Molding Compound.\""
+  "/dimensions/body_width":
+    - source: diodes/DS35427
+      page: 4
+      locator: "X1-DFN1006-2 table, D \"0.95 / 1.075 / 1.00\" (Min/Max/Typ), across the two terminals"
+  "/dimensions/body_length":
+    - source: diodes/DS35427
+      page: 4
+      locator: "X1-DFN1006-2 table, E \"0.55 / 0.675 / 0.60\""
+  "/dimensions/body_height":
+    - source: diodes/DS35427
+      page: 4
+      locator: "X1-DFN1006-2 table, A \"0.47 / 0.53 / 0.50\" (no A2 given)"
+  "/dimensions/standoff":
+    - source: diodes/DS35427
+      page: 4
+      locator: "X1-DFN1006-2 table, A1 \"0.00 / 0.05 / 0.03\""
+  "/dimensions/lead_width":
+    - source: diodes/DS35427
+      page: 4
+      locator: "X1-DFN1006-2 table, b \"0.45 / 0.55 / 0.50\""
+  "/dimensions/lead_length":
+    - source: diodes/DS35427
+      page: 4
+      locator: "X1-DFN1006-2 table, L \"0.20 / 0.30 / 0.25\""

@@ -1,0 +1,21 @@
+# 1.0A 40V Schottky barrier rectifier, SOD123 (DS30217).
+# Polarity from the page-1 Mechanical Data ("Polarity: Cathode Band").
+# Pin numbers 1 = CATHODE, 2 = ANODE are printed on the page-1
+# schematic.
+schema_version: "0.1"
+kind: device
+id: diodes/1N5819HW
+
+manufacturer: diodes
+category: diode
+family: 1N5819HW
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: diodes/DS30217
+      page: 1
+      locator: "Mechanical Data: \"Polarity: Cathode Band\"; schematic 1 CATHODE / 2 ANODE"

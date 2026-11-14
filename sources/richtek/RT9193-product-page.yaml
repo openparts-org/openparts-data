@@ -1,0 +1,17 @@
+# Richtek RT9193 product page, fetched 2026-11-14 with a plain curl GET
+# and read as raw HTML. Its schema.org JSON-LD block lists the
+# orderable SKUs as "offers" (e.g. "RT9193-33GQW", "RT9193-33GB").
+# Product pages are not versioned; revision/date = fetch date. Single
+# HTML page, cited as page 1.
+schema_version: "0.1"
+kind: source
+id: richtek/RT9193-product-page
+
+publisher: richtek
+document_id: "RT9193 product page"
+document_type: product_page
+
+revision: "2026-11-14"
+date: "2026-11-14"
+
+url: "https://www.richtek.com/en/product-specifications/rt91/rt9193"

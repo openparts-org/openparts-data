@@ -1,0 +1,135 @@
+# TI KTT0003B, TO-263 (DDPAK) 3-lead, outline drawing 4215105/C
+# 08/2024 ("Reference JEDEC registration TO-263, except minimum lead
+# thickness and minimum exposed pad length"), SLVS044Z (LM317) page 42,
+# read from the rendered drawing (zoomed side view). The same page
+# (identical pdftotext -layout text, same number and revision) is in
+# SNOSBT0L page 29, SNOS412Q page 35, SNVS769J page 42 and SNVS100F
+# page 29.
+#
+# Frame: leads on the left, tab on the right, lead 1 at the top, as in
+# the drawing's top view. All three leads are drawn full length (no
+# trimmed centre lead, unlike TO-252), so tab.trimmed_leads is empty.
+# The bottom view labels the exposed thermal pad / tab "4" -> tab.number.
+#
+# Mapping: "8.64" (datum B to the tab-side body edge, no tolerance
+# printed) -> body_width nominal; 9.91-10.41 -> body_length; "14.35 MAX"
+# lead toe to tab end -> overall_width (max only); "1.27 MAX" body edge
+# to tab end -> tab_length (max only); 4.45-4.64 (top to seating plane,
+# no A2 given) -> body_height; 0.00-0.25 -> standoff; 3X 0.71-0.97 ->
+# lead_width; 0.38-0.76 -> lead_thickness; 1.24-2.24 -> lead_length.
+#
+# TAB WIDTH (flagged for review): the drawing gives the tab's own width
+# only as the bottom-view exposed thermal pad "5.08 MIN" (x "5.08 MIN",
+# note 3 "shape may vary"). The tab end in the top view runs the full
+# body width between the chamfers, and the 10.41/9.91 extension lines
+# are drawn from the tab-end corners, so tab_width records that
+# printed 9.91-10.41 (not a separate tab dimension).
+# Left out: tab thickness 1.22-1.32, 0.25 gage plane, the 0-8 deg
+# angles, the "OPTIONAL LEAD FORM".
+schema_version: "0.1"
+kind: package
+id: manufacturers/ti/KTT0003B
+
+family: d2pak
+lead_count: 3
+
+pitch:
+  nominal: 2.54
+  unit: mm
+
+tab:
+  number: "4"
+  trimmed_leads: []
+
+dimensions:
+  body_width:
+    nominal: 8.64
+    unit: mm
+  body_length:
+    min: 9.91
+    max: 10.41
+    unit: mm
+  body_height:
+    min: 4.45
+    max: 4.64
+    unit: mm
+  overall_width:
+    max: 14.35
+    unit: mm
+  standoff:
+    min: 0.00
+    max: 0.25
+    unit: mm
+  lead_width:
+    min: 0.71
+    max: 0.97
+    unit: mm
+  lead_length:
+    min: 1.24
+    max: 2.24
+    unit: mm
+  lead_thickness:
+    min: 0.38
+    max: 0.76
+    unit: mm
+  tab_width:
+    min: 9.91
+    max: 10.41
+    unit: mm
+  tab_length:
+    max: 1.27
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: d2pak
+
+provenance:
+  "/pitch":
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B outline (4215105/C), top view, basic \"2X 2.54\""
+  "/tab":
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B outline, bottom view: exposed thermal pad labelled \"4\"; top/bottom views: leads 1-3 all full length (none trimmed)"
+  "/dimensions/body_width":
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B outline, top view, datum B to tab-side body edge \"8.64\""
+  "/dimensions/body_length":
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B outline, top view \"10.41 / 9.91\""
+  "/dimensions/body_height":
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B outline, side view, top to seating plane C \"4.64 / 4.45\""
+  "/dimensions/overall_width":
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B outline, top view, lead toe to tab end \"14.35 MAX\""
+  "/dimensions/standoff":
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B outline, side view, body underside \"0.25 / 0.00\""
+  "/dimensions/lead_width":
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B outline, top view \"3X 0.97 / 0.71\""
+  "/dimensions/lead_length":
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B outline, side view, foot \"2.24 / 1.24\""
+  "/dimensions/lead_thickness":
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B outline, side view, lead \"0.76 / 0.38\""
+  "/dimensions/tab_width":
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B outline, top view \"10.41 / 9.91\" (extension lines from the tab-end corners; tab spans the body width) -- bottom view exposed pad only \"5.08 MIN\"; see header"
+  "/dimensions/tab_length":
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B outline, side view, body edge to tab end \"1.27 MAX\""

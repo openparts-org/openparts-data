@@ -1,0 +1,32 @@
+# RT9193 300 mA ultra-low-noise LDO, WDFN-6L 2x2 pinout. Numbers from
+# DS9193-18 "Pin Configuration" (TOP VIEW) figure "WDFN-6L 2x2" (page 2,
+# rendered): EN 1, GND 2, VIN 3, VOUT 4, NC 5, BP 6. The "Functional Pin
+# Description" table on the same page lists names only (no numbers);
+# types from it: EN "Chip Enable" input, BP "Reference Noise Bypass"
+# passive, GND ground, VOUT/VIN power; NC -> nc.
+# No "EP" pin: the figure labels the centre pad "7" but the datasheet
+# never says what it connects to (the package still gets the pad).
+schema_version: "0.1"
+kind: device
+id: richtek/RT9193-WDFN6
+
+manufacturer: richtek
+category: other
+family: RT9193
+
+pins:
+  "1": { name: EN, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: VIN, type: power }
+  "4": { name: VOUT, type: power }
+  "5": { name: NC, type: nc }
+  "6": { name: BP, type: passive }
+
+provenance:
+  "/pins":
+    - source: richtek/DS9193-18
+      page: 2
+      locator: "\"Pin Configuration\" (TOP VIEW), WDFN-6L 2x2"
+    - source: richtek/DS9193-18
+      page: 2
+      locator: "\"Functional Pin Description\" table (names and functions)"

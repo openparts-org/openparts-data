@@ -1,0 +1,22 @@
+# BAS16XV2T1G switching diode, SOD-523 (CASE 502). Pins from the page-1
+# symbol ("1 CATHODE", "2 ANODE") and CASE 502 STYLE 1 (page 4).
+schema_version: "0.1"
+kind: device
+id: onsemi/BAS16XV2
+
+manufacturer: onsemi
+category: diode
+family: BAS16XV2
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/BAS16XV2T1-D
+      page: 1
+      locator: "Symbol: \"1 CATHODE\" / \"2 ANODE\""
+    - source: onsemi/BAS16XV2T1-D
+      page: 4
+      locator: "CASE 502 STYLE 1: \"PIN 1. CATHODE (POLARITY BAND) 2. ANODE\""

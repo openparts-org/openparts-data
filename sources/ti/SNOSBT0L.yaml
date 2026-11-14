@@ -1,0 +1,20 @@
+# Official TI datasheet "LM340, LM340A and LM7805 Family Wide VIN 1.5-A Fixed Voltage Regulators"
+# (SNOSBT0L, revised September 2016), 38 pages, downloaded 2026-11-14 with curl
+# from the URL below (file checked: PDF, title page names SNOSBT0L). Read
+# with pdftotext -layout; pin configuration figures and the outline
+# drawings NDE0003B (page 28) and KTT0003B (page 29) were rendered and read as images. The PACKAGE OPTION
+# ADDENDUM inside this PDF is dated 27-May-2026 (newer than the datasheet
+# revision; PDF CreationDate 2026). Page numbers are PDF page indices
+# (= the printed page numbers on numbered pages).
+schema_version: "0.1"
+kind: source
+id: ti/SNOSBT0L
+
+publisher: ti
+document_id: SNOSBT0L
+document_type: datasheet
+
+revision: "L"
+date: "2016-09"
+
+url: "https://www.ti.com/lit/ds/symlink/lm340.pdf"

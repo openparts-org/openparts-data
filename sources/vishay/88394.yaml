@@ -1,0 +1,18 @@
+# Vishay General Semiconductor "SMCJ5.0A thru SMCJ188CA" Surface-Mount
+# TRANSZORB Transient Voltage Suppressors, Document Number 88394,
+# "Revision: 09-Jan-2024", 5 pages (+ the 91000 disclaimer page),
+# downloaded with curl on 2026-11-14 (`file`: PDF; URL from the
+# vishay.com product page /en/product/88394/). Read with pdftotext
+# -layout; page 5 SMC (DO-214AB) outline.
+schema_version: "0.1"
+kind: source
+id: vishay/88394
+
+publisher: vishay
+document_id: "88394"
+document_type: datasheet
+
+revision: "09-Jan-2024"
+date: "2024-01-09"
+
+url: "https://www.vishay.com/docs/88394/smcj.pdf"

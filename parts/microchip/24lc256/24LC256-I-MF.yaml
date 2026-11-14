@@ -1,0 +1,40 @@
+# 24LC256 256-Kbit I2C EEPROM, industrial, package MF. existence is
+# "probable": the MPN is assembled from the "Product Identification
+# System" legend (DS20001203W page 40: Device "24LC256", Tape and Reel
+# "Blank = Standard packaging (tube or tray)", Temperature "I = -40C to
+# +85C (Industrial)", Package "MF = Plastic Dual Flat, No Lead Package -
+# 5x6x0.85 mm Body, 8-lead (DFN-S)"); the examples print no MF part. Pin numbers of the DFN column of Table 2-1
+# (page 7) equal the SOIC column, so microchip/24LC256 applies; the
+# exposed pad "can be connected to VSS or left floating" (note 1) -- no
+# EP pin. Package drawing C04-122B on page 17. lifecycle: unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/24LC256-I-MF
+
+manufacturer: microchip
+mpn: "24LC256-I/MF"
+
+device: microchip/24LC256
+package: manufacturers/microchip/DFN8-6x5-P1.27-MF-C04-122B
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001203@revW
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001203@revW
+      page: 40
+      locator: "Product Identification System legend: Device \"24LC256\", option \"blank\", Temperature \"I\", Package \"MF\" (assembled, not printed)"
+  "/package":
+    - source: microchip/DS20001203@revW
+      page: 40
+      locator: "Product Identification System, Package \"MF = Plastic Dual Flat, No Lead Package - 5x6x0.85 mm Body, 8-lead (DFN-S)\""
+    - source: microchip/DS20001203@revW
+      page: 17
+      locator: "drawing C04-122B \"8-Lead Plastic Dual Flat, No Lead Package (MF) - 6x5 mm Body [DFN-S]\""

@@ -1,0 +1,27 @@
+# MBRS320T3G / MBRS330T3G / MBRS340T3G 3 A Schottky power rectifiers (20
+# /
+# 30 / 40 V), SMC (CASE 403AC): one device for the datasheet, the
+# voltage
+# is carried by the Part. Page 1: "Polarity: Polarity Band on Plastic
+# Body
+# Indicates Cathode Lead"; the CASE 403AC outline has no STYLE list.
+# No pin numbers are printed for this part, so 1 = Cathode and 2 = Anode
+# follow the dataset's two-terminal diode convention (pin 1 at the
+# banded end).
+schema_version: "0.1"
+kind: device
+id: onsemi/MBRS340-SERIES
+
+manufacturer: onsemi
+category: diode
+family: MBRS3x0
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/MBRS340T3-D
+      page: 1
+      locator: "Mechanical Characteristics: \"Polarity: Polarity Band on Plastic Body Indicates Cathode Lead\""

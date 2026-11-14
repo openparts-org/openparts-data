@@ -1,0 +1,39 @@
+# UA7805CKTTR: SLVS056P PACKAGE OPTION ADDENDUM (page 16) row "UA7805CKTTR
+# Active  Production  DDPAK/ TO-263 (KTT) | 3" -- MPN printed verbatim in TI's orderable
+# list (existence verified); lifecycle "Active" is TI's own Status column.
+# Package KTT = outline KTT0003B (SLVS044Z page 42).
+# SLVS056P has no KTT0003B drawing; the outline is read from SLVS044Z page
+# 42 (TI package codes are product-independent).
+schema_version: "0.1"
+kind: part
+id: ti/UA7805CKTTR
+
+manufacturer: ti
+mpn: UA7805CKTTR
+
+device: ti/UA7805-KTT
+package: manufacturers/ti/KTT0003B
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLVS056P
+  - ti/SLVS044Z
+
+provenance:
+  "/existence":
+    - source: ti/SLVS056P
+      page: 16
+      locator: "Package option addendum table, row \"UA7805CKTTR\" (DDPAK/ TO-263 (KTT) | 3)"
+  "/lifecycle":
+    - source: ti/SLVS056P
+      page: 16
+      locator: "Package option addendum table, row \"UA7805CKTTR\", Status \"Active\""
+  "/package":
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B package outline"

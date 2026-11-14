@@ -1,0 +1,41 @@
+# 25LC256 256-Kbit SPI EEPROM, industrial, 8-lead 6x5 DFN-S (MF).
+# existence is "probable": the MPN is assembled from the "Product
+# Identification System (Non-Automotive)" legend (DS20001822J page 32:
+# Device "25LC256", Tape and Reel "Blank = Standard packaging (tube)",
+# Temperature "I = -40C to +85C", Package "MF = Plastic Micro Lead Frame
+# (6 x 5 mm body), 8-lead (DFN-S)"); no example prints an MF part. Pin
+# numbers of the DFN-S column of Table 2-1 (page 6) equal the PDIP/SOIC
+# columns, so microchip/25LC256 applies; the exposed pad "can be
+# connected to VSS or left floating" (note 1) -- no EP pin. Package:
+# drawing C04-122 Rev C (pages 16-17). lifecycle: unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/25LC256-I-MF
+
+manufacturer: microchip
+mpn: "25LC256-I/MF"
+
+device: microchip/25LC256
+package: manufacturers/microchip/DFN8-6x5-P1.27-MF-C04-122C
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001822@revJ
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001822@revJ
+      page: 32
+      locator: "Product Identification System (Non-Automotive) legend: Device \"25LC256\", option blank, Temperature \"I\", Package \"MF\" (assembled, not printed)"
+  "/package":
+    - source: microchip/DS20001822@revJ
+      page: 32
+      locator: "Product Identification System, Package \"MF = Plastic Micro Lead Frame (6 x 5 mm body), 8-lead (DFN-S)\""
+    - source: microchip/DS20001822@revJ
+      page: 17
+      locator: "drawing C04-122 Rev C sheet 2 \"8-Lead Plastic Dual Flat, No Lead Package (MF) - 6x5 mm Body [DFN-S] Saw Singulated\""

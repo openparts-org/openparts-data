@@ -1,0 +1,124 @@
+# onsemi D2PAK 3, CASE 418B-04 ISSUE L (98ASB42761B, DATE 17 FEB 2015),
+# read from 110-300 dpi renders of the standalone outline page 1 and its
+# INCHES / MILLIMETERS MIN-MAX table (controlling dimension: inch, note
+# 2; the table's own millimetre column is recorded).
+#
+# TAB NUMBER: the top view numbers the leads "1 2 3" and the tab "4";
+# lead 2 is drawn as a stub cut at the body -> tab "4",
+# trimmed_leads ["2"]. STYLE 2: "PIN 1. GATE 2. DRAIN 3. SOURCE
+# 4. DRAIN".
+#
+# Mapping (frame d2pak: leads left, tab right): A (8.64-9.65, side view
+# body along the leads below the tab shoulder) -> body_width; B (9.65-
+# 10.29, top view across) -> body_length; S (14.60-15.88, tab end to
+# lead toe) -> overall_width; C (4.06-4.83) -> overall_height; D (0.51-
+# 0.89, "3 PL") -> lead_width; K (2.29-2.79, the foot along the seating
+# plane) -> lead_length; J (0.46-0.64) -> lead_thickness; V (1.14-1.40,
+# tab protrusion beyond the body) -> tab_length; G "2.54 BSC" -> pitch.
+# tab_width (flagged): F (7.87-8.89), the VIEW W-W exposed tab width,
+# recorded as the soldered tab width (the tab end in the top view runs
+# the full chamfered width B).
+# Left out: E (tab thickness), H (lead offset), L/M/N/P/R/U (exposed-pad
+# variants of VIEW W-W), standoff (not given), and the page-2 footprint.
+schema_version: "0.1"
+kind: package
+id: manufacturers/onsemi/TO263-D2PAK3-418B-TabPin4
+
+family: d2pak
+lead_count: 3
+
+pitch:
+  nominal: 2.54
+  unit: mm
+
+tab:
+  number: "4"
+  trimmed_leads: ["2"]
+
+dimensions:
+  body_width:
+    min: 8.64
+    max: 9.65
+    unit: mm
+  body_length:
+    min: 9.65
+    max: 10.29
+    unit: mm
+  overall_width:
+    min: 14.6
+    max: 15.88
+    unit: mm
+  overall_height:
+    min: 4.06
+    max: 4.83
+    unit: mm
+  lead_width:
+    min: 0.51
+    max: 0.89
+    unit: mm
+  lead_length:
+    min: 2.29
+    max: 2.79
+    unit: mm
+  lead_thickness:
+    min: 0.46
+    max: 0.64
+    unit: mm
+  tab_width:
+    min: 7.87
+    max: 8.89
+    unit: mm
+  tab_length:
+    min: 1.14
+    max: 1.4
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: d2pak
+
+provenance:
+  "/pitch":
+    - source: onsemi/98ASB42761B
+      page: 1
+      locator: "INCHES / MILLIMETERS table, \"G\" \"0.100 BSC\" / \"2.54 BSC\""
+  "/tab":
+    - source: onsemi/98ASB42761B
+      page: 1
+      locator: "Top view: leads \"1 2 3\", tab \"4\"; lead 2 a stub at the body"
+  "/dimensions/body_width":
+    - source: onsemi/98ASB42761B
+      page: 1
+      locator: "INCHES / MILLIMETERS table, \"A\" (0.340-0.380 in / 8.64-9.65 mm), side view"
+  "/dimensions/body_length":
+    - source: onsemi/98ASB42761B
+      page: 1
+      locator: "INCHES / MILLIMETERS table, \"B\" (0.380-0.405 in / 9.65-10.29 mm), top view"
+  "/dimensions/overall_width":
+    - source: onsemi/98ASB42761B
+      page: 1
+      locator: "INCHES / MILLIMETERS table, \"S\" (0.575-0.625 in / 14.60-15.88 mm), top view tab end to lead toe"
+  "/dimensions/overall_height":
+    - source: onsemi/98ASB42761B
+      page: 1
+      locator: "INCHES / MILLIMETERS table, \"C\" (0.160-0.190 in / 4.06-4.83 mm)"
+  "/dimensions/lead_width":
+    - source: onsemi/98ASB42761B
+      page: 1
+      locator: "INCHES / MILLIMETERS table, \"D\" (0.020-0.035 in / 0.51-0.89 mm), \"D 3 PL\""
+  "/dimensions/lead_length":
+    - source: onsemi/98ASB42761B
+      page: 1
+      locator: "INCHES / MILLIMETERS table, \"K\" (0.090-0.110 in / 2.29-2.79 mm), side view foot"
+  "/dimensions/lead_thickness":
+    - source: onsemi/98ASB42761B
+      page: 1
+      locator: "INCHES / MILLIMETERS table, \"J\" (0.018-0.025 in / 0.46-0.64 mm)"
+  "/dimensions/tab_width":
+    - source: onsemi/98ASB42761B
+      page: 1
+      locator: "INCHES / MILLIMETERS table, \"F\" (0.310-0.350 in / 7.87-8.89 mm), VIEW W-W exposed tab width (see header)"
+  "/dimensions/tab_length":
+    - source: onsemi/98ASB42761B
+      page: 1
+      locator: "INCHES / MILLIMETERS table, \"V\" (0.045-0.055 in / 1.14-1.40 mm), tab beyond the body"

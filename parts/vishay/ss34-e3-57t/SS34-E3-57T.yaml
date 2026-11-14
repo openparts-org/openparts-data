@@ -3,6 +3,9 @@
 # MECHANICAL DATA defines "Base P/N-E3 - RoHS-compliant, commercial
 # grade". SS34-E3/57T is built from that rule, not printed -- hence
 # existence "probable". No lifecycle statement in the document.
+# 2026-11-14: package repointed from standards/CHIP-SMC-DO214AB
+# (family chip, body only; deleted) to
+# standards/DO214AB-VISHAY-88751.
 schema_version: "0.1"
 kind: part
 id: vishay/SS34-E3/57T
@@ -11,7 +14,7 @@ manufacturer: vishay
 mpn: SS34-E3/57T
 
 device: vishay/SS34
-package: standards/CHIP-SMC-DO214AB
+package: standards/DO214AB-VISHAY-88751
 
 existence:
   status: probable

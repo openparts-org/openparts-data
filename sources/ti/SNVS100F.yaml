@@ -1,0 +1,20 @@
+# Official TI datasheet "LM2937 500-mA Low Dropout Regulator"
+# (SNVS100F, revised July 2014), 35 pages, downloaded 2026-11-14 with curl
+# from the URL below (file checked: PDF, title page names SNVS100F). Read
+# with pdftotext -layout; pin configuration figures and the outline
+# drawings NDE0003B (page 28) and KTT0003B (page 29) were rendered and read as images. The PACKAGE OPTION
+# ADDENDUM inside this PDF is dated 10-Nov-2025 (newer than the datasheet
+# revision; PDF CreationDate 2026). Page numbers are PDF page indices
+# (= the printed page numbers on numbered pages).
+schema_version: "0.1"
+kind: source
+id: ti/SNVS100F
+
+publisher: ti
+document_id: SNVS100F
+document_type: datasheet
+
+revision: "F"
+date: "2014-07"
+
+url: "https://www.ti.com/lit/ds/symlink/lm2937.pdf"

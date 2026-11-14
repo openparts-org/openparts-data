@@ -1,0 +1,97 @@
+# TI RGT0016C, VQFN-16, 3x3 mm, 0.5 mm pitch, 1 mm max height. Outline drawing RGT0016C
+# (4222419/E 07/2025) in SLVSAG7F page 40, read from the rendered drawing.
+#
+# Mapping: D/E limits -> body_width/body_length (no nominal printed);
+# A max (no A2) -> body_height only; A1 -> standoff; b -> lead_width;
+# L -> lead_length; thermal pad +- tolerance -> exposed_pad nominal with
+# min/max.
+# Bottom view numbers 1-4 / 5-8 / 9-12 / 13-16 with the exposed thermal
+# pad; seen from the top this is the standard CCW order (pin 1 top of
+# the left edge), matching Figure 6-1 (page 3).
+# Left out: "SIDE WALL METAL THICKNESS DIM A" (0.1/0.2 by assembly
+# option; not the terminal thickness A3), "4X (0.45)" corner chamfer.
+schema_version: "0.1"
+kind: package
+id: manufacturers/ti/RGT0016C
+
+family: qfn
+lead_count: 16
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 2.9
+    max: 3.1
+    unit: mm
+  body_length:
+    min: 2.9
+    max: 3.1
+    unit: mm
+  body_height:
+    min: 0.8
+    max: 1.0
+    unit: mm
+  standoff:
+    min: 0.0
+    max: 0.05
+    unit: mm
+  lead_width:
+    min: 0.18
+    max: 0.3
+    unit: mm
+  lead_length:
+    min: 0.3
+    max: 0.5
+    unit: mm
+  exposed_pad:
+    width:
+      nominal: 1.68
+      min: 1.61
+      max: 1.75
+      unit: mm
+    length:
+      nominal: 1.68
+      min: 1.61
+      max: 1.75
+      unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/pitch":
+    - source: ti/SLVSAG7F
+      page: 40
+      locator: "RGT0016C outline (4222419/E), bottom view, basic \"12X 0.5\""
+  "/dimensions/body_width":
+    - source: ti/SLVSAG7F
+      page: 40
+      locator: "RGT0016C outline (4222419/E), top view \"3.1 / 2.9\""
+  "/dimensions/body_length":
+    - source: ti/SLVSAG7F
+      page: 40
+      locator: "RGT0016C outline (4222419/E), top view \"3.1 / 2.9\""
+  "/dimensions/body_height":
+    - source: ti/SLVSAG7F
+      page: 40
+      locator: "RGT0016C outline (4222419/E), side view \"1.0 / 0.8\""
+  "/dimensions/standoff":
+    - source: ti/SLVSAG7F
+      page: 40
+      locator: "RGT0016C outline (4222419/E), side view \"0.05 / 0.00\""
+  "/dimensions/lead_width":
+    - source: ti/SLVSAG7F
+      page: 40
+      locator: "RGT0016C outline (4222419/E), bottom view \"16X 0.30 / 0.18\""
+  "/dimensions/lead_length":
+    - source: ti/SLVSAG7F
+      page: 40
+      locator: "RGT0016C outline (4222419/E), bottom view \"16X 0.5 / 0.3\""
+  "/dimensions/exposed_pad":
+    - source: ti/SLVSAG7F
+      page: 40
+      locator: "RGT0016C outline (4222419/E), bottom view, thermal pad square \"1.68 +-0.07\"; bottom view, thermal pad square \"1.68 +-0.07\""

@@ -1,0 +1,18 @@
+# Vishay General Semiconductor "SMBJ5.0A thru SMBJ188A" Surface-Mount
+# TRANSZORB Transient Voltage Suppressors, Document Number 88392,
+# "Revision: 09-Jan-2024", 5 pages (+ the 91000 disclaimer page),
+# downloaded with curl on 2026-11-14 (`file`: PDF; URL from the
+# vishay.com product page /en/product/88392/). Read with pdftotext
+# -layout; page 5 SMB (DO-214AA) outline rendered with pdftoppm.
+schema_version: "0.1"
+kind: source
+id: vishay/88392
+
+publisher: vishay
+document_id: "88392"
+document_type: datasheet
+
+revision: "09-Jan-2024"
+date: "2024-01-09"
+
+url: "https://www.vishay.com/docs/88392/smbj.pdf"

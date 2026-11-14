@@ -1,0 +1,31 @@
+# LM2596 3-A step-down regulator (all output options: 3.3 V, 5.0 V,
+# 12 V, ADJ), KTT (TO-263-5) pinout. SNVS124G Table 6-1 "Pin Functions"
+# (page 4): 1 VIN, 2 Output, 3 Ground, 4 Feedback, 5 ON/OFF (overbar
+# on ON, written without it); Figure 6-2 "5-Pin TO-263 KTT Package Top View" labels the tab
+# "Metal Tab GND" without a number. The package
+# (manufacturers/ti/KTT0005B-TabPin3) keys the tab as pad "3"
+# (Ground), so no extra pin is recorded. Output is the switch node
+# ("Internal switch") -> output; ON/OFF -> input.
+schema_version: "0.1"
+kind: device
+id: ti/LM2596-KTT
+
+manufacturer: ti
+category: other
+family: LM2596
+
+pins:
+  "1": { name: "VIN", type: power }
+  "2": { name: "Output", type: output }
+  "3": { name: "Ground", type: ground }
+  "4": { name: "Feedback", type: input }
+  "5": { name: "ON/OFF", type: input }
+
+provenance:
+  "/pins":
+    - source: ti/SNVS124G
+      page: 4
+      locator: "Table 6-1 \"Pin Functions\": 1 VIN, 2 Output, 3 Ground, 4 Feedback, 5 ON/OFF"
+    - source: ti/SNVS124G
+      page: 4
+      locator: "Figure 6-2 \"5-Pin TO-263 KTT Package Top View\" (1 VIN at the bottom ... 5 ON/OFF, \"Metal Tab GND\")"

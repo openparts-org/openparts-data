@@ -1,0 +1,25 @@
+# SMBJ5.0A thru SMBJ188A 600 W TRANSZORB transient voltage suppressors,
+# SMB (DO-214AA), unidirectional "A" types only (the CA bidirectional
+# types have no cathode and are not covered). The stand-off voltage is
+# carried by the Part. Polarity from 88392 page 1 MECHANICAL DATA
+# "Polarity: for unidirectional types the band denotes cathode end".
+# No pin numbers are printed for this part, so 1 = Cathode and 2 = Anode
+# follow the dataset's two-terminal diode convention (pin 1 at the
+# banded end).
+schema_version: "0.1"
+kind: device
+id: vishay/SMBJ-A-SERIES
+
+manufacturer: vishay
+category: diode
+family: SMBJ
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: vishay/88392
+      page: 1
+      locator: "MECHANICAL DATA: \"Polarity: for unidirectional types the band denotes cathode end\""

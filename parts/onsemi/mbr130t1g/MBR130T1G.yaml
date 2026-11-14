@@ -1,0 +1,36 @@
+# MBR130T1G: printed verbatim in the datasheet's ORDERING INFORMATION
+# table (page 1), so existence is "verified". No lifecycle statement for
+# this OPN, so lifecycle is unknown.
+# Package: page-5 CASE 425 ISSUE H (98ASB42927B) renders pixel-identical
+# to MBR0520LT1/D Rev. 7 page 4 (pdftoppm -r 100 crop, md5), so
+# standards/SOD123-ONSEMI-425 is reused.
+# The table marks only NRVB130T3G "DISCONTINUED (Note 1)"; MBR130T1G has
+# no status statement.
+schema_version: "0.1"
+kind: part
+id: onsemi/MBR130T1G
+
+manufacturer: onsemi
+mpn: MBR130T1G
+
+device: onsemi/MBR130
+package: standards/SOD123-ONSEMI-425
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/MBR130T1-D
+
+provenance:
+  "/existence":
+    - source: onsemi/MBR130T1-D
+      page: 1
+      locator: "ORDERING INFORMATION: \"MBR130T1G, NRVB130T1G | SOD-123 (Pb-Free) | 3,000 / Tape & Reel\""
+  "/package":
+    - source: onsemi/MBR130T1-D
+      page: 5
+      locator: "MECHANICAL CASE OUTLINE -- see header"

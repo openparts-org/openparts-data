@@ -1,0 +1,96 @@
+# TI DRB0008B, VSON-8, 3x3 mm, 0.65 mm pitch, 1 mm max height. Outline drawing DRB0008B
+# (4218876/A 12/2017) in SBVS045C page 28, read from the rendered drawing.
+#
+# Mapping: D/E limits -> body_width/body_length (no nominal printed);
+# A max (no A2) -> body_height only; A1 -> standoff; b -> lead_width;
+# L -> lead_length; thermal pad +- tolerance -> exposed_pad nominal with
+# min/max.
+# Bottom view numbers terminals 1-4 up the left and 5-8 down the right;
+# seen from the top: pin 1 top-left, down the left, up the right (SOIC
+# order), matching the DRB pin configuration (page 7).
+# Left out: the side-view "(0.2) TYP" (side-wall metal; not stated to be
+# A3), "2X 1.95" row span.
+schema_version: "0.1"
+kind: package
+id: manufacturers/ti/DRB0008B
+
+family: son
+lead_count: 8
+
+pitch:
+  nominal: 0.65
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 2.9
+    max: 3.1
+    unit: mm
+  body_length:
+    min: 2.9
+    max: 3.1
+    unit: mm
+  body_height:
+    max: 1.0
+    unit: mm
+  standoff:
+    min: 0.0
+    max: 0.05
+    unit: mm
+  lead_width:
+    min: 0.25
+    max: 0.35
+    unit: mm
+  lead_length:
+    min: 0.3
+    max: 0.5
+    unit: mm
+  exposed_pad:
+    width:
+      nominal: 1.65
+      min: 1.6
+      max: 1.7
+      unit: mm
+    length:
+      nominal: 2.4
+      min: 2.35
+      max: 2.45
+      unit: mm
+
+geometry:
+  type: parametric
+  generator: son
+
+provenance:
+  "/pitch":
+    - source: ti/SBVS045C
+      page: 28
+      locator: "DRB0008B outline (4218876/A), bottom view, basic \"6X 0.65\""
+  "/dimensions/body_width":
+    - source: ti/SBVS045C
+      page: 28
+      locator: "DRB0008B outline (4218876/A), top view, width \"3.1 / 2.9\" (across the two terminal rows)"
+  "/dimensions/body_length":
+    - source: ti/SBVS045C
+      page: 28
+      locator: "DRB0008B outline (4218876/A), top view, length \"3.1 / 2.9\""
+  "/dimensions/body_height":
+    - source: ti/SBVS045C
+      page: 28
+      locator: "DRB0008B outline (4218876/A), side view \"1 MAX\""
+  "/dimensions/standoff":
+    - source: ti/SBVS045C
+      page: 28
+      locator: "DRB0008B outline (4218876/A), side view \"0.05 / 0.00\""
+  "/dimensions/lead_width":
+    - source: ti/SBVS045C
+      page: 28
+      locator: "DRB0008B outline (4218876/A), bottom view \"8X 0.35 / 0.25\""
+  "/dimensions/lead_length":
+    - source: ti/SBVS045C
+      page: 28
+      locator: "DRB0008B outline (4218876/A), bottom view \"8X 0.5 / 0.3\""
+  "/dimensions/exposed_pad":
+    - source: ti/SBVS045C
+      page: 28
+      locator: "DRB0008B outline (4218876/A), bottom view, thermal pad \"1.65 +-0.05\" (across the rows); bottom view, thermal pad \"2.4 +-0.05\" (along the rows)"

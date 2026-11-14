@@ -1,5 +1,8 @@
 # 0.5A 20V Schottky, SOD-123, Pb-free. Confirmed in the datasheet's
 # ordering table.
+# 2026-11-14: package repointed from standards/CHIP-SOD123-MBR0520
+# (family chip, body only; deleted) to
+# standards/SOD123-ONSEMI-425.
 schema_version: "0.1"
 kind: part
 id: onsemi/MBR0520LT1G
@@ -8,7 +11,7 @@ manufacturer: onsemi
 mpn: MBR0520LT1G
 
 device: onsemi/MBR0520
-package: standards/CHIP-SOD123-MBR0520
+package: standards/SOD123-ONSEMI-425
 
 existence:
   status: verified

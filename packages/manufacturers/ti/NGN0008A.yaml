@@ -1,0 +1,98 @@
+# TI NGN0008A, WSON-8, 4x4 mm, 0.8 mm pitch, 0.8 mm max height. Outline drawing NGN0008A
+# (4214794/A 11/2019) in SNOS412Q page 38, read from the rendered drawing.
+# The same page (identical pdftotext -layout text) is in SNVS769J (LM2940) page 32.
+#
+# Mapping: D/E limits -> body_width/body_length (no nominal printed);
+# A max (no A2) -> body_height only; A1 -> standoff; b -> lead_width;
+# L -> lead_length; thermal pad +- tolerance -> exposed_pad nominal with
+# min/max.
+# Bottom view numbers terminals 1-4 up the left and 5-8 down the right with
+# the thermal pad "9"; seen from the top this is pin 1 top-left, down the
+# left, up the right (SOIC order) as the son generator expects.
+# Left out: the side-view "(0.2) TYP" (side-wall metal; not stated to be
+# the terminal thickness A3), the (0.25)/(0.2)/(0.15) pin-1 ID chamfer
+# details, "2X 2.4" row span.
+schema_version: "0.1"
+kind: package
+id: manufacturers/ti/NGN0008A
+
+family: son
+lead_count: 8
+
+pitch:
+  nominal: 0.8
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 3.9
+    max: 4.1
+    unit: mm
+  body_length:
+    min: 3.9
+    max: 4.1
+    unit: mm
+  body_height:
+    max: 0.8
+    unit: mm
+  standoff:
+    min: 0.0
+    max: 0.05
+    unit: mm
+  lead_width:
+    min: 0.25
+    max: 0.35
+    unit: mm
+  lead_length:
+    min: 0.4
+    max: 0.6
+    unit: mm
+  exposed_pad:
+    width:
+      nominal: 2.2
+      min: 2.15
+      max: 2.25
+      unit: mm
+    length:
+      nominal: 3.0
+      min: 2.95
+      max: 3.05
+      unit: mm
+
+geometry:
+  type: parametric
+  generator: son
+
+provenance:
+  "/pitch":
+    - source: ti/SNOS412Q
+      page: 38
+      locator: "NGN0008A outline (4214794/A), bottom view, basic \"6X 0.8\""
+  "/dimensions/body_width":
+    - source: ti/SNOS412Q
+      page: 38
+      locator: "NGN0008A outline (4214794/A), top view, width \"4.1 / 3.9\" (across the two terminal rows)"
+  "/dimensions/body_length":
+    - source: ti/SNOS412Q
+      page: 38
+      locator: "NGN0008A outline (4214794/A), top view, length \"4.1 / 3.9\""
+  "/dimensions/body_height":
+    - source: ti/SNOS412Q
+      page: 38
+      locator: "NGN0008A outline (4214794/A), side view \"0.8 MAX\""
+  "/dimensions/standoff":
+    - source: ti/SNOS412Q
+      page: 38
+      locator: "NGN0008A outline (4214794/A), side view \"0.05 / 0.00\""
+  "/dimensions/lead_width":
+    - source: ti/SNOS412Q
+      page: 38
+      locator: "NGN0008A outline (4214794/A), bottom view \"8X 0.35 / 0.25\""
+  "/dimensions/lead_length":
+    - source: ti/SNOS412Q
+      page: 38
+      locator: "NGN0008A outline (4214794/A), bottom view \"8X 0.6 / 0.4\""
+  "/dimensions/exposed_pad":
+    - source: ti/SNOS412Q
+      page: 38
+      locator: "NGN0008A outline (4214794/A), bottom view, thermal pad \"2.2 +-0.05\" (across the rows); bottom view, thermal pad \"3 +-0.05\" (along the rows)"

@@ -1,0 +1,120 @@
+# TI NDE0003B, TO-220 3-lead (straight leads, vertical mount), "MECHANICAL
+# DATA" drawing T03B (REV L), SNOS412Q (LM1117) page 34, read from the
+# rendered drawing (inch values with millimetres in brackets; the
+# bracketed millimetre values are recorded, inch text in the locators).
+# The same page (identical pdftotext -layout text) is in SNOSBT0L page
+# 28, SNVS769J page 41 and SNVS100F page 28.
+#
+# Frame (to220): the drawing shows the package lying with the leads to
+# the right and "PIN #1 ID" next to the bottom lead; turned to the
+# front view (leads down), pin 1 is on the left.
+#
+# Mapping: 0.400 +0.015/-0.005 [10.16 +0.38/-0.13] -> body_width
+# 10.03-10.54; 0.175-0.185 [4.45-4.70] (side view, tab back to body
+# front) -> body_length; 0.330-0.350 [8.38-8.89] (molded body) ->
+# body_height; tab 0.240-0.260 [6.10-6.60] + body [8.38-8.89] ->
+# overall_height 14.48-15.49 (sum of the printed stacked dimensions);
+# O 0.149-0.153 [3.78-3.89] -> mounting_hole_diameter; 0.100-0.120
+# [2.54-3.05] tab top to hole centre -> mounting_hole_inset;
+# 0.027-0.037 [0.69-0.94] TYP -> lead_width; 0.015 +0.007/-0.001 [0.38
+# +0.18/-0.03] -> lead_thickness 0.35-0.56; (0.525-0.555) [13.34-14.10]
+# body to lead tip -> tail_length (parenthesised, reference); pitch
+# 0.090-0.110 [2.29-2.79] (recorded as the printed min/max).
+# Left out: tab thickness 0.048-0.052, lead shoulder 0.048-0.055 /
+# 0.130-0.160, 0.105 [2.67] lead to tab back, 1.005-1.035 hole to lead
+# tip, 0.190-0.210 lead 1-3 span. No land pattern in this drawing.
+schema_version: "0.1"
+kind: package
+id: manufacturers/ti/NDE0003B
+
+family: to220
+lead_count: 3
+
+pitch:
+  min: 2.29
+  max: 2.79
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 10.03
+    max: 10.54
+    unit: mm
+  body_length:
+    min: 4.45
+    max: 4.70
+    unit: mm
+  body_height:
+    min: 8.38
+    max: 8.89
+    unit: mm
+  overall_height:
+    min: 14.48
+    max: 15.49
+    unit: mm
+  lead_width:
+    min: 0.69
+    max: 0.94
+    unit: mm
+  lead_thickness:
+    min: 0.35
+    max: 0.56
+    unit: mm
+  tail_length:
+    min: 13.34
+    max: 14.10
+    unit: mm
+  mounting_hole_diameter:
+    min: 3.78
+    max: 3.89
+    unit: mm
+  mounting_hole_inset:
+    min: 2.54
+    max: 3.05
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: to220
+
+provenance:
+  "/pitch":
+    - source: ti/SNOS412Q
+      page: 34
+      locator: "NDE0003B (T03B REV L), top view, lead spacing \"0.090-0.110 [2.29-2.79]\""
+  "/dimensions/body_width":
+    - source: ti/SNOS412Q
+      page: 34
+      locator: "NDE0003B, top view \"0.400 +0.015/-0.005 [10.16 +0.38/-0.13]\" -> 10.03-10.54"
+  "/dimensions/body_length":
+    - source: ti/SNOS412Q
+      page: 34
+      locator: "NDE0003B, side view, tab back to body front \"0.175-0.185 [4.45-4.70]\""
+  "/dimensions/body_height":
+    - source: ti/SNOS412Q
+      page: 34
+      locator: "NDE0003B, top view, molded body \"0.330-0.350 [8.38-8.89]\""
+  "/dimensions/overall_height":
+    - source: ti/SNOS412Q
+      page: 34
+      locator: "NDE0003B, top view, tab \"0.240-0.260 [6.10-6.60]\" + body \"0.330-0.350 [8.38-8.89]\" = 14.48-15.49"
+  "/dimensions/lead_width":
+    - source: ti/SNOS412Q
+      page: 34
+      locator: "NDE0003B, top view \"0.027-0.037 [0.69-0.94] TYP\""
+  "/dimensions/lead_thickness":
+    - source: ti/SNOS412Q
+      page: 34
+      locator: "NDE0003B, side view \"0.015 +0.007/-0.001 [0.38 +0.18/-0.03]\" -> 0.35-0.56"
+  "/dimensions/tail_length":
+    - source: ti/SNOS412Q
+      page: 34
+      locator: "NDE0003B, side view, body to lead tip \"( 0.525-0.555 [13.34-14.10] )\" -- parenthesised, reference"
+  "/dimensions/mounting_hole_diameter":
+    - source: ti/SNOS412Q
+      page: 34
+      locator: "NDE0003B, top view \"O 0.149-0.153 [3.78-3.89]\""
+  "/dimensions/mounting_hole_inset":
+    - source: ti/SNOS412Q
+      page: 34
+      locator: "NDE0003B, top view, tab end to hole centre \"0.100-0.120 [2.54-3.05]\""

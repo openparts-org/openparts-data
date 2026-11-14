@@ -1,0 +1,33 @@
+# SS13FL: printed verbatim in the datasheet's ORDERING INFORMATION table
+# (page 2), so existence is "verified". No lifecycle statement for this
+# OPN, so lifecycle is unknown.
+# Package: page-4 CASE 425AD (98AON13725G), standards/SOD123FL-
+# ONSEMI-425AD (read from this page).
+schema_version: "0.1"
+kind: part
+id: onsemi/SS13FL
+
+manufacturer: onsemi
+mpn: SS13FL
+
+device: onsemi/SS13FL
+package: standards/SOD123FL-ONSEMI-425AD
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/SS14FL-D
+
+provenance:
+  "/existence":
+    - source: onsemi/SS14FL-D
+      page: 2
+      locator: "ORDERING INFORMATION: \"SS13FL | G3 | SOD-123F | 3000 / Tape & Reel\""
+  "/package":
+    - source: onsemi/SS14FL-D
+      page: 4
+      locator: "MECHANICAL CASE OUTLINE -- see header"

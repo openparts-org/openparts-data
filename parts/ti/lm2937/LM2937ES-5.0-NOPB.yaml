@@ -1,0 +1,36 @@
+# LM2937ES-5.0/NOPB: SNVS100F PACKAGE OPTION ADDENDUM (page 20) row "LM2937ES-5.0/NOPB
+# Active  Production  DDPAK/ TO-263 (KTT) | 3" -- MPN printed verbatim in TI's orderable
+# list (existence verified); lifecycle "Active" is TI's own Status column.
+# Package KTT = outline KTT0003B (SNVS100F page 29).
+schema_version: "0.1"
+kind: part
+id: ti/LM2937ES-5.0/NOPB
+
+manufacturer: ti
+mpn: LM2937ES-5.0/NOPB
+
+device: ti/LM2937-KTT
+package: manufacturers/ti/KTT0003B
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SNVS100F
+
+provenance:
+  "/existence":
+    - source: ti/SNVS100F
+      page: 20
+      locator: "Package option addendum table, row \"LM2937ES-5.0/NOPB\" (DDPAK/ TO-263 (KTT) | 3)"
+  "/lifecycle":
+    - source: ti/SNVS100F
+      page: 20
+      locator: "Package option addendum table, row \"LM2937ES-5.0/NOPB\", Status \"Active\""
+  "/package":
+    - source: ti/SNVS100F
+      page: 29
+      locator: "KTT0003B package outline"

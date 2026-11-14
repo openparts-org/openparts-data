@@ -1,0 +1,20 @@
+# Official onsemi datasheet, Publication Order Number BAS16XV2T1/D,
+# footer
+# "June, 2023 - Rev. 10", 5 pages, downloaded with curl on 2026-11-14
+# (HTTP 200,
+# `file`: PDF). Read with pdftotext -layout; the image-only case outline
+# rendered with pdftoppm. Page numbers are PDF page indices.
+# Outline: page 4: SOD-523 CASE 502 ISSUE F (98AON11524D, DATE 08 FEB
+# 2024) with STYLE 1.
+schema_version: "0.1"
+kind: source
+id: onsemi/BAS16XV2T1-D
+
+publisher: onsemi
+document_id: "BAS16XV2T1/D"
+document_type: datasheet
+
+revision: "10"
+date: "2023-06"
+
+url: "https://www.onsemi.com/pdf/datasheet/bas16xv2t1-d.pdf"

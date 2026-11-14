@@ -1,0 +1,33 @@
+# MBRA140T3G: printed verbatim in the datasheet's ORDERING INFORMATION
+# table (page 1), so existence is "verified". No lifecycle statement for
+# this OPN, so lifecycle is unknown.
+# Package: page-5 CASE 403D (98AON04079D), standards/DO214AC-ONSEMI-403D
+# (read from this page).
+schema_version: "0.1"
+kind: part
+id: onsemi/MBRA140T3G
+
+manufacturer: onsemi
+mpn: MBRA140T3G
+
+device: onsemi/MBRA140
+package: standards/DO214AC-ONSEMI-403D
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/MBRA140T3-D
+
+provenance:
+  "/existence":
+    - source: onsemi/MBRA140T3-D
+      page: 1
+      locator: "ORDERING INFORMATION: \"MBRA140T3G | SMA (Pb-Free) | 5,000 / Tape & Reel\""
+  "/package":
+    - source: onsemi/MBRA140T3-D
+      page: 5
+      locator: "MECHANICAL CASE OUTLINE -- see header"

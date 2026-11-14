@@ -1,0 +1,36 @@
+# LM2940T-5.0/NOPB: SNVS769J PACKAGE OPTION ADDENDUM (page 24) row "LM2940T-5.0/NOPB
+# Active  Production  TO-220 (NDE) | 3" -- MPN printed verbatim in TI's orderable
+# list (existence verified); lifecycle "Active" is TI's own Status column.
+# Package NDE = outline NDE0003B (SNVS769J page 41).
+schema_version: "0.1"
+kind: part
+id: ti/LM2940T-5.0/NOPB
+
+manufacturer: ti
+mpn: LM2940T-5.0/NOPB
+
+device: ti/LM2940-NDE
+package: manufacturers/ti/NDE0003B
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SNVS769J
+
+provenance:
+  "/existence":
+    - source: ti/SNVS769J
+      page: 24
+      locator: "Package option addendum table, row \"LM2940T-5.0/NOPB\" (TO-220 (NDE) | 3)"
+  "/lifecycle":
+    - source: ti/SNVS769J
+      page: 24
+      locator: "Package option addendum table, row \"LM2940T-5.0/NOPB\", Status \"Active\""
+  "/package":
+    - source: ti/SNVS769J
+      page: 41
+      locator: "NDE0003B package outline"

@@ -1,0 +1,28 @@
+# SD103CW-7-F: printed verbatim in the ordering table (verified).
+# Package: manufacturers/diodes/SOD123-2.65x1.55-DS30139 (outline read from DS30139; the same outline table is printed in DS11013, see the package header).
+# No lifecycle statement in the datasheet: lifecycle unknown.
+schema_version: "0.1"
+kind: part
+id: diodes/SD103CW-7-F
+
+manufacturer: diodes
+mpn: SD103CW-7-F
+
+device: diodes/SD103CW
+package: manufacturers/diodes/SOD123-2.65x1.55-DS30139
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - diodes/DS11013
+  - diodes/DS30139
+
+provenance:
+  "/existence":
+    - source: diodes/DS11013
+      page: 1
+      locator: "Ordering Information table row \"SD103CW-7-F | SOD123 | 3000 | Tape and Reel\""

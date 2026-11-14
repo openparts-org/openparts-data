@@ -1,0 +1,19 @@
+# AOS product page for AOB66920L, fetched with curl on 2026-11-14 and read from
+# the page's embedded JSON (Next.js page props): "label":"AOB66920L",
+# "product_status":"Full Production", "package":"TO263", and the package's
+# "package_pdf" link to
+# /sites/default/files/res/packaging_information/TO263.pdf (AOS
+# PO-00005). A live page, not a revisioned
+# document: `revision`/`date` record the retrieval date. No page numbers.
+schema_version: "0.1"
+kind: source
+id: aos/AOB66920L-product-page
+
+publisher: aos
+document_id: "AOB66920L"
+document_type: product_page
+
+revision: "retrieved 2026-11-14"
+date: "2026-11-14"
+
+url: "https://www.aosmd.com/products/mosfets/medium-voltage-mosfets-40v-400v/aob66920l"

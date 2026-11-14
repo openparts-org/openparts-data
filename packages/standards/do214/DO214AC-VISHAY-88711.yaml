@@ -1,0 +1,107 @@
+# Vishay SMA (DO-214AC) outline, "PACKAGE OUTLINE DIMENSIONS in inches
+# (millimeters)" DO-214AC (SMA), document 88711 (S1A thru S1M, Revision
+# 27-Jul-15) page 3, read from the rendered drawing (pdftoppm). Only
+# max/min pairs are printed; no nominal is recorded.
+# Mapping from the drawing's arrows: body_length = molded body along the
+# terminal axis (top view, 0.177/0.157), body_width = body across
+# (0.110/0.100), lead_width = terminal width (0.065/0.049), overall_length
+# = lead-tip to lead-tip span (side view, 0.208/0.194), lead_length = the
+# folded foot under the body (side view, 0.060/0.030), lead_thickness
+# (0.012/0.006), body_height = seating plane to body top (the drawing's
+# only height, 0.090/0.078; no A2 given), standoff = body underside to
+# seating plane (0.008/0).
+# Same numbers, row for row (pdftotext -layout diff of the outline
+# pages), in Vishay 88390 SMAJ5.0A thru SMAJ188CA (Revision 09-Jan-2024)
+# page 5 and 88746 SS12 thru SS16 (Revision 23-Apr-2020) page 4, so parts
+# from those documents reuse this package.
+# Supersedes standards/CHIP-SMA-DO214AC (family chip, body only), which
+# was read from the same page and is deleted in this change.
+# construction: molded -- page 1 MECHANICAL DATA "Molding compound meets
+# UL 94 V-0 flammability rating".
+schema_version: "0.1"
+kind: package
+id: standards/DO214AC-VISHAY-88711
+
+family: do214
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    min: 3.99
+    max: 4.5
+    unit: mm
+  body_width:
+    min: 2.54
+    max: 2.79
+    unit: mm
+  body_height:
+    min: 1.98
+    max: 2.29
+    unit: mm
+  overall_length:
+    min: 4.93
+    max: 5.28
+    unit: mm
+  lead_width:
+    min: 1.25
+    max: 1.65
+    unit: mm
+  lead_length:
+    min: 0.76
+    max: 1.52
+    unit: mm
+  lead_thickness:
+    min: 0.152
+    max: 0.305
+    unit: mm
+  standoff:
+    min: 0.0
+    max: 0.203
+    unit: mm
+
+construction: molded
+
+geometry:
+  type: parametric
+  generator: do214
+
+provenance:
+  "/construction":
+    - source: vishay/88711
+      page: 1
+      locator: "MECHANICAL DATA: \"Molding compound meets UL 94 V-0 flammability rating\""
+  "/dimensions/body_length":
+    - source: vishay/88711
+      page: 3
+      locator: "DO-214AC (SMA) top view, body length 0.177 (4.50) / 0.157 (3.99) -- min/max only"
+  "/dimensions/body_width":
+    - source: vishay/88711
+      page: 3
+      locator: "DO-214AC (SMA) top view, body width 0.110 (2.79) / 0.100 (2.54) -- min/max only"
+  "/dimensions/body_height":
+    - source: vishay/88711
+      page: 3
+      locator: "DO-214AC (SMA) side view, seating plane to body top 0.090 (2.29) / 0.078 (1.98) -- min/max only"
+  "/dimensions/overall_length":
+    - source: vishay/88711
+      page: 3
+      locator: "DO-214AC (SMA) side view, lead tip to lead tip 0.208 (5.28) / 0.194 (4.93)"
+  "/dimensions/lead_width":
+    - source: vishay/88711
+      page: 3
+      locator: "DO-214AC (SMA) top view, terminal width 0.065 (1.65) / 0.049 (1.25)"
+  "/dimensions/lead_length":
+    - source: vishay/88711
+      page: 3
+      locator: "DO-214AC (SMA) side view, folded foot 0.060 (1.52) / 0.030 (0.76)"
+  "/dimensions/lead_thickness":
+    - source: vishay/88711
+      page: 3
+      locator: "DO-214AC (SMA) side view, lead thickness 0.012 (0.305) / 0.006 (0.152)"
+  "/dimensions/standoff":
+    - source: vishay/88711
+      page: 3
+      locator: "DO-214AC (SMA) side view, body underside to seating plane 0.008 (0.203) / 0 (0)"

@@ -1,0 +1,18 @@
+# Diodes Incorporated datasheet "SD103AW - SD103CW Schottky Barrier Diode",
+# document number DS11013 Rev. 28 - 2, footer date "May 2024".
+# Downloaded with curl from diodes.com (first-party, HTTP 200, checked to
+# be a PDF with this document number on page 1); read with pdftotext
+# -layout and rendered (pdftoppm) for the outline drawing. Page numbers
+# cited are PDF page indices (= printed "n of N").
+schema_version: "0.1"
+kind: source
+id: diodes/DS11013
+
+publisher: diodes
+document_id: DS11013
+document_type: datasheet
+
+revision: "28-2"
+date: "2024-05"
+
+url: "https://www.diodes.com/datasheet/download/SD103AW.pdf"

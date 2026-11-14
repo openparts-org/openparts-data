@@ -1,0 +1,32 @@
+# LM2940 1-A LDO (LM2940-N, all fixed voltages), NGN (WSON-8) pinout.
+# SNVS769J "Pin Functions" (page 3), NGN column: IN 3, GND 2, OUT "5,
+# 6", GND 7, N/C "1, 4, 8"; WSON (NGN) figure: "Pin 2 and pin 7 are
+# fused to center DAP", "Pin 5 and 6 need to be tied together on PCB
+# board". The DAP (thermal pad) -> key "EP", GND, connected_to "2".
+schema_version: "0.1"
+kind: device
+id: ti/LM2940-NGN
+
+manufacturer: ti
+category: other
+family: LM2940
+
+pins:
+  "1": { name: "N/C", type: nc }
+  "2": { name: "GND", type: ground }
+  "3": { name: "IN", type: power }
+  "4": { name: "N/C", type: nc }
+  "5": { name: "OUT", type: power }
+  "6": { name: "OUT", type: power }
+  "7": { name: "GND", type: ground }
+  "8": { name: "N/C", type: nc }
+  "EP": { name: "GND", type: ground, connected_to: "2" }
+
+provenance:
+  "/pins":
+    - source: ti/SNVS769J
+      page: 3
+      locator: "\"Pin Functions\", NGN column: IN 3, GND 2 and 7, OUT \"5, 6\", N/C \"1, 4, 8\""
+    - source: ti/SNVS769J
+      page: 3
+      locator: "\"WSON (NGN) Package 8 Pins Top View\": \"Pin 2 and pin 7 are fused to center DAP\""

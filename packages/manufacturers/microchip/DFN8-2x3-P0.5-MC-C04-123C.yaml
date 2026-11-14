@@ -1,0 +1,113 @@
+# 8-lead DFN, 2x3 mm, 0.5 mm pitch, exposed pad: Microchip drawing
+# C04-123C "8-Lead Plastic Dual Flat, No Lead Package (MC) - 2x3x0.9 mm
+# Body [DFN]", read from DS20001984H page 20 (rendered image; the page
+# text is an encoded font). The same drawing number in DS21709J page 22
+# and DS20002234D page 24 was rendered too and compared row by row:
+# every value is identical.
+#
+# Frame: the drawing's D (2.00, along the terminal rows) is
+# body_length (Y) and E (3.00, across the two rows) is body_width (X);
+# the exposed pad's E2 (across the rows) is its width (X) and D2 (along
+# the rows) its length (Y). Pin numbering from the top view: 1..4 along
+# one long edge, 5..8 back along the other (pin 1 top-left after
+# turning the rows vertical, SOIC order).
+# body_height = A (no A2 given). lead_thickness = A3 "0.20 REF", a
+# reference value (the drawing defines REF). E2/D2 have min/max only (no
+# nominal printed) and are recorded as such. K (contact-to-exposed pad,
+# min 0.20) is not modelled.
+schema_version: "0.1"
+kind: package
+id: manufacturers/microchip/DFN8-2x3-P0.5-MC-C04-123C
+
+family: dfn
+lead_count: 8
+
+pitch:
+  nominal: 0.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 3.00
+    unit: mm
+  body_length:
+    nominal: 2.00
+    unit: mm
+  body_height:
+    nominal: 0.90
+    min: 0.80
+    max: 1.00
+    unit: mm
+  standoff:
+    nominal: 0.02
+    min: 0.00
+    max: 0.05
+    unit: mm
+  lead_width:
+    nominal: 0.25
+    min: 0.20
+    max: 0.30
+    unit: mm
+  lead_length:
+    nominal: 0.40
+    min: 0.30
+    max: 0.50
+    unit: mm
+  lead_thickness:
+    nominal: 0.20
+    unit: mm
+  exposed_pad:
+    width:
+      min: 1.50
+      max: 1.75
+      unit: mm
+    length:
+      min: 1.30
+      max: 1.55
+      unit: mm
+
+geometry:
+  type: parametric
+  generator: dfn
+
+provenance:
+  "/lead_count":
+    - source: microchip/DS20001984@revH
+      page: 20
+      locator: "drawing C04-123C table, \"Number of Pins N 8\""
+  "/pitch":
+    - source: microchip/DS20001984@revH
+      page: 20
+      locator: "drawing C04-123C table, \"Pitch e 0.50 BSC\""
+  "/dimensions/body_width":
+    - source: microchip/DS20001984@revH
+      page: 20
+      locator: "drawing C04-123C table, \"Overall Width E 3.00 BSC\" (across the terminal rows, top view)"
+  "/dimensions/body_length":
+    - source: microchip/DS20001984@revH
+      page: 20
+      locator: "drawing C04-123C table, \"Overall Length D 2.00 BSC\" (along the terminal rows, top view)"
+  "/dimensions/body_height":
+    - source: microchip/DS20001984@revH
+      page: 20
+      locator: "drawing C04-123C table, \"Overall Height A 0.80 / 0.90 / 1.00\""
+  "/dimensions/standoff":
+    - source: microchip/DS20001984@revH
+      page: 20
+      locator: "drawing C04-123C table, \"Standoff A1 0.00 / 0.02 / 0.05\""
+  "/dimensions/lead_width":
+    - source: microchip/DS20001984@revH
+      page: 20
+      locator: "drawing C04-123C table, \"Contact Width b 0.20 / 0.25 / 0.30\""
+  "/dimensions/lead_length":
+    - source: microchip/DS20001984@revH
+      page: 20
+      locator: "drawing C04-123C table, \"Contact Length L 0.30 / 0.40 / 0.50\""
+  "/dimensions/lead_thickness":
+    - source: microchip/DS20001984@revH
+      page: 20
+      locator: "drawing C04-123C table, \"Contact Thickness A3 0.20 REF\" (reference value)"
+  "/dimensions/exposed_pad":
+    - source: microchip/DS20001984@revH
+      page: 20
+      locator: "drawing C04-123C table, \"Exposed Pad Width E2 1.50 / - / 1.75\" (across the rows) and \"Exposed Pad Length D2 1.30 / - / 1.55\" (along the rows)"

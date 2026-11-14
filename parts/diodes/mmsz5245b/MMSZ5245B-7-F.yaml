@@ -1,0 +1,29 @@
+# MMSZ5245B-7-F: assembled from the ordering pattern "(Type Number)-7-F" and the
+# page-2 type-number row -- probable, not printed as an orderable line.
+# Package: manufacturers/diodes/SOD123-2.65x1.55-DS30139 (outline read from DS30139; the same outline table is printed in DS18010, see the package header).
+# No lifecycle statement in the datasheet: lifecycle unknown.
+schema_version: "0.1"
+kind: part
+id: diodes/MMSZ5245B-7-F
+
+manufacturer: diodes
+mpn: MMSZ5245B-7-F
+
+device: diodes/MMSZ5245B
+package: manufacturers/diodes/SOD123-2.65x1.55-DS30139
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - diodes/DS18010
+  - diodes/DS30139
+
+provenance:
+  "/existence":
+    - source: diodes/DS18010
+      page: 1
+      locator: "Ordering Information table row \"(Type Number)-7-F* | Commercial | SOD123 | 3,000/Tape & Reel\" with footnote \"Example: 6.2V Zener = MMSZ5234B-7-F\"; type number MMSZ5245B from the page-2 Electrical Characteristics table"

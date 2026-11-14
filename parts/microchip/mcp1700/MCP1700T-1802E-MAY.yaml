@@ -1,0 +1,39 @@
+# MCP1700 LDO, 1.8V output, 2% tolerance, extended temperature, tape
+# and reel, 6-lead 2x2 DFN (MAY). MPN printed under "2x2 DFN-6 Package:"
+# as example b) of the "Product Identification System" (DS20001826E
+# page 28): "MCP1700T-1802E/MAY: 1.8V VOUT". existence is "probable": an ordering
+# example, not an orderable list. Package MAY = "Plastic Small Outline
+# Transistor (DFN), 6-lead" (sic) -> drawing C04-120C "6-Lead Plastic
+# Dual Flat, No Lead Package (MA[Y]) - 2x2x0.9mm Body [DFN]" (pages
+# 25-26). The id replaces "/" with "-". lifecycle: not stated; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP1700T-1802E-MAY
+
+manufacturer: microchip
+mpn: "MCP1700T-1802E/MAY"
+
+device: microchip/MCP1700-MAY
+package: manufacturers/microchip/DFN6-2x2-P0.65-MAY-C04-120C
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001826@revE
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001826@revE
+      page: 28
+      locator: "Product Identification System, \"2x2 DFN-6 Package:\" example b) \"MCP1700T-1802E/MAY: 1.8V VOUT\""
+  "/package":
+    - source: microchip/DS20001826@revE
+      page: 28
+      locator: "Product Identification System, Package \"MAY = Plastic Small Outline Transistor (DFN), 6-lead\""
+    - source: microchip/DS20001826@revE
+      page: 26
+      locator: "drawing C04-120C sheet 2 \"6-Lead Plastic Dual Flat, No Lead Package (MA[Y]) - 2x2x0.9mm Body [DFN]\""

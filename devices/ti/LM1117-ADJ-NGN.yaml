@@ -1,0 +1,35 @@
+# LM1117 800-mA LDO, adjustable option (LM1117-ADJ), NGN (WSON-8) pinout.
+# SNOS412Q Table 6-1 "Pin Functions" (page 3), WSON column: ADJ/GND 1,
+# VIN "2, 3, 4", VOUT "5, 6, 7, TAB"; pin 8 from Figure 6-5 "NGN
+# Package, 8-Pin WSON (Top View)" ("NOT CONNECTED"; the table has no
+# row for it). Figure note: "pins 2, 3, and 4 must be connected together
+# and pins 5, 6, and 7 must be connected together". The thermal pad
+# ("TAB" in the VOUT row) is key "EP".
+# Pin 1 "Adjust pin for adjustable output option" -> input.
+schema_version: "0.1"
+kind: device
+id: ti/LM1117-ADJ-NGN
+
+manufacturer: ti
+category: other
+family: LM1117
+
+pins:
+  "1": { name: "ADJ/GND", type: input }
+  "2": { name: "VIN", type: power }
+  "3": { name: "VIN", type: power }
+  "4": { name: "VIN", type: power }
+  "5": { name: "VOUT", type: power }
+  "6": { name: "VOUT", type: power }
+  "7": { name: "VOUT", type: power }
+  "8": { name: "NOT CONNECTED", type: nc }
+  "EP": { name: "VOUT", type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SNOS412Q
+      page: 3
+      locator: "Table 6-1 \"Pin Functions\", WSON column: ADJ/GND 1, VIN \"2, 3, 4\", VOUT \"5, 6, 7, TAB\""
+    - source: ti/SNOS412Q
+      page: 3
+      locator: "Figure 6-5 \"NGN Package, 8-Pin WSON (Top View)\": 8 \"NOT CONNECTED\", centre pad VOUT"

@@ -1,0 +1,24 @@
+# 1.0A 1000V glass-passivated rectifier, SMA/SMB (DS16003 Maximum Ratings column
+# S1M/S1MB).
+# One device for both the SMA and SMB ("...B") case versions.
+# Polarity from the page-1 Mechanical Data ("Polarity: Cathode Band or Cathode Notch").
+# The datasheet names the terminals only by the cathode band and
+# prints no pin numbers: numbered in the generator's position
+# convention (pin 1 at -X), cathode = 1, anode = 2.
+schema_version: "0.1"
+kind: device
+id: diodes/S1M
+
+manufacturer: diodes
+category: diode
+family: S1x
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: diodes/DS16003
+      page: 1
+      locator: "Mechanical Data: \"Polarity: Cathode Band or Cathode Notch\"; numbering by generator convention, see header"

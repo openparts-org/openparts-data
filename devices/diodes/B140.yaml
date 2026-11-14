@@ -1,0 +1,24 @@
+# 1.0A 40V Schottky barrier rectifier, SMA/SMB (DS13002).
+# One device for both the SMA (B1x0) and SMB (B1x0B) versions: the
+# datasheet names the terminals the same way for both cases.
+# Polarity from the page-1 Mechanical Data ("Polarity: Cathode Band or Cathode Notch").
+# The datasheet names the terminals only by the cathode band and
+# prints no pin numbers: numbered in the generator's position
+# convention (pin 1 at -X), cathode = 1, anode = 2.
+schema_version: "0.1"
+kind: device
+id: diodes/B140
+
+manufacturer: diodes
+category: diode
+family: B1x0
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: diodes/DS13002
+      page: 1
+      locator: "Mechanical Data: \"Polarity: Cathode Band or Cathode Notch\"; numbering by generator convention, see header"

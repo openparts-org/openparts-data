@@ -1,0 +1,20 @@
+# Official onsemi datasheet, Publication Order Number MBRS340T3/D,
+# footer
+# "August, 2021 - Rev. 15", 5 pages, downloaded with curl on 2026-11-14
+# (HTTP 200,
+# `file`: PDF). Read with pdftotext -layout; the image-only case outline
+# rendered with pdftoppm. Page numbers are PDF page indices.
+# Outline: page 4: SMC 2-LEAD CASE 403AC ISSUE B (98AON97675F, DATE 27
+# JUL 2017).
+schema_version: "0.1"
+kind: source
+id: onsemi/MBRS340T3-D
+
+publisher: onsemi
+document_id: "MBRS340T3/D"
+document_type: datasheet
+
+revision: "15"
+date: "2021-08"
+
+url: "https://www.onsemi.com/pdf/datasheet/mbrs340t3-d.pdf"

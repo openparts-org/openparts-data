@@ -1,0 +1,19 @@
+# Diodes Incorporated datasheet "S1A/B - S1M/B 1.0A Surface Mount Glass Passivated Rectifier (SMA/SMB)",
+# document number DS16003 Rev. 24 - 2, footer date "December 2014".
+# Downloaded with curl from diodes.com (first-party, HTTP 200, checked to
+# be a PDF with this document number on page 1); read with pdftotext
+# -layout and rendered (pdftoppm) for the outline drawing. Page numbers
+# cited are PDF page indices (= printed "n of N").
+# Footers read "December 2014".
+schema_version: "0.1"
+kind: source
+id: diodes/DS16003
+
+publisher: diodes
+document_id: DS16003
+document_type: datasheet
+
+revision: "24-2"
+date: "2014-12"
+
+url: "https://www.diodes.com/datasheet/download/S1M.pdf"

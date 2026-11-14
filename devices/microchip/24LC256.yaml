@@ -2,6 +2,10 @@
 # 24FC256 family). Pinout from DS20001203W Table 2-1 "Pin Function
 # Table" (page 7), PDIP/SOIC columns (identical), cross-checked with the
 # "8-Lead SOIC/SOIJ/TSSOP (Top View)" package-types figure on page 1.
+# The DFN (MF) and TDFN (MNY) columns give the same numbers, so this
+# device covers them too; their exposed pad "can be connected to VSS or
+# left floating" (Table 2-1 note 1) -- not an internal connection, so no
+# EP pin.
 schema_version: "0.1"
 kind: device
 id: microchip/24LC256
@@ -28,3 +32,6 @@ provenance:
     - source: microchip/DS20001203@revW
       page: 1
       locator: "Package Types, \"8-Lead SOIC/SOIJ/TSSOP (Top View)\""
+    - source: microchip/DS20001203@revW
+      page: 7
+      locator: "Table 2-1 \"Pin Function Table\", columns \"DFN\" and \"TDFN\" (same numbers as SOIC; note 1 on the exposed pad)"

@@ -1,0 +1,18 @@
+# onsemi datasheet TIP31A/D Rev. 17 (8 pages), downloaded with curl from
+# the URL below and read via pdftotext -layout plus page renders.
+# Complementary Silicon Plastic Power Transistors TIP31A-TIP32C. Page 1:
+# symbols "COLLECTOR 2,4 / BASE 1 / EMITTER 3", "TO-220 CASE 221A STYLE
+# 1"; page 6: ORDERING INFORMATION (current list plus a DISCONTINUED
+# list); page 7: embedded CASE 221A ISSUE AL.
+schema_version: "0.1"
+kind: source
+id: onsemi/TIP31A-D
+
+publisher: onsemi
+document_id: TIP31A/D
+document_type: datasheet
+
+revision: "17"
+date: "2024-06"
+
+url: "https://www.onsemi.com/pdf/datasheet/tip31a-d.pdf"

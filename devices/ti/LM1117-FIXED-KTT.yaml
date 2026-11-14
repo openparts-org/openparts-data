@@ -1,0 +1,32 @@
+# LM1117 800-mA LDO, fixed-output options, KTT (TO-263) pinout. SNOS412Q
+# Table 6-1 "Pin Functions" (page 3), TO-263 column: ADJ/GND 1, VOUT "2,
+# TAB", VIN 3; Figure 6-3 "KTT Package, 3-Pin TO-263 (Top View)". Tab
+# keyed "4" as printed on outline KTT0003B (page 35), listed with pin 2
+# as VOUT -> connected_to "2". (Same pin map as ti/LM1117-3.3, which
+# covers DCY/NDP; kept separate so each device header names its
+# packages.)
+schema_version: "0.1"
+kind: device
+id: ti/LM1117-FIXED-KTT
+
+manufacturer: ti
+category: other
+family: LM1117
+
+pins:
+  "1": { name: "ADJ/GND", type: ground }
+  "2": { name: "VOUT", type: power }
+  "3": { name: "VIN", type: power }
+  "4": { name: "VOUT", type: power, connected_to: "2" }
+
+provenance:
+  "/pins":
+    - source: ti/SNOS412Q
+      page: 3
+      locator: "Table 6-1 \"Pin Functions\", TO-263 column: ADJ/GND 1, VIN 3, VOUT \"2, TAB\""
+    - source: ti/SNOS412Q
+      page: 3
+      locator: "Figure 6-3 \"KTT Package, 3-Pin TO-263 (Top View)\""
+    - source: ti/SNOS412Q
+      page: 35
+      locator: "KTT0003B outline, bottom view: tab labelled \"4\""

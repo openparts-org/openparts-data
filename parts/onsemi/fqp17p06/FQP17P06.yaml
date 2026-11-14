@@ -1,0 +1,37 @@
+# FQP17P06: printed verbatim in FQP17P06/D Rev. 3 ORDERING
+# INFORMATION (page 1) -> existence verified.
+# Package: datasheet page 1 "CASE 340AT"; outline from the standalone
+# drawing 98AON13818G.
+# No lifecycle statement for this MPN.
+schema_version: "0.1"
+kind: part
+id: onsemi/FQP17P06
+
+manufacturer: onsemi
+mpn: FQP17P06
+
+device: onsemi/FQP17P06
+package: manufacturers/onsemi/TO220-3LD-340AT
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/FQP17P06-D
+  - onsemi/98AON13818G
+
+provenance:
+  "/existence":
+    - source: onsemi/FQP17P06-D
+      page: 1
+      locator: "ORDERING INFORMATION: \"FQP17P06 | TO-220-3LD | 1000 Units / Tube\""
+  "/package":
+    - source: onsemi/FQP17P06-D
+      page: 1
+      locator: "Package callout \"CASE 340AT\""
+    - source: onsemi/98AON13818G
+      page: 1
+      locator: "CASE 340AT outline"

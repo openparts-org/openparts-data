@@ -2,7 +2,9 @@
 # PDIP, SOIC and (non-rotated) TSSOP packages. From DS20001822J Table
 # 2-1 "Pin Function Table" (page 6), columns PDIP/SOIC, checked against
 # the "Package Types" figure "PDIP/SOIC" (page 1). The rotated TSSOP
-# (25LC256X) and DFN-S (exposed pad) are not covered. Overbars of CS and
+# (25LC256X) is not covered. The DFN-S (MF) column gives the same
+# numbers (pins 1-8), so DFN-S is covered too; its exposed pad "can be
+# connected to VSS or left floating" (Table 2-1 note 1) -> no EP pin. Overbars of CS and
 # HOLD (active low) are not represented in the name. Types: CS, WP, SI,
 # SCK, HOLD -> input; SO -> output; VSS "Ground" -> ground; VCC "Supply
 # Voltage" -> power.
@@ -32,3 +34,6 @@ provenance:
     - source: microchip/DS20001822@revJ
       page: 1
       locator: "\"Package Types (not to scale)\" figure \"PDIP/SOIC\" (all 8 pins matched)"
+    - source: microchip/DS20001822@revJ
+      page: 6
+      locator: "Table 2-1 \"Pin Function Table\", column \"DFN-S\" (same numbers as PDIP/SOIC; note 1 on the exposed pad)"

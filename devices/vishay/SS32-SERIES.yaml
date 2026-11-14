@@ -1,0 +1,25 @@
+# SS32 thru SS36 3.0 A Schottky barrier rectifiers (VRRM 20..60 V), SMC
+# (DO-214AB): one device for the series, the voltage is carried by the
+# Part. (vishay/SS34 already exists as its own device for SS34-E3/57T.)
+# Polarity from 88751 page 1 MECHANICAL DATA "Polarity: color band
+# denotes the cathode end".
+# No pin numbers are printed for this part, so 1 = Cathode and 2 = Anode
+# follow the dataset's two-terminal diode convention (pin 1 at the
+# banded end).
+schema_version: "0.1"
+kind: device
+id: vishay/SS32-SERIES
+
+manufacturer: vishay
+category: diode
+family: SS3x
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: vishay/88751
+      page: 1
+      locator: "MECHANICAL DATA: \"Polarity: color band denotes the cathode end\""

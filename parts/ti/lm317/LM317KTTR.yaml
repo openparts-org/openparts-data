@@ -1,0 +1,36 @@
+# LM317KTTR: SLVS044Z PACKAGE OPTION ADDENDUM (page 30) row "LM317KTTR
+# Active  Production  DDPAK/ TO-263 (KTT) | 3" -- MPN printed verbatim in TI's orderable
+# list (existence verified); lifecycle "Active" is TI's own Status column.
+# Package KTT = outline KTT0003B (SLVS044Z page 42).
+schema_version: "0.1"
+kind: part
+id: ti/LM317KTTR
+
+manufacturer: ti
+mpn: LM317KTTR
+
+device: ti/LM317-KTT
+package: manufacturers/ti/KTT0003B
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLVS044Z
+
+provenance:
+  "/existence":
+    - source: ti/SLVS044Z
+      page: 30
+      locator: "Package option addendum table, row \"LM317KTTR\" (DDPAK/ TO-263 (KTT) | 3)"
+  "/lifecycle":
+    - source: ti/SLVS044Z
+      page: 30
+      locator: "Package option addendum table, row \"LM317KTTR\", Status \"Active\""
+  "/package":
+    - source: ti/SLVS044Z
+      page: 42
+      locator: "KTT0003B package outline"

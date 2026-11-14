@@ -1,0 +1,20 @@
+# Diodes Incorporated datasheet "MMSZ5221B - MMSZ5259B 500mW Surface Mount Zener Diode",
+# document number DS18010 Rev. 28 - 2, footer date "October 2017".
+# Downloaded with curl from diodes.com (first-party, HTTP 200, checked to
+# be a PDF with this document number on page 1); read with pdftotext
+# -layout and rendered (pdftoppm) for the outline drawing. Page numbers
+# cited are PDF page indices (= printed "n of N").
+# Footers on every page read "October 2017" (copyright line "(c) Diodes
+# Incorporated", no year).
+schema_version: "0.1"
+kind: source
+id: diodes/DS18010
+
+publisher: diodes
+document_id: DS18010
+document_type: datasheet
+
+revision: "28-2"
+date: "2017-10"
+
+url: "https://www.diodes.com/datasheet/download/MMSZ5231B.pdf"

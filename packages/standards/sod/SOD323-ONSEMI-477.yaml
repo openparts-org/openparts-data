@@ -1,0 +1,109 @@
+# onsemi SOD-323 1.70x1.25x0.85, CASE 477 ISSUE K, DOCUMENT NUMBER
+# 98ASB17533C (DATE 11 MAR 2024), page 3 of NSR0320MW2T1/D (April, 2022 -
+# Rev. 8; the datasheet carries an outline newer than itself). The
+# outline is an image: read from the rendered page (pdftoppm),
+# MILLIMETERS MIN/NOM/MAX (controlling dimension: millimeters). Bent
+# gull-wing leads (side view), hence sod.
+# Letters from the drawing's arrows: D = body along the leads (top view,
+# body_length), E = body across (body_width), H = lead-tip span
+# (overall_length), b = lead width, c = lead thickness, L = foot measured
+# from the end of the radius (Note 5; "0.08" min only), A2 = body
+# (body_height), A = overall height, A1 = standoff. L1 "0.40 (REF)" and
+# A3 "0.15 (REF)" are not recorded. STYLE 1: PIN 1. CATHODE (POLARITY
+# BAND), 2. ANODE.
+schema_version: "0.1"
+kind: package
+id: standards/SOD323-ONSEMI-477
+
+family: sod
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 1.7
+    min: 1.6
+    max: 1.8
+    unit: mm
+  body_width:
+    nominal: 1.25
+    min: 1.15
+    max: 1.35
+    unit: mm
+  body_height:
+    nominal: 0.85
+    min: 0.75
+    max: 0.95
+    unit: mm
+  overall_height:
+    nominal: 0.9
+    min: 0.8
+    max: 1.0
+    unit: mm
+  overall_length:
+    nominal: 2.5
+    min: 2.3
+    max: 2.7
+    unit: mm
+  lead_width:
+    nominal: 0.32
+    min: 0.25
+    max: 0.4
+    unit: mm
+  lead_length:
+    min: 0.08
+    unit: mm
+  lead_thickness:
+    nominal: 0.12
+    min: 0.09
+    max: 0.18
+    unit: mm
+  standoff:
+    nominal: 0.05
+    min: 0.0
+    max: 0.1
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: sod
+
+provenance:
+  "/dimensions/body_length":
+    - source: onsemi/NSR0320MW2T1-D
+      page: 3
+      locator: "CASE 477 table, D 1.60 / 1.70 / 1.80"
+  "/dimensions/body_width":
+    - source: onsemi/NSR0320MW2T1-D
+      page: 3
+      locator: "CASE 477 table, E 1.15 / 1.25 / 1.35"
+  "/dimensions/body_height":
+    - source: onsemi/NSR0320MW2T1-D
+      page: 3
+      locator: "CASE 477 table, A2 0.75 / 0.85 / 0.95"
+  "/dimensions/overall_height":
+    - source: onsemi/NSR0320MW2T1-D
+      page: 3
+      locator: "CASE 477 table, A 0.80 / 0.90 / 1.00"
+  "/dimensions/overall_length":
+    - source: onsemi/NSR0320MW2T1-D
+      page: 3
+      locator: "CASE 477 table, H 2.30 / 2.50 / 2.70"
+  "/dimensions/lead_width":
+    - source: onsemi/NSR0320MW2T1-D
+      page: 3
+      locator: "CASE 477 table, b 0.25 / 0.32 / 0.4"
+  "/dimensions/lead_length":
+    - source: onsemi/NSR0320MW2T1-D
+      page: 3
+      locator: "CASE 477 table, L 0.08 / --- / --- (min only; Note 5: measured from end of radius)"
+  "/dimensions/lead_thickness":
+    - source: onsemi/NSR0320MW2T1-D
+      page: 3
+      locator: "CASE 477 table, c 0.09 / 0.12 / 0.18"
+  "/dimensions/standoff":
+    - source: onsemi/NSR0320MW2T1-D
+      page: 3
+      locator: "CASE 477 table, A1 0.00 / 0.05 / 0.10"

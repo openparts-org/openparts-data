@@ -1,5 +1,12 @@
 # Fast switching small-signal diode, SOD-323, 7-inch reel. Confirmed in
 # the datasheet's ordering table.
+# 2026-11-14: package repointed from standards/CHIP-SOD323-1N4148WS
+# (family chip, body only; deleted) to
+# manufacturers/diodes/SOD323-1.70x1.30-DS30098.
+# Package check (2026-11-14): the SOD323 "Package Outline Dimensions"
+# table on page 4 of DS30097 Rev. 30-2 (October 2026) is identical, row for
+# row (Min/Max/Typ; drawing rendered, axis arrows read), to
+# manufacturers/diodes/SOD323-1.70x1.30-DS30098 (DS30098 page 4), so that package is reused.
 schema_version: "0.1"
 kind: part
 id: diodes/1N4148WS-7-F
@@ -8,7 +15,7 @@ manufacturer: diodes
 mpn: 1N4148WS-7-F
 
 device: diodes/1N4148WS
-package: standards/CHIP-SOD323-1N4148WS
+package: manufacturers/diodes/SOD323-1.70x1.30-DS30098
 
 existence:
   status: verified
@@ -18,3 +25,10 @@ lifecycle:
 
 sources:
   - diodes/DS30097
+  - diodes/DS30097@rev30-2
+
+provenance:
+  "/package":
+    - source: diodes/DS30097@rev30-2
+      page: 4
+      locator: "SOD323 Package Outline Dimensions table (Min/Max/Typ) -- identical to the reused package, see header"

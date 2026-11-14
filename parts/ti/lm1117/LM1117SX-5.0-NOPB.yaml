@@ -1,0 +1,36 @@
+# LM1117SX-5.0/NOPB: SNOS412Q PACKAGE OPTION ADDENDUM (page 26) row "LM1117SX-5.0/NOPB
+# Active  Production  DDPAK/ TO-263 (KTT) | 3" -- MPN printed verbatim in TI's orderable
+# list (existence verified); lifecycle "Active" is TI's own Status column.
+# Package KTT = outline KTT0003B (SNOS412Q page 35).
+schema_version: "0.1"
+kind: part
+id: ti/LM1117SX-5.0/NOPB
+
+manufacturer: ti
+mpn: LM1117SX-5.0/NOPB
+
+device: ti/LM1117-FIXED-KTT
+package: manufacturers/ti/KTT0003B
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SNOS412Q
+
+provenance:
+  "/existence":
+    - source: ti/SNOS412Q
+      page: 26
+      locator: "Package option addendum table, row \"LM1117SX-5.0/NOPB\" (DDPAK/ TO-263 (KTT) | 3)"
+  "/lifecycle":
+    - source: ti/SNOS412Q
+      page: 26
+      locator: "Package option addendum table, row \"LM1117SX-5.0/NOPB\", Status \"Active\""
+  "/package":
+    - source: ti/SNOS412Q
+      page: 35
+      locator: "KTT0003B package outline"

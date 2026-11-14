@@ -1,0 +1,33 @@
+# NSR0320MW2T1G: printed verbatim in the datasheet's ORDERING
+# INFORMATION table (page 1), so existence is "verified". No lifecycle
+# statement for this OPN, so lifecycle is unknown.
+# Package: page-3 CASE 477 (98ASB17533C), standards/SOD323-ONSEMI-477
+# (read from this page).
+schema_version: "0.1"
+kind: part
+id: onsemi/NSR0320MW2T1G
+
+manufacturer: onsemi
+mpn: NSR0320MW2T1G
+
+device: onsemi/NSR0320MW2
+package: standards/SOD323-ONSEMI-477
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/NSR0320MW2T1-D
+
+provenance:
+  "/existence":
+    - source: onsemi/NSR0320MW2T1-D
+      page: 1
+      locator: "ORDERING INFORMATION: \"NSR0320MW2T1G | SOD-323 (Pb-Free) | 3,000 / Tape & Reel\""
+  "/package":
+    - source: onsemi/NSR0320MW2T1-D
+      page: 3
+      locator: "MECHANICAL CASE OUTLINE -- see header"

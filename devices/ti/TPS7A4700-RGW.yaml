@@ -1,0 +1,49 @@
+# TPS7A4700 36-V 1-A LDO (ANY-OUT, SENSE pin), RGW (VQFN-20) pinout.
+# SBVS204G Table 4-1 "Pin Functions" (pages 3-4): OUT "1, 20", NC "2,
+# 17-19", SENSE 3 (TPS7A4700 row; SENSE/FB is the TPS7A4701 name), 6P4V2
+# 4, 6P4V1 5, 3P2V 6, GND 7, 1P6V 8, 0P8V 9, 0P4V 10, 0P2V 11, 0P1V 12,
+# EN 13, NR 14, IN "15, 16"; Figure 4-1 "RGW Package 5-mm x 5-mm VQFN-20
+# (Top View)". Thermal pad: "internally connected to GND" -> key "EP",
+# GND, connected_to "7". NR (I/O "—") -> passive.
+schema_version: "0.1"
+kind: device
+id: ti/TPS7A4700-RGW
+
+manufacturer: ti
+category: other
+family: TPS7A4700
+
+pins:
+  "1": { name: "OUT", type: power }
+  "2": { name: "NC", type: nc }
+  "3": { name: "SENSE", type: input }
+  "4": { name: "6P4V2", type: input }
+  "5": { name: "6P4V1", type: input }
+  "6": { name: "3P2V", type: input }
+  "7": { name: "GND", type: ground }
+  "8": { name: "1P6V", type: input }
+  "9": { name: "0P8V", type: input }
+  "10": { name: "0P4V", type: input }
+  "11": { name: "0P2V", type: input }
+  "12": { name: "0P1V", type: input }
+  "13": { name: "EN", type: input }
+  "14": { name: "NR", type: passive }
+  "15": { name: "IN", type: power }
+  "16": { name: "IN", type: power }
+  "17": { name: "NC", type: nc }
+  "18": { name: "NC", type: nc }
+  "19": { name: "NC", type: nc }
+  "20": { name: "OUT", type: power }
+  "EP": { name: "GND", type: ground, connected_to: "7" }
+
+provenance:
+  "/pins":
+    - source: ti/SBVS204G
+      page: 3
+      locator: "Table 4-1 \"Pin Functions\" (0P1V 12 ... NR 14)"
+    - source: ti/SBVS204G
+      page: 4
+      locator: "Table 4-1 (continued): OUT \"1, 20\", SENSE 3 (TPS7A4700 only), Thermal Pad \"internally connected to GND\""
+    - source: ti/SBVS204G
+      page: 3
+      locator: "Figure 4-1 \"RGW Package 5-mm x 5-mm VQFN-20 (Top View)\""

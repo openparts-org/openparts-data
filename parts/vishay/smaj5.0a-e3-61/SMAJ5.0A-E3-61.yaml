@@ -5,8 +5,12 @@
 # "(Example)" but the MPN is printed, not composed -- flagged for review.
 # Package: the page-5 SMA (DO-214AC) outline gives body 0.157-0.177
 # (3.99-4.50) x 0.100-0.110 (2.54-2.79), height 0.078-0.090 (1.98-2.29)
-# in (mm) -- the three dimensions standards/CHIP-SMA-DO214AC records,
-# value for value, so it is reused. No lifecycle statement.
+# in (mm); the whole page-5 outline is identical, row for row
+# (pdftotext -layout diff), to Vishay 88711 page 3, so
+# standards/DO214AC-VISHAY-88711 is reused. No lifecycle statement.
+# 2026-11-14: package repointed from standards/CHIP-SMA-DO214AC
+# (family chip, body only; deleted) to
+# standards/DO214AC-VISHAY-88711.
 schema_version: "0.1"
 kind: part
 id: vishay/SMAJ5.0A-E3-61
@@ -15,7 +19,7 @@ manufacturer: vishay
 mpn: SMAJ5.0A-E3/61
 
 device: vishay/SMAJ5.0A
-package: standards/CHIP-SMA-DO214AC
+package: standards/DO214AC-VISHAY-88711
 
 # existence is `probable`: the MPN is printed only as an ordering *example*,
 # not in an orderable list (openparts/skills/add-part section 2).

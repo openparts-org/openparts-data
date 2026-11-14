@@ -1,0 +1,18 @@
+# AOS "TO263(D2PAK) PACKAGE OUTLINE", Document No. PO-00005, Version N
+# (one page), linked as the "Package" document of every AOS TO263
+# product page (packages[].package_pdf -> /resources/package/to263).
+# Read from pdftoppm renders plus pdftotext (the dimension table
+# extracts as text). The drawing prints no date; `date` is the PDF's
+# own CreationDate (2023-10-20).
+schema_version: "0.1"
+kind: source
+id: aos/PO-00005
+
+publisher: aos
+document_id: PO-00005
+document_type: package_drawing
+
+revision: "N"
+date: "2023-10-20"
+
+url: "https://www.aosmd.com/sites/default/files/res/packaging_information/TO263.pdf"

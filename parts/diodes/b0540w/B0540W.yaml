@@ -6,6 +6,13 @@
 # what's cited here. Reuses the existing SOD123 package already
 # established for 1N4148W (same manufacturer, same case, matching
 # dimension ranges confirmed independently).
+# 2026-11-14: package repointed from standards/CHIP-SOD123-DIODES
+# (family chip, body only; deleted) to
+# manufacturers/diodes/SOD123-2.65x1.55-DS30139.
+# Package check (2026-11-14): DS30138 Rev. 15-2 (B0540W, November 2026,
+# diodes.com/datasheet/download/B0540W.pdf) page 4 prints the same
+# SOD123 table, row for row, as the reused package (pdftotext -layout
+# diff). That newer revision is not added as a Source here.
 schema_version: "0.1"
 kind: part
 id: diodes/B0540W
@@ -14,7 +21,7 @@ manufacturer: diodes
 mpn: B0540W
 
 device: diodes/B0540W
-package: standards/CHIP-SOD123-DIODES
+package: manufacturers/diodes/SOD123-2.65x1.55-DS30139
 
 existence:
   status: verified

@@ -1,0 +1,36 @@
+# TPS7A4700RGWR: SBVS204G PACKAGE OPTION ADDENDUM (page 24) row "TPS7A4700RGWR
+# Active  Production  VQFN (RGW) | 20" -- MPN printed verbatim in TI's orderable
+# list (existence verified); lifecycle "Active" is TI's own Status column.
+# Package RGW = outline RGW0020A (SBVS204G page 29).
+schema_version: "0.1"
+kind: part
+id: ti/TPS7A4700RGWR
+
+manufacturer: ti
+mpn: TPS7A4700RGWR
+
+device: ti/TPS7A4700-RGW
+package: manufacturers/ti/RGW0020A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SBVS204G
+
+provenance:
+  "/existence":
+    - source: ti/SBVS204G
+      page: 24
+      locator: "Package option addendum table, row \"TPS7A4700RGWR\" (VQFN (RGW) | 20)"
+  "/lifecycle":
+    - source: ti/SBVS204G
+      page: 24
+      locator: "Package option addendum table, row \"TPS7A4700RGWR\", Status \"Active\""
+  "/package":
+    - source: ti/SBVS204G
+      page: 29
+      locator: "RGW0020A package outline"

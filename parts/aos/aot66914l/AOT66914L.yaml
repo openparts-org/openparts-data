@@ -1,0 +1,41 @@
+# AOT66914L: printed verbatim in the page-1 "Orderable Part Number" table of
+# AOS datasheet AOT66914L (Rev.1.3: May 2023) -> existence verified.
+# Lifecycle from the AOS product page (fetched 2026-11-14):
+# "product_status":"Last Time Buy" -> eol_announced.
+# Package: datasheet "TO-220"; the product page links AOS's
+# TO220 outline (PO-00015) as this product's package document.
+schema_version: "0.1"
+kind: part
+id: aos/AOT66914L
+
+manufacturer: aos
+mpn: AOT66914L
+
+device: aos/AOT66914L
+package: manufacturers/aos/TO220-10.03x4.45-P2.54-PO-00015
+
+existence:
+  status: verified
+
+lifecycle:
+  status: eol_announced
+
+sources:
+  - aos/AOT66914L-DS
+  - aos/AOT66914L-product-page
+  - aos/PO-00015
+
+provenance:
+  "/existence":
+    - source: aos/AOT66914L-DS
+      page: 1
+      locator: "Orderable Part Number table: \"AOT66914L | TO-220 | Tube | 1000\""
+  "/lifecycle":
+    - source: aos/AOT66914L-product-page
+      locator: "Embedded product JSON \"product_status\":\"Last Time Buy\""
+  "/package":
+    - source: aos/AOT66914L-product-page
+      locator: "\"packages\": \"TO220\", package_pdf .../packaging_information/TO220.pdf"
+    - source: aos/PO-00015
+      page: 1
+      locator: "\"TO220 PACKAGE OUTLINE\" PO-00015 Version N"

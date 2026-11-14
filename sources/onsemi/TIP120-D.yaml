@@ -1,0 +1,18 @@
+# onsemi datasheet TIP120/D Rev. 10 (9 pages), downloaded with curl from
+# the URL below and read via pdftotext -layout plus page renders.
+# Plastic Medium-Power Complementary Silicon Transistors TIP120-TIP127.
+# Page 1: pin list "1. Base 2. Collector 3. Emitter 4. Collector",
+# "TO-220AB CASE 221A STYLE 1"; page 7: ORDERING INFORMATION; page 8:
+# embedded CASE 221A ISSUE AL outline (same issue/date as 98ASB42148B).
+schema_version: "0.1"
+kind: source
+id: onsemi/TIP120-D
+
+publisher: onsemi
+document_id: TIP120/D
+document_type: datasheet
+
+revision: "10"
+date: "2024-06"
+
+url: "https://www.onsemi.com/pdf/datasheet/tip120-d.pdf"

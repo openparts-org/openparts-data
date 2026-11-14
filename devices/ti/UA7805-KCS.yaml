@@ -1,0 +1,25 @@
+# uA7805 1.5-A fixed 5-V regulator, KCS (TO-220) pinout. SLVS056P "Pin
+# Functions" (page 3): COMMON 2, INPUT 1, OUTPUT 3, one table for all
+# packages; "KCS OR KCT (TO-220) PACKAGE (TOP VIEW)" labels the tab
+# COMMON. The TO-220 tab is not a board pad: pins 1-3 only.
+schema_version: "0.1"
+kind: device
+id: ti/UA7805-KCS
+
+manufacturer: ti
+category: other
+family: UA7805
+
+pins:
+  "1": { name: "INPUT", type: power }
+  "2": { name: "COMMON", type: ground }
+  "3": { name: "OUTPUT", type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SLVS056P
+      page: 3
+      locator: "\"Pin Functions\" table: COMMON 2, INPUT 1, OUTPUT 3"
+    - source: ti/SLVS056P
+      page: 3
+      locator: "\"KCS OR KCT (TO-220) PACKAGE (TOP VIEW)\": OUTPUT/COMMON/INPUT, tab COMMON"

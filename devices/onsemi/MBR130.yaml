@@ -1,0 +1,23 @@
+# MBR130T1G 1 A 30 V Schottky power rectifier, SOD-123 (CASE 425). Pins
+# from the CASE 425 STYLE 1 list (page 5: PIN 1. CATHODE, 2. ANODE) and
+# page 1 "Polarity Designator: Cathode Band".
+schema_version: "0.1"
+kind: device
+id: onsemi/MBR130
+
+manufacturer: onsemi
+category: diode
+family: MBR130
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/MBR130T1-D
+      page: 5
+      locator: "CASE 425 STYLE 1: \"PIN 1. CATHODE 2. ANODE\""
+    - source: onsemi/MBR130T1-D
+      page: 1
+      locator: "Mechanical Characteristics: \"Polarity Designator: Cathode Band\""

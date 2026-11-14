@@ -1,0 +1,39 @@
+# MCP73832 charge controller, 4.20V VREG, Options AC, tape and reel, 8-lead 2x3 DFN
+# (MC). MPN printed as example d) of the "Product Identification System"
+# (DS20001984H page 26): "MCP73832T-2ACI/MC: Tape and Reel, 4.20V VREG, Options AC, 8LD DFN package".
+# existence is "probable": an ordering example, not an orderable list
+# (Microchip product pages answer 403 and were not read). Package MC =
+# "Dual-Flat, No-Lead (2x3 mm body), 8-Lead" -> drawing C04-123C (page
+# 20). The id replaces "/" with "-"; mpn keeps the real string.
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.1"
+kind: part
+id: microchip/MCP73832T-2ACI-MC
+
+manufacturer: microchip
+mpn: "MCP73832T-2ACI/MC"
+
+device: microchip/MCP73832-DFN8
+package: manufacturers/microchip/DFN8-2x3-P0.5-MC-C04-123C
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - microchip/DS20001984@revH
+
+provenance:
+  "/existence":
+    - source: microchip/DS20001984@revH
+      page: 26
+      locator: "Product Identification System, example d) \"MCP73832T-2ACI/MC: Tape and Reel, 4.20V VREG, Options AC, 8LD DFN package\""
+  "/package":
+    - source: microchip/DS20001984@revH
+      page: 26
+      locator: "Product Identification System, Package \"MC = Dual-Flat, No-Lead (2x3 mm body), 8-Lead\""
+    - source: microchip/DS20001984@revH
+      page: 20
+      locator: "drawing C04-123C \"8-Lead Plastic Dual Flat, No Lead Package (MC) - 2x3x0.9 mm Body [DFN]\""

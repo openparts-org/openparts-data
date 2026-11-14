@@ -1,0 +1,39 @@
+# TIP41CG: printed verbatim in TIP41A/D Rev. 12 ORDERING
+# INFORMATION (page 6) -> existence verified.
+# Listed in the current table, not under "DISCONTINUED"; no lifecycle
+# status word is printed, so lifecycle stays unknown.
+# Package: datasheet page 1 "CASE 221A"; outline from the standalone
+# drawing 98ASB42148B.
+# No lifecycle statement for this MPN.
+schema_version: "0.1"
+kind: part
+id: onsemi/TIP41CG
+
+manufacturer: onsemi
+mpn: TIP41CG
+
+device: onsemi/TIP41-SERIES
+package: manufacturers/onsemi/TO220-10.10x4.45-P2.54-221A
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/TIP41A-D
+  - onsemi/98ASB42148B
+
+provenance:
+  "/existence":
+    - source: onsemi/TIP41A-D
+      page: 6
+      locator: "ORDERING INFORMATION: \"TIP41CG | TO-220 (Pb-Free) | 50 Units / Rail\""
+  "/package":
+    - source: onsemi/TIP41A-D
+      page: 1
+      locator: "Package callout \"CASE 221A\""
+    - source: onsemi/98ASB42148B
+      page: 1
+      locator: "CASE 221A outline"

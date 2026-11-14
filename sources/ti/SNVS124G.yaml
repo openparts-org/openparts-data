@@ -1,0 +1,20 @@
+# Official TI datasheet "LM2596 SIMPLE SWITCHER Power Converter 150-kHz 3-A Step-Down Voltage Regulator"
+# (SNVS124G, revised March 2023), 47 pages, downloaded 2026-11-14 with curl
+# from the URL below (file checked: PDF, title page names SNVS124G). Read
+# with pdftotext -layout; pin configuration figures and the outline
+# drawings KTT0005B (page 45); the TO-220 drawings NEB0005E/NDH0005D/NEB0005B (pages 43, 44, 46) were read but not used were rendered and read as images. The PACKAGE OPTION
+# ADDENDUM inside this PDF is dated 28-Aug-2026 (newer than the datasheet
+# revision; PDF CreationDate 2026). Page numbers are PDF page indices
+# (= the printed page numbers on numbered pages).
+schema_version: "0.1"
+kind: source
+id: ti/SNVS124G
+
+publisher: ti
+document_id: SNVS124G
+document_type: datasheet
+
+revision: "G"
+date: "2023-03"
+
+url: "https://www.ti.com/lit/ds/symlink/lm2596.pdf"

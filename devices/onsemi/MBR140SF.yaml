@@ -1,0 +1,22 @@
+# MBR140SFT1G 1 A 40 V Schottky power rectifier, SOD-123FL (CASE 498).
+# Page 1 "Polarity Designator: Cathode Band"; no STYLE list on CASE 498.
+# No pin numbers are printed for this part, so 1 = Cathode and 2 = Anode
+# follow the dataset's two-terminal diode convention (pin 1 at the
+# banded end).
+schema_version: "0.1"
+kind: device
+id: onsemi/MBR140SF
+
+manufacturer: onsemi
+category: diode
+family: MBR140SF
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/MBR140SFT1-D
+      page: 1
+      locator: "Mechanical Characteristics: \"Polarity Designator: Cathode Band\""

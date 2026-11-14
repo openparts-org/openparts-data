@@ -1,0 +1,18 @@
+# Diodes Incorporated datasheet "B220/A - B260/A 2.0A Surface Mount Schottky Barrier Rectifier (SMA/SMB)",
+# document number DS13004 Rev. 23 - 2, footer date "November 2026".
+# Downloaded with curl from diodes.com (first-party, HTTP 200, checked to
+# be a PDF with this document number on page 1); read with pdftotext
+# -layout and rendered (pdftoppm) for the outline drawing. Page numbers
+# cited are PDF page indices (= printed "n of N").
+schema_version: "0.1"
+kind: source
+id: diodes/DS13004
+
+publisher: diodes
+document_id: DS13004
+document_type: datasheet
+
+revision: "23-2"
+date: "2026-11"
+
+url: "https://www.diodes.com/datasheet/download/B240.pdf"

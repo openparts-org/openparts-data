@@ -1,0 +1,86 @@
+# onsemi SOD-123FL, CASE 425AD ISSUE A, DOCUMENT NUMBER 98AON13725G (DATE
+# 04 AUG 2017), page 4 of SS14FL/D (June, 2018 - Rev. 2). The outline is
+# an image: read from the rendered page (pdftoppm), MILLIMETERS MIN/MAX
+# only (no nominal recorded). Flat leads ("FRONT VIEW": leads straight
+# out of the body underside), hence sod_flat.
+# Letters from the drawing's arrows: D = body along the leads (top view,
+# body_length), E = body across (body_width), H = lead-tip span
+# (overall_length), b = lead width (bottom view), L = lead length (bottom
+# view), c = lead thickness, A = seating plane to body top (no A2 given,
+# so body_height). The "(0.35)" reference in the top view is not
+# recorded. No STYLE list.
+# Supersedes standards/CHIP-SOD123FL-SS14FL (family chip), deleted in
+# this change.
+schema_version: "0.1"
+kind: package
+id: standards/SOD123FL-ONSEMI-425AD
+
+family: sod_flat
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    min: 2.5
+    max: 3.0
+    unit: mm
+  body_width:
+    min: 1.5
+    max: 1.95
+    unit: mm
+  body_height:
+    min: 0.8
+    max: 1.08
+    unit: mm
+  overall_length:
+    min: 3.3
+    max: 3.9
+    unit: mm
+  lead_width:
+    min: 0.5
+    max: 1.15
+    unit: mm
+  lead_length:
+    min: 0.45
+    max: 0.9
+    unit: mm
+  lead_thickness:
+    min: 0.05
+    max: 0.2
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: sod_flat
+
+provenance:
+  "/dimensions/body_length":
+    - source: onsemi/SS14FL-D
+      page: 4
+      locator: "CASE 425AD table, D 2.50 / 3.00 mm (0.098 / 0.118 in) -- min/max only"
+  "/dimensions/body_width":
+    - source: onsemi/SS14FL-D
+      page: 4
+      locator: "CASE 425AD table, E 1.50 / 1.95 mm -- min/max only"
+  "/dimensions/body_height":
+    - source: onsemi/SS14FL-D
+      page: 4
+      locator: "CASE 425AD table, A 0.80 / 1.08 mm -- min/max only"
+  "/dimensions/overall_length":
+    - source: onsemi/SS14FL-D
+      page: 4
+      locator: "CASE 425AD table, H 3.30 / 3.90 mm"
+  "/dimensions/lead_width":
+    - source: onsemi/SS14FL-D
+      page: 4
+      locator: "CASE 425AD table, b 0.50 / 1.15 mm"
+  "/dimensions/lead_length":
+    - source: onsemi/SS14FL-D
+      page: 4
+      locator: "CASE 425AD table, L 0.45 / 0.90 mm"
+  "/dimensions/lead_thickness":
+    - source: onsemi/SS14FL-D
+      page: 4
+      locator: "CASE 425AD table, c 0.05 / 0.20 mm"

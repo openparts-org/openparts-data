@@ -6,9 +6,12 @@
 # ordering table -- so existence is "probable" (flagged for review).
 # Package: the CASE 425 ISSUE H outline (98ASB42927B, DATE 29 FEB 2024,
 # page 7) renders pixel-identical to MBR0520LT1/D Rev. 7 page 4, which
-# standards/CHIP-SOD123-MBR0520 was read from (E 2.54/2.69/2.84,
+# standards/SOD123-ONSEMI-425 was read from (E 2.54/2.69/2.84,
 # D 1.40/1.60/1.80, A 0.94/1.17/1.35 re-read here too). Reused; the
 # package cites onsemi/MBR0520-D. No lifecycle statement.
+# 2026-11-14: package repointed from standards/CHIP-SOD123-MBR0520
+# (family chip, body only; deleted) to
+# standards/SOD123-ONSEMI-425.
 schema_version: "0.1"
 kind: part
 id: onsemi/MMSZ5231BT1G
@@ -17,7 +20,7 @@ manufacturer: onsemi
 mpn: MMSZ5231BT1G
 
 device: onsemi/MMSZ5221B-SERIES
-package: standards/CHIP-SOD123-MBR0520
+package: standards/SOD123-ONSEMI-425
 
 existence:
   status: probable

@@ -1,0 +1,95 @@
+# TI RGW0020A, VQFN-20, 5x5 mm, 0.65 mm pitch, 1 mm max height. Outline drawing RGW0020A
+# (4219039/A 06/2018) in SBVS204G page 29, read from the rendered drawing.
+#
+# Mapping: D/E limits -> body_width/body_length (no nominal printed);
+# A max (no A2) -> body_height only; A1 -> standoff; b -> lead_width;
+# L -> lead_length; thermal pad +- tolerance -> exposed_pad nominal with
+# min/max.
+# Bottom view numbers 1-5 / 6-10 / 11-15 / 16-20 with thermal pad "21";
+# the standard CCW top-view order (pin 1 top of the left edge).
+# Left out: side-view "(0.1) TYP" (side-wall metal, not stated to be
+# A3), "2X 2.6" row spans.
+schema_version: "0.1"
+kind: package
+id: manufacturers/ti/RGW0020A
+
+family: qfn
+lead_count: 20
+
+pitch:
+  nominal: 0.65
+  unit: mm
+
+dimensions:
+  body_width:
+    min: 4.9
+    max: 5.1
+    unit: mm
+  body_length:
+    min: 4.9
+    max: 5.1
+    unit: mm
+  body_height:
+    max: 1.0
+    unit: mm
+  standoff:
+    min: 0.0
+    max: 0.05
+    unit: mm
+  lead_width:
+    min: 0.26
+    max: 0.36
+    unit: mm
+  lead_length:
+    min: 0.45
+    max: 0.65
+    unit: mm
+  exposed_pad:
+    width:
+      nominal: 3.15
+      min: 3.05
+      max: 3.25
+      unit: mm
+    length:
+      nominal: 3.15
+      min: 3.05
+      max: 3.25
+      unit: mm
+
+geometry:
+  type: parametric
+  generator: qfn
+
+provenance:
+  "/pitch":
+    - source: ti/SBVS204G
+      page: 29
+      locator: "RGW0020A outline (4219039/A), bottom view, basic \"16X 0.65\""
+  "/dimensions/body_width":
+    - source: ti/SBVS204G
+      page: 29
+      locator: "RGW0020A outline (4219039/A), top view \"5.1 / 4.9\""
+  "/dimensions/body_length":
+    - source: ti/SBVS204G
+      page: 29
+      locator: "RGW0020A outline (4219039/A), top view \"5.1 / 4.9\""
+  "/dimensions/body_height":
+    - source: ti/SBVS204G
+      page: 29
+      locator: "RGW0020A outline (4219039/A), side view \"1 MAX\""
+  "/dimensions/standoff":
+    - source: ti/SBVS204G
+      page: 29
+      locator: "RGW0020A outline (4219039/A), side view \"0.05 / 0.00\""
+  "/dimensions/lead_width":
+    - source: ti/SBVS204G
+      page: 29
+      locator: "RGW0020A outline (4219039/A), bottom view \"20X 0.36 / 0.26\""
+  "/dimensions/lead_length":
+    - source: ti/SBVS204G
+      page: 29
+      locator: "RGW0020A outline (4219039/A), bottom view \"20X 0.65 / 0.45\""
+  "/dimensions/exposed_pad":
+    - source: ti/SBVS204G
+      page: 29
+      locator: "RGW0020A outline (4219039/A), bottom view, thermal pad square \"3.15 +-0.1\"; bottom view, thermal pad square \"3.15 +-0.1\""

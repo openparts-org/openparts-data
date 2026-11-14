@@ -1,0 +1,23 @@
+# 12V (VZ nominal) 500mW Zener diode, SOD123 -- type number and VZ
+# from the DS18010 page-2 Electrical Characteristics row "MMSZ5242B".
+# Polarity from the page-1 Mechanical Data ("Polarity: Cathode Band").
+# The datasheet names the terminals only by the cathode band and
+# prints no pin numbers: numbered in the generator's position
+# convention (pin 1 at -X), cathode = 1, anode = 2.
+schema_version: "0.1"
+kind: device
+id: diodes/MMSZ5242B
+
+manufacturer: diodes
+category: diode
+family: MMSZ52xxB
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: diodes/DS18010
+      page: 1
+      locator: "Mechanical Data: \"Polarity: Cathode Band\"; numbering by generator convention, see header"

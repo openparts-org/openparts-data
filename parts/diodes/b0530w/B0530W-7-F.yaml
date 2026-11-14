@@ -1,0 +1,27 @@
+# B0530W-7-F: printed verbatim in the ordering table (verified).
+# Package: manufacturers/diodes/SOD123-2.65x1.55-DS30139 (outline read from DS30139).
+# No lifecycle statement in the datasheet: lifecycle unknown.
+schema_version: "0.1"
+kind: part
+id: diodes/B0530W-7-F
+
+manufacturer: diodes
+mpn: B0530W-7-F
+
+device: diodes/B0530W
+package: manufacturers/diodes/SOD123-2.65x1.55-DS30139
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - diodes/DS30139
+
+provenance:
+  "/existence":
+    - source: diodes/DS30139
+      page: 1
+      locator: "Ordering Information table row \"B0530W-7-F | SOD123 | 3000 | Tape & Reel\""

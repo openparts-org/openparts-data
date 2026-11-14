@@ -1,0 +1,25 @@
+# NPN 400 V 8 A power transistor MJE13007, TO-220 CASE 221A. Pin numbers and names from MJE13007-D
+# page 1, cross-checked against the CASE 221A STYLE list in
+# 98ASB42148B. Terminal 4 (the tab, Collector, tied to pin 2) is not a
+# footprint pad of a vertical TO-220 and is not listed.
+schema_version: "0.1"
+kind: device
+id: onsemi/MJE13007
+
+manufacturer: onsemi
+category: transistor
+family: MJE13007
+
+pins:
+  "1": { name: Base, type: passive }
+  "2": { name: Collector, type: passive }
+  "3": { name: Emitter, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/MJE13007-D
+      page: 1
+      locator: "Symbol \"COLLECTOR 2,4\", \"1 BASE\", \"3 EMITTER\"; \"TO-220-3 CASE 221A STYLE 1\""
+    - source: onsemi/98ASB42148B
+      page: 1
+      locator: "CASE 221A STYLE 1: \"PIN 1. BASE 2. COLLECTOR 3. EMITTER 4. COLLECTOR\""

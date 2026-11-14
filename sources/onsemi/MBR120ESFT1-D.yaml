@@ -1,0 +1,20 @@
+# Official onsemi datasheet, Publication Order Number MBR120ESFT1/D,
+# footer
+# "January, 2024 - Rev. 5", 6 pages, downloaded with curl on 2026-11-14
+# (HTTP 200,
+# `file`: PDF). Read with pdftotext -layout; the image-only case outline
+# rendered with pdftoppm. Page numbers are PDF page indices.
+# Outline: page 5: SOD-123-2 CASE 498 ISSUE E (98AON11184D, DATE 22 AUG
+# 2023).
+schema_version: "0.1"
+kind: source
+id: onsemi/MBR120ESFT1-D
+
+publisher: onsemi
+document_id: "MBR120ESFT1/D"
+document_type: datasheet
+
+revision: "5"
+date: "2024-01"
+
+url: "https://www.onsemi.com/pdf/datasheet/mbr120esft1-d.pdf"

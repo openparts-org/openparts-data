@@ -1,0 +1,28 @@
+# B260-13-F-N: printed verbatim in the ordering table (verified).
+# Package: manufacturers/diodes/SMB-DS13002 (outline read from DS13002; the same outline table is printed in DS13004, see the package header).
+# No lifecycle statement in the datasheet: lifecycle unknown.
+schema_version: "0.1"
+kind: part
+id: diodes/B260-13-F-N
+
+manufacturer: diodes
+mpn: B260-13-F-N
+
+device: diodes/B260
+package: manufacturers/diodes/SMB-DS13002
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - diodes/DS13004
+  - diodes/DS13002
+
+provenance:
+  "/existence":
+    - source: diodes/DS13004
+      page: 1
+      locator: "Ordering Information table row \"B260-13-F-N | Standard | SMB | 3,000/Tape & Reel\""

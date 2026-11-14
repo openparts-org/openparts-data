@@ -1,0 +1,18 @@
+# onsemi MECHANICAL CASE OUTLINE "TO-220-3LD", CASE 340AT ISSUE B, DATE
+# 08 AUG 2022, document number 98AON13818G (one page; supplier "A"/"B"
+# package shapes, MILLIMETERS MIN/NOM/MAX table with no NOM values),
+# downloaded standalone (curl; the "340AT-01.pdf" form redirects, the
+# bare case name serves the PDF). The same issue is embedded in
+# FQP27P06/D p7, FQP47P06/D p8 and FQP17P06/D p7. No STYLE list.
+schema_version: "0.1"
+kind: source
+id: onsemi/98AON13818G
+
+publisher: onsemi
+document_id: 98AON13818G
+document_type: package_drawing
+
+revision: "B"
+date: "2022-08-08"
+
+url: "https://www.onsemi.com/download/package-drawing/pdf/340AT.pdf"

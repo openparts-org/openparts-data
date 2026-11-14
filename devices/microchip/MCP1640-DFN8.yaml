@@ -1,0 +1,39 @@
+# MCP1640/B/C/D synchronous boost regulator, 8-lead 2x3 DFN (MC)
+# pinout. From DS20002234D Table 3-1 "Pin Function Table" (page 9),
+# column "MCP1640/B/C/D 2x3 DFN", checked against the "Package Types"
+# figure "MCP1640 8-Lead 2 x 3 DFN*" (page 1): VFB 1, SGND 2, PGND 3,
+# EN 4, SW 5, VOUTP 6, VOUTS 7, VIN 8, EP 9.
+# Exposed pad: Table 3-1 "Exposed Thermal Pad (EP); must be connected to
+# VSS", section 3.9: "There is no internal electrical connection between
+# the Exposed Thermal Pad (EP) and the SGND and PGND pins" -> key "EP",
+# name EP, type passive (a board-level connection, not a ground pin).
+# Types from the descriptions, as in microchip/MCP1640-SOT23: VFB input,
+# SGND/PGND ground, EN input, SW passive, VOUTP "Output Voltage Power"
+# power, VOUTS "Output Voltage Sense" input, VIN power.
+schema_version: "0.1"
+kind: device
+id: microchip/MCP1640-DFN8
+
+manufacturer: microchip
+category: other
+family: MCP1640/B/C/D
+
+pins:
+  "1": { name: VFB, type: input }
+  "2": { name: SGND, type: ground }
+  "3": { name: PGND, type: ground }
+  "4": { name: EN, type: input }
+  "5": { name: SW, type: passive }
+  "6": { name: VOUTP, type: power }
+  "7": { name: VOUTS, type: input }
+  "8": { name: VIN, type: power }
+  "EP": { name: EP, type: passive }
+
+provenance:
+  "/pins":
+    - source: microchip/DS20002234@revD
+      page: 9
+      locator: "Table 3-1 \"Pin Function Table\", column \"2x3 DFN\" (pins 1-9, 9 = EP); section 3.9 \"Exposed Thermal Pad (EP)\""
+    - source: microchip/DS20002234@revD
+      page: 1
+      locator: "\"Package Types\", MCP1640 8-Lead 2 x 3 DFN*"

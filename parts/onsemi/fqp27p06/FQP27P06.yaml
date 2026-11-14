@@ -1,0 +1,40 @@
+# FQP27P06: the MPN is the datasheet's title device (FQP27P06/D Rev. 4,
+# title, marking diagram "FQP 27P06") but its ORDERING INFORMATION
+# table's Part Number cell reads "FCP380N60" (an apparent copy error,
+# package TO-220-3LD, 1000 Units / Tube) -> not printed verbatim in an
+# orderable list: existence probable, flagged for review.
+# Package: datasheet page 1 "CASE 340AT"; outline from the standalone
+# drawing 98AON13818G.
+# No lifecycle statement for this MPN.
+schema_version: "0.1"
+kind: part
+id: onsemi/FQP27P06
+
+manufacturer: onsemi
+mpn: FQP27P06
+
+device: onsemi/FQP27P06
+package: manufacturers/onsemi/TO220-3LD-340AT
+
+existence:
+  status: probable
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/FQP27P06-D
+  - onsemi/98AON13818G
+
+provenance:
+  "/existence":
+    - source: onsemi/FQP27P06-D
+      page: 1
+      locator: "Title \"FQP27P06\"; ORDERING INFORMATION row reads \"FCP380N60 | TO-220-3LD | 1000 Units / Tube\" (typo, see header)"
+  "/package":
+    - source: onsemi/FQP27P06-D
+      page: 1
+      locator: "Package callout \"CASE 340AT\""
+    - source: onsemi/98AON13818G
+      page: 1
+      locator: "CASE 340AT outline"

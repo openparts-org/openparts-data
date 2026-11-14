@@ -1,0 +1,23 @@
+# MBRA140T3G 1 A 40 V Schottky power rectifier, SMA (CASE 403D). Pins
+# from the outline's STYLE 1 list (page 5) and page 1 "Polarity: Cathode
+# Lead Indicated by Either Notch in Plastic Body or Polarity Band".
+schema_version: "0.1"
+kind: device
+id: onsemi/MBRA140
+
+manufacturer: onsemi
+category: diode
+family: MBRA140
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/MBRA140T3-D
+      page: 5
+      locator: "CASE 403D STYLE 1: \"PIN 1. CATHODE (POLARITY BAND) 2. ANODE\""
+    - source: onsemi/MBRA140T3-D
+      page: 1
+      locator: "Mechanical Characteristics: \"Polarity: Cathode Lead Indicated by Either Notch in Plastic Body or Polarity Band\""

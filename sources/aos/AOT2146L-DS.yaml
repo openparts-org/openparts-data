@@ -1,0 +1,19 @@
+# Official AOS datasheet "AOT2146L/AOB2146L 40V N-Channel AlphaSGT", footer "Rev.1.0: August 2017", 6 pages,
+# downloaded from the URL below and read via pdftotext plus a page-1
+# render (pdftoppm) of the package images. Page 1 carries the
+# "Orderable Part Number | Package Type | Form | Minimum Order Quantity"
+# table and the Top View / Bottom View package images (pins labelled
+# G, D, S; no pin numbers). No package outline in this document -- the
+# outlines are AOS's separate PO-00015 (TO220) and PO-00005 (TO263).
+schema_version: "0.1"
+kind: source
+id: aos/AOT2146L-DS
+
+publisher: aos
+document_id: AOT2146L
+document_type: datasheet
+
+revision: "1.0"
+date: "2017-08"
+
+url: "https://www.aosmd.com/res/datasheets/AOT2146L.pdf"

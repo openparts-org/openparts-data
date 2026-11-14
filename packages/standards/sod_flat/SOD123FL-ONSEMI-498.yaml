@@ -1,0 +1,121 @@
+# onsemi SOD-123-2 1.65x2.70x0.90 (SOD-123FL in the ordering tables),
+# CASE 498 ISSUE E, DOCUMENT NUMBER 98AON11184D (DATE 22 AUG 2023), page 5
+# of MBR120ESFT1/D (January, 2024 - Rev. 5). The outline is an image:
+# read from the rendered page (pdftoppm), MILLIMETERS MIN/NOM/MAX
+# (controlling dimension: millimeters). Note 5 "FLAT LEAD", hence
+# sod_flat.
+# Letters from the drawing's arrows: E = body along the leads (top view,
+# body_length), D = body across (body_width), HE = lead-tip span (side
+# view, overall_length), b = lead width, L = lead length (bottom view,
+# "2X L"), c = lead thickness, A2 = body (body_height), A = overall
+# height, A1 = standoff. E1 (bottom-view body underside 1.70 / 2.10 /
+# 2.50) is not recorded. Top view numbers the terminals "1" (left) and
+# "2"; no STYLE list.
+# The same outline page renders pixel-identical (pdftoppm -r 100 crop,
+# md5) in MBR140SFT1/D Rev. 7 page 5.
+# construction: molded -- page 1 Mechanical Characteristics "Case: Epoxy,
+# Molded".
+schema_version: "0.1"
+kind: package
+id: standards/SOD123FL-ONSEMI-498
+
+family: sod_flat
+lead_count: 2
+
+pitch:
+  unit: mm
+
+dimensions:
+  body_length:
+    nominal: 2.7
+    min: 2.5
+    max: 2.9
+    unit: mm
+  body_width:
+    nominal: 1.65
+    min: 1.5
+    max: 1.8
+    unit: mm
+  body_height:
+    nominal: 0.9
+    min: 0.85
+    max: 0.95
+    unit: mm
+  overall_height:
+    nominal: 0.95
+    min: 0.9
+    max: 0.98
+    unit: mm
+  overall_length:
+    nominal: 3.6
+    min: 3.4
+    max: 3.8
+    unit: mm
+  lead_width:
+    nominal: 0.9
+    min: 0.7
+    max: 1.1
+    unit: mm
+  lead_length:
+    nominal: 0.75
+    min: 0.55
+    max: 0.95
+    unit: mm
+  lead_thickness:
+    nominal: 0.15
+    min: 0.1
+    max: 0.2
+    unit: mm
+  standoff:
+    nominal: 0.05
+    min: 0.0
+    max: 0.1
+    unit: mm
+
+construction: molded
+
+geometry:
+  type: parametric
+  generator: sod_flat
+
+provenance:
+  "/construction":
+    - source: onsemi/MBR120ESFT1-D
+      page: 1
+      locator: "Mechanical Characteristics: \"Case: Epoxy, Molded\""
+  "/dimensions/body_length":
+    - source: onsemi/MBR120ESFT1-D
+      page: 5
+      locator: "CASE 498 table, E 2.50 / 2.70 / 2.90"
+  "/dimensions/body_width":
+    - source: onsemi/MBR120ESFT1-D
+      page: 5
+      locator: "CASE 498 table, D 1.50 / 1.65 / 1.80"
+  "/dimensions/body_height":
+    - source: onsemi/MBR120ESFT1-D
+      page: 5
+      locator: "CASE 498 table, A2 0.85 / 0.90 / 0.95"
+  "/dimensions/overall_height":
+    - source: onsemi/MBR120ESFT1-D
+      page: 5
+      locator: "CASE 498 table, A 0.90 / 0.95 / 0.98"
+  "/dimensions/overall_length":
+    - source: onsemi/MBR120ESFT1-D
+      page: 5
+      locator: "CASE 498 table, HE 3.40 / 3.60 / 3.80"
+  "/dimensions/lead_width":
+    - source: onsemi/MBR120ESFT1-D
+      page: 5
+      locator: "CASE 498 table, b 0.70 / 0.90 / 1.10"
+  "/dimensions/lead_length":
+    - source: onsemi/MBR120ESFT1-D
+      page: 5
+      locator: "CASE 498 table, L 0.55 / 0.75 / 0.95"
+  "/dimensions/lead_thickness":
+    - source: onsemi/MBR120ESFT1-D
+      page: 5
+      locator: "CASE 498 table, c 0.10 / 0.15 / 0.20"
+  "/dimensions/standoff":
+    - source: onsemi/MBR120ESFT1-D
+      page: 5
+      locator: "CASE 498 table, A1 0.00 / 0.05 / 0.10"

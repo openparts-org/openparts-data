@@ -1,0 +1,19 @@
+# Diodes Incorporated datasheet "B120/B - B160/B 1.0A Surface-Mount Schottky Barrier Rectifier (SMA/SMB)",
+# document number DS13002 Rev. 21 - 2, footer date "October 2026".
+# Downloaded with curl from diodes.com (first-party, HTTP 200, checked to
+# be a PDF with this document number on page 1); read with pdftotext
+# -layout and rendered (pdftoppm) for the outline drawing. Page numbers
+# cited are PDF page indices (= printed "n of N").
+# The same file is served for .../download/B130.pdf (identical checksum).
+schema_version: "0.1"
+kind: source
+id: diodes/DS13002
+
+publisher: diodes
+document_id: DS13002
+document_type: datasheet
+
+revision: "21-2"
+date: "2026-10"
+
+url: "https://www.diodes.com/datasheet/download/B140.pdf"

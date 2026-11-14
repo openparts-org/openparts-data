@@ -1,0 +1,28 @@
+# LM317 1.5-A adjustable regulator, KCS (TO-220) pinout. SLVS044Z
+# "Pin Functions, Metal Can Packages" (page 5), TO-220 (Legacy Chip)
+# column: ADJUST 1, OUTPUT "2, TAB", INPUT 3; checked against Figure 5-2
+# "KCS or KCT Package, 3-Pin TO-220 (Top View)" (same page). The TO-220
+# tab (OUTPUT) is not a board pad, so only pins 1-3 are recorded.
+# IN/OUT typed power (regulator supply pins, as ti/LM1117-3.3);
+# ADJUST typed input (TO-92 ti/LM317L precedent).
+schema_version: "0.1"
+kind: device
+id: ti/LM317-KCS
+
+manufacturer: ti
+category: other
+family: LM317
+
+pins:
+  "1": { name: "ADJUST", type: input }
+  "2": { name: "OUTPUT", type: power }
+  "3": { name: "INPUT", type: power }
+
+provenance:
+  "/pins":
+    - source: ti/SLVS044Z
+      page: 5
+      locator: "\"Pin Functions, Metal Can Packages\", TO-220 (Legacy Chip) column: ADJUST 1, INPUT 3, OUTPUT \"2, TAB\""
+    - source: ti/SLVS044Z
+      page: 5
+      locator: "Figure 5-2 \"KCS or KCT Package, 3-Pin TO-220 (Top View)\""

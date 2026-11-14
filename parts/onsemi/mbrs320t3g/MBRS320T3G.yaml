@@ -1,0 +1,33 @@
+# MBRS320T3G: printed verbatim in the datasheet's ORDERING INFORMATION
+# table (page 1), so existence is "verified". No lifecycle statement for
+# this OPN, so lifecycle is unknown.
+# Package: page-4 CASE 403AC (98AON97675F), standards/DO214AB-
+# ONSEMI-403AC (read from this page).
+schema_version: "0.1"
+kind: part
+id: onsemi/MBRS320T3G
+
+manufacturer: onsemi
+mpn: MBRS320T3G
+
+device: onsemi/MBRS340-SERIES
+package: standards/DO214AB-ONSEMI-403AC
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/MBRS340T3-D
+
+provenance:
+  "/existence":
+    - source: onsemi/MBRS340T3-D
+      page: 1
+      locator: "ORDERING INFORMATION: \"MBRS320T3G | SMC (Pb-Free) | 2,500 / Tape & Reel\""
+  "/package":
+    - source: onsemi/MBRS340T3-D
+      page: 4
+      locator: "MECHANICAL CASE OUTLINE -- see header"

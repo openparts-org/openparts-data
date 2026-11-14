@@ -1,0 +1,36 @@
+# TPS62130RGTR: SLVSAG7F PACKAGE OPTION ADDENDUM (page 32) row "TPS62130RGTR
+# Active  Production  VQFN (RGT) | 16" -- MPN printed verbatim in TI's orderable
+# list (existence verified); lifecycle "Active" is TI's own Status column.
+# Package RGT = outline RGT0016C (SLVSAG7F page 40).
+schema_version: "0.1"
+kind: part
+id: ti/TPS62130RGTR
+
+manufacturer: ti
+mpn: TPS62130RGTR
+
+device: ti/TPS62130-RGT
+package: manufacturers/ti/RGT0016C
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SLVSAG7F
+
+provenance:
+  "/existence":
+    - source: ti/SLVSAG7F
+      page: 32
+      locator: "Package option addendum table, row \"TPS62130RGTR\" (VQFN (RGT) | 16)"
+  "/lifecycle":
+    - source: ti/SLVSAG7F
+      page: 32
+      locator: "Package option addendum table, row \"TPS62130RGTR\", Status \"Active\""
+  "/package":
+    - source: ti/SLVSAG7F
+      page: 40
+      locator: "RGT0016C package outline"

@@ -1,0 +1,22 @@
+# SS13FL 1 A 30 V Schottky barrier rectifier, SOD-123FL (CASE 425AD).
+# Pins from the page-1 symbol (1 = Cathode, 2 = Anode) and "Band
+# Indicates Cathode" -- the same symbol the existing onsemi/SS14FL
+# device
+# cites.
+schema_version: "0.1"
+kind: device
+id: onsemi/SS13FL
+
+manufacturer: onsemi
+category: diode
+family: SS13FL
+
+pins:
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
+
+provenance:
+  "/pins":
+    - source: onsemi/SS14FL-D
+      page: 1
+      locator: "Symbol \"1 Cathode\" / \"2 Anode\"; marking diagram \"Band Indicates Cathode\""

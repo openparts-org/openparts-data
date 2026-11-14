@@ -1,0 +1,36 @@
+# LM2940S-5.0/NOPB: SNVS769J PACKAGE OPTION ADDENDUM (page 23) row "LM2940S-5.0/NOPB
+# Active  Production  DDPAK/ TO-263 (KTT) | 3" -- MPN printed verbatim in TI's orderable
+# list (existence verified); lifecycle "Active" is TI's own Status column.
+# Package KTT = outline KTT0003B (SNVS769J page 42).
+schema_version: "0.1"
+kind: part
+id: ti/LM2940S-5.0/NOPB
+
+manufacturer: ti
+mpn: LM2940S-5.0/NOPB
+
+device: ti/LM2940-KTT
+package: manufacturers/ti/KTT0003B
+
+existence:
+  status: verified
+
+lifecycle:
+  status: active
+
+sources:
+  - ti/SNVS769J
+
+provenance:
+  "/existence":
+    - source: ti/SNVS769J
+      page: 23
+      locator: "Package option addendum table, row \"LM2940S-5.0/NOPB\" (DDPAK/ TO-263 (KTT) | 3)"
+  "/lifecycle":
+    - source: ti/SNVS769J
+      page: 23
+      locator: "Package option addendum table, row \"LM2940S-5.0/NOPB\", Status \"Active\""
+  "/package":
+    - source: ti/SNVS769J
+      page: 42
+      locator: "KTT0003B package outline"

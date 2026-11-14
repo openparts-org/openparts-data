@@ -1,0 +1,31 @@
+# AOB66616L N-channel MOSFET, TO-263 / D2PAK (AOS PO-00005). Datasheet AOT66616L
+# page 1 "TO-263 D2PAK" Top View image labels the two full leads G
+# (left) and S (right) with the tab D (Bottom View: tab D, centre stub
+# between G and S). No pin numbers are printed (datasheet or
+# PO-00005). Numbers follow the d2pak frame and the generator's tab
+# convention: 1 = Gate, 2 = Drain (trimmed centre stub, no pad),
+# 3 = Source, 4 = Drain (tab) -- position-derived, flagged for review.
+# The tab and the centre stub are both labelled D (one drain terminal),
+# so the tab carries connected_to "2" with the same name.
+schema_version: "0.1"
+kind: device
+id: aos/AOB66616L
+
+manufacturer: aos
+category: transistor
+family: AOB66616L
+
+pins:
+  "1": { name: Gate, type: passive }
+  "2": { name: Drain, type: passive }
+  "3": { name: Source, type: passive }
+  "4": { name: Drain, type: passive, connected_to: "2" }
+
+provenance:
+  "/pins":
+    - source: aos/AOT66616L-DS
+      page: 1
+      locator: "\"TO-263 D2PAK\" Top View / Bottom View images: leads G and S, centre stub and tab D; no pin numbers printed -- see header"
+    - source: aos/PO-00005
+      page: 1
+      locator: "TOP VIEW: three leads at \"2X e\", centre lead a stub at the body; no numbers printed"

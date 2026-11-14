@@ -1,0 +1,25 @@
+# LM2940 1-A LDO (LM2940-N, all fixed voltages), KTT (TO-263) pinout.
+# SNVS769J "Pin Functions" (page 3), KTT column: IN 1, GND 2, OUT 3, GND
+# 4; outline KTT0003B (page 42) labels the tab "4".
+schema_version: "0.1"
+kind: device
+id: ti/LM2940-KTT
+
+manufacturer: ti
+category: other
+family: LM2940
+
+pins:
+  "1": { name: "IN", type: power }
+  "2": { name: "GND", type: ground }
+  "3": { name: "OUT", type: power }
+  "4": { name: "GND", type: ground }
+
+provenance:
+  "/pins":
+    - source: ti/SNVS769J
+      page: 3
+      locator: "\"Pin Functions\", KTT column: IN 1, GND 2, OUT 3, GND 4"
+    - source: ti/SNVS769J
+      page: 42
+      locator: "KTT0003B outline, bottom view: tab labelled \"4\""

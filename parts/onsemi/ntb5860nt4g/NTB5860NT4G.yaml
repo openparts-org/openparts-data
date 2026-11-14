@@ -1,0 +1,38 @@
+# NTB5860NT4G: printed verbatim in NTB5860N/D Rev. 2 ORDERING
+# INFORMATION (page 6) -> existence verified.
+# Package: datasheet page 2 "CASE 418B"; outline from the standalone
+# drawing 98ASB42761B.
+# (NTB5860N/D itself embeds older issues 221A-09 AF / 418B-04 J.)
+# No lifecycle statement for this MPN.
+schema_version: "0.1"
+kind: part
+id: onsemi/NTB5860NT4G
+
+manufacturer: onsemi
+mpn: NTB5860NT4G
+
+device: onsemi/NTB5860N
+package: manufacturers/onsemi/TO263-D2PAK3-418B-TabPin4
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - onsemi/NTB5860N-D
+  - onsemi/98ASB42761B
+
+provenance:
+  "/existence":
+    - source: onsemi/NTB5860N-D
+      page: 6
+      locator: "ORDERING INFORMATION: \"NTB5860NT4G | D2PAK (Pb-Free) | 800 / Tape & Reel\""
+  "/package":
+    - source: onsemi/NTB5860N-D
+      page: 2
+      locator: "Package callout \"CASE 418B\""
+    - source: onsemi/98ASB42761B
+      page: 1
+      locator: "CASE 418B outline"

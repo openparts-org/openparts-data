@@ -1,0 +1,47 @@
+# TPS62130 / TPS62130A (adjustable) 3-A step-down converter, RGT
+# (VQFN-16) pinout. SLVSAG7F Table 6-1 "Pin Functions" (page 3): SW
+# "1,2,3", PG 4, FB 5, AGND 6, FSW 7, DEF 8, SS/TR 9, AVIN 10, PVIN
+# "11,12", EN 13, VOS 14, PGND "15,16"; Figure 6-1 "16-Pin VQFN With
+# Exposed Thermal Pad (RGT) Top View". Exposed Thermal Pad: "Must be
+# connected to AGND (pin 6), PGND (pin 15,16), and common ground plane"
+# -- a connection instruction, not an internal one -> key "EP", type
+# passive. SW (three pins in one table row, the power-stage switch
+# node) is typed power (flagged for review: passive, the type used for
+# single SW pins elsewhere in ti/, is not exempt from
+# pin.duplicate_name and the source does not state the three are
+# internally connected).
+schema_version: "0.1"
+kind: device
+id: ti/TPS62130-RGT
+
+manufacturer: ti
+category: other
+family: TPS62130
+
+pins:
+  "1": { name: "SW", type: power }
+  "2": { name: "SW", type: power }
+  "3": { name: "SW", type: power }
+  "4": { name: "PG", type: output }
+  "5": { name: "FB", type: input }
+  "6": { name: "AGND", type: ground }
+  "7": { name: "FSW", type: input }
+  "8": { name: "DEF", type: input }
+  "9": { name: "SS/TR", type: input }
+  "10": { name: "AVIN", type: power }
+  "11": { name: "PVIN", type: power }
+  "12": { name: "PVIN", type: power }
+  "13": { name: "EN", type: input }
+  "14": { name: "VOS", type: input }
+  "15": { name: "PGND", type: ground }
+  "16": { name: "PGND", type: ground }
+  "EP": { name: "Exposed Thermal Pad", type: passive }
+
+provenance:
+  "/pins":
+    - source: ti/SLVSAG7F
+      page: 3
+      locator: "Table 6-1 \"Pin Functions\" (SW 1,2,3 ... PGND 15,16; Exposed Thermal Pad)"
+    - source: ti/SLVSAG7F
+      page: 3
+      locator: "Figure 6-1 \"16-Pin VQFN With Exposed Thermal Pad (RGT) Top View\""

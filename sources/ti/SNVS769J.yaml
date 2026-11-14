@@ -1,0 +1,20 @@
+# Official TI datasheet "LM2940x 1-A Low Dropout Regulator"
+# (SNVS769J, revised December 2014), 46 pages, downloaded 2026-11-14 with curl
+# from the URL below (file checked: PDF, title page names SNVS769J). Read
+# with pdftotext -layout; pin configuration figures and the outline
+# drawings NGN0008A (page 32), NDE0003B (page 41) and KTT0003B (page 42) were rendered and read as images. The PACKAGE OPTION
+# ADDENDUM inside this PDF is dated 17-Sep-2026 (newer than the datasheet
+# revision; PDF CreationDate 2026). Page numbers are PDF page indices
+# (= the printed page numbers on numbered pages).
+schema_version: "0.1"
+kind: source
+id: ti/SNVS769J
+
+publisher: ti
+document_id: SNVS769J
+document_type: datasheet
+
+revision: "J"
+date: "2014-12"
+
+url: "https://www.ti.com/lit/ds/symlink/lm2940-n.pdf"
