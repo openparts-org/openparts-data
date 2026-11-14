@@ -1,0 +1,39 @@
+# Weekly check of every Source url. Reports in one issue ("Source links
+# to check"), updated each run and closed when everything answers; never
+# fails: vendors that block automated clients would make it red forever.
+name: link-check
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check
+        run: scripts/check-links.sh > report.md 2> summary.txt; cat summary.txt
+      - name: Report
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Source links to check"
+          number="$(gh issue list --state open --search "in:title \"$title\"" --json number -q '.[0].number')"
+          if grep -q '^| `' report.md; then
+            {
+              echo "Weekly link check ($(date -u +%F)): $(cat summary.txt)."
+              echo
+              echo "A failure may only mean the vendor refuses automated clients -- open the link in a browser before changing anything."
+              echo
+              cat report.md
+            } > body.md
+            if [ -n "$number" ]; then gh issue edit "$number" --body-file body.md; else gh issue create --title "$title" --body-file body.md; fi
+          elif [ -n "$number" ]; then
+            gh issue close "$number" --comment "Every source link answered on $(date -u +%F)."
+          fi

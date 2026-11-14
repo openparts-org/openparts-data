@@ -18,6 +18,10 @@
 # Lead dimensions (overall_*, standoff, lead_*) added as a candidate change for
 # human review (Agent Ingestion Specification); values copied as printed --
 # where the table has no nominal only min/max are recorded.
+# Exposed pad (2026-11-15, correcting the note above): Table 65
+# "QFN48 dimensions in millimeters" (page 937) prints one column
+# "D2, E2" = 4.5/4.6/4.7 (min/nom/max), so both sides are equal.
+# Re-downloaded from the same DigiKey-hosted URL the Source cites.
 schema_version: "0.1"
 kind: package
 id: standards/QFN48-nRF52840
@@ -54,6 +58,17 @@ dimensions:
     min: 0.0
     max: 0.05
     unit: mm
+  exposed_pad:
+    width:
+      nominal: 4.6
+      min: 4.5
+      max: 4.7
+      unit: mm
+    length:
+      nominal: 4.6
+      min: 4.5
+      max: 4.7
+      unit: mm
 
 geometry:
   type: parametric
@@ -92,3 +107,11 @@ provenance:
     - source: nordic/4413_417@v1.11
       page: 937
       locator: "Section 7.2.2, Table 65 \"QFN48 dimensions in millimeters\", symbol \"A1\""
+  "/dimensions/exposed_pad/width":
+    - source: nordic/4413_417@v1.11
+      page: 937
+      locator: "Section 7.2.2, Table 65 \"QFN48 dimensions in millimeters\", column \"D2, E2\" (4.5/4.6/4.7)"
+  "/dimensions/exposed_pad/length":
+    - source: nordic/4413_417@v1.11
+      page: 937
+      locator: "Section 7.2.2, Table 65 \"QFN48 dimensions in millimeters\", column \"D2, E2\" (4.5/4.6/4.7)"

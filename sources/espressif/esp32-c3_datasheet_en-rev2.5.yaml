@@ -1,0 +1,19 @@
+# ESP32-C3 Series Datasheet v2.5 (Revision History: 2026-11-11, v2.5).
+# Downloaded 2026-11-15 from Espressif's own URL (same URL as
+# esp32-c3_datasheet_en@rev2.4, which now serves v2.5; 78 pages, every
+# footer "ESP32-C3 Series Datasheet v2.5"). Read for the QFN32 exposed
+# pad (Figure 7-1, PDF page 67; printed page number equals the PDF page
+# index). The Figure 7-1 b/L/A1/A3 rows match those read from v2.4.
+schema_version: "0.1"
+kind: source
+id: espressif/esp32-c3_datasheet_en@rev2.5
+
+publisher: espressif
+document_id: esp32-c3_datasheet_en
+document_type: datasheet
+
+revision: "2.5"
+date: "2026-11-11"
+retrieved: "2026-11-15"
+
+url: "https://documentation.espressif.com/esp32-c3_datasheet_en.pdf"

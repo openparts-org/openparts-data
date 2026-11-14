@@ -12,6 +12,11 @@
 # Lead dimensions (overall_*, standoff, lead_*) added as a candidate change for
 # human review (Agent Ingestion Specification); values copied as printed --
 # where the table has no nominal only min/max are recorded.
+# Exposed pad (2026-11-15, superseding the note above): read from
+# datasheet v1.6 (espressif/esp32-c6_datasheet_en@rev1.6), Figure 7-1
+# QFN40 bottom view, page 78: "3.300+/-0.050 Exp.DAP" both horizontally
+# (X, width) and vertically (length). The v1.6 drawing's terminal
+# width/length, A1 and A3 callouts equal those cited from v1.5 below.
 schema_version: "0.1"
 kind: package
 id: standards/QFN40-ESP32-C6
@@ -52,6 +57,17 @@ dimensions:
     min: 0.0
     max: 0.05
     unit: mm
+  exposed_pad:
+    width:
+      nominal: 3.3
+      min: 3.25
+      max: 3.35
+      unit: mm
+    length:
+      nominal: 3.3
+      min: 3.25
+      max: 3.35
+      unit: mm
 
 geometry:
   type: parametric
@@ -89,3 +105,11 @@ provenance:
     - source: espressif/esp32-c6_datasheet_en@rev1.5
       page: 78
       locator: "Figure 7-1 (QFN40) drawing, \"A1\" 0.000-0.050"
+  "/dimensions/exposed_pad/width":
+    - source: espressif/esp32-c6_datasheet_en@rev1.6
+      page: 78
+      locator: "Figure 7-1 (QFN40) bottom view, horizontal callout \"3.300+/-0.050 Exp.DAP\""
+  "/dimensions/exposed_pad/length":
+    - source: espressif/esp32-c6_datasheet_en@rev1.6
+      page: 78
+      locator: "Figure 7-1 (QFN40) bottom view, vertical callout \"3.300+/-0.050 Exp.DAP\""

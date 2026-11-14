@@ -12,6 +12,10 @@
 # Lead dimensions (overall_*, standoff, lead_*) added as a candidate change for
 # human review (Agent Ingestion Specification); values copied as printed --
 # where the table has no nominal only min/max are recorded.
+# Exposed pad (2026-11-15, superseding the note above): Figure 7-1
+# "Dimensional Ref." table, page 77: D2 3.950/4.000/4.050 and E2
+# 3.950/4.000/4.050 mm (min/nom/max); D2 is drawn along X. This is the
+# standard EPAD; ESP32-S3FH4R2's bigger EPAD (Figure 7-2) is not this package.
 schema_version: "0.1"
 kind: package
 id: standards/QFN56-ESP32-S3
@@ -52,6 +56,17 @@ dimensions:
     min: 0.0
     max: 0.05
     unit: mm
+  exposed_pad:
+    width:
+      nominal: 4.0
+      min: 3.95
+      max: 4.05
+      unit: mm
+    length:
+      nominal: 4.0
+      min: 3.95
+      max: 4.05
+      unit: mm
 
 geometry:
   type: parametric
@@ -89,3 +104,11 @@ provenance:
     - source: espressif/esp32-s3_datasheet_en@rev2.2
       page: 77
       locator: "Figure 7-1 \"Dimensional Ref.\" table, symbol \"A1\" (no nom)"
+  "/dimensions/exposed_pad/width":
+    - source: espressif/esp32-s3_datasheet_en@rev2.2
+      page: 77
+      locator: "Figure 7-1 \"Dimensional Ref.\" table, symbol \"D2\" (3.950/4.000/4.050; drawn along X in the bottom view)"
+  "/dimensions/exposed_pad/length":
+    - source: espressif/esp32-s3_datasheet_en@rev2.2
+      page: 77
+      locator: "Figure 7-1 \"Dimensional Ref.\" table, symbol \"E2\" (3.950/4.000/4.050)"

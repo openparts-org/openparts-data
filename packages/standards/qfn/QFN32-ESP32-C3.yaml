@@ -12,6 +12,11 @@
 # Lead dimensions (overall_*, standoff, lead_*) added as a candidate change for
 # human review (Agent Ingestion Specification); values copied as printed --
 # where the table has no nominal only min/max are recorded.
+# Exposed pad (2026-11-15, superseding the note above): read from
+# datasheet v2.5 (espressif/esp32-c3_datasheet_en@rev2.5), Figure 7-1
+# "Dimensional Ref." table, page 67: D2 3.650/3.700/3.750 and E2
+# 3.650/3.700/3.750 mm (min/nom/max); D2 is drawn along X. The v2.5 table's
+# b/L/A1/A3 rows equal those cited from v2.4 below.
 schema_version: "0.1"
 kind: package
 id: standards/QFN32-ESP32-C3
@@ -51,6 +56,17 @@ dimensions:
   standoff:
     max: 0.05
     unit: mm
+  exposed_pad:
+    width:
+      nominal: 3.7
+      min: 3.65
+      max: 3.75
+      unit: mm
+    length:
+      nominal: 3.7
+      min: 3.65
+      max: 3.75
+      unit: mm
 
 geometry:
   type: parametric
@@ -88,3 +104,11 @@ provenance:
     - source: espressif/esp32-c3_datasheet_en@rev2.4
       page: 66
       locator: "Figure 7-1 \"Dimensional Ref.\" table, symbol \"A1\" (max only)"
+  "/dimensions/exposed_pad/width":
+    - source: espressif/esp32-c3_datasheet_en@rev2.5
+      page: 67
+      locator: "Figure 7-1 \"Dimensional Ref.\" table, symbol \"D2\" (3.650/3.700/3.750; drawn along X in the bottom view)"
+  "/dimensions/exposed_pad/length":
+    - source: espressif/esp32-c3_datasheet_en@rev2.5
+      page: 67
+      locator: "Figure 7-1 \"Dimensional Ref.\" table, symbol \"E2\" (3.650/3.700/3.750)"

@@ -1,0 +1,20 @@
+# ESP32-C6 Series Datasheet v1.6 (Revision History: 2026-11-10, v1.6).
+# Downloaded 2026-11-15 from Espressif's own URL (same URL as
+# esp32-c6_datasheet_en@rev1.5, which now serves v1.6; 87 pages, every
+# footer "ESP32-C6 Series Datasheet v1.6"). Read for the QFN40 exposed
+# pad (Figure 7-1, PDF page 78; printed page number equals the PDF page
+# index). The Figure 7-1 terminal width/length, A1 and A3 callouts match
+# those read from v1.5.
+schema_version: "0.1"
+kind: source
+id: espressif/esp32-c6_datasheet_en@rev1.6
+
+publisher: espressif
+document_id: esp32-c6_datasheet_en
+document_type: datasheet
+
+revision: "1.6"
+date: "2026-11-10"
+retrieved: "2026-11-15"
+
+url: "https://documentation.espressif.com/esp32-c6_datasheet_en.pdf"
