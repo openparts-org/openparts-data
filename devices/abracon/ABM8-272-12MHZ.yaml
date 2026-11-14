@@ -1,0 +1,27 @@
+# Abracon ABM8-272-T3 12.000 MHz fundamental AT-cut crystal (CL 10 pF,
+# ESR 50 ohm max, C0 3.0 pF max, +/-30 ppm, -40..+85 C) in a 4-pad
+# 3.2 x 2.5 mm ceramic package. Pin map from the "TOP VIEW" on PDF page 2
+# of abracon/456603@revB: the crystal symbol is drawn between pads 1 and 3;
+# pads 2 and 4 are labelled "GND". The drawing gives no names to the
+# crystal terminals: they are named XTAL1 (pad 1) / XTAL2 (pad 3) only
+# for distinct names (electrically symmetric), as for abracon/ABS07-32.768KHZ.
+# The GND pads are typed `ground` because the source labels them GND.
+schema_version: "0.1"
+kind: device
+id: abracon/ABM8-272-12MHZ
+
+manufacturer: abracon
+category: crystal
+family: ABM8-272
+
+pins:
+  "1": { name: "XTAL1", type: passive }
+  "2": { name: "GND", type: ground }
+  "3": { name: "XTAL2", type: passive }
+  "4": { name: "GND", type: ground }
+
+provenance:
+  "/pins":
+    - source: abracon/456603@revB
+      page: 2
+      locator: "Mechanical Dimensions, TOP VIEW: pads 4 (top-left, \"GND\"), 3 (top-right), 1 (bottom-left), 2 (bottom-right, \"GND\"); crystal symbol connected between pads 1 and 3"

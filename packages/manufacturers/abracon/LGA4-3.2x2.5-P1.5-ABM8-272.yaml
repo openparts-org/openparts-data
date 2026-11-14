@@ -1,0 +1,105 @@
+# Abracon ABM8-272-T3 4-pad ceramic crystal package, 3.2 x 2.5 mm, from
+# "Mechanical Dimensions" (PDF page 2) of abracon/456603@revB (raster
+# drawing, read from a 400 dpi render).
+#
+# Frame: modelled as `lga` with two terminals on the left edge and two on
+# the right, lead_layout [2, 0, 2, 0], body_width = the 3.2 side (X).
+# Numbering: the TOP VIEW numbers 4 top-left, 1 bottom-left, 2
+# bottom-right, 3 top-right (the BOTTOM VIEW is the same land flipped top
+# to bottom: 1 2 on top, 4 3 below). The generator's positions are 1
+# top-left, 2 bottom-left, 3 bottom-right, 4 top-right, so pad_order lists
+# the source numbers in that order: [4, 1, 2, 3].
+#
+# Terminals (bottom view): 0.9+-0.10 along X (lead_length), 0.80+-0.10
+# along Y (lead_width), 1.2+-0.10 between the left and right terminals,
+# 0.70+-0.10 between the two terminals of one side. pitch = 0.80 + 0.70
+# = 1.50 centre to centre (sum of printed dimensions, nominal only).
+#
+# lead_inset left out: the drawing shows the terminals reaching the body
+# outline (flush), but the printed X dimensions sum to 0.9 + 1.2 + 0.9 =
+# 3.0 against the 3.2+-0.20 body (and 0.8 + 0.7 + 0.8 = 2.3 vs 2.5 in Y),
+# i.e. an implied ~0.1 mm setback that is not printed. Not derived (skill
+# rule: no unstated dimension from differences). Consequence: the
+# generator draws the terminals flush, 1.4 mm apart instead of the printed
+# 1.2 -- a reviewer may want to set lead_inset or a `pads` land.
+# No recommended land pattern is in the public 3-page extract -> no `pads`
+# (footprint lands from IPC-7351B).
+# Height: the side view says "See Table 2", which is not in the extract;
+# body_height 0.8 is the "3.2 x 2.5 x 0.8mm" size in the title block.
+# The note "the chamfer could be located on pin #1, 3, or 4" means the
+# body chamfer is not a pin-1 mark.
+schema_version: "0.1"
+kind: package
+id: manufacturers/abracon/LGA4-3.2x2.5-P1.5-ABM8-272
+
+family: lga
+lead_count: 4
+lead_layout: [2, 0, 2, 0]
+pad_order: ["4", "1", "2", "3"]
+
+pitch:
+  nominal: 1.5
+  unit: mm
+
+dimensions:
+  body_width:
+    nominal: 3.2
+    min: 3.0
+    max: 3.4
+    unit: mm
+  body_length:
+    nominal: 2.5
+    min: 2.3
+    max: 2.7
+    unit: mm
+  body_height:
+    nominal: 0.8
+    unit: mm
+  lead_length:
+    nominal: 0.9
+    min: 0.8
+    max: 1.0
+    unit: mm
+  lead_width:
+    nominal: 0.8
+    min: 0.7
+    max: 0.9
+    unit: mm
+
+geometry:
+  type: parametric
+  generator: lga
+
+provenance:
+  "/pitch":
+    - source: abracon/456603@revB
+      page: 2
+      locator: "Mechanical Dimensions, BOTTOM VIEW: terminal height 0.80+-0.10 plus gap 0.70+-0.10 between the two terminals of one side -> 0.80 + 0.70 = 1.50 centre to centre"
+  "/lead_layout":
+    - source: abracon/456603@revB
+      page: 2
+      locator: "Mechanical Dimensions, BOTTOM VIEW and TOP VIEW: four corner terminals, two on each short (2.5 mm) side"
+  "/pad_order":
+    - source: abracon/456603@revB
+      page: 2
+      locator: "Mechanical Dimensions, TOP VIEW: 4 top-left, 1 bottom-left, 2 bottom-right, 3 top-right -> generator positions (TL, BL, BR, TR) = [4, 1, 2, 3]"
+  "/dimensions/body_width":
+    - source: abracon/456603@revB
+      page: 2
+      locator: "Mechanical Dimensions, top outline: 3.2+-0.20"
+  "/dimensions/body_length":
+    - source: abracon/456603@revB
+      page: 2
+      locator: "Mechanical Dimensions, top outline: 2.5+-0.20"
+  "/dimensions/body_height":
+    - source: abracon/456603@revB
+      page: 2
+      locator: "Title block \"3.2 x 2.5 x 0.8mm\" (side view height refers to Table 2, not in the public extract)"
+  "/dimensions/lead_length":
+    - source: abracon/456603@revB
+      page: 2
+      locator: "Mechanical Dimensions, BOTTOM VIEW: terminal width along the long side 0.9+-0.10"
+  "/dimensions/lead_width":
+    - source: abracon/456603@revB
+      page: 2
+      locator: "Mechanical Dimensions, BOTTOM VIEW: terminal height 0.80+-0.10"

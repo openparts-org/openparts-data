@@ -4,6 +4,10 @@
 # the "EP" key per Canonical Data Specification section 14, matching
 # how the QFN geometry generator keys its Exposed Pad Lead).
 #
+# VREG_VOUT (the core regulator's output, which feeds DVDD) is typed
+# power_out and QSPI_SCLK (the clock RP2040 drives to its flash) clock_out
+# (2026-11-15), so schematic checks see who drives those nets.
+#
 # `type` is this dataset's categorization of the datasheet's own "Type"
 # column (Digital IO / Digital In / Analogue / Power / Ground), not a
 # verbatim datasheet field.
@@ -60,14 +64,14 @@ pins:
   "42": { name: IOVDD, type: power }
   "43": { name: ADC_AVDD, type: power }
   "44": { name: VREG_VIN, type: power }
-  "45": { name: VREG_VOUT, type: power }
+  "45": { name: VREG_VOUT, type: power_out }
   "46": { name: USB_DM, type: io }
   "47": { name: USB_DP, type: io }
   "48": { name: USB_VDD, type: power }
   "49": { name: IOVDD, type: power }
   "50": { name: DVDD, type: power }
   "51": { name: QSPI_SD3, type: io }
-  "52": { name: QSPI_SCLK, type: clock }
+  "52": { name: QSPI_SCLK, type: clock_out }
   "53": { name: QSPI_SD0, type: io }
   "54": { name: QSPI_SD2, type: io }
   "55": { name: QSPI_SD1, type: io }

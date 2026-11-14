@@ -1,0 +1,38 @@
+# Abracon ABM8-272-T3: 12.000 MHz crystal, 3.2 x 2.5 x 0.8 mm, tape and
+# reel 3,000 pcs (the crystal of the Raspberry Pi Pico). existence:
+# verified -- the full orderable P/N "ABM8-272-T3" is printed verbatim as
+# the subject of its own source-control drawing (title block of every
+# page) with a single fixed frequency (12.000 MHz) and packaging (T3 =
+# "Tape and Reel (3,000pcs/reel)"); it is not assembled from a
+# part-numbering legend. There is no separate ordering table; the
+# abracon.com product page is behind a Cloudflare challenge (not read).
+# lifecycle unknown: no production-status statement in the drawing.
+# Electrical (p1): CL 10 pF typ, ESR 50 ohm max, C0 3.0 pF max, drive
+# 10 typ / 200 max uW, +/-30 ppm tolerance and stability, -40..+85 C.
+schema_version: "0.1"
+kind: part
+id: abracon/ABM8-272-T3
+
+manufacturer: abracon
+mpn: ABM8-272-T3
+
+device: abracon/ABM8-272-12MHZ
+package: manufacturers/abracon/LGA4-3.2x2.5-P1.5-ABM8-272
+
+existence:
+  status: verified
+
+lifecycle:
+  status: unknown
+
+sources:
+  - abracon/456603@revB
+
+provenance:
+  "/existence":
+    - source: abracon/456603@revB
+      page: 1
+      locator: "Title block \"ABM8-272-T3 Ultra Miniature Ceramic SMD Crystal\", Abracon Drawing # 456603 Revision B; Key Electrical Specifications: Center Frequency 12.000 MHz"
+    - source: abracon/456603@revB
+      page: 3
+      locator: "Packaging: \"Tape and Reel (3,000pcs/reel)\""

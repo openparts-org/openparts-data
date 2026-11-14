@@ -3,7 +3,7 @@
 # gives one pin list for both packages: "Pin: 1. Adjust/Ground
 # 2. Output 3. Input", and "Heatsink tab is connected to Pin 2." Both
 # case outlines (318H page 17, 369C page 18) number the tab "4", so pin
-# "4" = Output (the tab), typed power like pin 2 (a regulator's tab
+# "4" = Output (the tab), typed power_out like pin 2 (a regulator's tab
 # repeating VOUT). In the DPAK, lead 2 is trimmed at the body (no pad);
 # its Output connection reaches the board through the tab.
 schema_version: "0.1"
@@ -16,9 +16,9 @@ family: NCP1117
 
 pins:
   "1": { name: Adjust/Ground, type: ground }
-  "2": { name: Output, type: power }
+  "2": { name: Output, type: power_out }
   "3": { name: Input, type: power }
-  "4": { name: Output, type: power }
+  "4": { name: Output, type: power_out }
 
 provenance:
   "/pins":

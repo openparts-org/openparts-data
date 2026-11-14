@@ -1,0 +1,26 @@
+# Abracon ABM8-272-T3 "Source Control Drawing" (Abracon Drawing # 456603,
+# Revision B, "Date of Issue: Sept. 16th, 2024"), 12.000 MHz 3.2 x 2.5 x
+# 0.8 mm ceramic SMD crystal approved for the Raspberry Pi RP2040/RP235x.
+# The public PDF is a 3-page extract of a 9-page drawing: PDF page 1 =
+# printed "Page (2) of (9)" (features, Key Electrical Specifications),
+# PDF page 2 = "Page (4) of (9)" (Mechanical Dimensions, raster drawing,
+# read from a 400 dpi render), PDF page 3 = "Page (6) of (9)" (Packaging,
+# tape and reel 3,000 pcs). Page numbers cited are PDF page indices.
+# Not in the extract: "Table 2" (height, referenced by the side view) and
+# any recommended land pattern. pdfinfo CreationDate 2024-09-18.
+# Downloaded with curl (HTTP 200, `file`: PDF); abracon.com/Resonators/
+# ABM8-272-T3.pdf is a 404 and the abracon.com/parts/ product page is a
+# Cloudflare challenge (not attempted further).
+schema_version: "0.1"
+kind: source
+id: abracon/456603@revB
+
+publisher: abracon
+document_id: "456603"
+document_type: datasheet
+
+revision: "B"
+date: "2024-09-16"
+
+url: "https://abracon.com/datasheets/ABM8-272-T3.pdf"
+retrieved: "2026-11-15"
