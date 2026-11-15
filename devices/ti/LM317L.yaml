@@ -13,12 +13,8 @@ family: LM317L
 source: ti/SLCS144G
 
 parameters:
-  output_type:
-    value: adjustable
-    src: 'p1 "1 Features, "Output voltage range (VO): Adjustable 1.25V to 37V""'
-  output_current:
-    max: 100 mA
-    src: 'p4 "5.3 Recommended Operating Conditions, IO Output current: MAX 100 mA"'
+  output_type:    { value: adjustable, src: 'p1 "1 Features, Output voltage range"' }
+  output_current: { max: 100 mA, src: 'p4 "5.3 Recommended Operating Conditions, IO"' }
 
 pins:
   src: p3 ""LP PACKAGE (TOP VIEW)" and Table 4-1 "Pin Functions", LP column"

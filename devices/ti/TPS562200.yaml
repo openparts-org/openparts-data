@@ -14,10 +14,8 @@ family: TPS56x200
 source: ti/SLVSCB0E
 
 parameters:
-  input_voltage_max:
-    max: 17 V
-    src: 'p5 "6.3 Recommended Operating Conditions, VIN Supply input voltage range: MAX 17 V"'
-  output_current: { typ: 2 A, src: 'p1 "1 Features, "TPS562200 - 2-A converter""' }
+  input_voltage_max: { max: 17 V, src: 'p5 "6.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 2 A, src: p1 "1 Features" }
 
 pins:
   src: p4 "Figure 5-1 "DDC Package 6 Pin (SOT) Top View" and Table 5-1 "Pin Functions""

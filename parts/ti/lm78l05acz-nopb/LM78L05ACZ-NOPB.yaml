@@ -26,4 +26,4 @@ lifecycle:
 parameters:
   output_voltage:
     typ: 5 V
-    src: 'p30 "8.1.2 Device Nomenclature, row "LM78LxxACZ/ yyyy" (TO-92, legacy chip only): "xx is the nominal output voltage (for example, 05 = 5.0V, 09 = 9.0V, ...)""'
+    src: 'p30 "8.1.2 Device Nomenclature, LM78LxxACZ: xx = nominal output voltage, 05 = 5.0V"'

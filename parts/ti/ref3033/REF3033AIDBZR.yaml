@@ -25,7 +25,4 @@ lifecycle:
   status: active
   src: p28 "Package Option Addendum, row "REF3033AIDBZR", Status "Active""
 
-parameters:
-  output_voltage:
-    typ: 3.3 V
-    src: 'p2 "4 Device Comparison Table, REF30 column REF3033AIDBZR: Voltage 3.3V"'
+parameters: { output_voltage: { typ: 3.3 V, src: 'p2 "4 Device Comparison Table, REF3033AIDBZR"' } }

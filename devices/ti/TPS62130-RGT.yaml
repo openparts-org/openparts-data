@@ -19,13 +19,11 @@ family: TPS62130
 source: ti/SLVSAG7F
 
 parameters:
-  output_type:
-    value: adjustable
-    src: p1 "1 Features, "Adjustable output voltage from 0.9 V to 6 V""
+  output_type:    { value: adjustable, src: p1 "1 Features" }
   input_voltage_max:
     max: 17 V
-    src: 'p4 "7.3 Recommended Operating Conditions, Supply Voltage, VIN (at AVIN and PVIN): MAX 17 V"'
-  output_current: { max: 3 A, src: 'p1 "1 Features, "Up to 3-A output current""' }
+    src: p4 "7.3 Recommended Operating Conditions, VIN (AVIN, PVIN)"
+  output_current: { max: 3 A, src: p1 "1 Features" }
 
 pins:
   src:

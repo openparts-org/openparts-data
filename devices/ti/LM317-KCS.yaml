@@ -14,10 +14,8 @@ family: LM317
 source: ti/SLVS044Z
 
 parameters:
-  output_type:
-    value: adjustable
-    src: 'p1 "1 Features, "Output voltage range: Adjustable: 1.25V to 37V""'
-  output_current: { typ: 1.5 A, src: 'p1 "1 Features, "Output current: 1.5A""' }
+  output_type:    { value: adjustable, src: 'p1 "1 Features, Output voltage range"' }
+  output_current: { max: 1.5 A, src: 'p1 "1 Features, Output current"' }
 
 pins:
   src:

@@ -12,13 +12,11 @@ family: LM78L
 source: ti/SNVS754O
 
 parameters:
-  output_type: { value: fixed, src: p1 "Title "LM78L 100mA Fixed Output Linear Regulator"" }
+  output_type:    { value: fixed, src: p1 "Title" }
   input_voltage_max:
     max: 30 V
-    src: 'p4 "5.4 Recommended Operating Conditions, VIN Input voltage (legacy chip): MAX 30 V (TO-92 is legacy chip only, page 1 Package options)"'
-  output_current:
-    max: 100 mA
-    src: 'p4 "5.4 Recommended Operating Conditions, IO Continuous output current: MAX 100 mA"'
+    src: p4 "5.4 Recommended Operating Conditions, VIN (legacy chip; TO-92 is legacy only)"
+  output_current: { max: 100 mA, src: 'p4 "5.4 Recommended Operating Conditions, IO"' }
 
 pins:
   src: p3 "Table 4-1 Pin Functions, TO-92 column (VOUT 1, GND 2, VIN 3); Figure 4-3"

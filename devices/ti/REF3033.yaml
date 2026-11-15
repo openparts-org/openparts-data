@@ -13,12 +13,8 @@ family: REF30
 source: ti/SBVS032K
 
 parameters:
-  input_voltage_max:
-    max: 5.5 V
-    src: 'p4 "6.3 Recommended Operating Conditions, VIN Input voltage (2) (Specification for REF30xx): MAX 5.5 V"'
-  output_current:
-    max: 25 mA
-    src: 'p4 "6.3 Recommended Operating Conditions, ILOAD Load current (2) (Specification for REF30xx): MAX 25 mA"'
+  input_voltage_max: { max: 5.5 V, src: 'p4 "6.3 Recommended Operating Conditions, VIN (REF30xx)"' }
+  output_current: { max: 25 mA, src: 'p4 "6.3 Recommended Operating Conditions, ILOAD (REF30xx)"' }
 
 pins:
   src: [p3 "Table 5-1 "Pin Functions"", p3 "Figure 5-1 "DBZ Package 3-Pin SOT-23 Top View""]

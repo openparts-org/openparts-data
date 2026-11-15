@@ -15,8 +15,8 @@ family: LM2596
 source: ti/SNVS124G
 
 parameters:
-  input_voltage_max: { max: 40 V, src: 'p5 "7.3 Operating Conditions, Supply voltage: MAX 40 V"' }
-  output_current:    { typ: 3 A, src: 'p1 "1 Features, "3-A output load current""' }
+  input_voltage_max: { max: 40 V, src: 'p5 "7.3 Operating Conditions, Supply voltage"' }
+  output_current:    { max: 3 A, src: p1 "1 Features" }
 
 pins:
   src:

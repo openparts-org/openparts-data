@@ -13,15 +13,9 @@ family: TLV755P
 source: ti/SBVS320D
 
 parameters:
-  output_type:
-    value: fixed
-    src: 'p1 "3 Description: "the device is offered in fixed output voltages ranging from 0.6V to 5V""'
-  input_voltage_max:
-    max: 5.5 V
-    src: 'p4 "5.3 Recommended Operating Conditions, VIN Input voltage: MAX 5.5 V"'
-  output_current:
-    max: 500 mA
-    src: 'p4 "5.3 Recommended Operating Conditions, IOUT Output current: MAX 500 mA"'
+  output_type:       { value: fixed, src: p1 "3 Description" }
+  input_voltage_max: { max: 5.5 V, src: 'p4 "5.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 500 mA, src: 'p4 "5.3 Recommended Operating Conditions, IOUT"' }
 
 pins:
   src:

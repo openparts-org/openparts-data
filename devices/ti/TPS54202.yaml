@@ -16,15 +16,9 @@ family: TPS54202
 source: ti/SLVSD26C
 
 parameters:
-  output_type:
-    value: adjustable
-    src: p14 ""The output voltage of the TPS54202 device is externally adjustable using a resistor divider network""
-  input_voltage_max:
-    max: 28 V
-    src: 'p4 "5.3 Recommended Operating Conditions, Input voltage range VIN: MAX 28 V"'
-  output_current:
-    typ: 2 A
-    src: p1 "1 Features, "Integrated 148mΩ and 78mΩ MOSFETs for 2A, continuous output current""
+  output_type:       { value: adjustable, src: p14 "7.2.3.3 Output Voltage Set Point" }
+  input_voltage_max: { max: 28 V, src: 'p4 "5.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 2 A, src: 'p1 "1 Features, continuous output current"' }
 
 pins:
   src:

@@ -14,13 +14,14 @@ family: TPS7A4700
 source: ti/SBVS204G
 
 parameters:
-  input_voltage_max: { max: 35 V, src: 'p5 "5.3 Recommended Operating Conditions, VI: MAX 35.0 V"' }
-  output_current:    { max: 1 A, src: 'p5 "5.3 Recommended Operating Conditions, IO: MAX 1.0 A"' }
+  input_voltage_max: { max: 35 V, src: 'p5 "5.3 Recommended Operating Conditions, VI"' }
+  output_current:    { max: 1 A, src: 'p5 "5.3 Recommended Operating Conditions, IO"' }
   dropout_voltage:
-    typ: 307 mV
-    max: 450 mV
-    at: { IOUT: 1 A }
-    src: 'p6 "Electrical Characteristics, V(DO) Dropout voltage, VI = 95% VO(nom): TYP 307 mV, MAX 450 mV"'
+    - typ: 307 mV
+      max: 450 mV
+      at: { IOUT: 1 A }
+      src: p6 "Elec. Char., V(DO), VI = 95% VO(nom)"
+    - { typ: 216 mV, at: { IOUT: 500 mA }, src: 'p6 "Elec. Char., V(DO), VI = 95% VO(nom)"' }
 
 pins:
   src:

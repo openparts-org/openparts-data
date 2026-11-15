@@ -14,10 +14,8 @@ family: TPS56320x
 source: ti/SLVSD90B
 
 parameters:
-  input_voltage_max:
-    max: 17 V
-    src: 'p4 "5.3 Recommended Operating Conditions, VIN Supply input voltage range: MAX 17 V"'
-  output_current: { typ: 3 A, src: 'p1 "1 Features, "TPS563201 and TPS563208 3A converter""' }
+  input_voltage_max: { max: 17 V, src: 'p4 "5.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 3 A, src: p1 "1 Features" }
 
 pins:
   src:

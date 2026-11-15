@@ -15,10 +15,7 @@ category: voltage_reference
 family: TL431
 source: ti/SLVS543S
 
-parameters:
-  output_type:
-    value: adjustable
-    src: 'p1 "1 Features, "Adjustable output voltage: Vref to 36V"; 3 Description: "three-terminal adjustable shunt regulators""'
+parameters: { output_type: { value: adjustable, src: p1 "1 Features; 3 Description" } }
 
 pins:
   src: p4 ""D (SOIC) PACKAGE (TOP VIEW)" diagram and Table 5-1 "Pin Functions", TL431x D column"

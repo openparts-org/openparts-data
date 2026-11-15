@@ -13,15 +13,9 @@ family: TLV700
 source: ti/SLVSA00E
 
 parameters:
-  output_type:
-    value: fixed
-    src: p1 "1 Features, "Available in Fixed-Output Voltages from 1.2 V to 4.8 V""
-  input_voltage_max:
-    max: 5.5 V
-    src: 'p5 "6.3 Recommended Operating Conditions, VIN: MAX 5.5 V"'
-  output_current:
-    max: 200 mA
-    src: 'p5 "6.3 Recommended Operating Conditions, IOUT: MAX 200 mA"'
+  output_type:       { value: fixed, src: p1 "1 Features" }
+  input_voltage_max: { max: 5.5 V, src: 'p5 "6.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 200 mA, src: 'p5 "6.3 Recommended Operating Conditions, IOUT"' }
 
 pins:
   src: ['p4 ""Pin Functions" table, column "SOT""', p4 ""DDC Package 5-Pin SOT Top View" figure"]

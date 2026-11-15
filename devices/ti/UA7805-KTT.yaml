@@ -12,20 +12,23 @@ family: UA7805
 source: ti/SLVS056P
 
 parameters:
-  output_type: { value: fixed, src: p1 "Title "µA78xx Fixed Positive Voltage Regulators"" }
+  output_type:       { value: fixed, src: p1 "Title" }
   output_voltage:
-    typ: 5 V
-    src: 'p5 "7.5 Electrical Characteristics - uA7805, Output voltage, IO = 5 mA to 1 A, VI = 7 V to 20 V, 25°C: TYP 5 V"'
-  input_voltage_max:
-    max: 25 V
-    src: 'p4 "7.3 Recommended Operating Conditions, VI Input voltage, µA7805: MAX 25 V"'
-  output_current:
-    max: 1.5 A
-    src: 'p4 "7.3 Recommended Operating Conditions, IO Output current: MAX 1.5 A"'
+    - min: 4.8 V
+      typ: 5 V
+      max: 5.2 V
+      at: { VIN: 7..20 V, IOUT: 5..1000 mA, TJ: 25 °C }
+      src: p5 "7.5 Elec. Char. uA7805, Output voltage, PD <= 15 W"
+    - min: 4.75 V
+      max: 5.25 V
+      at: { VIN: 7..20 V, IOUT: 5..1000 mA, TJ: 0..125 °C }
+      src: p5 "7.5 Elec. Char. uA7805, Output voltage, PD <= 15 W"
+  input_voltage_max: { max: 25 V, src: 'p4 "7.3 Recommended Operating Conditions, VI, uA7805"' }
+  output_current:    { max: 1.5 A, src: 'p4 "7.3 Recommended Operating Conditions, IO"' }
   dropout_voltage:
     typ: 2 V
-    at: { IOUT: 1 A }
-    src: 'p5 "7.5 Electrical Characteristics - uA7805, Dropout voltage, 25°C: TYP 2 V"'
+    at: { IOUT: 1 A, TJ: 25 °C }
+    src: p5 "7.5 Elec. Char. uA7805, Dropout voltage"
 
 pins:
   src:

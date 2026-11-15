@@ -11,16 +11,13 @@ family: LM2937
 source: ti/SNVS100F
 
 parameters:
-  input_voltage_max:
-    max: 26 V
-    src: 'p4 "6.3 Recommended Operating Conditions, Input voltage (VIN): MAX 26 V"'
-  output_current:
-    typ: 500 mA
-    src: 'p5 "6.5 Electrical Characteristics header: "IOUT(MAX) = 500 mA for the TO-220 and DDPAK/TO-263 packages" (TO-220)"'
+  input_voltage_max: { max: 26 V, src: 'p4 "6.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 500 mA, src: 'p5 "6.5 Elec. Char. header, IOUT(MAX), TO-220"' }
   dropout_voltage:
     typ: 0.5 V
     max: 1 V
-    src: 'p5 "6.5 Electrical Characteristics, Dropout voltage, IOUT = IOUT(MAX): TYP 0.5 V, MAX 1 V (same in every LM2937 output-voltage table, pages 5-7)"'
+    at: { IOUT: 500 mA }
+    src: p5 "6.5 Elec. Char. (same in all LM2937 tables), Dropout voltage, IOUT = IOUT(MAX)"
 
 pins:
   src:

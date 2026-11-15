@@ -14,18 +14,16 @@ family: UA78M
 source: ti/SLVS059V
 
 parameters:
-  output_type:
-    value: fixed
-    src: 'p1 "3 Description: "The UA78M fixed-voltage integrated-circuit voltage regulator""'
+  output_type:     { value: fixed, src: p1 "3 Description" }
   output_voltage:
-    typ: 3.3 V
-    src: 'p5 "5.5 Electrical Characteristics: UA78M33 (Both Legacy and New Chip), Output voltage, Legacy chip and new chip: TYP 3.3 V"'
-  output_current:
-    max: 500 mA
-    src: 'p4 "5.3 Recommended Operating Conditions, IO Output current: MAX 500 mA"'
-  dropout_voltage:
-    typ: 2 V
-    src: 'p5 "5.5 Electrical Characteristics: UA78M33, Dropout voltage, Legacy chip and new chip: TYP 2.0 V"'
+    - { min: 3.2 V, typ: 3.3 V, max: 3.4 V, src: 'p5 "5.5 Elec. Char. UA78M33, Output voltage"' }
+    - min: 3.1 V
+      typ: 3.3 V
+      max: 3.5 V
+      at: { VIN: 8..20 V, IOUT: 5..350 mA }
+      src: p5 "5.5 Elec. Char. UA78M33, Output voltage, TJ full range"
+  output_current:  { max: 500 mA, src: 'p4 "5.3 Recommended Operating Conditions, IO"' }
+  dropout_voltage: { typ: 2 V, src: 'p5 "5.5 Elec. Char. UA78M33, Dropout voltage"' }
 
 pins:
   src:

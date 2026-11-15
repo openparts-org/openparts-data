@@ -28,9 +28,12 @@ lifecycle:
 parameters:
   output_voltage:
     typ: 3.3 V
-    src: 'p23 "8.1.1 Device Nomenclature, Table 8-1, "TLV755xx(x)Pyyyz(M3)": "xx(x) is the nominal output voltage ... two digits are used (for example, 28 = 2.8V ...)" -> xx = 33"'
+    src: 'p23 "8.1.1 Device Nomenclature, Table 8-1, xx(x) = nominal output voltage: 33"'
   dropout_voltage:
-    typ: 150 mV
-    max: 215 mV
-    at: { IOUT: 500 mA }
-    src: 'p6 "Electrical Characteristics, VDO Dropout voltage, 3.3V <= VOUT < 5.0V (non-DYD row): TYP 150 mV, MAX 215 mV"'
+    - typ: 150 mV
+      max: 215 mV
+      at: { IOUT: 500 mA, TJ: -40..85 °C }
+      src: p6 "5.5 Elec. Char., VDO, 3.3V <= VOUT < 5.0V (non-DYD)"
+    - max: 238 mV
+      at: { IOUT: 500 mA, TJ: -40..125 °C }
+      src: p6 "5.5 Elec. Char., VDO, 3.3V <= VOUT < 5.0V (non-DYD)"

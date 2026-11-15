@@ -13,12 +13,10 @@ family: TPS2113A
 source: ti/SBVS045C
 
 parameters:
-  input_voltage_max:
-    max: 5.5 V
-    src: 'p3 "RECOMMENDED OPERATING CONDITIONS, Input voltage at IN1, VI(IN1) and at IN2, VI(IN2): MAX 5.5 V"'
+  input_voltage_max: { max: 5.5 V, src: 'p3 "Recommended Operating Conditions, VI(IN1), VI(IN2)"' }
   output_current:
     max: 2 A
-    src: 'p3 "RECOMMENDED OPERATING CONDITIONS, Nominal current limit adjustment range IO(OUT), TPS2113ADRB, TJ <= 105°C: MAX 2 A"'
+    src: p3 "Recommended Operating Conditions, IO(OUT) current limit range, TPS2113ADRB, TJ <= 105°C"
 
 pins:
   src:

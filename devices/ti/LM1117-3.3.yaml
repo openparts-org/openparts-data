@@ -18,22 +18,32 @@ family: LM1117
 source: ti/SNOS412Q
 
 parameters:
-  output_type:
-    value: fixed
-    src: 'p1 "3 Description: "the device is available in five fixed voltages, 1.8 V, 2.5 V, 3.3 V, and 5 V""'
+  output_type:       { value: fixed, src: p1 "3 Description" }
   output_voltage:
-    typ: 3.3 V
-    at: { VIN: 5 V, IOUT: 10 mA, TJ: 25 °C }
-    src: 'p5 "7.5 LM1117 Electrical Characteristics, VOUT Output voltage, LM1117-3.3: TYP 3.3 V"'
-  input_voltage_max:
-    max: 15 V
-    src: 'p4 "7.3 Recommended Operating Conditions, Input voltage (VIN to GND): MAX 15 V"'
-  output_current: { typ: 800 mA, src: 'p1 "1 Features, "Output current: 800 mA""' }
+    - min: 3.267 V
+      typ: 3.3 V
+      max: 3.333 V
+      at: { VIN: 5 V, IOUT: 10 mA, TJ: 25 °C }
+      src: p5 "7.5 LM1117 Elec. Char., VOUT, LM1117-3.3"
+    - min: 3.235 V
+      max: 3.365 V
+      at: { VIN: 4.75..10 V, IOUT: 0..800 mA, TJ: 0..125 °C }
+      src: p5 "7.5 LM1117 Elec. Char., VOUT, LM1117-3.3"
+  input_voltage_max: { max: 15 V, src: 'p4 "7.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 800 mA, src: p1 "1 Features" }
   dropout_voltage:
-    typ: 1.2 V
-    max: 1.3 V
-    at: { IOUT: 800 mA, TJ: 25 °C }
-    src: 'p6 "7.5 LM1117 Electrical Characteristics (continued), Dropout voltage: TYP 1.2 V, MAX 1.3 V (0°C to 125°C); LM1117 (not LM1117I) table, orderables listed 0 to 125 °C in the package option addendum"'
+    - typ: 1.2 V
+      max: 1.3 V
+      at: { IOUT: 800 mA }
+      src: p6 "7.5 LM1117 (not LM1117I) Elec. Char., Dropout voltage"
+    - typ: 1.1 V
+      max: 1.2 V
+      at: { IOUT: 100 mA }
+      src: p6 "7.5 LM1117 (not LM1117I) Elec. Char., Dropout voltage"
+    - typ: 1.15 V
+      max: 1.25 V
+      at: { IOUT: 500 mA }
+      src: p6 "7.5 LM1117 (not LM1117I) Elec. Char., Dropout voltage"
 
 pins:
   src:

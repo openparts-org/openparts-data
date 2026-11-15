@@ -10,17 +10,25 @@ family: LM2940
 source: ti/SNVS769J
 
 parameters:
-  input_voltage_max:
-    max: 26 V
-    src: 'p4 "6.3 Recommended Operating Conditions, Input voltage: MAX 26 V"'
-  output_current:
-    typ: 1 A
-    src: 'p1 "3 Description: "positive voltage regulators feature the ability to source 1 A of output current""'
+  input_voltage_max: { max: 26 V, src: 'p4 "6.3 Recommended Operating Conditions, Input voltage"' }
+  output_current:    { max: 1 A, src: p1 "3 Description" }
   dropout_voltage:
-    typ: 0.5 V
-    max: 1 V
-    at: { IOUT: 1 A }
-    src: 'p5 "6.5 Electrical Characteristics, Dropout voltage: TYP 0.5 V, MAX 1 V (same in tables 6.5-6.7 for all output voltages)"'
+    - typ: 0.5 V
+      max: 1 V
+      at: { IOUT: 1 A }
+      src: p5 "6.5 Elec. Char. (same in 6.6, 6.7), Dropout voltage"
+    - typ: 0.5 V
+      max: 0.8 V
+      at: { IOUT: 1 A, TJ: 25 °C }
+      src: p5 "6.5 Elec. Char. (same in 6.6, 6.7), Dropout voltage"
+    - typ: 110 mV
+      max: 200 mV
+      at: { IOUT: 100 mA }
+      src: p5 "6.5 Elec. Char. (same in 6.6, 6.7), Dropout voltage"
+    - typ: 110 mV
+      max: 150 mV
+      at: { IOUT: 100 mA, TJ: 25 °C }
+      src: p5 "6.5 Elec. Char. (same in 6.6, 6.7), Dropout voltage"
 
 pins:
   src:

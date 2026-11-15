@@ -11,17 +11,22 @@ family: LM7805
 source: ti/SNOSBT0L
 
 parameters:
-  output_type:
-    value: fixed
-    src: p1 "Title "LM340, LM340A and LM7805 Family Wide VIN 1.5-A Fixed Voltage Regulators"; 1 Features, "Available in Fixed 5-V, 12-V, and 15-V Options""
+  output_type:    { value: fixed, src: p1 "Title; 1 Features" }
   output_voltage:
-    typ: 5 V
-    src: p6 "6.6 LM340 / LM7805 Electrical Characteristics, "VO = 5 V, VI = 10 V""
-  output_current: { max: 1.5 A, src: 'p1 "1 Features, "Output Current up to 1.5 A""' }
+    - min: 4.8 V
+      typ: 5 V
+      max: 5.2 V
+      at: { IOUT: 5..1000 mA, TJ: 25 °C }
+      src: p6 "6.6 LM340/LM7805 Elec. Char., VO"
+    - min: 4.75 V
+      max: 5.25 V
+      at: { VIN: 7.5..20 V, IOUT: 5..1000 mA }
+      src: p6 "6.6 LM340/LM7805 Elec. Char., VO, PD <= 15 W"
+  output_current: { max: 1.5 A, src: p1 "1 Features" }
   dropout_voltage:
     typ: 2 V
     at: { IOUT: 1 A, TJ: 25 °C }
-    src: 'p6 "6.6 LM340 / LM7805 Electrical Characteristics, Dropout voltage: TYP 2 V"'
+    src: p6 "6.6 LM340/LM7805 Elec. Char., Dropout voltage"
 
 pins:
   src:

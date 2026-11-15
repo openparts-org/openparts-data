@@ -16,10 +16,8 @@ family: LM3671
 source: ti/SNVS294S
 
 parameters:
-  input_voltage_max:
-    max: 5.5 V
-    src: 'p5 "6.4 Recommended Operating Conditions, Input voltage: MAX 5.5 V"'
-  output_current: { max: 600 mA, src: 'p1 "1 Features, "600-mA Maximum Load Capability""' }
+  input_voltage_max: { max: 5.5 V, src: 'p5 "6.4 Recommended Operating Conditions, Input voltage"' }
+  output_current:    { max: 600 mA, src: 'p1 "1 Features, maximum load capability"' }
 
 pins:
   src:
