@@ -17,7 +17,16 @@ pins:
   "2": { name: VOUT, type: power }
   "3": { name: VIN, type: power }
 
+parameters:
+  input_voltage_max:
+    max: 6.0
+    unit: V
+
 provenance:
+  "/parameters/input_voltage_max":
+    - source: microchip/DS20001826@revE
+      page: 3
+      locator: "DC Characteristics, Input Operating Voltage VIN: Max 6.0 V"
   "/pins":
     - source: microchip/DS20001826@revE
       page: 11

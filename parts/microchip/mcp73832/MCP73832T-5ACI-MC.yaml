@@ -25,7 +25,16 @@ lifecycle:
 sources:
   - microchip/DS20001984@revH
 
+parameters:
+  output_voltage:
+    nominal: 4.5
+    unit: V
+
 provenance:
+  "/parameters/output_voltage":
+    - source: microchip/DS20001984@revH
+      page: 26
+      locator: "Product Identification System, Regulation Voltage table: Code 5 = 4.50V (VREG code of MCP73832T-5ACI/MC)"
   "/existence":
     - source: microchip/DS20001984@revH
       page: 26

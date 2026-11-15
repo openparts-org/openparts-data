@@ -30,7 +30,23 @@ pins:
   "8": { name: PROG, type: analog }
   "EP": { name: VSS, type: ground, connected_to: "6" }
 
+parameters:
+  input_voltage_max:
+    max: 6
+    unit: V
+  output_current:
+    max: 500
+    unit: mA
+
 provenance:
+  "/parameters/input_voltage_max":
+    - source: microchip/DS20001984@revH
+      page: 3
+      locator: "DC Characteristics, Supply Voltage VDD: Max 6 V"
+  "/parameters/output_current":
+    - source: microchip/DS20001984@revH
+      page: 1
+      locator: "Features, \"Programmable Charge Current: 15 mA to 500 mA\""
   "/pins":
     - source: microchip/DS20001984@revH
       page: 11

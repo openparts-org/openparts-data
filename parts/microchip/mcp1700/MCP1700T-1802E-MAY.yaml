@@ -25,7 +25,23 @@ lifecycle:
 sources:
   - microchip/DS20001826@revE
 
+parameters:
+  output_voltage:
+    nominal: 1.8
+    unit: V
+  output_current:
+    min: 200
+    unit: mA
+
 provenance:
+  "/parameters/output_voltage":
+    - source: microchip/DS20001826@revE
+      page: 28
+      locator: "Product Identification System, 2x2 DFN-6 example \"MCP1700T-1802E/MAY: 1.8V VOUT\""
+  "/parameters/output_current":
+    - source: microchip/DS20001826@revE
+      page: 3
+      locator: "DC Characteristics, Maximum Output Current IOUT_mA: Min 200 mA, For VR < 2.5V"
   "/existence":
     - source: microchip/DS20001826@revE
       page: 28

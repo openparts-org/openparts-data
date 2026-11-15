@@ -24,7 +24,15 @@ pins:
   "5": { name: VOUT, type: power }
   "6": { name: VIN, type: power }
 
+parameters:
+  output_type:
+    value: adjustable
+
 provenance:
+  "/parameters/output_type":
+    - source: microchip/DS20002234@revD
+      page: 1
+      locator: "Features, \"Adjustable Output Voltage Range: 2.0V to 5.5V\"; \"Output voltage is set by a small external resistor divider\""
   "/pins":
     - source: microchip/DS20002234@revD
       page: 9
