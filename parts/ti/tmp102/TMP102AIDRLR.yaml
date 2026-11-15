@@ -1,0 +1,27 @@
+# Orderable MPN printed in the PACKAGE OPTION ADDENDUM of the datasheet;
+# lifecycle "Active" read from the same row's Status column (TI's own
+# addendum inside the datasheet, newer than the datasheet revision).
+# Package: SOT-5X3 (DRL), outline DRL0006A on page 30.
+schema_version: "0.2"
+kind: part
+id: ti/TMP102AIDRLR
+manufacturer: ti
+mpn: TMP102AIDRLR
+device: ti/TMP102
+
+package:
+  value: manufacturers/ti/DRL0006A
+  src:
+    - p26 "PACKAGE OPTION ADDENDUM, row TMP102AIDRLR, Package column"
+    - p30 "PACKAGE OUTLINE DRL0006A (4223266/F)"
+
+sources: [ti/SBOS397I]
+source: ti/SBOS397I
+
+existence:
+  status: verified
+  src: p26 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TMP102AIDRLR"
+
+lifecycle:
+  status: active
+  src: p26 "PACKAGE OPTION ADDENDUM, row TMP102AIDRLR, Status column Active"

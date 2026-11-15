@@ -1,0 +1,24 @@
+# TMP112A/B/N digital temperature sensors, pin map of the 6-pin SOT563
+# (DRL) package from Table 5-1 "Pin Function", column "DRL Package NO.
+# TMP112A/B/D/N" (SBOS473L page 4), checked against the "DRL Package
+# 6-Pin SOT563 TMP112A/B/D/N (Top View)" figure (same page). The X2SON
+# (DPW) TMP112D variants number pins differently and are not covered.
+# V+ ("I", "Supply voltage") typed power; SCL clock; ALERT output.
+schema_version: "0.2"
+kind: device
+id: ti/TMP112-DRL
+manufacturer: ti
+category: temperature_sensor
+family: TMP112
+source: ti/SBOS473L
+
+pins:
+  src:
+    - p4 "Table 5-1 Pin Function, column DRL Package NO."
+    - p4 "DRL Package 6-Pin SOT563 TMP112A/B/D/N Top View (cross-check)"
+  "1": { name: SCL, type: clock }
+  "2": { name: GND, type: ground }
+  "3": { name: ALERT, type: output }
+  "4": { name: ADD0, type: input }
+  "5": { name: V+, type: power }
+  "6": { name: SDA, type: io }

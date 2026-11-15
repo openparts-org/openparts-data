@@ -1,0 +1,29 @@
+# HDC1080 digital humidity sensor with temperature sensor, 6-pin PWSON
+# (DMB), from the "Pin Functions" table (SNAS672A page 3), checked
+# against the DMB pin-out top view on the same page. I/O types: P ->
+# power, G -> ground, I -> input (SCL typed clock), I/O -> io.
+# NC (pins 3, 4) "may be left floating, or connected to GND" -> nc.
+# The die attach pad (DAP) is listed in the table ("Should be left
+# floating") and numbered 7 in the DMB0006A drawing -> pin "7", type nc.
+# Category `sensor`: the tree has no humidity-sensor node.
+schema_version: "0.2"
+kind: device
+id: ti/HDC1080
+manufacturer: ti
+category: sensor
+family: HDC1080
+source: ti/SNAS672A
+
+pins:
+  src: [p3 "Pin Functions table", p3 "DMB Package 6 Pin PWSON Top View (cross-check)"]
+  "1": { name: SDA, type: io }
+  "2": { name: GND, type: ground }
+  "3": { name: NC, type: nc }
+  "4": { name: NC, type: nc }
+  "5": { name: VDD, type: power }
+  "6": { name: SCL, type: clock }
+  "7":
+    name:
+      value: DAP
+      src: ['p3 "Pin Functions, row DAP"', 'p26 "DMB0006A outline, thermal pad 7"']
+    type: nc

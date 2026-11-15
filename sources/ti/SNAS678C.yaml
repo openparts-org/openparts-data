@@ -1,0 +1,17 @@
+# Official TI datasheet "HDC2080 Low-Power Humidity and Temperature Digital Sensor". Downloaded 2026-11-16 with curl from the
+# TI symlink URL below; revision read from the page header "SNAS678C - MAY 2018 - REVISED JULY 2021".
+# 43 PDF pages; text read with pdftotext -layout, package drawings read
+# from pages rendered with pdftoppm. Page numbers are PDF page indices.
+# The PACKAGE OPTION ADDENDUM at the end of the PDF is dated 9-Nov-2025 (newer
+# than the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SNAS678C
+sha256: e47d6255a65708424f194179a15321af3aca201a5840a1c9650850f6b084af10
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/hdc2080.pdf
+publisher: ti
+document_id: SNAS678C
+document_type: datasheet
+revision: C
+date: 2021-07

@@ -1,0 +1,29 @@
+# Orderable MPN printed in the PACKAGE OPTION ADDENDUM of the datasheet;
+# lifecycle "Active" read from the same row's Status column (TI's own
+# addendum inside the datasheet, newer than the datasheet revision).
+# Package: VSSOP (DGK), outline DGK0008A on page 46; its pdftotext text
+# diffed equal to the DGK0008A page of SBOS351E (OPA2333, page 36) that
+# standards/MSOP8-3.0x3.0-P0.65-TI-DGK was read from, so it is reused.
+schema_version: "0.2"
+kind: part
+id: ti/TMP1075DGKR
+manufacturer: ti
+mpn: TMP1075DGKR
+device: ti/TMP1075
+
+package:
+  value: standards/MSOP8-3.0x3.0-P0.65-TI-DGK
+  src:
+    - p32 "PACKAGE OPTION ADDENDUM, row TMP1075DGKR, Package column"
+    - p46 "PACKAGE OUTLINE DGK0008A (4214862/A)"
+
+sources: [ti/SBOS854F]
+source: ti/SBOS854F
+
+existence:
+  status: verified
+  src: p32 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TMP1075DGKR"
+
+lifecycle:
+  status: active
+  src: p32 "PACKAGE OPTION ADDENDUM, row TMP1075DGKR, Status column Active"

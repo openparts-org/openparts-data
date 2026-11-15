@@ -1,0 +1,17 @@
+# Official TI datasheet "TMP102 Low-Power Digital Temperature Sensor With SMBus and Two-Wire Serial Interface in SOT563". Downloaded 2026-11-16 with curl from the
+# TI symlink URL below; revision read from the page header "SBOS397I - AUGUST 2007 - REVISED JUNE 2024".
+# 33 PDF pages; text read with pdftotext -layout, package drawings read
+# from pages rendered with pdftoppm. Page numbers are PDF page indices.
+# The PACKAGE OPTION ADDENDUM at the end of the PDF is dated 13-Apr-2026 (newer
+# than the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SBOS397I
+sha256: c9da6620ef95f75ce94372f670a84d168e05922dd32cebfaa6517083f15ebfaf
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tmp102.pdf
+publisher: ti
+document_id: SBOS397I
+document_type: datasheet
+revision: I
+date: 2024-06

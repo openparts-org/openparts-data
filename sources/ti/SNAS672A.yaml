@@ -1,0 +1,17 @@
+# Official TI datasheet "HDC1080 Low Power, High Accuracy Digital Humidity Sensor with Temperature Sensor". Downloaded 2026-11-16 with curl from the
+# TI symlink URL below; revision read from the page header "SNAS672A - NOVEMBER 2015 - REVISED JANUARY 2016".
+# 29 PDF pages; text read with pdftotext -layout, package drawings read
+# from pages rendered with pdftoppm. Page numbers are PDF page indices.
+# The PACKAGE OPTION ADDENDUM at the end of the PDF is dated 3-Apr-2026 (newer
+# than the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SNAS672A
+sha256: ff9fed45056ad05762d46f11905f1f14df425b8a8ef2d0d9cbb813c5711735e4
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/hdc1080.pdf
+publisher: ti
+document_id: SNAS672A
+document_type: datasheet
+revision: A
+date: 2016-01

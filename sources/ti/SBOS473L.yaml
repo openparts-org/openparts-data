@@ -1,0 +1,17 @@
+# Official TI datasheet "TMP112x High-Accuracy, Low-Power, Digital Temperature Sensors With SMBus and Two-Wire Serial Interface in SOT563 and X2SON Packages". Downloaded 2026-11-16 with curl from the
+# TI symlink URL below; revision read from the page header "SBOS473L - MARCH 2009 - REVISED JULY 2024".
+# 46 PDF pages; text read with pdftotext -layout, package drawings read
+# from pages rendered with pdftoppm. Page numbers are PDF page indices.
+# The PACKAGE OPTION ADDENDUM at the end of the PDF is dated 17-Sep-2026 (newer
+# than the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SBOS473L
+sha256: c70ca5900fabd8990e735aff3bb5cddb0b6da113b4a472d208c9181e3eb1b385
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tmp112.pdf
+publisher: ti
+document_id: SBOS473L
+document_type: datasheet
+revision: L
+date: 2024-07

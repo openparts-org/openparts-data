@@ -1,0 +1,23 @@
+# TMP102 digital temperature sensor, 6-pin SOT563 (DRL), from Table 4-1
+# "Pin Functions" (SBOS397I page 3), checked against Figure 4-1 "DRL
+# Package 6-Pin SOT563 Top View" (same page). V+ is type "I" in the
+# table; typed power ("Supply voltage"); GND ("—", "Ground") ground;
+# SCL ("Serial clock") clock; ALERT (open-drain output) output.
+schema_version: "0.2"
+kind: device
+id: ti/TMP102
+manufacturer: ti
+category: temperature_sensor
+family: TMP102
+source: ti/SBOS397I
+
+pins:
+  src:
+    - p3 "Table 4-1 Pin Functions"
+    - p3 "Figure 4-1 DRL Package 6-Pin SOT563 Top View (cross-check)"
+  "1": { name: SCL, type: clock }
+  "2": { name: GND, type: ground }
+  "3": { name: ALERT, type: output }
+  "4": { name: ADD0, type: input }
+  "5": { name: V+, type: power }
+  "6": { name: SDA, type: io }

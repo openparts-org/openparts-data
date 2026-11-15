@@ -1,0 +1,27 @@
+# TMP117 high-accuracy digital temperature sensor, pin map of the DRV
+# (6-pin WSON) package from Table 5-1 "Pin Functions", column WSON
+# (SNOSD82D page 4), checked against Figure 5-1 "DRV Package 6-Pin WSON
+# Top View" (same page). The DSBGA (YBG) package numbers its balls
+# A1..C2 and is not covered by this Device. V+ is type "I" in the table;
+# typed power from its description ("Supply voltage"); SCL ("Serial
+# clock") typed clock, ALERT (open-drain output) output, SDA io.
+# The thermal pad is not a pin: section 9 says it is not connected to
+# device ground and should be left unsoldered.
+schema_version: "0.2"
+kind: device
+id: ti/TMP117-DRV
+manufacturer: ti
+category: temperature_sensor
+family: TMP117
+source: ti/SNOSD82D
+
+pins:
+  src:
+    - p4 "Table 5-1 Pin Functions, column WSON"
+    - p4 "Figure 5-1 DRV Package 6-Pin WSON Top View (cross-check)"
+  "1": { name: SCL, type: clock }
+  "2": { name: GND, type: ground }
+  "3": { name: ALERT, type: output }
+  "4": { name: ADD0, type: input }
+  "5": { name: V+, type: power }
+  "6": { name: SDA, type: io }

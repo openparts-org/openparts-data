@@ -1,0 +1,29 @@
+# Orderable MPN printed in the PACKAGE OPTION ADDENDUM of the datasheet;
+# lifecycle "Active" read from the same row's Status column (TI's own
+# addendum inside the datasheet, newer than the datasheet revision).
+# Package: WSON (DMB), outline DMB0006A (4221225/C) on page 40, the same
+# drawing revision as the one the package was read from (SNAS672A p26;
+# pdftotext text diffed equal).
+schema_version: "0.2"
+kind: part
+id: ti/HDC2080DMBR
+manufacturer: ti
+mpn: HDC2080DMBR
+device: ti/HDC2080
+
+package:
+  value: manufacturers/ti/DMB0006A
+  src:
+    - p36 "PACKAGE OPTION ADDENDUM, row HDC2080DMBR, Package column"
+    - p40 "PACKAGE OUTLINE DMB0006A (4221225/C)"
+
+sources: [ti/SNAS678C]
+source: ti/SNAS678C
+
+existence:
+  status: verified
+  src: p36 "PACKAGE OPTION ADDENDUM, Packaging Information table, row HDC2080DMBR"
+
+lifecycle:
+  status: active
+  src: p36 "PACKAGE OPTION ADDENDUM, row HDC2080DMBR, Status column Active"

@@ -1,0 +1,61 @@
+# TI DMB0006A, WSON-6, 3x3 mm, 1 mm pitch, 0.8 mm max height, with a
+# window (RH sensor opening) in the top. Outline drawing DMB0006A
+# (4221225/C 12/2018) in SNAS672A (HDC1080) page 26 and its Example Board
+# Layout on page 27, read from the rendered drawings. The HDC2080
+# datasheet SNAS678C carries the same drawing revision on pages 40-41
+# (pdftotext text of both pages diffed equal after stripping headers).
+#
+# Mapping: body limits -> body_width (across the rows) / body_length;
+# "0.8 MAX" (no A2) -> body_height max; "0.05/0.00" -> standoff;
+# "6X 0.45/0.35" -> lead_width; "6X 0.5/0.3" -> lead_length; thermal pad
+# "1.5+-0.1" x "2.4+-0.1" -> exposed_pad (pad 7 in the drawing).
+# Top view: pin 1 top-left, 1-3 down the left, 4-6 up the right.
+# pads: Example Board Layout (page 27): 6X (0.6) x 6X (0.4) lands, pitch
+# 4X (1), land centres (2.8) apart -> x = +-1.4; thermal land 7 (1.5) x
+# (2.4) at the centre. All parenthesised reference values.
+# Left out: the top-view window position "(0.9)", "(1.3)", "(0.45)",
+# "(1.2)" and "(0.22)" (reference, no field), side wall "(0.2) TYP".
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DMB0006A
+family: son
+lead_count: 6
+source: ti/SNAS672A
+
+pitch: { typ: 1 mm, src: 'p26 "DMB0006A outline (4221225/C), bottom view, basic "4X 1""' }
+geometry: { type: parametric, generator: son }
+
+dimensions:
+  body_width:
+    min: 2.9 mm
+    max: 3.1 mm
+    src: p26 "DMB0006A outline, top view "3.1 / 2.9" (across the rows)"
+  body_length:
+    min: 2.9 mm
+    max: 3.1 mm
+    src: p26 "DMB0006A outline, top view "3.1 / 2.9" (along the rows)"
+  body_height: { max: 0.8 mm, src: 'p26 "DMB0006A outline, side view "0.8 MAX""' }
+  exposed_pad:
+    src:    p26 "DMB0006A outline, bottom view, thermal pad 7 "1.5+-0.1" x "2.4+-0.1""
+    width:  { min: 1.4 mm, typ: 1.5 mm, max: 1.6 mm }
+    length: { min: 2.3 mm, typ: 2.4 mm, max: 2.5 mm }
+  standoff:    { min: 0 mm, max: 0.05 mm, src: 'p26 "DMB0006A outline, side view "0.05 / 0.00""' }
+  lead_width:
+    min: 0.35 mm
+    max: 0.45 mm
+    src: p26 "DMB0006A outline, bottom view "6X 0.45 / 0.35""
+  lead_length:
+    min: 0.3 mm
+    max: 0.5 mm
+    src: p26 "DMB0006A outline, bottom view "6X 0.5 / 0.3""
+
+pads:
+  value:
+    - { number: "1", x: -1.4, y: 1, width: 0.6, length: 0.4 }
+    - { number: "2", x: -1.4, y: 0, width: 0.6, length: 0.4 }
+    - { number: "3", x: -1.4, y: -1, width: 0.6, length: 0.4 }
+    - { number: "4", x: 1.4, y: -1, width: 0.6, length: 0.4 }
+    - { number: "5", x: 1.4, y: 0, width: 0.6, length: 0.4 }
+    - { number: "6", x: 1.4, y: 1, width: 0.6, length: 0.4 }
+    - { number: "7", x: 0, y: 0, width: 1.5, length: 2.4 }
+  src: 'p27 "DMB0006A Example Board Layout: 6X (0.6) x 6X (0.4), 4X (1), x = +-(2.8)/2; land 7 (1.5) x (2.4)"'

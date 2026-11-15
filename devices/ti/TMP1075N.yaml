@@ -1,0 +1,23 @@
+# TMP1075N digital temperature sensor, 6-pin SOT563 (DRL), from Table
+# 5-1 "Pin Functions", column SOT563 (SBOS854F page 4), checked against
+# Figure 5-4 "DRL Package 6-Pin SOT563 Top View" (same page; note 2
+# there: "Referred to as the TMP1075N orderable"). V+ ("I", "Supply
+# voltage") typed power; SCL clock; ALERT (open-drain output) output.
+schema_version: "0.2"
+kind: device
+id: ti/TMP1075N
+manufacturer: ti
+category: temperature_sensor
+family: TMP1075
+source: ti/SBOS854F
+
+pins:
+  src:
+    - p4 "Table 5-1 Pin Functions, column SOT563"
+    - p4 "Figure 5-4 DRL Package 6-Pin SOT563 Top View (cross-check)"
+  "1": { name: SCL, type: clock }
+  "2": { name: GND, type: ground }
+  "3": { name: ALERT, type: output }
+  "4": { name: A0, type: input }
+  "5": { name: V+, type: power }
+  "6": { name: SDA, type: io }
