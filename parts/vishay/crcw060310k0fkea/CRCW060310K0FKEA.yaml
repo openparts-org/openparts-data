@@ -20,3 +20,34 @@ lifecycle:
 
 sources:
   - vishay/20035
+
+# Parameters (AI candidates, needs review): resistance, tolerance and TCR from
+# the PART NUMBER AND PRODUCT DESCRIPTION legend. power_rating left out:
+# the rated dissipation P70 depends on the operation mode (standard /
+# extended, p2), which the part number does not fix.
+parameters:
+  resistance:
+    nominal: 10
+    unit: kΩ
+  tolerance:
+    min: -1
+    max: 1
+    unit: "%"
+  temperature_coefficient:
+    min: -100
+    max: 100
+    unit: ppm/K
+
+provenance:
+  "/parameters/resistance":
+    - source: vishay/20035
+      page: 3
+      locator: "PART NUMBER AND PRODUCT DESCRIPTION, RESISTANCE: R = decimal, K = thousand, M = million -> 10K0 = 10 kΩ"
+  "/parameters/tolerance":
+    - source: vishay/20035
+      page: 3
+      locator: "PART NUMBER AND PRODUCT DESCRIPTION, TOLERANCE: F = ± 1 %"
+  "/parameters/temperature_coefficient":
+    - source: vishay/20035
+      page: 3
+      locator: "PART NUMBER AND PRODUCT DESCRIPTION, TCR: K = ± 100 ppm/K"

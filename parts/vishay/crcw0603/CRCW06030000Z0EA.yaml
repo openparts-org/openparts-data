@@ -23,6 +23,13 @@ lifecycle:
 sources:
   - vishay/20035
 
+# Parameters (AI candidates, needs review): 0 Ω jumper; only the jumper
+# resistance limit is recorded (TCR is not specified for jumpers, p2 note).
+parameters:
+  resistance:
+    max: 20
+    unit: mΩ
+
 provenance:
   "/existence":
     - source: vishay/20035
@@ -34,3 +41,7 @@ provenance:
     - source: vishay/20035
       page: 3
       locator: "'PACKAGING' table: D11/CRCW0603 e3 EA = ET1 5000 pcs 7\" paper tape; D10/CRCW0402 e3 ED = ET7 10 000 pcs 7\""
+  "/parameters/resistance":
+    - source: vishay/20035
+      page: 2
+      locator: "TEMPERATURE COEFFICIENT AND RESISTANCE RANGE, D11/CRCW0603 e3, Jumper, Imax. = 2.0 A row: TOLERANCE ≤ 20 mΩ, RESISTANCE 0 Ω (part number legend p3: 0000 = jumper, Z = jumper)"
