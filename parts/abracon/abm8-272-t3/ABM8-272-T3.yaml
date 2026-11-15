@@ -28,6 +28,23 @@ lifecycle:
 sources:
   - abracon/456603@revB
 
+# Parameters (AI candidates, needs review): single-MPN datasheet,
+# Key Electrical Specifications table.
+parameters:
+  frequency:
+    nominal: 12.0
+    unit: MHz
+  load_capacitance:
+    nominal: 10
+    unit: pF
+  frequency_tolerance:
+    min: -30
+    max: 30
+    unit: ppm
+  esr:
+    max: 50
+    unit: Ω
+
 provenance:
   "/existence":
     - source: abracon/456603@revB
@@ -36,3 +53,19 @@ provenance:
     - source: abracon/456603@revB
       page: 3
       locator: "Packaging: \"Tape and Reel (3,000pcs/reel)\""
+  "/parameters/frequency":
+    - source: abracon/456603@revB
+      page: 1
+      locator: "Key Electrical Specifications, Center Frequency: Typical 12.000 MHz"
+  "/parameters/load_capacitance":
+    - source: abracon/456603@revB
+      page: 1
+      locator: "Key Electrical Specifications, Load capacitance (CL): Typical 10 pF"
+  "/parameters/frequency_tolerance":
+    - source: abracon/456603@revB
+      page: 1
+      locator: "Key Electrical Specifications, Frequency Tolerance at +25 ºC: Minimum -30, Maximum +30 ppm"
+  "/parameters/esr":
+    - source: abracon/456603@revB
+      page: 1
+      locator: "Key Electrical Specifications, Equivalent series resistance (R1): Maximum 50 Ω"

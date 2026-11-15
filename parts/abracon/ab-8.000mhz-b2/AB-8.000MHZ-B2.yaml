@@ -34,8 +34,43 @@ lifecycle:
 sources:
   - abracon/ab-hc49u
 
+# Parameters (AI candidates, needs review): from the OPTIONS AND PART
+# IDENTIFICATION legend (p2; options left blank if standard) and the
+# standard specifications / Table 1 (p1). Frequency stability is not a
+# vocabulary key.
+parameters:
+  frequency:
+    nominal: 8.0
+    unit: MHz
+  load_capacitance:
+    nominal: 18
+    unit: pF
+  frequency_tolerance:
+    min: -20
+    max: 20
+    unit: ppm
+  esr:
+    max: 35
+    unit: Ω
+
 provenance:
   "/existence":
     - source: abracon/ab-hc49u
       page: 2
       locator: "Part-numbering guide rules used to decode/verify the MPN (not a literal ordering-table read -- see comment above)"
+  "/parameters/frequency":
+    - source: abracon/ab-hc49u
+      page: 2
+      locator: "OPTIONS AND PART IDENTIFICATION, Frequency in MHz (specify in xx.xxxx MHz) -> 8.000MHZ = 8.000 MHz"
+  "/parameters/load_capacitance":
+    - source: abracon/ab-hc49u
+      page: 1
+      locator: "STANDARD SPECIFICATIONS, Load capacitance (CL): Typical 18 pF, See options (p2: Load Capacitance field left blank if standard)"
+  "/parameters/frequency_tolerance":
+    - source: abracon/ab-hc49u
+      page: 2
+      locator: "OPTIONS AND PART IDENTIFICATION, Freq. Tolerance: 2: ± 20 ppm"
+  "/parameters/esr":
+    - source: abracon/ab-hc49u
+      page: 1
+      locator: "Table 1, 8.000-9.999 MHz, HC49/U Fundamental: ESR max 35"
