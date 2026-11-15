@@ -1,0 +1,16 @@
+# Kingbright datasheet for APT2012CGCK (2.0 x 1.25 mm SMD chip LED), 4 pages.
+# Footer on every page: "Spec No: DSAA6057 ... Rev No: V.22B Date:
+# 03/14/2025" (MM/DD/YYYY). Read with pdftotext
+# plus renders of page 1 (package drawing, schematic symbol, soldering
+# pattern are vector art). Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: kingbright/DSAA6057
+sha256: d652cd72efd8874de4c8fd8e3b4f7b89bacea5651dcc3a76f6fdc3acb10f8b23
+retrieved: 2026-11-16
+url: https://www.kingbrightusa.com/images/catalog/spec/apt2012cgck.pdf
+publisher: kingbright
+document_id: DSAA6057
+document_type: datasheet
+revision: V.22B
+date: 2025-03-14

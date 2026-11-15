@@ -1,0 +1,16 @@
+# Kingbright datasheet for APT2012SURCK (2.0 x 1.25 mm SMD chip LED), 4 pages.
+# Footer on every page: "Spec No: DSAD0945 ... Rev No: V.21A Date:
+# 03/17/2025" (MM/DD/YYYY). Read with pdftotext
+# plus renders of page 1 (package drawing, schematic symbol, soldering
+# pattern are vector art). Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: kingbright/DSAD0945
+sha256: 651a361d5e03ac8164ce33be987fac7d88d400c2a2f7d5a897ef53ab1c67b1e0
+retrieved: 2026-11-16
+url: https://www.kingbrightusa.com/images/catalog/spec/apt2012surck.pdf
+publisher: kingbright
+document_id: DSAD0945
+document_type: datasheet
+revision: V.21A
+date: 2025-03-17

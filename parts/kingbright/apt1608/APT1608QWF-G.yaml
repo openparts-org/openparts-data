@@ -1,0 +1,32 @@
+# Kingbright APT1608QWF/G, 1.6 x 0.8 mm chip LED, White. existence verified: the
+# single-part datasheet's SELECTION GUIDE lists Part Number "APT1608QWF/G"
+# (p1). lifecycle unknown: no production-status statement.
+schema_version: "0.2"
+kind: part
+id: kingbright/APT1608QWF-G
+manufacturer: kingbright
+mpn: APT1608QWF/G
+device: kingbright/APT1608QWF-G
+package: manufacturers/kingbright/CHIP-KINGBRIGHT-APT1608
+sources: [kingbright/DSAJ9192]
+source: kingbright/DSAJ9192
+
+existence: { status: verified, src: 'p1 "SELECTION GUIDE, Part Number APT1608QWF/G"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  forward_voltage:
+    typ: 3.3 V
+    max: 4 V
+    at: { IF: 20 mA, TA: 25 °C }
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, White"
+  reverse_voltage:
+    max: 5 V
+    at: { TA: 25 °C }
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Reverse Voltage VR"
+  forward_current:
+    max: 30 mA
+    at: { TA: 25 °C }
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF"
+  color: { value: white, src: 'p1 "SELECTION GUIDE, Emitting Color White"' }

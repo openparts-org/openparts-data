@@ -1,0 +1,48 @@
+# Kingbright APT1608 chip LED, 1.6 x 0.8 x 0.75 mm, from the p1 "PACKAGE
+# DIMENSIONS" and "RECOMMENDED SOLDERING PATTERN" of kingbright/DSAD0926
+# (APT1608SURCK; vector drawing, 130/300 dpi renders). The APT1608CGCK
+# (DSAA6059), APT1608ZGCK (DSAM6351) and APT1608QWF/G (DSAJ9192) sheets
+# print the same numbers (compared visually, side by side).
+# Nominals only are printed; min/max apply the page-1 blanket tolerance
+# (Note 2: +-0.1). Side view "0.25(0.01)" is the substrate thickness and
+# "1.2"/"1.1" the lens top widths: not modelled.
+# pads: soldering pattern (tolerance +-0.1) 0.8 x 0.8 pads, 0.85 gap;
+# centres x = +-(0.85/2 + 0.8/2) = +-0.825. Pin 1 (cathode, polarity
+# mark side) at -X.
+schema_version: "0.2"
+kind: package
+id: manufacturers/kingbright/CHIP-KINGBRIGHT-APT1608
+family: chip
+lead_count: 2
+source: kingbright/DSAD0926
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 0.7 mm
+    typ: 0.8 mm
+    max: 0.9 mm
+    src: p1 "PACKAGE DIMENSIONS top view 0.8(0.031); Note 2 ±0.1"
+  body_length:
+    min: 1.5 mm
+    typ: 1.6 mm
+    max: 1.7 mm
+    src: p1 "PACKAGE DIMENSIONS side view 1.6(0.063); Note 2 ±0.1"
+  body_height:
+    min: 0.65 mm
+    typ: 0.75 mm
+    max: 0.85 mm
+    src: p1 "PACKAGE DIMENSIONS side view 0.75(0.029); Note 2 ±0.1"
+  lead_length:
+    min: 0.2 mm
+    typ: 0.3 mm
+    max: 0.4 mm
+    src: p1 "PACKAGE DIMENSIONS bottom view terminals 0.3(0.012); Note 2 ±0.1"
+
+pads:
+  value:
+    - { number: "1", x: -0.825, y: 0, width: 0.8, length: 0.8 }
+    - { number: "2", x: 0.825, y: 0, width: 0.8, length: 0.8 }
+  src: p1 "RECOMMENDED SOLDERING PATTERN, 0.8 / 0.85 / 0.8, height 0.8 (see header)"

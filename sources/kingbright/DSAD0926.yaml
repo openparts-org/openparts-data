@@ -1,0 +1,16 @@
+# Kingbright datasheet for APT1608SURCK (1.6 x 0.8 mm SMD chip LED), 4 pages.
+# Footer on every page: "Spec No: DSAD0926 ... Rev No: V.22A Date:
+# 04/08/2023" (MM/DD/YYYY). Read with pdftotext
+# plus renders of page 1 (package drawing, schematic symbol, soldering
+# pattern are vector art). Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: kingbright/DSAD0926
+sha256: 9e1b5b4425e7251bf67a228b42f881ef87ed5f4088d89dc1bcb74b29789dd156
+retrieved: 2026-11-16
+url: https://www.kingbrightusa.com/images/catalog/spec/apt1608surck.pdf
+publisher: kingbright
+document_id: DSAD0926
+document_type: datasheet
+revision: V.22A
+date: 2023-04-08

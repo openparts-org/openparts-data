@@ -1,0 +1,16 @@
+# Kingbright APT2012QWF/D 2.0 x 1.25 mm SMD chip LED, White. Polarity from the p1
+# schematic symbol: the cathode bar is on the terminal numbered 1, the
+# anode on 2; the bottom view numbers the terminals 1/2 with the
+# polarity mark at 1 -> pin 1 = Cathode, pin 2 = Anode.
+schema_version: "0.2"
+kind: device
+id: kingbright/APT2012QWF-D
+manufacturer: kingbright
+category: led
+family: APT2012
+source: kingbright/DSAH9432
+
+pins:
+  src: p1 "PACKAGE DIMENSIONS, schematic symbol 1-2 (cathode bar at 1), bottom view 1/2"
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

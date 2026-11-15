@@ -1,0 +1,35 @@
+# Kingbright APT2012QWF/D, 2.0 x 1.25 mm chip LED, White. existence verified: the
+# single-part datasheet's SELECTION GUIDE lists Part Number "APT2012QWF/D"
+# (p1). lifecycle unknown: no production-status statement.
+# Package: the existing APT2012 outline -- this sheet's p1 drawing
+# prints the same numbers (2 x 1.25 x 0.75, terminals 0.4; compared
+# visually with apt2012ec side by side).
+schema_version: "0.2"
+kind: part
+id: kingbright/APT2012QWF-D
+manufacturer: kingbright
+mpn: APT2012QWF/D
+device: kingbright/APT2012QWF-D
+package: manufacturers/kingbright/CHIP-KINGBRIGHT-APT2012
+sources: [kingbright/DSAH9432]
+source: kingbright/DSAH9432
+
+existence: { status: verified, src: 'p1 "SELECTION GUIDE, Part Number APT2012QWF/D"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  forward_voltage:
+    typ: 3.3 V
+    max: 4 V
+    at: { IF: 20 mA, TA: 25 °C }
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, White"
+  reverse_voltage:
+    max: 5 V
+    at: { TA: 25 °C }
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Reverse Voltage VR"
+  forward_current:
+    max: 30 mA
+    at: { TA: 25 °C }
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF"
+  color: { value: white, src: 'p1 "SELECTION GUIDE, Emitting Color White"' }

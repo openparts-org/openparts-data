@@ -1,0 +1,16 @@
+# Kingbright datasheet for APT1608QWF/G (1.6 x 0.8 mm SMD chip LED), 4 pages.
+# Footer on every page: "Spec No: DSAJ9192 ... Rev No: V.7B Date:
+# 05/08/2025" (MM/DD/YYYY). Read with pdftotext
+# plus renders of page 1 (package drawing, schematic symbol, soldering
+# pattern are vector art). Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: kingbright/DSAJ9192
+sha256: a30e746dcfbc380b07931eea7c9a8305333b8254bb983c85b03e1bfb8dd2f269
+retrieved: 2026-11-16
+url: https://www.kingbrightusa.com/images/catalog/spec/apt1608qwf-g.pdf
+publisher: kingbright
+document_id: DSAJ9192
+document_type: datasheet
+revision: V.7B
+date: 2025-05-08

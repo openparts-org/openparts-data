@@ -1,0 +1,39 @@
+# Kingbright APT2012ZGC, 2.0 x 1.25 mm chip LED, Green. existence verified: the
+# single-part datasheet's SELECTION GUIDE lists Part Number "APT2012ZGC"
+# (p1). lifecycle unknown: no production-status statement.
+# Package: the existing APT2012 outline -- this sheet's p1 drawing
+# prints the same numbers (2 x 1.25 x 0.75, terminals 0.4; compared
+# visually with apt2012ec side by side).
+schema_version: "0.2"
+kind: part
+id: kingbright/APT2012ZGC
+manufacturer: kingbright
+mpn: APT2012ZGC
+device: kingbright/APT2012ZGC
+package: manufacturers/kingbright/CHIP-KINGBRIGHT-APT2012
+sources: [kingbright/DSAE3711]
+source: kingbright/DSAE3711
+
+existence: { status: verified, src: 'p1 "SELECTION GUIDE, Part Number APT2012ZGC"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  forward_voltage:
+    typ: 3.3 V
+    max: 4.1 V
+    at: { IF: 20 mA, TA: 25 °C }
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, Green"
+  reverse_voltage:
+    max: 5 V
+    at: { TA: 25 °C }
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Reverse Voltage VR"
+  forward_current:
+    max: 25 mA
+    at: { TA: 25 °C }
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF"
+  color: { value: green, src: 'p1 "SELECTION GUIDE, Emitting Color Green"' }
+  wavelength:
+    typ: 525 nm
+    at: { IF: 20 mA, TA: 25 °C }
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Green"

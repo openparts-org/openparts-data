@@ -1,0 +1,36 @@
+# Kingbright APT1608CGCK, 1.6 x 0.8 mm chip LED, Green. existence verified: the
+# single-part datasheet's SELECTION GUIDE lists Part Number "APT1608CGCK"
+# (p1). lifecycle unknown: no production-status statement.
+schema_version: "0.2"
+kind: part
+id: kingbright/APT1608CGCK
+manufacturer: kingbright
+mpn: APT1608CGCK
+device: kingbright/APT1608CGCK
+package: manufacturers/kingbright/CHIP-KINGBRIGHT-APT1608
+sources: [kingbright/DSAA6059]
+source: kingbright/DSAA6059
+
+existence: { status: verified, src: 'p1 "SELECTION GUIDE, Part Number APT1608CGCK"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  forward_voltage:
+    typ: 2.1 V
+    max: 2.5 V
+    at: { IF: 20 mA, TA: 25 °C }
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, Green"
+  reverse_voltage:
+    max: 5 V
+    at: { TA: 25 °C }
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Reverse Voltage VR"
+  forward_current:
+    max: 30 mA
+    at: { TA: 25 °C }
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF"
+  color: { value: green, src: 'p1 "SELECTION GUIDE, Emitting Color Green"' }
+  wavelength:
+    typ: 570 nm
+    at: { IF: 20 mA, TA: 25 °C }
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Green"
