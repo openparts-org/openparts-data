@@ -29,22 +29,23 @@ lifecycle:
   src: aos/AOT2146L-product-page "Embedded product JSON "product_status":"Last Time Buy""
 
 parameters:
-  polarity: { value: n_channel, src: 'p1 "Page-1 title: "40V N-Channel AlphaSGT™""' }
-  drain_source_voltage:
-    typ: 40 V
-    src: 'p1 "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 40 V"'
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 40 V, src: 'p1 "Abs. Max. Ratings, VDS"' }
   drain_current:
-    typ: 105 A
-    at: { TC: 25 °C }
-    src: 'p1 "Absolute Maximum Ratings, Continuous Drain Current ID: 105 A"'
+    - { max: 105 A, at: { TC: 25 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
+    - { max: 100 A, at: { TC: 100 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
+    - { max: 42 A, at: { TA: 25 °C }, src: 'p1 "Abs. Max. Ratings, IDSM"' }
+    - { max: 33.5 A, at: { TA: 70 °C }, src: 'p1 "Abs. Max. Ratings, IDSM"' }
   rds_on:
-    typ: 2.3 mΩ
-    max: 2.8 mΩ
-    at: { VGS: 10 V, ID: 20 A, TJ: 25 °C }
-    src: 'p2 "Electrical Characteristics, RDS(ON) Static Drain-Source On-Resistance: Typ 2.3, Max 2.8 mΩ"'
+    - { typ: 2.3 mΩ, max: 2.8 mΩ, at: { VGS: 10 V, ID: 20 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - typ: 3.5 mΩ
+      max: 4.3 mΩ
+      at: { VGS: 10 V, ID: 20 A, TJ: 125 °C }
+      src: p2 "Elec. Char., RDS(ON)"
+    - { typ: 3.1 mΩ, max: 3.9 mΩ, at: { VGS: 4.5 V, ID: 20 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
   gate_threshold_voltage:
     min: 1.5 V
     typ: 1.95 V
     max: 2.5 V
-    at: { TJ: 25 °C }
-    src: 'p2 "Electrical Characteristics, VGS(th) Gate Threshold Voltage: Min 1.5, Typ 1.95, Max 2.5 V"'
+    at: { ID: 250 µA }
+    src: p2 "Elec. Char., VGS(th), VDS=VGS"

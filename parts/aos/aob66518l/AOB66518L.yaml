@@ -29,22 +29,23 @@ lifecycle:
   src: aos/AOB66518L-product-page "Embedded product JSON "product_status":"Full Production""
 
 parameters:
-  polarity: { value: n_channel, src: 'p1 "Page-1 title: "150V N-Channel MOSFET""' }
-  drain_source_voltage:
-    typ: 150 V
-    src: 'p1 "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 150 V"'
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 150 V, src: 'p1 "Abs. Max. Ratings, VDS"' }
   drain_current:
-    typ: 120 A
-    at: { TC: 25 °C }
-    src: 'p1 "Absolute Maximum Ratings, Continuous Drain Current ID: 120 A"'
+    - { max: 120 A, at: { TC: 25 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
+    - { max: 120 A, at: { TC: 100 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
+    - { max: 30 A, at: { TA: 25 °C }, src: 'p1 "Abs. Max. Ratings, IDSM"' }
+    - { max: 25 A, at: { TA: 70 °C }, src: 'p1 "Abs. Max. Ratings, IDSM"' }
   rds_on:
-    typ: 4.2 mΩ
-    max: 5 mΩ
-    at: { VGS: 10 V, ID: 20 A, TJ: 25 °C }
-    src: 'p2 "Electrical Characteristics, RDS(ON) Static Drain-Source On-Resistance: Typ 4.2, Max 5 mΩ"'
+    - { typ: 4.2 mΩ, max: 5 mΩ, at: { VGS: 10 V, ID: 20 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - typ: 7.7 mΩ
+      max: 9.4 mΩ
+      at: { VGS: 10 V, ID: 20 A, TJ: 125 °C }
+      src: p2 "Elec. Char., RDS(ON)"
+    - { typ: 4.6 mΩ, max: 5.6 mΩ, at: { VGS: 8 V, ID: 20 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
   gate_threshold_voltage:
     min: 2.7 V
     typ: 3.2 V
     max: 3.7 V
-    at: { TJ: 25 °C }
-    src: 'p2 "Electrical Characteristics, VGS(th) Gate Threshold Voltage: Min 2.7, Typ 3.2, Max 3.7 V"'
+    at: { ID: 250 µA }
+    src: p2 "Elec. Char., VGS(th), VDS=VGS"

@@ -24,22 +24,22 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  polarity: { value: n_channel, src: 'p1 "Page-1 title: "30V N-Channel MOSFET""' }
-  drain_source_voltage:
-    typ: 30 V
-    src: 'p1 "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 30 V"'
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 30 V, src: 'p1 "Abs. Max. Ratings, VDS"' }
   drain_current:
-    typ: 5.7 A
-    at: { TA: 25 °C }
-    src: 'p1 "Absolute Maximum Ratings, Continuous Drain Current ID: 5.7 A"'
+    - { max: 5.7 A, at: { TA: 25 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
+    - { max: 4.7 A, at: { TA: 70 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
   rds_on:
-    typ: 18 mΩ
-    max: 26.5 mΩ
-    at: { VGS: 10 V, ID: 5.7 A, TJ: 25 °C }
-    src: 'p2 "Electrical Characteristics, RDS(ON) Static Drain-Source On-Resistance: Typ 18, Max 26.5 mΩ"'
+    - { typ: 18 mΩ, max: 26.5 mΩ, at: { VGS: 10 V, ID: 5.7 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - typ: 28 mΩ
+      max: 38 mΩ
+      at: { VGS: 10 V, ID: 5.7 A, TJ: 125 °C }
+      src: p2 "Elec. Char., RDS(ON)"
+    - { typ: 19 mΩ, max: 32 mΩ, at: { VGS: 4.5 V, ID: 5 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { typ: 24 mΩ, max: 48 mΩ, at: { VGS: 2.5 V, ID: 3 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
   gate_threshold_voltage:
     min: 0.65 V
     typ: 1.05 V
     max: 1.45 V
-    at: { TJ: 25 °C }
-    src: 'p2 "Electrical Characteristics, VGS(th) Gate Threshold Voltage: Min 0.65, Typ 1.05, Max 1.45 V"'
+    at: { ID: 250 µA }
+    src: p2 "Elec. Char., VGS(th), VDS=VGS"

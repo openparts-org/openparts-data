@@ -25,22 +25,29 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  polarity: { value: p_channel, src: 'p1 "Page-1 title: "30V P-Channel MOSFET""' }
-  drain_source_voltage:
-    typ: -30 V
-    src: 'p1 "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: -30 V"'
+  polarity:             { value: p_channel, src: p1 "Title" }
+  drain_source_voltage: { max: -30 V, src: 'p1 "Abs. Max. Ratings, VDS"' }
   drain_current:
-    typ: -70 A
-    at: { TC: 25 °C }
-    src: 'p1 "Absolute Maximum Ratings, Continuous Drain Current ID: -70 A"'
+    - { max: -70 A, at: { TC: 25 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
+    - { max: -55 A, at: { TC: 100 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
+    - { max: -15 A, at: { TA: 25 °C }, src: 'p1 "Abs. Max. Ratings, IDSM"' }
+    - { max: -12 A, at: { TA: 70 °C }, src: 'p1 "Abs. Max. Ratings, IDSM"' }
   rds_on:
-    typ: 6.2 mΩ
-    max: 8 mΩ
-    at: { VGS: -10 V, ID: -20 A, TJ: 25 °C }
-    src: 'p2 "Electrical Characteristics, RDS(ON) Static Drain-Source On-Resistance, TO252 row: Typ 6.2, Max 8 mΩ"'
+    - typ: 6.2 mΩ
+      max: 8 mΩ
+      at: { VGS: -10 V, ID: -20 A }
+      src: p2 "Elec. Char., RDS(ON), TO252 row"
+    - typ: 5.1 mΩ
+      max: 6.2 mΩ
+      at: { VGS: -20 V, ID: -20 A }
+      src: p2 "Elec. Char., RDS(ON), TO252 row"
+    - typ: 7.6 mΩ
+      max: 9.2 mΩ
+      at: { VGS: -20 V, ID: -20 A, TJ: 125 °C }
+      src: p2 "Elec. Char., RDS(ON), TO252 row"
   gate_threshold_voltage:
     min: -3.5 V
     typ: -2.5 V
     max: -1.5 V
-    at: { TJ: 25 °C }
-    src: 'p2 "Electrical Characteristics, VGS(th) Gate Threshold Voltage: Min -1.5, Typ -2.5, Max -3.5 V"'
+    at: { ID: -250 µA }
+    src: p2 "Elec. Char., VGS(th), VDS=VGS"
