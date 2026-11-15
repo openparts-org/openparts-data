@@ -1,0 +1,32 @@
+# RA2E1 (QFN48) MD pin (P201/MD) boot mode selection: the Quick Design
+# Guide's typical circuit, 10 kOhm pull-up to 3.3 V (single-chip mode,
+# MD = 1) and a jumper through 1.5 kOhm to ground (SCI boot mode,
+# MD = 0). The internal pull-up may replace the external one. AI
+# candidate.
+schema_version: "0.2"
+kind: circuit
+id: renesas/ra2e1-qfn48-boot-mode
+title: RA2E1 (QFN48) boot mode selection
+host: renesas/R7FA2E1A9-QFN48
+source: renesas/R01AN6060EU0104
+
+nets:
+  GND:    { kind: ground }
+  MD_SEL: { kind: local }
+  VCC:    { kind: power, voltage: { typ: 3.3 V }, src: p9 "Figure 5" }
+
+roles:
+  J_MD:
+    requires: { category: connector, src: p9 "Figure 5" }
+    pins: { "1": MD_SEL, "2": host.P201/MD }
+    level: example
+    src: p9 "Figure 5"
+  R_MD_PD:
+    requires: { category: resistor, resistance: { typ: 1.5 kΩ }, src: p9 "Figure 5" }
+    pins: { "1": MD_SEL, "2": GND }
+    level: example
+    src: p9 "Figure 5"
+  R_MD_PU:
+    requires: { category: resistor, resistance: { typ: 10 kΩ }, src: p9 "Figure 5" }
+    pins:     { "1": VCC, "2": host.P201/MD }
+    level:    { value: optional, word: may, src: p9 "3" }

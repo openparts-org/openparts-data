@@ -1,0 +1,51 @@
+# RA2E1 (QFN48) supply: about 0.1 uF at every supply pin pair and 4.7 uF
+# from VCL to VSS, as close to the pins as possible (datasheet Table 2.1,
+# Caution). VCL's capacitor carries the "must"; the others are
+# imperatives without a modal word and are recorded as examples. The
+# VREFH0 capacitor applies when VREFH0 is the ADC12 reference. AI
+# candidate.
+schema_version: "0.2"
+kind: circuit
+id: renesas/ra2e1-qfn48-power
+title: RA2E1 (QFN48) supply decoupling
+host: renesas/R7FA2E1A9-QFN48
+source: renesas/R01DS0386EJ0180
+
+nets:
+  GND: { kind: ground }
+  VCC: { kind: power }
+
+connect:
+  AVCC0: { net: VCC, level: example, src: 'p25 "Table 2.2, note 1"' }
+  AVSS0: { net: GND, level: example, src: renesas/R01AN6060EU0104 p4 "Table 2" }
+  VCC:   { net: VCC, level: example, src: 'p12 "Table 1.14, VCC"' }
+  VSS:   { net: GND, level: example, src: 'p12 "Table 1.14, VSS"' }
+
+roles:
+  C_AVCC0:
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: 'p25 "Table 2.1, Caution"' }
+    pins: { "1": host.AVCC0, "2": GND }
+    place: { near: host.AVCC0, src: 'p25 "Table 2.1, Caution"' }
+    level: example
+    src: p25 "Table 2.1, Caution"
+  C_VCC:
+    per_pin: VCC
+    requires:
+      category: capacitor
+      capacitance: { typ: 100 nF }
+      src: ['p12 "Table 1.14, VCC"', 'p25 "Table 2.1, Caution"']
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p12 "Table 1.14, VCC"' }
+    level: example
+    src: p25 "Table 2.1, Caution"
+  C_VCL:
+    requires: { category: capacitor, capacitance: { typ: 4.7 uF }, src: 'p25 "Table 2.1, Caution"' }
+    pins:     { "1": host.VCL, "2": GND }
+    place:    { near: host.VCL, src: 'p25 "Table 2.1, Caution"' }
+    level:    { value: required, word: must, src: 'p25 "Table 2.1, Caution"' }
+  C_VREF0:
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: 'p25 "Table 2.1, Caution"' }
+    pins: { "1": host.P010/VREFH0, "2": host.P011/VREFL0 }
+    place: { near: host.P010/VREFH0, src: 'p25 "Table 2.1, Caution"' }
+    level: example
+    src: p25 "Table 2.1, Caution"

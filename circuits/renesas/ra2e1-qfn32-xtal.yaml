@@ -1,0 +1,30 @@
+# RA2E1 (QFN32) main clock crystal on EXTAL/XTAL with load capacitors CL1
+# and CL2, as the Quick Design Guide's example connection shows them; it
+# gives no values (they follow the crystal). A feedback resistor Rf and
+# a damping resistor Rd may be added if the crystal maker recommends
+# them, and are not recorded. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: renesas/ra2e1-qfn32-xtal
+title: RA2E1 (QFN32) main clock crystal
+host: renesas/R7FA2E1A9-QFN32
+source: renesas/R01AN6060EU0104
+
+nets: { GND: { kind: ground } }
+
+roles:
+  C_L1:
+    requires: { category: capacitor, src: p15 "Figure 10" }
+    pins: { "1": host.P212/EXTAL, "2": GND }
+    level: example
+    src: p15 "Figure 10"
+  C_L2:
+    requires: { category: capacitor, src: p15 "Figure 10" }
+    pins: { "1": host.P213/XTAL, "2": GND }
+    level: example
+    src: p15 "Figure 10"
+  X1:
+    requires: { category: crystal, frequency: { min: 1 MHz, max: 20 MHz }, src: p12 "Table 5" }
+    pins: { "1": host.P212/EXTAL, "2": host.P213/XTAL }
+    level: example
+    src: p15 "Figure 10"

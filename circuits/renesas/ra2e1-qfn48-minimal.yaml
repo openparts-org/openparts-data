@@ -1,0 +1,26 @@
+# RA2E1 (QFN48) minimal circuit from the datasheet and the Quick Design
+# Guide: supply decoupling, main crystal, MD boot selection and SWD.
+# AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: renesas/ra2e1-qfn48-minimal
+title: RA2E1 (QFN48) minimal circuit
+host: renesas/R7FA2E1A9-QFN48
+source: renesas/R01AN6060EU0104
+
+nets:
+  GND:   { kind: ground }
+  RES:   { kind: signal }
+  SWCLK: { kind: signal }
+  SWDIO: { kind: signal }
+  VCC:   { kind: power }
+
+includes:
+  - circuit: renesas/ra2e1-qfn48-power
+    with: { GND: GND, VCC: VCC }
+    src: renesas/R01DS0386EJ0180 p25 "Table 2.1, Caution"
+  - { circuit: renesas/ra2e1-qfn48-xtal, with: { GND: GND }, src: p15 "Figure 10" }
+  - { circuit: renesas/ra2e1-qfn48-boot-mode, with: { GND: GND, VCC: VCC }, src: p9 "Figure 5" }
+  - circuit: renesas/ra2e1-qfn48-swd
+    with: { RES: RES, SWCLK: SWCLK, SWDIO: SWDIO, VCC: VCC }
+    src: p7 "Figure 1"
