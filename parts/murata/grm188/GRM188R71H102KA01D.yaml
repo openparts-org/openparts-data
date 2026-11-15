@@ -25,13 +25,11 @@ lifecycle: { status: unknown }
 parameters:
   capacitance:
     typ: 1000 pF
-    src: 'p40 "High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics, LxW 1.6x0.8(18)<0603>, row Capacitance 1000pF(102), Part Number GRM188R71H102KA01D: Capacitance 1000pF(102)"'
+    src: p40 "X7R(R7)/X7S(C7) Characteristics, <0603>, GRM188R71H102KA01D row, Capacitance"
   tolerance:
     tol: ±10 %
-    src: 'p40 "High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics, LxW 1.6x0.8(18)<0603>, row Capacitance 1000pF(102), Part Number GRM188R71H102KA01D: Tolerance ±10%(K)"'
+    src: p40 "X7R(R7)/X7S(C7) Characteristics, <0603>, GRM188R71H102KA01D row, Tolerance"
   rated_voltage:
     typ: 50 V
-    src: p40 "High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics, LxW 1.6x0.8(18)<0603>, Part Number GRM188R71H102KA01D in column Rated Volt. [Vdc] 50(1H)"
-  dielectric:
-    value: X7R
-    src: 'p5 "Part Numbering, tTemperature Characteristics, Temperature Characteristic Codes: R7 = X7R (EIA); Part Number GRM188R71H102KA01D listed under "High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics" on p40"'
+    src: p40 "X7R(R7)/X7S(C7) Characteristics, <0603>, GRM188R71H102KA01D row, Rated Volt. column"
+  dielectric: { value: X7R, src: 'p5 "Part Numbering, Temperature Characteristic Codes: R7 = X7R"' }

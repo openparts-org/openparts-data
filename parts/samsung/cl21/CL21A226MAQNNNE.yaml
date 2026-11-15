@@ -30,13 +30,11 @@ lifecycle:
   src: '"Characteristics, "Status: NRND"; caution box "Replacement / Recommended part : CL21A226MAYNNN#""'
 
 parameters:
-  capacitance:
-    typ: 22 uF
-    src: '"Product page CL21A226MAQNNN#, Characteristics, Capacitance: 22.0uF"'
-  tolerance: { tol: ±20 %, src: '"Product page CL21A226MAQNNN#, Characteristics, Tolerance: ±20%"' }
+  capacitance: { typ: 22 uF, src: '"Product page CL21A226MAQNNN#, Characteristics, Capacitance"' }
+  tolerance:   { tol: ±20 %, src: '"Product page CL21A226MAQNNN#, Characteristics, Tolerance"' }
   rated_voltage:
     typ: 25 V
-    src: '"Product page CL21A226MAQNNN#, Characteristics, Rated Voltage: 25.0Vdc"'
+    src: '"Product page CL21A226MAQNNN#, Characteristics, Rated Voltage"'
   dielectric:
     value: X5R
-    src: '"Product page CL21A226MAQNNN#, Characteristics, Temperature Characteristic: X5R(-55 ~ +85)"'
+    src: '"Product page CL21A226MAQNNN#, Characteristics, Temperature Characteristic"'

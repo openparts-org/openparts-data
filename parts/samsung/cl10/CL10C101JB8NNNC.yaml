@@ -26,13 +26,11 @@ existence:
 lifecycle: { status: active, src: '"Characteristics, "Status: Mass Production""' }
 
 parameters:
-  capacitance:
-    typ: 100 pF
-    src: '"Product page CL10C101JB8NNN#, Characteristics, Capacitance: 100.0pF"'
-  tolerance: { tol: ±5 %, src: '"Product page CL10C101JB8NNN#, Characteristics, Tolerance: ±5%"' }
+  capacitance: { typ: 100 pF, src: '"Product page CL10C101JB8NNN#, Characteristics, Capacitance"' }
+  tolerance: { tol: ±5 %, src: '"Product page CL10C101JB8NNN#, Characteristics, Tolerance"' }
   rated_voltage:
     typ: 50 V
-    src: '"Product page CL10C101JB8NNN#, Characteristics, Rated Voltage: 50.0Vdc"'
+    src: '"Product page CL10C101JB8NNN#, Characteristics, Rated Voltage"'
   dielectric:
     value: C0G
-    src: '"Product page CL10C101JB8NNN#, Characteristics, Temperature Characteristic: C0G(-55 ~ +125)"'
+    src: '"Product page CL10C101JB8NNN#, Characteristics, Temperature Characteristic"'

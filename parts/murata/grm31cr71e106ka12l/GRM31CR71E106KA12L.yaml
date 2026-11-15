@@ -13,9 +13,9 @@ existence: { status: verified }
 lifecycle: { status: active }
 
 parameters:
-  capacitance:   { typ: 10 uF, src: 'p1 "Specifications, Capacitance: 10µF ±10%"' }
-  tolerance:     { tol: ±10 %, src: 'p1 "Specifications, Capacitance: 10µF ±10%"' }
-  rated_voltage: { typ: 25 V, src: 'p1 "Specifications, Rated voltage: 25Vdc"' }
+  capacitance:   { typ: 10 uF, src: 'p1 "Specifications, Capacitance"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "Specifications, Capacitance"' }
+  rated_voltage: { typ: 25 V, src: 'p1 "Specifications, Rated voltage"' }
   dielectric:
     value: X7R
-    src: 'p1 "Specifications, Temperature characteristics (complied standard): X7R(EIA)"'
+    src: p1 "Specifications, Temperature characteristics (complied standard)"

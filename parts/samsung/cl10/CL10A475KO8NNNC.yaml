@@ -30,13 +30,11 @@ lifecycle:
   src: '"Characteristics, "Status: NRND"; caution box "Replacement / Recommended part : CL10A475KO8NQN#""'
 
 parameters:
-  capacitance:
-    typ: 4.7 uF
-    src: '"Product page CL10A475KO8NNN#, Characteristics, Capacitance: 4.7uF"'
-  tolerance: { tol: ±10 %, src: '"Product page CL10A475KO8NNN#, Characteristics, Tolerance: ±10%"' }
+  capacitance: { typ: 4.7 uF, src: '"Product page CL10A475KO8NNN#, Characteristics, Capacitance"' }
+  tolerance: { tol: ±10 %, src: '"Product page CL10A475KO8NNN#, Characteristics, Tolerance"' }
   rated_voltage:
     typ: 16 V
-    src: '"Product page CL10A475KO8NNN#, Characteristics, Rated Voltage: 16.0Vdc"'
+    src: '"Product page CL10A475KO8NNN#, Characteristics, Rated Voltage"'
   dielectric:
     value: X5R
-    src: '"Product page CL10A475KO8NNN#, Characteristics, Temperature Characteristic: X5R(-55 ~ +85)"'
+    src: '"Product page CL10A475KO8NNN#, Characteristics, Temperature Characteristic"'

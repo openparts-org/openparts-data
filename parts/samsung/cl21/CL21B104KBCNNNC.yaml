@@ -26,13 +26,11 @@ existence:
 lifecycle: { status: active, src: '"Characteristics, "Status: Mass Production""' }
 
 parameters:
-  capacitance:
-    typ: 100 nF
-    src: '"Product page CL21B104KBCNNN#, Characteristics, Capacitance: 100.0nF"'
-  tolerance: { tol: ±10 %, src: '"Product page CL21B104KBCNNN#, Characteristics, Tolerance: ±10%"' }
+  capacitance: { typ: 100 nF, src: '"Product page CL21B104KBCNNN#, Characteristics, Capacitance"' }
+  tolerance: { tol: ±10 %, src: '"Product page CL21B104KBCNNN#, Characteristics, Tolerance"' }
   rated_voltage:
     typ: 50 V
-    src: '"Product page CL21B104KBCNNN#, Characteristics, Rated Voltage: 50.0Vdc"'
+    src: '"Product page CL21B104KBCNNN#, Characteristics, Rated Voltage"'
   dielectric:
     value: X7R
-    src: '"Product page CL21B104KBCNNN#, Characteristics, Temperature Characteristic: X7R(-55 ~ +125)"'
+    src: '"Product page CL21B104KBCNNN#, Characteristics, Temperature Characteristic"'

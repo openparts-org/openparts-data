@@ -26,13 +26,11 @@ existence:
 lifecycle: { status: active, src: '"Characteristics, "Status: Mass Production""' }
 
 parameters:
-  capacitance:
-    typ: 10 uF
-    src: '"Product page CL21A106KAYNNN#, Characteristics, Capacitance: 10.0uF"'
-  tolerance: { tol: ±10 %, src: '"Product page CL21A106KAYNNN#, Characteristics, Tolerance: ±10%"' }
+  capacitance: { typ: 10 uF, src: '"Product page CL21A106KAYNNN#, Characteristics, Capacitance"' }
+  tolerance:   { tol: ±10 %, src: '"Product page CL21A106KAYNNN#, Characteristics, Tolerance"' }
   rated_voltage:
     typ: 25 V
-    src: '"Product page CL21A106KAYNNN#, Characteristics, Rated Voltage: 25.0Vdc"'
+    src: '"Product page CL21A106KAYNNN#, Characteristics, Rated Voltage"'
   dielectric:
     value: X5R
-    src: '"Product page CL21A106KAYNNN#, Characteristics, Temperature Characteristic: X5R(-55 ~ +85)"'
+    src: '"Product page CL21A106KAYNNN#, Characteristics, Temperature Characteristic"'

@@ -26,13 +26,11 @@ existence:
 lifecycle: { status: active, src: '"Characteristics, "Status: Mass Production""' }
 
 parameters:
-  capacitance:
-    typ: 4.7 uF
-    src: '"Product page CL21A475KAQNNN#, Characteristics, Capacitance: 4.7uF"'
-  tolerance: { tol: ±10 %, src: '"Product page CL21A475KAQNNN#, Characteristics, Tolerance: ±10%"' }
+  capacitance: { typ: 4.7 uF, src: '"Product page CL21A475KAQNNN#, Characteristics, Capacitance"' }
+  tolerance: { tol: ±10 %, src: '"Product page CL21A475KAQNNN#, Characteristics, Tolerance"' }
   rated_voltage:
     typ: 25 V
-    src: '"Product page CL21A475KAQNNN#, Characteristics, Rated Voltage: 25.0Vdc"'
+    src: '"Product page CL21A475KAQNNN#, Characteristics, Rated Voltage"'
   dielectric:
     value: X5R
-    src: '"Product page CL21A475KAQNNN#, Characteristics, Temperature Characteristic: X5R(-55 ~ +85)"'
+    src: '"Product page CL21A475KAQNNN#, Characteristics, Temperature Characteristic"'

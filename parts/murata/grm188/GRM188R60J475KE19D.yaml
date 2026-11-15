@@ -25,13 +25,11 @@ lifecycle: { status: unknown }
 parameters:
   capacitance:
     typ: 4.7 µF
-    src: 'p48 "High Dielectric Constant Type X5R(R6) Characteristics, LxW 1.6x0.8(18)<0603>, row Capacitance 4.7µF(475), Part Number GRM188R60J475KE19D: Capacitance 4.7µF(475)"'
+    src: p48 "X5R(R6) Characteristics, <0603>, GRM188R60J475KE19D row, Capacitance"
   tolerance:
     tol: ±10 %
-    src: 'p48 "High Dielectric Constant Type X5R(R6) Characteristics, LxW 1.6x0.8(18)<0603>, row Capacitance 4.7µF(475), Part Number GRM188R60J475KE19D: Tolerance ±10%(K)"'
+    src: p48 "X5R(R6) Characteristics, <0603>, GRM188R60J475KE19D row, Tolerance"
   rated_voltage:
     typ: 6.3 V
-    src: p48 "High Dielectric Constant Type X5R(R6) Characteristics, LxW 1.6x0.8(18)<0603>, Part Number GRM188R60J475KE19D in column Rated Volt. [Vdc] 6.3(0J)"
-  dielectric:
-    value: X5R
-    src: 'p5 "Part Numbering, tTemperature Characteristics, Temperature Characteristic Codes: R6 = X5R (EIA); Part Number GRM188R60J475KE19D listed under "High Dielectric Constant Type X5R(R6) Characteristics" on p48"'
+    src: p48 "X5R(R6) Characteristics, <0603>, GRM188R60J475KE19D row, Rated Volt. column"
+  dielectric: { value: X5R, src: 'p5 "Part Numbering, Temperature Characteristic Codes: R6 = X5R"' }

@@ -25,13 +25,11 @@ lifecycle: { status: unknown }
 parameters:
   capacitance:
     typ: 1 µF
-    src: 'p47 "High Dielectric Constant Type X5R(R6) Characteristics, LxW 1.0x0.5(15)<0402>, row Capacitance 1.0µF(105), Part Number GRM155R61A105KE15D: Capacitance 1.0µF(105)"'
+    src: p47 "X5R(R6) Characteristics, <0402>, GRM155R61A105KE15D row, Capacitance"
   tolerance:
     tol: ±10 %
-    src: 'p47 "High Dielectric Constant Type X5R(R6) Characteristics, LxW 1.0x0.5(15)<0402>, row Capacitance 1.0µF(105), Part Number GRM155R61A105KE15D: Tolerance ±10%(K)"'
+    src: p47 "X5R(R6) Characteristics, <0402>, GRM155R61A105KE15D row, Tolerance"
   rated_voltage:
     typ: 10 V
-    src: p47 "High Dielectric Constant Type X5R(R6) Characteristics, LxW 1.0x0.5(15)<0402>, Part Number GRM155R61A105KE15D in column Rated Volt. [Vdc] 10(1A)"
-  dielectric:
-    value: X5R
-    src: 'p5 "Part Numbering, tTemperature Characteristics, Temperature Characteristic Codes: R6 = X5R (EIA); Part Number GRM155R61A105KE15D listed under "High Dielectric Constant Type X5R(R6) Characteristics" on p47"'
+    src: p47 "X5R(R6) Characteristics, <0402>, GRM155R61A105KE15D row, Rated Volt. column"
+  dielectric: { value: X5R, src: 'p5 "Part Numbering, Temperature Characteristic Codes: R6 = X5R"' }

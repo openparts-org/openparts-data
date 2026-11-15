@@ -26,13 +26,11 @@ existence:
 lifecycle: { status: active, src: '"Characteristics, "Status: Mass Production""' }
 
 parameters:
-  capacitance:
-    typ: 22 uF
-    src: '"Product page CL10A226MQ8NRN#, Characteristics, Capacitance: 22.0uF"'
-  tolerance: { tol: ±20 %, src: '"Product page CL10A226MQ8NRN#, Characteristics, Tolerance: ±20%"' }
+  capacitance: { typ: 22 uF, src: '"Product page CL10A226MQ8NRN#, Characteristics, Capacitance"' }
+  tolerance:   { tol: ±20 %, src: '"Product page CL10A226MQ8NRN#, Characteristics, Tolerance"' }
   rated_voltage:
     typ: 6.3 V
-    src: '"Product page CL10A226MQ8NRN#, Characteristics, Rated Voltage: 6.3Vdc"'
+    src: '"Product page CL10A226MQ8NRN#, Characteristics, Rated Voltage"'
   dielectric:
     value: X5R
-    src: '"Product page CL10A226MQ8NRN#, Characteristics, Temperature Characteristic: X5R(-55 ~ +85)"'
+    src: '"Product page CL10A226MQ8NRN#, Characteristics, Temperature Characteristic"'

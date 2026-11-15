@@ -15,11 +15,9 @@ existence: { status: verified }
 lifecycle: { status: active }
 
 parameters:
-  capacitance:
-    typ: 0.1 uF
-    src: 'p1 "规格 (Specifications) table, 静电容量 (Capacitance): 0.10µF ±10%"'
-  tolerance: { tol: ±10 %, src: 'p1 "规格 (Specifications) table, 静电容量 (Capacitance): 0.10µF ±10%"' }
-  rated_voltage: { typ: 16 V, src: 'p1 "规格 (Specifications) table, 额定电压 (Rated voltage): 16Vdc"' }
+  capacitance:   { typ: 0.1 uF, src: 'p1 "规格 (Specifications) table, 静电容量 (Capacitance)"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "规格 (Specifications) table, 静电容量 (Capacitance)"' }
+  rated_voltage: { typ: 16 V, src: 'p1 "规格 (Specifications) table, 额定电压 (Rated voltage)"' }
   dielectric:
     value: X7R
-    src: 'p1 "规格 (Specifications) table, 温度特性 (Temperature characteristics): X7R(EIA)"'
+    src: p1 "规格 (Specifications) table, 温度特性 (Temperature characteristics)"

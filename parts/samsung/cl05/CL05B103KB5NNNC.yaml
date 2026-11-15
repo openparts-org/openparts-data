@@ -26,13 +26,11 @@ existence:
 lifecycle: { status: active, src: '"Characteristics, "Status: Mass Production""' }
 
 parameters:
-  capacitance:
-    typ: 10 nF
-    src: '"Product page CL05B103KB5NNN#, Characteristics, Capacitance: 10.0nF"'
-  tolerance: { tol: ±10 %, src: '"Product page CL05B103KB5NNN#, Characteristics, Tolerance: ±10%"' }
+  capacitance: { typ: 10 nF, src: '"Product page CL05B103KB5NNN#, Characteristics, Capacitance"' }
+  tolerance:   { tol: ±10 %, src: '"Product page CL05B103KB5NNN#, Characteristics, Tolerance"' }
   rated_voltage:
     typ: 50 V
-    src: '"Product page CL05B103KB5NNN#, Characteristics, Rated Voltage: 50.0Vdc"'
+    src: '"Product page CL05B103KB5NNN#, Characteristics, Rated Voltage"'
   dielectric:
     value: X7R
-    src: '"Product page CL05B103KB5NNN#, Characteristics, Temperature Characteristic: X7R(-55 ~ +125)"'
+    src: '"Product page CL05B103KB5NNN#, Characteristics, Temperature Characteristic"'

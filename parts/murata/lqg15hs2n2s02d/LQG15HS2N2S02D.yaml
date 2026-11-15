@@ -17,12 +17,8 @@ existence: { status: verified }
 lifecycle: { status: active }
 
 parameters:
-  inductance:
-    typ: 2.2 nH
-    src: 'p2 "3. Part Number and Rating, row LQG15HS2N2S02D: Inductance Nominal value 2.2 nH"'
+  inductance: { typ: 2.2 nH, src: 'p2 "3. Part Number and Rating, LQG15HS2N2S02D row, Inductance"' }
   rated_current:
     typ: 900 mA
-    src: 'p2 "3. Part Number and Rating, row LQG15HS2N2S02D: Rated current (mA) 900"'
-  dcr:
-    max: 0.09 Ω
-    src: 'p2 "3. Part Number and Rating, row LQG15HS2N2S02D: DC resistance (Ω max.) 0.09"'
+    src: p2 "3. Part Number and Rating, LQG15HS2N2S02D row, Rated current"
+  dcr: { max: 0.09 Ω, src: 'p2 "3. Part Number and Rating, LQG15HS2N2S02D row, DC resistance"' }

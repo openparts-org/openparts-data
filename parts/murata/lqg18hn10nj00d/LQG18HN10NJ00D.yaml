@@ -25,13 +25,9 @@ lifecycle: { status: unknown }
 parameters:
   tolerance:
     tol: ±5 %
-    src: 'p1 "3. Part Number and Rating, row LQG18HN10NJ00D: Inductance Tolerance ±5%"'
-  inductance:
-    typ: 10 nH
-    src: 'p1 "3. Part Number and Rating, row LQG18HN10NJ00D: Inductance Nominal value 10 nH"'
+    src: p1 "3. Part Number and Rating, LQG18HN10NJ00D row, Inductance Tolerance"
+  inductance: { typ: 10 nH, src: 'p1 "3. Part Number and Rating, LQG18HN10NJ00D row, Inductance"' }
   rated_current:
     typ: 650 mA
-    src: 'p1 "3. Part Number and Rating, row LQG18HN10NJ00D: Rated current (mA) 650 (7.5: product temperature rise 25°C max.)"'
-  dcr:
-    max: 0.3 Ω
-    src: 'p1 "3. Part Number and Rating, row LQG18HN10NJ00D: DC resistance (Ω max.) 0.30"'
+    src: p1 "3. Part Number and Rating, LQG18HN10NJ00D row, Rated current (temp. rise 25 °C)"
+  dcr: { max: 0.3 Ω, src: 'p1 "3. Part Number and Rating, LQG18HN10NJ00D row, DC resistance"' }
