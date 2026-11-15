@@ -24,9 +24,44 @@ lifecycle:
 sources:
   - panasonic/AOA0000C304
 
+# Parameters (AI candidates, needs review): resistance and tolerance from
+# 'Explanation of part numbers' (±1 % series); power and T.C.R. from the
+# <±1 %> Ratings table, ERJ3EK row.
+parameters:
+  resistance:
+    nominal: 10
+    unit: kΩ
+  tolerance:
+    min: -1
+    max: 1
+    unit: "%"
+  power_rating:
+    nominal: 0.1
+    unit: W
+  temperature_coefficient:
+    min: -100
+    max: 100
+    unit: ppm/K
+
 provenance:
   "/existence":
     - source: panasonic/AOA0000C304
       page: 2
       locator: "Explanation of part numbers: ERJ | 3EK (0603, 0.1 W) | F (+/-1%) | 1002 (10 kOhm, the page-2 example \"1002 -> 10 kOhm\") | V (punched carrier taping 4 mm pitch, 5,000 pcs, Part No. ERJ3EK)"
+  "/parameters/resistance":
+    - source: panasonic/AOA0000C304
+      page: 2
+      locator: "Explanation of part numbers (ERJ ... 3EK ... series : ±1 %), Resistance value: first three digits are significant figures and the last one denotes number of zeros following -> 1002 = 100 + 2 zeros = 10 kΩ (the legend's own example: 1002 → 10 kΩ)"
+  "/parameters/tolerance":
+    - source: panasonic/AOA0000C304
+      page: 2
+      locator: "Explanation of part numbers (ERJ ... 3EK ... series : ±1 %), Resistance tolerance: Code F = ±1 %"
+  "/parameters/power_rating":
+    - source: panasonic/AOA0000C304
+      page: 3
+      locator: "Ratings <±1 %>, ERJ3EK (0603) row: Power rating (70 ℃) 0.1 W"
+  "/parameters/temperature_coefficient":
+    - source: panasonic/AOA0000C304
+      page: 3
+      locator: "Ratings <±1 %>, ERJ3EK (0603) row: T.C.R. ±100 (×10-6/K)"
 
