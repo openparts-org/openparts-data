@@ -1,0 +1,34 @@
+# ATmega32U4 bus-powered USB device with 5 V I/O (data sheet 21.3.1):
+# supply decoupling with the AVCC filters, USB termination, crystal
+# (required for full-speed USB, 21.4), reset pin and ISP header, all on
+# VBUS. The USB connector is a board choice and not included.
+# AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/atmega32u4-minimal
+title: ATmega32U4 bus-powered USB minimal circuit
+host: microchip/ATmega32U4
+source: microchip/7766@revJ
+
+nets:
+  GND:    { kind: ground }
+  MISO:   { kind: signal }
+  MOSI:   { kind: signal }
+  RESET:  { kind: signal }
+  SCK:    { kind: signal }
+  USB_DM: { kind: signal }
+  USB_DP: { kind: signal }
+  VBUS:   { kind: power, voltage: { typ: 5 V }, src: p257 "Figure 21-3" }
+
+includes:
+  - { circuit: microchip/atmega32u4-power, with: { GND: GND, VCC: VBUS }, src: p257 "Figure 21-3" }
+  - circuit: microchip/atmega32u4-usb-device
+    with: { GND: GND, USB_DM: USB_DM, USB_DP: USB_DP, VBUS: VBUS }
+    src: p257 "21.3.1"
+  - { circuit: microchip/atmega32u4-xosc, with: { GND: GND }, src: p259 "21.4" }
+  - circuit: microchip/atmega32u4-reset
+    with: { GND: GND, RESET: RESET, VCC: VBUS }
+    src: microchip/DS00002519@revB p7 "3"
+  - circuit: microchip/atmega32u4-isp
+    with: { GND: GND, MISO: MISO, MOSI: MOSI, RESET: RESET, SCK: SCK, VCC: VBUS }
+    src: p368 "28.8"

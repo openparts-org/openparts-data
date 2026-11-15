@@ -1,0 +1,64 @@
+# ATmega32U4 USB device, bus powered with 5 V I/O (data sheet 21.3.1,
+# Figure 21-3): UVCC, VCC and VBUS from the bus, the internal USB pad
+# regulator's UCAP capacitor, 22 Ohm series resistors and the VBUS
+# capacitor of the design guidelines (21.5). 21.5 asks 1 uF +-10% for
+# UCAP; the regulator characteristics are given at 1 uF +-20% (p384).
+# AVCC (also on VBUS in Figure 21-3) goes through the filter of
+# microchip/atmega32u4-power. USB_DP/USB_DM are the connector side.
+# AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/atmega32u4-usb-device
+title: ATmega32U4 USB bus-powered device
+host: microchip/ATmega32U4
+source: microchip/7766@revJ
+
+nets:
+  GND:    { kind: ground }
+  USB_DM: { kind: signal }
+  USB_DP: { kind: signal }
+  VBUS:   { kind: power, voltage: { typ: 5 V }, src: p257 "Figure 21-3" }
+
+connect:
+  UGND: { net: GND, level: example, src: p257 "Figure 21-3" }
+  UVCC: { net: VBUS, level: example, src: p257 "Figure 21-3" }
+  VBUS: { net: VBUS, level: example, src: p257 "Figure 21-3" }
+  VCC:  { net: VBUS, level: example, src: p257 "Figure 21-3" }
+
+roles:
+  C_UCAP:
+    requires:
+      category: capacitor
+      capacitance: { typ: 1 uF }
+      tolerance: { min: -10 %, max: 10 % }
+      src: p259 "21.5"
+    pins:  { "1": host.UCAP, "2": GND }
+    level: { value: recommended, word: should, src: [p259 "21.5", p6 "2.2.12"] }
+  C_VBUS:
+    requires: { category: capacitor, capacitance: { typ: 10 uF }, src: p259 "21.5" }
+    pins:     { "1": VBUS, "2": GND }
+    level:    { value: recommended, word: recommended, src: p259 "21.5" }
+  R_DM:
+    requires:
+      category: resistor
+      resistance: { typ: 22 Ω }
+      tolerance: { min: -5 %, max: 5 % }
+      src: p259 "21.5"
+    pins:  { "1": host.D-, "2": USB_DM }
+    level: { value: required, word: must, src: p259 "21.5" }
+  R_DP:
+    requires:
+      category: resistor
+      resistance: { typ: 22 Ω }
+      tolerance: { min: -5 %, max: 5 % }
+      src: p259 "21.5"
+    pins:  { "1": host.D+, "2": USB_DP }
+    level: { value: required, word: must, src: p259 "21.5" }
+
+placement:
+  - src:        p259 "21.5"
+    keep_short: [host.D+, host.D-, USB_DP, USB_DM]
+    level:      { value: recommended, word: should }
+
+routing:
+  - { diff_pair: [USB_DP, USB_DM], src: p259 "21.5" }

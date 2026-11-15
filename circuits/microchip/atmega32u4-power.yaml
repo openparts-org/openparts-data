@@ -1,0 +1,50 @@
+# ATmega32U4 supply pins: a decoupling capacitor per VCC/GND pair
+# (AN2519 2.1; no value given there), and each of the two AVCC pins fed
+# from VCC through the LC network of the data sheet (24.7.2 item 7,
+# Figure 24-10: 10 uH, 100 nF; "the same circuitry" on the ADC8-ADC13
+# side). AVCC and AREF decoupling are "must" in AN2519 2.2 (typical
+# 100 nF). The USB supply pins are in microchip/atmega32u4-usb-device.
+# AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/atmega32u4-power
+title: ATmega32U4 supply decoupling and AVCC filter
+host: microchip/ATmega32U4
+source: microchip/DS00002519@revB
+
+nets:
+  GND: { kind: ground }
+  VCC: { kind: power }
+
+connect:
+  GND: { net: GND, level: required, src: microchip/7766@revJ p5 "2.2.2" }
+  VCC: { net: VCC, level: example, src: microchip/7766@revJ p5 "2.2.1" }
+
+roles:
+  C_AREF:
+    per_pin: AREF
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p6 "2.2" }
+    pins: { "1": $pin, "2": GND }
+    level: { value: required, word: must, src: p6 "2.2" }
+  C_AVCC:
+    per_pin: AVCC
+    requires:
+      category: capacitor
+      capacitance: { typ: 100 nF }
+      src: [microchip/7766@revJ p307 "Figure 24-10", p6 "2.2"]
+    pins: { "1": $pin, "2": GND }
+    level: { value: required, word: must, src: p6 "2.2" }
+  C_VCC:
+    per_pin: VCC
+    requires: { category: capacitor, src: p6 "2.1" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p6 "2.1" }
+    level: { value: recommended, word: should, src: p5 "2.1" }
+  L_AVCC:
+    per_pin: AVCC
+    requires:
+      category: inductor
+      inductance: { typ: 10 uH }
+      src: microchip/7766@revJ p307 "Figure 24-10"
+    pins: { "1": VCC, "2": $pin }
+    level: { value: recommended, word: should, src: microchip/7766@revJ p306 "24.7.2" }

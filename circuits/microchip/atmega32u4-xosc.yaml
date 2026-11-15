@@ -1,0 +1,27 @@
+# ATmega32U4 crystal on XTAL1 / XTAL2, data sheet Figure 6-2. C1 and C2
+# "should always be equal"; 12-22 pF is the recommended range for
+# crystals of Table 6-3 (ceramic resonators: the maker's values). USB
+# full speed needs the external crystal or clock (21.4). AN2519 5.3
+# (22-33 pF) defers to the data sheet. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/atmega32u4-xosc
+title: ATmega32U4 crystal oscillator
+host: microchip/ATmega32U4
+source: microchip/7766@revJ
+
+nets: { GND: { kind: ground } }
+
+roles:
+  C1:
+    requires: { category: capacitor, capacitance: { min: 12 pF, max: 22 pF }, src: p30 "Table 6-3" }
+    pins:     { "1": host.XTAL1, "2": GND }
+    level:    { value: recommended, word: recommended, src: p30 "Table 6-3" }
+  C2:
+    requires: { category: capacitor, capacitance: { min: 12 pF, max: 22 pF }, src: p30 "Table 6-3" }
+    pins:     { "1": host.XTAL2, "2": GND }
+    level:    { value: recommended, word: recommended, src: p30 "Table 6-3" }
+  X1:
+    requires: { category: crystal, src: p30 "Figure 6-2" }
+    pins:     { "1": host.XTAL1, "2": host.XTAL2 }
+    level:    { value: example, src: p30 "Figure 6-2" }

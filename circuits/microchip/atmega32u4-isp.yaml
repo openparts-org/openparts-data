@@ -1,0 +1,30 @@
+# ATmega32U4 SPI programming (ISP) header: the standard 6-pin ISP
+# connector of AN2519 Figure 4-1 (MISO/MOSI there = PDO/PDI) wired to
+# the serial programming pins of the data sheet (Table 28-14: PDI PB2,
+# PDO PB3, SCK PB1) and RESET. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/atmega32u4-isp
+title: ATmega32U4 ISP header
+host: microchip/ATmega32U4
+source: microchip/7766@revJ
+
+nets:
+  GND:   { kind: ground }
+  MISO:  { kind: signal }
+  MOSI:  { kind: signal }
+  RESET: { kind: signal }
+  SCK:   { kind: signal }
+  VCC:   { kind: power }
+
+connect:
+  PB1:   { net: SCK, level: required, src: p368 "Table 28-14" }
+  PB2:   { net: MOSI, level: required, src: p368 "Table 28-14" }
+  PB3:   { net: MISO, level: required, src: p368 "Table 28-14" }
+  RESET: { net: RESET, level: required, src: p368 "Figure 28-10" }
+
+roles:
+  J_ISP:
+    requires: { category: connector, src: microchip/DS00002519@revB p9 "Figure 4-1" }
+    pins:     { "1": MISO, "2": VCC, "3": SCK, "4": MOSI, "5": RESET, "6": GND }
+    level:    { value: example, src: microchip/DS00002519@revB p9 "Figure 4-1" }
