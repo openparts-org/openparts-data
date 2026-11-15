@@ -1,0 +1,69 @@
+# RP2350 (A and B) 3.3 V supply pins and their decoupling in the single
+# 3.3 V supply scheme (RP2350 Datasheet 6.1, Figure 22). The core
+# regulator and DVDD are rp2350-vreg. The datasheet gives no IOVDD or
+# QSPI_IOVDD capacitor; the 100 nF per power pin is Hardware design
+# with RP2350 2.2.1. Examples (ratings, 0402 size) are the minimal
+# designs' (Figures 15, 16). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: raspberrypi/rp2350-power
+title: RP2350 3.3 V supply decoupling
+
+host: { devices: [raspberrypi/RP2350A, raspberrypi/RP2350B] }
+
+source: raspberrypi/RP-008373-DS@rev3
+
+nets:
+  GND:     { kind: ground }
+  VDD_3V3: { kind: power, voltage: { typ: 3.3 V }, src: p401 "6.1" }
+
+connect:
+  ADC_AVDD:    { net: VDD_3V3, level: example, src: p402 "6.1.5" }
+  GND:         { net: GND, src: 'p1336 "Table 1679, GND"' }
+  IOVDD:       { net: VDD_3V3, level: example, src: p401 "6.1.1" }
+  QSPI_IOVDD:  { net: VDD_3V3, level: example, src: p401 "6.1.2" }
+  USB_OTP_VDD: { net: VDD_3V3, level: { value: recommended, word: should }, src: p401 "6.1.4" }
+
+roles:
+  C_ADC_AVDD:
+    per_pin: ADC_AVDD
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p402 "6.1.5" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p402 "6.1.5" }
+    level: { value: recommended, word: should, src: p402 "6.1.5" }
+    example:
+      size: 0402
+      dielectric: { value: X7R }
+      rated_voltage: { typ: 25 V }
+      tolerance: { min: -10 %, max: 10 % }
+      src: raspberrypi/RP-008280-DS@rev2 p21 "Figure 15, 100n"
+  C_IOVDD:
+    per_pin: IOVDD
+    requires:
+      category: capacitor
+      capacitance: { typ: 100 nF }
+      src: raspberrypi/RP-008280-DS@rev2 p9 "2.2.1"
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: raspberrypi/RP-008280-DS@rev2 p9 "2.2.1" }
+    level: { value: recommended, word: recommend, src: raspberrypi/RP-008280-DS@rev2 p9 "2.2.1" }
+    example:
+      size: 0402
+      dielectric: { value: X7R }
+      rated_voltage: { typ: 25 V }
+      tolerance: { min: -10 %, max: 10 % }
+      src: raspberrypi/RP-008280-DS@rev2 p21 "Figure 15, 100n"
+  C_QSPI_IOVDD:
+    per_pin: QSPI_IOVDD
+    requires:
+      category: capacitor
+      capacitance: { typ: 100 nF }
+      src: raspberrypi/RP-008280-DS@rev2 p9 "2.2.1"
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: raspberrypi/RP-008280-DS@rev2 p9 "2.2.1" }
+    level: { value: recommended, word: recommend, src: raspberrypi/RP-008280-DS@rev2 p9 "2.2.1" }
+  C_USB_OTP_VDD:
+    per_pin: USB_OTP_VDD
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p402 "6.1.4" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p402 "6.1.4" }
+    level: { value: recommended, word: should, src: p402 "6.1.4" }

@@ -1,0 +1,51 @@
+# The RP2350A (QFN-60) and RP2350B (QFN-80) minimal designs (Hardware
+# design with RP2350) as one composite: their supply, core regulator,
+# crystal, flash/boot, USB and debug circuits plus the NCP1117 3.3 V
+# LDO from VBUS (2.2). The two boards differ only in I/O headers and
+# the RP2350B board's optional second memory, which are not included,
+# nor are the Micro-USB connector, buttons, mounting holes and a 10 uF
+# on 3.3 V (C19) whose purpose the text does not state. The minimal
+# designs share one 100 nF between USB_OTP_VDD and QSPI_IOVDD to save
+# space (p9 "2.2.1"); rp2350-power keeps one per pin. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: raspberrypi/rp2350-minimal
+title: RP2350 minimal design
+
+host: { devices: [raspberrypi/RP2350A, raspberrypi/RP2350B] }
+
+source: raspberrypi/RP-008280-DS@rev2
+
+nets:
+  1V1:    { kind: power, voltage: { typ: 1.1 V }, src: p6 "2" }
+  3V3:    { kind: power, voltage: { typ: 3.3 V }, src: p8 "2.2" }
+  GND:    { kind: ground }
+  RUN:    { kind: signal }
+  SWCLK:  { kind: signal }
+  SWD:    { kind: signal }
+  USB_DM: { kind: signal }
+  USB_DP: { kind: signal }
+  VBUS:   { kind: power, voltage: { typ: 5 V }, src: p8 "2.2" }
+
+roles:
+  U_LDO:
+    requires: { part: onsemi/NCP1117ST33T3G, src: 'p8 "2.2, U2"' }
+    level:    { value: example, src: p8 "2.2" }
+
+includes:
+  - { circuit: raspberrypi/rp2350-power, with: { GND: GND, VDD_3V3: 3V3 }, src: p9 "2.2.1" }
+  - circuit: raspberrypi/rp2350-vreg
+    with: { GND: GND, VDD_3V3: 3V3, VDD_CORE: 1V1 }
+    src: p8 "2.1"
+  - { circuit: raspberrypi/rp2350-xosc-12mhz, with: { GND: GND }, src: p14 "4" }
+  - { circuit: raspberrypi/rp2350-qspi-boot, with: { GND: GND, VDD_3V3: 3V3 }, src: p11 "3.1" }
+  - circuit: raspberrypi/rp2350-usb-device
+    with: { GND: GND, USB_DM: USB_DM, USB_DP: USB_DP }
+    src: p16 "5.1"
+  - circuit: raspberrypi/rp2350-debug-reset
+    with: { RUN: RUN, SWCLK: SWCLK, SWD: SWD }
+    src: p18 "5.3"
+  - circuit: onsemi/ncp1117-fixed
+    host: { role: U_LDO }
+    with: { GND: GND, VIN: VBUS, VOUT: 3V3 }
+    src: p9 "2.2"

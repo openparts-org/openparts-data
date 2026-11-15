@@ -1,0 +1,76 @@
+# RP2350 (A and B) 12 MHz crystal oscillator of the minimal designs
+# (Hardware design with RP2350 4): the recommended crystal with its
+# load capacitors and series resistor, tuned for IOVDD 3.3 V. The load
+# capacitance formula is the source's; it has no acceptance tolerance
+# ("close enough"), so it is reported, never passed or failed.
+# AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: raspberrypi/rp2350-xosc-12mhz
+title: RP2350 12 MHz crystal oscillator
+
+host: { devices: [raspberrypi/RP2350A, raspberrypi/RP2350B] }
+
+source: raspberrypi/RP-008280-DS@rev2
+
+conditions: { IOVDD: { typ: 3.3 V, src: p14 "4" } }
+
+nets:
+  GND:      { kind: ground }
+  XTAL_OUT: { kind: local }
+
+roles:
+  C_XIN:
+    requires: { category: capacitor, capacitance: { typ: 15 pF }, src: p14 "4" }
+    pins:     { "1": host.XIN, "2": GND }
+    level:    { value: recommended, word: recommend, src: p14 "4" }
+    example:
+      size: 0402
+      dielectric: { value: C0G }
+      rated_voltage: { typ: 50 V }
+      tolerance: { min: -5 %, max: 5 % }
+      src: p21 "Figure 15, C3"
+  C_XOUT:
+    requires: { category: capacitor, capacitance: { typ: 15 pF }, src: p14 "4" }
+    pins:     { "1": XTAL_OUT, "2": GND }
+    level:    { value: recommended, word: recommend, src: p14 "4" }
+    example:
+      size: 0402
+      dielectric: { value: C0G }
+      rated_voltage: { typ: 50 V }
+      tolerance: { min: -5 %, max: 5 % }
+      src: p21 "Figure 15, C4"
+  R_XOUT:
+    requires: { category: resistor, resistance: { typ: 1 kΩ }, src: 'p14 "4, R2"' }
+    pins:     { "1": host.XOUT, "2": XTAL_OUT }
+    level:    { value: recommended, word: recommend, src: p14 "4" }
+    example:
+      size: 0402
+      power_rating: { typ: 63 mW }
+      tolerance: { min: -1 %, max: 1 % }
+      src: p21 "Figure 15, R2"
+  X1:
+    requires: { part: abracon/ABM8-272-T3, src: p15 "4.1" }
+    pins:     { GND: GND, XTAL1: host.XIN, XTAL2: XTAL_OUT }
+    level:    { value: recommended, word: recommend, src: p15 "4.1" }
+    expects:
+      src:                 raspberrypi/RP-008373-DS@rev3 p508 "Table 629"
+      esr:                 { max: 50 Ω }
+      frequency:           { typ: 12 MHz }
+      frequency_tolerance: { min: -30 ppm, max: 30 ppm }
+      load_capacitance:    { typ: 10 pF }
+
+formulas:
+  load_capacitance:
+    expr: C_XIN * C_XOUT / (C_XIN + C_XOUT) + C_stray
+    inputs:
+      C_XIN:   { role: C_XIN, param: capacitance }
+      C_XOUT:  { role: C_XOUT, param: capacitance }
+      C_stray: { typ: 3 pF, src: p14 "4" }
+    target: { role: X1, param: load_capacitance }
+    result: { typ: 10.5 pF, src: p14 "4" }
+    unit: pF
+    src: p14 "4"
+
+placement:
+  - { keep_short: [host.XIN, host.XOUT, XTAL_OUT], src: p14 "4" }

@@ -1,0 +1,129 @@
+# RP2350 (A and B) on-chip core voltage regulator (switching mode) with
+# combined VREG_VIN/VREG_AVDD supply (RP2350 Datasheet 6.3.7 Figure 22,
+# 6.3.8 component values) and the DVDD decoupling it implies (6.1.3).
+# The datasheet and Hardware design with RP2350 2.1 recommend the
+# polarity-marked Abracon AOTA-B201610S3R3-101-T for L_VREG; it has no
+# OpenParts part yet, so only its stated requirements are recorded. Not
+# recorded (no catalog key): COUT's maximum inductance (6 nH), the
+# inductor's full shielding, polarity marking and orientation, and the
+# single-point VREG_PGND return; follow 6.3.8.1 / Figure 26 for those.
+# The DVDD pins nearest the regulator take 100 nF, the furthest one
+# (pin 23 on QFN-60, 6.3.8.1) 4.7 uF; host pins are named, not
+# numbered, so the roles say only "near DVDD". Examples are the minimal
+# designs' (Figure 15: C6 CIN, C7 COUT, C9/R3 the VREG_AVDD filter, L1).
+# AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: raspberrypi/rp2350-vreg
+title: RP2350 core switching regulator
+
+host: { devices: [raspberrypi/RP2350A, raspberrypi/RP2350B] }
+
+source: raspberrypi/RP-008373-DS@rev3
+
+conditions: { VREG_VIN: { min: 3.135 V, max: 3.63 V, src: p408 "6.3.7" } }
+
+nets:
+  GND:       { kind: ground }
+  VDD_3V3:   { kind: power, voltage: { min: 3.135 V, max: 3.63 V }, src: p408 "6.3.7" }
+  VDD_CORE:  { kind: power, voltage: { typ: 1.1 V }, src: p406 "6.3" }
+  VREG_AVDD: { kind: local }
+  VREG_LX:   { kind: local }
+
+connect:
+  DVDD:      { net: VDD_CORE, level: example, src: p409 "Figure 22" }
+  VREG_AVDD: { net: VREG_AVDD, level: { value: required, word: must }, src: p412 "6.3.8.1" }
+  VREG_FB:   { net: VDD_CORE, level: { value: recommended, word: should }, src: p413 "6.3.8.1" }
+  VREG_LX:   { net: VREG_LX, src: 'p1335 "Table 1679, VREG_LX"' }
+  VREG_PGND:
+    net: GND
+    level: { value: required, word: must }
+    src: raspberrypi/RP-008280-DS@rev2 p6 "2.1"
+  VREG_VIN:  { net: VDD_3V3, level: example, src: p408 "6.3.7" }
+
+roles:
+  C_DVDD:
+    count: 2
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p401 "6.1.3" }
+    pins: { "1": VDD_CORE, "2": GND }
+    place: { near: host.DVDD, src: p401 "6.1.3" }
+    level: { value: recommended, word: should, src: p401 "6.1.3" }
+    example:
+      size: 0402
+      dielectric: { value: X7R }
+      rated_voltage: { typ: 25 V }
+      tolerance: { min: -10 %, max: 10 % }
+      src: raspberrypi/RP-008280-DS@rev2 p21 "Figure 15, 100n"
+  C_DVDD_BULK:
+    requires: { category: capacitor, capacitance: { typ: 4.7 uF }, src: p401 "6.1.3" }
+    pins:     { "1": VDD_CORE, "2": GND }
+    place:    { near: host.DVDD, src: p413 "6.3.8.1" }
+    level:    { value: recommended, word: should, src: p401 "6.1.3" }
+  C_VREG_AVDD:
+    requires: { category: capacitor, capacitance: { typ: 4.7 uF }, src: p409 "Figure 22" }
+    pins:     { "1": VREG_AVDD, "2": GND }
+    place:    { near: host.VREG_AVDD, src: p412 "6.3.8.1" }
+    level:    { value: required, word: must, src: p412 "6.3.8.1" }
+    example:
+      size: 0402
+      dielectric: { value: X5R }
+      rated_voltage: { typ: 6.3 V }
+      tolerance: { min: -20 %, max: 20 % }
+      src: raspberrypi/RP-008280-DS@rev2 p21 "Figure 15, C9"
+  C_VREG_IN:
+    requires:
+      category: capacitor
+      capacitance: { min: 4.7 uF }
+      esr: { max: 50 mΩ }
+      src: p413 "6.3.8.2, CIN"
+    pins:  { "1": host.VREG_VIN, "2": GND }
+    place: { near: host.VREG_VIN, src: p402 "6.1.6" }
+    level: { value: recommended, word: should, src: 'p413 "6.3.8.2, CIN"' }
+    example:
+      size: 0402
+      dielectric: { value: X5R }
+      rated_voltage: { typ: 6.3 V }
+      tolerance: { min: -20 %, max: 20 % }
+      src: raspberrypi/RP-008280-DS@rev2 p21 "Figure 15, C6"
+  C_VREG_OUT:
+    requires:
+      category: capacitor
+      capacitance: { typ: 4.7 uF }
+      esr: { max: 250 mΩ }
+      tolerance: { min: -20 %, max: 20 % }
+      src: p413 "6.3.8.2, COUT"
+    pins:  { "1": VDD_CORE, "2": GND }
+    place: { near: L_VREG, src: p413 "6.3.8.1" }
+    level: { value: required, word: must, src: 'p413 "6.3.8.2, COUT"' }
+    example:
+      size: 0402
+      dielectric: { value: X5R }
+      rated_voltage: { typ: 6.3 V }
+      tolerance: { min: -20 %, max: 20 % }
+      src: raspberrypi/RP-008280-DS@rev2 p21 "Figure 15, C7"
+  L_VREG:
+    requires:
+      category: inductor
+      dcr: { max: 250 mΩ }
+      inductance: { typ: 3.3 uH }
+      saturation_current: { min: 1.5 A }
+      tolerance: { min: -20 %, max: 20 % }
+      src: p413 "6.3.8.2, LX"
+    pins:    { "1": VREG_LX, "2": VDD_CORE }
+    place:   { near: host.VREG_LX, src: p412 "Figure 26" }
+    level:   { value: required, word: must, src: 'p413 "6.3.8.2, LX"' }
+    example: { size: 0806, src: 'raspberrypi/RP-008280-DS@rev2 p8 "2.1, L1"' }
+  R_VREG_AVDD:
+    requires: { category: resistor, resistance: { typ: 33 Ω }, src: p409 "Figure 22" }
+    pins:     { "1": VDD_3V3, "2": VREG_AVDD }
+    level:    { value: required, word: must, src: p412 "6.3.8.1" }
+    example:
+      size: 0402
+      power_rating: { typ: 63 mW }
+      tolerance: { min: -1 %, max: 1 % }
+      src: raspberrypi/RP-008280-DS@rev2 p21 "Figure 15, R3"
+
+placement:
+  - src:        p410 "6.3.8"
+    keep_short: [host.VREG_VIN, VREG_LX, host.VREG_PGND, VDD_CORE]
+    level:      { value: required, word: must }

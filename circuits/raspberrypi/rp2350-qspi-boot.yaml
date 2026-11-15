@@ -1,0 +1,70 @@
+# RP2350 (A and B) primary QSPI flash and the USB_BOOT (BOOTSEL) strap
+# on QSPI_SS of the minimal designs (Hardware design with RP2350 3.1).
+# The 0 Ω links R9/R10 (choosing QSPI_SS or GPIO0 as the flash chip
+# select) and the RP2350B board's optional second memory (3.2) are
+# board options and not recorded; neither is the flash command set the
+# bootrom needs (3.3), which has no catalog key. With RP2354 (internal
+# flash) U_FLASH is omitted but the strap kept (3.1). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: raspberrypi/rp2350-qspi-boot
+title: RP2350 QSPI flash and BOOTSEL strap
+
+host: { devices: [raspberrypi/RP2350A, raspberrypi/RP2350B] }
+
+source: raspberrypi/RP-008280-DS@rev2
+
+nets:
+  BOOT:    { kind: local }
+  GND:     { kind: ground }
+  VDD_3V3: { kind: power, voltage: { typ: 3.3 V }, src: p11 "3.1" }
+
+roles:
+  C_FLASH:
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: 'p21 "Figure 15, C2"' }
+    pins:     { "1": VDD_3V3, "2": GND }
+    place:    { near: U_FLASH, src: 'p21 "Figure 15, C2"' }
+    level:    { value: example, src: 'p21 "Figure 15, C2"' }
+  R_BOOT:
+    requires: { category: resistor, resistance: { typ: 1 kΩ }, src: 'p11 "3.1, R6"' }
+    pins:     { "1": host.QSPI_SS, "2": BOOT }
+    place:    { near: U_FLASH, src: 'p12 "3.1, R1 R6"' }
+    level:    { value: required, word: important, src: 'p11 "3.1, R6"' }
+    example:
+      size: 0402
+      power_rating: { typ: 63 mW }
+      tolerance: { min: -1 %, max: 1 % }
+      src: p21 "Figure 15, R6"
+  R_CS_PULLUP:
+    requires: { category: resistor, resistance: { typ: 10 kΩ }, src: 'p11 "3.1, R1"' }
+    pins:     { "1": VDD_3V3, "2": host.QSPI_SS }
+    place:    { near: U_FLASH, src: 'p12 "3.1, R1 R6"' }
+    level:    { value: optional, word: DNF, src: 'p11 "3.1, R1"' }
+  SW_BOOT:
+    requires: { category: switch, src: 'p11 "3.1, SW1"' }
+    pins:     { "1": BOOT, "2": GND }
+    level:    { value: example, src: 'p11 "3.1, SW1"' }
+  U_FLASH:
+    requires: { category: flash, capacity: { max: 128 Mbit }, src: p11 "3.1" }
+    pins:
+      /CS: host.QSPI_SS
+      /HOLD or /RESET: host.QSPI_SD3
+      /WP: host.QSPI_SD2
+      CLK: host.QSPI_SCLK
+      DI: host.QSPI_SD0
+      DO: host.QSPI_SD1
+      GND: GND
+      VCC: VDD_3V3
+    level:    { value: required, word: need, src: p11 "3.1" }
+    example:  { part: winbond/W25Q128JVSIQ, src: 'p21 "Figure 15, U3"' }
+
+placement:
+  - src:   p11 "3.1"
+    keep_short:
+      - host.QSPI_SCLK
+      - host.QSPI_SD0
+      - host.QSPI_SD1
+      - host.QSPI_SD2
+      - host.QSPI_SD3
+      - host.QSPI_SS
+    level: { value: recommended, word: should }

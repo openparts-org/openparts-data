@@ -1,0 +1,59 @@
+# RP2350 (A and B) USB full-speed pins: the 27 Ω series resistors
+# (RP2350 Datasheet Table 2, Table 1678; pull-ups and pull-downs are
+# internal) placed close to the chip, and the minimal designs' line
+# impedance (Hardware design with RP2350 5.1). USB_DP/USB_DM are the
+# connector side. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: raspberrypi/rp2350-usb-device
+title: RP2350 USB series termination
+
+host: { devices: [raspberrypi/RP2350A, raspberrypi/RP2350B] }
+
+source: raspberrypi/RP-008280-DS@rev2
+
+nets:
+  GND:    { kind: ground }
+  USB_DM: { kind: signal }
+  USB_DP: { kind: signal }
+
+roles:
+  R_DM:
+    requires:
+      category: resistor
+      resistance: { typ: 27 Ω }
+      src: raspberrypi/RP-008373-DS@rev3 p1335 "Table 1678, USB_DM"
+    pins:  { "1": host.USB_DM, "2": USB_DM }
+    place: { near: host.USB_DM, src: p16 "5.1" }
+    level:
+      value: required
+      word: required
+      src: raspberrypi/RP-008373-DS@rev3 p1335 "Table 1678, USB_DM"
+    example:
+      size: 0402
+      power_rating: { typ: 63 mW }
+      tolerance: { min: -1 %, max: 1 % }
+      src: p21 "Figure 15, R7 R8"
+  R_DP:
+    requires:
+      category: resistor
+      resistance: { typ: 27 Ω }
+      src: raspberrypi/RP-008373-DS@rev3 p1335 "Table 1678, USB_DP"
+    pins:  { "1": host.USB_DP, "2": USB_DP }
+    place: { near: host.USB_DP, src: p16 "5.1" }
+    level:
+      value: required
+      word: required
+      src: raspberrypi/RP-008373-DS@rev3 p1335 "Table 1678, USB_DP"
+    example:
+      size: 0402
+      power_rating: { typ: 63 mW }
+      tolerance: { min: -1 %, max: 1 % }
+      src: p21 "Figure 15, R7 R8"
+
+routing:
+  - diff_pair: [USB_DP, USB_DM]
+    impedance: { typ: 90 Ω }
+    reference_plane: GND
+    example: { width: { typ: 0.8 mm }, gap: { typ: 0.15 mm }, board_thickness: { typ: 1 mm } }
+    src: p16 "5.1"

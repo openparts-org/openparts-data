@@ -1,0 +1,43 @@
+# RP2350 (A and B) with DVDD from an external 1.1 V supply and the
+# on-chip regulator disabled (RP2350 Datasheet 6.3.7, Figure 24):
+# VREG_VIN and VREG_AVDD still powered for the power-on reset and
+# brown-out blocks, one input capacitor, no inductor, VREG_FB grounded.
+# The capacitor values are the figure's; software must shut the
+# regulator down (VREG.HIZ), which is not a circuit fact. Alternative
+# to rp2350-vreg, never together. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: raspberrypi/rp2350-vreg-external
+title: RP2350 external core supply (regulator disabled)
+
+host: { devices: [raspberrypi/RP2350A, raspberrypi/RP2350B] }
+
+source: raspberrypi/RP-008373-DS@rev3
+
+nets:
+  GND:      { kind: ground }
+  VDD_3V3:  { kind: power, voltage: { min: 3.135 V, max: 3.63 V }, src: p410 "Figure 24" }
+  VDD_CORE: { kind: power, voltage: { typ: 1.1 V }, src: p410 "Figure 24" }
+
+connect:
+  DVDD:      { net: VDD_CORE, level: example, src: p410 "Figure 24" }
+  VREG_AVDD: { net: VDD_3V3, level: { value: required, word: must }, src: p410 "6.3.7" }
+  VREG_FB:   { net: GND, src: p410 "6.3.7" }
+  VREG_PGND:
+    net: GND
+    level: { value: required, word: must }
+    src: raspberrypi/RP-008280-DS@rev2 p6 "2.1"
+  VREG_VIN:  { net: VDD_3V3, level: { value: required, word: must }, src: p410 "6.3.7" }
+
+roles:
+  C_DVDD:
+    per_pin: DVDD
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p410 "Figure 24" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p410 "Figure 24" }
+    level: { value: example, src: p410 "Figure 24" }
+  C_VREG_IN:
+    requires: { category: capacitor, capacitance: { typ: 4.7 uF }, src: p410 "Figure 24" }
+    pins:     { "1": VDD_3V3, "2": GND }
+    place:    { near: host.VREG_VIN, src: p402 "6.1.6" }
+    level:    { value: required, word: required, src: p410 "6.3.7" }

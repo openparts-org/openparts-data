@@ -1,0 +1,25 @@
+# RP2350 (A and B) SWD and RUN brought out, as the minimal designs'
+# 2.54 mm header and optional 3-pin JST debug connector do (Hardware
+# design with RP2350 5.3, 5.4). SWCLK, SWDIO and RUN have internal
+# pull-ups (RP2350 Datasheet Table 1677), so no parts. RUN may instead
+# be tied to IOVDD when no external reset is needed (Table 2). The RUN
+# and BOOTSEL buttons are optional (5.4); connector and pin order are
+# the board's choice. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: raspberrypi/rp2350-debug-reset
+title: RP2350 SWD and RUN access
+
+host: { devices: [raspberrypi/RP2350A, raspberrypi/RP2350B] }
+
+source: raspberrypi/RP-008280-DS@rev2
+
+nets:
+  RUN:   { kind: signal }
+  SWCLK: { kind: signal }
+  SWD:   { kind: signal }
+
+connect:
+  RUN:   { net: RUN, level: example, src: p19 "5.4" }
+  SWCLK: { net: SWCLK, level: example, src: p18 "5.3" }
+  SWDIO: { net: SWD, level: example, src: p18 "5.3" }
