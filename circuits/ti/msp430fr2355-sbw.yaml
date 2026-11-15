@@ -1,0 +1,36 @@
+# MSP430FR2355 Spy-Bi-Wire (2-wire JTAG) connections: 47 kOhm pull-up and
+# a capacitor of at most 1.1 nF on RST/NMI/SBWTDIO (Figure 7-4). The
+# 14-pin connector pinout is not recorded (read only off the figure).
+# The unused-RST values differ between Table 4-4 and 7.1.4, so they
+# are not recorded either. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: ti/msp430fr2355-sbw
+title: MSP430FR2355 Spy-Bi-Wire and reset
+host: ti/MSP430FR2355
+source: ti/SLASEC4D
+
+nets:
+  GND:     { kind: ground }
+  SBWTCK:  { kind: signal }
+  SBWTDIO: { kind: signal }
+  VCC:     { kind: power }
+
+connect:
+  RST/NMI/SBWTDIO: { net: SBWTDIO, level: example, src: p112 "Figure 7-4" }
+  TEST/SBWTCK:     { net: SBWTCK, level: example, src: p112 "Figure 7-4" }
+
+roles:
+  C_RST:
+    requires:
+      category: capacitor
+      capacitance: { typ: 1 nF, max: 1.1 nF }
+      src: [p112 "Figure 7-4", 'p112 "Figure 7-4, note B"']
+    pins: { "1": host.RST/NMI/SBWTDIO, "2": GND }
+    level: example
+    src: p112 "Figure 7-4"
+  R_RST:
+    requires: { category: resistor, resistance: { typ: 47 kΩ }, src: p112 "Figure 7-4" }
+    pins: { "1": VCC, "2": host.RST/NMI/SBWTDIO }
+    level: example
+    src: p112 "Figure 7-4"

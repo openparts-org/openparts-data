@@ -1,0 +1,22 @@
+# MSP430FR2433 minimal circuit from Device Connection and Layout
+# Fundamentals (7.1): supply decoupling, 32 kHz crystal and the
+# Spy-Bi-Wire/reset connections. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: ti/msp430fr2433-minimal
+title: MSP430FR2433 minimal circuit
+host: ti/MSP430FR2433
+source: ti/SLASE59F
+
+nets:
+  GND:     { kind: ground }
+  SBWTCK:  { kind: signal }
+  SBWTDIO: { kind: signal }
+  VCC:     { kind: power }
+
+includes:
+  - { circuit: ti/msp430fr2433-power, with: { GND: GND, VCC: VCC }, src: p70 "7.1.1" }
+  - { circuit: ti/msp430fr2433-lfxt, with: { GND: GND }, src: p70 "7.1.2" }
+  - circuit: ti/msp430fr2433-sbw
+    with: { GND: GND, SBWTCK: SBWTCK, SBWTDIO: SBWTDIO, VCC: VCC }
+    src: p72 "Figure 7-4"

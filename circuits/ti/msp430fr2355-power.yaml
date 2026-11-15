@@ -1,0 +1,29 @@
+# MSP430FR2355 supply decoupling: 10 uF plus 100 nF low-ESR ceramic at
+# DVCC/DVSS (Device Connection and Layout Fundamentals 7.1.1). AI
+# candidate.
+schema_version: "0.2"
+kind: circuit
+id: ti/msp430fr2355-power
+title: MSP430FR2355 supply decoupling
+host: ti/MSP430FR2355
+source: ti/SLASEC4D
+
+nets:
+  GND: { kind: ground }
+  VCC: { kind: power }
+
+connect:
+  DVCC: { net: VCC, src: p110 "7.1.1" }
+  DVSS: { net: GND, src: p110 "7.1.1" }
+
+roles:
+  C_DVCC_BULK:
+    requires: { category: capacitor, capacitance: { typ: 10 uF }, src: p110 "7.1.1" }
+    pins:     { "1": host.DVCC, "2": GND }
+    place:    { near: host.DVCC, src: p110 "7.1.1" }
+    level:    { value: recommended, word: recommended, src: p110 "7.1.1" }
+  C_DVCC_HF:
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p110 "7.1.1" }
+    pins:     { "1": host.DVCC, "2": GND }
+    place:    { near: host.DVCC, src: p110 "7.1.1" }
+    level:    { value: recommended, word: recommended, src: p110 "7.1.1" }
