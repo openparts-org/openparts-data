@@ -1,0 +1,59 @@
+# RP2040 QSPI flash and the BOOTSEL strap of the minimal design
+# (Hardware design with RP2040 2.2). The flash command set the bootrom
+# needs (2.6) has no catalog key and is not recorded. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: raspberrypi/rp2040-qspi-boot
+title: RP2040 QSPI flash and BOOTSEL strap
+host: raspberrypi/RP2040
+source: raspberrypi/RP-008279-DS@rev2
+
+nets:
+  BOOT:    { kind: local }
+  GND:     { kind: ground }
+  VDD_3V3: { kind: power, voltage: { typ: 3.3 V }, src: p10 "2.2" }
+
+roles:
+  C_FLASH:
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: 'p14 "Figure 11, Flash"' }
+    pins:     { "1": VDD_3V3, "2": GND }
+    place:    { near: U_FLASH, src: 'p14 "Figure 11, Flash"' }
+    level:    { value: example, src: 'p14 "Figure 11, Flash"' }
+  R_BOOT:
+    requires: { category: resistor, resistance: { typ: 1 kΩ }, src: 'p10 "2.2, R1"' }
+    pins:     { "1": host.QSPI_CSn, "2": BOOT }
+    place:    { near: U_FLASH, src: 'p10 "2.2, R1 R2"' }
+    level:    { value: required, word: important, src: 'p10 "2.2, R1"' }
+  R_CS_PULLUP:
+    requires: { category: resistor, resistance: { typ: 10 kΩ }, src: 'p10 "2.2, R2"' }
+    pins:     { "1": VDD_3V3, "2": host.QSPI_CSn }
+    place:    { near: U_FLASH, src: 'p10 "2.2, R1 R2"' }
+    level:    { value: optional, word: DNF, src: 'p10 "2.2, R2"' }
+  SW_BOOT:
+    requires: { category: [connector, switch], src: 'p10 "2.2, J2"' }
+    pins:     { "1": BOOT, "2": GND }
+    level:    { value: example, src: 'p10 "2.2, J2"' }
+  U_FLASH:
+    requires: { category: flash, capacity: { max: 128 Mbit }, src: p10 "2.2" }
+    pins:
+      /CS: host.QSPI_CSn
+      /HOLD or /RESET: host.QSPI_SD3
+      /WP: host.QSPI_SD2
+      CLK: host.QSPI_SCLK
+      DI: host.QSPI_SD0
+      DO: host.QSPI_SD1
+      GND: GND
+      VCC: VDD_3V3
+    level:    { value: required, word: need, src: p10 "2.2" }
+    example:  { part: winbond/W25Q128JVSIQ, src: 'p14 "Figure 11, U2"' }
+
+placement:
+  - src:   p10 "2.2"
+    keep_short:
+      - host.QSPI_SCLK
+      - host.QSPI_SD0
+      - host.QSPI_SD1
+      - host.QSPI_SD2
+      - host.QSPI_SD3
+      - host.QSPI_CSn
+    level: { value: recommended, word: should }

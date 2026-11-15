@@ -1,0 +1,26 @@
+# RP2040 SWD and RUN brought out, as the minimal design's I/O header
+# (J4) and Pico's 3-pin debug header do. Both have internal pull-ups
+# (RP2040 Datasheet Tables 618, 619), so no parts. Which connector and
+# pin order is the board's choice. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: raspberrypi/rp2040-debug-reset
+title: RP2040 SWD and RUN access
+host: raspberrypi/RP2040
+source: raspberrypi/RP-008279-DS@rev2
+
+nets:
+  RUN:   { kind: signal }
+  SWCLK: { kind: signal }
+  SWD:   { kind: signal }
+
+connect:
+  RUN: { net: RUN, level: example, src: 'p14 "Figure 11, J4"' }
+  SWCLK:
+    net: SWCLK
+    level: example
+    src: ['p14 "Figure 11, J4"', raspberrypi/RP-008307-DS@rev2 p24 "4.8"]
+  SWD:
+    net: SWD
+    level: example
+    src: ['p14 "Figure 11, J4"', raspberrypi/RP-008307-DS@rev2 p24 "4.8"]

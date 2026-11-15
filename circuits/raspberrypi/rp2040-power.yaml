@@ -1,0 +1,87 @@
+# RP2040 supply pins: decoupling per power pin and the on-chip core
+# regulator's capacitors, in the single 3.3 V supply scheme (RP2040
+# Datasheet 2.9.7.1). Examples (ratings, 0402 size) are the minimal
+# design's (Hardware design with RP2040, Figure 11). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: raspberrypi/rp2040-power
+title: RP2040 supply decoupling and core regulator
+host: raspberrypi/RP2040
+source: raspberrypi/RP-008371-DS@rev1
+
+nets:
+  GND:      { kind: ground }
+  VDD_3V3:  { kind: power, voltage: { typ: 3.3 V }, src: p153 "2.9.7.1" }
+  VDD_CORE: { kind: power, voltage: { typ: 1.1 V }, src: p152 "2.9.2" }
+
+connect:
+  ADC_AVDD:  { net: VDD_3V3, level: example, src: p153 "2.9.7.1" }
+  DVDD:      { net: VDD_CORE, level: { value: required, word: must }, src: p153 "2.9.7.1" }
+  GND:       { net: GND, level: required, src: p615 "Table 621" }
+  IOVDD:     { net: VDD_3V3, level: example, src: p153 "2.9.7.1" }
+  TESTEN:    { net: GND, level: { value: required, word: tie }, src: 'p12 "1.4.2, TESTEN"' }
+  USB_VDD:   { net: VDD_3V3, level: { value: recommended, word: should }, src: p152 "2.9.4" }
+  VREG_VIN:  { net: VDD_3V3, level: { value: required, word: must }, src: p152 "2.9.3" }
+  VREG_VOUT: { net: VDD_CORE, level: { value: required, word: must }, src: p153 "2.9.7.1" }
+
+roles:
+  C_ADC_AVDD:
+    per_pin: ADC_AVDD
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p153 "2.9.5" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p153 "2.9.5" }
+    level: { value: recommended, word: should, src: p153 "2.9.5" }
+  C_DVDD:
+    per_pin: DVDD
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p152 "2.9.2" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p152 "2.9.2" }
+    level: { value: recommended, word: should, src: p152 "2.9.2" }
+    example:
+      size: 0402
+      dielectric: { value: X7R }
+      rated_voltage: { typ: 25 V }
+      tolerance: { min: -10 %, max: 10 % }
+      src: raspberrypi/RP-008279-DS@rev2 p14 "Figure 11, 100n"
+  C_IOVDD:
+    per_pin: IOVDD
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p152 "2.9.1" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p152 "2.9.1" }
+    level: { value: recommended, word: should, src: p152 "2.9.1" }
+    example:
+      size: 0402
+      dielectric: { value: X7R }
+      rated_voltage: { typ: 25 V }
+      tolerance: { min: -10 %, max: 10 % }
+      src: raspberrypi/RP-008279-DS@rev2 p14 "Figure 11, 100n"
+  C_USB_VDD:
+    per_pin: USB_VDD
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p152 "2.9.4" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p152 "2.9.4" }
+    level: { value: recommended, word: should, src: p152 "2.9.4" }
+  C_VREG_VIN:
+    per_pin: VREG_VIN
+    requires: { category: capacitor, capacitance: { typ: 1 uF }, src: p157 "2.10.1" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p157 "2.10.1" }
+    level: { value: required, word: must, src: p157 "2.10.1" }
+    example:
+      size: 0402
+      dielectric: { value: X5R }
+      rated_voltage: { typ: 16 V }
+      tolerance: { min: -10 %, max: 10 % }
+      src: raspberrypi/RP-008279-DS@rev2 p14 "Figure 11, C10"
+  C_VREG_VOUT:
+    per_pin: VREG_VOUT
+    requires: { category: capacitor, capacitance: { typ: 1 uF }, src: p157 "2.10.1" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p157 "2.10.1" }
+    level: { value: required, word: must, src: p157 "2.10.1" }
+    example:
+      size: 0402
+      dielectric: { value: X5R }
+      rated_voltage: { typ: 16 V }
+      tolerance: { min: -10 %, max: 10 % }
+      src: raspberrypi/RP-008279-DS@rev2 p14 "Figure 11, C8"

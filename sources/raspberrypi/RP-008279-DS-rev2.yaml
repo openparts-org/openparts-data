@@ -1,0 +1,21 @@
+# "Hardware design with RP2040" (Raspberry Pi Ltd), release 2, build
+# date 20/08/2026 (day/month/year; release history A.1 "24 August
+# 2026"), build version 0444806419d7, 35 pages, CC BY-ND 4.0. Downloaded
+# with curl from Raspberry Pi's own URL, which redirected to
+# pip-assets.raspberrypi.com/.../RP-008279-DS-2-hardware-design-with-rp2040.pdf
+# (`document_id`/`revision` from that file name). Section 2 is the RP2040
+# minimal design example; Figure 11 (p14) is its schematic. Page numbers
+# cited from this Source are PDF page indices (printed footer = index - 1).
+# The design's KiCad files (Minimal-KiCAD.zip, MIT) are not cited: they
+# were only cross-checked (circuits/raspberrypi/rp2040-minimal.yaml).
+schema_version: "0.2"
+kind: source
+id: raspberrypi/RP-008279-DS@rev2
+sha256: 51c4f430153fcdbf3209d9b3b41662c8527ff0150bc25777e3fcd6f5221a1c19
+retrieved: 2026-11-16
+url: https://datasheets.raspberrypi.com/rp2040/hardware-design-with-rp2040.pdf
+publisher: raspberrypi
+document_id: RP-008279-DS
+document_type: reference_design
+revision: "2"
+date: 2026-08-20

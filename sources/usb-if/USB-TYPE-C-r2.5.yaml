@@ -1,0 +1,21 @@
+# USB Type-C Cable and Connector Specification, Release 2.5, March 2026
+# (USB 3.0 Promoter Group / USB-IF), 442 pages. The current release in
+# the USB-IF Document Library (posted 04/08/2026), free download as
+# "USB Type-C 2.5 Release 202603.zip" (`url`, SHA-256
+# 603c2cb0ea356d367fea61f8747a21981f0da9abae4d8ec15556e0063edb81b5);
+# the PDF read is "USB Type-C Spec R2.5 - March 2026.pdf" in it (SHA-256
+# 6636cd61387a2f78b0fa96c8ea86ccc0f39ec59f98821cdb57b206d31445a328).
+# No `sha256`: the url serves the ZIP, not the PDF. It supersedes Release 2.4 (October 2024): its R2.4
+# ECNs are incorporated. Used under the specification's limited
+# copyright license (evaluating an implementation): facts only, no
+# prose or figures. Page numbers are PDF page indices (= printed page).
+schema_version: "0.2"
+kind: source
+id: usb-if/USB-TYPE-C@r2.5
+retrieved: 2026-11-16
+url: https://usb.org/sites/default/files/USB%20Type-C%202.5%20Release%20202603.zip
+date: 2026-03
+publisher: usb-if
+document_id: USB-TYPE-C
+document_type: standard
+revision: "2.5"

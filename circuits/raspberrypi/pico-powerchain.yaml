@@ -1,0 +1,35 @@
+# Raspberry Pi Pico's powerchain as its datasheet text states it (4.4,
+# 4.5): VBUS through a Schottky diode to VSYS, a buck-boost SMPS from
+# VSYS to 3.3 V with EN pulled up to VSYS. Only text facts: the part
+# values and the pin connections drawn in the schematic (Appendix B,
+# Figure 19: D1, U1 RT6150, L1, C1/C2, the VSYS divider R5/R6/C3, VBUS
+# sense R10/R1, Q1 on ADC3) are not recorded -- the figure has no text
+# layer and Q1's pin assignment could not be confirmed. The SMPS has no
+# OpenParts device, so U_SMPS has no pins and the circuit cannot be
+# expanded on a board. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: raspberrypi/pico-powerchain
+title: Pico powerchain (VBUS diode, 3.3 V buck-boost)
+host: raspberrypi/RP2040
+source: raspberrypi/RP-008307-DS@rev2
+
+nets:
+  EN_3V3:  { kind: local }
+  GND:     { kind: ground }
+  VBUS:    { kind: power, voltage: { typ: 5 V }, src: p21 "4.4" }
+  VDD_3V3: { kind: power, voltage: { typ: 3.3 V }, src: p21 "4.4" }
+  VSYS:    { kind: power, voltage: { min: 1.8 V, max: 5.5 V }, src: p21 "4.4" }
+
+roles:
+  D_VBUS:
+    requires: { category: diode, src: 'p21 "4.4, D1"' }
+    pins:     { Anode: VBUS, Cathode: VSYS }
+    level:    { value: example, src: 'p21 "4.4, D1"' }
+  R_EN:
+    requires: { category: resistor, resistance: { typ: 100 kΩ }, src: 'p21 "4.4, EN"' }
+    pins:     { "1": VSYS, "2": EN_3V3 }
+    level:    { value: example, src: 'p21 "4.4, EN"' }
+  U_SMPS:
+    requires: { category: switching_regulator, output_voltage: { typ: 3.3 V }, src: p21 "4.4" }
+    level:    { value: example, src: p21 "4.4" }

@@ -1,0 +1,60 @@
+# The RP2040 minimal design (Hardware design with RP2040, section 2) as
+# a composite: its supply, crystal, flash/boot, USB and debug circuits
+# plus the NCP1117 3.3 V LDO from VBUS. The micro-USB connector, I/O
+# headers and mounting holes are board choices and not included. The
+# minimal design shares one 100 nF between pins 48 and 49 to save space
+# (p9 "2.1.2"); rp2040-power keeps the datasheet's one per pin.
+#
+# Cross-check (2026-11-16): the netlist of the design's KiCad files
+# (https://datasheets.raspberrypi.com/rp2040/Minimal-KiCAD.zip, MIT;
+# not stored here) has the values and connections recorded in the
+# included circuits.
+schema_version: "0.2"
+kind: circuit
+id: raspberrypi/rp2040-minimal
+title: RP2040 minimal design
+host: raspberrypi/RP2040
+source: raspberrypi/RP-008279-DS@rev2
+
+nets:
+  1V1:    { kind: power, voltage: { typ: 1.1 V }, src: p9 "2.1.3" }
+  3V3:    { kind: power, voltage: { typ: 3.3 V }, src: p8 "2.1.1" }
+  GND:    { kind: ground }
+  RUN:    { kind: signal }
+  SWCLK:  { kind: signal }
+  SWD:    { kind: signal }
+  USB_DM: { kind: signal }
+  USB_DP: { kind: signal }
+  VBUS:   { kind: power, voltage: { typ: 5 V }, src: p8 "2.1.1" }
+
+roles:
+  C_BULK_3V3:
+    requires: { category: capacitor, capacitance: { typ: 10 uF }, src: 'p14 "Figure 11, C17"' }
+    pins:     { "1": 3V3, "2": GND }
+    level:    { value: example, src: 'p14 "Figure 11, C17"' }
+    example:
+      size: 0805
+      dielectric: { value: X5R }
+      rated_voltage: { typ: 16 V }
+      tolerance: { min: -10 %, max: 10 % }
+      src: p14 "Figure 11, C17"
+  U_LDO:
+    requires: { part: onsemi/NCP1117ST33T3G, src: 'p8 "2.1.1, U1"' }
+    level:    { value: example, src: p8 "2.1.1" }
+
+includes:
+  - circuit: raspberrypi/rp2040-power
+    with: { GND: GND, VDD_3V3: 3V3, VDD_CORE: 1V1 }
+    src: p8 "2.1.2"
+  - { circuit: raspberrypi/rp2040-xosc-12mhz, with: { GND: GND }, src: p10 "2.3" }
+  - { circuit: raspberrypi/rp2040-qspi-boot, with: { GND: GND, VDD_3V3: 3V3 }, src: p10 "2.2" }
+  - circuit: raspberrypi/rp2040-usb-device
+    with: { GND: GND, USB_DM: USB_DM, USB_DP: USB_DP }
+    src: p12 "2.4.1"
+  - circuit: raspberrypi/rp2040-debug-reset
+    with: { RUN: RUN, SWCLK: SWCLK, SWD: SWD }
+    src: p14 "Figure 11, J4"
+  - circuit: onsemi/ncp1117-fixed
+    host: { role: U_LDO }
+    with: { GND: GND, VIN: VBUS, VOUT: 3V3 }
+    src: p8 "2.1.1"

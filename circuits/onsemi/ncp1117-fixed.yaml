@@ -1,0 +1,39 @@
+# NCP1117 fixed-output regulator capacitors (Applications Information,
+# NCP1117/D p9). Cout's ESR window (33 mΩ typ to 2.2 Ω) is rarely in
+# capacitor data; the board tool reports it unchecked then. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: onsemi/ncp1117-fixed
+title: NCP1117 fixed-output capacitors
+
+host: { devices: [onsemi/NCP1117-3.3, onsemi/NCP1117-5.0] }
+
+source: onsemi/NCP1117-D
+
+nets:
+  GND:  { kind: ground }
+  VIN:  { kind: power }
+  VOUT: { kind: power }
+
+connect:
+  Adjust/Ground: { net: GND, src: p1 "Pin configuration" }
+  Input:         { net: VIN, src: p1 "Pin configuration" }
+  Output:        { net: VOUT, src: p1 "Pin configuration" }
+
+roles:
+  C_IN:
+    requires:
+      category: capacitor
+      capacitance: { typ: 10 uF }
+      src: p9 "Applications Information, Cin"
+    pins:  { "1": VIN, "2": GND }
+    place: { near: host.Input, src: 'p9 "Applications Information, Cin"' }
+    level: { value: recommended, word: should, src: 'p9 "Applications Information, Cin"' }
+  C_OUT:
+    requires:
+      category: capacitor
+      capacitance: { min: 4.7 uF }
+      esr: { min: 33 mΩ, max: 2200 mΩ }
+      src: p9 "Applications Information, Cout"
+    pins:  { "1": VOUT, "2": GND }
+    level: { value: required, word: mandatory, src: 'p9 "Applications Information, Cout"' }

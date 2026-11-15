@@ -1,0 +1,74 @@
+# RP2040 12 MHz crystal oscillator of the minimal design (Hardware
+# design with RP2040 2.3): the recommended crystal with its load
+# capacitors and series resistor, tuned for IOVDD 3.3 V. The load
+# capacitance formula is the source's; it has no acceptance tolerance
+# ("close enough"), so it is reported, never passed or failed.
+# AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: raspberrypi/rp2040-xosc-12mhz
+title: RP2040 12 MHz crystal oscillator
+host: raspberrypi/RP2040
+source: raspberrypi/RP-008279-DS@rev2
+
+conditions: { IOVDD: { typ: 3.3 V, src: p11 "2.3.1" } }
+
+nets:
+  GND:      { kind: ground }
+  XTAL_OUT: { kind: local }
+
+roles:
+  C_XIN:
+    requires: { category: capacitor, capacitance: { typ: 15 pF }, src: p11 "2.3" }
+    pins:     { "1": host.XIN, "2": GND }
+    level:    { value: recommended, word: recommend, src: p11 "2.3" }
+    example:
+      size: 0402
+      dielectric: { value: C0G }
+      rated_voltage: { typ: 50 V }
+      tolerance: { min: -5 %, max: 5 % }
+      src: p14 "Figure 11, C2"
+  C_XOUT:
+    requires: { category: capacitor, capacitance: { typ: 15 pF }, src: p11 "2.3" }
+    pins:     { "1": XTAL_OUT, "2": GND }
+    level:    { value: recommended, word: recommend, src: p11 "2.3" }
+    example:
+      size: 0402
+      dielectric: { value: C0G }
+      rated_voltage: { typ: 50 V }
+      tolerance: { min: -5 %, max: 5 % }
+      src: p14 "Figure 11, C3"
+  R_XOUT:
+    requires: { category: resistor, resistance: { typ: 1 kΩ }, src: 'p11 "2.3, R5"' }
+    pins:     { "1": host.XOUT, "2": XTAL_OUT }
+    level:    { value: recommended, word: recommend, src: p11 "2.3" }
+    example:
+      size: 0402
+      power_rating: { typ: 63 mW }
+      tolerance: { min: -1 %, max: 1 % }
+      src: p14 "Figure 11, R5"
+  X1:
+    requires: { part: abracon/ABM8-272-T3, src: p11 "2.3.1" }
+    pins:     { GND: GND, XTAL1: host.XIN, XTAL2: XTAL_OUT }
+    level:    { value: recommended, word: recommend, src: p11 "2.3.1" }
+    expects:
+      src:                 p11 "Table 1"
+      esr:                 { max: 50 Ω }
+      frequency:           { typ: 12 MHz }
+      frequency_tolerance: { min: -30 ppm, max: 30 ppm }
+      load_capacitance:    { typ: 10 pF }
+
+formulas:
+  load_capacitance:
+    expr: C_XIN * C_XOUT / (C_XIN + C_XOUT) + C_stray
+    inputs:
+      C_XIN:   { role: C_XIN, param: capacitance }
+      C_XOUT:  { role: C_XOUT, param: capacitance }
+      C_stray: { typ: 3 pF, src: p11 "2.3" }
+    target: { role: X1, param: load_capacitance }
+    result: { typ: 10.5 pF, src: p11 "2.3" }
+    unit: pF
+    src: p11 "2.3"
+
+placement:
+  - { keep_short: [host.XIN, host.XOUT, XTAL_OUT], src: p11 "2.3" }

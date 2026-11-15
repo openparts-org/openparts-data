@@ -1,0 +1,59 @@
+# A USB Type-C receptacle on a USB 2.0-only sink (a device powered
+# from VBUS): Rd on CC1 and CC2, the pins bussed or left open as Table
+# 3-5 says. Any receptacle with these pin names is a host. Rd ± 10 %
+# instead of ± 20 % is needed only to detect the source's current
+# advertisement (Table 4-28). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: usb-if/typec-usb2-sink
+title: USB Type-C USB 2.0 sink (Rd on CC)
+
+host: { category: connector, has_pins: [CC1, CC2, VBUS, GND, Dp1, Dn1, Dp2, Dn2, SBU1, SBU2] }
+
+source: usb-if/USB-TYPE-C@r2.5
+
+nets:
+  GND:    { kind: ground }
+  USB_DM: { kind: signal }
+  USB_DP: { kind: signal }
+  VBUS:   { kind: power }
+
+connect:
+  Dn1:  { net: USB_DM, level: { value: optional, word: may }, src: 'p77 "Table 3-5, note 2"' }
+  Dn2:  { net: USB_DM, level: { value: optional, word: may }, src: 'p77 "Table 3-5, note 2"' }
+  Dp1:  { net: USB_DP, level: { value: optional, word: may }, src: 'p77 "Table 3-5, note 2"' }
+  Dp2:  { net: USB_DP, level: { value: optional, word: may }, src: 'p77 "Table 3-5, note 2"' }
+  GND:  { net: GND, level: { value: required, word: shall }, src: 'p77 "Table 3-5, note 5"' }
+  SBU1:
+    no_connect: true
+    level: { value: required, word: shall }
+    src: p77 "Table 3-5, note 3"
+  SBU2:
+    no_connect: true
+    level: { value: required, word: shall }
+    src: p77 "Table 3-5, note 3"
+  VBUS: { net: VBUS, level: { value: required, word: shall }, src: 'p77 "Table 3-5, note 4"' }
+
+roles:
+  R_CC1:
+    requires:
+      category: resistor
+      resistance: { typ: 5.1 kΩ }
+      tolerance: { max: 20 % }
+      src: p245 "Table 4-28"
+    pins:  { "1": host.CC1, "2": GND }
+    level: { value: required, word: shall, src: p180 "4.5.2.2.3.1" }
+  R_CC2:
+    requires:
+      category: resistor
+      resistance: { typ: 5.1 kΩ }
+      tolerance: { max: 20 % }
+      src: p245 "Table 4-28"
+    pins:  { "1": host.CC2, "2": GND }
+    level: { value: required, word: shall, src: p180 "4.5.2.2.3.1" }
+
+placement:
+  - src:        p77 "Table 3-5, note 2"
+    short_stub: [host.Dp1, host.Dp2, host.Dn1, host.Dn2]
+    max_length: { max: 3.5 mm }
+    level:      { value: recommended, word: should }
