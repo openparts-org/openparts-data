@@ -24,23 +24,18 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: n_channel
-    src: p1 "Page-1 schematic label "N-Channel" (title "MOSFET - Power 60 V, 63 A, 12.4 mΩ")"
-  drain_source_voltage:
-    typ: 60 V
-    at: { TJ: 25 °C }
-    src: 'p1 "MAXIMUM RATINGS, Drain-to-Source Voltage VDSS: 60 V"'
+  polarity:             { value: n_channel, src: p1 "Schematic label N-Channel" }
+  drain_source_voltage: { max: 60 V, src: 'p1 "Maximum Ratings, VDSS"' }
   drain_current:
-    typ: 63 A
-    at: { TC: 25 °C }
-    src: 'p1 "MAXIMUM RATINGS, Continuous Drain Current RθJC (Note 1), Steady State, ID: 63 A"'
+    - { max: 63 A, at: { TC: 25 °C }, src: 'p1 "Maximum Ratings, ID, Steady State (Note 1)"' }
+    - { max: 45 A, at: { TC: 100 °C }, src: 'p1 "Maximum Ratings, ID, Steady State (Note 1)"' }
   rds_on:
     typ: 10.2 mΩ
     max: 12.4 mΩ
     at: { VGS: 10 V, ID: 20 A }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Drain-to-Source On Resistance RDS(on): Typ 10.2, Max 12.4 mΩ"'
+    src: p2 "Elec. Char., RDS(on)"
   gate_threshold_voltage:
     min: 2 V
     max: 4 V
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Gate Threshold Voltage VGS(TH): Min 2.0, Max 4.0 V"'
+    at: { ID: 250 µA }
+    src: p2 "Elec. Char., VGS(TH), VGS=VDS"

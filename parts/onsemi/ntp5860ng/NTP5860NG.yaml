@@ -25,22 +25,14 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  polarity: { value: n_channel, src: 'p2 "Title: "N-Channel Power MOSFET 60 V, 220 A, 3.0 mΩ""' }
-  drain_source_voltage:
-    typ: 60 V
-    at: { TJ: 25 °C }
-    src: 'p2 "MAXIMUM RATINGS, Drain-to-Source Voltage VDSS: 60 V"'
+  polarity:             { value: n_channel, src: p2 "Title" }
+  drain_source_voltage: { max: 60 V, src: 'p2 "Maximum Ratings, VDSS"' }
   drain_current:
-    typ: 220 A
-    at: { TC: 25 °C }
-    src: 'p2 "MAXIMUM RATINGS, Continuous Drain Current RθJC, Steady State, ID: 220 A"'
-  rds_on:
-    typ: 2.5 mΩ
-    max: 3 mΩ
-    at: { VGS: 10 V, ID: 75 A, TJ: 25 °C }
-    src: 'p3 "ELECTRICAL CHARACTERISTICS, Drain-to-Source On-Resistance RDS(on): Typ 2.5, Max 3.0 mΩ"'
+    - { max: 220 A, at: { TC: 25 °C }, src: 'p2 "Maximum Ratings, ID, Steady State"' }
+    - { max: 156 A, at: { TC: 100 °C }, src: 'p2 "Maximum Ratings, ID, Steady State"' }
+  rds_on: { typ: 2.5 mΩ, max: 3 mΩ, at: { VGS: 10 V, ID: 75 A }, src: 'p3 "Elec. Char., RDS(on)"' }
   gate_threshold_voltage:
     min: 2 V
     max: 4 V
-    at: { TJ: 25 °C }
-    src: 'p3 "ELECTRICAL CHARACTERISTICS, Gate Threshold Voltage VGS(th): Min 2.0, Max 4.0 V"'
+    at: { ID: 250 µA }
+    src: p3 "Elec. Char., VGS(th), VGS=VDS"

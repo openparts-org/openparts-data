@@ -15,23 +15,16 @@ existence: { status: verified }
 lifecycle: { status: active }
 
 parameters:
-  polarity:
-    value: p_channel
-    src: 'p1 "Page-1 title: "MOSFET - Power, Single P-Channel, SOT-23""'
-  drain_source_voltage:
-    typ: -50 V
-    src: 'p1 "MAXIMUM RATINGS, Drain-to-Source Voltage VDSS: -50 Vdc"'
-  drain_current:
-    typ: -130 mA
-    at: { TA: 25 °C }
-    src: 'p1 "MAXIMUM RATINGS, Drain Current - Continuous ID: -130 mA"'
+  polarity:             { value: p_channel, src: p1 "Title" }
+  drain_source_voltage: { max: -50 V, src: 'p1 "Maximum Ratings, VDSS"' }
+  drain_current: { max: -130 mA, at: { TA: 25 °C }, src: 'p1 "Maximum Ratings, ID, Continuous"' }
   rds_on:
     typ: 4.7 Ω
     max: 10 Ω
     at: { VGS: -5 V, ID: -100 mA }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Static Drain-to-Source On-Resistance RDS(on): Typ 4.7, Max 10 Ω"'
+    src: p2 "Elec. Char., RDS(on)"
   gate_threshold_voltage:
     min: -2 V
     max: -0.9 V
     at: { ID: -250 µA }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Gate-Source Threshold Voltage VGS(th) (VDS = VGS): Min -0.9, Max -2.0 Vdc"'
+    src: p2 "Elec. Char., VGS(th), VDS=VGS"

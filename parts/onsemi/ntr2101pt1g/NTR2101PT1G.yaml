@@ -23,24 +23,17 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: p_channel
-    src: 'p1 "Page-1 title: "MOSFET - Single P-Channel, Small Signal, SOT-23""'
-  drain_source_voltage:
-    typ: -8 V
-    at: { TJ: 25 °C }
-    src: 'p1 "MAXIMUM RATINGS, VDSS Drain-to-Source Voltage: -8.0 V"'
+  polarity:             { value: p_channel, src: p1 "Title" }
+  drain_source_voltage: { max: -8 V, src: 'p1 "Maximum Ratings, VDSS"' }
   drain_current:
-    typ: -3.7 A
-    at: { TA: 25 °C }
-    src: 'p1 "MAXIMUM RATINGS, ID Continuous Drain Current (Note 1), t ≤ 5 s: -3.7 A"'
+    - { max: -3.7 A, at: { TA: 25 °C }, src: 'p1 "Maximum Ratings, ID (Note 1), t ≤ 5 s"' }
+    - { max: -3 A, at: { TA: 70 °C }, src: 'p1 "Maximum Ratings, ID (Note 1), t ≤ 5 s"' }
   rds_on:
-    typ: 39 mΩ
-    max: 52 mΩ
-    at: { VGS: -4.5 V, ID: -3.5 A, TJ: 25 °C }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, RDS(on) Drain-to-Source On Resistance: Typ 39, Max 52 mΩ"'
+    - { typ: 39 mΩ, max: 52 mΩ, at: { VGS: -4.5 V, ID: -3.5 A }, src: 'p2 "Elec. Char., RDS(on)"' }
+    - { typ: 52 mΩ, max: 72 mΩ, at: { VGS: -2.5 V, ID: -3 A }, src: 'p2 "Elec. Char., RDS(on)"' }
+    - { typ: 79 mΩ, max: 120 mΩ, at: { VGS: -1.8 V, ID: -2 A }, src: 'p2 "Elec. Char., RDS(on)"' }
   gate_threshold_voltage:
     min: -1 V
     max: -0.4 V
-    at: { TJ: 25 °C }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, VGS(TH) Gate Threshold Voltage: Min -0.40, Max -1.0 V"'
+    at: { ID: -250 µA }
+    src: p2 "Elec. Char., VGS(TH), VGS=VDS"

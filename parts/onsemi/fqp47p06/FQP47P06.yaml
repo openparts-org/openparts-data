@@ -24,22 +24,18 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  polarity: { value: p_channel, src: 'p1 "Page-1 title: "MOSFET - P-Channel, QFET""' }
-  drain_source_voltage:
-    typ: -60 V
-    at: { TC: 25 °C }
-    src: 'p2 "ABSOLUTE MAXIMUM RATINGS, VDSS Drain-Source Voltage: -60 V"'
+  polarity:             { value: p_channel, src: p1 "Title" }
+  drain_source_voltage: { max: -60 V, src: 'p2 "Abs. Max. Ratings, VDSS"' }
   drain_current:
-    typ: -47 A
-    at: { TC: 25 °C }
-    src: 'p2 "ABSOLUTE MAXIMUM RATINGS, ID Drain Current - Continuous: -47 A"'
+    - { max: -47 A, at: { TC: 25 °C }, src: 'p2 "Abs. Max. Ratings, ID, Continuous"' }
+    - { max: -33.2 A, at: { TC: 100 °C }, src: 'p2 "Abs. Max. Ratings, ID, Continuous"' }
   rds_on:
     typ: 0.021 Ω
     max: 0.026 Ω
-    at: { VGS: -10 V, ID: -23.5 A, TC: 25 °C }
-    src: 'p3 "ELECTRICAL CHARACTERISTICS, RDS(on) Static Drain-Source On-Resistance: Typ 0.021, Max 0.026 Ω"'
+    at: { VGS: -10 V, ID: -23.5 A }
+    src: p3 "Elec. Char., RDS(on)"
   gate_threshold_voltage:
     min: -4 V
     max: -2 V
-    at: { TC: 25 °C }
-    src: 'p3 "ELECTRICAL CHARACTERISTICS, VGS(th) Gate Threshold Voltage: Min -2.0, Max -4.0 V"'
+    at: { ID: -250 µA }
+    src: p3 "Elec. Char., VGS(th), VDS=VGS"

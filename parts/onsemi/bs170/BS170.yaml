@@ -22,19 +22,13 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: n_channel
-    src: 'p1 "Page-1 title: "Small Signal MOSFET 500 mA, 60 Volts N-Channel TO-92 (TO-226)""'
-  drain_source_voltage: { typ: 60 V, src: 'p1 "MAXIMUM RATINGS, Drain-Source Voltage VDS: 60 Vdc"' }
-  drain_current: { typ: 0.5 A, src: 'p1 "MAXIMUM RATINGS, Drain Current (Note) ID: 0.5 Adc"' }
-  rds_on:
-    typ: 1.8 Ω
-    max: 5 Ω
-    at: { VGS: 10 V, ID: 200 mA, TA: 25 °C }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Static Drain-Source On Resistance rDS(on): Typ 1.8, Max 5.0 Ω"'
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 60 V, src: 'p1 "Maximum Ratings, VDS"' }
+  drain_current:        { max: 0.5 A, src: 'p1 "Maximum Ratings, ID"' }
+  rds_on: { typ: 1.8 Ω, max: 5 Ω, at: { VGS: 10 V, ID: 200 mA }, src: 'p2 "Elec. Char., rDS(on)"' }
   gate_threshold_voltage:
     min: 0.8 V
     typ: 2 V
     max: 3 V
-    at: { ID: 1 mA, TA: 25 °C }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Gate Threshold Voltage VGS(Th) (VDS = VGS): Min 0.8, Typ 2.0, Max 3.0 Vdc"'
+    at: { ID: 1 mA }
+    src: p2 "Elec. Char., VGS(Th), VDS=VGS"

@@ -23,24 +23,16 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: n_channel
-    src: 'p1 "Page-1 title: "MOSFET - Single, N-Channel, Small Signal, SOT-23""'
-  drain_source_voltage:
-    typ: 30 V
-    at: { TJ: 25 °C }
-    src: 'p1 "MAXIMUM RATINGS, VDSS Drain-to-Source Voltage: 30 V"'
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 30 V, src: 'p1 "Maximum Ratings, VDSS"' }
   drain_current:
-    typ: 0.5 A
-    at: { TA: 25 °C }
-    src: 'p1 "MAXIMUM RATINGS, ID Continuous Drain Current (Note 1), Steady State: 0.5 A"'
+    - { max: 0.5 A, at: { TA: 25 °C }, src: 'p1 "Maximum Ratings, ID (Note 1), Steady State"' }
+    - { max: 0.37 A, at: { TA: 85 °C }, src: 'p1 "Maximum Ratings, ID (Note 1), Steady State"' }
   rds_on:
-    typ: 1 Ω
-    max: 1.5 Ω
-    at: { VGS: 4 V, ID: 10 mA, TJ: 25 °C }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Drain-to-Source On Resistance RDS(on): Typ 1.0, Max 1.5 Ω"'
+    - { typ: 1 Ω, max: 1.5 Ω, at: { VGS: 4 V, ID: 10 mA }, src: 'p2 "Elec. Char., RDS(on)"' }
+    - { typ: 1.5 Ω, max: 2 Ω, at: { VGS: 2.5 V, ID: 10 mA }, src: 'p2 "Elec. Char., RDS(on)"' }
   gate_threshold_voltage:
     min: 0.8 V
     max: 1.4 V
-    at: { TJ: 25 °C }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, VGS(TH) Gate Threshold Voltage: Min 0.8, Max 1.4 V"'
+    at: { ID: 250 µA }
+    src: p2 "Elec. Char., VGS(TH), VGS=VDS"

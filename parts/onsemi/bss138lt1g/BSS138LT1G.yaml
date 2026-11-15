@@ -15,19 +15,17 @@ existence: { status: verified }
 lifecycle: { status: active }
 
 parameters:
-  polarity: { value: n_channel, src: 'p1 "Page-1 title: "MOSFET - Power, N-Channel, SOT-23""' }
-  drain_source_voltage:
-    typ: 50 V
-    src: 'p1 "MAXIMUM RATINGS, Drain-to-Source Voltage VDSS: 50 Vdc"'
-  drain_current:
-    typ: 200 mA
-    at: { TA: 25 °C }
-    src: 'p1 "MAXIMUM RATINGS, Drain Current - Continuous ID: 200 mA"'
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 50 V, src: 'p1 "Maximum Ratings, VDSS"' }
+  drain_current: { max: 200 mA, at: { TA: 25 °C }, src: 'p1 "Maximum Ratings, ID, Continuous"' }
   rds_on:
-    max: 3.5 Ω
-    at: { VGS: 5 V, ID: 200 mA }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Static Drain-to-Source On-Resistance rDS(on): Max 3.5 Ω"'
+    - { max: 3.5 Ω, at: { VGS: 5 V, ID: 200 mA }, src: 'p2 "Elec. Char., rDS(on)"' }
+    - typ: 5.6 Ω
+      max: 10 Ω
+      at: { VGS: 2.75 V, TA: -40..85 °C }
+      src: p2 "Elec. Char., rDS(on), ID < 200 mA"
   gate_threshold_voltage:
     min: 0.85 V
     max: 1.5 V
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Gate-Source Threshold Voltage VGS(th): Min 0.85, Max 1.5 Vdc"'
+    at: { ID: 1 mA }
+    src: p2 "Elec. Char., VGS(th), VDS=VGS"
