@@ -30,13 +30,12 @@ lifecycle: { status: unknown }
 # the ordering-code table; power is the standard-power rating (code 07);
 # TCR is the Table 2 standard-power row for this resistance value.
 parameters:
-  tolerance: { tol: ±1 %, src: 'p2 "ORDERING INFORMATION, (2) TOLERANCE: F = ± 1.0%"' }
-  resistance:
-    typ: 27 Ω
-    src: 'p2 "ORDERING INFORMATION, (6) RESISTANCE VALUE: letter R/K/M is decimal point (97R6 = 97.6Ω, 9K76 = 9760Ω, 1M = 1,000,000Ω) -> 27R = 27 Ω"'
+  tolerance: { tol: ±1 %, src: 'p2 "ORDERING INFORMATION, (2) TOLERANCE: F = ±1.0%"' }
+  resistance: { typ: 27 Ω, src: 'p2 "ORDERING INFORMATION, (6) RESISTANCE VALUE: 27R"' }
   power_rating:
     typ: 0.1 W
-    src: 'p7 "POWER RATING, each type rated power at 70℃: RC0603=1/10 W (standard power; ORDERING INFORMATION p2, (5) 07 = 7 inch dia. Reel & Standard power)"'
+    at: { TA: 70 °C }
+    src: p7 "POWER RATING, RC0603 (standard power, code 07)"
   temperature_coefficient:
     tol: ±100 ppm/°C
-    src: 'p5 "Table 2 ''Electrical characteristics'', RC0603 1/10 W (standard power) row, Temperature coefficient: 10Ω<R≦10MΩ: ± 100ppm°C (ORDERING INFORMATION (4) ''-'' = Based on spec.)"'
+    src: p5 "Table 2, RC0603 standard-power row, Temperature coefficient 10Ω<R≦10MΩ"

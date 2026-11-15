@@ -19,12 +19,8 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  capacitance:
-    typ: 100 µF
-    src: 'p4 "FR-A series Characteristics list, Part No. EEUFR1C101( ) row: Capacitance (±20 %) 100 μF"'
-  tolerance:
-    tol: ±20 %
-    src: p4 "FR-A series Characteristics list, column header "Capacitance (±20 %)" for Part No. EEUFR1C101( )"
+  capacitance: { typ: 100 µF, src: 'p4 "FR-A Characteristics list, EEUFR1C101 row, Capacitance"' }
+  tolerance:   { tol: ±20 %, src: 'p4 "FR-A Characteristics list, Capacitance column header"' }
   rated_voltage:
     typ: 16 V
-    src: p4 "FR-A series Characteristics list, Part No. EEUFR1C101( ) in Rated voltage (V) 16 group"
+    src: p4 "FR-A Characteristics list, EEUFR1C101 row, Rated voltage group"

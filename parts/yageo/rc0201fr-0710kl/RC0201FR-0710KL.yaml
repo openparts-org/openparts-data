@@ -17,9 +17,7 @@ existence: { status: verified }
 lifecycle: { status: unknown }
 
 parameters:
-  tolerance:    { tol: ±1 %, src: 'p1 "Specifications, Resistance Tolerance: 1%"' }
-  resistance:   { typ: 10 kΩ, src: 'p1 "Specifications, Resistance: 10 kOhms"' }
-  power_rating: { typ: 0.05 W, src: 'p1 "Specifications, Power: 0.05 W (70C)"' }
-  temperature_coefficient:
-    tol: ±200 ppm/°C
-    src: 'p1 "Specifications, Temp. Coefficient: -/+200 ppm/C"'
+  tolerance:               { tol: ±1 %, src: 'p1 "Specifications, Resistance Tolerance"' }
+  resistance:              { typ: 10 kΩ, src: 'p1 "Specifications, Resistance"' }
+  power_rating:            { typ: 0.05 W, at: { TA: 70 °C }, src: 'p1 "Specifications, Power"' }
+  temperature_coefficient: { tol: ±200 ppm/°C, src: 'p1 "Specifications, Temp. Coefficient"' }

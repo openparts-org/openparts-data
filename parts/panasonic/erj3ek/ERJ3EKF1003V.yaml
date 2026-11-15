@@ -32,13 +32,12 @@ lifecycle: { status: unknown }
 parameters:
   tolerance:
     tol: ±1 %
-    src: 'p2 "Explanation of part numbers (ERJ ... 3EK ... series : ±1 %), Resistance tolerance: Code F = ±1 %"'
+    src: 'p2 "Explanation of part numbers (3EK, ±1 %), Resistance tolerance: F = ±1 %"'
   resistance:
     typ: 100 kΩ
-    src: 'p2 "Explanation of part numbers (ERJ ... 3EK ... series : ±1 %), Resistance value: first three digits are significant figures and the last one denotes number of zeros following -> 1003 = 100 + 3 zeros = 100 kΩ"'
+    src: 'p2 "Explanation of part numbers (3EK, ±1 %), Resistance value: 1003"'
   power_rating:
     typ: 0.1 W
-    src: 'p3 "Ratings <±1 %>, ERJ3EK (0603) row: Power rating (70 ℃) 0.1 W"'
-  temperature_coefficient:
-    tol: ±100 ppm/K
-    src: 'p3 "Ratings <±1 %>, ERJ3EK (0603) row: T.C.R. ±100 (×10-6/K)"'
+    at: { TA: 70 °C }
+    src: p3 "Ratings <±1 %>, ERJ3EK row, Power rating"
+  temperature_coefficient: { tol: ±100 ppm/K, src: 'p3 "Ratings <±1 %>, ERJ3EK row, T.C.R."' }

@@ -25,12 +25,11 @@ lifecycle: { status: unknown }
 # 'applications and ratings' whose F±1% resistance range contains this value.
 parameters:
   tolerance: { tol: ±1 %, src: 'p1 "ordering information, Tolerance: F: ±1%"' }
-  resistance:
-    typ: 10 kΩ
-    src: 'p1 "ordering information, Nominal Resistance: 3 significant figures + 1 multiplier -> 1002 = 100 x 10^2 Ω = 10 kΩ"'
+  resistance: { typ: 10 kΩ, src: 'p1 "ordering information, Nominal Resistance: 1002"' }
   power_rating:
     typ: 0.1 W
-    src: 'p2 "applications and ratings, RK73H1J (0603) row for F±1% 1.02kΩ - 1MΩ: Power Rating 0.1W at Rated Ambient Temp. 70°C"'
+    at: { TA: 70 °C }
+    src: p2 "applications and ratings, RK73H1J F±1% 1.02kΩ-1MΩ row, Power Rating"
   temperature_coefficient:
     tol: ±100 ppm/°C
-    src: 'p2 "applications and ratings, RK73H1J (0603) row for F±1% 1.02kΩ - 1MΩ: T.C.R. ±100 (x10^-6/K)"'
+    src: p2 "applications and ratings, RK73H1J F±1% 1.02kΩ-1MΩ row, T.C.R."

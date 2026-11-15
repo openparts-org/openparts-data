@@ -28,13 +28,12 @@ lifecycle: { status: unknown }
 # ordering-information legend; power and T.C.R. from the RK73H1J rows of
 # 'applications and ratings' whose F±1% resistance range contains this value.
 parameters:
-  tolerance: { tol: ±1 %, src: 'p1 "ordering information, Tolerance: F: ±1%"' }
-  resistance:
-    typ: 1 kΩ
-    src: 'p1 "ordering information, Nominal Resistance: 3 significant figures + 1 multiplier -> 1001 = 100 x 10^1 Ω = 1 kΩ"'
+  tolerance:  { tol: ±1 %, src: 'p1 "ordering information, Tolerance: F: ±1%"' }
+  resistance: { typ: 1 kΩ, src: 'p1 "ordering information, Nominal Resistance: 1001"' }
   power_rating:
     typ: 0.125 W
-    src: 'p2 "applications and ratings, RK73H1J (0603) row for F±1% 10Ω - 1kΩ: Power Rating 0.125W at Rated Ambient Temp. 70°C"'
+    at: { TA: 70 °C }
+    src: p2 "applications and ratings, RK73H1J F±1% 10Ω-1kΩ row, Power Rating"
   temperature_coefficient:
     tol: ±100 ppm/°C
-    src: 'p2 "applications and ratings, RK73H1J (0603) row for F±1% 10Ω - 1kΩ: T.C.R. ±100 (x10^-6/K)"'
+    src: p2 "applications and ratings, RK73H1J F±1% 10Ω-1kΩ row, T.C.R."

@@ -29,12 +29,8 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  capacitance:
-    typ: 330 µF
-    src: 'p3 "FC-A series Characteristics list, Part No. EEUFC0J331S( ) row: Capacitance (±20 %) 330 μF"'
-  tolerance:
-    tol: ±20 %
-    src: p3 "FC-A series Characteristics list, column header "Capacitance (±20 %)" for Part No. EEUFC0J331S( )"
+  capacitance: { typ: 330 µF, src: 'p3 "FC-A Characteristics list, EEUFC0J331S row, Capacitance"' }
+  tolerance: { tol: ±20 %, src: 'p3 "FC-A Characteristics list, Capacitance column header"' }
   rated_voltage:
     typ: 6.3 V
-    src: p3 "FC-A series Characteristics list, Part No. EEUFC0J331S( ) in Rated voltage (V) 6.3 group"
+    src: p3 "FC-A Characteristics list, EEUFC0J331S row, Rated voltage group"

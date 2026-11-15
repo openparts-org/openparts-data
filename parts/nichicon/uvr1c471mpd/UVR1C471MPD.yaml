@@ -28,12 +28,9 @@ existence:
 lifecycle: { status: active }
 
 parameters:
-  capacitance:
-    typ: 470 µF
-    src: 'p2 "■ Dimensions table, Part Number UVR1C471MPD row: Rated Capacitance (µF) 470"'
+  capacitance:   { typ: 470 µF, src: 'p2 "Dimensions table, UVR1C471MPD row, Rated Capacitance"' }
   tolerance:
     tol: ±20 %
-    src: 'p1 "Specifications, Capacitance Tolerance: ± 20% at 120Hz, 20˚C (series-wide)"'
-  rated_voltage:
-    typ: 16 V
-    src: p2 "■ Dimensions table, Part Number UVR1C471MPD in Rated Voltage (V) 16 (1C) group"
+    at: { TA: 20 °C, f: 120 Hz }
+    src: p1 "Specifications, Capacitance Tolerance"
+  rated_voltage: { typ: 16 V, src: 'p2 "Dimensions table, UVR1C471MPD row, Rated Voltage group"' }
