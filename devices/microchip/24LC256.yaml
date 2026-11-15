@@ -24,7 +24,16 @@ pins:
   "7": { name: WP, type: input }
   "8": { name: VCC, type: power }
 
+parameters:
+  capacity:
+    nominal: 256
+    unit: Kbit
+
 provenance:
+  "/parameters/capacity":
+    - source: microchip/DS20001203@revW
+      page: 1
+      locator: "Description: \"The Microchip Technology Inc. 24XX256 is a 32K x 8 (256 Kbit) Serial Electrically Erasable PROM\""
   "/pins":
     - source: microchip/DS20001203@revW
       page: 7

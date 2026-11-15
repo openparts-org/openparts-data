@@ -23,7 +23,16 @@ pins:
   "7": { name: "HOLD/SIO3", type: io }
   "8": { name: VCC, type: power }
 
+parameters:
+  capacity:
+    nominal: 1
+    unit: Mbit
+
 provenance:
+  "/parameters/capacity":
+    - source: microchip/DS20005142@revC
+      page: 1
+      locator: "Description: \"The Microchip Technology Inc. 23A1024/23LC1024 are 1 Mbit Serial SRAM devices\""
   "/pins":
     - source: microchip/DS20005142@revC
       page: 12

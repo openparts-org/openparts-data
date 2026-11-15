@@ -18,7 +18,16 @@ pins:
   "4": { name: VCC, type: power }
   "5": { name: WP, type: input }
 
+parameters:
+  capacity:
+    nominal: 2
+    unit: Kbit
+
 provenance:
+  "/parameters/capacity":
+    - source: microchip/DS21709@revJ
+      page: 1
+      locator: "Description: \"The Microchip Technology Inc. 24AA02/24LC02B (24XX02*) is a 2 Kbit Electrically Erasable PROM\""
   "/pins":
     - source: microchip/DS21709@revJ
       page: 5

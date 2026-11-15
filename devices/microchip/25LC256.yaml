@@ -26,7 +26,16 @@ pins:
   "7": { name: HOLD, type: input }
   "8": { name: VCC, type: power }
 
+parameters:
+  capacity:
+    nominal: 256
+    unit: Kbit
+
 provenance:
+  "/parameters/capacity":
+    - source: microchip/DS20001822@revJ
+      page: 1
+      locator: "Description: \"(25XX256) are 256-Kbit Serial Electrically Erasable PROMs\""
   "/pins":
     - source: microchip/DS20001822@revJ
       page: 6

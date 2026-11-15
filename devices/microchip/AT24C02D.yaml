@@ -19,7 +19,16 @@ pins:
   "7": { name: WP, type: input }
   "8": { name: VCC, type: power }
 
+parameters:
+  capacity:
+    nominal: 2048
+    unit: bit
+
 provenance:
+  "/parameters/capacity":
+    - source: microchip/DS20006100@revB
+      page: 7
+      locator: "Section 3 Description: \"The AT24C01D/AT24C02D provides 1,024/2,048 bits of Serial Electrically Erasable Programmable Read-Only Memory\" (AT24C02D: 2,048 bits)"
   "/pins":
     - source: microchip/DS20006100@revB
       page: 5

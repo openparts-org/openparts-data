@@ -22,7 +22,16 @@ pins:
   "7": { name: /HOLD or /RESET, type: io, alternate_functions: [IO3] }
   "8": { name: VCC, type: power }
 
+parameters:
+  capacity:
+    nominal: 128
+    unit: Mbit
+
 provenance:
+  "/parameters/capacity":
+    - source: winbond/W25Q128JV@revF
+      page: 5
+      locator: "Section 1 General Description: \"The W25Q128JV (128M-bit) Serial Flash memory\"; Section 2 Features: \"W25Q128JV: 128M-bit / 16M-byte\""
   "/pins":
     - source: winbond/W25Q128JV@revF
       page: 6
