@@ -1,0 +1,37 @@
+# 100-lead TQFP, 14 x 14 mm body, 1.0 mm body thickness, 0.5 mm pitch:
+# Microchip (Atmel) package drawing "100A" revision D (2010-10-20),
+# JEDEC MS-026 variation AED per its note 1, printed in DS40002211A
+# section 36.1 (PDF page 412; table read as text). Atmel letters: B =
+# lead width, C = lead thickness. Where the table gives no NOM, only
+# min/max are recorded. A (1.20 max) is recorded as overall_height
+# alongside A2 as body_height.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/TQFP100-14x14-P0.5-100A
+family: lqfp
+lead_count: { value: 100, src: 'p412 "Section 36.1 100A title, 100-lead"' }
+source: microchip/DS40002211@revA
+
+pitch: { typ: 0.5 mm, src: 'p412 "100A COMMON DIMENSIONS, e 0.50 TYP"' }
+geometry: { type: parametric, generator: lqfp }
+
+dimensions:
+  src:            p412 "100A COMMON DIMENSIONS table"
+  body_width: { min: 13.9 mm, typ: 14 mm, max: 14.1 mm, src: 'p412 "100A COMMON DIMENSIONS, E1"' }
+  body_length: { min: 13.9 mm, typ: 14 mm, max: 14.1 mm, src: 'p412 "100A COMMON DIMENSIONS, D1"' }
+  body_height: { min: 0.95 mm, typ: 1 mm, max: 1.05 mm, src: 'p412 "100A COMMON DIMENSIONS, A2"' }
+  lead_thickness: { min: 0.09 mm, max: 0.2 mm, src: 'p412 "100A COMMON DIMENSIONS, C (no NOM)"' }
+  overall_width:
+    min: 15.75 mm
+    typ: 16 mm
+    max: 16.25 mm
+    src: p412 "100A COMMON DIMENSIONS, E"
+  overall_length:
+    min: 15.75 mm
+    typ: 16 mm
+    max: 16.25 mm
+    src: p412 "100A COMMON DIMENSIONS, D"
+  overall_height: { max: 1.2 mm, src: 'p412 "100A COMMON DIMENSIONS, A (max only)"' }
+  standoff:       { min: 0.05 mm, max: 0.15 mm, src: 'p412 "100A COMMON DIMENSIONS, A1 (no NOM)"' }
+  lead_width:     { min: 0.17 mm, max: 0.27 mm, src: 'p412 "100A COMMON DIMENSIONS, B (no NOM)"' }
+  lead_length:    { min: 0.45 mm, max: 0.75 mm, src: 'p412 "100A COMMON DIMENSIONS, L (no NOM)"' }

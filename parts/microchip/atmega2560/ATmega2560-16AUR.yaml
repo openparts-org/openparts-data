@@ -1,0 +1,24 @@
+# ATmega2560-16AUR: printed verbatim in section 35.4 "ATmega2560" ordering table
+# (DS40002211A PDF page 410) (note 4: Tape & Reel), row 16 MHz, 4.5V - 5.5V, package 100A
+# (100-lead TQFP), industrial -40C to 85C.
+# lifecycle: the datasheet carries no production-status statement;
+# unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATmega2560-16AUR
+manufacturer: microchip
+mpn: ATmega2560-16AUR
+device: microchip/ATmega2560-TQFP100
+
+package:
+  value: manufacturers/microchip/TQFP100-14x14-P0.5-100A
+  src: p410 "Section 35.4 ordering table, ATmega2560-16AUR, Package 100A"
+
+sources: [microchip/DS40002211@revA]
+source: microchip/DS40002211@revA
+
+existence:
+  status: verified
+  src: p410 "Section 35.4 ATmega2560 ordering table, Ordering Code ATmega2560-16AUR"
+
+lifecycle: { status: unknown }

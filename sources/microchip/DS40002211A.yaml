@@ -1,0 +1,18 @@
+# Official Microchip "ATmega640/V-1280/V-1281/V-2560/V-2561/V
+# [DATASHEET]", document DS40002211A (footer of every page), 436 PDF
+# pages. Downloaded directly from ww1.microchip.com (URL below). Date
+# from section 38.1 "Rev. DS40002211A-05/2020" (PDF page 422). PDF page
+# indices equal the printed page numbers. The TQFP pinout figure
+# (page 2) was rendered and read; the ordering tables (pages 407-411) and
+# the 100A outline table (page 412) were read with pdftotext -layout.
+schema_version: "0.2"
+kind: source
+id: microchip/DS40002211@revA
+sha256: 978a018098bc1a136d3232b1b58aa3c652324c9b693a99830e0770bed2c76fb4
+retrieved: 2026-11-16
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ProductDocuments/DataSheets/ATmega640-1280-1281-2560-2561-Datasheet-DS40002211A.pdf
+publisher: microchip
+document_id: DS40002211
+document_type: datasheet
+revision: A
+date: 2020-05
