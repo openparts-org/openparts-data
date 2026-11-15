@@ -28,8 +28,39 @@ lifecycle:
 sources:
   - murata/JELF243B_0002Y-01
 
+parameters:
+  tolerance:
+    min: -5
+    max: 5
+    unit: "%"
+  inductance:
+    nominal: 10
+    unit: nH
+  rated_current:
+    nominal: 650
+    unit: mA
+  dcr:
+    max: 0.3
+    unit: Ω
+
 provenance:
   "/existence":
     - source: murata/JELF243B_0002Y-01
       page: 1
       locator: "Section 3 \"Part Number and Rating\" table"
+  "/parameters/tolerance":
+    - source: murata/JELF243B_0002Y-01
+      page: 1
+      locator: "3. Part Number and Rating, row LQG18HN10NJ00D: Inductance Tolerance ±5%"
+  "/parameters/inductance":
+    - source: murata/JELF243B_0002Y-01
+      page: 1
+      locator: "3. Part Number and Rating, row LQG18HN10NJ00D: Inductance Nominal value 10 nH"
+  "/parameters/rated_current":
+    - source: murata/JELF243B_0002Y-01
+      page: 1
+      locator: "3. Part Number and Rating, row LQG18HN10NJ00D: Rated current (mA) 650 (7.5: product temperature rise 25°C max.)"
+  "/parameters/dcr":
+    - source: murata/JELF243B_0002Y-01
+      page: 1
+      locator: "3. Part Number and Rating, row LQG18HN10NJ00D: DC resistance (Ω max.) 0.30"

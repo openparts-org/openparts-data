@@ -21,3 +21,28 @@ lifecycle:
 
 sources:
   - murata/JELF243B_0010V-01
+
+parameters:
+  inductance:
+    nominal: 2.2
+    unit: nH
+  rated_current:
+    nominal: 900
+    unit: mA
+  dcr:
+    max: 0.09
+    unit: Ω
+
+provenance:
+  "/parameters/inductance":
+    - source: murata/JELF243B_0010V-01
+      page: 2
+      locator: "3. Part Number and Rating, row LQG15HS2N2S02D: Inductance Nominal value 2.2 nH"
+  "/parameters/rated_current":
+    - source: murata/JELF243B_0010V-01
+      page: 2
+      locator: "3. Part Number and Rating, row LQG15HS2N2S02D: Rated current (mA) 900"
+  "/parameters/dcr":
+    - source: murata/JELF243B_0010V-01
+      page: 2
+      locator: "3. Part Number and Rating, row LQG15HS2N2S02D: DC resistance (Ω max.) 0.09"

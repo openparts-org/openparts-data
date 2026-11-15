@@ -23,6 +23,20 @@ lifecycle:
 sources:
   - murata/C02E-16
 
+parameters:
+  capacitance:
+    nominal: 1.0
+    unit: µF
+  tolerance:
+    min: -10
+    max: 10
+    unit: "%"
+  rated_voltage:
+    nominal: 16
+    unit: V
+  dielectric:
+    value: X5R
+
 provenance:
   "/existence":
     - source: murata/C02E-16
@@ -31,3 +45,19 @@ provenance:
     - source: murata/C02E-16
       page: 48
       locator: "PDF page 48 (printed 46): X5R(R6) table, 1.6x0.8(18)<0603>, row 1.0uF(105) +/-10%(K), column 16(1C)"
+  "/parameters/capacitance":
+    - source: murata/C02E-16
+      page: 48
+      locator: "High Dielectric Constant Type X5R(R6) Characteristics, LxW 1.6x0.8(18)<0603>, row Capacitance 1.0µF(105), Part Number GRM188R61C105KA93D: Capacitance 1.0µF(105)"
+  "/parameters/tolerance":
+    - source: murata/C02E-16
+      page: 48
+      locator: "High Dielectric Constant Type X5R(R6) Characteristics, LxW 1.6x0.8(18)<0603>, row Capacitance 1.0µF(105), Part Number GRM188R61C105KA93D: Tolerance ±10%(K)"
+  "/parameters/rated_voltage":
+    - source: murata/C02E-16
+      page: 48
+      locator: "High Dielectric Constant Type X5R(R6) Characteristics, LxW 1.6x0.8(18)<0603>, Part Number GRM188R61C105KA93D in column Rated Volt. [Vdc] 16(1C)"
+  "/parameters/dielectric":
+    - source: murata/C02E-16
+      page: 5
+      locator: "Part Numbering, tTemperature Characteristics, Temperature Characteristic Codes: R6 = X5R (EIA); Part Number GRM188R61C105KA93D listed under \"High Dielectric Constant Type X5R(R6) Characteristics\" on p48"

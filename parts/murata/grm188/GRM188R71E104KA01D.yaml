@@ -23,6 +23,20 @@ lifecycle:
 sources:
   - murata/C02E-16
 
+parameters:
+  capacitance:
+    nominal: 0.1
+    unit: µF
+  tolerance:
+    min: -10
+    max: 10
+    unit: "%"
+  rated_voltage:
+    nominal: 25
+    unit: V
+  dielectric:
+    value: X7R
+
 provenance:
   "/existence":
     - source: murata/C02E-16
@@ -31,3 +45,19 @@ provenance:
     - source: murata/C02E-16
       page: 40
       locator: "PDF page 40 (printed 38): X7R(R7)/X7S(C7) table, 1.6x0.8(18)<0603>, row 0.10uF(104) +/-10%(K), column 25(1E)"
+  "/parameters/capacitance":
+    - source: murata/C02E-16
+      page: 40
+      locator: "High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics, LxW 1.6x0.8(18)<0603>, row Capacitance 0.10µF(104), Part Number GRM188R71E104KA01D: Capacitance 0.10µF(104)"
+  "/parameters/tolerance":
+    - source: murata/C02E-16
+      page: 40
+      locator: "High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics, LxW 1.6x0.8(18)<0603>, row Capacitance 0.10µF(104), Part Number GRM188R71E104KA01D: Tolerance ±10%(K)"
+  "/parameters/rated_voltage":
+    - source: murata/C02E-16
+      page: 40
+      locator: "High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics, LxW 1.6x0.8(18)<0603>, Part Number GRM188R71E104KA01D in column Rated Volt. [Vdc] 25(1E)"
+  "/parameters/dielectric":
+    - source: murata/C02E-16
+      page: 5
+      locator: "Part Numbering, tTemperature Characteristics, Temperature Characteristic Codes: R7 = X7R (EIA); Part Number GRM188R71E104KA01D listed under \"High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics\" on p40"
