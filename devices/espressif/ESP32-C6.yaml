@@ -40,7 +40,7 @@ pins:
       polarity: n
       standard: usb2
       function: USB_D_MINUS
-      src: 'espressif/esp32-c6_datasheet_en@rev1.6 p23 "Table 2-8 "Analog Signals Routed to Analog Functions": USB_D- "Data -", USB_D+ "Data +"; Table 2-9 "Analog Functions": pin 18 GPIO12 USB_D-, pin 19 GPIO13 USB_D+"'
+      src: espressif/esp32-c6_datasheet_en@rev1.6 p23 "Table 2-8 Analog Signals Routed to Analog Functions, USB_D-/USB_D+; Table 2-9 Analog Functions, pins 18-19"
   "19":
     name: GPIO13
     type: io
@@ -50,7 +50,7 @@ pins:
       polarity: p
       standard: usb2
       function: USB_D_PLUS
-      src: 'espressif/esp32-c6_datasheet_en@rev1.6 p23 "Table 2-8 "Analog Signals Routed to Analog Functions": USB_D- "Data -", USB_D+ "Data +"; Table 2-9 "Analog Functions": pin 18 GPIO12 USB_D-, pin 19 GPIO13 USB_D+"'
+      src: espressif/esp32-c6_datasheet_en@rev1.6 p23 "Table 2-8 Analog Signals Routed to Analog Functions, USB_D-/USB_D+; Table 2-9 Analog Functions, pins 18-19"
   "20": { name: SPICS0, type: io, alternate_functions: [GPIO24] }
   "21": { name: SPIQ, type: io, alternate_functions: [GPIO25] }
   "22": { name: SPIWP, type: io, alternate_functions: [GPIO26] }

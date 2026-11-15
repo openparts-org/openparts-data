@@ -15,8 +15,8 @@ source: wurth/629722000214-DS
 
 pins:
   src:
-    - 'p2 ""Pin Assignment" table: A1 Ground, A4 VBUS, A5 CC1, A6 D+1, A7 D-1, A8 SBU1, A9 VBUS, A12 Ground; B12 Ground, B9 VBUS, B8 SBU2, B7 D-2, B6 D+2, B5 CC2, B4 VBUS, B1 Ground"'
-    - 'p1 ""Recommended Land Pattern": shared pads labelled "A1 B12", "A4 B9", "B4 A9", "B1 A12" (connected_to); shell slots unlabelled (S1)"'
+    - p2 "Pin Assignment table"
+    - p1 "Recommended Land Pattern, shared pad labels; shell slots unlabelled (S1)"
   A1:  { name: Ground, type: ground }
   A4:  { name: VBUS, type: power }
   A5:  { name: CC1, type: passive }

@@ -23,7 +23,7 @@ parameters:
 
 pins:
   src:
-    - 'p1 "PIN CONFIGURATION (SOT-223 and DPAK Top View): "Pin: 1. Adjust/Ground 2. Output 3. Input"; "Heatsink tab is connected to Pin 2.""'
+    - p1 "Pin Configuration (SOT-223/DPAK Top View), heatsink tab note"
     - 'p17 "CASE 318H TOP VIEW: tab numbered "4" (also CASE 369C, page 18)"'
   "1": { name: Adjust/Ground, type: ground }
   "2": { name: Output, type: power_out }

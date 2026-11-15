@@ -54,25 +54,25 @@ pins:
     type: io
     alternate_functions:
       value: [USB_D-]
-      src:   'p21 "Table 2-7 "Analog Signals Routed to Analog Functions": USB_D- "Data -", USB_D+ "Data +"; Table 2-8 "Analog Functions": pin 25 RTC_GPIO19 USB_D-, pin 26 RTC_GPIO20 USB_D+"'
+      src:   p21 "Table 2-7 Analog Signals Routed to Analog Functions, USB_D-/USB_D+; Table 2-8 Analog Functions, pins 25-26"
     diff_pair:
       partner: "26"
       polarity: n
       standard: usb2
       function: USB_D-
-      src: 'p21 "Table 2-7 "Analog Signals Routed to Analog Functions": USB_D- "Data -", USB_D+ "Data +"; Table 2-8 "Analog Functions": pin 25 RTC_GPIO19 USB_D-, pin 26 RTC_GPIO20 USB_D+"'
+      src: p21 "Table 2-7 Analog Signals Routed to Analog Functions, USB_D-/USB_D+; Table 2-8 Analog Functions, pins 25-26"
   "26":
     name: GPIO20
     type: io
     alternate_functions:
       value: [USB_D+]
-      src:   'p21 "Table 2-7 "Analog Signals Routed to Analog Functions": USB_D- "Data -", USB_D+ "Data +"; Table 2-8 "Analog Functions": pin 25 RTC_GPIO19 USB_D-, pin 26 RTC_GPIO20 USB_D+"'
+      src:   p21 "Table 2-7 Analog Signals Routed to Analog Functions, USB_D-/USB_D+; Table 2-8 Analog Functions, pins 25-26"
     diff_pair:
       partner: "25"
       polarity: p
       standard: usb2
       function: USB_D+
-      src: 'p21 "Table 2-7 "Analog Signals Routed to Analog Functions": USB_D- "Data -", USB_D+ "Data +"; Table 2-8 "Analog Functions": pin 25 RTC_GPIO19 USB_D-, pin 26 RTC_GPIO20 USB_D+"'
+      src: p21 "Table 2-7 Analog Signals Routed to Analog Functions, USB_D-/USB_D+; Table 2-8 Analog Functions, pins 25-26"
   "27": { name: VDD3P3_RTC_IO, type: power }
   "28": { name: GPIO21, type: io }
   "29": { name: SPICS1, type: io }

@@ -13,9 +13,7 @@ family: W25Q128JV
 source: winbond/W25Q128JV@revF
 
 parameters:
-  capacity:
-    typ: 128 Mbit
-    src: 'p5 "Section 1 General Description: "The W25Q128JV (128M-bit) Serial Flash memory"; Section 2 Features: "W25Q128JV: 128M-bit / 16M-byte""'
+  capacity: { typ: 128 Mbit, src: p5 "Section 1 General Description; Section 2 Features" }
 
 pins:
   src: p6 "Section 3.3 "Pin Description SOIC 208-mil, WSON 6x5-mm / 8x6-mm" table and Figure 1a"

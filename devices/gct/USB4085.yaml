@@ -13,7 +13,7 @@ source: gct/USB4085-DWG
 
 pins:
   src:
-    - 'p1 "Pin table: A1 GND, A4 VBUS, A5 CC1, A6 Dp1, A7 Dn1, A8 SBU1, A9 VBUS, A12 GND, B12 GND, B9 VBUS, B8 SBU2, B7 Dn2, B6 Dp2, B5 CC2, B4 VBUS, B1 GND, SHELL GND"'
+    - p1 "Pin table"
     - p2 ""Recommended PCB Layout" pad labels (A1..A12 and B12..B1, one hole each)"
   A1:    { name: GND, type: ground }
   A4:    { name: VBUS, type: power }

@@ -14,7 +14,7 @@ family: AO3400A
 source: aos/AO3400A-DS
 
 pins:
-  src: 'p1 ""SOT23 Top View" drawing: G bottom-left (pin-1 dot side), S bottom-right, D top. No pin numbers printed; numbering is position-derived (see header)"'
+  src: p1 "SOT23 Top View drawing; numbering position-derived (see header)"
   "1": { name: Gate, type: passive }
   "2": { name: Source, type: passive }
   "3": { name: Drain, type: passive }

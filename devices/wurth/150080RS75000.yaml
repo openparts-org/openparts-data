@@ -30,6 +30,6 @@ parameters:
     src: p2 "Electrical & Optical Properties, Dominant Wavelength λDom"
 
 pins:
-  src: p1 ""Schematic:" diode symbol, "- 1" at the cathode and "+ 2" at the anode; dimension drawing terminal numbers 1/2 and "Polarity Mark""
+  src: p1 "Schematic, terminals 1 (-) / 2 (+); dimension drawing, Polarity Mark"
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }

@@ -36,7 +36,7 @@ pins:
       polarity: n
       standard: usb2
       src:
-        - 'p6 "2.2.8 D-: "USB Full speed / Low Speed Negative Data Upstream Port"; 2.2.9 D+: "USB Full speed / Low Speed Positive Data Upstream Port""'
+        - p6 "Sections 2.2.8 D-, 2.2.9 D+"
         - 'p259 "21.5 Design Guidelines: USB data traces "follow differential traces routing rules (same length, as near as possible...)""'
   "4":
     name: D+
@@ -46,7 +46,7 @@ pins:
       polarity: p
       standard: usb2
       src:
-        - 'p6 "2.2.8 D-: "USB Full speed / Low Speed Negative Data Upstream Port"; 2.2.9 D+: "USB Full speed / Low Speed Positive Data Upstream Port""'
+        - p6 "Sections 2.2.8 D-, 2.2.9 D+"
         - 'p259 "21.5 Design Guidelines: USB data traces "follow differential traces routing rules (same length, as near as possible...)""'
   "5":  { name: UGND, type: ground }
   "6":  { name: UCAP, type: power }

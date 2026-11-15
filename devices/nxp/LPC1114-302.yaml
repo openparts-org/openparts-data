@@ -24,7 +24,7 @@ source: nxp/LPC111X
 
 pins:
   src:
-    - 'p29 "Table 8, "LPC1100 and LPC1100L series: LPC1113/14 pin description table (LQFP48 package)", spans pages 29-32 (exact per-pin page not individually tracked)"'
+    - p29 "Table 8, LPC1113/14 pin description (LQFP48), pp. 29-32"
     - p13 "Figure 3, pin configuration diagram (visual cross-check, all 48 pins matched exactly)"
   "1":  { name: PIO2_6, type: io }
   "2":  { name: PIO2_0/DTR/SSEL1, type: io }

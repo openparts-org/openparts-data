@@ -15,6 +15,6 @@ family: UVR
 source: nichicon/CAT.8100M
 
 pins:
-  src: 'p2 "UVR1C471MPD ordering row: 470uF, rated voltage 16V (code "1C"), tolerance M (+/-20%, per page 1 "Capacitance Tolerance" spec)"'
+  src: p2 "Ordering table, row UVR1C471MPD; p1 Capacitance Tolerance"
   "1": { name: +, type: passive }
   "2": { name: -, type: passive }

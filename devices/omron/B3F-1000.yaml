@@ -22,7 +22,7 @@ parameters:
     src: 'p3 "Operating Characteristics, 6 x 6 mm Models (B3F-1000 and B3F-G columns), Pretravel (PT): 0.25+0.2/-0.1 mm"'
 
 pins:
-  src: 'p4 ""Standard, Flat Plunger Type (without Ground Terminal)", "Terminal Arrangement/Internal Connections (Top View)": 4-3 joined, 2-1 joined, switch between"'
+  src: p4 "Standard Flat Plunger (no Ground Terminal), Terminal Arrangement/Internal Connections (Top View)"
   "1": { name: "1", type: passive, connected_to: "2" }
   "2": { name: "2", type: passive }
   "3": { name: "3", type: passive, connected_to: "4" }

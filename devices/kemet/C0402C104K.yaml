@@ -13,6 +13,6 @@ family: C0402C
 source: kemet/C1002_X7R
 
 pins:
-  src: 'p2 "Ordering Information legend: capacitance code "104" = 0.1uF, tolerance "K" = +/-10%, voltage "4" = 16VDC, dielectric "R" = X7R"'
+  src: p2 "Ordering Information, part number legend"
   "1": { name: "1", type: passive }
   "2": { name: "2", type: passive }

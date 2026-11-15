@@ -21,7 +21,7 @@ parameters:
     src: p3 "Elec. Char., MC7805B/NCV7805B column, Dropout Voltage"
 
 pins:
-  src: 'p1 "Pinout box: "Pin 1. Input 2. Ground 3. Output"; "Heatsink surface (shown as terminal 4 in case outline drawing) is connected to Pin 2.""'
+  src: p1 "Pinout box, heatsink surface note"
   "1": { name: Input, type: power }
   "2": { name: Ground, type: ground }
   "3": { name: Output, type: power }

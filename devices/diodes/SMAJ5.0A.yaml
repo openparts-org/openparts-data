@@ -21,6 +21,6 @@ parameters:
   reverse_voltage: { max: 5 V, src: 'p3 "Electrical Characteristics table, SMAJ5.0(C)A row, VRWM"' }
 
 pins:
-  src: 'p1 "Mechanical Data: "Polarity Indicator: Cathode Band (Bidirectional Devices do not Have a Polarity Indicator)"; numbering by generator convention, see header"'
+  src: p1 "Mechanical Data, Polarity Indicator; numbering per header"
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }

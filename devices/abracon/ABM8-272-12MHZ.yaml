@@ -15,7 +15,7 @@ family: ABM8-272
 source: abracon/456603@revB
 
 pins:
-  src: 'p2 "Mechanical Dimensions, TOP VIEW: pads 4 (top-left, "GND"), 3 (top-right), 1 (bottom-left), 2 (bottom-right, "GND"); crystal symbol connected between pads 1 and 3"'
+  src: p2 "Mechanical Dimensions, Top View, pads 1-4"
   "1": { name: XTAL1, type: passive }
   "2": { name: GND, type: ground }
   "3": { name: XTAL2, type: passive }

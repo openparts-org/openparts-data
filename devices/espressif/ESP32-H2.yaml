@@ -66,7 +66,7 @@ pins:
       polarity: n
       standard: usb2
       function: USB_D-
-      src: 'p17 "Table 2-4 "Analog Signals Routed to Analog Functions": USB_D- "Data - (negative USB signal)", USB_D+ "Data + (positive USB signal)"; Table 2-5 "Analog Functions": pin 25 GPIO26 USB_D-, pin 26 GPIO27 USB_D+"'
+      src: p17 "Table 2-4 Analog Signals Routed to Analog Functions, USB_D-/USB_D+; Table 2-5 Analog Functions, pins 25-26"
   "26":
     name: GPIO27
     type: io
@@ -76,7 +76,7 @@ pins:
       polarity: p
       standard: usb2
       function: USB_D+
-      src: 'p17 "Table 2-4 "Analog Signals Routed to Analog Functions": USB_D- "Data - (negative USB signal)", USB_D+ "Data + (positive USB signal)"; Table 2-5 "Analog Functions": pin 25 GPIO26 USB_D-, pin 26 GPIO27 USB_D+"'
+      src: p17 "Table 2-4 Analog Signals Routed to Analog Functions, USB_D-/USB_D+; Table 2-5 Analog Functions, pins 25-26"
   "27": { name: VDD3P3, type: power }
   "28": { name: XTAL_N, type: clock }
   "29": { name: XTAL_P, type: clock }

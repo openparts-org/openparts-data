@@ -25,7 +25,7 @@ parameters:
 
 pins:
   src:
-    - 'p11 "Table 3-1 "Pin Function Tables", DFN column (pins 1-9, 9 = EP); section 3.6 "Exposed Thermal Pad (EP)": internal electrical connection between EP and VSS"'
+    - p11 "Table 3-1 Pin Function Tables, DFN column; Section 3.6 Exposed Thermal Pad (EP)"
     - p1 ""Package Types", MCP73831/2 2x3 DFN*"
   "1": { name: VDD, type: power }
   "2": { name: VDD, type: power }

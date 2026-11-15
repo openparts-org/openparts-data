@@ -15,7 +15,7 @@ source: gct/USB4105-DWG
 
 pins:
   src:
-    - 'p1 "Pin table: A1 GND, A4 VBUS, A5 CC1, A6 Dp1, A7 Dn1, A8 SBU1, A9 VBUS, A12 GND, B12 GND, B9 VBUS, B8 SBU2, B7 Dn2, B6 Dp2, B5 CC2, B4 VBUS, B1 GND, SHELL GND"'
+    - p1 "Pin table"
     - p1 ""Recommended PCB Layout" pad labels (shared pads "A1 B12", "A4 B9", "B4 A9", "B1 A12")"
   A1:    { name: GND, type: ground }
   A4:    { name: VBUS, type: power }
