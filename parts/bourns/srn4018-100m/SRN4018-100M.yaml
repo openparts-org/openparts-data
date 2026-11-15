@@ -17,18 +17,15 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  tolerance:
-    tol: ±20 %
-    src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-100M row: Tol. % 20"'
+  tolerance: { tol: ±20 %, src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-100M row, Tol."' }
   inductance:
     typ: 10 µH
-    src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-100M row: L (µH) 10 @ 100 KHz/1 V"'
+    at: { f: 100 kHz }
+    src: p1 "Electrical Specifications @ 25 °C, SRN4018-100M row, L (1 V)"
   rated_current:
     typ: 1.3 A
-    src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-100M row: Irms (A) 1.3 (General Specifications: temperature rise 40 °C at rated Irms)"'
+    src: p1 "Electrical Specifications @ 25 °C, SRN4018-100M row, Irms (temp. rise 40 °C)"
   saturation_current:
     typ: 1.4 A
-    src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-100M row: Isat (A) 1.4 (General Specifications: inductance drops 30 % at Isat)"'
-  dcr:
-    max: 0.18 Ω
-    src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-100M row: DCR (Ω) Max. 0.180"'
+    src: p1 "Electrical Specifications @ 25 °C, SRN4018-100M row, Isat (L drop 30 %)"
+  dcr: { max: 0.18 Ω, src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-100M row, DCR"' }

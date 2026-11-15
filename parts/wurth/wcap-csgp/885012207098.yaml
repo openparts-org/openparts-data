@@ -24,9 +24,7 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  capacitance: { typ: 100 nF, src: 'p1 "Electrical Properties, Capacitance C: 100 nF, Tol. ±10%"' }
-  tolerance:  { tol: ±10 %, src: 'p1 "Electrical Properties, Capacitance C: 100 nF, Tol. ±10%"' }
-  rated_voltage:
-    typ: 50 V
-    src: 'p1 "Electrical Properties, Rated Voltage VR: 50 V (DC), Tol. max."'
-  dielectric: { value: X7R, src: 'p1 "Electrical Properties, Ceramic Type: X7R Class II"' }
+  capacitance:   { typ: 100 nF, src: 'p1 "Electrical Properties, Capacitance C"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "Electrical Properties, Capacitance C"' }
+  rated_voltage: { typ: 50 V, src: 'p1 "Electrical Properties, Rated Voltage VR"' }
+  dielectric:    { value: X7R, src: 'p1 "Electrical Properties, Ceramic Type"' }

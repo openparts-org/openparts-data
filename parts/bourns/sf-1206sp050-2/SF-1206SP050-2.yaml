@@ -18,7 +18,7 @@ lifecycle: { status: active }
 parameters:
   rated_voltage:
     typ: 63 V
-    src: 'p1 "Electrical Characteristics, SF-1206SP050-2 row: Rated Voltage 63 VDC (cell spanning SF-1206SP050-2 to SF-1206SP300-2)"'
+    src: p1 "Electrical Characteristics, SF-1206SP050-2 row, Rated Voltage (shared cell)"
   rated_current:
     typ: 0.5 A
-    src: 'p1 "Electrical Characteristics, SF-1206SP050-2 row: Rated Current (A) 0.50"'
+    src: p1 "Electrical Characteristics, SF-1206SP050-2 row, Rated Current"

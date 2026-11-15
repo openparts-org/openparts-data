@@ -18,7 +18,7 @@ lifecycle: { status: active }
 parameters:
   rated_voltage:
     typ: 32 V
-    src: 'p2 "Ordering Information, Catalog Number 0467.500 row: Nominal Voltage Rating 32"'
+    src: p2 "Ordering Information, Catalog Number 0467.500 row, Nominal Voltage Rating"
   rated_current:
     typ: 0.5 A
-    src: 'p2 "Ordering Information, Catalog Number 0467.500 row: Ampere Rating .5"'
+    src: p2 "Ordering Information, Catalog Number 0467.500 row, Ampere Rating"

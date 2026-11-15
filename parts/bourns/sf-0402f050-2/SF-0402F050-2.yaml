@@ -18,7 +18,7 @@ lifecycle: { status: unknown }
 parameters:
   rated_voltage:
     typ: 32 V
-    src: 'p1 "Electrical Characteristics, SF-0402F050-2 row: Rated Voltage 32 VDC (one cell for all models)"'
+    src: p1 "Electrical Characteristics, SF-0402F050-2 row, Rated Voltage (shared cell)"
   rated_current:
     typ: 0.5 A
-    src: 'p1 "Electrical Characteristics, SF-0402F050-2 row: Rated Current (A) 0.50"'
+    src: p1 "Electrical Characteristics, SF-0402F050-2 row, Rated Current"

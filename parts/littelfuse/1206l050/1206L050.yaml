@@ -20,7 +20,8 @@ lifecycle: { status: active }
 # rated_voltage the maximum voltage V max (reviewer: confirm this mapping
 # for PPTC devices).
 parameters:
-  rated_voltage: { max: 6 V, src: 'p1 "Electrical Characteristics, 1206L050 row: V max (Vdc) 6"' }
+  rated_voltage: { max: 6 V, src: 'p1 "Electrical Characteristics, 1206L050 row, V max"' }
   rated_current:
     typ: 0.5 A
-    src: 'p1 "Electrical Characteristics, 1206L050 row: I hold (A) 0.50 (20°C still air)"'
+    at: { TA: 20 °C }
+    src: p1 "Electrical Characteristics, 1206L050 row, I hold (still air)"

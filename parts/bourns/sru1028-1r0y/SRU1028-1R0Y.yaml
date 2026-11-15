@@ -15,16 +15,14 @@ lifecycle: { status: active }
 parameters:
   tolerance:
     tol: ±30 %
-    src: 'p1 "Electrical Specifications @ 25 °C, SRU1028-1R0Y row: Inductance Tol. (%) ±30"'
+    src: p1 "Electrical Specifications @ 25 °C, SRU1028-1R0Y row, Inductance Tol."
   inductance:
     typ: 1 µH
-    src: 'p1 "Electrical Specifications @ 25 °C, SRU1028-1R0Y row: Inductance (µH) 1.0"'
+    src: p1 "Electrical Specifications @ 25 °C, SRU1028-1R0Y row, Inductance"
   rated_current:
     max: 7 A
-    src: 'p1 "Electrical Specifications @ 25 °C, SRU1028-1R0Y row: I rms Max. (A) 7.00 (General Specifications: temperature rise 40 °C max. at rated Irms)"'
+    src: p1 "Electrical Specifications @ 25 °C, SRU1028-1R0Y row, I rms Max. (temp. rise 40 °C)"
   saturation_current:
     typ: 8 A
-    src: 'p1 "Electrical Specifications @ 25 °C, SRU1028-1R0Y row: I sat Typ. (A) 8.00 (General Specifications: ind. drop 35 % typ. at Isat)"'
-  dcr:
-    typ: 4.9 mΩ
-    src: 'p1 "Electrical Specifications @ 25 °C, SRU1028-1R0Y row: RDC (mΩ) 4.9"'
+    src: p1 "Electrical Specifications @ 25 °C, SRU1028-1R0Y row, I sat Typ. (L drop 35 %)"
+  dcr: { typ: 4.9 mΩ, src: 'p1 "Electrical Specifications @ 25 °C, SRU1028-1R0Y row, RDC"' }

@@ -22,14 +22,12 @@ lifecycle: { status: unknown }
 parameters:
   tolerance:
     tol: ±30 %
-    src: 'p1 "Electrical Specifications, SRU1038-100Y row: Inductance Tol. (%) ±30"'
-  inductance:
-    typ: 10 µH
-    src: 'p1 "Electrical Specifications, SRU1038-100Y row: Inductance (µH) 10.0"'
+    src: p1 "Electrical Specifications, SRU1038-100Y row, Inductance Tol."
+  inductance: { typ: 10 µH, src: 'p1 "Electrical Specifications, SRU1038-100Y row, Inductance"' }
   rated_current:
     max: 3.8 A
-    src: 'p1 "Electrical Specifications, SRU1038-100Y row: Irms Max. (A) 3.80 (General Specifications: temperature rise 40 °C max. at rated Irms)"'
+    src: p1 "Electrical Specifications, SRU1038-100Y row, Irms Max. (temp. rise 40 °C)"
   saturation_current:
     typ: 3.6 A
-    src: 'p1 "Electrical Specifications, SRU1038-100Y row: Isat Typ. (A) 3.60 (General Specifications: ind. drop 35 % typ. at Isat)"'
-  dcr: { max: 35 mΩ, src: 'p1 "Electrical Specifications, SRU1038-100Y row: RDC Max. (mΩ) 35.0"' }
+    src: p1 "Electrical Specifications, SRU1038-100Y row, Isat Typ. (L drop 35 %)"
+  dcr: { max: 35 mΩ, src: 'p1 "Electrical Specifications, SRU1038-100Y row, RDC Max."' }

@@ -18,7 +18,7 @@ lifecycle: { status: active }
 parameters:
   rated_voltage:
     typ: 65 V
-    src: 'p1 "Electrical Characteristics, SF-1206F250M-2 row: Rated Voltage 65 VDC (cell spanning SF-1206F250M-2 to SF-1206F500M-2)"'
+    src: p1 "Electrical Characteristics, SF-1206F250M-2 row, Rated Voltage (shared cell)"
   rated_current:
     typ: 2.5 A
-    src: 'p1 "Electrical Characteristics, SF-1206F250M-2 row: Rated Current (A) 2.5"'
+    src: p1 "Electrical Characteristics, SF-1206F250M-2 row, Rated Current"

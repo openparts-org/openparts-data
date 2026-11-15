@@ -18,5 +18,5 @@ lifecycle: { status: unknown }
 parameters:
   rated_current:
     typ: 2000 mA
-    src: 'p1 "Electrical Properties, Rated Current 2 IR 2, ΔT = 40 K: 2000 mA max. (Rated Current 1 IR 1, ΔT = 20 K: 1500 mA)"'
-  dcr: { max: 0.15 Ω, src: 'p1 "Electrical Properties, DC Resistance RDC @ 20 °C: 0.15 Ω max."' }
+    src: p1 "Electrical Properties, Rated Current 2 IR 2 (ΔT = 40 K)"
+  dcr: { max: 0.15 Ω, at: { TA: 20 °C }, src: 'p1 "Electrical Properties, DC Resistance RDC"' }

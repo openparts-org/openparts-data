@@ -15,10 +15,8 @@ parameters:
   forward_voltage:
     max: 3.5 V
     at: { IPP: 35 A }
-    src: 'p1 "Maximum Instantaneous Forward Voltage (For Unidirectional Units Only), SMAJ5.0A ~ SMAJ90A: VF 3.5 Volts"'
-  reverse_voltage:
-    max: 5 V
-    src: 'p2 "Electrical Characteristics, row SMAJ5.0A (Marking HE): Working Peak Reverse Voltage VRWM 5.0 V"'
+    src: p1 "Max. Instantaneous Forward Voltage (unidirectional), SMAJ5.0A~SMAJ90A"
+  reverse_voltage: { max: 5 V, src: 'p2 "Electrical Characteristics, SMAJ5.0A row, VRWM"' }
 
 pins:
   src: p3 "Physical Specifications, "Polarity ... Cathode band indicates unidirectional device""

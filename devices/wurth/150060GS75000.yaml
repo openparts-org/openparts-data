@@ -17,14 +17,17 @@ parameters:
   forward_voltage:
     typ: 3.2 V
     max: 3.5 V
-    src: 'p2 "Electrical & Optical Properties, Forward Voltage VF @ 20 mA: typ. 3.2 V, max. 3.5 V"'
+    at: { IF: 20 mA }
+    src: p2 "Electrical & Optical Properties, Forward Voltage VF"
   forward_current:
     max: 30 mA
-    src: 'p1 "Absolute Maximum Ratings (Ambient Temperature 25°C), Continuous Forward Current IF: 30 mA"'
-  color: { value: green, src: 'p1 "Optical Properties, Emitting Color: Green"' }
+    at: { TA: 25 °C }
+    src: p1 "Absolute Maximum Ratings, Continuous Forward Current IF"
+  color: { value: green, src: 'p1 "Optical Properties, Emitting Color"' }
   wavelength:
     typ: 525 nm
-    src: 'p2 "Electrical & Optical Properties, Dominant Wavelength λDom @ 20 mA: typ. 525 nm"'
+    at: { IF: 20 mA }
+    src: p2 "Electrical & Optical Properties, Dominant Wavelength λDom"
 
 pins:
   src: p1 ""Schematic:" diode symbol, "- 1" at the cathode and "+ 2" at the anode; dimension drawing terminal numbers 1/2 and "Polarity Mark""

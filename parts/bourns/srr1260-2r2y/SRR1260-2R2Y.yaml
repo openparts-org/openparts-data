@@ -18,14 +18,12 @@ lifecycle: { status: active }
 parameters:
   tolerance:
     tol: ±30 %
-    src: 'p1 "Electrical Specifications, SRR1260-2R2Y row: Inductance Tol. (%) ±30"'
-  inductance:
-    typ: 2.2 µH
-    src: 'p1 "Electrical Specifications, SRR1260-2R2Y row: Inductance (µH) 2.2"'
+    src: p1 "Electrical Specifications, SRR1260-2R2Y row, Inductance Tol."
+  inductance: { typ: 2.2 µH, src: 'p1 "Electrical Specifications, SRR1260-2R2Y row, Inductance"' }
   rated_current:
     max: 8.2 A
-    src: 'p1 "Electrical Specifications, SRR1260-2R2Y row: I rms Max. (A) 8.20 (General Specifications: temperature rise 40 °C typ. at rated I rms)"'
+    src: p1 "Electrical Specifications, SRR1260-2R2Y row, I rms Max. (temp. rise 40 °C)"
   saturation_current:
     typ: 8.5 A
-    src: 'p1 "Electrical Specifications, SRR1260-2R2Y row: I sat Typ. (A) 8.50 (General Specifications: inductance drop 25 % typ. at I sat)"'
-  dcr: { max: 10.5 mΩ, src: 'p1 "Electrical Specifications, SRR1260-2R2Y row: RDC Max. (mΩ) 10.5"' }
+    src: p1 "Electrical Specifications, SRR1260-2R2Y row, I sat Typ. (L drop 25 %)"
+  dcr: { max: 10.5 mΩ, src: 'p1 "Electrical Specifications, SRR1260-2R2Y row, RDC Max."' }

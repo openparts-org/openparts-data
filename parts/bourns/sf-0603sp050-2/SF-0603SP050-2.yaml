@@ -19,7 +19,7 @@ lifecycle: { status: active }
 parameters:
   rated_voltage:
     typ: 50 V
-    src: 'p1 "Electrical Characteristics, SF-0603SP050-2 row: Rated Voltage 50 VDC"'
+    src: p1 "Electrical Characteristics, SF-0603SP050-2 row, Rated Voltage"
   rated_current:
     typ: 0.5 A
-    src: 'p1 "Electrical Characteristics, SF-0603SP050-2 row: Rated Current (A) 0.50"'
+    src: p1 "Electrical Characteristics, SF-0603SP050-2 row, Rated Current"

@@ -21,9 +21,8 @@ lifecycle: { status: active }
 # hold current Ihold at 23 °C and rated_voltage the maximum voltage Vmax
 # (reviewer: confirm this mapping for PPTC devices).
 parameters:
-  rated_voltage:
-    max: 15 V
-    src: 'p1 "Electrical Characteristics, MF-MSMF050 row: Vmax 15 Volts"'
+  rated_voltage: { max: 15 V, src: 'p1 "Electrical Characteristics, MF-MSMF050 row, Vmax"' }
   rated_current:
     typ: 0.5 A
-    src: 'p1 "Electrical Characteristics, MF-MSMF050 row: Ihold at 23 °C 0.50 Amps"'
+    at: { TA: 23 °C }
+    src: p1 "Electrical Characteristics, MF-MSMF050 row, Ihold"
