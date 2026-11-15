@@ -1,0 +1,36 @@
+# 100.0pF C0G 50.0Vdc ±5% 0805 MLCC, packaging code C (cardboard tape, normal 7" reel),
+# catalog p8). Literal MPN listed on Samsung's product page (existence
+# verified); fields decoded with the catalog part-numbering legend
+# (samsung/MLCC_2512 pp6-8), which matches the page's Characteristics.
+# Package: the page's L/W/T (2.00±0.10mm / 1.25±0.10mm / 0.65±0.10mm) equal
+# manufacturers/samsung/CHIP0805-SAMSUNG-CL21-TA number for number.
+# lifecycle: the product page shows "Status: Mass Production".
+schema_version: "0.2"
+kind: part
+id: samsung/CL21C101JBANNNC
+manufacturer: samsung
+mpn: CL21C101JBANNNC
+device: samsung/CL21-C0G
+package: manufacturers/samsung/CHIP0805-SAMSUNG-CL21-TA
+sources: [samsung/CL21C101JBANNN, samsung/MLCC_2512]
+source: samsung/CL21C101JBANNN
+
+existence:
+  status: verified
+  src:
+    - samsung/MLCC_2512 p6 "Part Numbering, codes 1-4 (series CL, size 21, dielectric C, capacitance 101)"
+    - 'samsung/MLCC_2512 p7 "Part Numbering: 5 TOLERANCE J = +/-5%; 6 RATED VOLTAGE B = 50Vdc; 7 THICKNESS CODE A"'
+    - samsung/MLCC_2512 p8 "Part Numbering, codes 8-11 (design N, 9 N, control N, packaging C)"
+    - '"List of part numbers with package codes, row CL21C101JBANNNC"'
+
+lifecycle: { status: active, src: '"Characteristics, "Status: Mass Production""' }
+
+parameters:
+  capacitance: { typ: 100 pF, src: '"Product page CL21C101JBANNN#, Characteristics, Capacitance"' }
+  tolerance: { tol: ±5 %, src: '"Product page CL21C101JBANNN#, Characteristics, Tolerance"' }
+  rated_voltage:
+    typ: 50 V
+    src: '"Product page CL21C101JBANNN#, Characteristics, Rated Voltage"'
+  dielectric:
+    value: C0G
+    src: '"Product page CL21C101JBANNN#, Characteristics, Temperature Characteristic"'
