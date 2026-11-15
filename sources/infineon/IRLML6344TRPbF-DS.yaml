@@ -1,0 +1,19 @@
+# Infineon (International Rectifier) datasheet "IRLML6344TRPbF HEXFET
+# Power MOSFET", 11 pages, page footers "December 19, 2014" (Revision
+# History, page 10: 12/19/2014). No document number is printed;
+# document_id is the file name. curl
+# returned an empty HTTP 202; one retry with WebFetch returned the PDF
+# (2026-11-16). Read with pdftotext -layout. Page 8: "Micro3(SOT-23)
+# Package Outline" with dimension table (note 8: conforms to JEDEC
+# TO-236 AB). Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: infineon/IRLML6344TRPbF-DS
+sha256: fc12d243f636fdbf423159e3d5e5eaf858bc29c204d9dc7592b168189efd4275
+retrieved: 2026-11-16
+url: https://www.infineon.com/dgdl/irlml6344pbf.pdf?fileId=5546d462533600a4015356686fed261f
+publisher: infineon
+document_id: irlml6344pbf
+document_type: datasheet
+revision: 2014-12-19
+date: 2014-12-19

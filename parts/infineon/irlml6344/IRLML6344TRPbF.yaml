@@ -1,0 +1,44 @@
+# IRLML6344TRPbF: printed verbatim in the page-1 "Orderable Part Number"
+# column (Micro3 (SOT-23), tape and reel 3000) -- verified. No
+# lifecycle statement in the document.
+schema_version: "0.2"
+kind: part
+id: infineon/IRLML6344TRPbF
+manufacturer: infineon
+mpn: IRLML6344TRPbF
+device: infineon/IRLML6344
+package: manufacturers/infineon/SOT23-Micro3
+sources: [infineon/IRLML6344TRPbF-DS]
+source: infineon/IRLML6344TRPbF-DS
+
+existence:
+  status: verified
+  src: p1 "Standard Pack table, Orderable Part Number IRLML6344TRPbF"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: p1 "Pinout symbol; positive VDS ratings" }
+  drain_source_voltage: { max: 30 V, src: 'p1 "Absolute Maximum Ratings, VDS"' }
+  drain_current:
+    - max: 5 A
+      at: { VGS: 10 V, TA: 25 °C }
+      src: p1 "Absolute Maximum Ratings, ID @ TA = 25°C"
+    - max: 4 A
+      at: { VGS: 10 V, TA: 70 °C }
+      src: p1 "Absolute Maximum Ratings, ID @ TA = 70°C"
+  rds_on:
+    - typ: 22 mΩ
+      max: 29 mΩ
+      at: { VGS: 4.5 V, ID: 5 A }
+      src: p2 "Electric Characteristics, RDS(on)"
+    - typ: 27 mΩ
+      max: 37 mΩ
+      at: { VGS: 2.5 V, ID: 4 A }
+      src: p2 "Electric Characteristics, RDS(on)"
+  gate_threshold_voltage:
+    min: 0.5 V
+    typ: 0.8 V
+    max: 1.1 V
+    at: { ID: 10 µA }
+    src: p2 "Electric Characteristics, VGS(th), VDS = VGS"

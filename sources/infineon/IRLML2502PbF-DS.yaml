@@ -1,0 +1,18 @@
+# Infineon (International Rectifier) datasheet "IRLML2502PbF HEXFET
+# Power MOSFET" (file Infineon-IRLML2502-DataSheet-v01_01-EN), 10
+# pages, page footers "April 24, 2014" (Revision History: 4/24/2014).
+# No document number is printed; document_id is the file name. curl returned an empty HTTP 202; one
+# retry with WebFetch returned the PDF (2026-11-16). Read with
+# pdftotext -layout. Page 7: "Micro3 (SOT-23) (Lead-Free) Package
+# Outline" with dimension table. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: infineon/IRLML2502PbF-DS
+sha256: f3a69bf041035273eec727ba11d2983a3e9db1d6f5e9ca9ed2533361e6535785
+retrieved: 2026-11-16
+url: https://www.infineon.com/dgdl/Infineon-IRLML2502-DataSheet-v01_01-EN.pdf
+publisher: infineon
+document_id: Infineon-IRLML2502-DataSheet-v01_01-EN
+document_type: datasheet
+revision: v01_01
+date: 2014-04-24

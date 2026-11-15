@@ -1,0 +1,16 @@
+# IRLML2502 N-channel HEXFET power MOSFET, Micro3 (SOT-23). Pin
+# numbers and roles from the page-1 symbol of infineon/IRLML2502PbF-DS
+# (G 1, S 2, D 3); "N-Channel MOSFET" in the page-1 feature list.
+schema_version: "0.2"
+kind: device
+id: infineon/IRLML2502
+manufacturer: infineon
+category: transistor
+family: IRLML
+source: infineon/IRLML2502PbF-DS
+
+pins:
+  src: p1 "Pinout symbol (G 1, S 2, D 3)"
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

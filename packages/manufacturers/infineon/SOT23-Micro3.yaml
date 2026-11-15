@@ -1,0 +1,48 @@
+# International Rectifier / Infineon "Micro3(SOT-23) Package Outline"
+# (3-lead SOT-23, note 8: conforms to JEDEC TO-236 AB), read from the
+# dimension table on page 8 of infineon/IRLML6344TRPbF-DS (millimetre
+# columns, MIN/MAX only -- no nominal is recorded). The Micro3 outline
+# on page 7 of infineon/IRLML2502PbF-DS prints the same millimetre
+# values for every row used here (A, A1, A2, b, c, D, E, E1, e, e1, L).
+# Its own numbers differ from the existing SOT-23 packages (onsemi
+# CASE 318 b 0.37-0.50, Vishay 71196 b 0.35-0.50), so it is separate.
+#
+# Field mapping follows standards/SOT23-2.90x1.30-P1.90: body_width = D
+# (long axis, along which the two bottom leads are e1 apart),
+# body_length = E1 (short axis the leads exit across), overall_length =
+# E (lead-tip span), pitch = e1 (1.90 BSC; e = 0.95 BSC is half of it),
+# body_height = A2, overall_height = A.
+# Pin numbering from the page-1 symbol (G 1, S 2, D 3) and the outline's
+# top view (1, 2 on one edge, 3 opposite): lead_layout [2, 1].
+# The page-8 "Recommended Footprint" is not recorded as `pads`: its
+# figure gives pad size and spacing only as unlabelled numbers
+# (0.972, 0.950, 2.742, 0.802, 1.900); the footprint is computed from
+# the leads.
+schema_version: "0.2"
+kind: package
+id: manufacturers/infineon/SOT23-Micro3
+family: sot
+lead_count: 3
+
+lead_layout:
+  value: [2, 1]
+  src:   'p8 "Micro3(SOT-23) Package Outline, top view: leads 1, 2 on one edge, 3 opposite"'
+
+source: infineon/IRLML6344TRPbF-DS
+
+pitch: { typ: 1.9 mm, src: 'p8 "Micro3 dimension table, e1 1.90 BSC"' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:     { min: 2.8 mm, max: 3.04 mm, src: 'p8 "Micro3 dimension table, D"' }
+  body_length:    { min: 1.2 mm, max: 1.4 mm, src: 'p8 "Micro3 dimension table, E1"' }
+  body_height:    { min: 0.88 mm, max: 1.02 mm, src: 'p8 "Micro3 dimension table, A2"' }
+  lead_thickness: { min: 0.08 mm, max: 0.2 mm, src: 'p8 "Micro3 dimension table, c"' }
+  overall_length:
+    min: 2.1 mm
+    max: 2.64 mm
+    src: p8 "Micro3 dimension table, E (lead-tip span)"
+  overall_height: { min: 0.89 mm, max: 1.12 mm, src: 'p8 "Micro3 dimension table, A"' }
+  standoff:       { min: 0.01 mm, max: 0.1 mm, src: 'p8 "Micro3 dimension table, A1"' }
+  lead_width:     { min: 0.3 mm, max: 0.5 mm, src: 'p8 "Micro3 dimension table, b"' }
+  lead_length:    { min: 0.4 mm, max: 0.6 mm, src: 'p8 "Micro3 dimension table, L (note 7)"' }

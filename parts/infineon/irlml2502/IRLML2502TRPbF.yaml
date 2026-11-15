@@ -1,0 +1,50 @@
+# IRLML2502TRPbF: printed verbatim in the page-1 "Orderable Part Number"
+# column (Micro3 (SOT-23), tape and reel 3000) -- verified. No
+# lifecycle statement in the document.
+# Package: manufacturers/infineon/SOT23-Micro3 (read from the IRLML6344
+# datasheet, page 8); this datasheet's page-7 Micro3 table prints the
+# same millimetre values for A, A1, A2, b, c, D, E, E1, e, e1 and L.
+schema_version: "0.2"
+kind: part
+id: infineon/IRLML2502TRPbF
+manufacturer: infineon
+mpn: IRLML2502TRPbF
+device: infineon/IRLML2502
+
+package:
+  value: manufacturers/infineon/SOT23-Micro3
+  src: p7 "Micro3 (SOT-23) (Lead-Free) Package Outline, dimension table"
+
+sources: [infineon/IRLML2502PbF-DS, infineon/IRLML6344TRPbF-DS]
+source: infineon/IRLML2502PbF-DS
+
+existence:
+  status: verified
+  src: p1 "Standard Pack table, Orderable Part Number IRLML2502TRPbF"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: 'p1 "Features, N-Channel MOSFET"' }
+  drain_source_voltage: { max: 20 V, src: 'p1 "Absolute Maximum Ratings, VDS"' }
+  drain_current:
+    - max: 4.2 A
+      at: { VGS: 4.5 V, TA: 25 °C }
+      src: p1 "Absolute Maximum Ratings, ID @ TA = 25°C"
+    - max: 3.4 A
+      at: { VGS: 4.5 V, TA: 70 °C }
+      src: p1 "Absolute Maximum Ratings, ID @ TA = 70°C"
+  rds_on:
+    - typ: 35 mΩ
+      max: 45 mΩ
+      at: { VGS: 4.5 V, ID: 4.2 A }
+      src: p2 "Electrical Characteristics, RDS(on) (0.035/0.045 Ω)"
+    - typ: 50 mΩ
+      max: 80 mΩ
+      at: { VGS: 2.5 V, ID: 3.6 A }
+      src: p2 "Electrical Characteristics, RDS(on) (0.050/0.080 Ω)"
+  gate_threshold_voltage:
+    min: 0.6 V
+    max: 1.2 V
+    at: { ID: 250 µA }
+    src: p2 "Electrical Characteristics, VGS(th), VDS = VGS"
