@@ -1,0 +1,31 @@
+# APS6404L-3SQR 64-Mbit SPI/QPI pseudo-SRAM (PSRAM). Pin numbers from
+# the figure in section 3.1 "Package Types: SOP / USON (SN, ZR), not to
+# scale, Top view" (page 4); names and types from Table 2 "Signals
+# Table" (page 8), which has no pin numbers. The figure names pin 1
+# "/CE" and pin 6 "SCLK" where the table says CE# and CLK; the table's
+# names are used. SPI-mode names with the SIO[n] QPI name as an
+# alternate function (pins 2 and 5). Category sram: the datasheet calls
+# the device a Pseudo-SRAM (section 2 Introduction, page 4); the tree has no PSRAM node.
+schema_version: "0.2"
+kind: device
+id: apmemory/APS6404L-3SQR
+manufacturer: apmemory
+category: sram
+family: APS6404L-3SQR
+source: apmemory/APS6404L-3SQR@rev2.7
+
+parameters:
+  capacity: { typ: 64 Mbit, src: 'p1 "Specifications, Organization 64Mb, 8M x 8bits"' }
+
+pins:
+  src:
+    - p4 "Section 3.1 Package Types figure (SN, ZR), pin numbers"
+    - p8 "Table 2 Signals Table, names and types"
+  "1": { name: CE#, type: input }
+  "2": { name: SO, type: io, alternate_functions: ["SIO[1]"] }
+  "3": { name: "SIO[2]", type: io }
+  "4": { name: VSS, type: ground }
+  "5": { name: SI, type: io, alternate_functions: ["SIO[0]"] }
+  "6": { name: CLK, type: input }
+  "7": { name: "SIO[3]", type: io }
+  "8": { name: VDD, type: power }

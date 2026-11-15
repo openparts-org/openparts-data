@@ -1,0 +1,21 @@
+# MPN "APS6404L-3SQRX-SN" printed verbatim in Table 1 "Ordering Information" of
+# apmemory/APS6404L-3SQR@rev2.7 (page 7): temperature range "Tc = -40°C to +105°C",
+# Max Frequency 84 MHz, Note "SOP-8". The SOP-8 outline is section 4.1
+# "SOP-8L(150), package code SN" (page 5). lifecycle: not stated in
+# the datasheet -> unknown.
+schema_version: "0.2"
+kind: part
+id: apmemory/APS6404L-3SQRX-SN
+manufacturer: apmemory
+mpn: APS6404L-3SQRX-SN
+device: apmemory/APS6404L-3SQR
+
+package:
+  value: manufacturers/apmemory/SOP8-150mil-SN
+  src: p7 "Table 1 Ordering Information, row APS6404L-3SQRX-SN, Note SOP-8; outline section 4.1 SOP-8L(150), package code SN (p5)"
+
+sources: [apmemory/APS6404L-3SQR@rev2.7]
+source: apmemory/APS6404L-3SQR@rev2.7
+
+existence: { status: verified, src: 'p7 "Table 1 Ordering Information, row APS6404L-3SQRX-SN"' }
+lifecycle: { status: unknown }
