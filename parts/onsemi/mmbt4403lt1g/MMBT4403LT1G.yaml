@@ -25,8 +25,30 @@ lifecycle:
 sources:
   - onsemi/MMBT4403LT1-D
 
+parameters:
+  polarity:
+    value: pnp
+  collector_emitter_voltage:
+    nominal: -40
+    unit: V
+  collector_current:
+    nominal: -600
+    unit: mA
+
 provenance:
   "/existence":
     - source: onsemi/MMBT4403LT1-D
       page: 1
       locator: "ORDERING INFORMATION table: \"MMBT4403LT1G | SOT-23 (Pb-Free) | 3000 / Tape & Reel\""
+  "/parameters/polarity":
+    - source: onsemi/MMBT4403LT1-D
+      page: 1
+      locator: "Page-1 title: \"PNP Silicon\""
+  "/parameters/collector_emitter_voltage":
+    - source: onsemi/MMBT4403LT1-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO: -40 Vdc"
+  "/parameters/collector_current":
+    - source: onsemi/MMBT4403LT1-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Collector Current - Continuous IC: -600 mAdc"

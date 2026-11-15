@@ -23,6 +23,16 @@ sources:
   - onsemi/TIP120-D
   - onsemi/98ASB42148B
 
+parameters:
+  polarity:
+    value: npn
+  collector_emitter_voltage:
+    nominal: 100
+    unit: V
+  collector_current:
+    nominal: 5.0
+    unit: A
+
 provenance:
   "/existence":
     - source: onsemi/TIP120-D
@@ -35,3 +45,15 @@ provenance:
     - source: onsemi/98ASB42148B
       page: 1
       locator: "CASE 221A outline"
+  "/parameters/polarity":
+    - source: onsemi/TIP120-D
+      page: 2
+      locator: "Page header: \"TIP120, TIP121, TIP122 (NPN); TIP125, TIP126, TIP127 (PNP)\""
+  "/parameters/collector_emitter_voltage":
+    - source: onsemi/TIP120-D
+      page: 2
+      locator: "MAXIMUM RATINGS, VCEO Collector-Emitter Voltage, TIP122, TIP127 column: 100 Vdc"
+  "/parameters/collector_current":
+    - source: onsemi/TIP120-D
+      page: 2
+      locator: "MAXIMUM RATINGS, IC Collector Current - Continuous: 5.0 Adc"

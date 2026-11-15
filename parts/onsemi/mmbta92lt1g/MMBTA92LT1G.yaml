@@ -26,8 +26,30 @@ lifecycle:
 sources:
   - onsemi/MMBTA92LT1-D
 
+parameters:
+  polarity:
+    value: pnp
+  collector_emitter_voltage:
+    nominal: -300
+    unit: V
+  collector_current:
+    nominal: -500
+    unit: mA
+
 provenance:
   "/existence":
     - source: onsemi/MMBTA92LT1-D
       page: 1
       locator: "ORDERING INFORMATION table: \"MMBTA92LT1G | SOT-23 (Pb-Free) | 3000 / Tape & Reel\""
+  "/parameters/polarity":
+    - source: onsemi/MMBTA92LT1-D
+      page: 1
+      locator: "Page-1 title: \"PNP Silicon\""
+  "/parameters/collector_emitter_voltage":
+    - source: onsemi/MMBTA92LT1-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO, column 92: -300 Vdc"
+  "/parameters/collector_current":
+    - source: onsemi/MMBTA92LT1-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Collector Current - Continuous IC: -500 mAdc"

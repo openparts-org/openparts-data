@@ -25,8 +25,30 @@ lifecycle:
 sources:
   - onsemi/MMBTA42LT1-D
 
+parameters:
+  polarity:
+    value: npn
+  collector_emitter_voltage:
+    nominal: 300
+    unit: V
+  collector_current:
+    nominal: 500
+    unit: mA
+
 provenance:
   "/existence":
     - source: onsemi/MMBTA42LT1-D
       page: 4
       locator: "ORDERING INFORMATION table: \"MMBTA42LT1G | 1D | SOT-23 (Pb-Free) | 3,000 / Tape & Reel\""
+  "/parameters/polarity":
+    - source: onsemi/MMBTA42LT1-D
+      page: 1
+      locator: "Page-1 title: \"NPN Silicon\""
+  "/parameters/collector_emitter_voltage":
+    - source: onsemi/MMBTA42LT1-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO, MMBTA42, SMMBTA42 row: 300 Vdc"
+  "/parameters/collector_current":
+    - source: onsemi/MMBTA42LT1-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Collector Current - Continuous IC: 500 mAdc"

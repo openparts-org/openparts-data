@@ -20,3 +20,27 @@ lifecycle:
 
 sources:
   - onsemi/BC546-D
+
+parameters:
+  polarity:
+    value: npn
+  collector_emitter_voltage:
+    nominal: 45
+    unit: V
+  collector_current:
+    nominal: 100
+    unit: mA
+
+provenance:
+  "/parameters/polarity":
+    - source: onsemi/BC546-D
+      page: 1
+      locator: "Page-1 title: \"Amplifier Transistors NPN Silicon\""
+  "/parameters/collector_emitter_voltage":
+    - source: onsemi/BC546-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO, BC547 row: 45 Vdc"
+  "/parameters/collector_current":
+    - source: onsemi/BC546-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Collector Current - Continuous IC: 100 mAdc"

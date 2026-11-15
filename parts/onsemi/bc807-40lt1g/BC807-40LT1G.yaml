@@ -25,8 +25,30 @@ lifecycle:
 sources:
   - onsemi/BC807-16LT1-D
 
+parameters:
+  polarity:
+    value: pnp
+  collector_emitter_voltage:
+    nominal: -45
+    unit: V
+  collector_current:
+    nominal: -500
+    unit: mA
+
 provenance:
   "/existence":
     - source: onsemi/BC807-16LT1-D
       page: 2
       locator: "ORDERING INFORMATION table: \"BC807-40LT1G | 5C | SOT-23 (Pb-Free) | 3000 / Tape & Reel\""
+  "/parameters/polarity":
+    - source: onsemi/BC807-16LT1-D
+      page: 1
+      locator: "Page-1 title: \"PNP Silicon\""
+  "/parameters/collector_emitter_voltage":
+    - source: onsemi/BC807-16LT1-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO: -45 V"
+  "/parameters/collector_current":
+    - source: onsemi/BC807-16LT1-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Collector Current - Continuous IC: -500 mAdc"

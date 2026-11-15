@@ -19,3 +19,27 @@ lifecycle:
 
 sources:
   - onsemi/MMBT5401-D
+
+parameters:
+  polarity:
+    value: pnp
+  collector_emitter_voltage:
+    nominal: -150
+    unit: V
+  collector_current:
+    nominal: -500
+    unit: mA
+
+provenance:
+  "/parameters/polarity":
+    - source: onsemi/MMBT5401-D
+      page: 1
+      locator: "Page-1 title: \"PNP Silicon\""
+  "/parameters/collector_emitter_voltage":
+    - source: onsemi/MMBT5401-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO: -150 Vdc"
+  "/parameters/collector_current":
+    - source: onsemi/MMBT5401-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Collector Current - Continuous IC: -500 mAdc"

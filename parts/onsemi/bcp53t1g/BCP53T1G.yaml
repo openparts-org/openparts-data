@@ -22,8 +22,30 @@ sources:
   - onsemi/BCP53T1-D
   - onsemi/98ASB42680B
 
+parameters:
+  polarity:
+    value: pnp
+  collector_emitter_voltage:
+    nominal: -80
+    unit: V
+  collector_current:
+    nominal: 1.5
+    unit: A
+
 provenance:
   "/existence":
     - source: onsemi/BCP53T1-D
       page: 1
       locator: "ORDERING INFORMATION table: \"BCP53T1G | SOT-223 (Pb-Free) | 1000/Tape & Reel\""
+  "/parameters/polarity":
+    - source: onsemi/BCP53T1-D
+      page: 1
+      locator: "Page-1 title: \"PNP Silicon\""
+  "/parameters/collector_emitter_voltage":
+    - source: onsemi/BCP53T1-D
+      page: 1
+      locator: "MAXIMUM RATINGS (TC = 25°C), Collector-Emitter Voltage VCEO: -80 V"
+  "/parameters/collector_current":
+    - source: onsemi/BCP53T1-D
+      page: 1
+      locator: "MAXIMUM RATINGS (TC = 25°C), Collector Current IC: 1.5 A (printed without a sign)"

@@ -27,8 +27,30 @@ lifecycle:
 sources:
   - onsemi/2N3904-D
 
+parameters:
+  polarity:
+    value: npn
+  collector_emitter_voltage:
+    nominal: 40
+    unit: V
+  collector_current:
+    nominal: 200
+    unit: mA
+
 provenance:
   "/existence":
     - source: onsemi/2N3904-D
       page: 6
       locator: "\"ORDERING INFORMATION\" table"
+  "/parameters/polarity":
+    - source: onsemi/2N3904-D
+      page: 1
+      locator: "Page-1 title: \"NPN General - Purpose Amplifier\""
+  "/parameters/collector_emitter_voltage":
+    - source: onsemi/2N3904-D
+      page: 1
+      locator: "MAXIMUM RATINGS, VCEO Collector-Emitter Voltage: 40 V"
+  "/parameters/collector_current":
+    - source: onsemi/2N3904-D
+      page: 1
+      locator: "MAXIMUM RATINGS, IC Collector Current - Continuous: 200 mA"

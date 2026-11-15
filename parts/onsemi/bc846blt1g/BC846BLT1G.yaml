@@ -26,8 +26,30 @@ lifecycle:
 sources:
   - onsemi/BC846ALT1-D
 
+parameters:
+  polarity:
+    value: npn
+  collector_emitter_voltage:
+    nominal: 65
+    unit: V
+  collector_current:
+    nominal: 100
+    unit: mA
+
 provenance:
   "/existence":
     - source: onsemi/BC846ALT1-D
       page: 12
       locator: "ORDERING INFORMATION table: \"BC846BLT1G | 1B | SOT-23 (Pb-Free) | 3,000 / Tape & Reel\" (not in the page-13 DISCONTINUED list)"
+  "/parameters/polarity":
+    - source: onsemi/BC846ALT1-D
+      page: 1
+      locator: "Page-1 title: \"General Purpose Transistors NPN Silicon\""
+  "/parameters/collector_emitter_voltage":
+    - source: onsemi/BC846ALT1-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO, BC846 row: 65 Vdc"
+  "/parameters/collector_current":
+    - source: onsemi/BC846ALT1-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Collector Current - Continuous IC: 100 mAdc"
