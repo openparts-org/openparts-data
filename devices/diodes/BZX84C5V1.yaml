@@ -19,11 +19,27 @@ pins:
   "3": { name: Cathode, type: passive }
 
 parameters:
+  zener_voltage:
+    nominal: 5.1
+    min: 4.8
+    max: 5.4
+    unit: V
+  zener_test_current:
+    nominal: 5.0
+    unit: mA
   forward_voltage:
     max: 0.9
     unit: V
 
 provenance:
+  "/parameters/zener_voltage":
+    - source: diodes/DS18001
+      page: 2
+      locator: "Electrical Characteristics, BZX84C5V1 row: VZ @ IZT Nom 5.1 V, Min 4.8 V, Max 5.4 V (Note 8: short duration pulse test)"
+  "/parameters/zener_test_current":
+    - source: diodes/DS18001
+      page: 2
+      locator: "Electrical Characteristics, BZX84C5V1 row: IZT 5.0 mA"
   "/parameters/forward_voltage":
     - source: diodes/DS18001
       page: 2

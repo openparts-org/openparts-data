@@ -24,7 +24,17 @@ lifecycle:
 sources:
   - toshiba/TLP291-datasheet-en
 
+parameters:
+  current_transfer_ratio:
+    min: 100
+    max: 400
+    unit: "%"
+
 provenance:
+  "/parameters/current_transfer_ratio":
+    - source: toshiba/TLP291-datasheet-en
+      page: 2
+      locator: "Current Transfer Ratio (CTR) Rank table, TLP291 Rank GB row, IF = 5 mA, VCE = 5 V, Ta = 25 °C: Min 100 %, Max 400 %; Note1 maps the order code: \"(e.g.) rank GB: TLP291 (GB,E\""
   "/existence":
     - source: toshiba/TLP291-datasheet-en
       page: 2

@@ -31,11 +31,27 @@ sources:
   - onsemi/BZX84C2V4LT1-D
 
 parameters:
+  zener_voltage:
+    nominal: 12
+    min: 11.4
+    max: 12.7
+    unit: V
+  zener_test_current:
+    nominal: 5
+    unit: mA
   forward_voltage:
     max: 0.9
     unit: V
 
 provenance:
+  "/parameters/zener_voltage":
+    - source: onsemi/BZX84C2V4LT1-D
+      page: 3
+      locator: "ELECTRICAL CHARACTERISTICS - BZX84CxxxLT1 SERIES, row BZX84C12LT1G: VZ1 (Volts) @ IZT1 = 5 mA Min 11.4 / Nom 12 / Max 12.7 (Note 3)"
+  "/parameters/zener_test_current":
+    - source: onsemi/BZX84C2V4LT1-D
+      page: 3
+      locator: "ELECTRICAL CHARACTERISTICS - BZX84CxxxLT1 SERIES, column header 'VZ1 (Volts) @ IZT1 = 5 mA', row BZX84C12LT1G"
   "/parameters/forward_voltage":
     - source: onsemi/BZX84C2V4LT1-D
       page: 3

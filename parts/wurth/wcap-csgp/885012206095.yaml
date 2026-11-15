@@ -24,7 +24,37 @@ lifecycle:
 sources:
   - wurth/885012206095-DS
 
+parameters:
+  capacitance:
+    nominal: 100
+    unit: nF
+  tolerance:
+    min: -10
+    max: 10
+    unit: "%"
+  rated_voltage:
+    nominal: 50
+    unit: V
+  dielectric:
+    value: X7R
+
 provenance:
+  "/parameters/capacitance":
+    - source: wurth/885012206095-DS
+      page: 1
+      locator: "Electrical Properties, Capacitance C: 100 nF, Tol. ±10%"
+  "/parameters/tolerance":
+    - source: wurth/885012206095-DS
+      page: 1
+      locator: "Electrical Properties, Capacitance C: 100 nF, Tol. ±10%"
+  "/parameters/rated_voltage":
+    - source: wurth/885012206095-DS
+      page: 1
+      locator: "Electrical Properties, Rated Voltage VR: 50 V (DC), Tol. max."
+  "/parameters/dielectric":
+    - source: wurth/885012206095-DS
+      page: 1
+      locator: "Electrical Properties, Ceramic Type: X7R Class II"
   "/existence":
     - source: wurth/885012206095-DS
       page: 1

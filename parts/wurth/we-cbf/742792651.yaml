@@ -21,7 +21,23 @@ lifecycle:
 sources:
   - wurth/742792651-DS
 
+parameters:
+  rated_current:
+    nominal: 1000
+    unit: mA
+  dcr:
+    max: 0.2
+    unit: Ω
+
 provenance:
+  "/parameters/rated_current":
+    - source: wurth/742792651-DS
+      page: 1
+      locator: "Electrical Properties, Rated Current 2 IR 2, ΔT = 40 K: 1000 mA max. (Rated Current 1 IR 1, ΔT = 20 K: 800 mA)"
+  "/parameters/dcr":
+    - source: wurth/742792651-DS
+      page: 1
+      locator: "Electrical Properties, DC Resistance RDC @ 20 °C: 0.2 Ω max."
   "/existence":
     - source: wurth/742792651-DS
       page: 1

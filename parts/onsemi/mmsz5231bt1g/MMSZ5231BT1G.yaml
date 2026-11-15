@@ -31,7 +31,25 @@ lifecycle:
 sources:
   - onsemi/MMSZ5221BT1-D
 
+parameters:
+  zener_voltage:
+    nominal: 5.1
+    min: 4.85
+    max: 5.36
+    unit: V
+  zener_test_current:
+    nominal: 20
+    unit: mA
+
 provenance:
+  "/parameters/zener_voltage":
+    - source: onsemi/MMSZ5221BT1-D
+      page: 3
+      locator: "5% TOLERANCE FG ELECTRICAL CHARACTERISTICS, row MMSZ5231BT1G: VZ (Volts) Min 4.85 / Nom 5.1 / Max 5.36 @ IZT (Notes 3 and 4)"
+  "/parameters/zener_test_current":
+    - source: onsemi/MMSZ5221BT1-D
+      page: 3
+      locator: "5% TOLERANCE FG ELECTRICAL CHARACTERISTICS, row MMSZ5231BT1G: @ IZT 20 mA"
   "/existence":
     - source: onsemi/MMSZ5221BT1-D
       page: 1

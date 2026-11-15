@@ -17,11 +17,27 @@ pins:
   "2": { name: Anode, type: passive }
 
 parameters:
+  zener_voltage:
+    nominal: 6.2
+    min: 5.89
+    max: 6.51
+    unit: V
+  zener_test_current:
+    nominal: 20
+    unit: mA
   forward_voltage:
     max: 0.9
     unit: V
 
 provenance:
+  "/parameters/zener_voltage":
+    - source: diodes/DS18010
+      page: 2
+      locator: "Electrical Characteristics, MMSZ5234B row: VZ @ IZT Nom 6.2 V, Min 5.89 V, Max 6.51 V (Note 6)"
+  "/parameters/zener_test_current":
+    - source: diodes/DS18010
+      page: 2
+      locator: "Electrical Characteristics, MMSZ5234B row: Test Current IZT 20 mA"
   "/parameters/forward_voltage":
     - source: diodes/DS18010
       page: 2
