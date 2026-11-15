@@ -18,19 +18,19 @@ parameters:
     typ: 2 V
     max: 2.4 V
     at: { IF: 20 mA }
-    src: 'p5 "Characteristics, Forward Voltage VF: min. 1.60 V, typ. 2.00 V, max. 2.40 V"'
+    src: p5 "Characteristics, Forward Voltage VF"
   forward_current:
     min: 1 mA
     max: 30 mA
     at: { TS: 25 °C }
-    src: 'p4 "Maximum Ratings, Forward current IF: min. 1 mA, max. 30 mA"'
-  color: { value: red, src: 'p2 "Features, Color: λdom = 633 nm (super red)"' }
+    src: p4 "Maximum Ratings, Forward current IF"
+  color: { value: red, src: 'p2 "Features, Color"' }
   wavelength:
     min: 627 nm
     typ: 633 nm
     max: 639 nm
     at: { IF: 20 mA, TS: 25 °C }
-    src: 'p5 "Characteristics, Dominant Wavelength λdom: min. 627 nm, typ. 633 nm, max. 639 nm"'
+    src: p5 "Characteristics, Dominant Wavelength λdom"
 
 pins:
   src: p12 "Dimensional Drawing, bottom view terminals labelled "cathode" and "anode"; top view "cathode mark""

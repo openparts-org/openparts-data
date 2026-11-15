@@ -36,13 +36,11 @@ lifecycle: { status: unknown }
 # standard specifications / Table 1 (p1). Frequency stability is not a
 # vocabulary key.
 parameters:
-  esr: { max: 35 Ω, src: 'p1 "Table 1, 8.000-9.999 MHz, HC49/U Fundamental: ESR max 35"' }
-  frequency:
-    typ: 8 MHz
-    src: p2 "OPTIONS AND PART IDENTIFICATION, Frequency in MHz (specify in xx.xxxx MHz) -> 8.000MHZ = 8.000 MHz"
+  esr: { max: 35 Ω, src: 'p1 "Table 1, 8.000-9.999 MHz row, HC49/U Fundamental ESR"' }
+  frequency: { typ: 8 MHz, src: 'p2 "OPTIONS AND PART IDENTIFICATION, Frequency in MHz: 8.000MHZ"' }
   load_capacitance:
     typ: 18 pF
-    src: 'p1 "STANDARD SPECIFICATIONS, Load capacitance (CL): Typical 18 pF, See options (p2: Load Capacitance field left blank if standard)"'
+    src: p1 "STANDARD SPECIFICATIONS, Load capacitance (CL) (standard; p2 option blank)"
   frequency_tolerance:
     tol: ±20 ppm
-    src: 'p2 "OPTIONS AND PART IDENTIFICATION, Freq. Tolerance: 2: ± 20 ppm"'
+    src: 'p2 "OPTIONS AND PART IDENTIFICATION, Freq. Tolerance: 2 = ±20 ppm"'

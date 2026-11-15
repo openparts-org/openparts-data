@@ -35,10 +35,9 @@ lifecycle: { status: unknown }
 parameters:
   esr:
     typ: 70 kΩ
-    src: 'p2 "[4] Static Characteristics, Motional resistance (ESR) R1: 70 Typ. kΩ (DL = 0.5 μW)"'
-  frequency:
-    typ: 32.768 kHz
-    src: 'p2 "[4] Static Characteristics, Nominal frequency range f_nom: 32.768 kHz"'
+    src: p2 "[4] Static Characteristics, Motional resistance (ESR) R1 (DL = 0.5 μW)"
+  frequency: { typ: 32.768 kHz, src: 'p2 "[4] Static Characteristics, Nominal frequency f_nom"' }
   frequency_tolerance:
     tol: ±20 ppm
-    src: 'p2 "[4] Static Characteristics, Frequency tolerance f_tol: ±20 x10-6 (T_use = +25 °C ± 3 °C, DL = 0.1 μW)"'
+    at: { TA: 25 °C }
+    src: p2 "[4] Static Characteristics, Frequency tolerance f_tol (DL = 0.1 μW)"

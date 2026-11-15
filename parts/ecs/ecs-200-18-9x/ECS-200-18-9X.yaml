@@ -20,13 +20,10 @@ lifecycle: { status: active }
 # DEVELOPED FREQUENCIES table, load capacitance from the PART NUMBERING
 # GUIDE, tolerance and ESR from the electrical characteristics tables.
 parameters:
-  esr: { max: 50 Ω, src: 'p1 "ESR table, Frequency 10.00 ~ 30.00 MHz: ESR Ω Max. 50, Fundamental"' }
-  frequency:
-    typ: 20 MHz
-    src: 'p2 "DEVELOPED FREQUENCIES ECS-3X9X, Abbreviation 200: Frequency 20.000 MHz"'
-  load_capacitance:
-    typ: 18 pF
-    src: 'p1 "PART NUMBERING GUIDE, Load Capacitance: xx = xx pF -> 18 = 18 pF"'
+  esr:              { max: 50 Ω, src: 'p1 "ESR table, 10.00~30.00 MHz Fundamental row"' }
+  frequency:        { typ: 20 MHz, src: 'p2 "DEVELOPED FREQUENCIES ECS-3X9X, Abbreviation 200"' }
+  load_capacitance: { typ: 18 pF, src: 'p1 "PART NUMBERING GUIDE, Load Capacitance: 18"' }
   frequency_tolerance:
     tol: ±50 ppm
-    src: 'p1 "OPERATING CONDITIONS / ELECTRICAL CHARACTERISTICS, Frequency Tolerance @ +25°C: ± 50 ppm (ECS-3X10X / ECS-3X9X)"'
+    at: { TA: 25 °C }
+    src: p1 "OPERATING CONDITIONS / ELECTRICAL CHARACTERISTICS, Frequency Tolerance (ECS-3X10X / ECS-3X9X)"

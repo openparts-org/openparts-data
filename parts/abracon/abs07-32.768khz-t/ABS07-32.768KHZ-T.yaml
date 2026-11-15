@@ -26,13 +26,12 @@ lifecycle: { status: unknown }
 parameters:
   esr:
     max: 70 kΩ
-    src: 'p1 "Key Electrical Specifications, Equivalent series resistance (R1): Max. 70 kΩ, -40 ~ +85°C row (Operating Temp. Range option Blank: -40 ~ +85°C, p3)"'
-  frequency:
-    typ: 32.768 kHz
-    src: 'p1 "Key Electrical Specifications, Frequency: Typ. 32.768 kHz"'
+    src: p1 "Key Electrical Specifications, ESR (R1), -40~+85 °C row (option Blank, p3)"
+  frequency: { typ: 32.768 kHz, src: 'p1 "Key Electrical Specifications, Frequency"' }
   load_capacitance:
     typ: 12.5 pF
-    src: 'p3 "Options and Part Identification, Load Capacitance: Blank: 12.5pF (Key Electrical Specifications p1: Load capacitance (CL) Typ. 12.5 pF, Option "blank")"'
+    src: 'p3 "Options and Part Identification, Load Capacitance: Blank = 12.5 pF (p1 Key Electrical Specifications)"'
   frequency_tolerance:
     tol: ±20 ppm
-    src: 'p3 "Options and Part Identification, Freq. Tolerance: Blank: ±20ppm (Key Electrical Specifications p1: Frequency Tolerance @+25°C -20 / +20 ppm, Option "blank")"'
+    at: { TA: 25 °C }
+    src: 'p3 "Options and Part Identification, Freq. Tolerance: Blank = ±20 ppm (p1 Key Electrical Specifications)"'

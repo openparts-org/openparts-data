@@ -18,10 +18,8 @@ parameters:
     min: 2.8 V
     max: 3.6 V
     at: { IF: 20 mA }
-    src: 'p2 "Electro-Optical Characteristics, Forward Voltage VF: Min. 2.8 V, Max. 3.6 V"'
+    src: p2 "Electro-Optical Characteristics, Forward Voltage VF"
   forward_current:
     max: 30 mA
-    src: 'p2 "Absolute Maximum Ratings, Continuous Forward Current IF: 30 mA"'
-  color:
-    value: white
-    src: 'p2 "Device Selection Guide: Chip InGaN, Emitted Color White, Resin Water Clear"'
+    src: p2 "Absolute Maximum Ratings, Continuous Forward Current IF"
+  color: { value: white, src: 'p2 "Device Selection Guide, Emitted Color"' }

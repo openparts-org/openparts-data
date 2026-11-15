@@ -15,18 +15,16 @@ parameters:
     typ: 2 V
     max: 2.4 V
     at: { IF: 20 mA, TA: 25 °C }
-    src: 'p3 "Electro-Optical Characteristics, Forward Voltage VF: Min. 1.7 V, Typ. 2.0 V, Max. 2.4 V"'
+    src: p3 "Electro-Optical Characteristics, Forward Voltage VF"
   forward_current:
     max: 25 mA
     at: { TA: 25 °C }
-    src: 'p2 "Absolute Maximum Ratings, Forward Current IF: 25 mA"'
-  color:
-    value: red
-    src: 'p2 "Device Selection Guide: Chip AlGaInP, Emitted Color Brilliant Red, Resin Water Clear"'
+    src: p2 "Absolute Maximum Ratings, Forward Current IF"
+  color: { value: red, src: 'p2 "Device Selection Guide, Emitted Color"' }
   wavelength:
     typ: 624 nm
     at: { IF: 20 mA, TA: 25 °C }
-    src: 'p3 "Electro-Optical Characteristics, Dominant Wavelength λd: Typ. 624 nm"'
+    src: p3 "Electro-Optical Characteristics, Dominant Wavelength λd"
 
 pins:
   src: 'p6 "Package Dimension, Polarity symbol: "+ (1)" anode, "- (2)" cathode; bottom view "Cathode Mask" at pad 2"'

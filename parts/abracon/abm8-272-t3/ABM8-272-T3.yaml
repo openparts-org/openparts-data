@@ -30,15 +30,10 @@ lifecycle: { status: unknown }
 # Parameters (AI candidates, needs review): single-MPN datasheet,
 # Key Electrical Specifications table.
 parameters:
-  esr:
-    max: 50 Ω
-    src: 'p1 "Key Electrical Specifications, Equivalent series resistance (R1): Maximum 50 Ω"'
-  frequency:
-    typ: 12 MHz
-    src: 'p1 "Key Electrical Specifications, Center Frequency: Typical 12.000 MHz"'
-  load_capacitance:
-    typ: 10 pF
-    src: 'p1 "Key Electrical Specifications, Load capacitance (CL): Typical 10 pF"'
+  esr: { max: 50 Ω, src: 'p1 "Key Electrical Specifications, Equivalent series resistance (R1)"' }
+  frequency: { typ: 12 MHz, src: 'p1 "Key Electrical Specifications, Center Frequency"' }
+  load_capacitance: { typ: 10 pF, src: 'p1 "Key Electrical Specifications, Load capacitance (CL)"' }
   frequency_tolerance:
     tol: ±30 ppm
-    src: 'p1 "Key Electrical Specifications, Frequency Tolerance at +25 ºC: Minimum -30, Maximum +30 ppm"'
+    at: { TA: 25 °C }
+    src: p1 "Key Electrical Specifications, Frequency Tolerance"

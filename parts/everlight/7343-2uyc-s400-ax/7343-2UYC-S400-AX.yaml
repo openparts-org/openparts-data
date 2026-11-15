@@ -19,12 +19,10 @@ parameters:
     typ: 2 V
     max: 2.4 V
     at: { IF: 20 mA, TA: 25 °C }
-    src: 'p3 "Electro-Optical Characteristics, Forward Voltage VF: Typ. 2.0 V, Max. 2.4 V"'
-  forward_current: { max: 50 mA, src: 'p2 "Absolute Maximum Ratings, Forward Current IF: 50 mA"' }
-  color:
-    value: yellow
-    src: 'p1 "Device Selection Guide: Chip AlGaInP, Emitted Color Super Yellow, Lens Water Clear"'
+    src: p3 "Electro-Optical Characteristics, Forward Voltage VF"
+  forward_current: { max: 50 mA, src: 'p2 "Absolute Maximum Ratings, Forward Current IF"' }
+  color:           { value: yellow, src: 'p1 "Device Selection Guide, Emitted Color"' }
   wavelength:
     typ: 589 nm
     at: { IF: 20 mA, TA: 25 °C }
-    src: 'p3 "Electro-Optical Characteristics, Dominant Wavelength λd: Typ. 589 nm"'
+    src: p3 "Electro-Optical Characteristics, Dominant Wavelength λd"
