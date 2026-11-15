@@ -1,0 +1,50 @@
+# Diodes TSOT26 (Standard), from "Package Outline Dimensions" on page 21
+# of DS41958 Rev. 4-2 (AP62300/AP62301/AP62300T, July 2023). Millimetres
+# ("All Dimensions in mm"), columns Min / Max / Typ, JEDEC-style letters
+# checked against the arrows: D body length along the lead rows, E1
+# molded width, E lead-tip span, A2 body thickness, A1 standoff. The
+# numbers differ from the TSOT26 table in DS41326 (A2 0.75-0.90 vs
+# 0.84-0.90, D 2.70-3.10 vs 2.80-3.00, E 2.60-3.00 vs 2.800 BSC, ...),
+# so this is a separate package.
+#
+# Pin numbering is not printed on the outline; taken from the "Pin
+# Assignments" TSOT26 (Standard) top view (page 1: 1 GND, 2 SW, 3 VIN
+# down one side, 6 BST, 5 EN, 4 FB opposite) -- the generator's
+# counter-clockwise [3, 3] layout.
+#
+# Mapping for the `sot` generator (leads exit across body_length):
+# body_width = D, body_length = E1, overall_length = E, body_height =
+# A2, overall_height = A max, standoff = A1, lead_width = b,
+# lead_thickness = c, lead_length = L. "Typ" values recorded as
+# nominal. Not modelled: L2 0.25 BSC (gauge plane), angle θ. The
+# "Suggested Pad Layout" (page 22: C 0.950, X 0.700, Y 1.000, Y1 3.200)
+# is not recorded as pads.
+schema_version: "0.2"
+kind: package
+id: manufacturers/diodes/TSOT26-2.90x1.60-P0.95-DS41958
+family: sot
+lead_count: 6
+
+lead_layout:
+  value: [3, 3]
+  src:   'p1 "Pin Assignments, TSOT26 (Standard) Top View: 1 GND, 2 SW, 3 VIN; 6 BST, 5 EN, 4 FB opposite"'
+
+source: diodes/DS41958
+
+pitch: { typ: 0.95 mm, src: 'p21 "TSOT26 (Standard) table, e 0.95 BSC"' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:     { min: 2.7 mm, typ: 2.9 mm, max: 3.1 mm, src: 'p21 "TSOT26 (Standard) table, D"' }
+  body_length: { min: 1.5 mm, typ: 1.6 mm, max: 1.7 mm, src: 'p21 "TSOT26 (Standard) table, E1"' }
+  body_height: { min: 0.75 mm, typ: 0.8 mm, max: 0.9 mm, src: 'p21 "TSOT26 (Standard) table, A2"' }
+  lead_thickness:
+    min: 0.11 mm
+    typ: 0.16 mm
+    max: 0.2 mm
+    src: p21 "TSOT26 (Standard) table, c"
+  overall_length: { min: 2.6 mm, typ: 2.8 mm, max: 3 mm, src: 'p21 "TSOT26 (Standard) table, E"' }
+  overall_height: { max: 1 mm, src: 'p21 "TSOT26 (Standard) table, A"' }
+  standoff:       { min: 0 mm, max: 0.1 mm, src: 'p21 "TSOT26 (Standard) table, A1"' }
+  lead_width: { min: 0.3 mm, typ: 0.44 mm, max: 0.5 mm, src: 'p21 "TSOT26 (Standard) table, b"' }
+  lead_length:    { min: 0.3 mm, typ: 0.4 mm, max: 0.5 mm, src: 'p21 "TSOT26 (Standard) table, L"' }

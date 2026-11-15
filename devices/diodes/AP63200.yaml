@@ -1,0 +1,34 @@
+# AP63200 (adjustable, PWM/PFM, 500 kHz) 2-A synchronous buck converter, TSOT26
+# pinout (the datasheet gives one pin table for AP63200/1/3/5). From
+# DS41326 "Pin Descriptions" (page 2), checked against the "Pin
+# Assignments" TOP VIEW (page 1): FB 1, EN 2, VIN 3, GND 4, SW 5, BST 6.
+# Types from the descriptions: FB "Feedback sensing terminal" -> input,
+# EN "Enable Input" -> input, VIN "Power Input" -> power, GND "Power
+# Ground" -> ground, SW "Power Switching Output" -> passive, BST "High-
+# Side Gate Drive Boost Input" -> power. Same structure as
+# diodes/AP63203.
+schema_version: "0.2"
+kind: device
+id: diodes/AP63200
+manufacturer: diodes
+category: switching_regulator
+family: AP6320x
+source: diodes/DS41326
+
+parameters:
+  output_type:
+    value: adjustable
+    src: p12 "Application Information, 9 Setting the Output Voltage"
+  input_voltage_max: { max: 32 V, src: 'p4 "Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 2 A, src: 'p1 "Features, continuous output current"' }
+
+pins:
+  src:
+    - p2 ""Pin Descriptions" table"
+    - p1 ""Pin Assignments" TOP VIEW, TSOT26 (all 6 pins matched)"
+  "1": { name: FB, type: input }
+  "2": { name: EN, type: input }
+  "3": { name: VIN, type: power }
+  "4": { name: GND, type: ground }
+  "5": { name: SW, type: passive }
+  "6": { name: BST, type: power }

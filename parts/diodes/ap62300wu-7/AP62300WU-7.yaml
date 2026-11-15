@@ -1,0 +1,23 @@
+# MPN printed in the "Ordering Information" part-number table (DS41958
+# Rev. 4-2 page 20): row "AP62300WU-7 | PFM/PWM | 0.800 | WU | 3000 | -7". Package
+# code WU = TSOT26 (Standard), outline on page 21 ->
+# manufacturers/diodes/TSOT26-2.90x1.60-P0.95-DS41958. lifecycle: no
+# production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: diodes/AP62300WU-7
+manufacturer: diodes
+mpn: AP62300WU-7
+device: diodes/AP62300-TSOT26
+
+package:
+  value: manufacturers/diodes/TSOT26-2.90x1.60-P0.95-DS41958
+  src:
+    - p20 "Ordering Information, row AP62300WU-7, Package Code WU"
+    - p21 "Package Outline Dimensions, TSOT26 (Standard)"
+
+sources: [diodes/DS41958]
+source: diodes/DS41958
+
+existence: { status: verified, src: 'p20 "Ordering Information, row AP62300WU-7"' }
+lifecycle: { status: unknown }

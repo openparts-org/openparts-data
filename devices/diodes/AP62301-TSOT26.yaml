@@ -1,0 +1,34 @@
+# AP62301 (PWM only, VFB 0.800 V) 3-A synchronous buck converter, TSOT26 (Standard)
+# pinout. From DS41958 "Pin Descriptions" (page 2, TSOT26 column),
+# checked against the "Pin Assignments" TSOT26 top view (page 1): GND 1,
+# SW 2, VIN 3, FB 4, EN 5, BST 6. The SOT563 package numbers the pins
+# differently and is not covered. Types from the descriptions: VIN
+# "Power Input" -> power, SW "Power Switching Output" -> passive, GND
+# "Power Ground" -> ground, BST "High-Side Gate Drive Boost Input" ->
+# power, EN "Enable Input" -> input, FB "Feedback sensing terminal" ->
+# input.
+schema_version: "0.2"
+kind: device
+id: diodes/AP62301-TSOT26
+manufacturer: diodes
+category: switching_regulator
+family: AP6230x
+source: diodes/DS41958
+
+parameters:
+  output_type:
+    value: adjustable
+    src: p16 "Application Information, 9 Setting the Output Voltage"
+  input_voltage_max: { max: 18 V, src: 'p4 "Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 3 A, src: 'p1 "Features, continuous output current"' }
+
+pins:
+  src:
+    - p2 "Pin Descriptions, TSOT26 (Standard) column"
+    - p1 "Pin Assignments, TSOT26 (Standard) top view (all 6 pins matched)"
+  "1": { name: GND, type: ground }
+  "2": { name: SW, type: passive }
+  "3": { name: VIN, type: power }
+  "4": { name: FB, type: input }
+  "5": { name: EN, type: input }
+  "6": { name: BST, type: power }

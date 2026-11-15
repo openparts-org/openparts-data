@@ -1,0 +1,17 @@
+# Official Diodes Incorporated datasheet "AP62300/AP62301/AP62300T 4.2V
+# to 18V input, 3A low IQ synchronous buck converter", Document number
+# DS41958 Rev. 4 - 2, footer "July 2023", 23 pages, downloaded
+# 2026-11-16 from the URL below (the /assets/Datasheets/AP62300.pdf URL
+# returned a 404 page). Read with pdftotext -layout. Page numbers are
+# PDF page indices (= printed "N of 23").
+schema_version: "0.2"
+kind: source
+id: diodes/DS41958
+sha256: a9c6bcf391ba2df0e2e81cd1c881f579b4fdf000e9ba87073920cb4ffba1e1cc
+retrieved: 2026-11-16
+url: https://www.diodes.com/datasheet/download/AP62300.pdf
+publisher: diodes
+document_id: DS41958
+document_type: datasheet
+revision: 4-2
+date: 2023-07
