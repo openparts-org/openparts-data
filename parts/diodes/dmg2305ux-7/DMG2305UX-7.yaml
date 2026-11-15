@@ -19,22 +19,17 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  polarity: { value: p_channel, src: 'p1 "Page-1 title: "P-CHANNEL ENHANCEMENT MODE MOSFET""' }
-  drain_source_voltage:
-    typ: -20 V
-    at: { TA: 25 °C }
-    src: 'p2 "Maximum Ratings, Drain-Source Voltage VDSS: -20 V"'
+  polarity:             { value: p_channel, src: p1 "Title" }
+  drain_source_voltage: { max: -20 V, src: 'p2 "Maximum Ratings, VDSS"' }
   drain_current:
-    typ: -4.2 A
-    at: { VGS: -4.5 V, TA: 25 °C }
-    src: 'p2 "Maximum Ratings, Continuous Drain Current ID, Steady State: -4.2 A"'
+    - { max: -4.2 A, at: { VGS: -4.5 V, TA: 25 °C }, src: 'p2 "Maximum Ratings, ID, Steady State"' }
+    - { max: -3.3 A, at: { VGS: -4.5 V, TA: 70 °C }, src: 'p2 "Maximum Ratings, ID, Steady State"' }
   rds_on:
-    typ: 40 mΩ
-    max: 52 mΩ
-    at: { VGS: -4.5 V, ID: -4.2 A, TA: 25 °C }
-    src: 'p2 "Electrical Characteristics, Static Drain-Source On-Resistance RDS(ON): Typ 40, Max 52 mΩ"'
+    - { typ: 40 mΩ, max: 52 mΩ, at: { VGS: -4.5 V, ID: -4.2 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { typ: 52 mΩ, max: 100 mΩ, at: { VGS: -2.5 V, ID: -3.4 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { typ: 68 mΩ, max: 200 mΩ, at: { VGS: -1.8 V, ID: -2 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
   gate_threshold_voltage:
     min: -0.9 V
     max: -0.5 V
-    at: { TA: 25 °C }
-    src: 'p2 "Electrical Characteristics, Gate Threshold Voltage VGS(TH): Min -0.5, Typ —, Max -0.9 V"'
+    at: { ID: -250 µA }
+    src: p2 "Elec. Char., VGS(TH), VDS=VGS"

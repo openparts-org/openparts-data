@@ -29,22 +29,16 @@ lifecycle:
   src: p1 "Banner "NOT RECOMMENDED FOR NEW DESIGN / USE DMN2040U" (every page)"
 
 parameters:
-  polarity: { value: n_channel, src: 'p1 "Page-1 title: "N-CHANNEL ENHANCEMENT MODE MOSFET""' }
-  drain_source_voltage:
-    typ: 20 V
-    at: { TA: 25 °C }
-    src: 'p2 "Maximum Ratings, Drain-Source Voltage VDSS: 20 V"'
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 20 V, src: 'p2 "Maximum Ratings, VDSS"' }
   drain_current:
-    typ: 6.4 A
-    at: { TA: 25 °C }
-    src: 'p2 "Maximum Ratings, Continuous Drain Current ID, Steady State: 6.4 A"'
+    - { max: 6.4 A, at: { TA: 25 °C }, src: 'p2 "Maximum Ratings, ID, Steady State"' }
+    - { max: 4.5 A, at: { TA: 70 °C }, src: 'p2 "Maximum Ratings, ID, Steady State"' }
   rds_on:
-    typ: 20 mΩ
-    max: 28 mΩ
-    at: { VGS: 4.5 V, ID: 6 A, TA: 25 °C }
-    src: 'p2 "Electrical Characteristics, Static Drain-Source On-Resistance RDS(ON): Typ 20, Max 28 mΩ"'
+    - { typ: 20 mΩ, max: 28 mΩ, at: { VGS: 4.5 V, ID: 6 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { typ: 26 mΩ, max: 41 mΩ, at: { VGS: 2.5 V, ID: 5.2 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
   gate_threshold_voltage:
     min: 0.5 V
     max: 1.2 V
-    at: { TA: 25 °C }
-    src: 'p2 "Electrical Characteristics, Gate Threshold Voltage VGS(TH): Min 0.5, Typ —, Max 1.2 V"'
+    at: { ID: 250 µA }
+    src: p2 "Elec. Char., VGS(TH), VDS=VGS"
