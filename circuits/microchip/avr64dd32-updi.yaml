@@ -1,0 +1,26 @@
+# AVR64DD32 UPDI programming header, "UPDI Connection v2" (AVR DD data
+# sheet 4.4.2, Figure 4-6): a single-row 100-mil 4-pin header with
+# RESET (PF6), VDD, GND and UPDI (PF7). The VDD decoupling of Figure 4-6
+# is the one in microchip/avr64dd32-power. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/avr64dd32-updi
+title: AVR64DD32 UPDI header
+host: microchip/AVR64DD32
+source: microchip/DS40002315@revC
+
+nets:
+  GND:   { kind: ground }
+  RESET: { kind: signal }
+  UPDI:  { kind: signal }
+  VDD:   { kind: power }
+
+connect:
+  PF6: { net: RESET, level: example, src: p23 "Figure 4-6" }
+  PF7: { net: UPDI, level: example, src: p23 "Figure 4-6" }
+
+roles:
+  J_UPDI:
+    requires: { category: connector, src: p23 "4.4.2" }
+    pins:     { "1": RESET, "2": VDD, "3": GND, "4": UPDI }
+    level:    { value: recommended, word: recommended, src: p23 "4.4.2" }

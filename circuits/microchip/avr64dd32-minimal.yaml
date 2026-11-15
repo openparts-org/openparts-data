@@ -1,0 +1,28 @@
+# AVR64DD32 minimal circuit from the AVR DD data sheet Hardware
+# Guidelines (section 4): supply decoupling (VDD and VDDIO2), external
+# reset switch and UPDI v2 header. VDDIO2 stays its own rail (it may be
+# tied to VDD by the board). The crystals
+# (microchip/avr64dd32-xosc32k, -xoschf) are optional and not included.
+# AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/avr64dd32-minimal
+title: AVR64DD32 minimal circuit
+host: microchip/AVR64DD32
+source: microchip/DS40002315@revC
+
+nets:
+  GND:    { kind: ground }
+  RESET:  { kind: signal }
+  UPDI:   { kind: signal }
+  VDD:    { kind: power }
+  VDDIO2: { kind: power }
+
+includes:
+  - circuit: microchip/avr64dd32-power
+    with: { GND: GND, VDD: VDD, VDDIO2: VDDIO2 }
+    src: p19 "4.2"
+  - { circuit: microchip/avr64dd32-reset, with: { GND: GND, RESET: RESET }, src: p22 "4.3" }
+  - circuit: microchip/avr64dd32-updi
+    with: { GND: GND, RESET: RESET, UPDI: UPDI, VDD: VDD }
+    src: p22 "4.4"

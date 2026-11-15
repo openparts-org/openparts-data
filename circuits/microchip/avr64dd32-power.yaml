@@ -1,0 +1,64 @@
+# AVR64DD32 supply decoupling (AVR DD data sheet 4.2, Hardware
+# Guidelines): one decoupling capacitor per supply pin pair is
+# required, VDD (4.2.1, Figure 4-1) and the MVIO supply VDDIO2 (4.2.3,
+# Figure 4-3) alike. 100 nF, 1-10 nF and 1 uF are the figures' "Typical
+# values (recommended)", a starting point only (4.1). The 32-pin
+# package has no AVDD pin, so 4.2.2 does not apply. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/avr64dd32-power
+title: AVR64DD32 supply decoupling
+host: microchip/AVR64DD32
+source: microchip/DS40002315@revC
+
+nets:
+  GND:    { kind: ground }
+  VDD:    { kind: power }
+  VDDIO2: { kind: power }
+
+connect:
+  GND:    { net: GND, level: required, src: p19 "4.2" }
+  VDD:    { net: VDD, level: { value: required, word: must }, src: p20 "4.2.1" }
+  VDDIO2: { net: VDDIO2, level: example, src: p21 "4.2.3" }
+
+roles:
+  C_VDD:
+    per_pin: VDD
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: 'p20 "Figure 4-1, C1"' }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p19 "4.2" }
+    level: { value: required, word: must, src: p19 "4.2" }
+  C_VDDIO2:
+    per_pin: VDDIO2
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: 'p21 "Figure 4-3, C1"' }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p21 "4.2.3" }
+    level: { value: required, word: must, src: p21 "4.2.3" }
+  C_VDDIO2_BULK:
+    per_pin: VDDIO2
+    requires: { category: capacitor, capacitance: { typ: 1 uF }, src: 'p21 "Figure 4-3, C3"' }
+    pins: { "1": $pin, "2": GND }
+    level: { value: optional, word: optional, src: 'p21 "Figure 4-3, C3"' }
+  C_VDDIO2_HF:
+    per_pin: VDDIO2
+    requires:
+      category: capacitor
+      capacitance: { min: 1 nF, max: 10 nF }
+      src: p21 "Figure 4-3, C2"
+    pins: { "1": $pin, "2": GND }
+    place: { near: C_VDDIO2, src: p19 "4.2" }
+    level: { value: recommended, word: recommended, src: 'p21 "Figure 4-3, C2"' }
+  C_VDD_BULK:
+    per_pin: VDD
+    requires: { category: capacitor, capacitance: { typ: 1 uF }, src: 'p20 "Figure 4-1, C3"' }
+    pins: { "1": $pin, "2": GND }
+    level: { value: optional, word: optional, src: 'p20 "Figure 4-1, C3"' }
+  C_VDD_HF:
+    per_pin: VDD
+    requires:
+      category: capacitor
+      capacitance: { min: 1 nF, max: 10 nF }
+      src: p20 "Figure 4-1, C2"
+    pins: { "1": $pin, "2": GND }
+    place: { near: C_VDD, src: p19 "4.2" }
+    level: { value: recommended, word: recommended, src: 'p20 "Figure 4-1, C2"' }

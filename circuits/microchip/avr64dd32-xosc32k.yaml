@@ -1,0 +1,39 @@
+# AVR64DD32 32.768 kHz crystal on XTAL32K1 (PF0) / XTAL32K2 (PF1), AVR
+# DD data sheet 4.5.1, Figure 4-7. No load capacitor or RS values are
+# given; RS "may be required" against overdrive. Layout rules: 4.5.
+# AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/avr64dd32-xosc32k
+title: AVR64DD32 32.768 kHz crystal
+host: microchip/AVR64DD32
+source: microchip/DS40002315@revC
+
+nets:
+  GND:      { kind: ground }
+  XTAL_OUT: { kind: local }
+
+roles:
+  C1:
+    requires: { category: capacitor, src: 'p25 "Figure 4-7, C1"' }
+    pins:     { "1": host.PF0, "2": GND }
+    place:    { near: X1, src: p24 "4.5" }
+    level:    { value: recommended, word: recommended, src: p25 "Figure 4-7" }
+  C2:
+    requires: { category: capacitor, src: 'p25 "Figure 4-7, C2"' }
+    pins:     { "1": XTAL_OUT, "2": GND }
+    place:    { near: X1, src: p24 "4.5" }
+    level:    { value: recommended, word: recommended, src: p25 "Figure 4-7" }
+  R_S:
+    requires: { category: resistor, src: 'p25 "4.5.1, RS"' }
+    pins:     { "1": XTAL_OUT, "2": host.PF1 }
+    level:    { value: optional, word: may, src: p25 "4.5.1" }
+  X1:
+    requires: { category: crystal, frequency: { typ: 32.768 kHz }, src: p25 "Figure 4-7" }
+    pins:     { "1": host.PF0, "2": XTAL_OUT }
+    level:    { value: recommended, word: recommended, src: p25 "Figure 4-7" }
+
+placement:
+  - src:        p24 "4.5"
+    keep_short: [host.PF0, host.PF1, XTAL_OUT]
+    level:      { value: required, word: must }

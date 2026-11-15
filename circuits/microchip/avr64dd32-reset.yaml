@@ -1,0 +1,32 @@
+# AVR64DD32 external reset switch on RESET (PF6): filter capacitor and
+# switch series resistor, the "Typical values (recommended)" of the AVR
+# DD data sheet Figure 4-4. RESET has an internal pull-up; an external
+# one is usually not required (4.3). Components on RESET must be
+# disconnectable before a UPDI high-voltage pulse (4.4.2). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/avr64dd32-reset
+title: AVR64DD32 external reset switch
+host: microchip/AVR64DD32
+source: microchip/DS40002315@revC
+
+nets:
+  GND:   { kind: ground }
+  RESET: { kind: signal }
+  SW_RS: { kind: local }
+
+connect: { PF6: { net: RESET, level: example, src: p22 "Figure 4-4" } }
+
+roles:
+  C_RESET:
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: 'p22 "Figure 4-4, C1"' }
+    pins:     { "1": RESET, "2": GND }
+    level:    { value: recommended, word: recommended, src: 'p22 "Figure 4-4, C1"' }
+  R_SW:
+    requires: { category: resistor, resistance: { typ: 330 Ω }, src: 'p22 "Figure 4-4, R1"' }
+    pins:     { "1": RESET, "2": SW_RS }
+    level:    { value: recommended, word: recommended, src: 'p22 "Figure 4-4, R1"' }
+  SW_RESET:
+    requires: { category: switch, src: 'p22 "Figure 4-4, SW1"' }
+    pins:     { "1": SW_RS, "2": GND }
+    level:    { value: example, src: 'p22 "Figure 4-4, SW1"' }
