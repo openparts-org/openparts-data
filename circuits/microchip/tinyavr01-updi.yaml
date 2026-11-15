@@ -1,0 +1,42 @@
+# tinyAVR 0/1-series UPDI programming header: the standard UPDI header
+# of AN2519 Figure 4-8 (6-pin: 1 UPDI_DATA, 2 VCC, 6 GND, 3-5 not
+# connected) on PA0, the UPDI/RESET pin of each data sheet's PORT
+# multiplexing table. AN2519's RESET RC network (section 3) is not
+# applied: on these devices RESET shares PA0 with UPDI. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/tinyavr01-updi
+title: tinyAVR 0/1-series UPDI header
+
+host:
+  devices:
+    - microchip/ATtiny202
+    - microchip/ATtiny402
+    - microchip/ATtiny412
+    - microchip/ATtiny1614
+    - microchip/ATtiny1616-SOIC20
+    - microchip/ATtiny1616-VQFN20
+    - microchip/ATtiny3216
+
+source: microchip/DS00002519@revB
+
+nets:
+  GND:  { kind: ground }
+  UPDI: { kind: signal }
+  VDD:  { kind: power }
+
+connect:
+  PA0:
+    net: UPDI
+    level: required
+    src:
+      - microchip/DS40002318@revA p17 "Table 5-1"
+      - microchip/DS40002287@revA p18 "Table 5-1"
+      - microchip/DS40002204@revA p18 "Table 5-1"
+      - microchip/DS40002205@revA p16 "Table 5-1"
+
+roles:
+  J_UPDI:
+    requires: { category: connector, src: p13 "Figure 4-8" }
+    pins:     { "1": UPDI, "2": VDD, "6": GND }
+    level:    { value: example, src: p13 "Figure 4-8" }

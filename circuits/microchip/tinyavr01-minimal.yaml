@@ -1,0 +1,27 @@
+# tinyAVR 0/1-series minimal circuit: supply decoupling and the UPDI
+# header (AN2519). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/tinyavr01-minimal
+title: tinyAVR 0/1-series minimal circuit
+
+host:
+  devices:
+    - microchip/ATtiny202
+    - microchip/ATtiny402
+    - microchip/ATtiny412
+    - microchip/ATtiny1614
+    - microchip/ATtiny1616-SOIC20
+    - microchip/ATtiny1616-VQFN20
+    - microchip/ATtiny3216
+
+source: microchip/DS00002519@revB
+
+nets:
+  GND:  { kind: ground }
+  UPDI: { kind: signal }
+  VDD:  { kind: power }
+
+includes:
+  - { circuit: microchip/tinyavr01-power, with: { GND: GND, VDD: VDD }, src: p5 "2.1" }
+  - { circuit: microchip/tinyavr01-updi, with: { GND: GND, UPDI: UPDI, VDD: VDD }, src: p12 "4.5" }

@@ -1,0 +1,36 @@
+# tinyAVR 0/1-series (ATtiny202/402/412/1614/1616/3216) supply
+# decoupling. Their data sheets have no hardware guidelines; this is
+# AN2519 2.1: a decoupling capacitor across each VDD/GND pair (no value
+# given there). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/tinyavr01-power
+title: tinyAVR 0/1-series supply decoupling
+
+host:
+  devices:
+    - microchip/ATtiny202
+    - microchip/ATtiny402
+    - microchip/ATtiny412
+    - microchip/ATtiny1614
+    - microchip/ATtiny1616-SOIC20
+    - microchip/ATtiny1616-VQFN20
+    - microchip/ATtiny3216
+
+source: microchip/DS00002519@revB
+
+nets:
+  GND: { kind: ground }
+  VDD: { kind: power }
+
+connect:
+  GND: { net: GND, level: required, src: p6 "2.1" }
+  VDD: { net: VDD, level: example, src: p6 "2.1" }
+
+roles:
+  C_VDD:
+    per_pin: VDD
+    requires: { category: capacitor, src: p6 "2.1" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p6 "2.1" }
+    level: { value: recommended, word: should, src: p5 "2.1" }
