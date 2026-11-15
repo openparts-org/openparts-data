@@ -15,10 +15,6 @@ existence: { status: verified }
 lifecycle: { status: active }
 
 parameters:
-  polarity: { value: pnp, src: 'p1 "Page-1 title: "PNP Silicon""' }
-  collector_emitter_voltage:
-    typ: -150 V
-    src: 'p1 "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO: -150 Vdc"'
-  collector_current:
-    typ: -500 mA
-    src: 'p1 "MAXIMUM RATINGS, Collector Current - Continuous IC: -500 mAdc"'
+  polarity:                  { value: pnp, src: p1 "Title" }
+  collector_emitter_voltage: { max: -150 V, src: 'p1 "Maximum Ratings, VCEO"' }
+  collector_current:         { max: -500 mA, src: 'p1 "Maximum Ratings, IC, Continuous"' }

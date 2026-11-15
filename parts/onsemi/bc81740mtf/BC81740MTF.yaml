@@ -16,12 +16,6 @@ existence: { status: verified }
 lifecycle: { status: active }
 
 parameters:
-  polarity: { value: npn, src: 'p2 "Title: "BC817 / BC818 — NPN Epitaxial Silicon Transistor""' }
-  collector_emitter_voltage:
-    typ: 45 V
-    at: { TA: 25 °C }
-    src: 'p2 "Absolute Maximum Ratings, VCEO Collector-Emitter Voltage, BC817 row: 45 V"'
-  collector_current:
-    typ: 800 mA
-    at: { TA: 25 °C }
-    src: 'p2 "Absolute Maximum Ratings, IC Collector Current (DC): 800 mA"'
+  polarity:                  { value: npn, src: p2 "Title" }
+  collector_emitter_voltage: { max: 45 V, src: 'p2 "Abs. Max. Ratings, VCEO, BC817 row"' }
+  collector_current:         { max: 800 mA, src: 'p2 "Abs. Max. Ratings, IC (DC)"' }

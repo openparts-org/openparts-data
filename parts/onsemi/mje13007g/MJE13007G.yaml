@@ -24,10 +24,6 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  polarity: { value: npn, src: 'p1 "Page-1 title: "Switch-mode NPN Bipolar Power Transistor""' }
-  collector_emitter_voltage:
-    typ: 400 V
-    src: 'p1 "MAXIMUM RATINGS, Collector-Emitter Sustaining Voltage VCEO: 400 Vdc"'
-  collector_current:
-    typ: 8 A
-    src: 'p1 "MAXIMUM RATINGS, Collector Current - Continuous IC: 8.0 Adc"'
+  polarity:                  { value: npn, src: p1 "Title" }
+  collector_emitter_voltage: { max: 400 V, src: 'p1 "Maximum Ratings, VCEO (sustaining)"' }
+  collector_current:         { max: 8 A, src: 'p1 "Maximum Ratings, IC, Continuous"' }

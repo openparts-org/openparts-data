@@ -24,10 +24,6 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  polarity: { value: pnp, src: 'p1 "Page-1 title: "General Purpose Transistors PNP Silicon""' }
-  collector_emitter_voltage:
-    typ: -45 V
-    src: 'p1 "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO, BC857, SBC857 row: -45 V"'
-  collector_current:
-    typ: -100 mA
-    src: 'p1 "MAXIMUM RATINGS, Collector Current - Continuous IC: -100 mAdc"'
+  polarity:                  { value: pnp, src: p1 "Title" }
+  collector_emitter_voltage: { max: -45 V, src: 'p1 "Maximum Ratings, VCEO, BC857/SBC857 row"' }
+  collector_current:         { max: -100 mA, src: 'p1 "Maximum Ratings, IC, Continuous"' }

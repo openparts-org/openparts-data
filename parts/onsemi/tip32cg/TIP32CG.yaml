@@ -26,12 +26,6 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: pnp
-    src: 'p1 "Page-1 title: "TIP31G, TIP31AG, TIP31BG, TIP31CG (NPN), TIP32G, TIP32AG, TIP32BG, TIP32CG (PNP)""'
-  collector_emitter_voltage:
-    typ: 100 V
-    src: 'p1 "MAXIMUM RATINGS, VCEO Collector-Emitter Voltage, TIP31CG, TIP32CG row: 100 Vdc"'
-  collector_current:
-    typ: 3 A
-    src: 'p1 "MAXIMUM RATINGS, IC Collector Current - Continuous: 3.0 Adc"'
+  polarity:                  { value: pnp, src: p1 "Title" }
+  collector_emitter_voltage: { max: 100 V, src: 'p1 "Maximum Ratings, VCEO, TIP31CG/TIP32CG row"' }
+  collector_current:         { max: 3 A, src: 'p1 "Maximum Ratings, IC, Continuous"' }

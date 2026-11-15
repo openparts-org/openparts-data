@@ -23,10 +23,6 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  polarity: { value: npn, src: 'p1 "Page-1 title: "NPN Silicon""' }
-  collector_emitter_voltage:
-    typ: 40 V
-    src: 'p1 "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO: 40 Vdc"'
-  collector_current:
-    typ: 600 mA
-    src: 'p1 "MAXIMUM RATINGS, Collector Current - Continuous IC: 600 mAdc"'
+  polarity:                  { value: npn, src: p1 "Title" }
+  collector_emitter_voltage: { max: 40 V, src: 'p1 "Maximum Ratings, VCEO"' }
+  collector_current:         { max: 600 mA, src: 'p1 "Maximum Ratings, IC, Continuous"' }

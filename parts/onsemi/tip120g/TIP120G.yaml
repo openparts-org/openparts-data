@@ -24,12 +24,6 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: npn
-    src: 'p2 "Page header: "TIP120, TIP121, TIP122 (NPN); TIP125, TIP126, TIP127 (PNP)""'
-  collector_emitter_voltage:
-    typ: 60 V
-    src: 'p2 "MAXIMUM RATINGS, VCEO Collector-Emitter Voltage, TIP120, TIP125 column: 60 Vdc"'
-  collector_current:
-    typ: 5 A
-    src: 'p2 "MAXIMUM RATINGS, IC Collector Current - Continuous: 5.0 Adc"'
+  polarity:                  { value: npn, src: p2 "Page header" }
+  collector_emitter_voltage: { max: 60 V, src: 'p2 "Maximum Ratings, VCEO, TIP120/TIP125 column"' }
+  collector_current:         { max: 5 A, src: 'p2 "Maximum Ratings, IC, Continuous"' }
