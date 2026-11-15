@@ -18,11 +18,12 @@ package: standards/CHIP0603-ERJ3E
 sources: [panasonic/AOA0000C304]
 source: panasonic/AOA0000C304
 
+# existence p3: no NRFND mark on the ERJ3EK ratings row
 existence:
   status: probable
   src:
-    - 'p2 "Explanation of part numbers, ERJ XGN...3EK...1TN series +/-1 %: ERJ | 3EK (0603, 0.1 W) | F (+/-1 %) | resistance value (first three digits significant, last = number of zeros; example 1002 -> 10 kOhm) | V (punched carrier taping 4 mm pitch, 5,000 pcs; Part No. ERJ3EK); 1003 = 100 kOhm"'
-    - 'p3 "Ratings <+/-1 %>, row ERJ3EK (0603): 0.1 W, 75 V, 150 V, +/-1, resistance range "10 to 1 M (E24,E96)", +/-100 x10^-6/K, Grade 0 (no NRFND mark on this row)"'
+    - p2 "Explanation of part numbers, ERJ3EK +/-1 % series"
+    - p3 "Ratings <+/-1 %>, row ERJ3EK (0603)"
 
 lifecycle: { status: unknown }
 

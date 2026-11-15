@@ -19,8 +19,8 @@ source: vishay/20035
 existence:
   status: probable
   src:
-    - 'p3 "''PART NUMBER AND PRODUCT DESCRIPTION'': CRCW0603562RFKEA / CRCW06030000Z0EA; RESISTANCE R = decimal, K = thousand, M = million, 0000 = jumper; TOLERANCE F = +/-1%, Z = jumper; TCR K = +/-100 ppm/K, 0 = jumper"'
-    - 'p2 "''TEMPERATURE COEFFICIENT AND RESISTANCE RANGE'': D11/CRCW0603 e3 and D10/CRCW0402 e3: +/-100 ppm/K, +/-1%, 1 Ohm to 10 MOhm, E24; E96; Jumper <= 20 mOhm, 0 Ohm"'
+    - 'p3 "Part Number and Product Description: Resistance, Tolerance, TCR codes"'
+    - p2 "Temperature Coefficient and Resistance Range, row D11/CRCW0603 e3"
     - 'p3 "''PACKAGING'' table: D11/CRCW0603 e3 EA = ET1 5000 pcs 7" paper tape; D10/CRCW0402 e3 ED = ET7 10 000 pcs 7""'
 
 lifecycle: { status: unknown }

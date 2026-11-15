@@ -15,10 +15,7 @@ package: standards/CHIP0603-ERJ3E
 sources: [panasonic/AOA0000C304]
 source: panasonic/AOA0000C304
 
-existence:
-  status: probable
-  src: 'p2 "Explanation of part numbers: ERJ | 3EK (0603, 0.1 W) | F (+/-1%) | 1002 (10 kOhm, the page-2 example "1002 -> 10 kOhm") | V (punched carrier taping 4 mm pitch, 5,000 pcs, Part No. ERJ3EK)"'
-
+existence: { status: probable, src: 'p2 "Explanation of part numbers, ERJ3EK +/-1 % series"' }
 lifecycle: { status: unknown }
 
 # Parameters (AI candidates, needs review): resistance and tolerance from

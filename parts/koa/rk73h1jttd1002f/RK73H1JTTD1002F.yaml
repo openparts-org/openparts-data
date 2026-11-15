@@ -14,10 +14,7 @@ package: standards/CHIP0603-KOA-RK73H1J
 sources: [koa/RK73H, koa/RK73H@rev2026-01-27]
 source: koa/RK73H@rev2026-01-27
 
-existence:
-  status: probable
-  src: 'koa/RK73H p1 "ordering information scheme: RK73H | 1J | (nil, standard) | T (Sn) | TD (4mm pitch punch paper) | 1002 (3 significant figures + multiplier = 10.0 kOhm) | F (+/-1%)"'
-
+existence: { status: probable, src: 'koa/RK73H p1 "Ordering Information, part number legend"' }
 lifecycle: { status: unknown }
 
 # Parameters (AI candidates, needs review): resistance and tolerance from the
