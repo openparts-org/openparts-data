@@ -10,9 +10,10 @@ manufacturer: ti
 mpn: INA219AIDR
 device: ti/INA219-D
 
+# outline D0008A (4214825/C) has the same numbers as the reused package
 package:
   value: manufacturers/ti/D0008A
-  src: p29 "Package Option Addendum, row "INA219AIDR", "SOIC (D) | 8"; outline D0008A (4214825/C, same numbers as the reused package) on page 33"
+  src: p29 "Package Option Addendum, row INA219AIDR; outline D0008A (p33)"
 
 sources: [ti/SBOS448G]
 source: ti/SBOS448G

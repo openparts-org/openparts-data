@@ -19,9 +19,6 @@ package:
 sources: [diodes/DS41326]
 source: diodes/DS41326
 
-existence:
-  status: verified
-  src: p16 ""Ordering Information" table, row "AP63203WU-7 | TSOT26 | PWM/PFM | 1100kHz | 3.3V | WU | 3000 | 7 in Tape & Reel" (inch mark written as in)"
-
+existence: { status: verified, src: 'p16 "Ordering Information, row AP63203WU-7"' }
 lifecycle: { status: unknown }
 parameters: { output_voltage: { typ: 3.3 V, src: 'p16 "Ordering Information, AP63203WU-7"' } }

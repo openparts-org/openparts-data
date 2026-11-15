@@ -12,8 +12,5 @@ package: manufacturers/gct/USB4085
 sources: [gct/USB4085-DWG]
 source: gct/USB4085-DWG
 
-existence:
-  status: probable
-  src: 'p1 ""Ordering Grid": USB4085-XX-A; Contact Plating GF = Gold Flash (Standard), 30 = 30µ" Gold; Packing Options A = Tape & Reel"'
-
+existence: { status: probable, src: 'p1 "Ordering Grid, Contact Plating GF, Packing Options A"' }
 lifecycle: { status: unknown }

@@ -15,7 +15,7 @@ source: omron/A070-E1-08
 
 existence:
   status: verified
-  src: 'p1 ""List of Models", 6 x 6 mm Models, High-reliability gold-plated: B3F-1000-G Series, Gold plated, Flat type, height 5.0 mm, 1.76 N {180 gf}, Gray: "B3F-1022-G""'
+  src: p1 "List of Models, 6 x 6 mm Models, B3F-1000-G Series, Flat type, B3F-1022-G"
 
 lifecycle: { status: unknown }
 
@@ -26,4 +26,4 @@ parameters:
     src: 'p3 "Ratings/Characteristics, Rating (resistive load): B3F-G: 100 uA to 50 mA, 3 to 24 VDC"'
   actuation_force:
     typ: 1.76 N
-    src: 'p2 "List of Models, 6 x 6 mm Models, row B3F-1022-G (High-reliability gold-plated B3F-1000-G Series, 5.0 mm, Gray): Operating force (OF) 1.76 N {180 gf}"'
+    src: p2 "List of Models, 6 x 6 mm Models, row B3F-1022-G, Operating force (OF)"

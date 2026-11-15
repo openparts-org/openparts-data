@@ -21,8 +21,5 @@ package:
 sources: [onsemi/CAT24C256-D]
 source: onsemi/CAT24C256-D
 
-existence:
-  status: verified
-  src: p9 ""ORDERING INFORMATION" table, row "CAT24C256WI-GT3 | 24256E | SOIC-8, JEDEC | I = Industrial (-40C to +85C) | NiPdAu | Tape & Reel, 3,000 Units / Reel""
-
+existence: { status: verified, src: 'p9 "ORDERING INFORMATION, row CAT24C256WI-GT3"' }
 lifecycle: { status: unknown }

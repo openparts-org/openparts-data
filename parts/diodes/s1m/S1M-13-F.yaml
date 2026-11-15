@@ -11,8 +11,5 @@ package: manufacturers/diodes/SMA-DS13002
 sources: [diodes/DS16003, diodes/DS13002]
 source: diodes/DS16003
 
-existence:
-  status: probable
-  src: p1 "Ordering Information table row "S1x-13-F | Commercial | SMA | 5,000/Tape & Reel" with footnote "x = Device type, e.g. S1A-13-F (SMA package); S1AB-13-F (SMB package)""
-
+existence: { status: probable, src: 'p1 "Ordering Information, row S1x-13-F and footnote"' }
 lifecycle: { status: unknown }

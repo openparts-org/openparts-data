@@ -10,9 +10,10 @@ manufacturer: ti
 mpn: LMV358IDGKR
 device: ti/LMV358
 
+# outline DGK0008A (4214862/A) is identical to the drawing behind the reused package
 package:
   value: standards/MSOP8-3.0x3.0-P0.65-TI-DGK
-  src: p24 "Package Option Addendum, row "LMV358IDGKR", "VSSOP (DGK) | 8"; outline DGK0008A (4214862/A, identical to the drawing behind the reused package) on page 34"
+  src: p24 "Package Option Addendum, row LMV358IDGKR; outline DGK0008A (p34)"
 
 sources: [ti/SLOS263Y]
 source: ti/SLOS263Y

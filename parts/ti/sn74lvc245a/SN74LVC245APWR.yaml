@@ -8,9 +8,10 @@ manufacturer: ti
 mpn: SN74LVC245APWR
 device: ti/SN74LVC245A
 
+# outline PW0020A (4220206/A) is identical to SCES642L page 28
 package:
   value: standards/TSSOP20-4.4x6.5-P0.65-TI-PW
-  src: p13 "Package Option Addendum, row "SN74LVC245APWR", "TSSOP (PW) | 20"; outline PW0020A (4220206/A, identical to SCES642L page 28) on page 29"
+  src: p13 "Package Option Addendum, row SN74LVC245APWR; outline PW0020A (p29)"
 
 sources: [ti/SCAS218X]
 source: ti/SCAS218X

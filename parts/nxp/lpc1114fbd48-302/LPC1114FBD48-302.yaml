@@ -25,6 +25,5 @@ source: nxp/LPC111X
 
 existence: { status: verified, src: 'p5 "Table 1, "Ordering information""' }
 
-lifecycle:
-  status: active
-  src: 'p124 "Section 18.1 "Data sheet status": cover labeled "Product data sheet" -> "Production" per the status legend; footnote [3] notes status may have changed since publication"'
+# cover says Product data sheet = Production per the status legend; footnote 3: status may have changed since publication
+lifecycle: { status: active, src: p124 "Section 18.1 Data sheet status" }

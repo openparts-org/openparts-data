@@ -12,8 +12,5 @@ package: manufacturers/diodes/SMB-DS13002
 sources: [diodes/DS13004, diodes/DS13002]
 source: diodes/DS13004
 
-existence:
-  status: probable
-  src: p1 "Ordering Information table row "B2xx-13-F | Standard | SMB | 3,000/Tape & Reel" with footnote "e.g. ... B240-13-F (SMB package)""
-
+existence: { status: probable, src: 'p1 "Ordering Information, row B2xx-13-F and footnote"' }
 lifecycle: { status: unknown }

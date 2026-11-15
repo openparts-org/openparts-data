@@ -25,10 +25,8 @@ package:
 sources: [toshiba/TLP785-datasheet-en]
 source: toshiba/TLP785-datasheet-en
 
-existence:
-  status: probable
-  src: p7 "Section 6 "Ordering Information" gives the order-code format (example "TLP785(BL-TP6,F"); the exact code "TLP785(GB-LF6,F" is from the product page's representative "Orderable part number (example)" list, not from this document"
-
+# the exact code TLP785(GB-LF6,F is from the product page's orderable part number list, not from this document
+existence: { status: probable, src: 'p7 "Section 6 Ordering Information, order-code format"' }
 lifecycle: { status: unknown }
 
 parameters:

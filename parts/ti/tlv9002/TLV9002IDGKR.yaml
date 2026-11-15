@@ -10,9 +10,10 @@ manufacturer: ti
 mpn: TLV9002IDGKR
 device: ti/TLV9002
 
+# outline DGK0008A (4214862/A) is identical to the drawing behind the reused package
 package:
   value: standards/MSOP8-3.0x3.0-P0.65-TI-DGK
-  src: p40 "Package Option Addendum, row "TLV9002IDGKR", "VSSOP (DGK) | 8"; outline DGK0008A (4214862/A, identical to the drawing behind the reused package) on page 97"
+  src: p40 "Package Option Addendum, row TLV9002IDGKR; outline DGK0008A (p97)"
 
 sources: [ti/SBOS833R]
 source: ti/SBOS833R

@@ -17,10 +17,8 @@ package: standards/SOT23-2.90x1.30-P1.90
 sources: [onsemi/BC846ALT1-D]
 source: onsemi/BC846ALT1-D
 
-existence:
-  status: verified
-  src: 'p12 "ORDERING INFORMATION table: "BC847BLT1G | 1F | SOT-23 (Pb-Free) | 3,000 / Tape & Reel" (not in the page-13 DISCONTINUED list)"'
-
+# not in the page-13 DISCONTINUED list
+existence: { status: verified, src: 'p12 "ORDERING INFORMATION, row BC847BLT1G"' }
 lifecycle: { status: unknown }
 
 parameters:
