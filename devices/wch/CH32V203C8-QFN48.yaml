@@ -1,0 +1,96 @@
+# CH32V203 pinout for CH32V203C8U6 (QFN48X7), from WCH CH32V203 datasheet V3.0
+# Table 3-1-1 "QFN20/LQFP32/QFN32/LQFP48/QFN48X7 pin definitions",
+# LQFP48/QFN48X7 column (PDF pages 23-26), checked against the
+# Section 3.1 CH32V203CxU6 pinout figure (PDF page 21): same pin at the
+# same numbers. Names are Table 3-1-1's "Pin name" column (the figure
+# spells the supply pins VDD_VIO_1/VDD_VIO_3).
+# Types: P pins power/ground by name; NRST reset; BOOT0 (type I) input;
+# OSC_IN/OSC_OUT clock (note 4, PDF page 35: OSC_IN/OSC_OUT by default
+# on these chips, remappable to PD0/PD1 -- listed as alternates);
+# ports io. `alternate_functions`: ADC channels from the "Default
+# alternate function" column, plus BOOT1 (PB2), SWDIO/SWCLK (PA13/PA14
+# main function after reset) and USBDM/USBDP (PA11/PA12); other
+# peripheral functions and remaps (Table 3-2) are not listed.
+# CH32V203C8: 64K flash, 20K SRAM, column C8x6 (Table 2-1 "Low-and-medium-density general-purpose products
+# resource allocation", PDF page 7).
+# Exposed pad: Table 3-1-1 gives QFN48X7 pin "0" as VSS (P),
+# recorded as pin key EP.
+schema_version: "0.2"
+kind: device
+id: wch/CH32V203C8-QFN48
+manufacturer: wch
+category: microcontroller
+family: CH32V203
+source: wch/CH32V203DS0@V3.0
+
+pins:
+  src:
+    - p23 "Table 3-1-1, LQFP48/QFN48X7 column (cont. p24-26)"
+    - p21 "Section 3.1 CH32V203CxU6 pinout"
+  "1":  { name: VBAT, type: power }
+  "2":  { name: PC13-TAMPER-RTC, type: io }
+  "3":  { name: PC14-OSC32_IN, type: io }
+  "4":  { name: PC15-OSC32_OUT, type: io }
+  "5":  { name: OSC_IN, type: clock, alternate_functions: [PD0] }
+  "6":  { name: OSC_OUT, type: clock, alternate_functions: [PD1] }
+  "7":  { name: NRST, type: reset }
+  "8":  { name: VSSA, type: ground }
+  "9":  { name: VDDA, type: power }
+  "10": { name: PA0-WKUP, type: io, alternate_functions: [ADC_IN0] }
+  "11": { name: PA1, type: io, alternate_functions: [ADC_IN1] }
+  "12": { name: PA2, type: io, alternate_functions: [ADC_IN2] }
+  "13": { name: PA3, type: io, alternate_functions: [ADC_IN3] }
+  "14": { name: PA4, type: io, alternate_functions: [ADC_IN4] }
+  "15": { name: PA5, type: io, alternate_functions: [ADC_IN5] }
+  "16": { name: PA6, type: io, alternate_functions: [ADC_IN6] }
+  "17": { name: PA7, type: io, alternate_functions: [ADC_IN7] }
+  "18": { name: PB0, type: io, alternate_functions: [ADC_IN8] }
+  "19": { name: PB1, type: io, alternate_functions: [ADC_IN9] }
+  "20": { name: PB2, type: io, alternate_functions: [BOOT1] }
+  "21": { name: PB10, type: io }
+  "22": { name: PB11, type: io }
+  "23": { name: VSS_1, type: ground }
+  "24": { name: VDD_IO_1, type: power }
+  "25": { name: PB12, type: io }
+  "26": { name: PB13, type: io }
+  "27": { name: PB14, type: io }
+  "28": { name: PB15, type: io }
+  "29": { name: PA8, type: io }
+  "30": { name: PA9, type: io }
+  "31": { name: PA10, type: io }
+  "32":
+    name: PA11
+    type: io
+    alternate_functions: [USBDM]
+    diff_pair:
+      partner: "33"
+      polarity: n
+      standard: usb2
+      function: USBDM
+      src: p25 "Table 3-1-1, PA11 USBDM / PA12 USBDP default alternate functions"
+  "33":
+    name: PA12
+    type: io
+    alternate_functions: [USBDP]
+    diff_pair:
+      partner: "32"
+      polarity: p
+      standard: usb2
+      function: USBDP
+      src: p25 "Table 3-1-1, PA11 USBDM / PA12 USBDP default alternate functions"
+  "34": { name: PA13, type: io, alternate_functions: [SWDIO] }
+  "35": { name: VSS_2, type: ground }
+  "36": { name: VDD_2, type: power }
+  "37": { name: PA14, type: io, alternate_functions: [SWCLK] }
+  "38": { name: PA15, type: io }
+  "39": { name: PB3, type: io }
+  "40": { name: PB4, type: io }
+  "41": { name: PB5, type: io }
+  "42": { name: PB6, type: io }
+  "43": { name: PB7, type: io }
+  "44": { name: BOOT0, type: input }
+  "45": { name: PB8, type: io }
+  "46": { name: PB9, type: io }
+  "47": { name: VSS_3, type: ground }
+  "48": { name: VDD_IO_3, type: power }
+  EP:   { name: VSS, type: ground, src: 'p23 "Table 3-1-1, QFN48X7 column pin 0 = VSS (P)"' }

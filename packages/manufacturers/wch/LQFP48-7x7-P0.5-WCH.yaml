@@ -1,0 +1,33 @@
+# WCH 48-pin LQFP, 7 x 7 mm body, 0.5 mm pitch: CH32V203 datasheet V3.0
+# section 5.7 "LQFP48 Package" (PDF page 63, image, rendered and read).
+# The drawing prints nominal values only; the page-60 note gives a
+# general tolerance (pitch exact, others within the greater of +-0.2 mm
+# or 10 %), so every value is recorded as `typ`. The side view gives
+# two body thicknesses, "LQFP 1.5" and "TQFP 1.05"; the CH32V203 "T"
+# package code is LQFP (naming rules, PDF page 66), so 1.5 is recorded
+# as body_height. Pin 1 is at the left end of the bottom edge (#13
+# bottom of the right edge, #37 top of the left edge): CCW, the
+# generator's sequence turned 90 degrees.
+# Not merged with standards/LQFP48-7x7-P0.5 or the GigaDevice outline:
+# those carry min/max tolerances that this drawing does not print.
+schema_version: "0.2"
+kind: package
+id: manufacturers/wch/LQFP48-7x7-P0.5-WCH
+family: lqfp
+lead_count: { value: 48, src: 'p63 "Section 5.7 LQFP48 drawing, pins #1-#48"' }
+source: wch/CH32V203DS0@V3.0
+
+pitch: { typ: 0.5 mm, src: 'p63 "Section 5.7 LQFP48, pitch 0.5"' }
+geometry: { type: parametric, generator: lqfp }
+
+dimensions:
+  src:            p63 "Section 5.7 LQFP48 drawing (nominal values)"
+  body_width:     { typ: 7 mm }
+  body_length:    { typ: 7 mm }
+  body_height:    { typ: 1.5 mm, src: 'p63 "Section 5.7 LQFP48 side view, LQFP thickness 1.5"' }
+  lead_thickness: { typ: 0.15 mm }
+  overall_width:  { typ: 9 mm }
+  overall_length: { typ: 9 mm }
+  standoff:       { typ: 0.1 mm }
+  lead_width:     { typ: 0.2 mm }
+  lead_length:    { typ: 0.6 mm }

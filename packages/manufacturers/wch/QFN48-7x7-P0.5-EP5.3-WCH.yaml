@@ -1,0 +1,35 @@
+# WCH 48-pin QFN ("QFN48X7"), 7 x 7 mm body, 0.5 mm pitch, 5.3 mm
+# exposed pad: CH32V203 datasheet V3.0 section 5.4 "QFN48X7 Package"
+# (PDF page 62, image, rendered and read). Pin 1 at the left end of the
+# bottom edge in the top view, numbered counter-clockwise (#12 bottom
+# right, #48 bottom of the left edge): the generator's sequence turned
+# 90 degrees.
+# Exposed pad: the bottom view labels one side "5.3 +0.3/-0.8" and draws
+# a square pad (chamfered at pin 1); the same value is recorded for
+# width and length. Height "0.75 +-0.05" recorded as body_height; the
+# parenthesised "(0.85 +-0.05)" beside it is not recorded (not labelled).
+# Terminal thickness "0.2 +-0.05" (side view) recorded as lead_thickness.
+# Pitch is exact per the page-60 note.
+schema_version: "0.2"
+kind: package
+id: manufacturers/wch/QFN48-7x7-P0.5-EP5.3-WCH
+family: qfn
+lead_count: { value: 48, src: 'p62 "Section 5.4 QFN48X7 drawing, pins #1-#48"' }
+source: wch/CH32V203DS0@V3.0
+
+pitch: { typ: 0.5 mm, src: 'p62 "Section 5.4 QFN48X7, bottom view pitch 0.5"' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  src:            p62 "Section 5.4 QFN48X7 drawing"
+  body_width:     { min: 6.9 mm, typ: 7 mm, max: 7.1 mm }
+  body_length:    { min: 6.9 mm, typ: 7 mm, max: 7.1 mm }
+  body_height:    { min: 0.7 mm, typ: 0.75 mm, max: 0.8 mm }
+  exposed_pad:
+    src:    p62 "Section 5.4 QFN48X7 bottom view, pad side 5.3 +0.3/-0.8 (one side labelled, pad drawn square)"
+    width:  { min: 4.5 mm, typ: 5.3 mm, max: 5.6 mm }
+    length: { min: 4.5 mm, typ: 5.3 mm, max: 5.6 mm }
+  standoff:       { min: 0 mm, typ: 0.025 mm, max: 0.05 mm }
+  lead_width:     { min: 0.18 mm, typ: 0.25 mm, max: 0.32 mm }
+  lead_length:    { min: 0.35 mm, typ: 0.42 mm, max: 0.49 mm }
+  lead_thickness: { min: 0.15 mm, typ: 0.2 mm, max: 0.25 mm }

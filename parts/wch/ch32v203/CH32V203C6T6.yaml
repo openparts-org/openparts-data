@@ -1,0 +1,21 @@
+# CH32V203C6T6: printed verbatim in the "Order Model" column of the Chapter 5
+# "Packages" table of WCH CH32V203 datasheet V3.0 (PDF page 59, row
+# LQFP48).
+# lifecycle: the datasheet carries no production-status statement;
+# unknown.
+schema_version: "0.2"
+kind: part
+id: wch/CH32V203C6T6
+manufacturer: wch
+mpn: CH32V203C6T6
+device: wch/CH32V203C6
+
+package:
+  value: manufacturers/wch/LQFP48-7x7-P0.5-WCH
+  src: p59 "Chapter 5 Packages table, row CH32V203C6T6, Package Form LQFP48"
+
+sources: [wch/CH32V203DS0@V3.0]
+source: wch/CH32V203DS0@V3.0
+
+existence: { status: verified, src: 'p59 "Chapter 5 Packages table, Order Model CH32V203C6T6"' }
+lifecycle: { status: unknown }
