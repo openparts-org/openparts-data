@@ -1,0 +1,105 @@
+# 64-lead TQFP (PT), 10 x 10 x 1 mm body, 0.5 mm pitch: Microchip
+# drawing C04-085C sheet 2 (dimension table) and land pattern C04-2085B,
+# printed in DS60001507N section 59.3.6 (PDF pages 1955-1956, read as
+# text). A2 is body_height, A (1.20 max) overall_height.
+# Land pattern ("RECOMMENDED LAND PATTERN", C04-2085B): contact pitch
+# 0.50, pad spacing C1 = C2 = 11.40 (pad-row centres at +-5.70), pads
+# X1 0.30 x Y1 1.50 (the table says "X28" -- a 64-lead drawing; all 64
+# pads use these sizes). Pads per side at 0, +-0.25 ... +-3.75 (16 x
+# 0.5 pitch). Top view, X right, Y up; pins 1-16 down the left edge,
+# 17-32 along the bottom, 33-48 up the right, 49-64 along the top (CCW,
+# as the pinout figure numbers them).
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/TQFP64-10x10-P0.5-PT-C04-085C
+family: lqfp
+lead_count: { value: 64, src: 'p1955 "C04-085C table, Number of Leads N 64"' }
+source: microchip/DS60001507@revN
+
+pitch: { typ: 0.5 mm, src: 'p1955 "C04-085C table, Lead Pitch e 0.50 BSC"' }
+geometry: { type: parametric, generator: lqfp }
+
+dimensions:
+  src:            p1955 "C04-085C sheet 2 dimension table"
+  body_width:     { typ: 10 mm, src: 'p1955 "C04-085C, Molded Package Width E1 10.00 BSC"' }
+  body_length:    { typ: 10 mm, src: 'p1955 "C04-085C, Molded Package Length D1 10.00 BSC"' }
+  body_height:
+    min: 0.95 mm
+    typ: 1 mm
+    max: 1.05 mm
+    src: p1955 "C04-085C, Molded Package Thickness A2"
+  lead_thickness: { min: 0.09 mm, max: 0.2 mm, src: 'p1955 "C04-085C, Lead Thickness c (no NOM)"' }
+  overall_width:  { typ: 12 mm, src: 'p1955 "C04-085C, Overall Width E 12.00 BSC"' }
+  overall_length: { typ: 12 mm, src: 'p1955 "C04-085C, Overall Length D 12.00 BSC"' }
+  overall_height: { max: 1.2 mm, src: 'p1955 "C04-085C, Overall Height A (max only)"' }
+  standoff:       { min: 0.05 mm, max: 0.15 mm, src: 'p1955 "C04-085C, Standoff A1 (no NOM)"' }
+  lead_width: { min: 0.17 mm, typ: 0.22 mm, max: 0.27 mm, src: 'p1955 "C04-085C, Lead Width b"' }
+  lead_length: { min: 0.45 mm, typ: 0.6 mm, max: 0.75 mm, src: 'p1955 "C04-085C, Foot Length L"' }
+
+pads:
+  value:
+    - { number: "1", x: -5.7, y: 3.75, width: 1.5, length: 0.3 }
+    - { number: "2", x: -5.7, y: 3.25, width: 1.5, length: 0.3 }
+    - { number: "3", x: -5.7, y: 2.75, width: 1.5, length: 0.3 }
+    - { number: "4", x: -5.7, y: 2.25, width: 1.5, length: 0.3 }
+    - { number: "5", x: -5.7, y: 1.75, width: 1.5, length: 0.3 }
+    - { number: "6", x: -5.7, y: 1.25, width: 1.5, length: 0.3 }
+    - { number: "7", x: -5.7, y: 0.75, width: 1.5, length: 0.3 }
+    - { number: "8", x: -5.7, y: 0.25, width: 1.5, length: 0.3 }
+    - { number: "9", x: -5.7, y: -0.25, width: 1.5, length: 0.3 }
+    - { number: "10", x: -5.7, y: -0.75, width: 1.5, length: 0.3 }
+    - { number: "11", x: -5.7, y: -1.25, width: 1.5, length: 0.3 }
+    - { number: "12", x: -5.7, y: -1.75, width: 1.5, length: 0.3 }
+    - { number: "13", x: -5.7, y: -2.25, width: 1.5, length: 0.3 }
+    - { number: "14", x: -5.7, y: -2.75, width: 1.5, length: 0.3 }
+    - { number: "15", x: -5.7, y: -3.25, width: 1.5, length: 0.3 }
+    - { number: "16", x: -5.7, y: -3.75, width: 1.5, length: 0.3 }
+    - { number: "17", x: -3.75, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "18", x: -3.25, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "19", x: -2.75, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "20", x: -2.25, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "21", x: -1.75, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "22", x: -1.25, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "23", x: -0.75, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "24", x: -0.25, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "25", x: 0.25, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "26", x: 0.75, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "27", x: 1.25, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "28", x: 1.75, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "29", x: 2.25, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "30", x: 2.75, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "31", x: 3.25, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "32", x: 3.75, y: -5.7, width: 0.3, length: 1.5 }
+    - { number: "33", x: 5.7, y: -3.75, width: 1.5, length: 0.3 }
+    - { number: "34", x: 5.7, y: -3.25, width: 1.5, length: 0.3 }
+    - { number: "35", x: 5.7, y: -2.75, width: 1.5, length: 0.3 }
+    - { number: "36", x: 5.7, y: -2.25, width: 1.5, length: 0.3 }
+    - { number: "37", x: 5.7, y: -1.75, width: 1.5, length: 0.3 }
+    - { number: "38", x: 5.7, y: -1.25, width: 1.5, length: 0.3 }
+    - { number: "39", x: 5.7, y: -0.75, width: 1.5, length: 0.3 }
+    - { number: "40", x: 5.7, y: -0.25, width: 1.5, length: 0.3 }
+    - { number: "41", x: 5.7, y: 0.25, width: 1.5, length: 0.3 }
+    - { number: "42", x: 5.7, y: 0.75, width: 1.5, length: 0.3 }
+    - { number: "43", x: 5.7, y: 1.25, width: 1.5, length: 0.3 }
+    - { number: "44", x: 5.7, y: 1.75, width: 1.5, length: 0.3 }
+    - { number: "45", x: 5.7, y: 2.25, width: 1.5, length: 0.3 }
+    - { number: "46", x: 5.7, y: 2.75, width: 1.5, length: 0.3 }
+    - { number: "47", x: 5.7, y: 3.25, width: 1.5, length: 0.3 }
+    - { number: "48", x: 5.7, y: 3.75, width: 1.5, length: 0.3 }
+    - { number: "49", x: 3.75, y: 5.7, width: 0.3, length: 1.5 }
+    - { number: "50", x: 3.25, y: 5.7, width: 0.3, length: 1.5 }
+    - { number: "51", x: 2.75, y: 5.7, width: 0.3, length: 1.5 }
+    - { number: "52", x: 2.25, y: 5.7, width: 0.3, length: 1.5 }
+    - { number: "53", x: 1.75, y: 5.7, width: 0.3, length: 1.5 }
+    - { number: "54", x: 1.25, y: 5.7, width: 0.3, length: 1.5 }
+    - { number: "55", x: 0.75, y: 5.7, width: 0.3, length: 1.5 }
+    - { number: "56", x: 0.25, y: 5.7, width: 0.3, length: 1.5 }
+    - { number: "57", x: -0.25, y: 5.7, width: 0.3, length: 1.5 }
+    - { number: "58", x: -0.75, y: 5.7, width: 0.3, length: 1.5 }
+    - { number: "59", x: -1.25, y: 5.7, width: 0.3, length: 1.5 }
+    - { number: "60", x: -1.75, y: 5.7, width: 0.3, length: 1.5 }
+    - { number: "61", x: -2.25, y: 5.7, width: 0.3, length: 1.5 }
+    - { number: "62", x: -2.75, y: 5.7, width: 0.3, length: 1.5 }
+    - { number: "63", x: -3.25, y: 5.7, width: 0.3, length: 1.5 }
+    - { number: "64", x: -3.75, y: 5.7, width: 0.3, length: 1.5 }
+  src: p1956 "C04-2085B land pattern, E 0.50, C1/C2 11.40 (+-5.70), X1 0.30, Y1 1.50"

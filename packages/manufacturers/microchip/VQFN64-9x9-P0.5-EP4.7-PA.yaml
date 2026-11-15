@@ -1,0 +1,30 @@
+# 64-pin VQFN, 9 x 9 x 1 mm, 0.5 mm pitch, 4.7 mm exposed pad: Atmel
+# drawing "PA" revision A (05/27/2011, GPC ZST; "PA, 64 Leads, 0.50 mm
+# pitch, 9 x 9 x 1 mm Very Thin Quad Flat No Lead Package (VQFN) Sawn"),
+# printed in DS60001507N section 59.3.4 "64-Pin VQFN" (PDF page 1949,
+# image, rendered and read). A (0.80 min / 1.00 max, no NOM) is the only
+# height: recorded as body_height min/max. J = standoff. The table gives
+# no terminal thickness. The page note says the exposed pad is not
+# connected inside the device (recommended to ground on the PCB).
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/VQFN64-9x9-P0.5-EP4.7-PA
+family: qfn
+lead_count: { value: 64, src: 'p1949 "Drawing PA COMMON DIMENSIONS, N 64"' }
+source: microchip/DS60001507@revN
+
+pitch: { typ: 0.5 mm, src: 'p1949 "Drawing PA COMMON DIMENSIONS, e 0.50 BSC"' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  src:         p1949 "Drawing PA (rev A) COMMON DIMENSIONS table"
+  body_width:  { typ: 9 mm, src: 'p1949 "Drawing PA, D/E 9.00 BSC"' }
+  body_length: { typ: 9 mm, src: 'p1949 "Drawing PA, D/E 9.00 BSC"' }
+  body_height: { min: 0.8 mm, max: 1 mm, src: 'p1949 "Drawing PA, A (no NOM)"' }
+  exposed_pad:
+    src:    p1949 "Drawing PA, D2/E2 4.60 / 4.70 / 4.80"
+    width:  { min: 4.6 mm, typ: 4.7 mm, max: 4.8 mm }
+    length: { min: 4.6 mm, typ: 4.7 mm, max: 4.8 mm }
+  standoff:    { min: 0 mm, max: 0.05 mm, src: 'p1949 "Drawing PA, J (no NOM)"' }
+  lead_width:  { min: 0.15 mm, typ: 0.2 mm, max: 0.25 mm, src: 'p1949 "Drawing PA, b"' }
+  lead_length: { min: 0.3 mm, typ: 0.4 mm, max: 0.55 mm, src: 'p1949 "Drawing PA, L"' }

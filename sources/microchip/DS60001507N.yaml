@@ -1,0 +1,19 @@
+# Official Microchip "SAM D5x/E5x Family Data Sheet" (Complete Data
+# Sheet), document DS60001507N (footer "DS60001507N - n" on every page),
+# 2002 PDF pages. Downloaded directly from ww1.microchip.com (URL below).
+# Date from Table 64-1 "Revision N. - 03/2026" (PDF page 1985). PDF page
+# indices equal the printed footer page numbers. The 64-pin pinout
+# (page 22) and the 64-pin VQFN drawing (page 1949, image) were rendered
+# and read; the TQFP64 drawing tables (pages 1955-1956) and Table 6-1
+# were read with pdftotext -layout.
+schema_version: "0.2"
+kind: source
+id: microchip/DS60001507@revN
+sha256: 9a911a0ec57f0a0db0f2056eefcfb47ffa6703e9de2e6b78f66cb24152a8a5ae
+retrieved: 2026-11-16
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D5x-E5x-Family-Data-Sheet-DS60001507.pdf
+publisher: microchip
+document_id: DS60001507
+document_type: datasheet
+revision: N
+date: 2026-03

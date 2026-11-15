@@ -1,0 +1,30 @@
+# ATSAMD51J19A-MU: assembled with Figure 2-1 "Composition of the
+# Ordering Numbers" (DS60001507N PDF page 19): SAM D51, J = 64 pins,
+# 19 = 512 KB, A = default variant, package type "M = VQFN", grade
+# "U = -40C to +85C Matte Sn Plating (Industrial)", tray. The base
+# device ATSAMD51J19A is listed in the configuration summary (Table 1-2
+# "SAM D51/E51 Family Features without Ethernet", SAMD51J19 row, PDF
+# page 18).
+# existence is "probable", not "verified": the full string does not
+# appear in an orderable list in this data sheet, and Figure 2-1 note 1
+# says "Not all combinations are valid".
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATSAMD51J19A-MU
+manufacturer: microchip
+mpn: ATSAMD51J19A-MU
+device: microchip/ATSAMD51J19A
+
+package:
+  value: manufacturers/microchip/VQFN64-9x9-P0.5-EP4.7-PA
+  src: p19 "Figure 2-1, Package Type M = VQFN"
+
+sources: [microchip/DS60001507@revN]
+source: microchip/DS60001507@revN
+
+existence:
+  status: probable
+  src: p19 "Figure 2-1 Composition of the Ordering Numbers; SAMD51J19 row, Table 1-2 p18"
+
+lifecycle: { status: unknown }
