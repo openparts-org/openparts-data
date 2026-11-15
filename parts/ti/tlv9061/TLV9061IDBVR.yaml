@@ -1,0 +1,24 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SBOS839N PDF page 36, addendum dated 25-Sep-2026): row
+# "TLV9061IDBVR", "SOT-23 (DBV) | 5". lifecycle "active" is that table's Status column.
+# Package: outline DBV0005A (4214839/K) on page 89; its pdftotext text is identical (headers
+# stripped) to the drawing page behind the reused package.
+schema_version: "0.2"
+kind: part
+id: ti/TLV9061IDBVR
+manufacturer: ti
+mpn: TLV9061IDBVR
+device: ti/TLV9061-DBV
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src: p36 "Package Option Addendum, row TLV9061IDBVR, SOT-23 (DBV) | 5"
+
+sources: [ti/SBOS839N]
+source: ti/SBOS839N
+
+existence:
+  status: verified
+  src: p36 "Package Option Addendum, Packaging Information table, row TLV9061IDBVR"
+
+lifecycle: { status: active, src: 'p36 "Package Option Addendum, row TLV9061IDBVR, Status Active"' }

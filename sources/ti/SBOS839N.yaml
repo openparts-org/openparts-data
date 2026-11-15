@@ -1,0 +1,19 @@
+# Official TI datasheet for TLV9061/TLV9061S/TLV9062/TLV9062S/TLV9064/
+# TLV9064S. Downloaded 2026-11-16 from the TI symlink URL below (the
+# tlv9061 symlink serves the byte-identical file); revision read from the
+# page header "SBOS839N - MARCH 2017 - REVISED JULY 2026". 99 PDF pages;
+# text read with pdftotext -layout. The PACKAGE OPTION ADDENDUM (pages
+# 36-38) is dated 25-Sep-2026. Outline pages used: DBV0006A p72,
+# DBV0005A p89, D0008A p66, DGK0008A p92, D0014A p43, PW0014A p79. Page
+# numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: ti/SBOS839N
+sha256: a77c6dbdedda34c1ecf26e4a5abd38a98903054b49fff9cd24d005897eabedaa
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tlv9062.pdf
+publisher: ti
+document_id: SBOS839N
+document_type: datasheet
+revision: N
+date: 2026-07

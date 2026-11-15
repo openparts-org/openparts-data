@@ -1,0 +1,26 @@
+# Dual 10-MHz RRIO CMOS op amp, 8-pin pinout shared by the D (SOIC), DGK
+# (VSSOP), PW (TSSOP) and DDF (SOT-23-8) packages. From SBOS839N Table
+# 5-3 "Pin Functions: TLV9062" (page 6), checked against Figure 5-6
+# "TLV9062 D, DGK, PW, or DDF Package" (same page). The DSG (WSON)
+# thermal pad and the TLV9062S (shutdown) variants are not covered.
+# Minus signs written as ASCII "-".
+schema_version: "0.2"
+kind: device
+id: ti/TLV9062
+manufacturer: ti
+category: op_amp
+family: TLV906x
+source: ti/SBOS839N
+
+pins:
+  src:
+    - 'p6 "Table 5-3 "Pin Functions: TLV9062""'
+    - p6 "Figure 5-6 "TLV9062 D, DGK, PW, or DDF Package, 8-Pin SOIC, VSSOP, TSSOP, or SOT-23 (Top View)""
+  "1": { name: OUT1, type: analog }
+  "2": { name: IN1-, type: analog }
+  "3": { name: IN1+, type: analog }
+  "4": { name: V-, type: power }
+  "5": { name: IN2+, type: analog }
+  "6": { name: IN2-, type: analog }
+  "7": { name: OUT2, type: analog }
+  "8": { name: V+, type: power }

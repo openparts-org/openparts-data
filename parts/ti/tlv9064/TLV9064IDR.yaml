@@ -1,0 +1,24 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SBOS839N PDF page 37, addendum dated 25-Sep-2026): row
+# "TLV9064IDR", "SOIC (D) | 14". lifecycle "active" is that table's Status column.
+# Package: outline D0014A (4220718/A) on page 43; its pdftotext text is identical (headers
+# stripped) to the drawing page behind the reused package.
+schema_version: "0.2"
+kind: part
+id: ti/TLV9064IDR
+manufacturer: ti
+mpn: TLV9064IDR
+device: ti/TLV9064
+
+package:
+  value: manufacturers/ti/D0014A
+  src: p37 "Package Option Addendum, row TLV9064IDR, SOIC (D) | 14"
+
+sources: [ti/SBOS839N]
+source: ti/SBOS839N
+
+existence:
+  status: verified
+  src: p37 "Package Option Addendum, Packaging Information table, row TLV9064IDR"
+
+lifecycle: { status: active, src: 'p37 "Package Option Addendum, row TLV9064IDR, Status Active"' }

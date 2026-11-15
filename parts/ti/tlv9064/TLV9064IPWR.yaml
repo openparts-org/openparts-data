@@ -1,0 +1,24 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SBOS839N PDF page 37, addendum dated 25-Sep-2026): row
+# "TLV9064IPWR", "TSSOP (PW) | 14". lifecycle "active" is that table's Status column.
+# Package: outline PW0014A (4220202/B) on page 79; its pdftotext text is identical (headers
+# stripped) to the drawing page behind the reused package.
+schema_version: "0.2"
+kind: part
+id: ti/TLV9064IPWR
+manufacturer: ti
+mpn: TLV9064IPWR
+device: ti/TLV9064
+
+package:
+  value: manufacturers/ti/PW0014A
+  src: p37 "Package Option Addendum, row TLV9064IPWR, TSSOP (PW) | 14"
+
+sources: [ti/SBOS839N]
+source: ti/SBOS839N
+
+existence:
+  status: verified
+  src: p37 "Package Option Addendum, Packaging Information table, row TLV9064IPWR"
+
+lifecycle: { status: active, src: 'p37 "Package Option Addendum, row TLV9064IPWR, Status Active"' }

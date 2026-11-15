@@ -1,0 +1,32 @@
+# Quad 10-MHz RRIO CMOS op amp, 14-pin D (SOIC) / PW (TSSOP) pinout.
+# From SBOS839N Table 5-5 "Pin Functions: TLV9064" (page 8), column
+# "SOIC, TSSOP", checked against Figure 5-13 "TLV9064 D or PW Package,
+# 14-Pin SOIC or TSSOP (Top View)" (same page). The RTE (WQFN) and RUC
+# (X2QFN) pin maps differ and are not covered. Minus signs written as
+# ASCII "-".
+schema_version: "0.2"
+kind: device
+id: ti/TLV9064
+manufacturer: ti
+category: op_amp
+family: TLV906x
+source: ti/SBOS839N
+
+pins:
+  src:
+    - 'p8 "Table 5-5 "Pin Functions: TLV9064", column "SOIC, TSSOP""'
+    - p8 "Figure 5-13 "TLV9064 D or PW Package, 14-Pin SOIC or TSSOP (Top View)""
+  "1":  { name: OUT1, type: analog }
+  "2":  { name: IN1-, type: analog }
+  "3":  { name: IN1+, type: analog }
+  "4":  { name: V+, type: power }
+  "5":  { name: IN2+, type: analog }
+  "6":  { name: IN2-, type: analog }
+  "7":  { name: OUT2, type: analog }
+  "8":  { name: OUT3, type: analog }
+  "9":  { name: IN3-, type: analog }
+  "10": { name: IN3+, type: analog }
+  "11": { name: V-, type: power }
+  "12": { name: IN4+, type: analog }
+  "13": { name: IN4-, type: analog }
+  "14": { name: OUT4, type: analog }
