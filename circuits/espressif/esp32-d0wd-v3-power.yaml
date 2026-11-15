@@ -1,0 +1,101 @@
+# ESP32-D0WD-V3 supply decoupling from the ESP32 Hardware Design
+# Guidelines (Schematic Checklist, Power Supply; PCB Layout, Power
+# Supply), single 3.3 V supply. VDD3P3 is the RF-related analog rail:
+# 10 uF per pin (the layout section's "for each pin"; the checklist
+# asks for 10 uF on the rail) fed through the LC filter the checklist
+# asks for; the guide gives no inductance, only a preferred rated
+# current. Pins the guide gives no value for (the rest of the analog
+# pins) are left to the board ("refer to the Reference Schematic", not
+# cited here). VDD_SDIO in its default 3.3 V mode; the 1.8 V mode's 2
+# kOhm pull-down and 4.7 uF are not included. CAP1/CAP2 parts are from
+# the ESP32 Series Datasheet Table 2-1 (PDF page index). Page numbers
+# are PDF page indices of the ESP32 Hardware Design Guidelines
+# (printed page = index - 3). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: espressif/esp32-d0wd-v3-power
+title: ESP32-D0WD-V3 supply decoupling
+host: espressif/ESP32-D0WD-V3
+source: espressif/esp32_hardware_design_guidelines_en@rev1.9
+
+conditions: { VDD_SDIO: { typ: 3.3 V, src: 'p10 "1.3.2, Table 1"' } }
+
+nets:
+  GND:     { kind: ground }
+  VDD_3V3: { kind: power, voltage: { typ: 3.3 V }, src: p9 "1.3.2" }
+  VDD_RF:  { kind: local }
+
+connect:
+  GND:        { net: GND, level: required, src: p9 "1.3.2" }
+  VDD3P3:     { net: VDD_RF, level: example, src: 'p10 "1.3.2, Analog Power Supply"' }
+  VDD3P3_CPU: { net: VDD_3V3, level: example, src: p9 "1.3.2" }
+  VDD3P3_RTC: { net: VDD_3V3, level: example, src: p9 "1.3.2" }
+  VDDA:       { net: VDD_3V3, level: example, src: p9 "1.3.2" }
+
+roles:
+  C_CAP1:
+    requires:
+      category: capacitor
+      capacitance: { typ: 10 nF }
+      tolerance: { min: -10 %, max: 10 % }
+      src: [p19 "1.3.12", 'espressif/esp32_datasheet_en@rev5.3 p16 "Table 2-1, CAP1"']
+    pins:  { "1": host.CAP1, "2": GND }
+    level: { value: required, word: required, src: p19 "1.3.12" }
+  C_CAP2:
+    requires:
+      category: capacitor
+      capacitance: { typ: 3.3 nF }
+      tolerance: { min: -10 %, max: 10 % }
+      src: espressif/esp32_datasheet_en@rev5.3 p15 "Table 2-1, CAP2"
+    pins:  { "1": host.CAP2, "2": host.CAP1 }
+    level: { value: optional, word: may, src: p19 "1.3.12" }
+  C_VDD3P3:
+    per_pin: VDD3P3
+    requires:
+      category: capacitor
+      capacitance: { typ: 10 uF }
+      src: ['p10 "1.3.2, Analog Power Supply"', p23 "1.4.2"]
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p23 "1.4.2" }
+    level: { value: recommended, word: recommended, src: 'p10 "1.3.2, Analog Power Supply"' }
+  C_VDD3P3_CPU:
+    per_pin: VDD3P3_CPU
+    requires:
+      category: capacitor
+      capacitance: { typ: 100 nF }
+      src: p9 "1.3.2, Digital Power Supply"
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p9 "1.3.2, Digital Power Supply"' }
+    level: { value: recommended, word: recommended, src: 'p9 "1.3.2, Digital Power Supply"' }
+  C_VDD3P3_RTC:
+    per_pin: VDD3P3_RTC
+    requires:
+      category: capacitor
+      capacitance: { typ: 100 nF }
+      src: p9 "1.3.2, Digital Power Supply"
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p9 "1.3.2, Digital Power Supply"' }
+    level: { value: recommended, word: recommended, src: 'p9 "1.3.2, Digital Power Supply"' }
+  C_VDD_SDIO_1U:
+    per_pin: VDD_SDIO
+    requires:
+      category: capacitor
+      capacitance: { typ: 1 uF }
+      src: p10 "1.3.2, Digital Power Supply"
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p10 "1.3.2, Digital Power Supply"' }
+    level: { value: recommended, word: recommended, src: 'p10 "1.3.2, Digital Power Supply"' }
+  L_VDD3P3:
+    requires:
+      category: inductor
+      rated_current: { min: 500 mA }
+      src: p10 "1.3.2, Analog Power Supply"
+    pins:  { "1": VDD_3V3, "2": VDD_RF }
+    level: { value: recommended, src: 'p10 "1.3.2, Analog Power Supply"' }
+  R_CAP2:
+    requires:
+      category: resistor
+      resistance: { typ: 20 kΩ }
+      src: espressif/esp32_datasheet_en@rev5.3 p15 "Table 2-1, CAP2"
+    pins:  { "1": host.CAP2, "2": host.CAP1 }
+    level: { value: optional, word: may, src: p19 "1.3.12" }
