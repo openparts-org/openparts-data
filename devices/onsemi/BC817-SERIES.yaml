@@ -2,21 +2,16 @@
 # pin diagram -- note this order (Base/Emitter/Collector) differs from
 # the existing 2N7002E SOT-23 device; don't assume a shared convention
 # across parts/manufacturers.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/BC817-SERIES
-
 manufacturer: onsemi
 category: transistor
 family: BC817
+source: onsemi/BC818-D
 
 pins:
+  src: p2 ""SOT-23 1. Base 2. Emitter 3. Collector" pin diagram"
   "1": { name: Base, type: passive }
   "2": { name: Emitter, type: passive }
   "3": { name: Collector, type: passive }
-
-provenance:
-  "/pins":
-    - source: onsemi/BC818-D
-      page: 2
-      locator: "\"SOT-23 1. Base 2. Emitter 3. Collector\" pin diagram"

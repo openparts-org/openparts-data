@@ -4,35 +4,24 @@
 # status column. Package NDP = outline NDP0003B (page 41).
 # Tab number conflict (pin table "2 , TAB" vs drawing "4") is described
 # in the package file; this part uses the drawing's "4".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/LM1117DTX-3.3/NOPB
-
 manufacturer: ti
 mpn: LM1117DTX-3.3/NOPB
-
 device: ti/LM1117-3.3
-package: standards/TO252-6.1x6.5-P2.29-TabPin4-TI-NDP
+
+package:
+  value: standards/TO252-6.1x6.5-P2.29-TabPin4-TI-NDP
+  src: p41 "NDP0003B package outline (4219870/A)"
+
+sources: [ti/SNOS412Q]
+source: ti/SNOS412Q
 
 existence:
   status: verified
+  src: p23 "Package option addendum table, row "LM1117DTX-3.3/NOPB" (TO-252 (NDP) | 3)"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SNOS412Q
-
-provenance:
-  "/existence":
-    - source: ti/SNOS412Q
-      page: 23
-      locator: "Package option addendum table, row \"LM1117DTX-3.3/NOPB\" (TO-252 (NDP) | 3)"
-  "/lifecycle":
-    - source: ti/SNOS412Q
-      page: 23
-      locator: "Package option addendum table, row \"LM1117DTX-3.3/NOPB\", Status \"Active\""
-  "/package":
-    - source: ti/SNOS412Q
-      page: 41
-      locator: "NDP0003B package outline (4219870/A)"
+  src: p23 "Package option addendum table, row "LM1117DTX-3.3/NOPB", Status "Active""

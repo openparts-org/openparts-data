@@ -3,35 +3,24 @@
 # "TXB0104PWR | Active | Production | TSSOP (PW) | 14 | 2000 | LARGE T&R | ... | -40 to 85 | YE04".
 # lifecycle "active" is that table's Status column.
 # Package: TSSOP (PW) | 14, outline PW0014A (4220202/B) on page 52.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/TXB0104PWR
-
 manufacturer: ti
-mpn: "TXB0104PWR"
-
+mpn: TXB0104PWR
 device: ti/TXB0104-PW
-package: manufacturers/ti/PW0014A
+
+package:
+  value: manufacturers/ti/PW0014A
+  src: p29 "Package Option Addendum, row "TXB0104PWR", "TSSOP (PW) | 14"; outline PW0014A (4220202/B) on page 52"
+
+sources: [ti/SCES650K]
+source: ti/SCES650K
 
 existence:
   status: verified
+  src: p29 "Package Option Addendum, Packaging Information table, row "TXB0104PWR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SCES650K
-
-provenance:
-  "/existence":
-    - source: ti/SCES650K
-      page: 29
-      locator: "Package Option Addendum, Packaging Information table, row \"TXB0104PWR\""
-  "/lifecycle":
-    - source: ti/SCES650K
-      page: 29
-      locator: "Package Option Addendum, row \"TXB0104PWR\", Status \"Active\""
-  "/package":
-    - source: ti/SCES650K
-      page: 29
-      locator: "Package Option Addendum, row \"TXB0104PWR\", \"TSSOP (PW) | 14\"; outline PW0014A (4220202/B) on page 52"
+  src: p29 "Package Option Addendum, row "TXB0104PWR", Status "Active""

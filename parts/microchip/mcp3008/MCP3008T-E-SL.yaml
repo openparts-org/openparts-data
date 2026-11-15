@@ -2,34 +2,25 @@
 # (page 40). Device microchip/MCP3008, package manufacturers/microchip/SOIC16-SL-C04-108C.
 # lifecycle: not stated in the datasheet; no first-party lifecycle page
 # was read, so it is recorded as unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/MCP3008T-E-SL
-
 manufacturer: microchip
-mpn: "MCP3008T-E/SL"
-
+mpn: MCP3008T-E/SL
 device: microchip/MCP3008
-package: manufacturers/microchip/SOIC16-SL-C04-108C
+
+package:
+  value: manufacturers/microchip/SOIC16-SL-C04-108C
+  src: p36 "Product Identification System "SL = Plastic SOIC (150 mil Body), 14-lead, 16-lead" -> 16-lead drawing C04-108C (pages 35-36)"
+
+sources: [microchip/DS20001295@revE]
+source: microchip/DS20001295@revE
 
 # existence is `probable`: the MPN is assembled from the part-numbering
 # legend (or printed only as an example), not listed verbatim in an
 # orderable list (openparts/skills/add-part section 2).
 existence:
   status: probable
+  src: 'p40 "Product Identification System, example i) "MCP3008T-E/SL: Extended Temperature, SOIC package, Tape and Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS20001295@revE
-
-provenance:
-  "/existence":
-    - source: microchip/DS20001295@revE
-      page: 40
-      locator: "Product Identification System, example i) \"MCP3008T-E/SL: Extended Temperature, SOIC package, Tape and Reel\""
-  "/package":
-    - source: microchip/DS20001295@revE
-      page: 36
-      locator: "Product Identification System \"SL = Plastic SOIC (150 mil Body), 14-lead, 16-lead\" -> 16-lead drawing C04-108C (pages 35-36)"
+lifecycle: { status: unknown }

@@ -6,31 +6,21 @@
 # lifecycle: datasheet v2.3 is an "Official release ... for products in
 # mass production" per the "Datasheet Versioning" table (PDF page 55);
 # no NRND/EOL watermark on the title page.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: espressif/ESP8684H2X
-
 manufacturer: espressif
 mpn: ESP8684H2X
-
 device: espressif/ESP8684
 package: standards/QFN24-ESP8684
+sources: [espressif/esp8684_datasheet_en@rev2.3]
+source: espressif/esp8684_datasheet_en@rev2.3
 
 existence:
   status: verified
+  src: p11 "Table 1 "ESP8684 Series Member Comparison", row "ESP8684H2X""
 
 lifecycle:
-  status: active
-
-sources:
-  - espressif/esp8684_datasheet_en@rev2.3
-
-provenance:
-  "/existence":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 11
-      locator: "Table 1 \"ESP8684 Series Member Comparison\", row \"ESP8684H2X\""
-  "/lifecycle/status":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 55
-      locator: "\"Datasheet Versioning\": v1.0 and higher = \"Official release\" for products in mass production"
+  status:
+    value: active
+    src: 'p55 ""Datasheet Versioning": v1.0 and higher = "Official release" for products in mass production"'

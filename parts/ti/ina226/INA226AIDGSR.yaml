@@ -1,35 +1,24 @@
 # MPN read from the Package Option Addendum, Packaging Information table
 # (SBOS547C PDF page 34, addendum dated 20-Aug-2026): "INA226AIDGSR | Active | Production | VSSOP (DGS) | 10 | 2500 | LARGE T&R | ... | -40 to 125 | 226".
 # lifecycle "active" is that table's Status column.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/INA226AIDGSR
-
 manufacturer: ti
 mpn: INA226AIDGSR
-
 device: ti/INA226
-package: standards/MSOP10-3.0x3.0-P0.5-TI-DGS
+
+package:
+  value: standards/MSOP10-3.0x3.0-P0.5-TI-DGS
+  src: p34 "Package Option Addendum, row "INA226AIDGSR", "VSSOP (DGS) | 10"; outline DGS0010A on page 38"
+
+sources: [ti/SBOS547C]
+source: ti/SBOS547C
 
 existence:
   status: verified
+  src: p34 "Package Option Addendum, Packaging Information table, row "INA226AIDGSR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SBOS547C
-
-provenance:
-  "/existence":
-    - source: ti/SBOS547C
-      page: 34
-      locator: "Package Option Addendum, Packaging Information table, row \"INA226AIDGSR\""
-  "/lifecycle":
-    - source: ti/SBOS547C
-      page: 34
-      locator: "Package Option Addendum, row \"INA226AIDGSR\", Status \"Active\""
-  "/package":
-    - source: ti/SBOS547C
-      page: 34
-      locator: "Package Option Addendum, row \"INA226AIDGSR\", \"VSSOP (DGS) | 10\"; outline DGS0010A on page 38"
+  src: p34 "Package Option Addendum, row "INA226AIDGSR", Status "Active""

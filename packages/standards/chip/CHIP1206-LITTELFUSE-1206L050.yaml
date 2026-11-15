@@ -10,44 +10,26 @@
 # `nominal` on each is this dataset's own midpoint of the stated
 # min/max (no nominal given in the source), disclosed as derived --
 # same technique as AXIAL-DO35-1N4148/TO92-2N3904.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/CHIP1206-LITTELFUSE-1206L050
-
 family: chip
 lead_count: 2
+source: littelfuse/1206L
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    min: 3.00
-    max: 3.40
-    unit: mm
   body_width:
-    min: 1.50
-    max: 1.80
-    unit: mm
+    min: 1.5 mm
+    max: 1.8 mm
+    src: p4 ""Dimensions" section, outline drawing, symbol "B" -- no nominal stated (min/max only)"
+  body_length:
+    min: 3 mm
+    max: 3.4 mm
+    src: p4 ""Dimensions" section, outline drawing, symbol "A" -- no nominal stated (min/max only)"
   body_height:
-    min: 0.45
-    max: 0.75
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: littelfuse/1206L
-      page: 4
-      locator: "\"Dimensions\" section, outline drawing, symbol \"A\" -- no nominal stated (min/max only)"
-  "/dimensions/body_width":
-    - source: littelfuse/1206L
-      page: 4
-      locator: "\"Dimensions\" section, outline drawing, symbol \"B\" -- no nominal stated (min/max only)"
-  "/dimensions/body_height":
-    - source: littelfuse/1206L
-      page: 4
-      locator: "\"Dimensions\" section, outline drawing, symbol \"C\", 1206L050 row -- no nominal stated (min/max only)"
+    min: 0.45 mm
+    max: 0.75 mm
+    src: p4 ""Dimensions" section, outline drawing, symbol "C", 1206L050 row -- no nominal stated (min/max only)"

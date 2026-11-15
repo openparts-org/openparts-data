@@ -5,17 +5,20 @@
 # VDD are type "Analog" in the table; typed ground/power from their
 # descriptions ("Ground", "Power supply"). SCL ("Serial clock input")
 # typed clock, ALERT/RDY (open-drain digital output) output, SDA io.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/ADS1115
-
 manufacturer: ti
 category: adc
 family: ADS111x
+source: ti/SBAS444E
 
 pins:
+  src:
+    - 'p3 "Table 4-1 "Pin Functions: RUG, DYN, and DGS Packages", column "ADS1115""'
+    - p3 "Figure 4-2 "DYN and DGS Packages, 10-Pin (Top View)" (cross-check)"
   "1":  { name: ADDR, type: input }
-  "2":  { name: "ALERT/RDY", type: output }
+  "2":  { name: ALERT/RDY, type: output }
   "3":  { name: GND, type: ground }
   "4":  { name: AIN0, type: analog }
   "5":  { name: AIN1, type: analog }
@@ -24,12 +27,3 @@ pins:
   "8":  { name: VDD, type: power }
   "9":  { name: SDA, type: io }
   "10": { name: SCL, type: clock }
-
-provenance:
-  "/pins":
-    - source: ti/SBAS444E
-      page: 3
-      locator: "Table 4-1 \"Pin Functions: RUG, DYN, and DGS Packages\", column \"ADS1115\""
-    - source: ti/SBAS444E
-      page: 3
-      locator: "Figure 4-2 \"DYN and DGS Packages, 10-Pin (Top View)\" (cross-check)"

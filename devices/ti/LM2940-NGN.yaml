@@ -3,54 +3,37 @@
 # 6", GND 7, N/C "1, 4, 8"; WSON (NGN) figure: "Pin 2 and pin 7 are
 # fused to center DAP", "Pin 5 and 6 need to be tied together on PCB
 # board". The DAP (thermal pad) -> key "EP", GND, connected_to "2".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/LM2940-NGN
-
 manufacturer: ti
 category: linear_regulator
 family: LM2940
-
-pins:
-  "1": { name: "N/C", type: nc }
-  "2": { name: "GND", type: ground }
-  "3": { name: "IN", type: power }
-  "4": { name: "N/C", type: nc }
-  "5": { name: "OUT", type: power }
-  "6": { name: "OUT", type: power }
-  "7": { name: "GND", type: ground }
-  "8": { name: "N/C", type: nc }
-  "EP": { name: "GND", type: ground, connected_to: "2" }
+source: ti/SNVS769J
 
 parameters:
   input_voltage_max:
-    max: 26
-    unit: V
+    max: 26 V
+    src: 'p4 "6.3 Recommended Operating Conditions, Input voltage: MAX 26 V"'
   output_current:
-    nominal: 1
-    unit: A
+    typ: 1 A
+    src: 'p1 "3 Description: "positive voltage regulators feature the ability to source 1 A of output current""'
   dropout_voltage:
-    nominal: 0.5
-    max: 1
-    unit: V
+    typ: 0.5 V
+    max: 1 V
+    at: { IOUT: 1 A }
+    src: 'p5 "6.5 Electrical Characteristics, Dropout voltage: TYP 0.5 V, MAX 1 V (same in tables 6.5-6.7 for all output voltages)"'
 
-provenance:
-  "/parameters/input_voltage_max":
-    - source: ti/SNVS769J
-      page: 4
-      locator: "6.3 Recommended Operating Conditions, Input voltage: MAX 26 V"
-  "/parameters/output_current":
-    - source: ti/SNVS769J
-      page: 1
-      locator: "3 Description: \"positive voltage regulators feature the ability to source 1 A of output current\""
-  "/parameters/dropout_voltage":
-    - source: ti/SNVS769J
-      page: 5
-      locator: "6.5 Electrical Characteristics, Dropout voltage, IOUT = 1A: TYP 0.5 V, MAX 1 V (same in tables 6.5-6.7 for all output voltages)"
-  "/pins":
-    - source: ti/SNVS769J
-      page: 3
-      locator: "\"Pin Functions\", NGN column: IN 3, GND 2 and 7, OUT \"5, 6\", N/C \"1, 4, 8\""
-    - source: ti/SNVS769J
-      page: 3
-      locator: "\"WSON (NGN) Package 8 Pins Top View\": \"Pin 2 and pin 7 are fused to center DAP\""
+pins:
+  src:
+    - 'p3 ""Pin Functions", NGN column: IN 3, GND 2 and 7, OUT "5, 6", N/C "1, 4, 8""'
+    - 'p3 ""WSON (NGN) Package 8 Pins Top View": "Pin 2 and pin 7 are fused to center DAP""'
+  "1": { name: N/C, type: nc }
+  "2": { name: GND, type: ground }
+  "3": { name: IN, type: power }
+  "4": { name: N/C, type: nc }
+  "5": { name: OUT, type: power }
+  "6": { name: OUT, type: power }
+  "7": { name: GND, type: ground }
+  "8": { name: N/C, type: nc }
+  EP:  { name: GND, type: ground, connected_to: "2" }

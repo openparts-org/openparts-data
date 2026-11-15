@@ -11,15 +11,18 @@
 # alternate-function mux (UART/SPI/I2C/timer/CAN, via IOMUX PINCMx
 # registers, Table 6-2) not individually modeled here -- out of scope
 # for this pass, same policy as this dataset's other MCU pin tables.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/MSPM0G3507
-
 manufacturer: ti
 category: microcontroller
 family: MSPM0G350x
+source: ti/SLASEX6C
 
 pins:
+  src:
+    - p11 "Table 6-2 "Pin Attributes" (pages 11-14), column "48 LQFP, VQFN""
+    - p8 "Figure 6-3 "48-Pin PT (LQFP) (Top View)" (visual cross-check, all 48 pins matched exactly)"
   "1":  { name: PA0/FCC_IN, type: io }
   "2":  { name: PA1, type: io }
   "3":  { name: PA28, type: io }
@@ -68,12 +71,3 @@ pins:
   "46": { name: PA26/A0_1, type: io }
   "47": { name: PA27/RTC_OUT/A0_0, type: io }
   "48": { name: VCORE, type: power }
-
-provenance:
-  "/pins":
-    - source: ti/SLASEX6C
-      page: 11
-      locator: "Table 6-2 \"Pin Attributes\" (pages 11-14), column \"48 LQFP, VQFN\""
-    - source: ti/SLASEX6C
-      page: 8
-      locator: "Figure 6-3 \"48-Pin PT (LQFP) (Top View)\" (visual cross-check, all 48 pins matched exactly)"

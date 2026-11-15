@@ -14,86 +14,39 @@
 # given -- no A2 -- so it is recorded as overall_height max, with no
 # body_height. Standoff is "0.05 MIN" only. Lead thickness is the
 # reference value "(0.15) TYP".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/SSOP20-5.3x7.2-P0.65-TI-DB
-
 family: ssop
 lead_count: 20
+source: ti/SCAS218X
 
 pitch:
-  nominal: 0.65
-  unit: mm
+  typ: 0.65 mm
+  src: p19 "PACKAGE OUTLINE DB0020A (4214851/B), "18X 0.65" (boxed basic dimension)"
+
+geometry: { type: parametric, generator: ssop }
 
 dimensions:
   body_width:
-    min: 5.0
-    max: 5.6
-    unit: mm
+    min: 5 mm
+    max: 5.6 mm
+    src: p19 "PACKAGE OUTLINE DB0020A, body width "5.6/5.0 NOTE 4" (datum B); no nominal stated (min/max only)"
   body_length:
-    min: 6.9
-    max: 7.5
-    unit: mm
-  overall_width:
-    min: 7.4
-    max: 8.2
-    unit: mm
-  overall_height:
-    max: 2.0
-    unit: mm
-  standoff:
-    min: 0.05
-    unit: mm
-  lead_width:
-    min: 0.22
-    max: 0.38
-    unit: mm
-  lead_length:
-    min: 0.55
-    max: 0.95
-    unit: mm
+    min: 6.9 mm
+    max: 7.5 mm
+    src: p19 "PACKAGE OUTLINE DB0020A, body length "7.5/6.9 NOTE 3" (datum A); no nominal stated (min/max only)"
   lead_thickness:
-    nominal: 0.15
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: ssop
-
-provenance:
-  "/pitch":
-    - source: ti/SCAS218X
-      page: 19
-      locator: "PACKAGE OUTLINE DB0020A (4214851/B), \"18X 0.65\" (boxed basic dimension)"
-  "/dimensions/body_width":
-    - source: ti/SCAS218X
-      page: 19
-      locator: "PACKAGE OUTLINE DB0020A, body width \"5.6/5.0 NOTE 4\" (datum B); no nominal stated (min/max only)"
-  "/dimensions/body_length":
-    - source: ti/SCAS218X
-      page: 19
-      locator: "PACKAGE OUTLINE DB0020A, body length \"7.5/6.9 NOTE 3\" (datum A); no nominal stated (min/max only)"
-  "/dimensions/overall_width":
-    - source: ti/SCAS218X
-      page: 19
-      locator: "PACKAGE OUTLINE DB0020A, lead tip span \"8.2/7.4 TYP\" (min/max only)"
-  "/dimensions/overall_height":
-    - source: ti/SCAS218X
-      page: 19
-      locator: "PACKAGE OUTLINE DB0020A, DETAIL A \"2 MAX\""
-  "/dimensions/standoff":
-    - source: ti/SCAS218X
-      page: 19
-      locator: "PACKAGE OUTLINE DB0020A, DETAIL A \"0.05 MIN\""
-  "/dimensions/lead_width":
-    - source: ti/SCAS218X
-      page: 19
-      locator: "PACKAGE OUTLINE DB0020A, \"20X 0.38/0.22\""
-  "/dimensions/lead_length":
-    - source: ti/SCAS218X
-      page: 19
-      locator: "PACKAGE OUTLINE DB0020A, DETAIL A \"0.95/0.55\""
-  "/dimensions/lead_thickness":
-    - source: ti/SCAS218X
-      page: 19
-      locator: "PACKAGE OUTLINE DB0020A, side detail \"(0.15) TYP\" (reference value)"
+    typ: 0.15 mm
+    src: p19 "PACKAGE OUTLINE DB0020A, side detail "(0.15) TYP" (reference value)"
+  lead_length:
+    min: 0.55 mm
+    max: 0.95 mm
+    src: p19 "PACKAGE OUTLINE DB0020A, DETAIL A "0.95/0.55""
+  overall_width:
+    min: 7.4 mm
+    max: 8.2 mm
+    src: p19 "PACKAGE OUTLINE DB0020A, lead tip span "8.2/7.4 TYP" (min/max only)"
+  overall_height: { max: 2 mm, src: 'p19 "PACKAGE OUTLINE DB0020A, DETAIL A "2 MAX""' }
+  standoff:       { min: 0.05 mm, src: 'p19 "PACKAGE OUTLINE DB0020A, DETAIL A "0.05 MIN""' }
+  lead_width: { min: 0.22 mm, max: 0.38 mm, src: 'p19 "PACKAGE OUTLINE DB0020A, "20X 0.38/0.22""' }

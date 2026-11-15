@@ -2,41 +2,17 @@
 # from the PACKAGE DIMENSIONS drawing; the only tolerance stated is the
 # datasheet's general +/-0.1mm note, so no per-dimension min/max is
 # recorded rather than computing one from that general note.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/CHIP0603-APT1608SGC
-
 family: chip
 lead_count: 2
+source: kingbright/DSAD0932
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 1.6
-    unit: mm
-  body_width:
-    nominal: 0.8
-    unit: mm
-  body_height:
-    nominal: 0.75
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: kingbright/DSAD0932
-      page: 1
-      locator: "\"PACKAGE DIMENSIONS\" drawing, length 1.6"
-  "/dimensions/body_width":
-    - source: kingbright/DSAD0932
-      page: 1
-      locator: "\"PACKAGE DIMENSIONS\" drawing, width 0.8"
-  "/dimensions/body_height":
-    - source: kingbright/DSAD0932
-      page: 1
-      locator: "\"PACKAGE DIMENSIONS\" drawing, thickness 0.75(0.029)"
+  body_width:  { typ: 0.8 mm, src: 'p1 ""PACKAGE DIMENSIONS" drawing, width 0.8"' }
+  body_length: { typ: 1.6 mm, src: 'p1 ""PACKAGE DIMENSIONS" drawing, length 1.6"' }
+  body_height: { typ: 0.75 mm, src: 'p1 ""PACKAGE DIMENSIONS" drawing, thickness 0.75(0.029)"' }

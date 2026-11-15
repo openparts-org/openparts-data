@@ -3,42 +3,26 @@
 # column, cross-checked with the "Package Types" SOT-23-5 figure on
 # page 1 (STAT 1, VSS 2, VBAT 3 on one side; VDD 4, PROG 5 opposite).
 # The DFN pinout differs and is not covered by this device.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/MCP73831
-
 manufacturer: microchip
 category: battery_charger
 family: MCP73831/2
+source: microchip/DS20001984@revH
+
+parameters:
+  input_voltage_max: { max: 6 V, src: 'p3 "DC Characteristics, Supply Voltage VDD: Max 6 V"' }
+  output_current:
+    max: 500 mA
+    src: 'p1 "Features, "Programmable Charge Current: 15 mA to 500 mA""'
 
 pins:
+  src:
+    - p11 "Table 3-1 "Pin Function Tables", SOT-23-5 column"
+    - p1 ""Package Types", MCP73831/2 SOT-23-5"
   "1": { name: STAT, type: output }
   "2": { name: VSS, type: ground }
   "3": { name: VBAT, type: power }
   "4": { name: VDD, type: power }
   "5": { name: PROG, type: analog }
-
-parameters:
-  input_voltage_max:
-    max: 6
-    unit: V
-  output_current:
-    max: 500
-    unit: mA
-
-provenance:
-  "/parameters/input_voltage_max":
-    - source: microchip/DS20001984@revH
-      page: 3
-      locator: "DC Characteristics, Supply Voltage VDD: Max 6 V"
-  "/parameters/output_current":
-    - source: microchip/DS20001984@revH
-      page: 1
-      locator: "Features, \"Programmable Charge Current: 15 mA to 500 mA\""
-  "/pins":
-    - source: microchip/DS20001984@revH
-      page: 11
-      locator: "Table 3-1 \"Pin Function Tables\", SOT-23-5 column"
-    - source: microchip/DS20001984@revH
-      page: 1
-      locator: "\"Package Types\", MCP73831/2 SOT-23-5"

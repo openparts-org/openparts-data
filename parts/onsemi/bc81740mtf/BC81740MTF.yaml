@@ -2,45 +2,26 @@
 # as "BC817-40"; confirmed real and current as "BC81740MTF" in
 # onsemi's own order-table. Not the same part as Diodes Inc's
 # second-sourced BC817-40-7-F.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/BC81740MTF
-
 manufacturer: onsemi
 mpn: BC81740MTF
-
 device: onsemi/BC817-SERIES
 package: standards/SOT23-2.92x1.30-P1.90-BC817
+sources: [onsemi/BC818-D]
+source: onsemi/BC818-D
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - onsemi/BC818-D
+existence: { status: verified }
+lifecycle: { status: active }
 
 parameters:
-  polarity:
-    value: npn
+  polarity: { value: npn, src: 'p2 "Title: "BC817 / BC818 — NPN Epitaxial Silicon Transistor""' }
   collector_emitter_voltage:
-    nominal: 45
-    unit: V
+    typ: 45 V
+    at: { TA: 25 °C }
+    src: 'p2 "Absolute Maximum Ratings, VCEO Collector-Emitter Voltage, BC817 row: 45 V"'
   collector_current:
-    nominal: 800
-    unit: mA
-
-provenance:
-  "/parameters/polarity":
-    - source: onsemi/BC818-D
-      page: 2
-      locator: "Title: \"BC817 / BC818 — NPN Epitaxial Silicon Transistor\""
-  "/parameters/collector_emitter_voltage":
-    - source: onsemi/BC818-D
-      page: 2
-      locator: "Absolute Maximum Ratings (TA = 25°C), VCEO Collector-Emitter Voltage, BC817 row: 45 V"
-  "/parameters/collector_current":
-    - source: onsemi/BC818-D
-      page: 2
-      locator: "Absolute Maximum Ratings (TA = 25°C), IC Collector Current (DC): 800 mA"
+    typ: 800 mA
+    at: { TA: 25 °C }
+    src: 'p2 "Absolute Maximum Ratings, IC Collector Current (DC): 800 mA"'

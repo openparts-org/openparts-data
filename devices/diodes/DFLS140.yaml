@@ -3,43 +3,26 @@
 # The datasheet names the terminals only by the cathode band and
 # prints no pin numbers: numbered in the generator's position
 # convention (pin 1 at -X), cathode = 1, anode = 2.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: diodes/DFLS140
-
 manufacturer: diodes
 category: diode
 family: DFLS
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: diodes/DS30446
 
 parameters:
-  reverse_voltage:
-    max: 40
-    unit: V
-  forward_current:
-    max: 1.1
-    unit: A
   forward_voltage:
-    nominal: 0.53
-    unit: V
+    typ: 0.53 V
+    at: { IF: 1.1 A }
+    src: 'p2 "Electrical Characteristics, Forward Voltage VF: Typ 0.53 V (no max stated at this current)"'
+  reverse_voltage: { max: 40 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR: 40 V"' }
+  forward_current:
+    max: 1.1 A
+    at: { TT: 119 °C }
+    src: 'p2 "Maximum Ratings, Average Forward Current IF(AV): 1.1 A"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: diodes/DS30446
-      page: 2
-      locator: "Maximum Ratings, VRRM/VRWM/VR: 40 V"
-  "/parameters/forward_current":
-    - source: diodes/DS30446
-      page: 2
-      locator: "Maximum Ratings, Average Forward Current @ TT = +119°C IF(AV): 1.1 A"
-  "/parameters/forward_voltage":
-    - source: diodes/DS30446
-      page: 2
-      locator: "Electrical Characteristics, Forward Voltage VF: Typ 0.53 V @ IF = 1.1A (no max stated at this current)"
-  "/pins":
-    - source: diodes/DS30446
-      page: 1
-      locator: "Mechanical Data: \"Polarity: Cathode Band\"; numbering by generator convention, see header"
+pins:
+  src: 'p1 "Mechanical Data: "Polarity: Cathode Band"; numbering by generator convention, see header"'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

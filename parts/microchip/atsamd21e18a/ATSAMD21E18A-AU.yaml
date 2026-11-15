@@ -14,31 +14,18 @@
 # 0.30/0.37/0.45 -- identical to standards/TQFP32-7x7-P0.8 (read from
 # the ATmega328P data sheet). That drawing gives no lead thickness c.
 # lifecycle: not stated in the data sheet; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/ATSAMD21E18A-AU
-
 manufacturer: microchip
 mpn: ATSAMD21E18A-AU
-
 device: microchip/ATSAMD21E18A
-package: standards/TQFP32-7x7-P0.8
+package: { value: standards/TQFP32-7x7-P0.8, src: 'p15 "Section 3, Package Type "A = TQFP""' }
+sources: [microchip/DS40001882@revL]
+source: microchip/DS40001882@revL
 
 existence:
   status: probable
+  src: p15 "Section 3 "SAM D21 Ordering Information" code scheme; Table 2-1 Configuration Summary (page 13); Table 42-3 "ATSAMD21E18A-AU-SLL" (page 1065)"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS40001882@revL
-
-provenance:
-  "/existence":
-    - source: microchip/DS40001882@revL
-      page: 15
-      locator: "Section 3 \"SAM D21 Ordering Information\" code scheme; Table 2-1 Configuration Summary (page 13); Table 42-3 \"ATSAMD21E18A-AU-SLL\" (page 1065)"
-  "/package":
-    - source: microchip/DS40001882@revL
-      page: 15
-      locator: "Section 3, Package Type \"A = TQFP\""
+lifecycle: { status: unknown }

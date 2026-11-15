@@ -6,16 +6,13 @@
 # rendered page where noted. Page numbers in this dataset are PDF page
 # indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
 # 26-May-2026 (newer than the datasheet revision).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: ti/SLLS790E
-
+retrieved: 2026-11-10
+url: https://www.ti.com/lit/ds/symlink/trs3232e.pdf
+date: 2024-12
 publisher: ti
 document_id: SLLS790E
 document_type: datasheet
-
-revision: "E"
-date: "2024-12"
-
-url: "https://www.ti.com/lit/ds/symlink/trs3232e.pdf"
-retrieved: "2026-11-10"
+revision: E

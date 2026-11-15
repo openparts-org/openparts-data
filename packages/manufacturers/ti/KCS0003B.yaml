@@ -23,110 +23,58 @@
 # the 2.59-2.79 lead-to-tab-back distance (body_offset is not printed
 # directly; the generator default is used), (6.3)/8.15-8.55/12.1-12.5
 # back-side tab outline.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/ti/KCS0003B
-
 family: to220
 lead_count: 3
+source: ti/SLVS044Z
 
 pitch:
-  nominal: 2.54
-  unit: mm
+  typ: 2.54 mm
+  src: p38 "KCS0003B outline (4222214/B), front view, basic "2X 2.54" (lead 1-3 basic "5.08")"
+
+geometry: { type: parametric, generator: to220 }
 
 dimensions:
   body_width:
-    min: 9.96
-    max: 10.36
-    unit: mm
+    min: 9.96 mm
+    max: 10.36 mm
+    src: p38 "KCS0003B outline, front view, width "10.36 / 9.96""
   body_length:
-    min: 4.4
-    max: 4.7
-    unit: mm
+    min: 4.4 mm
+    max: 4.7 mm
+    src: p38 "KCS0003B outline, side view, body front to tab back "4.7 / 4.4""
   body_height:
-    min: 9.05
-    max: 9.25
-    unit: mm
-  overall_height:
-    min: 15.15
-    max: 15.75
-    unit: mm
-  lead_width:
-    min: 0.77
-    max: 0.90
-    unit: mm
-  lead_thickness:
-    min: 0.34
-    max: 0.47
-    unit: mm
-  tail_length:
-    min: 12.70
-    max: 13.12
-    unit: mm
-  mounting_hole_diameter:
-    nominal: 3.84
-    unit: mm
-  mounting_hole_inset:
-    min: 2.6
-    max: 2.9
-    unit: mm
-  hole_diameter:
-    nominal: 1.2
-    unit: mm
+    min: 9.05 mm
+    max: 9.25 mm
+    src: p38 "KCS0003B outline, front view, molded body height "9.25 / 9.05""
   pad_diameter:
-    nominal: 1.7
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: to220
-
-provenance:
-  "/pitch":
-    - source: ti/SLVS044Z
-      page: 38
-      locator: "KCS0003B outline (4222214/B), front view, basic \"2X 2.54\" (lead 1-3 basic \"5.08\")"
-  "/dimensions/body_width":
-    - source: ti/SLVS044Z
-      page: 38
-      locator: "KCS0003B outline, front view, width \"10.36 / 9.96\""
-  "/dimensions/body_length":
-    - source: ti/SLVS044Z
-      page: 38
-      locator: "KCS0003B outline, side view, body front to tab back \"4.7 / 4.4\""
-  "/dimensions/body_height":
-    - source: ti/SLVS044Z
-      page: 38
-      locator: "KCS0003B outline, front view, molded body height \"9.25 / 9.05\""
-  "/dimensions/overall_height":
-    - source: ti/SLVS044Z
-      page: 38
-      locator: "KCS0003B outline, front view, stacked \"6.5 / 6.1\" (tab top to body top) + \"9.25 / 9.05\" (body) = 15.15 / 15.75 (\"19.65 MAX\" overall incl. \"3X 3.9 MAX\" lead shoulder)"
-  "/dimensions/lead_width":
-    - source: ti/SLVS044Z
-      page: 38
-      locator: "KCS0003B outline, front view \"3X 0.90 / 0.77\""
-  "/dimensions/lead_thickness":
-    - source: ti/SLVS044Z
-      page: 38
-      locator: "KCS0003B outline, side view, lead \"0.47 / 0.34\""
-  "/dimensions/tail_length":
-    - source: ti/SLVS044Z
-      page: 38
-      locator: "KCS0003B outline, front view, body underside to lead tip \"13.12 / 12.70\""
-  "/dimensions/mounting_hole_diameter":
-    - source: ti/SLVS044Z
-      page: 38
-      locator: "KCS0003B outline, front view \"(O 3.84)\" -- parenthesised, reference only (note 1)"
-  "/dimensions/mounting_hole_inset":
-    - source: ti/SLVS044Z
-      page: 38
-      locator: "KCS0003B outline, front view, tab top to hole centre \"2.9 / 2.6\""
-  "/dimensions/hole_diameter":
-    - source: ti/SLVS044Z
-      page: 39
-      locator: "KCS0003B EXAMPLE BOARD LAYOUT, land pattern example \"3X O (1.2)\" (reference)"
-  "/dimensions/pad_diameter":
-    - source: ti/SLVS044Z
-      page: 39
-      locator: "KCS0003B EXAMPLE BOARD LAYOUT, \"2X O (1.7) METAL\", pin 1 square \"(1.7)\" (reference)"
+    typ: 1.7 mm
+    src: p39 "KCS0003B EXAMPLE BOARD LAYOUT, "2X O (1.7) METAL", pin 1 square "(1.7)" (reference)"
+  overall_height:
+    min: 15.15 mm
+    max: 15.75 mm
+    src: p38 "KCS0003B outline, front view, stacked "6.5 / 6.1" (tab top to body top) + "9.25 / 9.05" (body) = 15.15 / 15.75 ("19.65 MAX" overall incl. "3X 3.9 MAX" lead shoulder)"
+  lead_width:
+    min: 0.77 mm
+    max: 0.9 mm
+    src: p38 "KCS0003B outline, front view "3X 0.90 / 0.77""
+  lead_thickness:
+    min: 0.34 mm
+    max: 0.47 mm
+    src: p38 "KCS0003B outline, side view, lead "0.47 / 0.34""
+  hole_diameter:
+    typ: 1.2 mm
+    src: p39 "KCS0003B EXAMPLE BOARD LAYOUT, land pattern example "3X O (1.2)" (reference)"
+  mounting_hole_diameter:
+    typ: 3.84 mm
+    src: p38 "KCS0003B outline, front view "(O 3.84)" -- parenthesised, reference only (note 1)"
+  mounting_hole_inset:
+    min: 2.6 mm
+    max: 2.9 mm
+    src: p38 "KCS0003B outline, front view, tab top to hole centre "2.9 / 2.6""
+  tail_length:
+    min: 12.7 mm
+    max: 13.12 mm
+    src: p38 "KCS0003B outline, front view, body underside to lead tip "13.12 / 12.70""

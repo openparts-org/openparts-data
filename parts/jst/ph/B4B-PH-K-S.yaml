@@ -3,27 +3,18 @@
 # 4 circuits) -> existence verified. "-K-S": clinched, colour S =
 # natural (white) (page 5 "Model number allocation").
 # lifecycle: the sheet states no production status -> unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: jst/B4B-PH-K-S
-
 manufacturer: jst
-mpn: "B4B-PH-K-S"
-
+mpn: B4B-PH-K-S
 device: jst/B4B-PH-K-S
 package: manufacturers/jst/PH-Header-Top-1x04-P2.00
+sources: [jst/ePH]
+source: jst/ePH
 
 existence:
   status: verified
+  src: 'p3 ""Header (Through-hole type)" Model No. table, No. of circuits 4, Top entry type: "B4B-PH-K-S""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - jst/ePH
-
-provenance:
-  "/existence":
-    - source: jst/ePH
-      page: 3
-      locator: "\"Header (Through-hole type)\" Model No. table, No. of circuits 4, Top entry type: \"B4B-PH-K-S\""
+lifecycle: { status: unknown }

@@ -2,27 +2,18 @@
 # probable: the grid is a part-numbering legend, not an orderable list
 # (gct.co product pages answer with a Cloudflare challenge; not read).
 # lifecycle unknown: the drawing states none.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: gct/USB4085-GF-A
-
 manufacturer: gct
-mpn: "USB4085-GF-A"
-
+mpn: USB4085-GF-A
 device: gct/USB4085
 package: manufacturers/gct/USB4085
+sources: [gct/USB4085-DWG]
+source: gct/USB4085-DWG
 
 existence:
   status: probable
+  src: 'p1 ""Ordering Grid": USB4085-XX-A; Contact Plating GF = Gold Flash (Standard), 30 = 30µ" Gold; Packing Options A = Tape & Reel"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - gct/USB4085-DWG
-
-provenance:
-  "/existence":
-    - source: gct/USB4085-DWG
-      page: 1
-      locator: "\"Ordering Grid\": USB4085-XX-A; Contact Plating GF = Gold Flash (Standard), 30 = 30µ\" Gold; Packing Options A = Tape & Reel"
+lifecycle: { status: unknown }

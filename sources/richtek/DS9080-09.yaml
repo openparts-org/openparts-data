@@ -6,16 +6,13 @@
 # Printed page numbers equal the PDF page indices. Text read with
 # pdftotext -layout; the pin configuration (page 4) and the TSOT-23-5
 # outline (page 17) were rendered and read as images.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: richtek/DS9080-09
-
+retrieved: 2026-11-10
+url: https://www.richtek.com/content/dam/richtek/data/en/resources/product-specifications/rt90/rt9080/product-data-sheets/pdf/DS9080-09.pdf
+date: 2024-12
 publisher: richtek
 document_id: DS9080-09
 document_type: datasheet
-
-revision: "09"
-date: "2024-12"
-
-url: "https://www.richtek.com/content/dam/richtek/data/en/resources/product-specifications/rt90/rt9080/product-data-sheets/pdf/DS9080-09.pdf"
-retrieved: "2026-11-10"
+revision: 09

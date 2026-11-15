@@ -3,31 +3,22 @@
 # oscillator, package 44ML (TQFP44, 10x10mm, 0.8mm pitch),
 # Industrial (-40 to +85 C).
 # lifecycle: not stated in the datasheet; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/ATmega32U4-AU
-
 manufacturer: microchip
 mpn: ATmega32U4-AU
-
 device: microchip/ATmega32U4
-package: standards/TQFP44-10x10-P0.8
+
+package:
+  value: standards/TQFP44-10x10-P0.8
+  src: p422 "Section 33.2 ordering table, package column + "Package Type" legend"
+
+sources: [microchip/7766@revJ]
+source: microchip/7766@revJ
 
 existence:
   status: verified
+  src: p422 "Section 33.2 "ATmega32U4" ordering table, "ATmega32U4-AU""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/7766@revJ
-
-provenance:
-  "/existence":
-    - source: microchip/7766@revJ
-      page: 422
-      locator: "Section 33.2 \"ATmega32U4\" ordering table, \"ATmega32U4-AU\""
-  "/package":
-    - source: microchip/7766@revJ
-      page: 422
-      locator: "Section 33.2 ordering table, package column + \"Package Type\" legend"
+lifecycle: { status: unknown }

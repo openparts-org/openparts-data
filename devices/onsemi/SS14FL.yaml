@@ -1,43 +1,28 @@
 # 1A, 40V Schottky barrier rectifier, SOD-123FL. Polarity from the
 # datasheet's own schematic symbol (pin 1 = Cathode, pin 2 = Anode) and
 # "Band Indicates Cathode" note (page 1).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/SS14FL
-
 manufacturer: onsemi
 category: diode
 family: SS14FL
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: onsemi/SS14FL-D
 
 parameters:
-  reverse_voltage:
-    max: 40
-    unit: V
-  forward_current:
-    max: 1.0
-    unit: A
   forward_voltage:
-    max: 0.55
-    unit: V
+    max: 0.55 V
+    at: { IF: 1 A }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, VF Forward Voltage: Max 0.55 V"'
+  reverse_voltage:
+    max: 40 V
+    src: 'p1 "ABSOLUTE MAXIMUM RATINGS, VRRM Peak Reverse Voltage, SS14FL column: 40 V"'
+  forward_current:
+    max: 1 A
+    at: { TA: 75 °C }
+    src: 'p1 "ABSOLUTE MAXIMUM RATINGS, IF(AV) Average Rectified Current: 1.0 A"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: onsemi/SS14FL-D
-      page: 1
-      locator: "ABSOLUTE MAXIMUM RATINGS, VRRM Peak Reverse Voltage, SS14FL column: 40 V"
-  "/parameters/forward_current":
-    - source: onsemi/SS14FL-D
-      page: 1
-      locator: "ABSOLUTE MAXIMUM RATINGS, IF(AV) Average Rectified Current at TA = 75°C: 1.0 A"
-  "/parameters/forward_voltage":
-    - source: onsemi/SS14FL-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, VF Forward Voltage, IF = 1.0 A: Max 0.55 V"
-  "/pins":
-    - source: onsemi/SS14FL-D
-      page: 1
-      locator: "Schematic symbol (1=Cathode, 2=Anode) and \"Band Indicates Cathode\""
+pins:
+  src: p1 "Schematic symbol (1=Cathode, 2=Anode) and "Band Indicates Cathode""
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

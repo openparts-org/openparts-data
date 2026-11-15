@@ -14,15 +14,19 @@
 # is not a signal name: skipped); PTC/AC/DAC/ZCD/USART/SPI/TWI/
 # TCA/TCB/TCD/EVSYS/CCL mappings are not modelled. PF0/PF1 ADC0 inputs
 # AIN16/AIN17 are "Positive input-only" (table note 6).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/AVR128DA28
-
 manufacturer: microchip
 category: microcontroller
-family: "AVR DA"
+family: AVR DA
+source: microchip/DS40002183@revE
 
 pins:
+  src:
+    - p18 "Section 3.1 "I/O Multiplexing", column "SPDIP28/SOIC28/SSOP28", columns "Special" and "ADC0""
+    - p19 "Section 3.1 table (continued), rows PF0-GND"
+    - p14 "Section 2.1 "28-Pin SPDIP, SSOP and SOIC" pinout figure (cross-check)"
   "1":  { name: PA7, type: io, alternate_functions: [CLKOUT] }
   "2":  { name: PC0, type: io }
   "3":  { name: PC1, type: io }
@@ -51,15 +55,3 @@ pins:
   "26": { name: PA4, type: io }
   "27": { name: PA5, type: io }
   "28": { name: PA6, type: io }
-
-provenance:
-  "/pins":
-    - source: microchip/DS40002183@revE
-      page: 18
-      locator: "Section 3.1 \"I/O Multiplexing\", column \"SPDIP28/SOIC28/SSOP28\", columns \"Special\" and \"ADC0\""
-    - source: microchip/DS40002183@revE
-      page: 19
-      locator: "Section 3.1 table (continued), rows PF0-GND"
-    - source: microchip/DS40002183@revE
-      page: 14
-      locator: "Section 2.1 \"28-Pin SPDIP, SSOP and SOIC\" pinout figure (cross-check)"

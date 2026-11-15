@@ -3,54 +3,27 @@
 # placeholder characters with the K and T codes of the same ordering
 # scheme, so the string is not a verbatim table row. Status is therefore
 # probable, not verified.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: kemet/T495A685K004ATE2K0
-
 manufacturer: kemet
 mpn: T495A685K004ATE2K0
-
 device: kemet/T495A-TANTALUM
 package: standards/CHIP-KEMET-T495A
+sources: [kemet/T2009_T495]
+source: kemet/T2009_T495
 
-existence:
-  status: probable
-
-lifecycle:
-  status: active
-
-sources:
-  - kemet/T2009_T495
+existence: { status: probable }
+lifecycle: { status: active }
 
 parameters:
   capacitance:
-    nominal: 6.8
-    unit: µF
-  tolerance:
-    min: -10
-    max: 10
-    unit: "%"
+    typ: 6.8 µF
+    src: 'p5 "Table 1 – Ratings & Part Number Reference, row T495A685(1)004A(2)E2K0: Rated Cap 6.8 µF"'
+  tolerance: { tol: ±10 %, src: 'p2 "Ordering Information, Capacitance Tolerance: K = ±10%"' }
   rated_voltage:
-    nominal: 4
-    unit: V
+    typ: 4 V
+    src: 'p5 "Table 1 – Ratings & Part Number Reference, row T495A685(1)004A(2)E2K0: Rated Voltage 4 VDC at 85°C"'
   esr:
-    max: 2000
-    unit: mΩ
-
-provenance:
-  "/parameters/capacitance":
-    - source: kemet/T2009_T495
-      page: 5
-      locator: "Table 1 – Ratings & Part Number Reference, row T495A685(1)004A(2)E2K0: Rated Cap 6.8 µF"
-  "/parameters/tolerance":
-    - source: kemet/T2009_T495
-      page: 2
-      locator: "Ordering Information, Capacitance Tolerance: K = ±10%"
-  "/parameters/rated_voltage":
-    - source: kemet/T2009_T495
-      page: 5
-      locator: "Table 1 – Ratings & Part Number Reference, row T495A685(1)004A(2)E2K0: Rated Voltage 4 VDC at 85°C"
-  "/parameters/esr":
-    - source: kemet/T2009_T495
-      page: 5
-      locator: "Table 1 – Ratings & Part Number Reference, row T495A685(1)004A(2)E2K0: ESR 2,000 mΩ at 25°C 100 kHz Max"
+    max: 2000 mΩ
+    src: 'p5 "Table 1 – Ratings & Part Number Reference, row T495A685(1)004A(2)E2K0: ESR 2,000 mΩ at 25°C 100 kHz Max"'

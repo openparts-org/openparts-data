@@ -3,35 +3,22 @@
 # (RHB) | 32 | 3000 | LARGE T&R | ... | -40 to 125". Table 5-1 "Device
 # Comparison" (page 5) lists MSPM0L1306xRHB, 64/4 KB, 32 VQFN [5 mm x
 # 5 mm].
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/MSPM0L1306SRHBR
-
 manufacturer: ti
 mpn: MSPM0L1306SRHBR
-
 device: ti/MSPM0L1306-RHB
-package: manufacturers/ti/RHB0032E
 
-existence:
-  status: verified
+package:
+  value: manufacturers/ti/RHB0032E
+  src: p72 "PACKAGE OUTLINE RHB0032E; ordering row "VQFN (RHB) | 32" on page 81"
+
+sources: [ti/SLASEX0D]
+source: ti/SLASEX0D
+
+existence: { status: verified, src: 'p81 "Package Option Addendum, row "MSPM0L1306SRHBR""' }
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLASEX0D
-
-provenance:
-  "/existence":
-    - source: ti/SLASEX0D
-      page: 81
-      locator: "Package Option Addendum, row \"MSPM0L1306SRHBR\""
-  "/lifecycle":
-    - source: ti/SLASEX0D
-      page: 81
-      locator: "Package Option Addendum, row \"MSPM0L1306SRHBR\", Status \"Active\""
-  "/package":
-    - source: ti/SLASEX0D
-      page: 72
-      locator: "PACKAGE OUTLINE RHB0032E; ordering row \"VQFN (RHB) | 32\" on page 81"
+  src: p81 "Package Option Addendum, row "MSPM0L1306SRHBR", Status "Active""

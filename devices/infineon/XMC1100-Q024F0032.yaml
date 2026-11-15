@@ -9,15 +9,18 @@
 # bidirectional I/O with analog input capability; STD_IN/AN =
 # input-only pad with analog input capability; High Current =
 # bidirectional I/O with a high-current driver.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: infineon/XMC1100-Q024F0032
-
 manufacturer: infineon
 category: microcontroller
 family: XMC1100
+source: infineon/xmc1100-datasheet-v2.1
 
 pins:
+  src:
+    - p13 "Table 6 "Package Pin Mapping", VQFN-24 column (pages 13-14)"
+    - p11 "Figure 6, "XMC1100 PG-VQFN-24 Pin Configuration (top view)" (visual cross-check, all 24 pins + EP matched exactly)"
   "1":  { name: P2.0, type: io }
   "2":  { name: P2.1, type: io }
   "3":  { name: P2.2, type: input }
@@ -42,17 +45,7 @@ pins:
   "22": { name: P0.13, type: io }
   "23": { name: P0.14, type: io }
   "24": { name: P0.15, type: io }
-  "EP": { name: VSSP, type: ground }
-
-provenance:
-  "/pins":
-    - source: infineon/xmc1100-datasheet-v2.1
-      page: 13
-      locator: "Table 6 \"Package Pin Mapping\", VQFN-24 column (pages 13-14)"
-    - source: infineon/xmc1100-datasheet-v2.1
-      page: 11
-      locator: "Figure 6, \"XMC1100 PG-VQFN-24 Pin Configuration (top view)\" (visual cross-check, all 24 pins + EP matched exactly)"
-  "/pins/EP":
-    - source: infineon/xmc1100-datasheet-v2.1
-      page: 14
-      locator: "Table 6: \"connected internally to VSSP... mandatory to connect the exposed pad to the board ground\""
+  EP:
+    name: VSSP
+    type: ground
+    src: 'p14 "Table 6: "connected internally to VSSP... mandatory to connect the exposed pad to the board ground""'

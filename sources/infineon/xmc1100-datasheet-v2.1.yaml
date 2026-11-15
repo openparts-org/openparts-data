@@ -11,15 +11,12 @@
 # over the URL slug, which is very likely just a stale CDN filename),
 # per this dataset's policy of not silently picking between conflicting
 # signals without disclosing the conflict.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: infineon/xmc1100-datasheet-v2.1
-
+url: https://www.infineon.com/dgdl/Infineon-xmc1100_AB-DataSheet-v01_09-EN.pdf?fileId=5546d4624a0bf290014a4bdaff9325bd
+date: 2025-06-30
+revision: "2.1"
 publisher: infineon
 document_id: IFX-zyd1719306839235
 document_type: datasheet
-
-revision: "2.1"
-date: "2025-06-30"
-
-url: "https://www.infineon.com/dgdl/Infineon-xmc1100_AB-DataSheet-v01_09-EN.pdf?fileId=5546d4624a0bf290014a4bdaff9325bd"

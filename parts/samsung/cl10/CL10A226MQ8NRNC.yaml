@@ -5,65 +5,34 @@
 # page's Characteristics. Package: the page's L/W/T (1.60+/-0.20 / 0.80+/-0.20 / 0.80+/-0.20 mm)
 # -> CHIP0603-SAMSUNG-CL10-T8-R.
 # lifecycle: the product page shows "Status: Mass Production".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: samsung/CL10A226MQ8NRNC
-
 manufacturer: samsung
 mpn: CL10A226MQ8NRNC
-
 device: samsung/CL10-X5R
 package: manufacturers/samsung/CHIP0603-SAMSUNG-CL10-T8-R
+sources: [samsung/CL10A226MQ8NRN, samsung/MLCC_2512]
+source: samsung/CL10A226MQ8NRN
 
 existence:
   status: verified
+  src:
+    - 'samsung/MLCC_2512 p6 "Part Numbering: 1 SERIES CODE CL; 2 SIZE CODE 10 = 0603/1608; 3 DIELECTRIC CODE A = X5R; 4 CAPACITANCE CODE 226 (2 significant digits plus number of zeros, pF)"'
+    - 'samsung/MLCC_2512 p7 "Part Numbering: 5 TOLERANCE M = +/-20%; 6 RATED VOLTAGE Q = 6.3Vdc; 7 THICKNESS CODE 8"'
+    - 'samsung/MLCC_2512 p8 "Part Numbering: 8 DESIGN CODE N (Ni/Cu/Ni-Sn, Normal); 9 R = size control (0402/1005: +/-0.15; 0603/1608: +/-0.20; 0805/2012: +/-0.20); 10 CONTROL CODE N = Standard; 11 PACKAGING CODE C (cardboard tape, normal 7" reel)"'
+    - '""List of part numbers with package codes": CL10A226MQ8NRNC; Characteristics: X5R(-55 ~ +85), Capacitance 22.0uF, Tolerance +/-20%, Rated Voltage 6.3Vdc"'
 
-lifecycle:
-  status: active
-
-sources:
-  - samsung/CL10A226MQ8NRN
-  - samsung/MLCC_2512
+lifecycle: { status: active, src: '"Characteristics, "Status: Mass Production""' }
 
 parameters:
   capacitance:
-    nominal: 22.0
-    unit: uF
-  tolerance:
-    min: -20
-    max: 20
-    unit: "%"
+    typ: 22 uF
+    src: '"Product page CL10A226MQ8NRN#, Characteristics, Capacitance: 22.0uF"'
+  tolerance: { tol: ±20 %, src: '"Product page CL10A226MQ8NRN#, Characteristics, Tolerance: ±20%"' }
   rated_voltage:
-    nominal: 6.3
-    unit: V
+    typ: 6.3 V
+    src: '"Product page CL10A226MQ8NRN#, Characteristics, Rated Voltage: 6.3Vdc"'
   dielectric:
     value: X5R
-
-provenance:
-  "/existence":
-    - source: samsung/MLCC_2512
-      page: 6
-      locator: "Part Numbering: 1 SERIES CODE CL; 2 SIZE CODE 10 = 0603/1608; 3 DIELECTRIC CODE A = X5R; 4 CAPACITANCE CODE 226 (2 significant digits plus number of zeros, pF)"
-    - source: samsung/MLCC_2512
-      page: 7
-      locator: "Part Numbering: 5 TOLERANCE M = +/-20%; 6 RATED VOLTAGE Q = 6.3Vdc; 7 THICKNESS CODE 8"
-    - source: samsung/MLCC_2512
-      page: 8
-      locator: "Part Numbering: 8 DESIGN CODE N (Ni/Cu/Ni-Sn, Normal); 9 R = size control (0402/1005: +/-0.15; 0603/1608: +/-0.20; 0805/2012: +/-0.20); 10 CONTROL CODE N = Standard; 11 PACKAGING CODE C (cardboard tape, normal 7\" reel)"
-    - source: samsung/CL10A226MQ8NRN
-      locator: "\"List of part numbers with package codes\": CL10A226MQ8NRNC; Characteristics: X5R(-55 ~ +85), Capacitance 22.0uF, Tolerance +/-20%, Rated Voltage 6.3Vdc"
-  "/lifecycle":
-    - source: samsung/CL10A226MQ8NRN
-      locator: "Characteristics, \"Status: Mass Production\""
-  "/parameters/capacitance":
-    - source: samsung/CL10A226MQ8NRN
-      locator: "Product page CL10A226MQ8NRN#, Characteristics, Capacitance: 22.0uF"
-  "/parameters/tolerance":
-    - source: samsung/CL10A226MQ8NRN
-      locator: "Product page CL10A226MQ8NRN#, Characteristics, Tolerance: ±20%"
-  "/parameters/rated_voltage":
-    - source: samsung/CL10A226MQ8NRN
-      locator: "Product page CL10A226MQ8NRN#, Characteristics, Rated Voltage: 6.3Vdc"
-  "/parameters/dielectric":
-    - source: samsung/CL10A226MQ8NRN
-      locator: "Product page CL10A226MQ8NRN#, Characteristics, Temperature Characteristic: X5R(-55 ~ +85)"
+    src: '"Product page CL10A226MQ8NRN#, Characteristics, Temperature Characteristic: X5R(-55 ~ +85)"'

@@ -2,28 +2,18 @@
 # probable.
 # Package: manufacturers/diodes/SMB-DS13002 (outline read from DS13002; the same outline table is printed in DS13004, see the package header).
 # No lifecycle statement in the datasheet: lifecycle unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: diodes/B240-13-F
-
 manufacturer: diodes
 mpn: B240-13-F
-
 device: diodes/B240
 package: manufacturers/diodes/SMB-DS13002
+sources: [diodes/DS13004, diodes/DS13002]
+source: diodes/DS13004
 
 existence:
   status: probable
+  src: p1 "Ordering Information table row "B2xx-13-F | Standard | SMB | 3,000/Tape & Reel" with footnote "e.g. ... B240-13-F (SMB package)""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - diodes/DS13004
-  - diodes/DS13002
-
-provenance:
-  "/existence":
-    - source: diodes/DS13004
-      page: 1
-      locator: "Ordering Information table row \"B2xx-13-F | Standard | SMB | 3,000/Tape & Reel\" with footnote \"e.g. ... B240-13-F (SMB package)\""
+lifecycle: { status: unknown }

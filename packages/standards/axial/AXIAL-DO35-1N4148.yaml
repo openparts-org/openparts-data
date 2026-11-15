@@ -19,52 +19,33 @@
 # read min/max label -- disclosed as inferred, and `nominal` is this
 # dataset's own midpoint of that inferred range, not a Vishay-stated
 # value.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/AXIAL-DO35-1N4148
-
 family: axial
 lead_count: 2
+source: vishay/81857
 
 pitch:
-  nominal: 7.62
-  unit: mm
+  typ: 7.62 mm
+  src: kicad/DO35-P7.62mm "Real KiCad DO-35 reference footprint's own pad-to-pad spacing (0.3in/7.62mm) -- not a Vishay datasheet fact, see comment above"
 
+geometry: { type: parametric, generator: axial }
+
+# `nominal` is set equal to the datasheet's stated max (3.4mm) --
+# not a midpoint (no min exists to average with) -- because the
+# `axial` generator requires a nominal value to build geometry at
+# all. The real fact is "<=3.4mm"; this is the closest usable
+# single number, not a separately-confirmed nominal.
 dimensions:
   body_width:
-    min: 1.5
-    max: 1.75
-    unit: mm
+    min: 1.5 mm
+    max: 1.75 mm
+    src: p3 "PACKAGE DIMENSIONS (DO-35/DO-204AH) drawing, body diameter brackets 1.5mm/1.75mm -- min/max assignment inferred from bracket nesting, see comment above"
   body_length:
-    min: 1.5
-    max: 1.75
-    unit: mm
+    min: 1.5 mm
+    max: 1.75 mm
+    src: p3 "PACKAGE DIMENSIONS (DO-35/DO-204AH) drawing, body diameter brackets 1.5mm/1.75mm -- min/max assignment inferred from bracket nesting, see comment above"
   body_height:
-    # `nominal` is set equal to the datasheet's stated max (3.4mm) --
-    # not a midpoint (no min exists to average with) -- because the
-    # `axial` generator requires a nominal value to build geometry at
-    # all. The real fact is "<=3.4mm"; this is the closest usable
-    # single number, not a separately-confirmed nominal.
-    max: 3.4
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: axial
-
-provenance:
-  "/pitch":
-    - source: kicad/DO35-P7.62mm
-      locator: "Real KiCad DO-35 reference footprint's own pad-to-pad spacing (0.3in/7.62mm) -- not a Vishay datasheet fact, see comment above"
-  "/dimensions/body_width":
-    - source: vishay/81857
-      page: 3
-      locator: "PACKAGE DIMENSIONS (DO-35/DO-204AH) drawing, body diameter brackets 1.5mm/1.75mm -- min/max assignment inferred from bracket nesting, see comment above"
-  "/dimensions/body_length":
-    - source: vishay/81857
-      page: 3
-      locator: "PACKAGE DIMENSIONS (DO-35/DO-204AH) drawing, body diameter brackets 1.5mm/1.75mm -- min/max assignment inferred from bracket nesting, see comment above"
-  "/dimensions/body_height":
-    - source: vishay/81857
-      page: 3
-      locator: "PACKAGE DIMENSIONS (DO-35/DO-204AH) drawing, body length \"3.4mm (0.134in) max.\" -- no min/nominal stated"
+    max: 3.4 mm
+    src: p3 "PACKAGE DIMENSIONS (DO-35/DO-204AH) drawing, body length "3.4mm (0.134in) max." -- no min/nominal stated"

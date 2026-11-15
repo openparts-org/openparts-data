@@ -4,71 +4,43 @@
 # recorded. Package: datasheet page 1 says "TO252 DPAK"; AOS's TO252
 # outline is PO-00009 (aosmd.com package path); the datasheet itself
 # does not name the outline document -- linked by package name only.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: aos/AOD4184A
-
 manufacturer: aos
 mpn: AOD4184A
-
 device: aos/AOD4184A
-package: manufacturers/aos/TO252-6.10x6.60-P2.29-PO-00009-TabPin4
+
+package:
+  value: manufacturers/aos/TO252-6.10x6.60-P2.29-PO-00009-TabPin4
+  src: aos/PO-00009 p1 ""TO252 PACKAGE OUTLINE" PO-00009 Version X (linked by the datasheet's package name "TO252")"
+
+sources: [aos/AOD4184A-DS, aos/PO-00009]
+source: aos/AOD4184A-DS
 
 existence:
   status: probable
+  src: p1 "Title "AOD4184A" and package "TO252 DPAK"; no ordering table in the document"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - aos/AOD4184A-DS
-  - aos/PO-00009
+lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: n_channel
+  polarity: { value: n_channel, src: 'p1 "Page-1 title: "40V N-Channel MOSFET""' }
   drain_source_voltage:
-    nominal: 40
-    unit: V
+    typ: 40 V
+    src: 'p1 "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 40 V"'
   drain_current:
-    nominal: 50
-    unit: A
+    typ: 50 A
+    at: { TC: 25 °C }
+    src: 'p1 "Absolute Maximum Ratings, Continuous Drain Current ID: 50 A"'
   rds_on:
-    nominal: 5.8
-    max: 7
-    unit: mΩ
+    typ: 5.8 mΩ
+    max: 7 mΩ
+    at: { VGS: 10 V, ID: 20 A, TJ: 25 °C }
+    src: 'p2 "Electrical Characteristics, RDS(ON) Static Drain-Source On-Resistance: Typ 5.8, Max 7 mΩ"'
   gate_threshold_voltage:
-    nominal: 2.1
-    min: 1.7
-    max: 2.6
-    unit: V
-
-provenance:
-  "/existence":
-    - source: aos/AOD4184A-DS
-      page: 1
-      locator: "Title \"AOD4184A\" and package \"TO252 DPAK\"; no ordering table in the document"
-  "/package":
-    - source: aos/PO-00009
-      page: 1
-      locator: "\"TO252 PACKAGE OUTLINE\" PO-00009 Version X (linked by the datasheet's package name \"TO252\")"
-  "/parameters/polarity":
-    - source: aos/AOD4184A-DS
-      page: 1
-      locator: "Page-1 title: \"40V N-Channel MOSFET\""
-  "/parameters/drain_source_voltage":
-    - source: aos/AOD4184A-DS
-      page: 1
-      locator: "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 40 V"
-  "/parameters/drain_current":
-    - source: aos/AOD4184A-DS
-      page: 1
-      locator: "Absolute Maximum Ratings, Continuous Drain Current ID, TC=25°C: 50 A"
-  "/parameters/rds_on":
-    - source: aos/AOD4184A-DS
-      page: 2
-      locator: "Electrical Characteristics (TJ=25°C), RDS(ON) Static Drain-Source On-Resistance, VGS=10V, ID=20A: Typ 5.8, Max 7 mΩ"
-  "/parameters/gate_threshold_voltage":
-    - source: aos/AOD4184A-DS
-      page: 2
-      locator: "Electrical Characteristics (TJ=25°C), VGS(th) Gate Threshold Voltage: Min 1.7, Typ 2.1, Max 2.6 V"
+    min: 1.7 V
+    typ: 2.1 V
+    max: 2.6 V
+    at: { TJ: 25 °C }
+    src: 'p2 "Electrical Characteristics, VGS(th) Gate Threshold Voltage: Min 1.7, Typ 2.1, Max 2.6 V"'

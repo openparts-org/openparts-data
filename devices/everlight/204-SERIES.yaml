@@ -1,19 +1,14 @@
 # 3mm round THT white LED. Pin roles labeled on the datasheet drawing
 # (page 6): 1 = Anode, 2 = Cathode.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: everlight/204-SERIES
-
 manufacturer: everlight
 category: led
 family: "204"
+source: everlight/DLE-0004797
 
 pins:
+  src: p6 "Drawing "1 Anode / 2 Cathode""
   "1": { name: Anode, type: passive }
   "2": { name: Cathode, type: passive }
-
-provenance:
-  "/pins":
-    - source: everlight/DLE-0004797
-      page: 6
-      locator: "Drawing \"1 Anode / 2 Cathode\""

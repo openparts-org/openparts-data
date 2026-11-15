@@ -6,38 +6,26 @@
 # DDC0006A (4214841/E 08/2024) on page 28. Its pdftotext -layout text
 # matches ti/SLVSCB0E page 33 (where manufacturers/ti/DDC0006A was read)
 # line for line, so the package is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/TPS54202DDCR
-
 manufacturer: ti
-mpn: "TPS54202DDCR"
-
+mpn: TPS54202DDCR
 device: ti/TPS54202
-package: manufacturers/ti/DDC0006A
+
+package:
+  value: manufacturers/ti/DDC0006A
+  src:
+    - p24 "Package Option Addendum, row "TPS54202DDCR", "SOT-23-THIN (DDC) | 6""
+    - p28 "PACKAGE OUTLINE DDC0006A (4214841/E 08/2024)"
+
+sources: [ti/SLVSD26C]
+source: ti/SLVSD26C
 
 existence:
   status: verified
+  src: p24 "Package Option Addendum, Packaging Information table, row "TPS54202DDCR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLVSD26C
-
-provenance:
-  "/existence":
-    - source: ti/SLVSD26C
-      page: 24
-      locator: "Package Option Addendum, Packaging Information table, row \"TPS54202DDCR\""
-  "/lifecycle":
-    - source: ti/SLVSD26C
-      page: 24
-      locator: "Package Option Addendum, row \"TPS54202DDCR\", Status \"Active\""
-  "/package":
-    - source: ti/SLVSD26C
-      page: 24
-      locator: "Package Option Addendum, row \"TPS54202DDCR\", \"SOT-23-THIN (DDC) | 6\""
-    - source: ti/SLVSD26C
-      page: 28
-      locator: "PACKAGE OUTLINE DDC0006A (4214841/E 08/2024)"
+  src: p24 "Package Option Addendum, row "TPS54202DDCR", Status "Active""

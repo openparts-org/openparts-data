@@ -9,15 +9,18 @@
 # EP: Table 4-2 "Signal Descriptions" (page 14) lists "VQFN thermal
 # pad ... Connection to VSS is recommended" -- it does not say the pad
 # is internally connected, so it is typed passive, not ground.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/MSP430FR2433
-
 manufacturer: ti
 category: microcontroller
 family: MSP430FR2xx
+source: ti/SLASE59F
 
 pins:
+  src:
+    - p10 "Table 4-1 "Pin Attributes" (pages 10-11), column "PIN NUMBER RGE""
+    - p8 "Figure 4-1 "24-Pin RGE Package (Top View)" (cross-check, all 24 pins matched)"
   "1":  { name: RST/NMI/SBWTDIO, type: reset }
   "2":  { name: TEST/SBWTCK, type: input }
   "3":  { name: P1.4/UCA0TXD/UCA0SIMO/TA1.2/TCK/A4/VREF+, type: io }
@@ -42,17 +45,7 @@ pins:
   "22": { name: P2.1/XIN, type: io }
   "23": { name: DVSS, type: ground }
   "24": { name: DVCC, type: power }
-  "EP": { name: VQFN thermal pad, type: passive }
-
-provenance:
-  "/pins":
-    - source: ti/SLASE59F
-      page: 10
-      locator: "Table 4-1 \"Pin Attributes\" (pages 10-11), column \"PIN NUMBER RGE\""
-    - source: ti/SLASE59F
-      page: 8
-      locator: "Figure 4-1 \"24-Pin RGE Package (Top View)\" (cross-check, all 24 pins matched)"
-  "/pins/EP":
-    - source: ti/SLASE59F
-      page: 14
-      locator: "Table 4-2 \"Signal Descriptions\", row \"VQFN Pad / VQFN thermal pad ... Connection to VSS is recommended\""
+  EP:
+    name: VQFN thermal pad
+    type: passive
+    src: p14 "Table 4-2 "Signal Descriptions", row "VQFN Pad / VQFN thermal pad ... Connection to VSS is recommended""

@@ -3,16 +3,13 @@
 # orderable SKUs as "offers" (e.g. "RT9193-33GQW", "RT9193-33GB").
 # Product pages are not versioned; revision/date = fetch date. Single
 # HTML page, cited as page 1.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: richtek/RT9193-product-page
-
+retrieved: 2026-11-14
+url: https://www.richtek.com/en/product-specifications/rt91/rt9193
+date: 2026-11-14
 publisher: richtek
-document_id: "RT9193 product page"
+document_id: RT9193 product page
 document_type: product_page
-
-revision: "2026-11-14"
-date: "2026-11-14"
-
-url: "https://www.richtek.com/en/product-specifications/rt91/rt9193"
-retrieved: "2026-11-14"
+revision: 2026-11-14

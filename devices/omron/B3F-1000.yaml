@@ -4,39 +4,26 @@
 # Connections (Top View)", which joins 4 and 3 on one line and 2 and 1 on
 # the other, the switch between the lines -> 3 is internally connected to
 # 4, 1 to 2 (connected_to).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: omron/B3F-1000
-
 manufacturer: omron
 category: tact_switch
 family: B3F
+source: omron/A070-E1-08
+
+parameters:
+  rated_voltage:
+    min: 3 V
+    max: 24 V
+    src: 'p3 "Ratings/Characteristics, Rating (resistive load): 1 to 50 mA, 3 to 24 VDC (B3F-G: 100 uA to 50 mA, 3 to 24 VDC)"'
+  travel:
+    typ: 0.25 mm
+    src: 'p3 "Operating Characteristics, 6 x 6 mm Models (B3F-1000 and B3F-G columns), Pretravel (PT): 0.25+0.2/-0.1 mm"'
 
 pins:
+  src: 'p4 ""Standard, Flat Plunger Type (without Ground Terminal)", "Terminal Arrangement/Internal Connections (Top View)": 4-3 joined, 2-1 joined, switch between"'
   "1": { name: "1", type: passive, connected_to: "2" }
   "2": { name: "2", type: passive }
   "3": { name: "3", type: passive, connected_to: "4" }
   "4": { name: "4", type: passive }
-
-parameters:
-  travel:
-    nominal: 0.25
-    unit: mm
-  rated_voltage:
-    min: 3
-    max: 24
-    unit: V
-
-provenance:
-  "/parameters/travel":
-    - source: omron/A070-E1-08
-      page: 3
-      locator: "Operating Characteristics, 6 x 6 mm Models (B3F-1000 and B3F-G columns), Pretravel (PT): 0.25+0.2/-0.1 mm"
-  "/parameters/rated_voltage":
-    - source: omron/A070-E1-08
-      page: 3
-      locator: "Ratings/Characteristics, Rating (resistive load): 1 to 50 mA, 3 to 24 VDC (B3F-G: 100 uA to 50 mA, 3 to 24 VDC)"
-  "/pins":
-    - source: omron/A070-E1-08
-      page: 4
-      locator: "\"Standard, Flat Plunger Type (without Ground Terminal)\", \"Terminal Arrangement/Internal Connections (Top View)\": 4-3 joined, 2-1 joined, switch between"

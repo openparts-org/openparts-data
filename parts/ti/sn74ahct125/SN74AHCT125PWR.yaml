@@ -5,38 +5,26 @@
 # Package: TSSOP (PW), outline PW0014A (4220202/B) on page 37 ->
 # manufacturers/ti/PW0014A. Its pdftotext text matches the outline page the package
 # was read from (ti/SCES650K page 52) line for line, so the package is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/SN74AHCT125PWR
-
 manufacturer: ti
 mpn: SN74AHCT125PWR
-
 device: ti/SN74AHCT125
-package: manufacturers/ti/PW0014A
+
+package:
+  value: manufacturers/ti/PW0014A
+  src:
+    - p14 "PACKAGE OPTION ADDENDUM, row SN74AHCT125PWR, Package column "TSSOP (PW)""
+    - p37 "PACKAGE OUTLINE PW0014A (4220202/B)"
+
+sources: [ti/SCLS264R]
+source: ti/SCLS264R
 
 existence:
   status: verified
+  src: p14 "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74AHCT125PWR"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SCLS264R
-
-provenance:
-  "/existence":
-    - source: ti/SCLS264R
-      page: 14
-      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74AHCT125PWR"
-  "/lifecycle":
-    - source: ti/SCLS264R
-      page: 14
-      locator: "PACKAGE OPTION ADDENDUM, row SN74AHCT125PWR, Status column \"Active\""
-  "/package":
-    - source: ti/SCLS264R
-      page: 14
-      locator: "PACKAGE OPTION ADDENDUM, row SN74AHCT125PWR, Package column \"TSSOP (PW)\""
-    - source: ti/SCLS264R
-      page: 37
-      locator: "PACKAGE OUTLINE PW0014A (4220202/B)"
+  src: p14 "PACKAGE OPTION ADDENDUM, row SN74AHCT125PWR, Status column "Active""

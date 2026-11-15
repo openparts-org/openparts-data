@@ -3,25 +3,19 @@
 # terminal carries both pin 2 and the tab (4), so pin 4 is
 # connected_to pin 2 with the same name. STYLE 1 (onsemi/PZT2222AT1-D
 # page 6): PIN 1. BASE 2. COLLECTOR 3. EMITTER 4. COLLECTOR.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/PZT2222A
-
 manufacturer: onsemi
 category: transistor
 family: PZT2222A
+source: onsemi/PZT2222AT1-D
 
 pins:
+  src:
+    - 'p1 "Symbol: "COLLECTOR 2, 4", "BASE 1", "EMITTER 3"; "SOT-223 CASE 318E STYLE 1""'
+    - 'p6 "CASE 318E-04 STYLE 1: "PIN 1. BASE 2. COLLECTOR 3. EMITTER 4. COLLECTOR""'
   "1": { name: Base, type: passive }
   "2": { name: Collector, type: passive }
   "3": { name: Emitter, type: passive }
   "4": { name: Collector, type: passive, connected_to: "2" }
-
-provenance:
-  "/pins":
-    - source: onsemi/PZT2222AT1-D
-      page: 1
-      locator: "Symbol: \"COLLECTOR 2, 4\", \"BASE 1\", \"EMITTER 3\"; \"SOT-223 CASE 318E STYLE 1\""
-    - source: onsemi/PZT2222AT1-D
-      page: 6
-      locator: "CASE 318E-04 STYLE 1: \"PIN 1. BASE 2. COLLECTOR 3. EMITTER 4. COLLECTOR\""

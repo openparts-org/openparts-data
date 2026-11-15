@@ -3,15 +3,12 @@
 # as a distributor-hosted copy of the manufacturer PDF because the
 # existing littelfuse/1206L source points at a third-party mirror and
 # littelfuse.com refused plain fetches.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: littelfuse/1206L@2011-05-15
-
+url: https://media.digikey.com/pdf/Data%20Sheets/Littelfuse%20PDFs/1206L_Series.pdf
+date: 2011-05-15
+revision: 2011-05-15
 publisher: littelfuse
 document_id: 1206L
 document_type: datasheet
-
-revision: "2011-05-15"
-date: "2011-05-15"
-
-url: "https://media.digikey.com/pdf/Data%20Sheets/Littelfuse%20PDFs/1206L_Series.pdf"

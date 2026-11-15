@@ -6,15 +6,12 @@
 # pin-assignment figures and Appendix 1 package drawings.
 # Renesas document numbers embed the revision ("...EJ0110" = Rev.1.10),
 # so the id carries it the same way ti/SLASEX6C does.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: renesas/R01DS0355EJ0110
-
+url: https://www.renesas.com/en/document/dst/ra4m1-group-datasheet
+date: 2023-09-29
+revision: "1.10"
 publisher: renesas
 document_id: R01DS0355EJ0110
 document_type: datasheet
-
-revision: "1.10"
-date: "2023-09-29"
-
-url: "https://www.renesas.com/en/document/dst/ra4m1-group-datasheet"

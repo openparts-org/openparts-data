@@ -12,91 +12,44 @@
 # Exposed pad (2026-11-15, superseding the note above): Figure 166 dimension table (PDF page 608,
 # printed 607) prints D2 3.00/3.100/3.200 and E2 3.00/3.100/3.200 mm
 # (min/nom/max); D2 is drawn along X in the bottom view (= width).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/QFN56-RP2040
-
 family: qfn
-lead_count: 56
+lead_count: { value: 56, src: '"Section 5.5.2 package description"' }
+source: raspberrypi/RP-008371-DS@rev1
 
-pitch:
-  nominal: 0.4
-  unit: mm
+pitch: { typ: 0.4 mm, src: '"Section 5.5.2, "standard 0.4mm QFN-56 footprints""' }
+geometry: { type: parametric, generator: qfn }
 
 dimensions:
-  body_width:
-    nominal: 7.0
-    unit: mm
-  body_length:
-    nominal: 7.0
-    unit: mm
-  lead_width:
-    nominal: 0.18
-    min: 0.13
-    max: 0.23
-    unit: mm
-  lead_length:
-    nominal: 0.4
-    min: 0.3
-    max: 0.5
-    unit: mm
+  body_width:  { typ: 7 mm, src: '""QFN-56 7x7mm (reduced ePad size)""' }
+  body_length: { typ: 7 mm, src: '""QFN-56 7x7mm (reduced ePad size)""' }
   lead_thickness:
-    nominal: 0.203
-    unit: mm
-  standoff:
-    min: 0.0
-    max: 0.05
-    unit: mm
+    typ: 0.203 mm
+    src: p608 "Section 5.1 Package, Figure 166 dimension table, symbol "A3" (0.203 REF)"
   exposed_pad:
     width:
-      nominal: 3.1
-      min: 3.0
-      max: 3.2
-      unit: mm
+      min: 3 mm
+      typ: 3.1 mm
+      max: 3.2 mm
+      src: p608 "Section 5.1 Package, Figure 166 dimension table, symbol "D2" (3.00/3.100/3.200; drawn along X in the bottom view)"
     length:
-      nominal: 3.1
-      min: 3.0
-      max: 3.2
-      unit: mm
-
-geometry:
-  type: parametric
-  generator: qfn
-
-provenance:
-  "/lead_count":
-    - source: raspberrypi/RP-008371-DS@rev1
-      locator: "Section 5.5.2 package description"
-  "/pitch":
-    - source: raspberrypi/RP-008371-DS@rev1
-      locator: "Section 5.5.2, \"standard 0.4mm QFN-56 footprints\""
-  "/dimensions/body_width":
-    - source: raspberrypi/RP-008371-DS@rev1
-      locator: "\"QFN-56 7x7mm (reduced ePad size)\""
-  "/dimensions/body_length":
-    - source: raspberrypi/RP-008371-DS@rev1
-      locator: "\"QFN-56 7x7mm (reduced ePad size)\""
-  "/dimensions/lead_width":
-    - source: raspberrypi/RP-008371-DS@rev1
-      page: 608
-      locator: "Section 5.1 Package, Figure 166 dimension table, symbol \"b\""
-  "/dimensions/lead_length":
-    - source: raspberrypi/RP-008371-DS@rev1
-      page: 608
-      locator: "Section 5.1 Package, Figure 166 dimension table, symbol \"L\""
-  "/dimensions/lead_thickness":
-    - source: raspberrypi/RP-008371-DS@rev1
-      page: 608
-      locator: "Section 5.1 Package, Figure 166 dimension table, symbol \"A3\" (0.203 REF)"
-  "/dimensions/standoff":
-    - source: raspberrypi/RP-008371-DS@rev1
-      page: 608
-      locator: "Section 5.1 Package, Figure 166 dimension table, symbol \"A1\" (no nom)"
-  "/dimensions/exposed_pad/width":
-    - source: raspberrypi/RP-008371-DS@rev1
-      page: 608
-      locator: "Section 5.1 Package, Figure 166 dimension table, symbol \"D2\" (3.00/3.100/3.200; drawn along X in the bottom view)"
-  "/dimensions/exposed_pad/length":
-    - source: raspberrypi/RP-008371-DS@rev1
-      page: 608
-      locator: "Section 5.1 Package, Figure 166 dimension table, symbol \"E2\" (3.00/3.100/3.200)"
+      min: 3 mm
+      typ: 3.1 mm
+      max: 3.2 mm
+      src: p608 "Section 5.1 Package, Figure 166 dimension table, symbol "E2" (3.00/3.100/3.200)"
+  standoff:
+    min: 0 mm
+    max: 0.05 mm
+    src: p608 "Section 5.1 Package, Figure 166 dimension table, symbol "A1" (no nom)"
+  lead_width:
+    min: 0.13 mm
+    typ: 0.18 mm
+    max: 0.23 mm
+    src: p608 "Section 5.1 Package, Figure 166 dimension table, symbol "b""
+  lead_length:
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p608 "Section 5.1 Package, Figure 166 dimension table, symbol "L""

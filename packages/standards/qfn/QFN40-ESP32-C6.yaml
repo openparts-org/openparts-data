@@ -17,99 +17,47 @@
 # QFN40 bottom view, page 78: "3.300+/-0.050 Exp.DAP" both horizontally
 # (X, width) and vertically (length). The v1.6 drawing's terminal
 # width/length, A1 and A3 callouts equal those cited from v1.5 below.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/QFN40-ESP32-C6
-
 family: qfn
-lead_count: 40
+lead_count: { value: 40, src: '"Table 1-1, p.13"' }
+source: espressif/esp32-c6_datasheet_en@rev1.5
 
 pitch:
-  nominal: 0.4
-  unit: mm
+  typ: 0.4 mm
+  src: jedec/MO-220 "Standard QFN40 5x5mm pitch, cross-checked against multiple vendors' outline drawings for this lead-count/body-size combination"
+
+geometry: { type: parametric, generator: qfn }
 
 dimensions:
-  body_width:
-    nominal: 5.0
-    unit: mm
-  body_length:
-    nominal: 5.0
-    unit: mm
+  body_width:     { typ: 5 mm, src: '"Section 7 Packaging, p.78"' }
+  body_length:    { typ: 5 mm, src: '"Section 7 Packaging, p.78"' }
   body_height:
-    nominal: 0.85
-    min: 0.8
-    max: 0.9
-    unit: mm
-  lead_width:
-    nominal: 0.2
-    min: 0.15
-    max: 0.25
-    unit: mm
-  lead_length:
-    nominal: 0.4
-    min: 0.35
-    max: 0.45
-    unit: mm
-  lead_thickness:
-    nominal: 0.203
-    unit: mm
-  standoff:
-    min: 0.0
-    max: 0.05
-    unit: mm
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 0.9 mm
+    src: jedec/MO-220 "Standard QFN body height range for this outline family, not vendor-datasheet-specific"
   exposed_pad:
     width:
-      nominal: 3.3
-      min: 3.25
-      max: 3.35
-      unit: mm
+      min: 3.25 mm
+      typ: 3.3 mm
+      max: 3.35 mm
+      src: espressif/esp32-c6_datasheet_en@rev1.6 p78 "Figure 7-1 (QFN40) bottom view, horizontal callout "3.300+/-0.050 Exp.DAP""
     length:
-      nominal: 3.3
-      min: 3.25
-      max: 3.35
-      unit: mm
-
-geometry:
-  type: parametric
-  generator: qfn
-
-provenance:
-  "/lead_count":
-    - source: espressif/esp32-c6_datasheet_en@rev1.5
-      locator: "Table 1-1, p.13"
-  "/dimensions/body_width":
-    - source: espressif/esp32-c6_datasheet_en@rev1.5
-      locator: "Section 7 Packaging, p.78"
-  "/dimensions/body_length":
-    - source: espressif/esp32-c6_datasheet_en@rev1.5
-      locator: "Section 7 Packaging, p.78"
-  "/pitch":
-    - source: jedec/MO-220
-      locator: "Standard QFN40 5x5mm pitch, cross-checked against multiple vendors' outline drawings for this lead-count/body-size combination"
-  "/dimensions/body_height":
-    - source: jedec/MO-220
-      locator: "Standard QFN body height range for this outline family, not vendor-datasheet-specific"
-  "/dimensions/lead_width":
-    - source: espressif/esp32-c6_datasheet_en@rev1.5
-      page: 78
-      locator: "Figure 7-1 (QFN40) drawing, terminal width 0.200 +/-0.050"
-  "/dimensions/lead_length":
-    - source: espressif/esp32-c6_datasheet_en@rev1.5
-      page: 78
-      locator: "Figure 7-1 (QFN40) drawing, terminal length 0.400 +/-0.050"
-  "/dimensions/lead_thickness":
-    - source: espressif/esp32-c6_datasheet_en@rev1.5
-      page: 78
-      locator: "Figure 7-1 (QFN40) drawing, \"A3\" 0.203 Ref."
-  "/dimensions/standoff":
-    - source: espressif/esp32-c6_datasheet_en@rev1.5
-      page: 78
-      locator: "Figure 7-1 (QFN40) drawing, \"A1\" 0.000-0.050"
-  "/dimensions/exposed_pad/width":
-    - source: espressif/esp32-c6_datasheet_en@rev1.6
-      page: 78
-      locator: "Figure 7-1 (QFN40) bottom view, horizontal callout \"3.300+/-0.050 Exp.DAP\""
-  "/dimensions/exposed_pad/length":
-    - source: espressif/esp32-c6_datasheet_en@rev1.6
-      page: 78
-      locator: "Figure 7-1 (QFN40) bottom view, vertical callout \"3.300+/-0.050 Exp.DAP\""
+      min: 3.25 mm
+      typ: 3.3 mm
+      max: 3.35 mm
+      src: espressif/esp32-c6_datasheet_en@rev1.6 p78 "Figure 7-1 (QFN40) bottom view, vertical callout "3.300+/-0.050 Exp.DAP""
+  standoff: { min: 0 mm, max: 0.05 mm, src: 'p78 "Figure 7-1 (QFN40) drawing, "A1" 0.000-0.050"' }
+  lead_width:
+    min: 0.15 mm
+    typ: 0.2 mm
+    max: 0.25 mm
+    src: p78 "Figure 7-1 (QFN40) drawing, terminal width 0.200 +/-0.050"
+  lead_length:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.45 mm
+    src: p78 "Figure 7-1 (QFN40) drawing, terminal length 0.400 +/-0.050"
+  lead_thickness: { typ: 0.203 mm, src: 'p78 "Figure 7-1 (QFN40) drawing, "A3" 0.203 Ref."' }

@@ -4,55 +4,30 @@
 # table (page 1) of the datasheet. Confirmed real and current via
 # Murata's own product line plus independent distributor listings
 # (Farnell, RS Online).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: murata/LQM2HPN2R2MG0L
-
 manufacturer: murata
 mpn: LQM2HPN2R2MG0L
-
 device: murata/LQM2HPN2R2MG0
 package: standards/CHIP-LQM2HPN
+sources: [murata/JELF243B_0019R-01]
+source: murata/JELF243B_0019R-01
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - murata/JELF243B_0019R-01
+existence: { status: verified }
+lifecycle: { status: active }
 
 parameters:
   tolerance:
-    min: -20
-    max: 20
-    unit: "%"
+    tol: ±20 %
+    src: 'p1 "3. Part Number and Rating, row LQM2HPN2R2MG0L: Inductance Tolerance (%) ±20"'
   inductance:
-    nominal: 2.2
-    unit: µH
+    typ: 2.2 µH
+    src: 'p1 "3. Part Number and Rating, row LQM2HPN2R2MG0L: Inductance Nominal value 2.2 μH"'
   rated_current:
-    nominal: 1.3
-    unit: A
+    typ: 1.3 A
+    src: 'p1 "3. Part Number and Rating, row LQM2HPN2R2MG0L: Rated current (A) at ambient temperature 85°C: 1.3 (0.97 at 125°C; *1 self-heating temperature rise 40°C max.)"'
   dcr:
-    nominal: 0.08
-    max: 0.1
-    unit: Ω
-
-provenance:
-  "/parameters/tolerance":
-    - source: murata/JELF243B_0019R-01
-      page: 1
-      locator: "3. Part Number and Rating, row LQM2HPN2R2MG0L: Inductance Tolerance (%) ±20"
-  "/parameters/inductance":
-    - source: murata/JELF243B_0019R-01
-      page: 1
-      locator: "3. Part Number and Rating, row LQM2HPN2R2MG0L: Inductance Nominal value 2.2 μH"
-  "/parameters/rated_current":
-    - source: murata/JELF243B_0019R-01
-      page: 1
-      locator: "3. Part Number and Rating, row LQM2HPN2R2MG0L: Rated current (A) at ambient temperature 85°C: 1.3 (0.97 at 125°C; *1 self-heating temperature rise 40°C max.)"
-  "/parameters/dcr":
-    - source: murata/JELF243B_0019R-01
-      page: 1
-      locator: "3. Part Number and Rating, row LQM2HPN2R2MG0L: DC resistance (Ω) Typ. 0.080, Max. 0.10"
+    typ: 0.08 Ω
+    max: 0.1 Ω
+    src: 'p1 "3. Part Number and Rating, row LQM2HPN2R2MG0L: DC resistance (Ω) Typ. 0.080, Max. 0.10"'

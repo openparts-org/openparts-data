@@ -3,43 +3,25 @@
 # The datasheet names the terminals only by the cathode band and
 # prints no pin numbers: numbered in the generator's position
 # convention (pin 1 at -X), cathode = 1, anode = 2.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: diodes/SD103BW
-
 manufacturer: diodes
 category: diode
 family: SD103W
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: diodes/DS11013
 
 parameters:
-  reverse_voltage:
-    max: 30
-    unit: V
-  forward_current:
-    max: 350
-    unit: mA
   forward_voltage:
-    max: 0.6
-    unit: V
+    max: 0.6 V
+    at: { IF: 200 mA }
+    src: 'p2 "Electrical Characteristics, Forward Voltage Drop VFM: Max 0.60 V"'
+  reverse_voltage: { max: 30 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR, SD103BW column: 30 V"' }
+  forward_current:
+    max: 350 mA
+    src: 'p2 "Maximum Ratings, Forward Continuous Current (Note 5) IFM: 350 mA"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: diodes/DS11013
-      page: 2
-      locator: "Maximum Ratings, VRRM/VRWM/VR, SD103BW column: 30 V"
-  "/parameters/forward_current":
-    - source: diodes/DS11013
-      page: 2
-      locator: "Maximum Ratings, Forward Continuous Current (Note 5) IFM: 350 mA"
-  "/parameters/forward_voltage":
-    - source: diodes/DS11013
-      page: 2
-      locator: "Electrical Characteristics, Forward Voltage Drop VFM: Max 0.60 V @ IF = 200mA"
-  "/pins":
-    - source: diodes/DS11013
-      page: 1
-      locator: "Mechanical Data: \"Polarity: Cathode Band\"; numbering by generator convention, see header"
+pins:
+  src: 'p1 "Mechanical Data: "Polarity: Cathode Band"; numbering by generator convention, see header"'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

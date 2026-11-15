@@ -1,64 +1,34 @@
 # 10uH +/-20%, Q 16 typ, SRF 25MHz typ, DCR max 0.180 Ohm, Irms 1.3A, Isat 1.4A, per the Electrical Specifications table (page 1).
 # lifecycle unknown: the datasheet makes no production-status statement.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
-id: "bourns/SRN4018-100M"
-
+id: bourns/SRN4018-100M
 manufacturer: bourns
-mpn: "SRN4018-100M"
-
+mpn: SRN4018-100M
 device: bourns/SRN4018-SERIES
 package: manufacturers/bourns/CHIP-BOURNS-SRN4018-H1.80
+sources: [bourns/SRN4018@rev10-26]
+source: bourns/SRN4018@rev10-26
 
 existence:
   status: verified
+  src: p1 "Electrical Specifications table, Part Number row "SRN4018-100M""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - bourns/SRN4018@rev10-26
+lifecycle: { status: unknown }
 
 parameters:
   tolerance:
-    min: -20
-    max: 20
-    unit: "%"
+    tol: ±20 %
+    src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-100M row: Tol. % 20"'
   inductance:
-    nominal: 10
-    unit: µH
+    typ: 10 µH
+    src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-100M row: L (µH) 10 @ 100 KHz/1 V"'
   rated_current:
-    nominal: 1.3
-    unit: A
+    typ: 1.3 A
+    src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-100M row: Irms (A) 1.3 (General Specifications: temperature rise 40 °C at rated Irms)"'
   saturation_current:
-    nominal: 1.4
-    unit: A
+    typ: 1.4 A
+    src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-100M row: Isat (A) 1.4 (General Specifications: inductance drops 30 % at Isat)"'
   dcr:
-    max: 0.18
-    unit: Ω
-
-provenance:
-  "/existence":
-    - source: bourns/SRN4018@rev10-26
-      page: 1
-      locator: "Electrical Specifications table, Part Number row \"SRN4018-100M\""
-  "/parameters/tolerance":
-    - source: bourns/SRN4018@rev10-26
-      page: 1
-      locator: "Electrical Specifications @ 25 °C, SRN4018-100M row: Tol. % 20"
-  "/parameters/inductance":
-    - source: bourns/SRN4018@rev10-26
-      page: 1
-      locator: "Electrical Specifications @ 25 °C, SRN4018-100M row: L (µH) 10 @ 100 KHz/1 V"
-  "/parameters/rated_current":
-    - source: bourns/SRN4018@rev10-26
-      page: 1
-      locator: "Electrical Specifications @ 25 °C, SRN4018-100M row: Irms (A) 1.3 (General Specifications: temperature rise 40 °C at rated Irms)"
-  "/parameters/saturation_current":
-    - source: bourns/SRN4018@rev10-26
-      page: 1
-      locator: "Electrical Specifications @ 25 °C, SRN4018-100M row: Isat (A) 1.4 (General Specifications: inductance drops 30 % at Isat)"
-  "/parameters/dcr":
-    - source: bourns/SRN4018@rev10-26
-      page: 1
-      locator: "Electrical Specifications @ 25 °C, SRN4018-100M row: DCR (Ω) Max. 0.180"
+    max: 0.18 Ω
+    src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-100M row: DCR (Ω) Max. 0.180"'

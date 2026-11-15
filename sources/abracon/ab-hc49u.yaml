@@ -2,15 +2,12 @@
 # Content verified directly (not summarized) via pypdf text extraction,
 # with pypdfium2 page renders for the mechanical outline drawing (page
 # 3, vector art absent from the text layer).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: abracon/ab-hc49u
-
+url: https://abracon.com/Resonators/ab.pdf
+date: 2018-10-29
+revision: 10.29.2018
 publisher: abracon
 document_id: AB
 document_type: datasheet
-
-revision: "10.29.2018"
-date: "2018-10-29"
-
-url: "https://abracon.com/Resonators/ab.pdf"

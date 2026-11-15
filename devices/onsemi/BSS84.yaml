@@ -1,21 +1,16 @@
 # P-channel small-signal MOSFET, SOT-23 (Case 318, Style 21). Pin numbers
 # and roles are printed on the datasheet's marking diagram / pin
 # assignment: 1 = Gate, 2 = Source, 3 = Drain.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/BSS84
-
 manufacturer: onsemi
 category: transistor
 family: BSS84
+source: onsemi/BSS84-D
 
 pins:
+  src: p1 "Marking diagram & pin assignment (1=Gate, 2=Source, 3=Drain)"
   "1": { name: Gate, type: passive }
   "2": { name: Source, type: passive }
   "3": { name: Drain, type: passive }
-
-provenance:
-  "/pins":
-    - source: onsemi/BSS84-D
-      page: 1
-      locator: "Marking diagram & pin assignment (1=Gate, 2=Source, 3=Drain)"

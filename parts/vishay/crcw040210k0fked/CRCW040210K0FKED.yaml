@@ -4,53 +4,28 @@
 # the cited datasheet, though not as a literal row for this exact MPN
 # in that (2003-vintage) printing -- the body dimensions apply to the
 # whole 0402/CRCW case size regardless of resistance value.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: vishay/CRCW040210K0FKED
-
 manufacturer: vishay
 mpn: CRCW040210K0FKED
-
 device: vishay/CRCW0402-GENERAL-PURPOSE
 package: standards/CHIP0402-CRCW
+sources: [vishay/20008, vishay/20035]
+source: vishay/20035
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - vishay/20008
-  - vishay/20035
+existence: { status: verified }
+lifecycle: { status: active }
 
 # Parameters (AI candidates, needs review): resistance, tolerance and TCR from
 # the PART NUMBER AND PRODUCT DESCRIPTION legend. power_rating left out:
 # the rated dissipation P70 depends on the operation mode (standard /
 # extended, p2), which the part number does not fix.
 parameters:
+  tolerance: { tol: ±1 %, src: 'p3 "PART NUMBER AND PRODUCT DESCRIPTION, TOLERANCE: F = ± 1 %"' }
   resistance:
-    nominal: 10
-    unit: kΩ
-  tolerance:
-    min: -1
-    max: 1
-    unit: "%"
+    typ: 10 kΩ
+    src: 'p3 "PART NUMBER AND PRODUCT DESCRIPTION, RESISTANCE: R = decimal, K = thousand, M = million -> 10K0 = 10 kΩ"'
   temperature_coefficient:
-    min: -100
-    max: 100
-    unit: ppm/K
-
-provenance:
-  "/parameters/resistance":
-    - source: vishay/20035
-      page: 3
-      locator: "PART NUMBER AND PRODUCT DESCRIPTION, RESISTANCE: R = decimal, K = thousand, M = million -> 10K0 = 10 kΩ"
-  "/parameters/tolerance":
-    - source: vishay/20035
-      page: 3
-      locator: "PART NUMBER AND PRODUCT DESCRIPTION, TOLERANCE: F = ± 1 %"
-  "/parameters/temperature_coefficient":
-    - source: vishay/20035
-      page: 3
-      locator: "PART NUMBER AND PRODUCT DESCRIPTION, TCR: K = ± 100 ppm/K"
+    tol: ±100 ppm/K
+    src: 'p3 "PART NUMBER AND PRODUCT DESCRIPTION, TCR: K = ± 100 ppm/K"'

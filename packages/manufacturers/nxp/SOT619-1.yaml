@@ -3,101 +3,49 @@
 # outline HVQFN48 7 x 7x 0.85 mm (SOT619-1)", NXP LPC84x data sheet
 # Rev. 2.1, page 86 (min/nom/max rows). Leadless, no A2: body_height
 # holds A. Exposed pad = Dh x Eh.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/nxp/SOT619-1
-
 family: qfn
 lead_count: 48
+source: nxp/LPC84x@rev2.1
 
-pitch:
-  nominal: 0.5
-  unit: mm
+pitch: { typ: 0.5 mm, src: 'p86 "Fig 43 SOT619-1 dimensions table, "e" 0.5"' }
+geometry: { type: parametric, generator: qfn }
 
 dimensions:
   body_width:
-    nominal: 7.0
-    min: 6.9
-    max: 7.1
-    unit: mm
+    min: 6.9 mm
+    typ: 7 mm
+    max: 7.1 mm
+    src: p86 "Fig 43 SOT619-1 dimensions table, "E" 6.9/7.0/7.1"
   body_length:
-    nominal: 7.0
-    min: 6.9
-    max: 7.1
-    unit: mm
+    min: 6.9 mm
+    typ: 7 mm
+    max: 7.1 mm
+    src: p86 "Fig 43 SOT619-1 dimensions table, "D" 6.9/7.0/7.1"
   body_height:
-    nominal: 0.85
-    min: 0.80
-    max: 1.00
-    unit: mm
-  standoff:
-    nominal: 0.02
-    min: 0.00
-    max: 0.05
-    unit: mm
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 1 mm
+    src: p86 "Fig 43 SOT619-1 dimensions table, "A" 0.80/0.85/1.00"
   exposed_pad:
-    width:
-      nominal: 5.10
-      min: 4.95
-      max: 5.25
-      unit: mm
-    length:
-      nominal: 5.10
-      min: 4.95
-      max: 5.25
-      unit: mm
+    src:    p86 "Fig 43 SOT619-1 dimensions table, "Dh"/"Eh" 4.95/5.10/5.25"
+    width:  { min: 4.95 mm, typ: 5.1 mm, max: 5.25 mm }
+    length: { min: 4.95 mm, typ: 5.1 mm, max: 5.25 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p86 "Fig 43 SOT619-1 dimensions table, "A1" 0.00/0.02/0.05"
   lead_width:
-    nominal: 0.21
-    min: 0.18
-    max: 0.30
-    unit: mm
+    min: 0.18 mm
+    typ: 0.21 mm
+    max: 0.3 mm
+    src: p86 "Fig 43 SOT619-1 dimensions table, "b" 0.18/0.21/0.30"
   lead_length:
-    nominal: 0.4
-    min: 0.3
-    max: 0.5
-    unit: mm
-  lead_thickness:
-    nominal: 0.2
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: qfn
-
-provenance:
-  "/pitch":
-    - source: nxp/LPC84x@rev2.1
-      page: 86
-      locator: "Fig 43 SOT619-1 dimensions table, \"e\" 0.5"
-  "/dimensions/body_width":
-    - source: nxp/LPC84x@rev2.1
-      page: 86
-      locator: "Fig 43 SOT619-1 dimensions table, \"E\" 6.9/7.0/7.1"
-  "/dimensions/body_length":
-    - source: nxp/LPC84x@rev2.1
-      page: 86
-      locator: "Fig 43 SOT619-1 dimensions table, \"D\" 6.9/7.0/7.1"
-  "/dimensions/body_height":
-    - source: nxp/LPC84x@rev2.1
-      page: 86
-      locator: "Fig 43 SOT619-1 dimensions table, \"A\" 0.80/0.85/1.00"
-  "/dimensions/standoff":
-    - source: nxp/LPC84x@rev2.1
-      page: 86
-      locator: "Fig 43 SOT619-1 dimensions table, \"A1\" 0.00/0.02/0.05"
-  "/dimensions/exposed_pad":
-    - source: nxp/LPC84x@rev2.1
-      page: 86
-      locator: "Fig 43 SOT619-1 dimensions table, \"Dh\"/\"Eh\" 4.95/5.10/5.25"
-  "/dimensions/lead_width":
-    - source: nxp/LPC84x@rev2.1
-      page: 86
-      locator: "Fig 43 SOT619-1 dimensions table, \"b\" 0.18/0.21/0.30"
-  "/dimensions/lead_length":
-    - source: nxp/LPC84x@rev2.1
-      page: 86
-      locator: "Fig 43 SOT619-1 dimensions table, \"L\" 0.3/0.4/0.5"
-  "/dimensions/lead_thickness":
-    - source: nxp/LPC84x@rev2.1
-      page: 86
-      locator: "Fig 43 SOT619-1 dimensions table, \"c\" 0.2 (nom only)"
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p86 "Fig 43 SOT619-1 dimensions table, "L" 0.3/0.4/0.5"
+  lead_thickness: { typ: 0.2 mm, src: 'p86 "Fig 43 SOT619-1 dimensions table, "c" 0.2 (nom only)"' }

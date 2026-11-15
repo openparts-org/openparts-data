@@ -8,16 +8,13 @@
 # The pin-configuration figure (page 3) is an image and was rendered.
 # The embedded DBV0005A outline is drawing 4214839/K 08/2024, i.e.
 # newer than the datasheet revision.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: ti/SNOS935C
-
+retrieved: 2026-11-10
+url: https://www.ti.com/lit/ds/symlink/lm321.pdf
+date: 2014-12
 publisher: ti
 document_id: SNOS935C
 document_type: datasheet
-
-revision: "C"
-date: "2014-12"
-
-url: "https://www.ti.com/lit/ds/symlink/lm321.pdf"
-retrieved: "2026-11-10"
+revision: C

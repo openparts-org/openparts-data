@@ -5,31 +5,18 @@
 # (Figure 1-1 "PDIP/SOIC/TSSOP"), so it reuses microchip/ATtiny85.
 # lifecycle: no production-status statement in the 2013 datasheet;
 # unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/ATtiny85-20PU
-
 manufacturer: microchip
 mpn: ATtiny85-20PU
-
 device: microchip/ATtiny85
-package: standards/DIP8-W7.62-P2.54
+package: { value: standards/DIP8-W7.62-P2.54, src: p207 "Section 26.1 "8P3" package drawing" }
+sources: [microchip/2586@revQ]
+source: microchip/2586@revQ
 
 existence:
   status: verified
+  src: p206 "Section 25.3, "ATtiny85" ordering table, "ATtiny85-20PU" / 8P3"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/2586@revQ
-
-provenance:
-  "/existence":
-    - source: microchip/2586@revQ
-      page: 206
-      locator: "Section 25.3, \"ATtiny85\" ordering table, \"ATtiny85-20PU\" / 8P3"
-  "/package":
-    - source: microchip/2586@revQ
-      page: 207
-      locator: "Section 26.1 \"8P3\" package drawing"
+lifecycle: { status: unknown }

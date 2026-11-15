@@ -7,15 +7,12 @@
 # pdftotext -layout: pinout (page 13), Table 5-2 (page 17), ordering table
 # 35.1 (page 493) and the C04-057-SN / C04-065-SL tables (pages 497, 500)
 # extract as clean text.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: microchip/DS40002318@revA
-
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny202-204-402-404-406-DataSheet-DS40002318A.pdf
+date: 2021-04
+revision: A
 publisher: microchip
 document_id: DS40002318
 document_type: datasheet
-
-revision: "A"
-date: "2021-04"
-
-url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny202-204-402-404-406-DataSheet-DS40002318A.pdf"

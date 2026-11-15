@@ -3,24 +3,18 @@
 # ("1 Drain / 2 Gate / 3 Source"), cross-checked against the CASE 29-11
 # style list (98ASB42022B page 2, as embedded in P2N2222A/D page 7):
 # "STYLE 30: PIN 1. DRAIN 2. GATE 3. SOURCE" -- match.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/BS170
-
 manufacturer: onsemi
 category: transistor
 family: BS170
+source: onsemi/BS170-D
 
 pins:
+  src:
+    - 'p1 ""MARKING DIAGRAM & PIN ASSIGNMENT": 1 Drain, 2 Gate, 3 Source; "CASE 29 STYLE 30""'
+    - 'onsemi/P2N2222A-D p7 "Embedded 98ASB42022B CASE 29-11 style list, "STYLE 30: PIN 1. DRAIN 2. GATE 3. SOURCE""'
   "1": { name: Drain, type: passive }
   "2": { name: Gate, type: passive }
   "3": { name: Source, type: passive }
-
-provenance:
-  "/pins":
-    - source: onsemi/BS170-D
-      page: 1
-      locator: "\"MARKING DIAGRAM & PIN ASSIGNMENT\": 1 Drain, 2 Gate, 3 Source; \"CASE 29 STYLE 30\""
-    - source: onsemi/P2N2222A-D
-      page: 7
-      locator: "Embedded 98ASB42022B CASE 29-11 style list, \"STYLE 30: PIN 1. DRAIN 2. GATE 3. SOURCE\""

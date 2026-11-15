@@ -5,29 +5,23 @@
 # The 2x3 DFN adds an exposed pad (EP 9) and is not covered. Table 3-1
 # writes the channel-A pins "VOUT, VOUTA" / "VIN-, VINA-" / "VIN+,
 # VINA+"; the MCP6002 names VOUTA/VINA-/VINA+ from the figure are used.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/MCP6002
-
 manufacturer: microchip
 category: op_amp
 family: MCP6001/1R/1U/2/4
+source: microchip/DS20001733@revL
 
 pins:
+  src:
+    - p11 "Table 3-1 "Pin Function Table", column "MCP6002 8-Lead MSOP, PDIP, SOIC""
+    - p1 ""Package Types", MCP6002 8-Lead PDIP, SOIC, MSOP (all 8 pins matched)"
   "1": { name: VOUTA, type: analog }
-  "2": { name: "VINA-", type: analog }
-  "3": { name: "VINA+", type: analog }
+  "2": { name: VINA-, type: analog }
+  "3": { name: VINA+, type: analog }
   "4": { name: VSS, type: power }
-  "5": { name: "VINB+", type: analog }
-  "6": { name: "VINB-", type: analog }
+  "5": { name: VINB+, type: analog }
+  "6": { name: VINB-, type: analog }
   "7": { name: VOUTB, type: analog }
   "8": { name: VDD, type: power }
-
-provenance:
-  "/pins":
-    - source: microchip/DS20001733@revL
-      page: 11
-      locator: "Table 3-1 \"Pin Function Table\", column \"MCP6002 8-Lead MSOP, PDIP, SOIC\""
-    - source: microchip/DS20001733@revL
-      page: 1
-      locator: "\"Package Types\", MCP6002 8-Lead PDIP, SOIC, MSOP (all 8 pins matched)"

@@ -7,15 +7,12 @@
 # every page carries CHECKED "MBH", REVISION "003.010", DATE
 # "2020-09-30" (YYYY-MM-DD), ORDER CODE "742792040", STATUS "Valid" (the
 # document's release status -- not read as a product lifecycle status).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: wurth/742792040-DS
-
+url: https://www.we-online.com/components/products/datasheet/742792040.pdf
+date: 2020-09-30
+revision: "003.010"
 publisher: wurth
 document_id: "742792040"
 document_type: datasheet
-
-revision: "003.010"
-date: "2020-09-30"
-
-url: "https://www.we-online.com/components/products/datasheet/742792040.pdf"

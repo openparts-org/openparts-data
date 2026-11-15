@@ -5,31 +5,22 @@
 # codes) refused curl and WebFetch (403).
 # Package: PA -> drawing C04-018D (page 17).
 # lifecycle: no production-status statement in the datasheet; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/TC4427AEPA
-
 manufacturer: microchip
 mpn: TC4427AEPA
-
 device: microchip/TC4427A
-package: manufacturers/microchip/PDIP8-PA-C04-018D
+
+package:
+  value: manufacturers/microchip/PDIP8-PA-C04-018D
+  src: p23 "PRODUCT IDENTIFICATION SYSTEM, Package "PA = Plastic DIP (300 mil Body), 8-lead""
+
+sources: [microchip/DS20001423@revJ]
+source: microchip/DS20001423@revJ
 
 existence:
   status: probable
+  src: p23 "PRODUCT IDENTIFICATION SYSTEM, printed as ordering example b) "TC4427AEPA""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS20001423@revJ
-
-provenance:
-  "/existence":
-    - source: microchip/DS20001423@revJ
-      page: 23
-      locator: "PRODUCT IDENTIFICATION SYSTEM, printed as ordering example b) \"TC4427AEPA\""
-  "/package":
-    - source: microchip/DS20001423@revJ
-      page: 23
-      locator: "PRODUCT IDENTIFICATION SYSTEM, Package \"PA = Plastic DIP (300 mil Body), 8-lead\""
+lifecycle: { status: unknown }

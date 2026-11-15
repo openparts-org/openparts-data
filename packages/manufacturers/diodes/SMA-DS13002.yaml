@@ -13,90 +13,39 @@
 # (S1A-S1M, p3) and DS19005 Rev. 19-2 (SMAJ, p5) -- compared row by row
 # from pdftotext -layout. DS13004 Rev. 23-2 (B220A-B260A) prints a
 # DIFFERENT SMA J (2.01-2.30): its SMA parts are not mapped here.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/diodes/SMA-DS13002
-
 family: do214
 lead_count: 2
+source: diodes/DS13002
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
 
-construction: molded
+construction:
+  value: molded
+  src: 'p1 "Mechanical Data: "Package Material: Molded Plastic. UL Flammability Classification Rating 94V-0""'
+
+geometry: { type: parametric, generator: do214 }
 
 dimensions:
+  body_width: { min: 2.29 mm, max: 2.92 mm, src: 'p4 "SMA table, A "2.29 / 2.92", body across"' }
   body_length:
-    min: 4.00
-    max: 4.60
-    unit: mm
-  body_width:
-    min: 2.29
-    max: 2.92
-    unit: mm
+    min: 4 mm
+    max: 4.6 mm
+    src: p4 "SMA table, B "4.00 / 4.60" (Min/Max), body along the leads"
   body_height:
-    min: 1.96
-    max: 2.40
-    unit: mm
+    min: 1.96 mm
+    max: 2.4 mm
+    src: p4 "SMA table, J "1.96 / 2.40" (seating plane to top; no separate body height)"
+  lead_thickness: { min: 0.15 mm, max: 0.31 mm, src: 'p4 "SMA table, D "0.15 / 0.31""' }
   overall_length:
-    min: 4.80
-    max: 5.59
-    unit: mm
+    min: 4.8 mm
+    max: 5.59 mm
+    src: p4 "SMA table, E "4.80 / 5.59", span over the leads"
   standoff:
-    min: 0.05
-    max: 0.20
-    unit: mm
-  lead_width:
-    min: 1.27
-    max: 1.63
-    unit: mm
-  lead_length:
-    min: 0.76
-    max: 1.52
-    unit: mm
-  lead_thickness:
-    min: 0.15
-    max: 0.31
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: do214
-
-provenance:
-  "/construction":
-    - source: diodes/DS13002
-      page: 1
-      locator: "Mechanical Data: \"Package Material: Molded Plastic. UL Flammability Classification Rating 94V-0\""
-  "/dimensions/body_length":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMA table, B \"4.00 / 4.60\" (Min/Max), body along the leads"
-  "/dimensions/body_width":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMA table, A \"2.29 / 2.92\", body across"
-  "/dimensions/body_height":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMA table, J \"1.96 / 2.40\" (seating plane to top; no separate body height)"
-  "/dimensions/overall_length":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMA table, E \"4.80 / 5.59\", span over the leads"
-  "/dimensions/standoff":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMA table, G \"0.05 / 0.20\" (body underside to seating plane)"
-  "/dimensions/lead_width":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMA table, C \"1.27 / 1.63\""
-  "/dimensions/lead_length":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMA table, H \"0.76 / 1.52\" (folded foot)"
-  "/dimensions/lead_thickness":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMA table, D \"0.15 / 0.31\""
+    min: 0.05 mm
+    max: 0.2 mm
+    src: p4 "SMA table, G "0.05 / 0.20" (body underside to seating plane)"
+  lead_width:     { min: 1.27 mm, max: 1.63 mm, src: 'p4 "SMA table, C "1.27 / 1.63""' }
+  lead_length: { min: 0.76 mm, max: 1.52 mm, src: 'p4 "SMA table, H "0.76 / 1.52" (folded foot)"' }

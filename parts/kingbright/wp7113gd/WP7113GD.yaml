@@ -1,28 +1,15 @@
 # WP7113GD T-1 3/4 LED. Package reused: the page-1 PACKAGE DIMENSIONS
 # drawing has the same numbers as WP7113ID's (phi5 dome, phi5.9
 # flange, 8.6 body, 2.54 lead pitch). lifecycle unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: kingbright/WP7113GD
-
 manufacturer: kingbright
 mpn: WP7113GD
-
 device: kingbright/WP7113GD
 package: standards/RADIAL-WP7113ID
+sources: [kingbright/DSAE9335]
+source: kingbright/DSAE9335
 
-existence:
-  status: verified
-
-lifecycle:
-  status: unknown
-
-sources:
-  - kingbright/DSAE9335
-
-provenance:
-  "/existence":
-    - source: kingbright/DSAE9335
-      page: 1
-      locator: "SELECTION GUIDE table, Part Number column"
-
+existence: { status: verified, src: 'p1 "SELECTION GUIDE table, Part Number column"' }
+lifecycle: { status: unknown }

@@ -5,15 +5,12 @@
 # and revision as printed in the frame: "4040082/E 04/2010"; note C:
 # "Falls within JEDEC MS-001 variation BA". The LM358/NE555 datasheets
 # list the P package in their addenda but do not include this drawing.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: ti/MPDI001
-
+url: https://www.ti.com/lit/pdf/mpdi001
+date: 2010-04
+revision: E
 publisher: ti
 document_id: MPDI001
 document_type: package_drawing
-
-revision: "E"
-date: "2010-04"
-
-url: "https://www.ti.com/lit/pdf/mpdi001"

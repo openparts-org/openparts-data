@@ -5,15 +5,12 @@
 # table and the Top View / Bottom View package images (pins labelled
 # G, D, S; no pin numbers). No package outline in this document -- the
 # outlines are AOS's separate PO-00015 (TO220) and PO-00005 (TO263).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: aos/AOB66518L-DS
-
+url: https://www.aosmd.com/res/datasheets/AOB66518L.pdf
+date: 2023-08
+revision: "1.1"
 publisher: aos
 document_id: AOB66518L
 document_type: datasheet
-
-revision: "1.1"
-date: "2023-08"
-
-url: "https://www.aosmd.com/res/datasheets/AOB66518L.pdf"

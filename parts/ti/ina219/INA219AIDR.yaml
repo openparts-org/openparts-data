@@ -3,35 +3,24 @@
 # "INA219AIDR | Active | Production | SOIC (D) | 8 | 2500 | LARGE T&R | ... | -40 to 125 | I219A".
 # lifecycle "active" is that table's Status column.
 # Package: SOIC (D) | 8, outline D0008A (4214825/C, same numbers as the reused package) on page 33.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/INA219AIDR
-
 manufacturer: ti
-mpn: "INA219AIDR"
-
+mpn: INA219AIDR
 device: ti/INA219-D
-package: manufacturers/ti/D0008A
+
+package:
+  value: manufacturers/ti/D0008A
+  src: p29 "Package Option Addendum, row "INA219AIDR", "SOIC (D) | 8"; outline D0008A (4214825/C, same numbers as the reused package) on page 33"
+
+sources: [ti/SBOS448G]
+source: ti/SBOS448G
 
 existence:
   status: verified
+  src: p29 "Package Option Addendum, Packaging Information table, row "INA219AIDR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SBOS448G
-
-provenance:
-  "/existence":
-    - source: ti/SBOS448G
-      page: 29
-      locator: "Package Option Addendum, Packaging Information table, row \"INA219AIDR\""
-  "/lifecycle":
-    - source: ti/SBOS448G
-      page: 29
-      locator: "Package Option Addendum, row \"INA219AIDR\", Status \"Active\""
-  "/package":
-    - source: ti/SBOS448G
-      page: 29
-      locator: "Package Option Addendum, row \"INA219AIDR\", \"SOIC (D) | 8\"; outline D0008A (4214825/C, same numbers as the reused package) on page 33"
+  src: p29 "Package Option Addendum, row "INA219AIDR", Status "Active""

@@ -4,49 +4,28 @@
 # "Lead space -- Straight" = 2.5mm for the EEUFC0J331S row) and the
 # general phiD/L/phid/F dimension table (page 1, phiD=6.3mm row, "L>=11"
 # case group: F=2.5mm, phid=0.5mm) -- both agree exactly.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/RADIAL-D6.3x11.2-P2.5
-
 family: radial
 lead_count: 2
+source: panasonic/ABA0000C1209
 
 pitch:
-  nominal: 2.5
-  unit: mm
+  typ: 2.5 mm
+  src:
+    - p3 ""Characteristics list" table, EEUFC0J331S row, column "Lead space -- Straight""
+    - p1 "General dimensions table, phiD=6.3mm row ("L>=11" case group), column "F""
+
+geometry: { type: parametric, generator: radial }
 
 dimensions:
-  body_length:
-    nominal: 6.3
-    unit: mm
   body_width:
-    nominal: 6.3
-    unit: mm
+    typ: 6.3 mm
+    src: p3 ""Characteristics list" table, EEUFC0J331S row, column "phiD""
+  body_length:
+    typ: 6.3 mm
+    src: p3 ""Characteristics list" table, EEUFC0J331S row, column "phiD""
   body_height:
-    nominal: 11.2
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: radial
-
-provenance:
-  "/pitch":
-    - source: panasonic/ABA0000C1209
-      page: 3
-      locator: "\"Characteristics list\" table, EEUFC0J331S row, column \"Lead space -- Straight\""
-    - source: panasonic/ABA0000C1209
-      page: 1
-      locator: "General dimensions table, phiD=6.3mm row (\"L>=11\" case group), column \"F\""
-  "/dimensions/body_length":
-    - source: panasonic/ABA0000C1209
-      page: 3
-      locator: "\"Characteristics list\" table, EEUFC0J331S row, column \"phiD\""
-  "/dimensions/body_width":
-    - source: panasonic/ABA0000C1209
-      page: 3
-      locator: "\"Characteristics list\" table, EEUFC0J331S row, column \"phiD\""
-  "/dimensions/body_height":
-    - source: panasonic/ABA0000C1209
-      page: 3
-      locator: "\"Characteristics list\" table, EEUFC0J331S row, column \"L\""
+    typ: 11.2 mm
+    src: p3 ""Characteristics list" table, EEUFC0J331S row, column "L""

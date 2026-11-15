@@ -5,38 +5,26 @@
 # that table's Status column. Package: SOIC (D) | 14, outline D0014A
 # (4220718/A 09/2016) on page 22. manufacturers/ti/D0014A was created
 # from this page.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/SN74HC14DR
-
 manufacturer: ti
-mpn: "SN74HC14DR"
-
+mpn: SN74HC14DR
 device: ti/SN74HC14
-package: manufacturers/ti/D0014A
+
+package:
+  value: manufacturers/ti/D0014A
+  src:
+    - p16 "Package Option Addendum, row "SN74HC14DR", "SOIC (D) | 14""
+    - p22 "PACKAGE OUTLINE D0014A (4220718/A 09/2016)"
+
+sources: [ti/SCLS085L]
+source: ti/SCLS085L
 
 existence:
   status: verified
+  src: p16 "Package Option Addendum, Packaging Information table, row "SN74HC14DR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SCLS085L
-
-provenance:
-  "/existence":
-    - source: ti/SCLS085L
-      page: 16
-      locator: "Package Option Addendum, Packaging Information table, row \"SN74HC14DR\""
-  "/lifecycle":
-    - source: ti/SCLS085L
-      page: 16
-      locator: "Package Option Addendum, row \"SN74HC14DR\", Status \"Active\""
-  "/package":
-    - source: ti/SCLS085L
-      page: 16
-      locator: "Package Option Addendum, row \"SN74HC14DR\", \"SOIC (D) | 14\""
-    - source: ti/SCLS085L
-      page: 22
-      locator: "PACKAGE OUTLINE D0014A (4220718/A 09/2016)"
+  src: p16 "Package Option Addendum, row "SN74HC14DR", Status "Active""

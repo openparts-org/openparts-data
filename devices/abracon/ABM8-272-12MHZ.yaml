@@ -6,22 +6,17 @@
 # crystal terminals: they are named XTAL1 (pad 1) / XTAL2 (pad 3) only
 # for distinct names (electrically symmetric), as for abracon/ABS07-32.768KHZ.
 # The GND pads are typed `ground` because the source labels them GND.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: abracon/ABM8-272-12MHZ
-
 manufacturer: abracon
 category: crystal
 family: ABM8-272
+source: abracon/456603@revB
 
 pins:
-  "1": { name: "XTAL1", type: passive }
-  "2": { name: "GND", type: ground }
-  "3": { name: "XTAL2", type: passive }
-  "4": { name: "GND", type: ground }
-
-provenance:
-  "/pins":
-    - source: abracon/456603@revB
-      page: 2
-      locator: "Mechanical Dimensions, TOP VIEW: pads 4 (top-left, \"GND\"), 3 (top-right), 1 (bottom-left), 2 (bottom-right, \"GND\"); crystal symbol connected between pads 1 and 3"
+  src: 'p2 "Mechanical Dimensions, TOP VIEW: pads 4 (top-left, "GND"), 3 (top-right), 1 (bottom-left), 2 (bottom-right, "GND"); crystal symbol connected between pads 1 and 3"'
+  "1": { name: XTAL1, type: passive }
+  "2": { name: GND, type: ground }
+  "3": { name: XTAL2, type: passive }
+  "4": { name: GND, type: ground }

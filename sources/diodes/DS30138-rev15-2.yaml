@@ -5,15 +5,12 @@
 # 404 page; this newer revision of the same document gets its own Source.
 # Read with pdftotext -layout. Page numbers are PDF page indices
 # (= printed "n of 5").
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: diodes/DS30138@rev15-2
-
+url: https://www.diodes.com/assets/Datasheets/B0540W.pdf
+date: 2026-11
+revision: 15-2
 publisher: diodes
-document_id: "DS30138"
+document_id: DS30138
 document_type: datasheet
-
-revision: "15-2"
-date: "2026-11"
-
-url: "https://www.diodes.com/assets/Datasheets/B0540W.pdf"

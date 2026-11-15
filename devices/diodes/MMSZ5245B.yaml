@@ -4,45 +4,29 @@
 # The datasheet names the terminals only by the cathode band and
 # prints no pin numbers: numbered in the generator's position
 # convention (pin 1 at -X), cathode = 1, anode = 2.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: diodes/MMSZ5245B
-
 manufacturer: diodes
 category: diode
 family: MMSZ52xxB
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: diodes/DS18010
 
 parameters:
-  zener_voltage:
-    nominal: 15
-    min: 14.25
-    max: 15.75
-    unit: V
-  zener_test_current:
-    nominal: 8.5
-    unit: mA
   forward_voltage:
-    max: 0.9
-    unit: V
+    max: 0.9 V
+    at: { IF: 10 mA }
+    src: 'p2 "Maximum Ratings, Forward Voltage VF: 0.9 V"'
+  zener_voltage:
+    min: 14.25 V
+    typ: 15 V
+    max: 15.75 V
+    src: 'p2 "Electrical Characteristics, MMSZ5245B row: VZ @ IZT Nom 15 V, Min 14.25 V, Max 15.75 V (Note 6)"'
+  zener_test_current:
+    typ: 8.5 mA
+    src: 'p2 "Electrical Characteristics, MMSZ5245B row: Test Current IZT 8.5 mA"'
 
-provenance:
-  "/parameters/zener_voltage":
-    - source: diodes/DS18010
-      page: 2
-      locator: "Electrical Characteristics, MMSZ5245B row: VZ @ IZT Nom 15 V, Min 14.25 V, Max 15.75 V (Note 6)"
-  "/parameters/zener_test_current":
-    - source: diodes/DS18010
-      page: 2
-      locator: "Electrical Characteristics, MMSZ5245B row: Test Current IZT 8.5 mA"
-  "/parameters/forward_voltage":
-    - source: diodes/DS18010
-      page: 2
-      locator: "Maximum Ratings, Forward Voltage @ IF = 10mA VF: 0.9 V"
-  "/pins":
-    - source: diodes/DS18010
-      page: 1
-      locator: "Mechanical Data: \"Polarity: Cathode Band\"; numbering by generator convention, see header"
+pins:
+  src: 'p1 "Mechanical Data: "Polarity: Cathode Band"; numbering by generator convention, see header"'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

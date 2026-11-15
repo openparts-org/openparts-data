@@ -16,85 +16,48 @@
 # body_length = D, body_height = A2, overall_height = A (max only),
 # standoff = A1 (min only). L (tip to seating plane) left out (not the
 # gull-wing foot length `lead_length` means).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/DIP28-W7.62-P2.54
-
 family: dip
 lead_count: 28
+source: microchip/DS40002061@revB
 
 pitch:
-  nominal: 2.54
-  unit: mm
+  typ: 2.54 mm
+  src: p644 "Section 39.4 28P3 (C04-070B) table (inches), "Pitch e .100 BSC" -> 2.54 mm"
+
+geometry: { type: parametric, generator: dip }
 
 dimensions:
   body_width:
-    nominal: 7.62
-    unit: mm
+    typ: 7.62 mm
+    src:
+      - p644 "Section 39.4 title "28-Lead Skinny Plastic Dual In-Line (SP) - 300 mil Body [SPDIP]" -> 7.62 mm row spacing (the table has no eA row)"
+      - 'p635 "Section 38.8 package legend: "28P3 28-lead, 0.300\" Wide, Skinny Plastic Dual Inline Package (SPDIP)""'
   body_length:
-    nominal: 34.671
-    min: 34.163
-    max: 35.56
-    unit: mm
+    min: 34.163 mm
+    typ: 34.671 mm
+    max: 35.56 mm
+    src: p644 "28P3 table (inches), "Overall Length D 1.345 / 1.365 / 1.400""
   body_height:
-    nominal: 3.429
-    min: 3.048
-    max: 3.81
-    unit: mm
-  overall_height:
-    max: 5.08
-    unit: mm
-  standoff:
-    min: 0.381
-    unit: mm
-  lead_width:
-    nominal: 0.4572
-    min: 0.3556
-    max: 0.5588
-    unit: mm
+    min: 3.048 mm
+    typ: 3.429 mm
+    max: 3.81 mm
+    src: p644 "28P3 table (inches), "Molded Package Thickness A2 .120 / .135 / .150""
   lead_thickness:
-    nominal: 0.254
-    min: 0.2032
-    max: 0.381
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: dip
-
-provenance:
-  "/pitch":
-    - source: microchip/DS40002061@revB
-      page: 644
-      locator: "Section 39.4 28P3 (C04-070B) table (inches), \"Pitch e .100 BSC\" -> 2.54 mm"
-  "/dimensions/body_width":
-    - source: microchip/DS40002061@revB
-      page: 644
-      locator: "Section 39.4 title \"28-Lead Skinny Plastic Dual In-Line (SP) - 300 mil Body [SPDIP]\" -> 7.62 mm row spacing (the table has no eA row)"
-    - source: microchip/DS40002061@revB
-      page: 635
-      locator: "Section 38.8 package legend: \"28P3 28-lead, 0.300\\\" Wide, Skinny Plastic Dual Inline Package (SPDIP)\""
-  "/dimensions/body_length":
-    - source: microchip/DS40002061@revB
-      page: 644
-      locator: "28P3 table (inches), \"Overall Length D 1.345 / 1.365 / 1.400\""
-  "/dimensions/body_height":
-    - source: microchip/DS40002061@revB
-      page: 644
-      locator: "28P3 table (inches), \"Molded Package Thickness A2 .120 / .135 / .150\""
-  "/dimensions/overall_height":
-    - source: microchip/DS40002061@revB
-      page: 644
-      locator: "28P3 table (inches), \"Top to Seating Plane A\" (MAX .200 only)"
-  "/dimensions/standoff":
-    - source: microchip/DS40002061@revB
-      page: 644
-      locator: "28P3 table (inches), \"Base to Seating Plane A1\" (MIN .015 only)"
-  "/dimensions/lead_width":
-    - source: microchip/DS40002061@revB
-      page: 644
-      locator: "28P3 table (inches), \"Lower Lead Width b .014 / .018 / .022\""
-  "/dimensions/lead_thickness":
-    - source: microchip/DS40002061@revB
-      page: 644
-      locator: "28P3 table (inches), \"Lead Thickness c .008 / .010 / .015\""
+    min: 0.2032 mm
+    typ: 0.254 mm
+    max: 0.381 mm
+    src: p644 "28P3 table (inches), "Lead Thickness c .008 / .010 / .015""
+  overall_height:
+    max: 5.08 mm
+    src: p644 "28P3 table (inches), "Top to Seating Plane A" (MAX .200 only)"
+  standoff:
+    min: 0.381 mm
+    src: p644 "28P3 table (inches), "Base to Seating Plane A1" (MIN .015 only)"
+  lead_width:
+    min: 0.3556 mm
+    typ: 0.4572 mm
+    max: 0.5588 mm
+    src: p644 "28P3 table (inches), "Lower Lead Width b .014 / .018 / .022""

@@ -5,60 +5,28 @@
 # same per-code datasheet (Würth publishes one PDF per order code).
 # lifecycle: the title block "STATUS Valid" is the document's release
 # status, not a product lifecycle statement; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: wurth/885012207098
-
 manufacturer: wurth
 mpn: "885012207098"
-
 device: wurth/WCAP-CSGP-0805-X7R
 package: manufacturers/wurth/CHIP0805-WCAP-CSGP-T0.8
+sources: [wurth/885012207098-DS]
+source: wurth/885012207098-DS
 
 existence:
   status: verified
+  src:
+    - p1 "Title block, "ORDER CODE 885012207098", "WCAP-CSGP Ceramic Capacitors 0805", TECHNICAL REFERENCE "X7R0805104K050DFCT10000""
+    - 'p1 ""Electrical Properties": Capacitance C 100 nF +/-10%; Rated Voltage VR 50 V (DC) max.; "General Information": Ceramic Type X7R Class II"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - wurth/885012207098-DS
+lifecycle: { status: unknown }
 
 parameters:
-  capacitance:
-    nominal: 100
-    unit: nF
-  tolerance:
-    min: -10
-    max: 10
-    unit: "%"
+  capacitance: { typ: 100 nF, src: 'p1 "Electrical Properties, Capacitance C: 100 nF, Tol. ±10%"' }
+  tolerance:  { tol: ±10 %, src: 'p1 "Electrical Properties, Capacitance C: 100 nF, Tol. ±10%"' }
   rated_voltage:
-    nominal: 50
-    unit: V
-  dielectric:
-    value: X7R
-
-provenance:
-  "/parameters/capacitance":
-    - source: wurth/885012207098-DS
-      page: 1
-      locator: "Electrical Properties, Capacitance C: 100 nF, Tol. ±10%"
-  "/parameters/tolerance":
-    - source: wurth/885012207098-DS
-      page: 1
-      locator: "Electrical Properties, Capacitance C: 100 nF, Tol. ±10%"
-  "/parameters/rated_voltage":
-    - source: wurth/885012207098-DS
-      page: 1
-      locator: "Electrical Properties, Rated Voltage VR: 50 V (DC), Tol. max."
-  "/parameters/dielectric":
-    - source: wurth/885012207098-DS
-      page: 1
-      locator: "Electrical Properties, Ceramic Type: X7R Class II"
-  "/existence":
-    - source: wurth/885012207098-DS
-      page: 1
-      locator: "Title block, \"ORDER CODE 885012207098\", \"WCAP-CSGP Ceramic Capacitors 0805\", TECHNICAL REFERENCE \"X7R0805104K050DFCT10000\""
-    - source: wurth/885012207098-DS
-      page: 1
-      locator: "\"Electrical Properties\": Capacitance C 100 nF +/-10%; Rated Voltage VR 50 V (DC) max.; \"General Information\": Ceramic Type X7R Class II"
+    typ: 50 V
+    src: 'p1 "Electrical Properties, Rated Voltage VR: 50 V (DC), Tol. max."'
+  dielectric: { value: X7R, src: 'p1 "Electrical Properties, Ceramic Type: X7R Class II"' }

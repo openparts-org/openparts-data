@@ -11,18 +11,27 @@
 # Exposed pad: the QFN48 drawing (page 1092) has a 5.15mm exposed pad,
 # but no page of this data sheet says what it must be connected to, so
 # no "EP" pin is recorded (unknown, not guessed as GND).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/ATSAMD21G18A
-
 manufacturer: microchip
 category: microcontroller
 family: SAM D21
+source: microchip/DS40001882@revL
 
 pins:
-  "1":  { name: PA00, type: io }
+  "1":
+    name:
+      value: PA00
+      src: p20 "Section 5.2.1 "QFN48 / TQFP48" pinout (SAM D21GxxA/B/D), all 48 pins"
+    type: io
   "2":  { name: PA01, type: io }
-  "3":  { name: PA02, type: io, alternate_functions: [AIN0] }
+  "3":
+    name: PA02
+    type: io
+    alternate_functions:
+      value: [AIN0]
+      src:   p28 "Table 7-1 "PORT Function Multiplexing ...", SAMD2xG column + ADC column (continued p29)"
   "4":  { name: PA03, type: io, alternate_functions: [AIN1] }
   "5":  { name: GNDANA, type: ground }
   "6":  { name: VDDANA, type: power }
@@ -68,13 +77,3 @@ pins:
   "46": { name: PA31, type: io }
   "47": { name: PB02, type: io, alternate_functions: [AIN10] }
   "48": { name: PB03, type: io, alternate_functions: [AIN11] }
-
-provenance:
-  "/pins/1/name":
-    - source: microchip/DS40001882@revL
-      page: 20
-      locator: "Section 5.2.1 \"QFN48 / TQFP48\" pinout (SAM D21GxxA/B/D), all 48 pins"
-  "/pins/3/alternate_functions":
-    - source: microchip/DS40001882@revL
-      page: 28
-      locator: "Table 7-1 \"PORT Function Multiplexing ...\", SAMD2xG column + ADC column (continued p29)"

@@ -3,43 +3,28 @@
 # No pin numbers are printed for this part, so 1 = Cathode and 2 = Anode
 # follow the dataset's two-terminal diode convention (pin 1 at the
 # banded end).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/MBR140SF
-
 manufacturer: onsemi
 category: diode
 family: MBR140SF
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: onsemi/MBR140SFT1-D
 
 parameters:
-  reverse_voltage:
-    max: 40
-    unit: V
-  forward_current:
-    max: 1.0
-    unit: A
   forward_voltage:
-    max: 0.55
-    unit: V
+    max: 0.55 V
+    at: { IF: 1 A, TJ: 25 °C }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF: 0.55 V"'
+  reverse_voltage:
+    max: 40 V
+    src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 40 V"'
+  forward_current:
+    max: 1 A
+    at: { TL: 112 °C }
+    src: 'p2 "MAXIMUM RATINGS, Average Rectified Forward Current (At Rated VR) IO: 1.0 A"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: onsemi/MBR140SFT1-D
-      page: 2
-      locator: "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 40 V"
-  "/parameters/forward_current":
-    - source: onsemi/MBR140SFT1-D
-      page: 2
-      locator: "MAXIMUM RATINGS, Average Rectified Forward Current (At Rated VR, TL = 112°C) IO: 1.0 A"
-  "/parameters/forward_voltage":
-    - source: onsemi/MBR140SFT1-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF (IF = 1.0 A), TJ = 25°C: 0.55 V"
-  "/pins":
-    - source: onsemi/MBR140SFT1-D
-      page: 1
-      locator: "Mechanical Characteristics: \"Polarity Designator: Cathode Band\""
+pins:
+  src: 'p1 "Mechanical Characteristics: "Polarity Designator: Cathode Band""'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

@@ -1,35 +1,24 @@
 # MPN read from the Package Option Addendum, Packaging Information table
 # (SCAS218X PDF page 13, addendum dated 10-Nov-2025): "SN74LVC245ADBR | Active | Production | SSOP (DB) | 20 | 2000 | LARGE T&R | ... | -40 to 125 | LC245A".
 # lifecycle "active" is that table's Status column.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/SN74LVC245ADBR
-
 manufacturer: ti
 mpn: SN74LVC245ADBR
-
 device: ti/SN74LVC245A
-package: standards/SSOP20-5.3x7.2-P0.65-TI-DB
+
+package:
+  value: standards/SSOP20-5.3x7.2-P0.65-TI-DB
+  src: p13 "Package Option Addendum, row "SN74LVC245ADBR", "SSOP (DB) | 20"; outline DB0020A on page 19"
+
+sources: [ti/SCAS218X]
+source: ti/SCAS218X
 
 existence:
   status: verified
+  src: p13 "Package Option Addendum, Packaging Information table, row "SN74LVC245ADBR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SCAS218X
-
-provenance:
-  "/existence":
-    - source: ti/SCAS218X
-      page: 13
-      locator: "Package Option Addendum, Packaging Information table, row \"SN74LVC245ADBR\""
-  "/lifecycle":
-    - source: ti/SCAS218X
-      page: 13
-      locator: "Package Option Addendum, row \"SN74LVC245ADBR\", Status \"Active\""
-  "/package":
-    - source: ti/SCAS218X
-      page: 13
-      locator: "Package Option Addendum, row \"SN74LVC245ADBR\", \"SSOP (DB) | 20\"; outline DB0020A on page 19"
+  src: p13 "Package Option Addendum, row "SN74LVC245ADBR", Status "Active""

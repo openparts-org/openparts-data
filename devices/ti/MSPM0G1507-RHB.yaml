@@ -20,15 +20,18 @@
 # package exposed thermal pad. TI recommends connection to VSS." --
 # recommended, not stated as internally connected, so typed passive (as
 # ti/MSPM0L1306-RHB).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/MSPM0G1507-RHB
-
 manufacturer: ti
 category: microcontroller
 family: MSPM0G150x
+source: ti/SLASEW9E
 
 pins:
+  src:
+    - p10 "Figure 6-5 "32-Pin RHB (VQFN) (Top View)""
+    - p13 "Table 6-2 "Pin Attributes" (pages 13-17), column "32 VQFN" (cross-check, all 32 pins matched)"
   "1":  { name: PA0, type: io, alternate_functions: [FCC_IN] }
   "2":  { name: PA1, type: io }
   "3":  { name: NRST, type: reset }
@@ -61,17 +64,7 @@ pins:
   "30": { name: PA26, type: io, alternate_functions: [A0_1] }
   "31": { name: PA27, type: io, alternate_functions: [RTC_OUT, A0_0] }
   "32": { name: VCORE, type: power }
-  "EP":  { name: QFN Pad, type: passive }
-
-provenance:
-  "/pins":
-    - source: ti/SLASEW9E
-      page: 10
-      locator: "Figure 6-5 \"32-Pin RHB (VQFN) (Top View)\""
-    - source: ti/SLASEW9E
-      page: 13
-      locator: "Table 6-2 \"Pin Attributes\" (pages 13-17), column \"32 VQFN\" (cross-check, all 32 pins matched)"
-  "/pins/EP":
-    - source: ti/SLASEW9E
-      page: 22
-      locator: "Table 6-3 \"Signal Descriptions\", row \"QFN Pad\": \"QFN package exposed thermal pad. TI recommends connection to VSS.\""
+  EP:
+    name: QFN Pad
+    type: passive
+    src: 'p22 "Table 6-3 "Signal Descriptions", row "QFN Pad": "QFN package exposed thermal pad. TI recommends connection to VSS.""'

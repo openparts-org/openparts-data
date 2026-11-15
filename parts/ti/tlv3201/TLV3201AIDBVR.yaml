@@ -6,38 +6,26 @@
 # page 28. Its pdftotext -layout text matches the outline page the
 # package was read from (ti/SBOS833R page 94) line for line, so
 # manufacturers/ti/DBV0005A is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/TLV3201AIDBVR
-
 manufacturer: ti
-mpn: "TLV3201AIDBVR"
-
+mpn: TLV3201AIDBVR
 device: ti/TLV3201-DBV
-package: manufacturers/ti/DBV0005A
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src:
+    - p23 "Package Option Addendum, row "TLV3201AIDBVR", "SOT-23 (DBV) | 5""
+    - p28 "PACKAGE OUTLINE DBV0005A (4214839/K 08/2024)"
+
+sources: [ti/SBOS561C]
+source: ti/SBOS561C
 
 existence:
   status: verified
+  src: p23 "Package Option Addendum, Packaging Information table, row "TLV3201AIDBVR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SBOS561C
-
-provenance:
-  "/existence":
-    - source: ti/SBOS561C
-      page: 23
-      locator: "Package Option Addendum, Packaging Information table, row \"TLV3201AIDBVR\""
-  "/lifecycle":
-    - source: ti/SBOS561C
-      page: 23
-      locator: "Package Option Addendum, row \"TLV3201AIDBVR\", Status \"Active\""
-  "/package":
-    - source: ti/SBOS561C
-      page: 23
-      locator: "Package Option Addendum, row \"TLV3201AIDBVR\", \"SOT-23 (DBV) | 5\""
-    - source: ti/SBOS561C
-      page: 28
-      locator: "PACKAGE OUTLINE DBV0005A (4214839/K 08/2024)"
+  src: p23 "Package Option Addendum, row "TLV3201AIDBVR", Status "Active""

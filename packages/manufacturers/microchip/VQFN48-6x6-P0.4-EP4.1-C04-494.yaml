@@ -7,101 +7,43 @@
 # body_height = A (no A2 given). lead_thickness = A3 "0.20 REF" -- a
 # reference value, marked REF in the table. Corner chamfer CH (0.35
 # REF) and K (0.55 REF) are not modelled.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/microchip/VQFN48-6x6-P0.4-EP4.1-C04-494
-
 family: qfn
-lead_count: 48
+lead_count: { value: 48, src: 'p543 "C04-494 table, "Number of Terminals N 48""' }
+source: microchip/DS40002173@revC
 
-pitch:
-  nominal: 0.4
-  unit: mm
+pitch: { typ: 0.4 mm, src: 'p543 "C04-494 table, "Pitch e 0.40 BSC""' }
+geometry: { type: parametric, generator: qfn }
 
 dimensions:
-  body_width:
-    nominal: 6.0
-    unit: mm
-  body_length:
-    nominal: 6.0
-    unit: mm
+  body_width:  { typ: 6 mm, src: 'p543 "C04-494 table, "Overall Width E 6.00 BSC""' }
+  body_length: { typ: 6 mm, src: 'p543 "C04-494 table, "Overall Length D 6.00 BSC""' }
   body_height:
-    nominal: 0.85
-    min: 0.80
-    max: 0.90
-    unit: mm
-  standoff:
-    nominal: 0.02
-    min: 0.00
-    max: 0.05
-    unit: mm
-  lead_width:
-    nominal: 0.20
-    min: 0.15
-    max: 0.25
-    unit: mm
-  lead_length:
-    nominal: 0.40
-    min: 0.30
-    max: 0.50
-    unit: mm
-  lead_thickness:
-    nominal: 0.20
-    unit: mm
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 0.9 mm
+    src: p543 "C04-494 table, "Overall Height A 0.80 / 0.85 / 0.90""
   exposed_pad:
-    width:
-      nominal: 4.10
-      min: 4.00
-      max: 4.20
-      unit: mm
-    length:
-      nominal: 4.10
-      min: 4.00
-      max: 4.20
-      unit: mm
-
-geometry:
-  type: parametric
-  generator: qfn
-
-provenance:
-  "/lead_count":
-    - source: microchip/DS40002173@revC
-      page: 543
-      locator: "C04-494 table, \"Number of Terminals N 48\""
-  "/pitch":
-    - source: microchip/DS40002173@revC
-      page: 543
-      locator: "C04-494 table, \"Pitch e 0.40 BSC\""
-  "/dimensions/body_width":
-    - source: microchip/DS40002173@revC
-      page: 543
-      locator: "C04-494 table, \"Overall Width E 6.00 BSC\""
-  "/dimensions/body_length":
-    - source: microchip/DS40002173@revC
-      page: 543
-      locator: "C04-494 table, \"Overall Length D 6.00 BSC\""
-  "/dimensions/body_height":
-    - source: microchip/DS40002173@revC
-      page: 543
-      locator: "C04-494 table, \"Overall Height A 0.80 / 0.85 / 0.90\""
-  "/dimensions/standoff":
-    - source: microchip/DS40002173@revC
-      page: 543
-      locator: "C04-494 table, \"Standoff A1 0.00 / 0.02 / 0.05\""
-  "/dimensions/lead_width":
-    - source: microchip/DS40002173@revC
-      page: 543
-      locator: "C04-494 table, \"Terminal Width b 0.15 / 0.20 / 0.25\""
-  "/dimensions/lead_length":
-    - source: microchip/DS40002173@revC
-      page: 543
-      locator: "C04-494 table, \"Terminal Length L 0.30 / 0.40 / 0.50\""
-  "/dimensions/lead_thickness":
-    - source: microchip/DS40002173@revC
-      page: 543
-      locator: "C04-494 table, \"Terminal Thickness A3 0.20 REF\" (reference value)"
-  "/dimensions/exposed_pad":
-    - source: microchip/DS40002173@revC
-      page: 543
-      locator: "C04-494 table, \"Exposed Pad Width E2\" and \"Exposed Pad Length D2\" 4.00 / 4.10 / 4.20"
+    src:    p543 "C04-494 table, "Exposed Pad Width E2" and "Exposed Pad Length D2" 4.00 / 4.10 / 4.20"
+    width:  { min: 4 mm, typ: 4.1 mm, max: 4.2 mm }
+    length: { min: 4 mm, typ: 4.1 mm, max: 4.2 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p543 "C04-494 table, "Standoff A1 0.00 / 0.02 / 0.05""
+  lead_width:
+    min: 0.15 mm
+    typ: 0.2 mm
+    max: 0.25 mm
+    src: p543 "C04-494 table, "Terminal Width b 0.15 / 0.20 / 0.25""
+  lead_length:
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p543 "C04-494 table, "Terminal Length L 0.30 / 0.40 / 0.50""
+  lead_thickness:
+    typ: 0.2 mm
+    src: p543 "C04-494 table, "Terminal Thickness A3 0.20 REF" (reference value)"

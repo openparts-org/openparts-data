@@ -5,15 +5,18 @@
 # PW (TSSOP). OE carries an overbar (active low) in the datasheet; the
 # name here is written without it. VCC is printed "V" with subscript
 # "CC".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/SN74LVC245A
-
 manufacturer: ti
 category: logic
 family: SN74LVC245A
+source: ti/SCAS218X
 
 pins:
+  src:
+    - p3 ""Pin Functions" table, column "DB, DGV, DW, NS, PW, and RGY""
+    - p3 ""DB, DGV, DW, N, NS, OR PW PACKAGE (TOP VIEW)" (cross-check, all 20 pins matched)"
   "1":  { name: DIR, type: input }
   "2":  { name: A1, type: io }
   "3":  { name: A2, type: io }
@@ -34,12 +37,3 @@ pins:
   "18": { name: B1, type: io }
   "19": { name: OE, type: input }
   "20": { name: VCC, type: power }
-
-provenance:
-  "/pins":
-    - source: ti/SCAS218X
-      page: 3
-      locator: "\"Pin Functions\" table, column \"DB, DGV, DW, NS, PW, and RGY\""
-    - source: ti/SCAS218X
-      page: 3
-      locator: "\"DB, DGV, DW, N, NS, OR PW PACKAGE (TOP VIEW)\" (cross-check, all 20 pins matched)"

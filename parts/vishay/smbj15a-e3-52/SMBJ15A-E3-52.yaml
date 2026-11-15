@@ -5,50 +5,33 @@
 # statement in the document.
 # Package: page-5 SMB (DO-214AA) outline, standards/DO214AA-VISHAY-88392
 # (read from this page).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: vishay/SMBJ15A-E3-52
-
 manufacturer: vishay
-mpn: "SMBJ15A-E3/52"
-
+mpn: SMBJ15A-E3/52
 device: vishay/SMBJ-A-SERIES
-package: standards/DO214AA-VISHAY-88392
+
+package:
+  value: standards/DO214AA-VISHAY-88392
+  src: p5 "PACKAGE OUTLINE DIMENSIONS -- see header"
+
+sources: [vishay/88392]
+source: vishay/88392
 
 existence:
   status: probable
+  src:
+    - 'p3 "ORDERING INFORMATION (Example): "SMBJ5.0A-E3/52 | 0.106 | 52 | 750 | 7" diameter plastic tape and reel""'
+    - 'p2 "ELECTRICAL CHARACTERISTICS row "(+)SMBJ15A | LM | BM | 16.7 | 18.5 | 1.0 | 15"; page-1 MECHANICAL DATA: "Base P/N-E3 - RoHS-compliant, commercial grade""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - vishay/88392
+lifecycle: { status: unknown }
 
 parameters:
-  reverse_voltage:
-    max: 15
-    unit: V
   forward_voltage:
-    max: 3.5
-    unit: V
-
-provenance:
-  "/parameters/reverse_voltage":
-    - source: vishay/88392
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS table, row (+)SMBJ15A: Stand-off voltage VWM 15 V"
-  "/parameters/forward_voltage":
-    - source: vishay/88392
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS table, note (6): VF = 3.5 V max. at IF = 50 A (unidirectional only)"
-  "/existence":
-    - source: vishay/88392
-      page: 3
-      locator: "ORDERING INFORMATION (Example): \"SMBJ5.0A-E3/52 | 0.106 | 52 | 750 | 7\" diameter plastic tape and reel\""
-    - source: vishay/88392
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS row \"(+)SMBJ15A | LM | BM | 16.7 | 18.5 | 1.0 | 15\"; page-1 MECHANICAL DATA: \"Base P/N-E3 - RoHS-compliant, commercial grade\""
-  "/package":
-    - source: vishay/88392
-      page: 5
-      locator: "PACKAGE OUTLINE DIMENSIONS -- see header"
+    max: 3.5 V
+    at: { IF: 50 A }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS table, note (6): VF = 3.5 V max. (unidirectional only)"'
+  reverse_voltage:
+    max: 15 V
+    src: 'p2 "ELECTRICAL CHARACTERISTICS table, row (+)SMBJ15A: Stand-off voltage VWM 15 V"'

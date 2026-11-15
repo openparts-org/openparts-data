@@ -3,65 +3,33 @@
 # Package reused: this revision's Product Dimensions drawing gives the
 # same numbers as standards/CHIP-BOURNS-SRR1260 (one drawing for the whole series).
 # lifecycle unknown: the datasheet makes no production-status statement.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
-id: "bourns/SRR1260-4R7Y"
-
+id: bourns/SRR1260-4R7Y
 manufacturer: bourns
-mpn: "SRR1260-4R7Y"
-
+mpn: SRR1260-4R7Y
 device: bourns/SRR1260-SERIES
 package: standards/CHIP-BOURNS-SRR1260
+sources: [bourns/SRR1260@rev03-26]
+source: bourns/SRR1260@rev03-26
 
 existence:
   status: verified
+  src: p1 "Electrical Specifications table, Part Number row "SRR1260-4R7Y""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - bourns/SRR1260@rev03-26
+lifecycle: { status: unknown }
 
 parameters:
   tolerance:
-    min: -30
-    max: 30
-    unit: "%"
+    tol: ±30 %
+    src: 'p1 "Electrical Specifications, SRR1260-4R7Y row: Inductance Tol. (%) ±30"'
   inductance:
-    nominal: 4.7
-    unit: µH
+    typ: 4.7 µH
+    src: 'p1 "Electrical Specifications, SRR1260-4R7Y row: Inductance (µH) 4.7"'
   rated_current:
-    max: 6.8
-    unit: A
+    max: 6.8 A
+    src: 'p1 "Electrical Specifications, SRR1260-4R7Y row: I rms Max. (A) 6.80 (General Specifications: temperature rise 40 °C typ. at rated I rms)"'
   saturation_current:
-    nominal: 7.0
-    unit: A
-  dcr:
-    max: 15.5
-    unit: mΩ
-
-provenance:
-  "/existence":
-    - source: bourns/SRR1260@rev03-26
-      page: 1
-      locator: "Electrical Specifications table, Part Number row \"SRR1260-4R7Y\""
-  "/parameters/tolerance":
-    - source: bourns/SRR1260@rev03-26
-      page: 1
-      locator: "Electrical Specifications, SRR1260-4R7Y row: Inductance Tol. (%) ±30"
-  "/parameters/inductance":
-    - source: bourns/SRR1260@rev03-26
-      page: 1
-      locator: "Electrical Specifications, SRR1260-4R7Y row: Inductance (µH) 4.7"
-  "/parameters/rated_current":
-    - source: bourns/SRR1260@rev03-26
-      page: 1
-      locator: "Electrical Specifications, SRR1260-4R7Y row: I rms Max. (A) 6.80 (General Specifications: temperature rise 40 °C typ. at rated I rms)"
-  "/parameters/saturation_current":
-    - source: bourns/SRR1260@rev03-26
-      page: 1
-      locator: "Electrical Specifications, SRR1260-4R7Y row: I sat Typ. (A) 7.00 (General Specifications: inductance drop 25 % typ. at I sat)"
-  "/parameters/dcr":
-    - source: bourns/SRR1260@rev03-26
-      page: 1
-      locator: "Electrical Specifications, SRR1260-4R7Y row: RDC Max. (mΩ) 15.5"
+    typ: 7 A
+    src: 'p1 "Electrical Specifications, SRR1260-4R7Y row: I sat Typ. (A) 7.00 (General Specifications: inductance drop 25 % typ. at I sat)"'
+  dcr: { max: 15.5 mΩ, src: 'p1 "Electrical Specifications, SRR1260-4R7Y row: RDC Max. (mΩ) 15.5"' }

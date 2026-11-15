@@ -9,15 +9,12 @@
 # used for this dataset's other Microchip parts, extracted cleanly as
 # real text -- no rotated diagram or undecodable embedded font was hit
 # here).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: nordic/4413_417@v1.11
-
-publisher: nordic
-document_id: "4413_417"
-document_type: datasheet
-
+url: https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6469/NRF52840-DK.pdf
+date: 2024-10-01
 revision: "1.11"
-date: "2024-10-01"
-
-url: "https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6469/NRF52840-DK.pdf"
+publisher: nordic
+document_id: 4413_417
+document_type: datasheet

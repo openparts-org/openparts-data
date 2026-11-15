@@ -1,22 +1,16 @@
 # 1.37 kOhm +/-0.1%, 1206 RT series. Listed at Future Electronics.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: yageo/RT1206BRD071K37L
-
 manufacturer: yageo
 mpn: RT1206BRD071K37L
-
 device: yageo/RT1206-GENERAL-PURPOSE
 package: standards/CHIP1206-RC
+sources: [yageo/RT-SERIES-V1]
+source: yageo/RT-SERIES-V1
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - yageo/RT-SERIES-V1
+existence: { status: verified }
+lifecycle: { status: active }
 
 # Parameters from the ordering-code table, which maps each code
 # explicitly: B = ±0.1%, D = ±25 ppm/°C, 1K37 = 1.37 kΩ (R/K/M as the
@@ -24,28 +18,10 @@ sources:
 # per operation mode (precision/standard/power) and the ordering code
 # does not map to a mode.
 parameters:
+  tolerance: { tol: ±0.1 %, src: 'p2 "ORDERING INFORMATION, (2) TOLERANCE: B = ±0.1%"' }
   resistance:
-    nominal: 1.37
-    unit: kΩ
-  tolerance:
-    min: -0.1
-    max: 0.1
-    unit: "%"
+    typ: 1.37 kΩ
+    src: 'p2 "ORDERING INFORMATION, (6) RESISTANCE VALUE: 5R6, 56R, 560R, 5K6, 56K, 1M (letter = decimal point and multiplier) -> 1K37 = 1.37 kΩ"'
   temperature_coefficient:
-    min: -25
-    max: 25
-    unit: ppm/°C
-
-provenance:
-  "/parameters/resistance":
-    - source: yageo/RT-SERIES-V1
-      page: 2
-      locator: "ORDERING INFORMATION, (6) RESISTANCE VALUE: 5R6, 56R, 560R, 5K6, 56K, 1M (letter = decimal point and multiplier) -> 1K37 = 1.37 kΩ"
-  "/parameters/tolerance":
-    - source: yageo/RT-SERIES-V1
-      page: 2
-      locator: "ORDERING INFORMATION, (2) TOLERANCE: B = ±0.1%"
-  "/parameters/temperature_coefficient":
-    - source: yageo/RT-SERIES-V1
-      page: 2
-      locator: "ORDERING INFORMATION, (4) TEMPERATURE CHARACTERISTIC OF RESISTANCE: D = ±25 ppm/°C"
+    tol: ±25 ppm/°C
+    src: 'p2 "ORDERING INFORMATION, (4) TEMPERATURE CHARACTERISTIC OF RESISTANCE: D = ±25 ppm/°C"'

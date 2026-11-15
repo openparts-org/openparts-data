@@ -24,120 +24,65 @@
 # offset = 2.860 - 2.225 = 0.635 (nominal only; flagged for review).
 # Left out: A1 (tab thickness 1.150-1.420), b2 (lead shoulder), D2/E1/
 # H1 (back-side tab outline), L1/L2/Q1 and the "Ref." detail values.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/aos/TO220-10.03x4.45-P2.54-PO-00015
-
 family: to220
 lead_count: 3
+source: aos/PO-00015
 
-pitch:
-  nominal: 2.54
-  unit: mm
+pitch: { typ: 2.54 mm, src: 'p1 "DIMENSION IN MM table, "e" "2.54BSC"; TOP VIEW "2X e""' }
+geometry: { type: parametric, generator: to220 }
 
 dimensions:
   body_width:
-    nominal: 10.03
-    min: 9.66
-    max: 10.54
-    unit: mm
+    min: 9.66 mm
+    typ: 10.03 mm
+    max: 10.54 mm
+    src: p1 "DIMENSION IN MM table, "E" (9.660 / 10.030 / 10.540), TOP VIEW body width"
   body_length:
-    nominal: 4.45
-    min: 4.3
-    max: 4.77
-    unit: mm
+    min: 4.3 mm
+    typ: 4.45 mm
+    max: 4.77 mm
+    src: p1 "DIMENSION IN MM table, "A" (4.300 / 4.450 / 4.770), SIDE VIEW body front to tab back"
   body_height:
-    nominal: 9.14
-    min: 8.5
-    max: 9.65
-    unit: mm
-  overall_height:
-    nominal: 15.44
-    min: 14.5
-    max: 15.8
-    unit: mm
-  lead_width:
-    nominal: 0.81
-    min: 0.69
-    max: 0.96
-    unit: mm
-  lead_thickness:
-    nominal: 0.38
-    min: 0.3
-    max: 0.6
-    unit: mm
-  tail_length:
-    nominal: 12.82
-    min: 12.27
-    max: 14.27
-    unit: mm
-  mounting_hole_diameter:
-    nominal: 3.84
-    min: 3.5
-    max: 3.99
-    unit: mm
-  mounting_hole_inset:
-    nominal: 2.74
-    min: 2.54
-    max: 2.94
-    unit: mm
-  hole_diameter:
-    nominal: 1.04
-    unit: mm
+    min: 8.5 mm
+    typ: 9.14 mm
+    max: 9.65 mm
+    src: p1 "DIMENSION IN MM table, "D1" (8.500 / 9.140 / 9.650), SIDE VIEW molded body height"
   body_offset:
-    nominal: 0.635
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: to220
-
-provenance:
-  "/pitch":
-    - source: aos/PO-00015
-      page: 1
-      locator: "DIMENSION IN MM table, \"e\" \"2.54BSC\"; TOP VIEW \"2X e\""
-  "/dimensions/body_width":
-    - source: aos/PO-00015
-      page: 1
-      locator: "DIMENSION IN MM table, \"E\" (9.660 / 10.030 / 10.540), TOP VIEW body width"
-  "/dimensions/body_length":
-    - source: aos/PO-00015
-      page: 1
-      locator: "DIMENSION IN MM table, \"A\" (4.300 / 4.450 / 4.770), SIDE VIEW body front to tab back"
-  "/dimensions/body_height":
-    - source: aos/PO-00015
-      page: 1
-      locator: "DIMENSION IN MM table, \"D1\" (8.500 / 9.140 / 9.650), SIDE VIEW molded body height"
-  "/dimensions/overall_height":
-    - source: aos/PO-00015
-      page: 1
-      locator: "DIMENSION IN MM table, \"D\" (14.500 / 15.440 / 15.800), TOP VIEW tab top to body underside"
-  "/dimensions/lead_width":
-    - source: aos/PO-00015
-      page: 1
-      locator: "DIMENSION IN MM table, \"b\" (0.690 / 0.810 / 0.960)"
-  "/dimensions/lead_thickness":
-    - source: aos/PO-00015
-      page: 1
-      locator: "DIMENSION IN MM table, \"c\" (0.300 / 0.380 / 0.600)"
-  "/dimensions/tail_length":
-    - source: aos/PO-00015
-      page: 1
-      locator: "DIMENSION IN MM table, \"L\" (12.270 / 12.820 / 14.270), TOP VIEW datum C (body underside) to lead tip"
-  "/dimensions/mounting_hole_diameter":
-    - source: aos/PO-00015
-      page: 1
-      locator: "DIMENSION IN MM table, \"OP\" (3.500 / 3.840 / 3.990)"
-  "/dimensions/mounting_hole_inset":
-    - source: aos/PO-00015
-      page: 1
-      locator: "DIMENSION IN MM table, \"Q\" (2.540 / 2.740 / 2.940), SIDE VIEW tab top to hole centre line"
-  "/dimensions/hole_diameter":
-    - source: aos/PO-00015
-      page: 1
-      locator: "RECOMMENDATION OF HOLE PATTERN \"3X R0.52\" (radius) -> 2 x 0.52 = 1.04"
-  "/dimensions/body_offset":
-    - source: aos/PO-00015
-      page: 1
-      locator: "DIMENSION IN MM table nominals, SIDE VIEW: A2 2.670 (tab back to lead) + c/2 0.190 - A/2 2.225 = 0.635"
+    typ: 0.635 mm
+    src: 'p1 "DIMENSION IN MM table nominals, SIDE VIEW: A2 2.670 (tab back to lead) + c/2 0.190 - A/2 2.225 = 0.635"'
+  overall_height:
+    min: 14.5 mm
+    typ: 15.44 mm
+    max: 15.8 mm
+    src: p1 "DIMENSION IN MM table, "D" (14.500 / 15.440 / 15.800), TOP VIEW tab top to body underside"
+  lead_width:
+    min: 0.69 mm
+    typ: 0.81 mm
+    max: 0.96 mm
+    src: p1 "DIMENSION IN MM table, "b" (0.690 / 0.810 / 0.960)"
+  lead_thickness:
+    min: 0.3 mm
+    typ: 0.38 mm
+    max: 0.6 mm
+    src: p1 "DIMENSION IN MM table, "c" (0.300 / 0.380 / 0.600)"
+  hole_diameter:
+    typ: 1.04 mm
+    src: p1 "RECOMMENDATION OF HOLE PATTERN "3X R0.52" (radius) -> 2 x 0.52 = 1.04"
+  mounting_hole_diameter:
+    min: 3.5 mm
+    typ: 3.84 mm
+    max: 3.99 mm
+    src: p1 "DIMENSION IN MM table, "OP" (3.500 / 3.840 / 3.990)"
+  mounting_hole_inset:
+    min: 2.54 mm
+    typ: 2.74 mm
+    max: 2.94 mm
+    src: p1 "DIMENSION IN MM table, "Q" (2.540 / 2.740 / 2.940), SIDE VIEW tab top to hole centre line"
+  tail_length:
+    min: 12.27 mm
+    typ: 12.82 mm
+    max: 14.27 mm
+    src: p1 "DIMENSION IN MM table, "L" (12.270 / 12.820 / 14.270), TOP VIEW datum C (body underside) to lead tip"

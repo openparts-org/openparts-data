@@ -18,102 +18,62 @@
 # numbers the bottom-left lead "1" and bottom-right "2".
 # Left out: reference values (0.29), (0.94), (0.56) -- parenthesised in
 # the drawing, not in the table; the land pattern.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/onsemi/SOT23-2.92x1.40-P1.90-527AG
-
 family: sot
 lead_count: 3
-lead_layout: [2, 1]
+
+lead_layout:
+  value: [2, 1]
+  src:   'p5 "CASE 527AG TOP VIEW: two leads (numbered 1, 2) on the bottom edge, one lead on the top edge"'
+
+source: onsemi/FDN340P-D
 
 pitch:
-  nominal: 1.90
-  unit: mm
+  typ: 1.9 mm
+  src: p5 "CASE 527AG table, DIM "e1" "1.90 BSC" (pins 1-2 spacing in the TOP VIEW)"
+
+geometry: { type: parametric, generator: sot }
 
 dimensions:
   body_width:
-    nominal: 2.92
-    min: 2.80
-    max: 3.04
-    unit: mm
+    min: 2.8 mm
+    typ: 2.92 mm
+    max: 3.04 mm
+    src: p5 "CASE 527AG table, DIM "D" (2.80 / 2.92 / 3.04)"
   body_length:
-    nominal: 1.40
-    min: 1.20
-    max: 1.52
-    unit: mm
+    min: 1.2 mm
+    typ: 1.4 mm
+    max: 1.52 mm
+    src: p5 "CASE 527AG table, DIM "E1" (1.20 / 1.40 / 1.52), body across the lead rows"
   body_height:
-    nominal: 0.95
-    min: 0.85
-    max: 1.12
-    unit: mm
-  overall_length:
-    nominal: 2.51
-    min: 2.31
-    max: 2.71
-    unit: mm
-  standoff:
-    nominal: 0.05
-    min: 0.00
-    max: 0.10
-    unit: mm
-  lead_width:
-    nominal: 0.435
-    min: 0.370
-    max: 0.508
-    unit: mm
-  lead_length:
-    nominal: 0.38
-    min: 0.33
-    max: 0.43
-    unit: mm
+    min: 0.85 mm
+    typ: 0.95 mm
+    max: 1.12 mm
+    src: p5 "CASE 527AG table, DIM "A" (0.85 / 0.95 / 1.12); no A2 in the table"
   lead_thickness:
-    nominal: 0.150
-    min: 0.085
-    max: 0.180
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: sot
-
-provenance:
-  "/lead_layout":
-    - source: onsemi/FDN340P-D
-      page: 5
-      locator: "CASE 527AG TOP VIEW: two leads (numbered 1, 2) on the bottom edge, one lead on the top edge"
-  "/pitch":
-    - source: onsemi/FDN340P-D
-      page: 5
-      locator: "CASE 527AG table, DIM \"e1\" \"1.90 BSC\" (pins 1-2 spacing in the TOP VIEW)"
-  "/dimensions/body_width":
-    - source: onsemi/FDN340P-D
-      page: 5
-      locator: "CASE 527AG table, DIM \"D\" (2.80 / 2.92 / 3.04)"
-  "/dimensions/body_length":
-    - source: onsemi/FDN340P-D
-      page: 5
-      locator: "CASE 527AG table, DIM \"E1\" (1.20 / 1.40 / 1.52), body across the lead rows"
-  "/dimensions/body_height":
-    - source: onsemi/FDN340P-D
-      page: 5
-      locator: "CASE 527AG table, DIM \"A\" (0.85 / 0.95 / 1.12); no A2 in the table"
-  "/dimensions/overall_length":
-    - source: onsemi/FDN340P-D
-      page: 5
-      locator: "CASE 527AG table, DIM \"E\" (2.31 / 2.51 / 2.71), lead-tip span in the TOP VIEW"
-  "/dimensions/standoff":
-    - source: onsemi/FDN340P-D
-      page: 5
-      locator: "CASE 527AG table, DIM \"A1\" (0.00 / 0.05 / 0.10)"
-  "/dimensions/lead_width":
-    - source: onsemi/FDN340P-D
-      page: 5
-      locator: "CASE 527AG table, DIM \"b\" (0.370 / 0.435 / 0.508)"
-  "/dimensions/lead_length":
-    - source: onsemi/FDN340P-D
-      page: 5
-      locator: "CASE 527AG table, DIM \"L\" (0.33 / 0.38 / 0.43), foot in DETAIL A"
-  "/dimensions/lead_thickness":
-    - source: onsemi/FDN340P-D
-      page: 5
-      locator: "CASE 527AG table, DIM \"c\" (0.085 / 0.150 / 0.180)"
+    min: 0.085 mm
+    typ: 0.15 mm
+    max: 0.18 mm
+    src: p5 "CASE 527AG table, DIM "c" (0.085 / 0.150 / 0.180)"
+  overall_length:
+    min: 2.31 mm
+    typ: 2.51 mm
+    max: 2.71 mm
+    src: p5 "CASE 527AG table, DIM "E" (2.31 / 2.51 / 2.71), lead-tip span in the TOP VIEW"
+  standoff:
+    min: 0 mm
+    typ: 0.05 mm
+    max: 0.1 mm
+    src: p5 "CASE 527AG table, DIM "A1" (0.00 / 0.05 / 0.10)"
+  lead_width:
+    min: 0.37 mm
+    typ: 0.435 mm
+    max: 0.508 mm
+    src: p5 "CASE 527AG table, DIM "b" (0.370 / 0.435 / 0.508)"
+  lead_length:
+    min: 0.33 mm
+    typ: 0.38 mm
+    max: 0.43 mm
+    src: p5 "CASE 527AG table, DIM "L" (0.33 / 0.38 / 0.43), foot in DETAIL A"

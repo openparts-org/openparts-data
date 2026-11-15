@@ -21,100 +21,55 @@
 # where the table has no nominal only min/max are recorded.
 # Read from onsemi's identical Rev. 8 file at onsemi.cn (the onsemi.com URL
 # returned Access Denied). body_height above is already the drawing's A.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/SOT23-2.90x1.30-P1.90
-
 family: sot
 lead_count: 3
 lead_layout: [2, 1]
+source: onsemi/2N7002E-D
 
-pitch:
-  nominal: 1.90
-  min: 1.78
-  max: 2.04
-  unit: mm
+pitch: { min: 1.78 mm, typ: 1.9 mm, max: 2.04 mm, src: 'p6 "PACKAGE DIMENSIONS table, symbol "e""' }
+geometry: { type: parametric, generator: sot }
 
 dimensions:
-  body_length:
-    nominal: 1.30
-    min: 1.20
-    max: 1.40
-    unit: mm
   body_width:
-    nominal: 2.90
-    min: 2.80
-    max: 3.04
-    unit: mm
+    min: 2.8 mm
+    typ: 2.9 mm
+    max: 3.04 mm
+    src: p6 "PACKAGE DIMENSIONS table, symbol "D" -- see field-mapping note above for why D (not E) is body_width for this generator"
+  body_length:
+    min: 1.2 mm
+    typ: 1.3 mm
+    max: 1.4 mm
+    src: p6 "PACKAGE DIMENSIONS table, symbol "E" -- see field-mapping note above for why E (not D) is body_length for this generator"
   body_height:
-    nominal: 1.00
-    min: 0.89
-    max: 1.11
-    unit: mm
-  overall_length:
-    nominal: 2.4
-    min: 2.1
-    max: 2.64
-    unit: mm
-  standoff:
-    nominal: 0.06
-    min: 0.01
-    max: 0.1
-    unit: mm
-  lead_width:
-    nominal: 0.44
-    min: 0.37
-    max: 0.5
-    unit: mm
-  lead_length:
-    nominal: 0.43
-    min: 0.3
-    max: 0.55
-    unit: mm
+    min: 0.89 mm
+    typ: 1 mm
+    max: 1.11 mm
+    src: p6 "PACKAGE DIMENSIONS table, symbol "A""
   lead_thickness:
-    nominal: 0.14
-    min: 0.08
-    max: 0.2
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: sot
-
-provenance:
-  "/pitch":
-    - source: onsemi/2N7002E-D
-      page: 6
-      locator: "PACKAGE DIMENSIONS table, symbol \"e\""
-  "/dimensions/body_length":
-    - source: onsemi/2N7002E-D
-      page: 6
-      locator: "PACKAGE DIMENSIONS table, symbol \"E\" -- see field-mapping note above for why E (not D) is body_length for this generator"
-  "/dimensions/body_width":
-    - source: onsemi/2N7002E-D
-      page: 6
-      locator: "PACKAGE DIMENSIONS table, symbol \"D\" -- see field-mapping note above for why D (not E) is body_width for this generator"
-  "/dimensions/body_height":
-    - source: onsemi/2N7002E-D
-      page: 6
-      locator: "PACKAGE DIMENSIONS table, symbol \"A\""
-  "/dimensions/overall_length":
-    - source: onsemi/2N7002E-D
-      page: 6
-      locator: "PACKAGE DIMENSIONS table (CASE 318 ISSUE AU), symbol \"HE\" -- the leads exit across body_length (E), see field-mapping note above"
-  "/dimensions/standoff":
-    - source: onsemi/2N7002E-D
-      page: 6
-      locator: "PACKAGE DIMENSIONS table (CASE 318 ISSUE AU), symbol \"A1\""
-  "/dimensions/lead_width":
-    - source: onsemi/2N7002E-D
-      page: 6
-      locator: "PACKAGE DIMENSIONS table (CASE 318 ISSUE AU), symbol \"b\""
-  "/dimensions/lead_length":
-    - source: onsemi/2N7002E-D
-      page: 6
-      locator: "PACKAGE DIMENSIONS table (CASE 318 ISSUE AU), symbol \"L\""
-  "/dimensions/lead_thickness":
-    - source: onsemi/2N7002E-D
-      page: 6
-      locator: "PACKAGE DIMENSIONS table (CASE 318 ISSUE AU), symbol \"c\""
+    min: 0.08 mm
+    typ: 0.14 mm
+    max: 0.2 mm
+    src: p6 "PACKAGE DIMENSIONS table (CASE 318 ISSUE AU), symbol "c""
+  overall_length:
+    min: 2.1 mm
+    typ: 2.4 mm
+    max: 2.64 mm
+    src: p6 "PACKAGE DIMENSIONS table (CASE 318 ISSUE AU), symbol "HE" -- the leads exit across body_length (E), see field-mapping note above"
+  standoff:
+    min: 0.01 mm
+    typ: 0.06 mm
+    max: 0.1 mm
+    src: p6 "PACKAGE DIMENSIONS table (CASE 318 ISSUE AU), symbol "A1""
+  lead_width:
+    min: 0.37 mm
+    typ: 0.44 mm
+    max: 0.5 mm
+    src: p6 "PACKAGE DIMENSIONS table (CASE 318 ISSUE AU), symbol "b""
+  lead_length:
+    min: 0.3 mm
+    typ: 0.43 mm
+    max: 0.55 mm
+    src: p6 "PACKAGE DIMENSIONS table (CASE 318 ISSUE AU), symbol "L""

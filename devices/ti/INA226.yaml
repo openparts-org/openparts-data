@@ -6,15 +6,18 @@
 # "Power supply, 2.7V to 5.5V."). SCL ("Digital input", "Serial bus
 # clock line") is typed clock; Alert (open-drain "Digital output") output.
 # The datasheet's minus sign in IN- is written as ASCII "-".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/INA226
-
 manufacturer: ti
 category: power_monitor
 family: INA226
+source: ti/SBOS547C
 
 pins:
+  src:
+    - p3 "Table 4-1 "Pin Functions""
+    - p3 "Figure 4-1 "DGS Package 10-Pin VSSOP Top View" (cross-check, all 10 pins matched)"
   "1":  { name: A1, type: input }
   "2":  { name: A0, type: input }
   "3":  { name: Alert, type: output }
@@ -23,14 +26,5 @@ pins:
   "6":  { name: VS, type: power }
   "7":  { name: GND, type: ground }
   "8":  { name: VBUS, type: analog }
-  "9":  { name: "IN-", type: analog }
-  "10": { name: "IN+", type: analog }
-
-provenance:
-  "/pins":
-    - source: ti/SBOS547C
-      page: 3
-      locator: "Table 4-1 \"Pin Functions\""
-    - source: ti/SBOS547C
-      page: 3
-      locator: "Figure 4-1 \"DGS Package 10-Pin VSSOP Top View\" (cross-check, all 10 pins matched)"
+  "9":  { name: IN-, type: analog }
+  "10": { name: IN+, type: analog }

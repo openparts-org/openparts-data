@@ -2,47 +2,28 @@
 # Pins
 # from the page-1 symbol ("1 CATHODE", "2 ANODE") and CASE 477 STYLE 1
 # (page 3).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/NSR0320MW2
-
 manufacturer: onsemi
 category: diode
 family: NSR0320MW2
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: onsemi/NSR0320MW2T1-D
 
 parameters:
-  reverse_voltage:
-    max: 20
-    unit: V
-  forward_current:
-    max: 1
-    unit: A
   forward_voltage:
-    nominal: 0.45
-    max: 0.5
-    unit: V
+    typ: 0.45 V
+    max: 0.5 V
+    at: { IF: 900 mA }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Forward Voltage VF: Typ 0.45 V, Max 0.50 V (highest listed test current)"'
+  reverse_voltage: { max: 20 V, src: 'p1 "MAXIMUM RATINGS, Reverse Voltage VR: 20 Vdc"' }
+  forward_current:
+    max: 1 A
+    src: 'p1 "MAXIMUM RATINGS, Forward Current (DC) IF, Continuous: 1 A"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: onsemi/NSR0320MW2T1-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Reverse Voltage VR: 20 Vdc"
-  "/parameters/forward_current":
-    - source: onsemi/NSR0320MW2T1-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Forward Current (DC) IF, Continuous: 1 A"
-  "/parameters/forward_voltage":
-    - source: onsemi/NSR0320MW2T1-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Forward Voltage VF (IF = 900 mA): Typ 0.45 V, Max 0.50 V (highest listed test current)"
-  "/pins":
-    - source: onsemi/NSR0320MW2T1-D
-      page: 1
-      locator: "Symbol: \"1 CATHODE\" / \"2 ANODE\""
-    - source: onsemi/NSR0320MW2T1-D
-      page: 3
-      locator: "CASE 477 STYLE 1: \"PIN 1. CATHODE (POLARITY BAND) 2. ANODE\""
+pins:
+  src:
+    - 'p1 "Symbol: "1 CATHODE" / "2 ANODE""'
+    - 'p3 "CASE 477 STYLE 1: "PIN 1. CATHODE (POLARITY BAND) 2. ANODE""'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

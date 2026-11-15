@@ -8,101 +8,47 @@
 # says 0.9 mm but the table gives A 0.80/0.85/0.90 -- the table is
 # used). lead_thickness = A3 "0.20 REF" (reference value). K (min 0.20)
 # not modelled.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/microchip/DFN6-2x2-P0.65-MAY-C04-120C
-
 family: dfn
-lead_count: 6
+lead_count: { value: 6, src: 'p26 "drawing C04-120C sheet 2 table, "Number of Pins N 6""' }
+source: microchip/DS20001826@revE
 
-pitch:
-  nominal: 0.65
-  unit: mm
+pitch: { typ: 0.65 mm, src: 'p26 "drawing C04-120C sheet 2 table, "Pitch e 0.65 BSC""' }
+geometry: { type: parametric, generator: dfn }
 
 dimensions:
   body_width:
-    nominal: 2.00
-    unit: mm
+    typ: 2 mm
+    src: p26 "drawing C04-120C sheet 2 table, "Overall Width E 2.00 BSC" (across the terminal rows, sheet 1 page 25)"
   body_length:
-    nominal: 2.00
-    unit: mm
+    typ: 2 mm
+    src: p26 "drawing C04-120C sheet 2 table, "Overall Length D 2.00 BSC" (along the terminal rows)"
   body_height:
-    nominal: 0.85
-    min: 0.80
-    max: 0.90
-    unit: mm
-  standoff:
-    nominal: 0.02
-    min: 0.00
-    max: 0.05
-    unit: mm
-  lead_width:
-    nominal: 0.30
-    min: 0.25
-    max: 0.35
-    unit: mm
-  lead_length:
-    nominal: 0.25
-    min: 0.20
-    max: 0.30
-    unit: mm
-  lead_thickness:
-    nominal: 0.20
-    unit: mm
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 0.9 mm
+    src: p26 "drawing C04-120C sheet 2 table, "Overall Height A 0.80 / 0.85 / 0.90""
   exposed_pad:
-    width:
-      nominal: 1.00
-      min: 0.90
-      max: 1.10
-      unit: mm
-    length:
-      nominal: 1.60
-      min: 1.50
-      max: 1.70
-      unit: mm
-
-geometry:
-  type: parametric
-  generator: dfn
-
-provenance:
-  "/lead_count":
-    - source: microchip/DS20001826@revE
-      page: 26
-      locator: "drawing C04-120C sheet 2 table, \"Number of Pins N 6\""
-  "/pitch":
-    - source: microchip/DS20001826@revE
-      page: 26
-      locator: "drawing C04-120C sheet 2 table, \"Pitch e 0.65 BSC\""
-  "/dimensions/body_width":
-    - source: microchip/DS20001826@revE
-      page: 26
-      locator: "drawing C04-120C sheet 2 table, \"Overall Width E 2.00 BSC\" (across the terminal rows, sheet 1 page 25)"
-  "/dimensions/body_length":
-    - source: microchip/DS20001826@revE
-      page: 26
-      locator: "drawing C04-120C sheet 2 table, \"Overall Length D 2.00 BSC\" (along the terminal rows)"
-  "/dimensions/body_height":
-    - source: microchip/DS20001826@revE
-      page: 26
-      locator: "drawing C04-120C sheet 2 table, \"Overall Height A 0.80 / 0.85 / 0.90\""
-  "/dimensions/standoff":
-    - source: microchip/DS20001826@revE
-      page: 26
-      locator: "drawing C04-120C sheet 2 table, \"Standoff A1 0.00 / 0.02 / 0.05\""
-  "/dimensions/lead_width":
-    - source: microchip/DS20001826@revE
-      page: 26
-      locator: "drawing C04-120C sheet 2 table, \"Contact Width b 0.25 / 0.30 / 0.35\""
-  "/dimensions/lead_length":
-    - source: microchip/DS20001826@revE
-      page: 26
-      locator: "drawing C04-120C sheet 2 table, \"Contact Length L 0.20 / 0.25 / 0.30\""
-  "/dimensions/lead_thickness":
-    - source: microchip/DS20001826@revE
-      page: 26
-      locator: "drawing C04-120C sheet 2 table, \"Contact Thickness A3 0.20 REF\" (reference value)"
-  "/dimensions/exposed_pad":
-    - source: microchip/DS20001826@revE
-      page: 26
-      locator: "drawing C04-120C sheet 2 table, \"Exposed Pad Width E2 0.90 / 1.00 / 1.10\" (across the rows) and \"Exposed Pad Length D2 1.50 / 1.60 / 1.70\" (along the rows)"
+    src:    p26 "drawing C04-120C sheet 2 table, "Exposed Pad Width E2 0.90 / 1.00 / 1.10" (across the rows) and "Exposed Pad Length D2 1.50 / 1.60 / 1.70" (along the rows)"
+    width:  { min: 0.9 mm, typ: 1 mm, max: 1.1 mm }
+    length: { min: 1.5 mm, typ: 1.6 mm, max: 1.7 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p26 "drawing C04-120C sheet 2 table, "Standoff A1 0.00 / 0.02 / 0.05""
+  lead_width:
+    min: 0.25 mm
+    typ: 0.3 mm
+    max: 0.35 mm
+    src: p26 "drawing C04-120C sheet 2 table, "Contact Width b 0.25 / 0.30 / 0.35""
+  lead_length:
+    min: 0.2 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p26 "drawing C04-120C sheet 2 table, "Contact Length L 0.20 / 0.25 / 0.30""
+  lead_thickness:
+    typ: 0.2 mm
+    src: p26 "drawing C04-120C sheet 2 table, "Contact Thickness A3 0.20 REF" (reference value)"

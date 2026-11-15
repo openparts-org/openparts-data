@@ -6,15 +6,12 @@
 # cited are PDF page indices (= printed "n of N").
 # Footers on every page read "October 2017" (copyright line "(c) Diodes
 # Incorporated", no year).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: diodes/DS18010
-
+url: https://www.diodes.com/datasheet/download/MMSZ5231B.pdf
+date: 2017-10
+revision: 28-2
 publisher: diodes
 document_id: DS18010
 document_type: datasheet
-
-revision: "28-2"
-date: "2017-10"
-
-url: "https://www.diodes.com/datasheet/download/MMSZ5231B.pdf"

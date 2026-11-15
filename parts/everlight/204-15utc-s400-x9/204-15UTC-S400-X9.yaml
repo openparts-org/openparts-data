@@ -1,45 +1,27 @@
 # 3mm round THT white LED. Listed at LCSC, Mouser and Arrow. The slash
 # is part of the MPN as published, same as the existing 7343 series.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: everlight/204-15UTC/S400-X9
-
 manufacturer: everlight
 mpn: 204-15UTC/S400-X9
-
 device: everlight/204-SERIES
 package: standards/RADIAL-204-EVERLIGHT
+sources: [everlight/DLE-0004797]
+source: everlight/DLE-0004797
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - everlight/DLE-0004797
+existence: { status: verified }
+lifecycle: { status: active }
 
 parameters:
+  forward_voltage:
+    min: 2.8 V
+    max: 3.6 V
+    at: { IF: 20 mA }
+    src: 'p2 "Electro-Optical Characteristics, Forward Voltage VF: Min. 2.8 V, Max. 3.6 V"'
+  forward_current:
+    max: 30 mA
+    src: 'p2 "Absolute Maximum Ratings, Continuous Forward Current IF: 30 mA"'
   color:
     value: white
-  forward_voltage:
-    min: 2.8
-    max: 3.6
-    unit: V
-  forward_current:
-    max: 30
-    unit: mA
-
-provenance:
-  "/parameters/color":
-    - source: everlight/DLE-0004797
-      page: 2
-      locator: "Device Selection Guide: Chip InGaN, Emitted Color White, Resin Water Clear"
-  "/parameters/forward_voltage":
-    - source: everlight/DLE-0004797
-      page: 2
-      locator: "Electro-Optical Characteristics, Forward Voltage VF @ IF=20mA: Min. 2.8 V, Max. 3.6 V"
-  "/parameters/forward_current":
-    - source: everlight/DLE-0004797
-      page: 2
-      locator: "Absolute Maximum Ratings, Continuous Forward Current IF: 30 mA"
+    src: 'p2 "Device Selection Guide: Chip InGaN, Emitted Color White, Resin Water Clear"'

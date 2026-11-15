@@ -1,27 +1,18 @@
 # BAT54WS-7-F: printed verbatim in the ordering table (verified).
 # Package: manufacturers/diodes/SOD323-1.70x1.30-DS30098 (outline read from DS30098).
 # No lifecycle statement in the datasheet: lifecycle unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: diodes/BAT54WS-7-F
-
 manufacturer: diodes
 mpn: BAT54WS-7-F
-
 device: diodes/BAT54WS
 package: manufacturers/diodes/SOD323-1.70x1.30-DS30098
+sources: [diodes/DS30098]
+source: diodes/DS30098
 
 existence:
   status: verified
+  src: p1 "Ordering Information table row "BAT54WS-7-F | SOD323 | 3000 | Tape & Reel""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - diodes/DS30098
-
-provenance:
-  "/existence":
-    - source: diodes/DS30098
-      page: 1
-      locator: "Ordering Information table row \"BAT54WS-7-F | SOD323 | 3000 | Tape & Reel\""
+lifecycle: { status: unknown }

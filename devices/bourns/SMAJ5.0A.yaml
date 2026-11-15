@@ -3,36 +3,24 @@
 # from Physical Specifications (page 3): "Cathode band indicates
 # unidirectional device". Pin 1 = cathode (banded end) per this
 # dataset's diode convention.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: bourns/SMAJ5.0A
-
 manufacturer: bourns
 category: diode
 family: SMAJ
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: bourns/SMAJ
 
 parameters:
-  reverse_voltage:
-    max: 5.0
-    unit: V
   forward_voltage:
-    max: 3.5
-    unit: V
+    max: 3.5 V
+    at: { IPP: 35 A }
+    src: 'p1 "Maximum Instantaneous Forward Voltage (For Unidirectional Units Only), SMAJ5.0A ~ SMAJ90A: VF 3.5 Volts"'
+  reverse_voltage:
+    max: 5 V
+    src: 'p2 "Electrical Characteristics, row SMAJ5.0A (Marking HE): Working Peak Reverse Voltage VRWM 5.0 V"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: bourns/SMAJ
-      page: 2
-      locator: "Electrical Characteristics, row SMAJ5.0A (Marking HE): Working Peak Reverse Voltage VRWM 5.0 V"
-  "/parameters/forward_voltage":
-    - source: bourns/SMAJ
-      page: 1
-      locator: "Maximum Instantaneous Forward Voltage @ IPP = 35 A (For Unidirectional Units Only), SMAJ5.0A ~ SMAJ90A: VF 3.5 Volts"
-  "/pins":
-    - source: bourns/SMAJ
-      page: 3
-      locator: "Physical Specifications, \"Polarity ... Cathode band indicates unidirectional device\""
+pins:
+  src: p3 "Physical Specifications, "Polarity ... Cathode band indicates unidirectional device""
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

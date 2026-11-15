@@ -1,15 +1,12 @@
 # ESP32-H2 Series Datasheet v1.3 (Revision History, PDF page 67:
 # "2026-07-03 v1.3"), read from Espressif's own documentation host.
 # PDF page indices equal the printed page numbers in this document.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: espressif/esp32-h2_datasheet_en@rev1.3
-
+url: https://documentation.espressif.com/esp32-h2_datasheet_en.pdf
+date: 2026-07-03
+revision: "1.3"
 publisher: espressif
 document_id: esp32-h2_datasheet_en
 document_type: datasheet
-
-revision: "1.3"
-date: "2026-07-03"
-
-url: "https://documentation.espressif.com/esp32-h2_datasheet_en.pdf"

@@ -5,38 +5,26 @@
 # Package: TSSOP (PW), outline PW0016A (4220204/B) on page 33 ->
 # standards/TSSOP16-4.4x5.0-P0.65-TI-PW. Its pdftotext text matches the outline page the package
 # was read from (ti/SCLS041J page 34) line for line, so the package is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/TRS3232EIPWR
-
 manufacturer: ti
 mpn: TRS3232EIPWR
-
 device: ti/TRS3232E
-package: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+
+package:
+  value: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+  src:
+    - p18 "PACKAGE OPTION ADDENDUM, row TRS3232EIPWR, Package column "TSSOP (PW)""
+    - p33 "PACKAGE OUTLINE PW0016A (4220204/B)"
+
+sources: [ti/SLLS790E]
+source: ti/SLLS790E
 
 existence:
   status: verified
+  src: p18 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TRS3232EIPWR"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLLS790E
-
-provenance:
-  "/existence":
-    - source: ti/SLLS790E
-      page: 18
-      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row TRS3232EIPWR"
-  "/lifecycle":
-    - source: ti/SLLS790E
-      page: 18
-      locator: "PACKAGE OPTION ADDENDUM, row TRS3232EIPWR, Status column \"Active\""
-  "/package":
-    - source: ti/SLLS790E
-      page: 18
-      locator: "PACKAGE OPTION ADDENDUM, row TRS3232EIPWR, Package column \"TSSOP (PW)\""
-    - source: ti/SLLS790E
-      page: 33
-      locator: "PACKAGE OUTLINE PW0016A (4220204/B)"
+  src: p18 "PACKAGE OPTION ADDENDUM, row TRS3232EIPWR, Status column "Active""

@@ -18,90 +18,51 @@
 # was read from the same page and is deleted in this change.
 # construction: molded -- page 1 MECHANICAL DATA "Molding compound meets
 # UL 94 V-0 flammability rating".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/DO214AC-VISHAY-88711
-
 family: do214
 lead_count: 2
+source: vishay/88711
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+
+construction:
+  value: molded
+  src: 'p1 "MECHANICAL DATA: "Molding compound meets UL 94 V-0 flammability rating""'
+
+geometry: { type: parametric, generator: do214 }
 
 dimensions:
-  body_length:
-    min: 3.99
-    max: 4.5
-    unit: mm
   body_width:
-    min: 2.54
-    max: 2.79
-    unit: mm
+    min: 2.54 mm
+    max: 2.79 mm
+    src: p3 "DO-214AC (SMA) top view, body width 0.110 (2.79) / 0.100 (2.54) -- min/max only"
+  body_length:
+    min: 3.99 mm
+    max: 4.5 mm
+    src: p3 "DO-214AC (SMA) top view, body length 0.177 (4.50) / 0.157 (3.99) -- min/max only"
   body_height:
-    min: 1.98
-    max: 2.29
-    unit: mm
-  overall_length:
-    min: 4.93
-    max: 5.28
-    unit: mm
-  lead_width:
-    min: 1.25
-    max: 1.65
-    unit: mm
-  lead_length:
-    min: 0.76
-    max: 1.52
-    unit: mm
+    min: 1.98 mm
+    max: 2.29 mm
+    src: p3 "DO-214AC (SMA) side view, seating plane to body top 0.090 (2.29) / 0.078 (1.98) -- min/max only"
   lead_thickness:
-    min: 0.152
-    max: 0.305
-    unit: mm
+    min: 0.152 mm
+    max: 0.305 mm
+    src: p3 "DO-214AC (SMA) side view, lead thickness 0.012 (0.305) / 0.006 (0.152)"
+  overall_length:
+    min: 4.93 mm
+    max: 5.28 mm
+    src: p3 "DO-214AC (SMA) side view, lead tip to lead tip 0.208 (5.28) / 0.194 (4.93)"
   standoff:
-    min: 0.0
-    max: 0.203
-    unit: mm
-
-construction: molded
-
-geometry:
-  type: parametric
-  generator: do214
-
-provenance:
-  "/construction":
-    - source: vishay/88711
-      page: 1
-      locator: "MECHANICAL DATA: \"Molding compound meets UL 94 V-0 flammability rating\""
-  "/dimensions/body_length":
-    - source: vishay/88711
-      page: 3
-      locator: "DO-214AC (SMA) top view, body length 0.177 (4.50) / 0.157 (3.99) -- min/max only"
-  "/dimensions/body_width":
-    - source: vishay/88711
-      page: 3
-      locator: "DO-214AC (SMA) top view, body width 0.110 (2.79) / 0.100 (2.54) -- min/max only"
-  "/dimensions/body_height":
-    - source: vishay/88711
-      page: 3
-      locator: "DO-214AC (SMA) side view, seating plane to body top 0.090 (2.29) / 0.078 (1.98) -- min/max only"
-  "/dimensions/overall_length":
-    - source: vishay/88711
-      page: 3
-      locator: "DO-214AC (SMA) side view, lead tip to lead tip 0.208 (5.28) / 0.194 (4.93)"
-  "/dimensions/lead_width":
-    - source: vishay/88711
-      page: 3
-      locator: "DO-214AC (SMA) top view, terminal width 0.065 (1.65) / 0.049 (1.25)"
-  "/dimensions/lead_length":
-    - source: vishay/88711
-      page: 3
-      locator: "DO-214AC (SMA) side view, folded foot 0.060 (1.52) / 0.030 (0.76)"
-  "/dimensions/lead_thickness":
-    - source: vishay/88711
-      page: 3
-      locator: "DO-214AC (SMA) side view, lead thickness 0.012 (0.305) / 0.006 (0.152)"
-  "/dimensions/standoff":
-    - source: vishay/88711
-      page: 3
-      locator: "DO-214AC (SMA) side view, body underside to seating plane 0.008 (0.203) / 0 (0)"
+    min: 0 mm
+    max: 0.203 mm
+    src: p3 "DO-214AC (SMA) side view, body underside to seating plane 0.008 (0.203) / 0 (0)"
+  lead_width:
+    min: 1.25 mm
+    max: 1.65 mm
+    src: p3 "DO-214AC (SMA) top view, terminal width 0.065 (1.65) / 0.049 (1.25)"
+  lead_length:
+    min: 0.76 mm
+    max: 1.52 mm
+    src: p3 "DO-214AC (SMA) side view, folded foot 0.060 (1.52) / 0.030 (0.76)"

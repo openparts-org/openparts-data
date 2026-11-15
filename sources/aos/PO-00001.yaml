@@ -2,15 +2,12 @@
 # page), linked from aosmd.com/packaging -> SOT23. The drawing prints
 # no date; `date` below is the PDF's own metadata CreationDate
 # (2023-10-20), not a printed field.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: aos/PO-00001
-
+url: https://www.aosmd.com/sites/default/files/res/package/SOT23.pdf
+date: 2023-10-20
+revision: N
 publisher: aos
 document_id: PO-00001
 document_type: package_drawing
-
-revision: "N"
-date: "2023-10-20"
-
-url: "https://www.aosmd.com/sites/default/files/res/package/SOT23.pdf"

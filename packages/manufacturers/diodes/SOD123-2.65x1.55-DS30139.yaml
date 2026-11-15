@@ -13,98 +13,59 @@
 # and DS18010 Rev. 28-2 (MMSZ5221B-5259B, p4): checked by diffing the
 # pdftotext -layout text of the outline sections (only rotated-label
 # noise and the part-name footer differ).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/diodes/SOD123-2.65x1.55-DS30139
-
 family: sod
 lead_count: 2
+source: diodes/DS30139
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
 
-construction: molded
+construction:
+  value: molded
+  src: 'p1 "Mechanical Data: "Package Material: Molded Plastic. UL Flammability Classification Rating 94V-0""'
+
+geometry: { type: parametric, generator: sod }
 
 dimensions:
-  body_length:
-    min: 2.55
-    nominal: 2.65
-    max: 2.85
-    unit: mm
   body_width:
-    min: 1.40
-    nominal: 1.55
-    max: 1.70
-    unit: mm
+    min: 1.4 mm
+    typ: 1.55 mm
+    max: 1.7 mm
+    src: p4 "SOD123 table, D "1.40 / 1.70 / 1.55", body across (top view)"
+  body_length:
+    min: 2.55 mm
+    typ: 2.65 mm
+    max: 2.85 mm
+    src: p4 "SOD123 table, E "2.55 / 2.85 / 2.65" (Min/Max/Typ), body along the leads"
   body_height:
-    min: 1.00
-    nominal: 1.05
-    max: 1.35
-    unit: mm
-  overall_length:
-    min: 3.55
-    nominal: 3.65
-    max: 3.85
-    unit: mm
-  standoff:
-    min: 0.00
-    nominal: 0.05
-    max: 0.10
-    unit: mm
-  lead_width:
-    min: 0.52
-    nominal: 0.57
-    max: 0.62
-    unit: mm
-  lead_length:
-    min: 0.25
-    nominal: 0.30
-    max: 0.40
-    unit: mm
+    min: 1 mm
+    typ: 1.05 mm
+    max: 1.35 mm
+    src: p4 "SOD123 table, A "1.00 / 1.35 / 1.05" (total height; no A2 given)"
   lead_thickness:
-    min: 0.10
-    nominal: 0.11
-    max: 0.15
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: sod
-
-provenance:
-  "/construction":
-    - source: diodes/DS30139
-      page: 1
-      locator: "Mechanical Data: \"Package Material: Molded Plastic. UL Flammability Classification Rating 94V-0\""
-  "/dimensions/body_length":
-    - source: diodes/DS30139
-      page: 4
-      locator: "SOD123 table, E \"2.55 / 2.85 / 2.65\" (Min/Max/Typ), body along the leads"
-  "/dimensions/body_width":
-    - source: diodes/DS30139
-      page: 4
-      locator: "SOD123 table, D \"1.40 / 1.70 / 1.55\", body across (top view)"
-  "/dimensions/body_height":
-    - source: diodes/DS30139
-      page: 4
-      locator: "SOD123 table, A \"1.00 / 1.35 / 1.05\" (total height; no A2 given)"
-  "/dimensions/overall_length":
-    - source: diodes/DS30139
-      page: 4
-      locator: "SOD123 table, He \"3.55 / 3.85 / 3.65\", lead-tip span"
-  "/dimensions/standoff":
-    - source: diodes/DS30139
-      page: 4
-      locator: "SOD123 table, A1 \"0.00 / 0.10 / 0.05\""
-  "/dimensions/lead_width":
-    - source: diodes/DS30139
-      page: 4
-      locator: "SOD123 table, b \"0.52 / 0.62 / 0.57\""
-  "/dimensions/lead_length":
-    - source: diodes/DS30139
-      page: 4
-      locator: "SOD123 table, L \"0.25 / 0.40 / 0.30\" (foot)"
-  "/dimensions/lead_thickness":
-    - source: diodes/DS30139
-      page: 4
-      locator: "SOD123 table, c \"0.10 / 0.15 / 0.11\""
+    min: 0.1 mm
+    typ: 0.11 mm
+    max: 0.15 mm
+    src: p4 "SOD123 table, c "0.10 / 0.15 / 0.11""
+  overall_length:
+    min: 3.55 mm
+    typ: 3.65 mm
+    max: 3.85 mm
+    src: p4 "SOD123 table, He "3.55 / 3.85 / 3.65", lead-tip span"
+  standoff:
+    min: 0 mm
+    typ: 0.05 mm
+    max: 0.1 mm
+    src: p4 "SOD123 table, A1 "0.00 / 0.10 / 0.05""
+  lead_width:
+    min: 0.52 mm
+    typ: 0.57 mm
+    max: 0.62 mm
+    src: p4 "SOD123 table, b "0.52 / 0.62 / 0.57""
+  lead_length:
+    min: 0.25 mm
+    typ: 0.3 mm
+    max: 0.4 mm
+    src: p4 "SOD123 table, L "0.25 / 0.40 / 0.30" (foot)"

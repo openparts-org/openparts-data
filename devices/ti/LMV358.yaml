@@ -6,29 +6,23 @@
 # supply": both typed power (GND is the negative rail, as V- on
 # ti/OPA2333). Minus signs written as ASCII "-". The LMV358A is a
 # different device (separate datasheet) and is not covered.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/LMV358
-
 manufacturer: ti
 category: op_amp
 family: LMV3xx
+source: ti/SLOS263Y
 
 pins:
+  src:
+    - 'p3 "Table 5-1 "Pin Functions: LMV358""'
+    - p3 "Figure 5-1 "D, DDU, DGK, and PW Packages, 8-Pin SOIC, VSSOP, and TSSOP (Top View)" (all 8 pins matched)"
   "1": { name: OUT, type: analog }
-  "2": { name: "1IN-", type: analog }
-  "3": { name: "1IN+", type: analog }
+  "2": { name: 1IN-, type: analog }
+  "3": { name: 1IN+, type: analog }
   "4": { name: GND, type: power }
-  "5": { name: "2IN+", type: analog }
-  "6": { name: "2IN-", type: analog }
+  "5": { name: 2IN+, type: analog }
+  "6": { name: 2IN-, type: analog }
   "7": { name: 2OUT, type: analog }
-  "8": { name: "VCC+", type: power }
-
-provenance:
-  "/pins":
-    - source: ti/SLOS263Y
-      page: 3
-      locator: "Table 5-1 \"Pin Functions: LMV358\""
-    - source: ti/SLOS263Y
-      page: 3
-      locator: "Figure 5-1 \"D, DDU, DGK, and PW Packages, 8-Pin SOIC, VSSOP, and TSSOP (Top View)\" (all 8 pins matched)"
+  "8": { name: VCC+, type: power }

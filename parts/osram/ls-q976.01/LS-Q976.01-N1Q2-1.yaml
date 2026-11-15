@@ -1,32 +1,18 @@
 # LS Q976.01-N1Q2-1 (ordering code Q65113A5254),
 # super red, dominant 633 nm (InGaAlP). The MPN contains a
 # space as published; the id replaces it with "-".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
-id: "osram/LS-Q976.01-N1Q2-1"
-
+id: osram/LS-Q976.01-N1Q2-1
 manufacturer: osram
-mpn: "LS Q976.01-N1Q2-1"
-
+mpn: LS Q976.01-N1Q2-1
 device: osram/LS-Q976.01
 package: manufacturers/osram/CHIP-OSRAM-Q976.01
+sources: [osram/LS-Q976.01@v1.2, osram/LS-Q976.01-product-page]
+source: osram/LS-Q976.01-product-page
 
 existence:
   status: verified
+  src: 'osram/LS-Q976.01@v1.2 p3 "Ordering Information table: type "LS Q976.01-N1Q2-1", Iv 28 ... 112 mcd @ 20 mA, ordering code Q65113A5254"'
 
-lifecycle:
-  status: active
-
-sources:
-  - osram/LS-Q976.01@v1.2
-  - osram/LS-Q976.01-product-page
-
-provenance:
-  "/existence":
-    - source: osram/LS-Q976.01@v1.2
-      page: 3
-      locator: "Ordering Information table: type \"LS Q976.01-N1Q2-1\", Iv 28 ... 112 mcd @ 20 mA, ordering code Q65113A5254"
-  "/lifecycle":
-    - source: osram/LS-Q976.01-product-page
-      page: 1
-      locator: "Lifecycle status badge \"Full production\""
+lifecycle: { status: active, src: p1 "Lifecycle status badge "Full production"" }

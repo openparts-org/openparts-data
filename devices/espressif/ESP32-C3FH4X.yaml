@@ -4,16 +4,16 @@
 # XTAL_32K_P/N (pins 4/5) reclassified `clock` for consistency with the
 # rest of this dataset's crystal-pin handling (see ESP32-S2 device file
 # for the same note).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: espressif/ESP32-C3FH4X
-
 manufacturer: espressif
 category: microcontroller
 family: ESP32-C3
+source: espressif/esp32-c3_datasheet_en@rev2.4
 
 pins:
-  "1":  { name: LNA_IN, type: analog }
+  "1":  { name: { value: LNA_IN, src: '"Table 2-1 Pin Overview, p.16-17"' }, type: analog }
   "2":  { name: VDD3P3, type: power }
   "3":  { name: VDD3P3, type: power }
   "4":  { name: XTAL_32K_P, type: clock }
@@ -45,22 +45,13 @@ pins:
   "30": { name: XTAL_P, type: clock }
   "31": { name: VDDA, type: power }
   "32": { name: VDDA, type: power }
-  "EP": { name: GND, type: ground }
+  EP:
+    name: { value: GND, src: '"Consolidated pin table, pin 33 = GND (exposed pad)"' }
+    type: ground
 
 # This bonding variant ships specifically with chip revision v1.1
 # (Table 1-1); the base ESP32-C3/FH4/FN4/FH8X parts use v0.4 instead --
 # not recorded here since this Device represents the FH4X variant only.
 revisions:
-  rev-v1.1:
-    manufacturer_revision: "v1.1"
-
-provenance:
-  "/pins/1/name":
-    - source: espressif/esp32-c3_datasheet_en@rev2.4
-      locator: "Table 2-1 Pin Overview, p.16-17"
-  "/pins/EP/name":
-    - source: espressif/esp32-c3_datasheet_en@rev2.4
-      locator: "Consolidated pin table, pin 33 = GND (exposed pad)"
-  "/revisions":
-    - source: espressif/esp32-c3_datasheet_en@rev2.4
-      locator: "Table 1-1 ESP32-C3 Series Comparison, p.12"
+  rev-v1.1: { manufacturer_revision: v1.1, overrides: { pins: {} } }
+  src:      '"Table 1-1 ESP32-C3 Series Comparison, p.12"'

@@ -4,31 +4,18 @@
 # (LM75BD,112 tube / LM75BD,118 13" reel) that differ only in packing.
 # lifecycle: not stated in the datasheet; no first-party lifecycle page
 # was read, so it is recorded as unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: nxp/LM75BD
-
 manufacturer: nxp
-mpn: "LM75BD"
-
+mpn: LM75BD
 device: nxp/LM75B
-package: manufacturers/nxp/SOT96-1
+package: { value: manufacturers/nxp/SOT96-1, src: 'p3 "Table 1: package SO8, version SOT96-1"' }
+sources: [nxp/LM75B@rev6.1]
+source: nxp/LM75B@rev6.1
 
 existence:
   status: verified
+  src: p3 "Table 1 "Ordering information", type number "LM75BD ... SO8 ... SOT96-1"; Table 2 orderable part numbers LM75BD,112 (tube) and LM75BD,118 (reel)"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - nxp/LM75B@rev6.1
-
-provenance:
-  "/existence":
-    - source: nxp/LM75B@rev6.1
-      page: 3
-      locator: "Table 1 \"Ordering information\", type number \"LM75BD ... SO8 ... SOT96-1\"; Table 2 orderable part numbers LM75BD,112 (tube) and LM75BD,118 (reel)"
-  "/package":
-    - source: nxp/LM75B@rev6.1
-      page: 3
-      locator: "Table 1: package SO8, version SOT96-1"
+lifecycle: { status: unknown }

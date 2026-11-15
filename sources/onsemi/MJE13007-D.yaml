@@ -4,15 +4,12 @@
 # EMITTER 3", "TO-220-3 CASE 221A STYLE 1", ORDERING INFORMATION; page
 # 10: embedded CASE 221A ISSUE AL. (pdftotext warns about a bad form
 # bounding box; pdftocairo renders page 1.)
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: onsemi/MJE13007-D
-
+url: https://www.onsemi.com/pdf/datasheet/mje13007-d.pdf
+date: 2025-04
+revision: "10"
 publisher: onsemi
 document_id: MJE13007/D
 document_type: datasheet
-
-revision: "10"
-date: "2025-04"
-
-url: "https://www.onsemi.com/pdf/datasheet/mje13007-d.pdf"

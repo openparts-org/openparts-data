@@ -2,43 +2,25 @@
 # Polarity from the page-1 Mechanical Data ("Polarity: Cathode Band").
 # Pin numbers 1 = CATHODE, 2 = ANODE are printed on the page-1
 # schematic.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: diodes/1N5819HW
-
 manufacturer: diodes
 category: diode
 family: 1N5819HW
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: diodes/DS30217
 
 parameters:
-  reverse_voltage:
-    max: 40
-    unit: V
-  forward_current:
-    max: 1.0
-    unit: A
   forward_voltage:
-    max: 0.45
-    unit: V
+    max: 0.45 V
+    at: { IF: 1 A }
+    src: 'p2 "Electrical Characteristics, Forward Voltage VF: Max 0.450 V"'
+  reverse_voltage: { max: 40 V, at: { IR: 1 mA }, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR: 40 V"' }
+  forward_current:
+    max: 1 A
+    src: 'p2 "Maximum Ratings, Average Rectified Output Current IO: 1.0 A"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: diodes/DS30217
-      page: 2
-      locator: "Maximum Ratings, VRRM/VRWM/VR @ IR = 1.0mA: 40 V"
-  "/parameters/forward_current":
-    - source: diodes/DS30217
-      page: 2
-      locator: "Maximum Ratings, Average Rectified Output Current IO: 1.0 A"
-  "/parameters/forward_voltage":
-    - source: diodes/DS30217
-      page: 2
-      locator: "Electrical Characteristics, Forward Voltage VF: Max 0.450 V @ IF = 1.0A"
-  "/pins":
-    - source: diodes/DS30217
-      page: 1
-      locator: "Mechanical Data: \"Polarity: Cathode Band\"; schematic 1 CATHODE / 2 ANODE"
+pins:
+  src: 'p1 "Mechanical Data: "Polarity: Cathode Band"; schematic 1 CATHODE / 2 ANODE"'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

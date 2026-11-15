@@ -10,15 +10,24 @@
 # them; DS21709J says nothing about the exposed pad -> no EP pin. The
 # 5-lead SOT-23/SC-70 numbering is not covered (see
 # microchip/24AA02-SOT23).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/24LC02B
-
 manufacturer: microchip
 category: eeprom
-family: "24AA02/24LC02B"
+family: 24AA02/24LC02B
+source: microchip/DS21709@revJ
+
+parameters:
+  capacity:
+    typ: 2 Kbit
+    src: 'p1 "Description: "The Microchip Technology Inc. 24AA02/24LC02B (24XX02*) is a 2 Kbit Electrically Erasable PROM""'
 
 pins:
+  src:
+    - p5 "Table 2-1 "Pin Function Table", column "SOIC""
+    - p1 ""Package Types" figure "SOIC, TSSOP" (all 8 pins matched)"
+    - p5 "Table 2-1 "Pin Function Table", columns "DFN" and "TDFN" (same numbers as SOIC)"
   "1": { name: A0, type: nc }
   "2": { name: A1, type: nc }
   "3": { name: A2, type: nc }
@@ -27,24 +36,3 @@ pins:
   "6": { name: SCL, type: input }
   "7": { name: WP, type: input }
   "8": { name: VCC, type: power }
-
-parameters:
-  capacity:
-    nominal: 2
-    unit: Kbit
-
-provenance:
-  "/parameters/capacity":
-    - source: microchip/DS21709@revJ
-      page: 1
-      locator: "Description: \"The Microchip Technology Inc. 24AA02/24LC02B (24XX02*) is a 2 Kbit Electrically Erasable PROM\""
-  "/pins":
-    - source: microchip/DS21709@revJ
-      page: 5
-      locator: "Table 2-1 \"Pin Function Table\", column \"SOIC\""
-    - source: microchip/DS21709@revJ
-      page: 1
-      locator: "\"Package Types\" figure \"SOIC, TSSOP\" (all 8 pins matched)"
-    - source: microchip/DS21709@revJ
-      page: 5
-      locator: "Table 2-1 \"Pin Function Table\", columns \"DFN\" and \"TDFN\" (same numbers as SOIC)"

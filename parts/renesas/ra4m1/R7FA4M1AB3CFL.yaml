@@ -4,31 +4,19 @@
 # "LQFP 48 pins". Packing/production suffix not added (see CFM file).
 #
 # lifecycle: the datasheet has no status field; left unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: renesas/R7FA4M1AB3CFL
-
 manufacturer: renesas
 mpn: R7FA4M1AB3CFL
-
 device: renesas/R7FA4M1AB-LQFP48
-package: manufacturers/renesas/PLQP0048KB-B
 
-existence:
-  status: verified
+package:
+  value: manufacturers/renesas/PLQP0048KB-B
+  src: p10 "Table 1.13 "Product list", row R7FA4M1AB3CFL, column "Package code""
 
-lifecycle:
-  status: unknown
+sources: [renesas/R01DS0355EJ0110]
+source: renesas/R01DS0355EJ0110
 
-sources:
-  - renesas/R01DS0355EJ0110
-
-provenance:
-  "/existence":
-    - source: renesas/R01DS0355EJ0110
-      page: 10
-      locator: "Table 1.13 \"Product list\", row R7FA4M1AB3CFL"
-  "/package":
-    - source: renesas/R01DS0355EJ0110
-      page: 10
-      locator: "Table 1.13 \"Product list\", row R7FA4M1AB3CFL, column \"Package code\""
+existence: { status: verified, src: 'p10 "Table 1.13 "Product list", row R7FA4M1AB3CFL"' }
+lifecycle: { status: unknown }

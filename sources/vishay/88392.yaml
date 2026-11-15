@@ -4,16 +4,13 @@
 # downloaded with curl on 2026-11-14 (`file`: PDF; URL from the
 # vishay.com product page /en/product/88392/). Read with pdftotext
 # -layout; page 5 SMB (DO-214AA) outline rendered with pdftoppm.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: vishay/88392
-
+retrieved: 2026-11-14
+url: https://www.vishay.com/docs/88392/smbj.pdf
+date: 2024-01-09
 publisher: vishay
 document_id: "88392"
 document_type: datasheet
-
-revision: "09-Jan-2024"
-date: "2024-01-09"
-
-url: "https://www.vishay.com/docs/88392/smbj.pdf"
-retrieved: "2026-11-14"
+revision: 09-Jan-2024

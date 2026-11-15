@@ -4,31 +4,18 @@
 # its orderable codes (packing suffix ,112/,512/,518).
 # lifecycle: not stated in the datasheet; no first-party lifecycle page
 # was read, so it is recorded as unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: nxp/PCF8574AT-3
-
 manufacturer: nxp
-mpn: "PCF8574AT/3"
-
+mpn: PCF8574AT/3
 device: nxp/PCF8574A
-package: manufacturers/nxp/SOT162-1
+package: { value: manufacturers/nxp/SOT162-1, src: 'p2 "Table 1: package SO16 ... SOT162-1"' }
+sources: [nxp/PCF8574_PCF8574A@rev5]
+source: nxp/PCF8574_PCF8574A@rev5
 
 existence:
   status: verified
+  src: p2 "Table 1 "Ordering information", type number "PCF8574AT/3" (SO16 ... SOT162-1); Table 2 "Ordering options" lists its orderable codes"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - nxp/PCF8574_PCF8574A@rev5
-
-provenance:
-  "/existence":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 2
-      locator: "Table 1 \"Ordering information\", type number \"PCF8574AT/3\" (SO16 ... SOT162-1); Table 2 \"Ordering options\" lists its orderable codes"
-  "/package":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 2
-      locator: "Table 1: package SO16 ... SOT162-1"
+lifecycle: { status: unknown }

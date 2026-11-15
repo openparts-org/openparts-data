@@ -17,98 +17,51 @@
 # "Dimensional Ref." table, page 67: D2 3.650/3.700/3.750 and E2
 # 3.650/3.700/3.750 mm (min/nom/max); D2 is drawn along X. The v2.5 table's
 # b/L/A1/A3 rows equal those cited from v2.4 below.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/QFN32-ESP32-C3
-
 family: qfn
-lead_count: 32
+lead_count: { value: 32, src: '"Table 2-1 Pin Overview, p.16-17"' }
+source: espressif/esp32-c3_datasheet_en@rev2.4
 
 pitch:
-  nominal: 0.5
-  unit: mm
+  typ: 0.5 mm
+  src: jedec/MO-220 "Standard QFN32 5x5mm pitch, cross-checked against multiple vendors' outline drawings for this lead-count/body-size combination"
+
+geometry: { type: parametric, generator: qfn }
 
 dimensions:
-  body_width:
-    nominal: 5.0
-    unit: mm
-  body_length:
-    nominal: 5.0
-    unit: mm
+  body_width:  { typ: 5 mm, src: '"Title page / Table 1-1"' }
+  body_length: { typ: 5 mm, src: '"Title page / Table 1-1"' }
   body_height:
-    nominal: 0.85
-    min: 0.8
-    max: 0.9
-    unit: mm
-  lead_width:
-    nominal: 0.25
-    min: 0.2
-    max: 0.3
-    unit: mm
-  lead_length:
-    nominal: 0.4
-    min: 0.35
-    max: 0.45
-    unit: mm
-  lead_thickness:
-    nominal: 0.203
-    unit: mm
-  standoff:
-    max: 0.05
-    unit: mm
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 0.9 mm
+    src: jedec/MO-220 "Standard QFN body height range for this outline family, not vendor-datasheet-specific"
   exposed_pad:
     width:
-      nominal: 3.7
-      min: 3.65
-      max: 3.75
-      unit: mm
+      min: 3.65 mm
+      typ: 3.7 mm
+      max: 3.75 mm
+      src: espressif/esp32-c3_datasheet_en@rev2.5 p67 "Figure 7-1 "Dimensional Ref." table, symbol "D2" (3.650/3.700/3.750; drawn along X in the bottom view)"
     length:
-      nominal: 3.7
-      min: 3.65
-      max: 3.75
-      unit: mm
-
-geometry:
-  type: parametric
-  generator: qfn
-
-provenance:
-  "/lead_count":
-    - source: espressif/esp32-c3_datasheet_en@rev2.4
-      locator: "Table 2-1 Pin Overview, p.16-17"
-  "/dimensions/body_width":
-    - source: espressif/esp32-c3_datasheet_en@rev2.4
-      locator: "Title page / Table 1-1"
-  "/dimensions/body_length":
-    - source: espressif/esp32-c3_datasheet_en@rev2.4
-      locator: "Title page / Table 1-1"
-  "/pitch":
-    - source: jedec/MO-220
-      locator: "Standard QFN32 5x5mm pitch, cross-checked against multiple vendors' outline drawings for this lead-count/body-size combination"
-  "/dimensions/body_height":
-    - source: jedec/MO-220
-      locator: "Standard QFN body height range for this outline family, not vendor-datasheet-specific"
-  "/dimensions/lead_width":
-    - source: espressif/esp32-c3_datasheet_en@rev2.4
-      page: 66
-      locator: "Figure 7-1 \"Dimensional Ref.\" table, symbol \"b\""
-  "/dimensions/lead_length":
-    - source: espressif/esp32-c3_datasheet_en@rev2.4
-      page: 66
-      locator: "Figure 7-1 \"Dimensional Ref.\" table, symbol \"L\""
-  "/dimensions/lead_thickness":
-    - source: espressif/esp32-c3_datasheet_en@rev2.4
-      page: 66
-      locator: "Figure 7-1 \"Dimensional Ref.\" table, symbol \"A3\" (0.203 Ref.)"
-  "/dimensions/standoff":
-    - source: espressif/esp32-c3_datasheet_en@rev2.4
-      page: 66
-      locator: "Figure 7-1 \"Dimensional Ref.\" table, symbol \"A1\" (max only)"
-  "/dimensions/exposed_pad/width":
-    - source: espressif/esp32-c3_datasheet_en@rev2.5
-      page: 67
-      locator: "Figure 7-1 \"Dimensional Ref.\" table, symbol \"D2\" (3.650/3.700/3.750; drawn along X in the bottom view)"
-  "/dimensions/exposed_pad/length":
-    - source: espressif/esp32-c3_datasheet_en@rev2.5
-      page: 67
-      locator: "Figure 7-1 \"Dimensional Ref.\" table, symbol \"E2\" (3.650/3.700/3.750)"
+      min: 3.65 mm
+      typ: 3.7 mm
+      max: 3.75 mm
+      src: espressif/esp32-c3_datasheet_en@rev2.5 p67 "Figure 7-1 "Dimensional Ref." table, symbol "E2" (3.650/3.700/3.750)"
+  standoff:
+    max: 0.05 mm
+    src: p66 "Figure 7-1 "Dimensional Ref." table, symbol "A1" (max only)"
+  lead_width:
+    min: 0.2 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p66 "Figure 7-1 "Dimensional Ref." table, symbol "b""
+  lead_length:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.45 mm
+    src: p66 "Figure 7-1 "Dimensional Ref." table, symbol "L""
+  lead_thickness:
+    typ: 0.203 mm
+    src: p66 "Figure 7-1 "Dimensional Ref." table, symbol "A3" (0.203 Ref.)"

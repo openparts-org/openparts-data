@@ -5,70 +5,44 @@
 # 2.40, E1 1.20-1.40/1.30, e1 1.78-2.05/1.83, L 0.25-0.55/0.40) matches
 # standards/SOT23-2.90x1.30-P1.83-DIODES value for value, so it is
 # reused. No lifecycle statement in the document.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: diodes/DMP2035U-7
-
 manufacturer: diodes
 mpn: DMP2035U-7
-
 device: diodes/DMP2035U
-package: standards/SOT23-2.90x1.30-P1.83-DIODES
+
+package:
+  value: standards/SOT23-2.90x1.30-P1.83-DIODES
+  src: p6 "Package Outline Dimensions SOT23 (Standard) table (identical to DS11005's) -- reused package, see header"
+
+sources: [diodes/DS31830]
+source: diodes/DS31830
 
 existence:
   status: verified
+  src: 'p1 "Ordering Information: "DMP2035U-7 | SOT23 (Standard) | 3,000 7" Tape & Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - diodes/DS31830
+lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: p_channel
+  polarity: { value: p_channel, src: 'p1 "Page-1 title: "P-CHANNEL ENHANCEMENT MODE MOSFET""' }
   drain_source_voltage:
-    nominal: -20
-    unit: V
+    typ: -20 V
+    at: { TA: 25 °C }
+    src: 'p2 "Maximum Ratings, Drain-Source Voltage VDSS: -20 V"'
   drain_current:
-    nominal: -4.9
-    unit: A
+    typ: -4.9 A
+    at: { VGS: -4.5 V, TA: 25 °C }
+    src: 'p2 "Maximum Ratings, Continuous Drain Current ID, Steady State: -4.9 A"'
   rds_on:
-    nominal: 23
-    max: 35
-    unit: mΩ
+    typ: 23 mΩ
+    max: 35 mΩ
+    at: { VGS: -4.5 V, ID: -4 A, TA: 25 °C }
+    src: 'p2 "Electrical Characteristics, Static Drain-Source On-Resistance RDS(ON): Typ 23, Max 35 mΩ"'
   gate_threshold_voltage:
-    nominal: -0.7
-    min: -1.0
-    max: -0.4
-    unit: V
-
-provenance:
-  "/existence":
-    - source: diodes/DS31830
-      page: 1
-      locator: "Ordering Information: \"DMP2035U-7 | SOT23 (Standard) | 3,000 7\" Tape & Reel\""
-  "/package":
-    - source: diodes/DS31830
-      page: 6
-      locator: "Package Outline Dimensions SOT23 (Standard) table (identical to DS11005's) -- reused package, see header"
-  "/parameters/polarity":
-    - source: diodes/DS31830
-      page: 1
-      locator: "Page-1 title: \"P-CHANNEL ENHANCEMENT MODE MOSFET\""
-  "/parameters/drain_source_voltage":
-    - source: diodes/DS31830
-      page: 2
-      locator: "Maximum Ratings (@TA = +25°C), Drain-Source Voltage VDSS: -20 V"
-  "/parameters/drain_current":
-    - source: diodes/DS31830
-      page: 2
-      locator: "Maximum Ratings, Continuous Drain Current ID, VGS = -4.5V, Steady State, TA = +25°C: -4.9 A"
-  "/parameters/rds_on":
-    - source: diodes/DS31830
-      page: 2
-      locator: "Electrical Characteristics (@TA = +25°C), Static Drain-Source On-Resistance RDS(ON), VGS = -4.5V, ID = -4.0A: Typ 23, Max 35 mΩ"
-  "/parameters/gate_threshold_voltage":
-    - source: diodes/DS31830
-      page: 2
-      locator: "Electrical Characteristics (@TA = +25°C), Gate Threshold Voltage VGS(TH): Min -0.4, Typ -0.7, Max -1.0 V"
+    min: -1 V
+    typ: -0.7 V
+    max: -0.4 V
+    at: { TA: 25 °C }
+    src: 'p2 "Electrical Characteristics, Gate Threshold Voltage VGS(TH): Min -0.4, Typ -0.7, Max -1.0 V"'

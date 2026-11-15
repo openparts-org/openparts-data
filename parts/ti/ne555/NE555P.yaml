@@ -8,36 +8,24 @@
 # BA"; eA 0.300 BSC row spacing). Flagged for reviewer: same JEDEC
 # outline, tolerance tables not identical (8P3 E1 max .280 vs TI .260,
 # A max .210 vs TI .200).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/NE555P
-
 manufacturer: ti
 mpn: NE555P
-
 device: ti/NE555
-package: standards/DIP8-W7.62-P2.54
+
+package:
+  value: standards/DIP8-W7.62-P2.54
+  src: ti/MPDI001 p1 "P (R-PDIP-T8) drawing 4040082/E, note C (JEDEC MS-001 BA) -- compared against the referenced package, see header"
+
+sources: [ti/SLFS022K, ti/MPDI001]
+source: ti/SLFS022K
 
 existence:
   status: verified
+  src: p21 "Package option addendum table, row "NE555P" (PDIP (P) | 8)"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLFS022K
-  - ti/MPDI001
-
-provenance:
-  "/existence":
-    - source: ti/SLFS022K
-      page: 21
-      locator: "Package option addendum table, row \"NE555P\" (PDIP (P) | 8)"
-  "/lifecycle":
-    - source: ti/SLFS022K
-      page: 21
-      locator: "Package option addendum table, row \"NE555P\", Status \"Active\""
-  "/package":
-    - source: ti/MPDI001
-      page: 1
-      locator: "P (R-PDIP-T8) drawing 4040082/E, note C (JEDEC MS-001 BA) -- compared against the referenced package, see header"
+  src: p21 "Package option addendum table, row "NE555P", Status "Active""

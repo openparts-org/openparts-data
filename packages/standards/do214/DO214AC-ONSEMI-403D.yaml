@@ -12,98 +12,57 @@
 # md5) in MBRA340T3/D Rev. 12 page 5 and MBRA210LT3/D Rev. 7 page 5.
 # construction: molded -- page 1 Mechanical Characteristics "Case: Epoxy,
 # Molded".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/DO214AC-ONSEMI-403D
-
 family: do214
 lead_count: 2
+source: onsemi/MBRA140T3-D
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+
+construction: { value: molded, src: 'p1 "Mechanical Characteristics: "Case: Epoxy, Molded""' }
+
+geometry: { type: parametric, generator: do214 }
 
 dimensions:
-  body_length:
-    nominal: 4.32
-    min: 4.06
-    max: 4.57
-    unit: mm
   body_width:
-    nominal: 2.6
-    min: 2.29
-    max: 2.92
-    unit: mm
+    min: 2.29 mm
+    typ: 2.6 mm
+    max: 2.92 mm
+    src: p5 "CASE 403D table, D 2.29 / 2.60 / 2.92 mm"
+  body_length:
+    min: 4.06 mm
+    typ: 4.32 mm
+    max: 4.57 mm
+    src: p5 "CASE 403D table, E 4.06 / 4.32 / 4.57 mm (0.160 / 0.170 / 0.180 in)"
   body_height:
-    nominal: 2.1
-    min: 1.97
-    max: 2.2
-    unit: mm
-  overall_length:
-    nominal: 5.21
-    min: 4.83
-    max: 5.59
-    unit: mm
-  lead_width:
-    nominal: 1.45
-    min: 1.27
-    max: 1.63
-    unit: mm
-  lead_length:
-    nominal: 1.14
-    min: 0.76
-    max: 1.52
-    unit: mm
+    min: 1.97 mm
+    typ: 2.1 mm
+    max: 2.2 mm
+    src: p5 "CASE 403D table, A 1.97 / 2.10 / 2.20 mm (seating plane to top; no A2)"
   lead_thickness:
-    nominal: 0.28
-    min: 0.15
-    max: 0.41
-    unit: mm
+    min: 0.15 mm
+    typ: 0.28 mm
+    max: 0.41 mm
+    src: p5 "CASE 403D table, c 0.15 / 0.28 / 0.41 mm"
+  overall_length:
+    min: 4.83 mm
+    typ: 5.21 mm
+    max: 5.59 mm
+    src: p5 "CASE 403D table, HE 4.83 / 5.21 / 5.59 mm"
   standoff:
-    nominal: 0.1
-    min: 0.05
-    max: 0.2
-    unit: mm
-
-construction: molded
-
-geometry:
-  type: parametric
-  generator: do214
-
-provenance:
-  "/construction":
-    - source: onsemi/MBRA140T3-D
-      page: 1
-      locator: "Mechanical Characteristics: \"Case: Epoxy, Molded\""
-  "/dimensions/body_length":
-    - source: onsemi/MBRA140T3-D
-      page: 5
-      locator: "CASE 403D table, E 4.06 / 4.32 / 4.57 mm (0.160 / 0.170 / 0.180 in)"
-  "/dimensions/body_width":
-    - source: onsemi/MBRA140T3-D
-      page: 5
-      locator: "CASE 403D table, D 2.29 / 2.60 / 2.92 mm"
-  "/dimensions/body_height":
-    - source: onsemi/MBRA140T3-D
-      page: 5
-      locator: "CASE 403D table, A 1.97 / 2.10 / 2.20 mm (seating plane to top; no A2)"
-  "/dimensions/overall_length":
-    - source: onsemi/MBRA140T3-D
-      page: 5
-      locator: "CASE 403D table, HE 4.83 / 5.21 / 5.59 mm"
-  "/dimensions/lead_width":
-    - source: onsemi/MBRA140T3-D
-      page: 5
-      locator: "CASE 403D table, b 1.27 / 1.45 / 1.63 mm"
-  "/dimensions/lead_length":
-    - source: onsemi/MBRA140T3-D
-      page: 5
-      locator: "CASE 403D table, L 0.76 / 1.14 / 1.52 mm (folded foot)"
-  "/dimensions/lead_thickness":
-    - source: onsemi/MBRA140T3-D
-      page: 5
-      locator: "CASE 403D table, c 0.15 / 0.28 / 0.41 mm"
-  "/dimensions/standoff":
-    - source: onsemi/MBRA140T3-D
-      page: 5
-      locator: "CASE 403D table, A1 0.05 / 0.10 / 0.20 mm"
+    min: 0.05 mm
+    typ: 0.1 mm
+    max: 0.2 mm
+    src: p5 "CASE 403D table, A1 0.05 / 0.10 / 0.20 mm"
+  lead_width:
+    min: 1.27 mm
+    typ: 1.45 mm
+    max: 1.63 mm
+    src: p5 "CASE 403D table, b 1.27 / 1.45 / 1.63 mm"
+  lead_length:
+    min: 0.76 mm
+    typ: 1.14 mm
+    max: 1.52 mm
+    src: p5 "CASE 403D table, L 0.76 / 1.14 / 1.52 mm (folded foot)"

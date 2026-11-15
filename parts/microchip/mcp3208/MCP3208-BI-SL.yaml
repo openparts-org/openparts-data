@@ -9,34 +9,24 @@
 # The id replaces the "/" of the MPN with "-"; mpn keeps the real
 # string. lifecycle: no production-status statement in the datasheet;
 # unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/MCP3208-BI-SL
-
 manufacturer: microchip
-mpn: "MCP3208-BI/SL"
-
+mpn: MCP3208-BI/SL
 device: microchip/MCP3208
-package: manufacturers/microchip/SOIC16-SL-C04-108B
+
+package:
+  value: manufacturers/microchip/SOIC16-SL-C04-108B
+  src:
+    - p37 "Product Identification System, Package "SL = Plastic SOIC (150 mil Body), 14-lead, 16-lead""
+    - p32 "16-lead drawing C04-108B "16-Lead Plastic Small Outline (SL) - Narrow, 3.90 mm Body [SOIC]", page 32 (rendered)"
+
+sources: [microchip/DS21298@revE]
+source: microchip/DS21298@revE
 
 existence:
   status: probable
+  src: 'p37 "Product Identification System, example b) "MCP3208-BI/SL: +/-1 LSB INL, Industrial Temperature, SOIC package""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS21298@revE
-
-provenance:
-  "/existence":
-    - source: microchip/DS21298@revE
-      page: 37
-      locator: "Product Identification System, example b) \"MCP3208-BI/SL: +/-1 LSB INL, Industrial Temperature, SOIC package\""
-  "/package":
-    - source: microchip/DS21298@revE
-      page: 37
-      locator: "Product Identification System, Package \"SL = Plastic SOIC (150 mil Body), 14-lead, 16-lead\""
-    - source: microchip/DS21298@revE
-      page: 32
-      locator: "16-lead drawing C04-108B \"16-Lead Plastic Small Outline (SL) - Narrow, 3.90 mm Body [SOIC]\", page 32 (rendered)"
+lifecycle: { status: unknown }

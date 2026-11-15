@@ -6,15 +6,12 @@
 # rendered with pdftoppm. Page numbers are PDF page indices.
 # Outline: page 5: SMA CASE 403D ISSUE J (98AON04079D, DATE 22 OCT 2021)
 # with STYLE 1.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: onsemi/MBRA140T3-D
-
-publisher: onsemi
-document_id: "MBRA140T3/D"
-document_type: datasheet
-
+url: https://www.onsemi.com/pdf/datasheet/mbra140t3-d.pdf
+date: 2020-02
 revision: "12"
-date: "2020-02"
-
-url: "https://www.onsemi.com/pdf/datasheet/mbra140t3-d.pdf"
+publisher: onsemi
+document_id: MBRA140T3/D
+document_type: datasheet

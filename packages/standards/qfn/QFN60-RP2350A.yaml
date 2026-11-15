@@ -2,58 +2,21 @@
 # (product brief page 6). "BSC"/reference values are recorded as the
 # nominal with no min/max (they are basic dimensions by definition, not
 # a manufacturing tolerance range).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/QFN60-RP2350A
-
 family: qfn
 lead_count: 60
+source: raspberrypi/RP-008374-DS@rev1
 
-pitch:
-  nominal: 0.4
-  unit: mm
+pitch: { typ: 0.4 mm, src: '"Page 6, package outline table, dimension e"' }
+geometry: { type: parametric, generator: qfn }
 
 dimensions:
-  body_width:
-    nominal: 7.0
-    unit: mm
-  body_length:
-    nominal: 7.0
-    unit: mm
-  body_height:
-    nominal: 0.85
-    min: 0.8
-    max: 0.9
-    unit: mm
+  body_width:  { typ: 7 mm, src: '"Page 6, dimension D/E"' }
+  body_length: { typ: 7 mm, src: '"Page 6, dimension D/E"' }
+  body_height: { min: 0.8 mm, typ: 0.85 mm, max: 0.9 mm, src: '"Page 6, dimension A"' }
   exposed_pad:
-    width:
-      nominal: 3.4
-      min: 3.35
-      max: 3.45
-      unit: mm
-    length:
-      nominal: 3.4
-      min: 3.35
-      max: 3.45
-      unit: mm
-
-geometry:
-  type: parametric
-  generator: qfn
-
-provenance:
-  "/pitch":
-    - source: raspberrypi/RP-008374-DS@rev1
-      locator: "Page 6, package outline table, dimension e"
-  "/dimensions/body_width":
-    - source: raspberrypi/RP-008374-DS@rev1
-      locator: "Page 6, dimension D/E"
-  "/dimensions/body_length":
-    - source: raspberrypi/RP-008374-DS@rev1
-      locator: "Page 6, dimension D/E"
-  "/dimensions/body_height":
-    - source: raspberrypi/RP-008374-DS@rev1
-      locator: "Page 6, dimension A"
-  "/dimensions/exposed_pad":
-    - source: raspberrypi/RP-008374-DS@rev1
-      locator: "Page 6, dimension D2/E2"
+    src:    '"Page 6, dimension D2/E2"'
+    width:  { min: 3.35 mm, typ: 3.4 mm, max: 3.45 mm }
+    length: { min: 3.35 mm, typ: 3.4 mm, max: 3.45 mm }

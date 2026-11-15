@@ -7,46 +7,29 @@
 # (manufacturers/diodes/SOT223-3.5x6.5-P2.3-TabPin2-DS36676), so no extra
 # pin. NOT valid for the SOT223 "H2" package (1 INPUT, 2 ADJ/GND,
 # 3 OUTPUT).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: diodes/AZ1117C-3.3
-
 manufacturer: diodes
 category: linear_regulator
 family: AZ1117C
-
-pins:
-  "1": { name: ADJ/GND, type: ground }
-  "2": { name: OUTPUT, type: power }
-  "3": { name: INPUT, type: power }
+source: diodes/DS36676
 
 parameters:
   output_type:
     value: fixed
+    src: 'p1 "Description: "The AZ1117C is available in 1.2V, 1.5V, 1.8V, 2.5V, 3.3V, and 5.0V fixed output voltage versions and an ADJ output voltage version""'
   output_voltage:
-    nominal: 3.3
-    unit: V
+    typ: 3.3 V
+    src: 'p7 "Electrical Characteristics AZ1117C-3.3, VOUT Output Voltage, 1.5V <= VIN-VOUT <= 10V: Typ 3.3 V"'
   input_voltage_max:
-    max: 15
-    unit: V
+    max: 15 V
+    src: 'p4 "Recommended Operating Conditions, VIN Input Voltage: Max 15 V"'
 
-provenance:
-  "/parameters/output_type":
-    - source: diodes/DS36676
-      page: 1
-      locator: "Description: \"The AZ1117C is available in 1.2V, 1.5V, 1.8V, 2.5V, 3.3V, and 5.0V fixed output voltage versions and an ADJ output voltage version\""
-  "/parameters/output_voltage":
-    - source: diodes/DS36676
-      page: 7
-      locator: "Electrical Characteristics AZ1117C-3.3, VOUT Output Voltage, 1.5V <= VIN-VOUT <= 10V: Typ 3.3 V"
-  "/parameters/input_voltage_max":
-    - source: diodes/DS36676
-      page: 4
-      locator: "Recommended Operating Conditions, VIN Input Voltage: Max 15 V"
-  "/pins":
-    - source: diodes/DS36676
-      page: 2
-      locator: "\"Pin Assignments\" SOT223/ H Package (Top View): 3 INPUT, 2 OUTPUT, 1 ADJ/GND, tab \"VOUT\""
-    - source: diodes/DS36676
-      page: 3
-      locator: "\"Functional Block Diagram\" pin numbers A(B){C}, A for SOT223 (H): INPUT 3, OUTPUT 2, ADJ/GND 1"
+pins:
+  src:
+    - 'p2 ""Pin Assignments" SOT223/ H Package (Top View): 3 INPUT, 2 OUTPUT, 1 ADJ/GND, tab "VOUT""'
+    - 'p3 ""Functional Block Diagram" pin numbers A(B){C}, A for SOT223 (H): INPUT 3, OUTPUT 2, ADJ/GND 1"'
+  "1": { name: ADJ/GND, type: ground }
+  "2": { name: OUTPUT, type: power }
+  "3": { name: INPUT, type: power }

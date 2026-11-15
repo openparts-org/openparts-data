@@ -2,68 +2,40 @@
 # from "Pin Configuration" on page 1 of the TLP291 datasheet
 # (2019-5-27): 1 ANODE, 2 CATHODE, 3 EMITTER, 4 COLLECTOR. All typed
 # passive.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: toshiba/TLP291
-
 manufacturer: toshiba
 category: optocoupler
 family: TLP291
+source: toshiba/TLP291-datasheet-en
+
+parameters:
+  forward_voltage:
+    min: 1.1 V
+    typ: 1.25 V
+    max: 1.4 V
+    at: { IF: 10 mA }
+    src: 'p3 "Electrical Characteristics, LED, Input forward voltage VF: MIN 1.1, TYP. 1.25, MAX 1.4 V"'
+  reverse_voltage:
+    max: 5 V
+    src: 'p3 "Absolute Maximum Ratings, LED, Input reverse voltage VR: 5 V"'
+  forward_current:
+    max: 50 mA
+    src: 'p3 "Absolute Maximum Ratings, LED, Input forward current IF: 50 mA (derating -1.5 mA/°C at Ta >= 90 °C)"'
+  collector_emitter_voltage:
+    typ: 80 V
+    src: 'p3 "Absolute Maximum Ratings, DETECTOR, Collector-emitter voltage VCEO: 80 V"'
+  collector_current:
+    typ: 50 mA
+    src: 'p3 "Absolute Maximum Ratings, DETECTOR, Collector current IC: 50 mA"'
+  isolation_voltage:
+    min: 3750 V
+    src: 'p4 "Isolation Characteristics, Isolation voltage BVS, AC, 60 s: MIN 3750 Vrms"'
 
 pins:
+  src: 'p1 ""Pin Configuration" (TLP291): 1 ANODE, 2 CATHODE, 3 EMITTER, 4 COLLECTOR"'
   "1": { name: ANODE, type: passive }
   "2": { name: CATHODE, type: passive }
   "3": { name: EMITTER, type: passive }
   "4": { name: COLLECTOR, type: passive }
-
-parameters:
-  forward_voltage:
-    nominal: 1.25
-    min: 1.1
-    max: 1.4
-    unit: V
-  forward_current:
-    max: 50
-    unit: mA
-  reverse_voltage:
-    max: 5
-    unit: V
-  collector_emitter_voltage:
-    nominal: 80
-    unit: V
-  collector_current:
-    nominal: 50
-    unit: mA
-  isolation_voltage:
-    min: 3750
-    unit: V
-
-provenance:
-  "/parameters/forward_voltage":
-    - source: toshiba/TLP291-datasheet-en
-      page: 3
-      locator: "Electrical Characteristics, LED, Input forward voltage VF, IF = 10 mA: MIN 1.1, TYP. 1.25, MAX 1.4 V"
-  "/parameters/forward_current":
-    - source: toshiba/TLP291-datasheet-en
-      page: 3
-      locator: "Absolute Maximum Ratings, LED, Input forward current IF: 50 mA (derating -1.5 mA/°C at Ta >= 90 °C)"
-  "/parameters/reverse_voltage":
-    - source: toshiba/TLP291-datasheet-en
-      page: 3
-      locator: "Absolute Maximum Ratings, LED, Input reverse voltage VR: 5 V"
-  "/parameters/collector_emitter_voltage":
-    - source: toshiba/TLP291-datasheet-en
-      page: 3
-      locator: "Absolute Maximum Ratings, DETECTOR, Collector-emitter voltage VCEO: 80 V"
-  "/parameters/collector_current":
-    - source: toshiba/TLP291-datasheet-en
-      page: 3
-      locator: "Absolute Maximum Ratings, DETECTOR, Collector current IC: 50 mA"
-  "/parameters/isolation_voltage":
-    - source: toshiba/TLP291-datasheet-en
-      page: 4
-      locator: "Isolation Characteristics, Isolation voltage BVS, AC, 60 s: MIN 3750 Vrms"
-  "/pins":
-    - source: toshiba/TLP291-datasheet-en
-      page: 1
-      locator: "\"Pin Configuration\" (TLP291): 1 ANODE, 2 CATHODE, 3 EMITTER, 4 COLLECTOR"

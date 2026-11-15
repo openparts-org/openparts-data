@@ -14,87 +14,42 @@
 # given -- no A2 -- so it is recorded as overall_height max, with no
 # body_height. Lead thickness is the reference value "(0.15) TYP".
 # Note: lead width here is 0.17-0.30, unlike PW0020A's 0.19-0.30.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
-
 family: tssop
 lead_count: 16
+source: ti/SCLS041J
 
 pitch:
-  nominal: 0.65
-  unit: mm
+  typ: 0.65 mm
+  src: p34 "PACKAGE OUTLINE PW0016A (4220204/B), "14X 0.65" (boxed basic dimension)"
+
+geometry: { type: parametric, generator: tssop }
 
 dimensions:
   body_width:
-    min: 4.3
-    max: 4.5
-    unit: mm
+    min: 4.3 mm
+    max: 4.5 mm
+    src: p34 "PACKAGE OUTLINE PW0016A, body width "4.5/4.3 NOTE 4" (datum B); no nominal stated (min/max only)"
   body_length:
-    min: 4.9
-    max: 5.1
-    unit: mm
-  overall_width:
-    min: 6.2
-    max: 6.6
-    unit: mm
-  overall_height:
-    max: 1.2
-    unit: mm
-  standoff:
-    min: 0.05
-    max: 0.15
-    unit: mm
-  lead_width:
-    min: 0.17
-    max: 0.30
-    unit: mm
-  lead_length:
-    min: 0.50
-    max: 0.75
-    unit: mm
+    min: 4.9 mm
+    max: 5.1 mm
+    src: p34 "PACKAGE OUTLINE PW0016A, body length "5.1/4.9 NOTE 3" (datum A); no nominal stated (min/max only)"
   lead_thickness:
-    nominal: 0.15
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: tssop
-
-provenance:
-  "/pitch":
-    - source: ti/SCLS041J
-      page: 34
-      locator: "PACKAGE OUTLINE PW0016A (4220204/B), \"14X 0.65\" (boxed basic dimension)"
-  "/dimensions/body_width":
-    - source: ti/SCLS041J
-      page: 34
-      locator: "PACKAGE OUTLINE PW0016A, body width \"4.5/4.3 NOTE 4\" (datum B); no nominal stated (min/max only)"
-  "/dimensions/body_length":
-    - source: ti/SCLS041J
-      page: 34
-      locator: "PACKAGE OUTLINE PW0016A, body length \"5.1/4.9 NOTE 3\" (datum A); no nominal stated (min/max only)"
-  "/dimensions/overall_width":
-    - source: ti/SCLS041J
-      page: 34
-      locator: "PACKAGE OUTLINE PW0016A, lead tip span \"6.6/6.2 TYP\" (min/max only)"
-  "/dimensions/overall_height":
-    - source: ti/SCLS041J
-      page: 34
-      locator: "PACKAGE OUTLINE PW0016A, side view \"1.2 MAX\""
-  "/dimensions/standoff":
-    - source: ti/SCLS041J
-      page: 34
-      locator: "PACKAGE OUTLINE PW0016A, DETAIL A \"0.15/0.05\""
-  "/dimensions/lead_width":
-    - source: ti/SCLS041J
-      page: 34
-      locator: "PACKAGE OUTLINE PW0016A, \"16X 0.30/0.17\""
-  "/dimensions/lead_length":
-    - source: ti/SCLS041J
-      page: 34
-      locator: "PACKAGE OUTLINE PW0016A, DETAIL A \"0.75/0.50\""
-  "/dimensions/lead_thickness":
-    - source: ti/SCLS041J
-      page: 34
-      locator: "PACKAGE OUTLINE PW0016A, side detail \"(0.15) TYP\" (reference value)"
+    typ: 0.15 mm
+    src: p34 "PACKAGE OUTLINE PW0016A, side detail "(0.15) TYP" (reference value)"
+  lead_length:
+    min: 0.5 mm
+    max: 0.75 mm
+    src: p34 "PACKAGE OUTLINE PW0016A, DETAIL A "0.75/0.50""
+  overall_width:
+    min: 6.2 mm
+    max: 6.6 mm
+    src: p34 "PACKAGE OUTLINE PW0016A, lead tip span "6.6/6.2 TYP" (min/max only)"
+  overall_height: { max: 1.2 mm, src: 'p34 "PACKAGE OUTLINE PW0016A, side view "1.2 MAX""' }
+  standoff:
+    min: 0.05 mm
+    max: 0.15 mm
+    src: p34 "PACKAGE OUTLINE PW0016A, DETAIL A "0.15/0.05""
+  lead_width: { min: 0.17 mm, max: 0.3 mm, src: 'p34 "PACKAGE OUTLINE PW0016A, "16X 0.30/0.17""' }

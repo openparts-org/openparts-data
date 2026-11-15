@@ -3,15 +3,12 @@
 # Read via pdftotext and a page-1 render (pdftoppm) for the "TO252 DPAK"
 # and "TO-251A IPAK" Top View / Bottom View pin images. No package
 # outline and no ordering table in this document.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: aos/AOD403-DS
-
+url: https://www.aosmd.com/res/datasheets/AOD403.pdf
+date: 2024-01
+revision: "10.1"
 publisher: aos
 document_id: AOD403
 document_type: datasheet
-
-revision: "10.1"
-date: "2024-01"
-
-url: "https://www.aosmd.com/res/datasheets/AOD403.pdf"

@@ -1,51 +1,21 @@
 # 10uF 25V X7R 1206 MLCC. Listed at element14 UK.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: murata/GRM31CR71E106KA12L
-
 manufacturer: murata
 mpn: GRM31CR71E106KA12L
-
 device: murata/GRM31-X7R
 package: standards/CHIP1206-GRM31
+sources: [murata/GRM31CR71E106KA12]
+source: murata/GRM31CR71E106KA12
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - murata/GRM31CR71E106KA12
+existence: { status: verified }
+lifecycle: { status: active }
 
 parameters:
-  capacitance:
-    nominal: 10
-    unit: uF
-  tolerance:
-    min: -10
-    max: 10
-    unit: "%"
-  rated_voltage:
-    nominal: 25
-    unit: V
+  capacitance:   { typ: 10 uF, src: 'p1 "Specifications, Capacitance: 10µF ±10%"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "Specifications, Capacitance: 10µF ±10%"' }
+  rated_voltage: { typ: 25 V, src: 'p1 "Specifications, Rated voltage: 25Vdc"' }
   dielectric:
     value: X7R
-
-provenance:
-  "/parameters/capacitance":
-    - source: murata/GRM31CR71E106KA12
-      page: 1
-      locator: "Specifications, Capacitance: 10µF ±10%"
-  "/parameters/tolerance":
-    - source: murata/GRM31CR71E106KA12
-      page: 1
-      locator: "Specifications, Capacitance: 10µF ±10%"
-  "/parameters/rated_voltage":
-    - source: murata/GRM31CR71E106KA12
-      page: 1
-      locator: "Specifications, Rated voltage: 25Vdc"
-  "/parameters/dielectric":
-    - source: murata/GRM31CR71E106KA12
-      page: 1
-      locator: "Specifications, Temperature characteristics (complied standard): X7R(EIA)"
+    src: 'p1 "Specifications, Temperature characteristics (complied standard): X7R(EIA)"'

@@ -3,15 +3,12 @@
 # "June 2025", 7 pages, downloaded from the URL below. Read with
 # pdftotext -layout and a page-1 render (pdftoppm) for the "Top View"
 # pin drawing.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: diodes/DS31830
-
+url: https://www.diodes.com/assets/Datasheets/DMP2035U.pdf
+date: 2025-06
+revision: 11-2
 publisher: diodes
 document_id: DS31830
 document_type: datasheet
-
-revision: "11-2"
-date: "2025-06"
-
-url: "https://www.diodes.com/assets/Datasheets/DMP2035U.pdf"

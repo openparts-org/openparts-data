@@ -2,15 +2,16 @@
 # Functions" (page 3): "NE555...D, P, PS, OR PW PACKAGE (TOP VIEW)" and
 # Table 4-1 "Pin Functions" (D/P/PS/PW/JG column). Same 8-pin
 # assignment for the D (SOIC) and P (PDIP) packages.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/NE555
-
 manufacturer: ti
 category: timer
 family: xx555
+source: ti/SLFS022K
 
 pins:
+  src: p3 ""NE555...D, P, PS, OR PW PACKAGE (TOP VIEW)" and Table 4-1 "Pin Functions""
   "1": { name: GND, type: ground }
   "2": { name: TRIG, type: input }
   "3": { name: OUT, type: output }
@@ -19,9 +20,3 @@ pins:
   "6": { name: THRES, type: input }
   "7": { name: DISCH, type: output }
   "8": { name: VCC, type: power }
-
-provenance:
-  "/pins":
-    - source: ti/SLFS022K
-      page: 3
-      locator: "\"NE555...D, P, PS, OR PW PACKAGE (TOP VIEW)\" and Table 4-1 \"Pin Functions\""

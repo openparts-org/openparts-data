@@ -6,42 +6,24 @@
 # (manufacturers/ti/KTT0005B-TabPin3) keys the tab as pad "3"
 # (Ground), so no extra pin is recorded. Output is the switch node
 # ("Internal switch") -> output; ON/OFF -> input.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/LM2596-KTT
-
 manufacturer: ti
 category: switching_regulator
 family: LM2596
-
-pins:
-  "1": { name: "VIN", type: power }
-  "2": { name: "Output", type: output }
-  "3": { name: "Ground", type: ground }
-  "4": { name: "Feedback", type: input }
-  "5": { name: "ON/OFF", type: input }
+source: ti/SNVS124G
 
 parameters:
-  input_voltage_max:
-    max: 40
-    unit: V
-  output_current:
-    nominal: 3
-    unit: A
+  input_voltage_max: { max: 40 V, src: 'p5 "7.3 Operating Conditions, Supply voltage: MAX 40 V"' }
+  output_current:    { typ: 3 A, src: 'p1 "1 Features, "3-A output load current""' }
 
-provenance:
-  "/parameters/input_voltage_max":
-    - source: ti/SNVS124G
-      page: 5
-      locator: "7.3 Operating Conditions, Supply voltage: MAX 40 V"
-  "/parameters/output_current":
-    - source: ti/SNVS124G
-      page: 1
-      locator: "1 Features, \"3-A output load current\""
-  "/pins":
-    - source: ti/SNVS124G
-      page: 4
-      locator: "Table 6-1 \"Pin Functions\": 1 VIN, 2 Output, 3 Ground, 4 Feedback, 5 ON/OFF"
-    - source: ti/SNVS124G
-      page: 4
-      locator: "Figure 6-2 \"5-Pin TO-263 KTT Package Top View\" (1 VIN at the bottom ... 5 ON/OFF, \"Metal Tab GND\")"
+pins:
+  src:
+    - 'p4 "Table 6-1 "Pin Functions": 1 VIN, 2 Output, 3 Ground, 4 Feedback, 5 ON/OFF"'
+    - p4 "Figure 6-2 "5-Pin TO-263 KTT Package Top View" (1 VIN at the bottom ... 5 ON/OFF, "Metal Tab GND")"
+  "1": { name: VIN, type: power }
+  "2": { name: Output, type: output }
+  "3": { name: Ground, type: ground }
+  "4": { name: Feedback, type: input }
+  "5": { name: ON/OFF, type: input }

@@ -2,11 +2,10 @@
 # line ("Copyright(C) 1999-2026 J.S.T. Mfg. Co., Ltd.") of the English
 # home page https://www.jst-mfg.com/index_e.php (read 2026-11-10 with
 # WebFetch). The XH/PH catalogue PDFs themselves print only "JST".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: manufacturer
 id: jst
 
-name: J.S.T. Mfg. Co., Ltd.
+website: { url: https://www.jst-mfg.com }
 
-website:
-  url: "https://www.jst-mfg.com"
+name: J.S.T. Mfg. Co., Ltd.

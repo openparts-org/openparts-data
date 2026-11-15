@@ -5,103 +5,56 @@
 # overall_width = E, body_height = A2 (NOM 2.31 only), overall_height
 # = A, standoff = A1 (min/max only), lead_width = b, lead_thickness = C,
 # lead_length = L. Values as printed.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/winbond/SOIC16-300mil-F
-
 family: soic
 lead_count: 16
+source: winbond/W25Q128JV@revF
 
-pitch:
-  nominal: 1.27
-  unit: mm
+pitch: { typ: 1.27 mm, src: 'p69 "Section 10.2 table, "e 1.27 BSC""' }
+geometry: { type: parametric, generator: soic }
 
 dimensions:
   body_width:
-    nominal: 7.49
-    min: 7.39
-    max: 7.59
-    unit: mm
+    min: 7.39 mm
+    typ: 7.49 mm
+    max: 7.59 mm
+    src: p69 "Section 10.2 table, "E1 7.39 / 7.49 / 7.59" (mm)"
   body_length:
-    nominal: 10.31
-    min: 10.08
-    max: 10.49
-    unit: mm
+    min: 10.08 mm
+    typ: 10.31 mm
+    max: 10.49 mm
+    src: p69 "Section 10.2 table, "D 10.08 / 10.31 / 10.49" (mm)"
   body_height:
-    nominal: 2.31
-    unit: mm
-  overall_width:
-    nominal: 10.31
-    min: 10.01
-    max: 10.64
-    unit: mm
-  overall_height:
-    nominal: 2.49
-    min: 2.36
-    max: 2.64
-    unit: mm
-  standoff:
-    min: 0.10
-    max: 0.30
-    unit: mm
-  lead_width:
-    nominal: 0.41
-    min: 0.33
-    max: 0.51
-    unit: mm
-  lead_length:
-    nominal: 0.81
-    min: 0.38
-    max: 1.27
-    unit: mm
+    typ: 2.31 mm
+    src: p69 "Section 10.2 table, "A2 --- / 2.31 / ---" (mm, nominal only)"
   lead_thickness:
-    nominal: 0.23
-    min: 0.18
-    max: 0.28
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: soic
-
-provenance:
-  "/pitch":
-    - source: winbond/W25Q128JV@revF
-      page: 69
-      locator: "Section 10.2 table, \"e 1.27 BSC\""
-  "/dimensions/body_width":
-    - source: winbond/W25Q128JV@revF
-      page: 69
-      locator: "Section 10.2 table, \"E1 7.39 / 7.49 / 7.59\" (mm)"
-  "/dimensions/body_length":
-    - source: winbond/W25Q128JV@revF
-      page: 69
-      locator: "Section 10.2 table, \"D 10.08 / 10.31 / 10.49\" (mm)"
-  "/dimensions/body_height":
-    - source: winbond/W25Q128JV@revF
-      page: 69
-      locator: "Section 10.2 table, \"A2 --- / 2.31 / ---\" (mm, nominal only)"
-  "/dimensions/overall_width":
-    - source: winbond/W25Q128JV@revF
-      page: 69
-      locator: "Section 10.2 table, \"E 10.01 / 10.31 / 10.64\" (mm)"
-  "/dimensions/overall_height":
-    - source: winbond/W25Q128JV@revF
-      page: 69
-      locator: "Section 10.2 table, \"A 2.36 / 2.49 / 2.64\" (mm)"
-  "/dimensions/standoff":
-    - source: winbond/W25Q128JV@revF
-      page: 69
-      locator: "Section 10.2 table, \"A1 0.10 / --- / 0.30\" (mm)"
-  "/dimensions/lead_width":
-    - source: winbond/W25Q128JV@revF
-      page: 69
-      locator: "Section 10.2 table, \"b 0.33 / 0.41 / 0.51\" (mm)"
-  "/dimensions/lead_length":
-    - source: winbond/W25Q128JV@revF
-      page: 69
-      locator: "Section 10.2 table, \"L 0.38 / 0.81 / 1.27\" (mm)"
-  "/dimensions/lead_thickness":
-    - source: winbond/W25Q128JV@revF
-      page: 69
-      locator: "Section 10.2 table, \"C 0.18 / 0.23 / 0.28\" (mm)"
+    min: 0.18 mm
+    typ: 0.23 mm
+    max: 0.28 mm
+    src: p69 "Section 10.2 table, "C 0.18 / 0.23 / 0.28" (mm)"
+  overall_width:
+    min: 10.01 mm
+    typ: 10.31 mm
+    max: 10.64 mm
+    src: p69 "Section 10.2 table, "E 10.01 / 10.31 / 10.64" (mm)"
+  overall_height:
+    min: 2.36 mm
+    typ: 2.49 mm
+    max: 2.64 mm
+    src: p69 "Section 10.2 table, "A 2.36 / 2.49 / 2.64" (mm)"
+  standoff:
+    min: 0.1 mm
+    max: 0.3 mm
+    src: p69 "Section 10.2 table, "A1 0.10 / --- / 0.30" (mm)"
+  lead_width:
+    min: 0.33 mm
+    typ: 0.41 mm
+    max: 0.51 mm
+    src: p69 "Section 10.2 table, "b 0.33 / 0.41 / 0.51" (mm)"
+  lead_length:
+    min: 0.38 mm
+    typ: 0.81 mm
+    max: 1.27 mm
+    src: p69 "Section 10.2 table, "L 0.38 / 0.81 / 1.27" (mm)"

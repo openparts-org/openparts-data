@@ -3,41 +3,29 @@
 # Information" (page 11). (The assignment's "AZ1117CH-3.3" is the
 # family name; the orderable MPN carries the TRG1 suffix.) No lifecycle
 # statement in the document.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: diodes/AZ1117CH-3.3TRG1
-
 manufacturer: diodes
 mpn: AZ1117CH-3.3TRG1
-
 device: diodes/AZ1117C-3.3
-package: manufacturers/diodes/SOT223-3.5x6.5-P2.3-TabPin2-DS36676
+
+package:
+  value: manufacturers/diodes/SOT223-3.5x6.5-P2.3-TabPin2-DS36676
+  src: 'p13 ""Package Outline Dimensions (1) Package Type: SOT223""'
+
+sources: [diodes/DS36676]
+source: diodes/DS36676
 
 existence:
   status: verified
+  src: 'p11 "Ordering Information: "SOT223 | AZ1117CH-3.3TRG1 | GH16D | 4000/Tape & Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - diodes/DS36676
+lifecycle: { status: unknown }
 
 parameters:
   dropout_voltage:
-    nominal: 1.2
-    max: 1.3
-    unit: V
-
-provenance:
-  "/parameters/dropout_voltage":
-    - source: diodes/DS36676
-      page: 7
-      locator: "Electrical Characteristics AZ1117C-3.3, VDROP Dropout Voltage, dVOUT = 1%, IOUT = 0.8A, SOT223 row: Typ 1.2 V, Max 1.3 V (SOT223 per Ordering Information, page 11)"
-  "/existence":
-    - source: diodes/DS36676
-      page: 11
-      locator: "Ordering Information: \"SOT223 | AZ1117CH-3.3TRG1 | GH16D | 4000/Tape & Reel\""
-  "/package":
-    - source: diodes/DS36676
-      page: 13
-      locator: "\"Package Outline Dimensions (1) Package Type: SOT223\""
+    typ: 1.2 V
+    max: 1.3 V
+    at: { IOUT: 0.8 A }
+    src: 'p7 "Electrical Characteristics AZ1117C-3.3, VDROP Dropout Voltage, dVOUT = 1%, SOT223 row: Typ 1.2 V, Max 1.3 V (SOT223 per Ordering Information, page 11)"'

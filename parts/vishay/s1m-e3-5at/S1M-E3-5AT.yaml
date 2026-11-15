@@ -4,21 +4,14 @@
 # 2026-11-14: package repointed from standards/CHIP-SMA-DO214AC
 # (family chip, body only; deleted) to
 # standards/DO214AC-VISHAY-88711.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: vishay/S1M-E3/5AT
-
 manufacturer: vishay
 mpn: S1M-E3/5AT
-
 device: vishay/S1M
 package: standards/DO214AC-VISHAY-88711
+sources: [vishay/88711]
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - vishay/88711
+existence: { status: verified }
+lifecycle: { status: active }

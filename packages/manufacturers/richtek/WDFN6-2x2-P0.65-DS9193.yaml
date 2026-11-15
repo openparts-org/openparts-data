@@ -7,98 +7,53 @@
 # body_length (Y), E (across the rows) = body_width (X); exposed pad E2
 # (vertical, across) = width (X), D2 (horizontal, along) = length (Y).
 # body_height = A (no A2), lead_thickness = A3.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/richtek/WDFN6-2x2-P0.65-DS9193
-
 family: dfn
-lead_count: 6
+
+lead_count:
+  value: 6
+  src: p13 ""W-Type 6L DFN 2x2 Package" outline, Dimensions In Millimeters Min/Max, 6 terminals ("6L", bottom view)"
+
+source: richtek/DS9193-18
 
 pitch:
-  nominal: 0.650
-  unit: mm
+  typ: 0.65 mm
+  src: p13 ""W-Type 6L DFN 2x2 Package" outline, Dimensions In Millimeters Min/Max, "e 0.650""
+
+geometry: { type: parametric, generator: dfn }
 
 dimensions:
   body_width:
-    min: 1.950
-    max: 2.050
-    unit: mm
+    min: 1.95 mm
+    max: 2.05 mm
+    src: p13 ""W-Type 6L DFN 2x2 Package" outline, Dimensions In Millimeters Min/Max, "E 1.950 / 2.050" (across the terminal rows)"
   body_length:
-    min: 1.950
-    max: 2.050
-    unit: mm
+    min: 1.95 mm
+    max: 2.05 mm
+    src: p13 ""W-Type 6L DFN 2x2 Package" outline, Dimensions In Millimeters Min/Max, "D 1.950 / 2.050" (along the terminal rows)"
   body_height:
-    min: 0.700
-    max: 0.800
-    unit: mm
-  standoff:
-    min: 0.000
-    max: 0.050
-    unit: mm
-  lead_width:
-    min: 0.200
-    max: 0.350
-    unit: mm
-  lead_length:
-    min: 0.300
-    max: 0.400
-    unit: mm
-  lead_thickness:
-    min: 0.175
-    max: 0.250
-    unit: mm
+    min: 0.7 mm
+    max: 0.8 mm
+    src: p13 ""W-Type 6L DFN 2x2 Package" outline, Dimensions In Millimeters Min/Max, "A 0.700 / 0.800""
   exposed_pad:
-    width:
-      min: 0.500
-      max: 0.850
-      unit: mm
-    length:
-      min: 1.000
-      max: 1.450
-      unit: mm
-
-geometry:
-  type: parametric
-  generator: dfn
-
-provenance:
-  "/lead_count":
-    - source: richtek/DS9193-18
-      page: 13
-      locator: "\"W-Type 6L DFN 2x2 Package\" outline, Dimensions In Millimeters Min/Max, 6 terminals (\"6L\", bottom view)"
-  "/pitch":
-    - source: richtek/DS9193-18
-      page: 13
-      locator: "\"W-Type 6L DFN 2x2 Package\" outline, Dimensions In Millimeters Min/Max, \"e 0.650\""
-  "/dimensions/body_width":
-    - source: richtek/DS9193-18
-      page: 13
-      locator: "\"W-Type 6L DFN 2x2 Package\" outline, Dimensions In Millimeters Min/Max, \"E 1.950 / 2.050\" (across the terminal rows)"
-  "/dimensions/body_length":
-    - source: richtek/DS9193-18
-      page: 13
-      locator: "\"W-Type 6L DFN 2x2 Package\" outline, Dimensions In Millimeters Min/Max, \"D 1.950 / 2.050\" (along the terminal rows)"
-  "/dimensions/body_height":
-    - source: richtek/DS9193-18
-      page: 13
-      locator: "\"W-Type 6L DFN 2x2 Package\" outline, Dimensions In Millimeters Min/Max, \"A 0.700 / 0.800\""
-  "/dimensions/standoff":
-    - source: richtek/DS9193-18
-      page: 13
-      locator: "\"W-Type 6L DFN 2x2 Package\" outline, Dimensions In Millimeters Min/Max, \"A1 0.000 / 0.050\""
-  "/dimensions/lead_width":
-    - source: richtek/DS9193-18
-      page: 13
-      locator: "\"W-Type 6L DFN 2x2 Package\" outline, Dimensions In Millimeters Min/Max, \"b 0.200 / 0.350\""
-  "/dimensions/lead_length":
-    - source: richtek/DS9193-18
-      page: 13
-      locator: "\"W-Type 6L DFN 2x2 Package\" outline, Dimensions In Millimeters Min/Max, \"L 0.300 / 0.400\""
-  "/dimensions/lead_thickness":
-    - source: richtek/DS9193-18
-      page: 13
-      locator: "\"W-Type 6L DFN 2x2 Package\" outline, Dimensions In Millimeters Min/Max, \"A3 0.175 / 0.250\""
-  "/dimensions/exposed_pad":
-    - source: richtek/DS9193-18
-      page: 13
-      locator: "\"W-Type 6L DFN 2x2 Package\" outline, Dimensions In Millimeters Min/Max, \"E2 0.500 / 0.850\" (width, X) and \"D2 1.000 / 1.450\" (length, Y)"
+    src:    p13 ""W-Type 6L DFN 2x2 Package" outline, Dimensions In Millimeters Min/Max, "E2 0.500 / 0.850" (width, X) and "D2 1.000 / 1.450" (length, Y)"
+    width:  { min: 0.5 mm, max: 0.85 mm }
+    length: { min: 1 mm, max: 1.45 mm }
+  standoff:
+    min: 0 mm
+    max: 0.05 mm
+    src: p13 ""W-Type 6L DFN 2x2 Package" outline, Dimensions In Millimeters Min/Max, "A1 0.000 / 0.050""
+  lead_width:
+    min: 0.2 mm
+    max: 0.35 mm
+    src: p13 ""W-Type 6L DFN 2x2 Package" outline, Dimensions In Millimeters Min/Max, "b 0.200 / 0.350""
+  lead_length:
+    min: 0.3 mm
+    max: 0.4 mm
+    src: p13 ""W-Type 6L DFN 2x2 Package" outline, Dimensions In Millimeters Min/Max, "L 0.300 / 0.400""
+  lead_thickness:
+    min: 0.175 mm
+    max: 0.25 mm
+    src: p13 ""W-Type 6L DFN 2x2 Package" outline, Dimensions In Millimeters Min/Max, "A3 0.175 / 0.250""

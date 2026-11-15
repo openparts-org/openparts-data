@@ -5,58 +5,34 @@
 # (page 1): RT9080 = without SNS pin, 33 = 3.3V, G = Richtek Green
 # Policy compliant, J5 = TSOT-23-5. lifecycle: neither source states a
 # production status; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: richtek/RT9080-33GJ5
-
 manufacturer: richtek
 mpn: RT9080-33GJ5
-
 device: richtek/RT9080-TSOT23-5
-package: manufacturers/richtek/TSOT23-5-DS9080
+
+package:
+  value: manufacturers/richtek/TSOT23-5-DS9080
+  src: 'p1 "2 Ordering Information, "J5: TSOT-23-5"; outline 19.1 TSOT-23-5 on page 17"'
+
+sources: [richtek/DS9080-09, richtek/RT9080-product-page]
+source: richtek/DS9080-09
 
 existence:
   status: verified
+  src:
+    - richtek/RT9080-product-page p1 "JSON-LD Product "RT9080", offers sku "RT9080-33GJ5""
+    - 'p1 "2 Ordering Information legend: "Package Type J5: TSOT-23-5", "Output Voltage 33 : 3.3V", "G: Richtek Green Policy Compliant", "RT9080: Without SNS Pin""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - richtek/DS9080-09
-  - richtek/RT9080-product-page
+lifecycle: { status: unknown }
 
 parameters:
   output_type:
     value: fixed
-  output_voltage:
-    nominal: 3.3
-    unit: V
+    src: 'p1 "3 Features, "Support Fixed Output Voltage: 0.8V to 3.3V"; 2 Ordering Information, Output Voltage "33 : 3.3V""'
+  output_voltage: { typ: 3.3 V, src: 'p1 "2 Ordering Information, Output Voltage: "33 : 3.3V""' }
   dropout_voltage:
-    nominal: 0.31
-    max: 0.53
-    unit: V
-
-provenance:
-  "/parameters/output_type":
-    - source: richtek/DS9080-09
-      page: 1
-      locator: "3 Features, \"Support Fixed Output Voltage: 0.8V to 3.3V\"; 2 Ordering Information, Output Voltage \"33 : 3.3V\""
-  "/parameters/output_voltage":
-    - source: richtek/DS9080-09
-      page: 1
-      locator: "2 Ordering Information, Output Voltage: \"33 : 3.3V\""
-  "/parameters/dropout_voltage":
-    - source: richtek/DS9080-09
-      page: 6
-      locator: "Electrical Characteristics, Dropout Voltage (ILOAD = 600mA) VDROP, 3V <= VVOUT row: Typ 0.31 V, Max 0.53 V"
-  "/existence":
-    - source: richtek/RT9080-product-page
-      page: 1
-      locator: "JSON-LD Product \"RT9080\", offers sku \"RT9080-33GJ5\""
-    - source: richtek/DS9080-09
-      page: 1
-      locator: "2 Ordering Information legend: \"Package Type J5: TSOT-23-5\", \"Output Voltage 33 : 3.3V\", \"G: Richtek Green Policy Compliant\", \"RT9080: Without SNS Pin\""
-  "/package":
-    - source: richtek/DS9080-09
-      page: 1
-      locator: "2 Ordering Information, \"J5: TSOT-23-5\"; outline 19.1 TSOT-23-5 on page 17"
+    typ: 0.31 V
+    max: 0.53 V
+    src: 'p6 "Electrical Characteristics, Dropout Voltage (ILOAD = 600mA) VDROP, 3V <= VVOUT row: Typ 0.31 V, Max 0.53 V"'

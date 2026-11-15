@@ -5,15 +5,18 @@
 # Connection" -> type nc. Types as microchip/MCP3008 (CH -> analog,
 # DGND/AGND -> ground, CS/SHDN, DIN, CLK -> input, DOUT -> output, VREF
 # -> analog, VDD -> power).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/MCP3204
-
 manufacturer: microchip
 category: adc
-family: "MCP3204/3208"
+family: MCP3204/3208
+source: microchip/DS21298@revE
 
 pins:
+  src:
+    - p15 "Table 3-1 "Pin Function Table", column "MCP3204 PDIP, SOIC, TSSOP""
+    - p1 ""Package Types" figure "MCP3204 PDIP, SOIC, TSSOP" (all 14 pins matched)"
   "1":  { name: CH0, type: analog }
   "2":  { name: CH1, type: analog }
   "3":  { name: CH2, type: analog }
@@ -21,19 +24,10 @@ pins:
   "5":  { name: NC, type: nc }
   "6":  { name: NC, type: nc }
   "7":  { name: DGND, type: ground }
-  "8":  { name: "CS/SHDN", type: input }
+  "8":  { name: CS/SHDN, type: input }
   "9":  { name: DIN, type: input }
   "10": { name: DOUT, type: output }
   "11": { name: CLK, type: input }
   "12": { name: AGND, type: ground }
   "13": { name: VREF, type: analog }
   "14": { name: VDD, type: power }
-
-provenance:
-  "/pins":
-    - source: microchip/DS21298@revE
-      page: 15
-      locator: "Table 3-1 \"Pin Function Table\", column \"MCP3204 PDIP, SOIC, TSSOP\""
-    - source: microchip/DS21298@revE
-      page: 1
-      locator: "\"Package Types\" figure \"MCP3204 PDIP, SOIC, TSSOP\" (all 14 pins matched)"

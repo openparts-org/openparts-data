@@ -1,28 +1,18 @@
 # S1J-13-F: assembled from the ordering pattern -- probable.
 # Package: manufacturers/diodes/SMA-DS13002 (outline read from DS13002; the same outline table is printed in DS16003, see the package header).
 # No lifecycle statement in the datasheet: lifecycle unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: diodes/S1J-13-F
-
 manufacturer: diodes
 mpn: S1J-13-F
-
 device: diodes/S1J
 package: manufacturers/diodes/SMA-DS13002
+sources: [diodes/DS16003, diodes/DS13002]
+source: diodes/DS16003
 
 existence:
   status: probable
+  src: p1 "Ordering Information table row "S1x-13-F | Commercial | SMA | 5,000/Tape & Reel" with footnote "x = Device type, e.g. S1A-13-F (SMA package); S1AB-13-F (SMB package)""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - diodes/DS16003
-  - diodes/DS13002
-
-provenance:
-  "/existence":
-    - source: diodes/DS16003
-      page: 1
-      locator: "Ordering Information table row \"S1x-13-F | Commercial | SMA | 5,000/Tape & Reel\" with footnote \"x = Device type, e.g. S1A-13-F (SMA package); S1AB-13-F (SMB package)\""
+lifecycle: { status: unknown }

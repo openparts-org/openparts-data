@@ -9,35 +9,24 @@
 # applies (the exposed pad is not mentioned in DS21709J -> no EP pin).
 # Package: drawing C04-129B (page 24, rendered) matches C04-129C
 # (DS20001203W pages 30-31) row for row -> reused. lifecycle: unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/24LC02BT-I-MNY
-
 manufacturer: microchip
-mpn: "24LC02BT-I/MNY"
-
+mpn: 24LC02BT-I/MNY
 device: microchip/24LC02B
-package: manufacturers/microchip/TDFN8-2x3-P0.5-MN-C04-129C
+
+package:
+  value: manufacturers/microchip/TDFN8-2x3-P0.5-MN-C04-129C
+  src:
+    - p29 "Product Identification System, Package "MNY(1)= TDFN, (2x3x0.75 mm body), 8-lead""
+    - p24 "drawing C04-129B "8-Lead Plastic Dual Flat, No Lead Package (MN) - 2x3x0.75 mm Body [TDFN]" (rendered; identical numbers to C04-129C)"
+
+sources: [microchip/DS21709@revJ, microchip/DS20001203@revW]
+source: microchip/DS21709@revJ
 
 existence:
   status: probable
+  src: 'p29 "Product Identification System legend: Device "24LC02BT", Temperature Range "I", Package "MNY(1)= TDFN, (2x3x0.75 mm body), 8-lead" (assembled, not printed)"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS21709@revJ
-  - microchip/DS20001203@revW
-
-provenance:
-  "/existence":
-    - source: microchip/DS21709@revJ
-      page: 29
-      locator: "Product Identification System legend: Device \"24LC02BT\", Temperature Range \"I\", Package \"MNY(1)= TDFN, (2x3x0.75 mm body), 8-lead\" (assembled, not printed)"
-  "/package":
-    - source: microchip/DS21709@revJ
-      page: 29
-      locator: "Product Identification System, Package \"MNY(1)= TDFN, (2x3x0.75 mm body), 8-lead\""
-    - source: microchip/DS21709@revJ
-      page: 24
-      locator: "drawing C04-129B \"8-Lead Plastic Dual Flat, No Lead Package (MN) - 2x3x0.75 mm Body [TDFN]\" (rendered; identical numbers to C04-129C)"
+lifecycle: { status: unknown }

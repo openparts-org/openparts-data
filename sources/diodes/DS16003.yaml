@@ -5,15 +5,12 @@
 # -layout and rendered (pdftoppm) for the outline drawing. Page numbers
 # cited are PDF page indices (= printed "n of N").
 # Footers read "December 2014".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: diodes/DS16003
-
+url: https://www.diodes.com/datasheet/download/S1M.pdf
+date: 2014-12
+revision: 24-2
 publisher: diodes
 document_id: DS16003
 document_type: datasheet
-
-revision: "24-2"
-date: "2014-12"
-
-url: "https://www.diodes.com/datasheet/download/S1M.pdf"

@@ -20,105 +20,40 @@
 # lead_length = L 0.30-0.50. "Typ" values recorded as nominal; rows
 # without a Typ are min/max only. Not modelled: L2 0.250 BSC (gauge
 # plane), angles.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/diodes/TSOT26-2.90x1.60-P0.95-DS41326
-
 family: sot
 lead_count: 6
-lead_layout: [3, 3]
 
-pitch:
-  nominal: 0.95
-  unit: mm
+lead_layout:
+  value: [3, 3]
+  src:
+    - 'p1 "Pin Assignments, TSOT26 TOP VIEW: 1 FB, 2 EN, 3 VIN on one side, 6 BST, 5 SW, 4 GND opposite"'
+    - 'p16 "Marking Information, TSOT26 (Top View): 1 2 3 along the bottom, 6 5 4 along the top"'
+
+source: diodes/DS41326
+
+pitch: { typ: 0.95 mm, src: 'p17 "TSOT26 table, e "0.950 BSC" (e1 "1.900 BSC")"' }
+geometry: { type: parametric, generator: sot }
 
 dimensions:
   body_width:
-    min: 2.800
-    nominal: 2.900
-    max: 3.000
-    unit: mm
+    min: 2.8 mm
+    typ: 2.9 mm
+    max: 3 mm
+    src: p17 "TSOT26 table, D "2.800 / 3.000 / 2.900" (Min/Max/Typ) -- see mapping note"
   body_length:
-    min: 1.500
-    nominal: 1.600
-    max: 1.700
-    unit: mm
-  body_height:
-    min: 0.840
-    max: 0.900
-    unit: mm
+    min: 1.5 mm
+    typ: 1.6 mm
+    max: 1.7 mm
+    src: p17 "TSOT26 table, E1 "1.500 / 1.700 / 1.600" (Min/Max/Typ) -- see mapping note"
+  body_height:    { min: 0.84 mm, max: 0.9 mm, src: 'p17 "TSOT26 table, A2 "0.840 / 0.900 / -""' }
+  lead_thickness: { min: 0.12 mm, max: 0.2 mm, src: 'p17 "TSOT26 table, c "0.120 / 0.200 / -""' }
   overall_length:
-    nominal: 2.800
-    unit: mm
-  overall_height:
-    max: 1.00
-    unit: mm
-  standoff:
-    min: 0.010
-    max: 0.100
-    unit: mm
-  lead_width:
-    min: 0.300
-    max: 0.450
-    unit: mm
-  lead_length:
-    min: 0.30
-    max: 0.50
-    unit: mm
-  lead_thickness:
-    min: 0.120
-    max: 0.200
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: sot
-
-provenance:
-  "/pitch":
-    - source: diodes/DS41326
-      page: 17
-      locator: "TSOT26 table, e \"0.950 BSC\" (e1 \"1.900 BSC\")"
-  "/lead_layout":
-    - source: diodes/DS41326
-      page: 1
-      locator: "Pin Assignments, TSOT26 TOP VIEW: 1 FB, 2 EN, 3 VIN on one side, 6 BST, 5 SW, 4 GND opposite"
-    - source: diodes/DS41326
-      page: 16
-      locator: "Marking Information, TSOT26 (Top View): 1 2 3 along the bottom, 6 5 4 along the top"
-  "/dimensions/body_width":
-    - source: diodes/DS41326
-      page: 17
-      locator: "TSOT26 table, D \"2.800 / 3.000 / 2.900\" (Min/Max/Typ) -- see mapping note"
-  "/dimensions/body_length":
-    - source: diodes/DS41326
-      page: 17
-      locator: "TSOT26 table, E1 \"1.500 / 1.700 / 1.600\" (Min/Max/Typ) -- see mapping note"
-  "/dimensions/body_height":
-    - source: diodes/DS41326
-      page: 17
-      locator: "TSOT26 table, A2 \"0.840 / 0.900 / -\""
-  "/dimensions/overall_length":
-    - source: diodes/DS41326
-      page: 17
-      locator: "TSOT26 table, E \"2.800 BSC\" (lead-tip span) -- see mapping note"
-  "/dimensions/overall_height":
-    - source: diodes/DS41326
-      page: 17
-      locator: "TSOT26 table, A \"- / 1.00 / -\""
-  "/dimensions/standoff":
-    - source: diodes/DS41326
-      page: 17
-      locator: "TSOT26 table, A1 \"0.010 / 0.100 / -\""
-  "/dimensions/lead_width":
-    - source: diodes/DS41326
-      page: 17
-      locator: "TSOT26 table, b \"0.300 / 0.450 / -\""
-  "/dimensions/lead_length":
-    - source: diodes/DS41326
-      page: 17
-      locator: "TSOT26 table, L \"0.30 / 0.50 / -\""
-  "/dimensions/lead_thickness":
-    - source: diodes/DS41326
-      page: 17
-      locator: "TSOT26 table, c \"0.120 / 0.200 / -\""
+    typ: 2.8 mm
+    src: p17 "TSOT26 table, E "2.800 BSC" (lead-tip span) -- see mapping note"
+  overall_height: { max: 1 mm, src: 'p17 "TSOT26 table, A "- / 1.00 / -""' }
+  standoff:       { min: 0.01 mm, max: 0.1 mm, src: 'p17 "TSOT26 table, A1 "0.010 / 0.100 / -""' }
+  lead_width:     { min: 0.3 mm, max: 0.45 mm, src: 'p17 "TSOT26 table, b "0.300 / 0.450 / -""' }
+  lead_length:    { min: 0.3 mm, max: 0.5 mm, src: 'p17 "TSOT26 table, L "0.30 / 0.50 / -""' }

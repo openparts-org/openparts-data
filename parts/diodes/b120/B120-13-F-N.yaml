@@ -2,27 +2,18 @@
 # selects a regional fab/assembly site per the table footnote).
 # Package: manufacturers/diodes/SMA-DS13002 (outline read from DS13002).
 # No lifecycle statement in the datasheet: lifecycle unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: diodes/B120-13-F-N
-
 manufacturer: diodes
 mpn: B120-13-F-N
-
 device: diodes/B120
 package: manufacturers/diodes/SMA-DS13002
+sources: [diodes/DS13002]
+source: diodes/DS13002
 
 existence:
   status: verified
+  src: p1 "Ordering Information table row "B120-13-F-N | SMA | 5,000 | Tape & Reel""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - diodes/DS13002
-
-provenance:
-  "/existence":
-    - source: diodes/DS13002
-      page: 1
-      locator: "Ordering Information table row \"B120-13-F-N | SMA | 5,000 | Tape & Reel\""
+lifecycle: { status: unknown }

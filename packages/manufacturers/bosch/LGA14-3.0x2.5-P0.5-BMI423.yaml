@@ -14,87 +14,49 @@
 # L1 "Distance package to pad" 0.05/0.10/0.15 ("L1 (All sides)").
 # Height F 0.78/0.83/0.88 (overall) -> body_height.
 # Not drawn by the generator: the "PIN 1 INDEX (0.25X0.09)" pad.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/bosch/LGA14-3.0x2.5-P0.5-BMI423
-
 family: lga
 lead_count: 14
-lead_layout: [4, 3, 4, 3]
 
-pitch:
-  nominal: 0.5
-  unit: mm
+lead_layout:
+  value: [4, 3, 4, 3]
+  src:   [p285 "Figure 40 bottom view numbering 1-14", p280 "Figure 33 pin-out top view"]
+
+source: bosch/BST-BMI423-DS002-03
+
+pitch: { typ: 0.5 mm, src: 'p284 "Table 60, e 0.50 (basic spacing between centers)"' }
+geometry: { type: parametric, generator: lga }
 
 dimensions:
   body_width:
-    nominal: 3.0
-    min: 2.95
-    max: 3.05
-    unit: mm
+    min: 2.95 mm
+    typ: 3 mm
+    max: 3.05 mm
+    src: p284 "Table 60, Length D 2.95/3.00/3.05"
   body_length:
-    nominal: 2.5
-    min: 2.45
-    max: 2.55
-    unit: mm
+    min: 2.45 mm
+    typ: 2.5 mm
+    max: 2.55 mm
+    src: p284 "Table 60, Width E 2.45/2.50/2.55"
   body_height:
-    nominal: 0.83
-    min: 0.78
-    max: 0.88
-    unit: mm
-  lead_length:
-    nominal: 0.475
-    min: 0.425
-    max: 0.525
-    unit: mm
-  lead_width:
-    nominal: 0.25
-    min: 0.2
-    max: 0.3
-    unit: mm
+    min: 0.78 mm
+    typ: 0.83 mm
+    max: 0.88 mm
+    src: p284 "Table 60, Height F 0.78/0.83/0.88"
   lead_inset:
-    nominal: 0.1
-    min: 0.05
-    max: 0.15
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: lga
-
-provenance:
-  "/pitch":
-    - source: bosch/BST-BMI423-DS002-03
-      page: 284
-      locator: "Table 60, e 0.50 (basic spacing between centers)"
-  "/lead_layout":
-    - source: bosch/BST-BMI423-DS002-03
-      page: 285
-      locator: "Figure 40 bottom view numbering 1-14"
-    - source: bosch/BST-BMI423-DS002-03
-      page: 280
-      locator: "Figure 33 pin-out top view"
-  "/dimensions/body_width":
-    - source: bosch/BST-BMI423-DS002-03
-      page: 284
-      locator: "Table 60, Length D 2.95/3.00/3.05"
-  "/dimensions/body_length":
-    - source: bosch/BST-BMI423-DS002-03
-      page: 284
-      locator: "Table 60, Width E 2.45/2.50/2.55"
-  "/dimensions/body_height":
-    - source: bosch/BST-BMI423-DS002-03
-      page: 284
-      locator: "Table 60, Height F 0.78/0.83/0.88"
-  "/dimensions/lead_length":
-    - source: bosch/BST-BMI423-DS002-03
-      page: 284
-      locator: "Table 60, Pad length L 0.425/0.475/0.525"
-  "/dimensions/lead_width":
-    - source: bosch/BST-BMI423-DS002-03
-      page: 284
-      locator: "Table 60, Pad width b 0.20/0.25/0.30"
-  "/dimensions/lead_inset":
-    - source: bosch/BST-BMI423-DS002-03
-      page: 284
-      locator: "Table 60, Distance package to pad L1 0.05/0.10/0.15"
+    min: 0.05 mm
+    typ: 0.1 mm
+    max: 0.15 mm
+    src: p284 "Table 60, Distance package to pad L1 0.05/0.10/0.15"
+  lead_width:
+    min: 0.2 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p284 "Table 60, Pad width b 0.20/0.25/0.30"
+  lead_length:
+    min: 0.425 mm
+    typ: 0.475 mm
+    max: 0.525 mm
+    src: p284 "Table 60, Pad length L 0.425/0.475/0.525"

@@ -5,57 +5,35 @@
 # statement in the document.
 # Package: page-3 SMC (DO-214AB) outline, standards/DO214AB-VISHAY-88751
 # (read from this page).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: vishay/SS32-E3-57T
-
 manufacturer: vishay
-mpn: "SS32-E3/57T"
-
+mpn: SS32-E3/57T
 device: vishay/SS32-SERIES
-package: standards/DO214AB-VISHAY-88751
+
+package:
+  value: standards/DO214AB-VISHAY-88751
+  src: p3 "PACKAGE OUTLINE DIMENSIONS -- see header"
+
+sources: [vishay/88751]
+source: vishay/88751
 
 existence:
   status: probable
+  src:
+    - 'p2 "ORDERING INFORMATION (Example): "SS36-E3/57T | 0.235 | 57T | 850 | 7" diameter plastic tape and reel""'
+    - 'p1 "MAXIMUM RATINGS table column "SS32"; MECHANICAL DATA: "Base P/N-E3 - RoHS-compliant, commercial grade""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - vishay/88751
+lifecycle: { status: unknown }
 
 parameters:
-  reverse_voltage:
-    max: 20
-    unit: V
-  forward_current:
-    max: 3.0
-    unit: A
   forward_voltage:
-    max: 0.5
-    unit: V
-
-provenance:
-  "/parameters/reverse_voltage":
-    - source: vishay/88751
-      page: 1
-      locator: "MAXIMUM RATINGS, Maximum repetitive peak reverse voltage VRRM, SS32 column: 20 V"
-  "/parameters/forward_current":
-    - source: vishay/88751
-      page: 1
-      locator: "MAXIMUM RATINGS, Maximum average forward rectified current at TL (fig. 1) IF(AV): 3.0 A"
-  "/parameters/forward_voltage":
-    - source: vishay/88751
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Maximum instantaneous forward voltage, 3.0 A, VF: 0.5 V (cell spanning SS32-SS34)"
-  "/existence":
-    - source: vishay/88751
-      page: 2
-      locator: "ORDERING INFORMATION (Example): \"SS36-E3/57T | 0.235 | 57T | 850 | 7\" diameter plastic tape and reel\""
-    - source: vishay/88751
-      page: 1
-      locator: "MAXIMUM RATINGS table column \"SS32\"; MECHANICAL DATA: \"Base P/N-E3 - RoHS-compliant, commercial grade\""
-  "/package":
-    - source: vishay/88751
-      page: 3
-      locator: "PACKAGE OUTLINE DIMENSIONS -- see header"
+    max: 0.5 V
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum instantaneous forward voltage, 3.0 A, VF: 0.5 V (cell spanning SS32-SS34)"'
+  reverse_voltage:
+    max: 20 V
+    src: 'p1 "MAXIMUM RATINGS, Maximum repetitive peak reverse voltage VRRM, SS32 column: 20 V"'
+  forward_current:
+    max: 3 A
+    src: 'p1 "MAXIMUM RATINGS, Maximum average forward rectified current at TL (fig. 1) IF(AV): 3.0 A"'

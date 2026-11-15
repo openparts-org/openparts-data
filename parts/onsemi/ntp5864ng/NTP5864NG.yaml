@@ -3,73 +3,44 @@
 # Package: datasheet page 1 "CASE 221A"; outline from the standalone
 # drawing 98ASB42148B.
 # No lifecycle statement for this MPN.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/NTP5864NG
-
 manufacturer: onsemi
 mpn: NTP5864NG
-
 device: onsemi/NTP5864N
-package: manufacturers/onsemi/TO220-10.10x4.45-P2.54-221A
+
+package:
+  value: manufacturers/onsemi/TO220-10.10x4.45-P2.54-221A
+  src: [p1 "Package callout "CASE 221A"", onsemi/98ASB42148B p1 "CASE 221A outline"]
+
+sources: [onsemi/NTP5864N-D, onsemi/98ASB42148B]
+source: onsemi/NTP5864N-D
 
 existence:
   status: verified
+  src: 'p1 "ORDERING INFORMATION: "NTP5864NG | TO-220 (Pb-Free) | 50 Units / Rail""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/NTP5864N-D
-  - onsemi/98ASB42148B
+lifecycle: { status: unknown }
 
 parameters:
   polarity:
     value: n_channel
+    src: p1 "Page-1 schematic label "N-Channel" (title "MOSFET - Power 60 V, 63 A, 12.4 mΩ")"
   drain_source_voltage:
-    nominal: 60
-    unit: V
+    typ: 60 V
+    at: { TJ: 25 °C }
+    src: 'p1 "MAXIMUM RATINGS, Drain-to-Source Voltage VDSS: 60 V"'
   drain_current:
-    nominal: 63
-    unit: A
+    typ: 63 A
+    at: { TC: 25 °C }
+    src: 'p1 "MAXIMUM RATINGS, Continuous Drain Current RθJC (Note 1), Steady State, ID: 63 A"'
   rds_on:
-    nominal: 10.2
-    max: 12.4
-    unit: mΩ
+    typ: 10.2 mΩ
+    max: 12.4 mΩ
+    at: { VGS: 10 V, ID: 20 A }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Drain-to-Source On Resistance RDS(on): Typ 10.2, Max 12.4 mΩ"'
   gate_threshold_voltage:
-    min: 2.0
-    max: 4.0
-    unit: V
-
-provenance:
-  "/existence":
-    - source: onsemi/NTP5864N-D
-      page: 1
-      locator: "ORDERING INFORMATION: \"NTP5864NG | TO-220 (Pb-Free) | 50 Units / Rail\""
-  "/package":
-    - source: onsemi/NTP5864N-D
-      page: 1
-      locator: "Package callout \"CASE 221A\""
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "CASE 221A outline"
-  "/parameters/polarity":
-    - source: onsemi/NTP5864N-D
-      page: 1
-      locator: "Page-1 schematic label \"N-Channel\" (title \"MOSFET - Power 60 V, 63 A, 12.4 mΩ\")"
-  "/parameters/drain_source_voltage":
-    - source: onsemi/NTP5864N-D
-      page: 1
-      locator: "MAXIMUM RATINGS (TJ = 25°C), Drain-to-Source Voltage VDSS: 60 V"
-  "/parameters/drain_current":
-    - source: onsemi/NTP5864N-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Continuous Drain Current RθJC (Note 1), Steady State, TC = 25°C ID: 63 A"
-  "/parameters/rds_on":
-    - source: onsemi/NTP5864N-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Drain-to-Source On Resistance RDS(on), VGS = 10 V, ID = 20 A: Typ 10.2, Max 12.4 mΩ"
-  "/parameters/gate_threshold_voltage":
-    - source: onsemi/NTP5864N-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Gate Threshold Voltage VGS(TH): Min 2.0, Max 4.0 V"
+    min: 2 V
+    max: 4 V
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Gate Threshold Voltage VGS(TH): Min 2.0, Max 4.0 V"'

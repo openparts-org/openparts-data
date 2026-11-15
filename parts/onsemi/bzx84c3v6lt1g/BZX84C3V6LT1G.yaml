@@ -11,55 +11,33 @@
 # was read from (2N7002E/D Rev. 8 page 6, re-downloaded 2026-11-10); every
 # table row was also re-read from a 150 dpi render. Reused; the package
 # cites onsemi/2N7002E-D.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/BZX84C3V6LT1G
-
 manufacturer: onsemi
 mpn: BZX84C3V6LT1G
-
 device: onsemi/BZX84C-SERIES
 package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/BZX84C2V4LT1-D]
+source: onsemi/BZX84C2V4LT1-D
 
 existence:
   status: probable
+  src:
+    - p1 "ORDERING INFORMATION table pattern row "BZX84CxxxLT1G | SOT-23 (Pb-Free) | 3,000 / Tape & Reel""
+    - 'p3 "Electrical Characteristics table, Device* column: "BZX84C3V6LT1G", marking "Z15", VZ1 3.4 / 3.6 / 3.8 V"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/BZX84C2V4LT1-D
+lifecycle: { status: unknown }
 
 parameters:
-  zener_voltage:
-    nominal: 3.6
-    min: 3.4
-    max: 3.8
-    unit: V
-  zener_test_current:
-    nominal: 5
-    unit: mA
   forward_voltage:
-    max: 0.9
-    unit: V
-
-provenance:
-  "/parameters/zener_voltage":
-    - source: onsemi/BZX84C2V4LT1-D
-      page: 3
-      locator: "ELECTRICAL CHARACTERISTICS - BZX84CxxxLT1 SERIES, row BZX84C3V6LT1G: VZ1 (Volts) @ IZT1 = 5 mA Min 3.4 / Nom 3.6 / Max 3.8 (Note 3)"
-  "/parameters/zener_test_current":
-    - source: onsemi/BZX84C2V4LT1-D
-      page: 3
-      locator: "ELECTRICAL CHARACTERISTICS - BZX84CxxxLT1 SERIES, column header 'VZ1 (Volts) @ IZT1 = 5 mA', row BZX84C3V6LT1G"
-  "/parameters/forward_voltage":
-    - source: onsemi/BZX84C2V4LT1-D
-      page: 3
-      locator: "ELECTRICAL CHARACTERISTICS table header '(TA = 25°C unless otherwise noted, VF = 0.90 V Max. @ IF = 10 mA)', row BZX84C3V6LT1G"
-  "/existence":
-    - source: onsemi/BZX84C2V4LT1-D
-      page: 1
-      locator: "ORDERING INFORMATION table pattern row \"BZX84CxxxLT1G | SOT-23 (Pb-Free) | 3,000 / Tape & Reel\""
-    - source: onsemi/BZX84C2V4LT1-D
-      page: 3
-      locator: "Electrical Characteristics table, Device* column: \"BZX84C3V6LT1G\", marking \"Z15\", VZ1 3.4 / 3.6 / 3.8 V"
+    max: 0.9 V
+    src: p3 "ELECTRICAL CHARACTERISTICS table header '(TA = 25°C unless otherwise noted, VF = 0.90 V Max. @ IF = 10 mA)', row BZX84C3V6LT1G"
+  zener_voltage:
+    min: 3.4 V
+    typ: 3.6 V
+    max: 3.8 V
+    src: 'p3 "ELECTRICAL CHARACTERISTICS - BZX84CxxxLT1 SERIES, row BZX84C3V6LT1G: VZ1 (Volts) @ IZT1 = 5 mA Min 3.4 / Nom 3.6 / Max 3.8 (Note 3)"'
+  zener_test_current:
+    typ: 5 mA
+    src: p3 "ELECTRICAL CHARACTERISTICS - BZX84CxxxLT1 SERIES, column header 'VZ1 (Volts) @ IZT1 = 5 mA', row BZX84C3V6LT1G"

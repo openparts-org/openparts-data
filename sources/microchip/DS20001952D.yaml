@@ -3,15 +3,12 @@
 # lists "Revision D (June 2022)". Downloaded directly from the URL below
 # and read with pdftotext; the package-drawing pages use an encoded
 # font, so they were rendered to images and read from the image.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: microchip/DS20001952@revD
-
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP23017-Data-Sheet-DS20001952.pdf
+date: 2022-06
+revision: D
 publisher: microchip
 document_id: DS20001952
 document_type: datasheet
-
-revision: "D"
-date: "2022-06"
-
-url: "https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP23017-Data-Sheet-DS20001952.pdf"

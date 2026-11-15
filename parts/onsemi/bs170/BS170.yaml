@@ -5,67 +5,36 @@
 # drawing is embedded in P2N2222A/D pages 6-7, whose straight-lead A/B/C
 # ranges equal that package's values. Link is by case number only.
 # No lifecycle statement in the datasheet.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/BS170
-
 manufacturer: onsemi
 mpn: BS170
-
 device: onsemi/BS170
 package: standards/TO92-BC547
+sources: [onsemi/BS170-D, onsemi/P2N2222A-D]
+source: onsemi/BS170-D
 
 existence:
   status: verified
+  src: 'p2 "ORDERING INFORMATION table: "BS170 | TO-92 (TO-226) (Pb-Free) | 1000 Unit/Tube""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/BS170-D
-  - onsemi/P2N2222A-D
+lifecycle: { status: unknown }
 
 parameters:
   polarity:
     value: n_channel
-  drain_source_voltage:
-    nominal: 60
-    unit: V
-  drain_current:
-    nominal: 0.5
-    unit: A
+    src: 'p1 "Page-1 title: "Small Signal MOSFET 500 mA, 60 Volts N-Channel TO-92 (TO-226)""'
+  drain_source_voltage: { typ: 60 V, src: 'p1 "MAXIMUM RATINGS, Drain-Source Voltage VDS: 60 Vdc"' }
+  drain_current: { typ: 0.5 A, src: 'p1 "MAXIMUM RATINGS, Drain Current (Note) ID: 0.5 Adc"' }
   rds_on:
-    nominal: 1.8
-    max: 5.0
-    unit: Ω
+    typ: 1.8 Ω
+    max: 5 Ω
+    at: { VGS: 10 V, ID: 200 mA, TA: 25 °C }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Static Drain-Source On Resistance rDS(on): Typ 1.8, Max 5.0 Ω"'
   gate_threshold_voltage:
-    nominal: 2.0
-    min: 0.8
-    max: 3.0
-    unit: V
-
-provenance:
-  "/existence":
-    - source: onsemi/BS170-D
-      page: 2
-      locator: "ORDERING INFORMATION table: \"BS170 | TO-92 (TO-226) (Pb-Free) | 1000 Unit/Tube\""
-  "/parameters/polarity":
-    - source: onsemi/BS170-D
-      page: 1
-      locator: "Page-1 title: \"Small Signal MOSFET 500 mA, 60 Volts N-Channel TO-92 (TO-226)\""
-  "/parameters/drain_source_voltage":
-    - source: onsemi/BS170-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Drain-Source Voltage VDS: 60 Vdc"
-  "/parameters/drain_current":
-    - source: onsemi/BS170-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Drain Current (Note) ID: 0.5 Adc"
-  "/parameters/rds_on":
-    - source: onsemi/BS170-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS (TA = 25°C), Static Drain-Source On Resistance rDS(on) (VGS = 10 Vdc, ID = 200 mAdc): Typ 1.8, Max 5.0 Ω"
-  "/parameters/gate_threshold_voltage":
-    - source: onsemi/BS170-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS (TA = 25°C), Gate Threshold Voltage VGS(Th) (VDS = VGS, ID = 1.0 mAdc): Min 0.8, Typ 2.0, Max 3.0 Vdc"
+    min: 0.8 V
+    typ: 2 V
+    max: 3 V
+    at: { ID: 1 mA, TA: 25 °C }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Gate Threshold Voltage VGS(Th) (VDS = VGS): Min 0.8, Typ 2.0, Max 3.0 Vdc"'

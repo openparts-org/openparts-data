@@ -3,47 +3,29 @@
 # 0.4 +/-0.1 is the full height from the terminal bottom to the resin
 # top, recorded as body_height (leadless package, A). Terminal length
 # is not dimensioned, so lead_length is left out.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/everlight/CHIP-EVERLIGHT-19-217
-
 family: chip
 lead_count: 2
+source: everlight/DSE-0025716
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 1.6
-    min: 1.5
-    max: 1.7
-    unit: mm
   body_width:
-    nominal: 0.8
-    min: 0.7
-    max: 0.9
-    unit: mm
+    min: 0.7 mm
+    typ: 0.8 mm
+    max: 0.9 mm
+    src: p6 "Package Dimension top view "0.8+/-0.1""
+  body_length:
+    min: 1.5 mm
+    typ: 1.6 mm
+    max: 1.7 mm
+    src: p6 "Package Dimension top view "1.6+/-0.1""
   body_height:
-    nominal: 0.4
-    min: 0.3
-    max: 0.5
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: everlight/DSE-0025716
-      page: 6
-      locator: "Package Dimension top view \"1.6+/-0.1\""
-  "/dimensions/body_width":
-    - source: everlight/DSE-0025716
-      page: 6
-      locator: "Package Dimension top view \"0.8+/-0.1\""
-  "/dimensions/body_height":
-    - source: everlight/DSE-0025716
-      page: 6
-      locator: "Package Dimension side view \"0.4+/-0.1\" (seating plane to top of resin)"
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p6 "Package Dimension side view "0.4+/-0.1" (seating plane to top of resin)"

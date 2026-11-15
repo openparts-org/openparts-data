@@ -4,54 +4,35 @@
 # dataset's numbering, chosen as pin 1 = cathode to match the chip LED
 # convention used by the Kingbright records -- a dataset convention,
 # not a datasheet fact.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: osram/LG-Q976.01
-
 manufacturer: osram
 category: led
-family: "Chip LED 0603"
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+family: Chip LED 0603
+source: osram/LG-Q976.01@v1.3
 
 parameters:
-  color:
-    value: green
-  wavelength:
-    nominal: 573
-    min: 569
-    max: 578
-    unit: nm
   forward_voltage:
-    nominal: 2.00
-    min: 1.60
-    max: 2.40
-    unit: V
+    min: 1.6 V
+    typ: 2 V
+    max: 2.4 V
+    at: { IF: 20 mA }
+    src: 'p5 "Characteristics, Forward Voltage VF: min. 1.60 V, typ. 2.00 V, max. 2.40 V"'
   forward_current:
-    min: 1
-    max: 30
-    unit: mA
+    min: 1 mA
+    max: 30 mA
+    at: { TS: 25 °C }
+    src: 'p4 "Maximum Ratings, Forward current IF: min. 1 mA, max. 30 mA"'
+  color: { value: green, src: 'p2 "Features, Color: λdom = 573 nm (green)"' }
+  wavelength:
+    min: 569 nm
+    typ: 573 nm
+    max: 578 nm
+    at: { IF: 20 mA, TS: 25 °C }
+    src: 'p5 "Characteristics, Dominant Wavelength λdom: min. 569 nm, typ. 573 nm, max. 578 nm"'
 
-provenance:
-  "/parameters/color":
-    - source: osram/LG-Q976.01@v1.3
-      page: 2
-      locator: "Features, Color: λdom = 573 nm (green)"
-  "/parameters/wavelength":
-    - source: osram/LG-Q976.01@v1.3
-      page: 5
-      locator: "Characteristics (IF = 20 mA; TS = 25 °C), Dominant Wavelength λdom: min. 569 nm, typ. 573 nm, max. 578 nm"
-  "/parameters/forward_voltage":
-    - source: osram/LG-Q976.01@v1.3
-      page: 5
-      locator: "Characteristics, Forward Voltage VF (IF = 20 mA): min. 1.60 V, typ. 2.00 V, max. 2.40 V"
-  "/parameters/forward_current":
-    - source: osram/LG-Q976.01@v1.3
-      page: 4
-      locator: "Maximum Ratings, Forward current IF (TS = 25 °C): min. 1 mA, max. 30 mA"
-  "/pins":
-    - source: osram/LG-Q976.01@v1.3
-      page: 12
-      locator: "Dimensional Drawing, bottom view terminals labelled \"cathode\" and \"anode\"; top view \"cathode mark\""
+pins:
+  src: p12 "Dimensional Drawing, bottom view terminals labelled "cathode" and "anode"; top view "cathode mark""
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

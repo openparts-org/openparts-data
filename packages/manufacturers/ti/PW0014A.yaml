@@ -12,87 +12,33 @@
 # reference only -- recorded as that reference value (as for the
 # existing TSSOP16-...-TI-PW package). Pins 1-7 down the left edge,
 # 8-14 back up the right edge (top view).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/ti/PW0014A
-
 family: tssop
 lead_count: 14
+source: ti/SCES650K
 
-pitch:
-  nominal: 0.65
-  unit: mm
+pitch: { typ: 0.65 mm, src: 'p52 "PACKAGE OUTLINE PW0014A (4220202/B), "12X 0.65" (basic)"' }
+geometry: { type: parametric, generator: tssop }
 
 dimensions:
   body_width:
-    min: 4.3
-    max: 4.5
-    unit: mm
+    min: 4.3 mm
+    max: 4.5 mm
+    src: p52 "PW0014A, body width "4.5 / 4.3 NOTE 4" (datum B)"
   body_length:
-    min: 4.9
-    max: 5.1
-    unit: mm
-  overall_width:
-    min: 6.2
-    max: 6.6
-    unit: mm
-  overall_height:
-    max: 1.2
-    unit: mm
-  standoff:
-    min: 0.05
-    max: 0.15
-    unit: mm
-  lead_width:
-    min: 0.17
-    max: 0.30
-    unit: mm
-  lead_length:
-    min: 0.50
-    max: 0.75
-    unit: mm
+    min: 4.9 mm
+    max: 5.1 mm
+    src: p52 "PW0014A, body length "5.1 / 4.9 NOTE 3" (datum A)"
   lead_thickness:
-    nominal: 0.15
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: tssop
-
-provenance:
-  "/pitch":
-    - source: ti/SCES650K
-      page: 52
-      locator: "PACKAGE OUTLINE PW0014A (4220202/B), \"12X 0.65\" (basic)"
-  "/dimensions/body_width":
-    - source: ti/SCES650K
-      page: 52
-      locator: "PW0014A, body width \"4.5 / 4.3 NOTE 4\" (datum B)"
-  "/dimensions/body_length":
-    - source: ti/SCES650K
-      page: 52
-      locator: "PW0014A, body length \"5.1 / 4.9 NOTE 3\" (datum A)"
-  "/dimensions/overall_width":
-    - source: ti/SCES650K
-      page: 52
-      locator: "PW0014A, lead-tip span \"6.6 / 6.2 TYP\" (min/max only)"
-  "/dimensions/overall_height":
-    - source: ti/SCES650K
-      page: 52
-      locator: "PW0014A side view, \"1.2 MAX\""
-  "/dimensions/standoff":
-    - source: ti/SCES650K
-      page: 52
-      locator: "PW0014A DETAIL A, \"0.15 / 0.05\""
-  "/dimensions/lead_width":
-    - source: ti/SCES650K
-      page: 52
-      locator: "PW0014A, \"14X 0.30 / 0.17\""
-  "/dimensions/lead_length":
-    - source: ti/SCES650K
-      page: 52
-      locator: "PW0014A DETAIL A, \"0.75 / 0.50\""
-  "/dimensions/lead_thickness":
-    - source: ti/SCES650K
-      page: 52
-      locator: "PW0014A end view, \"(0.15) TYP\" -- reference value per note 1"
+    typ: 0.15 mm
+    src: p52 "PW0014A end view, "(0.15) TYP" -- reference value per note 1"
+  lead_length:    { min: 0.5 mm, max: 0.75 mm, src: 'p52 "PW0014A DETAIL A, "0.75 / 0.50""' }
+  overall_width:
+    min: 6.2 mm
+    max: 6.6 mm
+    src: p52 "PW0014A, lead-tip span "6.6 / 6.2 TYP" (min/max only)"
+  overall_height: { max: 1.2 mm, src: 'p52 "PW0014A side view, "1.2 MAX""' }
+  standoff:       { min: 0.05 mm, max: 0.15 mm, src: 'p52 "PW0014A DETAIL A, "0.15 / 0.05""' }
+  lead_width:     { min: 0.17 mm, max: 0.3 mm, src: 'p52 "PW0014A, "14X 0.30 / 0.17""' }

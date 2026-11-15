@@ -18,75 +18,36 @@
 # for all sides, places them at 1.00 - 0.10 - 0.145 = 0.755.
 # Body 2.00 x 2.00 (boxed basic). Height: side view "1.00 MAX" (overall; a "(0.82)" reference
 # lid dimension is not used) -> body_height max only.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/bosch/LGA12-2.0x2.0-P0.5-BMA400
-
 family: lga
 lead_count: 12
-lead_layout: [4, 2, 4, 2]
+
+lead_layout:
+  value: [4, 2, 4, 2]
+  src:
+    - 'p111 "bottom view numbering 1-4 right, 5-6 bottom, 7-10 left, 11-12 top (mirrored: counter-clockwise in the top view)"'
+    - p108 "7.1 Pin-out, top view and bottom view figures"
+
+source: bosch/BST-BMA400-DS000-14
 
 pitch:
-  nominal: 0.5
-  unit: mm
+  typ: 0.5 mm
+  src: p111 "bottom view, (6x) 0.50 boxed (columns) and 0.50 (2x) boxed (rows)"
+
+geometry: { type: parametric, generator: lga }
 
 dimensions:
-  body_width:
-    nominal: 2.0
-    unit: mm
-  body_length:
-    nominal: 2.0
-    unit: mm
-  body_height:
-    max: 1.0
-    unit: mm
-  lead_length:
-    nominal: 0.29
-    unit: mm
-  lead_width:
-    nominal: 0.28
-    unit: mm
+  body_width:  { typ: 2 mm, src: 'p111 "top view, 2.00 (boxed basic)"' }
+  body_length: { typ: 2 mm, src: 'p111 "top view, 2.00 (boxed basic)"' }
+  body_height: { max: 1 mm, src: 'p111 "side view, 1.00 MAX"' }
   lead_inset:
-    nominal: 0.1
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: lga
-
-provenance:
-  "/pitch":
-    - source: bosch/BST-BMA400-DS000-14
-      page: 111
-      locator: "bottom view, (6x) 0.50 boxed (columns) and 0.50 (2x) boxed (rows)"
-  "/lead_layout":
-    - source: bosch/BST-BMA400-DS000-14
-      page: 111
-      locator: "bottom view numbering 1-4 right, 5-6 bottom, 7-10 left, 11-12 top (mirrored: counter-clockwise in the top view)"
-    - source: bosch/BST-BMA400-DS000-14
-      page: 108
-      locator: "7.1 Pin-out, top view and bottom view figures"
-  "/dimensions/body_width":
-    - source: bosch/BST-BMA400-DS000-14
-      page: 111
-      locator: "top view, 2.00 (boxed basic)"
-  "/dimensions/body_length":
-    - source: bosch/BST-BMA400-DS000-14
-      page: 111
-      locator: "top view, 2.00 (boxed basic)"
-  "/dimensions/body_height":
-    - source: bosch/BST-BMA400-DS000-14
-      page: 111
-      locator: "side view, 1.00 MAX"
-  "/dimensions/lead_length":
-    - source: bosch/BST-BMA400-DS000-14
-      page: 111
-      locator: "bottom view, 0.290x0.280 (8x) and 0.280X0.290 (4x): 0.29 inward"
-  "/dimensions/lead_width":
-    - source: bosch/BST-BMA400-DS000-14
-      page: 111
-      locator: "bottom view, 0.290x0.280 (8x) and 0.280X0.290 (4x): 0.28 across"
-  "/dimensions/lead_inset":
-    - source: bosch/BST-BMA400-DS000-14
-      page: 111
-      locator: "bottom view, reference (0.10) edge to pad; = 1.00 - 1.51/2 - 0.29/2 from the boxed 1.51 (2x) column spacing"
+    typ: 0.1 mm
+    src: p111 "bottom view, reference (0.10) edge to pad; = 1.00 - 1.51/2 - 0.29/2 from the boxed 1.51 (2x) column spacing"
+  lead_width:
+    typ: 0.28 mm
+    src: 'p111 "bottom view, 0.290x0.280 (8x) and 0.280X0.290 (4x): 0.28 across"'
+  lead_length:
+    typ: 0.29 mm
+    src: 'p111 "bottom view, 0.290x0.280 (8x) and 0.280X0.290 (4x): 0.29 inward"'

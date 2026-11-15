@@ -13,92 +13,38 @@
 # separately). Total thickness A 0.71/0.76/0.81 -> overall_height; mold
 # thickness A3 0.65 REF -> body_height (reference value); substrate c
 # 0.105 REF not recorded. Not drawn: the 0.25x0.09 PIN 1 INDENT pad.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/tdk/LGA14-3.0x2.5-P0.5-ICM42670
-
 family: lga
 lead_count: 14
-lead_layout: [4, 3, 4, 3]
 
-pitch:
-  nominal: 0.5
-  unit: mm
+lead_layout:
+  value: [4, 3, 4, 3]
+  src: ['p38 "bottom view (PIN 1 INDENT top-right), Lead Count 14"', p18 "Figure 4 Pin Out Diagram"]
+
+source: tdk/DS-000451@rev1.2
+
+pitch: { typ: 0.5 mm, src: p38 "Lead Pitch e 0.50" }
+geometry: { type: parametric, generator: lga }
 
 dimensions:
   body_width:
-    nominal: 3.0
-    min: 2.95
-    max: 3.05
-    unit: mm
-  body_length:
-    nominal: 2.5
-    min: 2.45
-    max: 2.55
-    unit: mm
-  body_height:
-    nominal: 0.65
-    unit: mm
+    min: 2.95 mm
+    typ: 3 mm
+    max: 3.05 mm
+    src: p38 "Body Size D 2.95/3.00/3.05 (horizontal in the top view)"
+  body_length: { min: 2.45 mm, typ: 2.5 mm, max: 2.55 mm, src: p38 "Body Size E 2.45/2.50/2.55" }
+  body_height: { typ: 0.65 mm, src: p38 "Mold Thickness A3 0.65 REF (reference value)" }
+  lead_inset:  { typ: 0.1 mm, src: p38 "Package Edge to Lead Edge L1 0.10" }
   overall_height:
-    nominal: 0.76
-    min: 0.71
-    max: 0.81
-    unit: mm
+    min: 0.71 mm
+    typ: 0.76 mm
+    max: 0.81 mm
+    src: p38 "Total Thickness A 0.71/0.76/0.81"
+  lead_width:  { min: 0.2 mm, typ: 0.25 mm, max: 0.3 mm, src: p38 "Lead Width b 0.20/0.25/0.30" }
   lead_length:
-    nominal: 0.475
-    min: 0.425
-    max: 0.525
-    unit: mm
-  lead_width:
-    nominal: 0.25
-    min: 0.2
-    max: 0.3
-    unit: mm
-  lead_inset:
-    nominal: 0.1
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: lga
-
-provenance:
-  "/pitch":
-    - source: tdk/DS-000451@rev1.2
-      page: 38
-      locator: "Lead Pitch e 0.50"
-  "/lead_layout":
-    - source: tdk/DS-000451@rev1.2
-      page: 38
-      locator: "bottom view (PIN 1 INDENT top-right), Lead Count 14"
-    - source: tdk/DS-000451@rev1.2
-      page: 18
-      locator: "Figure 4 Pin Out Diagram"
-  "/dimensions/body_width":
-    - source: tdk/DS-000451@rev1.2
-      page: 38
-      locator: "Body Size D 2.95/3.00/3.05 (horizontal in the top view)"
-  "/dimensions/body_length":
-    - source: tdk/DS-000451@rev1.2
-      page: 38
-      locator: "Body Size E 2.45/2.50/2.55"
-  "/dimensions/body_height":
-    - source: tdk/DS-000451@rev1.2
-      page: 38
-      locator: "Mold Thickness A3 0.65 REF (reference value)"
-  "/dimensions/overall_height":
-    - source: tdk/DS-000451@rev1.2
-      page: 38
-      locator: "Total Thickness A 0.71/0.76/0.81"
-  "/dimensions/lead_length":
-    - source: tdk/DS-000451@rev1.2
-      page: 38
-      locator: "Lead Length L3 0.425/0.475/0.525"
-  "/dimensions/lead_width":
-    - source: tdk/DS-000451@rev1.2
-      page: 38
-      locator: "Lead Width b 0.20/0.25/0.30"
-  "/dimensions/lead_inset":
-    - source: tdk/DS-000451@rev1.2
-      page: 38
-      locator: "Package Edge to Lead Edge L1 0.10"
+    min: 0.425 mm
+    typ: 0.475 mm
+    max: 0.525 mm
+    src: p38 "Lead Length L3 0.425/0.475/0.525"

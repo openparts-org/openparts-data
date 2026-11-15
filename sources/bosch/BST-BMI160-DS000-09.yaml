@@ -4,15 +4,12 @@
 # index equals the printed "N | total" page number. Text read with
 # pdftotext -layout; package drawings are images and were rendered with
 # pdftoppm and read visually.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: bosch/BST-BMI160-DS000-09
-
-publisher: bosch
-document_id: "BST-BMI160-DS000-09"
-document_type: datasheet
-
+url: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmi160-ds000.pdf
+date: 2020-11
 revision: "1.0"
-date: "2020-11"
-
-url: "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmi160-ds000.pdf"
+publisher: bosch
+document_id: BST-BMI160-DS000-09
+document_type: datasheet

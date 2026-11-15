@@ -5,65 +5,34 @@
 # page's Characteristics. Package: the page's L/W/T (1.60+/-0.10 / 0.80+/-0.10 / 0.80+/-0.10 mm)
 # equal the reused CHIP0603-SAMSUNG-CL10-T8 number for number.
 # lifecycle: the product page shows "Status: Mass Production".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: samsung/CL10B102KB8NNNC
-
 manufacturer: samsung
 mpn: CL10B102KB8NNNC
-
 device: samsung/CL10-X7R
 package: standards/CHIP0603-SAMSUNG-CL10-T8
+sources: [samsung/CL10B102KB8NNN, samsung/MLCC_2512]
+source: samsung/CL10B102KB8NNN
 
 existence:
   status: verified
+  src:
+    - 'samsung/MLCC_2512 p6 "Part Numbering: 1 SERIES CODE CL; 2 SIZE CODE 10 = 0603/1608; 3 DIELECTRIC CODE B = X7R; 4 CAPACITANCE CODE 102 (2 significant digits plus number of zeros, pF)"'
+    - 'samsung/MLCC_2512 p7 "Part Numbering: 5 TOLERANCE K = +/-10%; 6 RATED VOLTAGE B = 50Vdc; 7 THICKNESS CODE 8"'
+    - 'samsung/MLCC_2512 p8 "Part Numbering: 8 DESIGN CODE N (Ni/Cu/Ni-Sn, Normal); 9 N = Normal; 10 CONTROL CODE N = Standard; 11 PACKAGING CODE C (cardboard tape, normal 7" reel)"'
+    - '""List of part numbers with package codes": CL10B102KB8NNNC; Characteristics: X7R(-55 ~ +125), Capacitance 1.0nF, Tolerance +/-10%, Rated Voltage 50Vdc"'
 
-lifecycle:
-  status: active
-
-sources:
-  - samsung/CL10B102KB8NNN
-  - samsung/MLCC_2512
+lifecycle: { status: active, src: '"Characteristics, "Status: Mass Production""' }
 
 parameters:
   capacitance:
-    nominal: 1.0
-    unit: nF
-  tolerance:
-    min: -10
-    max: 10
-    unit: "%"
+    typ: 1 nF
+    src: '"Product page CL10B102KB8NNN#, Characteristics, Capacitance: 1.0nF"'
+  tolerance: { tol: ±10 %, src: '"Product page CL10B102KB8NNN#, Characteristics, Tolerance: ±10%"' }
   rated_voltage:
-    nominal: 50.0
-    unit: V
+    typ: 50 V
+    src: '"Product page CL10B102KB8NNN#, Characteristics, Rated Voltage: 50.0Vdc"'
   dielectric:
     value: X7R
-
-provenance:
-  "/existence":
-    - source: samsung/MLCC_2512
-      page: 6
-      locator: "Part Numbering: 1 SERIES CODE CL; 2 SIZE CODE 10 = 0603/1608; 3 DIELECTRIC CODE B = X7R; 4 CAPACITANCE CODE 102 (2 significant digits plus number of zeros, pF)"
-    - source: samsung/MLCC_2512
-      page: 7
-      locator: "Part Numbering: 5 TOLERANCE K = +/-10%; 6 RATED VOLTAGE B = 50Vdc; 7 THICKNESS CODE 8"
-    - source: samsung/MLCC_2512
-      page: 8
-      locator: "Part Numbering: 8 DESIGN CODE N (Ni/Cu/Ni-Sn, Normal); 9 N = Normal; 10 CONTROL CODE N = Standard; 11 PACKAGING CODE C (cardboard tape, normal 7\" reel)"
-    - source: samsung/CL10B102KB8NNN
-      locator: "\"List of part numbers with package codes\": CL10B102KB8NNNC; Characteristics: X7R(-55 ~ +125), Capacitance 1.0nF, Tolerance +/-10%, Rated Voltage 50Vdc"
-  "/lifecycle":
-    - source: samsung/CL10B102KB8NNN
-      locator: "Characteristics, \"Status: Mass Production\""
-  "/parameters/capacitance":
-    - source: samsung/CL10B102KB8NNN
-      locator: "Product page CL10B102KB8NNN#, Characteristics, Capacitance: 1.0nF"
-  "/parameters/tolerance":
-    - source: samsung/CL10B102KB8NNN
-      locator: "Product page CL10B102KB8NNN#, Characteristics, Tolerance: ±10%"
-  "/parameters/rated_voltage":
-    - source: samsung/CL10B102KB8NNN
-      locator: "Product page CL10B102KB8NNN#, Characteristics, Rated Voltage: 50.0Vdc"
-  "/parameters/dielectric":
-    - source: samsung/CL10B102KB8NNN
-      locator: "Product page CL10B102KB8NNN#, Characteristics, Temperature Characteristic: X7R(-55 ~ +125)"
+    src: '"Product page CL10B102KB8NNN#, Characteristics, Temperature Characteristic: X7R(-55 ~ +125)"'

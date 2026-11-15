@@ -26,122 +26,71 @@
 # as in AOS PO-00009), b2 (lead shoulder), c2 (tab thickness), D1 (exposed
 # tab length), L2, L3 "0.25 BSC" (gauge plane), and the "RECOMMENDED
 # LAND PATTERN" (generator lands are used).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/aos/TO263-9.14x10.03-P2.54-PO-00005-TabPin4
-
 family: d2pak
 lead_count: 3
+source: aos/PO-00005
 
 pitch:
-  nominal: 2.54
-  unit: mm
+  typ: 2.54 mm
+  src: p1 "DIMENSIONS IN MILLIMETERS table, "e" "2.54 BSC"; BOTTOM VIEW "2 X e""
 
 tab:
   number: "4"
   trimmed_leads: ["2"]
+  src: 'p1 "TOP VIEW / BOTTOM VIEW: three lead positions, centre lead drawn as a stub at the body; no pin or tab numbers printed (tab "4" by convention, see header)"'
+
+geometry: { type: parametric, generator: d2pak }
 
 dimensions:
   body_width:
-    nominal: 9.14
-    min: 8.382
-    max: 9.652
-    unit: mm
+    min: 8.382 mm
+    typ: 9.14 mm
+    max: 9.652 mm
+    src: p1 "DIMENSIONS IN MILLIMETERS table, "D" (8.382 / 9.14 / 9.652), top view body along the leads"
   body_length:
-    nominal: 10.03
-    min: 9.652
-    max: 10.668
-    unit: mm
-  overall_width:
-    nominal: 15.24
-    min: 14.605
-    max: 15.875
-    unit: mm
-  overall_height:
-    nominal: 4.45
-    min: 4.064
-    max: 4.826
-    unit: mm
-  standoff:
-    min: 0.0
-    max: 0.254
-    unit: mm
-  lead_width:
-    nominal: 0.81
-    min: 0.508
-    max: 0.991
-    unit: mm
-  lead_length:
-    nominal: 2.54
-    min: 1.778
-    max: 2.794
-    unit: mm
-  lead_thickness:
-    nominal: 0.5
-    min: 0.381
-    max: 0.737
-    unit: mm
-  tab_width:
-    nominal: 8.0
-    min: 6.223
-    max: 8.37
-    unit: mm
+    min: 9.652 mm
+    typ: 10.03 mm
+    max: 10.668 mm
+    src: p1 "DIMENSIONS IN MILLIMETERS table, "E" (9.652 / 10.03 / 10.668), top view body across"
   tab_length:
-    nominal: 1.27
-    min: 1.02
-    max: 1.676
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: d2pak
-
-provenance:
-  "/pitch":
-    - source: aos/PO-00005
-      page: 1
-      locator: "DIMENSIONS IN MILLIMETERS table, \"e\" \"2.54 BSC\"; BOTTOM VIEW \"2 X e\""
-  "/tab":
-    - source: aos/PO-00005
-      page: 1
-      locator: "TOP VIEW / BOTTOM VIEW: three lead positions, centre lead drawn as a stub at the body; no pin or tab numbers printed (tab \"4\" by convention, see header)"
-  "/dimensions/body_width":
-    - source: aos/PO-00005
-      page: 1
-      locator: "DIMENSIONS IN MILLIMETERS table, \"D\" (8.382 / 9.14 / 9.652), top view body along the leads"
-  "/dimensions/body_length":
-    - source: aos/PO-00005
-      page: 1
-      locator: "DIMENSIONS IN MILLIMETERS table, \"E\" (9.652 / 10.03 / 10.668), top view body across"
-  "/dimensions/overall_width":
-    - source: aos/PO-00005
-      page: 1
-      locator: "DIMENSIONS IN MILLIMETERS table, \"H\" (14.605 / 15.24 / 15.875), side view"
-  "/dimensions/overall_height":
-    - source: aos/PO-00005
-      page: 1
-      locator: "DIMENSIONS IN MILLIMETERS table, \"A\" (4.064 / 4.45 / 4.826)"
-  "/dimensions/standoff":
-    - source: aos/PO-00005
-      page: 1
-      locator: "DIMENSIONS IN MILLIMETERS table, \"A1\" (0.00 / --- / 0.254)"
-  "/dimensions/lead_width":
-    - source: aos/PO-00005
-      page: 1
-      locator: "DIMENSIONS IN MILLIMETERS table, \"b\" (0.508 / 0.81 / 0.991)"
-  "/dimensions/lead_length":
-    - source: aos/PO-00005
-      page: 1
-      locator: "DIMENSIONS IN MILLIMETERS table, \"L\" (1.778 / 2.54 / 2.794); note 3 \"DIMENSION L IS MEASURED IN GAUGE LINE\""
-  "/dimensions/lead_thickness":
-    - source: aos/PO-00005
-      page: 1
-      locator: "DIMENSIONS IN MILLIMETERS table, \"c\" (0.381 / 0.50 / 0.737)"
-  "/dimensions/tab_width":
-    - source: aos/PO-00005
-      page: 1
-      locator: "DIMENSIONS IN MILLIMETERS table, \"E1\" (6.223 / 8.00 / 8.37), BOTTOM VIEW exposed tab width (see header)"
-  "/dimensions/tab_length":
-    - source: aos/PO-00005
-      page: 1
-      locator: "DIMENSIONS IN MILLIMETERS table, \"L1\" (1.02 / 1.27 / 1.676), top view tab end to body edge"
+    min: 1.02 mm
+    typ: 1.27 mm
+    max: 1.676 mm
+    src: p1 "DIMENSIONS IN MILLIMETERS table, "L1" (1.02 / 1.27 / 1.676), top view tab end to body edge"
+  tab_width:
+    min: 6.223 mm
+    typ: 8 mm
+    max: 8.37 mm
+    src: p1 "DIMENSIONS IN MILLIMETERS table, "E1" (6.223 / 8.00 / 8.37), BOTTOM VIEW exposed tab width (see header)"
+  overall_width:
+    min: 14.605 mm
+    typ: 15.24 mm
+    max: 15.875 mm
+    src: p1 "DIMENSIONS IN MILLIMETERS table, "H" (14.605 / 15.24 / 15.875), side view"
+  overall_height:
+    min: 4.064 mm
+    typ: 4.45 mm
+    max: 4.826 mm
+    src: p1 "DIMENSIONS IN MILLIMETERS table, "A" (4.064 / 4.45 / 4.826)"
+  standoff:
+    min: 0 mm
+    max: 0.254 mm
+    src: p1 "DIMENSIONS IN MILLIMETERS table, "A1" (0.00 / --- / 0.254)"
+  lead_width:
+    min: 0.508 mm
+    typ: 0.81 mm
+    max: 0.991 mm
+    src: p1 "DIMENSIONS IN MILLIMETERS table, "b" (0.508 / 0.81 / 0.991)"
+  lead_length:
+    min: 1.778 mm
+    typ: 2.54 mm
+    max: 2.794 mm
+    src: p1 "DIMENSIONS IN MILLIMETERS table, "L" (1.778 / 2.54 / 2.794); note 3 "DIMENSION L IS MEASURED IN GAUGE LINE""
+  lead_thickness:
+    min: 0.381 mm
+    typ: 0.5 mm
+    max: 0.737 mm
+    src: p1 "DIMENSIONS IN MILLIMETERS table, "c" (0.381 / 0.50 / 0.737)"

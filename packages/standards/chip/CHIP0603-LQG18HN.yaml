@@ -5,47 +5,29 @@
 # so that case-size label itself is an inference from dimensions +
 # distributor corroboration, not a directly-read fact; the dimensions
 # themselves are directly read).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/CHIP0603-LQG18HN
-
 family: chip
 lead_count: 2
+source: murata/JELF243B_0002Y-01
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 1.6
-    min: 1.45
-    max: 1.75
-    unit: mm
   body_width:
-    nominal: 0.8
-    min: 0.65
-    max: 0.95
-    unit: mm
+    min: 0.65 mm
+    typ: 0.8 mm
+    max: 0.95 mm
+    src: p2 "Section 5 "Appearance and Dimensions" diagram, width 0.8+/-0.15mm"
+  body_length:
+    min: 1.45 mm
+    typ: 1.6 mm
+    max: 1.75 mm
+    src: p2 "Section 5 "Appearance and Dimensions" diagram, length 1.6+/-0.15mm"
   body_height:
-    nominal: 0.8
-    min: 0.65
-    max: 0.95
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: murata/JELF243B_0002Y-01
-      page: 2
-      locator: "Section 5 \"Appearance and Dimensions\" diagram, length 1.6+/-0.15mm"
-  "/dimensions/body_width":
-    - source: murata/JELF243B_0002Y-01
-      page: 2
-      locator: "Section 5 \"Appearance and Dimensions\" diagram, width 0.8+/-0.15mm"
-  "/dimensions/body_height":
-    - source: murata/JELF243B_0002Y-01
-      page: 2
-      locator: "Section 5 \"Appearance and Dimensions\" diagram, height/thickness 0.8+/-0.15mm"
+    min: 0.65 mm
+    typ: 0.8 mm
+    max: 0.95 mm
+    src: p2 "Section 5 "Appearance and Dimensions" diagram, height/thickness 0.8+/-0.15mm"

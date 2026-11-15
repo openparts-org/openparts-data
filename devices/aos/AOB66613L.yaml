@@ -7,25 +7,19 @@
 # 3 = Source, 4 = Drain (tab) -- position-derived, flagged for review.
 # The tab and the centre stub are both labelled D (one drain terminal),
 # so the tab carries connected_to "2" with the same name.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: aos/AOB66613L
-
 manufacturer: aos
 category: transistor
 family: AOB66613L
+source: aos/AOB66613L-DS
 
 pins:
+  src:
+    - 'p1 ""TO-263 D2PAK" Top View / Bottom View images: leads G and S, centre stub and tab D; no pin numbers printed -- see header"'
+    - 'aos/PO-00005 p1 "TOP VIEW: three leads at "2X e", centre lead a stub at the body; no numbers printed"'
   "1": { name: Gate, type: passive }
   "2": { name: Drain, type: passive }
   "3": { name: Source, type: passive }
   "4": { name: Drain, type: passive, connected_to: "2" }
-
-provenance:
-  "/pins":
-    - source: aos/AOB66613L-DS
-      page: 1
-      locator: "\"TO-263 D2PAK\" Top View / Bottom View images: leads G and S, centre stub and tab D; no pin numbers printed -- see header"
-    - source: aos/PO-00005
-      page: 1
-      locator: "TOP VIEW: three leads at \"2X e\", centre lead a stub at the body; no numbers printed"

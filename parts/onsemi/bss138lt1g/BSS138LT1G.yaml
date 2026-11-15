@@ -1,60 +1,33 @@
 # N-channel MOSFET, SOT-23, Pb-free, tape & reel. Confirmed in the
 # datasheet's ordering table. Reuses the existing SOT-23 2.90x1.30
 # package (the case drawing 98ASB42226B matches it exactly).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/BSS138LT1G
-
 manufacturer: onsemi
 mpn: BSS138LT1G
-
 device: onsemi/BSS138
 package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/BSS138-D]
+source: onsemi/BSS138-D
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - onsemi/BSS138-D
+existence: { status: verified }
+lifecycle: { status: active }
 
 parameters:
-  polarity:
-    value: n_channel
+  polarity: { value: n_channel, src: 'p1 "Page-1 title: "MOSFET - Power, N-Channel, SOT-23""' }
   drain_source_voltage:
-    nominal: 50
-    unit: V
+    typ: 50 V
+    src: 'p1 "MAXIMUM RATINGS, Drain-to-Source Voltage VDSS: 50 Vdc"'
   drain_current:
-    nominal: 200
-    unit: mA
+    typ: 200 mA
+    at: { TA: 25 °C }
+    src: 'p1 "MAXIMUM RATINGS, Drain Current - Continuous ID: 200 mA"'
   rds_on:
-    max: 3.5
-    unit: Ω
+    max: 3.5 Ω
+    at: { VGS: 5 V, ID: 200 mA }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Static Drain-to-Source On-Resistance rDS(on): Max 3.5 Ω"'
   gate_threshold_voltage:
-    min: 0.85
-    max: 1.5
-    unit: V
-
-provenance:
-  "/parameters/polarity":
-    - source: onsemi/BSS138-D
-      page: 1
-      locator: "Page-1 title: \"MOSFET - Power, N-Channel, SOT-23\""
-  "/parameters/drain_source_voltage":
-    - source: onsemi/BSS138-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Drain-to-Source Voltage VDSS: 50 Vdc"
-  "/parameters/drain_current":
-    - source: onsemi/BSS138-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Drain Current - Continuous @ TA = 25 °C ID: 200 mA"
-  "/parameters/rds_on":
-    - source: onsemi/BSS138-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Static Drain-to-Source On-Resistance rDS(on) (VGS = 5.0 Vdc, ID = 200 mAdc): Max 3.5 Ω"
-  "/parameters/gate_threshold_voltage":
-    - source: onsemi/BSS138-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Gate-Source Threshold Voltage VGS(th): Min 0.85, Max 1.5 Vdc"
+    min: 0.85 V
+    max: 1.5 V
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Gate-Source Threshold Voltage VGS(th): Min 0.85, Max 1.5 Vdc"'

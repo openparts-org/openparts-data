@@ -3,27 +3,15 @@
 # Green-compliant) -> existence verified.
 # lifecycle: unknown (the datasheet's "unless the product is in mass
 # production" is boilerplate, not a status; the product page gives none).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: tdk/ICM-42670-P
-
 manufacturer: tdk
-mpn: "ICM-42670-P"
-
+mpn: ICM-42670-P
 device: tdk/ICM-42670-P
 package: manufacturers/tdk/LGA14-3.0x2.5-P0.5-ICM42670
+sources: [tdk/DS-000451@rev1.2]
+source: tdk/DS-000451@rev1.2
 
-existence:
-  status: verified
-
-lifecycle:
-  status: unknown
-
-sources:
-  - tdk/DS-000451@rev1.2
-
-provenance:
-  "/existence":
-    - source: tdk/DS-000451@rev1.2
-      page: 1
-      locator: "ORDERING INFORMATION table, PART ICM-42670-P"
+existence: { status: verified, src: 'p1 "ORDERING INFORMATION table, PART ICM-42670-P"' }
+lifecycle: { status: unknown }

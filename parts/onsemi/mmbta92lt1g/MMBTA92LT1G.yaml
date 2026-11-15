@@ -7,49 +7,27 @@
 # was read from (2N7002E/D Rev. 8 page 6, re-downloaded 2026-11-10); every
 # table row was also re-read from a 150 dpi render. Reused; the package
 # cites onsemi/2N7002E-D.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/MMBTA92LT1G
-
 manufacturer: onsemi
 mpn: MMBTA92LT1G
-
 device: onsemi/MMBTA92
 package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/MMBTA92LT1-D]
+source: onsemi/MMBTA92LT1-D
 
 existence:
   status: verified
+  src: 'p1 "ORDERING INFORMATION table: "MMBTA92LT1G | SOT-23 (Pb-Free) | 3000 / Tape & Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/MMBTA92LT1-D
+lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: pnp
+  polarity: { value: pnp, src: 'p1 "Page-1 title: "PNP Silicon""' }
   collector_emitter_voltage:
-    nominal: -300
-    unit: V
+    typ: -300 V
+    src: 'p1 "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO, column 92: -300 Vdc"'
   collector_current:
-    nominal: -500
-    unit: mA
-
-provenance:
-  "/existence":
-    - source: onsemi/MMBTA92LT1-D
-      page: 1
-      locator: "ORDERING INFORMATION table: \"MMBTA92LT1G | SOT-23 (Pb-Free) | 3000 / Tape & Reel\""
-  "/parameters/polarity":
-    - source: onsemi/MMBTA92LT1-D
-      page: 1
-      locator: "Page-1 title: \"PNP Silicon\""
-  "/parameters/collector_emitter_voltage":
-    - source: onsemi/MMBTA92LT1-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO, column 92: -300 Vdc"
-  "/parameters/collector_current":
-    - source: onsemi/MMBTA92LT1-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Collector Current - Continuous IC: -500 mAdc"
+    typ: -500 mA
+    src: 'p1 "MAXIMUM RATINGS, Collector Current - Continuous IC: -500 mAdc"'

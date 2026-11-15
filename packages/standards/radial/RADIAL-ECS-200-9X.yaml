@@ -13,41 +13,23 @@
 # left unspecified: no lead-spacing dimension is given anywhere in this
 # document (both leads exit together, close together, with no stated
 # spacing figure, unlike HC-49/U's explicit pitch dimension).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/RADIAL-ECS-200-9X
-
 family: radial
 lead_count: 2
+source: ecs/ECS-3x10X-3x9X
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: radial }
 
 dimensions:
-  body_length:
-    max: 3.2
-    unit: mm
   body_width:
-    max: 3.2
-    unit: mm
+    max: 3.2 mm
+    src: p1 ""DIMENSIONS (mm)", Figure 2 "3x9X", diameter phi3.2mm MAX -- see comment above"
+  body_length:
+    max: 3.2 mm
+    src: p1 ""DIMENSIONS (mm)", Figure 2 "3x9X", diameter phi3.2mm MAX -- see comment above"
   body_height:
-    max: 9.0
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: radial
-
-provenance:
-  "/dimensions/body_length":
-    - source: ecs/ECS-3x10X-3x9X
-      page: 1
-      locator: "\"DIMENSIONS (mm)\", Figure 2 \"3x9X\", diameter phi3.2mm MAX -- see comment above"
-  "/dimensions/body_width":
-    - source: ecs/ECS-3x10X-3x9X
-      page: 1
-      locator: "\"DIMENSIONS (mm)\", Figure 2 \"3x9X\", diameter phi3.2mm MAX -- see comment above"
-  "/dimensions/body_height":
-    - source: ecs/ECS-3x10X-3x9X
-      page: 1
-      locator: "\"DIMENSIONS (mm)\", Figure 2 \"3x9X\", body length 9mm MAX -- see comment above"
+    max: 9 mm
+    src: p1 ""DIMENSIONS (mm)", Figure 2 "3x9X", body length 9mm MAX -- see comment above"

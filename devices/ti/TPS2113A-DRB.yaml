@@ -4,46 +4,32 @@
 # thermal "Pad" row: "DRB package only. Connect to GND." -- a
 # recommendation, not an internal connection -> key "EP", type
 # passive. IN1/IN2/OUT are the power-switch terminals -> power.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/TPS2113A-DRB
-
 manufacturer: ti
 category: power_switch
 family: TPS2113A
-
-pins:
-  "1": { name: "STAT", type: output }
-  "2": { name: "EN", type: input }
-  "3": { name: "VSNS", type: input }
-  "4": { name: "ILIM", type: input }
-  "5": { name: "GND", type: ground }
-  "6": { name: "IN2", type: power }
-  "7": { name: "OUT", type: power }
-  "8": { name: "IN1", type: power }
-  "EP": { name: "Pad", type: passive }
+source: ti/SBVS045C
 
 parameters:
   input_voltage_max:
-    max: 5.5
-    unit: V
+    max: 5.5 V
+    src: 'p3 "RECOMMENDED OPERATING CONDITIONS, Input voltage at IN1, VI(IN1) and at IN2, VI(IN2): MAX 5.5 V"'
   output_current:
-    max: 2
-    unit: A
+    max: 2 A
+    src: 'p3 "RECOMMENDED OPERATING CONDITIONS, Nominal current limit adjustment range IO(OUT), TPS2113ADRB, TJ <= 105°C: MAX 2 A"'
 
-provenance:
-  "/parameters/input_voltage_max":
-    - source: ti/SBVS045C
-      page: 3
-      locator: "RECOMMENDED OPERATING CONDITIONS, Input voltage at IN1, VI(IN1) and at IN2, VI(IN2): MAX 5.5 V"
-  "/parameters/output_current":
-    - source: ti/SBVS045C
-      page: 3
-      locator: "RECOMMENDED OPERATING CONDITIONS, Nominal current limit adjustment range IO(OUT), TPS2113ADRB, TJ <= 105°C: MAX 2 A"
-  "/pins":
-    - source: ti/SBVS045C
-      page: 7
-      locator: "Table 1 \"TERMINAL FUNCTIONS\": STAT 1, EN 2, VSNS 3, ILIM 4, GND 5, IN2 6, OUT 7, IN1 8, Pad (DRB only, \"Connect to GND\")"
-    - source: ti/SBVS045C
-      page: 7
-      locator: "\"DRB PACKAGE SON-8 (TOP VIEW)\""
+pins:
+  src:
+    - 'p7 "Table 1 "TERMINAL FUNCTIONS": STAT 1, EN 2, VSNS 3, ILIM 4, GND 5, IN2 6, OUT 7, IN1 8, Pad (DRB only, "Connect to GND")"'
+    - p7 ""DRB PACKAGE SON-8 (TOP VIEW)""
+  "1": { name: STAT, type: output }
+  "2": { name: EN, type: input }
+  "3": { name: VSNS, type: input }
+  "4": { name: ILIM, type: input }
+  "5": { name: GND, type: ground }
+  "6": { name: IN2, type: power }
+  "7": { name: OUT, type: power }
+  "8": { name: IN1, type: power }
+  EP:  { name: Pad, type: passive }

@@ -1,35 +1,24 @@
 # MPN read from the Package Option Addendum, Packaging Information table
 # (SCLS041J PDF page 17, addendum dated 18-Sep-2026): "SN74HC595DBR | Active | Production | SSOP (DB) | 16 | 2000 | LARGE T&R | ... | -40 to 85 | HC595".
 # lifecycle "active" is that table's Status column.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/SN74HC595DBR
-
 manufacturer: ti
 mpn: SN74HC595DBR
-
 device: ti/SN74HC595
-package: standards/SSOP16-5.3x6.2-P0.65-TI-DB
+
+package:
+  value: standards/SSOP16-5.3x6.2-P0.65-TI-DB
+  src: p17 "Package Option Addendum, row "SN74HC595DBR", "SSOP (DB) | 16"; outline DB0016A on page 24"
+
+sources: [ti/SCLS041J]
+source: ti/SCLS041J
 
 existence:
   status: verified
+  src: p17 "Package Option Addendum, Packaging Information table, row "SN74HC595DBR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SCLS041J
-
-provenance:
-  "/existence":
-    - source: ti/SCLS041J
-      page: 17
-      locator: "Package Option Addendum, Packaging Information table, row \"SN74HC595DBR\""
-  "/lifecycle":
-    - source: ti/SCLS041J
-      page: 17
-      locator: "Package Option Addendum, row \"SN74HC595DBR\", Status \"Active\""
-  "/package":
-    - source: ti/SCLS041J
-      page: 17
-      locator: "Package Option Addendum, row \"SN74HC595DBR\", \"SSOP (DB) | 16\"; outline DB0016A on page 24"
+  src: p17 "Package Option Addendum, row "SN74HC595DBR", Status "Active""

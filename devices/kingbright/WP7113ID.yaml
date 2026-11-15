@@ -9,50 +9,33 @@
 # lead" framing (which describes a drawing orientation, not a pin
 # numbering scheme) -- applied here for consistency with every other
 # part reusing this family.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: kingbright/WP7113ID
-
 manufacturer: kingbright
 category: led
 family: WP7113ID
-
-pins:
-  "1": { name: Anode, type: passive }
-  "2": { name: Cathode, type: passive }
+source: kingbright/DSAF0012
 
 parameters:
+  forward_voltage:
+    typ: 1.9 V
+    max: 2.3 V
+    at: { IF: 10 mA, TA: 25 °C }
+    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, High Efficiency Red: Typ. 1.9 V, Max. 2.3 V"'
+  forward_current:
+    max: 30 mA
+    at: { TA: 25 °C }
+    src: 'p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF: 30 mA"'
   color:
     value: red
+    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: High Efficiency Red"'
   wavelength:
-    nominal: 617
-    unit: nm
-  forward_voltage:
-    nominal: 1.9
-    max: 2.3
-    unit: V
-  forward_current:
-    max: 30
-    unit: mA
+    typ: 617 nm
+    at: { IF: 10 mA, TA: 25 °C }
+    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, High Efficiency Red: Typ. 617 nm"'
 
-provenance:
-  "/parameters/color":
-    - source: kingbright/DSAF0012
-      page: 2
-      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: High Efficiency Red"
-  "/parameters/wavelength":
-    - source: kingbright/DSAF0012
-      page: 2
-      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Dominant Wavelength IF = 10mA λdom, High Efficiency Red: Typ. 617 nm"
-  "/parameters/forward_voltage":
-    - source: kingbright/DSAF0012
-      page: 2
-      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Forward Voltage IF = 10mA VF, High Efficiency Red: Typ. 1.9 V, Max. 2.3 V"
-  "/parameters/forward_current":
-    - source: kingbright/DSAF0012
-      page: 2
-      locator: "ABSOLUTE MAXIMUM RATINGS at TA=25°C, DC Forward Current IF: 30 mA"
-  "/pins":
-    - source: kingbright/DSAF0012
-      page: 1
-      locator: "Side-view \"PACKAGE DIMENSIONS\" drawing, \"Cathode\" label"
+pins:
+  src: p1 "Side-view "PACKAGE DIMENSIONS" drawing, "Cathode" label"
+  "1": { name: Anode, type: passive }
+  "2": { name: Cathode, type: passive }

@@ -7,38 +7,26 @@
 # -layout text matches ti/SLVSCB0E page 33 (where
 # manufacturers/ti/DDC0006A was read) line for line apart from the page-
 # header product names and leading whitespace, so the package is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/TPS563201DDCR
-
 manufacturer: ti
-mpn: "TPS563201DDCR"
-
+mpn: TPS563201DDCR
 device: ti/TPS563201
-package: manufacturers/ti/DDC0006A
+
+package:
+  value: manufacturers/ti/DDC0006A
+  src:
+    - p28 "Package Option Addendum, row "TPS563201DDCR", "SOT-23-THIN (DDC) | 6""
+    - p25 "PACKAGE OUTLINE DDC0006A (4214841/E 08/2024)"
+
+sources: [ti/SLVSD90B]
+source: ti/SLVSD90B
 
 existence:
   status: verified
+  src: p28 "Package Option Addendum, Packaging Information table, row "TPS563201DDCR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLVSD90B
-
-provenance:
-  "/existence":
-    - source: ti/SLVSD90B
-      page: 28
-      locator: "Package Option Addendum, Packaging Information table, row \"TPS563201DDCR\""
-  "/lifecycle":
-    - source: ti/SLVSD90B
-      page: 28
-      locator: "Package Option Addendum, row \"TPS563201DDCR\", Status \"Active\""
-  "/package":
-    - source: ti/SLVSD90B
-      page: 28
-      locator: "Package Option Addendum, row \"TPS563201DDCR\", \"SOT-23-THIN (DDC) | 6\""
-    - source: ti/SLVSD90B
-      page: 25
-      locator: "PACKAGE OUTLINE DDC0006A (4214841/E 08/2024)"
+  src: p28 "Package Option Addendum, row "TPS563201DDCR", Status "Active""

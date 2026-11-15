@@ -14,88 +14,43 @@
 # "5.05/4.75 TYP" and lead thickness "0.23/0.13 TYP"; both recorded as
 # min/max only. Only the overall height A (1.1 MAX) is given -- no A2 --
 # so it is recorded as overall_height max, with no body_height.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/MSOP10-3.0x3.0-P0.5-TI-DGS
-
 family: msop
 lead_count: 10
+source: ti/SBOS547C
 
 pitch:
-  nominal: 0.5
-  unit: mm
+  typ: 0.5 mm
+  src: p38 "PACKAGE OUTLINE DGS0010A (4221984/A), "8X 0.5" (boxed basic dimension)"
+
+geometry: { type: parametric, generator: msop }
 
 dimensions:
   body_width:
-    min: 2.9
-    max: 3.1
-    unit: mm
+    min: 2.9 mm
+    max: 3.1 mm
+    src: p38 "PACKAGE OUTLINE DGS0010A, body width "3.1/2.9 NOTE 4" (datum B); no nominal stated (min/max only)"
   body_length:
-    min: 2.9
-    max: 3.1
-    unit: mm
-  overall_width:
-    min: 4.75
-    max: 5.05
-    unit: mm
-  overall_height:
-    max: 1.1
-    unit: mm
-  standoff:
-    min: 0.05
-    max: 0.15
-    unit: mm
-  lead_width:
-    min: 0.17
-    max: 0.27
-    unit: mm
-  lead_length:
-    min: 0.4
-    max: 0.7
-    unit: mm
+    min: 2.9 mm
+    max: 3.1 mm
+    src: p38 "PACKAGE OUTLINE DGS0010A, body length "3.1/2.9 NOTE 3" (datum A); no nominal stated (min/max only)"
   lead_thickness:
-    min: 0.13
-    max: 0.23
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: msop
-
-provenance:
-  "/pitch":
-    - source: ti/SBOS547C
-      page: 38
-      locator: "PACKAGE OUTLINE DGS0010A (4221984/A), \"8X 0.5\" (boxed basic dimension)"
-  "/dimensions/body_width":
-    - source: ti/SBOS547C
-      page: 38
-      locator: "PACKAGE OUTLINE DGS0010A, body width \"3.1/2.9 NOTE 4\" (datum B); no nominal stated (min/max only)"
-  "/dimensions/body_length":
-    - source: ti/SBOS547C
-      page: 38
-      locator: "PACKAGE OUTLINE DGS0010A, body length \"3.1/2.9 NOTE 3\" (datum A); no nominal stated (min/max only)"
-  "/dimensions/overall_width":
-    - source: ti/SBOS547C
-      page: 38
-      locator: "PACKAGE OUTLINE DGS0010A, lead tip span \"5.05/4.75 TYP\" (min/max only)"
-  "/dimensions/overall_height":
-    - source: ti/SBOS547C
-      page: 38
-      locator: "PACKAGE OUTLINE DGS0010A, side view \"1.1 MAX\""
-  "/dimensions/standoff":
-    - source: ti/SBOS547C
-      page: 38
-      locator: "PACKAGE OUTLINE DGS0010A, DETAIL A \"0.15/0.05\""
-  "/dimensions/lead_width":
-    - source: ti/SBOS547C
-      page: 38
-      locator: "PACKAGE OUTLINE DGS0010A, \"10X 0.27/0.17\""
-  "/dimensions/lead_length":
-    - source: ti/SBOS547C
-      page: 38
-      locator: "PACKAGE OUTLINE DGS0010A, DETAIL A \"0.7/0.4\""
-  "/dimensions/lead_thickness":
-    - source: ti/SBOS547C
-      page: 38
-      locator: "PACKAGE OUTLINE DGS0010A, side view \"0.23/0.13 TYP\" (min/max only)"
+    min: 0.13 mm
+    max: 0.23 mm
+    src: p38 "PACKAGE OUTLINE DGS0010A, side view "0.23/0.13 TYP" (min/max only)"
+  lead_length:
+    min: 0.4 mm
+    max: 0.7 mm
+    src: p38 "PACKAGE OUTLINE DGS0010A, DETAIL A "0.7/0.4""
+  overall_width:
+    min: 4.75 mm
+    max: 5.05 mm
+    src: p38 "PACKAGE OUTLINE DGS0010A, lead tip span "5.05/4.75 TYP" (min/max only)"
+  overall_height: { max: 1.1 mm, src: 'p38 "PACKAGE OUTLINE DGS0010A, side view "1.1 MAX""' }
+  standoff:
+    min: 0.05 mm
+    max: 0.15 mm
+    src: p38 "PACKAGE OUTLINE DGS0010A, DETAIL A "0.15/0.05""
+  lead_width: { min: 0.17 mm, max: 0.27 mm, src: 'p38 "PACKAGE OUTLINE DGS0010A, "10X 0.27/0.17""' }

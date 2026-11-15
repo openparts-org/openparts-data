@@ -5,27 +5,18 @@
 # schema.org data gives model "BMI323", sku "0 273 017 028".
 # lifecycle: unknown (no first-party status statement found).
 # Package: drawing of this datasheet (page 212).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: bosch/BMI323
-
 manufacturer: bosch
-mpn: "BMI323"
-
+mpn: BMI323
 device: bosch/BMI323
 package: manufacturers/bosch/LGA14-3.0x2.5-P0.5-BMI323
+sources: [bosch/BST-BMI323-DS000-13]
+source: bosch/BST-BMI323-DS000-13
 
 existence:
   status: probable
+  src: 'p1 "title page: product BMI323, sales part number 0 273 017 028 (no ordering table)"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - bosch/BST-BMI323-DS000-13
-
-provenance:
-  "/existence":
-    - source: bosch/BST-BMI323-DS000-13
-      page: 1
-      locator: "title page: product BMI323, sales part number 0 273 017 028 (no ordering table)"
+lifecycle: { status: unknown }

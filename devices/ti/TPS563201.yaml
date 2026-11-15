@@ -5,43 +5,27 @@
 # -- the same map as ti/TPS563200. Types as ti/TPS563200: GND -> ground,
 # SW -> passive, VIN -> power, VFB and EN -> input, VBST (gate-drive
 # supply input; the table marks it O) -> power.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/TPS563201
-
 manufacturer: ti
 category: switching_regulator
 family: TPS56320x
+source: ti/SLVSD90B
+
+parameters:
+  input_voltage_max:
+    max: 17 V
+    src: 'p4 "5.3 Recommended Operating Conditions, VIN Supply input voltage range: MAX 17 V"'
+  output_current: { typ: 3 A, src: 'p1 "1 Features, "TPS563201 and TPS563208 3A converter""' }
 
 pins:
+  src:
+    - p3 "Table 4-1 "Pin Functions""
+    - p3 "Figure 4-1 "DDC Package 6-Pin SOT Top View" (all 6 pins matched)"
   "1": { name: GND, type: ground }
   "2": { name: SW, type: passive }
   "3": { name: VIN, type: power }
   "4": { name: VFB, type: input }
   "5": { name: EN, type: input }
   "6": { name: VBST, type: power }
-
-parameters:
-  input_voltage_max:
-    max: 17
-    unit: V
-  output_current:
-    nominal: 3
-    unit: A
-
-provenance:
-  "/parameters/input_voltage_max":
-    - source: ti/SLVSD90B
-      page: 4
-      locator: "5.3 Recommended Operating Conditions, VIN Supply input voltage range: MAX 17 V"
-  "/parameters/output_current":
-    - source: ti/SLVSD90B
-      page: 1
-      locator: "1 Features, \"TPS563201 and TPS563208 3A converter\""
-  "/pins":
-    - source: ti/SLVSD90B
-      page: 3
-      locator: "Table 4-1 \"Pin Functions\""
-    - source: ti/SLVSD90B
-      page: 3
-      locator: "Figure 4-1 \"DDC Package 6-Pin SOT Top View\" (all 6 pins matched)"

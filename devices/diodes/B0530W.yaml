@@ -3,43 +3,25 @@
 # The datasheet names the terminals only by the cathode band and
 # prints no pin numbers: numbered in the generator's position
 # convention (pin 1 at -X), cathode = 1, anode = 2.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: diodes/B0530W
-
 manufacturer: diodes
 category: diode
 family: B0530W
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: diodes/DS30139
 
 parameters:
-  reverse_voltage:
-    max: 30
-    unit: V
-  forward_current:
-    max: 0.5
-    unit: A
   forward_voltage:
-    max: 0.43
-    unit: V
+    max: 0.43 V
+    at: { IF: 0.5 A, TJ: 25 °C }
+    src: 'p2 "Electrical Characteristics, Maximum Forward Voltage Drop VFM: 0.430 V"'
+  reverse_voltage: { max: 30 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR: 30 V"' }
+  forward_current:
+    max: 0.5 A
+    src: 'p2 "Maximum Ratings, Average Rectified Output Current IO: 0.5 A"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: diodes/DS30139
-      page: 2
-      locator: "Maximum Ratings, VRRM/VRWM/VR: 30 V"
-  "/parameters/forward_current":
-    - source: diodes/DS30139
-      page: 2
-      locator: "Maximum Ratings, Average Rectified Output Current IO: 0.5 A"
-  "/parameters/forward_voltage":
-    - source: diodes/DS30139
-      page: 2
-      locator: "Electrical Characteristics, Maximum Forward Voltage Drop VFM: 0.430 V @ IF = 0.5A, TJ = +25°C"
-  "/pins":
-    - source: diodes/DS30139
-      page: 1
-      locator: "Mechanical Data: \"Polarity: Cathode Band\"; numbering by generator convention, see header"
+pins:
+  src: 'p1 "Mechanical Data: "Polarity: Cathode Band"; numbering by generator convention, see header"'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

@@ -4,43 +4,26 @@
 # View)". The tab is keyed "4" -- the number outline KTT0003B (page 42)
 # prints on it -- and, being listed with pin 2 as OUTPUT, carries
 # connected_to "2".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/LM317-KTT
-
 manufacturer: ti
 category: linear_regulator
 family: LM317
-
-pins:
-  "1": { name: "ADJUST", type: input }
-  "2": { name: "OUTPUT", type: power }
-  "3": { name: "INPUT", type: power }
-  "4": { name: "OUTPUT", type: power, connected_to: "2" }
+source: ti/SLVS044Z
 
 parameters:
   output_type:
     value: adjustable
-  output_current:
-    nominal: 1.5
-    unit: A
+    src: 'p1 "1 Features, "Output voltage range: Adjustable: 1.25V to 37V""'
+  output_current: { typ: 1.5 A, src: 'p1 "1 Features, "Output current: 1.5A""' }
 
-provenance:
-  "/parameters/output_type":
-    - source: ti/SLVS044Z
-      page: 1
-      locator: "1 Features, \"Output voltage range: Adjustable: 1.25V to 37V\""
-  "/parameters/output_current":
-    - source: ti/SLVS044Z
-      page: 1
-      locator: "1 Features, \"Output current: 1.5A\""
-  "/pins":
-    - source: ti/SLVS044Z
-      page: 5
-      locator: "\"Pin Functions, Metal Can Packages\", TO-263 column: ADJUST 1, INPUT 3, OUTPUT \"2, TAB\""
-    - source: ti/SLVS044Z
-      page: 5
-      locator: "Figure 5-3 \"KTT Package, 3-Pin TO-263 (Top View)\""
-    - source: ti/SLVS044Z
-      page: 42
-      locator: "KTT0003B outline, bottom view: tab / exposed thermal pad labelled \"4\""
+pins:
+  src:
+    - 'p5 ""Pin Functions, Metal Can Packages", TO-263 column: ADJUST 1, INPUT 3, OUTPUT "2, TAB""'
+    - p5 "Figure 5-3 "KTT Package, 3-Pin TO-263 (Top View)""
+    - 'p42 "KTT0003B outline, bottom view: tab / exposed thermal pad labelled "4""'
+  "1": { name: ADJUST, type: input }
+  "2": { name: OUTPUT, type: power }
+  "3": { name: INPUT, type: power }
+  "4": { name: OUTPUT, type: power, connected_to: "2" }

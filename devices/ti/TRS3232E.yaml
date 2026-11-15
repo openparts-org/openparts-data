@@ -5,21 +5,24 @@
 # (C1-, C2-, V-) are written as ASCII "-". Charge-pump capacitor leads
 # (type "-") typed passive; V+/V- ("charge pump output for storage
 # capacitor only", type O) typed output as in the table.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/TRS3232E
-
 manufacturer: ti
 category: rs232_transceiver
 family: TRS3232E
+source: ti/SLLS790E
 
 pins:
-  "1":  { name: "C1+", type: passive }
-  "2":  { name: "V+", type: output }
-  "3":  { name: "C1-", type: passive }
-  "4":  { name: "C2+", type: passive }
-  "5":  { name: "C2-", type: passive }
-  "6":  { name: "V-", type: output }
+  src:
+    - p3 "Table 4-1 "Pin Functions", column "NO.""
+    - p3 "Figure 4-1 "DB, PW or DYY Package 16-Pin SSOP, TSSOP, or SOT-23-THN (Top View)" (cross-check)"
+  "1":  { name: C1+, type: passive }
+  "2":  { name: V+, type: output }
+  "3":  { name: C1-, type: passive }
+  "4":  { name: C2+, type: passive }
+  "5":  { name: C2-, type: passive }
+  "6":  { name: V-, type: output }
   "7":  { name: DOUT2, type: output }
   "8":  { name: RIN2, type: input }
   "9":  { name: ROUT2, type: output }
@@ -30,12 +33,3 @@ pins:
   "14": { name: DOUT1, type: output }
   "15": { name: GND, type: ground }
   "16": { name: VCC, type: power }
-
-provenance:
-  "/pins":
-    - source: ti/SLLS790E
-      page: 3
-      locator: "Table 4-1 \"Pin Functions\", column \"NO.\""
-    - source: ti/SLLS790E
-      page: 3
-      locator: "Figure 4-1 \"DB, PW or DYY Package 16-Pin SSOP, TSSOP, or SOT-23-THN (Top View)\" (cross-check)"

@@ -5,41 +5,26 @@
 # table of available codes, and Toshiba's TLP291 product page shows no
 # orderable-part list in its static HTML -- so existence is `probable`.
 # Lifecycle is `unknown` (not stated in either source).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
-id: "toshiba/TLP291(GB,E"
-
+id: toshiba/TLP291(GB,E
 manufacturer: toshiba
-mpn: "TLP291(GB,E"
-
+mpn: TLP291(GB,E
 device: toshiba/TLP291
-package: manufacturers/toshiba/11-3C1
 
-existence:
-  status: probable
+package:
+  value: manufacturers/toshiba/11-3C1
+  src: p1 ""TLP291 is housed in the SO4 package"; outline drawing TOSHIBA 11-3C1"
 
-lifecycle:
-  status: unknown
+sources: [toshiba/TLP291-datasheet-en]
+source: toshiba/TLP291-datasheet-en
 
-sources:
-  - toshiba/TLP291-datasheet-en
+existence: { status: probable, src: 'p2 "CTR rank table, Note 1: "(e.g.) rank GB: TLP291 (GB,E""' }
+lifecycle: { status: unknown }
 
 parameters:
   current_transfer_ratio:
-    min: 100
-    max: 400
-    unit: "%"
-
-provenance:
-  "/parameters/current_transfer_ratio":
-    - source: toshiba/TLP291-datasheet-en
-      page: 2
-      locator: "Current Transfer Ratio (CTR) Rank table, TLP291 Rank GB row, IF = 5 mA, VCE = 5 V, Ta = 25 °C: Min 100 %, Max 400 %; Note1 maps the order code: \"(e.g.) rank GB: TLP291 (GB,E\""
-  "/existence":
-    - source: toshiba/TLP291-datasheet-en
-      page: 2
-      locator: "CTR rank table, Note 1: \"(e.g.) rank GB: TLP291 (GB,E\""
-  "/package":
-    - source: toshiba/TLP291-datasheet-en
-      page: 1
-      locator: "\"TLP291 is housed in the SO4 package\"; outline drawing TOSHIBA 11-3C1"
+    min: 100 %
+    max: 400 %
+    at: { VCE: 5 V, IF: 5 mA, TA: 25 °C }
+    src: 'p2 "Current Transfer Ratio (CTR) Rank table, TLP291 Rank GB row: Min 100 %, Max 400 %; Note1 maps the order code: "(e.g.) rank GB: TLP291 (GB,E""'

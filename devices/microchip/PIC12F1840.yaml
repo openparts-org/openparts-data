@@ -12,32 +12,24 @@
 # printed) and the Reference/Cap Sense/Comparator/SR Latch/Timer/ECCP/
 # EUSART/MSSP/IOC/Modulator columns are not modelled. The PIC12LF1840
 # (low-voltage variant) has the same pin map but is not covered here.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/PIC12F1840
-
 manufacturer: microchip
 category: microcontroller
-family: "PIC12(L)F1840"
+family: PIC12(L)F1840
+source: microchip/DS40001441@revF
 
 pins:
-  "1":  { name: VDD, type: power }
-  "2":  { name: RA5, type: io, alternate_functions: [OSC1, CLKIN] }
-  "3":  { name: RA4, type: io, alternate_functions: [AN3, OSC2, CLKOUT, CLKR] }
-  "4":  { name: RA3, type: input, alternate_functions: [MCLR, VPP] }
-  "5":  { name: RA2, type: io, alternate_functions: [AN2] }
-  "6":  { name: RA1, type: io, alternate_functions: [AN1, ICSPCLK] }
-  "7":  { name: RA0, type: io, alternate_functions: [AN0, ICSPDAT] }
-  "8":  { name: VSS, type: ground }
-
-provenance:
-  "/pins":
-    - source: microchip/DS40001441@revF
-      page: 3
-      locator: "Table 1 \"8-PIN ALLOCATION TABLE (PIC12(L)F1840)\", columns \"8-Pin PDIP/SOIC/DFN/UDFN\", \"ADC\" and \"Basic\""
-    - source: microchip/DS40001441@revF
-      page: 3
-      locator: "Figure 1 \"8-PIN DIAGRAM FOR PIC12(L)F1840\" (cross-check)"
-    - source: microchip/DS40001441@revF
-      page: 100
-      locator: "Section 12.2.1 \"DATA REGISTER\" (PORTA): \"RA3, which is input only\""
+  src:
+    - p3 "Table 1 "8-PIN ALLOCATION TABLE (PIC12(L)F1840)", columns "8-Pin PDIP/SOIC/DFN/UDFN", "ADC" and "Basic""
+    - p3 "Figure 1 "8-PIN DIAGRAM FOR PIC12(L)F1840" (cross-check)"
+    - 'p100 "Section 12.2.1 "DATA REGISTER" (PORTA): "RA3, which is input only""'
+  "1": { name: VDD, type: power }
+  "2": { name: RA5, type: io, alternate_functions: [OSC1, CLKIN] }
+  "3": { name: RA4, type: io, alternate_functions: [AN3, OSC2, CLKOUT, CLKR] }
+  "4": { name: RA3, type: input, alternate_functions: [MCLR, VPP] }
+  "5": { name: RA2, type: io, alternate_functions: [AN2] }
+  "6": { name: RA1, type: io, alternate_functions: [AN1, ICSPCLK] }
+  "7": { name: RA0, type: io, alternate_functions: [AN0, ICSPDAT] }
+  "8": { name: VSS, type: ground }

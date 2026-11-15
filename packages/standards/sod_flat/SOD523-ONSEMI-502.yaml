@@ -12,81 +12,47 @@
 # marks), A = seating plane to body top (no A2 given, so body_height).
 # L2 (lead under the body, 0.15 / 0.20 / 0.25) is not recorded.
 # STYLE 1: PIN 1. CATHODE (POLARITY BAND), 2. ANODE.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/SOD523-ONSEMI-502
-
 family: sod_flat
 lead_count: 2
+source: onsemi/BAS16XV2T1-D
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: sod_flat }
 
 dimensions:
-  body_length:
-    nominal: 1.2
-    min: 1.1
-    max: 1.3
-    unit: mm
   body_width:
-    nominal: 0.8
-    min: 0.7
-    max: 0.9
-    unit: mm
+    min: 0.7 mm
+    typ: 0.8 mm
+    max: 0.9 mm
+    src: p4 "CASE 502 table, E 0.70 / 0.80 / 0.90"
+  body_length:
+    min: 1.1 mm
+    typ: 1.2 mm
+    max: 1.3 mm
+    src: p4 "CASE 502 table, D 1.10 / 1.20 / 1.30"
   body_height:
-    nominal: 0.6
-    min: 0.5
-    max: 0.7
-    unit: mm
-  overall_length:
-    nominal: 1.6
-    min: 1.5
-    max: 1.7
-    unit: mm
-  lead_width:
-    nominal: 0.3
-    min: 0.25
-    max: 0.35
-    unit: mm
-  lead_length:
-    nominal: 0.3
-    unit: mm
+    min: 0.5 mm
+    typ: 0.6 mm
+    max: 0.7 mm
+    src: p4 "CASE 502 table, A 0.50 / 0.60 / 0.70"
   lead_thickness:
-    nominal: 0.14
-    min: 0.07
-    max: 0.2
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: sod_flat
-
-provenance:
-  "/dimensions/body_length":
-    - source: onsemi/BAS16XV2T1-D
-      page: 4
-      locator: "CASE 502 table, D 1.10 / 1.20 / 1.30"
-  "/dimensions/body_width":
-    - source: onsemi/BAS16XV2T1-D
-      page: 4
-      locator: "CASE 502 table, E 0.70 / 0.80 / 0.90"
-  "/dimensions/body_height":
-    - source: onsemi/BAS16XV2T1-D
-      page: 4
-      locator: "CASE 502 table, A 0.50 / 0.60 / 0.70"
-  "/dimensions/overall_length":
-    - source: onsemi/BAS16XV2T1-D
-      page: 4
-      locator: "CASE 502 table, H 1.50 / 1.60 / 1.70"
-  "/dimensions/lead_width":
-    - source: onsemi/BAS16XV2T1-D
-      page: 4
-      locator: "CASE 502 table, b 0.25 / 0.30 / 0.35"
-  "/dimensions/lead_length":
-    - source: onsemi/BAS16XV2T1-D
-      page: 4
-      locator: "CASE 502 table, L \"0.30 REF\" (reference value, marked REF in the table)"
-  "/dimensions/lead_thickness":
-    - source: onsemi/BAS16XV2T1-D
-      page: 4
-      locator: "CASE 502 table, c 0.07 / 0.14 / 0.20"
+    min: 0.07 mm
+    typ: 0.14 mm
+    max: 0.2 mm
+    src: p4 "CASE 502 table, c 0.07 / 0.14 / 0.20"
+  overall_length:
+    min: 1.5 mm
+    typ: 1.6 mm
+    max: 1.7 mm
+    src: p4 "CASE 502 table, H 1.50 / 1.60 / 1.70"
+  lead_width:
+    min: 0.25 mm
+    typ: 0.3 mm
+    max: 0.35 mm
+    src: p4 "CASE 502 table, b 0.25 / 0.30 / 0.35"
+  lead_length:
+    typ: 0.3 mm
+    src: p4 "CASE 502 table, L "0.30 REF" (reference value, marked REF in the table)"

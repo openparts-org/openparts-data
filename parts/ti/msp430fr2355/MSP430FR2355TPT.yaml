@@ -9,35 +9,22 @@
 # header already records PT0048A as a matching cross-check). TI gives
 # E/D as 8.8-9.2 and A1 only as "0.05 MIN" where the shared package
 # holds ST's 9.00 BSC and 0.05-0.15; not a contradiction, noted here.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/MSP430FR2355TPT
-
 manufacturer: ti
 mpn: MSP430FR2355TPT
-
 device: ti/MSP430FR2355
-package: standards/LQFP48-7x7-P0.5
 
-existence:
-  status: verified
+package:
+  value: standards/LQFP48-7x7-P0.5
+  src: p139 "PACKAGE OUTLINE PT0048A (LQFP, 48 pins, 0.5 pitch); ordering row "LQFP (PT) | 48" on page 124"
+
+sources: [ti/SLASEC4D]
+source: ti/SLASEC4D
+
+existence: { status: verified, src: 'p124 "Package Option Addendum, row "MSP430FR2355TPT""' }
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLASEC4D
-
-provenance:
-  "/existence":
-    - source: ti/SLASEC4D
-      page: 124
-      locator: "Package Option Addendum, row \"MSP430FR2355TPT\""
-  "/lifecycle":
-    - source: ti/SLASEC4D
-      page: 124
-      locator: "Package Option Addendum, row \"MSP430FR2355TPT\", Status \"Active\""
-  "/package":
-    - source: ti/SLASEC4D
-      page: 139
-      locator: "PACKAGE OUTLINE PT0048A (LQFP, 48 pins, 0.5 pitch); ordering row \"LQFP (PT) | 48\" on page 124"
+  src: p124 "Package Option Addendum, row "MSP430FR2355TPT", Status "Active""

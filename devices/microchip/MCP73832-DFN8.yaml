@@ -11,15 +11,24 @@
 # connected_to pin 6. VDD 1/2 and VBAT 3/4 share names (power pins).
 # Types as in microchip/MCP73831 (SOT-23-5): VDD/VBAT power, STAT
 # output, VSS ground, PROG analog; NC "No Connection" -> nc.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/MCP73832-DFN8
-
 manufacturer: microchip
 category: battery_charger
 family: MCP73831/2
+source: microchip/DS20001984@revH
+
+parameters:
+  input_voltage_max: { max: 6 V, src: 'p3 "DC Characteristics, Supply Voltage VDD: Max 6 V"' }
+  output_current:
+    max: 500 mA
+    src: 'p1 "Features, "Programmable Charge Current: 15 mA to 500 mA""'
 
 pins:
+  src:
+    - 'p11 "Table 3-1 "Pin Function Tables", DFN column (pins 1-9, 9 = EP); section 3.6 "Exposed Thermal Pad (EP)": internal electrical connection between EP and VSS"'
+    - p1 ""Package Types", MCP73831/2 2x3 DFN*"
   "1": { name: VDD, type: power }
   "2": { name: VDD, type: power }
   "3": { name: VBAT, type: power }
@@ -28,29 +37,4 @@ pins:
   "6": { name: VSS, type: ground }
   "7": { name: NC, type: nc }
   "8": { name: PROG, type: analog }
-  "EP": { name: VSS, type: ground, connected_to: "6" }
-
-parameters:
-  input_voltage_max:
-    max: 6
-    unit: V
-  output_current:
-    max: 500
-    unit: mA
-
-provenance:
-  "/parameters/input_voltage_max":
-    - source: microchip/DS20001984@revH
-      page: 3
-      locator: "DC Characteristics, Supply Voltage VDD: Max 6 V"
-  "/parameters/output_current":
-    - source: microchip/DS20001984@revH
-      page: 1
-      locator: "Features, \"Programmable Charge Current: 15 mA to 500 mA\""
-  "/pins":
-    - source: microchip/DS20001984@revH
-      page: 11
-      locator: "Table 3-1 \"Pin Function Tables\", DFN column (pins 1-9, 9 = EP); section 3.6 \"Exposed Thermal Pad (EP)\": internal electrical connection between EP and VSS"
-    - source: microchip/DS20001984@revH
-      page: 1
-      locator: "\"Package Types\", MCP73831/2 2x3 DFN*"
+  EP:  { name: VSS, type: ground, connected_to: "6" }

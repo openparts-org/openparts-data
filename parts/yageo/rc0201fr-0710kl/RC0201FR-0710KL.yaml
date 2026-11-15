@@ -1,56 +1,25 @@
 # 10 kOhm +/-1%, 0201 chip resistor. Listed at DigiKey, element14,
 # Newark and Future Electronics.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: yageo/RC0201FR-0710KL
-
 manufacturer: yageo
 mpn: RC0201FR-0710KL
-
 device: yageo/RC0201-GENERAL-PURPOSE
 package: standards/CHIP0201-RC
+sources: [yageo/RC0201-SPEC]
+source: yageo/RC0201-SPEC
 
-existence:
-  status: verified
+existence: { status: verified }
 
 # lifecycle is `unknown`: distributor listings are not a first-party
 # lifecycle source (openparts/skills/add-part section 2).
-lifecycle:
-  status: unknown
-
-sources:
-  - yageo/RC0201-SPEC
+lifecycle: { status: unknown }
 
 parameters:
-  resistance:
-    nominal: 10
-    unit: kΩ
-  tolerance:
-    min: -1
-    max: 1
-    unit: "%"
-  power_rating:
-    nominal: 0.05
-    unit: W
+  tolerance:    { tol: ±1 %, src: 'p1 "Specifications, Resistance Tolerance: 1%"' }
+  resistance:   { typ: 10 kΩ, src: 'p1 "Specifications, Resistance: 10 kOhms"' }
+  power_rating: { typ: 0.05 W, src: 'p1 "Specifications, Power: 0.05 W (70C)"' }
   temperature_coefficient:
-    min: -200
-    max: 200
-    unit: ppm/°C
-
-provenance:
-  "/parameters/resistance":
-    - source: yageo/RC0201-SPEC
-      page: 1
-      locator: "Specifications, Resistance: 10 kOhms"
-  "/parameters/tolerance":
-    - source: yageo/RC0201-SPEC
-      page: 1
-      locator: "Specifications, Resistance Tolerance: 1%"
-  "/parameters/power_rating":
-    - source: yageo/RC0201-SPEC
-      page: 1
-      locator: "Specifications, Power: 0.05 W (70C)"
-  "/parameters/temperature_coefficient":
-    - source: yageo/RC0201-SPEC
-      page: 1
-      locator: "Specifications, Temp. Coefficient: -/+200 ppm/C"
+    tol: ±200 ppm/°C
+    src: 'p1 "Specifications, Temp. Coefficient: -/+200 ppm/C"'

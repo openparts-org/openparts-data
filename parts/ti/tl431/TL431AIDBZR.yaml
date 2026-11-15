@@ -3,35 +3,24 @@
 # "TL431AIDBZR | Active | Production | SOT-23 (DBZ) | 3 | 3000 | LARGE T&R | ... | -40 to 85 | (T3AG, TAI3, TAIS, ...".
 # lifecycle "active" is that table's Status column.
 # Package: SOT-23 (DBZ) | 3, outline DBZ0003A (4214838/F) on page 62.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/TL431AIDBZR
-
 manufacturer: ti
-mpn: "TL431AIDBZR"
-
+mpn: TL431AIDBZR
 device: ti/TL431-DBZ
-package: manufacturers/ti/DBZ0003A
+
+package:
+  value: manufacturers/ti/DBZ0003A
+  src: p35 "Package Option Addendum, row "TL431AIDBZR", "SOT-23 (DBZ) | 3"; outline DBZ0003A (4214838/F) on page 62"
+
+sources: [ti/SLVS543S]
+source: ti/SLVS543S
 
 existence:
   status: verified
+  src: p35 "Package Option Addendum, Packaging Information table, row "TL431AIDBZR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLVS543S
-
-provenance:
-  "/existence":
-    - source: ti/SLVS543S
-      page: 35
-      locator: "Package Option Addendum, Packaging Information table, row \"TL431AIDBZR\""
-  "/lifecycle":
-    - source: ti/SLVS543S
-      page: 35
-      locator: "Package Option Addendum, row \"TL431AIDBZR\", Status \"Active\""
-  "/package":
-    - source: ti/SLVS543S
-      page: 35
-      locator: "Package Option Addendum, row \"TL431AIDBZR\", \"SOT-23 (DBZ) | 3\"; outline DBZ0003A (4214838/F) on page 62"
+  src: p35 "Package Option Addendum, row "TL431AIDBZR", Status "Active""

@@ -14,49 +14,29 @@
 # the drawing's own informal title text ("TO-92 3 4.825x4.76") is a
 # rounded label that happens to match these computed midpoints closely,
 # corroborating (not proving) the mapping.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/TO92-2N3904
-
 family: to92
 lead_count: 3
+source: onsemi/2N3904-D
 
 pitch:
-  nominal: 1.27
-  unit: mm
+  typ: 1.27 mm
+  src: p7 "CASE 135AN drawing, boxed (basic) lead-pitch dimension 1.27mm (pin1-pin2/pin2-pin3); total span pin1-pin3 boxed as 2.54mm, consistent"
+
+geometry: { type: parametric, generator: to92 }
 
 dimensions:
   body_width:
-    min: 4.32
-    max: 5.20
-    unit: mm
+    min: 4.32 mm
+    max: 5.2 mm
+    src: 'p7 "CASE 135AN drawing, front elevation, width across the flat face: max 5.20mm / min 4.32mm"'
   body_length:
-    min: 3.05
-    max: 4.19
-    unit: mm
+    min: 3.05 mm
+    max: 4.19 mm
+    src: 'p7 "CASE 135AN drawing, D-shape cross-section view, depth from flat face to rounded back: max 4.19mm / min 3.05mm"'
   body_height:
-    min: 4.32
-    max: 5.33
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: to92
-
-provenance:
-  "/pitch":
-    - source: onsemi/2N3904-D
-      page: 7
-      locator: "CASE 135AN drawing, boxed (basic) lead-pitch dimension 1.27mm (pin1-pin2/pin2-pin3); total span pin1-pin3 boxed as 2.54mm, consistent"
-  "/dimensions/body_width":
-    - source: onsemi/2N3904-D
-      page: 7
-      locator: "CASE 135AN drawing, front elevation, width across the flat face: max 5.20mm / min 4.32mm"
-  "/dimensions/body_length":
-    - source: onsemi/2N3904-D
-      page: 7
-      locator: "CASE 135AN drawing, D-shape cross-section view, depth from flat face to rounded back: max 4.19mm / min 3.05mm"
-  "/dimensions/body_height":
-    - source: onsemi/2N3904-D
-      page: 7
-      locator: "CASE 135AN drawing, front elevation, can height (excludes lead length below body): max 5.33mm / min 4.32mm"
+    min: 4.32 mm
+    max: 5.33 mm
+    src: 'p7 "CASE 135AN drawing, front elevation, can height (excludes lead length below body): max 5.33mm / min 4.32mm"'

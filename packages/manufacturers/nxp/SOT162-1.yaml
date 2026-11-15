@@ -10,96 +10,47 @@
 # body_width = E, body_length = D, overall_width = HE, body_height = A2,
 # overall_height = A (max only), standoff = A1, lead_width = bp,
 # lead_thickness = c, lead_length = Lp (L 1.4 reference not modelled).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/nxp/SOT162-1
-
 family: soic
 lead_count: 16
+source: nxp/PCF8574_PCF8574A@rev5
 
-pitch:
-  nominal: 1.27
-  unit: mm
+pitch: { typ: 1.27 mm, src: 'p20 "SOT162-1 DIMENSIONS table (mm), "e 1.27""' }
+geometry: { type: parametric, generator: soic }
 
 dimensions:
   body_width:
-    min: 7.4
-    max: 7.6
-    unit: mm
+    min: 7.4 mm
+    max: 7.6 mm
+    src: p20 "SOT162-1 DIMENSIONS table (mm), "E 7.6 / 7.4" (note 1)"
   body_length:
-    min: 10.1
-    max: 10.5
-    unit: mm
+    min: 10.1 mm
+    max: 10.5 mm
+    src: p20 "SOT162-1 DIMENSIONS table (mm), "D 10.5 / 10.1" (note 1)"
   body_height:
-    min: 2.25
-    max: 2.45
-    unit: mm
-  overall_width:
-    min: 10.00
-    max: 10.65
-    unit: mm
-  overall_height:
-    max: 2.65
-    unit: mm
-  standoff:
-    min: 0.1
-    max: 0.3
-    unit: mm
-  lead_width:
-    min: 0.36
-    max: 0.49
-    unit: mm
-  lead_length:
-    min: 0.4
-    max: 1.1
-    unit: mm
+    min: 2.25 mm
+    max: 2.45 mm
+    src: p20 "SOT162-1 DIMENSIONS table (mm), "A2 2.45 / 2.25""
   lead_thickness:
-    min: 0.23
-    max: 0.32
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: soic
-
-provenance:
-  "/pitch":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 20
-      locator: "SOT162-1 DIMENSIONS table (mm), \"e 1.27\""
-  "/dimensions/body_width":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 20
-      locator: "SOT162-1 DIMENSIONS table (mm), \"E 7.6 / 7.4\" (note 1)"
-  "/dimensions/body_length":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 20
-      locator: "SOT162-1 DIMENSIONS table (mm), \"D 10.5 / 10.1\" (note 1)"
-  "/dimensions/body_height":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 20
-      locator: "SOT162-1 DIMENSIONS table (mm), \"A2 2.45 / 2.25\""
-  "/dimensions/overall_width":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 20
-      locator: "SOT162-1 DIMENSIONS table (mm), \"HE 10.65 / 10.00\""
-  "/dimensions/overall_height":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 20
-      locator: "SOT162-1 DIMENSIONS table (mm), \"A max. 2.65\""
-  "/dimensions/standoff":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 20
-      locator: "SOT162-1 DIMENSIONS table (mm), \"A1 0.3 / 0.1\""
-  "/dimensions/lead_width":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 20
-      locator: "SOT162-1 DIMENSIONS table (mm), \"bp 0.49 / 0.36\""
-  "/dimensions/lead_length":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 20
-      locator: "SOT162-1 DIMENSIONS table (mm), \"Lp 1.1 / 0.4\""
-  "/dimensions/lead_thickness":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 20
-      locator: "SOT162-1 DIMENSIONS table (mm), \"c 0.32 / 0.23\""
+    min: 0.23 mm
+    max: 0.32 mm
+    src: p20 "SOT162-1 DIMENSIONS table (mm), "c 0.32 / 0.23""
+  overall_width:
+    min: 10 mm
+    max: 10.65 mm
+    src: p20 "SOT162-1 DIMENSIONS table (mm), "HE 10.65 / 10.00""
+  overall_height: { max: 2.65 mm, src: 'p20 "SOT162-1 DIMENSIONS table (mm), "A max. 2.65""' }
+  standoff:
+    min: 0.1 mm
+    max: 0.3 mm
+    src: p20 "SOT162-1 DIMENSIONS table (mm), "A1 0.3 / 0.1""
+  lead_width:
+    min: 0.36 mm
+    max: 0.49 mm
+    src: p20 "SOT162-1 DIMENSIONS table (mm), "bp 0.49 / 0.36""
+  lead_length:
+    min: 0.4 mm
+    max: 1.1 mm
+    src: p20 "SOT162-1 DIMENSIONS table (mm), "Lp 1.1 / 0.4""

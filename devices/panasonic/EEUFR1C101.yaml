@@ -4,20 +4,15 @@
 # convention (IPC-7351B / KiCad CP_Radial, pin 1 positive); the
 # datasheet does not number the leads -- its page-1 drawing marks the
 # leads only with "+" and "-" symbols.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: panasonic/EEUFR1C101
-
 manufacturer: panasonic
 category: capacitor
 family: FR-A
+source: panasonic/ABA0000C1259
 
 pins:
-  "1": { name: "+", type: passive }
-  "2": { name: "-", type: passive }
-
-provenance:
-  "/pins":
-    - source: panasonic/ABA0000C1259
-      page: 1
-      locator: "\"Dimensions\" drawing, lead polarity symbols (+) / (-)"
+  src: p1 ""Dimensions" drawing, lead polarity symbols (+) / (-)"
+  "1": { name: +, type: passive }
+  "2": { name: -, type: passive }

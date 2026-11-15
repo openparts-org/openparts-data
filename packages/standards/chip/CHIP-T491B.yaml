@@ -1,51 +1,32 @@
 # Kemet T491 series, EIA 3528-21 "Case B" molded tantalum chip body.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/CHIP-T491B
-
 family: chip
 lead_count: 2
+source: kemet/T2005_T491
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+
+construction:
+  value: tantalum_molded
+  src: 'p17 "Construction drawing: "Molded Epoxy Case", "Ta2O5 Dielectric", "Tantalum Wire""'
+
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 3.5
-    min: 3.3
-    max: 3.7
-    unit: mm
   body_width:
-    nominal: 2.8
-    min: 2.6
-    max: 3.0
-    unit: mm
+    min: 2.6 mm
+    typ: 2.8 mm
+    max: 3 mm
+    src: p4 ""Dimensions - Millimeters (Inches)" table, row "B / EIA 3528-21""
+  body_length:
+    min: 3.3 mm
+    typ: 3.5 mm
+    max: 3.7 mm
+    src: p4 ""Dimensions - Millimeters (Inches)" table, row "B / EIA 3528-21""
   body_height:
-    nominal: 1.9
-    min: 1.7
-    max: 2.1
-    unit: mm
-
-construction: tantalum_molded
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: kemet/T2005_T491
-      page: 4
-      locator: "\"Dimensions - Millimeters (Inches)\" table, row \"B / EIA 3528-21\""
-  "/dimensions/body_width":
-    - source: kemet/T2005_T491
-      page: 4
-      locator: "\"Dimensions - Millimeters (Inches)\" table, row \"B / EIA 3528-21\""
-  "/dimensions/body_height":
-    - source: kemet/T2005_T491
-      page: 4
-      locator: "\"Dimensions - Millimeters (Inches)\" table, row \"B / EIA 3528-21\""
-  "/construction":
-    - source: kemet/T2005_T491
-      page: 17
-      locator: "Construction drawing: \"Molded Epoxy Case\", \"Ta2O5 Dielectric\", \"Tantalum Wire\""
+    min: 1.7 mm
+    typ: 1.9 mm
+    max: 2.1 mm
+    src: p4 ""Dimensions - Millimeters (Inches)" table, row "B / EIA 3528-21""

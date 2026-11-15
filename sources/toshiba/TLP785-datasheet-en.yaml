@@ -7,15 +7,12 @@
 # (11-5L1 DIP4) and page 4 (11-5L106 LF6 surface-mount lead form) are
 # vector art and were rendered (pdftoppm, 300-400 dpi) and read as
 # images. Page numbers are PDF page indices.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: toshiba/TLP785-datasheet-en
-
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=10569&prodName=TLP785
+date: 2026-04-07
+revision: 2026-04-07
 publisher: toshiba
 document_id: TLP785_datasheet_en
 document_type: datasheet
-
-revision: "2026-04-07"
-date: "2026-04-07"
-
-url: "https://toshiba.semicon-storage.com/info/docget.jsp?did=10569&prodName=TLP785"

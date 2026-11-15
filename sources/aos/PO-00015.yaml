@@ -4,15 +4,12 @@
 # pdftoppm renders (dimension table and views are image text). The
 # drawing prints no date; `date` is the PDF's own CreationDate
 # (2024-10-22); the product pages list the file with date 2024-11-01.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: aos/PO-00015
-
+url: https://www.aosmd.com/sites/default/files/res/packaging_information/TO220.pdf
+date: 2024-10-22
+revision: N
 publisher: aos
 document_id: PO-00015
 document_type: package_drawing
-
-revision: "N"
-date: "2024-10-22"
-
-url: "https://www.aosmd.com/sites/default/files/res/packaging_information/TO220.pdf"

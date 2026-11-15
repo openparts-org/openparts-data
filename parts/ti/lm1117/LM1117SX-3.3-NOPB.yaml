@@ -2,35 +2,20 @@
 # Active  Production  DDPAK/ TO-263 (KTT) | 3" -- MPN printed verbatim in TI's orderable
 # list (existence verified); lifecycle "Active" is TI's own Status column.
 # Package KTT = outline KTT0003B (SNOS412Q page 35).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/LM1117SX-3.3/NOPB
-
 manufacturer: ti
 mpn: LM1117SX-3.3/NOPB
-
 device: ti/LM1117-FIXED-KTT
-package: manufacturers/ti/KTT0003B
+package: { value: manufacturers/ti/KTT0003B, src: p35 "KTT0003B package outline" }
+sources: [ti/SNOS412Q]
+source: ti/SNOS412Q
 
 existence:
   status: verified
+  src: p26 "Package option addendum table, row "LM1117SX-3.3/NOPB" (DDPAK/ TO-263 (KTT) | 3)"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SNOS412Q
-
-provenance:
-  "/existence":
-    - source: ti/SNOS412Q
-      page: 26
-      locator: "Package option addendum table, row \"LM1117SX-3.3/NOPB\" (DDPAK/ TO-263 (KTT) | 3)"
-  "/lifecycle":
-    - source: ti/SNOS412Q
-      page: 26
-      locator: "Package option addendum table, row \"LM1117SX-3.3/NOPB\", Status \"Active\""
-  "/package":
-    - source: ti/SNOS412Q
-      page: 35
-      locator: "KTT0003B package outline"
+  src: p26 "Package option addendum table, row "LM1117SX-3.3/NOPB", Status "Active""

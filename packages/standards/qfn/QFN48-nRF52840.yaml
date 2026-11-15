@@ -22,96 +22,45 @@
 # "QFN48 dimensions in millimeters" (page 937) prints one column
 # "D2, E2" = 4.5/4.6/4.7 (min/nom/max), so both sides are equal.
 # Re-downloaded from the same DigiKey-hosted URL the Source cites.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/QFN48-nRF52840
-
 family: qfn
-lead_count: 48
+lead_count: { value: 48, src: 'p976 "Table 103, "Package variant codes", row "QF""' }
+source: nordic/4413_417@v1.11
 
-pitch:
-  nominal: 0.4
-  unit: mm
+pitch: { typ: 0.4 mm, src: 'p976 "Table 103, "Package variant codes", row "QF""' }
+geometry: { type: parametric, generator: qfn }
 
 dimensions:
-  body_width:
-    nominal: 6.0
-    unit: mm
-  body_length:
-    nominal: 6.0
-    unit: mm
-  lead_width:
-    nominal: 0.2
-    min: 0.15
-    max: 0.25
-    unit: mm
-  lead_length:
-    nominal: 0.4
-    min: 0.35
-    max: 0.45
-    unit: mm
+  body_width: { typ: 6 mm, src: 'p976 "Table 103, "Package variant codes", row "QF" ("6 x 6")"' }
+  body_length: { typ: 6 mm, src: 'p976 "Table 103, "Package variant codes", row "QF" ("6 x 6")"' }
   lead_thickness:
-    nominal: 0.203
-    unit: mm
-  standoff:
-    nominal: 0.035
-    min: 0.0
-    max: 0.05
-    unit: mm
+    typ: 0.203 mm
+    src: p937 "Section 7.2.2, Table 65 "QFN48 dimensions in millimeters", symbol "A3" (nominal only)"
   exposed_pad:
     width:
-      nominal: 4.6
-      min: 4.5
-      max: 4.7
-      unit: mm
+      min: 4.5 mm
+      typ: 4.6 mm
+      max: 4.7 mm
+      src: p937 "Section 7.2.2, Table 65 "QFN48 dimensions in millimeters", column "D2, E2" (4.5/4.6/4.7)"
     length:
-      nominal: 4.6
-      min: 4.5
-      max: 4.7
-      unit: mm
-
-geometry:
-  type: parametric
-  generator: qfn
-
-provenance:
-  "/lead_count":
-    - source: nordic/4413_417@v1.11
-      page: 976
-      locator: "Table 103, \"Package variant codes\", row \"QF\""
-  "/pitch":
-    - source: nordic/4413_417@v1.11
-      page: 976
-      locator: "Table 103, \"Package variant codes\", row \"QF\""
-  "/dimensions/body_width":
-    - source: nordic/4413_417@v1.11
-      page: 976
-      locator: "Table 103, \"Package variant codes\", row \"QF\" (\"6 x 6\")"
-  "/dimensions/body_length":
-    - source: nordic/4413_417@v1.11
-      page: 976
-      locator: "Table 103, \"Package variant codes\", row \"QF\" (\"6 x 6\")"
-  "/dimensions/lead_width":
-    - source: nordic/4413_417@v1.11
-      page: 937
-      locator: "Section 7.2.2, Table 65 \"QFN48 dimensions in millimeters\", symbol \"b\""
-  "/dimensions/lead_length":
-    - source: nordic/4413_417@v1.11
-      page: 937
-      locator: "Section 7.2.2, Table 65 \"QFN48 dimensions in millimeters\", symbol \"L\""
-  "/dimensions/lead_thickness":
-    - source: nordic/4413_417@v1.11
-      page: 937
-      locator: "Section 7.2.2, Table 65 \"QFN48 dimensions in millimeters\", symbol \"A3\" (nominal only)"
-  "/dimensions/standoff":
-    - source: nordic/4413_417@v1.11
-      page: 937
-      locator: "Section 7.2.2, Table 65 \"QFN48 dimensions in millimeters\", symbol \"A1\""
-  "/dimensions/exposed_pad/width":
-    - source: nordic/4413_417@v1.11
-      page: 937
-      locator: "Section 7.2.2, Table 65 \"QFN48 dimensions in millimeters\", column \"D2, E2\" (4.5/4.6/4.7)"
-  "/dimensions/exposed_pad/length":
-    - source: nordic/4413_417@v1.11
-      page: 937
-      locator: "Section 7.2.2, Table 65 \"QFN48 dimensions in millimeters\", column \"D2, E2\" (4.5/4.6/4.7)"
+      min: 4.5 mm
+      typ: 4.6 mm
+      max: 4.7 mm
+      src: p937 "Section 7.2.2, Table 65 "QFN48 dimensions in millimeters", column "D2, E2" (4.5/4.6/4.7)"
+  standoff:
+    min: 0 mm
+    typ: 0.035 mm
+    max: 0.05 mm
+    src: p937 "Section 7.2.2, Table 65 "QFN48 dimensions in millimeters", symbol "A1""
+  lead_width:
+    min: 0.15 mm
+    typ: 0.2 mm
+    max: 0.25 mm
+    src: p937 "Section 7.2.2, Table 65 "QFN48 dimensions in millimeters", symbol "b""
+  lead_length:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.45 mm
+    src: p937 "Section 7.2.2, Table 65 "QFN48 dimensions in millimeters", symbol "L""

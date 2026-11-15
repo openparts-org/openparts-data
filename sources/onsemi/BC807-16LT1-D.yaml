@@ -4,15 +4,12 @@
 # outline drawing; onsemi's separate outline document
 # (98ASB42226B) returned an HTML "Technical Documentation" page instead
 # of a PDF when fetched, so it was not read.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: onsemi/BC807-16LT1-D
-
+url: https://www.onsemi.com/download/data-sheet/pdf/bc807-16lt1-d.pdf
+date: 2023-03
+revision: "17"
 publisher: onsemi
 document_id: BC807-16LT1/D
 document_type: datasheet
-
-revision: "17"
-date: "2023-03"
-
-url: "https://www.onsemi.com/download/data-sheet/pdf/bc807-16lt1-d.pdf"

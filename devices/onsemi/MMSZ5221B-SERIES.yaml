@@ -3,23 +3,17 @@
 # Pins from the page-1 symbol ("1 Cathode", "2 Anode", "SOD-123 CASE
 # 425 STYLE 1") and STYLE 1 on the outline page (PIN 1. CATHODE
 # 2. ANODE).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/MMSZ5221B-SERIES
-
 manufacturer: onsemi
 category: diode
 family: MMSZ52
+source: onsemi/MMSZ5221BT1-D
 
 pins:
+  src:
+    - 'p1 "Symbol: "1 Cathode", "2 Anode"; "SOD-123 CASE 425 STYLE 1""'
+    - 'p7 "CASE 425 STYLE 1: "PIN 1. CATHODE 2. ANODE""'
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
-
-provenance:
-  "/pins":
-    - source: onsemi/MMSZ5221BT1-D
-      page: 1
-      locator: "Symbol: \"1 Cathode\", \"2 Anode\"; \"SOD-123 CASE 425 STYLE 1\""
-    - source: onsemi/MMSZ5221BT1-D
-      page: 7
-      locator: "CASE 425 STYLE 1: \"PIN 1. CATHODE 2. ANODE\""

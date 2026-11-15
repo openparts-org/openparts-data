@@ -3,35 +3,24 @@
 # "SN74LVC1G04DBVR | Active | Production | SOT-23 (DBV) | 5 | 3000 | LARGE T&R | ... | -40 to 125 | (3VHF, C045, C04F, ...".
 # lifecycle "active" is that table's Status column.
 # Package: SOT-23 (DBV) | 5, outline DBV0005A (4214839/K) on page 23.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/SN74LVC1G04DBVR
-
 manufacturer: ti
-mpn: "SN74LVC1G04DBVR"
-
+mpn: SN74LVC1G04DBVR
 device: ti/SN74LVC1G04-DBV
-package: manufacturers/ti/DBV0005A
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src: p15 "Package Option Addendum, row "SN74LVC1G04DBVR", "SOT-23 (DBV) | 5"; outline DBV0005A (4214839/K) on page 23"
+
+sources: [ti/SCES214AF]
+source: ti/SCES214AF
 
 existence:
   status: verified
+  src: p15 "Package Option Addendum, Packaging Information table, row "SN74LVC1G04DBVR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SCES214AF
-
-provenance:
-  "/existence":
-    - source: ti/SCES214AF
-      page: 15
-      locator: "Package Option Addendum, Packaging Information table, row \"SN74LVC1G04DBVR\""
-  "/lifecycle":
-    - source: ti/SCES214AF
-      page: 15
-      locator: "Package Option Addendum, row \"SN74LVC1G04DBVR\", Status \"Active\""
-  "/package":
-    - source: ti/SCES214AF
-      page: 15
-      locator: "Package Option Addendum, row \"SN74LVC1G04DBVR\", \"SOT-23 (DBV) | 5\"; outline DBV0005A (4214839/K) on page 23"
+  src: p15 "Package Option Addendum, row "SN74LVC1G04DBVR", Status "Active""

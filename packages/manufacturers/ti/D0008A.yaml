@@ -14,88 +14,43 @@
 # a body nominal, so this package does not render a 3D model/footprint.
 # Pitch "6X .050 [1.27]" is basic. The A1 range is printed ".004-.010
 # [0.11-0.25]" and recorded as printed.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/ti/D0008A
-
 family: soic
 lead_count: 8
+source: ti/SLCS005AH
 
-pitch:
-  nominal: 1.27
-  unit: mm
+pitch: { typ: 1.27 mm, src: 'p43 "D0008A outline, "6X .050 [1.27]" (basic)"' }
+geometry: { type: parametric, generator: soic }
 
 dimensions:
   body_width:
-    min: 3.81
-    max: 3.98
-    unit: mm
+    min: 3.81 mm
+    max: 3.98 mm
+    src: p43 "D0008A outline, body width ".150-.157 [3.81-3.98]" (note 4)"
   body_length:
-    min: 4.81
-    max: 5.00
-    unit: mm
-  overall_width:
-    min: 5.80
-    max: 6.19
-    unit: mm
-  overall_height:
-    max: 1.75
-    unit: mm
-  standoff:
-    min: 0.11
-    max: 0.25
-    unit: mm
-  lead_width:
-    min: 0.31
-    max: 0.51
-    unit: mm
-  lead_length:
-    min: 0.41
-    max: 1.27
-    unit: mm
+    min: 4.81 mm
+    max: 5 mm
+    src: p43 "D0008A outline, body length ".189-.197 [4.81-5.00]" (note 3)"
   lead_thickness:
-    min: 0.13
-    max: 0.25
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: soic
-
-provenance:
-  "/pitch":
-    - source: ti/SLCS005AH
-      page: 43
-      locator: "D0008A outline, \"6X .050 [1.27]\" (basic)"
-  "/dimensions/body_width":
-    - source: ti/SLCS005AH
-      page: 43
-      locator: "D0008A outline, body width \".150-.157 [3.81-3.98]\" (note 4)"
-  "/dimensions/body_length":
-    - source: ti/SLCS005AH
-      page: 43
-      locator: "D0008A outline, body length \".189-.197 [4.81-5.00]\" (note 3)"
-  "/dimensions/overall_width":
-    - source: ti/SLCS005AH
-      page: 43
-      locator: "D0008A outline, lead-tip span \".228-.244 TYP [5.80-6.19]\""
-  "/dimensions/overall_height":
-    - source: ti/SLCS005AH
-      page: 43
-      locator: "D0008A outline, \".069 MAX [1.75]\""
-  "/dimensions/standoff":
-    - source: ti/SLCS005AH
-      page: 43
-      locator: "D0008A outline, standoff \".004-.010 [0.11-0.25]\""
-  "/dimensions/lead_width":
-    - source: ti/SLCS005AH
-      page: 43
-      locator: "D0008A outline, \"8X .012-.020 [0.31-0.51]\""
-  "/dimensions/lead_length":
-    - source: ti/SLCS005AH
-      page: 43
-      locator: "D0008A Detail A, foot length \".016-.050 [0.41-1.27]\""
-  "/dimensions/lead_thickness":
-    - source: ti/SLCS005AH
-      page: 43
-      locator: "D0008A outline, lead thickness \".005-.010 TYP [0.13-0.25]\""
+    min: 0.13 mm
+    max: 0.25 mm
+    src: p43 "D0008A outline, lead thickness ".005-.010 TYP [0.13-0.25]""
+  lead_length:
+    min: 0.41 mm
+    max: 1.27 mm
+    src: p43 "D0008A Detail A, foot length ".016-.050 [0.41-1.27]""
+  overall_width:
+    min: 5.8 mm
+    max: 6.19 mm
+    src: p43 "D0008A outline, lead-tip span ".228-.244 TYP [5.80-6.19]""
+  overall_height: { max: 1.75 mm, src: 'p43 "D0008A outline, ".069 MAX [1.75]""' }
+  standoff:
+    min: 0.11 mm
+    max: 0.25 mm
+    src: p43 "D0008A outline, standoff ".004-.010 [0.11-0.25]""
+  lead_width:
+    min: 0.31 mm
+    max: 0.51 mm
+    src: p43 "D0008A outline, "8X .012-.020 [0.31-0.51]""

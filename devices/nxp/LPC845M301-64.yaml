@@ -6,15 +6,18 @@
 # visually against Fig 4 "Pin configuration LQFP64 package" (page 8):
 # all 64 pins match. Separate device from nxp/LPC845M301-48 because the
 # LQFP64 numbering differs.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: nxp/LPC845M301-64
-
 manufacturer: nxp
 category: microcontroller
 family: LPC84x
+source: nxp/LPC84x@rev2.1
 
 pins:
+  src:
+    - p12 "Table 4 "Pin description" (pages 12-16), column "LQFP64""
+    - p8 "Fig 4 "Pin configuration LQFP64 package" (cross-check, all 64 pins matched)"
   "1":  { name: PIO1_8/CAPT_YL, type: io }
   "2":  { name: PIO0_13/ADC_10, type: io }
   "3":  { name: PIO1_9/CAPT_YH, type: io }
@@ -79,12 +82,3 @@ pins:
   "62": { name: PIO1_11, type: io }
   "63": { name: PIO0_17/ADC_9/DACOUT_0, type: io }
   "64": { name: PIO1_10, type: io }
-
-provenance:
-  "/pins":
-    - source: nxp/LPC84x@rev2.1
-      page: 12
-      locator: "Table 4 \"Pin description\" (pages 12-16), column \"LQFP64\""
-    - source: nxp/LPC84x@rev2.1
-      page: 8
-      locator: "Fig 4 \"Pin configuration LQFP64 package\" (cross-check, all 64 pins matched)"

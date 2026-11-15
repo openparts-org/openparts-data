@@ -5,29 +5,23 @@
 # and is not covered. OSCI/OSCO typed clock; INT ("Interrupt output
 # (open-drain; active LOW)") and CLKOUT ("Clock output, open-drain")
 # output; SCL ("Serial clock input") clock.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: nxp/PCF8563
-
 manufacturer: nxp
 category: rtc
 family: PCF8563
+source: nxp/PCF8563@rev11.1
 
 pins:
-  "1":  { name: OSCI, type: clock }
-  "2":  { name: OSCO, type: clock }
-  "3":  { name: INT, type: output }
-  "4":  { name: VSS, type: ground }
-  "5":  { name: SDA, type: io }
-  "6":  { name: SCL, type: clock }
-  "7":  { name: CLKOUT, type: output }
-  "8":  { name: VDD, type: power }
-
-provenance:
-  "/pins":
-    - source: nxp/PCF8563@rev11.1
-      page: 8
-      locator: "Table 3 \"Pin description\", column \"SO8, TSSOP8\""
-    - source: nxp/PCF8563@rev11.1
-      page: 8
-      locator: "Figure 3 \"Pin configuration for SO8 (PCF8563T)\" (cross-check)"
+  src:
+    - p8 "Table 3 "Pin description", column "SO8, TSSOP8""
+    - p8 "Figure 3 "Pin configuration for SO8 (PCF8563T)" (cross-check)"
+  "1": { name: OSCI, type: clock }
+  "2": { name: OSCO, type: clock }
+  "3": { name: INT, type: output }
+  "4": { name: VSS, type: ground }
+  "5": { name: SDA, type: io }
+  "6": { name: SCL, type: clock }
+  "7": { name: CLKOUT, type: output }
+  "8": { name: VDD, type: power }

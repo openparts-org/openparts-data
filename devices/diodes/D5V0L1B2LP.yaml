@@ -3,29 +3,20 @@
 # "Pin 1" and "Pin 2" with back-to-back diodes between them -- the
 # device is symmetrical, there is no cathode/anode, so the pins carry
 # the datasheet's own labels.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: diodes/D5V0L1B2LP
-
 manufacturer: diodes
 category: diode
 family: D5V0L1B2LP
-
-pins:
-  "1": { name: Pin1, type: passive }
-  "2": { name: Pin2, type: passive }
+source: diodes/DS35427
 
 parameters:
   reverse_voltage:
-    max: 5
-    unit: V
+    max: 5 V
+    src: 'p2 "Electrical Characteristics, Reverse Standoff Voltage VRWM: Max 5 V"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: diodes/DS35427
-      page: 2
-      locator: "Electrical Characteristics, Reverse Standoff Voltage VRWM: Max 5 V"
-  "/pins":
-    - source: diodes/DS35427
-      page: 1
-      locator: "Device Schematic: \"Pin 1\" and \"Pin 2\", bi-directional (back-to-back) TVS between them"
+pins:
+  src: 'p1 "Device Schematic: "Pin 1" and "Pin 2", bi-directional (back-to-back) TVS between them"'
+  "1": { name: Pin1, type: passive }
+  "2": { name: Pin2, type: passive }

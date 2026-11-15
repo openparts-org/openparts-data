@@ -4,43 +4,28 @@
 # No pin numbers are printed for this part, so 1 = Cathode and 2 = Anode
 # follow the dataset's two-terminal diode convention (pin 1 at the
 # banded end).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/MBRS2040L
-
 manufacturer: onsemi
 category: diode
 family: MBRS2040L
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: onsemi/MBRS2040LT3-D
 
 parameters:
-  reverse_voltage:
-    max: 40
-    unit: V
-  forward_current:
-    max: 2.0
-    unit: A
   forward_voltage:
-    max: 0.43
-    unit: V
+    max: 0.43 V
+    at: { IF: 2 A, TJ: 25 °C }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF: 0.43 V"'
+  reverse_voltage:
+    max: 40 V
+    src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 40 V"'
+  forward_current:
+    max: 2 A
+    at: { TC: 103 °C }
+    src: 'p2 "MAXIMUM RATINGS, Average Rectified Forward Current IO (At Rated VR): 2.0 A"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: onsemi/MBRS2040LT3-D
-      page: 2
-      locator: "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 40 V"
-  "/parameters/forward_current":
-    - source: onsemi/MBRS2040LT3-D
-      page: 2
-      locator: "MAXIMUM RATINGS, Average Rectified Forward Current IO (At Rated VR, TC = 103 °C): 2.0 A"
-  "/parameters/forward_voltage":
-    - source: onsemi/MBRS2040LT3-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF (IF = 2.0 A), TJ = 25 °C: 0.43 V"
-  "/pins":
-    - source: onsemi/MBRS2040LT3-D
-      page: 1
-      locator: "\"Cathode Polarity Band\""
+pins:
+  src: p1 ""Cathode Polarity Band""
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

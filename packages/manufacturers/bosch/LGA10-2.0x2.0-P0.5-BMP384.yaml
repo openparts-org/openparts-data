@@ -14,87 +14,46 @@
 # Edge to pad 0.100+-0.05. Note under the figure: general tolerances
 # +-50 um. Section 7.2: the outline bottom view is the suggested landing
 # pattern. Only the overall height 0.95+-0.05 is printed -> body_height.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/bosch/LGA10-2.0x2.0-P0.5-BMP384
-
 family: lga
 lead_count: 10
-lead_layout: [2, 3, 2, 3]
+
+lead_layout:
+  value: [2, 3, 2, 3]
+  src:
+    - p48 "Figure 26 bottom view (2 pads on the pin-1/2 edge and its opposite, 3 on the others), rotated 90 deg so pins 1-2 form the left edge"
+    - 'p45 "Figure 23 pin-out top view (image) and Table 50: 1 VDDIO ... 10 VDD, counter-clockwise from the top edge"'
+
+source: bosch/BST-BMP384-DS003-11
 
 pitch:
-  nominal: 0.5
-  unit: mm
+  typ: 0.5 mm
+  src: p48 "Figure 26 bottom view, boxed 1.000 across three side pads and boxed 0.500 between the 2-pad pins"
+
+geometry: { type: parametric, generator: lga }
 
 dimensions:
-  body_width:
-    nominal: 2.0
-    min: 1.9
-    max: 2.1
-    unit: mm
-  body_length:
-    nominal: 2.0
-    min: 1.9
-    max: 2.1
-    unit: mm
+  body_width:  { min: 1.9 mm, typ: 2 mm, max: 2.1 mm, src: 'p48 "Figure 26 top view, 2.00+-0.10"' }
+  body_length: { min: 1.9 mm, typ: 2 mm, max: 2.1 mm, src: 'p48 "Figure 26 top view, 2.00+-0.10"' }
   body_height:
-    nominal: 0.95
-    min: 0.9
-    max: 1.0
-    unit: mm
-  lead_length:
-    nominal: 0.285
-    min: 0.255
-    max: 0.315
-    unit: mm
-  lead_width:
-    nominal: 0.27
-    min: 0.25
-    max: 0.29
-    unit: mm
+    min: 0.9 mm
+    typ: 0.95 mm
+    max: 1 mm
+    src: p48 "Figure 26 side view, 0.95+-0.05"
   lead_inset:
-    nominal: 0.1
-    min: 0.05
-    max: 0.15
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: lga
-
-provenance:
-  "/pitch":
-    - source: bosch/BST-BMP384-DS003-11
-      page: 48
-      locator: "Figure 26 bottom view, boxed 1.000 across three side pads and boxed 0.500 between the 2-pad pins"
-  "/lead_layout":
-    - source: bosch/BST-BMP384-DS003-11
-      page: 48
-      locator: "Figure 26 bottom view (2 pads on the pin-1/2 edge and its opposite, 3 on the others), rotated 90 deg so pins 1-2 form the left edge"
-    - source: bosch/BST-BMP384-DS003-11
-      page: 45
-      locator: "Figure 23 pin-out top view (image) and Table 50: 1 VDDIO ... 10 VDD, counter-clockwise from the top edge"
-  "/dimensions/body_width":
-    - source: bosch/BST-BMP384-DS003-11
-      page: 48
-      locator: "Figure 26 top view, 2.00+-0.10"
-  "/dimensions/body_length":
-    - source: bosch/BST-BMP384-DS003-11
-      page: 48
-      locator: "Figure 26 top view, 2.00+-0.10"
-  "/dimensions/body_height":
-    - source: bosch/BST-BMP384-DS003-11
-      page: 48
-      locator: "Figure 26 side view, 0.95+-0.05"
-  "/dimensions/lead_length":
-    - source: bosch/BST-BMP384-DS003-11
-      page: 48
-      locator: "Figure 26 bottom view, 0.285+-0.03 (6x side pads, 4x row pads; inward)"
-  "/dimensions/lead_width":
-    - source: bosch/BST-BMP384-DS003-11
-      page: 48
-      locator: "Figure 26 bottom view, 0.270+-0.02 (6x, 4x; across)"
-  "/dimensions/lead_inset":
-    - source: bosch/BST-BMP384-DS003-11
-      page: 48
-      locator: "Figure 26 bottom view, 0.100+-0.05 body edge to pad (both directions)"
+    min: 0.05 mm
+    typ: 0.1 mm
+    max: 0.15 mm
+    src: p48 "Figure 26 bottom view, 0.100+-0.05 body edge to pad (both directions)"
+  lead_width:
+    min: 0.25 mm
+    typ: 0.27 mm
+    max: 0.29 mm
+    src: p48 "Figure 26 bottom view, 0.270+-0.02 (6x, 4x; across)"
+  lead_length:
+    min: 0.255 mm
+    typ: 0.285 mm
+    max: 0.315 mm
+    src: p48 "Figure 26 bottom view, 0.285+-0.03 (6x side pads, 4x row pads; inward)"

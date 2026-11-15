@@ -1,51 +1,34 @@
 # Brilliant red (AlGaInP) 0603-size chip LED. Everlight numbers the pads
 # the other way round from Kingbright: pad 1 = anode (+), pad 2 =
 # cathode (-), per the page-6 polarity symbol.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: everlight/19-217-R6C-P1Q2
-
 manufacturer: everlight
 category: led
-family: "19-217"
-
-pins:
-  "1": { name: Anode, type: passive }
-  "2": { name: Cathode, type: passive }
+family: 19-217
+source: everlight/DSE-0025716
 
 parameters:
+  forward_voltage:
+    min: 1.7 V
+    typ: 2 V
+    max: 2.4 V
+    at: { IF: 20 mA, TA: 25 °C }
+    src: 'p3 "Electro-Optical Characteristics, Forward Voltage VF: Min. 1.7 V, Typ. 2.0 V, Max. 2.4 V"'
+  forward_current:
+    max: 25 mA
+    at: { TA: 25 °C }
+    src: 'p2 "Absolute Maximum Ratings, Forward Current IF: 25 mA"'
   color:
     value: red
+    src: 'p2 "Device Selection Guide: Chip AlGaInP, Emitted Color Brilliant Red, Resin Water Clear"'
   wavelength:
-    nominal: 624
-    unit: nm
-  forward_voltage:
-    nominal: 2.0
-    min: 1.7
-    max: 2.4
-    unit: V
-  forward_current:
-    max: 25
-    unit: mA
+    typ: 624 nm
+    at: { IF: 20 mA, TA: 25 °C }
+    src: 'p3 "Electro-Optical Characteristics, Dominant Wavelength λd: Typ. 624 nm"'
 
-provenance:
-  "/parameters/color":
-    - source: everlight/DSE-0025716
-      page: 2
-      locator: "Device Selection Guide: Chip AlGaInP, Emitted Color Brilliant Red, Resin Water Clear"
-  "/parameters/wavelength":
-    - source: everlight/DSE-0025716
-      page: 3
-      locator: "Electro-Optical Characteristics (Ta=25℃), Dominant Wavelength λd @ IF=20mA: Typ. 624 nm"
-  "/parameters/forward_voltage":
-    - source: everlight/DSE-0025716
-      page: 3
-      locator: "Electro-Optical Characteristics (Ta=25℃), Forward Voltage VF @ IF=20mA: Min. 1.7 V, Typ. 2.0 V, Max. 2.4 V"
-  "/parameters/forward_current":
-    - source: everlight/DSE-0025716
-      page: 2
-      locator: "Absolute Maximum Ratings (Ta=25℃), Forward Current IF: 25 mA"
-  "/pins":
-    - source: everlight/DSE-0025716
-      page: 6
-      locator: "Package Dimension, Polarity symbol: \"+ (1)\" anode, \"- (2)\" cathode; bottom view \"Cathode Mask\" at pad 2"
+pins:
+  src: 'p6 "Package Dimension, Polarity symbol: "+ (1)" anode, "- (2)" cathode; bottom view "Cathode Mask" at pad 2"'
+  "1": { name: Anode, type: passive }
+  "2": { name: Cathode, type: passive }

@@ -5,27 +5,18 @@
 # searched (Obsolete/NRND/Active/Discontinued/Status/Lifecycle) with no
 # hits; only generic "specifications subject to change" boilerplate
 # exists (page 4), which is not a lifecycle statement.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: kingbright/APT1608EC
-
 manufacturer: kingbright
 mpn: APT1608EC
-
 device: kingbright/APT1608EC
 package: standards/CHIP0603-APT1608EC
+sources: [kingbright/DSAD0924]
+source: kingbright/DSAD0924
 
 existence:
   status: verified
+  src: p1 "Title/header and "Selection Guide" table, Part Number column"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - kingbright/DSAD0924
-
-provenance:
-  "/existence":
-    - source: kingbright/DSAD0924
-      page: 1
-      locator: "Title/header and \"Selection Guide\" table, Part Number column"
+lifecycle: { status: unknown }

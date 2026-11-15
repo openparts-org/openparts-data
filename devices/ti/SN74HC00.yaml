@@ -2,15 +2,18 @@
 # from Table 5-1 "Pin Functions" (SCLS181H page 3) checked against the
 # 14-pin top view (same page); all 14 pins match. The FK (LCCC)
 # numbering differs and is not covered.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/SN74HC00
-
 manufacturer: ti
 category: logic
 family: SNx4HC00
+source: ti/SCLS181H
 
 pins:
+  src:
+    - p3 "Table 5-1 "Pin Functions", column "D, DB, N, NS, PW, J, or W""
+    - p3 ""D, DB, N, NS, PW, J, or W Package 14-Pin ... Top View" figure (cross-check)"
   "1":  { name: 1A, type: input }
   "2":  { name: 1B, type: input }
   "3":  { name: 1Y, type: output }
@@ -25,12 +28,3 @@ pins:
   "12": { name: 4A, type: input }
   "13": { name: 4B, type: input }
   "14": { name: VCC, type: power }
-
-provenance:
-  "/pins":
-    - source: ti/SCLS181H
-      page: 3
-      locator: "Table 5-1 \"Pin Functions\", column \"D, DB, N, NS, PW, J, or W\""
-    - source: ti/SCLS181H
-      page: 3
-      locator: "\"D, DB, N, NS, PW, J, or W Package 14-Pin ... Top View\" figure (cross-check)"

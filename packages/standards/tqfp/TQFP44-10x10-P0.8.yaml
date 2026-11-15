@@ -6,112 +6,61 @@
 # overall_width/length, A2 -> body_height, A (max only) ->
 # overall_height, A1 -> standoff (no nominal), C -> lead_thickness.
 # `family: lqfp` for the same reason as standards/TQFP32-7x7-P0.8.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/TQFP44-10x10-P0.8
-
 family: lqfp
 lead_count: 44
+source: microchip/7766@revJ
 
-pitch:
-  nominal: 0.8
-  unit: mm
+pitch: { typ: 0.8 mm, src: 'p423 "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol e (0.80 TYP)"' }
+geometry: { type: parametric, generator: lqfp }
 
 dimensions:
   body_width:
-    nominal: 10.0
-    min: 9.9
-    max: 10.1
-    unit: mm
+    min: 9.9 mm
+    typ: 10 mm
+    max: 10.1 mm
+    src: p423 "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol D1/E1"
   body_length:
-    nominal: 10.0
-    min: 9.9
-    max: 10.1
-    unit: mm
+    min: 9.9 mm
+    typ: 10 mm
+    max: 10.1 mm
+    src: p423 "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol D1/E1"
   body_height:
-    nominal: 1.0
-    min: 0.95
-    max: 1.05
-    unit: mm
-  overall_width:
-    nominal: 12.0
-    min: 11.75
-    max: 12.25
-    unit: mm
-  overall_length:
-    nominal: 12.0
-    min: 11.75
-    max: 12.25
-    unit: mm
-  overall_height:
-    max: 1.2
-    unit: mm
-  standoff:
-    min: 0.05
-    max: 0.15
-    unit: mm
-  lead_width:
-    nominal: 0.37
-    min: 0.3
-    max: 0.45
-    unit: mm
-  lead_length:
-    nominal: 0.6
-    min: 0.45
-    max: 0.75
-    unit: mm
+    min: 0.95 mm
+    typ: 1 mm
+    max: 1.05 mm
+    src: p423 "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol A2"
   lead_thickness:
-    nominal: 0.17
-    min: 0.09
-    max: 0.2
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: lqfp
-
-provenance:
-  "/pitch":
-    - source: microchip/7766@revJ
-      page: 423
-      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol e (0.80 TYP)"
-  "/dimensions/body_width":
-    - source: microchip/7766@revJ
-      page: 423
-      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol D1/E1"
-  "/dimensions/body_length":
-    - source: microchip/7766@revJ
-      page: 423
-      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol D1/E1"
-  "/dimensions/body_height":
-    - source: microchip/7766@revJ
-      page: 423
-      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol A2"
-  "/dimensions/overall_width":
-    - source: microchip/7766@revJ
-      page: 423
-      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol D/E"
-  "/dimensions/overall_length":
-    - source: microchip/7766@revJ
-      page: 423
-      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol D/E"
-  "/dimensions/overall_height":
-    - source: microchip/7766@revJ
-      page: 423
-      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol A (max only)"
-  "/dimensions/standoff":
-    - source: microchip/7766@revJ
-      page: 423
-      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol A1 (no nominal)"
-  "/dimensions/lead_width":
-    - source: microchip/7766@revJ
-      page: 423
-      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol b"
-  "/dimensions/lead_length":
-    - source: microchip/7766@revJ
-      page: 423
-      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol L"
-  "/dimensions/lead_thickness":
-    - source: microchip/7766@revJ
-      page: 423
-      locator: "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol C"
+    min: 0.09 mm
+    typ: 0.17 mm
+    max: 0.2 mm
+    src: p423 "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol C"
+  overall_width:
+    min: 11.75 mm
+    typ: 12 mm
+    max: 12.25 mm
+    src: p423 "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol D/E"
+  overall_length:
+    min: 11.75 mm
+    typ: 12 mm
+    max: 12.25 mm
+    src: p423 "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol D/E"
+  overall_height:
+    max: 1.2 mm
+    src: p423 "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol A (max only)"
+  standoff:
+    min: 0.05 mm
+    max: 0.15 mm
+    src: p423 "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol A1 (no nominal)"
+  lead_width:
+    min: 0.3 mm
+    typ: 0.37 mm
+    max: 0.45 mm
+    src: p423 "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol b"
+  lead_length:
+    min: 0.45 mm
+    typ: 0.6 mm
+    max: 0.75 mm
+    src: p423 "Section 34.1 TQFP44, COMMON DIMENSIONS, symbol L"

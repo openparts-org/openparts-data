@@ -4,35 +4,27 @@
 # ground); pins 2, 3, 10, 11 are "NC ... do not connect" -> nc (the table
 # gives them type "Digital I/O" for 2/3, but they are to be left
 # unconnected). Numbers checked against Figure 36/37 pin-out (page 206).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: bosch/BMI330
-
 manufacturer: bosch
 category: imu
-family: "BMI3"
+family: BMI3
+source: bosch/BST-BMI330-DS000-03
 
 pins:
-  "1": { name: "SDO", type: io }
-  "2": { name: "NC", type: nc }
-  "3": { name: "NC", type: nc }
-  "4": { name: "INT1", type: io }
-  "5": { name: "VDDIO", type: power }
-  "6": { name: "GNDIO", type: ground }
-  "7": { name: "GND", type: ground }
-  "8": { name: "VDD", type: power }
-  "9": { name: "INT2", type: io }
-  "10": { name: "NC", type: nc }
-  "11": { name: "NC", type: nc }
-  "12": { name: "CSB", type: input }
-  "13": { name: "SCx", type: input }
-  "14": { name: "SDx", type: io }
-
-provenance:
-  "/pins":
-    - source: bosch/BST-BMI330-DS000-03
-      page: 207
-      locator: "Table 56 Pin-out and pin connections"
-    - source: bosch/BST-BMI330-DS000-03
-      page: 206
-      locator: "Figures 36/37 pin-out top/bottom view"
+  src:  [p207 "Table 56 Pin-out and pin connections", p206 "Figures 36/37 pin-out top/bottom view"]
+  "1":  { name: SDO, type: io }
+  "2":  { name: NC, type: nc }
+  "3":  { name: NC, type: nc }
+  "4":  { name: INT1, type: io }
+  "5":  { name: VDDIO, type: power }
+  "6":  { name: GNDIO, type: ground }
+  "7":  { name: GND, type: ground }
+  "8":  { name: VDD, type: power }
+  "9":  { name: INT2, type: io }
+  "10": { name: NC, type: nc }
+  "11": { name: NC, type: nc }
+  "12": { name: CSB, type: input }
+  "13": { name: SCx, type: input }
+  "14": { name: SDx, type: io }

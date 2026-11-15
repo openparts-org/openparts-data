@@ -2,46 +2,30 @@
 # from the outline's STYLE 1 list (page 5) and page 1 "Polarity:
 # Polarity
 # Band Indicates Cathode Lead".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/MBRA210L
-
 manufacturer: onsemi
 category: diode
 family: MBRA210L
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: onsemi/MBRA210LT3-D
 
 parameters:
-  reverse_voltage:
-    max: 10
-    unit: V
-  forward_current:
-    max: 2.0
-    unit: A
   forward_voltage:
-    max: 0.35
-    unit: V
+    max: 0.35 V
+    at: { IF: 2 A, TJ: 25 °C }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF: 0.350 V"'
+  reverse_voltage:
+    max: 10 V
+    src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 10 V"'
+  forward_current:
+    max: 2 A
+    at: { TL: 110 °C }
+    src: 'p2 "MAXIMUM RATINGS, Average Rectified Forward Current IO (At Rated VR): 2.0 A"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: onsemi/MBRA210LT3-D
-      page: 2
-      locator: "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 10 V"
-  "/parameters/forward_current":
-    - source: onsemi/MBRA210LT3-D
-      page: 2
-      locator: "MAXIMUM RATINGS, Average Rectified Forward Current IO (At Rated VR, TL = 110°C): 2.0 A"
-  "/parameters/forward_voltage":
-    - source: onsemi/MBRA210LT3-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF (IF = 2.0 A), TJ = 25°C: 0.350 V"
-  "/pins":
-    - source: onsemi/MBRA210LT3-D
-      page: 5
-      locator: "CASE 403D STYLE 1: \"PIN 1. CATHODE (POLARITY BAND) 2. ANODE\""
-    - source: onsemi/MBRA210LT3-D
-      page: 1
-      locator: "Mechanical Characteristics: \"Polarity: Polarity Band Indicates Cathode Lead\""
+pins:
+  src:
+    - 'p5 "CASE 403D STYLE 1: "PIN 1. CATHODE (POLARITY BAND) 2. ANODE""'
+    - 'p1 "Mechanical Characteristics: "Polarity: Polarity Band Indicates Cathode Lead""'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

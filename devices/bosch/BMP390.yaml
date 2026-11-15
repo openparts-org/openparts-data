@@ -3,28 +3,23 @@
 # BST-BMP390-DS002-07 (Supply -> power, In -> input, In/Out -> io, Out -> output,
 # VSS "Ground" -> ground); numbers checked against Figure 23 "Pin-out top
 # and bottom view" on the same page. The three VSS pins are all ground.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: bosch/BMP390
-
 manufacturer: bosch
 category: pressure_sensor
-family: "BMP3"
+family: BMP3
+source: bosch/BST-BMP390-DS002-07
 
 pins:
-  "1": { name: "VDDIO", type: power }
-  "2": { name: "SCK", type: input }
-  "3": { name: "VSS", type: ground }
-  "4": { name: "SDI", type: io }
-  "5": { name: "SDO", type: io }
-  "6": { name: "CSB", type: input }
-  "7": { name: "INT", type: output }
-  "8": { name: "VSS", type: ground }
-  "9": { name: "VSS", type: ground }
-  "10": { name: "VDD", type: power }
-
-provenance:
-  "/pins":
-    - source: bosch/BST-BMP390-DS002-07
-      page: 46
-      locator: "Table 52 Pin description; Figure 23 pin-out"
+  src:  p46 "Table 52 Pin description; Figure 23 pin-out"
+  "1":  { name: VDDIO, type: power }
+  "2":  { name: SCK, type: input }
+  "3":  { name: VSS, type: ground }
+  "4":  { name: SDI, type: io }
+  "5":  { name: SDO, type: io }
+  "6":  { name: CSB, type: input }
+  "7":  { name: INT, type: output }
+  "8":  { name: VSS, type: ground }
+  "9":  { name: VSS, type: ground }
+  "10": { name: VDD, type: power }

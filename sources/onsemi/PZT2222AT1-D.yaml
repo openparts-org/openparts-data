@@ -5,16 +5,13 @@
 # pdftoppm. Page numbers are PDF page indices.
 # Pages 5-6 are the SOT-223 (TO-261) CASE 318E-04 ISSUE R outline
 # (98ASB42680B, DATE 02 OCT 2018), page 6 its STYLE list.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: onsemi/PZT2222AT1-D
-
+retrieved: 2026-11-10
+url: https://www.onsemi.com/pdf/datasheet/pzt2222at1-d.pdf
+date: 2024-07
 publisher: onsemi
 document_id: PZT2222AT1/D
 document_type: datasheet
-
 revision: "12"
-date: "2024-07"
-
-url: "https://www.onsemi.com/pdf/datasheet/pzt2222at1-d.pdf"
-retrieved: "2026-11-10"

@@ -2,45 +2,24 @@
 # current in the datasheet's orderable-parts table -- note the plain
 # "BC547B" (no "G" suffix) is NOT listed, only the Pb-Free "-G"
 # variants (BC547BG, BC547BRL1G, BC547BZL1G).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/BC547BG
-
 manufacturer: onsemi
 mpn: BC547BG
-
 device: onsemi/BC547-SERIES
 package: standards/TO92-BC547
+sources: [onsemi/BC546-D]
+source: onsemi/BC546-D
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - onsemi/BC546-D
+existence: { status: verified }
+lifecycle: { status: active }
 
 parameters:
-  polarity:
-    value: npn
+  polarity: { value: npn, src: 'p1 "Page-1 title: "Amplifier Transistors NPN Silicon""' }
   collector_emitter_voltage:
-    nominal: 45
-    unit: V
+    typ: 45 V
+    src: 'p1 "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO, BC547 row: 45 Vdc"'
   collector_current:
-    nominal: 100
-    unit: mA
-
-provenance:
-  "/parameters/polarity":
-    - source: onsemi/BC546-D
-      page: 1
-      locator: "Page-1 title: \"Amplifier Transistors NPN Silicon\""
-  "/parameters/collector_emitter_voltage":
-    - source: onsemi/BC546-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO, BC547 row: 45 Vdc"
-  "/parameters/collector_current":
-    - source: onsemi/BC546-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Collector Current - Continuous IC: 100 mAdc"
+    typ: 100 mA
+    src: 'p1 "MAXIMUM RATINGS, Collector Current - Continuous IC: 100 mAdc"'

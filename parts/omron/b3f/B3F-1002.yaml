@@ -3,44 +3,27 @@
 # Models", without ground terminal, bag of 100). The model is printed in
 # the orderable model table -> existence verified. The page-4 drawing
 # lists B3F-1002 by name. Lifecycle: no first-party status read -> unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: omron/B3F-1002
-
 manufacturer: omron
-mpn: "B3F-1002"
-
+mpn: B3F-1002
 device: omron/B3F-1000
 package: manufacturers/omron/B3F-6x6-THT-H4.3
+sources: [omron/A070-E1-08]
+source: omron/A070-E1-08
 
 existence:
   status: verified
+  src: 'p1 ""List of Models", 6 x 6 mm Models, Standard B3F-1000 Series, Silver plated, Flat type, height 4.3 mm, 1.47 N {150 gf}, Yellow: "B3F-1002""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - omron/A070-E1-08
+lifecycle: { status: unknown }
 
 parameters:
-  actuation_force:
-    nominal: 1.47
-    unit: N
   rated_current:
-    min: 1
-    max: 50
-    unit: mA
-
-provenance:
-  "/parameters/actuation_force":
-    - source: omron/A070-E1-08
-      page: 1
-      locator: "List of Models, 6 x 6 mm Models, row B3F-1002 (4.3 mm, Yellow): Operating force (OF) 1.47 N {150 gf}"
-  "/parameters/rated_current":
-    - source: omron/A070-E1-08
-      page: 3
-      locator: "Ratings/Characteristics, Rating (resistive load): 1 to 50 mA, 3 to 24 VDC"
-  "/existence":
-    - source: omron/A070-E1-08
-      page: 1
-      locator: "\"List of Models\", 6 x 6 mm Models, Standard B3F-1000 Series, Silver plated, Flat type, height 4.3 mm, 1.47 N {150 gf}, Yellow: \"B3F-1002\""
+    min: 1 mA
+    max: 50 mA
+    src: 'p3 "Ratings/Characteristics, Rating (resistive load): 1 to 50 mA, 3 to 24 VDC"'
+  actuation_force:
+    typ: 1.47 N
+    src: 'p1 "List of Models, 6 x 6 mm Models, row B3F-1002 (4.3 mm, Yellow): Operating force (OF) 1.47 N {150 gf}"'

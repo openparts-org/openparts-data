@@ -6,26 +6,21 @@
 # X1 also external clock input) typed clock; MFP (open-drain
 # multifunction output, section 3.4) output; SCL ("Serial Clock")
 # clock; VBAT (backup supply input) power.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/MCP7940N
-
 manufacturer: microchip
 category: rtc
 family: MCP7940N
+source: microchip/DS20005010@revH
 
 pins:
-  "1":  { name: X1, type: clock }
-  "2":  { name: X2, type: clock }
-  "3":  { name: VBAT, type: power }
-  "4":  { name: Vss, type: ground }
-  "5":  { name: SDA, type: io }
-  "6":  { name: SCL, type: clock }
-  "7":  { name: MFP, type: output }
-  "8":  { name: Vcc, type: power }
-
-provenance:
-  "/pins":
-    - source: microchip/DS20005010@revH
-      page: 8
-      locator: "Table 3-1 \"Pin Function Table\", column \"8-pin SOIC\""
+  src: p8 "Table 3-1 "Pin Function Table", column "8-pin SOIC""
+  "1": { name: X1, type: clock }
+  "2": { name: X2, type: clock }
+  "3": { name: VBAT, type: power }
+  "4": { name: Vss, type: ground }
+  "5": { name: SDA, type: io }
+  "6": { name: SCL, type: clock }
+  "7": { name: MFP, type: output }
+  "8": { name: Vcc, type: power }

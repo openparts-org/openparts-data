@@ -1,26 +1,14 @@
 # APT3216EC: High Efficiency Red (GaAsP/GaP) chip LED, Kingbright datasheet DSAD0986.
 # lifecycle unknown: no production-status statement in the datasheet.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
-id: "kingbright/APT3216EC"
-
+id: kingbright/APT3216EC
 manufacturer: kingbright
-mpn: "APT3216EC"
-
+mpn: APT3216EC
 device: kingbright/APT3216EC
 package: manufacturers/kingbright/CHIP-KINGBRIGHT-APT3216
+sources: [kingbright/DSAD0986]
+source: kingbright/DSAD0986
 
-existence:
-  status: verified
-
-lifecycle:
-  status: unknown
-
-sources:
-  - kingbright/DSAD0986
-
-provenance:
-  "/existence":
-    - source: kingbright/DSAD0986
-      page: 1
-      locator: "Title and SELECTION GUIDE table, Part Number column"
+existence: { status: verified, src: 'p1 "Title and SELECTION GUIDE table, Part Number column"' }
+lifecycle: { status: unknown }

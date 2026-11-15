@@ -3,27 +3,18 @@
 # column, 9 circuits) -> existence verified. "-A": no colour letter =
 # natural (white), no M = without boss (page 9 "Model number allocation").
 # lifecycle: the sheet states no production status -> unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: jst/B9B-XH-A
-
 manufacturer: jst
-mpn: "B9B-XH-A"
-
+mpn: B9B-XH-A
 device: jst/B9B-XH-A
 package: manufacturers/jst/XH-Header-Top-1x09-P2.50
+sources: [jst/eXH]
+source: jst/eXH
 
 existence:
   status: verified
+  src: 'p5 ""Header", Top entry type Model No. table, No. of circuits 9, Without boss: "B9B-XH-A""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - jst/eXH
-
-provenance:
-  "/existence":
-    - source: jst/eXH
-      page: 5
-      locator: "\"Header\", Top entry type Model No. table, No. of circuits 9, Without boss: \"B9B-XH-A\""
+lifecycle: { status: unknown }

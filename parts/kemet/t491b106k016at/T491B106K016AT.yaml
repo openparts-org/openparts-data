@@ -3,55 +3,27 @@
 # B=case, 106=10uF, K=+/-10%, 016=16V, A=N/A failure rate, T=matte-tin
 # termination. Confirmed real and current via RS Online, Farnell,
 # Lion Circuits, Ciiva listings.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: kemet/T491B106K016AT
-
 manufacturer: kemet
 mpn: T491B106K016AT
-
 device: kemet/T491B-TANTALUM
 package: standards/CHIP-T491B
+sources: [kemet/T2005_T491, kemet/T2005_T491@2026-07-08]
+source: kemet/T2005_T491@2026-07-08
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - kemet/T2005_T491
-  - kemet/T2005_T491@2026-07-08
+existence: { status: verified }
+lifecycle: { status: active }
 
 parameters:
   capacitance:
-    nominal: 10
-    unit: µF
-  tolerance:
-    min: -10
-    max: 10
-    unit: "%"
+    typ: 10 µF
+    src: 'p9 "Table 1 – Ratings & Part Number Reference, row T491B106(1)016A(2): Rated Cap 10 µF"'
+  tolerance: { tol: ±10 %, src: 'p2 "Ordering Information, Capacitance Tolerance: K = ±10%"' }
   rated_voltage:
-    nominal: 16
-    unit: V
+    typ: 16 V
+    src: 'p9 "Table 1 – Ratings & Part Number Reference, row T491B106(1)016A(2): Rated Voltage 16 VDC at 85°C"'
   esr:
-    max: 2.0
-    unit: Ω
-
-provenance:
-  "/parameters/capacitance":
-    - source: kemet/T2005_T491@2026-07-08
-      page: 9
-      locator: "Table 1 – Ratings & Part Number Reference, row T491B106(1)016A(2): Rated Cap 10 µF"
-  "/parameters/tolerance":
-    - source: kemet/T2005_T491@2026-07-08
-      page: 2
-      locator: "Ordering Information, Capacitance Tolerance: K = ±10%"
-  "/parameters/rated_voltage":
-    - source: kemet/T2005_T491@2026-07-08
-      page: 9
-      locator: "Table 1 – Ratings & Part Number Reference, row T491B106(1)016A(2): Rated Voltage 16 VDC at 85°C"
-  "/parameters/esr":
-    - source: kemet/T2005_T491@2026-07-08
-      page: 9
-      locator: "Table 1 – Ratings & Part Number Reference, row T491B106(1)016A(2): ESR 2.0 Ω at +25°C 100 kHz Maximum"
+    max: 2 Ω
+    src: 'p9 "Table 1 – Ratings & Part Number Reference, row T491B106(1)016A(2): ESR 2.0 Ω at +25°C 100 kHz Maximum"'

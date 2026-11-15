@@ -3,30 +3,25 @@
 # BST-BMA400-DS000-14: Digital I/O -> io, Digital in -> input, Supply ->
 # power, Ground -> ground, NC (no type given) -> nc. Numbers checked
 # against the top/bottom view pin-out figure on the same page.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: bosch/BMA400
-
 manufacturer: bosch
 category: imu
-family: "BMA4"
+family: BMA4
+source: bosch/BST-BMA400-DS000-14
 
 pins:
-  "1": { name: "SDO", type: io }
-  "2": { name: "SDX", type: io }
-  "3": { name: "VDDIO", type: power }
-  "4": { name: "NC", type: nc }
-  "5": { name: "INT1", type: io }
-  "6": { name: "INT2", type: io }
-  "7": { name: "VDD", type: power }
-  "8": { name: "GNDIO", type: ground }
-  "9": { name: "GND", type: ground }
-  "10": { name: "CSB", type: input }
-  "11": { name: "NC", type: nc }
-  "12": { name: "SCX", type: input }
-
-provenance:
-  "/pins":
-    - source: bosch/BST-BMA400-DS000-14
-      page: 108
-      locator: "7.1 Pin-out figure and Pin description table"
+  src:  p108 "7.1 Pin-out figure and Pin description table"
+  "1":  { name: SDO, type: io }
+  "2":  { name: SDX, type: io }
+  "3":  { name: VDDIO, type: power }
+  "4":  { name: NC, type: nc }
+  "5":  { name: INT1, type: io }
+  "6":  { name: INT2, type: io }
+  "7":  { name: VDD, type: power }
+  "8":  { name: GNDIO, type: ground }
+  "9":  { name: GND, type: ground }
+  "10": { name: CSB, type: input }
+  "11": { name: NC, type: nc }
+  "12": { name: SCX, type: input }

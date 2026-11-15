@@ -14,15 +14,12 @@
 # read this way for the same reason (rotated/mirrored per-pin label
 # text, unreliable to reconstruct from raw text-extraction coordinates
 # alone).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: microchip/DS40002061@revB
-
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf
+date: 2020-09
+revision: B
 publisher: microchip
 document_id: DS40002061
 document_type: datasheet
-
-revision: "B"
-date: "2020-09"
-
-url: "https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega48A-PA-88A-PA-168A-PA-328-P-DS-DS40002061B.pdf"

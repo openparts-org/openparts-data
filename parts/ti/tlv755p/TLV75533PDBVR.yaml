@@ -3,52 +3,34 @@
 # "TLV75533PDBVR | Active | Production | SOT-23 (DBV) | 5 | 3000 | LARGE T&R | ... | -40 to 125 | 1FWF".
 # lifecycle "active" is that table's Status column.
 # Package: SOT-23 (DBV) | 5, outline DBV0005A (4214839/K) on page 44.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/TLV75533PDBVR
-
 manufacturer: ti
-mpn: "TLV75533PDBVR"
-
+mpn: TLV75533PDBVR
 device: ti/TLV755P-DBV
-package: manufacturers/ti/DBV0005A
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src: p28 "Package Option Addendum, row "TLV75533PDBVR", "SOT-23 (DBV) | 5"; outline DBV0005A (4214839/K) on page 44"
+
+sources: [ti/SBVS320D]
+source: ti/SBVS320D
 
 existence:
   status: verified
+  src: p28 "Package Option Addendum, Packaging Information table, row "TLV75533PDBVR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SBVS320D
+  src: p28 "Package Option Addendum, row "TLV75533PDBVR", Status "Active""
 
 parameters:
   output_voltage:
-    nominal: 3.3
-    unit: V
+    typ: 3.3 V
+    src: 'p23 "8.1.1 Device Nomenclature, Table 8-1, "TLV755xx(x)Pyyyz(M3)": "xx(x) is the nominal output voltage ... two digits are used (for example, 28 = 2.8V ...)" -> xx = 33"'
   dropout_voltage:
-    nominal: 150
-    max: 215
-    unit: mV
-
-provenance:
-  "/parameters/output_voltage":
-    - source: ti/SBVS320D
-      page: 23
-      locator: "8.1.1 Device Nomenclature, Table 8-1, \"TLV755xx(x)Pyyyz(M3)\": \"xx(x) is the nominal output voltage ... two digits are used (for example, 28 = 2.8V ...)\" -> xx = 33"
-  "/parameters/dropout_voltage":
-    - source: ti/SBVS320D
-      page: 6
-      locator: "Electrical Characteristics, VDO Dropout voltage, IOUT = 500mA, 3.3V <= VOUT < 5.0V (non-DYD row): TYP 150 mV, MAX 215 mV"
-  "/existence":
-    - source: ti/SBVS320D
-      page: 28
-      locator: "Package Option Addendum, Packaging Information table, row \"TLV75533PDBVR\""
-  "/lifecycle":
-    - source: ti/SBVS320D
-      page: 28
-      locator: "Package Option Addendum, row \"TLV75533PDBVR\", Status \"Active\""
-  "/package":
-    - source: ti/SBVS320D
-      page: 28
-      locator: "Package Option Addendum, row \"TLV75533PDBVR\", \"SOT-23 (DBV) | 5\"; outline DBV0005A (4214839/K) on page 44"
+    typ: 150 mV
+    max: 215 mV
+    at: { IOUT: 500 mA }
+    src: 'p6 "Electrical Characteristics, VDO Dropout voltage, 3.3V <= VOUT < 5.0V (non-DYD row): TYP 150 mV, MAX 215 mV"'

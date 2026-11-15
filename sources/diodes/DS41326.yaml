@@ -5,16 +5,13 @@
 # Read with pdftotext -layout; page 1 (Pin Assignments) and page 17
 # (TSOT26 Package Outline Dimensions) rendered with pdftoppm. Page
 # numbers are PDF page indices (= printed "N of 18").
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: diodes/DS41326
-
+retrieved: 2026-11-10
+url: https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf
+date: 2024-11
 publisher: diodes
 document_id: DS41326
 document_type: datasheet
-
-revision: "3-2"
-date: "2024-11"
-
-url: "https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf"
-retrieved: "2026-11-10"
+revision: 3-2

@@ -5,24 +5,18 @@
 # One device for the datasheet's "BC856ALT1G Series" (BC856, BC857,
 # BC858, BC859 and their A/B/C gain groups): the voltage and hFE grades
 # differ, the SOT-23 pinout is the same for all of them.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/BC856-SERIES
-
 manufacturer: onsemi
 category: transistor
 family: BC856
+source: onsemi/BC856ALT1-D
 
 pins:
+  src:
+    - 'p1 "Device diagram: COLLECTOR 3, BASE 1, EMITTER 2; "SOT-23 CASE 318 STYLE 6""'
+    - 'p8 "CASE 318 STYLE 6: "PIN 1. BASE 2. EMITTER 3. COLLECTOR""'
   "1": { name: Base, type: passive }
   "2": { name: Emitter, type: passive }
   "3": { name: Collector, type: passive }
-
-provenance:
-  "/pins":
-    - source: onsemi/BC856ALT1-D
-      page: 1
-      locator: "Device diagram: COLLECTOR 3, BASE 1, EMITTER 2; \"SOT-23 CASE 318 STYLE 6\""
-    - source: onsemi/BC856ALT1-D
-      page: 8
-      locator: "CASE 318 STYLE 6: \"PIN 1. BASE 2. EMITTER 3. COLLECTOR\""

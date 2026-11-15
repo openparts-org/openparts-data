@@ -2,48 +2,27 @@
 # Descriptions" table (page 2, SOT25 column: VIN 1, GND 2, EN 3, VOUT 5)
 # and "Pin Assignments" SOT25 top view (page 1, which labels pin 4
 # "NC"). The SOT89-5 and SO-8 pinouts differ.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: diodes/AP2112K
-
 manufacturer: diodes
 category: linear_regulator
 family: AP2112
+source: diodes/DS39724
+
+parameters:
+  output_type:
+    value: fixed
+    src: 'p1 "Description: "The AP2112 is available with a fixed output voltage of 1.2V, 1.8V, 2.5V, 2.6V, or 3.3V""'
+  input_voltage_max:
+    max: 6 V
+    src: 'p3 "Recommended Operating Conditions, VIN Supply Voltage: Max 6.0 V"'
+  output_current: { min: 600 mA, src: 'p1 "Features, "Output Current: 600mA (Min.)""' }
 
 pins:
+  src: ['p2 ""Pin Descriptions" table, SOT25 column"', 'p1 ""Pin Assignments", SOT25 (Top View)"']
   "1": { name: VIN, type: power }
   "2": { name: GND, type: ground }
   "3": { name: EN, type: input }
   "4": { name: NC, type: nc }
   "5": { name: VOUT, type: power }
-
-parameters:
-  output_type:
-    value: fixed
-  input_voltage_max:
-    max: 6.0
-    unit: V
-  output_current:
-    min: 600
-    unit: mA
-
-provenance:
-  "/parameters/output_type":
-    - source: diodes/DS39724
-      page: 1
-      locator: "Description: \"The AP2112 is available with a fixed output voltage of 1.2V, 1.8V, 2.5V, 2.6V, or 3.3V\""
-  "/parameters/input_voltage_max":
-    - source: diodes/DS39724
-      page: 3
-      locator: "Recommended Operating Conditions, VIN Supply Voltage: Max 6.0 V"
-  "/parameters/output_current":
-    - source: diodes/DS39724
-      page: 1
-      locator: "Features, \"Output Current: 600mA (Min.)\""
-  "/pins":
-    - source: diodes/DS39724
-      page: 2
-      locator: "\"Pin Descriptions\" table, SOT25 column"
-    - source: diodes/DS39724
-      page: 1
-      locator: "\"Pin Assignments\", SOT25 (Top View)"

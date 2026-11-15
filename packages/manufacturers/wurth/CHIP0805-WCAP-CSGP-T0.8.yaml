@@ -5,56 +5,34 @@
 # view height "0,8 ±0,1", lower view width "1,25 ±0,1".
 # Only these order codes were checked -- other WCAP-CSGP values of this
 # size may have another thickness. min/max are the printed tolerances.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/wurth/CHIP0805-WCAP-CSGP-T0.8
-
 family: chip
 lead_count: 2
+source: wurth/885012207098-DS
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 2.0
-    min: 1.85
-    max: 2.15
-    unit: mm
   body_width:
-    nominal: 1.25
-    min: 1.15
-    max: 1.35
-    unit: mm
+    min: 1.15 mm
+    typ: 1.25 mm
+    max: 1.35 mm
+    src: 'p1 ""Dimensions: [mm]" lower view (first-angle: top view), width "1,25 ±0,1""'
+  body_length:
+    min: 1.85 mm
+    typ: 2 mm
+    max: 2.15 mm
+    src: 'p1 ""Dimensions: [mm]" side view, length "2,0 ±0,15""'
   body_height:
-    nominal: 0.8
-    min: 0.7
-    max: 0.9
-    unit: mm
+    min: 0.7 mm
+    typ: 0.8 mm
+    max: 0.9 mm
+    src: 'p1 ""Dimensions: [mm]" end view beside the side view, height "0,8 ±0,1""'
   lead_length:
-    nominal: 0.5
-    min: 0.3
-    max: 0.7
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: wurth/885012207098-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" side view, length \"2,0 ±0,15\""
-  "/dimensions/body_width":
-    - source: wurth/885012207098-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" lower view (first-angle: top view), width \"1,25 ±0,1\""
-  "/dimensions/body_height":
-    - source: wurth/885012207098-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" end view beside the side view, height \"0,8 ±0,1\""
-  "/dimensions/lead_length":
-    - source: wurth/885012207098-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" upper view, terminal band \"0,5 ±0,2\""
+    min: 0.3 mm
+    typ: 0.5 mm
+    max: 0.7 mm
+    src: 'p1 ""Dimensions: [mm]" upper view, terminal band "0,5 ±0,2""'

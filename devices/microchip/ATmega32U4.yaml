@@ -13,19 +13,41 @@
 # Exposed pad: the QFN44 drawing (page 424) shows a D2/E2 pad, but no
 # page of this datasheet states what it must be connected to, so no
 # "EP" pin is recorded (unknown, not guessed as GND).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/ATmega32U4
-
 manufacturer: microchip
 category: microcontroller
 family: megaAVR
+source: microchip/7766@revJ
 
 pins:
-  "1":  { name: PE6, type: io }
-  "2":  { name: UVCC, type: power }
-  "3":  { name: D-, type: io, diff_pair: { partner: "4", polarity: n, standard: usb2 } }
-  "4":  { name: D+, type: io, diff_pair: { partner: "3", polarity: p, standard: usb2 } }
+  "1":
+    name: { value: PE6, src: 'p3 "Figure 1-1 "Pinout" (44-pin QFN/TQFP), all 44 pins"' }
+    type: io
+  "2":
+    name: UVCC
+    type: { value: power, src: p5 "Section 2.2 "Pin Descriptions" (2.2.1-2.2.18)" }
+  "3":
+    name: D-
+    type: io
+    diff_pair:
+      partner: "4"
+      polarity: n
+      standard: usb2
+      src:
+        - 'p6 "2.2.8 D-: "USB Full speed / Low Speed Negative Data Upstream Port"; 2.2.9 D+: "USB Full speed / Low Speed Positive Data Upstream Port""'
+        - 'p259 "21.5 Design Guidelines: USB data traces "follow differential traces routing rules (same length, as near as possible...)""'
+  "4":
+    name: D+
+    type: io
+    diff_pair:
+      partner: "3"
+      polarity: p
+      standard: usb2
+      src:
+        - 'p6 "2.2.8 D-: "USB Full speed / Low Speed Negative Data Upstream Port"; 2.2.9 D+: "USB Full speed / Low Speed Positive Data Upstream Port""'
+        - 'p259 "21.5 Design Guidelines: USB data traces "follow differential traces routing rules (same length, as near as possible...)""'
   "5":  { name: UGND, type: ground }
   "6":  { name: UCAP, type: power }
   "7":  { name: VBUS, type: input }
@@ -50,7 +72,12 @@ pins:
   "26": { name: PD6, type: io, alternate_functions: [ADC9] }
   "27": { name: PD7, type: io, alternate_functions: [ADC10] }
   "28": { name: PB4, type: io, alternate_functions: [ADC11] }
-  "29": { name: PB5, type: io, alternate_functions: [ADC12] }
+  "29":
+    name: PB5
+    type: io
+    alternate_functions:
+      value: [ADC12]
+      src:   p74 "Table 10-3 "Port B Pins Alternate Functions", PB5 ADC12 / PB6 ADC13"
   "30": { name: PB6, type: io, alternate_functions: [ADC13] }
   "31": { name: PC6, type: io }
   "32": { name: PC7, type: io }
@@ -66,31 +93,3 @@ pins:
   "42": { name: AREF, type: analog }
   "43": { name: GND, type: ground }
   "44": { name: AVCC, type: power }
-
-provenance:
-  "/pins/4/diff_pair":
-    - source: microchip/7766@revJ
-      page: 6
-      locator: "2.2.8 D-: \"USB Full speed / Low Speed Negative Data Upstream Port\"; 2.2.9 D+: \"USB Full speed / Low Speed Positive Data Upstream Port\""
-    - source: microchip/7766@revJ
-      page: 259
-      locator: "21.5 Design Guidelines: USB data traces \"follow differential traces routing rules (same length, as near as possible...)\""
-  "/pins/3/diff_pair":
-    - source: microchip/7766@revJ
-      page: 6
-      locator: "2.2.8 D-: \"USB Full speed / Low Speed Negative Data Upstream Port\"; 2.2.9 D+: \"USB Full speed / Low Speed Positive Data Upstream Port\""
-    - source: microchip/7766@revJ
-      page: 259
-      locator: "21.5 Design Guidelines: USB data traces \"follow differential traces routing rules (same length, as near as possible...)\""
-  "/pins/1/name":
-    - source: microchip/7766@revJ
-      page: 3
-      locator: "Figure 1-1 \"Pinout\" (44-pin QFN/TQFP), all 44 pins"
-  "/pins/2/type":
-    - source: microchip/7766@revJ
-      page: 5
-      locator: "Section 2.2 \"Pin Descriptions\" (2.2.1-2.2.18)"
-  "/pins/29/alternate_functions":
-    - source: microchip/7766@revJ
-      page: 74
-      locator: "Table 10-3 \"Port B Pins Alternate Functions\", PB5 ADC12 / PB6 ADC13"

@@ -5,43 +5,29 @@
 # Package: page-5 SMC (DO-214AB) outline is identical, row for row
 # (pdftotext -layout diff), to Vishay 88751 page 3, so
 # standards/DO214AB-VISHAY-88751 is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: vishay/SMCJ5.0A-E3-57T
-
 manufacturer: vishay
-mpn: "SMCJ5.0A-E3/57T"
-
+mpn: SMCJ5.0A-E3/57T
 device: vishay/SMCJ-A-SERIES
-package: standards/DO214AB-VISHAY-88751
+
+package:
+  value: standards/DO214AB-VISHAY-88751
+  src: p5 "PACKAGE OUTLINE DIMENSIONS -- see header"
+
+sources: [vishay/88394]
+source: vishay/88394
 
 existence:
   status: probable
+  src:
+    - 'p3 "ORDERING INFORMATION (Example): "SMCJ5.0A-E3/57T | 0.211 | 57T | 850 | 7" diameter plastic tape and reel""'
+    - 'p2 "ELECTRICAL CHARACTERISTICS row "(+)SMCJ5.0A (5) | GDE | GDE | 6.40 | 7.07 | 10 | 5.0"; page-1 MECHANICAL DATA: "Base P/N-E3 - RoHS-compliant, commercial grade""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - vishay/88394
+lifecycle: { status: unknown }
 
 parameters:
   reverse_voltage:
-    max: 5.0
-    unit: V
-
-provenance:
-  "/parameters/reverse_voltage":
-    - source: vishay/88394
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS table, row (+)SMCJ5.0A: Stand-off voltage VWM 5.0 V"
-  "/existence":
-    - source: vishay/88394
-      page: 3
-      locator: "ORDERING INFORMATION (Example): \"SMCJ5.0A-E3/57T | 0.211 | 57T | 850 | 7\" diameter plastic tape and reel\""
-    - source: vishay/88394
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS row \"(+)SMCJ5.0A (5) | GDE | GDE | 6.40 | 7.07 | 10 | 5.0\"; page-1 MECHANICAL DATA: \"Base P/N-E3 - RoHS-compliant, commercial grade\""
-  "/package":
-    - source: vishay/88394
-      page: 5
-      locator: "PACKAGE OUTLINE DIMENSIONS -- see header"
+    max: 5 V
+    src: 'p2 "ELECTRICAL CHARACTERISTICS table, row (+)SMCJ5.0A: Stand-off voltage VWM 5.0 V"'

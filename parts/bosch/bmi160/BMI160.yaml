@@ -5,27 +5,18 @@
 # product page (404).
 # lifecycle: unknown (no first-party status statement found).
 # Package: drawing of this datasheet (page 106).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: bosch/BMI160
-
 manufacturer: bosch
-mpn: "BMI160"
-
+mpn: BMI160
 device: bosch/BMI160
 package: manufacturers/bosch/LGA14-3.0x2.5-P0.5-BMI160
+sources: [bosch/BST-BMI160-DS000-09]
+source: bosch/BST-BMI160-DS000-09
 
 existence:
   status: probable
+  src: 'p1 "title page: product BMI160, technical reference code 0 273 141 187 (no ordering table)"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - bosch/BST-BMI160-DS000-09
-
-provenance:
-  "/existence":
-    - source: bosch/BST-BMI160-DS000-09
-      page: 1
-      locator: "title page: product BMI160, technical reference code 0 273 141 187 (no ordering table)"
+lifecycle: { status: unknown }

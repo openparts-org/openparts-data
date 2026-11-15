@@ -4,15 +4,12 @@
 # distributor-hosted copy of the manufacturer PDF because the existing
 # littelfuse/467-DS source points at a third-party mirror and
 # littelfuse.com refused plain fetches.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: littelfuse/467-SERIES-catalog
-
+url: https://media.digikey.com/pdf/Data%20Sheets/Littelfuse%20PDFs/467%20Series.pdf
+date: unknown
+revision: unknown
 publisher: littelfuse
 document_id: 467-SERIES
 document_type: datasheet
-
-revision: "unknown"
-date: "unknown"
-
-url: "https://media.digikey.com/pdf/Data%20Sheets/Littelfuse%20PDFs/467%20Series.pdf"

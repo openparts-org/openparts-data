@@ -2,40 +2,27 @@
 # verbatim in NCP1117/D Rev. 31 "ORDERING INFORMATION - (NCP1117)"
 # (page 12). Package: "SOT-223 ST SUFFIX CASE 318H" (page 1), outline
 # page 17. No lifecycle statement for this MPN in the document.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/NCP1117ST50T3G
-
 manufacturer: onsemi
 mpn: NCP1117ST50T3G
-
 device: onsemi/NCP1117-5.0
-package: manufacturers/onsemi/SOT223-3.5x6.5-P2.3-318H-TabPin4
+
+package:
+  value: manufacturers/onsemi/SOT223-3.5x6.5-P2.3-318H-TabPin4
+  src: p17 "SOT-223 CASE 318H ISSUE B outline (98ASH70634A); page 1 "SOT-223 ST SUFFIX CASE 318H""
+
+sources: [onsemi/NCP1117-D]
+source: onsemi/NCP1117-D
 
 existence:
   status: verified
+  src: 'p12 "ORDERING INFORMATION - (NCP1117): "NCP1117ST50T3G | 5.0 | SOT-223 (Pb-Free) | 4000 / Tape & Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/NCP1117-D
+lifecycle: { status: unknown }
 
 parameters:
   output_voltage:
-    nominal: 5.0
-    unit: V
-
-provenance:
-  "/parameters/output_voltage":
-    - source: onsemi/NCP1117-D
-      page: 12
-      locator: "ORDERING INFORMATION - (NCP1117), Device NCP1117ST50T3G: Nominal Output Voltage 5.0"
-  "/existence":
-    - source: onsemi/NCP1117-D
-      page: 12
-      locator: "ORDERING INFORMATION - (NCP1117): \"NCP1117ST50T3G | 5.0 | SOT-223 (Pb-Free) | 4000 / Tape & Reel\""
-  "/package":
-    - source: onsemi/NCP1117-D
-      page: 17
-      locator: "SOT-223 CASE 318H ISSUE B outline (98ASH70634A); page 1 \"SOT-223 ST SUFFIX CASE 318H\""
+    typ: 5 V
+    src: 'p12 "ORDERING INFORMATION - (NCP1117), Device NCP1117ST50T3G: Nominal Output Voltage 5.0"'

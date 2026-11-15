@@ -6,16 +6,19 @@
 # here so it stays distinct from pin 9 "QH" (the overbar is not part of
 # the extracted text). SH/LD carries an overbar on LD (written without
 # it). CLK typed clock; FK (LCCC) numbering not covered.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/SN74HC165
-
 manufacturer: ti
 category: logic
 family: SNx4HC165
+source: ti/SCLS116H
 
 pins:
-  "1":  { name: "SH/LD", type: input }
+  src:
+    - p3 ""Pin Functions" table, column "D, DB, N, NS, PW, J or W""
+    - p3 ""D, DB, N, NS, J, W, or PW Package 16-Pin ... Top View" figure (cross-check)"
+  "1":  { name: SH/LD, type: input }
   "2":  { name: CLK, type: clock }
   "3":  { name: E, type: input }
   "4":  { name: F, type: input }
@@ -29,14 +32,5 @@ pins:
   "12": { name: B, type: input }
   "13": { name: C, type: input }
   "14": { name: D, type: input }
-  "15": { name: "CLK INH", type: input }
+  "15": { name: CLK INH, type: input }
   "16": { name: VCC, type: power }
-
-provenance:
-  "/pins":
-    - source: ti/SCLS116H
-      page: 3
-      locator: "\"Pin Functions\" table, column \"D, DB, N, NS, PW, J or W\""
-    - source: ti/SCLS116H
-      page: 3
-      locator: "\"D, DB, N, NS, J, W, or PW Package 16-Pin ... Top View\" figure (cross-check)"

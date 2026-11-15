@@ -1,46 +1,30 @@
 # MBR130T1G 1 A 30 V Schottky power rectifier, SOD-123 (CASE 425). Pins
 # from the CASE 425 STYLE 1 list (page 5: PIN 1. CATHODE, 2. ANODE) and
 # page 1 "Polarity Designator: Cathode Band".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/MBR130
-
 manufacturer: onsemi
 category: diode
 family: MBR130
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: onsemi/MBR130T1-D
 
 parameters:
-  reverse_voltage:
-    max: 30
-    unit: V
-  forward_current:
-    max: 1.0
-    unit: A
   forward_voltage:
-    nominal: 0.47
-    unit: V
+    typ: 0.47 V
+    at: { IF: 1 A, TJ: 25 °C }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Instantaneous Forward Voltage VF: Typ 0.47 V (Max column ''−'')"'
+  reverse_voltage:
+    max: 30 V
+    src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 30 V"'
+  forward_current:
+    max: 1 A
+    at: { TL: 65 °C }
+    src: 'p2 "MAXIMUM RATINGS, Average Rectified Forward Current IF(AV) (Rated VR): 1.0 A"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: onsemi/MBR130T1-D
-      page: 2
-      locator: "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 30 V"
-  "/parameters/forward_current":
-    - source: onsemi/MBR130T1-D
-      page: 2
-      locator: "MAXIMUM RATINGS, Average Rectified Forward Current IF(AV) (Rated VR) TL = 65°C: 1.0 A"
-  "/parameters/forward_voltage":
-    - source: onsemi/MBR130T1-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Instantaneous Forward Voltage VF (IF = 1.0 A, TJ = 25°C): Typ 0.47 V (Max column '−')"
-  "/pins":
-    - source: onsemi/MBR130T1-D
-      page: 5
-      locator: "CASE 425 STYLE 1: \"PIN 1. CATHODE 2. ANODE\""
-    - source: onsemi/MBR130T1-D
-      page: 1
-      locator: "Mechanical Characteristics: \"Polarity Designator: Cathode Band\""
+pins:
+  src:
+    - 'p5 "CASE 425 STYLE 1: "PIN 1. CATHODE 2. ANODE""'
+    - 'p1 "Mechanical Characteristics: "Polarity Designator: Cathode Band""'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

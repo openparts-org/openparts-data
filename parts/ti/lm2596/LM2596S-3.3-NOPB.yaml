@@ -2,35 +2,20 @@
 # Active  Production  DDPAK/ TO-263 (KTT) | 5" -- MPN printed verbatim in TI's orderable
 # list (existence verified); lifecycle "Active" is TI's own Status column.
 # Package KTT = outline KTT0005B (SNVS124G page 45).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/LM2596S-3.3/NOPB
-
 manufacturer: ti
 mpn: LM2596S-3.3/NOPB
-
 device: ti/LM2596-KTT
-package: manufacturers/ti/KTT0005B-TabPin3
+package: { value: manufacturers/ti/KTT0005B-TabPin3, src: p45 "KTT0005B package outline" }
+sources: [ti/SNVS124G]
+source: ti/SNVS124G
 
 existence:
   status: verified
+  src: p37 "Package option addendum table, row "LM2596S-3.3/NOPB" (DDPAK/ TO-263 (KTT) | 5)"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SNVS124G
-
-provenance:
-  "/existence":
-    - source: ti/SNVS124G
-      page: 37
-      locator: "Package option addendum table, row \"LM2596S-3.3/NOPB\" (DDPAK/ TO-263 (KTT) | 5)"
-  "/lifecycle":
-    - source: ti/SNVS124G
-      page: 37
-      locator: "Package option addendum table, row \"LM2596S-3.3/NOPB\", Status \"Active\""
-  "/package":
-    - source: ti/SNVS124G
-      page: 45
-      locator: "KTT0005B package outline"
+  src: p37 "Package option addendum table, row "LM2596S-3.3/NOPB", Status "Active""

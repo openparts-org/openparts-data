@@ -5,28 +5,15 @@
 # identical (dia 0.080-0.107in / 2.0-2.7mm, length 0.160-0.205in /
 # 4.1-5.2mm) to standards/AXIAL-DO41-1N4007's Vishay 88503 drawing, so
 # that package is reused. lifecycle unknown: no status statement.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: vishay/1N5819
-
 manufacturer: vishay
 mpn: 1N5819
-
 device: vishay/1N5819
 package: standards/AXIAL-DO41-1N4007
+sources: [vishay/88525]
+source: vishay/88525
 
-existence:
-  status: verified
-
-lifecycle:
-  status: unknown
-
-sources:
-  - vishay/88525
-
-provenance:
-  "/existence":
-    - source: vishay/88525
-      page: 1
-      locator: "MAXIMUM RATINGS table, column 1N5819"
-
+existence: { status: verified, src: 'p1 "MAXIMUM RATINGS table, column 1N5819"' }
+lifecycle: { status: unknown }

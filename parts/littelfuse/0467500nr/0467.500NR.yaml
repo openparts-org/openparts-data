@@ -1,41 +1,24 @@
 # 0.500A 32V fast-acting 0603 fuse. Listed at DigiKey, Future and Farnell.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: littelfuse/0467.500NR
-
 manufacturer: littelfuse
 mpn: 0467.500NR
-
 device: littelfuse/467-SERIES
 package: standards/CHIP0603-467
+sources: [littelfuse/467-DS, littelfuse/467-SERIES-catalog]
+source: littelfuse/467-SERIES-catalog
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - littelfuse/467-DS
-  - littelfuse/467-SERIES-catalog
+existence: { status: verified }
+lifecycle: { status: active }
 
 # Parameters (AI candidates, needs review), read from Littelfuse's own
 # datasheet hosted by Digi-Key (littelfuse/467-SERIES-catalog); NR is the
 # tape-and-reel package suffix (PACKAGING SPECIFICATIONS, p2).
 parameters:
-  rated_current:
-    nominal: 0.5
-    unit: A
   rated_voltage:
-    nominal: 32
-    unit: V
-
-provenance:
-  "/parameters/rated_current":
-    - source: littelfuse/467-SERIES-catalog
-      page: 2
-      locator: "Ordering Information, Catalog Number 0467.500 row: Ampere Rating .5"
-  "/parameters/rated_voltage":
-    - source: littelfuse/467-SERIES-catalog
-      page: 2
-      locator: "Ordering Information, Catalog Number 0467.500 row: Nominal Voltage Rating 32"
+    typ: 32 V
+    src: 'p2 "Ordering Information, Catalog Number 0467.500 row: Nominal Voltage Rating 32"'
+  rated_current:
+    typ: 0.5 A
+    src: 'p2 "Ordering Information, Catalog Number 0467.500 row: Ampere Rating .5"'

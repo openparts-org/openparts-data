@@ -10,46 +10,19 @@
 # fixed drill/pad-size defaults taken from a real KiCad reference
 # footprint, not a datasheet-sourced lead diameter -- same policy as
 # every other family's generator-internal defaults.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/RADIAL-D8.0x11.5-P3.5
-
 family: radial
 lead_count: 2
+source: nichicon/CAT.8100M
 
-pitch:
-  nominal: 3.5
-  unit: mm
+pitch: { typ: 3.5 mm, src: 'p1 "Dimension table (φD / P / φd), case size column "8""' }
+geometry: { type: parametric, generator: radial }
 
 dimensions:
-  body_length:
-    nominal: 8.0
-    unit: mm
-  body_width:
-    nominal: 8.0
-    unit: mm
+  body_width:  { typ: 8 mm, src: 'p2 "UVR1C471MPD ordering row, "Case Size φD×L (mm)" = "8×11.5""' }
+  body_length: { typ: 8 mm, src: 'p2 "UVR1C471MPD ordering row, "Case Size φD×L (mm)" = "8×11.5""' }
   body_height:
-    nominal: 11.5
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: radial
-
-provenance:
-  "/pitch":
-    - source: nichicon/CAT.8100M
-      page: 1
-      locator: "Dimension table (φD / P / φd), case size column \"8\""
-  "/dimensions/body_length":
-    - source: nichicon/CAT.8100M
-      page: 2
-      locator: "UVR1C471MPD ordering row, \"Case Size φD×L (mm)\" = \"8×11.5\""
-  "/dimensions/body_width":
-    - source: nichicon/CAT.8100M
-      page: 2
-      locator: "UVR1C471MPD ordering row, \"Case Size φD×L (mm)\" = \"8×11.5\""
-  "/dimensions/body_height":
-    - source: nichicon/CAT.8100M
-      page: 2
-      locator: "UVR1C471MPD ordering row, \"Case Size φD×L (mm)\" = \"8×11.5\""
+    typ: 11.5 mm
+    src: p2 "UVR1C471MPD ordering row, "Case Size φD×L (mm)" = "8×11.5""

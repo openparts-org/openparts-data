@@ -6,65 +6,41 @@
 # was read from (2N7002E/D Rev. 8 page 6, re-downloaded 2026-11-10); every
 # table row was also re-read from a 150 dpi render. Reused; the package
 # cites onsemi/2N7002E-D.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/NTR2101PT1G
-
 manufacturer: onsemi
 mpn: NTR2101PT1G
-
 device: onsemi/NTR2101P
 package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/NTR2101P-D]
+source: onsemi/NTR2101P-D
 
 existence:
   status: verified
+  src: 'p1 "ORDERING INFORMATION table: "NTR2101PT1G | SOT-23 (Pb-Free) | 3,000/Tape & Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/NTR2101P-D
+lifecycle: { status: unknown }
 
 parameters:
   polarity:
     value: p_channel
+    src: 'p1 "Page-1 title: "MOSFET - Single P-Channel, Small Signal, SOT-23""'
   drain_source_voltage:
-    nominal: -8.0
-    unit: V
+    typ: -8 V
+    at: { TJ: 25 °C }
+    src: 'p1 "MAXIMUM RATINGS, VDSS Drain-to-Source Voltage: -8.0 V"'
   drain_current:
-    nominal: -3.7
-    unit: A
+    typ: -3.7 A
+    at: { TA: 25 °C }
+    src: 'p1 "MAXIMUM RATINGS, ID Continuous Drain Current (Note 1), t ≤ 5 s: -3.7 A"'
   rds_on:
-    nominal: 39
-    max: 52
-    unit: mΩ
+    typ: 39 mΩ
+    max: 52 mΩ
+    at: { VGS: -4.5 V, ID: -3.5 A, TJ: 25 °C }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, RDS(on) Drain-to-Source On Resistance: Typ 39, Max 52 mΩ"'
   gate_threshold_voltage:
-    min: -1.0
-    max: -0.40
-    unit: V
-
-provenance:
-  "/existence":
-    - source: onsemi/NTR2101P-D
-      page: 1
-      locator: "ORDERING INFORMATION table: \"NTR2101PT1G | SOT-23 (Pb-Free) | 3,000/Tape & Reel\""
-  "/parameters/polarity":
-    - source: onsemi/NTR2101P-D
-      page: 1
-      locator: "Page-1 title: \"MOSFET - Single P-Channel, Small Signal, SOT-23\""
-  "/parameters/drain_source_voltage":
-    - source: onsemi/NTR2101P-D
-      page: 1
-      locator: "MAXIMUM RATINGS (TJ = 25°C), VDSS Drain-to-Source Voltage: -8.0 V"
-  "/parameters/drain_current":
-    - source: onsemi/NTR2101P-D
-      page: 1
-      locator: "MAXIMUM RATINGS, ID Continuous Drain Current (Note 1), t ≤ 5 s, TA = 25°C: -3.7 A"
-  "/parameters/rds_on":
-    - source: onsemi/NTR2101P-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS (TJ = 25°C), RDS(on) Drain-to-Source On Resistance, VGS = -4.5 V, ID = -3.5 A: Typ 39, Max 52 mΩ"
-  "/parameters/gate_threshold_voltage":
-    - source: onsemi/NTR2101P-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS (TJ = 25°C), VGS(TH) Gate Threshold Voltage: Min -0.40, Max -1.0 V"
+    min: -1 V
+    max: -0.4 V
+    at: { TJ: 25 °C }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, VGS(TH) Gate Threshold Voltage: Min -0.40, Max -1.0 V"'

@@ -3,10 +3,9 @@
 # vocabulary has no ferrite-bead category and the page-1 schematic is
 # an inductor symbol. Non-polar; the datasheet does not number the
 # terminals, so they are 1 and 2 in the chip generator's X order.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: wurth/742792641
-
 manufacturer: wurth
 category: inductor
 family: WE-CBF

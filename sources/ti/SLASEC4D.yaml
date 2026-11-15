@@ -4,15 +4,12 @@
 # and read visually. Revision "D" / date from the document header
 # "SLASEC4D - MAY 2018 - REVISED DECEMBER 2019". The appended Package
 # Option Addendum is dated 7-Nov-2026 (PDF page 124).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: ti/SLASEC4D
-
+url: https://www.ti.com/lit/ds/symlink/msp430fr2355.pdf
+date: 2019-12
+revision: D
 publisher: ti
 document_id: SLASEC4D
 document_type: datasheet
-
-revision: "D"
-date: "2019-12"
-
-url: "https://www.ti.com/lit/ds/symlink/msp430fr2355.pdf"

@@ -4,16 +4,13 @@
 # pages, text read with pdftotext -layout; the ordering table (page 5)
 # and the SOT96-1 outline (page 38) were also rendered and read as
 # images. PDF page index = printed "N / 50" page number.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: nxp/PCF8563@rev11.1
-
+retrieved: 2026-11-10
+url: https://www.nxp.com/docs/en/data-sheet/PCF8563.pdf
+date: 2026-01
 publisher: nxp
 document_id: PCF8563
 document_type: datasheet
-
 revision: "11.1"
-date: "2026-01"
-
-url: "https://www.nxp.com/docs/en/data-sheet/PCF8563.pdf"
-retrieved: "2026-11-10"

@@ -3,21 +3,14 @@
 # 2026-11-14: package repointed from standards/CHIP-SOD123FL-SS14FL
 # (family chip, body only; deleted) to
 # standards/SOD123FL-ONSEMI-425AD.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/SS14FL
-
 manufacturer: onsemi
 mpn: SS14FL
-
 device: onsemi/SS14FL
 package: standards/SOD123FL-ONSEMI-425AD
+sources: [onsemi/SS14FL-D]
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - onsemi/SS14FL-D
+existence: { status: verified }
+lifecycle: { status: active }

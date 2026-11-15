@@ -3,15 +3,12 @@
 # curl on 2026-11-14 (`file`: PDF). Newer than diodes/DS30097 (Rev.
 # 29-2), hence its own Source. Page-4 SOD323 outline read with pdftotext
 # -layout and rendered with pdftoppm. Page numbers are PDF page indices.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: diodes/DS30097@rev30-2
-
+url: https://www.diodes.com/assets/Datasheets/1N4148WS_BAV16WS.pdf
+date: 2026-10
+revision: 30-2
 publisher: diodes
-document_id: "DS30097"
+document_id: DS30097
 document_type: datasheet
-
-revision: "30-2"
-date: "2026-10"
-
-url: "https://www.diodes.com/assets/Datasheets/1N4148WS_BAV16WS.pdf"

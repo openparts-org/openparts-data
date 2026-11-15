@@ -3,43 +3,25 @@
 # The datasheet names the terminals only by the cathode band and
 # prints no pin numbers: numbered in the generator's position
 # convention (pin 1 at -X), cathode = 1, anode = 2.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: diodes/BAT54WS
-
 manufacturer: diodes
 category: diode
 family: BAT54WS
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: diodes/DS30098
 
 parameters:
-  reverse_voltage:
-    max: 30
-    unit: V
-  forward_current:
-    max: 200
-    unit: mA
   forward_voltage:
-    max: 1000
-    unit: mV
+    max: 1000 mV
+    at: { IF: 100 mA }
+    src: 'p2 "Electrical Characteristics, Forward Voltage VFM: Max 1000 mV (highest listed test current)"'
+  reverse_voltage: { max: 30 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR: 30 V"' }
+  forward_current:
+    max: 200 mA
+    src: 'p2 "Maximum Ratings, Forward Continuous Current (Note 5) IF: 200 mA"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: diodes/DS30098
-      page: 2
-      locator: "Maximum Ratings, VRRM/VRWM/VR: 30 V"
-  "/parameters/forward_current":
-    - source: diodes/DS30098
-      page: 2
-      locator: "Maximum Ratings, Forward Continuous Current (Note 5) IF: 200 mA"
-  "/parameters/forward_voltage":
-    - source: diodes/DS30098
-      page: 2
-      locator: "Electrical Characteristics, Forward Voltage VFM: Max 1000 mV @ IF = 100mA (highest listed test current)"
-  "/pins":
-    - source: diodes/DS30098
-      page: 1
-      locator: "Mechanical Data: \"Polarity: Cathode Band\"; numbering by generator convention, see header"
+pins:
+  src: 'p1 "Mechanical Data: "Polarity: Cathode Band"; numbering by generator convention, see header"'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

@@ -10,60 +10,41 @@
 # single SW pins elsewhere in ti/, is not exempt from
 # pin.duplicate_name and the source does not state the three are
 # internally connected).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/TPS62130-RGT
-
 manufacturer: ti
 category: switching_regulator
 family: TPS62130
-
-pins:
-  "1": { name: "SW", type: power }
-  "2": { name: "SW", type: power }
-  "3": { name: "SW", type: power }
-  "4": { name: "PG", type: output }
-  "5": { name: "FB", type: input }
-  "6": { name: "AGND", type: ground }
-  "7": { name: "FSW", type: input }
-  "8": { name: "DEF", type: input }
-  "9": { name: "SS/TR", type: input }
-  "10": { name: "AVIN", type: power }
-  "11": { name: "PVIN", type: power }
-  "12": { name: "PVIN", type: power }
-  "13": { name: "EN", type: input }
-  "14": { name: "VOS", type: input }
-  "15": { name: "PGND", type: ground }
-  "16": { name: "PGND", type: ground }
-  "EP": { name: "Exposed Thermal Pad", type: passive }
+source: ti/SLVSAG7F
 
 parameters:
   output_type:
     value: adjustable
+    src: p1 "1 Features, "Adjustable output voltage from 0.9 V to 6 V""
   input_voltage_max:
-    max: 17
-    unit: V
-  output_current:
-    max: 3
-    unit: A
+    max: 17 V
+    src: 'p4 "7.3 Recommended Operating Conditions, Supply Voltage, VIN (at AVIN and PVIN): MAX 17 V"'
+  output_current: { max: 3 A, src: 'p1 "1 Features, "Up to 3-A output current""' }
 
-provenance:
-  "/parameters/output_type":
-    - source: ti/SLVSAG7F
-      page: 1
-      locator: "1 Features, \"Adjustable output voltage from 0.9 V to 6 V\""
-  "/parameters/input_voltage_max":
-    - source: ti/SLVSAG7F
-      page: 4
-      locator: "7.3 Recommended Operating Conditions, Supply Voltage, VIN (at AVIN and PVIN): MAX 17 V"
-  "/parameters/output_current":
-    - source: ti/SLVSAG7F
-      page: 1
-      locator: "1 Features, \"Up to 3-A output current\""
-  "/pins":
-    - source: ti/SLVSAG7F
-      page: 3
-      locator: "Table 6-1 \"Pin Functions\" (SW 1,2,3 ... PGND 15,16; Exposed Thermal Pad)"
-    - source: ti/SLVSAG7F
-      page: 3
-      locator: "Figure 6-1 \"16-Pin VQFN With Exposed Thermal Pad (RGT) Top View\""
+pins:
+  src:
+    - p3 "Table 6-1 "Pin Functions" (SW 1,2,3 ... PGND 15,16; Exposed Thermal Pad)"
+    - p3 "Figure 6-1 "16-Pin VQFN With Exposed Thermal Pad (RGT) Top View""
+  "1":  { name: SW, type: power }
+  "2":  { name: SW, type: power }
+  "3":  { name: SW, type: power }
+  "4":  { name: PG, type: output }
+  "5":  { name: FB, type: input }
+  "6":  { name: AGND, type: ground }
+  "7":  { name: FSW, type: input }
+  "8":  { name: DEF, type: input }
+  "9":  { name: SS/TR, type: input }
+  "10": { name: AVIN, type: power }
+  "11": { name: PVIN, type: power }
+  "12": { name: PVIN, type: power }
+  "13": { name: EN, type: input }
+  "14": { name: VOS, type: input }
+  "15": { name: PGND, type: ground }
+  "16": { name: PGND, type: ground }
+  EP:   { name: Exposed Thermal Pad, type: passive }

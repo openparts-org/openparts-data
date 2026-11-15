@@ -6,20 +6,15 @@
 # consistent with how a real 2-terminal polarized part is normally
 # marked (case sleeve stripe + longer lead on the anode side) rather
 # than by a numbered pinout diagram.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: nichicon/UVR1C471M
-
 manufacturer: nichicon
 category: capacitor
 family: UVR
+source: nichicon/CAT.8100M
 
 pins:
-  "1": { name: "+", type: passive }
-  "2": { name: "-", type: passive }
-
-provenance:
-  "/pins":
-    - source: nichicon/CAT.8100M
-      page: 2
-      locator: "UVR1C471MPD ordering row: 470uF, rated voltage 16V (code \"1C\"), tolerance M (+/-20%, per page 1 \"Capacitance Tolerance\" spec)"
+  src: 'p2 "UVR1C471MPD ordering row: 470uF, rated voltage 16V (code "1C"), tolerance M (+/-20%, per page 1 "Capacitance Tolerance" spec)"'
+  "1": { name: +, type: passive }
+  "2": { name: -, type: passive }

@@ -7,31 +7,22 @@
 # The id replaces the "/" of the MPN with "-"; mpn keeps the real
 # string. lifecycle: no production-status statement in the datasheet;
 # unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/MCP6002T-I-MS
-
 manufacturer: microchip
-mpn: "MCP6002T-I/MS"
-
+mpn: MCP6002T-I/MS
 device: microchip/MCP6002
-package: manufacturers/microchip/MSOP8-MS-C04-111C
+
+package:
+  value: manufacturers/microchip/MSOP8-MS-C04-111C
+  src: p47 "Product Identification System, Package "MS = Plastic MSOP, 8-Lead"; drawing C04-111C pages 34-35"
+
+sources: [microchip/DS20001733@revL]
+source: microchip/DS20001733@revL
 
 existence:
   status: probable
+  src: 'p47 "Product Identification System, example f) "MCP6002T-I/MS: Tape and Reel, Industrial Temperature, 8-Lead MSOP Package""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS20001733@revL
-
-provenance:
-  "/existence":
-    - source: microchip/DS20001733@revL
-      page: 47
-      locator: "Product Identification System, example f) \"MCP6002T-I/MS: Tape and Reel, Industrial Temperature, 8-Lead MSOP Package\""
-  "/package":
-    - source: microchip/DS20001733@revL
-      page: 47
-      locator: "Product Identification System, Package \"MS = Plastic MSOP, 8-Lead\"; drawing C04-111C pages 34-35"
+lifecycle: { status: unknown }

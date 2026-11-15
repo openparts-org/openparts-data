@@ -2,11 +2,10 @@
 # sensors. Product pages at invensense.tdk.com link their datasheets on
 # TDK's own CDN (d17t6iyxenbwp1.cloudfront.net/s3fs-public/...); the
 # "/download-resource/..." links answer with a JavaScript page.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: manufacturer
 id: tdk
 
-name: TDK InvenSense
+website: { url: https://invensense.tdk.com }
 
-website:
-  url: "https://invensense.tdk.com"
+name: TDK InvenSense

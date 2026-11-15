@@ -1,26 +1,14 @@
 # APHHS1005QBC/D: Blue (InGaN) chip LED, Kingbright datasheet DSAJ8746.
 # lifecycle unknown: no production-status statement in the datasheet.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
-id: "kingbright/APHHS1005QBC-D"
-
+id: kingbright/APHHS1005QBC-D
 manufacturer: kingbright
-mpn: "APHHS1005QBC/D"
-
+mpn: APHHS1005QBC/D
 device: kingbright/APHHS1005QBC-D
 package: manufacturers/kingbright/CHIP-KINGBRIGHT-APHHS1005
+sources: [kingbright/DSAJ8746]
+source: kingbright/DSAJ8746
 
-existence:
-  status: verified
-
-lifecycle:
-  status: unknown
-
-sources:
-  - kingbright/DSAJ8746
-
-provenance:
-  "/existence":
-    - source: kingbright/DSAJ8746
-      page: 1
-      locator: "Title and SELECTION GUIDE table, Part Number column"
+existence: { status: verified, src: 'p1 "Title and SELECTION GUIDE table, Part Number column"' }
+lifecycle: { status: unknown }

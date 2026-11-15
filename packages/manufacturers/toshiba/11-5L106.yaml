@@ -10,99 +10,59 @@
 # (mold thickness above the 0.1 +/- 0.1 standoff), overall_width =
 # lead-tip span 10.0 +/- 0.3. The 7.62 +/- 0.3 shoulder-to-shoulder
 # lead spacing has no field and is not recorded.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/toshiba/11-5L106
-
 family: soic
 lead_count: 4
+source: toshiba/TLP785-datasheet-en
 
 pitch:
-  nominal: 2.54
-  min: 2.29
-  max: 2.79
-  unit: mm
+  min: 2.29 mm
+  typ: 2.54 mm
+  max: 2.79 mm
+  src: p4 "Drawing "TLP785(LF6)" 11-5L106, "2.54 +/- 0.25""
+
+geometry: { type: parametric, generator: soic }
 
 dimensions:
   body_width:
-    nominal: 6.5
-    min: 6.25
-    max: 6.75
-    unit: mm
+    min: 6.25 mm
+    typ: 6.5 mm
+    max: 6.75 mm
+    src: p4 "Drawing 11-5L106, top view, "6.5 +/- 0.25" across the lead rows"
   body_length:
-    nominal: 4.6
-    min: 4.35
-    max: 4.85
-    unit: mm
+    min: 4.35 mm
+    typ: 4.6 mm
+    max: 4.85 mm
+    src: p4 "Drawing 11-5L106, end view, "4.6 +/- 0.25""
   body_height:
-    nominal: 3.5
-    min: 3.25
-    max: 3.75
-    unit: mm
-  overall_width:
-    nominal: 10.0
-    min: 9.7
-    max: 10.3
-    unit: mm
-  standoff:
-    nominal: 0.1
-    min: 0.0
-    max: 0.2
-    unit: mm
-  lead_width:
-    nominal: 1.2
-    min: 1.05
-    max: 1.35
-    unit: mm
-  lead_length:
-    nominal: 1.0
-    min: 0.9
-    max: 1.2
-    unit: mm
+    min: 3.25 mm
+    typ: 3.5 mm
+    max: 3.75 mm
+    src: p4 "Drawing 11-5L106, end view, "3.5 +/- 0.25" (above the standoff)"
   lead_thickness:
-    nominal: 0.26
-    min: 0.16
-    max: 0.36
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: soic
-
-provenance:
-  "/pitch":
-    - source: toshiba/TLP785-datasheet-en
-      page: 4
-      locator: "Drawing \"TLP785(LF6)\" 11-5L106, \"2.54 +/- 0.25\""
-  "/dimensions/body_width":
-    - source: toshiba/TLP785-datasheet-en
-      page: 4
-      locator: "Drawing 11-5L106, top view, \"6.5 +/- 0.25\" across the lead rows"
-  "/dimensions/body_length":
-    - source: toshiba/TLP785-datasheet-en
-      page: 4
-      locator: "Drawing 11-5L106, end view, \"4.6 +/- 0.25\""
-  "/dimensions/body_height":
-    - source: toshiba/TLP785-datasheet-en
-      page: 4
-      locator: "Drawing 11-5L106, end view, \"3.5 +/- 0.25\" (above the standoff)"
-  "/dimensions/overall_width":
-    - source: toshiba/TLP785-datasheet-en
-      page: 4
-      locator: "Drawing 11-5L106, side view, lead-tip span \"10.0 +/- 0.3\""
-  "/dimensions/standoff":
-    - source: toshiba/TLP785-datasheet-en
-      page: 4
-      locator: "Drawing 11-5L106, end view, \"0.1 +/- 0.1\""
-  "/dimensions/lead_width":
-    - source: toshiba/TLP785-datasheet-en
-      page: 4
-      locator: "Drawing 11-5L106, end view, lead width \"1.2 +/- 0.15\""
-  "/dimensions/lead_length":
-    - source: toshiba/TLP785-datasheet-en
-      page: 4
-      locator: "Drawing 11-5L106, side view, foot \"1.0 +0.2/-0.1\""
-  "/dimensions/lead_thickness":
-    - source: toshiba/TLP785-datasheet-en
-      page: 4
-      locator: "Drawing 11-5L106, side view, \"0.26 +/- 0.1\""
+    min: 0.16 mm
+    typ: 0.26 mm
+    max: 0.36 mm
+    src: p4 "Drawing 11-5L106, side view, "0.26 +/- 0.1""
+  overall_width:
+    min: 9.7 mm
+    typ: 10 mm
+    max: 10.3 mm
+    src: p4 "Drawing 11-5L106, side view, lead-tip span "10.0 +/- 0.3""
+  standoff:
+    min: 0 mm
+    typ: 0.1 mm
+    max: 0.2 mm
+    src: p4 "Drawing 11-5L106, end view, "0.1 +/- 0.1""
+  lead_width:
+    min: 1.05 mm
+    typ: 1.2 mm
+    max: 1.35 mm
+    src: p4 "Drawing 11-5L106, end view, lead width "1.2 +/- 0.15""
+  lead_length:
+    min: 0.9 mm
+    typ: 1 mm
+    max: 1.2 mm
+    src: p4 "Drawing 11-5L106, side view, foot "1.0 +0.2/-0.1""

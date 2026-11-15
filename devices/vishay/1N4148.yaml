@@ -6,39 +6,26 @@
 # re-confirm the cathode-band position from the 1N4148 datasheet's own
 # marking diagram, so this is disclosed as convention-consistent, not
 # separately datasheet-confirmed for this exact part.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: vishay/1N4148
-
 manufacturer: vishay
 category: diode
 family: 1N4148
+source: vishay/81857
+
+parameters:
+  forward_voltage:
+    max: 1 V
+    at: { IF: 10 mA }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Forward voltage VF: Max 1 V"'
+  reverse_voltage:
+    max: 100 V
+    src: 'p1 "ABSOLUTE MAXIMUM RATINGS, Repetitive peak reverse voltage VRRM: 100 V (Reverse voltage VR: 75 V)"'
+  forward_current:
+    max: 300 mA
+    src: 'p1 "ABSOLUTE MAXIMUM RATINGS, Forward continuous current IF: 300 mA"'
 
 pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
-
-parameters:
-  reverse_voltage:
-    max: 100
-    unit: V
-  forward_current:
-    max: 300
-    unit: mA
-  forward_voltage:
-    max: 1
-    unit: V
-
-provenance:
-  "/parameters/reverse_voltage":
-    - source: vishay/81857
-      page: 1
-      locator: "ABSOLUTE MAXIMUM RATINGS, Repetitive peak reverse voltage VRRM: 100 V (Reverse voltage VR: 75 V)"
-  "/parameters/forward_current":
-    - source: vishay/81857
-      page: 1
-      locator: "ABSOLUTE MAXIMUM RATINGS, Forward continuous current IF: 300 mA"
-  "/parameters/forward_voltage":
-    - source: vishay/81857
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Forward voltage IF = 10 mA VF: Max 1 V"

@@ -1,40 +1,24 @@
 # 0.50A, 32VDC fast-acting SMD fuse, 0402. Electrical row confirmed on
 # page 1. Probable: no distributor listing checked.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: bourns/SF-0402F050-2
-
 manufacturer: bourns
 mpn: SF-0402F050-2
-
 device: bourns/SF-0402F-SERIES
 package: standards/CHIP0402-SF-0402F
+sources: [bourns/SF-0402F]
+source: bourns/SF-0402F
 
-existence:
-  status: probable
-
-lifecycle:
-  status: unknown
-
-sources:
-  - bourns/SF-0402F
+existence: { status: probable }
+lifecycle: { status: unknown }
 
 # Parameters (AI candidates, needs review): Electrical Characteristics
 # table, row for this model.
 parameters:
-  rated_current:
-    nominal: 0.5
-    unit: A
   rated_voltage:
-    nominal: 32
-    unit: V
-
-provenance:
-  "/parameters/rated_current":
-    - source: bourns/SF-0402F
-      page: 1
-      locator: "Electrical Characteristics, SF-0402F050-2 row: Rated Current (A) 0.50"
-  "/parameters/rated_voltage":
-    - source: bourns/SF-0402F
-      page: 1
-      locator: "Electrical Characteristics, SF-0402F050-2 row: Rated Voltage 32 VDC (one cell for all models)"
+    typ: 32 V
+    src: 'p1 "Electrical Characteristics, SF-0402F050-2 row: Rated Voltage 32 VDC (one cell for all models)"'
+  rated_current:
+    typ: 0.5 A
+    src: 'p1 "Electrical Characteristics, SF-0402F050-2 row: Rated Current (A) 0.50"'

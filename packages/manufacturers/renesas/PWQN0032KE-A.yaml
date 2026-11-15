@@ -4,95 +4,48 @@
 # horizontal body size (X) and D the vertical (Y); E2/D2 the exposed pad.
 # No A2 in the table, so body_height holds A (max only). A3 is printed as
 # "0.203 REF." and recorded as a nominal. D/E/e are BSC (nominal only).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/renesas/PWQN0032KE-A
-
 family: qfn
 lead_count: 32
+source: renesas/R01DS0386EJ0180
 
 pitch:
-  nominal: 0.5
-  unit: mm
+  typ: 0.5 mm
+  src: p97 "Appendix 2 Figure A2.9 "HWQFN 32-pin" (PWQN0032KE-A) dimension table, symbol "e""
+
+geometry: { type: parametric, generator: qfn }
 
 dimensions:
   body_width:
-    nominal: 5.0
-    unit: mm
+    typ: 5 mm
+    src: p97 "Appendix 2 Figure A2.9 "HWQFN 32-pin" (PWQN0032KE-A) dimension table, symbol "E""
   body_length:
-    nominal: 5.0
-    unit: mm
+    typ: 5 mm
+    src: p97 "Appendix 2 Figure A2.9 "HWQFN 32-pin" (PWQN0032KE-A) dimension table, symbol "D""
   body_height:
-    max: 0.8
-    unit: mm
-  standoff:
-    nominal: 0.02
-    min: 0.0
-    max: 0.05
-    unit: mm
-  lead_width:
-    nominal: 0.25
-    min: 0.18
-    max: 0.3
-    unit: mm
-  lead_length:
-    nominal: 0.4
-    min: 0.35
-    max: 0.45
-    unit: mm
-  lead_thickness:
-    nominal: 0.203
-    unit: mm
+    max: 0.8 mm
+    src: p97 "Appendix 2 Figure A2.9 "HWQFN 32-pin" (PWQN0032KE-A) dimension table, symbol "A""
   exposed_pad:
-    width:
-      nominal: 3.2
-      min: 3.15
-      max: 3.25
-      unit: mm
-    length:
-      nominal: 3.2
-      min: 3.15
-      max: 3.25
-      unit: mm
-
-geometry:
-  type: parametric
-  generator: qfn
-
-provenance:
-  "/pitch":
-    - source: renesas/R01DS0386EJ0180
-      page: 97
-      locator: "Appendix 2 Figure A2.9 \"HWQFN 32-pin\" (PWQN0032KE-A) dimension table, symbol \"e\""
-  "/dimensions/body_width":
-    - source: renesas/R01DS0386EJ0180
-      page: 97
-      locator: "Appendix 2 Figure A2.9 \"HWQFN 32-pin\" (PWQN0032KE-A) dimension table, symbol \"E\""
-  "/dimensions/body_length":
-    - source: renesas/R01DS0386EJ0180
-      page: 97
-      locator: "Appendix 2 Figure A2.9 \"HWQFN 32-pin\" (PWQN0032KE-A) dimension table, symbol \"D\""
-  "/dimensions/body_height":
-    - source: renesas/R01DS0386EJ0180
-      page: 97
-      locator: "Appendix 2 Figure A2.9 \"HWQFN 32-pin\" (PWQN0032KE-A) dimension table, symbol \"A\""
-  "/dimensions/standoff":
-    - source: renesas/R01DS0386EJ0180
-      page: 97
-      locator: "Appendix 2 Figure A2.9 \"HWQFN 32-pin\" (PWQN0032KE-A) dimension table, symbol \"A1\""
-  "/dimensions/lead_width":
-    - source: renesas/R01DS0386EJ0180
-      page: 97
-      locator: "Appendix 2 Figure A2.9 \"HWQFN 32-pin\" (PWQN0032KE-A) dimension table, symbol \"b\""
-  "/dimensions/lead_length":
-    - source: renesas/R01DS0386EJ0180
-      page: 97
-      locator: "Appendix 2 Figure A2.9 \"HWQFN 32-pin\" (PWQN0032KE-A) dimension table, symbol \"L\""
-  "/dimensions/lead_thickness":
-    - source: renesas/R01DS0386EJ0180
-      page: 97
-      locator: "Appendix 2 Figure A2.9 \"HWQFN 32-pin\" (PWQN0032KE-A) dimension table, symbol \"A3\""
-  "/dimensions/exposed_pad":
-    - source: renesas/R01DS0386EJ0180
-      page: 97
-      locator: "Appendix 2 Figure A2.9 \"HWQFN 32-pin\" (PWQN0032KE-A) dimension table, symbol \"E2 (width) / D2 (length)\""
+    src:    p97 "Appendix 2 Figure A2.9 "HWQFN 32-pin" (PWQN0032KE-A) dimension table, symbol "E2 (width) / D2 (length)""
+    width:  { min: 3.15 mm, typ: 3.2 mm, max: 3.25 mm }
+    length: { min: 3.15 mm, typ: 3.2 mm, max: 3.25 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p97 "Appendix 2 Figure A2.9 "HWQFN 32-pin" (PWQN0032KE-A) dimension table, symbol "A1""
+  lead_width:
+    min: 0.18 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p97 "Appendix 2 Figure A2.9 "HWQFN 32-pin" (PWQN0032KE-A) dimension table, symbol "b""
+  lead_length:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.45 mm
+    src: p97 "Appendix 2 Figure A2.9 "HWQFN 32-pin" (PWQN0032KE-A) dimension table, symbol "L""
+  lead_thickness:
+    typ: 0.203 mm
+    src: p97 "Appendix 2 Figure A2.9 "HWQFN 32-pin" (PWQN0032KE-A) dimension table, symbol "A3""

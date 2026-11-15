@@ -10,15 +10,18 @@
 # No "EP" pin: unlike HVQFN33 (Table 4 note [11], "Thermal pad for
 # HVQFN33" on VSS), the data sheet does not say what the HVQFN48
 # exposed pad connects to, so it is left unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: nxp/LPC845M301-48
-
 manufacturer: nxp
 category: microcontroller
 family: LPC84x
+source: nxp/LPC84x@rev2.1
 
 pins:
+  src:
+    - p12 "Table 4 "Pin description" (pages 12-16), columns "LQFP48" and "HVQFN48""
+    - p9 "Fig 5 "Pin configuration LQFP48 package" and Fig 6 (page 10) HVQFN48 (cross-check, all 48 pins matched)"
   "1":  { name: PIO1_8/CAPT_YL, type: io }
   "2":  { name: PIO0_13/ADC_10, type: io }
   "3":  { name: PIO1_9/CAPT_YH, type: io }
@@ -67,12 +70,3 @@ pins:
   "46": { name: PIO0_19/ADC_7, type: io }
   "47": { name: PIO0_18/ADC_8, type: io }
   "48": { name: PIO0_17/ADC_9/DACOUT_0, type: io }
-
-provenance:
-  "/pins":
-    - source: nxp/LPC84x@rev2.1
-      page: 12
-      locator: "Table 4 \"Pin description\" (pages 12-16), columns \"LQFP48\" and \"HVQFN48\""
-    - source: nxp/LPC84x@rev2.1
-      page: 9
-      locator: "Fig 5 \"Pin configuration LQFP48 package\" and Fig 6 (page 10) HVQFN48 (cross-check, all 48 pins matched)"

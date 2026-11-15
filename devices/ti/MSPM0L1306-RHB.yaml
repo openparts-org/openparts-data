@@ -10,15 +10,18 @@
 # EP: Table 6-3 "Signal Descriptions" (page 12), row "QFN Pad": "QFN
 # package exposed thermal pad. TI recommends connection to VSS." --
 # recommended, not stated as internally connected, so typed passive.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/MSPM0L1306-RHB
-
 manufacturer: ti
 category: microcontroller
 family: MSPM0L130x
+source: ti/SLASEX0D
 
 pins:
+  src:
+    - p6 "Figure 6-2 "32-Pin RHB (VQFN) (Top View) - MSPM0L130x""
+    - p7 "Table 6-1 "Pin Attributes" (pages 7-9), column "32 VQFN" (cross-check, all 32 pins matched)"
   "1":  { name: PA0, type: io }
   "2":  { name: PA1, type: io }
   "3":  { name: NRST, type: reset }
@@ -51,17 +54,7 @@ pins:
   "30": { name: PA26/A1, type: io }
   "31": { name: PA27/A0, type: io }
   "32": { name: VCORE, type: power }
-  "EP": { name: QFN Pad, type: passive }
-
-provenance:
-  "/pins":
-    - source: ti/SLASEX0D
-      page: 6
-      locator: "Figure 6-2 \"32-Pin RHB (VQFN) (Top View) - MSPM0L130x\""
-    - source: ti/SLASEX0D
-      page: 7
-      locator: "Table 6-1 \"Pin Attributes\" (pages 7-9), column \"32 VQFN\" (cross-check, all 32 pins matched)"
-  "/pins/EP":
-    - source: ti/SLASEX0D
-      page: 12
-      locator: "Table 6-3 \"Signal Descriptions\", row \"QFN Pad\": \"TI recommends connection to VSS\""
+  EP:
+    name: QFN Pad
+    type: passive
+    src: 'p12 "Table 6-3 "Signal Descriptions", row "QFN Pad": "TI recommends connection to VSS""'

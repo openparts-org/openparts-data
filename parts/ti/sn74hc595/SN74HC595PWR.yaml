@@ -1,35 +1,24 @@
 # MPN read from the Package Option Addendum, Packaging Information table
 # (SCLS041J PDF page 18, addendum dated 18-Sep-2026): "SN74HC595PWR | Active | Production | TSSOP (PW) | 16 | 2000 | LARGE T&R | ... | -40 to 85 | HC595".
 # lifecycle "active" is that table's Status column.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/SN74HC595PWR
-
 manufacturer: ti
 mpn: SN74HC595PWR
-
 device: ti/SN74HC595
-package: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+
+package:
+  value: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+  src: p18 "Package Option Addendum, row "SN74HC595PWR", "TSSOP (PW) | 16"; outline PW0016A on page 34"
+
+sources: [ti/SCLS041J]
+source: ti/SCLS041J
 
 existence:
   status: verified
+  src: p18 "Package Option Addendum, Packaging Information table, row "SN74HC595PWR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SCLS041J
-
-provenance:
-  "/existence":
-    - source: ti/SCLS041J
-      page: 18
-      locator: "Package Option Addendum, Packaging Information table, row \"SN74HC595PWR\""
-  "/lifecycle":
-    - source: ti/SCLS041J
-      page: 18
-      locator: "Package Option Addendum, row \"SN74HC595PWR\", Status \"Active\""
-  "/package":
-    - source: ti/SCLS041J
-      page: 18
-      locator: "Package Option Addendum, row \"SN74HC595PWR\", \"TSSOP (PW) | 16\"; outline PW0016A on page 34"
+  src: p18 "Package Option Addendum, row "SN74HC595PWR", Status "Active""

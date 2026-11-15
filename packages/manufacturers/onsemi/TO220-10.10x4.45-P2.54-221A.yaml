@@ -24,113 +24,65 @@
 # Left out: A1 (tab thickness), b (lead shoulder), D1/E1 (back-side
 # tab), E2 "1.27 REF", H1, L1, e1, Z. No land pattern is printed (drill
 # and pad: generator defaults).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/onsemi/TO220-10.10x4.45-P2.54-221A
-
 family: to220
 lead_count: 3
+source: onsemi/98ASB42148B
 
 pitch:
-  nominal: 2.54
-  min: 2.42
-  max: 2.66
-  unit: mm
+  min: 2.42 mm
+  typ: 2.54 mm
+  max: 2.66 mm
+  src: p1 "MILLIMETERS table, "e" (2.42 / 2.54 / 2.66)"
+
+geometry: { type: parametric, generator: to220 }
 
 dimensions:
   body_width:
-    nominal: 10.1
-    min: 9.66
-    max: 10.53
-    unit: mm
+    min: 9.66 mm
+    typ: 10.1 mm
+    max: 10.53 mm
+    src: p1 "MILLIMETERS table, "D" (9.66 / 10.10 / 10.53), front view width"
   body_length:
-    nominal: 4.45
-    min: 4.07
-    max: 4.83
-    unit: mm
+    min: 4.07 mm
+    typ: 4.45 mm
+    max: 4.83 mm
+    src: p1 "MILLIMETERS table, "A" (4.07 / 4.45 / 4.83), side view"
   body_height:
-    nominal: 8.9
-    unit: mm
-  overall_height:
-    nominal: 15.12
-    min: 14.48
-    max: 15.75
-    unit: mm
-  lead_width:
-    nominal: 0.8
-    min: 0.64
-    max: 0.96
-    unit: mm
-  lead_thickness:
-    nominal: 0.49
-    min: 0.36
-    max: 0.61
-    unit: mm
-  tail_length:
-    nominal: 13.49
-    min: 12.7
-    max: 14.27
-    unit: mm
-  mounting_hole_diameter:
-    nominal: 3.85
-    min: 3.6
-    max: 4.09
-    unit: mm
-  mounting_hole_inset:
-    nominal: 2.79
-    min: 2.54
-    max: 3.04
-    unit: mm
+    typ: 8.9 mm
+    src: 'p1 "MILLIMETERS table nominals, front view: "E" 15.12 (tab top to body underside) - "H1" 6.22 (tab top to molding top) = 8.90"'
   body_offset:
-    nominal: 0.44
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: to220
-
-provenance:
-  "/pitch":
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "MILLIMETERS table, \"e\" (2.42 / 2.54 / 2.66)"
-  "/dimensions/body_width":
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "MILLIMETERS table, \"D\" (9.66 / 10.10 / 10.53), front view width"
-  "/dimensions/body_length":
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "MILLIMETERS table, \"A\" (4.07 / 4.45 / 4.83), side view"
-  "/dimensions/body_height":
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "MILLIMETERS table nominals, front view: \"E\" 15.12 (tab top to body underside) - \"H1\" 6.22 (tab top to molding top) = 8.90"
-  "/dimensions/overall_height":
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "MILLIMETERS table, \"E\" (14.48 / 15.12 / 15.75), tab top to datum B (body underside)"
-  "/dimensions/lead_width":
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "MILLIMETERS table, \"b1\" (0.64 / 0.80 / 0.96)"
-  "/dimensions/lead_thickness":
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "MILLIMETERS table, \"c\" (0.36 / 0.49 / 0.61)"
-  "/dimensions/tail_length":
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "MILLIMETERS table, \"L\" (12.70 / 13.49 / 14.27), datum B to lead tip"
-  "/dimensions/mounting_hole_diameter":
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "MILLIMETERS table, \"OP\" (3.60 / 3.85 / 4.09)"
-  "/dimensions/mounting_hole_inset":
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "MILLIMETERS table, \"Q\" (2.54 / 2.79 / 3.04), tab top to hole centre"
-  "/dimensions/body_offset":
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "MILLIMETERS table nominals, side view: A2 2.42 (tab back to lead) + c/2 0.245 - A/2 2.225 = 0.44"
+    typ: 0.44 mm
+    src: 'p1 "MILLIMETERS table nominals, side view: A2 2.42 (tab back to lead) + c/2 0.245 - A/2 2.225 = 0.44"'
+  overall_height:
+    min: 14.48 mm
+    typ: 15.12 mm
+    max: 15.75 mm
+    src: p1 "MILLIMETERS table, "E" (14.48 / 15.12 / 15.75), tab top to datum B (body underside)"
+  lead_width:
+    min: 0.64 mm
+    typ: 0.8 mm
+    max: 0.96 mm
+    src: p1 "MILLIMETERS table, "b1" (0.64 / 0.80 / 0.96)"
+  lead_thickness:
+    min: 0.36 mm
+    typ: 0.49 mm
+    max: 0.61 mm
+    src: p1 "MILLIMETERS table, "c" (0.36 / 0.49 / 0.61)"
+  mounting_hole_diameter:
+    min: 3.6 mm
+    typ: 3.85 mm
+    max: 4.09 mm
+    src: p1 "MILLIMETERS table, "OP" (3.60 / 3.85 / 4.09)"
+  mounting_hole_inset:
+    min: 2.54 mm
+    typ: 2.79 mm
+    max: 3.04 mm
+    src: p1 "MILLIMETERS table, "Q" (2.54 / 2.79 / 3.04), tab top to hole centre"
+  tail_length:
+    min: 12.7 mm
+    typ: 13.49 mm
+    max: 14.27 mm
+    src: p1 "MILLIMETERS table, "L" (12.70 / 13.49 / 14.27), datum B to lead tip"

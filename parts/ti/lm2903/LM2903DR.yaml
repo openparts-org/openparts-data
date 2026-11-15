@@ -2,35 +2,24 @@
 # (page 24): "LM2903DR Active Production SOIC (D) | 8 2500 | LARGE T&R ... -40 to 125". Lifecycle "Active" is read from the
 # same row's Status column (TI's own addendum inside the datasheet).
 # Package: SOIC (D), outline D0008A on page 43 -> manufacturers/ti/D0008A.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/LM2903DR
-
 manufacturer: ti
 mpn: LM2903DR
-
 device: ti/LM2903
-package: manufacturers/ti/D0008A
+
+package:
+  value: manufacturers/ti/D0008A
+  src: p24 "PACKAGE OPTION ADDENDUM, row LM2903DR, Package column"
+
+sources: [ti/SLCS005AH]
+source: ti/SLCS005AH
 
 existence:
   status: verified
+  src: p24 "PACKAGE OPTION ADDENDUM, Packaging Information table, row LM2903DR"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLCS005AH
-
-provenance:
-  "/existence":
-    - source: ti/SLCS005AH
-      page: 24
-      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row LM2903DR"
-  "/lifecycle":
-    - source: ti/SLCS005AH
-      page: 24
-      locator: "PACKAGE OPTION ADDENDUM, row LM2903DR, Status column \"Active\""
-  "/package":
-    - source: ti/SLCS005AH
-      page: 24
-      locator: "PACKAGE OPTION ADDENDUM, row LM2903DR, Package column"
+  src: p24 "PACKAGE OPTION ADDENDUM, row LM2903DR, Status column "Active""

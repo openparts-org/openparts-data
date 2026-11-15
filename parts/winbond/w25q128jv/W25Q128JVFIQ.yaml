@@ -2,31 +2,22 @@
 # (page 76). Device winbond/W25Q128JV-F, package manufacturers/winbond/SOIC16-300mil-F.
 # lifecycle: not stated in the datasheet; no first-party lifecycle page
 # was read, so it is recorded as unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: winbond/W25Q128JVFIQ
-
 manufacturer: winbond
-mpn: "W25Q128JVFIQ"
-
+mpn: W25Q128JVFIQ
 device: winbond/W25Q128JV-F
-package: manufacturers/winbond/SOIC16-300mil-F
+
+package:
+  value: manufacturers/winbond/SOIC16-300mil-F
+  src: 'p76 "Same table: package "F" = "SOIC-16 300-mil"; outline in section 10.2"'
+
+sources: [winbond/W25Q128JV@revF]
+source: winbond/W25Q128JV@revF
 
 existence:
   status: verified
+  src: p76 "Section 11.1 "Valid Part Numbers and Top Side Marking", W25Q128JV-IQ table, product number "W25Q128JVFIQ" (PDF page 76, printed page 75)"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - winbond/W25Q128JV@revF
-
-provenance:
-  "/existence":
-    - source: winbond/W25Q128JV@revF
-      page: 76
-      locator: "Section 11.1 \"Valid Part Numbers and Top Side Marking\", W25Q128JV-IQ table, product number \"W25Q128JVFIQ\" (PDF page 76, printed page 75)"
-  "/package":
-    - source: winbond/W25Q128JV@revF
-      page: 76
-      locator: "Same table: package \"F\" = \"SOIC-16 300-mil\"; outline in section 10.2"
+lifecycle: { status: unknown }

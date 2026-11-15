@@ -7,15 +7,12 @@
 # 2: 1 Gate, 2 Drain, 3 Source, 4 Drain); PDF page 6: ORDERING
 # INFORMATION; PDF pages 7-8: older outlines CASE 221A-09 ISSUE AF and
 # CASE 418B-04 ISSUE J.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: onsemi/NTB5860N-D
-
+url: https://www.onsemi.com/pdf/datasheet/ntb5860n-d.pdf
+date: 2012-09
+revision: "2"
 publisher: onsemi
 document_id: NTB5860N/D
 document_type: datasheet
-
-revision: "2"
-date: "2012-09"
-
-url: "https://www.onsemi.com/pdf/datasheet/ntb5860n-d.pdf"

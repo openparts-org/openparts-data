@@ -7,33 +7,20 @@
 # Package: the Pico W's SMT footprint (castellated pads plus the
 # mid-board SWCLK/GND/SWDIO pads). lifecycle unknown: no
 # production-status statement in these sources.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: raspberrypi/SC0918
-
 manufacturer: raspberrypi
-mpn: SC0918
-
+mpn: { value: SC0918, src: '""SC0918" with a digit zero"' }
 device: raspberrypi/PICO-W
 package: standards/MODULE40-21x51-P2.54-PICO-W
+sources: [raspberrypi/RP-008312-DS@rev2, raspberrypi/PIP-686-pico-w]
+source: raspberrypi/PIP-686-pico-w
 
 existence:
   status: verified
+  src:
+    - 'raspberrypi/RP-008312-DS@rev2 p20 "Appendix A.2 Ordering code, Table 1: "Raspberry Pi Pico W  SCO918  5056561803173" (letter O as printed)"'
+    - '"Page header under "Raspberry Pi Pico W": "SC0918, SC0919""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - raspberrypi/RP-008312-DS@rev2
-  - raspberrypi/PIP-686-pico-w
-
-provenance:
-  "/existence":
-    - source: raspberrypi/RP-008312-DS@rev2
-      page: 20
-      locator: "Appendix A.2 Ordering code, Table 1: \"Raspberry Pi Pico W  SCO918  5056561803173\" (letter O as printed)"
-    - source: raspberrypi/PIP-686-pico-w
-      locator: "Page header under \"Raspberry Pi Pico W\": \"SC0918, SC0919\""
-  "/mpn":
-    - source: raspberrypi/PIP-686-pico-w
-      locator: "\"SC0918\" with a digit zero"
+lifecycle: { status: unknown }

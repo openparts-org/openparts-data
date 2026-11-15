@@ -2,68 +2,42 @@
 # Q976.01 drawings (C67062-A0462-A1-02 / -A3-02) carry identical numbers.
 # Asymmetric tolerances are recorded as printed; lead_length is the
 # bottom-view 0.4 terminal with the drawing's general tolerance +/-0.1.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/osram/CHIP-OSRAM-Q976.01
-
 family: chip
 lead_count: 2
+source: osram/LG-Q976.01@v1.3
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 1.6
-    min: 1.5
-    max: 1.65
-    unit: mm
   body_width:
-    nominal: 0.8
-    min: 0.7
-    max: 0.84
-    unit: mm
+    min: 0.7 mm
+    typ: 0.8 mm
+    max: 0.84 mm
+    src:
+      - osram/LS-Q976.01@v1.2 p12 "Dimensional Drawing C67062-A0462-A1-02, top view "0.8 +0.04/-0.1""
+      - p12 "Dimensional Drawing C67062-A0462-A3-02, top view "0.8 +0.04/-0.1""
+  body_length:
+    min: 1.5 mm
+    typ: 1.6 mm
+    max: 1.65 mm
+    src:
+      - osram/LS-Q976.01@v1.2 p12 "Dimensional Drawing C67062-A0462-A1-02, top view "1.6 +0.05/-0.1""
+      - p12 "Dimensional Drawing C67062-A0462-A3-02, top view "1.6 +0.05/-0.1""
   body_height:
-    nominal: 0.7
-    min: 0.6
-    max: 0.75
-    unit: mm
+    min: 0.6 mm
+    typ: 0.7 mm
+    max: 0.75 mm
+    src:
+      - osram/LS-Q976.01@v1.2 p12 "Dimensional Drawing C67062-A0462-A1-02, side view "0.7 +0.05/-0.1""
+      - p12 "Dimensional Drawing C67062-A0462-A3-02, side view "0.7 +0.05/-0.1""
   lead_length:
-    nominal: 0.4
-    min: 0.3
-    max: 0.5
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: osram/LS-Q976.01@v1.2
-      page: 12
-      locator: "Dimensional Drawing C67062-A0462-A1-02, top view \"1.6 +0.05/-0.1\""
-    - source: osram/LG-Q976.01@v1.3
-      page: 12
-      locator: "Dimensional Drawing C67062-A0462-A3-02, top view \"1.6 +0.05/-0.1\""
-  "/dimensions/body_width":
-    - source: osram/LS-Q976.01@v1.2
-      page: 12
-      locator: "Dimensional Drawing C67062-A0462-A1-02, top view \"0.8 +0.04/-0.1\""
-    - source: osram/LG-Q976.01@v1.3
-      page: 12
-      locator: "Dimensional Drawing C67062-A0462-A3-02, top view \"0.8 +0.04/-0.1\""
-  "/dimensions/body_height":
-    - source: osram/LS-Q976.01@v1.2
-      page: 12
-      locator: "Dimensional Drawing C67062-A0462-A1-02, side view \"0.7 +0.05/-0.1\""
-    - source: osram/LG-Q976.01@v1.3
-      page: 12
-      locator: "Dimensional Drawing C67062-A0462-A3-02, side view \"0.7 +0.05/-0.1\""
-  "/dimensions/lead_length":
-    - source: osram/LS-Q976.01@v1.2
-      page: 12
-      locator: "Dimensional Drawing C67062-A0462-A1-02, bottom view terminal \"0.4\" (general tolerance +/-0.1)"
-    - source: osram/LG-Q976.01@v1.3
-      page: 12
-      locator: "Dimensional Drawing C67062-A0462-A3-02, bottom view terminal \"0.4\" (general tolerance +/-0.1)"
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src:
+      - osram/LS-Q976.01@v1.2 p12 "Dimensional Drawing C67062-A0462-A1-02, bottom view terminal "0.4" (general tolerance +/-0.1)"
+      - p12 "Dimensional Drawing C67062-A0462-A3-02, bottom view terminal "0.4" (general tolerance +/-0.1)"

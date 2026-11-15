@@ -7,27 +7,18 @@
 # Package: the Pico 2's Figures 3 and 5 (PDF pages 8 and 11) print the
 # same numbers as the Pico's, so it shares the Pico package (which cites
 # the Pico datasheet). lifecycle unknown: no production-status statement.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: raspberrypi/SC1631
-
 manufacturer: raspberrypi
 mpn: SC1631
-
 device: raspberrypi/PICO-2
 package: standards/MODULE40-21x51-P2.54-PICO
+sources: [raspberrypi/RP-008299-DS@rev3]
+source: raspberrypi/RP-008299-DS@rev3
 
 existence:
   status: verified
+  src: 'p20 "Appendix A.2 Ordering code, Table 3: "Raspberry Pi Pico 2  SC1631  5056561803951""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - raspberrypi/RP-008299-DS@rev3
-
-provenance:
-  "/existence":
-    - source: raspberrypi/RP-008299-DS@rev3
-      page: 20
-      locator: "Appendix A.2 Ordering code, Table 3: \"Raspberry Pi Pico 2  SC1631  5056561803951\""
+lifecycle: { status: unknown }

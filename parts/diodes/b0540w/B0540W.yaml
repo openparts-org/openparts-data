@@ -13,21 +13,14 @@
 # diodes.com/datasheet/download/B0540W.pdf) page 4 prints the same
 # SOD123 table, row for row, as the reused package (pdftotext -layout
 # diff). That newer revision is not added as a Source here.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: diodes/B0540W
-
 manufacturer: diodes
 mpn: B0540W
-
 device: diodes/B0540W
 package: manufacturers/diodes/SOD123-2.65x1.55-DS30139
+sources: [diodes/DS30138]
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - diodes/DS30138
+existence: { status: verified }
+lifecycle: { status: active }

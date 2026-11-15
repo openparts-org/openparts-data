@@ -4,15 +4,12 @@
 # 50 PDF pages; text read with pdftotext -layout. Page numbers in this
 # dataset are PDF page indices (they equal the printed page numbers).
 # The 6-lead SOT-23 (CH) drawing C04-028B (page 44) was rendered (pdftoppm) and read as an image.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: microchip/DS22039@revD
-
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/22039D.pdf
+date: 2009-06
+revision: D
 publisher: microchip
 document_id: DS22039
 document_type: datasheet
-
-revision: "D"
-date: "2009-06"
-
-url: "https://ww1.microchip.com/downloads/en/DeviceDoc/22039D.pdf"

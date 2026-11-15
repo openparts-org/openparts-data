@@ -5,38 +5,26 @@
 # Package: SOIC (D), outline D0008A (4214825/C) on page 42 ->
 # manufacturers/ti/D0008A. Its pdftotext text matches the outline page the package
 # was read from (ti/SLCS005AH page 43) line for line, so the package is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/TCAN332DR
-
 manufacturer: ti
 mpn: TCAN332DR
-
 device: ti/TCAN332
-package: manufacturers/ti/D0008A
+
+package:
+  value: manufacturers/ti/D0008A
+  src:
+    - p33 "PACKAGE OPTION ADDENDUM, row TCAN332DR, Package column "SOIC (D)""
+    - p42 "PACKAGE OUTLINE D0008A (4214825/C)"
+
+sources: [ti/SLLSEQ7F]
+source: ti/SLLSEQ7F
 
 existence:
   status: verified
+  src: p33 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TCAN332DR"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLLSEQ7F
-
-provenance:
-  "/existence":
-    - source: ti/SLLSEQ7F
-      page: 33
-      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row TCAN332DR"
-  "/lifecycle":
-    - source: ti/SLLSEQ7F
-      page: 33
-      locator: "PACKAGE OPTION ADDENDUM, row TCAN332DR, Status column \"Active\""
-  "/package":
-    - source: ti/SLLSEQ7F
-      page: 33
-      locator: "PACKAGE OPTION ADDENDUM, row TCAN332DR, Package column \"SOIC (D)\""
-    - source: ti/SLLSEQ7F
-      page: 42
-      locator: "PACKAGE OUTLINE D0008A (4214825/C)"
+  src: p33 "PACKAGE OPTION ADDENDUM, row TCAN332DR, Status column "Active""

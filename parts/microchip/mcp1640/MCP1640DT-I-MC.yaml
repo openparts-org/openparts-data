@@ -6,35 +6,24 @@
 # row equal to the C04-123C table read from DS20001984H page 20, so
 # manufacturers/microchip/DFN8-2x3-P0.5-MC-C04-123C is reused). The id
 # replaces "/" with "-". lifecycle: not stated; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/MCP1640DT-I-MC
-
 manufacturer: microchip
-mpn: "MCP1640DT-I/MC"
-
+mpn: MCP1640DT-I/MC
 device: microchip/MCP1640-DFN8
-package: manufacturers/microchip/DFN8-2x3-P0.5-MC-C04-123C
+
+package:
+  value: manufacturers/microchip/DFN8-2x3-P0.5-MC-C04-123C
+  src:
+    - p29 "Product Identification System, Package "MC =Plastic Dual Flat, No Lead (2x3 DFN), 8-lead""
+    - p24 "drawing C04-123C "8-Lead Plastic Dual Flat, No Lead Package (MC) - 2x3x0.9 mm Body [DFN]" (rendered; identical to DS20001984H page 20)"
+
+sources: [microchip/DS20002234@revD, microchip/DS20001984@revH]
+source: microchip/DS20002234@revD
 
 existence:
   status: probable
+  src: 'p29 "Product Identification System, example h) "MCP1640DT-I/MC: 0.65V, PWM-Only Input-to-Output Bypass Sync Reg., 8LD-DFN pkg. Tape and Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS20002234@revD
-  - microchip/DS20001984@revH
-
-provenance:
-  "/existence":
-    - source: microchip/DS20002234@revD
-      page: 29
-      locator: "Product Identification System, example h) \"MCP1640DT-I/MC: 0.65V, PWM-Only Input-to-Output Bypass Sync Reg., 8LD-DFN pkg. Tape and Reel\""
-  "/package":
-    - source: microchip/DS20002234@revD
-      page: 29
-      locator: "Product Identification System, Package \"MC =Plastic Dual Flat, No Lead (2x3 DFN), 8-lead\""
-    - source: microchip/DS20002234@revD
-      page: 24
-      locator: "drawing C04-123C \"8-Lead Plastic Dual Flat, No Lead Package (MC) - 2x3x0.9 mm Body [DFN]\" (rendered; identical to DS20001984H page 20)"
+lifecycle: { status: unknown }

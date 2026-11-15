@@ -4,15 +4,12 @@
 # downloaded standalone from the URL below (curl). The same issue and
 # date is embedded in TIP120/D p8, TIP31A/D p7, TIP41A/D p7 and
 # MJE13007/D p10 (text-identical issue/date/document lines).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: onsemi/98ASB42148B
-
+url: https://www.onsemi.com/download/package-drawing/pdf/221A-09.pdf
+date: 2025-02-05
+revision: AL
 publisher: onsemi
 document_id: 98ASB42148B
 document_type: package_drawing
-
-revision: "AL"
-date: "2025-02-05"
-
-url: "https://www.onsemi.com/download/package-drawing/pdf/221A-09.pdf"

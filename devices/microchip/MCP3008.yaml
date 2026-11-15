@@ -1,24 +1,25 @@
 # MCP3008 8-channel 10-bit SPI A/D converter, PDIP/SOIC pin numbering.
 # Transcribed from Table 3-1 "Pin Function Table", MCP3008 "PDIP, SOIC"
 # column (page 15).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/MCP3008
-
 manufacturer: microchip
 category: adc
 family: MCP3004/3008
+source: microchip/DS20001295@revE
 
 pins:
-  "1": { name: CH0, type: analog }
-  "2": { name: CH1, type: analog }
-  "3": { name: CH2, type: analog }
-  "4": { name: CH3, type: analog }
-  "5": { name: CH4, type: analog }
-  "6": { name: CH5, type: analog }
-  "7": { name: CH6, type: analog }
-  "8": { name: CH7, type: analog }
-  "9": { name: DGND, type: ground }
+  src:  p15 "Table 3-1 "Pin Function Table", MCP3008 "PDIP, SOIC" column"
+  "1":  { name: CH0, type: analog }
+  "2":  { name: CH1, type: analog }
+  "3":  { name: CH2, type: analog }
+  "4":  { name: CH3, type: analog }
+  "5":  { name: CH4, type: analog }
+  "6":  { name: CH5, type: analog }
+  "7":  { name: CH6, type: analog }
+  "8":  { name: CH7, type: analog }
+  "9":  { name: DGND, type: ground }
   "10": { name: CS/SHDN, type: input }
   "11": { name: DIN, type: input }
   "12": { name: DOUT, type: output }
@@ -26,9 +27,3 @@ pins:
   "14": { name: AGND, type: ground }
   "15": { name: VREF, type: analog }
   "16": { name: VDD, type: power }
-
-provenance:
-  "/pins":
-    - source: microchip/DS20001295@revE
-      page: 15
-      locator: "Table 3-1 \"Pin Function Table\", MCP3008 \"PDIP, SOIC\" column"

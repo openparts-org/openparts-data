@@ -16,90 +16,38 @@
 # generator currently needs a body nominal, so this package does not
 # render a 3D model/footprint. Standoff is printed "0.1 / 0.0 TYP" and
 # recorded as that range.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/ti/DDC0006A
-
 family: sot
 lead_count: 6
 lead_layout: [3, 3]
+source: ti/SLVSCB0E
 
 pitch:
-  nominal: 0.95
-  unit: mm
+  typ: 0.95 mm
+  src: p33 "DDC0006A outline, "4X 0.95" (basic; "1.9" basic across pins 1-3)"
+
+geometry: { type: parametric, generator: sot }
 
 dimensions:
   body_width:
-    min: 2.75
-    max: 3.05
-    unit: mm
+    min: 2.75 mm
+    max: 3.05 mm
+    src: p33 "DDC0006A outline, body length along the rows "3.05 / 2.75" -- see field-mapping note"
   body_length:
-    min: 1.45
-    max: 1.75
-    unit: mm
-  overall_length:
-    min: 2.55
-    max: 3.05
-    unit: mm
-  overall_height:
-    min: 0.7
-    max: 1.1
-    unit: mm
-  standoff:
-    min: 0.0
-    max: 0.1
-    unit: mm
-  lead_width:
-    min: 0.3
-    max: 0.5
-    unit: mm
-  lead_length:
-    min: 0.3
-    max: 0.6
-    unit: mm
+    min: 1.45 mm
+    max: 1.75 mm
+    src: p33 "DDC0006A outline, molded body width "1.75 / 1.45" -- see field-mapping note"
   lead_thickness:
-    min: 0.12
-    max: 0.20
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: sot
-
-provenance:
-  "/pitch":
-    - source: ti/SLVSCB0E
-      page: 33
-      locator: "DDC0006A outline, \"4X 0.95\" (basic; \"1.9\" basic across pins 1-3)"
-  "/dimensions/body_width":
-    - source: ti/SLVSCB0E
-      page: 33
-      locator: "DDC0006A outline, body length along the rows \"3.05 / 2.75\" -- see field-mapping note"
-  "/dimensions/body_length":
-    - source: ti/SLVSCB0E
-      page: 33
-      locator: "DDC0006A outline, molded body width \"1.75 / 1.45\" -- see field-mapping note"
-  "/dimensions/overall_length":
-    - source: ti/SLVSCB0E
-      page: 33
-      locator: "DDC0006A outline, lead-tip span \"3.05 / 2.55\""
-  "/dimensions/overall_height":
-    - source: ti/SLVSCB0E
-      page: 33
-      locator: "DDC0006A side view, height \"1.1 / 0.7\""
-  "/dimensions/standoff":
-    - source: ti/SLVSCB0E
-      page: 33
-      locator: "DDC0006A side view, \"0.1 / 0.0 TYP\""
-  "/dimensions/lead_width":
-    - source: ti/SLVSCB0E
-      page: 33
-      locator: "DDC0006A outline, \"6X 0.5 / 0.3\""
-  "/dimensions/lead_length":
-    - source: ti/SLVSCB0E
-      page: 33
-      locator: "DDC0006A lead detail, \"0.6 / 0.3 TYP\""
-  "/dimensions/lead_thickness":
-    - source: ti/SLVSCB0E
-      page: 33
-      locator: "DDC0006A lead detail, \"0.20 / 0.12 TYP\""
+    min: 0.12 mm
+    max: 0.2 mm
+    src: p33 "DDC0006A lead detail, "0.20 / 0.12 TYP""
+  lead_length:    { min: 0.3 mm, max: 0.6 mm, src: 'p33 "DDC0006A lead detail, "0.6 / 0.3 TYP""' }
+  overall_length:
+    min: 2.55 mm
+    max: 3.05 mm
+    src: p33 "DDC0006A outline, lead-tip span "3.05 / 2.55""
+  overall_height: { min: 0.7 mm, max: 1.1 mm, src: 'p33 "DDC0006A side view, height "1.1 / 0.7""' }
+  standoff:       { min: 0 mm, max: 0.1 mm, src: 'p33 "DDC0006A side view, "0.1 / 0.0 TYP""' }
+  lead_width:     { min: 0.3 mm, max: 0.5 mm, src: 'p33 "DDC0006A outline, "6X 0.5 / 0.3""' }

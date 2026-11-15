@@ -14,80 +14,41 @@
 # Lead dimensions (overall_*, standoff, lead_*) added as a candidate change for
 # human review (Agent Ingestion Specification); values copied as printed --
 # where the table has no nominal only min/max are recorded.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/QFN56-ESP32-S2
-
 family: qfn
-lead_count: 56
+lead_count: { value: 56, src: '"Table 2-1 Pin Overview"' }
+source: espressif/esp32-s2_datasheet_en@rev1.9
 
 pitch:
-  nominal: 0.4
-  unit: mm
+  typ: 0.4 mm
+  src: jedec/MO-220 "Standard QFN56 7x7mm pitch; vendor-confirmed for the identical package name in raspberrypi/RP-008371-DS section 5.5.2"
+
+geometry: { type: parametric, generator: qfn }
 
 dimensions:
-  body_width:
-    nominal: 7.0
-    unit: mm
-  body_length:
-    nominal: 7.0
-    unit: mm
+  body_width:  { typ: 7 mm, src: '"Chapter 7 Packaging: "QFN56 (7x7 mm) package""' }
+  body_length: { typ: 7 mm, src: '"Chapter 7 Packaging: "QFN56 (7x7 mm) package""' }
   body_height:
-    nominal: 0.85
-    min: 0.8
-    max: 0.9
-    unit: mm
-  lead_width:
-    nominal: 0.2
-    min: 0.15
-    max: 0.25
-    unit: mm
-  lead_length:
-    nominal: 0.4
-    min: 0.35
-    max: 0.45
-    unit: mm
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 0.9 mm
+    src: jedec/MO-220 "Standard QFN body height range for this outline family, not vendor-datasheet-specific"
   lead_thickness:
-    nominal: 0.203
-    unit: mm
+    typ: 0.203 mm
+    src: p57 "Figure 7-1 "Dimensional Ref." table (variants excluding ESP32-S2FN4R2), symbol "A3" (0.203 Ref.)"
   standoff:
-    min: 0.0
-    max: 0.05
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: qfn
-
-provenance:
-  "/lead_count":
-    - source: espressif/esp32-s2_datasheet_en@rev1.9
-      locator: "Table 2-1 Pin Overview"
-  "/dimensions/body_width":
-    - source: espressif/esp32-s2_datasheet_en@rev1.9
-      locator: "Chapter 7 Packaging: \"QFN56 (7x7 mm) package\""
-  "/dimensions/body_length":
-    - source: espressif/esp32-s2_datasheet_en@rev1.9
-      locator: "Chapter 7 Packaging: \"QFN56 (7x7 mm) package\""
-  "/pitch":
-    - source: jedec/MO-220
-      locator: "Standard QFN56 7x7mm pitch; vendor-confirmed for the identical package name in raspberrypi/RP-008371-DS section 5.5.2"
-  "/dimensions/body_height":
-    - source: jedec/MO-220
-      locator: "Standard QFN body height range for this outline family, not vendor-datasheet-specific"
-  "/dimensions/lead_width":
-    - source: espressif/esp32-s2_datasheet_en@rev1.9
-      page: 57
-      locator: "Figure 7-1 \"Dimensional Ref.\" table (variants excluding ESP32-S2FN4R2), symbol \"b\""
-  "/dimensions/lead_length":
-    - source: espressif/esp32-s2_datasheet_en@rev1.9
-      page: 57
-      locator: "Figure 7-1 \"Dimensional Ref.\" table (variants excluding ESP32-S2FN4R2), symbol \"L\""
-  "/dimensions/lead_thickness":
-    - source: espressif/esp32-s2_datasheet_en@rev1.9
-      page: 57
-      locator: "Figure 7-1 \"Dimensional Ref.\" table (variants excluding ESP32-S2FN4R2), symbol \"A3\" (0.203 Ref.)"
-  "/dimensions/standoff":
-    - source: espressif/esp32-s2_datasheet_en@rev1.9
-      page: 57
-      locator: "Figure 7-1 \"Dimensional Ref.\" table (variants excluding ESP32-S2FN4R2), symbol \"A1\" (no nom)"
+    min: 0 mm
+    max: 0.05 mm
+    src: p57 "Figure 7-1 "Dimensional Ref." table (variants excluding ESP32-S2FN4R2), symbol "A1" (no nom)"
+  lead_width:
+    min: 0.15 mm
+    typ: 0.2 mm
+    max: 0.25 mm
+    src: p57 "Figure 7-1 "Dimensional Ref." table (variants excluding ESP32-S2FN4R2), symbol "b""
+  lead_length:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.45 mm
+    src: p57 "Figure 7-1 "Dimensional Ref." table (variants excluding ESP32-S2FN4R2), symbol "L""

@@ -11,16 +11,13 @@
 # Downloaded with curl (HTTP 200, `file`: PDF); abracon.com/Resonators/
 # ABM8-272-T3.pdf is a 404 and the abracon.com/parts/ product page is a
 # Cloudflare challenge (not attempted further).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: abracon/456603@revB
-
+retrieved: 2026-11-15
+url: https://abracon.com/datasheets/ABM8-272-T3.pdf
+date: 2024-09-16
 publisher: abracon
 document_id: "456603"
 document_type: datasheet
-
-revision: "B"
-date: "2024-09-16"
-
-url: "https://abracon.com/datasheets/ABM8-272-T3.pdf"
-retrieved: "2026-11-15"
+revision: B

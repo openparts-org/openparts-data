@@ -11,31 +11,18 @@
 # onsemi's own live product page instead, a secondary (but
 # manufacturer-first-party) source, not a datasheet page citation.
 # Disclosed honestly rather than presented as datasheet-confirmed.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/2N7002ET1G
-
 manufacturer: onsemi
 mpn: 2N7002ET1G
-
 device: onsemi/2N7002E
 package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/2N7002E-D]
+source: onsemi/2N7002E-D
 
-existence:
-  status: verified
+existence: { status: verified, src: p1 ""ORDERING INFORMATION" table" }
 
 lifecycle:
   status: active
-
-sources:
-  - onsemi/2N7002E-D
-
-provenance:
-  "/existence":
-    - source: onsemi/2N7002E-D
-      page: 1
-      locator: "\"ORDERING INFORMATION\" table"
-  "/lifecycle":
-    - source: onsemi/2N7002E-D
-      page: 1
-      locator: "Not stated in the datasheet itself -- status read from onsemi's live product page (onsemi.com/products/discrete-power-modules/mosfets/2n7002e), which lists 2N7002ET1G as \"Active\""
+  src: p1 "Not stated in the datasheet itself -- status read from onsemi's live product page (onsemi.com/products/discrete-power-modules/mosfets/2n7002e), which lists 2N7002ET1G as "Active""

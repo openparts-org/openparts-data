@@ -17,116 +17,68 @@
 # to the A1 reference line (A1 is dimensioned separately from the seating
 # plane), so it is recorded as body_height, not overall_height. Q
 # (0.84-0.94) has no field and is left out.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/SOT223-3.5x6.5-P2.3-TabPin2-Diodes
-
 family: sot223
 lead_count: 3
+source: diodes/DS31009
 
 pitch:
-  nominal: 2.30
-  unit: mm
+  typ: 2.3 mm
+  src: p8 ""Package Outline Dimensions" SOT223 table, Dim "e1" (Typ 2.30; e = 4.60)"
 
 tab:
   number: "2"
+  src:
+    - 'p1 ""Pin Assignments" SOT223 (Top View): leads 3 VIN, 2 VOUT, 1 Adj (GND); "Tab is VOUT""'
+    - 'p2 ""Pin Descriptions" table: pin 2 = VOUT"'
+
+geometry: { type: parametric, generator: sot223 }
 
 dimensions:
   body_width:
-    nominal: 3.50
-    min: 3.45
-    max: 3.55
-    unit: mm
+    min: 3.45 mm
+    typ: 3.5 mm
+    max: 3.55 mm
+    src: p8 "SOT223 table, Dim "E" (3.45 / 3.55 / Typ 3.50)"
   body_length:
-    nominal: 6.50
-    min: 6.45
-    max: 6.55
-    unit: mm
+    min: 6.45 mm
+    typ: 6.5 mm
+    max: 6.55 mm
+    src: p8 "SOT223 table, Dim "D" (6.45 / 6.55 / Typ 6.50)"
   body_height:
-    nominal: 1.60
-    min: 1.55
-    max: 1.65
-    unit: mm
-  overall_width:
-    nominal: 7.00
-    min: 6.90
-    max: 7.10
-    unit: mm
-  standoff:
-    nominal: 0.05
-    min: 0.010
-    max: 0.15
-    unit: mm
-  lead_width:
-    nominal: 0.70
-    min: 0.60
-    max: 0.80
-    unit: mm
-  lead_length:
-    nominal: 0.95
-    min: 0.85
-    max: 1.05
-    unit: mm
-  lead_thickness:
-    nominal: 0.25
-    min: 0.20
-    max: 0.30
-    unit: mm
+    min: 1.55 mm
+    typ: 1.6 mm
+    max: 1.65 mm
+    src: p8 "SOT223 table, Dim "A" (1.55 / 1.65 / Typ 1.60); drawn above the A1 line, see header"
   tab_width:
-    nominal: 3.00
-    min: 2.90
-    max: 3.10
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: sot223
-
-provenance:
-  "/pitch":
-    - source: diodes/DS31009
-      page: 8
-      locator: "\"Package Outline Dimensions\" SOT223 table, Dim \"e1\" (Typ 2.30; e = 4.60)"
-  "/tab":
-    - source: diodes/DS31009
-      page: 1
-      locator: "\"Pin Assignments\" SOT223 (Top View): leads 3 VIN, 2 VOUT, 1 Adj (GND); \"Tab is VOUT\""
-    - source: diodes/DS31009
-      page: 2
-      locator: "\"Pin Descriptions\" table: pin 2 = VOUT"
-  "/dimensions/body_width":
-    - source: diodes/DS31009
-      page: 8
-      locator: "SOT223 table, Dim \"E\" (3.45 / 3.55 / Typ 3.50)"
-  "/dimensions/body_length":
-    - source: diodes/DS31009
-      page: 8
-      locator: "SOT223 table, Dim \"D\" (6.45 / 6.55 / Typ 6.50)"
-  "/dimensions/body_height":
-    - source: diodes/DS31009
-      page: 8
-      locator: "SOT223 table, Dim \"A\" (1.55 / 1.65 / Typ 1.60); drawn above the A1 line, see header"
-  "/dimensions/overall_width":
-    - source: diodes/DS31009
-      page: 8
-      locator: "SOT223 table, Dim \"E1\" (6.90 / 7.10 / Typ 7.00)"
-  "/dimensions/standoff":
-    - source: diodes/DS31009
-      page: 8
-      locator: "SOT223 table, Dim \"A1\" (0.010 / 0.15 / Typ 0.05)"
-  "/dimensions/lead_width":
-    - source: diodes/DS31009
-      page: 8
-      locator: "SOT223 table, Dim \"b2\" (0.60 / 0.80 / Typ 0.70)"
-  "/dimensions/lead_length":
-    - source: diodes/DS31009
-      page: 8
-      locator: "SOT223 table, Dim \"L\" (0.85 / 1.05 / Typ 0.95)"
-  "/dimensions/lead_thickness":
-    - source: diodes/DS31009
-      page: 8
-      locator: "SOT223 table, Dim \"C\" (0.20 / 0.30 / Typ 0.25)"
-  "/dimensions/tab_width":
-    - source: diodes/DS31009
-      page: 8
-      locator: "SOT223 table, Dim \"b1\" (2.90 / 3.10 / Typ 3.00)"
+    min: 2.9 mm
+    typ: 3 mm
+    max: 3.1 mm
+    src: p8 "SOT223 table, Dim "b1" (2.90 / 3.10 / Typ 3.00)"
+  overall_width:
+    min: 6.9 mm
+    typ: 7 mm
+    max: 7.1 mm
+    src: p8 "SOT223 table, Dim "E1" (6.90 / 7.10 / Typ 7.00)"
+  standoff:
+    min: 0.01 mm
+    typ: 0.05 mm
+    max: 0.15 mm
+    src: p8 "SOT223 table, Dim "A1" (0.010 / 0.15 / Typ 0.05)"
+  lead_width:
+    min: 0.6 mm
+    typ: 0.7 mm
+    max: 0.8 mm
+    src: p8 "SOT223 table, Dim "b2" (0.60 / 0.80 / Typ 0.70)"
+  lead_length:
+    min: 0.85 mm
+    typ: 0.95 mm
+    max: 1.05 mm
+    src: p8 "SOT223 table, Dim "L" (0.85 / 1.05 / Typ 0.95)"
+  lead_thickness:
+    min: 0.2 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p8 "SOT223 table, Dim "C" (0.20 / 0.30 / Typ 0.25)"

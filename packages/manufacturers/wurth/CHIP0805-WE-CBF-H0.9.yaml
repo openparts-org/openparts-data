@@ -5,56 +5,34 @@
 # id carries the 0.9 mm height because WE-CBF heights are per order
 # code; only 742792040 was checked. min/max are the printed
 # tolerances applied.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/wurth/CHIP0805-WE-CBF-H0.9
-
 family: chip
 lead_count: 2
+source: wurth/742792040-DS
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 2.0
-    min: 1.8
-    max: 2.2
-    unit: mm
   body_width:
-    nominal: 1.2
-    min: 1.0
-    max: 1.4
-    unit: mm
+    min: 1 mm
+    typ: 1.2 mm
+    max: 1.4 mm
+    src: 'p1 ""Dimensions: [mm]" lower view, width "1,2 ±0,2""'
+  body_length:
+    min: 1.8 mm
+    typ: 2 mm
+    max: 2.2 mm
+    src: 'p1 ""Dimensions: [mm]" side view, length "2,0 ±0,2""'
   body_height:
-    nominal: 0.9
-    min: 0.7
-    max: 1.1
-    unit: mm
+    min: 0.7 mm
+    typ: 0.9 mm
+    max: 1.1 mm
+    src: 'p1 ""Dimensions: [mm]" end view beside the side view, height "0,9 ±0,2""'
   lead_length:
-    nominal: 0.5
-    min: 0.2
-    max: 0.8
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: wurth/742792040-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" side view, length \"2,0 ±0,2\""
-  "/dimensions/body_width":
-    - source: wurth/742792040-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" lower view, width \"1,2 ±0,2\""
-  "/dimensions/body_height":
-    - source: wurth/742792040-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" end view beside the side view, height \"0,9 ±0,2\""
-  "/dimensions/lead_length":
-    - source: wurth/742792040-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" top view, terminal band \"0,5 ±0,3\""
+    min: 0.2 mm
+    typ: 0.5 mm
+    max: 0.8 mm
+    src: 'p1 ""Dimensions: [mm]" top view, terminal band "0,5 ±0,3""'

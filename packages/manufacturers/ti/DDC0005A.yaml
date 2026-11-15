@@ -14,94 +14,39 @@
 # Standoff "0.1/0.0 TYP", foot "0.6/0.3 TYP" and lead thickness
 # "0.20/0.12 TYP" recorded as those ranges. Not the same as DDC0006A
 # (6 leads) or DBV0005A (1.45 max height, span 3.0/2.6).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/ti/DDC0005A
-
 family: sot
 lead_count: 5
-lead_layout: [3, 2]
+
+lead_layout:
+  value: [3, 2]
+  src:   'p36 "DDC0005A top view: leads 1, 2, 3 on the left edge, 5 (top) and 4 (bottom) on the right edge"'
+
+source: ti/SLVSA00E
 
 pitch:
-  nominal: 0.95
-  unit: mm
+  typ: 0.95 mm
+  src: p36 "PACKAGE OUTLINE DDC0005A (4220752/C), "0.95" basic ("1.9" basic across pins 1-3)"
+
+geometry: { type: parametric, generator: sot }
 
 dimensions:
   body_width:
-    min: 2.75
-    max: 3.05
-    unit: mm
+    min: 2.75 mm
+    max: 3.05 mm
+    src: p36 "DDC0005A, body length along the rows "3.05 / 2.75" (datum A) -- see field-mapping note"
   body_length:
-    min: 1.45
-    max: 1.75
-    unit: mm
-  overall_length:
-    min: 2.55
-    max: 3.05
-    unit: mm
-  overall_height:
-    min: 0.7
-    max: 1.1
-    unit: mm
-  standoff:
-    min: 0.0
-    max: 0.1
-    unit: mm
-  lead_width:
-    min: 0.3
-    max: 0.5
-    unit: mm
-  lead_length:
-    min: 0.3
-    max: 0.6
-    unit: mm
+    min: 1.45 mm
+    max: 1.75 mm
+    src: p36 "DDC0005A, molded body width "1.75 / 1.45" (datum B) -- see field-mapping note"
   lead_thickness:
-    min: 0.12
-    max: 0.20
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: sot
-
-provenance:
-  "/pitch":
-    - source: ti/SLVSA00E
-      page: 36
-      locator: "PACKAGE OUTLINE DDC0005A (4220752/C), \"0.95\" basic (\"1.9\" basic across pins 1-3)"
-  "/lead_layout":
-    - source: ti/SLVSA00E
-      page: 36
-      locator: "DDC0005A top view: leads 1, 2, 3 on the left edge, 5 (top) and 4 (bottom) on the right edge"
-  "/dimensions/body_width":
-    - source: ti/SLVSA00E
-      page: 36
-      locator: "DDC0005A, body length along the rows \"3.05 / 2.75\" (datum A) -- see field-mapping note"
-  "/dimensions/body_length":
-    - source: ti/SLVSA00E
-      page: 36
-      locator: "DDC0005A, molded body width \"1.75 / 1.45\" (datum B) -- see field-mapping note"
-  "/dimensions/overall_length":
-    - source: ti/SLVSA00E
-      page: 36
-      locator: "DDC0005A, lead-tip span \"3.05 / 2.55\""
-  "/dimensions/overall_height":
-    - source: ti/SLVSA00E
-      page: 36
-      locator: "DDC0005A side view, height \"1.1 / 0.7\""
-  "/dimensions/standoff":
-    - source: ti/SLVSA00E
-      page: 36
-      locator: "DDC0005A side view, \"0.1 / 0.0 TYP\""
-  "/dimensions/lead_width":
-    - source: ti/SLVSA00E
-      page: 36
-      locator: "DDC0005A, \"5X 0.5 / 0.3\""
-  "/dimensions/lead_length":
-    - source: ti/SLVSA00E
-      page: 36
-      locator: "DDC0005A lead detail, \"0.6 / 0.3 TYP\""
-  "/dimensions/lead_thickness":
-    - source: ti/SLVSA00E
-      page: 36
-      locator: "DDC0005A lead detail, \"0.20 / 0.12 TYP\""
+    min: 0.12 mm
+    max: 0.2 mm
+    src: p36 "DDC0005A lead detail, "0.20 / 0.12 TYP""
+  lead_length:    { min: 0.3 mm, max: 0.6 mm, src: 'p36 "DDC0005A lead detail, "0.6 / 0.3 TYP""' }
+  overall_length: { min: 2.55 mm, max: 3.05 mm, src: 'p36 "DDC0005A, lead-tip span "3.05 / 2.55""' }
+  overall_height: { min: 0.7 mm, max: 1.1 mm, src: 'p36 "DDC0005A side view, height "1.1 / 0.7""' }
+  standoff:       { min: 0 mm, max: 0.1 mm, src: 'p36 "DDC0005A side view, "0.1 / 0.0 TYP""' }
+  lead_width:     { min: 0.3 mm, max: 0.5 mm, src: 'p36 "DDC0005A, "5X 0.5 / 0.3""' }

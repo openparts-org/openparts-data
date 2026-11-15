@@ -8,34 +8,24 @@
 # columns, so microchip/25LC256 applies; the exposed pad "can be
 # connected to VSS or left floating" (note 1) -- no EP pin. Package:
 # drawing C04-122 Rev C (pages 16-17). lifecycle: unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/25LC256-I-MF
-
 manufacturer: microchip
-mpn: "25LC256-I/MF"
-
+mpn: 25LC256-I/MF
 device: microchip/25LC256
-package: manufacturers/microchip/DFN8-6x5-P1.27-MF-C04-122C
+
+package:
+  value: manufacturers/microchip/DFN8-6x5-P1.27-MF-C04-122C
+  src:
+    - p32 "Product Identification System, Package "MF = Plastic Micro Lead Frame (6 x 5 mm body), 8-lead (DFN-S)""
+    - p17 "drawing C04-122 Rev C sheet 2 "8-Lead Plastic Dual Flat, No Lead Package (MF) - 6x5 mm Body [DFN-S] Saw Singulated""
+
+sources: [microchip/DS20001822@revJ]
+source: microchip/DS20001822@revJ
 
 existence:
   status: probable
+  src: 'p32 "Product Identification System (Non-Automotive) legend: Device "25LC256", option blank, Temperature "I", Package "MF" (assembled, not printed)"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS20001822@revJ
-
-provenance:
-  "/existence":
-    - source: microchip/DS20001822@revJ
-      page: 32
-      locator: "Product Identification System (Non-Automotive) legend: Device \"25LC256\", option blank, Temperature \"I\", Package \"MF\" (assembled, not printed)"
-  "/package":
-    - source: microchip/DS20001822@revJ
-      page: 32
-      locator: "Product Identification System, Package \"MF = Plastic Micro Lead Frame (6 x 5 mm body), 8-lead (DFN-S)\""
-    - source: microchip/DS20001822@revJ
-      page: 17
-      locator: "drawing C04-122 Rev C sheet 2 \"8-Lead Plastic Dual Flat, No Lead Package (MF) - 6x5 mm Body [DFN-S] Saw Singulated\""
+lifecycle: { status: unknown }

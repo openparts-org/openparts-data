@@ -3,54 +3,30 @@
 # this OPN, so lifecycle is unknown.
 # Package: page-4 CASE 403AC (98AON97675F), standards/DO214AB-
 # ONSEMI-403AC (read from this page).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/MBRS320T3G
-
 manufacturer: onsemi
 mpn: MBRS320T3G
-
 device: onsemi/MBRS340-SERIES
-package: standards/DO214AB-ONSEMI-403AC
+package: { value: standards/DO214AB-ONSEMI-403AC, src: p4 "MECHANICAL CASE OUTLINE -- see header" }
+sources: [onsemi/MBRS340T3-D]
+source: onsemi/MBRS340T3-D
 
 existence:
   status: verified
+  src: 'p1 "ORDERING INFORMATION: "MBRS320T3G | SMC (Pb-Free) | 2,500 / Tape & Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/MBRS340T3-D
+lifecycle: { status: unknown }
 
 parameters:
-  reverse_voltage:
-    max: 20
-    unit: V
-  forward_current:
-    max: 3.0
-    unit: A
   forward_voltage:
-    max: 0.5
-    unit: V
-
-provenance:
-  "/parameters/reverse_voltage":
-    - source: onsemi/MBRS340T3-D
-      page: 2
-      locator: "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM, MBRS320T3G column: 20 V"
-  "/parameters/forward_current":
-    - source: onsemi/MBRS340T3-D
-      page: 2
-      locator: "MAXIMUM RATINGS, Average Rectified Forward Current IF(AV): 3.0 A @ TL = 110°C (also listed: 4.0 A @ TL = 105°C)"
-  "/parameters/forward_voltage":
-    - source: onsemi/MBRS340T3-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF (iF = 3.0 A, TJ = 25°C): 0.50 V"
-  "/existence":
-    - source: onsemi/MBRS340T3-D
-      page: 1
-      locator: "ORDERING INFORMATION: \"MBRS320T3G | SMC (Pb-Free) | 2,500 / Tape & Reel\""
-  "/package":
-    - source: onsemi/MBRS340T3-D
-      page: 4
-      locator: "MECHANICAL CASE OUTLINE -- see header"
+    max: 0.5 V
+    at: { IF: 3 A, TJ: 25 °C }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF: 0.50 V"'
+  reverse_voltage:
+    max: 20 V
+    src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM, MBRS320T3G column: 20 V"'
+  forward_current:
+    max: 3 A
+    src: 'p2 "MAXIMUM RATINGS, Average Rectified Forward Current IF(AV): 3.0 A @ TL = 110°C (also listed: 4.0 A @ TL = 105°C)"'

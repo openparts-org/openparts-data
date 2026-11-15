@@ -1,15 +1,12 @@
 # Official TI datasheet for NA555/NE555/SA555/SE555. Revision read from
 # the page header "SLFS022K - SEPTEMBER 1973 - REVISED MARCH 2026".
 # Text read with pdftotext -layout.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: ti/SLFS022K
-
+url: https://www.ti.com/lit/ds/symlink/ne555.pdf
+date: 2026-03
+revision: K
 publisher: ti
 document_id: SLFS022K
 document_type: datasheet
-
-revision: "K"
-date: "2026-03"
-
-url: "https://www.ti.com/lit/ds/symlink/ne555.pdf"

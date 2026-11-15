@@ -3,44 +3,29 @@
 # "REF3033AIDBZR | Active | Production | SOT-23 (DBZ) | 3 | 3000 | LARGE T&R | ... | -40 to 125 | R30D".
 # lifecycle "active" is that table's Status column.
 # Package: SOT-23 (DBZ) | 3, outline DBZ0003A (4214838/F) on page 34.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/REF3033AIDBZR
-
 manufacturer: ti
-mpn: "REF3033AIDBZR"
-
+mpn: REF3033AIDBZR
 device: ti/REF3033
-package: manufacturers/ti/DBZ0003A
+
+package:
+  value: manufacturers/ti/DBZ0003A
+  src: p28 "Package Option Addendum, row "REF3033AIDBZR", "SOT-23 (DBZ) | 3"; outline DBZ0003A (4214838/F) on page 34"
+
+sources: [ti/SBVS032K]
+source: ti/SBVS032K
 
 existence:
   status: verified
+  src: p28 "Package Option Addendum, Packaging Information table, row "REF3033AIDBZR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SBVS032K
+  src: p28 "Package Option Addendum, row "REF3033AIDBZR", Status "Active""
 
 parameters:
   output_voltage:
-    nominal: 3.3
-    unit: V
-
-provenance:
-  "/parameters/output_voltage":
-    - source: ti/SBVS032K
-      page: 2
-      locator: "4 Device Comparison Table, REF30 column REF3033AIDBZR: Voltage 3.3V"
-  "/existence":
-    - source: ti/SBVS032K
-      page: 28
-      locator: "Package Option Addendum, Packaging Information table, row \"REF3033AIDBZR\""
-  "/lifecycle":
-    - source: ti/SBVS032K
-      page: 28
-      locator: "Package Option Addendum, row \"REF3033AIDBZR\", Status \"Active\""
-  "/package":
-    - source: ti/SBVS032K
-      page: 28
-      locator: "Package Option Addendum, row \"REF3033AIDBZR\", \"SOT-23 (DBZ) | 3\"; outline DBZ0003A (4214838/F) on page 34"
+    typ: 3.3 V
+    src: 'p2 "4 Device Comparison Table, REF30 column REF3033AIDBZR: Voltage 3.3V"'

@@ -1,61 +1,37 @@
 # P-channel MOSFET, SOT-23, Pb-free, tape & reel. Confirmed in the
 # datasheet's ordering table. Reuses the existing SOT-23 2.90x1.30
 # package (case drawing 98ASB42226B matches it exactly).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/BSS84LT1G
-
 manufacturer: onsemi
 mpn: BSS84LT1G
-
 device: onsemi/BSS84
 package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/BSS84-D]
+source: onsemi/BSS84-D
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - onsemi/BSS84-D
+existence: { status: verified }
+lifecycle: { status: active }
 
 parameters:
   polarity:
     value: p_channel
+    src: 'p1 "Page-1 title: "MOSFET - Power, Single P-Channel, SOT-23""'
   drain_source_voltage:
-    nominal: -50
-    unit: V
+    typ: -50 V
+    src: 'p1 "MAXIMUM RATINGS, Drain-to-Source Voltage VDSS: -50 Vdc"'
   drain_current:
-    nominal: -130
-    unit: mA
+    typ: -130 mA
+    at: { TA: 25 °C }
+    src: 'p1 "MAXIMUM RATINGS, Drain Current - Continuous ID: -130 mA"'
   rds_on:
-    nominal: 4.7
-    max: 10
-    unit: Ω
+    typ: 4.7 Ω
+    max: 10 Ω
+    at: { VGS: -5 V, ID: -100 mA }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Static Drain-to-Source On-Resistance RDS(on): Typ 4.7, Max 10 Ω"'
   gate_threshold_voltage:
-    min: -2.0
-    max: -0.9
-    unit: V
-
-provenance:
-  "/parameters/polarity":
-    - source: onsemi/BSS84-D
-      page: 1
-      locator: "Page-1 title: \"MOSFET - Power, Single P-Channel, SOT-23\""
-  "/parameters/drain_source_voltage":
-    - source: onsemi/BSS84-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Drain-to-Source Voltage VDSS: -50 Vdc"
-  "/parameters/drain_current":
-    - source: onsemi/BSS84-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Drain Current - Continuous @ TA = 25°C ID: -130 mA"
-  "/parameters/rds_on":
-    - source: onsemi/BSS84-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Static Drain-to-Source On-Resistance RDS(on) (VGS = -5.0 Vdc, ID = -100 mAdc): Typ 4.7, Max 10 Ω"
-  "/parameters/gate_threshold_voltage":
-    - source: onsemi/BSS84-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Gate-Source Threshold Voltage VGS(th) (VDS = VGS, ID = -250 µA): Min -0.9, Max -2.0 Vdc"
+    min: -2 V
+    max: -0.9 V
+    at: { ID: -250 µA }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Gate-Source Threshold Voltage VGS(th) (VDS = VGS): Min -0.9, Max -2.0 Vdc"'

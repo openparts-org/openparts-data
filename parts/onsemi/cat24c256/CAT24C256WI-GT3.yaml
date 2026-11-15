@@ -4,37 +4,25 @@
 # SUFFIX CASE 751BD" (page 1); outline on page 11 ->
 # manufacturers/onsemi/SOIC8-3.90x4.90-P1.27-751BD. lifecycle: no
 # production-status statement in the datasheet; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/CAT24C256WI-GT3
-
 manufacturer: onsemi
-mpn: "CAT24C256WI-GT3"
-
+mpn: CAT24C256WI-GT3
 device: onsemi/CAT24C256
-package: manufacturers/onsemi/SOIC8-3.90x4.90-P1.27-751BD
+
+package:
+  value: manufacturers/onsemi/SOIC8-3.90x4.90-P1.27-751BD
+  src:
+    - p9 ""ORDERING INFORMATION", row "CAT24C256WI-GT3", Package Type "SOIC-8, JEDEC""
+    - p1 ""SOIC-8 W SUFFIX CASE 751BD""
+    - p11 "CASE 751BD ISSUE O outline"
+
+sources: [onsemi/CAT24C256-D]
+source: onsemi/CAT24C256-D
 
 existence:
   status: verified
+  src: p9 ""ORDERING INFORMATION" table, row "CAT24C256WI-GT3 | 24256E | SOIC-8, JEDEC | I = Industrial (-40C to +85C) | NiPdAu | Tape & Reel, 3,000 Units / Reel""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/CAT24C256-D
-
-provenance:
-  "/existence":
-    - source: onsemi/CAT24C256-D
-      page: 9
-      locator: "\"ORDERING INFORMATION\" table, row \"CAT24C256WI-GT3 | 24256E | SOIC-8, JEDEC | I = Industrial (-40C to +85C) | NiPdAu | Tape & Reel, 3,000 Units / Reel\""
-  "/package":
-    - source: onsemi/CAT24C256-D
-      page: 9
-      locator: "\"ORDERING INFORMATION\", row \"CAT24C256WI-GT3\", Package Type \"SOIC-8, JEDEC\""
-    - source: onsemi/CAT24C256-D
-      page: 1
-      locator: "\"SOIC-8 W SUFFIX CASE 751BD\""
-    - source: onsemi/CAT24C256-D
-      page: 11
-      locator: "CASE 751BD ISSUE O outline"
+lifecycle: { status: unknown }

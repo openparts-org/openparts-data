@@ -6,43 +6,29 @@
 # passive, GND ground, VOUT/VIN power; NC -> nc.
 # No "EP" pin: the figure labels the centre pad "7" but the datasheet
 # never says what it connects to (the package still gets the pad).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: richtek/RT9193-WDFN6
-
 manufacturer: richtek
 category: linear_regulator
 family: RT9193
+source: richtek/DS9193-18
+
+parameters:
+  input_voltage_max:
+    max: 5.5 V
+    src: 'p3 "Recommended Operating Conditions, Supply Input Voltage: 2.5V to 5.5V"'
+  output_current:
+    typ: 300 mA
+    src: p1 "Title "300mA, Ultra-Low Noise, Ultra-Fast CMOS LDO Regulator""
 
 pins:
+  src:
+    - p2 ""Pin Configuration" (TOP VIEW), WDFN-6L 2x2"
+    - p2 ""Functional Pin Description" table (names and functions)"
   "1": { name: EN, type: input }
   "2": { name: GND, type: ground }
   "3": { name: VIN, type: power }
   "4": { name: VOUT, type: power }
   "5": { name: NC, type: nc }
   "6": { name: BP, type: passive }
-
-parameters:
-  input_voltage_max:
-    max: 5.5
-    unit: V
-  output_current:
-    nominal: 300
-    unit: mA
-
-provenance:
-  "/parameters/input_voltage_max":
-    - source: richtek/DS9193-18
-      page: 3
-      locator: "Recommended Operating Conditions, Supply Input Voltage: 2.5V to 5.5V"
-  "/parameters/output_current":
-    - source: richtek/DS9193-18
-      page: 1
-      locator: "Title \"300mA, Ultra-Low Noise, Ultra-Fast CMOS LDO Regulator\""
-  "/pins":
-    - source: richtek/DS9193-18
-      page: 2
-      locator: "\"Pin Configuration\" (TOP VIEW), WDFN-6L 2x2"
-    - source: richtek/DS9193-18
-      page: 2
-      locator: "\"Functional Pin Description\" table (names and functions)"

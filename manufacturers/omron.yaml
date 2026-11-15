@@ -1,11 +1,10 @@
 # OMRON Corporation -- the name in the copyright line of the B3FS
 # datasheet cited under sources/omron/ ("© OMRON Corporation 2007-2019
 # All Rights Reserved.", omron/A113-E1-06 page 4).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: manufacturer
 id: omron
 
-name: OMRON Corporation
+website: { url: https://components.omron.com }
 
-website:
-  url: "https://components.omron.com"
+name: OMRON Corporation

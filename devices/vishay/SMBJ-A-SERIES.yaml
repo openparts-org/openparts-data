@@ -6,20 +6,15 @@
 # No pin numbers are printed for this part, so 1 = Cathode and 2 = Anode
 # follow the dataset's two-terminal diode convention (pin 1 at the
 # banded end).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: vishay/SMBJ-A-SERIES
-
 manufacturer: vishay
 category: diode
 family: SMBJ
+source: vishay/88392
 
 pins:
+  src: 'p1 "MECHANICAL DATA: "Polarity: for unidirectional types the band denotes cathode end""'
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
-
-provenance:
-  "/pins":
-    - source: vishay/88392
-      page: 1
-      locator: "MECHANICAL DATA: \"Polarity: for unidirectional types the band denotes cathode end\""

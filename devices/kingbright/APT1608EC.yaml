@@ -3,50 +3,33 @@
 # pin 1's lead) and the mechanical drawing's own "Polarity mark"
 # leader-line label pointing at the pin-1-side internal marking -- both
 # agree: pin 1 = cathode, pin 2 = anode.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: kingbright/APT1608EC
-
 manufacturer: kingbright
 category: led
 family: APT1608EC
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: kingbright/DSAD0924
 
 parameters:
+  forward_voltage:
+    typ: 2 V
+    max: 2.5 V
+    at: { IF: 20 mA, TA: 25 °C }
+    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, High Efficiency Red: Typ. 2 V, Max. 2.5 V"'
+  forward_current:
+    max: 30 mA
+    at: { TA: 25 °C }
+    src: 'p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF: 30 mA"'
   color:
     value: red
+    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: High Efficiency Red"'
   wavelength:
-    nominal: 617
-    unit: nm
-  forward_voltage:
-    nominal: 2
-    max: 2.5
-    unit: V
-  forward_current:
-    max: 30
-    unit: mA
+    typ: 617 nm
+    at: { IF: 20 mA, TA: 25 °C }
+    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, High Efficiency Red: Typ. 617 nm"'
 
-provenance:
-  "/parameters/color":
-    - source: kingbright/DSAD0924
-      page: 2
-      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: High Efficiency Red"
-  "/parameters/wavelength":
-    - source: kingbright/DSAD0924
-      page: 2
-      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Dominant Wavelength IF = 20mA λdom, High Efficiency Red: Typ. 617 nm"
-  "/parameters/forward_voltage":
-    - source: kingbright/DSAD0924
-      page: 2
-      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Forward Voltage IF = 20mA VF, High Efficiency Red: Typ. 2 V, Max. 2.5 V"
-  "/parameters/forward_current":
-    - source: kingbright/DSAD0924
-      page: 2
-      locator: "ABSOLUTE MAXIMUM RATINGS at TA=25°C, DC Forward Current IF: 30 mA"
-  "/pins":
-    - source: kingbright/DSAD0924
-      page: 1
-      locator: "Schematic symbol (cathode bar at pin 1) and mechanical drawing's \"Polarity mark\" label"
+pins:
+  src: p1 "Schematic symbol (cathode bar at pin 1) and mechanical drawing's "Polarity mark" label"
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

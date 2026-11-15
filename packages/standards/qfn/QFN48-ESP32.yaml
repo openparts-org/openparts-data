@@ -4,98 +4,50 @@
 # Lead dimensions (overall_*, standoff, lead_*) added as a candidate change for
 # human review (Agent Ingestion Specification); values copied as printed --
 # where the table has no nominal only min/max are recorded.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/QFN48-ESP32
-
 family: qfn
-lead_count: 48
+lead_count: { value: 48, src: '"Table 1-1 ESP32 Series Comparison"' }
+source: espressif/esp32_datasheet_en@rev5.3
 
-pitch:
-  nominal: 0.35
-  unit: mm
+pitch: { typ: 0.35 mm, src: '"Section 6 Packaging, Figure 6-2 dimension table, dimension e"' }
+geometry: { type: parametric, generator: qfn }
 
 dimensions:
   body_width:
-    nominal: 5.0
-    min: 4.95
-    max: 5.05
-    unit: mm
+    min: 4.95 mm
+    typ: 5 mm
+    max: 5.05 mm
+    src: '"Figure 6-2 dimension table, dimension D"'
   body_length:
-    nominal: 5.0
-    min: 4.95
-    max: 5.05
-    unit: mm
+    min: 4.95 mm
+    typ: 5 mm
+    max: 5.05 mm
+    src: '"Figure 6-2 dimension table, dimension E"'
   body_height:
-    nominal: 0.85
-    min: 0.8
-    max: 0.9
-    unit: mm
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 0.9 mm
+    src: '"Figure 6-2 dimension table, dimension A"'
   exposed_pad:
-    width:
-      nominal: 3.7
-      min: 3.65
-      max: 3.75
-      unit: mm
-    length:
-      nominal: 3.7
-      min: 3.65
-      max: 3.75
-      unit: mm
-  lead_width:
-    nominal: 0.18
-    min: 0.13
-    max: 0.23
-    unit: mm
-  lead_length:
-    nominal: 0.35
-    min: 0.3
-    max: 0.4
-    unit: mm
-  lead_thickness:
-    nominal: 0.203
-    unit: mm
+    src:    '"Figure 6-2 dimension table, dimensions D2/E2"'
+    width:  { min: 3.65 mm, typ: 3.7 mm, max: 3.75 mm }
+    length: { min: 3.65 mm, typ: 3.7 mm, max: 3.75 mm }
   standoff:
-    min: 0.0
-    max: 0.05
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: qfn
-
-provenance:
-  "/lead_count":
-    - source: espressif/esp32_datasheet_en@rev5.3
-      locator: "Table 1-1 ESP32 Series Comparison"
-  "/pitch":
-    - source: espressif/esp32_datasheet_en@rev5.3
-      locator: "Section 6 Packaging, Figure 6-2 dimension table, dimension e"
-  "/dimensions/body_width":
-    - source: espressif/esp32_datasheet_en@rev5.3
-      locator: "Figure 6-2 dimension table, dimension D"
-  "/dimensions/body_length":
-    - source: espressif/esp32_datasheet_en@rev5.3
-      locator: "Figure 6-2 dimension table, dimension E"
-  "/dimensions/body_height":
-    - source: espressif/esp32_datasheet_en@rev5.3
-      locator: "Figure 6-2 dimension table, dimension A"
-  "/dimensions/exposed_pad":
-    - source: espressif/esp32_datasheet_en@rev5.3
-      locator: "Figure 6-2 dimension table, dimensions D2/E2"
-  "/dimensions/lead_width":
-    - source: espressif/esp32_datasheet_en@rev5.3
-      page: 59
-      locator: "Figure 6-2 QFN48 (5x5 mm) \"Dimensional Ref.\" table, symbol \"b\""
-  "/dimensions/lead_length":
-    - source: espressif/esp32_datasheet_en@rev5.3
-      page: 59
-      locator: "Figure 6-2 QFN48 (5x5 mm) \"Dimensional Ref.\" table, symbol \"L\""
-  "/dimensions/lead_thickness":
-    - source: espressif/esp32_datasheet_en@rev5.3
-      page: 59
-      locator: "Figure 6-2 QFN48 (5x5 mm) \"Dimensional Ref.\" table, symbol \"A3\" (0.203 Ref.)"
-  "/dimensions/standoff":
-    - source: espressif/esp32_datasheet_en@rev5.3
-      page: 59
-      locator: "Figure 6-2 QFN48 (5x5 mm) \"Dimensional Ref.\" table, symbol \"A1\" (no nom)"
+    min: 0 mm
+    max: 0.05 mm
+    src: p59 "Figure 6-2 QFN48 (5x5 mm) "Dimensional Ref." table, symbol "A1" (no nom)"
+  lead_width:
+    min: 0.13 mm
+    typ: 0.18 mm
+    max: 0.23 mm
+    src: p59 "Figure 6-2 QFN48 (5x5 mm) "Dimensional Ref." table, symbol "b""
+  lead_length:
+    min: 0.3 mm
+    typ: 0.35 mm
+    max: 0.4 mm
+    src: p59 "Figure 6-2 QFN48 (5x5 mm) "Dimensional Ref." table, symbol "L""
+  lead_thickness:
+    typ: 0.203 mm
+    src: p59 "Figure 6-2 QFN48 (5x5 mm) "Dimensional Ref." table, symbol "A3" (0.203 Ref.)"

@@ -2,35 +2,24 @@
 # (page 29): "TPS563200DDCR Active Production SOT-23-THIN (DDC) | 6 3000 | LARGE T&R ... -40 to 125". Lifecycle "Active" is read from the
 # same row's Status column (TI's own addendum inside the datasheet).
 # Package: SOT-23-THIN (DDC), outline DDC0006A on page 33 -> manufacturers/ti/DDC0006A (page 1 says DRL; see the source file note).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/TPS563200DDCR
-
 manufacturer: ti
 mpn: TPS563200DDCR
-
 device: ti/TPS563200
-package: manufacturers/ti/DDC0006A
+
+package:
+  value: manufacturers/ti/DDC0006A
+  src: p29 "PACKAGE OPTION ADDENDUM, row TPS563200DDCR, Package column"
+
+sources: [ti/SLVSCB0E]
+source: ti/SLVSCB0E
 
 existence:
   status: verified
+  src: p29 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TPS563200DDCR"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLVSCB0E
-
-provenance:
-  "/existence":
-    - source: ti/SLVSCB0E
-      page: 29
-      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row TPS563200DDCR"
-  "/lifecycle":
-    - source: ti/SLVSCB0E
-      page: 29
-      locator: "PACKAGE OPTION ADDENDUM, row TPS563200DDCR, Status column \"Active\""
-  "/package":
-    - source: ti/SLVSCB0E
-      page: 29
-      locator: "PACKAGE OPTION ADDENDUM, row TPS563200DDCR, Package column"
+  src: p29 "PACKAGE OPTION ADDENDUM, row TPS563200DDCR, Status column "Active""

@@ -6,47 +6,29 @@
 # otherwise noted", page 1, Note 2) -- no separate min/max table exists.
 # min/max below are this dataset's own arithmetic (nominal +/- 0.1mm),
 # not Kingbright-printed values; disclosed as derived, not confirmed.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/CHIP0603-APT1608EC
-
 family: chip
 lead_count: 2
+source: kingbright/DSAD0924
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 1.6
-    min: 1.5
-    max: 1.7
-    unit: mm
   body_width:
-    nominal: 0.8
-    min: 0.7
-    max: 0.9
-    unit: mm
+    min: 0.7 mm
+    typ: 0.8 mm
+    max: 0.9 mm
+    src: p1 "Top-view mechanical drawing, "0.8(0.031)" dimension; min/max derived from the blanket +/-0.1mm tolerance note (Note 2)"
+  body_length:
+    min: 1.5 mm
+    typ: 1.6 mm
+    max: 1.7 mm
+    src: p1 "Top-view mechanical drawing, "1.6(0.063)" dimension; min/max derived from the blanket +/-0.1mm tolerance note (Note 2), not separately stated"
   body_height:
-    nominal: 0.75
-    min: 0.65
-    max: 0.85
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: kingbright/DSAD0924
-      page: 1
-      locator: "Top-view mechanical drawing, \"1.6(0.063)\" dimension; min/max derived from the blanket +/-0.1mm tolerance note (Note 2), not separately stated"
-  "/dimensions/body_width":
-    - source: kingbright/DSAD0924
-      page: 1
-      locator: "Top-view mechanical drawing, \"0.8(0.031)\" dimension; min/max derived from the blanket +/-0.1mm tolerance note (Note 2)"
-  "/dimensions/body_height":
-    - source: kingbright/DSAD0924
-      page: 1
-      locator: "Side-view mechanical drawing, \"0.75(0.029)\" dimension; min/max derived from the blanket +/-0.1mm tolerance note (Note 2)"
+    min: 0.65 mm
+    typ: 0.75 mm
+    max: 0.85 mm
+    src: p1 "Side-view mechanical drawing, "0.75(0.029)" dimension; min/max derived from the blanket +/-0.1mm tolerance note (Note 2)"

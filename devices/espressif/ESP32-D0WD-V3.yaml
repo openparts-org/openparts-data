@@ -1,16 +1,16 @@
 # Pinout from ESP32 Series Datasheet Table 2-1 "Pin Overview" (p.14-16).
 # Pins 3/4 (VDD3P3) and 43/46 (VDDA) are legitimately duplicate-named
 # power pins per the datasheet itself, not a transcription error.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: espressif/ESP32-D0WD-V3
-
 manufacturer: espressif
 category: microcontroller
 family: ESP32
+source: espressif/esp32_datasheet_en@rev5.3
 
 pins:
-  "1":  { name: VDDA, type: power }
+  "1":  { name: { value: VDDA, src: '"Table 2-1 Pin Overview"' }, type: power }
   "2":  { name: LNA_IN, type: analog }
   "3":  { name: VDD3P3, type: power }
   "4":  { name: VDD3P3, type: power }
@@ -21,16 +21,28 @@ pins:
   "9":  { name: CHIP_PU, type: reset }
   "10": { name: VDET_1, type: analog, alternate_functions: [GPIO34, ADC1_CH6, RTC_GPIO4] }
   "11": { name: VDET_2, type: analog, alternate_functions: [GPIO35, ADC1_CH7, RTC_GPIO5] }
-  "12": { name: "32K_XP", type: clock, alternate_functions: [GPIO32, ADC1_CH4, RTC_GPIO9, TOUCH9] }
-  "13": { name: "32K_XN", type: clock, alternate_functions: [GPIO33, ADC1_CH5, RTC_GPIO8, TOUCH8] }
+  "12": { name: 32K_XP, type: clock, alternate_functions: [GPIO32, ADC1_CH4, RTC_GPIO9, TOUCH9] }
+  "13": { name: 32K_XN, type: clock, alternate_functions: [GPIO33, ADC1_CH5, RTC_GPIO8, TOUCH8] }
   "14": { name: GPIO25, type: io, alternate_functions: [ADC2_CH8, RTC_GPIO6, DAC_1, EMAC_RXD0] }
   "15": { name: GPIO26, type: io, alternate_functions: [ADC2_CH9, RTC_GPIO7, DAC_2, EMAC_RXD1] }
   "16": { name: GPIO27, type: io, alternate_functions: [ADC2_CH7, RTC_GPIO17, TOUCH7, EMAC_RX_DV] }
-  "17": { name: MTMS, type: io, alternate_functions: [GPIO14, ADC2_CH6, RTC_GPIO16, TOUCH6, HS2_CLK, SD_CLK] }
-  "18": { name: MTDI, type: io, alternate_functions: [GPIO12, ADC2_CH5, RTC_GPIO15, TOUCH5, HS2_DATA2, SD_DATA2] }
+  "17":
+    name: MTMS
+    type: io
+    alternate_functions: [GPIO14, ADC2_CH6, RTC_GPIO16, TOUCH6, HS2_CLK, SD_CLK]
+  "18":
+    name: MTDI
+    type: io
+    alternate_functions: [GPIO12, ADC2_CH5, RTC_GPIO15, TOUCH5, HS2_DATA2, SD_DATA2]
   "19": { name: VDD3P3_RTC, type: power }
-  "20": { name: MTCK, type: io, alternate_functions: [GPIO13, ADC2_CH4, RTC_GPIO14, TOUCH4, SD_DATA3] }
-  "21": { name: MTDO, type: io, alternate_functions: [GPIO15, ADC2_CH3, RTC_GPIO13, TOUCH3, SD_CMD] }
+  "20":
+    name: MTCK
+    type: io
+    alternate_functions: [GPIO13, ADC2_CH4, RTC_GPIO14, TOUCH4, SD_DATA3]
+  "21":
+    name: MTDO
+    type: io
+    alternate_functions: [GPIO15, ADC2_CH3, RTC_GPIO13, TOUCH3, SD_CMD]
   "22": { name: GPIO2, type: io, alternate_functions: [ADC2_CH2, RTC_GPIO12, TOUCH2, SD_DATA0] }
   "23": { name: GPIO0, type: io, alternate_functions: [ADC2_CH1, RTC_GPIO11, TOUCH1, CLK_OUT1] }
   "24": { name: GPIO4, type: io, alternate_functions: [ADC2_CH0, RTC_GPIO10, TOUCH0, SD_DATA1] }
@@ -58,25 +70,13 @@ pins:
   "46": { name: VDDA, type: power }
   "47": { name: CAP2, type: passive }
   "48": { name: CAP1, type: passive }
-  "EP": { name: GND, type: ground }
+  EP:   { name: { value: GND, src: '"Table 2-1, pin 49 (exposed pad)"' }, type: ground }
 
 # v3.0/v3.1 chip revisions confirmed to exist (Table 1-1 + footnote 4);
 # the datasheet states the only documented difference is ~10KB more
 # available SRAM on v3.1, and defers pin-level erratum detail to a
 # separate Errata document not fetched -- no pin overrides recorded.
 revisions:
-  rev-v3.0:
-    manufacturer_revision: "V3.0"
-  rev-v3.1:
-    manufacturer_revision: "V3.1"
-
-provenance:
-  "/pins/1/name":
-    - source: espressif/esp32_datasheet_en@rev5.3
-      locator: "Table 2-1 Pin Overview"
-  "/pins/EP/name":
-    - source: espressif/esp32_datasheet_en@rev5.3
-      locator: "Table 2-1, pin 49 (exposed pad)"
-  "/revisions":
-    - source: espressif/esp32_datasheet_en@rev5.3
-      locator: "Table 1-1 footnote 4"
+  src:      '"Table 1-1 footnote 4"'
+  rev-v3.0: { manufacturer_revision: V3.0, overrides: { pins: {} } }
+  rev-v3.1: { manufacturer_revision: V3.1, overrides: { pins: {} } }

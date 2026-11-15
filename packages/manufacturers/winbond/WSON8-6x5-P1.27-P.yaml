@@ -8,105 +8,58 @@
 # view: terminal thickness; reference value). Coplanarity y not
 # modelled. The note says the centre pad "is not connected to any
 # internal electrical signals" -- the Device gets no EP pin.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/winbond/WSON8-6x5-P1.27-P
-
 family: son
-lead_count: 8
+
+lead_count:
+  value: 8
+  src: p70 "section 10.3 "8-Pad WSON 6x5-mm (Package Code P)" table, 8 pads (title and drawing) (PDF page 70, printed 69)"
+
+source: winbond/W25Q128JV@revF
 
 pitch:
-  nominal: 1.27
-  unit: mm
+  typ: 1.27 mm
+  src: p70 "section 10.3 "8-Pad WSON 6x5-mm (Package Code P)" table, "e 1.27 BSC" (PDF page 70, printed 69)"
+
+geometry: { type: parametric, generator: son }
 
 dimensions:
   body_width:
-    nominal: 6.00
-    min: 5.90
-    max: 6.10
-    unit: mm
+    min: 5.9 mm
+    typ: 6 mm
+    max: 6.1 mm
+    src: p70 "section 10.3 "8-Pad WSON 6x5-mm (Package Code P)" table, "D 5.90 / 6.00 / 6.10" (horizontal, across the terminal rows) (PDF page 70, printed 69)"
   body_length:
-    nominal: 5.00
-    min: 4.90
-    max: 5.10
-    unit: mm
+    min: 4.9 mm
+    typ: 5 mm
+    max: 5.1 mm
+    src: p70 "section 10.3 "8-Pad WSON 6x5-mm (Package Code P)" table, "E 4.90 / 5.00 / 5.10" (along the terminal rows) (PDF page 70, printed 69)"
   body_height:
-    nominal: 0.75
-    min: 0.70
-    max: 0.80
-    unit: mm
-  standoff:
-    nominal: 0.02
-    min: 0.00
-    max: 0.05
-    unit: mm
-  lead_width:
-    nominal: 0.40
-    min: 0.35
-    max: 0.48
-    unit: mm
-  lead_length:
-    nominal: 0.60
-    min: 0.55
-    max: 0.65
-    unit: mm
-  lead_thickness:
-    nominal: 0.20
-    unit: mm
+    min: 0.7 mm
+    typ: 0.75 mm
+    max: 0.8 mm
+    src: p70 "section 10.3 "8-Pad WSON 6x5-mm (Package Code P)" table, "A 0.70 / 0.75 / 0.80" (PDF page 70, printed 69)"
   exposed_pad:
-    width:
-      nominal: 3.40
-      min: 3.35
-      max: 3.45
-      unit: mm
-    length:
-      nominal: 4.30
-      min: 4.25
-      max: 4.35
-      unit: mm
-
-geometry:
-  type: parametric
-  generator: son
-
-provenance:
-  "/lead_count":
-    - source: winbond/W25Q128JV@revF
-      page: 70
-      locator: "section 10.3 \"8-Pad WSON 6x5-mm (Package Code P)\" table, 8 pads (title and drawing) (PDF page 70, printed 69)"
-  "/pitch":
-    - source: winbond/W25Q128JV@revF
-      page: 70
-      locator: "section 10.3 \"8-Pad WSON 6x5-mm (Package Code P)\" table, \"e 1.27 BSC\" (PDF page 70, printed 69)"
-  "/dimensions/body_width":
-    - source: winbond/W25Q128JV@revF
-      page: 70
-      locator: "section 10.3 \"8-Pad WSON 6x5-mm (Package Code P)\" table, \"D 5.90 / 6.00 / 6.10\" (horizontal, across the terminal rows) (PDF page 70, printed 69)"
-  "/dimensions/body_length":
-    - source: winbond/W25Q128JV@revF
-      page: 70
-      locator: "section 10.3 \"8-Pad WSON 6x5-mm (Package Code P)\" table, \"E 4.90 / 5.00 / 5.10\" (along the terminal rows) (PDF page 70, printed 69)"
-  "/dimensions/body_height":
-    - source: winbond/W25Q128JV@revF
-      page: 70
-      locator: "section 10.3 \"8-Pad WSON 6x5-mm (Package Code P)\" table, \"A 0.70 / 0.75 / 0.80\" (PDF page 70, printed 69)"
-  "/dimensions/standoff":
-    - source: winbond/W25Q128JV@revF
-      page: 70
-      locator: "section 10.3 \"8-Pad WSON 6x5-mm (Package Code P)\" table, \"A1 0.00 / 0.02 / 0.05\" (PDF page 70, printed 69)"
-  "/dimensions/lead_width":
-    - source: winbond/W25Q128JV@revF
-      page: 70
-      locator: "section 10.3 \"8-Pad WSON 6x5-mm (Package Code P)\" table, \"b 0.35 / 0.40 / 0.48\" (PDF page 70, printed 69)"
-  "/dimensions/lead_length":
-    - source: winbond/W25Q128JV@revF
-      page: 70
-      locator: "section 10.3 \"8-Pad WSON 6x5-mm (Package Code P)\" table, \"L 0.55 / 0.60 / 0.65\" (PDF page 70, printed 69)"
-  "/dimensions/lead_thickness":
-    - source: winbond/W25Q128JV@revF
-      page: 70
-      locator: "section 10.3 \"8-Pad WSON 6x5-mm (Package Code P)\" table, \"C 0.20 REF\" (reference value) (PDF page 70, printed 69)"
-  "/dimensions/exposed_pad":
-    - source: winbond/W25Q128JV@revF
-      page: 70
-      locator: "section 10.3 \"8-Pad WSON 6x5-mm (Package Code P)\" table, \"D2 3.35 / 3.40 / 3.45\" (width, X) and \"E2 4.25 / 4.30 / 4.35\" (length, Y) (PDF page 70, printed 69)"
+    src:    p70 "section 10.3 "8-Pad WSON 6x5-mm (Package Code P)" table, "D2 3.35 / 3.40 / 3.45" (width, X) and "E2 4.25 / 4.30 / 4.35" (length, Y) (PDF page 70, printed 69)"
+    width:  { min: 3.35 mm, typ: 3.4 mm, max: 3.45 mm }
+    length: { min: 4.25 mm, typ: 4.3 mm, max: 4.35 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p70 "section 10.3 "8-Pad WSON 6x5-mm (Package Code P)" table, "A1 0.00 / 0.02 / 0.05" (PDF page 70, printed 69)"
+  lead_width:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.48 mm
+    src: p70 "section 10.3 "8-Pad WSON 6x5-mm (Package Code P)" table, "b 0.35 / 0.40 / 0.48" (PDF page 70, printed 69)"
+  lead_length:
+    min: 0.55 mm
+    typ: 0.6 mm
+    max: 0.65 mm
+    src: p70 "section 10.3 "8-Pad WSON 6x5-mm (Package Code P)" table, "L 0.55 / 0.60 / 0.65" (PDF page 70, printed 69)"
+  lead_thickness:
+    typ: 0.2 mm
+    src: p70 "section 10.3 "8-Pad WSON 6x5-mm (Package Code P)" table, "C 0.20 REF" (reference value) (PDF page 70, printed 69)"

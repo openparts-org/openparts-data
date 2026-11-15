@@ -3,25 +3,19 @@
 # (D2PAK CASE 418B STYLE 2), matching 98ASB42761B STYLE 2 "PIN 1. GATE
 # 2. DRAIN 3. SOURCE 4. DRAIN". Lead 2 is trimmed at the body (no pad);
 # the tab "4" is the same drain terminal -> connected_to "2", same name.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/NTB5860N
-
 manufacturer: onsemi
 category: transistor
 family: NTB5860N
+source: onsemi/98ASB42761B
 
 pins:
+  src:
+    - 'onsemi/NTB5860N-D p2 "MARKING DIAGRAMS & PIN ASSIGNMENTS, D2PAK: "1 Gate", "2 Drain", "3 Source", "4 Drain"; "D2PAK CASE 418B STYLE 2""'
+    - 'p1 "STYLE 2: "PIN 1. GATE 2. DRAIN 3. SOURCE 4. DRAIN""'
   "1": { name: Gate, type: passive }
   "2": { name: Drain, type: passive }
   "3": { name: Source, type: passive }
   "4": { name: Drain, type: passive, connected_to: "2" }
-
-provenance:
-  "/pins":
-    - source: onsemi/NTB5860N-D
-      page: 2
-      locator: "MARKING DIAGRAMS & PIN ASSIGNMENTS, D2PAK: \"1 Gate\", \"2 Drain\", \"3 Source\", \"4 Drain\"; \"D2PAK CASE 418B STYLE 2\""
-    - source: onsemi/98ASB42761B
-      page: 1
-      locator: "STYLE 2: \"PIN 1. GATE 2. DRAIN 3. SOURCE 4. DRAIN\""

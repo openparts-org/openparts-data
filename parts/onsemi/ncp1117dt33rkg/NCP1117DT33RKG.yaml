@@ -3,40 +3,27 @@
 # (page 12). Package: "DPAK DT SUFFIX CASE 369C" (page 1); the 369C
 # ISSUE L outline in this PDF (page 18) is identical to the one in
 # MC7800/D page 26 that the package cites. No lifecycle statement.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/NCP1117DT33RKG
-
 manufacturer: onsemi
 mpn: NCP1117DT33RKG
-
 device: onsemi/NCP1117-3.3
-package: manufacturers/onsemi/TO252-6.10x6.54-P2.29-369C-TabPin4
+
+package:
+  value: manufacturers/onsemi/TO252-6.10x6.54-P2.29-369C-TabPin4
+  src: p18 "DPAK-3 CASE 369C ISSUE L outline (98AON10527D); page 1 "DPAK DT SUFFIX CASE 369C""
+
+sources: [onsemi/NCP1117-D]
+source: onsemi/NCP1117-D
 
 existence:
   status: verified
+  src: 'p12 "ORDERING INFORMATION - (NCP1117): "NCP1117DT33RKG | 3.3 | DPAK (Pb-Free) | 2500 / Tape & Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/NCP1117-D
+lifecycle: { status: unknown }
 
 parameters:
   output_voltage:
-    nominal: 3.3
-    unit: V
-
-provenance:
-  "/parameters/output_voltage":
-    - source: onsemi/NCP1117-D
-      page: 12
-      locator: "ORDERING INFORMATION - (NCP1117), Device NCP1117DT33RKG: Nominal Output Voltage 3.3"
-  "/existence":
-    - source: onsemi/NCP1117-D
-      page: 12
-      locator: "ORDERING INFORMATION - (NCP1117): \"NCP1117DT33RKG | 3.3 | DPAK (Pb-Free) | 2500 / Tape & Reel\""
-  "/package":
-    - source: onsemi/NCP1117-D
-      page: 18
-      locator: "DPAK-3 CASE 369C ISSUE L outline (98AON10527D); page 1 \"DPAK DT SUFFIX CASE 369C\""
+    typ: 3.3 V
+    src: 'p12 "ORDERING INFORMATION - (NCP1117), Device NCP1117DT33RKG: Nominal Output Voltage 3.3"'

@@ -4,15 +4,12 @@
 # carries the banner "NOT RECOMMENDED FOR NEW DESIGN / USE DMN2040U".
 # Read with pdftotext -layout and a page-1 render (pdftoppm) for the
 # "Top View" pin drawing.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: diodes/DS31962
-
+url: https://www.diodes.com/assets/Datasheets/DMN2041L.pdf
+date: 2019-01
+revision: 4-3
 publisher: diodes
 document_id: DS31962
 document_type: datasheet
-
-revision: "4-3"
-date: "2019-01"
-
-url: "https://www.diodes.com/assets/Datasheets/DMN2041L.pdf"

@@ -9,34 +9,24 @@
 # with --source sources/microchip/DS40001882L.yaml).
 # lifecycle: no production-status statement in the datasheet and the
 # product page refused curl and WebFetch; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/ATmega4809-AU
-
 manufacturer: microchip
 mpn: ATmega4809-AU
-
 device: microchip/ATmega4809-48
-package: standards/TQFP48-7x7-P0.5
+
+package:
+  value: standards/TQFP48-7x7-P0.5
+  src:
+    - p521 "Table 34-1, "Pin Count 48", "Package Type TQFP""
+    - p540 "Section 35.8 "48-Pin TQFP", drawing C04-300-PT Rev D sheet 2"
+
+sources: [microchip/DS40002173@revC]
+source: microchip/DS40002173@revC
 
 existence:
   status: verified
+  src: p521 "Table 34-1 "Available Product Numbers", row "ATmega4809-AU""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS40002173@revC
-
-provenance:
-  "/existence":
-    - source: microchip/DS40002173@revC
-      page: 521
-      locator: "Table 34-1 \"Available Product Numbers\", row \"ATmega4809-AU\""
-  "/package":
-    - source: microchip/DS40002173@revC
-      page: 521
-      locator: "Table 34-1, \"Pin Count 48\", \"Package Type TQFP\""
-    - source: microchip/DS40002173@revC
-      page: 540
-      locator: "Section 35.8 \"48-Pin TQFP\", drawing C04-300-PT Rev D sheet 2"
+lifecycle: { status: unknown }

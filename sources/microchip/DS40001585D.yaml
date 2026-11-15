@@ -8,15 +8,12 @@
 # dpi. The ordering section is only a "PRODUCT IDENTIFICATION SYSTEM"
 # legend with examples (page 191). The Microchip product page returned 403
 # to curl and WebFetch.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: microchip/DS40001585@revD
-
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/40001585D.pdf
+date: 2015-11
+revision: D
 publisher: microchip
 document_id: DS40001585
 document_type: datasheet
-
-revision: "D"
-date: "2015-11"
-
-url: "https://ww1.microchip.com/downloads/en/DeviceDoc/40001585D.pdf"

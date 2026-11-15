@@ -6,15 +6,12 @@
 # pdftotext -layout (pin-mux and package dimension tables extract as
 # clean text); the QFN48/TQFP48 pinout (page 20) was rendered and read
 # as an image and matched against the text extraction.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: microchip/DS40001882@revL
-
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf
+date: 2026-02
+revision: L
 publisher: microchip
 document_id: DS40001882
 document_type: datasheet
-
-revision: "L"
-date: "2026-02"
-
-url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU32/ProductDocuments/DataSheets/SAM-D21-DA1-Family-Data-Sheet-DS40001882.pdf"

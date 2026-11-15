@@ -4,15 +4,12 @@
 # pdftotext -layout; page 2 (Pin Assignments) and page 13 (SOT223
 # outline, drawn upside down in the side view) rendered with pdftoppm.
 # Page numbers are PDF page indices (= printed "N of 24").
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: diodes/DS36676
-
+url: https://www.diodes.com/assets/Datasheets/AZ1117C.pdf
+date: 2022-09
+revision: 5-2
 publisher: diodes
 document_id: DS36676
 document_type: datasheet
-
-revision: "5-2"
-date: "2022-09"
-
-url: "https://www.diodes.com/assets/Datasheets/AZ1117C.pdf"

@@ -5,38 +5,26 @@
 # Package: VSSOP (DGS), outline DGS0010A (4221984/A) on page 51 ->
 # standards/MSOP10-3.0x3.0-P0.5-TI-DGS. Its pdftotext text matches the outline page the package
 # was read from (ti/SBOS547C page 38) line for line, so the package is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/ADS1115IDGSR
-
 manufacturer: ti
 mpn: ADS1115IDGSR
-
 device: ti/ADS1115
-package: standards/MSOP10-3.0x3.0-P0.5-TI-DGS
+
+package:
+  value: standards/MSOP10-3.0x3.0-P0.5-TI-DGS
+  src:
+    - p42 "PACKAGE OPTION ADDENDUM, row ADS1115IDGSR, Package column "VSSOP (DGS)""
+    - p51 "PACKAGE OUTLINE DGS0010A (4221984/A)"
+
+sources: [ti/SBAS444E]
+source: ti/SBAS444E
 
 existence:
   status: verified
+  src: p42 "PACKAGE OPTION ADDENDUM, Packaging Information table, row ADS1115IDGSR"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SBAS444E
-
-provenance:
-  "/existence":
-    - source: ti/SBAS444E
-      page: 42
-      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row ADS1115IDGSR"
-  "/lifecycle":
-    - source: ti/SBAS444E
-      page: 42
-      locator: "PACKAGE OPTION ADDENDUM, row ADS1115IDGSR, Status column \"Active\""
-  "/package":
-    - source: ti/SBAS444E
-      page: 42
-      locator: "PACKAGE OPTION ADDENDUM, row ADS1115IDGSR, Package column \"VSSOP (DGS)\""
-    - source: ti/SBAS444E
-      page: 51
-      locator: "PACKAGE OUTLINE DGS0010A (4221984/A)"
+  src: p42 "PACKAGE OPTION ADDENDUM, row ADS1115IDGSR, Status column "Active""

@@ -6,15 +6,12 @@
 # as an image. This revision carries outline drawings only for NS, DYY
 # and PW -- not for D (SOIC-16) or N (PDIP-16), so those packages are
 # not taken from it. Page numbers are PDF page indices.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: ti/SLRS027T
-
+url: https://www.ti.com/lit/ds/symlink/uln2003a.pdf
+date: 2025-03
+revision: T
 publisher: ti
 document_id: SLRS027T
 document_type: datasheet
-
-revision: "T"
-date: "2025-03"
-
-url: "https://www.ti.com/lit/ds/symlink/uln2003a.pdf"

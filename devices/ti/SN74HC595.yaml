@@ -13,15 +13,18 @@
 # here are written without it. Subscripts (QA, VCC) are flattened.
 # SRCLK/RCLK (shift/storage register clocks) typed clock, SRCLR (clear)
 # typed reset.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/SN74HC595
-
 manufacturer: ti
 category: logic
 family: SNx4HC595
+source: ti/SCLS041J
 
 pins:
+  src:
+    - p3 "Table 5-1 "Pin Functions", column "SOIC, PDIP, SO, CDIP, SSOP, or TSSOP" (pins 1-15)"
+    - p3 ""D, N, NS, J, DB, or PW Package, 16-Pin SOIC, PDIP, SO, CDIP, SSOP, or TSSOP, Top View" (cross-check)"
   "1":  { name: QB, type: output }
   "2":  { name: QC, type: output }
   "3":  { name: QD, type: output }
@@ -30,24 +33,14 @@ pins:
   "6":  { name: QG, type: output }
   "7":  { name: QH, type: output }
   "8":  { name: GND, type: ground }
-  "9":  { name: "QH'", type: output }
+  "9":  { name: QH', type: output }
   "10": { name: SRCLR, type: reset }
   "11": { name: SRCLK, type: clock }
   "12": { name: RCLK, type: clock }
   "13": { name: OE, type: input }
   "14": { name: SER, type: input }
   "15": { name: QA, type: output }
-  "16": { name: VCC, type: power }
-
-provenance:
-  "/pins":
-    - source: ti/SCLS041J
-      page: 3
-      locator: "Table 5-1 \"Pin Functions\", column \"SOIC, PDIP, SO, CDIP, SSOP, or TSSOP\" (pins 1-15)"
-    - source: ti/SCLS041J
-      page: 3
-      locator: "\"D, N, NS, J, DB, or PW Package, 16-Pin SOIC, PDIP, SO, CDIP, SSOP, or TSSOP, Top View\" (cross-check)"
-  "/pins/16":
-    - source: ti/SCLS041J
-      page: 3
-      locator: "16-pin Top View diagram, pin 16 labelled \"VCC\"; Table 5-1 VCC row shows \"—\" for this package column (table error)"
+  "16":
+    name: VCC
+    type: power
+    src: p3 "16-pin Top View diagram, pin 16 labelled "VCC"; Table 5-1 VCC row shows "—" for this package column (table error)"

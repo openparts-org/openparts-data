@@ -17,15 +17,19 @@
 # Packages with Center Pad" (page 19) says the pad "is not electrically
 # connected to the internal circuit of the chip" -> no EP pin (the
 # footprint still gets the pad).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/AVR64DD32
-
 manufacturer: microchip
 category: microcontroller
-family: "AVR DD"
+family: AVR DD
+source: microchip/DS40002315@revC
 
 pins:
+  src:
+    - p17 "Section 3.1 "I/O Multiplexing", column "VQFN32 / TQFP32", columns "Special" and "ADC0""
+    - p18 "Section 3.1 table (continued), rows PF6-GND"
+    - p16 "Section 2.3 "32-Pin VQFN and TQFP" pinout figure (cross-check)"
   "1":  { name: PA3, type: io, alternate_functions: [AIN23] }
   "2":  { name: PA4, type: io, alternate_functions: [AIN24] }
   "3":  { name: PA5, type: io, alternate_functions: [AIN25] }
@@ -58,15 +62,3 @@ pins:
   "30": { name: PA0, type: io, alternate_functions: [XTALHF1, EXTCLK] }
   "31": { name: PA1, type: io, alternate_functions: [XTALHF2] }
   "32": { name: PA2, type: io, alternate_functions: [AIN22] }
-
-provenance:
-  "/pins":
-    - source: microchip/DS40002315@revC
-      page: 17
-      locator: "Section 3.1 \"I/O Multiplexing\", column \"VQFN32 / TQFP32\", columns \"Special\" and \"ADC0\""
-    - source: microchip/DS40002315@revC
-      page: 18
-      locator: "Section 3.1 table (continued), rows PF6-GND"
-    - source: microchip/DS40002315@revC
-      page: 16
-      locator: "Section 2.3 \"32-Pin VQFN and TQFP\" pinout figure (cross-check)"

@@ -8,15 +8,12 @@
 # pdftotext -layout: the pinout figure (page 17), I/O multiplexing table
 # (pages 19-20), Table 34-1 (page 521) and the C04-300-PT / C04-494
 # dimension tables (pages 540, 543) all extract as clean text.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: microchip/DS40002173@revC
-
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega4808-09-DataSheet-DS40002173C.pdf
+date: 2021-02
+revision: C
 publisher: microchip
 document_id: DS40002173
 document_type: datasheet
-
-revision: "C"
-date: "2021-02"
-
-url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATmega4808-09-DataSheet-DS40002173C.pdf"

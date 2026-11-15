@@ -4,26 +4,20 @@
 # page; all 5 pins match. The 6-pin DRY/DSF and the DPW/YZP pin maps
 # differ and are not covered.
 # OE is active low (overbar in the datasheet; written without it).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/SN74LVC1G125-DBV
-
 manufacturer: ti
 category: logic
 family: SN74LVC1G125
+source: ti/SCES223U
 
 pins:
-  "1":  { name: OE, type: input }
-  "2":  { name: A, type: input }
-  "3":  { name: GND, type: ground }
-  "4":  { name: Y, type: output }
-  "5":  { name: VCC, type: power }
-
-provenance:
-  "/pins":
-    - source: ti/SCES223U
-      page: 3
-      locator: "\"Pin Functions\" table, column \"DRL, DCK, DBV\""
-    - source: ti/SCES223U
-      page: 3
-      locator: "\"DBV PACKAGE (TOP VIEW)\" figure (cross-check)"
+  src:
+    - p3 ""Pin Functions" table, column "DRL, DCK, DBV""
+    - p3 ""DBV PACKAGE (TOP VIEW)" figure (cross-check)"
+  "1": { name: OE, type: input }
+  "2": { name: A, type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: Y, type: output }
+  "5": { name: VCC, type: power }

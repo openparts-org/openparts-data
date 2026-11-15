@@ -3,15 +3,12 @@
 # (invensense.tdk.com/en-us/products/6-axis/icm-42688-p), served from TDK's own CDN. The PDF page index equals
 # the printed "Page N of M". Text read with pdftotext -layout; the package
 # drawing was rendered with pdftoppm.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: tdk/DS-000347@rev1.9
-
-publisher: tdk
-document_id: "DS-000347"
-document_type: datasheet
-
+url: https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-06/DS-000347%20ICM-42688-P%20v1.9.pdf
+date: 2024-11
 revision: "1.9"
-date: "2024-11"
-
-url: "https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-06/DS-000347%20ICM-42688-P%20v1.9.pdf"
+publisher: tdk
+document_id: DS-000347
+document_type: datasheet

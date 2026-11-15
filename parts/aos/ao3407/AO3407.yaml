@@ -5,67 +5,39 @@
 # SOT23 outline is PO-00001 (Version N, re-downloaded 2026-11-10) --
 # the datasheet does not name the outline document, the link is by
 # package name only (as for AO3400A/AO3401A).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: aos/AO3407
-
 manufacturer: aos
 mpn: AO3407
-
 device: aos/AO3407
 package: standards/SOT23-2.90x1.60-P1.90-AOS
+sources: [aos/AO3407-DS, aos/PO-00001]
+source: aos/AO3407-DS
 
 existence:
   status: probable
+  src: p1 "Title "AO3407" and package "SOT23"; no ordering table in the document"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - aos/AO3407-DS
-  - aos/PO-00001
+lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: p_channel
+  polarity: { value: p_channel, src: 'p1 "Page-1 title: "30V P-Channel MOSFET""' }
   drain_source_voltage:
-    nominal: -30
-    unit: V
+    typ: -30 V
+    src: 'p1 "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: -30 V"'
   drain_current:
-    nominal: -4.1
-    unit: A
+    typ: -4.1 A
+    at: { TA: 25 °C }
+    src: 'p1 "Absolute Maximum Ratings, Continuous Drain Current ID: -4.1 A"'
   rds_on:
-    nominal: 34
-    max: 52
-    unit: mΩ
+    typ: 34 mΩ
+    max: 52 mΩ
+    at: { VGS: -10 V, ID: -4.1 A, TJ: 25 °C }
+    src: 'p2 "Electrical Characteristics, RDS(ON) Static Drain-Source On-Resistance: Typ 34, Max 52 mΩ"'
   gate_threshold_voltage:
-    nominal: -1.9
-    min: -2.4
-    max: -1.4
-    unit: V
-
-provenance:
-  "/existence":
-    - source: aos/AO3407-DS
-      page: 1
-      locator: "Title \"AO3407\" and package \"SOT23\"; no ordering table in the document"
-  "/parameters/polarity":
-    - source: aos/AO3407-DS
-      page: 1
-      locator: "Page-1 title: \"30V P-Channel MOSFET\""
-  "/parameters/drain_source_voltage":
-    - source: aos/AO3407-DS
-      page: 1
-      locator: "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: -30 V"
-  "/parameters/drain_current":
-    - source: aos/AO3407-DS
-      page: 1
-      locator: "Absolute Maximum Ratings, Continuous Drain Current ID, TA=25°C: -4.1 A"
-  "/parameters/rds_on":
-    - source: aos/AO3407-DS
-      page: 2
-      locator: "Electrical Characteristics (TJ=25°C), RDS(ON) Static Drain-Source On-Resistance, VGS=-10V, ID=-4.1A: Typ 34, Max 52 mΩ"
-  "/parameters/gate_threshold_voltage":
-    - source: aos/AO3407-DS
-      page: 2
-      locator: "Electrical Characteristics (TJ=25°C), VGS(th) Gate Threshold Voltage: Min -1.4, Typ -1.9, Max -2.4 V"
+    min: -2.4 V
+    typ: -1.9 V
+    max: -1.4 V
+    at: { TJ: 25 °C }
+    src: 'p2 "Electrical Characteristics, VGS(th) Gate Threshold Voltage: Min -1.4, Typ -1.9, Max -2.4 V"'

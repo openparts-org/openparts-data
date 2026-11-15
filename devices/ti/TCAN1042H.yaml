@@ -5,29 +5,23 @@
 # GND footnote about the DRB thermal pad does not apply to the D
 # package. STB (standby mode control input) typed input; pin 5 "NC" (no
 # connect) typed nc.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/TCAN1042H
-
 manufacturer: ti
 category: can_transceiver
 family: TCAN1042H
+source: ti/SLLSES7D
 
 pins:
-  "1":  { name: TXD, type: input }
-  "2":  { name: GND, type: ground }
-  "3":  { name: VCC, type: power }
-  "4":  { name: RXD, type: output }
-  "5":  { name: NC, type: nc }
-  "6":  { name: CANL, type: io }
-  "7":  { name: CANH, type: io }
-  "8":  { name: STB, type: input }
-
-provenance:
-  "/pins":
-    - source: ti/SLLSES7D
-      page: 5
-      locator: "Table 6-1 \"Pin Functions\", column \"(H), (G), (HG)\""
-    - source: ti/SLLSES7D
-      page: 5
-      locator: "Figure 6-1 \"D Package for Base, (H), (G) and (HG) Devices 8 PIN (SOIC) Top View\" (cross-check)"
+  src:
+    - p5 "Table 6-1 "Pin Functions", column "(H), (G), (HG)""
+    - p5 "Figure 6-1 "D Package for Base, (H), (G) and (HG) Devices 8 PIN (SOIC) Top View" (cross-check)"
+  "1": { name: TXD, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: VCC, type: power }
+  "4": { name: RXD, type: output }
+  "5": { name: NC, type: nc }
+  "6": { name: CANL, type: io }
+  "7": { name: CANH, type: io }
+  "8": { name: STB, type: input }

@@ -5,29 +5,23 @@
 # covers PDIP, MSOP and SOIC; the 6x5 DFN-S (EP pin 9) is not covered.
 # Table 3-1 note 1 "Duplicate pins must be connected" -- the only
 # duplicated name is NC (no connection).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/TC4427A
-
 manufacturer: microchip
 category: gate_driver
 family: TC4426A/TC4427A/TC4428A
+source: microchip/DS20001423@revJ
 
 pins:
+  src:
+    - p8 "Table 3-1 "PIN FUNCTION TABLE", column "PDIP, MSOP, SOIC""
+    - p1 ""Package Types", 8-Pin MSOP/PDIP/SOIC, TC4427A column (cross-check)"
   "1": { name: NC, type: nc }
-  "2": { name: "IN A", type: input }
+  "2": { name: IN A, type: input }
   "3": { name: GND, type: ground }
-  "4": { name: "IN B", type: input }
-  "5": { name: "OUT B", type: output }
+  "4": { name: IN B, type: input }
+  "5": { name: OUT B, type: output }
   "6": { name: VDD, type: power }
-  "7": { name: "OUT A", type: output }
+  "7": { name: OUT A, type: output }
   "8": { name: NC, type: nc }
-
-provenance:
-  "/pins":
-    - source: microchip/DS20001423@revJ
-      page: 8
-      locator: "Table 3-1 \"PIN FUNCTION TABLE\", column \"PDIP, MSOP, SOIC\""
-    - source: microchip/DS20001423@revJ
-      page: 1
-      locator: "\"Package Types\", 8-Pin MSOP/PDIP/SOIC, TC4427A column (cross-check)"

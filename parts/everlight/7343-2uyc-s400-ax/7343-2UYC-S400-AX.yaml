@@ -1,53 +1,30 @@
 # 5mm round Super Yellow THT LED. Only the datasheet itself was checked;
 # no distributor listing for this exact MPN was confirmed, so status
 # stays probable.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: everlight/7343-2UYC/S400-AX
-
 manufacturer: everlight
 mpn: 7343-2UYC/S400-AX
-
 device: everlight/7343-SERIES
 package: standards/RADIAL-7343-EVERLIGHT
+sources: [everlight/DLE-734-090]
+source: everlight/DLE-734-090
 
-existence:
-  status: probable
-
-lifecycle:
-  status: unknown
-
-sources:
-  - everlight/DLE-734-090
+existence: { status: probable }
+lifecycle: { status: unknown }
 
 parameters:
+  forward_voltage:
+    typ: 2 V
+    max: 2.4 V
+    at: { IF: 20 mA, TA: 25 °C }
+    src: 'p3 "Electro-Optical Characteristics, Forward Voltage VF: Typ. 2.0 V, Max. 2.4 V"'
+  forward_current: { max: 50 mA, src: 'p2 "Absolute Maximum Ratings, Forward Current IF: 50 mA"' }
   color:
     value: yellow
+    src: 'p1 "Device Selection Guide: Chip AlGaInP, Emitted Color Super Yellow, Lens Water Clear"'
   wavelength:
-    nominal: 589
-    unit: nm
-  forward_voltage:
-    nominal: 2.0
-    max: 2.4
-    unit: V
-  forward_current:
-    max: 50
-    unit: mA
-
-provenance:
-  "/parameters/color":
-    - source: everlight/DLE-734-090
-      page: 1
-      locator: "Device Selection Guide: Chip AlGaInP, Emitted Color Super Yellow, Lens Water Clear"
-  "/parameters/wavelength":
-    - source: everlight/DLE-734-090
-      page: 3
-      locator: "Electro-Optical Characteristics (Ta=25℃), Dominant Wavelength λd @ IF=20mA: Typ. 589 nm"
-  "/parameters/forward_voltage":
-    - source: everlight/DLE-734-090
-      page: 3
-      locator: "Electro-Optical Characteristics (Ta=25℃), Forward Voltage VF @ IF=20mA: Typ. 2.0 V, Max. 2.4 V"
-  "/parameters/forward_current":
-    - source: everlight/DLE-734-090
-      page: 2
-      locator: "Absolute Maximum Ratings, Forward Current IF: 50 mA"
+    typ: 589 nm
+    at: { IF: 20 mA, TA: 25 °C }
+    src: 'p3 "Electro-Optical Characteristics, Dominant Wavelength λd: Typ. 589 nm"'

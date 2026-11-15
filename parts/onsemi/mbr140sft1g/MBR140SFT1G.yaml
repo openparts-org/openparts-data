@@ -4,31 +4,18 @@
 # Package: page-5 CASE 498 (98AON11184D) renders pixel-identical to
 # MBR120ESFT1/D page 5 (pdftoppm -r 100 crop, md5), so
 # standards/SOD123FL-ONSEMI-498 is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/MBR140SFT1G
-
 manufacturer: onsemi
 mpn: MBR140SFT1G
-
 device: onsemi/MBR140SF
-package: standards/SOD123FL-ONSEMI-498
+package: { value: standards/SOD123FL-ONSEMI-498, src: p5 "MECHANICAL CASE OUTLINE -- see header" }
+sources: [onsemi/MBR140SFT1-D]
+source: onsemi/MBR140SFT1-D
 
 existence:
   status: verified
+  src: 'p1 "ORDERING INFORMATION: "MBR140SFT1G | SOD-123FL (Pb-Free) | 3,000 / Tape & Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/MBR140SFT1-D
-
-provenance:
-  "/existence":
-    - source: onsemi/MBR140SFT1-D
-      page: 1
-      locator: "ORDERING INFORMATION: \"MBR140SFT1G | SOD-123FL (Pb-Free) | 3,000 / Tape & Reel\""
-  "/package":
-    - source: onsemi/MBR140SFT1-D
-      page: 5
-      locator: "MECHANICAL CASE OUTLINE -- see header"
+lifecycle: { status: unknown }

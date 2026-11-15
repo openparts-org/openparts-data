@@ -1,28 +1,18 @@
 # DFLS140-7: printed verbatim in the ordering table (verified).
 # Package: manufacturers/diodes/PowerDI123-2.80x1.78-DS30497 (outline read from DS30497; the same outline table is printed in DS30446, see the package header).
 # No lifecycle statement in the datasheet: lifecycle unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: diodes/DFLS140-7
-
 manufacturer: diodes
 mpn: DFLS140-7
-
 device: diodes/DFLS140
 package: manufacturers/diodes/PowerDI123-2.80x1.78-DS30497
+sources: [diodes/DS30446, diodes/DS30497]
+source: diodes/DS30446
 
 existence:
   status: verified
+  src: p1 "Ordering Information table row "DFLS140-7 | PowerDI123 | 3000 | Tape & Reel""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - diodes/DS30446
-  - diodes/DS30497
-
-provenance:
-  "/existence":
-    - source: diodes/DS30446
-      page: 1
-      locator: "Ordering Information table row \"DFLS140-7 | PowerDI123 | 3000 | Tape & Reel\""
+lifecycle: { status: unknown }

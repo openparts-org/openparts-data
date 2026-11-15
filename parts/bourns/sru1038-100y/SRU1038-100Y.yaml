@@ -3,65 +3,33 @@
 # Package reused: this revision's Product Dimensions drawing gives the
 # same numbers as standards/CHIP-BOURNS-SRU1038 (one drawing for the whole series).
 # lifecycle unknown: the datasheet makes no production-status statement.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
-id: "bourns/SRU1038-100Y"
-
+id: bourns/SRU1038-100Y
 manufacturer: bourns
-mpn: "SRU1038-100Y"
-
+mpn: SRU1038-100Y
 device: bourns/SRU1038-SERIES
 package: standards/CHIP-BOURNS-SRU1038
+sources: [bourns/SRU1038@rev02-26]
+source: bourns/SRU1038@rev02-26
 
 existence:
   status: verified
+  src: p1 "Electrical Specifications table, Part Number row "SRU1038-100Y""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - bourns/SRU1038@rev02-26
+lifecycle: { status: unknown }
 
 parameters:
   tolerance:
-    min: -30
-    max: 30
-    unit: "%"
+    tol: ±30 %
+    src: 'p1 "Electrical Specifications, SRU1038-100Y row: Inductance Tol. (%) ±30"'
   inductance:
-    nominal: 10.0
-    unit: µH
+    typ: 10 µH
+    src: 'p1 "Electrical Specifications, SRU1038-100Y row: Inductance (µH) 10.0"'
   rated_current:
-    max: 3.8
-    unit: A
+    max: 3.8 A
+    src: 'p1 "Electrical Specifications, SRU1038-100Y row: Irms Max. (A) 3.80 (General Specifications: temperature rise 40 °C max. at rated Irms)"'
   saturation_current:
-    nominal: 3.6
-    unit: A
-  dcr:
-    max: 35.0
-    unit: mΩ
-
-provenance:
-  "/existence":
-    - source: bourns/SRU1038@rev02-26
-      page: 1
-      locator: "Electrical Specifications table, Part Number row \"SRU1038-100Y\""
-  "/parameters/tolerance":
-    - source: bourns/SRU1038@rev02-26
-      page: 1
-      locator: "Electrical Specifications, SRU1038-100Y row: Inductance Tol. (%) ±30"
-  "/parameters/inductance":
-    - source: bourns/SRU1038@rev02-26
-      page: 1
-      locator: "Electrical Specifications, SRU1038-100Y row: Inductance (µH) 10.0"
-  "/parameters/rated_current":
-    - source: bourns/SRU1038@rev02-26
-      page: 1
-      locator: "Electrical Specifications, SRU1038-100Y row: Irms Max. (A) 3.80 (General Specifications: temperature rise 40 °C max. at rated Irms)"
-  "/parameters/saturation_current":
-    - source: bourns/SRU1038@rev02-26
-      page: 1
-      locator: "Electrical Specifications, SRU1038-100Y row: Isat Typ. (A) 3.60 (General Specifications: ind. drop 35 % typ. at Isat)"
-  "/parameters/dcr":
-    - source: bourns/SRU1038@rev02-26
-      page: 1
-      locator: "Electrical Specifications, SRU1038-100Y row: RDC Max. (mΩ) 35.0"
+    typ: 3.6 A
+    src: 'p1 "Electrical Specifications, SRU1038-100Y row: Isat Typ. (A) 3.60 (General Specifications: ind. drop 35 % typ. at Isat)"'
+  dcr: { max: 35 mΩ, src: 'p1 "Electrical Specifications, SRU1038-100Y row: RDC Max. (mΩ) 35.0"' }

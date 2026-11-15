@@ -2,44 +2,29 @@
 # "R" (size control: 0402/1005 +/-0.15 per samsung/MLCC_2512 p8). L/W/T
 # from the CL05A475MP5NRN product page: L 1.00+/-0.15, W 0.50+/-0.15,
 # T 0.50+/-0.15 mm. Bandwidth (BW) is not given: lead_length left out.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/samsung/CHIP0402-SAMSUNG-CL05-T5-R
-
 family: chip
 lead_count: 2
+source: samsung/CL05A475MP5NRN
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 1.0
-    min: 0.85
-    max: 1.15
-    unit: mm
   body_width:
-    nominal: 0.5
-    min: 0.35
-    max: 0.65
-    unit: mm
+    min: 0.35 mm
+    typ: 0.5 mm
+    max: 0.65 mm
+    src: '"Size table, "W Size": "0.50+/-0.15mm""'
+  body_length:
+    min: 0.85 mm
+    typ: 1 mm
+    max: 1.15 mm
+    src: '"Size table, "L Size": "1.00+/-0.15mm""'
   body_height:
-    nominal: 0.5
-    min: 0.35
-    max: 0.65
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: samsung/CL05A475MP5NRN
-      locator: "Size table, \"L Size\": \"1.00+/-0.15mm\""
-  "/dimensions/body_width":
-    - source: samsung/CL05A475MP5NRN
-      locator: "Size table, \"W Size\": \"0.50+/-0.15mm\""
-  "/dimensions/body_height":
-    - source: samsung/CL05A475MP5NRN
-      locator: "Size table, \"T Size\": \"0.50+/-0.15mm\""
+    min: 0.35 mm
+    typ: 0.5 mm
+    max: 0.65 mm
+    src: '"Size table, "T Size": "0.50+/-0.15mm""'

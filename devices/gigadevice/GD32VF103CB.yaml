@@ -10,15 +10,18 @@
 # VBAT) / ground (VSS*); "I" -> input (BOOT0, OSCIN); "O" -> output
 # (OSCOUT); NRST (I/O) -> reset; other I/O -> io. Alternate functions are
 # not modelled (same policy as the dataset's other MCU devices).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: gigadevice/GD32VF103CB
-
 manufacturer: gigadevice
 category: microcontroller
 family: GD32VF103
+source: gigadevice/GD32VF103_Datasheet@rev1.6
 
 pins:
+  src:
+    - p31 "Table 2-6 "GD32VF103Cx LQFP48 pin definitions" (PDF pages 31-33)"
+    - p14 "Figure 2-4 "GD32VF103Cx LQFP48 pinouts" (visual cross-check, all 48 pins matched)"
   "1":  { name: VBAT, type: power }
   "2":  { name: PC13-TAMPER-RTC, type: io }
   "3":  { name: PC14-OSC32IN, type: io }
@@ -67,12 +70,3 @@ pins:
   "46": { name: PB9, type: io }
   "47": { name: VSS_3, type: ground }
   "48": { name: VDD_3, type: power }
-
-provenance:
-  "/pins":
-    - source: gigadevice/GD32VF103_Datasheet@rev1.6
-      page: 31
-      locator: 'Table 2-6 "GD32VF103Cx LQFP48 pin definitions" (PDF pages 31-33)'
-    - source: gigadevice/GD32VF103_Datasheet@rev1.6
-      page: 14
-      locator: 'Figure 2-4 "GD32VF103Cx LQFP48 pinouts" (visual cross-check, all 48 pins matched)'

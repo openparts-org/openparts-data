@@ -8,27 +8,15 @@
 # secondary check of Vishay's product page found no lifecycle badge
 # either (and was not independently verified as thoroughly as the PDF),
 # so this is not upgraded to "active" from the Nov-2024 revision date.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: vishay/1N4148
-
 manufacturer: vishay
 mpn: 1N4148
-
 device: vishay/1N4148
 package: standards/AXIAL-DO35-1N4148
+sources: [vishay/81857]
+source: vishay/81857
 
-existence:
-  status: verified
-
-lifecycle:
-  status: unknown
-
-sources:
-  - vishay/81857
-
-provenance:
-  "/existence":
-    - source: vishay/81857
-      page: 1
-      locator: "\"PARTS TABLE\""
+existence: { status: verified, src: p1 ""PARTS TABLE"" }
+lifecycle: { status: unknown }

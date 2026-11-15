@@ -6,65 +6,35 @@
 # of the current PDF is dated 01/27/26). lifecycle unknown: no
 # production-status statement. Package reused: the 1J dimension row
 # matches standards/CHIP0603-KOA-RK73H1J number for number.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: koa/RK73H1JTTD1003F
-
 manufacturer: koa
 mpn: RK73H1JTTD1003F
-
 device: koa/RK73H1J
 package: standards/CHIP0603-KOA-RK73H1J
+sources: [koa/RK73H@rev2026-01-27]
+source: koa/RK73H@rev2026-01-27
 
 existence:
   status: probable
+  src:
+    - 'p1 ""ordering information": RK73H | Size 1J | Characteristics Nil: Standard | Termination Material T: Sn | Packaging TD: 4mm pitch punch paper | Nominal Resistance 3 significant figures + 1 multiplier | Tolerance F: +/-1% (example RK73H2BTTD1003F); 1003 = 100 kOhm"'
+    - 'p2 ""applications and ratings" table (rendered), RK73H1J (0603) 0.1W row, T.C.R. +/-100: F+/-1% E-24, E-96 "1.02kOhm - 1MOhm""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - koa/RK73H@rev2026-01-27
+lifecycle: { status: unknown }
 
 # Parameters (AI candidates, needs review): resistance and tolerance from the
 # ordering-information legend; power and T.C.R. from the RK73H1J rows of
 # 'applications and ratings' whose F±1% resistance range contains this value.
 parameters:
+  tolerance: { tol: ±1 %, src: 'p1 "ordering information, Tolerance: F: ±1%"' }
   resistance:
-    nominal: 100
-    unit: kΩ
-  tolerance:
-    min: -1
-    max: 1
-    unit: "%"
+    typ: 100 kΩ
+    src: 'p1 "ordering information, Nominal Resistance: 3 significant figures + 1 multiplier -> 1003 = 100 x 10^3 Ω = 100 kΩ"'
   power_rating:
-    nominal: 0.1
-    unit: W
+    typ: 0.1 W
+    src: 'p2 "applications and ratings, RK73H1J (0603) row for F±1% 1.02kΩ - 1MΩ: Power Rating 0.1W at Rated Ambient Temp. 70°C"'
   temperature_coefficient:
-    min: -100
-    max: 100
-    unit: ppm/°C
-
-provenance:
-  "/existence":
-    - source: koa/RK73H@rev2026-01-27
-      page: 1
-      locator: "\"ordering information\": RK73H | Size 1J | Characteristics Nil: Standard | Termination Material T: Sn | Packaging TD: 4mm pitch punch paper | Nominal Resistance 3 significant figures + 1 multiplier | Tolerance F: +/-1% (example RK73H2BTTD1003F); 1003 = 100 kOhm"
-    - source: koa/RK73H@rev2026-01-27
-      page: 2
-      locator: "\"applications and ratings\" table (rendered), RK73H1J (0603) 0.1W row, T.C.R. +/-100: F+/-1% E-24, E-96 \"1.02kOhm - 1MOhm\""
-  "/parameters/resistance":
-    - source: koa/RK73H@rev2026-01-27
-      page: 1
-      locator: "ordering information, Nominal Resistance: 3 significant figures + 1 multiplier -> 1003 = 100 x 10^3 Ω = 100 kΩ"
-  "/parameters/tolerance":
-    - source: koa/RK73H@rev2026-01-27
-      page: 1
-      locator: "ordering information, Tolerance: F: ±1%"
-  "/parameters/power_rating":
-    - source: koa/RK73H@rev2026-01-27
-      page: 2
-      locator: "applications and ratings, RK73H1J (0603) row for F±1% 1.02kΩ - 1MΩ: Power Rating 0.1W at Rated Ambient Temp. 70°C"
-  "/parameters/temperature_coefficient":
-    - source: koa/RK73H@rev2026-01-27
-      page: 2
-      locator: "applications and ratings, RK73H1J (0603) row for F±1% 1.02kΩ - 1MΩ: T.C.R. ±100 (x10^-6/K)"
+    tol: ±100 ppm/°C
+    src: 'p2 "applications and ratings, RK73H1J (0603) row for F±1% 1.02kΩ - 1MΩ: T.C.R. ±100 (x10^-6/K)"'

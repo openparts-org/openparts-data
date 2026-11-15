@@ -5,66 +5,32 @@
 # thickness code DN -> package manufacturers/kemet/C0805-DN.
 # The exact string is not printed in the datasheet (built from the code
 # system). Lifecycle not stated -> unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: kemet/C0805C103K5RACTU
-
 manufacturer: kemet
 mpn: C0805C103K5RACTU
-
 device: kemet/C0805C-X7R
 package: manufacturers/kemet/C0805-DN
+sources: [kemet/C1002_X7R]
+source: kemet/C1002_X7R
 
 # existence is `probable`: the MPN is assembled from the part-numbering
 # legend (or printed only as an example), not listed verbatim in an
 # orderable list (openparts/skills/add-part section 2).
 existence:
   status: probable
+  src:
+    - 'p2 "Ordering Information: C | case size | C = standard | capacitance code (two significant digits + number of zeros, pF) | J/K/M tolerance | voltage 9 = 6.3, 8 = 10, 4 = 16, 3 = 25, 5 = 50 | R = X7R | A = N/A | C = 100% matte Sn | TU = 7" reel/unmarked (Packaging C-Spec table)"'
+    - 'p4 "Table 1A Capacitance Range/Selection Waterfall (0402-1206 Case Sizes): row 10000pF/103, C0805C column 50 V (code 5): DN; K tolerance listed"'
+    - 'p2 "Packaging C-Spec Ordering Options Table: 7" Reel/Unmarked = TU"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - kemet/C1002_X7R
+lifecycle: { status: unknown }
 
 parameters:
   capacitance:
-    nominal: 10000
-    unit: pF
-  tolerance:
-    min: -10
-    max: 10
-    unit: "%"
-  rated_voltage:
-    nominal: 50
-    unit: V
-  dielectric:
-    value: X7R
-
-provenance:
-  "/existence":
-    - source: kemet/C1002_X7R
-      page: 2
-      locator: "Ordering Information: C | case size | C = standard | capacitance code (two significant digits + number of zeros, pF) | J/K/M tolerance | voltage 9 = 6.3, 8 = 10, 4 = 16, 3 = 25, 5 = 50 | R = X7R | A = N/A | C = 100% matte Sn | TU = 7\" reel/unmarked (Packaging C-Spec table)"
-    - source: kemet/C1002_X7R
-      page: 4
-      locator: "Table 1A Capacitance Range/Selection Waterfall (0402-1206 Case Sizes): row 10000pF/103, C0805C column 50 V (code 5): DN; K tolerance listed"
-    - source: kemet/C1002_X7R
-      page: 2
-      locator: "Packaging C-Spec Ordering Options Table: 7\" Reel/Unmarked = TU"
-  "/parameters/capacitance":
-    - source: kemet/C1002_X7R
-      page: 4
-      locator: "Table 1A – Capacitance Range/Selection Waterfall (0402 – 1206 Case Sizes), Cap Code 103 row: Cap 10000 pF"
-  "/parameters/tolerance":
-    - source: kemet/C1002_X7R
-      page: 2
-      locator: "Ordering Information, Capacitance Tolerance: K = ±10%"
-  "/parameters/rated_voltage":
-    - source: kemet/C1002_X7R
-      page: 2
-      locator: "Ordering Information, Rated Voltage (VDC): 5 = 50"
-  "/parameters/dielectric":
-    - source: kemet/C1002_X7R
-      page: 2
-      locator: "Ordering Information, Dielectric: R = X7R"
+    typ: 10000 pF
+    src: 'p4 "Table 1A – Capacitance Range/Selection Waterfall (0402 – 1206 Case Sizes), Cap Code 103 row: Cap 10000 pF"'
+  tolerance:     { tol: ±10 %, src: 'p2 "Ordering Information, Capacitance Tolerance: K = ±10%"' }
+  rated_voltage: { typ: 50 V, src: 'p2 "Ordering Information, Rated Voltage (VDC): 5 = 50"' }
+  dielectric:    { value: X7R, src: 'p2 "Ordering Information, Dielectric: R = X7R"' }

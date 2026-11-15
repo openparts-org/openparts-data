@@ -2,35 +2,20 @@
 # Active  Production  WSON (NGN) | 8" -- MPN printed verbatim in TI's orderable
 # list (existence verified); lifecycle "Active" is TI's own Status column.
 # Package NGN = outline NGN0008A (SNVS769J page 32).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/LM2940LD-5.0/NOPB
-
 manufacturer: ti
 mpn: LM2940LD-5.0/NOPB
-
 device: ti/LM2940-NGN
-package: manufacturers/ti/NGN0008A
+package: { value: manufacturers/ti/NGN0008A, src: p32 "NGN0008A package outline" }
+sources: [ti/SNVS769J]
+source: ti/SNVS769J
 
 existence:
   status: verified
+  src: p23 "Package option addendum table, row "LM2940LD-5.0/NOPB" (WSON (NGN) | 8)"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SNVS769J
-
-provenance:
-  "/existence":
-    - source: ti/SNVS769J
-      page: 23
-      locator: "Package option addendum table, row \"LM2940LD-5.0/NOPB\" (WSON (NGN) | 8)"
-  "/lifecycle":
-    - source: ti/SNVS769J
-      page: 23
-      locator: "Package option addendum table, row \"LM2940LD-5.0/NOPB\", Status \"Active\""
-  "/package":
-    - source: ti/SNVS769J
-      page: 32
-      locator: "NGN0008A package outline"
+  src: p23 "Package option addendum table, row "LM2940LD-5.0/NOPB", Status "Active""

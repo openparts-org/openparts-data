@@ -1,46 +1,28 @@
 # Littelfuse 467 series 0603 fuse body (page 3). Electrode dimensions
 # are not body dimensions and are not used. Tolerances as stated.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/CHIP0603-467
-
 family: chip
 lead_count: 2
+source: littelfuse/467-DS
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 1.6
-    min: 1.498
-    max: 1.702
-    unit: mm
   body_width:
-    nominal: 0.813
-    min: 0.737
-    max: 0.889
-    unit: mm
+    min: 0.737 mm
+    typ: 0.813 mm
+    max: 0.889 mm
+    src: p3 "Dimensions, W 0.813 +/-0.076mm"
+  body_length:
+    min: 1.498 mm
+    typ: 1.6 mm
+    max: 1.702 mm
+    src: p3 "Dimensions, L 1.60 +/-0.102mm"
   body_height:
-    nominal: 0.279
-    min: 0.203
-    max: 0.355
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: littelfuse/467-DS
-      page: 3
-      locator: "Dimensions, L 1.60 +/-0.102mm"
-  "/dimensions/body_width":
-    - source: littelfuse/467-DS
-      page: 3
-      locator: "Dimensions, W 0.813 +/-0.076mm"
-  "/dimensions/body_height":
-    - source: littelfuse/467-DS
-      page: 3
-      locator: "Dimensions, H 0.279 +/-0.076mm"
+    min: 0.203 mm
+    typ: 0.279 mm
+    max: 0.355 mm
+    src: p3 "Dimensions, H 0.279 +/-0.076mm"

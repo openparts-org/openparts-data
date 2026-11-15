@@ -2,65 +2,39 @@
 # (DMG2305UX-13 is the 10,000 reel). SOT23 (Standard) outline on page 5
 # matches SOT23-2.90x1.30-P1.83-DIODES value for value. No lifecycle
 # statement in the document.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: diodes/DMG2305UX-7
-
 manufacturer: diodes
 mpn: DMG2305UX-7
-
 device: diodes/DMG2305UX
 package: standards/SOT23-2.90x1.30-P1.83-DIODES
+sources: [diodes/DS36196]
+source: diodes/DS36196
 
 existence:
   status: verified
+  src: 'p1 "Ordering Information table: "DMG2305UX-7 | Standard | SOT23 (Standard) | 3,000/Tape & Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - diodes/DS36196
+lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: p_channel
+  polarity: { value: p_channel, src: 'p1 "Page-1 title: "P-CHANNEL ENHANCEMENT MODE MOSFET""' }
   drain_source_voltage:
-    nominal: -20
-    unit: V
+    typ: -20 V
+    at: { TA: 25 °C }
+    src: 'p2 "Maximum Ratings, Drain-Source Voltage VDSS: -20 V"'
   drain_current:
-    nominal: -4.2
-    unit: A
+    typ: -4.2 A
+    at: { VGS: -4.5 V, TA: 25 °C }
+    src: 'p2 "Maximum Ratings, Continuous Drain Current ID, Steady State: -4.2 A"'
   rds_on:
-    nominal: 40
-    max: 52
-    unit: mΩ
+    typ: 40 mΩ
+    max: 52 mΩ
+    at: { VGS: -4.5 V, ID: -4.2 A, TA: 25 °C }
+    src: 'p2 "Electrical Characteristics, Static Drain-Source On-Resistance RDS(ON): Typ 40, Max 52 mΩ"'
   gate_threshold_voltage:
-    min: -0.9
-    max: -0.5
-    unit: V
-
-provenance:
-  "/existence":
-    - source: diodes/DS36196
-      page: 1
-      locator: "Ordering Information table: \"DMG2305UX-7 | Standard | SOT23 (Standard) | 3,000/Tape & Reel\""
-  "/parameters/polarity":
-    - source: diodes/DS36196
-      page: 1
-      locator: "Page-1 title: \"P-CHANNEL ENHANCEMENT MODE MOSFET\""
-  "/parameters/drain_source_voltage":
-    - source: diodes/DS36196
-      page: 2
-      locator: "Maximum Ratings (@TA = +25°C), Drain-Source Voltage VDSS: -20 V"
-  "/parameters/drain_current":
-    - source: diodes/DS36196
-      page: 2
-      locator: "Maximum Ratings, Continuous Drain Current ID, VGS = -4.5V, Steady State, TA = +25°C: -4.2 A"
-  "/parameters/rds_on":
-    - source: diodes/DS36196
-      page: 2
-      locator: "Electrical Characteristics (@TA = +25°C), Static Drain-Source On-Resistance RDS(ON), VGS = -4.5V, ID = -4.2A: Typ 40, Max 52 mΩ"
-  "/parameters/gate_threshold_voltage":
-    - source: diodes/DS36196
-      page: 2
-      locator: "Electrical Characteristics (@TA = +25°C), Gate Threshold Voltage VGS(TH): Min -0.5, Typ —, Max -0.9 V"
+    min: -0.9 V
+    max: -0.5 V
+    at: { TA: 25 °C }
+    src: 'p2 "Electrical Characteristics, Gate Threshold Voltage VGS(TH): Min -0.5, Typ —, Max -0.9 V"'

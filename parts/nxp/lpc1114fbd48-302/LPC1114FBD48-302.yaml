@@ -13,31 +13,18 @@
 # The same page's footnote [3] adds the standard caveat that product
 # status may have changed since publication -- recorded honestly, not
 # omitted.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: nxp/LPC1114FBD48-302
-
 manufacturer: nxp
 mpn: LPC1114FBD48/302
-
 device: nxp/LPC1114-302
 package: standards/LQFP48-7x7-P0.5
+sources: [nxp/LPC111X]
+source: nxp/LPC111X
 
-existence:
-  status: verified
+existence: { status: verified, src: 'p5 "Table 1, "Ordering information""' }
 
 lifecycle:
   status: active
-
-sources:
-  - nxp/LPC111X
-
-provenance:
-  "/existence":
-    - source: nxp/LPC111X
-      page: 5
-      locator: "Table 1, \"Ordering information\""
-  "/lifecycle":
-    - source: nxp/LPC111X
-      page: 124
-      locator: "Section 18.1 \"Data sheet status\": cover labeled \"Product data sheet\" -> \"Production\" per the status legend; footnote [3] notes status may have changed since publication"
+  src: 'p124 "Section 18.1 "Data sheet status": cover labeled "Product data sheet" -> "Production" per the status legend; footnote [3] notes status may have changed since publication"'

@@ -7,65 +7,36 @@
 # lifecycle: the product page shows "Status: NRND" and names
 # CL21A226MAYNNN# as replacement (not in the dataset, so no
 # `replacement` link).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: samsung/CL21A226MAQNNNE
-
 manufacturer: samsung
 mpn: CL21A226MAQNNNE
-
 device: samsung/CL21-X5R
 package: manufacturers/samsung/CHIP0805-SAMSUNG-CL21-TQ
+sources: [samsung/CL21A226MAQNNN, samsung/MLCC_2512]
+source: samsung/CL21A226MAQNNN
 
 existence:
   status: verified
+  src:
+    - 'samsung/MLCC_2512 p6 "Part Numbering: 1 SERIES CODE CL; 2 SIZE CODE 21 = 0805/2012; 3 DIELECTRIC CODE A = X5R; 4 CAPACITANCE CODE 226 (2 significant digits plus number of zeros, pF)"'
+    - 'samsung/MLCC_2512 p7 "Part Numbering: 5 TOLERANCE M = +/-20%; 6 RATED VOLTAGE A = 25Vdc; 7 THICKNESS CODE Q"'
+    - 'samsung/MLCC_2512 p8 "Part Numbering: 8 DESIGN CODE N (Ni/Cu/Ni-Sn, Normal); 9 N = Normal; 10 CONTROL CODE N = Standard; 11 PACKAGING CODE E (embossed tape, normal 7" reel)"'
+    - '""List of part numbers with package codes": CL21A226MAQNNNE; Characteristics: X5R(-55 ~ +85), Capacitance 22.0uF, Tolerance +/-20%, Rated Voltage 25Vdc"'
 
 lifecycle:
   status: nrnd
-
-sources:
-  - samsung/CL21A226MAQNNN
-  - samsung/MLCC_2512
+  src: '"Characteristics, "Status: NRND"; caution box "Replacement / Recommended part : CL21A226MAYNNN#""'
 
 parameters:
   capacitance:
-    nominal: 22.0
-    unit: uF
-  tolerance:
-    min: -20
-    max: 20
-    unit: "%"
+    typ: 22 uF
+    src: '"Product page CL21A226MAQNNN#, Characteristics, Capacitance: 22.0uF"'
+  tolerance: { tol: ±20 %, src: '"Product page CL21A226MAQNNN#, Characteristics, Tolerance: ±20%"' }
   rated_voltage:
-    nominal: 25.0
-    unit: V
+    typ: 25 V
+    src: '"Product page CL21A226MAQNNN#, Characteristics, Rated Voltage: 25.0Vdc"'
   dielectric:
     value: X5R
-
-provenance:
-  "/existence":
-    - source: samsung/MLCC_2512
-      page: 6
-      locator: "Part Numbering: 1 SERIES CODE CL; 2 SIZE CODE 21 = 0805/2012; 3 DIELECTRIC CODE A = X5R; 4 CAPACITANCE CODE 226 (2 significant digits plus number of zeros, pF)"
-    - source: samsung/MLCC_2512
-      page: 7
-      locator: "Part Numbering: 5 TOLERANCE M = +/-20%; 6 RATED VOLTAGE A = 25Vdc; 7 THICKNESS CODE Q"
-    - source: samsung/MLCC_2512
-      page: 8
-      locator: "Part Numbering: 8 DESIGN CODE N (Ni/Cu/Ni-Sn, Normal); 9 N = Normal; 10 CONTROL CODE N = Standard; 11 PACKAGING CODE E (embossed tape, normal 7\" reel)"
-    - source: samsung/CL21A226MAQNNN
-      locator: "\"List of part numbers with package codes\": CL21A226MAQNNNE; Characteristics: X5R(-55 ~ +85), Capacitance 22.0uF, Tolerance +/-20%, Rated Voltage 25Vdc"
-  "/lifecycle":
-    - source: samsung/CL21A226MAQNNN
-      locator: "Characteristics, \"Status: NRND\"; caution box \"Replacement / Recommended part : CL21A226MAYNNN#\""
-  "/parameters/capacitance":
-    - source: samsung/CL21A226MAQNNN
-      locator: "Product page CL21A226MAQNNN#, Characteristics, Capacitance: 22.0uF"
-  "/parameters/tolerance":
-    - source: samsung/CL21A226MAQNNN
-      locator: "Product page CL21A226MAQNNN#, Characteristics, Tolerance: ±20%"
-  "/parameters/rated_voltage":
-    - source: samsung/CL21A226MAQNNN
-      locator: "Product page CL21A226MAQNNN#, Characteristics, Rated Voltage: 25.0Vdc"
-  "/parameters/dielectric":
-    - source: samsung/CL21A226MAQNNN
-      locator: "Product page CL21A226MAQNNN#, Characteristics, Temperature Characteristic: X5R(-55 ~ +85)"
+    src: '"Product page CL21A226MAQNNN#, Characteristics, Temperature Characteristic: X5R(-55 ~ +85)"'

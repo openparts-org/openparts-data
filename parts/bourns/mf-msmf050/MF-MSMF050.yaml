@@ -3,43 +3,27 @@
 # MF-MSMF-series datasheet part-number table (no "-2" or other suffix:
 # the initially-assumed "MF-MSMF050-2" MPN does not exist, only
 # /16X-/60X trip-current suffixes do, which MF-MSMF050 itself predates).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: bourns/MF-MSMF050
-
 manufacturer: bourns
 mpn: MF-MSMF050
-
 device: bourns/MF-MSMF-SERIES
 package: standards/CHIP1812-MF-MSMF050
+sources: [bourns/MF-MSMF@revBE]
+source: bourns/MF-MSMF@revBE
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - bourns/MF-MSMF@revBE
+existence: { status: verified }
+lifecycle: { status: active }
 
 # Parameters (AI candidates, needs review): PTC resettable fuse. The
 # datasheet has no 'rated current/voltage' column; rated_current is the
 # hold current Ihold at 23 °C and rated_voltage the maximum voltage Vmax
 # (reviewer: confirm this mapping for PPTC devices).
 parameters:
-  rated_current:
-    nominal: 0.5
-    unit: A
   rated_voltage:
-    max: 15
-    unit: V
-
-provenance:
-  "/parameters/rated_current":
-    - source: bourns/MF-MSMF@revBE
-      page: 1
-      locator: "Electrical Characteristics, MF-MSMF050 row: Ihold at 23 °C 0.50 Amps"
-  "/parameters/rated_voltage":
-    - source: bourns/MF-MSMF@revBE
-      page: 1
-      locator: "Electrical Characteristics, MF-MSMF050 row: Vmax 15 Volts"
+    max: 15 V
+    src: 'p1 "Electrical Characteristics, MF-MSMF050 row: Vmax 15 Volts"'
+  rated_current:
+    typ: 0.5 A
+    src: 'p1 "Electrical Characteristics, MF-MSMF050 row: Ihold at 23 °C 0.50 Amps"'

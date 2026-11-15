@@ -3,43 +3,25 @@
 # VIN = 3; matches "Figure 4-3. LP Package 3-Pin TO-92 Bottom View".
 # Per the feature list (page 1), TO-92 is offered with the "legacy chip"
 # only.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/LM78L05-LP
-
 manufacturer: ti
 category: linear_regulator
 family: LM78L
+source: ti/SNVS754O
+
+parameters:
+  output_type: { value: fixed, src: p1 "Title "LM78L 100mA Fixed Output Linear Regulator"" }
+  input_voltage_max:
+    max: 30 V
+    src: 'p4 "5.4 Recommended Operating Conditions, VIN Input voltage (legacy chip): MAX 30 V (TO-92 is legacy chip only, page 1 Package options)"'
+  output_current:
+    max: 100 mA
+    src: 'p4 "5.4 Recommended Operating Conditions, IO Continuous output current: MAX 100 mA"'
 
 pins:
+  src: p3 "Table 4-1 Pin Functions, TO-92 column (VOUT 1, GND 2, VIN 3); Figure 4-3"
   "1": { name: VOUT, type: output }
   "2": { name: GND, type: ground }
   "3": { name: VIN, type: power }
-
-parameters:
-  output_type:
-    value: fixed
-  input_voltage_max:
-    max: 30
-    unit: V
-  output_current:
-    max: 100
-    unit: mA
-
-provenance:
-  "/parameters/output_type":
-    - source: ti/SNVS754O
-      page: 1
-      locator: "Title \"LM78L 100mA Fixed Output Linear Regulator\""
-  "/parameters/input_voltage_max":
-    - source: ti/SNVS754O
-      page: 4
-      locator: "5.4 Recommended Operating Conditions, VIN Input voltage (legacy chip): MAX 30 V (TO-92 is legacy chip only, page 1 Package options)"
-  "/parameters/output_current":
-    - source: ti/SNVS754O
-      page: 4
-      locator: "5.4 Recommended Operating Conditions, IO Continuous output current: MAX 100 mA"
-  "/pins":
-    - source: ti/SNVS754O
-      page: 3
-      locator: "Table 4-1 Pin Functions, TO-92 column (VOUT 1, GND 2, VIN 3); Figure 4-3"

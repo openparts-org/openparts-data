@@ -8,24 +8,18 @@
 # 1 = Gate, 3 = Source, 4 = Drain (tab) -- position-derived, flagged for
 # review. Lead 2 (Drain, trimmed, no pad) is left out: the tab is the
 # drain terminal, and a second "Drain" would need a passive repeat.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: aos/AOD4184A
-
 manufacturer: aos
 category: transistor
 family: AOD4184A
+source: aos/AOD4184A-DS
 
 pins:
+  src:
+    - 'p1 ""TO252 DPAK" Top View / Bottom View images: leads G and S, tab D; no pin numbers printed -- see header"'
+    - aos/PO-00009 p1 "TO252 outline top view leads 1 2 3 (2 = stub), bottom view tab "4""
   "1": { name: Gate, type: passive }
   "3": { name: Source, type: passive }
   "4": { name: Drain, type: passive }
-
-provenance:
-  "/pins":
-    - source: aos/AOD4184A-DS
-      page: 1
-      locator: "\"TO252 DPAK\" Top View / Bottom View images: leads G and S, tab D; no pin numbers printed -- see header"
-    - source: aos/PO-00009
-      page: 1
-      locator: "TO252 outline top view leads 1 2 3 (2 = stub), bottom view tab \"4\""

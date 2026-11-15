@@ -19,27 +19,15 @@
 # this specific order code (unlike several QIAA/aQFN73 order codes in
 # the same table, explicitly marked "Not recommended for new designs").
 # Treated as a reasonable inference, not a directly-confirmed fact.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: nordic/nRF52840-QFAA-F-R
-
 manufacturer: nordic
 mpn: nRF52840-QFAA-F-R
-
 device: nordic/nRF52840
 package: standards/QFN48-nRF52840
+sources: [nordic/4413_417@v1.11]
+source: nordic/4413_417@v1.11
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - nordic/4413_417@v1.11
-
-provenance:
-  "/existence":
-    - source: nordic/4413_417@v1.11
-      page: 978
-      locator: "Table 112, \"nRF52840 order codes\""
+existence: { status: verified, src: 'p978 "Table 112, "nRF52840 order codes""' }
+lifecycle: { status: active }

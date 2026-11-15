@@ -4,34 +4,25 @@
 # -> drawing C04-051D (pages 81-82).
 # The id replaces the "/" of the MPN with "-"; mpn keeps the real string.
 # lifecycle: no production-status statement in the datasheet; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/MCP2515T-I-SO
-
 manufacturer: microchip
 mpn: MCP2515T-I/SO
-
 device: microchip/MCP2515
-package: standards/SOIC18-7.50x11.55-P1.27
+
+package:
+  value: standards/SOIC18-7.50x11.55-P1.27
+  src: p93 "Product Identification System, Package "SO = Plastic SOIC (7.50 mm Body), 18-Lead""
+
+sources: [microchip/DS20001801@revK]
+source: microchip/DS20001801@revK
 
 # existence is `probable`: the MPN is assembled from the part-numbering
 # legend (or printed only as an example), not listed verbatim in an
 # orderable list (openparts/skills/add-part section 2).
 existence:
   status: probable
+  src: p93 "Product Identification System, example e) "MCP2515T-I/SO""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS20001801@revK
-
-provenance:
-  "/existence":
-    - source: microchip/DS20001801@revK
-      page: 93
-      locator: "Product Identification System, example e) \"MCP2515T-I/SO\""
-  "/package":
-    - source: microchip/DS20001801@revK
-      page: 93
-      locator: "Product Identification System, Package \"SO = Plastic SOIC (7.50 mm Body), 18-Lead\""
+lifecycle: { status: unknown }

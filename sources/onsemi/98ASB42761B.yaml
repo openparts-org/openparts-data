@@ -3,15 +3,12 @@
 # MILLIMETERS MIN/MAX table and STYLE 1-6 list on page 1; marking and
 # footprint on page 2), downloaded standalone (curl). Controlling
 # dimension: inch (note 2).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: onsemi/98ASB42761B
-
+url: https://www.onsemi.com/download/package-drawing/pdf/418B-04.pdf
+date: 2015-02-17
+revision: L
 publisher: onsemi
 document_id: 98ASB42761B
 document_type: package_drawing
-
-revision: "L"
-date: "2015-02-17"
-
-url: "https://www.onsemi.com/download/package-drawing/pdf/418B-04.pdf"

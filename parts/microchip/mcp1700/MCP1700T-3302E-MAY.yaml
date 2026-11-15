@@ -6,58 +6,37 @@
 # Transistor (DFN), 6-lead" (sic) -> drawing C04-120C "6-Lead Plastic
 # Dual Flat, No Lead Package (MA[Y]) - 2x2x0.9mm Body [DFN]" (pages
 # 25-26). The id replaces "/" with "-". lifecycle: not stated; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/MCP1700T-3302E-MAY
-
 manufacturer: microchip
-mpn: "MCP1700T-3302E/MAY"
-
+mpn: MCP1700T-3302E/MAY
 device: microchip/MCP1700-MAY
-package: manufacturers/microchip/DFN6-2x2-P0.65-MAY-C04-120C
+
+package:
+  value: manufacturers/microchip/DFN6-2x2-P0.65-MAY-C04-120C
+  src:
+    - p28 "Product Identification System, Package "MAY = Plastic Small Outline Transistor (DFN), 6-lead""
+    - p26 "drawing C04-120C sheet 2 "6-Lead Plastic Dual Flat, No Lead Package (MA[Y]) - 2x2x0.9mm Body [DFN]""
+
+sources: [microchip/DS20001826@revE]
+source: microchip/DS20001826@revE
 
 existence:
   status: probable
+  src: 'p28 "Product Identification System, "2x2 DFN-6 Package:" example f) "MCP1700T-3302E/MAY: 3.3V VOUT""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS20001826@revE
+lifecycle: { status: unknown }
 
 parameters:
   output_voltage:
-    nominal: 3.3
-    unit: V
+    typ: 3.3 V
+    src: 'p28 "Product Identification System, 2x2 DFN-6 example "MCP1700T-3302E/MAY: 3.3V VOUT""'
   output_current:
-    min: 250
-    unit: mA
+    min: 250 mA
+    src: 'p3 "DC Characteristics, Maximum Output Current IOUT_mA: Min 250 mA, For VR >= 2.5V"'
   dropout_voltage:
-    nominal: 178
-    max: 350
-    unit: mV
-
-provenance:
-  "/parameters/output_voltage":
-    - source: microchip/DS20001826@revE
-      page: 28
-      locator: "Product Identification System, 2x2 DFN-6 example \"MCP1700T-3302E/MAY: 3.3V VOUT\""
-  "/parameters/output_current":
-    - source: microchip/DS20001826@revE
-      page: 3
-      locator: "DC Characteristics, Maximum Output Current IOUT_mA: Min 250 mA, For VR >= 2.5V"
-  "/parameters/dropout_voltage":
-    - source: microchip/DS20001826@revE
-      page: 3
-      locator: "DC Characteristics, Dropout Voltage VIN - VOUT, VR >= 2.5V: Typ 178 mV, Max 350 mV, IL = 250 mA"
-  "/existence":
-    - source: microchip/DS20001826@revE
-      page: 28
-      locator: "Product Identification System, \"2x2 DFN-6 Package:\" example f) \"MCP1700T-3302E/MAY: 3.3V VOUT\""
-  "/package":
-    - source: microchip/DS20001826@revE
-      page: 28
-      locator: "Product Identification System, Package \"MAY = Plastic Small Outline Transistor (DFN), 6-lead\""
-    - source: microchip/DS20001826@revE
-      page: 26
-      locator: "drawing C04-120C sheet 2 \"6-Lead Plastic Dual Flat, No Lead Package (MA[Y]) - 2x2x0.9mm Body [DFN]\""
+    typ: 178 mV
+    max: 350 mV
+    at: { IL: 250 mA }
+    src: 'p3 "DC Characteristics, Dropout Voltage VIN - VOUT, VR >= 2.5V: Typ 178 mV, Max 350 mV"'

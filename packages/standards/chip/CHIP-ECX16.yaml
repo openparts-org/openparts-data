@@ -5,45 +5,25 @@
 # ECS ECX-16 32.768kHz 2-pad tuning fork crystal, 1.6 x 1.0 mm body.
 # Height is max-only (0.5mm), so `nominal` equals that max, same
 # technique as the other max-only crystal packages.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/CHIP-ECX16
-
 family: chip
 lead_count: 2
+source: ecs/ECX-16
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 1.6
-    min: 1.55
-    max: 1.65
-    unit: mm
   body_width:
-    nominal: 1.0
-    min: 0.95
-    max: 1.05
-    unit: mm
-  body_height:
-    max: 0.5
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: ecs/ECX-16
-      page: 1
-      locator: "DIMENSIONS (mm), length 1.60 +/-0.05mm"
-  "/dimensions/body_width":
-    - source: ecs/ECX-16
-      page: 1
-      locator: "DIMENSIONS (mm), width 1.0 +/-0.05mm"
-  "/dimensions/body_height":
-    - source: ecs/ECX-16
-      page: 1
-      locator: "DIMENSIONS (mm), height 0.5 Max, no min stated"
+    min: 0.95 mm
+    typ: 1 mm
+    max: 1.05 mm
+    src: p1 "DIMENSIONS (mm), width 1.0 +/-0.05mm"
+  body_length:
+    min: 1.55 mm
+    typ: 1.6 mm
+    max: 1.65 mm
+    src: p1 "DIMENSIONS (mm), length 1.60 +/-0.05mm"
+  body_height: { max: 0.5 mm, src: 'p1 "DIMENSIONS (mm), height 0.5 Max, no min stated"' }

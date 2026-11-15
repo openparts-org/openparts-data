@@ -2,35 +2,20 @@
 # NRND  Production  TO-220 (KCS) | 3" -- MPN printed verbatim in TI's orderable
 # list (existence verified); lifecycle "NRND" is TI's own Status column.
 # Package KCS = outline KCS0003B (SLVS044Z page 38).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/LM317KCS
-
 manufacturer: ti
 mpn: LM317KCS
-
 device: ti/LM317-KCS
-package: manufacturers/ti/KCS0003B
+package: { value: manufacturers/ti/KCS0003B, src: p38 "KCS0003B package outline" }
+sources: [ti/SLVS044Z]
+source: ti/SLVS044Z
 
 existence:
   status: verified
+  src: p30 "Package option addendum table, row "LM317KCS" (TO-220 (KCS) | 3)"
 
 lifecycle:
   status: nrnd
-
-sources:
-  - ti/SLVS044Z
-
-provenance:
-  "/existence":
-    - source: ti/SLVS044Z
-      page: 30
-      locator: "Package option addendum table, row \"LM317KCS\" (TO-220 (KCS) | 3)"
-  "/lifecycle":
-    - source: ti/SLVS044Z
-      page: 30
-      locator: "Package option addendum table, row \"LM317KCS\", Status \"NRND\""
-  "/package":
-    - source: ti/SLVS044Z
-      page: 38
-      locator: "KCS0003B package outline"
+  src: p30 "Package option addendum table, row "LM317KCS", Status "NRND""

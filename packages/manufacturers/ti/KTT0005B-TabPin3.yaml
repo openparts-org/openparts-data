@@ -30,113 +30,56 @@
 # is drawn from the tab-end corner (the tab spans the body width).
 # Left out: tab thickness .050 +-.002, land pattern (reference values),
 # angles, the .030 gage plane.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/ti/KTT0005B-TabPin3
-
 family: d2pak
 lead_count: 5
+source: ti/SNVS124G
 
-pitch:
-  nominal: 1.7
-  unit: mm
+pitch: { typ: 1.7 mm, src: 'p45 "KTT0005B (TS5B Rev D), top view, boxed "4X .067 [1.7]""' }
 
 tab:
   number: "3"
-  trimmed_leads: []
+  src:
+    - 'p45 "KTT0005B, top view: leads 1-5 all full length, tab unnumbered"'
+    - 'p4 "Figure 6-2 "5-Pin TO-263 KTT Package Top View": "Metal Tab GND"; Table 6-1: pin 3 "Ground" -- tab keyed "3", see header"'
+
+geometry: { type: parametric, generator: d2pak }
 
 dimensions:
   body_width:
-    min: 8.39
-    max: 8.89
-    unit: mm
+    min: 8.39 mm
+    max: 8.89 mm
+    src: p45 "KTT0005B, top view, datum B to lead-side body edge ".340 +-.010 [8.64 +-0.25]""
   body_length:
-    min: 10.04
-    max: 10.41
-    unit: mm
+    min: 10.04 mm
+    max: 10.41 mm
+    src: p45 "KTT0005B, top view ".400 +.010/-.005 [10.16 +0.25/-0.12]" -> 10.04-10.41"
   body_height:
-    min: 4.44
-    max: 4.65
-    unit: mm
-  overall_width:
-    max: 14.35
-    unit: mm
-  standoff:
-    min: 0.00
-    max: 0.15
-    unit: mm
-  lead_width:
-    min: 0.71
-    max: 0.97
-    unit: mm
-  lead_length:
-    nominal: 1.98
-    unit: mm
-  lead_thickness:
-    min: 0.38
-    max: 0.76
-    unit: mm
-  tab_width:
-    min: 10.04
-    max: 10.41
-    unit: mm
+    min: 4.44 mm
+    max: 4.65 mm
+    src: p45 "KTT0005B, side view ".180 +.003/-.005 [4.57 +0.08/-0.13]" -> 4.44-4.65"
   tab_length:
-    max: 1.27
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: d2pak
-
-provenance:
-  "/pitch":
-    - source: ti/SNVS124G
-      page: 45
-      locator: "KTT0005B (TS5B Rev D), top view, boxed \"4X .067 [1.7]\""
-  "/tab":
-    - source: ti/SNVS124G
-      page: 45
-      locator: "KTT0005B, top view: leads 1-5 all full length, tab unnumbered"
-    - source: ti/SNVS124G
-      page: 4
-      locator: "Figure 6-2 \"5-Pin TO-263 KTT Package Top View\": \"Metal Tab GND\"; Table 6-1: pin 3 \"Ground\" -- tab keyed \"3\", see header"
-  "/dimensions/body_width":
-    - source: ti/SNVS124G
-      page: 45
-      locator: "KTT0005B, top view, datum B to lead-side body edge \".340 +-.010 [8.64 +-0.25]\""
-  "/dimensions/body_length":
-    - source: ti/SNVS124G
-      page: 45
-      locator: "KTT0005B, top view \".400 +.010/-.005 [10.16 +0.25/-0.12]\" -> 10.04-10.41"
-  "/dimensions/body_height":
-    - source: ti/SNVS124G
-      page: 45
-      locator: "KTT0005B, side view \".180 +.003/-.005 [4.57 +0.08/-0.13]\" -> 4.44-4.65"
-  "/dimensions/overall_width":
-    - source: ti/SNVS124G
-      page: 45
-      locator: "KTT0005B, side view, tab end to lead toe \".565 MAX [14.35]\""
-  "/dimensions/standoff":
-    - source: ti/SNVS124G
-      page: 45
-      locator: "KTT0005B, side view \".000-.006 [0-0.15] NOTE 4\""
-  "/dimensions/lead_width":
-    - source: ti/SNVS124G
-      page: 45
-      locator: "KTT0005B, top view \"5X .028-.038 [0.71-0.97]\""
-  "/dimensions/lead_length":
-    - source: ti/SNVS124G
-      page: 45
-      locator: "KTT0005B, side view, foot \".078 [1.98]\""
-  "/dimensions/lead_thickness":
-    - source: ti/SNVS124G
-      page: 45
-      locator: "KTT0005B, side view, lead \".015-.030 [0.38-0.76]\""
-  "/dimensions/tab_width":
-    - source: ti/SNVS124G
-      page: 45
-      locator: "KTT0005B, top view \".400 +.010/-.005 [10.16 +0.25/-0.12]\" (extension line from the tab-end corner) -- bottom side exposed metal only \".200 MIN [5.08]\"; see header"
-  "/dimensions/tab_length":
-    - source: ti/SNVS124G
-      page: 45
-      locator: "KTT0005B, side view, body edge to tab end \".050 MAX [1.27]\""
+    max: 1.27 mm
+    src: p45 "KTT0005B, side view, body edge to tab end ".050 MAX [1.27]""
+  overall_width:
+    max: 14.35 mm
+    src: p45 "KTT0005B, side view, tab end to lead toe ".565 MAX [14.35]""
+  standoff:
+    min: 0 mm
+    max: 0.15 mm
+    src: p45 "KTT0005B, side view ".000-.006 [0-0.15] NOTE 4""
+  lead_width:
+    min: 0.71 mm
+    max: 0.97 mm
+    src: p45 "KTT0005B, top view "5X .028-.038 [0.71-0.97]""
+  lead_length: { typ: 1.98 mm, src: 'p45 "KTT0005B, side view, foot ".078 [1.98]""' }
+  lead_thickness:
+    min: 0.38 mm
+    max: 0.76 mm
+    src: p45 "KTT0005B, side view, lead ".015-.030 [0.38-0.76]""
+  tab_width:
+    min: 10.04 mm
+    max: 10.41 mm
+    src: p45 "KTT0005B, top view ".400 +.010/-.005 [10.16 +0.25/-0.12]" (extension line from the tab-end corner) -- bottom side exposed metal only ".200 MIN [5.08]"; see header"

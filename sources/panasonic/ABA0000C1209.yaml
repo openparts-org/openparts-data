@@ -15,15 +15,12 @@
 # plausibly reflects a file re-export than a content revision; recorded
 # honestly as a judgment call, not a directly-stated single "revision
 # date" field.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: panasonic/ABA0000C1209
-
+url: https://industrial.panasonic.com/cdbs/www-data/pdf/RDF0000/ABA0000C1209.pdf
+date: 2025-09-01
+revision: ABA0000C1209
 publisher: panasonic
 document_id: ABA0000C1209
 document_type: datasheet
-
-revision: "ABA0000C1209"
-date: "2025-09-01"
-
-url: "https://industrial.panasonic.com/cdbs/www-data/pdf/RDF0000/ABA0000C1209.pdf"

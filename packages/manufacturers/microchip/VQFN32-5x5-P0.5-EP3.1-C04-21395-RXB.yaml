@@ -6,101 +6,51 @@
 # 665). Different from standards/QFN32-5x5-P0.5-EP3.6 (EP 3.6) -> new
 # package. body_height = A (no A2 given). lead_thickness = A3 "0.203 REF"
 # (reference value, marked REF). K (min 0.20) is not modelled.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/microchip/VQFN32-5x5-P0.5-EP3.1-C04-21395-RXB
-
 family: qfn
-lead_count: 32
 
-pitch:
-  nominal: 0.5
-  unit: mm
+lead_count:
+  value: 32
+  src: p665 "C04-21395-RXB Rev C sheet 2 table, "Number of Terminals N 32""
+
+source: microchip/DS40002315@revC
+
+pitch: { typ: 0.5 mm, src: 'p665 "C04-21395-RXB Rev C sheet 2 table, "Pitch e 0.50 BSC""' }
+geometry: { type: parametric, generator: qfn }
 
 dimensions:
   body_width:
-    nominal: 5.00
-    unit: mm
+    typ: 5 mm
+    src: p665 "C04-21395-RXB Rev C sheet 2 table, "Overall Width E 5.00 BSC""
   body_length:
-    nominal: 5.00
-    unit: mm
+    typ: 5 mm
+    src: p665 "C04-21395-RXB Rev C sheet 2 table, "Overall Length D 5.00 BSC""
   body_height:
-    nominal: 0.85
-    min: 0.80
-    max: 0.90
-    unit: mm
-  standoff:
-    nominal: 0.02
-    min: 0.00
-    max: 0.05
-    unit: mm
-  lead_width:
-    nominal: 0.25
-    min: 0.18
-    max: 0.30
-    unit: mm
-  lead_length:
-    nominal: 0.40
-    min: 0.30
-    max: 0.50
-    unit: mm
-  lead_thickness:
-    nominal: 0.203
-    unit: mm
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 0.9 mm
+    src: p665 "C04-21395-RXB Rev C sheet 2 table, "Overall Height A 0.80 / 0.85 / 0.90""
   exposed_pad:
-    width:
-      nominal: 3.10
-      min: 3.00
-      max: 3.20
-      unit: mm
-    length:
-      nominal: 3.10
-      min: 3.00
-      max: 3.20
-      unit: mm
-
-geometry:
-  type: parametric
-  generator: qfn
-
-provenance:
-  "/lead_count":
-    - source: microchip/DS40002315@revC
-      page: 665
-      locator: "C04-21395-RXB Rev C sheet 2 table, \"Number of Terminals N 32\""
-  "/pitch":
-    - source: microchip/DS40002315@revC
-      page: 665
-      locator: "C04-21395-RXB Rev C sheet 2 table, \"Pitch e 0.50 BSC\""
-  "/dimensions/body_width":
-    - source: microchip/DS40002315@revC
-      page: 665
-      locator: "C04-21395-RXB Rev C sheet 2 table, \"Overall Width E 5.00 BSC\""
-  "/dimensions/body_length":
-    - source: microchip/DS40002315@revC
-      page: 665
-      locator: "C04-21395-RXB Rev C sheet 2 table, \"Overall Length D 5.00 BSC\""
-  "/dimensions/body_height":
-    - source: microchip/DS40002315@revC
-      page: 665
-      locator: "C04-21395-RXB Rev C sheet 2 table, \"Overall Height A 0.80 / 0.85 / 0.90\""
-  "/dimensions/standoff":
-    - source: microchip/DS40002315@revC
-      page: 665
-      locator: "C04-21395-RXB Rev C sheet 2 table, \"Standoff A1 0.00 / 0.02 / 0.05\""
-  "/dimensions/lead_width":
-    - source: microchip/DS40002315@revC
-      page: 665
-      locator: "C04-21395-RXB Rev C sheet 2 table, \"Terminal Width b 0.18 / 0.25 / 0.30\""
-  "/dimensions/lead_length":
-    - source: microchip/DS40002315@revC
-      page: 665
-      locator: "C04-21395-RXB Rev C sheet 2 table, \"Terminal Length L 0.30 / 0.40 / 0.50\""
-  "/dimensions/lead_thickness":
-    - source: microchip/DS40002315@revC
-      page: 665
-      locator: "C04-21395-RXB Rev C sheet 2 table, \"Terminal Thickness A3 0.203 REF\" (reference value)"
-  "/dimensions/exposed_pad":
-    - source: microchip/DS40002315@revC
-      page: 665
-      locator: "C04-21395-RXB Rev C sheet 2 table, \"Exposed Pad Width E2\" and \"Exposed Pad Length D2\" 3.00 / 3.10 / 3.20"
+    src:    p665 "C04-21395-RXB Rev C sheet 2 table, "Exposed Pad Width E2" and "Exposed Pad Length D2" 3.00 / 3.10 / 3.20"
+    width:  { min: 3 mm, typ: 3.1 mm, max: 3.2 mm }
+    length: { min: 3 mm, typ: 3.1 mm, max: 3.2 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p665 "C04-21395-RXB Rev C sheet 2 table, "Standoff A1 0.00 / 0.02 / 0.05""
+  lead_width:
+    min: 0.18 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p665 "C04-21395-RXB Rev C sheet 2 table, "Terminal Width b 0.18 / 0.25 / 0.30""
+  lead_length:
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p665 "C04-21395-RXB Rev C sheet 2 table, "Terminal Length L 0.30 / 0.40 / 0.50""
+  lead_thickness:
+    typ: 0.203 mm
+    src: p665 "C04-21395-RXB Rev C sheet 2 table, "Terminal Thickness A3 0.203 REF" (reference value)"

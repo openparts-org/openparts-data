@@ -3,35 +3,25 @@
 # checked against the "Package Types" figure "SOT-23/SC-70" (page 1):
 # SCL 1, VSS 2, SDA 3 along one side, VCC 4 opposite pin 3, WP 5
 # opposite pin 1. Types as microchip/24LC02B.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/24AA02-SOT23
-
 manufacturer: microchip
 category: eeprom
-family: "24AA02/24LC02B"
+family: 24AA02/24LC02B
+source: microchip/DS21709@revJ
+
+parameters:
+  capacity:
+    typ: 2 Kbit
+    src: 'p1 "Description: "The Microchip Technology Inc. 24AA02/24LC02B (24XX02*) is a 2 Kbit Electrically Erasable PROM""'
 
 pins:
+  src:
+    - p5 "Table 2-1 "Pin Function Table", column "SOT23""
+    - p1 ""Package Types" figure "SOT-23/SC-70" (all 5 pins matched)"
   "1": { name: SCL, type: input }
   "2": { name: VSS, type: ground }
   "3": { name: SDA, type: io }
   "4": { name: VCC, type: power }
   "5": { name: WP, type: input }
-
-parameters:
-  capacity:
-    nominal: 2
-    unit: Kbit
-
-provenance:
-  "/parameters/capacity":
-    - source: microchip/DS21709@revJ
-      page: 1
-      locator: "Description: \"The Microchip Technology Inc. 24AA02/24LC02B (24XX02*) is a 2 Kbit Electrically Erasable PROM\""
-  "/pins":
-    - source: microchip/DS21709@revJ
-      page: 5
-      locator: "Table 2-1 \"Pin Function Table\", column \"SOT23\""
-    - source: microchip/DS21709@revJ
-      page: 1
-      locator: "\"Package Types\" figure \"SOT-23/SC-70\" (all 5 pins matched)"

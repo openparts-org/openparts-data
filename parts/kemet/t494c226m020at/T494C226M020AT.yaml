@@ -1,53 +1,25 @@
 # 22uF 20V tantalum, Case C, 100% Sn termination (AT). Listed at dasenic.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: kemet/T494C226M020AT
-
 manufacturer: kemet
 mpn: T494C226M020AT
-
 device: kemet/T494C-TANTALUM
 package: standards/CHIP-KEMET-T494C
+sources: [kemet/T494-SERIES, kemet/T2008_T494]
+source: kemet/T2008_T494
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - kemet/T494-SERIES
-  - kemet/T2008_T494
+existence: { status: verified }
+lifecycle: { status: active }
 
 parameters:
   capacitance:
-    nominal: 22
-    unit: µF
-  tolerance:
-    min: -20
-    max: 20
-    unit: "%"
+    typ: 22 µF
+    src: 'p10 "Table 1 – Ratings & Part Number Reference, row T494C226(1)020A(2): Rated Cap 22 µF"'
+  tolerance: { tol: ±20 %, src: 'p2 "Ordering Information, Capacitance Tolerance: M = ±20%"' }
   rated_voltage:
-    nominal: 20
-    unit: V
+    typ: 20 V
+    src: 'p10 "Table 1 – Ratings & Part Number Reference, row T494C226(1)020A(2): Rated Voltage 20 VDC at 85°C"'
   esr:
-    max: 0.4
-    unit: Ω
-
-provenance:
-  "/parameters/capacitance":
-    - source: kemet/T2008_T494
-      page: 10
-      locator: "Table 1 – Ratings & Part Number Reference, row T494C226(1)020A(2): Rated Cap 22 µF"
-  "/parameters/tolerance":
-    - source: kemet/T2008_T494
-      page: 2
-      locator: "Ordering Information, Capacitance Tolerance: M = ±20%"
-  "/parameters/rated_voltage":
-    - source: kemet/T2008_T494
-      page: 10
-      locator: "Table 1 – Ratings & Part Number Reference, row T494C226(1)020A(2): Rated Voltage 20 VDC at 85°C"
-  "/parameters/esr":
-    - source: kemet/T2008_T494
-      page: 10
-      locator: "Table 1 – Ratings & Part Number Reference, row T494C226(1)020A(2): ESR 0.4 Ω at 25°C 100 kHz Max"
+    max: 0.4 Ω
+    src: 'p10 "Table 1 – Ratings & Part Number Reference, row T494C226(1)020A(2): ESR 0.4 Ω at 25°C 100 kHz Max"'

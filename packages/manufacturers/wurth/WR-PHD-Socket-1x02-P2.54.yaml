@@ -8,86 +8,54 @@
 # no pin-1 mark in the drawing.
 # lead_width is the contact width the bottom view dimensions (the solder
 # tail seen from below); the tail's thickness is not given.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/wurth/WR-PHD-Socket-1x02-P2.54
-
 family: socket
 lead_count: 2
-lead_layout: [1, 2]
+
+lead_layout:
+  value: [1, 2]
+  src:   'p1 ""Article Properties" Pins 2; "Recommended Hole Pattern: [mm]": 1 row, labelled "1" and "End""'
+
+source: wurth/61300211821-DS
 
 pitch:
-  nominal: 2.54
-  min: 2.49
-  max: 2.59
-  unit: mm
+  min: 2.49 mm
+  typ: 2.54 mm
+  max: 2.59 mm
+  src: 'p1 ""Dimensions: [mm]" view above the front view (first-angle projection: the bottom view), contact pitch "2,54 ±0,05"; "Recommended Hole Pattern: [mm]" "2,54 ±0,05""'
+
+geometry: { type: parametric, generator: socket }
 
 dimensions:
   body_width:
-    nominal: 2.5
-    min: 2.3
-    max: 2.7
-    unit: mm
+    min: 2.3 mm
+    typ: 2.5 mm
+    max: 2.7 mm
+    src: 'p1 ""Dimensions: [mm]" view below the front view (first-angle projection: the top view), housing width "2,5 ±0,2""'
   body_length:
-    nominal: 5.58
-    min: 5.33
-    max: 5.83
-    unit: mm
+    min: 5.33 mm
+    typ: 5.58 mm
+    max: 5.83 mm
+    src: 'p1 ""Dimensions: [mm]" front view, housing length "L ±0,25"; "Article Properties" Length L = 5.58 mm"'
   body_height:
-    nominal: 8.5
-    min: 8.35
-    max: 8.65
-    unit: mm
-  lead_width:
-    nominal: 0.74
-    min: 0.59
-    max: 0.89
-    unit: mm
+    min: 8.35 mm
+    typ: 8.5 mm
+    max: 8.65 mm
+    src: 'p1 ""Dimensions: [mm]" side view (right of the front view), housing height "8,5 ±0,15""'
   tail_length:
-    nominal: 3.1
-    min: 2.8
-    max: 3.4
-    unit: mm
+    min: 2.8 mm
+    typ: 3.1 mm
+    max: 3.4 mm
+    src: 'p1 ""Dimensions: [mm]" side view (right of the front view), housing underside to tail end "3,1 ±0,3""'
+  lead_width:
+    min: 0.59 mm
+    typ: 0.74 mm
+    max: 0.89 mm
+    src: 'p1 ""Dimensions: [mm]" view above the front view (first-angle projection: the bottom view), contact (solder tail) width "0,74 ±0,15""'
   hole_diameter:
-    nominal: 1.02
-    min: 0.87
-    max: 1.17
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: socket
-
-provenance:
-  "/pitch":
-    - source: wurth/61300211821-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" view above the front view (first-angle projection: the bottom view), contact pitch \"2,54 ±0,05\"; \"Recommended Hole Pattern: [mm]\" \"2,54 ±0,05\""
-  "/lead_layout":
-    - source: wurth/61300211821-DS
-      page: 1
-      locator: "\"Article Properties\" Pins 2; \"Recommended Hole Pattern: [mm]\": 1 row, labelled \"1\" and \"End\""
-  "/dimensions/body_width":
-    - source: wurth/61300211821-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" view below the front view (first-angle projection: the top view), housing width \"2,5 ±0,2\""
-  "/dimensions/body_length":
-    - source: wurth/61300211821-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" front view, housing length \"L ±0,25\"; \"Article Properties\" Length L = 5.58 mm"
-  "/dimensions/body_height":
-    - source: wurth/61300211821-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" side view (right of the front view), housing height \"8,5 ±0,15\""
-  "/dimensions/lead_width":
-    - source: wurth/61300211821-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" view above the front view (first-angle projection: the bottom view), contact (solder tail) width \"0,74 ±0,15\""
-  "/dimensions/tail_length":
-    - source: wurth/61300211821-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" side view (right of the front view), housing underside to tail end \"3,1 ±0,3\""
-  "/dimensions/hole_diameter":
-    - source: wurth/61300211821-DS
-      page: 1
-      locator: "\"Recommended Hole Pattern: [mm]\", hole \"Ø 1,02 ±0,15\""
+    min: 0.87 mm
+    typ: 1.02 mm
+    max: 1.17 mm
+    src: 'p1 ""Recommended Hole Pattern: [mm]", hole "Ø 1,02 ±0,15""'

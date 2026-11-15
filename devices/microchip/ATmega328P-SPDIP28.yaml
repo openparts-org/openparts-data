@@ -4,15 +4,16 @@
 # ATmega48A/PA/88A/PA/168A/PA/328/P", "28 SPDIP" diagram (page 12).
 # Names use the primary (non-parenthesized) label; alternate functions
 # recorded only for the ADC channels of PC0-PC5, as in the TQFP device.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/ATmega328P-SPDIP28
-
 manufacturer: microchip
 category: microcontroller
 family: ATmega48A/PA/88A/PA/168A/PA/328/P
+source: microchip/DS40002061@revB
 
 pins:
+  src:  p12 "Figure 1-1, "28 SPDIP" diagram (rendered image)"
   "1":  { name: PC6, type: io }
   "2":  { name: PD0, type: io }
   "3":  { name: PD1, type: io }
@@ -41,9 +42,3 @@ pins:
   "26": { name: PC3, type: io, alternate_functions: [ADC3] }
   "27": { name: PC4, type: io, alternate_functions: [ADC4] }
   "28": { name: PC5, type: io, alternate_functions: [ADC5] }
-
-provenance:
-  "/pins":
-    - source: microchip/DS40002061@revB
-      page: 12
-      locator: "Figure 1-1, \"28 SPDIP\" diagram (rendered image)"

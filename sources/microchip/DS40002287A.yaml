@@ -6,15 +6,12 @@
 # = printed page number. Read with pdftotext -layout: pinout (page 14),
 # Table 5-2 (page 18), ordering table 37.1 (page 554), C04-057-SN table
 # (page 558).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: microchip/DS40002287@revA
-
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny212-214-412-414-416-DataSheet-DS40002287A.pdf
+date: 2020-12
+revision: A
 publisher: microchip
 document_id: DS40002287
 document_type: datasheet
-
-revision: "A"
-date: "2020-12"
-
-url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny212-214-412-414-416-DataSheet-DS40002287A.pdf"

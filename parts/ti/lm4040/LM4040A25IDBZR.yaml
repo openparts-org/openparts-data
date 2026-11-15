@@ -3,44 +3,29 @@
 # "LM4040A25IDBZR | Active | Production | SOT-23 (DBZ) | 3 | 3000 | LARGE T&R | ... | -40 to 85 | (4NG3, 4NGU)".
 # lifecycle "active" is that table's Status column.
 # Package: SOT-23 (DBZ) | 3, outline DBZ0003A (4214838/F) on page 53.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/LM4040A25IDBZR
-
 manufacturer: ti
-mpn: "LM4040A25IDBZR"
-
+mpn: LM4040A25IDBZR
 device: ti/LM4040-DBZ
-package: manufacturers/ti/DBZ0003A
+
+package:
+  value: manufacturers/ti/DBZ0003A
+  src: p32 "Package Option Addendum, row "LM4040A25IDBZR", "SOT-23 (DBZ) | 3"; outline DBZ0003A (4214838/F) on page 53"
+
+sources: [ti/SLOS456Q]
+source: ti/SLOS456Q
 
 existence:
   status: verified
+  src: p32 "Package Option Addendum, Packaging Information table, row "LM4040A25IDBZR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLOS456Q
+  src: p32 "Package Option Addendum, row "LM4040A25IDBZR", Status "Active""
 
 parameters:
   output_voltage:
-    nominal: 2.5
-    unit: V
-
-provenance:
-  "/parameters/output_voltage":
-    - source: ti/SLOS456Q
-      page: 3
-      locator: "4 Device Comparison Table, A grade, VKA 2.5V, orderable part number LM4040A25I"
-  "/existence":
-    - source: ti/SLOS456Q
-      page: 32
-      locator: "Package Option Addendum, Packaging Information table, row \"LM4040A25IDBZR\""
-  "/lifecycle":
-    - source: ti/SLOS456Q
-      page: 32
-      locator: "Package Option Addendum, row \"LM4040A25IDBZR\", Status \"Active\""
-  "/package":
-    - source: ti/SLOS456Q
-      page: 32
-      locator: "Package Option Addendum, row \"LM4040A25IDBZR\", \"SOT-23 (DBZ) | 3\"; outline DBZ0003A (4214838/F) on page 53"
+    typ: 2.5 V
+    src: p3 "4 Device Comparison Table, A grade, VKA 2.5V, orderable part number LM4040A25I"

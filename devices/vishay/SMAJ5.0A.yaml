@@ -4,29 +4,20 @@
 # says "Polarity: for unidirectional types the band denotes cathode
 # end". No pin numbers are printed, so 1 = Cathode and 2 = Anode follow
 # the dataset's two-terminal diode convention (vishay/S1M, vishay/SS34).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: vishay/SMAJ5.0A
-
 manufacturer: vishay
 category: diode
 family: SMAJ
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: vishay/88390
 
 parameters:
   reverse_voltage:
-    max: 5.0
-    unit: V
+    max: 5 V
+    src: 'p2 "ELECTRICAL CHARACTERISTICS table, row (+)SMAJ5.0A: Stand-off voltage VWM 5.0 V"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: vishay/88390
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS table, row (+)SMAJ5.0A: Stand-off voltage VWM 5.0 V"
-  "/pins":
-    - source: vishay/88390
-      page: 1
-      locator: "MECHANICAL DATA \"Polarity: for unidirectional types the band denotes cathode end\"; SMA (DO-214AC) image \"Cathode / Anode (unidirectional)\""
+pins:
+  src: 'p1 "MECHANICAL DATA "Polarity: for unidirectional types the band denotes cathode end"; SMA (DO-214AC) image "Cathode / Anode (unidirectional)""'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

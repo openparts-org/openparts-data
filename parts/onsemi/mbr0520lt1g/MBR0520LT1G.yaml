@@ -3,21 +3,14 @@
 # 2026-11-14: package repointed from standards/CHIP-SOD123-MBR0520
 # (family chip, body only; deleted) to
 # standards/SOD123-ONSEMI-425.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/MBR0520LT1G
-
 manufacturer: onsemi
 mpn: MBR0520LT1G
-
 device: onsemi/MBR0520
 package: standards/SOD123-ONSEMI-425
+sources: [onsemi/MBR0520-D]
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - onsemi/MBR0520-D
+existence: { status: verified }
+lifecycle: { status: active }

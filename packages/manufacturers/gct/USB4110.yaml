@@ -9,88 +9,54 @@
 # includes the rear tails), "3.16" high above its underside, which sits
 # "0.10" above the seating plane (standoff; "3.26" overall); front face
 # "2.85" in front of the front tab centres (side view; layout "2x 2.85"
-# to PCB edge): centre y = 2.85 - 7.35/2 = -0.825. 
+# to PCB edge): centre y = 2.85 - 7.35/2 = -0.825.
 # Values printed without a tolerance carry the title block's general
 # tolerance (not recorded as min/max).
 # NOT in the footprint: the two non-plated Ø0.65 alignment-peg holes --
 # add them by hand.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/gct/USB4110
-
 family: usb_c
-lead_count: 16
 
-pitch:
-  unit: mm
+lead_count:
+  value: 16
+  src: 'p1 ""Recommended PCB Layout": 12 contact pads (A1 B12, A4 B9, B8, A5, B7, A6, A7, B6, A8, B5, B4 A9, B1 A12) + 4 SMD shell pads"'
+
+source: gct/USB4110-DWG
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: usb_c }
 
 dimensions:
-  body_width:
-    nominal: 8.94
-    unit: mm
+  body_width:  { typ: 8.94 mm, src: 'p1 "Top view (left of the PCB layout), shell width "8.94""' }
   body_length:
-    nominal: 7.35
-    min: 7.05
-    max: 7.65
-    unit: mm
-  body_height:
-    nominal: 3.16
-    unit: mm
-  standoff:
-    nominal: 0.1
-    unit: mm
+    min: 7.05 mm
+    typ: 7.35 mm
+    max: 7.65 mm
+    src: p1 "Side view, shell length "7.35±0.30""
+  body_height: { typ: 3.16 mm, src: 'p1 "Side view, shell height "3.16" (overall "3.26")"' }
   body_offset:
-    nominal: -0.825
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: usb_c
+    typ: -0.825 mm
+    src: 'p1 "Side view: front face to front tab centre "2.85", tab to tab "3.93"; shell length "7.35": centre y = 2.85 - 7.35/2 = -0.825 (opening toward +Y)"'
+  standoff: { typ: 0.1 mm, src: 'p1 "Side view, shell underside above the seating plane "0.10""' }
 
 pads:
-  - { number: "A1", x: 3.2, y: -4.505, width: 0.6, length: 1.15 }
-  - { number: "A4", x: 2.4, y: -4.505, width: 0.6, length: 1.15 }
-  - { number: "B8", x: 1.75, y: -4.505, width: 0.3, length: 1.15 }
-  - { number: "A5", x: 1.25, y: -4.505, width: 0.3, length: 1.15 }
-  - { number: "B7", x: 0.75, y: -4.505, width: 0.3, length: 1.15 }
-  - { number: "A6", x: 0.25, y: -4.505, width: 0.3, length: 1.15 }
-  - { number: "A7", x: -0.25, y: -4.505, width: 0.3, length: 1.15 }
-  - { number: "B6", x: -0.75, y: -4.505, width: 0.3, length: 1.15 }
-  - { number: "A8", x: -1.25, y: -4.505, width: 0.3, length: 1.15 }
-  - { number: "B5", x: -1.75, y: -4.505, width: 0.3, length: 1.15 }
-  - { number: "A9", x: -2.4, y: -4.505, width: 0.6, length: 1.15 }
-  - { number: "A12", x: -3.2, y: -4.505, width: 0.6, length: 1.15 }
-  - { number: "SHELL", x: 5.11, y: -3.93, width: 2.18, length: 2.0 }
-  - { number: "SHELL", x: -5.11, y: -3.93, width: 2.18, length: 2.0 }
-  - { number: "SHELL", x: 5.11, y: 0.0, width: 2.18, length: 2.0 }
-  - { number: "SHELL", x: -5.11, y: 0.0, width: 2.18, length: 2.0 }
-
-provenance:
-  "/lead_count":
-    - source: gct/USB4110-DWG
-      page: 1
-      locator: "\"Recommended PCB Layout\": 12 contact pads (A1 B12, A4 B9, B8, A5, B7, A6, A7, B6, A8, B5, B4 A9, B1 A12) + 4 SMD shell pads"
-  "/pads":
-    - source: gct/USB4110-DWG
-      page: 1
-      locator: "\"Recommended PCB Layout\" (as viewed from component side, tolerance ±0.05), drawn with the PCB edge (opening) at the bottom; turned 180° so the opening faces +Y (x -> -x, y -> -y; rotation, not mirror). Origin: X centre line, Y front shell pad centres. X (drawing, left to right A1/B12, A4/B9, B8, A5, B7, A6, A7, B6, A8, B5, B4/A9, B1/A12): \"6.40\" outer pad centres -> ±3.2; \"4.80\" A4/B9 to B4/A9 -> ±2.4; \"3.50\" B8 to B5 -> ±1.75; pitch \"6x 0.50\" in between (A5 ±1.25, B7 ±0.75, A6/A7 ±0.25); then x -> -x by the rotation. Widths \"4x 0.60\" (double-labelled pads), \"8x 0.30\"; length \"12x 1.15\". Y: the signal pads' \"12x 1.15\" is measured from the rear shell pads' centre line, which is \"2x 3.93\" behind the front shell pad centres, so centre y = -(3.93 + 1.15/2) = -4.505. Shell pads (SMD, pin \"SHELL\"): \"10.22\" between centres -> x ±5.11; rear y -3.93, front y 0; size \"4x2.18\" (X) x \"4x 2.00\" (Y); \"2x 2.85\" front pads to PCB edge. Not recorded: the two non-plated \"Ø0.65\" alignment holes (\"5.78\" apart, \"0.50\" in front of the rear shell pad line) -- the family has no non-plated hole."
-  "/dimensions/body_width":
-    - source: gct/USB4110-DWG
-      page: 1
-      locator: "Top view (left of the PCB layout), shell width \"8.94\""
-  "/dimensions/body_length":
-    - source: gct/USB4110-DWG
-      page: 1
-      locator: "Side view, shell length \"7.35±0.30\""
-  "/dimensions/body_height":
-    - source: gct/USB4110-DWG
-      page: 1
-      locator: "Side view, shell height \"3.16\" (overall \"3.26\")"
-  "/dimensions/standoff":
-    - source: gct/USB4110-DWG
-      page: 1
-      locator: "Side view, shell underside above the seating plane \"0.10\""
-  "/dimensions/body_offset":
-    - source: gct/USB4110-DWG
-      page: 1
-      locator: "Side view: front face to front tab centre \"2.85\", tab to tab \"3.93\"; shell length \"7.35\": centre y = 2.85 - 7.35/2 = -0.825 (opening toward +Y)"
+  value:
+    - { number: A1, x: 3.2, y: -4.505, width: 0.6, length: 1.15 }
+    - { number: A4, x: 2.4, y: -4.505, width: 0.6, length: 1.15 }
+    - { number: B8, x: 1.75, y: -4.505, width: 0.3, length: 1.15 }
+    - { number: A5, x: 1.25, y: -4.505, width: 0.3, length: 1.15 }
+    - { number: B7, x: 0.75, y: -4.505, width: 0.3, length: 1.15 }
+    - { number: A6, x: 0.25, y: -4.505, width: 0.3, length: 1.15 }
+    - { number: A7, x: -0.25, y: -4.505, width: 0.3, length: 1.15 }
+    - { number: B6, x: -0.75, y: -4.505, width: 0.3, length: 1.15 }
+    - { number: A8, x: -1.25, y: -4.505, width: 0.3, length: 1.15 }
+    - { number: B5, x: -1.75, y: -4.505, width: 0.3, length: 1.15 }
+    - { number: A9, x: -2.4, y: -4.505, width: 0.6, length: 1.15 }
+    - { number: A12, x: -3.2, y: -4.505, width: 0.6, length: 1.15 }
+    - { number: SHELL, x: 5.11, y: -3.93, width: 2.18, length: 2 }
+    - { number: SHELL, x: -5.11, y: -3.93, width: 2.18, length: 2 }
+    - { number: SHELL, x: 5.11, y: 0, width: 2.18, length: 2 }
+    - { number: SHELL, x: -5.11, y: 0, width: 2.18, length: 2 }
+  src: 'p1 ""Recommended PCB Layout" (as viewed from component side, tolerance ±0.05), drawn with the PCB edge (opening) at the bottom; turned 180° so the opening faces +Y (x -> -x, y -> -y; rotation, not mirror). Origin: X centre line, Y front shell pad centres. X (drawing, left to right A1/B12, A4/B9, B8, A5, B7, A6, A7, B6, A8, B5, B4/A9, B1/A12): "6.40" outer pad centres -> ±3.2; "4.80" A4/B9 to B4/A9 -> ±2.4; "3.50" B8 to B5 -> ±1.75; pitch "6x 0.50" in between (A5 ±1.25, B7 ±0.75, A6/A7 ±0.25); then x -> -x by the rotation. Widths "4x 0.60" (double-labelled pads), "8x 0.30"; length "12x 1.15". Y: the signal pads'' "12x 1.15" is measured from the rear shell pads'' centre line, which is "2x 3.93" behind the front shell pad centres, so centre y = -(3.93 + 1.15/2) = -4.505. Shell pads (SMD, pin "SHELL"): "10.22" between centres -> x ±5.11; rear y -3.93, front y 0; size "4x2.18" (X) x "4x 2.00" (Y); "2x 2.85" front pads to PCB edge. Not recorded: the two non-plated "Ø0.65" alignment holes ("5.78" apart, "0.50" in front of the rear shell pad line) -- the family has no non-plated hole."'

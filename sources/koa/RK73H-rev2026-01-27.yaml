@@ -8,16 +8,13 @@
 # dimension row reads the same as recorded in
 # standards/CHIP0603-KOA-RK73H1J (L .063+/-.008, W .031+/-.004,
 # c/d .012+/-.004, t .018+/-.004).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: koa/RK73H@rev2026-01-27
-
+retrieved: 2026-11-10
+url: https://www.koaspeer.com/pdfs/RK73H.pdf
+date: 2026-01-27
 publisher: koa
-document_id: "RK73H"
+document_id: RK73H
 document_type: datasheet
-
-revision: "p1 10/26/25, p2 01/27/26"
-date: "2026-01-27"
-
-url: "https://www.koaspeer.com/pdfs/RK73H.pdf"
-retrieved: "2026-11-10"
+revision: p1 10/26/25, p2 01/27/26

@@ -9,31 +9,18 @@
 # field, not an inference. Also consistent with the device-nomenclature
 # section (page 77): the "M0" platform code denotes "Fully qualified
 # production device" (vs. "X"/"XMS" for experimental).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/MSPM0G3507SPTR
-
 manufacturer: ti
 mpn: MSPM0G3507SPTR
-
 device: ti/MSPM0G3507
 package: standards/LQFP48-7x7-P0.5
+sources: [ti/SLASEX6C]
+source: ti/SLASEX6C
 
-existence:
-  status: verified
+existence: { status: verified, src: p6 "Table 5-1 "Device Comparison"" }
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLASEX6C
-
-provenance:
-  "/existence":
-    - source: ti/SLASEX6C
-      page: 6
-      locator: "Table 5-1 \"Device Comparison\""
-  "/lifecycle":
-    - source: ti/SLASEX6C
-      page: 97
-      locator: "Package Option Addendum table, field \"Status(1): Active Production\""
+  src: 'p97 "Package Option Addendum table, field "Status(1): Active Production""'

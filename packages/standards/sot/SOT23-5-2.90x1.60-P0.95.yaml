@@ -12,98 +12,50 @@
 # Field mapping for the `sot` generator (leads exit across
 # body_length): body_length = E1 1.60 (molded width across the rows),
 # body_width = D 2.90, overall_length = E 2.80 (lead-tip span).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/SOT23-5-2.90x1.60-P0.95
-
 family: sot
 lead_count: 5
-lead_layout: [3, 2]
+
+lead_layout:
+  value: [3, 2]
+  src:   'p22 "C04-091-OT Rev F sheet 1 TOP VIEW: three leads (1, 2, ...) on one edge, two (incl. N) on the other"'
+
+source: microchip/DS20001984@revH
 
 pitch:
-  nominal: 0.95
-  unit: mm
+  typ: 0.95 mm
+  src: p23 "C04-091-OT Rev F table, "Pitch e 0.95 BSC" (outside lead pitch e1 1.90 BSC)"
+
+geometry: { type: parametric, generator: sot }
 
 dimensions:
-  body_width:
-    nominal: 2.90
-    unit: mm
+  body_width: { typ: 2.9 mm, src: 'p23 "C04-091-OT Rev F table, "Overall Length D 2.90 BSC""' }
   body_length:
-    nominal: 1.60
-    unit: mm
+    typ: 1.6 mm
+    src: p23 "C04-091-OT Rev F table, "Molded Package Width E1 1.60 BSC""
   body_height:
-    min: 0.89
-    max: 1.30
-    unit: mm
-  overall_length:
-    nominal: 2.80
-    unit: mm
-  overall_height:
-    min: 0.90
-    max: 1.45
-    unit: mm
-  standoff:
-    max: 0.15
-    unit: mm
-  lead_width:
-    min: 0.20
-    max: 0.51
-    unit: mm
-  lead_length:
-    min: 0.30
-    max: 0.60
-    unit: mm
+    min: 0.89 mm
+    max: 1.3 mm
+    src: p23 "C04-091-OT Rev F table, "Molded Package Thickness A2" (Min 0.89 / Max 1.30)"
   lead_thickness:
-    min: 0.08
-    max: 0.26
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: sot
-
-provenance:
-  "/pitch":
-    - source: microchip/DS20001984@revH
-      page: 23
-      locator: "C04-091-OT Rev F table, \"Pitch e 0.95 BSC\" (outside lead pitch e1 1.90 BSC)"
-  "/lead_layout":
-    - source: microchip/DS20001984@revH
-      page: 22
-      locator: "C04-091-OT Rev F sheet 1 TOP VIEW: three leads (1, 2, ...) on one edge, two (incl. N) on the other"
-  "/dimensions/body_width":
-    - source: microchip/DS20001984@revH
-      page: 23
-      locator: "C04-091-OT Rev F table, \"Overall Length D 2.90 BSC\""
-  "/dimensions/body_length":
-    - source: microchip/DS20001984@revH
-      page: 23
-      locator: "C04-091-OT Rev F table, \"Molded Package Width E1 1.60 BSC\""
-  "/dimensions/body_height":
-    - source: microchip/DS20001984@revH
-      page: 23
-      locator: "C04-091-OT Rev F table, \"Molded Package Thickness A2\" (Min 0.89 / Max 1.30)"
-  "/dimensions/overall_length":
-    - source: microchip/DS20001984@revH
-      page: 23
-      locator: "C04-091-OT Rev F table, \"Overall Width E 2.80 BSC\" (lead-tip span across the rows)"
-  "/dimensions/overall_height":
-    - source: microchip/DS20001984@revH
-      page: 23
-      locator: "C04-091-OT Rev F table, \"Overall Height A\" (Min 0.90 / Max 1.45)"
-  "/dimensions/standoff":
-    - source: microchip/DS20001984@revH
-      page: 23
-      locator: "C04-091-OT Rev F table, \"Standoff A1\" (Max 0.15 only)"
-  "/dimensions/lead_width":
-    - source: microchip/DS20001984@revH
-      page: 23
-      locator: "C04-091-OT Rev F table, \"Lead Width b\" (Min 0.20 / Max 0.51)"
-  "/dimensions/lead_length":
-    - source: microchip/DS20001984@revH
-      page: 23
-      locator: "C04-091-OT Rev F table, \"Foot Length L\" (Min 0.30 / Max 0.60)"
-  "/dimensions/lead_thickness":
-    - source: microchip/DS20001984@revH
-      page: 23
-      locator: "C04-091-OT Rev F table, \"Lead Thickness c\" (Min 0.08 / Max 0.26)"
+    min: 0.08 mm
+    max: 0.26 mm
+    src: p23 "C04-091-OT Rev F table, "Lead Thickness c" (Min 0.08 / Max 0.26)"
+  overall_length:
+    typ: 2.8 mm
+    src: p23 "C04-091-OT Rev F table, "Overall Width E 2.80 BSC" (lead-tip span across the rows)"
+  overall_height:
+    min: 0.9 mm
+    max: 1.45 mm
+    src: p23 "C04-091-OT Rev F table, "Overall Height A" (Min 0.90 / Max 1.45)"
+  standoff: { max: 0.15 mm, src: 'p23 "C04-091-OT Rev F table, "Standoff A1" (Max 0.15 only)"' }
+  lead_width:
+    min: 0.2 mm
+    max: 0.51 mm
+    src: p23 "C04-091-OT Rev F table, "Lead Width b" (Min 0.20 / Max 0.51)"
+  lead_length:
+    min: 0.3 mm
+    max: 0.6 mm
+    src: p23 "C04-091-OT Rev F table, "Foot Length L" (Min 0.30 / Max 0.60)"

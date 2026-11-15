@@ -10,15 +10,23 @@
 # Types from the descriptions, as in microchip/MCP1640-SOT23: VFB input,
 # SGND/PGND ground, EN input, SW passive, VOUTP "Output Voltage Power"
 # power, VOUTS "Output Voltage Sense" input, VIN power.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/MCP1640-DFN8
-
 manufacturer: microchip
 category: switching_regulator
 family: MCP1640/B/C/D
+source: microchip/DS20002234@revD
+
+parameters:
+  output_type:
+    value: adjustable
+    src: 'p1 "Features, "Adjustable Output Voltage Range: 2.0V to 5.5V"; "Output voltage is set by a small external resistor divider""'
 
 pins:
+  src:
+    - p9 "Table 3-1 "Pin Function Table", column "2x3 DFN" (pins 1-9, 9 = EP); section 3.9 "Exposed Thermal Pad (EP)""
+    - p1 ""Package Types", MCP1640 8-Lead 2 x 3 DFN*"
   "1": { name: VFB, type: input }
   "2": { name: SGND, type: ground }
   "3": { name: PGND, type: ground }
@@ -27,21 +35,4 @@ pins:
   "6": { name: VOUTP, type: power }
   "7": { name: VOUTS, type: input }
   "8": { name: VIN, type: power }
-  "EP": { name: EP, type: passive }
-
-parameters:
-  output_type:
-    value: adjustable
-
-provenance:
-  "/parameters/output_type":
-    - source: microchip/DS20002234@revD
-      page: 1
-      locator: "Features, \"Adjustable Output Voltage Range: 2.0V to 5.5V\"; \"Output voltage is set by a small external resistor divider\""
-  "/pins":
-    - source: microchip/DS20002234@revD
-      page: 9
-      locator: "Table 3-1 \"Pin Function Table\", column \"2x3 DFN\" (pins 1-9, 9 = EP); section 3.9 \"Exposed Thermal Pad (EP)\""
-    - source: microchip/DS20002234@revD
-      page: 1
-      locator: "\"Package Types\", MCP1640 8-Lead 2 x 3 DFN*"
+  EP:  { name: EP, type: passive }

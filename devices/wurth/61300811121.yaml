@@ -1,10 +1,9 @@
 # Würth WR-PHD Pin Header, 1 x 8 (8 pins), 2.54 mm pitch
 # (wurth/61300811121-DS page 1, "Article Properties" Pins 8). The datasheet names no
 # signals: each pin is named by its number, all passive.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: wurth/61300811121
-
 manufacturer: wurth
 category: connector
 family: WR-PHD

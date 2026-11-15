@@ -2,24 +2,18 @@
 # page 1, cross-checked against the CASE 221A STYLE list in
 # 98ASB42148B. Terminal 4 (the tab, Drain, tied to pin 2) is not a
 # footprint pad of a vertical TO-220 and is not listed.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/NTP5864N
-
 manufacturer: onsemi
 category: transistor
 family: NTP5864N
+source: onsemi/98ASB42148B
 
 pins:
+  src:
+    - 'onsemi/NTP5864N-D p1 "MARKING DIAGRAM & PIN ASSIGNMENT: "1 Gate", "2 Drain", "3 Source", "4 Drain"; "TO-220AB CASE 221A STYLE 5""'
+    - 'p1 "CASE 221A STYLE 5: "PIN 1. GATE 2. DRAIN 3. SOURCE 4. DRAIN""'
   "1": { name: Gate, type: passive }
   "2": { name: Drain, type: passive }
   "3": { name: Source, type: passive }
-
-provenance:
-  "/pins":
-    - source: onsemi/NTP5864N-D
-      page: 1
-      locator: "MARKING DIAGRAM & PIN ASSIGNMENT: \"1 Gate\", \"2 Drain\", \"3 Source\", \"4 Drain\"; \"TO-220AB CASE 221A STYLE 5\""
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "CASE 221A STYLE 5: \"PIN 1. GATE 2. DRAIN 3. SOURCE 4. DRAIN\""

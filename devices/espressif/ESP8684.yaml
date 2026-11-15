@@ -12,16 +12,18 @@
 # functions are not listed. CHIP_EN is typed IO in Table 2 but is the
 # chip enable (Table 7: "Low: off, disables the chip"), so `reset`, as
 # on the other Espressif devices; XTAL_P/N `clock`, ANT `analog`.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: espressif/ESP8684
-
 manufacturer: espressif
 category: microcontroller
 family: ESP32-C2
+source: espressif/esp8684_datasheet_en@rev2.3
 
 pins:
-  "1":  { name: ANT, type: analog }
+  "1":
+    name: { value: ANT, src: 'p14 "Table 2 "Pin Overview", pins 1-20 (pins 21-25 on page 15)"' }
+    type: analog
   "2":  { name: VDDA3P3, type: power }
   "3":  { name: VDDA3P3, type: power }
   "4":  { name: GPIO0, type: io, alternate_functions: [ADC1_CH0] }
@@ -29,7 +31,12 @@ pins:
   "6":  { name: GPIO2, type: io, alternate_functions: [ADC1_CH2] }
   "7":  { name: CHIP_EN, type: reset }
   "8":  { name: GPIO3, type: io, alternate_functions: [ADC1_CH3] }
-  "9":  { name: MTMS, type: io, alternate_functions: [GPIO4, ADC1_CH4] }
+  "9":
+    name: MTMS
+    type: io
+    alternate_functions:
+      value: [GPIO4, ADC1_CH4]
+      src:   p16 "Table 4 "IO MUX Pin Functions" GPIO name column; Table 6 "Analog Functions" (page 18)"
   "10": { name: MTDI, type: io, alternate_functions: [GPIO5] }
   "11": { name: VDD3P3_RTC, type: power }
   "12": { name: MTCK, type: io, alternate_functions: [GPIO6] }
@@ -45,28 +52,14 @@ pins:
   "22": { name: XTAL_N, type: clock }
   "23": { name: XTAL_P, type: clock }
   "24": { name: VDDA, type: power }
-  "EP": { name: GND, type: ground }
+  EP:
+    name:
+      value: GND
+      src: p21 "Table 8 "Power Pins", pin 25 "GND -- External ground connection""
+    type: ground
 
 # Table 1 lists chip revision v2.0 for both current part numbers
 # (footnote 6: the older ESP8684H2/H4 codes were v1.2 and earlier).
 revisions:
-  rev-v2.0:
-    manufacturer_revision: "v2.0"
-
-provenance:
-  "/pins/1/name":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 14
-      locator: "Table 2 \"Pin Overview\", pins 1-20 (pins 21-25 on page 15)"
-  "/pins/9/alternate_functions":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 16
-      locator: "Table 4 \"IO MUX Pin Functions\" GPIO name column; Table 6 \"Analog Functions\" (page 18)"
-  "/pins/EP/name":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 21
-      locator: "Table 8 \"Power Pins\", pin 25 \"GND -- External ground connection\""
-  "/revisions":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 11
-      locator: "Table 1 \"ESP8684 Series Member Comparison\", Chip Revision column"
+  rev-v2.0: { manufacturer_revision: v2.0, overrides: { pins: {} } }
+  src:      p11 "Table 1 "ESP8684 Series Member Comparison", Chip Revision column"

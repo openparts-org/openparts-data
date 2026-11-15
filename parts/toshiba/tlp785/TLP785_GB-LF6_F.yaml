@@ -11,41 +11,29 @@
 #
 # The plain through-hole DIP4 form (11-5L1, page 1) is not added: no
 # first-party source lists a complete order code for it.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
-id: "toshiba/TLP785(GB-LF6,F"
-
+id: toshiba/TLP785(GB-LF6,F
 manufacturer: toshiba
-mpn: "TLP785(GB-LF6,F"
-
+mpn: TLP785(GB-LF6,F
 device: toshiba/TLP785
-package: manufacturers/toshiba/11-5L106
+
+package:
+  value: manufacturers/toshiba/11-5L106
+  src: p4 ""Surface-Mount Lead Form Option", drawing "TLP785(LF6)" 11-5L106"
+
+sources: [toshiba/TLP785-datasheet-en]
+source: toshiba/TLP785-datasheet-en
 
 existence:
   status: probable
+  src: p7 "Section 6 "Ordering Information" gives the order-code format (example "TLP785(BL-TP6,F"); the exact code "TLP785(GB-LF6,F" is from the product page's representative "Orderable part number (example)" list, not from this document"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - toshiba/TLP785-datasheet-en
+lifecycle: { status: unknown }
 
 parameters:
   current_transfer_ratio:
-    min: 100
-    max: 600
-    unit: "%"
-
-provenance:
-  "/parameters/current_transfer_ratio":
-    - source: toshiba/TLP785-datasheet-en
-      page: 2
-      locator: "Current Transfer Ratio table, TLP785 Rank GB row, IF = 5 mA, VCE = 5 V, Ta = 25 °C: Min 100 %, Max 600 %; Note 1 maps the code: \"e.g. rank GB: TLP785 (GB)\" (page 5, Product Naming System: CTR Rank field)"
-  "/existence":
-    - source: toshiba/TLP785-datasheet-en
-      page: 7
-      locator: "Section 6 \"Ordering Information\" gives the order-code format (example \"TLP785(BL-TP6,F\"); the exact code \"TLP785(GB-LF6,F\" is from the product page's representative \"Orderable part number (example)\" list, not from this document"
-  "/package":
-    - source: toshiba/TLP785-datasheet-en
-      page: 4
-      locator: "\"Surface-Mount Lead Form Option\", drawing \"TLP785(LF6)\" 11-5L106"
+    min: 100 %
+    max: 600 %
+    at: { VCE: 5 V, IF: 5 mA, TA: 25 °C }
+    src: 'p2 "Current Transfer Ratio table, TLP785 Rank GB row: Min 100 %, Max 600 %; Note 1 maps the code: "e.g. rank GB: TLP785 (GB)" (page 5, Product Naming System: CTR Rank field)"'

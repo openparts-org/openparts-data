@@ -12,48 +12,30 @@
 # 2026-11-14: package repointed from standards/CHIP-SOD123-MBR0520
 # (family chip, body only; deleted) to
 # standards/SOD123-ONSEMI-425.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/MMSZ5231BT1G
-
 manufacturer: onsemi
 mpn: MMSZ5231BT1G
-
 device: onsemi/MMSZ5221B-SERIES
 package: standards/SOD123-ONSEMI-425
+sources: [onsemi/MMSZ5221BT1-D]
+source: onsemi/MMSZ5221BT1-D
 
 existence:
   status: probable
+  src:
+    - p1 "ORDERING INFORMATION table pattern row "MMSZ52xxBT1G, SZMMSZ52xxBT1G | SOD-123 (Pb-Free) | 3,000 / Tape & Reel""
+    - 'p3 "Electrical Characteristics table, Device* column: "MMSZ5231BT1G", marking "E1", VZ 4.85 / 5.1 / 5.36 V"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/MMSZ5221BT1-D
+lifecycle: { status: unknown }
 
 parameters:
   zener_voltage:
-    nominal: 5.1
-    min: 4.85
-    max: 5.36
-    unit: V
+    min: 4.85 V
+    typ: 5.1 V
+    max: 5.36 V
+    src: 'p3 "5% TOLERANCE FG ELECTRICAL CHARACTERISTICS, row MMSZ5231BT1G: VZ (Volts) Min 4.85 / Nom 5.1 / Max 5.36 @ IZT (Notes 3 and 4)"'
   zener_test_current:
-    nominal: 20
-    unit: mA
-
-provenance:
-  "/parameters/zener_voltage":
-    - source: onsemi/MMSZ5221BT1-D
-      page: 3
-      locator: "5% TOLERANCE FG ELECTRICAL CHARACTERISTICS, row MMSZ5231BT1G: VZ (Volts) Min 4.85 / Nom 5.1 / Max 5.36 @ IZT (Notes 3 and 4)"
-  "/parameters/zener_test_current":
-    - source: onsemi/MMSZ5221BT1-D
-      page: 3
-      locator: "5% TOLERANCE FG ELECTRICAL CHARACTERISTICS, row MMSZ5231BT1G: @ IZT 20 mA"
-  "/existence":
-    - source: onsemi/MMSZ5221BT1-D
-      page: 1
-      locator: "ORDERING INFORMATION table pattern row \"MMSZ52xxBT1G, SZMMSZ52xxBT1G | SOD-123 (Pb-Free) | 3,000 / Tape & Reel\""
-    - source: onsemi/MMSZ5221BT1-D
-      page: 3
-      locator: "Electrical Characteristics table, Device* column: \"MMSZ5231BT1G\", marking \"E1\", VZ 4.85 / 5.1 / 5.36 V"
+    typ: 20 mA
+    src: 'p3 "5% TOLERANCE FG ELECTRICAL CHARACTERISTICS, row MMSZ5231BT1G: @ IZT 20 mA"'

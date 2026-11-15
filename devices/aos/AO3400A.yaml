@@ -5,21 +5,16 @@
 # bottom-right lead and D on the single top lead. The numbers below map
 # those positions onto this dataset's sot convention (pin 1 bottom-left,
 # 2 bottom-right, 3 top) -- position-derived, flagged for review.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: aos/AO3400A
-
 manufacturer: aos
 category: transistor
 family: AO3400A
+source: aos/AO3400A-DS
 
 pins:
+  src: 'p1 ""SOT23 Top View" drawing: G bottom-left (pin-1 dot side), S bottom-right, D top. No pin numbers printed; numbering is position-derived (see header)"'
   "1": { name: Gate, type: passive }
   "2": { name: Source, type: passive }
   "3": { name: Drain, type: passive }
-
-provenance:
-  "/pins":
-    - source: aos/AO3400A-DS
-      page: 1
-      locator: "\"SOT23 Top View\" drawing: G bottom-left (pin-1 dot side), S bottom-right, D top. No pin numbers printed; numbering is position-derived (see header)"

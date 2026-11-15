@@ -4,71 +4,43 @@
 # recorded. Package: datasheet page 1 says "TO252 DPAK"; AOS's TO252
 # outline is PO-00009 (aosmd.com package path); the datasheet itself
 # does not name the outline document -- linked by package name only.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: aos/AOD403
-
 manufacturer: aos
 mpn: AOD403
-
 device: aos/AOD403
-package: manufacturers/aos/TO252-6.10x6.60-P2.29-PO-00009-TabPin4
+
+package:
+  value: manufacturers/aos/TO252-6.10x6.60-P2.29-PO-00009-TabPin4
+  src: aos/PO-00009 p1 ""TO252 PACKAGE OUTLINE" PO-00009 Version X (linked by the datasheet's package name "TO252")"
+
+sources: [aos/AOD403-DS, aos/PO-00009]
+source: aos/AOD403-DS
 
 existence:
   status: probable
+  src: p1 "Title "AOD403" and package "TO252 DPAK"; no ordering table in the document"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - aos/AOD403-DS
-  - aos/PO-00009
+lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: p_channel
+  polarity: { value: p_channel, src: 'p1 "Page-1 title: "30V P-Channel MOSFET""' }
   drain_source_voltage:
-    nominal: -30
-    unit: V
+    typ: -30 V
+    src: 'p1 "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: -30 V"'
   drain_current:
-    nominal: -70
-    unit: A
+    typ: -70 A
+    at: { TC: 25 °C }
+    src: 'p1 "Absolute Maximum Ratings, Continuous Drain Current ID: -70 A"'
   rds_on:
-    nominal: 6.2
-    max: 8
-    unit: mΩ
+    typ: 6.2 mΩ
+    max: 8 mΩ
+    at: { VGS: -10 V, ID: -20 A, TJ: 25 °C }
+    src: 'p2 "Electrical Characteristics, RDS(ON) Static Drain-Source On-Resistance, TO252 row: Typ 6.2, Max 8 mΩ"'
   gate_threshold_voltage:
-    nominal: -2.5
-    min: -3.5
-    max: -1.5
-    unit: V
-
-provenance:
-  "/existence":
-    - source: aos/AOD403-DS
-      page: 1
-      locator: "Title \"AOD403\" and package \"TO252 DPAK\"; no ordering table in the document"
-  "/package":
-    - source: aos/PO-00009
-      page: 1
-      locator: "\"TO252 PACKAGE OUTLINE\" PO-00009 Version X (linked by the datasheet's package name \"TO252\")"
-  "/parameters/polarity":
-    - source: aos/AOD403-DS
-      page: 1
-      locator: "Page-1 title: \"30V P-Channel MOSFET\""
-  "/parameters/drain_source_voltage":
-    - source: aos/AOD403-DS
-      page: 1
-      locator: "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: -30 V"
-  "/parameters/drain_current":
-    - source: aos/AOD403-DS
-      page: 1
-      locator: "Absolute Maximum Ratings, Continuous Drain Current ID, TC=25°C: -70 A"
-  "/parameters/rds_on":
-    - source: aos/AOD403-DS
-      page: 2
-      locator: "Electrical Characteristics (TJ=25°C), RDS(ON) Static Drain-Source On-Resistance, VGS=-10V, ID=-20A, TO252 row: Typ 6.2, Max 8 mΩ"
-  "/parameters/gate_threshold_voltage":
-    - source: aos/AOD403-DS
-      page: 2
-      locator: "Electrical Characteristics (TJ=25°C), VGS(th) Gate Threshold Voltage: Min -1.5, Typ -2.5, Max -3.5 V"
+    min: -3.5 V
+    typ: -2.5 V
+    max: -1.5 V
+    at: { TJ: 25 °C }
+    src: 'p2 "Electrical Characteristics, VGS(th) Gate Threshold Voltage: Min -1.5, Typ -2.5, Max -3.5 V"'

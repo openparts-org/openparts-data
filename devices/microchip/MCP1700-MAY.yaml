@@ -7,37 +7,27 @@
 # (the table's pin 7), name GND, type ground, connected_to pin 3.
 # NC "No Connect" (section 3.4: "No internal connection") -> nc.
 # VIN/VOUT power, as in microchip/MCP1700-TT.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/MCP1700-MAY
-
 manufacturer: microchip
 category: linear_regulator
 family: MCP1700
+source: microchip/DS20001826@revE
+
+parameters:
+  input_voltage_max:
+    max: 6 V
+    src: 'p3 "DC Characteristics, Input Operating Voltage VIN: Max 6.0 V"'
 
 pins:
+  src:
+    - p11 "Table 3-1 "Pin Function Table", column "2x2 DFN-6"; section 3.5 "Exposed Thermal Pad (EP)""
+    - p1 ""Package Types", 2x2 DFN-6*"
   "1": { name: VIN, type: power }
   "2": { name: NC, type: nc }
   "3": { name: GND, type: ground }
   "4": { name: NC, type: nc }
   "5": { name: NC, type: nc }
   "6": { name: VOUT, type: power }
-  "EP": { name: GND, type: ground, connected_to: "3" }
-
-parameters:
-  input_voltage_max:
-    max: 6.0
-    unit: V
-
-provenance:
-  "/parameters/input_voltage_max":
-    - source: microchip/DS20001826@revE
-      page: 3
-      locator: "DC Characteristics, Input Operating Voltage VIN: Max 6.0 V"
-  "/pins":
-    - source: microchip/DS20001826@revE
-      page: 11
-      locator: "Table 3-1 \"Pin Function Table\", column \"2x2 DFN-6\"; section 3.5 \"Exposed Thermal Pad (EP)\""
-    - source: microchip/DS20001826@revE
-      page: 1
-      locator: "\"Package Types\", 2x2 DFN-6*"
+  EP:  { name: GND, type: ground, connected_to: "3" }

@@ -4,15 +4,12 @@
 # real 127-page PDF (WebFetch's built-in extraction failed on this
 # file; downloaded and parsed directly per the verified-data-entry
 # skill).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: nxp/LPC111X
-
+url: https://www.nxp.com/docs/en/data-sheet/LPC111X.pdf
+date: 2014-03-26
+revision: "9.2"
 publisher: nxp
 document_id: LPC111X
 document_type: datasheet
-
-revision: "9.2"
-date: "2014-03-26"
-
-url: "https://www.nxp.com/docs/en/data-sheet/LPC111X.pdf"

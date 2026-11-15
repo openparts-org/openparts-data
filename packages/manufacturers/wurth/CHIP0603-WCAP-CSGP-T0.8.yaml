@@ -5,68 +5,42 @@
 # view height "0,80 ±0,07", lower view width "0,8 ±0,1".
 # Only these order codes were checked -- other WCAP-CSGP values of this
 # size may have another thickness. min/max are the printed tolerances.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/wurth/CHIP0603-WCAP-CSGP-T0.8
-
 family: chip
 lead_count: 2
+source: wurth/885012206071-DS
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 1.6
-    min: 1.5
-    max: 1.7
-    unit: mm
   body_width:
-    nominal: 0.8
-    min: 0.7
-    max: 0.9
-    unit: mm
+    min: 0.7 mm
+    typ: 0.8 mm
+    max: 0.9 mm
+    src:
+      - 'wurth/885012206095-DS p1 ""Dimensions: [mm]" lower view (first-angle: top view), width "0,8 ±0,1""'
+      - 'p1 ""Dimensions: [mm]" lower view (first-angle: top view), width "0,8 ±0,1""'
+  body_length:
+    min: 1.5 mm
+    typ: 1.6 mm
+    max: 1.7 mm
+    src:
+      - 'wurth/885012206095-DS p1 ""Dimensions: [mm]" side view, length "1,6 ±0,1""'
+      - 'p1 ""Dimensions: [mm]" side view, length "1,6 ±0,1""'
   body_height:
-    nominal: 0.8
-    min: 0.73
-    max: 0.87
-    unit: mm
+    min: 0.73 mm
+    typ: 0.8 mm
+    max: 0.87 mm
+    src:
+      - 'wurth/885012206095-DS p1 ""Dimensions: [mm]" end view beside the side view, height "0,80 ±0,07""'
+      - 'p1 ""Dimensions: [mm]" end view beside the side view, height "0,80 ±0,07""'
   lead_length:
-    nominal: 0.4
-    min: 0.25
-    max: 0.55
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: wurth/885012206095-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" side view, length \"1,6 ±0,1\""
-    - source: wurth/885012206071-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" side view, length \"1,6 ±0,1\""
-  "/dimensions/body_width":
-    - source: wurth/885012206095-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" lower view (first-angle: top view), width \"0,8 ±0,1\""
-    - source: wurth/885012206071-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" lower view (first-angle: top view), width \"0,8 ±0,1\""
-  "/dimensions/body_height":
-    - source: wurth/885012206095-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" end view beside the side view, height \"0,80 ±0,07\""
-    - source: wurth/885012206071-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" end view beside the side view, height \"0,80 ±0,07\""
-  "/dimensions/lead_length":
-    - source: wurth/885012206095-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" upper view, terminal band \"0,4 ±0,15\""
-    - source: wurth/885012206071-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" upper view, terminal band \"0,4 ±0,15\""
+    min: 0.25 mm
+    typ: 0.4 mm
+    max: 0.55 mm
+    src:
+      - 'wurth/885012206095-DS p1 ""Dimensions: [mm]" upper view, terminal band "0,4 ±0,15""'
+      - 'p1 ""Dimensions: [mm]" upper view, terminal band "0,4 ±0,15""'

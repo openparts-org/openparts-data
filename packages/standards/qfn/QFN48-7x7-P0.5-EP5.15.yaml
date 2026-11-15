@@ -6,97 +6,43 @@
 # on the other QFN packages; no separate mold thickness is given.
 # (Section 44.1.8 is a different 48-lead VQFN with wettable flanks, not
 # used here.)
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/QFN48-7x7-P0.5-EP5.15
-
 family: qfn
 lead_count: 48
+source: microchip/DS40001882@revL
 
-pitch:
-  nominal: 0.5
-  unit: mm
+pitch: { typ: 0.5 mm, src: 'p1092 "Section 44.1.7, drawing C04-21425 sheet 2, "Pitch e 0.50 BSC""' }
+geometry: { type: parametric, generator: qfn }
 
 dimensions:
-  body_width:
-    nominal: 7.0
-    unit: mm
-  body_length:
-    nominal: 7.0
-    unit: mm
+  body_width:  { typ: 7 mm, src: 'p1092 "C04-21425 sheet 2, "Overall Width E 7.00 BSC""' }
+  body_length: { typ: 7 mm, src: 'p1092 "C04-21425 sheet 2, "Overall Length D 7.00 BSC""' }
   body_height:
-    nominal: 0.85
-    min: 0.8
-    max: 0.9
-    unit: mm
-  standoff:
-    nominal: 0.02
-    min: 0.0
-    max: 0.05
-    unit: mm
-  lead_width:
-    nominal: 0.25
-    min: 0.18
-    max: 0.3
-    unit: mm
-  lead_length:
-    nominal: 0.4
-    min: 0.3
-    max: 0.5
-    unit: mm
-  lead_thickness:
-    nominal: 0.2
-    unit: mm
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 0.9 mm
+    src: p1092 "C04-21425 sheet 2, "Overall Height A""
   exposed_pad:
-    width:
-      nominal: 5.15
-      min: 5.05
-      max: 5.25
-      unit: mm
-    length:
-      nominal: 5.15
-      min: 5.05
-      max: 5.25
-      unit: mm
-
-geometry:
-  type: parametric
-  generator: qfn
-
-provenance:
-  "/pitch":
-    - source: microchip/DS40001882@revL
-      page: 1092
-      locator: "Section 44.1.7, drawing C04-21425 sheet 2, \"Pitch e 0.50 BSC\""
-  "/dimensions/body_width":
-    - source: microchip/DS40001882@revL
-      page: 1092
-      locator: "C04-21425 sheet 2, \"Overall Width E 7.00 BSC\""
-  "/dimensions/body_length":
-    - source: microchip/DS40001882@revL
-      page: 1092
-      locator: "C04-21425 sheet 2, \"Overall Length D 7.00 BSC\""
-  "/dimensions/body_height":
-    - source: microchip/DS40001882@revL
-      page: 1092
-      locator: "C04-21425 sheet 2, \"Overall Height A\""
-  "/dimensions/standoff":
-    - source: microchip/DS40001882@revL
-      page: 1092
-      locator: "C04-21425 sheet 2, \"Standoff A1\""
-  "/dimensions/lead_width":
-    - source: microchip/DS40001882@revL
-      page: 1092
-      locator: "C04-21425 sheet 2, \"Terminal Width b\""
-  "/dimensions/lead_length":
-    - source: microchip/DS40001882@revL
-      page: 1092
-      locator: "C04-21425 sheet 2, \"Terminal Length L\""
-  "/dimensions/lead_thickness":
-    - source: microchip/DS40001882@revL
-      page: 1092
-      locator: "C04-21425 sheet 2, \"Terminal Thickness A3 0.20 REF\""
-  "/dimensions/exposed_pad":
-    - source: microchip/DS40001882@revL
-      page: 1092
-      locator: "C04-21425 sheet 2, \"Exposed Pad Length D2\" / \"Exposed Pad Width E2\""
+    src:    p1092 "C04-21425 sheet 2, "Exposed Pad Length D2" / "Exposed Pad Width E2""
+    width:  { min: 5.05 mm, typ: 5.15 mm, max: 5.25 mm }
+    length: { min: 5.05 mm, typ: 5.15 mm, max: 5.25 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p1092 "C04-21425 sheet 2, "Standoff A1""
+  lead_width:
+    min: 0.18 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p1092 "C04-21425 sheet 2, "Terminal Width b""
+  lead_length:
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p1092 "C04-21425 sheet 2, "Terminal Length L""
+  lead_thickness:
+    typ: 0.2 mm
+    src: p1092 "C04-21425 sheet 2, "Terminal Thickness A3 0.20 REF""

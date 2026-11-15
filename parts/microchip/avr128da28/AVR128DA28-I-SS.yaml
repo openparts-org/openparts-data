@@ -5,34 +5,24 @@
 # manufacturers/microchip/SSOP28-SS-C04-073C. lifecycle: no
 # production-status statement in the datasheet and the Microchip product
 # page refused curl and WebFetch (403); unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/AVR128DA28-I-SS
-
 manufacturer: microchip
-mpn: "AVR128DA28-I/SS"
-
+mpn: AVR128DA28-I/SS
 device: microchip/AVR128DA28
-package: manufacturers/microchip/SSOP28-SS-C04-073C
+
+package:
+  value: manufacturers/microchip/SSOP28-SS-C04-073C
+  src:
+    - p650 "Ordering table row "AVR128DA28-I/SS", "28", "SSOP""
+    - p662 "Section 40.5 "28-Pin SSOP", drawing C04-073 Rev C sheet 2"
+
+sources: [microchip/DS40002183@revE]
+source: microchip/DS40002183@revE
 
 existence:
   status: verified
+  src: p650 "Section 39 ordering table (continued), Ordering Code row "AVR128DA28-I/SS""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS40002183@revE
-
-provenance:
-  "/existence":
-    - source: microchip/DS40002183@revE
-      page: 650
-      locator: "Section 39 ordering table (continued), Ordering Code row \"AVR128DA28-I/SS\""
-  "/package":
-    - source: microchip/DS40002183@revE
-      page: 650
-      locator: "Ordering table row \"AVR128DA28-I/SS\", \"28\", \"SSOP\""
-    - source: microchip/DS40002183@revE
-      page: 662
-      locator: "Section 40.5 \"28-Pin SSOP\", drawing C04-073 Rev C sheet 2"
+lifecycle: { status: unknown }

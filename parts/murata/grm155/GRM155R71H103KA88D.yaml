@@ -4,60 +4,34 @@
 # dimension-T code '5' = 0.5 mm, matching the reused package.
 # Catalog is a 2010 edition: lifecycle not confirmed from a current
 # first-party page (Murata's site is a JS app) -> unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: murata/GRM155R71H103KA88D
-
 manufacturer: murata
 mpn: GRM155R71H103KA88D
-
 device: murata/GRM155-X7R
 package: standards/CHIP0402-GRM155
+sources: [murata/C02E-16]
+source: murata/C02E-16
 
 existence:
   status: verified
+  src:
+    - 'p4 "PDF pages 4-6 (printed 2-4) ''Part Numbering'': GR M 18 8 B1 1H 102 K A01 D; e dimensions 15 = 1.0x0.5 mm <0402>, 18 = 1.6x0.8 mm <0603>; r dimension T 5 = 0.5 mm, 8 = 0.8 mm; t R6 = X5R, R7 = X7R; y 0J = 6.3 V, 1A = 10 V, 1C = 16 V, 1E = 25 V, 1H = 50 V; u three-digit pF code"'
+    - 'p39 "PDF page 39 (printed 37): X7R(R7) table, 1.0x0.5(15)<0402>, row 10000pF(103) +/-10%(K), column 50(1H)"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - murata/C02E-16
+lifecycle: { status: unknown }
 
 parameters:
   capacitance:
-    nominal: 10000
-    unit: pF
+    typ: 10000 pF
+    src: 'p39 "High Dielectric Constant Type X7R(R7) Characteristics, LxW 1.0x0.5(15)<0402>, row Capacitance 10000pF(103), Part Number GRM155R71H103KA88D: Capacitance 10000pF(103)"'
   tolerance:
-    min: -10
-    max: 10
-    unit: "%"
+    tol: ±10 %
+    src: 'p39 "High Dielectric Constant Type X7R(R7) Characteristics, LxW 1.0x0.5(15)<0402>, row Capacitance 10000pF(103), Part Number GRM155R71H103KA88D: Tolerance ±10%(K)"'
   rated_voltage:
-    nominal: 50
-    unit: V
+    typ: 50 V
+    src: p39 "High Dielectric Constant Type X7R(R7) Characteristics, LxW 1.0x0.5(15)<0402>, Part Number GRM155R71H103KA88D in column Rated Volt. [Vdc] 50(1H)"
   dielectric:
     value: X7R
-
-provenance:
-  "/existence":
-    - source: murata/C02E-16
-      page: 4
-      locator: "PDF pages 4-6 (printed 2-4) 'Part Numbering': GR M 18 8 B1 1H 102 K A01 D; e dimensions 15 = 1.0x0.5 mm <0402>, 18 = 1.6x0.8 mm <0603>; r dimension T 5 = 0.5 mm, 8 = 0.8 mm; t R6 = X5R, R7 = X7R; y 0J = 6.3 V, 1A = 10 V, 1C = 16 V, 1E = 25 V, 1H = 50 V; u three-digit pF code"
-    - source: murata/C02E-16
-      page: 39
-      locator: "PDF page 39 (printed 37): X7R(R7) table, 1.0x0.5(15)<0402>, row 10000pF(103) +/-10%(K), column 50(1H)"
-  "/parameters/capacitance":
-    - source: murata/C02E-16
-      page: 39
-      locator: "High Dielectric Constant Type X7R(R7) Characteristics, LxW 1.0x0.5(15)<0402>, row Capacitance 10000pF(103), Part Number GRM155R71H103KA88D: Capacitance 10000pF(103)"
-  "/parameters/tolerance":
-    - source: murata/C02E-16
-      page: 39
-      locator: "High Dielectric Constant Type X7R(R7) Characteristics, LxW 1.0x0.5(15)<0402>, row Capacitance 10000pF(103), Part Number GRM155R71H103KA88D: Tolerance ±10%(K)"
-  "/parameters/rated_voltage":
-    - source: murata/C02E-16
-      page: 39
-      locator: "High Dielectric Constant Type X7R(R7) Characteristics, LxW 1.0x0.5(15)<0402>, Part Number GRM155R71H103KA88D in column Rated Volt. [Vdc] 50(1H)"
-  "/parameters/dielectric":
-    - source: murata/C02E-16
-      page: 5
-      locator: "Part Numbering, tTemperature Characteristics, Temperature Characteristic Codes: R7 = X7R (EIA); Part Number GRM155R71H103KA88D listed under \"High Dielectric Constant Type X7R(R7) Characteristics\" on p39"
+    src: 'p5 "Part Numbering, tTemperature Characteristics, Temperature Characteristic Codes: R7 = X7R (EIA); Part Number GRM155R71H103KA88D listed under "High Dielectric Constant Type X7R(R7) Characteristics" on p39"'

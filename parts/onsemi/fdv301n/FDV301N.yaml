@@ -7,66 +7,37 @@
 # was read from (2N7002E/D Rev. 8 page 6, re-downloaded 2026-11-10); every
 # table row was also re-read from a 150 dpi render. Reused; the package
 # cites onsemi/2N7002E-D.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/FDV301N
-
 manufacturer: onsemi
 mpn: FDV301N
-
 device: onsemi/FDV301N
 package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/FDV301N-D]
+source: onsemi/FDV301N-D
 
 existence:
   status: verified
+  src: 'p1 "ORDERING INFORMATION table: "FDV301N, FDV301N-F169 | SOT-23-3 (Pb-Free, Halide-Free) | 3000 / Tape & Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/FDV301N-D
+lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: n_channel
+  polarity: { value: n_channel, src: 'p1 "Page-1 title: "Digital FET, N-Channel""' }
   drain_source_voltage:
-    nominal: 25
-    unit: V
+    typ: 25 V
+    src: 'p2 "ABSOLUTE MAXIMUM RATINGS, VDSS, VCC Drain-Source Voltage, Power Supply Voltage: 25 V"'
   drain_current:
-    nominal: 0.22
-    unit: A
+    typ: 0.22 A
+    src: 'p2 "ABSOLUTE MAXIMUM RATINGS, ID, IO Drain/Output Current - Continuous: 0.22 A"'
   rds_on:
-    nominal: 3.1
-    max: 4
-    unit: Ω
+    typ: 3.1 Ω
+    max: 4 Ω
+    at: { VGS: 4.5 V, ID: 0.4 A }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, RDS(on) Static Drain-Source On-Resistance: Typ 3.1, Max 4 Ω"'
   gate_threshold_voltage:
-    nominal: 0.85
-    min: 0.70
-    max: 1.06
-    unit: V
-
-provenance:
-  "/existence":
-    - source: onsemi/FDV301N-D
-      page: 1
-      locator: "ORDERING INFORMATION table: \"FDV301N, FDV301N-F169 | SOT-23-3 (Pb-Free, Halide-Free) | 3000 / Tape & Reel\""
-  "/parameters/polarity":
-    - source: onsemi/FDV301N-D
-      page: 1
-      locator: "Page-1 title: \"Digital FET, N-Channel\""
-  "/parameters/drain_source_voltage":
-    - source: onsemi/FDV301N-D
-      page: 2
-      locator: "ABSOLUTE MAXIMUM RATINGS, VDSS, VCC Drain-Source Voltage, Power Supply Voltage: 25 V"
-  "/parameters/drain_current":
-    - source: onsemi/FDV301N-D
-      page: 2
-      locator: "ABSOLUTE MAXIMUM RATINGS, ID, IO Drain/Output Current - Continuous: 0.22 A"
-  "/parameters/rds_on":
-    - source: onsemi/FDV301N-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, RDS(on) Static Drain-Source On-Resistance, VGS = 4.5 V, ID = 0.4 A: Typ 3.1, Max 4 Ω"
-  "/parameters/gate_threshold_voltage":
-    - source: onsemi/FDV301N-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, VGS(th) Gate Threshold Voltage: Min 0.70, Typ 0.85, Max 1.06 V"
+    min: 0.7 V
+    typ: 0.85 V
+    max: 1.06 V
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, VGS(th) Gate Threshold Voltage: Min 0.70, Typ 0.85, Max 1.06 V"'

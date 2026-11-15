@@ -5,46 +5,30 @@
 # lead unconnected. Pin numbers are not printed; numbers follow this
 # dataset's sot convention (1 bottom-left, 2 bottom-right, 3 top) --
 # position-derived, flagged for review.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: diodes/BZX84C5V1
-
 manufacturer: diodes
 category: diode
 family: BZX84C
+source: diodes/DS18001
+
+parameters:
+  forward_voltage:
+    max: 0.9 V
+    at: { IF: 10 mA }
+    src: 'p2 "Maximum Ratings, Forward Voltage VF: 0.9 V"'
+  zener_voltage:
+    min: 4.8 V
+    typ: 5.1 V
+    max: 5.4 V
+    src: 'p2 "Electrical Characteristics, BZX84C5V1 row: VZ @ IZT Nom 5.1 V, Min 4.8 V, Max 5.4 V (Note 8: short duration pulse test)"'
+  zener_test_current:
+    typ: 5 mA
+    src: 'p2 "Electrical Characteristics, BZX84C5V1 row: IZT 5.0 mA"'
 
 pins:
+  src: p1 ""Device Schematic" drawing next to the SOT23 Top View photo; position-derived numbering, see header"
   "1": { name: Anode, type: passive }
   "2": { name: NC, type: nc }
   "3": { name: Cathode, type: passive }
-
-parameters:
-  zener_voltage:
-    nominal: 5.1
-    min: 4.8
-    max: 5.4
-    unit: V
-  zener_test_current:
-    nominal: 5.0
-    unit: mA
-  forward_voltage:
-    max: 0.9
-    unit: V
-
-provenance:
-  "/parameters/zener_voltage":
-    - source: diodes/DS18001
-      page: 2
-      locator: "Electrical Characteristics, BZX84C5V1 row: VZ @ IZT Nom 5.1 V, Min 4.8 V, Max 5.4 V (Note 8: short duration pulse test)"
-  "/parameters/zener_test_current":
-    - source: diodes/DS18001
-      page: 2
-      locator: "Electrical Characteristics, BZX84C5V1 row: IZT 5.0 mA"
-  "/parameters/forward_voltage":
-    - source: diodes/DS18001
-      page: 2
-      locator: "Maximum Ratings, Forward Voltage @ IF = 10mA VF: 0.9 V"
-  "/pins":
-    - source: diodes/DS18001
-      page: 1
-      locator: "\"Device Schematic\" drawing next to the SOT23 Top View photo; position-derived numbering, see header"

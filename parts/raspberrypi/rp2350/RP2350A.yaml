@@ -2,26 +2,19 @@
 # flash. The base variant of the RP2350 family (RP2350B has 48 GPIO in a
 # QFN-80; RP2354A/B add 2MB in-package flash) -- picked as the primary
 # part to model per the product brief's own comparison table.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: raspberrypi/RP2350A
-
 manufacturer: raspberrypi
 mpn: RP2350A
-
 device: raspberrypi/RP2350A
 package: standards/QFN60-RP2350A
+sources: [raspberrypi/RP-008374-DS@rev1]
+source: raspberrypi/RP-008374-DS@rev1
 
-existence:
-  status: verified
+existence: { status: verified }
 
 lifecycle:
-  status: active
-
-sources:
-  - raspberrypi/RP-008374-DS@rev1
-
-provenance:
-  "/lifecycle/status":
-    - source: raspberrypi/RP-008374-DS@rev1
-      locator: "\"We expect RP2350 to remain in production until at least January 2045\""
+  status:
+    value: active
+    src: '""We expect RP2350 to remain in production until at least January 2045""'

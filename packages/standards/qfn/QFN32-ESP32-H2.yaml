@@ -5,100 +5,48 @@
 # Not the same outline as standards/QFN32-ESP32-C3 (5x5mm, 0.5mm pitch).
 # A (0.80/0.85/0.90) is recorded as body_height, as on the other
 # Espressif QFN packages; A1 has no nominal ("--"), so min/max only.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/QFN32-ESP32-H2
-
 family: qfn
 lead_count: 32
+source: espressif/esp32-h2_datasheet_en@rev1.3
 
-pitch:
-  nominal: 0.4
-  unit: mm
+pitch: { typ: 0.4 mm, src: 'p63 "Figure 7-1 dimension table, REF e (0.400 BSC)"' }
+geometry: { type: parametric, generator: qfn }
 
 dimensions:
   body_width:
-    nominal: 4.0
-    min: 3.95
-    max: 4.05
-    unit: mm
+    min: 3.95 mm
+    typ: 4 mm
+    max: 4.05 mm
+    src: p63 "Figure 7-1 dimension table, REF E"
   body_length:
-    nominal: 4.0
-    min: 3.95
-    max: 4.05
-    unit: mm
+    min: 3.95 mm
+    typ: 4 mm
+    max: 4.05 mm
+    src: p63 "Figure 7-1 dimension table, REF D"
   body_height:
-    nominal: 0.85
-    min: 0.8
-    max: 0.9
-    unit: mm
-  standoff:
-    min: 0.0
-    max: 0.05
-    unit: mm
-  lead_width:
-    nominal: 0.2
-    min: 0.15
-    max: 0.25
-    unit: mm
-  lead_length:
-    nominal: 0.3
-    min: 0.25
-    max: 0.35
-    unit: mm
-  lead_thickness:
-    nominal: 0.203
-    unit: mm
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 0.9 mm
+    src: p63 "Figure 7-1 dimension table, REF A"
   exposed_pad:
-    width:
-      nominal: 2.8
-      min: 2.75
-      max: 2.85
-      unit: mm
-    length:
-      nominal: 2.8
-      min: 2.75
-      max: 2.85
-      unit: mm
-
-geometry:
-  type: parametric
-  generator: qfn
-
-provenance:
-  "/pitch":
-    - source: espressif/esp32-h2_datasheet_en@rev1.3
-      page: 63
-      locator: "Figure 7-1 dimension table, REF e (0.400 BSC)"
-  "/dimensions/body_width":
-    - source: espressif/esp32-h2_datasheet_en@rev1.3
-      page: 63
-      locator: "Figure 7-1 dimension table, REF E"
-  "/dimensions/body_length":
-    - source: espressif/esp32-h2_datasheet_en@rev1.3
-      page: 63
-      locator: "Figure 7-1 dimension table, REF D"
-  "/dimensions/body_height":
-    - source: espressif/esp32-h2_datasheet_en@rev1.3
-      page: 63
-      locator: "Figure 7-1 dimension table, REF A"
-  "/dimensions/standoff":
-    - source: espressif/esp32-h2_datasheet_en@rev1.3
-      page: 63
-      locator: "Figure 7-1 dimension table, REF A1 (nominal \"--\")"
-  "/dimensions/lead_width":
-    - source: espressif/esp32-h2_datasheet_en@rev1.3
-      page: 63
-      locator: "Figure 7-1 dimension table, REF b"
-  "/dimensions/lead_length":
-    - source: espressif/esp32-h2_datasheet_en@rev1.3
-      page: 63
-      locator: "Figure 7-1 dimension table, REF L"
-  "/dimensions/lead_thickness":
-    - source: espressif/esp32-h2_datasheet_en@rev1.3
-      page: 63
-      locator: "Figure 7-1 dimension table, REF A3 (0.203 Ref.)"
-  "/dimensions/exposed_pad":
-    - source: espressif/esp32-h2_datasheet_en@rev1.3
-      page: 63
-      locator: "Figure 7-1 dimension table, REF D2/E2"
+    src:    p63 "Figure 7-1 dimension table, REF D2/E2"
+    width:  { min: 2.75 mm, typ: 2.8 mm, max: 2.85 mm }
+    length: { min: 2.75 mm, typ: 2.8 mm, max: 2.85 mm }
+  standoff:
+    min: 0 mm
+    max: 0.05 mm
+    src: p63 "Figure 7-1 dimension table, REF A1 (nominal "--")"
+  lead_width:
+    min: 0.15 mm
+    typ: 0.2 mm
+    max: 0.25 mm
+    src: p63 "Figure 7-1 dimension table, REF b"
+  lead_length:
+    min: 0.25 mm
+    typ: 0.3 mm
+    max: 0.35 mm
+    src: p63 "Figure 7-1 dimension table, REF L"
+  lead_thickness: { typ: 0.203 mm, src: 'p63 "Figure 7-1 dimension table, REF A3 (0.203 Ref.)"' }

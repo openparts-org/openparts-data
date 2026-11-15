@@ -3,36 +3,23 @@
 # "List of Models" table -> existence verified; the page-3 "Projected
 # Type" drawing lists it by name. Lifecycle: no first-party status read
 # -> unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: omron/B3FS-1050P
-
 manufacturer: omron
-mpn: "B3FS-1050P"
-
+mpn: B3FS-1050P
 device: omron/B3FS-1000
 package: manufacturers/omron/B3FS-1050
+sources: [omron/A113-E1-06]
+source: omron/A113-E1-06
 
 existence:
   status: verified
+  src: 'p1 ""List of Models", 6 x 6 mm Models, Projected type, 7.3 mm, 0.98 N {100 gf}, Black, Embossed taping column: "B3FS-1050P""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - omron/A113-E1-06
+lifecycle: { status: unknown }
 
 parameters:
   actuation_force:
-    nominal: 0.98
-    unit: N
-
-provenance:
-  "/parameters/actuation_force":
-    - source: omron/A113-E1-06
-      page: 1
-      locator: "List of Models, 6 x 6 mm Models, 7.3 mm (Projected type) row, Black, model B3FS-1050P: Operating force (OF) 0.98 N {100 gf}"
-  "/existence":
-    - source: omron/A113-E1-06
-      page: 1
-      locator: "\"List of Models\", 6 x 6 mm Models, Projected type, 7.3 mm, 0.98 N {100 gf}, Black, Embossed taping column: \"B3FS-1050P\""
+    typ: 0.98 N
+    src: 'p1 "List of Models, 6 x 6 mm Models, 7.3 mm (Projected type) row, Black, model B3FS-1050P: Operating force (OF) 0.98 N {100 gf}"'

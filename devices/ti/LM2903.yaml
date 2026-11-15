@@ -3,15 +3,16 @@
 # (page 3) and cross-checked against Table 4-1 "Pin Functions" (same
 # page), whose I/O column gives Output/Input/--; GND and VCC are typed
 # ground/power from their descriptions ("Ground", "Positive Supply").
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/LM2903
-
 manufacturer: ti
 category: comparator
 family: LM2903
+source: ti/SLCS005AH
 
 pins:
+  src: p3 "Figure 4-1 (8-pin SOIC/VSSOP/PDIP/SO/TSSOP top view) and Table 4-1 "Pin Functions""
   "1": { name: 1OUT, type: output }
   "2": { name: 1IN-, type: input }
   "3": { name: 1IN+, type: input }
@@ -20,9 +21,3 @@ pins:
   "6": { name: 2IN-, type: input }
   "7": { name: 2OUT, type: output }
   "8": { name: VCC, type: power }
-
-provenance:
-  "/pins":
-    - source: ti/SLCS005AH
-      page: 3
-      locator: "Figure 4-1 (8-pin SOIC/VSSOP/PDIP/SO/TSSOP top view) and Table 4-1 \"Pin Functions\""

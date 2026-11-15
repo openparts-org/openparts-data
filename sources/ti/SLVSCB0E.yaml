@@ -9,15 +9,12 @@
 # (page 4, "DDC Package 6 Pin (SOT)"), the orderable addendum (page 29,
 # "SOT-23-THIN (DDC) | 6") and the only outline drawing (DDC0006A) all
 # say DDC. The parts here follow the ordering table and the drawing.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: ti/SLVSCB0E
-
+url: https://www.ti.com/lit/ds/symlink/tps563200.pdf
+date: 2023-05
+revision: E
 publisher: ti
 document_id: SLVSCB0E
 document_type: datasheet
-
-revision: "E"
-date: "2023-05"
-
-url: "https://www.ti.com/lit/ds/symlink/tps563200.pdf"

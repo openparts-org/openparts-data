@@ -3,15 +3,12 @@
 # and date are taken from Table 7-1 "Revision history" (PDF page 100):
 # "2.0 ... Dec.13, 2022" (latest entry). 101 PDF pages. PDF page index =
 # printed page number + 1.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: gigadevice/GD32F303xx_Datasheet@rev2.0
-
+url: https://www.gd32mcu.com/data/documents/datasheet/GD32F303xx_Datasheet_Rev2.0.pdf
+date: 2022-12-13
+revision: "2.0"
 publisher: gigadevice
 document_id: GD32F303xx_Datasheet
 document_type: datasheet
-
-revision: "2.0"
-date: "2022-12-13"
-
-url: "https://www.gd32mcu.com/data/documents/datasheet/GD32F303xx_Datasheet_Rev2.0.pdf"

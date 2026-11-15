@@ -3,29 +3,23 @@
 # 8-Pin SOIC Top View" figure (same page; DGK/DRB figures identical); all
 # 8 pins match. RE is active low (overbar in the datasheet; written
 # without it). A/B "Bus I/O" typed io.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/SN65HVD72
-
 manufacturer: ti
 category: rs485_transceiver
 family: SN65HVD7x
+source: ti/SLLSE11H
 
 pins:
-  "1":  { name: R, type: output }
-  "2":  { name: RE, type: input }
-  "3":  { name: DE, type: input }
-  "4":  { name: D, type: input }
-  "5":  { name: GND, type: ground }
-  "6":  { name: A, type: io }
-  "7":  { name: B, type: io }
-  "8":  { name: VCC, type: power }
-
-provenance:
-  "/pins":
-    - source: ti/SLLSE11H
-      page: 4
-      locator: "\"Pin Functions\" table (NAME / NUMBER)"
-    - source: ti/SLLSE11H
-      page: 4
-      locator: "\"D Package 8-Pin SOIC Top View\" figure (cross-check)"
+  src:
+    - p4 ""Pin Functions" table (NAME / NUMBER)"
+    - p4 ""D Package 8-Pin SOIC Top View" figure (cross-check)"
+  "1": { name: R, type: output }
+  "2": { name: RE, type: input }
+  "3": { name: DE, type: input }
+  "4": { name: D, type: input }
+  "5": { name: GND, type: ground }
+  "6": { name: A, type: io }
+  "7": { name: B, type: io }
+  "8": { name: VCC, type: power }

@@ -9,104 +9,46 @@
 # (pin layout, top view) and the bottom-view drawing both show the usual
 # counter-clockwise numbering (1-6 down the left side), which is what the
 # qfn generator draws.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/QFN24-ESP8684
-
 family: qfn
 lead_count: 24
+source: espressif/esp8684_datasheet_en@rev2.3
 
-pitch:
-  nominal: 0.5
-  unit: mm
+pitch: { typ: 0.5 mm, src: 'p53 "Figure 8 dimension table, LEAD PITCH e (0.5 BSC)"' }
+geometry: { type: parametric, generator: qfn }
 
 dimensions:
-  body_width:
-    nominal: 4.0
-    unit: mm
-  body_length:
-    nominal: 4.0
-    unit: mm
+  body_width:  { typ: 4 mm, src: 'p53 "Figure 8 dimension table, BODY SIZE X, D (4 BSC)"' }
+  body_length: { typ: 4 mm, src: 'p53 "Figure 8 dimension table, BODY SIZE Y, E (4 BSC)"' }
   body_height:
-    nominal: 0.65
-    unit: mm
-  overall_height:
-    nominal: 0.85
-    min: 0.8
-    max: 0.9
-    unit: mm
-  standoff:
-    nominal: 0.02
-    min: 0.0
-    max: 0.05
-    unit: mm
-  lead_width:
-    nominal: 0.25
-    min: 0.2
-    max: 0.3
-    unit: mm
-  lead_length:
-    nominal: 0.3
-    min: 0.2
-    max: 0.4
-    unit: mm
-  lead_thickness:
-    nominal: 0.203
-    unit: mm
+    typ: 0.65 mm
+    src: p53 "Figure 8 dimension table, MOLD THICKNESS A2 (nominal only)"
   exposed_pad:
-    width:
-      nominal: 2.8
-      min: 2.7
-      max: 2.9
-      unit: mm
-    length:
-      nominal: 2.8
-      min: 2.7
-      max: 2.9
-      unit: mm
-
-geometry:
-  type: parametric
-  generator: qfn
-
-provenance:
-  "/pitch":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 53
-      locator: "Figure 8 dimension table, LEAD PITCH e (0.5 BSC)"
-  "/dimensions/body_width":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 53
-      locator: "Figure 8 dimension table, BODY SIZE X, D (4 BSC)"
-  "/dimensions/body_length":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 53
-      locator: "Figure 8 dimension table, BODY SIZE Y, E (4 BSC)"
-  "/dimensions/body_height":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 53
-      locator: "Figure 8 dimension table, MOLD THICKNESS A2 (nominal only)"
-  "/dimensions/overall_height":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 53
-      locator: "Figure 8 dimension table, TOTAL THICKNESS A"
-  "/dimensions/standoff":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 53
-      locator: "Figure 8 dimension table, STAND OFF A1"
-  "/dimensions/lead_width":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 53
-      locator: "Figure 8 dimension table, LEAD WIDTH b"
-  "/dimensions/lead_length":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 53
-      locator: "Figure 8 dimension table, LEAD LENGTH L"
-  "/dimensions/lead_thickness":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 53
-      locator: "Figure 8 dimension table, L/F THICKNESS A3 (0.203 REF)"
-  "/dimensions/exposed_pad":
-    - source: espressif/esp8684_datasheet_en@rev2.3
-      page: 53
-      locator: "Figure 8 dimension table, EP SIZE D2/E2"
+    src:    p53 "Figure 8 dimension table, EP SIZE D2/E2"
+    width:  { min: 2.7 mm, typ: 2.8 mm, max: 2.9 mm }
+    length: { min: 2.7 mm, typ: 2.8 mm, max: 2.9 mm }
+  overall_height:
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 0.9 mm
+    src: p53 "Figure 8 dimension table, TOTAL THICKNESS A"
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p53 "Figure 8 dimension table, STAND OFF A1"
+  lead_width:
+    min: 0.2 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p53 "Figure 8 dimension table, LEAD WIDTH b"
+  lead_length:
+    min: 0.2 mm
+    typ: 0.3 mm
+    max: 0.4 mm
+    src: p53 "Figure 8 dimension table, LEAD LENGTH L"
+  lead_thickness:
+    typ: 0.203 mm
+    src: p53 "Figure 8 dimension table, L/F THICKNESS A3 (0.203 REF)"

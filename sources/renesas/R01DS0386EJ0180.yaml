@@ -4,15 +4,12 @@
 # application/pdf, 121 pages) and read with pdftotext (-layout and
 # -bbox for the pin-list table columns) plus pdftoppm renders of the
 # pin-assignment figures and Appendix 2 package drawings.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: renesas/R01DS0386EJ0180
-
+url: https://www.renesas.com/en/document/dst/ra2e1-group-datasheet
+date: 2026-09-30
+revision: "1.80"
 publisher: renesas
 document_id: R01DS0386EJ0180
 document_type: datasheet
-
-revision: "1.80"
-date: "2026-09-30"
-
-url: "https://www.renesas.com/en/document/dst/ra2e1-group-datasheet"

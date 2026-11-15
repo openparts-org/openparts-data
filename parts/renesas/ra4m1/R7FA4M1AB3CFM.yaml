@@ -5,31 +5,19 @@
 # example) is not part of this table entry and is not added here.
 #
 # lifecycle: the datasheet has no status field; left unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: renesas/R7FA4M1AB3CFM
-
 manufacturer: renesas
 mpn: R7FA4M1AB3CFM
-
 device: renesas/R7FA4M1AB-LQFP64
-package: manufacturers/renesas/PLQP0064KB-C
 
-existence:
-  status: verified
+package:
+  value: manufacturers/renesas/PLQP0064KB-C
+  src: p10 "Table 1.13 "Product list", row R7FA4M1AB3CFM, column "Package code""
 
-lifecycle:
-  status: unknown
+sources: [renesas/R01DS0355EJ0110]
+source: renesas/R01DS0355EJ0110
 
-sources:
-  - renesas/R01DS0355EJ0110
-
-provenance:
-  "/existence":
-    - source: renesas/R01DS0355EJ0110
-      page: 10
-      locator: "Table 1.13 \"Product list\", row R7FA4M1AB3CFM"
-  "/package":
-    - source: renesas/R01DS0355EJ0110
-      page: 10
-      locator: "Table 1.13 \"Product list\", row R7FA4M1AB3CFM, column \"Package code\""
+existence: { status: verified, src: 'p10 "Table 1.13 "Product list", row R7FA4M1AB3CFM"' }
+lifecycle: { status: unknown }

@@ -5,38 +5,26 @@
 # Package: SOT-23 (DBV), outline DBV0005A (4214839/K) on page 37 ->
 # manufacturers/ti/DBV0005A. Its pdftotext text matches the outline page the package
 # was read from (ti/SBOS833R page 94) line for line, so the package is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/SN74LVC1G08DBVR
-
 manufacturer: ti
 mpn: SN74LVC1G08DBVR
-
 device: ti/SN74LVC1G08-DBV
-package: manufacturers/ti/DBV0005A
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src:
+    - p19 "PACKAGE OPTION ADDENDUM, row SN74LVC1G08DBVR, Package column "SOT-23 (DBV)""
+    - p37 "PACKAGE OUTLINE DBV0005A (4214839/K)"
+
+sources: [ti/SCES217AA]
+source: ti/SCES217AA
 
 existence:
   status: verified
+  src: p19 "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74LVC1G08DBVR"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SCES217AA
-
-provenance:
-  "/existence":
-    - source: ti/SCES217AA
-      page: 19
-      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74LVC1G08DBVR"
-  "/lifecycle":
-    - source: ti/SCES217AA
-      page: 19
-      locator: "PACKAGE OPTION ADDENDUM, row SN74LVC1G08DBVR, Status column \"Active\""
-  "/package":
-    - source: ti/SCES217AA
-      page: 19
-      locator: "PACKAGE OPTION ADDENDUM, row SN74LVC1G08DBVR, Package column \"SOT-23 (DBV)\""
-    - source: ti/SCES217AA
-      page: 37
-      locator: "PACKAGE OUTLINE DBV0005A (4214839/K)"
+  src: p19 "PACKAGE OPTION ADDENDUM, row SN74LVC1G08DBVR, Status column "Active""

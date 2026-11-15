@@ -7,38 +7,26 @@
 # pdftotext -layout text matches the outline page the package was read
 # from (ti/SLVSCB0E page 33) line for line, so manufacturers/ti/DDC0006A
 # is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/TLV62568PDDCR
-
 manufacturer: ti
-mpn: "TLV62568PDDCR"
-
+mpn: TLV62568PDDCR
 device: ti/TLV62568P-DDC
-package: manufacturers/ti/DDC0006A
+
+package:
+  value: manufacturers/ti/DDC0006A
+  src:
+    - p18 "Package Option Addendum, row "TLV62568PDDCR", "SOT-23-THIN (DDC) | 6""
+    - p28 "PACKAGE OUTLINE DDC0006A (4214841/E 08/2024)"
+
+sources: [ti/SLVSD89B]
+source: ti/SLVSD89B
 
 existence:
   status: verified
+  src: p18 "Package Option Addendum, Packaging Information table, row "TLV62568PDDCR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLVSD89B
-
-provenance:
-  "/existence":
-    - source: ti/SLVSD89B
-      page: 18
-      locator: "Package Option Addendum, Packaging Information table, row \"TLV62568PDDCR\""
-  "/lifecycle":
-    - source: ti/SLVSD89B
-      page: 18
-      locator: "Package Option Addendum, row \"TLV62568PDDCR\", Status \"Active\""
-  "/package":
-    - source: ti/SLVSD89B
-      page: 18
-      locator: "Package Option Addendum, row \"TLV62568PDDCR\", \"SOT-23-THIN (DDC) | 6\""
-    - source: ti/SLVSD89B
-      page: 28
-      locator: "PACKAGE OUTLINE DDC0006A (4214841/E 08/2024)"
+  src: p18 "Package Option Addendum, row "TLV62568PDDCR", Status "Active""

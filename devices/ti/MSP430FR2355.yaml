@@ -6,15 +6,18 @@
 # PT package is modelled here; the RHA/RSM/DBT packages use a different
 # pin numbering (other columns of Table 4-1). MSP430FR215x parts have
 # no SAC (OAx) signals and are not covered by this device.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/MSP430FR2355
-
 manufacturer: ti
 category: microcontroller
 family: MSP430FR2xx
+source: ti/SLASEC4D
 
 pins:
+  src:
+    - p18 "Table 4-1 "Pin Attributes" (pages 18-21), column "PIN NUMBER PT""
+    - p10 "Figure 4-1 "48-Pin PT (LQFP) (Top View) - MSP430FR235x" (cross-check, all 48 pins matched)"
   "1":  { name: P1.2/UCB0SIMO/UCB0SDA/TB0TRG/OA0-/A2/Veref-, type: io }
   "2":  { name: P1.1/UCB0CLK/ACLK/OA0O/COMP0.1/A1, type: io }
   "3":  { name: P1.0/UCB0STE/SMCLK/COMP0.0/A0/Veref+, type: io }
@@ -63,12 +66,3 @@ pins:
   "46": { name: P3.1/OA2O, type: io }
   "47": { name: P3.0/MCLK, type: io }
   "48": { name: P1.3/UCB0SOMI/UCB0SCL/OA0+/A3, type: io }
-
-provenance:
-  "/pins":
-    - source: ti/SLASEC4D
-      page: 18
-      locator: "Table 4-1 \"Pin Attributes\" (pages 18-21), column \"PIN NUMBER PT\""
-    - source: ti/SLASEC4D
-      page: 10
-      locator: "Figure 4-1 \"48-Pin PT (LQFP) (Top View) - MSP430FR235x\" (cross-check, all 48 pins matched)"

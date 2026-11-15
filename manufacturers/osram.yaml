@@ -1,11 +1,10 @@
 # ams OSRAM. The datasheets are "Published by ams-OSRAM AG, Tobelbader
 # Strasse 30, 8141 Premstaetten, Austria" (LS Q976.01 datasheet page 1);
 # the parts carry the OSRAM brand.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: manufacturer
 id: osram
 
-name: ams-OSRAM AG
+website: { url: https://ams-osram.com }
 
-website:
-  url: "https://ams-osram.com"
+name: ams-OSRAM AG

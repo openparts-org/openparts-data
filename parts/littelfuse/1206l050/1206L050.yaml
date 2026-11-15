@@ -1,25 +1,18 @@
 # PTC resettable fuse, 1206 case, Ihold 0.50A, Itrip 1.00A, Vmax 6Vdc.
 # Confirmed real/active as a direct row in Littelfuse's own electrical
 # characteristics table.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: littelfuse/1206L050
-
 manufacturer: littelfuse
 mpn: 1206L050
-
 device: littelfuse/1206L-SERIES
 package: standards/CHIP1206-LITTELFUSE-1206L050
+sources: [littelfuse/1206L, littelfuse/1206L@2011-05-15]
+source: littelfuse/1206L@2011-05-15
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - littelfuse/1206L
-  - littelfuse/1206L@2011-05-15
+existence: { status: verified }
+lifecycle: { status: active }
 
 # Parameters (AI candidates, needs review), read from Littelfuse's own
 # datasheet hosted by Digi-Key (littelfuse/1206L@2011-05-15). PTC
@@ -27,19 +20,7 @@ sources:
 # rated_voltage the maximum voltage V max (reviewer: confirm this mapping
 # for PPTC devices).
 parameters:
+  rated_voltage: { max: 6 V, src: 'p1 "Electrical Characteristics, 1206L050 row: V max (Vdc) 6"' }
   rated_current:
-    nominal: 0.5
-    unit: A
-  rated_voltage:
-    max: 6
-    unit: V
-
-provenance:
-  "/parameters/rated_current":
-    - source: littelfuse/1206L@2011-05-15
-      page: 1
-      locator: "Electrical Characteristics, 1206L050 row: I hold (A) 0.50 (20°C still air)"
-  "/parameters/rated_voltage":
-    - source: littelfuse/1206L@2011-05-15
-      page: 1
-      locator: "Electrical Characteristics, 1206L050 row: V max (Vdc) 6"
+    typ: 0.5 A
+    src: 'p1 "Electrical Characteristics, 1206L050 row: I hold (A) 0.50 (20°C still air)"'

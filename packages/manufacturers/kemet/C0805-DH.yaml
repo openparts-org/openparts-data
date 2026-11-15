@@ -3,47 +3,29 @@
 # thickness code DH. Band width B is not modelled by the chip
 # generator and is left out.
 # Only for values < 2.2 uF: footnote 3 widens L for >= 2.2 uF (see C0805-DH-L2U2).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/kemet/C0805-DH
-
 family: chip
 lead_count: 2
+source: kemet/C1002_X7R
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 2.00
-    min: 1.80
-    max: 2.20
-    unit: mm
   body_width:
-    nominal: 1.25
-    min: 1.05
-    max: 1.45
-    unit: mm
+    min: 1.05 mm
+    typ: 1.25 mm
+    max: 1.45 mm
+    src: p3 "Dimensions table, EIA 0805 row, W = 1.25 +/-0.20 mm"
+  body_length:
+    min: 1.8 mm
+    typ: 2 mm
+    max: 2.2 mm
+    src: p3 "Dimensions table, EIA 0805 row, L = 2.00 +/-0.20 mm"
   body_height:
-    nominal: 1.25
-    min: 1.05
-    max: 1.45
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: kemet/C1002_X7R
-      page: 3
-      locator: "Dimensions table, EIA 0805 row, L = 2.00 +/-0.20 mm"
-  "/dimensions/body_width":
-    - source: kemet/C1002_X7R
-      page: 3
-      locator: "Dimensions table, EIA 0805 row, W = 1.25 +/-0.20 mm"
-  "/dimensions/body_height":
-    - source: kemet/C1002_X7R
-      page: 9
-      locator: "Table 2A, thickness code DH, case 0805: 1.25 +/- 0.20 mm"
+    min: 1.05 mm
+    typ: 1.25 mm
+    max: 1.45 mm
+    src: 'p9 "Table 2A, thickness code DH, case 0805: 1.25 +/- 0.20 mm"'

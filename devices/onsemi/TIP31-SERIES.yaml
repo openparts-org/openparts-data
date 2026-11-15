@@ -2,24 +2,18 @@
 # page 1, cross-checked against the CASE 221A STYLE list in
 # 98ASB42148B. Terminal 4 (the tab, Collector, tied to pin 2) is not a
 # footprint pad of a vertical TO-220 and is not listed.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/TIP31-SERIES
-
 manufacturer: onsemi
 category: transistor
 family: TIP31
+source: onsemi/98ASB42148B
 
 pins:
+  src:
+    - onsemi/TIP31A-D p1 "NPN symbol "COLLECTOR 2,4", "1 BASE", "3 EMITTER"; "TO-220 CASE 221A STYLE 1""
+    - 'p1 "CASE 221A STYLE 1: "PIN 1. BASE 2. COLLECTOR 3. EMITTER 4. COLLECTOR""'
   "1": { name: Base, type: passive }
   "2": { name: Collector, type: passive }
   "3": { name: Emitter, type: passive }
-
-provenance:
-  "/pins":
-    - source: onsemi/TIP31A-D
-      page: 1
-      locator: "NPN symbol \"COLLECTOR 2,4\", \"1 BASE\", \"3 EMITTER\"; \"TO-220 CASE 221A STYLE 1\""
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "CASE 221A STYLE 1: \"PIN 1. BASE 2. COLLECTOR 3. EMITTER 4. COLLECTOR\""

@@ -3,26 +3,20 @@
 # "MCP6001U 5-Lead SOT-23": VIN+ 1, VSS 2, VIN- 3, VOUT 4, VDD 5,
 # checked against the "Package Types" figure "MCP6001U 5-Lead SOT-23"
 # (page 1). Types as for microchip/MCP6001.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/MCP6001U
-
 manufacturer: microchip
 category: op_amp
 family: MCP6001/1R/1U/2/4
+source: microchip/DS20001733@revL
 
 pins:
-  "1": { name: "VIN+", type: analog }
+  src:
+    - p11 "Table 3-1 "Pin Function Table", column "MCP6001U 5-Lead SOT-23""
+    - p1 ""Package Types", MCP6001U 5-Lead SOT-23"
+  "1": { name: VIN+, type: analog }
   "2": { name: VSS, type: power }
-  "3": { name: "VIN-", type: analog }
+  "3": { name: VIN-, type: analog }
   "4": { name: VOUT, type: analog }
   "5": { name: VDD, type: power }
-
-provenance:
-  "/pins":
-    - source: microchip/DS20001733@revL
-      page: 11
-      locator: "Table 3-1 \"Pin Function Table\", column \"MCP6001U 5-Lead SOT-23\""
-    - source: microchip/DS20001733@revL
-      page: 1
-      locator: "\"Package Types\", MCP6001U 5-Lead SOT-23"

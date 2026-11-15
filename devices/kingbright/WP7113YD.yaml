@@ -5,50 +5,33 @@
 # radial LED 3D template draws). NOTE: the older kingbright/WP7113ID
 # device numbers pin 1 = Anode; the two conventions disagree in the
 # dataset (reported, not changed here).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: kingbright/WP7113YD
-
 manufacturer: kingbright
 category: led
 family: WP7113
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: kingbright/DSAF2448
 
 parameters:
+  forward_voltage:
+    typ: 1.95 V
+    max: 2.4 V
+    at: { IF: 10 mA, TA: 25 °C }
+    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, Yellow: Typ. 1.95 V, Max. 2.4 V"'
+  forward_current:
+    max: 30 mA
+    at: { TA: 25 °C }
+    src: 'p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF: 30 mA"'
   color:
     value: yellow
+    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: Yellow"'
   wavelength:
-    nominal: 588
-    unit: nm
-  forward_voltage:
-    nominal: 1.95
-    max: 2.4
-    unit: V
-  forward_current:
-    max: 30
-    unit: mA
+    typ: 588 nm
+    at: { IF: 10 mA, TA: 25 °C }
+    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Yellow: Typ. 588 nm"'
 
-provenance:
-  "/parameters/color":
-    - source: kingbright/DSAF2448
-      page: 2
-      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: Yellow"
-  "/parameters/wavelength":
-    - source: kingbright/DSAF2448
-      page: 2
-      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Dominant Wavelength IF = 10mA λdom, Yellow: Typ. 588 nm"
-  "/parameters/forward_voltage":
-    - source: kingbright/DSAF2448
-      page: 2
-      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Forward Voltage IF = 10mA VF, Yellow: Typ. 1.95 V, Max. 2.4 V"
-  "/parameters/forward_current":
-    - source: kingbright/DSAF2448
-      page: 2
-      locator: "ABSOLUTE MAXIMUM RATINGS at TA=25°C, DC Forward Current IF: 30 mA"
-  "/pins":
-    - source: kingbright/DSAF2448
-      page: 1
-      locator: "PACKAGE DIMENSIONS drawing, \"Cathode\" lead label"
+pins:
+  src: p1 "PACKAGE DIMENSIONS drawing, "Cathode" lead label"
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

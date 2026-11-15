@@ -1,44 +1,29 @@
 # LM78L05ACZ/NOPB: TO-92 (LP), 3 pins, 1800 / BULK, op temp -40 to 125
 # C, status "Active", from the PACKAGE OPTION ADDENDUM (dated
 # 10-Oct-2026) appended to SNVS754O.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/LM78L05ACZ/NOPB
-
 manufacturer: ti
 mpn: LM78L05ACZ/NOPB
-
 device: ti/LM78L05-LP
-package: standards/TO92-TI-LP0003A
+
+package:
+  value: standards/TO92-TI-LP0003A
+  src: p45 "LP0003A outline (identical drawing 4215214/C to SNIS159H page 31)"
+
+sources: [ti/SNVS754O]
+source: ti/SNVS754O
 
 existence:
   status: verified
+  src: p33 "PACKAGE OPTION ADDENDUM, PACKAGING INFORMATION row "LM78L05ACZ/NOPB | Active | Production | TO-92 (LP) | 3 | 1800 | BULK""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SNVS754O
+  src: p33 "Same row, Status column "Active" (addendum dated 10-Oct-2026)"
 
 parameters:
   output_voltage:
-    nominal: 5.0
-    unit: V
-
-provenance:
-  "/parameters/output_voltage":
-    - source: ti/SNVS754O
-      page: 30
-      locator: "8.1.2 Device Nomenclature, row \"LM78LxxACZ/ yyyy\" (TO-92, legacy chip only): \"xx is the nominal output voltage (for example, 05 = 5.0V, 09 = 9.0V, ...)\""
-  "/existence":
-    - source: ti/SNVS754O
-      page: 33
-      locator: "PACKAGE OPTION ADDENDUM, PACKAGING INFORMATION row \"LM78L05ACZ/NOPB | Active | Production | TO-92 (LP) | 3 | 1800 | BULK\""
-  "/lifecycle":
-    - source: ti/SNVS754O
-      page: 33
-      locator: "Same row, Status column \"Active\" (addendum dated 10-Oct-2026)"
-  "/package":
-    - source: ti/SNVS754O
-      page: 45
-      locator: "LP0003A outline (identical drawing 4215214/C to SNIS159H page 31)"
+    typ: 5 V
+    src: 'p30 "8.1.2 Device Nomenclature, row "LM78LxxACZ/ yyyy" (TO-92, legacy chip only): "xx is the nominal output voltage (for example, 05 = 5.0V, 09 = 9.0V, ...)""'

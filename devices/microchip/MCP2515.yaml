@@ -4,15 +4,16 @@
 # RX0BF/RX1BF, INT, CS, RESET) carry an overbar in the datasheet; the
 # names here are written without it. The TSSOP/QFN pinouts differ and
 # are not covered by this device.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/MCP2515
-
 manufacturer: microchip
 category: can_controller
 family: MCP2515
+source: microchip/DS20001801@revK
 
 pins:
+  src:  'p4 "Table 1-1 "Pinout Description", "PDIP/SOIC Pin #" column and I/O/P type column"'
   "1":  { name: TXCAN, type: output }
   "2":  { name: RXCAN, type: input }
   "3":  { name: CLKOUT, type: output }
@@ -31,9 +32,3 @@ pins:
   "16": { name: CS, type: input }
   "17": { name: RESET, type: reset }
   "18": { name: VDD, type: power }
-
-provenance:
-  "/pins":
-    - source: microchip/DS20001801@revK
-      page: 4
-      locator: "Table 1-1 \"Pinout Description\", \"PDIP/SOIC Pin #\" column and I/O/P type column"

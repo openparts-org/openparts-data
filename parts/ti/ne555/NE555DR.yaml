@@ -11,35 +11,24 @@
 # justified by the same JEDEC outline, not identical tolerance tables
 # (TI L 0.41-1.27 / c 0.11-0.25 vs Microchip L 0.40-1.27 / c 0.17-0.25).
 # (D0008A outline in this datasheet: PDF page 30.)
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/NE555DR
-
 manufacturer: ti
 mpn: NE555DR
-
 device: ti/NE555
-package: standards/SOIC8-3.90x4.90-P1.27
+
+package:
+  value: standards/SOIC8-3.90x4.90-P1.27
+  src: p30 "D0008A package outline (SOIC, MS-012 AA) -- compared against the referenced package, see header"
+
+sources: [ti/SLFS022K]
+source: ti/SLFS022K
 
 existence:
   status: verified
+  src: p21 "Package option addendum table, row "NE555DR" (SOIC (D) | 8)"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLFS022K
-
-provenance:
-  "/existence":
-    - source: ti/SLFS022K
-      page: 21
-      locator: "Package option addendum table, row \"NE555DR\" (SOIC (D) | 8)"
-  "/lifecycle":
-    - source: ti/SLFS022K
-      page: 21
-      locator: "Package option addendum table, row \"NE555DR\", Status \"Active\""
-  "/package":
-    - source: ti/SLFS022K
-      page: 30
-      locator: "D0008A package outline (SOIC, MS-012 AA) -- compared against the referenced package, see header"
+  src: p21 "Package option addendum table, row "NE555DR", Status "Active""

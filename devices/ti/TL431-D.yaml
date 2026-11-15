@@ -7,15 +7,21 @@
 # connection". ANODE is typed `ground` from Table 5-1: "Common pin,
 # normally connected to ground" (needed anyway: repeated signal names
 # are rejected by pin.duplicate_name unless power/ground/nc).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/TL431-D
-
 manufacturer: ti
 category: voltage_reference
 family: TL431
+source: ti/SLVS543S
+
+parameters:
+  output_type:
+    value: adjustable
+    src: 'p1 "1 Features, "Adjustable output voltage: Vref to 36V"; 3 Description: "three-terminal adjustable shunt regulators""'
 
 pins:
+  src: p4 ""D (SOIC) PACKAGE (TOP VIEW)" diagram and Table 5-1 "Pin Functions", TL431x D column"
   "1": { name: CATHODE, type: passive }
   "2": { name: ANODE, type: ground }
   "3": { name: ANODE, type: ground }
@@ -24,17 +30,3 @@ pins:
   "6": { name: ANODE, type: ground }
   "7": { name: ANODE, type: ground }
   "8": { name: REF, type: analog }
-
-parameters:
-  output_type:
-    value: adjustable
-
-provenance:
-  "/parameters/output_type":
-    - source: ti/SLVS543S
-      page: 1
-      locator: "1 Features, \"Adjustable output voltage: Vref to 36V\"; 3 Description: \"three-terminal adjustable shunt regulators\""
-  "/pins":
-    - source: ti/SLVS543S
-      page: 4
-      locator: "\"D (SOIC) PACKAGE (TOP VIEW)\" diagram and Table 5-1 \"Pin Functions\", TL431x D column"

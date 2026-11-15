@@ -5,16 +5,13 @@
 # table -- the outline is AOS's separate document PO-00001
 # (sources/aos/PO-00001.yaml, re-downloaded 2026-11-10: still
 # "Version N").
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: aos/AO3407-DS
-
+retrieved: 2026-11-10
+url: https://www.aosmd.com/res/datasheets/AO3407.pdf
+date: 2023-07
 publisher: aos
 document_id: AO3407
 document_type: datasheet
-
 revision: "5.1"
-date: "2023-07"
-
-url: "https://www.aosmd.com/res/datasheets/AO3407.pdf"
-retrieved: "2026-11-10"

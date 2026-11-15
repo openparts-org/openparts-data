@@ -5,15 +5,12 @@
 # link redirects through a JavaScript page) and read with pdftotext;
 # package pages rendered to images and read directly. Page numbers in
 # provenance are PDF page indices (printed page = PDF page - 1).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: winbond/W25Q128JV@revF
-
+url: https://www.winbond.com/resource-files/w25q128jv%20revf%2003272018%20plus.pdf
+date: 2018-03
+revision: F
 publisher: winbond
 document_id: W25Q128JV
 document_type: datasheet
-
-revision: "F"
-date: "2018-03"
-
-url: "https://www.winbond.com/resource-files/w25q128jv%20revf%2003272018%20plus.pdf"

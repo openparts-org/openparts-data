@@ -1,27 +1,18 @@
 # DFLS1100-7: printed verbatim in the ordering table (verified).
 # Package: manufacturers/diodes/PowerDI123-2.80x1.78-DS30497 (outline read from DS30497).
 # No lifecycle statement in the datasheet: lifecycle unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: diodes/DFLS1100-7
-
 manufacturer: diodes
 mpn: DFLS1100-7
-
 device: diodes/DFLS1100
 package: manufacturers/diodes/PowerDI123-2.80x1.78-DS30497
+sources: [diodes/DS30497]
+source: diodes/DS30497
 
 existence:
   status: verified
+  src: p1 "Ordering Information table row "DFLS1100-7 | Commercial | POWERDI123 | 3000/Tape & Reel""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - diodes/DS30497
-
-provenance:
-  "/existence":
-    - source: diodes/DS30497
-      page: 1
-      locator: "Ordering Information table row \"DFLS1100-7 | Commercial | POWERDI123 | 3000/Tape & Reel\""
+lifecycle: { status: unknown }

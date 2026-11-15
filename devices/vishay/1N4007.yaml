@@ -3,43 +3,26 @@
 # for Vishay axial diodes (see vishay/1N4148) and the band-marks-cathode
 # convention confirmed for this part on page 1 of the datasheet
 # ("Cathode Band").
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: vishay/1N4007
-
 manufacturer: vishay
 category: diode
 family: 1N4007
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: vishay/88503
 
 parameters:
-  reverse_voltage:
-    max: 1000
-    unit: V
-  forward_current:
-    max: 1.0
-    unit: A
   forward_voltage:
-    max: 1.1
-    unit: V
+    max: 1.1 V
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum instantaneous forward voltage, 1.0 A, VF: 1.1 V (all types)"'
+  reverse_voltage:
+    max: 1000 V
+    src: 'p1 "MAXIMUM RATINGS, Maximum repetitive peak reverse voltage VRRM, 1N4007 column: 1000 V"'
+  forward_current:
+    max: 1 A
+    src: 'p1 "MAXIMUM RATINGS, Maximum average forward rectified current 0.375" (9.5 mm) lead length at TA = 75 °C IF(AV): 1.0 A"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: vishay/88503
-      page: 1
-      locator: "MAXIMUM RATINGS, Maximum repetitive peak reverse voltage VRRM, 1N4007 column: 1000 V"
-  "/parameters/forward_current":
-    - source: vishay/88503
-      page: 1
-      locator: "MAXIMUM RATINGS, Maximum average forward rectified current 0.375\" (9.5 mm) lead length at TA = 75 °C IF(AV): 1.0 A"
-  "/parameters/forward_voltage":
-    - source: vishay/88503
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Maximum instantaneous forward voltage, 1.0 A, VF: 1.1 V (all types)"
-  "/pins":
-    - source: vishay/88503
-      page: 1
-      locator: "\"MAXIMUM RATINGS\"/marking section, cathode band"
+pins:
+  src: p1 ""MAXIMUM RATINGS"/marking section, cathode band"
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

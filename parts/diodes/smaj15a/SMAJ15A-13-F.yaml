@@ -1,28 +1,18 @@
 # SMAJ15A-13-F: assembled from the ordering pattern -- probable.
 # Package: manufacturers/diodes/SMA-DS13002 (outline read from DS13002; the same outline table is printed in DS19005, see the package header).
 # No lifecycle statement in the datasheet: lifecycle unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: diodes/SMAJ15A-13-F
-
 manufacturer: diodes
 mpn: SMAJ15A-13-F
-
 device: diodes/SMAJ15A
 package: manufacturers/diodes/SMA-DS13002
+sources: [diodes/DS19005, diodes/DS13002]
+source: diodes/DS19005
 
 existence:
   status: probable
+  src: 'p1 "Ordering Information table row "SMAJXXX(C)A-13-F | Standard | SMA | 5000 | Tape & Reel" with footnote "x = Device Voltage, Example: SMAJ170A-13-F"; SMAJ15(C)A from the page-3 Electrical Characteristics table"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - diodes/DS19005
-  - diodes/DS13002
-
-provenance:
-  "/existence":
-    - source: diodes/DS19005
-      page: 1
-      locator: "Ordering Information table row \"SMAJXXX(C)A-13-F | Standard | SMA | 5000 | Tape & Reel\" with footnote \"x = Device Voltage, Example: SMAJ170A-13-F\"; SMAJ15(C)A from the page-3 Electrical Characteristics table"
+lifecycle: { status: unknown }

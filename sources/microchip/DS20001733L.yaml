@@ -5,16 +5,13 @@
 # numbers equal the PDF page indices. Text read with pdftotext -layout;
 # the MSOP (MS) drawing C04-111C (pages 34-35) was rendered and read as
 # an image (several other package pages use an encoded font).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: microchip/DS20001733@revL
-
+retrieved: 2026-11-10
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/MSLD/ProductDocuments/DataSheets/MCP6001-1R-1U-2-4-1-MHz-Low-Power-Op-Amp-DS20001733L.pdf
+date: 2020-03
 publisher: microchip
 document_id: DS20001733
 document_type: datasheet
-
-revision: "L"
-date: "2020-03"
-
-url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MSLD/ProductDocuments/DataSheets/MCP6001-1R-1U-2-4-1-MHz-Low-Power-Op-Amp-DS20001733L.pdf"
-retrieved: "2026-11-10"
+revision: L

@@ -13,86 +13,53 @@
 # along Y) is not representable here: footprint pads are the terminal
 # feet. The flat-type B3FS-10x0/-10x2/-10x5 drawings print no housing
 # width (only "6.3" and the toe span), so they are not added.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/omron/B3FS-1050
-
 family: tact_switch_smd
 lead_count: 4
-pad_order: ["4", "2", "1", "3"]
+source: omron/A113-E1-06
 
 pitch:
-  nominal: 4.5
-  min: 4.3
-  max: 4.7
-  unit: mm
+  min: 4.3 mm
+  typ: 4.5 mm
+  max: 4.7 mm
+  src: p3 ""Projected Type" (B3FS-1050/1052/1050P/1052P) top view, terminal pitch "4.5±0.2"; "PCB Pad (Top View)" pad centres (3.1+5.9)/2 = 4.5"
+
+pad_order:
+  value: ["4", "2", "1", "3"]
+  src:   'p3 ""Terminal Arrangement/Internal Connection (Top View)": "4" top-left, "2" bottom-left, "1" bottom-right, "3" top-right -> positions TL, BL, BR, TR = 4, 2, 1, 3"'
+
+geometry: { type: parametric, generator: tact_switch_smd }
 
 dimensions:
   body_width:
-    nominal: 6
-    min: 5.6
-    max: 6.4
-    unit: mm
+    min: 5.6 mm
+    typ: 6 mm
+    max: 6.4 mm
+    src: p3 ""Projected Type" top view, housing "6" (horizontal); note "Unless otherwise specified, a tolerance of ±0.4 mm applies to all dimensions.""
   body_length:
-    nominal: 6.3
-    min: 5.9
-    max: 6.7
-    unit: mm
+    min: 5.9 mm
+    typ: 6.3 mm
+    max: 6.7 mm
+    src: p3 ""Projected Type" top view, housing "6.3" (vertical, along the terminal rows) (±0.4 note)"
   body_height:
-    nominal: 2.6
-    min: 2.2
-    max: 3.0
-    unit: mm
-  overall_height:
-    nominal: 7.3
-    min: 6.9
-    max: 7.7
-    unit: mm
-  overall_width:
-    nominal: 8
-    min: 7.6
-    max: 8.4
-    unit: mm
+    min: 2.2 mm
+    typ: 2.6 mm
+    max: 3 mm
+    src: p3 ""Projected Type" front view, board to housing top "2.6" (±0.4 note)"
   lead_width:
-    nominal: 0.7
-    min: 0.3
-    max: 1.1
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: tact_switch_smd
-
-provenance:
-  "/pitch":
-    - source: omron/A113-E1-06
-      page: 3
-      locator: "\"Projected Type\" (B3FS-1050/1052/1050P/1052P) top view, terminal pitch \"4.5±0.2\"; \"PCB Pad (Top View)\" pad centres (3.1+5.9)/2 = 4.5"
-  "/pad_order":
-    - source: omron/A113-E1-06
-      page: 3
-      locator: "\"Terminal Arrangement/Internal Connection (Top View)\": \"4\" top-left, \"2\" bottom-left, \"1\" bottom-right, \"3\" top-right -> positions TL, BL, BR, TR = 4, 2, 1, 3"
-  "/dimensions/body_width":
-    - source: omron/A113-E1-06
-      page: 3
-      locator: "\"Projected Type\" top view, housing \"6\" (horizontal); note \"Unless otherwise specified, a tolerance of ±0.4 mm applies to all dimensions.\""
-  "/dimensions/body_length":
-    - source: omron/A113-E1-06
-      page: 3
-      locator: "\"Projected Type\" top view, housing \"6.3\" (vertical, along the terminal rows) (±0.4 note)"
-  "/dimensions/body_height":
-    - source: omron/A113-E1-06
-      page: 3
-      locator: "\"Projected Type\" front view, board to housing top \"2.6\" (±0.4 note)"
-  "/dimensions/overall_height":
-    - source: omron/A113-E1-06
-      page: 3
-      locator: "\"Projected Type\" front view, board to plunger top \"7.3\" (±0.4 note)"
-  "/dimensions/overall_width":
-    - source: omron/A113-E1-06
-      page: 3
-      locator: "\"Projected Type\" front view, terminal toe to toe \"8\" (±0.4 note)"
-  "/dimensions/lead_width":
-    - source: omron/A113-E1-06
-      page: 3
-      locator: "\"Projected Type\" end view, terminal width \"0.7\" (±0.4 note)"
+    min: 0.3 mm
+    typ: 0.7 mm
+    max: 1.1 mm
+    src: p3 ""Projected Type" end view, terminal width "0.7" (±0.4 note)"
+  overall_width:
+    min: 7.6 mm
+    typ: 8 mm
+    max: 8.4 mm
+    src: p3 ""Projected Type" front view, terminal toe to toe "8" (±0.4 note)"
+  overall_height:
+    min: 6.9 mm
+    typ: 7.3 mm
+    max: 7.7 mm
+    src: p3 ""Projected Type" front view, board to plunger top "7.3" (±0.4 note)"

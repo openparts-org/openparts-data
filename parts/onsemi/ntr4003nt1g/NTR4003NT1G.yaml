@@ -6,65 +6,41 @@
 # was read from (2N7002E/D Rev. 8 page 6, re-downloaded 2026-11-10); every
 # table row was also re-read from a 150 dpi render. Reused; the package
 # cites onsemi/2N7002E-D.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/NTR4003NT1G
-
 manufacturer: onsemi
 mpn: NTR4003NT1G
-
 device: onsemi/NTR4003N
 package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/NTR4003N-D]
+source: onsemi/NTR4003N-D
 
 existence:
   status: verified
+  src: 'p1 "ORDERING INFORMATION table: "NTR4003NT1G | SOT-23 (Pb-Free) | 3,000 / Tape & Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/NTR4003N-D
+lifecycle: { status: unknown }
 
 parameters:
   polarity:
     value: n_channel
+    src: 'p1 "Page-1 title: "MOSFET - Single, N-Channel, Small Signal, SOT-23""'
   drain_source_voltage:
-    nominal: 30
-    unit: V
+    typ: 30 V
+    at: { TJ: 25 °C }
+    src: 'p1 "MAXIMUM RATINGS, VDSS Drain-to-Source Voltage: 30 V"'
   drain_current:
-    nominal: 0.5
-    unit: A
+    typ: 0.5 A
+    at: { TA: 25 °C }
+    src: 'p1 "MAXIMUM RATINGS, ID Continuous Drain Current (Note 1), Steady State: 0.5 A"'
   rds_on:
-    nominal: 1.0
-    max: 1.5
-    unit: Ω
+    typ: 1 Ω
+    max: 1.5 Ω
+    at: { VGS: 4 V, ID: 10 mA, TJ: 25 °C }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Drain-to-Source On Resistance RDS(on): Typ 1.0, Max 1.5 Ω"'
   gate_threshold_voltage:
-    min: 0.8
-    max: 1.4
-    unit: V
-
-provenance:
-  "/existence":
-    - source: onsemi/NTR4003N-D
-      page: 1
-      locator: "ORDERING INFORMATION table: \"NTR4003NT1G | SOT-23 (Pb-Free) | 3,000 / Tape & Reel\""
-  "/parameters/polarity":
-    - source: onsemi/NTR4003N-D
-      page: 1
-      locator: "Page-1 title: \"MOSFET - Single, N-Channel, Small Signal, SOT-23\""
-  "/parameters/drain_source_voltage":
-    - source: onsemi/NTR4003N-D
-      page: 1
-      locator: "MAXIMUM RATINGS (TJ = 25°C), VDSS Drain-to-Source Voltage: 30 V"
-  "/parameters/drain_current":
-    - source: onsemi/NTR4003N-D
-      page: 1
-      locator: "MAXIMUM RATINGS, ID Continuous Drain Current (Note 1), Steady State, TA = 25°C: 0.5 A"
-  "/parameters/rds_on":
-    - source: onsemi/NTR4003N-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS (TJ = 25°C), Drain-to-Source On Resistance RDS(on), VGS = 4.0 V, ID = 10 mA: Typ 1.0, Max 1.5 Ω"
-  "/parameters/gate_threshold_voltage":
-    - source: onsemi/NTR4003N-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS (TJ = 25°C), VGS(TH) Gate Threshold Voltage: Min 0.8, Max 1.4 V"
+    min: 0.8 V
+    max: 1.4 V
+    at: { TJ: 25 °C }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, VGS(TH) Gate Threshold Voltage: Min 0.8, Max 1.4 V"'

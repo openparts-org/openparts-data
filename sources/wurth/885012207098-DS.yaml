@@ -7,15 +7,12 @@
 # (YYYY-MM-DD), TECHNICAL REFERENCE "X7R0805104K050DFCT10000", ORDER CODE
 # "885012207098", SIZE/TYPE "0805", STATUS "Valid" (the document's
 # release status -- not read as a product lifecycle status).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: wurth/885012207098-DS
-
+url: https://www.we-online.com/components/products/datasheet/885012207098.pdf
+date: 2021-01-03
+revision: "002.000"
 publisher: wurth
 document_id: "885012207098"
 document_type: datasheet
-
-revision: "002.000"
-date: "2021-01-03"
-
-url: "https://www.we-online.com/components/products/datasheet/885012207098.pdf"

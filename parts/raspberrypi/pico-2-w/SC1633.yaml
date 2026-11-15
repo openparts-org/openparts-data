@@ -11,27 +11,18 @@
 # Package: the Pico 2 W's Figures 3 and 5 (PDF pages 7 and 10) print the
 # same numbers as the Pico W's, so it shares the Pico W package.
 # lifecycle unknown: no production-status statement.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: raspberrypi/SC1633
-
 manufacturer: raspberrypi
 mpn: SC1633
-
 device: raspberrypi/PICO-2-W
 package: standards/MODULE40-21x51-P2.54-PICO-W
+sources: [raspberrypi/RP-008304-DS@rev3, raspberrypi/PIP-1088-pico-2-w]
+source: raspberrypi/PIP-1088-pico-2-w
 
 existence:
   status: probable
+  src: '"Page header under "Raspberry Pi Pico 2 W": "SC1633, SC1634" (which code is which variant is not stated)"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - raspberrypi/RP-008304-DS@rev3
-  - raspberrypi/PIP-1088-pico-2-w
-
-provenance:
-  "/existence":
-    - source: raspberrypi/PIP-1088-pico-2-w
-      locator: "Page header under \"Raspberry Pi Pico 2 W\": \"SC1633, SC1634\" (which code is which variant is not stated)"
+lifecycle: { status: unknown }

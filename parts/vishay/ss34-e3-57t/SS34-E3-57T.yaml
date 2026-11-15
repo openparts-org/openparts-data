@@ -6,27 +6,18 @@
 # 2026-11-14: package repointed from standards/CHIP-SMC-DO214AB
 # (family chip, body only; deleted) to
 # standards/DO214AB-VISHAY-88751.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: vishay/SS34-E3/57T
-
 manufacturer: vishay
 mpn: SS34-E3/57T
-
 device: vishay/SS34
 package: standards/DO214AB-VISHAY-88751
+sources: [vishay/88751]
+source: vishay/88751
 
 existence:
   status: probable
+  src: p2 ""ORDERING INFORMATION (Example)" (SS36-E3/57T, package code 57T) + page-1 MECHANICAL DATA "Base P/N-E3"; SS34 is a base P/N in the MAXIMUM RATINGS table"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - vishay/88751
-
-provenance:
-  "/existence":
-    - source: vishay/88751
-      page: 2
-      locator: "\"ORDERING INFORMATION (Example)\" (SS36-E3/57T, package code 57T) + page-1 MECHANICAL DATA \"Base P/N-E3\"; SS34 is a base P/N in the MAXIMUM RATINGS table"
+lifecycle: { status: unknown }

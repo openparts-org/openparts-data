@@ -4,43 +4,25 @@
 # relationship between the printed marking code and the band itself was
 # not visually confirmed (garbled/graphical-only in extraction), only
 # the textual "cathode = banded end" fact.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: diodes/1N4148W
-
 manufacturer: diodes
 category: diode
 family: 1N4148W
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: diodes/DS30086@rev32-2
 
 parameters:
-  reverse_voltage:
-    max: 100
-    unit: V
-  forward_current:
-    max: 300
-    unit: mA
   forward_voltage:
-    max: 1.25
-    unit: V
+    max: 1.25 V
+    at: { IF: 150 mA }
+    src: 'p2 "Electrical Characteristics, Forward Voltage VFM: Max 1.25 V (highest listed test current)"'
+  reverse_voltage: { max: 100 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR: 100 V"' }
+  forward_current:
+    max: 300 mA
+    src: 'p2 "Maximum Ratings, Forward Continuous Current IFM: 300 mA"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: diodes/DS30086@rev32-2
-      page: 2
-      locator: "Maximum Ratings, VRRM/VRWM/VR: 100 V"
-  "/parameters/forward_current":
-    - source: diodes/DS30086@rev32-2
-      page: 2
-      locator: "Maximum Ratings, Forward Continuous Current IFM: 300 mA"
-  "/parameters/forward_voltage":
-    - source: diodes/DS30086@rev32-2
-      page: 2
-      locator: "Electrical Characteristics, Forward Voltage VFM: Max 1.25 V @ IF = 150mA (highest listed test current)"
-  "/pins":
-    - source: diodes/DS30086
-      page: 1
-      locator: "\"Mechanical Data\": \"Polarity: Cathode Band\""
+pins:
+  src: 'diodes/DS30086 p1 ""Mechanical Data": "Polarity: Cathode Band""'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

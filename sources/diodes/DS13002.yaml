@@ -5,15 +5,12 @@
 # -layout and rendered (pdftoppm) for the outline drawing. Page numbers
 # cited are PDF page indices (= printed "n of N").
 # The same file is served for .../download/B130.pdf (identical checksum).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: diodes/DS13002
-
+url: https://www.diodes.com/datasheet/download/B140.pdf
+date: 2026-10
+revision: 21-2
 publisher: diodes
 document_id: DS13002
 document_type: datasheet
-
-revision: "21-2"
-date: "2026-10"
-
-url: "https://www.diodes.com/datasheet/download/B140.pdf"

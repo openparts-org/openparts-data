@@ -8,56 +8,35 @@
 # terminals and "0,3 ±0,1" the substrate thickness; neither is a
 # modelled dimension, and no terminal length is dimensioned, so
 # lead_length is left out (not derived by subtraction).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/wurth/CHIP0805-WL-SMCW
-
 family: chip
 lead_count: 2
+source: wurth/150080GS75000-DS
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 2.0
-    min: 1.9
-    max: 2.1
-    unit: mm
   body_width:
-    nominal: 1.25
-    min: 1.15
-    max: 1.35
-    unit: mm
+    min: 1.15 mm
+    typ: 1.25 mm
+    max: 1.35 mm
+    src:
+      - 'wurth/150080RS75000-DS p1 ""Dimensions: [mm]" view with the "Polarity Mark" label, width "1,25 ±0,1""'
+      - 'p1 ""Dimensions: [mm]" view with the "Polarity Mark" label, width "1,25 ±0,1""'
+  body_length:
+    min: 1.9 mm
+    typ: 2 mm
+    max: 2.1 mm
+    src:
+      - 'wurth/150080RS75000-DS p1 ""Dimensions: [mm]" side view, length "2,0 ±0,1""'
+      - 'p1 ""Dimensions: [mm]" side view, length "2,0 ±0,1""'
   body_height:
-    nominal: 0.7
-    min: 0.6
-    max: 0.8
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: wurth/150080RS75000-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" side view, length \"2,0 ±0,1\""
-    - source: wurth/150080GS75000-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" side view, length \"2,0 ±0,1\""
-  "/dimensions/body_width":
-    - source: wurth/150080RS75000-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" view with the \"Polarity Mark\" label, width \"1,25 ±0,1\""
-    - source: wurth/150080GS75000-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" view with the \"Polarity Mark\" label, width \"1,25 ±0,1\""
-  "/dimensions/body_height":
-    - source: wurth/150080RS75000-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" end view, overall height \"0,7 ±0,1\""
-    - source: wurth/150080GS75000-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" end view, overall height \"0,7 ±0,1\""
+    min: 0.6 mm
+    typ: 0.7 mm
+    max: 0.8 mm
+    src:
+      - 'wurth/150080RS75000-DS p1 ""Dimensions: [mm]" end view, overall height "0,7 ±0,1""'
+      - 'p1 ""Dimensions: [mm]" end view, overall height "0,7 ±0,1""'

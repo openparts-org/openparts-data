@@ -2,16 +2,13 @@
 # Its "Ordering & Quality" table lists every orderable MPN of the
 # series with package code, frequency, tolerance and load capacitance.
 # Product pages are not versioned; revision/date = fetch date.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: ecs/ECX-16-product-page
-
+retrieved: 2026-11-10
+url: https://ecsxtal.com/ecx-16
+date: 2026-11-10
 publisher: ecs
-document_id: "ECX-16 product page"
+document_id: ECX-16 product page
 document_type: product_page
-
-revision: "2026-11-10"
-date: "2026-11-10"
-
-url: "https://ecsxtal.com/ecx-16"
-retrieved: "2026-11-10"
+revision: 2026-11-10

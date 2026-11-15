@@ -9,15 +9,12 @@
 # text (page 8); the package drawings use an encoded font: the PDIP
 # (C04-018D, page 17) and SOIC (C04-057C, pages 18-19) sheets were
 # rendered (100-220 dpi) and read as images.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: microchip/DS20001423@revJ
-
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/20001423J.pdf
+date: 2014-07
+revision: J
 publisher: microchip
 document_id: DS20001423
 document_type: datasheet
-
-revision: "J"
-date: "2014-07"
-
-url: "https://ww1.microchip.com/downloads/en/DeviceDoc/20001423J.pdf"

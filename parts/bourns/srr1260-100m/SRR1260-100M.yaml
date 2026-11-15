@@ -3,65 +3,33 @@
 # Package reused: this revision's Product Dimensions drawing gives the
 # same numbers as standards/CHIP-BOURNS-SRR1260 (one drawing for the whole series).
 # lifecycle unknown: the datasheet makes no production-status statement.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
-id: "bourns/SRR1260-100M"
-
+id: bourns/SRR1260-100M
 manufacturer: bourns
-mpn: "SRR1260-100M"
-
+mpn: SRR1260-100M
 device: bourns/SRR1260-SERIES
 package: standards/CHIP-BOURNS-SRR1260
+sources: [bourns/SRR1260@rev03-26]
+source: bourns/SRR1260@rev03-26
 
 existence:
   status: verified
+  src: p1 "Electrical Specifications table, Part Number row "SRR1260-100M""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - bourns/SRR1260@rev03-26
+lifecycle: { status: unknown }
 
 parameters:
   tolerance:
-    min: -20
-    max: 20
-    unit: "%"
+    tol: ±20 %
+    src: 'p1 "Electrical Specifications, SRR1260-100M row: Inductance Tol. (%) ±20"'
   inductance:
-    nominal: 10.0
-    unit: µH
+    typ: 10 µH
+    src: 'p1 "Electrical Specifications, SRR1260-100M row: Inductance (µH) 10.0"'
   rated_current:
-    max: 5.5
-    unit: A
+    max: 5.5 A
+    src: 'p1 "Electrical Specifications, SRR1260-100M row: I rms Max. (A) 5.50 (General Specifications: temperature rise 40 °C typ. at rated I rms)"'
   saturation_current:
-    nominal: 5.5
-    unit: A
-  dcr:
-    max: 20.0
-    unit: mΩ
-
-provenance:
-  "/existence":
-    - source: bourns/SRR1260@rev03-26
-      page: 1
-      locator: "Electrical Specifications table, Part Number row \"SRR1260-100M\""
-  "/parameters/tolerance":
-    - source: bourns/SRR1260@rev03-26
-      page: 1
-      locator: "Electrical Specifications, SRR1260-100M row: Inductance Tol. (%) ±20"
-  "/parameters/inductance":
-    - source: bourns/SRR1260@rev03-26
-      page: 1
-      locator: "Electrical Specifications, SRR1260-100M row: Inductance (µH) 10.0"
-  "/parameters/rated_current":
-    - source: bourns/SRR1260@rev03-26
-      page: 1
-      locator: "Electrical Specifications, SRR1260-100M row: I rms Max. (A) 5.50 (General Specifications: temperature rise 40 °C typ. at rated I rms)"
-  "/parameters/saturation_current":
-    - source: bourns/SRR1260@rev03-26
-      page: 1
-      locator: "Electrical Specifications, SRR1260-100M row: I sat Typ. (A) 5.50 (General Specifications: inductance drop 25 % typ. at I sat)"
-  "/parameters/dcr":
-    - source: bourns/SRR1260@rev03-26
-      page: 1
-      locator: "Electrical Specifications, SRR1260-100M row: RDC Max. (mΩ) 20.0"
+    typ: 5.5 A
+    src: 'p1 "Electrical Specifications, SRR1260-100M row: I sat Typ. (A) 5.50 (General Specifications: inductance drop 25 % typ. at I sat)"'
+  dcr: { max: 20 mΩ, src: 'p1 "Electrical Specifications, SRR1260-100M row: RDC Max. (mΩ) 20.0"' }

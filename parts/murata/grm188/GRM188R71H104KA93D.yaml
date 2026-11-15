@@ -3,53 +3,29 @@
 # recorded honestly rather than assumed active, per Historical
 # Preservation (Architecture Specification section 4.5): an obsolete
 # part is still real data worth keeping.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: murata/GRM188R71H104KA93D
-
 manufacturer: murata
 mpn: GRM188R71H104KA93D
-
 device: murata/GRM188-X7R
 package: standards/CHIP0603-GRM188
+sources: [murata/C02E-16]
+source: murata/C02E-16
 
-existence:
-  status: verified
-
-lifecycle:
-  status: obsolete
-
-sources:
-  - murata/C02E-16
+existence: { status: verified }
+lifecycle: { status: obsolete }
 
 parameters:
   capacitance:
-    nominal: 0.1
-    unit: µF
+    typ: 0.1 µF
+    src: 'p40 "High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics, LxW 1.6x0.8(18)<0603>, row Capacitance 0.10µF(104), Part Number GRM188R71H104KA93D: Capacitance 0.10µF(104)"'
   tolerance:
-    min: -10
-    max: 10
-    unit: "%"
+    tol: ±10 %
+    src: 'p40 "High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics, LxW 1.6x0.8(18)<0603>, row Capacitance 0.10µF(104), Part Number GRM188R71H104KA93D: Tolerance ±10%(K)"'
   rated_voltage:
-    nominal: 50
-    unit: V
+    typ: 50 V
+    src: p40 "High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics, LxW 1.6x0.8(18)<0603>, Part Number GRM188R71H104KA93D in column Rated Volt. [Vdc] 50(1H)"
   dielectric:
     value: X7R
-
-provenance:
-  "/parameters/capacitance":
-    - source: murata/C02E-16
-      page: 40
-      locator: "High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics, LxW 1.6x0.8(18)<0603>, row Capacitance 0.10µF(104), Part Number GRM188R71H104KA93D: Capacitance 0.10µF(104)"
-  "/parameters/tolerance":
-    - source: murata/C02E-16
-      page: 40
-      locator: "High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics, LxW 1.6x0.8(18)<0603>, row Capacitance 0.10µF(104), Part Number GRM188R71H104KA93D: Tolerance ±10%(K)"
-  "/parameters/rated_voltage":
-    - source: murata/C02E-16
-      page: 40
-      locator: "High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics, LxW 1.6x0.8(18)<0603>, Part Number GRM188R71H104KA93D in column Rated Volt. [Vdc] 50(1H)"
-  "/parameters/dielectric":
-    - source: murata/C02E-16
-      page: 5
-      locator: "Part Numbering, tTemperature Characteristics, Temperature Characteristic Codes: R7 = X7R (EIA); Part Number GRM188R71H104KA93D listed under \"High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics\" on p40"
+    src: 'p5 "Part Numbering, tTemperature Characteristics, Temperature Characteristic Codes: R7 = X7R (EIA); Part Number GRM188R71H104KA93D listed under "High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics" on p40"'

@@ -3,35 +3,24 @@
 # "INA180B1IDBVR | Active | Production | SOT-23 (DBV) | 5 | 3000 | LARGE T&R | ... | -40 to 125 | 18RD".
 # lifecycle "active" is that table's Status column.
 # Package: SOT-23 (DBV) | 5, outline DBV0005A (4214839/K) on page 47.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/INA180B1IDBVR
-
 manufacturer: ti
-mpn: "INA180B1IDBVR"
-
+mpn: INA180B1IDBVR
 device: ti/INA180B-DBV
-package: manufacturers/ti/DBV0005A
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src: p32 "Package Option Addendum, row "INA180B1IDBVR", "SOT-23 (DBV) | 5"; outline DBV0005A (4214839/K) on page 47"
+
+sources: [ti/SBOS741H]
+source: ti/SBOS741H
 
 existence:
   status: verified
+  src: p32 "Package Option Addendum, Packaging Information table, row "INA180B1IDBVR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SBOS741H
-
-provenance:
-  "/existence":
-    - source: ti/SBOS741H
-      page: 32
-      locator: "Package Option Addendum, Packaging Information table, row \"INA180B1IDBVR\""
-  "/lifecycle":
-    - source: ti/SBOS741H
-      page: 32
-      locator: "Package Option Addendum, row \"INA180B1IDBVR\", Status \"Active\""
-  "/package":
-    - source: ti/SBOS741H
-      page: 32
-      locator: "Package Option Addendum, row \"INA180B1IDBVR\", \"SOT-23 (DBV) | 5\"; outline DBV0005A (4214839/K) on page 47"
+  src: p32 "Package Option Addendum, row "INA180B1IDBVR", Status "Active""

@@ -2,45 +2,24 @@
 # the datasheet's ordering table (MMBT3906LT1G and LT3G). Reuses the
 # existing SOT-23 2.90x1.30 package: the case drawing's dimensions
 # (98ASB42226B, page 1) match SOT23-2.90x1.30-P1.90's values exactly.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/MMBT3906LT1G
-
 manufacturer: onsemi
 mpn: MMBT3906LT1G
-
 device: onsemi/MMBT3906
 package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/MMBT3906-D]
+source: onsemi/MMBT3906-D
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - onsemi/MMBT3906-D
+existence: { status: verified }
+lifecycle: { status: active }
 
 parameters:
-  polarity:
-    value: pnp
+  polarity: { value: pnp, src: 'p1 "Page-1 title: "PNP Silicon""' }
   collector_emitter_voltage:
-    nominal: -40
-    unit: V
+    typ: -40 V
+    src: 'p1 "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO: -40 Vdc"'
   collector_current:
-    nominal: -200
-    unit: mA
-
-provenance:
-  "/parameters/polarity":
-    - source: onsemi/MMBT3906-D
-      page: 1
-      locator: "Page-1 title: \"PNP Silicon\""
-  "/parameters/collector_emitter_voltage":
-    - source: onsemi/MMBT3906-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO: -40 Vdc"
-  "/parameters/collector_current":
-    - source: onsemi/MMBT3906-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Collector Current - Continuous IC: -200 mAdc"
+    typ: -200 mA
+    src: 'p1 "MAXIMUM RATINGS, Collector Current - Continuous IC: -200 mAdc"'

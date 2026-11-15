@@ -8,15 +8,12 @@
 # copy actually read, not st.com's current revision. `url` still points
 # at st.com's canonical (latest) resource page per this dataset's
 # convention of citing the manufacturer's own URL.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: st/DS5319@rev18
-
+url: https://www.st.com/resource/en/datasheet/stm32f103c8.pdf
+date: 2022-03
+revision: "18"
 publisher: st
 document_id: DS5319
 document_type: datasheet
-
-revision: "18"
-date: "2022-03"
-
-url: "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf"

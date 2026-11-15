@@ -2,20 +2,15 @@
 # in the series' Electrical Specifications table (the inductance value
 # is the only per-MPN difference; it lives in the part comment).
 # The older per-MPN device (e.g. the 2R2 value's) holds the same pins.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: bourns/SRR1260-SERIES
-
 manufacturer: bourns
 category: inductor
-family: "SRR1260"
+family: SRR1260
+source: bourns/SRR1260@rev03-26
 
 pins:
+  src: p2 "Electrical Schematic (single inductor symbol, 2 terminals)"
   "1": { name: "1", type: passive }
   "2": { name: "2", type: passive }
-
-provenance:
-  "/pins":
-    - source: bourns/SRR1260@rev03-26
-      page: 2
-      locator: "Electrical Schematic (single inductor symbol, 2 terminals)"

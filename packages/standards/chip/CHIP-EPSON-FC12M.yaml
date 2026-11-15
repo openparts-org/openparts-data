@@ -8,43 +8,25 @@
 # only, not guessing a tolerance. Height is MAX-only (0.6mm); nominal
 # set equal to that max, same "closest usable single number" technique
 # as AXIAL-DO35-1N4148's body_height.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/CHIP-EPSON-FC12M
-
 family: chip
 lead_count: 2
+source: epson/FC-12M-DS
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 2.05
-    min: 2.00
-    max: 2.10
-    unit: mm
   body_width:
-    nominal: 1.2
-    unit: mm
+    typ: 1.2 mm
+    src: p1 "Section 3 "External dimensions", width ~1.2mm -- tolerance garbled in extraction, see comment above"
+  body_length:
+    min: 2 mm
+    typ: 2.05 mm
+    max: 2.1 mm
+    src: p1 "Section 3 "External dimensions", length 2.05 +/-0.05mm"
   body_height:
-    max: 0.6
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: epson/FC-12M-DS
-      page: 1
-      locator: "Section 3 \"External dimensions\", length 2.05 +/-0.05mm"
-  "/dimensions/body_width":
-    - source: epson/FC-12M-DS
-      page: 1
-      locator: "Section 3 \"External dimensions\", width ~1.2mm -- tolerance garbled in extraction, see comment above"
-  "/dimensions/body_height":
-    - source: epson/FC-12M-DS
-      page: 1
-      locator: "Section 3 \"External dimensions\", height 0.6mm MAX, no min/nominal stated -- see comment above"
+    max: 0.6 mm
+    src: p1 "Section 3 "External dimensions", height 0.6mm MAX, no min/nominal stated -- see comment above"

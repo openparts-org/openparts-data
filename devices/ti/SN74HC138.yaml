@@ -3,15 +3,18 @@
 # (same page); all 16 pins match. G2A/G2B are active low (overbar;
 # written without it). The FK (LCCC) numbering differs and is not
 # covered.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/SN74HC138
-
 manufacturer: ti
 category: logic
 family: SNx4HC138
+source: ti/SCLS107G
 
 pins:
+  src:
+    - p3 ""Pin Functions" table, column "SOIC, SSOP, PDIP, SO, TSSOP, CDIP, CFP""
+    - p3 ""SOIC, SSOP, PDIP, SO, TSSOP, CDIP, or CFP Package 16-Pin D, DB, N, NS, PW, J or W Top View" figure (cross-check, rendered)"
   "1":  { name: A, type: input }
   "2":  { name: B, type: input }
   "3":  { name: C, type: input }
@@ -28,12 +31,3 @@ pins:
   "14": { name: Y1, type: output }
   "15": { name: Y0, type: output }
   "16": { name: VCC, type: power }
-
-provenance:
-  "/pins":
-    - source: ti/SCLS107G
-      page: 3
-      locator: "\"Pin Functions\" table, column \"SOIC, SSOP, PDIP, SO, TSSOP, CDIP, CFP\""
-    - source: ti/SCLS107G
-      page: 3
-      locator: "\"SOIC, SSOP, PDIP, SO, TSSOP, CDIP, or CFP Package 16-Pin D, DB, N, NS, PW, J or W Top View\" figure (cross-check, rendered)"

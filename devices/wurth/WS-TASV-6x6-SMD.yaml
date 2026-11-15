@@ -5,22 +5,17 @@
 # the other, the switch between the lines -> 3 is internally connected to
 # 1 and 4 to 2 (connected_to). Same schematic in all 18 datasheets
 # (text-identical page 1).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: wurth/WS-TASV-6x6-SMD
-
 manufacturer: wurth
 category: tact_switch
 family: WS-TASV
+source: wurth/430182043816-DS
 
 pins:
+  src: 'p1 ""Schematic:" 1-3 joined, 2-4 joined, switch between the two lines; "Recommended Land Pattern: [mm]" pads numbered 1 to 4"'
   "1": { name: "1", type: passive }
   "2": { name: "2", type: passive }
   "3": { name: "3", type: passive, connected_to: "1" }
   "4": { name: "4", type: passive, connected_to: "2" }
-
-provenance:
-  "/pins":
-    - source: wurth/430182043816-DS
-      page: 1
-      locator: "\"Schematic:\" 1-3 joined, 2-4 joined, switch between the two lines; \"Recommended Land Pattern: [mm]\" pads numbered 1 to 4"

@@ -1,10 +1,9 @@
 # Bosch Sensortec GmbH (MEMS sensors). Datasheets are served directly
 # from bosch-sensortec.com/media/boschsensortec/downloads/datasheets/.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: manufacturer
 id: bosch
 
-name: Bosch Sensortec GmbH
+website: { url: https://www.bosch-sensortec.com }
 
-website:
-  url: "https://www.bosch-sensortec.com"
+name: Bosch Sensortec GmbH

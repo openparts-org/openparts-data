@@ -25,111 +25,56 @@
 # the flat foot -> lead_length (min only). Left out: 1.750 TYP (body
 # edge to lead toe, not the foot), 4.500-4.700 (outer-lead span), the
 # 0.250 offset in the end view, 0-10 deg.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/diodes/SOT223-3.5x6.5-P2.3-TabPin2-DS36676
-
 family: sot223
 lead_count: 3
+source: diodes/DS36676
 
-pitch:
-  nominal: 2.30
-  unit: mm
+pitch: { typ: 2.3 mm, src: 'p13 "SOT223 outline, top view "2.300(0.091) TYP" lead spacing"' }
 
 tab:
   number: "2"
+  src: 'p2 ""Pin Assignments" SOT223/ H Package (Top View): leads 3 INPUT, 2 OUTPUT, 1 ADJ/GND; tab labelled "VOUT" (no number) -- see header"'
+
+geometry: { type: parametric, generator: sot223 }
 
 dimensions:
   body_width:
-    min: 3.300
-    max: 3.700
-    unit: mm
+    min: 3.3 mm
+    max: 3.7 mm
+    src: p13 "SOT223 outline, top view "3.300(0.130) / 3.700(0.146)" body"
   body_length:
-    min: 6.300
-    max: 6.700
-    unit: mm
+    min: 6.3 mm
+    max: 6.7 mm
+    src: p13 "SOT223 outline, top view "6.300(0.248) / 6.700(0.264)" body"
   body_height:
-    min: 1.500
-    max: 1.700
-    unit: mm
-  overall_width:
-    min: 6.700
-    max: 7.300
-    unit: mm
-  overall_height:
-    min: 1.520
-    max: 1.800
-    unit: mm
-  standoff:
-    min: 0.010
-    max: 0.150
-    unit: mm
-  lead_width:
-    min: 0.600
-    max: 0.810
-    unit: mm
-  lead_length:
-    min: 0.850
-    unit: mm
-  lead_thickness:
-    min: 0.200
-    max: 0.350
-    unit: mm
+    min: 1.5 mm
+    max: 1.7 mm
+    src: p13 "SOT223 outline, side view (drawn upside down) "1.500(0.059) / 1.700(0.067)" plastic body"
   tab_width:
-    min: 2.900
-    max: 3.100
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: sot223
-
-provenance:
-  "/pitch":
-    - source: diodes/DS36676
-      page: 13
-      locator: "SOT223 outline, top view \"2.300(0.091) TYP\" lead spacing"
-  "/tab":
-    - source: diodes/DS36676
-      page: 2
-      locator: "\"Pin Assignments\" SOT223/ H Package (Top View): leads 3 INPUT, 2 OUTPUT, 1 ADJ/GND; tab labelled \"VOUT\" (no number) -- see header"
-  "/dimensions/body_width":
-    - source: diodes/DS36676
-      page: 13
-      locator: "SOT223 outline, top view \"3.300(0.130) / 3.700(0.146)\" body"
-  "/dimensions/body_length":
-    - source: diodes/DS36676
-      page: 13
-      locator: "SOT223 outline, top view \"6.300(0.248) / 6.700(0.264)\" body"
-  "/dimensions/body_height":
-    - source: diodes/DS36676
-      page: 13
-      locator: "SOT223 outline, side view (drawn upside down) \"1.500(0.059) / 1.700(0.067)\" plastic body"
-  "/dimensions/overall_width":
-    - source: diodes/DS36676
-      page: 13
-      locator: "SOT223 outline, top view \"6.700(0.264) / 7.300(0.287)\" lead toe to tab toe"
-  "/dimensions/overall_height":
-    - source: diodes/DS36676
-      page: 13
-      locator: "SOT223 outline, side view \"1.520(0.060) / 1.800(0.071)\" seating plane to body top"
-  "/dimensions/standoff":
-    - source: diodes/DS36676
-      page: 13
-      locator: "SOT223 outline, side view \"0.010(0.0004) / 0.150(0.006)\""
-  "/dimensions/lead_width":
-    - source: diodes/DS36676
-      page: 13
-      locator: "SOT223 outline, top view \"0.600(0.024) / 0.810(0.032)\" lead"
-  "/dimensions/lead_length":
-    - source: diodes/DS36676
-      page: 13
-      locator: "SOT223 outline, end view \"0.850(0.033) MIN\" flat foot"
-  "/dimensions/lead_thickness":
-    - source: diodes/DS36676
-      page: 13
-      locator: "SOT223 outline, end view \"0.200(0.008) / 0.350(0.014)\" across the lead tip"
-  "/dimensions/tab_width":
-    - source: diodes/DS36676
-      page: 13
-      locator: "SOT223 outline, top view \"2.900(0.114) / 3.100(0.122)\" tab"
+    min: 2.9 mm
+    max: 3.1 mm
+    src: p13 "SOT223 outline, top view "2.900(0.114) / 3.100(0.122)" tab"
+  overall_width:
+    min: 6.7 mm
+    max: 7.3 mm
+    src: p13 "SOT223 outline, top view "6.700(0.264) / 7.300(0.287)" lead toe to tab toe"
+  overall_height:
+    min: 1.52 mm
+    max: 1.8 mm
+    src: p13 "SOT223 outline, side view "1.520(0.060) / 1.800(0.071)" seating plane to body top"
+  standoff:
+    min: 0.01 mm
+    max: 0.15 mm
+    src: p13 "SOT223 outline, side view "0.010(0.0004) / 0.150(0.006)""
+  lead_width:
+    min: 0.6 mm
+    max: 0.81 mm
+    src: p13 "SOT223 outline, top view "0.600(0.024) / 0.810(0.032)" lead"
+  lead_length: { min: 0.85 mm, src: 'p13 "SOT223 outline, end view "0.850(0.033) MIN" flat foot"' }
+  lead_thickness:
+    min: 0.2 mm
+    max: 0.35 mm
+    src: p13 "SOT223 outline, end view "0.200(0.008) / 0.350(0.014)" across the lead tip"

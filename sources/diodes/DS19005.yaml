@@ -5,15 +5,12 @@
 # -layout and rendered (pdftoppm) for the outline drawing. Page numbers
 # cited are PDF page indices (= printed "n of N").
 # Footers read "October 2021".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: diodes/DS19005
-
+url: https://www.diodes.com/datasheet/download/SMAJ5.0A.pdf
+date: 2021-10
+revision: 19-2
 publisher: diodes
 document_id: DS19005
 document_type: datasheet
-
-revision: "19-2"
-date: "2021-10"
-
-url: "https://www.diodes.com/datasheet/download/SMAJ5.0A.pdf"

@@ -2,15 +2,12 @@
 # (footer of every page). Downloaded directly from nxp.com (URL below)
 # and read with pdftotext; text extraction kept the SOT96-1 dimension
 # table intact.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: nxp/LM75B@rev6.1
-
+url: https://www.nxp.com/docs/en/data-sheet/LM75B.pdf
+date: 2015-02
+revision: "6.1"
 publisher: nxp
 document_id: LM75B
 document_type: datasheet
-
-revision: "6.1"
-date: "2015-02"
-
-url: "https://www.nxp.com/docs/en/data-sheet/LM75B.pdf"

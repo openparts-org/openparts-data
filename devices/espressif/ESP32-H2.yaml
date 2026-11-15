@@ -13,23 +13,28 @@
 # ADC1_CHx, ZCDx, USB_D-/USB_D+). The FSPI IO MUX functions are not
 # listed. XTAL_32K_P/N are typed `io` because Table 2-1 types them IO
 # (GPIO13/GPIO14); XTAL_P/N are `clock` (Table 2-6 analog pins, no GPIO).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: espressif/ESP32-H2
-
 manufacturer: espressif
 category: microcontroller
 family: ESP32-H2
+source: espressif/esp32-h2_datasheet_en@rev1.3
 
 # diff_pair on the USB_D-/USB_D+ pins records the datasheet's default
 # assignment; its pin-function tables note that D- and D+ can be swapped
 # by an eFuse / register bit (Technical Reference Manual).
 pins:
-  "1":  { name: VDD3P3, type: power }
+  "1":  { name: { value: VDD3P3, src: 'p13 "Table 2-1 "Pin Overview", pins 1-14"' }, type: power }
   "2":  { name: VDD3P3, type: power }
   "3":  { name: GPIO0, type: io }
   "4":  { name: GPIO1, type: io, alternate_functions: [ADC1_CH0] }
-  "5":  { name: MTMS, type: io, alternate_functions: [GPIO2, ADC1_CH1] }
+  "5":
+    name: MTMS
+    type: io
+    alternate_functions:
+      value: [GPIO2, ADC1_CH1]
+      src:   p15 "Table 2-3 "IO MUX Pin Functions" (IO MUX/GPIO name column) and Table 2-5 "Analog Functions" (page 17)"
   "6":  { name: MTDO, type: io, alternate_functions: [GPIO3, ADC1_CH2] }
   "7":  { name: MTCK, type: io, alternate_functions: [GPIO4, ADC1_CH3] }
   "8":  { name: MTDI, type: io, alternate_functions: [GPIO5, ADC1_CH4] }
@@ -39,7 +44,10 @@ pins:
   "12": { name: GPIO10, type: io, alternate_functions: [ZCD0] }
   "13": { name: GPIO11, type: io, alternate_functions: [ZCD1] }
   "14": { name: GPIO12, type: io }
-  "15": { name: XTAL_32K_P, type: io, alternate_functions: [GPIO13] }
+  "15":
+    name: { value: XTAL_32K_P, src: 'p14 "Table 2-1 "Pin Overview" (cont''d), pins 15-33"' }
+    type: io
+    alternate_functions: [GPIO13]
   "16": { name: XTAL_32K_N, type: io, alternate_functions: [GPIO14] }
   "17": { name: CHIP_EN, type: reset }
   "18": { name: VBAT, type: power }
@@ -49,38 +57,34 @@ pins:
   "22": { name: U0RXD, type: io, alternate_functions: [GPIO23] }
   "23": { name: U0TXD, type: io, alternate_functions: [GPIO24] }
   "24": { name: GPIO25, type: io }
-  "25": { name: GPIO26, type: io, alternate_functions: [USB_D-], diff_pair: { partner: "26", polarity: n, standard: usb2, function: USB_D- } }
-  "26": { name: GPIO27, type: io, alternate_functions: [USB_D+], diff_pair: { partner: "25", polarity: p, standard: usb2, function: USB_D+ } }
+  "25":
+    name: GPIO26
+    type: io
+    alternate_functions: [USB_D-]
+    diff_pair:
+      partner: "26"
+      polarity: n
+      standard: usb2
+      function: USB_D-
+      src: 'p17 "Table 2-4 "Analog Signals Routed to Analog Functions": USB_D- "Data - (negative USB signal)", USB_D+ "Data + (positive USB signal)"; Table 2-5 "Analog Functions": pin 25 GPIO26 USB_D-, pin 26 GPIO27 USB_D+"'
+  "26":
+    name: GPIO27
+    type: io
+    alternate_functions: [USB_D+]
+    diff_pair:
+      partner: "25"
+      polarity: p
+      standard: usb2
+      function: USB_D+
+      src: 'p17 "Table 2-4 "Analog Signals Routed to Analog Functions": USB_D- "Data - (negative USB signal)", USB_D+ "Data + (positive USB signal)"; Table 2-5 "Analog Functions": pin 25 GPIO26 USB_D-, pin 26 GPIO27 USB_D+"'
   "27": { name: VDD3P3, type: power }
   "28": { name: XTAL_N, type: clock }
   "29": { name: XTAL_P, type: clock }
   "30": { name: VDD3P3, type: power }
   "31": { name: VDD3P3, type: power }
   "32": { name: ANT, type: analog }
-  "EP": { name: GND, type: ground }
-
-provenance:
-  "/pins/26/diff_pair":
-    - source: espressif/esp32-h2_datasheet_en@rev1.3
-      page: 17
-      locator: "Table 2-4 \"Analog Signals Routed to Analog Functions\": USB_D- \"Data - (negative USB signal)\", USB_D+ \"Data + (positive USB signal)\"; Table 2-5 \"Analog Functions\": pin 25 GPIO26 USB_D-, pin 26 GPIO27 USB_D+"
-  "/pins/25/diff_pair":
-    - source: espressif/esp32-h2_datasheet_en@rev1.3
-      page: 17
-      locator: "Table 2-4 \"Analog Signals Routed to Analog Functions\": USB_D- \"Data - (negative USB signal)\", USB_D+ \"Data + (positive USB signal)\"; Table 2-5 \"Analog Functions\": pin 25 GPIO26 USB_D-, pin 26 GPIO27 USB_D+"
-  "/pins/1/name":
-    - source: espressif/esp32-h2_datasheet_en@rev1.3
-      page: 13
-      locator: "Table 2-1 \"Pin Overview\", pins 1-14"
-  "/pins/15/name":
-    - source: espressif/esp32-h2_datasheet_en@rev1.3
-      page: 14
-      locator: "Table 2-1 \"Pin Overview\" (cont'd), pins 15-33"
-  "/pins/5/alternate_functions":
-    - source: espressif/esp32-h2_datasheet_en@rev1.3
-      page: 15
-      locator: "Table 2-3 \"IO MUX Pin Functions\" (IO MUX/GPIO name column) and Table 2-5 \"Analog Functions\" (page 17)"
-  "/pins/EP/name":
-    - source: espressif/esp32-h2_datasheet_en@rev1.3
-      page: 20
-      locator: "Table 2-7 \"Power Pins\", pin 33 \"GND -- External ground connection\""
+  EP:
+    name:
+      value: GND
+      src: p20 "Table 2-7 "Power Pins", pin 33 "GND -- External ground connection""
+    type: ground

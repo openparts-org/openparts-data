@@ -8,15 +8,12 @@
 # Like NCP1117/D, the served PDF carries the current DPAK outline
 # "CASE 369C ISSUE L, DATE 24 AUG 2026" (98AON10527D), pages 26-27,
 # value-for-value identical to the copy in NCP1117/D pages 18-19.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: onsemi/MC7800-D
-
+url: https://www.onsemi.com/pdf/datasheet/mc7800-d.pdf
+date: 2021-11
+revision: "29"
 publisher: onsemi
 document_id: MC7800/D
 document_type: datasheet
-
-revision: "29"
-date: "2021-11"
-
-url: "https://www.onsemi.com/pdf/datasheet/mc7800-d.pdf"

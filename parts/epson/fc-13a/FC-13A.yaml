@@ -1,41 +1,25 @@
 # 32.768kHz automotive crystal (AEC-Q200), 3.2 x 1.5 x 0.9 mm, 2 pads.
 # Confirmed from Epson's own brief sheet; no distributor listing checked.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: epson/FC-13A
-
 manufacturer: epson
 mpn: FC-13A
-
 device: epson/FC-13A
 package: standards/CHIP-EPSON-FC13A
+sources: [epson/FC-13A-BRIEF]
+source: epson/FC-13A-BRIEF
 
-existence:
-  status: probable
-
-lifecycle:
-  status: active
-
-sources:
-  - epson/FC-13A-BRIEF
+existence: { status: probable }
+lifecycle: { status: active }
 
 # Parameters (AI candidates, needs review): load_capacitance (9 / 12.5 pF,
 # "Please specify") and frequency_tolerance (±20/±30/±50 x10-6) left out:
 # the model name does not fix either option.
 parameters:
-  frequency:
-    nominal: 32.768
-    unit: kHz
   esr:
-    max: 70
-    unit: kΩ
-
-provenance:
-  "/parameters/frequency":
-    - source: epson/FC-13A-BRIEF
-      page: 1
-      locator: "Specifications (characteristics), Nominal frequency range f_nom: 32.768 kHz"
-  "/parameters/esr":
-    - source: epson/FC-13A-BRIEF
-      page: 1
-      locator: "Specifications (characteristics), Motional resistance (ESR) R1: 70 kΩ Max."
+    max: 70 kΩ
+    src: 'p1 "Specifications (characteristics), Motional resistance (ESR) R1: 70 kΩ Max."'
+  frequency:
+    typ: 32.768 kHz
+    src: 'p1 "Specifications (characteristics), Nominal frequency range f_nom: 32.768 kHz"'

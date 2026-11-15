@@ -2,62 +2,32 @@
 # Irms max 2.9A, Isat 3.0A, per the Electrical Specifications table
 # (page 1). Confirmed real/active directly in Bourns' own live
 # datasheet.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: bourns/SRN4018-2R2M
-
 manufacturer: bourns
 mpn: SRN4018-2R2M
-
 device: bourns/SRN4018-2R2M
 package: standards/CHIP-BOURNS-SRN4018
+sources: [bourns/SRN4018, bourns/SRN4018@rev10-26]
+source: bourns/SRN4018@rev10-26
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - bourns/SRN4018
-  - bourns/SRN4018@rev10-26
+existence: { status: verified }
+lifecycle: { status: active }
 
 parameters:
   tolerance:
-    min: -20
-    max: 20
-    unit: "%"
+    tol: ±20 %
+    src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-2R2M row: Tol. % 20"'
   inductance:
-    nominal: 2.2
-    unit: µH
+    typ: 2.2 µH
+    src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-2R2M row: L (µH) 2.2 @ 100 KHz/1 V"'
   rated_current:
-    nominal: 2.9
-    unit: A
+    typ: 2.9 A
+    src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-2R2M row: Irms (A) 2.9 (General Specifications: temperature rise 40 °C at rated Irms)"'
   saturation_current:
-    nominal: 3.0
-    unit: A
+    typ: 3 A
+    src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-2R2M row: Isat (A) 3.0 (General Specifications: inductance drops 30 % at Isat)"'
   dcr:
-    max: 0.044
-    unit: Ω
-
-provenance:
-  "/parameters/tolerance":
-    - source: bourns/SRN4018@rev10-26
-      page: 1
-      locator: "Electrical Specifications @ 25 °C, SRN4018-2R2M row: Tol. % 20"
-  "/parameters/inductance":
-    - source: bourns/SRN4018@rev10-26
-      page: 1
-      locator: "Electrical Specifications @ 25 °C, SRN4018-2R2M row: L (µH) 2.2 @ 100 KHz/1 V"
-  "/parameters/rated_current":
-    - source: bourns/SRN4018@rev10-26
-      page: 1
-      locator: "Electrical Specifications @ 25 °C, SRN4018-2R2M row: Irms (A) 2.9 (General Specifications: temperature rise 40 °C at rated Irms)"
-  "/parameters/saturation_current":
-    - source: bourns/SRN4018@rev10-26
-      page: 1
-      locator: "Electrical Specifications @ 25 °C, SRN4018-2R2M row: Isat (A) 3.0 (General Specifications: inductance drops 30 % at Isat)"
-  "/parameters/dcr":
-    - source: bourns/SRN4018@rev10-26
-      page: 1
-      locator: "Electrical Specifications @ 25 °C, SRN4018-2R2M row: DCR (Ω) Max. 0.044"
+    max: 0.044 Ω
+    src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-2R2M row: DCR (Ω) Max. 0.044"'

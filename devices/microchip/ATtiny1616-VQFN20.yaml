@@ -14,15 +14,18 @@
 # Exposed pad: page 16 only says "It is recommended to solder the large
 # center pad to ground for mechanical stability" -- it does not say what
 # the pad connects to, so no EP pin.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/ATtiny1616-VQFN20
-
 manufacturer: microchip
 category: microcontroller
-family: "tinyAVR 1-series"
+family: tinyAVR 1-series
+source: microchip/DS40002204@revA
 
 pins:
+  src:
+    - p18 "Table 5-1 "PORT Function Multiplexing", column "VQFN 20-Pin", columns "Other/Special" and "ADC0""
+    - p16 "Section 4.3 "20-Pin VQFN" pinout figure (cross-check)"
   "1":  { name: PA2, type: io, alternate_functions: [EVOUT0, AIN2] }
   "2":  { name: PA3, type: io, alternate_functions: [EXTCLK, AIN3] }
   "3":  { name: GND, type: ground }
@@ -43,12 +46,3 @@ pins:
   "18": { name: PC3, type: io }
   "19": { name: PA0, type: io, alternate_functions: [RESET, UPDI, AIN0] }
   "20": { name: PA1, type: io, alternate_functions: [AIN1] }
-
-provenance:
-  "/pins":
-    - source: microchip/DS40002204@revA
-      page: 18
-      locator: "Table 5-1 \"PORT Function Multiplexing\", column \"VQFN 20-Pin\", columns \"Other/Special\" and \"ADC0\""
-    - source: microchip/DS40002204@revA
-      page: 16
-      locator: "Section 4.3 \"20-Pin VQFN\" pinout figure (cross-check)"

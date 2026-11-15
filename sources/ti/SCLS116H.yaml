@@ -6,16 +6,13 @@
 # rendered page where noted. Page numbers in this dataset are PDF page
 # indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
 # 23-Oct-2026 (newer than the datasheet revision).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: ti/SCLS116H
-
+retrieved: 2026-11-10
+url: https://www.ti.com/lit/ds/symlink/sn74hc165.pdf
+date: 2015-12
 publisher: ti
 document_id: SCLS116H
 document_type: datasheet
-
-revision: "H"
-date: "2015-12"
-
-url: "https://www.ti.com/lit/ds/symlink/sn74hc165.pdf"
-retrieved: "2026-11-10"
+revision: H

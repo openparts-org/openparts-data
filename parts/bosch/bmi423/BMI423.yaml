@@ -4,27 +4,18 @@
 # datasheet nor the product page prints "BMI423" in an ordering table.
 # lifecycle: unknown (no first-party status statement found).
 # Package: drawing of this datasheet (pages 284-285).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: bosch/BMI423
-
 manufacturer: bosch
-mpn: "BMI423"
-
+mpn: BMI423
 device: bosch/BMI423
 package: manufacturers/bosch/LGA14-3.0x2.5-P0.5-BMI423
+sources: [bosch/BST-BMI423-DS002-03]
+source: bosch/BST-BMI423-DS002-03
 
 existence:
   status: probable
+  src: 'p1 "title page: product BMI423, sales part number 0 273 017 085 (no ordering table)"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - bosch/BST-BMI423-DS002-03
-
-provenance:
-  "/existence":
-    - source: bosch/BST-BMI423-DS002-03
-      page: 1
-      locator: "title page: product BMI423, sales part number 0 273 017 085 (no ordering table)"
+lifecycle: { status: unknown }

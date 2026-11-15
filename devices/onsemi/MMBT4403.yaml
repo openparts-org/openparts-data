@@ -2,24 +2,18 @@
 # page-1 device diagram (COLLECTOR 3, BASE 1, EMITTER 2) and the
 # package is "CASE 318 STYLE 6" (page 8: PIN 1. BASE 2. EMITTER
 # 3. COLLECTOR) -- they agree.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/MMBT4403
-
 manufacturer: onsemi
 category: transistor
 family: MMBT4403
+source: onsemi/MMBT4403LT1-D
 
 pins:
+  src:
+    - 'p1 "Device diagram: COLLECTOR 3, BASE 1, EMITTER 2; "SOT-23 CASE 318 STYLE 6""'
+    - 'p8 "CASE 318 STYLE 6: "PIN 1. BASE 2. EMITTER 3. COLLECTOR""'
   "1": { name: Base, type: passive }
   "2": { name: Emitter, type: passive }
   "3": { name: Collector, type: passive }
-
-provenance:
-  "/pins":
-    - source: onsemi/MMBT4403LT1-D
-      page: 1
-      locator: "Device diagram: COLLECTOR 3, BASE 1, EMITTER 2; \"SOT-23 CASE 318 STYLE 6\""
-    - source: onsemi/MMBT4403LT1-D
-      page: 8
-      locator: "CASE 318 STYLE 6: \"PIN 1. BASE 2. EMITTER 3. COLLECTOR\""

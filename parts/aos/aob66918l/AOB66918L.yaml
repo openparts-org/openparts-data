@@ -4,77 +4,47 @@
 # "product_status":"Full Production" -> active.
 # Package: datasheet "TO-263"; the product page links AOS's
 # TO263 outline (PO-00005) as this product's package document.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: aos/AOB66918L
-
 manufacturer: aos
 mpn: AOB66918L
-
 device: aos/AOB66918L
-package: manufacturers/aos/TO263-9.14x10.03-P2.54-PO-00005-TabPin4
+
+package:
+  value: manufacturers/aos/TO263-9.14x10.03-P2.54-PO-00005-TabPin4
+  src:
+    - 'aos/AOB66918L-product-page ""packages": "TO263", package_pdf .../packaging_information/TO263.pdf"'
+    - aos/PO-00005 p1 ""TO263(D2PAK) PACKAGE OUTLINE" PO-00005 Version N"
+
+sources: [aos/AOB66918L-DS, aos/AOB66918L-product-page, aos/PO-00005]
+source: aos/AOB66918L-DS
 
 existence:
   status: verified
+  src: 'p1 "Orderable Part Number table: "AOB66918L | TO-263 | Tape & Reel | 800""'
 
 lifecycle:
   status: active
-
-sources:
-  - aos/AOB66918L-DS
-  - aos/AOB66918L-product-page
-  - aos/PO-00005
+  src: aos/AOB66918L-product-page "Embedded product JSON "product_status":"Full Production""
 
 parameters:
-  polarity:
-    value: n_channel
+  polarity: { value: n_channel, src: 'p1 "Page-1 title: "100V N-Channel AlphaSGT™""' }
   drain_source_voltage:
-    nominal: 100
-    unit: V
+    typ: 100 V
+    src: 'p1 "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 100 V"'
   drain_current:
-    nominal: 120
-    unit: A
+    typ: 120 A
+    at: { TC: 25 °C }
+    src: 'p1 "Absolute Maximum Ratings, Continuous Drain Current ID: 120 A"'
   rds_on:
-    nominal: 4.2
-    max: 5
-    unit: mΩ
+    typ: 4.2 mΩ
+    max: 5 mΩ
+    at: { VGS: 10 V, ID: 20 A, TJ: 25 °C }
+    src: 'p2 "Electrical Characteristics, RDS(ON) Static Drain-Source On-Resistance: Typ 4.2, Max 5 mΩ"'
   gate_threshold_voltage:
-    nominal: 3.2
-    min: 2.7
-    max: 3.7
-    unit: V
-
-provenance:
-  "/existence":
-    - source: aos/AOB66918L-DS
-      page: 1
-      locator: "Orderable Part Number table: \"AOB66918L | TO-263 | Tape & Reel | 800\""
-  "/lifecycle":
-    - source: aos/AOB66918L-product-page
-      locator: "Embedded product JSON \"product_status\":\"Full Production\""
-  "/package":
-    - source: aos/AOB66918L-product-page
-      locator: "\"packages\": \"TO263\", package_pdf .../packaging_information/TO263.pdf"
-    - source: aos/PO-00005
-      page: 1
-      locator: "\"TO263(D2PAK) PACKAGE OUTLINE\" PO-00005 Version N"
-  "/parameters/polarity":
-    - source: aos/AOB66918L-DS
-      page: 1
-      locator: "Page-1 title: \"100V N-Channel AlphaSGT™\""
-  "/parameters/drain_source_voltage":
-    - source: aos/AOB66918L-DS
-      page: 1
-      locator: "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 100 V"
-  "/parameters/drain_current":
-    - source: aos/AOB66918L-DS
-      page: 1
-      locator: "Absolute Maximum Ratings, Continuous Drain Current ID, TC=25°C: 120 A"
-  "/parameters/rds_on":
-    - source: aos/AOB66918L-DS
-      page: 2
-      locator: "Electrical Characteristics (TJ=25°C), RDS(ON) Static Drain-Source On-Resistance, VGS=10V, ID=20A: Typ 4.2, Max 5 mΩ"
-  "/parameters/gate_threshold_voltage":
-    - source: aos/AOB66918L-DS
-      page: 2
-      locator: "Electrical Characteristics (TJ=25°C), VGS(th) Gate Threshold Voltage: Min 2.7, Typ 3.2, Max 3.7 V"
+    min: 2.7 V
+    typ: 3.2 V
+    max: 3.7 V
+    at: { TJ: 25 °C }
+    src: 'p2 "Electrical Characteristics, VGS(th) Gate Threshold Voltage: Min 2.7, Typ 3.2, Max 3.7 V"'

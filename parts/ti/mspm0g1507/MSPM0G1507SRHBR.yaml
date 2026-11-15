@@ -8,35 +8,24 @@
 # 4.9/5.1, 1 MAX, A1 0.00/0.05, 28X 0.5, 32X 0.2/0.3, 32X 0.3/0.5, thermal
 # pad 3.45 +-0.1, (0.2) TYP) -> reused manufacturers/ti/RHB0032E (validate
 # with --source sources/ti/SLASEX0D.yaml).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/MSPM0G1507SRHBR
-
 manufacturer: ti
 mpn: MSPM0G1507SRHBR
-
 device: ti/MSPM0G1507-RHB
-package: manufacturers/ti/RHB0032E
+
+package:
+  value: manufacturers/ti/RHB0032E
+  src: p129 "PACKAGE OUTLINE RHB0032E (4223442/B 08/2019); addendum row "VQFN (RHB) | 32""
+
+sources: [ti/SLASEW9E]
+source: ti/SLASEW9E
 
 existence:
   status: verified
+  src: p108 "PACKAGE OPTION ADDENDUM (8-Apr-2026), Orderable part number "MSPM0G1507SRHBR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLASEW9E
-
-provenance:
-  "/existence":
-    - source: ti/SLASEW9E
-      page: 108
-      locator: "PACKAGE OPTION ADDENDUM (8-Apr-2026), Orderable part number \"MSPM0G1507SRHBR\""
-  "/lifecycle":
-    - source: ti/SLASEW9E
-      page: 108
-      locator: "PACKAGE OPTION ADDENDUM, row \"MSPM0G1507SRHBR\", Status \"Active\", Material type \"Production\""
-  "/package":
-    - source: ti/SLASEW9E
-      page: 129
-      locator: "PACKAGE OUTLINE RHB0032E (4223442/B 08/2019); addendum row \"VQFN (RHB) | 32\""
+  src: p108 "PACKAGE OPTION ADDENDUM, row "MSPM0G1507SRHBR", Status "Active", Material type "Production""

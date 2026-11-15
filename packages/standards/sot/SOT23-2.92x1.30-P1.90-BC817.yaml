@@ -20,91 +20,51 @@
 # Lead dimensions (overall_*, standoff, lead_*) added as a candidate change for
 # human review (Agent Ingestion Specification); values copied as printed --
 # where the table has no nominal only min/max are recorded.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/SOT23-2.92x1.30-P1.90-BC817
-
 family: sot
 lead_count: 3
 lead_layout: [2, 1]
+source: onsemi/BC818-D
 
 pitch:
-  nominal: 1.90
-  unit: mm
+  typ: 1.9 mm
+  src: p5 "Figure 6, drawing MA03DREV10 -- pitch not separately dimensioned on this drawing; reuses the SOT-23 standard 1.90mm pitch already confirmed for SOT23-2.90x1.30-P1.90"
+
+geometry: { type: parametric, generator: sot }
 
 dimensions:
-  body_length:
-    nominal: 1.30
-    min: 1.15
-    max: 1.50
-    unit: mm
   body_width:
-    nominal: 2.92
-    min: 2.72
-    max: 3.12
-    unit: mm
+    min: 2.72 mm
+    typ: 2.92 mm
+    max: 3.12 mm
+    src: 'p5 "Figure 6, drawing MA03DREV10, symbol "D": 2.92 +/-0.20mm -- see field-mapping note above"'
+  body_length:
+    min: 1.15 mm
+    typ: 1.3 mm
+    max: 1.5 mm
+    src: 'p5 "Figure 6, drawing MA03DREV10, symbol "E": 1.30 +0.20/-0.15mm -- see field-mapping note above"'
   body_height:
-    max: 1.20
-    unit: mm
-  overall_length:
-    nominal: 2.4
-    min: 2.1
-    max: 2.7
-    unit: mm
-  standoff:
-    min: 0.0
-    max: 0.1
-    unit: mm
-  lead_width:
-    min: 0.37
-    max: 0.6
-    unit: mm
-  lead_length:
-    min: 0.2
-    unit: mm
+    max: 1.2 mm
+    src: 'p5 "Figure 6, drawing MA03DREV10, symbol "A": 1.20mm MAX, no min/nominal stated -- see comment above"'
   lead_thickness:
-    min: 0.08
-    max: 0.23
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: sot
-
-provenance:
-  "/pitch":
-    - source: onsemi/BC818-D
-      page: 5
-      locator: "Figure 6, drawing MA03DREV10 -- pitch not separately dimensioned on this drawing; reuses the SOT-23 standard 1.90mm pitch already confirmed for SOT23-2.90x1.30-P1.90"
-  "/dimensions/body_length":
-    - source: onsemi/BC818-D
-      page: 5
-      locator: "Figure 6, drawing MA03DREV10, symbol \"E\": 1.30 +0.20/-0.15mm -- see field-mapping note above"
-  "/dimensions/body_width":
-    - source: onsemi/BC818-D
-      page: 5
-      locator: "Figure 6, drawing MA03DREV10, symbol \"D\": 2.92 +/-0.20mm -- see field-mapping note above"
-  "/dimensions/body_height":
-    - source: onsemi/BC818-D
-      page: 5
-      locator: "Figure 6, drawing MA03DREV10, symbol \"A\": 1.20mm MAX, no min/nominal stated -- see comment above"
-  "/dimensions/overall_length":
-    - source: onsemi/BC818-D
-      page: 5
-      locator: "Figure 6, drawing MA03DREV10, lead-tip span 2.40 +/-0.30 (HE equivalent) -- leads exit across body_length"
-  "/dimensions/standoff":
-    - source: onsemi/BC818-D
-      page: 5
-      locator: "Figure 6, drawing MA03DREV10, standoff 0.00 / 0.10"
-  "/dimensions/lead_width":
-    - source: onsemi/BC818-D
-      page: 5
-      locator: "Figure 6, drawing MA03DREV10, lead width 0.37 / 0.60 (min/max)"
-  "/dimensions/lead_length":
-    - source: onsemi/BC818-D
-      page: 5
-      locator: "Figure 6, drawing MA03DREV10, foot length \"0.20 MIN\" (no max/nominal)"
-  "/dimensions/lead_thickness":
-    - source: onsemi/BC818-D
-      page: 5
-      locator: "Figure 6, drawing MA03DREV10, lead thickness 0.08 / 0.23"
+    min: 0.08 mm
+    max: 0.23 mm
+    src: p5 "Figure 6, drawing MA03DREV10, lead thickness 0.08 / 0.23"
+  overall_length:
+    min: 2.1 mm
+    typ: 2.4 mm
+    max: 2.7 mm
+    src: p5 "Figure 6, drawing MA03DREV10, lead-tip span 2.40 +/-0.30 (HE equivalent) -- leads exit across body_length"
+  standoff:
+    min: 0 mm
+    max: 0.1 mm
+    src: p5 "Figure 6, drawing MA03DREV10, standoff 0.00 / 0.10"
+  lead_width:
+    min: 0.37 mm
+    max: 0.6 mm
+    src: p5 "Figure 6, drawing MA03DREV10, lead width 0.37 / 0.60 (min/max)"
+  lead_length:
+    min: 0.2 mm
+    src: p5 "Figure 6, drawing MA03DREV10, foot length "0.20 MIN" (no max/nominal)"

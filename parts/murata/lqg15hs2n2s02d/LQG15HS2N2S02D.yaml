@@ -3,46 +3,26 @@
 # electrical characteristics table (page 2). The "0402" case name is
 # from a distributor listing, not this specification document, so it is
 # not recorded here.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: murata/LQG15HS2N2S02D
-
 manufacturer: murata
 mpn: LQG15HS2N2S02D
-
 device: murata/LQG15HS2N2
 package: standards/CHIP1005-LQG15HS
+sources: [murata/JELF243B_0010V-01]
+source: murata/JELF243B_0010V-01
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - murata/JELF243B_0010V-01
+existence: { status: verified }
+lifecycle: { status: active }
 
 parameters:
   inductance:
-    nominal: 2.2
-    unit: nH
+    typ: 2.2 nH
+    src: 'p2 "3. Part Number and Rating, row LQG15HS2N2S02D: Inductance Nominal value 2.2 nH"'
   rated_current:
-    nominal: 900
-    unit: mA
+    typ: 900 mA
+    src: 'p2 "3. Part Number and Rating, row LQG15HS2N2S02D: Rated current (mA) 900"'
   dcr:
-    max: 0.09
-    unit: Ω
-
-provenance:
-  "/parameters/inductance":
-    - source: murata/JELF243B_0010V-01
-      page: 2
-      locator: "3. Part Number and Rating, row LQG15HS2N2S02D: Inductance Nominal value 2.2 nH"
-  "/parameters/rated_current":
-    - source: murata/JELF243B_0010V-01
-      page: 2
-      locator: "3. Part Number and Rating, row LQG15HS2N2S02D: Rated current (mA) 900"
-  "/parameters/dcr":
-    - source: murata/JELF243B_0010V-01
-      page: 2
-      locator: "3. Part Number and Rating, row LQG15HS2N2S02D: DC resistance (Ω max.) 0.09"
+    max: 0.09 Ω
+    src: 'p2 "3. Part Number and Rating, row LQG15HS2N2S02D: DC resistance (Ω max.) 0.09"'

@@ -12,7 +12,7 @@
 # Lead dimensions (overall_*, standoff, lead_*) added as a candidate change for
 # human review (Agent Ingestion Specification); values copied as printed --
 # where the table has no nominal only min/max are recorded.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/TQFP32-7x7-P0.8
 
@@ -23,99 +23,43 @@ id: standards/TQFP32-7x7-P0.8
 # or numbering convention.
 family: lqfp
 lead_count: 32
+source: microchip/DS40002061@revB
 
-pitch:
-  nominal: 0.8
-  unit: mm
+pitch: { typ: 0.8 mm, src: 'p636 "Table, symbol "e" ("0.80 BSC")"' }
+geometry: { type: parametric, generator: lqfp }
 
 dimensions:
-  body_width:
-    nominal: 7.0
-    unit: mm
-
-  body_length:
-    nominal: 7.0
-    unit: mm
-
+  body_width:  { typ: 7 mm, src: 'p636 "Table, symbol "E1" ("7.00 BSC")"' }
+  body_length: { typ: 7 mm, src: 'p636 "Table, symbol "D1" ("7.00 BSC")"' }
   body_height:
-    nominal: 1.0
-    min: 0.95
-    max: 1.05
-    unit: mm
-  overall_width:
-    nominal: 9.0
-    unit: mm
-  overall_length:
-    nominal: 9.0
-    unit: mm
-  overall_height:
-    max: 1.2
-    unit: mm
-  standoff:
-    min: 0.05
-    max: 0.15
-    unit: mm
-  lead_width:
-    nominal: 0.37
-    min: 0.3
-    max: 0.45
-    unit: mm
-  lead_length:
-    nominal: 0.6
-    min: 0.45
-    max: 0.75
-    unit: mm
+    min: 0.95 mm
+    typ: 1 mm
+    max: 1.05 mm
+    src: p636 "Table, symbol "A2" (Min 0.95 / Nom 1.00 / Max 1.05)"
   lead_thickness:
-    min: 0.09
-    max: 0.2
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: lqfp
-
-provenance:
-  "/pitch":
-    - source: microchip/DS40002061@revB
-      page: 636
-      locator: "Table, symbol \"e\" (\"0.80 BSC\")"
-  "/dimensions/body_width":
-    - source: microchip/DS40002061@revB
-      page: 636
-      locator: "Table, symbol \"E1\" (\"7.00 BSC\")"
-  "/dimensions/body_length":
-    - source: microchip/DS40002061@revB
-      page: 636
-      locator: "Table, symbol \"D1\" (\"7.00 BSC\")"
-  "/dimensions/body_height":
-    - source: microchip/DS40002061@revB
-      page: 636
-      locator: "Table, symbol \"A2\" (Min 0.95 / Nom 1.00 / Max 1.05)"
-  "/dimensions/overall_width":
-    - source: microchip/DS40002061@revB
-      page: 636
-      locator: "Drawing C04-074B dimension table, symbol \"E\" Overall Width (9.00 BSC)"
-  "/dimensions/overall_length":
-    - source: microchip/DS40002061@revB
-      page: 636
-      locator: "Drawing C04-074B dimension table, symbol \"D\" Overall Length (9.00 BSC)"
-  "/dimensions/overall_height":
-    - source: microchip/DS40002061@revB
-      page: 636
-      locator: "Drawing C04-074B dimension table, symbol \"A\" Overall Height (max only)"
-  "/dimensions/standoff":
-    - source: microchip/DS40002061@revB
-      page: 636
-      locator: "Drawing C04-074B dimension table, symbol \"A1\" Standoff (no nom)"
-  "/dimensions/lead_width":
-    - source: microchip/DS40002061@revB
-      page: 636
-      locator: "Drawing C04-074B dimension table, symbol \"b\" Lead Width"
-  "/dimensions/lead_length":
-    - source: microchip/DS40002061@revB
-      page: 636
-      locator: "Drawing C04-074B dimension table, symbol \"L\" Foot Length"
-  "/dimensions/lead_thickness":
-    - source: microchip/DS40002061@revB
-      page: 636
-      locator: "Drawing C04-074B dimension table, symbol \"c\" Lead Thickness (no nom)"
+    min: 0.09 mm
+    max: 0.2 mm
+    src: p636 "Drawing C04-074B dimension table, symbol "c" Lead Thickness (no nom)"
+  overall_width:
+    typ: 9 mm
+    src: p636 "Drawing C04-074B dimension table, symbol "E" Overall Width (9.00 BSC)"
+  overall_length:
+    typ: 9 mm
+    src: p636 "Drawing C04-074B dimension table, symbol "D" Overall Length (9.00 BSC)"
+  overall_height:
+    max: 1.2 mm
+    src: p636 "Drawing C04-074B dimension table, symbol "A" Overall Height (max only)"
+  standoff:
+    min: 0.05 mm
+    max: 0.15 mm
+    src: p636 "Drawing C04-074B dimension table, symbol "A1" Standoff (no nom)"
+  lead_width:
+    min: 0.3 mm
+    typ: 0.37 mm
+    max: 0.45 mm
+    src: p636 "Drawing C04-074B dimension table, symbol "b" Lead Width"
+  lead_length:
+    min: 0.45 mm
+    typ: 0.6 mm
+    max: 0.75 mm
+    src: p636 "Drawing C04-074B dimension table, symbol "L" Foot Length"

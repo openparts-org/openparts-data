@@ -12,92 +12,45 @@
 #
 # body_height: the table gives only A2 min 1.25 (no max/nominal);
 # recorded as min only. Chamfer h, L1 (REF) and angles are not modelled.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/SOIC8-3.90x4.90-P1.27
-
 family: soic
 lead_count: 8
+source: microchip/DS20001203@revW
 
-pitch:
-  nominal: 1.27
-  unit: mm
+pitch: { typ: 1.27 mm, src: 'p25 "C04-057-SN Rev D dimension table, "Pitch e 1.27 BSC""' }
+geometry: { type: parametric, generator: soic }
 
 dimensions:
   body_width:
-    nominal: 3.90
-    unit: mm
+    typ: 3.9 mm
+    src: p25 "C04-057-SN Rev D dimension table, "Molded Package Width E1 3.90 BSC""
   body_length:
-    nominal: 4.90
-    unit: mm
+    typ: 4.9 mm
+    src: p25 "C04-057-SN Rev D dimension table, "Overall Length D 4.90 BSC""
   body_height:
-    min: 1.25
-    unit: mm
-  overall_width:
-    nominal: 6.00
-    unit: mm
-  overall_height:
-    max: 1.75
-    unit: mm
-  standoff:
-    min: 0.10
-    max: 0.25
-    unit: mm
-  lead_width:
-    min: 0.31
-    max: 0.51
-    unit: mm
-  lead_length:
-    min: 0.40
-    max: 1.27
-    unit: mm
+    min: 1.25 mm
+    src: p25 "C04-057-SN Rev D dimension table, "Molded Package Thickness A2" (Min 1.25 only)"
   lead_thickness:
-    min: 0.17
-    max: 0.25
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: soic
-
-provenance:
-  "/pitch":
-    - source: microchip/DS20001203@revW
-      page: 25
-      locator: "C04-057-SN Rev D dimension table, \"Pitch e 1.27 BSC\""
-  "/dimensions/body_width":
-    - source: microchip/DS20001203@revW
-      page: 25
-      locator: "C04-057-SN Rev D dimension table, \"Molded Package Width E1 3.90 BSC\""
-  "/dimensions/body_length":
-    - source: microchip/DS20001203@revW
-      page: 25
-      locator: "C04-057-SN Rev D dimension table, \"Overall Length D 4.90 BSC\""
-  "/dimensions/body_height":
-    - source: microchip/DS20001203@revW
-      page: 25
-      locator: "C04-057-SN Rev D dimension table, \"Molded Package Thickness A2\" (Min 1.25 only)"
-  "/dimensions/overall_width":
-    - source: microchip/DS20001203@revW
-      page: 25
-      locator: "C04-057-SN Rev D dimension table, \"Overall Width E 6.00 BSC\""
-  "/dimensions/overall_height":
-    - source: microchip/DS20001203@revW
-      page: 25
-      locator: "C04-057-SN Rev D dimension table, \"Overall Height A\" (Max 1.75 only)"
-  "/dimensions/standoff":
-    - source: microchip/DS20001203@revW
-      page: 25
-      locator: "C04-057-SN Rev D dimension table, \"Standoff A1\" (Min 0.10 / Max 0.25)"
-  "/dimensions/lead_width":
-    - source: microchip/DS20001203@revW
-      page: 25
-      locator: "C04-057-SN Rev D dimension table, \"Lead Width b\" (Min 0.31 / Max 0.51)"
-  "/dimensions/lead_length":
-    - source: microchip/DS20001203@revW
-      page: 25
-      locator: "C04-057-SN Rev D dimension table, \"Foot Length L\" (Min 0.40 / Max 1.27)"
-  "/dimensions/lead_thickness":
-    - source: microchip/DS20001203@revW
-      page: 25
-      locator: "C04-057-SN Rev D dimension table, \"Lead Thickness c\" (Min 0.17 / Max 0.25)"
+    min: 0.17 mm
+    max: 0.25 mm
+    src: p25 "C04-057-SN Rev D dimension table, "Lead Thickness c" (Min 0.17 / Max 0.25)"
+  overall_width:
+    typ: 6 mm
+    src: p25 "C04-057-SN Rev D dimension table, "Overall Width E 6.00 BSC""
+  overall_height:
+    max: 1.75 mm
+    src: p25 "C04-057-SN Rev D dimension table, "Overall Height A" (Max 1.75 only)"
+  standoff:
+    min: 0.1 mm
+    max: 0.25 mm
+    src: p25 "C04-057-SN Rev D dimension table, "Standoff A1" (Min 0.10 / Max 0.25)"
+  lead_width:
+    min: 0.31 mm
+    max: 0.51 mm
+    src: p25 "C04-057-SN Rev D dimension table, "Lead Width b" (Min 0.31 / Max 0.51)"
+  lead_length:
+    min: 0.4 mm
+    max: 1.27 mm
+    src: p25 "C04-057-SN Rev D dimension table, "Foot Length L" (Min 0.40 / Max 1.27)"

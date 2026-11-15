@@ -4,15 +4,12 @@
 # symbols "COLLECTOR 2,4 / BASE 1 / EMITTER 3", "TO-220 CASE 221A STYLE
 # 1"; page 6: ORDERING INFORMATION (current list plus a DISCONTINUED
 # list); page 7: embedded CASE 221A ISSUE AL.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: onsemi/TIP31A-D
-
+url: https://www.onsemi.com/pdf/datasheet/tip31a-d.pdf
+date: 2024-06
+revision: "17"
 publisher: onsemi
 document_id: TIP31A/D
 document_type: datasheet
-
-revision: "17"
-date: "2024-06"
-
-url: "https://www.onsemi.com/pdf/datasheet/tip31a-d.pdf"

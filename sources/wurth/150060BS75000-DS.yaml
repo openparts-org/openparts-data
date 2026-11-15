@@ -7,15 +7,12 @@
 # every page carries CHECKED "PLD", REVISION "002.009", DATE
 # "2019-02-26" (YYYY-MM-DD), ORDER CODE "150060BS75000", STATUS "Valid" (the
 # document's release status -- not read as a product lifecycle status).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: wurth/150060BS75000-DS
-
-publisher: wurth
-document_id: "150060BS75000"
-document_type: datasheet
-
+url: https://www.we-online.com/components/products/datasheet/150060BS75000.pdf
+date: 2019-02-26
 revision: "002.009"
-date: "2019-02-26"
-
-url: "https://www.we-online.com/components/products/datasheet/150060BS75000.pdf"
+publisher: wurth
+document_id: 150060BS75000
+document_type: datasheet

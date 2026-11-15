@@ -5,44 +5,28 @@
 # the common cathode(1)/anode(2) node. Pin numbers are not printed;
 # numbers follow this dataset's sot convention (1 bottom-left,
 # 2 bottom-right, 3 top) -- position-derived, flagged for review.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: diodes/BAT54S
-
 manufacturer: diodes
 category: diode
 family: BAT54
+source: diodes/DS11005
+
+parameters:
+  forward_voltage:
+    max: 800 mV
+    at: { IF: 100 mA }
+    src: 'p2 "Electrical Characteristics, Forward Voltage VF: Max 800 mV (highest listed test current)"'
+  reverse_voltage:
+    max: 30 V
+    src: 'p2 "Maximum Ratings, Peak Repetitive Reverse Voltage / Working Peak Reverse Voltage / DC Blocking Voltage VRRM/VRWM/VR: 30 V"'
+  forward_current:
+    max: 200 mA
+    src: 'p2 "Maximum Ratings, Average Rectified Output Current (Note 5) IO: 200 mA"'
 
 pins:
+  src: p1 "Connection drawing labelled "BAT54S" under "SOT23 (Standard)"; position-derived numbering, see header"
   "1": { name: Anode1, type: passive }
   "2": { name: Cathode2, type: passive }
   "3": { name: Cathode1/Anode2, type: passive }
-
-parameters:
-  reverse_voltage:
-    max: 30
-    unit: V
-  forward_current:
-    max: 200
-    unit: mA
-  forward_voltage:
-    max: 800
-    unit: mV
-
-provenance:
-  "/parameters/reverse_voltage":
-    - source: diodes/DS11005
-      page: 2
-      locator: "Maximum Ratings, Peak Repetitive Reverse Voltage / Working Peak Reverse Voltage / DC Blocking Voltage VRRM/VRWM/VR: 30 V"
-  "/parameters/forward_current":
-    - source: diodes/DS11005
-      page: 2
-      locator: "Maximum Ratings, Average Rectified Output Current (Note 5) IO: 200 mA"
-  "/parameters/forward_voltage":
-    - source: diodes/DS11005
-      page: 2
-      locator: "Electrical Characteristics, Forward Voltage VF: Max 800 mV @ IF = 100mA (highest listed test current)"
-  "/pins":
-    - source: diodes/DS11005
-      page: 1
-      locator: "Connection drawing labelled \"BAT54S\" under \"SOT23 (Standard)\"; position-derived numbering, see header"

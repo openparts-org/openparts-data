@@ -6,96 +6,42 @@
 # nominal only; A1 has no nominal printed, so only min/max.
 # A (0.80/0.85/0.90) is recorded as body_height, matching
 # standards/QFN60-RP2350A; no separate overall_height is added.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/QFN80-RP2350B
-
 family: qfn
 lead_count: 80
+source: raspberrypi/RP-008374-DS@rev1
 
-pitch:
-  nominal: 0.4
-  unit: mm
+pitch: { typ: 0.4 mm, src: 'p8 "80QFN physical specification table, symbol e (0.400 BSC)"' }
+geometry: { type: parametric, generator: qfn }
 
 dimensions:
-  body_width:
-    nominal: 10.0
-    unit: mm
-  body_length:
-    nominal: 10.0
-    unit: mm
+  body_width:  { typ: 10 mm, src: 'p8 "80QFN physical specification table, symbol E (10 BSC)"' }
+  body_length: { typ: 10 mm, src: 'p8 "80QFN physical specification table, symbol D (10 BSC)"' }
   body_height:
-    nominal: 0.85
-    min: 0.8
-    max: 0.9
-    unit: mm
-  standoff:
-    min: 0.0
-    max: 0.05
-    unit: mm
-  lead_width:
-    nominal: 0.2
-    min: 0.15
-    max: 0.25
-    unit: mm
-  lead_length:
-    nominal: 0.4
-    min: 0.35
-    max: 0.45
-    unit: mm
-  lead_thickness:
-    nominal: 0.203
-    unit: mm
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 0.9 mm
+    src: p8 "80QFN physical specification table, symbol A"
   exposed_pad:
-    width:
-      nominal: 3.4
-      min: 3.35
-      max: 3.45
-      unit: mm
-    length:
-      nominal: 3.4
-      min: 3.35
-      max: 3.45
-      unit: mm
-
-geometry:
-  type: parametric
-  generator: qfn
-
-provenance:
-  "/pitch":
-    - source: raspberrypi/RP-008374-DS@rev1
-      page: 8
-      locator: "80QFN physical specification table, symbol e (0.400 BSC)"
-  "/dimensions/body_width":
-    - source: raspberrypi/RP-008374-DS@rev1
-      page: 8
-      locator: "80QFN physical specification table, symbol E (10 BSC)"
-  "/dimensions/body_length":
-    - source: raspberrypi/RP-008374-DS@rev1
-      page: 8
-      locator: "80QFN physical specification table, symbol D (10 BSC)"
-  "/dimensions/body_height":
-    - source: raspberrypi/RP-008374-DS@rev1
-      page: 8
-      locator: "80QFN physical specification table, symbol A"
-  "/dimensions/standoff":
-    - source: raspberrypi/RP-008374-DS@rev1
-      page: 8
-      locator: "80QFN physical specification table, symbol A1 (no nominal)"
-  "/dimensions/lead_width":
-    - source: raspberrypi/RP-008374-DS@rev1
-      page: 8
-      locator: "80QFN physical specification table, symbol b"
-  "/dimensions/lead_length":
-    - source: raspberrypi/RP-008374-DS@rev1
-      page: 8
-      locator: "80QFN physical specification table, symbol L"
-  "/dimensions/lead_thickness":
-    - source: raspberrypi/RP-008374-DS@rev1
-      page: 8
-      locator: "80QFN physical specification table, symbol A3 (0.203 REF)"
-  "/dimensions/exposed_pad":
-    - source: raspberrypi/RP-008374-DS@rev1
-      page: 8
-      locator: "80QFN physical specification table, symbols D2/E2"
+    src:    p8 "80QFN physical specification table, symbols D2/E2"
+    width:  { min: 3.35 mm, typ: 3.4 mm, max: 3.45 mm }
+    length: { min: 3.35 mm, typ: 3.4 mm, max: 3.45 mm }
+  standoff:
+    min: 0 mm
+    max: 0.05 mm
+    src: p8 "80QFN physical specification table, symbol A1 (no nominal)"
+  lead_width:
+    min: 0.15 mm
+    typ: 0.2 mm
+    max: 0.25 mm
+    src: p8 "80QFN physical specification table, symbol b"
+  lead_length:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.45 mm
+    src: p8 "80QFN physical specification table, symbol L"
+  lead_thickness:
+    typ: 0.203 mm
+    src: p8 "80QFN physical specification table, symbol A3 (0.203 REF)"

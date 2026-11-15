@@ -5,40 +5,25 @@
 # pin" -> power; VFB "feedback input" and EN "Enable input" -> input;
 # VBST "Supply input for the high-side NFET gate drive" -> power; SW
 # "Switch node connection" -> passive).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/TPS563200
-
 manufacturer: ti
 category: switching_regulator
 family: TPS56x200
+source: ti/SLVSCB0E
+
+parameters:
+  input_voltage_max:
+    max: 17 V
+    src: 'p5 "6.3 Recommended Operating Conditions, VIN Supply input voltage range: MAX 17 V"'
+  output_current: { typ: 3 A, src: 'p1 "1 Features, "TPS563200 - 3-A converter""' }
 
 pins:
+  src: p4 "Figure 5-1 "DDC Package 6 Pin (SOT) Top View" and Table 5-1 "Pin Functions""
   "1": { name: GND, type: ground }
   "2": { name: SW, type: passive }
   "3": { name: VIN, type: power }
   "4": { name: VFB, type: input }
   "5": { name: EN, type: input }
   "6": { name: VBST, type: power }
-
-parameters:
-  input_voltage_max:
-    max: 17
-    unit: V
-  output_current:
-    nominal: 3
-    unit: A
-
-provenance:
-  "/parameters/input_voltage_max":
-    - source: ti/SLVSCB0E
-      page: 5
-      locator: "6.3 Recommended Operating Conditions, VIN Supply input voltage range: MAX 17 V"
-  "/parameters/output_current":
-    - source: ti/SLVSCB0E
-      page: 1
-      locator: "1 Features, \"TPS563200 - 3-A converter\""
-  "/pins":
-    - source: ti/SLVSCB0E
-      page: 4
-      locator: "Figure 5-1 \"DDC Package 6 Pin (SOT) Top View\" and Table 5-1 \"Pin Functions\""

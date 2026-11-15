@@ -2,50 +2,29 @@
 # the page-1 ORDERING INFORMATION table. Its CASE 318E-04 ISSUE R outline
 # (page 6) is pixel-identical to 98ASB42680B, which the package cites.
 # No lifecycle statement.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/BCP53T1G
-
 manufacturer: onsemi
 mpn: BCP53T1G
-
 device: onsemi/BCP53
 package: manufacturers/onsemi/SOT223-3.5x6.5-P2.3-318E-TabPin4
+sources: [onsemi/BCP53T1-D, onsemi/98ASB42680B]
+source: onsemi/BCP53T1-D
 
 existence:
   status: verified
+  src: 'p1 "ORDERING INFORMATION table: "BCP53T1G | SOT-223 (Pb-Free) | 1000/Tape & Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/BCP53T1-D
-  - onsemi/98ASB42680B
+lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: pnp
+  polarity: { value: pnp, src: 'p1 "Page-1 title: "PNP Silicon""' }
   collector_emitter_voltage:
-    nominal: -80
-    unit: V
+    typ: -80 V
+    at: { TC: 25 °C }
+    src: 'p1 "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO: -80 V"'
   collector_current:
-    nominal: 1.5
-    unit: A
-
-provenance:
-  "/existence":
-    - source: onsemi/BCP53T1-D
-      page: 1
-      locator: "ORDERING INFORMATION table: \"BCP53T1G | SOT-223 (Pb-Free) | 1000/Tape & Reel\""
-  "/parameters/polarity":
-    - source: onsemi/BCP53T1-D
-      page: 1
-      locator: "Page-1 title: \"PNP Silicon\""
-  "/parameters/collector_emitter_voltage":
-    - source: onsemi/BCP53T1-D
-      page: 1
-      locator: "MAXIMUM RATINGS (TC = 25°C), Collector-Emitter Voltage VCEO: -80 V"
-  "/parameters/collector_current":
-    - source: onsemi/BCP53T1-D
-      page: 1
-      locator: "MAXIMUM RATINGS (TC = 25°C), Collector Current IC: 1.5 A (printed without a sign)"
+    typ: 1.5 A
+    at: { TC: 25 °C }
+    src: 'p1 "MAXIMUM RATINGS, Collector Current IC: 1.5 A (printed without a sign)"'

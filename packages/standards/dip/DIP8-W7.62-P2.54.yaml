@@ -16,75 +16,40 @@
 # Also used by TI parts in the P (R-PDIP-T8) package: TI MPDI001
 # (4040082/E) is likewise "within JEDEC MS-001 variation BA". See the
 # part files for the comparison.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/DIP8-W7.62-P2.54
-
 family: dip
 lead_count: 8
+source: microchip/2586@revQ
 
-pitch:
-  nominal: 2.54
-  unit: mm
+pitch: { typ: 2.54 mm, src: 'p207 "8P3 "COMMON DIMENSIONS" (inches), "e 0.100 BSC" -> 2.54 mm"' }
+geometry: { type: parametric, generator: dip }
 
 dimensions:
   body_width:
-    nominal: 7.62
-    unit: mm
+    typ: 7.62 mm
+    src: p207 "8P3 "COMMON DIMENSIONS" (inches), "eA 0.300 BSC" (row spacing, note 4) -> 7.62 mm; dip generator's body_width is the row spacing"
   body_length:
-    nominal: 9.271
-    min: 9.017
-    max: 10.16
-    unit: mm
+    min: 9.017 mm
+    typ: 9.271 mm
+    max: 10.16 mm
+    src: p207 "8P3 "COMMON DIMENSIONS" (inches), "D 0.355 / 0.365 / 0.400" (note 3)"
   body_height:
-    nominal: 3.302
-    min: 2.921
-    max: 4.953
-    unit: mm
-  overall_height:
-    max: 5.334
-    unit: mm
-  lead_width:
-    nominal: 0.4572
-    min: 0.3556
-    max: 0.5588
-    unit: mm
+    min: 2.921 mm
+    typ: 3.302 mm
+    max: 4.953 mm
+    src: p207 "8P3 "COMMON DIMENSIONS" (inches), "A2 0.115 / 0.130 / 0.195""
   lead_thickness:
-    nominal: 0.254
-    min: 0.2032
-    max: 0.3556
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: dip
-
-provenance:
-  "/pitch":
-    - source: microchip/2586@revQ
-      page: 207
-      locator: "8P3 \"COMMON DIMENSIONS\" (inches), \"e 0.100 BSC\" -> 2.54 mm"
-  "/dimensions/body_width":
-    - source: microchip/2586@revQ
-      page: 207
-      locator: "8P3 \"COMMON DIMENSIONS\" (inches), \"eA 0.300 BSC\" (row spacing, note 4) -> 7.62 mm; dip generator's body_width is the row spacing"
-  "/dimensions/body_length":
-    - source: microchip/2586@revQ
-      page: 207
-      locator: "8P3 \"COMMON DIMENSIONS\" (inches), \"D 0.355 / 0.365 / 0.400\" (note 3)"
-  "/dimensions/body_height":
-    - source: microchip/2586@revQ
-      page: 207
-      locator: "8P3 \"COMMON DIMENSIONS\" (inches), \"A2 0.115 / 0.130 / 0.195\""
-  "/dimensions/overall_height":
-    - source: microchip/2586@revQ
-      page: 207
-      locator: "8P3 \"COMMON DIMENSIONS\" (inches), \"A\" (MAX 0.210 only)"
-  "/dimensions/lead_width":
-    - source: microchip/2586@revQ
-      page: 207
-      locator: "8P3 \"COMMON DIMENSIONS\" (inches), \"b 0.014 / 0.018 / 0.022\""
-  "/dimensions/lead_thickness":
-    - source: microchip/2586@revQ
-      page: 207
-      locator: "8P3 \"COMMON DIMENSIONS\" (inches), \"c 0.008 / 0.010 / 0.014\""
+    min: 0.2032 mm
+    typ: 0.254 mm
+    max: 0.3556 mm
+    src: p207 "8P3 "COMMON DIMENSIONS" (inches), "c 0.008 / 0.010 / 0.014""
+  overall_height:
+    max: 5.334 mm
+    src: p207 "8P3 "COMMON DIMENSIONS" (inches), "A" (MAX 0.210 only)"
+  lead_width:
+    min: 0.3556 mm
+    typ: 0.4572 mm
+    max: 0.5588 mm
+    src: p207 "8P3 "COMMON DIMENSIONS" (inches), "b 0.014 / 0.018 / 0.022""

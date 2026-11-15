@@ -6,15 +6,12 @@
 # (Figure 1-1, page 3) and both package drawings (pages 423-424) were
 # rendered to images and read, since their labels are rotated/graphic.
 # PDF page indices equal the printed page numbers.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: microchip/7766@revJ
-
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf
+date: 2016-04
+revision: J
 publisher: microchip
 document_id: "7766"
 document_type: datasheet
-
-revision: "J"
-date: "2016-04"
-
-url: "https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf"

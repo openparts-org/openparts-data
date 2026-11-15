@@ -3,15 +3,12 @@
 # P-Channel QFET MOSFET -60 V, -47 A, TO-220-3LD CASE 340AT. Page 1:
 # TO-220-3LD image with leads labelled G D S, ORDERING INFORMATION; page
 # 8: embedded CASE 340AT ISSUE B.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: onsemi/FQP47P06-D
-
+url: https://www.onsemi.com/pdf/datasheet/fqp47p06-d.pdf
+date: 2022-05
+revision: "3"
 publisher: onsemi
 document_id: FQP47P06/D
 document_type: datasheet
-
-revision: "3"
-date: "2022-05"
-
-url: "https://www.onsemi.com/pdf/datasheet/fqp47p06-d.pdf"

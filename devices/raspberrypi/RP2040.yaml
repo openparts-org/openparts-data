@@ -11,16 +11,16 @@
 # `type` is this dataset's categorization of the datasheet's own "Type"
 # column (Digital IO / Digital In / Analogue / Power / Ground), not a
 # verbatim datasheet field.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: raspberrypi/RP2040
-
 manufacturer: raspberrypi
 category: microcontroller
 family: RP2040
+source: raspberrypi/RP-008371-DS@rev1
 
 pins:
-  "1":  { name: IOVDD, type: power }
+  "1":  { name: { value: IOVDD, src: '"Chapter 5.5.2, Table 615-621"' }, type: power }
   "2":  { name: GPIO0, type: io }
   "3":  { name: GPIO1, type: io }
   "4":  { name: GPIO2, type: io }
@@ -65,8 +65,26 @@ pins:
   "43": { name: ADC_AVDD, type: power }
   "44": { name: VREG_VIN, type: power }
   "45": { name: VREG_VOUT, type: power_out }
-  "46": { name: USB_DM, type: io, diff_pair: { partner: "47", polarity: n, standard: usb2 } }
-  "47": { name: USB_DP, type: io, diff_pair: { partner: "46", polarity: p, standard: usb2 } }
+  "46":
+    name: USB_DM
+    type: io
+    diff_pair:
+      partner: "47"
+      polarity: n
+      standard: usb2
+      src:
+        - 'p615 "Table 620 "USB pins": USB_DP 47 "USB Data +ve", USB_DM 46 "USB Data -ve""'
+        - 'p385 "4.1.2.3 USB PHY: "DP and DM pins are a differential pair""'
+  "47":
+    name: USB_DP
+    type: io
+    diff_pair:
+      partner: "46"
+      polarity: p
+      standard: usb2
+      src:
+        - 'p615 "Table 620 "USB pins": USB_DP 47 "USB Data +ve", USB_DM 46 "USB Data -ve""'
+        - 'p385 "4.1.2.3 USB PHY: "DP and DM pins are a differential pair""'
   "48": { name: USB_VDD, type: power }
   "49": { name: IOVDD, type: power }
   "50": { name: DVDD, type: power }
@@ -76,7 +94,7 @@ pins:
   "54": { name: QSPI_SD2, type: io }
   "55": { name: QSPI_SD1, type: io }
   "56": { name: QSPI_CSn, type: io }
-  "EP": { name: GND, type: ground }
+  EP:   { name: { value: GND, src: '""Common ground connection via central pad""' }, type: ground }
 
 # Silicon revisions confirmed to exist (page 130: bootrom v1/v2/v3 <->
 # B0/B1/B2), with B2 the current shipping marking ("RP2-B2", page 610).
@@ -87,43 +105,16 @@ pins:
 # per-revision numeric field values were not found in the pages
 # checked, so `mask`/`value` are left unset rather than invented.
 revisions:
+  src: p130
   rev-b0:
-    manufacturer_revision: "B0"
-    detection:
-      - method: device_register
-        register: CHIP_ID
+    manufacturer_revision: B0
+    detection: [{ method: device_register, register: CHIP_ID }]
+    overrides: { pins: {} }
   rev-b1:
-    manufacturer_revision: "B1"
-    detection:
-      - method: device_register
-        register: CHIP_ID
+    manufacturer_revision: B1
+    detection: [{ method: device_register, register: CHIP_ID }]
+    overrides: { pins: {} }
   rev-b2:
-    manufacturer_revision: "B2"
-    detection:
-      - method: device_register
-        register: CHIP_ID
-
-provenance:
-  "/pins/47/diff_pair":
-    - source: raspberrypi/RP-008371-DS@rev1
-      page: 615
-      locator: "Table 620 \"USB pins\": USB_DP 47 \"USB Data +ve\", USB_DM 46 \"USB Data -ve\""
-    - source: raspberrypi/RP-008371-DS@rev1
-      page: 385
-      locator: "4.1.2.3 USB PHY: \"DP and DM pins are a differential pair\""
-  "/pins/46/diff_pair":
-    - source: raspberrypi/RP-008371-DS@rev1
-      page: 615
-      locator: "Table 620 \"USB pins\": USB_DP 47 \"USB Data +ve\", USB_DM 46 \"USB Data -ve\""
-    - source: raspberrypi/RP-008371-DS@rev1
-      page: 385
-      locator: "4.1.2.3 USB PHY: \"DP and DM pins are a differential pair\""
-  "/pins/1/name":
-    - source: raspberrypi/RP-008371-DS@rev1
-      locator: "Chapter 5.5.2, Table 615-621"
-  "/pins/EP/name":
-    - source: raspberrypi/RP-008371-DS@rev1
-      locator: "\"Common ground connection via central pad\""
-  "/revisions":
-    - source: raspberrypi/RP-008371-DS@rev1
-      page: 130
+    manufacturer_revision: B2
+    detection: [{ method: device_register, register: CHIP_ID }]
+    overrides: { pins: {} }

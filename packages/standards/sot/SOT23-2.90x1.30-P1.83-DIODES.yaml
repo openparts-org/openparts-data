@@ -9,118 +9,59 @@
 # = A, standoff = A1, lead_width = b, lead_thickness = c, lead_length =
 # L (foot length at the gauge plane; L1 is not recorded).
 # "Typ" is recorded as nominal.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/SOT23-2.90x1.30-P1.83-DIODES
-
 family: sot
 lead_count: 3
 lead_layout: [2, 1]
+source: diodes/DS11005
 
 pitch:
-  nominal: 1.83
-  min: 1.78
-  max: 2.05
-  unit: mm
+  min: 1.78 mm
+  typ: 1.83 mm
+  max: 2.05 mm
+  src:
+    - p4 "SOT23 (Standard) table, "e1""
+    - diodes/DS36196 p5 "SOT23 (Standard) table, "e1" (identical)"
+
+construction:
+  value: molded
+  src: 'p1 "Mechanical Data: "Package Material: Molded Plastic, ''Green'' Molding Compound.""'
+
+geometry: { type: parametric, generator: sot }
 
 dimensions:
-  body_width:
-    nominal: 2.90
-    min: 2.80
-    max: 3.00
-    unit: mm
+  body_width: { min: 2.8 mm, typ: 2.9 mm, max: 3 mm, src: 'p4 "SOT23 (Standard) table, "D""' }
   body_length:
-    nominal: 1.30
-    min: 1.20
-    max: 1.40
-    unit: mm
+    min: 1.2 mm
+    typ: 1.3 mm
+    max: 1.4 mm
+    src: p4 "SOT23 (Standard) table, "E1" (body across the lead rows)"
   body_height:
-    nominal: 0.975
-    min: 0.85
-    max: 1.10
-    unit: mm
-  overall_height:
-    nominal: 1.025
-    min: 0.90
-    max: 1.15
-    unit: mm
-  overall_length:
-    nominal: 2.40
-    min: 2.25
-    max: 2.55
-    unit: mm
-  standoff:
-    nominal: 0.05
-    min: 0.00
-    max: 0.10
-    unit: mm
-  lead_width:
-    nominal: 0.40
-    min: 0.30
-    max: 0.51
-    unit: mm
-  lead_length:
-    nominal: 0.40
-    min: 0.25
-    max: 0.55
-    unit: mm
+    min: 0.85 mm
+    typ: 0.975 mm
+    max: 1.1 mm
+    src: p4 "SOT23 (Standard) table, "A2""
   lead_thickness:
-    nominal: 0.11
-    min: 0.080
-    max: 0.202
-    unit: mm
-
-construction: molded
-
-geometry:
-  type: parametric
-  generator: sot
-
-provenance:
-  "/construction":
-    - source: diodes/DS11005
-      page: 1
-      locator: "Mechanical Data: \"Package Material: Molded Plastic, 'Green' Molding Compound.\""
-  "/pitch":
-    - source: diodes/DS11005
-      page: 4
-      locator: "SOT23 (Standard) table, \"e1\""
-    - source: diodes/DS36196
-      page: 5
-      locator: "SOT23 (Standard) table, \"e1\" (identical)"
-  "/dimensions/body_width":
-    - source: diodes/DS11005
-      page: 4
-      locator: "SOT23 (Standard) table, \"D\""
-  "/dimensions/body_length":
-    - source: diodes/DS11005
-      page: 4
-      locator: "SOT23 (Standard) table, \"E1\" (body across the lead rows)"
-  "/dimensions/body_height":
-    - source: diodes/DS11005
-      page: 4
-      locator: "SOT23 (Standard) table, \"A2\""
-  "/dimensions/overall_height":
-    - source: diodes/DS11005
-      page: 4
-      locator: "SOT23 (Standard) table, \"A\""
-  "/dimensions/overall_length":
-    - source: diodes/DS11005
-      page: 4
-      locator: "SOT23 (Standard) table, \"E\" (lead-tip span)"
-  "/dimensions/standoff":
-    - source: diodes/DS11005
-      page: 4
-      locator: "SOT23 (Standard) table, \"A1\""
-  "/dimensions/lead_width":
-    - source: diodes/DS11005
-      page: 4
-      locator: "SOT23 (Standard) table, \"b\""
-  "/dimensions/lead_length":
-    - source: diodes/DS11005
-      page: 4
-      locator: "SOT23 (Standard) table, \"L\" (foot length from the gauge-plane side view)"
-  "/dimensions/lead_thickness":
-    - source: diodes/DS11005
-      page: 4
-      locator: "SOT23 (Standard) table, \"c\""
+    min: 0.08 mm
+    typ: 0.11 mm
+    max: 0.202 mm
+    src: p4 "SOT23 (Standard) table, "c""
+  overall_length:
+    min: 2.25 mm
+    typ: 2.4 mm
+    max: 2.55 mm
+    src: p4 "SOT23 (Standard) table, "E" (lead-tip span)"
+  overall_height:
+    min: 0.9 mm
+    typ: 1.025 mm
+    max: 1.15 mm
+    src: p4 "SOT23 (Standard) table, "A""
+  standoff:   { min: 0 mm, typ: 0.05 mm, max: 0.1 mm, src: 'p4 "SOT23 (Standard) table, "A1""' }
+  lead_width: { min: 0.3 mm, typ: 0.4 mm, max: 0.51 mm, src: 'p4 "SOT23 (Standard) table, "b""' }
+  lead_length:
+    min: 0.25 mm
+    typ: 0.4 mm
+    max: 0.55 mm
+    src: p4 "SOT23 (Standard) table, "L" (foot length from the gauge-plane side view)"

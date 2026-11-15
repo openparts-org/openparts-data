@@ -10,27 +10,15 @@
 # real-world availability (it remains one of the most common AVR MCUs
 # in production designs as of this document's own 2020-09 revision
 # date), not a directly-confirmed fact.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/ATmega328P-AU
-
 manufacturer: microchip
 mpn: ATmega328P-AU
-
 device: microchip/ATmega328P
 package: standards/TQFP32-7x7-P0.8
+sources: [microchip/DS40002061@revB]
+source: microchip/DS40002061@revB
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - microchip/DS40002061@revB
-
-provenance:
-  "/existence":
-    - source: microchip/DS40002061@revB
-      page: 635
-      locator: "Section 38.8, \"ATmega328P\" ordering table"
+existence: { status: verified, src: 'p635 "Section 38.8, "ATmega328P" ordering table"' }
+lifecycle: { status: active }

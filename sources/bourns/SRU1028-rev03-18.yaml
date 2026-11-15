@@ -2,15 +2,12 @@
 # footer "REV. 03/18". Fetched with plain curl; page 1 rendered to read
 # the Electrical Specifications @ 25 °C table. Added as a separate Source
 # because the existing bourns/SRU1028 record does not pin a revision.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: bourns/SRU1028@rev03-18
-
+url: https://bourns.com/docs/Product-Datasheets/SRU1028.pdf
+date: 2018-03
+revision: 03/18
 publisher: bourns
-document_id: "SRU1028"
+document_id: SRU1028
 document_type: datasheet
-
-revision: "03/18"
-date: "2018-03"
-
-url: "https://bourns.com/docs/Product-Datasheets/SRU1028.pdf"

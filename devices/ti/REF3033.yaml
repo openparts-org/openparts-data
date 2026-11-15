@@ -4,40 +4,24 @@
 # checked against Figure 5-1 "DBZ Package 3-Pin SOT-23 Top View" (pins
 # 1 and 2 on one edge, 3 alone opposite). The REF30E variant
 # (REF3033E...) is a different device and is not covered.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/REF3033
-
 manufacturer: ti
 category: voltage_reference
 family: REF30
-
-pins:
-  "1": { name: IN, type: power }
-  "2": { name: OUT, type: output }
-  "3": { name: GND, type: ground }
+source: ti/SBVS032K
 
 parameters:
   input_voltage_max:
-    max: 5.5
-    unit: V
+    max: 5.5 V
+    src: 'p4 "6.3 Recommended Operating Conditions, VIN Input voltage (2) (Specification for REF30xx): MAX 5.5 V"'
   output_current:
-    max: 25
-    unit: mA
+    max: 25 mA
+    src: 'p4 "6.3 Recommended Operating Conditions, ILOAD Load current (2) (Specification for REF30xx): MAX 25 mA"'
 
-provenance:
-  "/parameters/input_voltage_max":
-    - source: ti/SBVS032K
-      page: 4
-      locator: "6.3 Recommended Operating Conditions, VIN Input voltage (2) (Specification for REF30xx): MAX 5.5 V"
-  "/parameters/output_current":
-    - source: ti/SBVS032K
-      page: 4
-      locator: "6.3 Recommended Operating Conditions, ILOAD Load current (2) (Specification for REF30xx): MAX 25 mA"
-  "/pins":
-    - source: ti/SBVS032K
-      page: 3
-      locator: "Table 5-1 \"Pin Functions\""
-    - source: ti/SBVS032K
-      page: 3
-      locator: "Figure 5-1 \"DBZ Package 3-Pin SOT-23 Top View\""
+pins:
+  src: [p3 "Table 5-1 "Pin Functions"", p3 "Figure 5-1 "DBZ Package 3-Pin SOT-23 Top View""]
+  "1": { name: IN, type: power }
+  "2": { name: OUT, type: output }
+  "3": { name: GND, type: ground }

@@ -13,15 +13,12 @@
 # view (pin "1" at the right, the housing outline below the holes).
 # Page 1's drawing text is identical, apart from Pins/L/Pl, across the
 # 2/3/4/6/10-pin datasheets of this batch (pdftotext -layout diff).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: wurth/61300611021-DS
-
+url: https://www.we-online.com/components/products/datasheet/61300611021.pdf
+date: 2025-11-08
+revision: "003.000"
 publisher: wurth
 document_id: "61300611021"
 document_type: datasheet
-
-revision: "003.000"
-date: "2025-11-08"
-
-url: "https://www.we-online.com/components/products/datasheet/61300611021.pdf"

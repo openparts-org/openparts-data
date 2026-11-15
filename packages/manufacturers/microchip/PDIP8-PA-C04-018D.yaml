@@ -12,85 +12,45 @@
 # reading as manufacturers/microchip/PDIP16-P-C04-017B. Flagged for
 # review. E1 (.240/.250/.280) is not modelled; L (tip to seating plane)
 # is not the gull-wing foot `lead_length` means and is left out.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/microchip/PDIP8-PA-C04-018D
-
 family: dip
 lead_count: 8
+source: microchip/DS20001423@revJ
 
-pitch:
-  nominal: 2.54
-  unit: mm
+pitch: { typ: 2.54 mm, src: 'p17 "C04-018D table (inches), "Pitch e .100 BSC" -> 2.54 mm"' }
+geometry: { type: parametric, generator: dip }
 
 dimensions:
   body_width:
-    nominal: 7.62
-    unit: mm
+    typ: 7.62 mm
+    src:
+      - p17 "C04-018D title "8-Lead Plastic Dual In-Line (PA) - 300 mil Body [PDIP]" -> 7.62 mm row spacing (the table has no eA row)"
+      - p23 "Product Identification System, "PA = Plastic DIP (300 mil Body), 8-lead""
   body_length:
-    nominal: 9.271
-    min: 8.8392
-    max: 10.16
-    unit: mm
+    min: 8.8392 mm
+    typ: 9.271 mm
+    max: 10.16 mm
+    src: p17 "C04-018D table (inches), "Overall Length D .348 / .365 / .400""
   body_height:
-    nominal: 3.302
-    min: 2.921
-    max: 4.953
-    unit: mm
-  overall_height:
-    max: 5.334
-    unit: mm
-  standoff:
-    min: 0.381
-    unit: mm
-  lead_width:
-    nominal: 0.4572
-    min: 0.3556
-    max: 0.5588
-    unit: mm
+    min: 2.921 mm
+    typ: 3.302 mm
+    max: 4.953 mm
+    src: p17 "C04-018D table (inches), "Molded Package Thickness A2 .115 / .130 / .195""
   lead_thickness:
-    nominal: 0.254
-    min: 0.2032
-    max: 0.381
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: dip
-
-provenance:
-  "/pitch":
-    - source: microchip/DS20001423@revJ
-      page: 17
-      locator: "C04-018D table (inches), \"Pitch e .100 BSC\" -> 2.54 mm"
-  "/dimensions/body_width":
-    - source: microchip/DS20001423@revJ
-      page: 17
-      locator: "C04-018D title \"8-Lead Plastic Dual In-Line (PA) - 300 mil Body [PDIP]\" -> 7.62 mm row spacing (the table has no eA row)"
-    - source: microchip/DS20001423@revJ
-      page: 23
-      locator: "Product Identification System, \"PA = Plastic DIP (300 mil Body), 8-lead\""
-  "/dimensions/body_length":
-    - source: microchip/DS20001423@revJ
-      page: 17
-      locator: "C04-018D table (inches), \"Overall Length D .348 / .365 / .400\""
-  "/dimensions/body_height":
-    - source: microchip/DS20001423@revJ
-      page: 17
-      locator: "C04-018D table (inches), \"Molded Package Thickness A2 .115 / .130 / .195\""
-  "/dimensions/overall_height":
-    - source: microchip/DS20001423@revJ
-      page: 17
-      locator: "C04-018D table (inches), \"Top to Seating Plane A\" (MAX .210 only)"
-  "/dimensions/standoff":
-    - source: microchip/DS20001423@revJ
-      page: 17
-      locator: "C04-018D table (inches), \"Base to Seating Plane A1\" (MIN .015 only)"
-  "/dimensions/lead_width":
-    - source: microchip/DS20001423@revJ
-      page: 17
-      locator: "C04-018D table (inches), \"Lower Lead Width b .014 / .018 / .022\""
-  "/dimensions/lead_thickness":
-    - source: microchip/DS20001423@revJ
-      page: 17
-      locator: "C04-018D table (inches), \"Lead Thickness c .008 / .010 / .015\""
+    min: 0.2032 mm
+    typ: 0.254 mm
+    max: 0.381 mm
+    src: p17 "C04-018D table (inches), "Lead Thickness c .008 / .010 / .015""
+  overall_height:
+    max: 5.334 mm
+    src: p17 "C04-018D table (inches), "Top to Seating Plane A" (MAX .210 only)"
+  standoff:
+    min: 0.381 mm
+    src: p17 "C04-018D table (inches), "Base to Seating Plane A1" (MIN .015 only)"
+  lead_width:
+    min: 0.3556 mm
+    typ: 0.4572 mm
+    max: 0.5588 mm
+    src: p17 "C04-018D table (inches), "Lower Lead Width b .014 / .018 / .022""

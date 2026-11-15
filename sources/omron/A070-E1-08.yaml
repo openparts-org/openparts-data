@@ -6,15 +6,12 @@
 # PDF page index = printed page number. Page 1 "List of Models" is the
 # orderable model table; page 4 "Dimensions" holds the 6 x 6 mm drawings,
 # PCB processing dimensions and terminal arrangements (top view).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: omron/A070-E1-08
-
+url: https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf
+date: 2015-01-22
+revision: 08
 publisher: omron
-document_id: "A070-E1"
+document_id: A070-E1
 document_type: datasheet
-
-revision: "08"
-date: "2015-01-22"
-
-url: "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3f.pdf"

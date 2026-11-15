@@ -7,15 +7,12 @@
 # C04-065-SL (page 569) and C04-21380 (page 577) tables read with
 # pdftotext -layout; Table 5-1 (page 18) and the C04-094C 20-lead SOIC
 # table (page 573, an image) were rendered and read as images.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: microchip/DS40002204@revA
-
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny1614-16-17-DataSheet-DS40002204A.pdf
+date: 2020-05
+revision: A
 publisher: microchip
 document_id: DS40002204
 document_type: datasheet
-
-revision: "A"
-date: "2020-05"
-
-url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny1614-16-17-DataSheet-DS40002204A.pdf"

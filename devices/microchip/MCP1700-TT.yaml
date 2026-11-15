@@ -4,33 +4,23 @@
 # figure "3-Pin SOT-23" (page 1: GND 1 and VOUT 2 on one edge, VIN 3
 # alone opposite). The SOT-89, TO-92 and DFN pin maps differ and are
 # not covered. VIN/VOUT typed power, as for ti/LM1117-3.3.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/MCP1700-TT
-
 manufacturer: microchip
 category: linear_regulator
 family: MCP1700
-
-pins:
-  "1": { name: GND, type: ground }
-  "2": { name: VOUT, type: power }
-  "3": { name: VIN, type: power }
+source: microchip/DS20001826@revE
 
 parameters:
   input_voltage_max:
-    max: 6.0
-    unit: V
+    max: 6 V
+    src: 'p3 "DC Characteristics, Input Operating Voltage VIN: Max 6.0 V"'
 
-provenance:
-  "/parameters/input_voltage_max":
-    - source: microchip/DS20001826@revE
-      page: 3
-      locator: "DC Characteristics, Input Operating Voltage VIN: Max 6.0 V"
-  "/pins":
-    - source: microchip/DS20001826@revE
-      page: 11
-      locator: "Table 3-1 \"Pin Function Table\", column \"SOT-23\""
-    - source: microchip/DS20001826@revE
-      page: 1
-      locator: "\"Package Types\", 3-Pin SOT-23"
+pins:
+  src:
+    - p11 "Table 3-1 "Pin Function Table", column "SOT-23""
+    - p1 ""Package Types", 3-Pin SOT-23"
+  "1": { name: GND, type: ground }
+  "2": { name: VOUT, type: power }
+  "3": { name: VIN, type: power }

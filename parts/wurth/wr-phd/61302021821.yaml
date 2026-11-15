@@ -3,27 +3,18 @@
 # lifecycle: the title block "STATUS Valid" is the document's release
 # status, not a product lifecycle statement; the we-online.com product
 # pages were not read (403 to curl), so lifecycle is unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: wurth/61302021821
-
 manufacturer: wurth
 mpn: "61302021821"
-
 device: wurth/61302021821
 package: manufacturers/wurth/WR-PHD-Socket-2x10-P2.54
+sources: [wurth/61302021821-DS]
+source: wurth/61302021821-DS
 
 existence:
   status: verified
+  src: p1 "Title block, "ORDER CODE 61302021821", "DESCRIPTION WR-PHD Dual Socket Header""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - wurth/61302021821-DS
-
-provenance:
-  "/existence":
-    - source: wurth/61302021821-DS
-      page: 1
-      locator: "Title block, \"ORDER CODE 61302021821\", \"DESCRIPTION WR-PHD Dual Socket Header\""
+lifecycle: { status: unknown }

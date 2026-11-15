@@ -2,35 +2,20 @@
 # Active  Production  SON (DRB) | 8" -- MPN printed verbatim in TI's orderable
 # list (existence verified); lifecycle "Active" is TI's own Status column.
 # Package DRB = outline DRB0008B (SBVS045C page 28).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/TPS2113ADRBT
-
 manufacturer: ti
 mpn: TPS2113ADRBT
-
 device: ti/TPS2113A-DRB
-package: manufacturers/ti/DRB0008B
+package: { value: manufacturers/ti/DRB0008B, src: p28 "DRB0008B package outline" }
+sources: [ti/SBVS045C]
+source: ti/SBVS045C
 
 existence:
   status: verified
+  src: p19 "Package option addendum table, row "TPS2113ADRBT" (SON (DRB) | 8)"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SBVS045C
-
-provenance:
-  "/existence":
-    - source: ti/SBVS045C
-      page: 19
-      locator: "Package option addendum table, row \"TPS2113ADRBT\" (SON (DRB) | 8)"
-  "/lifecycle":
-    - source: ti/SBVS045C
-      page: 19
-      locator: "Package option addendum table, row \"TPS2113ADRBT\", Status \"Active\""
-  "/package":
-    - source: ti/SBVS045C
-      page: 28
-      locator: "DRB0008B package outline"
+  src: p19 "Package option addendum table, row "TPS2113ADRBT", Status "Active""

@@ -10,34 +10,24 @@
 # sources/microchip/DS40002173C.yaml). lifecycle: no production-status
 # statement in the datasheet and the Microchip product page refused curl
 # and WebFetch (403); unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/AVR128DA48-I-6LX
-
 manufacturer: microchip
-mpn: "AVR128DA48-I/6LX"
-
+mpn: AVR128DA48-I/6LX
 device: microchip/AVR128DA48
-package: manufacturers/microchip/VQFN48-6x6-P0.4-EP4.1-C04-494
+
+package:
+  value: manufacturers/microchip/VQFN48-6x6-P0.4-EP4.1-C04-494
+  src:
+    - p649 "Ordering table row "AVR128DA48-I/6LX", "48", "VQFN""
+    - p674 "Section 40.9 "48-Pin VQFN", drawing C04-494 Rev B sheet 2"
+
+sources: [microchip/DS40002183@revE]
+source: microchip/DS40002183@revE
 
 existence:
   status: verified
+  src: p649 "Section 39 ordering table, Ordering Code row "AVR128DA48-I/6LX""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS40002183@revE
-
-provenance:
-  "/existence":
-    - source: microchip/DS40002183@revE
-      page: 649
-      locator: "Section 39 ordering table, Ordering Code row \"AVR128DA48-I/6LX\""
-  "/package":
-    - source: microchip/DS40002183@revE
-      page: 649
-      locator: "Ordering table row \"AVR128DA48-I/6LX\", \"48\", \"VQFN\""
-    - source: microchip/DS40002183@revE
-      page: 674
-      locator: "Section 40.9 \"48-Pin VQFN\", drawing C04-494 Rev B sheet 2"
+lifecycle: { status: unknown }

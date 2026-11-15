@@ -7,38 +7,26 @@
 # matches the outline page standards/TSSOP16-4.4x5.0-P0.65-TI-PW was
 # read from (ti/SCLS041J page 34) line for line, and every number of
 # that package equals the drawing, so it is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/CD4051BPWR
-
 manufacturer: ti
-mpn: "CD4051BPWR"
-
+mpn: CD4051BPWR
 device: ti/CD4051B
-package: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+
+package:
+  value: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+  src:
+    - p23 "Package Option Addendum, row "CD4051BPWR", "TSSOP (PW) | 16""
+    - p32 "PACKAGE OUTLINE PW0016A (4220204/B 12/2023)"
+
+sources: [ti/SCHS047O]
+source: ti/SCHS047O
 
 existence:
   status: verified
+  src: p23 "Package Option Addendum, Packaging Information table, row "CD4051BPWR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SCHS047O
-
-provenance:
-  "/existence":
-    - source: ti/SCHS047O
-      page: 23
-      locator: "Package Option Addendum, Packaging Information table, row \"CD4051BPWR\""
-  "/lifecycle":
-    - source: ti/SCHS047O
-      page: 23
-      locator: "Package Option Addendum, row \"CD4051BPWR\", Status \"Active\""
-  "/package":
-    - source: ti/SCHS047O
-      page: 23
-      locator: "Package Option Addendum, row \"CD4051BPWR\", \"TSSOP (PW) | 16\""
-    - source: ti/SCHS047O
-      page: 32
-      locator: "PACKAGE OUTLINE PW0016A (4220204/B 12/2023)"
+  src: p23 "Package Option Addendum, row "CD4051BPWR", Status "Active""

@@ -36,16 +36,20 @@
 # numeric footprint outline isn't given in this document either (see
 # the package file), so it produces no separate footprint lead, only
 # the electrical fact that it exists and must be grounded.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: nordic/nRF52840
-
 manufacturer: nordic
 category: microcontroller
 family: nRF52840
+source: nordic/4413_417@v1.11
 
 pins:
-  "1":  { name: DEC1, type: power }
+  "1":
+    name:
+      value: DEC1
+      src: p930 "Table 62, "QFN48 pin assignments", "Left side of the chip" (pins 1-12)"
+    type: power
   "2":  { name: P0.00, type: io }
   "3":  { name: P0.01, type: io }
   "4":  { name: P0.04, type: io, alternate_functions: [AIN2] }
@@ -57,7 +61,9 @@ pins:
   "10": { name: P0.11, type: io }
   "11": { name: P0.12, type: io }
   "12": { name: VDD, type: power }
-  "13": { name: P0.13, type: io }
+  "13":
+    name: { value: P0.13, src: 'p930 "Table 62, "Bottom side of chip" (pins 13-24)"' }
+    type: io
   "14": { name: P0.14, type: io }
   "15": { name: P0.17, type: io }
   "16": { name: P0.18, type: io }
@@ -69,7 +75,9 @@ pins:
   "22": { name: P0.23, type: io }
   "23": { name: P0.24, type: io }
   "24": { name: P1.00, type: io }
-  "25": { name: VDD, type: power }
+  "25":
+    name: { value: VDD, src: 'p930 "Table 62, "Right side of the chip" (pins 25-36)"' }
+    type: power
   "26": { name: SWDIO, type: io }
   "27": { name: SWDCLK, type: input }
   "28": { name: NC, type: nc }
@@ -81,7 +89,9 @@ pins:
   "34": { name: DEC3, type: power }
   "35": { name: XC1, type: clock }
   "36": { name: XC2, type: clock }
-  "37": { name: VDD, type: power }
+  "37":
+    name: { value: VDD, src: 'p931 "Table 62, "Top side of the chip" (pins 37-48)"' }
+    type: power
   "38": { name: P1.15, type: io }
   "39": { name: P0.03, type: io, alternate_functions: [AIN1] }
   "40": { name: P0.02, type: io, alternate_functions: [AIN0] }
@@ -93,26 +103,6 @@ pins:
   "46": { name: DEC4, type: power }
   "47": { name: DCC, type: power }
   "48": { name: VDD, type: power }
-  "EP": { name: VSS, type: ground }
-
-provenance:
-  "/pins/1/name":
-    - source: nordic/4413_417@v1.11
-      page: 930
-      locator: "Table 62, \"QFN48 pin assignments\", \"Left side of the chip\" (pins 1-12)"
-  "/pins/13/name":
-    - source: nordic/4413_417@v1.11
-      page: 930
-      locator: "Table 62, \"Bottom side of chip\" (pins 13-24)"
-  "/pins/25/name":
-    - source: nordic/4413_417@v1.11
-      page: 930
-      locator: "Table 62, \"Right side of the chip\" (pins 25-36)"
-  "/pins/37/name":
-    - source: nordic/4413_417@v1.11
-      page: 931
-      locator: "Table 62, \"Top side of the chip\" (pins 37-48)"
-  "/pins/EP/name":
-    - source: nordic/4413_417@v1.11
-      page: 931
-      locator: "Table 62, \"Backside of the chip\", \"Die pad\""
+  EP:
+    name: { value: VSS, src: 'p931 "Table 62, "Backside of the chip", "Die pad""' }
+    type: ground

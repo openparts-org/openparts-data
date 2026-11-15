@@ -4,40 +4,24 @@
 # Assignments" SOT223 (Top View) 3 VIN / 2 VOUT / 1 Adj (GND), "Tab is
 # VOUT". The tab carries pin number 2 in the package
 # (standards/SOT223-3.5x6.5-P2.3-TabPin2-Diodes), so no extra pin here.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: diodes/AP1117-3.3
-
 manufacturer: diodes
 category: linear_regulator
 family: AP1117
-
-pins:
-  "1": { name: Adj (GND), type: ground }
-  "2": { name: VOUT, type: power }
-  "3": { name: VIN, type: power }
+source: diodes/DS31009
 
 parameters:
   output_current:
-    nominal: 1
-    unit: A
-  dropout_voltage:
-    max: 1.4
-    unit: V
+    typ: 1 A
+    src: 'p1 "Description: "AP1117 is a low dropout positive adjustable or fixed-mode regulator with 1A output current capability""'
+  dropout_voltage: { max: 1.4 V, src: 'p1 "Features: "1.4V Maximum Dropout at Full Load Current""' }
 
-provenance:
-  "/parameters/output_current":
-    - source: diodes/DS31009
-      page: 1
-      locator: "Description: \"AP1117 is a low dropout positive adjustable or fixed-mode regulator with 1A output current capability\""
-  "/parameters/dropout_voltage":
-    - source: diodes/DS31009
-      page: 1
-      locator: "Features: \"1.4V Maximum Dropout at Full Load Current\""
-  "/pins":
-    - source: diodes/DS31009
-      page: 2
-      locator: "\"Pin Descriptions\" table (1 Adj (GND), 2 VOUT, 3 VIN)"
-    - source: diodes/DS31009
-      page: 1
-      locator: "\"Pin Assignments\" SOT223 (Top View), \"Tab is VOUT\""
+pins:
+  src:
+    - p2 ""Pin Descriptions" table (1 Adj (GND), 2 VOUT, 3 VIN)"
+    - p1 ""Pin Assignments" SOT223 (Top View), "Tab is VOUT""
+  "1": { name: Adj (GND), type: ground }
+  "2": { name: VOUT, type: power }
+  "3": { name: VIN, type: power }

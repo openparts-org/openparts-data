@@ -5,15 +5,12 @@
 # page-footer date "2019-5-27". 13 PDF pages; read with pdftotext
 # -layout; the 11-3C1 (SO4) outline on page 1 was rendered (pdftoppm,
 # 400 dpi) and read as an image. Page numbers are PDF page indices.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: toshiba/TLP291-datasheet-en
-
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=12884&prodName=TLP291
+date: 2019-05-27
+revision: 2019-05-27
 publisher: toshiba
 document_id: TLP291_datasheet_en
 document_type: datasheet
-
-revision: "2019-05-27"
-date: "2019-05-27"
-
-url: "https://toshiba.semicon-storage.com/info/docget.jsp?did=12884&prodName=TLP291"

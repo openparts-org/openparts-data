@@ -7,11 +7,10 @@
 # yageo.yaml already exists in this dataset as a separate, distinct
 # manufacturer for YAGEO's own directly-branded parts (e.g. RC-series
 # chip resistors).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: manufacturer
 id: kemet
 
-name: KEMET Electronics Corporation (a YAGEO Group brand)
+website: { url: https://www.kemet.com }
 
-website:
-  url: "https://www.kemet.com"
+name: KEMET Electronics Corporation (a YAGEO Group brand)

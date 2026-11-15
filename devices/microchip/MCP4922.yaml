@@ -4,15 +4,18 @@
 # figure under "Package Types" (page 1). Pins 2, 6 and 7 are "NC - No
 # Connection" (typed nc). CS and SHDN are active low (overbar; written
 # without it). SCK typed clock, VREFx/VOUTx analog, AVSS ground.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/MCP4922
-
 manufacturer: microchip
 category: dac
 family: MCP492X
+source: microchip/DS21897@revB
 
 pins:
+  src:
+    - p15 "Table 3-1 "Pin Function Table", column "MCP4922 Pin No.""
+    - p1 ""Package Types" 14-Pin PDIP, SOIC, TSSOP figure (cross-check)"
   "1":  { name: VDD, type: power }
   "2":  { name: NC, type: nc }
   "3":  { name: CS, type: input }
@@ -27,12 +30,3 @@ pins:
   "12": { name: AVSS, type: ground }
   "13": { name: VREFA, type: analog }
   "14": { name: VOUTA, type: analog }
-
-provenance:
-  "/pins":
-    - source: microchip/DS21897@revB
-      page: 15
-      locator: "Table 3-1 \"Pin Function Table\", column \"MCP4922 Pin No.\""
-    - source: microchip/DS21897@revB
-      page: 1
-      locator: "\"Package Types\" 14-Pin PDIP, SOIC, TSSOP figure (cross-check)"

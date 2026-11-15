@@ -2,19 +2,19 @@
 # "QFN40 Pin Overview" (pp.16-17) + Table 2-13 "Power Pins" (p.29) for
 # the exposed pad. The QFN32 in-package-flash variants (ESP32-C6FH4/
 # -C6FH8) have a different, shorter pin table -- not modeled here.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: espressif/ESP32-C6
-
 manufacturer: espressif
 category: microcontroller
 family: ESP32-C6
+source: espressif/esp32-c6_datasheet_en@rev1.5
 
 # diff_pair on the USB_D-/USB_D+ pins records the datasheet's default
 # assignment; its pin-function tables note that D- and D+ can be swapped
 # by an eFuse / register bit (Technical Reference Manual).
 pins:
-  "1":  { name: ANT, type: analog }
+  "1":  { name: { value: ANT, src: '"Table 2-1 QFN40 Pin Overview, p.16-17"' }, type: analog }
   "2":  { name: VDDA3P3, type: power }
   "3":  { name: VDDA3P3, type: power }
   "4":  { name: CHIP_PU, type: reset }
@@ -31,8 +31,26 @@ pins:
   "15": { name: GPIO9, type: io }
   "16": { name: GPIO10, type: io }
   "17": { name: GPIO11, type: io }
-  "18": { name: GPIO12, type: io, alternate_functions: [USB_D_MINUS], diff_pair: { partner: "19", polarity: n, standard: usb2, function: USB_D_MINUS } }
-  "19": { name: GPIO13, type: io, alternate_functions: [USB_D_PLUS], diff_pair: { partner: "18", polarity: p, standard: usb2, function: USB_D_PLUS } }
+  "18":
+    name: GPIO12
+    type: io
+    alternate_functions: [USB_D_MINUS]
+    diff_pair:
+      partner: "19"
+      polarity: n
+      standard: usb2
+      function: USB_D_MINUS
+      src: 'espressif/esp32-c6_datasheet_en@rev1.6 p23 "Table 2-8 "Analog Signals Routed to Analog Functions": USB_D- "Data -", USB_D+ "Data +"; Table 2-9 "Analog Functions": pin 18 GPIO12 USB_D-, pin 19 GPIO13 USB_D+"'
+  "19":
+    name: GPIO13
+    type: io
+    alternate_functions: [USB_D_PLUS]
+    diff_pair:
+      partner: "18"
+      polarity: p
+      standard: usb2
+      function: USB_D_PLUS
+      src: 'espressif/esp32-c6_datasheet_en@rev1.6 p23 "Table 2-8 "Analog Signals Routed to Analog Functions": USB_D- "Data -", USB_D+ "Data +"; Table 2-9 "Analog Functions": pin 18 GPIO12 USB_D-, pin 19 GPIO13 USB_D+"'
   "20": { name: SPICS0, type: io, alternate_functions: [GPIO24] }
   "21": { name: SPIQ, type: io, alternate_functions: [GPIO25] }
   "22": { name: SPIWP, type: io, alternate_functions: [GPIO26] }
@@ -54,7 +72,9 @@ pins:
   "38": { name: XTAL_N, type: clock }
   "39": { name: XTAL_P, type: clock }
   "40": { name: VDDA2, type: power }
-  "EP": { name: GND, type: ground }
+  EP:
+    name: { value: GND, src: '"Table 2-13 Power Pins, p.29: "External ground connection""' }
+    type: ground
 
 # Three chip revisions confirmed to ship under the same part number
 # (v0.0/v0.1/v0.2, Table 1-1). The datasheet defers revision
@@ -62,28 +82,7 @@ pins:
 # Errata" document (not fetched); its own pin tables show no
 # per-revision variation, so no overrides are recorded here.
 revisions:
-  rev-v0.0:
-    manufacturer_revision: "v0.0"
-  rev-v0.1:
-    manufacturer_revision: "v0.1"
-  rev-v0.2:
-    manufacturer_revision: "v0.2"
-
-provenance:
-  "/pins/19/diff_pair":
-    - source: espressif/esp32-c6_datasheet_en@rev1.6
-      page: 23
-      locator: "Table 2-8 \"Analog Signals Routed to Analog Functions\": USB_D- \"Data -\", USB_D+ \"Data +\"; Table 2-9 \"Analog Functions\": pin 18 GPIO12 USB_D-, pin 19 GPIO13 USB_D+"
-  "/pins/18/diff_pair":
-    - source: espressif/esp32-c6_datasheet_en@rev1.6
-      page: 23
-      locator: "Table 2-8 \"Analog Signals Routed to Analog Functions\": USB_D- \"Data -\", USB_D+ \"Data +\"; Table 2-9 \"Analog Functions\": pin 18 GPIO12 USB_D-, pin 19 GPIO13 USB_D+"
-  "/pins/1/name":
-    - source: espressif/esp32-c6_datasheet_en@rev1.5
-      locator: "Table 2-1 QFN40 Pin Overview, p.16-17"
-  "/pins/EP/name":
-    - source: espressif/esp32-c6_datasheet_en@rev1.5
-      locator: "Table 2-13 Power Pins, p.29: \"External ground connection\""
-  "/revisions":
-    - source: espressif/esp32-c6_datasheet_en@rev1.5
-      locator: "Table 1-1, p.13; Section 1.3 Chip Revision"
+  src:      '"Table 1-1, p.13; Section 1.3 Chip Revision"'
+  rev-v0.0: { manufacturer_revision: v0.0, overrides: { pins: {} } }
+  rev-v0.1: { manufacturer_revision: v0.1, overrides: { pins: {} } }
+  rev-v0.2: { manufacturer_revision: v0.2, overrides: { pins: {} } }

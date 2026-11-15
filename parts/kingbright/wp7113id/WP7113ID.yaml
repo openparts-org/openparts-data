@@ -7,27 +7,18 @@
 # technical data, wave soldering, precautionary notes) with no
 # production-status language found; only a generic "specifications
 # subject to change" disclaimer exists, not a lifecycle statement.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: kingbright/WP7113ID
-
 manufacturer: kingbright
 mpn: WP7113ID
-
 device: kingbright/WP7113ID
 package: standards/RADIAL-WP7113ID
+sources: [kingbright/DSAF0012]
+source: kingbright/DSAF0012
 
 existence:
   status: verified
+  src: p1 "Title block and "Selection Guide" table, Part Number column"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - kingbright/DSAF0012
-
-provenance:
-  "/existence":
-    - source: kingbright/DSAF0012
-      page: 1
-      locator: "Title block and \"Selection Guide\" table, Part Number column"
+lifecycle: { status: unknown }

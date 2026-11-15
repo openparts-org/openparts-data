@@ -18,27 +18,15 @@
 # rather than inferred from the document's "Datasheet" title or its
 # active revision cadence (V1.8 in 2016 through V2.1 in 2025-06-30),
 # which are suggestive but not an explicit statement.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: infineon/XMC1100-Q024F0032
-
 manufacturer: infineon
 mpn: XMC1100-Q024F0032
-
 device: infineon/XMC1100-Q024F0032
 package: standards/QFN24-XMC1100
+sources: [infineon/xmc1100-datasheet-v2.1]
+source: infineon/xmc1100-datasheet-v2.1
 
-existence:
-  status: verified
-
-lifecycle:
-  status: unknown
-
-sources:
-  - infineon/xmc1100-datasheet-v2.1
-
-provenance:
-  "/existence":
-    - source: infineon/xmc1100-datasheet-v2.1
-      page: 6
-      locator: "Table 1 \"Synopsis of XMC1100 Device Types\""
+existence: { status: verified, src: p6 "Table 1 "Synopsis of XMC1100 Device Types"" }
+lifecycle: { status: unknown }

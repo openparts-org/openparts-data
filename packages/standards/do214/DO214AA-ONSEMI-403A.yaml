@@ -11,98 +11,57 @@
 # The same outline page renders pixel-identical (pdftoppm -r 100 crop,
 # md5) in MBRS2040LT3/D Rev. 8 page 6.
 # construction: molded -- page 1 "Case: Epoxy, Molded".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/DO214AA-ONSEMI-403A
-
 family: do214
 lead_count: 2
+source: onsemi/MBRS140T3-D
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+
+construction: { value: molded, src: 'p1 "Mechanical Characteristics: "Case: Epoxy, Molded""' }
+
+geometry: { type: parametric, generator: do214 }
 
 dimensions:
-  body_length:
-    nominal: 4.32
-    min: 4.06
-    max: 4.6
-    unit: mm
   body_width:
-    nominal: 3.56
-    min: 3.3
-    max: 3.95
-    unit: mm
+    min: 3.3 mm
+    typ: 3.56 mm
+    max: 3.95 mm
+    src: p6 "CASE 403A table, D 3.30 / 3.56 / 3.95 mm"
+  body_length:
+    min: 4.06 mm
+    typ: 4.32 mm
+    max: 4.6 mm
+    src: p6 "CASE 403A table, E 4.06 / 4.32 / 4.60 mm (0.160 / 0.170 / 0.181 in)"
   body_height:
-    nominal: 2.3
-    min: 1.95
-    max: 2.47
-    unit: mm
-  overall_length:
-    nominal: 5.44
-    min: 5.21
-    max: 5.6
-    unit: mm
-  lead_width:
-    nominal: 2.03
-    min: 1.96
-    max: 2.2
-    unit: mm
-  lead_length:
-    nominal: 1.02
-    min: 0.76
-    max: 1.6
-    unit: mm
+    min: 1.95 mm
+    typ: 2.3 mm
+    max: 2.47 mm
+    src: p6 "CASE 403A table, A 1.95 / 2.30 / 2.47 mm (seating plane to top; no A2)"
   lead_thickness:
-    nominal: 0.23
-    min: 0.15
-    max: 0.31
-    unit: mm
+    min: 0.15 mm
+    typ: 0.23 mm
+    max: 0.31 mm
+    src: p6 "CASE 403A table, c 0.15 / 0.23 / 0.31 mm"
+  overall_length:
+    min: 5.21 mm
+    typ: 5.44 mm
+    max: 5.6 mm
+    src: p6 "CASE 403A table, HE 5.21 / 5.44 / 5.60 mm"
   standoff:
-    nominal: 0.1
-    min: 0.05
-    max: 0.2
-    unit: mm
-
-construction: molded
-
-geometry:
-  type: parametric
-  generator: do214
-
-provenance:
-  "/construction":
-    - source: onsemi/MBRS140T3-D
-      page: 1
-      locator: "Mechanical Characteristics: \"Case: Epoxy, Molded\""
-  "/dimensions/body_length":
-    - source: onsemi/MBRS140T3-D
-      page: 6
-      locator: "CASE 403A table, E 4.06 / 4.32 / 4.60 mm (0.160 / 0.170 / 0.181 in)"
-  "/dimensions/body_width":
-    - source: onsemi/MBRS140T3-D
-      page: 6
-      locator: "CASE 403A table, D 3.30 / 3.56 / 3.95 mm"
-  "/dimensions/body_height":
-    - source: onsemi/MBRS140T3-D
-      page: 6
-      locator: "CASE 403A table, A 1.95 / 2.30 / 2.47 mm (seating plane to top; no A2)"
-  "/dimensions/overall_length":
-    - source: onsemi/MBRS140T3-D
-      page: 6
-      locator: "CASE 403A table, HE 5.21 / 5.44 / 5.60 mm"
-  "/dimensions/lead_width":
-    - source: onsemi/MBRS140T3-D
-      page: 6
-      locator: "CASE 403A table, b 1.96 / 2.03 / 2.20 mm"
-  "/dimensions/lead_length":
-    - source: onsemi/MBRS140T3-D
-      page: 6
-      locator: "CASE 403A table, L 0.76 / 1.02 / 1.60 mm (folded foot)"
-  "/dimensions/lead_thickness":
-    - source: onsemi/MBRS140T3-D
-      page: 6
-      locator: "CASE 403A table, c 0.15 / 0.23 / 0.31 mm"
-  "/dimensions/standoff":
-    - source: onsemi/MBRS140T3-D
-      page: 6
-      locator: "CASE 403A table, A1 0.05 / 0.10 / 0.20 mm"
+    min: 0.05 mm
+    typ: 0.1 mm
+    max: 0.2 mm
+    src: p6 "CASE 403A table, A1 0.05 / 0.10 / 0.20 mm"
+  lead_width:
+    min: 1.96 mm
+    typ: 2.03 mm
+    max: 2.2 mm
+    src: p6 "CASE 403A table, b 1.96 / 2.03 / 2.20 mm"
+  lead_length:
+    min: 0.76 mm
+    typ: 1.02 mm
+    max: 1.6 mm
+    src: p6 "CASE 403A table, L 0.76 / 1.02 / 1.60 mm (folded foot)"

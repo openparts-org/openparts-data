@@ -15,24 +15,30 @@
 # (Table 1679) is pin key "EP".
 # RP2354B (2MB in-package flash) shares this pinout per section 14.3 but
 # is a different device; not modelled here.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: raspberrypi/RP2350B
-
 manufacturer: raspberrypi
 category: microcontroller
 family: RP2350
+source: raspberrypi/RP-008373-DS@rev3
 
 pins:
-  "1": { name: GPIO4, type: io }
-  "2": { name: GPIO5, type: io }
-  "3": { name: GPIO6, type: io }
-  "4": { name: GPIO7, type: io }
-  "5": { name: IOVDD, type: power }
-  "6": { name: GPIO8, type: io }
-  "7": { name: GPIO9, type: io }
-  "8": { name: GPIO10, type: io }
-  "9": { name: GPIO11, type: io }
+  "1":
+    name:
+      value: GPIO4
+      src: p1333 "Table 1674 "GPIO pins", QFN-80 Number column (continued on p1334)"
+    type: io
+  "2":  { name: GPIO5, type: io }
+  "3":  { name: GPIO6, type: io }
+  "4":  { name: GPIO7, type: io }
+  "5":
+    name: { value: IOVDD, src: 'p1335 "Table 1679 "Power supply pins", QFN-80 Number(s) column"' }
+    type: power
+  "6":  { name: GPIO8, type: io }
+  "7":  { name: GPIO9, type: io }
+  "8":  { name: GPIO10, type: io }
+  "9":  { name: GPIO11, type: io }
   "10": { name: DVDD, type: power }
   "11": { name: GPIO12, type: io }
   "12": { name: GPIO13, type: io }
@@ -53,7 +59,11 @@ pins:
   "27": { name: GPIO26, type: io }
   "28": { name: GPIO27, type: io }
   "29": { name: IOVDD, type: power }
-  "30": { name: XIN, type: clock }
+  "30":
+    name:
+      value: XIN
+      src: p1335 "Tables 1676-1678 (crystal, miscellaneous, USB pins), QFN-80 Number column"
+    type: clock
   "31": { name: XOUT, type: clock }
   "32": { name: DVDD, type: power }
   "33": { name: SWCLK, type: clock }
@@ -89,11 +99,31 @@ pins:
   "63": { name: VREG_LX, type: output }
   "64": { name: VREG_VIN, type: power }
   "65": { name: VREG_FB, type: input }
-  "66": { name: USB_DM, type: io, diff_pair: { partner: "67", polarity: n, standard: usb2 } }
-  "67": { name: USB_DP, type: io, diff_pair: { partner: "66", polarity: p, standard: usb2 } }
+  "66":
+    name: USB_DM
+    type: io
+    diff_pair:
+      partner: "67"
+      polarity: n
+      standard: usb2
+      src:
+        - 'p1335 "Table 1678 "USB pins": USB_DP 52 (QFN-60) / 67 (QFN-80) "USB Data +ve", USB_DM 51 / 66 "USB Data -ve""'
+        - 'p1062 "USB PHY: "The DP and DM pins are a differential pair""'
+  "67":
+    name: USB_DP
+    type: io
+    diff_pair:
+      partner: "66"
+      polarity: p
+      standard: usb2
+      src:
+        - 'p1335 "Table 1678 "USB pins": USB_DP 52 (QFN-60) / 67 (QFN-80) "USB Data +ve", USB_DM 51 / 66 "USB Data -ve""'
+        - 'p1062 "USB PHY: "The DP and DM pins are a differential pair""'
   "68": { name: USB_OTP_VDD, type: power }
   "69": { name: QSPI_IOVDD, type: power }
-  "70": { name: QSPI_SD3, type: io }
+  "70":
+    name: { value: QSPI_SD3, src: 'p1334 "Table 1675 "QSPI pins", QFN-80 Number column"' }
+    type: io
   "71": { name: QSPI_SCLK, type: clock }
   "72": { name: QSPI_SD0, type: io }
   "73": { name: QSPI_SD2, type: io }
@@ -104,40 +134,8 @@ pins:
   "78": { name: GPIO1, type: io }
   "79": { name: GPIO2, type: io }
   "80": { name: GPIO3, type: io }
-  "EP": { name: GND, type: ground }
-
-provenance:
-  "/pins/67/diff_pair":
-    - source: raspberrypi/RP-008373-DS@rev3
-      page: 1335
-      locator: "Table 1678 \"USB pins\": USB_DP 52 (QFN-60) / 67 (QFN-80) \"USB Data +ve\", USB_DM 51 / 66 \"USB Data -ve\""
-    - source: raspberrypi/RP-008373-DS@rev3
-      page: 1062
-      locator: "USB PHY: \"The DP and DM pins are a differential pair\""
-  "/pins/66/diff_pair":
-    - source: raspberrypi/RP-008373-DS@rev3
-      page: 1335
-      locator: "Table 1678 \"USB pins\": USB_DP 52 (QFN-60) / 67 (QFN-80) \"USB Data +ve\", USB_DM 51 / 66 \"USB Data -ve\""
-    - source: raspberrypi/RP-008373-DS@rev3
-      page: 1062
-      locator: "USB PHY: \"The DP and DM pins are a differential pair\""
-  "/pins/1/name":
-    - source: raspberrypi/RP-008373-DS@rev3
-      page: 1333
-      locator: "Table 1674 \"GPIO pins\", QFN-80 Number column (continued on p1334)"
-  "/pins/70/name":
-    - source: raspberrypi/RP-008373-DS@rev3
-      page: 1334
-      locator: "Table 1675 \"QSPI pins\", QFN-80 Number column"
-  "/pins/30/name":
-    - source: raspberrypi/RP-008373-DS@rev3
-      page: 1335
-      locator: "Tables 1676-1678 (crystal, miscellaneous, USB pins), QFN-80 Number column"
-  "/pins/5/name":
-    - source: raspberrypi/RP-008373-DS@rev3
-      page: 1335
-      locator: "Table 1679 \"Power supply pins\", QFN-80 Number(s) column"
-  "/pins/EP/name":
-    - source: raspberrypi/RP-008373-DS@rev3
-      page: 1336
-      locator: "Table 1679, \"GND ... Ground connection via central exposed pad\""
+  EP:
+    name:
+      value: GND
+      src: p1336 "Table 1679, "GND ... Ground connection via central exposed pad""
+    type: ground

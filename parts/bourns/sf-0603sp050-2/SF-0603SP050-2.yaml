@@ -1,41 +1,25 @@
 # Time-lag one-time SMD fuse, 0603/1608 case, 0.50A, 50VDC, cUL
 # E198545. Confirmed real/active as a direct row in Bourns' own
 # electrical characteristics table.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: bourns/SF-0603SP050-2
-
 manufacturer: bourns
 mpn: SF-0603SP050-2
-
 device: bourns/SF-0603SP-SERIES
 package: standards/CHIP0603-BOURNS-SF050
+sources: [bourns/SF-0603SP]
+source: bourns/SF-0603SP
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - bourns/SF-0603SP
+existence: { status: verified }
+lifecycle: { status: active }
 
 # Parameters (AI candidates, needs review): Electrical Characteristics
 # table, row for this model.
 parameters:
-  rated_current:
-    nominal: 0.5
-    unit: A
   rated_voltage:
-    nominal: 50
-    unit: V
-
-provenance:
-  "/parameters/rated_current":
-    - source: bourns/SF-0603SP
-      page: 1
-      locator: "Electrical Characteristics, SF-0603SP050-2 row: Rated Current (A) 0.50"
-  "/parameters/rated_voltage":
-    - source: bourns/SF-0603SP
-      page: 1
-      locator: "Electrical Characteristics, SF-0603SP050-2 row: Rated Voltage 50 VDC"
+    typ: 50 V
+    src: 'p1 "Electrical Characteristics, SF-0603SP050-2 row: Rated Voltage 50 VDC"'
+  rated_current:
+    typ: 0.5 A
+    src: 'p1 "Electrical Characteristics, SF-0603SP050-2 row: Rated Current (A) 0.50"'

@@ -6,38 +6,26 @@
 # outline DBV0005A (4214839/K 08/2024) on page 25. Its pdftotext -layout
 # text matches ti/SBOS833R page 94 (where manufacturers/ti/DBV0005A was
 # read) line for line, so the package is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/TLV62568DBVR
-
 manufacturer: ti
-mpn: "TLV62568DBVR"
-
+mpn: TLV62568DBVR
 device: ti/TLV62568-DBV
-package: manufacturers/ti/DBV0005A
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src:
+    - p18 "Package Option Addendum, row "TLV62568DBVR", "SOT-23 (DBV) | 5""
+    - p25 "PACKAGE OUTLINE DBV0005A (4214839/K 08/2024)"
+
+sources: [ti/SLVSD89B]
+source: ti/SLVSD89B
 
 existence:
   status: verified
+  src: p18 "Package Option Addendum, Packaging Information table, row "TLV62568DBVR""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLVSD89B
-
-provenance:
-  "/existence":
-    - source: ti/SLVSD89B
-      page: 18
-      locator: "Package Option Addendum, Packaging Information table, row \"TLV62568DBVR\""
-  "/lifecycle":
-    - source: ti/SLVSD89B
-      page: 18
-      locator: "Package Option Addendum, row \"TLV62568DBVR\", Status \"Active\""
-  "/package":
-    - source: ti/SLVSD89B
-      page: 18
-      locator: "Package Option Addendum, row \"TLV62568DBVR\", \"SOT-23 (DBV) | 5\""
-    - source: ti/SLVSD89B
-      page: 25
-      locator: "PACKAGE OUTLINE DBV0005A (4214839/K 08/2024)"
+  src: p18 "Package Option Addendum, row "TLV62568DBVR", Status "Active""

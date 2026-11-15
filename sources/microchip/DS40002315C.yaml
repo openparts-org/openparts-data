@@ -8,15 +8,12 @@
 # C04-074-PT tables (pages 665, 668) read with pdftotext -layout; the
 # pinout (page 16) and I/O multiplexing table (pages 17-18) were rendered
 # and read as images.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: microchip/DS40002315@revC
-
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/AVR64DD32-28-Complete-DataSheet-DS40002315.pdf
+date: 2024-02
+revision: C
 publisher: microchip
 document_id: DS40002315
 document_type: datasheet
-
-revision: "C"
-date: "2024-02"
-
-url: "https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/AVR64DD32-28-Complete-DataSheet-DS40002315.pdf"

@@ -4,15 +4,12 @@
 # be a PDF with this document number on page 1); read with pdftotext
 # -layout and rendered (pdftoppm) for the outline drawing. Page numbers
 # cited are PDF page indices (= printed "n of N").
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: diodes/DS30098
-
+url: https://www.diodes.com/assets/Datasheets/BAT54WS.pdf
+date: 2022-07
+revision: 14-2
 publisher: diodes
 document_id: DS30098
 document_type: datasheet
-
-revision: "14-2"
-date: "2022-07"
-
-url: "https://www.diodes.com/assets/Datasheets/BAT54WS.pdf"

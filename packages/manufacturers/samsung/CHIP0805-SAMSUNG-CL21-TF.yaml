@@ -3,47 +3,31 @@
 # W 1.25+/-0.10, T 1.25+/-0.10 mm; T also matches the catalog THICKNESS
 # CODE table (samsung/MLCC_2512 p7: 0805 F 1.25 +/-0.10). BW not given:
 # lead_length left out.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/samsung/CHIP0805-SAMSUNG-CL21-TF
-
 family: chip
 lead_count: 2
+source: samsung/CL21B105KBFNNN
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 2.0
-    min: 1.9
-    max: 2.1
-    unit: mm
   body_width:
-    nominal: 1.25
-    min: 1.15
-    max: 1.35
-    unit: mm
+    min: 1.15 mm
+    typ: 1.25 mm
+    max: 1.35 mm
+    src: '"Size table, "W Size": "1.25+/-0.10mm""'
+  body_length:
+    min: 1.9 mm
+    typ: 2 mm
+    max: 2.1 mm
+    src: '"Size table, "L Size": "2.00+/-0.10mm""'
   body_height:
-    nominal: 1.25
-    min: 1.15
-    max: 1.35
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: samsung/CL21B105KBFNNN
-      locator: "Size table, \"L Size\": \"2.00+/-0.10mm\""
-  "/dimensions/body_width":
-    - source: samsung/CL21B105KBFNNN
-      locator: "Size table, \"W Size\": \"1.25+/-0.10mm\""
-  "/dimensions/body_height":
-    - source: samsung/CL21B105KBFNNN
-      locator: "Size table, \"T Size\": \"1.25+/-0.10mm\""
-    - source: samsung/MLCC_2512
-      page: 7
-      locator: "Part Numbering, 7 THICKNESS CODE table (rendered), size 0805/2012, code F: 1.25 +/-0.10"
+    min: 1.15 mm
+    typ: 1.25 mm
+    max: 1.35 mm
+    src:
+      - '"Size table, "T Size": "1.25+/-0.10mm""'
+      - 'samsung/MLCC_2512 p7 "Part Numbering, 7 THICKNESS CODE table (rendered), size 0805/2012, code F: 1.25 +/-0.10"'

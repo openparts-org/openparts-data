@@ -4,31 +4,18 @@
 # Package: page-5 CASE 403D (98AON04079D) renders pixel-identical to
 # MBRA140T3/D page 5 (pdftoppm -r 100 crop, md5), so standards/DO214AC-
 # ONSEMI-403D is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/MBRA340T3G
-
 manufacturer: onsemi
 mpn: MBRA340T3G
-
 device: onsemi/MBRA340
-package: standards/DO214AC-ONSEMI-403D
+package: { value: standards/DO214AC-ONSEMI-403D, src: p5 "MECHANICAL CASE OUTLINE -- see header" }
+sources: [onsemi/MBRA340T3-D]
+source: onsemi/MBRA340T3-D
 
 existence:
   status: verified
+  src: 'p1 "ORDERING INFORMATION: "MBRA340T3G | SMA (Pb-Free) | 5,000 / Tape & Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/MBRA340T3-D
-
-provenance:
-  "/existence":
-    - source: onsemi/MBRA340T3-D
-      page: 1
-      locator: "ORDERING INFORMATION: \"MBRA340T3G | SMA (Pb-Free) | 5,000 / Tape & Reel\""
-  "/package":
-    - source: onsemi/MBRA340T3-D
-      page: 5
-      locator: "MECHANICAL CASE OUTLINE -- see header"
+lifecycle: { status: unknown }

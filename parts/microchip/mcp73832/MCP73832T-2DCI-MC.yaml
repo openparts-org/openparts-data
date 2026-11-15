@@ -6,43 +6,29 @@
 # "Dual-Flat, No-Lead (2x3 mm body), 8-Lead" -> drawing C04-123C (page
 # 20). The id replaces "/" with "-"; mpn keeps the real string.
 # lifecycle: no production-status statement in the datasheet; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/MCP73832T-2DCI-MC
-
 manufacturer: microchip
-mpn: "MCP73832T-2DCI/MC"
-
+mpn: MCP73832T-2DCI/MC
 device: microchip/MCP73832-DFN8
-package: manufacturers/microchip/DFN8-2x3-P0.5-MC-C04-123C
+
+package:
+  value: manufacturers/microchip/DFN8-2x3-P0.5-MC-C04-123C
+  src:
+    - p26 "Product Identification System, Package "MC = Dual-Flat, No-Lead (2x3 mm body), 8-Lead""
+    - p20 "drawing C04-123C "8-Lead Plastic Dual Flat, No Lead Package (MC) - 2x3x0.9 mm Body [DFN]""
+
+sources: [microchip/DS20001984@revH]
+source: microchip/DS20001984@revH
 
 existence:
   status: probable
+  src: 'p26 "Product Identification System, example d) "MCP73832T-2DCI/MC: Tape and Reel, 4.20V VREG, Options DC, 8LD DFN package""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS20001984@revH
+lifecycle: { status: unknown }
 
 parameters:
   output_voltage:
-    nominal: 4.2
-    unit: V
-
-provenance:
-  "/parameters/output_voltage":
-    - source: microchip/DS20001984@revH
-      page: 26
-      locator: "Product Identification System, Regulation Voltage table: Code 2 = 4.20V (VREG code of MCP73832T-2DCI/MC)"
-  "/existence":
-    - source: microchip/DS20001984@revH
-      page: 26
-      locator: "Product Identification System, example d) \"MCP73832T-2DCI/MC: Tape and Reel, 4.20V VREG, Options DC, 8LD DFN package\""
-  "/package":
-    - source: microchip/DS20001984@revH
-      page: 26
-      locator: "Product Identification System, Package \"MC = Dual-Flat, No-Lead (2x3 mm body), 8-Lead\""
-    - source: microchip/DS20001984@revH
-      page: 20
-      locator: "drawing C04-123C \"8-Lead Plastic Dual Flat, No Lead Package (MC) - 2x3x0.9 mm Body [DFN]\""
+    typ: 4.2 V
+    src: 'p26 "Product Identification System, Regulation Voltage table: Code 2 = 4.20V (VREG code of MCP73832T-2DCI/MC)"'

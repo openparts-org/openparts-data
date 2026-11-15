@@ -3,68 +3,42 @@
 # only are printed; min/max apply the blanket "Tolerance is +/-0.2"
 # note (Note 2) of these 1206-size sheets. The terminal length 0.5 is
 # dimensioned on the pin-2 terminal only; both terminals are drawn equal.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/kingbright/CHIP-KINGBRIGHT-APT3216
-
 family: chip
 lead_count: 2
+source: kingbright/DSAC0900
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 3.2
-    min: 3.0
-    max: 3.4
-    unit: mm
   body_width:
-    nominal: 1.6
-    min: 1.4
-    max: 1.8
-    unit: mm
+    min: 1.4 mm
+    typ: 1.6 mm
+    max: 1.8 mm
+    src:
+      - 'kingbright/DSAD0986 p1 "PACKAGE DIMENSIONS top view "1.6(0.063)"; min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.2)"'
+      - p1 "PACKAGE DIMENSIONS top view "1.6(0.063)" (same drawing)"
+  body_length:
+    min: 3 mm
+    typ: 3.2 mm
+    max: 3.4 mm
+    src:
+      - 'kingbright/DSAD0986 p1 "PACKAGE DIMENSIONS side view "3.2(0.126)"; min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.2)"'
+      - p1 "PACKAGE DIMENSIONS side view "3.2(0.126)" (same drawing)"
   body_height:
-    nominal: 0.75
-    min: 0.55
-    max: 0.95
-    unit: mm
+    min: 0.55 mm
+    typ: 0.75 mm
+    max: 0.95 mm
+    src:
+      - 'kingbright/DSAD0986 p1 "PACKAGE DIMENSIONS side view "0.75(0.03)"; min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.2)"'
+      - p1 "PACKAGE DIMENSIONS side view "0.75(0.03)" (same drawing)"
   lead_length:
-    nominal: 0.5
-    min: 0.3
-    max: 0.7
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: kingbright/DSAD0986
-      page: 1
-      locator: "PACKAGE DIMENSIONS side view \"3.2(0.126)\"; min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.2)"
-    - source: kingbright/DSAC0900
-      page: 1
-      locator: "PACKAGE DIMENSIONS side view \"3.2(0.126)\" (same drawing)"
-  "/dimensions/body_width":
-    - source: kingbright/DSAD0986
-      page: 1
-      locator: "PACKAGE DIMENSIONS top view \"1.6(0.063)\"; min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.2)"
-    - source: kingbright/DSAC0900
-      page: 1
-      locator: "PACKAGE DIMENSIONS top view \"1.6(0.063)\" (same drawing)"
-  "/dimensions/body_height":
-    - source: kingbright/DSAD0986
-      page: 1
-      locator: "PACKAGE DIMENSIONS side view \"0.75(0.03)\"; min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.2)"
-    - source: kingbright/DSAC0900
-      page: 1
-      locator: "PACKAGE DIMENSIONS side view \"0.75(0.03)\" (same drawing)"
-  "/dimensions/lead_length":
-    - source: kingbright/DSAD0986
-      page: 1
-      locator: "PACKAGE DIMENSIONS bottom view terminal \"0.5(0.02)\" (dimensioned on the pin-2 side only); min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.2)"
-    - source: kingbright/DSAC0900
-      page: 1
-      locator: "PACKAGE DIMENSIONS bottom view terminal \"0.5(0.02)\" (dimensioned on the pin-2 side only) (same drawing)"
+    min: 0.3 mm
+    typ: 0.5 mm
+    max: 0.7 mm
+    src:
+      - 'kingbright/DSAD0986 p1 "PACKAGE DIMENSIONS bottom view terminal "0.5(0.02)" (dimensioned on the pin-2 side only); min/max = nominal +/- the page-1 blanket tolerance note (Note 2: +/-0.2)"'
+      - p1 "PACKAGE DIMENSIONS bottom view terminal "0.5(0.02)" (dimensioned on the pin-2 side only) (same drawing)"

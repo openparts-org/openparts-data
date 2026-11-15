@@ -7,15 +7,12 @@
 # 300 dpi pdftoppm render. The same page is embedded in BCP53T1/D
 # Rev. 15 (page 6) and PZT2222AT1/D Rev. 12 (page 5): a 100 dpi render
 # of the drawing area of all three pages is pixel-identical (same md5).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: onsemi/98ASB42680B
-
+url: https://www.onsemi.com/download/package-drawing/pdf/318E-04.pdf
+date: 2018-10-02
+revision: R
 publisher: onsemi
 document_id: 98ASB42680B
 document_type: package_drawing
-
-revision: "R"
-date: "2018-10-02"
-
-url: "https://www.onsemi.com/download/package-drawing/pdf/318E-04.pdf"

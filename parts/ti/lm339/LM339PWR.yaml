@@ -6,38 +6,24 @@
 # 12/2023) on page 51. Its pdftotext -layout text matches the outline
 # page the package was read from (ti/SCES650K page 52) line for line, so
 # manufacturers/ti/PW0014A is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/LM339PWR
-
 manufacturer: ti
-mpn: "LM339PWR"
-
+mpn: LM339PWR
 device: ti/LM339
-package: manufacturers/ti/PW0014A
+
+package:
+  value: manufacturers/ti/PW0014A
+  src:
+    - p30 "Package Option Addendum, row "LM339PWR", "TSSOP (PW) | 14""
+    - p51 "PACKAGE OUTLINE PW0014A (4220202/B 12/2023)"
+
+sources: [ti/SLCS006Z]
+source: ti/SLCS006Z
 
 existence:
   status: verified
+  src: p30 "Package Option Addendum, Packaging Information table, row "LM339PWR""
 
-lifecycle:
-  status: active
-
-sources:
-  - ti/SLCS006Z
-
-provenance:
-  "/existence":
-    - source: ti/SLCS006Z
-      page: 30
-      locator: "Package Option Addendum, Packaging Information table, row \"LM339PWR\""
-  "/lifecycle":
-    - source: ti/SLCS006Z
-      page: 30
-      locator: "Package Option Addendum, row \"LM339PWR\", Status \"Active\""
-  "/package":
-    - source: ti/SLCS006Z
-      page: 30
-      locator: "Package Option Addendum, row \"LM339PWR\", \"TSSOP (PW) | 14\""
-    - source: ti/SLCS006Z
-      page: 51
-      locator: "PACKAGE OUTLINE PW0014A (4220202/B 12/2023)"
+lifecycle: { status: active, src: 'p30 "Package Option Addendum, row "LM339PWR", Status "Active""' }

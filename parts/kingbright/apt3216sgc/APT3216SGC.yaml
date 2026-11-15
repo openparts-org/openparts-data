@@ -1,26 +1,14 @@
 # APT3216SGC: Super Bright Green (GaP) chip LED, Kingbright datasheet DSAC0900.
 # lifecycle unknown: no production-status statement in the datasheet.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
-id: "kingbright/APT3216SGC"
-
+id: kingbright/APT3216SGC
 manufacturer: kingbright
-mpn: "APT3216SGC"
-
+mpn: APT3216SGC
 device: kingbright/APT3216SGC
 package: manufacturers/kingbright/CHIP-KINGBRIGHT-APT3216
+sources: [kingbright/DSAC0900]
+source: kingbright/DSAC0900
 
-existence:
-  status: verified
-
-lifecycle:
-  status: unknown
-
-sources:
-  - kingbright/DSAC0900
-
-provenance:
-  "/existence":
-    - source: kingbright/DSAC0900
-      page: 1
-      locator: "Title and SELECTION GUIDE table, Part Number column"
+existence: { status: verified, src: 'p1 "Title and SELECTION GUIDE table, Part Number column"' }
+lifecycle: { status: unknown }

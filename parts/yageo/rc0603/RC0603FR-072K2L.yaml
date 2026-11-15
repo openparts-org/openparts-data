@@ -4,71 +4,39 @@
 # Value is an E24 value inside the 1% (E24/E96) range of Table 2 (PDF p5);
 # 7" paper reel offered for RC0603 in Table 4 (PDF p7). Lifecycle not stated
 # in the datasheet -> unknown. Body = same Table 1 dimensions for every value.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: yageo/RC0603FR-072K2L
-
 manufacturer: yageo
 mpn: RC0603FR-072K2L
-
 device: yageo/RC0603-GENERAL-PURPOSE
 package: standards/CHIP0603-RC
+sources: [yageo/PYU-RC_GROUP@V14]
+source: yageo/PYU-RC_GROUP@V14
 
 # existence is `probable`: the MPN is assembled from the part-numbering
 # legend (or printed only as an example), not listed verbatim in an
 # orderable list (openparts/skills/add-part section 2).
 existence:
   status: probable
+  src:
+    - 'p2 "ORDERING INFORMATION - GLOBAL PART NUMBER: RC XXXX X X X XX XXXX L; (2) F = +/-1.0%, J = +/-5.0% (for jumper ordering, use code of J); (3) R = Paper taping reel; (4) ''-'' = based on spec; (5) 07 = 7 inch dia. reel & standard power; (6) letter R/K/M is decimal point (97R6, 9K76, 1M); (7) L default code"'
+    - 'p5 "Table 2 RC0603 row, 1/10 W standard power: 1% (E24/E96) 1 Ohm <= R <= 10 MOhm; Jumper < 50 mOhm"'
+    - 'p7 "Table 4 ''Packing style and packaging quantity'': RC0402 / RC0603 paper taping reel (R) 7" (178 mm) available"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - yageo/PYU-RC_GROUP@V14
+lifecycle: { status: unknown }
 
 # Parameters (AI candidates, needs review): resistance and tolerance from
 # the ordering-code table; power is the standard-power rating (code 07);
 # TCR is the Table 2 standard-power row for this resistance value.
 parameters:
+  tolerance: { tol: ±1 %, src: 'p2 "ORDERING INFORMATION, (2) TOLERANCE: F = ± 1.0%"' }
   resistance:
-    nominal: 2.2
-    unit: kΩ
-  tolerance:
-    min: -1
-    max: 1
-    unit: "%"
+    typ: 2.2 kΩ
+    src: 'p2 "ORDERING INFORMATION, (6) RESISTANCE VALUE: letter R/K/M is decimal point (97R6 = 97.6Ω, 9K76 = 9760Ω, 1M = 1,000,000Ω) -> 2K2 = 2.2 kΩ"'
   power_rating:
-    nominal: 0.1
-    unit: W
+    typ: 0.1 W
+    src: 'p7 "POWER RATING, each type rated power at 70℃: RC0603=1/10 W (standard power; ORDERING INFORMATION p2, (5) 07 = 7 inch dia. Reel & Standard power)"'
   temperature_coefficient:
-    min: -100
-    max: 100
-    unit: ppm/°C
-
-provenance:
-  "/existence":
-    - source: yageo/PYU-RC_GROUP@V14
-      page: 2
-      locator: "ORDERING INFORMATION - GLOBAL PART NUMBER: RC XXXX X X X XX XXXX L; (2) F = +/-1.0%, J = +/-5.0% (for jumper ordering, use code of J); (3) R = Paper taping reel; (4) '-' = based on spec; (5) 07 = 7 inch dia. reel & standard power; (6) letter R/K/M is decimal point (97R6, 9K76, 1M); (7) L default code"
-    - source: yageo/PYU-RC_GROUP@V14
-      page: 5
-      locator: "Table 2 RC0603 row, 1/10 W standard power: 1% (E24/E96) 1 Ohm <= R <= 10 MOhm; Jumper < 50 mOhm"
-    - source: yageo/PYU-RC_GROUP@V14
-      page: 7
-      locator: "Table 4 'Packing style and packaging quantity': RC0402 / RC0603 paper taping reel (R) 7\" (178 mm) available"
-  "/parameters/resistance":
-    - source: yageo/PYU-RC_GROUP@V14
-      page: 2
-      locator: "ORDERING INFORMATION, (6) RESISTANCE VALUE: letter R/K/M is decimal point (97R6 = 97.6Ω, 9K76 = 9760Ω, 1M = 1,000,000Ω) -> 2K2 = 2.2 kΩ"
-  "/parameters/tolerance":
-    - source: yageo/PYU-RC_GROUP@V14
-      page: 2
-      locator: "ORDERING INFORMATION, (2) TOLERANCE: F = ± 1.0%"
-  "/parameters/power_rating":
-    - source: yageo/PYU-RC_GROUP@V14
-      page: 7
-      locator: "POWER RATING, each type rated power at 70℃: RC0603=1/10 W (standard power; ORDERING INFORMATION p2, (5) 07 = 7 inch dia. Reel & Standard power)"
-  "/parameters/temperature_coefficient":
-    - source: yageo/PYU-RC_GROUP@V14
-      page: 5
-      locator: "Table 2 'Electrical characteristics', RC0603 1/10 W (standard power) row, Temperature coefficient: 10Ω<R≦10MΩ: ± 100ppm°C (ORDERING INFORMATION (4) '-' = Based on spec.)"
+    tol: ±100 ppm/°C
+    src: 'p5 "Table 2 ''Electrical characteristics'', RC0603 1/10 W (standard power) row, Temperature coefficient: 10Ω<R≦10MΩ: ± 100ppm°C (ORDERING INFORMATION (4) ''-'' = Based on spec.)"'

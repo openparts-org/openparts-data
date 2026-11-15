@@ -3,48 +3,32 @@
 # 3000/7\" Tape & Reel". (The task listed "AP2112K-3.3"; the orderable
 # code in the table is AP2112K-3.3TRG1: TR = tape & reel, G1 = green.)
 # lifecycle: no production-status statement in the datasheet; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: diodes/AP2112K-3.3TRG1
-
 manufacturer: diodes
 mpn: AP2112K-3.3TRG1
-
 device: diodes/AP2112K
-package: standards/SOT25-3.00x1.60-P0.95-DIODES
+
+package:
+  value: standards/SOT25-3.00x1.60-P0.95-DIODES
+  src: p14 ""Package Outline Dimensions" SOT25"
+
+sources: [diodes/DS39724]
+source: diodes/DS39724
 
 existence:
   status: verified
+  src: p12 ""Ordering Information" table, SOT25 3.3V row "AP2112K-3.3TRG1""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - diodes/DS39724
+lifecycle: { status: unknown }
 
 parameters:
   output_voltage:
-    nominal: 3.3
-    unit: V
+    typ: 3.3 V
+    src: p12 "Ordering Information table, SOT25, Condition 3.3V, Part Number AP2112K-3.3TRG1"
   dropout_voltage:
-    nominal: 250
-    max: 400
-    unit: mV
-
-provenance:
-  "/parameters/output_voltage":
-    - source: diodes/DS39724
-      page: 12
-      locator: "Ordering Information table, SOT25, Condition 3.3V, Part Number AP2112K-3.3TRG1"
-  "/parameters/dropout_voltage":
-    - source: diodes/DS39724
-      page: 8
-      locator: "AP2112-3.3 Electrical Characteristics, VDROP Dropout Voltage, IOUT = 600mA: Typ 250 mV, Max 400 mV"
-  "/existence":
-    - source: diodes/DS39724
-      page: 12
-      locator: "\"Ordering Information\" table, SOT25 3.3V row \"AP2112K-3.3TRG1\""
-  "/package":
-    - source: diodes/DS39724
-      page: 14
-      locator: "\"Package Outline Dimensions\" SOT25"
+    typ: 250 mV
+    max: 400 mV
+    at: { IOUT: 600 mA }
+    src: 'p8 "AP2112-3.3 Electrical Characteristics, VDROP Dropout Voltage: Typ 250 mV, Max 400 mV"'

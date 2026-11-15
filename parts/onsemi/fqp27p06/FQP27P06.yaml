@@ -6,73 +6,43 @@
 # Package: datasheet page 1 "CASE 340AT"; outline from the standalone
 # drawing 98AON13818G.
 # No lifecycle statement for this MPN.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/FQP27P06
-
 manufacturer: onsemi
 mpn: FQP27P06
-
 device: onsemi/FQP27P06
-package: manufacturers/onsemi/TO220-3LD-340AT
+
+package:
+  value: manufacturers/onsemi/TO220-3LD-340AT
+  src: [p1 "Package callout "CASE 340AT"", onsemi/98AON13818G p1 "CASE 340AT outline"]
+
+sources: [onsemi/FQP27P06-D, onsemi/98AON13818G]
+source: onsemi/FQP27P06-D
 
 existence:
   status: probable
+  src: p1 "Title "FQP27P06"; ORDERING INFORMATION row reads "FCP380N60 | TO-220-3LD | 1000 Units / Tube" (typo, see header)"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/FQP27P06-D
-  - onsemi/98AON13818G
+lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: p_channel
+  polarity: { value: p_channel, src: 'p1 "Page-1 title: "MOSFET - P-Channel, QFET""' }
   drain_source_voltage:
-    nominal: -60
-    unit: V
+    typ: -60 V
+    at: { TC: 25 °C }
+    src: 'p1 "ABSOLUTE MAXIMUM RATINGS, VDSS Drain-Source Voltage: -60 V"'
   drain_current:
-    nominal: -27
-    unit: A
+    typ: -27 A
+    at: { TC: 25 °C }
+    src: 'p1 "ABSOLUTE MAXIMUM RATINGS, ID Drain Current - Continuous: -27 A"'
   rds_on:
-    nominal: 0.055
-    max: 0.07
-    unit: Ω
+    typ: 0.055 Ω
+    max: 0.07 Ω
+    at: { VGS: -10 V, ID: -13.5 A, TC: 25 °C }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, RDS(on) Static Drain-Source On-Resistance: Typ 0.055, Max 0.07 Ω"'
   gate_threshold_voltage:
-    min: -4.0
-    max: -2.0
-    unit: V
-
-provenance:
-  "/existence":
-    - source: onsemi/FQP27P06-D
-      page: 1
-      locator: "Title \"FQP27P06\"; ORDERING INFORMATION row reads \"FCP380N60 | TO-220-3LD | 1000 Units / Tube\" (typo, see header)"
-  "/package":
-    - source: onsemi/FQP27P06-D
-      page: 1
-      locator: "Package callout \"CASE 340AT\""
-    - source: onsemi/98AON13818G
-      page: 1
-      locator: "CASE 340AT outline"
-  "/parameters/polarity":
-    - source: onsemi/FQP27P06-D
-      page: 1
-      locator: "Page-1 title: \"MOSFET - P-Channel, QFET\""
-  "/parameters/drain_source_voltage":
-    - source: onsemi/FQP27P06-D
-      page: 1
-      locator: "ABSOLUTE MAXIMUM RATINGS (TC = 25°C), VDSS Drain-Source Voltage: -60 V"
-  "/parameters/drain_current":
-    - source: onsemi/FQP27P06-D
-      page: 1
-      locator: "ABSOLUTE MAXIMUM RATINGS, ID Drain Current - Continuous (TC = 25°C): -27 A"
-  "/parameters/rds_on":
-    - source: onsemi/FQP27P06-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS (TC = 25°C), RDS(on) Static Drain-Source On-Resistance, VGS = -10 V, ID = -13.5 A: Typ 0.055, Max 0.07 Ω"
-  "/parameters/gate_threshold_voltage":
-    - source: onsemi/FQP27P06-D
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS (TC = 25°C), VGS(th) Gate Threshold Voltage: Min -2.0, Max -4.0 V"
+    min: -4 V
+    max: -2 V
+    at: { TC: 25 °C }
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, VGS(th) Gate Threshold Voltage: Min -2.0, Max -4.0 V"'

@@ -10,16 +10,13 @@
 # revision date: page 17 "SOT-223 CASE 318H ISSUE B, DATE 13 MAY 2020"
 # (document 98ASH70634A) and pages 18-19 "DPAK-3 6.10x6.54x2.28, 2.29P
 # CASE 369C ISSUE L, DATE 24 AUG 2026" (document 98AON10527D).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: onsemi/NCP1117-D
-
+retrieved: 2026-11-10
+url: https://www.onsemi.com/pdf/datasheet/ncp1117-d.pdf
+date: 2021-08
 publisher: onsemi
 document_id: NCP1117/D
 document_type: datasheet
-
 revision: "31"
-date: "2021-08"
-
-url: "https://www.onsemi.com/pdf/datasheet/ncp1117-d.pdf"
-retrieved: "2026-11-10"

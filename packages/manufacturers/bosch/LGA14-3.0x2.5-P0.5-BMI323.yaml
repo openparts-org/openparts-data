@@ -16,106 +16,62 @@
 # dimension "0.7 +-0.025" is not labelled in the drawing and is not
 # recorded. Not drawn by the generator: the pin-1 marker pad ("must not
 # be electrically connected", page 212).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/bosch/LGA14-3.0x2.5-P0.5-BMI323
-
 family: lga
 lead_count: 14
-lead_layout: [4, 3, 4, 3]
+
+lead_layout:
+  value: [4, 3, 4, 3]
+  src:
+    - p212 "Figure 45 bottom view numbering 1-14"
+    - bosch/BST-BMI330-DS000-03 p212 "Figure 45 bottom view numbering 1-14"
+    - p206 "Figure 36 pin-out top view"
+    - bosch/BST-BMI330-DS000-03 p206 "Figure 36 pin-out top view"
+
+source: bosch/BST-BMI323-DS000-13
 
 pitch:
-  nominal: 0.5
-  unit: mm
+  typ: 0.5 mm
+  src:
+    - p212 "Figure 45 bottom view, boxed 0.5 (10x)"
+    - bosch/BST-BMI330-DS000-03 p212 "Figure 45 bottom view, boxed 0.5 (10x)"
+
+geometry: { type: parametric, generator: lga }
 
 dimensions:
   body_width:
-    nominal: 3.0
-    unit: mm
+    typ: 3 mm
+    src:
+      - p212 "Figure 44 top view, boxed 3"
+      - bosch/BST-BMI330-DS000-03 p212 "Figure 44 top view, boxed 3"
   body_length:
-    nominal: 2.5
-    unit: mm
+    typ: 2.5 mm
+    src:
+      - p212 "Figure 44 top view, boxed 2.5"
+      - bosch/BST-BMI330-DS000-03 p212 "Figure 44 top view, boxed 2.5"
   body_height:
-    nominal: 0.83
-    min: 0.79
-    max: 0.87
-    unit: mm
-  lead_length:
-    nominal: 0.475
-    unit: mm
-  lead_width:
-    nominal: 0.25
-    unit: mm
+    min: 0.79 mm
+    typ: 0.83 mm
+    max: 0.87 mm
+    src:
+      - p212 "Figure 44 side view, 0.83 +-0.04"
+      - bosch/BST-BMI330-DS000-03 p212 "Figure 44 side view, 0.83 +-0.04"
   lead_inset:
-    nominal: 0.1
-    min: 0.05
-    max: 0.15
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: lga
-
-provenance:
-  "/pitch":
-    - source: bosch/BST-BMI323-DS000-13
-      page: 212
-      locator: "Figure 45 bottom view, boxed 0.5 (10x)"
-    - source: bosch/BST-BMI330-DS000-03
-      page: 212
-      locator: "Figure 45 bottom view, boxed 0.5 (10x)"
-  "/lead_layout":
-    - source: bosch/BST-BMI323-DS000-13
-      page: 212
-      locator: "Figure 45 bottom view numbering 1-14"
-    - source: bosch/BST-BMI330-DS000-03
-      page: 212
-      locator: "Figure 45 bottom view numbering 1-14"
-    - source: bosch/BST-BMI323-DS000-13
-      page: 206
-      locator: "Figure 36 pin-out top view"
-    - source: bosch/BST-BMI330-DS000-03
-      page: 206
-      locator: "Figure 36 pin-out top view"
-  "/dimensions/body_width":
-    - source: bosch/BST-BMI323-DS000-13
-      page: 212
-      locator: "Figure 44 top view, boxed 3"
-    - source: bosch/BST-BMI330-DS000-03
-      page: 212
-      locator: "Figure 44 top view, boxed 3"
-  "/dimensions/body_length":
-    - source: bosch/BST-BMI323-DS000-13
-      page: 212
-      locator: "Figure 44 top view, boxed 2.5"
-    - source: bosch/BST-BMI330-DS000-03
-      page: 212
-      locator: "Figure 44 top view, boxed 2.5"
-  "/dimensions/body_height":
-    - source: bosch/BST-BMI323-DS000-13
-      page: 212
-      locator: "Figure 44 side view, 0.83 +-0.04"
-    - source: bosch/BST-BMI330-DS000-03
-      page: 212
-      locator: "Figure 44 side view, 0.83 +-0.04"
-  "/dimensions/lead_length":
-    - source: bosch/BST-BMI323-DS000-13
-      page: 212
-      locator: "Figure 45 bottom view, 0.475 (8x) / 0.475 (6x)"
-    - source: bosch/BST-BMI330-DS000-03
-      page: 212
-      locator: "Figure 45 bottom view, 0.475 (8x) / 0.475 (6x)"
-  "/dimensions/lead_width":
-    - source: bosch/BST-BMI323-DS000-13
-      page: 212
-      locator: "Figure 45 bottom view, 0.25 (8x) / 0.25 (6x)"
-    - source: bosch/BST-BMI330-DS000-03
-      page: 212
-      locator: "Figure 45 bottom view, 0.25 (8x) / 0.25 (6x)"
-  "/dimensions/lead_inset":
-    - source: bosch/BST-BMI323-DS000-13
-      page: 212
-      locator: "Figure 45 bottom view, 0.1 +-0.05 (both directions)"
-    - source: bosch/BST-BMI330-DS000-03
-      page: 212
-      locator: "Figure 45 bottom view, 0.1 +-0.05 (both directions)"
+    min: 0.05 mm
+    typ: 0.1 mm
+    max: 0.15 mm
+    src:
+      - p212 "Figure 45 bottom view, 0.1 +-0.05 (both directions)"
+      - bosch/BST-BMI330-DS000-03 p212 "Figure 45 bottom view, 0.1 +-0.05 (both directions)"
+  lead_width:
+    typ: 0.25 mm
+    src:
+      - p212 "Figure 45 bottom view, 0.25 (8x) / 0.25 (6x)"
+      - bosch/BST-BMI330-DS000-03 p212 "Figure 45 bottom view, 0.25 (8x) / 0.25 (6x)"
+  lead_length:
+    typ: 0.475 mm
+    src:
+      - p212 "Figure 45 bottom view, 0.475 (8x) / 0.475 (6x)"
+      - bosch/BST-BMI330-DS000-03 p212 "Figure 45 bottom view, 0.475 (8x) / 0.475 (6x)"

@@ -6,15 +6,12 @@
 # printed page number. Page 1 "List of Models" is the orderable model
 # table; page 3 "Dimensions" the drawings, PCB pads and terminal
 # arrangement (top view).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: omron/A113-E1-06
-
+url: https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf
+date: 2019-07-26
+revision: 06
 publisher: omron
-document_id: "A113-E1"
+document_id: A113-E1
 document_type: datasheet
-
-revision: "06"
-date: "2019-07-26"
-
-url: "https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3fs.pdf"

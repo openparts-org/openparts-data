@@ -5,32 +5,21 @@
 # reel/tray order-code table exists in either document.
 # Lifecycle: the Product Brief states "We expect RP2350 to remain in
 # production until at least January 2045" (PDF page 3), family-wide.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: raspberrypi/RP2350B
-
 manufacturer: raspberrypi
 mpn: RP2350B
-
 device: raspberrypi/RP2350B
 package: standards/QFN80-RP2350B
+sources: [raspberrypi/RP-008373-DS@rev3, raspberrypi/RP-008374-DS@rev1]
+source: raspberrypi/RP-008373-DS@rev3
 
 existence:
   status: verified
+  src: p14 "Table 1 "RP2350 device family", row "RP2350B QFN-80 None 48 8""
 
 lifecycle:
-  status: active
-
-sources:
-  - raspberrypi/RP-008373-DS@rev3
-  - raspberrypi/RP-008374-DS@rev1
-
-provenance:
-  "/existence":
-    - source: raspberrypi/RP-008373-DS@rev3
-      page: 14
-      locator: "Table 1 \"RP2350 device family\", row \"RP2350B QFN-80 None 48 8\""
-  "/lifecycle/status":
-    - source: raspberrypi/RP-008374-DS@rev1
-      page: 3
-      locator: "\"We expect RP2350 to remain in production until at least January 2045\""
+  status:
+    value: active
+    src: raspberrypi/RP-008374-DS@rev1 p3 ""We expect RP2350 to remain in production until at least January 2045""

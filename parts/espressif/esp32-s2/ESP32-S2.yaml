@@ -5,21 +5,14 @@
 # for detail), so the pinout -- while mostly consistent -- has one
 # unresolved gap that a primary PDF re-check should close before this
 # is upgraded to `verified`.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: espressif/ESP32-S2
-
 manufacturer: espressif
 mpn: ESP32-S2
-
 device: espressif/ESP32-S2
 package: standards/QFN56-ESP32-S2
+sources: [espressif/esp32-s2_datasheet_en@rev1.9]
 
-existence:
-  status: probable
-
-lifecycle:
-  status: active
-
-sources:
-  - espressif/esp32-s2_datasheet_en@rev1.9
+existence: { status: probable }
+lifecycle: { status: active }

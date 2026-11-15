@@ -9,58 +9,29 @@
 # distributor search-result snippets (Mouser/DigiKey/Newark/RS/TME)
 # suggest current availability but were not independently verified, so
 # not upgraded to "active".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: murata/LQG18HN10NJ00D
-
 manufacturer: murata
 mpn: LQG18HN10NJ00D
-
 device: murata/LQG18HN10N
 package: standards/CHIP0603-LQG18HN
+sources: [murata/JELF243B_0002Y-01]
+source: murata/JELF243B_0002Y-01
 
-existence:
-  status: verified
-
-lifecycle:
-  status: unknown
-
-sources:
-  - murata/JELF243B_0002Y-01
+existence: { status: verified, src: p1 "Section 3 "Part Number and Rating" table" }
+lifecycle: { status: unknown }
 
 parameters:
   tolerance:
-    min: -5
-    max: 5
-    unit: "%"
+    tol: ±5 %
+    src: 'p1 "3. Part Number and Rating, row LQG18HN10NJ00D: Inductance Tolerance ±5%"'
   inductance:
-    nominal: 10
-    unit: nH
+    typ: 10 nH
+    src: 'p1 "3. Part Number and Rating, row LQG18HN10NJ00D: Inductance Nominal value 10 nH"'
   rated_current:
-    nominal: 650
-    unit: mA
+    typ: 650 mA
+    src: 'p1 "3. Part Number and Rating, row LQG18HN10NJ00D: Rated current (mA) 650 (7.5: product temperature rise 25°C max.)"'
   dcr:
-    max: 0.3
-    unit: Ω
-
-provenance:
-  "/existence":
-    - source: murata/JELF243B_0002Y-01
-      page: 1
-      locator: "Section 3 \"Part Number and Rating\" table"
-  "/parameters/tolerance":
-    - source: murata/JELF243B_0002Y-01
-      page: 1
-      locator: "3. Part Number and Rating, row LQG18HN10NJ00D: Inductance Tolerance ±5%"
-  "/parameters/inductance":
-    - source: murata/JELF243B_0002Y-01
-      page: 1
-      locator: "3. Part Number and Rating, row LQG18HN10NJ00D: Inductance Nominal value 10 nH"
-  "/parameters/rated_current":
-    - source: murata/JELF243B_0002Y-01
-      page: 1
-      locator: "3. Part Number and Rating, row LQG18HN10NJ00D: Rated current (mA) 650 (7.5: product temperature rise 25°C max.)"
-  "/parameters/dcr":
-    - source: murata/JELF243B_0002Y-01
-      page: 1
-      locator: "3. Part Number and Rating, row LQG18HN10NJ00D: DC resistance (Ω max.) 0.30"
+    max: 0.3 Ω
+    src: 'p1 "3. Part Number and Rating, row LQG18HN10NJ00D: DC resistance (Ω max.) 0.30"'

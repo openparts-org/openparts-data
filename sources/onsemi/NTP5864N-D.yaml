@@ -3,15 +3,12 @@
 # Power MOSFET 60 V N-Channel, TO-220. Page 1: MARKING DIAGRAM & PIN
 # ASSIGNMENT (1 Gate, 2 Drain, 3 Source, 4 Drain), "TO-220AB CASE 221A
 # STYLE 5", ORDERING INFORMATION. No outline page.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: onsemi/NTP5864N-D
-
+url: https://www.onsemi.com/pdf/datasheet/ntp5864n-d.pdf
+date: 2019-06
+revision: "1"
 publisher: onsemi
 document_id: NTP5864N/D
 document_type: datasheet
-
-revision: "1"
-date: "2019-06"
-
-url: "https://www.onsemi.com/pdf/datasheet/ntp5864n-d.pdf"

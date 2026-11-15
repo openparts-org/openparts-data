@@ -16,95 +16,43 @@
 # pins 1, 2, 3 left to right along the bottom edge (pin-1 mark at 1),
 # 5 above pin 1 and 4 above pin 3 -- lead_layout [3, 2] in the
 # generator's counter-clockwise convention.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/richtek/TSOT23-5-DS9080
-
 family: sot
 lead_count: 5
-lead_layout: [3, 2]
+
+lead_layout:
+  value: [3, 2]
+  src:   'p4 "7 Pin Configuration, TSOT-23-5 (TOP VIEW): 1, 2, 3 on the bottom edge, 5 and 4 on the top edge"'
+
+source: richtek/DS9080-09
 
 pitch:
-  min: 0.838
-  max: 1.041
-  unit: mm
+  min: 0.838 mm
+  max: 1.041 mm
+  src: p17 "19.1 TSOT-23-5 table, "e 0.838 / 1.041" (Min/Max only)"
+
+geometry: { type: parametric, generator: sot }
 
 dimensions:
   body_width:
-    min: 2.692
-    max: 3.099
-    unit: mm
+    min: 2.692 mm
+    max: 3.099 mm
+    src: p17 "19.1 TSOT-23-5 table, "D 2.692 / 3.099" -- see letter mapping"
   body_length:
-    min: 1.397
-    max: 1.803
-    unit: mm
-  overall_length:
-    min: 2.591
-    max: 3.000
-    unit: mm
-  overall_height:
-    min: 0.700
-    max: 1.000
-    unit: mm
-  standoff:
-    min: 0.000
-    max: 0.100
-    unit: mm
-  lead_width:
-    min: 0.300
-    max: 0.559
-    unit: mm
-  lead_length:
-    min: 0.300
-    max: 0.610
-    unit: mm
+    min: 1.397 mm
+    max: 1.803 mm
+    src: p17 "19.1 TSOT-23-5 table, "B 1.397 / 1.803" -- see letter mapping"
   lead_thickness:
-    min: 0.080
-    max: 0.254
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: sot
-
-provenance:
-  "/pitch":
-    - source: richtek/DS9080-09
-      page: 17
-      locator: "19.1 TSOT-23-5 table, \"e 0.838 / 1.041\" (Min/Max only)"
-  "/lead_layout":
-    - source: richtek/DS9080-09
-      page: 4
-      locator: "7 Pin Configuration, TSOT-23-5 (TOP VIEW): 1, 2, 3 on the bottom edge, 5 and 4 on the top edge"
-  "/dimensions/body_width":
-    - source: richtek/DS9080-09
-      page: 17
-      locator: "19.1 TSOT-23-5 table, \"D 2.692 / 3.099\" -- see letter mapping"
-  "/dimensions/body_length":
-    - source: richtek/DS9080-09
-      page: 17
-      locator: "19.1 TSOT-23-5 table, \"B 1.397 / 1.803\" -- see letter mapping"
-  "/dimensions/overall_length":
-    - source: richtek/DS9080-09
-      page: 17
-      locator: "19.1 TSOT-23-5 table, \"C 2.591 / 3.000\" (lead-tip span)"
-  "/dimensions/overall_height":
-    - source: richtek/DS9080-09
-      page: 17
-      locator: "19.1 TSOT-23-5 table, \"A 0.700 / 1.000\""
-  "/dimensions/standoff":
-    - source: richtek/DS9080-09
-      page: 17
-      locator: "19.1 TSOT-23-5 table, \"A1 0.000 / 0.100\""
-  "/dimensions/lead_width":
-    - source: richtek/DS9080-09
-      page: 17
-      locator: "19.1 TSOT-23-5 table, \"b 0.300 / 0.559\""
-  "/dimensions/lead_length":
-    - source: richtek/DS9080-09
-      page: 17
-      locator: "19.1 TSOT-23-5 table, \"L 0.300 / 0.610\""
-  "/dimensions/lead_thickness":
-    - source: richtek/DS9080-09
-      page: 17
-      locator: "19.1 TSOT-23-5 table, \"H 0.080 / 0.254\" (lead thickness in the side view)"
+    min: 0.08 mm
+    max: 0.254 mm
+    src: p17 "19.1 TSOT-23-5 table, "H 0.080 / 0.254" (lead thickness in the side view)"
+  lead_length: { min: 0.3 mm, max: 0.61 mm, src: 'p17 "19.1 TSOT-23-5 table, "L 0.300 / 0.610""' }
+  overall_length:
+    min: 2.591 mm
+    max: 3 mm
+    src: p17 "19.1 TSOT-23-5 table, "C 2.591 / 3.000" (lead-tip span)"
+  overall_height: { min: 0.7 mm, max: 1 mm, src: 'p17 "19.1 TSOT-23-5 table, "A 0.700 / 1.000""' }
+  standoff:       { min: 0 mm, max: 0.1 mm, src: 'p17 "19.1 TSOT-23-5 table, "A1 0.000 / 0.100""' }
+  lead_width: { min: 0.3 mm, max: 0.559 mm, src: 'p17 "19.1 TSOT-23-5 table, "b 0.300 / 0.559""' }

@@ -4,15 +4,12 @@
 # and read visually. Revision "F" / date from the document's own header
 # "SLASE59F - OCTOBER 2015 - REVISED DECEMBER 2019". The appended
 # Package Option Addendum is dated 10-Nov-2025 (PDF page 81).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: ti/SLASE59F
-
+url: https://www.ti.com/lit/ds/symlink/msp430fr2433.pdf
+date: 2019-12
+revision: F
 publisher: ti
 document_id: SLASE59F
 document_type: datasheet
-
-revision: "F"
-date: "2019-12"
-
-url: "https://www.ti.com/lit/ds/symlink/msp430fr2433.pdf"

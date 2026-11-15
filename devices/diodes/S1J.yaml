@@ -5,43 +5,26 @@
 # The datasheet names the terminals only by the cathode band and
 # prints no pin numbers: numbered in the generator's position
 # convention (pin 1 at -X), cathode = 1, anode = 2.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: diodes/S1J
-
 manufacturer: diodes
 category: diode
 family: S1x
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: diodes/DS16003
 
 parameters:
-  reverse_voltage:
-    max: 600
-    unit: V
-  forward_current:
-    max: 1.0
-    unit: A
   forward_voltage:
-    max: 1.1
-    unit: V
+    max: 1.1 V
+    at: { IF: 1 A }
+    src: 'p2 "Electrical Characteristics, Forward Voltage VFM: Max 1.1 V"'
+  reverse_voltage: { max: 600 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR, S1J/JB column: 600 V"' }
+  forward_current:
+    max: 1 A
+    at: { TT: 100 °C }
+    src: 'p2 "Maximum Ratings, Average Rectified Output Current IO: 1.0 A (all types)"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: diodes/DS16003
-      page: 2
-      locator: "Maximum Ratings, VRRM/VRWM/VR, S1J/JB column: 600 V"
-  "/parameters/forward_current":
-    - source: diodes/DS16003
-      page: 2
-      locator: "Maximum Ratings, Average Rectified Output Current @ TT = +100°C IO: 1.0 A (all types)"
-  "/parameters/forward_voltage":
-    - source: diodes/DS16003
-      page: 2
-      locator: "Electrical Characteristics, Forward Voltage @ IF = 1.0A VFM: Max 1.1 V"
-  "/pins":
-    - source: diodes/DS16003
-      page: 1
-      locator: "Mechanical Data: \"Polarity: Cathode Band or Cathode Notch\"; numbering by generator convention, see header"
+pins:
+  src: 'p1 "Mechanical Data: "Polarity: Cathode Band or Cathode Notch"; numbering by generator convention, see header"'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

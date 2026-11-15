@@ -8,37 +8,31 @@
 # terminals) -> analog; INH and A/B/C (I) -> input; VDD "Positive power
 # input" and VEE "Negative power input" -> power; VSS "Ground" ->
 # ground.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/CD4051B
-
 manufacturer: ti
 category: analog_switch
 family: CD405xB
+source: ti/SCHS047O
 
 pins:
-  "1":  { name: "CH4_IN/OUT", type: analog }
-  "2":  { name: "CH6_IN/OUT", type: analog }
-  "3":  { name: "COM_OUT/IN", type: analog }
-  "4":  { name: "CH7_IN/OUT", type: analog }
-  "5":  { name: "CH5_IN/OUT", type: analog }
+  src:
+    - p3 "Table 4-1 "Pin Functions CD4051B""
+    - p3 "Figure 4-1 "CD4051B E, M, NS, and PW Package ... (Top View)" (all 16 pins matched)"
+  "1":  { name: CH4_IN/OUT, type: analog }
+  "2":  { name: CH6_IN/OUT, type: analog }
+  "3":  { name: COM_OUT/IN, type: analog }
+  "4":  { name: CH7_IN/OUT, type: analog }
+  "5":  { name: CH5_IN/OUT, type: analog }
   "6":  { name: INH, type: input }
   "7":  { name: VEE, type: power }
   "8":  { name: VSS, type: ground }
   "9":  { name: C, type: input }
   "10": { name: B, type: input }
   "11": { name: A, type: input }
-  "12": { name: "CH3_IN/OUT", type: analog }
-  "13": { name: "CH0_IN/OUT", type: analog }
-  "14": { name: "CH1_IN/OUT", type: analog }
-  "15": { name: "CH2_IN/OUT", type: analog }
+  "12": { name: CH3_IN/OUT, type: analog }
+  "13": { name: CH0_IN/OUT, type: analog }
+  "14": { name: CH1_IN/OUT, type: analog }
+  "15": { name: CH2_IN/OUT, type: analog }
   "16": { name: VDD, type: power }
-
-provenance:
-  "/pins":
-    - source: ti/SCHS047O
-      page: 3
-      locator: "Table 4-1 \"Pin Functions CD4051B\""
-    - source: ti/SCHS047O
-      page: 3
-      locator: "Figure 4-1 \"CD4051B E, M, NS, and PW Package ... (Top View)\" (all 16 pins matched)"

@@ -3,57 +3,33 @@
 # Package: datasheet page 1 "CASE 221A"; outline from the standalone
 # drawing 98ASB42148B.
 # No lifecycle statement for this MPN.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/TIP120G
-
 manufacturer: onsemi
 mpn: TIP120G
-
 device: onsemi/TIP120-SERIES
-package: manufacturers/onsemi/TO220-10.10x4.45-P2.54-221A
+
+package:
+  value: manufacturers/onsemi/TO220-10.10x4.45-P2.54-221A
+  src: [p1 "Package callout "CASE 221A"", onsemi/98ASB42148B p1 "CASE 221A outline"]
+
+sources: [onsemi/TIP120-D, onsemi/98ASB42148B]
+source: onsemi/TIP120-D
 
 existence:
   status: verified
+  src: 'p7 "ORDERING INFORMATION: "TIP120G | TO-220 (Pb-Free) | 50 Units / Rail""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/TIP120-D
-  - onsemi/98ASB42148B
+lifecycle: { status: unknown }
 
 parameters:
   polarity:
     value: npn
+    src: 'p2 "Page header: "TIP120, TIP121, TIP122 (NPN); TIP125, TIP126, TIP127 (PNP)""'
   collector_emitter_voltage:
-    nominal: 60
-    unit: V
+    typ: 60 V
+    src: 'p2 "MAXIMUM RATINGS, VCEO Collector-Emitter Voltage, TIP120, TIP125 column: 60 Vdc"'
   collector_current:
-    nominal: 5.0
-    unit: A
-
-provenance:
-  "/existence":
-    - source: onsemi/TIP120-D
-      page: 7
-      locator: "ORDERING INFORMATION: \"TIP120G | TO-220 (Pb-Free) | 50 Units / Rail\""
-  "/package":
-    - source: onsemi/TIP120-D
-      page: 1
-      locator: "Package callout \"CASE 221A\""
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "CASE 221A outline"
-  "/parameters/polarity":
-    - source: onsemi/TIP120-D
-      page: 2
-      locator: "Page header: \"TIP120, TIP121, TIP122 (NPN); TIP125, TIP126, TIP127 (PNP)\""
-  "/parameters/collector_emitter_voltage":
-    - source: onsemi/TIP120-D
-      page: 2
-      locator: "MAXIMUM RATINGS, VCEO Collector-Emitter Voltage, TIP120, TIP125 column: 60 Vdc"
-  "/parameters/collector_current":
-    - source: onsemi/TIP120-D
-      page: 2
-      locator: "MAXIMUM RATINGS, IC Collector Current - Continuous: 5.0 Adc"
+    typ: 5 A
+    src: 'p2 "MAXIMUM RATINGS, IC Collector Current - Continuous: 5.0 Adc"'

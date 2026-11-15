@@ -3,21 +3,16 @@
 # VOUT = 2, GND = 3; matches the "LP Package 3-Pin TO-92 (Bottom View)"
 # drawing on the same page. Pin numbers differ by package (TO-220 has
 # GND on 2), hence a package-specific device.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/LM35-LP
-
 manufacturer: ti
 category: temperature_sensor
 family: LM35
+source: ti/SNIS159H
 
 pins:
+  src: p3 "Pin Functions table, TO92 column (+VS 1, VOUT 2, GND 3)"
   "1": { name: +VS, type: power }
   "2": { name: VOUT, type: output }
   "3": { name: GND, type: ground }
-
-provenance:
-  "/pins":
-    - source: ti/SNIS159H
-      page: 3
-      locator: "Pin Functions table, TO92 column (+VS 1, VOUT 2, GND 3)"

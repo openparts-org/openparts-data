@@ -8,15 +8,24 @@
 # HOLD (active low) are not represented in the name. Types: CS, WP, SI,
 # SCK, HOLD -> input; SO -> output; VSS "Ground" -> ground; VCC "Supply
 # Voltage" -> power.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/25LC256
-
 manufacturer: microchip
 category: eeprom
-family: "25AA256/25LC256"
+family: 25AA256/25LC256
+source: microchip/DS20001822@revJ
+
+parameters:
+  capacity:
+    typ: 256 Kbit
+    src: 'p1 "Description: "(25XX256) are 256-Kbit Serial Electrically Erasable PROMs""'
 
 pins:
+  src:
+    - p6 "Table 2-1 "Pin Function Table", columns "PDIP" and "SOIC""
+    - p1 ""Package Types (not to scale)" figure "PDIP/SOIC" (all 8 pins matched)"
+    - p6 "Table 2-1 "Pin Function Table", column "DFN-S" (same numbers as PDIP/SOIC; note 1 on the exposed pad)"
   "1": { name: CS, type: input }
   "2": { name: SO, type: output }
   "3": { name: WP, type: input }
@@ -25,24 +34,3 @@ pins:
   "6": { name: SCK, type: input }
   "7": { name: HOLD, type: input }
   "8": { name: VCC, type: power }
-
-parameters:
-  capacity:
-    nominal: 256
-    unit: Kbit
-
-provenance:
-  "/parameters/capacity":
-    - source: microchip/DS20001822@revJ
-      page: 1
-      locator: "Description: \"(25XX256) are 256-Kbit Serial Electrically Erasable PROMs\""
-  "/pins":
-    - source: microchip/DS20001822@revJ
-      page: 6
-      locator: "Table 2-1 \"Pin Function Table\", columns \"PDIP\" and \"SOIC\""
-    - source: microchip/DS20001822@revJ
-      page: 1
-      locator: "\"Package Types (not to scale)\" figure \"PDIP/SOIC\" (all 8 pins matched)"
-    - source: microchip/DS20001822@revJ
-      page: 6
-      locator: "Table 2-1 \"Pin Function Table\", column \"DFN-S\" (same numbers as PDIP/SOIC; note 1 on the exposed pad)"

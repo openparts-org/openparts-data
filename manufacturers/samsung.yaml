@@ -3,11 +3,10 @@
 # (product.samsungsem.com, "SAMSUNG ELECTRO-MECHANICS"); the legal
 # suffix ("Co., Ltd.") is not printed in the documents read, so it is
 # left off.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: manufacturer
 id: samsung
 
-name: Samsung Electro-Mechanics
+website: { url: https://www.samsungsem.com }
 
-website:
-  url: "https://www.samsungsem.com"
+name: Samsung Electro-Mechanics

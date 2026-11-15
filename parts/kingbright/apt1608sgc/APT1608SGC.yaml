@@ -1,20 +1,13 @@
 # Super Bright Green 0603 SMD chip LED. Confirmed real via Octopart,
 # Mouser and DigiKey listings.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: kingbright/APT1608SGC
-
 manufacturer: kingbright
 mpn: APT1608SGC
-
 device: kingbright/APT1608SGC
 package: standards/CHIP0603-APT1608SGC
+sources: [kingbright/DSAD0932]
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - kingbright/DSAD0932
+existence: { status: verified }
+lifecycle: { status: active }

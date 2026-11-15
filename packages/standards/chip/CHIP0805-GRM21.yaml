@@ -1,47 +1,29 @@
 # Murata GRM21 series, 0805 MLCC body, from the "Specifications" table
 # (page 2) with explicit +/-0.15mm tolerances, so min/max are nominal
 # -/+ 0.15.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/CHIP0805-GRM21
-
 family: chip
 lead_count: 2
+source: murata/GRM21BR61E106KA73
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 2.0
-    min: 1.85
-    max: 2.15
-    unit: mm
   body_width:
-    nominal: 1.25
-    min: 1.10
-    max: 1.40
-    unit: mm
+    min: 1.1 mm
+    typ: 1.25 mm
+    max: 1.4 mm
+    src: p2 "Specifications, Width 1.25 +/-0.15mm"
+  body_length:
+    min: 1.85 mm
+    typ: 2 mm
+    max: 2.15 mm
+    src: p2 "Specifications, Length 2.0 +/-0.15mm"
   body_height:
-    nominal: 1.25
-    min: 1.10
-    max: 1.40
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: murata/GRM21BR61E106KA73
-      page: 2
-      locator: "Specifications, Length 2.0 +/-0.15mm"
-  "/dimensions/body_width":
-    - source: murata/GRM21BR61E106KA73
-      page: 2
-      locator: "Specifications, Width 1.25 +/-0.15mm"
-  "/dimensions/body_height":
-    - source: murata/GRM21BR61E106KA73
-      page: 2
-      locator: "Specifications, Thickness 1.25 +/-0.15mm"
+    min: 1.1 mm
+    typ: 1.25 mm
+    max: 1.4 mm
+    src: p2 "Specifications, Thickness 1.25 +/-0.15mm"

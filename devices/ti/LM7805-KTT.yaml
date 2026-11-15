@@ -2,57 +2,33 @@
 # Functions" (page 3): INPUT 1, GND 2, OUTPUT 3; "LM7805 and LM7812 KTT
 # Package 3-Pin DDPAK/TO-263 Top View": "TAB IS GND". The tab is keyed
 # "4", the number outline KTT0003B (page 29) prints on it.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/LM7805-KTT
-
 manufacturer: ti
 category: linear_regulator
 family: LM7805
-
-pins:
-  "1": { name: "INPUT", type: power }
-  "2": { name: "GND", type: ground }
-  "3": { name: "OUTPUT", type: power }
-  "4": { name: "GND", type: ground }
+source: ti/SNOSBT0L
 
 parameters:
   output_type:
     value: fixed
+    src: p1 "Title "LM340, LM340A and LM7805 Family Wide VIN 1.5-A Fixed Voltage Regulators"; 1 Features, "Available in Fixed 5-V, 12-V, and 15-V Options""
   output_voltage:
-    nominal: 5
-    unit: V
-  output_current:
-    max: 1.5
-    unit: A
+    typ: 5 V
+    src: p6 "6.6 LM340 / LM7805 Electrical Characteristics, "VO = 5 V, VI = 10 V""
+  output_current: { max: 1.5 A, src: 'p1 "1 Features, "Output Current up to 1.5 A""' }
   dropout_voltage:
-    nominal: 2
-    unit: V
+    typ: 2 V
+    at: { IOUT: 1 A, TJ: 25 °C }
+    src: 'p6 "6.6 LM340 / LM7805 Electrical Characteristics, Dropout voltage: TYP 2 V"'
 
-provenance:
-  "/parameters/output_type":
-    - source: ti/SNOSBT0L
-      page: 1
-      locator: "Title \"LM340, LM340A and LM7805 Family Wide VIN 1.5-A Fixed Voltage Regulators\"; 1 Features, \"Available in Fixed 5-V, 12-V, and 15-V Options\""
-  "/parameters/output_voltage":
-    - source: ti/SNOSBT0L
-      page: 6
-      locator: "6.6 LM340 / LM7805 Electrical Characteristics, \"VO = 5 V, VI = 10 V\""
-  "/parameters/output_current":
-    - source: ti/SNOSBT0L
-      page: 1
-      locator: "1 Features, \"Output Current up to 1.5 A\""
-  "/parameters/dropout_voltage":
-    - source: ti/SNOSBT0L
-      page: 6
-      locator: "6.6 LM340 / LM7805 Electrical Characteristics, Dropout voltage, TJ = 25°C, IO = 1 A: TYP 2 V"
-  "/pins":
-    - source: ti/SNOSBT0L
-      page: 3
-      locator: "\"Pin Functions\": INPUT 1, GND 2, OUTPUT 3"
-    - source: ti/SNOSBT0L
-      page: 3
-      locator: "\"LM7805 and LM7812 KTT Package 3-Pin DDPAK/TO-263 Top View\": \"TAB IS GND\""
-    - source: ti/SNOSBT0L
-      page: 29
-      locator: "KTT0003B outline, bottom view: tab labelled \"4\""
+pins:
+  src:
+    - 'p3 ""Pin Functions": INPUT 1, GND 2, OUTPUT 3"'
+    - 'p3 ""LM7805 and LM7812 KTT Package 3-Pin DDPAK/TO-263 Top View": "TAB IS GND""'
+    - 'p29 "KTT0003B outline, bottom view: tab labelled "4""'
+  "1": { name: INPUT, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: OUTPUT, type: power }
+  "4": { name: GND, type: ground }

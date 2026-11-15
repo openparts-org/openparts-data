@@ -5,20 +5,15 @@
 # as reversed, so don't assume this mapping for other KPT-2012 color
 # variants. Cross-checked against page 6's tape drawing, which labels
 # one reel position "CATHODE", consistent with pin 2.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: kingbright/KPT-2012-SERIES
-
 manufacturer: kingbright
 category: led
 family: KPT-2012
+source: kingbright/KPT-2012
 
 pins:
+  src: p1 "Outline drawing polarity glyphs, "E"-suffix group"
   "1": { name: Anode, type: passive }
   "2": { name: Cathode, type: passive }
-
-provenance:
-  "/pins":
-    - source: kingbright/KPT-2012
-      page: 1
-      locator: "Outline drawing polarity glyphs, \"E\"-suffix group"

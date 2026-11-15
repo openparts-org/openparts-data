@@ -3,15 +3,12 @@
 # (the dimension table is garbled in the text layer). The only revision
 # marker is the footer date "10/26/25" printed on page 1; it is used as
 # the revision label.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: koa/RK73H
-
+url: https://www.koaspeer.com/pdfs/RK73H.pdf
+date: 2025-10-26
+revision: 10/26/25
 publisher: koa
 document_id: RK73H
 document_type: datasheet
-
-revision: "10/26/25"
-date: "2025-10-26"
-
-url: "https://www.koaspeer.com/pdfs/RK73H.pdf"

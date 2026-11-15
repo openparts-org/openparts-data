@@ -4,15 +4,12 @@
 # 9-10) and package outlines SOT313-2 (page 83) and SOT619-1 (page 86)
 # rendered and read visually. Page numbers = PDF page index = printed
 # "N of 100".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: nxp/LPC84x@rev2.1
-
+url: https://www.nxp.com/docs/en/data-sheet/LPC84x.pdf
+date: 2020-10-28
+revision: "2.1"
 publisher: nxp
 document_id: LPC84x
 document_type: datasheet
-
-revision: "2.1"
-date: "2020-10-28"
-
-url: "https://www.nxp.com/docs/en/data-sheet/LPC84x.pdf"

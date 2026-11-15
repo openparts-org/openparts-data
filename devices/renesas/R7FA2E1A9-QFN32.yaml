@@ -14,18 +14,29 @@
 # which are input ports"); every other port io. Peripheral alternate
 # functions (Pin Lists columns) are not modelled, same policy as the other
 # MCU devices in this dataset.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: renesas/R7FA2E1A9-QFN32
-
 manufacturer: renesas
 category: microcontroller
 family: RA2E1
+source: renesas/R01DS0386EJ0180
 
 pins:
+  src:
+    - p19 "Figure 1.7 "Pin assignment for LQFP/QFN 32-pin (top view)""
+    - p21 "Table 1.15 "Pin list" (pages 21-23), column "32-pin LQFP/QFN" (cross-check, all 32 pins matched)"
   "1":  { name: VCL, type: power }
-  "2":  { name: P215/XCIN, type: input }
-  "3":  { name: P214/XCOUT, type: input }
+  "2":
+    name: P215/XCIN
+    type:
+      value: input
+      src: 'p32 "Table 2.9 "I/O VOH, VOL (3)" Note 1: "Except for Ports P200, P214, and P215, which are input ports""'
+  "3":
+    name: P214/XCOUT
+    type:
+      value: input
+      src: 'p32 "Table 2.9 "I/O VOH, VOL (3)" Note 1: "Except for Ports P200, P214, and P215, which are input ports""'
   "4":  { name: VSS, type: ground }
   "5":  { name: P213/XTAL, type: io }
   "6":  { name: P212/EXTAL, type: io }
@@ -37,7 +48,11 @@ pins:
   "12": { name: P207, type: io }
   "13": { name: RES, type: reset }
   "14": { name: P201/MD, type: io }
-  "15": { name: P200, type: input }
+  "15":
+    name: P200
+    type:
+      value: input
+      src: 'p32 "Table 2.9 "I/O VOH, VOL (3)" Note 1: "Except for Ports P200, P214, and P215, which are input ports""'
   "16": { name: P300/SWCLK, type: io }
   "17": { name: P108/SWDIO, type: io }
   "18": { name: P109, type: io }
@@ -55,24 +70,3 @@ pins:
   "30": { name: AVSS0, type: ground }
   "31": { name: P011/VREFL0, type: io }
   "32": { name: P010/VREFH0, type: io }
-
-provenance:
-  "/pins":
-    - source: renesas/R01DS0386EJ0180
-      page: 19
-      locator: "Figure 1.7 \"Pin assignment for LQFP/QFN 32-pin (top view)\""
-    - source: renesas/R01DS0386EJ0180
-      page: 21
-      locator: "Table 1.15 \"Pin list\" (pages 21-23), column \"32-pin LQFP/QFN\" (cross-check, all 32 pins matched)"
-  "/pins/2/type":
-    - source: renesas/R01DS0386EJ0180
-      page: 32
-      locator: "Table 2.9 \"I/O VOH, VOL (3)\" Note 1: \"Except for Ports P200, P214, and P215, which are input ports\""
-  "/pins/3/type":
-    - source: renesas/R01DS0386EJ0180
-      page: 32
-      locator: "Table 2.9 \"I/O VOH, VOL (3)\" Note 1: \"Except for Ports P200, P214, and P215, which are input ports\""
-  "/pins/15/type":
-    - source: renesas/R01DS0386EJ0180
-      page: 32
-      locator: "Table 2.9 \"I/O VOH, VOL (3)\" Note 1: \"Except for Ports P200, P214, and P215, which are input ports\""

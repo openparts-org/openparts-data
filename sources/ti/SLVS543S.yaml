@@ -1,15 +1,12 @@
 # Official TI datasheet for TL431/TL432. Revision read from the page
 # header "SLVS543S - AUGUST 2004 - REVISED MAY 2024". Text read with
 # pdftotext -layout.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: ti/SLVS543S
-
+url: https://www.ti.com/lit/ds/symlink/tl431.pdf
+date: 2024-05
+revision: S
 publisher: ti
 document_id: SLVS543S
 document_type: datasheet
-
-revision: "S"
-date: "2024-05"
-
-url: "https://www.ti.com/lit/ds/symlink/tl431.pdf"

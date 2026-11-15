@@ -3,15 +3,12 @@
 # name and document content disagree (stale/shared asset path or
 # redirect on Diodes Inc's own site). Flagged, not hidden: `document_id`
 # below reflects the content actually read, not the URL's filename.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: diodes/DS30138
-
+url: https://www.diodes.com/assets/Datasheets/BAT54.pdf
+date: 2024-01
+revision: 14-2
 publisher: diodes
 document_id: DS30138
 document_type: datasheet
-
-revision: "14-2"
-date: "2024-01"
-
-url: "https://www.diodes.com/assets/Datasheets/BAT54.pdf"

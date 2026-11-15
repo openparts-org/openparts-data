@@ -12,51 +12,29 @@
 # statement, and the datasheet's page-1 disclaimer notes generically
 # that "some part numbers are discontinued" without naming which ones.
 # Not distributor-verified.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: panasonic/EEUFC0J331S
-
 manufacturer: panasonic
 mpn: EEUFC0J331S
-
 device: panasonic/EEUFC0J331
 package: standards/RADIAL-D6.3x11.2-P2.5
+sources: [panasonic/ABA0000C1209]
+source: panasonic/ABA0000C1209
 
 existence:
   status: verified
+  src: 'p3 ""Characteristics list" table, "Part No." column: "EEUFC0J331S( )""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - panasonic/ABA0000C1209
+lifecycle: { status: unknown }
 
 parameters:
   capacitance:
-    nominal: 330
-    unit: µF
+    typ: 330 µF
+    src: 'p3 "FC-A series Characteristics list, Part No. EEUFC0J331S( ) row: Capacitance (±20 %) 330 μF"'
   tolerance:
-    min: -20
-    max: 20
-    unit: "%"
+    tol: ±20 %
+    src: p3 "FC-A series Characteristics list, column header "Capacitance (±20 %)" for Part No. EEUFC0J331S( )"
   rated_voltage:
-    nominal: 6.3
-    unit: V
-
-provenance:
-  "/existence":
-    - source: panasonic/ABA0000C1209
-      page: 3
-      locator: "\"Characteristics list\" table, \"Part No.\" column: \"EEUFC0J331S( )\""
-  "/parameters/capacitance":
-    - source: panasonic/ABA0000C1209
-      page: 3
-      locator: "FC-A series Characteristics list, Part No. EEUFC0J331S( ) row: Capacitance (±20 %) 330 μF"
-  "/parameters/tolerance":
-    - source: panasonic/ABA0000C1209
-      page: 3
-      locator: "FC-A series Characteristics list, column header \"Capacitance (±20 %)\" for Part No. EEUFC0J331S( )"
-  "/parameters/rated_voltage":
-    - source: panasonic/ABA0000C1209
-      page: 3
-      locator: "FC-A series Characteristics list, Part No. EEUFC0J331S( ) in Rated voltage (V) 6.3 group"
+    typ: 6.3 V
+    src: p3 "FC-A series Characteristics list, Part No. EEUFC0J331S( ) in Rated voltage (V) 6.3 group"

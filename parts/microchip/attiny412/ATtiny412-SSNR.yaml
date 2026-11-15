@@ -10,34 +10,24 @@
 # sources/microchip/DS20001203W.yaml). lifecycle: no production-status
 # statement in the datasheet and the Microchip product page refused curl
 # and WebFetch (403); unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/ATtiny412-SSNR
-
 manufacturer: microchip
 mpn: ATtiny412-SSNR
-
 device: microchip/ATtiny412
-package: standards/SOIC8-3.90x4.90-P1.27
+
+package:
+  value: standards/SOIC8-3.90x4.90-P1.27
+  src:
+    - p554 "Section 37.1, row "ATtiny412-SSNR", "Pin Count 8", "Package Type SOIC""
+    - p558 "Section "8-Pin SOIC", drawing C04-057-SN Rev F sheet 2"
+
+sources: [microchip/DS40002287@revA]
+source: microchip/DS40002287@revA
 
 existence:
   status: verified
+  src: p554 "Section 37.1 "Product Information", Ordering Code row "ATtiny412-SSNR""
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS40002287@revA
-
-provenance:
-  "/existence":
-    - source: microchip/DS40002287@revA
-      page: 554
-      locator: "Section 37.1 \"Product Information\", Ordering Code row \"ATtiny412-SSNR\""
-  "/package":
-    - source: microchip/DS40002287@revA
-      page: 554
-      locator: "Section 37.1, row \"ATtiny412-SSNR\", \"Pin Count 8\", \"Package Type SOIC\""
-    - source: microchip/DS40002287@revA
-      page: 558
-      locator: "Section \"8-Pin SOIC\", drawing C04-057-SN Rev F sheet 2"
+lifecycle: { status: unknown }

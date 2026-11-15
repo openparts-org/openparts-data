@@ -4,49 +4,27 @@
 # 4.32-5.33, C 3.18-4.19) equal the STRAIGHT LEAD / BULK PACK table on
 # page 6 of this document, and pitch G 1.15-1.39 brackets its 1.27.
 # No lifecycle statement in the datasheet.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/P2N2222AG
-
 manufacturer: onsemi
 mpn: P2N2222AG
-
 device: onsemi/P2N2222A
 package: standards/TO92-BC547
+sources: [onsemi/P2N2222A-D]
+source: onsemi/P2N2222A-D
 
 existence:
   status: verified
+  src: 'p1 "ORDERING INFORMATION table: "P2N2222AG | TO-92 | 5000 Units/Bulk""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/P2N2222A-D
+lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: npn
+  polarity: { value: npn, src: 'p1 "Page-1 title: "Amplifier Transistors NPN Silicon""' }
   collector_emitter_voltage:
-    nominal: 40
-    unit: V
+    typ: 40 V
+    src: 'p1 "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO: 40 Vdc"'
   collector_current:
-    nominal: 600
-    unit: mA
-
-provenance:
-  "/existence":
-    - source: onsemi/P2N2222A-D
-      page: 1
-      locator: "ORDERING INFORMATION table: \"P2N2222AG | TO-92 | 5000 Units/Bulk\""
-  "/parameters/polarity":
-    - source: onsemi/P2N2222A-D
-      page: 1
-      locator: "Page-1 title: \"Amplifier Transistors NPN Silicon\""
-  "/parameters/collector_emitter_voltage":
-    - source: onsemi/P2N2222A-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO: 40 Vdc"
-  "/parameters/collector_current":
-    - source: onsemi/P2N2222A-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Collector Current - Continuous IC: 600 mAdc"
+    typ: 600 mA
+    src: 'p1 "MAXIMUM RATINGS, Collector Current - Continuous IC: 600 mAdc"'

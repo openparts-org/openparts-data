@@ -9,92 +9,37 @@
 # (MAX 1.75 only). Chamfer h 0.25-0.50, L1 1.04 REF and angles not
 # modelled. Same row values as manufacturers/microchip/SOIC16-SL-C04-108C
 # except D (8.65 vs 9.90) and c (0.17-0.25 vs 0.10-0.25).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/microchip/SOIC14-SL-C04-065B
-
 family: soic
 lead_count: 14
+source: microchip/DS21897@revB
 
-pitch:
-  nominal: 1.27
-  unit: mm
+pitch: { typ: 1.27 mm, src: 'p34 "C04-065B table, "Pitch e 1.27 BSC""' }
+geometry: { type: parametric, generator: soic }
 
 dimensions:
-  body_width:
-    nominal: 3.90
-    unit: mm
-  body_length:
-    nominal: 8.65
-    unit: mm
+  body_width:     { typ: 3.9 mm, src: 'p34 "C04-065B table, "Molded Package Width E1 3.90 BSC""' }
+  body_length:    { typ: 8.65 mm, src: 'p34 "C04-065B table, "Overall Length D 8.65 BSC""' }
   body_height:
-    min: 1.25
-    unit: mm
-  overall_width:
-    nominal: 6.00
-    unit: mm
-  overall_height:
-    max: 1.75
-    unit: mm
-  standoff:
-    min: 0.10
-    max: 0.25
-    unit: mm
-  lead_width:
-    min: 0.31
-    max: 0.51
-    unit: mm
-  lead_length:
-    min: 0.40
-    max: 1.27
-    unit: mm
+    min: 1.25 mm
+    src: p34 "C04-065B table, "Molded Package Thickness A2" (MIN 1.25 only)"
   lead_thickness:
-    min: 0.17
-    max: 0.25
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: soic
-
-provenance:
-  "/pitch":
-    - source: microchip/DS21897@revB
-      page: 34
-      locator: "C04-065B table, \"Pitch e 1.27 BSC\""
-  "/dimensions/body_width":
-    - source: microchip/DS21897@revB
-      page: 34
-      locator: "C04-065B table, \"Molded Package Width E1 3.90 BSC\""
-  "/dimensions/body_length":
-    - source: microchip/DS21897@revB
-      page: 34
-      locator: "C04-065B table, \"Overall Length D 8.65 BSC\""
-  "/dimensions/body_height":
-    - source: microchip/DS21897@revB
-      page: 34
-      locator: "C04-065B table, \"Molded Package Thickness A2\" (MIN 1.25 only)"
-  "/dimensions/overall_width":
-    - source: microchip/DS21897@revB
-      page: 34
-      locator: "C04-065B table, \"Overall Width E 6.00 BSC\""
-  "/dimensions/overall_height":
-    - source: microchip/DS21897@revB
-      page: 34
-      locator: "C04-065B table, \"Overall Height A\" (MAX 1.75 only)"
-  "/dimensions/standoff":
-    - source: microchip/DS21897@revB
-      page: 34
-      locator: "C04-065B table, \"Standoff A1 0.10 / - / 0.25\""
-  "/dimensions/lead_width":
-    - source: microchip/DS21897@revB
-      page: 34
-      locator: "C04-065B table, \"Lead Width b 0.31 / - / 0.51\""
-  "/dimensions/lead_length":
-    - source: microchip/DS21897@revB
-      page: 34
-      locator: "C04-065B table, \"Foot Length L 0.40 / - / 1.27\""
-  "/dimensions/lead_thickness":
-    - source: microchip/DS21897@revB
-      page: 34
-      locator: "C04-065B table, \"Lead Thickness c 0.17 / - / 0.25\""
+    min: 0.17 mm
+    max: 0.25 mm
+    src: p34 "C04-065B table, "Lead Thickness c 0.17 / - / 0.25""
+  overall_width:  { typ: 6 mm, src: 'p34 "C04-065B table, "Overall Width E 6.00 BSC""' }
+  overall_height: { max: 1.75 mm, src: 'p34 "C04-065B table, "Overall Height A" (MAX 1.75 only)"' }
+  standoff:
+    min: 0.1 mm
+    max: 0.25 mm
+    src: p34 "C04-065B table, "Standoff A1 0.10 / - / 0.25""
+  lead_width:
+    min: 0.31 mm
+    max: 0.51 mm
+    src: p34 "C04-065B table, "Lead Width b 0.31 / - / 0.51""
+  lead_length:
+    min: 0.4 mm
+    max: 1.27 mm
+    src: p34 "C04-065B table, "Foot Length L 0.40 / - / 1.27""

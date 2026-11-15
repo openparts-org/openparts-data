@@ -8,15 +8,12 @@
 # tables (pages 27-33) use an encoded font and were rendered (pdftoppm)
 # and read as images. Newer revisions (21298F/21298D guessed file names)
 # answered 301, not 200; revision E is what was read.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: microchip/DS21298@revE
-
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/21298e.pdf
+date: 2008-09
+revision: E
 publisher: microchip
 document_id: DS21298
 document_type: datasheet
-
-revision: "E"
-date: "2008-09"
-
-url: "https://ww1.microchip.com/downloads/en/DeviceDoc/21298e.pdf"

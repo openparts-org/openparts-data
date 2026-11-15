@@ -15,107 +15,62 @@
 # md5) in MBR140SFT1/D Rev. 7 page 5.
 # construction: molded -- page 1 Mechanical Characteristics "Case: Epoxy,
 # Molded".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/SOD123FL-ONSEMI-498
-
 family: sod_flat
 lead_count: 2
+source: onsemi/MBR120ESFT1-D
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+
+construction: { value: molded, src: 'p1 "Mechanical Characteristics: "Case: Epoxy, Molded""' }
+
+geometry: { type: parametric, generator: sod_flat }
 
 dimensions:
-  body_length:
-    nominal: 2.7
-    min: 2.5
-    max: 2.9
-    unit: mm
   body_width:
-    nominal: 1.65
-    min: 1.5
-    max: 1.8
-    unit: mm
+    min: 1.5 mm
+    typ: 1.65 mm
+    max: 1.8 mm
+    src: p5 "CASE 498 table, D 1.50 / 1.65 / 1.80"
+  body_length:
+    min: 2.5 mm
+    typ: 2.7 mm
+    max: 2.9 mm
+    src: p5 "CASE 498 table, E 2.50 / 2.70 / 2.90"
   body_height:
-    nominal: 0.9
-    min: 0.85
-    max: 0.95
-    unit: mm
-  overall_height:
-    nominal: 0.95
-    min: 0.9
-    max: 0.98
-    unit: mm
-  overall_length:
-    nominal: 3.6
-    min: 3.4
-    max: 3.8
-    unit: mm
-  lead_width:
-    nominal: 0.9
-    min: 0.7
-    max: 1.1
-    unit: mm
-  lead_length:
-    nominal: 0.75
-    min: 0.55
-    max: 0.95
-    unit: mm
+    min: 0.85 mm
+    typ: 0.9 mm
+    max: 0.95 mm
+    src: p5 "CASE 498 table, A2 0.85 / 0.90 / 0.95"
   lead_thickness:
-    nominal: 0.15
-    min: 0.1
-    max: 0.2
-    unit: mm
+    min: 0.1 mm
+    typ: 0.15 mm
+    max: 0.2 mm
+    src: p5 "CASE 498 table, c 0.10 / 0.15 / 0.20"
+  overall_length:
+    min: 3.4 mm
+    typ: 3.6 mm
+    max: 3.8 mm
+    src: p5 "CASE 498 table, HE 3.40 / 3.60 / 3.80"
+  overall_height:
+    min: 0.9 mm
+    typ: 0.95 mm
+    max: 0.98 mm
+    src: p5 "CASE 498 table, A 0.90 / 0.95 / 0.98"
   standoff:
-    nominal: 0.05
-    min: 0.0
-    max: 0.1
-    unit: mm
-
-construction: molded
-
-geometry:
-  type: parametric
-  generator: sod_flat
-
-provenance:
-  "/construction":
-    - source: onsemi/MBR120ESFT1-D
-      page: 1
-      locator: "Mechanical Characteristics: \"Case: Epoxy, Molded\""
-  "/dimensions/body_length":
-    - source: onsemi/MBR120ESFT1-D
-      page: 5
-      locator: "CASE 498 table, E 2.50 / 2.70 / 2.90"
-  "/dimensions/body_width":
-    - source: onsemi/MBR120ESFT1-D
-      page: 5
-      locator: "CASE 498 table, D 1.50 / 1.65 / 1.80"
-  "/dimensions/body_height":
-    - source: onsemi/MBR120ESFT1-D
-      page: 5
-      locator: "CASE 498 table, A2 0.85 / 0.90 / 0.95"
-  "/dimensions/overall_height":
-    - source: onsemi/MBR120ESFT1-D
-      page: 5
-      locator: "CASE 498 table, A 0.90 / 0.95 / 0.98"
-  "/dimensions/overall_length":
-    - source: onsemi/MBR120ESFT1-D
-      page: 5
-      locator: "CASE 498 table, HE 3.40 / 3.60 / 3.80"
-  "/dimensions/lead_width":
-    - source: onsemi/MBR120ESFT1-D
-      page: 5
-      locator: "CASE 498 table, b 0.70 / 0.90 / 1.10"
-  "/dimensions/lead_length":
-    - source: onsemi/MBR120ESFT1-D
-      page: 5
-      locator: "CASE 498 table, L 0.55 / 0.75 / 0.95"
-  "/dimensions/lead_thickness":
-    - source: onsemi/MBR120ESFT1-D
-      page: 5
-      locator: "CASE 498 table, c 0.10 / 0.15 / 0.20"
-  "/dimensions/standoff":
-    - source: onsemi/MBR120ESFT1-D
-      page: 5
-      locator: "CASE 498 table, A1 0.00 / 0.05 / 0.10"
+    min: 0 mm
+    typ: 0.05 mm
+    max: 0.1 mm
+    src: p5 "CASE 498 table, A1 0.00 / 0.05 / 0.10"
+  lead_width:
+    min: 0.7 mm
+    typ: 0.9 mm
+    max: 1.1 mm
+    src: p5 "CASE 498 table, b 0.70 / 0.90 / 1.10"
+  lead_length:
+    min: 0.55 mm
+    typ: 0.75 mm
+    max: 0.95 mm
+    src: p5 "CASE 498 table, L 0.55 / 0.75 / 0.95"

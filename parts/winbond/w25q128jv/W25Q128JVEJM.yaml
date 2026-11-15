@@ -5,34 +5,24 @@
 # winbond/W25Q128JV-S already covers the WSON 6x5/8x6 pad numbering
 # (section 3.3 is shared by SOIC 208-mil and both WSON packages).
 # lifecycle: not stated; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: winbond/W25Q128JVEJM
-
 manufacturer: winbond
-mpn: "W25Q128JVEJM"
-
+mpn: W25Q128JVEJM
 device: winbond/W25Q128JV-S
-package: manufacturers/winbond/WSON8-8x6-P1.27-E
+
+package:
+  value: manufacturers/winbond/WSON8-8x6-P1.27-E
+  src:
+    - 'p75 "Section 11 ordering legend: "E = WSON8 8x6-mm" (PDF page 75)"'
+    - p71 "Section 10.4 "8-Pad WSON 8x6-mm (Package Code E)""
+
+sources: [winbond/W25Q128JV@revF]
+source: winbond/W25Q128JV@revF
 
 existence:
   status: verified
+  src: p77 "Section 11.1 "Valid Part Numbers and Top Side Marking", W25Q128JV-IM/JM table, package "WSON-8 8x6-mm", product number "W25Q128JVEJM" (PDF page 77, printed page 76)"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - winbond/W25Q128JV@revF
-
-provenance:
-  "/existence":
-    - source: winbond/W25Q128JV@revF
-      page: 77
-      locator: "Section 11.1 \"Valid Part Numbers and Top Side Marking\", W25Q128JV-IM/JM table, package \"WSON-8 8x6-mm\", product number \"W25Q128JVEJM\" (PDF page 77, printed page 76)"
-  "/package":
-    - source: winbond/W25Q128JV@revF
-      page: 75
-      locator: "Section 11 ordering legend: \"E = WSON8 8x6-mm\" (PDF page 75)"
-    - source: winbond/W25Q128JV@revF
-      page: 71
-      locator: "Section 10.4 \"8-Pad WSON 8x6-mm (Package Code E)\""
+lifecycle: { status: unknown }

@@ -6,15 +6,12 @@
 # for standard ("Normal Capacitors_Standard") parts -- the only 0603/
 # 0402 L/W table (page 14) is for High Bending Strength parts and is
 # NOT used; L/W come from the per-part product pages instead.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: samsung/MLCC_2512
-
+url: https://product.samsungsem.com/resources/file/product-catalog/MLCC_2512.pdf
+date: 2025-12
+revision: December 2025
 publisher: samsung
 document_id: MLCC_2512
 document_type: datasheet
-
-revision: "December 2025"
-date: "2025-12"
-
-url: "https://product.samsungsem.com/resources/file/product-catalog/MLCC_2512.pdf"

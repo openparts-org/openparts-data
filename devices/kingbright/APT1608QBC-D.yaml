@@ -1,50 +1,33 @@
 # Blue (InGaN) SMD chip LED. Pin 1 = cathode, pin 2 = anode, from the
 # page-1 schematic symbol (cathode bar on the pin-1 side) and the
 # numbered bottom-view terminals.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: kingbright/APT1608QBC-D
-
 manufacturer: kingbright
 category: led
-family: "APT1608QBC-D"
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+family: APT1608QBC-D
+source: kingbright/DSAD9944
 
 parameters:
+  forward_voltage:
+    typ: 3.3 V
+    max: 4 V
+    at: { IF: 20 mA, TA: 25 °C }
+    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, Blue: Typ. 3.3 V, Max. 4.0 V"'
+  forward_current:
+    max: 30 mA
+    at: { TA: 25 °C }
+    src: 'p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF: 30 mA"'
   color:
     value: blue
+    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: Blue"'
   wavelength:
-    nominal: 465
-    unit: nm
-  forward_voltage:
-    nominal: 3.3
-    max: 4.0
-    unit: V
-  forward_current:
-    max: 30
-    unit: mA
+    typ: 465 nm
+    at: { IF: 20 mA, TA: 25 °C }
+    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Blue: Typ. 465 nm"'
 
-provenance:
-  "/parameters/color":
-    - source: kingbright/DSAD9944
-      page: 2
-      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: Blue"
-  "/parameters/wavelength":
-    - source: kingbright/DSAD9944
-      page: 2
-      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Dominant Wavelength IF = 20mA λdom, Blue: Typ. 465 nm"
-  "/parameters/forward_voltage":
-    - source: kingbright/DSAD9944
-      page: 2
-      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Forward Voltage IF = 20mA VF, Blue: Typ. 3.3 V, Max. 4.0 V"
-  "/parameters/forward_current":
-    - source: kingbright/DSAD9944
-      page: 2
-      locator: "ABSOLUTE MAXIMUM RATINGS at TA=25°C, DC Forward Current IF: 30 mA"
-  "/pins":
-    - source: kingbright/DSAD9944
-      page: 1
-      locator: "Schematic symbol \"1 -|<- 2\" (cathode bar at pin 1) and bottom-view pad numbers 1/2"
+pins:
+  src: p1 "Schematic symbol "1 -|<- 2" (cathode bar at pin 1) and bottom-view pad numbers 1/2"
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

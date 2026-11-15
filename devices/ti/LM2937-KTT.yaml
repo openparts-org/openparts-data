@@ -3,52 +3,32 @@
 # -- "The TAB is internally connected to device pin 2 (GND)" ->
 # connected_to "2". Tab keyed "4" as printed on outline KTT0003B (page
 # 29); the table's DCY column also numbers the tab 4.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/LM2937-KTT
-
 manufacturer: ti
 category: linear_regulator
 family: LM2937
-
-pins:
-  "1": { name: "INPUT", type: power }
-  "2": { name: "GND", type: ground }
-  "3": { name: "OUTPUT", type: power }
-  "4": { name: "GND", type: ground, connected_to: "2" }
+source: ti/SNVS100F
 
 parameters:
   input_voltage_max:
-    max: 26
-    unit: V
+    max: 26 V
+    src: 'p4 "6.3 Recommended Operating Conditions, Input voltage (VIN): MAX 26 V"'
   output_current:
-    nominal: 500
-    unit: mA
+    typ: 500 mA
+    src: 'p5 "6.5 Electrical Characteristics header: "IOUT(MAX) = 500 mA for the TO-220 and DDPAK/TO-263 packages" (DDPAK/TO-263)"'
   dropout_voltage:
-    nominal: 0.5
-    max: 1
-    unit: V
+    typ: 0.5 V
+    max: 1 V
+    src: 'p5 "6.5 Electrical Characteristics, Dropout voltage, IOUT = IOUT(MAX): TYP 0.5 V, MAX 1 V (same in every LM2937 output-voltage table, pages 5-7)"'
 
-provenance:
-  "/parameters/input_voltage_max":
-    - source: ti/SNVS100F
-      page: 4
-      locator: "6.3 Recommended Operating Conditions, Input voltage (VIN): MAX 26 V"
-  "/parameters/output_current":
-    - source: ti/SNVS100F
-      page: 5
-      locator: "6.5 Electrical Characteristics header: \"IOUT(MAX) = 500 mA for the TO-220 and DDPAK/TO-263 packages\" (DDPAK/TO-263)"
-  "/parameters/dropout_voltage":
-    - source: ti/SNVS100F
-      page: 5
-      locator: "6.5 Electrical Characteristics, Dropout voltage, IOUT = IOUT(MAX): TYP 0.5 V, MAX 1 V (same in every LM2937 output-voltage table, pages 5-7)"
-  "/pins":
-    - source: ti/SNVS100F
-      page: 3
-      locator: "\"Pin Functions\", KTT column: INPUT 1, GND 2, OUTPUT 3, GND TAB (\"internally connected to device pin 2 (GND)\")"
-    - source: ti/SNVS100F
-      page: 3
-      locator: "\"DDPAK/TO-263 Surface-Mount Package (KTT) Top View\""
-    - source: ti/SNVS100F
-      page: 29
-      locator: "KTT0003B outline, bottom view: tab labelled \"4\""
+pins:
+  src:
+    - 'p3 ""Pin Functions", KTT column: INPUT 1, GND 2, OUTPUT 3, GND TAB ("internally connected to device pin 2 (GND)")"'
+    - p3 ""DDPAK/TO-263 Surface-Mount Package (KTT) Top View""
+    - 'p29 "KTT0003B outline, bottom view: tab labelled "4""'
+  "1": { name: INPUT, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: OUTPUT, type: power }
+  "4": { name: GND, type: ground, connected_to: "2" }

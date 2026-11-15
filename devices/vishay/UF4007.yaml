@@ -1,43 +1,24 @@
 # UF4007 ultrafast rectifier (1000 V VRRM), DO-41 (Vishay 88755). Pin 1
 # = cathode (band end) per this dataset's axial convention; the
 # datasheet itself does not number the leads.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: vishay/UF4007
-
 manufacturer: vishay
 category: diode
 family: UF4007
-
-pins:
-  "1": { name: Cathode, type: passive }
-  "2": { name: Anode, type: passive }
+source: vishay/88755
 
 parameters:
-  reverse_voltage:
-    max: 1000
-    unit: V
-  forward_current:
-    max: 1.0
-    unit: A
   forward_voltage:
-    max: 1.7
-    unit: V
+    max: 1.7 V
+    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum instantaneous forward voltage, 1.0 A, VF: 1.7 V (cell spanning UF4005-UF4007)"'
+  reverse_voltage: { max: 1000 V, src: 'p1 "MAXIMUM RATINGS, VRRM, UF4007 column: 1000 V"' }
+  forward_current:
+    max: 1 A
+    src: 'p1 "MAXIMUM RATINGS, Maximum average forward rectified current 0.375" (9.5 mm) lead length at TA = 55 °C IF(AV): 1.0 A"'
 
-provenance:
-  "/parameters/reverse_voltage":
-    - source: vishay/88755
-      page: 1
-      locator: "MAXIMUM RATINGS, VRRM, UF4007 column: 1000 V"
-  "/parameters/forward_current":
-    - source: vishay/88755
-      page: 1
-      locator: "MAXIMUM RATINGS, Maximum average forward rectified current 0.375\" (9.5 mm) lead length at TA = 55 °C IF(AV): 1.0 A"
-  "/parameters/forward_voltage":
-    - source: vishay/88755
-      page: 2
-      locator: "ELECTRICAL CHARACTERISTICS, Maximum instantaneous forward voltage, 1.0 A, VF: 1.7 V (cell spanning UF4005-UF4007)"
-  "/pins":
-    - source: vishay/88755
-      page: 1
-      locator: "MECHANICAL DATA: \"Polarity: color band denotes cathode end\""
+pins:
+  src: 'p1 "MECHANICAL DATA: "Polarity: color band denotes cathode end""'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

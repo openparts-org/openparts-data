@@ -3,24 +3,30 @@
 # it is a separate device file from the 8-pin numbering). Transcribed
 # from section 3.5 "Pin Description SOIC 300-mil" (PDF page 7, printed
 # page 6), cross-checked against Figure 1c on the same page.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: winbond/W25Q128JV-F
-
 manufacturer: winbond
 category: flash
 family: W25Q128JV
+source: winbond/W25Q128JV@revF
+
+parameters:
+  capacity:
+    typ: 128 Mbit
+    src: 'p5 "Section 1 General Description: "The W25Q128JV (128M-bit) Serial Flash memory"; Section 2 Features: "W25Q128JV: 128M-bit / 16M-byte""'
 
 pins:
-  "1": { name: /HOLD or /RESET, type: io, alternate_functions: [IO3] }
-  "2": { name: VCC, type: power }
-  "3": { name: /RESET, type: reset }
-  "4": { name: N/C, type: nc }
-  "5": { name: N/C, type: nc }
-  "6": { name: N/C, type: nc }
-  "7": { name: /CS, type: input }
-  "8": { name: DO, type: io, alternate_functions: [IO1] }
-  "9": { name: /WP, type: io, alternate_functions: [IO2] }
+  src:  p7 "Section 3.5 "Pin Description SOIC 300-mil" table and Figure 1c"
+  "1":  { name: /HOLD or /RESET, type: io, alternate_functions: [IO3] }
+  "2":  { name: VCC, type: power }
+  "3":  { name: /RESET, type: reset }
+  "4":  { name: N/C, type: nc }
+  "5":  { name: N/C, type: nc }
+  "6":  { name: N/C, type: nc }
+  "7":  { name: /CS, type: input }
+  "8":  { name: DO, type: io, alternate_functions: [IO1] }
+  "9":  { name: /WP, type: io, alternate_functions: [IO2] }
   "10": { name: GND, type: ground }
   "11": { name: N/C, type: nc }
   "12": { name: N/C, type: nc }
@@ -28,18 +34,3 @@ pins:
   "14": { name: N/C, type: nc }
   "15": { name: DI, type: io, alternate_functions: [IO0] }
   "16": { name: CLK, type: input }
-
-parameters:
-  capacity:
-    nominal: 128
-    unit: Mbit
-
-provenance:
-  "/parameters/capacity":
-    - source: winbond/W25Q128JV@revF
-      page: 5
-      locator: "Section 1 General Description: \"The W25Q128JV (128M-bit) Serial Flash memory\"; Section 2 Features: \"W25Q128JV: 128M-bit / 16M-byte\""
-  "/pins":
-    - source: winbond/W25Q128JV@revF
-      page: 7
-      locator: "Section 3.5 \"Pin Description SOIC 300-mil\" table and Figure 1c"

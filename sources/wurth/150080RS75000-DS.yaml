@@ -7,15 +7,12 @@
 # every page carries CHECKED "LDo", REVISION "003.000", DATE
 # "2022-05-20" (YYYY-MM-DD), ORDER CODE "150080RS75000", STATUS "Valid" (the
 # document's release status -- not read as a product lifecycle status).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: wurth/150080RS75000-DS
-
-publisher: wurth
-document_id: "150080RS75000"
-document_type: datasheet
-
+url: https://www.we-online.com/components/products/datasheet/150080RS75000.pdf
+date: 2022-05-20
 revision: "003.000"
-date: "2022-05-20"
-
-url: "https://www.we-online.com/components/products/datasheet/150080RS75000.pdf"
+publisher: wurth
+document_id: 150080RS75000
+document_type: datasheet

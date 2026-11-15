@@ -2,52 +2,28 @@
 # The R82Y ~ 2R7M group (1.88 mm MAX) is standards/CHIP-BOURNS-SRN4018.
 # Height is max-only on the drawing, so only `max` is recorded (no
 # nominal invented). Terminal length is the side view's 1.3 TYP.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/bourns/CHIP-BOURNS-SRN4018-H1.80
-
 family: chip
 lead_count: 2
+source: bourns/SRN4018@rev10-26
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 4.0
-    min: 3.8
-    max: 4.2
-    unit: mm
   body_width:
-    nominal: 4.0
-    min: 3.8
-    max: 4.2
-    unit: mm
+    min: 3.8 mm
+    typ: 4 mm
+    max: 4.2 mm
+    src: p1 "Product Dimensions, top view 4.0 +/-0.2 (.157 +/-.008)"
+  body_length:
+    min: 3.8 mm
+    typ: 4 mm
+    max: 4.2 mm
+    src: p1 "Product Dimensions, top view 4.0 +/-0.2 (.157 +/-.008)"
   body_height:
-    max: 1.8
-    unit: mm
-  lead_length:
-    nominal: 1.3
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: bourns/SRN4018@rev10-26
-      page: 1
-      locator: "Product Dimensions, top view 4.0 +/-0.2 (.157 +/-.008)"
-  "/dimensions/body_width":
-    - source: bourns/SRN4018@rev10-26
-      page: 1
-      locator: "Product Dimensions, top view 4.0 +/-0.2 (.157 +/-.008)"
-  "/dimensions/body_height":
-    - source: bourns/SRN4018@rev10-26
-      page: 1
-      locator: "Product Dimensions, side view \"SRN4018-3R3M~SRN4018-331M: 1.80 (.071) MAX.\""
-  "/dimensions/lead_length":
-    - source: bourns/SRN4018@rev10-26
-      page: 1
-      locator: "Product Dimensions, side view terminal \"1.3 (.051) TYP.\""
+    max: 1.8 mm
+    src: 'p1 "Product Dimensions, side view "SRN4018-3R3M~SRN4018-331M: 1.80 (.071) MAX.""'
+  lead_length: { typ: 1.3 mm, src: 'p1 "Product Dimensions, side view terminal "1.3 (.051) TYP.""' }

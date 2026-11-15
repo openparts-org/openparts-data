@@ -5,15 +5,12 @@
 # pins, SMT, PCB thickness 0.8 mm) the Status is "Active" -- "Production is active. Expected lifetime: >10
 # years." A live page, not a revisioned document: revision/date record
 # the retrieval date. No page numbers apply (page: 1 = the single page).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: wurth/WR-USB-TYPE-C-product-page
-
+url: https://www.we-online.com/en/components/products/INPUT_OUTPUT_WR_USB_TYPE_C
+date: 2026-11-14
+revision: retrieved 2026-11-14
 publisher: wurth
-document_id: "INPUT_OUTPUT_WR_USB_TYPE_C"
+document_id: INPUT_OUTPUT_WR_USB_TYPE_C
 document_type: product_page
-
-revision: "retrieved 2026-11-14"
-date: "2026-11-14"
-
-url: "https://www.we-online.com/en/components/products/INPUT_OUTPUT_WR_USB_TYPE_C"

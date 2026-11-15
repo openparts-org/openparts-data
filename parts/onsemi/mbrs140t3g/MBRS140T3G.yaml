@@ -3,31 +3,18 @@
 # this OPN, so lifecycle is unknown.
 # Package: page-6 CASE 403A (98ASB42669B), standards/DO214AA-ONSEMI-403A
 # (read from this page).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/MBRS140T3G
-
 manufacturer: onsemi
 mpn: MBRS140T3G
-
 device: onsemi/MBRS140
-package: standards/DO214AA-ONSEMI-403A
+package: { value: standards/DO214AA-ONSEMI-403A, src: p6 "MECHANICAL CASE OUTLINE -- see header" }
+sources: [onsemi/MBRS140T3-D]
+source: onsemi/MBRS140T3-D
 
 existence:
   status: verified
+  src: 'p4 "DEVICE ORDERING INFORMATION: "MBRS140T3G | SMB (Pb-Free) | 2,500 / Tape & Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/MBRS140T3-D
-
-provenance:
-  "/existence":
-    - source: onsemi/MBRS140T3-D
-      page: 4
-      locator: "DEVICE ORDERING INFORMATION: \"MBRS140T3G | SMB (Pb-Free) | 2,500 / Tape & Reel\""
-  "/package":
-    - source: onsemi/MBRS140T3-D
-      page: 6
-      locator: "MECHANICAL CASE OUTLINE -- see header"
+lifecycle: { status: unknown }

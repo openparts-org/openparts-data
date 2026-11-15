@@ -2,15 +2,18 @@
 # From DS21298E Table 3-1 "Pin Function Table" (page 15), column
 # "MCP3208 PDIP, SOIC", checked against the "Package Types" figure
 # "MCP3208 PDIP, SOIC" (page 1). Types as microchip/MCP3008.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/MCP3208
-
 manufacturer: microchip
 category: adc
-family: "MCP3204/3208"
+family: MCP3204/3208
+source: microchip/DS21298@revE
 
 pins:
+  src:
+    - p15 "Table 3-1 "Pin Function Table", column "MCP3208 PDIP, SOIC""
+    - p1 ""Package Types" figure "MCP3208 PDIP, SOIC" (all 16 pins matched)"
   "1":  { name: CH0, type: analog }
   "2":  { name: CH1, type: analog }
   "3":  { name: CH2, type: analog }
@@ -20,19 +23,10 @@ pins:
   "7":  { name: CH6, type: analog }
   "8":  { name: CH7, type: analog }
   "9":  { name: DGND, type: ground }
-  "10": { name: "CS/SHDN", type: input }
+  "10": { name: CS/SHDN, type: input }
   "11": { name: DIN, type: input }
   "12": { name: DOUT, type: output }
   "13": { name: CLK, type: input }
   "14": { name: AGND, type: ground }
   "15": { name: VREF, type: analog }
   "16": { name: VDD, type: power }
-
-provenance:
-  "/pins":
-    - source: microchip/DS21298@revE
-      page: 15
-      locator: "Table 3-1 \"Pin Function Table\", column \"MCP3208 PDIP, SOIC\""
-    - source: microchip/DS21298@revE
-      page: 1
-      locator: "\"Package Types\" figure \"MCP3208 PDIP, SOIC\" (all 16 pins matched)"

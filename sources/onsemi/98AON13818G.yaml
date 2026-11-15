@@ -4,15 +4,12 @@
 # downloaded standalone (curl; the "340AT-01.pdf" form redirects, the
 # bare case name serves the PDF). The same issue is embedded in
 # FQP27P06/D p7, FQP47P06/D p8 and FQP17P06/D p7. No STYLE list.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: onsemi/98AON13818G
-
+url: https://www.onsemi.com/download/package-drawing/pdf/340AT.pdf
+date: 2022-08-08
+revision: B
 publisher: onsemi
 document_id: 98AON13818G
 document_type: package_drawing
-
-revision: "B"
-date: "2022-08-08"
-
-url: "https://www.onsemi.com/download/package-drawing/pdf/340AT.pdf"

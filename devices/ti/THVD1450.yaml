@@ -4,29 +4,23 @@
 # page; all 8 pins match. The DRB thermal pad ("No electrical
 # connection") has no pin here. RE is active low (overbar in the
 # datasheet; written without it). A/B "Bus input/output" typed io.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/THVD1450
-
 manufacturer: ti
 category: rs485_transceiver
 family: THVD14x0
+source: ti/SLLSEY3E
 
 pins:
-  "1":  { name: R, type: output }
-  "2":  { name: RE, type: input }
-  "3":  { name: DE, type: input }
-  "4":  { name: D, type: input }
-  "5":  { name: GND, type: ground }
-  "6":  { name: A, type: io }
-  "7":  { name: B, type: io }
-  "8":  { name: VCC, type: power }
-
-provenance:
-  "/pins":
-    - source: ti/SLLSEY3E
-      page: 5
-      locator: "\"Pin Functions\" table, column \"D\""
-    - source: ti/SLLSEY3E
-      page: 5
-      locator: "\"THVD1410, THVD1450 Devices 8-Pin D Package (SOIC) Top View\" figure (cross-check)"
+  src:
+    - p5 ""Pin Functions" table, column "D""
+    - p5 ""THVD1410, THVD1450 Devices 8-Pin D Package (SOIC) Top View" figure (cross-check)"
+  "1": { name: R, type: output }
+  "2": { name: RE, type: input }
+  "3": { name: DE, type: input }
+  "4": { name: D, type: input }
+  "5": { name: GND, type: ground }
+  "6": { name: A, type: io }
+  "7": { name: B, type: io }
+  "8": { name: VCC, type: power }

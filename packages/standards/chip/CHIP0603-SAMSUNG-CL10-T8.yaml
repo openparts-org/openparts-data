@@ -5,47 +5,31 @@
 # catalog THICKNESS CODE table (p7), which agree. Bandwidth (BW) is not
 # given on the product page or for standard parts in the catalog, so
 # lead_length is left out.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/CHIP0603-SAMSUNG-CL10-T8
-
 family: chip
 lead_count: 2
+source: samsung/CL10A106KP8NNN
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 1.6
-    min: 1.5
-    max: 1.7
-    unit: mm
   body_width:
-    nominal: 0.8
-    min: 0.7
-    max: 0.9
-    unit: mm
+    min: 0.7 mm
+    typ: 0.8 mm
+    max: 0.9 mm
+    src: '"Size table, "W Size": "0.80+/-0.10mm""'
+  body_length:
+    min: 1.5 mm
+    typ: 1.6 mm
+    max: 1.7 mm
+    src: '"Size table, "L Size": "1.60+/-0.10mm""'
   body_height:
-    nominal: 0.8
-    min: 0.7
-    max: 0.9
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: samsung/CL10A106KP8NNN
-      locator: "Size table, \"L Size\": \"1.60+/-0.10mm\""
-  "/dimensions/body_width":
-    - source: samsung/CL10A106KP8NNN
-      locator: "Size table, \"W Size\": \"0.80+/-0.10mm\""
-  "/dimensions/body_height":
-    - source: samsung/CL10A106KP8NNN
-      locator: "Size table, \"T Size\": \"0.80+/-0.10mm\""
-    - source: samsung/MLCC_2512
-      page: 7
-      locator: "Part Numbering, 7 THICKNESS CODE table, size 0603/1608, code 8: 0.80 +/-0.10"
+    min: 0.7 mm
+    typ: 0.8 mm
+    max: 0.9 mm
+    src:
+      - '"Size table, "T Size": "0.80+/-0.10mm""'
+      - 'samsung/MLCC_2512 p7 "Part Numbering, 7 THICKNESS CODE table, size 0603/1608, code 8: 0.80 +/-0.10"'

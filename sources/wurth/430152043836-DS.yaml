@@ -11,15 +11,12 @@
 # index = printed page ("1/6"). The page-1 drawing is generic for all 18
 # WS-TASV 6x6 SMD order codes: `pdftotext -layout` of page 1 is identical
 # across them except the order code and the "Dimensions" table (H, ØD).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: wurth/430152043836-DS
-
+url: https://www.we-online.com/components/products/datasheet/430152043836.pdf
+date: 2020-06-04
+revision: "002.002"
 publisher: wurth
 document_id: "430152043836"
 document_type: datasheet
-
-revision: "002.002"
-date: "2020-06-04"
-
-url: "https://www.we-online.com/components/products/datasheet/430152043836.pdf"

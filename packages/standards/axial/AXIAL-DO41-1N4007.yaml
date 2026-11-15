@@ -17,54 +17,33 @@
 # are the diameter, body_height is the axial body length. `nominal`
 # values are this dataset's own midpoints of the stated min/max
 # (disclosed as derived, not Vishay-stated).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/AXIAL-DO41-1N4007
-
 family: axial
 lead_count: 2
+source: vishay/88503
 
 pitch:
-  nominal: 7.62
-  unit: mm
+  typ: 7.62 mm
+  src: kicad/DO35-P7.62mm "Real KiCad DO-35/DO-41 reference footprint's own pad-to-pad spacing (0.3in/7.62mm) -- not a Vishay datasheet fact"
+
+construction:
+  value: molded
+  src: 'p1 "MECHANICAL DATA: "Case: DO-41 (DO-204AL), molded epoxy body""'
+
+geometry: { type: parametric, generator: axial }
 
 dimensions:
   body_width:
-    min: 2.0
-    max: 2.7
-    unit: mm
+    min: 2 mm
+    max: 2.7 mm
+    src: p4 "PACKAGE OUTLINE DIMENSIONS (DO-41), "0.107 (2.7) / 0.080 (2.0) DIA.""
   body_length:
-    min: 2.0
-    max: 2.7
-    unit: mm
+    min: 2 mm
+    max: 2.7 mm
+    src: p4 "PACKAGE OUTLINE DIMENSIONS (DO-41), "0.107 (2.7) / 0.080 (2.0) DIA." (circular body, so length = diameter)"
   body_height:
-    min: 4.1
-    max: 5.2
-    unit: mm
-
-construction: molded
-
-geometry:
-  type: parametric
-  generator: axial
-
-provenance:
-  "/pitch":
-    - source: kicad/DO35-P7.62mm
-      locator: "Real KiCad DO-35/DO-41 reference footprint's own pad-to-pad spacing (0.3in/7.62mm) -- not a Vishay datasheet fact"
-  "/dimensions/body_width":
-    - source: vishay/88503
-      page: 4
-      locator: "PACKAGE OUTLINE DIMENSIONS (DO-41), \"0.107 (2.7) / 0.080 (2.0) DIA.\""
-  "/dimensions/body_length":
-    - source: vishay/88503
-      page: 4
-      locator: "PACKAGE OUTLINE DIMENSIONS (DO-41), \"0.107 (2.7) / 0.080 (2.0) DIA.\" (circular body, so length = diameter)"
-  "/dimensions/body_height":
-    - source: vishay/88503
-      page: 4
-      locator: "PACKAGE OUTLINE DIMENSIONS (DO-41), \"0.205 (5.2) / 0.160 (4.1)\" axial body length"
-  "/construction":
-    - source: vishay/88503
-      page: 1
-      locator: "MECHANICAL DATA: \"Case: DO-41 (DO-204AL), molded epoxy body\""
+    min: 4.1 mm
+    max: 5.2 mm
+    src: p4 "PACKAGE OUTLINE DIMENSIONS (DO-41), "0.205 (5.2) / 0.160 (4.1)" axial body length"

@@ -13,34 +13,24 @@
 # reused (validate with --source sources/microchip/DS20001423J.yaml).
 # lifecycle: no production-status statement in the datasheet and the
 # Microchip product page refused curl and WebFetch (403); unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/PIC12F1840-I-P
-
 manufacturer: microchip
-mpn: "PIC12F1840-I/P"
-
+mpn: PIC12F1840-I/P
 device: microchip/PIC12F1840
-package: manufacturers/microchip/PDIP8-PA-C04-018D
+
+package:
+  value: manufacturers/microchip/PDIP8-PA-C04-018D
+  src:
+    - p395 "PRODUCT IDENTIFICATION SYSTEM, Package "P = Plastic DIP""
+    - p383 ""8-Lead Plastic Dual In-Line (P) - 300 mil Body [PDIP]", drawing C04-018D sheet 2"
+
+sources: [microchip/DS40001441@revF]
+source: microchip/DS40001441@revF
 
 existence:
   status: probable
+  src: p395 "PRODUCT IDENTIFICATION SYSTEM, example b) "PIC12F1840 - I/P" (ordering example)"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS40001441@revF
-
-provenance:
-  "/existence":
-    - source: microchip/DS40001441@revF
-      page: 395
-      locator: "PRODUCT IDENTIFICATION SYSTEM, example b) \"PIC12F1840 - I/P\" (ordering example)"
-  "/package":
-    - source: microchip/DS40001441@revF
-      page: 395
-      locator: "PRODUCT IDENTIFICATION SYSTEM, Package \"P = Plastic DIP\""
-    - source: microchip/DS40001441@revF
-      page: 383
-      locator: "\"8-Lead Plastic Dual In-Line (P) - 300 mil Body [PDIP]\", drawing C04-018D sheet 2"
+lifecycle: { status: unknown }

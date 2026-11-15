@@ -14,15 +14,18 @@
 # alternate functions available via the IOCONFIG block (Table 6-2-style
 # mux, not individually modeled here -- out of scope for this pass,
 # same policy as this dataset's other MCU pin tables).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: nxp/LPC1114-302
-
 manufacturer: nxp
 category: microcontroller
 family: LPC1114
+source: nxp/LPC111X
 
 pins:
+  src:
+    - 'p29 "Table 8, "LPC1100 and LPC1100L series: LPC1113/14 pin description table (LQFP48 package)", spans pages 29-32 (exact per-pin page not individually tracked)"'
+    - p13 "Figure 3, pin configuration diagram (visual cross-check, all 48 pins matched exactly)"
   "1":  { name: PIO2_6, type: io }
   "2":  { name: PIO2_0/DTR/SSEL1, type: io }
   "3":  { name: RESET/PIO0_0, type: reset }
@@ -71,12 +74,3 @@ pins:
   "46": { name: PIO1_6/RXD/CT32B0_MAT0, type: io }
   "47": { name: PIO1_7/TXD/CT32B0_MAT1, type: io }
   "48": { name: PIO3_3/RI, type: io }
-
-provenance:
-  "/pins":
-    - source: nxp/LPC111X
-      page: 29
-      locator: "Table 8, \"LPC1100 and LPC1100L series: LPC1113/14 pin description table (LQFP48 package)\", spans pages 29-32 (exact per-pin page not individually tracked)"
-    - source: nxp/LPC111X
-      page: 13
-      locator: "Figure 3, pin configuration diagram (visual cross-check, all 48 pins matched exactly)"

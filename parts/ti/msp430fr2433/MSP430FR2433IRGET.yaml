@@ -3,35 +3,24 @@
 # (RGE) | 24 | 250 | SMALL T&R | -40 to 85 | FR2433". Device family member
 # MSP430FR2433IRGE also listed in Table 3-1 "Device Comparison"
 # (page 7). lifecycle "active" is that table's Status column.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/MSP430FR2433IRGET
-
 manufacturer: ti
 mpn: MSP430FR2433IRGET
-
 device: ti/MSP430FR2433
-package: manufacturers/ti/RGE0024H
+
+package:
+  value: manufacturers/ti/RGE0024H
+  src: p81 "Package Option Addendum, row "MSP430FR2433IRGET", "VQFN (RGE) | 24"; outline RGE0024H on page 89"
+
+sources: [ti/SLASE59F]
+source: ti/SLASE59F
 
 existence:
   status: verified
+  src: p81 "Package Option Addendum, Packaging Information table, row "MSP430FR2433IRGET""
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLASE59F
-
-provenance:
-  "/existence":
-    - source: ti/SLASE59F
-      page: 81
-      locator: "Package Option Addendum, Packaging Information table, row \"MSP430FR2433IRGET\""
-  "/lifecycle":
-    - source: ti/SLASE59F
-      page: 81
-      locator: "Package Option Addendum, row \"MSP430FR2433IRGET\", Status \"Active\""
-  "/package":
-    - source: ti/SLASE59F
-      page: 81
-      locator: "Package Option Addendum, row \"MSP430FR2433IRGET\", \"VQFN (RGE) | 24\"; outline RGE0024H on page 89"
+  src: p81 "Package Option Addendum, row "MSP430FR2433IRGET", Status "Active""

@@ -4,64 +4,33 @@
 # F is inside the RK73H1J F+/-1% range on page 2 ("10 Ohm - 1 MOhm").
 # Hence existence: probable (same rule as abracon/AB-8.000MHZ-B2).
 # lifecycle unknown: no production-status statement in the sheet.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: koa/RK73H1JTTD1002F
-
 manufacturer: koa
 mpn: RK73H1JTTD1002F
-
 device: koa/RK73H1J
 package: standards/CHIP0603-KOA-RK73H1J
+sources: [koa/RK73H, koa/RK73H@rev2026-01-27]
+source: koa/RK73H@rev2026-01-27
 
 existence:
   status: probable
+  src: 'koa/RK73H p1 "ordering information scheme: RK73H | 1J | (nil, standard) | T (Sn) | TD (4mm pitch punch paper) | 1002 (3 significant figures + multiplier = 10.0 kOhm) | F (+/-1%)"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - koa/RK73H
-  - koa/RK73H@rev2026-01-27
+lifecycle: { status: unknown }
 
 # Parameters (AI candidates, needs review): resistance and tolerance from the
 # ordering-information legend; power and T.C.R. from the RK73H1J rows of
 # 'applications and ratings' whose F±1% resistance range contains this value.
 parameters:
+  tolerance: { tol: ±1 %, src: 'p1 "ordering information, Tolerance: F: ±1%"' }
   resistance:
-    nominal: 10
-    unit: kΩ
-  tolerance:
-    min: -1
-    max: 1
-    unit: "%"
+    typ: 10 kΩ
+    src: 'p1 "ordering information, Nominal Resistance: 3 significant figures + 1 multiplier -> 1002 = 100 x 10^2 Ω = 10 kΩ"'
   power_rating:
-    nominal: 0.1
-    unit: W
+    typ: 0.1 W
+    src: 'p2 "applications and ratings, RK73H1J (0603) row for F±1% 1.02kΩ - 1MΩ: Power Rating 0.1W at Rated Ambient Temp. 70°C"'
   temperature_coefficient:
-    min: -100
-    max: 100
-    unit: ppm/°C
-
-provenance:
-  "/existence":
-    - source: koa/RK73H
-      page: 1
-      locator: "ordering information scheme: RK73H | 1J | (nil, standard) | T (Sn) | TD (4mm pitch punch paper) | 1002 (3 significant figures + multiplier = 10.0 kOhm) | F (+/-1%)"
-  "/parameters/resistance":
-    - source: koa/RK73H@rev2026-01-27
-      page: 1
-      locator: "ordering information, Nominal Resistance: 3 significant figures + 1 multiplier -> 1002 = 100 x 10^2 Ω = 10 kΩ"
-  "/parameters/tolerance":
-    - source: koa/RK73H@rev2026-01-27
-      page: 1
-      locator: "ordering information, Tolerance: F: ±1%"
-  "/parameters/power_rating":
-    - source: koa/RK73H@rev2026-01-27
-      page: 2
-      locator: "applications and ratings, RK73H1J (0603) row for F±1% 1.02kΩ - 1MΩ: Power Rating 0.1W at Rated Ambient Temp. 70°C"
-  "/parameters/temperature_coefficient":
-    - source: koa/RK73H@rev2026-01-27
-      page: 2
-      locator: "applications and ratings, RK73H1J (0603) row for F±1% 1.02kΩ - 1MΩ: T.C.R. ±100 (x10^-6/K)"
-
+    tol: ±100 ppm/°C
+    src: 'p2 "applications and ratings, RK73H1J (0603) row for F±1% 1.02kΩ - 1MΩ: T.C.R. ±100 (x10^-6/K)"'

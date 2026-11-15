@@ -5,15 +5,12 @@
 # 10-May-24 / 30-Jun-23); the latest footer date is used as `date`. No
 # separate revision number is printed, so the document code is used as
 # the revision label (same convention as panasonic/ABA0000C1209).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: panasonic/AOA0000C304
-
+url: https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf
+date: 2025-05-29
+revision: AOA0000C304
 publisher: panasonic
 document_id: AOA0000C304
 document_type: datasheet
-
-revision: "AOA0000C304"
-date: "2025-05-29"
-
-url: "https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf"

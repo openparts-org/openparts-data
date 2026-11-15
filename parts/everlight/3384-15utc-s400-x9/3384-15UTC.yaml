@@ -4,21 +4,14 @@
 # source filename, not a single slash-containing MPN) -- "3384-15UTC"
 # is used here as the primary MPN. Confirmed real and current via the
 # Everlight technical data sheet itself (Device Number DLE-0001270).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: everlight/3384-15UTC
-
 manufacturer: everlight
 mpn: 3384-15UTC
-
 device: everlight/3384-SERIES
 package: standards/RADIAL-3384-EVERLIGHT
+sources: [everlight/DLE-0001270]
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - everlight/DLE-0001270
+existence: { status: verified }
+lifecycle: { status: active }

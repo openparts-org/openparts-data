@@ -1,15 +1,12 @@
 # Official Kingbright datasheet for APT1608SYCK. Read via pdftotext plus a
 # page-1 render (package drawing and polarity are vector art). Footer:
 # "Spec No: DSAD0931 / 1203001771 Rev No: V.19B Date: 04/08/2023".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: kingbright/DSAD0931
-
+url: https://www.kingbrightusa.com/images/catalog/spec/apt1608syck.pdf
+date: 2023-04-08
+revision: V.19B
 publisher: kingbright
-document_id: "DSAD0931"
+document_id: DSAD0931
 document_type: datasheet
-
-revision: "V.19B"
-date: "2023-04-08"
-
-url: "https://www.kingbrightusa.com/images/catalog/spec/apt1608syck.pdf"

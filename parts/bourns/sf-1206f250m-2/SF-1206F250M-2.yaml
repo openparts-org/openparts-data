@@ -1,40 +1,24 @@
 # 2.5A, 65VDC fast-acting SMD fuse, 1206 case. Electrical row confirmed
 # directly in the datasheet's electrical characteristics table (page 1).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: bourns/SF-1206F250M-2
-
 manufacturer: bourns
 mpn: SF-1206F250M-2
-
 device: bourns/SF-1206F-SERIES
 package: standards/CHIP1206-SF-1206F
+sources: [bourns/SF-1206F-M]
+source: bourns/SF-1206F-M
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - bourns/SF-1206F-M
+existence: { status: verified }
+lifecycle: { status: active }
 
 # Parameters (AI candidates, needs review): Electrical Characteristics
 # table, row for this model.
 parameters:
-  rated_current:
-    nominal: 2.5
-    unit: A
   rated_voltage:
-    nominal: 65
-    unit: V
-
-provenance:
-  "/parameters/rated_current":
-    - source: bourns/SF-1206F-M
-      page: 1
-      locator: "Electrical Characteristics, SF-1206F250M-2 row: Rated Current (A) 2.5"
-  "/parameters/rated_voltage":
-    - source: bourns/SF-1206F-M
-      page: 1
-      locator: "Electrical Characteristics, SF-1206F250M-2 row: Rated Voltage 65 VDC (cell spanning SF-1206F250M-2 to SF-1206F500M-2)"
+    typ: 65 V
+    src: 'p1 "Electrical Characteristics, SF-1206F250M-2 row: Rated Voltage 65 VDC (cell spanning SF-1206F250M-2 to SF-1206F500M-2)"'
+  rated_current:
+    typ: 2.5 A
+    src: 'p1 "Electrical Characteristics, SF-1206F250M-2 row: Rated Current (A) 2.5"'

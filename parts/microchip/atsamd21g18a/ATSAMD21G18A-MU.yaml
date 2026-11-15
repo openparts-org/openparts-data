@@ -9,31 +9,18 @@
 # 1065); it is assembled from the ordering-code scheme, whose note 1
 # says "Not all combinations are valid".
 # lifecycle: not stated in the data sheet; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/ATSAMD21G18A-MU
-
 manufacturer: microchip
 mpn: ATSAMD21G18A-MU
-
 device: microchip/ATSAMD21G18A
-package: standards/QFN48-7x7-P0.5-EP5.15
+package: { value: standards/QFN48-7x7-P0.5-EP5.15, src: 'p15 "Section 3, Package Type "M = VQFN""' }
+sources: [microchip/DS40001882@revL]
+source: microchip/DS40001882@revL
 
 existence:
   status: probable
+  src: p15 "Section 3 "SAM D21 Ordering Information" code scheme; Table 2-1 Configuration Summary (page 13); Table 42-2 "ATSAMD21G18A-MU-SLL" (page 1065)"
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS40001882@revL
-
-provenance:
-  "/existence":
-    - source: microchip/DS40001882@revL
-      page: 15
-      locator: "Section 3 \"SAM D21 Ordering Information\" code scheme; Table 2-1 Configuration Summary (page 13); Table 42-2 \"ATSAMD21G18A-MU-SLL\" (page 1065)"
-  "/package":
-    - source: microchip/DS40001882@revL
-      page: 15
-      locator: "Section 3, Package Type \"M = VQFN\""
+lifecycle: { status: unknown }

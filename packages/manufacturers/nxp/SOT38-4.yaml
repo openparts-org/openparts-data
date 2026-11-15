@@ -12,77 +12,32 @@
 # A1 (min only), lead_width = b, lead_thickness = c. Molded width E
 # (6.20-6.48), ME/MH and L (3.05-3.60, lead length below the seating
 # plane, not a gull-wing foot) are not modelled.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/nxp/SOT38-4
-
 family: dip
 lead_count: 16
+source: nxp/PCF8574_PCF8574A@rev5
 
-pitch:
-  nominal: 2.54
-  unit: mm
+pitch: { typ: 2.54 mm, src: 'p19 "SOT38-4 DIMENSIONS table (mm), "e 2.54""' }
+geometry: { type: parametric, generator: dip }
 
 dimensions:
   body_width:
-    nominal: 7.62
-    unit: mm
+    typ: 7.62 mm
+    src: p19 "SOT38-4 DIMENSIONS table (mm), "e1 7.62" (row spacing; dip generator's body_width)"
   body_length:
-    min: 18.55
-    max: 19.50
-    unit: mm
-  body_height:
-    max: 3.2
-    unit: mm
-  overall_height:
-    max: 4.2
-    unit: mm
-  standoff:
-    min: 0.51
-    unit: mm
-  lead_width:
-    min: 0.38
-    max: 0.53
-    unit: mm
+    min: 18.55 mm
+    max: 19.5 mm
+    src: p19 "SOT38-4 DIMENSIONS table (mm), "D 19.50 / 18.55" (note 1)"
+  body_height:    { max: 3.2 mm, src: 'p19 "SOT38-4 DIMENSIONS table (mm), "A2 max. 3.2""' }
   lead_thickness:
-    min: 0.23
-    max: 0.36
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: dip
-
-provenance:
-  "/pitch":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 19
-      locator: "SOT38-4 DIMENSIONS table (mm), \"e 2.54\""
-  "/dimensions/body_width":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 19
-      locator: "SOT38-4 DIMENSIONS table (mm), \"e1 7.62\" (row spacing; dip generator's body_width)"
-  "/dimensions/body_length":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 19
-      locator: "SOT38-4 DIMENSIONS table (mm), \"D 19.50 / 18.55\" (note 1)"
-  "/dimensions/body_height":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 19
-      locator: "SOT38-4 DIMENSIONS table (mm), \"A2 max. 3.2\""
-  "/dimensions/overall_height":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 19
-      locator: "SOT38-4 DIMENSIONS table (mm), \"A max. 4.2\""
-  "/dimensions/standoff":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 19
-      locator: "SOT38-4 DIMENSIONS table (mm), \"A1 min. 0.51\""
-  "/dimensions/lead_width":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 19
-      locator: "SOT38-4 DIMENSIONS table (mm), \"b 0.53 / 0.38\""
-  "/dimensions/lead_thickness":
-    - source: nxp/PCF8574_PCF8574A@rev5
-      page: 19
-      locator: "SOT38-4 DIMENSIONS table (mm), \"c 0.36 / 0.23\""
+    min: 0.23 mm
+    max: 0.36 mm
+    src: p19 "SOT38-4 DIMENSIONS table (mm), "c 0.36 / 0.23""
+  overall_height: { max: 4.2 mm, src: 'p19 "SOT38-4 DIMENSIONS table (mm), "A max. 4.2""' }
+  standoff:       { min: 0.51 mm, src: 'p19 "SOT38-4 DIMENSIONS table (mm), "A1 min. 0.51""' }
+  lead_width:
+    min: 0.38 mm
+    max: 0.53 mm
+    src: p19 "SOT38-4 DIMENSIONS table (mm), "b 0.53 / 0.38""

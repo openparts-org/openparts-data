@@ -2,50 +2,25 @@
 # ORDERING INFORMATION table. Its CASE 318E-04 ISSUE R outline (page 5)
 # is pixel-identical to 98ASB42680B, which the package cites. No
 # lifecycle statement.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/PZT2222AT1G
-
 manufacturer: onsemi
 mpn: PZT2222AT1G
-
 device: onsemi/PZT2222A
 package: manufacturers/onsemi/SOT223-3.5x6.5-P2.3-318E-TabPin4
+sources: [onsemi/PZT2222AT1-D, onsemi/98ASB42680B]
+source: onsemi/PZT2222AT1-D
 
 existence:
   status: verified
+  src: 'p1 "ORDERING INFORMATION table: "PZT2222AT1G | SOT-223 (Pb-Free) | 1,000 Tape & Reel""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/PZT2222AT1-D
-  - onsemi/98ASB42680B
+lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: npn
+  polarity: { value: npn, src: 'p1 "Page-1 title: "NPN Silicon Planar Epitaxial Transistor""' }
   collector_emitter_voltage:
-    nominal: 40
-    unit: V
-  collector_current:
-    nominal: 600
-    unit: mA
-
-provenance:
-  "/existence":
-    - source: onsemi/PZT2222AT1-D
-      page: 1
-      locator: "ORDERING INFORMATION table: \"PZT2222AT1G | SOT-223 (Pb-Free) | 1,000 Tape & Reel\""
-  "/parameters/polarity":
-    - source: onsemi/PZT2222AT1-D
-      page: 1
-      locator: "Page-1 title: \"NPN Silicon Planar Epitaxial Transistor\""
-  "/parameters/collector_emitter_voltage":
-    - source: onsemi/PZT2222AT1-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO: 40 Vdc"
-  "/parameters/collector_current":
-    - source: onsemi/PZT2222AT1-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Collector Current IC: 600 mAdc"
+    typ: 40 V
+    src: 'p1 "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO: 40 Vdc"'
+  collector_current: { typ: 600 mA, src: 'p1 "MAXIMUM RATINGS, Collector Current IC: 600 mAdc"' }

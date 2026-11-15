@@ -19,15 +19,18 @@
 # are not. Not on the 40 pins (so not recorded):
 # GP25 drives the user LED; GP23/GP24/GP29 are
 # board-internal (section 2.1).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: raspberrypi/PICO
-
 manufacturer: raspberrypi
 category: microcontroller
 family: RP2040
+source: raspberrypi/RP-008307-DS@rev2
 
 pins:
+  src:
+    - 'p5 "Figure 2 (pinout): pin names by pin number, debug pads SWCLK / GND / SWDIO"'
+    - p8 "Figure 4 (pin numbering)"
   "1":  { name: GP0, type: io }
   "2":  { name: GP1, type: io }
   "3":  { name: GND, type: ground }
@@ -63,24 +66,15 @@ pins:
   "33": { name: AGND, type: ground }
   "34": { name: GP28, type: io, alternate_functions: [ADC2] }
   "35": { name: ADC_VREF, type: power }
-  "36": { name: "3V3", type: power }
-  "37": { name: "3V3_EN", type: input }
+  "36":
+    name:
+      value: 3V3
+      src: 'p8 "Section 2.1 list of non-GPIO pins: PIN40 VBUS, PIN39 VSYS, PIN37 3V3_EN, PIN36 3V3, PIN35 ADC_VREF, PIN33 AGND, PIN30 RUN"'
+    type: power
+  "37": { name: 3V3_EN, type: input }
   "38": { name: GND, type: ground }
   "39": { name: VSYS, type: power }
   "40": { name: VBUS, type: power }
-  "D1":    { name: SWCLK, type: clock }
-  "D2":    { name: GND, type: ground }
-  "D3":    { name: SWDIO, type: io }
-
-provenance:
-  "/pins":
-    - source: raspberrypi/RP-008307-DS@rev2
-      page: 5
-      locator: "Figure 2 (pinout): pin names by pin number, debug pads SWCLK / GND / SWDIO"
-    - source: raspberrypi/RP-008307-DS@rev2
-      page: 8
-      locator: "Figure 4 (pin numbering)"
-  "/pins/36/name":
-    - source: raspberrypi/RP-008307-DS@rev2
-      page: 8
-      locator: "Section 2.1 list of non-GPIO pins: PIN40 VBUS, PIN39 VSYS, PIN37 3V3_EN, PIN36 3V3, PIN35 ADC_VREF, PIN33 AGND, PIN30 RUN"
+  D1:   { name: SWCLK, type: clock }
+  D2:   { name: GND, type: ground }
+  D3:   { name: SWDIO, type: io }

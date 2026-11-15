@@ -6,28 +6,18 @@
 # lifecycle: unknown (no first-party status statement found).
 # Package: shared with BMP390 -- this datasheet's Figure 26 (page 49) has the
 # same numbers.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: bosch/BMP388
-
 manufacturer: bosch
-mpn: "BMP388"
-
+mpn: BMP388
 device: bosch/BMP388
 package: manufacturers/bosch/LGA10-2.0x2.0-P0.5-BMP390
+sources: [bosch/BST-BMP388-DS001-07, bosch/BST-BMP390-DS002-07]
+source: bosch/BST-BMP388-DS001-07
 
 existence:
   status: probable
+  src: 'p1 "title page: product BMP388, technical reference code 0 273 300 511 (no ordering table)"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - bosch/BST-BMP388-DS001-07
-  - bosch/BST-BMP390-DS002-07
-
-provenance:
-  "/existence":
-    - source: bosch/BST-BMP388-DS001-07
-      page: 1
-      locator: "title page: product BMP388, technical reference code 0 273 300 511 (no ordering table)"
+lifecycle: { status: unknown }

@@ -5,32 +5,23 @@
 # "TL431, TL431A, TL431B . . . DBZ (SOT-23-3) PACKAGE (TOP VIEW)" on the
 # same page. Types as for ti/TL431-D (ANODE ground: "Common pin,
 # normally connected to ground").
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/TL431-DBZ
-
 manufacturer: ti
 category: voltage_reference
 family: TL431
-
-pins:
-  "1": { name: CATHODE, type: passive }
-  "2": { name: REF, type: analog }
-  "3": { name: ANODE, type: ground }
+source: ti/SLVS543S
 
 parameters:
   output_type:
     value: adjustable
+    src: 'p1 "1 Features, "Adjustable output voltage: Vref to 36V"; 3 Description: "three-terminal adjustable shunt regulators""'
 
-provenance:
-  "/parameters/output_type":
-    - source: ti/SLVS543S
-      page: 1
-      locator: "1 Features, \"Adjustable output voltage: Vref to 36V\"; 3 Description: \"three-terminal adjustable shunt regulators\""
-  "/pins":
-    - source: ti/SLVS543S
-      page: 4
-      locator: "Table 5-1 \"Pin Functions\", TL431x column \"DBZ\""
-    - source: ti/SLVS543S
-      page: 4
-      locator: "\"TL431, TL431A, TL431B . . . DBZ (SOT-23-3) PACKAGE (TOP VIEW)\""
+pins:
+  src:
+    - p4 "Table 5-1 "Pin Functions", TL431x column "DBZ""
+    - p4 ""TL431, TL431A, TL431B . . . DBZ (SOT-23-3) PACKAGE (TOP VIEW)""
+  "1": { name: CATHODE, type: passive }
+  "2": { name: REF, type: analog }
+  "3": { name: ANODE, type: ground }

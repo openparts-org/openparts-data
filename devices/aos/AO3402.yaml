@@ -5,21 +5,16 @@
 # the single top lead. Numbered in this dataset's sot convention (pin 1
 # bottom-left, 2 bottom-right, 3 top), as for aos/AO3400A --
 # position-derived, flagged for review.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: aos/AO3402
-
 manufacturer: aos
 category: transistor
 family: AO3402
+source: aos/AO3402-DS
 
 pins:
+  src: 'p1 ""SOT23 Top View" drawing: G bottom-left (pin-1 dot side), S bottom-right, D top. No pin numbers printed; numbering is position-derived (see header)"'
   "1": { name: Gate, type: passive }
   "2": { name: Source, type: passive }
   "3": { name: Drain, type: passive }
-
-provenance:
-  "/pins":
-    - source: aos/AO3402-DS
-      page: 1
-      locator: "\"SOT23 Top View\" drawing: G bottom-left (pin-1 dot side), S bottom-right, D top. No pin numbers printed; numbering is position-derived (see header)"

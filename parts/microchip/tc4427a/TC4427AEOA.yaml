@@ -11,31 +11,22 @@
 # L 0.40-1.27, c 0.17-0.25, b 0.31-0.51 -> reused (validate with
 # --source sources/microchip/DS20001203W.yaml).
 # lifecycle: no production-status statement in the datasheet; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/TC4427AEOA
-
 manufacturer: microchip
 mpn: TC4427AEOA
-
 device: microchip/TC4427A
-package: standards/SOIC8-3.90x4.90-P1.27
+
+package:
+  value: standards/SOIC8-3.90x4.90-P1.27
+  src: p23 "PRODUCT IDENTIFICATION SYSTEM, Package "OA = Plastic SOIC, (150 mil Body), 8-lead""
+
+sources: [microchip/DS20001423@revJ]
+source: microchip/DS20001423@revJ
 
 existence:
   status: probable
+  src: 'p23 "PRODUCT IDENTIFICATION SYSTEM, assembled from the legend: Device TC4427A + Temperature E + Package OA"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS20001423@revJ
-
-provenance:
-  "/existence":
-    - source: microchip/DS20001423@revJ
-      page: 23
-      locator: "PRODUCT IDENTIFICATION SYSTEM, assembled from the legend: Device TC4427A + Temperature E + Package OA"
-  "/package":
-    - source: microchip/DS20001423@revJ
-      page: 23
-      locator: "PRODUCT IDENTIFICATION SYSTEM, Package \"OA = Plastic SOIC, (150 mil Body), 8-lead\""
+lifecycle: { status: unknown }

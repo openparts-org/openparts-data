@@ -1,45 +1,24 @@
 # PNP high-voltage transistor, SOT-23, Pb-free. Confirmed in the
 # datasheet's ordering table. Reuses the existing SOT-23 2.90x1.30
 # package (case 318, drawing 98ASB42226B).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/MMBT5401LT1G
-
 manufacturer: onsemi
 mpn: MMBT5401LT1G
-
 device: onsemi/MMBT5401
 package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/MMBT5401-D]
+source: onsemi/MMBT5401-D
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - onsemi/MMBT5401-D
+existence: { status: verified }
+lifecycle: { status: active }
 
 parameters:
-  polarity:
-    value: pnp
+  polarity: { value: pnp, src: 'p1 "Page-1 title: "PNP Silicon""' }
   collector_emitter_voltage:
-    nominal: -150
-    unit: V
+    typ: -150 V
+    src: 'p1 "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO: -150 Vdc"'
   collector_current:
-    nominal: -500
-    unit: mA
-
-provenance:
-  "/parameters/polarity":
-    - source: onsemi/MMBT5401-D
-      page: 1
-      locator: "Page-1 title: \"PNP Silicon\""
-  "/parameters/collector_emitter_voltage":
-    - source: onsemi/MMBT5401-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Collector-Emitter Voltage VCEO: -150 Vdc"
-  "/parameters/collector_current":
-    - source: onsemi/MMBT5401-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Collector Current - Continuous IC: -500 mAdc"
+    typ: -500 mA
+    src: 'p1 "MAXIMUM RATINGS, Collector Current - Continuous IC: -500 mAdc"'

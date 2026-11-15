@@ -9,90 +9,36 @@
 # The same numbers, under old Diodes letters (A=D, B=E1, C=b, D=c, E=E,
 # G=A1, H=L, J=A), are printed for SMB in DS13004 Rev. 23-2 (B220-B260,
 # p4) and DS16003 Rev. 24-2 (S1AB-S1MB, p3) -- compared row by row.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/diodes/SMB-DS13002
-
 family: do214
 lead_count: 2
+source: diodes/DS13002
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
 
-construction: molded
+construction:
+  value: molded
+  src: 'p1 "Mechanical Data: "Package Material: Molded Plastic. UL Flammability Classification Rating 94V-0""'
+
+geometry: { type: parametric, generator: do214 }
 
 dimensions:
+  body_width:     { min: 3.3 mm, max: 3.94 mm, src: 'p4 "SMB table, D "3.30 / 3.94", body across"' }
   body_length:
-    min: 4.06
-    max: 4.57
-    unit: mm
-  body_width:
-    min: 3.30
-    max: 3.94
-    unit: mm
+    min: 4.06 mm
+    max: 4.57 mm
+    src: p4 "SMB table, E1 "4.06 / 4.57" (Min/Max), body along the leads"
   body_height:
-    min: 2.00
-    max: 2.50
-    unit: mm
+    min: 2 mm
+    max: 2.5 mm
+    src: p4 "SMB table, A "2.00 / 2.50" (seating plane to top; no A2)"
+  lead_thickness: { min: 0.15 mm, max: 0.31 mm, src: 'p4 "SMB table, c "0.15 / 0.31""' }
   overall_length:
-    min: 5.00
-    max: 5.59
-    unit: mm
-  standoff:
-    min: 0.05
-    max: 0.20
-    unit: mm
-  lead_width:
-    min: 1.96
-    max: 2.21
-    unit: mm
-  lead_length:
-    min: 0.76
-    max: 1.52
-    unit: mm
-  lead_thickness:
-    min: 0.15
-    max: 0.31
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: do214
-
-provenance:
-  "/construction":
-    - source: diodes/DS13002
-      page: 1
-      locator: "Mechanical Data: \"Package Material: Molded Plastic. UL Flammability Classification Rating 94V-0\""
-  "/dimensions/body_length":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMB table, E1 \"4.06 / 4.57\" (Min/Max), body along the leads"
-  "/dimensions/body_width":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMB table, D \"3.30 / 3.94\", body across"
-  "/dimensions/body_height":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMB table, A \"2.00 / 2.50\" (seating plane to top; no A2)"
-  "/dimensions/overall_length":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMB table, E \"5.00 / 5.59\", span over the leads"
-  "/dimensions/standoff":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMB table, A1 \"0.05 / 0.20\""
-  "/dimensions/lead_width":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMB table, b \"1.96 / 2.21\""
-  "/dimensions/lead_length":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMB table, L \"0.76 / 1.52\" (folded foot)"
-  "/dimensions/lead_thickness":
-    - source: diodes/DS13002
-      page: 4
-      locator: "SMB table, c \"0.15 / 0.31\""
+    min: 5 mm
+    max: 5.59 mm
+    src: p4 "SMB table, E "5.00 / 5.59", span over the leads"
+  standoff:       { min: 0.05 mm, max: 0.2 mm, src: 'p4 "SMB table, A1 "0.05 / 0.20""' }
+  lead_width:     { min: 1.96 mm, max: 2.21 mm, src: 'p4 "SMB table, b "1.96 / 2.21""' }
+  lead_length: { min: 0.76 mm, max: 1.52 mm, src: 'p4 "SMB table, L "0.76 / 1.52" (folded foot)"' }

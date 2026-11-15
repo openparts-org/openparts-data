@@ -8,109 +8,61 @@
 # Not merged into standards/LQFP48-7x7-P0.5: that file's numbers (ST
 # DS5319: D1/E1 6.8-7.2, A2 1.35-1.45, b 0.17-0.27 nom 0.22) differ from
 # this outline (D/E 6.9-7.1, A2 1.4 nom only, bp 0.17-0.27 nom 0.20).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/renesas/PLQP0048KB-B
-
 family: lqfp
 lead_count: 48
+source: renesas/R01DS0355EJ0110
 
 pitch:
-  nominal: 0.5
-  unit: mm
+  typ: 0.5 mm
+  src: p124 "Appendix 1 Figure 1.6 "48-pin LQFP" (PLQP0048KB-B) dimension table, symbol "e""
+
+geometry: { type: parametric, generator: lqfp }
 
 dimensions:
   body_width:
-    nominal: 7.0
-    min: 6.9
-    max: 7.1
-    unit: mm
+    min: 6.9 mm
+    typ: 7 mm
+    max: 7.1 mm
+    src: p124 "Appendix 1 Figure 1.6 "48-pin LQFP" (PLQP0048KB-B) dimension table, symbol "D""
   body_length:
-    nominal: 7.0
-    min: 6.9
-    max: 7.1
-    unit: mm
+    min: 6.9 mm
+    typ: 7 mm
+    max: 7.1 mm
+    src: p124 "Appendix 1 Figure 1.6 "48-pin LQFP" (PLQP0048KB-B) dimension table, symbol "E""
   body_height:
-    nominal: 1.4
-    unit: mm
-  overall_width:
-    nominal: 9.0
-    min: 8.8
-    max: 9.2
-    unit: mm
-  overall_length:
-    nominal: 9.0
-    min: 8.8
-    max: 9.2
-    unit: mm
-  overall_height:
-    max: 1.7
-    unit: mm
-  standoff:
-    min: 0.05
-    max: 0.15
-    unit: mm
-  lead_width:
-    nominal: 0.2
-    min: 0.17
-    max: 0.27
-    unit: mm
-  lead_length:
-    nominal: 0.6
-    min: 0.45
-    max: 0.75
-    unit: mm
+    typ: 1.4 mm
+    src: p124 "Appendix 1 Figure 1.6 "48-pin LQFP" (PLQP0048KB-B) dimension table, symbol "A2""
   lead_thickness:
-    min: 0.09
-    max: 0.2
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: lqfp
-
-provenance:
-  "/pitch":
-    - source: renesas/R01DS0355EJ0110
-      page: 124
-      locator: "Appendix 1 Figure 1.6 \"48-pin LQFP\" (PLQP0048KB-B) dimension table, symbol \"e\""
-  "/dimensions/body_width":
-    - source: renesas/R01DS0355EJ0110
-      page: 124
-      locator: "Appendix 1 Figure 1.6 \"48-pin LQFP\" (PLQP0048KB-B) dimension table, symbol \"D\""
-  "/dimensions/body_length":
-    - source: renesas/R01DS0355EJ0110
-      page: 124
-      locator: "Appendix 1 Figure 1.6 \"48-pin LQFP\" (PLQP0048KB-B) dimension table, symbol \"E\""
-  "/dimensions/body_height":
-    - source: renesas/R01DS0355EJ0110
-      page: 124
-      locator: "Appendix 1 Figure 1.6 \"48-pin LQFP\" (PLQP0048KB-B) dimension table, symbol \"A2\""
-  "/dimensions/overall_width":
-    - source: renesas/R01DS0355EJ0110
-      page: 124
-      locator: "Appendix 1 Figure 1.6 \"48-pin LQFP\" (PLQP0048KB-B) dimension table, symbol \"HD\""
-  "/dimensions/overall_length":
-    - source: renesas/R01DS0355EJ0110
-      page: 124
-      locator: "Appendix 1 Figure 1.6 \"48-pin LQFP\" (PLQP0048KB-B) dimension table, symbol \"HE\""
-  "/dimensions/overall_height":
-    - source: renesas/R01DS0355EJ0110
-      page: 124
-      locator: "Appendix 1 Figure 1.6 \"48-pin LQFP\" (PLQP0048KB-B) dimension table, symbol \"A\""
-  "/dimensions/standoff":
-    - source: renesas/R01DS0355EJ0110
-      page: 124
-      locator: "Appendix 1 Figure 1.6 \"48-pin LQFP\" (PLQP0048KB-B) dimension table, symbol \"A1\""
-  "/dimensions/lead_width":
-    - source: renesas/R01DS0355EJ0110
-      page: 124
-      locator: "Appendix 1 Figure 1.6 \"48-pin LQFP\" (PLQP0048KB-B) dimension table, symbol \"bp\""
-  "/dimensions/lead_length":
-    - source: renesas/R01DS0355EJ0110
-      page: 124
-      locator: "Appendix 1 Figure 1.6 \"48-pin LQFP\" (PLQP0048KB-B) dimension table, symbol \"Lp\""
-  "/dimensions/lead_thickness":
-    - source: renesas/R01DS0355EJ0110
-      page: 124
-      locator: "Appendix 1 Figure 1.6 \"48-pin LQFP\" (PLQP0048KB-B) dimension table, symbol \"c\""
+    min: 0.09 mm
+    max: 0.2 mm
+    src: p124 "Appendix 1 Figure 1.6 "48-pin LQFP" (PLQP0048KB-B) dimension table, symbol "c""
+  overall_width:
+    min: 8.8 mm
+    typ: 9 mm
+    max: 9.2 mm
+    src: p124 "Appendix 1 Figure 1.6 "48-pin LQFP" (PLQP0048KB-B) dimension table, symbol "HD""
+  overall_length:
+    min: 8.8 mm
+    typ: 9 mm
+    max: 9.2 mm
+    src: p124 "Appendix 1 Figure 1.6 "48-pin LQFP" (PLQP0048KB-B) dimension table, symbol "HE""
+  overall_height:
+    max: 1.7 mm
+    src: p124 "Appendix 1 Figure 1.6 "48-pin LQFP" (PLQP0048KB-B) dimension table, symbol "A""
+  standoff:
+    min: 0.05 mm
+    max: 0.15 mm
+    src: p124 "Appendix 1 Figure 1.6 "48-pin LQFP" (PLQP0048KB-B) dimension table, symbol "A1""
+  lead_width:
+    min: 0.17 mm
+    typ: 0.2 mm
+    max: 0.27 mm
+    src: p124 "Appendix 1 Figure 1.6 "48-pin LQFP" (PLQP0048KB-B) dimension table, symbol "bp""
+  lead_length:
+    min: 0.45 mm
+    typ: 0.6 mm
+    max: 0.75 mm
+    src: p124 "Appendix 1 Figure 1.6 "48-pin LQFP" (PLQP0048KB-B) dimension table, symbol "Lp""

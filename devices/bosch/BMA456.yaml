@@ -4,30 +4,25 @@
 # out -> output, Supply -> power, Ground -> ground. Numbers checked
 # against the pin-out figure on the same page and the bottom view of the
 # package drawing (page 92).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: bosch/BMA456
-
 manufacturer: bosch
 category: imu
-family: "BMA4"
+family: BMA4
+source: bosch/BST-BMA456-DS000-09
 
 pins:
-  "1": { name: "SDO", type: io }
-  "2": { name: "SDX", type: io }
-  "3": { name: "VDDIO", type: power }
-  "4": { name: "ASDA", type: io }
-  "5": { name: "INT1", type: io }
-  "6": { name: "INT2", type: io }
-  "7": { name: "VDD", type: power }
-  "8": { name: "GNDIO", type: ground }
-  "9": { name: "GND", type: ground }
-  "10": { name: "CSB", type: input }
-  "11": { name: "ASCL", type: output }
-  "12": { name: "SCX", type: input }
-
-provenance:
-  "/pins":
-    - source: bosch/BST-BMA456-DS000-09
-      page: 88
-      locator: "7.1 Pin-out figure and Pin description table"
+  src:  p88 "7.1 Pin-out figure and Pin description table"
+  "1":  { name: SDO, type: io }
+  "2":  { name: SDX, type: io }
+  "3":  { name: VDDIO, type: power }
+  "4":  { name: ASDA, type: io }
+  "5":  { name: INT1, type: io }
+  "6":  { name: INT2, type: io }
+  "7":  { name: VDD, type: power }
+  "8":  { name: GNDIO, type: ground }
+  "9":  { name: GND, type: ground }
+  "10": { name: CSB, type: input }
+  "11": { name: ASCL, type: output }
+  "12": { name: SCX, type: input }

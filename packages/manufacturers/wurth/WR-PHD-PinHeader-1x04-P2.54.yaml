@@ -9,86 +9,54 @@
 # The housing height is not dimensioned for the single-row part (only
 # the 11,54 ±0,2 pin length, post 6,0 and tail 3,0): body_height left
 # out, never derived.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/wurth/WR-PHD-PinHeader-1x04-P2.54
-
 family: header
 lead_count: 4
-lead_layout: [1, 4]
+
+lead_layout:
+  value: [1, 4]
+  src:   'p1 ""Article Properties" Pins 4; "Recommended Hole Pattern: [mm]": 1 row, labelled "1" and "End""'
+
+source: wurth/61300411121-DS
 
 pitch:
-  nominal: 2.54
-  min: 2.49
-  max: 2.59
-  unit: mm
+  min: 2.49 mm
+  typ: 2.54 mm
+  max: 2.59 mm
+  src: 'p1 ""Dimensions: [mm]" view above the front view (first-angle projection: the bottom view), pin pitch "2,54 ±0,05"; "Recommended Hole Pattern: [mm]" "2,54 ±0,05""'
+
+geometry: { type: parametric, generator: header }
 
 dimensions:
   body_width:
-    nominal: 2.54
-    min: 2.39
-    max: 2.69
-    unit: mm
+    min: 2.39 mm
+    typ: 2.54 mm
+    max: 2.69 mm
+    src: 'p1 ""Dimensions: [mm]" view below the front view (first-angle projection: the top view), housing width "2,54 ±0,15""'
   body_length:
-    nominal: 10.16
-    min: 9.81
-    max: 10.51
-    unit: mm
-  lead_width:
-    nominal: 0.64
-    min: 0.49
-    max: 0.79
-    unit: mm
-  mating_length:
-    nominal: 6
-    min: 5.8
-    max: 6.2
-    unit: mm
+    min: 9.81 mm
+    typ: 10.16 mm
+    max: 10.51 mm
+    src: 'p1 ""Dimensions: [mm]" front view, housing length "L ±0,35"; "Article Properties" Length L = 10.16 mm"'
   tail_length:
-    nominal: 3
-    min: 2.8
-    max: 3.2
-    unit: mm
+    min: 2.8 mm
+    typ: 3 mm
+    max: 3.2 mm
+    src: 'p1 ""Dimensions: [mm]" side view (right of the front view), housing underside to tail end "3,0 ±0,20""'
+  mating_length:
+    min: 5.8 mm
+    typ: 6 mm
+    max: 6.2 mm
+    src: 'p1 ""Dimensions: [mm]" side view (right of the front view), housing top to pin tip "6,0 ±0,20""'
+  lead_width:
+    min: 0.49 mm
+    typ: 0.64 mm
+    max: 0.79 mm
+    src: 'p1 ""Dimensions: [mm]" view above the front view (first-angle projection: the bottom view), square pin "□ 0,64 ±0,15""'
   hole_diameter:
-    nominal: 1.1
-    min: 0.95
-    max: 1.25
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: header
-
-provenance:
-  "/pitch":
-    - source: wurth/61300411121-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" view above the front view (first-angle projection: the bottom view), pin pitch \"2,54 ±0,05\"; \"Recommended Hole Pattern: [mm]\" \"2,54 ±0,05\""
-  "/lead_layout":
-    - source: wurth/61300411121-DS
-      page: 1
-      locator: "\"Article Properties\" Pins 4; \"Recommended Hole Pattern: [mm]\": 1 row, labelled \"1\" and \"End\""
-  "/dimensions/body_width":
-    - source: wurth/61300411121-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" view below the front view (first-angle projection: the top view), housing width \"2,54 ±0,15\""
-  "/dimensions/body_length":
-    - source: wurth/61300411121-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" front view, housing length \"L ±0,35\"; \"Article Properties\" Length L = 10.16 mm"
-  "/dimensions/lead_width":
-    - source: wurth/61300411121-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" view above the front view (first-angle projection: the bottom view), square pin \"□ 0,64 ±0,15\""
-  "/dimensions/mating_length":
-    - source: wurth/61300411121-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" side view (right of the front view), housing top to pin tip \"6,0 ±0,20\""
-  "/dimensions/tail_length":
-    - source: wurth/61300411121-DS
-      page: 1
-      locator: "\"Dimensions: [mm]\" side view (right of the front view), housing underside to tail end \"3,0 ±0,20\""
-  "/dimensions/hole_diameter":
-    - source: wurth/61300411121-DS
-      page: 1
-      locator: "\"Recommended Hole Pattern: [mm]\", hole \"Ø 1,10 ±0,15\""
+    min: 0.95 mm
+    typ: 1.1 mm
+    max: 1.25 mm
+    src: 'p1 ""Recommended Hole Pattern: [mm]", hole "Ø 1,10 ±0,15""'

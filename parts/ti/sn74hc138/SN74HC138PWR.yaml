@@ -5,38 +5,26 @@
 # Package: TSSOP (PW), outline PW0016A (4220204/B) on page 31 ->
 # standards/TSSOP16-4.4x5.0-P0.65-TI-PW. Its pdftotext text matches the outline page the package
 # was read from (ti/SCLS041J page 34) line for line, so the package is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/SN74HC138PWR
-
 manufacturer: ti
 mpn: SN74HC138PWR
-
 device: ti/SN74HC138
-package: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+
+package:
+  value: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+  src:
+    - p15 "PACKAGE OPTION ADDENDUM, row SN74HC138PWR, Package column "TSSOP (PW)""
+    - p31 "PACKAGE OUTLINE PW0016A (4220204/B)"
+
+sources: [ti/SCLS107G]
+source: ti/SCLS107G
 
 existence:
   status: verified
+  src: p15 "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74HC138PWR"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SCLS107G
-
-provenance:
-  "/existence":
-    - source: ti/SCLS107G
-      page: 15
-      locator: "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74HC138PWR"
-  "/lifecycle":
-    - source: ti/SCLS107G
-      page: 15
-      locator: "PACKAGE OPTION ADDENDUM, row SN74HC138PWR, Status column \"Active\""
-  "/package":
-    - source: ti/SCLS107G
-      page: 15
-      locator: "PACKAGE OPTION ADDENDUM, row SN74HC138PWR, Package column \"TSSOP (PW)\""
-    - source: ti/SCLS107G
-      page: 31
-      locator: "PACKAGE OUTLINE PW0016A (4220204/B)"
+  src: p15 "PACKAGE OPTION ADDENDUM, row SN74HC138PWR, Status column "Active""

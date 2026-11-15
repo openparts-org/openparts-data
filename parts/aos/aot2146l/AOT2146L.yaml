@@ -4,77 +4,47 @@
 # "product_status":"Last Time Buy" -> eol_announced.
 # Package: datasheet "TO-220"; the product page links AOS's
 # TO220 outline (PO-00015) as this product's package document.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: aos/AOT2146L
-
 manufacturer: aos
 mpn: AOT2146L
-
 device: aos/AOT2146L
-package: manufacturers/aos/TO220-10.03x4.45-P2.54-PO-00015
+
+package:
+  value: manufacturers/aos/TO220-10.03x4.45-P2.54-PO-00015
+  src:
+    - 'aos/AOT2146L-product-page ""packages": "TO220", package_pdf .../packaging_information/TO220.pdf"'
+    - aos/PO-00015 p1 ""TO220 PACKAGE OUTLINE" PO-00015 Version N"
+
+sources: [aos/AOT2146L-DS, aos/AOT2146L-product-page, aos/PO-00015]
+source: aos/AOT2146L-DS
 
 existence:
   status: verified
+  src: 'p1 "Orderable Part Number table: "AOT2146L | TO-220 | Tube | 1000""'
 
 lifecycle:
   status: eol_announced
-
-sources:
-  - aos/AOT2146L-DS
-  - aos/AOT2146L-product-page
-  - aos/PO-00015
+  src: aos/AOT2146L-product-page "Embedded product JSON "product_status":"Last Time Buy""
 
 parameters:
-  polarity:
-    value: n_channel
+  polarity: { value: n_channel, src: 'p1 "Page-1 title: "40V N-Channel AlphaSGT™""' }
   drain_source_voltage:
-    nominal: 40
-    unit: V
+    typ: 40 V
+    src: 'p1 "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 40 V"'
   drain_current:
-    nominal: 105
-    unit: A
+    typ: 105 A
+    at: { TC: 25 °C }
+    src: 'p1 "Absolute Maximum Ratings, Continuous Drain Current ID: 105 A"'
   rds_on:
-    nominal: 2.3
-    max: 2.8
-    unit: mΩ
+    typ: 2.3 mΩ
+    max: 2.8 mΩ
+    at: { VGS: 10 V, ID: 20 A, TJ: 25 °C }
+    src: 'p2 "Electrical Characteristics, RDS(ON) Static Drain-Source On-Resistance: Typ 2.3, Max 2.8 mΩ"'
   gate_threshold_voltage:
-    nominal: 1.95
-    min: 1.5
-    max: 2.5
-    unit: V
-
-provenance:
-  "/existence":
-    - source: aos/AOT2146L-DS
-      page: 1
-      locator: "Orderable Part Number table: \"AOT2146L | TO-220 | Tube | 1000\""
-  "/lifecycle":
-    - source: aos/AOT2146L-product-page
-      locator: "Embedded product JSON \"product_status\":\"Last Time Buy\""
-  "/package":
-    - source: aos/AOT2146L-product-page
-      locator: "\"packages\": \"TO220\", package_pdf .../packaging_information/TO220.pdf"
-    - source: aos/PO-00015
-      page: 1
-      locator: "\"TO220 PACKAGE OUTLINE\" PO-00015 Version N"
-  "/parameters/polarity":
-    - source: aos/AOT2146L-DS
-      page: 1
-      locator: "Page-1 title: \"40V N-Channel AlphaSGT™\""
-  "/parameters/drain_source_voltage":
-    - source: aos/AOT2146L-DS
-      page: 1
-      locator: "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 40 V"
-  "/parameters/drain_current":
-    - source: aos/AOT2146L-DS
-      page: 1
-      locator: "Absolute Maximum Ratings, Continuous Drain Current ID, TC=25°C: 105 A"
-  "/parameters/rds_on":
-    - source: aos/AOT2146L-DS
-      page: 2
-      locator: "Electrical Characteristics (TJ=25°C), RDS(ON) Static Drain-Source On-Resistance, VGS=10V, ID=20A: Typ 2.3, Max 2.8 mΩ"
-  "/parameters/gate_threshold_voltage":
-    - source: aos/AOT2146L-DS
-      page: 2
-      locator: "Electrical Characteristics (TJ=25°C), VGS(th) Gate Threshold Voltage: Min 1.5, Typ 1.95, Max 2.5 V"
+    min: 1.5 V
+    typ: 1.95 V
+    max: 2.5 V
+    at: { TJ: 25 °C }
+    src: 'p2 "Electrical Characteristics, VGS(th) Gate Threshold Voltage: Min 1.5, Typ 1.95, Max 2.5 V"'

@@ -6,104 +6,53 @@
 # body_height = A2, overall_height = A (MAX 2.00 only). L1 (1.25 REF) and
 # the foot angle are not modelled. Not the TI DB SSOP packages (16/20
 # leads).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/microchip/SSOP28-SS-C04-073C
-
 family: ssop
-lead_count: 28
+lead_count: { value: 28, src: 'p662 "C04-073 Rev C sheet 2 table, "Number of Pins N 28""' }
+source: microchip/DS40002183@revE
 
-pitch:
-  nominal: 0.65
-  unit: mm
+pitch: { typ: 0.65 mm, src: 'p662 "C04-073 Rev C sheet 2 table, "Pitch e 0.65 BSC""' }
+geometry: { type: parametric, generator: ssop }
 
 dimensions:
   body_width:
-    nominal: 5.30
-    min: 5.00
-    max: 5.60
-    unit: mm
+    min: 5 mm
+    typ: 5.3 mm
+    max: 5.6 mm
+    src: p662 "C04-073 Rev C sheet 2 table, "Molded Package Width E1 5.00 / 5.30 / 5.60""
   body_length:
-    nominal: 10.20
-    min: 9.90
-    max: 10.50
-    unit: mm
+    min: 9.9 mm
+    typ: 10.2 mm
+    max: 10.5 mm
+    src: p662 "C04-073 Rev C sheet 2 table, "Overall Length D 9.90 / 10.20 / 10.50""
   body_height:
-    nominal: 1.75
-    min: 1.65
-    max: 1.85
-    unit: mm
-  overall_width:
-    nominal: 7.80
-    min: 7.40
-    max: 8.20
-    unit: mm
-  overall_height:
-    max: 2.00
-    unit: mm
-  standoff:
-    min: 0.05
-    unit: mm
-  lead_width:
-    min: 0.22
-    max: 0.38
-    unit: mm
-  lead_length:
-    nominal: 0.75
-    min: 0.55
-    max: 0.95
-    unit: mm
+    min: 1.65 mm
+    typ: 1.75 mm
+    max: 1.85 mm
+    src: p662 "C04-073 Rev C sheet 2 table, "Molded Package Thickness A2 1.65 / 1.75 / 1.85""
   lead_thickness:
-    min: 0.09
-    max: 0.25
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: ssop
-
-provenance:
-  "/lead_count":
-    - source: microchip/DS40002183@revE
-      page: 662
-      locator: "C04-073 Rev C sheet 2 table, \"Number of Pins N 28\""
-  "/pitch":
-    - source: microchip/DS40002183@revE
-      page: 662
-      locator: "C04-073 Rev C sheet 2 table, \"Pitch e 0.65 BSC\""
-  "/dimensions/body_width":
-    - source: microchip/DS40002183@revE
-      page: 662
-      locator: "C04-073 Rev C sheet 2 table, \"Molded Package Width E1 5.00 / 5.30 / 5.60\""
-  "/dimensions/body_length":
-    - source: microchip/DS40002183@revE
-      page: 662
-      locator: "C04-073 Rev C sheet 2 table, \"Overall Length D 9.90 / 10.20 / 10.50\""
-  "/dimensions/body_height":
-    - source: microchip/DS40002183@revE
-      page: 662
-      locator: "C04-073 Rev C sheet 2 table, \"Molded Package Thickness A2 1.65 / 1.75 / 1.85\""
-  "/dimensions/overall_width":
-    - source: microchip/DS40002183@revE
-      page: 662
-      locator: "C04-073 Rev C sheet 2 table, \"Overall Width E 7.40 / 7.80 / 8.20\""
-  "/dimensions/overall_height":
-    - source: microchip/DS40002183@revE
-      page: 662
-      locator: "C04-073 Rev C sheet 2 table, \"Overall Height A\" (MAX 2.00 only)"
-  "/dimensions/standoff":
-    - source: microchip/DS40002183@revE
-      page: 662
-      locator: "C04-073 Rev C sheet 2 table, \"Standoff A1\" (MIN 0.05 only)"
-  "/dimensions/lead_width":
-    - source: microchip/DS40002183@revE
-      page: 662
-      locator: "C04-073 Rev C sheet 2 table, \"Lead Width b 0.22 / - / 0.38\""
-  "/dimensions/lead_length":
-    - source: microchip/DS40002183@revE
-      page: 662
-      locator: "C04-073 Rev C sheet 2 table, \"Foot Length L 0.55 / 0.75 / 0.95\""
-  "/dimensions/lead_thickness":
-    - source: microchip/DS40002183@revE
-      page: 662
-      locator: "C04-073 Rev C sheet 2 table, \"Lead Thickness c 0.09 / - / 0.25\""
+    min: 0.09 mm
+    max: 0.25 mm
+    src: p662 "C04-073 Rev C sheet 2 table, "Lead Thickness c 0.09 / - / 0.25""
+  overall_width:
+    min: 7.4 mm
+    typ: 7.8 mm
+    max: 8.2 mm
+    src: p662 "C04-073 Rev C sheet 2 table, "Overall Width E 7.40 / 7.80 / 8.20""
+  overall_height:
+    max: 2 mm
+    src: p662 "C04-073 Rev C sheet 2 table, "Overall Height A" (MAX 2.00 only)"
+  standoff:
+    min: 0.05 mm
+    src: p662 "C04-073 Rev C sheet 2 table, "Standoff A1" (MIN 0.05 only)"
+  lead_width:
+    min: 0.22 mm
+    max: 0.38 mm
+    src: p662 "C04-073 Rev C sheet 2 table, "Lead Width b 0.22 / - / 0.38""
+  lead_length:
+    min: 0.55 mm
+    typ: 0.75 mm
+    max: 0.95 mm
+    src: p662 "C04-073 Rev C sheet 2 table, "Foot Length L 0.55 / 0.75 / 0.95""

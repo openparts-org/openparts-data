@@ -2,20 +2,15 @@
 # capacitor. Capacitance/voltage confirmed both directly (table columns)
 # and via the part-number decode legend (page 3, "Explanation of part
 # numbers": code "0J" = 6.3V, code "331" = 330uF).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: panasonic/EEUFC0J331
-
 manufacturer: panasonic
 category: capacitor
 family: FC-A
+source: panasonic/ABA0000C1209
 
 pins:
-  "1": { name: "+", type: passive }
-  "2": { name: "-", type: passive }
-
-provenance:
-  "/pins":
-    - source: panasonic/ABA0000C1209
-      page: 3
-      locator: "\"Characteristics list\" table: rated voltage 6.3V, capacitance 330uF, tolerance +/-20% (page 1, Specifications table)"
+  src: 'p3 ""Characteristics list" table: rated voltage 6.3V, capacitance 330uF, tolerance +/-20% (page 1, Specifications table)"'
+  "1": { name: +, type: passive }
+  "2": { name: -, type: passive }

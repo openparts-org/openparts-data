@@ -16,101 +16,54 @@
 # change.
 # construction: molded -- page 1 Mechanical Characteristics "Case: Epoxy,
 # Molded".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/SOD123-ONSEMI-425
-
 family: sod
 lead_count: 2
+source: onsemi/MBR0520-D
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+
+construction: { value: molded, src: 'p1 "Mechanical Characteristics: "Case: Epoxy, Molded""' }
+
+geometry: { type: parametric, generator: sod }
 
 dimensions:
-  body_length:
-    nominal: 2.69
-    min: 2.54
-    max: 2.84
-    unit: mm
   body_width:
-    nominal: 1.6
-    min: 1.4
-    max: 1.8
-    unit: mm
+    min: 1.4 mm
+    typ: 1.6 mm
+    max: 1.8 mm
+    src: p4 "CASE 425 table, D 1.40 / 1.60 / 1.80"
+  body_length:
+    min: 2.54 mm
+    typ: 2.69 mm
+    max: 2.84 mm
+    src: p4 "CASE 425 table, E 2.54 / 2.69 / 2.84"
   body_height:
-    nominal: 1.16
-    unit: mm
-  overall_height:
-    nominal: 1.17
-    min: 0.94
-    max: 1.35
-    unit: mm
+    typ: 1.16 mm
+    src: p4 "CASE 425 table, A2 "1.16 REF." (reference value, marked REF. in the table)"
+  lead_thickness: { max: 0.15 mm, src: 'p4 "CASE 425 table, c - / - / 0.15 (max only)"' }
   overall_length:
-    nominal: 3.68
-    min: 3.56
-    max: 3.86
-    unit: mm
-  lead_width:
-    nominal: 0.61
-    min: 0.51
-    max: 0.71
-    unit: mm
-  lead_length:
-    nominal: 0.25
-    unit: mm
-  lead_thickness:
-    max: 0.15
-    unit: mm
+    min: 3.56 mm
+    typ: 3.68 mm
+    max: 3.86 mm
+    src: p4 "CASE 425 table, H 3.56 / 3.68 / 3.86 (side view, lead tip to lead tip)"
+  overall_height:
+    min: 0.94 mm
+    typ: 1.17 mm
+    max: 1.35 mm
+    src: p4 "CASE 425 table, A 0.94 / 1.17 / 1.35"
   standoff:
-    nominal: 0.05
-    min: 0.0
-    max: 0.1
-    unit: mm
-
-construction: molded
-
-geometry:
-  type: parametric
-  generator: sod
-
-provenance:
-  "/construction":
-    - source: onsemi/MBR0520-D
-      page: 1
-      locator: "Mechanical Characteristics: \"Case: Epoxy, Molded\""
-  "/dimensions/body_length":
-    - source: onsemi/MBR0520-D
-      page: 4
-      locator: "CASE 425 table, E 2.54 / 2.69 / 2.84"
-  "/dimensions/body_width":
-    - source: onsemi/MBR0520-D
-      page: 4
-      locator: "CASE 425 table, D 1.40 / 1.60 / 1.80"
-  "/dimensions/body_height":
-    - source: onsemi/MBR0520-D
-      page: 4
-      locator: "CASE 425 table, A2 \"1.16 REF.\" (reference value, marked REF. in the table)"
-  "/dimensions/overall_height":
-    - source: onsemi/MBR0520-D
-      page: 4
-      locator: "CASE 425 table, A 0.94 / 1.17 / 1.35"
-  "/dimensions/overall_length":
-    - source: onsemi/MBR0520-D
-      page: 4
-      locator: "CASE 425 table, H 3.56 / 3.68 / 3.86 (side view, lead tip to lead tip)"
-  "/dimensions/lead_width":
-    - source: onsemi/MBR0520-D
-      page: 4
-      locator: "CASE 425 table, b 0.51 / 0.61 / 0.71"
-  "/dimensions/lead_length":
-    - source: onsemi/MBR0520-D
-      page: 4
-      locator: "CASE 425 table, L \"0.25 REF.\" (reference value, marked REF. in the table)"
-  "/dimensions/lead_thickness":
-    - source: onsemi/MBR0520-D
-      page: 4
-      locator: "CASE 425 table, c - / - / 0.15 (max only)"
-  "/dimensions/standoff":
-    - source: onsemi/MBR0520-D
-      page: 4
-      locator: "CASE 425 table, A1 0.00 / 0.05 / 0.10"
+    min: 0 mm
+    typ: 0.05 mm
+    max: 0.1 mm
+    src: p4 "CASE 425 table, A1 0.00 / 0.05 / 0.10"
+  lead_width:
+    min: 0.51 mm
+    typ: 0.61 mm
+    max: 0.71 mm
+    src: p4 "CASE 425 table, b 0.51 / 0.61 / 0.71"
+  lead_length:
+    typ: 0.25 mm
+    src: p4 "CASE 425 table, L "0.25 REF." (reference value, marked REF. in the table)"

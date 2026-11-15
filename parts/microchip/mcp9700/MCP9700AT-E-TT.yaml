@@ -2,34 +2,25 @@
 # (page 23). Device microchip/MCP9700A, package manufacturers/microchip/SOT23-3-TT-C04-104C.
 # lifecycle: not stated in the datasheet; no first-party lifecycle page
 # was read, so it is recorded as unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/MCP9700AT-E-TT
-
 manufacturer: microchip
-mpn: "MCP9700AT-E/TT"
-
+mpn: MCP9700AT-E/TT
 device: microchip/MCP9700A
-package: manufacturers/microchip/SOT23-3-TT-C04-104C
+
+package:
+  value: manufacturers/microchip/SOT23-3-TT-C04-104C
+  src: p16 "Package legend "TT = 3LD SOT-23 Package" (page 23) -> drawing C04-104 (TT) Rev C (pages 16-17)"
+
+sources: [microchip/DS20001942@revL]
+source: microchip/DS20001942@revL
 
 # existence is `probable`: the MPN is assembled from the part-numbering
 # legend (or printed only as an example), not listed verbatim in an
 # orderable list (openparts/skills/add-part section 2).
 existence:
   status: probable
+  src: 'p23 "Product Identification System, example b) "MCP9700AT-E/TT: ... Tape and Reel, Extended Temperature, 3LD SOT-23 package""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS20001942@revL
-
-provenance:
-  "/existence":
-    - source: microchip/DS20001942@revL
-      page: 23
-      locator: "Product Identification System, example b) \"MCP9700AT-E/TT: ... Tape and Reel, Extended Temperature, 3LD SOT-23 package\""
-  "/package":
-    - source: microchip/DS20001942@revL
-      page: 16
-      locator: "Package legend \"TT = 3LD SOT-23 Package\" (page 23) -> drawing C04-104 (TT) Rev C (pages 16-17)"
+lifecycle: { status: unknown }

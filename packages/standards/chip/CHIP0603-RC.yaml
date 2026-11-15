@@ -2,41 +2,17 @@
 # 2-terminal chip component; the field is present (required by schema)
 # but deliberately carries no `nominal` -- see Canonical Data
 # Specification section 7 (omit rather than invent).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/CHIP0603-RC
-
 family: chip
 lead_count: 2
+source: yageo/PYU-RC_GROUP@rev51
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
 
 dimensions:
-  body_length:
-    nominal: 1.6
-    min: 1.5
-    max: 1.7
-    unit: mm
-  body_width:
-    nominal: 0.8
-    min: 0.7
-    max: 0.9
-    unit: mm
-  body_height:
-    nominal: 0.45
-    min: 0.35
-    max: 0.55
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: chip
-
-provenance:
-  "/dimensions/body_length":
-    - source: yageo/PYU-RC_GROUP@rev51
-  "/dimensions/body_width":
-    - source: yageo/PYU-RC_GROUP@rev51
-  "/dimensions/body_height":
-    - source: yageo/PYU-RC_GROUP@rev51
+  body_width:  { min: 0.7 mm, typ: 0.8 mm, max: 0.9 mm, src: yageo/PYU-RC_GROUP@rev51 }
+  body_length: { min: 1.5 mm, typ: 1.6 mm, max: 1.7 mm, src: yageo/PYU-RC_GROUP@rev51 }
+  body_height: { min: 0.35 mm, typ: 0.45 mm, max: 0.55 mm, src: yageo/PYU-RC_GROUP@rev51 }

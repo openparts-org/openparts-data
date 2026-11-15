@@ -3,57 +3,31 @@
 # Package: datasheet page 1 "CASE 221A"; outline from the standalone
 # drawing 98ASB42148B.
 # No lifecycle statement for this MPN.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: onsemi/MJE13007G
-
 manufacturer: onsemi
 mpn: MJE13007G
-
 device: onsemi/MJE13007
-package: manufacturers/onsemi/TO220-10.10x4.45-P2.54-221A
+
+package:
+  value: manufacturers/onsemi/TO220-10.10x4.45-P2.54-221A
+  src: [p1 "Package callout "CASE 221A"", onsemi/98ASB42148B p1 "CASE 221A outline"]
+
+sources: [onsemi/MJE13007-D, onsemi/98ASB42148B]
+source: onsemi/MJE13007-D
 
 existence:
   status: verified
+  src: 'p1 "ORDERING INFORMATION: "MJE13007G | TO-220 (Pb-Free) | 50 Units / Rail""'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - onsemi/MJE13007-D
-  - onsemi/98ASB42148B
+lifecycle: { status: unknown }
 
 parameters:
-  polarity:
-    value: npn
+  polarity: { value: npn, src: 'p1 "Page-1 title: "Switch-mode NPN Bipolar Power Transistor""' }
   collector_emitter_voltage:
-    nominal: 400
-    unit: V
+    typ: 400 V
+    src: 'p1 "MAXIMUM RATINGS, Collector-Emitter Sustaining Voltage VCEO: 400 Vdc"'
   collector_current:
-    nominal: 8.0
-    unit: A
-
-provenance:
-  "/existence":
-    - source: onsemi/MJE13007-D
-      page: 1
-      locator: "ORDERING INFORMATION: \"MJE13007G | TO-220 (Pb-Free) | 50 Units / Rail\""
-  "/package":
-    - source: onsemi/MJE13007-D
-      page: 1
-      locator: "Package callout \"CASE 221A\""
-    - source: onsemi/98ASB42148B
-      page: 1
-      locator: "CASE 221A outline"
-  "/parameters/polarity":
-    - source: onsemi/MJE13007-D
-      page: 1
-      locator: "Page-1 title: \"Switch-mode NPN Bipolar Power Transistor\""
-  "/parameters/collector_emitter_voltage":
-    - source: onsemi/MJE13007-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Collector-Emitter Sustaining Voltage VCEO: 400 Vdc"
-  "/parameters/collector_current":
-    - source: onsemi/MJE13007-D
-      page: 1
-      locator: "MAXIMUM RATINGS, Collector Current - Continuous IC: 8.0 Adc"
+    typ: 8 A
+    src: 'p1 "MAXIMUM RATINGS, Collector Current - Continuous IC: 8.0 Adc"'

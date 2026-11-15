@@ -10,34 +10,24 @@
 # lifecycle: not stated in the datasheet; no first-party lifecycle page
 # was read (microchip.com product pages return "Access Denied"), so it
 # is recorded as unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: microchip/MCP2562-E-SN
-
 manufacturer: microchip
-mpn: "MCP2562-E/SN"
-
+mpn: MCP2562-E/SN
 device: microchip/MCP2562
-package: standards/SOIC8-3.90x4.90-P1.27
+
+package:
+  value: standards/SOIC8-3.90x4.90-P1.27
+  src:
+    - p27 "Product Identification System, Package "SN""
+    - p23 ""8-Lead Plastic Small Outline (SN) - Narrow, 3.90 mm Body [SOIC]", Microchip Technology Drawing No. C04-057C Sheet 2 of 2 (dimension table)"
+
+sources: [microchip/DS20005167@revC]
+source: microchip/DS20005167@revC
 
 existence:
   status: probable
+  src: 'p27 "Product Identification System: Device "MCP2562", Temperature Range "E = -40C to +125C (Extended)", Package "SN = Plastic Small Outline - Narrow, 3.90 mm Body, 8-lead" (assembled from the legend; the examples list only MCP2561 SOIC codes)"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - microchip/DS20005167@revC
-
-provenance:
-  "/existence":
-    - source: microchip/DS20005167@revC
-      page: 27
-      locator: "Product Identification System: Device \"MCP2562\", Temperature Range \"E = -40C to +125C (Extended)\", Package \"SN = Plastic Small Outline - Narrow, 3.90 mm Body, 8-lead\" (assembled from the legend; the examples list only MCP2561 SOIC codes)"
-  "/package":
-    - source: microchip/DS20005167@revC
-      page: 27
-      locator: "Product Identification System, Package \"SN\""
-    - source: microchip/DS20005167@revC
-      page: 23
-      locator: "\"8-Lead Plastic Small Outline (SN) - Narrow, 3.90 mm Body [SOIC]\", Microchip Technology Drawing No. C04-057C Sheet 2 of 2 (dimension table)"
+lifecycle: { status: unknown }

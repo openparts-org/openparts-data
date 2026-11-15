@@ -1,56 +1,27 @@
 # 10 uF X5R 10 V +/-10 % 0603 MLCC, packaging code C (cardboard 7"
 # reel, catalog p8). Literal MPN listed on Samsung's product page.
 # lifecycle: the product page shows "Status: Mass Production".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: samsung/CL10A106KP8NNNC
-
 manufacturer: samsung
 mpn: CL10A106KP8NNNC
-
 device: samsung/CL10A106KP8
 package: standards/CHIP0603-SAMSUNG-CL10-T8
+sources: [samsung/CL10A106KP8NNN, samsung/MLCC_2512]
+source: samsung/CL10A106KP8NNN
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - samsung/CL10A106KP8NNN
-  - samsung/MLCC_2512
+existence: { status: verified, src: '""List of part numbers with package codes": CL10A106KP8NNNC"' }
+lifecycle: { status: active, src: '"Characteristics, "Status: Mass Production""' }
 
 parameters:
   capacitance:
-    nominal: 10.0
-    unit: uF
-  tolerance:
-    min: -10
-    max: 10
-    unit: "%"
+    typ: 10 uF
+    src: '"Product page CL10A106KP8NNN#, Characteristics, Capacitance: 10.0uF"'
+  tolerance: { tol: ±10 %, src: '"Product page CL10A106KP8NNN#, Characteristics, Tolerance: ±10%"' }
   rated_voltage:
-    nominal: 10.0
-    unit: V
+    typ: 10 V
+    src: '"Product page CL10A106KP8NNN#, Characteristics, Rated Voltage: 10.0Vdc"'
   dielectric:
     value: X5R
-
-provenance:
-  "/existence":
-    - source: samsung/CL10A106KP8NNN
-      locator: "\"List of part numbers with package codes\": CL10A106KP8NNNC"
-  "/lifecycle":
-    - source: samsung/CL10A106KP8NNN
-      locator: "Characteristics, \"Status: Mass Production\""
-  "/parameters/capacitance":
-    - source: samsung/CL10A106KP8NNN
-      locator: "Product page CL10A106KP8NNN#, Characteristics, Capacitance: 10.0uF"
-  "/parameters/tolerance":
-    - source: samsung/CL10A106KP8NNN
-      locator: "Product page CL10A106KP8NNN#, Characteristics, Tolerance: ±10%"
-  "/parameters/rated_voltage":
-    - source: samsung/CL10A106KP8NNN
-      locator: "Product page CL10A106KP8NNN#, Characteristics, Rated Voltage: 10.0Vdc"
-  "/parameters/dielectric":
-    - source: samsung/CL10A106KP8NNN
-      locator: "Product page CL10A106KP8NNN#, Characteristics, Temperature Characteristic: X5R(-55 ~ +85)"
+    src: '"Product page CL10A106KP8NNN#, Characteristics, Temperature Characteristic: X5R(-55 ~ +85)"'

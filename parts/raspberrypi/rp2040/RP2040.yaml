@@ -8,21 +8,14 @@
 # checked across all 642 pages) -- treated as a reasonable inference
 # given RP2040 remains the current, widely-sold Raspberry Pi Pico MCU as
 # of this datasheet's 2025-02-20 build date.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: raspberrypi/RP2040
-
 manufacturer: raspberrypi
 mpn: RP2040
-
 device: raspberrypi/RP2040
 package: standards/QFN56-RP2040
+sources: [raspberrypi/RP-008371-DS@rev1]
 
-existence:
-  status: verified
-
-lifecycle:
-  status: active
-
-sources:
-  - raspberrypi/RP-008371-DS@rev1
+existence: { status: verified }
+lifecycle: { status: active }

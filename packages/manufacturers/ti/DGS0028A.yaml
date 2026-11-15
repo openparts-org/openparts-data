@@ -11,91 +11,46 @@
 # lead_thickness = "(0.15) TYP": parenthesised, i.e. a reference value per
 # note 1, recorded as nominal and flagged here. Note 4: "No JEDEC
 # registration as of September 2020".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/ti/DGS0028A
-
 family: msop
-lead_count: 28
 
-pitch:
-  nominal: 0.5
-  unit: mm
+lead_count:
+  value: 28
+  src: p121 "PACKAGE OUTLINE DGS0028A (4226365/A 10/2020), pins 1-14 / 15-28"
+
+source: ti/SLASEW9E
+
+pitch: { typ: 0.5 mm, src: 'p121 "PACKAGE OUTLINE DGS0028A, "26X 0.5" (boxed basic dimension)"' }
+geometry: { type: parametric, generator: msop }
 
 dimensions:
   body_width:
-    min: 2.9
-    max: 3.1
-    unit: mm
+    min: 2.9 mm
+    max: 3.1 mm
+    src: p121 "PACKAGE OUTLINE DGS0028A, body width "3.1/2.9" (datum B); min/max only"
   body_length:
-    min: 7.0
-    max: 7.2
-    unit: mm
-  overall_width:
-    min: 4.7
-    max: 5.1
-    unit: mm
-  overall_height:
-    max: 1.1
-    unit: mm
-  standoff:
-    min: 0.05
-    max: 0.15
-    unit: mm
-  lead_width:
-    min: 0.165
-    max: 0.275
-    unit: mm
-  lead_length:
-    min: 0.4
-    max: 0.7
-    unit: mm
+    min: 7 mm
+    max: 7.2 mm
+    src: p121 "PACKAGE OUTLINE DGS0028A, body length "7.2/7.0 NOTE 3" (datum A); min/max only"
   lead_thickness:
-    nominal: 0.15
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: msop
-
-provenance:
-  "/lead_count":
-    - source: ti/SLASEW9E
-      page: 121
-      locator: "PACKAGE OUTLINE DGS0028A (4226365/A 10/2020), pins 1-14 / 15-28"
-  "/pitch":
-    - source: ti/SLASEW9E
-      page: 121
-      locator: "PACKAGE OUTLINE DGS0028A, \"26X 0.5\" (boxed basic dimension)"
-  "/dimensions/body_width":
-    - source: ti/SLASEW9E
-      page: 121
-      locator: "PACKAGE OUTLINE DGS0028A, body width \"3.1/2.9\" (datum B); min/max only"
-  "/dimensions/body_length":
-    - source: ti/SLASEW9E
-      page: 121
-      locator: "PACKAGE OUTLINE DGS0028A, body length \"7.2/7.0 NOTE 3\" (datum A); min/max only"
-  "/dimensions/overall_width":
-    - source: ti/SLASEW9E
-      page: 121
-      locator: "PACKAGE OUTLINE DGS0028A, lead tip span \"5.1/4.7 TYP\" (min/max only)"
-  "/dimensions/overall_height":
-    - source: ti/SLASEW9E
-      page: 121
-      locator: "PACKAGE OUTLINE DGS0028A, DETAIL A \"1.1 MAX\""
-  "/dimensions/standoff":
-    - source: ti/SLASEW9E
-      page: 121
-      locator: "PACKAGE OUTLINE DGS0028A, DETAIL A \"0.15/0.05\""
-  "/dimensions/lead_width":
-    - source: ti/SLASEW9E
-      page: 121
-      locator: "PACKAGE OUTLINE DGS0028A, \"28X 0.275/0.165\""
-  "/dimensions/lead_length":
-    - source: ti/SLASEW9E
-      page: 121
-      locator: "PACKAGE OUTLINE DGS0028A, DETAIL A \"0.7/0.4\""
-  "/dimensions/lead_thickness":
-    - source: ti/SLASEW9E
-      page: 121
-      locator: "PACKAGE OUTLINE DGS0028A, side view \"(0.15) TYP\" -- parenthesised = reference only (note 1)"
+    typ: 0.15 mm
+    src: p121 "PACKAGE OUTLINE DGS0028A, side view "(0.15) TYP" -- parenthesised = reference only (note 1)"
+  lead_length:
+    min: 0.4 mm
+    max: 0.7 mm
+    src: p121 "PACKAGE OUTLINE DGS0028A, DETAIL A "0.7/0.4""
+  overall_width:
+    min: 4.7 mm
+    max: 5.1 mm
+    src: p121 "PACKAGE OUTLINE DGS0028A, lead tip span "5.1/4.7 TYP" (min/max only)"
+  overall_height: { max: 1.1 mm, src: 'p121 "PACKAGE OUTLINE DGS0028A, DETAIL A "1.1 MAX""' }
+  standoff:
+    min: 0.05 mm
+    max: 0.15 mm
+    src: p121 "PACKAGE OUTLINE DGS0028A, DETAIL A "0.15/0.05""
+  lead_width:
+    min: 0.165 mm
+    max: 0.275 mm
+    src: p121 "PACKAGE OUTLINE DGS0028A, "28X 0.275/0.165""

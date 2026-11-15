@@ -3,15 +3,12 @@
 # Rev. 24 - 3 (footer date March 2015), 10 pages, downloaded from the URL
 # below. Every page carries the banner "NOT RECOMMENDED FOR NEW DESIGN /
 # USE AZ1117C/E". Only the SOT223 package remains in this revision.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: diodes/DS31009
-
+url: https://www.diodes.com/assets/Datasheets/AP1117.pdf
+date: 2015-03
+revision: 24-3
 publisher: diodes
 document_id: DS31009
 document_type: datasheet
-
-revision: "24-3"
-date: "2015-03"
-
-url: "https://www.diodes.com/assets/Datasheets/AP1117.pdf"

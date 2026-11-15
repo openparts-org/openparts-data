@@ -7,96 +7,49 @@
 # (MIN 2.05 only), overall_height = A (MAX 2.65 only). Chamfer h, L1 (1.40
 # REF) and angles are not modelled. Not standards/SOIC18-7.50x11.55-P1.27
 # (18 leads) nor SOIC28-SO-C04-052C.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/microchip/SOIC20-SO-C04-094C
-
 family: soic
-lead_count: 20
 
-pitch:
-  nominal: 1.27
-  unit: mm
+lead_count:
+  value: 20
+  src: p573 "C04-094C sheet 2 table (rendered image), "Number of Pins N 20""
+
+source: microchip/DS40002204@revA
+
+pitch: { typ: 1.27 mm, src: 'p573 "C04-094C sheet 2 table (rendered image), "Pitch e 1.27 BSC""' }
+geometry: { type: parametric, generator: soic }
 
 dimensions:
   body_width:
-    nominal: 7.50
-    unit: mm
+    typ: 7.5 mm
+    src: p573 "C04-094C sheet 2 table (rendered image), "Molded Package Width E1 7.50 BSC""
   body_length:
-    nominal: 12.80
-    unit: mm
+    typ: 12.8 mm
+    src: p573 "C04-094C sheet 2 table (rendered image), "Overall Length D 12.80 BSC""
   body_height:
-    min: 2.05
-    unit: mm
-  overall_width:
-    nominal: 10.30
-    unit: mm
-  overall_height:
-    max: 2.65
-    unit: mm
-  standoff:
-    min: 0.10
-    max: 0.30
-    unit: mm
-  lead_width:
-    min: 0.31
-    max: 0.51
-    unit: mm
-  lead_length:
-    min: 0.40
-    max: 1.27
-    unit: mm
+    min: 2.05 mm
+    src: p573 "C04-094C sheet 2 table (rendered image), "Molded Package Thickness A2" (MIN 2.05 only)"
   lead_thickness:
-    min: 0.20
-    max: 0.33
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: soic
-
-provenance:
-  "/lead_count":
-    - source: microchip/DS40002204@revA
-      page: 573
-      locator: "C04-094C sheet 2 table (rendered image), \"Number of Pins N 20\""
-  "/pitch":
-    - source: microchip/DS40002204@revA
-      page: 573
-      locator: "C04-094C sheet 2 table (rendered image), \"Pitch e 1.27 BSC\""
-  "/dimensions/body_width":
-    - source: microchip/DS40002204@revA
-      page: 573
-      locator: "C04-094C sheet 2 table (rendered image), \"Molded Package Width E1 7.50 BSC\""
-  "/dimensions/body_length":
-    - source: microchip/DS40002204@revA
-      page: 573
-      locator: "C04-094C sheet 2 table (rendered image), \"Overall Length D 12.80 BSC\""
-  "/dimensions/body_height":
-    - source: microchip/DS40002204@revA
-      page: 573
-      locator: "C04-094C sheet 2 table (rendered image), \"Molded Package Thickness A2\" (MIN 2.05 only)"
-  "/dimensions/overall_width":
-    - source: microchip/DS40002204@revA
-      page: 573
-      locator: "C04-094C sheet 2 table (rendered image), \"Overall Width E 10.30 BSC\""
-  "/dimensions/overall_height":
-    - source: microchip/DS40002204@revA
-      page: 573
-      locator: "C04-094C sheet 2 table (rendered image), \"Overall Height A\" (MAX 2.65 only)"
-  "/dimensions/standoff":
-    - source: microchip/DS40002204@revA
-      page: 573
-      locator: "C04-094C sheet 2 table (rendered image), \"Standoff A1 0.10 / - / 0.30\""
-  "/dimensions/lead_width":
-    - source: microchip/DS40002204@revA
-      page: 573
-      locator: "C04-094C sheet 2 table (rendered image), \"Lead Width b 0.31 / - / 0.51\""
-  "/dimensions/lead_length":
-    - source: microchip/DS40002204@revA
-      page: 573
-      locator: "C04-094C sheet 2 table (rendered image), \"Foot Length L 0.40 / - / 1.27\""
-  "/dimensions/lead_thickness":
-    - source: microchip/DS40002204@revA
-      page: 573
-      locator: "C04-094C sheet 2 table (rendered image), \"Lead Thickness c 0.20 / - / 0.33\""
+    min: 0.2 mm
+    max: 0.33 mm
+    src: p573 "C04-094C sheet 2 table (rendered image), "Lead Thickness c 0.20 / - / 0.33""
+  overall_width:
+    typ: 10.3 mm
+    src: p573 "C04-094C sheet 2 table (rendered image), "Overall Width E 10.30 BSC""
+  overall_height:
+    max: 2.65 mm
+    src: p573 "C04-094C sheet 2 table (rendered image), "Overall Height A" (MAX 2.65 only)"
+  standoff:
+    min: 0.1 mm
+    max: 0.3 mm
+    src: p573 "C04-094C sheet 2 table (rendered image), "Standoff A1 0.10 / - / 0.30""
+  lead_width:
+    min: 0.31 mm
+    max: 0.51 mm
+    src: p573 "C04-094C sheet 2 table (rendered image), "Lead Width b 0.31 / - / 0.51""
+  lead_length:
+    min: 0.4 mm
+    max: 1.27 mm
+    src: p573 "C04-094C sheet 2 table (rendered image), "Foot Length L 0.40 / - / 1.27""

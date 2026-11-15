@@ -4,77 +4,47 @@
 # "product_status":"Last Time Buy" -> eol_announced.
 # Package: datasheet "TO-263"; the product page links AOS's
 # TO263 outline (PO-00005) as this product's package document.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: aos/AOB240L
-
 manufacturer: aos
 mpn: AOB240L
-
 device: aos/AOB240L
-package: manufacturers/aos/TO263-9.14x10.03-P2.54-PO-00005-TabPin4
+
+package:
+  value: manufacturers/aos/TO263-9.14x10.03-P2.54-PO-00005-TabPin4
+  src:
+    - 'aos/AOB240L-product-page ""packages": "TO263", package_pdf .../packaging_information/TO263.pdf"'
+    - aos/PO-00005 p1 ""TO263(D2PAK) PACKAGE OUTLINE" PO-00005 Version N"
+
+sources: [aos/AOT240L-DS, aos/AOB240L-product-page, aos/PO-00005]
+source: aos/AOT240L-DS
 
 existence:
   status: verified
+  src: 'p1 "Orderable Part Number table: "AOB240L | TO-263 | Tape & Reel | 800""'
 
 lifecycle:
   status: eol_announced
-
-sources:
-  - aos/AOT240L-DS
-  - aos/AOB240L-product-page
-  - aos/PO-00005
+  src: aos/AOB240L-product-page "Embedded product JSON "product_status":"Last Time Buy""
 
 parameters:
-  polarity:
-    value: n_channel
+  polarity: { value: n_channel, src: 'p1 "Page-1 title: "40V N-Channel MOSFET""' }
   drain_source_voltage:
-    nominal: 40
-    unit: V
+    typ: 40 V
+    src: 'p1 "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 40 V"'
   drain_current:
-    nominal: 105
-    unit: A
+    typ: 105 A
+    at: { TC: 25 °C }
+    src: 'p1 "Absolute Maximum Ratings, Continuous Drain Current ID, AOT240L/AOB240L column: 105 A"'
   rds_on:
-    nominal: 2.1
-    max: 2.6
-    unit: mΩ
+    typ: 2.1 mΩ
+    max: 2.6 mΩ
+    at: { VGS: 10 V, ID: 20 A, TJ: 25 °C }
+    src: 'p2 "Electrical Characteristics, RDS(ON) Static Drain-Source On-Resistance, TO263 row: Typ 2.1, Max 2.6 mΩ"'
   gate_threshold_voltage:
-    nominal: 1.7
-    min: 1
-    max: 2.2
-    unit: V
-
-provenance:
-  "/existence":
-    - source: aos/AOT240L-DS
-      page: 1
-      locator: "Orderable Part Number table: \"AOB240L | TO-263 | Tape & Reel | 800\""
-  "/lifecycle":
-    - source: aos/AOB240L-product-page
-      locator: "Embedded product JSON \"product_status\":\"Last Time Buy\""
-  "/package":
-    - source: aos/AOB240L-product-page
-      locator: "\"packages\": \"TO263\", package_pdf .../packaging_information/TO263.pdf"
-    - source: aos/PO-00005
-      page: 1
-      locator: "\"TO263(D2PAK) PACKAGE OUTLINE\" PO-00005 Version N"
-  "/parameters/polarity":
-    - source: aos/AOT240L-DS
-      page: 1
-      locator: "Page-1 title: \"40V N-Channel MOSFET\""
-  "/parameters/drain_source_voltage":
-    - source: aos/AOT240L-DS
-      page: 1
-      locator: "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 40 V"
-  "/parameters/drain_current":
-    - source: aos/AOT240L-DS
-      page: 1
-      locator: "Absolute Maximum Ratings, Continuous Drain Current ID, TC=25°C, AOT240L/AOB240L column: 105 A"
-  "/parameters/rds_on":
-    - source: aos/AOT240L-DS
-      page: 2
-      locator: "Electrical Characteristics (TJ=25°C), RDS(ON) Static Drain-Source On-Resistance, VGS=10V, ID=20A, TO263 row: Typ 2.1, Max 2.6 mΩ"
-  "/parameters/gate_threshold_voltage":
-    - source: aos/AOT240L-DS
-      page: 2
-      locator: "Electrical Characteristics (TJ=25°C), VGS(th) Gate Threshold Voltage: Min 1, Typ 1.7, Max 2.2 V"
+    min: 1 V
+    typ: 1.7 V
+    max: 2.2 V
+    at: { TJ: 25 °C }
+    src: 'p2 "Electrical Characteristics, VGS(th) Gate Threshold Voltage: Min 1, Typ 1.7, Max 2.2 V"'

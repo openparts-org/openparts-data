@@ -5,37 +5,25 @@
 # connected to Pin 2." -> pin "4" = Ground. Pin types: Input/Output
 # power, Ground ground (repeat allowed). In the DPAK, lead 2 is trimmed
 # at the body (no pad).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/MC7805B
-
 manufacturer: onsemi
 category: linear_regulator
 family: MC7800
-
-pins:
-  "1": { name: Input, type: power }
-  "2": { name: Ground, type: ground }
-  "3": { name: Output, type: power }
-  "4": { name: Ground, type: ground }
+source: onsemi/MC7800-D
 
 parameters:
   output_type:
     value: fixed
+    src: 'p1 "Description: "monolithic integrated circuits designed as fixed-voltage regulators""'
   dropout_voltage:
-    nominal: 2.0
-    unit: V
+    typ: 2 V
+    src: 'p3 "ELECTRICAL CHARACTERISTICS (Vin = 10 V, IO = 500 mA), MC7805B, NCV7805B column, Dropout Voltage (IO = 1.0 A, TJ = 25°C): Typ 2.0 Vdc"'
 
-provenance:
-  "/parameters/output_type":
-    - source: onsemi/MC7800-D
-      page: 1
-      locator: "Description: \"monolithic integrated circuits designed as fixed-voltage regulators\""
-  "/parameters/dropout_voltage":
-    - source: onsemi/MC7800-D
-      page: 3
-      locator: "ELECTRICAL CHARACTERISTICS (Vin = 10 V, IO = 500 mA), MC7805B, NCV7805B column, Dropout Voltage (IO = 1.0 A, TJ = 25°C): Typ 2.0 Vdc"
-  "/pins":
-    - source: onsemi/MC7800-D
-      page: 1
-      locator: "Pinout box: \"Pin 1. Input 2. Ground 3. Output\"; \"Heatsink surface (shown as terminal 4 in case outline drawing) is connected to Pin 2.\""
+pins:
+  src: 'p1 "Pinout box: "Pin 1. Input 2. Ground 3. Output"; "Heatsink surface (shown as terminal 4 in case outline drawing) is connected to Pin 2.""'
+  "1": { name: Input, type: power }
+  "2": { name: Ground, type: ground }
+  "3": { name: Output, type: power }
+  "4": { name: Ground, type: ground }

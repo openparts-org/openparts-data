@@ -6,38 +6,24 @@
 # 09/2016) on page 43. Its pdftotext -layout text matches the outline
 # page the package was read from (ti/SCLS085L page 22) line for line, so
 # manufacturers/ti/D0014A is reused.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/LM339DR
-
 manufacturer: ti
-mpn: "LM339DR"
-
+mpn: LM339DR
 device: ti/LM339
-package: manufacturers/ti/D0014A
+
+package:
+  value: manufacturers/ti/D0014A
+  src:
+    - p30 "Package Option Addendum, row "LM339DR", "SOIC (D) | 14""
+    - p43 "PACKAGE OUTLINE D0014A (4220718/A 09/2016)"
+
+sources: [ti/SLCS006Z]
+source: ti/SLCS006Z
 
 existence:
   status: verified
+  src: p30 "Package Option Addendum, Packaging Information table, row "LM339DR""
 
-lifecycle:
-  status: active
-
-sources:
-  - ti/SLCS006Z
-
-provenance:
-  "/existence":
-    - source: ti/SLCS006Z
-      page: 30
-      locator: "Package Option Addendum, Packaging Information table, row \"LM339DR\""
-  "/lifecycle":
-    - source: ti/SLCS006Z
-      page: 30
-      locator: "Package Option Addendum, row \"LM339DR\", Status \"Active\""
-  "/package":
-    - source: ti/SLCS006Z
-      page: 30
-      locator: "Package Option Addendum, row \"LM339DR\", \"SOIC (D) | 14\""
-    - source: ti/SLCS006Z
-      page: 43
-      locator: "PACKAGE OUTLINE D0014A (4220718/A 09/2016)"
+lifecycle: { status: active, src: 'p30 "Package Option Addendum, row "LM339DR", Status "Active""' }

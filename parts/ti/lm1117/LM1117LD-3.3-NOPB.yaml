@@ -2,35 +2,20 @@
 # Active  Production  WSON (NGN) | 8" -- MPN printed verbatim in TI's orderable
 # list (existence verified); lifecycle "Active" is TI's own Status column.
 # Package NGN = outline NGN0008A (SNOS412Q page 38).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/LM1117LD-3.3/NOPB
-
 manufacturer: ti
 mpn: LM1117LD-3.3/NOPB
-
 device: ti/LM1117-FIXED-NGN
-package: manufacturers/ti/NGN0008A
+package: { value: manufacturers/ti/NGN0008A, src: p38 "NGN0008A package outline" }
+sources: [ti/SNOS412Q]
+source: ti/SNOS412Q
 
 existence:
   status: verified
+  src: p25 "Package option addendum table, row "LM1117LD-3.3/NOPB" (WSON (NGN) | 8)"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SNOS412Q
-
-provenance:
-  "/existence":
-    - source: ti/SNOS412Q
-      page: 25
-      locator: "Package option addendum table, row \"LM1117LD-3.3/NOPB\" (WSON (NGN) | 8)"
-  "/lifecycle":
-    - source: ti/SNOS412Q
-      page: 25
-      locator: "Package option addendum table, row \"LM1117LD-3.3/NOPB\", Status \"Active\""
-  "/package":
-    - source: ti/SNOS412Q
-      page: 38
-      locator: "NGN0008A package outline"
+  src: p25 "Package option addendum table, row "LM1117LD-3.3/NOPB", Status "Active""

@@ -4,27 +4,18 @@
 # datasheet nor the product page prints "BMP384" in an ordering table.
 # lifecycle: unknown (no first-party status statement found).
 # Package: drawing of this datasheet (page 48).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: bosch/BMP384
-
 manufacturer: bosch
-mpn: "BMP384"
-
+mpn: BMP384
 device: bosch/BMP384
 package: manufacturers/bosch/LGA10-2.0x2.0-P0.5-BMP384
+sources: [bosch/BST-BMP384-DS003-11]
+source: bosch/BST-BMP384-DS003-11
 
 existence:
   status: probable
+  src: 'p1 "title page: product BMP384, technical reference code 0 273 017 015 (no ordering table)"'
 
-lifecycle:
-  status: unknown
-
-sources:
-  - bosch/BST-BMP384-DS003-11
-
-provenance:
-  "/existence":
-    - source: bosch/BST-BMP384-DS003-11
-      page: 1
-      locator: "title page: product BMP384, technical reference code 0 273 017 015 (no ordering table)"
+lifecycle: { status: unknown }

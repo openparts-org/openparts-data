@@ -6,24 +6,18 @@
 # pin 1 left): 1 = Gate, 2 = Drain, 3 = Source -- position-derived,
 # flagged for review. The tab (drain) is not a footprint pad in a
 # vertical TO-220 and is not listed as a pin.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: aos/AOT66613L
-
 manufacturer: aos
 category: transistor
 family: AOT66613L
+source: aos/AOB66613L-DS
 
 pins:
+  src:
+    - 'p1 ""TO220" Top View / Bottom View images: leads G D S, tab D; no pin numbers printed -- see header"'
+    - 'aos/PO-00015 p1 "TOP VIEW: three leads at "2X e"; no numbers printed"'
   "1": { name: Gate, type: passive }
   "2": { name: Drain, type: passive }
   "3": { name: Source, type: passive }
-
-provenance:
-  "/pins":
-    - source: aos/AOB66613L-DS
-      page: 1
-      locator: "\"TO220\" Top View / Bottom View images: leads G D S, tab D; no pin numbers printed -- see header"
-    - source: aos/PO-00015
-      page: 1
-      locator: "TOP VIEW: three leads at \"2X e\"; no numbers printed"

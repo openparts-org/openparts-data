@@ -13,89 +13,48 @@
 # package is deleted in this change).
 # construction: molded -- page 3 Physical Specifications "Case ...
 # Molded plastic per UL Class 94V-0".
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: standards/DO214AC-BOURNS-SMAJ
-
 family: do214
 lead_count: 2
+source: bourns/SMAJ
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
+
+construction:
+  value: molded
+  src: 'p3 "Physical Specifications: "Case ... Molded plastic per UL Class 94V-0""'
+
+geometry: { type: parametric, generator: do214 }
 
 dimensions:
-  body_length:
-    min: 3.99
-    max: 4.5
-    unit: mm
   body_width:
-    min: 2.54
-    max: 2.79
-    unit: mm
+    min: 2.54 mm
+    max: 2.79 mm
+    src: p3 "Product Dimensions table, B 2.54 - 2.79 (0.100 - 0.110)"
+  body_length:
+    min: 3.99 mm
+    max: 4.5 mm
+    src: p3 "Product Dimensions table, A 3.99 - 4.50 (0.157 - 0.177)"
   body_height:
-    min: 1.98
-    max: 2.29
-    unit: mm
-  overall_length:
-    min: 4.93
-    max: 5.28
-    unit: mm
-  lead_width:
-    min: 1.25
-    max: 1.65
-    unit: mm
-  lead_length:
-    min: 0.76
-    max: 1.52
-    unit: mm
+    min: 1.98 mm
+    max: 2.29 mm
+    src: p3 "Product Dimensions table, G 1.98 - 2.29 (0.078 - 0.090)"
   lead_thickness:
-    min: 0.15
-    max: 0.31
-    unit: mm
-  standoff:
-    max: 0.203
-    unit: mm
-
-construction: molded
-
-geometry:
-  type: parametric
-  generator: do214
-
-provenance:
-  "/construction":
-    - source: bourns/SMAJ
-      page: 3
-      locator: "Physical Specifications: \"Case ... Molded plastic per UL Class 94V-0\""
-  "/dimensions/body_length":
-    - source: bourns/SMAJ
-      page: 3
-      locator: "Product Dimensions table, A 3.99 - 4.50 (0.157 - 0.177)"
-  "/dimensions/body_width":
-    - source: bourns/SMAJ
-      page: 3
-      locator: "Product Dimensions table, B 2.54 - 2.79 (0.100 - 0.110)"
-  "/dimensions/body_height":
-    - source: bourns/SMAJ
-      page: 3
-      locator: "Product Dimensions table, G 1.98 - 2.29 (0.078 - 0.090)"
-  "/dimensions/overall_length":
-    - source: bourns/SMAJ
-      page: 3
-      locator: "Product Dimensions table, E 4.93 - 5.28 (0.194 - 0.208)"
-  "/dimensions/lead_width":
-    - source: bourns/SMAJ
-      page: 3
-      locator: "Product Dimensions table, C 1.25 - 1.65 (0.049 - 0.065)"
-  "/dimensions/lead_length":
-    - source: bourns/SMAJ
-      page: 3
-      locator: "Product Dimensions table, H 0.76 - 1.52 (0.030 - 0.060)"
-  "/dimensions/lead_thickness":
-    - source: bourns/SMAJ
-      page: 3
-      locator: "Product Dimensions table, D 0.15 - 0.31 (0.006 - 0.012)"
-  "/dimensions/standoff":
-    - source: bourns/SMAJ
-      page: 3
-      locator: "Product Dimensions table, F 0.203 MAX. (0.008)"
+    min: 0.15 mm
+    max: 0.31 mm
+    src: p3 "Product Dimensions table, D 0.15 - 0.31 (0.006 - 0.012)"
+  overall_length:
+    min: 4.93 mm
+    max: 5.28 mm
+    src: p3 "Product Dimensions table, E 4.93 - 5.28 (0.194 - 0.208)"
+  standoff: { max: 0.203 mm, src: 'p3 "Product Dimensions table, F 0.203 MAX. (0.008)"' }
+  lead_width:
+    min: 1.25 mm
+    max: 1.65 mm
+    src: p3 "Product Dimensions table, C 1.25 - 1.65 (0.049 - 0.065)"
+  lead_length:
+    min: 0.76 mm
+    max: 1.52 mm
+    src: p3 "Product Dimensions table, H 0.76 - 1.52 (0.030 - 0.060)"

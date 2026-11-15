@@ -2,43 +2,21 @@
 # ("ORDER CODE 742792651", every page) -> existence verified.
 # lifecycle: the title block "STATUS Valid" is the document's release
 # status, not a product lifecycle statement; unknown.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: wurth/742792651
-
 manufacturer: wurth
 mpn: "742792651"
-
 device: wurth/742792651
 package: manufacturers/wurth/CHIP0603-WE-CBF
+sources: [wurth/742792651-DS]
+source: wurth/742792651-DS
 
-existence:
-  status: verified
-
-lifecycle:
-  status: unknown
-
-sources:
-  - wurth/742792651-DS
+existence: { status: verified, src: 'p1 "Title block, "ORDER CODE 742792651", "SIZE/TYPE 0603""' }
+lifecycle: { status: unknown }
 
 parameters:
   rated_current:
-    nominal: 1000
-    unit: mA
-  dcr:
-    max: 0.2
-    unit: Ω
-
-provenance:
-  "/parameters/rated_current":
-    - source: wurth/742792651-DS
-      page: 1
-      locator: "Electrical Properties, Rated Current 2 IR 2, ΔT = 40 K: 1000 mA max. (Rated Current 1 IR 1, ΔT = 20 K: 800 mA)"
-  "/parameters/dcr":
-    - source: wurth/742792651-DS
-      page: 1
-      locator: "Electrical Properties, DC Resistance RDC @ 20 °C: 0.2 Ω max."
-  "/existence":
-    - source: wurth/742792651-DS
-      page: 1
-      locator: "Title block, \"ORDER CODE 742792651\", \"SIZE/TYPE 0603\""
+    typ: 1000 mA
+    src: 'p1 "Electrical Properties, Rated Current 2 IR 2, ΔT = 40 K: 1000 mA max. (Rated Current 1 IR 1, ΔT = 20 K: 800 mA)"'
+  dcr: { max: 0.2 Ω, src: 'p1 "Electrical Properties, DC Resistance RDC @ 20 °C: 0.2 Ω max."' }

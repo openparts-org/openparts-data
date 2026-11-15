@@ -19,94 +19,42 @@
 # "Leads 1,2,3 may be wider than leads 4,5,6 for package orientation"
 # (no separate value given). Lead thickness "0.22/0.08 TYP", foot
 # "0.6/0.3 TYP" and standoff "0.15/0.00 TYP" recorded as those ranges.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/ti/DBV0006A
-
 family: sot
 lead_count: 6
-lead_layout: [3, 3]
+
+lead_layout:
+  value: [3, 3]
+  src:   'p22 "DBV0006A top view: leads 1, 2, 3 on the left edge (top to bottom), 6, 5, 4 on the right edge (top to bottom)"'
+
+source: ti/SCES195N
 
 pitch:
-  nominal: 0.95
-  unit: mm
+  typ: 0.95 mm
+  src: p22 "PACKAGE OUTLINE DBV0006A (4214840/G), "2X 0.95" (basic); "1.9" basic across pins 1-3"
+
+geometry: { type: parametric, generator: sot }
 
 dimensions:
   body_width:
-    min: 2.75
-    max: 3.05
-    unit: mm
+    min: 2.75 mm
+    max: 3.05 mm
+    src: p22 "DBV0006A, body length along the rows "3.05 / 2.75" (datum A) -- see field-mapping note"
   body_length:
-    min: 1.45
-    max: 1.75
-    unit: mm
-  overall_length:
-    min: 2.6
-    max: 3.0
-    unit: mm
-  overall_height:
-    min: 0.90
-    max: 1.45
-    unit: mm
-  standoff:
-    min: 0.00
-    max: 0.15
-    unit: mm
-  lead_width:
-    min: 0.25
-    max: 0.50
-    unit: mm
-  lead_length:
-    min: 0.3
-    max: 0.6
-    unit: mm
+    min: 1.45 mm
+    max: 1.75 mm
+    src: p22 "DBV0006A, molded body width "1.75 / 1.45" (datum B) -- see field-mapping note"
   lead_thickness:
-    min: 0.08
-    max: 0.22
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: sot
-
-provenance:
-  "/pitch":
-    - source: ti/SCES195N
-      page: 22
-      locator: "PACKAGE OUTLINE DBV0006A (4214840/G), \"2X 0.95\" (basic); \"1.9\" basic across pins 1-3"
-  "/lead_layout":
-    - source: ti/SCES195N
-      page: 22
-      locator: "DBV0006A top view: leads 1, 2, 3 on the left edge (top to bottom), 6, 5, 4 on the right edge (top to bottom)"
-  "/dimensions/body_width":
-    - source: ti/SCES195N
-      page: 22
-      locator: "DBV0006A, body length along the rows \"3.05 / 2.75\" (datum A) -- see field-mapping note"
-  "/dimensions/body_length":
-    - source: ti/SCES195N
-      page: 22
-      locator: "DBV0006A, molded body width \"1.75 / 1.45\" (datum B) -- see field-mapping note"
-  "/dimensions/overall_length":
-    - source: ti/SCES195N
-      page: 22
-      locator: "DBV0006A, lead-tip span \"3.0 / 2.6\""
-  "/dimensions/overall_height":
-    - source: ti/SCES195N
-      page: 22
-      locator: "DBV0006A side view, height \"1.45 / 0.90\""
-  "/dimensions/standoff":
-    - source: ti/SCES195N
-      page: 22
-      locator: "DBV0006A side view, \"0.15 / 0.00 TYP\""
-  "/dimensions/lead_width":
-    - source: ti/SCES195N
-      page: 22
-      locator: "DBV0006A, \"6X 0.50 / 0.25\""
-  "/dimensions/lead_length":
-    - source: ti/SCES195N
-      page: 22
-      locator: "DBV0006A lead detail, \"0.6 / 0.3 TYP\""
-  "/dimensions/lead_thickness":
-    - source: ti/SCES195N
-      page: 22
-      locator: "DBV0006A lead detail, \"0.22 / 0.08 TYP\""
+    min: 0.08 mm
+    max: 0.22 mm
+    src: p22 "DBV0006A lead detail, "0.22 / 0.08 TYP""
+  lead_length:    { min: 0.3 mm, max: 0.6 mm, src: 'p22 "DBV0006A lead detail, "0.6 / 0.3 TYP""' }
+  overall_length: { min: 2.6 mm, max: 3 mm, src: 'p22 "DBV0006A, lead-tip span "3.0 / 2.6""' }
+  overall_height:
+    min: 0.9 mm
+    max: 1.45 mm
+    src: p22 "DBV0006A side view, height "1.45 / 0.90""
+  standoff:       { min: 0 mm, max: 0.15 mm, src: 'p22 "DBV0006A side view, "0.15 / 0.00 TYP""' }
+  lead_width:     { min: 0.25 mm, max: 0.5 mm, src: 'p22 "DBV0006A, "6X 0.50 / 0.25""' }

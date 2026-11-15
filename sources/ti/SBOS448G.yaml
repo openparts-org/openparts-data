@@ -5,16 +5,13 @@
 # were rendered (pdftoppm) and read as images. Page numbers in this
 # dataset are PDF page indices. The PACKAGE OPTION ADDENDUM at the end
 # of the PDF is dated 5-Mar-2026 (newer than the datasheet revision).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: ti/SBOS448G
-
+retrieved: 2026-11-10
+url: https://www.ti.com/lit/ds/symlink/ina219.pdf
+date: 2015-12
 publisher: ti
 document_id: SBOS448G
 document_type: datasheet
-
-revision: "G"
-date: "2015-12"
-
-url: "https://www.ti.com/lit/ds/symlink/ina219.pdf"
-retrieved: "2026-11-10"
+revision: G

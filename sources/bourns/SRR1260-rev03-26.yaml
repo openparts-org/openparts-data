@@ -3,15 +3,12 @@
 # rendered to check the Product Dimensions drawing and the
 # Electrical Specifications table). Added as a separate Source because
 # the existing bourns/SRR1260 record does not pin this revision.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: bourns/SRR1260@rev03-26
-
+url: https://www.bourns.com/docs/Product-Datasheets/SRR1260.pdf
+date: 2026-03
+revision: 03/26
 publisher: bourns
-document_id: "SRR1260"
+document_id: SRR1260
 document_type: datasheet
-
-revision: "03/26"
-date: "2026-03"
-
-url: "https://www.bourns.com/docs/Product-Datasheets/SRR1260.pdf"

@@ -10,35 +10,24 @@
 # A max 1.75 are identical. Flagged for reviewer: cross-vendor reuse
 # justified by the same JEDEC outline, not identical tolerance tables
 # (TI L 0.41-1.27 / c 0.11-0.25 vs Microchip L 0.40-1.27 / c 0.17-0.25).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: ti/LM358DR
-
 manufacturer: ti
 mpn: LM358DR
-
 device: ti/LM358
-package: standards/SOIC8-3.90x4.90-P1.27
+
+package:
+  value: standards/SOIC8-3.90x4.90-P1.27
+  src: p63 "D0008A package outline (SOIC, MS-012 AA) -- compared against the referenced package, see header"
+
+sources: [ti/SLOS068AB]
+source: ti/SLOS068AB
 
 existence:
   status: verified
+  src: p39 "Package option addendum table, row "LM358DR" (SOIC (D) | 8)"
 
 lifecycle:
   status: active
-
-sources:
-  - ti/SLOS068AB
-
-provenance:
-  "/existence":
-    - source: ti/SLOS068AB
-      page: 39
-      locator: "Package option addendum table, row \"LM358DR\" (SOIC (D) | 8)"
-  "/lifecycle":
-    - source: ti/SLOS068AB
-      page: 39
-      locator: "Package option addendum table, row \"LM358DR\", Status \"Active\""
-  "/package":
-    - source: ti/SLOS068AB
-      page: 63
-      locator: "D0008A package outline (SOIC, MS-012 AA) -- compared against the referenced package, see header"
+  src: p39 "Package option addendum table, row "LM358DR", Status "Active""

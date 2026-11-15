@@ -1,24 +1,19 @@
 # 1.3 kOhm +/-0.1%, 0805 RT series. Listed at LCSC and Future.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: yageo/RT0805BRD071K3L
-
 manufacturer: yageo
 mpn: RT0805BRD071K3L
-
 device: yageo/RT0805-GENERAL-PURPOSE
 package: standards/CHIP0805-RC
+sources: [yageo/RT-SERIES-V1]
+source: yageo/RT-SERIES-V1
 
-existence:
-  status: verified
+existence: { status: verified }
 
 # lifecycle is `unknown`: distributor listings are not a first-party
 # lifecycle source (openparts/skills/add-part section 2).
-lifecycle:
-  status: unknown
-
-sources:
-  - yageo/RT-SERIES-V1
+lifecycle: { status: unknown }
 
 # Parameters from the ordering-code table, which maps each code
 # explicitly: B = ±0.1%, D = ±25 ppm/°C, 1K3 = 1.3 kΩ (R/K/M as the
@@ -26,28 +21,10 @@ sources:
 # per operation mode (precision/standard/power) and the ordering code
 # does not map to a mode.
 parameters:
+  tolerance: { tol: ±0.1 %, src: 'p2 "ORDERING INFORMATION, (2) TOLERANCE: B = ±0.1%"' }
   resistance:
-    nominal: 1.3
-    unit: kΩ
-  tolerance:
-    min: -0.1
-    max: 0.1
-    unit: "%"
+    typ: 1.3 kΩ
+    src: 'p2 "ORDERING INFORMATION, (6) RESISTANCE VALUE: 5R6, 56R, 560R, 5K6, 56K, 1M (letter = decimal point and multiplier) -> 1K3 = 1.3 kΩ"'
   temperature_coefficient:
-    min: -25
-    max: 25
-    unit: ppm/°C
-
-provenance:
-  "/parameters/resistance":
-    - source: yageo/RT-SERIES-V1
-      page: 2
-      locator: "ORDERING INFORMATION, (6) RESISTANCE VALUE: 5R6, 56R, 560R, 5K6, 56K, 1M (letter = decimal point and multiplier) -> 1K3 = 1.3 kΩ"
-  "/parameters/tolerance":
-    - source: yageo/RT-SERIES-V1
-      page: 2
-      locator: "ORDERING INFORMATION, (2) TOLERANCE: B = ±0.1%"
-  "/parameters/temperature_coefficient":
-    - source: yageo/RT-SERIES-V1
-      page: 2
-      locator: "ORDERING INFORMATION, (4) TEMPERATURE CHARACTERISTIC OF RESISTANCE: D = ±25 ppm/°C"
+    tol: ±25 ppm/°C
+    src: 'p2 "ORDERING INFORMATION, (4) TEMPERATURE CHARACTERISTIC OF RESISTANCE: D = ±25 ppm/°C"'

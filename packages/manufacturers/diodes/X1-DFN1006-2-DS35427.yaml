@@ -18,85 +18,51 @@
 # draws terminals flush with the body edge, so its terminal centres sit
 # about 0.05 mm further out than drawn. Not modelled: R 0.05-0.15
 # pin-1 chamfer, tolerances aaa/bbb/ccc.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/diodes/X1-DFN1006-2-DS35427
-
 family: dfn
 lead_count: 2
+source: diodes/DS35427
 
 pitch:
-  nominal: 0.65
-  unit: mm
+  typ: 0.65 mm
+  src: p4 "X1-DFN1006-2 table, e "-- / -- / 0.65" (terminal centre to centre)"
 
-construction: molded
+construction:
+  value: molded
+  src: 'p1 "Mechanical Data: "Package Material: Molded Plastic, “Green” Molding Compound.""'
+
+geometry: { type: parametric, generator: dfn }
 
 dimensions:
   body_width:
-    min: 0.95
-    nominal: 1.00
-    max: 1.075
-    unit: mm
+    min: 0.95 mm
+    typ: 1 mm
+    max: 1.075 mm
+    src: p4 "X1-DFN1006-2 table, D "0.95 / 1.075 / 1.00" (Min/Max/Typ), across the two terminals"
   body_length:
-    min: 0.55
-    nominal: 0.60
-    max: 0.675
-    unit: mm
+    min: 0.55 mm
+    typ: 0.6 mm
+    max: 0.675 mm
+    src: p4 "X1-DFN1006-2 table, E "0.55 / 0.675 / 0.60""
   body_height:
-    min: 0.47
-    nominal: 0.50
-    max: 0.53
-    unit: mm
-  standoff:
-    min: 0.00
-    nominal: 0.03
-    max: 0.05
-    unit: mm
-  lead_width:
-    min: 0.45
-    nominal: 0.50
-    max: 0.55
-    unit: mm
+    min: 0.47 mm
+    typ: 0.5 mm
+    max: 0.53 mm
+    src: p4 "X1-DFN1006-2 table, A "0.47 / 0.53 / 0.50" (no A2 given)"
   lead_length:
-    min: 0.20
-    nominal: 0.25
-    max: 0.30
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: dfn
-
-provenance:
-  "/pitch":
-    - source: diodes/DS35427
-      page: 4
-      locator: "X1-DFN1006-2 table, e \"-- / -- / 0.65\" (terminal centre to centre)"
-  "/construction":
-    - source: diodes/DS35427
-      page: 1
-      locator: "Mechanical Data: \"Package Material: Molded Plastic, “Green” Molding Compound.\""
-  "/dimensions/body_width":
-    - source: diodes/DS35427
-      page: 4
-      locator: "X1-DFN1006-2 table, D \"0.95 / 1.075 / 1.00\" (Min/Max/Typ), across the two terminals"
-  "/dimensions/body_length":
-    - source: diodes/DS35427
-      page: 4
-      locator: "X1-DFN1006-2 table, E \"0.55 / 0.675 / 0.60\""
-  "/dimensions/body_height":
-    - source: diodes/DS35427
-      page: 4
-      locator: "X1-DFN1006-2 table, A \"0.47 / 0.53 / 0.50\" (no A2 given)"
-  "/dimensions/standoff":
-    - source: diodes/DS35427
-      page: 4
-      locator: "X1-DFN1006-2 table, A1 \"0.00 / 0.05 / 0.03\""
-  "/dimensions/lead_width":
-    - source: diodes/DS35427
-      page: 4
-      locator: "X1-DFN1006-2 table, b \"0.45 / 0.55 / 0.50\""
-  "/dimensions/lead_length":
-    - source: diodes/DS35427
-      page: 4
-      locator: "X1-DFN1006-2 table, L \"0.20 / 0.30 / 0.25\""
+    min: 0.2 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p4 "X1-DFN1006-2 table, L "0.20 / 0.30 / 0.25""
+  standoff:
+    min: 0 mm
+    typ: 0.03 mm
+    max: 0.05 mm
+    src: p4 "X1-DFN1006-2 table, A1 "0.00 / 0.05 / 0.03""
+  lead_width:
+    min: 0.45 mm
+    typ: 0.5 mm
+    max: 0.55 mm
+    src: p4 "X1-DFN1006-2 table, b "0.45 / 0.55 / 0.50""

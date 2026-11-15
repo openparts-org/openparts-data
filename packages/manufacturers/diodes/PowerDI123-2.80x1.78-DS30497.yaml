@@ -18,89 +18,54 @@
 # p4), DS30492 Rev. 5-2 (DFLS130L, p4) and DS30446 Rev. 9-2 (DFLS140,
 # p4): checked by diffing the pdftotext -layout outline sections (only
 # "VIE W"/"VIEW" kerning differs).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: package
 id: manufacturers/diodes/PowerDI123-2.80x1.78-DS30497
-
 family: sod_flat
 lead_count: 2
+source: diodes/DS30497
 
-pitch:
-  unit: mm
+pitch: { unit: mm }
 
-construction: molded
+construction:
+  value: molded
+  src: 'p1 "Mechanical Data: "Case Material: Molded Plastic, “Green” Molding Compound.""'
+
+geometry: { type: parametric, generator: sod_flat }
 
 dimensions:
-  body_length:
-    min: 2.60
-    nominal: 2.80
-    max: 3.00
-    unit: mm
   body_width:
-    min: 1.63
-    nominal: 1.78
-    max: 1.93
-    unit: mm
+    min: 1.63 mm
+    typ: 1.78 mm
+    max: 1.93 mm
+    src: p5 "PowerDI123 table, D "1.63 / 1.93 / 1.78", body across"
+  body_length:
+    min: 2.6 mm
+    typ: 2.8 mm
+    max: 3 mm
+    src: p5 "PowerDI123 table, E1 "2.60 / 3.00 / 2.80" (Min/Max/Typ), body along the leads (top view)"
   body_height:
-    min: 0.93
-    nominal: 0.98
-    max: 1.00
-    unit: mm
-  overall_length:
-    min: 3.50
-    nominal: 3.70
-    max: 3.90
-    unit: mm
-  lead_width:
-    min: 0.85
-    nominal: 1.00
-    max: 1.25
-    unit: mm
-  lead_length:
-    min: 0.40
-    nominal: 0.45
-    max: 0.50
-    unit: mm
+    min: 0.93 mm
+    typ: 0.98 mm
+    max: 1 mm
+    src: p5 "PowerDI123 table, A "0.93 / 1.00 / 0.98" (total height; no A2 given)"
   lead_thickness:
-    min: 0.15
-    nominal: 0.20
-    max: 0.25
-    unit: mm
-
-geometry:
-  type: parametric
-  generator: sod_flat
-
-provenance:
-  "/construction":
-    - source: diodes/DS30497
-      page: 1
-      locator: "Mechanical Data: \"Case Material: Molded Plastic, “Green” Molding Compound.\""
-  "/dimensions/body_length":
-    - source: diodes/DS30497
-      page: 5
-      locator: "PowerDI123 table, E1 \"2.60 / 3.00 / 2.80\" (Min/Max/Typ), body along the leads (top view)"
-  "/dimensions/body_width":
-    - source: diodes/DS30497
-      page: 5
-      locator: "PowerDI123 table, D \"1.63 / 1.93 / 1.78\", body across"
-  "/dimensions/body_height":
-    - source: diodes/DS30497
-      page: 5
-      locator: "PowerDI123 table, A \"0.93 / 1.00 / 0.98\" (total height; no A2 given)"
-  "/dimensions/overall_length":
-    - source: diodes/DS30497
-      page: 5
-      locator: "PowerDI123 table, E \"3.50 / 3.90 / 3.70\", lead-tip span (bottom view)"
-  "/dimensions/lead_width":
-    - source: diodes/DS30497
-      page: 5
-      locator: "PowerDI123 table, b \"0.85 / 1.25 / 1.00\""
-  "/dimensions/lead_length":
-    - source: diodes/DS30497
-      page: 5
-      locator: "PowerDI123 table, L \"0.40 / 0.50 / 0.45\" (\"L (2x)\", lead end to body edge)"
-  "/dimensions/lead_thickness":
-    - source: diodes/DS30497
-      page: 5
-      locator: "PowerDI123 table, A3 \"0.15 / 0.25 / 0.20\""
+    min: 0.15 mm
+    typ: 0.2 mm
+    max: 0.25 mm
+    src: p5 "PowerDI123 table, A3 "0.15 / 0.25 / 0.20""
+  overall_length:
+    min: 3.5 mm
+    typ: 3.7 mm
+    max: 3.9 mm
+    src: p5 "PowerDI123 table, E "3.50 / 3.90 / 3.70", lead-tip span (bottom view)"
+  lead_width:
+    min: 0.85 mm
+    typ: 1 mm
+    max: 1.25 mm
+    src: p5 "PowerDI123 table, b "0.85 / 1.25 / 1.00""
+  lead_length:
+    min: 0.4 mm
+    typ: 0.45 mm
+    max: 0.5 mm
+    src: p5 "PowerDI123 table, L "0.40 / 0.50 / 0.45" ("L (2x)", lead end to body edge)"

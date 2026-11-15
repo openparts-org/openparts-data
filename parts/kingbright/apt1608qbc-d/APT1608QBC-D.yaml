@@ -2,27 +2,15 @@
 # Package reused: page-1 drawing gives the same 1.6 x 0.8 x 0.75 mm
 # (+/-0.1 blanket tolerance) as CHIP0603-APT1608EC.
 # lifecycle unknown: no production-status statement in the datasheet.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
-id: "kingbright/APT1608QBC-D"
-
+id: kingbright/APT1608QBC-D
 manufacturer: kingbright
-mpn: "APT1608QBC/D"
-
+mpn: APT1608QBC/D
 device: kingbright/APT1608QBC-D
 package: standards/CHIP0603-APT1608EC
+sources: [kingbright/DSAD9944]
+source: kingbright/DSAD9944
 
-existence:
-  status: verified
-
-lifecycle:
-  status: unknown
-
-sources:
-  - kingbright/DSAD9944
-
-provenance:
-  "/existence":
-    - source: kingbright/DSAD9944
-      page: 1
-      locator: "Title and SELECTION GUIDE table, Part Number column"
+existence: { status: verified, src: 'p1 "Title and SELECTION GUIDE table, Part Number column"' }
+lifecycle: { status: unknown }

@@ -4,29 +4,23 @@
 # pinout is reversed (IN+ 1 ... A1 8) and is not covered. Minus sign
 # written as ASCII "-". SDA is "Digital I/O" -> io; SCL, A0, A1
 # "Digital Input" -> input; GND/VS typed ground/power.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: ti/INA219-D
-
 manufacturer: ti
 category: power_monitor
 family: INA219
+source: ti/SBOS448G
 
 pins:
+  src:
+    - p3 ""Pin Functions" table, column "SOIC""
+    - p3 ""D Package 8-Pin SOIC Top View" figure (all 8 pins matched)"
   "1": { name: A1, type: input }
   "2": { name: A0, type: input }
   "3": { name: SDA, type: io }
   "4": { name: SCL, type: input }
   "5": { name: VS, type: power }
   "6": { name: GND, type: ground }
-  "7": { name: "IN-", type: analog }
-  "8": { name: "IN+", type: analog }
-
-provenance:
-  "/pins":
-    - source: ti/SBOS448G
-      page: 3
-      locator: "\"Pin Functions\" table, column \"SOIC\""
-    - source: ti/SBOS448G
-      page: 3
-      locator: "\"D Package 8-Pin SOIC Top View\" figure (all 8 pins matched)"
+  "7": { name: IN-, type: analog }
+  "8": { name: IN+, type: analog }

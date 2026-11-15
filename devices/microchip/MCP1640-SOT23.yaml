@@ -8,35 +8,26 @@
 # Voltage Pin" -> input, VOUT "Output Voltage Pin" -> power, VIN "Input
 # Voltage Pin" -> power. The 2x3 DFN (MC) numbering differs and is not
 # covered.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: microchip/MCP1640-SOT23
-
 manufacturer: microchip
 category: switching_regulator
-family: "MCP1640/B/C/D"
+family: MCP1640/B/C/D
+source: microchip/DS20002234@revD
+
+parameters:
+  output_type:
+    value: adjustable
+    src: 'p1 "Features, "Adjustable Output Voltage Range: 2.0V to 5.5V"; "Output voltage is set by a small external resistor divider""'
 
 pins:
+  src:
+    - p9 "Table 3-1 "Pin Function Table", column "MCP1640/B/C/D SOT-23""
+    - p1 ""Package Types" figure "MCP1640 6-Lead SOT-23" (all 6 pins matched)"
   "1": { name: SW, type: passive }
   "2": { name: GND, type: ground }
   "3": { name: EN, type: input }
   "4": { name: VFB, type: input }
   "5": { name: VOUT, type: power }
   "6": { name: VIN, type: power }
-
-parameters:
-  output_type:
-    value: adjustable
-
-provenance:
-  "/parameters/output_type":
-    - source: microchip/DS20002234@revD
-      page: 1
-      locator: "Features, \"Adjustable Output Voltage Range: 2.0V to 5.5V\"; \"Output voltage is set by a small external resistor divider\""
-  "/pins":
-    - source: microchip/DS20002234@revD
-      page: 9
-      locator: "Table 3-1 \"Pin Function Table\", column \"MCP1640/B/C/D SOT-23\""
-    - source: microchip/DS20002234@revD
-      page: 1
-      locator: "\"Package Types\" figure \"MCP1640 6-Lead SOT-23\" (all 6 pins matched)"

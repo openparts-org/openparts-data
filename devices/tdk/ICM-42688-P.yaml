@@ -6,32 +6,27 @@
 # ground, RESV -> reserved, chip select and serial clock (slave inputs)
 # -> input, interrupt pins -> output (pin 9 doubles as FSYNC/CLKIN input -> io), multi-function data pins
 # -> io.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: tdk/ICM-42688-P
-
 manufacturer: tdk
 category: imu
-family: "ICM-42688-P"
+family: ICM-42688-P
+source: tdk/DS-000347@rev1.9
 
 pins:
-  "1": { name: "AP_SDO / AP_AD0", type: io }
-  "2": { name: "RESV", type: reserved }
-  "3": { name: "RESV", type: reserved }
-  "4": { name: "INT1 / INT", type: output }
-  "5": { name: "VDDIO", type: power }
-  "6": { name: "GND", type: ground }
-  "7": { name: "RESV", type: reserved }
-  "8": { name: "VDD", type: power }
-  "9": { name: "INT2 / FSYNC / CLKIN", type: io }
-  "10": { name: "RESV", type: reserved }
-  "11": { name: "RESV", type: reserved }
-  "12": { name: "AP_CS", type: input }
-  "13": { name: "AP_SCL / AP_SCLK", type: input }
-  "14": { name: "AP_SDA / AP_SDIO / AP_SDI", type: io }
-
-provenance:
-  "/pins":
-    - source: tdk/DS-000347@rev1.9
-      page: 20
-      locator: "Table 10 Signal Descriptions; Pin Out Diagram figure"
+  src:  p20 "Table 10 Signal Descriptions; Pin Out Diagram figure"
+  "1":  { name: AP_SDO / AP_AD0, type: io }
+  "2":  { name: RESV, type: reserved }
+  "3":  { name: RESV, type: reserved }
+  "4":  { name: INT1 / INT, type: output }
+  "5":  { name: VDDIO, type: power }
+  "6":  { name: GND, type: ground }
+  "7":  { name: RESV, type: reserved }
+  "8":  { name: VDD, type: power }
+  "9":  { name: INT2 / FSYNC / CLKIN, type: io }
+  "10": { name: RESV, type: reserved }
+  "11": { name: RESV, type: reserved }
+  "12": { name: AP_CS, type: input }
+  "13": { name: AP_SCL / AP_SCLK, type: input }
+  "14": { name: AP_SDA / AP_SDIO / AP_SDI, type: io }

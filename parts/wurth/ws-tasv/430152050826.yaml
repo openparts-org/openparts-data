@@ -3,62 +3,28 @@
 # cycles (wurth/430152050826-DS pages 1-2). Order code printed in the
 # datasheet's own title block -> existence verified. Lifecycle "Active"
 # from the we-online.com series product page (Status column).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: part
 id: wurth/430152050826
-
 manufacturer: wurth
 mpn: "430152050826"
-
 device: wurth/WS-TASV-6x6-SMD
 package: manufacturers/wurth/WS-TASV-6x6-SMD-H5.0
+sources: [wurth/430152050826-DS, wurth/430182050816-DS, wurth/TASV_6X6_SMD-product-page]
+source: wurth/430152050826-DS
 
 existence:
   status: verified
+  src: p1 "Title block, "ORDER CODE 430152050826", "DESCRIPTION WS-TASV SMT Tact Switch""
 
 lifecycle:
   status: active
-
-sources:
-  - wurth/430152050826-DS
-  - wurth/430182050816-DS
-  - wurth/TASV_6X6_SMD-product-page
+  src: 'wurth/TASV_6X6_SMD-product-page "Order-code table, row 430152050826, Status "Active" ("Production is active. Expected lifetime: >10 years.")"'
 
 parameters:
+  rated_voltage: { typ: 12 V, src: 'p2 "Electrical Properties, Rated Voltage VR: 12 V (DC)"' }
+  rated_current: { typ: 50 mA, src: 'p2 "Electrical Properties, Rated Current IR: 50 mA"' }
   actuation_force:
-    nominal: 260
-    unit: gf
-  travel:
-    nominal: 0.25
-    unit: mm
-  rated_voltage:
-    nominal: 12
-    unit: V
-  rated_current:
-    nominal: 50
-    unit: mA
-
-provenance:
-  "/parameters/actuation_force":
-    - source: wurth/430152050826-DS
-      page: 2
-      locator: "Mechanical Properties, Operation Force: 260 g, Tol. ±50g"
-  "/parameters/travel":
-    - source: wurth/430152050826-DS
-      page: 2
-      locator: "Mechanical Properties, Stroke: 0.25 mm, Tol. ±0.15mm"
-  "/parameters/rated_voltage":
-    - source: wurth/430152050826-DS
-      page: 2
-      locator: "Electrical Properties, Rated Voltage VR: 12 V (DC)"
-  "/parameters/rated_current":
-    - source: wurth/430152050826-DS
-      page: 2
-      locator: "Electrical Properties, Rated Current IR: 50 mA"
-  "/existence":
-    - source: wurth/430152050826-DS
-      page: 1
-      locator: "Title block, \"ORDER CODE 430152050826\", \"DESCRIPTION WS-TASV SMT Tact Switch\""
-  "/lifecycle":
-    - source: wurth/TASV_6X6_SMD-product-page
-      locator: "Order-code table, row 430152050826, Status \"Active\" (\"Production is active. Expected lifetime: >10 years.\")"
+    typ: 260 gf
+    src: 'p2 "Mechanical Properties, Operation Force: 260 g, Tol. ±50g"'
+  travel: { typ: 0.25 mm, src: 'p2 "Mechanical Properties, Stroke: 0.25 mm, Tol. ±0.15mm"' }

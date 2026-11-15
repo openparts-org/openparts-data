@@ -3,24 +3,18 @@
 # diagram (page 1) and independently cross-checked against the CASE 318
 # STYLE 21 outline sheet's own style list (page 7: "STYLE 21: PIN 1.
 # GATE / 2. SOURCE / 3. DRAIN") -- exact match, no discrepancy.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/2N7002E
-
 manufacturer: onsemi
 category: transistor
 family: 2N7002E
+source: onsemi/2N7002E-D
 
 pins:
+  src:
+    - p1 ""MARKING DIAGRAM & PIN ASSIGNMENT""
+    - 'p7 "CASE 318 outline sheet, "STYLE 21: PIN 1. GATE / 2. SOURCE / 3. DRAIN""'
   "1": { name: Gate, type: passive }
   "2": { name: Source, type: passive }
   "3": { name: Drain, type: passive }
-
-provenance:
-  "/pins":
-    - source: onsemi/2N7002E-D
-      page: 1
-      locator: "\"MARKING DIAGRAM & PIN ASSIGNMENT\""
-    - source: onsemi/2N7002E-D
-      page: 7
-      locator: "CASE 318 outline sheet, \"STYLE 21: PIN 1. GATE / 2. SOURCE / 3. DRAIN\""

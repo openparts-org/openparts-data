@@ -4,15 +4,12 @@
 # image with leads labelled G D S, ORDERING INFORMATION table (its Part
 # Number cell reads "FCP380N60", apparently a typo -- see the part);
 # page 7: embedded CASE 340AT ISSUE B.
-schema_version: "0.1"
+schema_version: "0.2"
 kind: source
 id: onsemi/FQP27P06-D
-
+url: https://www.onsemi.com/pdf/datasheet/fqp27p06-d.pdf
+date: 2024-10
+revision: "4"
 publisher: onsemi
 document_id: FQP27P06/D
 document_type: datasheet
-
-revision: "4"
-date: "2024-10"
-
-url: "https://www.onsemi.com/pdf/datasheet/fqp27p06-d.pdf"

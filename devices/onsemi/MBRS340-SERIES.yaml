@@ -8,20 +8,15 @@
 # No pin numbers are printed for this part, so 1 = Cathode and 2 = Anode
 # follow the dataset's two-terminal diode convention (pin 1 at the
 # banded end).
-schema_version: "0.1"
+schema_version: "0.2"
 kind: device
 id: onsemi/MBRS340-SERIES
-
 manufacturer: onsemi
 category: diode
 family: MBRS3x0
+source: onsemi/MBRS340T3-D
 
 pins:
+  src: 'p1 "Mechanical Characteristics: "Polarity: Polarity Band on Plastic Body Indicates Cathode Lead""'
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
-
-provenance:
-  "/pins":
-    - source: onsemi/MBRS340T3-D
-      page: 1
-      locator: "Mechanical Characteristics: \"Polarity: Polarity Band on Plastic Body Indicates Cathode Lead\""
