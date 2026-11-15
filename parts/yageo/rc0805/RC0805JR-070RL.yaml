@@ -27,6 +27,14 @@ lifecycle:
 sources:
   - yageo/PYU-RC_GROUP@V14
 
+# Parameters (AI candidates, needs review): 0R is the jumper, so only
+# the Table 2 jumper resistance limit is recorded; tolerance, power
+# and TCR do not apply to a jumper (it has a rated current instead).
+parameters:
+  resistance:
+    max: 50
+    unit: mΩ
+
 provenance:
   "/existence":
     - source: yageo/PYU-RC_GROUP@V14
@@ -38,3 +46,7 @@ provenance:
     - source: yageo/PYU-RC_GROUP@V14
       page: 7
       locator: "Table 4 \"Packing style and packaging quantity\": RC0805 paper taping reel (R) 7\" (178 mm): 5000"
+  "/parameters/resistance":
+    - source: yageo/PYU-RC_GROUP@V14
+      page: 5
+      locator: "Table 2 'Electrical characteristics', RC0805 1/8 W (standard power) row, Resistance range: Jumper<50mΩ (0R jumper, ordered with tolerance code J per ORDERING INFORMATION (2) on p2)"

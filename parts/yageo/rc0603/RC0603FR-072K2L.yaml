@@ -26,6 +26,25 @@ lifecycle:
 sources:
   - yageo/PYU-RC_GROUP@V14
 
+# Parameters (AI candidates, needs review): resistance and tolerance from
+# the ordering-code table; power is the standard-power rating (code 07);
+# TCR is the Table 2 standard-power row for this resistance value.
+parameters:
+  resistance:
+    nominal: 2.2
+    unit: kΩ
+  tolerance:
+    min: -1
+    max: 1
+    unit: "%"
+  power_rating:
+    nominal: 0.1
+    unit: W
+  temperature_coefficient:
+    min: -100
+    max: 100
+    unit: ppm/°C
+
 provenance:
   "/existence":
     - source: yageo/PYU-RC_GROUP@V14
@@ -37,3 +56,19 @@ provenance:
     - source: yageo/PYU-RC_GROUP@V14
       page: 7
       locator: "Table 4 'Packing style and packaging quantity': RC0402 / RC0603 paper taping reel (R) 7\" (178 mm) available"
+  "/parameters/resistance":
+    - source: yageo/PYU-RC_GROUP@V14
+      page: 2
+      locator: "ORDERING INFORMATION, (6) RESISTANCE VALUE: letter R/K/M is decimal point (97R6 = 97.6Ω, 9K76 = 9760Ω, 1M = 1,000,000Ω) -> 2K2 = 2.2 kΩ"
+  "/parameters/tolerance":
+    - source: yageo/PYU-RC_GROUP@V14
+      page: 2
+      locator: "ORDERING INFORMATION, (2) TOLERANCE: F = ± 1.0%"
+  "/parameters/power_rating":
+    - source: yageo/PYU-RC_GROUP@V14
+      page: 7
+      locator: "POWER RATING, each type rated power at 70℃: RC0603=1/10 W (standard power; ORDERING INFORMATION p2, (5) 07 = 7 inch dia. Reel & Standard power)"
+  "/parameters/temperature_coefficient":
+    - source: yageo/PYU-RC_GROUP@V14
+      page: 5
+      locator: "Table 2 'Electrical characteristics', RC0603 1/10 W (standard power) row, Temperature coefficient: 10Ω<R≦10MΩ: ± 100ppm°C (ORDERING INFORMATION (4) '-' = Based on spec.)"
