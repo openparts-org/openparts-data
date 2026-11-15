@@ -1,0 +1,19 @@
+# Official TI datasheet "SNx4HC245 octal bus transceivers with 3-state outputs". Downloaded 2026-11-16 from
+# the TI symlink URL below; revision read from the page header
+# "SCLS131F - DECEMBER 1982 - REVISED AUGUST 2022". 35 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawings named in the
+# part files were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM (PDF pages 14-15) is dated 18-Sep-2026 (newer than the datasheet revision).
+# sha256 is of the PDF as downloaded on 2026-11-16.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS131F
+sha256: 31514d936e53661d1c380603e5034b2958085359313986775b838d1f30fb8d3f
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/sn74hc245.pdf
+publisher: ti
+document_id: SCLS131F
+document_type: datasheet
+revision: F
+date: 2022-08

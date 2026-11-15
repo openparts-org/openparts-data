@@ -1,0 +1,28 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SCLS094F PDF page 19): row "SN74HC74DR" with Status "Active", Package
+# "SOIC (D) | 14", 2500 | LARGE T&R. lifecycle "active" is that row's Status column
+# (TI's own addendum inside the datasheet). Package: D0014A (4220718/A 09/2016) on page
+# 25 -> manufacturers/ti/D0014A. The outline page's pdftotext -layout text matches SCLS085L page 22 (where manufacturers/ti/D0014A was read) line for line apart from the page header, so the package is reused.
+schema_version: "0.2"
+kind: part
+id: ti/SN74HC74DR
+manufacturer: ti
+mpn: SN74HC74DR
+device: ti/SN74HC74
+
+package:
+  value: manufacturers/ti/D0014A
+  src:
+    - p19 "PACKAGE OPTION ADDENDUM, row SN74HC74DR, Package column "SOIC (D) | 14""
+    - p25 "PACKAGE OUTLINE D0014A (4220718/A 09/2016)"
+
+sources: [ti/SCLS094F]
+source: ti/SCLS094F
+
+existence:
+  status: verified
+  src: p19 "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74HC74DR"
+
+lifecycle:
+  status: active
+  src: p19 "PACKAGE OPTION ADDENDUM, row SN74HC74DR, Status column "Active""

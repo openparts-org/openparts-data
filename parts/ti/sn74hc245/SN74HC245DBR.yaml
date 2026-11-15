@@ -1,0 +1,28 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SCLS131F PDF page 14): row "SN74HC245DBR" with Status "Active", Package
+# "SSOP (DB) | 20", 2000 | LARGE T&R. lifecycle "active" is that row's Status column
+# (TI's own addendum inside the datasheet). Package: DB0020A (4214851/B 08/2019) on page
+# 25 -> standards/SSOP20-5.3x7.2-P0.65-TI-DB. The outline page's pdftotext -layout text matches SCAS218X page 19 (where standards/SSOP20-5.3x7.2-P0.65-TI-DB was read) line for line apart from the page header, so the package is reused.
+schema_version: "0.2"
+kind: part
+id: ti/SN74HC245DBR
+manufacturer: ti
+mpn: SN74HC245DBR
+device: ti/SN74HC245
+
+package:
+  value: standards/SSOP20-5.3x7.2-P0.65-TI-DB
+  src:
+    - p14 "PACKAGE OPTION ADDENDUM, row SN74HC245DBR, Package column "SSOP (DB) | 20""
+    - p25 "PACKAGE OUTLINE DB0020A (4214851/B 08/2019)"
+
+sources: [ti/SCLS131F]
+source: ti/SCLS131F
+
+existence:
+  status: verified
+  src: p14 "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74HC245DBR"
+
+lifecycle:
+  status: active
+  src: p14 "PACKAGE OPTION ADDENDUM, row SN74HC245DBR, Status column "Active""

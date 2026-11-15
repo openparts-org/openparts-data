@@ -1,0 +1,28 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SCLS094F PDF page 19): row "SN74HC74PWR" with Status "Active", Package
+# "TSSOP (PW) | 14", 2000 | LARGE T&R. lifecycle "active" is that row's Status column
+# (TI's own addendum inside the datasheet). Package: PW0014A (4220202/B 12/2023) on page
+# 38 -> manufacturers/ti/PW0014A. The outline page's pdftotext -layout text matches SCES650K page 52 (where manufacturers/ti/PW0014A was read) line for line apart from the page header, so the package is reused.
+schema_version: "0.2"
+kind: part
+id: ti/SN74HC74PWR
+manufacturer: ti
+mpn: SN74HC74PWR
+device: ti/SN74HC74
+
+package:
+  value: manufacturers/ti/PW0014A
+  src:
+    - p19 "PACKAGE OPTION ADDENDUM, row SN74HC74PWR, Package column "TSSOP (PW) | 14""
+    - p38 "PACKAGE OUTLINE PW0014A (4220202/B 12/2023)"
+
+sources: [ti/SCLS094F]
+source: ti/SCLS094F
+
+existence:
+  status: verified
+  src: p19 "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74HC74PWR"
+
+lifecycle:
+  status: active
+  src: p19 "PACKAGE OPTION ADDENDUM, row SN74HC74PWR, Status column "Active""

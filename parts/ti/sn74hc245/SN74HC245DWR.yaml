@@ -1,0 +1,28 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SCLS131F PDF page 15): row "SN74HC245DWR" with Status "Active", Package
+# "SOIC (DW) | 20", 2000 | LARGE T&R. lifecycle "active" is that row's Status column
+# (TI's own addendum inside the datasheet). Package: DW0020A (4220724/A 05/2016) on page
+# 32 -> manufacturers/ti/DW0020A. manufacturers/ti/DW0020A was created from this page.
+schema_version: "0.2"
+kind: part
+id: ti/SN74HC245DWR
+manufacturer: ti
+mpn: SN74HC245DWR
+device: ti/SN74HC245
+
+package:
+  value: manufacturers/ti/DW0020A
+  src:
+    - p15 "PACKAGE OPTION ADDENDUM, row SN74HC245DWR, Package column "SOIC (DW) | 20""
+    - p32 "PACKAGE OUTLINE DW0020A (4220724/A 05/2016)"
+
+sources: [ti/SCLS131F]
+source: ti/SCLS131F
+
+existence:
+  status: verified
+  src: p15 "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74HC245DWR"
+
+lifecycle:
+  status: active
+  src: p15 "PACKAGE OPTION ADDENDUM, row SN74HC245DWR, Status column "Active""

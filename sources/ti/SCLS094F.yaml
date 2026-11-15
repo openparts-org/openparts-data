@@ -1,0 +1,19 @@
+# Official TI datasheet "SNx4HC74 dual D-type positive-edge-triggered flip-flops with clear and preset". Downloaded 2026-11-16 from
+# the TI symlink URL below; revision read from the page header
+# "SCLS094F - DECEMBER 1982 - REVISED JUNE 2021". 41 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawings named in the
+# part files were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM (PDF pages 18-19) is dated 18-Sep-2026 (newer than the datasheet revision).
+# sha256 is of the PDF as downloaded on 2026-11-16.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS094F
+sha256: a4043d37d693a2997900a0542dd226b9b61285794f3c1a541adb99cc7dcb1ae2
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/sn74hc74.pdf
+publisher: ti
+document_id: SCLS094F
+document_type: datasheet
+revision: F
+date: 2021-06
