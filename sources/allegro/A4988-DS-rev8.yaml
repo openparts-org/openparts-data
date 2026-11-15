@@ -1,0 +1,18 @@
+# Allegro A4988 datasheet "DMOS Microstepping Driver with Translator and
+# Overcurrent Protection", document 4988-DS, Rev. 8 (footer "4988-DS,
+# Rev. 8 April 5, 2022"; Revision History: Rev. 8 "Updated package
+# drawing (page 19)"). Downloaded 2026-11-16 with curl from Allegro's
+# own URL below. 20 PDF pages; read with pdftotext -layout; the ET
+# package drawing (page 19, DWG-0000378 Rev. 3) rendered and read. Page
+# numbers are PDF page indices. Allegro copyright: facts only.
+schema_version: "0.2"
+kind: source
+id: allegro/A4988-DS@rev8
+sha256: d1dfba3bb7be2cbf2b689f39424569fc78b1f4fd1f427648bbd8f291ebb933ea
+retrieved: 2026-11-16
+url: https://www.allegromicro.com/-/media/files/datasheets/a4988-datasheet.pdf
+publisher: allegro
+document_id: 4988-DS
+document_type: datasheet
+revision: "8"
+date: 2022-04-05

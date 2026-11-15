@@ -1,0 +1,49 @@
+# A4988 DMOS microstepping (bipolar stepper) driver with translator, ET
+# 28-pin QFN. Pin map from the "Terminal List Table" (4988-DS Rev. 8,
+# page 18), cross-checked with the "Pinout Diagram" (page 18). RESET,
+# SLEEP and ENABLE are printed with an overbar (active low) -- named
+# here with an "n" prefix. GND is pins 3 and 18; the PAD row ("Exposed
+# pad for enhanced thermal dissipation", footnote: the GND pins are tied
+# together by connecting to the PAD ground plane) is a connection
+# instruction -> pin "EP" named PAD, type passive. NC 7, 20, 25.
+# CP1/CP2/VCP (charge-pump capacitor terminals), VREG (regulator
+# decoupling) and ROSC (timing set) typed passive.
+schema_version: "0.2"
+kind: device
+id: allegro/A4988
+manufacturer: allegro
+category: driver
+family: A4988
+source: allegro/A4988-DS@rev8
+
+pins:
+  src:  [p18 "Terminal List Table", p18 "Pinout Diagram (cross-check)"]
+  "1":  { name: OUT2B, type: output }
+  "2":  { name: nENABLE, type: input }
+  "3":  { name: GND, type: ground }
+  "4":  { name: CP1, type: passive }
+  "5":  { name: CP2, type: passive }
+  "6":  { name: VCP, type: passive }
+  "7":  { name: NC, type: nc }
+  "8":  { name: VREG, type: passive }
+  "9":  { name: MS1, type: input }
+  "10": { name: MS2, type: input }
+  "11": { name: MS3, type: input }
+  "12": { name: nRESET, type: input }
+  "13": { name: ROSC, type: passive }
+  "14": { name: nSLEEP, type: input }
+  "15": { name: VDD, type: power }
+  "16": { name: STEP, type: input }
+  "17": { name: REF, type: input }
+  "18": { name: GND, type: ground }
+  "19": { name: DIR, type: input }
+  "20": { name: NC, type: nc }
+  "21": { name: OUT1B, type: output }
+  "22": { name: VBB1, type: power }
+  "23": { name: SENSE1, type: passive }
+  "24": { name: OUT1A, type: output }
+  "25": { name: NC, type: nc }
+  "26": { name: OUT2A, type: output }
+  "27": { name: SENSE2, type: passive }
+  "28": { name: VBB2, type: power }
+  EP:   { name: PAD, type: passive }

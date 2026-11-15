@@ -1,0 +1,78 @@
+# Allegro ET package, 28-terminal QFN 5x5 mm, 0.5 mm pitch, exposed
+# thermal pad (reference DWG-0000378 Rev. 3), read from the rendered
+# drawing on page 19 of 4988-DS Rev. 8. Millimetres.
+#
+# Body "5.00 BSC" both ways -> typ; height "0.90 +-0.10" -> body_height
+# 0.80/0.90/1.00 (no A1 or A2 printed: standoff left out); terminal
+# width "0.25 +0.05/-0.07" -> 0.18/0.25/0.30; terminal length "0.55"
+# (no tolerance printed) -> typ; pitch "0.50". Exposed pad "3.15" x
+# "3.15" (note B: reference only) -> typ only.
+# Numbering (Pinout Diagram, page 18, top view): 1-7 down the left
+# edge, 8-14 along the bottom, 15-21 up the right, 22-28 along the top
+# -- standard CCW order.
+# Land pattern from the "PCB Layout Reference View" (note C: reference
+# IPC7351 QFN50P500X500X100-29V1M): pads "0.30" x "1.15", pitch "0.50",
+# pad-row centres "4.80" apart -> +-2.4; the seven pads per side at
+# 0, +-0.5, +-1.0, +-1.5; thermal land "3.15" x "3.15". Top view, X
+# right, Y up.
+schema_version: "0.2"
+kind: package
+id: manufacturers/allegro/ET-QFN28-5x5
+family: qfn
+lead_count: 28
+source: allegro/A4988-DS@rev8
+
+pitch: { typ: 0.5 mm, src: 'p19 "ET Package, terminal pitch "0.50""' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:  { typ: 5 mm, src: 'p19 "ET Package, "5.00 BSC""' }
+  body_length: { typ: 5 mm, src: 'p19 "ET Package, "5.00 BSC""' }
+  body_height:
+    min: 0.8 mm
+    typ: 0.9 mm
+    max: 1 mm
+    src: p19 "ET Package side view, "0.90 +-0.10""
+  exposed_pad:
+    src:    p19 "ET Package bottom view, exposed pad "3.15" x "3.15" (note B, reference only)"
+    width:  { typ: 3.15 mm }
+    length: { typ: 3.15 mm }
+  lead_width:
+    min: 0.18 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p19 "ET Package, "0.25 +0.05/-0.07""
+  lead_length: { typ: 0.55 mm, src: 'p19 "ET Package bottom view, "0.55""' }
+
+pads:
+  value:
+    - { number: "1", x: -2.4, y: 1.5, width: 1.15, length: 0.3 }
+    - { number: "2", x: -2.4, y: 1, width: 1.15, length: 0.3 }
+    - { number: "3", x: -2.4, y: 0.5, width: 1.15, length: 0.3 }
+    - { number: "4", x: -2.4, y: 0, width: 1.15, length: 0.3 }
+    - { number: "5", x: -2.4, y: -0.5, width: 1.15, length: 0.3 }
+    - { number: "6", x: -2.4, y: -1, width: 1.15, length: 0.3 }
+    - { number: "7", x: -2.4, y: -1.5, width: 1.15, length: 0.3 }
+    - { number: "8", x: -1.5, y: -2.4, width: 0.3, length: 1.15 }
+    - { number: "9", x: -1, y: -2.4, width: 0.3, length: 1.15 }
+    - { number: "10", x: -0.5, y: -2.4, width: 0.3, length: 1.15 }
+    - { number: "11", x: 0, y: -2.4, width: 0.3, length: 1.15 }
+    - { number: "12", x: 0.5, y: -2.4, width: 0.3, length: 1.15 }
+    - { number: "13", x: 1, y: -2.4, width: 0.3, length: 1.15 }
+    - { number: "14", x: 1.5, y: -2.4, width: 0.3, length: 1.15 }
+    - { number: "15", x: 2.4, y: -1.5, width: 1.15, length: 0.3 }
+    - { number: "16", x: 2.4, y: -1, width: 1.15, length: 0.3 }
+    - { number: "17", x: 2.4, y: -0.5, width: 1.15, length: 0.3 }
+    - { number: "18", x: 2.4, y: 0, width: 1.15, length: 0.3 }
+    - { number: "19", x: 2.4, y: 0.5, width: 1.15, length: 0.3 }
+    - { number: "20", x: 2.4, y: 1, width: 1.15, length: 0.3 }
+    - { number: "21", x: 2.4, y: 1.5, width: 1.15, length: 0.3 }
+    - { number: "22", x: 1.5, y: 2.4, width: 0.3, length: 1.15 }
+    - { number: "23", x: 1, y: 2.4, width: 0.3, length: 1.15 }
+    - { number: "24", x: 0.5, y: 2.4, width: 0.3, length: 1.15 }
+    - { number: "25", x: 0, y: 2.4, width: 0.3, length: 1.15 }
+    - { number: "26", x: -0.5, y: 2.4, width: 0.3, length: 1.15 }
+    - { number: "27", x: -1, y: 2.4, width: 0.3, length: 1.15 }
+    - { number: "28", x: -1.5, y: 2.4, width: 0.3, length: 1.15 }
+    - { number: EP, x: 0, y: 0, width: 3.15, length: 3.15 }
+  src: p19 "PCB Layout Reference View, pads 0.30 x 1.15, pitch 0.50, rows 4.80 (+-2.4), thermal land 3.15 x 3.15"
