@@ -1,0 +1,28 @@
+# ESP32-H2 boot strapping and UART0 download port from the ESP32-H2
+# Hardware Design Guidelines (Strapping Pins, UART): a pull-up on
+# GPIO9 (no value given; keep large capacitors off GPIO9) and the
+# series resistor on U0TXD against harmonics. The boot mode follows
+# the strapping levels at reset (Boot Mode Control table); how they
+# are driven (button, programmer) is the board's choice. U0TXD is the
+# connector side. Page numbers are PDF page indices of the ESP32-H2
+# Hardware Design Guidelines (printed page = index - 3). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: espressif/esp32-h2-boot
+title: ESP32-H2 strapping and UART0 download
+host: espressif/ESP32-H2
+source: espressif/esp32-h2_hardware_design_guidelines_en@rev1.6
+
+nets:
+  U0TXD:   { kind: signal }
+  VDD_3V3: { kind: power, voltage: { typ: 3.3 V }, src: p7 "1.3.2" }
+
+roles:
+  R_GPIO9_PU:
+    requires: { category: resistor, src: 'p15 "1.3.9, Attention"' }
+    pins:     { "1": VDD_3V3, "2": host.GPIO9 }
+    level:    { value: recommended, word: recommended, src: 'p15 "1.3.9, Attention"' }
+  R_U0TXD:
+    requires: { category: resistor, resistance: { typ: 499 Ω }, src: p13 "1.3.7" }
+    pins:     { "1": host.U0TXD, "2": U0TXD }
+    level:    { value: recommended, word: recommended, src: p13 "1.3.7" }

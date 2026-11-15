@@ -1,0 +1,35 @@
+# ESP32-H2 CHIP_EN power-up delay from the ESP32-H2 Hardware Design
+# Guidelines (Chip Power-up and Reset Timing): the usual RC values, to
+# be adjusted to the actual supply; slow, unstable or frequently
+# cycled supplies need a supervisor (about 3.0 V threshold) instead,
+# not included. CHIP_EN must not float. The CHIP_EN net is where a
+# reset switch or programmer would attach. Page numbers are PDF page
+# indices of the ESP32-H2 Hardware Design Guidelines (printed page =
+# index - 3). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: espressif/esp32-h2-chip-en
+title: ESP32-H2 CHIP_EN RC delay
+host: espressif/ESP32-H2
+source: espressif/esp32-h2_hardware_design_guidelines_en@rev1.6
+
+nets:
+  CHIP_EN: { kind: signal }
+  GND:     { kind: ground }
+  VDD_3V3: { kind: power, voltage: { typ: 3.3 V }, src: p7 "1.3.2" }
+
+connect:
+  CHIP_EN: { net: CHIP_EN, level: { value: required, word: must }, src: 'p10 "1.3.3, Attention"' }
+
+roles:
+  C_CHIP_EN:
+    requires: { category: capacitor, capacitance: { typ: 1 uF }, src: 'p10 "1.3.3, Attention"' }
+    pins:     { "1": CHIP_EN, "2": GND }
+    level:    { value: recommended, word: recommended, src: 'p10 "1.3.3, Attention"' }
+  R_CHIP_EN:
+    requires: { category: resistor, resistance: { typ: 10 kΩ }, src: 'p10 "1.3.3, Attention"' }
+    pins:     { "1": VDD_3V3, "2": CHIP_EN }
+    level:    { value: recommended, word: recommended, src: 'p10 "1.3.3, Attention"' }
+
+placement:
+  - { keep_short: [host.CHIP_EN, CHIP_EN], src: p9 "1.3.3" }
