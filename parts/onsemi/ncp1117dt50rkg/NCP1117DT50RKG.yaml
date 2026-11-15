@@ -22,7 +22,16 @@ lifecycle:
 sources:
   - onsemi/NCP1117-D
 
+parameters:
+  output_voltage:
+    nominal: 5.0
+    unit: V
+
 provenance:
+  "/parameters/output_voltage":
+    - source: onsemi/NCP1117-D
+      page: 12
+      locator: "ORDERING INFORMATION - (NCP1117), Device NCP1117DT50RKG: Nominal Output Voltage 5.0"
   "/existence":
     - source: onsemi/NCP1117-D
       page: 12

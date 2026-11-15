@@ -21,7 +21,16 @@ lifecycle:
 sources:
   - onsemi/MC7800-D
 
+parameters:
+  output_voltage:
+    nominal: 5.0
+    unit: V
+
 provenance:
+  "/parameters/output_voltage":
+    - source: onsemi/MC7800-D
+      page: 21
+      locator: "ORDERING INFORMATION, Device MC7805BDTG: Nominal Voltage 5.0 V"
   "/existence":
     - source: onsemi/MC7800-D
       page: 21

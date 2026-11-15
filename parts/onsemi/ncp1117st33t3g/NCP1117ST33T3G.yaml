@@ -21,7 +21,16 @@ lifecycle:
 sources:
   - onsemi/NCP1117-D
 
+parameters:
+  output_voltage:
+    nominal: 3.3
+    unit: V
+
 provenance:
+  "/parameters/output_voltage":
+    - source: onsemi/NCP1117-D
+      page: 12
+      locator: "ORDERING INFORMATION - (NCP1117), Device NCP1117ST33T3G: Nominal Output Voltage 3.3"
   "/existence":
     - source: onsemi/NCP1117-D
       page: 12

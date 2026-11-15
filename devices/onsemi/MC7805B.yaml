@@ -19,7 +19,22 @@ pins:
   "3": { name: Output, type: power }
   "4": { name: Ground, type: ground }
 
+parameters:
+  output_type:
+    value: fixed
+  dropout_voltage:
+    nominal: 2.0
+    unit: V
+
 provenance:
+  "/parameters/output_type":
+    - source: onsemi/MC7800-D
+      page: 1
+      locator: "Description: \"monolithic integrated circuits designed as fixed-voltage regulators\""
+  "/parameters/dropout_voltage":
+    - source: onsemi/MC7800-D
+      page: 3
+      locator: "ELECTRICAL CHARACTERISTICS (Vin = 10 V, IO = 500 mA), MC7805B, NCV7805B column, Dropout Voltage (IO = 1.0 A, TJ = 25°C): Typ 2.0 Vdc"
   "/pins":
     - source: onsemi/MC7800-D
       page: 1

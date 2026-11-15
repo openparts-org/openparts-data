@@ -20,7 +20,23 @@ pins:
   "3": { name: Input, type: power }
   "4": { name: Output, type: power_out }
 
+parameters:
+  output_type:
+    value: fixed
+  dropout_voltage:
+    nominal: 1.07
+    max: 1.2
+    unit: V
+
 provenance:
+  "/parameters/output_type":
+    - source: onsemi/NCP1117-D
+      page: 1
+      locator: "Description: \"This series contains nine fixed output voltages of 1.5 V, 1.8 V, 1.9 V, 2.0 V, 2.5 V, 2.85 V, 3.3 V, 5.0 V, and 12 V\""
+  "/parameters/dropout_voltage":
+    - source: onsemi/NCP1117-D
+      page: 3
+      locator: "ELECTRICAL CHARACTERISTICS, Dropout Voltage (Measured at Vout - 100 mV), Iout = 800 mA: Typ 1.07 V, Max 1.20 V"
   "/pins":
     - source: onsemi/NCP1117-D
       page: 1
