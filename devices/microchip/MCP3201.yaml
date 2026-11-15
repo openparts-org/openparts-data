@@ -1,0 +1,24 @@
+# 12-bit SAR A/D converter with SPI interface, single pseudo-
+# differential input. One pin map for MSOP, PDIP, SOIC and TSSOP: TABLE
+# 3-1 "PIN FUNCTION TABLE" (DS21290F page 15), checked against the
+# "Package Types" pinout on page 1 (all 8 pins match).
+schema_version: "0.2"
+kind: device
+id: microchip/MCP3201
+manufacturer: microchip
+category: adc
+family: MCP3201
+source: microchip/DS21290@revF
+
+pins:
+  src:
+    - p15 "TABLE 3-1 PIN FUNCTION TABLE, column "MSOP, PDIP, SOIC, TSSOP""
+    - p1 "Package Types, MSOP, PDIP, SOIC, TSSOP pinout"
+  "1": { name: VREF, type: analog }
+  "2": { name: IN+, type: analog }
+  "3": { name: IN-, type: analog }
+  "4": { name: VSS, type: ground }
+  "5": { name: CS/SHDN, type: input }
+  "6": { name: DOUT, type: output }
+  "7": { name: CLK, type: clock }
+  "8": { name: VDD, type: power }

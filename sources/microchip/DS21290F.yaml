@@ -1,0 +1,22 @@
+# Official Microchip datasheet "MCP3201 2.7V 12-Bit A/D Converter with
+# SPI Serial Interface". Downloaded 2026-11-16 directly from
+# ww1.microchip.com (URL below; HTTP 200). document_id / revision from
+# the printed footer "DS21290F-page N"; the Revision History lists
+# "Revision F (August 2011)". The file name without a revision letter
+# and 21290E/21290D answered 301 (not 200), so F is what was read. 40
+# PDF pages; text read with pdftotext -layout; page numbers are PDF page
+# indices (equal to the printed page numbers). Package drawings (pages
+# 26-32) use an encoded font and were rendered (pdftoppm) and read as
+# images: C04-111B (MS) p26, C04-018B (P) p28, C04-057C (SN) p30,
+# C04-086B (ST) p32.
+schema_version: "0.2"
+kind: source
+id: microchip/DS21290@revF
+sha256: 5b068299258ac3656c2afbb76978fb9f9c836446193c95e5d73faf39460435f7
+retrieved: 2026-11-16
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/21290F.pdf
+publisher: microchip
+document_id: DS21290
+document_type: datasheet
+revision: F
+date: 2011-08

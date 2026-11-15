@@ -1,0 +1,46 @@
+# 8-lead TSSOP, 4.4 mm body (Microchip package code ST). All values from
+# Microchip drawing C04-086B "8-Lead Plastic Thin Shrink Small Outline
+# (ST) - 4.4 mm Body [TSSOP]", dimension table on DS21290F page 32
+# (encoded font; rendered and read as an image). Millimetres, copied as
+# printed (BSC values as nominal, min/max-only rows as min/max only).
+# The "L1 1.00 REF" footprint and the foot angle are not recorded. No
+# land pattern was used.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/TSSOP8-ST-C04-086B
+family: tssop
+lead_count: 8
+source: microchip/DS21290@revF
+
+pitch: { typ: 0.65 mm, src: 'p32 "C04-086B table, Pitch e "0.65 BSC""' }
+geometry: { type: parametric, generator: tssop }
+
+dimensions:
+  body_width:
+    min: 4.3 mm
+    typ: 4.4 mm
+    max: 4.5 mm
+    src: p32 "C04-086B, Molded Package Width E1 "4.30 / 4.40 / 4.50""
+  body_length:
+    min: 2.9 mm
+    typ: 3 mm
+    max: 3.1 mm
+    src: p32 "C04-086B, Molded Package Length D "2.90 / 3.00 / 3.10""
+  body_height:
+    min: 0.8 mm
+    typ: 1 mm
+    max: 1.05 mm
+    src: p32 "C04-086B, Molded Package Thickness A2 "0.80 / 1.00 / 1.05""
+  lead_thickness:
+    min: 0.09 mm
+    max: 0.2 mm
+    src: p32 "C04-086B, Lead Thickness c "0.09 / - / 0.20""
+  overall_width:  { typ: 6.4 mm, src: 'p32 "C04-086B, Overall Width E "6.40 BSC""' }
+  overall_height: { max: 1.2 mm, src: 'p32 "C04-086B, Overall Height A "- / - / 1.20""' }
+  standoff: { min: 0.05 mm, max: 0.15 mm, src: 'p32 "C04-086B, Standoff A1 "0.05 / - / 0.15""' }
+  lead_width: { min: 0.19 mm, max: 0.3 mm, src: 'p32 "C04-086B, Lead Width b "0.19 / - / 0.30""' }
+  lead_length:
+    min: 0.45 mm
+    typ: 0.6 mm
+    max: 0.75 mm
+    src: p32 "C04-086B, Foot Length L "0.45 / 0.60 / 0.75""
