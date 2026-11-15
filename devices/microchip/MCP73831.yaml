@@ -12,10 +12,8 @@ family: MCP73831/2
 source: microchip/DS20001984@revH
 
 parameters:
-  input_voltage_max: { max: 6 V, src: 'p3 "DC Characteristics, Supply Voltage VDD: Max 6 V"' }
-  output_current:
-    max: 500 mA
-    src: 'p1 "Features, "Programmable Charge Current: 15 mA to 500 mA""'
+  input_voltage_max: { max: 6 V, src: 'p3 "DC Characteristics, Supply Voltage VDD"' }
+  output_current:    { max: 500 mA, src: 'p1 "Features, Programmable Charge Current"' }
 
 pins:
   src:

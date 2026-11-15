@@ -19,9 +19,7 @@ family: MCP1640/B/C/D
 source: microchip/DS20002234@revD
 
 parameters:
-  output_type:
-    value: adjustable
-    src: 'p1 "Features, "Adjustable Output Voltage Range: 2.0V to 5.5V"; "Output voltage is set by a small external resistor divider""'
+  output_type: { value: adjustable, src: 'p1 "Features, Adjustable Output Voltage Range"' }
 
 pins:
   src:

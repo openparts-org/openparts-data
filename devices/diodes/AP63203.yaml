@@ -15,13 +15,9 @@ family: AP6320x
 source: diodes/DS41326
 
 parameters:
-  output_type:
-    value: fixed
-    src: p12 ""The AP63203 and AP63205 have fixed output voltages of 3.3V and 5V, respectively""
-  input_voltage_max:
-    max: 32 V
-    src: 'p4 "Recommended Operating Conditions, VIN Supply Voltage: Max 32 V"'
-  output_current: { typ: 2 A, src: 'p1 "Features, "2A Continuous Output Current""' }
+  output_type: { value: fixed, src: 'p12 "Application Information, 9 Setting the Output Voltage"' }
+  input_voltage_max: { max: 32 V, src: 'p4 "Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 2 A, src: 'p1 "Features, continuous output current"' }
 
 pins:
   src:

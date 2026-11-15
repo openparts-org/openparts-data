@@ -31,7 +31,5 @@ lifecycle: { status: unknown }
 parameters:
   output_voltage:
     typ: 1.2 V
-    src: 'p28 "Product Identification System, 2x2 DFN-6 example "MCP1700T-1202E/MAY: 1.2V VOUT""'
-  output_current:
-    min: 200 mA
-    src: 'p3 "DC Characteristics, Maximum Output Current IOUT_mA: Min 200 mA, For VR < 2.5V"'
+    src: p28 "Product Identification System, example MCP1700T-1202E/MAY"
+  output_current: { min: 200 mA, src: 'p3 "DC Characteristics, Maximum Output Current, VR < 2.5V"' }

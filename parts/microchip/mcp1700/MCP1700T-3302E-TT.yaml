@@ -36,12 +36,12 @@ lifecycle: { status: unknown }
 parameters:
   output_voltage:
     typ: 3.3 V
-    src: 'p28 "Product Identification System, SOT-23 example "MCP1700T-3302E/TT: 3.3V VOUT""'
+    src: p28 "Product Identification System, example MCP1700T-3302E/TT"
   output_current:
     min: 250 mA
-    src: 'p3 "DC Characteristics, Maximum Output Current IOUT_mA: Min 250 mA, For VR >= 2.5V"'
+    src: p3 "DC Characteristics, Maximum Output Current, VR >= 2.5V"
   dropout_voltage:
     typ: 178 mV
     max: 350 mV
     at: { IL: 250 mA }
-    src: 'p3 "DC Characteristics, Dropout Voltage VIN - VOUT, VR >= 2.5V: Typ 178 mV, Max 350 mV"'
+    src: p3 "DC Characteristics, Dropout Voltage, VR >= 2.5V"

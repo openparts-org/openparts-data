@@ -11,13 +11,9 @@ family: AP2112
 source: diodes/DS39724
 
 parameters:
-  output_type:
-    value: fixed
-    src: 'p1 "Description: "The AP2112 is available with a fixed output voltage of 1.2V, 1.8V, 2.5V, 2.6V, or 3.3V""'
-  input_voltage_max:
-    max: 6 V
-    src: 'p3 "Recommended Operating Conditions, VIN Supply Voltage: Max 6.0 V"'
-  output_current: { min: 600 mA, src: 'p1 "Features, "Output Current: 600mA (Min.)""' }
+  output_type:       { value: fixed, src: p1 "Description" }
+  input_voltage_max: { max: 6 V, src: 'p3 "Recommended Operating Conditions, VIN"' }
+  output_current:    { min: 600 mA, src: 'p1 "Features, Output Current"' }
 
 pins:
   src: ['p2 ""Pin Descriptions" table, SOT25 column"', 'p1 ""Pin Assignments", SOT25 (Top View)"']

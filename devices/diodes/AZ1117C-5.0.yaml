@@ -16,15 +16,17 @@ family: AZ1117C
 source: diodes/DS36676
 
 parameters:
-  output_type:
-    value: fixed
-    src: 'p1 "Description: "The AZ1117C is available in 1.2V, 1.5V, 1.8V, 2.5V, 3.3V, and 5.0V fixed output voltage versions and an ADJ output voltage version""'
+  output_type:       { value: fixed, src: p1 "Description" }
   output_voltage:
-    typ: 5 V
-    src: 'p7 "Electrical Characteristics AZ1117C-5.0, VOUT Output Voltage, 1.5V <= VIN-VOUT <= 10V: Typ 5.0 V"'
-  input_voltage_max:
-    max: 15 V
-    src: 'p4 "Recommended Operating Conditions, VIN Input Voltage: Max 15 V"'
+    - min: 4.95 V
+      typ: 5 V
+      max: 5.05 V
+      src: p7 "Elec. Char. AZ1117C-5.0, VOUT, 1.5V <= VIN-VOUT <= 10V"
+    - min: 4.9 V
+      max: 5.1 V
+      at: { TJ: -20..125 °C }
+      src: p7 "Elec. Char. AZ1117C-5.0, VOUT, boldface limits"
+  input_voltage_max: { max: 15 V, src: 'p4 "Recommended Operating Conditions, VIN"' }
 
 pins:
   src:

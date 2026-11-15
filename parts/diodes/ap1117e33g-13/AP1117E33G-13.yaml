@@ -30,7 +30,5 @@ lifecycle:
 parameters:
   output_type:
     value: fixed
-    src: 'p7 "Ordering Information, AP1117 X XXXXX code table, VOUT: "33 : 3.3V" (vs "Blank : ADJ")"'
-  output_voltage:
-    typ: 3.3 V
-    src: 'p7 "Ordering Information, AP1117 X XXXXX code table, VOUT: "33 : 3.3V""'
+    src: 'p7 "Ordering Information, VOUT code: 33 = 3.3V (Blank = ADJ)"'
+  output_voltage: { typ: 3.3 V, src: 'p7 "Ordering Information, VOUT code: 33 = 3.3V"' }

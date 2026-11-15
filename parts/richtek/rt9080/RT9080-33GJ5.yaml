@@ -30,9 +30,10 @@ lifecycle: { status: unknown }
 parameters:
   output_type:
     value: fixed
-    src: 'p1 "3 Features, "Support Fixed Output Voltage: 0.8V to 3.3V"; 2 Ordering Information, Output Voltage "33 : 3.3V""'
-  output_voltage: { typ: 3.3 V, src: 'p1 "2 Ordering Information, Output Voltage: "33 : 3.3V""' }
+    src: 'p1 "3 Features; 2 Ordering Information, Output Voltage: 33 = 3.3V"'
+  output_voltage: { typ: 3.3 V, src: 'p1 "2 Ordering Information, Output Voltage: 33 = 3.3V"' }
   dropout_voltage:
     typ: 0.31 V
     max: 0.53 V
-    src: 'p6 "Electrical Characteristics, Dropout Voltage (ILOAD = 600mA) VDROP, 3V <= VVOUT row: Typ 0.31 V, Max 0.53 V"'
+    at: { IOUT: 600 mA }
+    src: p6 "14 Electrical Characteristics, Dropout Voltage, 3V <= VVOUT row"

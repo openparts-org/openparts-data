@@ -15,14 +15,11 @@ family: NCP1117
 source: onsemi/NCP1117-D
 
 parameters:
-  output_type:
-    value: fixed
-    src: 'p1 "Description: "This series contains nine fixed output voltages of 1.5 V, 1.8 V, 1.9 V, 2.0 V, 2.5 V, 2.85 V, 3.3 V, 5.0 V, and 12 V""'
+  output_type: { value: fixed, src: p1 "Description" }
   dropout_voltage:
-    typ: 1.07 V
-    max: 1.2 V
-    at: { IOUT: 800 mA }
-    src: 'p3 "ELECTRICAL CHARACTERISTICS, Dropout Voltage (Measured at Vout - 100 mV): Typ 1.07 V, Max 1.20 V"'
+    - { typ: 1.07 V, max: 1.2 V, at: { IOUT: 800 mA }, src: 'p3 "Elec. Char., Dropout Voltage"' }
+    - { typ: 0.95 V, max: 1.1 V, at: { IOUT: 100 mA }, src: 'p3 "Elec. Char., Dropout Voltage"' }
+    - { typ: 1.01 V, max: 1.15 V, at: { IOUT: 500 mA }, src: 'p3 "Elec. Char., Dropout Voltage"' }
 
 pins:
   src:

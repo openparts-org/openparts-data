@@ -13,9 +13,7 @@ family: MCP1700
 source: microchip/DS20001826@revE
 
 parameters:
-  input_voltage_max:
-    max: 6 V
-    src: 'p3 "DC Characteristics, Input Operating Voltage VIN: Max 6.0 V"'
+  input_voltage_max: { max: 6 V, src: 'p3 "DC Characteristics, Input Operating Voltage"' }
 
 pins:
   src:

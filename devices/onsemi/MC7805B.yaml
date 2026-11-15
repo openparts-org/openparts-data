@@ -14,12 +14,11 @@ family: MC7800
 source: onsemi/MC7800-D
 
 parameters:
-  output_type:
-    value: fixed
-    src: 'p1 "Description: "monolithic integrated circuits designed as fixed-voltage regulators""'
+  output_type: { value: fixed, src: p1 "Description" }
   dropout_voltage:
     typ: 2 V
-    src: 'p3 "ELECTRICAL CHARACTERISTICS (Vin = 10 V, IO = 500 mA), MC7805B, NCV7805B column, Dropout Voltage (IO = 1.0 A, TJ = 25°C): Typ 2.0 Vdc"'
+    at: { IOUT: 1 A, TJ: 25 °C }
+    src: p3 "Elec. Char., MC7805B/NCV7805B column, Dropout Voltage"
 
 pins:
   src: 'p1 "Pinout box: "Pin 1. Input 2. Ground 3. Output"; "Heatsink surface (shown as terminal 4 in case outline drawing) is connected to Pin 2.""'

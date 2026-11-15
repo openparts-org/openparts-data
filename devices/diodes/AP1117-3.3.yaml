@@ -13,10 +13,16 @@ family: AP1117
 source: diodes/DS31009
 
 parameters:
-  output_current:
-    typ: 1 A
-    src: 'p1 "Description: "AP1117 is a low dropout positive adjustable or fixed-mode regulator with 1A output current capability""'
-  dropout_voltage: { max: 1.4 V, src: 'p1 "Features: "1.4V Maximum Dropout at Full Load Current""' }
+  output_current: { max: 1 A, src: p1 "Description" }
+  dropout_voltage:
+    - typ: 1.3 V
+      max: 1.4 V
+      at: { IOUT: 1 A }
+      src: [p1 "Features", 'p4 "Elec. Char., Dropout Voltage, IOUT = 1A"']
+    - typ: 1.2 V
+      max: 1.3 V
+      at: { IOUT: 800 mA }
+      src: p4 "Elec. Char., Dropout Voltage, IOUT = 800mA"
 
 pins:
   src:

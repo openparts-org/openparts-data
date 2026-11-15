@@ -17,10 +17,8 @@ source: richtek/DS9193-18
 parameters:
   input_voltage_max:
     max: 5.5 V
-    src: 'p3 "Recommended Operating Conditions, Supply Input Voltage: 2.5V to 5.5V"'
-  output_current:
-    typ: 300 mA
-    src: p1 "Title "300mA, Ultra-Low Noise, Ultra-Fast CMOS LDO Regulator""
+    src: p3 "Recommended Operating Conditions, Supply Input Voltage"
+  output_current: { max: 300 mA, src: p1 "Title" }
 
 pins:
   src:

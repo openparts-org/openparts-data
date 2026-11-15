@@ -25,5 +25,12 @@ lifecycle: { status: unknown }
 
 parameters:
   output_voltage:
-    typ: 5 V
-    src: 'p12 "ORDERING INFORMATION - (NCP1117), Device NCP1117DT50RKG: Nominal Output Voltage 5.0"'
+    - min: 4.95 V
+      typ: 5 V
+      max: 5.05 V
+      at: { VIN: 7 V, IOUT: 10 mA, TA: 25 °C }
+      src: ['p3 "Elec. Char., Output Voltage, 5.0 V"', 'p12 "Ordering Information, NCP1117DT50RKG"']
+    - min: 4.9 V
+      max: 5.1 V
+      at: { VIN: 6.5..12 V, IOUT: 0..800 mA }
+      src: p3 "Elec. Char., Output Voltage, 5.0 V"

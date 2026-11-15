@@ -24,11 +24,8 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  output_voltage:
-    typ: 3.3 V
-    src: p12 "Ordering Information table, SOT25, Condition 3.3V, Part Number AP2112K-3.3TRG1"
+  output_voltage: { typ: 3.3 V, src: 'p12 "Ordering Information, SOT25, 3.3V, AP2112K-3.3TRG1"' }
   dropout_voltage:
-    typ: 250 mV
-    max: 400 mV
-    at: { IOUT: 600 mA }
-    src: 'p8 "AP2112-3.3 Electrical Characteristics, VDROP Dropout Voltage: Typ 250 mV, Max 400 mV"'
+    - { typ: 250 mV, max: 400 mV, at: { IOUT: 600 mA }, src: 'p8 "AP2112-3.3 Elec. Char., VDROP"' }
+    - { typ: 125 mV, max: 200 mV, at: { IOUT: 300 mA }, src: 'p8 "AP2112-3.3 Elec. Char., VDROP"' }
+    - { typ: 5 mV, max: 8 mV, at: { IOUT: 10 mA }, src: 'p8 "AP2112-3.3 Elec. Char., VDROP"' }

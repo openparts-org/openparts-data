@@ -17,12 +17,8 @@ family: RT9080
 source: richtek/DS9080-09
 
 parameters:
-  input_voltage_max:
-    max: 5.5 V
-    src: 'p5 "12 Recommended Operating Conditions, Input Voltage, VIN: 1.2V to 5.5V"'
-  output_current:
-    max: 600 mA
-    src: 'p1 "1 General Description: "The RT9080 delivers a maximum output current of 600mA""'
+  input_voltage_max: { max: 5.5 V, src: 'p5 "12 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 600 mA, src: p1 "1 General Description" }
 
 pins:
   src:

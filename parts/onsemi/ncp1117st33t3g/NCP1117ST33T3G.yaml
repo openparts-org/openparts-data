@@ -24,5 +24,12 @@ lifecycle: { status: unknown }
 
 parameters:
   output_voltage:
-    typ: 3.3 V
-    src: 'p12 "ORDERING INFORMATION - (NCP1117), Device NCP1117ST33T3G: Nominal Output Voltage 3.3"'
+    - min: 3.267 V
+      typ: 3.3 V
+      max: 3.333 V
+      at: { VIN: 5.3 V, IOUT: 10 mA, TA: 25 °C }
+      src: ['p3 "Elec. Char., Output Voltage, 3.3 V"', 'p12 "Ordering Information, NCP1117ST33T3G"']
+    - min: 3.235 V
+      max: 3.365 V
+      at: { VIN: 4.75..10 V, IOUT: 0..800 mA }
+      src: p3 "Elec. Char., Output Voltage, 3.3 V"

@@ -24,8 +24,4 @@ existence:
   src: p16 ""Ordering Information" table, row "AP63203WU-7 | TSOT26 | PWM/PFM | 1100kHz | 3.3V | WU | 3000 | 7 in Tape & Reel" (inch mark written as in)"
 
 lifecycle: { status: unknown }
-
-parameters:
-  output_voltage:
-    typ: 3.3 V
-    src: 'p16 "Ordering Information table, Orderable Part Number AP63203WU-7: VOUT 3.3V"'
+parameters: { output_voltage: { typ: 3.3 V, src: 'p16 "Ordering Information, AP63203WU-7"' } }
