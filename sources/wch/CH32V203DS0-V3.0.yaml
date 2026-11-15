@@ -1,0 +1,22 @@
+# Official WCH "CH32V203 Datasheet" V3.0 (English, 66 PDF pages).
+# Downloaded from wch-ic.com/download/file?id=354 (the site's download
+# endpoint; file id and version "3.0" from the site's own file listing
+# for CH32V203DS0_PDF.html). Version "V3.0" printed on every page footer;
+# date from the PDF CreationDate (2026-06-16; the site lists upload date
+# 2026-06-16). PDF page index = printed page number + 5 (printed "57" is
+# PDF page 62). Pin tables read with pdftotext -layout and checked
+# against the rendered pinout figures (PDF page 21); package drawings
+# (PDF pages 60-65) are images and were rendered and read. They give
+# nominal values, with a general tolerance note (page 60): pitch exact,
+# other dimensions within the greater of +-0.2 mm or 10 %.
+schema_version: "0.2"
+kind: source
+id: wch/CH32V203DS0@V3.0
+sha256: 10af5de2779ce1e985162dceae2e829800b2d633d34491333b1ce90f4ffcbdd2
+retrieved: 2026-11-16
+url: https://www.wch-ic.com/download/file?id=354
+publisher: wch
+document_id: CH32V203DS0
+document_type: datasheet
+revision: "3.0"
+date: 2026-06

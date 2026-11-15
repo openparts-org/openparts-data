@@ -1,0 +1,34 @@
+# CH32V003 pinout for CH32V003J4M6 (SOP8), from WCH CH32V003 datasheet
+# V1.8 Table 2-1 "Pin definitions" (SOP8 column, PDF pages 13-14),
+# checked against the Section 2.1 CH32V003J4M6 pinout figure (PDF page
+# 13). In SOP8 several port pads share one package pin: Table 2-1 gives
+# SOP8 pin 1 to both PD6 and PA1, and pin 8 to PD4, PD5 and PD1; the
+# figure draws the same labels on those pins. The combined name lists
+# the ports in the figure's order. (The CH32V203 datasheet's note 7 says
+# shorted pins must not drive outputs at the same time; this datasheet
+# has no such note, so none is recorded.)
+# Types: VDD power, VSS ground, ports io. `alternate_functions` lists
+# only the ADC channels (A0-A7 = ADC_IN0-7, legend PDF page 13) and the
+# SWIO default function; other peripheral functions are not listed.
+# PD0, PD2, PD3, PD7, PC0, PC3, PC5-PC7 are not bonded out in SOP8
+# ("-" in the SOP8 column).
+schema_version: "0.2"
+kind: device
+id: wch/CH32V003J4
+manufacturer: wch
+category: microcontroller
+family: CH32V003
+source: wch/CH32V003DS0@V1.8
+
+pins:
+  src:
+    - p13 "Table 2-1 Pin definitions, SOP8 column (cont. p14)"
+    - p13 "Section 2.1 CH32V003J4M6 pinout"
+  "1": { name: PD6/PA1, type: io, alternate_functions: [ADC_IN6, ADC_IN1] }
+  "2": { name: VSS, type: ground }
+  "3": { name: PA2, type: io, alternate_functions: [ADC_IN0] }
+  "4": { name: VDD, type: power }
+  "5": { name: PC1, type: io }
+  "6": { name: PC2, type: io }
+  "7": { name: PC4, type: io, alternate_functions: [ADC_IN2] }
+  "8": { name: PD4/PD5/PD1, type: io, alternate_functions: [ADC_IN7, ADC_IN5, SWIO] }

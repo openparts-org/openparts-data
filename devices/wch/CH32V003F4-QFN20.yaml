@@ -1,0 +1,48 @@
+# CH32V003 pinout for CH32V003F4U6 (QFN20), from WCH CH32V003 datasheet V1.8
+# Table 2-1 "Pin definitions" (QFN20 column, PDF pages 13-14), checked
+# against the Section 2.1 CH32V003F4U6 pinout figure (PDF page 12): same names at the same
+# numbers. Pin names are the port names (main function after reset).
+# Types: VDD power, VSS ground, all port pins io (table types I/O, I/O/A,
+# I/O/FT).
+# `alternate_functions` lists only the ADC channels (A0-A7 = ADC_IN0-7
+# per the legend on PDF page 13) and the NRST/SWIO default functions from
+# Table 2-1's "Default alternate function" column; timer/USART/I2C/SPI
+# functions and remaps (Table 2-2) are not listed.
+# Exposed pad: Table 2-1 gives QFN20 pin "0" as VSS (power), recorded as
+# pin key EP.
+schema_version: "0.2"
+kind: device
+id: wch/CH32V003F4-QFN20
+manufacturer: wch
+category: microcontroller
+family: CH32V003
+source: wch/CH32V003DS0@V1.8
+
+pins:
+  src:
+    - p13 "Table 2-1 Pin definitions, QFN20 column (cont. p14)"
+    - p12 "Section 2.1 CH32V003F4U6 pinout"
+  "1":  { name: PD7, type: io, alternate_functions: [NRST] }
+  "2":  { name: PA1, type: io, alternate_functions: [ADC_IN1] }
+  "3":  { name: PA2, type: io, alternate_functions: [ADC_IN0] }
+  "4":  { name: VSS, type: ground }
+  "5":  { name: PD0, type: io }
+  "6":  { name: VDD, type: power }
+  "7":  { name: PC0, type: io }
+  "8":  { name: PC1, type: io }
+  "9":  { name: PC2, type: io }
+  "10": { name: PC3, type: io }
+  "11": { name: PC4, type: io, alternate_functions: [ADC_IN2] }
+  "12": { name: PC5, type: io }
+  "13": { name: PC6, type: io }
+  "14": { name: PC7, type: io }
+  "15": { name: PD1, type: io, alternate_functions: [SWIO] }
+  "16": { name: PD2, type: io, alternate_functions: [ADC_IN3] }
+  "17": { name: PD3, type: io, alternate_functions: [ADC_IN4] }
+  "18": { name: PD4, type: io, alternate_functions: [ADC_IN7] }
+  "19": { name: PD5, type: io, alternate_functions: [ADC_IN5] }
+  "20": { name: PD6, type: io, alternate_functions: [ADC_IN6] }
+  EP:
+    name: VSS
+    type: ground
+    src: p13 "Table 2-1 Pin definitions, QFN20 column pin 0 = VSS (P)"

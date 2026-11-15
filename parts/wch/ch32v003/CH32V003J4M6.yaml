@@ -1,0 +1,21 @@
+# CH32V003J4M6: printed verbatim in the "Order Model" column of the Chapter 4
+# "Packages" table of WCH CH32V003 datasheet V1.8 (PDF page 32, row
+# SOP8), and in the model table on PDF page 1.
+# lifecycle: the datasheet carries no production-status statement;
+# unknown.
+schema_version: "0.2"
+kind: part
+id: wch/CH32V003J4M6
+manufacturer: wch
+mpn: CH32V003J4M6
+device: wch/CH32V003J4
+
+package:
+  value: manufacturers/wch/SOP8-3.9x5-P1.27-WCH
+  src: p32 "Chapter 4 Packages table, row CH32V003J4M6, Package Form SOP8"
+
+sources: [wch/CH32V003DS0@V1.8]
+source: wch/CH32V003DS0@V1.8
+
+existence: { status: verified, src: 'p32 "Chapter 4 Packages table, Order Model CH32V003J4M6"' }
+lifecycle: { status: unknown }

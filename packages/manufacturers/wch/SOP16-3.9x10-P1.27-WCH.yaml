@@ -1,0 +1,26 @@
+# WCH 16-pin SOP, 3.9 mm body, 1.27 mm pitch: CH32V003 datasheet V1.8
+# section 4.3 "SOP16 package" (PDF page 34, image, rendered and read). The
+# drawing prints nominal values only; the general tolerance note on PDF
+# page 33 applies (pitch exact, others within the greater of +-0.2 mm
+# or 10 %), so every value is recorded as `typ`. The side-view "1.55"
+# is the only height given: recorded as body_height.
+schema_version: "0.2"
+kind: package
+id: manufacturers/wch/SOP16-3.9x10-P1.27-WCH
+family: soic
+lead_count: { value: 16, src: 'p34 "Section 4.3 SOP16 drawing, pins #1-#16"' }
+source: wch/CH32V003DS0@V1.8
+
+pitch: { typ: 1.27 mm, src: 'p34 "Section 4.3 SOP16, side view pitch 1.27"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  src:            p34 "Section 4.3 SOP16 drawing (nominal values)"
+  body_width:     { typ: 3.9 mm }
+  body_length:    { typ: 10 mm }
+  body_height:    { typ: 1.55 mm }
+  lead_thickness: { typ: 0.2 mm }
+  overall_width:  { typ: 6 mm }
+  standoff:       { typ: 0.1 mm }
+  lead_width:     { typ: 0.45 mm }
+  lead_length:    { typ: 0.5 mm }
