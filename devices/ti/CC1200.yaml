@@ -1,0 +1,53 @@
+# CC1200 RF transceiver, RHB (VQFN-32 5x5) pinout. SWRS123D section 3.2 "Pin
+# Configuration" table (PDF page 6) checked against Figure 3-1 (pin diagram,
+# PDF page 5). The ground pad ("—", Ground pad, must be connected to a
+# solid ground plane) -> key "EP", GND, ground.
+# Types are this dataset's reading of the TYPE column: Digital input ->
+# input (RESET_N, asynchronous active-low reset -> reset), Digital I/O ->
+# io, Analog -> analog, Power -> power, except the DCPL* pins (regulator
+# outputs to external decoupling capacitors) -> power_out; N.C. -> nc.
+# category other: the category tree has no RF transceiver node (the
+# validator warns category.other).
+schema_version: "0.2"
+kind: device
+id: ti/CC1200
+manufacturer: ti
+category: other
+family: CC1200
+source: ti/SWRS123D
+
+pins:
+  src:  [p6 "3.2 Pin Configuration table", p5 "Figure 3-1 pin diagram (Package 5-mm x 5-mm QFN)"]
+  "1":  { name: VDD_GUARD, type: power }
+  "2":  { name: RESET_N, type: reset }
+  "3":  { name: GPIO3, type: io }
+  "4":  { name: GPIO2, type: io }
+  "5":  { name: DVDD, type: power }
+  "6":  { name: DCPL, type: power_out }
+  "7":  { name: SI, type: input }
+  "8":  { name: SCLK, type: input }
+  "9":  { name: SO(GPIO1), type: io }
+  "10": { name: GPIO0, type: io }
+  "11": { name: CSn, type: input }
+  "12": { name: DVDD, type: power }
+  "13": { name: AVDD_IF, type: power }
+  "14": { name: RBIAS, type: analog }
+  "15": { name: AVDD_RF, type: power }
+  "16": { name: N.C., type: nc }
+  "17": { name: PA, type: analog }
+  "18": { name: TRX_SW, type: analog }
+  "19": { name: LNA_P, type: analog }
+  "20": { name: LNA_N, type: analog }
+  "21": { name: DCPL_VCO, type: power_out }
+  "22": { name: AVDD_SYNTH1, type: power }
+  "23": { name: LPF0, type: analog }
+  "24": { name: LPF1, type: analog }
+  "25": { name: AVDD_PFD_CHP, type: power }
+  "26": { name: DCPL_PFD_CHP, type: power_out }
+  "27": { name: AVDD_SYNTH2, type: power }
+  "28": { name: AVDD_XOSC, type: power }
+  "29": { name: DCPL_XOSC, type: power_out }
+  "30": { name: XOSC_Q1, type: analog }
+  "31": { name: XOSC_Q2, type: analog }
+  "32": { name: EXT_XOSC, type: input }
+  EP:   { name: GND, type: ground }

@@ -1,0 +1,69 @@
+# TI RGP0020C, VQFN-20, 4x4 mm, 0.5 mm pitch, 1 mm max height. Outline drawing
+# RGP0020C (4219027/A 03/2025) and its EXAMPLE BOARD LAYOUT, read from the rendered drawings
+# in SWRS040C PDF pages 96-97. Used by CC2500 (SWRS040C).
+#
+# Mapping: D/E limits -> body_width/body_length (no nominal printed);
+# A (no A2) -> body_height; A1 -> standoff; b -> lead_width; L ->
+# lead_length; thermal pad +-0.1 -> exposed_pad. Bottom view numbers
+# 1..5 up the left edge (bottom view), thermal pad "21"; the standard
+# CCW top-view order (pin 1 top of the left edge).
+# pads: the EXAMPLE BOARD LAYOUT (all values in parentheses = reference
+# values in TI's notation): 20X (0.55) x (0.24) terminal lands at 0.5 pitch,
+# the opposite rows' land centre lines (3.85) apart (the dimension's
+# extension lines run through the land centres), thermal-pad land
+# (2.4) square at the centre. Coordinates: top view, X right, Y up,
+# origin at the package centre; land centre = 3.85 / 2 = 1.925; row
+# positions +-(k - 2) x 0.5. Vias of the example are not recorded.
+# Left out: "(0.2) TYP" side-view metal (not stated to be A3), "2X 2" row
+# spans, "(45 X 0.3)" pin-1 chamfer.
+# Not used for the CC1101: SWRS061I appends both RGP0020H (4226714/A) and
+# this RGP0020C without saying which orderable part number uses which.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/RGP0020C
+family: qfn
+lead_count: 20
+source: ti/SWRS040C
+
+pitch: { typ: 0.5 mm, src: 'p96 "PACKAGE OUTLINE RGP0020C, bottom view, basic pitch 0.5"' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:  { min: 3.9 mm, max: 4.1 mm, src: 'p96 "PACKAGE OUTLINE RGP0020C, top view 4.1/3.9"' }
+  body_length: { min: 3.9 mm, max: 4.1 mm, src: 'p96 "PACKAGE OUTLINE RGP0020C, top view 4.1/3.9"' }
+  body_height:
+    min: 0.8 mm
+    max: 1 mm
+    src: p96 "PACKAGE OUTLINE RGP0020C, side view 1/0.8 (A; no A2 given)"
+  exposed_pad:
+    src:    p96 "PACKAGE OUTLINE RGP0020C, bottom view, exposed thermal pad square 2.4+-0.1"
+    width:  { min: 2.3 mm, typ: 2.4 mm, max: 2.5 mm }
+    length: { min: 2.3 mm, typ: 2.4 mm, max: 2.5 mm }
+  standoff: { min: 0 mm, max: 0.05 mm, src: 'p96 "PACKAGE OUTLINE RGP0020C, side view 0.05/0.00"' }
+  lead_width:  { min: 0.19 mm, max: 0.29 mm, src: 'p96 "PACKAGE OUTLINE RGP0020C, 20X 0.29/0.19"' }
+  lead_length: { min: 0.25 mm, max: 0.45 mm, src: 'p96 "PACKAGE OUTLINE RGP0020C, 20X 0.45/0.25"' }
+
+pads:
+  value:
+    - { number: "1", x: -1.925, y: 1, width: 0.55, length: 0.24 }
+    - { number: "2", x: -1.925, y: 0.5, width: 0.55, length: 0.24 }
+    - { number: "3", x: -1.925, y: 0, width: 0.55, length: 0.24 }
+    - { number: "4", x: -1.925, y: -0.5, width: 0.55, length: 0.24 }
+    - { number: "5", x: -1.925, y: -1, width: 0.55, length: 0.24 }
+    - { number: "6", x: -1, y: -1.925, width: 0.24, length: 0.55 }
+    - { number: "7", x: -0.5, y: -1.925, width: 0.24, length: 0.55 }
+    - { number: "8", x: 0, y: -1.925, width: 0.24, length: 0.55 }
+    - { number: "9", x: 0.5, y: -1.925, width: 0.24, length: 0.55 }
+    - { number: "10", x: 1, y: -1.925, width: 0.24, length: 0.55 }
+    - { number: "11", x: 1.925, y: -1, width: 0.55, length: 0.24 }
+    - { number: "12", x: 1.925, y: -0.5, width: 0.55, length: 0.24 }
+    - { number: "13", x: 1.925, y: 0, width: 0.55, length: 0.24 }
+    - { number: "14", x: 1.925, y: 0.5, width: 0.55, length: 0.24 }
+    - { number: "15", x: 1.925, y: 1, width: 0.55, length: 0.24 }
+    - { number: "16", x: 1, y: 1.925, width: 0.24, length: 0.55 }
+    - { number: "17", x: 0.5, y: 1.925, width: 0.24, length: 0.55 }
+    - { number: "18", x: 0, y: 1.925, width: 0.24, length: 0.55 }
+    - { number: "19", x: -0.5, y: 1.925, width: 0.24, length: 0.55 }
+    - { number: "20", x: -1, y: 1.925, width: 0.24, length: 0.55 }
+    - { number: EP, x: 0, y: 0, width: 2.4, length: 2.4 }
+  src: p97 "EXAMPLE BOARD LAYOUT RGP0020C, 20X (0.55) x (0.24), centre lines (3.85), pad (2.4); see header"

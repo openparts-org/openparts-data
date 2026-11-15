@@ -1,0 +1,20 @@
+# CC1120RHBR: SWRS112H PACKAGE OPTION ADDENDUM (PDF page 29) row "CC1120RHBR
+# Active  Production  VQFN (RHB) | 32, 3000 | LARGE T&R" -- MPN printed verbatim in TI's orderable
+# list (existence verified); lifecycle "Active" is TI's own Status column.
+# Package RHB = outline RHB0032E (PDF page 32). The addendum's ".A"/".B"
+# suffixed rows (single lead-finish variants) are not added.
+schema_version: "0.2"
+kind: part
+id: ti/CC1120RHBR
+manufacturer: ti
+mpn: CC1120RHBR
+device: ti/CC1120
+package: { value: manufacturers/ti/RHB0032E, src: p32 "RHB0032E package outline" }
+sources: [ti/SWRS112H]
+source: ti/SWRS112H
+
+existence: { status: verified, src: 'p29 "Package option addendum, row "CC1120RHBR""' }
+
+lifecycle:
+  status: active
+  src: p29 "Package option addendum, row "CC1120RHBR", Status "Active""

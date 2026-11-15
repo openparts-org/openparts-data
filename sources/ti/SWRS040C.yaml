@@ -1,0 +1,21 @@
+# Official TI datasheet "CC2500 Low-Cost Low-Power 2.4 GHz RF Transceiver datasheet" (SWRS040C), 99 pages,
+# downloaded 2026-11-16 with curl from the URL below (file checked: PDF,
+# PDF Keywords name SWRS040C). Read with pdftotext -layout; pinout figures and
+# the package outline / example board layout pages were rendered and read
+# as images. The PACKAGE OPTION ADDENDUM inside this PDF is dated
+# 11-Nov-2025, PDF pages 90-91 (newer than the datasheet revision).
+# Revision C is dated 2008-05-04 in section 36.1 Document History (PDF page 89).
+# Page numbers are PDF page indices; the printed "Page N of 89" footers are one
+# lower on the datasheet pages (printed = PDF - 1). The appended TI pages
+# (addendum, RGP0020C outline 4219027/A 03/2025, PDF pages 96-98) are unnumbered.
+schema_version: "0.2"
+kind: source
+id: ti/SWRS040C
+sha256: 27364e9593879ec0c098944c46b90e7243a44e5b34e77b6d9ec3a3610ea25ae4
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/cc2500.pdf
+publisher: ti
+document_id: SWRS040C
+document_type: datasheet
+revision: C
+date: 2008-05

@@ -1,0 +1,20 @@
+# CC1200RHBT: SWRS123D PACKAGE OPTION ADDENDUM (PDF page 28) row "CC1200RHBT
+# Active  Production  VQFN (RHB) | 32, 250 | SMALL T&R" -- MPN printed verbatim in TI's orderable
+# list (existence verified); lifecycle "Active" is TI's own Status column.
+# Package RHB = outline RHB0032E (PDF page 32). The addendum's ".A"/".B"
+# suffixed rows (single lead-finish variants) are not added.
+schema_version: "0.2"
+kind: part
+id: ti/CC1200RHBT
+manufacturer: ti
+mpn: CC1200RHBT
+device: ti/CC1200
+package: { value: manufacturers/ti/RHB0032E, src: p32 "RHB0032E package outline" }
+sources: [ti/SWRS123D]
+source: ti/SWRS123D
+
+existence: { status: verified, src: 'p28 "Package option addendum, row "CC1200RHBT""' }
+
+lifecycle:
+  status: active
+  src: p28 "Package option addendum, row "CC1200RHBT", Status "Active""

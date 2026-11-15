@@ -1,0 +1,45 @@
+# CC2500 2.4 GHz RF transceiver, RGP (QFN-20 4x4) pinout. SWRS040C Table 13
+# "Pinout Overview" (PDF page 16) checked against Figure 1 "Pinout Top View"
+# (PDF page 15). Names as in the table ("SO (GDO1)", "GDO0 (ATEST)").
+# Types are this dataset's reading of the Pin Type column: Digital Input
+# -> input, Digital Output -> output, Digital I/O -> io, Analog I/O and
+# RF I/O -> analog, Power (Analog/Digital) -> power, except DCOUPL (a
+# 1.6-2.0 V supply *output* for decoupling only) -> power_out; Ground ->
+# ground. Exposed die attach pad: Figure 1 labels it GND and its note says
+# it must be connected to a solid ground plane as the main ground
+# connection of the chip -> key "EP", GND, ground.
+# category other: the category tree has no RF transceiver node (the
+# validator warns category.other).
+schema_version: "0.2"
+kind: device
+id: ti/CC2500
+manufacturer: ti
+category: other
+family: CC2500
+source: ti/SWRS040C
+
+pins:
+  src:
+    - p16 "Table 13 Pinout Overview"
+    - p15 "Figure 1 Pinout Top View, and its note on the exposed die attach pad"
+  "1":  { name: SCLK, type: input }
+  "2":  { name: SO (GDO1), type: output }
+  "3":  { name: GDO2, type: output }
+  "4":  { name: DVDD, type: power }
+  "5":  { name: DCOUPL, type: power_out }
+  "6":  { name: GDO0 (ATEST), type: io }
+  "7":  { name: CSn, type: input }
+  "8":  { name: XOSC_Q1, type: analog }
+  "9":  { name: AVDD, type: power }
+  "10": { name: XOSC_Q2, type: analog }
+  "11": { name: AVDD, type: power }
+  "12": { name: RF_P, type: analog }
+  "13": { name: RF_N, type: analog }
+  "14": { name: AVDD, type: power }
+  "15": { name: AVDD, type: power }
+  "16": { name: GND, type: ground }
+  "17": { name: RBIAS, type: analog }
+  "18": { name: DGUARD, type: power }
+  "19": { name: GND, type: ground }
+  "20": { name: SI, type: input }
+  EP:   { name: GND, type: ground }
