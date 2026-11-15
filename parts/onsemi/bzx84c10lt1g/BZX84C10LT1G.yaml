@@ -30,7 +30,16 @@ lifecycle:
 sources:
   - onsemi/BZX84C2V4LT1-D
 
+parameters:
+  forward_voltage:
+    max: 0.9
+    unit: V
+
 provenance:
+  "/parameters/forward_voltage":
+    - source: onsemi/BZX84C2V4LT1-D
+      page: 3
+      locator: "ELECTRICAL CHARACTERISTICS table header '(TA = 25°C unless otherwise noted, VF = 0.90 V Max. @ IF = 10 mA)', row BZX84C10LT1G"
   "/existence":
     - source: onsemi/BZX84C2V4LT1-D
       page: 1

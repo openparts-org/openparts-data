@@ -16,7 +16,30 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 20
+    unit: V
+  forward_current:
+    max: 1.0
+    unit: A
+  forward_voltage:
+    max: 0.53
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: onsemi/MBR120ESFT1-D
+      page: 2
+      locator: "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 20 V"
+  "/parameters/forward_current":
+    - source: onsemi/MBR120ESFT1-D
+      page: 2
+      locator: "MAXIMUM RATINGS, Average Rectified Forward Current IO (At Rated VR, TL = 140°C): 1.0 A"
+  "/parameters/forward_voltage":
+    - source: onsemi/MBR120ESFT1-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF (IF = 1.0 A), TJ = 25°C: 0.530 V"
   "/pins":
     - source: onsemi/MBR120ESFT1-D
       page: 1

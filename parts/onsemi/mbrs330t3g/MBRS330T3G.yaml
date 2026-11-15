@@ -22,7 +22,30 @@ lifecycle:
 sources:
   - onsemi/MBRS340T3-D
 
+parameters:
+  reverse_voltage:
+    max: 30
+    unit: V
+  forward_current:
+    max: 3.0
+    unit: A
+  forward_voltage:
+    max: 0.5
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: onsemi/MBRS340T3-D
+      page: 2
+      locator: "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM, MBRS330T3G column: 30 V"
+  "/parameters/forward_current":
+    - source: onsemi/MBRS340T3-D
+      page: 2
+      locator: "MAXIMUM RATINGS, Average Rectified Forward Current IF(AV): 3.0 A @ TL = 110°C (also listed: 4.0 A @ TL = 105°C)"
+  "/parameters/forward_voltage":
+    - source: onsemi/MBRS340T3-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF (iF = 3.0 A, TJ = 25°C): 0.50 V"
   "/existence":
     - source: onsemi/MBRS340T3-D
       page: 1

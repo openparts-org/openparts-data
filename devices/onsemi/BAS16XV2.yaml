@@ -12,7 +12,30 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 100
+    unit: V
+  forward_current:
+    max: 200
+    unit: mA
+  forward_voltage:
+    max: 1250
+    unit: mV
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: onsemi/BAS16XV2T1-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Continuous Reverse Voltage VR: 100 V"
+  "/parameters/forward_current":
+    - source: onsemi/BAS16XV2T1-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Continuous Forward Current IF: 200 mA"
+  "/parameters/forward_voltage":
+    - source: onsemi/BAS16XV2T1-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS, Forward Voltage VF (IF = 150 mA): Max 1250 mV (highest listed test current)"
   "/pins":
     - source: onsemi/BAS16XV2T1-D
       page: 1

@@ -16,7 +16,30 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 40
+    unit: V
+  forward_current:
+    max: 2.0
+    unit: A
+  forward_voltage:
+    max: 0.43
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: onsemi/MBRS2040LT3-D
+      page: 2
+      locator: "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 40 V"
+  "/parameters/forward_current":
+    - source: onsemi/MBRS2040LT3-D
+      page: 2
+      locator: "MAXIMUM RATINGS, Average Rectified Forward Current IO (At Rated VR, TC = 103 °C): 2.0 A"
+  "/parameters/forward_voltage":
+    - source: onsemi/MBRS2040LT3-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF (IF = 2.0 A), TJ = 25 °C: 0.43 V"
   "/pins":
     - source: onsemi/MBRS2040LT3-D
       page: 1

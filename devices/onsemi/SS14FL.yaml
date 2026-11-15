@@ -13,7 +13,30 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 40
+    unit: V
+  forward_current:
+    max: 1.0
+    unit: A
+  forward_voltage:
+    max: 0.55
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: onsemi/SS14FL-D
+      page: 1
+      locator: "ABSOLUTE MAXIMUM RATINGS, VRRM Peak Reverse Voltage, SS14FL column: 40 V"
+  "/parameters/forward_current":
+    - source: onsemi/SS14FL-D
+      page: 1
+      locator: "ABSOLUTE MAXIMUM RATINGS, IF(AV) Average Rectified Current at TA = 75°C: 1.0 A"
+  "/parameters/forward_voltage":
+    - source: onsemi/SS14FL-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS, VF Forward Voltage, IF = 1.0 A: Max 0.55 V"
   "/pins":
     - source: onsemi/SS14FL-D
       page: 1

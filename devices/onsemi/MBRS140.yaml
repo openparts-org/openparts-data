@@ -15,7 +15,30 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 40
+    unit: V
+  forward_current:
+    max: 1.0
+    unit: A
+  forward_voltage:
+    max: 0.6
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: onsemi/MBRS140T3-D
+      page: 2
+      locator: "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 40 V"
+  "/parameters/forward_current":
+    - source: onsemi/MBRS140T3-D
+      page: 2
+      locator: "MAXIMUM RATINGS, Average Rectified Forward Current IF(AV), TL = 115 °C: 1.0 A"
+  "/parameters/forward_voltage":
+    - source: onsemi/MBRS140T3-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF (iF = 1.0 A, TJ = 25 °C): 0.6 V"
   "/pins":
     - source: onsemi/MBRS140T3-D
       page: 1

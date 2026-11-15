@@ -13,7 +13,31 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 50
+    unit: V
+  forward_current:
+    max: 1.0
+    unit: A
+  forward_voltage:
+    nominal: 0.93
+    max: 1.1
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: onsemi/1N4001-D
+      page: 2
+      locator: "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM, 1N4001 column: 50 V"
+  "/parameters/forward_current":
+    - source: onsemi/1N4001-D
+      page: 2
+      locator: "MAXIMUM RATINGS, Average Rectified Forward Current IO: 1.0 A"
+  "/parameters/forward_voltage":
+    - source: onsemi/1N4001-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage Drop (iF = 1.0 Amp, TJ = 25°C) vF: Typ 0.93 V, Max 1.1 V"
   "/pins":
     - source: onsemi/1N4001-D
       page: 6

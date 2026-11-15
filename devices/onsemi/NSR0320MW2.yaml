@@ -14,7 +14,31 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 20
+    unit: V
+  forward_current:
+    max: 1
+    unit: A
+  forward_voltage:
+    nominal: 0.45
+    max: 0.5
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: onsemi/NSR0320MW2T1-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Reverse Voltage VR: 20 Vdc"
+  "/parameters/forward_current":
+    - source: onsemi/NSR0320MW2T1-D
+      page: 1
+      locator: "MAXIMUM RATINGS, Forward Current (DC) IF, Continuous: 1 A"
+  "/parameters/forward_voltage":
+    - source: onsemi/NSR0320MW2T1-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS, Forward Voltage VF (IF = 900 mA): Typ 0.45 V, Max 0.50 V (highest listed test current)"
   "/pins":
     - source: onsemi/NSR0320MW2T1-D
       page: 1
