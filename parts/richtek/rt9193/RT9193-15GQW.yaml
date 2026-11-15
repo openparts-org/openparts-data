@@ -25,7 +25,16 @@ sources:
   - richtek/DS9193-18
   - richtek/RT9193-product-page
 
+parameters:
+  output_voltage:
+    nominal: 1.5
+    unit: V
+
 provenance:
+  "/parameters/output_voltage":
+    - source: richtek/DS9193-18
+      page: 1
+      locator: "Ordering Information, Output Voltage: \"15 : 1.5V\""
   "/existence":
     - source: richtek/RT9193-product-page
       page: 1

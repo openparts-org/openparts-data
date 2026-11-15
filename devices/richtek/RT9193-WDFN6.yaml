@@ -22,7 +22,23 @@ pins:
   "5": { name: NC, type: nc }
   "6": { name: BP, type: passive }
 
+parameters:
+  input_voltage_max:
+    max: 5.5
+    unit: V
+  output_current:
+    nominal: 300
+    unit: mA
+
 provenance:
+  "/parameters/input_voltage_max":
+    - source: richtek/DS9193-18
+      page: 3
+      locator: "Recommended Operating Conditions, Supply Input Voltage: 2.5V to 5.5V"
+  "/parameters/output_current":
+    - source: richtek/DS9193-18
+      page: 1
+      locator: "Title \"300mA, Ultra-Low Noise, Ultra-Fast CMOS LDO Regulator\""
   "/pins":
     - source: richtek/DS9193-18
       page: 2

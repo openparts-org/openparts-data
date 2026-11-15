@@ -25,7 +25,30 @@ sources:
   - richtek/DS9080-09
   - richtek/RT9080-product-page
 
+parameters:
+  output_type:
+    value: fixed
+  output_voltage:
+    nominal: 3.3
+    unit: V
+  dropout_voltage:
+    nominal: 0.31
+    max: 0.53
+    unit: V
+
 provenance:
+  "/parameters/output_type":
+    - source: richtek/DS9080-09
+      page: 1
+      locator: "3 Features, \"Support Fixed Output Voltage: 0.8V to 3.3V\"; 2 Ordering Information, Output Voltage \"33 : 3.3V\""
+  "/parameters/output_voltage":
+    - source: richtek/DS9080-09
+      page: 1
+      locator: "2 Ordering Information, Output Voltage: \"33 : 3.3V\""
+  "/parameters/dropout_voltage":
+    - source: richtek/DS9080-09
+      page: 6
+      locator: "Electrical Characteristics, Dropout Voltage (ILOAD = 600mA) VDROP, 3V <= VVOUT row: Typ 0.31 V, Max 0.53 V"
   "/existence":
     - source: richtek/RT9080-product-page
       page: 1

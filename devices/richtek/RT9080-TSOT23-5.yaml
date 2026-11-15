@@ -23,7 +23,23 @@ pins:
   "4": { name: NC, type: nc }
   "5": { name: VOUT, type: power }
 
+parameters:
+  input_voltage_max:
+    max: 5.5
+    unit: V
+  output_current:
+    max: 600
+    unit: mA
+
 provenance:
+  "/parameters/input_voltage_max":
+    - source: richtek/DS9080-09
+      page: 5
+      locator: "12 Recommended Operating Conditions, Input Voltage, VIN: 1.2V to 5.5V"
+  "/parameters/output_current":
+    - source: richtek/DS9080-09
+      page: 1
+      locator: "1 General Description: \"The RT9080 delivers a maximum output current of 600mA\""
   "/pins":
     - source: richtek/DS9080-09
       page: 4
