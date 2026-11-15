@@ -1,0 +1,38 @@
+# Low-noise, very-low-drift precision series voltage reference, REF50xxI
+# and REF50xxAI grades (all voltage options), 8-pin SOIC (D) and VSSOP
+# (DGK) -- one pin map for both packages. From SBOS410O Table 5-1 "Pin
+# Functions", column "REF50xxI, REF50xxAI" (page 4), checked against
+# Figure 5-1 "REF50xxAI, REF50xxI 8-Pin SOIC, VSSOP Top View" (same page).
+# The REF50xxEI grade has a different pin map (EN on pin 1, NR on pin 5)
+# and is not covered.
+# DNC ("Do not connect") on pins 1 and 8 typed reserved; NC ("No internal
+# connection") typed nc.
+schema_version: "0.2"
+kind: device
+id: ti/REF50xxI
+manufacturer: ti
+category: voltage_reference
+family: REF50
+source: ti/SBOS410O
+
+parameters:
+  input_voltage_max:
+    max: 18 V
+    src: p5 "6.3 Recommended Operating Conditions, VIN, note (2) REF50xxI and REF50xxAI"
+  output_current:
+    min: -10 mA
+    max: 10 mA
+    src: p5 "6.3 Recommended Operating Conditions, IOUT"
+
+pins:
+  src:
+    - p4 "Table 5-1 "Pin Functions", column "REF50xxI, REF50xxAI""
+    - p4 "Figure 5-1 "REF50xxAI, REF50xxI 8-Pin SOIC, VSSOP Top View""
+  "1": { name: DNC, type: reserved }
+  "2": { name: VIN, type: power }
+  "3": { name: TEMP, type: analog }
+  "4": { name: GND, type: ground }
+  "5": { name: TRIM/NR, type: analog }
+  "6": { name: VOUT, type: output }
+  "7": { name: NC, type: nc }
+  "8": { name: DNC, type: reserved }

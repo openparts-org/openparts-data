@@ -1,0 +1,19 @@
+# Official TI datasheet for REF50xx / REF50xxE. Downloaded 2026-11-16
+# from the TI symlink URL below (the ref5025/ref5050 symlinks answer 404;
+# "ref50" serves this document); revision read from the page header
+# "SBOS410O - JUNE 2007 - REVISED OCTOBER 2025". 52 PDF pages; text read
+# with pdftotext -layout. The PACKAGE OPTION ADDENDUM (pages 33-40) is
+# dated 13-Oct-2026. Outlines D0008A (4214825/C 02/2019, page 46) and
+# DGK0008A (4214862/A 04/2023, page 49). Page numbers are PDF page
+# indices.
+schema_version: "0.2"
+kind: source
+id: ti/SBOS410O
+sha256: 33b13191ad54693f9a4f52e226b354757ad092d2cec6b2c31dba2fecb710d0c6
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/ref50.pdf
+publisher: ti
+document_id: SBOS410O
+document_type: datasheet
+revision: O
+date: 2025-10
