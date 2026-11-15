@@ -1,0 +1,20 @@
+# Official TI datasheet "CC2652R SimpleLink Multiprotocol 2.4 GHz Wireless MCU datasheet" (SWRS207J), 61 pages,
+# downloaded 2026-11-16 with curl from the URL below (file checked: PDF,
+# PDF Keywords name SWRS207J). Read with pdftotext -layout; pinout figures and
+# the package outline / example board layout pages were rendered and read
+# as images. The PACKAGE OPTION ADDENDUM inside this PDF is dated
+# 8-Jan-2026, PDF page 53 (newer than the datasheet revision).
+# Revision J, "REVISED NOVEMBER 2023" (page headers). Page numbers are PDF
+# page indices (= the printed page numbers on numbered pages). Appended
+# outline RGZ0048A (4219044/D 02/2022) at PDF pages 58-60.
+schema_version: "0.2"
+kind: source
+id: ti/SWRS207J
+sha256: cb731fa1b385843df30d44e290396ff899c1846da84625ce54267e5648122685
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/cc2652r.pdf
+publisher: ti
+document_id: SWRS207J
+document_type: datasheet
+revision: J
+date: 2023-11

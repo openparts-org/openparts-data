@@ -1,0 +1,74 @@
+# CC2652R SimpleLink wireless MCU, RGZ (VQFN-48 7x7) pinout. SWRS207J Table 7-1
+# "Signal Descriptions - RGZ Package" (PDF pages 7-8) checked against
+# Figure 7-1 (RGZ pinout, PDF page 6).
+# Types are this dataset's reading of the table: DIO_n (I/O, Digital or
+# Digital or Analog) -> io; JTAG_TMSC (I/O) -> io, JTAG_TCKC (I) -> clock;
+# RESET_N (active-low reset) -> reset; RF and crystal pins (RF, Analog)
+# -> analog; supplies -> power, except DCDC_SW ("Output from internal DC/DC
+# converter") and DCOUPL (decoupling of the internal regulated supply, "Do
+# not supply external circuitry from this pin") -> power_out. EGP
+# ("Ground - exposed ground pad", footnote 3: the only ground connection)
+# -> key "EP", name EGP, ground. Alternate functions (JTAG_TDO/TDI on
+# DIO_16/17, analog capability of DIO_23-30) are not recorded.
+schema_version: "0.2"
+kind: device
+id: ti/CC2652R
+manufacturer: ti
+category: microcontroller
+family: CC2652R
+source: ti/SWRS207J
+
+pins:
+  src:
+    - p7 "Table 7-1 Signal Descriptions - RGZ Package"
+    - p8 "Table 7-1 (continued), footnote 3 (EGP)"
+    - p6 "Figure 7-1 RGZ pinout"
+  "1":  { name: RF_P, type: analog }
+  "2":  { name: RF_N, type: analog }
+  "3":  { name: X32K_Q1, type: analog }
+  "4":  { name: X32K_Q2, type: analog }
+  "5":  { name: DIO_0, type: io }
+  "6":  { name: DIO_1, type: io }
+  "7":  { name: DIO_2, type: io }
+  "8":  { name: DIO_3, type: io }
+  "9":  { name: DIO_4, type: io }
+  "10": { name: DIO_5, type: io }
+  "11": { name: DIO_6, type: io }
+  "12": { name: DIO_7, type: io }
+  "13": { name: VDDS2, type: power }
+  "14": { name: DIO_8, type: io }
+  "15": { name: DIO_9, type: io }
+  "16": { name: DIO_10, type: io }
+  "17": { name: DIO_11, type: io }
+  "18": { name: DIO_12, type: io }
+  "19": { name: DIO_13, type: io }
+  "20": { name: DIO_14, type: io }
+  "21": { name: DIO_15, type: io }
+  "22": { name: VDDS3, type: power }
+  "23": { name: DCOUPL, type: power_out }
+  "24": { name: JTAG_TMSC, type: io }
+  "25": { name: JTAG_TCKC, type: clock }
+  "26": { name: DIO_16, type: io }
+  "27": { name: DIO_17, type: io }
+  "28": { name: DIO_18, type: io }
+  "29": { name: DIO_19, type: io }
+  "30": { name: DIO_20, type: io }
+  "31": { name: DIO_21, type: io }
+  "32": { name: DIO_22, type: io }
+  "33": { name: DCDC_SW, type: power_out }
+  "34": { name: VDDS_DCDC, type: power }
+  "35": { name: RESET_N, type: reset }
+  "36": { name: DIO_23, type: io }
+  "37": { name: DIO_24, type: io }
+  "38": { name: DIO_25, type: io }
+  "39": { name: DIO_26, type: io }
+  "40": { name: DIO_27, type: io }
+  "41": { name: DIO_28, type: io }
+  "42": { name: DIO_29, type: io }
+  "43": { name: DIO_30, type: io }
+  "44": { name: VDDS, type: power }
+  "45": { name: VDDR, type: power }
+  "46": { name: X48M_N, type: analog }
+  "47": { name: X48M_P, type: analog }
+  "48": { name: VDDR_RF, type: power }
+  EP:   { name: EGP, type: ground }

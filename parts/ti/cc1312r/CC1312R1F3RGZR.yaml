@@ -1,0 +1,20 @@
+# CC1312R1F3RGZR: SWRS210H PACKAGE OPTION ADDENDUM (PDF page 71) row "CC1312R1F3RGZR
+# Active  Production  VQFN (RGZ) | 48, LARGE T&R" -- MPN printed verbatim in TI's orderable
+# list (existence verified); lifecycle "Active" is TI's own Status column.
+# Package RGZ = outline RGZ0048A (PDF page 76). The addendum's ".A"/".B"
+# suffixed rows (single lead-finish variants) are not added.
+schema_version: "0.2"
+kind: part
+id: ti/CC1312R1F3RGZR
+manufacturer: ti
+mpn: CC1312R1F3RGZR
+device: ti/CC1312R
+package: { value: manufacturers/ti/RGZ0048A, src: p76 "RGZ0048A package outline" }
+sources: [ti/SWRS210H]
+source: ti/SWRS210H
+
+existence: { status: verified, src: 'p71 "Package option addendum, row "CC1312R1F3RGZR""' }
+
+lifecycle:
+  status: active
+  src: p71 "Package option addendum, row "CC1312R1F3RGZR", Status "Active""

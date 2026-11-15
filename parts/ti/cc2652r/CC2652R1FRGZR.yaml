@@ -1,0 +1,20 @@
+# CC2652R1FRGZR: SWRS207J PACKAGE OPTION ADDENDUM (PDF page 53) row "CC2652R1FRGZR
+# Active  Production  VQFN (RGZ) | 48, 2500 | LARGE T&R" -- MPN printed verbatim in TI's orderable
+# list (existence verified); lifecycle "Active" is TI's own Status column.
+# Package RGZ = outline RGZ0048A (PDF page 58). The addendum's ".A"/".B"
+# suffixed rows (single lead-finish variants) are not added.
+schema_version: "0.2"
+kind: part
+id: ti/CC2652R1FRGZR
+manufacturer: ti
+mpn: CC2652R1FRGZR
+device: ti/CC2652R
+package: { value: manufacturers/ti/RGZ0048A, src: p58 "RGZ0048A package outline" }
+sources: [ti/SWRS207J]
+source: ti/SWRS207J
+
+existence: { status: verified, src: 'p53 "Package option addendum, row "CC2652R1FRGZR""' }
+
+lifecycle:
+  status: active
+  src: p53 "Package option addendum, row "CC2652R1FRGZR", Status "Active""

@@ -1,0 +1,21 @@
+# Official TI datasheet "CC1312R SimpleLink High-Performance Sub-1 GHz Wireless MCU datasheet" (SWRS210H), 79 pages,
+# downloaded 2026-11-16 with curl from the URL below (file checked: PDF,
+# PDF Keywords name SWRS210H). Read with pdftotext -layout; pinout figures and
+# the package outline / example board layout pages were rendered and read
+# as images. The PACKAGE OPTION ADDENDUM inside this PDF is dated
+# 9-Aug-2026, PDF page 71 (newer than the datasheet revision).
+# Revision H, "REVISED NOVEMBER 2020" (page headers). Page numbers are PDF
+# page indices (= the printed page numbers on numbered pages). Appended
+# outline RGZ0048A (4219044/D 02/2022) at PDF pages 76-78: its text is
+# token-identical to the SWRS207J copy (pdftotext -layout, sorted tokens).
+schema_version: "0.2"
+kind: source
+id: ti/SWRS210H
+sha256: 1b9b7e6170c254bd264ce0b1ed095c0cab4039e4cfa89b4d28c3292e6df01081
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/cc1312r.pdf
+publisher: ti
+document_id: SWRS210H
+document_type: datasheet
+revision: H
+date: 2020-11

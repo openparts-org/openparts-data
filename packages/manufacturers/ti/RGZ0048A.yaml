@@ -1,0 +1,93 @@
+# TI RGZ0048A, VQFN-48, 7x7 mm, 0.5 mm pitch, 1 mm max height. Outline drawing
+# RGZ0048A (4219044/D 02/2022) and its EXAMPLE BOARD LAYOUT, read from the rendered drawings
+# in SWRS207J PDF pages 58-59. Used by CC2652R (SWRS207J) and CC1312R (SWRS210H, token-identical outline pages 76-78).
+#
+# Mapping: D/E limits -> body_width/body_length (no nominal printed);
+# A (no A2) -> body_height; A1 -> standoff; b -> lead_width; L ->
+# lead_length; thermal pad +-0.1 -> exposed_pad. Bottom view numbers
+# 1..12 up the left edge (bottom view), thermal pad; the standard
+# CCW top-view order (pin 1 top of the left edge).
+# pads: the EXAMPLE BOARD LAYOUT (all values in parentheses = reference
+# values in TI's notation): 48X (0.6) x (0.24) terminal lands at 0.5 pitch,
+# the opposite rows' land centre lines (6.8) apart (the dimension's
+# extension lines run through the land centres), thermal-pad land
+# (5.15) square at the centre. Coordinates: top view, X right, Y up,
+# origin at the package centre; land centre = 6.8 / 2 = 3.4; row
+# positions +-(k - 5.5) x 0.5. Vias of the example are not recorded.
+# Left out: "(0.1) TYP" side-wall and "(0.2) TYP" metal (not stated to be
+# A3), "(0.45) TYP" chamfered-corner lead option, "2X 5.5" row spans. The
+# thermal pad carries no number in the drawing; its key is "EP".
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/RGZ0048A
+family: qfn
+lead_count: 48
+source: ti/SWRS207J
+
+pitch: { typ: 0.5 mm, src: 'p58 "PACKAGE OUTLINE RGZ0048A, bottom view, basic pitch 0.5"' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:  { min: 6.9 mm, max: 7.1 mm, src: 'p58 "PACKAGE OUTLINE RGZ0048A, top view 7.1/6.9"' }
+  body_length: { min: 6.9 mm, max: 7.1 mm, src: 'p58 "PACKAGE OUTLINE RGZ0048A, top view 7.1/6.9"' }
+  body_height: { max: 1 mm, src: 'p58 "PACKAGE OUTLINE RGZ0048A, side view 1 MAX"' }
+  exposed_pad:
+    src:    p58 "PACKAGE OUTLINE RGZ0048A, bottom view, exposed thermal pad square 5.15+-0.1"
+    width:  { min: 5.05 mm, typ: 5.15 mm, max: 5.25 mm }
+    length: { min: 5.05 mm, typ: 5.15 mm, max: 5.25 mm }
+  standoff: { min: 0 mm, max: 0.05 mm, src: 'p58 "PACKAGE OUTLINE RGZ0048A, side view 0.05/0.00"' }
+  lead_width:  { min: 0.18 mm, max: 0.3 mm, src: 'p58 "PACKAGE OUTLINE RGZ0048A, 48X 0.3/0.18"' }
+  lead_length: { min: 0.3 mm, max: 0.5 mm, src: 'p58 "PACKAGE OUTLINE RGZ0048A, 48X 0.5/0.3"' }
+
+pads:
+  value:
+    - { number: "1", x: -3.4, y: 2.75, width: 0.6, length: 0.24 }
+    - { number: "2", x: -3.4, y: 2.25, width: 0.6, length: 0.24 }
+    - { number: "3", x: -3.4, y: 1.75, width: 0.6, length: 0.24 }
+    - { number: "4", x: -3.4, y: 1.25, width: 0.6, length: 0.24 }
+    - { number: "5", x: -3.4, y: 0.75, width: 0.6, length: 0.24 }
+    - { number: "6", x: -3.4, y: 0.25, width: 0.6, length: 0.24 }
+    - { number: "7", x: -3.4, y: -0.25, width: 0.6, length: 0.24 }
+    - { number: "8", x: -3.4, y: -0.75, width: 0.6, length: 0.24 }
+    - { number: "9", x: -3.4, y: -1.25, width: 0.6, length: 0.24 }
+    - { number: "10", x: -3.4, y: -1.75, width: 0.6, length: 0.24 }
+    - { number: "11", x: -3.4, y: -2.25, width: 0.6, length: 0.24 }
+    - { number: "12", x: -3.4, y: -2.75, width: 0.6, length: 0.24 }
+    - { number: "13", x: -2.75, y: -3.4, width: 0.24, length: 0.6 }
+    - { number: "14", x: -2.25, y: -3.4, width: 0.24, length: 0.6 }
+    - { number: "15", x: -1.75, y: -3.4, width: 0.24, length: 0.6 }
+    - { number: "16", x: -1.25, y: -3.4, width: 0.24, length: 0.6 }
+    - { number: "17", x: -0.75, y: -3.4, width: 0.24, length: 0.6 }
+    - { number: "18", x: -0.25, y: -3.4, width: 0.24, length: 0.6 }
+    - { number: "19", x: 0.25, y: -3.4, width: 0.24, length: 0.6 }
+    - { number: "20", x: 0.75, y: -3.4, width: 0.24, length: 0.6 }
+    - { number: "21", x: 1.25, y: -3.4, width: 0.24, length: 0.6 }
+    - { number: "22", x: 1.75, y: -3.4, width: 0.24, length: 0.6 }
+    - { number: "23", x: 2.25, y: -3.4, width: 0.24, length: 0.6 }
+    - { number: "24", x: 2.75, y: -3.4, width: 0.24, length: 0.6 }
+    - { number: "25", x: 3.4, y: -2.75, width: 0.6, length: 0.24 }
+    - { number: "26", x: 3.4, y: -2.25, width: 0.6, length: 0.24 }
+    - { number: "27", x: 3.4, y: -1.75, width: 0.6, length: 0.24 }
+    - { number: "28", x: 3.4, y: -1.25, width: 0.6, length: 0.24 }
+    - { number: "29", x: 3.4, y: -0.75, width: 0.6, length: 0.24 }
+    - { number: "30", x: 3.4, y: -0.25, width: 0.6, length: 0.24 }
+    - { number: "31", x: 3.4, y: 0.25, width: 0.6, length: 0.24 }
+    - { number: "32", x: 3.4, y: 0.75, width: 0.6, length: 0.24 }
+    - { number: "33", x: 3.4, y: 1.25, width: 0.6, length: 0.24 }
+    - { number: "34", x: 3.4, y: 1.75, width: 0.6, length: 0.24 }
+    - { number: "35", x: 3.4, y: 2.25, width: 0.6, length: 0.24 }
+    - { number: "36", x: 3.4, y: 2.75, width: 0.6, length: 0.24 }
+    - { number: "37", x: 2.75, y: 3.4, width: 0.24, length: 0.6 }
+    - { number: "38", x: 2.25, y: 3.4, width: 0.24, length: 0.6 }
+    - { number: "39", x: 1.75, y: 3.4, width: 0.24, length: 0.6 }
+    - { number: "40", x: 1.25, y: 3.4, width: 0.24, length: 0.6 }
+    - { number: "41", x: 0.75, y: 3.4, width: 0.24, length: 0.6 }
+    - { number: "42", x: 0.25, y: 3.4, width: 0.24, length: 0.6 }
+    - { number: "43", x: -0.25, y: 3.4, width: 0.24, length: 0.6 }
+    - { number: "44", x: -0.75, y: 3.4, width: 0.24, length: 0.6 }
+    - { number: "45", x: -1.25, y: 3.4, width: 0.24, length: 0.6 }
+    - { number: "46", x: -1.75, y: 3.4, width: 0.24, length: 0.6 }
+    - { number: "47", x: -2.25, y: 3.4, width: 0.24, length: 0.6 }
+    - { number: "48", x: -2.75, y: 3.4, width: 0.24, length: 0.6 }
+    - { number: EP, x: 0, y: 0, width: 5.15, length: 5.15 }
+  src: p59 "EXAMPLE BOARD LAYOUT RGZ0048A, 48X (0.6) x (0.24), centre lines (6.8), pad (5.15); see header"
