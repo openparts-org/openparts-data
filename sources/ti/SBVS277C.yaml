@@ -1,0 +1,18 @@
+# Official TI datasheet for TPS7A02 (200-mA nanopower-IQ LDO). Downloaded 2026-11-16
+# with curl from the TI symlink URL below; revision read from the page
+# header "SBVS277C - JULY 2019 - REVISED SEPTEMBER 2022". 48 PDF pages; text read with pdftotext -layout,
+# the DBV pin figure (page 3) and the dropout rows of 6.5 Electrical Characteristics (page 6) rendered with pdftoppm where the
+# text layout was ambiguous. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 15-Sep-2026 (it carries its own date, independent of the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SBVS277C
+sha256: ed213c153f1db84762558fcac2ff9752e322151a1d44672cf554988b860cebc8
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tps7a02.pdf
+publisher: ti
+document_id: SBVS277C
+document_type: datasheet
+revision: C
+date: 2022-09

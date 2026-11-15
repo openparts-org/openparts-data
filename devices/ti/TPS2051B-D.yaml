@@ -1,0 +1,35 @@
+# Current-limited USB power-distribution switch (500 mA, active-high
+# enable), D (SOIC-8) pinout. From SLVS514Q Table 5-1 "Pin Functions
+# (TPS2041B and TPS2051B)" (page 4), TPS2051B "SOIC AND DGN" column:
+# GND 1, IN 2 and 3, EN 4, OC 5, OUT 6, 7 and 8; checked against Figure
+# 5-2 "TPS2041B and TPS2051B: D and DGN Packages 8-Pin SOIC and HVSSOP
+# Top View" (same page). OC (open-drain overcurrent flag) carries an
+# overbar in the datasheet (written without it). IN/OUT are the switch
+# terminals -> power (several pins share each name). The SOT-23 (DBV)
+# pin map differs and is not covered.
+schema_version: "0.2"
+kind: device
+id: ti/TPS2051B-D
+manufacturer: ti
+category: power_switch
+family: TPS2051B
+source: ti/SLVS514Q
+
+parameters:
+  input_voltage_max: { max: 5.5 V, src: 'p7 "6.3 Recommended Operating Conditions, VI(IN)"' }
+  output_current:
+    max: 500 mA
+    src: p7 "6.3 Recommended Operating Conditions, IO(OUT) continuous output current"
+
+pins:
+  src:
+    - p4 "Table 5-1 "Pin Functions (TPS2041B and TPS2051B)", TPS2051B SOIC AND DGN column"
+    - 'p4 "Figure 5-2 "TPS2041B and TPS2051B: D and DGN Packages""'
+  "1": { name: GND, type: ground }
+  "2": { name: IN, type: power }
+  "3": { name: IN, type: power }
+  "4": { name: EN, type: input }
+  "5": { name: OC, type: output }
+  "6": { name: OUT, type: power }
+  "7": { name: OUT, type: power }
+  "8": { name: OUT, type: power }

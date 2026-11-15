@@ -1,0 +1,32 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SBVS193D PDF page 21, addendum dated 10-Nov-2025): "TPS3839L30DBZR | Active
+# | Production | SOT-23 (DBZ) | 3 | 3000 | LARGE T&R | ... | -40 to 85
+# | PYWI". lifecycle "active" is that table's Status column.
+# Threshold option TPS3839L30 = 2.63 V per the "Device Options" table
+# (page 4); no parameter key exists for a supervisor threshold, so it is
+# not recorded as a parameter.
+# Package: SOT-23 (DBZ) | 3, outline DBZ0003A (4214838/F 08/2024) on
+# pages 28-30 -- text identical (pdftotext -layout diff, headers and
+# footers stripped) to the DBZ0003A pages of the current REF30xx
+# datasheet (ti/SBVS032K), so manufacturers/ti/DBZ0003A is reused.
+schema_version: "0.2"
+kind: part
+id: ti/TPS3839L30DBZR
+manufacturer: ti
+mpn: TPS3839L30DBZR
+device: ti/TPS3839-DBZ
+
+package:
+  value: manufacturers/ti/DBZ0003A
+  src: p21 "Package Option Addendum, row "TPS3839L30DBZR", "SOT-23 (DBZ) | 3"; outline DBZ0003A (4214838/F) on page 28"
+
+sources: [ti/SBVS193D]
+source: ti/SBVS193D
+
+existence:
+  status: verified
+  src: p21 "Package Option Addendum, Packaging Information table, row "TPS3839L30DBZR""
+
+lifecycle:
+  status: active
+  src: p21 "Package Option Addendum, row "TPS3839L30DBZR", Status "Active""

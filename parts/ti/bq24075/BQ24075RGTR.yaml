@@ -1,0 +1,38 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SLUS810N PDF page 44, addendum dated 18-Sep-2026): "BQ24075RGTR |
+# Active | Production | VQFN (RGT) | 16 | 3000 | LARGE T&R | ... | -40 to
+# 85 | CDU". lifecycle "active" is that table's Status column.
+# Package: VQFN (RGT) | 16; Figure 7-3 (page 8) and the Device Comparison
+# Table (page 6) name RGT0016C for BQ24075. Outline RGT0016C (4222419/E
+# 07/2025) on pages 52-54 -- text identical (pdftotext -layout diff,
+# headers and footers stripped) to the RGT0016C pages of the current
+# TPS62130 datasheet (ti/SLVSAG7F), so manufacturers/ti/RGT0016C is
+# reused.
+schema_version: "0.2"
+kind: part
+id: ti/BQ24075RGTR
+manufacturer: ti
+mpn: BQ24075RGTR
+device: ti/BQ24075-RGT
+
+package:
+  value: manufacturers/ti/RGT0016C
+  src: p44 "Package Option Addendum, row "BQ24075RGTR", "VQFN (RGT) | 16"; outline RGT0016C (4222419/E) on page 52"
+
+sources: [ti/SLUS810N]
+source: ti/SLUS810N
+
+existence:
+  status: verified
+  src: p44 "Package Option Addendum, Packaging Information table, row "BQ24075RGTR""
+
+lifecycle:
+  status: active
+  src: p44 "Package Option Addendum, row "BQ24075RGTR", Status "Active""
+
+parameters:
+  output_voltage:
+    min: 4.16 V
+    typ: 4.2 V
+    max: 4.23 V
+    src: p13 "8.5 Elec. Char., VBAT(REG) battery charge voltage, ('72, '73, '74, '75) row"

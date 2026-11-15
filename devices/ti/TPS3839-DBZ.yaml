@@ -1,0 +1,27 @@
+# Ultralow-power supply voltage monitor (supervisor, push-pull active-low
+# RESET), DBZ (SOT-23-3) pinout. From SBVS193D "Pin Functions" table
+# (page 5), TPS3839 (SOT23-3) column: GND 1, RESET 2, VDD 3; checked
+# against the "TPS3839 DBZ Package SOT23-3 Top View" figure (same page).
+# RESET carries an overbar in the datasheet (written without it here).
+# The X2SON (DQN) pin map is not covered. One Device for all threshold
+# options (A09...K50); the threshold has no parameter key and is not
+# recorded. Category: the tree has no supervisor node, so the group
+# `power` is used (canonical-data 14.1).
+schema_version: "0.2"
+kind: device
+id: ti/TPS3839-DBZ
+manufacturer: ti
+category: power
+family: TPS3839
+source: ti/SBVS193D
+
+parameters:
+  input_voltage_max: { max: 6.5 V, src: 'p6 "7.3 Recommended Operating Conditions, VDD"' }
+
+pins:
+  src:
+    - p5 ""Pin Functions" table, column "TPS3839 (SOT23-3)""
+    - p5 ""TPS3839 DBZ Package SOT23-3 Top View""
+  "1": { name: GND, type: ground }
+  "2": { name: RESET, type: output }
+  "3": { name: VDD, type: power }

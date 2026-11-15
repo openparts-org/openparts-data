@@ -1,0 +1,29 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SLVSD76C PDF page 23, addendum dated 15-Jul-2026): "TPS22918DBVR |
+# Active | Production | SOT-23 (DBV) | 6 | 3000 | LARGE T&R | ... | -40
+# to 105 | 13MW". lifecycle "active" is that table's Status column.
+# Package: SOT-23 (DBV) | 6, outline DBV0006A (4214840/G 08/2024) on
+# pages 27-29 -- text identical (pdftotext -layout diff, headers and
+# footers stripped) to the DBV0006A pages of the current SN74LVC2G04
+# datasheet (ti/SCES195N), so manufacturers/ti/DBV0006A is reused.
+schema_version: "0.2"
+kind: part
+id: ti/TPS22918DBVR
+manufacturer: ti
+mpn: TPS22918DBVR
+device: ti/TPS22918-DBV
+
+package:
+  value: manufacturers/ti/DBV0006A
+  src: p23 "Package Option Addendum, row "TPS22918DBVR", "SOT-23 (DBV) | 6"; outline DBV0006A (4214840/G) on page 27"
+
+sources: [ti/SLVSD76C]
+source: ti/SLVSD76C
+
+existence:
+  status: verified
+  src: p23 "Package Option Addendum, Packaging Information table, row "TPS22918DBVR""
+
+lifecycle:
+  status: active
+  src: p23 "Package Option Addendum, row "TPS22918DBVR", Status "Active""

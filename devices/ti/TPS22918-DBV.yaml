@@ -1,0 +1,30 @@
+# 5.5-V, 2-A single-channel load switch, DBV (SOT-23-6) pinout. From
+# SLVSD76C "Pin Functions" table (page 3): VIN 1, GND 2, ON 3, CT 4,
+# QOD 5, VOUT 6; checked against the "DBV Package 6-Pin SOT-23 Top View"
+# figure (same page). VIN/VOUT are the switch terminals -> power; CT
+# (slew-rate capacitor) and QOD (quick output discharge) -> analog.
+schema_version: "0.2"
+kind: device
+id: ti/TPS22918-DBV
+manufacturer: ti
+category: power_switch
+family: TPS22918
+source: ti/SLVSD76C
+
+parameters:
+  input_voltage_max: { max: 5.5 V, src: 'p4 "6.3 Recommended Operating Conditions, VIN"' }
+  output_current:
+    max: 2 A
+    at: { TA: 70 °C }
+    src: p4 "6.1 Absolute Maximum Ratings, IMAX max. continuous switch current"
+
+pins:
+  src:
+    - p3 ""Pin Functions" table (VIN 1, GND 2, ON 3, CT 4, QOD 5, VOUT 6)"
+    - p3 ""DBV Package 6-Pin SOT-23 Top View""
+  "1": { name: VIN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: ON, type: input }
+  "4": { name: CT, type: analog }
+  "5": { name: QOD, type: analog }
+  "6": { name: VOUT, type: power }

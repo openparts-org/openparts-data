@@ -1,0 +1,18 @@
+# Official TI datasheet for TPS22918 (5.5-V, 2-A load switch). Downloaded 2026-11-16
+# with curl from the TI symlink URL below; revision read from the page
+# header "SLVSD76C - FEBRUARY 2016 - REVISED JULY 2017". 30 PDF pages; text read with pdftotext -layout,
+# the DBV pin figure (page 3) rendered with pdftoppm where the
+# text layout was ambiguous. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 15-Jul-2026 (it carries its own date, independent of the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SLVSD76C
+sha256: 1b28eb58003d28b18bf919a15734056f296a499bebee2bd493a1e4358c4dfb1c
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tps22918.pdf
+publisher: ti
+document_id: SLVSD76C
+document_type: datasheet
+revision: C
+date: 2017-07

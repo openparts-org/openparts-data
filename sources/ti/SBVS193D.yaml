@@ -1,0 +1,18 @@
+# Official TI datasheet for TPS3831/TPS3839 (150-nA supply voltage monitors). Downloaded 2026-11-16
+# with curl from the TI symlink URL below; revision read from the page
+# header "SBVS193D - JUNE 2012 - REVISED JULY 2015". 35 PDF pages; text read with pdftotext -layout,
+# the DBZ pin figure (page 5) rendered with pdftoppm where the
+# text layout was ambiguous. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 10-Nov-2025 (it carries its own date, independent of the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SBVS193D
+sha256: a18940237afc63cf6d1a0bb5e1c8c0b2c3274e01c47fa5f27e470a005072621b
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tps3839.pdf
+publisher: ti
+document_id: SBVS193D
+document_type: datasheet
+revision: D
+date: 2015-07

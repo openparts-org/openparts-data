@@ -1,0 +1,45 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SBVS277C PDF page 31, addendum dated 15-Sep-2026): "TPS7A0230PDBVR | Active
+# | Production | SOT-23 (DBV) | 5 | 3000 | LARGE T&R | ... | -40 to 125
+# | 21MF". lifecycle "active" is that table's Status column.
+# Package: SOT-23 (DBV) | 5, outline DBV0005A (4214839/K 08/2024) on
+# pages 45-47 -- text identical (pdftotext -layout diff, headers and
+# footers stripped) to the DBV0005A pages of the current TLV755P
+# datasheet, so manufacturers/ti/DBV0005A is reused.
+# Output voltage: Table 9-1 "Device Nomenclature" (page 29) maps xx(x)
+# to the nominal output voltage ("28 = 2.8 V"); P = active output
+# discharge. Dropout: 6.5 Electrical Characteristics (page 6), VDO row
+# "2.5 V <= VOUT < 3.3 V", MAX column (footnote 4: IOUT = 200 mA).
+schema_version: "0.2"
+kind: part
+id: ti/TPS7A0230PDBVR
+manufacturer: ti
+mpn: TPS7A0230PDBVR
+device: ti/TPS7A02-DBV
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src: p31 "Package Option Addendum, row "TPS7A0230PDBVR", "SOT-23 (DBV) | 5"; outline DBV0005A (4214839/K) on page 45"
+
+sources: [ti/SBVS277C]
+source: ti/SBVS277C
+
+existence:
+  status: verified
+  src: p31 "Package Option Addendum, Packaging Information table, row "TPS7A0230PDBVR""
+
+lifecycle:
+  status: active
+  src: p31 "Package Option Addendum, row "TPS7A0230PDBVR", Status "Active""
+
+parameters:
+  output_voltage:
+    typ: 3 V
+    src: 'p29 "9.1.1 Device Nomenclature, Table 9-1, xx(x) = nominal output voltage: 30"'
+  dropout_voltage:
+    - max: 310 mV
+      at: { IOUT: 200 mA, TJ: -40..85 °C }
+      src: p6 "6.5 Elec. Char., VDO, 2.5 V <= VOUT < 3.3 V"
+    - max: 360 mV
+      at: { IOUT: 200 mA, TJ: -40..125 °C }
+      src: p6 "6.5 Elec. Char., VDO, 2.5 V <= VOUT < 3.3 V"

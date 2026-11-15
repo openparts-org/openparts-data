@@ -1,0 +1,18 @@
+# Official TI datasheet for TPS204xB/TPS205xB (current-limited power-distribution switches). Downloaded 2026-11-16
+# with curl from the TI symlink URL below; revision read from the page
+# header "SLVS514Q - APRIL 2004 - REVISED OCTOBER 2026". 73 PDF pages; text read with pdftotext -layout,
+# the D/DGN pin figure (page 4) rendered with pdftoppm where the
+# text layout was ambiguous. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 29-Jul-2026 (it carries its own date, independent of the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SLVS514Q
+sha256: ff8e8866423b40fc935ebb90d35665d23123a1434b45b5d4f870372a139dbadd
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tps2051b.pdf
+publisher: ti
+document_id: SLVS514Q
+document_type: datasheet
+revision: Q
+date: 2026-10

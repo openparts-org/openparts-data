@@ -1,0 +1,18 @@
+# Official TI datasheet for BQ2407x (1-cell 1.5-A linear battery chargers with power path). Downloaded 2026-11-16
+# with curl from the TI symlink URL below; revision read from the page
+# header "SLUS810N - SEPTEMBER 2008 - REVISED OCTOBER 2021". 55 PDF pages; text read with pdftotext -layout,
+# the BQ24075 RGT pin figure (page 8) rendered with pdftoppm where the
+# text layout was ambiguous. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 18-Sep-2026 (it carries its own date, independent of the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SLUS810N
+sha256: 4fe4e4f9855501f83b400c6932e3098439e51c50539e40dc45b44a8d509e8db1
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/bq24075.pdf
+publisher: ti
+document_id: SLUS810N
+document_type: datasheet
+revision: N
+date: 2021-10
