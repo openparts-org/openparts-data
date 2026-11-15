@@ -1,0 +1,18 @@
+# Abracon ABM8 ceramic SMD crystal datasheet, 2 pages, 3.2 x 2.5 x 0.8 mm.
+# Footer on both pages "REVISED: 07-29-20" (MM-DD-YY), used as the revision
+# label. p1: Standard Specifications, Table 1 (Standard ESR), Options and
+# Part Identification legend; p2: outline drawing (raster, read from a
+# 150 dpi render), Table 2 (height), recommended land pattern, tape & reel.
+# Downloaded with curl (HTTP 200, `file`: PDF); pdfinfo CreationDate
+# 2020-07-02.
+schema_version: "0.2"
+kind: source
+id: abracon/ABM8-DS
+sha256: 564ac331d8bf38b4ae1222444b0d9cfea3a6ba29148a8be906b2e0ffe40471d8
+retrieved: 2026-11-16
+url: https://abracon.com/Resonators/abm8.pdf
+publisher: abracon
+document_id: ABM8
+document_type: datasheet
+revision: 07-29-20
+date: 2020-07-29

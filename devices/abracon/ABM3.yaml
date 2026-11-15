@@ -1,0 +1,16 @@
+# Abracon ABM3 AT crystal (fundamental or 3rd overtone), 2-terminal 5.0 x
+# 3.2 mm ceramic package. p3 "CONNECTION" shows a plain 2-terminal crystal;
+# the bottom view labels the terminals "Pin 1" and "Pin 2". Terminal names
+# are not printed: XTAL1/XTAL2 only for distinct names (symmetric).
+schema_version: "0.2"
+kind: device
+id: abracon/ABM3
+manufacturer: abracon
+category: crystal
+family: ABM3
+source: abracon/ABM3-DS
+
+pins:
+  src: p3 "Mechanical Dimensions, bottom view "Pin 1"/"Pin 2"; CONNECTION symbol"
+  "1": { name: XTAL1, type: passive }
+  "2": { name: XTAL2, type: passive }

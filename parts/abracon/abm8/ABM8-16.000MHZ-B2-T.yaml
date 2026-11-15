@@ -1,0 +1,38 @@
+# Abracon ABM8-16.000MHZ-B2-T: ABM8 3.2 x 2.5 mm crystal, 16 MHz. existence: probable
+# -- assembled from the p1 "OPTIONS AND PART IDENTIFICATION" legend (left
+# blank if standard), not printed in an orderable list (same rule as
+# abracon/AB-8.000MHZ-B2): frequency "16.000MHz", load capacitance and
+# custom ESR blank (standard), operating temp "B" (-20 ~ +70 C), freq.
+# tolerance "2" (+-20 ppm), stability blank (+-50 ppm), packaging "T"
+# (1k pcs/reel; p2 lists "-T" for ABM8). lifecycle unknown: no
+# production-status statement.
+schema_version: "0.2"
+kind: part
+id: abracon/ABM8-16.000MHZ-B2-T
+manufacturer: abracon
+mpn: ABM8-16.000MHZ-B2-T
+device: abracon/ABM8
+package: manufacturers/abracon/LGA4-3.2x2.5-P1.5-ABM8
+sources: [abracon/ABM8-DS]
+source: abracon/ABM8-DS
+
+existence:
+  status: probable
+  src: p1 "OPTIONS AND PART IDENTIFICATION legend, B (op. temp), 2 (tolerance), T (packaging)"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review). Frequency stability (+-50 ppm,
+# blank) has no vocabulary key.
+parameters:
+  esr: { max: 70 Ω, src: 'p1 "TABLE 1 Standard ESR, 16.000-19.999 (Fund) row"' }
+  frequency:
+    typ: 16 MHz
+    src: 'p1 "OPTIONS AND PART IDENTIFICATION, Frequency in MHz: 16.000MHZ"'
+  load_capacitance:
+    typ: 18 pF
+    src: p1 "STANDARD SPECIFICATIONS, Load capacitance (CL) standard (legend option blank)"
+  frequency_tolerance:
+    tol: ±20 ppm
+    at: { TA: 25 °C }
+    src: 'p1 "OPTIONS AND PART IDENTIFICATION, Freq. Tolerance: 2 = ±20 ppm"'

@@ -1,0 +1,75 @@
+# Abracon ABM8 4-pad ceramic crystal package, 3.2 x 2.5 mm, from the p2
+# "OUTLINE DRAWING" of abracon/ABM8-DS (raster, 150 dpi render). Not the
+# ABM8-272 package: that one has a 0.8 typ height from its title block and
+# no land pattern; this drawing gives "0.80 max" (Table 2, ABM8) and a
+# recommended land pattern.
+#
+# Frame (as manufacturers/abracon/LGA4-3.2x2.5-P1.5-ABM8-272): lga, two
+# terminals on the left and two on the right edge, body_width = the 3.2
+# side (X). TOP VIEW numbering: 4 top-left, 3 top-right, 1 bottom-left, 2
+# bottom-right; generator positions 1 top-left, 2 bottom-left, 3
+# bottom-right, 4 top-right -> pad_order [4, 1, 2, 3].
+# Terminals (BOTTOM VIEW): 0.9+-0.10 along X, 0.80+-0.10 along Y,
+# 1.2+-0.10 between left and right, 0.70+-0.10 between the two of one
+# side; pitch = 0.80 + 0.70 = 1.50 (sum of printed dims, nominal only).
+# lead_inset left out (not printed; the terminals are drawn flush).
+#
+# pads: "Recommended land pattern", all values printed in parentheses as
+# reference values: pad (1.3) wide in X, (1.05) high in Y, (1.0) gap
+# between left/right pads, (0.7) gap between upper/lower pads. Centres:
+# x = +-(1.0/2 + 1.3/2) = +-1.15, y = +-(0.7/2 + 1.05/2) = +-0.875;
+# numbered by the TOP VIEW (1 lower-left, 2 lower-right, 3 upper-right,
+# 4 upper-left). The chamfer note (pin 1, 3 or 4) means the chamfer is not
+# a pin-1 mark.
+schema_version: "0.2"
+kind: package
+id: manufacturers/abracon/LGA4-3.2x2.5-P1.5-ABM8
+family: lga
+lead_count: 4
+
+lead_layout:
+  value: [2, 0, 2, 0]
+  src:   'p2 "OUTLINE DRAWING, BOTTOM/TOP VIEW: two terminals on each 2.5 mm side"'
+
+source: abracon/ABM8-DS
+
+pitch:
+  typ: 1.5 mm
+  src: p2 "OUTLINE DRAWING, BOTTOM VIEW, 0.80 terminal + 0.70 gap (see header)"
+
+pad_order:
+  value: ["4", "1", "2", "3"]
+  src:   p2 "OUTLINE DRAWING, TOP VIEW numbering (see header)"
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:
+    min: 3 mm
+    typ: 3.2 mm
+    max: 3.4 mm
+    src: p2 "OUTLINE DRAWING, top outline 3.2+-0.20"
+  body_length:
+    min: 2.3 mm
+    typ: 2.5 mm
+    max: 2.7 mm
+    src: p2 "OUTLINE DRAWING, top outline 2.5+-0.20"
+  body_height: { max: 0.8 mm, src: 'p2 "Table 2, Height, ABM8 0.80 max"' }
+  lead_length:
+    min: 0.8 mm
+    typ: 0.9 mm
+    max: 1 mm
+    src: p2 "OUTLINE DRAWING, BOTTOM VIEW, terminal 0.9+-0.10"
+  lead_width:
+    min: 0.7 mm
+    typ: 0.8 mm
+    max: 0.9 mm
+    src: p2 "OUTLINE DRAWING, BOTTOM VIEW, terminal 0.80+-0.10"
+
+pads:
+  value:
+    - { number: "1", x: -1.15, y: -0.875, width: 1.3, length: 1.05 }
+    - { number: "2", x: 1.15, y: -0.875, width: 1.3, length: 1.05 }
+    - { number: "3", x: 1.15, y: 0.875, width: 1.3, length: 1.05 }
+    - { number: "4", x: -1.15, y: 0.875, width: 1.3, length: 1.05 }
+  src: p2 "Recommended land pattern, (1.3) (1.05) (1.0) (0.7) (see header)"

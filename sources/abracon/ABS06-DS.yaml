@@ -1,0 +1,17 @@
+# Abracon ABS06 32.768 kHz SMD crystal datasheet, 4 pages, 2.0 x 1.2 x
+# 0.6 mm. Footer on every page "REVISED: 11-23-20" (MM-DD-YY). p1:
+# Standard Specifications + Options and Part Identification legend; p2:
+# outline drawing, inches (mm), with recommended land pattern (vector,
+# read from a 130 dpi render); p3 tape & reel; p4 reflow. Downloaded with
+# curl (HTTP 200, `file`: PDF).
+schema_version: "0.2"
+kind: source
+id: abracon/ABS06-DS
+sha256: 48479f890f8ab99ef5d8cfd259f9bb7c47625db6f6f34f8dd525d44a43dc31e4
+retrieved: 2026-11-16
+url: https://abracon.com/Resonators/ABS06.pdf
+publisher: abracon
+document_id: ABS06
+document_type: datasheet
+revision: 11-23-20
+date: 2020-11-23

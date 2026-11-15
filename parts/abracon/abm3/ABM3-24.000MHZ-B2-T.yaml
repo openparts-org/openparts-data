@@ -1,0 +1,37 @@
+# Abracon ABM3-24.000MHZ-B2-T: ABM3 5.0 x 3.2 mm crystal, 24 MHz. existence: probable
+# -- assembled from the p2 "Options and Part Identification" legend (left
+# blank if standard), not an orderable list: frequency "24.000MHz", load
+# capacitance and custom ESR blank, operating temp "B" (-20 ~ +70 C),
+# freq. tolerance "2" (+-20 ppm), stability blank (Std +-50 ppm; Table 1
+# marks B / Std available), packaging "T" (tape & reel). lifecycle unknown.
+schema_version: "0.2"
+kind: part
+id: abracon/ABM3-24.000MHZ-B2-T
+manufacturer: abracon
+mpn: ABM3-24.000MHZ-B2-T
+device: abracon/ABM3
+package: manufacturers/abracon/CHIP-ABRACON-ABM3
+sources: [abracon/ABM3-DS]
+source: abracon/ABM3-DS
+
+existence:
+  status: probable
+  src: p2 "Options and Part Identification legend B, 2, T; Table 1 B / Std available"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  esr:
+    max: 30 Ω
+    src: p1 "Key Electrical Specifications, ESR (R1), 20.000 <= F < 30.000 (Fund)"
+  frequency:
+    typ: 24 MHz
+    src: 'p2 "Options and Part Identification, Frequency in MHz: 24.000MHZ"'
+  load_capacitance:
+    typ: 18 pF
+    src: p1 "Key Electrical Specifications, Load capacitance (CL), Standard (legend option blank)"
+  frequency_tolerance:
+    tol: ±20 ppm
+    at: { TA: 25 °C }
+    src: 'p2 "Options and Part Identification, Freq. Tolerance: 2 = ±20 ppm"'

@@ -1,0 +1,19 @@
+# Abracon ABM3 ceramic SMD crystal datasheet, 5 pages, 5.0 x 3.2 x 1.3 mm.
+# Footer on every page "REVISED: 04-25-22" (MM-DD-YY). p1: Key Electrical
+# Specifications (ESR per frequency range); p2: Options and Part
+# Identification legend + Table 1 (available operating temp / stability
+# combinations); p3: Mechanical Dimensions (raster drawing, inches (mm),
+# read from a 130 dpi render) with recommended land pattern; p4 reflow;
+# p5 packaging. Downloaded with curl (HTTP 200, `file`: PDF); pdfinfo
+# CreationDate 2022-04-26.
+schema_version: "0.2"
+kind: source
+id: abracon/ABM3-DS
+sha256: 74a42fd33b5a0226229acd1657bdeb9c391711058c9dcdd391021d49506e9f23
+retrieved: 2026-11-16
+url: https://abracon.com/Resonators/ABM3.pdf
+publisher: abracon
+document_id: ABM3
+document_type: datasheet
+revision: 04-25-22
+date: 2022-04-25
