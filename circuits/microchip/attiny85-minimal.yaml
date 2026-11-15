@@ -1,0 +1,25 @@
+# ATtiny85 minimal circuit: supply decoupling, reset pin and ISP header
+# (data sheet and AN2519). The crystal (microchip/attiny85-xosc) is only
+# needed with an external crystal clock and is not included.
+# AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/attiny85-minimal
+title: ATtiny85 minimal circuit
+host: microchip/ATtiny85
+source: microchip/DS00002519@revB
+
+nets:
+  GND:   { kind: ground }
+  MISO:  { kind: signal }
+  MOSI:  { kind: signal }
+  RESET: { kind: signal }
+  SCK:   { kind: signal }
+  VCC:   { kind: power }
+
+includes:
+  - { circuit: microchip/attiny85-power, with: { GND: GND, VCC: VCC }, src: p5 "2.1" }
+  - { circuit: microchip/attiny85-reset, with: { GND: GND, RESET: RESET, VCC: VCC }, src: p7 "3" }
+  - circuit: microchip/attiny85-isp
+    with: { GND: GND, MISO: MISO, MOSI: MOSI, RESET: RESET, SCK: SCK, VCC: VCC }
+    src: microchip/2586@revQ p151 "20.5"

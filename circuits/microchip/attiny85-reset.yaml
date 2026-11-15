@@ -1,0 +1,39 @@
+# ATtiny85 RESET (PB5) per AN2519 section 3, Figure 3-1: pull-up,
+# optional filter capacitor and ESD diode to VCC. The 10-20 kOhm range
+# is the data sheet's debugWIRE rule (18.3; the pull-up itself is
+# optional there); AN2519 otherwise gives 4.7 kOhm or larger. The
+# capacitor must be removed for debugWIRE (18.3); the diode is for
+# designs without high-voltage programming (AN2519 3). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/attiny85-reset
+title: ATtiny85 reset pin
+host: microchip/ATtiny85
+source: microchip/DS00002519@revB
+
+nets:
+  GND:   { kind: ground }
+  RESET: { kind: signal }
+  VCC:   { kind: power }
+
+connect: { PB5: { net: RESET, level: example, src: p7 "Figure 3-1" } }
+
+roles:
+  C_RESET:
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p7 "Figure 3-1" }
+    pins:     { "1": RESET, "2": GND }
+    place:    { near: host.PB5, src: p7 "3" }
+    level:    { value: optional, src: p7 "3" }
+  D_RESET:
+    requires: { category: diode, src: p7 "3" }
+    pins:     { A: RESET, K: VCC }
+    place:    { near: host.PB5, src: p7 "3" }
+    level:    { value: recommended, word: recommended, src: p7 "3" }
+  R_RESET:
+    requires:
+      category: resistor
+      resistance: { min: 10 kΩ, max: 20 kΩ }
+      src: microchip/2586@revQ p140 "18.3"
+    pins:  { "1": VCC, "2": RESET }
+    place: { near: host.PB5, src: p7 "3" }
+    level: { value: recommended, word: recommended, src: p7 "3" }

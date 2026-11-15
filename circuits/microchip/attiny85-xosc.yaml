@@ -1,0 +1,33 @@
+# ATtiny85 crystal on XTAL1 (PB3) / XTAL2 (PB4), data sheet 6.2.6,
+# Figure 6-5. C1 and C2 "should always be equal"; 12-22 pF is the
+# recommended range for crystals of Table 6-12 (ceramic resonators: the
+# maker's values). AN2519 5.3 (22-33 pF) defers to the data sheet.
+# AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/attiny85-xosc
+title: ATtiny85 crystal oscillator
+host: microchip/ATtiny85
+source: microchip/2586@revQ
+
+nets: { GND: { kind: ground } }
+
+roles:
+  C1:
+    requires:
+      category: capacitor
+      capacitance: { min: 12 pF, max: 22 pF }
+      src: p30 "Table 6-12"
+    pins:  { "1": host.PB3, "2": GND }
+    level: { value: recommended, word: recommended, src: p30 "Table 6-12" }
+  C2:
+    requires:
+      category: capacitor
+      capacitance: { min: 12 pF, max: 22 pF }
+      src: p30 "Table 6-12"
+    pins:  { "1": host.PB4, "2": GND }
+    level: { value: recommended, word: recommended, src: p30 "Table 6-12" }
+  X1:
+    requires: { category: crystal, src: p29 "Figure 6-5" }
+    pins:     { "1": host.PB3, "2": host.PB4 }
+    level:    { value: example, src: p29 "Figure 6-5" }

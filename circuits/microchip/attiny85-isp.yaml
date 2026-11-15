@@ -1,0 +1,30 @@
+# ATtiny85 SPI programming (ISP) header: the standard 6-pin ISP
+# connector of AN2519 Figure 4-1 wired to the serial programming pins of
+# the data sheet (Table 20-10: MOSI PB0, MISO PB1, SCK PB2) and RESET
+# (PB5). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/attiny85-isp
+title: ATtiny85 ISP header
+host: microchip/ATtiny85
+source: microchip/2586@revQ
+
+nets:
+  GND:   { kind: ground }
+  MISO:  { kind: signal }
+  MOSI:  { kind: signal }
+  RESET: { kind: signal }
+  SCK:   { kind: signal }
+  VCC:   { kind: power }
+
+connect:
+  PB0: { net: MOSI, level: required, src: p151 "Table 20-10" }
+  PB1: { net: MISO, level: required, src: p151 "Table 20-10" }
+  PB2: { net: SCK, level: required, src: p151 "Table 20-10" }
+  PB5: { net: RESET, level: required, src: p151 "20.5" }
+
+roles:
+  J_ISP:
+    requires: { category: connector, src: microchip/DS00002519@revB p9 "Figure 4-1" }
+    pins:     { "1": MISO, "2": VCC, "3": SCK, "4": MOSI, "5": RESET, "6": GND }
+    level:    { value: example, src: microchip/DS00002519@revB p9 "Figure 4-1" }

@@ -1,0 +1,25 @@
+# ATtiny85 supply decoupling: one capacitor across VCC/GND (AN2519 2.1;
+# no value given there). The ATtiny85 has no separate AVCC pin.
+# AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/attiny85-power
+title: ATtiny85 supply decoupling
+host: microchip/ATtiny85
+source: microchip/DS00002519@revB
+
+nets:
+  GND: { kind: ground }
+  VCC: { kind: power }
+
+connect:
+  GND: { net: GND, level: required, src: microchip/2586@revQ p2 "1.1.2" }
+  VCC: { net: VCC, level: example, src: microchip/2586@revQ p2 "1.1.1" }
+
+roles:
+  C_VCC:
+    per_pin: VCC
+    requires: { category: capacitor, src: p6 "2.1" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p6 "2.1" }
+    level: { value: recommended, word: should, src: p5 "2.1" }
