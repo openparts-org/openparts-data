@@ -1,0 +1,41 @@
+# Vishay Siliconix "SOT-23 (TO-236): 3-LEAD" package information,
+# Document Number 71196 (ECN S-03946-Rev. K, 09-Jul-01, DWG 5479),
+# appended as page 6 of vishay/68645 (Si2302CDS); the same page is
+# printed as page 6 of vishay/68741 (Si2301CDS, pdftotext output
+# identical). Millimetre columns, Min/Max only (e, e1 BSC; L1, S Ref
+# not recorded).
+#
+# Field mapping follows standards/SOT23-2.90x1.30-P1.90: body_width = D,
+# body_length = E1, overall_length = E (lead-tip span), pitch = e1
+# (1.90 BSC), body_height = A2, overall_height = A.
+# Pin numbering from the datasheets' page-1 top view (G 1, S 2, D 3;
+# 1 and 2 on one edge, 3 opposite): lead_layout [2, 1].
+# Application Note 826 (page 7, "Recommended Minimum Pads") is not
+# recorded as `pads`: the figure's dimensions do not label which pad
+# edge each one is measured to; the footprint is computed from the
+# leads.
+schema_version: "0.2"
+kind: package
+id: manufacturers/vishay/SOT23-71196
+family: sot
+lead_count: 3
+
+lead_layout:
+  value: [2, 1]
+  src:   'p1 "SOT-23 (TO-236) Top View: 1 (G), 2 (S) on one edge, 3 (D) opposite"'
+
+source: vishay/68645
+
+pitch: { typ: 1.9 mm, src: 'p6 "71196 table, e1 1.90 BSC"' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:     { min: 2.8 mm, max: 3.04 mm, src: 'p6 "71196 table, D"' }
+  body_length:    { min: 1.2 mm, max: 1.4 mm, src: 'p6 "71196 table, E1"' }
+  body_height:    { min: 0.88 mm, max: 1.02 mm, src: 'p6 "71196 table, A2"' }
+  lead_thickness: { min: 0.085 mm, max: 0.18 mm, src: 'p6 "71196 table, c"' }
+  overall_length: { min: 2.1 mm, max: 2.64 mm, src: 'p6 "71196 table, E (lead-tip span)"' }
+  overall_height: { min: 0.89 mm, max: 1.12 mm, src: 'p6 "71196 table, A"' }
+  standoff:       { min: 0.01 mm, max: 0.1 mm, src: 'p6 "71196 table, A1"' }
+  lead_width:     { min: 0.35 mm, max: 0.5 mm, src: 'p6 "71196 table, b"' }
+  lead_length:    { min: 0.4 mm, max: 0.6 mm, src: 'p6 "71196 table, L"' }

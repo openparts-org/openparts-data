@@ -1,0 +1,15 @@
+# Si2301CDS P-channel 20 V MOSFET, TO-236 (SOT-23). Pin numbers and
+# roles from the page-1 "Top View" (G 1, S 2, D 3) of vishay/68741.
+schema_version: "0.2"
+kind: device
+id: vishay/Si2301CDS
+manufacturer: vishay
+category: transistor
+family: Si2301CDS
+source: vishay/68741
+
+pins:
+  src: p1 "TO-236 (SOT-23) Top View (G 1, S 2, D 3)"
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

@@ -1,0 +1,44 @@
+# Si2301CDS-T1-E3: printed verbatim in the page-1 "Ordering Information" line of
+# vishay/68741 -- verified. No lifecycle statement in the document.
+# Package: manufacturers/vishay/SOT23-71196 (read from vishay/68645
+# page 6; page 6 of this datasheet is the same 71196 page, pdftotext
+# output identical).
+schema_version: "0.2"
+kind: part
+id: vishay/Si2301CDS-T1-E3
+manufacturer: vishay
+mpn: Si2301CDS-T1-E3
+device: vishay/Si2301CDS
+
+package:
+  value: manufacturers/vishay/SOT23-71196
+  src: p6 "SOT-23 (TO-236) 3-LEAD, Document Number 71196"
+
+sources: [vishay/68741, vishay/68645]
+source: vishay/68741
+
+existence: { status: verified, src: 'p1 "Ordering Information, Si2301CDS-T1-E3"' }
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: p_channel, src: 'p1 "Title, P-Channel 20 V (D-S) MOSFET"' }
+  drain_source_voltage: { max: -20 V, src: 'p1 "ABSOLUTE MAXIMUM RATINGS, VDS"' }
+  drain_current:
+    - { max: -3.1 A, at: { TC: 25 °C }, src: 'p1 "ABSOLUTE MAXIMUM RATINGS, ID, TC = 25 °C"' }
+    - max: -2.3 A
+      at: { TA: 25 °C, t: 5 s }
+      src: p1 "ABSOLUTE MAXIMUM RATINGS, ID, TA = 25 °C (notes b, c)"
+  rds_on:
+    - typ: 90 mΩ
+      max: 112 mΩ
+      at: { VGS: -4.5 V, ID: -2.8 A }
+      src: p2 "MOSFET SPECIFICATIONS, RDS(on) (0.090/0.112 Ω)"
+    - typ: 110 mΩ
+      max: 142 mΩ
+      at: { VGS: -2.5 V, ID: -2 A }
+      src: p2 "MOSFET SPECIFICATIONS, RDS(on) (0.110/0.142 Ω)"
+  gate_threshold_voltage:
+    min: -1 V
+    max: -0.4 V
+    at: { ID: -250 µA }
+    src: p2 "MOSFET SPECIFICATIONS, VGS(th), VDS = VGS"

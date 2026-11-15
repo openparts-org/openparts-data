@@ -1,0 +1,40 @@
+# Si2302CDS-T1-GE3: printed verbatim in the page-1 ORDERING INFORMATION table of
+# vishay/68645 (SOT-23) -- verified. No lifecycle statement in the
+# document. Package: manufacturers/vishay/SOT23-71196 (page 6).
+schema_version: "0.2"
+kind: part
+id: vishay/Si2302CDS-T1-GE3
+manufacturer: vishay
+mpn: Si2302CDS-T1-GE3
+device: vishay/Si2302CDS
+package: manufacturers/vishay/SOT23-71196
+sources: [vishay/68645]
+source: vishay/68645
+
+existence: { status: verified, src: 'p1 "ORDERING INFORMATION, Si2302CDS-T1-GE3"' }
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: 'p1 "Title, N-Channel 20 V (D-S) MOSFET"' }
+  drain_source_voltage: { max: 20 V, src: 'p1 "ABSOLUTE MAXIMUM RATINGS, VDS"' }
+  drain_current:
+    - max: 2.9 A
+      at: { TA: 25 °C, t: 5 s }
+      src: p1 "ABSOLUTE MAXIMUM RATINGS, ID, TA = 25 °C, 5 s column (note a)"
+    - max: 2.6 A
+      at: { TA: 25 °C }
+      src: p1 "ABSOLUTE MAXIMUM RATINGS, ID, TA = 25 °C, steady state column (note a)"
+  rds_on:
+    - typ: 45 mΩ
+      max: 57 mΩ
+      at: { VGS: 4.5 V, ID: 3.6 A }
+      src: p2 "SPECIFICATIONS, RDS(on) (0.045/0.057 Ω)"
+    - typ: 56 mΩ
+      max: 75 mΩ
+      at: { VGS: 2.5 V, ID: 3.1 A }
+      src: p2 "SPECIFICATIONS, RDS(on) (0.056/0.075 Ω)"
+  gate_threshold_voltage:
+    min: 0.4 V
+    max: 0.85 V
+    at: { ID: 250 µA }
+    src: p2 "SPECIFICATIONS, VGS(th), VDS = VGS"

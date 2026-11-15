@@ -1,0 +1,15 @@
+# Si2302CDS N-channel 20 V MOSFET, SOT-23 (TO-236). Pin numbers and
+# roles from the page-1 "Top View" (1 G, 2 S, 3 D) of vishay/68645.
+schema_version: "0.2"
+kind: device
+id: vishay/Si2302CDS
+manufacturer: vishay
+category: transistor
+family: Si2302CDS
+source: vishay/68645
+
+pins:
+  src: p1 "SOT-23 (TO-236) Top View (1 G, 2 S, 3 D)"
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }
