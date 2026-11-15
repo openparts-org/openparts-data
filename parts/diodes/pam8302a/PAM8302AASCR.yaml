@@ -1,0 +1,21 @@
+# MPN printed verbatim in the "Ordering Information" table (DS41333
+# page 9): Part Number "PAM8302AASCR", Package Type "MSOP-8", "Tape & Reel"; the
+# legend above it maps package code "S" to the package. lifecycle: the
+# datasheet states no production status -- unknown.
+# Package: page 10 "Package Outline Dimensions, MSOP-8".
+schema_version: "0.2"
+kind: part
+id: diodes/PAM8302AASCR
+manufacturer: diodes
+mpn: PAM8302AASCR
+device: diodes/PAM8302A
+
+package:
+  value: manufacturers/diodes/MSOP8-3.0x3.0-P0.65-DS41333
+  src: p9 "Ordering Information, row PAM8302AASCR, Package Type MSOP-8"
+
+sources: [diodes/DS41333]
+source: diodes/DS41333
+
+existence: { status: verified, src: 'p9 "Ordering Information table, Part Number PAM8302AASCR"' }
+lifecycle: { status: unknown }

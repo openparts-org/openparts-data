@@ -1,0 +1,32 @@
+# 2.5-W filterless Class-D mono audio amplifier. One pin map for MSOP-8,
+# SO-8 and U-DFN3030-8 (Type E): DS41333 page 1 "Pin Assignments" (SO-8
+# and MSOP-8 top views) and page 9 "Marking Information" top views
+# (MSOP-8/SO-8 and U-DFN3030-8) all show SD 1, NC 2, IN+ 3, IN- 4, VO+ 5,
+# VDD 6, GND 7, VO- 8. The datasheet has no pin-description table, so the
+# types are this file's reading: SD is printed with an overbar (active
+# low shutdown, "ShutDown" block in the Functional Block Diagram, page 2)
+# and typed input; VO+/VO- are the speaker outputs (output); IN+/IN-
+# analog. The U-DFN3030-8 exposed pad is not covered (its connection is
+# not stated).
+# category: the tree has no audio-amplifier node, so the `analog` group
+# is used.
+schema_version: "0.2"
+kind: device
+id: diodes/PAM8302A
+manufacturer: diodes
+category: analog
+family: PAM8302A
+source: diodes/DS41333
+
+pins:
+  src:
+    - p1 "Pin Assignments, SO-8 and MSOP-8 Top View"
+    - p9 "Marking Information, MSOP-8/SO-8 Top View"
+  "1": { name: SD, type: input }
+  "2": { name: NC, type: nc }
+  "3": { name: IN+, type: analog }
+  "4": { name: IN-, type: analog }
+  "5": { name: VO+, type: output }
+  "6": { name: VDD, type: power }
+  "7": { name: GND, type: ground }
+  "8": { name: VO-, type: output }

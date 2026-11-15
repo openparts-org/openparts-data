@@ -1,0 +1,19 @@
+# Diodes Incorporated PAM8302A datasheet "2.5W Filterless Class-D Mono
+# Audio Amplifier", document DS41333 Rev. 6-2 (footer "May 2021", 14
+# pages). Downloaded 2026-11-16 from the URL below (HTTP 200, PDF title
+# "PAM8302A"). Text read with pdftotext -layout; page 1 (Pin
+# Assignments), page 9 (Ordering/Marking Information) and page 10
+# (Package Outline Dimensions, MSOP-8 and SO-8) rendered with pdftoppm
+# and read as images. Page numbers are PDF page indices (= printed
+# "N of 14").
+schema_version: "0.2"
+kind: source
+id: diodes/DS41333
+sha256: fb2ab762c31b5fd45f352b116a5e528fa434e9f46aebbee2582e362fc64ef516
+retrieved: 2026-11-16
+url: https://www.diodes.com/assets/Datasheets/PAM8302A.pdf
+publisher: diodes
+document_id: DS41333
+document_type: datasheet
+revision: 6-2
+date: 2021-05

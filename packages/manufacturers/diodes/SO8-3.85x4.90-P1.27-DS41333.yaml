@@ -1,0 +1,62 @@
+# 8-lead SO-8 (narrow SOIC) from the PAM8302A datasheet DS41333 Rev.
+# 6-2, page 10 "Package Outline Dimensions, SO-8" (rendered and read as
+# an image). Table columns are Min / Max / Typ. Mapping read from the
+# drawing's arrows: D body length (4.85-4.95), E lead-tip span, E1 the
+# molded width at the top of the end view (3.80-3.90) -- recorded as
+# body_width; E0 (3.85-3.95, width at the body's lower edge) is not
+# recorded. A (1.40-1.50) is the overall height; no A2 is given, so no
+# body_height. Not recorded: h (chamfer), Q, angles. No recommended land
+# pattern in the datasheet. Not the same numbers as
+# standards/SOIC8-3.90x4.90-P1.27 (E1 3.90 BSC, A max 1.75), so a
+# separate package.
+schema_version: "0.2"
+kind: package
+id: manufacturers/diodes/SO8-3.85x4.90-P1.27-DS41333
+family: soic
+lead_count: 8
+source: diodes/DS41333
+
+pitch: { typ: 1.27 mm, src: 'p10 "SO-8 table, e "- / - / 1.27""' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 3.8 mm
+    typ: 3.85 mm
+    max: 3.9 mm
+    src: p10 "SO-8 table, E1 "3.80 / 3.90 / 3.85""
+  body_length:
+    min: 4.85 mm
+    typ: 4.9 mm
+    max: 4.95 mm
+    src: p10 "SO-8 table, D "4.85 / 4.95 / 4.90""
+  lead_thickness:
+    min: 0.15 mm
+    typ: 0.2 mm
+    max: 0.25 mm
+    src: p10 "SO-8 table, c "0.15 / 0.25 / 0.20""
+  lead_length:
+    min: 0.62 mm
+    typ: 0.72 mm
+    max: 0.82 mm
+    src: p10 "SO-8 table, L "0.62 / 0.82 / 0.72""
+  overall_width:
+    min: 5.9 mm
+    typ: 6 mm
+    max: 6.1 mm
+    src: p10 "SO-8 table, E "5.90 / 6.10 / 6.00""
+  overall_height:
+    min: 1.4 mm
+    typ: 1.45 mm
+    max: 1.5 mm
+    src: p10 "SO-8 table, A "1.40 / 1.50 / 1.45""
+  standoff:
+    min: 0.1 mm
+    typ: 0.15 mm
+    max: 0.2 mm
+    src: p10 "SO-8 table, A1 "0.10 / 0.20 / 0.15""
+  lead_width:
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p10 "SO-8 table, b "0.30 / 0.50 / 0.40""

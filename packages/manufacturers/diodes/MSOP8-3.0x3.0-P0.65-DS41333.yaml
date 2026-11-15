@@ -1,0 +1,61 @@
+# 8-lead MSOP from the PAM8302A datasheet DS41333 Rev. 6-2, page 10
+# "Package Outline Dimensions, MSOP-8" (rendered and read as an image).
+# Table columns are Min / Max / Typ, JEDEC letters (A, A1, A2, b, c, D,
+# E, E1, e, L) as drawn: D along the lead rows (body length), E1 body
+# width, E lead-tip span. Recorded as printed incl. the Typ column. Not
+# recorded: A3/E3 (lead-shoulder detail), x/y (pin-1 dimple position),
+# angle a. No recommended land pattern in the datasheet. Not reused from
+# an existing MSOP8 (TI DGK: no Typ, span 4.75-5.05; Microchip C04-111C:
+# BSC values, b 0.22-0.40).
+schema_version: "0.2"
+kind: package
+id: manufacturers/diodes/MSOP8-3.0x3.0-P0.65-DS41333
+family: msop
+lead_count: 8
+source: diodes/DS41333
+
+pitch: { typ: 0.65 mm, src: 'p10 "MSOP-8 table, e "- / - / 0.65""' }
+geometry: { type: parametric, generator: msop }
+
+dimensions:
+  body_width:
+    min: 2.9 mm
+    typ: 3 mm
+    max: 3.1 mm
+    src: p10 "MSOP-8 table, E1 "2.90 / 3.10 / 3.00""
+  body_length:
+    min: 2.9 mm
+    typ: 3 mm
+    max: 3.1 mm
+    src: p10 "MSOP-8 table, D "2.90 / 3.10 / 3.00""
+  body_height:
+    min: 0.75 mm
+    typ: 0.86 mm
+    max: 0.95 mm
+    src: p10 "MSOP-8 table, A2 "0.75 / 0.95 / 0.86""
+  lead_thickness:
+    min: 0.08 mm
+    typ: 0.15 mm
+    max: 0.23 mm
+    src: p10 "MSOP-8 table, c "0.08 / 0.23 / 0.15""
+  overall_width:
+    min: 4.7 mm
+    typ: 4.9 mm
+    max: 5.1 mm
+    src: p10 "MSOP-8 table, E "4.70 / 5.10 / 4.90""
+  overall_height: { max: 1.1 mm, src: 'p10 "MSOP-8 table, A "- / 1.10 / -""' }
+  standoff:
+    min: 0.05 mm
+    typ: 0.1 mm
+    max: 0.15 mm
+    src: p10 "MSOP-8 table, A1 "0.05 / 0.15 / 0.10""
+  lead_width:
+    min: 0.22 mm
+    typ: 0.3 mm
+    max: 0.38 mm
+    src: p10 "MSOP-8 table, b "0.22 / 0.38 / 0.30""
+  lead_length:
+    min: 0.4 mm
+    typ: 0.6 mm
+    max: 0.8 mm
+    src: p10 "MSOP-8 table, L "0.40 / 0.80 / 0.60""
