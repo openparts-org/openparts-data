@@ -1,0 +1,23 @@
+# MIC4422YN: printed in the "Ordering Information" table (M9999-081005 page
+# 2), column "PbFree", row MIC4422 Non-inverting, -40 to +85 C, 8-pin DIP
+# -> existence verified. Lifecycle unknown: the datasheet states none
+# and microchip.com product pages are not reachable with plain tools.
+schema_version: "0.2"
+kind: part
+id: microchip/MIC4422YN
+manufacturer: microchip
+mpn: MIC4422YN
+device: microchip/MIC4422-DIP-SOIC
+
+package:
+  value: manufacturers/microchip/PDIP8-N-Micrel-M9999-081005
+  src: p11 "Package Information, 8-Pin Plastic DIP (N)"
+
+sources: [microchip/M9999-081005]
+source: microchip/M9999-081005
+
+existence:
+  status: verified
+  src: p2 "Ordering Information, PbFree column, MIC4422YN (8-pin DIP)"
+
+lifecycle: { status: unknown }

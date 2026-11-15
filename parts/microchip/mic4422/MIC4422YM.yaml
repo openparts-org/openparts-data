@@ -1,0 +1,23 @@
+# MIC4422YM: printed in the "Ordering Information" table (M9999-081005 page
+# 2), column "PbFree", row MIC4422 Non-inverting, -40 to +85 C, 8-pin SOIC
+# -> existence verified. Lifecycle unknown: the datasheet states none
+# and microchip.com product pages are not reachable with plain tools.
+schema_version: "0.2"
+kind: part
+id: microchip/MIC4422YM
+manufacturer: microchip
+mpn: MIC4422YM
+device: microchip/MIC4422-DIP-SOIC
+
+package:
+  value: manufacturers/microchip/SOIC8-M-Micrel-M9999-081005
+  src: p11 "Package Information, 8-Pin SOIC (M)"
+
+sources: [microchip/M9999-081005]
+source: microchip/M9999-081005
+
+existence:
+  status: verified
+  src: p2 "Ordering Information, PbFree column, MIC4422YM (8-pin SOIC)"
+
+lifecycle: { status: unknown }

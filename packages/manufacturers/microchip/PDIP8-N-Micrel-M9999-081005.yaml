@@ -1,0 +1,38 @@
+# Micrel "8-Pin Plastic DIP (N)" outline, read from the rendered Package
+# Information page of the MIC4421/4422 datasheet M9999-081005 (page 11).
+# Inch with millimetres in parentheses; the millimetres are recorded.
+#
+# Mapping: row spacing "0.300 (7.62)" -> body_width (dip generator's
+# row spacing); "0.380 (9.65) / 0.370 (9.40)" -> body_length; "0.255
+# (6.48) / 0.245 (6.22)" body width across (not recorded: the dip
+# generator's body_width is the row spacing); "0.135 (3.43) / 0.125
+# (3.18)" body thickness -> body_height; "0.013 (0.330) / 0.010
+# (0.254)" -> lead_thickness; pitch "0.100 (2.54)".
+# Left out: lead width "0.018 (0.57)" -- the inch and mm values
+# disagree (0.018 in = 0.46 mm), so neither is recorded; "0.0375
+# (0.952)" shoulder width; "0.130 (3.30)" lead length below the body;
+# "0.380 (9.65) / 0.320 (8.13)" lead span.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/PDIP8-N-Micrel-M9999-081005
+family: dip
+lead_count: 8
+source: microchip/M9999-081005
+
+pitch: { typ: 2.54 mm, src: 'p11 "8-Pin Plastic DIP (N), "0.100 (2.54)""' }
+geometry: { type: parametric, generator: dip }
+
+dimensions:
+  body_width: { typ: 7.62 mm, src: 'p11 "8-Pin Plastic DIP (N), row spacing "0.300 (7.62)""' }
+  body_length:
+    min: 9.4 mm
+    max: 9.65 mm
+    src: p11 "8-Pin Plastic DIP (N), "0.380 (9.65) / 0.370 (9.40)""
+  body_height:
+    min: 3.18 mm
+    max: 3.43 mm
+    src: p11 "8-Pin Plastic DIP (N), "0.135 (3.43) / 0.125 (3.18)""
+  lead_thickness:
+    min: 0.254 mm
+    max: 0.33 mm
+    src: p11 "8-Pin Plastic DIP (N), "0.013 (0.330) / 0.010 (0.254)""

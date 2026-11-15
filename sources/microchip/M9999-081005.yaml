@@ -1,0 +1,19 @@
+# Micrel (now Microchip) datasheet "MIC4421/4422 9A-Peak Low-Side MOSFET
+# Driver", document M9999-081005, August 2005 (footer). Downloaded
+# 2026-11-16 with curl from Microchip's own document server (URL below);
+# no newer MIC4421/4422 (non-A) datasheet was found on microchip.com
+# (the MIC4421A/22A have their own DS20006511A). 12 PDF pages; read with
+# pdftotext -layout; the package page (page 11, inch with mm in
+# parentheses) rendered and read. Page numbers are PDF page indices
+# (equal to the printed ones). Copyright: facts only.
+schema_version: "0.2"
+kind: source
+id: microchip/M9999-081005
+sha256: d040547a522ef13723021da7d012488ebdbc90c2bba45d57d157cc295af0c001
+retrieved: 2026-11-16
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/mic4421-22.pdf
+publisher: microchip
+document_id: M9999-081005
+document_type: datasheet
+revision: M9999-081005
+date: 2005-08

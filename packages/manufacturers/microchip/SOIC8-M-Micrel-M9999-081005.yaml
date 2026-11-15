@@ -1,0 +1,53 @@
+# Micrel "8-Pin SOIC (M)" outline, read from the rendered Package
+# Information page of the MIC4421/4422 datasheet M9999-081005 (page 11).
+# Controlling unit inch; the millimetre values printed in parentheses
+# are recorded. No drawing number is printed.
+#
+# Mapping: "0.157 (3.99) / 0.150 (3.81)" -> body_width (E1); "0.197
+# (5.0) / 0.189 (4.8)" -> body_length (D); "0.244 (6.20) / 0.228
+# (5.79)" -> overall_width (E); "0.064 (1.63) / 0.045 (1.14)" (side
+# view, package height to the seating plane) -> overall_height;
+# "0.0098 (0.249) / 0.0040 (0.102)" -> standoff; "0.020 (0.51) / 0.013
+# (0.33)" -> lead_width; "0.010 (0.25) / 0.007 (0.18)" -> lead_thickness;
+# "0.050 (1.27) / 0.016 (0.40)" -> lead_length; pitch "0.050 (1.27)
+# TYP". Not the same numbers as Microchip's C04-057 SOIC -> own package.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/SOIC8-M-Micrel-M9999-081005
+family: soic
+lead_count: 8
+source: microchip/M9999-081005
+
+pitch: { typ: 1.27 mm, src: 'p11 "8-Pin SOIC (M), "0.050 (1.27) TYP""' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 3.81 mm
+    max: 3.99 mm
+    src: p11 "8-Pin SOIC (M), "0.157 (3.99) / 0.150 (3.81)""
+  body_length: { min: 4.8 mm, max: 5 mm, src: 'p11 "8-Pin SOIC (M), "0.197 (5.0) / 0.189 (4.8)""' }
+  lead_thickness:
+    min: 0.18 mm
+    max: 0.25 mm
+    src: p11 "8-Pin SOIC (M) end view, "0.010 (0.25) / 0.007 (0.18)""
+  lead_length:
+    min: 0.4 mm
+    max: 1.27 mm
+    src: p11 "8-Pin SOIC (M), "0.050 (1.27) / 0.016 (0.40)""
+  overall_width:
+    min: 5.79 mm
+    max: 6.2 mm
+    src: p11 "8-Pin SOIC (M), "0.244 (6.20) / 0.228 (5.79)""
+  overall_height:
+    min: 1.14 mm
+    max: 1.63 mm
+    src: p11 "8-Pin SOIC (M) side view, "0.064 (1.63) / 0.045 (1.14)""
+  standoff:
+    min: 0.102 mm
+    max: 0.249 mm
+    src: p11 "8-Pin SOIC (M), "0.0098 (0.249) / 0.0040 (0.102)""
+  lead_width:
+    min: 0.33 mm
+    max: 0.51 mm
+    src: p11 "8-Pin SOIC (M), "0.020 (0.51) / 0.013 (0.33)""

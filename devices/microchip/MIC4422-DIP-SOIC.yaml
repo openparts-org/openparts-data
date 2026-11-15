@@ -1,0 +1,28 @@
+# MIC4422 9A-peak low-side MOSFET driver (non-inverting), 8-pin DIP (N)
+# and SOIC (M) pin map: "Pin Description" table, column "Pin Number DIP,
+# SOIC" (M9999-081005 page 2), cross-checked with "Pin Configurations"
+# (page 2). The TO-220-5 (T) pinout differs and is not covered. The
+# table says duplicate pins "must be externally connected together"
+# (not internally connected): VS (1, 8) power and GND (4, 5) ground;
+# OUT (6, 7) typed power so the duplicate name is allowed (flagged for
+# review).
+schema_version: "0.2"
+kind: device
+id: microchip/MIC4422-DIP-SOIC
+manufacturer: microchip
+category: gate_driver
+family: MIC4421/4422
+source: microchip/M9999-081005
+
+pins:
+  src:
+    - p2 "Pin Description, column "Pin Number DIP, SOIC""
+    - p2 "Pin Configurations, Plastic DIP (N) / SOIC (M) (cross-check)"
+  "1": { name: VS, type: power }
+  "2": { name: IN, type: input }
+  "3": { name: NC, type: nc }
+  "4": { name: GND, type: ground }
+  "5": { name: GND, type: ground }
+  "6": { name: OUT, type: power }
+  "7": { name: OUT, type: power }
+  "8": { name: VS, type: power }
