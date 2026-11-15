@@ -37,6 +37,10 @@ aux_pads:
 
 geometry: { type: parametric, generator: module }
 
+# mounting_hole_inset: dimensioned at the USB end only; the generator
+# draws the other pair symmetric.
+# aux_pad_length: Figure 5 lands reach 0.8 below the bottom edge (the
+# origin), Figure 3 puts the pad top 2.4 above it: 0.8 + 2.4 = 3.2.
 dimensions:
   body_width:
     typ: 21 mm
@@ -45,9 +49,7 @@ dimensions:
   body_height:
     typ: 1 mm
     src: 'p7 "Section 2: "1 mm thick PCB" (the board alone; the USB connector and parts on top are not included)"'
-  mounting_hole_inset:
-    typ: 2 mm
-    src: 'p7 "Figure 3: "2" from the USB-end board edge to the hole centres (dimensioned at that end only; the generator draws the other pair symmetric)"'
+  mounting_hole_inset:   { typ: 2 mm, src: 'p7 "Figure 3, USB-end board edge to hole centres"' }
   overall_width:
     typ: 22.58 mm
     src: 'p10 "Figure 5 (SMT footprint): "22.58" across the outer ends of the two pad rows"'
@@ -66,7 +68,7 @@ dimensions:
     src: 'p10 "Figure 5: "6.68" across the three debug pads at 2.54 pitch: 6.68 - 2 x 2.54 = 1.6"'
   aux_pad_length:
     typ: 3.2 mm
-    src: 'p10 "Figure 5: debug lands reach "0.8" below the board''s bottom edge (the origin); Figure 3 (page 7): debug pad top "2.4" above that edge; 0.8 + 2.4 = 3.2"'
+    src: p10 "Figure 5, debug land extent below board edge; Figure 3 (p7), debug pad top (see comment)"
   aux_row_x:
     typ: 10.5 mm
     src: 'p7 "Figure 3: board edge to mounting hole "4.8" + hole to middle debug pad "5.7" = 10.5 (the board centre)"'

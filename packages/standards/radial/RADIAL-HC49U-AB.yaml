@@ -32,10 +32,10 @@ geometry: { type: parametric, generator: radial }
 dimensions:
   body_width:
     max: 11.5 mm
-    src: p1 "Per-page dimension summary box "11.5 x 5.0 x 13.46mm" -- long axis of the oval can (max only, no min/nominal given); see comment above"
+    src: p1 "Per-page dimension summary box, long axis (see comment above)"
   body_length:
     max: 5 mm
-    src: p1 "Per-page dimension summary box "11.5 x 5.0 x 13.46mm" -- short axis of the oval can, 5.0mm (max only, no min/nominal given)"
+    src: p1 "Per-page dimension summary box, short axis (see comment above)"
   body_height:
     max: 13.46 mm
     src: p1 "Per-page dimension summary box "11.5 x 5.0 x 13.46mm" -- can height (max only, no min/nominal given)"

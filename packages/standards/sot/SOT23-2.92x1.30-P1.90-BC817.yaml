@@ -28,9 +28,11 @@ lead_count: 3
 lead_layout: [2, 1]
 source: onsemi/BC818-D
 
+# pitch: not separately dimensioned on this drawing; reuses the SOT-23
+# 1.90 mm pitch confirmed for SOT23-2.90x1.30-P1.90.
 pitch:
   typ: 1.9 mm
-  src: p5 "Figure 6, drawing MA03DREV10 -- pitch not separately dimensioned on this drawing; reuses the SOT-23 standard 1.90mm pitch already confirmed for SOT23-2.90x1.30-P1.90"
+  src: p5 "Figure 6, drawing MA03DREV10, pitch (not dimensioned, see comment)"
 
 geometry: { type: parametric, generator: sot }
 

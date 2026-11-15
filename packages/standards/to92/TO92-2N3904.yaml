@@ -21,10 +21,7 @@ family: to92
 lead_count: 3
 source: onsemi/2N3904-D
 
-pitch:
-  typ: 1.27 mm
-  src: p7 "CASE 135AN drawing, boxed (basic) lead-pitch dimension 1.27mm (pin1-pin2/pin2-pin3); total span pin1-pin3 boxed as 2.54mm, consistent"
-
+pitch: { typ: 1.27 mm, src: 'p7 "CASE 135AN drawing, basic lead pitch (pin 1-2, pin 2-3)"' }
 geometry: { type: parametric, generator: to92 }
 
 dimensions:

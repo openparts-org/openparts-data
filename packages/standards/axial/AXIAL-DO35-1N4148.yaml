@@ -28,7 +28,7 @@ source: vishay/81857
 
 pitch:
   typ: 7.62 mm
-  src: kicad/DO35-P7.62mm "Real KiCad DO-35 reference footprint's own pad-to-pad spacing (0.3in/7.62mm) -- not a Vishay datasheet fact, see comment above"
+  src: kicad/DO35-P7.62mm "pad 1 to pad 2 spacing (not a Vishay datasheet fact, see comment above)"
 
 geometry: { type: parametric, generator: axial }
 
@@ -41,11 +41,11 @@ dimensions:
   body_width:
     min: 1.5 mm
     max: 1.75 mm
-    src: p3 "PACKAGE DIMENSIONS (DO-35/DO-204AH) drawing, body diameter brackets 1.5mm/1.75mm -- min/max assignment inferred from bracket nesting, see comment above"
+    src: p3 "PACKAGE DIMENSIONS (DO-35/DO-204AH) drawing, body diameter (see comment above)"
   body_length:
     min: 1.5 mm
     max: 1.75 mm
-    src: p3 "PACKAGE DIMENSIONS (DO-35/DO-204AH) drawing, body diameter brackets 1.5mm/1.75mm -- min/max assignment inferred from bracket nesting, see comment above"
+    src: p3 "PACKAGE DIMENSIONS (DO-35/DO-204AH) drawing, body diameter (see comment above)"
   body_height:
     max: 3.4 mm
     src: p3 "PACKAGE DIMENSIONS (DO-35/DO-204AH) drawing, body length "3.4mm (0.134in) max." -- no min/nominal stated"

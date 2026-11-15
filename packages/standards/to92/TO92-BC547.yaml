@@ -22,10 +22,10 @@ family: to92
 lead_count: 3
 source: onsemi/98ASB42022B
 
-pitch:
-  typ: 1.27 mm
-  src: '"Not independently re-derived from this drawing; reuses the standard 1.27mm TO-92 basic lead pitch already confirmed for TO92-2N3904''s own CASE 135AN drawing -- both are standard straight-lead TO-92 outlines."'
-
+# pitch: not re-derived from this drawing; reuses the 1.27 mm basic lead
+# pitch confirmed on TO92-2N3904's CASE 135AN drawing (both standard
+# straight-lead TO-92 outlines).
+pitch: { typ: 1.27 mm, src: '"lead pitch (not re-derived from this drawing, see comment)"' }
 geometry: { type: parametric, generator: to92 }
 
 dimensions:

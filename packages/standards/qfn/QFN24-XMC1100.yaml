@@ -39,7 +39,7 @@ dimensions:
     max: 0.9 mm
     src: p49 "Figure 25, side-view dimension "0.9 MAX." -- no separate min/nominal given"
   exposed_pad:
-    src:    p46 "Table 33 "Thermal Characteristics of the Packages", row "Exposed Die Pad Dimensions Ex x Ey ... Max. 2.7 x 2.7 mm" -- no separate tolerance given"
+    src:    p46 "Table 33 Thermal Characteristics of the Packages, Exposed Die Pad Dimensions Ex x Ey"
     width:  { typ: 2.7 mm }
     length: { typ: 2.7 mm }
   standoff:

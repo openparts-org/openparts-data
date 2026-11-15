@@ -41,7 +41,7 @@ tab:
   number: "4"
   trimmed_leads: ["2"]
   src:
-    - 'p41 "NDP0003B outline, bottom view: tab labelled "4"; top view: lead 2 is the short stub "1.02 / 0.64" from the body (trimmed)"'
+    - p41 "NDP0003B outline, bottom view, tab label; top view, lead 2 stub"
     - p3 "Table 6-1 "Pin Functions", VOUT row, TO-252 column "2 , TAB" -- conflicts with the drawing's "4", see header"
 
 geometry: { type: parametric, generator: dpak }

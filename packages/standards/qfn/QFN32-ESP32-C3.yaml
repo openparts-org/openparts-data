@@ -26,7 +26,7 @@ source: espressif/esp32-c3_datasheet_en@rev2.4
 
 pitch:
   typ: 0.5 mm
-  src: jedec/MO-220 "Standard QFN32 5x5mm pitch, cross-checked against multiple vendors' outline drawings for this lead-count/body-size combination"
+  src: jedec/MO-220 "QFN32 5x5 pitch (cross-checked with vendor outline drawings, see header)"
 
 geometry: { type: parametric, generator: qfn }
 

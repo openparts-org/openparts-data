@@ -41,6 +41,9 @@ aux_pads:
 
 geometry: { type: parametric, generator: module }
 
+# aux_row_x: Figure 5 notes give F PAD centre 13.6241 (E 11.0841,
+# G 16.1641; origin bottom left); Figure 3: 7.3759 from the right edge
+# = 21 - 13.6241.
 dimensions:
   body_width:
     typ: 21 mm
@@ -71,7 +74,7 @@ dimensions:
     src: 'p10 "Figure 5 notes: E 1.5748 mm square, F/G 1.5748 mm diameter circles"'
   aux_row_x:
     typ: 13.6241 mm
-    src: 'p10 "Figure 5 notes (origin bottom left): "F PAD ... Centre at 13.6241,19.8" (E at 11.0841, G at 16.1641); Figure 3 (page 7): "7.3759" from the right edge = 21 - 13.6241"'
+    src: p10 "Figure 5 notes, F PAD centre (see comment); Figure 3 (p7), offset from right edge"
   aux_row_y:
     typ: 19.8 mm
     src: 'p10 "Figure 5 notes: E, F, G centred at y = 19.8 from the bottom-left origin; Figure 3 (page 7): "19.8""'
@@ -86,11 +89,11 @@ edge:
   side: -y
   requirement: recommended
   src:
-    - 'p11 "Section 2.2.1 Keep-out area: "Raspberry Pi Pico W should be placed on the edge of a board and not enclosed in metal"; section 2 (page 7): "The onboard wireless antenna is located on the bottom edge" (Figure 3 top view, USB at the top: -y)"'
+    - p11 "Section 2.2.1 Keep-out area; section 2 (p7), antenna edge (Figure 3)"
     - 'raspberrypi/RP-008304-DS@rev3 p11 "Pico 2 W, section 2.2.1 and section 2: the same sentences"'
 
 keepouts:
   value: [{ purpose: antenna, restricts: [components, copper], size: [14, 9], side: -y }]
   src:
-    - 'p11 "Section 2.2.1 Keep-out area: "There is a cutout for the antenna (14 mm × 9 mm). If anything is placed close to the antenna (in any dimension) the effectiveness of the antenna is reduced." Position: section 2 (page 7), "The onboard wireless antenna is located on the bottom edge. To avoid detuning the antenna, no material should intrude into this space." Not dimensioned further (no x/y, no orientation of the 14 x 9)."'
+    - p11 "Section 2.2.1 Keep-out area, antenna cutout; section 2 (p7), antenna edge"
     - 'raspberrypi/RP-008304-DS@rev3 p11 "Pico 2 W, section 2.2.1: the same statement"'

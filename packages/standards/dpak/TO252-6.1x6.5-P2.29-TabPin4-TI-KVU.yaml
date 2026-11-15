@@ -36,8 +36,8 @@ tab:
   number: "4"
   trimmed_leads: ["2"]
   src:
-    - 'p38 "KVU0003A outline, bottom view: exposed thermal pad labelled "4"; top view: lead 2 is the short stub "1.02 / 0.61" from the body (trimmed)"'
-    - 'p3 "Figure 4-2 "KVU Package, 3-Pin TO-252 (Top View)": tab labelled "COMMON" (no number); Table 4-1 lists pins 1-3 only -- see header"'
+    - p38 "KVU0003A outline, bottom view, thermal pad label; top view, lead 2 stub"
+    - p3 "Figure 4-2 KVU Package Top View, tab label; Table 4-1 (see header)"
 
 geometry: { type: parametric, generator: dpak }
 

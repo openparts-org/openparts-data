@@ -27,9 +27,7 @@ pitch: { typ: 2.54 mm, src: 'p207 "8P3 "COMMON DIMENSIONS" (inches), "e 0.100 BS
 geometry: { type: parametric, generator: dip }
 
 dimensions:
-  body_width:
-    typ: 7.62 mm
-    src: p207 "8P3 "COMMON DIMENSIONS" (inches), "eA 0.300 BSC" (row spacing, note 4) -> 7.62 mm; dip generator's body_width is the row spacing"
+  body_width: { typ: 7.62 mm, src: 'p207 "8P3 COMMON DIMENSIONS, eA (row spacing, note 4)"' }
   body_length:
     min: 9.017 mm
     typ: 9.271 mm
