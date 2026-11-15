@@ -1,0 +1,16 @@
+# SHT41-AD1F-R2: printed verbatim in Table 12 "SHT4x ordering options" (Datasheet
+# SHT4x v7.3, page 22, Manufacture Part Number column, with its
+# Orderable Part Number) -> existence verified. lifecycle: unknown (no
+# first-party status). Package: the membrane drawing Figure 16 (page 16): option F per Table 12 row details.
+schema_version: "0.2"
+kind: part
+id: sensirion/SHT41-AD1F-R2
+manufacturer: sensirion
+mpn: SHT41-AD1F-R2
+device: sensirion/SHT41
+package: manufacturers/sensirion/DFN4-1.5x1.5-P0.8-SHT4x-F
+sources: [sensirion/HT_DS_Datasheet_SHT4x@v7.3]
+source: sensirion/HT_DS_Datasheet_SHT4x@v7.3
+
+existence: { status: verified, src: 'p22 "Table 12 SHT4x ordering options, row SHT41-AD1F-R2"' }
+lifecycle: { status: unknown }

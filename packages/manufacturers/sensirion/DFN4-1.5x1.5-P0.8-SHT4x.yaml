@@ -1,0 +1,65 @@
+# Sensirion SHT4x 4-pin open-cavity DFN, 1.5 x 1.5 mm, 0.8 mm pitch:
+# blank package (option B, Figure 15, page 15).
+# Read from the dimensional drawing (Datasheet SHT4x v7.3) and Figure 17
+# "Recommended land pattern" (page 16).
+#
+# Mapping: top view 1.5+-0.1 x 1.5+-0.1 -> body_width/body_length;
+# side-view height -> body_height (no A2); bottom view "0.3+-0.05" ->
+# lead_width, "0.3+-0.1" -> lead_length, die pad "0.4+-0.1" x "1+-0.1"
+# -> exposed_pad. Pin order (Figure 18, transparent top view, page 17):
+# 1 top-left, 2 bottom-left, 3 bottom-right, 4 top-right.
+# The die pad "is not directly connected to any pin" and soldering it is
+# not recommended (section 5.3): the land pattern has no centre land.
+# pads (Figure 17): 0.5 x 0.3 lands, pitch 0.8, "1.4" = centre-to-centre
+# of the two columns (checks with the "(0.2)" overhang: 0.7 + 0.25 -
+# 0.75 = 0.2) -> x = +-0.7, y = +-0.4.
+# Left out: the side-view "0.2" (not labelled as a symbol), opening
+# diameter.
+schema_version: "0.2"
+kind: package
+id: manufacturers/sensirion/DFN4-1.5x1.5-P0.8-SHT4x
+family: dfn
+lead_count: 4
+source: sensirion/HT_DS_Datasheet_SHT4x@v7.3
+
+pitch: { typ: 0.8 mm, src: 'p15 "Figure 15 bottom view, Pitch 0.8"' }
+geometry: { type: parametric, generator: dfn }
+
+dimensions:
+  body_width:
+    min: 1.4 mm
+    typ: 1.5 mm
+    max: 1.6 mm
+    src: p15 "Figure 15 top view, 1.5+-0.1 (horizontal)"
+  body_length:
+    min: 1.4 mm
+    typ: 1.5 mm
+    max: 1.6 mm
+    src: p15 "Figure 15 top view, 1.5+-0.1 (vertical)"
+  body_height:
+    min: 0.49 mm
+    typ: 0.54 mm
+    max: 0.59 mm
+    src: p15 "Figure 15 side view, 0.54+-0.05"
+  exposed_pad:
+    src:    p15 "Figure 15 bottom view, die pad 0.4+-0.1 x 1+-0.1"
+    width:  { min: 0.3 mm, typ: 0.4 mm, max: 0.5 mm }
+    length: { min: 0.9 mm, typ: 1 mm, max: 1.1 mm }
+  lead_width:
+    min: 0.25 mm
+    typ: 0.3 mm
+    max: 0.35 mm
+    src: p15 "Figure 15 bottom view, 0.3+-0.05"
+  lead_length:
+    min: 0.2 mm
+    typ: 0.3 mm
+    max: 0.4 mm
+    src: p15 "Figure 15 bottom view, 0.3+-0.1"
+
+pads:
+  value:
+    - { number: "1", x: -0.7, y: 0.4, width: 0.5, length: 0.3 }
+    - { number: "2", x: -0.7, y: -0.4, width: 0.5, length: 0.3 }
+    - { number: "3", x: 0.7, y: -0.4, width: 0.5, length: 0.3 }
+    - { number: "4", x: 0.7, y: 0.4, width: 0.5, length: 0.3 }
+  src: 'p16 "Figure 17 land pattern: 0.5 x 0.3 at pitch 0.8, columns 1.4 apart (x = +-0.7); no centre land"'

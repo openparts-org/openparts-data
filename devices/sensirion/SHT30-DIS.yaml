@@ -1,0 +1,30 @@
+# SHT30-DIS humidity and temperature sensor (SHT3x-DIS family, accuracy
+# class "0"), 8-pin DFN. Pins from Table 7 "SHT3x-DIS pin assignment
+# (transparent top view)" (Datasheet SHT3x-DIS v7, page 8), numbers
+# checked against the figure in the same table. Types from the comments:
+# SDA/SCL "input / output" -> io, ADDR input, ALERT output, VDD power,
+# nRESET (active-low reset input) reset, VSS ground. R "No electrical
+# function; to be connected to VSS" -> nc. Die pad: "internally
+# connected to VSS" (Table 7 note; section 3.3) -> pin EP, VSS, ground.
+# Category `sensor`: the tree has no humidity-sensor node.
+schema_version: "0.2"
+kind: device
+id: sensirion/SHT30-DIS
+manufacturer: sensirion
+category: sensor
+family: SHT3x-DIS
+source: sensirion/Datasheet_SHT3x_DIS@v7
+
+pins:
+  src: p8 "Table 7 SHT3x-DIS pin assignment"
+  "1": { name: SDA, type: io }
+  "2": { name: ADDR, type: input }
+  "3": { name: ALERT, type: output }
+  "4": { name: SCL, type: io }
+  "5": { name: VDD, type: power }
+  "6": { name: nRESET, type: reset }
+  "7": { name: R, type: nc }
+  "8": { name: VSS, type: ground }
+  EP:
+    name: { value: VSS, src: 'p8 "Table 7 note; 3.3 Die Pad: connected to VSS"' }
+    type: ground

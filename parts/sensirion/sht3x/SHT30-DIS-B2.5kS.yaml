@@ -1,0 +1,19 @@
+# SHT30-DIS-B2.5kS: printed verbatim in Table 23 "SHT3x-DIS ordering options"
+# (Datasheet SHT3x-DIS v7, page 19, Name column, with its Order Number)
+# -> existence verified. lifecycle: unknown (no first-party status).
+# Package: Figure 14 / Table 22 of the same datasheet.
+schema_version: "0.2"
+kind: part
+id: sensirion/SHT30-DIS-B2.5kS
+manufacturer: sensirion
+mpn: SHT30-DIS-B2.5kS
+device: sensirion/SHT30-DIS
+package: manufacturers/sensirion/DFN8-2.5x2.5-P0.5-SHT3x
+sources: [sensirion/Datasheet_SHT3x_DIS@v7]
+source: sensirion/Datasheet_SHT3x_DIS@v7
+
+existence:
+  status: verified
+  src: p19 "Table 23 SHT3x-DIS ordering options, row SHT30-DIS-B2.5kS"
+
+lifecycle: { status: unknown }

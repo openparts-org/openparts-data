@@ -1,0 +1,17 @@
+# Sensirion "Datasheet SHT3x-DIS" (Humidity and Temperature Sensor),
+# footer "December 2022 - Version 7", 22 pages. Downloaded 2026-11-16
+# with curl from the datasheet link on the sensirion.com SHT31-DIS-B
+# catalogue page. No document number is printed; the file name is used
+# as the id. PDF page index = printed "N/22" page number. Package
+# drawings rendered with pdftoppm and read visually.
+schema_version: "0.2"
+kind: source
+id: sensirion/Datasheet_SHT3x_DIS@v7
+sha256: 095b1853e7f4328f5897c9ca6c392a7dd8b0202eda66b0a2629f9cb840dd496d
+retrieved: 2026-11-16
+url: https://sensirion.com/media/documents/213E6A3B/63A5A569/Datasheet_SHT3x_DIS.pdf
+publisher: sensirion
+document_id: Datasheet_SHT3x_DIS
+document_type: datasheet
+revision: "7"
+date: 2022-12

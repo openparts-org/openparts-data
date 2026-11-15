@@ -1,0 +1,51 @@
+# Sensirion SHT3x-DIS 8-pin open-cavity DFN, 2.5 x 2.5 mm, 0.5 mm pitch,
+# with die pad. Read from Figure 14 and Table 22 "Package outline"
+# (Datasheet SHT3x-DIS v7, page 17) and Figure 15 "Recommended metal
+# land pattern" (page 18).
+#
+# Mapping: D "Package width" (horizontal, across the two pad rows) ->
+# body_width; E "Package length" -> body_length; A "Package height"
+# (no A2) -> body_height; A3 "Leadframe height" -> lead_thickness; b ->
+# lead_width; L -> lead_length; D2 "Center pad length" (horizontal) x E2
+# "Center pad width" (vertical) -> exposed_pad width x length.
+# Pin order (Table 7, transparent top view, page 8): 1-4 down the left,
+# 5-8 up the right, pin 1 top-left.
+# pads (Figure 15): I/O lands 0.55 x 0.25 at pitch 0.5; "2.35" is the
+# centre-to-centre distance of the two land columns (checks with the
+# "(0.2)" land overhang: 2.35/2 + 0.55/2 - 2.5/2 = 0.2) -> x = +-1.175;
+# centre land 1 x 1.7. Section 3.3 recommends soldering the die pad.
+# Left out: max cavity S (guidance only), pin-1 marking T1xT2.
+schema_version: "0.2"
+kind: package
+id: manufacturers/sensirion/DFN8-2.5x2.5-P0.5-SHT3x
+family: dfn
+lead_count: 8
+source: sensirion/Datasheet_SHT3x_DIS@v7
+
+pitch: { typ: 0.5 mm, src: 'p17 "Table 22, Pad pitch e"' }
+geometry: { type: parametric, generator: dfn }
+
+dimensions:
+  body_width:     { min: 2.4 mm, typ: 2.5 mm, max: 2.6 mm, src: 'p17 "Table 22, Package width D"' }
+  body_length:    { min: 2.4 mm, typ: 2.5 mm, max: 2.6 mm, src: 'p17 "Table 22, Package length E"' }
+  body_height:    { min: 0.8 mm, typ: 0.9 mm, max: 1 mm, src: 'p17 "Table 22, Package height A"' }
+  exposed_pad:
+    src:    p17 "Table 22, Center pad length D2 (across the rows) x Center pad width E2"
+    width:  { min: 1 mm, typ: 1.1 mm, max: 1.2 mm }
+    length: { min: 1.7 mm, typ: 1.8 mm, max: 1.9 mm }
+  lead_width:     { min: 0.2 mm, typ: 0.25 mm, max: 0.3 mm, src: 'p17 "Table 22, Pad width b"' }
+  lead_length:    { min: 0.25 mm, typ: 0.35 mm, max: 0.45 mm, src: 'p17 "Table 22, Pad length L"' }
+  lead_thickness: { typ: 0.2 mm, src: 'p17 "Table 22, Leadframe height A3"' }
+
+pads:
+  value:
+    - { number: "1", x: -1.175, y: 0.75, width: 0.55, length: 0.25 }
+    - { number: "2", x: -1.175, y: 0.25, width: 0.55, length: 0.25 }
+    - { number: "3", x: -1.175, y: -0.25, width: 0.55, length: 0.25 }
+    - { number: "4", x: -1.175, y: -0.75, width: 0.55, length: 0.25 }
+    - { number: "5", x: 1.175, y: -0.75, width: 0.55, length: 0.25 }
+    - { number: "6", x: 1.175, y: -0.25, width: 0.55, length: 0.25 }
+    - { number: "7", x: 1.175, y: 0.25, width: 0.55, length: 0.25 }
+    - { number: "8", x: 1.175, y: 0.75, width: 0.55, length: 0.25 }
+    - { number: EP, x: 0, y: 0, width: 1, length: 1.7 }
+  src: 'p18 "Figure 15 land pattern: 0.55 x 0.25 at 0.5, columns 2.35 apart (x = +-1.175); centre land 1 x 1.7"'

@@ -1,0 +1,21 @@
+# SHT40 relative humidity and temperature sensor (SHT4x family), 4-pin
+# DFN. Pins from the table in section 5.4 "Pin Assignment & Laser
+# Marking" (Datasheet SHT4x v7.3, page 17), numbers checked against
+# Figure 18 (transparent top view, same page). SDA "bidirectional" ->
+# io, SCL "unidirectional input" -> clock, VDD power, VSS ground. The die
+# pad "is not directly connected to any pin" -> no pin.
+# Category `sensor`: the tree has no humidity-sensor node.
+schema_version: "0.2"
+kind: device
+id: sensirion/SHT40
+manufacturer: sensirion
+category: sensor
+family: SHT4x
+source: sensirion/HT_DS_Datasheet_SHT4x@v7.3
+
+pins:
+  src: p17 "5.4 Pin Assignment table; Figure 18"
+  "1": { name: SDA, type: io }
+  "2": { name: SCL, type: clock }
+  "3": { name: VDD, type: power }
+  "4": { name: VSS, type: ground }

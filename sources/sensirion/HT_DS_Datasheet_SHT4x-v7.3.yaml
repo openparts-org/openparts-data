@@ -1,0 +1,17 @@
+# Sensirion "Datasheet - SHT4x" (4th Gen. Relative Humidity and
+# Temperature Sensor), footer "Version 7.3 - June 2026", 25 pages.
+# Downloaded 2026-11-16 with curl from the datasheet link on the
+# sensirion.com SHT40 catalogue page. No document number is printed; the
+# file name is used as the id. PDF page index = printed "N / 25" page
+# number. Package drawings rendered with pdftoppm and read visually.
+schema_version: "0.2"
+kind: source
+id: sensirion/HT_DS_Datasheet_SHT4x@v7.3
+sha256: 8db4a43f17149b76811cfb504caaeca4ef844ddc710cb9b45905c51c7ddfe3c2
+retrieved: 2026-11-16
+url: https://sensirion.com/media/documents/33FD6951/6A7C10A0/HT_DS_Datasheet_SHT4x_V7.3.pdf
+publisher: sensirion
+document_id: HT_DS_Datasheet_SHT4x
+document_type: datasheet
+revision: "7.3"
+date: 2026-06
