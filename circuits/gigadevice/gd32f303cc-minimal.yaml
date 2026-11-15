@@ -1,0 +1,23 @@
+# GD32F303CC minimal circuit as a composite of the datasheet's recommendations:
+# supply decoupling, HXTAL and LXTAL crystals and the external NRST
+# circuit. The datasheet states no BOOT0 strapping, so BOOT0 is left to
+# the board. Page numbers are PDF page indices. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: gigadevice/gd32f303cc-minimal
+title: GD32F303CC minimal circuit
+host: gigadevice/GD32F303CC
+source: gigadevice/GD32F303xx_Datasheet@rev2.0
+
+nets:
+  GND:  { kind: ground }
+  VBAT: { kind: power }
+  VDD:  { kind: power }
+
+includes:
+  - circuit: gigadevice/gd32f303cc-power
+    with: { GND: GND, VBAT: VBAT, VDD: VDD }
+    src: p54 "Figure 4-1"
+  - { circuit: gigadevice/gd32f303cc-hxtal, with: { GND: GND }, src: p65 "Table 4-14" }
+  - { circuit: gigadevice/gd32f303cc-lxtal, with: { GND: GND }, src: p66 "Table 4-16" }
+  - { circuit: gigadevice/gd32f303cc-reset, with: { GND: GND, VDD: VDD }, src: p70 "Figure 4-6" }

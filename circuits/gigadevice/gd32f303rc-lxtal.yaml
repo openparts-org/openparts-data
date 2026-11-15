@@ -1,0 +1,27 @@
+# GD32F303RC 32.768 kHz crystal (LXTAL) on OSC32IN/OSC32OUT for the RTC: the
+# datasheet's recommended matching capacitance per pin. Its sizing rule
+# C = 2 * (CLOAD - CS) is not stored as a formula (no CS value given).
+# Page numbers are PDF page indices. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: gigadevice/gd32f303rc-lxtal
+title: GD32F303RC 32.768 kHz crystal oscillator
+host: gigadevice/GD32F303RC
+source: gigadevice/GD32F303xx_Datasheet@rev2.0
+
+nets: { GND: { kind: ground } }
+
+roles:
+  C_OSC32IN:
+    requires: { category: capacitor, capacitance: { typ: 15 pF }, src: 'p66 "Table 4-16, CLXTAL"' }
+    pins:     { "1": host.PC14-OSC32IN, "2": GND }
+    level:    { value: recommended, word: recommended, src: 'p66 "Table 4-16, CLXTAL"' }
+  C_OSC32OUT:
+    requires: { category: capacitor, capacitance: { typ: 15 pF }, src: 'p66 "Table 4-16, CLXTAL"' }
+    pins:     { "1": host.PC15-OSC32OUT, "2": GND }
+    level:    { value: recommended, word: recommended, src: 'p66 "Table 4-16, CLXTAL"' }
+  X2:
+    requires: { category: crystal, frequency: { typ: 32.768 kHz }, src: 'p66 "Table 4-16, fLXTAL"' }
+    pins: { "1": host.PC14-OSC32IN, "2": host.PC15-OSC32OUT }
+    level: example
+    src: p66 "Table 4-16"

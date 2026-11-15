@@ -1,0 +1,37 @@
+# GD32F303RC high-speed crystal (HXTAL) on OSCIN/OSCOUT: the datasheet's
+# recommended matching capacitance per pin. Its sizing rule
+# C = 2 * (CLOAD - CS) is not stored as a formula: the datasheet gives
+# no value for the stray capacitance CS. Page numbers are PDF page
+# indices. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: gigadevice/gd32f303rc-hxtal
+title: GD32F303RC high-speed crystal oscillator
+host: gigadevice/GD32F303RC
+source: gigadevice/GD32F303xx_Datasheet@rev2.0
+
+nets: { GND: { kind: ground } }
+
+roles:
+  C_OSCIN:
+    requires:
+      category: capacitor
+      capacitance: { typ: 20 pF, max: 30 pF }
+      src: p65 "Table 4-14, CHXTAL"
+    pins:  { "1": host.PD0-OSCIN, "2": GND }
+    level: { value: recommended, word: recommended, src: 'p65 "Table 4-14, CHXTAL"' }
+  C_OSCOUT:
+    requires:
+      category: capacitor
+      capacitance: { typ: 20 pF, max: 30 pF }
+      src: p65 "Table 4-14, CHXTAL"
+    pins:  { "1": host.PD1-OSCOUT, "2": GND }
+    level: { value: recommended, word: recommended, src: 'p65 "Table 4-14, CHXTAL"' }
+  X1:
+    requires:
+      category: crystal
+      frequency: { min: 4 MHz, max: 32 MHz }
+      src: p65 "Table 4-14, fHXTAL"
+    pins: { "1": host.PD0-OSCIN, "2": host.PD1-OSCOUT }
+    level: example
+    src: p65 "Table 4-14"

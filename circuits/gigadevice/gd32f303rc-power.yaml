@@ -1,0 +1,73 @@
+# GD32F303RC supply decoupling as the datasheet's recommended decoupling figure
+# gives it: 100 nF per VDD pin plus one 4.7 uF, 100 nF on VBAT, 1 uF +
+# 10 nF on VDDA. VREF+/VREF- are internal on this package (figure note
+# 1). Page numbers are PDF page indices. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: gigadevice/gd32f303rc-power
+title: GD32F303RC supply decoupling
+host: gigadevice/GD32F303RC
+source: gigadevice/GD32F303xx_Datasheet@rev2.0
+
+nets:
+  GND:  { kind: ground }
+  VBAT: { kind: power }
+  VDD:  { kind: power }
+
+connect:
+  VBAT:  { net: VBAT, level: example, src: p54 "Figure 4-1" }
+  VDDA: { net: VDD, level: { value: required, word: must }, src: 'p44 "3.3, Power supply schemes"' }
+  VDD_1: { net: VDD, level: { value: recommended, word: should }, src: 'p52 "Table 4-1, note 2"' }
+  VDD_2: { net: VDD, level: { value: recommended, word: should }, src: 'p52 "Table 4-1, note 2"' }
+  VDD_3: { net: VDD, level: { value: recommended, word: should }, src: 'p52 "Table 4-1, note 2"' }
+  VDD_4: { net: VDD, level: { value: recommended, word: should }, src: 'p52 "Table 4-1, note 2"' }
+  VSSA: { net: GND, level: { value: required, word: must }, src: 'p44 "3.3, Power supply schemes"' }
+  VSS_1: { net: GND, level: { value: recommended, word: should }, src: 'p52 "Table 4-1, note 2"' }
+  VSS_2: { net: GND, level: { value: recommended, word: should }, src: 'p52 "Table 4-1, note 2"' }
+  VSS_3: { net: GND, level: { value: recommended, word: should }, src: 'p52 "Table 4-1, note 2"' }
+  VSS_4: { net: GND, level: { value: recommended, word: should }, src: 'p52 "Table 4-1, note 2"' }
+
+roles:
+  C_BULK_VDD:
+    requires: { category: capacitor, capacitance: { typ: 4.7 uF }, src: p54 "Figure 4-1" }
+    pins:     { "1": VDD, "2": GND }
+    level:    { value: recommended, word: recommended, src: p54 "Figure 4-1" }
+  C_VBAT:
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p54 "Figure 4-1" }
+    pins:     { "1": host.VBAT, "2": GND }
+    place:    { near: host.VBAT, src: 'p54 "Figure 4-1, note 2"' }
+    level:    { value: recommended, word: recommended, src: p54 "Figure 4-1" }
+  C_VDDA_10N:
+    requires: { category: capacitor, capacitance: { typ: 10 nF }, src: p54 "Figure 4-1" }
+    pins:     { "1": host.VDDA, "2": host.VSSA }
+    place:    { near: host.VDDA, src: 'p54 "Figure 4-1, note 2"' }
+    level:    { value: recommended, word: recommended, src: p54 "Figure 4-1" }
+  C_VDDA_1U:
+    requires: { category: capacitor, capacitance: { typ: 1 uF }, src: p54 "Figure 4-1" }
+    pins:     { "1": host.VDDA, "2": host.VSSA }
+    place:    { near: host.VDDA, src: 'p54 "Figure 4-1, note 2"' }
+    level:    { value: recommended, word: recommended, src: p54 "Figure 4-1" }
+  C_VDD_1:
+    per_pin: VDD_1
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p54 "Figure 4-1" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p54 "Figure 4-1, note 2"' }
+    level: { value: recommended, word: recommended, src: p54 "Figure 4-1" }
+  C_VDD_2:
+    per_pin: VDD_2
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p54 "Figure 4-1" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p54 "Figure 4-1, note 2"' }
+    level: { value: recommended, word: recommended, src: p54 "Figure 4-1" }
+  C_VDD_3:
+    per_pin: VDD_3
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p54 "Figure 4-1" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p54 "Figure 4-1, note 2"' }
+    level: { value: recommended, word: recommended, src: p54 "Figure 4-1" }
+  C_VDD_4:
+    per_pin: VDD_4
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p54 "Figure 4-1" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p54 "Figure 4-1, note 2"' }
+    level: { value: recommended, word: recommended, src: p54 "Figure 4-1" }

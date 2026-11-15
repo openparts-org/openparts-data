@@ -1,0 +1,29 @@
+# GD32F303RC NRST: the datasheet's recommended external reset circuit, a
+# 10 kOhm pull-up to VDD and 100 nF to ground, with a reset button
+# (K) across the capacitor. NRST also has an internal pull-up (RPU).
+# Page numbers are PDF page indices. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: gigadevice/gd32f303rc-reset
+title: GD32F303RC external reset circuit
+host: gigadevice/GD32F303RC
+source: gigadevice/GD32F303xx_Datasheet@rev2.0
+
+nets:
+  GND: { kind: ground }
+  VDD: { kind: power }
+
+roles:
+  C_NRST:
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p70 "Figure 4-6" }
+    pins:     { "1": host.NRST, "2": GND }
+    level:    { value: recommended, word: recommended, src: p70 "Figure 4-6" }
+  R_NRST:
+    requires: { category: resistor, resistance: { typ: 10 kΩ }, src: p70 "Figure 4-6" }
+    pins:     { "1": VDD, "2": host.NRST }
+    level:    { value: recommended, word: recommended, src: p70 "Figure 4-6" }
+  SW_RESET:
+    requires: { category: switch, src: 'p70 "Figure 4-6, K"' }
+    pins: { "1": host.NRST, "2": GND }
+    level: example
+    src: p70 "Figure 4-6, K"
