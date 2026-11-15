@@ -25,6 +25,20 @@ sources:
   - samsung/CL21A475KAQNNN
   - samsung/MLCC_2512
 
+parameters:
+  capacitance:
+    nominal: 4.7
+    unit: uF
+  tolerance:
+    min: -10
+    max: 10
+    unit: "%"
+  rated_voltage:
+    nominal: 25.0
+    unit: V
+  dielectric:
+    value: X5R
+
 provenance:
   "/existence":
     - source: samsung/MLCC_2512
@@ -41,3 +55,15 @@ provenance:
   "/lifecycle":
     - source: samsung/CL21A475KAQNNN
       locator: "Characteristics, \"Status: Mass Production\""
+  "/parameters/capacitance":
+    - source: samsung/CL21A475KAQNNN
+      locator: "Product page CL21A475KAQNNN#, Characteristics, Capacitance: 4.7uF"
+  "/parameters/tolerance":
+    - source: samsung/CL21A475KAQNNN
+      locator: "Product page CL21A475KAQNNN#, Characteristics, Tolerance: ±10%"
+  "/parameters/rated_voltage":
+    - source: samsung/CL21A475KAQNNN
+      locator: "Product page CL21A475KAQNNN#, Characteristics, Rated Voltage: 25.0Vdc"
+  "/parameters/dielectric":
+    - source: samsung/CL21A475KAQNNN
+      locator: "Product page CL21A475KAQNNN#, Characteristics, Temperature Characteristic: X5R(-55 ~ +85)"

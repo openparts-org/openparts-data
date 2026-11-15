@@ -25,6 +25,20 @@ sources:
   - samsung/CL21B104KBCNNN
   - samsung/MLCC_2512
 
+parameters:
+  capacitance:
+    nominal: 100.0
+    unit: nF
+  tolerance:
+    min: -10
+    max: 10
+    unit: "%"
+  rated_voltage:
+    nominal: 50.0
+    unit: V
+  dielectric:
+    value: X7R
+
 provenance:
   "/existence":
     - source: samsung/MLCC_2512
@@ -41,3 +55,15 @@ provenance:
   "/lifecycle":
     - source: samsung/CL21B104KBCNNN
       locator: "Characteristics, \"Status: Mass Production\""
+  "/parameters/capacitance":
+    - source: samsung/CL21B104KBCNNN
+      locator: "Product page CL21B104KBCNNN#, Characteristics, Capacitance: 100.0nF"
+  "/parameters/tolerance":
+    - source: samsung/CL21B104KBCNNN
+      locator: "Product page CL21B104KBCNNN#, Characteristics, Tolerance: ±10%"
+  "/parameters/rated_voltage":
+    - source: samsung/CL21B104KBCNNN
+      locator: "Product page CL21B104KBCNNN#, Characteristics, Rated Voltage: 50.0Vdc"
+  "/parameters/dielectric":
+    - source: samsung/CL21B104KBCNNN
+      locator: "Product page CL21B104KBCNNN#, Characteristics, Temperature Characteristic: X7R(-55 ~ +125)"

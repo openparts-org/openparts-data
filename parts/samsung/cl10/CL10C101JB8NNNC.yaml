@@ -25,6 +25,20 @@ sources:
   - samsung/CL10C101JB8NNN
   - samsung/MLCC_2512
 
+parameters:
+  capacitance:
+    nominal: 100.0
+    unit: pF
+  tolerance:
+    min: -5
+    max: 5
+    unit: "%"
+  rated_voltage:
+    nominal: 50.0
+    unit: V
+  dielectric:
+    value: C0G
+
 provenance:
   "/existence":
     - source: samsung/MLCC_2512
@@ -41,3 +55,15 @@ provenance:
   "/lifecycle":
     - source: samsung/CL10C101JB8NNN
       locator: "Characteristics, \"Status: Mass Production\""
+  "/parameters/capacitance":
+    - source: samsung/CL10C101JB8NNN
+      locator: "Product page CL10C101JB8NNN#, Characteristics, Capacitance: 100.0pF"
+  "/parameters/tolerance":
+    - source: samsung/CL10C101JB8NNN
+      locator: "Product page CL10C101JB8NNN#, Characteristics, Tolerance: ±5%"
+  "/parameters/rated_voltage":
+    - source: samsung/CL10C101JB8NNN
+      locator: "Product page CL10C101JB8NNN#, Characteristics, Rated Voltage: 50.0Vdc"
+  "/parameters/dielectric":
+    - source: samsung/CL10C101JB8NNN
+      locator: "Product page CL10C101JB8NNN#, Characteristics, Temperature Characteristic: C0G(-55 ~ +125)"

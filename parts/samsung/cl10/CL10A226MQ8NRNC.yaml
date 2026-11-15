@@ -25,6 +25,20 @@ sources:
   - samsung/CL10A226MQ8NRN
   - samsung/MLCC_2512
 
+parameters:
+  capacitance:
+    nominal: 22.0
+    unit: uF
+  tolerance:
+    min: -20
+    max: 20
+    unit: "%"
+  rated_voltage:
+    nominal: 6.3
+    unit: V
+  dielectric:
+    value: X5R
+
 provenance:
   "/existence":
     - source: samsung/MLCC_2512
@@ -41,3 +55,15 @@ provenance:
   "/lifecycle":
     - source: samsung/CL10A226MQ8NRN
       locator: "Characteristics, \"Status: Mass Production\""
+  "/parameters/capacitance":
+    - source: samsung/CL10A226MQ8NRN
+      locator: "Product page CL10A226MQ8NRN#, Characteristics, Capacitance: 22.0uF"
+  "/parameters/tolerance":
+    - source: samsung/CL10A226MQ8NRN
+      locator: "Product page CL10A226MQ8NRN#, Characteristics, Tolerance: ±20%"
+  "/parameters/rated_voltage":
+    - source: samsung/CL10A226MQ8NRN
+      locator: "Product page CL10A226MQ8NRN#, Characteristics, Rated Voltage: 6.3Vdc"
+  "/parameters/dielectric":
+    - source: samsung/CL10A226MQ8NRN
+      locator: "Product page CL10A226MQ8NRN#, Characteristics, Temperature Characteristic: X5R(-55 ~ +85)"

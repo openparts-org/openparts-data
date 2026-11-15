@@ -27,6 +27,20 @@ sources:
   - samsung/CL21A226MAQNNN
   - samsung/MLCC_2512
 
+parameters:
+  capacitance:
+    nominal: 22.0
+    unit: uF
+  tolerance:
+    min: -20
+    max: 20
+    unit: "%"
+  rated_voltage:
+    nominal: 25.0
+    unit: V
+  dielectric:
+    value: X5R
+
 provenance:
   "/existence":
     - source: samsung/MLCC_2512
@@ -43,3 +57,15 @@ provenance:
   "/lifecycle":
     - source: samsung/CL21A226MAQNNN
       locator: "Characteristics, \"Status: NRND\"; caution box \"Replacement / Recommended part : CL21A226MAYNNN#\""
+  "/parameters/capacitance":
+    - source: samsung/CL21A226MAQNNN
+      locator: "Product page CL21A226MAQNNN#, Characteristics, Capacitance: 22.0uF"
+  "/parameters/tolerance":
+    - source: samsung/CL21A226MAQNNN
+      locator: "Product page CL21A226MAQNNN#, Characteristics, Tolerance: ±20%"
+  "/parameters/rated_voltage":
+    - source: samsung/CL21A226MAQNNN
+      locator: "Product page CL21A226MAQNNN#, Characteristics, Rated Voltage: 25.0Vdc"
+  "/parameters/dielectric":
+    - source: samsung/CL21A226MAQNNN
+      locator: "Product page CL21A226MAQNNN#, Characteristics, Temperature Characteristic: X5R(-55 ~ +85)"

@@ -25,6 +25,20 @@ sources:
   - samsung/CL05A105KA5NQN
   - samsung/MLCC_2512
 
+parameters:
+  capacitance:
+    nominal: 1.0
+    unit: uF
+  tolerance:
+    min: -10
+    max: 10
+    unit: "%"
+  rated_voltage:
+    nominal: 25.0
+    unit: V
+  dielectric:
+    value: X5R
+
 provenance:
   "/existence":
     - source: samsung/MLCC_2512
@@ -41,3 +55,15 @@ provenance:
   "/lifecycle":
     - source: samsung/CL05A105KA5NQN
       locator: "Characteristics, \"Status: Mass Production\""
+  "/parameters/capacitance":
+    - source: samsung/CL05A105KA5NQN
+      locator: "Product page CL05A105KA5NQN#, Characteristics, Capacitance: 1.0uF"
+  "/parameters/tolerance":
+    - source: samsung/CL05A105KA5NQN
+      locator: "Product page CL05A105KA5NQN#, Characteristics, Tolerance: ±10%"
+  "/parameters/rated_voltage":
+    - source: samsung/CL05A105KA5NQN
+      locator: "Product page CL05A105KA5NQN#, Characteristics, Rated Voltage: 25.0Vdc"
+  "/parameters/dielectric":
+    - source: samsung/CL05A105KA5NQN
+      locator: "Product page CL05A105KA5NQN#, Characteristics, Temperature Characteristic: X5R(-55 ~ +85)"
