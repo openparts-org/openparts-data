@@ -15,7 +15,37 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  color:
+    value: green
+  wavelength:
+    nominal: 568
+    unit: nm
+  forward_voltage:
+    nominal: 2.2
+    max: 2.5
+    unit: V
+  forward_current:
+    max: 25
+    unit: mA
+
 provenance:
+  "/parameters/color":
+    - source: kingbright/DSAD0932
+      page: 2
+      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: Super Bright Green"
+  "/parameters/wavelength":
+    - source: kingbright/DSAD0932
+      page: 2
+      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Dominant Wavelength IF = 20mA λdom, Super Bright Green: Typ. 568 nm"
+  "/parameters/forward_voltage":
+    - source: kingbright/DSAD0932
+      page: 2
+      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Forward Voltage IF = 20mA VF, Super Bright Green: Typ. 2.2 V, Max. 2.5 V"
+  "/parameters/forward_current":
+    - source: kingbright/DSAD0932
+      page: 2
+      locator: "ABSOLUTE MAXIMUM RATINGS at TA=25°C, DC Forward Current IF: 25 mA"
   "/pins":
     - source: kingbright/DSAD0932
       page: 1

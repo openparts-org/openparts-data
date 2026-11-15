@@ -18,3 +18,35 @@ lifecycle:
 
 sources:
   - kingbright/2-L934L
+
+parameters:
+  color:
+    value: green
+  wavelength:
+    nominal: 565
+    unit: nm
+  forward_voltage:
+    nominal: 1.9
+    max: 2.2
+    unit: V
+  forward_current:
+    max: 25
+    unit: mA
+
+provenance:
+  "/parameters/color":
+    - source: kingbright/2-L934L
+      page: 1
+      locator: "Selection guide, row L-934LGD: Dice GREEN (GaP), Lens GREEN DIFFUSED"
+  "/parameters/wavelength":
+    - source: kingbright/2-L934L
+      page: 2
+      locator: "Electrical / Optical Characteristics, λpeak Peak Wavelength, Green: Typ. 565 nm @ IF=2mA (peak wavelength; no dominant wavelength is given)"
+  "/parameters/forward_voltage":
+    - source: kingbright/2-L934L
+      page: 2
+      locator: "Electrical / Optical Characteristics, vF Forward Voltage, Green: Typ. 1.9 V, Max. 2.2 V @ IF=2mA"
+  "/parameters/forward_current":
+    - source: kingbright/2-L934L
+      page: 2
+      locator: "Absolute Maximum Ratings at TA=25°C, DC Forward Current, Green column: 25 mA"

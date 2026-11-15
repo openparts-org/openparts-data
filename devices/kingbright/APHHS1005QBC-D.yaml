@@ -13,7 +13,37 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  color:
+    value: blue
+  wavelength:
+    nominal: 465
+    unit: nm
+  forward_voltage:
+    nominal: 3.3
+    max: 4
+    unit: V
+  forward_current:
+    max: 30
+    unit: mA
+
 provenance:
+  "/parameters/color":
+    - source: kingbright/DSAJ8746
+      page: 2
+      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: Blue"
+  "/parameters/wavelength":
+    - source: kingbright/DSAJ8746
+      page: 2
+      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Dominant Wavelength IF = 20mA λdom, Blue: Typ. 465 nm"
+  "/parameters/forward_voltage":
+    - source: kingbright/DSAJ8746
+      page: 2
+      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Forward Voltage IF = 20mA VF, Blue: Typ. 3.3 V, Max. 4 V"
+  "/parameters/forward_current":
+    - source: kingbright/DSAJ8746
+      page: 2
+      locator: "ABSOLUTE MAXIMUM RATINGS at TA=25°C, DC Forward Current IF: 30 mA"
   "/pins":
     - source: kingbright/DSAJ8746
       page: 1

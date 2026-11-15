@@ -17,7 +17,37 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  color:
+    value: yellow
+  wavelength:
+    nominal: 588
+    unit: nm
+  forward_voltage:
+    nominal: 1.95
+    max: 2.4
+    unit: V
+  forward_current:
+    max: 30
+    unit: mA
+
 provenance:
+  "/parameters/color":
+    - source: kingbright/DSAF2448
+      page: 2
+      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: Yellow"
+  "/parameters/wavelength":
+    - source: kingbright/DSAF2448
+      page: 2
+      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Dominant Wavelength IF = 10mA λdom, Yellow: Typ. 588 nm"
+  "/parameters/forward_voltage":
+    - source: kingbright/DSAF2448
+      page: 2
+      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Forward Voltage IF = 10mA VF, Yellow: Typ. 1.95 V, Max. 2.4 V"
+  "/parameters/forward_current":
+    - source: kingbright/DSAF2448
+      page: 2
+      locator: "ABSOLUTE MAXIMUM RATINGS at TA=25°C, DC Forward Current IF: 30 mA"
   "/pins":
     - source: kingbright/DSAF2448
       page: 1

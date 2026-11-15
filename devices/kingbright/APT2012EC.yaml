@@ -13,7 +13,37 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  color:
+    value: red
+  wavelength:
+    nominal: 617
+    unit: nm
+  forward_voltage:
+    nominal: 2
+    max: 2.5
+    unit: V
+  forward_current:
+    max: 30
+    unit: mA
+
 provenance:
+  "/parameters/color":
+    - source: kingbright/DSAD0943
+      page: 2
+      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: High Efficiency Red"
+  "/parameters/wavelength":
+    - source: kingbright/DSAD0943
+      page: 2
+      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Dominant Wavelength IF = 20mA λdom, High Efficiency Red: Typ. 617 nm"
+  "/parameters/forward_voltage":
+    - source: kingbright/DSAD0943
+      page: 2
+      locator: "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Forward Voltage IF = 20mA VF, High Efficiency Red: Typ. 2 V, Max. 2.5 V"
+  "/parameters/forward_current":
+    - source: kingbright/DSAD0943
+      page: 2
+      locator: "ABSOLUTE MAXIMUM RATINGS at TA=25°C, DC Forward Current IF: 30 mA"
   "/pins":
     - source: kingbright/DSAD0943
       page: 1
