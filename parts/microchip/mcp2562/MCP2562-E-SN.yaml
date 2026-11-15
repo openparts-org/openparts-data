@@ -21,13 +21,14 @@ package:
   value: standards/SOIC8-3.90x4.90-P1.27
   src:
     - p27 "Product Identification System, Package "SN""
-    - p23 ""8-Lead Plastic Small Outline (SN) - Narrow, 3.90 mm Body [SOIC]", Microchip Technology Drawing No. C04-057C Sheet 2 of 2 (dimension table)"
+    - p23 "8-Lead SOIC (SN) 3.90 mm, Drawing C04-057C Sheet 2 (dimension table)"
 
 sources: [microchip/DS20005167@revC]
 source: microchip/DS20005167@revC
 
+# assembled from the legend; the examples list only MCP2561 SOIC codes
 existence:
   status: probable
-  src: 'p27 "Product Identification System: Device "MCP2562", Temperature Range "E = -40C to +125C (Extended)", Package "SN = Plastic Small Outline - Narrow, 3.90 mm Body, 8-lead" (assembled from the legend; the examples list only MCP2561 SOIC codes)"'
+  src: 'p27 "Product Identification System legend: Device, Temperature Range E, Package SN"'
 
 lifecycle: { status: unknown }

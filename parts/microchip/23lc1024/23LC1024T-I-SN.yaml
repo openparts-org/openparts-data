@@ -26,8 +26,5 @@ package:
 sources: [microchip/DS20005142@revC]
 source: microchip/DS20005142@revC
 
-existence:
-  status: probable
-  src: p29 "Product Identification System, example b) "23LC1024T-I/SN = 1 Mbit, 2.5-5.5V Serial SRAM, Industrial temp., Tape & Reel, SOIC package""
-
+existence: { status: probable, src: 'p29 "Product Identification System, example b)"' }
 lifecycle: { status: unknown }

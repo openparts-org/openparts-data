@@ -29,8 +29,9 @@ package:
 sources: [microchip/DS40001441@revF]
 source: microchip/DS40001441@revF
 
+# assembled from the legend, not printed verbatim
 existence:
   status: probable
-  src: 'p395 "PRODUCT IDENTIFICATION SYSTEM legend: Device "PIC12F1840", Temperature Range "I = -40C to +85C", Package "SN = SOIC, 8-Lead" (assembled from the legend)"'
+  src: 'p395 "Product Identification System legend: Device, Temperature Range I, Package SN"'
 
 lifecycle: { status: unknown }

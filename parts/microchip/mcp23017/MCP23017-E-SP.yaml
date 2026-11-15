@@ -11,9 +11,10 @@ manufacturer: microchip
 mpn: MCP23017-E/SP
 device: microchip/MCP23017
 
+# every printed value matches standards/DIP28-W7.62-P2.54 (also drawn from C04-070B)
 package:
   value: standards/DIP28-W7.62-P2.54
-  src: p33 "Package drawing C04-070B "28-Lead Skinny Plastic Dual In-Line (SP) - 300 mil Body [SPDIP]"; every printed value (e .100 BSC, A max .200, A2 .120/.135/.150, A1 min .015, D 1.345/1.365/1.400, b .014/.018/.022, c .008/.010/.015) matches the values held in standards/DIP28-W7.62-P2.54 (also drawn from C04-070B)"
+  src: p33 "Package drawing C04-070B, 28-Lead SPDIP (SP), dimension table"
 
 sources: [microchip/DS20001952@revD]
 source: microchip/DS20001952@revD

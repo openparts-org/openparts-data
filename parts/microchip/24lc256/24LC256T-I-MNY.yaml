@@ -24,8 +24,9 @@ package:
 sources: [microchip/DS20001203@revW]
 source: microchip/DS20001203@revW
 
+# assembled from the legend, not printed verbatim
 existence:
   status: probable
-  src: 'p40 "Product Identification System legend: Device "24LC256", option "T", Temperature "I", Package "MNY" (assembled, not printed)"'
+  src: 'p40 "Product Identification System legend: Device, option T, Temperature I, Package MNY"'
 
 lifecycle: { status: unknown }

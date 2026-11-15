@@ -23,8 +23,9 @@ package:
 sources: [microchip/DS20001203@revW]
 source: microchip/DS20001203@revW
 
+# assembled from the legend, not printed verbatim
 existence:
   status: probable
-  src: 'p40 "Product Identification System legend: Device "24LC256", option "blank", Temperature "I", Package "MF" (assembled, not printed)"'
+  src: 'p40 "Product Identification System legend: Device, option blank, Temperature I, Package MF"'
 
 lifecycle: { status: unknown }

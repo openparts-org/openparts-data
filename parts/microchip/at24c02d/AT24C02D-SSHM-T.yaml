@@ -14,9 +14,10 @@ manufacturer: microchip
 mpn: AT24C02D-SSHM-T
 device: microchip/AT24C02D
 
+# its dimension table matches standards/SOIC8-3.90x4.90-P1.27 value for value
 package:
   value: standards/SOIC8-3.90x4.90-P1.27
-  src: p27 "Package drawing "8-Lead Plastic Small Outline (SN) - Narrow, 3.90 mm (.150 In.) Body [SOIC]", C04-00057-SN Rev L; its table (e 1.27 BSC, A max 1.75, A2 min 1.25, A1 0.10-0.25, E 6.00 BSC, E1 3.90 BSC, D 4.90 BSC, L 0.40-1.27, c 0.17-0.25, b 0.31-0.51) matches standards/SOIC8-3.90x4.90-P1.27 value for value"
+  src: p27 "Package drawing C04-00057-SN Rev L, 8-Lead SOIC (SN) 3.90 mm, dimension table"
 
 sources: [microchip/DS20006100@revB]
 source: microchip/DS20006100@revB

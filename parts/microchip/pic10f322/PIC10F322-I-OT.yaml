@@ -32,8 +32,9 @@ package:
 sources: [microchip/DS40001585@revD]
 source: microchip/DS40001585@revD
 
+# assembled from the legend, not printed verbatim
 existence:
   status: probable
-  src: 'p191 "PRODUCT IDENTIFICATION SYSTEM legend: Device "PIC10F322", Temperature Range "I = -40C to +85C", Package "OT = SOT-23" (assembled from the legend)"'
+  src: 'p191 "Product Identification System legend: Device, Temperature Range I, Package OT"'
 
 lifecycle: { status: unknown }

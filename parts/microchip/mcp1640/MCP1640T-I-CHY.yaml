@@ -20,14 +20,11 @@ device: microchip/MCP1640-SOT23
 package:
   value: manufacturers/microchip/SOT23-6-CH-C04-028B
   src:
-    - p29 "Product Identification System, Package "CHY* = Plastic Small Outline Transistor (SOT-23), 6-lead" ("*Y = Nickel palladium gold manufacturing designator")"
+    - p29 "Product Identification System, Package CHY"
     - p22 "drawing C04-028B "6-Lead Plastic Small Outline Transistor (CHY) [SOT-23]", page 22 (text)"
 
 sources: [microchip/DS20002234@revD]
 source: microchip/DS20002234@revD
 
-existence:
-  status: probable
-  src: 'p29 "Product Identification System, example i) "MCP1640T-I/CHY: 0.65V, PWM/PFM True Disconnect Sync Reg., 6LD SOT-23 pkg. Tape and Reel""'
-
+existence: { status: probable, src: 'p29 "Product Identification System, example i)"' }
 lifecycle: { status: unknown }

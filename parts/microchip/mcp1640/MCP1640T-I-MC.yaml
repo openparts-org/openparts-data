@@ -13,17 +13,15 @@ manufacturer: microchip
 mpn: MCP1640T-I/MC
 device: microchip/MCP1640-DFN8
 
+# C04-123C (rendered) is identical to DS20001984H page 20
 package:
   value: manufacturers/microchip/DFN8-2x3-P0.5-MC-C04-123C
   src:
     - p29 "Product Identification System, Package "MC =Plastic Dual Flat, No Lead (2x3 DFN), 8-lead""
-    - p24 "drawing C04-123C "8-Lead Plastic Dual Flat, No Lead Package (MC) - 2x3x0.9 mm Body [DFN]" (rendered; identical to DS20001984H page 20)"
+    - p24 "Drawing C04-123C, 8-Lead DFN (MC) 2x3x0.9 mm"
 
 sources: [microchip/DS20002234@revD, microchip/DS20001984@revH]
 source: microchip/DS20002234@revD
 
-existence:
-  status: probable
-  src: 'p29 "Product Identification System, example b) "MCP1640T-I/MC: 0.65V, PWM/PFM True Disconnect Sync Reg., 8LD-DFN pkg. Tape and Reel""'
-
+existence: { status: probable, src: 'p29 "Product Identification System, example b)"' }
 lifecycle: { status: unknown }

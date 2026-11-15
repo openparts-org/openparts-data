@@ -24,8 +24,9 @@ package:
 sources: [microchip/DS20001822@revJ]
 source: microchip/DS20001822@revJ
 
+# assembled from the legend, not printed verbatim
 existence:
   status: probable
-  src: 'p32 "Product Identification System (Non-Automotive) legend: Device "25LC256", option blank, Temperature "I", Package "MF" (assembled, not printed)"'
+  src: 'p32 "Product Identification System (Non-Automotive) legend: Device, Temperature I, Package MF"'
 
 lifecycle: { status: unknown }
