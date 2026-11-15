@@ -1,0 +1,75 @@
+# 3-lead SOT-223 (DB): Microchip drawing C04-032B "3-Lead Plastic Small
+# Outline Transistor (DB) [SOT-223]", DS22057B page 26 (encoded-font
+# page, rendered and read as an image). Millimetres as printed.
+#
+# Frame (sot223 generator): leads on the left (-X), tab on the right
+# (+X), lead 1 at the top. The drawing labels the leads 1, 2, 3; the
+# "Package Types" SOT-223-3 figure (page 2) labels the tab "4" and the
+# pin list gives 4 = GND (TAB).
+#
+# Symbol mapping (Microchip letters): D (6.30/6.50/6.70, along the lead
+# row) -> body_length; E1 (3.30/3.50/3.70, molded width) -> body_width;
+# E (6.70/7.00/7.30, overall width, lead toe to tab toe) ->
+# overall_width; A2 (1.50/1.60/1.70, molded height) -> body_height; A
+# ("1.80" max) -> overall_height; A1 -> standoff; b -> lead_width; b2 ->
+# tab_width; c -> lead_thickness; L ("0.75" min only, foot length) ->
+# lead_length min. e 2.30 BSC -> pitch (e1 4.60 BSC = outside lead
+# pitch). Lead angle phi is not modelled.
+#
+# The recommended land pattern (C04-2032A, page 27: C 6.10, X1 0.95, X2
+# 3.25, Y 1.90) is not recorded as `pads`: it gives no reference to
+# the body centre along X, which the sot223 frame needs.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/SOT223-3-DB-C04-032B
+family: sot223
+lead_count: { value: 3, src: 'p26 "C04-032B table, Number of Leads N 3"' }
+source: microchip/DS22057@revB
+
+pitch: { typ: 2.3 mm, src: 'p26 "C04-032B table, Lead Pitch e 2.30 BSC"' }
+
+tab:
+  number: "4"
+  src: 'p2 ""Package Types", MCP1826S SOT-223-3: tab labelled "4", pin list 4 = GND (TAB)"'
+
+geometry: { type: parametric, generator: sot223 }
+
+dimensions:
+  body_width:
+    min: 3.3 mm
+    typ: 3.5 mm
+    max: 3.7 mm
+    src: p26 "C04-032B table, Molded Package Width E1 3.30 / 3.50 / 3.70"
+  body_length:
+    min: 6.3 mm
+    typ: 6.5 mm
+    max: 6.7 mm
+    src: p26 "C04-032B table, Overall Length D 6.30 / 6.50 / 6.70"
+  body_height:
+    min: 1.5 mm
+    typ: 1.6 mm
+    max: 1.7 mm
+    src: p26 "C04-032B table, Molded Package Height A2 1.50 / 1.60 / 1.70"
+  tab_width:
+    min: 2.9 mm
+    typ: 3 mm
+    max: 3.1 mm
+    src: p26 "C04-032B table, Tab Lead Width b2 2.90 / 3.00 / 3.10"
+  overall_width:
+    min: 6.7 mm
+    typ: 7 mm
+    max: 7.3 mm
+    src: p26 "C04-032B table, Overall Width E 6.70 / 7.00 / 7.30"
+  overall_height: { max: 1.8 mm, src: 'p26 "C04-032B table, Overall Height A 1.80 max"' }
+  standoff: { min: 0.02 mm, max: 0.1 mm, src: 'p26 "C04-032B table, Standoff A1 0.02 / - / 0.10"' }
+  lead_width:
+    min: 0.6 mm
+    typ: 0.76 mm
+    max: 0.84 mm
+    src: p26 "C04-032B table, Lead Width b 0.60 / 0.76 / 0.84"
+  lead_length:    { min: 0.75 mm, src: 'p26 "C04-032B table, Foot Length L 0.75 min (min only)"' }
+  lead_thickness:
+    min: 0.23 mm
+    typ: 0.3 mm
+    max: 0.35 mm
+    src: p26 "C04-032B table, Lead Thickness c 0.23 / 0.30 / 0.35"

@@ -1,0 +1,39 @@
+# 1000-mA fixed-output LDO, MCP1826S 3-lead SOT-223 (DB) pinout. From
+# DS22057B "Package Types" (page 2), MCP1826S SOT-223-3 figure and pin
+# list: 1 VIN, 2 GND (TAB), 3 VOUT, 4 GND (TAB) -- the tab is numbered
+# 4; checked against Table 3-1 "Pin Function Table" (page 15), "3-Pin
+# Fixed Output" column (VIN 1, GND 2, VOUT 3; exposed pad "ground
+# potential"). Pin 4 is the tab, named GND as printed (ground). The
+# MCP1826 5-lead pin maps (SHDN/PWRGD/ADJ) are not covered.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP1826S-DB
+manufacturer: microchip
+category: linear_regulator
+family: MCP1826/MCP1826S
+source: microchip/DS22057@revB
+
+parameters:
+  output_type:
+    value: fixed
+    src: p36 "Product Identification System, "ADJ (Adjustable) only available in 5-lead version""
+  input_voltage_max: { max: 6 V, src: 'p7 "AC/DC Characteristics, Input Operating Voltage VIN"' }
+  output_current:
+    min: 1000 mA
+    src: p7 "AC/DC Characteristics, Maximum Output Current IOUT, VIN = 2.3V to 6.0V"
+  dropout_voltage:
+    - typ: 250 mV
+      at: { IOUT: 1000 mA, TA: 25 °C }
+      src: p8 "AC/DC Characteristics, Dropout Voltage VDROPOUT, IOUT = 1000 mA"
+    - max: 400 mV
+      at: { IOUT: 1000 mA, TJ: -40..125 °C }
+      src: p8 "AC/DC Characteristics, Dropout Voltage VDROPOUT, IOUT = 1000 mA (max in boldface)"
+
+pins:
+  src:
+    - p2 ""Package Types", MCP1826S SOT-223-3 figure and pin list"
+    - p15 "Table 3-1 "Pin Function Table", 3-Pin Fixed Output column"
+  "1": { name: VIN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: VOUT, type: power }
+  "4": { name: GND, type: ground }

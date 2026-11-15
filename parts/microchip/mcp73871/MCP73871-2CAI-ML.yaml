@@ -1,0 +1,32 @@
+# MPN from the "Product Identification System" (DS20002090E page 37),
+# example e) "MCP73871-2CAI/ML: 4.20V PPM Battery Charger, 20LD QFN pkg." --
+# an ordering *example*, not an orderable list -> existence `probable`.
+# Option 2CA per the "Operational Output Options" table (same page):
+# VREG 4.20V, safety timer 6 h, LBO threshold Disabled. Package code ML =
+# "Plastic Quad Flat No Lead (QFN) (4x4x0.9 mm Body), 20-lead" ->
+# drawing C04-126 Rev C (pages 32-34). The id replaces the "/" with "-".
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP73871-2CAI-ML
+manufacturer: microchip
+mpn: MCP73871-2CAI/ML
+device: microchip/MCP73871-ML
+
+package:
+  value: manufacturers/microchip/QFN20-4x4-P0.5-EP2.7-ML-C04-126C
+  src: p37 "Product Identification System, Package Type "ML = Plastic Quad Flat No Lead (QFN) (4x4x0.9 mm Body), 20-lead""
+
+sources: [microchip/DS20002090@revE]
+source: microchip/DS20002090@revE
+
+existence:
+  status: probable
+  src: p37 "Product Identification System, example e) "MCP73871-2CAI/ML""
+
+lifecycle: { status: unknown }
+
+parameters:
+  output_voltage:
+    typ: 4.2 V
+    src: 'p37 "Operational Output Options table, option 2CA: VREG 4.20V"'

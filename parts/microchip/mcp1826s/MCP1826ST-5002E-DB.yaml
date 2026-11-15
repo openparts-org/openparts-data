@@ -1,0 +1,33 @@
+# MPN assembled from the "Product Identification System" legend
+# (DS22057B page 36): Device "MCP1826ST: 1000 mA Low Dropout Regulator
+# Tape and Reel", Output Voltage "50 = 5.0V", Extra Feature Code "0 =
+# Fixed", Tolerance "2 = 2.0% (Standard)", Temperature "E = -40C to
+# +125C", Package "DB = Plastic Transistor Outline, SOT-223, 3-lead".
+# The page's examples print the pattern only with "/XX" for the package
+# ("MCP1826S-5002E/XX"), so the full MPN is not printed anywhere ->
+# existence `probable`. The id replaces the "/" of the MPN with "-".
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP1826ST-5002E-DB
+manufacturer: microchip
+mpn: MCP1826ST-5002E/DB
+device: microchip/MCP1826S-DB
+
+package:
+  value: manufacturers/microchip/SOT223-3-DB-C04-032B
+  src: p36 "Product Identification System, Package Type "DB = ... SOT-223, 3-lead"; outline C04-032B p26"
+
+sources: [microchip/DS22057@revB]
+source: microchip/DS22057@revB
+
+existence:
+  status: probable
+  src: p36 "Product Identification System legend; example "MCP1826S-5002E/XX""
+
+lifecycle: { status: unknown }
+
+parameters:
+  output_voltage:
+    typ: 5 V
+    src: 'p36 "Product Identification System, Output Voltage: 50 = 5.0V"'

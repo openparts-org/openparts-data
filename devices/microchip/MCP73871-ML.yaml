@@ -1,0 +1,51 @@
+# Stand-alone system load sharing Li-Ion/Li-Po charge management
+# controller, 20-lead QFN (ML) pinout. From DS20002090E Table 3-1 "Pin
+# Function Table" (page 17): OUT 1 and 20, VPCC 2, SEL 3, PROG2 4,
+# THERM 5, PG 6, STAT2 7, STAT1/LBO 8, TE 9, VSS 10, 11 and EP, PROG3
+# 12, PROG1 13, VBAT 14 and 15, VBAT_SENSE 16, CE 17, IN 18 and 19;
+# checked against the "Package Types" 20-Lead QFN figure (page 1).
+# Table 3-1 states an internal electrical connection between the
+# exposed pad and VSS -> pin "EP" named VSS, type ground. PG, STAT1/LBO,
+# STAT2 and TE carry overbars in the datasheet (written without them).
+# Programming/sense pins (PROG1-3, VPCC, THERM, VBAT_SENSE) -> analog.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP73871-ML
+manufacturer: microchip
+category: battery_charger
+family: MCP73871
+source: microchip/DS20002090@revE
+
+parameters:
+  input_voltage_max: { max: 6 V, src: 'p5 "DC Characteristics, Supply Voltage VIN"' }
+  output_current:
+    max: 1 A
+    src: 'p1 "Features, Resistor Programmable Fast Charge Current Control: 50 mA to 1A"'
+
+pins:
+  src:  [p17 "Table 3-1 "Pin Function Table"", 'p1 ""Package Types", 20-Lead QFN"']
+  "1":  { name: OUT, type: power }
+  "2":  { name: VPCC, type: analog }
+  "3":  { name: SEL, type: input }
+  "4":  { name: PROG2, type: input }
+  "5":  { name: THERM, type: analog }
+  "6":  { name: PG, type: output }
+  "7":  { name: STAT2, type: output }
+  "8":  { name: STAT1/LBO, type: output }
+  "9":  { name: TE, type: input }
+  "10": { name: VSS, type: ground }
+  "11": { name: VSS, type: ground }
+  "12": { name: PROG3, type: analog }
+  "13": { name: PROG1, type: analog }
+  "14": { name: VBAT, type: power }
+  "15": { name: VBAT, type: power }
+  "16": { name: VBAT_SENSE, type: analog }
+  "17": { name: CE, type: input }
+  "18": { name: IN, type: power }
+  "19": { name: IN, type: power }
+  "20": { name: OUT, type: power }
+  EP:
+    name:
+      value: VSS
+      src: p17 "Table 3-1, pins "10, 11, EP" VSS, internal connection of EP to VSS"
+    type: ground
