@@ -1,0 +1,23 @@
+# GD32VF103CB minimal circuit as a composite of the datasheet's recommendations:
+# supply decoupling, HXTAL and LXTAL crystals and the external NRST
+# circuit. The datasheet states no BOOT0 strapping, so BOOT0 is left to
+# the board. Page numbers are PDF page indices. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: gigadevice/gd32vf103cb-minimal
+title: GD32VF103CB minimal circuit
+host: gigadevice/GD32VF103CB
+source: gigadevice/GD32VF103_Datasheet@rev1.6
+
+nets:
+  GND:  { kind: ground }
+  VBAT: { kind: power }
+  VDD:  { kind: power }
+
+includes:
+  - circuit: gigadevice/gd32vf103cb-power
+    with: { GND: GND, VBAT: VBAT, VDD: VDD }
+    src: p49 "Figure 4-1"
+  - { circuit: gigadevice/gd32vf103cb-hxtal, with: { GND: GND }, src: p57 "Table 4-12" }
+  - { circuit: gigadevice/gd32vf103cb-lxtal, with: { GND: GND }, src: p57 "Table 4-14" }
+  - { circuit: gigadevice/gd32vf103cb-reset, with: { GND: GND, VDD: VDD }, src: p61 "Figure 4-4" }

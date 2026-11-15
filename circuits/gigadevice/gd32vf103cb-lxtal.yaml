@@ -1,0 +1,33 @@
+# GD32VF103CB 32.768 kHz crystal (LXTAL) on OSC32IN/OSC32OUT for the RTC: the
+# datasheet's recommended matching capacitance per pin. Its sizing rule
+# C = 2 * (CLOAD - CS) is not stored as a formula (no CS value given).
+# Page numbers are PDF page indices. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: gigadevice/gd32vf103cb-lxtal
+title: GD32VF103CB 32.768 kHz crystal oscillator
+host: gigadevice/GD32VF103CB
+source: gigadevice/GD32VF103_Datasheet@rev1.6
+
+nets: { GND: { kind: ground } }
+
+roles:
+  C_OSC32IN:
+    requires:
+      category: capacitor
+      capacitance: { typ: 10 pF, max: 20 pF }
+      src: p57 "Table 4-14, CLXTAL"
+    pins:  { "1": host.PC14-OSC32IN, "2": GND }
+    level: { value: recommended, word: recommended, src: 'p57 "Table 4-14, CLXTAL"' }
+  C_OSC32OUT:
+    requires:
+      category: capacitor
+      capacitance: { typ: 10 pF, max: 20 pF }
+      src: p57 "Table 4-14, CLXTAL"
+    pins:  { "1": host.PC15-OSC32OUT, "2": GND }
+    level: { value: recommended, word: recommended, src: 'p57 "Table 4-14, CLXTAL"' }
+  X2:
+    requires: { category: crystal, frequency: { typ: 32.768 kHz }, src: 'p57 "Table 4-14, fLXTAL"' }
+    pins: { "1": host.PC14-OSC32IN, "2": host.PC15-OSC32OUT }
+    level: example
+    src: p57 "Table 4-14"
