@@ -1,0 +1,29 @@
+# ATmega328P minimal circuit: supply decoupling with the AVCC filter,
+# reset pin and ISP header (data sheet and AN2519). The crystal
+# (microchip/atmega328p-xosc) is only needed when an external crystal
+# clock is selected and is not included. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/atmega328p-minimal
+title: ATmega328P minimal circuit
+
+host: { devices: [microchip/ATmega328P, microchip/ATmega328P-SPDIP28] }
+
+source: microchip/DS40002061@revB
+
+nets:
+  GND:   { kind: ground }
+  MISO:  { kind: signal }
+  MOSI:  { kind: signal }
+  RESET: { kind: signal }
+  SCK:   { kind: signal }
+  VCC:   { kind: power }
+
+includes:
+  - { circuit: microchip/atmega328p-power, with: { GND: GND, VCC: VCC }, src: p253 "24.6.2" }
+  - circuit: microchip/atmega328p-reset
+    with: { GND: GND, RESET: RESET, VCC: VCC }
+    src: microchip/DS00002519@revB p7 "3"
+  - circuit: microchip/atmega328p-isp
+    with: { GND: GND, MISO: MISO, MOSI: MOSI, RESET: RESET, SCK: SCK, VCC: VCC }
+    src: p304 "28.8"

@@ -1,0 +1,36 @@
+# ATmega328P crystal on XTAL1 (PB6) / XTAL2 (PB7), data sheet 9.3/9.4,
+# Figure 9-2. C1 and C2 "should always be equal"; 12-22 pF is the
+# recommended range for crystals in Tables 9-3 and 9-5 (ceramic
+# resonators: the resonator maker's values). AN2519 5.3 gives 22-33 pF
+# for non-PB AVRs but defers to the data sheet ("Always check the data
+# sheet"), so the data sheet range is used. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/atmega328p-xosc
+title: ATmega328P crystal oscillator
+
+host: { devices: [microchip/ATmega328P, microchip/ATmega328P-SPDIP28] }
+
+source: microchip/DS40002061@revB
+
+nets: { GND: { kind: ground } }
+
+roles:
+  C1:
+    requires:
+      category: capacitor
+      capacitance: { min: 12 pF, max: 22 pF }
+      src: [p39 "Table 9-3", p40 "Table 9-5"]
+    pins:  { "1": host.PB6, "2": GND }
+    level: { value: recommended, word: recommended, src: p39 "Table 9-3" }
+  C2:
+    requires:
+      category: capacitor
+      capacitance: { min: 12 pF, max: 22 pF }
+      src: [p39 "Table 9-3", p40 "Table 9-5"]
+    pins:  { "1": host.PB7, "2": GND }
+    level: { value: recommended, word: recommended, src: p39 "Table 9-3" }
+  X1:
+    requires: { category: crystal, src: p38 "Figure 9-2" }
+    pins:     { "1": host.PB6, "2": host.PB7 }
+    level:    { value: example, src: p38 "Figure 9-2" }

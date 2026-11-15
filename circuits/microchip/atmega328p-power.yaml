@@ -1,0 +1,51 @@
+# ATmega328P supply pins (TQFP/VQFN and SPDIP-28). Each VCC/GND pair has
+# a decoupling capacitor (AN2519 2.1; no value given there). AVCC is
+# fed from VCC through the LC network of the data sheet (24.6.2, Figure
+# 24-9: 10 uH, 100 nF) and must stay within VCC +-0.3 V (24.2). AVCC
+# and AREF decoupling are "must" in AN2519 2.2 (typical 100 nF); the
+# data sheet itself says AREF "may" be decoupled (24.2). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/atmega328p-power
+title: ATmega328P supply decoupling and AVCC filter
+
+host: { devices: [microchip/ATmega328P, microchip/ATmega328P-SPDIP28] }
+
+source: microchip/DS00002519@revB
+
+nets:
+  GND: { kind: ground }
+  VCC: { kind: power }
+
+connect:
+  GND: { net: GND, level: required, src: microchip/DS40002061@revB p13 "1.1.2" }
+  VCC: { net: VCC, level: example, src: microchip/DS40002061@revB p13 "1.1.1" }
+
+roles:
+  C_AREF:
+    per_pin: AREF
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p6 "2.2" }
+    pins: { "1": $pin, "2": GND }
+    level: { value: required, word: must, src: p6 "2.2" }
+  C_AVCC:
+    per_pin: AVCC
+    requires:
+      category: capacitor
+      capacitance: { typ: 100 nF }
+      src: [microchip/DS40002061@revB p254 "Figure 24-9", p6 "2.2"]
+    pins: { "1": $pin, "2": GND }
+    level: { value: required, word: must, src: p6 "2.2" }
+  C_VCC:
+    per_pin: VCC
+    requires: { category: capacitor, src: p6 "2.1" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p6 "2.1" }
+    level: { value: recommended, word: should, src: p5 "2.1" }
+  L_AVCC:
+    per_pin: AVCC
+    requires:
+      category: inductor
+      inductance: { typ: 10 uH }
+      src: microchip/DS40002061@revB p254 "Figure 24-9"
+    pins: { "1": VCC, "2": $pin }
+    level: { value: recommended, word: should, src: microchip/DS40002061@revB p253 "24.6.2" }

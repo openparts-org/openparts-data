@@ -1,0 +1,33 @@
+# ATmega328P SPI programming (ISP) header: the standard 6-pin ISP
+# connector of AN2519 Figure 4-1 wired to the serial programming pins
+# of the data sheet (Table 28-17: MOSI PB3, MISO PB4, SCK PB5) and RESET
+# (PC6). If other SPI devices share these lines, AN2519 4.1.1 adds
+# series resistors (typically 330 Ohm); not included. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/atmega328p-isp
+title: ATmega328P ISP header
+
+host: { devices: [microchip/ATmega328P, microchip/ATmega328P-SPDIP28] }
+
+source: microchip/DS40002061@revB
+
+nets:
+  GND:   { kind: ground }
+  MISO:  { kind: signal }
+  MOSI:  { kind: signal }
+  RESET: { kind: signal }
+  SCK:   { kind: signal }
+  VCC:   { kind: power }
+
+connect:
+  PB3: { net: MOSI, level: required, src: p304 "Table 28-17" }
+  PB4: { net: MISO, level: required, src: p304 "Table 28-17" }
+  PB5: { net: SCK, level: required, src: p304 "Table 28-17" }
+  PC6: { net: RESET, level: required, src: p304 "28.8" }
+
+roles:
+  J_ISP:
+    requires: { category: connector, src: microchip/DS00002519@revB p9 "Figure 4-1" }
+    pins:     { "1": MISO, "2": VCC, "3": SCK, "4": MOSI, "5": RESET, "6": GND }
+    level:    { value: example, src: microchip/DS00002519@revB p9 "Figure 4-1" }
