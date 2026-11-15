@@ -1,0 +1,22 @@
+# ATmega4809 (48-pin) UPDI programming header: the standard UPDI header
+# of AN2519 Figure 4-8 (6-pin: 1 UPDI_DATA, 2 VCC, 6 GND, 3-5 not
+# connected) on the dedicated UPDI pin (data sheet 3.4). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/atmega4809-updi
+title: ATmega4809 UPDI header
+host: microchip/ATmega4809-48
+source: microchip/DS00002519@revB
+
+nets:
+  GND:  { kind: ground }
+  UPDI: { kind: signal }
+  VDD:  { kind: power }
+
+connect: { UPDI: { net: UPDI, level: required, src: microchip/DS40002173@revC p17 "3.4" } }
+
+roles:
+  J_UPDI:
+    requires: { category: connector, src: p13 "Figure 4-8" }
+    pins:     { "1": UPDI, "2": VDD, "6": GND }
+    level:    { value: example, src: p13 "Figure 4-8" }

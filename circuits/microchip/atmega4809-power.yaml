@@ -1,0 +1,31 @@
+# ATmega4809 (48-pin) supply decoupling. The data sheet has no hardware
+# guidelines; this is AN2519 2.1/2.2: a decoupling capacitor across each
+# VDD/GND pair (no value given) and the analog supply AVDD decoupled
+# separately ("must", typical 100 nF). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/atmega4809-power
+title: ATmega4809 supply decoupling
+host: microchip/ATmega4809-48
+source: microchip/DS00002519@revB
+
+nets:
+  GND: { kind: ground }
+  VDD: { kind: power }
+
+connect:
+  GND: { net: GND, level: required, src: p6 "2.1" }
+  VDD: { net: VDD, level: example, src: p6 "2.1" }
+
+roles:
+  C_AVDD:
+    per_pin: AVDD
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p6 "2.2" }
+    pins: { "1": $pin, "2": GND }
+    level: { value: required, word: must, src: p6 "2.2" }
+  C_VDD:
+    per_pin: VDD
+    requires: { category: capacitor, src: p6 "2.1" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p6 "2.1" }
+    level: { value: recommended, word: should, src: p5 "2.1" }
