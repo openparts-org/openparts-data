@@ -13,7 +13,30 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 30
+    unit: V
+  forward_current:
+    max: 1.0
+    unit: A
+  forward_voltage:
+    max: 0.550
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: vishay/88525
+      page: 1
+      locator: "MAXIMUM RATINGS, Maximum repetitive peak reverse voltage VRRM, 1N5818 column: 30 V"
+  "/parameters/forward_current":
+    - source: vishay/88525
+      page: 1
+      locator: "MAXIMUM RATINGS, Maximum average forward rectified current at 0.375\" (9.5 mm) lead length at TL = 90 °C IF(AV): 1.0 A"
+  "/parameters/forward_voltage":
+    - source: vishay/88525
+      page: 1
+      locator: "ELECTRICAL CHARACTERISTICS, Maximum instantaneous forward voltage, 1.0 A, VF, 1N5818 column: 0.550 V"
   "/pins":
     - source: vishay/88525
       page: 1

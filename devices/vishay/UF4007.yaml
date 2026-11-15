@@ -13,7 +13,30 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 1000
+    unit: V
+  forward_current:
+    max: 1.0
+    unit: A
+  forward_voltage:
+    max: 1.7
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: vishay/88755
+      page: 1
+      locator: "MAXIMUM RATINGS, VRRM, UF4007 column: 1000 V"
+  "/parameters/forward_current":
+    - source: vishay/88755
+      page: 1
+      locator: "MAXIMUM RATINGS, Maximum average forward rectified current 0.375\" (9.5 mm) lead length at TA = 55 °C IF(AV): 1.0 A"
+  "/parameters/forward_voltage":
+    - source: vishay/88755
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS, Maximum instantaneous forward voltage, 1.0 A, VF: 1.7 V (cell spanning UF4005-UF4007)"
   "/pins":
     - source: vishay/88755
       page: 1

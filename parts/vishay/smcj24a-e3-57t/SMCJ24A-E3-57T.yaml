@@ -25,7 +25,16 @@ lifecycle:
 sources:
   - vishay/88394
 
+parameters:
+  reverse_voltage:
+    max: 24
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: vishay/88394
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS table, row (+)SMCJ24A: Stand-off voltage VWM 24 V"
   "/existence":
     - source: vishay/88394
       page: 3

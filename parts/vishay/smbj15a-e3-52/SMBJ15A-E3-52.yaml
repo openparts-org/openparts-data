@@ -24,7 +24,23 @@ lifecycle:
 sources:
   - vishay/88392
 
+parameters:
+  reverse_voltage:
+    max: 15
+    unit: V
+  forward_voltage:
+    max: 3.5
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: vishay/88392
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS table, row (+)SMBJ15A: Stand-off voltage VWM 15 V"
+  "/parameters/forward_voltage":
+    - source: vishay/88392
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS table, note (6): VF = 3.5 V max. at IF = 50 A (unidirectional only)"
   "/existence":
     - source: vishay/88392
       page: 3

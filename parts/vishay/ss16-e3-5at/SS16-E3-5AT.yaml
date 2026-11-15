@@ -24,7 +24,30 @@ lifecycle:
 sources:
   - vishay/88746
 
+parameters:
+  reverse_voltage:
+    max: 60
+    unit: V
+  forward_current:
+    max: 1.0
+    unit: A
+  forward_voltage:
+    max: 0.75
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: vishay/88746
+      page: 1
+      locator: "MAXIMUM RATINGS, Maximum repetitive peak reverse voltage VRRM, SS16 column: 60 V"
+  "/parameters/forward_current":
+    - source: vishay/88746
+      page: 1
+      locator: "MAXIMUM RATINGS, Maximum average forward rectified current at TL (fig. 1) IF(AV): 1.0 A"
+  "/parameters/forward_voltage":
+    - source: vishay/88746
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS, Maximum instantaneous forward voltage, 1.0 A, VF: 0.75 V (cell spanning SS15-SS16)"
   "/existence":
     - source: vishay/88746
       page: 2

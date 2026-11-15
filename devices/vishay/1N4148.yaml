@@ -17,3 +17,28 @@ family: 1N4148
 pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
+
+parameters:
+  reverse_voltage:
+    max: 100
+    unit: V
+  forward_current:
+    max: 300
+    unit: mA
+  forward_voltage:
+    max: 1
+    unit: V
+
+provenance:
+  "/parameters/reverse_voltage":
+    - source: vishay/81857
+      page: 1
+      locator: "ABSOLUTE MAXIMUM RATINGS, Repetitive peak reverse voltage VRRM: 100 V (Reverse voltage VR: 75 V)"
+  "/parameters/forward_current":
+    - source: vishay/81857
+      page: 1
+      locator: "ABSOLUTE MAXIMUM RATINGS, Forward continuous current IF: 300 mA"
+  "/parameters/forward_voltage":
+    - source: vishay/81857
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS, Forward voltage IF = 10 mA VF: Max 1 V"

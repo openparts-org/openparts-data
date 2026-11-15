@@ -16,7 +16,16 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 5.0
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: vishay/88390
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS table, row (+)SMAJ5.0A: Stand-off voltage VWM 5.0 V"
   "/pins":
     - source: vishay/88390
       page: 1
