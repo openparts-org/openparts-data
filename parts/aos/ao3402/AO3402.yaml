@@ -25,8 +25,47 @@ sources:
   - aos/AO3402-DS
   - aos/PO-00001
 
+parameters:
+  polarity:
+    value: n_channel
+  drain_source_voltage:
+    nominal: 30
+    unit: V
+  drain_current:
+    nominal: 4
+    unit: A
+  rds_on:
+    nominal: 43
+    max: 52
+    unit: mΩ
+  gate_threshold_voltage:
+    nominal: 1
+    min: 0.5
+    max: 1.5
+    unit: V
+
 provenance:
   "/existence":
     - source: aos/AO3402-DS
       page: 1
       locator: "Title \"AO3402\" and package \"SOT23\"; no ordering table in the document"
+  "/parameters/polarity":
+    - source: aos/AO3402-DS
+      page: 1
+      locator: "Page-1 title: \"30V N-Channel MOSFET\""
+  "/parameters/drain_source_voltage":
+    - source: aos/AO3402-DS
+      page: 1
+      locator: "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 30 V"
+  "/parameters/drain_current":
+    - source: aos/AO3402-DS
+      page: 1
+      locator: "Absolute Maximum Ratings, Continuous Drain Current ID, TA=25°C: 4 A"
+  "/parameters/rds_on":
+    - source: aos/AO3402-DS
+      page: 2
+      locator: "Electrical Characteristics (TJ=25°C), RDS(ON) Static Drain-Source On-Resistance, VGS=10V, ID=4A: Typ 43, Max 52 mΩ"
+  "/parameters/gate_threshold_voltage":
+    - source: aos/AO3402-DS
+      page: 2
+      locator: "Electrical Characteristics (TJ=25°C), VGS(th) Gate Threshold Voltage: Min 0.5, Typ 1, Max 1.5 V"

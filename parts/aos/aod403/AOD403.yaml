@@ -24,6 +24,25 @@ sources:
   - aos/AOD403-DS
   - aos/PO-00009
 
+parameters:
+  polarity:
+    value: p_channel
+  drain_source_voltage:
+    nominal: -30
+    unit: V
+  drain_current:
+    nominal: -70
+    unit: A
+  rds_on:
+    nominal: 6.2
+    max: 8
+    unit: mΩ
+  gate_threshold_voltage:
+    nominal: -2.5
+    min: -3.5
+    max: -1.5
+    unit: V
+
 provenance:
   "/existence":
     - source: aos/AOD403-DS
@@ -33,3 +52,23 @@ provenance:
     - source: aos/PO-00009
       page: 1
       locator: "\"TO252 PACKAGE OUTLINE\" PO-00009 Version X (linked by the datasheet's package name \"TO252\")"
+  "/parameters/polarity":
+    - source: aos/AOD403-DS
+      page: 1
+      locator: "Page-1 title: \"30V P-Channel MOSFET\""
+  "/parameters/drain_source_voltage":
+    - source: aos/AOD403-DS
+      page: 1
+      locator: "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: -30 V"
+  "/parameters/drain_current":
+    - source: aos/AOD403-DS
+      page: 1
+      locator: "Absolute Maximum Ratings, Continuous Drain Current ID, TC=25°C: -70 A"
+  "/parameters/rds_on":
+    - source: aos/AOD403-DS
+      page: 2
+      locator: "Electrical Characteristics (TJ=25°C), RDS(ON) Static Drain-Source On-Resistance, VGS=-10V, ID=-20A, TO252 row: Typ 6.2, Max 8 mΩ"
+  "/parameters/gate_threshold_voltage":
+    - source: aos/AOD403-DS
+      page: 2
+      locator: "Electrical Characteristics (TJ=25°C), VGS(th) Gate Threshold Voltage: Min -1.5, Typ -2.5, Max -3.5 V"

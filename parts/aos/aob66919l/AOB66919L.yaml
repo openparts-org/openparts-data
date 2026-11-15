@@ -25,6 +25,25 @@ sources:
   - aos/AOB66919L-product-page
   - aos/PO-00005
 
+parameters:
+  polarity:
+    value: n_channel
+  drain_source_voltage:
+    nominal: 100
+    unit: V
+  drain_current:
+    nominal: 105
+    unit: A
+  rds_on:
+    nominal: 5.1
+    max: 6.5
+    unit: mΩ
+  gate_threshold_voltage:
+    nominal: 2
+    min: 1.5
+    max: 2.6
+    unit: V
+
 provenance:
   "/existence":
     - source: aos/AOB66919L-DS
@@ -39,3 +58,23 @@ provenance:
     - source: aos/PO-00005
       page: 1
       locator: "\"TO263(D2PAK) PACKAGE OUTLINE\" PO-00005 Version N"
+  "/parameters/polarity":
+    - source: aos/AOB66919L-DS
+      page: 1
+      locator: "Page-1 title: \"100V N-Channel AlphaSGT™\""
+  "/parameters/drain_source_voltage":
+    - source: aos/AOB66919L-DS
+      page: 1
+      locator: "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 100 V"
+  "/parameters/drain_current":
+    - source: aos/AOB66919L-DS
+      page: 1
+      locator: "Absolute Maximum Ratings, Continuous Drain Current ID, TC=25°C: 105 A"
+  "/parameters/rds_on":
+    - source: aos/AOB66919L-DS
+      page: 2
+      locator: "Electrical Characteristics (TJ=25°C), RDS(ON) Static Drain-Source On-Resistance, VGS=10V, ID=20A: Typ 5.1, Max 6.5 mΩ"
+  "/parameters/gate_threshold_voltage":
+    - source: aos/AOB66919L-DS
+      page: 2
+      locator: "Electrical Characteristics (TJ=25°C), VGS(th) Gate Threshold Voltage: Min 1.5, Typ 2, Max 2.6 V"

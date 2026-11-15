@@ -25,6 +25,25 @@ sources:
   - aos/AOT66920L-product-page
   - aos/PO-00015
 
+parameters:
+  polarity:
+    value: n_channel
+  drain_source_voltage:
+    nominal: 100
+    unit: V
+  drain_current:
+    nominal: 80
+    unit: A
+  rds_on:
+    nominal: 6.5
+    max: 8.0
+    unit: mΩ
+  gate_threshold_voltage:
+    nominal: 2.0
+    min: 1.5
+    max: 2.5
+    unit: V
+
 provenance:
   "/existence":
     - source: aos/AOT66920L-DS
@@ -39,3 +58,23 @@ provenance:
     - source: aos/PO-00015
       page: 1
       locator: "\"TO220 PACKAGE OUTLINE\" PO-00015 Version N"
+  "/parameters/polarity":
+    - source: aos/AOT66920L-DS
+      page: 1
+      locator: "Page-1 title: \"100V N-Channel AlphaSGT™\""
+  "/parameters/drain_source_voltage":
+    - source: aos/AOT66920L-DS
+      page: 1
+      locator: "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 100 V"
+  "/parameters/drain_current":
+    - source: aos/AOT66920L-DS
+      page: 1
+      locator: "Absolute Maximum Ratings, Continuous Drain Current ID, TC=25°C: 80 A"
+  "/parameters/rds_on":
+    - source: aos/AOT66920L-DS
+      page: 2
+      locator: "Electrical Characteristics (TJ=25°C), RDS(ON) Static Drain-Source On-Resistance, VGS=10V, ID=20A: Typ 6.5, Max 8.0 mΩ"
+  "/parameters/gate_threshold_voltage":
+    - source: aos/AOT66920L-DS
+      page: 2
+      locator: "Electrical Characteristics (TJ=25°C), VGS(th) Gate Threshold Voltage: Min 1.5, Typ 2.0, Max 2.5 V"

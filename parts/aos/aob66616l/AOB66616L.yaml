@@ -25,6 +25,25 @@ sources:
   - aos/AOB66616L-product-page
   - aos/PO-00005
 
+parameters:
+  polarity:
+    value: n_channel
+  drain_source_voltage:
+    nominal: 60
+    unit: V
+  drain_current:
+    nominal: 140
+    unit: A
+  rds_on:
+    nominal: 2.5
+    max: 3.2
+    unit: mΩ
+  gate_threshold_voltage:
+    nominal: 2.9
+    min: 2.4
+    max: 3.4
+    unit: V
+
 provenance:
   "/existence":
     - source: aos/AOT66616L-DS
@@ -39,3 +58,23 @@ provenance:
     - source: aos/PO-00005
       page: 1
       locator: "\"TO263(D2PAK) PACKAGE OUTLINE\" PO-00005 Version N"
+  "/parameters/polarity":
+    - source: aos/AOT66616L-DS
+      page: 1
+      locator: "Page-1 title: \"60V N-Channel AlphaSGT™\""
+  "/parameters/drain_source_voltage":
+    - source: aos/AOT66616L-DS
+      page: 1
+      locator: "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 60 V"
+  "/parameters/drain_current":
+    - source: aos/AOT66616L-DS
+      page: 1
+      locator: "Absolute Maximum Ratings, Continuous Drain Current ID, TC=25°C: 140 A"
+  "/parameters/rds_on":
+    - source: aos/AOT66616L-DS
+      page: 2
+      locator: "Electrical Characteristics (TJ=25°C), RDS(ON) Static Drain-Source On-Resistance, VGS=10V, ID=20A: Typ 2.5, Max 3.2 mΩ"
+  "/parameters/gate_threshold_voltage":
+    - source: aos/AOT66616L-DS
+      page: 2
+      locator: "Electrical Characteristics (TJ=25°C), VGS(th) Gate Threshold Voltage: Min 2.4, Typ 2.9, Max 3.4 V"

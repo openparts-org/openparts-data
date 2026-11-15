@@ -27,8 +27,47 @@ sources:
   - aos/AO3400A-DS
   - aos/PO-00001
 
+parameters:
+  polarity:
+    value: n_channel
+  drain_source_voltage:
+    nominal: 30
+    unit: V
+  drain_current:
+    nominal: 5.7
+    unit: A
+  rds_on:
+    nominal: 18
+    max: 26.5
+    unit: mΩ
+  gate_threshold_voltage:
+    nominal: 1.05
+    min: 0.65
+    max: 1.45
+    unit: V
+
 provenance:
   "/existence":
     - source: aos/AO3400A-DS
       page: 1
       locator: "Title \"AO3400A\" and package \"SOT23\"; no ordering table in the document"
+  "/parameters/polarity":
+    - source: aos/AO3400A-DS
+      page: 1
+      locator: "Page-1 title: \"30V N-Channel MOSFET\""
+  "/parameters/drain_source_voltage":
+    - source: aos/AO3400A-DS
+      page: 1
+      locator: "Absolute Maximum Ratings (TA=25°C unless otherwise noted), Drain-Source Voltage VDS: 30 V"
+  "/parameters/drain_current":
+    - source: aos/AO3400A-DS
+      page: 1
+      locator: "Absolute Maximum Ratings, Continuous Drain Current ID, TA=25°C: 5.7 A"
+  "/parameters/rds_on":
+    - source: aos/AO3400A-DS
+      page: 2
+      locator: "Electrical Characteristics (TJ=25°C), RDS(ON) Static Drain-Source On-Resistance, VGS=10V, ID=5.7A: Typ 18, Max 26.5 mΩ"
+  "/parameters/gate_threshold_voltage":
+    - source: aos/AO3400A-DS
+      page: 2
+      locator: "Electrical Characteristics (TJ=25°C), VGS(th) Gate Threshold Voltage: Min 0.65, Typ 1.05, Max 1.45 V"
