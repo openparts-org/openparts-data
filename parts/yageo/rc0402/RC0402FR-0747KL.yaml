@@ -1,0 +1,42 @@
+# 47 kOhm, +/-1%, RC0402 general-purpose thick-film chip resistor, 7" paper reel.
+# MPN decoded per yageo/PYU-RC_GROUP@V14 PDF p2 'ORDERING INFORMATION': RC | 0402 | F (+/-1%) |
+# R (paper taping reel) | - (TCR per spec) | 07 (7" reel, standard power) | 47K | L.
+# Value is an E24 value inside the 1% (E24/E96) range of Table 2 (PDF p5);
+# 7" paper reel offered for RC0402 in Table 4 (PDF p7). Lifecycle not stated
+# in the datasheet -> unknown. Re-checked against the V.14 PDF fetched
+# 2026-11-16 (sha256 7b6f0ae7...d839bb, same V.14 / Nov. 14, 2025).
+schema_version: "0.2"
+kind: part
+id: yageo/RC0402FR-0747KL
+manufacturer: yageo
+mpn: RC0402FR-0747KL
+device: yageo/RC0402-GENERAL-PURPOSE
+package: standards/CHIP0402-RC
+sources: [yageo/PYU-RC_GROUP@V14]
+source: yageo/PYU-RC_GROUP@V14
+
+# existence is `probable`: the MPN is assembled from the part-numbering
+# legend, not listed verbatim in an orderable list
+# (openparts/skills/add-part section 2).
+existence:
+  status: probable
+  src:
+    - p2 "Ordering Information - Global Part Number, codes (2)-(7)"
+    - 'p5 "Table 2 RC0402 row, 1/16 W standard power: 1% (E24/E96) 1 Ohm <= R <= 10 MOhm"'
+    - 'p7 "Table 4 ''Packing style and packaging quantity'': RC0402 paper taping reel (R) 7" (178 mm)"'
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review): resistance and tolerance from
+# the ordering-code table; power is the standard-power rating (code 07);
+# TCR is the Table 2 standard-power row for this resistance value.
+parameters:
+  tolerance: { tol: ±1 %, src: 'p2 "ORDERING INFORMATION, (2) TOLERANCE: F = ±1.0%"' }
+  resistance: { typ: 47 kΩ, src: 'p2 "ORDERING INFORMATION, (6) RESISTANCE VALUE: 47K"' }
+  power_rating:
+    typ: 0.0625 W
+    at: { TA: 70 °C }
+    src: p7 "POWER RATING, RC0402 (standard power, code 07)"
+  temperature_coefficient:
+    tol: ±100 ppm/°C
+    src: p5 "Table 2, RC0402 standard-power row, Temperature coefficient 10Ω<R≦10MΩ"
