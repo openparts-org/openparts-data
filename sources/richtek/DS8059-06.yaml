@@ -1,0 +1,16 @@
+# Official Richtek datasheet "RT8059 1.5MHz, 1A, High Efficiency PWM
+# Step-Down DC/DC Converter", document DS8059-06, footer "May 2016", 11
+# pages, downloaded 2026-11-16 from the URL below with a plain curl GET
+# (DS8059-07 to -11 at the same path answered 404). Read with pdftotext
+# -layout. Page numbers are PDF page indices (= printed numbers).
+schema_version: "0.2"
+kind: source
+id: richtek/DS8059-06
+sha256: 4a5b02c8a7af0687b8628ba9405a6e4e7e950920cea0cd652abb8df2087d6bb4
+retrieved: 2026-11-16
+url: https://www.richtek.com/content/dam/richtek/data/en/resources/product-specifications/rt80/rt8059/product-data-sheets/pdf/DS8059-06.pdf
+publisher: richtek
+document_id: DS8059-06
+document_type: datasheet
+revision: 06
+date: 2016-05

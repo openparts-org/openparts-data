@@ -1,0 +1,28 @@
+# RT8059 1.5-MHz, 1-A PWM step-down converter, TSOT-23-5 pinout. From
+# DS8059-06 "Functional Pin Description" (page 2): EN 1, GND 2, LX 3,
+# VIN 4, FB 5, checked against "Pin Configurations (TOP VIEW)"
+# TSOT-23-5 (page 1). Types from the descriptions: EN "Chip Enable" ->
+# input; GND -> ground; LX "Switch Node" -> passive; VIN "Power Input"
+# -> power; FB "Feedback Input Pin" -> input.
+schema_version: "0.2"
+kind: device
+id: richtek/RT8059-TSOT23-5
+manufacturer: richtek
+category: switching_regulator
+family: RT8059
+source: richtek/DS8059-06
+
+parameters:
+  output_type:    { value: adjustable, src: 'p1 "Features, adjustable output"' }
+  input_voltage_max:
+    max: 5.5 V
+    src: p4 "Recommended Operating Conditions, Supply Input Voltage VIN"
+  output_current: { max: 1 A, src: 'p1 "Features, 1A output current"' }
+
+pins:
+  src: [p2 "Functional Pin Description table", 'p1 "Pin Configurations (TOP VIEW), TSOT-23-5"']
+  "1": { name: EN, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: LX, type: passive }
+  "4": { name: VIN, type: power }
+  "5": { name: FB, type: input }

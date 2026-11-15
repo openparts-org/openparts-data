@@ -1,0 +1,32 @@
+# RT8059, Richtek Green, TSOT-23-5. "RT8059GJ5" is printed verbatim in
+# the RT8059 product page's orderable SKU list (JSON-LD "offers",
+# fetched 2026-11-16) -> existence verified; its fields decode with the
+# DS8059-06 "Ordering Information" legend (page 1): J5 = TSOT-23-5, G =
+# Green (Halogen Free and Pb Free).
+# Package: the "TSOT-23-5 Surface Mount Package" outline on page 11 of
+# DS8059-06 prints the same Min/Max millimetre values in every row (A,
+# A1, B, b, C, D, e, H, L) as the DS9080-09 outline that
+# manufacturers/richtek/TSOT23-5-DS9080 was read from, and the same pin
+# positions (1, 2, 3 along the bottom, 5 above 1, 4 above 3) -> reused.
+# lifecycle: neither source states a production status; unknown.
+schema_version: "0.2"
+kind: part
+id: richtek/RT8059GJ5
+manufacturer: richtek
+mpn: RT8059GJ5
+device: richtek/RT8059-TSOT23-5
+
+package:
+  value: manufacturers/richtek/TSOT23-5-DS9080
+  src: 'p1 "Ordering Information, Package Type J5: TSOT-23-5; outline TSOT-23-5 on page 11"'
+
+sources: [richtek/DS8059-06, richtek/RT8059-product-page, richtek/DS9080-09]
+source: richtek/DS8059-06
+
+existence:
+  status: verified
+  src:
+    - richtek/RT8059-product-page p1 "JSON-LD Product RT8059, offers sku RT8059GJ5"
+    - 'p1 "Ordering Information legend: J5 TSOT-23-5, G Green"'
+
+lifecycle: { status: unknown }

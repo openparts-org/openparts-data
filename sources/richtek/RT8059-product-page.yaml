@@ -1,0 +1,13 @@
+# Richtek RT8059 product page, fetched 2026-11-16 with a plain curl GET.
+# Its JSON-LD "Product" block lists the orderable SKU ("offers") and the
+# package type ("TSOT-25"). No production-status statement found.
+schema_version: "0.2"
+kind: source
+id: richtek/RT8059-product-page
+retrieved: 2026-11-16
+url: https://www.richtek.com/en/product-specifications/rt80/rt8059
+date: 2026-11-16
+publisher: richtek
+document_id: RT8059 product page
+document_type: product_page
+revision: 2026-11-16
