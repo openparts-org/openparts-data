@@ -1,0 +1,33 @@
+# ECS ECS-120-20-33-TR: ECX-32 3.2 x 2.5 mm crystal, 12 MHz, 20 pF, standard
+# options, tape & reel. Listed verbatim in the product page's Ordering &
+# Quality table (row: 33, 3.20mm x 2.50mm, 12 MHz, +-50ppm, +-50ppm,
+# 20pF, -20 ~ 70 C, 100 ohm) -> existence verified; it also decodes per
+# the datasheet's PART NUMBERING GUIDE. lifecycle unknown: neither page
+# states a production status.
+schema_version: "0.2"
+kind: part
+id: ecs/ECS-120-20-33-TR
+manufacturer: ecs
+mpn: ECS-120-20-33-TR
+device: ecs/ECX-32-SERIES
+package: manufacturers/ecs/LGA4-3.2x2.5-ECX-32
+sources: [ecs/ECX-32, ecs/ECX-32-product-page]
+source: ecs/ECX-32
+
+existence:
+  status: verified
+  src: ecs/ECX-32-product-page p1 "Ordering & Quality table, row ECS-120-20-33-TR"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review): frequency and load
+# capacitance from the part-numbering codes, tolerance = the standard
+# (blank) value of the electrical table, ESR from the ESR table.
+parameters:
+  esr: { max: 100 Ω, src: 'p1 "Equivalent Series Resistance table, 10.000 ~ 15.999 MHz row"' }
+  frequency: { typ: 12 MHz, src: 'p2 "DEVELOPED FREQUENCIES, abbreviation 120 = 12.000 MHz"' }
+  load_capacitance: { typ: 20 pF, src: 'p1 "PART NUMBERING GUIDE, LOAD CAPACITANCE 20 = 20 pF"' }
+  frequency_tolerance:
+    tol: ±50 ppm
+    at: { TA: 25 °C }
+    src: p1 "ELECTRICAL CHARACTERISTICS, Frequency Tolerance (Blank = Std in PART NUMBERING GUIDE)"

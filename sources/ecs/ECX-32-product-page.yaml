@@ -1,0 +1,15 @@
+# ECS product page (title "ECX-32 - ECS Inc."), fetched 2026-11-16 with curl.
+# Its "Ordering & Quality" table lists the orderable MPNs of the series
+# with package code, size, frequency, tolerance, stability, load
+# capacitance, operating temperature and ESR. Not versioned:
+# revision/date = fetch date.
+schema_version: "0.2"
+kind: source
+id: ecs/ECX-32-product-page
+retrieved: 2026-11-16
+url: https://ecsxtal.com/ecx-32
+date: 2026-11-16
+publisher: ecs
+document_id: ECX-32 product page
+document_type: product_page
+revision: 2026-11-16

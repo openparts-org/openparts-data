@@ -1,0 +1,46 @@
+# ECS ECX-32 4-pad ceramic crystal package, 3.2 x 2.5 mm, from p1
+# "DIMENSIONS (mm)" Figure 1 and Figure 2 (suggested land pattern) of
+# ecs/ECX-32 (vector drawing, 220/400 dpi renders).
+# Frame: lga, two terminals on each 2.5 mm side, body_width = 3.2 (X).
+# TOP VIEW numbering: #4 top-left, #3 top-right, #1 bottom-left, #2
+# bottom-right -> pad_order [4, 1, 2, 3] in the generator's position
+# order (1 top-left, 2 bottom-left, 3 bottom-right, 4 top-right).
+# Bottom view prints only the gaps between terminals (1.2 in X, 1.0 in Y)
+# and the terminal setback from the body edge (0.1); the terminal size is
+# not printed, so lead_length/lead_width are left out (generator
+# defaults; not derived by subtraction). pitch = the land pattern's
+# printed row pitch 1.8 (Figure 2), taken as the terminal pitch -- the
+# bottom view gives no terminal pitch; a reviewer may want to check it.
+# pads (Figure 2): 1.3 wide (X), 1.1 high (Y), 1.0 gap in X ("2.3"
+# centre to centre), 0.7 gap in Y ("1.8" centre to centre): centres
+# x = +-1.15, y = +-0.9, numbered by the TOP VIEW.
+# Chamfer "C0.3" on the bottom "can be on pad 4 or pad 1": not a pin-1 mark.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ecs/LGA4-3.2x2.5-ECX-32
+family: lga
+lead_count: 4
+
+lead_layout:
+  value: [2, 0, 2, 0]
+  src:   p1 "Figure 1, bottom view, two terminals on each 2.5 mm side"
+
+source: ecs/ECX-32
+
+pitch: { typ: 1.8 mm, src: 'p1 "Figure 2 suggested land pattern, 1.8 (see header)"' }
+pad_order: { value: ["4", "1", "2", "3"], src: 'p1 "Figure 1, TOP VIEW numbering (see header)"' }
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:  { min: 3.1 mm, typ: 3.2 mm, max: 3.3 mm, src: 'p1 "Figure 1, top view 3.2±0.1"' }
+  body_length: { min: 2.4 mm, typ: 2.5 mm, max: 2.6 mm, src: 'p1 "Figure 1, top view 2.5±0.1"' }
+  body_height: { max: 0.8 mm, src: 'p1 "Figure 1, side view 0.8max."' }
+  lead_inset:  { typ: 0.1 mm, src: 'p1 "Figure 1, bottom view, body edge to terminal 0.1"' }
+
+pads:
+  value:
+    - { number: "1", x: -1.15, y: -0.9, width: 1.3, length: 1.1 }
+    - { number: "2", x: 1.15, y: -0.9, width: 1.3, length: 1.1 }
+    - { number: "3", x: 1.15, y: 0.9, width: 1.3, length: 1.1 }
+    - { number: "4", x: -1.15, y: 0.9, width: 1.3, length: 1.1 }
+  src: p1 "Figure 2 suggested land pattern, 1.3 / 1.0 / 2.3, 1.1 / 0.7 / 1.8 (see header)"
