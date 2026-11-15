@@ -1,0 +1,27 @@
+# High-speed CAN transceiver with Standby mode TJA1042 (NXP data sheet
+# Rev. 11). Pin description from Table 3 (page 4), checked against
+# Figure 2 "Pin configuration diagrams" (page 4); types from the Type
+# column (I input, O output, P power, G ground, AIO bus line -> io).
+# STB (Standby mode control input) typed input.
+# Variants TJA1042T/3 and TJA1042BT (SO8): pin 5 VIO (supply for the I/O
+# level adapter, Type P).
+schema_version: "0.2"
+kind: device
+id: nxp/TJA1042T-3
+manufacturer: nxp
+category: can_transceiver
+family: TJA1042
+source: nxp/TJA1042@rev11
+
+pins:
+  src:
+    - p4 "Table 3 "Pin description", pin 5 row for TJA1042T(K)/3 and TJA1042BT(K) (VIO)"
+    - p4 "Figure 2 "TJA1042T/3 / TJA1042BT" SO8 diagram (cross-check)"
+  "1": { name: TXD, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: VCC, type: power }
+  "4": { name: RXD, type: output }
+  "5": { name: VIO, type: power }
+  "6": { name: CANL, type: io }
+  "7": { name: CANH, type: io }
+  "8": { name: STB, type: input }

@@ -1,0 +1,61 @@
+# NXP SOT782-1, HVSON8 ("plastic thermal enhanced very thin small
+# outline package; no leads; 8 terminals; body 3 x 3 x 0.85 mm", JEDEC
+# MO-229), from Figure 12 "Package outline SOT782-1 (HVSON8)" of the
+# TJA1042 data sheet Rev. 11, page 18 (mm dimension table, text
+# extracted). The same outline in the TJA1051 data sheet Rev. 9 (Fig 10,
+# page 16; encoded font) was rendered and compared row by row: every
+# value and the issue date (09-08-28) are identical.
+# Frame (son): D (along the terminal rows: terminals 1-4 and 8-5 are
+# spaced along D) is body_length (Y); E (across the rows) is
+# body_width (X). The exposed pad's Eh (across) is its width and Dh
+# (along) its length. body_height = A (no A2 given). lead_thickness = c
+# "0.2" (nominal only). e1, K, v, w, y, y1 not modelled. No land
+# pattern is printed in the data sheet (no pads recorded).
+schema_version: "0.2"
+kind: package
+id: manufacturers/nxp/SOT782-1
+family: son
+lead_count: { value: 8, src: 'p18 "Figure 12 SOT782-1, terminals 1-4 and 5-8"' }
+source: nxp/TJA1042@rev11
+
+pitch: { typ: 0.65 mm, src: 'p18 "Figure 12 SOT782-1 Dimensions (mm), "e 0.65""' }
+geometry: { type: parametric, generator: son }
+
+dimensions:
+  body_width:
+    min: 2.9 mm
+    typ: 3 mm
+    max: 3.1 mm
+    src: p18 "Figure 12 SOT782-1 Dimensions (mm), "E 2.90 / 3.00 / 3.10" (across the rows)"
+  body_length:
+    min: 2.9 mm
+    typ: 3 mm
+    max: 3.1 mm
+    src: p18 "Figure 12 SOT782-1 Dimensions (mm), "D 2.90 / 3.00 / 3.10" (along the rows)"
+  body_height:
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 1 mm
+    src: p18 "Figure 12 SOT782-1 Dimensions (mm), "A 0.80 / 0.85 / 1.00""
+  exposed_pad:
+    src:    p18 "Figure 12 SOT782-1 Dimensions (mm), Eh (width, across rows), Dh (length, along rows)"
+    width:  { min: 1.55 mm, typ: 1.6 mm, max: 1.65 mm }
+    length: { min: 2.35 mm, typ: 2.4 mm, max: 2.45 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.03 mm
+    max: 0.05 mm
+    src: p18 "Figure 12 SOT782-1 Dimensions (mm), "A1 0.00 / 0.03 / 0.05""
+  lead_width:
+    min: 0.25 mm
+    typ: 0.3 mm
+    max: 0.35 mm
+    src: p18 "Figure 12 SOT782-1 Dimensions (mm), "b 0.25 / 0.30 / 0.35""
+  lead_length:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.45 mm
+    src: p18 "Figure 12 SOT782-1 Dimensions (mm), "L 0.35 / 0.40 / 0.45""
+  lead_thickness:
+    typ: 0.2 mm
+    src: p18 "Figure 12 SOT782-1 Dimensions (mm), "c 0.2" (nominal only)"

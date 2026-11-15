@@ -1,0 +1,26 @@
+# MPN "TJA1051T" (NXP type number) confirmed in Table 2 "Ordering
+# information" of nxp/TJA1051@rev9 (page 2). Device nxp/TJA1051T, package
+# manufacturers/nxp/SOT96-1.
+# SOT96-1 reused: the TJA1051 Fig 9 outline (page 15, rendered; encoded
+# font) was compared row by row with manufacturers/nxp/SOT96-1 (from the
+# LM75B data sheet): every mm value and the issue date match.
+# lifecycle: not stated in the data sheet; no first-party lifecycle
+# page was read, so it is recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/TJA1051T
+manufacturer: nxp
+mpn: TJA1051T
+device: nxp/TJA1051T
+
+package:
+  value: manufacturers/nxp/SOT96-1
+  src:
+    - p2 "Table 2 Ordering information, row TJA1051T, Version SOT96-1"
+    - p15 "Fig 9 Package outline SOT96-1 (SO8)"
+
+sources: [nxp/TJA1051@rev9]
+source: nxp/TJA1051@rev9
+
+existence: { status: verified, src: 'p2 "Table 2 Ordering information, type number TJA1051T"' }
+lifecycle: { status: unknown }

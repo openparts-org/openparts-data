@@ -1,0 +1,24 @@
+# MPN "TJA1042TK/3" (NXP type number) confirmed in Table 2 "Ordering
+# information" of nxp/TJA1042@rev11 (page 3). Device nxp/TJA1042TK-3, package
+# manufacturers/nxp/SOT782-1.
+
+# lifecycle: not stated in the data sheet; no first-party lifecycle
+# page was read, so it is recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/TJA1042TK-3
+manufacturer: nxp
+mpn: TJA1042TK/3
+device: nxp/TJA1042TK-3
+
+package:
+  value: manufacturers/nxp/SOT782-1
+  src:
+    - p3 "Table 2 Ordering information, row TJA1042TK/3, grouped Package cell, Version SOT782-1"
+    - p18 "Figure 12 Package outline SOT782-1 (HVSON8)"
+
+sources: [nxp/TJA1042@rev11]
+source: nxp/TJA1042@rev11
+
+existence: { status: verified, src: 'p3 "Table 2 Ordering information, type number TJA1042TK/3"' }
+lifecycle: { status: unknown }

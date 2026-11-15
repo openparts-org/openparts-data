@@ -1,0 +1,18 @@
+# Official NXP TJA1051 "High-speed CAN transceiver" product data sheet,
+# "Rev. 9 -- 28 November 2017" (footer of every page). Downloaded
+# 2026-11-16 with curl from nxp.com (URL below). 25 PDF pages; tables
+# extract with pdftotext, but the figures (pin diagrams, package
+# outlines on pages 15-16) use an encoded font and were read from the
+# rendered pages. Page numbers are PDF page indices (equal to the
+# printed "n of 25").
+schema_version: "0.2"
+kind: source
+id: nxp/TJA1051@rev9
+sha256: 6637cd500dda3c1c951ce29bed7fe909f11f9a3bef64b096dbb486827add9f11
+retrieved: 2026-11-16
+url: https://www.nxp.com/docs/en/data-sheet/TJA1051.pdf
+publisher: nxp
+document_id: TJA1051
+document_type: datasheet
+revision: "9"
+date: 2017-11-28

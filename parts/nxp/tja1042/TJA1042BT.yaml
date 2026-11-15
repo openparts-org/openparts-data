@@ -1,0 +1,25 @@
+# MPN "TJA1042BT" (NXP type number) confirmed in Table 2 "Ordering
+# information" of nxp/TJA1042@rev11 (page 3). Device nxp/TJA1042T-3, package
+# manufacturers/nxp/SOT96-1.
+# SOT96-1 reused: the Figure 11 dimension table (page 17) matches
+# manufacturers/nxp/SOT96-1 (from the LM75B data sheet) value for value.
+# lifecycle: not stated in the data sheet; no first-party lifecycle
+# page was read, so it is recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/TJA1042BT
+manufacturer: nxp
+mpn: TJA1042BT
+device: nxp/TJA1042T-3
+
+package:
+  value: manufacturers/nxp/SOT96-1
+  src:
+    - p3 "Table 2 Ordering information, row TJA1042BT, grouped Package cell, Version SOT96-1"
+    - p17 "Figure 11 Package outline SOT96-1 (SO8)"
+
+sources: [nxp/TJA1042@rev11]
+source: nxp/TJA1042@rev11
+
+existence: { status: verified, src: 'p3 "Table 2 Ordering information, type number TJA1042BT"' }
+lifecycle: { status: unknown }

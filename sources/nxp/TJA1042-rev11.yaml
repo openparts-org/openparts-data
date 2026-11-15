@@ -1,0 +1,17 @@
+# Official NXP TJA1042 "High-speed CAN transceiver with Standby mode"
+# product data sheet, "Rev. 11 -- 16 January 2023" (footer of every
+# page). Downloaded 2026-11-16 with curl from nxp.com (URL below). 27
+# PDF pages, read with pdftotext -layout (package outline tables on
+# pages 17-18 extract intact). Page numbers are PDF page indices (equal
+# to the printed "n / 27").
+schema_version: "0.2"
+kind: source
+id: nxp/TJA1042@rev11
+sha256: aac9491f00e594362d884ca25bf09ad6391cebc25b261f960a7b7e9282c205d2
+retrieved: 2026-11-16
+url: https://www.nxp.com/docs/en/data-sheet/TJA1042.pdf
+publisher: nxp
+document_id: TJA1042
+document_type: datasheet
+revision: "11"
+date: 2023-01-16

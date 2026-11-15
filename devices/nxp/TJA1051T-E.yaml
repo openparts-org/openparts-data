@@ -1,0 +1,25 @@
+# High-speed CAN transceiver TJA1051 (NXP data sheet Rev. 9). Pin
+# description from Table 3 (page 4) -- text-extracted -- checked against
+# the rendered Fig 2 "Pin configuration diagrams" (page 4, encoded font).
+# S (Silent mode control input) typed input; CANH/CANL bus lines io.
+# Variant TJA1051T/E (SO8): pin 5 EN (enable control input).
+schema_version: "0.2"
+kind: device
+id: nxp/TJA1051T-E
+manufacturer: nxp
+category: can_transceiver
+family: TJA1051
+source: nxp/TJA1051@rev9
+
+pins:
+  src:
+    - p4 "Table 3 "Pin description", pin 5 row for TJA1051T/E (EN)"
+    - p4 "Fig 2b "TJA1051T/E - SO8" (cross-check)"
+  "1": { name: TXD, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: VCC, type: power }
+  "4": { name: RXD, type: output }
+  "5": { name: EN, type: input }
+  "6": { name: CANL, type: io }
+  "7": { name: CANH, type: io }
+  "8": { name: S, type: input }
