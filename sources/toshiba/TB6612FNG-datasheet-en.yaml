@@ -1,0 +1,19 @@
+# Official Toshiba TB6612FNG datasheet (English), "Driver IC for Dual DC
+# motor", downloaded 2026-11-16 with curl from the English data-sheet
+# link on Toshiba's TB6612FNG product page (docget.jsp?did=10660;
+# did=10661 is the Japanese edition). No document number or revision
+# letter is printed; the revision is the page-footer date "2026-05-13".
+# 11 PDF pages; read with pdftotext -layout; the SSOP24-P-300-0.65A
+# outline (page 8) is an image and was rendered (pdftoppm 200 dpi) and
+# read. Page numbers are PDF page indices (equal to the printed ones).
+schema_version: "0.2"
+kind: source
+id: toshiba/TB6612FNG-datasheet-en
+sha256: fdea3a0bdfc09d4f09639affac8a56395dc066662641ecab31e1df83e450b966
+retrieved: 2026-11-16
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=10660&prodName=TB6612FNG
+publisher: toshiba
+document_id: TB6612FNG_datasheet_en
+document_type: datasheet
+revision: 2026-05-13
+date: 2026-05-13

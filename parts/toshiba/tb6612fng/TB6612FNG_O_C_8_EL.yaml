@@ -1,0 +1,25 @@
+# TB6612FNG in SSOP24 (SSOP24-P-300-0.65A, datasheet page 8). The order
+# code "TB6612FNG(O,C,8,EL" is listed under "Orderable part number
+# (example)" on Toshiba's TB6612FNG product page; the page says listed
+# numbers are representative and may not be sold in that exact form,
+# and the datasheet has no ordering table -> existence `probable`.
+# Lifecycle `unknown`: neither source states a status for this part.
+schema_version: "0.2"
+kind: part
+id: toshiba/TB6612FNG(O,C,8,EL
+manufacturer: toshiba
+mpn: TB6612FNG(O,C,8,EL
+device: toshiba/TB6612FNG
+
+package:
+  value: manufacturers/toshiba/SSOP24-P-300-0.65A
+  src: p8 "Package Dimensions, SSOP24-P-300-0.65A"
+
+sources: [toshiba/TB6612FNG-datasheet-en, toshiba/TB6612FNG-product-page]
+source: toshiba/TB6612FNG-datasheet-en
+
+existence:
+  status: probable
+  src: toshiba/TB6612FNG-product-page p1 "Orderable part number (example), TB6612FNG(O,C,8,EL"
+
+lifecycle: { status: unknown }

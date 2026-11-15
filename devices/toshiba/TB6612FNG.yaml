@@ -1,0 +1,41 @@
+# TB6612FNG dual DC-motor driver IC, SSOP24. Pin map from the "Pin
+# Functions" table (datasheet 2026-05-13, page 2). The table lists the
+# paired output and power-ground pins (1-2 AO1, 3-4 PGND1, 5-6 AO2, 7-8
+# BO2, 9-10 PGND2, 11-12 BO1) as one function each but does not state
+# they are internally connected: the output pairs are typed power so
+# the duplicate names are allowed (flagged for review), PGND ground.
+# VM1/VM2/VM3 "Motor supply"; Vcc "Small signal supply".
+schema_version: "0.2"
+kind: device
+id: toshiba/TB6612FNG
+manufacturer: toshiba
+category: driver
+family: TB6612FNG
+source: toshiba/TB6612FNG-datasheet-en
+
+pins:
+  src:  p2 "Pin Functions (No. 1-24)"
+  "1":  { name: AO1, type: power }
+  "2":  { name: AO1, type: power }
+  "3":  { name: PGND1, type: ground }
+  "4":  { name: PGND1, type: ground }
+  "5":  { name: AO2, type: power }
+  "6":  { name: AO2, type: power }
+  "7":  { name: BO2, type: power }
+  "8":  { name: BO2, type: power }
+  "9":  { name: PGND2, type: ground }
+  "10": { name: PGND2, type: ground }
+  "11": { name: BO1, type: power }
+  "12": { name: BO1, type: power }
+  "13": { name: VM2, type: power }
+  "14": { name: VM3, type: power }
+  "15": { name: PWMB, type: input }
+  "16": { name: BIN2, type: input }
+  "17": { name: BIN1, type: input }
+  "18": { name: GND, type: ground }
+  "19": { name: STBY, type: input }
+  "20": { name: Vcc, type: power }
+  "21": { name: AIN1, type: input }
+  "22": { name: AIN2, type: input }
+  "23": { name: PWMA, type: input }
+  "24": { name: VM1, type: power }
