@@ -89,8 +89,8 @@ pins:
   "63": { name: VREG_LX, type: output }
   "64": { name: VREG_VIN, type: power }
   "65": { name: VREG_FB, type: input }
-  "66": { name: USB_DM, type: io }
-  "67": { name: USB_DP, type: io }
+  "66": { name: USB_DM, type: io, diff_pair: { partner: "67", polarity: n, standard: usb2 } }
+  "67": { name: USB_DP, type: io, diff_pair: { partner: "66", polarity: p, standard: usb2 } }
   "68": { name: USB_OTP_VDD, type: power }
   "69": { name: QSPI_IOVDD, type: power }
   "70": { name: QSPI_SD3, type: io }
@@ -107,6 +107,20 @@ pins:
   "EP": { name: GND, type: ground }
 
 provenance:
+  "/pins/67/diff_pair":
+    - source: raspberrypi/RP-008373-DS@rev3
+      page: 1335
+      locator: "Table 1678 \"USB pins\": USB_DP 52 (QFN-60) / 67 (QFN-80) \"USB Data +ve\", USB_DM 51 / 66 \"USB Data -ve\""
+    - source: raspberrypi/RP-008373-DS@rev3
+      page: 1062
+      locator: "USB PHY: \"The DP and DM pins are a differential pair\""
+  "/pins/66/diff_pair":
+    - source: raspberrypi/RP-008373-DS@rev3
+      page: 1335
+      locator: "Table 1678 \"USB pins\": USB_DP 52 (QFN-60) / 67 (QFN-80) \"USB Data +ve\", USB_DM 51 / 66 \"USB Data -ve\""
+    - source: raspberrypi/RP-008373-DS@rev3
+      page: 1062
+      locator: "USB PHY: \"The DP and DM pins are a differential pair\""
   "/pins/1/name":
     - source: raspberrypi/RP-008373-DS@rev3
       page: 1333

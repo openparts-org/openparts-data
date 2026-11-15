@@ -62,8 +62,8 @@ pins:
   "48": { name: VREG_LX, type: output }
   "49": { name: VREG_VIN, type: power }
   "50": { name: VREG_FB, type: input }
-  "51": { name: USB_DM, type: io }
-  "52": { name: USB_DP, type: io }
+  "51": { name: USB_DM, type: io, diff_pair: { partner: "52", polarity: n, standard: usb2 } }
+  "52": { name: USB_DP, type: io, diff_pair: { partner: "51", polarity: p, standard: usb2 } }
   "53": { name: USB_OTP_VDD, type: power }
   "54": { name: QSPI_IOVDD, type: power }
   "55": { name: QSPI_SD3, type: io }
@@ -88,6 +88,20 @@ revisions:
     manufacturer_revision: "A2"
 
 provenance:
+  "/pins/52/diff_pair":
+    - source: raspberrypi/RP-008373-DS@rev3
+      page: 1335
+      locator: "Table 1678 \"USB pins\": USB_DP 52 (QFN-60) / 67 (QFN-80) \"USB Data +ve\", USB_DM 51 / 66 \"USB Data -ve\""
+    - source: raspberrypi/RP-008373-DS@rev3
+      page: 1062
+      locator: "USB PHY: \"The DP and DM pins are a differential pair\""
+  "/pins/51/diff_pair":
+    - source: raspberrypi/RP-008373-DS@rev3
+      page: 1335
+      locator: "Table 1678 \"USB pins\": USB_DP 52 (QFN-60) / 67 (QFN-80) \"USB Data +ve\", USB_DM 51 / 66 \"USB Data -ve\""
+    - source: raspberrypi/RP-008373-DS@rev3
+      page: 1062
+      locator: "USB PHY: \"The DP and DM pins are a differential pair\""
   "/pins/1/name":
     - source: raspberrypi/RP-008374-DS@rev1
       locator: "Pin legend / RP2350 Minimal KiCad schematic symbol"

@@ -65,8 +65,8 @@ pins:
   "43": { name: ADC_AVDD, type: power }
   "44": { name: VREG_VIN, type: power }
   "45": { name: VREG_VOUT, type: power_out }
-  "46": { name: USB_DM, type: io }
-  "47": { name: USB_DP, type: io }
+  "46": { name: USB_DM, type: io, diff_pair: { partner: "47", polarity: n, standard: usb2 } }
+  "47": { name: USB_DP, type: io, diff_pair: { partner: "46", polarity: p, standard: usb2 } }
   "48": { name: USB_VDD, type: power }
   "49": { name: IOVDD, type: power }
   "50": { name: DVDD, type: power }
@@ -104,6 +104,20 @@ revisions:
         register: CHIP_ID
 
 provenance:
+  "/pins/47/diff_pair":
+    - source: raspberrypi/RP-008371-DS@rev1
+      page: 615
+      locator: "Table 620 \"USB pins\": USB_DP 47 \"USB Data +ve\", USB_DM 46 \"USB Data -ve\""
+    - source: raspberrypi/RP-008371-DS@rev1
+      page: 385
+      locator: "4.1.2.3 USB PHY: \"DP and DM pins are a differential pair\""
+  "/pins/46/diff_pair":
+    - source: raspberrypi/RP-008371-DS@rev1
+      page: 615
+      locator: "Table 620 \"USB pins\": USB_DP 47 \"USB Data +ve\", USB_DM 46 \"USB Data -ve\""
+    - source: raspberrypi/RP-008371-DS@rev1
+      page: 385
+      locator: "4.1.2.3 USB PHY: \"DP and DM pins are a differential pair\""
   "/pins/1/name":
     - source: raspberrypi/RP-008371-DS@rev1
       locator: "Chapter 5.5.2, Table 615-621"

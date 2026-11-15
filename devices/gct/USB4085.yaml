@@ -15,22 +15,38 @@ pins:
   "A1": { name: GND, type: ground }
   "A4": { name: VBUS, type: power }
   "A5": { name: CC1, type: passive }
-  "A6": { name: Dp1, type: passive }
-  "A7": { name: Dn1, type: passive }
+  "A6": { name: Dp1, type: passive, diff_pair: { partner: "A7", polarity: p, standard: usb2 } }
+  "A7": { name: Dn1, type: passive, diff_pair: { partner: "A6", polarity: n, standard: usb2 } }
   "A8": { name: SBU1, type: passive }
   "A9": { name: VBUS, type: power }
   "A12": { name: GND, type: ground }
   "B12": { name: GND, type: ground }
   "B9": { name: VBUS, type: power }
   "B8": { name: SBU2, type: passive }
-  "B7": { name: Dn2, type: passive }
-  "B6": { name: Dp2, type: passive }
+  "B7": { name: Dn2, type: passive, diff_pair: { partner: "B6", polarity: n, standard: usb2 } }
+  "B6": { name: Dp2, type: passive, diff_pair: { partner: "B7", polarity: p, standard: usb2 } }
   "B5": { name: CC2, type: passive }
   "B4": { name: VBUS, type: power }
   "B1": { name: GND, type: ground }
   "SHELL": { name: GND, type: ground }
 
 provenance:
+  "/pins/A6/diff_pair":
+    - source: gct/USB4085-DWG
+      page: 1
+      locator: "Pin table: \"A6 Dp1\", \"A7 Dn1\", \"B6 Dp2\", \"B7 Dn2\" (D+/D- of each USB 2.0 contact row)"
+  "/pins/A7/diff_pair":
+    - source: gct/USB4085-DWG
+      page: 1
+      locator: "Pin table: \"A6 Dp1\", \"A7 Dn1\", \"B6 Dp2\", \"B7 Dn2\" (D+/D- of each USB 2.0 contact row)"
+  "/pins/B6/diff_pair":
+    - source: gct/USB4085-DWG
+      page: 1
+      locator: "Pin table: \"A6 Dp1\", \"A7 Dn1\", \"B6 Dp2\", \"B7 Dn2\" (D+/D- of each USB 2.0 contact row)"
+  "/pins/B7/diff_pair":
+    - source: gct/USB4085-DWG
+      page: 1
+      locator: "Pin table: \"A6 Dp1\", \"A7 Dn1\", \"B6 Dp2\", \"B7 Dn2\" (D+/D- of each USB 2.0 contact row)"
   "/pins":
     - source: gct/USB4085-DWG
       page: 1

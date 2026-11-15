@@ -21,6 +21,9 @@ manufacturer: espressif
 category: microcontroller
 family: ESP32-H2
 
+# diff_pair on the USB_D-/USB_D+ pins records the datasheet's default
+# assignment; its pin-function tables note that D- and D+ can be swapped
+# by an eFuse / register bit (Technical Reference Manual).
 pins:
   "1":  { name: VDD3P3, type: power }
   "2":  { name: VDD3P3, type: power }
@@ -46,8 +49,8 @@ pins:
   "22": { name: U0RXD, type: io, alternate_functions: [GPIO23] }
   "23": { name: U0TXD, type: io, alternate_functions: [GPIO24] }
   "24": { name: GPIO25, type: io }
-  "25": { name: GPIO26, type: io, alternate_functions: [USB_D-] }
-  "26": { name: GPIO27, type: io, alternate_functions: [USB_D+] }
+  "25": { name: GPIO26, type: io, alternate_functions: [USB_D-], diff_pair: { partner: "26", polarity: n, standard: usb2, function: USB_D- } }
+  "26": { name: GPIO27, type: io, alternate_functions: [USB_D+], diff_pair: { partner: "25", polarity: p, standard: usb2, function: USB_D+ } }
   "27": { name: VDD3P3, type: power }
   "28": { name: XTAL_N, type: clock }
   "29": { name: XTAL_P, type: clock }
@@ -57,6 +60,14 @@ pins:
   "EP": { name: GND, type: ground }
 
 provenance:
+  "/pins/26/diff_pair":
+    - source: espressif/esp32-h2_datasheet_en@rev1.3
+      page: 17
+      locator: "Table 2-4 \"Analog Signals Routed to Analog Functions\": USB_D- \"Data - (negative USB signal)\", USB_D+ \"Data + (positive USB signal)\"; Table 2-5 \"Analog Functions\": pin 25 GPIO26 USB_D-, pin 26 GPIO27 USB_D+"
+  "/pins/25/diff_pair":
+    - source: espressif/esp32-h2_datasheet_en@rev1.3
+      page: 17
+      locator: "Table 2-4 \"Analog Signals Routed to Analog Functions\": USB_D- \"Data - (negative USB signal)\", USB_D+ \"Data + (positive USB signal)\"; Table 2-5 \"Analog Functions\": pin 25 GPIO26 USB_D-, pin 26 GPIO27 USB_D+"
   "/pins/1/name":
     - source: espressif/esp32-h2_datasheet_en@rev1.3
       page: 13

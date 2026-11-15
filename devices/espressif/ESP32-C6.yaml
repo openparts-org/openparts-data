@@ -10,6 +10,9 @@ manufacturer: espressif
 category: microcontroller
 family: ESP32-C6
 
+# diff_pair on the USB_D-/USB_D+ pins records the datasheet's default
+# assignment; its pin-function tables note that D- and D+ can be swapped
+# by an eFuse / register bit (Technical Reference Manual).
 pins:
   "1":  { name: ANT, type: analog }
   "2":  { name: VDDA3P3, type: power }
@@ -28,8 +31,8 @@ pins:
   "15": { name: GPIO9, type: io }
   "16": { name: GPIO10, type: io }
   "17": { name: GPIO11, type: io }
-  "18": { name: GPIO12, type: io, alternate_functions: [USB_D_MINUS] }
-  "19": { name: GPIO13, type: io, alternate_functions: [USB_D_PLUS] }
+  "18": { name: GPIO12, type: io, alternate_functions: [USB_D_MINUS], diff_pair: { partner: "19", polarity: n, standard: usb2, function: USB_D_MINUS } }
+  "19": { name: GPIO13, type: io, alternate_functions: [USB_D_PLUS], diff_pair: { partner: "18", polarity: p, standard: usb2, function: USB_D_PLUS } }
   "20": { name: SPICS0, type: io, alternate_functions: [GPIO24] }
   "21": { name: SPIQ, type: io, alternate_functions: [GPIO25] }
   "22": { name: SPIWP, type: io, alternate_functions: [GPIO26] }
@@ -67,6 +70,14 @@ revisions:
     manufacturer_revision: "v0.2"
 
 provenance:
+  "/pins/19/diff_pair":
+    - source: espressif/esp32-c6_datasheet_en@rev1.6
+      page: 23
+      locator: "Table 2-8 \"Analog Signals Routed to Analog Functions\": USB_D- \"Data -\", USB_D+ \"Data +\"; Table 2-9 \"Analog Functions\": pin 18 GPIO12 USB_D-, pin 19 GPIO13 USB_D+"
+  "/pins/18/diff_pair":
+    - source: espressif/esp32-c6_datasheet_en@rev1.6
+      page: 23
+      locator: "Table 2-8 \"Analog Signals Routed to Analog Functions\": USB_D- \"Data -\", USB_D+ \"Data +\"; Table 2-9 \"Analog Functions\": pin 18 GPIO12 USB_D-, pin 19 GPIO13 USB_D+"
   "/pins/1/name":
     - source: espressif/esp32-c6_datasheet_en@rev1.5
       locator: "Table 2-1 QFN40 Pin Overview, p.16-17"

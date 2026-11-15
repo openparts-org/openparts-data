@@ -24,8 +24,8 @@ family: megaAVR
 pins:
   "1":  { name: PE6, type: io }
   "2":  { name: UVCC, type: power }
-  "3":  { name: D-, type: io }
-  "4":  { name: D+, type: io }
+  "3":  { name: D-, type: io, diff_pair: { partner: "4", polarity: n, standard: usb2 } }
+  "4":  { name: D+, type: io, diff_pair: { partner: "3", polarity: p, standard: usb2 } }
   "5":  { name: UGND, type: ground }
   "6":  { name: UCAP, type: power }
   "7":  { name: VBUS, type: input }
@@ -68,6 +68,20 @@ pins:
   "44": { name: AVCC, type: power }
 
 provenance:
+  "/pins/4/diff_pair":
+    - source: microchip/7766@revJ
+      page: 6
+      locator: "2.2.8 D-: \"USB Full speed / Low Speed Negative Data Upstream Port\"; 2.2.9 D+: \"USB Full speed / Low Speed Positive Data Upstream Port\""
+    - source: microchip/7766@revJ
+      page: 259
+      locator: "21.5 Design Guidelines: USB data traces \"follow differential traces routing rules (same length, as near as possible...)\""
+  "/pins/3/diff_pair":
+    - source: microchip/7766@revJ
+      page: 6
+      locator: "2.2.8 D-: \"USB Full speed / Low Speed Negative Data Upstream Port\"; 2.2.9 D+: \"USB Full speed / Low Speed Positive Data Upstream Port\""
+    - source: microchip/7766@revJ
+      page: 259
+      locator: "21.5 Design Guidelines: USB data traces \"follow differential traces routing rules (same length, as near as possible...)\""
   "/pins/1/name":
     - source: microchip/7766@revJ
       page: 3

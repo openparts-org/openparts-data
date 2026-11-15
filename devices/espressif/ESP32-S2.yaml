@@ -21,6 +21,9 @@ manufacturer: espressif
 category: microcontroller
 family: ESP32-S2
 
+# diff_pair on the USB_D-/USB_D+ pins records the datasheet's default
+# assignment; its pin-function tables note that D- and D+ can be swapped
+# by an eFuse / register bit (Technical Reference Manual).
 pins:
   "1":  { name: VDDA, type: power }
   "2":  { name: LNA_IN, type: analog }
@@ -46,8 +49,8 @@ pins:
   "22": { name: XTAL_32K_N, type: clock }
   "23": { name: DAC_1, type: analog }
   "24": { name: DAC_2, type: analog }
-  "25": { name: GPIO19, type: io }
-  "26": { name: GPIO20, type: io }
+  "25": { name: GPIO19, type: io, alternate_functions: [USB_D-], diff_pair: { partner: "26", polarity: n, standard: usb2, function: USB_D- } }
+  "26": { name: GPIO20, type: io, alternate_functions: [USB_D+], diff_pair: { partner: "25", polarity: p, standard: usb2, function: USB_D+ } }
   "27": { name: VDD3P3_RTC_IO, type: power }
   "28": { name: GPIO21, type: io }
   "29": { name: SPICS1, type: io }
@@ -80,6 +83,22 @@ pins:
   "56": { name: CHIP_PU, type: reset }
 
 provenance:
+  "/pins/26/diff_pair":
+    - source: espressif/esp32-s2_datasheet_en@rev1.9
+      page: 21
+      locator: "Table 2-7 \"Analog Signals Routed to Analog Functions\": USB_D- \"Data -\", USB_D+ \"Data +\"; Table 2-8 \"Analog Functions\": pin 25 RTC_GPIO19 USB_D-, pin 26 RTC_GPIO20 USB_D+"
+  "/pins/26/alternate_functions":
+    - source: espressif/esp32-s2_datasheet_en@rev1.9
+      page: 21
+      locator: "Table 2-7 \"Analog Signals Routed to Analog Functions\": USB_D- \"Data -\", USB_D+ \"Data +\"; Table 2-8 \"Analog Functions\": pin 25 RTC_GPIO19 USB_D-, pin 26 RTC_GPIO20 USB_D+"
+  "/pins/25/diff_pair":
+    - source: espressif/esp32-s2_datasheet_en@rev1.9
+      page: 21
+      locator: "Table 2-7 \"Analog Signals Routed to Analog Functions\": USB_D- \"Data -\", USB_D+ \"Data +\"; Table 2-8 \"Analog Functions\": pin 25 RTC_GPIO19 USB_D-, pin 26 RTC_GPIO20 USB_D+"
+  "/pins/25/alternate_functions":
+    - source: espressif/esp32-s2_datasheet_en@rev1.9
+      page: 21
+      locator: "Table 2-7 \"Analog Signals Routed to Analog Functions\": USB_D- \"Data -\", USB_D+ \"Data +\"; Table 2-8 \"Analog Functions\": pin 25 RTC_GPIO19 USB_D-, pin 26 RTC_GPIO20 USB_D+"
   "/pins/1/name":
     - source: espressif/esp32-s2_datasheet_en@rev1.9
       locator: "Table 2-1 Pin Overview"
