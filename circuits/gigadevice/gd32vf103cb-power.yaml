@@ -37,12 +37,12 @@ roles:
     level:    { value: recommended, word: recommended, src: p49 "Figure 4-1" }
   C_VDDA_10N:
     requires: { category: capacitor, capacitance: { typ: 10 nF }, src: p49 "Figure 4-1" }
-    pins:     { "1": host.VDDA, "2": host.VSSA }
+    pins:     { "1": host.VDDA, "2": GND }
     place:    { near: host.VDDA, src: 'p49 "Figure 4-1, note 2"' }
     level:    { value: recommended, word: recommended, src: p49 "Figure 4-1" }
   C_VDDA_1U:
     requires: { category: capacitor, capacitance: { typ: 1 uF }, src: p49 "Figure 4-1" }
-    pins:     { "1": host.VDDA, "2": host.VSSA }
+    pins:     { "1": host.VDDA, "2": GND }
     place:    { near: host.VDDA, src: 'p49 "Figure 4-1, note 2"' }
     level:    { value: recommended, word: recommended, src: p49 "Figure 4-1" }
   C_VDD_1:
