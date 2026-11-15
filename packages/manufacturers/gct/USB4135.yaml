@@ -1,0 +1,58 @@
+# GCT USB4135 power-only Type-C receptacle, horizontal SMT: 6 contacts on
+# 6 SMD pads + 4 SMD shell tabs, from page 1 of gct/USB4135-DWG
+# (revision A2, 13/09/24).
+# Frame (usb_c): top view, X right, Y up, opening toward +Y; the source's
+# "Recommended PCB Layout" (receptacle front at the bottom, pad labels
+# B12 B9 A5 B5 A9 A12 from left to right, matching the front view's
+# A12/B12 sides) is turned 180° (x -> -x, y -> -y). Origin: receptacle
+# centre line / centre line of the front shell pads.
+# Shell: "8.94" wide (top view), "6.90±0.15" long and "3.16" high (side
+# view); the top view puts the front face "2.85" in front of the front
+# tab centre line: centre y = 2.85 - 6.90/2 = -0.6.
+# The layout draws no PCB edge; no `edge` is recorded.
+# Values printed without a tolerance carry the title block's general
+# tolerance (not recorded as min/max).
+schema_version: "0.2"
+kind: package
+id: manufacturers/gct/USB4135
+family: usb_c
+lead_count: { value: 10, src: 'p1 "Recommended PCB Layout, 6 contact pads, 4 shell pads"' }
+source: gct/USB4135-DWG
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: usb_c }
+
+dimensions:
+  body_width:  { typ: 8.94 mm, src: 'p1 "Top view, shell width "8.94""' }
+  body_length:
+    min: 6.75 mm
+    typ: 6.9 mm
+    max: 7.05 mm
+    src: p1 "Side view, length "6.90±0.15""
+  body_height: { typ: 3.16 mm, src: 'p1 "Side view, height "3.16""' }
+  body_offset:
+    typ: -0.6 mm
+    src: p1 "Top view, front face to front tab "2.85"; side view length "6.90" (see header)"
+
+# pads (Recommended PCB Layout, tolerance ±0.05, turned 180°):
+# X: "5.50" B12-A12 centres -> ±2.75; "3.04" B9-A9 -> ±1.52; "1.00"
+# A5-B5 -> ±0.5; then x -> -x. Widths "2x 0.80" (B12/A12), "2x 0.76"
+# (B9/A9), "2x 0.70" (A5/B5); length "1.20".
+# Shell pads: "10.25" outer span, "4x 1.80" wide -> x = ±(10.25/2 -
+# 1.80/2) = ±4.225; front pads "2x 1.50" long at y 0, rear pads
+# "2x 1.35" long "3.58" behind -> y -3.58.
+# Y of the contact pads: their front edge lies "0.13" behind the rear
+# shell pads' front edge -> -3.58 + 1.35/2 - 0.13 - 1.20/2 = -3.635.
+pads:
+  value:
+    - { number: B12, x: 2.75, y: -3.635, width: 0.8, length: 1.2 }
+    - { number: B9, x: 1.52, y: -3.635, width: 0.76, length: 1.2 }
+    - { number: A5, x: 0.5, y: -3.635, width: 0.7, length: 1.2 }
+    - { number: B5, x: -0.5, y: -3.635, width: 0.7, length: 1.2 }
+    - { number: A9, x: -1.52, y: -3.635, width: 0.76, length: 1.2 }
+    - { number: A12, x: -2.75, y: -3.635, width: 0.8, length: 1.2 }
+    - { number: SHELL, x: 4.225, y: -3.58, width: 1.8, length: 1.35 }
+    - { number: SHELL, x: -4.225, y: -3.58, width: 1.8, length: 1.35 }
+    - { number: SHELL, x: 4.225, y: 0, width: 1.8, length: 1.5 }
+    - { number: SHELL, x: -4.225, y: 0, width: 1.8, length: 1.5 }
+  src: p1 "Recommended PCB Layout (see comment above)"

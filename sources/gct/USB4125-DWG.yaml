@@ -1,0 +1,22 @@
+# GCT product drawing USB4125, "Type C Receptacle, Horizontal, SMT, For
+# Power Charging Only" (contacts SMT, shell stakes through-hole). 2 pages;
+# page 1 drawing, "Recommended PCB Layout" ("Tolerance: ±0.05mm"; legend
+# "Solder Area" / "Component Outline"), pin table, specifications,
+# "Ordering Grid"; page 2 packaging. Fetched with curl
+# (gct.co/files/drawings), 2026-11-16.
+# Title block: Part Number "USB4125", Drawing Date "29th September 2020",
+# Revision "A6", Date "20/11/25" (DD/MM/YY = 2025-11-20; PDF ModDate
+# 2025-11-21), 3rd angle projection, units mm, general tolerances by
+# decimal places. A4 landscape; PDF page index = sheet number. Dimensions
+# read from 300 dpi renders.
+schema_version: "0.2"
+kind: source
+id: gct/USB4125-DWG
+sha256: ea33e0b40545e545bf698cbac3bb1c0f5a3fc7ca6b5b7fda83a63134d4affaa7
+retrieved: 2026-11-16
+url: https://gct.co/files/drawings/usb4125.pdf
+publisher: gct
+document_id: USB4125
+document_type: datasheet
+revision: A6
+date: 2025-11-20

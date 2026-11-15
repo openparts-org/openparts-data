@@ -1,0 +1,71 @@
+# GCT USB4216 USB 2.0 Type-C receptacle, SMT, PCB top mount: 16 contacts
+# on 12 SMD pads + 4 SMD shell tabs + 2 locating-peg holes, from page 1
+# of gct/USB4216-DWG (revision A2, 28/07/25).
+# Frame (usb_c): top view, X right, Y up, opening toward +Y; the source's
+# "Recommended PCB Layout" (component side, receptacle front at the
+# bottom) is turned 180° (x -> -x, y -> -y). Origin: receptacle centre
+# line / centre line of the front shell pads. Arithmetic above pads.
+# Shell: "8.94" wide and "6.50" long (top view), "3.16" high (side view);
+# the top view puts the front face "2.10" in front of the front tab
+# centre line: centre y = 2.10 - 6.50/2 = -1.15.
+# The solid line under the layout (2.10 in front of the front shell
+# pads) is the component outline's front face; it is not labelled as a
+# PCB edge, so no `edge` is recorded.
+# The two "2x Ø0.65" holes are not hatched as "Solder Area" in the
+# layout legend: recorded as non-plated locating-peg holes.
+# Values printed without a tolerance carry the title block's general
+# tolerance (not recorded as min/max).
+schema_version: "0.2"
+kind: package
+id: manufacturers/gct/USB4216
+family: usb_c
+
+lead_count:
+  value: 18
+  src: p1 "Recommended PCB Layout, 12 contact pads, 4 shell pads, 2 peg holes"
+
+source: gct/USB4216-DWG
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: usb_c }
+
+dimensions:
+  body_width:  { typ: 8.94 mm, src: 'p1 "Top view, shell width "8.94""' }
+  body_length: { typ: 6.5 mm, src: 'p1 "Top view, shell length "6.50""' }
+  body_height: { typ: 3.16 mm, src: 'p1 "Side view, height "3.16""' }
+  body_offset:
+    typ: -1.15 mm
+    src: p1 "Top view, front face to front tab "2.10", length "6.50" (see header)"
+
+# pads (Recommended PCB Layout, tolerance ±0.05, turned 180°):
+# Signal X: 6.40 outer centres -> ±3.2; 4.80 A4/B9-B4/A9 -> ±2.4;
+# "7x 0.50" pitch of the 8 inner pads -> ±1.75, ±1.25, ±0.75, ±0.25;
+# then x -> -x. Widths 4x 0.60 (double-labelled), 8x 0.30; length
+# "12x 1.15". Y: "12x 4.00" front shell-pad centre line to the pads'
+# front edge -> y = -(4.00 + 1.15/2) = -4.575.
+# Shell pads: "10.19" outer span, "4x 1.55" wide -> x = ±(10.19/2 -
+# 1.55/2) = ±4.32; front pads "2x 1.50" long at y 0, rear pads "2x 1.25"
+# long "3.925" behind -> y -3.925.
+# Peg holes: "2x Ø0.65", "6.00" apart -> x ±3.0, "3.30" behind the front
+# shell-pad centre line -> y -3.3.
+pads:
+  value:
+    - { number: A1, x: 3.2, y: -4.575, width: 0.6, length: 1.15 }
+    - { number: A4, x: 2.4, y: -4.575, width: 0.6, length: 1.15 }
+    - { number: B8, x: 1.75, y: -4.575, width: 0.3, length: 1.15 }
+    - { number: A5, x: 1.25, y: -4.575, width: 0.3, length: 1.15 }
+    - { number: B7, x: 0.75, y: -4.575, width: 0.3, length: 1.15 }
+    - { number: A6, x: 0.25, y: -4.575, width: 0.3, length: 1.15 }
+    - { number: A7, x: -0.25, y: -4.575, width: 0.3, length: 1.15 }
+    - { number: B6, x: -0.75, y: -4.575, width: 0.3, length: 1.15 }
+    - { number: A8, x: -1.25, y: -4.575, width: 0.3, length: 1.15 }
+    - { number: B5, x: -1.75, y: -4.575, width: 0.3, length: 1.15 }
+    - { number: A9, x: -2.4, y: -4.575, width: 0.6, length: 1.15 }
+    - { number: A12, x: -3.2, y: -4.575, width: 0.6, length: 1.15 }
+    - { number: SHELL, x: 4.32, y: -3.925, width: 1.55, length: 1.25 }
+    - { number: SHELL, x: -4.32, y: -3.925, width: 1.55, length: 1.25 }
+    - { number: SHELL, x: 4.32, y: 0, width: 1.55, length: 1.5 }
+    - { number: SHELL, x: -4.32, y: 0, width: 1.55, length: 1.5 }
+    - { number: "", x: 3, y: -3.3, width: 0.65, length: 0.65, drill: 0.65, plated: false }
+    - { number: "", x: -3, y: -3.3, width: 0.65, length: 0.65, drill: 0.65, plated: false }
+  src: p1 "Recommended PCB Layout (see comment above)"

@@ -1,0 +1,64 @@
+# GCT USB4216 USB 2.0 Type-C receptacle, 16 contacts + shell
+# (gct/USB4216-DWG page 1 pin table "Pin / Signal / Mating Sequence"; names as
+# in the table's text layer (pdftotext): GND, VBUS, CC1/CC2, Dp1/Dn1,
+# Dp2/Dn2, SBU1/SBU2; "SHELL" signal "GND").
+# The SMT land pattern puts two contacts on each outer pad, labelled
+# "A1 B12", "A4 B9", "B4 A9", "B1 A12": the footprint numbers those pads
+# with the A label; the B contact is connected_to it.
+schema_version: "0.2"
+kind: device
+id: gct/USB4216
+manufacturer: gct
+category: connector
+family: USB4216
+source: gct/USB4216-DWG
+
+pins:
+  src:
+    - p1 "Pin table"
+    - p1 ""Recommended PCB Layout" pad labels (shared pads "A1 B12", "A4 B9", "B4 A9", "B1 A12")"
+  A1:    { name: GND, type: ground }
+  A4:    { name: VBUS, type: power }
+  A5:    { name: CC1, type: passive }
+  A6:
+    name: Dp1
+    type: passive
+    diff_pair:
+      partner: A7
+      polarity: p
+      standard: usb2
+      src: 'p1 "Pin table: "A6 Dp1", "A7 Dn1", "B6 Dp2", "B7 Dn2" (D+/D- of each USB 2.0 contact row)"'
+  A7:
+    name: Dn1
+    type: passive
+    diff_pair:
+      partner: A6
+      polarity: n
+      standard: usb2
+      src: 'p1 "Pin table: "A6 Dp1", "A7 Dn1", "B6 Dp2", "B7 Dn2" (D+/D- of each USB 2.0 contact row)"'
+  A8:    { name: SBU1, type: passive }
+  A9:    { name: VBUS, type: power }
+  A12:   { name: GND, type: ground }
+  B1:    { name: GND, type: ground, connected_to: A12 }
+  B4:    { name: VBUS, type: power, connected_to: A9 }
+  B5:    { name: CC2, type: passive }
+  B6:
+    name: Dp2
+    type: passive
+    diff_pair:
+      partner: B7
+      polarity: p
+      standard: usb2
+      src: 'p1 "Pin table: "A6 Dp1", "A7 Dn1", "B6 Dp2", "B7 Dn2" (D+/D- of each USB 2.0 contact row)"'
+  B7:
+    name: Dn2
+    type: passive
+    diff_pair:
+      partner: B6
+      polarity: n
+      standard: usb2
+      src: 'p1 "Pin table: "A6 Dp1", "A7 Dn1", "B6 Dp2", "B7 Dn2" (D+/D- of each USB 2.0 contact row)"'
+  B8:    { name: SBU2, type: passive }
+  B9:    { name: VBUS, type: power, connected_to: A4 }
+  B12:   { name: GND, type: ground, connected_to: A1 }
+  SHELL: { name: GND, type: ground }

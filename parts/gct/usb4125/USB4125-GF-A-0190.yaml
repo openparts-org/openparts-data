@@ -1,0 +1,20 @@
+# MPN assembled from the drawing's "Ordering Grid" (USB4125 - Contact
+# Plating "GF" = Gold Flash - Packing Options "A" = Tape & Reel - Shell
+# Stake Length "S": 0190 = 1.90mm) -> existence probable: the grid is a
+# part-numbering legend, not an orderable list.
+# lifecycle unknown: the drawing states none.
+schema_version: "0.2"
+kind: part
+id: gct/USB4125-GF-A-0190
+manufacturer: gct
+mpn: USB4125-GF-A-0190
+device: gct/USB4125
+package: manufacturers/gct/USB4125
+sources: [gct/USB4125-DWG]
+source: gct/USB4125-DWG
+
+existence:
+  status: probable
+  src: 'p1 "Ordering Grid: Contact Plating GF, Packing Options A, Shell Stake Length 0190 = 1.90mm"'
+
+lifecycle: { status: unknown }

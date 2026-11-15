@@ -1,0 +1,17 @@
+# MPN assembled from the drawing's "Ordering Grid" (USB4216 - Contact
+# Plating "03" = 3µ" Gold - Packing Options "A" = Tape & Reel; each field
+# lists one option) -> existence probable: the grid is a part-numbering
+# legend, not an orderable list.
+# lifecycle unknown: the drawing states none.
+schema_version: "0.2"
+kind: part
+id: gct/USB4216-03-A
+manufacturer: gct
+mpn: USB4216-03-A
+device: gct/USB4216
+package: manufacturers/gct/USB4216
+sources: [gct/USB4216-DWG]
+source: gct/USB4216-DWG
+
+existence: { status: probable, src: 'p1 "Ordering Grid: Contact Plating 03, Packing Options A"' }
+lifecycle: { status: unknown }

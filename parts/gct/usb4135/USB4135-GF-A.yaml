@@ -1,0 +1,17 @@
+# MPN assembled from the drawing's "Ordering Grid" (USB4135 - Contact
+# Plating "GF" = Gold Flash - Packing Options "A" = Tape & Reel; each
+# field lists one option) -> existence probable: the grid is a
+# part-numbering legend, not an orderable list.
+# lifecycle unknown: the drawing states none.
+schema_version: "0.2"
+kind: part
+id: gct/USB4135-GF-A
+manufacturer: gct
+mpn: USB4135-GF-A
+device: gct/USB4135
+package: manufacturers/gct/USB4135
+sources: [gct/USB4135-DWG]
+source: gct/USB4135-DWG
+
+existence: { status: probable, src: 'p1 "Ordering Grid: Contact Plating GF, Packing Options A"' }
+lifecycle: { status: unknown }
