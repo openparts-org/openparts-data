@@ -1,0 +1,18 @@
+# Official TI datasheet "UCC27524 Dual 5A, High-Speed, Low-Side Gate
+# Driver With Negative Input Voltage Capability". Downloaded 2026-11-16
+# with curl from the TI symlink URL below; the page header reads
+# "SLUSFA9 - JUNE 2024" (original release, no revision letter). 50 PDF
+# pages; text read with pdftotext -layout, the DSD0008D outline (page
+# 36) checked on the rendered page. Page numbers are PDF page indices.
+# PACKAGE OPTION ADDENDUM dated 31-Oct-2025. TI copyright: facts only.
+schema_version: "0.2"
+kind: source
+id: ti/SLUSFA9
+sha256: c6d6c5d4f20a82721963400f80484242c730bd89b539246847fdd0fa7f43cf3e
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/ucc27524.pdf
+publisher: ti
+document_id: SLUSFA9
+document_type: datasheet
+revision: original
+date: 2024-06

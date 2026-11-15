@@ -1,0 +1,26 @@
+# DRV8837 low-voltage H-bridge driver (PWM IN1/IN2 interface), DSG
+# (8-pin WSON) pin map. Pin Functions table (SLVSBA4F page 4), column
+# "DRV8837"; cross-checked with Figure 5-1 "DSG Package 8-Pin WSON With
+# Thermal Pad DRV8837 Top View" (page 4). The thermal pad has no row in
+# the pin table (no connection stated) -> no EP pin (the footprint
+# still gets the pad).
+schema_version: "0.2"
+kind: device
+id: ti/DRV8837
+manufacturer: ti
+category: driver
+family: DRV883x
+source: ti/SLVSBA4F
+
+pins:
+  src:
+    - p4 "Pin Functions, column "DRV8837 NO.""
+    - p4 "Figure 5-1 DSG Package DRV8837 Top View (cross-check)"
+  "1": { name: VM, type: power }
+  "2": { name: OUT1, type: output }
+  "3": { name: OUT2, type: output }
+  "4": { name: GND, type: ground }
+  "5": { name: IN2, type: input }
+  "6": { name: IN1, type: input }
+  "7": { name: nSLEEP, type: input }
+  "8": { name: VCC, type: power }

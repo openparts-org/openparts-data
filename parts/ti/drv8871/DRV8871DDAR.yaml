@@ -1,0 +1,21 @@
+# DRV8871DDAR: SLVSCY9B PACKAGE OPTION ADDENDUM (page 18) row "DRV8871DDAR Active
+# Production SO PowerPAD (DDA) | 8" -- MPN printed verbatim in TI's orderable list
+# (existence verified); lifecycle "Active" is TI's own Status column.
+# Package: DDA = outline DDA0008B (page 24).
+schema_version: "0.2"
+kind: part
+id: ti/DRV8871DDAR
+manufacturer: ti
+mpn: DRV8871DDAR
+device: ti/DRV8871
+package: { value: manufacturers/ti/DDA0008B, src: p24 "PACKAGE OUTLINE DDA0008B (4214849/B)" }
+sources: [ti/SLVSCY9B]
+source: ti/SLVSCY9B
+
+existence:
+  status: verified
+  src: p18 "PACKAGE OPTION ADDENDUM, row "DRV8871DDAR" (SO PowerPAD (DDA) | 8)"
+
+lifecycle:
+  status: active
+  src: p18 "PACKAGE OPTION ADDENDUM, row "DRV8871DDAR", Status "Active""

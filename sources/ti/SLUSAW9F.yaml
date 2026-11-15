@@ -1,0 +1,18 @@
+# Official TI datasheet "UCC2751x Single-Channel, High-Speed, Low-Side
+# Gate Driver (With 4-A Peak Source and 8-A Peak Sink)" (UCC27511,
+# UCC27512). Downloaded 2026-11-16 with curl from the TI symlink URL
+# below; revision read from the page header "SLUSAW9F - FEBRUARY 2012 -
+# REVISED NOVEMBER 2014". 40 PDF pages; text read with pdftotext
+# -layout. Page numbers are PDF page indices. PACKAGE OPTION ADDENDUM
+# dated 31-Oct-2025. TI copyright: facts only.
+schema_version: "0.2"
+kind: source
+id: ti/SLUSAW9F
+sha256: 781cc451dbb371a4137337a4bdecbe11a9f1ff8979a11e238e97d8a80a287b31
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/ucc27511.pdf
+publisher: ti
+document_id: SLUSAW9F
+document_type: datasheet
+revision: F
+date: 2014-11

@@ -1,0 +1,70 @@
+# TI PWP0016C "PowerPAD TSSOP - 1.2 mm max height" (16-lead HTSSOP,
+# 4.4 mm body, 0.65 mm pitch, exposed thermal pad; drawing 4224559/B
+# 01/2019, JEDEC MO-153 per its note 4), read from the rendered outline
+# page of SLVSAR1E (PDF page 26). Millimetres as printed.
+#
+# Same body/lead numbers as PW0016A except the lead width (16X
+# 0.30/0.19 here, 0.30/0.17 in PW0016A) -- so not reused from
+# standards/TSSOP16-4.4x5.0-P0.65-TI-PW. Ranges only, no nominal.
+# Lead thickness only as "(0.15) TYP" (reference value per note 1).
+# Only A "1.2 MAX" is given (no A2): overall_height only.
+# Thermal pad (bottom view, pad number 17): "2.46 / 1.75" across the
+# rows (width), "2.31 / 1.75" along the rows (length); min/max only.
+# Note 5 "Features may differ or may not be present" applies to the pad
+# tie-bar notches (2X 0.95 MAX, 2X 0.23 MAX), not recorded.
+# Pins 1-8 down the left edge, 9-16 up the right edge (top view).
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/PWP0016C
+family: tssop
+lead_count: 16
+source: ti/SLVSAR1E
+
+pitch: { typ: 0.65 mm, src: 'p26 "PWP0016C (4224559/B), "14X 0.65" (basic)"' }
+geometry: { type: parametric, generator: tssop }
+
+dimensions:
+  body_width: { min: 4.3 mm, max: 4.5 mm, src: 'p26 "PWP0016C, body width "4.5 / 4.3" (datum B)"' }
+  body_length:
+    min: 4.9 mm
+    max: 5.1 mm
+    src: p26 "PWP0016C, body length "5.1 / 4.9 NOTE 3" (datum A)"
+  lead_thickness:
+    typ: 0.15 mm
+    src: p26 "PWP0016C, "(0.15) TYP" -- reference value per note 1"
+  exposed_pad:
+    src:    p26 "PWP0016C bottom view, thermal pad "2.46 / 1.75" across, "2.31 / 1.75" along the rows"
+    width:  { min: 1.75 mm, max: 2.46 mm }
+    length: { min: 1.75 mm, max: 2.31 mm }
+  overall_width:  { min: 6.2 mm, max: 6.6 mm, src: 'p26 "PWP0016C, lead-tip span "6.6 / 6.2 TYP""' }
+  overall_height: { max: 1.2 mm, src: 'p26 "PWP0016C DETAIL A, "1.2 MAX""' }
+  standoff:       { min: 0.05 mm, max: 0.15 mm, src: 'p26 "PWP0016C DETAIL A, "0.15 / 0.05""' }
+  lead_width:     { min: 0.19 mm, max: 0.3 mm, src: 'p26 "PWP0016C, "16X 0.30 / 0.19""' }
+  lead_length:    { min: 0.5 mm, max: 0.75 mm, src: 'p26 "PWP0016C DETAIL A, "0.75 / 0.50""' }
+
+# Land pattern: "LAND PATTERN EXAMPLE" (page 27, parenthesised reference
+# values). Signal pads "16X (1.5)" x "16X (0.45)", pad rows "(5.8)"
+# apart centre to centre -> x = +-2.9; pitch "14X (0.65)" -> y = +-0.325
+# ... +-3.5x0.65 = +-2.275. Thermal pad (number EP): the
+# solder-mask-defined opening "(2.46)" x "(2.31)" (the metal "(3.4)" x
+# "(5)" may vary per note 9). Top view, X right, Y up, pin 1 top-left.
+pads:
+  value:
+    - { number: "1", x: -2.9, y: 2.275, width: 1.5, length: 0.45 }
+    - { number: "2", x: -2.9, y: 1.625, width: 1.5, length: 0.45 }
+    - { number: "3", x: -2.9, y: 0.975, width: 1.5, length: 0.45 }
+    - { number: "4", x: -2.9, y: 0.325, width: 1.5, length: 0.45 }
+    - { number: "5", x: -2.9, y: -0.325, width: 1.5, length: 0.45 }
+    - { number: "6", x: -2.9, y: -0.975, width: 1.5, length: 0.45 }
+    - { number: "7", x: -2.9, y: -1.625, width: 1.5, length: 0.45 }
+    - { number: "8", x: -2.9, y: -2.275, width: 1.5, length: 0.45 }
+    - { number: "9", x: 2.9, y: -2.275, width: 1.5, length: 0.45 }
+    - { number: "10", x: 2.9, y: -1.625, width: 1.5, length: 0.45 }
+    - { number: "11", x: 2.9, y: -0.975, width: 1.5, length: 0.45 }
+    - { number: "12", x: 2.9, y: -0.325, width: 1.5, length: 0.45 }
+    - { number: "13", x: 2.9, y: 0.325, width: 1.5, length: 0.45 }
+    - { number: "14", x: 2.9, y: 0.975, width: 1.5, length: 0.45 }
+    - { number: "15", x: 2.9, y: 1.625, width: 1.5, length: 0.45 }
+    - { number: "16", x: 2.9, y: 2.275, width: 1.5, length: 0.45 }
+    - { number: EP, x: 0, y: 0, width: 2.46, length: 2.31 }
+  src: p27 "PWP0016C LAND PATTERN EXAMPLE, 16X (1.5) x 16X (0.45), rows (5.8), 14X (0.65); thermal opening (2.46) x (2.31)"

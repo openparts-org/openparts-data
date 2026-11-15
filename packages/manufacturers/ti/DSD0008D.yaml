@@ -1,0 +1,36 @@
+# TI DSD0008D "WSON - 0.8 mm max height" (8-terminal WSON, 3x3 mm, 0.65
+# mm pitch, exposed thermal pad; drawing 4218899/A 09/2023), read from
+# the rendered outline page of SLUSFA9 (PDF page 36). Millimetres as
+# printed.
+#
+# Mapping: body "3.1 / 2.9" both ways (no nominal printed); A "0.8 /
+# 0.7" (no A2) -> body_height; A1 "0.05 / 0.00" -> standoff; b "8X 0.37
+# / 0.25" -> lead_width; L "8X 0.5 / 0.3" -> lead_length; thermal pad
+# (pad 9) "1.2 +-0.1" across the rows (width), "2.15 +-0.1" along them
+# (length). Bottom view numbers 1-4 up the left, 5-8 down the right;
+# from the top: SOIC order, matching Figure 5-2 (page 4).
+# Left out: side-view "(0.2) TYP" (side-wall metal, not A3), "2X 1.95".
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DSD0008D
+family: son
+lead_count: 8
+source: ti/SLUSFA9
+
+pitch: { typ: 0.65 mm, src: 'p36 "DSD0008D (4218899/A), bottom view, basic "6X 0.65""' }
+geometry: { type: parametric, generator: son }
+
+dimensions:
+  body_width:
+    min: 2.9 mm
+    max: 3.1 mm
+    src: p36 "DSD0008D top view, "3.1 / 2.9" (datum A, across the rows)"
+  body_length: { min: 2.9 mm, max: 3.1 mm, src: 'p36 "DSD0008D top view, "3.1 / 2.9" (datum B)"' }
+  body_height: { min: 0.7 mm, max: 0.8 mm, src: 'p36 "DSD0008D side view, "0.8 / 0.7""' }
+  exposed_pad:
+    src:    p36 "DSD0008D bottom view, thermal pad "1.2+-0.1" across, "2.15+-0.1" along the rows"
+    width:  { min: 1.1 mm, typ: 1.2 mm, max: 1.3 mm }
+    length: { min: 2.05 mm, typ: 2.15 mm, max: 2.25 mm }
+  standoff:    { min: 0 mm, max: 0.05 mm, src: 'p36 "DSD0008D side view, "0.05 / 0.00""' }
+  lead_width:  { min: 0.25 mm, max: 0.37 mm, src: 'p36 "DSD0008D bottom view, "8X 0.37 / 0.25""' }
+  lead_length: { min: 0.3 mm, max: 0.5 mm, src: 'p36 "DSD0008D bottom view, "8X 0.5 / 0.3""' }

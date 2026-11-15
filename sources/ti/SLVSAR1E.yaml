@@ -1,0 +1,18 @@
+# Official TI datasheet "DRV8833 Dual H-Bridge Motor Driver". Downloaded
+# 2026-11-16 with curl from the TI symlink URL below; revision read from
+# the page header "SLVSAR1E - JANUARY 2011 - REVISED JULY 2015". 30 PDF
+# pages; text read with pdftotext -layout, the PWP0016C outline (page
+# 26) checked on the rendered page. Page numbers are PDF page indices.
+# The PACKAGE OPTION ADDENDUM at the end of the PDF is dated 17-Jul-2026
+# (newer than the datasheet revision). TI copyright: facts only.
+schema_version: "0.2"
+kind: source
+id: ti/SLVSAR1E
+sha256: 3e400e333f08f1b93ec99a2d52a6af2a864e88462cc892282208548d9e9f0de4
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/drv8833.pdf
+publisher: ti
+document_id: SLVSAR1E
+document_type: datasheet
+revision: E
+date: 2015-07

@@ -1,0 +1,26 @@
+# UCC27524 dual 5-A low-side gate driver (non-inverting). Table 5-1
+# "Pin Functions" (SLUSFA9 page 4); the same numbering is drawn in
+# Figure 5-1 (D and DGN packages, SOIC/HVSSOP) and Figure 5-2 (DSD,
+# 8-pin WSON) on page 4, so one pin map covers D, DGN and DSD. Neither
+# the table nor the figures say what the DGN/DSD thermal pad connects
+# to -> no EP pin (the footprint still gets the pad).
+schema_version: "0.2"
+kind: device
+id: ti/UCC27524
+manufacturer: ti
+category: gate_driver
+family: UCC27524
+source: ti/SLUSFA9
+
+pins:
+  src:
+    - p4 "Table 5-1 Pin Functions"
+    - p4 "Figure 5-1 (D, DGN) and Figure 5-2 (DSD) Top View (cross-check)"
+  "1": { name: ENA, type: input }
+  "2": { name: INA, type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: INB, type: input }
+  "5": { name: OUTB, type: output }
+  "6": { name: VDD, type: power }
+  "7": { name: OUTA, type: output }
+  "8": { name: ENB, type: input }

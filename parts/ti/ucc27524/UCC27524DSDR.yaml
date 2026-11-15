@@ -1,0 +1,21 @@
+# UCC27524DSDR: SLUSFA9 PACKAGE OPTION ADDENDUM (page 30) row "UCC27524DSDR Active
+# Production SON (DSD) | 8" -- MPN printed verbatim in TI's orderable list
+# (existence verified); lifecycle "Active" is TI's own Status column.
+# Package: DSD = outline DSD0008D (page 36).
+schema_version: "0.2"
+kind: part
+id: ti/UCC27524DSDR
+manufacturer: ti
+mpn: UCC27524DSDR
+device: ti/UCC27524
+package: { value: manufacturers/ti/DSD0008D, src: p36 "PACKAGE OUTLINE DSD0008D (4218899/A)" }
+sources: [ti/SLUSFA9]
+source: ti/SLUSFA9
+
+existence:
+  status: verified
+  src: p30 "PACKAGE OPTION ADDENDUM, row "UCC27524DSDR" (SON (DSD) | 8)"
+
+lifecycle:
+  status: active
+  src: p30 "PACKAGE OPTION ADDENDUM, row "UCC27524DSDR", Status "Active""

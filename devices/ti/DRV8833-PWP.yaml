@@ -1,0 +1,38 @@
+# DRV8833 dual H-bridge motor driver, PWP (16-pin HTSSOP with PowerPAD)
+# pin map. Pin Functions table (SLVSAR1E pages 3-4), column "HTSSOP,
+# TSSOP"; cross-checked with the "PWP Package 16-Pin HTSSOP Top View"
+# figure (page 3, GND (PPAD) drawn in the centre). The table's GND row
+# lists "13" and "PPAD" for the HTSSOP ("HTSSOP package has PowerPAD")
+# -> the pad is pin "EP" named GND, type ground (the table names it a
+# GND terminal; its connection column says both must go to ground).
+# nFAULT is open-drain ("OD") -- typed output. VCP typed passive; VINT
+# (internal supply bypass) power_out.
+schema_version: "0.2"
+kind: device
+id: ti/DRV8833-PWP
+manufacturer: ti
+category: driver
+family: DRV8833
+source: ti/SLVSAR1E
+
+pins:
+  src:
+    - p3 "Pin Functions, column "HTSSOP, TSSOP"; GND row "13" + "PPAD" (continued on p4)"
+    - p3 "PWP Package 16-Pin HTSSOP Top View (cross-check)"
+  "1":  { name: nSLEEP, type: input }
+  "2":  { name: AOUT1, type: output }
+  "3":  { name: AISEN, type: io }
+  "4":  { name: AOUT2, type: output }
+  "5":  { name: BOUT2, type: output }
+  "6":  { name: BISEN, type: io }
+  "7":  { name: BOUT1, type: output }
+  "8":  { name: nFAULT, type: output }
+  "9":  { name: BIN1, type: input }
+  "10": { name: BIN2, type: input }
+  "11": { name: VCP, type: passive }
+  "12": { name: VM, type: power }
+  "13": { name: GND, type: ground }
+  "14": { name: VINT, type: power_out }
+  "15": { name: AIN2, type: input }
+  "16": { name: AIN1, type: input }
+  EP:   { name: GND, type: ground }

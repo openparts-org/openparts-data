@@ -1,0 +1,25 @@
+# DRV8833PWR: SLVSAR1E PACKAGE OPTION ADDENDUM (page 18) row "DRV8833PWR Active
+# Production TSSOP (PW) | 16" -- MPN printed verbatim in TI's orderable list
+# (existence verified); lifecycle "Active" is TI's own Status column.
+# Package: PW = outline PW0016A (4220204/B 12/2023, page 22); every number matches the existing standards/TSSOP16-4.4x5.0-P0.65-TI-PW (same drawing revision, read from SCLS041J) -> reused (validate with --source sources/ti/SCLS041J.yaml).
+schema_version: "0.2"
+kind: part
+id: ti/DRV8833PWR
+manufacturer: ti
+mpn: DRV8833PWR
+device: ti/DRV8833-PW
+
+package:
+  value: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+  src: p22 "PACKAGE OUTLINE PW0016A (4220204/B 12/2023)"
+
+sources: [ti/SLVSAR1E]
+source: ti/SLVSAR1E
+
+existence:
+  status: verified
+  src: p18 "PACKAGE OPTION ADDENDUM, row "DRV8833PWR" (TSSOP (PW) | 16)"
+
+lifecycle:
+  status: active
+  src: p18 "PACKAGE OPTION ADDENDUM, row "DRV8833PWR", Status "Active""

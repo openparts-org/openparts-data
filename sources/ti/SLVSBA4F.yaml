@@ -1,0 +1,18 @@
+# Official TI datasheet "DRV883x Low-Voltage H-Bridge Driver" (DRV8837,
+# DRV8838). Downloaded 2026-11-16 with curl from the TI symlink URL
+# below; revision read from the page header "SLVSBA4F - JUNE 2012 -
+# REVISED APRIL 2021". 30 PDF pages; text read with pdftotext -layout,
+# the DSG0008A outline (page 27) checked on the rendered page. Page
+# numbers are PDF page indices. PACKAGE OPTION ADDENDUM dated
+# 15-Aug-2026. TI copyright: facts only.
+schema_version: "0.2"
+kind: source
+id: ti/SLVSBA4F
+sha256: 3092ce1aa74c098d1bc881f23f3f71846d760b75128bd5a76de04acfcaebdfc2
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/drv8837.pdf
+publisher: ti
+document_id: SLVSBA4F
+document_type: datasheet
+revision: F
+date: 2021-04

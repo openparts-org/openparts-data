@@ -1,0 +1,20 @@
+# UCC27511 single-channel low-side gate driver (split OUTH/OUTL), DBV
+# (6-pin SOT-23) pin map. "Pin Functions - UCC27511" (SLUSAW9F page 6);
+# cross-checked with the "6-Pins DBV Package (Top View)" figure (page
+# 5). The DRS (SON-6) pinout on page 5 belongs to the UCC27512.
+schema_version: "0.2"
+kind: device
+id: ti/UCC27511-DBV
+manufacturer: ti
+category: gate_driver
+family: UCC2751x
+source: ti/SLUSAW9F
+
+pins:
+  src: [p6 "Pin Functions - UCC27511", p5 "6-Pins DBV Package (Top View) (cross-check)"]
+  "1": { name: VDD, type: power }
+  "2": { name: OUTH, type: output }
+  "3": { name: OUTL, type: output }
+  "4": { name: GND, type: ground }
+  "5": { name: IN-, type: input }
+  "6": { name: IN+, type: input }

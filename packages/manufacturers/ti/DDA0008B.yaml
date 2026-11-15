@@ -1,0 +1,56 @@
+# TI DDA0008B "PowerPAD SOIC - 1.7 mm max height" (8-lead SOIC with
+# exposed thermal pad, 3.9 mm body, 1.27 mm pitch; drawing 4214849/B
+# 09/2025, JEDEC MS-012 per its note 5), read from the rendered outline
+# page of SLVSCY9B (PDF page 24). Millimetres as printed.
+#
+# Mapping: E1 "4.0 / 3.8 NOTE 4" -> body_width; D "5.0 / 4.8 NOTE 3" ->
+# body_length; E "6.2 / 5.8 TYP" -> overall_width (min/max only); only
+# "1.7 MAX" overall height (no A2) -> overall_height; A1 "0.15 / 0.00"
+# -> standoff; c "0.25 / 0.10 TYP" -> lead_thickness; L "1.27 / 0.40"
+# -> lead_length; b "8X 0.51 / 0.31" -> lead_width. Thermal pad (pad 9,
+# bottom view): "2.71 / 2.11" across the rows (width), "3.4 / 2.8"
+# along them (length). Pins 1-4 down the left, 5-8 up the right (top
+# view).
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DDA0008B
+family: soic
+lead_count: 8
+source: ti/SLVSCY9B
+
+pitch: { typ: 1.27 mm, src: 'p24 "DDA0008B (4214849/B), "6X 1.27" (basic)"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:     { min: 3.8 mm, max: 4 mm, src: 'p24 "DDA0008B, "4.0 / 3.8 NOTE 4" (datum B)"' }
+  body_length:    { min: 4.8 mm, max: 5 mm, src: 'p24 "DDA0008B, "5.0 / 4.8 NOTE 3" (datum A)"' }
+  lead_thickness: { min: 0.1 mm, max: 0.25 mm, src: 'p24 "DDA0008B end view, "0.25 / 0.10 TYP""' }
+  exposed_pad:
+    src:    p24 "DDA0008B bottom view, thermal pad "2.71 / 2.11" across, "3.4 / 2.8" along the rows"
+    width:  { min: 2.11 mm, max: 2.71 mm }
+    length: { min: 2.8 mm, max: 3.4 mm }
+  overall_width:  { min: 5.8 mm, max: 6.2 mm, src: 'p24 "DDA0008B, lead-tip span "6.2 / 5.8 TYP""' }
+  overall_height: { max: 1.7 mm, src: 'p24 "DDA0008B side view, "1.7 MAX""' }
+  standoff:       { min: 0 mm, max: 0.15 mm, src: 'p24 "DDA0008B DETAIL A, "0.15 / 0.00""' }
+  lead_width:     { min: 0.31 mm, max: 0.51 mm, src: 'p24 "DDA0008B, "8X 0.51 / 0.31""' }
+  lead_length:    { min: 0.4 mm, max: 1.27 mm, src: 'p24 "DDA0008B DETAIL A, "1.27 / 0.40""' }
+
+# Land pattern: "LAND PATTERN EXAMPLE" (page 25, all values are
+# parenthesised reference values). Signal pads "8X (1.55)" x "8X (0.6)",
+# pad rows "(5.4)" apart centre to centre -> x = +-5.4/2 = +-2.7;
+# pitch "6X (1.27)" -> y = +-1.27/2 = +-0.635 and +-1.5x1.27 = +-1.905.
+# Thermal pad (number EP): the solder-mask-defined opening "(2.71)" x
+# "(3.4)" (the metal "(2.95)" x "(4.9)" may vary per note 9). Top
+# view, X right, Y up, pin 1 top-left.
+pads:
+  value:
+    - { number: "1", x: -2.7, y: 1.905, width: 1.55, length: 0.6 }
+    - { number: "2", x: -2.7, y: 0.635, width: 1.55, length: 0.6 }
+    - { number: "3", x: -2.7, y: -0.635, width: 1.55, length: 0.6 }
+    - { number: "4", x: -2.7, y: -1.905, width: 1.55, length: 0.6 }
+    - { number: "5", x: 2.7, y: -1.905, width: 1.55, length: 0.6 }
+    - { number: "6", x: 2.7, y: -0.635, width: 1.55, length: 0.6 }
+    - { number: "7", x: 2.7, y: 0.635, width: 1.55, length: 0.6 }
+    - { number: "8", x: 2.7, y: 1.905, width: 1.55, length: 0.6 }
+    - { number: EP, x: 0, y: 0, width: 2.71, length: 3.4 }
+  src: p25 "DDA0008B LAND PATTERN EXAMPLE, 8X (1.55) x 8X (0.6), rows (5.4), 6X (1.27); thermal opening (2.71) x (3.4)"

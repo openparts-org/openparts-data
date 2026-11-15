@@ -1,0 +1,19 @@
+# Official TI datasheet "DRV8871 3.6-A Brushed DC Motor Driver With
+# Internal Current Sense (PWM Control)". Downloaded 2026-11-16 with curl
+# from the TI symlink URL below; revision read from the page header
+# "SLVSCY9B - AUGUST 2015 - REVISED JULY 2016". 27 PDF pages; text read
+# with pdftotext -layout, the DDA0008B outline (page 24, drawing
+# 4214849/B 09/2025 -- newer than the datasheet) checked on the rendered
+# page. Page numbers are PDF page indices. PACKAGE OPTION ADDENDUM dated
+# 10-Nov-2025. TI copyright: facts only.
+schema_version: "0.2"
+kind: source
+id: ti/SLVSCY9B
+sha256: 09de551aa0c6d090fd14b000634cfd894d782a050eed13110fe2eb10f1b548bf
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/drv8871.pdf
+publisher: ti
+document_id: SLVSCY9B
+document_type: datasheet
+revision: B
+date: 2016-07
