@@ -17,7 +17,23 @@ pins:
   "2": { name: VOUT, type: power }
   "3": { name: VIN, type: power }
 
+parameters:
+  output_current:
+    nominal: 1
+    unit: A
+  dropout_voltage:
+    max: 1.4
+    unit: V
+
 provenance:
+  "/parameters/output_current":
+    - source: diodes/DS31009
+      page: 1
+      locator: "Description: \"AP1117 is a low dropout positive adjustable or fixed-mode regulator with 1A output current capability\""
+  "/parameters/dropout_voltage":
+    - source: diodes/DS31009
+      page: 1
+      locator: "Features: \"1.4V Maximum Dropout at Full Load Current\""
   "/pins":
     - source: diodes/DS31009
       page: 2

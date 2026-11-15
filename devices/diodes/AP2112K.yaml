@@ -17,7 +17,29 @@ pins:
   "4": { name: NC, type: nc }
   "5": { name: VOUT, type: power }
 
+parameters:
+  output_type:
+    value: fixed
+  input_voltage_max:
+    max: 6.0
+    unit: V
+  output_current:
+    min: 600
+    unit: mA
+
 provenance:
+  "/parameters/output_type":
+    - source: diodes/DS39724
+      page: 1
+      locator: "Description: \"The AP2112 is available with a fixed output voltage of 1.2V, 1.8V, 2.5V, 2.6V, or 3.3V\""
+  "/parameters/input_voltage_max":
+    - source: diodes/DS39724
+      page: 3
+      locator: "Recommended Operating Conditions, VIN Supply Voltage: Max 6.0 V"
+  "/parameters/output_current":
+    - source: diodes/DS39724
+      page: 1
+      locator: "Features, \"Output Current: 600mA (Min.)\""
   "/pins":
     - source: diodes/DS39724
       page: 2

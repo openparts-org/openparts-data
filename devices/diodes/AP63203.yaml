@@ -22,7 +22,29 @@ pins:
   "5": { name: SW, type: passive }
   "6": { name: BST, type: power }
 
+parameters:
+  output_type:
+    value: fixed
+  input_voltage_max:
+    max: 32
+    unit: V
+  output_current:
+    nominal: 2
+    unit: A
+
 provenance:
+  "/parameters/output_type":
+    - source: diodes/DS41326
+      page: 12
+      locator: "\"The AP63203 and AP63205 have fixed output voltages of 3.3V and 5V, respectively\""
+  "/parameters/input_voltage_max":
+    - source: diodes/DS41326
+      page: 4
+      locator: "Recommended Operating Conditions, VIN Supply Voltage: Max 32 V"
+  "/parameters/output_current":
+    - source: diodes/DS41326
+      page: 1
+      locator: "Features, \"2A Continuous Output Current\""
   "/pins":
     - source: diodes/DS41326
       page: 2

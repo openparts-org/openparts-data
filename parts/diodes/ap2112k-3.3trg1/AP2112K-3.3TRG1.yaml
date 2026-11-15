@@ -22,7 +22,24 @@ lifecycle:
 sources:
   - diodes/DS39724
 
+parameters:
+  output_voltage:
+    nominal: 3.3
+    unit: V
+  dropout_voltage:
+    nominal: 250
+    max: 400
+    unit: mV
+
 provenance:
+  "/parameters/output_voltage":
+    - source: diodes/DS39724
+      page: 12
+      locator: "Ordering Information table, SOT25, Condition 3.3V, Part Number AP2112K-3.3TRG1"
+  "/parameters/dropout_voltage":
+    - source: diodes/DS39724
+      page: 8
+      locator: "AP2112-3.3 Electrical Characteristics, VDROP Dropout Voltage, IOUT = 600mA: Typ 250 mV, Max 400 mV"
   "/existence":
     - source: diodes/DS39724
       page: 12

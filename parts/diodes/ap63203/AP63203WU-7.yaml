@@ -22,7 +22,16 @@ lifecycle:
 sources:
   - diodes/DS41326
 
+parameters:
+  output_voltage:
+    nominal: 3.3
+    unit: V
+
 provenance:
+  "/parameters/output_voltage":
+    - source: diodes/DS41326
+      page: 16
+      locator: "Ordering Information table, Orderable Part Number AP63203WU-7: VOUT 3.3V"
   "/existence":
     - source: diodes/DS41326
       page: 16

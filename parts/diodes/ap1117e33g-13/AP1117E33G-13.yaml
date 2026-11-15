@@ -24,7 +24,22 @@ lifecycle:
 sources:
   - diodes/DS31009
 
+parameters:
+  output_type:
+    value: fixed
+  output_voltage:
+    nominal: 3.3
+    unit: V
+
 provenance:
+  "/parameters/output_type":
+    - source: diodes/DS31009
+      page: 7
+      locator: "Ordering Information, AP1117 X XXXXX code table, VOUT: \"33 : 3.3V\" (vs \"Blank : ADJ\")"
+  "/parameters/output_voltage":
+    - source: diodes/DS31009
+      page: 7
+      locator: "Ordering Information, AP1117 X XXXXX code table, VOUT: \"33 : 3.3V\""
   "/existence":
     - source: diodes/DS31009
       page: 7
