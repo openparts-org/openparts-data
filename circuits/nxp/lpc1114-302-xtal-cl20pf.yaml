@@ -1,0 +1,43 @@
+# LPC1114FBD48/302 system oscillator: crystal with a 20 pF load
+# capacitance and CX1 = CX2 = 39 pF, the datasheet's recommended values
+# (Table 30 low-frequency mode, Table 31 high-frequency mode; every
+# frequency row with CL = 20 pF gives 39 pF). The maximum crystal
+# series resistance depends on the frequency (same tables) and is not
+# recorded here. CP of the crystal should not exceed 7 pF (12.3). AI
+# candidate.
+schema_version: "0.2"
+kind: circuit
+id: nxp/lpc1114-302-xtal-cl20pf
+title: LPC1114 crystal oscillator, CL 20 pF
+host: nxp/LPC1114-302
+source: nxp/LPC111X
+
+nets: { GND: { kind: ground } }
+
+roles:
+  C_X1:
+    requires:
+      category: capacitor
+      capacitance: { typ: 39 pF }
+      src: [p98 "Table 30", p98 "Table 31"]
+    pins:  { "1": host.XTALIN, "2": GND }
+    level: { value: recommended, word: recommended, src: [p98 "Table 30", p98 "Table 31"] }
+  C_X2:
+    requires:
+      category: capacitor
+      capacitance: { typ: 39 pF }
+      src: [p98 "Table 30", p98 "Table 31"]
+    pins:  { "1": host.XTALOUT, "2": GND }
+    level: { value: recommended, word: recommended, src: [p98 "Table 30", p98 "Table 31"] }
+  X1:
+    requires:
+      category: crystal
+      frequency: { min: 1 MHz, max: 25 MHz }
+      src: [p98 "Table 30", p98 "Table 31"]
+    pins:    { "1": host.XTALIN, "2": host.XTALOUT }
+    place:   { near: host.XTALIN, src: p99 "12.4" }
+    level:   { value: required, word: need, src: p97 "12.3" }
+    expects: { load_capacitance: { typ: 20 pF }, src: [p98 "Table 30", p98 "Table 31"] }
+
+placement:
+  - { keep_short: [host.XTALIN, host.XTALOUT], src: p99 "12.4" }
