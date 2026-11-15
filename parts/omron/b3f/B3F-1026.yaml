@@ -22,7 +22,24 @@ lifecycle:
 sources:
   - omron/A070-E1-08
 
+parameters:
+  actuation_force:
+    nominal: 4.9
+    unit: N
+  rated_current:
+    min: 1
+    max: 50
+    unit: mA
+
 provenance:
+  "/parameters/actuation_force":
+    - source: omron/A070-E1-08
+      page: 1
+      locator: "List of Models, 6 x 6 mm Models, row B3F-1026 (5.0 mm, Blue): Operating force (OF) 4.9 N {500 gf}"
+  "/parameters/rated_current":
+    - source: omron/A070-E1-08
+      page: 3
+      locator: "Ratings/Characteristics, Rating (resistive load): 1 to 50 mA, 3 to 24 VDC"
   "/existence":
     - source: omron/A070-E1-08
       page: 1

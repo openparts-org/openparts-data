@@ -22,7 +22,24 @@ lifecycle:
 sources:
   - omron/A070-E1-08
 
+parameters:
+  actuation_force:
+    nominal: 1.76
+    unit: N
+  rated_current:
+    min: 0.1
+    max: 50
+    unit: mA
+
 provenance:
+  "/parameters/actuation_force":
+    - source: omron/A070-E1-08
+      page: 2
+      locator: "List of Models, 6 x 6 mm Models, row B3F-1002-G (High-reliability gold-plated B3F-1000-G Series, 4.3 mm, Yellow): Operating force (OF) 1.76 N {180 gf}"
+  "/parameters/rated_current":
+    - source: omron/A070-E1-08
+      page: 3
+      locator: "Ratings/Characteristics, Rating (resistive load): B3F-G: 100 uA to 50 mA, 3 to 24 VDC"
   "/existence":
     - source: omron/A070-E1-08
       page: 1

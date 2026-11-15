@@ -22,7 +22,16 @@ lifecycle:
 sources:
   - omron/A113-E1-06
 
+parameters:
+  actuation_force:
+    nominal: 1.47
+    unit: N
+
 provenance:
+  "/parameters/actuation_force":
+    - source: omron/A113-E1-06
+      page: 1
+      locator: "List of Models, 6 x 6 mm Models, 7.3 mm (Projected type) row, Yellow, model B3FS-1052: Operating force (OF) 1.47 N {150 gf}"
   "/existence":
     - source: omron/A113-E1-06
       page: 1

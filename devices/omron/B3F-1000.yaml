@@ -18,7 +18,24 @@ pins:
   "3": { name: "3", type: passive, connected_to: "4" }
   "4": { name: "4", type: passive }
 
+parameters:
+  travel:
+    nominal: 0.25
+    unit: mm
+  rated_voltage:
+    min: 3
+    max: 24
+    unit: V
+
 provenance:
+  "/parameters/travel":
+    - source: omron/A070-E1-08
+      page: 3
+      locator: "Operating Characteristics, 6 x 6 mm Models (B3F-1000 and B3F-G columns), Pretravel (PT): 0.25+0.2/-0.1 mm"
+  "/parameters/rated_voltage":
+    - source: omron/A070-E1-08
+      page: 3
+      locator: "Ratings/Characteristics, Rating (resistive load): 1 to 50 mA, 3 to 24 VDC (B3F-G: 100 uA to 50 mA, 3 to 24 VDC)"
   "/pins":
     - source: omron/A070-E1-08
       page: 4

@@ -18,7 +18,32 @@ pins:
   "3": { name: "3", type: passive, connected_to: "4" }
   "4": { name: "4", type: passive }
 
+parameters:
+  travel:
+    nominal: 0.25
+    unit: mm
+  rated_voltage:
+    min: 3
+    max: 24
+    unit: V
+  rated_current:
+    min: 1
+    max: 50
+    unit: mA
+
 provenance:
+  "/parameters/travel":
+    - source: omron/A113-E1-06
+      page: 2
+      locator: "Operating Characteristics, 6 x 6 mm Models, B3FS-1000, Pretravel (PT): 0.25 +0.2/-0.1 mm"
+  "/parameters/rated_voltage":
+    - source: omron/A113-E1-06
+      page: 2
+      locator: "Ratings/Characteristics, Rating (resistive load): 1 to 50 mA, 3 to 24 VDC"
+  "/parameters/rated_current":
+    - source: omron/A113-E1-06
+      page: 2
+      locator: "Ratings/Characteristics, Rating (resistive load): 1 to 50 mA, 3 to 24 VDC"
   "/pins":
     - source: omron/A113-E1-06
       page: 3
