@@ -1,0 +1,31 @@
+# 0.1µF X5R 10V ±10% GRM155 MLCC. MPN printed verbatim in the
+# murata/C02E-16 catalog (High Dielectric Constant Type X5R(R6) Characteristics, PDF page 47,
+# printed page 45); values read from that row/column. Package:
+# standards/CHIP0402-GRM155 (L/W/T 1.0/0.5/0.5 +/-0.05 mm, equal to
+# the catalog p10 GRM155 row number for number).
+# lifecycle: the catalog is a 2010 edition and carries no status; unknown.
+schema_version: "0.2"
+kind: part
+id: murata/GRM155R61A104KA01D
+manufacturer: murata
+mpn: GRM155R61A104KA01D
+device: murata/GRM155-R61
+package: standards/CHIP0402-GRM155
+sources: [murata/C02E-16]
+source: murata/C02E-16
+
+existence:
+  status: verified
+  src: 'p47 "X5R(R6) table, 1.0x0.5(15)<0402>, 10(1A) column, row 0.10µF(104) ±10%(K): GRM155R61A104KA01D"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:
+    typ: 0.1 µF
+    src: p47 "X5R(R6) table, GRM155R61A104KA01D row, Capacitance 0.10µF(104)"
+  tolerance: { tol: ±10 %, src: 'p47 "X5R(R6) table, GRM155R61A104KA01D row, Tolerance ±10%(K)"' }
+  rated_voltage:
+    typ: 10 V
+    src: p47 "X5R(R6) table, GRM155R61A104KA01D column, Rated Volt. 10(1A)"
+  dielectric: { value: X5R, src: 'p5 "Part Numbering, Temperature Characteristic Codes: R6 = X5R"' }

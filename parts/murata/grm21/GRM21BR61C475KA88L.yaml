@@ -1,0 +1,33 @@
+# 4.7µF X5R 16V ±10% GRM21 MLCC. MPN printed verbatim in the
+# murata/C02E-16 catalog (High Dielectric Constant Type X5R(R6) Characteristics, PDF page 49,
+# printed page 47); values read from that row/column. Package:
+# manufacturers/murata/CHIP0805-GRM21B-C02E (catalog p10 GRM21B row;
+# T-code B = 1.25 mm per Part Numbering p4).
+# lifecycle: the catalog is a 2010 edition and carries no status; unknown.
+# The catalog prints the MPN with a trailing "*" (footnote: refer to
+# GRM Series Specifications and Test Method (2)); not part of the MPN.
+schema_version: "0.2"
+kind: part
+id: murata/GRM21BR61C475KA88L
+manufacturer: murata
+mpn: GRM21BR61C475KA88L
+device: murata/GRM21-X5R
+package: manufacturers/murata/CHIP0805-GRM21B-C02E
+sources: [murata/C02E-16]
+source: murata/C02E-16
+
+existence:
+  status: verified
+  src: 'p49 "X5R(R6) table, 2.0x1.25(21)<0805>, 16(1C) column, row 4.7µF(475) ±10%(K): GRM21BR61C475KA88L*"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:
+    typ: 4.7 µF
+    src: p49 "X5R(R6) table, GRM21BR61C475KA88L row, Capacitance 4.7µF(475)"
+  tolerance: { tol: ±10 %, src: 'p49 "X5R(R6) table, GRM21BR61C475KA88L row, Tolerance ±10%(K)"' }
+  rated_voltage:
+    typ: 16 V
+    src: p49 "X5R(R6) table, GRM21BR61C475KA88L column, Rated Volt. 16(1C)"
+  dielectric: { value: X5R, src: 'p5 "Part Numbering, Temperature Characteristic Codes: R6 = X5R"' }

@@ -1,0 +1,14 @@
+# Murata GRM21 MLCC, size 0805 (2.0x1.25 mm), temperature characteristic
+# X7R (code R7) (murata/C02E-16 p4-5 Part Numbering). Series-level device:
+# value/voltage-specific MPNs are Parts. Non-polarized two-terminal
+# part; terminals numbered only.
+schema_version: "0.2"
+kind: device
+id: murata/GRM21-X7R
+manufacturer: murata
+category: capacitor
+family: GRM21
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

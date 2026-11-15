@@ -1,0 +1,31 @@
+# 100pF C0G 50V ±5% GRM188 MLCC. MPN printed verbatim in the
+# murata/C02E-16 catalog (Temperature Compensating Type C0G(5C) Characteristics, PDF page 28,
+# printed page 26); values read from that row/column. Package:
+# manufacturers/murata/CHIP0603-GRM188-C02E (catalog p10 GRM188 row;
+# T-code 8 = 0.8 mm per Part Numbering p4).
+# lifecycle: the catalog is a 2010 edition and carries no status; unknown.
+schema_version: "0.2"
+kind: part
+id: murata/GRM1885C1H101JA01D
+manufacturer: murata
+mpn: GRM1885C1H101JA01D
+device: murata/GRM188-C0G
+package: manufacturers/murata/CHIP0603-GRM188-C02E
+sources: [murata/C02E-16]
+source: murata/C02E-16
+
+existence:
+  status: verified
+  src: 'p28 "C0G(5C) table, 1.6x0.8(18)<0603>, 50(1H) column, row 100pF(101) ±5%(J): GRM1885C1H101JA01D"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:
+    typ: 100 pF
+    src: p28 "C0G(5C) table, GRM1885C1H101JA01D row, Capacitance 100pF(101)"
+  tolerance: { tol: ±5 %, src: 'p28 "C0G(5C) table, GRM1885C1H101JA01D row, Tolerance ±5%(J)"' }
+  rated_voltage:
+    typ: 50 V
+    src: p28 "C0G(5C) table, GRM1885C1H101JA01D column, Rated Volt. 50(1H)"
+  dielectric: { value: C0G, src: 'p5 "Part Numbering, Temperature Characteristic Codes: 5C = C0G"' }

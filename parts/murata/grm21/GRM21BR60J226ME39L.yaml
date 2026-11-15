@@ -1,0 +1,33 @@
+# 22µF X5R 6.3V ±20% GRM21 MLCC. MPN printed verbatim in the
+# murata/C02E-16 catalog (High Dielectric Constant Type X5R(R6) Characteristics, PDF page 49,
+# printed page 47); values read from that row/column. Package:
+# manufacturers/murata/CHIP0805-GRM21B-C02E (catalog p10 GRM21B row;
+# T-code B = 1.25 mm per Part Numbering p4).
+# lifecycle: the catalog is a 2010 edition and carries no status; unknown.
+# The catalog prints the MPN with a trailing "*" (footnote: refer to
+# GRM Series Specifications and Test Method (2)); not part of the MPN.
+schema_version: "0.2"
+kind: part
+id: murata/GRM21BR60J226ME39L
+manufacturer: murata
+mpn: GRM21BR60J226ME39L
+device: murata/GRM21-X5R
+package: manufacturers/murata/CHIP0805-GRM21B-C02E
+sources: [murata/C02E-16]
+source: murata/C02E-16
+
+existence:
+  status: verified
+  src: 'p49 "X5R(R6) table, 2.0x1.25(21)<0805>, 6.3(0J) column, row 22µF(226) ±20%(M): GRM21BR60J226ME39L*"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:
+    typ: 22 µF
+    src: p49 "X5R(R6) table, GRM21BR60J226ME39L row, Capacitance 22µF(226)"
+  tolerance: { tol: ±20 %, src: 'p49 "X5R(R6) table, GRM21BR60J226ME39L row, Tolerance ±20%(M)"' }
+  rated_voltage:
+    typ: 6.3 V
+    src: p49 "X5R(R6) table, GRM21BR60J226ME39L column, Rated Volt. 6.3(0J)"
+  dielectric: { value: X5R, src: 'p5 "Part Numbering, Temperature Characteristic Codes: R6 = X5R"' }

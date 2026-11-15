@@ -1,0 +1,33 @@
+# 1µF X7R 16V ±10% GRM188 MLCC. MPN printed verbatim in the
+# murata/C02E-16 catalog (High Dielectric Constant Type X7R(R7)/X7S(C7) Characteristics, PDF page 40,
+# printed page 38); values read from that row/column. Package:
+# manufacturers/murata/CHIP0603-GRM188-C02E (catalog p10 GRM188 row;
+# T-code 8 = 0.8 mm per Part Numbering p4).
+# lifecycle: the catalog is a 2010 edition and carries no status; unknown.
+# The catalog prints the MPN with a trailing "*" (footnote: refer to
+# GRM Series Specifications and Test Method (2)); not part of the MPN.
+schema_version: "0.2"
+kind: part
+id: murata/GRM188R71C105KA12D
+manufacturer: murata
+mpn: GRM188R71C105KA12D
+device: murata/GRM188-X7R
+package: manufacturers/murata/CHIP0603-GRM188-C02E
+sources: [murata/C02E-16]
+source: murata/C02E-16
+
+existence:
+  status: verified
+  src: 'p40 "X7R(R7) table, 1.6x0.8(18)<0603>, 16(1C) column, row 1.0µF(105) ±10%(K): GRM188R71C105KA12D*"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:
+    typ: 1 µF
+    src: p40 "X7R(R7) table, GRM188R71C105KA12D row, Capacitance 1.0µF(105)"
+  tolerance: { tol: ±10 %, src: 'p40 "X7R(R7) table, GRM188R71C105KA12D row, Tolerance ±10%(K)"' }
+  rated_voltage:
+    typ: 16 V
+    src: p40 "X7R(R7) table, GRM188R71C105KA12D column, Rated Volt. 16(1C)"
+  dielectric: { value: X7R, src: 'p5 "Part Numbering, Temperature Characteristic Codes: R7 = X7R"' }
