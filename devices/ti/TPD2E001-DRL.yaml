@@ -1,0 +1,29 @@
+# TPD2E001 2-channel ESD protection with a VCC pin, pin map of the DRL
+# (5-pin SOT) package only (DRY, DRS and DZD number differently). From
+# the "Pin Functions" table, DRL column (SLLS684I page 3: GND 4, IOx
+# 3, 5, N.C. 2, VCC 1), checked against the "DRL Package 5-Pin SOT Top
+# View" figure (same page), which names pin 3 IO1 and pin 5 IO2.
+# IOx ("ESD-protected channel") typed passive; N.C. "Not internally
+# connected".
+schema_version: "0.2"
+kind: device
+id: ti/TPD2E001-DRL
+manufacturer: ti
+category: diode
+family: TPD2E001
+source: ti/SLLS684I
+
+parameters:
+  forward_voltage:
+    min: 0.65 V
+    max: 0.95 V
+    at: { IF: 10 mA }
+    src: p5 "6.6 Electrical Characteristics, VF Diode forward voltage"
+
+pins:
+  src: ['p3 "Pin Functions, DRL column"', p3 "DRL Package 5-Pin SOT Top View (IO1/IO2 names)"]
+  "1": { name: VCC, type: power }
+  "2": { name: NC, type: nc }
+  "3": { name: IO1, type: passive }
+  "4": { name: GND, type: ground }
+  "5": { name: IO2, type: passive }

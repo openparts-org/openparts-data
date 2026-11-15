@@ -1,0 +1,28 @@
+# Orderable MPN and status from the PACKAGE OPTION ADDENDUM of SLVSBQ9E
+# (page 14, dated 29-Oct-2026): row TPD4E1U06DBVR, Active, SOT-23 (DBV)
+# 6 pins. Package DBV0006A (4214840/G 08/2024) on page 18: same drawing
+# revision and the same printed numbers as the page read for
+# manufacturers/ti/DBV0006A (ti/SCES195N page 22), so it is reused.
+schema_version: "0.2"
+kind: part
+id: ti/TPD4E1U06DBVR
+manufacturer: ti
+mpn: TPD4E1U06DBVR
+device: ti/TPD4E1U06
+
+package:
+  value: manufacturers/ti/DBV0006A
+  src:
+    - p14 "PACKAGE OPTION ADDENDUM, row TPD4E1U06DBVR, Package "SOT-23 (DBV) | 6""
+    - p18 "PACKAGE OUTLINE DBV0006A (4214840/G)"
+
+sources: [ti/SLVSBQ9E, ti/SCES195N]
+source: ti/SLVSBQ9E
+
+existence:
+  status: verified
+  src: p14 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TPD4E1U06DBVR"
+
+lifecycle:
+  status: active
+  src: p14 "PACKAGE OPTION ADDENDUM, row TPD4E1U06DBVR, Status column "Active""

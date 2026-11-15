@@ -1,0 +1,23 @@
+# TPD2E2U06 dual-channel TVS ESD protection device, pin map of the DRL
+# (5-pin SOT) package only (the DCK SC70 package numbers differently).
+# From the "Pin Functions" table, DRL column (SLLSEG9C page 3), checked
+# against the "DRL Package 5-Pin SOT Top View" figure (same page).
+# IO1/IO2 are type "I/O"; typed passive (TVS diode terminals). NC "is
+# not connected".
+schema_version: "0.2"
+kind: device
+id: ti/TPD2E2U06-DRL
+manufacturer: ti
+category: diode
+family: TPD2E2U06
+source: ti/SLLSEG9C
+
+parameters: { reverse_voltage: { max: 5.5 V, src: 'p4 "6.5 Electrical Characteristics, VRWM"' } }
+
+pins:
+  src: ['p3 "Pin Functions, DRL column"', p3 "DRL Package 5-Pin SOT Top View (cross-check)"]
+  "1": { name: NC, type: nc }
+  "2": { name: NC, type: nc }
+  "3": { name: IO1, type: passive }
+  "4": { name: GND, type: ground }
+  "5": { name: IO2, type: passive }

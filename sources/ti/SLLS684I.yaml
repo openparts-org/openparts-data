@@ -1,0 +1,18 @@
+# TI datasheet "TPD2E001 Low-Capacitance 2-Channel ESD-Protection for
+# High-Speed Data Interfaces", header "SLLS684I - JULY 2006 - REVISED
+# MARCH 2016". Downloaded 2026-11-16 with curl from the TI symlink URL
+# below (PDF checked with `file`, title page checked); read with
+# pdftotext -layout. Page numbers are PDF page indices. The PACKAGE
+# OPTION ADDENDUM (page 10) is dated 10-Nov-2025; the DRL0005A outline
+# (4220753/E 11/2024) is on page 21.
+schema_version: "0.2"
+kind: source
+id: ti/SLLS684I
+sha256: b648c5d12f3e5b48c4b8ce3a9c4d5c4f1d40abb084d097e88465ba2f48d98d79
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tpd2e001.pdf
+publisher: ti
+document_id: SLLS684I
+document_type: datasheet
+revision: I
+date: 2016-03

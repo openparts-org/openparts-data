@@ -1,0 +1,26 @@
+# Orderable MPN and status from the PACKAGE OPTION ADDENDUM of SLLSEG9C
+# (page 13, dated 10-Nov-2025): row TPD2E2U06DRLR, Active, SOT-5X3
+# (DRL) 5 pins. Package DRL0005A (4220753/E 11/2024) on page 17.
+schema_version: "0.2"
+kind: part
+id: ti/TPD2E2U06DRLR
+manufacturer: ti
+mpn: TPD2E2U06DRLR
+device: ti/TPD2E2U06-DRL
+
+package:
+  value: manufacturers/ti/DRL0005A
+  src:
+    - p13 "PACKAGE OPTION ADDENDUM, row TPD2E2U06DRLR, Package "SOT-5X3 (DRL) | 5""
+    - p17 "PACKAGE OUTLINE DRL0005A (4220753/E)"
+
+sources: [ti/SLLSEG9C]
+source: ti/SLLSEG9C
+
+existence:
+  status: verified
+  src: p13 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TPD2E2U06DRLR"
+
+lifecycle:
+  status: active
+  src: p13 "PACKAGE OPTION ADDENDUM, row TPD2E2U06DRLR, Status column "Active""

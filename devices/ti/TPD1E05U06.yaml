@@ -1,0 +1,22 @@
+# TPD1E05U06 single-channel unidirectional TVS ESD protection device.
+# Pin map from Table 4-1 "Pin Functions TPD1E05U06 DPY and DYA"
+# (SLVSBO7O page 3: I/O 1, GND 2), checked against Figure 4-2 "DYA
+# Package 2-Pin SOD-523 (Top View)" (pins 1 and 2; same page). I/O is
+# typed passive (TVS diode terminal). The datasheet names no
+# cathode/anode, so the pins keep the datasheet's names.
+schema_version: "0.2"
+kind: device
+id: ti/TPD1E05U06
+manufacturer: ti
+category: diode
+family: TPDxE05U06
+source: ti/SLVSBO7O
+
+parameters: { reverse_voltage: { max: 5.5 V, src: 'p7 "5.4 Electrical Characteristics, VRWM"' } }
+
+pins:
+  src:
+    - p3 "Table 4-1. Pin Functions TPD1E05U06 DPY and DYA"
+    - p3 "Figure 4-2 DYA Package 2-Pin SOD-523 (cross-check)"
+  "1": { name: I/O, type: passive }
+  "2": { name: GND, type: ground }

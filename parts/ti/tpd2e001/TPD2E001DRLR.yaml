@@ -1,0 +1,28 @@
+# Orderable MPN and status from the PACKAGE OPTION ADDENDUM of SLLS684I
+# (page 10, dated 10-Nov-2025): row TPD2E001DRLR, Active, SOT-5X3 (DRL)
+# 5 pins. Package DRL0005A (4220753/E 11/2024) on page 21: the same
+# drawing as manufacturers/ti/DRL0005A (read from ti/SLLSEG9C page 17;
+# text identical, render byte-identical), so it is reused.
+schema_version: "0.2"
+kind: part
+id: ti/TPD2E001DRLR
+manufacturer: ti
+mpn: TPD2E001DRLR
+device: ti/TPD2E001-DRL
+
+package:
+  value: manufacturers/ti/DRL0005A
+  src:
+    - p10 "PACKAGE OPTION ADDENDUM, row TPD2E001DRLR, Package "SOT-5X3 (DRL) | 5""
+    - p21 "PACKAGE OUTLINE DRL0005A (4220753/E)"
+
+sources: [ti/SLLS684I, ti/SLLSEG9C]
+source: ti/SLLS684I
+
+existence:
+  status: verified
+  src: p10 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TPD2E001DRLR"
+
+lifecycle:
+  status: active
+  src: p10 "PACKAGE OPTION ADDENDUM, row TPD2E001DRLR, Status column "Active""

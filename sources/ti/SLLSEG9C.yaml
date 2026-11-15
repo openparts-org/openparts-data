@@ -1,0 +1,18 @@
+# TI datasheet "TPD2E2U06 Dual-Channel High-Speed ESD Protection
+# Device", header "SLLSEG9C - JUNE 2013 - REVISED DECEMBER 2019".
+# Downloaded 2026-11-16 with curl from the TI symlink URL below (PDF
+# checked with `file`, title page checked); read with pdftotext -layout,
+# the DRL0005A outline (page 17, 4220753/E 11/2024) also rendered.
+# Page numbers are PDF page indices. The PACKAGE OPTION ADDENDUM
+# (page 13) is dated 10-Nov-2025 (newer than the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SLLSEG9C
+sha256: a133b86ea3d3c3d34667339b92d3b5e98d541d10e9775d63e7cdfa153794f4ed
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tpd2e2u06.pdf
+publisher: ti
+document_id: SLLSEG9C
+document_type: datasheet
+revision: C
+date: 2019-12

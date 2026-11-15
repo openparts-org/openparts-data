@@ -1,0 +1,18 @@
+# TI datasheet "TPD4E1U06 Quad-Channel, High-Speed ESD Protection
+# Device" (TPD4E1U06, TPD4E1U06-G4), header "SLVSBQ9E - DECEMBER 2012 -
+# REVISED OCTOBER 2026". Downloaded 2026-11-16 with curl from the TI
+# symlink URL below (PDF checked with `file`, title page checked); read
+# with pdftotext -layout. Page numbers are PDF page indices. The
+# PACKAGE OPTION ADDENDUM (page 14) is dated 29-Oct-2026; the DBV0006A
+# outline (4214840/G 08/2024) is on page 18.
+schema_version: "0.2"
+kind: source
+id: ti/SLVSBQ9E
+sha256: 660abb5e6cedbf35e16ec865510f0e628dd2c101ff5de20bcf1500d035553909
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tpd4e1u06.pdf
+publisher: ti
+document_id: SLVSBQ9E
+document_type: datasheet
+revision: E
+date: 2026-10

@@ -1,0 +1,27 @@
+# Orderable MPN and status from the PACKAGE OPTION ADDENDUM of SLVSBO7O
+# (page 37, dated 11-Nov-2026): row TPD1E05U06DYAR, Active, SOT-5X3
+# (DYA) 2 pins. Package DYA0002A (4224978/B 09/2021) on page 24, land
+# pattern page 25.
+schema_version: "0.2"
+kind: part
+id: ti/TPD1E05U06DYAR
+manufacturer: ti
+mpn: TPD1E05U06DYAR
+device: ti/TPD1E05U06
+
+package:
+  value: manufacturers/ti/DYA0002A
+  src:
+    - p37 "PACKAGE OPTION ADDENDUM, row TPD1E05U06DYAR, Package "SOT-5X3 (DYA) | 2""
+    - p24 "PACKAGE OUTLINE DYA0002A (4224978/B)"
+
+sources: [ti/SLVSBO7O]
+source: ti/SLVSBO7O
+
+existence:
+  status: verified
+  src: p37 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TPD1E05U06DYAR"
+
+lifecycle:
+  status: active
+  src: p37 "PACKAGE OPTION ADDENDUM, row TPD1E05U06DYAR, Status column "Active""
