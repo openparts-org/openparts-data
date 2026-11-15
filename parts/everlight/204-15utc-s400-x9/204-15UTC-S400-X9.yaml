@@ -18,3 +18,28 @@ lifecycle:
 
 sources:
   - everlight/DLE-0004797
+
+parameters:
+  color:
+    value: white
+  forward_voltage:
+    min: 2.8
+    max: 3.6
+    unit: V
+  forward_current:
+    max: 30
+    unit: mA
+
+provenance:
+  "/parameters/color":
+    - source: everlight/DLE-0004797
+      page: 2
+      locator: "Device Selection Guide: Chip InGaN, Emitted Color White, Resin Water Clear"
+  "/parameters/forward_voltage":
+    - source: everlight/DLE-0004797
+      page: 2
+      locator: "Electro-Optical Characteristics, Forward Voltage VF @ IF=20mA: Min. 2.8 V, Max. 3.6 V"
+  "/parameters/forward_current":
+    - source: everlight/DLE-0004797
+      page: 2
+      locator: "Absolute Maximum Ratings, Continuous Forward Current IF: 30 mA"
