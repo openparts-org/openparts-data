@@ -30,8 +30,38 @@ lifecycle:
 sources:
   - kemet/C1002_X7R
 
+parameters:
+  capacitance:
+    nominal: 0.1
+    unit: µF
+  tolerance:
+    min: -10
+    max: 10
+    unit: "%"
+  rated_voltage:
+    nominal: 16
+    unit: V
+  dielectric:
+    value: X7R
+
 provenance:
   "/existence":
     - source: kemet/C1002_X7R
       page: 1
       locator: "Part-specific spec sheet title/header: \"C0402C104K4RACTU\", with \"C0402C104K4RAC7867\" listed as an Alias of the same part"
+  "/parameters/capacitance":
+    - source: kemet/C1002_X7R
+      page: 5
+      locator: "Table 1A – Capacitance Range/Selection Waterfall (0402 – 1206 Case Sizes) cont., Cap Code 104 row: Cap 0.1 µF"
+  "/parameters/tolerance":
+    - source: kemet/C1002_X7R
+      page: 2
+      locator: "Ordering Information, Capacitance Tolerance: K = ±10%"
+  "/parameters/rated_voltage":
+    - source: kemet/C1002_X7R
+      page: 2
+      locator: "Ordering Information, Rated Voltage (VDC): 4 = 16"
+  "/parameters/dielectric":
+    - source: kemet/C1002_X7R
+      page: 2
+      locator: "Ordering Information, Dielectric: R = X7R"

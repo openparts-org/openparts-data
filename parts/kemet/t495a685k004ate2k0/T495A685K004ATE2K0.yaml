@@ -21,3 +21,36 @@ lifecycle:
 
 sources:
   - kemet/T2009_T495
+
+parameters:
+  capacitance:
+    nominal: 6.8
+    unit: µF
+  tolerance:
+    min: -10
+    max: 10
+    unit: "%"
+  rated_voltage:
+    nominal: 4
+    unit: V
+  esr:
+    max: 2000
+    unit: mΩ
+
+provenance:
+  "/parameters/capacitance":
+    - source: kemet/T2009_T495
+      page: 5
+      locator: "Table 1 – Ratings & Part Number Reference, row T495A685(1)004A(2)E2K0: Rated Cap 6.8 µF"
+  "/parameters/tolerance":
+    - source: kemet/T2009_T495
+      page: 2
+      locator: "Ordering Information, Capacitance Tolerance: K = ±10%"
+  "/parameters/rated_voltage":
+    - source: kemet/T2009_T495
+      page: 5
+      locator: "Table 1 – Ratings & Part Number Reference, row T495A685(1)004A(2)E2K0: Rated Voltage 4 VDC at 85°C"
+  "/parameters/esr":
+    - source: kemet/T2009_T495
+      page: 5
+      locator: "Table 1 – Ratings & Part Number Reference, row T495A685(1)004A(2)E2K0: ESR 2,000 mΩ at 25°C 100 kHz Max"

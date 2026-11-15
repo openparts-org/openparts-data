@@ -1,0 +1,18 @@
+# KEMET (YAGEO Group) T491 Industrial tantalum series datasheet, footer
+# "T2005_T491 (2026-07-08)", 22 pages. Fetched 2026-11-15 with plain curl
+# from KEMET's own datasheet download endpoint (the per-MPN link for
+# T491B106K016AT serves this series PDF). Added as a separate Source
+# because the existing kemet/T2005_T491 record pins an older revision
+# (2023-12-06) hosted on a third-party mirror.
+schema_version: "0.1"
+kind: source
+id: kemet/T2005_T491@2026-07-08
+
+publisher: kemet
+document_id: T2005_T491
+document_type: datasheet
+
+revision: "T2005_T491 (2026-07-08)"
+date: "2026-07-08"
+
+url: "https://search.kemet.com/download/datasheet/T491B106K016AT"

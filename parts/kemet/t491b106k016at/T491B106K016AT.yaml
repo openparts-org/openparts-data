@@ -21,3 +21,37 @@ lifecycle:
 
 sources:
   - kemet/T2005_T491
+  - kemet/T2005_T491@2026-07-08
+
+parameters:
+  capacitance:
+    nominal: 10
+    unit: µF
+  tolerance:
+    min: -10
+    max: 10
+    unit: "%"
+  rated_voltage:
+    nominal: 16
+    unit: V
+  esr:
+    max: 2.0
+    unit: Ω
+
+provenance:
+  "/parameters/capacitance":
+    - source: kemet/T2005_T491@2026-07-08
+      page: 9
+      locator: "Table 1 – Ratings & Part Number Reference, row T491B106(1)016A(2): Rated Cap 10 µF"
+  "/parameters/tolerance":
+    - source: kemet/T2005_T491@2026-07-08
+      page: 2
+      locator: "Ordering Information, Capacitance Tolerance: K = ±10%"
+  "/parameters/rated_voltage":
+    - source: kemet/T2005_T491@2026-07-08
+      page: 9
+      locator: "Table 1 – Ratings & Part Number Reference, row T491B106(1)016A(2): Rated Voltage 16 VDC at 85°C"
+  "/parameters/esr":
+    - source: kemet/T2005_T491@2026-07-08
+      page: 9
+      locator: "Table 1 – Ratings & Part Number Reference, row T491B106(1)016A(2): ESR 2.0 Ω at +25°C 100 kHz Maximum"

@@ -17,3 +17,37 @@ lifecycle:
 
 sources:
   - kemet/T494-SERIES
+  - kemet/T2008_T494
+
+parameters:
+  capacitance:
+    nominal: 22
+    unit: µF
+  tolerance:
+    min: -20
+    max: 20
+    unit: "%"
+  rated_voltage:
+    nominal: 20
+    unit: V
+  esr:
+    max: 0.4
+    unit: Ω
+
+provenance:
+  "/parameters/capacitance":
+    - source: kemet/T2008_T494
+      page: 10
+      locator: "Table 1 – Ratings & Part Number Reference, row T494C226(1)020A(2): Rated Cap 22 µF"
+  "/parameters/tolerance":
+    - source: kemet/T2008_T494
+      page: 2
+      locator: "Ordering Information, Capacitance Tolerance: M = ±20%"
+  "/parameters/rated_voltage":
+    - source: kemet/T2008_T494
+      page: 10
+      locator: "Table 1 – Ratings & Part Number Reference, row T494C226(1)020A(2): Rated Voltage 20 VDC at 85°C"
+  "/parameters/esr":
+    - source: kemet/T2008_T494
+      page: 10
+      locator: "Table 1 – Ratings & Part Number Reference, row T494C226(1)020A(2): ESR 0.4 Ω at 25°C 100 kHz Max"
