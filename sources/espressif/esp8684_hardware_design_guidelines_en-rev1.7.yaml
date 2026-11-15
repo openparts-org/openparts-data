@@ -1,0 +1,22 @@
+# ESP32-C2 Hardware Design Guidelines (Espressif), "Release master" built
+# Nov 12, 2026; the latest Revision History entry is v1.7 (2025-05-23), used as
+# revision and date. 28 pages. Downloaded 2026-11-16 with curl from
+# docs.espressif.com, where Espressif's own document link
+# (espressif.com/.../esp8684_hardware_design_guidelines_en.pdf) redirects.
+# The document is titled ESP32-C2; it states (PDF page 4) that ESP32-C2
+# currently consists only of the ESP8684 series and that it applies to
+# the ESP8684.
+# The Disclaimer and Copyright Notice grants no licence: facts only.
+# Page numbers cited from this Source are PDF page indices (printed
+# page = index - 3).
+schema_version: "0.2"
+kind: source
+id: espressif/esp8684_hardware_design_guidelines_en@rev1.7
+sha256: fe74c843401f96fbd2c326d83c90cc867e9041de1bc601557b3a5ff7ac17cb7c
+retrieved: 2026-11-16
+url: https://docs.espressif.com/projects/esp-hardware-design-guidelines/en/latest/esp32c2/esp-hardware-design-guidelines-en-master-esp32c2.pdf
+publisher: espressif
+document_id: esp8684_hardware_design_guidelines_en
+document_type: reference_design
+revision: "1.7"
+date: 2025-05-23

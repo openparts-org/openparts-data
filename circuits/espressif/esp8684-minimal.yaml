@@ -1,0 +1,34 @@
+# The ESP8684 single-3.3 V core circuit of the ESP32-C2 Hardware
+# Design Guidelines' Schematic Checklist as a composite: supply
+# decoupling, main crystal, CHIP_EN delay, strapping/UART0, plus the
+# bulk capacitor at the power entrance (merged with the VDDA3P3 10 uF
+# when the entrance is close to it). Flash, RF matching, ESD diodes
+# and connectors are left to the board. Page numbers are PDF page
+# indices of the ESP32-C2 Hardware Design Guidelines (printed page =
+# index - 3). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: espressif/esp8684-minimal
+title: ESP8684 minimal circuit
+host: espressif/ESP8684
+source: espressif/esp8684_hardware_design_guidelines_en@rev1.7
+
+nets:
+  3V3:     { kind: power, voltage: { typ: 3.3 V }, src: p7 "1.3.2" }
+  CHIP_EN: { kind: signal }
+  GND:     { kind: ground }
+  U0TXD:   { kind: signal }
+
+roles:
+  C_BULK_IN:
+    requires: { category: capacitor, capacitance: { min: 10 uF }, src: p9 "1.3.2" }
+    pins:     { "1": 3V3, "2": GND }
+    level:    { value: recommended, src: p9 "1.3.2" }
+
+includes:
+  - { circuit: espressif/esp8684-power, with: { GND: GND, VDD_3V3: 3V3 }, src: p9 "1.3.2" }
+  - { circuit: espressif/esp8684-xtal-40mhz, with: { GND: GND }, src: p11 "1.3.5" }
+  - circuit: espressif/esp8684-chip-en
+    with: { CHIP_EN: CHIP_EN, GND: GND, VDD_3V3: 3V3 }
+    src: p11 "1.3.3"
+  - { circuit: espressif/esp8684-boot, with: { U0TXD: U0TXD, VDD_3V3: 3V3 }, src: p14 "1.3.9" }
