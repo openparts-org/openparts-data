@@ -1,0 +1,64 @@
+# Toshiba P-HSOP8-0405-1.27-002 (8-lead HSOP, 1.27 mm pitch, exposed pad), read from
+# the rendered "Package Dimensions" page of the TB67H450FNG datasheet
+# (2020-11-26, PDF page 17; image only). Unit mm. The drawing carries a
+# "Not Recommended for New Design" watermark.
+#
+# Mapping (top view turned so pin 1 is at the top of the left row): body
+# "3.81~3.99" across the rows -> body_width; "4.80~5.00" along them ->
+# body_length; lead tips "5.79~6.20" -> overall_width; lead width
+# "0.36~0.48"; foot "0.41~1.27" -> lead_length; lead thickness
+# "0.18~0.25"; standoff "0.05~0.15"; "1.70 MAX" -> overall_height.
+# E-PAD: "2.18~2.39" across the rows -> exposed_pad.width,
+# "3.00~3.20" along them -> exposed_pad.length, centred on the
+# package centre lines. The datasheet gives no land pattern (the
+# generator's IPC-7351B lands; the thermal land is the pad). Pins 1-4
+# along one long edge, 5-8 back along the other -- the SOIC order.
+schema_version: "0.2"
+kind: package
+id: manufacturers/toshiba/P-HSOP8-0405-1.27-002
+family: soic
+lead_count: 8
+source: toshiba/TB67H450FNG-datasheet-en
+
+pitch: { typ: 1.27 mm, src: 'p17 "P-HSOP8-0405-1.27-002, boxed "1.27""' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 3.81 mm
+    max: 3.99 mm
+    src: p17 "P-HSOP8-0405-1.27-002, top view, "3.81~3.99""
+  body_length:
+    min: 4.8 mm
+    max: 5 mm
+    src: p17 "P-HSOP8-0405-1.27-002, side view, "4.80~5.00""
+  lead_thickness:
+    min: 0.18 mm
+    max: 0.25 mm
+    src: p17 "P-HSOP8-0405-1.27-002, lead detail, "0.18~0.25""
+  exposed_pad:
+    width:
+      min: 2.18 mm
+      max: 2.39 mm
+      src: p17 "P-HSOP8-0405-1.27-002, E-PAD, "2.18~2.39" across the rows"
+    length:
+      min: 3 mm
+      max: 3.2 mm
+      src: p17 "P-HSOP8-0405-1.27-002, E-PAD, "3.00~3.20" along the rows"
+  overall_width:
+    min: 5.79 mm
+    max: 6.2 mm
+    src: p17 "P-HSOP8-0405-1.27-002, top view, "5.79~6.20""
+  overall_height: { max: 1.7 mm, src: 'p17 "P-HSOP8-0405-1.27-002, side view, "1.70 MAX""' }
+  standoff:
+    min: 0.05 mm
+    max: 0.15 mm
+    src: p17 "P-HSOP8-0405-1.27-002, side view, "0.05~0.15""
+  lead_width:
+    min: 0.36 mm
+    max: 0.48 mm
+    src: p17 "P-HSOP8-0405-1.27-002, top view, "0.36~0.48""
+  lead_length:
+    min: 0.41 mm
+    max: 1.27 mm
+    src: p17 "P-HSOP8-0405-1.27-002, lead detail, "0.41~1.27""

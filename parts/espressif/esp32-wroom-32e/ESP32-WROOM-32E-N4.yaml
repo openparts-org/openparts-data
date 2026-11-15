@@ -1,0 +1,22 @@
+# ESP32-WROOM-32E-N4: listed in the module datasheet's series comparison
+# table (Table 1 ESP32-WROOM-32E Series Comparison) -> existence verified.
+# Lifecycle: the datasheet states no status for this part -> unknown.
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-WROOM-32E-N4
+manufacturer: espressif
+mpn: ESP32-WROOM-32E-N4
+device: espressif/ESP32-WROOM-32E
+package: manufacturers/espressif/MODULE39-18x25.5-ESP32-WROOM-32E
+
+sources:
+  - espressif/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en@rev2.1
+  - espressif/esp32_hardware_design_guidelines_en@rev1.9
+
+source: espressif/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en@rev2.1
+
+existence:
+  status: verified
+  src: 'p3 "Table 1 ESP32-WROOM-32E Series Comparison, Part Number: ESP32-WROOM-32E-N4"'
+
+lifecycle: { status: unknown }

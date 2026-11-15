@@ -1,0 +1,44 @@
+# ESP32-C6-WROOM-1 Wi-Fi/Bluetooth module (PCB antenna). Pin numbers, names
+# and types from the module datasheet's pin definition table (p11 "Table 3-1
+# Pin Definitions"); type P is power (ground for GND/EPAD), I input, I/O and
+# I/O/T io, a dash nc. Alternate functions are not recorded here.  The -U
+# variant (antenna connector) is a different board size and is not modelled.
+schema_version: "0.2"
+kind: device
+id: espressif/ESP32-C6-WROOM-1
+manufacturer: espressif
+category: microcontroller
+family: ESP32-C6-WROOM-1
+source: espressif/esp32-c6-wroom-1_wroom-1u_datasheet_en@rev1.4
+
+pins:
+  src:  p11 "Table 3-1 Pin Definitions"
+  "1":  { name: GND, type: ground }
+  "2":  { name: 3V3, type: power }
+  "3":  { name: EN, type: input }
+  "4":  { name: IO4, type: io }
+  "5":  { name: IO5, type: io }
+  "6":  { name: IO6, type: io }
+  "7":  { name: IO7, type: io }
+  "8":  { name: IO0, type: io }
+  "9":  { name: IO1, type: io }
+  "10": { name: IO8, type: io }
+  "11": { name: IO10, type: io }
+  "12": { name: IO11, type: io }
+  "13": { name: IO12, type: io }
+  "14": { name: IO13, type: io }
+  "15": { name: IO9, type: io }
+  "16": { name: IO18, type: io }
+  "17": { name: IO19, type: io }
+  "18": { name: IO20, type: io }
+  "19": { name: IO21, type: io }
+  "20": { name: IO22, type: io }
+  "21": { name: IO23, type: io }
+  "22": { name: NC, type: nc }
+  "23": { name: IO15, type: io }
+  "24": { name: RXD0, type: io }
+  "25": { name: TXD0, type: io }
+  "26": { name: IO3, type: io }
+  "27": { name: IO2, type: io }
+  "28": { name: GND, type: ground }
+  "29": { name: EPAD, type: ground }

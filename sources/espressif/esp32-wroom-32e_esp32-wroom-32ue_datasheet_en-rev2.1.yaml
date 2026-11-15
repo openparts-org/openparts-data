@@ -1,0 +1,17 @@
+# ESP32-WROOM-32E & WROOM-32UE Datasheet v2.1 (Espressif), 52 pages, every footer
+# "ESP32-WROOM-32E & WROOM-32UE Datasheet v2.1"; the PDF's creation date (2026-08-05) is used as
+# date. Downloaded 2026-11-16 with curl from Espressif's own URL. Read with
+# pdftotext -layout and 220-600 dpi renders of the dimension and land
+# pattern figures (vector drawings: values are the printed callouts).
+# PDF page index = the printed page number. Facts only.
+schema_version: "0.2"
+kind: source
+id: espressif/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en@rev2.1
+sha256: 4c7a345d1c1bfec34c38665639e39a7f43b79a35a12f6adcc2c7c0f83850f8b8
+retrieved: 2026-11-16
+url: https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en.pdf
+publisher: espressif
+document_id: esp32-wroom-32e_esp32-wroom-32ue_datasheet_en
+document_type: datasheet
+revision: "2.1"
+date: 2026-08-05

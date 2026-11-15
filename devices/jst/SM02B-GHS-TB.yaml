@@ -1,0 +1,13 @@
+# JST GH SMT wire-to-board header, side entry, 2 circuits
+# (jst/eGH page 3, Header Model No. table: SM02B-GHS-TB). The sheet names no
+# signals: each circuit is named by its number, all passive.
+schema_version: "0.2"
+kind: device
+id: jst/SM02B-GHS-TB
+manufacturer: jst
+category: connector
+family: GH
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

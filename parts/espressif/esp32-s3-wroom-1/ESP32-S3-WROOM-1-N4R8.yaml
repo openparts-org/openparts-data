@@ -1,0 +1,23 @@
+# ESP32-S3-WROOM-1-N4R8: listed in the module datasheet's series comparison
+# table (Table 1-1 ESP32-S3-WROOM-1 Series Comparison) -> existence
+# verified. Lifecycle: the datasheet states no status for this part ->
+# unknown.
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-S3-WROOM-1-N4R8
+manufacturer: espressif
+mpn: ESP32-S3-WROOM-1-N4R8
+device: espressif/ESP32-S3-WROOM-1
+package: manufacturers/espressif/MODULE41-18x25.5-ESP32-S3-WROOM-1
+
+sources:
+  - espressif/esp32-s3-wroom-1_wroom-1u_datasheet_en@rev1.8
+  - espressif/esp32-s3_hardware_design_guidelines_en@rev1.8
+
+source: espressif/esp32-s3-wroom-1_wroom-1u_datasheet_en@rev1.8
+
+existence:
+  status: verified
+  src: 'p3 "Table 1-1 ESP32-S3-WROOM-1 Series Comparison, Part Number: ESP32-S3-WROOM-1-N4R8"'
+
+lifecycle: { status: unknown }

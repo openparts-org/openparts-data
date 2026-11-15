@@ -1,0 +1,24 @@
+# ESP32-C3-MINI-1-H4-AZ: listed in the module datasheet's series comparison
+# table (Table 1-1 ESP32-C3-MINI-1 (ANT) Series Comparison) -> existence
+# verified. The comparison table marks it "(NRND)".
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-C3-MINI-1-H4-AZ
+manufacturer: espressif
+mpn: ESP32-C3-MINI-1-H4-AZ
+device: espressif/ESP32-C3-MINI-1
+package: manufacturers/espressif/MODULE53-13.2x16.6-ESP32-C3-MINI-1
+
+sources:
+  - espressif/esp32-c3-mini-1_datasheet_en@rev2.2
+  - espressif/esp32-c3_hardware_design_guidelines_en@rev1.8
+
+source: espressif/esp32-c3-mini-1_datasheet_en@rev2.2
+
+existence:
+  status: verified
+  src: 'p3 "Table 1-1 ESP32-C3-MINI-1 (ANT) Series Comparison, Part Number: ESP32-C3-MINI-1-H4-AZ"'
+
+lifecycle:
+  status: nrnd
+  src: 'p3 "Table 1-1 ESP32-C3-MINI-1 (ANT) Series Comparison: "ESP32-C3-MINI-1-H4-AZ (NRND)"'

@@ -1,0 +1,23 @@
+# ESP32-C6-WROOM-1-N8: listed in the module datasheet's series comparison
+# table (Table 1-1 ESP32-C6-WROOM-1 (ANT) Series Comparison) -> existence
+# verified. Lifecycle: the datasheet states no status for this part ->
+# unknown.
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-C6-WROOM-1-N8
+manufacturer: espressif
+mpn: ESP32-C6-WROOM-1-N8
+device: espressif/ESP32-C6-WROOM-1
+package: manufacturers/espressif/MODULE29-18x25.5-ESP32-C6-WROOM-1
+
+sources:
+  - espressif/esp32-c6-wroom-1_wroom-1u_datasheet_en@rev1.4
+  - espressif/esp32-c6_hardware_design_guidelines_en@rev1.8
+
+source: espressif/esp32-c6-wroom-1_wroom-1u_datasheet_en@rev1.4
+
+existence:
+  status: verified
+  src: 'p4 "Table 1-1 ESP32-C6-WROOM-1 (ANT) Series Comparison, Part Number: ESP32-C6-WROOM-1-N8"'
+
+lifecycle: { status: unknown }

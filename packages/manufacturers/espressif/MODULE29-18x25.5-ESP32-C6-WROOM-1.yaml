@@ -1,0 +1,96 @@
+# ESP32-C6-WROOM-1 as a surface-mount module: the recommended land pattern
+# ("Figure 11-1 ESP32-C6-WROOM-1 Recommended PCB Land Pattern) with the
+# board and shield can of "Figure 10-1 ESP32-C6-WROOM-1 Physical Dimensions.
+# Package frame: the board centred on the origin, the antenna end at +y
+# (top). Every value is a printed callout; positions are plain arithmetic
+# between callouts:
+# Rows: 28 pads "1.5" x "0.9" at "1.27"; pad centres on lines "17.5" apart
+# (0.25 inside the board, reaching "0.5" past the edge); pin 1 "7.49" below
+# the top edge, pin 14 "1.5" above the bottom edge ("16.51"); pins 15-28 run
+# up the right edge from "1.5" above the bottom; no bottom row.
+# Grids: 3 x 3 pads of "0.8" with "0.45" gaps ("3.3" overall: pitch 1.25);
+# centre "7.495" from the left edge (x = -9 + 7.495 = -1.505) and "12.29"
+# above the bottom edge (y = -12.75 + 12.29 = -0.46).
+# Shield: can "15.8" x "17.6", its bottom "1.05" above the board edge and
+# its right side "0.98" in from the right edge: centre x = 9 - 0.98 - 7.9 =
+# 0.12, y = -12.75 + 1.05 + 8.8 = -2.9; its top is the overall height.
+# Keep-out: the land pattern's "Antenna Area" (18 x 6 at the top), which the
+# pin layout figure calls the antenna keepout zone; the hardware design
+# guidelines (espressif/esp32-c6_hardware_design_guidelines_en@rev1.8, PDF
+# page 27, section 1.4.7) suggest the antenna outside the base board, or the
+# board cut away on both sides of and below it (no material: components and
+# copper). Board edge: recommended at the antenna end, same section.
+schema_version: "0.2"
+kind: package
+id: manufacturers/espressif/MODULE29-18x25.5-ESP32-C6-WROOM-1
+family: module
+lead_count: 29
+source: espressif/esp32-c6-wroom-1_wroom-1u_datasheet_en@rev1.4
+
+pitch:
+  typ: 1.27 mm
+  src: p44 "Figure 11-1 ESP32-C6-WROOM-1 Recommended PCB Land Pattern, pad pitch"
+
+geometry: { type: parametric, generator: module }
+
+dimensions:
+  body_width:
+    min: 17.8 mm
+    typ: 18 mm
+    max: 18.2 mm
+    src: p41 "Figure 10-1 ESP32-C6-WROOM-1 Physical Dimensions, "18±0.2""
+  body_length:
+    min: 25.3 mm
+    typ: 25.5 mm
+    max: 25.7 mm
+    src: p41 "Figure 10-1 ESP32-C6-WROOM-1 Physical Dimensions, "25.5±0.2""
+  body_height:
+    typ: 0.8 mm
+    src: p41 "Figure 10-1 ESP32-C6-WROOM-1 Physical Dimensions, side view, board "0.8""
+  hole_diameter:
+    typ: 0.55 mm
+    src: p41 "Figure 10-1 ESP32-C6-WROOM-1 Physical Dimensions, "28 x Ø0.55" castellations"
+  overall_height:
+    min: 2.95 mm
+    typ: 3.1 mm
+    max: 3.25 mm
+    src: p41 "Figure 10-1 ESP32-C6-WROOM-1 Physical Dimensions, side view "3.1±0.15""
+
+pad_rows:
+  value:
+    - { side: -x, first: 1, count: 14, pitch: 1.27, start: 7.49, inset: 0.25, pad: [0.9, 1.5] }
+    - { side: +x, first: 15, count: 14, pitch: 1.27, start: 1.5, inset: 0.25, pad: [0.9, 1.5] }
+  src: p44 "Figure 11-1 ESP32-C6-WROOM-1 Recommended PCB Land Pattern (see comment)"
+
+pad_grids:
+  value:
+    - numbers: ["29"]
+      columns: 3
+      rows: 3
+      pitch: [1.25, 1.25]
+      pad: [0.8, 0.8]
+      x: -1.505
+      y: -0.46
+  src: p44 "Figure 11-1 ESP32-C6-WROOM-1 Recommended PCB Land Pattern (see comment)"
+
+shield:
+  x: 0.12
+  y: -2.9
+  width: 15.8
+  length: 17.6
+  src: p41 "Figure 10-1 ESP32-C6-WROOM-1 Physical Dimensions, top view (see comment)"
+
+edge:
+  side: +y
+  requirement: recommended
+  src: 'espressif/esp32-c6_hardware_design_guidelines_en@rev1.8 p27 "Section 1.4.7: place the on-board PCB antenna outside the base board, feed point near the edge"'
+
+keepouts:
+  value:
+    - purpose: antenna
+      restricts: [components, copper]
+      rect: { x: 0, y: 9.75, width: 18, length: 6 }
+      side: +y
+  src:
+    - p44 "Figure 11-1 ESP32-C6-WROOM-1 Recommended PCB Land Pattern, "Antenna Area" at the top"
+    - 'espressif/esp32-c6_hardware_design_guidelines_en@rev1.8 p27 "Section 1.4.7: cut off the base board on both sides of the antenna and below it"'

@@ -1,0 +1,18 @@
+# Model number printed verbatim in the SH sheet's Header table
+# (jst/eSH page 3, 4 circuits, Side entry type column) -> existence
+# verified. Lifecycle: the sheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: jst/SM04B-SRSS-TB
+manufacturer: jst
+mpn: SM04B-SRSS-TB
+device: jst/SM04B-SRSS-TB
+package: manufacturers/jst/SH-Header-Side-SMD-1x04-P1.00
+sources: [jst/eSH]
+source: jst/eSH
+
+existence:
+  status: verified
+  src: 'p3 "Header Model No. table, 4 circuits, Side entry type: SM04B-SRSS-TB"'
+
+lifecycle: { status: unknown }

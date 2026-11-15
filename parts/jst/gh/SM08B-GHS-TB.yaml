@@ -1,0 +1,18 @@
+# Model number printed verbatim in the GH sheet's Header table
+# (jst/eGH page 3, 8 circuits, Side entry type column) -> existence
+# verified. Lifecycle: the sheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: jst/SM08B-GHS-TB
+manufacturer: jst
+mpn: SM08B-GHS-TB
+device: jst/SM08B-GHS-TB
+package: manufacturers/jst/GH-Header-Side-SMD-1x08-P1.25
+sources: [jst/eGH]
+source: jst/eGH
+
+existence:
+  status: verified
+  src: 'p3 "Header Model No. table, 8 circuits, Side entry type: SM08B-GHS-TB"'
+
+lifecycle: { status: unknown }

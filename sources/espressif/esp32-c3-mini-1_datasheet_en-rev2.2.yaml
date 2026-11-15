@@ -1,0 +1,17 @@
+# ESP32-C3-MINI-1 & MINI-1U Datasheet v2.2 (Espressif), 48 pages, every footer
+# "ESP32-C3-MINI-1 & MINI-1U Datasheet v2.2"; the PDF's creation date (2026-11-12) is used as
+# date. Downloaded 2026-11-16 with curl from Espressif's own URL. Read with
+# pdftotext -layout and 220-600 dpi renders of the dimension and land
+# pattern figures (vector drawings: values are the printed callouts).
+# PDF page index = the printed page number. Facts only.
+schema_version: "0.2"
+kind: source
+id: espressif/esp32-c3-mini-1_datasheet_en@rev2.2
+sha256: b53790a43866afb431ecc121d1b73d514aea1bf4934906f2eab630310528b1e0
+retrieved: 2026-11-16
+url: https://www.espressif.com/sites/default/files/documentation/esp32-c3-mini-1_datasheet_en.pdf
+publisher: espressif
+document_id: esp32-c3-mini-1_datasheet_en
+document_type: datasheet
+revision: "2.2"
+date: 2026-11-12

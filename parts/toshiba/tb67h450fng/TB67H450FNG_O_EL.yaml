@@ -1,0 +1,21 @@
+# TB67H450FNG in P-HSOP8-0405-1.27-001: the datasheet's ordering table (page 1, "Part
+# Number" / "Package name") lists "TB67H450FNG(O,EL)" with this package ->
+# existence verified. Lifecycle unknown: the datasheet states "Start of
+# commercial production 2019-05" but no current status (its package
+# drawings carry a "Not Recommended for New Design" watermark).
+schema_version: "0.2"
+kind: part
+id: toshiba/TB67H450FNG(O,EL)
+manufacturer: toshiba
+mpn: TB67H450FNG(O,EL)
+device: toshiba/TB67H450FNG
+
+package:
+  value: manufacturers/toshiba/P-HSOP8-0405-1.27-001
+  src: 'p1 "Part Number / Package name table: TB67H450FNG(O,EL) -> P-HSOP8-0405-1.27-001"'
+
+sources: [toshiba/TB67H450FNG-datasheet-en]
+source: toshiba/TB67H450FNG-datasheet-en
+
+existence: { status: verified, src: 'p1 "Part Number / Package name table, TB67H450FNG(O,EL)"' }
+lifecycle: { status: unknown }

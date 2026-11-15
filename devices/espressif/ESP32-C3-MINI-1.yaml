@@ -1,0 +1,71 @@
+# ESP32-C3-MINI-1 Wi-Fi/Bluetooth module (PCB antenna). Pin numbers, names
+# and types from the module datasheet's pin definition table (p11 "Table 3-1
+# Pin Definitions"); type P is power (ground for GND/EPAD), I input, I/O and
+# I/O/T io, a dash nc. Alternate functions are not recorded here. Table 3-1
+# lists GND, NC by number groups ("1, 2, 11, 14, 36-53"; "4, 7, 9, 10, 15,
+# 17, 24, 25, 28, 29, 32-35"); pins 49-53 are the ground and corner pads
+# (p10 Figure 3-1). The -U variant (antenna connector) is a different board
+# size and is not modelled.
+schema_version: "0.2"
+kind: device
+id: espressif/ESP32-C3-MINI-1
+manufacturer: espressif
+category: microcontroller
+family: ESP32-C3-MINI-1
+source: espressif/esp32-c3-mini-1_datasheet_en@rev2.2
+
+pins:
+  src:  p11 "Table 3-1 Pin Definitions"
+  "1":  { name: GND, type: ground }
+  "2":  { name: GND, type: ground }
+  "3":  { name: 3V3, type: power }
+  "4":  { name: NC, type: nc }
+  "5":  { name: IO2, type: io }
+  "6":  { name: IO3, type: io }
+  "7":  { name: NC, type: nc }
+  "8":  { name: EN, type: input }
+  "9":  { name: NC, type: nc }
+  "10": { name: NC, type: nc }
+  "11": { name: GND, type: ground }
+  "12": { name: IO0, type: io }
+  "13": { name: IO1, type: io }
+  "14": { name: GND, type: ground }
+  "15": { name: NC, type: nc }
+  "16": { name: IO10, type: io }
+  "17": { name: NC, type: nc }
+  "18": { name: IO4, type: io }
+  "19": { name: IO5, type: io }
+  "20": { name: IO6, type: io }
+  "21": { name: IO7, type: io }
+  "22": { name: IO8, type: io }
+  "23": { name: IO9, type: io }
+  "24": { name: NC, type: nc }
+  "25": { name: NC, type: nc }
+  "26": { name: IO18, type: io }
+  "27": { name: IO19, type: io }
+  "28": { name: NC, type: nc }
+  "29": { name: NC, type: nc }
+  "30": { name: RXD0, type: io }
+  "31": { name: TXD0, type: io }
+  "32": { name: NC, type: nc }
+  "33": { name: NC, type: nc }
+  "34": { name: NC, type: nc }
+  "35": { name: NC, type: nc }
+  "36": { name: GND, type: ground }
+  "37": { name: GND, type: ground }
+  "38": { name: GND, type: ground }
+  "39": { name: GND, type: ground }
+  "40": { name: GND, type: ground }
+  "41": { name: GND, type: ground }
+  "42": { name: GND, type: ground }
+  "43": { name: GND, type: ground }
+  "44": { name: GND, type: ground }
+  "45": { name: GND, type: ground }
+  "46": { name: GND, type: ground }
+  "47": { name: GND, type: ground }
+  "48": { name: GND, type: ground }
+  "49": { name: GND, type: ground }
+  "50": { name: GND, type: ground }
+  "51": { name: GND, type: ground }
+  "52": { name: GND, type: ground }
+  "53": { name: GND, type: ground }

@@ -1,0 +1,23 @@
+# TB67H450FNG brushed DC motor driver IC, HSOP8. Pin map from "Pin
+# Description" (page 3) and "Pin Assignment" (page 2, top view). The
+# package drawings (pages 17-18) show an exposed pad ("E-PAD") on the
+# underside; the datasheet does not state what it connects to, so it is
+# no device pin here (the footprint keeps the pad as "EP").
+schema_version: "0.2"
+kind: device
+id: toshiba/TB67H450FNG
+manufacturer: toshiba
+category: driver
+family: TB67H450FNG
+source: toshiba/TB67H450FNG-datasheet-en
+
+pins:
+  src: p3 "Pin Description, pin No. 1 to 8"
+  "1": { name: GND, type: ground }
+  "2": { name: IN2, type: input }
+  "3": { name: IN1, type: input }
+  "4": { name: VREF, type: analog }
+  "5": { name: VM, type: power }
+  "6": { name: OUT1, type: output }
+  "7": { name: RS, type: passive }
+  "8": { name: OUT2, type: output }

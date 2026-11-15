@@ -1,0 +1,21 @@
+# JST "SH CONNECTOR" catalogue sheet (English), 4 pages, A4: "1.0 mm
+# pitch/Wire-to-Board connectors/Crimp style and Mating style". Fetched
+# 2026-11-16 with wget (curl was refused with 403); read with pdftotext
+# -layout and 300 dpi renders of pages 1 and 3. No document number or
+# revision: `revision`/`date` record the PDF's creation date (metadata,
+# 2024-10-04 JST). PDF page index = the printed page number. Used: page 1
+# "PC board layout and Assembly layout" (top and side entry; note 1:
+# viewed from the connector mounting surface; note 4: reference values),
+# page 3 "Header" drawings, Model No. table and "Material and Surface
+# finish" ("Base housing: PA (Heat resistance), natural (ivory)").
+schema_version: "0.2"
+kind: source
+id: jst/eSH
+sha256: ea3071ca5ee5a6069eba534fa39a10f34c9fb742ee42135a69ab4156bfa0f5de
+retrieved: 2026-11-16
+url: https://www.jst-mfg.com/product/pdf/eng/eSH.pdf
+publisher: jst
+document_id: eSH
+document_type: datasheet
+revision: unversioned (PDF created 2024-10-04)
+date: 2024-10-04

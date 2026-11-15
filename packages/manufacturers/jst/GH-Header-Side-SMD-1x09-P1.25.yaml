@@ -1,0 +1,48 @@
+# JST GH SMT header, side entry, 9 circuits, 1.25 mm pitch
+# (SM09B-GHS-TB), from jst/eGH: PC board layout and Assembly layout, Side entry type and the Header drawing and
+# Model No. table on page 3. Values are the sheet's printed callouts;
+# positions are plain arithmetic between them:
+# Side entry layout (No. 1 circuit at the left): mechanical pads (1 x 2.7)
+# below the row, their outer edge the datum; signal lands from 3.7 to 5.4
+# above it (centre 4.55, length 1.7); mechanical pad centre 1.35; the
+# header outline (0.25) above the datum, 4.05 deep (p3 side view) ->
+# centre 2.275. Turned 90 deg clockwise: mechanical pads at x = -(4.55 -
+# 1.35) = -3.2, housing centre at x = -(4.55 - 2.275) = -2.275 (the
+# opening faces -x).
+# Mechanical pad centre along the row: the end contact's centre + 1.35
+# (to the pad's inner edge) + 1 / 2 = A / 2 + 1.85.
+# The sheet calls its layout dimensions reference values. The contact and
+# retention-tab shapes in 3D are generator choices (not dimensioned).
+schema_version: "0.2"
+kind: package
+id: manufacturers/jst/GH-Header-Side-SMD-1x09-P1.25
+family: right_angle_header
+lead_count: 9
+
+lead_layout: { value: [1, 9], src: 'p3 "Header Model No. table, 9 circuits: A = 10, B = 14.5"' }
+
+source: jst/eGH
+
+pitch:
+  typ: 1.25 mm
+  src: p2 "PC board layout and Assembly layout, Side entry type, land pitch"
+
+geometry: { type: parametric, generator: right_angle_header }
+
+dimensions:
+  body_width:  { typ: 4.05 mm, src: 'p3 "Header, Side entry type, side view depth"' }
+  body_length: { typ: 14.5 mm, src: 'p3 "Header Model No. table, 9 circuits: A = 10, B = 14.5"' }
+  body_height: { typ: 4.25 mm, src: 'p3 "Header, Side entry type, side view height"' }
+  body_offset:
+    typ: -2.275 mm
+    src: p2 "PC board layout and Assembly layout, Side entry type, connector outline (see comment)"
+  standoff:
+    typ: 0.1 mm
+    src: p3 "Header, Side entry type, side view, housing underside to the contact tails"
+
+smt:
+  pad: [1.7, 0.6]
+  mech_pad: [2.7, 1]
+  mech_pad_at: [-3.2, 6.85]
+  mech_number: MP
+  src: p2 "PC board layout and Assembly layout, Side entry type, land and reinforcement pad sizes and positions (see comment)"
