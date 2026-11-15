@@ -1,0 +1,51 @@
+# AVR128DA28/48 supply decoupling (AVR DA data sheet 4.2, Hardware
+# Guidelines). One decoupling capacitor per supply pin pair is required;
+# 100 nF, 1-10 nF and 1 uF are the "Typical values (recommended)" of
+# Figure 4-1, a starting point only (4.1). The data sheet gives the
+# values for VDD only, so the AVDD capacitor has no value here. VDD and
+# AVDD are internally connected (p14 pinout note). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/avr128da-power
+title: AVR128DA supply decoupling
+
+host: { devices: [microchip/AVR128DA28, microchip/AVR128DA48] }
+
+source: microchip/DS40002183@revE
+
+nets:
+  GND: { kind: ground }
+  VDD: { kind: power }
+
+connect:
+  AVDD: { net: VDD, level: example, src: 'p14 "Pinout, note"' }
+  GND:  { net: GND, level: required, src: p20 "4.2" }
+  VDD:  { net: VDD, level: { value: required, word: must }, src: p20 "4.2.1" }
+
+roles:
+  C_AVDD:
+    per_pin: AVDD
+    requires: { category: capacitor, src: p20 "4.2" }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p20 "4.2" }
+    level: { value: required, word: must, src: p20 "4.2" }
+  C_VDD:
+    per_pin: VDD
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: 'p21 "Figure 4-1, C1"' }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p20 "4.2" }
+    level: { value: required, word: must, src: p20 "4.2" }
+  C_VDD_BULK:
+    per_pin: VDD
+    requires: { category: capacitor, capacitance: { typ: 1 uF }, src: 'p21 "Figure 4-1, C3"' }
+    pins: { "1": $pin, "2": GND }
+    level: { value: optional, word: optional, src: 'p21 "Figure 4-1, C3"' }
+  C_VDD_HF:
+    per_pin: VDD
+    requires:
+      category: capacitor
+      capacitance: { min: 1 nF, max: 10 nF }
+      src: p21 "Figure 4-1, C2"
+    pins: { "1": $pin, "2": GND }
+    place: { near: C_VDD, src: p20 "4.2" }
+    level: { value: recommended, word: recommended, src: 'p21 "Figure 4-1, C2"' }

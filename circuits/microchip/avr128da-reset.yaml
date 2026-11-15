@@ -1,0 +1,35 @@
+# AVR128DA28/48 external reset switch on RESET (PF6): filter capacitor
+# and switch series resistor, the "Typical values (recommended)" of the
+# AVR DA data sheet Figure 4-2. RESET has an internal pull-up; an
+# external one is usually not required (4.3). Components on RESET must
+# survive or be disconnectable from the UPDI high-voltage enable pulse
+# (4.4.2). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/avr128da-reset
+title: AVR128DA external reset switch
+
+host: { devices: [microchip/AVR128DA28, microchip/AVR128DA48] }
+
+source: microchip/DS40002183@revE
+
+nets:
+  GND:   { kind: ground }
+  RESET: { kind: signal }
+  SW_RS: { kind: local }
+
+connect: { PF6: { net: RESET, level: example, src: p21 "Figure 4-2" } }
+
+roles:
+  C_RESET:
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: 'p21 "Figure 4-2, C1"' }
+    pins:     { "1": RESET, "2": GND }
+    level:    { value: recommended, word: recommended, src: 'p21 "Figure 4-2, C1"' }
+  R_SW:
+    requires: { category: resistor, resistance: { typ: 330 Ω }, src: 'p21 "Figure 4-2, R1"' }
+    pins:     { "1": RESET, "2": SW_RS }
+    level:    { value: recommended, word: recommended, src: 'p21 "Figure 4-2, R1"' }
+  SW_RESET:
+    requires: { category: switch, src: 'p21 "Figure 4-2, SW1"' }
+    pins:     { "1": SW_RS, "2": GND }
+    level:    { value: example, src: 'p21 "Figure 4-2, SW1"' }

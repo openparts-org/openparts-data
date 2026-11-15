@@ -1,0 +1,28 @@
+# AVR128DA28/48 UPDI programming header, "UPDI Connection v2" (AVR DA
+# data sheet 4.4.2, Figure 4-4): a single-row 100-mil 4-pin header with
+# RESET, VDD, GND and UPDI. The VDD decoupling of Figure 4-4 is the one
+# in microchip/avr128da-power. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/avr128da-updi
+title: AVR128DA UPDI header
+
+host: { devices: [microchip/AVR128DA28, microchip/AVR128DA48] }
+
+source: microchip/DS40002183@revE
+
+nets:
+  GND:   { kind: ground }
+  RESET: { kind: signal }
+  UPDI:  { kind: signal }
+  VDD:   { kind: power }
+
+connect:
+  PF6:  { net: RESET, level: example, src: p23 "Figure 4-4" }
+  UPDI: { net: UPDI, level: example, src: p23 "Figure 4-4" }
+
+roles:
+  J_UPDI:
+    requires: { category: connector, src: p23 "4.4.2" }
+    pins:     { "1": RESET, "2": VDD, "3": GND, "4": UPDI }
+    level:    { value: recommended, word: recommended, src: p23 "4.4.2" }

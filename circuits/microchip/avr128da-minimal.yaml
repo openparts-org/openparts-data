@@ -1,0 +1,25 @@
+# AVR128DA28/48 minimal circuit from the AVR DA data sheet Hardware
+# Guidelines (section 4): supply decoupling, external reset switch and
+# UPDI v2 header. The 32.768 kHz crystal (microchip/avr128da-xosc32k)
+# is optional and not included. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/avr128da-minimal
+title: AVR128DA minimal circuit
+
+host: { devices: [microchip/AVR128DA28, microchip/AVR128DA48] }
+
+source: microchip/DS40002183@revE
+
+nets:
+  GND:   { kind: ground }
+  RESET: { kind: signal }
+  UPDI:  { kind: signal }
+  VDD:   { kind: power }
+
+includes:
+  - { circuit: microchip/avr128da-power, with: { GND: GND, VDD: VDD }, src: p20 "4.2" }
+  - { circuit: microchip/avr128da-reset, with: { GND: GND, RESET: RESET }, src: p21 "4.3" }
+  - circuit: microchip/avr128da-updi
+    with: { GND: GND, RESET: RESET, UPDI: UPDI, VDD: VDD }
+    src: p22 "4.4"
