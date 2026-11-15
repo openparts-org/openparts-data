@@ -1,0 +1,42 @@
+# ESP32-C6 main crystal (40 MHz, the only frequency the firmware
+# supports) from the ESP32-C6 Hardware Design Guidelines, Clock
+# Source. The guide gives the load capacitors no value: their initial
+# value comes from CL = C1*C2/(C1+C2) + Cstray with the crystal's CL
+# and the PCB's stray capacitance (no number given), then tuning to
+# within ±10 ppm frequency offset. That formula is not stored, as it
+# has no literal for Cstray. The series part on XTAL_P is an inductor,
+# 24 nH as the initial value. Page numbers are PDF page indices of the
+# ESP32-C6 Hardware Design Guidelines (printed page = index - 3). AI
+# candidate.
+schema_version: "0.2"
+kind: circuit
+id: espressif/esp32-c6-xtal-40mhz
+title: ESP32-C6 40 MHz crystal
+host: espressif/ESP32-C6
+source: espressif/esp32-c6_hardware_design_guidelines_en@rev1.8
+
+nets:
+  GND:     { kind: ground }
+  XTAL_IN: { kind: local }
+
+roles:
+  C_XTAL_IN:
+    requires: { category: capacitor, src: p12 "1.3.5" }
+    pins:     { "1": XTAL_IN, "2": GND }
+    level:    { value: example, src: p12 "1.3.5" }
+  C_XTAL_N:
+    requires: { category: capacitor, src: p12 "1.3.5" }
+    pins:     { "1": host.XTAL_N, "2": GND }
+    level:    { value: example, src: p12 "1.3.5" }
+  L_XTAL_P:
+    requires: { category: inductor, inductance: { typ: 24 nH }, src: p11 "1.3.5" }
+    pins:     { "1": host.XTAL_P, "2": XTAL_IN }
+    level:    { value: recommended, src: p11 "1.3.5" }
+  X1:
+    requires:
+      category: crystal
+      frequency: { typ: 40 MHz }
+      frequency_tolerance: { min: -10 ppm, max: 10 ppm }
+      src: p11 "1.3.5"
+    pins:  { "1": XTAL_IN, "2": host.XTAL_N }
+    level: { value: required, src: p11 "1.3.5" }

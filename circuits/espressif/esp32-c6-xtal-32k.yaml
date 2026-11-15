@@ -1,0 +1,36 @@
+# ESP32-C6 optional 32.768 kHz RTC clock crystal from the ESP32-C6
+# Hardware Design Guidelines, Clock Source. Load capacitors follow the
+# crystal's specification (no value in the guide). The bias resistor
+# is normally not populated. Unused, the two pins are GPIOs. Page
+# numbers are PDF page indices of the ESP32-C6 Hardware Design
+# Guidelines (printed page = index - 3). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: espressif/esp32-c6-xtal-32k
+title: ESP32-C6 32.768 kHz crystal
+host: espressif/ESP32-C6
+source: espressif/esp32-c6_hardware_design_guidelines_en@rev1.8
+
+nets: { GND: { kind: ground } }
+
+roles:
+  C_XTAL_32K_N:
+    requires: { category: capacitor, src: p12 "1.3.5" }
+    pins:     { "1": host.XTAL_32K_N, "2": GND }
+    level:    { value: recommended, word: should, src: p12 "1.3.5" }
+  C_XTAL_32K_P:
+    requires: { category: capacitor, src: p12 "1.3.5" }
+    pins:     { "1": host.XTAL_32K_P, "2": GND }
+    level:    { value: recommended, word: should, src: p12 "1.3.5" }
+  R_BIAS:
+    requires: { category: resistor, resistance: { min: 5 MΩ, max: 10 MΩ }, src: p12 "1.3.5" }
+    pins:     { "1": host.XTAL_32K_P, "2": host.XTAL_32K_N }
+    level:    { value: optional, src: p12 "1.3.5" }
+  X2:
+    requires:
+      category: crystal
+      esr: { max: 70 kΩ }
+      frequency: { typ: 32.768 kHz }
+      src: p12 "1.3.5"
+    pins:  { "1": host.XTAL_32K_P, "2": host.XTAL_32K_N }
+    level: { value: optional, word: optional, src: p11 "1.3.5" }

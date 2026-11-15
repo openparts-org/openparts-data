@@ -1,0 +1,46 @@
+# ESP32-C6 USB pins (GPIO12 D-, GPIO13 D+) from the ESP32-C6 Hardware
+# Design Guidelines, USB: series resistors (initial value 22 or 33 Ω)
+# and footprints for capacitors to ground, initially unpopulated, all
+# close to the chip. The D+ pull-up is only for a stable D+ level at
+# power-up, when the application needs one (no value given).
+# USB_DP/USB_DM are the connector side. Page numbers are PDF page
+# indices of the ESP32-C6 Hardware Design Guidelines (printed page =
+# index - 3). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: espressif/esp32-c6-usb
+title: ESP32-C6 USB series termination
+host: espressif/ESP32-C6
+source: espressif/esp32-c6_hardware_design_guidelines_en@rev1.8
+
+nets:
+  GND:     { kind: ground }
+  USB_DM:  { kind: signal }
+  USB_DP:  { kind: signal }
+  VDD_3V3: { kind: power, voltage: { typ: 3.3 V }, src: p8 "1.3.2" }
+
+roles:
+  C_DM:
+    requires: { category: capacitor, src: p18 "1.3.13" }
+    pins:     { "1": host.GPIO12, "2": GND }
+    place:    { near: host.GPIO12, src: p18 "1.3.13" }
+    level:    { value: optional, word: can, src: p18 "1.3.13" }
+  C_DP:
+    requires: { category: capacitor, src: p18 "1.3.13" }
+    pins:     { "1": host.GPIO13, "2": GND }
+    place:    { near: host.GPIO13, src: p18 "1.3.13" }
+    level:    { value: optional, word: can, src: p18 "1.3.13" }
+  R_DM:
+    requires: { category: resistor, resistance: { min: 22 Ω, max: 33 Ω }, src: p18 "1.3.13" }
+    pins:     { "1": host.GPIO12, "2": USB_DM }
+    place:    { near: host.GPIO12, src: p18 "1.3.13" }
+    level:    { value: recommended, word: recommended, src: p18 "1.3.13" }
+  R_DP:
+    requires: { category: resistor, resistance: { min: 22 Ω, max: 33 Ω }, src: p18 "1.3.13" }
+    pins:     { "1": host.GPIO13, "2": USB_DP }
+    place:    { near: host.GPIO13, src: p18 "1.3.13" }
+    level:    { value: recommended, word: recommended, src: p18 "1.3.13" }
+  R_DP_PU:
+    requires: { category: resistor, src: p18 "1.3.13" }
+    pins:     { "1": VDD_3V3, "2": host.GPIO13 }
+    level:    { value: optional, src: p18 "1.3.13" }
