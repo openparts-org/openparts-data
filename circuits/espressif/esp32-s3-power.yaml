@@ -1,0 +1,82 @@
+# ESP32-S3 supply decoupling from the ESP32-S3 Hardware Design
+# Guidelines (Schematic Checklist, Power Supply; PCB Layout, Power
+# Supply), single 3.3 V supply. VDD3P3 is the RF-related analog rail:
+# 10 uF per pin (the layout section's "for each pin"; the checklist
+# asks for 10 uF on the rail) fed through the LC filter the checklist
+# asks for; the guide gives no inductance, only a preferred rated
+# current. Pins the guide gives no value for (the rest of the analog
+# pins) are left to the board ("refer to the Reference Schematic", not
+# cited here). Page numbers are PDF page indices of the ESP32-S3
+# Hardware Design Guidelines (printed page = index - 3). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: espressif/esp32-s3-power
+title: ESP32-S3 supply decoupling
+host: espressif/ESP32-S3
+source: espressif/esp32-s3_hardware_design_guidelines_en@rev1.8
+
+nets:
+  GND:     { kind: ground }
+  VDD_3V3: { kind: power, voltage: { typ: 3.3 V }, src: p8 "1.3.2" }
+  VDD_RF:  { kind: local }
+
+connect:
+  GND:        { net: GND, level: required, src: p8 "1.3.2" }
+  VDD3P3:     { net: VDD_RF, level: example, src: 'p11 "1.3.2, Analog Power Supply"' }
+  VDD3P3_CPU: { net: VDD_3V3, level: example, src: p8 "1.3.2" }
+  VDD3P3_RTC: { net: VDD_3V3, level: example, src: p8 "1.3.2" }
+  VDDA:       { net: VDD_3V3, level: example, src: p8 "1.3.2" }
+
+roles:
+  C_VDD3P3:
+    per_pin: VDD3P3
+    requires:
+      category: capacitor
+      capacitance: { typ: 10 uF }
+      src: ['p11 "1.3.2, Analog Power Supply"', p25 "1.4.2"]
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: p25 "1.4.2" }
+    level: { value: recommended, word: recommended, src: 'p11 "1.3.2, Analog Power Supply"' }
+  C_VDD3P3_CPU:
+    per_pin: VDD3P3_CPU
+    requires:
+      category: capacitor
+      capacitance: { typ: 100 nF }
+      src: p8 "1.3.2, Digital Power Supply"
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p8 "1.3.2, Digital Power Supply"' }
+    level: { value: recommended, word: recommended, src: 'p8 "1.3.2, Digital Power Supply"' }
+  C_VDD3P3_RTC:
+    per_pin: VDD3P3_RTC
+    requires:
+      category: capacitor
+      capacitance: { typ: 100 nF }
+      src: p8 "1.3.2, Digital Power Supply"
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p8 "1.3.2, Digital Power Supply"' }
+    level: { value: recommended, word: recommended, src: 'p8 "1.3.2, Digital Power Supply"' }
+  C_VDD_SPI_100N:
+    per_pin: VDD_SPI
+    requires:
+      category: capacitor
+      capacitance: { typ: 100 nF }
+      src: p10 "1.3.2, Digital Power Supply"
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p10 "1.3.2, Digital Power Supply"' }
+    level: { value: recommended, word: recommended, src: 'p10 "1.3.2, Digital Power Supply"' }
+  C_VDD_SPI_1U:
+    per_pin: VDD_SPI
+    requires:
+      category: capacitor
+      capacitance: { typ: 1 uF }
+      src: p10 "1.3.2, Digital Power Supply"
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p10 "1.3.2, Digital Power Supply"' }
+    level: { value: recommended, word: recommended, src: 'p10 "1.3.2, Digital Power Supply"' }
+  L_VDD3P3:
+    requires:
+      category: inductor
+      rated_current: { min: 500 mA }
+      src: p11 "1.3.2, Analog Power Supply"
+    pins:  { "1": VDD_3V3, "2": VDD_RF }
+    level: { value: recommended, src: 'p11 "1.3.2, Analog Power Supply"' }

@@ -1,0 +1,35 @@
+# ESP32-S3 CHIP_PU power-up delay from the ESP32-S3 Hardware Design
+# Guidelines (Chip Power-up and Reset Timing): the usual RC values, to
+# be adjusted to the actual supply; slow, unstable or frequently
+# cycled supplies need a supervisor (about 3.0 V threshold) instead,
+# not included. CHIP_PU must not float. The CHIP_PU net is where a
+# reset switch or programmer would attach. Page numbers are PDF page
+# indices of the ESP32-S3 Hardware Design Guidelines (printed page =
+# index - 3). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: espressif/esp32-s3-chip-pu
+title: ESP32-S3 CHIP_PU RC delay
+host: espressif/ESP32-S3
+source: espressif/esp32-s3_hardware_design_guidelines_en@rev1.8
+
+nets:
+  CHIP_PU: { kind: signal }
+  GND:     { kind: ground }
+  VDD_3V3: { kind: power, voltage: { typ: 3.3 V }, src: p8 "1.3.2" }
+
+connect:
+  CHIP_PU: { net: CHIP_PU, level: { value: required, word: must }, src: 'p11 "1.3.3, Attention"' }
+
+roles:
+  C_CHIP_PU:
+    requires: { category: capacitor, capacitance: { typ: 1 uF }, src: 'p11 "1.3.3, Attention"' }
+    pins:     { "1": CHIP_PU, "2": GND }
+    level:    { value: recommended, word: recommended, src: 'p11 "1.3.3, Attention"' }
+  R_CHIP_PU:
+    requires: { category: resistor, resistance: { typ: 10 kΩ }, src: 'p11 "1.3.3, Attention"' }
+    pins:     { "1": VDD_3V3, "2": CHIP_PU }
+    level:    { value: recommended, word: recommended, src: 'p11 "1.3.3, Attention"' }
+
+placement:
+  - { keep_short: [host.CHIP_PU, CHIP_PU], src: p11 "1.3.3" }
