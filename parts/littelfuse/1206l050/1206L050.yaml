@@ -19,3 +19,27 @@ lifecycle:
 
 sources:
   - littelfuse/1206L
+  - littelfuse/1206L@2011-05-15
+
+# Parameters (AI candidates, needs review), read from Littelfuse's own
+# datasheet hosted by Digi-Key (littelfuse/1206L@2011-05-15). PTC
+# resettable fuse: rated_current is the hold current I hold and
+# rated_voltage the maximum voltage V max (reviewer: confirm this mapping
+# for PPTC devices).
+parameters:
+  rated_current:
+    nominal: 0.5
+    unit: A
+  rated_voltage:
+    max: 6
+    unit: V
+
+provenance:
+  "/parameters/rated_current":
+    - source: littelfuse/1206L@2011-05-15
+      page: 1
+      locator: "Electrical Characteristics, 1206L050 row: I hold (A) 0.50 (20°C still air)"
+  "/parameters/rated_voltage":
+    - source: littelfuse/1206L@2011-05-15
+      page: 1
+      locator: "Electrical Characteristics, 1206L050 row: V max (Vdc) 6"

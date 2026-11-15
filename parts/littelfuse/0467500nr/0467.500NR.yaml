@@ -17,3 +17,25 @@ lifecycle:
 
 sources:
   - littelfuse/467-DS
+  - littelfuse/467-SERIES-catalog
+
+# Parameters (AI candidates, needs review), read from Littelfuse's own
+# datasheet hosted by Digi-Key (littelfuse/467-SERIES-catalog); NR is the
+# tape-and-reel package suffix (PACKAGING SPECIFICATIONS, p2).
+parameters:
+  rated_current:
+    nominal: 0.5
+    unit: A
+  rated_voltage:
+    nominal: 32
+    unit: V
+
+provenance:
+  "/parameters/rated_current":
+    - source: littelfuse/467-SERIES-catalog
+      page: 2
+      locator: "Ordering Information, Catalog Number 0467.500 row: Ampere Rating .5"
+  "/parameters/rated_voltage":
+    - source: littelfuse/467-SERIES-catalog
+      page: 2
+      locator: "Ordering Information, Catalog Number 0467.500 row: Nominal Voltage Rating 32"
