@@ -19,3 +19,23 @@ lifecycle:
 
 sources:
   - bourns/SF-0603SP
+
+# Parameters (AI candidates, needs review): Electrical Characteristics
+# table, row for this model.
+parameters:
+  rated_current:
+    nominal: 0.5
+    unit: A
+  rated_voltage:
+    nominal: 50
+    unit: V
+
+provenance:
+  "/parameters/rated_current":
+    - source: bourns/SF-0603SP
+      page: 1
+      locator: "Electrical Characteristics, SF-0603SP050-2 row: Rated Current (A) 0.50"
+  "/parameters/rated_voltage":
+    - source: bourns/SF-0603SP
+      page: 1
+      locator: "Electrical Characteristics, SF-0603SP050-2 row: Rated Voltage 50 VDC"

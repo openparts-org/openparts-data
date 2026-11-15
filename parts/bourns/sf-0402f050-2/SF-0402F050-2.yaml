@@ -18,3 +18,23 @@ lifecycle:
 
 sources:
   - bourns/SF-0402F
+
+# Parameters (AI candidates, needs review): Electrical Characteristics
+# table, row for this model.
+parameters:
+  rated_current:
+    nominal: 0.5
+    unit: A
+  rated_voltage:
+    nominal: 32
+    unit: V
+
+provenance:
+  "/parameters/rated_current":
+    - source: bourns/SF-0402F
+      page: 1
+      locator: "Electrical Characteristics, SF-0402F050-2 row: Rated Current (A) 0.50"
+  "/parameters/rated_voltage":
+    - source: bourns/SF-0402F
+      page: 1
+      locator: "Electrical Characteristics, SF-0402F050-2 row: Rated Voltage 32 VDC (one cell for all models)"

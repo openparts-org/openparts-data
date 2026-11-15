@@ -18,3 +18,23 @@ lifecycle:
 
 sources:
   - bourns/SF-1206F-M
+
+# Parameters (AI candidates, needs review): Electrical Characteristics
+# table, row for this model.
+parameters:
+  rated_current:
+    nominal: 2.5
+    unit: A
+  rated_voltage:
+    nominal: 65
+    unit: V
+
+provenance:
+  "/parameters/rated_current":
+    - source: bourns/SF-1206F-M
+      page: 1
+      locator: "Electrical Characteristics, SF-1206F250M-2 row: Rated Current (A) 2.5"
+  "/parameters/rated_voltage":
+    - source: bourns/SF-1206F-M
+      page: 1
+      locator: "Electrical Characteristics, SF-1206F250M-2 row: Rated Voltage 65 VDC (cell spanning SF-1206F250M-2 to SF-1206F500M-2)"

@@ -18,3 +18,23 @@ lifecycle:
 
 sources:
   - bourns/SF-1206SP
+
+# Parameters (AI candidates, needs review): Electrical Characteristics
+# table, row for this model.
+parameters:
+  rated_current:
+    nominal: 0.5
+    unit: A
+  rated_voltage:
+    nominal: 63
+    unit: V
+
+provenance:
+  "/parameters/rated_current":
+    - source: bourns/SF-1206SP
+      page: 1
+      locator: "Electrical Characteristics, SF-1206SP050-2 row: Rated Current (A) 0.50"
+  "/parameters/rated_voltage":
+    - source: bourns/SF-1206SP
+      page: 1
+      locator: "Electrical Characteristics, SF-1206SP050-2 row: Rated Voltage 63 VDC (cell spanning SF-1206SP050-2 to SF-1206SP300-2)"
