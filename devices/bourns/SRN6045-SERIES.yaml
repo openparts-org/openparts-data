@@ -1,0 +1,15 @@
+# SRN6045 series 2-terminal SMD semi-shielded power inductor, shared by
+# every value in the series' Electrical Specifications table (the
+# inductance value is the only per-MPN difference).
+schema_version: "0.2"
+kind: device
+id: bourns/SRN6045-SERIES
+manufacturer: bourns
+category: inductor
+family: SRN6045
+source: bourns/SRN6045
+
+pins:
+  src: p1 "Electrical Schematic (single inductor symbol, 2 terminals)"
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

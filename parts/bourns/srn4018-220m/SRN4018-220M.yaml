@@ -1,0 +1,34 @@
+# 22 µH +/-20%, semi-shielded power inductor, per the Electrical
+# Specifications table (page 1, read from a 110 dpi render).
+# lifecycle unknown: the datasheet makes no production-status statement.
+# Package: height group SRN4018-3R3M~331M (1.80 mm max).
+schema_version: "0.2"
+kind: part
+id: bourns/SRN4018-220M
+manufacturer: bourns
+mpn: SRN4018-220M
+device: bourns/SRN4018-SERIES
+package: manufacturers/bourns/CHIP-BOURNS-SRN4018-H1.80
+sources: [bourns/SRN4018@rev10-26]
+source: bourns/SRN4018@rev10-26
+
+existence:
+  status: verified
+  src: p1 "Electrical Specifications table, Part Number row SRN4018-220M"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  tolerance: { tol: ±20 %, src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-220M row, Tol."' }
+  inductance:
+    typ: 22 µH
+    at: { f: 100 kHz }
+    src: p1 "Electrical Specifications @ 25 °C, SRN4018-220M row, L (@ 100 kHz/1 V)"
+  rated_current:
+    typ: 0.9 A
+    src: p1 "Electrical Specifications @ 25 °C, SRN4018-220M row, Irms (temp. rise 40 °C)"
+  saturation_current:
+    typ: 0.95 A
+    src: p1 "Electrical Specifications @ 25 °C, SRN4018-220M row, Isat (L drop 30 %)"
+  dcr: { max: 0.348 Ω, src: 'p1 "Electrical Specifications @ 25 °C, SRN4018-220M row, DCR"' }

@@ -1,0 +1,28 @@
+# Bourns SRN6045 series semi-shielded power inductor, from the page-1
+# Product Dimensions drawing. The top view is a 6.0 x 6.0 outline with
+# rounded/notched corners (drum core); the chip generator draws it as a
+# box. Height is MAX-only (one value for every MPN). The side view's
+# "2.5 REF." feature is not recorded (reference value, its extent is
+# not unambiguous from the drawing).
+schema_version: "0.2"
+kind: package
+id: manufacturers/bourns/CHIP-BOURNS-SRN6045
+family: chip
+lead_count: 2
+source: bourns/SRN6045
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 5.8 mm
+    typ: 6 mm
+    max: 6.2 mm
+    src: p1 "Product Dimensions, top view 6.0 +/-0.2 (.236 +/-.008), vertical"
+  body_length:
+    min: 5.8 mm
+    typ: 6 mm
+    max: 6.2 mm
+    src: p1 "Product Dimensions, top view 6.0 +/-0.2 (.236 +/-.008), horizontal"
+  body_height: { max: 4.5 mm, src: 'p1 "Product Dimensions, side view 4.5 (.177) MAX."' }

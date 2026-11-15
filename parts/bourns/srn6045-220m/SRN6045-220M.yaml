@@ -1,0 +1,33 @@
+# 22 µH +/-20%, semi-shielded power inductor, per the Electrical
+# Specifications table (page 1, read from a 110 dpi render).
+# lifecycle unknown: the datasheet makes no production-status statement.
+schema_version: "0.2"
+kind: part
+id: bourns/SRN6045-220M
+manufacturer: bourns
+mpn: SRN6045-220M
+device: bourns/SRN6045-SERIES
+package: manufacturers/bourns/CHIP-BOURNS-SRN6045
+sources: [bourns/SRN6045]
+source: bourns/SRN6045
+
+existence:
+  status: verified
+  src: p1 "Electrical Specifications table, Part Number row SRN6045-220M"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  tolerance: { tol: ±20 %, src: 'p1 "Electrical Specifications @ 25 °C, SRN6045-220M row, Tol."' }
+  inductance:
+    typ: 22 µH
+    at: { f: 100 kHz }
+    src: p1 "Electrical Specifications @ 25 °C, SRN6045-220M row, L (@ 100 kHz/1 V)"
+  rated_current:
+    typ: 1.5 A
+    src: p1 "Electrical Specifications @ 25 °C, SRN6045-220M row, Irms (temp. rise 40 °C)"
+  saturation_current:
+    typ: 1.9 A
+    src: p1 "Electrical Specifications @ 25 °C, SRN6045-220M row, Isat (L drop 30 %)"
+  dcr: { max: 0.142 Ω, src: 'p1 "Electrical Specifications @ 25 °C, SRN6045-220M row, DCR"' }
