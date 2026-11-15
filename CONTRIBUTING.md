@@ -15,24 +15,26 @@ cite are in `sources/`. The format is the
 
 ## Verify a value against the datasheet
 
-Every value is cited in the document's `provenance` (an illustration):
+Every value carries its citation, `src` (an illustration):
 
 ```yaml
+source: raspberrypi/RP-008371-DS@rev1        # the file's default source
 dimensions:
-  body_width: {nominal: 7.0, unit: mm}
-provenance:
-  /dimensions/body_width:
-    - source: raspberrypi/RP-008371-DS@rev1
-      page: 642
-      locator: "QFN-56 7x7mm, E"
+  body_width: { typ: 7 mm, src: p642 "QFN-56 7x7mm, E" }
+parameters:
+  rds_on: { typ: 18 mΩ, max: 26.5 mΩ, at: { VGS: 10 V }, src: p2 "Elec. Char., RDS(ON)" }
 ```
+
+`p642` is the PDF page, the quoted text the place on it; `at` is the
+condition the value is stated for. A `src` naming another document
+starts with its id (`aos/PO-00001 p1 "..."`).
 
 1. Find the Source with that id in `sources/` and open its `url`, adding
    `#page=642` (the cited page) to jump to the page (the part page on the OpenParts site
    links each value there for you).
-2. Find the place the `locator` names (a table, a figure, a dimension
-   letter) and compare: value, unit, and min/typ/max. A range stated
-   only as min/max must not have a nominal.
+2. Find the place the locator names (a table, a figure, a dimension
+   letter) and compare: value, unit, min/typ/max and conditions. A range
+   stated only as min/max must not have a `typ`.
 3. Check the Source too: the document's revision and date must match
    its `revision` and `date`. A newer revision may say something else.
 
@@ -60,16 +62,19 @@ never set this block.
 
 ## Fix a value, with provenance
 
-1. Change the value.
-2. Update its provenance entry: the `source` you read (add a file under
-   `sources/` for a document or revision that isn't there yet), the PDF
-   `page`, and a `locator` precise enough for someone else to find it.
+1. Change the value (with its unit: `26.5 mΩ`).
+2. Update its `src`: the source you read (add a file under `sources/`
+   for a document or revision that isn't there yet), the PDF page, and a
+   short locator someone else can find it by (table, row, column).
 3. If the document had a `review` block, delete it -- unless you then
    review the whole document, in which case update `by`, `pr` and
    `date`. A changed value is not reviewed until someone checks it.
 
-Don't invent or estimate values: leave out what the datasheet doesn't
-state. Don't commit PDFs; link to the manufacturer's copy.
+Record facts only: values, units, conditions. Don't copy tables, text or
+figures, don't read values off graphs, and take facts from the
+manufacturer's documents, not from distributor databases. Don't invent
+or estimate values: leave out what the datasheet doesn't state. Don't
+commit PDFs; link to the manufacturer's copy.
 
 ## Check and open the pull request
 
@@ -77,7 +82,8 @@ state. Don't commit PDFs; link to the manufacturer's copy.
   any file here). GitHub forks the repository and opens the pull
   request for you.
 - Locally: clone [openparts](https://github.com/openparts-org/openparts)
-  next to this repository and run `./scripts/validate.sh`.
+  next to this repository and run `./scripts/validate.sh` and
+  `./scripts/fmt.sh` (the canonical file layout; CI runs `fmt.sh --check`).
 
 The pull request runs the validator and posts a comment with a table of
 every value it changes: file, field, old and new value, and a link to

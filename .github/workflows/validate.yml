@@ -55,6 +55,15 @@ jobs:
           OPENPARTS_CLI: ../openparts/target/debug/openparts
         run: ./scripts/validate.sh
 
+      # Every file in the canonical schema 0.2 layout (`openparts data
+      # fmt`); run ./scripts/fmt.sh to fix.
+      - name: Files are formatted
+        if: ${{ !cancelled() }}
+        working-directory: openparts-data
+        env:
+          OPENPARTS_CLI: ../openparts/target/debug/openparts
+        run: ./scripts/fmt.sh --check
+
       # Also when validation failed: the table helps to find why.
       - name: Fact table (changed values and their sources)
         if: ${{ !cancelled() && github.event_name == 'pull_request' }}
