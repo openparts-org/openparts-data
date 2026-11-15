@@ -1,0 +1,69 @@
+# GigaDevice 8-pad WSON 6x5 mm, 1.27 mm pitch, exposed pad. From section
+# 10.5 "Package WSON8 (6x5mm)" of the GD25Q64E datasheet Rev 1.6, page 59
+# (table in the text layer, views checked on the rendered page). The
+# same dimension rows appear number for number in GD25Q32E Rev 1.5
+# (page 56, section 10.5) and GD25Q16E Rev 1.3 (page 56, section 10.6).
+#
+# Frame: the bottom view has pads 1-4 and 5-8 in two columns, e along
+# them; D (6.00, drawn horizontally across the two rows) = body_width
+# (X), E (5.00, along the rows) = body_length (Y); exposed pad D2 (drawn
+# horizontally) = width (X), E2 = length (Y). body_height = A (no A2).
+# lead_thickness = c (side view, terminal thickness). Note 1: the
+# exposed pad "is not connected to any internal signal" -- the Devices
+# get no EP pin. Coplanarity / edge tolerance (note 2) not modelled.
+#
+# Not manufacturers/winbond/WSON8-6x5-P1.27-P: E2 3.90-4.10 here vs
+# 4.25-4.35, D2/L/b limits differ.
+schema_version: "0.2"
+kind: package
+id: manufacturers/gigadevice/WSON8-6x5-P1.27
+family: son
+lead_count: 8
+source: gigadevice/DS-00484-GD25Q64E@rev1.6
+
+pitch:
+  typ: 1.27 mm
+  src: p59 "Section 10.5 Package WSON8 (6x5mm), Dimensions table, "e" NOM 1.27"
+
+geometry: { type: parametric, generator: son }
+
+dimensions:
+  body_width:
+    min: 5.9 mm
+    typ: 6 mm
+    max: 6.1 mm
+    src: p59 "Section 10.5 Dimensions table, "D 5.90 / 6.00 / 6.10" (across the two pad rows)"
+  body_length:
+    min: 4.9 mm
+    typ: 5 mm
+    max: 5.1 mm
+    src: p59 "Section 10.5 Dimensions table, "E 4.90 / 5.00 / 5.10" (along the pad rows)"
+  body_height:
+    min: 0.7 mm
+    typ: 0.75 mm
+    max: 0.8 mm
+    src: p59 "Section 10.5 Dimensions table, "A 0.70 / 0.75 / 0.80" (mm)"
+  exposed_pad:
+    src:    p59 "Section 10.5 Dimensions table, D2 3.30 / 3.40 / 3.50 (X) and E2 3.90 / 4.00 / 4.10 (Y)"
+    width:  { min: 3.3 mm, typ: 3.4 mm, max: 3.5 mm }
+    length: { min: 3.9 mm, typ: 4 mm, max: 4.1 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p59 "Section 10.5 Dimensions table, "A1 0.00 / 0.02 / 0.05" (mm)"
+  lead_width:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p59 "Section 10.5 Dimensions table, "b 0.35 / 0.40 / 0.50" (mm)"
+  lead_length:
+    min: 0.5 mm
+    typ: 0.6 mm
+    max: 0.75 mm
+    src: p59 "Section 10.5 Dimensions table, "L 0.50 / 0.60 / 0.75" (mm)"
+  lead_thickness:
+    min: 0.18 mm
+    typ: 0.203 mm
+    max: 0.25 mm
+    src: p59 "Section 10.5 Dimensions table, "c 0.180 / 0.203 / 0.250" (mm)"

@@ -1,0 +1,68 @@
+# GigaDevice 8-lead SOP 150 mil, 1.27 mm pitch. From section 10.4
+# "Package SOP8 150MIL" of the GD25Q64E datasheet Rev 1.6, page 58
+# (table in the text layer). The same dimension rows appear number for
+# number in GD25Q32E Rev 1.5 (page 52, section 10.1) and GD25Q16E Rev 1.3
+# (page 51, section 10.1) -- checked by diffing the pdftotext output of
+# the tables; only the notes under the tables differ in wording.
+#
+# body_width = E1, overall_width = E (lead span), body_length = D,
+# body_height = A2, overall_height = A (MAX only), lead_length = L
+# (MIN/MAX only; the NOM cell is "-"). L1 "1.04" (nominal only, the lead
+# footprint incl. bend), the chamfer h and the angle are not modelled.
+#
+# Not standards/SOIC8-3.90x4.90-P1.27 (Microchip): limits differ (c
+# 0.10-0.25 here vs 0.17-0.25, L max 0.90 vs 1.27).
+schema_version: "0.2"
+kind: package
+id: manufacturers/gigadevice/SOP8-150mil
+family: soic
+lead_count: 8
+source: gigadevice/DS-00484-GD25Q64E@rev1.6
+
+pitch:
+  typ: 1.27 mm
+  src: p58 "Section 10.4 Package SOP8 150MIL, Dimensions table, "e" NOM 1.27"
+
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 3.8 mm
+    typ: 3.9 mm
+    max: 4 mm
+    src: p58 "Section 10.4 Dimensions table, "E1 3.80 / 3.90 / 4.00" (mm)"
+  body_length:
+    min: 4.8 mm
+    typ: 4.9 mm
+    max: 5 mm
+    src: p58 "Section 10.4 Dimensions table, "D 4.80 / 4.90 / 5.00" (mm)"
+  body_height:
+    min: 1.25 mm
+    typ: 1.45 mm
+    max: 1.55 mm
+    src: p58 "Section 10.4 Dimensions table, "A2 1.25 / 1.45 / 1.55" (mm)"
+  lead_thickness:
+    min: 0.1 mm
+    typ: 0.2 mm
+    max: 0.25 mm
+    src: p58 "Section 10.4 Dimensions table, "c 0.10 / 0.20 / 0.25" (mm)"
+  overall_width:
+    min: 5.8 mm
+    typ: 6 mm
+    max: 6.2 mm
+    src: p58 "Section 10.4 Dimensions table, "E 5.80 / 6.00 / 6.20" (mm)"
+  overall_height: { max: 1.75 mm, src: 'p58 "Section 10.4 Dimensions table, "A" (MAX 1.75 only)"' }
+  standoff:
+    min: 0.1 mm
+    typ: 0.15 mm
+    max: 0.25 mm
+    src: p58 "Section 10.4 Dimensions table, "A1 0.10 / 0.15 / 0.25" (mm)"
+  lead_width:
+    min: 0.31 mm
+    typ: 0.41 mm
+    max: 0.51 mm
+    src: p58 "Section 10.4 Dimensions table, "b 0.31 / 0.41 / 0.51" (mm)"
+  lead_length:
+    min: 0.4 mm
+    max: 0.9 mm
+    src: p58 "Section 10.4 Dimensions table, "L" (MIN 0.40 / MAX 0.90, NOM "-")"

@@ -1,0 +1,18 @@
+# Official GigaDevice GD25Q64E datasheet ("Uniform Sector Dual and Quad
+# Serial Flash"). Linked from the gigadevice.com product page
+# /product/flash/spi-nor-flash/gd25q64e; downloaded with curl from
+# download.gigadevice.com and read with pdftotext -layout (the package
+# tables on pages 58-60 extract as clean text). Footer:
+# "GD25Q64E-Rev1.6 ... April 2024". Printed page numbers equal the PDF
+# page indices.
+schema_version: "0.2"
+kind: source
+id: gigadevice/DS-00484-GD25Q64E@rev1.6
+sha256: 1330342a7dd6d123bde0486fb2381a359f6a8890a647d4f7d2a282a963938602
+retrieved: 2026-11-16
+url: https://download.gigadevice.com/Datasheet/DS-00484-GD25Q64E-Rev1.6.pdf
+publisher: gigadevice
+document_id: DS-00484
+document_type: datasheet
+revision: "1.6"
+date: 2024-04

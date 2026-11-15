@@ -1,0 +1,31 @@
+# GD25Q16E 16M-bit SPI NOR flash (3 V, uniform 4 KB sectors), 8-pin
+# SOP8 (150/208 mil) and WSON8 6x5 mm pin numbering. Transcribed from the
+# pin description table(s) cited below; where SOP8 and USON/WSON have
+# separate tables they give the same names on the same numbers, so one
+# Device covers both. The datasheet names pins in the Standard-SPI form
+# with the Quad IOn name in parentheses: the IOn name is kept as an
+# alternate function. The WSON8 exposed pad "is not connected to any
+# internal signal" (package note) -- no EP pin.
+schema_version: "0.2"
+kind: device
+id: gigadevice/GD25Q16E
+manufacturer: gigadevice
+category: flash
+family: GD25Q16E
+source: gigadevice/DS-00473-GD25Q16E@rev1.3
+
+parameters:
+  capacity:
+    typ: 16 Mbit
+    src: p5 "Section 2 General Descriptions, GD25Q16E (16M-bit) Serial flash"
+
+pins:
+  src: p5 "Table 1. Pin Description for SOP8/USON8/WSON8 Package"
+  "1": { name: CS#, type: input }
+  "2": { name: SO, type: io, alternate_functions: [IO1] }
+  "3": { name: WP#, type: io, alternate_functions: [IO2] }
+  "4": { name: VSS, type: ground }
+  "5": { name: SI, type: io, alternate_functions: [IO0] }
+  "6": { name: SCLK, type: input }
+  "7": { name: HOLD#, type: io, alternate_functions: [IO3] }
+  "8": { name: VCC, type: power }

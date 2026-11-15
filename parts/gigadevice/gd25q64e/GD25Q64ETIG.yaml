@@ -1,0 +1,27 @@
+# MPN "GD25Q64ETIG" printed verbatim in section 9.1 "Valid Part Numbers"
+# (Temperature Range I table) of gigadevice/DS-00484-GD25Q64E@rev1.6, page 52, row
+# "GD25Q64ETIG / 64Mbit / SOP8 150mil". The orderable code adds a packing letter
+# (T/Y/R, "Packing Options" column; section 9 legend page 51) -- this
+# record is the product number as the table prints it. Package outline:
+# section 10.4 "Package SOP8 150mil" (page 58); the drawing is the one
+# the referenced package was read from (identical dimension rows, see the
+# package header). lifecycle: not stated in the datasheet -> unknown.
+schema_version: "0.2"
+kind: part
+id: gigadevice/GD25Q64ETIG
+manufacturer: gigadevice
+mpn: GD25Q64ETIG
+device: gigadevice/GD25Q64E
+
+package:
+  value: manufacturers/gigadevice/SOP8-150mil
+  src: p52 "Section 9.1 Valid Part Numbers, row GD25Q64ETIG, Package Type SOP8 150mil; outline section 10.4 (p58)"
+
+sources: [gigadevice/DS-00484-GD25Q64E@rev1.6]
+source: gigadevice/DS-00484-GD25Q64E@rev1.6
+
+existence:
+  status: verified
+  src: p52 "Section 9.1 Valid Part Numbers, Temperature Range I table, row GD25Q64ETIG"
+
+lifecycle: { status: unknown }
