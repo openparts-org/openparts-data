@@ -1,0 +1,27 @@
+# Orderable MPN in the PACKAGE OPTION ADDENDUM of SLVSDG1C (page 16):
+# "TLV62569PDDCR Active Production SOT-23-THIN (DDC) | 6 3000 | LARGE
+# T&R ...". Lifecycle "Active" from the same row's Status column.
+# Package DDC0006A (pages 24-26) -> manufacturers/ti/DDC0006A; the three
+# outline pages' pdftotext -layout text is identical to the DDC0006A
+# pages of SLVSCB0E that package was read from.
+schema_version: "0.2"
+kind: part
+id: ti/TLV62569PDDCR
+manufacturer: ti
+mpn: TLV62569PDDCR
+device: ti/TLV62569P-DDC
+
+package:
+  value: manufacturers/ti/DDC0006A
+  src: p16 "PACKAGE OPTION ADDENDUM, row TLV62569PDDCR, Package column SOT-23-THIN (DDC)"
+
+sources: [ti/SLVSDG1C]
+source: ti/SLVSDG1C
+
+existence:
+  status: verified
+  src: p16 "PACKAGE OPTION ADDENDUM, Packaging Information, row TLV62569PDDCR"
+
+lifecycle:
+  status: active
+  src: p16 "PACKAGE OPTION ADDENDUM, row TLV62569PDDCR, Status column Active"

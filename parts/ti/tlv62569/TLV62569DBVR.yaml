@@ -1,0 +1,28 @@
+# Orderable MPN in the PACKAGE OPTION ADDENDUM of SLVSDG1C (page 16):
+# "TLV62569DBVR Active Production SOT-23 (DBV) | 5 3000 | LARGE T&R
+# ...". Lifecycle "Active" from the same row's Status column. Package
+# DBV0005A (pages 21-23, drawing 4214839/K 08/2024) ->
+# manufacturers/ti/DBV0005A; the three outline pages' pdftotext -layout
+# text is identical to the DBV0005A pages of SBOS833R that package was
+# read from.
+schema_version: "0.2"
+kind: part
+id: ti/TLV62569DBVR
+manufacturer: ti
+mpn: TLV62569DBVR
+device: ti/TLV62569-DBV
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src: p16 "PACKAGE OPTION ADDENDUM, row TLV62569DBVR, Package column"
+
+sources: [ti/SLVSDG1C]
+source: ti/SLVSDG1C
+
+existence:
+  status: verified
+  src: p16 "PACKAGE OPTION ADDENDUM, Packaging Information, row TLV62569DBVR"
+
+lifecycle:
+  status: active
+  src: p16 "PACKAGE OPTION ADDENDUM, row TLV62569DBVR, Status column Active"
