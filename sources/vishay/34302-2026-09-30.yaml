@@ -1,0 +1,18 @@
+# Vishay IHLP-2020BZ-A1 datasheet, Document Number 34302, footer
+# "Revision: 30-Sep-2026" (7 pages). Fetched 2026-11-15 with plain curl
+# from vishay.com (same URL as vishay/34302). Added as a separate Source
+# because vishay/34302 pins the older 04-Apr-2025 revision; the electrical
+# parameters were read from this revision (page 1, STANDARD ELECTRICAL
+# SPECIFICATIONS).
+schema_version: "0.1"
+kind: source
+id: vishay/34302@2026-09-30
+
+publisher: vishay
+document_id: "34302"
+document_type: datasheet
+
+revision: "30-Sep-2026"
+date: "2026-09-30"
+
+url: "https://www.vishay.com/docs/34302/ihlp-2020bz-a1.pdf"

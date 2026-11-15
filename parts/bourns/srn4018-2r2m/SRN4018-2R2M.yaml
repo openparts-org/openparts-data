@@ -20,3 +20,44 @@ lifecycle:
 
 sources:
   - bourns/SRN4018
+  - bourns/SRN4018@rev10-26
+
+parameters:
+  tolerance:
+    min: -20
+    max: 20
+    unit: "%"
+  inductance:
+    nominal: 2.2
+    unit: µH
+  rated_current:
+    nominal: 2.9
+    unit: A
+  saturation_current:
+    nominal: 3.0
+    unit: A
+  dcr:
+    max: 0.044
+    unit: Ω
+
+provenance:
+  "/parameters/tolerance":
+    - source: bourns/SRN4018@rev10-26
+      page: 1
+      locator: "Electrical Specifications @ 25 °C, SRN4018-2R2M row: Tol. % 20"
+  "/parameters/inductance":
+    - source: bourns/SRN4018@rev10-26
+      page: 1
+      locator: "Electrical Specifications @ 25 °C, SRN4018-2R2M row: L (µH) 2.2 @ 100 KHz/1 V"
+  "/parameters/rated_current":
+    - source: bourns/SRN4018@rev10-26
+      page: 1
+      locator: "Electrical Specifications @ 25 °C, SRN4018-2R2M row: Irms (A) 2.9 (General Specifications: temperature rise 40 °C at rated Irms)"
+  "/parameters/saturation_current":
+    - source: bourns/SRN4018@rev10-26
+      page: 1
+      locator: "Electrical Specifications @ 25 °C, SRN4018-2R2M row: Isat (A) 3.0 (General Specifications: inductance drops 30 % at Isat)"
+  "/parameters/dcr":
+    - source: bourns/SRN4018@rev10-26
+      page: 1
+      locator: "Electrical Specifications @ 25 °C, SRN4018-2R2M row: DCR (Ω) Max. 0.044"

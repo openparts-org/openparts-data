@@ -18,3 +18,45 @@ lifecycle:
 
 sources:
   - vishay/34302
+  - vishay/34302@2026-09-30
+
+parameters:
+  tolerance:
+    min: -20
+    max: 20
+    unit: "%"
+  inductance:
+    nominal: 2.2
+    unit: µH
+  rated_current:
+    nominal: 4.2
+    unit: A
+  saturation_current:
+    nominal: 9.5
+    unit: A
+  dcr:
+    nominal: 45.6
+    max: 50.1
+    unit: mΩ
+
+provenance:
+  "/parameters/tolerance":
+    - source: vishay/34302@2026-09-30
+      page: 1
+      locator: "STANDARD ELECTRICAL SPECIFICATIONS, column header \"L0 INDUCTANCE ± 20 %\" (IHLP2020BZE_2R2MA1 row)"
+  "/parameters/inductance":
+    - source: vishay/34302@2026-09-30
+      page: 1
+      locator: "STANDARD ELECTRICAL SPECIFICATIONS, IHLP2020BZE_2R2MA1 row: L0 Inductance at 100 kHz, 0.25 V, 0 A (μH) 2.2"
+  "/parameters/rated_current":
+    - source: vishay/34302@2026-09-30
+      page: 1
+      locator: "STANDARD ELECTRICAL SPECIFICATIONS, IHLP2020BZE_2R2MA1 row: Heat rating current DC typ. 4.2 A (note (1): ΔT approx. 40 °C)"
+  "/parameters/saturation_current":
+    - source: vishay/34302@2026-09-30
+      page: 1
+      locator: "STANDARD ELECTRICAL SPECIFICATIONS, IHLP2020BZE_2R2MA1 row: Saturation current DC typ. 9.5 A (note (2): L drops approx. 20 %)"
+  "/parameters/dcr":
+    - source: vishay/34302@2026-09-30
+      page: 1
+      locator: "STANDARD ELECTRICAL SPECIFICATIONS, IHLP2020BZE_2R2MA1 row: DCR TYP. 25 °C 45.6 mΩ, DCR MAX. 25 °C 50.1 mΩ"
