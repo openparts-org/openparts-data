@@ -1,0 +1,18 @@
+# SMAJ5.0CA-13-F: assembled from the ordering pattern -- probable.
+# Package: manufacturers/diodes/SMA-DS13002 (outline read from DS13002; the same outline table is printed in DS19005, see the package header).
+# No lifecycle statement in the datasheet: lifecycle unknown.
+schema_version: "0.2"
+kind: part
+id: diodes/SMAJ5.0CA-13-F
+manufacturer: diodes
+mpn: SMAJ5.0CA-13-F
+device: diodes/SMAJ5.0CA
+package: manufacturers/diodes/SMA-DS13002
+sources: [diodes/DS19005, diodes/DS13002]
+source: diodes/DS19005
+
+existence:
+  status: probable
+  src: p1 "Ordering Information, row SMAJXXX(C)A-13-F and footnote; type number from p3 Electrical Characteristics"
+
+lifecycle: { status: unknown }

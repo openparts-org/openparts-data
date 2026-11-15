@@ -1,0 +1,25 @@
+# 400W bidirectional TVS, VRWM 12V, SMA -- type number from the DS19005
+# page-3 Electrical Characteristics row "SMAJ12(C)A" with the C suffix (note 8:
+# "Suffix C denotes Bi-directional device").
+# Page-1 Mechanical Data: bidirectional devices have no polarity
+# indicator; the datasheet prints no pin numbers, so the terminals are
+# numbered 1 (-X) and 2 (+X) in the generator's position convention and
+# named Pin1/Pin2 (no cathode/anode). The VF rating applies to
+# unidirectional units only (note 7) and is not recorded.
+schema_version: "0.2"
+kind: device
+id: diodes/SMAJ12CA
+manufacturer: diodes
+category: diode
+family: SMAJ
+source: diodes/DS19005
+
+parameters:
+  reverse_voltage:
+    max: 12 V
+    src: p3 "Electrical Characteristics table, SMAJ12(C)A row, VRWM (note 8, C suffix)"
+
+pins:
+  src: p1 "Mechanical Data, Polarity Indicator (none for bidirectional); numbering per header"
+  "1": { name: Pin1, type: passive }
+  "2": { name: Pin2, type: passive }

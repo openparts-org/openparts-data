@@ -1,0 +1,26 @@
+# 400W unidirectional TVS, VRWM 10V, SMA -- type number from the DS19005
+# page-3 Electrical Characteristics row "SMAJ10(C)A" (note 8: suffix C
+# denotes bi-directional; without C = unidirectional).
+# Polarity from the page-1 Mechanical Data ("Polarity Indicator: Cathode Band (Bidirectional Devices do not Have a Polarity Indicator)").
+# The datasheet names the terminals only by the cathode band and
+# prints no pin numbers: numbered in the generator's position
+# convention (pin 1 at -X), cathode = 1, anode = 2.
+schema_version: "0.2"
+kind: device
+id: diodes/SMAJ10A
+manufacturer: diodes
+category: diode
+family: SMAJ
+source: diodes/DS19005
+
+parameters:
+  forward_voltage:
+    max: 3.5 V
+    at: { IPP: 35 A }
+    src: p2 "Maximum Ratings, Instantaneous Forward Voltage VF (Notes 5-7, unidirectional)"
+  reverse_voltage: { max: 10 V, src: 'p3 "Electrical Characteristics table, SMAJ10(C)A row, VRWM"' }
+
+pins:
+  src: p1 "Mechanical Data, Polarity Indicator; numbering per header"
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }
