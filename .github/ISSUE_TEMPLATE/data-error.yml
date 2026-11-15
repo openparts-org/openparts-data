@@ -1,0 +1,59 @@
+# "Report an error" on a part page of the OpenParts site opens this
+# form with part, page, files and title filled in (and field/current for
+# one value): issues/new?template=data-error.yml&<id>=<value>. Keep the
+# field ids stable; web/cmd/app/data_review.mbt in openparts uses them.
+name: Data error
+description: A value in the part data is wrong / 部品データの値が誤っている
+title: "Data error: "
+labels: ["data-error"]
+body:
+  - type: input
+    id: part
+    attributes:
+      label: Part id
+      placeholder: raspberrypi/RP2040
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Part page URL
+  - type: textarea
+    id: files
+    attributes:
+      label: Data file(s)
+      description: The YAML file(s) holding the value / 値のあるYAMLファイル
+      placeholder: "package: packages/standards/qfn/QFN56-RP2040.yaml"
+  - type: input
+    id: field
+    attributes:
+      label: Wrong value (field or pointer)
+      description: e.g. `capacitance`, `body_width`, `/pins/12/name` / 誤っている項目
+    validations:
+      required: true
+  - type: input
+    id: current
+    attributes:
+      label: Current value
+      description: As shown on the site / サイト上の値
+  - type: input
+    id: correct
+    attributes:
+      label: Correct value
+      description: As stated in the datasheet / データシートの値
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Document, revision, page, table or figure / 文書・版・ページ・表や図
+      placeholder: "RP2040 datasheet RP-008371-DS rev 1, p.612, Figure 140"
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+    validations:
+      required: false

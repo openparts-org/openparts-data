@@ -3,7 +3,10 @@
 Most of the data here was extracted from datasheets by AI agents. Those
 documents are **candidates**: nobody has checked them yet. The most
 useful contribution is to check them against the datasheet and say so
-in a pull request. Fixes and new parts are welcome too.
+in a pull request. Fixes and new parts are welcome too. No time to fix
+a value? Use "Report an error" on its part page: it opens the
+[data error](https://github.com/openparts-org/openparts-data/issues/new?template=data-error.yml)
+issue form with the part and its files filled in.
 
 Each part has three documents: the Part (`parts/`), its Device (pins,
 `devices/`) and its Package (dimensions, `packages/`). The sources they
