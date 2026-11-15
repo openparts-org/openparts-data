@@ -1,0 +1,27 @@
+# Dual bus buffer gate with 3-state outputs SN74LVC2G125, 8-pin pin map
+# of the DCT (SM8) and DCU (VSSOP-8) packages from the "Pin Functions"
+# table (SCES204Q page 4), column "DCT, DCU", checked against the "DCU
+# PACKAGE (TOP VIEW)" figure on the same page; all 8 pins match. 1OE and
+# 2OE are active-low output enables (overbar per the revision history,
+# page 2); named without a suffix as in ti/SN74AHCT125. The YZP (DSBGA)
+# ball map is not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN74LVC2G125
+manufacturer: ti
+category: logic
+family: SN74LVC2G125
+source: ti/SCES204Q
+
+pins:
+  src:
+    - p4 ""Pin Functions" table, column "DCT, DCU""
+    - p4 ""DCU PACKAGE (TOP VIEW)" figure (cross-check)"
+  "1": { name: 1OE, type: input }
+  "2": { name: 1A, type: input }
+  "3": { name: 2Y, type: output }
+  "4": { name: GND, type: ground }
+  "5": { name: 2A, type: input }
+  "6": { name: 1Y, type: output }
+  "7": { name: 2OE, type: input }
+  "8": { name: VCC, type: power }

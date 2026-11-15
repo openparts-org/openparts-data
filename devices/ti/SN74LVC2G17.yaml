@@ -1,0 +1,22 @@
+# Dual Schmitt-trigger buffer SN74LVC2G17, 6-pin pin map of the DBV
+# (SOT-23-6) package (DCK, DRY and DSF figures show the same numbers)
+# from the "Pin Functions" table (SCES381N page 3, NAME / NO.), checked
+# against the "DBV PACKAGE (TOP VIEW)" figure on the same page: 1A 1,
+# GND 2, 2A 3 down the left edge, 2Y 4, VCC 5, 1Y 6 up the right edge.
+# The YZP (DSBGA) package is not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN74LVC2G17
+manufacturer: ti
+category: logic
+family: SN74LVC2G17
+source: ti/SCES381N
+
+pins:
+  src: [p3 ""Pin Functions" table (NAME / NO.)", p3 ""DBV PACKAGE (TOP VIEW)" figure (cross-check)"]
+  "1": { name: 1A, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: 2A, type: input }
+  "4": { name: 2Y, type: output }
+  "5": { name: VCC, type: power }
+  "6": { name: 1Y, type: output }

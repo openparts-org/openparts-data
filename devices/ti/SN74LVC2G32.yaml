@@ -1,0 +1,25 @@
+# Dual 2-input positive-OR gate SN74LVC2G32, 8-pin pin map of the DCT
+# (SSOP-8) and DCU (VSSOP-8) packages from the "Pin Functions" table
+# (SCES201N page 3, NAME / NO.), checked against the "DCU Package 8-Pin
+# VSSOP Top View" figure on the same page; all 8 pins match. The YZP
+# (DSBGA) package is not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN74LVC2G32
+manufacturer: ti
+category: logic
+family: SN74LVC2G32
+source: ti/SCES201N
+
+pins:
+  src:
+    - p3 ""Pin Functions" table (NAME / NO.)"
+    - p3 ""DCU Package 8-Pin VSSOP Top View" figure (cross-check)"
+  "1": { name: 1A, type: input }
+  "2": { name: 1B, type: input }
+  "3": { name: 2Y, type: output }
+  "4": { name: GND, type: ground }
+  "5": { name: 2A, type: input }
+  "6": { name: 2B, type: input }
+  "7": { name: 1Y, type: output }
+  "8": { name: VCC, type: power }

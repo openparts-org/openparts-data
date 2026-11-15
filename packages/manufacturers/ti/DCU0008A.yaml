@@ -1,0 +1,49 @@
+# TI DCU0008A "VSSOP - 0.9 mm max height" (8-lead VSSOP, 0.5 mm pitch;
+# drawing 4225266/A 09/2014, JEDEC MO-187 variation CA per its note 4),
+# read from the rendered outline page of SCES193N (PDF page 20).
+# Millimetres as printed. The same drawing revision (pdftotext -layout
+# text identical line for line) is also in SCES198N p20, SCES201N p20
+# and SCES204Q p24.
+#
+# Top view: pins 1-4 down the left edge, 5-8 up the right edge. Ranges
+# only: E1 "2.4/2.2 NOTE 3" (body_width, datum B), D "2.1/1.9 NOTE 3"
+# (body_length, datum A); lead span "3.2/3.0 TYP" recorded as min/max.
+# Overall height "0.9/0.6" -- no A2, so overall_height with no
+# body_height. Lead thickness is printed only as "(0.13) TYP"; note 1
+# says parenthesised dimensions are reference only -- recorded as that
+# reference value (as for manufacturers/ti/PW0014A). The EXAMPLE BOARD
+# LAYOUT (page 21) is all reference values and is not recorded as pads.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DCU0008A
+family: msop
+lead_count: 8
+source: ti/SCES193N
+
+pitch:
+  typ: 0.5 mm
+  src: p20 "PACKAGE OUTLINE DCU0008A (4225266/A), "6X 0.5" (basic); "2X 1.5" basic"
+
+geometry: { type: parametric, generator: msop }
+
+dimensions:
+  body_width:
+    min: 2.2 mm
+    max: 2.4 mm
+    src: p20 "DCU0008A, body width "2.4 / 2.2 NOTE 3" (datum B)"
+  body_length:
+    min: 1.9 mm
+    max: 2.1 mm
+    src: p20 "DCU0008A, body length "2.1 / 1.9 NOTE 3" (datum A)"
+  lead_thickness: { typ: 0.13 mm, src: 'p20 "DCU0008A side view, "(0.13) TYP" (reference value)"' }
+  lead_length:
+    min: 0.2 mm
+    max: 0.35 mm
+    src: p20 "DCU0008A DETAIL A, foot length "0.35 / 0.20""
+  overall_width:
+    min: 3 mm
+    max: 3.2 mm
+    src: p20 "DCU0008A, lead-tip span "3.2 / 3.0 TYP" (min/max only)"
+  overall_height: { min: 0.6 mm, max: 0.9 mm, src: 'p20 "DCU0008A DETAIL A, height "0.9 / 0.6""' }
+  standoff:       { min: 0 mm, max: 0.1 mm, src: 'p20 "DCU0008A DETAIL A, standoff "0.1 / 0.0""' }
+  lead_width:     { min: 0.17 mm, max: 0.25 mm, src: 'p20 "DCU0008A, "8X 0.25 / 0.17""' }

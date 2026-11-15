@@ -1,0 +1,19 @@
+# Official TI datasheet "SN74LVC2G125 dual bus buffer gate with 3-state outputs". Downloaded 2026-11-16 from
+# the TI symlink URL below; revision read from the page header
+# "SCES204Q - APRIL 1999 - REVISED MARCH 2017". 30 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawings named in the
+# part files were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM (PDF pages 16-17) is dated 28-Sep-2026 (newer than the datasheet revision).
+# sha256 is of the PDF as downloaded on 2026-11-16.
+schema_version: "0.2"
+kind: source
+id: ti/SCES204Q
+sha256: 15dab14095892f561bc7407dde6c7fb2fb75d92c6bdafc34e949e5dca1fed340
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/sn74lvc2g125.pdf
+publisher: ti
+document_id: SCES204Q
+document_type: datasheet
+revision: Q
+date: 2017-03

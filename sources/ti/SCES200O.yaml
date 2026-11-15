@@ -1,0 +1,19 @@
+# Official TI datasheet "SN74LVC2G14 dual Schmitt-trigger inverter". Downloaded 2026-11-16 from
+# the TI symlink URL below; revision read from the page header
+# "SCES200O - APRIL 1999 - REVISED AUGUST 2015". 28 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawings named in the
+# part files were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM (PDF page 13) is dated 3-Jul-2026 (newer than the datasheet revision).
+# sha256 is of the PDF as downloaded on 2026-11-16.
+schema_version: "0.2"
+kind: source
+id: ti/SCES200O
+sha256: de3f4670541e131ca412cb2cb83dd2c91bb5f23806e1442a156cc17c1543710d
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/sn74lvc2g14.pdf
+publisher: ti
+document_id: SCES200O
+document_type: datasheet
+revision: O
+date: 2015-08

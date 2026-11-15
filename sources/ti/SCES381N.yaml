@@ -1,0 +1,19 @@
+# Official TI datasheet "SN74LVC2G17 dual Schmitt-trigger buffer". Downloaded 2026-11-16 from
+# the TI symlink URL below; revision read from the page header
+# "SCES381N - JANUARY 2002 - REVISED JANUARY 2015". 36 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawings named in the
+# part files were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM (PDF page 13) is dated 3-Jul-2026 (newer than the datasheet revision).
+# sha256 is of the PDF as downloaded on 2026-11-16.
+schema_version: "0.2"
+kind: source
+id: ti/SCES381N
+sha256: 624dbe55679d2fed4123b0d7708cd0d295efcc78de395e71a0caf5cd13cbc216
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/sn74lvc2g17.pdf
+publisher: ti
+document_id: SCES381N
+document_type: datasheet
+revision: N
+date: 2015-01

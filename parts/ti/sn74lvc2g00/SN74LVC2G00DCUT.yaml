@@ -1,0 +1,28 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SCES193N PDF page 13): row "SN74LVC2G00DCUT" with Status "Active", Package
+# "VSSOP (DCU) | 8", 250 | SMALL T&R. lifecycle "active" is that row's Status column
+# (TI's own addendum inside the datasheet). Package: DCU0008A (4225266/A 09/2014) on page
+# 20 -> manufacturers/ti/DCU0008A. manufacturers/ti/DCU0008A was created from this page.
+schema_version: "0.2"
+kind: part
+id: ti/SN74LVC2G00DCUT
+manufacturer: ti
+mpn: SN74LVC2G00DCUT
+device: ti/SN74LVC2G00
+
+package:
+  value: manufacturers/ti/DCU0008A
+  src:
+    - p13 "PACKAGE OPTION ADDENDUM, row SN74LVC2G00DCUT, Package column "VSSOP (DCU) | 8""
+    - p20 "PACKAGE OUTLINE DCU0008A (4225266/A 09/2014)"
+
+sources: [ti/SCES193N]
+source: ti/SCES193N
+
+existence:
+  status: verified
+  src: p13 "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74LVC2G00DCUT"
+
+lifecycle:
+  status: active
+  src: p13 "PACKAGE OPTION ADDENDUM, row SN74LVC2G00DCUT, Status column "Active""

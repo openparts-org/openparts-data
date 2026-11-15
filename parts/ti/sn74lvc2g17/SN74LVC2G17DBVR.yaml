@@ -1,0 +1,28 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SCES381N PDF page 13): row "SN74LVC2G17DBVR" with Status "Active", Package
+# "SOT-23 (DBV) | 6", 3000 | LARGE T&R. lifecycle "active" is that row's Status column
+# (TI's own addendum inside the datasheet). Package: DBV0006A (4214840/G 08/2024) on page
+# 30 -> manufacturers/ti/DBV0006A. The outline page's pdftotext -layout text matches SCES195N page 22 (where manufacturers/ti/DBV0006A was read) line for line apart from the page header, so the package is reused.
+schema_version: "0.2"
+kind: part
+id: ti/SN74LVC2G17DBVR
+manufacturer: ti
+mpn: SN74LVC2G17DBVR
+device: ti/SN74LVC2G17
+
+package:
+  value: manufacturers/ti/DBV0006A
+  src:
+    - p13 "PACKAGE OPTION ADDENDUM, row SN74LVC2G17DBVR, Package column "SOT-23 (DBV) | 6""
+    - p30 "PACKAGE OUTLINE DBV0006A (4214840/G 08/2024)"
+
+sources: [ti/SCES381N]
+source: ti/SCES381N
+
+existence:
+  status: verified
+  src: p13 "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN74LVC2G17DBVR"
+
+lifecycle:
+  status: active
+  src: p13 "PACKAGE OPTION ADDENDUM, row SN74LVC2G17DBVR, Status column "Active""

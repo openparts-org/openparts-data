@@ -1,0 +1,19 @@
+# Official TI datasheet "SN74LVC2G32 dual 2-input positive-OR gate". Downloaded 2026-11-16 from
+# the TI symlink URL below; revision read from the page header
+# "SCES201N - APRIL 1999 - REVISED SEPTEMBER 2015". 26 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawings named in the
+# part files were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM (PDF page 13) is dated 19-Dec-2025 (newer than the datasheet revision).
+# sha256 is of the PDF as downloaded on 2026-11-16.
+schema_version: "0.2"
+kind: source
+id: ti/SCES201N
+sha256: 6a22b3c7445d250e3e9e4f335e5bc9cff1aee0b3d3a1184a9a4a62f32b48f71c
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/sn74lvc2g32.pdf
+publisher: ti
+document_id: SCES201N
+document_type: datasheet
+revision: N
+date: 2015-09

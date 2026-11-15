@@ -1,0 +1,19 @@
+# Official TI datasheet "SN74LVC2G00 dual 2-input positive-NAND gate". Downloaded 2026-11-16 from
+# the TI symlink URL below; revision read from the page header
+# "SCES193N - APRIL 1999 - REVISED JANUARY 2015". 26 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawings named in the
+# part files were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM (PDF page 13) is dated 23-Dec-2025 (newer than the datasheet revision).
+# sha256 is of the PDF as downloaded on 2026-11-16.
+schema_version: "0.2"
+kind: source
+id: ti/SCES193N
+sha256: e15782a519f712eed3d794da178f8ca94af402b7960e71ae5ce192729a74a564
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/sn74lvc2g00.pdf
+publisher: ti
+document_id: SCES193N
+document_type: datasheet
+revision: N
+date: 2015-01
