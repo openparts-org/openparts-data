@@ -17,7 +17,37 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  color:
+    value: green
+  wavelength:
+    nominal: 525
+    unit: nm
+  forward_voltage:
+    nominal: 3.2
+    max: 3.5
+    unit: V
+  forward_current:
+    max: 30
+    unit: mA
+
 provenance:
+  "/parameters/color":
+    - source: wurth/150060GS75000-DS
+      page: 1
+      locator: "Optical Properties, Emitting Color: Green"
+  "/parameters/wavelength":
+    - source: wurth/150060GS75000-DS
+      page: 2
+      locator: "Electrical & Optical Properties, Dominant Wavelength λDom @ 20 mA: typ. 525 nm"
+  "/parameters/forward_voltage":
+    - source: wurth/150060GS75000-DS
+      page: 2
+      locator: "Electrical & Optical Properties, Forward Voltage VF @ 20 mA: typ. 3.2 V, max. 3.5 V"
+  "/parameters/forward_current":
+    - source: wurth/150060GS75000-DS
+      page: 1
+      locator: "Absolute Maximum Ratings (Ambient Temperature 25°C), Continuous Forward Current IF: 30 mA"
   "/pins":
     - source: wurth/150060GS75000-DS
       page: 1
