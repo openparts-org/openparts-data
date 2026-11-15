@@ -1,0 +1,25 @@
+# Orderable MPN in the PACKAGE OPTION ADDENDUM of SLVSAM2E (page 30):
+# "TPS62162DSGR Active Production WSON (DSG) | 8 3000 | LARGE T&R ...".
+# Lifecycle "Active" from the same row's Status column. Package WSON
+# (DSG), outline DSG0008A (page 39) -> manufacturers/ti/DSG0008A.
+schema_version: "0.2"
+kind: part
+id: ti/TPS62162DSGR
+manufacturer: ti
+mpn: TPS62162DSGR
+device: ti/TPS62162-DSG
+
+package:
+  value: manufacturers/ti/DSG0008A
+  src: p30 "PACKAGE OPTION ADDENDUM, row TPS62162DSGR, Package column"
+
+sources: [ti/SLVSAM2E]
+source: ti/SLVSAM2E
+
+existence:
+  status: verified
+  src: p30 "PACKAGE OPTION ADDENDUM, Packaging Information, row TPS62162DSGR"
+
+lifecycle:
+  status: active
+  src: p30 "PACKAGE OPTION ADDENDUM, row TPS62162DSGR, Status column Active"

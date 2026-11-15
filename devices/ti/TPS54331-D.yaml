@@ -1,0 +1,31 @@
+# TPS54331 3-A, 28-V input non-synchronous step-down converter, SOIC-8
+# (D) pinout. From SLVS839H Figure 5-1 "8-Pin SOIC D Package (Top
+# View)" and Table 5-1 "Pin Functions" (page 3): BOOT 1, VIN 2, EN 3,
+# SS 4, VSENSE 5, COMP 6, GND 7, PH 8. Pin 9 (PowerPAD) exists only on
+# the DDA package (not covered: SOIC with exposed pad). Types from the
+# table's I/O column and descriptions: BOOT "O" but a bootstrap-capacitor
+# supply -> power; VIN supply -> power; EN, SS, VSENSE "I" -> input; COMP
+# "O" -> output; GND -> ground; PH "O", switch node -> passive.
+schema_version: "0.2"
+kind: device
+id: ti/TPS54331-D
+manufacturer: ti
+category: switching_regulator
+family: TPS54331
+source: ti/SLVS839H
+
+parameters:
+  output_type:       { value: adjustable, src: 'p1 "1 Features, adjustable output voltage"' }
+  input_voltage_max: { max: 28 V, src: 'p4 "6.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 3 A, src: 'p1 "1 Features, continuous output current"' }
+
+pins:
+  src: p3 "Figure 5-1 D Package (Top View) and Table 5-1 Pin Functions"
+  "1": { name: BOOT, type: power }
+  "2": { name: VIN, type: power }
+  "3": { name: EN, type: input }
+  "4": { name: SS, type: input }
+  "5": { name: VSENSE, type: input }
+  "6": { name: COMP, type: output }
+  "7": { name: GND, type: ground }
+  "8": { name: PH, type: passive }

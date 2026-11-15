@@ -1,0 +1,42 @@
+# TI DSG0008A, WSON-8, 2x2 mm, 0.5 mm pitch, 0.8 mm max height, with
+# exposed thermal pad. Outline drawing DSG0008A (4218900/E 08/2022) in
+# SLVSAM2E page 39, read from the rendered drawing.
+#
+# Mapping: body 1.9-2.1 both ways (no nominal printed) ->
+# body_width/body_length min/max; A 0.7-0.8 (no A2) -> body_height
+# only; A1 0.00-0.05 -> standoff; b 8X 0.18-0.32 -> lead_width; L 8X
+# 0.2-0.4 -> lead_length; thermal pad "0.9±0.1" across the terminal
+# rows and "1.6±0.1" along them -> exposed_pad.
+# Bottom view numbers terminals 1-4 up the left and 5-8 down the right;
+# seen from the top: pin 1 top-left, down the left, up the right (SOIC
+# order), matching the DSG pin configuration (page 4).
+# Left out: the side-wall metal thickness table (DIM A 0.1/0.2; not
+# A3), "2X 1.5" row span, the alternative terminal shape, and the
+# EXAMPLE BOARD LAYOUT (page 40, reference values only) as pads.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DSG0008A
+family: son
+lead_count: 8
+source: ti/SLVSAM2E
+
+pitch: { typ: 0.5 mm, src: 'p39 "DSG0008A outline (4218900/E), bottom view, basic 6X 0.5"' }
+geometry: { type: parametric, generator: son }
+
+dimensions:
+  body_width:
+    min: 1.9 mm
+    max: 2.1 mm
+    src: p39 "DSG0008A outline, top view, width 2.1/1.9 (across the terminal rows)"
+  body_length: { min: 1.9 mm, max: 2.1 mm, src: 'p39 "DSG0008A outline, top view, length 2.1/1.9"' }
+  body_height: { min: 0.7 mm, max: 0.8 mm, src: 'p39 "DSG0008A outline, side view 0.8/0.7"' }
+  exposed_pad:
+    src:    p39 "DSG0008A outline, bottom view, thermal pad 0.9±0.1 across, 1.6±0.1 along the rows"
+    width:  { min: 0.8 mm, typ: 0.9 mm, max: 1 mm }
+    length: { min: 1.5 mm, typ: 1.6 mm, max: 1.7 mm }
+  standoff:    { min: 0 mm, max: 0.05 mm, src: 'p39 "DSG0008A outline, side view 0.05/0.00"' }
+  lead_width:
+    min: 0.18 mm
+    max: 0.32 mm
+    src: p39 "DSG0008A outline, bottom view 8X 0.32/0.18"
+  lead_length: { min: 0.2 mm, max: 0.4 mm, src: 'p39 "DSG0008A outline, bottom view 8X 0.4/0.2"' }

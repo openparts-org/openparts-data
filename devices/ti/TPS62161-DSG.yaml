@@ -1,0 +1,33 @@
+# TPS62161 1-A step-down converter with DCS-Control, WSON-8 (DSG) pinout.
+# From SLVSAM2E "DSG Package 8-Pin WSON With Exposed Thermal Pad Top
+# View" and the Pin Functions table (page 4): PGND 1, VIN 2, EN 3, AGND
+# 4, FB 5, VOS 6, SW 7, PG 8. The exposed thermal pad "Must be connected
+# to AGND" -- a connection instruction -> key EP, type passive (the pad
+# is DSG-only). Types from the I/O column: VIN "I" supply -> power; EN,
+# FB, VOS "I" -> input; SW "O" switch node -> passive; PG "O" open drain
+# -> output; PGND/AGND -> ground.
+schema_version: "0.2"
+kind: device
+id: ti/TPS62161-DSG
+manufacturer: ti
+category: switching_regulator
+family: TPS6216x
+source: ti/SLVSAM2E
+
+parameters:
+  output_type:       { value: fixed, src: 'p4 "5 Device Voltage Options, TPS62161: 1.8 V"' }
+  output_voltage:    { typ: 1.8 V, src: 'p4 "5 Device Voltage Options, TPS62161, WSON (8)"' }
+  input_voltage_max: { max: 17 V, src: 'p5 "7.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 1 A, src: 'p1 "1 Features, output current"' }
+
+pins:
+  src: p4 "DSG Package Top View and Pin Functions table"
+  "1": { name: PGND, type: ground }
+  "2": { name: VIN, type: power }
+  "3": { name: EN, type: input }
+  "4": { name: AGND, type: ground }
+  "5": { name: FB, type: input }
+  "6": { name: VOS, type: input }
+  "7": { name: SW, type: passive }
+  "8": { name: PG, type: output }
+  EP:  { name: Exposed Thermal Pad, type: passive }

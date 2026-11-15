@@ -1,0 +1,27 @@
+# Orderable MPN in the PACKAGE OPTION ADDENDUM of SLVS839H (page 29):
+# "TPS54331DR Active Production SOIC (D) | 8 2500 | LARGE T&R ...". Lifecycle "Active"
+# from the same row's Status column. Package SOIC (D), outline D0008A
+# (pages 38-40, drawing 4214825/C 02/2019) -> manufacturers/ti/D0008A;
+# the three outline pages' pdftotext -layout text is identical to the
+# D0008A pages of SLCS005AH that package was read from.
+schema_version: "0.2"
+kind: part
+id: ti/TPS54331DR
+manufacturer: ti
+mpn: TPS54331DR
+device: ti/TPS54331-D
+
+package:
+  value: manufacturers/ti/D0008A
+  src: p29 "PACKAGE OPTION ADDENDUM, row TPS54331DR, Package column"
+
+sources: [ti/SLVS839H]
+source: ti/SLVS839H
+
+existence:
+  status: verified
+  src: p29 "PACKAGE OPTION ADDENDUM, Packaging Information, row TPS54331DR"
+
+lifecycle:
+  status: active
+  src: p29 "PACKAGE OPTION ADDENDUM, row TPS54331DR, Status column Active"

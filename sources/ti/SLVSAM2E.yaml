@@ -1,0 +1,20 @@
+# Official TI datasheet "TPS6216x 3-V to 17-V, 1-A Step-Down Converters
+# with DCS-Control" (PDF Title "... datasheet (Rev. E)"), covering
+# TPS62160/1/2/3, downloaded 2026-11-16 from the TI symlink URL below;
+# revision read from the page header "SLVSAM2E - NOVEMBER 2011 -
+# REVISED MAY 2017". 42 PDF pages, read with pdftotext -layout; the
+# DSG0008A outline (page 39, drawing 4218900/E 08/2022) also rendered.
+# The PACKAGE OPTION ADDENDUM (pages 29-31) and the outline pages are
+# appended by TI and are newer than the datasheet revision. Page numbers
+# are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: ti/SLVSAM2E
+sha256: abc824ca04ee985ede3a513172ccdd2a42c8e1fdcfc3af5acdbe2c1af31aaa72
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tps62162.pdf
+publisher: ti
+document_id: SLVSAM2E
+document_type: datasheet
+revision: E
+date: 2017-05

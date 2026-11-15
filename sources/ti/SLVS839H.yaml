@@ -1,0 +1,19 @@
+# Official TI datasheet "TPS54331 3-A, 28-V Input, Step Down DC-DC
+# Converter With Eco-mode" (PDF Title "... datasheet (Rev. H)"),
+# downloaded 2026-11-16 from the TI symlink URL below; revision read
+# from the page header "SLVS839H - JULY 2008 - REVISED OCTOBER 2023".
+# 41 PDF pages, read with pdftotext -layout. Page numbers are PDF page
+# indices (printed page numbers match). The PACKAGE OPTION ADDENDUM
+# (pages 28-29) and the D0008A outline (drawing 4214825/C 02/2019,
+# pages 38-40) are appended by TI and can be newer than the datasheet.
+schema_version: "0.2"
+kind: source
+id: ti/SLVS839H
+sha256: cf72dfd0ac69eec645b7b493de628dc1c3aa66f5f925a2ea9be6bb5c38260730
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tps54331.pdf
+publisher: ti
+document_id: SLVS839H
+document_type: datasheet
+revision: H
+date: 2023-10
