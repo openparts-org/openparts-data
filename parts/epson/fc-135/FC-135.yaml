@@ -35,8 +35,35 @@ lifecycle:
 sources:
   - epson/FC-135_E_Ver2.0
 
+# Parameters (AI candidates, needs review): load_capacitance left out --
+# the datasheet lists 7, 9, 12.5 pF "Please specify", which the base
+# model name does not fix.
+parameters:
+  frequency:
+    nominal: 32.768
+    unit: kHz
+  frequency_tolerance:
+    min: -20
+    max: 20
+    unit: ppm
+  esr:
+    nominal: 70
+    unit: kΩ
+
 provenance:
   "/existence":
     - source: epson/FC-135_E_Ver2.0
       page: 1
       locator: "Title, Description, and physical part-marking photo"
+  "/parameters/frequency":
+    - source: epson/FC-135_E_Ver2.0
+      page: 2
+      locator: "[4] Static Characteristics, Nominal frequency range f_nom: 32.768 kHz"
+  "/parameters/frequency_tolerance":
+    - source: epson/FC-135_E_Ver2.0
+      page: 2
+      locator: "[4] Static Characteristics, Frequency tolerance f_tol: ±20 x10-6 (T_use = +25 °C ± 3 °C, DL = 0.1 μW)"
+  "/parameters/esr":
+    - source: epson/FC-135_E_Ver2.0
+      page: 2
+      locator: "[4] Static Characteristics, Motional resistance (ESR) R1: 70 Typ. kΩ (DL = 0.5 μW)"

@@ -1,0 +1,18 @@
+# Epson brief sheet for FC-12M / FC-12M TYPE, fetched from Epson's own
+# download server. No revision or issue date is printed on the page
+# (the PDF metadata says it was modified 2025-07-14, but that is file
+# metadata, not a stated revision). Added as the manufacturer-hosted
+# primary source for electrical parameters, since epson/FC-12M-DS is a
+# third-party mirror.
+schema_version: "0.1"
+kind: source
+id: epson/FC-12M-BRIEF
+
+publisher: epson
+document_id: FC-12M
+document_type: datasheet
+
+revision: "unknown"
+date: "unknown"
+
+url: "https://download.epsondevice.com/td/pdf/brief/FC-12M_en.pdf"

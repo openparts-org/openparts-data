@@ -18,3 +18,24 @@ lifecycle:
 
 sources:
   - epson/FC-13A-BRIEF
+
+# Parameters (AI candidates, needs review): load_capacitance (9 / 12.5 pF,
+# "Please specify") and frequency_tolerance (±20/±30/±50 x10-6) left out:
+# the model name does not fix either option.
+parameters:
+  frequency:
+    nominal: 32.768
+    unit: kHz
+  esr:
+    max: 70
+    unit: kΩ
+
+provenance:
+  "/parameters/frequency":
+    - source: epson/FC-13A-BRIEF
+      page: 1
+      locator: "Specifications (characteristics), Nominal frequency range f_nom: 32.768 kHz"
+  "/parameters/esr":
+    - source: epson/FC-13A-BRIEF
+      page: 1
+      locator: "Specifications (characteristics), Motional resistance (ESR) R1: 70 kΩ Max."
