@@ -1,0 +1,25 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SLCS146H PDF page 23, addendum dated 18-Sep-2026): row
+# "LM4041DIDBZR", "SOT-23 (DBZ) | 3". lifecycle "active" is that table's
+# Status column. Package: outline DBZ0003A (4214838/F) on page 30, text
+# identical to the drawing behind the reused package.
+# Adjustable version: no fixed output voltage recorded.
+schema_version: "0.2"
+kind: part
+id: ti/LM4041DIDBZR
+manufacturer: ti
+mpn: LM4041DIDBZR
+device: ti/LM4041-ADJ-DBZ
+
+package:
+  value: manufacturers/ti/DBZ0003A
+  src: p23 "Package Option Addendum, row LM4041DIDBZR, SOT-23 (DBZ) | 3; outline DBZ0003A p30"
+
+sources: [ti/SLCS146H]
+source: ti/SLCS146H
+
+existence:
+  status: verified
+  src: p23 "Package Option Addendum, Packaging Information table, row LM4041DIDBZR"
+
+lifecycle: { status: active, src: 'p23 "Package Option Addendum, row LM4041DIDBZR, Status Active"' }

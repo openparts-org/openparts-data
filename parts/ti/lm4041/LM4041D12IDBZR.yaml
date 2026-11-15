@@ -1,0 +1,33 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SLCS146H PDF page 23, addendum dated 18-Sep-2026): row
+# "LM4041D12IDBZR", "SOT-23 (DBZ) | 3". lifecycle "active" is that table's
+# Status column. Package: outline DBZ0003A (4214838/F) on page 30, text
+# identical to the drawing behind the reused package.
+# output_voltage: VZ typ for this grade column (IZ = 100 uA, 25 C kept in
+# the locator: IZ is not a condition symbol).
+schema_version: "0.2"
+kind: part
+id: ti/LM4041D12IDBZR
+manufacturer: ti
+mpn: LM4041D12IDBZR
+device: ti/LM4041-12-DBZ
+
+package:
+  value: manufacturers/ti/DBZ0003A
+  src: p23 "Package Option Addendum, row LM4041D12IDBZR, SOT-23 (DBZ) | 3; outline DBZ0003A p30"
+
+sources: [ti/SLCS146H]
+source: ti/SLCS146H
+
+existence:
+  status: verified
+  src: p23 "Package Option Addendum, Packaging Information table, row LM4041D12IDBZR"
+
+lifecycle:
+  status: active
+  src: p23 "Package Option Addendum, row LM4041D12IDBZR, Status Active"
+
+parameters:
+  output_voltage:
+    typ: 1.225 V
+    src: p7 "5.5 LM4041x12I EC, LM4041D12I column, VZ at IZ = 100uA, 25C"

@@ -1,0 +1,27 @@
+# Precision micropower shunt voltage reference, adjustable LM4041
+# (LM4041xI / LM4041xQ), DBZ (SOT-23-3) pinout. From SLCS146H "Pin
+# Functions: ADJ Pinouts" table (page 4), column "SOT-23": FB 1,
+# Cathode 2, Anode 3, checked against Figure 4-4 "DBZ Package 3-Pin
+# SOT-23 Top View" (same page). The DCK and TO-92 pin maps differ and
+# are not covered. Anode typed ground ("normally grounded"), FB input
+# (table I/O "I").
+schema_version: "0.2"
+kind: device
+id: ti/LM4041-ADJ-DBZ
+manufacturer: ti
+category: voltage_reference
+family: LM4041
+source: ti/SLCS146H
+
+parameters:
+  output_current:
+    max: 12 mA
+    src: p6 "5.3 Recommended Operating Conditions, IZ Cathode current"
+
+pins:
+  src:
+    - 'p4 "Pin Functions: ADJ Pinouts table, column "SOT-23""'
+    - p4 "Figure 4-4 "DBZ Package 3-Pin SOT-23 Top View" (ADJ)"
+  "1": { name: FB, type: input }
+  "2": { name: Cathode, type: passive }
+  "3": { name: Anode, type: ground }
