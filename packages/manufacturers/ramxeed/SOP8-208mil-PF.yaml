@@ -1,0 +1,53 @@
+# RAMXEED 8-pin plastic SOP 208 mil (MPN code PF per the ordering
+# table), 1.27 mm pitch. From "PACKAGE DIMENSION" (Continued), 8-pin
+# plastic SOP (208mil), page 18 of DS501-00017-11v3-E (drawing rendered
+# and read as an image; summary box: "Lead pitch 1.27 mm", "Package
+# width x package length 5.30 mm x 5.65 mm", "Mounting heigth 1.73 mm
+# MAX").
+#
+# Nominal +/- tolerance dimensions are recorded as min/typ/max with the
+# arithmetic in the locator. The side view's "1.45(Min)" body dimension
+# is drawn between lines whose reference is not clear from the view, so
+# body_height is left out. lead_thickness "0.203~0.254" and the foot
+# "0.4(Min)" (detail A) as printed. No recommended land pattern.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ramxeed/SOP8-208mil-PF
+family: soic
+lead_count: 8
+source: ramxeed/DS501-00017@rev11v3
+
+pitch:
+  typ: 1.27 mm
+  src: p18 "PACKAGE DIMENSION 8-pin plastic SOP (208mil), Lead pitch 1.27 mm"
+
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 5.2 mm
+    typ: 5.3 mm
+    max: 5.4 mm
+    src: p18 "8-pin plastic SOP (208mil) drawing, body width 5.3±0.1 (5.2-5.4)"
+  body_length:
+    min: 5.55 mm
+    typ: 5.65 mm
+    max: 5.75 mm
+    src: p18 "8-pin plastic SOP (208mil) drawing, body length 5.65±0.1 (5.55-5.75)"
+  lead_thickness:
+    min: 0.203 mm
+    max: 0.254 mm
+    src: p18 "8-pin plastic SOP (208mil), Details of A part, 0.203~0.254"
+  lead_length: { min: 0.4 mm, src: 'p18 "8-pin plastic SOP (208mil), Details of A part, 0.4(Min)"' }
+  overall_width:
+    min: 8 mm
+    typ: 8.1 mm
+    max: 8.2 mm
+    src: p18 "8-pin plastic SOP (208mil) drawing, lead span 8.1±0.1 (8.0-8.2)"
+  overall_height: { max: 1.73 mm, src: 'p18 "8-pin plastic SOP (208mil) drawing, 1.73(Max)"' }
+  standoff: { min: 0.1 mm, src: 'p18 "8-pin plastic SOP (208mil), Details of A part, 0.10(Min)"' }
+  lead_width:
+    min: 0.32 mm
+    typ: 0.42 mm
+    max: 0.52 mm
+    src: p18 "8-pin plastic SOP (208mil) drawing, lead width 0.42±0.1 (0.32-0.52)"

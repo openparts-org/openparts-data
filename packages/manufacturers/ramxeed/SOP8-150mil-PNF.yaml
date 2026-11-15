@@ -1,0 +1,53 @@
+# RAMXEED 8-pin plastic SOP 150 mil (MPN code PNF per the ordering
+# table), 1.27 mm pitch. From "PACKAGE DIMENSION", 8-pin plastic
+# SOP(150mil), page 17 of DS501-00017-11v3-E (drawing rendered and read
+# as an image; the summary box gives "Lead pitch 1.27mm", "Package width
+# x Package length 3.90mm x 4.90mm", "Mounting height 1.75mm MAX.").
+#
+# Dimensions printed as nominal +/- tolerance are recorded as
+# min/typ/max with the arithmetic in the locator. body_height = the
+# parenthesised "(1.40)" body thickness: a reference value, recorded as
+# typ only and flagged here. lead_thickness "0.15~0.25" and the foot
+# "0.40 MIN." (detail F) as printed. No recommended land pattern in the
+# document.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ramxeed/SOP8-150mil-PNF
+family: soic
+lead_count: 8
+source: ramxeed/DS501-00017@rev11v3
+
+pitch: { typ: 1.27 mm, src: 'p17 "PACKAGE DIMENSION 8-pin plastic SOP(150mil), Lead pitch 1.27mm"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 3.8 mm
+    typ: 3.9 mm
+    max: 4 mm
+    src: p17 "8-pin plastic SOP(150mil) drawing, body width 3.90±0.10 (3.80-4.00)"
+  body_length:
+    min: 4.8 mm
+    typ: 4.9 mm
+    max: 5 mm
+    src: p17 "8-pin plastic SOP(150mil) drawing, body length 4.90±0.10 (4.80-5.00)"
+  body_height:
+    typ: 1.4 mm
+    src: p17 "8-pin plastic SOP(150mil) drawing, body thickness (1.40), reference value"
+  lead_thickness:
+    min: 0.15 mm
+    max: 0.25 mm
+    src: p17 "8-pin plastic SOP(150mil), Details of F part, 0.15~0.25"
+  overall_width:
+    min: 5.8 mm
+    typ: 6 mm
+    max: 6.2 mm
+    src: p17 "8-pin plastic SOP(150mil) drawing, lead span 6.00±0.20 (5.80-6.20)"
+  overall_height: { max: 1.75 mm, src: 'p17 "8-pin plastic SOP(150mil) drawing, 1.75 MAX."' }
+  standoff: { min: 0.05 mm, src: 'p17 "8-pin plastic SOP(150mil), Details of F part, 0.05 MIN."' }
+  lead_width:
+    min: 0.31 mm
+    typ: 0.41 mm
+    max: 0.51 mm
+    src: p17 "8-pin plastic SOP(150mil) drawing, lead width 0.41±0.10 (0.31-0.51)"
+  lead_length: { min: 0.4 mm, src: 'p17 "8-pin plastic SOP(150mil), Details of F part, 0.40 MIN."' }

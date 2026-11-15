@@ -1,0 +1,19 @@
+# Official RAMXEED (formerly Fujitsu Semiconductor Memory Solutions)
+# MB85RC256V datasheet "Memory FeRAM 256 K (32 K x 8) Bit I2C", document
+# DS501-00017-11v3-E (header of every page). Linked from the RAMXEED
+# I2C FeRAM family page (ramxeed.com/products/feram/i3.html); downloaded
+# with curl and read with pdftotext -layout, package pages rendered and
+# read as images. Date: page 1 prints "Copyright 2025.10 RAMXEED
+# LIMITED" (the PDF CreationDate metadata says 2021-10-22; the printed
+# copyright is used). Printed page numbers equal the PDF page indices.
+schema_version: "0.2"
+kind: source
+id: ramxeed/DS501-00017@rev11v3
+sha256: 09699ca0baea36a382e7b07e695937218294a8c123b18ebd2b09eabefe79e862
+retrieved: 2026-11-16
+url: https://www.ramxeed.com/assets/images/products/datasheet/FeRAM/i3/MB85RC256V-DS11v3-E.pdf
+publisher: ramxeed
+document_id: DS501-00017
+document_type: datasheet
+revision: 11v3-E
+date: 2025-10
