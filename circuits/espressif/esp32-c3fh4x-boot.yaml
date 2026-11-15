@@ -1,0 +1,33 @@
+# ESP32-C3FH4X boot strapping and UART0 download port from the
+# ESP32-C3 Hardware Design Guidelines (Strapping Pins, UART): a pull-
+# up on GPIO9, GPIO2 (no value given; keep large capacitors off GPIO9)
+# and the series resistor on U0TXD against harmonics. The boot mode
+# follows the strapping levels at reset (Boot Mode Control table); how
+# they are driven (button, programmer) is the board's choice. U0TXD is
+# the connector side. Page numbers are PDF page indices of the
+# ESP32-C3 Hardware Design Guidelines (printed page = index - 3). AI
+# candidate.
+schema_version: "0.2"
+kind: circuit
+id: espressif/esp32-c3fh4x-boot
+title: ESP32-C3FH4X strapping and UART0 download
+host: espressif/ESP32-C3FH4X
+source: espressif/esp32-c3_hardware_design_guidelines_en@rev1.8
+
+nets:
+  U0TXD:   { kind: signal }
+  VDD_3V3: { kind: power, voltage: { typ: 3.3 V }, src: p8 "1.3.2" }
+
+roles:
+  R_GPIO2_PU:
+    requires: { category: resistor, src: 'p15 "1.3.9, Table 3, note 1"' }
+    pins:     { "1": VDD_3V3, "2": host.GPIO2 }
+    level:    { value: recommended, word: recommended, src: 'p15 "1.3.9, Table 3, note 1"' }
+  R_GPIO9_PU:
+    requires: { category: resistor, src: 'p15 "1.3.9, Attention"' }
+    pins:     { "1": VDD_3V3, "2": host.GPIO9 }
+    level:    { value: recommended, word: recommended, src: 'p15 "1.3.9, Attention"' }
+  R_U0TXD:
+    requires: { category: resistor, resistance: { typ: 499 Ω }, src: p14 "1.3.7" }
+    pins:     { "1": host.U0TXD, "2": U0TXD }
+    level:    { value: recommended, word: recommended, src: p14 "1.3.7" }
