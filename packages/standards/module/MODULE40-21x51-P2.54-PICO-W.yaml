@@ -16,8 +16,10 @@
 # squares (its SMD pads are rectangles). Figure 7 shows them as
 # through-hole pads, but no drill is stated, so they are SMD lands here.
 # Left out as for the Pico: test points TP1-TP6 and the USB shell pads
-# A-D, and the 14 mm x 9 mm antenna keep-out (section 2.2.1) -- the
-# family has no keep-out areas yet.
+# A-D. The antenna keep-out of section 2.2.1 is recorded as stated: its
+# size (14 mm x 9 mm, orientation not given) at the antenna (bottom, -y)
+# edge -- the datasheet doesn't locate it further. The same section asks
+# for the board edge (recommended, no line drawn).
 schema_version: "0.1"
 kind: package
 id: standards/MODULE40-21x51-P2.54-PICO-W
@@ -79,11 +81,35 @@ dimensions:
     nominal: 2
     unit: mm
 
+edge:
+  side: "-y"
+  requirement: recommended
+
+keepouts:
+  - purpose: antenna
+    restricts: [components, copper]
+    side: "-y"
+    size: [14, 9]
+
 geometry:
   type: parametric
   generator: module
 
 provenance:
+  "/edge":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 11
+      locator: "Section 2.2.1 Keep-out area: \"Raspberry Pi Pico W should be placed on the edge of a board and not enclosed in metal\"; section 2 (page 7): \"The onboard wireless antenna is located on the bottom edge\" (Figure 3 top view, USB at the top: -y)"
+    - source: raspberrypi/RP-008304-DS@rev3
+      page: 11
+      locator: "Pico 2 W, section 2.2.1 and section 2: the same sentences"
+  "/keepouts":
+    - source: raspberrypi/RP-008312-DS@rev2
+      page: 11
+      locator: "Section 2.2.1 Keep-out area: \"There is a cutout for the antenna (14 mm × 9 mm). If anything is placed close to the antenna (in any dimension) the effectiveness of the antenna is reduced.\" Position: section 2 (page 7), \"The onboard wireless antenna is located on the bottom edge. To avoid detuning the antenna, no material should intrude into this space.\" Not dimensioned further (no x/y, no orientation of the 14 x 9)."
+    - source: raspberrypi/RP-008304-DS@rev3
+      page: 11
+      locator: "Pico 2 W, section 2.2.1: the same statement"
   "/lead_count":
     - source: raspberrypi/RP-008312-DS@rev2
       page: 8
