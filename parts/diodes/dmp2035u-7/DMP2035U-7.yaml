@@ -24,6 +24,25 @@ lifecycle:
 sources:
   - diodes/DS31830
 
+parameters:
+  polarity:
+    value: p_channel
+  drain_source_voltage:
+    nominal: -20
+    unit: V
+  drain_current:
+    nominal: -4.9
+    unit: A
+  rds_on:
+    nominal: 23
+    max: 35
+    unit: mΩ
+  gate_threshold_voltage:
+    nominal: -0.7
+    min: -1.0
+    max: -0.4
+    unit: V
+
 provenance:
   "/existence":
     - source: diodes/DS31830
@@ -33,3 +52,23 @@ provenance:
     - source: diodes/DS31830
       page: 6
       locator: "Package Outline Dimensions SOT23 (Standard) table (identical to DS11005's) -- reused package, see header"
+  "/parameters/polarity":
+    - source: diodes/DS31830
+      page: 1
+      locator: "Page-1 title: \"P-CHANNEL ENHANCEMENT MODE MOSFET\""
+  "/parameters/drain_source_voltage":
+    - source: diodes/DS31830
+      page: 2
+      locator: "Maximum Ratings (@TA = +25°C), Drain-Source Voltage VDSS: -20 V"
+  "/parameters/drain_current":
+    - source: diodes/DS31830
+      page: 2
+      locator: "Maximum Ratings, Continuous Drain Current ID, VGS = -4.5V, Steady State, TA = +25°C: -4.9 A"
+  "/parameters/rds_on":
+    - source: diodes/DS31830
+      page: 2
+      locator: "Electrical Characteristics (@TA = +25°C), Static Drain-Source On-Resistance RDS(ON), VGS = -4.5V, ID = -4.0A: Typ 23, Max 35 mΩ"
+  "/parameters/gate_threshold_voltage":
+    - source: diodes/DS31830
+      page: 2
+      locator: "Electrical Characteristics (@TA = +25°C), Gate Threshold Voltage VGS(TH): Min -0.4, Typ -0.7, Max -1.0 V"

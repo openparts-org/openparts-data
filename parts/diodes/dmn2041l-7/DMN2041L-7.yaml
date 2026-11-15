@@ -25,6 +25,24 @@ lifecycle:
 sources:
   - diodes/DS31962
 
+parameters:
+  polarity:
+    value: n_channel
+  drain_source_voltage:
+    nominal: 20
+    unit: V
+  drain_current:
+    nominal: 6.4
+    unit: A
+  rds_on:
+    nominal: 20
+    max: 28
+    unit: mΩ
+  gate_threshold_voltage:
+    min: 0.5
+    max: 1.2
+    unit: V
+
 provenance:
   "/existence":
     - source: diodes/DS31962
@@ -38,3 +56,23 @@ provenance:
     - source: diodes/DS31962
       page: 5
       locator: "Package Outline Dimensions SOT23 table (identical to DS18001's) -- reused package, see header"
+  "/parameters/polarity":
+    - source: diodes/DS31962
+      page: 1
+      locator: "Page-1 title: \"N-CHANNEL ENHANCEMENT MODE MOSFET\""
+  "/parameters/drain_source_voltage":
+    - source: diodes/DS31962
+      page: 2
+      locator: "Maximum Ratings (@TA = +25°C), Drain-Source Voltage VDSS: 20 V"
+  "/parameters/drain_current":
+    - source: diodes/DS31962
+      page: 2
+      locator: "Maximum Ratings, Continuous Drain Current ID, Steady State, TA = +25°C: 6.4 A"
+  "/parameters/rds_on":
+    - source: diodes/DS31962
+      page: 2
+      locator: "Electrical Characteristics (@TA = +25°C), Static Drain-Source On-Resistance RDS(ON), VGS = 4.5V, ID = 6.0A: Typ 20, Max 28 mΩ"
+  "/parameters/gate_threshold_voltage":
+    - source: diodes/DS31962
+      page: 2
+      locator: "Electrical Characteristics (@TA = +25°C), Gate Threshold Voltage VGS(TH): Min 0.5, Typ —, Max 1.2 V"

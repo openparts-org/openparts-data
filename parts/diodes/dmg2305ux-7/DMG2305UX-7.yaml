@@ -21,8 +21,46 @@ lifecycle:
 sources:
   - diodes/DS36196
 
+parameters:
+  polarity:
+    value: p_channel
+  drain_source_voltage:
+    nominal: -20
+    unit: V
+  drain_current:
+    nominal: -4.2
+    unit: A
+  rds_on:
+    nominal: 40
+    max: 52
+    unit: mΩ
+  gate_threshold_voltage:
+    min: -0.9
+    max: -0.5
+    unit: V
+
 provenance:
   "/existence":
     - source: diodes/DS36196
       page: 1
       locator: "Ordering Information table: \"DMG2305UX-7 | Standard | SOT23 (Standard) | 3,000/Tape & Reel\""
+  "/parameters/polarity":
+    - source: diodes/DS36196
+      page: 1
+      locator: "Page-1 title: \"P-CHANNEL ENHANCEMENT MODE MOSFET\""
+  "/parameters/drain_source_voltage":
+    - source: diodes/DS36196
+      page: 2
+      locator: "Maximum Ratings (@TA = +25°C), Drain-Source Voltage VDSS: -20 V"
+  "/parameters/drain_current":
+    - source: diodes/DS36196
+      page: 2
+      locator: "Maximum Ratings, Continuous Drain Current ID, VGS = -4.5V, Steady State, TA = +25°C: -4.2 A"
+  "/parameters/rds_on":
+    - source: diodes/DS36196
+      page: 2
+      locator: "Electrical Characteristics (@TA = +25°C), Static Drain-Source On-Resistance RDS(ON), VGS = -4.5V, ID = -4.2A: Typ 40, Max 52 mΩ"
+  "/parameters/gate_threshold_voltage":
+    - source: diodes/DS36196
+      page: 2
+      locator: "Electrical Characteristics (@TA = +25°C), Gate Threshold Voltage VGS(TH): Min -0.5, Typ —, Max -0.9 V"
