@@ -1,0 +1,14 @@
+# Würth WR-PHD Socket Header, 1 x 3 (3 pins), 2.54 mm pitch
+# (wurth/61300311821-DS page 1, "Article Properties" Pins 3). The datasheet names no
+# signals: each pin is named by its number, all passive.
+schema_version: "0.2"
+kind: device
+id: wurth/61300311821
+manufacturer: wurth
+category: connector
+family: WR-PHD
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive }

@@ -1,0 +1,73 @@
+# Würth WR-PHD pin header, 2 x 6, 2.54 mm pitch, straight THT
+# (order code 61301221121), from the page-1 drawing of wurth/61301221121-DS (rev 002.000).
+# min/max are the printed tolerances applied to the printed value.
+# Numbering: the bottom view labels row "1" and row "2" at the
+# first column; the hole pattern (component side) shows "1" bottom-left,
+# "2" above it and "End" at the far end of row 2, i.e. odd pins in
+# one row, even pins in the other, pin 2 beside pin 1 -- the `header`
+# generator's zig-zag (pin 1 top-left, pin 2 to its right after a
+# 90 degree turn).
+# No land pattern is given, only the recommended hole: the footprint pad
+# is the hole plus the generator's annular-ring default. The housing has
+# no pin-1 mark in the drawing.
+schema_version: "0.2"
+kind: package
+id: manufacturers/wurth/WR-PHD-PinHeader-2x06-P2.54
+family: header
+lead_count: 12
+
+lead_layout:
+  value: [2, 6]
+  src:   'p1 ""Article Properties" Pins 12; "Recommended Hole Pattern: [mm]": 2 rows, labelled "1", "2" and "End""'
+
+source: wurth/61301221121-DS
+
+pitch:
+  min: 2.39 mm
+  typ: 2.54 mm
+  max: 2.69 mm
+  src: p1 "Dimensions [mm] bottom view (above front view), pin pitch; Recommended Hole Pattern [mm], pitch"
+
+geometry: { type: parametric, generator: header }
+
+dimensions:
+  body_width:
+    min: 4.93 mm
+    typ: 5.08 mm
+    max: 5.23 mm
+    src: 'p1 ""Dimensions: [mm]" view below the front view (first-angle projection: the top view), housing width "5,08 ±0,15""'
+  body_length:
+    min: 14.94 mm
+    typ: 15.24 mm
+    max: 15.54 mm
+    src: 'p1 ""Dimensions: [mm]" front view, housing length "L ±0,3"; "Article Properties" Length L = 15.24 mm"'
+  body_height:
+    min: 2.39 mm
+    typ: 2.54 mm
+    max: 2.69 mm
+    src: 'p1 ""Dimensions: [mm]" side view (right of the front view), housing height "2,54 ±0,15""'
+  tail_length:
+    min: 2.8 mm
+    typ: 3 mm
+    max: 3.2 mm
+    src: 'p1 ""Dimensions: [mm]" side view (right of the front view), housing underside to tail end "3,0 ±0,20""'
+  lead_width:
+    min: 0.49 mm
+    typ: 0.64 mm
+    max: 0.79 mm
+    src: 'p1 ""Dimensions: [mm]" view above the front view (first-angle projection: the bottom view), square pin "□ 0,64 ±0,15""'
+  row_spacing:
+    min: 2.39 mm
+    typ: 2.54 mm
+    max: 2.69 mm
+    src: p1 "Dimensions [mm] top view (below front view), row to row; Recommended Hole Pattern [mm], rows"
+  hole_diameter:
+    min: 0.95 mm
+    typ: 1.1 mm
+    max: 1.25 mm
+    src: 'p1 ""Recommended Hole Pattern: [mm]", hole "Ø 1,10 ±0,15""'
+  mating_length:
+    min: 5.8 mm
+    typ: 6 mm
+    max: 6.2 mm
+    src: 'p1 ""Dimensions: [mm]" side view (right of the front view), housing top to pin tip "6,0 ±0,20""'
