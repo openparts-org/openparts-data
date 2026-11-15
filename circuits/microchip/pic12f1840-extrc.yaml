@@ -1,0 +1,31 @@
+# PIC12F1840 external RC oscillator on OSC1/CLKIN (RA5), data sheet
+# 5.2.1.6, Figure 5-6: REXT from VDD and CEXT to VSS, with the figure's
+# recommended values for VDD 3-5 V (REXT 3-100 kOhm; below 3 V it is
+# 10-100 kOhm) and CEXT > 20 pF (2-5 V). The frequency depends on VDD,
+# REXT, CEXT and temperature. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/pic12f1840-extrc
+title: PIC12F1840 external RC oscillator
+host: microchip/PIC12F1840
+source: microchip/DS40001441@revF
+
+conditions: { VDD: { min: 3 V, max: 5 V, src: p43 "Figure 5-6" } }
+
+nets:
+  VDD: { kind: power }
+  VSS: { kind: ground }
+
+connect:
+  VDD: { net: VDD, level: required, src: p43 "Figure 5-6" }
+  VSS: { net: VSS, level: required, src: p43 "Figure 5-6" }
+
+roles:
+  C_EXT:
+    requires: { category: capacitor, capacitance: { min: 20 pF }, src: p43 "Figure 5-6" }
+    pins:     { "1": host.RA5, "2": VSS }
+    level:    { value: recommended, word: recommended, src: p43 "Figure 5-6" }
+  R_EXT:
+    requires: { category: resistor, resistance: { min: 3 kΩ, max: 100 kΩ }, src: p43 "Figure 5-6" }
+    pins:     { "1": VDD, "2": host.RA5 }
+    level:    { value: recommended, word: recommended, src: p43 "Figure 5-6" }

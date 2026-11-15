@@ -1,0 +1,31 @@
+# PIC10F322 (SOT-23) ICSP programming connection: the PICkit-style
+# 6-pin 0.100" header of data sheet Figure 22-2 (1 VPP/MCLR, 2 VDD,
+# 3 VSS, 4 ICSPDAT, 5 ICSPCLK, 6 not connected) on MCLR/VPP (RA3),
+# ICSPDAT (RA0) and ICSPCLK (RA1). The data sheet gives no supply
+# decoupling or other external component values. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/pic10f322-icsp
+title: PIC10F322 ICSP header
+host: microchip/PIC10F322-SOT23
+source: microchip/DS40001585@revD
+
+nets:
+  ICSPCLK: { kind: signal }
+  ICSPDAT: { kind: signal }
+  MCLR:    { kind: signal }
+  VDD:     { kind: power }
+  VSS:     { kind: ground }
+
+connect:
+  RA0: { net: ICSPDAT, level: required, src: p3 "Table 1" }
+  RA1: { net: ICSPCLK, level: required, src: p3 "Table 1" }
+  RA3: { net: MCLR, level: required, src: p3 "Table 1" }
+  VDD: { net: VDD, level: required, src: p144 "22.0" }
+  VSS: { net: VSS, level: required, src: p144 "22.0" }
+
+roles:
+  J_ICSP:
+    requires: { category: connector, src: p145 "Figure 22-2" }
+    pins:     { "1": MCLR, "2": VDD, "3": VSS, "4": ICSPDAT, "5": ICSPCLK }
+    level:    { value: example, src: p145 "Figure 22-2" }

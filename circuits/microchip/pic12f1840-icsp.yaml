@@ -1,0 +1,32 @@
+# PIC12F1840 ICSP programming connection: the PICkit-style 6-pin
+# 0.100" header of data sheet Figure 28-3 (1 VPP/MCLR, 2 VDD, 3 VSS,
+# 4 ICSPDAT, 5 ICSPCLK, 6 not connected) on MCLR/VPP (RA3), ICSPDAT
+# (RA0) and ICSPCLK (RA1). Isolating the programming pins from other
+# circuitry is recommended (28.3, Figure 28-4) but the isolation type
+# is application dependent, so none is recorded. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/pic12f1840-icsp
+title: PIC12F1840 ICSP header
+host: microchip/PIC12F1840
+source: microchip/DS40001441@revF
+
+nets:
+  ICSPCLK: { kind: signal }
+  ICSPDAT: { kind: signal }
+  MCLR:    { kind: signal }
+  VDD:     { kind: power }
+  VSS:     { kind: ground }
+
+connect:
+  RA0: { net: ICSPDAT, level: required, src: p3 "Table 1" }
+  RA1: { net: ICSPCLK, level: required, src: p3 "Table 1" }
+  RA3: { net: MCLR, level: required, src: p3 "Table 1" }
+  VDD: { net: VDD, level: required, src: p284 "28.0" }
+  VSS: { net: VSS, level: required, src: p284 "28.0" }
+
+roles:
+  J_ICSP:
+    requires: { category: connector, src: p286 "Figure 28-3" }
+    pins:     { "1": MCLR, "2": VDD, "3": VSS, "4": ICSPDAT, "5": ICSPCLK }
+    level:    { value: example, src: p286 "Figure 28-3" }
