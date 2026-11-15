@@ -13,14 +13,14 @@ parameters:
   forward_voltage:
     max: 0.55 V
     at: { IF: 1 A }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, VF Forward Voltage: Max 0.55 V"'
+    src: p2 "ELECTRICAL CHARACTERISTICS, VF Forward Voltage"
   reverse_voltage:
     max: 40 V
-    src: 'p1 "ABSOLUTE MAXIMUM RATINGS, VRRM Peak Reverse Voltage, SS14FL column: 40 V"'
+    src: p1 "ABSOLUTE MAXIMUM RATINGS, VRRM Peak Reverse Voltage, SS14FL column"
   forward_current:
     max: 1 A
     at: { TA: 75 °C }
-    src: 'p1 "ABSOLUTE MAXIMUM RATINGS, IF(AV) Average Rectified Current: 1.0 A"'
+    src: p1 "ABSOLUTE MAXIMUM RATINGS, IF(AV) Average Rectified Current"
 
 pins:
   src: p1 "Schematic symbol (1=Cathode, 2=Anode) and "Band Indicates Cathode""

@@ -32,12 +32,13 @@ lifecycle: { status: unknown }
 parameters:
   forward_voltage:
     max: 0.9 V
-    src: p3 "ELECTRICAL CHARACTERISTICS table header '(TA = 25°C unless otherwise noted, VF = 0.90 V Max. @ IF = 10 mA)', row BZX84C3V6LT1G"
+    at: { IF: 10 mA }
+    src: p3 "ELECTRICAL CHARACTERISTICS - BZX84CxxxLT1 SERIES, table header VF"
   zener_voltage:
     min: 3.4 V
     typ: 3.6 V
     max: 3.8 V
-    src: 'p3 "ELECTRICAL CHARACTERISTICS - BZX84CxxxLT1 SERIES, row BZX84C3V6LT1G: VZ1 (Volts) @ IZT1 = 5 mA Min 3.4 / Nom 3.6 / Max 3.8 (Note 3)"'
+    src: p3 "ELECTRICAL CHARACTERISTICS - BZX84CxxxLT1 SERIES, BZX84C3V6LT1G row, VZ1 (Note 3)"
   zener_test_current:
     typ: 5 mA
-    src: p3 "ELECTRICAL CHARACTERISTICS - BZX84CxxxLT1 SERIES, column header 'VZ1 (Volts) @ IZT1 = 5 mA', row BZX84C3V6LT1G"
+    src: p3 "ELECTRICAL CHARACTERISTICS - BZX84CxxxLT1 SERIES, BZX84C3V6LT1G row, IZT1 (VZ1 header)"

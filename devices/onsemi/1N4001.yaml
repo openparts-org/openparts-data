@@ -13,14 +13,12 @@ parameters:
   forward_voltage:
     typ: 0.93 V
     max: 1.1 V
-    at: { TJ: 25 °C }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage Drop (iF = 1.0 Amp) vF: Typ 0.93 V, Max 1.1 V"'
+    at: { IF: 1 A, TJ: 25 °C }
+    src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage Drop vF"
   reverse_voltage:
     max: 50 V
-    src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM, 1N4001 column: 50 V"'
-  forward_current:
-    max: 1 A
-    src: 'p2 "MAXIMUM RATINGS, Average Rectified Forward Current IO: 1.0 A"'
+    src: p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM, 1N4001 column"
+  forward_current: { max: 1 A, src: 'p2 "MAXIMUM RATINGS, Avg. Rectified Forward Current IO"' }
 
 pins:
   src: p6 "Case drawing 98ASB42045B, STYLE 1 pin table, "PIN 1. CATHODE (POLARITY BAND) / 2. ANODE""

@@ -15,14 +15,12 @@ parameters:
   forward_voltage:
     max: 0.6 V
     at: { IF: 1 A, TJ: 25 °C }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF: 0.6 V"'
-  reverse_voltage:
-    max: 40 V
-    src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 40 V"'
+    src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+  reverse_voltage: { max: 40 V, src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM"' }
   forward_current:
     max: 1 A
     at: { TL: 115 °C }
-    src: 'p2 "MAXIMUM RATINGS, Average Rectified Forward Current IF(AV): 1.0 A"'
+    src: p2 "MAXIMUM RATINGS, Avg. Rectified Forward Current IF(AV)"
 
 pins:
   src: 'p1 "Mechanical Characteristics: "Cathode Polarity Band""'

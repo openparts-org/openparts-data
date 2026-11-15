@@ -35,7 +35,7 @@ parameters:
     min: 4.85 V
     typ: 5.1 V
     max: 5.36 V
-    src: 'p3 "5% TOLERANCE FG ELECTRICAL CHARACTERISTICS, row MMSZ5231BT1G: VZ (Volts) Min 4.85 / Nom 5.1 / Max 5.36 @ IZT (Notes 3 and 4)"'
+    src: p3 "5% TOLERANCE FG ELECTRICAL CHARACTERISTICS, MMSZ5231BT1G row, VZ (Notes 3, 4)"
   zener_test_current:
     typ: 20 mA
-    src: 'p3 "5% TOLERANCE FG ELECTRICAL CHARACTERISTICS, row MMSZ5231BT1G: @ IZT 20 mA"'
+    src: p3 "5% TOLERANCE FG ELECTRICAL CHARACTERISTICS, MMSZ5231BT1G row, IZT"

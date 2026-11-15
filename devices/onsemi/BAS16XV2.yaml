@@ -10,13 +10,16 @@ source: onsemi/BAS16XV2T1-D
 
 parameters:
   forward_voltage:
-    max: 1250 mV
-    at: { IF: 150 mA }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Forward Voltage VF: Max 1250 mV (highest listed test current)"'
-  reverse_voltage: { max: 100 V, src: 'p1 "MAXIMUM RATINGS, Continuous Reverse Voltage VR: 100 V"' }
-  forward_current:
-    max: 200 mA
-    src: 'p1 "MAXIMUM RATINGS, Continuous Forward Current IF: 200 mA"'
+    - max: 1250 mV
+      at: { IF: 150 mA }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Forward Voltage VF"
+    - { max: 715 mV, at: { IF: 1 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS, Forward Voltage VF"' }
+    - { max: 855 mV, at: { IF: 10 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS, Forward Voltage VF"' }
+    - max: 1000 mV
+      at: { IF: 50 mA }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Forward Voltage VF"
+  reverse_voltage: { max: 100 V, src: 'p1 "MAXIMUM RATINGS, Continuous Reverse Voltage VR"' }
+  forward_current: { max: 200 mA, src: 'p1 "MAXIMUM RATINGS, Continuous Forward Current IF"' }
 
 pins:
   src:

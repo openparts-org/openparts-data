@@ -14,16 +14,29 @@ source: onsemi/MBR120ESFT1-D
 
 parameters:
   forward_voltage:
-    max: 0.53 V
-    at: { IF: 1 A, TJ: 25 °C }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF: 0.530 V"'
-  reverse_voltage:
-    max: 20 V
-    src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 20 V"'
+    - max: 0.53 V
+      at: { IF: 1 A, TJ: 25 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+    - max: 0.455 V
+      at: { IF: 0.1 A, TJ: 25 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+    - max: 0.595 V
+      at: { IF: 2 A, TJ: 25 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+    - max: 0.36 V
+      at: { IF: 0.1 A, TJ: 100 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+    - max: 0.455 V
+      at: { IF: 1 A, TJ: 100 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+    - max: 0.54 V
+      at: { IF: 2 A, TJ: 100 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+  reverse_voltage: { max: 20 V, src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM"' }
   forward_current:
     max: 1 A
     at: { TL: 140 °C }
-    src: 'p2 "MAXIMUM RATINGS, Average Rectified Forward Current IO (At Rated VR): 1.0 A"'
+    src: p2 "MAXIMUM RATINGS, Avg. Rectified Forward Current IO (At Rated VR)"
 
 pins:
   src: 'p1 "Mechanical Characteristics: "Polarity Designator: Cathode Band""'

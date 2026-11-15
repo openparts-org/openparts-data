@@ -14,16 +14,23 @@ source: onsemi/MBRS2040LT3-D
 
 parameters:
   forward_voltage:
-    max: 0.43 V
-    at: { IF: 2 A, TJ: 25 °C }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF: 0.43 V"'
-  reverse_voltage:
-    max: 40 V
-    src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 40 V"'
+    - max: 0.43 V
+      at: { IF: 2 A, TJ: 25 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+    - max: 0.5 V
+      at: { IF: 4 A, TJ: 25 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+    - max: 0.34 V
+      at: { IF: 2 A, TJ: 125 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+    - max: 0.45 V
+      at: { IF: 4 A, TJ: 125 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+  reverse_voltage: { max: 40 V, src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM"' }
   forward_current:
     max: 2 A
     at: { TC: 103 °C }
-    src: 'p2 "MAXIMUM RATINGS, Average Rectified Forward Current IO (At Rated VR): 2.0 A"'
+    src: p2 "MAXIMUM RATINGS, Avg. Rectified Forward Current IO (At Rated VR)"
 
 pins:
   src: p1 ""Cathode Polarity Band""

@@ -23,10 +23,14 @@ parameters:
   forward_voltage:
     max: 0.5 V
     at: { IF: 3 A, TJ: 25 °C }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF: 0.50 V"'
+    src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
   reverse_voltage:
     max: 20 V
-    src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM, MBRS320T3G column: 20 V"'
+    src: p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM, MBRS320T3G column"
   forward_current:
-    max: 3 A
-    src: 'p2 "MAXIMUM RATINGS, Average Rectified Forward Current IF(AV): 3.0 A @ TL = 110°C (also listed: 4.0 A @ TL = 105°C)"'
+    - max: 3 A
+      at: { TL: 110 °C }
+      src: p2 "MAXIMUM RATINGS, Avg. Rectified Forward Current IF(AV)"
+    - max: 4 A
+      at: { TL: 105 °C }
+      src: p2 "MAXIMUM RATINGS, Avg. Rectified Forward Current IF(AV)"

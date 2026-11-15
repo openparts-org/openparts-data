@@ -12,16 +12,17 @@ source: onsemi/MBRA340T3-D
 
 parameters:
   forward_voltage:
-    max: 0.45 V
-    at: { IF: 3 A, TJ: 25 °C }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF: 0.450 V"'
-  reverse_voltage:
-    max: 40 V
-    src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 40 V"'
+    - max: 0.45 V
+      at: { IF: 3 A, TJ: 25 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+    - max: 0.39 V
+      at: { IF: 3 A, TJ: 100 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+  reverse_voltage: { max: 40 V, src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM"' }
   forward_current:
     max: 3 A
     at: { TL: 100 °C }
-    src: 'p2 "MAXIMUM RATINGS, Average Rectified Forward Current IO (At Rated VR): 3.0 A"'
+    src: p2 "MAXIMUM RATINGS, Avg. Rectified Forward Current IO (At Rated VR)"
 
 pins:
   src:

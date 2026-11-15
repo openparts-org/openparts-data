@@ -12,14 +12,20 @@ source: onsemi/NSR0320MW2T1-D
 
 parameters:
   forward_voltage:
-    typ: 0.45 V
-    max: 0.5 V
-    at: { IF: 900 mA }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Forward Voltage VF: Typ 0.45 V, Max 0.50 V (highest listed test current)"'
-  reverse_voltage: { max: 20 V, src: 'p1 "MAXIMUM RATINGS, Reverse Voltage VR: 20 Vdc"' }
-  forward_current:
-    max: 1 A
-    src: 'p1 "MAXIMUM RATINGS, Forward Current (DC) IF, Continuous: 1 A"'
+    - typ: 0.45 V
+      max: 0.5 V
+      at: { IF: 900 mA }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Forward Voltage VF"
+    - typ: 0.24 V
+      max: 0.27 V
+      at: { IF: 10 mA }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Forward Voltage VF"
+    - typ: 0.3 V
+      max: 0.35 V
+      at: { IF: 100 mA }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Forward Voltage VF"
+  reverse_voltage: { max: 20 V, src: 'p1 "MAXIMUM RATINGS, Reverse Voltage VR"' }
+  forward_current: { max: 1 A, src: 'p1 "MAXIMUM RATINGS, Forward Current (DC) IF, Continuous"' }
 
 pins:
   src:

@@ -11,16 +11,23 @@ source: onsemi/MBRA140T3-D
 
 parameters:
   forward_voltage:
-    max: 0.55 V
-    at: { IF: 1 A, TJ: 25 °C }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF: 0.55 V"'
-  reverse_voltage:
-    max: 40 V
-    src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 40 V"'
+    - max: 0.55 V
+      at: { IF: 1 A, TJ: 25 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+    - max: 0.71 V
+      at: { IF: 2 A, TJ: 25 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+    - max: 0.505 V
+      at: { IF: 1 A, TJ: 100 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+    - max: 0.74 V
+      at: { IF: 2 A, TJ: 100 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+  reverse_voltage: { max: 40 V, src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM"' }
   forward_current:
     max: 1 A
     at: { TC: 95 °C }
-    src: 'p2 "MAXIMUM RATINGS, Average Rectified Forward Current IO (At Rated VR): 1.0 A"'
+    src: p2 "MAXIMUM RATINGS, Avg. Rectified Forward Current IO (At Rated VR)"
 
 pins:
   src:

@@ -11,16 +11,23 @@ source: onsemi/MBR0520-D
 
 parameters:
   forward_voltage:
-    max: 0.385 V
-    at: { TJ: 25 °C }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage vF (iF = 0.5 Amps): 0.385 V"'
-  reverse_voltage:
-    max: 20 V
-    src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM: 20 V"'
+    - max: 0.385 V
+      at: { IF: 0.5 A, TJ: 25 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+    - max: 0.3 V
+      at: { IF: 0.1 A, TJ: 25 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+    - max: 0.22 V
+      at: { IF: 0.1 A, TJ: 100 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+    - max: 0.33 V
+      at: { IF: 0.5 A, TJ: 100 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Max. Instantaneous Forward Voltage VF"
+  reverse_voltage: { max: 20 V, src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM"' }
   forward_current:
     max: 0.5 A
     at: { TL: 90 °C }
-    src: 'p2 "MAXIMUM RATINGS, Average Rectified Forward Current IF(AV) (Rated VR): 0.5 A"'
+    src: p2 "MAXIMUM RATINGS, Avg. Rectified Forward Current IF(AV) (Rated VR)"
 
 pins:
   src: 'p4 "Case 98ASB42927B STYLE 1: PIN 1 CATHODE, PIN 2 ANODE"'
