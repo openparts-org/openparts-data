@@ -1,0 +1,34 @@
+# RA4M1 (LQFP48) USB full-speed pins: USB_DP and USB_DM go to the D+ and D-
+# lines of the USB bus (datasheet pin functions). Without the on-chip
+# USB LDO, VCC_USB is tied to VCC (see ra4m1-lqfp48-power); with it, VCC_USB
+# takes a 1.0 uF capacitor to VSS (Quick Design Guide Table 1 note 1),
+# recorded here as C_VCC_USB_LDO (an example: it applies only with the
+# LDO, and then VCC_USB is not tied to VCC). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: renesas/ra4m1-lqfp48-usb-device
+title: RA4M1 (LQFP48) USB device pins
+host: renesas/R7FA4M1AB-LQFP48
+source: renesas/R01AN5988EU0104
+
+nets:
+  GND:    { kind: ground }
+  USB_DM: { kind: signal }
+  USB_DP: { kind: signal }
+
+connect:
+  P914/USB_DP:
+    net: USB_DP
+    level: { value: recommended, word: should }
+    src: renesas/R01DS0355EJ0110 p14 "Table 1.15, USB_DP"
+  P915/USB_DM:
+    net: USB_DM
+    level: { value: recommended, word: should }
+    src: renesas/R01DS0355EJ0110 p14 "Table 1.15, USB_DM"
+
+roles:
+  C_VCC_USB_LDO:
+    requires: { category: capacitor, capacitance: { typ: 1 uF }, src: 'p5 "Table 1, note 1"' }
+    pins: { "1": host.VCC_USB, "2": GND }
+    level: example
+    src: p5 "Table 1, note 1"

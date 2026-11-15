@@ -1,0 +1,30 @@
+# RA4M1 (LQFP64) SWD connections to the Arm 10/20-pin connector (Quick
+# Design Guide Figure 1): SWDIO, SWCLK, SWO and RES with a pull-up to
+# VCC (no value given). The connector pinout is not recorded. AI
+# candidate.
+schema_version: "0.2"
+kind: circuit
+id: renesas/ra4m1-lqfp64-swd
+title: RA4M1 (LQFP64) SWD access
+host: renesas/R7FA4M1AB-LQFP64
+source: renesas/R01AN5988EU0104
+
+nets:
+  RES:   { kind: signal }
+  SWCLK: { kind: signal }
+  SWDIO: { kind: signal }
+  SWO:   { kind: signal }
+  VCC:   { kind: power }
+
+connect:
+  P108/TMS/SWDIO: { net: SWDIO, level: example, src: p8 "Figure 1" }
+  P109/TDO/SWO:   { net: SWO, level: example, src: p8 "Figure 1" }
+  P300/TCK/SWCLK: { net: SWCLK, level: example, src: p8 "Figure 1" }
+  RES:            { net: RES, level: example, src: p8 "Figure 1" }
+
+roles:
+  R_RES:
+    requires: { category: resistor, src: p8 "Figure 1" }
+    pins: { "1": VCC, "2": host.RES }
+    level: example
+    src: p8 "Figure 1"

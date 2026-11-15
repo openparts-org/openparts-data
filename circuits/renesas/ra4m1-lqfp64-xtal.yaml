@@ -1,0 +1,36 @@
+# RA4M1 (LQFP64) main clock crystal on EXTAL/XTAL with load capacitors CL1
+# and CL2, as the Quick Design Guide's example connection shows them; it
+# gives no values (they follow the crystal). A feedback resistor Rf and
+# a damping resistor Rd are added only if the crystal maker recommends
+# them, and are not recorded. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: renesas/ra4m1-lqfp64-xtal
+title: RA4M1 (LQFP64) main clock crystal
+host: renesas/R7FA4M1AB-LQFP64
+source: renesas/R01AN5988EU0104
+
+nets: { GND: { kind: ground } }
+
+roles:
+  C_L1:
+    requires: { category: capacitor, src: p23 "Figure 14" }
+    pins: { "1": host.P212/EXTAL, "2": GND }
+    place: { near: host.P212/EXTAL, src: p23 "5.8" }
+    level: example
+    src: p23 "Figure 14"
+  C_L2:
+    requires: { category: capacitor, src: p23 "Figure 14" }
+    pins: { "1": host.P213/XTAL, "2": GND }
+    place: { near: host.P213/XTAL, src: p23 "5.8" }
+    level: example
+    src: p23 "Figure 14"
+  X1:
+    requires:
+      category: crystal
+      frequency: { min: 1 MHz, max: 20 MHz }
+      src: p19 "Table 7, note 3"
+    pins: { "1": host.P212/EXTAL, "2": host.P213/XTAL }
+    place: { near: host.P212/EXTAL, src: p23 "5.8" }
+    level: example
+    src: p23 "Figure 14"
