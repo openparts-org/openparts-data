@@ -23,7 +23,7 @@ lead_count: 10
 lead_layout:
   value: [2, 3, 2, 3]
   src:
-    - p48 "Figure 26 bottom view (2 pads on the pin-1/2 edge and its opposite, 3 on the others), rotated 90 deg so pins 1-2 form the left edge"
+    - p48 "Figure 26 bottom view, pads per edge (rotated 90 deg, see header)"
     - 'p45 "Figure 23 pin-out top view (image) and Table 50: 1 VDDIO ... 10 VDD, counter-clockwise from the top edge"'
 
 source: bosch/BST-BMP384-DS003-11

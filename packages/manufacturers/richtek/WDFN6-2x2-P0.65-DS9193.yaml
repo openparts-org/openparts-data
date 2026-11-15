@@ -38,7 +38,7 @@ dimensions:
     max: 0.8 mm
     src: p13 ""W-Type 6L DFN 2x2 Package" outline, Dimensions In Millimeters Min/Max, "A 0.700 / 0.800""
   exposed_pad:
-    src:    p13 ""W-Type 6L DFN 2x2 Package" outline, Dimensions In Millimeters Min/Max, "E2 0.500 / 0.850" (width, X) and "D2 1.000 / 1.450" (length, Y)"
+    src:    p13 "W-Type 6L DFN 2x2 Package outline, E2 (X) and D2 (Y)"
     width:  { min: 0.5 mm, max: 0.85 mm }
     length: { min: 1 mm, max: 1.45 mm }
   standoff:

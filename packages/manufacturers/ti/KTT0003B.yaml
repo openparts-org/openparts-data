@@ -37,7 +37,7 @@ pitch: { typ: 2.54 mm, src: 'p42 "KTT0003B outline (4215105/C), top view, basic 
 
 tab:
   number: "4"
-  src: 'p42 "KTT0003B outline, bottom view: exposed thermal pad labelled "4"; top/bottom views: leads 1-3 all full length (none trimmed)"'
+  src: p42 "KTT0003B outline, bottom view, exposed thermal pad label; top/bottom views, leads"
 
 geometry: { type: parametric, generator: d2pak }
 
@@ -78,4 +78,4 @@ dimensions:
   tab_width:
     min: 9.91 mm
     max: 10.41 mm
-    src: p42 "KTT0003B outline, top view "10.41 / 9.91" (extension lines from the tab-end corners; tab spans the body width) -- bottom view exposed pad only "5.08 MIN"; see header"
+    src: p42 "KTT0003B outline, top view, body width at the tab end (see header)"

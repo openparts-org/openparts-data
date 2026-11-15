@@ -24,11 +24,11 @@ pitch:
   min: 4.3 mm
   typ: 4.5 mm
   max: 4.7 mm
-  src: p3 ""Projected Type" (B3FS-1050/1052/1050P/1052P) top view, terminal pitch "4.5±0.2"; "PCB Pad (Top View)" pad centres (3.1+5.9)/2 = 4.5"
+  src: p3 "Projected Type top view, terminal pitch; PCB Pad (Top View), pad centres"
 
 pad_order:
   value: ["4", "2", "1", "3"]
-  src:   'p3 ""Terminal Arrangement/Internal Connection (Top View)": "4" top-left, "2" bottom-left, "1" bottom-right, "3" top-right -> positions TL, BL, BR, TR = 4, 2, 1, 3"'
+  src:   p3 "Terminal Arrangement/Internal Connection (Top View) (see header)"
 
 geometry: { type: parametric, generator: tact_switch_smd }
 
@@ -37,7 +37,7 @@ dimensions:
     min: 5.6 mm
     typ: 6 mm
     max: 6.4 mm
-    src: p3 ""Projected Type" top view, housing "6" (horizontal); note "Unless otherwise specified, a tolerance of ±0.4 mm applies to all dimensions.""
+    src: p3 "Projected Type top view, housing (horizontal); general tolerance note"
   body_length:
     min: 5.9 mm
     typ: 6.3 mm

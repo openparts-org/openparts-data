@@ -21,11 +21,11 @@ pitch:
   min: 4.3 mm
   typ: 4.5 mm
   max: 4.7 mm
-  src: p4 ""Standard, Flat Plunger Type (without Ground Terminal)" top view, terminal pitch "4.5±0.2"; "PCB Processing Dimensions (Reference Only) (Top View)" "4.5±0.1""
+  src: p4 "Standard, Flat Plunger Type (without Ground Terminal) top view; PCB Processing Dimensions"
 
 pad_order:
   value: ["4", "2", "1", "3"]
-  src:   'p4 ""Terminal Arrangement/Internal Connections (Top View)": "4" top-left, "2" bottom-left, "1" bottom-right, "3" top-right -> positions TL, BL, BR, TR = 4, 2, 1, 3"'
+  src:   p4 "Terminal Arrangement/Internal Connections (Top View) (see header)"
 
 geometry: { type: parametric, generator: tact_switch_tht }
 
@@ -44,7 +44,7 @@ dimensions:
     min: 3 mm
     typ: 3.4 mm
     max: 3.8 mm
-    src: p4 "front view, board to housing top "3.4"; page-4 note "Unless otherwise specified, a tolerance of ±0.4 mm applies to all dimensions.""
+    src: p4 "front view, board to housing top; p4 general tolerance note"
   actuator_diameter:
     min: 3.1 mm
     typ: 3.5 mm
@@ -54,7 +54,7 @@ dimensions:
     min: 4.8 mm
     typ: 5 mm
     max: 5.2 mm
-    src: 'p4 "front view, board to plunger top Note: "The height of B3F-1020, B3F-1022, B3F-1025, and B3F-1026 is 5±0.2 mm."; B3F-1022-G marked "(See note.)""'
+    src: p4 "front view, board to plunger top; Note on B3F-1020/-1022/-1025/-1026 height"
   row_spacing:
     min: 6.4 mm
     typ: 6.5 mm

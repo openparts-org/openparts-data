@@ -25,14 +25,14 @@ dimensions:
     max: 7.1 mm
     src:
       - p83 "Fig 40 SOT313-2 DIMENSIONS table, "E(1)" 6.9/7.1"
-      - 'p83 "SOT313-2 drawing title "LQFP48: plastic low profile quad flat package; ... body 7 x 7 x 1.4 mm" (also Table 1, page 4) -- nominal"'
+      - p83 "SOT313-2 drawing title, body size (also Table 1, p4), nominal"
   body_length:
     min: 6.9 mm
     typ: 7 mm
     max: 7.1 mm
     src:
       - p83 "Fig 40 SOT313-2 DIMENSIONS table, "D(1)" 6.9/7.1"
-      - 'p83 "SOT313-2 drawing title "LQFP48: plastic low profile quad flat package; ... body 7 x 7 x 1.4 mm" (also Table 1, page 4) -- nominal"'
+      - p83 "SOT313-2 drawing title, body size (also Table 1, p4), nominal"
   body_height:
     min: 1.35 mm
     max: 1.45 mm

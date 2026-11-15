@@ -22,14 +22,14 @@ dimensions:
     max: 5.1 mm
     src:
       - p72 "PACKAGE OUTLINE RHB0032E, top view width 4.9/5.1"
-      - 'p5 "Table 5-1 "Device Comparison", MSPM0L1306xRHB "32 VQFN [5 mm x 5 mm]"; footnote (4): "The package size ... is a nominal value" -- nominal"'
+      - p5 "Table 5-1 Device Comparison, MSPM0L1306xRHB, package size (nominal, footnote 4)"
   body_length:
     min: 4.9 mm
     typ: 5 mm
     max: 5.1 mm
     src:
       - p72 "PACKAGE OUTLINE RHB0032E, top view length 4.9/5.1"
-      - 'p5 "Table 5-1 "Device Comparison", MSPM0L1306xRHB "32 VQFN [5 mm x 5 mm]"; footnote (4): "The package size ... is a nominal value" -- nominal"'
+      - p5 "Table 5-1 Device Comparison, MSPM0L1306xRHB, package size (nominal, footnote 4)"
   body_height: { max: 1 mm, src: 'p72 "PACKAGE OUTLINE RHB0032E, side view "1 MAX""' }
   exposed_pad:
     src:    p72 "PACKAGE OUTLINE RHB0032E, exposed thermal pad "□3.45±0.1""

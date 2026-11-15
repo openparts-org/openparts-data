@@ -25,18 +25,18 @@ source: wurth/430182095816-DS
 
 pitch:
   typ: 4.5 mm
-  src: 'p1 ""Dimensions: [mm]" upper view (first-angle projection: the bottom view), terminal centre to centre "4,5"; "Recommended Land Pattern: [mm]" pad centre to centre "4,5""'
+  src: p1 "Dimensions [mm] bottom view, terminal pitch; Recommended Land Pattern [mm], pad pitch"
 
 pad_order:
   value: ["1", "2", "4", "3"]
-  src:   'p1 ""Recommended Land Pattern: [mm]" (component side): "1" top-left, "3" top-right, "2" bottom-left, "4" bottom-right -> positions TL, BL, BR, TR = 1, 2, 4, 3; the bottom view above the front view shows the mirror image (3 1 / 4 2)"'
+  src:   p1 "Recommended Land Pattern [mm] (component side), pad numbering (see header)"
 
 geometry: { type: parametric, generator: tact_switch_smd }
 
 dimensions:
   body_width:
     typ: 6.2 mm
-    src: 'p1 ""Dimensions: [mm]" lowest view (top view), housing "□ 6,2" (square; no tolerance printed, general tolerance DIN ISO 2768-1m not applied)"'
+    src: p1 "Dimensions [mm] top view, housing square (no tolerance printed)"
   body_length:
     typ: 6.2 mm
     src: 'p1 ""Dimensions: [mm]" lowest view (top view), housing "□ 6,2" (square)"'
@@ -49,7 +49,7 @@ dimensions:
     min: 2.8 mm
     typ: 3 mm
     max: 3.2 mm
-    src: 'p1 ""Dimensions: [mm]" front view, actuator top "ØD ±0,2"; "Dimensions" table "Diameter ØD 3 mm" (the actuator base is "Ø 3,5 ±0,2")"'
+    src: p1 "Dimensions [mm] front view, actuator ØD; Dimensions table, Diameter ØD"
   overall_width:
     typ: 9 mm
     src: 'p1 ""Dimensions: [mm]" upper view (bottom view), terminal toe to toe "9,0""'

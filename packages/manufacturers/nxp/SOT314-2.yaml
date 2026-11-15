@@ -23,14 +23,14 @@ dimensions:
     max: 10.1 mm
     src:
       - p84 "Fig 41 SOT314-2 DIMENSIONS table, "E(1)" 9.9/10.1"
-      - 'p84 "SOT314-2 drawing title "LQFP64: plastic low profile quad flat package; ... body 10 x 10 x 1.4 mm" (also Table 1, page 4) -- nominal"'
+      - p84 "SOT314-2 drawing title, body size (also Table 1, p4), nominal"
   body_length:
     min: 9.9 mm
     typ: 10 mm
     max: 10.1 mm
     src:
       - p84 "Fig 41 SOT314-2 DIMENSIONS table, "D(1)" 9.9/10.1"
-      - 'p84 "SOT314-2 drawing title "LQFP64: plastic low profile quad flat package; ... body 10 x 10 x 1.4 mm" (also Table 1, page 4) -- nominal"'
+      - p84 "SOT314-2 drawing title, body size (also Table 1, p4), nominal"
   body_height:
     min: 1.35 mm
     max: 1.45 mm

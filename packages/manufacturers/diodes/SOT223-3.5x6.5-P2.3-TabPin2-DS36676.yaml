@@ -36,7 +36,7 @@ pitch: { typ: 2.3 mm, src: 'p13 "SOT223 outline, top view "2.300(0.091) TYP" lea
 
 tab:
   number: "2"
-  src: 'p2 ""Pin Assignments" SOT223/ H Package (Top View): leads 3 INPUT, 2 OUTPUT, 1 ADJ/GND; tab labelled "VOUT" (no number) -- see header"'
+  src: p2 "Pin Assignments, SOT223/ H Package (Top View), tab label (see header)"
 
 geometry: { type: parametric, generator: sot223 }
 

@@ -31,7 +31,7 @@ dimensions:
     src: p28 "DRB0008B outline (4218876/A), top view, length "3.1 / 2.9""
   body_height: { max: 1 mm, src: 'p28 "DRB0008B outline (4218876/A), side view "1 MAX""' }
   exposed_pad:
-    src:    p28 "DRB0008B outline (4218876/A), bottom view, thermal pad "1.65 +-0.05" (across the rows); bottom view, thermal pad "2.4 +-0.05" (along the rows)"
+    src:    p28 "DRB0008B outline (4218876/A), bottom view, thermal pad (across and along the rows)"
     width:  { min: 1.6 mm, typ: 1.65 mm, max: 1.7 mm }
     length: { min: 2.35 mm, typ: 2.4 mm, max: 2.45 mm }
   standoff:

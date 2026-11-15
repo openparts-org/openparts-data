@@ -28,7 +28,7 @@ pitch:
   min: 2.49 mm
   typ: 2.54 mm
   max: 2.59 mm
-  src: 'p1 ""Dimensions: [mm]" view above the front view (first-angle projection: the bottom view), contact pitch "2,54 ±0,05" ("Recommended Hole Pattern: [mm]" gives "2,54 ±0,15")"'
+  src: p1 "Dimensions [mm] bottom view (above front view), contact pitch (hole pattern gives ±0,15)"
 
 geometry: { type: parametric, generator: socket }
 
@@ -57,12 +57,12 @@ dimensions:
     min: 0.69 mm
     typ: 0.74 mm
     max: 0.79 mm
-    src: 'p1 ""Dimensions: [mm]" view above the front view (first-angle projection: the bottom view), contact (solder tail) width "0,74 ±0,05""'
+    src: p1 "Dimensions [mm] bottom view (above front view), contact width"
   row_spacing:
     min: 2.39 mm
     typ: 2.54 mm
     max: 2.69 mm
-    src: 'p1 ""Dimensions: [mm]" view below the front view (first-angle projection: the top view), row to row "2,54 ±0,15"; "Recommended Hole Pattern: [mm]", rows "2,54 ±0,15" apart"'
+    src: p1 "Dimensions [mm] top view (below front view), row to row; Recommended Hole Pattern [mm], rows"
   hole_diameter:
     min: 0.87 mm
     typ: 1.02 mm

@@ -25,7 +25,7 @@ pitch:
   min: 1.95 mm
   typ: 2 mm
   max: 2.05 mm
-  src: 'p1 ""Recommended Hole Pattern: [mm]", pitch "2" with "General tolerance ±0.05" ("Dimensions: [mm]" view above the front view (first-angle projection: the bottom view) gives "2 ±0.2")"'
+  src: p1 "Recommended Hole Pattern [mm], pitch, general tolerance (drawing gives ±0.2)"
 
 geometry: { type: parametric, generator: header }
 

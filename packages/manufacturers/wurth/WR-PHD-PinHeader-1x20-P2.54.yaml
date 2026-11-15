@@ -27,7 +27,7 @@ pitch:
   min: 2.49 mm
   typ: 2.54 mm
   max: 2.59 mm
-  src: 'p1 ""Dimensions: [mm]" view above the front view (first-angle projection: the bottom view), pin pitch "2,54 ±0,05"; "Recommended Hole Pattern: [mm]" "2,54 ±0,05""'
+  src: p1 "Dimensions [mm] bottom view (above front view), pin pitch; Recommended Hole Pattern [mm], pitch"
 
 geometry: { type: parametric, generator: header }
 

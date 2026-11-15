@@ -26,7 +26,7 @@ pitch:
   min: 2.39 mm
   typ: 2.54 mm
   max: 2.69 mm
-  src: 'p1 ""Dimensions: [mm]" view above the front view (first-angle projection: the bottom view), pin pitch "2,54 ±0,15"; "Recommended Hole Pattern: [mm]" "2,54 ±0,15""'
+  src: p1 "Dimensions [mm] bottom view (above front view), pin pitch; Recommended Hole Pattern [mm], pitch"
 
 geometry: { type: parametric, generator: header }
 
@@ -60,7 +60,7 @@ dimensions:
     min: 2.39 mm
     typ: 2.54 mm
     max: 2.69 mm
-    src: 'p1 ""Dimensions: [mm]" view below the front view (first-angle projection: the top view), row to row "2,54 ±0,15"; "Recommended Hole Pattern: [mm]", rows "2,54 ±0,15" apart"'
+    src: p1 "Dimensions [mm] top view (below front view), row to row; Recommended Hole Pattern [mm], rows"
   hole_diameter:
     min: 0.95 mm
     typ: 1.1 mm

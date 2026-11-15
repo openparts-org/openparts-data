@@ -28,14 +28,14 @@ dimensions:
     max: 4.1 mm
     src:
       - p89 "PACKAGE OUTLINE RGE0024H, top view width 3.9/4.1"
-      - 'p2 "Device Information table, MSP430FR2433IRGE "VQFN (24) 4 mm x 4 mm" (BODY SIZE; footnote: "sizes shown here are approximations") -- nominal"'
+      - p2 "Device Information table, MSP430FR2433IRGE, BODY SIZE (approximate, nominal)"
   body_length:
     min: 3.9 mm
     typ: 4 mm
     max: 4.1 mm
     src:
       - p89 "PACKAGE OUTLINE RGE0024H, top view length 3.9/4.1"
-      - 'p2 "Device Information table, MSP430FR2433IRGE "VQFN (24) 4 mm x 4 mm" (BODY SIZE; footnote: "sizes shown here are approximations") -- nominal"'
+      - p2 "Device Information table, MSP430FR2433IRGE, BODY SIZE (approximate, nominal)"
   body_height: { max: 1 mm, src: 'p89 "PACKAGE OUTLINE RGE0024H, side view "1 MAX""' }
   exposed_pad:
     src:    p89 "PACKAGE OUTLINE RGE0024H, bottom view thermal pad "□2.7±0.1""

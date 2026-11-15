@@ -30,19 +30,19 @@ dimensions:
     min: 7.9 mm
     typ: 8 mm
     max: 8.1 mm
-    src: p71 "section 10.4 "8-Pad WSON 8x6-mm (Package Code E)" table, "D 7.90 / 8.00 / 8.10" (horizontal, across the terminal rows) (PDF page 71, printed 70)"
+    src: p71 "section 10.4 8-Pad WSON 8x6-mm (Package Code E) table, D (across the terminal rows)"
   body_length:
     min: 5.9 mm
     typ: 6 mm
     max: 6.1 mm
-    src: p71 "section 10.4 "8-Pad WSON 8x6-mm (Package Code E)" table, "E 5.90 / 6.00 / 6.10" (along the terminal rows) (PDF page 71, printed 70)"
+    src: p71 "section 10.4 8-Pad WSON 8x6-mm (Package Code E) table, E (along the terminal rows)"
   body_height:
     min: 0.7 mm
     typ: 0.75 mm
     max: 0.8 mm
     src: p71 "section 10.4 "8-Pad WSON 8x6-mm (Package Code E)" table, "A 0.70 / 0.75 / 0.80" (PDF page 71, printed 70)"
   exposed_pad:
-    src:    p71 "section 10.4 "8-Pad WSON 8x6-mm (Package Code E)" table, "D2 3.35 / 3.40 / 3.45" (width, X) and "E2 4.25 / 4.30 / 4.35" (length, Y) (PDF page 71, printed 70)"
+    src:    p71 "section 10.4 8-Pad WSON 8x6-mm (Package Code E) table, D2 (X) and E2 (Y)"
     width:  { min: 3.35 mm, typ: 3.4 mm, max: 3.45 mm }
     length: { min: 4.25 mm, typ: 4.3 mm, max: 4.35 mm }
   standoff:

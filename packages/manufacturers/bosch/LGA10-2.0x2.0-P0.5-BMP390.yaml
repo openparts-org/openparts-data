@@ -31,8 +31,8 @@ lead_count: 10
 lead_layout:
   value: [2, 3, 2, 3]
   src:
-    - bosch/BST-BMP390-DS002-07 p49 "Figure 26 bottom view, 2 pads on the pin-1/2 edge and its opposite, 3 on the other two; rotated 90 deg so pins 1-2 form the left edge (see header)"
-    - p49 "Figure 26 bottom view, 2 pads on the pin-1/2 edge and its opposite, 3 on the other two; rotated 90 deg so pins 1-2 form the left edge (see header)"
+    - bosch/BST-BMP390-DS002-07 p49 "Figure 26 bottom view, pads per edge (rotated 90 deg, see header)"
+    - p49 "Figure 26 bottom view, pads per edge (rotated 90 deg, see header)"
     - 'bosch/BST-BMP390-DS002-07 p46 "Figure 23 pin-out top view: 1-2 top edge (1 at the right), 3-5 left, 6-7 bottom, 8-10 right -- counter-clockwise"'
     - p46 "Figure 23 pin-out top view, same arrangement"
 
@@ -41,8 +41,8 @@ source: bosch/BST-BMP388-DS001-07
 pitch:
   typ: 0.5 mm
   src:
-    - 'bosch/BST-BMP390-DS002-07 p49 "Figure 26 bottom view: boxed 1.000 across the three side pads (pitch 0.500) and boxed 0.500 between the two pads of the 2-pad edges"'
-    - 'p49 "Figure 26 bottom view: boxed 1.000 across the three side pads (pitch 0.500) and boxed 0.500 between the two pads of the 2-pad edges"'
+    - bosch/BST-BMP390-DS002-07 p49 "Figure 26 bottom view, boxed spacing of the 3-pad and 2-pad edges"
+    - p49 "Figure 26 bottom view, boxed spacing of the 3-pad and 2-pad edges"
 
 geometry: { type: parametric, generator: lga }
 
@@ -73,8 +73,8 @@ dimensions:
     typ: 0.1 mm
     max: 0.15 mm
     src:
-      - 'bosch/BST-BMP390-DS002-07 p49 "Figure 26 bottom view, 0.100+-0.05 body edge to pad (both directions); consistent with boxed 1.525 column spacing: 1.00 - 0.7625 - 0.1375 = 0.100"'
-      - 'p49 "Figure 26 bottom view, 0.100+-0.05 body edge to pad (both directions); consistent with boxed 1.525 column spacing: 1.00 - 0.7625 - 0.1375 = 0.100"'
+      - bosch/BST-BMP390-DS002-07 p49 "Figure 26 bottom view, body edge to pad (both directions)"
+      - p49 "Figure 26 bottom view, body edge to pad (both directions)"
   lead_width:
     typ: 0.25 mm
     src:

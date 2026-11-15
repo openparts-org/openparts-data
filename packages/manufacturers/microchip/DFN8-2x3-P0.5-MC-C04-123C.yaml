@@ -38,7 +38,7 @@ dimensions:
     max: 1 mm
     src: p20 "drawing C04-123C table, "Overall Height A 0.80 / 0.90 / 1.00""
   exposed_pad:
-    src:    p20 "drawing C04-123C table, "Exposed Pad Width E2 1.50 / - / 1.75" (across the rows) and "Exposed Pad Length D2 1.30 / - / 1.55" (along the rows)"
+    src:    p20 "C04-123C table, E2 (width, across rows), D2 (length, along rows)"
     width:  { min: 1.5 mm, max: 1.75 mm }
     length: { min: 1.3 mm, max: 1.55 mm }
   standoff:

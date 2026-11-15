@@ -50,9 +50,7 @@ dimensions:
     typ: 4.45 mm
     max: 4.83 mm
     src: p1 "MILLIMETERS table, "A" (4.07 / 4.45 / 4.83), side view"
-  body_height:
-    typ: 8.9 mm
-    src: 'p1 "MILLIMETERS table nominals, front view: "E" 15.12 (tab top to body underside) - "H1" 6.22 (tab top to molding top) = 8.90"'
+  body_height: { typ: 8.9 mm, src: 'p1 "MILLIMETERS table, E minus H1 (nominals, see header)"' }
   body_offset:
     typ: 0.44 mm
     src: 'p1 "MILLIMETERS table nominals, side view: A2 2.42 (tab back to lead) + c/2 0.245 - A/2 2.225 = 0.44"'

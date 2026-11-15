@@ -23,7 +23,7 @@ lead_count: 2
 
 lead_layout:
   value: [1, 2]
-  src:   'p1 ""PC board layout and Assembly layout (Through-hole type)", Top entry type: one row of holes, "No. 1 circuit" at the right end (viewed from the mounting surface); page 3 Model No. table, No. of circuits 2"'
+  src:   p1 "PC board layout (Through-hole type), Top entry type, No. 1 circuit; p3 Model No. table"
 
 source: jst/ePH
 
@@ -31,7 +31,7 @@ pitch:
   min: 1.95 mm
   typ: 2 mm
   max: 2.05 mm
-  src: 'p1 ""PC board layout and Assembly layout (Through-hole type)", Top entry type: hole pitch "2 ±0.05" (note 2: not accumulating); page 3 Header drawing "2""'
+  src: p1 "PC board layout (Through-hole type), Top entry type, hole pitch (note 2); p3 Header drawing"
 
 geometry: { type: parametric, generator: shrouded_header }
 
@@ -47,7 +47,7 @@ dimensions:
     src: 'p3 ""Header (Through-hole type)", Top entry type <2 circuits>, side view: housing height "6""'
   body_offset:
     typ: -0.55 mm
-    src: 'p1 ""PC board layout and Assembly layout (Through-hole type)", Top entry type: "Connector outline" edge "(1.7)" from the hole row (below it, No. 1 circuit at the right; +X with pin 1 turned to the top); page 3 side view housing depth "4.5": centre 4.5/2 - 1.7 = 0.55 towards -X"'
+    src: p1 "PC board layout (Through-hole type), Top entry, connector outline; p3 side view, housing depth"
   hole_diameter:
     min: 0.7 mm
     typ: 0.7 mm
@@ -55,4 +55,4 @@ dimensions:
     src: 'p1 ""PC board layout and Assembly layout (Through-hole type)", Top entry type: hole "φ0.7 +0.1/0" (note 3: reference only)"'
   tail_length:
     typ: 3.4 mm
-    src: 'p3 ""Header (Through-hole type)", Top entry type <2 circuits>, side view: housing underside to tail end "(3.4)" (parenthesised: reference)"'
+    src: p3 "Header (Through-hole type), Top entry type <2 circuits>, side view, tail length (reference)"

@@ -42,11 +42,11 @@ source: abracon/456603@revB
 
 pitch:
   typ: 1.5 mm
-  src: 'p2 "Mechanical Dimensions, BOTTOM VIEW: terminal height 0.80+-0.10 plus gap 0.70+-0.10 between the two terminals of one side -> 0.80 + 0.70 = 1.50 centre to centre"'
+  src: p2 "Mechanical Dimensions, BOTTOM VIEW, terminal height and gap (see header)"
 
 pad_order:
   value: ["4", "1", "2", "3"]
-  src:   'p2 "Mechanical Dimensions, TOP VIEW: 4 top-left, 1 bottom-left, 2 bottom-right, 3 top-right -> generator positions (TL, BL, BR, TR) = [4, 1, 2, 3]"'
+  src:   p2 "Mechanical Dimensions, TOP VIEW, terminal numbering (see header)"
 
 geometry: { type: parametric, generator: lga }
 

@@ -33,7 +33,7 @@ dimensions:
     src: p38 "NGN0008A outline (4214794/A), top view, length "4.1 / 3.9""
   body_height: { max: 0.8 mm, src: 'p38 "NGN0008A outline (4214794/A), side view "0.8 MAX""' }
   exposed_pad:
-    src:    p38 "NGN0008A outline (4214794/A), bottom view, thermal pad "2.2 +-0.05" (across the rows); bottom view, thermal pad "3 +-0.05" (along the rows)"
+    src:    p38 "NGN0008A outline (4214794/A), bottom view, thermal pad (across and along the rows)"
     width:  { min: 2.15 mm, typ: 2.2 mm, max: 2.25 mm }
     length: { min: 2.95 mm, typ: 3 mm, max: 3.05 mm }
   standoff:

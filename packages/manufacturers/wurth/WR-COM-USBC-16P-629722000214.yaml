@@ -5,7 +5,7 @@
 # "Recommended Land Pattern" has the product edge (opening) at the
 # bottom; it is turned 180° (x -> -x, y -> -y; rotation, not mirror).
 # Origin: centre line / front shell-slot centres. Every coordinate's
-# arithmetic is in the "/pads" locator.
+# arithmetic is in the comment above pads.
 # Shell (body_*): "8,94 ±0.20" wide, "7,53 ±0.20" long, "3,31 ±0.20" high
 # (side view, seating plane to the shell top); the shell front face is
 # the land pattern's "Product edge", "2,62" in front of the front slot
@@ -22,7 +22,7 @@ family: usb_c
 
 lead_count:
   value: 16
-  src: 'p1 ""Recommended Land Pattern: [mm]": 12 contact pads (labels A1 B12, A4 B9, B8, A5, B7, A6, A7, B6, A8, B5, B4 A9, B1 A12) + 4 plated shell slots; "Article Properties" Pins 16"'
+  src: p1 "Recommended Land Pattern [mm], contact pads and shell slots; Article Properties, Pins"
 
 source: wurth/629722000214-DS
 
@@ -47,8 +47,17 @@ dimensions:
     src: 'p1 ""Dimensions: [mm]" side view, seating plane to shell top "3,31 ±0.20""'
   body_offset:
     typ: -1.145 mm
-    src: 'p1 ""Recommended Land Pattern": front slot centres to "Product edge" "2,62" (side view "2,6 ±0.20" front tab to front face); shell length "7,53": centre y = 2.62 - 7.53/2 = -1.145 (opening toward +Y)"'
+    src: p1 "Recommended Land Pattern, front slot centres to Product edge; side view; shell length (see header)"
 
+# pads (Recommended Land Pattern, tolerance ±0.05, turned 180°):
+# signal pads 1,15 long, rear edge 5,32 from the front slots -> y =
+# -(5.32 - 1.15/2) = -4.745. X (left half dimensioned, right half
+# mirrored): 6,4 A1/B12-B1/A12 -> ±3.2; 0,8 to A4/B9 -> ±2.4; 1,75,
+# 1,25, 0,75, 0,25 (B8, A5, B7, A6) to the centre line; then x -> -x.
+# Widths 0,6 (double-labelled), 0,3 (single). Shell slots: 8,64 apart
+# -> ±4.32; rear 4,18 behind -> y -4.18 (land 2,1 x 1, slot 1,7 x 0,6),
+# front y 0 (land 1,8 x 1, slot 1,4 x 0,6; widths dimensioned on a
+# front slot, rear drawn identical).
 pads:
   value:
     - { number: A1, x: 3.2, y: -4.745, width: 0.6, length: 1.15 }
@@ -67,4 +76,4 @@ pads:
     - { number: S1, x: -4.32, y: -4.18, width: 1, length: 2.1, drill: 0.6, drill_length: 1.7 }
     - { number: S1, x: 4.32, y: 0, width: 1, length: 1.8, drill: 0.6, drill_length: 1.4 }
     - { number: S1, x: -4.32, y: 0, width: 1, length: 1.8, drill: 0.6, drill_length: 1.4 }
-  src: 'p1 ""Recommended Land Pattern: [mm]" (general tolerance ±0.05), drawn with the product edge at the bottom; turned 180° so the opening faces +Y (x -> -x, y -> -y; a rotation, not a mirror). Origin: X on the centre line, Y on the front (product-edge side) shell slot centres. Signal pads: "1,15" long; their top (rear) edge is "5,32" from the front slot centres, so centre y = -(5.32 - 1.15/2) = -4.745. X (drawing, left to right A1/B12, A4/B9, B8, A5, B7, A6, A7, B6, A8, B5, B4/A9, B1/A12): "6,4" A1/B12 to B1/A12 centres -> ±3.2; "0,8" A1/B12 to A4/B9 -> 3.2 - 0.8 = 2.4 (also "2,4" A4/B9 to the centre line); "1,75", "1,25", "0,75", "0,25" B8, A5, B7, A6 to the centre line; the right half is the mirror image about the drawn centre line (only the left half is dimensioned) and then x -> -x by the rotation. Widths: "0,6" for the four double-labelled pads, "0,3" for the single ones. Shell slots (S1, unnumbered in the source): "8,64" between centres -> x ±4.32; rear slots "4,18" behind the front ones -> y -4.18, land "2,1" x "1", slot "1,7" x "0,6"; front slots y 0, land "1,8" x "1", slot "1,4" x "0,6" (the widths "1"/"0,6" are dimensioned on a front slot and apply to the identically drawn rear ones). Not recorded: the two non-plated Ø0,65 alignment holes ("5,78" apart, "3,68" from the front slots) -- the family has no non-plated hole."'
+  src: p1 "Recommended Land Pattern [mm] (see comment above)"
