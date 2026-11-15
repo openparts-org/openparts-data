@@ -1,0 +1,33 @@
+# LPC845 (LQFP64) SWD, reset and ISP pins as Fig 39 brings them out (Arm 10-pin
+# SWD connector; its pinout is not recorded). External pull-ups on
+# SWDIO/SWCLK are optional: the pins have internal pull-ups (note 6).
+# PIO0_12 is the ISP select pin. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: nxp/lpc845m301-64-swd
+title: LPC845 (LQFP64) SWD, reset and ISP select
+host: nxp/LPC845M301-64
+source: nxp/LPC84x@rev2.1
+
+nets:
+  ISP:   { kind: signal }
+  RESET: { kind: signal }
+  SWCLK: { kind: signal }
+  SWDIO: { kind: signal }
+  VDD:   { kind: power }
+
+connect:
+  PIO0_12:          { net: ISP, level: example, src: p80 "Fig 39" }
+  RESET/PIO0_5:     { net: RESET, level: example, src: p80 "Fig 39" }
+  SWCLK/PIO0_3/TCK: { net: SWCLK, level: example, src: p80 "Fig 39" }
+  SWDIO/PIO0_2/TMS: { net: SWDIO, level: example, src: p80 "Fig 39" }
+
+roles:
+  R_SWCLK:
+    requires: { category: resistor, resistance: { min: 10 kΩ, max: 100 kΩ }, src: p80 "Fig 39" }
+    pins:     { "1": VDD, "2": host.SWCLK/PIO0_3/TCK }
+    level:    { value: optional, word: optional, src: 'p80 "Fig 39, note 6"' }
+  R_SWDIO:
+    requires: { category: resistor, resistance: { min: 10 kΩ, max: 100 kΩ }, src: p80 "Fig 39" }
+    pins:     { "1": VDD, "2": host.SWDIO/PIO0_2/TMS }
+    level:    { value: optional, word: optional, src: 'p80 "Fig 39, note 6"' }

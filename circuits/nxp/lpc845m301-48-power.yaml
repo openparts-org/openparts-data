@@ -1,0 +1,54 @@
+# LPC845 (LQFP48) supply decoupling from the datasheet's power, clock and debug
+# connections (Fig 39): 0.1 uF + 0.01 uF at each VDD pin; 0.1 uF from
+# VREFP to VREFN and 0.1 uF + 10 uF on the 3.3 V line at VREFP. The
+# figure gives no rule word, so the values are examples. The figure's
+# AGND-DGND inductor has no value and is not recorded; VDDA is not
+# shown in the figure. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: nxp/lpc845m301-48-power
+title: LPC845 (LQFP48) supply decoupling
+host: nxp/LPC845M301-48
+source: nxp/LPC84x@rev2.1
+
+nets:
+  GND: { kind: ground }
+  VDD: { kind: power, voltage: { typ: 3.3 V }, src: p80 "Fig 39" }
+
+connect:
+  VDD:   { net: VDD, level: example, src: p80 "Fig 39" }
+  VREFN: { net: GND, level: example, src: p80 "Fig 39" }
+  VREFP: { net: VDD, level: example, src: p80 "Fig 39" }
+  VSS:   { net: GND, level: example, src: p80 "Fig 39" }
+
+roles:
+  C_VDD_100N:
+    per_pin: VDD
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: 'p80 "Fig 39, note 2"' }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p80 "Fig 39, note 2"' }
+    level: example
+    src: p80 "Fig 39, note 2"
+  C_VDD_10N:
+    per_pin: VDD
+    requires: { category: capacitor, capacitance: { typ: 10 nF }, src: 'p80 "Fig 39, note 2"' }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p80 "Fig 39, note 2"' }
+    level: example
+    src: p80 "Fig 39, note 2"
+  C_VREF:
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p80 "Fig 39" }
+    pins: { "1": host.VREFP, "2": host.VREFN }
+    place: { near: host.VREFN, src: 'p80 "Fig 39, note 3"' }
+    level: example
+    src: p80 "Fig 39"
+  C_VREF_RAIL_100N:
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p80 "Fig 39" }
+    pins: { "1": VDD, "2": GND }
+    level: example
+    src: p80 "Fig 39"
+  C_VREF_RAIL_10U:
+    requires: { category: capacitor, capacitance: { typ: 10 uF }, src: 'p80 "Fig 39, note 3"' }
+    pins: { "1": VDD, "2": GND }
+    level: example
+    src: p80 "Fig 39, note 3"

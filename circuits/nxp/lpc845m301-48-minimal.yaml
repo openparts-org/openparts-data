@@ -1,0 +1,23 @@
+# LPC845 (LQFP48) board connections of the datasheet's Fig 39 (power, crystal,
+# debug) as a composite. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: nxp/lpc845m301-48-minimal
+title: LPC845 (LQFP48) minimal circuit
+host: nxp/LPC845M301-48
+source: nxp/LPC84x@rev2.1
+
+nets:
+  GND:   { kind: ground }
+  ISP:   { kind: signal }
+  RESET: { kind: signal }
+  SWCLK: { kind: signal }
+  SWDIO: { kind: signal }
+  VDD:   { kind: power, voltage: { typ: 3.3 V }, src: p80 "Fig 39" }
+
+includes:
+  - { circuit: nxp/lpc845m301-48-power, with: { GND: GND, VDD: VDD }, src: p80 "Fig 39" }
+  - { circuit: nxp/lpc845m301-48-xtal, with: { GND: GND }, src: p80 "Fig 39" }
+  - circuit: nxp/lpc845m301-48-swd
+    with: { ISP: ISP, RESET: RESET, SWCLK: SWCLK, SWDIO: SWDIO, VDD: VDD }
+    src: p80 "Fig 39"

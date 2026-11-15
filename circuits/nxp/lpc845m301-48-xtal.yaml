@@ -1,0 +1,34 @@
+# LPC845 (LQFP48) system oscillator crystal on XTALIN/XTALOUT with CX1 = CX2
+# sized by the datasheet's expression 2 CL - (CPad + CParasitic), CPad
+# about 3 pF (14.2); not stored as a formula, since the crystal (and so
+# CL) is the board's choice. Values are to be fine-tuned on the
+# board. VDD must be 1.9 V or above with a crystal (Table 11 note 3). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: nxp/lpc845m301-48-xtal
+title: LPC845 (LQFP48) crystal oscillator
+host: nxp/LPC845M301-48
+source: nxp/LPC84x@rev2.1
+
+conditions: { VDD: { min: 1.9 V, src: 'p46 "Table 11, note 3"' } }
+nets: { GND: { kind: ground } }
+
+roles:
+  C_X1:
+    requires: { category: capacitor, src: p78 "14.2" }
+    pins:     { "1": host.PIO0_8/XTALIN, "2": GND }
+    place:    { near: host.PIO0_8/XTALIN, src: p79 "14.2.1" }
+    level:    { value: required, word: need, src: p78 "14.2" }
+  C_X2:
+    requires: { category: capacitor, src: p78 "14.2" }
+    pins:     { "1": host.PIO0_9/XTALOUT, "2": GND }
+    place:    { near: host.PIO0_9/XTALOUT, src: p79 "14.2.1" }
+    level:    { value: required, word: need, src: p78 "14.2" }
+  X1:
+    requires: { category: crystal, src: p78 "14.2" }
+    pins:     { "1": host.PIO0_8/XTALIN, "2": host.PIO0_9/XTALOUT }
+    place:    { near: host.PIO0_8/XTALIN, src: p79 "14.2.1" }
+    level:    { value: required, word: need, src: p78 "14.2" }
+
+placement:
+  - { keep_short: [host.PIO0_8/XTALIN, host.PIO0_9/XTALOUT], src: p79 "14.2.1" }
