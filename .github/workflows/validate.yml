@@ -1,14 +1,24 @@
 # Data PR CI (Testing and Quality Specification section 12): validates
-# every changed Part (and, since the initial dataset is small, every
-# Part -- section 12 also says to prefer full validation while the
-# dataset is small) against its referenced Device/Package/Sources using
-# the openparts-validator crate from the sibling `openparts` repository.
+# every Part (section 12 prefers full validation while the dataset is
+# small) against its referenced Device/Package/Sources using the
+# openparts-validator crate from the sibling `openparts` repository.
+#
+# On a pull request it also writes the review table -- every changed
+# value with its source, page and locator (`openparts diff-facts`) -- as
+# the `fact-table` artifact. This workflow runs with a read-only token
+# (always so for pull requests from forks) and never posts anything;
+# fact-table-comment.yml posts the table from a separate,
+# workflow_run-triggered job that never checks out or runs pull request
+# code.
 name: validate
 
 on:
   push:
     branches: [main]
   pull_request:
+
+permissions:
+  contents: read
 
 jobs:
   validate:
@@ -18,12 +28,16 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: openparts-data
+          # A pull request's merge commit and its first parent (the base).
+          fetch-depth: 2
+          persist-credentials: false
 
       - name: Check out openparts
         uses: actions/checkout@v4
         with:
           repository: ${{ github.repository_owner }}/openparts
           path: openparts
+          persist-credentials: false
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
@@ -40,3 +54,24 @@ jobs:
         env:
           OPENPARTS_CLI: ../openparts/target/debug/openparts
         run: ./scripts/validate.sh
+
+      # Also when validation failed: the table helps to find why.
+      - name: Fact table (changed values and their sources)
+        if: ${{ !cancelled() && github.event_name == 'pull_request' }}
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          git -C openparts-data worktree add --detach ../base HEAD^1
+          mkdir -p fact-table
+          openparts/target/debug/openparts diff-facts \
+            --base base --head openparts-data --markdown > fact-table/comment.md
+          printf '%s\n' "$PR_NUMBER" > fact-table/pr-number
+          cat fact-table/comment.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload the fact table
+        if: ${{ !cancelled() && github.event_name == 'pull_request' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: fact-table
+          path: fact-table/
+          retention-days: 7

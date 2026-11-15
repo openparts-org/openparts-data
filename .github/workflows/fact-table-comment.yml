@@ -1,0 +1,73 @@
+# Posts (or updates) one comment on a data pull request with the review
+# table validate.yml wrote: every changed value with its source, page,
+# a link to the cited page and the locator.
+#
+# Why a separate workflow: a pull request from a fork gets a read-only
+# token, so validate.yml cannot comment. This one runs on
+# `workflow_run`, from the default branch's copy of this file, with the
+# default GITHUB_TOKEN limited to `pull-requests: write`. It never checks
+# out or executes anything from the pull request: it downloads the
+# artifact as data, and treats it as untrusted --
+#   - the pull request number must be a number, and that pull request's
+#     head must be the commit the validate run tested (so a run can only
+#     comment on its own pull request);
+#   - the table is only posted as comment text (GitHub renders it as
+#     Markdown; `openparts diff-facts` escapes the values it puts in);
+#   - nothing from the artifact is interpolated into a shell or script.
+# This is the pattern GitHub Security Lab recommends for "pwn requests"
+# (https://securitylab.github.com/resources/github-actions-preventing-pwn-requests/).
+name: fact-table-comment
+
+on:
+  workflow_run:
+    workflows: [validate]
+    types: [completed]
+
+permissions: {}
+
+jobs:
+  comment:
+    if: github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      pull-requests: write
+    steps:
+      - name: Download the fact table
+        uses: actions/download-artifact@v4
+        with:
+          name: fact-table
+          path: fact-table
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+
+      - name: Post or update the comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require("fs");
+            const { owner, repo } = context.repo;
+            const run = context.payload.workflow_run;
+            const text = fs.readFileSync("fact-table/pr-number", "utf8").trim();
+            if (!/^[0-9]{1,9}$/.test(text)) throw new Error("not a pull request number");
+            const number = Number(text);
+            const { data: pull } = await github.rest.pulls.get({ owner, repo, pull_number: number });
+            if (pull.head.sha !== run.head_sha) {
+              core.notice(`#${number} is now at ${pull.head.sha}, not ${run.head_sha}: not commenting.`);
+              return;
+            }
+            const marker = "<!-- openparts-fact-table -->";
+            let table = fs.readFileSync("fact-table/comment.md", "utf8");
+            if (table.length > 63000) table = table.slice(0, 63000) + "\n\n… (truncated)";
+            const body = `${marker}\n${table}\n<sub>\`openparts diff-facts\` for ${run.head_sha.slice(0, 7)} · [workflow run](${run.html_url})</sub>\n`;
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner, repo, issue_number: number, per_page: 100,
+            });
+            const mine = comments.find(
+              (c) => c.user?.login === "github-actions[bot]" && c.body?.startsWith(marker),
+            );
+            if (mine) {
+              await github.rest.issues.updateComment({ owner, repo, comment_id: mine.id, body });
+            } else {
+              await github.rest.issues.createComment({ owner, repo, issue_number: number, body });
+            }
