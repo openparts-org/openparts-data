@@ -20,3 +20,44 @@ lifecycle:
 
 sources:
   - bourns/SRR1260
+  - bourns/SRR1260@rev03-26
+
+parameters:
+  tolerance:
+    min: -30
+    max: 30
+    unit: "%"
+  inductance:
+    nominal: 2.2
+    unit: µH
+  rated_current:
+    max: 8.2
+    unit: A
+  saturation_current:
+    nominal: 8.5
+    unit: A
+  dcr:
+    max: 10.5
+    unit: mΩ
+
+provenance:
+  "/parameters/tolerance":
+    - source: bourns/SRR1260@rev03-26
+      page: 1
+      locator: "Electrical Specifications, SRR1260-2R2Y row: Inductance Tol. (%) ±30"
+  "/parameters/inductance":
+    - source: bourns/SRR1260@rev03-26
+      page: 1
+      locator: "Electrical Specifications, SRR1260-2R2Y row: Inductance (µH) 2.2"
+  "/parameters/rated_current":
+    - source: bourns/SRR1260@rev03-26
+      page: 1
+      locator: "Electrical Specifications, SRR1260-2R2Y row: I rms Max. (A) 8.20 (General Specifications: temperature rise 40 °C typ. at rated I rms)"
+  "/parameters/saturation_current":
+    - source: bourns/SRR1260@rev03-26
+      page: 1
+      locator: "Electrical Specifications, SRR1260-2R2Y row: I sat Typ. (A) 8.50 (General Specifications: inductance drop 25 % typ. at I sat)"
+  "/parameters/dcr":
+    - source: bourns/SRR1260@rev03-26
+      page: 1
+      locator: "Electrical Specifications, SRR1260-2R2Y row: RDC Max. (mΩ) 10.5"

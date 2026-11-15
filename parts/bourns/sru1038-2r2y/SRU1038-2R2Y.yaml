@@ -19,3 +19,44 @@ lifecycle:
 
 sources:
   - bourns/SRU1038
+  - bourns/SRU1038@rev02-26
+
+parameters:
+  tolerance:
+    min: -30
+    max: 30
+    unit: "%"
+  inductance:
+    nominal: 2.2
+    unit: µH
+  rated_current:
+    max: 6.8
+    unit: A
+  saturation_current:
+    nominal: 6.5
+    unit: A
+  dcr:
+    max: 10.5
+    unit: mΩ
+
+provenance:
+  "/parameters/tolerance":
+    - source: bourns/SRU1038@rev02-26
+      page: 1
+      locator: "Electrical Specifications, SRU1038-2R2Y row: Inductance Tol. (%) ±30"
+  "/parameters/inductance":
+    - source: bourns/SRU1038@rev02-26
+      page: 1
+      locator: "Electrical Specifications, SRU1038-2R2Y row: Inductance (µH) 2.2"
+  "/parameters/rated_current":
+    - source: bourns/SRU1038@rev02-26
+      page: 1
+      locator: "Electrical Specifications, SRU1038-2R2Y row: Irms Max. (A) 6.80 (General Specifications: temperature rise 40 °C max. at rated Irms)"
+  "/parameters/saturation_current":
+    - source: bourns/SRU1038@rev02-26
+      page: 1
+      locator: "Electrical Specifications, SRU1038-2R2Y row: Isat Typ. (A) 6.50 (General Specifications: ind. drop 35 % typ. at Isat)"
+  "/parameters/dcr":
+    - source: bourns/SRU1038@rev02-26
+      page: 1
+      locator: "Electrical Specifications, SRU1038-2R2Y row: RDC Max. (mΩ) 10.5"

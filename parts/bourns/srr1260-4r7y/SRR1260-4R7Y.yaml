@@ -22,8 +22,46 @@ lifecycle:
 sources:
   - bourns/SRR1260@rev03-26
 
+parameters:
+  tolerance:
+    min: -30
+    max: 30
+    unit: "%"
+  inductance:
+    nominal: 4.7
+    unit: µH
+  rated_current:
+    max: 6.8
+    unit: A
+  saturation_current:
+    nominal: 7.0
+    unit: A
+  dcr:
+    max: 15.5
+    unit: mΩ
+
 provenance:
   "/existence":
     - source: bourns/SRR1260@rev03-26
       page: 1
       locator: "Electrical Specifications table, Part Number row \"SRR1260-4R7Y\""
+  "/parameters/tolerance":
+    - source: bourns/SRR1260@rev03-26
+      page: 1
+      locator: "Electrical Specifications, SRR1260-4R7Y row: Inductance Tol. (%) ±30"
+  "/parameters/inductance":
+    - source: bourns/SRR1260@rev03-26
+      page: 1
+      locator: "Electrical Specifications, SRR1260-4R7Y row: Inductance (µH) 4.7"
+  "/parameters/rated_current":
+    - source: bourns/SRR1260@rev03-26
+      page: 1
+      locator: "Electrical Specifications, SRR1260-4R7Y row: I rms Max. (A) 6.80 (General Specifications: temperature rise 40 °C typ. at rated I rms)"
+  "/parameters/saturation_current":
+    - source: bourns/SRR1260@rev03-26
+      page: 1
+      locator: "Electrical Specifications, SRR1260-4R7Y row: I sat Typ. (A) 7.00 (General Specifications: inductance drop 25 % typ. at I sat)"
+  "/parameters/dcr":
+    - source: bourns/SRR1260@rev03-26
+      page: 1
+      locator: "Electrical Specifications, SRR1260-4R7Y row: RDC Max. (mΩ) 15.5"
