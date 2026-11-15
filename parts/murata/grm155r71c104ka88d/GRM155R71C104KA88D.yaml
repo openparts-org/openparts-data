@@ -19,3 +19,35 @@ lifecycle:
 
 sources:
   - murata/GRM155R71C104KA88
+
+parameters:
+  capacitance:
+    nominal: 0.10
+    unit: uF
+  tolerance:
+    min: -10
+    max: 10
+    unit: "%"
+  rated_voltage:
+    nominal: 16
+    unit: V
+  dielectric:
+    value: X7R
+
+provenance:
+  "/parameters/capacitance":
+    - source: murata/GRM155R71C104KA88
+      page: 1
+      locator: "规格 (Specifications) table, 静电容量 (Capacitance): 0.10µF ±10%"
+  "/parameters/tolerance":
+    - source: murata/GRM155R71C104KA88
+      page: 1
+      locator: "规格 (Specifications) table, 静电容量 (Capacitance): 0.10µF ±10%"
+  "/parameters/rated_voltage":
+    - source: murata/GRM155R71C104KA88
+      page: 1
+      locator: "规格 (Specifications) table, 额定电压 (Rated voltage): 16Vdc"
+  "/parameters/dielectric":
+    - source: murata/GRM155R71C104KA88
+      page: 1
+      locator: "规格 (Specifications) table, 温度特性 (Temperature characteristics): X7R(EIA)"

@@ -18,3 +18,35 @@ lifecycle:
 
 sources:
   - murata/GRM21BR61E106KA73
+
+parameters:
+  capacitance:
+    nominal: 10
+    unit: uF
+  tolerance:
+    min: -10
+    max: 10
+    unit: "%"
+  rated_voltage:
+    nominal: 25
+    unit: V
+  dielectric:
+    value: X5R
+
+provenance:
+  "/parameters/capacitance":
+    - source: murata/GRM21BR61E106KA73
+      page: 2
+      locator: "Specifications table, Capacitance: 10µF ±10%"
+  "/parameters/tolerance":
+    - source: murata/GRM21BR61E106KA73
+      page: 2
+      locator: "Specifications table, Capacitance: 10µF ±10%"
+  "/parameters/rated_voltage":
+    - source: murata/GRM21BR61E106KA73
+      page: 2
+      locator: "Specifications table, Rated Voltage: 25Vdc"
+  "/parameters/dielectric":
+    - source: murata/GRM21BR61E106KA73
+      page: 2
+      locator: "Specifications table, Temperature characteristics (complied standard): X5R(EIA)"

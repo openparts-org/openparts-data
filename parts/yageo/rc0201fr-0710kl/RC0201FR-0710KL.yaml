@@ -20,3 +20,37 @@ lifecycle:
 
 sources:
   - yageo/RC0201-SPEC
+
+parameters:
+  resistance:
+    nominal: 10
+    unit: kΩ
+  tolerance:
+    min: -1
+    max: 1
+    unit: "%"
+  power_rating:
+    nominal: 0.05
+    unit: W
+  temperature_coefficient:
+    min: -200
+    max: 200
+    unit: ppm/°C
+
+provenance:
+  "/parameters/resistance":
+    - source: yageo/RC0201-SPEC
+      page: 1
+      locator: "Specifications, Resistance: 10 kOhms"
+  "/parameters/tolerance":
+    - source: yageo/RC0201-SPEC
+      page: 1
+      locator: "Specifications, Resistance Tolerance: 1%"
+  "/parameters/power_rating":
+    - source: yageo/RC0201-SPEC
+      page: 1
+      locator: "Specifications, Power: 0.05 W (70C)"
+  "/parameters/temperature_coefficient":
+    - source: yageo/RC0201-SPEC
+      page: 1
+      locator: "Specifications, Temp. Coefficient: -/+200 ppm/C"

@@ -17,3 +17,35 @@ lifecycle:
 
 sources:
   - murata/GRM31CR71E106KA12
+
+parameters:
+  capacitance:
+    nominal: 10
+    unit: uF
+  tolerance:
+    min: -10
+    max: 10
+    unit: "%"
+  rated_voltage:
+    nominal: 25
+    unit: V
+  dielectric:
+    value: X7R
+
+provenance:
+  "/parameters/capacitance":
+    - source: murata/GRM31CR71E106KA12
+      page: 1
+      locator: "Specifications, Capacitance: 10µF ±10%"
+  "/parameters/tolerance":
+    - source: murata/GRM31CR71E106KA12
+      page: 1
+      locator: "Specifications, Capacitance: 10µF ±10%"
+  "/parameters/rated_voltage":
+    - source: murata/GRM31CR71E106KA12
+      page: 1
+      locator: "Specifications, Rated voltage: 25Vdc"
+  "/parameters/dielectric":
+    - source: murata/GRM31CR71E106KA12
+      page: 1
+      locator: "Specifications, Temperature characteristics (complied standard): X7R(EIA)"

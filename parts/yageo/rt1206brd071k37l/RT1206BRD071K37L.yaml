@@ -17,3 +17,35 @@ lifecycle:
 
 sources:
   - yageo/RT-SERIES-V1
+
+# Parameters from the ordering-code table, which maps each code
+# explicitly: B = ±0.1%, D = ±25 ppm/°C, 1K37 = 1.37 kΩ (R/K/M as the
+# decimal point). The power rating is not recorded: Table 3 gives one
+# per operation mode (precision/standard/power) and the ordering code
+# does not map to a mode.
+parameters:
+  resistance:
+    nominal: 1.37
+    unit: kΩ
+  tolerance:
+    min: -0.1
+    max: 0.1
+    unit: "%"
+  temperature_coefficient:
+    min: -25
+    max: 25
+    unit: ppm/°C
+
+provenance:
+  "/parameters/resistance":
+    - source: yageo/RT-SERIES-V1
+      page: 2
+      locator: "ORDERING INFORMATION, (6) RESISTANCE VALUE: 5R6, 56R, 560R, 5K6, 56K, 1M (letter = decimal point and multiplier) -> 1K37 = 1.37 kΩ"
+  "/parameters/tolerance":
+    - source: yageo/RT-SERIES-V1
+      page: 2
+      locator: "ORDERING INFORMATION, (2) TOLERANCE: B = ±0.1%"
+  "/parameters/temperature_coefficient":
+    - source: yageo/RT-SERIES-V1
+      page: 2
+      locator: "ORDERING INFORMATION, (4) TEMPERATURE CHARACTERISTIC OF RESISTANCE: D = ±25 ppm/°C"
