@@ -1,0 +1,61 @@
+# JST XH shrouded header, top entry, 16 circuits, 2.5 mm pitch, THT
+# (B16B-XH-A), from jst/eXH page 5 ("Header", Top entry type <3 circuits or more> and the
+# Model No. table: A 37.5, B 42.4) and page 2 (PC board layout).
+# Frame: the PC board layout (viewed from the connector mounting surface)
+# has No. 1 circuit at the right end of the row and the boss of the
+# B?B-XH-AM variant 2 mm above the row; turned 90 degrees
+# counter-clockwise (pin 1 to the top, pins numbered down the row) the
+# boss side is -X. The side view puts the pin row "(2.35)" from the
+# housing face away from the boss (the +X face), the housing being 5.75
+# deep: its centre lies 5.75 / 2 - 2.35 = 0.525 towards -X
+# (body_offset -0.525, nominal only). "(2.35)" and the tail "(3.4)" are
+# parenthesised (reference) dimensions in the drawing.
+# No land is given, only the hole: the pad is the hole plus the
+# generator's annular-ring default. The housing's walls, latch slots and
+# feet are drawn but not dimensioned (not recorded); standoff is not
+# stated. Housing natural (white) PA 66, posts tin-plated (page 5
+# "Material and Surface finish").
+schema_version: "0.2"
+kind: package
+id: manufacturers/jst/XH-Header-Top-1x16-P2.50
+family: shrouded_header
+lead_count: 16
+
+lead_layout:
+  value: [1, 16]
+  src:   p2 "PC board layout and Assembly layout, Top entry type, No. 1 circuit; p5 Model No. table"
+
+source: jst/eXH
+
+pitch:
+  min: 2.45 mm
+  typ: 2.5 mm
+  max: 2.55 mm
+  src: p2 "PC board layout and Assembly layout, Top entry type, hole pitch (note 2); p5 Header drawing"
+
+geometry: { type: parametric, generator: shrouded_header }
+
+dimensions:
+  body_width:
+    typ: 5.75 mm
+    src: 'p5 ""Header", Top entry type <3 circuits or more>, side view: housing depth "5.75""'
+  body_length:
+    typ: 42.4 mm
+    src: 'p5 ""Header", Top entry type Model No. table, B16B-XH-A: Dimensions B = 42.4 (front view: housing length "B")"'
+  body_height:
+    typ: 7 mm
+    src: 'p5 ""Header", Top entry type <3 circuits or more>, front view: housing height "7""'
+  body_offset:
+    typ: -0.525 mm
+    src: p5 "Header, Top entry type <3 circuits or more>, side view, pin row to housing face (see header)"
+  lead_width:
+    typ: 0.64 mm
+    src: 'p5 ""Header", Top entry type <3 circuits or more>, front view: post "□0.64""'
+  hole_diameter:
+    min: 0.9 mm
+    typ: 0.9 mm
+    max: 1 mm
+    src: p2 "PC board layout and Assembly layout, Top entry type, hole, 3 circuits or more (note 4)"
+  tail_length:
+    typ: 3.4 mm
+    src: p5 "Header, Top entry type <3 circuits or more>, front view, tail length (reference)"
