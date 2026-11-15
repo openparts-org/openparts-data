@@ -1,0 +1,20 @@
+# Official TI datasheet "TCA9555 Low-Voltage 16-Bit I2C and SMBus I/O
+# Expander with Interrupt Output and Configuration Registers".
+# Downloaded 2026-11-16 with curl from the TI symlink URL below; revision
+# read from the page header "SCPS200E - JULY 2009 - REVISED APRIL 2019".
+# 49 PDF pages, read with pdftotext -layout. The PACKAGE OPTION ADDENDUM
+# (pages 33-34) is dated 31-Oct-2025. Outlines: RGE0024B (4219013/A
+# 05/2017, page 38), PW0024A (4220208/A 02/2017, page 41), RTW0024B
+# (4219135/B 11/2016, page 46); no DB (SSOP) outline is included. Page
+# numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: ti/SCPS200E
+sha256: 9706a3ccbf0bc915387949ab82bc0020a1a5bfdd67d8f51c4605a8d4b16bb231
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tca9555.pdf
+publisher: ti
+document_id: SCPS200E
+document_type: datasheet
+revision: SCPS200E
+date: 2019-04

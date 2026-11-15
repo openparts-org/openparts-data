@@ -1,0 +1,28 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SCPS207H
+# (page 28): row "TCA9548ADGSR", Package "VSSOP (DGS) | 24", Status "Active".
+# Lifecycle read from the same row's Status column (TI's own addendum
+# inside the datasheet, dated 8-Nov-2025).
+# Package: VSSOP (DGS) | 24, outline DGS0024A (4226366/A) on page 39 -> manufacturers/ti/DGS0024A.
+schema_version: "0.2"
+kind: part
+id: ti/TCA9548ADGSR
+manufacturer: ti
+mpn: TCA9548ADGSR
+device: ti/TCA9548A-PW
+
+package:
+  value: manufacturers/ti/DGS0024A
+  src:
+    - p28 "PACKAGE OPTION ADDENDUM, row TCA9548ADGSR, Package column "VSSOP (DGS) | 24""
+    - p39 "PACKAGE OUTLINE DGS0024A (4226366/A)"
+
+sources: [ti/SCPS207H]
+source: ti/SCPS207H
+
+existence:
+  status: verified
+  src: p28 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TCA9548ADGSR"
+
+lifecycle:
+  status: active
+  src: p28 "PACKAGE OPTION ADDENDUM, row TCA9548ADGSR, Status column "Active""

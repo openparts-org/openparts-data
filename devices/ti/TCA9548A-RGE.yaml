@@ -1,0 +1,43 @@
+# 8-channel I2C switch with reset TCA9548A, pin map of the 24-pin RGE
+# (VQFN) package from Table 4-1 "Pin Functions", column "VQFN (RGE)"
+# (SCPS207H page 3), checked against Figure 4-2 "RGE Package, 24-Pin
+# VQFN (Top View)"; all 24 pins match. The thermal pad's connection is
+# not stated in the pin table, so it has no pin here (the footprint
+# still gets the pad). RESET is active low, typed reset. Category: the
+# interface group (no I2C-switch subcategory in the tree).
+schema_version: "0.2"
+kind: device
+id: ti/TCA9548A-RGE
+manufacturer: ti
+category: interface
+family: TCA9548A
+source: ti/SCPS207H
+
+pins:
+  src:
+    - p3 "Table 4-1 "Pin Functions", column "VQFN (RGE)""
+    - p3 "Figure 4-2 "RGE Package, 24-Pin VQFN (Top View)" (cross-check)"
+  "1":  { name: SD0, type: io }
+  "2":  { name: SC0, type: io }
+  "3":  { name: SD1, type: io }
+  "4":  { name: SC1, type: io }
+  "5":  { name: SD2, type: io }
+  "6":  { name: SC2, type: io }
+  "7":  { name: SD3, type: io }
+  "8":  { name: SC3, type: io }
+  "9":  { name: GND, type: ground }
+  "10": { name: SD4, type: io }
+  "11": { name: SC4, type: io }
+  "12": { name: SD5, type: io }
+  "13": { name: SC5, type: io }
+  "14": { name: SD6, type: io }
+  "15": { name: SC6, type: io }
+  "16": { name: SD7, type: io }
+  "17": { name: SC7, type: io }
+  "18": { name: A2, type: input }
+  "19": { name: SCL, type: io }
+  "20": { name: SDA, type: io }
+  "21": { name: VCC, type: power }
+  "22": { name: A0, type: input }
+  "23": { name: A1, type: input }
+  "24": { name: RESET, type: reset }

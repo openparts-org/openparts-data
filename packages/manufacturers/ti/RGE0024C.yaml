@@ -1,0 +1,64 @@
+# TI RGE0024C "VQFN - 1 mm max height" (24 terminals, 0.5 mm pitch; drawing 4224376/C 07/2021), read from the
+# PACKAGE OUTLINE page of SCPS207H (page 33) and its EXAMPLE BOARD LAYOUT
+# (page 34). Millimetres as printed. The body is given only as 3.9/4.1
+# limits (no nominal). Only A "1 MAX" is given: recorded as body_height
+# max (no A2). Thermal pad 25 is "2.1±0.1" square. The side-view
+# "(0.2) TYP" is side-wall metal, not A3, so lead_thickness is left out.
+# pads: LAND PATTERN EXAMPLE 24X (0.6) x (0.24) terminal pads, pad-centre
+# spacing (3.8) both ways -> rows at ±1.9, 20X (0.5) pitch; thermal pad
+# (2.1) square at the centre as "EP" (reference values). Pin 1 at the
+# top of the left edge, counter-clockwise (top view).
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/RGE0024C
+family: qfn
+
+lead_count:
+  value: 24
+  src: p33 "PACKAGE OUTLINE RGE0024C, terminals numbered 1-24 plus thermal pad 25"
+
+source: ti/SCPS207H
+
+pitch: { typ: 0.5 mm, src: 'p33 "PACKAGE OUTLINE RGE0024C, "20X 0.5""' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:  { min: 3.9 mm, max: 4.1 mm, src: 'p33 "PACKAGE OUTLINE RGE0024C, top view 3.9/4.1"' }
+  body_length: { min: 3.9 mm, max: 4.1 mm, src: 'p33 "PACKAGE OUTLINE RGE0024C, top view 3.9/4.1"' }
+  body_height: { max: 1 mm, src: 'p33 "PACKAGE OUTLINE RGE0024C, side view "1 MAX""' }
+  exposed_pad:
+    src:    p33 "PACKAGE OUTLINE RGE0024C, bottom view thermal pad "2.1±0.1""
+    width:  { min: 2 mm, typ: 2.1 mm, max: 2.2 mm }
+    length: { min: 2 mm, typ: 2.1 mm, max: 2.2 mm }
+  standoff: { min: 0 mm, max: 0.05 mm, src: 'p33 "PACKAGE OUTLINE RGE0024C, side view 0.00/0.05"' }
+  lead_width:  { min: 0.18 mm, max: 0.3 mm, src: 'p33 "PACKAGE OUTLINE RGE0024C, "24X 0.3/0.18""' }
+  lead_length: { min: 0.3 mm, max: 0.5 mm, src: 'p33 "PACKAGE OUTLINE RGE0024C, "24X 0.5/0.3""' }
+
+pads:
+  value:
+    - { number: "1", x: -1.9, y: 1.25, width: 0.6, length: 0.24 }
+    - { number: "2", x: -1.9, y: 0.75, width: 0.6, length: 0.24 }
+    - { number: "3", x: -1.9, y: 0.25, width: 0.6, length: 0.24 }
+    - { number: "4", x: -1.9, y: -0.25, width: 0.6, length: 0.24 }
+    - { number: "5", x: -1.9, y: -0.75, width: 0.6, length: 0.24 }
+    - { number: "6", x: -1.9, y: -1.25, width: 0.6, length: 0.24 }
+    - { number: "7", x: -1.25, y: -1.9, width: 0.24, length: 0.6 }
+    - { number: "8", x: -0.75, y: -1.9, width: 0.24, length: 0.6 }
+    - { number: "9", x: -0.25, y: -1.9, width: 0.24, length: 0.6 }
+    - { number: "10", x: 0.25, y: -1.9, width: 0.24, length: 0.6 }
+    - { number: "11", x: 0.75, y: -1.9, width: 0.24, length: 0.6 }
+    - { number: "12", x: 1.25, y: -1.9, width: 0.24, length: 0.6 }
+    - { number: "13", x: 1.9, y: -1.25, width: 0.6, length: 0.24 }
+    - { number: "14", x: 1.9, y: -0.75, width: 0.6, length: 0.24 }
+    - { number: "15", x: 1.9, y: -0.25, width: 0.6, length: 0.24 }
+    - { number: "16", x: 1.9, y: 0.25, width: 0.6, length: 0.24 }
+    - { number: "17", x: 1.9, y: 0.75, width: 0.6, length: 0.24 }
+    - { number: "18", x: 1.9, y: 1.25, width: 0.6, length: 0.24 }
+    - { number: "19", x: 1.25, y: 1.9, width: 0.24, length: 0.6 }
+    - { number: "20", x: 0.75, y: 1.9, width: 0.24, length: 0.6 }
+    - { number: "21", x: 0.25, y: 1.9, width: 0.24, length: 0.6 }
+    - { number: "22", x: -0.25, y: 1.9, width: 0.24, length: 0.6 }
+    - { number: "23", x: -0.75, y: 1.9, width: 0.24, length: 0.6 }
+    - { number: "24", x: -1.25, y: 1.9, width: 0.24, length: 0.6 }
+    - { number: EP, x: 0, y: 0, width: 2.1, length: 2.1 }
+  src: p34 "RGE0024C LAND PATTERN EXAMPLE - 24X (0.6) x (0.24), (3.8) pad-centre span -> ±1.9, 20X (0.5), thermal pad (2.1)"

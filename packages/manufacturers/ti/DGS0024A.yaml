@@ -1,0 +1,66 @@
+# TI DGS0024A "VSSOP - 1.1 mm max height" (24-lead VSSOP, 3.0 mm body,
+# 0.5 mm pitch; drawing 4226366/A 10/2020, "No JEDEC registration" per
+# its note 4), read from the PACKAGE OUTLINE page of SCPS207H (page 39)
+# and its EXAMPLE BOARD LAYOUT (page 40). Millimetres as printed.
+# Family msop (VSSOP). Ranges only: E1 "3.1/2.9" (body_width), D
+# "6.2/6.0" (body_length), span "5.1/4.7 TYP". Only A "1.1 MAX" is
+# given (no A2). Lead thickness only as "(0.15) TYP" (reference value,
+# note 1). No exposed pad is drawn.
+# pads: LAND PATTERN EXAMPLE 24X (1.45) x (0.3), pad-centre row spacing
+# (4.4), 22X (0.5): x = ±2.2, y = ±0.5 x 5.5 = ±2.75 ... (reference
+# values).
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DGS0024A
+family: msop
+lead_count: 24
+source: ti/SCPS207H
+
+pitch: { typ: 0.5 mm, src: 'p39 "PACKAGE OUTLINE DGS0024A (4226366/A), "22X 0.5""' }
+geometry: { type: parametric, generator: msop }
+
+dimensions:
+  body_width: { min: 2.9 mm, max: 3.1 mm, src: 'p39 "DGS0024A, body width "3.1 / 2.9" (datum B)"' }
+  body_length:
+    min: 6 mm
+    max: 6.2 mm
+    src: p39 "DGS0024A, body length "6.2 / 6.0 NOTE 3" (datum A)"
+  lead_thickness:
+    typ: 0.15 mm
+    src: p39 "DGS0024A, "(0.15) TYP" -- reference value per note 1"
+  lead_length:    { min: 0.4 mm, max: 0.7 mm, src: 'p39 "DGS0024A DETAIL A, "0.7 / 0.4""' }
+  overall_width:
+    min: 4.7 mm
+    max: 5.1 mm
+    src: p39 "DGS0024A, lead-tip span "5.1 / 4.7 TYP" (min/max only)"
+  overall_height: { max: 1.1 mm, src: 'p39 "DGS0024A, "1.1 MAX""' }
+  standoff:       { min: 0.05 mm, max: 0.15 mm, src: 'p39 "DGS0024A DETAIL A, "0.15 / 0.05""' }
+  lead_width:     { min: 0.165 mm, max: 0.275 mm, src: 'p39 "DGS0024A, "24X 0.275 / 0.165""' }
+
+pads:
+  value:
+    - { number: "1", x: -2.2, y: 2.75, width: 1.45, length: 0.3 }
+    - { number: "2", x: -2.2, y: 2.25, width: 1.45, length: 0.3 }
+    - { number: "3", x: -2.2, y: 1.75, width: 1.45, length: 0.3 }
+    - { number: "4", x: -2.2, y: 1.25, width: 1.45, length: 0.3 }
+    - { number: "5", x: -2.2, y: 0.75, width: 1.45, length: 0.3 }
+    - { number: "6", x: -2.2, y: 0.25, width: 1.45, length: 0.3 }
+    - { number: "7", x: -2.2, y: -0.25, width: 1.45, length: 0.3 }
+    - { number: "8", x: -2.2, y: -0.75, width: 1.45, length: 0.3 }
+    - { number: "9", x: -2.2, y: -1.25, width: 1.45, length: 0.3 }
+    - { number: "10", x: -2.2, y: -1.75, width: 1.45, length: 0.3 }
+    - { number: "11", x: -2.2, y: -2.25, width: 1.45, length: 0.3 }
+    - { number: "12", x: -2.2, y: -2.75, width: 1.45, length: 0.3 }
+    - { number: "13", x: 2.2, y: -2.75, width: 1.45, length: 0.3 }
+    - { number: "14", x: 2.2, y: -2.25, width: 1.45, length: 0.3 }
+    - { number: "15", x: 2.2, y: -1.75, width: 1.45, length: 0.3 }
+    - { number: "16", x: 2.2, y: -1.25, width: 1.45, length: 0.3 }
+    - { number: "17", x: 2.2, y: -0.75, width: 1.45, length: 0.3 }
+    - { number: "18", x: 2.2, y: -0.25, width: 1.45, length: 0.3 }
+    - { number: "19", x: 2.2, y: 0.25, width: 1.45, length: 0.3 }
+    - { number: "20", x: 2.2, y: 0.75, width: 1.45, length: 0.3 }
+    - { number: "21", x: 2.2, y: 1.25, width: 1.45, length: 0.3 }
+    - { number: "22", x: 2.2, y: 1.75, width: 1.45, length: 0.3 }
+    - { number: "23", x: 2.2, y: 2.25, width: 1.45, length: 0.3 }
+    - { number: "24", x: 2.2, y: 2.75, width: 1.45, length: 0.3 }
+  src: p40 "DGS0024A LAND PATTERN EXAMPLE - 24X (1.45) x (0.3), (4.4) rows -> x ±2.2, 22X (0.5) pitch"

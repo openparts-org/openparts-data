@@ -1,0 +1,41 @@
+# 16-bit I2C/SMBus I/O expander TCA9555, pin map of the 24-pin DB/PW
+# (TSSOP) packages from the "Pin Functions" table, column "DB, PW"
+# (SCPS200E page 4), checked against the "DB, PW Package 24-Pin TSSOP
+# Top View" figure; all 24 pins match. Types from the TYPE column: SCL
+# and SDA are printed "Input" there and kept so; INT "Output"; Pxx I/O.
+schema_version: "0.2"
+kind: device
+id: ti/TCA9555-PW
+manufacturer: ti
+category: io_expander
+family: TCA9555
+source: ti/SCPS200E
+
+pins:
+  src:
+    - p4 ""Pin Functions" table, column "DB, PW""
+    - p4 ""DB, PW Package 24-Pin TSSOP Top View" figure (cross-check)"
+  "1":  { name: INT, type: output }
+  "2":  { name: A1, type: input }
+  "3":  { name: A2, type: input }
+  "4":  { name: P00, type: io }
+  "5":  { name: P01, type: io }
+  "6":  { name: P02, type: io }
+  "7":  { name: P03, type: io }
+  "8":  { name: P04, type: io }
+  "9":  { name: P05, type: io }
+  "10": { name: P06, type: io }
+  "11": { name: P07, type: io }
+  "12": { name: GND, type: ground }
+  "13": { name: P10, type: io }
+  "14": { name: P11, type: io }
+  "15": { name: P12, type: io }
+  "16": { name: P13, type: io }
+  "17": { name: P14, type: io }
+  "18": { name: P15, type: io }
+  "19": { name: P16, type: io }
+  "20": { name: P17, type: io }
+  "21": { name: A0, type: input }
+  "22": { name: SCL, type: input }
+  "23": { name: SDA, type: input }
+  "24": { name: VCC, type: power }

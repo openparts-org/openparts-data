@@ -1,0 +1,71 @@
+# TI PW0024A "TSSOP - 1.2 mm max height" (24-lead TSSOP, 4.4 mm body,
+# 0.65 mm pitch; drawing 4220208/A 02/2017, JEDEC MO-153 per its note
+# 5), read from the PACKAGE OUTLINE page of SCPS207H (page 36) and its
+# EXAMPLE BOARD LAYOUT (page 37). The same drawing in SCPS200E page 41
+# was compared with pdftotext -layout after stripping headers/footers:
+# identical text. Millimetres as printed.
+# Ranges only for the body: E1 "4.5/4.3", D "7.9/7.7"; span "6.6/6.2
+# TYP" recorded as min/max. Only A "1.2 MAX" is given (no A2). Lead
+# thickness is printed only as "(0.15) TYP", a reference value per
+# note 1 (as in manufacturers/ti/PW0014A).
+# pads: LAND PATTERN EXAMPLE 24X (1.5) x (0.45), pad-centre row spacing
+# (5.8), 22X (0.65): x = ±2.9, y = ±0.65 x 5.5 = ±3.575 ... (reference
+# values). Pins 1-12 down the left edge, 13-24 up the right.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/PW0024A
+family: tssop
+lead_count: 24
+source: ti/SCPS207H
+
+pitch: { typ: 0.65 mm, src: 'p36 "PACKAGE OUTLINE PW0024A (4220208/A), "22X 0.65" (basic)"' }
+geometry: { type: parametric, generator: tssop }
+
+dimensions:
+  body_width:
+    min: 4.3 mm
+    max: 4.5 mm
+    src: p36 "PW0024A, body width "4.5 / 4.3 NOTE 4" (datum B)"
+  body_length:
+    min: 7.7 mm
+    max: 7.9 mm
+    src: p36 "PW0024A, body length "7.9 / 7.7 NOTE 3" (datum A)"
+  lead_thickness:
+    typ: 0.15 mm
+    src: p36 "PW0024A end view, "(0.15) TYP" -- reference value per note 1"
+  lead_length:    { min: 0.5 mm, max: 0.75 mm, src: 'p36 "PW0024A DETAIL A, "0.75 / 0.50""' }
+  overall_width:
+    min: 6.2 mm
+    max: 6.6 mm
+    src: p36 "PW0024A, lead-tip span "6.6 / 6.2 TYP" (min/max only)"
+  overall_height: { max: 1.2 mm, src: 'p36 "PW0024A side view, "1.2 MAX""' }
+  standoff:       { min: 0.05 mm, max: 0.15 mm, src: 'p36 "PW0024A DETAIL A, "0.15 / 0.05""' }
+  lead_width:     { min: 0.19 mm, max: 0.3 mm, src: 'p36 "PW0024A, "24X 0.30 / 0.19""' }
+
+pads:
+  value:
+    - { number: "1", x: -2.9, y: 3.575, width: 1.5, length: 0.45 }
+    - { number: "2", x: -2.9, y: 2.925, width: 1.5, length: 0.45 }
+    - { number: "3", x: -2.9, y: 2.275, width: 1.5, length: 0.45 }
+    - { number: "4", x: -2.9, y: 1.625, width: 1.5, length: 0.45 }
+    - { number: "5", x: -2.9, y: 0.975, width: 1.5, length: 0.45 }
+    - { number: "6", x: -2.9, y: 0.325, width: 1.5, length: 0.45 }
+    - { number: "7", x: -2.9, y: -0.325, width: 1.5, length: 0.45 }
+    - { number: "8", x: -2.9, y: -0.975, width: 1.5, length: 0.45 }
+    - { number: "9", x: -2.9, y: -1.625, width: 1.5, length: 0.45 }
+    - { number: "10", x: -2.9, y: -2.275, width: 1.5, length: 0.45 }
+    - { number: "11", x: -2.9, y: -2.925, width: 1.5, length: 0.45 }
+    - { number: "12", x: -2.9, y: -3.575, width: 1.5, length: 0.45 }
+    - { number: "13", x: 2.9, y: -3.575, width: 1.5, length: 0.45 }
+    - { number: "14", x: 2.9, y: -2.925, width: 1.5, length: 0.45 }
+    - { number: "15", x: 2.9, y: -2.275, width: 1.5, length: 0.45 }
+    - { number: "16", x: 2.9, y: -1.625, width: 1.5, length: 0.45 }
+    - { number: "17", x: 2.9, y: -0.975, width: 1.5, length: 0.45 }
+    - { number: "18", x: 2.9, y: -0.325, width: 1.5, length: 0.45 }
+    - { number: "19", x: 2.9, y: 0.325, width: 1.5, length: 0.45 }
+    - { number: "20", x: 2.9, y: 0.975, width: 1.5, length: 0.45 }
+    - { number: "21", x: 2.9, y: 1.625, width: 1.5, length: 0.45 }
+    - { number: "22", x: 2.9, y: 2.275, width: 1.5, length: 0.45 }
+    - { number: "23", x: 2.9, y: 2.925, width: 1.5, length: 0.45 }
+    - { number: "24", x: 2.9, y: 3.575, width: 1.5, length: 0.45 }
+  src: p37 "PW0024A LAND PATTERN EXAMPLE - 24X (1.5) x (0.45), (5.8) rows -> x ±2.9, 22X (0.65) pitch"

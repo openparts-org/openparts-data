@@ -1,0 +1,28 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SCPS200E
+# (page 33): row "TCA9555RTWR", Package "WQFN (RTW) | 24", Status "Active".
+# Lifecycle read from the same row's Status column (TI's own addendum
+# inside the datasheet, dated 31-Oct-2025).
+# Package: WQFN (RTW) | 24, outline RTW0024B (4219135/B) on page 46 -> manufacturers/ti/RTW0024B.
+schema_version: "0.2"
+kind: part
+id: ti/TCA9555RTWR
+manufacturer: ti
+mpn: TCA9555RTWR
+device: ti/TCA9555-RGE
+
+package:
+  value: manufacturers/ti/RTW0024B
+  src:
+    - p33 "PACKAGE OPTION ADDENDUM, row TCA9555RTWR, Package column "WQFN (RTW) | 24""
+    - p46 "PACKAGE OUTLINE RTW0024B (4219135/B)"
+
+sources: [ti/SCPS200E]
+source: ti/SCPS200E
+
+existence:
+  status: verified
+  src: p33 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TCA9555RTWR"
+
+lifecycle:
+  status: active
+  src: p33 "PACKAGE OPTION ADDENDUM, row TCA9555RTWR, Status column "Active""

@@ -1,0 +1,28 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SCPS200E
+# (page 33): row "TCA9555RGER", Package "VQFN (RGE) | 24", Status "Active".
+# Lifecycle read from the same row's Status column (TI's own addendum
+# inside the datasheet, dated 31-Oct-2025).
+# Package: VQFN (RGE) | 24, outline RGE0024B (4219013/A) on page 38 -> manufacturers/ti/RGE0024B.
+schema_version: "0.2"
+kind: part
+id: ti/TCA9555RGER
+manufacturer: ti
+mpn: TCA9555RGER
+device: ti/TCA9555-RGE
+
+package:
+  value: manufacturers/ti/RGE0024B
+  src:
+    - p33 "PACKAGE OPTION ADDENDUM, row TCA9555RGER, Package column "VQFN (RGE) | 24""
+    - p38 "PACKAGE OUTLINE RGE0024B (4219013/A)"
+
+sources: [ti/SCPS200E]
+source: ti/SCPS200E
+
+existence:
+  status: verified
+  src: p33 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TCA9555RGER"
+
+lifecycle:
+  status: active
+  src: p33 "PACKAGE OPTION ADDENDUM, row TCA9555RGER, Status column "Active""

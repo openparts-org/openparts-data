@@ -1,0 +1,70 @@
+# TI RTW0024B "WQFN - 0.8 mm max height" (24 terminals, 0.5 mm pitch; drawing 4219135/B 11/2016), read from the
+# PACKAGE OUTLINE page of SCPS200E (page 46) and its EXAMPLE BOARD LAYOUT
+# (page 47). Millimetres as printed. The body is given only as 3.85/4.15
+# limits (no nominal). Only A "0.8 MAX" is given: recorded as body_height
+# max (no A2). Thermal pad 25 is "2.45±0.1" square. The side-view
+# "(0.2) TYP" is side-wall metal, not A3, so lead_thickness is left out.
+# pads: LAND PATTERN EXAMPLE 24X (0.6) x (0.24) terminal pads, pad-centre
+# spacing (3.8) both ways -> rows at ±1.9, 20X (0.5) pitch; thermal pad
+# (2.45) square at the centre as "EP" (reference values). Pin 1 at the
+# top of the left edge, counter-clockwise (top view).
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/RTW0024B
+family: qfn
+
+lead_count:
+  value: 24
+  src: p46 "PACKAGE OUTLINE RTW0024B, terminals numbered 1-24 plus thermal pad 25"
+
+source: ti/SCPS200E
+
+pitch: { typ: 0.5 mm, src: 'p46 "PACKAGE OUTLINE RTW0024B, "20X 0.5""' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:
+    min: 3.85 mm
+    max: 4.15 mm
+    src: p46 "PACKAGE OUTLINE RTW0024B, top view 3.85/4.15"
+  body_length:
+    min: 3.85 mm
+    max: 4.15 mm
+    src: p46 "PACKAGE OUTLINE RTW0024B, top view 3.85/4.15"
+  body_height: { max: 0.8 mm, src: 'p46 "PACKAGE OUTLINE RTW0024B, side view "0.8 MAX""' }
+  exposed_pad:
+    src:    p46 "PACKAGE OUTLINE RTW0024B, bottom view thermal pad "2.45±0.1""
+    width:  { min: 2.35 mm, typ: 2.45 mm, max: 2.55 mm }
+    length: { min: 2.35 mm, typ: 2.45 mm, max: 2.55 mm }
+  standoff: { min: 0 mm, max: 0.05 mm, src: 'p46 "PACKAGE OUTLINE RTW0024B, side view 0.00/0.05"' }
+  lead_width:  { min: 0.18 mm, max: 0.3 mm, src: 'p46 "PACKAGE OUTLINE RTW0024B, "24X 0.3/0.18""' }
+  lead_length: { min: 0.3 mm, max: 0.5 mm, src: 'p46 "PACKAGE OUTLINE RTW0024B, "24X 0.5/0.3""' }
+
+pads:
+  value:
+    - { number: "1", x: -1.9, y: 1.25, width: 0.6, length: 0.24 }
+    - { number: "2", x: -1.9, y: 0.75, width: 0.6, length: 0.24 }
+    - { number: "3", x: -1.9, y: 0.25, width: 0.6, length: 0.24 }
+    - { number: "4", x: -1.9, y: -0.25, width: 0.6, length: 0.24 }
+    - { number: "5", x: -1.9, y: -0.75, width: 0.6, length: 0.24 }
+    - { number: "6", x: -1.9, y: -1.25, width: 0.6, length: 0.24 }
+    - { number: "7", x: -1.25, y: -1.9, width: 0.24, length: 0.6 }
+    - { number: "8", x: -0.75, y: -1.9, width: 0.24, length: 0.6 }
+    - { number: "9", x: -0.25, y: -1.9, width: 0.24, length: 0.6 }
+    - { number: "10", x: 0.25, y: -1.9, width: 0.24, length: 0.6 }
+    - { number: "11", x: 0.75, y: -1.9, width: 0.24, length: 0.6 }
+    - { number: "12", x: 1.25, y: -1.9, width: 0.24, length: 0.6 }
+    - { number: "13", x: 1.9, y: -1.25, width: 0.6, length: 0.24 }
+    - { number: "14", x: 1.9, y: -0.75, width: 0.6, length: 0.24 }
+    - { number: "15", x: 1.9, y: -0.25, width: 0.6, length: 0.24 }
+    - { number: "16", x: 1.9, y: 0.25, width: 0.6, length: 0.24 }
+    - { number: "17", x: 1.9, y: 0.75, width: 0.6, length: 0.24 }
+    - { number: "18", x: 1.9, y: 1.25, width: 0.6, length: 0.24 }
+    - { number: "19", x: 1.25, y: 1.9, width: 0.24, length: 0.6 }
+    - { number: "20", x: 0.75, y: 1.9, width: 0.24, length: 0.6 }
+    - { number: "21", x: 0.25, y: 1.9, width: 0.24, length: 0.6 }
+    - { number: "22", x: -0.25, y: 1.9, width: 0.24, length: 0.6 }
+    - { number: "23", x: -0.75, y: 1.9, width: 0.24, length: 0.6 }
+    - { number: "24", x: -1.25, y: 1.9, width: 0.24, length: 0.6 }
+    - { number: EP, x: 0, y: 0, width: 2.45, length: 2.45 }
+  src: p47 "RTW0024B LAND PATTERN EXAMPLE - 24X (0.6) x (0.24), (3.8) pad-centre span -> ±1.9, 20X (0.5), thermal pad (2.45)"

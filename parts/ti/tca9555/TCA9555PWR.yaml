@@ -1,0 +1,30 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SCPS200E
+# (page 33): row "TCA9555PWR", Package "TSSOP (PW) | 24", Status "Active".
+# Lifecycle read from the same row's Status column (TI's own addendum
+# inside the datasheet, dated 31-Oct-2025).
+# Package: TSSOP (PW) | 24, outline PW0024A (4220208/A) on page 41 -> manufacturers/ti/PW0024A
+# (read from SCPS207H page 36; the SCPS200E outline page was diffed
+# against it with pdftotext -layout: identical text).
+schema_version: "0.2"
+kind: part
+id: ti/TCA9555PWR
+manufacturer: ti
+mpn: TCA9555PWR
+device: ti/TCA9555-PW
+
+package:
+  value: manufacturers/ti/PW0024A
+  src:
+    - p33 "PACKAGE OPTION ADDENDUM, row TCA9555PWR, Package column "TSSOP (PW) | 24""
+    - p41 "PACKAGE OUTLINE PW0024A (4220208/A)"
+
+sources: [ti/SCPS200E, ti/SCPS207H]
+source: ti/SCPS200E
+
+existence:
+  status: verified
+  src: p33 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TCA9555PWR"
+
+lifecycle:
+  status: active
+  src: p33 "PACKAGE OPTION ADDENDUM, row TCA9555PWR, Status column "Active""

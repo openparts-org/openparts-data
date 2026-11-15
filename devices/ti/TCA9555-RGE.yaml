@@ -1,0 +1,44 @@
+# 16-bit I2C/SMBus I/O expander TCA9555, pin map of the 24-pin RTW
+# (WQFN) and RGE (VQFN) packages from the "Pin Functions" table, column
+# "RTW, RGE" (SCPS200E page 4), checked against the "RTW, RGE Package
+# 24-Pin WQFN, VQFN with Exposed Thermal Pad Top View" figure; all 24
+# pins match. The thermal pad "must be connected as a secondary ground
+# or left electrically open" (figure note) -- no single connection, so
+# no EP pin (the footprint still gets the pad). SCL/SDA typed input as
+# printed in the TYPE column.
+schema_version: "0.2"
+kind: device
+id: ti/TCA9555-RGE
+manufacturer: ti
+category: io_expander
+family: TCA9555
+source: ti/SCPS200E
+
+pins:
+  src:
+    - p4 ""Pin Functions" table, column "RTW, RGE""
+    - p4 ""RTW, RGE Package 24-Pin WQFN, VQFN" top-view figure (cross-check)"
+  "1":  { name: P00, type: io }
+  "2":  { name: P01, type: io }
+  "3":  { name: P02, type: io }
+  "4":  { name: P03, type: io }
+  "5":  { name: P04, type: io }
+  "6":  { name: P05, type: io }
+  "7":  { name: P06, type: io }
+  "8":  { name: P07, type: io }
+  "9":  { name: GND, type: ground }
+  "10": { name: P10, type: io }
+  "11": { name: P11, type: io }
+  "12": { name: P12, type: io }
+  "13": { name: P13, type: io }
+  "14": { name: P14, type: io }
+  "15": { name: P15, type: io }
+  "16": { name: P16, type: io }
+  "17": { name: P17, type: io }
+  "18": { name: A0, type: input }
+  "19": { name: SCL, type: input }
+  "20": { name: SDA, type: input }
+  "21": { name: VCC, type: power }
+  "22": { name: INT, type: output }
+  "23": { name: A1, type: input }
+  "24": { name: A2, type: input }

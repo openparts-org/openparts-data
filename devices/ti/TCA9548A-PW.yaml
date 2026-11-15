@@ -1,0 +1,43 @@
+# 8-channel I2C switch with reset TCA9548A, pin map of the 24-pin PW
+# (TSSOP) and DGS (VSSOP) packages from Table 4-1 "Pin Functions",
+# column "TSSOP, VSSOP (PW, DGS)" (SCPS207H page 3), checked against
+# Figure 4-1 "PW, DGS Package, 24-Pin TSSOP, VSSOP (Top View)"; all 24
+# pins match. RESET is active low ("Active-low reset input") and typed
+# reset; SDx/SCx/SDA/SCL are I/O. Category: the interface group (an I2C
+# switch has no subcategory of its own in the tree).
+schema_version: "0.2"
+kind: device
+id: ti/TCA9548A-PW
+manufacturer: ti
+category: interface
+family: TCA9548A
+source: ti/SCPS207H
+
+pins:
+  src:
+    - p3 "Table 4-1 "Pin Functions", column "TSSOP, VSSOP (PW, DGS)""
+    - p3 "Figure 4-1 "PW, DGS Package, 24-Pin TSSOP, VSSOP (Top View)" (cross-check)"
+  "1":  { name: A0, type: input }
+  "2":  { name: A1, type: input }
+  "3":  { name: RESET, type: reset }
+  "4":  { name: SD0, type: io }
+  "5":  { name: SC0, type: io }
+  "6":  { name: SD1, type: io }
+  "7":  { name: SC1, type: io }
+  "8":  { name: SD2, type: io }
+  "9":  { name: SC2, type: io }
+  "10": { name: SD3, type: io }
+  "11": { name: SC3, type: io }
+  "12": { name: GND, type: ground }
+  "13": { name: SD4, type: io }
+  "14": { name: SC4, type: io }
+  "15": { name: SD5, type: io }
+  "16": { name: SC5, type: io }
+  "17": { name: SD6, type: io }
+  "18": { name: SC6, type: io }
+  "19": { name: SD7, type: io }
+  "20": { name: SC7, type: io }
+  "21": { name: A2, type: input }
+  "22": { name: SCL, type: io }
+  "23": { name: SDA, type: io }
+  "24": { name: VCC, type: power }

@@ -1,0 +1,28 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SCPS207H
+# (page 28): row "TCA9548ARGER", Package "VQFN (RGE) | 24", Status "Active".
+# Lifecycle read from the same row's Status column (TI's own addendum
+# inside the datasheet, dated 8-Nov-2025).
+# Package: VQFN (RGE) | 24, outline RGE0024C (4224376/C) on page 33 -> manufacturers/ti/RGE0024C.
+schema_version: "0.2"
+kind: part
+id: ti/TCA9548ARGER
+manufacturer: ti
+mpn: TCA9548ARGER
+device: ti/TCA9548A-RGE
+
+package:
+  value: manufacturers/ti/RGE0024C
+  src:
+    - p28 "PACKAGE OPTION ADDENDUM, row TCA9548ARGER, Package column "VQFN (RGE) | 24""
+    - p33 "PACKAGE OUTLINE RGE0024C (4224376/C)"
+
+sources: [ti/SCPS207H]
+source: ti/SCPS207H
+
+existence:
+  status: verified
+  src: p28 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TCA9548ARGER"
+
+lifecycle:
+  status: active
+  src: p28 "PACKAGE OPTION ADDENDUM, row TCA9548ARGER, Status column "Active""

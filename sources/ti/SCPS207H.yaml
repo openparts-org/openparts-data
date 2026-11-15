@@ -1,0 +1,19 @@
+# Official TI datasheet "TCA9548A Low-Voltage 8-Channel I2C Switch with
+# Reset". Downloaded 2026-11-16 with curl from the TI symlink URL below;
+# revision read from the page header "SCPS207H - MAY 2012 - REVISED
+# SEPTEMBER 2024". 42 PDF pages, read with pdftotext -layout (the
+# RGE0024C land pattern page 34 was also rendered). The PACKAGE OPTION
+# ADDENDUM (pages 28-29) is dated 8-Nov-2025. Outlines: RGE0024C
+# (4224376/C, page 33), PW0024A (4220208/A 02/2017, page 36), DGS0024A
+# (4226366/A 10/2020, page 39). Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: ti/SCPS207H
+sha256: 2137822fd7128945ea44e83f4e100a932b30964d763715eeffe217ee6080a2dc
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tca9548a.pdf
+publisher: ti
+document_id: SCPS207H
+document_type: datasheet
+revision: SCPS207H
+date: 2024-09
