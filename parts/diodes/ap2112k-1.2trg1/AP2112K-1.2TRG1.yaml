@@ -1,0 +1,38 @@
+# MPN confirmed from the "Ordering Information" table (DS39724 Rev 2-2
+# page 12): SOT25 | -40 to +85C | 1.2V | AP2112K-1.2TRG1 | G3L | 3000/7" Tape &
+# Reel. Same Device (diodes/AP2112K, SOT25 pinout) and Package as
+# AP2112K-3.3TRG1. Dropout values from the "AP2112-1.2 Electrical
+# Characteristics" table (page 4), VDROP rows (typ/max as printed).
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: diodes/AP2112K-1.2TRG1
+manufacturer: diodes
+mpn: AP2112K-1.2TRG1
+device: diodes/AP2112K
+
+package:
+  value: standards/SOT25-3.00x1.60-P0.95-DIODES
+  src: p14 ""Package Outline Dimensions" SOT25"
+
+sources: [diodes/DS39724]
+source: diodes/DS39724
+
+existence:
+  status: verified
+  src: p12 ""Ordering Information" table, SOT25 1.2V row "AP2112K-1.2TRG1""
+
+lifecycle: { status: unknown }
+
+parameters:
+  output_voltage: { typ: 1.2 V, src: 'p12 "Ordering Information, SOT25, 1.2V, AP2112K-1.2TRG1"' }
+  dropout_voltage:
+    - typ: 1000 mV
+      max: 1300 mV
+      at: { IOUT: 600 mA }
+      src: p4 "AP2112-1.2 Elec. Char., VDROP"
+    - typ: 1000 mV
+      max: 1300 mV
+      at: { IOUT: 300 mA }
+      src: p4 "AP2112-1.2 Elec. Char., VDROP"
+    - { typ: 1000 mV, max: 1300 mV, at: { IOUT: 10 mA }, src: 'p4 "AP2112-1.2 Elec. Char., VDROP"' }
