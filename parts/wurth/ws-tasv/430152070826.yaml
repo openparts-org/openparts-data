@@ -24,7 +24,37 @@ sources:
   - wurth/430182070816-DS
   - wurth/TASV_6X6_SMD-product-page
 
+parameters:
+  actuation_force:
+    nominal: 260
+    unit: gf
+  travel:
+    nominal: 0.25
+    unit: mm
+  rated_voltage:
+    nominal: 12
+    unit: V
+  rated_current:
+    nominal: 50
+    unit: mA
+
 provenance:
+  "/parameters/actuation_force":
+    - source: wurth/430152070826-DS
+      page: 2
+      locator: "Mechanical Properties, Operation Force: 260 g, Tol. ±50g"
+  "/parameters/travel":
+    - source: wurth/430152070826-DS
+      page: 2
+      locator: "Mechanical Properties, Stroke: 0.25 mm, Tol. ±0.15mm"
+  "/parameters/rated_voltage":
+    - source: wurth/430152070826-DS
+      page: 2
+      locator: "Electrical Properties, Rated Voltage VR: 12 V (DC)"
+  "/parameters/rated_current":
+    - source: wurth/430152070826-DS
+      page: 2
+      locator: "Electrical Properties, Rated Current IR: 50 mA"
   "/existence":
     - source: wurth/430152070826-DS
       page: 1
