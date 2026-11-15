@@ -1,0 +1,65 @@
+# CC2530 (F32/F64/F128/F256: same pinout) 2.4 GHz IEEE 802.15.4 / ZigBee
+# system-on-chip with an 8051 MCU core, RHA (VQFN-40 6x6) pinout. SWRS081B
+# Table 1 "Pin Descriptions" (PDF page 18) checked against Figure 7 "Pinout
+# Top View" (PDF page 17).
+# Types are this dataset's reading of the PIN TYPE column: Digital I/O ->
+# io (P2_3/P2_4 also Analog I/O for the 32.768 kHz XOSC: io), Digital input
+# RESET_N -> reset, Analog I/O and RF I/O -> analog, Power -> power except
+# DCOUPL (1.8 V decoupling, "Do not use for supplying external circuits")
+# -> power_out. Pins 1-4 "GND", Unused pins, "Connect to GND" -> ground.
+# GND ground pad ("—", must be connected to a solid ground plane; Figure 7
+# note: the ground connection for the chip) -> key "EP", GND, ground.
+# Alternate functions are not recorded.
+schema_version: "0.2"
+kind: device
+id: ti/CC2530
+manufacturer: ti
+category: microcontroller
+family: CC2530
+source: ti/SWRS081B
+
+pins:
+  src:
+    - p18 "Table 1. Pin Descriptions"
+    - p17 "Figure 7. Pinout Top View, and its note on the exposed ground pad"
+  "1":  { name: GND, type: ground }
+  "2":  { name: GND, type: ground }
+  "3":  { name: GND, type: ground }
+  "4":  { name: GND, type: ground }
+  "5":  { name: P1_5, type: io }
+  "6":  { name: P1_4, type: io }
+  "7":  { name: P1_3, type: io }
+  "8":  { name: P1_2, type: io }
+  "9":  { name: P1_1, type: io }
+  "10": { name: DVDD2, type: power }
+  "11": { name: P1_0, type: io }
+  "12": { name: P0_7, type: io }
+  "13": { name: P0_6, type: io }
+  "14": { name: P0_5, type: io }
+  "15": { name: P0_4, type: io }
+  "16": { name: P0_3, type: io }
+  "17": { name: P0_2, type: io }
+  "18": { name: P0_1, type: io }
+  "19": { name: P0_0, type: io }
+  "20": { name: RESET_N, type: reset }
+  "21": { name: AVDD5, type: power }
+  "22": { name: XOSC_Q1, type: analog }
+  "23": { name: XOSC_Q2, type: analog }
+  "24": { name: AVDD3, type: power }
+  "25": { name: RF_P, type: analog }
+  "26": { name: RF_N, type: analog }
+  "27": { name: AVDD2, type: power }
+  "28": { name: AVDD1, type: power }
+  "29": { name: AVDD4, type: power }
+  "30": { name: RBIAS, type: analog }
+  "31": { name: AVDD6, type: power }
+  "32": { name: P2_4/XOSC32K_Q1, type: io }
+  "33": { name: P2_3/XOSC32K_Q2, type: io }
+  "34": { name: P2_2, type: io }
+  "35": { name: P2_1, type: io }
+  "36": { name: P2_0, type: io }
+  "37": { name: P1_7, type: io }
+  "38": { name: P1_6, type: io }
+  "39": { name: DVDD1, type: power }
+  "40": { name: DCOUPL, type: power_out }
+  EP:   { name: GND, type: ground }

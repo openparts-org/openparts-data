@@ -1,0 +1,20 @@
+# Official TI datasheet "CC2530 datasheet (CC2530F32/F64/F128/F256)" (SWRS081B), 38 pages,
+# downloaded 2026-11-16 with curl from the URL below (file checked: PDF,
+# PDF Keywords name SWRS081B). Read with pdftotext -layout; pinout figures and
+# the package outline / example board layout pages were rendered and read
+# as images. The PACKAGE OPTION ADDENDUM inside this PDF is dated
+# 9-Nov-2025, PDF pages 29-31 (newer than the datasheet revision).
+# Revision B, "REVISED FEBRUARY 2011" (page headers). Page numbers are PDF
+# page indices (= the printed page numbers on numbered pages). Appended
+# outline RHA0040H (4219055/B 08/22/2019) at PDF pages 35-37.
+schema_version: "0.2"
+kind: source
+id: ti/SWRS081B
+sha256: 4d2f488c810ca32a258b3d653135961df208c77c34e8f4c7e8c8789502e50906
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/cc2530.pdf
+publisher: ti
+document_id: SWRS081B
+document_type: datasheet
+revision: B
+date: 2011-02

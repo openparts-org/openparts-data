@@ -1,0 +1,20 @@
+# CC2530F32RHAT: SWRS081B PACKAGE OPTION ADDENDUM (PDF page 29) row "CC2530F32RHAT
+# Active  Production  VQFN (RHA) | 40, SMALL T&R" -- MPN printed verbatim in TI's orderable
+# list (existence verified); lifecycle "Active" is TI's own Status column.
+# Package RHA = outline RHA0040H (PDF page 35). The addendum's ".A"/".B"
+# suffixed rows (single lead-finish variants) are not added.
+schema_version: "0.2"
+kind: part
+id: ti/CC2530F32RHAT
+manufacturer: ti
+mpn: CC2530F32RHAT
+device: ti/CC2530
+package: { value: manufacturers/ti/RHA0040H, src: p35 "RHA0040H package outline" }
+sources: [ti/SWRS081B]
+source: ti/SWRS081B
+
+existence: { status: verified, src: 'p29 "Package option addendum, row "CC2530F32RHAT""' }
+
+lifecycle:
+  status: active
+  src: p29 "Package option addendum, row "CC2530F32RHAT", Status "Active""

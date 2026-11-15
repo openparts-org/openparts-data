@@ -1,0 +1,84 @@
+# TI RHA0040H, VQFN-40, 6x6 mm, 0.5 mm pitch, 1 mm max height. Outline drawing
+# RHA0040H (4219055/B 08/22/2019) and its EXAMPLE BOARD LAYOUT, read from the rendered drawings
+# in SWRS081B PDF pages 35-36. Used by CC2530 (SWRS081B) and CC2541 (SWRS110D, token-identical outline pages 34-36).
+#
+# Mapping: D/E limits -> body_width/body_length (no nominal printed);
+# A (no A2) -> body_height; A1 -> standoff; b -> lead_width; L ->
+# lead_length; thermal pad +-0.1 -> exposed_pad. Bottom view numbers
+# 1..10 up the left edge (bottom view), thermal pad "41"; the standard
+# CCW top-view order (pin 1 top of the left edge).
+# pads: the EXAMPLE BOARD LAYOUT (all values in parentheses = reference
+# values in TI's notation): 40X (0.6) x (0.25) terminal lands at 0.5 pitch,
+# the opposite rows' land centre lines (5.8) apart (the dimension's
+# extension lines run through the land centres), thermal-pad land
+# (4.5) square at the centre. Coordinates: top view, X right, Y up,
+# origin at the package centre; land centre = 5.8 / 2 = 2.9; row
+# positions +-(k - 4.5) x 0.5. Vias of the example are not recorded.
+# Left out: "(0.1)" side-wall and "(0.2) TYP" metal (not stated to be A3),
+# the optional-terminal detail (0.3/0.5 x 0.2/0.3), "2X 4.5" row spans.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/RHA0040H
+family: qfn
+lead_count: 40
+source: ti/SWRS081B
+
+pitch: { typ: 0.5 mm, src: 'p35 "PACKAGE OUTLINE RHA0040H, bottom view, basic pitch 0.5"' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:  { min: 5.9 mm, max: 6.1 mm, src: 'p35 "PACKAGE OUTLINE RHA0040H, top view 6.1/5.9"' }
+  body_length: { min: 5.9 mm, max: 6.1 mm, src: 'p35 "PACKAGE OUTLINE RHA0040H, top view 6.1/5.9"' }
+  body_height: { max: 1 mm, src: 'p35 "PACKAGE OUTLINE RHA0040H, side view 1 MAX"' }
+  exposed_pad:
+    src:    p35 "PACKAGE OUTLINE RHA0040H, bottom view, exposed thermal pad square 4.5+-0.1"
+    width:  { min: 4.4 mm, typ: 4.5 mm, max: 4.6 mm }
+    length: { min: 4.4 mm, typ: 4.5 mm, max: 4.6 mm }
+  standoff: { min: 0 mm, max: 0.05 mm, src: 'p35 "PACKAGE OUTLINE RHA0040H, side view 0.05/0.00"' }
+  lead_width:  { min: 0.2 mm, max: 0.3 mm, src: 'p35 "PACKAGE OUTLINE RHA0040H, 40X 0.3/0.2"' }
+  lead_length: { min: 0.3 mm, max: 0.5 mm, src: 'p35 "PACKAGE OUTLINE RHA0040H, 40X 0.5/0.3"' }
+
+pads:
+  value:
+    - { number: "1", x: -2.9, y: 2.25, width: 0.6, length: 0.25 }
+    - { number: "2", x: -2.9, y: 1.75, width: 0.6, length: 0.25 }
+    - { number: "3", x: -2.9, y: 1.25, width: 0.6, length: 0.25 }
+    - { number: "4", x: -2.9, y: 0.75, width: 0.6, length: 0.25 }
+    - { number: "5", x: -2.9, y: 0.25, width: 0.6, length: 0.25 }
+    - { number: "6", x: -2.9, y: -0.25, width: 0.6, length: 0.25 }
+    - { number: "7", x: -2.9, y: -0.75, width: 0.6, length: 0.25 }
+    - { number: "8", x: -2.9, y: -1.25, width: 0.6, length: 0.25 }
+    - { number: "9", x: -2.9, y: -1.75, width: 0.6, length: 0.25 }
+    - { number: "10", x: -2.9, y: -2.25, width: 0.6, length: 0.25 }
+    - { number: "11", x: -2.25, y: -2.9, width: 0.25, length: 0.6 }
+    - { number: "12", x: -1.75, y: -2.9, width: 0.25, length: 0.6 }
+    - { number: "13", x: -1.25, y: -2.9, width: 0.25, length: 0.6 }
+    - { number: "14", x: -0.75, y: -2.9, width: 0.25, length: 0.6 }
+    - { number: "15", x: -0.25, y: -2.9, width: 0.25, length: 0.6 }
+    - { number: "16", x: 0.25, y: -2.9, width: 0.25, length: 0.6 }
+    - { number: "17", x: 0.75, y: -2.9, width: 0.25, length: 0.6 }
+    - { number: "18", x: 1.25, y: -2.9, width: 0.25, length: 0.6 }
+    - { number: "19", x: 1.75, y: -2.9, width: 0.25, length: 0.6 }
+    - { number: "20", x: 2.25, y: -2.9, width: 0.25, length: 0.6 }
+    - { number: "21", x: 2.9, y: -2.25, width: 0.6, length: 0.25 }
+    - { number: "22", x: 2.9, y: -1.75, width: 0.6, length: 0.25 }
+    - { number: "23", x: 2.9, y: -1.25, width: 0.6, length: 0.25 }
+    - { number: "24", x: 2.9, y: -0.75, width: 0.6, length: 0.25 }
+    - { number: "25", x: 2.9, y: -0.25, width: 0.6, length: 0.25 }
+    - { number: "26", x: 2.9, y: 0.25, width: 0.6, length: 0.25 }
+    - { number: "27", x: 2.9, y: 0.75, width: 0.6, length: 0.25 }
+    - { number: "28", x: 2.9, y: 1.25, width: 0.6, length: 0.25 }
+    - { number: "29", x: 2.9, y: 1.75, width: 0.6, length: 0.25 }
+    - { number: "30", x: 2.9, y: 2.25, width: 0.6, length: 0.25 }
+    - { number: "31", x: 2.25, y: 2.9, width: 0.25, length: 0.6 }
+    - { number: "32", x: 1.75, y: 2.9, width: 0.25, length: 0.6 }
+    - { number: "33", x: 1.25, y: 2.9, width: 0.25, length: 0.6 }
+    - { number: "34", x: 0.75, y: 2.9, width: 0.25, length: 0.6 }
+    - { number: "35", x: 0.25, y: 2.9, width: 0.25, length: 0.6 }
+    - { number: "36", x: -0.25, y: 2.9, width: 0.25, length: 0.6 }
+    - { number: "37", x: -0.75, y: 2.9, width: 0.25, length: 0.6 }
+    - { number: "38", x: -1.25, y: 2.9, width: 0.25, length: 0.6 }
+    - { number: "39", x: -1.75, y: 2.9, width: 0.25, length: 0.6 }
+    - { number: "40", x: -2.25, y: 2.9, width: 0.25, length: 0.6 }
+    - { number: EP, x: 0, y: 0, width: 4.5, length: 4.5 }
+  src: p36 "EXAMPLE BOARD LAYOUT RHA0040H, 40X (0.6) x (0.25), centre lines (5.8), pad (4.5); see header"
