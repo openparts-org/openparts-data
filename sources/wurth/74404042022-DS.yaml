@@ -1,0 +1,18 @@
+# Würth Elektronik datasheet for order code 74404042022 ("WE-LQS SMT Semi-Shielded Power Inductor",
+# SIZE/TYPE 4018), 7 pages, A4 landscape. we-online.com refuses curl
+# (HTTP 403); fetched once with WebFetch, which saved the original PDF.
+# Read with pdftotext -layout plus a 200 dpi render of the page-1
+# "Dimensions: [mm]" drawing. Title block: REVISION "001.008", DATE
+# "2024-11-20", ORDER CODE "74404042022", STATUS "Valid" (document release
+# status, not a product lifecycle statement).
+schema_version: "0.2"
+kind: source
+id: wurth/74404042022-DS
+sha256: 27ec914fb4ea9a2c879c7a4ee4ec95a7cb68249a48f11831ced470dee29a3e32
+retrieved: 2026-11-16
+url: https://www.we-online.com/components/products/datasheet/74404042022.pdf
+publisher: wurth
+document_id: "74404042022"
+document_type: datasheet
+revision: "001.008"
+date: 2024-11-20

@@ -1,0 +1,36 @@
+# Würth WE-MAPI 4030 power inductor, 4.7 µH ±20 %, order code 74438357047.
+# Order code printed verbatim in the datasheet's own title block
+# ("ORDER CODE 74438357047", every page) -> existence verified.
+# lifecycle: the title block "STATUS Valid" is the document's release
+# status, not a product lifecycle statement; unknown.
+schema_version: "0.2"
+kind: part
+id: wurth/74438357047
+manufacturer: wurth
+mpn: "74438357047"
+device: wurth/WE-MAPI-4030
+package: manufacturers/wurth/WE-MAPI-4030
+sources: [wurth/74438357047-DS]
+source: wurth/74438357047-DS
+
+existence: { status: verified, src: 'p1 "Title block, "ORDER CODE 74438357047", "SIZE/TYPE 4030""' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review), page-1 Electrical Properties.
+parameters:
+  tolerance: { tol: ±20 %, src: 'p1 "Electrical Properties, Inductance L, Tol."' }
+  inductance:
+    typ: 4.7 µH
+    at: { f: 100 kHz }
+    src: p1 "Electrical Properties, Inductance L (100 kHz/ 10 mA)"
+  rated_current:
+    max: 5.1 A
+    src: p1 "Electrical Properties, Performance Rated Current IRP,40K (ΔT = 40K), max."
+  saturation_current:
+    typ: 8.2 A
+    src: p1 "Electrical Properties, Saturation Current @ 30% ISAT,30% (|ΔL/L| < 30 %), typ."
+  dcr:
+    typ: 39.9 mΩ
+    max: 44 mΩ
+    at: { TA: 20 °C }
+    src: p1 "Electrical Properties, DC Resistance RDC @ 20 °C, typ. and max. rows"

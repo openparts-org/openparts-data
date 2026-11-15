@@ -1,0 +1,39 @@
+# Würth WE-LQS 4018 semi-shielded power inductor outline, from the
+# page-1 "Dimensions: [mm]" drawing of 74404042022 (rendered at 200
+# dpi). The 010/047/100 datasheets print the same dimension set
+# (pdftotext of page 1 compared). Bottom view: overall length across
+# the terminals 4 ±0.2, terminal 0.95 ±0.1 x 3.3 ±0.2; the front
+# view's 3.7 ±0.2 (core flange) is not modelled. Height is max-only.
+# min/max are the printed tolerances applied.
+schema_version: "0.2"
+kind: package
+id: manufacturers/wurth/WE-LQS-4018
+family: chip
+lead_count: 2
+source: wurth/74404042022-DS
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 3.8 mm
+    typ: 4 mm
+    max: 4.2 mm
+    src: p1 "Dimensions [mm], marking view width 4 ±0.2"
+  body_length:
+    min: 3.8 mm
+    typ: 4 mm
+    max: 4.2 mm
+    src: p1 "Dimensions [mm], bottom view overall 4 ±0.2"
+  body_height: { max: 1.8 mm, src: 'p1 "Dimensions [mm], side view 1.8 max."' }
+  lead_length:
+    min: 0.85 mm
+    typ: 0.95 mm
+    max: 1.05 mm
+    src: p1 "Dimensions [mm], bottom view terminal 0.95 ±0.1"
+  lead_width:
+    min: 3.1 mm
+    typ: 3.3 mm
+    max: 3.5 mm
+    src: p1 "Dimensions [mm], bottom view terminal 3.3 ±0.2"

@@ -1,0 +1,35 @@
+# Würth WE-LQS 4018 power inductor, 2.2 µH ±20 %, order code 74404042022.
+# Order code printed verbatim in the datasheet's own title block
+# ("ORDER CODE 74404042022", every page) -> existence verified.
+# lifecycle: the title block "STATUS Valid" is the document's release
+# status, not a product lifecycle statement; unknown.
+schema_version: "0.2"
+kind: part
+id: wurth/74404042022
+manufacturer: wurth
+mpn: "74404042022"
+device: wurth/WE-LQS-4018
+package: manufacturers/wurth/WE-LQS-4018
+sources: [wurth/74404042022-DS]
+source: wurth/74404042022-DS
+
+existence: { status: verified, src: 'p1 "Title block, "ORDER CODE 74404042022", "SIZE/TYPE 4018""' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review), page-1 Electrical Properties.
+parameters:
+  tolerance: { tol: ±20 %, src: 'p1 "Electrical Properties, Inductance L, Tol."' }
+  inductance:
+    typ: 2.2 µH
+    at: { f: 100 kHz }
+    src: p1 "Electrical Properties, Inductance L (100 kHz/ 1 V)"
+  rated_current:
+    max: 2.2 A
+    src: p1 "Electrical Properties, Rated Current IR (ΔT = 40 K), max."
+  saturation_current:
+    typ: 3.4 A
+    src: p1 "Electrical Properties, Saturation Current ISAT (|ΔL/L| < 30 %), typ."
+  dcr:
+    typ: 42 mΩ
+    at: { TA: 20 °C }
+    src: p1 "Electrical Properties, DC Resistance RDC @ 20 °C (printed with ±20%)"

@@ -1,0 +1,18 @@
+# Würth Elektronik datasheet for order code 74438357022 ("WE-MAPI SMT Power Inductor",
+# SIZE/TYPE 4030), 9 pages, A4 landscape. we-online.com refuses curl
+# (HTTP 403); fetched once with WebFetch, which saved the original PDF.
+# Read with pdftotext -layout plus a 200 dpi render of the page-1
+# "Dimensions: [mm]" drawing. Title block: REVISION "003.002", DATE
+# "2026-09-01", ORDER CODE "74438357022", STATUS "Valid" (document release
+# status, not a product lifecycle statement).
+schema_version: "0.2"
+kind: source
+id: wurth/74438357022-DS
+sha256: 5303c1163721800739df8f5daaa8f3c37cf44af2598933e7b4e9a4539a73e145
+retrieved: 2026-11-16
+url: https://www.we-online.com/components/products/datasheet/74438357022.pdf
+publisher: wurth
+document_id: "74438357022"
+document_type: datasheet
+revision: "003.002"
+date: 2026-09-01

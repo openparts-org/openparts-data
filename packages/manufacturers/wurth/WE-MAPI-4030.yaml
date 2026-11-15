@@ -1,0 +1,34 @@
+# Würth WE-MAPI 4030 molded power inductor outline, from the page-1
+# "Dimensions: [mm]" drawing of 74438357010 (rendered at 200 dpi). The
+# 022/047/100 datasheets print the same dimension set (pdftotext of
+# page 1 compared). Bottom view: T-shaped terminals, terminal length
+# along X "1.25 ±0.2"; their 2.4 / 1.6 / 0.45 features are not
+# modelled (lead_width left out: the terminal is not a rectangle).
+# Height is max-only. min/max are the printed tolerances applied.
+schema_version: "0.2"
+kind: package
+id: manufacturers/wurth/WE-MAPI-4030
+family: chip
+lead_count: 2
+source: wurth/74438357010-DS
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 3.9 mm
+    typ: 4.1 mm
+    max: 4.3 mm
+    src: p1 "Dimensions [mm], marking view width 4.1 ±0.2"
+  body_length:
+    min: 3.9 mm
+    typ: 4.1 mm
+    max: 4.3 mm
+    src: p1 "Dimensions [mm], front view length 4.1 ±0.2"
+  body_height: { max: 3.1 mm, src: 'p1 "Dimensions [mm], side view 3.1 max."' }
+  lead_length:
+    min: 1.05 mm
+    typ: 1.25 mm
+    max: 1.45 mm
+    src: p1 "Dimensions [mm], bottom view terminal 1.25 ±0.2"

@@ -1,0 +1,14 @@
+# Würth WE-LQS SMT semi-shielded power inductor, size 4018 (order codes
+# 74404042xxx), shared by every value: 2-terminal, non-polar. The
+# start-of-winding dot is a marking only; terminals are not numbered in
+# the datasheet, so they are 1 and 2 in the chip generator's X order.
+schema_version: "0.2"
+kind: device
+id: wurth/WE-LQS-4018
+manufacturer: wurth
+category: inductor
+family: WE-LQS
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

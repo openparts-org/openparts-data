@@ -1,0 +1,15 @@
+# Würth WE-MAPI SMT power inductor, size 4030 (order codes 7443835 7xxx),
+# shared by every value: 2-terminal, non-polar. The page-1 "Product
+# Marking" dot marks the start of winding only; the datasheet does not
+# number the terminals, so they are 1 and 2 in the chip generator's X
+# order.
+schema_version: "0.2"
+kind: device
+id: wurth/WE-MAPI-4030
+manufacturer: wurth
+category: inductor
+family: WE-MAPI
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
