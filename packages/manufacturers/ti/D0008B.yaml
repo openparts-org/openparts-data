@@ -1,0 +1,65 @@
+# TI D0008B "SOIC - 1.75 mm max height" (8-lead SOIC, drawing
+# 4221445/B 04/2014, JEDEC MS-012 variation AA per its note 5), read
+# from the PACKAGE OUTLINE page of SLLSEY4A (page 22) and the EXAMPLE
+# BOARD LAYOUT page (page 23). Controlling dimensions are inches; the
+# bracketed millimetre values are recorded as printed. The printed
+# numbers equal those of manufacturers/ti/D0008A, but it is a different
+# TI drawing (number and revision), so it is its own package.
+# Ranges only for the body (E1 3.81-3.98, D 4.81-5.00), no nominal.
+# No A2 is given: only overall_height (A max).
+# pads: "LAND PATTERN EXAMPLE, IPC-7351 NOMINAL" (left of the two
+# variants): 8X (1.55) x (0.6) pads, pad-centre row spacing (5.4),
+# 6X (1.27) pitch -- parenthesised reference values. Pin 1 top-left,
+# x = ±5.4/2 = ±2.7, y = ±1.27 x 1.5 = ±1.905 and ±0.635.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/D0008B
+family: soic
+lead_count: 8
+source: ti/SLLSEY4A
+
+pitch: { typ: 1.27 mm, src: 'p22 "D0008B outline, "6X .050 [1.27]" (basic)"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 3.81 mm
+    max: 3.98 mm
+    src: p22 "D0008B outline, body width ".150-.157 [3.81-3.98]" (note 4)"
+  body_length:
+    min: 4.81 mm
+    max: 5 mm
+    src: p22 "D0008B outline, body length ".189-.197 [4.81-5.00]" (note 3)"
+  lead_thickness:
+    min: 0.13 mm
+    max: 0.25 mm
+    src: p22 "D0008B outline, lead thickness ".005-.010 TYP [0.13-0.25]""
+  lead_length:
+    min: 0.41 mm
+    max: 1.27 mm
+    src: p22 "D0008B Detail A, foot length ".016-.050 [0.41-1.27]""
+  overall_width:
+    min: 5.8 mm
+    max: 6.19 mm
+    src: p22 "D0008B outline, lead-tip span ".228-.244 TYP [5.80-6.19]""
+  overall_height: { max: 1.75 mm, src: 'p22 "D0008B outline, ".069 MAX [1.75]""' }
+  standoff:
+    min: 0.11 mm
+    max: 0.25 mm
+    src: p22 "D0008B Detail A, standoff ".004-.010 [0.11-0.25]""
+  lead_width:
+    min: 0.31 mm
+    max: 0.51 mm
+    src: p22 "D0008B outline, "8X .012-.020 [0.31-0.51]""
+
+pads:
+  value:
+    - { number: "1", x: -2.7, y: 1.905, width: 1.55, length: 0.6 }
+    - { number: "2", x: -2.7, y: 0.635, width: 1.55, length: 0.6 }
+    - { number: "3", x: -2.7, y: -0.635, width: 1.55, length: 0.6 }
+    - { number: "4", x: -2.7, y: -1.905, width: 1.55, length: 0.6 }
+    - { number: "5", x: 2.7, y: -1.905, width: 1.55, length: 0.6 }
+    - { number: "6", x: 2.7, y: -0.635, width: 1.55, length: 0.6 }
+    - { number: "7", x: 2.7, y: 0.635, width: 1.55, length: 0.6 }
+    - { number: "8", x: 2.7, y: 1.905, width: 1.55, length: 0.6 }
+  src: p23 "D0008B LAND PATTERN EXAMPLE, IPC-7351 NOMINAL - 8X (1.55) x (0.6), (5.4) rows -> x ±2.7, 6X (1.27) -> y ±1.905/±0.635"

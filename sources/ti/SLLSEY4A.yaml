@@ -1,0 +1,19 @@
+# Official TI datasheet "THVD1500 500 kbps RS-485 Transceivers With
+# ±8-kV IEC ESD Protection". Downloaded 2026-11-16 with curl from the TI
+# symlink URL below; revision read from the page header "SLLSEY4A - JULY
+# 2017 - REVISED NOVEMBER 2018". 30 PDF pages, read with pdftotext
+# -layout. The PACKAGE OPTION ADDENDUM (pages 25-26) is dated
+# 10-Nov-2025, newer than the datasheet revision; the D0008B outline
+# (page 22) is drawing 4221445/B 04/2014. Page numbers are PDF page
+# indices.
+schema_version: "0.2"
+kind: source
+id: ti/SLLSEY4A
+sha256: a98b9643636e84e80ef25deb16ef6ae7ab4180d2ee79fe6aa672504c9dd686fe
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/thvd1500.pdf
+publisher: ti
+document_id: SLLSEY4A
+document_type: datasheet
+revision: SLLSEY4A
+date: 2018-11

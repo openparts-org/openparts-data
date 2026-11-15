@@ -1,0 +1,28 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SLLSEY4A
+# (page 25): row "THVD1500D", Package "SOIC (D) | 8", Status "Active".
+# Lifecycle read from the same row's Status column (TI's own addendum
+# inside the datasheet, dated 10-Nov-2025).
+# Package: SOIC (D) | 8, outline D0008B (4221445/B) on page 22 -> manufacturers/ti/D0008B.
+schema_version: "0.2"
+kind: part
+id: ti/THVD1500D
+manufacturer: ti
+mpn: THVD1500D
+device: ti/THVD1500
+
+package:
+  value: manufacturers/ti/D0008B
+  src:
+    - p25 "PACKAGE OPTION ADDENDUM, row THVD1500D, Package column "SOIC (D) | 8""
+    - p22 "PACKAGE OUTLINE D0008B (4221445/B)"
+
+sources: [ti/SLLSEY4A]
+source: ti/SLLSEY4A
+
+existence:
+  status: verified
+  src: p25 "PACKAGE OPTION ADDENDUM, Packaging Information table, row THVD1500D"
+
+lifecycle:
+  status: active
+  src: p25 "PACKAGE OPTION ADDENDUM, row THVD1500D, Status column "Active""
