@@ -1,0 +1,25 @@
+# PIC16F18446-I/SS: industrial temperature (-40 to +85 C), 20-lead SSOP, tube.
+# existence: probable -- assembled from the "Product Identification
+# System" legend (DS40001985B PDF page 706: device PIC16F18446,
+# temperature "I", package "SS = 20-lead SSOP"); the data sheet has no table of
+# orderable codes (its only example is a PIC16F18426 code).
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/PIC16F18446-I-SS
+manufacturer: microchip
+mpn: PIC16F18446-I/SS
+device: microchip/PIC16F18446-20
+
+package:
+  value: manufacturers/microchip/SSOP20-SS-C04-072B
+  src: p706 "Product Identification System, Package SS = 20-lead SSOP"
+
+sources: [microchip/DS40001985@revB]
+source: microchip/DS40001985@revB
+
+existence:
+  status: probable
+  src: p706 "Product Identification System legend (Device, Temperature I, Package SS)"
+
+lifecycle: { status: unknown }

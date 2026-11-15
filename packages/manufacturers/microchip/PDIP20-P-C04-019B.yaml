@@ -1,0 +1,42 @@
+# 20-lead PDIP, 300 mil body: Microchip drawing C04-019B "20-Lead Plastic
+# Dual In-Line (P) - 300 mil Body [PDIP]", DS40001985B PDF page 695
+# (rendered and read; table in inches, converted x25.4). body_width is
+# the 300 mil row spacing from the title, as in
+# manufacturers/microchip/PDIP16-P-C04-017B (the table gives only eB
+# max .430, E and E1). L (tip to seating plane) is not lead_length.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/PDIP20-P-C04-019B
+family: dip
+lead_count: { value: 20, src: 'p695 "C04-019B table, Number of Pins N 20"' }
+source: microchip/DS40001985@revB
+
+pitch: { typ: 2.54 mm, src: 'p695 "C04-019B table (inches), Pitch e .100 BSC"' }
+geometry: { type: parametric, generator: dip }
+
+dimensions:
+  body_width: { typ: 7.62 mm, src: 'p695 "C04-019B title, 300 mil Body"' }
+  body_length:
+    min: 24.892 mm
+    typ: 26.162 mm
+    max: 26.924 mm
+    src: p695 "C04-019B (inches), Overall Length D .980/1.030/1.060"
+  body_height:
+    min: 2.921 mm
+    typ: 3.302 mm
+    max: 4.953 mm
+    src: p695 "C04-019B (inches), Molded Package Thickness A2 .115/.130/.195"
+  lead_thickness:
+    min: 0.2032 mm
+    typ: 0.254 mm
+    max: 0.381 mm
+    src: p695 "C04-019B (inches), Lead Thickness c .008/.010/.015"
+  overall_height:
+    max: 5.334 mm
+    src: p695 "C04-019B (inches), Top to Seating Plane A max .210"
+  standoff: { min: 0.381 mm, src: 'p695 "C04-019B (inches), Base to Seating Plane A1 min .015"' }
+  lead_width:
+    min: 0.3556 mm
+    typ: 0.4572 mm
+    max: 0.5588 mm
+    src: p695 "C04-019B (inches), Lower Lead Width b .014/.018/.022"

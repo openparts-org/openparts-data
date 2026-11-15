@@ -1,0 +1,25 @@
+# PIC16F18446-I/P: industrial temperature (-40 to +85 C), 20-lead PDIP, tube.
+# existence: probable -- assembled from the "Product Identification
+# System" legend (DS40001985B PDF page 706: device PIC16F18446,
+# temperature "I", package "P = 14-lead, 20-lead PDIP"); the data sheet has no table of
+# orderable codes (its only example is a PIC16F18426 code).
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/PIC16F18446-I-P
+manufacturer: microchip
+mpn: PIC16F18446-I/P
+device: microchip/PIC16F18446-20
+
+package:
+  value: manufacturers/microchip/PDIP20-P-C04-019B
+  src: p706 "Product Identification System, Package P = 14-lead, 20-lead PDIP"
+
+sources: [microchip/DS40001985@revB]
+source: microchip/DS40001985@revB
+
+existence:
+  status: probable
+  src: p706 "Product Identification System legend (Device, Temperature I, Package P)"
+
+lifecycle: { status: unknown }

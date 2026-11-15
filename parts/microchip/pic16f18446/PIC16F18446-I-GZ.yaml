@@ -1,0 +1,25 @@
+# PIC16F18446-I/GZ: industrial temperature (-40 to +85 C), 20-lead UQFN 4x4x0.5mm, tube.
+# existence: probable -- assembled from the "Product Identification
+# System" legend (DS40001985B PDF page 706: device PIC16F18446,
+# temperature "I", package "GZ = 20-lead UQFN 4x4x0.5mm"); the data sheet has no table of
+# orderable codes (its only example is a PIC16F18426 code).
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/PIC16F18446-I-GZ
+manufacturer: microchip
+mpn: PIC16F18446-I/GZ
+device: microchip/PIC16F18446-UQFN20
+
+package:
+  value: manufacturers/microchip/UQFN20-4x4-P0.5-EP2.7-GZ-C04-255A
+  src: p706 "Product Identification System, Package GZ = 20-lead UQFN 4x4x0.5mm"
+
+sources: [microchip/DS40001985@revB]
+source: microchip/DS40001985@revB
+
+existence:
+  status: probable
+  src: p706 "Product Identification System legend (Device, Temperature I, Package GZ)"
+
+lifecycle: { status: unknown }

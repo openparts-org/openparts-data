@@ -1,0 +1,58 @@
+# 20-lead UQFN, 4 x 4 x 0.5 mm, 0.5 mm pitch, 2.7 mm exposed pad:
+# Microchip drawing C04-255A "20-Lead Ultra Thin Plastic Quad Flat, No
+# Lead Package (GZ) - 4x4x0.5 mm Body [UQFN]", DS40001985B PDF page 702
+# (table read as text), land pattern C04-2255A (page 703). body_height
+# = A (no A2). lead_thickness = A3 "0.127 REF" (reference value).
+# Land: pitch 0.50, pad spacing C1 = C2 = 4.00 (rows at +-2.00), pads
+# X1 0.30 x Y1 0.80, five per side at 0, +-0.5, +-1.0; optional centre
+# pad X2/Y2 2.80 (max) recorded as the EP land. Top view, X right, Y up;
+# pin 1 top of the left edge, CCW (Figure 4, page 7).
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/UQFN20-4x4-P0.5-EP2.7-GZ-C04-255A
+family: qfn
+lead_count: { value: 20, src: 'p702 "C04-255A table, Number of Terminals N 20"' }
+source: microchip/DS40001985@revB
+
+pitch: { typ: 0.5 mm, src: 'p702 "C04-255A table, Pitch e 0.50 BSC"' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:  { typ: 4 mm, src: 'p702 "C04-255A, Overall Width E 4.00 BSC"' }
+  body_length: { typ: 4 mm, src: 'p702 "C04-255A, Overall Length D 4.00 BSC"' }
+  body_height: { min: 0.45 mm, typ: 0.5 mm, max: 0.55 mm, src: 'p702 "C04-255A, Overall Height A"' }
+  exposed_pad:
+    src:    p702 "C04-255A, Exposed Pad Width E2 / Length D2 2.60 / 2.70 / 2.80"
+    width:  { min: 2.6 mm, typ: 2.7 mm, max: 2.8 mm }
+    length: { min: 2.6 mm, typ: 2.7 mm, max: 2.8 mm }
+  standoff:    { min: 0 mm, typ: 0.02 mm, max: 0.05 mm, src: 'p702 "C04-255A, Standoff A1"' }
+  lead_width: { min: 0.2 mm, typ: 0.25 mm, max: 0.3 mm, src: 'p702 "C04-255A, Terminal Width b"' }
+  lead_length: { min: 0.3 mm, typ: 0.4 mm, max: 0.5 mm, src: 'p702 "C04-255A, Terminal Length L"' }
+  lead_thickness:
+    typ: 0.127 mm
+    src: p702 "C04-255A, Terminal Thickness A3 0.127 REF (reference value)"
+
+pads:
+  value:
+    - { number: "1", x: -2, y: 1, width: 0.8, length: 0.3 }
+    - { number: "2", x: -2, y: 0.5, width: 0.8, length: 0.3 }
+    - { number: "3", x: -2, y: 0, width: 0.8, length: 0.3 }
+    - { number: "4", x: -2, y: -0.5, width: 0.8, length: 0.3 }
+    - { number: "5", x: -2, y: -1, width: 0.8, length: 0.3 }
+    - { number: "6", x: -1, y: -2, width: 0.3, length: 0.8 }
+    - { number: "7", x: -0.5, y: -2, width: 0.3, length: 0.8 }
+    - { number: "8", x: 0, y: -2, width: 0.3, length: 0.8 }
+    - { number: "9", x: 0.5, y: -2, width: 0.3, length: 0.8 }
+    - { number: "10", x: 1, y: -2, width: 0.3, length: 0.8 }
+    - { number: "11", x: 2, y: -1, width: 0.8, length: 0.3 }
+    - { number: "12", x: 2, y: -0.5, width: 0.8, length: 0.3 }
+    - { number: "13", x: 2, y: 0, width: 0.8, length: 0.3 }
+    - { number: "14", x: 2, y: 0.5, width: 0.8, length: 0.3 }
+    - { number: "15", x: 2, y: 1, width: 0.8, length: 0.3 }
+    - { number: "16", x: 1, y: 2, width: 0.3, length: 0.8 }
+    - { number: "17", x: 0.5, y: 2, width: 0.3, length: 0.8 }
+    - { number: "18", x: 0, y: 2, width: 0.3, length: 0.8 }
+    - { number: "19", x: -0.5, y: 2, width: 0.3, length: 0.8 }
+    - { number: "20", x: -1, y: 2, width: 0.3, length: 0.8 }
+    - { number: EP, x: 0, y: 0, width: 2.8, length: 2.8 }
+  src: p703 "C04-2255A land pattern, E 0.50, C1/C2 4.00 (+-2.00), X1 0.30, Y1 0.80, X2/Y2 2.80"

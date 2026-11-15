@@ -1,0 +1,43 @@
+# PIC16F18446 pinout for the 20-pin PDIP/SOIC/SSOP package(s), from DS40001985B
+# Table 4 "20-Pin Allocation Table", "20-pin PDIP/SOIC/TSSOP" column (the table's heading; the 20-pin parts come in PDIP, SOIC, SSOP)
+# (PDF pages 8-9), checked against Figure 3 20-Pin PDIP, SOIC, SSOP (PDF page 7):
+# same names at the same numbers.
+# Types: VDD power, VSS ground, RA3 input (MCLR/VPP/RA3 is input-only,
+# section on PDF page 194), other port pins io. `alternate_functions`:
+# the ADC channel from Table 4's ADC column, plus ICSPDAT/ICSPCLK and
+# MCLR/VPP from the pin diagram; other functions are not listed.
+# The pin map is the same for PIC16F18446 and PIC16LF18446 (Table 4
+# covers both); this Device is used for PIC16F18446 parts.
+schema_version: "0.2"
+kind: device
+id: microchip/PIC16F18446-20
+manufacturer: microchip
+category: microcontroller
+family: PIC16(L)F18426/46
+source: microchip/DS40001985@revB
+
+pins:
+  src:
+    - p8 "Table 4 20-Pin Allocation Table, 20-pin PDIP/SOIC/TSSOP and ADC columns (cont. p9)"
+    - p7 "Figure 3 20-Pin PDIP, SOIC, SSOP"
+    - p194 "MCLR/VPP section, input-only pin"
+  "1":  { name: VDD, type: power }
+  "2":  { name: RA5, type: io, alternate_functions: [ANA5] }
+  "3":  { name: RA4, type: io, alternate_functions: [ANA4] }
+  "4":  { name: RA3, type: input, alternate_functions: [MCLR, VPP] }
+  "5":  { name: RC5, type: io, alternate_functions: [ANC5] }
+  "6":  { name: RC4, type: io, alternate_functions: [ANC4] }
+  "7":  { name: RC3, type: io, alternate_functions: [ANC3] }
+  "8":  { name: RC6, type: io, alternate_functions: [ANC6] }
+  "9":  { name: RC7, type: io, alternate_functions: [ANC7] }
+  "10": { name: RB7, type: io, alternate_functions: [ANB7] }
+  "11": { name: RB6, type: io, alternate_functions: [ANB6] }
+  "12": { name: RB5, type: io, alternate_functions: [ANB5] }
+  "13": { name: RB4, type: io, alternate_functions: [ANB4] }
+  "14": { name: RC2, type: io, alternate_functions: [ANC2] }
+  "15": { name: RC1, type: io, alternate_functions: [ANC1] }
+  "16": { name: RC0, type: io, alternate_functions: [ANC0] }
+  "17": { name: RA2, type: io, alternate_functions: [ANA2] }
+  "18": { name: RA1, type: io, alternate_functions: [ANA1, ICSPCLK] }
+  "19": { name: RA0, type: io, alternate_functions: [ANA0, ICSPDAT] }
+  "20": { name: VSS, type: ground }
