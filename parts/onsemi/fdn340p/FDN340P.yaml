@@ -20,8 +20,47 @@ lifecycle:
 sources:
   - onsemi/FDN340P-D
 
+parameters:
+  polarity:
+    value: p_channel
+  drain_source_voltage:
+    nominal: -20
+    unit: V
+  drain_current:
+    nominal: -2
+    unit: A
+  rds_on:
+    nominal: 60
+    max: 70
+    unit: mΩ
+  gate_threshold_voltage:
+    nominal: -0.8
+    min: -1.5
+    max: -0.4
+    unit: V
+
 provenance:
   "/existence":
     - source: onsemi/FDN340P-D
       page: 2
       locator: "PACKAGE MARKING AND ORDERING INFORMATION table: \"FDN340P | 340 | SOT-23 (Pb-Free) | 7″ | 8 mm | 3000 / Tape & Reel\""
+  "/parameters/polarity":
+    - source: onsemi/FDN340P-D
+      page: 1
+      locator: "Page-1 title: \"MOSFET - Single, P-Channel, POWERTRENCH, Logic Level\""
+  "/parameters/drain_source_voltage":
+    - source: onsemi/FDN340P-D
+      page: 1
+      locator: "ABSOLUTE MAXIMUM RATINGS (TA = 25°C), VDSS Drain-Source Voltage: -20 V"
+  "/parameters/drain_current":
+    - source: onsemi/FDN340P-D
+      page: 1
+      locator: "ABSOLUTE MAXIMUM RATINGS (TA = 25°C), ID Drain Current - Continuous (Note 1a): -2 A"
+  "/parameters/rds_on":
+    - source: onsemi/FDN340P-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS (TA = 25°C), RDS(on) Static Drain-Source On-Resistance, VGS = -4.5 V, ID = -2 A: Typ 60, Max 70 mΩ"
+  "/parameters/gate_threshold_voltage":
+    - source: onsemi/FDN340P-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS (TA = 25°C), VGS(th) Gate Threshold Voltage: Min -0.4, Typ -0.8, Max -1.5 V"

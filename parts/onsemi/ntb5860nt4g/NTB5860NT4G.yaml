@@ -24,6 +24,24 @@ sources:
   - onsemi/NTB5860N-D
   - onsemi/98ASB42761B
 
+parameters:
+  polarity:
+    value: n_channel
+  drain_source_voltage:
+    nominal: 60
+    unit: V
+  drain_current:
+    nominal: 220
+    unit: A
+  rds_on:
+    nominal: 2.5
+    max: 3.0
+    unit: mΩ
+  gate_threshold_voltage:
+    min: 2.0
+    max: 4.0
+    unit: V
+
 provenance:
   "/existence":
     - source: onsemi/NTB5860N-D
@@ -36,3 +54,23 @@ provenance:
     - source: onsemi/98ASB42761B
       page: 1
       locator: "CASE 418B outline"
+  "/parameters/polarity":
+    - source: onsemi/NTB5860N-D
+      page: 2
+      locator: "Title: \"N-Channel Power MOSFET 60 V, 220 A, 3.0 mΩ\""
+  "/parameters/drain_source_voltage":
+    - source: onsemi/NTB5860N-D
+      page: 2
+      locator: "MAXIMUM RATINGS (TJ = 25°C), Drain-to-Source Voltage VDSS: 60 V"
+  "/parameters/drain_current":
+    - source: onsemi/NTB5860N-D
+      page: 2
+      locator: "MAXIMUM RATINGS, Continuous Drain Current RθJC, Steady State, TC = 25°C ID: 220 A"
+  "/parameters/rds_on":
+    - source: onsemi/NTB5860N-D
+      page: 3
+      locator: "ELECTRICAL CHARACTERISTICS (TJ = 25°C), Drain-to-Source On-Resistance RDS(on), VGS = 10 V, ID = 75 A: Typ 2.5, Max 3.0 mΩ"
+  "/parameters/gate_threshold_voltage":
+    - source: onsemi/NTB5860N-D
+      page: 3
+      locator: "ELECTRICAL CHARACTERISTICS (TJ = 25°C), Gate Threshold Voltage VGS(th): Min 2.0, Max 4.0 V"

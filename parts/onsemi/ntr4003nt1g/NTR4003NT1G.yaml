@@ -25,8 +25,46 @@ lifecycle:
 sources:
   - onsemi/NTR4003N-D
 
+parameters:
+  polarity:
+    value: n_channel
+  drain_source_voltage:
+    nominal: 30
+    unit: V
+  drain_current:
+    nominal: 0.5
+    unit: A
+  rds_on:
+    nominal: 1.0
+    max: 1.5
+    unit: Ω
+  gate_threshold_voltage:
+    min: 0.8
+    max: 1.4
+    unit: V
+
 provenance:
   "/existence":
     - source: onsemi/NTR4003N-D
       page: 1
       locator: "ORDERING INFORMATION table: \"NTR4003NT1G | SOT-23 (Pb-Free) | 3,000 / Tape & Reel\""
+  "/parameters/polarity":
+    - source: onsemi/NTR4003N-D
+      page: 1
+      locator: "Page-1 title: \"MOSFET - Single, N-Channel, Small Signal, SOT-23\""
+  "/parameters/drain_source_voltage":
+    - source: onsemi/NTR4003N-D
+      page: 1
+      locator: "MAXIMUM RATINGS (TJ = 25°C), VDSS Drain-to-Source Voltage: 30 V"
+  "/parameters/drain_current":
+    - source: onsemi/NTR4003N-D
+      page: 1
+      locator: "MAXIMUM RATINGS, ID Continuous Drain Current (Note 1), Steady State, TA = 25°C: 0.5 A"
+  "/parameters/rds_on":
+    - source: onsemi/NTR4003N-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS (TJ = 25°C), Drain-to-Source On Resistance RDS(on), VGS = 4.0 V, ID = 10 mA: Typ 1.0, Max 1.5 Ω"
+  "/parameters/gate_threshold_voltage":
+    - source: onsemi/NTR4003N-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS (TJ = 25°C), VGS(TH) Gate Threshold Voltage: Min 0.8, Max 1.4 V"

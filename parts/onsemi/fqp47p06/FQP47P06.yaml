@@ -23,6 +23,24 @@ sources:
   - onsemi/FQP47P06-D
   - onsemi/98AON13818G
 
+parameters:
+  polarity:
+    value: p_channel
+  drain_source_voltage:
+    nominal: -60
+    unit: V
+  drain_current:
+    nominal: -47
+    unit: A
+  rds_on:
+    nominal: 0.021
+    max: 0.026
+    unit: Ω
+  gate_threshold_voltage:
+    min: -4.0
+    max: -2.0
+    unit: V
+
 provenance:
   "/existence":
     - source: onsemi/FQP47P06-D
@@ -35,3 +53,23 @@ provenance:
     - source: onsemi/98AON13818G
       page: 1
       locator: "CASE 340AT outline"
+  "/parameters/polarity":
+    - source: onsemi/FQP47P06-D
+      page: 1
+      locator: "Page-1 title: \"MOSFET - P-Channel, QFET\""
+  "/parameters/drain_source_voltage":
+    - source: onsemi/FQP47P06-D
+      page: 2
+      locator: "ABSOLUTE MAXIMUM RATINGS (TC = 25°C), VDSS Drain-Source Voltage: -60 V"
+  "/parameters/drain_current":
+    - source: onsemi/FQP47P06-D
+      page: 2
+      locator: "ABSOLUTE MAXIMUM RATINGS, ID Drain Current - Continuous (TC = 25°C): -47 A"
+  "/parameters/rds_on":
+    - source: onsemi/FQP47P06-D
+      page: 3
+      locator: "ELECTRICAL CHARACTERISTICS (TC = 25°C), RDS(on) Static Drain-Source On-Resistance, VGS = -10 V, ID = -23.5 A: Typ 0.021, Max 0.026 Ω"
+  "/parameters/gate_threshold_voltage":
+    - source: onsemi/FQP47P06-D
+      page: 3
+      locator: "ELECTRICAL CHARACTERISTICS (TC = 25°C), VGS(th) Gate Threshold Voltage: Min -2.0, Max -4.0 V"

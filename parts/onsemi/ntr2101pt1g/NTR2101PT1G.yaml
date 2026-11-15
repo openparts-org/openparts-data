@@ -25,8 +25,46 @@ lifecycle:
 sources:
   - onsemi/NTR2101P-D
 
+parameters:
+  polarity:
+    value: p_channel
+  drain_source_voltage:
+    nominal: -8.0
+    unit: V
+  drain_current:
+    nominal: -3.7
+    unit: A
+  rds_on:
+    nominal: 39
+    max: 52
+    unit: mΩ
+  gate_threshold_voltage:
+    min: -1.0
+    max: -0.40
+    unit: V
+
 provenance:
   "/existence":
     - source: onsemi/NTR2101P-D
       page: 1
       locator: "ORDERING INFORMATION table: \"NTR2101PT1G | SOT-23 (Pb-Free) | 3,000/Tape & Reel\""
+  "/parameters/polarity":
+    - source: onsemi/NTR2101P-D
+      page: 1
+      locator: "Page-1 title: \"MOSFET - Single P-Channel, Small Signal, SOT-23\""
+  "/parameters/drain_source_voltage":
+    - source: onsemi/NTR2101P-D
+      page: 1
+      locator: "MAXIMUM RATINGS (TJ = 25°C), VDSS Drain-to-Source Voltage: -8.0 V"
+  "/parameters/drain_current":
+    - source: onsemi/NTR2101P-D
+      page: 1
+      locator: "MAXIMUM RATINGS, ID Continuous Drain Current (Note 1), t ≤ 5 s, TA = 25°C: -3.7 A"
+  "/parameters/rds_on":
+    - source: onsemi/NTR2101P-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS (TJ = 25°C), RDS(on) Drain-to-Source On Resistance, VGS = -4.5 V, ID = -3.5 A: Typ 39, Max 52 mΩ"
+  "/parameters/gate_threshold_voltage":
+    - source: onsemi/NTR2101P-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS (TJ = 25°C), VGS(TH) Gate Threshold Voltage: Min -0.40, Max -1.0 V"

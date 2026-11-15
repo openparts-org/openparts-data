@@ -26,8 +26,47 @@ lifecycle:
 sources:
   - onsemi/FDV301N-D
 
+parameters:
+  polarity:
+    value: n_channel
+  drain_source_voltage:
+    nominal: 25
+    unit: V
+  drain_current:
+    nominal: 0.22
+    unit: A
+  rds_on:
+    nominal: 3.1
+    max: 4
+    unit: Ω
+  gate_threshold_voltage:
+    nominal: 0.85
+    min: 0.70
+    max: 1.06
+    unit: V
+
 provenance:
   "/existence":
     - source: onsemi/FDV301N-D
       page: 1
       locator: "ORDERING INFORMATION table: \"FDV301N, FDV301N-F169 | SOT-23-3 (Pb-Free, Halide-Free) | 3000 / Tape & Reel\""
+  "/parameters/polarity":
+    - source: onsemi/FDV301N-D
+      page: 1
+      locator: "Page-1 title: \"Digital FET, N-Channel\""
+  "/parameters/drain_source_voltage":
+    - source: onsemi/FDV301N-D
+      page: 2
+      locator: "ABSOLUTE MAXIMUM RATINGS, VDSS, VCC Drain-Source Voltage, Power Supply Voltage: 25 V"
+  "/parameters/drain_current":
+    - source: onsemi/FDV301N-D
+      page: 2
+      locator: "ABSOLUTE MAXIMUM RATINGS, ID, IO Drain/Output Current - Continuous: 0.22 A"
+  "/parameters/rds_on":
+    - source: onsemi/FDV301N-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS, RDS(on) Static Drain-Source On-Resistance, VGS = 4.5 V, ID = 0.4 A: Typ 3.1, Max 4 Ω"
+  "/parameters/gate_threshold_voltage":
+    - source: onsemi/FDV301N-D
+      page: 2
+      locator: "ELECTRICAL CHARACTERISTICS, VGS(th) Gate Threshold Voltage: Min 0.70, Typ 0.85, Max 1.06 V"
