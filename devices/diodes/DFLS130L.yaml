@@ -13,14 +13,17 @@ source: diodes/DS30492
 
 parameters:
   forward_voltage:
-    typ: 0.31 V
-    at: { IF: 1 A }
-    src: 'p2 "Electrical Characteristics, Forward Voltage VF: Typ 0.310 V (no max stated at this current)"'
-  reverse_voltage: { max: 30 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR: 30 V"' }
+    - { typ: 0.31 V, at: { IF: 1 A }, src: 'p2 "Electrical Characteristics, Forward Voltage VF"' }
+    - { typ: 0.21 V, at: { IF: 0.1 A }, src: 'p2 "Electrical Characteristics, Forward Voltage VF"' }
+    - typ: 0.328 V
+      max: 0.36 V
+      at: { IF: 1.5 A }
+      src: p2 "Electrical Characteristics, Forward Voltage VF"
+  reverse_voltage: { max: 30 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR"' }
   forward_current:
     max: 1 A
     at: { TT: 121 °C }
-    src: 'p2 "Maximum Ratings, Average Forward Current IF(AV): 1.0 A"'
+    src: p2 "Maximum Ratings, Average Forward Current IF(AV)"
 
 pins:
   src: 'p1 "Mechanical Data: "Terminal Connections: Cathode Band"; numbering by generator convention, see header"'

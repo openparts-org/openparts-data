@@ -17,14 +17,12 @@ parameters:
   forward_voltage:
     max: 0.5 V
     at: { IF: 1 A }
-    src: 'p2 "Electrical Characteristics, Forward Voltage Drop VF, B120/B, B130/B, B140/B row: Max 0.5 V"'
-  reverse_voltage:
-    max: 20 V
-    src: 'p2 "Maximum Ratings, Peak Repetitive Reverse Voltage / Working Peak Reverse Voltage / DC Blocking Voltage VRRM/VRWM/VR, B120/B column: 20 V"'
+    src: p2 "Electrical Characteristics, Forward Voltage Drop VF, B120/B, B130/B, B140/B row"
+  reverse_voltage: { max: 20 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR, B120/B column"' }
   forward_current:
     max: 1 A
     at: { TT: 130 °C }
-    src: 'p2 "Maximum Ratings, Average Rectified Output Current IO: 1.0 A (all types)"'
+    src: p2 "Maximum Ratings, Average Rectified Output Current IO"
 
 pins:
   src: 'p1 "Mechanical Data: "Polarity: Cathode Band or Cathode Notch"; numbering by generator convention, see header"'

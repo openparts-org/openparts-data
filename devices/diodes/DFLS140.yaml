@@ -13,14 +13,16 @@ source: diodes/DS30446
 
 parameters:
   forward_voltage:
-    typ: 0.53 V
-    at: { IF: 1.1 A }
-    src: 'p2 "Electrical Characteristics, Forward Voltage VF: Typ 0.53 V (no max stated at this current)"'
-  reverse_voltage: { max: 40 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR: 40 V"' }
+    - { typ: 0.53 V, at: { IF: 1.1 A }, src: 'p2 "Electrical Characteristics, Forward Voltage VF"' }
+    - typ: 0.45 V
+      max: 0.51 V
+      at: { IF: 0.5 A }
+      src: p2 "Electrical Characteristics, Forward Voltage VF"
+  reverse_voltage: { max: 40 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR"' }
   forward_current:
     max: 1.1 A
     at: { TT: 119 °C }
-    src: 'p2 "Maximum Ratings, Average Forward Current IF(AV): 1.1 A"'
+    src: p2 "Maximum Ratings, Average Forward Current IF(AV)"
 
 pins:
   src: 'p1 "Mechanical Data: "Polarity: Cathode Band"; numbering by generator convention, see header"'

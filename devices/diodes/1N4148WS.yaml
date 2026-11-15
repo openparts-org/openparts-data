@@ -11,13 +11,18 @@ source: diodes/DS30097@rev30-2
 
 parameters:
   forward_voltage:
-    max: 1.25 V
-    at: { IF: 150 mA }
-    src: 'p2 "Electrical Characteristics, Forward Voltage VFM: Max 1.25 V (highest listed test current)"'
-  reverse_voltage: { max: 75 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR: 75 V"' }
-  forward_current:
-    max: 300 mA
-    src: 'p2 "Maximum Ratings, Forward Continuous Current IFM: 300 mA"'
+    - max: 1.25 V
+      at: { IF: 150 mA }
+      src: p2 "Electrical Characteristics, Forward Voltage VFM"
+    - max: 0.715 V
+      at: { IF: 1 mA }
+      src: p2 "Electrical Characteristics, Forward Voltage VFM"
+    - max: 0.855 V
+      at: { IF: 10 mA }
+      src: p2 "Electrical Characteristics, Forward Voltage VFM"
+    - { max: 1 V, at: { IF: 50 mA }, src: 'p2 "Electrical Characteristics, Forward Voltage VFM"' }
+  reverse_voltage: { max: 75 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR"' }
+  forward_current: { max: 300 mA, src: 'p2 "Maximum Ratings, Forward Continuous Current IFM"' }
 
 pins:
   src: 'diodes/DS30097 p1 "Circuit diagram pins 1/2; "Polarity: Cathode Band""'

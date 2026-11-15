@@ -13,13 +13,14 @@ source: diodes/DS30235
 
 parameters:
   forward_voltage:
-    max: 0.43 V
-    at: { IF: 0.5 A }
-    src: 'p2 "Electrical Characteristics, Maximum Forward Voltage Drop VF: 0.430 V"'
-  reverse_voltage: { max: 20 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR: 20 V"' }
-  forward_current:
-    max: 0.5 A
-    src: 'p2 "Maximum Ratings, Average Rectified Output Current IO: 0.5 A"'
+    - max: 0.43 V
+      at: { IF: 0.5 A }
+      src: p2 "Electrical Characteristics, Max. Forward Voltage Drop VF"
+    - max: 0.31 V
+      at: { IF: 0.1 A }
+      src: p2 "Electrical Characteristics, Max. Forward Voltage Drop VF"
+  reverse_voltage: { max: 20 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR"' }
+  forward_current: { max: 0.5 A, src: 'p2 "Maximum Ratings, Average Rectified Output Current IO"' }
 
 pins:
   src: 'p1 "Mechanical Data: "Polarity: Cathode Band"; numbering by generator convention, see header"'

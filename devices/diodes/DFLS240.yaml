@@ -13,12 +13,16 @@ source: diodes/DS30519
 
 parameters:
   forward_voltage:
-    typ: 0.65 V
-    max: 0.7 V
-    at: { IF: 2 A }
-    src: 'p2 "Electrical Characteristics, Forward Voltage VF: Typ 0.65 V, Max 0.7 V"'
-  reverse_voltage: { max: 40 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR: 40 V"' }
-  forward_current: { max: 2 A, src: 'p2 "Maximum Ratings, Average Forward Current IF(AV): 2.0 A"' }
+    - typ: 0.65 V
+      max: 0.7 V
+      at: { IF: 2 A }
+      src: p2 "Electrical Characteristics, Forward Voltage VF"
+    - typ: 0.52 V
+      max: 0.58 V
+      at: { IF: 1 A }
+      src: p2 "Electrical Characteristics, Forward Voltage VF"
+  reverse_voltage: { max: 40 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR"' }
+  forward_current: { max: 2 A, src: 'p2 "Maximum Ratings, Average Forward Current IF(AV)"' }
 
 pins:
   src: 'p1 "Mechanical Data: "Terminal Connections: Cathode Band"; numbering by generator convention, see header"'

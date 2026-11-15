@@ -17,12 +17,12 @@ parameters:
   forward_voltage:
     max: 1.1 V
     at: { IF: 1 A }
-    src: 'p2 "Electrical Characteristics, Forward Voltage VFM: Max 1.1 V"'
-  reverse_voltage: { max: 1000 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR, S1M/MB column: 1000 V"' }
+    src: p2 "Electrical Characteristics, Forward Voltage VFM"
+  reverse_voltage: { max: 1000 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR, S1M/MB column"' }
   forward_current:
     max: 1 A
     at: { TT: 100 °C }
-    src: 'p2 "Maximum Ratings, Average Rectified Output Current IO: 1.0 A (all types)"'
+    src: p2 "Maximum Ratings, Average Rectified Output Current IO"
 
 pins:
   src: 'p1 "Mechanical Data: "Polarity: Cathode Band or Cathode Notch"; numbering by generator convention, see header"'

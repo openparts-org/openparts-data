@@ -17,15 +17,13 @@ parameters:
   forward_voltage:
     max: 0.9 V
     at: { IF: 10 mA }
-    src: 'p2 "Maximum Ratings, Forward Voltage VF: 0.9 V"'
+    src: p2 "Maximum Ratings, Forward Voltage VF"
   zener_voltage:
     min: 4.8 V
     typ: 5.1 V
     max: 5.4 V
-    src: 'p2 "Electrical Characteristics, BZX84C5V1 row: VZ @ IZT Nom 5.1 V, Min 4.8 V, Max 5.4 V (Note 8: short duration pulse test)"'
-  zener_test_current:
-    typ: 5 mA
-    src: 'p2 "Electrical Characteristics, BZX84C5V1 row: IZT 5.0 mA"'
+    src: p2 "Electrical Characteristics, BZX84C5V1 row, VZ @ IZT (Note 8)"
+  zener_test_current: { typ: 5 mA, src: 'p2 "Electrical Characteristics, BZX84C5V1 row, IZT"' }
 
 pins:
   src: p1 ""Device Schematic" drawing next to the SOT23 Top View photo; position-derived numbering, see header"

@@ -14,7 +14,7 @@ source: diodes/DS35427
 parameters:
   reverse_voltage:
     max: 5 V
-    src: 'p2 "Electrical Characteristics, Reverse Standoff Voltage VRWM: Max 5 V"'
+    src: p2 "Electrical Characteristics, Reverse Standoff Voltage VRWM"
 
 pins:
   src: 'p1 "Device Schematic: "Pin 1" and "Pin 2", bi-directional (back-to-back) TVS between them"'

@@ -13,11 +13,22 @@ source: diodes/DS30497
 
 parameters:
   forward_voltage:
-    max: 0.77 V
-    at: { IF: 1 A, TA: 25 °C }
-    src: 'p2 "Electrical Characteristics, Forward Voltage VF: Max 0.77 V"'
-  reverse_voltage: { max: 100 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR: 100 V"' }
-  forward_current: { max: 1 A, src: 'p2 "Maximum Ratings, Average Forward Current IF(AV): 1.0 A"' }
+    - max: 0.77 V
+      at: { IF: 1 A, TA: 25 °C }
+      src: p2 "Electrical Characteristics, Forward Voltage VF"
+    - typ: 0.58 V
+      max: 0.62 V
+      at: { IF: 1 A, TA: 125 °C }
+      src: p2 "Electrical Characteristics, Forward Voltage VF"
+    - max: 0.86 V
+      at: { IF: 2 A, TA: 25 °C }
+      src: p2 "Electrical Characteristics, Forward Voltage VF"
+    - typ: 0.65 V
+      max: 0.7 V
+      at: { IF: 2 A, TA: 125 °C }
+      src: p2 "Electrical Characteristics, Forward Voltage VF"
+  reverse_voltage: { max: 100 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR"' }
+  forward_current: { max: 1 A, src: 'p2 "Maximum Ratings, Average Forward Current IF(AV)"' }
 
 pins:
   src: 'p1 "Mechanical Data: "Terminal Connections: Cathode Band"; numbering by generator convention, see header"'

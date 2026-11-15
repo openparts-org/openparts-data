@@ -16,15 +16,15 @@ parameters:
   forward_voltage:
     max: 0.9 V
     at: { IF: 10 mA }
-    src: 'p2 "Maximum Ratings, Forward Voltage VF: 0.9 V"'
+    src: p2 "Maximum Ratings, Forward Voltage VF"
   zener_voltage:
     min: 5.89 V
     typ: 6.2 V
     max: 6.51 V
-    src: 'p2 "Electrical Characteristics, MMSZ5234B row: VZ @ IZT Nom 6.2 V, Min 5.89 V, Max 6.51 V (Note 6)"'
+    src: p2 "Electrical Characteristics, MMSZ5234B row, VZ @ IZT (Note 6)"
   zener_test_current:
     typ: 20 mA
-    src: 'p2 "Electrical Characteristics, MMSZ5234B row: Test Current IZT 20 mA"'
+    src: p2 "Electrical Characteristics, MMSZ5234B row, Test Current IZT"
 
 pins:
   src: 'p1 "Mechanical Data: "Polarity: Cathode Band"; numbering by generator convention, see header"'

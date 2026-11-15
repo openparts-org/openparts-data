@@ -13,13 +13,23 @@ source: diodes/DS30098
 
 parameters:
   forward_voltage:
-    max: 1000 mV
-    at: { IF: 100 mA }
-    src: 'p2 "Electrical Characteristics, Forward Voltage VFM: Max 1000 mV (highest listed test current)"'
-  reverse_voltage: { max: 30 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR: 30 V"' }
+    - max: 1000 mV
+      at: { IF: 100 mA }
+      src: p2 "Electrical Characteristics, Forward Voltage VFM"
+    - max: 240 mV
+      at: { IF: 0.1 mA }
+      src: p2 "Electrical Characteristics, Forward Voltage VFM"
+    - { max: 320 mV, at: { IF: 1 mA }, src: 'p2 "Electrical Characteristics, Forward Voltage VFM"' }
+    - max: 400 mV
+      at: { IF: 10 mA }
+      src: p2 "Electrical Characteristics, Forward Voltage VFM"
+    - max: 500 mV
+      at: { IF: 30 mA }
+      src: p2 "Electrical Characteristics, Forward Voltage VFM"
+  reverse_voltage: { max: 30 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR"' }
   forward_current:
     max: 200 mA
-    src: 'p2 "Maximum Ratings, Forward Continuous Current (Note 5) IF: 200 mA"'
+    src: p2 "Maximum Ratings, Forward Continuous Current (Note 5) IF"
 
 pins:
   src: 'p1 "Mechanical Data: "Polarity: Cathode Band"; numbering by generator convention, see header"'

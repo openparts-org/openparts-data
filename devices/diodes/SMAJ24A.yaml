@@ -17,10 +17,8 @@ parameters:
   forward_voltage:
     max: 3.5 V
     at: { IPP: 35 A }
-    src: 'p2 "Maximum Ratings, Instantaneous Forward Voltage (Notes 5, 6, 7; unidirectional units only) VF: 3.5 V"'
-  reverse_voltage:
-    max: 24 V
-    src: 'p3 "Electrical Characteristics table, row SMAJ24(C)A: Reverse Standoff Voltage VRWM 24 V"'
+    src: p2 "Maximum Ratings, Instantaneous Forward Voltage VF (Notes 5-7, unidirectional)"
+  reverse_voltage: { max: 24 V, src: 'p3 "Electrical Characteristics table, SMAJ24(C)A row, VRWM"' }
 
 pins:
   src: 'p1 "Mechanical Data: "Polarity Indicator: Cathode Band (Bidirectional Devices do not Have a Polarity Indicator)"; numbering by generator convention, see header"'

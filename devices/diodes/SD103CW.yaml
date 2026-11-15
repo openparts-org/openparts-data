@@ -13,13 +13,16 @@ source: diodes/DS11013
 
 parameters:
   forward_voltage:
-    max: 0.6 V
-    at: { IF: 200 mA }
-    src: 'p2 "Electrical Characteristics, Forward Voltage Drop VFM: Max 0.60 V"'
-  reverse_voltage: { max: 20 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR, SD103CW column: 20 V"' }
+    - max: 0.6 V
+      at: { IF: 200 mA }
+      src: p2 "Electrical Characteristics, Forward Voltage Drop VFM"
+    - max: 0.37 V
+      at: { IF: 20 mA }
+      src: p2 "Electrical Characteristics, Forward Voltage Drop VFM"
+  reverse_voltage: { max: 20 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR, SD103CW column"' }
   forward_current:
     max: 350 mA
-    src: 'p2 "Maximum Ratings, Forward Continuous Current (Note 5) IFM: 350 mA"'
+    src: p2 "Maximum Ratings, Forward Continuous Current (Note 5) IFM"
 
 pins:
   src: 'p1 "Mechanical Data: "Polarity: Cathode Band"; numbering by generator convention, see header"'
