@@ -1,0 +1,21 @@
+# BME280: Bosch Sensortec's product name, used by distributors as the MPN.
+# existence: probable -- the datasheet title page names the product and
+# gives "Sales Part Number (SPN) 0 273 141 185", but no ordering table
+# prints "BME280" as an orderable part number.
+# lifecycle: unknown (no first-party status statement found).
+# Package: Figure 20 of this datasheet (page 42).
+schema_version: "0.2"
+kind: part
+id: bosch/BME280
+manufacturer: bosch
+mpn: BME280
+device: bosch/BME280
+package: manufacturers/bosch/LGA8-2.5x2.5-P0.65-BME280
+sources: [bosch/BST-BME280-DS001-24]
+source: bosch/BST-BME280-DS001-24
+
+existence:
+  status: probable
+  src: 'p1 "title page: product BME280, SPN 0 273 141 185 (no ordering table)"'
+
+lifecycle: { status: unknown }

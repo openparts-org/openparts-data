@@ -1,0 +1,22 @@
+# BMP280: Bosch Sensortec's product name, used by distributors as the MPN.
+# existence: probable -- the datasheet title page names the product with
+# "Sales part number 0 273 300 436" and "Ordering code
+# 0.273.300.436-1NV", but "BMP280" itself is not printed as an orderable
+# part number.
+# lifecycle: unknown (no first-party status statement found).
+# Package: Figure 18 of this datasheet (page 38).
+schema_version: "0.2"
+kind: part
+id: bosch/BMP280
+manufacturer: bosch
+mpn: BMP280
+device: bosch/BMP280
+package: manufacturers/bosch/LGA8-2.0x2.5-P0.65-BMP280
+sources: [bosch/BST-BMP280-DS001-26]
+source: bosch/BST-BMP280-DS001-26
+
+existence:
+  status: probable
+  src: 'p1 "title page: product BMP280, ordering code 0.273.300.436-1NV"'
+
+lifecycle: { status: unknown }

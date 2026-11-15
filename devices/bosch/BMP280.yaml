@@ -1,0 +1,24 @@
+# Bosch Sensortec BMP280, 8-pin LGA. Digital pressure sensor (datasheet title).
+# Pin names and I/O types from Table 29 "Pin description" (page 34) of
+# BST-BMP280-DS001-26 (Supply -> power, VSS/GND "Ground" -> ground,
+# In -> input, In/Out -> io), numbers checked against Figure 14 "Pin-out
+# top and bottom view" on the same page (clockwise numbering in top
+# view). The two GND pins are both ground.
+schema_version: "0.2"
+kind: device
+id: bosch/BMP280
+manufacturer: bosch
+category: pressure_sensor
+family: BMP2
+source: bosch/BST-BMP280-DS001-26
+
+pins:
+  src: p34 "Table 29 Pin description; Figure 14 pin-out"
+  "1": { name: GND, type: ground }
+  "2": { name: CSB, type: input }
+  "3": { name: SDI, type: io }
+  "4": { name: SCK, type: input }
+  "5": { name: SDO, type: io }
+  "6": { name: VDDIO, type: power }
+  "7": { name: GND, type: ground }
+  "8": { name: VDD, type: power }

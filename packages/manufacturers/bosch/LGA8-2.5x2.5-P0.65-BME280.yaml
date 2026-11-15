@@ -1,0 +1,70 @@
+# Bosch Sensortec 8-pin metal-lid LGA 2.5 x 2.5 x 0.93 mm (BME280). Read
+# from Figure 20 "Package dimensions" (section 7.5, page 42) and Figure
+# 21 "Recommended landing pattern (top view)" (section 7.6, page 43) of
+# BST-BME280-DS001-24. Drawing tolerance block: X.XX +-0.05, X.X +-0.1.
+#
+# Terminal frame: Figure 16 (top view, page 38) and Figure 21 put pins
+# 1-4 down the right edge and 5-8 up the left edge (8 top-left) --
+# clockwise in top view (the note under Figure 16 says so). lead_layout
+# [4, 0, 4, 0] with pad_order listing the source numbers in the
+# generator's counter-clockwise position order (left edge top->bottom,
+# then right edge bottom->top): 8 7 6 5 4 3 2 1. The bottom view of
+# Figure 20 shows the same land turned 90 deg (rows of 4).
+# Terminals 0.350 x 0.350 (8X), pitch 0.65 (boxed), terminal rows 1.95
+# (boxed) apart centre to centre. lead_inset: 2.50/2 - 1.95/2 - 0.35/2
+# = 0.100, the drawing's reference "(0.100)".
+# pads (Figure 21): 0.5 x 0.35 lands, inner edges 0.775 from the centre
+# line -> x = +-(0.775 + 0.5/2) = +-1.025; y from "0.325" (centre line to
+# the inner land row) and pitch 0.65 -> +-0.325, +-0.975.
+# Height: "0.93+-0.070" (side view) -> body_height; "BODY Z 1.00(MAX)"
+# in the table is not recorded separately.
+# Generated footprint check: the lga generator places this land turned
+# 90 deg (pins 1-4 along the top edge, pin 1 top-left); the explicit pads
+# come out in the same orientation (rotation, not a mirror).
+schema_version: "0.2"
+kind: package
+id: manufacturers/bosch/LGA8-2.5x2.5-P0.65-BME280
+family: lga
+lead_count: 8
+
+lead_layout:
+  value: [4, 0, 4, 0]
+  src:   'p38 "Figure 16 pin-out top view: 1-4 right edge, 5-8 left edge (clockwise)"'
+
+source: bosch/BST-BME280-DS001-24
+
+pitch: { typ: 0.65 mm, src: 'p42 "Figure 20 bottom view, (6X) 0.65 boxed; table LGA PITCH 0.65"' }
+
+pad_order:
+  value: ["8", "7", "6", "5", "4", "3", "2", "1"]
+  src:   p38 "Figure 16 top view, numbers in CCW position order (clockwise numbering in top view)"
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:  { typ: 2.5 mm, src: 'p42 "Figure 20 top view, 2.50 boxed; table BODY X 2.50"' }
+  body_length: { typ: 2.5 mm, src: 'p42 "Figure 20 top view, 2.50 boxed; table BODY Y 2.50"' }
+  body_height:
+    min: 0.86 mm
+    typ: 0.93 mm
+    max: 1 mm
+    src: p42 "Figure 20 side view, 0.93+-0.070"
+  lead_inset:
+    typ: 0.1 mm
+    src: p42 "Figure 20 bottom view, (0.100) reference; = 2.50/2 - 1.95/2 - 0.35/2"
+  lead_width: { typ: 0.35 mm, src: 'p42 "Figure 20 bottom view, 0.350x0.350 (8X); table LGA SIZE"' }
+  lead_length:
+    typ: 0.35 mm
+    src: p42 "Figure 20 bottom view, 0.350x0.350 (8X); table LGA SIZE"
+
+pads:
+  value:
+    - { number: "1", x: 1.025, y: 0.975, width: 0.5, length: 0.35 }
+    - { number: "2", x: 1.025, y: 0.325, width: 0.5, length: 0.35 }
+    - { number: "3", x: 1.025, y: -0.325, width: 0.5, length: 0.35 }
+    - { number: "4", x: 1.025, y: -0.975, width: 0.5, length: 0.35 }
+    - { number: "5", x: -1.025, y: -0.975, width: 0.5, length: 0.35 }
+    - { number: "6", x: -1.025, y: -0.325, width: 0.5, length: 0.35 }
+    - { number: "7", x: -1.025, y: 0.325, width: 0.5, length: 0.35 }
+    - { number: "8", x: -1.025, y: 0.975, width: 0.5, length: 0.35 }
+  src: 'p43 "Figure 21: lands 0.5 x 0.35, x = +-(0.775 + 0.25), y = +-0.325, +-(0.325 + 0.65)"'
