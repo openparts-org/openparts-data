@@ -30,8 +30,32 @@ lifecycle:
 sources:
   - nichicon/CAT.8100M
 
+parameters:
+  capacitance:
+    nominal: 470
+    unit: µF
+  tolerance:
+    min: -20
+    max: 20
+    unit: "%"
+  rated_voltage:
+    nominal: 16
+    unit: V
+
 provenance:
   "/existence":
     - source: nichicon/CAT.8100M
       page: 2
       locator: "UVR ordering table, rated voltage 16 (code 1C), rated capacitance 470uF row: \"UVR1C471MPD\""
+  "/parameters/capacitance":
+    - source: nichicon/CAT.8100M
+      page: 2
+      locator: "■ Dimensions table, Part Number UVR1C471MPD row: Rated Capacitance (µF) 470"
+  "/parameters/tolerance":
+    - source: nichicon/CAT.8100M
+      page: 1
+      locator: "Specifications, Capacitance Tolerance: ± 20% at 120Hz, 20˚C (series-wide)"
+  "/parameters/rated_voltage":
+    - source: nichicon/CAT.8100M
+      page: 2
+      locator: "■ Dimensions table, Part Number UVR1C471MPD in Rated Voltage (V) 16 (1C) group"

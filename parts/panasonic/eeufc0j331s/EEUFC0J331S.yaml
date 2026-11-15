@@ -31,8 +31,32 @@ lifecycle:
 sources:
   - panasonic/ABA0000C1209
 
+parameters:
+  capacitance:
+    nominal: 330
+    unit: µF
+  tolerance:
+    min: -20
+    max: 20
+    unit: "%"
+  rated_voltage:
+    nominal: 6.3
+    unit: V
+
 provenance:
   "/existence":
     - source: panasonic/ABA0000C1209
       page: 3
       locator: "\"Characteristics list\" table, \"Part No.\" column: \"EEUFC0J331S( )\""
+  "/parameters/capacitance":
+    - source: panasonic/ABA0000C1209
+      page: 3
+      locator: "FC-A series Characteristics list, Part No. EEUFC0J331S( ) row: Capacitance (±20 %) 330 μF"
+  "/parameters/tolerance":
+    - source: panasonic/ABA0000C1209
+      page: 3
+      locator: "FC-A series Characteristics list, column header \"Capacitance (±20 %)\" for Part No. EEUFC0J331S( )"
+  "/parameters/rated_voltage":
+    - source: panasonic/ABA0000C1209
+      page: 3
+      locator: "FC-A series Characteristics list, Part No. EEUFC0J331S( ) in Rated voltage (V) 6.3 group"

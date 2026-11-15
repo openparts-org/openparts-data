@@ -21,9 +21,32 @@ lifecycle:
 sources:
   - panasonic/ABA0000C1259
 
+parameters:
+  capacitance:
+    nominal: 100
+    unit: µF
+  tolerance:
+    min: -20
+    max: 20
+    unit: "%"
+  rated_voltage:
+    nominal: 10
+    unit: V
+
 provenance:
   "/existence":
     - source: panasonic/ABA0000C1259
       page: 4
       locator: "\"Characteristics list\" table, Part No. column: \"EEUFR1A101( )\" (phiD 5.0, L 11.0)"
-
+  "/parameters/capacitance":
+    - source: panasonic/ABA0000C1259
+      page: 4
+      locator: "FR-A series Characteristics list, Part No. EEUFR1A101( ) row: Capacitance (±20 %) 100 μF"
+  "/parameters/tolerance":
+    - source: panasonic/ABA0000C1259
+      page: 4
+      locator: "FR-A series Characteristics list, column header \"Capacitance (±20 %)\" for Part No. EEUFR1A101( )"
+  "/parameters/rated_voltage":
+    - source: panasonic/ABA0000C1259
+      page: 4
+      locator: "FR-A series Characteristics list, Part No. EEUFR1A101( ) in Rated voltage (V) 10 group"
