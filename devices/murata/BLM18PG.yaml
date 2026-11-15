@@ -1,0 +1,16 @@
+# Murata chip ferrite bead, BLM18P series (0603, "for Power Supplies", code PG)
+# (murata/C31E-17 p1 Part Numbering, p43 series table). Category
+# `inductor`: the vocabulary has no ferrite-bead category (same choice
+# as the Wurth WE-CBF beads). Series-level device: impedance-specific
+# MPNs are Parts. Non-polar; the catalog does not number the
+# terminals, so they are 1 and 2 in the chip generator's X order.
+schema_version: "0.2"
+kind: device
+id: murata/BLM18PG
+manufacturer: murata
+category: inductor
+family: BLM18
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

@@ -1,0 +1,32 @@
+# Murata chip ferrite bead, 220 ±25% ohm at 100 MHz (impedance has no
+# parameter key; not recorded). The catalog table (murata/C31E-17 p43,
+# "BLM18P Series") prints the base number BLM18PG221SN1; the trailing
+# "D" is the Part Numbering packaging code "Paper Taping (ø180mm Reel)",
+# listed for BLM15/18 (p1). The full MPN is not printed verbatim, so
+# existence is probable. lifecycle: a 2007 catalog; unknown. Values are
+# as this 2007 edition prints them (newer Murata data may differ).
+# The table notes that above 1200 mA rated current derating is
+# required (catalog p63) -- recorded value is the table's.
+schema_version: "0.2"
+kind: part
+id: murata/BLM18PG221SN1D
+manufacturer: murata
+mpn: BLM18PG221SN1D
+device: murata/BLM18PG
+package: manufacturers/murata/CHIP0603-MURATA-BLM18
+sources: [murata/C31E-17]
+source: murata/C31E-17
+
+existence:
+  status: probable
+  src:
+    - p43 "BLM18P Series table, Part Number row BLM18PG221SN1"
+    - 'p1 "Part Numbering, Packaging: D = Paper Taping (ø180mm Reel), BLM02/03/15/18/21"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  rated_current:
+    typ: 1400 mA
+    src: p43 "BLM18P Series table, BLM18PG221SN1 row, Rated Current (mA)"
+  dcr: { max: 0.1 Ω, src: 'p43 "BLM18P Series table, BLM18PG221SN1 row, DC Resistance (max.)"' }

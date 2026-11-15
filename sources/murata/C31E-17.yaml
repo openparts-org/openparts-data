@@ -1,0 +1,19 @@
+# Murata "On-Board Type (DC) EMI Suppression Filters (EMIFIL)" catalog,
+# Cat. No. C31E-17 (PDF Subject "C31E17", page header date "07.3.9",
+# 77 pages). Murata's own PDF, hosted by distributor RS Components;
+# downloaded with wget (curl got 403). Read via pdftotext -layout plus
+# rendered drawings. Cited pages are PDF page indices. Catalog prints
+# base part numbers (e.g. BLM18AG601SN1) and maps the trailing
+# packaging code in its Part Numbering legend (p1). Murata copyright,
+# facts only.
+schema_version: "0.2"
+kind: source
+id: murata/C31E-17
+sha256: 9a04d1b11c38a03ff9d9b1161ce36badb33af1c93ef98309d0e0ff64cbfb30c0
+retrieved: 2026-11-16
+url: https://docs.rs-online.com/2084/0900766b81433aa4.pdf
+publisher: murata
+document_id: C31E-17
+document_type: datasheet
+revision: C31E-17
+date: 2007-03-09
