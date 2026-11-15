@@ -1,0 +1,19 @@
+# Diodes Incorporated B0540W datasheet, footer "Document number:
+# DS30138 Rev. 15 - 2", "November 2026", 5 pages, downloaded with curl on
+# 2026-11-15 (`file`: PDF) from Diodes Inc's own site. The URL cited by
+# diodes/DS30138 (".../Datasheets/BAT54.pdf", Rev. 14-2) now returns a
+# 404 page; this newer revision of the same document gets its own Source.
+# Read with pdftotext -layout. Page numbers are PDF page indices
+# (= printed "n of 5").
+schema_version: "0.1"
+kind: source
+id: diodes/DS30138@rev15-2
+
+publisher: diodes
+document_id: "DS30138"
+document_type: datasheet
+
+revision: "15-2"
+date: "2026-11"
+
+url: "https://www.diodes.com/assets/Datasheets/B0540W.pdf"

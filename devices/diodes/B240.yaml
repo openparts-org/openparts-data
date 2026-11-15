@@ -16,7 +16,30 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 40
+    unit: V
+  forward_current:
+    max: 2.0
+    unit: A
+  forward_voltage:
+    max: 0.50
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: diodes/DS13004
+      page: 2
+      locator: "Maximum Ratings, VRRM/VRWM/VR, B240/A column: 40 V"
+  "/parameters/forward_current":
+    - source: diodes/DS13004
+      page: 2
+      locator: "Maximum Ratings, Average Rectified Output Current IO: 2.0 A (all types)"
+  "/parameters/forward_voltage":
+    - source: diodes/DS13004
+      page: 2
+      locator: "Electrical Characteristics, Forward Voltage Drop VF, B220/A, B230/A, B240/A row: Max 0.50 V @ IF = 2.0A, TA = +25°C"
   "/pins":
     - source: diodes/DS13004
       page: 1

@@ -16,7 +16,16 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  forward_voltage:
+    max: 0.9
+    unit: V
+
 provenance:
+  "/parameters/forward_voltage":
+    - source: diodes/DS18010
+      page: 2
+      locator: "Maximum Ratings, Forward Voltage @ IF = 10mA VF: 0.9 V"
   "/pins":
     - source: diodes/DS18010
       page: 1

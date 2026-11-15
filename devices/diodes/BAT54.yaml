@@ -19,7 +19,30 @@ pins:
   "2": { name: NC, type: nc }
   "3": { name: Cathode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 30
+    unit: V
+  forward_current:
+    max: 200
+    unit: mA
+  forward_voltage:
+    max: 800
+    unit: mV
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: diodes/DS11005
+      page: 2
+      locator: "Maximum Ratings, Peak Repetitive Reverse Voltage / Working Peak Reverse Voltage / DC Blocking Voltage VRRM/VRWM/VR: 30 V"
+  "/parameters/forward_current":
+    - source: diodes/DS11005
+      page: 2
+      locator: "Maximum Ratings, Average Rectified Output Current (Note 5) IO: 200 mA"
+  "/parameters/forward_voltage":
+    - source: diodes/DS11005
+      page: 2
+      locator: "Electrical Characteristics, Forward Voltage VF: Max 800 mV @ IF = 100mA (highest listed test current)"
   "/pins":
     - source: diodes/DS11005
       page: 1

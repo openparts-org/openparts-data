@@ -17,7 +17,23 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 5.0
+    unit: V
+  forward_voltage:
+    max: 3.5
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: diodes/DS19005
+      page: 3
+      locator: "Electrical Characteristics table, row SMAJ5.0(C)A: Reverse Standoff Voltage VRWM 5.0 V"
+  "/parameters/forward_voltage":
+    - source: diodes/DS19005
+      page: 2
+      locator: "Maximum Ratings, Instantaneous Forward Voltage @ IPP = 35A (Notes 5, 6, 7; unidirectional units only) VF: 3.5 V"
   "/pins":
     - source: diodes/DS19005
       page: 1

@@ -13,7 +13,30 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 40
+    unit: V
+  forward_current:
+    max: 0.5
+    unit: A
+  forward_voltage:
+    max: 0.51
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: diodes/DS30138@rev15-2
+      page: 2
+      locator: "Maximum Ratings, VRRM/VRWM/VR: 40 V"
+  "/parameters/forward_current":
+    - source: diodes/DS30138@rev15-2
+      page: 2
+      locator: "Maximum Ratings, Average Rectified Output Current (See Figure 5) IO: 0.5 A"
+  "/parameters/forward_voltage":
+    - source: diodes/DS30138@rev15-2
+      page: 2
+      locator: "Electrical Characteristics, Maximum Forward Voltage Drop VFM: 0.510 V @ IF = 0.5A, TJ = +25°C"
   "/pins":
     - source: diodes/DS30138
       page: 1

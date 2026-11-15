@@ -15,7 +15,30 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 20
+    unit: V
+  forward_current:
+    max: 0.5
+    unit: A
+  forward_voltage:
+    max: 0.43
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: diodes/DS30235
+      page: 2
+      locator: "Maximum Ratings, VRRM/VRWM/VR: 20 V"
+  "/parameters/forward_current":
+    - source: diodes/DS30235
+      page: 2
+      locator: "Maximum Ratings, Average Rectified Output Current IO: 0.5 A"
+  "/parameters/forward_voltage":
+    - source: diodes/DS30235
+      page: 2
+      locator: "Electrical Characteristics, Maximum Forward Voltage Drop VF: 0.430 V @ IF = 0.5A"
   "/pins":
     - source: diodes/DS30235
       page: 1

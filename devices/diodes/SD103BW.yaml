@@ -15,7 +15,30 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 30
+    unit: V
+  forward_current:
+    max: 350
+    unit: mA
+  forward_voltage:
+    max: 0.6
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: diodes/DS11013
+      page: 2
+      locator: "Maximum Ratings, VRRM/VRWM/VR, SD103BW column: 30 V"
+  "/parameters/forward_current":
+    - source: diodes/DS11013
+      page: 2
+      locator: "Maximum Ratings, Forward Continuous Current (Note 5) IFM: 350 mA"
+  "/parameters/forward_voltage":
+    - source: diodes/DS11013
+      page: 2
+      locator: "Electrical Characteristics, Forward Voltage Drop VFM: Max 0.60 V @ IF = 200mA"
   "/pins":
     - source: diodes/DS11013
       page: 1

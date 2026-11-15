@@ -15,7 +15,16 @@ pins:
   "1": { name: Pin1, type: passive }
   "2": { name: Pin2, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 5
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: diodes/DS35427
+      page: 2
+      locator: "Electrical Characteristics, Reverse Standoff Voltage VRWM: Max 5 V"
   "/pins":
     - source: diodes/DS35427
       page: 1

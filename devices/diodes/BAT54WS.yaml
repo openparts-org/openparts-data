@@ -15,7 +15,30 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 30
+    unit: V
+  forward_current:
+    max: 200
+    unit: mA
+  forward_voltage:
+    max: 1000
+    unit: mV
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: diodes/DS30098
+      page: 2
+      locator: "Maximum Ratings, VRRM/VRWM/VR: 30 V"
+  "/parameters/forward_current":
+    - source: diodes/DS30098
+      page: 2
+      locator: "Maximum Ratings, Forward Continuous Current (Note 5) IF: 200 mA"
+  "/parameters/forward_voltage":
+    - source: diodes/DS30098
+      page: 2
+      locator: "Electrical Characteristics, Forward Voltage VFM: Max 1000 mV @ IF = 100mA (highest listed test current)"
   "/pins":
     - source: diodes/DS30098
       page: 1

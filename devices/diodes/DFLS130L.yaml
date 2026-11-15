@@ -15,7 +15,30 @@ pins:
   "1": { name: Cathode, type: passive }
   "2": { name: Anode, type: passive }
 
+parameters:
+  reverse_voltage:
+    max: 30
+    unit: V
+  forward_current:
+    max: 1.0
+    unit: A
+  forward_voltage:
+    nominal: 0.31
+    unit: V
+
 provenance:
+  "/parameters/reverse_voltage":
+    - source: diodes/DS30492
+      page: 2
+      locator: "Maximum Ratings, VRRM/VRWM/VR: 30 V"
+  "/parameters/forward_current":
+    - source: diodes/DS30492
+      page: 2
+      locator: "Maximum Ratings, Average Forward Current @ TT = +121°C IF(AV): 1.0 A"
+  "/parameters/forward_voltage":
+    - source: diodes/DS30492
+      page: 2
+      locator: "Electrical Characteristics, Forward Voltage VF: Typ 0.310 V @ IF = 1.0A (no max stated at this current)"
   "/pins":
     - source: diodes/DS30492
       page: 1
