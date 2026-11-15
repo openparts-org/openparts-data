@@ -28,9 +28,7 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  capacitance:
-    typ: 10 µF
-    src: 'p5 "Table 1A – Capacitance Range/Selection Waterfall (0402 – 1206 Case Sizes) cont., Cap Code 106 row: Cap 10 µF"'
+  capacitance:   { typ: 10 µF, src: 'p5 "Table 1A (cont.), Cap Code 106 row"' }
   tolerance:     { tol: ±10 %, src: 'p2 "Ordering Information, Capacitance Tolerance: K = ±10%"' }
   rated_voltage: { typ: 10 V, src: 'p2 "Ordering Information, Rated Voltage (VDC): 8 = 10"' }
   dielectric:    { value: X7R, src: 'p2 "Ordering Information, Dielectric: R = X7R"' }

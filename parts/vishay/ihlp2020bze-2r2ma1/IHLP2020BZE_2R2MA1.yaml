@@ -16,17 +16,19 @@ lifecycle: { status: active }
 parameters:
   tolerance:
     tol: ±20 %
-    src: p1 "STANDARD ELECTRICAL SPECIFICATIONS, column header "L0 INDUCTANCE ± 20 %" (IHLP2020BZE_2R2MA1 row)"
+    src: p1 "STANDARD ELECTRICAL SPECIFICATIONS, L0 INDUCTANCE column header"
   inductance:
     typ: 2.2 µH
-    src: 'p1 "STANDARD ELECTRICAL SPECIFICATIONS, IHLP2020BZE_2R2MA1 row: L0 Inductance at 100 kHz, 0.25 V, 0 A (μH) 2.2"'
+    at: { f: 100 kHz }
+    src: p1 "STANDARD ELECTRICAL SPECIFICATIONS, IHLP2020BZE_2R2MA1 row, L0 Inductance (0.25 V, 0 A)"
   rated_current:
     typ: 4.2 A
-    src: 'p1 "STANDARD ELECTRICAL SPECIFICATIONS, IHLP2020BZE_2R2MA1 row: Heat rating current DC typ. 4.2 A (note (1): ΔT approx. 40 °C)"'
+    src: p1 "STANDARD ELECTRICAL SPECIFICATIONS, IHLP2020BZE_2R2MA1 row, Heat rating current (ΔT 40 °C)"
   saturation_current:
     typ: 9.5 A
-    src: 'p1 "STANDARD ELECTRICAL SPECIFICATIONS, IHLP2020BZE_2R2MA1 row: Saturation current DC typ. 9.5 A (note (2): L drops approx. 20 %)"'
+    src: p1 "STANDARD ELECTRICAL SPECIFICATIONS, IHLP2020BZE_2R2MA1 row, Saturation current (L drop 20 %)"
   dcr:
     typ: 45.6 mΩ
     max: 50.1 mΩ
-    src: 'p1 "STANDARD ELECTRICAL SPECIFICATIONS, IHLP2020BZE_2R2MA1 row: DCR TYP. 25 °C 45.6 mΩ, DCR MAX. 25 °C 50.1 mΩ"'
+    at: { TA: 25 °C }
+    src: p1 "STANDARD ELECTRICAL SPECIFICATIONS, IHLP2020BZE_2R2MA1 row, DCR"

@@ -12,13 +12,13 @@ source: vishay/88525
 parameters:
   forward_voltage:
     max: 0.55 V
-    src: 'p1 "ELECTRICAL CHARACTERISTICS, Maximum instantaneous forward voltage, 1.0 A, VF, 1N5818 column: 0.550 V"'
-  reverse_voltage:
-    max: 30 V
-    src: 'p1 "MAXIMUM RATINGS, Maximum repetitive peak reverse voltage VRRM, 1N5818 column: 30 V"'
+    at: { IF: 1 A }
+    src: p1 "ELECTRICAL CHARACTERISTICS, Max. instantaneous forward voltage VF, 1N5818 column"
+  reverse_voltage: { max: 30 V, src: 'p1 "MAXIMUM RATINGS, VRRM, 1N5818 column"' }
   forward_current:
     max: 1 A
-    src: 'p1 "MAXIMUM RATINGS, Maximum average forward rectified current at 0.375" (9.5 mm) lead length at TL = 90 °C IF(AV): 1.0 A"'
+    at: { TL: 90 °C }
+    src: p1 "MAXIMUM RATINGS, Max. average forward rectified current IF(AV), 9.5 mm lead"
 
 pins:
   src: 'p1 "MECHANICAL DATA: "Polarity: color band denotes the cathode end""'

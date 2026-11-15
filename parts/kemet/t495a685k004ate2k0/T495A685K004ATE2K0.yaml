@@ -17,13 +17,13 @@ existence: { status: probable }
 lifecycle: { status: active }
 
 parameters:
-  capacitance:
-    typ: 6.8 µF
-    src: 'p5 "Table 1 – Ratings & Part Number Reference, row T495A685(1)004A(2)E2K0: Rated Cap 6.8 µF"'
-  tolerance: { tol: ±10 %, src: 'p2 "Ordering Information, Capacitance Tolerance: K = ±10%"' }
+  capacitance: { typ: 6.8 µF, src: 'p5 "Table 1, T495A685(1)004A(2)E2K0 row, Rated Cap"' }
+  tolerance:   { tol: ±10 %, src: 'p2 "Ordering Information, Capacitance Tolerance: K = ±10%"' }
   rated_voltage:
     typ: 4 V
-    src: 'p5 "Table 1 – Ratings & Part Number Reference, row T495A685(1)004A(2)E2K0: Rated Voltage 4 VDC at 85°C"'
+    at: { TA: 85 °C }
+    src: p5 "Table 1, T495A685(1)004A(2)E2K0 row, Rated Voltage"
   esr:
     max: 2000 mΩ
-    src: 'p5 "Table 1 – Ratings & Part Number Reference, row T495A685(1)004A(2)E2K0: ESR 2,000 mΩ at 25°C 100 kHz Max"'
+    at: { TA: 25 °C, f: 100 kHz }
+    src: p5 "Table 1, T495A685(1)004A(2)E2K0 row, ESR"

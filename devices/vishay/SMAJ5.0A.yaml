@@ -15,7 +15,7 @@ source: vishay/88390
 parameters:
   reverse_voltage:
     max: 5 V
-    src: 'p2 "ELECTRICAL CHARACTERISTICS table, row (+)SMAJ5.0A: Stand-off voltage VWM 5.0 V"'
+    src: p2 "ELECTRICAL CHARACTERISTICS table, (+)SMAJ5.0A row, Stand-off voltage VWM"
 
 pins:
   src: 'p1 "MECHANICAL DATA "Polarity: for unidirectional types the band denotes cathode end"; SMA (DO-214AC) image "Cathode / Anode (unidirectional)""'

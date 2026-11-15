@@ -13,13 +13,12 @@ source: vishay/88751
 parameters:
   forward_voltage:
     max: 0.5 V
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum instantaneous forward voltage, 3.0 A, VF: 0.5 V (cell spanning SS32-SS34)"'
-  reverse_voltage:
-    max: 40 V
-    src: 'p1 "MAXIMUM RATINGS, Maximum repetitive peak reverse voltage VRRM, SS34 column: 40 V"'
+    at: { IF: 3 A }
+    src: p2 "ELECTRICAL CHARACTERISTICS, Max. instantaneous forward voltage VF (cell spanning SS32-SS34)"
+  reverse_voltage: { max: 40 V, src: 'p1 "MAXIMUM RATINGS, VRRM, SS34 column"' }
   forward_current:
     max: 3 A
-    src: 'p1 "MAXIMUM RATINGS, Maximum average forward rectified current at TL (fig. 1) IF(AV): 3.0 A"'
+    src: p1 "MAXIMUM RATINGS, Max. average forward rectified current IF(AV) at TL (fig. 1)"
 
 pins:
   src: 'p1 "MECHANICAL DATA, "Polarity: color band denotes the cathode end""'

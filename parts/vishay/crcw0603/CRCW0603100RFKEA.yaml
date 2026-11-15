@@ -30,10 +30,8 @@ lifecycle: { status: unknown }
 # the rated dissipation P70 depends on the operation mode (standard /
 # extended, p2), which the part number does not fix.
 parameters:
-  tolerance: { tol: ±1 %, src: 'p3 "PART NUMBER AND PRODUCT DESCRIPTION, TOLERANCE: F = ± 1 %"' }
-  resistance:
-    typ: 100 Ω
-    src: 'p3 "PART NUMBER AND PRODUCT DESCRIPTION, RESISTANCE: R = decimal, K = thousand, M = million -> 100R = 100 Ω"'
+  tolerance: { tol: ±1 %, src: 'p3 "PART NUMBER AND PRODUCT DESCRIPTION, TOLERANCE: F = ±1 %"' }
+  resistance: { typ: 100 Ω, src: 'p3 "PART NUMBER AND PRODUCT DESCRIPTION, RESISTANCE: 100R"' }
   temperature_coefficient:
     tol: ±100 ppm/K
-    src: 'p3 "PART NUMBER AND PRODUCT DESCRIPTION, TCR: K = ± 100 ppm/K"'
+    src: 'p3 "PART NUMBER AND PRODUCT DESCRIPTION, TCR: K = ±100 ppm/K"'

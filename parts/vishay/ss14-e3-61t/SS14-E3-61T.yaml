@@ -31,10 +31,9 @@ lifecycle: { status: unknown }
 parameters:
   forward_voltage:
     max: 0.5 V
-    src: 'p2 "ELECTRICAL CHARACTERISTICS, Maximum instantaneous forward voltage, 1.0 A, VF: 0.50 V (cell spanning SS12-SS14)"'
-  reverse_voltage:
-    max: 40 V
-    src: 'p1 "MAXIMUM RATINGS, Maximum repetitive peak reverse voltage VRRM, SS14 column: 40 V"'
+    at: { IF: 1 A }
+    src: p2 "ELECTRICAL CHARACTERISTICS, Max. instantaneous forward voltage VF (cell spanning SS12-SS14)"
+  reverse_voltage: { max: 40 V, src: 'p1 "MAXIMUM RATINGS, VRRM, SS14 column"' }
   forward_current:
     max: 1 A
-    src: 'p1 "MAXIMUM RATINGS, Maximum average forward rectified current at TL (fig. 1) IF(AV): 1.0 A"'
+    src: p1 "MAXIMUM RATINGS, Max. average forward rectified current IF(AV) at TL (fig. 1)"

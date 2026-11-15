@@ -31,7 +31,7 @@ parameters:
   forward_voltage:
     max: 3.5 V
     at: { IF: 50 A }
-    src: 'p2 "ELECTRICAL CHARACTERISTICS table, note (6): VF = 3.5 V max. (unidirectional only)"'
+    src: p2 "ELECTRICAL CHARACTERISTICS table, note (6), VF (unidirectional)"
   reverse_voltage:
     max: 12 V
-    src: 'p2 "ELECTRICAL CHARACTERISTICS table, row (+)SMBJ12A: Stand-off voltage VWM 12 V"'
+    src: p2 "ELECTRICAL CHARACTERISTICS table, (+)SMBJ12A row, Stand-off voltage VWM"

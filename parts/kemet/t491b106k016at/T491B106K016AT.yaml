@@ -17,13 +17,10 @@ existence: { status: verified }
 lifecycle: { status: active }
 
 parameters:
-  capacitance:
-    typ: 10 µF
-    src: 'p9 "Table 1 – Ratings & Part Number Reference, row T491B106(1)016A(2): Rated Cap 10 µF"'
-  tolerance: { tol: ±10 %, src: 'p2 "Ordering Information, Capacitance Tolerance: K = ±10%"' }
+  capacitance: { typ: 10 µF, src: 'p9 "Table 1, T491B106(1)016A(2) row, Rated Cap"' }
+  tolerance:   { tol: ±10 %, src: 'p2 "Ordering Information, Capacitance Tolerance: K = ±10%"' }
   rated_voltage:
     typ: 16 V
-    src: 'p9 "Table 1 – Ratings & Part Number Reference, row T491B106(1)016A(2): Rated Voltage 16 VDC at 85°C"'
-  esr:
-    max: 2 Ω
-    src: 'p9 "Table 1 – Ratings & Part Number Reference, row T491B106(1)016A(2): ESR 2.0 Ω at +25°C 100 kHz Maximum"'
+    at: { TA: 85 °C }
+    src: p9 "Table 1, T491B106(1)016A(2) row, Rated Voltage"
+  esr: { max: 2 Ω, at: { TA: 25 °C, f: 100 kHz }, src: 'p9 "Table 1, T491B106(1)016A(2) row, ESR"' }

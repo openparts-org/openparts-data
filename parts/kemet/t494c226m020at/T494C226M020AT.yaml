@@ -13,13 +13,13 @@ existence: { status: verified }
 lifecycle: { status: active }
 
 parameters:
-  capacitance:
-    typ: 22 µF
-    src: 'p10 "Table 1 – Ratings & Part Number Reference, row T494C226(1)020A(2): Rated Cap 22 µF"'
-  tolerance: { tol: ±20 %, src: 'p2 "Ordering Information, Capacitance Tolerance: M = ±20%"' }
+  capacitance: { typ: 22 µF, src: 'p10 "Table 1, T494C226(1)020A(2) row, Rated Cap"' }
+  tolerance:   { tol: ±20 %, src: 'p2 "Ordering Information, Capacitance Tolerance: M = ±20%"' }
   rated_voltage:
     typ: 20 V
-    src: 'p10 "Table 1 – Ratings & Part Number Reference, row T494C226(1)020A(2): Rated Voltage 20 VDC at 85°C"'
+    at: { TA: 85 °C }
+    src: p10 "Table 1, T494C226(1)020A(2) row, Rated Voltage"
   esr:
     max: 0.4 Ω
-    src: 'p10 "Table 1 – Ratings & Part Number Reference, row T494C226(1)020A(2): ESR 0.4 Ω at 25°C 100 kHz Max"'
+    at: { TA: 25 °C, f: 100 kHz }
+    src: p10 "Table 1, T494C226(1)020A(2) row, ESR"
