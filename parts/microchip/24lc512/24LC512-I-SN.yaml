@@ -1,0 +1,27 @@
+# MPN assembled from the "Product Identification System" of
+# microchip/DS20001754@revP (page 37): device + temperature "I" (-40 C to +85 C) +
+# package "SN" = "Plastic SOIC (3.90 mm body), 8-lead". Example e) prints "24LC512-I/SN".
+# Package: drawing C04-057C; every row of its sheet-2 table equals standards/SOIC8-3.90x4.90-P1.27 (C04-057 Rev D, DS20001203W) -- compared row by row on the rendered page (page 19).
+# existence is probable: the legend is not an orderable list
+# (openparts/skills/add-part section 2). lifecycle: no production-status
+# statement in the datasheet -> unknown. The id replaces the "/" of the
+# MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/24LC512-I-SN
+manufacturer: microchip
+mpn: 24LC512-I/SN
+device: microchip/24LC512
+
+package:
+  value: standards/SOIC8-3.90x4.90-P1.27
+  src: p37 "Product Identification System, Package "SN = Plastic SOIC (3.90 mm body), 8-lead""
+
+sources: [microchip/DS20001754@revP]
+source: microchip/DS20001754@revP
+
+existence:
+  status: probable
+  src: p37 "Product Identification System (part-number legend; example given)"
+
+lifecycle: { status: unknown }

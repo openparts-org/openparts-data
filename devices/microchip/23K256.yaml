@@ -1,0 +1,32 @@
+# 256-Kbit SPI serial SRAM (3.6 V 23K256 of the 23A256/23K256 family).
+# Pinout from DS22100F Table 3-1 "Pin Function Table" (page 13, column
+# "PDIP/SOIC TSSOP"); the table omits pin 3, which the "Package Types"
+# figure "PDIP/SOIC/TSSOP (P, SN, ST)" on page 1 labels NC. Overbars of
+# CS and HOLD are not represented in the name. Types: CS, SI, SCK, HOLD
+# -> input; SO -> output; VSS "Ground" -> ground; VCC "Supply Voltage"
+# -> power.
+schema_version: "0.2"
+kind: device
+id: microchip/23K256
+manufacturer: microchip
+category: sram
+family: 23A256/23K256
+source: microchip/DS22100@revF
+
+parameters:
+  capacity:
+    typ: 256 Kbit
+    src: p1 "Description, "The Microchip Technology Inc. 23X256 are 256 Kbit Serial SRAM devices""
+
+pins:
+  src:
+    - p13 "Table 3-1 "Pin Function Table", column PDIP/SOIC TSSOP"
+    - p1 "Package Types figure "PDIP/SOIC/TSSOP (P, SN, ST)" (pin 3 = NC)"
+  "1": { name: CS, type: input }
+  "2": { name: SO, type: output }
+  "3": { name: NC, type: nc }
+  "4": { name: VSS, type: ground }
+  "5": { name: SI, type: input }
+  "6": { name: SCK, type: input }
+  "7": { name: HOLD, type: input }
+  "8": { name: VCC, type: power }

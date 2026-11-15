@@ -1,0 +1,52 @@
+# 8-lead plastic SOIJ, 5.28 mm body, 1.27 mm pitch: Microchip drawing
+# C04-056C "8-Lead Plastic Small Outline (SM) - Medium, 5.28 mm Body
+# [SOIJ]", sheet 2 dimension table on DS20001836J page 28 (encoded-font
+# page, rendered and read as an image). The same C04-056C table appears
+# number for number in DS20001754P (24LC512) page 22 (rendered and
+# compared row by row).
+#
+# body_width = E1 (5.25 BSC), body_length = D (5.26 BSC), overall_width
+# = E (7.94 BSC), body_height = A2, overall_height = A, standoff = A1,
+# lead_length = L (foot length), lead_width = b, lead_thickness = c.
+# Values printed MIN/MAX only (NOM "-") are recorded as min/max. The
+# angles are not modelled. No recommended land pattern is printed.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/SOIJ8-SM-C04-056C
+family: soic
+lead_count: 8
+source: microchip/DS20001836@revJ
+
+pitch: { typ: 1.27 mm, src: 'p28 "C04-056C sheet 2 table, "Pitch e 1.27 BSC""' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    typ: 5.25 mm
+    src: p28 "C04-056C sheet 2 table, "Molded Package Width E1 5.25 BSC""
+  body_length:   { typ: 5.26 mm, src: 'p28 "C04-056C sheet 2 table, "Overall Length D 5.26 BSC""' }
+  body_height:
+    min: 1.75 mm
+    max: 1.98 mm
+    src: p28 "C04-056C sheet 2 table, "Molded Package Thickness A2" (MIN 1.75 / MAX 1.98)"
+  lead_thickness:
+    min: 0.15 mm
+    max: 0.25 mm
+    src: p28 "C04-056C sheet 2 table, "Lead Thickness c" (MIN 0.15 / MAX 0.25)"
+  overall_width: { typ: 7.94 mm, src: 'p28 "C04-056C sheet 2 table, "Overall Width E 7.94 BSC""' }
+  overall_height:
+    min: 1.77 mm
+    max: 2.03 mm
+    src: p28 "C04-056C sheet 2 table, "Overall Height A" (MIN 1.77 / MAX 2.03)"
+  standoff:
+    min: 0.05 mm
+    max: 0.25 mm
+    src: p28 "C04-056C sheet 2 table, "Standoff A1" (MIN 0.05 / MAX 0.25)"
+  lead_width:
+    min: 0.36 mm
+    max: 0.51 mm
+    src: p28 "C04-056C sheet 2 table, "Lead Width b" (MIN 0.36 / MAX 0.51)"
+  lead_length:
+    min: 0.51 mm
+    max: 0.76 mm
+    src: p28 "C04-056C sheet 2 table, "Foot Length L" (MIN 0.51 / MAX 0.76)"

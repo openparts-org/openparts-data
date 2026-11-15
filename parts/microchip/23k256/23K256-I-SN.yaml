@@ -1,0 +1,24 @@
+# MPN assembled from the "Product Identification System" of
+# microchip/DS22100@revF (page 25): device + temperature "I" (-40 C to +85 C) +
+# package "SN" = "Plastic SOIC (3.90 mml body), 8-lead".
+# Package: drawing C04-057C; every row of its table equals standards/SOIC8-3.90x4.90-P1.27 (C04-057 Rev D) -- compared row by row on the rendered page (page 17).
+# existence is probable: the legend is not an orderable list
+# (openparts/skills/add-part section 2). lifecycle: no production-status
+# statement in the datasheet -> unknown. The id replaces the "/" of the
+# MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/23K256-I-SN
+manufacturer: microchip
+mpn: 23K256-I/SN
+device: microchip/23K256
+
+package:
+  value: standards/SOIC8-3.90x4.90-P1.27
+  src: p25 "Product Identification System, Package "SN = Plastic SOIC (3.90 mml body), 8-lead""
+
+sources: [microchip/DS22100@revF]
+source: microchip/DS22100@revF
+
+existence: { status: probable, src: p25 "Product Identification System (part-number legend)" }
+lifecycle: { status: unknown }

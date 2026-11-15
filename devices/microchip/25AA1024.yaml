@@ -1,0 +1,31 @@
+# 1-Mbit SPI serial EEPROM (1.8 V). Pinout from DS20001836J Table 3-1
+# "Pin Function Table" (page 20, a single "Pin Number" column), checked
+# against the "Package Types" figures "DFN (MF)" and "PDIP/SOIJ (P, SM)"
+# on page 1 (same numbers in both). Overbars of CS, WP and HOLD (active
+# low) are not represented in the name. Types as for
+# microchip/25LC256: CS, WP, SI, SCK, HOLD -> input; SO -> output; VSS
+# "Ground" -> ground; VCC "Supply Voltage" -> power. No EP pin (the
+# datasheet says nothing about the DFN pad's connection).
+schema_version: "0.2"
+kind: device
+id: microchip/25AA1024
+manufacturer: microchip
+category: eeprom
+family: 25AA1024
+source: microchip/DS20001836@revJ
+
+parameters:
+  capacity: { typ: 1024 Kbit, src: 'p1 "Description, "25AA1024 is a 1024 Kbit serial EEPROM""' }
+
+pins:
+  src:
+    - p20 "Table 3-1 "Pin Function Table""
+    - p1 "Package Types figures "DFN (MF)" and "PDIP/SOIJ (P, SM)""
+  "1": { name: CS, type: input }
+  "2": { name: SO, type: output }
+  "3": { name: WP, type: input }
+  "4": { name: VSS, type: ground }
+  "5": { name: SI, type: input }
+  "6": { name: SCK, type: input }
+  "7": { name: HOLD, type: input }
+  "8": { name: VCC, type: power }

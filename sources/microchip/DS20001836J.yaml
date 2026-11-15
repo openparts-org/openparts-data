@@ -1,0 +1,18 @@
+# Official Microchip 25AA1024 datasheet (1 Mbit SPI bus serial EEPROM).
+# Downloaded directly from ww1.microchip.com (URL below). document_id
+# and revision from the footer "DS20001836J-page N"; date from Appendix
+# A "Revision J (04/2015)". This document covers only the 1.8 V
+# 25AA1024; the 2.5 V 25LC1024 has its own datasheet (not read).
+# Package drawing pages use an encoded font: rendered with pdftoppm and
+# read as images. Printed page numbers equal the PDF page indices.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20001836@revJ
+sha256: b76c73bc98bbc3904b945449fce3cb7ded31631e796aa2f3512f9e239dff04dc
+retrieved: 2026-11-16
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/20001836J.pdf
+publisher: microchip
+document_id: DS20001836
+document_type: datasheet
+revision: J
+date: 2015-04
