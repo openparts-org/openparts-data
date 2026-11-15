@@ -1,0 +1,68 @@
+# Winbond 8-pin SOIC 150-mil (package code SN), 1.27 mm pitch. All values
+# from section 10.1 "8-Pin SOIC 150-mil (Package Code SN)" of the
+# W25Q64JV datasheet Revision N, PDF page 68 (printed 67); the table is
+# in the text layer. The same table, number for number, is in W25Q32JV
+# Rev K (PDF page 68) and W25Q16JV Rev J (PDF page 66, section 11.1) --
+# checked by diffing the pdftotext output of the three pages.
+#
+# The table has no A2: body_height = A (1.35/1.60/1.75), no separate
+# overall_height. E = body width (3.80/3.90/4.00, JEDEC E1 role), HE =
+# lead tip to tip -> overall_width; D = body length. L = foot length.
+# y (coplanarity) and the angle are not modelled. The inch column prints
+# HE MIN as 0.288 (an evident typo next to NOM 0.236); only the
+# millimetre column ("Control dimensions are in millimeter") is used.
+#
+# Not standards/SOIC8-3.90x4.90-P1.27 (Microchip C04-057): different
+# limits (e.g. b 0.33-0.51 here vs 0.31-0.51 there, D 4.80/4.85/5.00 vs
+# 4.90 BSC).
+schema_version: "0.2"
+kind: package
+id: manufacturers/winbond/SOIC8-150mil-SN
+family: soic
+lead_count: 8
+source: winbond/W25Q64JV@revN
+
+pitch: { typ: 1.27 mm, src: 'p68 "Section 10.1 table, "e 1.27BSC""' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 3.8 mm
+    typ: 3.9 mm
+    max: 4 mm
+    src: p68 "Section 10.1 table, "E 3.80 / 3.90 / 4.00" (mm)"
+  body_length:
+    min: 4.8 mm
+    typ: 4.85 mm
+    max: 5 mm
+    src: p68 "Section 10.1 table, "D 4.80 / 4.85 / 5.00" (mm)"
+  body_height:
+    min: 1.35 mm
+    typ: 1.6 mm
+    max: 1.75 mm
+    src: p68 "Section 10.1 table, "A 1.35 / 1.60 / 1.75" (mm; no A2 given)"
+  lead_thickness:
+    min: 0.19 mm
+    typ: 0.2 mm
+    max: 0.25 mm
+    src: p68 "Section 10.1 table, "C 0.19 / 0.20 / 0.25" (mm)"
+  overall_width:
+    min: 5.8 mm
+    typ: 6 mm
+    max: 6.2 mm
+    src: p68 "Section 10.1 table, "HE 5.80 / 6.00 / 6.20" (mm)"
+  standoff:
+    min: 0.1 mm
+    typ: 0.15 mm
+    max: 0.25 mm
+    src: p68 "Section 10.1 table, "A1 0.10 / 0.15 / 0.25" (mm)"
+  lead_width:
+    min: 0.33 mm
+    typ: 0.41 mm
+    max: 0.51 mm
+    src: p68 "Section 10.1 table, "b 0.33 / 0.41 / 0.51" (mm)"
+  lead_length:
+    min: 0.4 mm
+    typ: 0.71 mm
+    max: 1.27 mm
+    src: p68 "Section 10.1 table, "L 0.40 / 0.71 / 1.27" (mm)"

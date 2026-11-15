@@ -1,0 +1,17 @@
+# Official Winbond W25Q32JV datasheet ("3V 32M-bit serial flash memory
+# with dual/quad SPI", Industrial & Industrial Plus grade). Cover page:
+# "Publication Release Date: April 27, 2026 / Revision K". Linked from
+# the winbond.com documentation entry DA00-W25Q32JV.1 (levelOne.jsp);
+# downloaded with curl and read with pdftotext -layout. Page numbers in
+# provenance are PDF page indices (printed page = PDF page - 1).
+schema_version: "0.2"
+kind: source
+id: winbond/W25Q32JV@revK
+sha256: acb6e553940b5d36d6ac8ae0e1a30e58e3c0caec42c4513b43a065fea7150616
+retrieved: 2026-11-16
+url: https://www.winbond.com/resource-files/W25Q32JV%20RevK%2004272026%20Plus.pdf
+publisher: winbond
+document_id: W25Q32JV
+document_type: datasheet
+revision: K
+date: 2026-04-27

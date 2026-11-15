@@ -1,0 +1,28 @@
+# MPN "W25Q16JVZPIQ" printed verbatim in section 12.1 "Valid Part Numbers and
+# Top Side Marking", "W25Q16JV-IQ" table, of winbond/W25Q16JV@revJ (PDF page
+# 74, printed 73). Package code ZP = "WSON-8 6x5-mm" (same row); outline in
+# section 11.4 (PDF page 69).
+# The package section on page 69 is number for number the drawing that
+# manufacturers/winbond/WSON8-6x5-P1.27-P was read from (W25Q128JV Rev F) -- checked by diffing the
+# pdftotext output of both pages -- so that package is reused.
+# lifecycle: the datasheet states no production status and no
+# first-party lifecycle page was read -> unknown.
+schema_version: "0.2"
+kind: part
+id: winbond/W25Q16JVZPIQ
+manufacturer: winbond
+mpn: W25Q16JVZPIQ
+device: winbond/W25Q16JV-S
+
+package:
+  value: manufacturers/winbond/WSON8-6x5-P1.27-P
+  src: 'p74 "Section 12.1, W25Q16JV-IQ table: package "ZP" = "WSON-8 6x5-mm"; outline in section 11.4 (p69)"'
+
+sources: [winbond/W25Q16JV@revJ]
+source: winbond/W25Q16JV@revJ
+
+existence:
+  status: verified
+  src: p74 "Section 12.1 Valid Part Numbers and Top Side Marking, W25Q16JV-IQ table, row W25Q16JVZPIQ"
+
+lifecycle: { status: unknown }

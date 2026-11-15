@@ -1,0 +1,28 @@
+# W25Q32JV 32M-bit SPI flash, 8-pin SOIC 150-mil / 208-mil and 8-pad
+# WSON 6x5-mm pin numbering (package codes SN, SS, ZP). Transcribed from
+# section "3.3 Pin Description SOIC 150/208-mil, VSOP 208-mil, WSON 6x5-mm/8x6-mm" (PDF page 6, printed page 5), cross-checked against
+# Figures 1a/1b on the same page. Pin names use the datasheet's
+# Standard-SPI name; the Quad-SPI IOn name is kept as an alternate
+# function. The WSON centre pad "is not connected to any internal
+# electrical signals" (package drawing note) -- no EP pin.
+schema_version: "0.2"
+kind: device
+id: winbond/W25Q32JV-S
+manufacturer: winbond
+category: flash
+family: W25Q32JV
+source: winbond/W25Q32JV@revK
+
+parameters:
+  capacity: { typ: 32 Mbit, src: 'p5 "Section 1 General Descriptions, W25Q32JV (32M-bit)"' }
+
+pins:
+  src: p6 "Section 3.3 Pin Description SOIC 150/208-mil, VSOP 208-mil, WSON 6x5-mm/8x6-mm table and Figures 1a/1b"
+  "1": { name: /CS, type: input }
+  "2": { name: DO, type: io, alternate_functions: [IO1] }
+  "3": { name: /WP, type: io, alternate_functions: [IO2] }
+  "4": { name: GND, type: ground }
+  "5": { name: DI, type: io, alternate_functions: [IO0] }
+  "6": { name: CLK, type: input }
+  "7": { name: /HOLD or /RESET, type: io, alternate_functions: [IO3] }
+  "8": { name: VCC, type: power }
