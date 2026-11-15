@@ -22,7 +22,16 @@ lifecycle:
 sources:
   - ti/SLVSA00E
 
+parameters:
+  output_voltage:
+    nominal: 3.3
+    unit: V
+
 provenance:
+  "/parameters/output_voltage":
+    - source: ti/SLVSA00E
+      page: 17
+      locator: "11.1.2 Device Nomenclature, Table 3. Ordering Information, \"TLV700xx yyyz\": \"XX is nominal output voltage (for example, 28 = 2.8 V)\" -> xx = 33"
   "/existence":
     - source: ti/SLVSA00E
       page: 23

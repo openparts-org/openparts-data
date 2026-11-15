@@ -21,7 +21,29 @@ pins:
   "5": { name: PG, type: output }
   "6": { name: FB, type: input }
 
+parameters:
+  output_type:
+    value: adjustable
+  input_voltage_max:
+    max: 5.5
+    unit: V
+  output_current:
+    max: 1
+    unit: A
+
 provenance:
+  "/parameters/output_type":
+    - source: ti/SLVSD89B
+      page: 1
+      locator: "1 Features, \"Adjustable Output Voltage from 0.6 V to VIN\""
+  "/parameters/input_voltage_max":
+    - source: ti/SLVSD89B
+      page: 4
+      locator: "Recommended Operating Conditions, VIN Input voltage: MAX 5.5 V"
+  "/parameters/output_current":
+    - source: ti/SLVSD89B
+      page: 4
+      locator: "Recommended Operating Conditions, IOUT Output current: MAX 1 A"
   "/pins":
     - source: ti/SLVSD89B
       page: 3

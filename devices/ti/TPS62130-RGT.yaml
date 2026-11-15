@@ -37,7 +37,29 @@ pins:
   "16": { name: "PGND", type: ground }
   "EP": { name: "Exposed Thermal Pad", type: passive }
 
+parameters:
+  output_type:
+    value: adjustable
+  input_voltage_max:
+    max: 17
+    unit: V
+  output_current:
+    max: 3
+    unit: A
+
 provenance:
+  "/parameters/output_type":
+    - source: ti/SLVSAG7F
+      page: 1
+      locator: "1 Features, \"Adjustable output voltage from 0.9 V to 6 V\""
+  "/parameters/input_voltage_max":
+    - source: ti/SLVSAG7F
+      page: 4
+      locator: "7.3 Recommended Operating Conditions, Supply Voltage, VIN (at AVIN and PVIN): MAX 17 V"
+  "/parameters/output_current":
+    - source: ti/SLVSAG7F
+      page: 1
+      locator: "1 Features, \"Up to 3-A output current\""
   "/pins":
     - source: ti/SLVSAG7F
       page: 3

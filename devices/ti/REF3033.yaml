@@ -17,7 +17,23 @@ pins:
   "2": { name: OUT, type: output }
   "3": { name: GND, type: ground }
 
+parameters:
+  input_voltage_max:
+    max: 5.5
+    unit: V
+  output_current:
+    max: 25
+    unit: mA
+
 provenance:
+  "/parameters/input_voltage_max":
+    - source: ti/SBVS032K
+      page: 4
+      locator: "6.3 Recommended Operating Conditions, VIN Input voltage (2) (Specification for REF30xx): MAX 5.5 V"
+  "/parameters/output_current":
+    - source: ti/SBVS032K
+      page: 4
+      locator: "6.3 Recommended Operating Conditions, ILOAD Load current (2) (Specification for REF30xx): MAX 25 mA"
   "/pins":
     - source: ti/SBVS032K
       page: 3

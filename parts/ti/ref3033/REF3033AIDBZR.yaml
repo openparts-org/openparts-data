@@ -22,7 +22,16 @@ lifecycle:
 sources:
   - ti/SBVS032K
 
+parameters:
+  output_voltage:
+    nominal: 3.3
+    unit: V
+
 provenance:
+  "/parameters/output_voltage":
+    - source: ti/SBVS032K
+      page: 2
+      locator: "4 Device Comparison Table, REF30 column REF3033AIDBZR: Voltage 3.3V"
   "/existence":
     - source: ti/SBVS032K
       page: 28

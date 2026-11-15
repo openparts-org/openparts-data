@@ -17,7 +17,22 @@ pins:
   "2": { name: OUTPUT, type: output }
   "3": { name: ADJUSTMENT, type: input }
 
+parameters:
+  output_type:
+    value: adjustable
+  output_current:
+    max: 100
+    unit: mA
+
 provenance:
+  "/parameters/output_type":
+    - source: ti/SLCS144G
+      page: 1
+      locator: "1 Features, \"Output voltage range (VO): Adjustable 1.25V to 37V\""
+  "/parameters/output_current":
+    - source: ti/SLCS144G
+      page: 4
+      locator: "5.3 Recommended Operating Conditions, IO Output current: MAX 100 mA"
   "/pins":
     - source: ti/SLCS144G
       page: 3

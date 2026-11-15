@@ -15,7 +15,31 @@ pins:
   "3": { name: "OUT", type: power }
   "4": { name: "GND", type: ground }
 
+parameters:
+  input_voltage_max:
+    max: 26
+    unit: V
+  output_current:
+    nominal: 1
+    unit: A
+  dropout_voltage:
+    nominal: 0.5
+    max: 1
+    unit: V
+
 provenance:
+  "/parameters/input_voltage_max":
+    - source: ti/SNVS769J
+      page: 4
+      locator: "6.3 Recommended Operating Conditions, Input voltage: MAX 26 V"
+  "/parameters/output_current":
+    - source: ti/SNVS769J
+      page: 1
+      locator: "3 Description: \"positive voltage regulators feature the ability to source 1 A of output current\""
+  "/parameters/dropout_voltage":
+    - source: ti/SNVS769J
+      page: 5
+      locator: "6.5 Electrical Characteristics, Dropout voltage, IOUT = 1A: TYP 0.5 V, MAX 1 V (same in tables 6.5-6.7 for all output voltages)"
   "/pins":
     - source: ti/SNVS769J
       page: 3

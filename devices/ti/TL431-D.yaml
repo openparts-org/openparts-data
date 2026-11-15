@@ -25,7 +25,15 @@ pins:
   "7": { name: ANODE, type: ground }
   "8": { name: REF, type: analog }
 
+parameters:
+  output_type:
+    value: adjustable
+
 provenance:
+  "/parameters/output_type":
+    - source: ti/SLVS543S
+      page: 1
+      locator: "1 Features, \"Adjustable output voltage: Vref to 36V\"; 3 Description: \"three-terminal adjustable shunt regulators\""
   "/pins":
     - source: ti/SLVS543S
       page: 4

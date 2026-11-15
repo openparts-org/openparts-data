@@ -22,7 +22,23 @@ pins:
   "4": { name: FB, type: analog }
   "5": { name: SW, type: passive }
 
+parameters:
+  input_voltage_max:
+    max: 5.5
+    unit: V
+  output_current:
+    max: 600
+    unit: mA
+
 provenance:
+  "/parameters/input_voltage_max":
+    - source: ti/SNVS294S
+      page: 5
+      locator: "6.4 Recommended Operating Conditions, Input voltage: MAX 5.5 V"
+  "/parameters/output_current":
+    - source: ti/SNVS294S
+      page: 1
+      locator: "1 Features, \"600-mA Maximum Load Capability\""
   "/pins":
     - source: ti/SNVS294S
       page: 3

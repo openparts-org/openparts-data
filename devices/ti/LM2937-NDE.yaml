@@ -15,7 +15,31 @@ pins:
   "2": { name: "GND", type: ground }
   "3": { name: "OUTPUT", type: power }
 
+parameters:
+  input_voltage_max:
+    max: 26
+    unit: V
+  output_current:
+    nominal: 500
+    unit: mA
+  dropout_voltage:
+    nominal: 0.5
+    max: 1
+    unit: V
+
 provenance:
+  "/parameters/input_voltage_max":
+    - source: ti/SNVS100F
+      page: 4
+      locator: "6.3 Recommended Operating Conditions, Input voltage (VIN): MAX 26 V"
+  "/parameters/output_current":
+    - source: ti/SNVS100F
+      page: 5
+      locator: "6.5 Electrical Characteristics header: \"IOUT(MAX) = 500 mA for the TO-220 and DDPAK/TO-263 packages\" (TO-220)"
+  "/parameters/dropout_voltage":
+    - source: ti/SNVS100F
+      page: 5
+      locator: "6.5 Electrical Characteristics, Dropout voltage, IOUT = IOUT(MAX): TYP 0.5 V, MAX 1 V (same in every LM2937 output-voltage table, pages 5-7)"
   "/pins":
     - source: ti/SNVS100F
       page: 3

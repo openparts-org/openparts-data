@@ -21,7 +21,23 @@ pins:
   "5": { name: EN, type: input }
   "6": { name: VBST, type: power }
 
+parameters:
+  input_voltage_max:
+    max: 17
+    unit: V
+  output_current:
+    nominal: 3
+    unit: A
+
 provenance:
+  "/parameters/input_voltage_max":
+    - source: ti/SLVSCB0E
+      page: 5
+      locator: "6.3 Recommended Operating Conditions, VIN Supply input voltage range: MAX 17 V"
+  "/parameters/output_current":
+    - source: ti/SLVSCB0E
+      page: 1
+      locator: "1 Features, \"TPS563200 - 3-A converter\""
   "/pins":
     - source: ti/SLVSCB0E
       page: 4

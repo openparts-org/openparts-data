@@ -23,7 +23,23 @@ pins:
   "8": { name: "IN1", type: power }
   "EP": { name: "Pad", type: passive }
 
+parameters:
+  input_voltage_max:
+    max: 5.5
+    unit: V
+  output_current:
+    max: 2
+    unit: A
+
 provenance:
+  "/parameters/input_voltage_max":
+    - source: ti/SBVS045C
+      page: 3
+      locator: "RECOMMENDED OPERATING CONDITIONS, Input voltage at IN1, VI(IN1) and at IN2, VI(IN2): MAX 5.5 V"
+  "/parameters/output_current":
+    - source: ti/SBVS045C
+      page: 3
+      locator: "RECOMMENDED OPERATING CONDITIONS, Nominal current limit adjustment range IO(OUT), TPS2113ADRB, TJ <= 105°C: MAX 2 A"
   "/pins":
     - source: ti/SBVS045C
       page: 7

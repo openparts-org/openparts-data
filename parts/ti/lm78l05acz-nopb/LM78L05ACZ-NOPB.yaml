@@ -20,7 +20,16 @@ lifecycle:
 sources:
   - ti/SNVS754O
 
+parameters:
+  output_voltage:
+    nominal: 5.0
+    unit: V
+
 provenance:
+  "/parameters/output_voltage":
+    - source: ti/SNVS754O
+      page: 30
+      locator: "8.1.2 Device Nomenclature, row \"LM78LxxACZ/ yyyy\" (TO-92, legacy chip only): \"xx is the nominal output voltage (for example, 05 = 5.0V, 09 = 9.0V, ...)\""
   "/existence":
     - source: ti/SNVS754O
       page: 33

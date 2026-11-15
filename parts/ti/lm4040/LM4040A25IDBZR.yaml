@@ -22,7 +22,16 @@ lifecycle:
 sources:
   - ti/SLOS456Q
 
+parameters:
+  output_voltage:
+    nominal: 2.5
+    unit: V
+
 provenance:
+  "/parameters/output_voltage":
+    - source: ti/SLOS456Q
+      page: 3
+      locator: "4 Device Comparison Table, A grade, VKA 2.5V, orderable part number LM4040A25I"
   "/existence":
     - source: ti/SLOS456Q
       page: 32

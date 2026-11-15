@@ -16,7 +16,29 @@ pins:
   "2": { name: GND, type: ground }
   "3": { name: VIN, type: power }
 
+parameters:
+  output_type:
+    value: fixed
+  input_voltage_max:
+    max: 30
+    unit: V
+  output_current:
+    max: 100
+    unit: mA
+
 provenance:
+  "/parameters/output_type":
+    - source: ti/SNVS754O
+      page: 1
+      locator: "Title \"LM78L 100mA Fixed Output Linear Regulator\""
+  "/parameters/input_voltage_max":
+    - source: ti/SNVS754O
+      page: 4
+      locator: "5.4 Recommended Operating Conditions, VIN Input voltage (legacy chip): MAX 30 V (TO-92 is legacy chip only, page 1 Package options)"
+  "/parameters/output_current":
+    - source: ti/SNVS754O
+      page: 4
+      locator: "5.4 Recommended Operating Conditions, IO Continuous output current: MAX 100 mA"
   "/pins":
     - source: ti/SNVS754O
       page: 3

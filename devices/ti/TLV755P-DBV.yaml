@@ -19,7 +19,29 @@ pins:
   "4": { name: NC, type: nc }
   "5": { name: OUT, type: power }
 
+parameters:
+  output_type:
+    value: fixed
+  input_voltage_max:
+    max: 5.5
+    unit: V
+  output_current:
+    max: 500
+    unit: mA
+
 provenance:
+  "/parameters/output_type":
+    - source: ti/SBVS320D
+      page: 1
+      locator: "3 Description: \"the device is offered in fixed output voltages ranging from 0.6V to 5V\""
+  "/parameters/input_voltage_max":
+    - source: ti/SBVS320D
+      page: 4
+      locator: "5.3 Recommended Operating Conditions, VIN Input voltage: MAX 5.5 V"
+  "/parameters/output_current":
+    - source: ti/SBVS320D
+      page: 4
+      locator: "5.3 Recommended Operating Conditions, IOUT Output current: MAX 500 mA"
   "/pins":
     - source: ti/SBVS320D
       page: 3

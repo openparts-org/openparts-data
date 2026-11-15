@@ -18,7 +18,22 @@ pins:
   "2": { name: "OUTPUT", type: power }
   "3": { name: "INPUT", type: power }
 
+parameters:
+  output_type:
+    value: adjustable
+  output_current:
+    nominal: 1.5
+    unit: A
+
 provenance:
+  "/parameters/output_type":
+    - source: ti/SLVS044Z
+      page: 1
+      locator: "1 Features, \"Output voltage range: Adjustable: 1.25V to 37V\""
+  "/parameters/output_current":
+    - source: ti/SLVS044Z
+      page: 1
+      locator: "1 Features, \"Output current: 1.5A\""
   "/pins":
     - source: ti/SLVS044Z
       page: 5

@@ -36,7 +36,31 @@ pins:
   "20": { name: "OUT", type: power }
   "EP": { name: "GND", type: ground, connected_to: "7" }
 
+parameters:
+  input_voltage_max:
+    max: 35
+    unit: V
+  output_current:
+    max: 1.0
+    unit: A
+  dropout_voltage:
+    nominal: 307
+    max: 450
+    unit: mV
+
 provenance:
+  "/parameters/input_voltage_max":
+    - source: ti/SBVS204G
+      page: 5
+      locator: "5.3 Recommended Operating Conditions, VI: MAX 35.0 V"
+  "/parameters/output_current":
+    - source: ti/SBVS204G
+      page: 5
+      locator: "5.3 Recommended Operating Conditions, IO: MAX 1.0 A"
+  "/parameters/dropout_voltage":
+    - source: ti/SBVS204G
+      page: 6
+      locator: "Electrical Characteristics, V(DO) Dropout voltage, VI = 95% VO(nom), IO = 1 A: TYP 307 mV, MAX 450 mV"
   "/pins":
     - source: ti/SBVS204G
       page: 3

@@ -21,7 +21,23 @@ pins:
   "5": { name: EN, type: input }
   "6": { name: VBST, type: power }
 
+parameters:
+  input_voltage_max:
+    max: 17
+    unit: V
+  output_current:
+    nominal: 3
+    unit: A
+
 provenance:
+  "/parameters/input_voltage_max":
+    - source: ti/SLVSD90B
+      page: 4
+      locator: "5.3 Recommended Operating Conditions, VIN Supply input voltage range: MAX 17 V"
+  "/parameters/output_current":
+    - source: ti/SLVSD90B
+      page: 1
+      locator: "1 Features, \"TPS563201 and TPS563208 3A converter\""
   "/pins":
     - source: ti/SLVSD90B
       page: 3

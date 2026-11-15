@@ -23,7 +23,29 @@ pins:
   "5": { name: EN, type: input }
   "6": { name: BOOT, type: power }
 
+parameters:
+  output_type:
+    value: adjustable
+  input_voltage_max:
+    max: 28
+    unit: V
+  output_current:
+    nominal: 2
+    unit: A
+
 provenance:
+  "/parameters/output_type":
+    - source: ti/SLVSD26C
+      page: 14
+      locator: "\"The output voltage of the TPS54202 device is externally adjustable using a resistor divider network\""
+  "/parameters/input_voltage_max":
+    - source: ti/SLVSD26C
+      page: 4
+      locator: "5.3 Recommended Operating Conditions, Input voltage range VIN: MAX 28 V"
+  "/parameters/output_current":
+    - source: ti/SLVSD26C
+      page: 1
+      locator: "1 Features, \"Integrated 148mΩ and 78mΩ MOSFETs for 2A, continuous output current\""
   "/pins":
     - source: ti/SLVSD26C
       page: 3

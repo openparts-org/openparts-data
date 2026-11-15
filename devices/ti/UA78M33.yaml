@@ -19,7 +19,36 @@ pins:
   "3": { name: OUTPUT, type: power }
   "4": { name: COMMON, type: ground }
 
+parameters:
+  output_type:
+    value: fixed
+  output_voltage:
+    nominal: 3.3
+    unit: V
+  output_current:
+    max: 500
+    unit: mA
+  dropout_voltage:
+    nominal: 2.0
+    unit: V
+
 provenance:
+  "/parameters/output_type":
+    - source: ti/SLVS059V
+      page: 1
+      locator: "3 Description: \"The UA78M fixed-voltage integrated-circuit voltage regulator\""
+  "/parameters/output_voltage":
+    - source: ti/SLVS059V
+      page: 5
+      locator: "5.5 Electrical Characteristics: UA78M33 (Both Legacy and New Chip), Output voltage, Legacy chip and new chip: TYP 3.3 V"
+  "/parameters/output_current":
+    - source: ti/SLVS059V
+      page: 4
+      locator: "5.3 Recommended Operating Conditions, IO Output current: MAX 500 mA"
+  "/parameters/dropout_voltage":
+    - source: ti/SLVS059V
+      page: 5
+      locator: "5.5 Electrical Characteristics: UA78M33, Dropout voltage, Legacy chip and new chip: TYP 2.0 V"
   "/pins":
     - source: ti/SLVS059V
       page: 3

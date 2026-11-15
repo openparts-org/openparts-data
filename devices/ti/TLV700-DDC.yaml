@@ -19,7 +19,29 @@ pins:
   "4": { name: NC, type: nc }
   "5": { name: OUT, type: power }
 
+parameters:
+  output_type:
+    value: fixed
+  input_voltage_max:
+    max: 5.5
+    unit: V
+  output_current:
+    max: 200
+    unit: mA
+
 provenance:
+  "/parameters/output_type":
+    - source: ti/SLVSA00E
+      page: 1
+      locator: "1 Features, \"Available in Fixed-Output Voltages from 1.2 V to 4.8 V\""
+  "/parameters/input_voltage_max":
+    - source: ti/SLVSA00E
+      page: 5
+      locator: "6.3 Recommended Operating Conditions, VIN: MAX 5.5 V"
+  "/parameters/output_current":
+    - source: ti/SLVSA00E
+      page: 5
+      locator: "6.3 Recommended Operating Conditions, IOUT: MAX 200 mA"
   "/pins":
     - source: ti/SLVSA00E
       page: 4

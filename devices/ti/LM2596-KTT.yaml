@@ -21,7 +21,23 @@ pins:
   "4": { name: "Feedback", type: input }
   "5": { name: "ON/OFF", type: input }
 
+parameters:
+  input_voltage_max:
+    max: 40
+    unit: V
+  output_current:
+    nominal: 3
+    unit: A
+
 provenance:
+  "/parameters/input_voltage_max":
+    - source: ti/SNVS124G
+      page: 5
+      locator: "7.3 Operating Conditions, Supply voltage: MAX 40 V"
+  "/parameters/output_current":
+    - source: ti/SNVS124G
+      page: 1
+      locator: "1 Features, \"3-A output load current\""
   "/pins":
     - source: ti/SNVS124G
       page: 4

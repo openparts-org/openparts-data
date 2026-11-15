@@ -15,7 +15,43 @@ pins:
   "2": { name: "COMMON", type: ground }
   "3": { name: "OUTPUT", type: power }
 
+parameters:
+  output_type:
+    value: fixed
+  output_voltage:
+    nominal: 5
+    unit: V
+  input_voltage_max:
+    max: 25
+    unit: V
+  output_current:
+    max: 1.5
+    unit: A
+  dropout_voltage:
+    nominal: 2
+    unit: V
+
 provenance:
+  "/parameters/output_type":
+    - source: ti/SLVS056P
+      page: 1
+      locator: "Title \"µA78xx Fixed Positive Voltage Regulators\""
+  "/parameters/output_voltage":
+    - source: ti/SLVS056P
+      page: 5
+      locator: "7.5 Electrical Characteristics - uA7805, Output voltage, IO = 5 mA to 1 A, VI = 7 V to 20 V, 25°C: TYP 5 V"
+  "/parameters/input_voltage_max":
+    - source: ti/SLVS056P
+      page: 4
+      locator: "7.3 Recommended Operating Conditions, VI Input voltage, µA7805: MAX 25 V"
+  "/parameters/output_current":
+    - source: ti/SLVS056P
+      page: 4
+      locator: "7.3 Recommended Operating Conditions, IO Output current: MAX 1.5 A"
+  "/parameters/dropout_voltage":
+    - source: ti/SLVS056P
+      page: 5
+      locator: "7.5 Electrical Characteristics - uA7805, Dropout voltage, IO = 1 A, 25°C: TYP 2 V"
   "/pins":
     - source: ti/SLVS056P
       page: 3

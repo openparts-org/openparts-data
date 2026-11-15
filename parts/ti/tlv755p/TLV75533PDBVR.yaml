@@ -22,7 +22,24 @@ lifecycle:
 sources:
   - ti/SBVS320D
 
+parameters:
+  output_voltage:
+    nominal: 3.3
+    unit: V
+  dropout_voltage:
+    nominal: 150
+    max: 215
+    unit: mV
+
 provenance:
+  "/parameters/output_voltage":
+    - source: ti/SBVS320D
+      page: 23
+      locator: "8.1.1 Device Nomenclature, Table 8-1, \"TLV755xx(x)Pyyyz(M3)\": \"xx(x) is the nominal output voltage ... two digits are used (for example, 28 = 2.8V ...)\" -> xx = 33"
+  "/parameters/dropout_voltage":
+    - source: ti/SBVS320D
+      page: 6
+      locator: "Electrical Characteristics, VDO Dropout voltage, IOUT = 500mA, 3.3V <= VOUT < 5.0V (non-DYD row): TYP 150 mV, MAX 215 mV"
   "/existence":
     - source: ti/SBVS320D
       page: 28
