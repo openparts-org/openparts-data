@@ -1,0 +1,30 @@
+# LMR14206 0.6-A step-down regulator, 6-pin thin SOT-23 (DDC) pinout.
+# From SNVS733D Figure 2 "6-Pin SOT (Top View)" (page 2) and the PIN
+# DESCRIPTIONS table (page 3): CB 1, GND 2, FB 3, SHDN 4, VIN 5, SW 6.
+# The table has no type column; types follow the descriptions: CB "SW
+# FET gate bias voltage" -> power; GND -> ground; FB "Feedback pin" ->
+# input; SHDN "Logic level shutdown input" -> input; VIN "Power input
+# voltage pin" -> power; SW "Power FET output" (switch node) -> passive.
+schema_version: "0.2"
+kind: device
+id: ti/LMR14206
+manufacturer: ti
+category: switching_regulator
+family: LMR14206
+source: ti/SNVS733D
+
+parameters:
+  output_type:
+    value: adjustable
+    src: 'p3 "PIN DESCRIPTIONS, FB: feedback voltage divider sets VOUT"'
+  input_voltage_max: { max: 42 V, src: 'p4 "6 Operating Conditions, Input Voltage VIN"' }
+  output_current:    { max: 0.6 A, src: 'p1 "1 Features, output current up to 0.6A"' }
+
+pins:
+  src: [p2 "Figure 2. 6-Pin SOT (Top View)", p3 "PIN DESCRIPTIONS table"]
+  "1": { name: CB, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: FB, type: input }
+  "4": { name: SHDN, type: input }
+  "5": { name: VIN, type: power }
+  "6": { name: SW, type: passive }

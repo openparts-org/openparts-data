@@ -1,0 +1,29 @@
+# Orderable MPN in the PACKAGE OPTION ADDENDUM of SLVSE22B (page 26):
+# "TPS560430X3FDBVR Active Production SOT-23 (DBV) | 6 3000 | LARGE T&R ...".
+# Lifecycle "Active" from the same row's Status column. Option
+# TPS560430X3F (1.1 MHz, FPWM, Fixed 3.3 V) per the "Device Comparison Table" (page 3).
+# Package DBV0006A (pages 31-33, drawing 4214840/G 08/2024) ->
+# manufacturers/ti/DBV0006A; the three outline pages' pdftotext -layout
+# text is identical to the DBV0006A pages of SCES195N that package was
+# read from.
+schema_version: "0.2"
+kind: part
+id: ti/TPS560430X3FDBVR
+manufacturer: ti
+mpn: TPS560430X3FDBVR
+device: ti/TPS560430X3F-DBV
+
+package:
+  value: manufacturers/ti/DBV0006A
+  src: p26 "PACKAGE OPTION ADDENDUM, row TPS560430X3FDBVR, Package column"
+
+sources: [ti/SLVSE22B]
+source: ti/SLVSE22B
+
+existence:
+  status: verified
+  src: p26 "PACKAGE OPTION ADDENDUM, Packaging Information, row TPS560430X3FDBVR"
+
+lifecycle:
+  status: active
+  src: p26 "PACKAGE OPTION ADDENDUM, row TPS560430X3FDBVR, Status column Active"

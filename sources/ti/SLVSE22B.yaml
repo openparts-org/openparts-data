@@ -1,0 +1,19 @@
+# Official TI datasheet "TPS560430 SIMPLE SWITCHER 4-V to 36-V, 600-mA
+# Synchronous Step-Down Converter" (PDF Title "... datasheet (Rev.
+# B)"), downloaded 2026-11-16 from the TI symlink URL below; revision
+# read from the page header "SLVSE22B - SEPTEMBER 2017 - REVISED JUNE
+# 2018". 34 PDF pages, read with pdftotext -layout. The PACKAGE OPTION
+# ADDENDUM (pages 25-26) and the DBV0006A outline (pages 31-33, drawing
+# 4214840/G 08/2024) are appended by TI and newer than the datasheet.
+# Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: ti/SLVSE22B
+sha256: 3c5e30aa5ce3422f804d4415232b5840db3f0f2cb527b9b7b847973e4fb1986b
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tps560430.pdf
+publisher: ti
+document_id: SLVSE22B
+document_type: datasheet
+revision: B
+date: 2018-06

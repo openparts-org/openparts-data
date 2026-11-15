@@ -1,0 +1,29 @@
+# TPS560430 600-mA synchronous step-down converter, adjustable options X, XF, Y, YF, SOT-23-6
+# (DBV) pinout. From SLVSE22B "DBV Package 6-Pin SOT-23-6 Top View" and
+# the Pin Functions table (page 3): CB 1, GND 2, FB 3, EN 4, VIN 5, SW 6.
+# Types from the TYPE column (A = Analog, P = Power, G = Ground): CB "P"
+# bootstrap supply -> power; GND "G" -> ground; FB, EN "A" -> analog;
+# VIN "P" -> power; SW "P" switch node -> passive.
+schema_version: "0.2"
+kind: device
+id: ti/TPS560430-DBV
+manufacturer: ti
+category: switching_regulator
+family: TPS560430
+source: ti/SLVSE22B
+
+parameters:
+  output_type:
+    value: adjustable
+    src: 'p3 "5 Device Comparison Table, TPS560430X/XF/Y/YF: Adjustable"'
+  input_voltage_max: { max: 36 V, src: 'p4 "7.3 Recommended Operating Conditions, VIN to GND"' }
+  output_current:    { max: 600 mA, src: 'p4 "7.3 Recommended Operating Conditions, IOUT"' }
+
+pins:
+  src: p3 "DBV Package Top View and Pin Functions table"
+  "1": { name: CB, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: FB, type: analog }
+  "4": { name: EN, type: analog }
+  "5": { name: VIN, type: power }
+  "6": { name: SW, type: passive }

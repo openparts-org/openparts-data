@@ -1,0 +1,27 @@
+# Orderable MPN in the PACKAGE OPTION ADDENDUM of SNVS733D (page 14):
+# "LMR14206XMKX/NOPB Active Production SOT-23-THIN (DDC) | 6 3000 | LARGE T&R ...".
+# Lifecycle "Active" from the same row's Status column. Package DDC0006A
+# (pages 18-20, drawing 4214841/E 08/2024) -> manufacturers/ti/DDC0006A;
+# the three outline pages' pdftotext -layout text is identical to the
+# DDC0006A pages of SLVSCB0E that package was read from.
+schema_version: "0.2"
+kind: part
+id: ti/LMR14206XMKX/NOPB
+manufacturer: ti
+mpn: LMR14206XMKX/NOPB
+device: ti/LMR14206
+
+package:
+  value: manufacturers/ti/DDC0006A
+  src: p14 "PACKAGE OPTION ADDENDUM, row LMR14206XMKX/NOPB, Package column SOT-23-THIN (DDC)"
+
+sources: [ti/SNVS733D]
+source: ti/SNVS733D
+
+existence:
+  status: verified
+  src: p14 "PACKAGE OPTION ADDENDUM, Packaging Information, row LMR14206XMKX/NOPB"
+
+lifecycle:
+  status: active
+  src: p14 "PACKAGE OPTION ADDENDUM, row LMR14206XMKX/NOPB, Status column Active"

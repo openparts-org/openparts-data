@@ -1,0 +1,20 @@
+# Official TI datasheet "LMR14206 SIMPLE SWITCHER 42Vin, 0.6A Step-Down
+# Voltage Regulator in SOT-23" (PDF Title "... datasheet (Rev. D)"),
+# downloaded 2026-11-16 from the TI symlink URL below; revision read
+# from the page header "SNVS733D - OCTOBER 2011 - REVISED APRIL 2013".
+# 21 PDF pages, read with pdftotext -layout. The PACKAGE OPTION
+# ADDENDUM (pages 13-14) and the DDC0006A outline (pages 18-20, drawing
+# 4214841/E 08/2024) are appended by TI and newer than the datasheet.
+# The Features list prints "Output Vurrent up to 0.6A" [sic]. Page
+# numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: ti/SNVS733D
+sha256: d7a2ee010ea437c15fb9e1f6c92894c8ab760c80ed140d4cb4959b25e97f2b63
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/lmr14206.pdf
+publisher: ti
+document_id: SNVS733D
+document_type: datasheet
+revision: D
+date: 2013-04
