@@ -1,0 +1,23 @@
+# Single 1.8-V micropower zero-drift CMOS op amp, OPA333 D (SOIC-8)
+# pinout. From SBOS351E "Pin Functions: OPA333" (page 3), column "SOIC",
+# checked against the "OPA333 D Package 8-Pin SOIC Top View" diagram
+# (same page). NC on 1, 5, 8 ("No internal connection"). Minus signs
+# written as ASCII "-".
+schema_version: "0.2"
+kind: device
+id: ti/OPA333-D
+manufacturer: ti
+category: op_amp
+family: OPAx333
+source: ti/SBOS351E
+
+pins:
+  src: ['p3 "Pin Functions: OPA333, column SOIC"', p3 "OPA333 D Package 8-Pin SOIC Top View"]
+  "1": { name: NC, type: nc }
+  "2": { name: -IN, type: analog }
+  "3": { name: +IN, type: analog }
+  "4": { name: V-, type: power }
+  "5": { name: NC, type: nc }
+  "6": { name: OUT, type: analog }
+  "7": { name: V+, type: power }
+  "8": { name: NC, type: nc }

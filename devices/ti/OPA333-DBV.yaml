@@ -1,0 +1,21 @@
+# Single 1.8-V micropower zero-drift CMOS op amp, OPA333 DBV (SOT-23-5)
+# pinout. From SBOS351E "Pin Functions: OPA333" (page 3), column "SOT",
+# checked against the "OPA333 DBV Package 5-Pin SOT Top View" diagram
+# (same page). The SC70 (DCK) and SOIC (D) pin maps differ (ti/OPA333-D
+# for SOIC). Minus signs written as ASCII "-"; V+/V- typed power as for
+# ti/OPA2333.
+schema_version: "0.2"
+kind: device
+id: ti/OPA333-DBV
+manufacturer: ti
+category: op_amp
+family: OPAx333
+source: ti/SBOS351E
+
+pins:
+  src: ['p3 "Pin Functions: OPA333, column SOT"', p3 "OPA333 DBV Package 5-Pin SOT Top View"]
+  "1": { name: OUT, type: analog }
+  "2": { name: V-, type: power }
+  "3": { name: +IN, type: analog }
+  "4": { name: -IN, type: analog }
+  "5": { name: V+, type: power }

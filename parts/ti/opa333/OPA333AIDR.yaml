@@ -1,0 +1,24 @@
+# MPN read from the Package Option Addendum, Packaging Information
+# table (SBOS351E PDF page 27, addendum dated 15-Jul-2026): row
+# "OPA333AIDR", "SOIC (D) | 8". lifecycle "active" is that table's Status column.
+# Package: outline D0008A on page 46; its pdftotext text is identical (headers
+# stripped) to the drawing page behind the reused package.
+schema_version: "0.2"
+kind: part
+id: ti/OPA333AIDR
+manufacturer: ti
+mpn: OPA333AIDR
+device: ti/OPA333-D
+
+package:
+  value: manufacturers/ti/D0008A
+  src: p27 "Package Option Addendum, row OPA333AIDR, SOIC (D) | 8; outline D0008A on page 46"
+
+sources: [ti/SBOS351E]
+source: ti/SBOS351E
+
+existence:
+  status: verified
+  src: p27 "Package Option Addendum, Packaging Information table, row OPA333AIDR"
+
+lifecycle: { status: active, src: 'p27 "Package Option Addendum, row OPA333AIDR, Status Active"' }
