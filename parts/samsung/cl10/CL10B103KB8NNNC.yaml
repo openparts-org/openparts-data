@@ -18,10 +18,10 @@ source: samsung/CL10B103KB8NNN
 existence:
   status: verified
   src:
-    - 'samsung/MLCC_2512 p6 "Part Numbering: 1 SERIES CODE CL; 2 SIZE CODE 10 = 0603/1608; 3 DIELECTRIC CODE B = X7R; 4 CAPACITANCE CODE 103 (2 significant digits plus number of zeros, pF)"'
+    - samsung/MLCC_2512 p6 "Part Numbering, codes 1-4 (series CL, size 10, dielectric B, capacitance 103)"
     - 'samsung/MLCC_2512 p7 "Part Numbering: 5 TOLERANCE K = +/-10%; 6 RATED VOLTAGE B = 50Vdc; 7 THICKNESS CODE 8"'
-    - 'samsung/MLCC_2512 p8 "Part Numbering: 8 DESIGN CODE N (Ni/Cu/Ni-Sn, Normal); 9 N = Normal; 10 CONTROL CODE N = Standard; 11 PACKAGING CODE C (cardboard tape, normal 7" reel)"'
-    - '""List of part numbers with package codes": CL10B103KB8NNNC; Characteristics: X7R(-55 ~ +125), Capacitance 10.0nF, Tolerance +/-10%, Rated Voltage 50Vdc"'
+    - samsung/MLCC_2512 p8 "Part Numbering, codes 8-11 (design N, 9 N, control N, packaging C)"
+    - '"List of part numbers with package codes, row CL10B103KB8NNNC"'
 
 lifecycle: { status: active, src: '"Characteristics, "Status: Mass Production""' }
 

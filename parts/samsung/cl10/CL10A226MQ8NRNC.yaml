@@ -18,10 +18,10 @@ source: samsung/CL10A226MQ8NRN
 existence:
   status: verified
   src:
-    - 'samsung/MLCC_2512 p6 "Part Numbering: 1 SERIES CODE CL; 2 SIZE CODE 10 = 0603/1608; 3 DIELECTRIC CODE A = X5R; 4 CAPACITANCE CODE 226 (2 significant digits plus number of zeros, pF)"'
+    - samsung/MLCC_2512 p6 "Part Numbering, codes 1-4 (series CL, size 10, dielectric A, capacitance 226)"
     - 'samsung/MLCC_2512 p7 "Part Numbering: 5 TOLERANCE M = +/-20%; 6 RATED VOLTAGE Q = 6.3Vdc; 7 THICKNESS CODE 8"'
-    - 'samsung/MLCC_2512 p8 "Part Numbering: 8 DESIGN CODE N (Ni/Cu/Ni-Sn, Normal); 9 R = size control (0402/1005: +/-0.15; 0603/1608: +/-0.20; 0805/2012: +/-0.20); 10 CONTROL CODE N = Standard; 11 PACKAGING CODE C (cardboard tape, normal 7" reel)"'
-    - '""List of part numbers with package codes": CL10A226MQ8NRNC; Characteristics: X5R(-55 ~ +85), Capacitance 22.0uF, Tolerance +/-20%, Rated Voltage 6.3Vdc"'
+    - samsung/MLCC_2512 p8 "Part Numbering, codes 8-11 (design N, size control R, control N, packaging C)"
+    - '"List of part numbers with package codes, row CL10A226MQ8NRNC"'
 
 lifecycle: { status: active, src: '"Characteristics, "Status: Mass Production""' }
 

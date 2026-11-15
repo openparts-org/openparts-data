@@ -18,10 +18,10 @@ source: samsung/CL05C101JB5NNN
 existence:
   status: verified
   src:
-    - 'samsung/MLCC_2512 p6 "Part Numbering: 1 SERIES CODE CL; 2 SIZE CODE 05 = 0402/1005; 3 DIELECTRIC CODE C = C0G; 4 CAPACITANCE CODE 101 (2 significant digits plus number of zeros, pF)"'
+    - samsung/MLCC_2512 p6 "Part Numbering, codes 1-4 (series CL, size 05, dielectric C, capacitance 101)"
     - 'samsung/MLCC_2512 p7 "Part Numbering: 5 TOLERANCE J = +/-5%; 6 RATED VOLTAGE B = 50Vdc; 7 THICKNESS CODE 5"'
-    - 'samsung/MLCC_2512 p8 "Part Numbering: 8 DESIGN CODE N (Ni/Cu/Ni-Sn, Normal); 9 N = Normal; 10 CONTROL CODE N = Standard; 11 PACKAGING CODE C (cardboard tape, normal 7" reel)"'
-    - '""List of part numbers with package codes": CL05C101JB5NNNC; Characteristics: C0G(-55 ~ +125), Capacitance 100.0pF, Tolerance +/-5%, Rated Voltage 50Vdc"'
+    - samsung/MLCC_2512 p8 "Part Numbering, codes 8-11 (design N, 9 N, control N, packaging C)"
+    - '"List of part numbers with package codes, row CL05C101JB5NNNC"'
 
 lifecycle: { status: active, src: '"Characteristics, "Status: Mass Production""' }
 

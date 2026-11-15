@@ -21,8 +21,8 @@ source: kemet/C1002_X7R
 existence:
   status: probable
   src:
-    - 'p2 "Ordering Information: C | case size | C = standard | capacitance code (two significant digits + number of zeros, pF) | J/K/M tolerance | voltage 9 = 6.3, 8 = 10, 4 = 16, 3 = 25, 5 = 50 | R = X7R | A = N/A | C = 100% matte Sn | TU = 7" reel/unmarked (Packaging C-Spec table)"'
-    - 'p5 "Table 1A Capacitance Range/Selection Waterfall (0402-1206 Case Sizes) cont.: row 0.1uF/104, C0603C column 50 V (code 5): CJ; K tolerance listed"'
+    - p2 "Ordering Information (part number code legend); Packaging C-Spec table"
+    - p5 "Table 1A Capacitance Range/Selection Waterfall, row 0.1uF/104, column C0603C 50 V (code 5)"
     - 'p2 "Packaging C-Spec Ordering Options Table: 7" Reel/Unmarked = TU"'
 
 lifecycle: { status: unknown }
