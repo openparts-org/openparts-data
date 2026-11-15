@@ -1,0 +1,24 @@
+# MSPM0G1507 (VSSOP-28) minimal circuit from the datasheet's Typical Application
+# (9.1.1): supply and VCORE capacitors, NRST pull-up, the optional FCL
+# resistor and SWD access. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: ti/mspm0g1507-dgs28-minimal
+title: MSPM0G1507 (VSSOP-28) minimal circuit
+host: ti/MSPM0G1507-DGS28
+source: ti/SLASEW9E
+
+nets:
+  GND:   { kind: ground }
+  NRST:  { kind: signal }
+  SWCLK: { kind: signal }
+  SWDIO: { kind: signal }
+  VDD:   { kind: power }
+
+includes:
+  - { circuit: ti/mspm0g1507-dgs28-power, with: { GND: GND, VDD: VDD }, src: p81 "9.1.1" }
+  - { circuit: ti/mspm0g1507-dgs28-reset, with: { GND: GND, VDD: VDD }, src: p81 "9.1.1" }
+  - { circuit: ti/mspm0g1507-dgs28-rosc, with: { GND: GND }, src: p81 "9.1.1" }
+  - circuit: ti/mspm0g1507-dgs28-debug
+    with: { NRST: NRST, SWCLK: SWCLK, SWDIO: SWDIO }
+    src: p81 "Figure 9-1"

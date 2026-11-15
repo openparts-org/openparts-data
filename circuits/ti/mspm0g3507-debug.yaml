@@ -1,0 +1,18 @@
+# MSPM0G3507 SWD pins brought out to a debug tool, as in the Typical
+# Application figure; the connector is the board's choice. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: ti/mspm0g3507-debug
+title: MSPM0G3507 SWD access
+host: ti/MSPM0G3507
+source: ti/SLASEX6C
+
+nets:
+  NRST:  { kind: signal }
+  SWCLK: { kind: signal }
+  SWDIO: { kind: signal }
+
+connect:
+  NRST:       { net: NRST, level: example, src: p76 "Figure 9-1" }
+  PA19/SWDIO: { net: SWDIO, level: example, src: p76 "Figure 9-1" }
+  PA20/SWCLK: { net: SWCLK, level: example, src: p76 "Figure 9-1" }

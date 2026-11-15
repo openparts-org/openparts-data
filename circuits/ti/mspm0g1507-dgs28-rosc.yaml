@@ -1,0 +1,24 @@
+# MSPM0G1507 (VSSOP-28) ROSC resistor for the SYSOSC frequency correction loop
+# (FCL), between ROSC and VSS. The datasheet requires it only when the
+# FCL is enabled, so it is recorded as an example, not a requirement.
+# AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: ti/mspm0g1507-dgs28-rosc
+title: MSPM0G1507 (VSSOP-28) SYSOSC FCL resistor
+host: ti/MSPM0G1507-DGS28
+source: ti/SLASEW9E
+
+nets: { GND: { kind: ground } }
+
+roles:
+  R_ROSC:
+    requires:
+      category: resistor
+      resistance: { typ: 100 kΩ }
+      temperature_coefficient: { max: 25 ppm/K }
+      tolerance: { min: -0.1 %, max: 0.1 % }
+      src: p81 "9.1.1"
+    pins: { "1": host.PA2, "2": GND }
+    level: example
+    src: p81 "9.1.1"

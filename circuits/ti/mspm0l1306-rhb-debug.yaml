@@ -1,0 +1,18 @@
+# MSPM0L1306 (VQFN-32) SWD pins brought out to a debug tool, as in the Typical
+# Application figure; the connector is the board's choice. AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: ti/mspm0l1306-rhb-debug
+title: MSPM0L1306 (VQFN-32) SWD access
+host: ti/MSPM0L1306-RHB
+source: ti/SLASEX0D
+
+nets:
+  NRST:  { kind: signal }
+  SWCLK: { kind: signal }
+  SWDIO: { kind: signal }
+
+connect:
+  NRST:          { net: NRST, level: example, src: p52 "Figure 9-1" }
+  PA19/SWDIO:    { net: SWDIO, level: example, src: p52 "Figure 9-1" }
+  PA20/SWCLK/A6: { net: SWCLK, level: example, src: p52 "Figure 9-1" }

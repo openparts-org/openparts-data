@@ -1,0 +1,23 @@
+# MSPM0G1507 (VQFN-32) NRST: the pin must be pulled up to VDD to leave reset; the
+# Typical Application recommends 47 kOhm to VDD and 10 nF to ground.
+# AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: ti/mspm0g1507-rhb-reset
+title: MSPM0G1507 (VQFN-32) NRST pull-up
+host: ti/MSPM0G1507-RHB
+source: ti/SLASEW9E
+
+nets:
+  GND: { kind: ground }
+  VDD: { kind: power }
+
+roles:
+  C_NRST:
+    requires: { category: capacitor, capacitance: { typ: 10 nF }, src: p81 "9.1.1" }
+    pins:     { "1": host.NRST, "2": GND }
+    level:    { value: recommended, word: recommend, src: p81 "9.1.1" }
+  R_NRST:
+    requires: { category: resistor, resistance: { typ: 47 kΩ }, src: p81 "9.1.1" }
+    pins:     { "1": VDD, "2": host.NRST }
+    level:    { value: recommended, word: recommend, src: p81 "9.1.1" }

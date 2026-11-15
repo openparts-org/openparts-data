@@ -1,0 +1,44 @@
+# MSPM0G3507 supply: CVDD and CVCORE as the Recommended Operating
+# Conditions require them (at least the value, +-20 % or better, low
+# ESR, close to the pins) plus the 0.1 uF that the Typical Application
+# recommends beside the 10 uF. VCORE connects to CVCORE only (7.3 note
+# 2). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: ti/mspm0g3507-power
+title: MSPM0G3507 supply decoupling
+host: ti/MSPM0G3507
+source: ti/SLASEX6C
+
+nets:
+  GND: { kind: ground }
+  VDD: { kind: power, voltage: { min: 1.62 V, max: 3.6 V }, src: 'p25 "7.3, VDD"' }
+
+connect:
+  VDD: { net: VDD, level: required, src: p76 "9.1.1" }
+  VSS: { net: GND, level: required, src: p76 "9.1.1" }
+
+roles:
+  C_VCORE:
+    requires:
+      category: capacitor
+      capacitance: { min: 470 nF }
+      tolerance: { min: -20 %, max: 20 % }
+      src: ['p25 "7.3, CVCORE"', 'p26 "7.3, note 1"']
+    pins:  { "1": host.VCORE, "2": GND }
+    place: { near: host.VCORE, src: p76 "9.1.1" }
+    level: { value: required, word: required, src: ['p26 "7.3, note 1"', p76 "9.1.1"] }
+  C_VDD_BULK:
+    requires:
+      category: capacitor
+      capacitance: { min: 10 uF }
+      tolerance: { min: -20 %, max: 20 % }
+      src: ['p25 "7.3, CVDD"', 'p26 "7.3, note 1"']
+    pins:  { "1": host.VDD, "2": GND }
+    place: { near: host.VDD, src: 'p26 "7.3, note 1"' }
+    level: { value: required, word: required, src: 'p26 "7.3, note 1"' }
+  C_VDD_HF:
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: p76 "9.1.1" }
+    pins:     { "1": host.VDD, "2": GND }
+    place:    { near: host.VDD, src: p76 "9.1.1" }
+    level:    { value: recommended, word: recommend, src: p76 "9.1.1" }
