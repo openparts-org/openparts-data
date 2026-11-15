@@ -1,0 +1,35 @@
+# Order code printed verbatim in the datasheet's title block ("ORDER
+# CODE 150080BS75000", every page) -> existence verified. lifecycle unknown
+# (title-block STATUS "Valid" is the document's release status).
+# Package: the existing manufacturers/wurth/CHIP0805-WL-SMCW -- this
+# sheet's p1 "Dimensions: [mm]" text layer prints the identical numbers
+# (2,0 / 1,25 / 0,7 / 1,4 / 1,2 / 0,3, all ±0,1).
+schema_version: "0.2"
+kind: part
+id: wurth/150080BS75000
+manufacturer: wurth
+mpn: 150080BS75000
+device: wurth/150080BS75000
+package: manufacturers/wurth/CHIP0805-WL-SMCW
+sources: [wurth/150080BS75000-DS]
+source: wurth/150080BS75000-DS
+
+existence: { status: verified, src: 'p1 "Title block, ORDER CODE 150080BS75000"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  forward_voltage:
+    typ: 3.2 V
+    max: 3.5 V
+    at: { IF: 20 mA }
+    src: p2 "Electrical & Optical Properties, Forward Voltage VF"
+  forward_current:
+    max: 30 mA
+    at: { TA: 25 °C }
+    src: p1 "Absolute Maximum Ratings, Continuous Forward Current IF"
+  color: { value: blue, src: 'p1 "Optical Properties, Emitting Color"' }
+  wavelength:
+    typ: 470 nm
+    at: { IF: 20 mA }
+    src: p2 "Electrical & Optical Properties, Dominant Wavelength λDom"

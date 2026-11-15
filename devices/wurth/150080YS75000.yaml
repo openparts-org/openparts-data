@@ -1,0 +1,16 @@
+# Würth WL-SMCW 0805 mono-color chip LED, Yellow (AlInGaP chip, p1 "Optical
+# Properties"). Polarity from the p1 "Schematic": the cathode bar is
+# labelled "-" / "1", the anode "+" / "2"; the dimension drawing's
+# "Polarity Mark (Cathode)" is at terminal 1 -> pin 1 = Cathode.
+schema_version: "0.2"
+kind: device
+id: wurth/150080YS75000
+manufacturer: wurth
+category: led
+family: WL-SMCW
+source: wurth/150080YS75000-DS
+
+pins:
+  src: p1 "Schematic, terminals 1 (-) / 2 (+); dimension drawing, Polarity Mark (Cathode)"
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

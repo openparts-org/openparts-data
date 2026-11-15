@@ -1,0 +1,17 @@
+# Würth Elektronik datasheet for order code 150080YS75000 ("WL-SMCW SMT
+# Mono-color Chip LED Waterclear"), 9 pages. we-online.com refused curl
+# (HTTP 403); fetched once with WebFetch, which saved the original PDF.
+# Read with pdftotext -raw plus a render of page 1. Title block on
+# every page: REVISION "003.000", DATE "2022-05-20", ORDER CODE "150080YS75000",
+# STATUS "Valid" (document release status, not a product lifecycle).
+schema_version: "0.2"
+kind: source
+id: wurth/150080YS75000-DS
+sha256: 9c601f03026e70a52c718fc1eba93919b4ae896c57e4b9d75d09dc2d8ae51a9c
+retrieved: 2026-11-16
+url: https://www.we-online.com/components/products/datasheet/150080YS75000.pdf
+publisher: wurth
+document_id: 150080YS75000
+document_type: datasheet
+revision: "003.000"
+date: 2022-05-20
