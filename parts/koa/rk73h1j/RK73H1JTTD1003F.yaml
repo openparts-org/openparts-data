@@ -25,6 +25,25 @@ lifecycle:
 sources:
   - koa/RK73H@rev2026-01-27
 
+# Parameters (AI candidates, needs review): resistance and tolerance from the
+# ordering-information legend; power and T.C.R. from the RK73H1J rows of
+# 'applications and ratings' whose F±1% resistance range contains this value.
+parameters:
+  resistance:
+    nominal: 100
+    unit: kΩ
+  tolerance:
+    min: -1
+    max: 1
+    unit: "%"
+  power_rating:
+    nominal: 0.1
+    unit: W
+  temperature_coefficient:
+    min: -100
+    max: 100
+    unit: ppm/°C
+
 provenance:
   "/existence":
     - source: koa/RK73H@rev2026-01-27
@@ -33,3 +52,19 @@ provenance:
     - source: koa/RK73H@rev2026-01-27
       page: 2
       locator: "\"applications and ratings\" table (rendered), RK73H1J (0603) 0.1W row, T.C.R. +/-100: F+/-1% E-24, E-96 \"1.02kOhm - 1MOhm\""
+  "/parameters/resistance":
+    - source: koa/RK73H@rev2026-01-27
+      page: 1
+      locator: "ordering information, Nominal Resistance: 3 significant figures + 1 multiplier -> 1003 = 100 x 10^3 Ω = 100 kΩ"
+  "/parameters/tolerance":
+    - source: koa/RK73H@rev2026-01-27
+      page: 1
+      locator: "ordering information, Tolerance: F: ±1%"
+  "/parameters/power_rating":
+    - source: koa/RK73H@rev2026-01-27
+      page: 2
+      locator: "applications and ratings, RK73H1J (0603) row for F±1% 1.02kΩ - 1MΩ: Power Rating 0.1W at Rated Ambient Temp. 70°C"
+  "/parameters/temperature_coefficient":
+    - source: koa/RK73H@rev2026-01-27
+      page: 2
+      locator: "applications and ratings, RK73H1J (0603) row for F±1% 1.02kΩ - 1MΩ: T.C.R. ±100 (x10^-6/K)"
