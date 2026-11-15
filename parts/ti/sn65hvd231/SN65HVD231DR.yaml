@@ -1,0 +1,30 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SLOS346O
+# (page 36): row "SN65HVD231DR", Package "SOIC (D) | 8", Status "Active".
+# Lifecycle read from the same row's Status column (TI's own addendum
+# inside the datasheet, dated 5-Mar-2026).
+# Package: SOIC (D) | 8, outline D0008A (4214825/C) on page 40 -> manufacturers/ti/D0008A, the
+# same drawing the existing SN65HVD230DR / TCAN1042HDR parts use from
+# this datasheet (SLOS346O page 40).
+schema_version: "0.2"
+kind: part
+id: ti/SN65HVD231DR
+manufacturer: ti
+mpn: SN65HVD231DR
+device: ti/SN65HVD231
+
+package:
+  value: manufacturers/ti/D0008A
+  src:
+    - p36 "PACKAGE OPTION ADDENDUM, row SN65HVD231DR, Package column "SOIC (D) | 8""
+    - p40 "PACKAGE OUTLINE D0008A (4214825/C)"
+
+sources: [ti/SLOS346O]
+source: ti/SLOS346O
+
+existence:
+  status: verified
+  src: p36 "PACKAGE OPTION ADDENDUM, Packaging Information table, row SN65HVD231DR"
+
+lifecycle:
+  status: active
+  src: p36 "PACKAGE OPTION ADDENDUM, row SN65HVD231DR, Status column "Active""

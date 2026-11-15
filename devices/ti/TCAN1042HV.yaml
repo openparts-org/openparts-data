@@ -1,0 +1,27 @@
+# CAN FD transceiver TCAN1042HV (also TCAN1042HGV: same pin column), D
+# (SOIC-8) pin map from Table 6-1 "Pin Functions" column "(V), (GV),
+# (HV), (HGV)" and Figure 6-3 "D Package for (V), (HV), (GV), and
+# (HGV) Devices 8 PIN (SOIC) Top View" (SLLSES7D page 5); all 8 pins
+# match. Pin 5 VIO ("I/O level shifting supply voltage") typed power;
+# STB (standby mode control input) typed input. The GND footnote about
+# the DRB thermal pad does not apply to the D package.
+schema_version: "0.2"
+kind: device
+id: ti/TCAN1042HV
+manufacturer: ti
+category: can_transceiver
+family: TCAN1042HV
+source: ti/SLLSES7D
+
+pins:
+  src:
+    - p5 "Table 6-1 "Pin Functions", column "(V), (GV), (HV), (HGV)""
+    - p5 "Figure 6-3 "D Package for (V), (HV), (GV), and (HGV) Devices 8 PIN (SOIC) Top View" (cross-check)"
+  "1": { name: TXD, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: VCC, type: power }
+  "4": { name: RXD, type: output }
+  "5": { name: VIO, type: power }
+  "6": { name: CANL, type: io }
+  "7": { name: CANH, type: io }
+  "8": { name: STB, type: input }

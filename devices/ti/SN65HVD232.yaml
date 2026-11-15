@@ -1,0 +1,24 @@
+# 3.3-V CAN transceiver SN65HVD232, 8-pin SOIC (D) pin map. All 8 pins
+# match between the "Pin Functions" table (rows "SN65HVD232: No
+# Connect" for pins 5 and 8) and the "SN65HVD232D (Marked as VP232) Top
+# View" figure (SLOS346O page 5). Pins 5 and 8 are "NC", typed nc.
+schema_version: "0.2"
+kind: device
+id: ti/SN65HVD232
+manufacturer: ti
+category: can_transceiver
+family: SN65HVD232
+source: ti/SLOS346O
+
+pins:
+  src:
+    - p5 ""Pin Functions" table (pins 1-8; NC rows for SN65HVD232)"
+    - p5 ""SN65HVD232D (Marked as VP232) Top View" figure (cross-check)"
+  "1": { name: D, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: VCC, type: power }
+  "4": { name: R, type: output }
+  "5": { name: NC, type: nc }
+  "6": { name: CANL, type: io }
+  "7": { name: CANH, type: io }
+  "8": { name: NC, type: nc }
