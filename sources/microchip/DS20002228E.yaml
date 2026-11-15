@@ -1,0 +1,21 @@
+# Official Microchip datasheet "MCP2200 - USB 2.0 to UART Protocol
+# Converter with GPIO" (44 PDF pages). Downloaded 2026-11-16 with curl
+# from the ww1.microchip.com aemDocuments URL below (HTTP 200, PDF).
+# document_id and revision from the printed footer "DS20002228E-page N";
+# Revision History "Revision E (June 2021)". Printed page numbers equal
+# the PDF page indices. Table 1-1, Package Types and the VQFN drawing
+# C04-139C (page 34) read with pdftotext -layout; the VQFN land pattern
+# C04-2139B (page 35), the SOIC drawing C04-094C (page 37) and the SSOP
+# drawing C04-072B / land pattern C04-2072A (pages 39-40) are images
+# and were rendered (pdftoppm) and read.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20002228@revE
+sha256: f447ea05e8a250bc75baa677e1d81080ba31af595012812b12699e93dd41bab6
+retrieved: 2026-11-16
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MCP2200-USB-2.0-to-UART-Protocol-Converter-with-GPIO-DS20002228E.pdf
+publisher: microchip
+document_id: DS20002228
+document_type: datasheet
+revision: E
+date: 2021-06

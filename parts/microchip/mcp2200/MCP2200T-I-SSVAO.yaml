@@ -1,0 +1,30 @@
+# MPN "MCP2200T-I/SSVAO" is PROBABLE: assembled from the Product Identification
+# System legend of microchip/DS20002228@revE (DS20002228E page 42: Device MCP2200T, Temperature Range I, Package SS, Qualification VAO);
+# it is also printed there as an ordering example, but the legend is not
+# an orderable list (Microchip PIC/interface convention: probable).
+# Package: SS = 20-lead SSOP 5.30 mm -> drawing C04-072B (pages 39-40), new
+# package manufacturers/microchip/SSOP20-SS-C04-072B.
+# Device: microchip/MCP2200-SOIC20 (pin map of this package).
+# lifecycle: not stated in the datasheet; microchip.com product pages
+# refuse plain fetches (403), so it is recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP2200T-I-SSVAO
+manufacturer: microchip
+mpn: MCP2200T-I/SSVAO
+device: microchip/MCP2200-SOIC20
+
+package:
+  value: manufacturers/microchip/SSOP20-SS-C04-072B
+  src:
+    - p42 "Product Identification System, Package "SS""
+    - p39 "20-Lead SSOP (SS) 5.30 mm, drawing C04-072B table"
+
+sources: [microchip/DS20002228@revE]
+source: microchip/DS20002228@revE
+
+existence:
+  status: probable
+  src: 'p42 "Product Identification System legend: Device MCP2200T, Temperature Range I, Package SS, Qualification VAO"'
+
+lifecycle: { status: unknown }

@@ -1,0 +1,55 @@
+# USB 2.0 to UART protocol converter (MCP2200), 20-lead 5x5 VQFN pin map:
+# Table 1-1 "Pinout Description", column "VQFN" (DS20002228E page 3),
+# checked against the "Package Types" figure "MCP2200 5x5 VQFN" (page
+# 1): all 20 pins match.
+# Exposed pad (pin 21 in Table 1-1): "Do not electrically connect" -- it
+# has no net, so no EP pin is recorded (the package's land pattern keeps
+# the centre pad).
+# Category, pin types, names and alternate functions as in
+# microchip/MCP2200-SOIC20 (same table).
+schema_version: "0.2"
+kind: device
+id: microchip/MCP2200-VQFN20
+manufacturer: microchip
+category: interface
+family: MCP2200
+source: microchip/DS20002228@revE
+
+pins:
+  src:
+    - p3 "Table 1-1 "Pinout Description", column "VQFN""
+    - p1 "Package Types figure, MCP2200 5x5 VQFN (cross-check)"
+  "1":  { name: RST, type: reset }
+  "2":  { name: GP7/TxLED, type: io, alternate_functions: [TxLED] }
+  "3":  { name: GP6/RxLED, type: io, alternate_functions: [RxLED] }
+  "4":  { name: GP5, type: io }
+  "5":  { name: GP4, type: io }
+  "6":  { name: GP3, type: io }
+  "7":  { name: Tx, type: output }
+  "8":  { name: RTS, type: output }
+  "9":  { name: Rx, type: input }
+  "10": { name: CTS, type: input }
+  "11": { name: GP2, type: io }
+  "12": { name: GP1/USBCFG, type: io, alternate_functions: [USBCFG] }
+  "13": { name: GP0/SSPND, type: io, alternate_functions: [SSPND] }
+  "14": { name: Vusb, type: power }
+  "15":
+    name: D-
+    type: io
+    diff_pair:
+      partner: "16"
+      polarity: n
+      standard: usb2
+      src: p3 "Table 1-1, D- "USB D-", D+ "USB D+""
+  "16":
+    name: D+
+    type: io
+    diff_pair:
+      partner: "15"
+      polarity: p
+      standard: usb2
+      src: p3 "Table 1-1, D- "USB D-", D+ "USB D+""
+  "17": { name: VSS, type: ground }
+  "18": { name: VDD, type: power }
+  "19": { name: OSC1, type: clock }
+  "20": { name: OSC2, type: clock }

@@ -1,0 +1,89 @@
+# 20-lead SSOP, 5.30 mm body, 0.65 mm pitch (Microchip package code SS):
+# drawing C04-072B ("20-Lead Plastic Shrink Small Outline (SS) - 5.30 mm
+# Body [SSOP]"), DS20002228E page 39, and its recommended land pattern
+# C04-2072A on page 40; both pages are images, rendered and read.
+# Copied as printed (MIN/NOM/MAX; min-only and max-only rows kept as
+# such). body_height = A2, overall_height = A (MAX 2.00 only). L1 (1.25
+# REF) and the foot angle are not modelled. Not the TI DB package
+# (standards/SSOP20-5.3x7.2-P0.65-TI-DB): another vendor's drawing.
+#
+# pads: C04-2072A turned 90 degrees clockwise into the ssop frame (top
+# view, X right, Y up, origin at the centre, pin 1 top of the left row;
+# the drawing has the pin-1 row at the bottom, pin 1 at its left end).
+# Contact pad spacing C 7.20 -> rows at x = +-3.60; pitch E 0.65, 10
+# pads per row -> y = +-2.925 ... in 0.65 steps; pad X1 0.45 (max)
+# across the pitch, Y1 1.75 (max) along the lead.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/SSOP20-SS-C04-072B
+family: ssop
+lead_count: { value: 20, src: 'p39 "C04-072B table (rendered image), "Number of Pins N 20""' }
+source: microchip/DS20002228@revE
+
+pitch: { typ: 0.65 mm, src: 'p39 "C04-072B table (rendered image), "Pitch e 0.65 BSC""' }
+geometry: { type: parametric, generator: ssop }
+
+dimensions:
+  body_width:
+    min: 5 mm
+    typ: 5.3 mm
+    max: 5.6 mm
+    src: p39 "C04-072B table (rendered image), "Molded Package Width E1 5.00 / 5.30 / 5.60""
+  body_length:
+    min: 6.9 mm
+    typ: 7.2 mm
+    max: 7.5 mm
+    src: p39 "C04-072B table (rendered image), "Overall Length D 6.90 / 7.20 / 7.50""
+  body_height:
+    min: 1.65 mm
+    typ: 1.75 mm
+    max: 1.85 mm
+    src: p39 "C04-072B table (rendered image), "Molded Package Thickness A2 1.65 / 1.75 / 1.85""
+  lead_thickness:
+    min: 0.09 mm
+    max: 0.25 mm
+    src: p39 "C04-072B table (rendered image), "Lead Thickness c 0.09 / - / 0.25""
+  overall_width:
+    min: 7.4 mm
+    typ: 7.8 mm
+    max: 8.2 mm
+    src: p39 "C04-072B table (rendered image), "Overall Width E 7.40 / 7.80 / 8.20""
+  overall_height:
+    max: 2 mm
+    src: p39 "C04-072B table (rendered image), "Overall Height A" (MAX 2.00 only)"
+  standoff:
+    min: 0.05 mm
+    src: p39 "C04-072B table (rendered image), "Standoff A1" (MIN 0.05 only)"
+  lead_width:
+    min: 0.22 mm
+    max: 0.38 mm
+    src: p39 "C04-072B table (rendered image), "Lead Width b 0.22 / - / 0.38""
+  lead_length:
+    min: 0.55 mm
+    typ: 0.75 mm
+    max: 0.95 mm
+    src: p39 "C04-072B table (rendered image), "Foot Length L 0.55 / 0.75 / 0.95""
+
+pads:
+  value:
+    - { number: "1", x: -3.6, y: 2.925, width: 1.75, length: 0.45 }
+    - { number: "2", x: -3.6, y: 2.275, width: 1.75, length: 0.45 }
+    - { number: "3", x: -3.6, y: 1.625, width: 1.75, length: 0.45 }
+    - { number: "4", x: -3.6, y: 0.975, width: 1.75, length: 0.45 }
+    - { number: "5", x: -3.6, y: 0.325, width: 1.75, length: 0.45 }
+    - { number: "6", x: -3.6, y: -0.325, width: 1.75, length: 0.45 }
+    - { number: "7", x: -3.6, y: -0.975, width: 1.75, length: 0.45 }
+    - { number: "8", x: -3.6, y: -1.625, width: 1.75, length: 0.45 }
+    - { number: "9", x: -3.6, y: -2.275, width: 1.75, length: 0.45 }
+    - { number: "10", x: -3.6, y: -2.925, width: 1.75, length: 0.45 }
+    - { number: "11", x: 3.6, y: -2.925, width: 1.75, length: 0.45 }
+    - { number: "12", x: 3.6, y: -2.275, width: 1.75, length: 0.45 }
+    - { number: "13", x: 3.6, y: -1.625, width: 1.75, length: 0.45 }
+    - { number: "14", x: 3.6, y: -0.975, width: 1.75, length: 0.45 }
+    - { number: "15", x: 3.6, y: -0.325, width: 1.75, length: 0.45 }
+    - { number: "16", x: 3.6, y: 0.325, width: 1.75, length: 0.45 }
+    - { number: "17", x: 3.6, y: 0.975, width: 1.75, length: 0.45 }
+    - { number: "18", x: 3.6, y: 1.625, width: 1.75, length: 0.45 }
+    - { number: "19", x: 3.6, y: 2.275, width: 1.75, length: 0.45 }
+    - { number: "20", x: 3.6, y: 2.925, width: 1.75, length: 0.45 }
+  src: 'p40 "Land pattern C04-2072A turned 90 deg: C 7.20 -> x +-3.60, E 0.65 -> y +-2.925..., X1 0.45, Y1 1.75"'

@@ -1,0 +1,60 @@
+# USB 2.0 to UART protocol converter (MCP2200), 20-pin map shared by the
+# SOIC and SSOP packages: Table 1-1 "Pinout Description", column "SSOP,
+# SOIC" (DS20002228E page 3), checked against the "Package Types" figure
+# "MCP2200 SOIC, SSOP" (page 1): all 20 pins match. The 5x5 VQFN has a
+# different map (microchip/MCP2200-VQFN20).
+# Category: USB-to-UART bridge; the category tree has no USB bridge node,
+# so the `interface` group is used.
+# Pin types from Table 1-1 "Pin Type": I/O -> io, I -> input (RST
+# "Reset input" -> reset; OSC1 "Oscillator input" -> clock), O -> output
+# (OSC2 "Oscillator output" -> clock), P -> power/ground (Vusb "USB
+# power pin (internally connected to 3.3V)" -> power). Pin names as in
+# the table (GP0/SSPND ...); the alternate functions are SSPND, USBCFG,
+# RxLED, TxLED.
+# D+/D- form a USB pair: Table 1-1 names them "USB D+" and "USB D-".
+schema_version: "0.2"
+kind: device
+id: microchip/MCP2200-SOIC20
+manufacturer: microchip
+category: interface
+family: MCP2200
+source: microchip/DS20002228@revE
+
+pins:
+  src:
+    - p3 "Table 1-1 "Pinout Description", column "SSOP, SOIC""
+    - p1 "Package Types figure, MCP2200 SOIC, SSOP (cross-check)"
+  "1":  { name: VDD, type: power }
+  "2":  { name: OSC1, type: clock }
+  "3":  { name: OSC2, type: clock }
+  "4":  { name: RST, type: reset }
+  "5":  { name: GP7/TxLED, type: io, alternate_functions: [TxLED] }
+  "6":  { name: GP6/RxLED, type: io, alternate_functions: [RxLED] }
+  "7":  { name: GP5, type: io }
+  "8":  { name: GP4, type: io }
+  "9":  { name: GP3, type: io }
+  "10": { name: Tx, type: output }
+  "11": { name: RTS, type: output }
+  "12": { name: Rx, type: input }
+  "13": { name: CTS, type: input }
+  "14": { name: GP2, type: io }
+  "15": { name: GP1/USBCFG, type: io, alternate_functions: [USBCFG] }
+  "16": { name: GP0/SSPND, type: io, alternate_functions: [SSPND] }
+  "17": { name: Vusb, type: power }
+  "18":
+    name: D-
+    type: io
+    diff_pair:
+      partner: "19"
+      polarity: n
+      standard: usb2
+      src: p3 "Table 1-1, D- "USB D-", D+ "USB D+""
+  "19":
+    name: D+
+    type: io
+    diff_pair:
+      partner: "18"
+      polarity: p
+      standard: usb2
+      src: p3 "Table 1-1, D- "USB D-", D+ "USB D+""
+  "20": { name: VSS, type: ground }
