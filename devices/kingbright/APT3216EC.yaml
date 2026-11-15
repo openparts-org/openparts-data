@@ -14,18 +14,16 @@ parameters:
     typ: 2 V
     max: 2.5 V
     at: { IF: 20 mA, TA: 25 °C }
-    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, High Efficiency Red: Typ. 2.0 V, Max. 2.5 V"'
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, High Efficiency Red"
   forward_current:
     max: 30 mA
     at: { TA: 25 °C }
-    src: 'p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF: 30 mA"'
-  color:
-    value: red
-    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: High Efficiency Red"'
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF"
+  color: { value: red, src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color"' }
   wavelength:
     typ: 617 nm
     at: { IF: 20 mA, TA: 25 °C }
-    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, High Efficiency Red: Typ. 617 nm"'
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, High Efficiency Red"
 
 pins:
   src: p1 "Schematic symbol "1 -|<- 2" (cathode bar at pin 1) and bottom-view pad numbers 1/2"

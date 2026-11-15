@@ -16,18 +16,18 @@ parameters:
     typ: 2.2 V
     max: 2.5 V
     at: { IF: 20 mA, TA: 25 °C }
-    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, Super Bright Green: Typ. 2.2 V, Max. 2.5 V"'
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, Super Bright Green"
   forward_current:
     max: 25 mA
     at: { TA: 25 °C }
-    src: 'p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF: 25 mA"'
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF"
   color:
     value: green
-    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: Super Bright Green"'
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color"
   wavelength:
     typ: 568 nm
     at: { IF: 20 mA, TA: 25 °C }
-    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Super Bright Green: Typ. 568 nm"'
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Super Bright Green"
 
 pins:
   src: p1 "Bottom view "Polarity mark" on pin-1 side, schematic 1-2 -- see comment above"

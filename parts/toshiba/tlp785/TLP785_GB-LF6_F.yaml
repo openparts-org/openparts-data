@@ -33,7 +33,10 @@ lifecycle: { status: unknown }
 
 parameters:
   current_transfer_ratio:
-    min: 100 %
-    max: 600 %
-    at: { VCE: 5 V, IF: 5 mA, TA: 25 °C }
-    src: 'p2 "Current Transfer Ratio table, TLP785 Rank GB row: Min 100 %, Max 600 %; Note 1 maps the code: "e.g. rank GB: TLP785 (GB)" (page 5, Product Naming System: CTR Rank field)"'
+    - min: 100 %
+      max: 600 %
+      at: { VCE: 5 V, IF: 5 mA, TA: 25 °C }
+      src: p2 "Current Transfer Ratio table, TLP785 Rank GB row (Note 1; p5 Product Naming)"
+    - min: 30 %
+      at: { VCE: 0.4 V, IF: 1 mA, TA: 25 °C }
+      src: p3 "Coupled Electrical Characteristics, Saturated CTR, Rank GB"

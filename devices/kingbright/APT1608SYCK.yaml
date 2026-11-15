@@ -15,18 +15,18 @@ parameters:
     typ: 2 V
     max: 2.5 V
     at: { IF: 20 mA, TA: 25 °C }
-    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, Super Bright Yellow: Typ. 2.0 V, Max. 2.5 V"'
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, Super Bright Yellow"
   forward_current:
     max: 30 mA
     at: { TA: 25 °C }
-    src: 'p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF: 30 mA"'
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF"
   color:
     value: yellow
-    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: Super Bright Yellow"'
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color"
   wavelength:
     typ: 590 nm
     at: { IF: 20 mA, TA: 25 °C }
-    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Super Bright Yellow: Typ. 590 nm"'
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Super Bright Yellow"
 
 pins:
   src: p1 "Schematic symbol "1 -|<- 2" and bottom-view drawing pin labels 1/2 with "Polarity mark""

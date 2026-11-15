@@ -16,22 +16,21 @@ parameters:
     typ: 1.25 V
     max: 1.4 V
     at: { IF: 10 mA }
-    src: 'p3 "Electrical Characteristics, LED, Input forward voltage VF: MIN 1.1, TYP. 1.25, MAX 1.4 V"'
-  reverse_voltage:
-    max: 5 V
-    src: 'p3 "Absolute Maximum Ratings, LED, Input reverse voltage VR: 5 V"'
+    src: p3 "Electrical Characteristics, LED, Input forward voltage VF"
+  reverse_voltage: { max: 5 V, src: 'p3 "Absolute Maximum Ratings, LED, Input reverse voltage VR"' }
   forward_current:
     max: 50 mA
-    src: 'p3 "Absolute Maximum Ratings, LED, Input forward current IF: 50 mA (derating -1.5 mA/°C at Ta >= 90 °C)"'
+    src: p3 "Absolute Maximum Ratings, LED, Input forward current IF"
   collector_emitter_voltage:
-    typ: 80 V
-    src: 'p3 "Absolute Maximum Ratings, DETECTOR, Collector-emitter voltage VCEO: 80 V"'
+    max: 80 V
+    src: p3 "Absolute Maximum Ratings, DETECTOR, Collector-emitter voltage VCEO"
   collector_current:
-    typ: 50 mA
-    src: 'p3 "Absolute Maximum Ratings, DETECTOR, Collector current IC: 50 mA"'
+    max: 50 mA
+    src: p3 "Absolute Maximum Ratings, DETECTOR, Collector current IC"
   isolation_voltage:
     min: 3750 V
-    src: 'p4 "Isolation Characteristics, Isolation voltage BVS, AC, 60 s: MIN 3750 Vrms"'
+    at: { t: 60 s }
+    src: p4 "Isolation Characteristics, Isolation voltage BVS (AC, Vrms)"
 
 pins:
   src: 'p1 ""Pin Configuration" (TLP291): 1 ANODE, 2 CATHODE, 3 EMITTER, 4 COLLECTOR"'

@@ -14,18 +14,18 @@ parameters:
     typ: 3.3 V
     max: 4 V
     at: { IF: 20 mA, TA: 25 °C }
-    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, Blue: Typ. 3.3 V, Max. 4.0 V"'
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, Blue"
   forward_current:
     max: 30 mA
     at: { TA: 25 °C }
-    src: 'p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF: 30 mA"'
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF"
   color:
     value: blue
-    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: Blue"'
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color"
   wavelength:
     typ: 465 nm
     at: { IF: 20 mA, TA: 25 °C }
-    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Blue: Typ. 465 nm"'
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Blue"
 
 pins:
   src: p1 "Schematic symbol "1 -|<- 2" (cathode bar at pin 1) and bottom-view pad numbers 1/2"

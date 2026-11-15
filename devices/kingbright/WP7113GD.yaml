@@ -18,18 +18,18 @@ parameters:
     typ: 2 V
     max: 2.4 V
     at: { IF: 10 mA, TA: 25 °C }
-    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, Green: Typ. 2 V, Max. 2.4 V"'
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, Green"
   forward_current:
     max: 25 mA
     at: { TA: 25 °C }
-    src: 'p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF: 25 mA"'
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF"
   color:
     value: green
-    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color: Green"'
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS at TA=25°C, Emitting Color"
   wavelength:
     typ: 568 nm
     at: { IF: 10 mA, TA: 25 °C }
-    src: 'p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Green: Typ. 568 nm"'
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Green"
 
 pins:
   src: p1 "PACKAGE DIMENSIONS drawing, "Cathode" lead label"

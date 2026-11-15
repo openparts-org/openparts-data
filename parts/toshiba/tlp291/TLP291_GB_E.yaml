@@ -24,7 +24,10 @@ lifecycle: { status: unknown }
 
 parameters:
   current_transfer_ratio:
-    min: 100 %
-    max: 400 %
-    at: { VCE: 5 V, IF: 5 mA, TA: 25 °C }
-    src: 'p2 "Current Transfer Ratio (CTR) Rank table, TLP291 Rank GB row: Min 100 %, Max 400 %; Note1 maps the order code: "(e.g.) rank GB: TLP291 (GB,E""'
+    - min: 100 %
+      max: 400 %
+      at: { VCE: 5 V, IF: 5 mA, TA: 25 °C }
+      src: 'p2 "CTR Rank table, TLP291 Rank GB row (Note 1: order code GB)"'
+    - min: 30 %
+      at: { VCE: 0.4 V, IF: 1 mA }
+      src: p4 "Coupled Electrical Characteristics, Saturated CTR, Rank GB"

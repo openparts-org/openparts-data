@@ -18,15 +18,13 @@ parameters:
     typ: 1.9 V
     max: 2.2 V
     at: { IF: 2 mA }
-    src: 'p2 "Electrical / Optical Characteristics, vF Forward Voltage, Green: Typ. 1.9 V, Max. 2.2 V"'
+    src: p2 "Electrical / Optical Characteristics, vF Forward Voltage, Green"
   forward_current:
     max: 25 mA
     at: { TA: 25 °C }
-    src: 'p2 "Absolute Maximum Ratings, DC Forward Current, Green column: 25 mA"'
-  color:
-    value: green
-    src: 'p1 "Selection guide, row L-934LGD: Dice GREEN (GaP), Lens GREEN DIFFUSED"'
+    src: p2 "Absolute Maximum Ratings, DC Forward Current, Green column"
+  color: { value: green, src: 'p1 "Selection guide, L-934LGD row, Dice"' }
   wavelength:
     typ: 565 nm
     at: { IF: 2 mA }
-    src: 'p2 "Electrical / Optical Characteristics, λpeak Peak Wavelength, Green: Typ. 565 nm (peak wavelength; no dominant wavelength is given)"'
+    src: p2 "Electrical / Optical Characteristics, λpeak Peak Wavelength, Green (peak only)"
