@@ -1,0 +1,40 @@
+# SAM D21 crystal oscillator XOSC on XIN (PA14) / XOUT (PA15), Schematic
+# Checklist 45.5.2, Figure 45-7: a 0.4-32 MHz crystal with load
+# capacitors CLEXT. CLEXT has no fixed value: it comes from the
+# crystal's CL by the equation of 37.13.1.2, CLOAD = (CXIN + CLEXT) *
+# (CXOUT + CLEXT) / (CXIN + 2 CLEXT + CXOUT) + CSTRAY, with CXIN 5.9 pF
+# and CXOUT 3.2 pF (Table 37-48) and CSTRAY 1.5 pF per 12.5 mm of trace.
+# Not stored as a formula: the validator needs stated capacitor values.
+# AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/atsamd21-xosc
+title: SAM D21 crystal oscillator
+
+host: { devices: [microchip/ATSAMD21G18A, microchip/ATSAMD21E18A] }
+
+source: microchip/DS40001882@revL
+
+nets: { GND: { kind: ground } }
+
+roles:
+  C_XIN:
+    requires: { category: capacitor, src: p1129 "Table 45-5" }
+    pins:     { "1": host.PA14, "2": GND }
+    level:    { value: recommended, word: recommended, src: p1129 "Table 45-5" }
+  C_XOUT:
+    requires: { category: capacitor, src: p1129 "Table 45-5" }
+    pins:     { "1": host.PA15, "2": GND }
+    level:    { value: recommended, word: recommended, src: p1129 "Table 45-5" }
+  X1:
+    requires:
+      category: crystal
+      frequency: { min: 0.4 MHz, max: 32 MHz }
+      src: p1129 "Table 45-5"
+    pins:  { "1": host.PA14, "2": host.PA15 }
+    level: { value: required, word: must, src: p931 "37.13.1.2" }
+
+placement:
+  - src:        p1129 "45.5.2"
+    keep_short: [host.PA14, host.PA15]
+    level:      { value: required, word: must }

@@ -1,0 +1,80 @@
+# ATSAMD21G18A supply pins per the SAM D21 data sheet Schematic Checklist (45.2,
+# Figure 45-1, Table 45-1) and the regulator decoupling requirements
+# (Table 37-19). Capacitor values are the checklist's "typical
+# examples" (Table 45-1 note 1); the VDDIN 10 uF + 100 nF and VDDCORE
+# 1 uF (0.8 uF min, ESR <= 1 Ohm) are Table 37-19's. The 10 uH
+# inductor "between the external power and the VDD" of Table 45-1 note
+# 3 is not modelled (the figure only shows the VDDANA filter). Nothing
+# else may be supplied from VDDCORE (Table 37-18 note). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/atsamd21g18a-power
+title: ATSAMD21G18A supply decoupling
+host: microchip/ATSAMD21G18A
+source: microchip/DS40001882@revL
+
+nets:
+  GND:    { kind: ground }
+  VDD:    { kind: power, voltage: { min: 1.62 V, max: 3.63 V }, src: p1125 "45.2" }
+  VDDANA: { kind: local }
+
+connect:
+  GND:    { net: GND, level: required, src: p1125 "Figure 45-1" }
+  GNDANA: { net: GND, level: example, src: p1125 "Figure 45-1" }
+  VDDANA: { net: VDDANA, level: example, src: p1125 "Figure 45-1" }
+  VDDIN:  { net: VDD, level: example, src: p1125 "Figure 45-1" }
+  VDDIO:  { net: VDD, level: example, src: p1125 "Figure 45-1" }
+
+roles:
+  C_VDDANA:
+    per_pin: VDDANA
+    requires:
+      category: capacitor
+      capacitance: { typ: 100 nF }
+      src: p1125 "Figure 45-1, Table 45-1"
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p1126 "Table 45-1, note 2"' }
+    level: { value: recommended, word: should, src: 'p1126 "Table 45-1, note 2"' }
+  C_VDDANA_BULK:
+    requires:
+      category: capacitor
+      capacitance: { typ: 10 uF }
+      src: p1125 "Figure 45-1, Table 45-1"
+    pins:  { "1": VDDANA, "2": GND }
+    level: { value: example, src: 'p1126 "Table 45-1, note 1"' }
+  C_VDDCORE:
+    per_pin: VDDCORE
+    requires:
+      category: capacitor
+      capacitance: { min: 0.8 uF, typ: 1 uF }
+      esr: { max: 1 Ω }
+      src: p918 "Table 37-19, COUT"
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p1126 "Table 45-1, note 2"' }
+    level: { value: required, src: p918 "Table 37-19" }
+  C_VDDIN:
+    per_pin: VDDIN
+    requires: { category: capacitor, capacitance: { typ: 100 nF }, src: 'p918 "Table 37-19, CIN"' }
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p1126 "Table 45-1, note 2"' }
+    level: { value: required, src: p918 "Table 37-19" }
+    example: { dielectric: { value: X7R }, src: 'p918 "Table 37-19, note 1"' }
+  C_VDDIN_BULK:
+    per_pin: VDDIN
+    requires: { category: capacitor, capacitance: { typ: 10 uF }, src: 'p918 "Table 37-19, CIN"' }
+    pins: { "1": $pin, "2": GND }
+    level: { value: required, src: p918 "Table 37-19" }
+    example: { dielectric: { value: X7R }, src: 'p918 "Table 37-19, note 1"' }
+  C_VDDIO:
+    per_pin: VDDIO
+    requires:
+      category: capacitor
+      capacitance: { typ: 100 nF }
+      src: p1125 "Figure 45-1, Table 45-1"
+    pins: { "1": $pin, "2": GND }
+    place: { near: $pin, src: 'p1126 "Table 45-1, note 2"' }
+    level: { value: recommended, word: should, src: 'p1126 "Table 45-1, note 2"' }
+  L_VDDANA:
+    requires: { category: inductor, src: 'p1126 "Table 45-1, note 4"' }
+    pins:     { "1": VDD, "2": VDDANA }
+    level:    { value: optional, word: can, src: 'p1126 "Table 45-1, note 4"' }

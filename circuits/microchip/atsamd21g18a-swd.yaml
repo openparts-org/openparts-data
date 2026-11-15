@@ -1,0 +1,34 @@
+# ATSAMD21G18A SWD programming/debug port (Schematic Checklist 45.7): the
+# 1 kOhm pull-up on SWCLK (PA30) that 45.1.1/45.7 call critical, and the
+# 10-pin Cortex Debug Connector of Figure 45-11 (SWDIO PA31). Table 45-9
+# lists 15 kOhm pull-ups on SWDCLK and SWDIO for that connector, which
+# disagrees with Table 45-8's 1 kOhm; only the 1 kOhm SWCLK pull-up is
+# recorded here (needs review). AI candidate.
+schema_version: "0.2"
+kind: circuit
+id: microchip/atsamd21g18a-swd
+title: ATSAMD21G18A SWD port
+host: microchip/ATSAMD21G18A
+source: microchip/DS40001882@revL
+
+nets:
+  GND:   { kind: ground }
+  RESET: { kind: signal }
+  SWCLK: { kind: signal }
+  SWDIO: { kind: signal }
+  VDD:   { kind: power }
+
+connect:
+  PA30:  { net: SWCLK, level: required, src: p32 "Table 7-4" }
+  PA31:  { net: SWDIO, level: required, src: p32 "Table 7-4" }
+  RESET: { net: RESET, level: example, src: p1132 "Figure 45-11" }
+
+roles:
+  J_SWD:
+    requires: { category: connector, src: p1132 "Figure 45-11" }
+    pins:     { "1": VDD, "10": RESET, "2": SWDIO, "3": GND, "4": SWCLK, "5": GND }
+    level:    { value: recommended, word: should, src: p1132 "45.7.1" }
+  R_SWCLK:
+    requires: { category: resistor, resistance: { typ: 1 kΩ }, src: p1131 "Table 45-8" }
+    pins:     { "1": VDD, "2": SWCLK }
+    level:    { value: required, word: must, src: p1125 "45.1.1" }
