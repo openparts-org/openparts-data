@@ -1,0 +1,24 @@
+# Single Schmitt-trigger inverter SN74LVC1G14, 5-pin pin map of the DBV
+# (SOT-23-5) package (shared with DCK/DRL/DPW), from Table 4-1 "Pin
+# Functions" (SCES218AA page 4), column "DBV, DCK, DRL, DPW", checked
+# against Figure 4-1 "DBV Package 5-Pin SOT-23 Top View" (page 3); all 5
+# pins match. The table prints "N.C." (no internal connection) for pin
+# 1; named NC here as in ti/SN74LVC1G04-DBV. The DRY/DSF and the
+# YZP/YZV ball maps differ and are not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN74LVC1G14-DBV
+manufacturer: ti
+category: logic
+family: SN74LVC1G14
+source: ti/SCES218AA
+
+pins:
+  src:
+    - p4 "Table 4-1 "Pin Functions", column "DBV, DCK, DRL, DPW""
+    - p3 "Figure 4-1 "DBV Package 5-Pin SOT-23 Top View" (cross-check)"
+  "1": { name: NC, type: nc }
+  "2": { name: A, type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: Y, type: output }
+  "5": { name: VCC, type: power }

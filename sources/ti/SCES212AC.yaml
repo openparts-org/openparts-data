@@ -1,0 +1,19 @@
+# Official TI datasheet "SN74LVC1G00 single 2-input positive-NAND gate". Downloaded 2026-11-16 from
+# the TI symlink URL below; revision read from the page header
+# "SCES212AC - APRIL 1999 - REVISED AUGUST 2026". 50 PDF pages; text read with pdftotext -layout. The
+# pin-configuration page and the package outline drawings named in the
+# part files were read from the extracted text and checked against the
+# rendered page where noted. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM (PDF page 19) is dated 7-Oct-2025.
+# sha256 is of the PDF as downloaded on 2026-11-16.
+schema_version: "0.2"
+kind: source
+id: ti/SCES212AC
+sha256: 1264f79853e6119b66d60fe54f1f6e87995c12c00138bd820981fe68febb1063
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/sn74lvc1g00.pdf
+publisher: ti
+document_id: SCES212AC
+document_type: datasheet
+revision: AC
+date: 2026-08
