@@ -21,3 +21,39 @@ lifecycle:
 
 sources:
   - ecs/ECS-3x10X-3x9X
+
+# Parameters (AI candidates, needs review): frequency from the ECS-3X9X
+# DEVELOPED FREQUENCIES table, load capacitance from the PART NUMBERING
+# GUIDE, tolerance and ESR from the electrical characteristics tables.
+parameters:
+  frequency:
+    nominal: 20.0
+    unit: MHz
+  load_capacitance:
+    nominal: 18
+    unit: pF
+  frequency_tolerance:
+    min: -50
+    max: 50
+    unit: ppm
+  esr:
+    max: 50
+    unit: Ω
+
+provenance:
+  "/parameters/frequency":
+    - source: ecs/ECS-3x10X-3x9X
+      page: 2
+      locator: "DEVELOPED FREQUENCIES ECS-3X9X, Abbreviation 200: Frequency 20.000 MHz"
+  "/parameters/load_capacitance":
+    - source: ecs/ECS-3x10X-3x9X
+      page: 1
+      locator: "PART NUMBERING GUIDE, Load Capacitance: xx = xx pF -> 18 = 18 pF"
+  "/parameters/frequency_tolerance":
+    - source: ecs/ECS-3x10X-3x9X
+      page: 1
+      locator: "OPERATING CONDITIONS / ELECTRICAL CHARACTERISTICS, Frequency Tolerance @ +25°C: ± 50 ppm (ECS-3X10X / ECS-3X9X)"
+  "/parameters/esr":
+    - source: ecs/ECS-3x10X-3x9X
+      page: 1
+      locator: "ESR table, Frequency 10.00 ~ 30.00 MHz: ESR Ω Max. 50, Fundamental"

@@ -21,3 +21,39 @@ lifecycle:
 
 sources:
   - ecs/ECX_12
+
+# Parameters (AI candidates, needs review): frequency, load capacitance and
+# tolerance from the PART NUMBERING GUIDE codes; ESR from the ECX-12
+# electrical characteristics table.
+parameters:
+  frequency:
+    nominal: 32.768
+    unit: kHz
+  load_capacitance:
+    nominal: 12.5
+    unit: pF
+  frequency_tolerance:
+    min: -20
+    max: 20
+    unit: ppm
+  esr:
+    max: 90
+    unit: kΩ
+
+provenance:
+  "/parameters/frequency":
+    - source: ecs/ECX_12
+      page: 1
+      locator: "PART NUMBERING GUIDE, FREQUENCY ABBREVIATION: .327 = 32.768 KHz"
+  "/parameters/load_capacitance":
+    - source: ecs/ECX_12
+      page: 1
+      locator: "PART NUMBERING GUIDE, LOAD CAPACITANCE: 12.5 = 12.5 pF"
+  "/parameters/frequency_tolerance":
+    - source: ecs/ECX_12
+      page: 1
+      locator: "PART NUMBERING GUIDE, CUSTOM OPTIONS Tolerance: Blank = ±20 ppm (no custom option in this MPN)"
+  "/parameters/esr":
+    - source: ecs/ECX_12
+      page: 1
+      locator: "OPERATING CONDITIONS / ELECTRICAL CHARACTERISTICS, Equivalent Series Resistance R1: ECX-12 MAX 90K Ω"
