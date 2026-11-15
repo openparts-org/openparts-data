@@ -1,0 +1,79 @@
+# 16-lead QFN, 4x4x0.9 mm, 0.65 mm pitch, 2.65 mm exposed pad (Microchip
+# package code ML): drawing C04-127D ("16-Lead Plastic Quad Flat, No Lead
+# Package (ML) - 4x4x0.9mm Body [QFN]"), DS20005565E pages 70-71 (text),
+# and its recommended land pattern C04-2127A on page 72 (an image,
+# rendered and read). body_height = A (no A2 given). lead_thickness = A3
+# "0.20 REF" -- a reference value, marked REF in the table. K (min 0.20)
+# is not modelled. Pins 1-4 down the left edge, 5-8 along the bottom
+# (bottom view mirrored, checked against the "Package Types" top view on
+# page 2): the qfn counter-clockwise convention.
+#
+# pads: the land pattern C04-2127A in the qfn frame (top view, X right,
+# Y up, origin at the centre, pin 1 top of the left edge). Contact pad
+# spacing C1 = C2 = 4.00 (pad centre to pad centre) -> rows at +-2.00;
+# pitch E 0.65, 4 pads per side -> centres at +-0.975 and +-0.325;
+# pad X1 0.35 (max) across the pitch, Y1 0.80 (max) along the terminal
+# (the table labels X1/Y1 "(X28)"; the drawing shows 16 pads). The
+# optional centre pad W2 x T2 2.50 x 2.50 (max) is pad EP (Table 1-1:
+# exposed pad, "do not electrically connect").
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/QFN16-4x4-P0.65-EP2.65-C04-127D
+family: qfn
+lead_count: { value: 16, src: 'p71 "C04-127D sheet 2 table, "Number of Pins N 16""' }
+source: microchip/DS20005565@revE
+
+pitch: { typ: 0.65 mm, src: 'p71 "C04-127D sheet 2 table, "Pitch e 0.65 BSC""' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:  { typ: 4 mm, src: 'p71 "C04-127D sheet 2 table, "Overall Width E 4.00 BSC""' }
+  body_length: { typ: 4 mm, src: 'p71 "C04-127D sheet 2 table, "Overall Length D 4.00 BSC""' }
+  body_height:
+    min: 0.8 mm
+    typ: 0.9 mm
+    max: 1 mm
+    src: p71 "C04-127D sheet 2 table, "Overall Height A 0.80 / 0.90 / 1.00""
+  exposed_pad:
+    src:    p71 "C04-127D sheet 2 table, "Exposed Pad Width E2" and "Exposed Pad Length D2" 2.50 / 2.65 / 2.80"
+    width:  { min: 2.5 mm, typ: 2.65 mm, max: 2.8 mm }
+    length: { min: 2.5 mm, typ: 2.65 mm, max: 2.8 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p71 "C04-127D sheet 2 table, "Standoff A1 0.00 / 0.02 / 0.05""
+  lead_width:
+    min: 0.25 mm
+    typ: 0.3 mm
+    max: 0.35 mm
+    src: p71 "C04-127D sheet 2 table, "Contact Width b 0.25 / 0.30 / 0.35""
+  lead_length:
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p71 "C04-127D sheet 2 table, "Contact Length L 0.30 / 0.40 / 0.50""
+  lead_thickness:
+    typ: 0.2 mm
+    src: p71 "C04-127D sheet 2 table, "Contact Thickness A3 0.20 REF" (reference value)"
+
+pads:
+  value:
+    - { number: "1", x: -2, y: 0.975, width: 0.8, length: 0.35 }
+    - { number: "2", x: -2, y: 0.325, width: 0.8, length: 0.35 }
+    - { number: "3", x: -2, y: -0.325, width: 0.8, length: 0.35 }
+    - { number: "4", x: -2, y: -0.975, width: 0.8, length: 0.35 }
+    - { number: "5", x: -0.975, y: -2, width: 0.35, length: 0.8 }
+    - { number: "6", x: -0.325, y: -2, width: 0.35, length: 0.8 }
+    - { number: "7", x: 0.325, y: -2, width: 0.35, length: 0.8 }
+    - { number: "8", x: 0.975, y: -2, width: 0.35, length: 0.8 }
+    - { number: "9", x: 2, y: -0.975, width: 0.8, length: 0.35 }
+    - { number: "10", x: 2, y: -0.325, width: 0.8, length: 0.35 }
+    - { number: "11", x: 2, y: 0.325, width: 0.8, length: 0.35 }
+    - { number: "12", x: 2, y: 0.975, width: 0.8, length: 0.35 }
+    - { number: "13", x: 0.975, y: 2, width: 0.35, length: 0.8 }
+    - { number: "14", x: 0.325, y: 2, width: 0.35, length: 0.8 }
+    - { number: "15", x: -0.325, y: 2, width: 0.35, length: 0.8 }
+    - { number: "16", x: -0.975, y: 2, width: 0.35, length: 0.8 }
+    - { number: EP, x: 0, y: 0, width: 2.5, length: 2.5 }
+  src: p72 "Land pattern C04-2127A, C1=C2 4.00 -> +-2.00, E 0.65 -> +-0.975/+-0.325, X1 0.35, Y1 0.80, W2=T2 2.50"

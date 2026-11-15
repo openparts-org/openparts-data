@@ -1,0 +1,33 @@
+# MPN "MCP2221A-I/SL" is PROBABLE: assembled from the Product Identification
+# System legend of microchip/DS20005565@revE (DS20005565E page 75: Device MCP2221A, Temperature Range I, Package SL);
+# it is also printed there as an ordering example, but the legend is not
+# an orderable list (Microchip PIC/interface convention: probable).
+# Package: SL = 14-lead SOIC 3.90 mm -> drawing C04-065-SL Rev D (pages 64-65); every
+# row of its table (e 1.27 BSC, A max 1.75, A2 min 1.25, A1 0.10-0.25, E
+# 6.00 BSC, E1 3.90 BSC, D 8.65 BSC, L 0.40-1.27, c 0.10-0.25, b
+# 0.31-0.51) equals manufacturers/microchip/SOIC14-SL-C04-065D, so it is
+# reused (compared row by row).
+# Device: microchip/MCP2221A-SOIC14 (pin map of this package).
+# lifecycle: not stated in the datasheet; microchip.com product pages
+# refuse plain fetches (403), so it is recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP2221A-I-SL
+manufacturer: microchip
+mpn: MCP2221A-I/SL
+device: microchip/MCP2221A-SOIC14
+
+package:
+  value: manufacturers/microchip/SOIC14-SL-C04-065D
+  src:
+    - p75 "Product Identification System, Package "SL""
+    - p65 "14-Lead SOIC (SL), drawing C04-065-SL Rev D sheet 2 table"
+
+sources: [microchip/DS20005565@revE]
+source: microchip/DS20005565@revE
+
+existence:
+  status: probable
+  src: 'p75 "Product Identification System legend: Device MCP2221A, Temperature Range I, Package SL"'
+
+lifecycle: { status: unknown }

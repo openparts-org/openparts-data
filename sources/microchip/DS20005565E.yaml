@@ -1,0 +1,21 @@
+# Official Microchip datasheet "MCP2221A - USB 2.0 to I2C/UART Protocol
+# Converter with GPIO" (78 PDF pages). Downloaded 2026-11-16 with curl
+# from the ww1.microchip.com URL below (HTTP 200, PDF). document_id and
+# revision from the printed footer "DS20005565E-page N"; Revision History
+# "Revision E (September 2021)". Printed page numbers equal the PDF page
+# indices. Text read with pdftotext -layout (Table 1-1, Package Types,
+# drawings C04-065-SL Rev D, C04-087 Rev D, C04-127D, Product
+# Identification System); the QFN land pattern C04-2127A (page 72) was
+# rendered and read as an image. No 14-lead PDIP drawing is printed in
+# this revision.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20005565@revE
+sha256: 87f7d4b0efc62081ce1e3be6d0f46c2a8b49235e0d04e3a30dc32b7b788d943d
+retrieved: 2026-11-16
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/MCP2221A-Data-Sheet-20005565E.pdf
+publisher: microchip
+document_id: DS20005565
+document_type: datasheet
+revision: E
+date: 2021-09

@@ -1,0 +1,54 @@
+# USB 2.0 to I2C/UART protocol converter (MCP2221A), 14-pin map shared by
+# the PDIP, SOIC and TSSOP packages: Table 1-1 "Pinout Description",
+# column "PDIP, SOIC, SSOP" (DS20005565E page 3; the column header says
+# SSOP, the Package Types figure and the ordering legend say TSSOP),
+# checked against the "Package Types" figure "MCP2221A PDIP/SOIC/TSSOP"
+# (page 2): all 14 pins match. The 4x4 QFN has a different map
+# (microchip/MCP2221A-QFN16).
+# Category: USB-to-UART/I2C bridge; the category tree has no USB bridge
+# node, so the `interface` group is used.
+# Pin types from Table 1-1 "Pin Type": I/O -> io, I -> input (RST "Reset
+# input" -> reset), O -> output, P -> power/ground; VUSB ("USB Power
+# pin (internally connected to 3.3V)", type USB) -> power; D+/D- (type
+# USB) -> io. Alternate functions of GP0-GP3 from the same table.
+# D+/D- form a USB pair: Table 1-1 names them "USB D+" and "USB D-".
+schema_version: "0.2"
+kind: device
+id: microchip/MCP2221A-SOIC14
+manufacturer: microchip
+category: interface
+family: MCP2221A
+source: microchip/DS20005565@revE
+
+pins:
+  src:
+    - p3 "Table 1-1 "Pinout Description", column "PDIP, SOIC, SSOP""
+    - p2 "Package Types figure, MCP2221A PDIP/SOIC/TSSOP (cross-check)"
+  "1":  { name: VDD, type: power }
+  "2":  { name: GP0, type: io, alternate_functions: [SSPND, LED_URx] }
+  "3":  { name: GP1, type: io, alternate_functions: [CLKR, ADC1, LED_UTx, IOC] }
+  "4":  { name: RST, type: reset }
+  "5":  { name: URx, type: input }
+  "6":  { name: UTx, type: output }
+  "7":  { name: GP2, type: io, alternate_functions: [USBCFG, ADC2, DAC1] }
+  "8":  { name: GP3, type: io, alternate_functions: [LED_I2C, ADC3, DAC2] }
+  "9":  { name: SDA, type: io }
+  "10": { name: SCL, type: io }
+  "11": { name: VUSB, type: power }
+  "12":
+    name: D-
+    type: io
+    diff_pair:
+      partner: "13"
+      polarity: n
+      standard: usb2
+      src: p3 "Table 1-1, D- "USB D-", D+ "USB D+""
+  "13":
+    name: D+
+    type: io
+    diff_pair:
+      partner: "12"
+      polarity: p
+      standard: usb2
+      src: p3 "Table 1-1, D- "USB D-", D+ "USB D+""
+  "14": { name: VSS, type: ground }

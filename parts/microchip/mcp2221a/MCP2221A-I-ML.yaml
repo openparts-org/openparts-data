@@ -1,0 +1,30 @@
+# MPN "MCP2221A-I/ML" is PROBABLE: assembled from the Product Identification
+# System legend of microchip/DS20005565@revE (DS20005565E page 75: Device MCP2221A, Temperature Range I, Package ML);
+# it is also printed there as an ordering example, but the legend is not
+# an orderable list (Microchip PIC/interface convention: probable).
+# Package: ML = 16-lead 4x4x0.9 mm QFN -> drawing C04-127D (pages 70-72), new
+# package manufacturers/microchip/QFN16-4x4-P0.65-EP2.65-C04-127D.
+# Device: microchip/MCP2221A-QFN16 (pin map of this package).
+# lifecycle: not stated in the datasheet; microchip.com product pages
+# refuse plain fetches (403), so it is recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP2221A-I-ML
+manufacturer: microchip
+mpn: MCP2221A-I/ML
+device: microchip/MCP2221A-QFN16
+
+package:
+  value: manufacturers/microchip/QFN16-4x4-P0.65-EP2.65-C04-127D
+  src:
+    - p75 "Product Identification System, Package "ML""
+    - p71 "16-Lead QFN (ML) 4x4x0.9, drawing C04-127D sheet 2 table"
+
+sources: [microchip/DS20005565@revE]
+source: microchip/DS20005565@revE
+
+existence:
+  status: probable
+  src: 'p75 "Product Identification System legend: Device MCP2221A, Temperature Range I, Package ML"'
+
+lifecycle: { status: unknown }

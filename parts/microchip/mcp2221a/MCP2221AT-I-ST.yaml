@@ -1,0 +1,33 @@
+# MPN "MCP2221AT-I/ST" is PROBABLE: assembled from the Product Identification
+# System legend of microchip/DS20005565@revE (DS20005565E page 75: Device MCP2221AT, Temperature Range I, Package ST);
+# it is also printed there as an ordering example, but the legend is not
+# an orderable list (Microchip PIC/interface convention: probable).
+# Package: ST = 14-lead TSSOP 4.4 mm -> drawing C04-087 Rev D (pages 67-68); every
+# row of its table (e 0.65 BSC, A max 1.20, A1 0.05-0.15, A2
+# 0.80/1.00/1.05, D 4.90/5.00/5.10, E 6.40 BSC, E1 4.30/4.40/4.50, b
+# 0.19-0.30, c 0.09-0.20, L 0.45/0.60/0.75) equals
+# manufacturers/microchip/TSSOP14-ST-C04-087D, so it is reused.
+# Device: microchip/MCP2221A-SOIC14 (pin map of this package).
+# lifecycle: not stated in the datasheet; microchip.com product pages
+# refuse plain fetches (403), so it is recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP2221AT-I-ST
+manufacturer: microchip
+mpn: MCP2221AT-I/ST
+device: microchip/MCP2221A-SOIC14
+
+package:
+  value: manufacturers/microchip/TSSOP14-ST-C04-087D
+  src:
+    - p75 "Product Identification System, Package "ST""
+    - p68 "14-Lead TSSOP (ST), drawing C04-087 Rev D sheet 2 table"
+
+sources: [microchip/DS20005565@revE]
+source: microchip/DS20005565@revE
+
+existence:
+  status: probable
+  src: 'p75 "Product Identification System legend: Device MCP2221AT, Temperature Range I, Package ST"'
+
+lifecycle: { status: unknown }

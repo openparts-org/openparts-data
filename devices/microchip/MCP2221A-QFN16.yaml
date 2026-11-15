@@ -1,0 +1,53 @@
+# USB 2.0 to I2C/UART protocol converter (MCP2221A), 16-lead 4x4 QFN pin
+# map: Table 1-1 "Pinout Description", column "QFN" (DS20005565E page
+# 3), checked against the "Package Types" figure "MCP2221A 4 x 4 QFN"
+# (page 2): all 16 pins match. Pins 14 and 15 are "Not Connected".
+# Exposed pad (pin 17 in Table 1-1): "do not electrically connect" -- it
+# has no net, so no EP pin is recorded (the package's land pattern keeps
+# the centre pad).
+# Category: USB-to-UART/I2C bridge; the category tree has no USB bridge
+# node, so the `interface` group is used.
+# Pin types and alternate functions as in microchip/MCP2221A-SOIC14 (same
+# table): VUSB -> power, D+/D- -> io, RST -> reset.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP2221A-QFN16
+manufacturer: microchip
+category: interface
+family: MCP2221A
+source: microchip/DS20005565@revE
+
+pins:
+  src:
+    - p3 "Table 1-1 "Pinout Description", column "QFN""
+    - p2 "Package Types figure, MCP2221A 4 x 4 QFN (cross-check)"
+  "1":  { name: GP0, type: io, alternate_functions: [SSPND, LED_URx] }
+  "2":  { name: GP1, type: io, alternate_functions: [CLKR, ADC1, LED_UTx, IOC] }
+  "3":  { name: RST, type: reset }
+  "4":  { name: URx, type: input }
+  "5":  { name: UTx, type: output }
+  "6":  { name: GP2, type: io, alternate_functions: [USBCFG, ADC2, DAC1] }
+  "7":  { name: GP3, type: io, alternate_functions: [LED_I2C, ADC3, DAC2] }
+  "8":  { name: SDA, type: io }
+  "9":  { name: SCL, type: io }
+  "10": { name: VUSB, type: power }
+  "11":
+    name: D-
+    type: io
+    diff_pair:
+      partner: "12"
+      polarity: n
+      standard: usb2
+      src: p3 "Table 1-1, D- "USB D-", D+ "USB D+""
+  "12":
+    name: D+
+    type: io
+    diff_pair:
+      partner: "11"
+      polarity: p
+      standard: usb2
+      src: p3 "Table 1-1, D- "USB D-", D+ "USB D+""
+  "13": { name: VSS, type: ground }
+  "14": { name: NC, type: nc }
+  "15": { name: NC, type: nc }
+  "16": { name: VDD, type: power }
