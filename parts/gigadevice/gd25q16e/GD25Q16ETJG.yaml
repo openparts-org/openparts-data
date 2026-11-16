@@ -1,0 +1,27 @@
+# MPN "GD25Q16ETJG" printed verbatim in section 9.1 "Valid Part Numbers"
+# (Temperature Range J table, Industrial+ -40 to +105 C) of gigadevice/DS-00473-GD25Q16E@rev1.3, page 49, row
+# "GD25Q16ETJG / 16Mbit / SOP8 150mil". The orderable code adds a packing letter
+# (T/Y/R, "Packing Options" column; section 9 legend page 48) -- this
+# record is the product number as the table prints it. Package outline:
+# section 10.1 "Package SOP8 150mil" (page 51); the drawing is the one
+# the referenced package was read from (identical dimension rows, see the
+# package header). lifecycle: not stated in the datasheet -> unknown.
+schema_version: "0.2"
+kind: part
+id: gigadevice/GD25Q16ETJG
+manufacturer: gigadevice
+mpn: GD25Q16ETJG
+device: gigadevice/GD25Q16E
+
+package:
+  value: manufacturers/gigadevice/SOP8-150mil
+  src: p49 "Section 9.1 Valid Part Numbers, Range J, row GD25Q16ETJG, Package Type SOP8 150mil; outline section 10.1 (p51)"
+
+sources: [gigadevice/DS-00473-GD25Q16E@rev1.3]
+source: gigadevice/DS-00473-GD25Q16E@rev1.3
+
+existence:
+  status: verified
+  src: p49 "Section 9.1 Valid Part Numbers, Temperature Range J table, row GD25Q16ETJG"
+
+lifecycle: { status: unknown }

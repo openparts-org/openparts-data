@@ -1,0 +1,26 @@
+# MPN "W25Q16JVZPIM" printed verbatim in section 12.1 "Valid Part Numbers and
+# Top Side Marking", "W25Q16JV-IM" table (W25Q16JV-IM/JM valid part numbers), of winbond/W25Q16JV@revJ (PDF page 75).
+# Package code ZP = "WSON-8 6x5-mm" (same row); outline in section 11.4 (PDF page 69).
+# Outline page 69 is the drawing the referenced package was read from (same
+# dimension rows as the existing W25Q16JVZPIQ part that uses it) -> reused.
+# Same pin table as the IQ parts (section 3.3), so the existing Device is used.
+# lifecycle: the datasheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: winbond/W25Q16JVZPIM
+manufacturer: winbond
+mpn: W25Q16JVZPIM
+device: winbond/W25Q16JV-S
+
+package:
+  value: manufacturers/winbond/WSON8-6x5-P1.27-P
+  src: 'p75 "Section 12.1, W25Q16JV-IM: package "ZP" = "WSON-8 6x5-mm"; outline section 11.4 (p69)"'
+
+sources: [winbond/W25Q16JV@revJ]
+source: winbond/W25Q16JV@revJ
+
+existence:
+  status: verified
+  src: p75 "Section 12.1 Valid Part Numbers, W25Q16JV-IM table, row W25Q16JVZPIM"
+
+lifecycle: { status: unknown }

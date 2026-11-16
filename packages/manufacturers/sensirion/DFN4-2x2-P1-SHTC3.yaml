@@ -1,0 +1,49 @@
+# Sensirion SHTC3 4-pin DFN, 2 x 2 x 0.75 mm, 1 mm pitch, with centre
+# pad. Read from Figure 9 / Table 18 "Package outline dimensions and
+# tolerances" (Datasheet SHTC3 v4, page 10) and Figure 10 "Recommended
+# metal land pattern" (page 11).
+#
+# Mapping: D "Package width" / E "Package length" -> body_width /
+# body_length (both 2 +-0.1); A -> body_height; A3 "Leadframe height" ->
+# lead_thickness; b "Pad width" -> lead_width; L "Pad length" ->
+# lead_length; E2 "Center pad width" (across the pad columns) x D2
+# "Center pad length" (along them) -> exposed_pad width x length.
+# Pin order (Table 7 top view, page 6): 1 top-left, 2 bottom-left,
+# 3 bottom-right, 4 top-right; pads in two columns, pitch e = 1 along
+# the column.
+# pads (Figure 10, drawn rotated by 90 deg there): copper lands 0.35 x
+# 0.55 at pitch 1.00; each land reaches 0.20 outside and 0.35 inside the
+# package outline -> land centre 1.0 + 0.2 - 0.275 = 0.925 from the
+# body centre; centre land 1.60 x 0.70. Written here in the Table 7
+# orientation (columns at x = +-0.925, y = +-0.5).
+# Left out: max cavity S (reference only), pin-1 marking T1xT2.
+schema_version: "0.2"
+kind: package
+id: manufacturers/sensirion/DFN4-2x2-P1-SHTC3
+family: dfn
+lead_count: 4
+source: sensirion/Datasheet_SHTC3@v4
+
+pitch: { typ: 1 mm, src: 'p10 "Table 18, Pad pitch e"' }
+geometry: { type: parametric, generator: dfn }
+
+dimensions:
+  body_width:     { min: 1.9 mm, typ: 2 mm, max: 2.1 mm, src: 'p10 "Table 18, Package width D"' }
+  body_length:    { min: 1.9 mm, typ: 2 mm, max: 2.1 mm, src: 'p10 "Table 18, Package length E"' }
+  body_height: { min: 0.7 mm, typ: 0.75 mm, max: 0.8 mm, src: 'p10 "Table 18, Package height A"' }
+  exposed_pad:
+    src:    p10 "Table 18, Center pad width E2 (across the columns) x Center pad length D2"
+    width:  { min: 0.6 mm, typ: 0.7 mm, max: 0.8 mm }
+    length: { min: 1.5 mm, typ: 1.6 mm, max: 1.7 mm }
+  lead_width:     { min: 0.3 mm, typ: 0.35 mm, max: 0.4 mm, src: 'p10 "Table 18, Pad width b"' }
+  lead_length:    { min: 0.3 mm, typ: 0.35 mm, max: 0.4 mm, src: 'p10 "Table 18, Pad length L"' }
+  lead_thickness: { typ: 0.15 mm, src: 'p10 "Table 18, Leadframe height A3"' }
+
+pads:
+  value:
+    - { number: "1", x: -0.925, y: 0.5, width: 0.55, length: 0.35 }
+    - { number: "2", x: -0.925, y: -0.5, width: 0.55, length: 0.35 }
+    - { number: "3", x: 0.925, y: -0.5, width: 0.55, length: 0.35 }
+    - { number: "4", x: 0.925, y: 0.5, width: 0.55, length: 0.35 }
+    - { number: EP, x: 0, y: 0, width: 0.7, length: 1.6 }
+  src: 'p11 "Figure 10 land pattern: 0.35 x 0.55 lands, pitch 1.00, 0.20 beyond outline; centre land 1.60 x 0.70"'

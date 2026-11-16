@@ -1,0 +1,17 @@
+# Sensirion "Datasheet SGP41" (gas sensor), footer "version 1.0 - December 2021",
+# 22 pages. Downloaded 2026-11-16 with curl from the datasheet link on the
+# sensirion.com SGP41 catalogue page. No document number is printed; the
+# file name is used as the id. PDF page index = printed "N/22" page
+# number. Package and land-pattern drawings rendered with pdftoppm and
+# read visually.
+schema_version: "0.2"
+kind: source
+id: sensirion/Sensirion_Gas_Sensors_Datasheet_SGP41@v1.0
+sha256: 331f35ed1f027a74ec79b302763f7adb920759bc055b3d2ada17822bb0005bec
+retrieved: 2026-11-16
+url: https://sensirion.com/media/documents/5FE8673C/61E96F50/Sensirion_Gas_Sensors_Datasheet_SGP41.pdf
+publisher: sensirion
+document_id: Sensirion_Gas_Sensors_Datasheet_SGP41
+document_type: datasheet
+revision: "1.0"
+date: 2021-12

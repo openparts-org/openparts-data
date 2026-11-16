@@ -1,0 +1,17 @@
+# Sensirion "Datasheet SHTC3" (humidity and temperature sensor IC),
+# footer "Version 4 - December 2022", 14 pages. Downloaded 2026-11-16
+# with curl from the datasheet link on the sensirion.com SHTC3 catalogue
+# page. No document number is printed; the file name is used as the id.
+# PDF page index = printed "N/14" page number. Package and land-pattern
+# drawings rendered with pdftoppm and read visually.
+schema_version: "0.2"
+kind: source
+id: sensirion/Datasheet_SHTC3@v4
+sha256: dbe979c975fe520663606b5c278d2b9130f4e402e6d9d943ca06c4e4f38e63d9
+retrieved: 2026-11-16
+url: https://sensirion.com/media/documents/643F9C8E/63A5A436/Datasheet_SHTC3.pdf
+publisher: sensirion
+document_id: Datasheet_SHTC3
+document_type: datasheet
+revision: "4"
+date: 2022-12

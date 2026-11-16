@@ -1,0 +1,17 @@
+# Sensirion "Datasheet STS4x" (temperature sensor), footer "Version 3.1 -
+# February 2025", 15 pages. Downloaded 2026-11-16 with curl from the
+# datasheet link on the sensirion.com STS40 catalogue page. No document
+# number is printed; the file name is used as the id. PDF page index =
+# printed "N / 15" page number. Package and land-pattern drawings
+# rendered with pdftoppm and read visually.
+schema_version: "0.2"
+kind: source
+id: sensirion/HT_DS_Datasheet_STS4x@v3.1
+sha256: 4925fb966b1d03c69123e12bb7d76732a99bd2a375ac64280d8b07a4d00f2fcd
+retrieved: 2026-11-16
+url: https://sensirion.com/media/documents/D2D0B4A9/67AA0F30/HT_DS_Datasheet_STS4x.pdf
+publisher: sensirion
+document_id: HT_DS_Datasheet_STS4x
+document_type: datasheet
+revision: "3.1"
+date: 2025-02

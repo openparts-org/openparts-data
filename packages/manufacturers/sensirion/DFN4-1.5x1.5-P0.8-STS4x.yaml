@@ -1,0 +1,63 @@
+# Sensirion STS4x 4-pin DFN, 1.5 x 1.5 mm, 0.8 mm pitch, with die pad.
+# Read from Figure 6 "Dimensional drawing of the STS4x" (Datasheet STS4x
+# v3.1, page 9) and Figure 7 "Recommended land pattern" (page 10).
+# Not the SHT4x package: the body height is 0.55 +-0.05 here (SHT4x
+# 0.54 +-0.05; the other dimensions match), so a separate
+# package is kept for the STS4x drawing.
+#
+# Mapping: top view 1.5+-0.1 x 1.5+-0.1 -> body_width/body_length;
+# side view 0.55+-0.05 -> body_height (no A2); bottom view "0.3+-0.05"
+# (pad, along the column) -> lead_width, "0.3+-0.1" -> lead_length, die
+# pad "0.4+-0.1" x "1+-0.1" -> exposed_pad. Pin order (Figure 8,
+# transparent top view): 1 top-left, 2 bottom-left, 3 bottom-right,
+# 4 top-right. The die pad "is not directly connected to any pin";
+# Figure 7 has no centre land ("no copper under the sensor other than
+# at the pin pads") -> no EP land.
+# pads (Figure 7): 0.5 x 0.3 lands, pitch 0.8, "1.4" = centre-to-centre
+# of the two columns (checks with the "(0.2)" overhang: 0.7 + 0.25 -
+# 0.75 = 0.2) -> x = +-0.7, y = +-0.4.
+# Left out: side-view 0.02 and 0.15 (not labelled as symbols).
+schema_version: "0.2"
+kind: package
+id: manufacturers/sensirion/DFN4-1.5x1.5-P0.8-STS4x
+family: dfn
+lead_count: 4
+source: sensirion/HT_DS_Datasheet_STS4x@v3.1
+
+pitch: { typ: 0.8 mm, src: 'p9 "Figure 6 bottom view, Pitch 0.8"' }
+geometry: { type: parametric, generator: dfn }
+
+dimensions:
+  body_width:
+    min: 1.4 mm
+    typ: 1.5 mm
+    max: 1.6 mm
+    src: p9 "Figure 6 top view, 1.5+-0.1 (horizontal)"
+  body_length:
+    min: 1.4 mm
+    typ: 1.5 mm
+    max: 1.6 mm
+    src: p9 "Figure 6 top view, 1.5+-0.1 (vertical)"
+  body_height:
+    min: 0.5 mm
+    typ: 0.55 mm
+    max: 0.6 mm
+    src: p9 "Figure 6 side view, 0.55+-0.05"
+  exposed_pad:
+    src:    p9 "Figure 6 bottom view, die pad 0.4+-0.1 x 1+-0.1"
+    width:  { min: 0.3 mm, typ: 0.4 mm, max: 0.5 mm }
+    length: { min: 0.9 mm, typ: 1 mm, max: 1.1 mm }
+  lead_width:
+    min: 0.25 mm
+    typ: 0.3 mm
+    max: 0.35 mm
+    src: p9 "Figure 6 bottom view, 0.3+-0.05"
+  lead_length: { min: 0.2 mm, typ: 0.3 mm, max: 0.4 mm, src: 'p9 "Figure 6 bottom view, 0.3+-0.1"' }
+
+pads:
+  value:
+    - { number: "1", x: -0.7, y: 0.4, width: 0.5, length: 0.3 }
+    - { number: "2", x: -0.7, y: -0.4, width: 0.5, length: 0.3 }
+    - { number: "3", x: 0.7, y: -0.4, width: 0.5, length: 0.3 }
+    - { number: "4", x: 0.7, y: 0.4, width: 0.5, length: 0.3 }
+  src: 'p10 "Figure 7 land pattern: 0.5 x 0.3 at pitch 0.8, columns 1.4 apart (x = +-0.7); no centre land"'

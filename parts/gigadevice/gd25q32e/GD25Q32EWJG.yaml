@@ -1,0 +1,27 @@
+# MPN "GD25Q32EWJG" printed verbatim in section 9.1 "Valid Part Numbers"
+# (Temperature Range J table, Industrial+ -40 to +105 C) of gigadevice/DS-00437-GD25Q32E@rev1.5, page 50, row
+# "GD25Q32EWJG / 32Mbit / WSON8 (6x5mm)". The orderable code adds a packing letter
+# (T/Y/R, "Packing Options" column; section 9 legend page 49) -- this
+# record is the product number as the table prints it. Package outline:
+# section 10.5 "Package WSON8 (6x5mm)" (page 56); the drawing is the one
+# the referenced package was read from (identical dimension rows, see the
+# package header). lifecycle: not stated in the datasheet -> unknown.
+schema_version: "0.2"
+kind: part
+id: gigadevice/GD25Q32EWJG
+manufacturer: gigadevice
+mpn: GD25Q32EWJG
+device: gigadevice/GD25Q32E
+
+package:
+  value: manufacturers/gigadevice/WSON8-6x5-P1.27
+  src: p50 "Section 9.1 Valid Part Numbers, Range J, row GD25Q32EWJG, Package Type WSON8 (6x5mm); outline section 10.5 (p56)"
+
+sources: [gigadevice/DS-00437-GD25Q32E@rev1.5]
+source: gigadevice/DS-00437-GD25Q32E@rev1.5
+
+existence:
+  status: verified
+  src: p50 "Section 9.1 Valid Part Numbers, Temperature Range J table, row GD25Q32EWJG"
+
+lifecycle: { status: unknown }

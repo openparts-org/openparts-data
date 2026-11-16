@@ -1,0 +1,17 @@
+# Sensirion "Datasheet SGP40" (gas sensor), footer "version 1.2 - February 2022",
+# 20 pages. Downloaded 2026-11-16 with curl from the datasheet link on the
+# sensirion.com SGP40 catalogue page. No document number is printed; the
+# file name is used as the id. PDF page index = printed "N/20" page
+# number. Package and land-pattern drawings rendered with pdftoppm and
+# read visually.
+schema_version: "0.2"
+kind: source
+id: sensirion/Sensirion_Gas_Sensors_Datasheet_SGP40@v1.2
+sha256: 884db88ab45ae4824474c919e2e6bf940122df19c610ee2493d0b23caac4effb
+retrieved: 2026-11-16
+url: https://sensirion.com/media/documents/296373BB/6203C5DF/Sensirion_Gas_Sensors_Datasheet_SGP40.pdf
+publisher: sensirion
+document_id: Sensirion_Gas_Sensors_Datasheet_SGP40
+document_type: datasheet
+revision: "1.2"
+date: 2022-02

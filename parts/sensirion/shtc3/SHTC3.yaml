@@ -1,0 +1,19 @@
+# SHTC3: the product name printed throughout Datasheet SHTC3 v4 and in
+# Table 17 "SHTC3 ordering options" (page 9), which lists only Sensirion
+# order numbers (3.000.047 for 2500 pcs 7-inch reel, 1-101681-01 for
+# 10'000 pcs 13-inch reel) for it -> existence verified for the name;
+# the order numbers are packing options, not separate MPNs.
+# lifecycle: unknown (no first-party status). Package: Figure 9 /
+# Table 18 of the same datasheet.
+schema_version: "0.2"
+kind: part
+id: sensirion/SHTC3
+manufacturer: sensirion
+mpn: SHTC3
+device: sensirion/SHTC3
+package: manufacturers/sensirion/DFN4-2x2-P1-SHTC3
+sources: [sensirion/Datasheet_SHTC3@v4]
+source: sensirion/Datasheet_SHTC3@v4
+
+existence: { status: verified, src: p9 "Table 17 SHTC3 ordering options" }
+lifecycle: { status: unknown }

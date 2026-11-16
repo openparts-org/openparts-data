@@ -1,0 +1,26 @@
+# MPN "W25Q32JVSNJM" printed verbatim in section 11.1 "Valid Part Numbers and
+# Top Side Marking", "W25Q32JV-IM/JM valid part numbers" table, of winbond/W25Q32JV@revK (PDF page 81).
+# Package code SN = "SOIC-8 150-mil" (same row); outline in section 10.1 (PDF page 68).
+# Package read from this datasheet family (see the package header); same
+# outline page as the existing SN IQ part.
+# Same pin table as the IQ parts (section 3.3), so the existing Device is used.
+# lifecycle: the datasheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: winbond/W25Q32JVSNJM
+manufacturer: winbond
+mpn: W25Q32JVSNJM
+device: winbond/W25Q32JV-S
+
+package:
+  value: manufacturers/winbond/SOIC8-150mil-SN
+  src: 'p81 "Section 11.1, W25Q32JV-IM/JM valid part numbers: package "SN" = "SOIC-8 150-mil"; outline section 10.1 (p68)"'
+
+sources: [winbond/W25Q32JV@revK]
+source: winbond/W25Q32JV@revK
+
+existence:
+  status: verified
+  src: p81 "Section 11.1 Valid Part Numbers, W25Q32JV-IM/JM valid part numbers table, row W25Q32JVSNJM"
+
+lifecycle: { status: unknown }

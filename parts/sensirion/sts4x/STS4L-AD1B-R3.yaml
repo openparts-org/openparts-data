@@ -1,0 +1,16 @@
+# STS4L-AD1B-R3: printed verbatim in Table 8 "STS4x ordering options" (Datasheet
+# STS4x v3.1, page 13, Material Description column, material number
+# 3.001.160; I2C address 0x44, laser marking "A") -> existence verified.
+# lifecycle: unknown (no first-party status). Package: Figure 6 (page 9).
+schema_version: "0.2"
+kind: part
+id: sensirion/STS4L-AD1B-R3
+manufacturer: sensirion
+mpn: STS4L-AD1B-R3
+device: sensirion/STS4L
+package: manufacturers/sensirion/DFN4-1.5x1.5-P0.8-STS4x
+sources: [sensirion/HT_DS_Datasheet_STS4x@v3.1]
+source: sensirion/HT_DS_Datasheet_STS4x@v3.1
+
+existence: { status: verified, src: 'p13 "Table 8 STS4x ordering options, row STS4L-AD1B-R3"' }
+lifecycle: { status: unknown }

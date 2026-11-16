@@ -1,0 +1,20 @@
+# SGP41-D-R4: printed verbatim in Table 20 "SGP41 ordering options" (Datasheet
+# SGP41 v1.0, page 20, Part Name column, product number 3.000.060, 2'500 pcs tape
+# on reel) -> existence verified. lifecycle: unknown (no first-party
+# status). Package: the SGP4x DFN drawing (see the package header).
+schema_version: "0.2"
+kind: part
+id: sensirion/SGP41-D-R4
+manufacturer: sensirion
+mpn: SGP41-D-R4
+device: sensirion/SGP41
+
+package:
+  value: manufacturers/sensirion/DFN6-2.44x2.44-P0.8-SGP4x
+  src: p18 "Figure 17 SGP41 package outline, same dimensions as the SGP40 drawing"
+
+sources: [sensirion/Sensirion_Gas_Sensors_Datasheet_SGP41@v1.0]
+source: sensirion/Sensirion_Gas_Sensors_Datasheet_SGP41@v1.0
+
+existence: { status: verified, src: 'p20 "Table 20 SGP41 ordering options, row SGP41-D-R4"' }
+lifecycle: { status: unknown }

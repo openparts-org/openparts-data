@@ -1,0 +1,26 @@
+# MPN "W25Q32JVZPJQ" printed verbatim in section 11.1 "Valid Part Numbers and
+# Top Side Marking", "W25Q32JV-IQ/JQ valid part numbers" table, of winbond/W25Q32JV@revK (PDF page 80).
+# Package code ZP = "WSON-8 6x5-mm" (same row); outline in section 10.4 (PDF page 71).
+# Outline page 71 is the drawing the referenced package was read from (same
+# dimension rows as the existing W25Q32JVZPIQ part that uses it) -> reused.
+# Same pin table as the IQ parts (section 3.3), so the existing Device is used.
+# lifecycle: the datasheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: winbond/W25Q32JVZPJQ
+manufacturer: winbond
+mpn: W25Q32JVZPJQ
+device: winbond/W25Q32JV-S
+
+package:
+  value: manufacturers/winbond/WSON8-6x5-P1.27-P
+  src: 'p80 "Section 11.1, W25Q32JV-IQ/JQ valid part numbers: package "ZP" = "WSON-8 6x5-mm"; outline section 10.4 (p71)"'
+
+sources: [winbond/W25Q32JV@revK]
+source: winbond/W25Q32JV@revK
+
+existence:
+  status: verified
+  src: p80 "Section 11.1 Valid Part Numbers, W25Q32JV-IQ/JQ valid part numbers table, row W25Q32JVZPJQ"
+
+lifecycle: { status: unknown }

@@ -1,0 +1,69 @@
+# Sensirion SGP4x 6-pin DFN, 2.44 x 2.44 x 0.85 mm, 0.8 mm pitch, with
+# die pad. Read from Figure 13 "Package outline drawing of the SGP40"
+# (Datasheet SGP40 v1.2, page 15) and Figure 14 "Recommended land
+# pattern" (page 16). The SGP41 datasheet v1.0 (Figure 17 page 18,
+# Figure 18 page 19) prints the same numbers; its land-pattern figure
+# is pixel-identical when both are rendered at the same resolution.
+#
+# Mapping: top view 2.44+-0.1 x 2.44+-0.1 -> body_width/body_length;
+# side view 0.85+-0.1 -> body_height (no A2); bottom view "0.4+-0.05"
+# (pad, along the column) -> lead_width, "0.35+-0.1" -> lead_length;
+# die pad "1.25+-0.1" (across the columns) x "1.64+-0.1" ->
+# exposed_pad width x length. Pin order (Table 6, transparent top view,
+# page 7): 1-3 down the left, 4-6 up the right, pin 1 top-left.
+# pads (Figure 14, PCB landing pads, solid outline): 0.55 x 0.4 at pitch
+# 0.8, overall 2.3 across the outer land edges -> x = +-(1.15 - 0.275)
+# = +-0.875; centre land 1.25 x 1.7 (the inner 1.05 x 1.5 is the stencil
+# aperture, hatched).
+# Left out: side-view 0.15, sensor opening diameter, pin-1 chamfer.
+schema_version: "0.2"
+kind: package
+id: manufacturers/sensirion/DFN6-2.44x2.44-P0.8-SGP4x
+family: dfn
+lead_count: 6
+source: sensirion/Sensirion_Gas_Sensors_Datasheet_SGP40@v1.2
+
+pitch: { typ: 0.8 mm, src: 'p15 "Figure 13 bottom view, Pitch 0.8"' }
+geometry: { type: parametric, generator: dfn }
+
+dimensions:
+  body_width:
+    min: 2.34 mm
+    typ: 2.44 mm
+    max: 2.54 mm
+    src: p15 "Figure 13 top view, 2.44+-0.1 (horizontal)"
+  body_length:
+    min: 2.34 mm
+    typ: 2.44 mm
+    max: 2.54 mm
+    src: p15 "Figure 13 top view, 2.44+-0.1 (vertical)"
+  body_height:
+    min: 0.75 mm
+    typ: 0.85 mm
+    max: 0.95 mm
+    src: p15 "Figure 13 side view, 0.85+-0.1"
+  exposed_pad:
+    src:    p15 "Figure 13 bottom view, die pad 1.25+-0.1 x 1.64+-0.1"
+    width:  { min: 1.15 mm, typ: 1.25 mm, max: 1.35 mm }
+    length: { min: 1.54 mm, typ: 1.64 mm, max: 1.74 mm }
+  lead_width:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.45 mm
+    src: p15 "Figure 13 bottom view, 0.4+-0.05"
+  lead_length:
+    min: 0.25 mm
+    typ: 0.35 mm
+    max: 0.45 mm
+    src: p15 "Figure 13 bottom view, 0.35+-0.1"
+
+pads:
+  value:
+    - { number: "1", x: -0.875, y: 0.8, width: 0.55, length: 0.4 }
+    - { number: "2", x: -0.875, y: 0, width: 0.55, length: 0.4 }
+    - { number: "3", x: -0.875, y: -0.8, width: 0.55, length: 0.4 }
+    - { number: "4", x: 0.875, y: -0.8, width: 0.55, length: 0.4 }
+    - { number: "5", x: 0.875, y: 0, width: 0.55, length: 0.4 }
+    - { number: "6", x: 0.875, y: 0.8, width: 0.55, length: 0.4 }
+    - { number: EP, x: 0, y: 0, width: 1.25, length: 1.7 }
+  src: 'p16 "Figure 14 land pattern: 0.55 x 0.4 at pitch 0.8, 2.3 overall; centre land 1.25 x 1.7"'
