@@ -1,0 +1,22 @@
+# Single low-voltage comparator, DBV/DCK (SOT-23-5/SC70-5) pin map from
+# Table 4-1 "Pin Functions" (SLCS136V page 3), column "LMV331 DBV, DCK":
+# 1IN+ 1, GND 2, 1IN- 3, OUT 4, VCC+ 5 (names as printed in the "LMV331
+# ... DBV OR DCK PACKAGE (TOP VIEW)" figure on the same page). Minus
+# signs written as ASCII "-".
+schema_version: "0.2"
+kind: device
+id: ti/LMV331-DBV
+manufacturer: ti
+category: comparator
+family: LMV3xx
+source: ti/SLCS136V
+
+pins:
+  src:
+    - p3 "Table 4-1. Pin Functions, column LMV331 DBV, DCK"
+    - p3 "LMV331 ... DBV OR DCK PACKAGE (TOP VIEW)"
+  "1": { name: 1IN+, type: analog }
+  "2": { name: GND, type: ground }
+  "3": { name: 1IN-, type: analog }
+  "4": { name: OUT, type: output }
+  "5": { name: VCC+, type: power }

@@ -1,0 +1,26 @@
+# Load switch, DBV (SOT-23-6) pin map from Table 6-1 "Pin Functions"
+# (SLVSDW8B page 4): VIN 1, GND 2, ON 3, CT 4, QOD 5, VOUT 6, checked
+# against Figure 6-1 (same page). VIN/VOUT power, CT/QOD analog as in
+# ti/TPS22918-DBV.
+schema_version: "0.2"
+kind: device
+id: ti/TPS22917-DBV
+manufacturer: ti
+category: power_switch
+family: TPS22917
+source: ti/SLVSDW8B
+
+parameters:
+  input_voltage_max: { max: 5.5 V, src: 'p5 "7.3 Recommended Operating Conditions, VIN"' }
+  output_current:
+    max: 2 A
+    src: p5 "7.1 Absolute Maximum Ratings, IMAX max. continuous switch current"
+
+pins:
+  src: [p4 "Table 6-1. Pin Functions", p4 "Figure 6-1. DBV Package 6-Pin SOT-23 Top View"]
+  "1": { name: VIN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: ON, type: input }
+  "4": { name: CT, type: analog }
+  "5": { name: QOD, type: analog }
+  "6": { name: VOUT, type: power }

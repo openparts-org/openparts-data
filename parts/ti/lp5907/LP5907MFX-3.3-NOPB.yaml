@@ -1,0 +1,38 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SNVS798Q PDF page 22, addendum dated 7-Nov-2025): row
+# "LP5907MFX-3.3/NOPB", "SOT-23 (DBV) | 5". lifecycle "active" is that
+# table's Status column. Package: outline DBV0005A (4214839/K) on page
+# 37; its pdftotext text is identical (page headers stripped) to the
+# drawing page behind the reused package (ti/SBOS833R page 94).
+# output_voltage is not recorded: the datasheet has no nomenclature or
+# ordering table that maps the -3.3 suffix to a voltage (no MPN
+# decoding).
+schema_version: "0.2"
+kind: part
+id: ti/LP5907MFX-3.3-NOPB
+manufacturer: ti
+mpn: LP5907MFX-3.3/NOPB
+device: ti/LP5907-DBV
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src:
+    - p22 "Package Option Addendum, row LP5907MFX-3.3/NOPB, SOT-23 (DBV) | 5"
+    - p37 "PACKAGE OUTLINE DBV0005A (4214839/K)"
+
+sources: [ti/SNVS798Q]
+source: ti/SNVS798Q
+
+existence:
+  status: verified
+  src: p22 "Package Option Addendum, Packaging Information table, row LP5907MFX-3.3/NOPB"
+
+lifecycle:
+  status: active
+  src: p22 "Package Option Addendum, row LP5907MFX-3.3/NOPB, Status Active"
+
+parameters:
+  dropout_voltage:
+    max: 250 mV
+    at: { IOUT: 250 mA }
+    src: p5 "5.5 Elec. Char., VDO, SOT-23, X2SON packages"

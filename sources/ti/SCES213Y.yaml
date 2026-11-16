@@ -1,0 +1,16 @@
+# Official TI datasheet "SN74LVC1G02 Single 2-Input Positive NOR-Gate".
+# Downloaded 2026-11-16 with curl from the TI symlink URL below;
+# revision read from the page header "SCES213Y - APRIL 1999 - REVISED
+# AUGUST 2026". 49 PDF pages; text read with pdftotext -layout. Page
+# numbers in this dataset are PDF page indices. The PACKAGE OPTION
+# ADDENDUM at the end of the PDF is dated 27-Aug-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SCES213Y
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/sn74lvc1g02.pdf
+date: 2026-08
+publisher: ti
+document_id: SCES213Y
+document_type: datasheet
+revision: Y

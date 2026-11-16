@@ -1,0 +1,30 @@
+# Quad 2-input AND SN74HC08, 14-pin pin map (D, DB, N, PW, J, or W) from
+# the "Pin Functions" table (SCLS081J page 3), checked against the
+# 14-pin top-view figure on the same page; all 14 pins match. The FK
+# (LCCC) numbering differs and is not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN74HC08
+manufacturer: ti
+category: logic
+family: SNx4HC08
+source: ti/SCLS081J
+
+pins:
+  src:
+    - p3 "Pin Functions" table, column "D, DB, N, PW, J, or W"
+    - p3 ""D, DB, N, PW, J, or W Package 14-Pin ... Top View" figure (cross-check)"
+  "1":  { name: 1A, type: input }
+  "2":  { name: 1B, type: input }
+  "3":  { name: 1Y, type: output }
+  "4":  { name: 2A, type: input }
+  "5":  { name: 2B, type: input }
+  "6":  { name: 2Y, type: output }
+  "7":  { name: GND, type: ground }
+  "8":  { name: 3Y, type: output }
+  "9":  { name: 3A, type: input }
+  "10": { name: 3B, type: input }
+  "11": { name: 4Y, type: output }
+  "12": { name: 4A, type: input }
+  "13": { name: 4B, type: input }
+  "14": { name: VCC, type: power }

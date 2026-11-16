@@ -1,0 +1,22 @@
+# 2-bit dual-supply bus transceiver, DCT/DCU pin map from Table 4-1 "Pin
+# Functions: DCT, DCU" (SCES516N page 2): VCCA 1, A1 2, A2 3, GND 4, DIR
+# 5, B2 6, B1 7, VCCB 8; checked against Figure 4-1 (same page). The YZP
+# map (Table 4-2) is not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN74LVC2T45-DCU
+manufacturer: ti
+category: level_shifter
+family: SN74LVC2T45
+source: ti/SCES516N
+
+pins:
+  src: ['p2 "Table 4-1. Pin Functions: DCT, DCU"', p2 "Figure 4-1. DCT or DCU Package (Top View)"]
+  "1": { name: VCCA, type: power }
+  "2": { name: A1, type: io }
+  "3": { name: A2, type: io }
+  "4": { name: GND, type: ground }
+  "5": { name: DIR, type: input }
+  "6": { name: B2, type: io }
+  "7": { name: B1, type: io }
+  "8": { name: VCCB, type: power }

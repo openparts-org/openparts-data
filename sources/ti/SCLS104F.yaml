@@ -1,0 +1,16 @@
+# Official TI datasheet "SN74HC125 Quadruple Buffers With 3-State
+# Outputs". Downloaded 2026-11-16 with curl from the TI symlink URL
+# below; revision read from the page header "SCLS104F - AUGUST 1984 -
+# REVISED APRIL 2021". 37 PDF pages; text read with pdftotext -layout.
+# Page numbers in this dataset are PDF page indices. The PACKAGE OPTION
+# ADDENDUM at the end of the PDF is dated 7-Oct-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS104F
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/sn74hc125.pdf
+date: 2021-04
+publisher: ti
+document_id: SCLS104F
+document_type: datasheet
+revision: F

@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCPS113O PDF page 24, addendum dated 15-Jul-2026): row "PCA9306DCUR",
+# "VSSOP (DCU) | 8". lifecycle "active" is that table's Status column.
+# Package: outline DCU0008A (4225266/A) on page 31; its pdftotext text
+# is identical (page headers stripped) to the drawing page behind the
+# reused package (ti/SCES193N page 20).
+schema_version: "0.2"
+kind: part
+id: ti/PCA9306DCUR
+manufacturer: ti
+mpn: PCA9306DCUR
+device: ti/PCA9306-DCU
+
+package:
+  value: manufacturers/ti/DCU0008A
+  src:
+    - p24 "Package Option Addendum, row PCA9306DCUR, VSSOP (DCU) | 8"
+    - p31 "PACKAGE OUTLINE DCU0008A (4225266/A)"
+
+sources: [ti/SCPS113O]
+source: ti/SCPS113O
+
+existence:
+  status: verified
+  src: p24 "Package Option Addendum, Packaging Information table, row PCA9306DCUR"
+
+lifecycle: { status: active, src: 'p24 "Package Option Addendum, row PCA9306DCUR, Status Active"' }

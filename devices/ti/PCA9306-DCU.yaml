@@ -1,0 +1,23 @@
+# Dual I2C/SMBus voltage-level translator, DCT/DCU/DQE pin map from
+# Table 5-1 "Pin Functions" (SCPS113O page 4), column "DCT, DCU, DQE":
+# GND 1, VREF1 2, SCL1 3, SDA1 4, SDA2 5, SCL2 6, VREF2 7, EN 8.
+# VREF1/VREF2 (reference supply inputs) typed power. The YZT map is not
+# covered.
+schema_version: "0.2"
+kind: device
+id: ti/PCA9306-DCU
+manufacturer: ti
+category: level_shifter
+family: PCA9306
+source: ti/SCPS113O
+
+pins:
+  src: p4 "Table 5-1. Pin Functions, column DCT, DCU, DQE"
+  "1": { name: GND, type: ground }
+  "2": { name: VREF1, type: power }
+  "3": { name: SCL1, type: io }
+  "4": { name: SDA1, type: io }
+  "5": { name: SDA2, type: io }
+  "6": { name: SCL2, type: io }
+  "7": { name: VREF2, type: power }
+  "8": { name: EN, type: input }

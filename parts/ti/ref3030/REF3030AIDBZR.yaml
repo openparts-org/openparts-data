@@ -1,0 +1,32 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SBVS032K PDF page 28, addendum dated 11-Jul-2026): row
+# "REF3030AIDBZR", "SOT-23 (DBZ) | 3". lifecycle "active" is that
+# table's Status column. Package: outline DBZ0003A (4214838/F) on page
+# 34; its pdftotext text is identical (page headers stripped) to the
+# drawing page behind the reused package (ti/SBVS032K page 34). Device
+# marking "R30F" in the same row.
+schema_version: "0.2"
+kind: part
+id: ti/REF3030AIDBZR
+manufacturer: ti
+mpn: REF3030AIDBZR
+device: ti/REF3030
+
+package:
+  value: manufacturers/ti/DBZ0003A
+  src:
+    - p28 "Package Option Addendum, row REF3030AIDBZR, SOT-23 (DBZ) | 3"
+    - p34 "PACKAGE OUTLINE DBZ0003A (4214838/F)"
+
+sources: [ti/SBVS032K]
+source: ti/SBVS032K
+
+existence:
+  status: verified
+  src: p28 "Package Option Addendum, Packaging Information table, row REF3030AIDBZR"
+
+lifecycle:
+  status: active
+  src: p28 "Package Option Addendum, row REF3030AIDBZR, Status Active"
+
+parameters: { output_voltage: { typ: 3 V, src: 'p2 "4 Device Comparison Table, REF3030AIDBZR"' } }

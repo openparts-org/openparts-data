@@ -1,0 +1,17 @@
+# Official TI datasheet "OPAx340 Single-Supply, Rail-to-Rail Operational
+# Amplifiers MicroAmplifier Series". Downloaded 2026-11-16 with curl
+# from the TI symlink URL below; revision read from the page header
+# "SBOS073C - SEPTEMBER 1997 - REVISED AUGUST 2016". 48 PDF pages; text
+# read with pdftotext -layout. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 15-Jul-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SBOS073C
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/opa340.pdf
+date: 2016-08
+publisher: ti
+document_id: SBOS073C
+document_type: datasheet
+revision: C

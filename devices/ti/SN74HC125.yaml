@@ -1,0 +1,31 @@
+# Quad 3-state buffer SN74HC125, 14-pin pin map (D, DB, N, NS, PW, or J)
+# from the "Pin Functions" table (SCLS104F page 3), checked against the
+# 14-pin top-view figure on the same page; all 14 pins match. The FK
+# (LCCC) numbering differs and is not covered. The nOE pins carry an
+# overbar (active low) in the datasheet; written without it.
+schema_version: "0.2"
+kind: device
+id: ti/SN74HC125
+manufacturer: ti
+category: logic
+family: SNx4HC125
+source: ti/SCLS104F
+
+pins:
+  src:
+    - p3 "Pin Functions" table, column "D, DB, N, NS, PW, or J"
+    - p3 ""D, DB, N, NS, PW, or J Package 14-Pin ... Top View" figure (cross-check)"
+  "1":  { name: 1OE, type: input }
+  "2":  { name: 1A, type: input }
+  "3":  { name: 1Y, type: output }
+  "4":  { name: 2OE, type: input }
+  "5":  { name: 2A, type: input }
+  "6":  { name: 2Y, type: output }
+  "7":  { name: GND, type: ground }
+  "8":  { name: 3Y, type: output }
+  "9":  { name: 3A, type: input }
+  "10": { name: 3OE, type: input }
+  "11": { name: 4Y, type: output }
+  "12": { name: 4A, type: input }
+  "13": { name: 4OE, type: input }
+  "14": { name: VCC, type: power }

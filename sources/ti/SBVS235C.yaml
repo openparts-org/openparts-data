@@ -1,0 +1,17 @@
+# Official TI datasheet "TLV733P Capacitor-Free, 300-mA, Low-Dropout
+# Regulator With Foldback Current Limit". Downloaded 2026-11-16 with
+# curl from the TI symlink URL below; revision read from the page header
+# "SBVS235C - OCTOBER 2014 - REVISED JULY 2019". 39 PDF pages; text read
+# with pdftotext -layout. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 4-Jul-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SBVS235C
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tlv733p.pdf
+date: 2019-07
+publisher: ti
+document_id: SBVS235C
+document_type: datasheet
+revision: C

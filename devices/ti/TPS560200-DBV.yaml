@@ -1,0 +1,25 @@
+# 500-mA synchronous buck converter, DBV (SOT-23-5) pin map from the
+# "Pin Functions" table (SLVSC81C page 3): EN 1, GND 2, PH 3, VIN 4,
+# VSENSE 5, checked against the DBV top-view figure (same page). PH
+# (switch node) typed passive as SW in ti/TLV62569-DBV; VSENSE
+# (feedback) input.
+schema_version: "0.2"
+kind: device
+id: ti/TPS560200-DBV
+manufacturer: ti
+category: switching_regulator
+family: TPS560200
+source: ti/SLVSC81C
+
+parameters:
+  output_type: { value: adjustable, src: 'p3 "Pin Functions, VSENSE: feedback resistor divider"' }
+  input_voltage_max: { max: 17 V, src: 'p4 "6.3 Recommended Operating Conditions, VI"' }
+  output_current:    { max: 500 mA, src: 'p1 "1 Features, Continuous Output Current"' }
+
+pins:
+  src: [p3 "Pin Functions table", p3 "DBV Package 5-Pin SOT-23 (Top View)"]
+  "1": { name: EN, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: PH, type: passive }
+  "4": { name: VIN, type: power }
+  "5": { name: VSENSE, type: input }

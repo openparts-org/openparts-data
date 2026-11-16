@@ -1,0 +1,43 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SBVS235C PDF page 29, addendum dated 4-Jul-2026): row
+# "TLV73333PDBVR", "SOT-23 (DBV) | 5". lifecycle "active" is that
+# table's Status column. Package: outline DBV0005A (4214839/K) on page
+# 36; its pdftotext text is identical (page headers stripped) to the
+# drawing page behind the reused package (ti/SBOS833R page 94).
+schema_version: "0.2"
+kind: part
+id: ti/TLV73333PDBVR
+manufacturer: ti
+mpn: TLV73333PDBVR
+device: ti/TLV733P-DBV
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src:
+    - p29 "Package Option Addendum, row TLV73333PDBVR, SOT-23 (DBV) | 5"
+    - p36 "PACKAGE OUTLINE DBV0005A (4214839/K)"
+
+sources: [ti/SBVS235C]
+source: ti/SBVS235C
+
+existence:
+  status: verified
+  src: p29 "Package Option Addendum, Packaging Information table, row TLV73333PDBVR"
+
+lifecycle:
+  status: active
+  src: p29 "Package Option Addendum, row TLV73333PDBVR, Status Active"
+
+parameters:
+  output_voltage:
+    typ: 3.3 V
+    src: 'p21 "Table 4. Device Nomenclature, xx(x) = nominal output voltage: 33"'
+  dropout_voltage:
+    - typ: 125 mV
+      max: 220 mV
+      at: { IOUT: 300 mA, TJ: -40..85 °C }
+      src: p6 "6.5 Elec. Char., VDO, VOUT = 3.3 V"
+    - typ: 125 mV
+      max: 270 mV
+      at: { IOUT: 300 mA, TJ: -40..125 °C }
+      src: p6 "6.5 Elec. Char., VDO, VOUT = 3.3 V"

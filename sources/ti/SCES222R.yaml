@@ -1,0 +1,16 @@
+# Official TI datasheet "SN74LVC1G86 Single 2-Input Exclusive-OR Gate".
+# Downloaded 2026-11-16 with curl from the TI symlink URL below;
+# revision read from the page header "SCES222R - APRIL 1999 - REVISED
+# AUGUST 2026". 33 PDF pages; text read with pdftotext -layout. Page
+# numbers in this dataset are PDF page indices. The PACKAGE OPTION
+# ADDENDUM at the end of the PDF is dated 9-Mar-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SCES222R
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/sn74lvc1g86.pdf
+date: 2026-08
+publisher: ti
+document_id: SCES222R
+document_type: datasheet
+revision: R

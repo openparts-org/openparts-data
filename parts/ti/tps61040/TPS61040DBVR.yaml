@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SLVS413L PDF page 22, addendum dated 21-Aug-2026): row
+# "TPS61040DBVR", "SOT-23 (DBV) | 5". lifecycle "active" is that table's
+# Status column. Package: outline DBV0005A (4214839/K) on page 29; its
+# pdftotext text is identical (page headers stripped) to the drawing
+# page behind the reused package (ti/SBOS833R page 94).
+schema_version: "0.2"
+kind: part
+id: ti/TPS61040DBVR
+manufacturer: ti
+mpn: TPS61040DBVR
+device: ti/TPS61040-DBV
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src:
+    - p22 "Package Option Addendum, row TPS61040DBVR, SOT-23 (DBV) | 5"
+    - p29 "PACKAGE OUTLINE DBV0005A (4214839/K)"
+
+sources: [ti/SLVS413L]
+source: ti/SLVS413L
+
+existence:
+  status: verified
+  src: p22 "Package Option Addendum, Packaging Information table, row TPS61040DBVR"
+
+lifecycle: { status: active, src: 'p22 "Package Option Addendum, row TPS61040DBVR, Status Active"' }

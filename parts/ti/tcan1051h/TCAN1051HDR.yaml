@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SLLSES8E PDF page 32, addendum dated 9-Nov-2025): row "TCAN1051HDR",
+# "SOIC (D) | 8". lifecycle "active" is that table's Status column.
+# Package: outline D0008A (4214825/C) on page 34; its pdftotext text is
+# identical (page headers stripped) to the drawing page behind the
+# reused package (ti/SLCS005AH page 40).
+schema_version: "0.2"
+kind: part
+id: ti/TCAN1051HDR
+manufacturer: ti
+mpn: TCAN1051HDR
+device: ti/TCAN1051H
+
+package:
+  value: manufacturers/ti/D0008A
+  src:
+    - p32 "Package Option Addendum, row TCAN1051HDR, SOIC (D) | 8"
+    - p34 "PACKAGE OUTLINE D0008A (4214825/C)"
+
+sources: [ti/SLLSES8E]
+source: ti/SLLSES8E
+
+existence:
+  status: verified
+  src: p32 "Package Option Addendum, Packaging Information table, row TCAN1051HDR"
+
+lifecycle: { status: active, src: 'p32 "Package Option Addendum, row TCAN1051HDR, Status Active"' }

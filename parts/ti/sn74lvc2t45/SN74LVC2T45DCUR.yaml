@@ -1,0 +1,29 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCES516N PDF page 22, addendum dated 23-Apr-2026): row
+# "SN74LVC2T45DCUR", "VSSOP (DCU) | 8". lifecycle "active" is that
+# table's Status column. Package: outline DCU0008A (4225266/A) on page
+# 31; its pdftotext text is identical (page headers stripped) to the
+# drawing page behind the reused package (ti/SCES193N page 20).
+schema_version: "0.2"
+kind: part
+id: ti/SN74LVC2T45DCUR
+manufacturer: ti
+mpn: SN74LVC2T45DCUR
+device: ti/SN74LVC2T45-DCU
+
+package:
+  value: manufacturers/ti/DCU0008A
+  src:
+    - p22 "Package Option Addendum, row SN74LVC2T45DCUR, VSSOP (DCU) | 8"
+    - p31 "PACKAGE OUTLINE DCU0008A (4225266/A)"
+
+sources: [ti/SCES516N]
+source: ti/SCES516N
+
+existence:
+  status: verified
+  src: p22 "Package Option Addendum, Packaging Information table, row SN74LVC2T45DCUR"
+
+lifecycle:
+  status: active
+  src: p22 "Package Option Addendum, row SN74LVC2T45DCUR, Status Active"

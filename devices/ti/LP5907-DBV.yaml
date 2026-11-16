@@ -1,0 +1,28 @@
+# 250-mA low-noise LDO, DBV (SOT-23-5) pin map from Table 4-2 "Pin
+# Functions: X2SON, SOT-23" (SNVS798Q page 3), SOT-23 column: IN 1, GND
+# 2, EN 3, N/C 4, OUT 5, checked against Figure 4-3 "DBV Package, 5-Pin
+# SOT-23" (same page). N/C ("No internal electrical connection") written
+# NC. IN/OUT typed power, as for ti/TLV755P-DBV. output_type is not
+# recorded: the datasheet gives an output voltage range and voltage
+# options but no fixed/adjustable statement or nomenclature table.
+schema_version: "0.2"
+kind: device
+id: ti/LP5907-DBV
+manufacturer: ti
+category: linear_regulator
+family: LP5907
+source: ti/SNVS798Q
+
+parameters:
+  input_voltage_max: { max: 5.5 V, src: 'p4 "5.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 250 mA, src: 'p4 "5.3 Recommended Operating Conditions, IOUT"' }
+
+pins:
+  src:
+    - 'p3 "Table 4-2. Pin Functions: X2SON, SOT-23, column SOT-23"'
+    - p3 "Figure 4-3. DBV Package, 5-Pin SOT-23 (Top View)"
+  "1": { name: IN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: EN, type: input }
+  "4": { name: NC, type: nc }
+  "5": { name: OUT, type: power }

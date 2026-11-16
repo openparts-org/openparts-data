@@ -1,0 +1,19 @@
+# Single rail-to-rail op amp, SOT-23-5 pin map from the "Pin Functions:
+# OPA340" table (SBOS073C page 3), SOT-23 column: OUT 1, V- 2, +IN 3,
+# -IN 4, V+ 5. The SOIC/PDIP map differs and is not covered. Minus signs
+# written as ASCII "-".
+schema_version: "0.2"
+kind: device
+id: ti/OPA340-DBV
+manufacturer: ti
+category: op_amp
+family: OPAx340
+source: ti/SBOS073C
+
+pins:
+  src: 'p3 "Pin Functions: OPA340, column SOT-23"'
+  "1": { name: OUT, type: analog }
+  "2": { name: V-, type: power }
+  "3": { name: +IN, type: analog }
+  "4": { name: -IN, type: analog }
+  "5": { name: V+, type: power }

@@ -1,0 +1,17 @@
+# Official TI datasheet "TPS7A20 300-mA, Ultra-Low-Noise, Low-IQ,
+# High-PSRR Low-Dropout Regulator". Downloaded 2026-11-16 with curl from
+# the TI symlink URL below; revision read from the page header "SBVS338H
+# - MARCH 2020 - REVISED JULY 2024". 63 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page indices.
+# The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 31-Oct-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SBVS338H
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tps7a20.pdf
+date: 2024-07
+publisher: ti
+document_id: SBVS338H
+document_type: datasheet
+revision: H

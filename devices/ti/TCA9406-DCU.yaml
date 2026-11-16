@@ -1,0 +1,24 @@
+# Dual I2C voltage-level translator, DCT/DCU pin map from the "Pin
+# Functions" table (SCPS221G page 5), column "DCT, DCU": SDA_B 1, GND 2,
+# VCCA 3, SDA_A 4, SCL_A 5, OE 6, VCCB 7, SCL_B 8; checked against the
+# 8-pin top-view figure on the same page. The YZP map is not covered.
+schema_version: "0.2"
+kind: device
+id: ti/TCA9406-DCU
+manufacturer: ti
+category: level_shifter
+family: TCA9406
+source: ti/SCPS221G
+
+pins:
+  src:
+    - p5 "Pin Functions table, column DCT, DCU"
+    - p5 "DCT/DCU 8-pin top-view figure (cross-check)"
+  "1": { name: SDA_B, type: io }
+  "2": { name: GND, type: ground }
+  "3": { name: VCCA, type: power }
+  "4": { name: SDA_A, type: io }
+  "5": { name: SCL_A, type: io }
+  "6": { name: OE, type: input }
+  "7": { name: VCCB, type: power }
+  "8": { name: SCL_B, type: io }

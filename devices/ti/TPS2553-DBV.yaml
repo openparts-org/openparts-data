@@ -1,0 +1,33 @@
+# Current-limited power-distribution switch (EN active high), DBV
+# (SOT-23-6) pin map from Table 5-1 "Pin Functions" (SLVS841G page 4),
+# column TPS2553 SOT-23: IN 1, GND 2, EN 3, FAULT 4, ILIM 5, OUT 6,
+# checked against Figure 5-1 (same page). FAULT is an active-low
+# open-drain output (overbar written without it).
+schema_version: "0.2"
+kind: device
+id: ti/TPS2553-DBV
+manufacturer: ti
+category: power_switch
+family: TPS255x
+source: ti/SLVS841G
+
+parameters:
+  input_voltage_max: { max: 6.5 V, src: 'p5 "6.3 Recommended Operating Conditions, VIN"' }
+  output_current:
+    - max: 1.5 A
+      at: { TJ: -40..105 °C }
+      src: p5 "6.3 Recommended Operating Conditions, IOUT"
+    - max: 1.2 A
+      at: { TJ: -40..125 °C }
+      src: p5 "6.3 Recommended Operating Conditions, IOUT"
+
+pins:
+  src:
+    - p4 "Table 5-1. Pin Functions, column TPS2553 SOT-23"
+    - p4 "Figure 5-1. TPS255x DBV Package 6-Pin SOT-23 Top View"
+  "1": { name: IN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: EN, type: input }
+  "4": { name: FAULT, type: output }
+  "5": { name: ILIM, type: analog }
+  "6": { name: OUT, type: power }

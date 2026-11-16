@@ -1,0 +1,24 @@
+# Synchronous boost converter, DRL (SOT563-6) pin map from the "Pin
+# Functions" table (SLVSF14B page 3): FB 1, EN 2, VIN 3, GND 4, SW 5,
+# VOUT 6, checked against Figure 5-1 "DRL Package 6-Pin SOT563 Top View"
+# (same page). SW typed passive, VOUT power.
+schema_version: "0.2"
+kind: device
+id: ti/TPS61023-DRL
+manufacturer: ti
+category: switching_regulator
+family: TPS61023
+source: ti/SLVSF14B
+
+parameters:
+  output_type:       { value: adjustable, src: 'p3 "Pin Functions, FB: adjustable output voltage"' }
+  input_voltage_max: { max: 5.5 V, src: 'p4 "6.3 Recommended Operating Conditions, VIN"' }
+
+pins:
+  src: [p3 "Pin Functions table", p3 "Figure 5-1. DRL Package 6-Pin SOT563 Top View"]
+  "1": { name: FB, type: input }
+  "2": { name: EN, type: input }
+  "3": { name: VIN, type: power }
+  "4": { name: GND, type: ground }
+  "5": { name: SW, type: passive }
+  "6": { name: VOUT, type: power }

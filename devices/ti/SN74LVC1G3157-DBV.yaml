@@ -1,0 +1,21 @@
+# SPDT analog switch, 6-pin pin map of the DBV (SOT-23-6) package, from
+# Table 4-1 "Pin Functions" (SCES424O page 3), column "SOT-23, SC70,
+# SON, X2SON, or SOT" (one column for all 6-pin packages): B2 1, GND 2,
+# B1 3, A 4, VCC 5, S 6. Switch terminals A/B1/B2 (type I/O) typed
+# analog; S (select) input. The YZP (DSBGA) map is not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN74LVC1G3157-DBV
+manufacturer: ti
+category: analog_switch
+family: SN74LVC1G3157
+source: ti/SCES424O
+
+pins:
+  src: p3 "Table 4-1. Pin Functions, column SOT-23, SC70, SON, X2SON, or SOT"
+  "1": { name: B2, type: analog }
+  "2": { name: GND, type: ground }
+  "3": { name: B1, type: analog }
+  "4": { name: A, type: analog }
+  "5": { name: VCC, type: power }
+  "6": { name: S, type: input }

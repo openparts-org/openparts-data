@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SBOS406G PDF page 27, addendum dated 15-Jul-2026): row
+# "OPA376AIDBVR", "SOT-23 (DBV) | 5". lifecycle "active" is that table's
+# Status column. Package: outline DBV0005A (4214839/K) on page 34; its
+# pdftotext text is identical (page headers stripped) to the drawing
+# page behind the reused package (ti/SBOS833R page 94).
+schema_version: "0.2"
+kind: part
+id: ti/OPA376AIDBVR
+manufacturer: ti
+mpn: OPA376AIDBVR
+device: ti/OPA376-DBV
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src:
+    - p27 "Package Option Addendum, row OPA376AIDBVR, SOT-23 (DBV) | 5"
+    - p34 "PACKAGE OUTLINE DBV0005A (4214839/K)"
+
+sources: [ti/SBOS406G]
+source: ti/SBOS406G
+
+existence:
+  status: verified
+  src: p27 "Package Option Addendum, Packaging Information table, row OPA376AIDBVR"
+
+lifecycle: { status: active, src: 'p27 "Package Option Addendum, row OPA376AIDBVR, Status Active"' }

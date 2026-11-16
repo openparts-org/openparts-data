@@ -1,0 +1,17 @@
+# Official TI datasheet "TPS255x Precision Adjustable Current-Limited
+# Power-Distribution Switches". Downloaded 2026-11-16 with curl from the
+# TI symlink URL below; revision read from the page header "SLVS841G -
+# NOVEMBER 2008 - REVISED OCTOBER 2026". 43 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page indices.
+# The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 23-Oct-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SLVS841G
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tps2553.pdf
+date: 2026-10
+publisher: ti
+document_id: SLVS841G
+document_type: datasheet
+revision: G

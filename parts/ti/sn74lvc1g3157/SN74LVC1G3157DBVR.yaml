@@ -1,0 +1,29 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCES424O PDF page 24, addendum dated 15-Jul-2026): row
+# "SN74LVC1G3157DBVR", "SOT-23 (DBV) | 6". lifecycle "active" is that
+# table's Status column. Package: outline DBV0006A (4214840/G) on page
+# 34; its pdftotext text is identical (page headers stripped) to the
+# drawing page behind the reused package (ti/SCES195N page 22).
+schema_version: "0.2"
+kind: part
+id: ti/SN74LVC1G3157DBVR
+manufacturer: ti
+mpn: SN74LVC1G3157DBVR
+device: ti/SN74LVC1G3157-DBV
+
+package:
+  value: manufacturers/ti/DBV0006A
+  src:
+    - p24 "Package Option Addendum, row SN74LVC1G3157DBVR, SOT-23 (DBV) | 6"
+    - p34 "PACKAGE OUTLINE DBV0006A (4214840/G)"
+
+sources: [ti/SCES424O]
+source: ti/SCES424O
+
+existence:
+  status: verified
+  src: p24 "Package Option Addendum, Packaging Information table, row SN74LVC1G3157DBVR"
+
+lifecycle:
+  status: active
+  src: p24 "Package Option Addendum, row SN74LVC1G3157DBVR, Status Active"

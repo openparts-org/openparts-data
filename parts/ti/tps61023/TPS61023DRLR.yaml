@@ -1,0 +1,30 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SLVSF14B PDF page 21): row "TPS61023DRLR", "SOT-5X3 (DRL) | 6".
+# lifecycle "active" is that table's Status column. Package: outline
+# DRL0006A (4223266/F) on page 25; its pdftotext text is identical (page
+# headers stripped) to the drawing page behind the reused package
+# (ti/SBOS397I page 30). The packaging table is the datasheet's own
+# section 12.1 (old-style layout, no addendum date): row "TPS61023DRLR
+# ACTIVE SOT-5X3 DRL 6 4000"; its status is as of the August 2020
+# revision.
+schema_version: "0.2"
+kind: part
+id: ti/TPS61023DRLR
+manufacturer: ti
+mpn: TPS61023DRLR
+device: ti/TPS61023-DRL
+
+package:
+  value: manufacturers/ti/DRL0006A
+  src:
+    - p21 "Package Option Addendum, row TPS61023DRLR, SOT-5X3 (DRL) | 6"
+    - p25 "PACKAGE OUTLINE DRL0006A (4223266/F)"
+
+sources: [ti/SLVSF14B]
+source: ti/SLVSF14B
+
+existence:
+  status: verified
+  src: p21 "Package Option Addendum, Packaging Information table, row TPS61023DRLR"
+
+lifecycle: { status: active, src: 'p21 "Package Option Addendum, row TPS61023DRLR, Status ACTIVE"' }

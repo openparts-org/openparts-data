@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SLVS139Z PDF page 30, addendum dated 18-Sep-2026): row
+# "TLV431BIDBZR", "SOT-23 (DBZ) | 3". lifecycle "active" is that table's
+# Status column. Package: outline DBZ0003A (4214838/F) on page 41; its
+# pdftotext text is identical (page headers stripped) to the drawing
+# page behind the reused package (ti/SBVS032K page 34).
+schema_version: "0.2"
+kind: part
+id: ti/TLV431BIDBZR
+manufacturer: ti
+mpn: TLV431BIDBZR
+device: ti/TLV431-DBZ
+
+package:
+  value: manufacturers/ti/DBZ0003A
+  src:
+    - p30 "Package Option Addendum, row TLV431BIDBZR, SOT-23 (DBZ) | 3"
+    - p41 "PACKAGE OUTLINE DBZ0003A (4214838/F)"
+
+sources: [ti/SLVS139Z]
+source: ti/SLVS139Z
+
+existence:
+  status: verified
+  src: p30 "Package Option Addendum, Packaging Information table, row TLV431BIDBZR"
+
+lifecycle: { status: active, src: 'p30 "Package Option Addendum, row TLV431BIDBZR, Status Active"' }

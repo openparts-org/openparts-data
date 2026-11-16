@@ -1,0 +1,27 @@
+# 300-mA low-noise LDO, DBV (SOT-23-5) pin map from the "Pin Functions:
+# X2SON, SOT-23" table (SBVS338H page 4), SOT-23 column: IN 1, GND 2, EN
+# 3, N/C 4, OUT 5, checked against Figure 4-4 "DBV Package, 5-Pin
+# SOT-23" (same page). N/C written NC. IN/OUT typed power, as for
+# ti/TLV755P-DBV.
+schema_version: "0.2"
+kind: device
+id: ti/TPS7A20-DBV
+manufacturer: ti
+category: linear_regulator
+family: TPS7A20
+source: ti/SBVS338H
+
+parameters:
+  output_type: { value: fixed, src: 'p1 "3 Description, available with fixed output voltages"' }
+  input_voltage_max: { max: 6 V, src: 'p5 "5.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 300 mA, src: 'p5 "5.3 Recommended Operating Conditions, IOUT"' }
+
+pins:
+  src:
+    - 'p4 "Pin Functions: X2SON, SOT-23, column SOT-23"'
+    - p4 "Figure 4-4. DBV Package, 5-Pin SOT-23 (Top View)"
+  "1": { name: IN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: EN, type: input }
+  "4": { name: NC, type: nc }
+  "5": { name: OUT, type: power }

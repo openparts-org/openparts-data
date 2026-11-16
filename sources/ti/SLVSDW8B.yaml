@@ -1,0 +1,16 @@
+# Official TI datasheet "TPS22917 5.5-V, 2-A, 80-mOhm, Ultra-Low Leakage
+# Load Switch". Downloaded 2026-11-16 with curl from the TI symlink URL
+# below; revision read from the page header "SLVSDW8B - SEPTEMBER 2017 -
+# REVISED DECEMBER 2021". 29 PDF pages; text read with pdftotext
+# -layout. Page numbers in this dataset are PDF page indices. The
+# PACKAGE OPTION ADDENDUM at the end of the PDF is dated 29-Jul-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SLVSDW8B
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tps22917.pdf
+date: 2021-12
+publisher: ti
+document_id: SLVSDW8B
+document_type: datasheet
+revision: B

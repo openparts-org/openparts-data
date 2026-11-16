@@ -1,0 +1,17 @@
+# Official TI datasheet "TLV70x1 and TLV70x2 Small-Size, Nanopower,
+# Low-Voltage Comparators". Downloaded 2026-11-16 with curl from the TI
+# symlink URL below; revision read from the page header "SLVSDM5F -
+# SEPTEMBER 2017 - REVISED MARCH 2020". 53 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page indices.
+# The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 17-Oct-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SLVSDM5F
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tlv7011.pdf
+date: 2020-03
+publisher: ti
+document_id: SLVSDM5F
+document_type: datasheet
+revision: F

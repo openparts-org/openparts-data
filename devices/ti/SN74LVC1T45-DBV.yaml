@@ -1,0 +1,22 @@
+# Single-bit dual-supply bus transceiver, DBV (SOT-23-6) pin map from
+# Table 4-1 "Pin Functions" (SCES515N page 2), column "DBV, DCK, DRL,
+# DPK": VCCA 1, GND 2, A 3, B 4, DIR 5, VCCB 6. The pin table is on PDF
+# page 2 together with Figure 4-1 (DBV Package, 6-Pin SOT-23).
+schema_version: "0.2"
+kind: device
+id: ti/SN74LVC1T45-DBV
+manufacturer: ti
+category: level_shifter
+family: SN74LVC1T45
+source: ti/SCES515N
+
+pins:
+  src:
+    - p2 "Table 4-1. Pin Functions, column DBV, DCK, DRL, DPK"
+    - p2 "Figure 4-1. DBV Package, 6-Pin SOT-23 (Top View)"
+  "1": { name: VCCA, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: A, type: io }
+  "4": { name: B, type: io }
+  "5": { name: DIR, type: input }
+  "6": { name: VCCB, type: power }

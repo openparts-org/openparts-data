@@ -1,0 +1,25 @@
+# CAN FD transceiver TCAN1051H (also G/HG: same pin column), D (SOIC-8)
+# pin map from Table 5-1 "Pin Functions" column "(H), (G), (HG)" and
+# Figure 5-1 (SLLSES8E page 5): TXD 1, GND 2, VCC 3, RXD 4, NC 5, CANL
+# 6, CANH 7, S 8. The "V" variants (pin 5 = VIO) are a different pin map
+# and not covered. S (silent mode control) typed input.
+schema_version: "0.2"
+kind: device
+id: ti/TCAN1051H
+manufacturer: ti
+category: can_transceiver
+family: TCAN1051H
+source: ti/SLLSES8E
+
+pins:
+  src:
+    - p5 "Table 5-1. Pin Functions, column (H), (G), (HG)"
+    - p5 "Figure 5-1. D Package for (H), (G) and (HG) Devices"
+  "1": { name: TXD, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: VCC, type: power }
+  "4": { name: RXD, type: output }
+  "5": { name: NC, type: nc }
+  "6": { name: CANL, type: io }
+  "7": { name: CANH, type: io }
+  "8": { name: S, type: input }

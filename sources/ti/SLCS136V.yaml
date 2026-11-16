@@ -1,0 +1,17 @@
+# Official TI datasheet "LMV331, LMV393, LMV339 Single, Dual, and Quad
+# General-Purpose Low-Voltage Comparators". Downloaded 2026-11-16 with
+# curl from the TI symlink URL below; revision read from the page header
+# "SLCS136V - AUGUST 1999 - REVISED MAY 2025". 44 PDF pages; text read
+# with pdftotext -layout. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 15-Sep-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SLCS136V
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/lmv331.pdf
+date: 2025-05
+publisher: ti
+document_id: SLCS136V
+document_type: datasheet
+revision: V

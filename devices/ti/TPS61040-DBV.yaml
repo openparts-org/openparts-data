@@ -1,0 +1,26 @@
+# 28-V boost converter, DDC/DBV (SOT-5) pin map from Table 4-1 "Pin
+# Functions" (SLVS413L page 3), column "DDC, DBV NO.": SW 1, GND 2, FB
+# 3, EN 4, VIN 5, checked against Figure 4-1 (same page). SW typed
+# passive. output_current is not recorded (the datasheet gives a switch
+# current limit, not an output current).
+schema_version: "0.2"
+kind: device
+id: ti/TPS61040-DBV
+manufacturer: ti
+category: switching_regulator
+family: TPS6104x
+source: ti/SLVS413L
+
+parameters:
+  output_type:       { value: adjustable, src: 'p3 "Pin Functions, FB: external voltage divider"' }
+  input_voltage_max: { max: 6 V, src: 'p4 "5.3 Recommended Operating Conditions, VIN"' }
+
+pins:
+  src:
+    - p3 "Table 4-1. Pin Functions, column DDC, DBV NO."
+    - p3 "Figure 4-1. DDC Package, DBV Package SOT 5 Pins Top View"
+  "1": { name: SW, type: passive }
+  "2": { name: GND, type: ground }
+  "3": { name: FB, type: input }
+  "4": { name: EN, type: input }
+  "5": { name: VIN, type: power }

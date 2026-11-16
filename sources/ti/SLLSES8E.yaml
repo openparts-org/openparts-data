@@ -1,0 +1,16 @@
+# Official TI datasheet "TCAN1051x Fault Protected CAN Transceiver with
+# CAN FD". Downloaded 2026-11-16 with curl from the TI symlink URL
+# below; revision read from the page header "SLLSES8E - MARCH 2016 -
+# REVISED APRIL 2021". 37 PDF pages; text read with pdftotext -layout.
+# Page numbers in this dataset are PDF page indices. The PACKAGE OPTION
+# ADDENDUM at the end of the PDF is dated 9-Nov-2025.
+schema_version: "0.2"
+kind: source
+id: ti/SLLSES8E
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tcan1051h.pdf
+date: 2021-04
+publisher: ti
+document_id: SLLSES8E
+document_type: datasheet
+revision: E

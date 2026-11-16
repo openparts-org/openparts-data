@@ -1,0 +1,16 @@
+# Official TI datasheet "SN74HC08 Quadruple 2-Input Positive-AND Gates".
+# Downloaded 2026-11-16 with curl from the TI symlink URL below;
+# revision read from the page header "SCLS081J - DECEMBER 1982 - REVISED
+# FEBRUARY 2025". 38 PDF pages; text read with pdftotext -layout. Page
+# numbers in this dataset are PDF page indices. The PACKAGE OPTION
+# ADDENDUM at the end of the PDF is dated 23-Oct-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS081J
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/sn74hc08.pdf
+date: 2025-02
+publisher: ti
+document_id: SCLS081J
+document_type: datasheet
+revision: J

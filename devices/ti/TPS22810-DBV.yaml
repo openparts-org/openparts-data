@@ -1,0 +1,27 @@
+# Load switch, DBV (SOT-23-6) pin map from the "Pin Functions" table
+# (SLVSDH0C page 3), SOT23 column: VIN 1, GND 2, EN/UVLO 3, CT 4, QOD 5,
+# VOUT 6, checked against the DBV top view (same page). The DRV (WSON)
+# map differs.
+schema_version: "0.2"
+kind: device
+id: ti/TPS22810-DBV
+manufacturer: ti
+category: power_switch
+family: TPS22810
+source: ti/SLVSDH0C
+
+parameters:
+  input_voltage_max: { max: 18 V, src: 'p4 "7.3 Recommended Operating Conditions, VIN"' }
+  output_current:
+    max: 2 A
+    at: { TA: 65 °C }
+    src: p4 "7.3 Recommended Operating Conditions, IMAX (DBV)"
+
+pins:
+  src: ['p3 "Pin Functions, column SOT23"', p3 "DBV Package 6-Pin SOT-23 Top View"]
+  "1": { name: VIN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: EN/UVLO, type: input }
+  "4": { name: CT, type: analog }
+  "5": { name: QOD, type: analog }
+  "6": { name: VOUT, type: power }

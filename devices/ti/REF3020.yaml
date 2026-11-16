@@ -1,0 +1,23 @@
+# 2.048 V low-current series voltage reference (REF30 family), DBZ
+# (SOT-23-3) pinout -- the only package in SBVS032K. From Table 5-1 "Pin
+# Functions" (page 3): IN 1, OUT 2, GND 3, checked against Figure 5-1
+# "DBZ Package 3-Pin SOT-23 Top View". Same pin map and operating limits
+# as ti/REF3033. The REF30E variant (REF3020E...) is a different device
+# and is not covered.
+schema_version: "0.2"
+kind: device
+id: ti/REF3020
+manufacturer: ti
+category: voltage_reference
+family: REF30
+source: ti/SBVS032K
+
+parameters:
+  input_voltage_max: { max: 5.5 V, src: 'p4 "6.3 Recommended Operating Conditions, VIN (REF30xx)"' }
+  output_current: { max: 25 mA, src: 'p4 "6.3 Recommended Operating Conditions, ILOAD (REF30xx)"' }
+
+pins:
+  src: [p3 "Table 5-1 "Pin Functions"", p3 "Figure 5-1 "DBZ Package 3-Pin SOT-23 Top View""]
+  "1": { name: IN, type: power }
+  "2": { name: OUT, type: output }
+  "3": { name: GND, type: ground }

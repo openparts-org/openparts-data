@@ -1,0 +1,16 @@
+# Official TI datasheet "LP5907 250mA Ultra-Low-Noise Low-Dropout
+# Regulator". Downloaded 2026-11-16 with curl from the TI symlink URL
+# below; revision read from the page header "SNVS798Q - APRIL 2012 -
+# REVISED JULY 2025". 52 PDF pages; text read with pdftotext -layout.
+# Page numbers in this dataset are PDF page indices. The PACKAGE OPTION
+# ADDENDUM at the end of the PDF is dated 7-Nov-2025.
+schema_version: "0.2"
+kind: source
+id: ti/SNVS798Q
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/lp5907.pdf
+date: 2025-07
+publisher: ti
+document_id: SNVS798Q
+document_type: datasheet
+revision: Q

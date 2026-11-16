@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SLLSF78B PDF page 23, addendum dated 31-Oct-2025): row "THVD1420DR",
+# "SOIC (D) | 8". lifecycle "active" is that table's Status column.
+# Package: outline D0008A (4214825/C) on page 30; its pdftotext text is
+# identical (page headers stripped) to the drawing page behind the
+# reused package (ti/SLCS005AH page 40).
+schema_version: "0.2"
+kind: part
+id: ti/THVD1420DR
+manufacturer: ti
+mpn: THVD1420DR
+device: ti/THVD1420
+
+package:
+  value: manufacturers/ti/D0008A
+  src:
+    - p23 "Package Option Addendum, row THVD1420DR, SOIC (D) | 8"
+    - p30 "PACKAGE OUTLINE D0008A (4214825/C)"
+
+sources: [ti/SLLSF78B]
+source: ti/SLLSF78B
+
+existence:
+  status: verified
+  src: p23 "Package Option Addendum, Packaging Information table, row THVD1420DR"
+
+lifecycle: { status: active, src: 'p23 "Package Option Addendum, row THVD1420DR, Status Active"' }

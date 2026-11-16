@@ -1,0 +1,23 @@
+# Single-channel current-sense amplifier, DBV (SOT-23-6) pin map from
+# Table 5-1 "Pin Functions: INA181 (Single Channel)" (SBOS793H page 4),
+# SOT-23 column: OUT 1, GND 2, IN+ 3, IN- 4, REF 5, VS 6, checked
+# against Figure 5-1 "INA181: DBV Package 6-Pin SOT-23 Top View". The
+# SC70 (DCK) map differs. Minus sign written as ASCII "-".
+schema_version: "0.2"
+kind: device
+id: ti/INA181-DBV
+manufacturer: ti
+category: current_sense_amplifier
+family: INA181
+source: ti/SBOS793H
+
+pins:
+  src:
+    - 'p4 "Table 5-1. Pin Functions: INA181 (Single Channel), column SOT-23"'
+    - 'p4 "Figure 5-1. INA181: DBV Package 6-Pin SOT-23 Top View"'
+  "1": { name: OUT, type: analog }
+  "2": { name: GND, type: ground }
+  "3": { name: IN+, type: analog }
+  "4": { name: IN-, type: analog }
+  "5": { name: REF, type: analog }
+  "6": { name: VS, type: power }

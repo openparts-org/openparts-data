@@ -1,0 +1,17 @@
+# Official TI datasheet "PCA9306 Dual Bidirectional I2C Bus and SMBus
+# Voltage-Level Translator". Downloaded 2026-11-16 with curl from the TI
+# symlink URL below; revision read from the page header "SCPS113O -
+# OCTOBER 2004 - REVISED SEPTEMBER 2023". 38 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page indices.
+# The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 15-Jul-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SCPS113O
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/pca9306.pdf
+date: 2023-09
+publisher: ti
+document_id: SCPS113O
+document_type: datasheet
+revision: O

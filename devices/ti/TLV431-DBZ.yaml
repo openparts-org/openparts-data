@@ -1,0 +1,23 @@
+# Low-voltage adjustable shunt regulator, DBZ (SOT-23-3) pinout from
+# Table 4-1 "Pin Functions" (SLVS139Z page 3), DBZ column: REF 1,
+# CATHODE 2, ANODE 3, checked against the rendered Figure 4-3 "DBZ
+# (SOT-23-3) Package (Top View)". NOTE: this differs from the TL431 DBZ
+# map (ti/TL431-DBZ: CATHODE 1, REF 2). Types as for ti/TL431-DBZ.
+schema_version: "0.2"
+kind: device
+id: ti/TLV431-DBZ
+manufacturer: ti
+category: voltage_reference
+family: TLV431
+source: ti/SLVS139Z
+
+parameters:
+  output_type: { value: adjustable, src: 'p1 "1 Features, Adjustable output voltage"' }
+
+pins:
+  src:
+    - p3 "Table 4-1. Pin Functions, column DBZ"
+    - p3 "Figure 4-3. DBZ (SOT-23-3) Package (Top View)"
+  "1": { name: REF, type: analog }
+  "2": { name: CATHODE, type: passive }
+  "3": { name: ANODE, type: ground }

@@ -1,0 +1,25 @@
+# 2-bit bidirectional level translator, DCT/DCU/DTT pin map from Table
+# 4-1 "Pin Functions" (SCES640L page 3), column "DCT, DCU, DTT": B2 1,
+# GND 2, VCCA 3, A2 4, A1 5, OE 6, VCCB 7, B1 8; checked against Figure
+# 4-2 "DCT or DCU Package, 8-Pin SSOP and VSSOP (Top View)". The
+# DQE/DQM/YZP maps differ and are not covered.
+schema_version: "0.2"
+kind: device
+id: ti/TXS0102-DCU
+manufacturer: ti
+category: level_shifter
+family: TXS0102
+source: ti/SCES640L
+
+pins:
+  src:
+    - p3 "Table 4-1. Pin Functions, column DCT, DCU, DTT"
+    - p3 "Figure 4-2. DCT or DCU Package (Top View)"
+  "1": { name: B2, type: io }
+  "2": { name: GND, type: ground }
+  "3": { name: VCCA, type: power }
+  "4": { name: A2, type: io }
+  "5": { name: A1, type: io }
+  "6": { name: OE, type: input }
+  "7": { name: VCCB, type: power }
+  "8": { name: B1, type: io }

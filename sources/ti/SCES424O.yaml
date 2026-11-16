@@ -1,0 +1,16 @@
+# Official TI datasheet "SN74LVC1G3157 Single-Pole Double-Throw Analog
+# Switch". Downloaded 2026-11-16 with curl from the TI symlink URL
+# below; revision read from the page header "SCES424O - JANUARY 2003 -
+# REVISED JUNE 2025". 56 PDF pages; text read with pdftotext -layout.
+# Page numbers in this dataset are PDF page indices. The PACKAGE OPTION
+# ADDENDUM at the end of the PDF is dated 15-Jul-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SCES424O
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/sn74lvc1g3157.pdf
+date: 2025-06
+publisher: ti
+document_id: SCES424O
+document_type: datasheet
+revision: O

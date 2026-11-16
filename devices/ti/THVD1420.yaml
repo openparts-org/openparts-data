@@ -1,0 +1,23 @@
+# Half-duplex RS-485 transceiver, 8-pin pin map (D and DRL share it)
+# from Table 4-1 "Pin Functions" (SLLSF78B page 3), checked against
+# Figure 4-1 (same page): R 1, RE 2, DE 3, D 4, GND 5, A 6, B 7, VCC 8.
+# RE is active low (overbar in the datasheet; written without it). A/B
+# bus I/O typed io.
+schema_version: "0.2"
+kind: device
+id: ti/THVD1420
+manufacturer: ti
+category: rs485_transceiver
+family: THVD14x0
+source: ti/SLLSF78B
+
+pins:
+  src: [p3 "Table 4-1. Pin Functions", 'p3 "Figure 4-1. SOIC-8 (D), SOT-8 (DRL) Package, Top View"']
+  "1": { name: R, type: output }
+  "2": { name: RE, type: input }
+  "3": { name: DE, type: input }
+  "4": { name: D, type: input }
+  "5": { name: GND, type: ground }
+  "6": { name: A, type: io }
+  "7": { name: B, type: io }
+  "8": { name: VCC, type: power }

@@ -1,0 +1,17 @@
+# Official TI datasheet "INA1x9 High-Side Measurement Current Shunt
+# Monitor (INA139, INA169)". Downloaded 2026-11-16 with curl from the TI
+# symlink URL below; revision read from the page header "SBOS181F -
+# DECEMBER 2000 - REVISED FEBRUARY 2017". 28 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page indices.
+# The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 10-Nov-2025.
+schema_version: "0.2"
+kind: source
+id: ti/SBOS181F
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/ina139.pdf
+date: 2017-02
+publisher: ti
+document_id: SBOS181F
+document_type: datasheet
+revision: F

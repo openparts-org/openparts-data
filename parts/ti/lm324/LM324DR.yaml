@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SLOS066AE PDF page 34, addendum dated 27-Oct-2026): row "LM324DR",
+# "SOIC (D) | 14". lifecycle "active" is that table's Status column.
+# Package: outline D0014A (4220718/A) on page 45; its pdftotext text is
+# identical (page headers stripped) to the drawing page behind the
+# reused package (ti/SCLS085L page 22).
+schema_version: "0.2"
+kind: part
+id: ti/LM324DR
+manufacturer: ti
+mpn: LM324DR
+device: ti/LM324
+
+package:
+  value: manufacturers/ti/D0014A
+  src:
+    - p34 "Package Option Addendum, row LM324DR, SOIC (D) | 14"
+    - p45 "PACKAGE OUTLINE D0014A (4220718/A)"
+
+sources: [ti/SLOS066AE]
+source: ti/SLOS066AE
+
+existence:
+  status: verified
+  src: p34 "Package Option Addendum, Packaging Information table, row LM324DR"
+
+lifecycle: { status: active, src: 'p34 "Package Option Addendum, row LM324DR, Status Active"' }

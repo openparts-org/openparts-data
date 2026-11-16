@@ -1,0 +1,17 @@
+# Official TI datasheet "INAx181 Bidirectional, Low- and High-Side
+# Voltage Output, Current-Sense Amplifiers". Downloaded 2026-11-16 with
+# curl from the TI symlink URL below; revision read from the page header
+# "SBOS793H - APRIL 2017 - REVISED NOVEMBER 2023". 62 PDF pages; text
+# read with pdftotext -layout. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is dated
+# 17-Oct-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SBOS793H
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/ina181.pdf
+date: 2023-11
+publisher: ti
+document_id: SBOS793H
+document_type: datasheet
+revision: H

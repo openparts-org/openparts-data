@@ -1,0 +1,17 @@
+# Official TI datasheet "OPAx376 Low-Noise, Low Quiescent Current,
+# Precision Operational Amplifier e-trim Series". Downloaded 2026-11-16
+# with curl from the TI symlink URL below; revision read from the page
+# header "SBOS406G - JUNE 2007 - REVISED DECEMBER 2015". 52 PDF pages;
+# text read with pdftotext -layout. Page numbers in this dataset are PDF
+# page indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is
+# dated 15-Jul-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SBOS406G
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/opa376.pdf
+date: 2015-12
+publisher: ti
+document_id: SBOS406G
+document_type: datasheet
+revision: G

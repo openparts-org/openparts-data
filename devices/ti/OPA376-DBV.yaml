@@ -1,0 +1,20 @@
+# Single precision op amp, DBV (SOT-23-5) pin map from the "Pin
+# Functions: OPA376" table (SBOS406G page 3), DBV column: OUT 1, V- 2,
+# +IN 3, -IN 4, V+ 5, checked against the DBV top-view figure (same
+# page). The DCK and D maps differ and are not covered. Minus signs
+# written as ASCII "-".
+schema_version: "0.2"
+kind: device
+id: ti/OPA376-DBV
+manufacturer: ti
+category: op_amp
+family: OPAx376
+source: ti/SBOS406G
+
+pins:
+  src: ['p3 "Pin Functions: OPA376, column DBV"', p3 "DBV package top-view figure (cross-check)"]
+  "1": { name: OUT, type: analog }
+  "2": { name: V-, type: power }
+  "3": { name: +IN, type: analog }
+  "4": { name: -IN, type: analog }
+  "5": { name: V+, type: power }

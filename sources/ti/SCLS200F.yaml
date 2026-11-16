@@ -1,0 +1,16 @@
+# Official TI datasheet "SN74HC32 Quadruple 2-Input Positive-OR Gates".
+# Downloaded 2026-11-16 with curl from the TI symlink URL below;
+# revision read from the page header "SCLS200F - DECEMBER 1982 - REVISED
+# APRIL 2021". 38 PDF pages; text read with pdftotext -layout. Page
+# numbers in this dataset are PDF page indices. The PACKAGE OPTION
+# ADDENDUM at the end of the PDF is dated 23-Oct-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS200F
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/sn74hc32.pdf
+date: 2021-04
+publisher: ti
+document_id: SCLS200F
+document_type: datasheet
+revision: F

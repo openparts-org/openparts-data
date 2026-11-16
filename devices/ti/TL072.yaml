@@ -1,0 +1,25 @@
+# Dual JFET-input op amp, 8-pin pin map of the TL072x D/DDF/JG/P/PS/PW
+# packages from Table 4-3 "Pin Functions: TL072x" (SLOS080W page 5),
+# checked against Figure 4-5 (same page). The TL072M U (CFP) and FK
+# (LCCC) maps differ and are not covered. Minus signs written as ASCII
+# "-".
+schema_version: "0.2"
+kind: device
+id: ti/TL072
+manufacturer: ti
+category: op_amp
+family: TL07x
+source: ti/SLOS080W
+
+pins:
+  src:
+    - 'p5 "Table 4-3. Pin Functions: TL072x"'
+    - p5 "Figure 4-5. TL072x D, DDF, JG, P, PS, and PW Packages (Top View)"
+  "1": { name: 1OUT, type: analog }
+  "2": { name: 1IN-, type: analog }
+  "3": { name: 1IN+, type: analog }
+  "4": { name: VCC-, type: power }
+  "5": { name: 2IN+, type: analog }
+  "6": { name: 2IN-, type: analog }
+  "7": { name: 2OUT, type: analog }
+  "8": { name: VCC+, type: power }

@@ -1,0 +1,27 @@
+# Fixed 3.3-V 300-mA step-down converter (TPS62203 of the TPS6220x
+# family), DBV (SOT-23-5) pin map from the "Pin Functions" table
+# (SLVS417F page 3): VI 1, GND 2, EN 3, FB 4, SW 5, checked against the
+# DBV top view (same page). SW typed passive, FB input.
+schema_version: "0.2"
+kind: device
+id: ti/TPS62203-DBV
+manufacturer: ti
+category: switching_regulator
+family: TPS6220x
+source: ti/SLVS417F
+
+parameters:
+  output_type: { value: fixed, src: 'p5 "6.5 Elec. Char., VO Fixed output voltage, TPS62203 row"' }
+  output_voltage:
+    typ: 3.3 V
+    src: p5 "6.5 Elec. Char., VO Fixed output voltage, TPS62203 3.3 V"
+  input_voltage_max: { max: 6 V, src: 'p4 "6.3 Recommended Operating Conditions, VI"' }
+  output_current:    { max: 300 mA, src: 'p4 "6.3 Recommended Operating Conditions, IO"' }
+
+pins:
+  src: [p3 "Pin Functions table", p3 "DBV Package 5-Pin SOT-23 Top View"]
+  "1": { name: VI, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: EN, type: input }
+  "4": { name: FB, type: input }
+  "5": { name: SW, type: passive }

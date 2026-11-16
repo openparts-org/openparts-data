@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SLOS080W PDF page 38, addendum dated 18-Sep-2026): row "TL072CDR",
+# "SOIC (D) | 8". lifecycle "active" is that table's Status column.
+# Package: outline D0008A (4214825/C) on page 76; its pdftotext text is
+# identical (page headers stripped) to the drawing page behind the
+# reused package (ti/SLCS005AH page 40).
+schema_version: "0.2"
+kind: part
+id: ti/TL072CDR
+manufacturer: ti
+mpn: TL072CDR
+device: ti/TL072
+
+package:
+  value: manufacturers/ti/D0008A
+  src:
+    - p38 "Package Option Addendum, row TL072CDR, SOIC (D) | 8"
+    - p76 "PACKAGE OUTLINE D0008A (4214825/C)"
+
+sources: [ti/SLOS080W]
+source: ti/SLOS080W
+
+existence:
+  status: verified
+  src: p38 "Package Option Addendum, Packaging Information table, row TL072CDR"
+
+lifecycle: { status: active, src: 'p38 "Package Option Addendum, row TL072CDR, Status Active"' }

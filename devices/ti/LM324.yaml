@@ -1,0 +1,31 @@
+# Quad op amp, 14-pin pin map (D, DB, J, N, NS, PW, W) from Table 5-1
+# "Pin Functions" (SLOS066AE page 3), column "D (SOIC), DB (SSOP), J
+# (CDIP), N (PDIP), NS (SO), PW (TSSOP), W (CFP)", checked against
+# Figure 5-1 (same page). The FK and RTE maps differ and are not
+# covered. Minus signs written as ASCII "-".
+schema_version: "0.2"
+kind: device
+id: ti/LM324
+manufacturer: ti
+category: op_amp
+family: LMx24
+source: ti/SLOS066AE
+
+pins:
+  src:
+    - p3 "Table 5-1. Pin Functions, column D (SOIC) ... W (CFP)"
+    - p3 "Figure 5-1. D, DB, J, N, NS, PW, W Packages (Top View)"
+  "1":  { name: 1OUT, type: analog }
+  "2":  { name: 1IN-, type: analog }
+  "3":  { name: 1IN+, type: analog }
+  "4":  { name: VCC+, type: power }
+  "5":  { name: 2IN+, type: analog }
+  "6":  { name: 2IN-, type: analog }
+  "7":  { name: 2OUT, type: analog }
+  "8":  { name: 3OUT, type: analog }
+  "9":  { name: 3IN-, type: analog }
+  "10": { name: 3IN+, type: analog }
+  "11": { name: VCC-, type: power }
+  "12": { name: 4IN+, type: analog }
+  "13": { name: 4IN-, type: analog }
+  "14": { name: 4OUT, type: analog }

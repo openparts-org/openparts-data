@@ -1,0 +1,22 @@
+# Single 2-input exclusive-OR gate (SN74LVC1G86), 5-pin pin map of the
+# DBV (SOT-23-5) package, from the "Pin Functions" table (SCES222R page
+# 3), column "DBV, DRL, DCK": A 1, B 2, GND 3, Y 4, VCC 5; checked
+# against the DBV top-view figure on the same page. The 6-pin DRY/DSF
+# and the BGA pin maps differ and are not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN74LVC1G86-DBV
+manufacturer: ti
+category: logic
+family: SN74LVC1G86
+source: ti/SCES222R
+
+pins:
+  src:
+    - p3 "Pin Functions" table, column "DBV, DRL, DCK"
+    - p3 ""Figure 4-1. DBV Package 5-Pin SOT-23 Top View" figure (cross-check)"
+  "1": { name: A, type: input }
+  "2": { name: B, type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: Y, type: output }
+  "5": { name: VCC, type: power }
