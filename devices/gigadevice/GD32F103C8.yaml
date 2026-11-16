@@ -1,0 +1,74 @@
+# GD32F103C8: Arm Cortex-M3 MCU, 64 KB flash (48-pin LQFP; Table 6-1, PDF
+# page 73). Pin numbers, names and I/O types from Table 2-8 "GD32F103Cx
+# LQFP48 pin definitions" (PDF pages 40-42), every pin cross-checked
+# against Figure 2-6 "GD32F103Cx LQFP48 pinouts" (PDF page 14) -- all 48
+# matched. The table and figure are the same, name for name, as the
+# GD32F303Cx ones used for gigadevice/GD32F303CC.
+#
+# Names follow the pin-definition table's "Pin Name" column, except pins
+# 5/6, where the table prints "OSCIN"/"OSCOUT" (Default) with "Remap: PD0"/
+# "Remap: PD1"; the composite names "PD0-OSCIN"/"PD1-OSCOUT" are the labels
+# printed in the pinout figure. Types: table Pin Type "P" -> power (VDD*,
+# VBAT) / ground (VSS*); "I" -> input (BOOT0, OSCIN); "O" -> output
+# (OSCOUT); NRST (I/O) -> reset; other I/O -> io. Alternate functions are
+# not modelled (same policy as the dataset's other MCU devices).
+schema_version: "0.2"
+kind: device
+id: gigadevice/GD32F103C8
+manufacturer: gigadevice
+category: microcontroller
+family: GD32F103
+source: gigadevice/GD32F103xx_Datasheet@rev2.9
+
+pins:
+  src:
+    - p40 "Table 2-8 "GD32F103Cx LQFP48 pin definitions" (PDF pages 40-42)"
+    - p14 "Figure 2-6 "GD32F103Cx LQFP48 pinouts" (cross-check, all 48 pins matched)"
+  "1":  { name: VBAT, type: power }
+  "2":  { name: PC13-TAMPER-RTC, type: io }
+  "3":  { name: PC14-OSC32IN, type: io }
+  "4":  { name: PC15-OSC32OUT, type: io }
+  "5":  { name: PD0-OSCIN, type: input }
+  "6":  { name: PD1-OSCOUT, type: output }
+  "7":  { name: NRST, type: reset }
+  "8":  { name: VSSA, type: ground }
+  "9":  { name: VDDA, type: power }
+  "10": { name: PA0-WKUP, type: io }
+  "11": { name: PA1, type: io }
+  "12": { name: PA2, type: io }
+  "13": { name: PA3, type: io }
+  "14": { name: PA4, type: io }
+  "15": { name: PA5, type: io }
+  "16": { name: PA6, type: io }
+  "17": { name: PA7, type: io }
+  "18": { name: PB0, type: io }
+  "19": { name: PB1, type: io }
+  "20": { name: PB2, type: io }
+  "21": { name: PB10, type: io }
+  "22": { name: PB11, type: io }
+  "23": { name: VSS_1, type: ground }
+  "24": { name: VDD_1, type: power }
+  "25": { name: PB12, type: io }
+  "26": { name: PB13, type: io }
+  "27": { name: PB14, type: io }
+  "28": { name: PB15, type: io }
+  "29": { name: PA8, type: io }
+  "30": { name: PA9, type: io }
+  "31": { name: PA10, type: io }
+  "32": { name: PA11, type: io }
+  "33": { name: PA12, type: io }
+  "34": { name: PA13, type: io }
+  "35": { name: VSS_2, type: ground }
+  "36": { name: VDD_2, type: power }
+  "37": { name: PA14, type: io }
+  "38": { name: PA15, type: io }
+  "39": { name: PB3, type: io }
+  "40": { name: PB4, type: io }
+  "41": { name: PB5, type: io }
+  "42": { name: PB6, type: io }
+  "43": { name: PB7, type: io }
+  "44": { name: BOOT0, type: input }
+  "45": { name: PB8, type: io }
+  "46": { name: PB9, type: io }
+  "47": { name: VSS_3, type: ground }
+  "48": { name: VDD_3, type: power }

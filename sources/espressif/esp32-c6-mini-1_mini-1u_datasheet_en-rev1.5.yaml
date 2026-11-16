@@ -1,0 +1,18 @@
+# ESP32-C6-MINI-1 & MINI-1U Datasheet v1.5 (Espressif), 53 pages, every
+# footer "ESP32-C6-MINI-1 & MINI-1U Datasheet v1.5"; date from the
+# Revision History entry "2026-06-16 v1.5". Downloaded 2026-11-16 with
+# curl from Espressif's own URL. Read with pdftotext -layout (series
+# comparison p4, pin layout and table pp10-11, dimension callouts p41)
+# and a 110 dpi render of the land pattern figure (p44; vector drawing,
+# values are the printed callouts). PDF page index = printed page number.
+schema_version: "0.2"
+kind: source
+id: espressif/esp32-c6-mini-1_mini-1u_datasheet_en@rev1.5
+sha256: 26691033f31cbebf623842c16624e61151b152533c13a850c091c8e858c510a2
+retrieved: 2026-11-16
+url: https://documentation.espressif.com/esp32-c6-mini-1_mini-1u_datasheet_en.pdf
+publisher: espressif
+document_id: esp32-c6-mini-1_mini-1u_datasheet_en
+document_type: datasheet
+revision: "1.5"
+date: 2026-06-16

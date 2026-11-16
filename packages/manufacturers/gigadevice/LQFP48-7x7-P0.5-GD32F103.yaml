@@ -1,0 +1,55 @@
+# GigaDevice 48-pin LQFP, 7x7 mm body, 0.5 mm pitch, as printed in the
+# GD32F103xx datasheet Rev 2.9, Table 5-2 "LQFP package dimensions"
+# (LQFP48 columns, PDF page 72; Figure 5-2 "LQFP package outline", PDF page
+# 71). The datasheet prints no drawing number, so the package is named
+# after the datasheet. Where the table gives no "Typ", only min/max are
+# recorded; D/D1/E/E1/e have only a Typ.
+#
+# Not manufacturers/gigadevice/LQFP48-7x7-P0.5 (GD32VF103/GD32F303
+# tables): this table prints A2 0.95/1.00/1.05 (there 1.35/1.40/1.45), b
+# 0.17/0.22/0.27 (there 0.18-0.26), c 0.09-0.20 (there 0.13-0.17), A min
+# 1.20 and no D1/E1 tolerance, so the numbers differ. D2/E2 (5.50, the
+# span of the outer lead centres), R1/R2, S, L1 and angles are not
+# recorded (no canonical field).
+schema_version: "0.2"
+kind: package
+id: manufacturers/gigadevice/LQFP48-7x7-P0.5-GD32F103
+family: lqfp
+lead_count: { value: 48, src: 'p72 "Table 5-2 "LQFP package dimensions", column "LQFP48""' }
+source: gigadevice/GD32F103xx_Datasheet@rev2.9
+
+pitch: { typ: 0.5 mm, src: 'p72 "Table 5-2 "LQFP package dimensions", LQFP48, "e""' }
+geometry: { type: parametric, generator: lqfp }
+
+dimensions:
+  body_width:     { typ: 7 mm, src: 'p72 "Table 5-2 "LQFP package dimensions", LQFP48, "E1""' }
+  body_length:    { typ: 7 mm, src: 'p72 "Table 5-2 "LQFP package dimensions", LQFP48, "D1""' }
+  body_height:
+    min: 0.95 mm
+    typ: 1 mm
+    max: 1.05 mm
+    src: p72 "Table 5-2 "LQFP package dimensions", LQFP48, "A2""
+  lead_thickness:
+    min: 0.09 mm
+    max: 0.2 mm
+    src: p72 "Table 5-2 "LQFP package dimensions", LQFP48, "c" (no typ)"
+  overall_width:  { typ: 9 mm, src: 'p72 "Table 5-2 "LQFP package dimensions", LQFP48, "E""' }
+  overall_length: { typ: 9 mm, src: 'p72 "Table 5-2 "LQFP package dimensions", LQFP48, "D""' }
+  overall_height:
+    min: 1.2 mm
+    max: 1.6 mm
+    src: p72 "Table 5-2 "LQFP package dimensions", LQFP48, "A" (no typ)"
+  standoff:
+    min: 0.05 mm
+    max: 0.15 mm
+    src: p72 "Table 5-2 "LQFP package dimensions", LQFP48, "A1" (no typ)"
+  lead_width:
+    min: 0.17 mm
+    typ: 0.22 mm
+    max: 0.27 mm
+    src: p72 "Table 5-2 "LQFP package dimensions", LQFP48, "b""
+  lead_length:
+    min: 0.45 mm
+    typ: 0.6 mm
+    max: 0.75 mm
+    src: p72 "Table 5-2 "LQFP package dimensions", LQFP48, "L""

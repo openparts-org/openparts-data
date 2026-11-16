@@ -1,0 +1,24 @@
+# ESP32-C3-WROOM-02-N4: 4 MB (Quad SPI) flash, -40 ~ 85 C. Listed in the module datasheet's
+# series comparison table (Table 1-1 ESP32-C3-WROOM-02 (ANT) Series
+# Comparison, p3) -> existence verified. Lifecycle: the table marks no
+# status (NRND/EOL) for this part and the datasheet states none ->
+# unknown.
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-C3-WROOM-02-N4
+manufacturer: espressif
+mpn: ESP32-C3-WROOM-02-N4
+device: espressif/ESP32-C3-WROOM-02
+package: manufacturers/espressif/MODULE19-18x20-ESP32-C3-WROOM-02
+
+sources:
+  - espressif/esp32-c3-wroom-02_datasheet_en@rev1.7
+  - espressif/esp32-c3_hardware_design_guidelines_en@rev1.8
+
+source: espressif/esp32-c3-wroom-02_datasheet_en@rev1.7
+
+existence:
+  status: verified
+  src: 'p3 "Table 1-1 ESP32-C3-WROOM-02 (ANT) Series Comparison, Part Number: ESP32-C3-WROOM-02-N4"'
+
+lifecycle: { status: unknown }

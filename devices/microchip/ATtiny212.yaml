@@ -1,0 +1,30 @@
+# ATtiny212 (8-pin SOIC, the only package offered for it per Table 37.1
+# of DS40002287A). Pin names/numbers from Table 5-2 "PORT Function
+# Multiplexing, Eight Pins", column "SOIC 8-Pin" (page 18, text),
+# cross-checked against section 4.1 "8-Pin SOIC" (page 14).
+#
+# Types: VDD power, GND ground, port pins io. PA0 carries RESET/UPDI
+# (programming/debug) as alternate functions per the table's
+# "Other/Special" column. alternate_functions carry only the
+# "Other/Special" and "ADC0" columns; the other peripheral columns are
+# not modelled.
+schema_version: "0.2"
+kind: device
+id: microchip/ATtiny212
+manufacturer: microchip
+category: microcontroller
+family: tinyAVR 1-series
+source: microchip/DS40002287@revA
+
+pins:
+  src:
+    - p18 "Table 5-2, column "SOIC 8-Pin", columns "Other/Special" and "ADC0""
+    - p14 "Section 4.1 "8-Pin SOIC" pinout figure (cross-check)"
+  "1": { name: VDD, type: power }
+  "2": { name: PA6, type: io, alternate_functions: [AIN6] }
+  "3": { name: PA7, type: io, alternate_functions: [AIN7] }
+  "4": { name: PA1, type: io, alternate_functions: [AIN1] }
+  "5": { name: PA2, type: io, alternate_functions: [EVOUT0, AIN2] }
+  "6": { name: PA0, type: io, alternate_functions: [RESET, UPDI, AIN0] }
+  "7": { name: PA3, type: io, alternate_functions: [EXTCLK, AIN3] }
+  "8": { name: GND, type: ground }

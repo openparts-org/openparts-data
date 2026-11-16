@@ -1,0 +1,39 @@
+# ESP32-C3-WROOM-02 Wi-Fi/Bluetooth LE module (PCB antenna). Pin numbers,
+# names and types from the module datasheet's pin definition table (pp10-11
+# "Table 3-1 Pin Definitions"), cross-checked against Figure 3-1 "Pin
+# Layout (Top View)" (p10); type P is power (ground for GND), I input,
+# I/O/T io. GND is listed as "9, 19"; pin 19 is the 3 x 3 ground pad grid.
+# Alternate functions are not recorded here. The -U variant (antenna
+# connector) is a different board size and is not modelled.
+schema_version: "0.2"
+kind: device
+id: espressif/ESP32-C3-WROOM-02
+manufacturer: espressif
+category: microcontroller
+family: ESP32-C3-WROOM-02
+source: espressif/esp32-c3-wroom-02_datasheet_en@rev1.7
+
+pins:
+  src:
+    - p10 "Table 3-1 Pin Definitions"
+    - p11 "Table 3-1 (cont'd)"
+    - p10 "Figure 3-1 Pin Layout (cross-check)"
+  "1":  { name: 3V3, type: power }
+  "2":  { name: EN, type: input }
+  "3":  { name: IO4, type: io }
+  "4":  { name: IO5, type: io }
+  "5":  { name: IO6, type: io }
+  "6":  { name: IO7, type: io }
+  "7":  { name: IO8, type: io }
+  "8":  { name: IO9, type: io }
+  "9":  { name: GND, type: ground }
+  "10": { name: IO10, type: io }
+  "11": { name: RXD, type: io }
+  "12": { name: TXD, type: io }
+  "13": { name: IO18, type: io }
+  "14": { name: IO19, type: io }
+  "15": { name: IO3, type: io }
+  "16": { name: IO2, type: io }
+  "17": { name: IO1, type: io }
+  "18": { name: IO0, type: io }
+  "19": { name: GND, type: ground }

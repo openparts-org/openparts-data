@@ -1,0 +1,29 @@
+# ATtiny404-SSN: 4 KB/256B, 14 pins, 20 MHz, 1.8V to 5.5V, SOIC, -40°C to
+# +105°C, tube or tray (no R suffix). MPN printed verbatim in the ordering
+# table
+# (DS40002318A page 493) -> existence verified. Every number of the
+# C04-065-SL Rev D table matches
+# manufacturers/microchip/SOIC14-SL-C04-065D (built from DS40002204A) ->
+# reused (generate with --source sources/microchip/DS40002204A.yaml).
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATtiny404-SSN
+manufacturer: microchip
+mpn: ATtiny404-SSN
+device: microchip/ATtiny404
+
+package:
+  value: manufacturers/microchip/SOIC14-SL-C04-065D
+  src:
+    - p493 "Section 35.1, row "ATtiny404-SSN", "Pin Count 14", "Package Type SOIC""
+    - p500 "Section 36.3 "14-Pin SOIC", drawing C04-065-SL Rev D sheet 2"
+
+sources: [microchip/DS40002318@revA]
+source: microchip/DS40002318@revA
+
+existence:
+  status: verified
+  src: p493 "Section 35.1 "Product Information", Ordering Code row "ATtiny404-SSN""
+
+lifecycle: { status: unknown }

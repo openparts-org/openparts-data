@@ -1,0 +1,17 @@
+# Official GigaDevice GD32F103xx datasheet, fetched 2026-11-16 with curl
+# from GigaDevice's GD32 MCU site (gd32mcu.com; Rev2.8 is also served there,
+# Rev3.0/3.1 return 404). Read via pdftotext -layout; the revision and date
+# are taken from Table 7-1 "Revision history" (PDF page 75): "2.9 ...
+# Apr.12, 2021" (latest entry). 76 PDF pages. PDF page index = printed
+# page number + 1.
+schema_version: "0.2"
+kind: source
+id: gigadevice/GD32F103xx_Datasheet@rev2.9
+sha256: d9f48ac953bb7a268357910cb44ac0d80b8e296fbc218ee32a087cc7b26d4720
+retrieved: 2026-11-16
+url: https://www.gd32mcu.com/data/documents/datasheet/GD32F103xx_Datasheet_Rev2.9.pdf
+publisher: gigadevice
+document_id: GD32F103xx_Datasheet
+document_type: datasheet
+revision: "2.9"
+date: 2021-04-12

@@ -1,0 +1,22 @@
+# ESP32-C3: no in-package flash (requires off-package SPI flash, note 5), -40 ~ 105 C, chip revision v0.4 (Table 1-1 "ESP32-C3 Series Comparison", p12) ->
+# existence verified. 22 GPIOs: pinout of Figure 2-1 (p14) ->
+# espressif/ESP32-C3. Package: Figure 7-1 "QFN32 (5x5 mm) Package" (p67),
+# the one QFN32 drawing of the datasheet -> standards/QFN32-ESP32-C3.
+# Lifecycle: Table 1-1 marks ESP32-C3FN4 EOL, ESP32-C3FH4AZ NRND and
+# ESP32-C3FH4X Recommended; nothing for this part -> unknown.
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-C3
+manufacturer: espressif
+mpn: ESP32-C3
+device: espressif/ESP32-C3
+
+package:
+  value: standards/QFN32-ESP32-C3
+  src: p67 "Section 7 Packaging, Figure 7-1 QFN32 (5x5 mm) Package"
+
+sources: [espressif/esp32-c3_datasheet_en@rev2.5]
+source: espressif/esp32-c3_datasheet_en@rev2.5
+
+existence: { status: verified, src: 'p12 "Table 1-1 ESP32-C3 Series Comparison, row "ESP32-C3""' }
+lifecycle: { status: unknown }

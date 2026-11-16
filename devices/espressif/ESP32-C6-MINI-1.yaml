@@ -1,0 +1,75 @@
+# ESP32-C6-MINI-1 Wi-Fi 6/Bluetooth LE/802.15.4 module (PCB antenna). Pin
+# numbers, names and types from the module datasheet's pin definition
+# table (pp10-11 "Table 3-1 Pin Definitions"), cross-checked against
+# Figure 3-1 "Pin Layout (Top View)" (p10); type P is power (ground for
+# GND), I input, I/O/T io, a dash nc. Table 3-1 lists GND and NC by
+# number groups ("1, 2, 11, 14, 36~53"; 4, 7, 21, 32-35); pins 49-53 are
+# the centre ground grid and the four corner pads (Figure 3-1).
+# Alternate functions are not recorded here. The -U variant (antenna
+# connector) is a different board size and is not modelled.
+schema_version: "0.2"
+kind: device
+id: espressif/ESP32-C6-MINI-1
+manufacturer: espressif
+category: microcontroller
+family: ESP32-C6-MINI-1
+source: espressif/esp32-c6-mini-1_mini-1u_datasheet_en@rev1.5
+
+pins:
+  src:
+    - p10 "Table 3-1 Pin Definitions"
+    - p11 "Table 3-1 (cont'd)"
+    - p10 "Figure 3-1 Pin Layout (cross-check)"
+  "1":  { name: GND, type: ground }
+  "2":  { name: GND, type: ground }
+  "3":  { name: 3V3, type: power }
+  "4":  { name: NC, type: nc }
+  "5":  { name: IO2, type: io }
+  "6":  { name: IO3, type: io }
+  "7":  { name: NC, type: nc }
+  "8":  { name: EN, type: input }
+  "9":  { name: IO4, type: io }
+  "10": { name: IO5, type: io }
+  "11": { name: GND, type: ground }
+  "12": { name: IO0, type: io }
+  "13": { name: IO1, type: io }
+  "14": { name: GND, type: ground }
+  "15": { name: IO6, type: io }
+  "16": { name: IO7, type: io }
+  "17": { name: IO12, type: io }
+  "18": { name: IO13, type: io }
+  "19": { name: IO14, type: io }
+  "20": { name: IO15, type: io }
+  "21": { name: NC, type: nc }
+  "22": { name: IO8, type: io }
+  "23": { name: IO9, type: io }
+  "24": { name: IO18, type: io }
+  "25": { name: IO19, type: io }
+  "26": { name: IO20, type: io }
+  "27": { name: IO21, type: io }
+  "28": { name: IO22, type: io }
+  "29": { name: IO23, type: io }
+  "30": { name: RXD0, type: io }
+  "31": { name: TXD0, type: io }
+  "32": { name: NC, type: nc }
+  "33": { name: NC, type: nc }
+  "34": { name: NC, type: nc }
+  "35": { name: NC, type: nc }
+  "36": { name: GND, type: ground }
+  "37": { name: GND, type: ground }
+  "38": { name: GND, type: ground }
+  "39": { name: GND, type: ground }
+  "40": { name: GND, type: ground }
+  "41": { name: GND, type: ground }
+  "42": { name: GND, type: ground }
+  "43": { name: GND, type: ground }
+  "44": { name: GND, type: ground }
+  "45": { name: GND, type: ground }
+  "46": { name: GND, type: ground }
+  "47": { name: GND, type: ground }
+  "48": { name: GND, type: ground }
+  "49": { name: GND, type: ground }
+  "50": { name: GND, type: ground }
+  "51": { name: GND, type: ground }
+  "52": { name: GND, type: ground }
+  "53": { name: GND, type: ground }

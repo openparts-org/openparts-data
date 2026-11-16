@@ -1,0 +1,27 @@
+# ATtiny416-SNR: 4 KB/256B, 20 pins, 20 MHz, 1.8V-5.5V, SOIC, -40°C to
+# +105°C, tape & reel. MPN printed verbatim in the ordering table
+# (DS40002287A page 554) -> existence verified. Drawing C04-094 Rev D ->
+# manufacturers/microchip/SOIC20-SO-C04-094D
+# (not C04-094C: L and c rows differ).
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATtiny416-SNR
+manufacturer: microchip
+mpn: ATtiny416-SNR
+device: microchip/ATtiny416-SOIC20
+
+package:
+  value: manufacturers/microchip/SOIC20-SO-C04-094D
+  src:
+    - p554 "Section 37.1, row "ATtiny416-SNR", "Pin Count 20", "Package Type SOIC""
+    - p564 "Section 38.4 "20-Pin SOIC", drawing C04-094 Rev D sheet 2"
+
+sources: [microchip/DS40002287@revA]
+source: microchip/DS40002287@revA
+
+existence:
+  status: verified
+  src: p554 "Section 37.1 "Product Information", Ordering Code row "ATtiny416-SNR""
+
+lifecycle: { status: unknown }

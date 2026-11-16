@@ -1,0 +1,78 @@
+# ESP32-C3 in the QFN32 (5x5 mm) bonding with 22 GPIOs: ESP32-C3,
+# ESP32-C3FH4, ESP32-C3FN4 and ESP32-C3FH8X (Figure 2-1 "Pin Layout (Top
+# View) for ESP32-C3, ESP32-C3FH4, ESP32-C3FN4, and ESP32-C3FH8X", p14).
+# ESP32-C3FH4AZ/FH4X leave pins 19-24 unbonded (Table 2-1 note 9): see
+# espressif/ESP32-C3FH4X. Pin names/numbers from Table 2-1 "Pin Overview"
+# (pp16-17); pin 33 (GND) is the exposed pad, recorded as "EP" as in the
+# other QFN devices of this dataset.
+#
+# Types: Table 2-1's "Power" -> power, GND -> ground; CHIP_EN -> reset and
+# the crystal pins (XTAL_N/P, XTAL_32K_P/N) -> clock, as in
+# espressif/ESP32-C3FH4X. alternate_functions: the IO MUX GPIO number of
+# pins not named GPIOn (Table 2-4 "IO MUX Pin Functions", pp19-20), and
+# the USB function of pins 25-26 (Table 2-6 "Analog Functions", p21).
+# diff_pair records the datasheet's default USB_D-/USB_D+ assignment.
+schema_version: "0.2"
+kind: device
+id: espressif/ESP32-C3
+manufacturer: espressif
+category: microcontroller
+family: ESP32-C3
+source: espressif/esp32-c3_datasheet_en@rev2.5
+
+pins:
+  src:
+    - p16 "Table 2-1 Pin Overview"
+    - p17 "Table 2-1 (cont'd)"
+    - p19 "Table 2-4 IO MUX Pin Functions"
+  "1":  { name: LNA_IN, type: analog }
+  "2":  { name: VDD3P3, type: power }
+  "3":  { name: VDD3P3, type: power }
+  "4":  { name: XTAL_32K_P, type: clock, alternate_functions: [GPIO0] }
+  "5":  { name: XTAL_32K_N, type: clock, alternate_functions: [GPIO1] }
+  "6":  { name: GPIO2, type: io }
+  "7":  { name: CHIP_EN, type: reset }
+  "8":  { name: GPIO3, type: io }
+  "9":  { name: MTMS, type: io, alternate_functions: [GPIO4] }
+  "10": { name: MTDI, type: io, alternate_functions: [GPIO5] }
+  "11": { name: VDD3P3_RTC, type: power }
+  "12": { name: MTCK, type: io, alternate_functions: [GPIO6] }
+  "13": { name: MTDO, type: io, alternate_functions: [GPIO7] }
+  "14": { name: GPIO8, type: io }
+  "15": { name: GPIO9, type: io }
+  "16": { name: GPIO10, type: io }
+  "17": { name: VDD3P3_CPU, type: power }
+  "18": { name: VDD_SPI, type: power, alternate_functions: [GPIO11] }
+  "19": { name: SPIHD, type: io, alternate_functions: [GPIO12] }
+  "20": { name: SPIWP, type: io, alternate_functions: [GPIO13] }
+  "21": { name: SPICS0, type: io, alternate_functions: [GPIO14] }
+  "22": { name: SPICLK, type: io, alternate_functions: [GPIO15] }
+  "23": { name: SPID, type: io, alternate_functions: [GPIO16] }
+  "24": { name: SPIQ, type: io, alternate_functions: [GPIO17] }
+  "25":
+    name: GPIO18
+    type: io
+    alternate_functions: [USB_D_MINUS]
+    diff_pair:
+      partner: "26"
+      polarity: n
+      standard: usb2
+      function: USB_D_MINUS
+      src: p21 "Table 2-6 Analog Functions, pins 25-26 USB_D-/USB_D+"
+  "26":
+    name: GPIO19
+    type: io
+    alternate_functions: [USB_D_PLUS]
+    diff_pair:
+      partner: "25"
+      polarity: p
+      standard: usb2
+      function: USB_D_PLUS
+      src: p21 "Table 2-6 Analog Functions, pins 25-26 USB_D-/USB_D+"
+  "27": { name: U0RXD, type: io, alternate_functions: [GPIO20] }
+  "28": { name: U0TXD, type: io, alternate_functions: [GPIO21] }
+  "29": { name: XTAL_N, type: clock }
+  "30": { name: XTAL_P, type: clock }
+  "31": { name: VDDA, type: power }
+  "32": { name: VDDA, type: power }
+  EP:   { name: GND, type: ground, src: 'p17 "Table 2-1, pin 33 GND"' }

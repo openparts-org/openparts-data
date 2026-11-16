@@ -1,0 +1,19 @@
+# Official Microchip "ATtiny417/814/816/817" Complete Datasheet, 596
+# pages. Downloaded directly from ww1.microchip.com (URL below) with curl
+# on 2026-11-16. document_id/revision from the printed footer
+# "DS40002288A-page N"; date from section 41.1 "Rev. A - 12/2020". PDF
+# page index = printed page number. Read with pdftotext -layout: pinouts
+# (pages 15-18), Table 5-1 (page 19), ordering table 38.1 (page 560) and
+# the C04-065-SL, C04-094, C04-21380 and C04-21386 tables (pages 564,
+# 567, 570, 573) extract as clean text.
+schema_version: "0.2"
+kind: source
+id: microchip/DS40002288@revA
+sha256: c2392fe1c4c9666ad0541f054aa49f18994ca36cc1f13bed81d036b2eaa7f8af
+retrieved: 2026-11-16
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny417-814-816-817-DataSheet-DS40002288A.pdf
+publisher: microchip
+document_id: DS40002288
+document_type: datasheet
+revision: A
+date: 2020-12

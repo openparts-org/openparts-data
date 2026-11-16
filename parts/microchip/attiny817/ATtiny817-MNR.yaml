@@ -1,0 +1,27 @@
+# ATtiny817-MNR: 8 KB/512B, 24 pins, 20 MHz, 1.8V-5.5V, VQFN, -40°C to
+# +105°C, tape & reel. MPN printed verbatim in the ordering table
+# (DS40002288A page 560) -> existence verified. Drawing C04-21386 Rev A
+# (24-lead VQFN 4x4 mm, RLB) ->
+# manufacturers/microchip/VQFN24-4x4-P0.5-EP2.6-C04-21386 (new).
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATtiny817-MNR
+manufacturer: microchip
+mpn: ATtiny817-MNR
+device: microchip/ATtiny817
+
+package:
+  value: manufacturers/microchip/VQFN24-4x4-P0.5-EP2.6-C04-21386
+  src:
+    - p560 "Section 38.1, row "ATtiny817-MNR", "Pin Count 24", "Package Type VQFN""
+    - p573 "Section 39.5 "24-Pin VQFN", drawing C04-21386 Rev A sheet 2"
+
+sources: [microchip/DS40002288@revA]
+source: microchip/DS40002288@revA
+
+existence:
+  status: verified
+  src: p560 "Section 38.1 "Product Information", Ordering Code row "ATtiny817-MNR""
+
+lifecycle: { status: unknown }

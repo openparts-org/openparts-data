@@ -1,0 +1,29 @@
+# ATtiny816-MNR: 8 KB/512B, 20 pins, 20 MHz, 1.8V-5.5V, VQFN, -40°C to
+# +105°C, tape & reel. MPN printed verbatim in the ordering table
+# (DS40002288A page 560) -> existence verified. Every number of the
+# C04-21380 Rev A table matches
+# manufacturers/microchip/VQFN20-3x3-P0.4-EP1.7-C04-21380 (built from
+# DS40002204A) -> reused (generate with --source
+# sources/microchip/DS40002204A.yaml).
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATtiny816-MNR
+manufacturer: microchip
+mpn: ATtiny816-MNR
+device: microchip/ATtiny816-VQFN20
+
+package:
+  value: manufacturers/microchip/VQFN20-3x3-P0.4-EP1.7-C04-21380
+  src:
+    - p560 "Section 38.1, row "ATtiny816-MNR", "Pin Count 20", "Package Type VQFN""
+    - p570 "Section 39.4 "20-Pin VQFN", drawing C04-21380 Rev A sheet 2"
+
+sources: [microchip/DS40002288@revA]
+source: microchip/DS40002288@revA
+
+existence:
+  status: verified
+  src: p560 "Section 38.1 "Product Information", Ordering Code row "ATtiny816-MNR""
+
+lifecycle: { status: unknown }

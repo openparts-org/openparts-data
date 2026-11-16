@@ -1,0 +1,28 @@
+# ESP32-S3FN8: 8 MB in-package Quad SPI flash, no PSRAM, -40 ~ 85 C, VDD_SPI 3.3 V (Table 1-1 "ESP32-S3 Series Comparison", p13) -> existence
+# verified. Same QFN56 die and pin table as the base ESP32-S3 (Table 2-1
+# "Pin Overview" covers the whole series; section 2.6 / Table 2-14, p31,
+# names the pins that the in-package memory uses, which stay in the pin
+# table) -> reuses espressif/ESP32-S3. Package: section 7 (p77) says all
+# ESP32-S3 variants share the Figure 7-1 QFN56 land pattern except
+# ESP32-S3FH4R2 (bigger EPAD) -> standards/QFN56-ESP32-S3. Lifecycle: the
+# table marks only ESP32-S3R8V and ESP32-S3R2 EOL; no status is stated
+# for this part -> unknown.
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-S3FN8
+manufacturer: espressif
+mpn: ESP32-S3FN8
+device: espressif/ESP32-S3
+
+package:
+  value: standards/QFN56-ESP32-S3
+  src: 'p77 "Section 7 Packaging: all variants share Figure 7-1 except ESP32-S3FH4R2"'
+
+sources: [espressif/esp32-s3_datasheet_en@rev2.2]
+source: espressif/esp32-s3_datasheet_en@rev2.2
+
+existence:
+  status: verified
+  src: p13 "Table 1-1 ESP32-S3 Series Comparison, row "ESP32-S3FN8""
+
+lifecycle: { status: unknown }

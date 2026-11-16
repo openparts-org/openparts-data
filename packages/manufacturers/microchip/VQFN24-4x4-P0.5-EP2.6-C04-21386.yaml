@@ -1,0 +1,48 @@
+# 24-lead VQFN, 4x4 mm, 0.5 mm pitch, 2.6x2.6 mm exposed pad: Microchip
+# drawing C04-21386 Rev A, "24-Lead Very Thin Plastic Quad Flat, No Lead
+# Package (RLB) - 4x4 mm Body [VQFN]; Atmel Legacy Global Package Code
+# ZHA", DS40002288A section 39.5, dimension table on page 573 (text).
+# body_height = A (no A2 given). lead_thickness = A3 "0.203 REF" (a
+# reference value). Standoff A1 is printed 0.00 / - / 0.05 (no nominal).
+# K (min 0.20) is not modelled.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/VQFN24-4x4-P0.5-EP2.6-C04-21386
+family: qfn
+lead_count: { value: 24, src: 'p573 "C04-21386 Rev A sheet 2 table, "Number of Terminals N 24""' }
+source: microchip/DS40002288@revA
+
+pitch: { typ: 0.5 mm, src: 'p573 "C04-21386 Rev A sheet 2 table, "Pitch e 0.50 BSC""' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width: { typ: 4 mm, src: 'p573 "C04-21386 Rev A sheet 2 table, "Overall Width E 4.00 BSC""' }
+  body_length:
+    typ: 4 mm
+    src: p573 "C04-21386 Rev A sheet 2 table, "Overall Length D 4.00 BSC""
+  body_height:
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 0.9 mm
+    src: p573 "C04-21386 Rev A sheet 2 table, "Overall Height A 0.80 / 0.85 / 0.90""
+  exposed_pad:
+    src:    p573 "C04-21386 Rev A sheet 2 table, "Exposed Pad Width E2" and "Exposed Pad Length D2" 2.45 / 2.60 / 2.75"
+    width:  { min: 2.45 mm, typ: 2.6 mm, max: 2.75 mm }
+    length: { min: 2.45 mm, typ: 2.6 mm, max: 2.75 mm }
+  standoff:
+    min: 0 mm
+    max: 0.05 mm
+    src: p573 "C04-21386 Rev A sheet 2 table, "Standoff A1 0.00 / - / 0.05""
+  lead_width:
+    min: 0.18 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p573 "C04-21386 Rev A sheet 2 table, "Terminal Width b 0.18 / 0.25 / 0.30""
+  lead_length:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.45 mm
+    src: p573 "C04-21386 Rev A sheet 2 table, "Terminal Length L 0.35 / 0.40 / 0.45""
+  lead_thickness:
+    typ: 0.203 mm
+    src: p573 "C04-21386 Rev A sheet 2 table, "Terminal Thickness A3 0.203 REF" (reference value)"

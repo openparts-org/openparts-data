@@ -1,0 +1,50 @@
+# ATtiny817 (8 KB Flash; 24-pin VQFN, the only package offered for it per
+# Table 38.1 of DS40002288A). Pin names/numbers from Table 5-1 "PORT
+# Function Multiplexing", column "VQFN 24-Pin" (page 19, text),
+# cross-checked against section 4.4 "24-Pin VQFN" (page 18).
+#
+# Types: VDD power, GND ground, port pins io. PA0 carries RESET/UPDI
+# (programming/debug) as alternate functions per the table's
+# "Other/Special" column. alternate_functions carry only the
+# "Other/Special" and "ADC0" columns; the other peripheral columns are
+# not modelled.
+#
+# Exposed pad: the pinout page only says "It is recommended to solder the
+# large center pad to ground for mechanical stability" -- it does not say
+# what the pad connects to, so no EP pin.
+schema_version: "0.2"
+kind: device
+id: microchip/ATtiny817
+manufacturer: microchip
+category: microcontroller
+family: tinyAVR 1-series
+source: microchip/DS40002288@revA
+
+pins:
+  src:
+    - p19 "Table 5-1 "PORT Function Multiplexing", column "VQFN 24-Pin", columns "Other/Special" and "ADC0""
+    - p18 "Section 4.4 "24-Pin VQFN" pinout figure (cross-check)"
+  "1":  { name: PA2, type: io, alternate_functions: [EVOUT0, AIN2] }
+  "2":  { name: PA3, type: io, alternate_functions: [EXTCLK, AIN3] }
+  "3":  { name: GND, type: ground }
+  "4":  { name: VDD, type: power }
+  "5":  { name: PA4, type: io, alternate_functions: [AIN4] }
+  "6":  { name: PA5, type: io, alternate_functions: [AIN5] }
+  "7":  { name: PA6, type: io, alternate_functions: [AIN6] }
+  "8":  { name: PA7, type: io, alternate_functions: [AIN7] }
+  "9":  { name: PB7, type: io }
+  "10": { name: PB6, type: io }
+  "11": { name: PB5, type: io, alternate_functions: [CLKOUT, AIN8] }
+  "12": { name: PB4, type: io, alternate_functions: [AIN9] }
+  "13": { name: PB3, type: io, alternate_functions: [TOSC1] }
+  "14": { name: PB2, type: io, alternate_functions: [TOSC2, EVOUT1] }
+  "15": { name: PB1, type: io, alternate_functions: [AIN10] }
+  "16": { name: PB0, type: io, alternate_functions: [AIN11] }
+  "17": { name: PC0, type: io }
+  "18": { name: PC1, type: io }
+  "19": { name: PC2, type: io, alternate_functions: [EVOUT2] }
+  "20": { name: PC3, type: io }
+  "21": { name: PC4, type: io }
+  "22": { name: PC5, type: io }
+  "23": { name: PA0, type: io, alternate_functions: [RESET, UPDI, AIN0] }
+  "24": { name: PA1, type: io, alternate_functions: [AIN1] }

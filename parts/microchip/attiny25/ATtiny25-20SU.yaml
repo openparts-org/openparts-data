@@ -1,0 +1,27 @@
+# ATtiny25-20SU: 20 MHz, 2.7-5.5V, Industrial -40C to +85C, package 8S2
+# (8-lead 0.208" EIAJ SOIC), U = matte tin, no R (tape & reel) suffix. MPN printed in
+# the ordering table, section 25.1 "ATtiny25" (2586Q page 204) -> existence
+# verified. Package 8S2 is the same drawing standards/SOIC8-5.3x5.2-P1.27 was built
+# from (same datasheet). lifecycle: no production-status statement in
+# the 2013 datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATtiny25-20SU
+manufacturer: microchip
+mpn: ATtiny25-20SU
+device: microchip/ATtiny25
+
+package:
+  value: standards/SOIC8-5.3x5.2-P1.27
+  src:
+    - p204 "Section 25.1, "ATtiny25" ordering table, "ATtiny25-20SU" / 8S2"
+    - p208 "Section 26.2 "8S2" package drawing"
+
+sources: [microchip/2586@revQ]
+source: microchip/2586@revQ
+
+existence:
+  status: verified
+  src: p204 "Section 25.1, "ATtiny25" ordering table, "ATtiny25-20SU""
+
+lifecycle: { status: unknown }

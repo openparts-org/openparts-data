@@ -1,0 +1,29 @@
+# ATtiny212-SSNR: 2 KB/128B, 8 pins, 20 MHz, 1.8V-5.5V, SOIC, -40°C to
+# +105°C, tape & reel. MPN printed verbatim in the ordering table
+# (DS40002287A page 554) -> existence verified. Every number of the
+# C04-057-SN Rev F table (e 1.27 BSC, A max 1.75,
+# A2 min 1.25, A1 0.10-0.25, E 6.00 BSC, E1 3.90 BSC, D 4.90 BSC, L
+# 0.40-1.27, c 0.17-0.25, b 0.31-0.51) matches standards/SOIC8-3.90x4.90-P1.27
+# -> reused (generate with --source sources/microchip/DS20001203W.yaml).
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATtiny212-SSNR
+manufacturer: microchip
+mpn: ATtiny212-SSNR
+device: microchip/ATtiny212
+
+package:
+  value: standards/SOIC8-3.90x4.90-P1.27
+  src:
+    - p554 "Section 37.1, row "ATtiny212-SSNR", "Pin Count 8", "Package Type SOIC""
+    - p558 "Section 38.2 "8-Pin SOIC", drawing C04-057-SN Rev F sheet 2"
+
+sources: [microchip/DS40002287@revA]
+source: microchip/DS40002287@revA
+
+existence:
+  status: verified
+  src: p554 "Section 37.1 "Product Information", Ordering Code row "ATtiny212-SSNR""
+
+lifecycle: { status: unknown }

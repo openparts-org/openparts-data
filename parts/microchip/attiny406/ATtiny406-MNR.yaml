@@ -1,0 +1,29 @@
+# ATtiny406-MNR: 4 KB/256B, 20 pins, 20 MHz, 1.8V to 5.5V, VQFN, -40°C to
+# +105°C, tape & reel. MPN printed verbatim in the ordering table
+# (DS40002318A page 493) -> existence verified. Every number of the
+# C04-21380 Rev A table matches
+# manufacturers/microchip/VQFN20-3x3-P0.4-EP1.7-C04-21380 (built from
+# DS40002204A) -> reused (generate with --source
+# sources/microchip/DS40002204A.yaml).
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATtiny406-MNR
+manufacturer: microchip
+mpn: ATtiny406-MNR
+device: microchip/ATtiny406-VQFN20
+
+package:
+  value: manufacturers/microchip/VQFN20-3x3-P0.4-EP1.7-C04-21380
+  src:
+    - p493 "Section 35.1, row "ATtiny406-MNR", "Pin Count 20", "Package Type VQFN""
+    - p506 "Section 36.5 "20-Pin VQFN", drawing C04-21380 Rev A sheet 2"
+
+sources: [microchip/DS40002318@revA]
+source: microchip/DS40002318@revA
+
+existence:
+  status: verified
+  src: p493 "Section 35.1 "Product Information", Ordering Code row "ATtiny406-MNR""
+
+lifecycle: { status: unknown }

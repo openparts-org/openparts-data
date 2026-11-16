@@ -1,0 +1,43 @@
+# ATtiny406 in the 20-pin SOIC (ATtiny406-SN/SNR/SF/SFR). The 20-pin VQFN
+# numbers pins differently: see microchip/ATtiny406-VQFN20. Pin
+# names/numbers from Table 5-1 "PORT Function Multiplexing, 14 and 20
+# Pins", column "SOIC 20-Pin" (DS40002318A page 17, text), cross-checked
+# against section 4.3 "20-Pin SOIC" (page 15).
+#
+# Types: VDD power, GND ground, port pins io. PA0 carries RESET/UPDI
+# (programming/debug) as alternate functions per the table's
+# "Other/Special" column. alternate_functions carry only the
+# "Other/Special" and "ADC0" columns; the other peripheral columns are
+# not modelled.
+schema_version: "0.2"
+kind: device
+id: microchip/ATtiny406-SOIC20
+manufacturer: microchip
+category: microcontroller
+family: tinyAVR 0-series
+source: microchip/DS40002318@revA
+
+pins:
+  src:
+    - p17 "Table 5-1, column "SOIC 20-Pin", columns "Other/Special" and "ADC0""
+    - p15 "Section 4.3 "20-Pin SOIC" pinout figure (cross-check)"
+  "1":  { name: VDD, type: power }
+  "2":  { name: PA4, type: io, alternate_functions: [AIN4] }
+  "3":  { name: PA5, type: io, alternate_functions: [AIN5] }
+  "4":  { name: PA6, type: io, alternate_functions: [AIN6] }
+  "5":  { name: PA7, type: io, alternate_functions: [AIN7] }
+  "6":  { name: PB5, type: io, alternate_functions: [CLKOUT, AIN8] }
+  "7":  { name: PB4, type: io, alternate_functions: [AIN9] }
+  "8":  { name: PB3, type: io }
+  "9":  { name: PB2, type: io, alternate_functions: [EVOUT1] }
+  "10": { name: PB1, type: io, alternate_functions: [AIN10] }
+  "11": { name: PB0, type: io, alternate_functions: [AIN11] }
+  "12": { name: PC0, type: io }
+  "13": { name: PC1, type: io }
+  "14": { name: PC2, type: io, alternate_functions: [EVOUT2] }
+  "15": { name: PC3, type: io }
+  "16": { name: PA0, type: io, alternate_functions: [RESET, UPDI, AIN0] }
+  "17": { name: PA1, type: io, alternate_functions: [AIN1] }
+  "18": { name: PA2, type: io, alternate_functions: [EVOUT0, AIN2] }
+  "19": { name: PA3, type: io, alternate_functions: [EXTCLK, AIN3] }
+  "20": { name: GND, type: ground }
