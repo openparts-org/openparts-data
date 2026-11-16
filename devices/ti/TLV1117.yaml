@@ -1,0 +1,32 @@
+# TLV1117 800-mA LDO, adjustable-output option (TLV1117C/I without a
+# voltage code). Pins from SLVS561O Table 4-1 "Pin Functions", DCY
+# column (page 3): ADJ/GND 1, INPUT (VIN) 3, OUTPUT (VOUT) 2. Figure 4-1
+# (DCY top view, rendered page 3) labels the tab OUTPUT; outline
+# DCY0004A numbers the tab "4" (see the reused package), so pin 4 is
+# VOUT. Pin 1 on this adjustable device is the ADJ input (typed analog).
+# The DRJ (WSON) and KTT/KCS/KVU maps are not covered.
+schema_version: "0.2"
+kind: device
+id: ti/TLV1117
+manufacturer: ti
+category: linear_regulator
+family: TLV1117
+source: ti/SLVS561O
+
+parameters:
+  output_type:
+    value: adjustable
+    src: 'p3 "Table 4-1. Pin Functions, ADJ/GND: adjust pin for adjustable output option"'
+  input_voltage_max:
+    max: 15 V
+    src: p5 "5.3 Recommended Operating Conditions, VIN, TLV1117 row"
+  output_current: { max: 0.8 A, src: 'p5 "5.3 Recommended Operating Conditions, IOUT"' }
+
+pins:
+  src:
+    - p3 "Table 4-1. Pin Functions, DCY column"
+    - p3 "Figure 4-1. DCY Package, 4-Pin SOT (Top View), tab labelled OUTPUT"
+  "1": { name: ADJ/GND, type: analog }
+  "2": { name: VOUT, type: power }
+  "3": { name: VIN, type: power }
+  "4": { name: VOUT, type: power }

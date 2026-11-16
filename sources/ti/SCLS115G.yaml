@@ -1,0 +1,16 @@
+# Official TI datasheet "SNx4HC164 8-Bit Parallel-Out Serial Shift Registers". Downloaded 2026-11-16 with curl
+# from the TI symlink URL below; revision read from the page header
+# (SCLS115G, revised 2015-09). 38 PDF pages; text read with pdftotext
+# -layout. Page numbers in this dataset are PDF page indices. The
+# PACKAGE OPTION ADDENDUM at the end of the PDF is dated 23-Oct-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS115G
+sha256: 9fb5ac3094f33119f44552cabb5ef3a1bba4ff86556f1602ea02301b8db79a2c
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/sn74hc164.pdf
+publisher: ti
+document_id: SCLS115G
+document_type: datasheet
+revision: G
+date: 2015-09

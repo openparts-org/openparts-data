@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCLS378P PDF page 13, addendum dated 23-Oct-2026): row "SN74AHCT1G125DBVR",
+# "SOT-23 (DBV) | 5". lifecycle "active" is that table's Status column.
+# Package: outline DBV0005A (4214839/K) on page 17; same drawing number and revision as the reused package, and every dimension recorded there is printed on this page (checked against the pdftotext text).
+schema_version: "0.2"
+kind: part
+id: ti/SN74AHCT1G125DBVR
+manufacturer: ti
+mpn: SN74AHCT1G125DBVR
+device: ti/SN74AHCT1G125
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src:
+    - p13 "Package Option Addendum, row SN74AHCT1G125DBVR, SOT-23 (DBV) | 5"
+    - p17 "PACKAGE OUTLINE DBV0005A (4214839/K)"
+
+sources: [ti/SCLS378P]
+source: ti/SCLS378P
+
+existence:
+  status: verified
+  src: p13 "Package Option Addendum, Packaging Information table, row SN74AHCT1G125DBVR"
+
+lifecycle:
+  status: active
+  src: p13 "Package Option Addendum, row SN74AHCT1G125DBVR, Status Active"

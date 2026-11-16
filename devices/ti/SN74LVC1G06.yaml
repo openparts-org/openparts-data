@@ -1,0 +1,23 @@
+# Single inverter with open-drain output SN74LVC1G06, 5-pin pin map of
+# the DBV (SOT-23), DCK (SC70) and DRL (SOT-5X3) packages from Table
+# 4-1 "Pin Functions" (SCES295AB page 3), column "DBV, DCK, DRL, DPW":
+# NC 1, A 2, GND 3, Y 4, VCC 5; checked against Figures 4-1, 4-2 and
+# 4-3 (same page). The 6-pin DRY/DSF and the DSBGA maps differ and are
+# not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN74LVC1G06
+manufacturer: ti
+category: logic
+family: SN74LVC1G06
+source: ti/SCES295AB
+
+pins:
+  src:
+    - p3 "Table 4-1. Pin Functions, column DBV, DCK, DRL, DPW"
+    - p3 "Figures 4-1 (DBV), 4-2 (DRL), 4-3 (DCK) Top View (cross-check)"
+  "1": { name: NC, type: nc }
+  "2": { name: A, type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: Y, type: output }
+  "5": { name: VCC, type: power }

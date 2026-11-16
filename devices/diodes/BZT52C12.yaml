@@ -1,0 +1,31 @@
+# 12V (VZ nominal) 500mW Zener diode, SOD123 -- type number and VZ
+# from the DS18004 page-2 Electrical Characteristics row "BZT52C12".
+# Polarity from the page-1 Mechanical Data ("Polarity: Cathode Band").
+# The datasheet names the terminals only by the cathode band and
+# prints no pin numbers: numbered in the generator's position
+# convention (pin 1 at -X), cathode = 1, anode = 2 (as diodes/MMSZ5242B).
+schema_version: "0.2"
+kind: device
+id: diodes/BZT52C12
+manufacturer: diodes
+category: diode
+family: BZT52Cxx
+source: diodes/DS18004
+
+parameters:
+  forward_voltage:
+    max: 0.9 V
+    at: { IF: 10 mA }
+    src: p2 "Maximum Ratings, Forward Voltage VF"
+  zener_voltage:
+    min: 11.4 V
+    typ: 12 V
+    max: 12.7 V
+    at: { IZT: 5 mA }
+    src: p2 "Electrical Characteristics, BZT52C12 row, VZ @ IZT Nom/Min/Max (Note 10)"
+  zener_test_current: { typ: 5 mA, src: 'p2 "Electrical Characteristics, BZT52C12 row, IZT"' }
+
+pins:
+  src: 'p1 "Mechanical Data: Polarity: Cathode Band; numbering by generator convention, see header"'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

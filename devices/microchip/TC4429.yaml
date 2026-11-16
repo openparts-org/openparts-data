@@ -1,0 +1,28 @@
+# TC4429: 6 A single-output inverting MOSFET driver. Pin map from Table 3-1
+# "PIN FUNCTION TABLE" (DS21419D page 8), column "8-Pin CERDIP/PDIP/SOIC",
+# cross-checked with "Package Types" on page 1 (8-Pin CERDIP/PDIP/SOIC,
+# TC4429 column). Package Types note 1: duplicate pins (VDD 1/8, GND 4/5,
+# OUTPUT 6/7) must both be connected. The 8-pin DFN (exposed pad) and
+# 5-pin TO-220 maps are not covered. OUTPUT (6, 7) typed power_out so
+# the duplicate name is allowed (as MIC4422 types its OUT pins power);
+# flagged for review.
+schema_version: "0.2"
+kind: device
+id: microchip/TC4429
+manufacturer: microchip
+category: gate_driver
+family: TC4420/TC4429
+source: microchip/DS21419@revD
+
+pins:
+  src:
+    - p8 "Table 3-1 PIN FUNCTION TABLE, column 8-Pin CERDIP/PDIP/SOIC"
+    - p1 "Package Types, 8-Pin CERDIP/PDIP/SOIC, TC4429 column (cross-check)"
+  "1": { name: VDD, type: power }
+  "2": { name: INPUT, type: input }
+  "3": { name: NC, type: nc }
+  "4": { name: GND, type: ground }
+  "5": { name: GND, type: ground }
+  "6": { name: OUTPUT, type: power_out }
+  "7": { name: OUTPUT, type: power_out }
+  "8": { name: VDD, type: power }

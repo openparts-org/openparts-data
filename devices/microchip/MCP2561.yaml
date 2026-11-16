@@ -1,0 +1,26 @@
+# High-speed CAN transceiver with SPLIT pin (MCP2561), PDIP/SOIC pin map
+# from Table 1-2 "MCP2561/2 Pinout", column "MCP2561 PDIP, SOIC"
+# (DS20005167C page 4), checked against the "Package Types" MCP2561
+# PDIP, SOIC figure (page 1); all 8 pins match. The 3x3 DFN adds EP 9
+# and is not covered. SPLIT ("Common Mode Stabilization") typed output
+# as nxp/TJA1042's SPLIT; STBY ("Standby Mode Input") input.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP2561
+manufacturer: microchip
+category: can_transceiver
+family: MCP2561/2
+source: microchip/DS20005167@revC
+
+pins:
+  src:
+    - p4 "Table 1-2 MCP2561/2 Pinout, column MCP2561 PDIP, SOIC"
+    - p1 "Package Types figure, MCP2561 PDIP, SOIC (cross-check)"
+  "1": { name: TXD, type: input }
+  "2": { name: VSS, type: ground }
+  "3": { name: VDD, type: power }
+  "4": { name: RXD, type: output }
+  "5": { name: SPLIT, type: output }
+  "6": { name: CANL, type: io }
+  "7": { name: CANH, type: io }
+  "8": { name: STBY, type: input }

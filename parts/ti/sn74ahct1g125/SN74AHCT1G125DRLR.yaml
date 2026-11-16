@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCLS378P PDF page 13, addendum dated 23-Oct-2026): row "SN74AHCT1G125DRLR",
+# "SOT-5X3 (DRL) | 5". lifecycle "active" is that table's Status column.
+# Package: outline DRL0005A (4220753/E) on page 20; same drawing number and revision as the reused package, and every dimension recorded there is printed on this page (checked against the pdftotext text).
+schema_version: "0.2"
+kind: part
+id: ti/SN74AHCT1G125DRLR
+manufacturer: ti
+mpn: SN74AHCT1G125DRLR
+device: ti/SN74AHCT1G125
+
+package:
+  value: manufacturers/ti/DRL0005A
+  src:
+    - p13 "Package Option Addendum, row SN74AHCT1G125DRLR, SOT-5X3 (DRL) | 5"
+    - p20 "PACKAGE OUTLINE DRL0005A (4220753/E)"
+
+sources: [ti/SCLS378P]
+source: ti/SCLS378P
+
+existence:
+  status: verified
+  src: p13 "Package Option Addendum, Packaging Information table, row SN74AHCT1G125DRLR"
+
+lifecycle:
+  status: active
+  src: p13 "Package Option Addendum, row SN74AHCT1G125DRLR, Status Active"

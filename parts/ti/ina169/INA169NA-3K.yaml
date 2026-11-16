@@ -1,0 +1,25 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SBOS181F PDF page 21, addendum dated 10-Nov-2025): row "INA169NA/3K",
+# "SOT-23 (DBV) | 5". lifecycle "active" is that table's Status column.
+# Package: outline DBV0005A (4214839/K) on page 25; same drawing number and revision as the reused package, and every dimension recorded there is printed on this page (checked against the pdftotext text).
+schema_version: "0.2"
+kind: part
+id: ti/INA169NA-3K
+manufacturer: ti
+mpn: INA169NA/3K
+device: ti/INA169-DBV
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src:
+    - p21 "Package Option Addendum, row INA169NA/3K, SOT-23 (DBV) | 5"
+    - p25 "PACKAGE OUTLINE DBV0005A (4214839/K)"
+
+sources: [ti/SBOS181F]
+source: ti/SBOS181F
+
+existence:
+  status: verified
+  src: p21 "Package Option Addendum, Packaging Information table, row INA169NA/3K"
+
+lifecycle: { status: active, src: 'p21 "Package Option Addendum, row INA169NA/3K, Status Active"' }

@@ -1,0 +1,18 @@
+# Official TI datasheet "TLV1117 Adjustable and Fixed Low-Dropout Voltage
+# Regulator". Downloaded 2026-11-16 with curl from the TI symlink URL
+# below; revision read from the page header (SLVS561O, revised June
+# 2025). 56 PDF pages; text read with pdftotext -layout, pin page
+# checked on the rendered page. Page numbers in this dataset are PDF
+# page indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is
+# dated 24-Mar-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SLVS561O
+sha256: e01707efdfe640bbbc96a8294c1e60b7b2dbd8a8159e32970896ab1afd1298d7
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tlv1117.pdf
+publisher: ti
+document_id: SLVS561O
+document_type: datasheet
+revision: O
+date: 2025-06

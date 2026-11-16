@@ -1,0 +1,20 @@
+# High-side current shunt monitor INA169 (current output), DBV
+# (SOT-23-5) pin map from the "Pin Functions" table (SBOS181F page 3):
+# OUT 1, GND 2, VIN+ 3, VIN- 4, V+ 5, checked against the DBV top-view
+# figure (same page). INA139 (ti/INA139-DBV) shares this pin map. Minus
+# sign written as ASCII "-".
+schema_version: "0.2"
+kind: device
+id: ti/INA169-DBV
+manufacturer: ti
+category: current_sense_amplifier
+family: INA1x9
+source: ti/SBOS181F
+
+pins:
+  src: [p3 "Pin Functions table", p3 "DBV Package 5-Pin SOT-23 Top View"]
+  "1": { name: OUT, type: analog }
+  "2": { name: GND, type: ground }
+  "3": { name: VIN+, type: analog }
+  "4": { name: VIN-, type: analog }
+  "5": { name: V+, type: power }

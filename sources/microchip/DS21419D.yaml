@@ -1,0 +1,20 @@
+# Official Microchip datasheet "TC4420/TC4429 6A High-Speed MOSFET
+# Drivers", 22 pages. Downloaded 2026-11-16 with curl from
+# ww1.microchip.com (URL below); the Microchip product page
+# (microchip.com/en-us/product/TC4420) returned 403 to curl, so this may
+# not be the newest revision. document_id/revision from the printed
+# footer "DS21419D-page N"; date from "6.0 Revision History, Revision D
+# (December 2012)" (page 17). PDF page index = printed page number.
+# Text read with pdftotext -layout; the PDIP (C04-018, page 15) and SOIC
+# (C04-057, page 16) drawing pages were also rendered and read.
+schema_version: "0.2"
+kind: source
+id: microchip/DS21419@revD
+sha256: 1513714315f0665cfd8e7a33dfc9b634718755434f91254c78b99c7fae1e6a14
+retrieved: 2026-11-16
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/21419D.pdf
+publisher: microchip
+document_id: DS21419
+document_type: datasheet
+revision: D
+date: 2012-12

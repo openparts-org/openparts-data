@@ -1,0 +1,22 @@
+# Single bus buffer with 3-state output SN74AHCT1G125, 5-pin pin map
+# of the DBV, DCK and DRL packages from Table 4-1 "Pin Functions"
+# (SCLS378P page 3), checked against the DBV/DCK/DRL top-view figures
+# on the rendered page (same page; all three identical). OE is active
+# low (overbar; written without it).
+schema_version: "0.2"
+kind: device
+id: ti/SN74AHCT1G125
+manufacturer: ti
+category: logic
+family: SN74AHCT1G125
+source: ti/SCLS378P
+
+pins:
+  src:
+    - p3 "Table 4-1. Pin Functions"
+    - p3 "DBV, DCK and DRL PACKAGE (TOP VIEW) figures (cross-check)"
+  "1": { name: OE, type: input }
+  "2": { name: A, type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: Y, type: output }
+  "5": { name: VCC, type: power }

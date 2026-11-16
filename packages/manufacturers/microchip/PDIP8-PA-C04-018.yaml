@@ -1,0 +1,61 @@
+# 8-lead 300 mil plastic DIP (Microchip package code PA), drawing
+# "C04-018" (no revision letter printed), "8-Lead Plastic Dual In-line
+# (PA) - 300 mil (PDIP)", DS21419D page 15 (rendered and read; the table
+# also extracts as text). The controlling unit is inches ("* Controlling
+# Parameter"); the table also prints a MILLIMETERS column, and those
+# printed millimetre values are recorded as printed. JEDEC equivalent
+# MS-001 per its notes.
+#
+# Not manufacturers/microchip/PDIP8-PA-C04-018D (D .348/.365/.400 in)
+# nor standards/DIP8-W7.62-P2.54 (Atmel 8P3): this older C04-018 prints
+# D 9.14/9.46/9.78 mm, A2 2.92/3.30/3.68 mm, so it is a separate package.
+# body_width (the `dip` generator's ROW SPACING) = 7.62 mm: the table has
+# no eA (lead row spacing) row -- only E shoulder-to-shoulder
+# 7.62/7.94/8.26 and eB 7.87/9.40/10.92 -- so 7.62 mm is the "300 mil" of
+# the drawing title and of the ordering legend "PA = Plastic DIP (300 mil
+# Body), 8-lead" (page 19), the same reading as
+# manufacturers/microchip/PDIP8-PA-C04-018D. Flagged for review. E1,
+# B1, eB and L (tip to seating plane, not a gull-wing foot) are not
+# modelled.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/PDIP8-PA-C04-018
+family: dip
+lead_count: 8
+source: microchip/DS21419@revD
+
+pitch: { typ: 2.54 mm, src: 'p15 "C04-018 table, Pitch p, MILLIMETERS NOM 2.54"' }
+geometry: { type: parametric, generator: dip }
+
+dimensions:
+  body_width:
+    typ: 7.62 mm
+    src:
+      - p15 "C04-018 title (PA) - 300 mil (PDIP) -> 7.62 mm row spacing (no eA row in the table)"
+      - p19 "Product Identification System, PA = Plastic DIP (300 mil Body), 8-lead"
+  body_length:
+    min: 9.14 mm
+    typ: 9.46 mm
+    max: 9.78 mm
+    src: p15 "C04-018 table, Overall Length D (mm)"
+  body_height:
+    min: 2.92 mm
+    typ: 3.3 mm
+    max: 3.68 mm
+    src: p15 "C04-018 table, Molded Package Thickness A2 (mm)"
+  lead_thickness:
+    min: 0.2 mm
+    typ: 0.29 mm
+    max: 0.38 mm
+    src: p15 "C04-018 table, Lead Thickness c (mm)"
+  overall_height:
+    min: 3.56 mm
+    typ: 3.94 mm
+    max: 4.32 mm
+    src: p15 "C04-018 table, Top to Seating Plane A (mm)"
+  standoff: { min: 0.38 mm, src: 'p15 "C04-018 table, Base to Seating Plane A1 (mm, MIN only)"' }
+  lead_width:
+    min: 0.36 mm
+    typ: 0.46 mm
+    max: 0.56 mm
+    src: p15 "C04-018 table, Lower Lead Width B (mm)"

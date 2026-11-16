@@ -1,0 +1,26 @@
+# Half-duplex RS-485 transceiver SN65HVD3082E (SN75HVD3082E, the
+# 0..70 C grade, shares the pin map), 8-pin D/P/DGK pin map from Table
+# 5-1 "Pin Functions" (SLLS562O page 4), checked against Figure 5-1
+# (same page). RE is active low (overbar; written without it). A/B "Bus
+# input/output" typed io. The SN65HVD3085E/3088E share the datasheet
+# but are not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN65HVD3082E
+manufacturer: ti
+category: rs485_transceiver
+family: SNx5HVD308xE
+source: ti/SLLS562O
+
+pins:
+  src:
+    - p4 "Table 5-1. Pin Functions"
+    - p4 "Figure 5-1, D, P and DGK packages 8-pin top view (cross-check)"
+  "1": { name: R, type: output }
+  "2": { name: RE, type: input }
+  "3": { name: DE, type: input }
+  "4": { name: D, type: input }
+  "5": { name: GND, type: ground }
+  "6": { name: A, type: io }
+  "7": { name: B, type: io }
+  "8": { name: VCC, type: power }

@@ -1,0 +1,26 @@
+# TC4420EPA: TC4420, temperature range E (-40 C to +85 C), package PA.
+# existence: probable -- the MPN is assembled from the part-numbering
+# legend in the "PRODUCT IDENTIFICATION SYSTEM" (DS21419D page 19), not
+# an orderable list; the Microchip product page (which lists orderable
+# codes) returned 403 to curl.
+# Package: PA -> drawing C04-018 (page 15) of the same datasheet.
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/TC4420EPA
+manufacturer: microchip
+mpn: TC4420EPA
+device: microchip/TC4420
+
+package:
+  value: manufacturers/microchip/PDIP8-PA-C04-018
+  src: p19 "PRODUCT IDENTIFICATION SYSTEM, Package PA = Plastic DIP (300 mil Body), 8-lead"
+
+sources: [microchip/DS21419@revD]
+source: microchip/DS21419@revD
+
+existence:
+  status: probable
+  src: 'p19 "PRODUCT IDENTIFICATION SYSTEM, assembled from the legend: Device TC4420 + Temperature E + Package PA"'
+
+lifecycle: { status: unknown }

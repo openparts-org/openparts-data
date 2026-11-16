@@ -1,0 +1,23 @@
+# Dual low-noise op amp NE5532 / NE5532A (SA5532 / SA5532A share the
+# pin map), 8-pin D/P/PS pin map from the "Pin Functions" table
+# (SLOS075K page 2), checked against Figure 4-1 (same page). Pin 1: the
+# figure prints "1OUT", the table "OUT1"; recorded as 1OUT (figure,
+# consistent with 2OUT). Minus signs written as ASCII "-".
+schema_version: "0.2"
+kind: device
+id: ti/NE5532
+manufacturer: ti
+category: op_amp
+family: NE5532
+source: ti/SLOS075K
+
+pins:
+  src: [p2 "Pin Functions table", 'p2 "Figure 4-1, NE5532x D/P/PS 8-pin top view (cross-check)"']
+  "1": { name: 1OUT, type: analog }
+  "2": { name: 1IN-, type: analog }
+  "3": { name: 1IN+, type: analog }
+  "4": { name: VCC-, type: power }
+  "5": { name: 2IN+, type: analog }
+  "6": { name: 2IN-, type: analog }
+  "7": { name: 2OUT, type: analog }
+  "8": { name: VCC+, type: power }

@@ -1,0 +1,24 @@
+# ES1J-13-F: printed verbatim in the page-1 Ordering Information table
+# of DS39406 (Commercial, SMA, 5000/Tape & Reel).
+# Package: manufacturers/diodes/SMA-DS13002: the DS39406 page-4 SMA
+# outline table (A, B, C, D, E, G, H, J Min/Max; J 1.96-2.40) equals the
+# reused package's DS13002 table row for row (each printed value compared
+# with the package file).
+# The datasheet pages carry an "ADVANCED INFORMATION" label; no other
+# lifecycle statement, so lifecycle unknown (flagged for review).
+schema_version: "0.2"
+kind: part
+id: diodes/ES1J-13-F
+manufacturer: diodes
+mpn: ES1J-13-F
+device: diodes/ES1J
+
+package:
+  value: manufacturers/diodes/SMA-DS13002
+  src: p4 "Package Outline Dimensions, SMA table"
+
+sources: [diodes/DS39406, diodes/DS13002]
+source: diodes/DS39406
+
+existence: { status: verified, src: 'p1 "Ordering Information, row ES1J-13-F"' }
+lifecycle: { status: unknown }

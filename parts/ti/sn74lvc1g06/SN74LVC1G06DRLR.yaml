@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCES295AB PDF page 17, addendum dated 24-Oct-2026): row "SN74LVC1G06DRLR",
+# "SOT-5X3 (DRL) | 5". lifecycle "active" is that table's Status column.
+# Package: outline DRL0005A (4220753/E) on page 45; same drawing number and revision as the reused package, and every dimension recorded there is printed on this page (checked against the pdftotext text).
+schema_version: "0.2"
+kind: part
+id: ti/SN74LVC1G06DRLR
+manufacturer: ti
+mpn: SN74LVC1G06DRLR
+device: ti/SN74LVC1G06
+
+package:
+  value: manufacturers/ti/DRL0005A
+  src:
+    - p17 "Package Option Addendum, row SN74LVC1G06DRLR, SOT-5X3 (DRL) | 5"
+    - p45 "PACKAGE OUTLINE DRL0005A (4220753/E)"
+
+sources: [ti/SCES295AB]
+source: ti/SCES295AB
+
+existence:
+  status: verified
+  src: p17 "Package Option Addendum, Packaging Information table, row SN74LVC1G06DRLR"
+
+lifecycle:
+  status: active
+  src: p17 "Package Option Addendum, row SN74LVC1G06DRLR, Status Active"

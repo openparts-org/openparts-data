@@ -1,0 +1,26 @@
+# Single rail-to-rail CMOS op amp OPA350, 8-pin pin map (P, D and DGK
+# packages) from the "Pin Functions" table, column "OPA350" (SBOS099D
+# page 3), checked against the "OPA350: P, D, and DGK Packages" top view
+# (same page). NC on 1, 5, 8 ("No internal connection"). The
+# OPA2350/OPA4350 maps differ and are not covered. Minus signs written
+# as ASCII "-".
+schema_version: "0.2"
+kind: device
+id: ti/OPA350
+manufacturer: ti
+category: op_amp
+family: OPAx350
+source: ti/SBOS099D
+
+pins:
+  src:
+    - p3 "Pin Functions table, column OPA350"
+    - p3 "OPA350 P, D, and DGK Packages 8-pin top view (cross-check)"
+  "1": { name: NC, type: nc }
+  "2": { name: -IN, type: analog }
+  "3": { name: +IN, type: analog }
+  "4": { name: V-, type: power }
+  "5": { name: NC, type: nc }
+  "6": { name: OUT, type: analog }
+  "7": { name: V+, type: power }
+  "8": { name: NC, type: nc }

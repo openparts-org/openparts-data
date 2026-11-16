@@ -1,0 +1,27 @@
+# BZT52C5V1-7-F: assembled from the ordering pattern "(Type Number)-7-F" (DS18004
+# page 1, Ordering Information) and the page-2 type-number row --
+# probable, not printed as an orderable line.
+# Package: manufacturers/diodes/SOD123-2.65x1.55-DS30139: the DS18004 page-4 SOD123
+# outline table (A, A1, b, c, D, E, He, L Min/Max/Typ) equals the reused
+# package's DS30139 table row for row (each printed value compared
+# with the package file).
+# No lifecycle statement in the datasheet: lifecycle unknown.
+schema_version: "0.2"
+kind: part
+id: diodes/BZT52C5V1-7-F
+manufacturer: diodes
+mpn: BZT52C5V1-7-F
+device: diodes/BZT52C5V1
+
+package:
+  value: manufacturers/diodes/SOD123-2.65x1.55-DS30139
+  src: p4 "Package Outline Dimensions, SOD123 table"
+
+sources: [diodes/DS18004, diodes/DS30139]
+source: diodes/DS18004
+
+existence:
+  status: probable
+  src: p1 "Ordering Information, row (Type Number)-7-F; type number from p2 Electrical Characteristics"
+
+lifecycle: { status: unknown }

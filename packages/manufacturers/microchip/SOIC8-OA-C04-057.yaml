@@ -1,0 +1,71 @@
+# 8-lead narrow SOIC (Microchip package code OA), drawing "C04-057" (no
+# revision letter printed), "8-Lead Plastic Small Outline (OA) - Narrow,
+# 150 mil (SOIC)", DS21419D page 16 (rendered and read; the table also
+# extracts as text). The drawing's controlling unit is inches ("*
+# Controlling Parameter" on INCHES); the table also prints a MILLIMETERS
+# column, and those printed millimetre values are recorded here as
+# printed (no conversion). JEDEC equivalent MS-012 per its notes.
+#
+# Not standards/SOIC8-3.90x4.90-P1.27 (C04-057-SN Rev D, BSC body
+# values): this older revision prints MIN/NOM/MAX ranges (E1
+# 3.71/3.91/3.99, D 4.80/4.90/5.00, c 0.20/0.23/0.25, ...), so it is a
+# separate package. body_width = E1 (molded width), body_length = D,
+# body_height = A2, overall_width = E, overall_height = A, standoff =
+# A1, lead_length = L (foot length), lead_width = B, lead_thickness = c.
+# Chamfer h and the angles are not modelled.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/SOIC8-OA-C04-057
+family: soic
+lead_count: 8
+source: microchip/DS21419@revD
+
+pitch: { typ: 1.27 mm, src: 'p16 "C04-057 table, Pitch p, MILLIMETERS NOM 1.27"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 3.71 mm
+    typ: 3.91 mm
+    max: 3.99 mm
+    src: p16 "C04-057 table, Molded Package Width E1 (mm)"
+  body_length:
+    min: 4.8 mm
+    typ: 4.9 mm
+    max: 5 mm
+    src: p16 "C04-057 table, Overall Length D (mm)"
+  body_height:
+    min: 1.32 mm
+    typ: 1.42 mm
+    max: 1.55 mm
+    src: p16 "C04-057 table, Molded Package Thickness A2 (mm)"
+  lead_thickness:
+    min: 0.2 mm
+    typ: 0.23 mm
+    max: 0.25 mm
+    src: p16 "C04-057 table, Lead Thickness c (mm)"
+  overall_width:
+    min: 5.79 mm
+    typ: 6.02 mm
+    max: 6.2 mm
+    src: p16 "C04-057 table, Overall Width E (mm)"
+  overall_height:
+    min: 1.35 mm
+    typ: 1.55 mm
+    max: 1.75 mm
+    src: p16 "C04-057 table, Overall Height A (mm)"
+  standoff:
+    min: 0.1 mm
+    typ: 0.18 mm
+    max: 0.25 mm
+    src: p16 "C04-057 table, Standoff A1 (mm)"
+  lead_width:
+    min: 0.33 mm
+    typ: 0.42 mm
+    max: 0.51 mm
+    src: p16 "C04-057 table, Lead Width B (mm)"
+  lead_length:
+    min: 0.48 mm
+    typ: 0.62 mm
+    max: 0.76 mm
+    src: p16 "C04-057 table, Foot Length L (mm)"

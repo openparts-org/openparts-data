@@ -1,0 +1,28 @@
+# 1.0A 600V super-fast rectifier, SMA (DS39406). Polarity from the
+# page-1 Mechanical Data ("Polarity: Cathode Band or Cathode Notch").
+# The datasheet names the terminals only by the cathode band and prints
+# no pin numbers: numbered in the generator's position convention (pin 1
+# at -X), cathode = 1, anode = 2 (as diodes/S1J).
+schema_version: "0.2"
+kind: device
+id: diodes/ES1J
+manufacturer: diodes
+category: diode
+family: ES1J
+source: diodes/DS39406
+
+parameters:
+  forward_voltage:
+    max: 1.3 V
+    at: { IF: 1 A }
+    src: p2 "Electrical Characteristics, Maximum Forward Voltage Drop VFM"
+  reverse_voltage: { max: 600 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR"' }
+  forward_current:
+    max: 1 A
+    at: { TT: 110 °C }
+    src: p2 "Maximum Ratings, Average Rectified Output Current IO"
+
+pins:
+  src: 'p1 "Mechanical Data: Polarity: Cathode Band or Cathode Notch; numbering by generator convention, see header"'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

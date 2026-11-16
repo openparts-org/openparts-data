@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCES295AB PDF page 16, addendum dated 24-Oct-2026): row "SN74LVC1G06DCKR",
+# "SC70 (DCK) | 5". lifecycle "active" is that table's Status column.
+# Package: outline DCK0005A (4214834/G) on page 32; the package manufacturers/ti/DCK0005A was read from this page.
+schema_version: "0.2"
+kind: part
+id: ti/SN74LVC1G06DCKR
+manufacturer: ti
+mpn: SN74LVC1G06DCKR
+device: ti/SN74LVC1G06
+
+package:
+  value: manufacturers/ti/DCK0005A
+  src:
+    - p16 "Package Option Addendum, row SN74LVC1G06DCKR, SC70 (DCK) | 5"
+    - p32 "PACKAGE OUTLINE DCK0005A (4214834/G)"
+
+sources: [ti/SCES295AB]
+source: ti/SCES295AB
+
+existence:
+  status: verified
+  src: p16 "Package Option Addendum, Packaging Information table, row SN74LVC1G06DCKR"
+
+lifecycle:
+  status: active
+  src: p16 "Package Option Addendum, row SN74LVC1G06DCKR, Status Active"

@@ -1,0 +1,31 @@
+# 8-bit serial-in parallel-out shift register SN74HC164, 14-pin pin map
+# (D, N, NS, J, W, PW) from the "Pin Functions" table (SCLS115G page 4),
+# checked against the 14-pin top-view figure (same page). CLR is active
+# low (overbar in the datasheet; written without it). The FK (LCCC) map
+# on page 5 differs and is not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN74HC164
+manufacturer: ti
+category: logic
+family: SNx4HC164
+source: ti/SCLS115G
+
+pins:
+  src:
+    - p4 "Pin Functions table, column SOIC, PDIP, SO, CDIP, CFP, or TSSOP NO."
+    - p4 "D, N, NS, J, W, or PW Package 14-Pin Top View (cross-check)"
+  "1":  { name: A, type: input }
+  "2":  { name: B, type: input }
+  "3":  { name: QA, type: output }
+  "4":  { name: QB, type: output }
+  "5":  { name: QC, type: output }
+  "6":  { name: QD, type: output }
+  "7":  { name: GND, type: ground }
+  "8":  { name: CLK, type: clock }
+  "9":  { name: CLR, type: reset }
+  "10": { name: QE, type: output }
+  "11": { name: QF, type: output }
+  "12": { name: QG, type: output }
+  "13": { name: QH, type: output }
+  "14": { name: VCC, type: power }

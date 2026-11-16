@@ -1,0 +1,25 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SBOS099D PDF page 27, addendum dated 14-Nov-2026): row "OPA350UA/2K5",
+# "SOIC (D) | 8". lifecycle "active" is that table's Status column.
+# Package: outline D0008A (4214825/C) on page 35; same drawing number and revision as the reused package, and every dimension recorded there is printed on this page (checked against the pdftotext text).
+schema_version: "0.2"
+kind: part
+id: ti/OPA350UA-2K5
+manufacturer: ti
+mpn: OPA350UA/2K5
+device: ti/OPA350
+
+package:
+  value: manufacturers/ti/D0008A
+  src:
+    - p27 "Package Option Addendum, row OPA350UA/2K5, SOIC (D) | 8"
+    - p35 "PACKAGE OUTLINE D0008A (4214825/C)"
+
+sources: [ti/SBOS099D]
+source: ti/SBOS099D
+
+existence:
+  status: verified
+  src: p27 "Package Option Addendum, Packaging Information table, row OPA350UA/2K5"
+
+lifecycle: { status: active, src: 'p27 "Package Option Addendum, row OPA350UA/2K5, Status Active"' }

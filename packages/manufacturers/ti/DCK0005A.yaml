@@ -1,0 +1,67 @@
+# TI DCK0005A "SOT - 1.1 max height" (5-lead SC70; drawing 4214834/G
+# 11/2024, note 3: JEDEC MO-203), read from the rendered outline page
+# of ti/SCES295AB (PDF page 32) and its EXAMPLE BOARD LAYOUT page (page
+# 33). ti/SCLS378P pages 23-24 carry the same drawing revision (identical
+# pdftotext text). Millimetres as printed, ranges only (no nominal).
+#
+# Top view: leads 1, 2, 3 down the left edge ("2X 0.65" basic, "1.3"
+# basic pin 1 to pin 3), 5 opposite 1 and 4 opposite 3 on the right
+# edge -- the generator's [3, 2] layout. Note 4: a support pin opposite
+# pin 2 "may differ or may not be present"; it is not a terminal, has no
+# land in the land pattern and is not recorded.
+# Field mapping as for manufacturers/ti/DBV0005A: body_width = "2.15 /
+# 1.85" (body along the rows, datum A), body_length = "1.4 / 1.1"
+# (molded width across the rows, datum B), overall_length = "2.4 / 1.8"
+# (lead-tip span). Only "1.1 MAX" is given for the height (no A2):
+# recorded as overall_height max. "(0.9)" is a reference value, not
+# recorded.
+# Land pattern: page 33 "LAND PATTERN EXAMPLE" (all values in
+# parentheses, reference values per note 1), recorded in `pads`.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DCK0005A
+family: sot
+lead_count: 5
+
+lead_layout:
+  value: [3, 2]
+  src:   'p32 "DCK0005A top view: leads 1, 2, 3 on the left edge, 5 and 4 on the right edge opposite 1 and 3"'
+
+source: ti/SCES295AB
+
+pitch:
+  typ: 0.65 mm
+  src: p32 "PACKAGE OUTLINE DCK0005A (4214834/G), "2X 0.65" basic; "1.3" basic pin 1 to pin 3"
+
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:
+    min: 1.85 mm
+    max: 2.15 mm
+    src: p32 "DCK0005A, body "2.15 / 1.85" along the rows (datum A)"
+  body_length:
+    min: 1.1 mm
+    max: 1.4 mm
+    src: p32 "DCK0005A, body "1.4 / 1.1" across the rows (datum B)"
+  lead_thickness:
+    min: 0.08 mm
+    max: 0.22 mm
+    src: p32 "DCK0005A lead detail, "0.22 / 0.08 TYP""
+  lead_length: { min: 0.26 mm, max: 0.46 mm, src: 'p32 "DCK0005A lead detail, "0.46 / 0.26 TYP""' }
+  overall_length:
+    min: 1.8 mm
+    max: 2.4 mm
+    src: p32 "DCK0005A top view, lead-tip span "2.4 / 1.8""
+  overall_height: { max: 1.1 mm, src: 'p32 "DCK0005A side view, "1.1 MAX""' }
+  standoff:       { min: 0 mm, max: 0.1 mm, src: 'p32 "DCK0005A side view, "0.1 / 0.0 TYP""' }
+  lead_width:     { min: 0.15 mm, max: 0.33 mm, src: 'p32 "DCK0005A, "5X 0.33 / 0.15" (note 5)"' }
+
+pads:
+  value:
+    - { number: "1", x: -1.1, y: 0.65, width: 0.95, length: 0.4 }
+    - { number: "2", x: -1.1, y: 0, width: 0.95, length: 0.4 }
+    - { number: "3", x: -1.1, y: -0.65, width: 0.95, length: 0.4 }
+    - { number: "4", x: 1.1, y: -0.65, width: 0.95, length: 0.4 }
+    - { number: "5", x: 1.1, y: 0.65, width: 0.95, length: 0.4 }
+  src: p33 "DCK0005A LAND PATTERN EXAMPLE (ref.), 5X (0.95)x(0.4), x = ±(2.2)/2 = ±1.1, y from 2X (0.65)"

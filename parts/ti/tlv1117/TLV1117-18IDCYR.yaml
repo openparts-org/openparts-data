@@ -1,0 +1,30 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SLVS561O PDF page 31, addendum dated 24-Mar-2026): row "TLV1117-18IDCYR",
+# "SOT-223 (DCY) | 4". lifecycle "active" is that table's Status column.
+# Package: outline DCY0004A (4214843/C 05/2026) on page 47; same drawing
+# number and revision as the reused package, and every dimension
+# recorded there is printed on this page (checked against the pdftotext
+# text).
+schema_version: "0.2"
+kind: part
+id: ti/TLV1117-18IDCYR
+manufacturer: ti
+mpn: TLV1117-18IDCYR
+device: ti/TLV1117-18
+
+package:
+  value: standards/SOT223-3.5x6.5-P2.3-TabPin4-TI-DCY
+  src:
+    - p31 "Package Option Addendum, row TLV1117-18IDCYR, SOT-223 (DCY) | 4"
+    - p47 "PACKAGE OUTLINE DCY0004A (4214843/C)"
+
+sources: [ti/SLVS561O]
+source: ti/SLVS561O
+
+existence:
+  status: verified
+  src: p31 "Package Option Addendum, Packaging Information table, row TLV1117-18IDCYR"
+
+lifecycle:
+  status: active
+  src: p31 "Package Option Addendum, row TLV1117-18IDCYR, Status Active"

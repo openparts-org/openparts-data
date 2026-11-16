@@ -1,0 +1,18 @@
+# Diodes Incorporated datasheet "BZT52C2V0 - BZT52C51 Surface Mount
+# Zener Diode", document number DS18004 Rev. 38 - 2, footer date
+# "October 2017". Downloaded 2026-11-16 with curl from diodes.com
+# (first-party, HTTP 200, a PDF with this document number on every
+# page; the /datasheet/download/<part>.pdf URLs returned 404 for BZT52
+# part names). 5 pages, read with pdftotext -layout. Page numbers cited
+# are PDF page indices (= printed "n of 5").
+schema_version: "0.2"
+kind: source
+id: diodes/DS18004
+sha256: 0fbd7d137524820f0160594065cbceb8c6b3188757c328416d08fceb7418202f
+retrieved: 2026-11-16
+url: https://www.diodes.com/assets/Datasheets/ds18004.pdf
+publisher: diodes
+document_id: DS18004
+document_type: datasheet
+revision: 38-2
+date: 2017-10

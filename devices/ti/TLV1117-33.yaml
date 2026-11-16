@@ -1,0 +1,37 @@
+# TLV1117 800-mA LDO, fixed 3.3-V option (TLV1117C/I-33). Pins from
+# SLVS561O Table 4-1 "Pin Functions", DCY column (page 3): ADJ/GND 1,
+# INPUT (VIN) 3, OUTPUT (VOUT) 2; pin 1 is "Ground pin for fixed output
+# option", so typed ground (name kept as printed). Figure 4-1 (DCY top
+# view, rendered page 3) labels the tab OUTPUT; outline DCY0004A numbers
+# the tab "4" (see the reused package), so pin 4 is VOUT. output_voltage
+# is the TJ = 25 C row shared by the C and I grades; the full-range rows
+# differ per grade and are not recorded on this Device.
+schema_version: "0.2"
+kind: device
+id: ti/TLV1117-33
+manufacturer: ti
+category: linear_regulator
+family: TLV1117
+source: ti/SLVS561O
+
+parameters:
+  output_type:    { value: fixed, src: 'p7 "5.6 Elec. Char., VOUT, TLV1117C/I-33 row"' }
+  output_voltage:
+    - min: 3.267 V
+      typ: 3.3 V
+      max: 3.333 V
+      at: { VIN: 5 V, IOUT: 10 mA, TJ: 25 °C }
+      src: p7 "5.6 Elec. Char., VOUT, TLV1117C/I-33 row"
+  input_voltage_max:
+    max: 15 V
+    src: p5 "5.3 Recommended Operating Conditions, VIN, TLV1117-33 row"
+  output_current: { max: 0.8 A, src: 'p5 "5.3 Recommended Operating Conditions, IOUT"' }
+
+pins:
+  src:
+    - p3 "Table 4-1. Pin Functions, DCY column"
+    - p3 "Figure 4-1. DCY Package, 4-Pin SOT (Top View), tab labelled OUTPUT"
+  "1": { name: ADJ/GND, type: ground }
+  "2": { name: VOUT, type: power }
+  "3": { name: VIN, type: power }
+  "4": { name: VOUT, type: power }
