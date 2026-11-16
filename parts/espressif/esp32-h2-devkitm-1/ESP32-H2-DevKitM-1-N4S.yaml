@@ -2,10 +2,11 @@
 # -> existence verified. On-board module: ESP32-H2-MINI-1-H4S (ordering table).
 # Assembly: components placed from the ESP32-H2-DevKitM-1 layout PDF (pad
 # centres of the top-copper plot, scaled by the board outline; see the
-# agent-scratch placement table). Only components with an OpenParts part
-# (or a datasheet outline with height) are drawn; the CP2102N USB-UART
-# bridge, USB connectors, buttons, LEDs, transistors, ESD diodes and
-# passives have no part/height source yet and are left out.
+# agent-scratch placement table). U3 CP2102N and SW1/SW2 NTC013-AT1J-A160T
+# (MPNs in the schematic) are boxes sized from the ESP32-S3-DevKitC-1
+# reference design BOM, which lists the same MPNs with footprint, size and
+# height. Left out: USB-C J2/J4 and the power LED (no MPN), D6 WS2812B
+# (variant not stated), U6 BC847BDW1T1G, D11, ESD diodes, passives.
 schema_version: "0.2"
 kind: part
 id: espressif/ESP32-H2-DevKitM-1-N4S
@@ -19,6 +20,7 @@ sources:
   - espressif/esp32-h2-devkitm-1_v1.2_pcb_layout
   - espressif/esp32-h2-devkitm-1_v1.2_schematics
   - espressif/esp32-h2-devkitm-1_v1.2_dimension
+  - espressif/ESP32-S3-DevKitC-1_Reference_Design
 
 source: espressif/esp32-h2-devkitm-1_v1.2_pcb_layout
 
@@ -50,3 +52,27 @@ assembly:
     x: 2.39
     y: -14.54
     src: p1 "D7 pad centres; footprint pad 2 = cathode (silkscreen bar)"
+  - ref: U3
+    body: { width: 5, length: 5, height: 0.8, color: "#1c1c1e" }
+    x: 2.32
+    y: -3.87
+    src:
+      - p1 "U3 pad envelope centre (29 pads)"
+      - espressif/esp32-h2-devkitm-1_v1.2_schematics "U3 CP2102N-A02-GQFN28"
+      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 20: CP2102N-A02-GQFN28, QFN28_0P5_5, H0.8"'
+  - ref: SW1
+    body: { width: 4.2, length: 3.2, height: 2.5, color: "#2a2a2a" }
+    x: 5.71
+    y: -10.15
+    src:
+      - p1 "SW1 pad envelope centre (4 pads)"
+      - espressif/esp32-h2-devkitm-1_v1.2_schematics "SW1 NTC013-AT1J-A160T"
+      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5, stem black"'
+  - ref: SW2
+    body: { width: 4.2, length: 3.2, height: 2.5, color: "#2a2a2a" }
+    x: -4.69
+    y: -10.15
+    src:
+      - p1 "SW2 pad envelope centre (4 pads)"
+      - espressif/esp32-h2-devkitm-1_v1.2_schematics "SW2 NTC013-AT1J-A160T"
+      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5, stem black"'

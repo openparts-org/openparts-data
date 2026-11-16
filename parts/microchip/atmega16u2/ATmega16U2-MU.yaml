@@ -1,0 +1,25 @@
+# MPN from the ordering table, section 30.2 "ATmega16U2" (page 295): "ATmega16U2-MU", 16 MHz,
+# 2.7 - 5.5V, package "32M1-A", -40C to +85C. Package code 32M1: "32-pad, 5 x 5 x 1 mm body, pad
+# pitch 0.50 mm Quad Flat No lead (QFN)"; drawing page 297 (D/E 5.00 BSC, D2/E2 3.50/3.60/3.70,
+# A max 1.00, L 0.30/0.40/0.50, b 0.18/0.25/0.30) -- the same outline values as
+# standards/QFN32-5x5-P0.5-EP3.6 (whose A typ 0.90 is not printed in this drawing).
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATmega16U2-MU
+manufacturer: microchip
+mpn: ATmega16U2-MU
+device: microchip/ATmega16U2
+
+package:
+  value: standards/QFN32-5x5-P0.5-EP3.6
+  src: p297 "31.1 QFN32 drawing, D/E 5.00 BSC, D2/E2 3.60 nom, e 0.50 BSC, N 32"
+
+sources: [microchip/7799@revE]
+source: microchip/7799@revE
+
+existence:
+  status: verified
+  src: p295 "30.2 ATmega16U2 ordering table, ATmega16U2-MU, package 32M1-A"
+
+lifecycle: { status: unknown }

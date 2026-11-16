@@ -1,0 +1,26 @@
+# 1-A LDO with active output discharge (all fixed voltages), DBV (SOT-23-5) pinout. From SBVS322C
+# Table 4-1 "Pin Functions" (page 3), DBV column: IN 1, GND 2, EN 3, NC 4, OUT 5. The DYD/DRV pin
+# maps (with thermal pad) are not covered. NC is "No internal connection". IN/OUT typed power, as
+# for ti/TLV755P-DBV.
+schema_version: "0.2"
+kind: device
+id: ti/TLV757P-DBV
+manufacturer: ti
+category: linear_regulator
+family: TLV757P
+source: ti/SBVS322C
+
+parameters:
+  output_type:
+    value: fixed
+    src: 'p22 "8.1.1 Device Nomenclature: xx(x) is the nominal output voltage"'
+  input_voltage_max: { max: 5.5 V, src: 'p4 "5.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 1 A, src: 'p4 "5.3 Recommended Operating Conditions, IOUT"' }
+
+pins:
+  src: p3 "Table 4-1 "Pin Functions", column "DBV""
+  "1": { name: IN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: EN, type: input }
+  "4": { name: NC, type: nc }
+  "5": { name: OUT, type: power }

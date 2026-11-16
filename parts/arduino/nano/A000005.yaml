@@ -3,10 +3,14 @@
 # converted to the package frame (board centre, top view; see the package comment).
 # Only components with an OpenParts part, or a box whose size AND height a source states,
 # are listed. Left out:
-#   IC1 FT232RL (FTDI, SSOP28), IC2 LM1117IMPX-5.0 (TI, SOT-223), J3 USB mini-B, SW1
-#   IT-1185AP1C, Y1 CSTCE16M0V53-R0, LEDs KPT-2012*, D1 SS1P3L, C2/C5 TAJA475 tantalum, J4 ICSP:
-#   no part and no body height in a fetchable maker source or the design file; small passives
-#   (0603 C, CAY16 arrays, F1) skipped
+#   IC1 FT232RL (FTDI datasheet: 403 to plain fetches), J3 USB mini-B ("14850", maker not
+#   named), SW1 IT-1185AP1C, Y1 CSTCE16M0V53-R0 (Murata spec not served as a plain PDF), LEDs
+#   KPT-2012* (Kingbright spec URLs 404), D1 SS1P3L, C2/C5 TAJA475 tantalum, J4 ICSP, J1/J2
+#   headers: no part and no body height in a fetchable maker source or the design file; small
+#   passives (0603 C, CAY16 arrays, F1) skipped
+# IC2: value/PART_NUMBER "LM1117IMPX-5.0" (the /NOPB ordering suffix is not in the design; TI
+# orders it only as /NOPB); bottom side; pads 1 COM, 2 +5V, 3 VIN, 4 +5V (tab) = the device pins
+# 1-4.
 schema_version: "0.2"
 kind: part
 id: arduino/A000005
@@ -27,3 +31,10 @@ assembly:
     y: 6.096
     rotation: 135
     src: '"NanoV3.3.brd IC3 at 15.494, 8.839 rot 225"'
+  - ref: IC2
+    part: ti/LM1117IMPX-5.0/NOPB
+    x: -2.413
+    y: -11.557
+    rotation: 90
+    side: bottom
+    src: '"NanoV3.3.brd IC2 at 33.147, 6.477 rot 270"'

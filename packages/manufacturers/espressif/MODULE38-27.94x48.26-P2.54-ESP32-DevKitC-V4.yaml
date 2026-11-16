@@ -1,0 +1,50 @@
+# ESP32-DevKitC V4 as a through-hole module: the bare board with the two pin-header
+# rows a carrier board takes (Espressif's reference design files). Package frame:
+# board centre, +y towards the antenna end, top view; pin 1 = J2 pin 1 (upper
+# left). Holes: J2 runs down the left edge (module pins 1-19 = J2 pins 1-19), J3
+# up the right edge (module pins 20-38 = J3 pins 19..1), the counter-clockwise
+# row numbering. All values from the reference design's PADS ASCII file (basic
+# units, 1.5e6 per mm): board outline 0..41910000 x 0..72390000 (27.94 x 48.26,
+# R1 corners); J2 (decal CON19_2P54, pin 1 at the decal origin, pins 2.54 apart
+# down) at (1866900, 70515480), J3 at (39966900, 70515480): J2 centres 1.2446
+# from the left edge, J3 1.2954 from the right edge, pin 1 1.2497 below the top
+# edge, J3 pin 19 1.2903 above the bottom edge. Pad stack: round 2250000 (1.5)
+# copper, drill 1350000 (0.9); the NC drill file lists the same tool
+# ("T4C.03543" in, 38 holes). Board thickness is not stated (generator default).
+# Licence of the design files: none stated; facts only.
+schema_version: "0.2"
+kind: package
+id: manufacturers/espressif/MODULE38-27.94x48.26-P2.54-ESP32-DevKitC-V4
+family: module
+lead_count: 38
+source: espressif/esp32-devkitc-v4_reference_design
+
+pitch: { typ: 2.54 mm, src: '"PADS ASCII, decal CON19_2P54: terminals 3810000 apart (2.54 mm)"' }
+geometry: { type: parametric, generator: module }
+
+dimensions:
+  body_width:  { typ: 27.94 mm, src: '"PADS ASCII, BOARD outline x 0..41910000 (27.94 mm)"' }
+  body_length: { typ: 48.26 mm, src: '"PADS ASCII, BOARD outline y 0..72390000 (48.26 mm)"' }
+  hole_diameter:
+    typ: 0.9 mm
+    src: '"PADS ASCII, CON19_2P54 pad stack drill 1350000; ncdrill.lst tool 4 .03543 in"'
+
+pad_rows:
+  value:
+    - side: -x
+      first: 1
+      count: 19
+      pitch: 2.54
+      start: 1.25
+      inset: 1.245
+      pad: [1.5, 1.5]
+      drill: 0.9
+    - side: +x
+      first: 20
+      count: 19
+      pitch: 2.54
+      start: 1.29
+      inset: 1.295
+      pad: [1.5, 1.5]
+      drill: 0.9
+  src: '"PADS ASCII, J2/J3 positions and CON19_2P54 pad stack (see comment)"'

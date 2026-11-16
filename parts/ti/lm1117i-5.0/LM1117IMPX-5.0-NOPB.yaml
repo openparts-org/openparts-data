@@ -1,0 +1,24 @@
+# LM1117IMPX-5.0/NOPB: SNOS412Q package option addendum (page 25) row "LM1117IMPX-5.0/NOPB
+# Active  Production  SOT-223 (DCY) | 4  2000 | LARGE T&R ... -40 to 125  N06B". lifecycle
+# "Active" is TI's own status column in that table. Package DCY = outline DCY0004A (page 44).
+schema_version: "0.2"
+kind: part
+id: ti/LM1117IMPX-5.0/NOPB
+manufacturer: ti
+mpn: LM1117IMPX-5.0/NOPB
+device: ti/LM1117I-5.0
+
+package:
+  value: standards/SOT223-3.5x6.5-P2.3-TabPin4-TI-DCY
+  src: p44 "DCY0004A package outline (4214843/C)"
+
+sources: [ti/SNOS412Q]
+source: ti/SNOS412Q
+
+existence:
+  status: verified
+  src: p25 "Package option addendum table, row "LM1117IMPX-5.0/NOPB" (SOT-223 (DCY) | 4)"
+
+lifecycle:
+  status: active
+  src: p25 "Package option addendum table, row "LM1117IMPX-5.0/NOPB", Status "Active""

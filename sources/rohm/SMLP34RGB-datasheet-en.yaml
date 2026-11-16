@@ -1,0 +1,15 @@
+# ROHM "SMLP34RGB Series" PICOLED datasheet (English), 11 PDF pages, footer "2021.6 - Rev.011".
+# Fetched 2026-11-17 with curl from ROHM's fscdn.rohm.com link on the SMLP34RGB2W product page.
+# Read with pdftotext -layout. Page numbers are PDF page indices. Used only for the body size
+# ("1.0x1.0mm (t=0.2mm)", page 1) of the SMLP34RGB2W.
+schema_version: "0.2"
+kind: source
+id: rohm/SMLP34RGB-datasheet-en
+sha256: 2d4d8011ac25ccf47b219f0086138cbf3248e332fe224f97df273f21b1a0b8af
+retrieved: 2026-11-17
+url: https://fscdn.rohm.com/en/products/databook/datasheet/opto/led/chip_multi/smlp34rgb-e.pdf
+publisher: rohm
+document_id: smlp34rgb-e
+document_type: datasheet
+revision: 011
+date: 2021-06

@@ -3,11 +3,15 @@
 # converted to the package frame (board centre, top view; see the package comment).
 # Only components with an OpenParts part, or a box whose size AND height a source states,
 # are listed. Left out:
-#   U3 ATMEGA16U2-MU(R) (no OpenParts part yet), U2 LP2985-33DBVR, T1 FDN340P (pin-1 orientation
-#   of the Eagle SOT-23 not verified), X1 DC jack, X2 USB-B, RESET TS42031, Y1/Y2
-#   crystal/resonator, PC1/PC2 47u caps, D1 M7, D2/D3, LEDs, ICSP/ICSP1 headers: no body height
-#   in a source; small passives skipped
-# ZU4: fitted in a DIP-28 socket on the board; the socket is not modelled.
+#   X1 DC jack, X2 USB-B (PN61729), RESET TS42031-160R-TR-7260, Y1 16 MHz crystal (no MPN), Y2
+#   CSTCE16M0V53-R0 (Murata spec not served as a plain PDF), PC1/PC2 47u caps, D1 M7, D2/D3
+#   CD1206-S01575 (Bourns: 403), LEDs, ICSP/ICSP1 headers, and the DIP-28 socket under ZU4: no
+#   body height in a fetchable maker source or the design file; small passives skipped
+# ZU4: fitted in a DIP-28 socket on the board; the socket (no MPN or height in the design) is not
+# modelled.
+# T1: Eagle pads 1/2/3 = nets USBVCC/+5V/GATE_CMD = drain/source/gate, i.e. FDN340P pins 3/2/1;
+# rotation from that pad map.
+# U3: value "ATMEGA16U2-MU(R)" (-MU or its tape-and-reel -MUR; same chip and package).
 schema_version: "0.2"
 kind: part
 id: arduino/A000066
@@ -70,3 +74,20 @@ assembly:
     src:
       - '"UNO-TH_Rev3e.brd POWER at 36.83, 2.54 rot 0"'
       - '"POWER element value "8x1F-H8.5" (8-way female, H 8.5), footprint 1X08 outline 20.32 x 2.54"'
+  - ref: T1
+    part: onsemi/FDN340P
+    x: -26.162
+    y: -0.152
+    rotation: 180
+    src: '"UNO-TH_Rev3e.brd T1 at 8.128, 26.518 rot 270"'
+  - ref: U2
+    part: ti/LP2985-33DBVR
+    x: -12.319
+    y: -11.43
+    src: '"UNO-TH_Rev3e.brd U2 at 21.971, 15.24 rot 270"'
+  - ref: U3
+    part: microchip/ATmega16U2-MU
+    x: -14.351
+    y: 8.001
+    rotation: 90
+    src: '"UNO-TH_Rev3e.brd U3 at 19.939, 34.671 rot 90"'

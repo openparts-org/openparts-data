@@ -1,0 +1,15 @@
+# Official TI datasheet "LP2985 150mA, Low-Noise, Low-Dropout Regulator With Shutdown", revision
+# read from the page header "SLVS522S - JULY 2004 - REVISED MAY 2025". 43 PDF pages; read with
+# pdftotext -layout. Page numbers are PDF page indices. The PACKAGE OPTION ADDENDUM is dated
+# 5-Mar-2026; the DBV0005A outline (4214839/K 08/2024) is on pages 40-42.
+schema_version: "0.2"
+kind: source
+id: ti/SLVS522S
+sha256: 29a9758cb28a12c1990cb8dba96cb792554906f00fe625aa310bc6cd6ea3f26f
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/lp2985.pdf
+publisher: ti
+document_id: SLVS522S
+document_type: datasheet
+revision: S
+date: 2025-05

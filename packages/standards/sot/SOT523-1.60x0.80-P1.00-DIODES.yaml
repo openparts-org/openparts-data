@@ -1,0 +1,35 @@
+# Diodes Incorporated "SOT523" outline, read from the Package Outline
+# Dimensions table (columns Min / Max / Typ -- in that order) of the
+# DMG1012T datasheet DS31783 Rev. 8-2, page 6.
+# Field mapping as SOT23-2.90x1.30-P1.83-DIODES: body_width = D,
+# body_length = E1, overall_length = E, pitch = e1, body_height = A2,
+# standoff = A1, lead_width = b, lead_thickness = c, lead_length = L.
+# "Typ" is recorded as nominal. A3 (0.45-0.65) is not recorded.
+schema_version: "0.2"
+kind: package
+id: standards/SOT523-1.60x0.80-P1.00-DIODES
+family: sot
+lead_count: 3
+lead_layout: [2, 1]
+source: diodes/DS31783-rev8-2
+
+pitch: { min: 0.9 mm, typ: 1 mm, max: 1.1 mm, src: 'p6 "SOT523 table, "e1""' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:     { min: 1.5 mm, typ: 1.6 mm, max: 1.7 mm, src: 'p6 "SOT523 table, "D""' }
+  body_length:
+    min: 0.75 mm
+    typ: 0.8 mm
+    max: 0.85 mm
+    src: p6 "SOT523 table, "E1" (body across the lead rows)"
+  body_height:    { min: 0.6 mm, typ: 0.75 mm, max: 0.8 mm, src: 'p6 "SOT523 table, "A2""' }
+  lead_thickness: { min: 0.1 mm, typ: 0.12 mm, max: 0.2 mm, src: 'p6 "SOT523 table, "c""' }
+  overall_length:
+    min: 1.45 mm
+    typ: 1.6 mm
+    max: 1.75 mm
+    src: p6 "SOT523 table, "E" (lead-tip span)"
+  standoff:       { min: 0 mm, typ: 0.05 mm, max: 0.1 mm, src: 'p6 "SOT523 table, "A1""' }
+  lead_width:     { min: 0.15 mm, typ: 0.22 mm, max: 0.3 mm, src: 'p6 "SOT523 table, "b""' }
+  lead_length:    { min: 0.2 mm, typ: 0.33 mm, max: 0.4 mm, src: 'p6 "SOT523 table, "L""' }

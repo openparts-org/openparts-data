@@ -1,0 +1,30 @@
+# MPN read from the Package Option Addendum, Packaging Information table (SLVS522S PDF page 33,
+# addendum dated 5-Mar-2026): "LP2985-33DBVR | Active | Production | SOT-23 (DBV) | 5 | 3000 |
+# LARGE T&R | ... | -40 to 125 | (LPFG, LPFL)". lifecycle "active" is that table's Status column.
+# Package: SOT-23 (DBV) | 5, outline DBV0005A (4214839/K) on page 40.
+schema_version: "0.2"
+kind: part
+id: ti/LP2985-33DBVR
+manufacturer: ti
+mpn: LP2985-33DBVR
+device: ti/LP2985-DBV
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src: p33 "Package Option Addendum, row "LP2985-33DBVR", "SOT-23 (DBV) | 5"; outline DBV0005A on page 40"
+
+sources: [ti/SLVS522S]
+source: ti/SLVS522S
+
+existence:
+  status: verified
+  src: p33 "Package Option Addendum, Packaging Information table, row "LP2985-33DBVR""
+
+lifecycle:
+  status: active
+  src: p33 "Package Option Addendum, row "LP2985-33DBVR", Status "Active""
+
+parameters:
+  output_voltage:
+    typ: 3.3 V
+    src: 'p30 "8.1.1 Device Nomenclature, Table 8-1: xx is the nominal output voltage (33 = 3.3V)"'

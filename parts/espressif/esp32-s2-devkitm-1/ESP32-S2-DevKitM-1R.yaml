@@ -3,10 +3,11 @@
 # the module is a placeholder box (datasheet outline).
 # Assembly: components placed from the ESP32-S2-DevKitM-1 layout PDF (pad
 # centres of the top-copper plot, scaled by the board outline; see the
-# agent-scratch placement table). Only components with an OpenParts part
-# (or a datasheet outline with height) are drawn; the CP2102N USB-UART
-# bridge, USB connectors, buttons, LEDs, transistors, ESD diodes and
-# passives have no part/height source yet and are left out.
+# agent-scratch placement table). U3 CP2102N, D6 SK68XXMINI-HS and SW1/SW2
+# NTC013-AT1J-A160T (MPNs in the schematic) are boxes sized from the
+# ESP32-S3-DevKitC-1 reference design BOM, which lists the same MPNs with
+# footprint, size and height. Left out: micro-USB J2 and the power LED (no
+# MPN), Q1/Q2 L8050QLT1G (LRC datasheet not served, no body outline), passives.
 schema_version: "0.2"
 kind: part
 id: espressif/ESP32-S2-DevKitM-1R
@@ -20,6 +21,7 @@ sources:
   - espressif/ESP32-S2-DevKitM-1_V1_PCB_Layout
   - espressif/ESP32-S2-DevKitM-1_V1_Schematics
   - espressif/ESP32-S2-DevKitM-1_V1_Dimensions
+  - espressif/ESP32-S3-DevKitC-1_Reference_Design
 
 source: espressif/ESP32-S2-DevKitM-1_V1_PCB_Layout
 
@@ -50,3 +52,37 @@ assembly:
     y: -16.84
     rotation: 270
     src: p1 "D1 pad centres; footprint pad 2 = cathode (silkscreen bar)"
+  - ref: U3
+    body: { width: 5, length: 5, height: 0.8, color: "#1c1c1e" }
+    x: 0.89
+    y: -10.24
+    src:
+      - p1 "U3 pad envelope centre (29 pads)"
+      - espressif/ESP32-S2-DevKitM-1_V1_Schematics "U3 CP2102N-A02-GQFN28"
+      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 20: CP2102N-A02-GQFN28, QFN28_0P5_5, H0.8"'
+  - ref: D6
+    body: { width: 3.5, length: 3.5, height: 1.9, color: "#f4f4f2" }
+    x: -5.21
+    y: -1.6
+    src:
+      - p1 "D6 pad envelope centre (4 pads)"
+      - espressif/ESP32-S2-DevKitM-1_V1_Schematics "D6 SK68XXMINI-HS"
+      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 14: SK68XXMINI-HS (WS2812B-Mini-V3), LED3535B, 3535, H1.9"'
+  - ref: SW1
+    body: { width: 4.2, length: 3.2, height: 2.5, color: "#2a2a2a" }
+    x: -6.98
+    y: -23.82
+    rotation: 90
+    src:
+      - p1 "SW1 pad envelope centre (4 pads)"
+      - espressif/ESP32-S2-DevKitM-1_V1_Schematics "SW1 NTC013-AT1J-A160T"
+      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5, stem black"'
+  - ref: SW2
+    body: { width: 4.2, length: 3.2, height: 2.5, color: "#2a2a2a" }
+    x: 6.98
+    y: -23.82
+    rotation: 90
+    src:
+      - p1 "SW2 pad envelope centre (4 pads)"
+      - espressif/ESP32-S2-DevKitM-1_V1_Schematics "SW2 NTC013-AT1J-A160T"
+      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5, stem black"'

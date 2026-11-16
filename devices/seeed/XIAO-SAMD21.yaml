@@ -1,0 +1,29 @@
+# Seeed Studio XIAO SAMD21: the pins of the module package standards/MODULE14-18x21-P2.54-XIAO-SAMD21,
+# named after the net each header pad connects to in the maker's design file (seeed/XIAO-SAMD21-SCH-PCB@v2.1).
+# Types are this dataset's reading of the net names (GND ground; supply nets power;
+# reset nets reset; others io). AI candidate, needs review.
+# connected_to: a second header pad on the same design net as an earlier pin.
+schema_version: "0.2"
+kind: device
+id: seeed/XIAO-SAMD21
+manufacturer: seeed
+category: microcontroller
+family: SAMD21
+source: seeed/XIAO-SAMD21-SCH-PCB@v2.1
+
+pins:
+  src:  '"header pads J2, J4: net names"'
+  "1":  { name: PA02_A0_D0, type: io }
+  "2":  { name: PA4_A1_D1, type: io }
+  "3":  { name: PA10_A2_D2, type: io }
+  "4":  { name: PA11_A3_D3, type: io }
+  "5":  { name: PA8_A4_D4_SDA, type: io }
+  "6":  { name: PA9_A5_D5_SCL, type: io }
+  "7":  { name: PB08_A6_D6_TX, type: io }
+  "8":  { name: PB09_A7_D7_RX, type: io }
+  "9":  { name: PA7_A8_D8_SCK, type: io }
+  "10": { name: PA5_A9_D9_MISO, type: io }
+  "11": { name: PA6_A10_D10_MOSI, type: io }
+  "12": { name: 3V3, type: power }
+  "13": { name: GND, type: ground }
+  "14": { name: VBUS, type: power }

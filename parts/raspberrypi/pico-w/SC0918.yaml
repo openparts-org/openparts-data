@@ -72,14 +72,11 @@ assembly:
       - 'raspberrypi/RP-008312-DS@rev2 p15 "Figure 8: U2 RT6154AGQW"'
       - 'richtek/DS6154AB-05 p18 "WDFN-14AL 4x3: D 3.9-4.1, E 2.9-3.1, A max 0.8"'
   - ref: D1
-    body: { width: 4.2, length: 1.65, height: 0.95, color: "#2a2a2a" }
+    part: onsemi/MBR120VLSFT1G
     x: 6
     y: 18.9
     rotation: 90
-    src:
-      - '"D1 placement"'
-      - 'raspberrypi/RP-008312-DS@rev2 p15 "Figure 8: D1 MBR120VLSFT1G"'
-      - raspberrypi/RP-008379-DS "Pico BOM item 6, MBR120VLSFT1G Size 4.2x1.65x0.95mm"
+    src: ['"D1 placement"', 'raspberrypi/RP-008312-DS@rev2 p15 "Figure 8: D1 MBR120VLSFT1G"']
   - ref: J1
     body: { width: 6.9, length: 5, height: 2.6, color: "#c8c8c8" }
     x: 0

@@ -1,0 +1,40 @@
+# Seeed Studio XIAO SAMD21 (102010328). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (seeed/XIAO-SAMD21-SCH-PCB@v2.1),
+# converted to the package frame (board centre, top view; see the package comment).
+# Only components with an OpenParts part, or a box whose size AND height a source states,
+# are listed. Left out:
+#   MP1 shielding cover (footprint "SHIELDING-COVER-12.3X11.9X0.2MM": 0.2 is the sheet
+#   thickness, no height), U1 XC6206P332MR (Torex: 403), USB1 USB-C (no MPN), LEDs (LED-0402, no
+#   height): no part / no body height; passives skipped
+# U2: value "ATSAMD21G18-QFN48"; under the MP1 shielding cover on the real board (cover not
+# modelled: its "0.2" is sheet thickness, no height).
+schema_version: "0.2"
+kind: part
+id: seeed/102010328
+manufacturer: seeed
+mpn: "102010328"
+device: seeed/XIAO-SAMD21
+package: standards/MODULE14-18x21-P2.54-XIAO-SAMD21
+sources: [seeed/XIAO-SAMD21-wiki, seeed/XIAO-SAMD21-SCH-PCB@v2.1]
+source: seeed/XIAO-SAMD21-SCH-PCB@v2.1
+
+existence:
+  status: probable
+  src: 'seeed/XIAO-SAMD21-wiki "page metadata docsearch:sku_tag: 110010004, 102010388, 102010328"'
+
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: U2
+    part: microchip/ATSAMD21G18A-MU
+    x: 1.324
+    y: -1.389
+    rotation: 90
+    src: '"XIAO SAMD21 (Pre-Soldered)_v2.1.kicad_pcb U2 at 147.112, -106.328 rot 0"'
+  - ref: X1
+    body: { width: 2, length: 1.2, height: 0.55, color: "#c8c8c8" }
+    x: -0.635
+    y: -7.993
+    src:
+      - '"XIAO SAMD21 (Pre-Soldered)_v2.1.kicad_pcb X1 at 140.508, -104.369 rot -90"'
+      - '"X1 footprint name "X2-SMD-L2.0X1.2X0.55MM""'

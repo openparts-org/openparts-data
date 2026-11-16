@@ -1,0 +1,16 @@
+# u-blox "NORA-W10 series - Data sheet", document number UBX-21036702, "Revision and date R05
+# 16-Apr-2025" (page 1 document information table). 35 PDF pages, fetched with curl from
+# content.u-blox.com. Read with pdftotext -layout; the mechanical drawing (Figure 5, page 27) was
+# rendered and read as an image. Page numbers are PDF page indices. Used only for module outline
+# dimensions (no OpenParts part for the module yet).
+schema_version: "0.2"
+kind: source
+id: ublox/UBX-21036702@R05
+sha256: 0516f15804d62f7946b545297a8f1688531390a01ee1bcb5adfa53911b6eaea8
+retrieved: 2026-11-17
+url: https://content.u-blox.com/sites/default/files/documents/NORA-W10_DataSheet_UBX-21036702.pdf
+publisher: ublox
+document_id: UBX-21036702
+document_type: datasheet
+revision: R05
+date: 2025-04-16

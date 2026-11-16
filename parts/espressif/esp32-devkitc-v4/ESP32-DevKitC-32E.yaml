@@ -1,0 +1,74 @@
+# ESP32-DevKitC-32E: ESP32-DevKitC V4 ordering code from the user guide's ordering
+# table -> existence verified. On-board module: ESP32-WROOM-32E, 4 MB flash, PCB
+# antenna (ordering table) = ESP32-WROOM-32E-N4. The ESP32-DevKitC-32UE/-VE/-VIE
+# variants (WROOM-32UE, WROVER-E/-IE) are not added: no OpenParts part for those
+# modules, and the WROVER footprint (U3) sits elsewhere.
+# Assembly: positions from the reference design's PADS ASCII file (component
+# placement + decal pad stacks -> pad-extent centre, board-centre frame). The
+# design was drawn for ESP-WROOM-32 (BOM: WROOM-32D); the WROOM-32E uses the same
+# land pattern. Left out: J1 micro-USB, D1 LED, Q1/Q2 S8050 and D4-D6
+# LESD5D5.0CT1G (no maker datasheet served and no size + height in the design
+# data), passives.
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-DevKitC-32E
+manufacturer: espressif
+mpn: ESP32-DevKitC-32E
+device: espressif/ESP32-DevKitC-V4
+package: manufacturers/espressif/MODULE38-27.94x48.26-P2.54-ESP32-DevKitC-V4
+
+sources:
+  - espressif/esp32-devkitc-user-guide
+  - espressif/esp32-devkitc-v4_reference_design
+  - espressif/ESP32-S3-DevKitC-1_Reference_Design
+  - advanced-monolithic/DS1117
+  - diodes/DS30498
+
+source: espressif/esp32-devkitc-v4_reference_design
+
+existence:
+  status: verified
+  src: 'espressif/esp32-devkitc-user-guide "Ordering Information table: ESP32-DevKitC-32E, ESP32-WROOM-32E, 4 MB"'
+
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: D2
+    part: espressif/ESP32-WROOM-32E-N4
+    x: 0.03
+    y: 13.65
+    src: '"PADS D2 (ESP32_MODULE): module outline centre (0.03, 17.42); land centroid -3.77 in y"'
+  - ref: U2
+    body: { width: 6.5, length: 3.5, height: 1.8, color: "#1c1c1e" }
+    x: 0.1
+    y: -4.95
+    rotation: 270
+    src:
+      - '"PADS U2 (SOT-223, turned 270): pad-extent centre; BOM item 18 AMS1117-3.3"'
+      - 'advanced-monolithic/DS1117 p7 "SOT-223 6.30-6.71 x 3.30-3.71, 1.80 MAX (box: mid values)"'
+  - ref: U1
+    body: { width: 5, length: 5, height: 0.8, color: "#1c1c1e" }
+    x: 0.03
+    y: -11.88
+    src:
+      - '"PADS U1 (CP2102_QFN_28P): pad-extent centre; BOM item 17 CP2102N-A01-GQFN28"'
+      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 20: CP2102N-A02-GQFN28, QFN28_0P5_5, H0.8"'
+  - ref: D3
+    body: { width: 1.7, length: 1.3, height: 1.1, color: "#2a2a2a" }
+    x: -4.83
+    y: -15.75
+    src:
+      - '"PADS D3 (SOD323): pad-extent centre; BOM item 6 BAT760-7"'
+      - 'diodes/DS30498 p4 "SOD323: E 1.70, D 1.30, A1 0.05 + A2 1.05 (typ)"'
+  - ref: SW1
+    body: { width: 4, length: 3, height: 2, color: "#e8e8e8" }
+    x: 8.03
+    y: -20.27
+    rotation: 90
+    src: '"PADS SW1 (SW_3X4X2MM, turned 90): outline 4 x 3 centre; BOM item 15 "3x4x2""'
+  - ref: SW2
+    body: { width: 4, length: 3, height: 2, color: "#e8e8e8" }
+    x: -7.97
+    y: -20.27
+    rotation: 90
+    src: '"PADS SW2 (SW_3X4X2MM, turned 90): outline 4 x 3 centre; BOM item 15 "3x4x2""'

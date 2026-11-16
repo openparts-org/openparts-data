@@ -1,0 +1,20 @@
+# ESP32-S3-DevKitC-1 Reference Design (zip, Espressif doc TCD000001079, "PCB V1.1
+# reference design resources", revision date 2026-06-17): schematic, PCB layout
+# (PADS ASCII .asc + PDF, 2022-04-29), Gerber, fabrication requirements, BOM
+# "BOM(V0.3)_ESP32-S3-DevKitC-1_XX_TTNNVV.xlsx" (manufacturer, MPN, footprint and
+# component height "H.." per line) and the placement report. The espressif.com link
+# redirects to documentation.espressif.com, which serves the file from
+# /api/resource/doc/file/0wyBg1eV/FILE/ESP32-S3-DevKitC-1_Reference_Design.zip
+# (plain curl). Licence: none stated ("No licenses express or implied ... are
+# granted", esp-dev-kits disclaimer). Facts only; nothing copied or rehosted.
+schema_version: "0.2"
+kind: source
+id: espressif/ESP32-S3-DevKitC-1_Reference_Design
+sha256: 25b16b894c4e104ad62640ceaf60ba7ead356105567f9471da4ce3c66ddb871a
+retrieved: 2026-11-17
+url: https://www.espressif.com/sites/default/files/documentation/ESP32-S3-DevKitC-1_Reference_Design.zip
+publisher: espressif
+document_id: ESP32-S3-DevKitC-1_Reference_Design
+document_type: reference_design
+revision: PCB V1.1
+date: 2026-06-17

@@ -17,7 +17,6 @@ sources:
   - raspberrypi/RP-008379-DS
   - raspberrypi/RP-008311-DS
   - edac/690-005-298-486
-  - diodes/DS31783-rev8-2
 
 source: raspberrypi/RP-008379-DS
 
@@ -31,8 +30,8 @@ lifecycle: { status: unknown }
 # (raspberrypi/RP-008379-DS: Allegro board + BOM). Every fitted BOM line
 # is placed; not fitted ones (J0, J2, R4, R15, TP1-TP6) are left out.
 # OpenParts parts where the dataset has the MPN, else a box of the BOM
-# "Size" column (L along the pads); J1 from EDAC's drawing, Q1 from the
-# Diodes datasheet, SW1 (no maker datasheet served) from the Pico STEP.
+# "Size" column (L along the pads); J1 from EDAC's drawing, SW1 (no
+# maker datasheet served) from the Pico STEP. D1 and Q1 are OpenParts parts.
 # SC0916 is assumed to be the same board as SC0915 (same model row).
 assembly:
   - { ref: U1, part: raspberrypi/RP2040, x: 0, y: -0.5, src: '"BOM item 25; U1 placement"' }
@@ -183,11 +182,11 @@ assembly:
     rotation: -90
     src: '"BOM item 5, Size 0.6x0.3x0.3mm; C17 placement"'
   - ref: D1
-    body: { width: 4.2, length: 1.65, height: 0.95, color: "#2a2a2a" }
+    part: onsemi/MBR120VLSFT1G
     x: 6
     y: 18.9
     rotation: 90
-    src: '"BOM item 6, Size 4.2x1.65x0.95mm; D1 placement"'
+    src: '"BOM item 6 (MBR120VLSFT1G); D1 placement, pad 1 (VSYS) = cathode"'
   - ref: D2
     body: { width: 1.6, length: 1.15, height: 0.55, color: "#f4f4f2" }
     x: -5.7
@@ -241,13 +240,11 @@ assembly:
     y: -9.05
     src: '"BOM item 28, Size 3.2x2.5x0.6mm; X1 placement"'
   - ref: Q1
-    body: { width: 0.8, length: 1.6, height: 0.8, color: "#1c1c1e" }
+    part: diodes/DMG1012T-7
     x: 6.4
     y: 7.2
     rotation: 90
-    src:
-      - '"BOM item 12 (DMG1012T, SOT523); Q1 placement"'
-      - 'diodes/DS31783-rev8-2 p6 "SOT523: E1 0.80, D 1.60, A1 + A2 = 0.05 + 0.75"'
+    src: '"BOM item 12 (DMG1012T, SOT523; the 3000 reel DMG1012T-7 placed); Q1 placement"'
   - ref: J1
     body: { width: 6.9, length: 5, height: 2.6, color: "#c8c8c8" }
     x: 0

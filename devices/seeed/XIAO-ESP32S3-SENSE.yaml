@@ -1,0 +1,29 @@
+# Seeed Studio XIAO ESP32S3 Sense: the pins of the module package standards/MODULE14-18x21-P2.54-XIAO-ESP32S3,
+# named after the net each header pad connects to in the maker's design file (seeed/XIAO-ESP32S3-Sense-SCH-PCB@V1.51).
+# Types are this dataset's reading of the net names (GND ground; supply nets power;
+# reset nets reset; others io). AI candidate, needs review.
+# connected_to: a second header pad on the same design net as an earlier pin.
+schema_version: "0.2"
+kind: device
+id: seeed/XIAO-ESP32S3-SENSE
+manufacturer: seeed
+category: microcontroller
+family: ESP32-S3
+source: seeed/XIAO-ESP32S3-Sense-SCH-PCB@V1.51
+
+pins:
+  src:  '"header pads U9: net names"'
+  "1":  { name: D0/A0, type: io }
+  "2":  { name: D1/A1, type: io }
+  "3":  { name: D2/A2, type: io }
+  "4":  { name: D3/A3, type: io }
+  "5":  { name: D4/I2C_SDA, type: io }
+  "6":  { name: D5/I2C_SCL, type: io }
+  "7":  { name: D6/TX, type: io }
+  "8":  { name: D7/RX, type: io }
+  "9":  { name: D8/A8/SCK, type: io }
+  "10": { name: D9/A9/MISO, type: io }
+  "11": { name: D10/A10/MOSI, type: io }
+  "12": { name: VCC_3V3, type: power }
+  "13": { name: GND, type: ground }
+  "14": { name: VBUS, type: power }

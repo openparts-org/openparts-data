@@ -1,0 +1,62 @@
+# ATmega8U2/16U2/32U2 pinout from datasheet 7799E, Figure 1-1 "Pinout" (page 2, rendered and read
+# as an image), QFN32 column; the TQFP32 shares the numbering. Names: the port name of each pin
+# (pin 2 "(PC0) XTAL2", pin 24 "Reset (PC1 / dW)"); pin 2 is typed io, pin 24 reset. UCAP typed
+# power (USB regulator output for an external capacitor), as for microchip/ATmega32U4. EP: the
+# note under Figure 1-1 says the QFN centre pad "should be soldered to ground".
+schema_version: "0.2"
+kind: device
+id: microchip/ATmega16U2
+manufacturer: microchip
+category: microcontroller
+family: megaAVR
+source: microchip/7799@revE
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p295 "30.2 ATmega16U2 ordering, Power Supply 2.7 - 5.5V"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p264 "26.2 DC Characteristics, TA = -40C to 85C"
+
+pins:
+  src:  p2 "Figure 1-1 "Pinout", QFN32"
+  "1":  { name: XTAL1, type: clock }
+  "2":  { name: PC0, type: io }
+  "3":  { name: GND, type: ground }
+  "4":  { name: VCC, type: power }
+  "5":  { name: PC2, type: io }
+  "6":  { name: PD0, type: io }
+  "7":  { name: PD1, type: io }
+  "8":  { name: PD2, type: io }
+  "9":  { name: PD3, type: io }
+  "10": { name: PD4, type: io }
+  "11": { name: PD5, type: io }
+  "12": { name: PD6, type: io }
+  "13": { name: PD7, type: io }
+  "14": { name: PB0, type: io }
+  "15": { name: PB1, type: io }
+  "16": { name: PB2, type: io }
+  "17": { name: PB3, type: io }
+  "18": { name: PB4, type: io }
+  "19": { name: PB5, type: io }
+  "20": { name: PB6, type: io }
+  "21": { name: PB7, type: io }
+  "22": { name: PC7, type: io }
+  "23": { name: PC6, type: io }
+  "24": { name: PC1, type: reset }
+  "25": { name: PC5, type: io }
+  "26": { name: PC4, type: io }
+  "27": { name: UCAP, type: power }
+  "28": { name: UGND, type: ground }
+  "29": { name: D+, type: io }
+  "30": { name: D-, type: io }
+  "31": { name: UVCC, type: power }
+  "32": { name: AVCC, type: power }
+  EP:
+    name: GND
+    type: ground
+    src: p2 "Figure 1-1 note, "The large center pad underneath the QFN package should be soldered to ground""

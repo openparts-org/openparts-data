@@ -1,0 +1,23 @@
+# LP2985 150-mA low-noise LDO with shutdown, DBV (SOT-23-5) pinout. From SLVS522S Table 4-1
+# "Pin Functions" (page 3): VIN 1, GND 2, ON/OFF 3, BYPASS 4, VOUT 5. Fixed-voltage options
+# (the output voltage is on each part). VIN/VOUT typed power, as for ti/TLV755P-DBV.
+schema_version: "0.2"
+kind: device
+id: ti/LP2985-DBV
+manufacturer: ti
+category: linear_regulator
+family: LP2985
+source: ti/SLVS522S
+
+parameters:
+  output_type:       { value: fixed, src: p1 "3 Description" }
+  input_voltage_max: { max: 16 V, src: 'p4 "5.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 150 mA, src: 'p1 "1 Features: Output current: Up to 150mA"' }
+
+pins:
+  src: p3 "Table 4-1 "Pin Functions""
+  "1": { name: VIN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: ON/OFF, type: input }
+  "4": { name: BYPASS, type: analog }
+  "5": { name: VOUT, type: power }

@@ -1,0 +1,20 @@
+# 20V N-channel enhancement-mode MOSFET, SOT523. Pin numbers are NOT
+# printed in DS31783: the page-1 "Top View" drawing labels the single top
+# lead D, the bottom-left lead G and the bottom-right lead S. Numbers map
+# those positions onto this dataset's sot convention (1 bottom-left, 2
+# bottom-right, 3 top), as for diodes/DMG2305UX -- position-derived,
+# flagged for review. (The Raspberry Pi Pico R3 board, Q1 = DMG1012T,
+# nets pad 1 to 3V3, pad 2 to GPIO29_ADC3: gate, source.)
+schema_version: "0.2"
+kind: device
+id: diodes/DMG1012T
+manufacturer: diodes
+category: transistor
+family: DMG1012T
+source: diodes/DS31783-rev8-2
+
+pins:
+  src: p1 "Right-hand "Top View" drawing (G bottom-left, S bottom-right, D top); no pin numbers printed -- see header"
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

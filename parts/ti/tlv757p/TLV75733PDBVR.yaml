@@ -1,0 +1,30 @@
+# MPN read from the Package Option Addendum, Packaging Information table (SBVS322C PDF page 25,
+# addendum dated 15-Oct-2026): "TLV75733PDBVR | Active | Production | SOT-23 (DBV) | 5 | 3000 |
+# LARGE T&R | ... | -40 to 125 | 1FKF". lifecycle "active" is that table's Status column.
+# Package: SOT-23 (DBV) | 5, outline DBV0005A (pages 31-33).
+schema_version: "0.2"
+kind: part
+id: ti/TLV75733PDBVR
+manufacturer: ti
+mpn: TLV75733PDBVR
+device: ti/TLV757P-DBV
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src: p25 "Package Option Addendum, row "TLV75733PDBVR", "SOT-23 (DBV) | 5"; outline DBV0005A on page 31"
+
+sources: [ti/SBVS322C]
+source: ti/SBVS322C
+
+existence:
+  status: verified
+  src: p25 "Package Option Addendum, Packaging Information table, row "TLV75733PDBVR""
+
+lifecycle:
+  status: active
+  src: p25 "Package Option Addendum, row "TLV75733PDBVR", Status "Active""
+
+parameters:
+  output_voltage:
+    typ: 3.3 V
+    src: 'p22 "8.1.1 Device Nomenclature, xx(x) = nominal output voltage: 33"'

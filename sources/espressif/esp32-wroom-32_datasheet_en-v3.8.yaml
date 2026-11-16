@@ -1,0 +1,15 @@
+# Espressif "ESP32-WROOM-32 Datasheet" Version 3.8 (cover page; Revision History newest row
+# "2026-09-16 v3.8"), 46 PDF pages, marked "Not Recommended For New Designs (NRND)". Fetched with
+# curl from espressif.com. Read with pdftotext -layout. Page numbers are PDF page indices. Used
+# only for the module outline (Table 1 "Size (mm) 18 x 25.5 x 3.1"; section 9 "Module Dimensions").
+schema_version: "0.2"
+kind: source
+id: espressif/esp32-wroom-32_datasheet_en@v3.8
+sha256: fe7dced2f6077f983dcd7df0e72b6f6c8b7b77fd6de2ff1a0efceffe3fd1e1fa
+retrieved: 2026-11-17
+url: https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf
+publisher: espressif
+document_id: esp32-wroom-32_datasheet_en
+document_type: datasheet
+revision: v3.8
+date: 2026-09-16

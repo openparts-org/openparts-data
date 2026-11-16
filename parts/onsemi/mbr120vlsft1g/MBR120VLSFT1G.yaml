@@ -1,0 +1,24 @@
+# MBR120VLSFT1G: printed verbatim in the datasheet's ORDERING INFORMATION
+# table (page 1), so existence is "verified". No lifecycle statement for
+# this OPN, so lifecycle is unknown. The VBUS diode D1 of the Raspberry Pi
+# Pico (R3 BOM item 6).
+# Package: page-6 CASE 498 (98AON11184D, ISSUE E), standards/SOD123FL-ONSEMI-498.
+schema_version: "0.2"
+kind: part
+id: onsemi/MBR120VLSFT1G
+manufacturer: onsemi
+mpn: MBR120VLSFT1G
+device: onsemi/MBR120VLSF
+
+package:
+  value: standards/SOD123FL-ONSEMI-498
+  src: p6 "SOD-123FL CASE 498 ISSUE E, 98AON11184D"
+
+sources: [onsemi/MBR120VLSFT1-D]
+source: onsemi/MBR120VLSFT1-D
+
+existence:
+  status: verified
+  src: 'p1 "ORDERING INFORMATION: "MBR120VLSFT1G | SOD-123FL | 3000 / Tape & Reel""'
+
+lifecycle: { status: unknown }

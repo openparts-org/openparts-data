@@ -1,0 +1,16 @@
+# Official GigaDevice GD25B128E datasheet, linked from the gigadevice.com product page
+# /product/flash/spi-nor-flash/gd25b128e; downloaded with curl from download.gigadevice.com and
+# read with pdftotext -layout. Footer "GD25B128E-Rev1.1 ... August 2024". 54 PDF pages; page
+# numbers are PDF page indices. Used only for the WSON8 (6x5mm) outline (section 10.2, page 48)
+# of the GD25B128EWIGR on the Arduino Nano ESP32.
+schema_version: "0.2"
+kind: source
+id: gigadevice/DS-00594-GD25B128E@rev1.1
+sha256: c231b8e0bc0e49fb3e6e860ec88115063ca5030edec0b447bd3f66c190712241
+retrieved: 2026-11-17
+url: https://download.gigadevice.com/Datasheet/DS-00594-GD25B128E-Rev1.1.pdf
+publisher: gigadevice
+document_id: DS-00594
+document_type: datasheet
+revision: "1.1"
+date: 2024-08

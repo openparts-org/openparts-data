@@ -1,0 +1,35 @@
+# LM1117I (industrial temperature grade) 800-mA LDO, fixed 5.0-V output option. Pins from SNOS412Q
+# Table 6-1 "Pin Functions" (page 3), SOT-223 column: ADJ/GND 1, VOUT 2, VIN 3, VOUT 4 (tab).
+# Pin 1 is "Ground pin for fixed output option" -- typed ground (name kept as printed). Output
+# voltage from 7.6 "LM1117I Electrical Characteristics" (page 7), rows LM1117I-5.0.
+schema_version: "0.2"
+kind: device
+id: ti/LM1117I-5.0
+manufacturer: ti
+category: linear_regulator
+family: LM1117
+source: ti/SNOS412Q
+
+parameters:
+  output_type:       { value: fixed, src: p1 "3 Description" }
+  output_voltage:
+    - min: 4.95 V
+      typ: 5 V
+      max: 5.05 V
+      at: { VIN: 7 V, IOUT: 10 mA, TJ: 25 °C }
+      src: p7 "7.6 LM1117I Elec. Char., VOUT, LM1117I-5.0"
+    - min: 4.8 V
+      max: 5.2 V
+      at: { VIN: 6.5..12 V, IOUT: 0..800 mA, TJ: -40..125 °C }
+      src: p7 "7.6 LM1117I Elec. Char., VOUT, LM1117I-5.0"
+  input_voltage_max: { max: 15 V, src: 'p4 "7.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 800 mA, src: p1 "1 Features" }
+
+pins:
+  src:
+    - 'p3 "Table 6-1 "Pin Functions" (SOT-223 column: ADJ/GND 1, VIN 3, VOUT 2, 4)"'
+    - p3 "Figure 6-1 "DCY Package, 4-Pin SOT" (Top View), "Tab is VOUT""
+  "1": { name: ADJ/GND, type: ground }
+  "2": { name: VOUT, type: power }
+  "3": { name: VIN, type: power }
+  "4": { name: VOUT, type: power }

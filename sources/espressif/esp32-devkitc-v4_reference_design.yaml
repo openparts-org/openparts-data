@@ -1,0 +1,22 @@
+# ESP32-DevKitC V4 Reference Design (zip, Espressif doc TCD000000045, version r2.1,
+# 2020-01-15): schematic (OrCAD + PDF), PCB layout (PADS 9.5 ASCII .asc, .pcb, PDF),
+# Gerber + NC drill files (2017-12-06, "ESP32-DevKitC-V4_20171206A") and BOM lists
+# (xlsx, 2018). The espressif.com link redirects to documentation.espressif.com,
+# whose page serves the file from
+# /api/resource/doc/file/Wb1W49Yx/FILE/esp32-devkitc-v4_reference_design.zip
+# (plain curl). Read: the PADS ASCII *PART* / *PARTDECAL* sections (component
+# positions, pad stacks), the NC drill tool table, the WROOM-32D BOM.
+# Same board as the dl.espressif.com layout PDF (same references, 6 layers plotted).
+# Licence: none stated ("No licenses express or implied ... are granted", esp-dev-kits
+# disclaimer). Facts only (positions, outline, holes, BOM names); nothing copied or rehosted.
+schema_version: "0.2"
+kind: source
+id: espressif/esp32-devkitc-v4_reference_design
+sha256: 5195b5e6c56e8cbfe62fa66788a9a6d0c09a4aa49902e85c4b6f5c65a97b9605
+retrieved: 2026-11-17
+url: https://www.espressif.com/sites/default/files/documentation/esp32-devkitc-v4_reference_design.zip
+publisher: espressif
+document_id: esp32-devkitc-v4_reference_design
+document_type: reference_design
+revision: r2.1
+date: 2020-01-15

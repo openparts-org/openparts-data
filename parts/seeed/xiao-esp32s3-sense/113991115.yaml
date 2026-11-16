@@ -1,0 +1,99 @@
+# Seeed Studio XIAO ESP32S3 Sense (113991115). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (seeed/XIAO-ESP32S3-Sense-SCH-PCB@V1.51),
+# converted to the package frame (board centre, top view; see the package comment).
+# Only components with an OpenParts part, or a box whose size AND height a source states,
+# are listed. Left out:
+#   the camera expansion board that ships with the Sense (a separate board on J3; no layout
+#   published), U2 (no value), USB0 UBF31-0171 (maker not named), L4, D2 LMBR4010BST5G, Q1
+#   LP0404N3T5G, LEDs: no part / no body height; passives skipped. Header holes: the inner
+#   plated 0.95 mm holes of footprint U9 "XIAO-14P-Add-On"; the castellated 0.7 mm edge
+#   half-holes are not pads here
+# J3: the B2B connector for the Sense camera board; the wiki specification table lists "1x B2B
+# Connector" only for the Sense, and Seeed publishes this one design (title "XIAO ESP32-S3-Sense")
+# for both boards, so this part is the Sense SKU.
+schema_version: "0.2"
+kind: part
+id: seeed/113991115
+manufacturer: seeed
+mpn: "113991115"
+device: seeed/XIAO-ESP32S3-SENSE
+package: standards/MODULE14-18x21-P2.54-XIAO-ESP32S3
+sources: [seeed/XIAO-ESP32S3-wiki, seeed/XIAO-ESP32S3-Sense-SCH-PCB@V1.51]
+source: seeed/XIAO-ESP32S3-Sense-SCH-PCB@V1.51
+
+existence:
+  status: probable
+  src: 'seeed/XIAO-ESP32S3-wiki "page metadata docsearch:sku_tag: 113991114, 113991115, ..."'
+
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: U1
+    part: espressif/ESP32-S3R8
+    x: 1.524
+    y: -1.624
+    rotation: 90
+    src: '"XIAO ESP32S3_V1.51.kicad_pcb U1 at 150.025, -106.628 rot 90"'
+  - ref: X1
+    body: { width: 1.6, length: 1.2, height: 0.35, color: "#c8c8c8" }
+    x: -4.979
+    y: -5.587
+    rotation: 270
+    src:
+      - '"XIAO ESP32S3_V1.51.kicad_pcb X1 at 143.522, -110.591 rot -90"'
+      - '"X1 footprint name "X4-SMD-1.6X1.2X0.35MM""'
+  - ref: J3
+    body: { width: 7.52, length: 2.97, height: 1.14, color: "#f0f0e0" }
+    x: 2.159
+    y: -8.838
+    src:
+      - '"XIAO ESP32S3_V1.51.kicad_pcb J3 at 150.66, -113.842 rot 0"'
+      - '"J3 footprint name "BTB30-0.4-7.52X2.97X1.14""'
+  - ref: K1
+    body: { width: 2.6, length: 1.6, height: 0.53, color: "#c8c8c8" }
+    x: -5.842
+    y: 8.916
+    rotation: 90
+    src:
+      - '"XIAO ESP32S3_V1.51.kicad_pcb K1 at 142.659, -96.087 rot 90"'
+      - '"K1 footprint name "SW4-SMD-2.8-2.6X1.6X0.53MM""'
+  - ref: K2
+    body: { width: 2.6, length: 1.6, height: 0.53, color: "#c8c8c8" }
+    x: 5.842
+    y: 8.916
+    rotation: 90
+    src:
+      - '"XIAO ESP32S3_V1.51.kicad_pcb K2 at 154.343, -96.087 rot 90"'
+      - '"K2 footprint name "SW4-SMD-2.8-2.6X1.6X0.53MM""'
+  - ref: ANT1
+    body: { width: 2.6, length: 2.6, height: 1, color: "#d4b060" }
+    x: -4.153
+    y: -8.838
+    rotation: 180
+    src:
+      - '"XIAO ESP32S3_V1.51.kicad_pcb ANT1 at 144.348, -113.842 rot 180"'
+      - '"ANT1 footprint name "U-FL3P-SMD-2.6X2.6X1.0MM""'
+  - ref: U4
+    body: { width: 0.92, length: 1.16, height: 0.4, color: "#303030" }
+    x: -1.13
+    y: 2.757
+    rotation: 270
+    src:
+      - '"XIAO ESP32S3_V1.51.kicad_pcb U4 at 147.371, -102.247 rot -90"'
+      - '"U4 footprint name "WLCSP-0.4-0.92X1.16X0.4MM""'
+  - ref: U3
+    body: { width: 0.745, length: 1.095, height: 0.4, color: "#303030" }
+    x: -4.206
+    y: -3.602
+    rotation: 90
+    src:
+      - '"XIAO ESP32S3_V1.51.kicad_pcb U3 at 144.296, -108.606 rot 90"'
+      - '"U3 footprint name "BGA6-0.35-0.745X10.95X0.4MM" (10.95: courtyard is 1.095)"'
+  - ref: U5
+    body: { width: 3, length: 4, height: 0.55, color: "#303030" }
+    x: -4.166
+    y: 1.377
+    src:
+      - '"XIAO ESP32S3_V1.51.kicad_pcb U5 at 144.335, -103.626 rot 0"'
+      - '"U5 value GD25Q64ENIGR, footprint USON8-0.8-4X3MM"'
+      - 'gigadevice/DS-00484-GD25Q64E@rev1.6 p56 "10.2 Package USON8 (3x4mm): D 3.00, E 4.00, A 0.55 nom"'

@@ -3,9 +3,9 @@
 # converted to the package frame (board centre, top view; see the package comment).
 # Only components with an OpenParts part, or a box whose size AND height a source states,
 # are listed. Left out:
-#   U4 "W25QXX128MBIT" (WSON-8, no full MPN), U1 3.3V regulator (internal code VREG-12457), U3
-#   WS2812-2020, J5 USB-C, J2 Qwiic JST SH, S1/S2 4.6x2.8 switches, Y1, D2, F1, LED1: no exact
-#   part / no height
+#   U1 3.3V regulator (internal code VREG-12457), U3 WS2812-2020 (series/version not stated), J5
+#   USB-C, J2 Qwiic (JST SH, MPN not named), S1/S2 4.6x2.8 switches, Y1, D2, F1, LED1: no exact
+#   part / no body height
 schema_version: "0.2"
 kind: part
 id: sparkfun/DEV-17717
@@ -25,3 +25,11 @@ assembly:
     x: 0
     y: -5.08
     src: '"Hardware/SparkFun_ProMicro-RP2040.brd U2 at 8.89, 11.43 rot 0"'
+  - ref: U4
+    body: { width: 6, length: 5, height: 0.75, color: "#303030" }
+    x: 0
+    y: 2.794
+    src:
+      - '"Hardware/SparkFun_ProMicro-RP2040.brd U4 at 8.89, 19.304 rot 0"'
+      - '"U4 value W25QXX128MBIT, footprint WSON-8-6X5-SKINNY_CENTERPAD"'
+      - winbond/W25Q128JV@revF p70 "10.3 8-Pad WSON 6x5-mm, D 6.00 across the rows, E 5.00, A 0.75 (W25Q 128M member not named)"

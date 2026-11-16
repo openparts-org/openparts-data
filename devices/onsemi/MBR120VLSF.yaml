@@ -1,0 +1,42 @@
+# MBR120VLSF 1 A 20 V Schottky power rectifier, SOD-123FL (CASE 498).
+# Page 1 "Polarity Designator: Cathode Band"; no pin numbers are printed,
+# so 1 = Cathode and 2 = Anode follow the dataset's two-terminal diode
+# convention (pin 1 at the banded end), as for onsemi/MBR120ESF.
+schema_version: "0.2"
+kind: device
+id: onsemi/MBR120VLSF
+manufacturer: onsemi
+category: diode
+family: MBR120VLSF
+source: onsemi/MBR120VLSFT1-D
+
+parameters:
+  forward_voltage:
+    - max: 0.275 V
+      at: { IF: 0.1 A, TJ: 25 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF"
+    - max: 0.315 V
+      at: { IF: 0.5 A, TJ: 25 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF"
+    - max: 0.34 V
+      at: { IF: 1 A, TJ: 25 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF"
+    - max: 0.205 V
+      at: { IF: 0.1 A, TJ: 85 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF"
+    - max: 0.27 V
+      at: { IF: 0.5 A, TJ: 85 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF"
+    - max: 0.3 V
+      at: { IF: 1 A, TJ: 85 °C }
+      src: p2 "ELECTRICAL CHARACTERISTICS, Maximum Instantaneous Forward Voltage VF"
+  reverse_voltage: { max: 20 V, src: 'p2 "MAXIMUM RATINGS, Peak Repetitive Reverse Voltage VRRM"' }
+  forward_current:
+    max: 1 A
+    at: { TL: 119 °C }
+    src: p2 "MAXIMUM RATINGS, Average Rectified Forward Current IF(AV) (Rated VR) TL = 119C"
+
+pins:
+  src: 'p1 "Mechanical Characteristics: "Polarity Designator: Cathode Band""'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

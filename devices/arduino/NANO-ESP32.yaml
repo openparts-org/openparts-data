@@ -1,0 +1,48 @@
+# Arduino Nano ESP32: the pins of the module package standards/MODULE30-18x43-P2.54-ARDUINO-NANO-ESP32,
+# named after the datasheet header tables (see below).
+# Types are this dataset's reading of the net names (GND ground; supply nets power;
+# reset nets reset; others io). AI candidate, needs review.
+# connected_to: a second header pad on the same design net as an earlier pin.
+# Nano ESP32: names from the datasheet tables 12.1 Analog (JP1) / 12.2 Digital (JP2) (PDF page 16);
+# JP1 pin n = design pad n (net check: pad 12 VUSB, 14 GND, 15 VIN), JP2 pin n = design pad 16 - n
+# (design pad 4 GND = table pin 12, pad 3 RESET = pin 13). "+3V3" recorded as 3V3.
+schema_version: "0.2"
+kind: device
+id: arduino/NANO-ESP32
+manufacturer: arduino
+category: microcontroller
+family: ESP32-S3
+source: arduino/ABX00083-datasheet@rev12
+
+pins:
+  src:  'p16 "12.1 Analog (JP1), 12.2 Digital (JP2): Pin / Function"'
+  "1":  { name: D13/SCK, type: io }
+  "2":  { name: 3V3, type: power }
+  "3":  { name: BOOT0, type: io }
+  "4":  { name: A0, type: io }
+  "5":  { name: A1, type: io }
+  "6":  { name: A2, type: io }
+  "7":  { name: A3, type: io }
+  "8":  { name: A4, type: io }
+  "9":  { name: A5, type: io }
+  "10": { name: A6, type: io }
+  "11": { name: A7, type: io }
+  "12": { name: VBUS, type: power }
+  "13": { name: BOOT1, type: io }
+  "14": { name: GND, type: ground }
+  "15": { name: VIN, type: power }
+  "16": { name: D1/TX, type: io }
+  "17": { name: D0/RX, type: io }
+  "18": { name: RST, type: reset }
+  "19": { name: GND, type: ground }
+  "20": { name: D2, type: io }
+  "21": { name: D3, type: io }
+  "22": { name: D4, type: io }
+  "23": { name: D5, type: io }
+  "24": { name: D6, type: io }
+  "25": { name: D7, type: io }
+  "26": { name: D8, type: io }
+  "27": { name: D9, type: io }
+  "28": { name: D10/CS, type: io }
+  "29": { name: D11/COPI, type: io }
+  "30": { name: D12/CIPO, type: io }

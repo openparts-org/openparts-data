@@ -1,0 +1,77 @@
+# Arduino Nano ESP32 (ABX00083). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (arduino/ABX00083-cad-files@2025-12-23),
+# converted to the package frame (board centre, top view; see the package comment).
+# Only components with an OpenParts part, or a box whose size AND height a source states,
+# are listed. Left out:
+#   J1 CX90B-16P USB-C (Hirose: refuses plain fetches), PB1 PTS820 (C&K: 403), D2 PMEG6020AELRX
+#   and D1 SOT143B TVS (datasheet lists "D3 PRTR5V0U2X"; Nexperia: 403), L3 MAKK2016T3R3M, Y1
+#   32.768 kHz, Q1: no body height in a fetchable maker source or the design file; passives
+#   skipped. Header holes: the inner plated 1.016 mm holes of JP1/JP2 (Pads6 binary of
+#   PCB.PcbDoc); the castellated edge half-holes are not pads here
+# M1: box centred on the M1 lands, 14.3 mm along their 12.9 mm extent and 10.4 mm along the 8.8 mm
+# one (datasheet p27 Figure 5); the module origin in the design is 0.95 mm off the land centre.
+schema_version: "0.2"
+kind: part
+id: arduino/ABX00083
+manufacturer: arduino
+mpn: ABX00083
+device: arduino/NANO-ESP32
+package: standards/MODULE30-18x43-P2.54-ARDUINO-NANO-ESP32
+sources: [arduino/ABX00083-datasheet@rev12, arduino/ABX00083-cad-files@2025-12-23]
+source: arduino/ABX00083-cad-files@2025-12-23
+
+existence: { status: verified, src: 'arduino/ABX00083-datasheet@rev12 p1 "SKU: ABX00083"' }
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: U2
+    body: { width: 1.5, length: 2, height: 0.9, color: "#303030" }
+    x: -3.397
+    y: 8.222
+    rotation: 270
+    src:
+      - '"PCB.PcbDoc U2 at 52.768, 50.893 rot 0"'
+      - '"U2 footprint "QFN50P150X200X90-8L" (IPC-7351: 1.5 x 2.0 mm, 0.90 high)"'
+  - ref: DL2
+    body: { width: 1.6, length: 0.8, height: 0.8, color: "#e8c840" }
+    x: -5.84
+    y: 20.19
+    rotation: 270
+    src:
+      - '"PCB.PcbDoc DL2 at 40.8, 48.45 rot 0"'
+      - '"DL2 footprint name "LEDC1608X80N" (IPC-7351: 1.6 x 0.8 mm body, 0.80 mm high)"'
+  - ref: DL3
+    body: { width: 1.6, length: 0.8, height: 0.8, color: "#40c040" }
+    x: 5.84
+    y: 20.19
+    rotation: 270
+    src:
+      - '"PCB.PcbDoc DL3 at 40.8, 60.13 rot 0"'
+      - '"DL3 footprint name "LEDC1608X80N" (IPC-7351: 1.6 x 0.8 mm body, 0.80 mm high)"'
+  - ref: M1
+    body: { width: 14.3, length: 10.4, height: 1.9, color: "#c8c8c8" }
+    x: 0
+    y: -14.403
+    rotation: 270
+    src:
+      - '"PCB.PcbDoc M1 lands centred at 75.393, 54.29 (origin 74.4426, 54.29) rot 270"'
+      - 'arduino/ABX00083-datasheet@rev12 p7 "5.1 Front View: M1 NORA-W106-10B (ESP32-S3 SoC)"'
+      - ublox/UBX-21036702@R05 p7 "NORA-W106-10B has an outline of 10.4 (length) x 14.3 mm (width) x 1.9 mm (height)"
+  - ref: U3
+    body: { width: 5, length: 6, height: 0.75, color: "#303030" }
+    x: 2.42
+    y: 3.601
+    rotation: 270
+    src:
+      - '"PCB.PcbDoc U3 at 57.389, 56.71 rot 90"'
+      - arduino/ABX00083-datasheet@rev12 p7 "U3 GD25B128EWIGR 128 Mbit (16 MB) ext. flash memory"
+      - gigadevice/DS-00594-GD25B128E@rev1.1 p48 "10.2 WSON8 (6x5mm), D 6.00 across the rows, E 5.00, A 0.75 nom"
+  - ref: DL1
+    body: { width: 1, length: 1, height: 0.2, color: "#f0f0f0" }
+    x: 3.55
+    y: 10.796
+    src:
+      - '"PCB.PcbDoc DL1 at 50.194, 57.84 rot 90"'
+      - '"DL1 footprint SMLP34RGB2W"'
+      - arduino/ABX00083-datasheet@rev12 p7 "DL1 RGB LED"
+      - rohm/SMLP34RGB-datasheet-en p1 "SMLP34RGB Series 1.0x1.0mm (t=0.2mm)"

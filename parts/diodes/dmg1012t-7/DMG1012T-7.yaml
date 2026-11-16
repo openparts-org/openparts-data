@@ -1,0 +1,26 @@
+# DMG1012T-7: 3,000-piece reel MPN from the DS31783 ordering table
+# (DMG1012T-13 is the 10,000 reel). No lifecycle statement in the document.
+schema_version: "0.2"
+kind: part
+id: diodes/DMG1012T-7
+manufacturer: diodes
+mpn: DMG1012T-7
+device: diodes/DMG1012T
+package: standards/SOT523-1.60x0.80-P1.00-DIODES
+sources: [diodes/DS31783-rev8-2]
+source: diodes/DS31783-rev8-2
+
+existence:
+  status: verified
+  src: 'p1 "Ordering Information table: "DMG1012T-7 | Commercial | SOT523 | 3000 | Tape & Reel""'
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 20 V, src: 'p2 "Maximum Ratings, VDSS"' }
+  gate_threshold_voltage:
+    min: 0.5 V
+    max: 1 V
+    at: { ID: 250 µA }
+    src: p2 "Electrical Characteristics, VGS(TH), VDS = VGS"

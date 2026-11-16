@@ -1,0 +1,16 @@
+# Atmel (now Microchip) "ATmega8U2 ATmega16U2 ATmega32U2 Datasheet" (PDF title), downloaded from
+# ww1.microchip.com (URL below). Revision from the footer of the front pages
+# "7799E-AVR-09/2012" (later pages still carry "7799D-AVR-11/10"). 310 pages; text read with
+# pdftotext -layout; the pinout (Figure 1-1, page 2) and the QFN32 drawing (page 297) were
+# rendered and read as images. PDF page indices equal the printed page numbers.
+schema_version: "0.2"
+kind: source
+id: microchip/7799@revE
+sha256: 182d44b3834632028e2258ee410b3ad33ee89c692695b6dc3e68cbdd08a5d03a
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/doc7799.pdf
+publisher: microchip
+document_id: "7799"
+document_type: datasheet
+revision: E
+date: 2012-09
