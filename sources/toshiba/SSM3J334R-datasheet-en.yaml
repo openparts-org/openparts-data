@@ -1,0 +1,17 @@
+# Toshiba SSM3J334R datasheet (English), 9 PDF pages, footer
+# date 2026-05-29 Rev.3.0. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=5579); downloaded 2026-11-16 with curl.
+# Read with pdftotext -layout; image-only drawings (package outline, pin
+# assignment) were rendered with pdftoppm and read as images. Page
+# numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/SSM3J334R-datasheet-en
+sha256: 7145ec71dd5d9a73614f176f6c75bbb60b59c591462b1fb61d44f4532c98c1c1
+retrieved: 2026-11-16
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=5579&prodName=SSM3J334R
+publisher: toshiba
+document_id: SSM3J334R_datasheet_en
+document_type: datasheet
+revision: "3.0"
+date: 2026-05-29

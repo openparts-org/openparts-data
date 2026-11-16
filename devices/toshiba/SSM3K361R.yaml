@@ -1,0 +1,16 @@
+# SSM3K361R N-channel MOSFET in SOT-23F. Pin assignment from "3. Packaging
+# and Internal Circuit" on page 1 of the datasheet: 1 Gate, 2 Source,
+# 3 Drain. All typed passive.
+schema_version: "0.2"
+kind: device
+id: toshiba/SSM3K361R
+manufacturer: toshiba
+category: transistor
+family: SSM3K361R
+source: toshiba/SSM3K361R-datasheet-en
+
+pins:
+  src: p1 "3. Packaging and Internal Circuit, 1 Gate / 2 Source / 3 Drain"
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

@@ -1,0 +1,17 @@
+# Toshiba SSM3K345R datasheet (English), 9 PDF pages, footer
+# date 2026-07-13 Rev.4.0. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=55842); downloaded 2026-11-16 with curl.
+# Read with pdftotext -layout; image-only drawings (package outline, pin
+# assignment) were rendered with pdftoppm and read as images. Page
+# numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/SSM3K345R-datasheet-en
+sha256: abc3940d40ec3aa64a56d04aa71274fc9aade42b19b3ef7df40ca8eff2c303fc
+retrieved: 2026-11-16
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=55842&prodName=SSM3K345R
+publisher: toshiba
+document_id: SSM3K345R_datasheet_en
+document_type: datasheet
+revision: "4.0"
+date: 2026-07-13

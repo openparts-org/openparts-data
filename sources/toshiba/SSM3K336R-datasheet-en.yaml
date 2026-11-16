@@ -1,0 +1,17 @@
+# Toshiba SSM3K336R datasheet (English), 9 PDF pages, footer
+# date 2026-04-14 Rev.5.0.A. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=13694); downloaded 2026-11-16 with curl.
+# Read with pdftotext -layout; image-only drawings (package outline, pin
+# assignment) were rendered with pdftoppm and read as images. Page
+# numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/SSM3K336R-datasheet-en
+sha256: 45317e29bd982b093836dc9a8a53d8a65ceec42a3b6c6d7d8eeffb57f56f5f54
+retrieved: 2026-11-16
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=13694&prodName=SSM3K336R
+publisher: toshiba
+document_id: SSM3K336R_datasheet_en
+document_type: datasheet
+revision: 5.0.A
+date: 2026-04-14

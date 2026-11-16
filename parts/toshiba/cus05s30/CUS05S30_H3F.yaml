@@ -1,0 +1,34 @@
+# Order code "CUS05S30,H3F" is listed under "Orderable part number
+# (example)" on Toshiba's CUS05S30 product page; the page says listed
+# numbers are representative, and the datasheet has no ordering table
+# -> existence `probable`. Lifecycle `unknown` (not stated).
+schema_version: "0.2"
+kind: part
+id: toshiba/CUS05S30,H3F
+manufacturer: toshiba
+mpn: CUS05S30,H3F
+device: toshiba/CUS05S30
+package: { value: manufacturers/toshiba/1-1E1S, src: 'p4 "Package Dimensions, TOSHIBA: 1-1E1S"' }
+sources: [toshiba/CUS05S30-datasheet-en, toshiba/CUS05S30-product-page]
+source: toshiba/CUS05S30-datasheet-en
+
+existence:
+  status: probable
+  src: toshiba/CUS05S30-product-page p1 "Orderable part number (example), CUS05S30,H3F"
+
+lifecycle: { status: unknown }
+
+parameters:
+  forward_voltage:
+    - typ: 0.41 V
+      max: 0.47 V
+      at: { IF: 0.5 A }
+      src: p2 "Electrical Characteristics, Forward voltage VF(2)"
+    - typ: 0.28 V
+      max: 0.34 V
+      at: { IF: 0.1 A }
+      src: p2 "Electrical Characteristics, Forward voltage VF(1)"
+  reverse_voltage: { max: 20 V, src: 'p1 "Absolute Maximum Ratings, Reverse voltage VR"' }
+  forward_current:
+    max: 0.5 A
+    src: p1 "Absolute Maximum Ratings, Average rectified current IO"

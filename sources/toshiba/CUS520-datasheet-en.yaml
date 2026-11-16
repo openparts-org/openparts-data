@@ -1,0 +1,17 @@
+# Toshiba CUS520 datasheet (English), 6 PDF pages, footer
+# date 2026-04-07 Rev.6.0.A. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=7041); downloaded 2026-11-16 with curl.
+# Read with pdftotext -layout; image-only drawings (package outline, pin
+# assignment) were rendered with pdftoppm and read as images. Page
+# numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/CUS520-datasheet-en
+sha256: 90f9117ffe7da098d7cabae18be48e9657251ca32fda87cd6dcc38135877724b
+retrieved: 2026-11-16
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=7041&prodName=CUS520
+publisher: toshiba
+document_id: CUS520_datasheet_en
+document_type: datasheet
+revision: 6.0.A
+date: 2026-04-07

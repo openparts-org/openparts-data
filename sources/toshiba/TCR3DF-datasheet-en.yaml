@@ -1,0 +1,18 @@
+# Toshiba TCR3DF datasheet (English), 14 PDF pages, footer
+# date 2026-04-07 Rev.5.0.A. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=151641); downloaded 2026-11-16 with curl.
+# Read with pdftotext -layout; image-only drawings (package outline, pin
+# assignment) were rendered with pdftoppm and read as images. Page
+# numbers are PDF page indices.
+# The same did is linked from every TCR3DFxx product page.
+schema_version: "0.2"
+kind: source
+id: toshiba/TCR3DF-datasheet-en
+sha256: d029fde569ec2675b8587c0bc3d5650ac539a7a8abe27112001917e469d70e8c
+retrieved: 2026-11-16
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=151641&prodName=TCR3DF33
+publisher: toshiba
+document_id: TCR3DF_datasheet_en
+document_type: datasheet
+revision: 5.0.A
+date: 2026-04-07

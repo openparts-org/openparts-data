@@ -1,0 +1,17 @@
+# Toshiba CUS10S40 datasheet (English), 6 PDF pages, footer
+# date 2026-04-07 Rev.3.0.A. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=14564); downloaded 2026-11-16 with curl.
+# Read with pdftotext -layout; image-only drawings (package outline, pin
+# assignment) were rendered with pdftoppm and read as images. Page
+# numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/CUS10S40-datasheet-en
+sha256: dac4da24b837d5954fe7d733a524677151e42ef37a771be48c12c0eb02e2d5fe
+retrieved: 2026-11-16
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=14564&prodName=CUS10S40
+publisher: toshiba
+document_id: CUS10S40_datasheet_en
+document_type: datasheet
+revision: 3.0.A
+date: 2026-04-07

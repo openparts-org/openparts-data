@@ -1,0 +1,26 @@
+# TCR3DF series 300 mA CMOS LDO regulators (fixed output) in SMV
+# (SOT-25). Pin assignment from "4. Pin Assignment (top view)", page 2
+# (image): 1 VIN, 2 GND, 3 CONTROL, 4 NC, 5 VOUT. Output voltage and
+# dropout are per MPN (on the Parts).
+schema_version: "0.2"
+kind: device
+id: toshiba/TCR3DF
+manufacturer: toshiba
+category: linear_regulator
+family: TCR3DF
+source: toshiba/TCR3DF-datasheet-en
+
+parameters:
+  output_type:    { value: fixed, src: 'p1 "1. Description, fixed output voltages"' }
+  input_voltage_max:
+    max: 5.5 V
+    src: p4 "6. Electrical Characteristics, Input voltage VIN, Max"
+  output_current: { max: 300 mA, src: 'p2 "3. Absolute Maximum Ratings, Output current IOUT"' }
+
+pins:
+  src: p2 "4. Pin Assignment (top view)"
+  "1": { name: VIN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: CONTROL, type: input }
+  "4": { name: NC, type: nc }
+  "5": { name: VOUT, type: power }

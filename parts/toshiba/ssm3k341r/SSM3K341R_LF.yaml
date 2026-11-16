@@ -1,0 +1,42 @@
+# Order code "SSM3K341R,LF" is listed under "Orderable part number
+# (example)" on Toshiba's SSM3K341R product page; the page says listed
+# numbers are representative, and the datasheet has no ordering table
+# -> existence `probable`. Lifecycle `unknown` (not stated).
+schema_version: "0.2"
+kind: part
+id: toshiba/SSM3K341R,LF
+manufacturer: toshiba
+mpn: SSM3K341R,LF
+device: toshiba/SSM3K341R
+package: { value: manufacturers/toshiba/SOT-23F, src: 'p8 "Package Dimensions, Nickname: SOT-23F"' }
+sources: [toshiba/SSM3K341R-datasheet-en, toshiba/SSM3K341R-product-page]
+source: toshiba/SSM3K341R-datasheet-en
+
+existence:
+  status: probable
+  src: toshiba/SSM3K341R-product-page p1 "Orderable part number (example), SSM3K341R,LF"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: 'p1 "Title, Silicon N-Channel MOS"' }
+  drain_source_voltage: { max: 60 V, src: 'p2 "4. Absolute Maximum Ratings, VDSS"' }
+  drain_current: { max: 6 A, src: 'p2 "4. Absolute Maximum Ratings, Drain current (DC) ID"' }
+  rds_on:
+    - typ: 28 mΩ
+      max: 36 mΩ
+      at: { VGS: 10 V, ID: 5 A }
+      src: p3 "6.1 Static Characteristics, RDS(ON), VGS = 10 V row"
+    - typ: 36 mΩ
+      max: 51 mΩ
+      at: { VGS: 4.5 V, ID: 3 A }
+      src: p3 "6.1 Static Characteristics, RDS(ON), VGS = 4.5 V row"
+    - typ: 43 mΩ
+      max: 69 mΩ
+      at: { VGS: 4 V, ID: 2 A }
+      src: p3 "6.1 Static Characteristics, RDS(ON), VGS = 4 V row"
+  gate_threshold_voltage:
+    min: 1.5 V
+    max: 2.5 V
+    at: { VDS: 10 V, ID: 0.1 mA }
+    src: p3 "6.1 Static Characteristics, Vth (Min / Max)"

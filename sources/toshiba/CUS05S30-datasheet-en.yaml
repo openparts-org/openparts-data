@@ -1,0 +1,17 @@
+# Toshiba CUS05S30 datasheet (English), 5 PDF pages, footer
+# date 2026-04-07 Rev.3.0.A. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=13983); downloaded 2026-11-16 with curl.
+# Read with pdftotext -layout; image-only drawings (package outline, pin
+# assignment) were rendered with pdftoppm and read as images. Page
+# numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/CUS05S30-datasheet-en
+sha256: 8fabc2e83ad650ac218c49c81602ae0e06abebef5698c7330a98ae81929e3a90
+retrieved: 2026-11-16
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=13983&prodName=CUS05S30
+publisher: toshiba
+document_id: CUS05S30_datasheet_en
+document_type: datasheet
+revision: 3.0.A
+date: 2026-04-07

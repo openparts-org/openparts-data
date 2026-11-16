@@ -1,0 +1,17 @@
+# Toshiba SSM3K324R datasheet (English), 9 PDF pages, footer
+# date 2026-04-14 Rev.6.0.A. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=13879); downloaded 2026-11-16 with curl.
+# Read with pdftotext -layout; image-only drawings (package outline, pin
+# assignment) were rendered with pdftoppm and read as images. Page
+# numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/SSM3K324R-datasheet-en
+sha256: 895696d83b712f06f4e22b9c9be6f05760ff45ca1d1c4c8b0c848d20c1dcfe85
+retrieved: 2026-11-16
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=13879&prodName=SSM3K324R
+publisher: toshiba
+document_id: SSM3K324R_datasheet_en
+document_type: datasheet
+revision: 6.0.A
+date: 2026-04-14

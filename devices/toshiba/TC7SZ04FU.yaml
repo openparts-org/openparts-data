@@ -1,0 +1,18 @@
+# TC7SZ04FU single-gate CMOS logic (Inverter, "1. Functional
+# Description", page 1) in USV (SOT-353). Pin map from "Pin Assignment
+# (Top view)" on page 2 (image).
+schema_version: "0.2"
+kind: device
+id: toshiba/TC7SZ04FU
+manufacturer: toshiba
+category: logic
+family: TC7SZ04FU
+source: toshiba/TC7SZ04FU-datasheet-en
+
+pins:
+  src: p2 "4. Marking and Pin Assignment, Pin Assignment (Top view)"
+  "1": { name: NC, type: nc }
+  "2": { name: IN A, type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: OUT Y, type: output }
+  "5": { name: VCC, type: power }

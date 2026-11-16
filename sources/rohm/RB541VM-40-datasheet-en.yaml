@@ -1,0 +1,17 @@
+# ROHM RB541VM-40 datasheet (English), 7 PDF pages (4 datasheet pages
+# plus the general Notice), footer "2019/07/16_Rev.006". Fetched
+# 2026-11-16 with curl from ROHM's fscdn.rohm.com datasheet link. Read
+# with pdftotext -layout; the outline, inner circuit and dimension
+# drawing were rendered with pdftoppm and read as images. Page numbers
+# are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: rohm/RB541VM-40-datasheet-en
+sha256: d9dc6595e21ac1b968f6205c2045d82055e9ca02ba42ebbf9f3bc0fde45911bd
+retrieved: 2026-11-16
+url: https://fscdn.rohm.com/en/products/databook/datasheet/discrete/diode/schottky_barrier/rb541vm-40te-17-e.pdf
+publisher: rohm
+document_id: rb541vm-40te-17-e
+document_type: datasheet
+revision: 006
+date: 2019-07-16

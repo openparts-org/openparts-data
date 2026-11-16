@@ -1,0 +1,66 @@
+# ROHM UMD2 (SOD-323FL, JEITA SC-90A) 2-lead flat-lead package, read
+# from the rendered "Dimensions (SOD-323FL SC-90A UMD2)" page 4 (image
+# only) of the RB751VM-40 datasheet (2019/02/06 Rev.005). The RB521VM-40,
+# RB541VM-40 (Rev.006) and RB520VM-30 (Rev.006) datasheets carry the
+# same drawing on page 4 (drawing area pixel-identical at 100 dpi). No
+# drawing number is printed; the id is the ROHM package code.
+# Millimetres from the Min / Average / Max table; "Average" is recorded
+# as typ.
+#
+# Flat leads straight out of the body ends (side view): `sod_flat`. The
+# drawing has the leads vertical with terminal (1) (cathode, marking
+# bars) at the top; turned so pin 1 sits at -X. Mapping (as
+# manufacturers/ti/DYA0002A): body_length = E (body along the leads),
+# body_width = D (across), overall_length = HE (tip to tip), lead_width
+# = b, lead_thickness = c, body_height = A (seating to top; no A1).
+# Land pattern (same page): pads l1 (along the leads, "0.80" Min only)
+# x b3 (across, "0.90" Min only), centres e1 "2.10" (Average) apart
+# (dash-dot centre lines through both lands) -> x = +/-2.10/2 = +/-1.05.
+# The Min values are recorded as the pad size.
+schema_version: "0.2"
+kind: package
+id: manufacturers/rohm/UMD2
+family: sod_flat
+lead_count: 2
+source: rohm/RB751VM-40-datasheet-en
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: sod_flat }
+
+dimensions:
+  body_width:
+    min: 1.15 mm
+    typ: 1.25 mm
+    max: 1.35 mm
+    src: p4 "Dimensions table, D 1.15 / 1.25 / 1.35"
+  body_length:
+    min: 1.6 mm
+    typ: 1.7 mm
+    max: 1.8 mm
+    src: p4 "Dimensions table, E 1.60 / 1.70 / 1.80"
+  body_height:
+    min: 0.6 mm
+    typ: 0.7 mm
+    max: 0.9 mm
+    src: p4 "Dimensions table, A 0.60 / 0.70 / 0.90"
+  lead_thickness:
+    min: 0.05 mm
+    typ: 0.1 mm
+    max: 0.2 mm
+    src: p4 "Dimensions table, c 0.05 / 0.10 / 0.20"
+  overall_length:
+    min: 2.3 mm
+    typ: 2.5 mm
+    max: 2.7 mm
+    src: p4 "Dimensions table, HE 2.30 / 2.50 / 2.70"
+  lead_width:
+    min: 0.25 mm
+    typ: 0.3 mm
+    max: 0.35 mm
+    src: p4 "Dimensions table, b 0.25 / 0.30 / 0.35"
+
+pads:
+  value:
+    - { number: "1", x: -1.05, y: 0, width: 0.8, length: 0.9 }
+    - { number: "2", x: 1.05, y: 0, width: 0.8, length: 0.9 }
+  src: p4 "Dimensions land pattern, l1 0.80 (Min) x b3 0.90 (Min), e1 2.10 -> x = +/-1.05"

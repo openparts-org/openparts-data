@@ -1,0 +1,27 @@
+# TCR3DF15: 1.5 V output of the TCR3DF series. Order code "TCR3DF15,LM" is listed under "Orderable part number
+# (example)" on Toshiba's TCR3DF15 product page; the page says listed
+# numbers are representative, and the datasheet has no ordering table
+# -> existence `probable`. Lifecycle `unknown` (not stated).
+schema_version: "0.2"
+kind: part
+id: toshiba/TCR3DF15,LM
+manufacturer: toshiba
+mpn: TCR3DF15,LM
+device: toshiba/TCR3DF
+package: { value: manufacturers/toshiba/SMV, src: 'p13 "Package Dimensions, SMV (SOT-25)(SC-74A)"' }
+sources: [toshiba/TCR3DF-datasheet-en, toshiba/TCR3DF15-product-page]
+source: toshiba/TCR3DF-datasheet-en
+
+existence:
+  status: probable
+  src: toshiba/TCR3DF15-product-page p1 "Orderable part number (example), TCR3DF15,LM"
+
+lifecycle: { status: unknown }
+
+parameters:
+  output_voltage: { typ: 1.5 V, src: 'p3 "List of Products Number, TCR3DF15 row, VOUT (typ.)"' }
+  dropout_voltage:
+    typ: 370 mV
+    max: 470 mV
+    at: { IOUT: 300 mA }
+    src: p4 "7. Dropout Voltage Table, row 1.5 V <= VOUT < 1.8 V"

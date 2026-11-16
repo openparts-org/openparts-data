@@ -1,0 +1,38 @@
+# Package: the datasheet names only "Nickname: USC"; its drawing
+# shows the same values as Toshiba 1-1E1S (CUS10S30) and is mapped to
+# it by value. Order code "CUS520,H3F" is listed under "Orderable part number
+# (example)" on Toshiba's CUS520 product page; the page says listed
+# numbers are representative, and the datasheet has no ordering table
+# -> existence `probable`. Lifecycle `unknown` (not stated).
+schema_version: "0.2"
+kind: part
+id: toshiba/CUS520,H3F
+manufacturer: toshiba
+mpn: CUS520,H3F
+device: toshiba/CUS520
+package: { value: manufacturers/toshiba/1-1E1S, src: 'p5 "Package Dimensions, Nickname: USC"' }
+sources: [toshiba/CUS520-datasheet-en, toshiba/CUS520-product-page]
+source: toshiba/CUS520-datasheet-en
+
+existence:
+  status: probable
+  src: toshiba/CUS520-product-page p1 "Orderable part number (example), CUS520,H3F"
+
+lifecycle: { status: unknown }
+
+parameters:
+  forward_voltage:
+    - typ: 0.52 V
+      max: 0.6 V
+      at: { IF: 200 mA }
+      src: p2 "Electrical Characteristics, Forward voltage VF(3)"
+    - typ: 0.21 V
+      at: { IF: 1 mA }
+      src: p2 "Electrical Characteristics, Forward voltage VF(1)"
+    - typ: 0.28 V
+      at: { IF: 10 mA }
+      src: p2 "Electrical Characteristics, Forward voltage VF(2)"
+  reverse_voltage: { max: 30 V, src: 'p2 "Absolute Maximum Ratings, Reverse voltage VR"' }
+  forward_current:
+    max: 200 mA
+    src: p2 "Absolute Maximum Ratings, Average rectified current IO"

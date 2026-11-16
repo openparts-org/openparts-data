@@ -1,0 +1,17 @@
+# Toshiba TC7SZ126FU datasheet (English), 9 PDF pages, footer
+# date 2026-05-13 Rev.2.0.B. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=54615); downloaded 2026-11-16 with curl.
+# Read with pdftotext -layout; image-only drawings (package outline, pin
+# assignment) were rendered with pdftoppm and read as images. Page
+# numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/TC7SZ126FU-datasheet-en
+sha256: e15fb145c56f97af5c5ed85604a511dd2892bf604fea33827dbc20184fe49f26
+retrieved: 2026-11-16
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=54615&prodName=TC7SZ126FU
+publisher: toshiba
+document_id: TC7SZ126FU_datasheet_en
+document_type: datasheet
+revision: 2.0.B
+date: 2026-05-13

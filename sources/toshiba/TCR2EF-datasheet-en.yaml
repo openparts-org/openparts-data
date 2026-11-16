@@ -1,0 +1,19 @@
+# Toshiba TCR2EF datasheet (English), 17 PDF pages, footer
+# date 2026-04-07. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=13794); downloaded 2026-11-16 with curl.
+# Read with pdftotext -layout; image-only drawings (package outline, pin
+# assignment) were rendered with pdftoppm and read as images. Page
+# numbers are PDF page indices. No revision number is printed; the revision is the page-footer date.
+# The document covers the TCR2EF (SMV) and TCR2EE (ESV) series; the same
+# did is linked from every TCR2EFxx product page.
+schema_version: "0.2"
+kind: source
+id: toshiba/TCR2EF-datasheet-en
+sha256: 2fd322245853290ccc9e9d08b07e349a487e182ffdb0b7c209a6a1229525e7c1
+retrieved: 2026-11-16
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=13794&prodName=TCR2EF33
+publisher: toshiba
+document_id: TCR2EF_datasheet_en
+document_type: datasheet
+revision: 2026-04-07
+date: 2026-04-07

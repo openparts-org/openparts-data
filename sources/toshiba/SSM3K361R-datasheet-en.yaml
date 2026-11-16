@@ -1,0 +1,17 @@
+# Toshiba SSM3K361R datasheet (English), 9 PDF pages, footer
+# date 2026-10-23 Rev.15.0. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=36685); downloaded 2026-11-16 with curl.
+# Read with pdftotext -layout; image-only drawings (package outline, pin
+# assignment) were rendered with pdftoppm and read as images. Page
+# numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/SSM3K361R-datasheet-en
+sha256: 06a5f903136bd073d4cced9eaf8abbe134b284a19d200df74b6a4bc6e5ce2d23
+retrieved: 2026-11-16
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=36685&prodName=SSM3K361R
+publisher: toshiba
+document_id: SSM3K361R_datasheet_en
+document_type: datasheet
+revision: "15.0"
+date: 2026-10-23

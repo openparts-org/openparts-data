@@ -1,0 +1,68 @@
+# Toshiba USV (JEDEC SOT-353) 5-lead package, read from the rendered "Package Dimensions" page
+# (p7, image only) of the TC7SZ08FU datasheet
+# (2026-05-13, Rev.3.0.B). The TC7SZ00FU, TC7SZ04FU, TC7SZ32FU, TC7SZ86FU
+# (p7), TC7SZ14FU, TC7SZ125FU and TC7SZ126FU (p8) datasheets carry the
+# same drawing (identical values; drawing area pixel-identical except
+# TC7SZ14FU, whose name table differs in width only).
+# Millimetres; a toleranced value is recorded as nominal plus the
+# resulting min/max. No Toshiba drawing number is printed; the id is the
+# Toshiba nickname.
+#
+# sot mapping (as manufacturers/ti/DBV0005A): body_width = body along
+# the lead rows, body_length = body across the rows, overall_length =
+# lead-tip span. Top view: leads 1, 2, 3 on the bottom edge, 4 opposite
+# 3 and 5 opposite 1 on the top edge -- the generator's [3, 2] layout.
+# The side-view height runs from the top to the body underside
+# (body_height); the leads sit "0.05 +/-0.05" below it (standoff).
+# No land pattern in the source.
+schema_version: "0.2"
+kind: package
+id: manufacturers/toshiba/USV
+family: sot
+lead_count: 5
+
+lead_layout:
+  value: [3, 2]
+  src:   'p7 "Package Dimensions top view: leads 1, 2, 3 bottom edge; 5, 4 top edge"'
+
+source: toshiba/TC7SZ08FU-datasheet-en
+
+pitch: { typ: 0.65 mm, src: 'p7 "Package Dimensions, boxed basic "0.65" pin 1 to 2 and 2 to 3"' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:
+    min: 1.8 mm
+    typ: 2 mm
+    max: 2.2 mm
+    src: p7 "Package Dimensions top view, body "2 +/-0.2" along the lead rows"
+  body_length:
+    min: 1.15 mm
+    typ: 1.25 mm
+    max: 1.35 mm
+    src: p7 "Package Dimensions top view, body "1.25 +/-0.1" across the lead rows"
+  body_height:
+    min: 0.8 mm
+    typ: 0.9 mm
+    max: 1 mm
+    src: p7 "Package Dimensions side view, height "0.9 +/-0.1" to the body underside"
+  lead_thickness:
+    min: 0.1 mm
+    typ: 0.15 mm
+    max: 0.2 mm
+    src: p7 "Package Dimensions end view, lead thickness "0.15 +/-0.05""
+  overall_length:
+    min: 2 mm
+    typ: 2.1 mm
+    max: 2.2 mm
+    src: p7 "Package Dimensions top view, lead-tip span "2.1 +/-0.1""
+  standoff:
+    min: 0 mm
+    typ: 0.05 mm
+    max: 0.1 mm
+    src: p7 "Package Dimensions side view, "0.05 +/-0.05" below the body"
+  lead_width:
+    min: 0.15 mm
+    typ: 0.2 mm
+    max: 0.3 mm
+    src: p7 "Package Dimensions top view, lead width "0.2 +0.1/-0.05""

@@ -1,0 +1,24 @@
+# General-use order code (the product page also lists the automotive
+# "TC7SZ04FU,LXHJ", not added). Order code "TC7SZ04FU,LJ" is listed under "Orderable part number
+# (example)" on Toshiba's TC7SZ04FU product page; the page says listed
+# numbers are representative, and the datasheet has no ordering table
+# -> existence `probable`. Lifecycle `unknown` (not stated).
+schema_version: "0.2"
+kind: part
+id: toshiba/TC7SZ04FU,LJ
+manufacturer: toshiba
+mpn: TC7SZ04FU,LJ
+device: toshiba/TC7SZ04FU
+
+package:
+  value: manufacturers/toshiba/USV
+  src: 'p7 "Package Dimensions, JEDEC: SOT-353, Nickname: USV"'
+
+sources: [toshiba/TC7SZ04FU-datasheet-en, toshiba/TC7SZ04FU-product-page]
+source: toshiba/TC7SZ04FU-datasheet-en
+
+existence:
+  status: probable
+  src: toshiba/TC7SZ04FU-product-page p1 "Orderable part number (example), TC7SZ04FU,LJ"
+
+lifecycle: { status: unknown }

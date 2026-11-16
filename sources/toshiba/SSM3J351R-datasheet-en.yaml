@@ -1,0 +1,17 @@
+# Toshiba SSM3J351R datasheet (English), 9 PDF pages, footer
+# date 2026-10-23 Rev.11.0. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=53735); downloaded 2026-11-16 with curl.
+# Read with pdftotext -layout; image-only drawings (package outline, pin
+# assignment) were rendered with pdftoppm and read as images. Page
+# numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/SSM3J351R-datasheet-en
+sha256: e7c3042d1ba3b8ddb8b14f7b7aa6b1d98afdfdac2e2ff2567dceea1bb42a2434
+retrieved: 2026-11-16
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=53735&prodName=SSM3J351R
+publisher: toshiba
+document_id: SSM3J351R_datasheet_en
+document_type: datasheet
+revision: "11.0"
+date: 2026-10-23

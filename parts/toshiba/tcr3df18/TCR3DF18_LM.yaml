@@ -1,0 +1,27 @@
+# TCR3DF18: 1.8 V output of the TCR3DF series. Order code "TCR3DF18,LM" is listed under "Orderable part number
+# (example)" on Toshiba's TCR3DF18 product page; the page says listed
+# numbers are representative, and the datasheet has no ordering table
+# -> existence `probable`. Lifecycle `unknown` (not stated).
+schema_version: "0.2"
+kind: part
+id: toshiba/TCR3DF18,LM
+manufacturer: toshiba
+mpn: TCR3DF18,LM
+device: toshiba/TCR3DF
+package: { value: manufacturers/toshiba/SMV, src: 'p13 "Package Dimensions, SMV (SOT-25)(SC-74A)"' }
+sources: [toshiba/TCR3DF-datasheet-en, toshiba/TCR3DF18-product-page]
+source: toshiba/TCR3DF-datasheet-en
+
+existence:
+  status: probable
+  src: toshiba/TCR3DF18-product-page p1 "Orderable part number (example), TCR3DF18,LM"
+
+lifecycle: { status: unknown }
+
+parameters:
+  output_voltage: { typ: 1.8 V, src: 'p3 "List of Products Number, TCR3DF18 row, VOUT (typ.)"' }
+  dropout_voltage:
+    typ: 290 mV
+    max: 400 mV
+    at: { IOUT: 300 mA }
+    src: p4 "7. Dropout Voltage Table, row 1.8 V <= VOUT < 2.1 V"

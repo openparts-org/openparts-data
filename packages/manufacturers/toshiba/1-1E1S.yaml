@@ -1,0 +1,55 @@
+# Toshiba USC (SOD-323) 2-lead package, drawing "TOSHIBA: 1-1E1S"
+# (package-name table, "Nickname: USC"), read from the rendered
+# "Package Dimensions" page 4 (image only) of the CUS10S30 datasheet
+# (2026-04-07, Rev.2.0.A). CUS05S30 page 4 carries the same drawing
+# (pixel-identical drawing area). Millimetres; a toleranced value is
+# recorded as nominal plus the resulting min/max. Bent gull-wing leads
+# (side view), hence sod. Pin 1 (cathode) is at the band.
+#
+# sod mapping (as standards/SOD323-ONSEMI-477): body_length = "1.7
+# +0.2/-0.1" along the leads, body_width = "1.25 +0.2/-0.1" across,
+# overall_length = lead-tip span "2.5 +/-0.2", body_height = "0.9
+# +0.2/-0.1" (top to body underside). Not recorded: "0 +/-0.05" (lead
+# underside vs body underside: a standoff range below zero) and the
+# "0.15" lead-to-top offset in the end view. No land pattern.
+schema_version: "0.2"
+kind: package
+id: manufacturers/toshiba/1-1E1S
+family: sod
+lead_count: 2
+source: toshiba/CUS10S30-datasheet-en
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: sod }
+
+dimensions:
+  body_width:
+    min: 1.15 mm
+    typ: 1.25 mm
+    max: 1.45 mm
+    src: p4 "Package Dimensions top view, body "1.25 +0.2/-0.1" across the leads"
+  body_length:
+    min: 1.6 mm
+    typ: 1.7 mm
+    max: 1.9 mm
+    src: p4 "Package Dimensions top view, body "1.7 +0.2/-0.1" along the leads"
+  body_height:
+    min: 0.8 mm
+    typ: 0.9 mm
+    max: 1.1 mm
+    src: p4 "Package Dimensions end view, height "0.9 +0.2/-0.1""
+  lead_thickness:
+    min: 0.09 mm
+    typ: 0.15 mm
+    max: 0.25 mm
+    src: p4 "Package Dimensions side view, lead thickness "0.15 +0.1/-0.06""
+  overall_length:
+    min: 2.3 mm
+    typ: 2.5 mm
+    max: 2.7 mm
+    src: p4 "Package Dimensions top view, lead-tip span "2.5 +/-0.2""
+  lead_width:
+    min: 0.25 mm
+    typ: 0.3 mm
+    max: 0.4 mm
+    src: p4 "Package Dimensions top view, lead width "0.3 +0.1/-0.05""

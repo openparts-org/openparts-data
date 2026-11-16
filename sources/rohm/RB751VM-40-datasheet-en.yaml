@@ -1,0 +1,17 @@
+# ROHM RB751VM-40 datasheet (English), 7 PDF pages (4 datasheet pages
+# plus the general Notice), footer "2019/02/06_Rev.005". Fetched
+# 2026-11-16 with curl from ROHM's fscdn.rohm.com datasheet link. Read
+# with pdftotext -layout; the outline, inner circuit and dimension
+# drawing were rendered with pdftoppm and read as images. Page numbers
+# are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: rohm/RB751VM-40-datasheet-en
+sha256: fdcf3c2c4949ff094dfd78dfcf70241b22b6c57ba04a7305f117e4a945ccf311
+retrieved: 2026-11-16
+url: https://fscdn.rohm.com/en/products/databook/datasheet/discrete/diode/schottky_barrier/rb751vm-40te-17-e.pdf
+publisher: rohm
+document_id: rb751vm-40te-17-e
+document_type: datasheet
+revision: 005
+date: 2019-02-06

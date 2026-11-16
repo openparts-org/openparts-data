@@ -1,0 +1,17 @@
+# Toshiba TC7SZ04FU datasheet (English), 8 PDF pages, footer
+# date 2026-05-13 Rev.3.0.B. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=30212); downloaded 2026-11-16 with curl.
+# Read with pdftotext -layout; image-only drawings (package outline, pin
+# assignment) were rendered with pdftoppm and read as images. Page
+# numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/TC7SZ04FU-datasheet-en
+sha256: 459f4bfab1eaae4532f75bfa9cd6244f60eda48f7d361d37fc9284e3b3e9ce51
+retrieved: 2026-11-16
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=30212&prodName=TC7SZ04FU
+publisher: toshiba
+document_id: TC7SZ04FU_datasheet_en
+document_type: datasheet
+revision: 3.0.B
+date: 2026-05-13

@@ -1,0 +1,25 @@
+# TCR2EF series 200 mA CMOS LDO regulators (fixed output) in SMV
+# (SOT-25). Pin assignment from "Pin Assignment (top view)", SMV
+# (SOT-25)(SC-74A), page 3: 1 VIN, 2 GND, 3 CONTROL, 4 NC, 5 VOUT. The
+# ESV (TCR2EE) pinout differs and is not covered. Output voltage and
+# dropout are per MPN (on the Parts).
+schema_version: "0.2"
+kind: device
+id: toshiba/TCR2EF
+manufacturer: toshiba
+category: linear_regulator
+family: TCR2EF
+source: toshiba/TCR2EF-datasheet-en
+
+parameters:
+  output_type:       { value: fixed, src: 'p1 "Description, fixed output voltages"' }
+  input_voltage_max: { max: 5.5 V, src: 'p2 "Operating Ranges, Input voltage VIN "1.5 to 5.5""' }
+  output_current:    { max: 200 mA, src: 'p2 "Operating Ranges, Output current IOUT DC"' }
+
+pins:
+  src: p3 "Pin Assignment (top view), SMV(SOT-25)(SC-74A)"
+  "1": { name: VIN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: CONTROL, type: input }
+  "4": { name: NC, type: nc }
+  "5": { name: VOUT, type: power }

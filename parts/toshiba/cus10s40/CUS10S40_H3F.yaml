@@ -1,0 +1,34 @@
+# Package: the datasheet names only "Nickname: USC"; its drawing
+# shows the same values as Toshiba 1-1E1S (CUS10S30) and is mapped to
+# it by value. Order code "CUS10S40,H3F" is listed under "Orderable part number
+# (example)" on Toshiba's CUS10S40 product page; the page says listed
+# numbers are representative, and the datasheet has no ordering table
+# -> existence `probable`. Lifecycle `unknown` (not stated).
+schema_version: "0.2"
+kind: part
+id: toshiba/CUS10S40,H3F
+manufacturer: toshiba
+mpn: CUS10S40,H3F
+device: toshiba/CUS10S40
+package: { value: manufacturers/toshiba/1-1E1S, src: 'p5 "Package Dimensions, Nickname: USC"' }
+sources: [toshiba/CUS10S40-datasheet-en, toshiba/CUS10S40-product-page]
+source: toshiba/CUS10S40-datasheet-en
+
+existence:
+  status: probable
+  src: toshiba/CUS10S40-product-page p1 "Orderable part number (example), CUS10S40,H3F"
+
+lifecycle: { status: unknown }
+
+parameters:
+  forward_voltage:
+    - typ: 0.45 V
+      max: 0.5 V
+      at: { IF: 1 A }
+      src: p2 "Electrical Characteristics, Forward voltage VF(2)"
+    - typ: 0.35 V
+      max: 0.4 V
+      at: { IF: 0.5 A }
+      src: p2 "Electrical Characteristics, Forward voltage VF(1)"
+  reverse_voltage: { max: 30 V, src: 'p2 "Absolute Maximum Ratings, Reverse voltage VR"' }
+  forward_current: { max: 1 A, src: 'p2 "Absolute Maximum Ratings, Average rectified current IO"' }

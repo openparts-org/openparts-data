@@ -1,0 +1,14 @@
+# RB520VM-30 Schottky barrier diode in UMD2 (SOD-323FL). Pins from the
+# page-1 "Inner Circuit" figure (image): (1) Cathode, (2) Anode.
+schema_version: "0.2"
+kind: device
+id: rohm/RB520VM-30
+manufacturer: rohm
+category: diode
+family: RB520VM-30
+source: rohm/RB520VM-30-datasheet-en
+
+pins:
+  src: p1 "Inner Circuit, (1) Cathode / (2) Anode"
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

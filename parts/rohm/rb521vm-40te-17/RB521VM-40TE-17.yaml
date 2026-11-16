@@ -1,0 +1,29 @@
+# RB521VM-40TE-17: the product page lists "Part Number | RB521VM-40TE-17" with
+# "Status | Recommended" (read as lifecycle active) and package UMD2;
+# the datasheet gives the taping code "TE-17" (page 1, Packaging
+# Specifications) -> existence verified.
+schema_version: "0.2"
+kind: part
+id: rohm/RB521VM-40TE-17
+manufacturer: rohm
+mpn: RB521VM-40TE-17
+device: rohm/RB521VM-40
+package: { value: manufacturers/rohm/UMD2, src: p4 "Dimensions (SOD-323FL SC-90A UMD2)" }
+sources: [rohm/RB521VM-40-datasheet-en, rohm/RB521VM-40-product-page]
+source: rohm/RB521VM-40-datasheet-en
+
+existence:
+  status: verified
+  src: rohm/RB521VM-40-product-page p1 "Part Number | RB521VM-40TE-17"
+
+lifecycle: { status: active, src: rohm/RB521VM-40-product-page p1 "Status | Recommended" }
+
+parameters:
+  forward_voltage:
+    - { max: 0.45 V, at: { IF: 100 mA }, src: 'p1 "Characteristics, Forward voltage VF2"' }
+    - { max: 0.3 V, at: { IF: 10 mA }, src: 'p1 "Characteristics, Forward voltage VF1"' }
+    - { max: 0.54 V, at: { IF: 200 mA }, src: 'p1 "Characteristics, Forward voltage VF3"' }
+  reverse_voltage: { max: 40 V, src: 'p1 "Absolute Maximum Ratings, Reverse voltage VR"' }
+  forward_current:
+    max: 200 mA
+    src: p1 "Absolute Maximum Ratings, Average rectified forward current Io"

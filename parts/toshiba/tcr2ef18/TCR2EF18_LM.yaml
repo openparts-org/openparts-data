@@ -1,0 +1,27 @@
+# TCR2EF18: 1.8 V output of the TCR2EF series. Order code "TCR2EF18,LM" is listed under "Orderable part number
+# (example)" on Toshiba's TCR2EF18 product page; the page says listed
+# numbers are representative, and the datasheet has no ordering table
+# -> existence `probable`. Lifecycle `unknown` (not stated).
+schema_version: "0.2"
+kind: part
+id: toshiba/TCR2EF18,LM
+manufacturer: toshiba
+mpn: TCR2EF18,LM
+device: toshiba/TCR2EF
+package: { value: manufacturers/toshiba/SMV, src: 'p15 "Package Dimensions, SMV (SOT-25)(SC-74A)"' }
+sources: [toshiba/TCR2EF-datasheet-en, toshiba/TCR2EF18-product-page]
+source: toshiba/TCR2EF-datasheet-en
+
+existence:
+  status: probable
+  src: toshiba/TCR2EF18-product-page p1 "Orderable part number (example), TCR2EF18,LM"
+
+lifecycle: { status: unknown }
+
+parameters:
+  output_voltage: { typ: 1.8 V, src: 'p4 "List of Products Number, TCR2EF18 row, VOUT (typ.)"' }
+  dropout_voltage:
+    typ: 230 mV
+    max: 310 mV
+    at: { IOUT: 150 mA }
+    src: p5 "Dropout voltage table, row 1.8 V <= VOUT < 2.5 V"
