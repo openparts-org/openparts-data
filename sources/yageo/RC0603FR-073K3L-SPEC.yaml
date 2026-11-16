@@ -1,0 +1,14 @@
+# YAGEO per-part spec sheet for RC0603FR-073K3L, served by the
+# manufacturer's own spec-sheet download endpoint (plain curl, PDF). The
+# sheet carries no revision; it prints only "Generated 11/16/2026", which
+# is recorded as date/revision. Read via pdftotext -layout (text, not images).
+schema_version: "0.2"
+kind: source
+id: yageo/RC0603FR-073K3L-SPEC
+retrieved: 2026-11-16
+url: https://yageogroup.com/component-documentation/download/specsheet/RC0603FR-073K3L
+date: 2026-11-16
+publisher: yageo
+document_id: RC0603FR-073K3L
+document_type: datasheet
+revision: generated 2026-11-16

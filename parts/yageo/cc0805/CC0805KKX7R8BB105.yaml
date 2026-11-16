@@ -1,0 +1,29 @@
+# 1 µF X7R 25 V +/-10% 0805 general-purpose MLCC (K = Blister taping reel, 7" reel).
+# Existence: YAGEO's own per-part spec sheet (yageo/CC0805KKX7R8BB105-SPEC) carries this
+# exact MPN as its title; codes as in yageo/UPY-GPHC_X7R@V29 p2 ordering
+# information. Values from the spec sheet's text "Specifications" table.
+# Package: the sheet's L/W/T (T 1.25mm +/-0.2mm) equal dimension code
+# EB of the datasheet's Table 1 -> CC0805-EB. Lifecycle not stated -> unknown.
+schema_version: "0.2"
+kind: part
+id: yageo/CC0805KKX7R8BB105
+manufacturer: yageo
+mpn: CC0805KKX7R8BB105
+device: yageo/CC0805-X7R
+package: manufacturers/yageo/CC0805-EB
+sources: [yageo/CC0805KKX7R8BB105-SPEC, yageo/UPY-GPHC_X7R@V29]
+source: yageo/CC0805KKX7R8BB105-SPEC
+
+existence:
+  status: verified
+  src:
+    - p1 "Spec sheet title, part number"
+    - 'yageo/UPY-GPHC_X7R@V29 p2 "Ordering Information: K = +/-10%, K = Blister taping reel, 8 = 25 V"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 1 µF, src: 'p1 "Specifications, Capacitance"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "Specifications, Tolerance"' }
+  rated_voltage: { typ: 25 V, src: 'p1 "Specifications, Voltage DC"' }
+  dielectric:    { value: X7R, src: 'p1 "Specifications, Temp. Coefficient"' }

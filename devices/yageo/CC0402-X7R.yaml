@@ -1,0 +1,14 @@
+# YAGEO CC0402 X7R general-purpose MLCC (CC series), series-level device;
+# value/voltage-specific MPNs are Parts pointing at the package of their
+# dimension code (yageo/UPY-GPHC_X7R@V29 p3 Table 1). Non-polarized;
+# terminals numbered only.
+schema_version: "0.2"
+kind: device
+id: yageo/CC0402-X7R
+manufacturer: yageo
+category: capacitor
+family: CC0402
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

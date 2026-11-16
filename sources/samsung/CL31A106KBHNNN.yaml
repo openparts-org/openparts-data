@@ -1,0 +1,17 @@
+# Samsung Electro-Mechanics product page for CL31A106KBHNNN# (the "#" is the
+# packaging code). Read as raw HTML (curl, tags stripped). Page shows:
+# status "Mass Production"; packaging codes listed: E, F;
+# size 1206 (3216); L 3.20+/-0.20mm, W 1.60+/-0.20mm, T 1.60+/-0.20mm; X5R(-55 ~ +85);
+# capacitance 10 uF, tolerance +/-10%, rated voltage 50 Vdc.
+# A live page, not a revisioned document: `revision`/`date` record its
+# own "Created : 2026/11/16 19:59:33" KST stamp at the time it was read. No page
+# numbers apply (single HTML page).
+schema_version: "0.2"
+kind: source
+id: samsung/CL31A106KBHNNN
+url: https://product.samsungsem.com/mlcc/CL31A106KBHNNN.do
+date: 2026-11-16
+revision: retrieved 2026-11-16
+publisher: samsung
+document_id: CL31A106KBHNNN#
+document_type: product_page

@@ -1,0 +1,29 @@
+# 0.01 µF X7R 50 V +/-10% 0603 general-purpose MLCC (R = Paper/PE taping reel, 7" reel).
+# Existence: YAGEO's own per-part spec sheet (yageo/CC0603KRX7R9BB103-SPEC) carries this
+# exact MPN as its title; codes as in yageo/UPY-GPHC_X7R@V29 p2 ordering
+# information. Values from the spec sheet's text "Specifications" table.
+# Package: the sheet's L/W/T (T 0.8mm +/-0.1mm) equal dimension code
+# DA of the datasheet's Table 1 -> CC0603-DA. Lifecycle not stated -> unknown.
+schema_version: "0.2"
+kind: part
+id: yageo/CC0603KRX7R9BB103
+manufacturer: yageo
+mpn: CC0603KRX7R9BB103
+device: yageo/CC0603-X7R
+package: manufacturers/yageo/CC0603-DA
+sources: [yageo/CC0603KRX7R9BB103-SPEC, yageo/UPY-GPHC_X7R@V29]
+source: yageo/CC0603KRX7R9BB103-SPEC
+
+existence:
+  status: verified
+  src:
+    - p1 "Spec sheet title, part number"
+    - 'yageo/UPY-GPHC_X7R@V29 p2 "Ordering Information: K = +/-10%, R = Paper/PE taping reel, 9 = 50 V"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 0.01 µF, src: 'p1 "Specifications, Capacitance"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "Specifications, Tolerance"' }
+  rated_voltage: { typ: 50 V, src: 'p1 "Specifications, Voltage DC"' }
+  dielectric:    { value: X7R, src: 'p1 "Specifications, Temp. Coefficient"' }

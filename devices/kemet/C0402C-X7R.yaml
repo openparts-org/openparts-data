@@ -1,0 +1,14 @@
+# KEMET C0402C commercial-grade X7R MLCC, EIA 0402 (1005 metric), series-level device;
+# value-specific MPNs are Parts pointing at the package of their
+# thickness code. Dielectric code R = X7R per kemet/C1002_X7R p2 'Ordering
+# Information'. Non-polarized; terminals numbered only.
+schema_version: "0.2"
+kind: device
+id: kemet/C0402C-X7R
+manufacturer: kemet
+category: capacitor
+family: C0402C
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

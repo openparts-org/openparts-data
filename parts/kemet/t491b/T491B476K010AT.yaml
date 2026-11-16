@@ -1,0 +1,31 @@
+# 47 µF +/-10% 10 V solid tantalum, T491 Case B, matte-tin, 7" reel.
+# Existence: KEMET's own per-part spec sheet (kemet/T491B476K010AT-SPEC) carries this
+# exact MPN as its title; the kemet/T2005_T491@2026-07-08 Table 1 row T491B476(1)010A(2)
+# agrees on cap/voltage/ESR. Package: the sheet's L 3.5 / W 2.8 / H 1.9 mm, each +/-0.2
+# equal standards/CHIP-T491B. Lifecycle not stated -> unknown.
+schema_version: "0.2"
+kind: part
+id: kemet/T491B476K010AT
+manufacturer: kemet
+mpn: T491B476K010AT
+device: kemet/T491B-TANTALUM
+package: standards/CHIP-T491B
+sources: [kemet/T491B476K010AT-SPEC, kemet/T2005_T491@2026-07-08]
+source: kemet/T491B476K010AT-SPEC
+
+existence:
+  status: verified
+  src:
+    - p1 "Spec sheet title, part number"
+    - kemet/T2005_T491@2026-07-08 p2 "Ordering Information (series, case, cap code, tolerance, voltage, A, T)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 47 µF, src: 'p1 "Specifications, Capacitance"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "Specifications, Tolerance"' }
+  rated_voltage: { typ: 10 V, at: { TA: 85 °C }, src: 'p1 "Specifications, Voltage DC (85C)"' }
+  esr:
+    max: 1 Ω
+    at: { TA: 25 °C, f: 100 kHz }
+    src: kemet/T2005_T491@2026-07-08 p8 "Table 1, T491B476(1)010A(2) row, ESR max"

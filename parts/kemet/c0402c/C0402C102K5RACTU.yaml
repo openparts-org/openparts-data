@@ -1,0 +1,29 @@
+# 1000 pF X7R 50 V +/-10% 0402 commercial-grade MLCC, 7" reel unmarked (TU).
+# Existence: KEMET's own per-part spec sheet (kemet/C0402C102K5RACTU-SPEC) carries this
+# exact MPN as its title. Values from that sheet's text "Specifications"
+# table. Package: the sheet's L/W/T (T 0.5mm +/-0.05mm) match standards/CHIP0402-KEMET-C0402;
+# the thickness code is cross-checked in kemet/C1002_X7R Table 1A (text).
+# Lifecycle not stated in either document -> unknown.
+schema_version: "0.2"
+kind: part
+id: kemet/C0402C102K5RACTU
+manufacturer: kemet
+mpn: C0402C102K5RACTU
+device: kemet/C0402C-X7R
+package: standards/CHIP0402-KEMET-C0402
+sources: [kemet/C0402C102K5RACTU-SPEC, kemet/C1002_X7R]
+source: kemet/C0402C102K5RACTU-SPEC
+
+existence:
+  status: verified
+  src:
+    - p1 "Spec sheet title, part number"
+    - 'kemet/C1002_X7R p4 "Table 1A, row 1000pF/102, column C0402C 50 V (code 5): BB"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 1000 pF, src: 'p1 "Specifications, Capacitance"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "Specifications, Tolerance"' }
+  rated_voltage: { typ: 50 V, src: 'p1 "Specifications, Voltage DC"' }
+  dielectric:    { value: X7R, src: 'p1 "Specifications, Temp. Coefficient"' }

@@ -1,0 +1,29 @@
+# 2.2 µF X5R 10 V +/-10% 0603 commercial-grade MLCC, 7" reel unmarked (TU).
+# Existence: KEMET's own per-part spec sheet (kemet/C0603C225K8PACTU-SPEC) carries this
+# exact MPN as its title. Values from that sheet's text "Specifications"
+# table. Package: the sheet's L/W/T (T 0.8mm +/-0.10mm) match manufacturers/kemet/C0603-CG;
+# the thickness code is cross-checked in kemet/C1006_X5R Table 1A (text).
+# Lifecycle not stated in either document -> unknown.
+schema_version: "0.2"
+kind: part
+id: kemet/C0603C225K8PACTU
+manufacturer: kemet
+mpn: C0603C225K8PACTU
+device: kemet/C0603C-X5R
+package: manufacturers/kemet/C0603-CG
+sources: [kemet/C0603C225K8PACTU-SPEC, kemet/C1006_X5R]
+source: kemet/C0603C225K8PACTU-SPEC
+
+existence:
+  status: verified
+  src:
+    - p1 "Spec sheet title, part number"
+    - 'kemet/C1006_X5R p5 "Table 1A, row 2.2 uF/225, column C0603C 10 V (code 8): CG"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 2.2 µF, src: 'p1 "Specifications, Capacitance"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "Specifications, Tolerance"' }
+  rated_voltage: { typ: 10 V, src: 'p1 "Specifications, Voltage DC"' }
+  dielectric:    { value: X5R, src: 'p1 "Specifications, Temp. Coefficient"' }

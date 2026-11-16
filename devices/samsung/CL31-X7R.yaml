@@ -1,0 +1,15 @@
+# Samsung Electro-Mechanics CL31 MLCC, size 1206 (3216), dielectric code
+# B = X7R (samsung/MLCC_2512 p6 SIZE CODE and DIELECTRIC CODE tables).
+# Series-level device: value/voltage-specific MPNs are Parts, each
+# pointing at the package of its thickness and size-control code.
+# Non-polarized; terminals numbered only.
+schema_version: "0.2"
+kind: device
+id: samsung/CL31-X7R
+manufacturer: samsung
+category: capacitor
+family: CL31
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

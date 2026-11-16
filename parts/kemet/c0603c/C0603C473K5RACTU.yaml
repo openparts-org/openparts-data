@@ -1,0 +1,29 @@
+# 0.047 µF X7R 50 V +/-10% 0603 commercial-grade MLCC, 7" reel unmarked (TU).
+# Existence: KEMET's own per-part spec sheet (kemet/C0603C473K5RACTU-SPEC) carries this
+# exact MPN as its title. Values from that sheet's text "Specifications"
+# table. Package: the sheet's L/W/T (T 0.8mm +/-0.15mm) match manufacturers/kemet/C0603-CJ;
+# the thickness code is cross-checked in kemet/C1002_X7R Table 1A (text).
+# Lifecycle not stated in either document -> unknown.
+schema_version: "0.2"
+kind: part
+id: kemet/C0603C473K5RACTU
+manufacturer: kemet
+mpn: C0603C473K5RACTU
+device: kemet/C0603C-X7R
+package: manufacturers/kemet/C0603-CJ
+sources: [kemet/C0603C473K5RACTU-SPEC, kemet/C1002_X7R]
+source: kemet/C0603C473K5RACTU-SPEC
+
+existence:
+  status: verified
+  src:
+    - p1 "Spec sheet title, part number"
+    - 'kemet/C1002_X7R p5 "Table 1A cont., row 47000 pF/473, column C0603C 50 V (code 5): CJ"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 0.047 µF, src: 'p1 "Specifications, Capacitance"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "Specifications, Tolerance"' }
+  rated_voltage: { typ: 50 V, src: 'p1 "Specifications, Voltage DC"' }
+  dielectric:    { value: X7R, src: 'p1 "Specifications, Temp. Coefficient"' }

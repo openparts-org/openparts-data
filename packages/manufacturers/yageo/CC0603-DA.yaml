@@ -1,0 +1,30 @@
+# YAGEO CC series X7R MLCC body, dimension code DA (yageo/UPY-GPHC_X7R@V29
+# p3 Table 1, 0603 row DA). L2/L3/L4 (termination band) are not
+# modelled by the chip generator and are left out. Matches the L/W/T of
+# the per-part spec sheets that use it.
+schema_version: "0.2"
+kind: package
+id: manufacturers/yageo/CC0603-DA
+family: chip
+lead_count: 2
+source: yageo/UPY-GPHC_X7R@V29
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 0.7 mm
+    typ: 0.8 mm
+    max: 0.9 mm
+    src: p3 "Table 1, 0603 row code DA, W = 0.8 +/- 0.1 mm"
+  body_length:
+    min: 1.5 mm
+    typ: 1.6 mm
+    max: 1.7 mm
+    src: p3 "Table 1, 0603 row code DA, L1 = 1.6 +/- 0.1 mm"
+  body_height:
+    min: 0.7 mm
+    typ: 0.8 mm
+    max: 0.9 mm
+    src: p3 "Table 1, 0603 row code DA, T = 0.8 +/- 0.1 mm"

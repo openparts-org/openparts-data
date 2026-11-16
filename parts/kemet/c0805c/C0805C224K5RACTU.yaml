@@ -1,0 +1,29 @@
+# 0.22 µF X7R 50 V +/-10% 0805 commercial-grade MLCC, 7" reel unmarked (TU).
+# Existence: KEMET's own per-part spec sheet (kemet/C0805C224K5RACTU-SPEC) carries this
+# exact MPN as its title. Values from that sheet's text "Specifications"
+# table. Package: the sheet's L/W/T (T 1.25mm +/-0.15mm) match manufacturers/kemet/C0805-DG;
+# the thickness code is cross-checked in kemet/C1002_X7R Table 1A (text).
+# Lifecycle not stated in either document -> unknown.
+schema_version: "0.2"
+kind: part
+id: kemet/C0805C224K5RACTU
+manufacturer: kemet
+mpn: C0805C224K5RACTU
+device: kemet/C0805C-X7R
+package: manufacturers/kemet/C0805-DG
+sources: [kemet/C0805C224K5RACTU-SPEC, kemet/C1002_X7R]
+source: kemet/C0805C224K5RACTU-SPEC
+
+existence:
+  status: verified
+  src:
+    - p1 "Spec sheet title, part number"
+    - 'kemet/C1002_X7R p5 "Table 1A cont., row 0.22 uF/224, column C0805C 50 V (code 5): DG"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 0.22 µF, src: 'p1 "Specifications, Capacitance"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "Specifications, Tolerance"' }
+  rated_voltage: { typ: 50 V, src: 'p1 "Specifications, Voltage DC"' }
+  dielectric:    { value: X7R, src: 'p1 "Specifications, Temp. Coefficient"' }
