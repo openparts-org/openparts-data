@@ -13,6 +13,37 @@ category: op_amp
 family: MCP6001/1R/1U/2/4
 source: microchip/DS20001733@revL
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.8 V
+    max: 6 V
+    src: 'p3 "DC Electrical Specifications, Power Supply: Supply Voltage VDD"'
+  esd_hbm: { typ: 4 kV, src: 'p3 "Absolute Maximum Ratings, ESD Protection On All Pins (HBM; MM)"' }
+  channel_count:
+    value: "2"
+    src: p1 "Package Types, MCP6002 8-Lead PDIP, SOIC, MSOP (VOUTA/VOUTB)"
+  gain_bandwidth:
+    typ: 1 MHz
+    src: p4 "AC Electrical Specifications, Gain Bandwidth Product GBWP"
+  slew_rate: { typ: 0.6 V/µs, src: 'p4 "AC Electrical Specifications, Slew Rate SR"' }
+  input_offset_voltage:
+    max: 4.5 mV
+    at: { TA: 25 °C }
+    src: p3 "DC Electrical Specifications, Input Offset Voltage VOS (printed -4.5/+4.5 mV)"
+  input_bias_current:
+    typ: 1 pA
+    at: { TA: 25 °C }
+    src: p3 "DC Electrical Specifications, Input Bias Current IB (printed ±1.0 pA)"
+  supply_current_per_channel:
+    min: 50 µA
+    typ: 100 µA
+    max: 170 µA
+    at: { VDD: 5.5 V, IOUT: 0 A, TA: 25 °C }
+    src: p3 "DC Electrical Specifications, Quiescent Current per Amplifier IQ"
+  rail_to_rail_input:  { value: yes, src: 'p1 "Features: Rail-to-Rail Input/Output"' }
+  rail_to_rail_output: { value: yes, src: 'p1 "Features: Rail-to-Rail Input/Output"' }
+
 pins:
   src:
     - p11 "Table 3-1 "Pin Function Table", column "MCP6002 8-Lead MSOP, PDIP, SOIC""

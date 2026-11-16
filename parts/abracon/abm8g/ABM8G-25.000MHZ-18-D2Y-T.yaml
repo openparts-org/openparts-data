@@ -28,3 +28,11 @@ parameters:
     tol: ±20 ppm
     at: { TA: 25 °C }
     src: 'p1 "OPTIONS & PART IDENTIFICATION, Freq. Tolerance: 2 = ±20 ppm"'
+  frequency_stability:
+    tol: ±30 ppm
+    at: { TA: -40..85 °C }
+    src: 'p1 "OPTIONS & PART IDENTIFICATION, Freq. Stability: Y = ±30 ppm (Operating Temp. D)"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p1 "OPTIONS & PART IDENTIFICATION, Operating Temp.: D = -40°C ~ +85°C"'

@@ -12,6 +12,42 @@ category: op_amp
 family: LM358
 source: ti/SLOS068AB
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 30 V
+    src: p5 "5.3 Recommended Operating Conditions, VS, LM158/LM258/LM358 row"
+  operating_temperature:
+    min: 0 °C
+    max: 70 °C
+    src: p5 "5.3 Recommended Operating Conditions, TA, LM358, LM358A row"
+  esd_hbm:        { typ: 500 V, src: 'p4 "5.2 ESD Ratings, LM158/LM258/LM358... HBM"' }
+  channel_count: { value: "2", src: 'p1 "Title: Industry-Standard Dual Operational Amplifiers"' }
+  gain_bandwidth: { typ: 0.7 MHz, src: 'p10 "5.7 Electrical Characteristics: GBW"' }
+  slew_rate: { typ: 0.3 V/µs, src: 'p10 "5.7 Electrical Characteristics: SR, G = +1"' }
+  input_offset_voltage:
+    typ: 3 mV
+    max: 7 mV
+    at: { VS: 5..30 V, VOUT: 1.4 V }
+    src: 'p10 "5.7 Electrical Characteristics LM358, LM358A: VOS, LM358 row (25 °C)"'
+  input_bias_current:
+    typ: 20 nA
+    max: 250 nA
+    at: { VOUT: 1.4 V }
+    src: 'p10 "5.7 Electrical Characteristics: IB, LM358 row (printed -20/-250 nA)"'
+  supply_current_per_channel:
+    typ: 350 µA
+    max: 600 µA
+    at: { VOUT: 2.5 V, IOUT: 0 A }
+    src: 'p10 "5.7 Electrical Characteristics: IQ quiescent current per amplifier, VO = 2.5 V"'
+  rail_to_rail_input:
+    value: no
+    src: 'p10 "5.7 Electrical Characteristics: VCM (V-) to (V+) - 1.5 V"'
+  rail_to_rail_output:
+    value: no
+    src: 'p10 "5.7 Electrical Characteristics: VO swing from positive rail 2-3 V"'
+
 pins:
   src: p3 "Figure 4-1 (8-pin top view) and Table 4-1 "Pin Functions", SOIC/PDIP column"
   "1": { name: OUT1, type: analog }

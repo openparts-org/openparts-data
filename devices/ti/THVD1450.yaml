@@ -12,6 +12,22 @@ category: rs485_transceiver
 family: THVD14x0
 source: ti/SLLSEY3E
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 3 V, max: 5.5 V, src: 'p9 "7.4 Recommended Operating Conditions, VCC"' }
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p9 "7.4 Recommended Operating Conditions, TA"
+  esd_hbm: { typ: 8 kV, src: 'p8 "7.2 ESD Ratings, HBM, all other pins (bus pins and GND ±30 kV)"' }
+  data_rate:
+    max: 50 Mbps
+    src: p9 "7.4 Recommended Operating Conditions, 1/tUI signaling rate, THVD1450 row"
+  bus_fault_voltage:
+    min: -18 V
+    max: 18 V
+    src: p8 "7.1 Absolute Maximum Ratings, Bus voltage at any bus pin (A, B, Y, or Z)"
+
 pins:
   src:
     - p5 ""Pin Functions" table, column "D""

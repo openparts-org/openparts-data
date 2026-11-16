@@ -11,6 +11,15 @@ category: level_shifter
 family: TXS0102
 source: ti/SCES640L
 
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p5 "5.3 Recommended Operating Conditions, TA"
+  esd_hbm: { typ: 2.5 kV, src: 'p4 "5.2 ESD Ratings, HBM, A Port (B Port ±8000 V)"' }
+  channel_count: { value: "2", src: 'p1 "Title: 2-Bit Bidirectional Voltage-Level Translator"' }
+
 pins:
   src:
     - p3 "Table 4-1. Pin Functions, column DCT, DCU, DTT"

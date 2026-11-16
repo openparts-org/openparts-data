@@ -12,6 +12,45 @@ category: comparator
 family: TLV320x
 source: ti/SBOS561C
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, VS (printed ±1.35 to ±2.75 V)"
+  supply_current:
+    typ: 40 µA
+    max: 50 µA
+    at: { VCC: 5 V, TA: 25 °C }
+    src: 'p5 "6.5 Electrical Characteristics VCC = 5V: IQ quiescent current, TA = 25 °C"'
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "6.3 Recommended Operating Conditions, Specified temperature"
+  esd_hbm:            { typ: 2 kV, src: 'p4 "6.2 ESD Ratings, HBM"' }
+  channel_count: { value: "1", src: 'p1 "3 Description: single (TLV3201) and dual (TLV3202)"' }
+  input_offset_voltage:
+    typ: 1 mV
+    max: 3 mV
+    at: { VCC: 5 V }
+    src: 'p5 "6.5 Electrical Characteristics VCC = 5V: VIO TLV3201, VCM = VCC/2"'
+  input_bias_current:
+    typ: 1 pA
+    max: 50 pA
+    at: { VCC: 5 V }
+    src: 'p5 "6.5 Electrical Characteristics VCC = 5V: IIB, VCM = VCC/2"'
+  rail_to_rail_input: { value: yes, src: 'p1 "3 Description: rail-to-rail inputs"' }
+  propagation_delay:
+    - typ: 43 ns
+      max: 50 ns
+      at: { VCC: 5 V, VOD: 100 mV, CL: 15 pF }
+      src: 'p5 "6.6 Switching Characteristics VCC = 5V: tPD low to high (slower edge), 100 mV overdrive"'
+    - typ: 47 ns
+      max: 50 ns
+      at: { VCC: 5 V, VOD: 20 mV, CL: 15 pF }
+      src: 'p5 "6.6 Switching Characteristics VCC = 5V: tPD low to high (slower edge), 20 mV overdrive"'
+  output_structure:   { value: push_pull, src: 'p1 "Features: Push-Pull Outputs"' }
+
 pins:
   src:
     - 'p3 ""Pin Functions: TLV3201" table"'

@@ -11,6 +11,39 @@ category: comparator
 family: LM393
 source: ti/SLCS005AH
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 30 V
+    src: p4 "5.2 Recommended Operating Conditions, VS, non-V devices"
+  supply_current:
+    typ: 0.45 mA
+    max: 1 mA
+    at: { VCC: 5 V, TA: 25 °C }
+    src: 'p8 "5.8 Electrical Characteristics: ICC, RL = ∞, VCC = 5 V, LM393 column"'
+  operating_temperature:
+    min: 0 °C
+    max: 70 °C
+    src: p4 "5.2 Recommended Operating Conditions, TA, LM393, LM393A"
+  esd_hbm:       { typ: 2 kV, src: 'p5 "5.4 ESD Ratings, HBM"' }
+  channel_count: { value: "2", src: 'p1 "Title: ... LM393 and LM2903 Dual Comparators"' }
+  input_offset_voltage:
+    typ: 2 mV
+    max: 5 mV
+    at: { VCC: 5..30 V, VOUT: 1.4 V, TA: 25 °C }
+    src: 'p8 "5.8 Electrical Characteristics LM193/LM293/LM393: VIO, LM393 column, 25 °C"'
+  input_bias_current:
+    typ: 25 nA
+    max: 250 nA
+    at: { VOUT: 1.4 V, TA: 25 °C }
+    src: 'p8 "5.8 Electrical Characteristics: IIB, LM393 column (printed -25/-250 nA)"'
+  propagation_delay:
+    typ: 1.3 µs
+    at: { VCC: 5 V, VOD: 5 mV, CL: 15 pF, TA: 25 °C }
+    src: 'p10 "5.11 Switching Characteristics: response time, 100 mV step, 5 mV overdrive"'
+  output_structure: { value: open_collector, src: 'p17 "6.1 Overview: open-collector outputs"' }
+
 pins:
   src: p3 "Figure 4-1 (8-pin SOIC/VSSOP/PDIP/SO/TSSOP top view) and Table 4-1 "Pin Functions""
   "1": { name: 1OUT, type: output }
