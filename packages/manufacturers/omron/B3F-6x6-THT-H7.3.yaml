@@ -1,0 +1,71 @@
+# OMRON B3F through-hole tactile switch, 6 x 6 mm, standard projected
+# plunger without ground terminal, height 7.3 mm (B3F-1050, -1052, -1055,
+# -1056, -1052-G) -- page-5 drawing "Standard, Projected Plunger Type
+# (without Ground Terminal)" of omron/A070-E1-08. Left out:
+# actuator_diameter (the projected plunger is a square "2.4 x 2.4±0.1"
+# stem, "1.8±0.1" high, on a "3.5 dia." base -- not round; the 3D model
+# uses the generator's default plunger), like B3FS-1050.
+# Orientation: OMRON draws the switch "rotated so that the terminals are
+# on the right and left-hand sides" (page-4 note) -- the generator frame,
+# no rotation. Pad numbers from "Terminal Arrangement/Internal Connections
+# (Top View)" (4 3 / 2 1); "No terminal numbers are indicated on the
+# Switches." Dimensions without a printed tolerance take the page's
+# stated "±0.4 mm" general tolerance as min/max.
+# Pads: the recommended PCB holes (6.5±0.1 x 4.5, "Four, 1±0.05 dia.");
+# no land diameter is given (generator ring default). lead_width (0.7)
+# not recorded (unused by THT pads); standoff not dimensioned.
+schema_version: "0.2"
+kind: package
+id: manufacturers/omron/B3F-6x6-THT-H7.3
+family: tact_switch_tht
+lead_count: 4
+source: omron/A070-E1-08
+
+pitch:
+  min: 4.3 mm
+  typ: 4.5 mm
+  max: 4.7 mm
+  src: p5 "Projected Plunger B3F-1050/1052/1055/1056/1052-G top view; PCB Processing Dimensions"
+
+pad_order:
+  value: ["4", "2", "1", "3"]
+  src:   p5 "Terminal Arrangement/Internal Connections (Top View) (see header)"
+
+geometry: { type: parametric, generator: tact_switch_tht }
+
+dimensions:
+  body_width:
+    min: 5.8 mm
+    typ: 6 mm
+    max: 6.2 mm
+    src: p5 "top view, housing "6±0.2" (horizontal, across the terminal sides)"
+  body_length:
+    min: 5.8 mm
+    typ: 6 mm
+    max: 6.2 mm
+    src: p5 "top view, housing "6±0.2" (vertical)"
+  body_height:
+    min: 3 mm
+    typ: 3.4 mm
+    max: 3.8 mm
+    src: p5 "front view, board to housing top; p5 general tolerance note"
+  tail_length:
+    min: 3.1 mm
+    typ: 3.5 mm
+    max: 3.9 mm
+    src: p5 "front view, board to terminal tip "3.5" (±0.4 general tolerance note)"
+  overall_height:
+    min: 7.1 mm
+    typ: 7.3 mm
+    max: 7.5 mm
+    src: p5 "B3F-1050 front view, board to plunger top "7.3±0.2""
+  row_spacing:
+    min: 6.4 mm
+    typ: 6.5 mm
+    max: 6.6 mm
+    src: 'p5 ""PCB Processing Dimensions (Reference Only) (Top View)" hole columns "6.5±0.1" (the switch terminals: "6.5±0.5")"'
+  hole_diameter:
+    min: 0.95 mm
+    typ: 1 mm
+    max: 1.05 mm
+    src: p5 "Projected Plunger B3F-1050/1052/1055/1056/1052-G, PCB Processing Dimensions "Four, 1±0.05 dia." (t=1.6)"

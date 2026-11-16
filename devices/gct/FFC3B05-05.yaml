@@ -1,0 +1,23 @@
+# GCT FFC3B05 FPC/FFC connector, 5 contacts (gct/FFC3B05-DWG page 1).
+# The drawing gives no signal names: contacts are named by their number,
+# 1..5 from the "Pin 1" end. The two solder tabs (fitting nails, "Fitting
+# Nail: Brass") are unnumbered in the drawing and have no stated
+# connection: "MP", passive.
+schema_version: "0.2"
+kind: device
+id: gct/FFC3B05-05
+manufacturer: gct
+category: connector
+family: FFC3B05
+source: gct/FFC3B05-DWG
+
+pins:
+  src:
+    - p1 "Recommended PCB Layout and top view, "Pin 1""
+    - 'p1 "Specification, Material, Fitting Nail: Brass"'
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive }
+  "4": { name: "4", type: passive }
+  "5": { name: "5", type: passive }
+  MP:  { name: MP, type: passive }

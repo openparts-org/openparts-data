@@ -1,0 +1,21 @@
+# OMRON B3U ultra-small SMT tactile switch, top-actuated, 1.6 mm, OF
+# 1.5 N {153 gf}, without ground terminal, locating pin "Without boss",
+# embossed taping (standard quantity, 3,500 per reel). The model is printed in the page-1
+# "List of Models" table -> existence verified; the page-2 drawing lists
+# it by name. Operating characteristics are on the device (series-wide).
+# Lifecycle: no first-party status read -> unknown.
+schema_version: "0.2"
+kind: part
+id: omron/B3U-1000P
+manufacturer: omron
+mpn: B3U-1000P
+device: omron/B3U-1000
+package: manufacturers/omron/B3U-1000P
+sources: [omron/A162-E1-07]
+source: omron/A162-E1-07
+
+existence:
+  status: verified
+  src: p1 "List of Models, B3U-1000 Series, Top-actuated, Without boss, Without ground terminal, B3U-1000P"
+
+lifecycle: { status: unknown }

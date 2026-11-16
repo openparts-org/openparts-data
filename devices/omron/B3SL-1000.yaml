@@ -1,0 +1,30 @@
+# OMRON B3SL 6 x 6 mm SMT tactile switch, sealed (SPST-NO, 4
+# terminals). The datasheet names no signals: pins are named by the
+# numbers in "Terminal Arrangement/Internal Connections (Top View)", which
+# joins 4 and 3 on one line and 2 and 1 on the other, the switch between
+# the lines -> 3 is internally connected to 4, 1 to 2 (connected_to).
+# Same diagram for both page-2 drawings.
+schema_version: "0.2"
+kind: device
+id: omron/B3SL-1000
+manufacturer: omron
+category: tact_switch
+family: B3SL
+source: omron/A173-E1-06
+
+parameters:
+  rated_voltage:
+    min: 3 V
+    max: 12 V
+    src: 'p2 "Ratings/Characteristics, Rating (resistive load): 1 to 50 mA at 3 to 12 VDC"'
+  rated_current:
+    min: 1 mA
+    max: 50 mA
+    src: 'p2 "Ratings/Characteristics, Rating (resistive load): 1 to 50 mA at 3 to 12 VDC"'
+
+pins:
+  src: 'p2 ""Terminal Arrangement/Internal Connections (Top View)": 4-3 joined, 2-1 joined, switch between"'
+  "1": { name: "1", type: passive, connected_to: "2" }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive, connected_to: "4" }
+  "4": { name: "4", type: passive }

@@ -1,0 +1,68 @@
+# GCT FFC3B05 FPC/FFC connector, 5 contacts, 1.0 mm pitch, side
+# entry (horizontal), bottom contact, SMT, ZIF slide type, from page 1 of
+# gct/FFC3B05-DWG (revision B, 21/12/16). Dimension table row "5":
+# A 10.10, B 4.00, C 12.00, D 6.10.
+# Frame (fpc_connector): top view, X right, Y up, origin at the centre of
+# the body outline, cable insertion (front, actuator side) toward +Y.
+# The "Recommended PCB Layout" (component side) and the top view both
+# show the solder tails at the top and the front (Dim. C bar) at the
+# bottom: turned 180° (x -> -x, y -> -y). "Pin 1" is labelled on the
+# right-hand pad in both views, so after the turn pin 1 is at -X.
+# Body: width = Dim. C (the widest outline, the front bar in the top view;
+# the layout's dashed component outline has the same width), length
+# "5.5" (top view, rear edge of the housing to the front), height "2.50"
+# (front view). "6.9 (When actuator is closed)" in the side view is front
+# face to tail tips (tails 6.9 - 5.5 = 1.4 behind the housing).
+# DOUBT: the layout does not dimension the pads against the housing. Its
+# dashed component outline is drawn with the rear edge on the "2.40"
+# line (the solder tabs' rear edge) and, at the drawing's scale, 5.5 deep
+# and Dim. C wide (C = B + 8.00 in every table row, so the tabs' outer
+# edges, B/2 + 4.30 out, lie 0.30 beyond it on each side). The body is
+# placed on that drawn outline (rear edge = tab rear edge); the
+# pad-to-body offset is therefore read from the drawing, not printed.
+# The solder tabs (fitting nails) are not numbered in the drawing:
+# numbered "MP" here.
+# Values printed without a tolerance carry the title block's general
+# tolerance (not recorded as min/max).
+schema_version: "0.2"
+kind: package
+id: manufacturers/gct/FFC3B05-05
+family: fpc_connector
+lead_count: { value: 7, src: 'p1 "Recommended PCB Layout, 5 contact pads + 2 solder tabs"' }
+source: gct/FFC3B05-DWG
+
+pitch: { typ: 1 mm, src: 'p1 "Recommended PCB Layout, "1.00"; top view "1.00""' }
+
+connector:
+  orientation: right_angle
+  contact_side: bottom
+  src: 'p1 "Product Description: "FPC 1.0mm Pitch Side Entry Bottom Contact, SMT, Height=2.5mm, ZIF, Slide Type""'
+
+geometry: { type: parametric, generator: fpc_connector }
+
+dimensions:
+  body_width:  { typ: 12 mm, src: 'p1 "Top view, Dim. C; dimension table row 5, C 12.00"' }
+  body_length: { typ: 5.5 mm, src: 'p1 "Top view, housing depth "5.5""' }
+  body_height: { typ: 2.5 mm, src: 'p1 "Front view, height "2.50"; title "Height=2.5mm""' }
+
+# pads (Recommended PCB Layout, before the 180° turn: pad rear ends at
+# y = 0, Y down toward the cable entry):
+# contacts: width "0.60", pitch "1.00", centre span "Dim.B±0.1" = 4.00
+# (table row 5), length "2.20" -> y 0..2.20; solder tabs: "3.40" wide,
+# "3.00" long, rear edge "2.40" from the pad rear ends -> y 2.40..5.40;
+# outer tab edge "4.30" from the end pad centre -> tab centre
+# B/2 + 4.30 - 3.40/2 = B/2 + 2.60 from the pad row centre.
+# Body (see DOUBT): rear edge y 2.40, front y 2.40 + 5.5 = 7.90, centre
+# 5.15. Relative to the body centre, turned 180°: contacts y = -(5.15 -
+# 1.10) = -4.05, tabs y = -(5.15 - 3.90) = -1.25; pin n at x = -B/2 +
+# (n - 1) * 1.00 (pin 1 at -2.00); tabs x = ±4.60.
+pads:
+  value:
+    - { number: "1", x: -2, y: -4.05, width: 0.6, length: 2.2 }
+    - { number: "2", x: -1, y: -4.05, width: 0.6, length: 2.2 }
+    - { number: "3", x: 0, y: -4.05, width: 0.6, length: 2.2 }
+    - { number: "4", x: 1, y: -4.05, width: 0.6, length: 2.2 }
+    - { number: "5", x: 2, y: -4.05, width: 0.6, length: 2.2 }
+    - { number: MP, x: -4.6, y: -1.25, width: 3.4, length: 3 }
+    - { number: MP, x: 4.6, y: -1.25, width: 3.4, length: 3 }
+  src: p1 "Recommended PCB Layout (see comment above)"

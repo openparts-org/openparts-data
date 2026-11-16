@@ -1,0 +1,32 @@
+# OMRON B3SL sealed SMT tactile switch, 6 x 6 mm class, height 5.1 mm,
+# OF 3.5 N, plunger Blue, embossed tape (1,400 pcs minimum packing
+# unit). The model is printed in the page-1 "List of Models" table ->
+# existence verified; the page-2 drawing lists it by name. Lifecycle: no
+# first-party status read -> unknown.
+schema_version: "0.2"
+kind: part
+id: omron/B3SL-1025P
+manufacturer: omron
+mpn: B3SL-1025P
+device: omron/B3SL-1000
+package: manufacturers/omron/B3SL-H5.1
+sources: [omron/A173-E1-06]
+source: omron/A173-E1-06
+
+existence:
+  status: verified
+  src: p1 "List of Models, 6 x 6 mm Models, B3SL Series, 5.1 mm, Blue, Embossed tape, B3SL-1025P"
+
+lifecycle: { status: unknown }
+
+parameters:
+  actuation_force:
+    min: 2.7 N
+    typ: 3.5 N
+    max: 4.3 N
+    src: 'p2 "Operating Characteristics, B3SL-1025P column, Operating force (OF): 3.5 ± 0.8 N {357 ± 82 gf}"'
+  travel:
+    min: 0.6 mm
+    typ: 0.8 mm
+    max: 1 mm
+    src: 'p2 "Operating Characteristics, B3SL-1025P column, Pretravel (PT): 0.8 ± 0.2 mm"'

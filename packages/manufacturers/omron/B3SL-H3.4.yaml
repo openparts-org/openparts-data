@@ -1,0 +1,76 @@
+# OMRON B3SL sealed SMT tactile switch, 6.2 x 6.5 mm, height 3.4 mm
+# (B3SL-1002P/-1005P) -- page-2 drawing of omron/A173-E1-06.
+# Frame: the top view as drawn (terminals left and right; front view
+# "7" toe to toe along X) -- the generator frame, no rotation. Pad numbers
+# from "Terminal Arrangement/Internal Connections (Top View)" (4 3 / 2 1);
+# "No terminal numbers are indicated on the Switches."
+# Dimensions without a printed tolerance take the page's stated "±0.4 mm"
+# general tolerance as min/max. body_height is the housing "2.5" in the
+# front view, measured above the "0.1" gap under the housing (standoff
+# not recorded: ±0.4 on 0.1 is meaningless).
+# Pads: "PCB Pad (Top View)": X inner edges "3" apart, outer "8.5" -> pads
+# 2.75 wide at x = ±(3 + 8.5)/4 = ±2.875; Y inner edges "3", outer "5" ->
+# 1 long at y = ±2.
+schema_version: "0.2"
+kind: package
+id: manufacturers/omron/B3SL-H3.4
+family: tact_switch_smd
+lead_count: 4
+source: omron/A173-E1-06
+
+pitch:
+  min: 3.8 mm
+  typ: 4 mm
+  max: 4.2 mm
+  src: p2 "B3SL-1002P/-1005P top view, terminal pitch "4±0.2""
+
+pad_order:
+  value: ["4", "2", "1", "3"]
+  src:   p2 "Terminal Arrangement/Internal Connections (Top View) (see header)"
+
+geometry: { type: parametric, generator: tact_switch_smd }
+
+dimensions:
+  body_width:
+    min: 5.8 mm
+    typ: 6.2 mm
+    max: 6.6 mm
+    src: p2 "B3SL-1002P/-1005P top view, housing "6.2" (±0.4 general tolerance note)"
+  body_length:
+    min: 6.1 mm
+    typ: 6.5 mm
+    max: 6.9 mm
+    src: p2 "B3SL-1002P/-1005P top view, housing "6.5" (±0.4 general tolerance note)"
+  body_height:
+    min: 2.1 mm
+    typ: 2.5 mm
+    max: 2.9 mm
+    src: p2 "B3SL-1002P/-1005P front view, housing "2.5" (±0.4 general tolerance note)"
+  actuator_diameter:
+    min: 2.1 mm
+    typ: 2.5 mm
+    max: 2.9 mm
+    src: p2 "B3SL-1002P/-1005P front view, plunger "2.5 dia." (±0.4 general tolerance note)"
+  overall_width:
+    min: 6.6 mm
+    typ: 7 mm
+    max: 7.4 mm
+    src: p2 "B3SL-1002P/-1005P front view, terminal toe to toe "7" (±0.4 general tolerance note)"
+  overall_height:
+    min: 3 mm
+    typ: 3.4 mm
+    max: 3.8 mm
+    src: p2 "B3SL-1002P/-1005P front view, board to plunger top "3.4" (±0.4 general tolerance note)"
+  lead_width:
+    min: 0.3 mm
+    typ: 0.7 mm
+    max: 1.1 mm
+    src: p2 "B3SL-1002P/-1005P side view, terminal width "0.7" (±0.4 general tolerance note)"
+
+pads:
+  value:
+    - { number: "4", x: -2.875, y: 2, width: 2.75, length: 1 }
+    - { number: "2", x: -2.875, y: -2, width: 2.75, length: 1 }
+    - { number: "1", x: 2.875, y: -2, width: 2.75, length: 1 }
+    - { number: "3", x: 2.875, y: 2, width: 2.75, length: 1 }
+  src: p2 "B3SL-1002P/-1005P, PCB Pad (Top View), "3", "8.5", "3", "5" (see header)"

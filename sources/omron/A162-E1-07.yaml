@@ -1,0 +1,17 @@
+# OMRON "Ultra-small Tactile Switch (SMT) B3U" datasheet, Cat. No.
+# A162-E1-07 (PDF keywords "A162-E1-07 0318"), 4 pages, from
+# https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3u.pdf (curl,
+# 2026-11-16; PDF title "B3U", CreationDate 2018-03-16, ModDate
+# 2018-03-18 -- no printed date; `date` is the ModDate). PDF page index =
+# printed page number. Page 1 "List of Models", "Ratings/Characteristics",
+# "Operating Characteristics"; page 2 "Dimensions" (top-actuated models,
+# PCB Pad, terminal arrangement, top view).
+schema_version: "0.2"
+kind: source
+id: omron/A162-E1-07
+url: https://omronfs.omron.com/en_US/ecb/products/pdf/en-b3u.pdf
+date: 2018-03-18
+revision: 07
+publisher: omron
+document_id: A162-E1
+document_type: datasheet

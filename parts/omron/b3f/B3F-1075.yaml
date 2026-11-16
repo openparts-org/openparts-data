@@ -1,0 +1,29 @@
+# OMRON B3F 6 x 6 mm THT tactile switch, flat plunger, height 9.5 mm,
+# OF 2.55 N {260 gf}, plunger Orange ("Standard B3F-1000 Series, Silver plated, Flat type" rows of the page-1 "List of
+# Models", without ground terminal, bag of 100). The model is printed in
+# the orderable model table -> existence verified. The page-5 drawing
+# lists B3F-1075 by name. Lifecycle: no first-party status read -> unknown.
+schema_version: "0.2"
+kind: part
+id: omron/B3F-1075
+manufacturer: omron
+mpn: B3F-1075
+device: omron/B3F-1000
+package: manufacturers/omron/B3F-6x6-THT-H9.5
+sources: [omron/A070-E1-08]
+source: omron/A070-E1-08
+
+existence:
+  status: verified
+  src: p1 "List of Models, 6 x 6 mm Models, Standard B3F-1000 Series, Flat type, 9.5 mm, B3F-1075"
+
+lifecycle: { status: unknown }
+
+parameters:
+  rated_current:
+    min: 1 mA
+    max: 50 mA
+    src: 'p3 "Ratings/Characteristics, Rating (resistive load): 1 to 50 mA, 3 to 24 VDC"'
+  actuation_force:
+    typ: 2.55 N
+    src: 'p1 "List of Models, 6 x 6 mm Models, row B3F-1075 (9.5 mm, Orange): Operating force (OF) 2.55 N {260 gf}"'
