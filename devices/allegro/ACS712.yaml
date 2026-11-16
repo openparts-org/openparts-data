@@ -24,7 +24,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p2 "Absolute Maximum Ratings, Nominal Operating Ambient Temperature, Range E"
+    src: 'p5 "Common Operating Characteristics: over full range of TA; p2 TA Range E = -40 to 85 C"'
 
 pins:
   src: p4 "Terminal List; Pinout Diagram"

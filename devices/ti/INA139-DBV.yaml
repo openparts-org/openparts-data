@@ -23,9 +23,9 @@ parameters:
     at: { VCC: 5 V, VIN: 12 V, TA: -40..125 °C }
     src: 'p6 "6.5 Electrical Characteristics: Quiescent current, VSENSE = 0, IO = 0"'
   operating_temperature:
-    min: -55 °C
+    min: -40 °C
     max: 125 °C
-    src: 'p6 "6.5 Electrical Characteristics, Temperature range: Operating"'
+    src: 'p6 "6.5 Electrical Characteristics: Temperature range, Specification TMIN to TMAX, INA139"'
   esd_hbm: { typ: 1 kV, src: 'p4 "6.2 ESD Ratings, HBM"' }
   channel_count: { value: "1", src: 'p3 "Pin Functions: one VIN+/VIN- input pair, one OUT"' }
   input_offset_voltage:

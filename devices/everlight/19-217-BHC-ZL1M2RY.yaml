@@ -40,7 +40,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p2 "Absolute Maximum Ratings, Operating Temperature Topr"
+    src: p2 "Absolute Maximum Ratings, Operating Temperature Topr (operating, the only range printed)"
   esd_hbm: { typ: 150 V, src: 'p2 "Absolute Maximum Ratings, Electrostatic Discharge ESDHBM"' }
 
 pins:

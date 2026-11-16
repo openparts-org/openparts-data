@@ -24,7 +24,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: 'p16 "Table 7 Limiting values: Tamb ambient temperature, operating device"'
+    src: 'p17 "Table 8 Characteristics header: Tamb = -40 to +85 C (specified)"'
   esd_hbm:
     typ: 3 kV
     src: 'p16 "Table 7 Limiting values: VESD electrostatic discharge voltage, HBM"'

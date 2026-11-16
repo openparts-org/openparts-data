@@ -17,9 +17,9 @@ parameters:
     max: 5.5 V
     src: p5 "6.3 Recommended Operating Conditions, Supply voltage"
   operating_temperature:
-    min: -55 °C
-    max: 125 °C
-    src: 'p7 "6.7 Electrical Characteristics: Temperature range, Operating range"'
+    min: -40 °C
+    max: 85 °C
+    src: 'p7 "6.7 Electrical Characteristics: Temperature range, Specified range (-40 to 85 C)"'
   esd_hbm:            { typ: 600 V, src: 'p5 "6.2 ESD Ratings, HBM"' }
   channel_count:
     value: "1"

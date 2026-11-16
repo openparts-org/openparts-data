@@ -24,7 +24,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p6 "Table 3 Limiting values, Tamb, operating in free air"
+    src: 'p7 "Table 4 Static characteristics header: Tamb = -40 to +85 C (specified)"'
   esd_hbm: { typ: 2 kV, src: 'p2 "2. Features: ESD protection exceeds 2000 V HBM per JESD22-A114"' }
   channel_count: { value: "2", src: 'p1 "2. Features: 2-channel, bidirectional buffer"' }
   propagation_delay:

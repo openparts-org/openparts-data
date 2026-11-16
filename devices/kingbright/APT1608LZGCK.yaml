@@ -33,7 +33,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p2 "ABSOLUTE MAXIMUM RATINGS, Operating Temperature Top"
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Operating Temperature Top (operating, the only range printed)"
   esd_hbm:
     typ: 450 V
     src: p2 "ABSOLUTE MAXIMUM RATINGS, Electrostatic Discharge Threshold (HBM)"

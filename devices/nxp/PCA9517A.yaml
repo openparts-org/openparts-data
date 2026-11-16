@@ -20,7 +20,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p9 "Table 4 Limiting values, Tamb operating in free air"
+    src: 'p10 "Table 5 Static characteristics header: Tamb = -40 to +85 C (specified)"'
   esd_hbm:          { typ: 5.5 kV, src: 'p2 "2 Features: ESD protection exceeds 5500 V HBM"' }
   channel_count:    { value: "2", src: 'p2 "2 Features, 2 channel, bidirectional buffer"' }
   propagation_delay:

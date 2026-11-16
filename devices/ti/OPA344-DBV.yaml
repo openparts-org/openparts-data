@@ -19,9 +19,9 @@ parameters:
     max: 5.5 V
     src: 'p2 "Specifications: Power Supply, Specified Voltage Range VS (operating 2.5 to 5.5 V)"'
   operating_temperature:
-    min: -55 °C
-    max: 125 °C
-    src: 'p2 "Specifications: Temperature Range, Operating Range"'
+    min: -40 °C
+    max: 85 °C
+    src: 'p2 "Specifications: Temperature Range, Specified Range"'
   esd_hbm: { typ: 4 kV, src: 'p4 "Absolute Maximum Ratings: ESD Tolerance (Human Body Model)"' }
   channel_count:
     value: "1"

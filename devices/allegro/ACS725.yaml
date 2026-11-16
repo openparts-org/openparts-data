@@ -24,7 +24,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 150 °C
-    src: p4 "Absolute Maximum Ratings, Operating Ambient Temperature, Range L"
+    src: 'p6 "Common Electrical Characteristics: full range of TA; p4 TA Range L = -40 to 150 C"'
 
 pins:
   src: p5 "Terminal List Table; Pinout Diagram"

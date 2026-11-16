@@ -29,7 +29,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p7 "Table 5 Limiting values, Tamb Ambient temperature, Operating"
+    src: 'p7 "Table 6 Characteristics header: Tamb = -40 to +85 C (specified)"'
   esd_hbm: { typ: 3.5 kV, src: 'p2 "Features: ESD protection exceeds 3500 V HBM per JESD22-A114"' }
 
 pins:

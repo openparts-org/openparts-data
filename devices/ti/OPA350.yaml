@@ -19,9 +19,9 @@ parameters:
     max: 5.5 V
     src: p4 "6.3 Recommended Operating Conditions, Power supply voltage (V+)-(V-)"
   operating_temperature:
-    min: -55 °C
-    max: 150 °C
-    src: p4 "6.3 Recommended Operating Conditions, Operating temperature"
+    min: -40 °C
+    max: 85 °C
+    src: p4 "6.3 Recommended Operating Conditions, Specified temperature (narrower than Operating)"
   esd_hbm:            { typ: 1 kV, src: 'p4 "6.2 ESD Ratings, all package types, HBM"' }
   channel_count: { value: "1", src: 'p1 "3 Description: single (OPA350) and dual (OPA2350)"' }
   gain_bandwidth:
