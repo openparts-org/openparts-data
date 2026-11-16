@@ -1,0 +1,38 @@
+# Würth WE-PD 7345 shielded power inductor, 47 µH ±20 %, order code 7447779147
+# (marking "470"). Order code printed verbatim in the datasheet's title
+# block -> existence verified. Also printed (not recorded, no key or
+# not the rated-current definition used here): IRP,40K 1.65 A max.,
+# ISAT,10% 1.1 A typ., fres 10.5 MHz typ., operating voltage 120 V max.
+# lifecycle: the title block "STATUS Valid" is the document's release
+# status, not a product lifecycle statement; unknown.
+schema_version: "0.2"
+kind: part
+id: wurth/7447779147
+manufacturer: wurth
+mpn: "7447779147"
+device: wurth/WE-PD-7345
+package: manufacturers/wurth/WE-PD-7345
+sources: [wurth/7447779147-DS]
+source: wurth/7447779147-DS
+
+existence: { status: verified, src: 'p1 "Title block, ORDER CODE 7447779147, SIZE/TYPE 7345"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review), page-1 Electrical Properties.
+parameters:
+  tolerance: { tol: ±20 %, src: 'p1 "Electrical Properties, Inductance L, Tol."' }
+  inductance:
+    typ: 47 µH
+    at: { f: 1 kHz }
+    src: p1 "Electrical Properties, Inductance L (1 kHz/ 250 mV)"
+  rated_current:
+    max: 1.03 A
+    src: p1 "Electrical Properties, Rated Current IR,40K (ΔT = 40 K), max."
+  saturation_current:
+    typ: 1.4 A
+    src: p1 "Electrical Properties, Saturation Current @ 30% ISAT,30%, typ."
+  dcr:
+    typ: 190 mΩ
+    max: 260 mΩ
+    at: { TA: 20 °C }
+    src: p1 "Electrical Properties, DC Resistance RDC @ 20 °C, typ. and max. rows"

@@ -1,0 +1,20 @@
+# SMAJ5.0CA: "How to Order" (page 1) decodes SMAJ 5.0 CA with a blank reel
+# suffix as the 13-inch reel ("-H" = 7 inch); the part number is listed
+# verbatim in the page-2 table (Bidirectional Device column, same row as
+# SMAJ5.0A). Package: Product Dimensions (page 3), one drawing for the
+# series (standards/DO214AC-BOURNS-SMAJ). No lifecycle statement.
+schema_version: "0.2"
+kind: part
+id: bourns/SMAJ5.0CA
+manufacturer: bourns
+mpn: SMAJ5.0CA
+device: bourns/SMAJ5.0CA
+package: standards/DO214AC-BOURNS-SMAJ
+sources: [bourns/SMAJ]
+source: bourns/SMAJ
+
+existence:
+  status: verified
+  src: p2 "Electrical table, Bidirectional Device Part No. SMAJ5.0CA, marking TE"
+
+lifecycle: { status: unknown }

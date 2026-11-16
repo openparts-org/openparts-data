@@ -1,0 +1,20 @@
+# SMAJ33CA: "How to Order" (page 1) decodes SMAJ 33 CA with a blank reel
+# suffix as the 13-inch reel ("-H" = 7 inch); the part number is listed
+# verbatim in the page-2 table (Bidirectional Device column, same row as
+# SMAJ33A). Package: Product Dimensions (page 3), one drawing for the
+# series (standards/DO214AC-BOURNS-SMAJ). No lifecycle statement.
+schema_version: "0.2"
+kind: part
+id: bourns/SMAJ33CA
+manufacturer: bourns
+mpn: SMAJ33CA
+device: bourns/SMAJ33CA
+package: standards/DO214AC-BOURNS-SMAJ
+sources: [bourns/SMAJ]
+source: bourns/SMAJ
+
+existence:
+  status: verified
+  src: p2 "Electrical table, Bidirectional Device Part No. SMAJ33CA, marking VM"
+
+lifecycle: { status: unknown }

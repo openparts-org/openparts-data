@@ -1,0 +1,26 @@
+# SMAJ24CA: 24V VRWM bidirectional 400W TVS diode, SMA (DO-214AC).
+# Electrical row on page 2 (Bidirectional Device column, marking UZ,
+# VBR 26.7-29.5V @ 1.0mA). "How to Order" (page 1): suffix CA = 5 %
+# tolerance bidirectional device. Polarity (page 3 Physical
+# Specifications): no cathode band indicates a bidirectional device, so
+# the terminals are non-polar and named Pin1/Pin2, numbered 1 (-X) and
+# 2 (+X) in the generator's position convention (same model as
+# diodes/SMAJ24CA). The forward-voltage rating is stated for the
+# unidirectional devices only and is not recorded.
+schema_version: "0.2"
+kind: device
+id: bourns/SMAJ24CA
+manufacturer: bourns
+category: diode
+family: SMAJ
+source: bourns/SMAJ
+
+parameters:
+  reverse_voltage:
+    max: 24 V
+    src: p2 "Electrical Characteristics, Bidirectional SMAJ24CA row, VRWM"
+
+pins:
+  src: p3 "Physical Specifications, Polarity (no cathode band = bidirectional device)"
+  "1": { name: Pin1, type: passive }
+  "2": { name: Pin2, type: passive }

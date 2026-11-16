@@ -1,0 +1,19 @@
+# Murata per-part reference sheet for GRM21BR61E226ME44_ (_ = packaging code),
+# footer "GRM21BR61E226ME44-01A", 33 pages. Fetched with curl from Murata's
+# own pim.murata.com asset URL on 2026-11-16 (the older
+# search.murata.co.jp Ceramy URL form 301-redirects there for the sheets
+# that still exist; murata.com product pages are script-rendered).
+# Read with pdftotext -layout; page 2 holds the part-number system,
+# Type & Dimension, Rated Value and Package tables (page 1 is Scope).
+# Page 2 states "Product specifications in this catalog are as of Jun.25,2026".
+schema_version: "0.2"
+kind: source
+id: murata/GRM21BR61E226ME44-01A
+sha256: 67d9dcf36cc87d643fb7b2ff05612bfe42aeaa7a88aac6fe0c7e3fcf8fa10069
+retrieved: 2026-11-16
+url: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM21BR61E226ME44-01A-EN_PDF_CERAMICCAPACITORSMD
+publisher: murata
+document_id: GRM21BR61E226ME44-01A
+document_type: datasheet
+revision: -01A
+date: 2026-06-25

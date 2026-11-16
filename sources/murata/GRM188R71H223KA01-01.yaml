@@ -1,0 +1,19 @@
+# Murata per-part reference sheet for GRM188R71H223KA01_ (_ = packaging code),
+# footer "GRM188R71H223KA01-01", 30 pages. Fetched with curl from Murata's
+# own pim.murata.com asset URL on 2026-11-16 (the older
+# search.murata.co.jp Ceramy URL form 301-redirects there for the sheets
+# that still exist; murata.com product pages are script-rendered).
+# Read with pdftotext -layout; page 1 holds the part-number system,
+# Type & Dimensions, Rated value and Package tables. Page 1 states
+# "Product specifications in this catalog are as of Feb.28,2016".
+schema_version: "0.2"
+kind: source
+id: murata/GRM188R71H223KA01-01
+sha256: 790a0aa813e360320851a67418aa2a10248b32d4daee707c5ef29fbbb8dd43b5
+retrieved: 2026-11-16
+url: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM188R71H223KA01-01-EN_PDF_CERAMICCAPACITORSMD
+publisher: murata
+document_id: GRM188R71H223KA01-01
+document_type: datasheet
+revision: -01
+date: 2016-02-28

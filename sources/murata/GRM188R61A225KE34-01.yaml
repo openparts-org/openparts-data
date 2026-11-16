@@ -1,0 +1,19 @@
+# Murata per-part reference sheet for GRM188R61A225KE34_ (_ = packaging code),
+# footer "GRM188R61A225KE34-01", 29 pages. Fetched with curl from Murata's
+# own pim.murata.com asset URL on 2026-11-16 (the older
+# search.murata.co.jp Ceramy URL form 301-redirects there for the sheets
+# that still exist; murata.com product pages are script-rendered).
+# Read with pdftotext -layout; page 1 holds the part-number system,
+# Type & Dimensions, Rated value and Package tables. Page 1 states
+# "Product specifications in this catalog are as of Mar.10,2016".
+schema_version: "0.2"
+kind: source
+id: murata/GRM188R61A225KE34-01
+sha256: 81a775f929c6705720322b99b8d5aeeda034713c56ae1975b5c7188a67b3c7a4
+retrieved: 2026-11-16
+url: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM188R61A225KE34-01-EN_PDF_CERAMICCAPACITORSMD
+publisher: murata
+document_id: GRM188R61A225KE34-01
+document_type: datasheet
+revision: -01
+date: 2016-03-10

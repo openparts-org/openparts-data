@@ -1,0 +1,35 @@
+# 220 µH +/-20%, semi-shielded power inductor, per the Electrical
+# Specifications table (page 1). pdftotext garbles this table where the
+# drawing overlaps it, so the row was read from a 150 dpi render
+# (Q 25, test freq. 0.796 MHz, SRF 4 MHz typ, DCR 1.18 Ohm max,
+# Irms 0.6 A, Isat 0.7 A).
+# lifecycle unknown: the datasheet makes no production-status statement.
+schema_version: "0.2"
+kind: part
+id: bourns/SRN6045-221M
+manufacturer: bourns
+mpn: SRN6045-221M
+device: bourns/SRN6045-SERIES
+package: manufacturers/bourns/CHIP-BOURNS-SRN6045
+sources: [bourns/SRN6045]
+source: bourns/SRN6045
+
+existence:
+  status: verified
+  src: p1 "Electrical Specifications table, Part Number row SRN6045-221M"
+
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance: { tol: ±20 %, src: 'p1 "Electrical Specifications @ 25 °C, SRN6045-221M row, Tol."' }
+  inductance:
+    typ: 220 µH
+    at: { f: 100 kHz }
+    src: p1 "Electrical Specifications @ 25 °C, SRN6045-221M row, L (@ 100 kHz/1 V)"
+  rated_current:
+    typ: 0.6 A
+    src: p1 "Electrical Specifications @ 25 °C, SRN6045-221M row, Irms (temp. rise 40 °C)"
+  saturation_current:
+    typ: 0.7 A
+    src: p1 "Electrical Specifications @ 25 °C, SRN6045-221M row, Isat (L drop 30 %)"
+  dcr: { max: 1.18 Ω, src: 'p1 "Electrical Specifications @ 25 °C, SRN6045-221M row, DCR"' }

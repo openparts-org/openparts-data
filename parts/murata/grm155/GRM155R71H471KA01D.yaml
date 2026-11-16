@@ -1,0 +1,28 @@
+# 470 pF X7R 50 V ±10% GRM155 (0402) MLCC, packaging code D
+# per the reference sheet's Package table (murata/GRM155R71H471KA01-01A).
+# Package standards/CHIP0402-GRM155: reused: L/W/T equal its numbers one for one (it carries no lead_length)
+# (sheet p2 "Type & Dimension": L 1.0±0.05, W 0.5±0.05, T 0.5±0.05, e 0.15 to 0.35, g 0.3 min).
+# lifecycle: the sheet makes no production-status statement; unknown.
+schema_version: "0.2"
+kind: part
+id: murata/GRM155R71H471KA01D
+manufacturer: murata
+mpn: GRM155R71H471KA01D
+device: murata/GRM155-X7R
+package: standards/CHIP0402-GRM155
+sources: [murata/GRM155R71H471KA01-01A]
+source: murata/GRM155R71H471KA01-01A
+
+existence:
+  status: verified
+  src: p2 "Title GRM155R71H471KA01_ (_ = Package); Package table, ⑨Package D"
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 470 pF, src: 'p2 "Rated Value, ⑥Capacitance 470pF"' }
+  tolerance:     { tol: ±10 %, src: 'p2 "Rated Value, ⑦Capacitance Tolerance"' }
+  rated_voltage: { typ: 50 V, src: 'p2 "Rated Value, ⑤Rated Voltage DC 50V"' }
+  dielectric:
+    value: X7R
+    src: p2 "Rated Value, ④Temperature Characteristics, Public STD Code X7R(EIA)"

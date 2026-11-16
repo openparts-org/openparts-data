@@ -1,0 +1,35 @@
+# 1.5uH +/-30%, Q 14, test freq. 7.96 MHz, SRF 65.0 MHz typ, RDC max
+# 7.5 mOhm, Irms max 7.20 A, Isat typ 7.00 A, per the Electrical
+# Specifications table (page 1). The text layer of this table is garbled
+# by the overlapping drawing, so the row was read from 150 dpi and 250 dpi
+# renders of page 1 (both agree).
+# Package reused: one Product Dimensions drawing for the whole series
+# (as for SRU1038-100Y). lifecycle unknown: no production-status statement.
+schema_version: "0.2"
+kind: part
+id: bourns/SRU1038-1R5Y
+manufacturer: bourns
+mpn: SRU1038-1R5Y
+device: bourns/SRU1038-SERIES
+package: standards/CHIP-BOURNS-SRU1038
+sources: [bourns/SRU1038@rev02-26]
+source: bourns/SRU1038@rev02-26
+
+existence:
+  status: verified
+  src: p1 "Electrical Specifications table, Part Number row SRU1038-1R5Y"
+
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance:
+    tol: ±30 %
+    src: p1 "Electrical Specifications, SRU1038-1R5Y row, Inductance Tol."
+  inductance: { typ: 1.5 µH, src: 'p1 "Electrical Specifications, SRU1038-1R5Y row, Inductance"' }
+  rated_current:
+    max: 7.2 A
+    src: p1 "Electrical Specifications, SRU1038-1R5Y row, Irms Max. (temp. rise 40 °C)"
+  saturation_current:
+    typ: 7 A
+    src: p1 "Electrical Specifications, SRU1038-1R5Y row, Isat Typ. (L drop 35 %)"
+  dcr: { max: 7.5 mΩ, src: 'p1 "Electrical Specifications, SRU1038-1R5Y row, RDC Max."' }

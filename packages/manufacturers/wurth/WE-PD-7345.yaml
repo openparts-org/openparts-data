@@ -1,0 +1,48 @@
+# Würth WE-PD 7345 shielded power inductor outline, from the page-1
+# "Dimensions: [mm]" drawing of 744777910 (rendered at 200 dpi). The
+# 7447779002/004/122/133/147 datasheets print the same dimension set
+# (pdftotext of page 1 compared). Square body 7.3 ±0.3 x 7.3 ±0.3 with
+# chamfered corners (drawn as a box), height 4.5 max. Bottom view: two
+# terminals on opposite edges, 1.5 ±0.3 wide and 1.5 ±0.2 deep, 4 ±0.3
+# apart (inner edges; the gap is not a modelled key). The drawing's
+# terminal axis is vertical; here it is the generator's X axis (body is
+# square). pads: "Recommended Land Pattern": pads 1.7 wide x 2.0 deep,
+# 4.0 apart -> centres x = +-(4.0/2 + 2.0/2) = +-3.0.
+schema_version: "0.2"
+kind: package
+id: manufacturers/wurth/WE-PD-7345
+family: chip
+lead_count: 2
+source: wurth/744777910-DS
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 7 mm
+    typ: 7.3 mm
+    max: 7.6 mm
+    src: p1 "Dimensions [mm], marking view 7,3 ±0,3"
+  body_length:
+    min: 7 mm
+    typ: 7.3 mm
+    max: 7.6 mm
+    src: p1 "Dimensions [mm], front view 7,3 ±0,3"
+  body_height: { max: 4.5 mm, src: 'p1 "Dimensions [mm], side view 4,5 max."' }
+  lead_length:
+    min: 1.3 mm
+    typ: 1.5 mm
+    max: 1.7 mm
+    src: p1 "Dimensions [mm], bottom view terminal depth 1,5 ±0,2"
+  lead_width:
+    min: 1.2 mm
+    typ: 1.5 mm
+    max: 1.8 mm
+    src: p1 "Dimensions [mm], bottom view terminal width 1,5 ±0,3"
+
+pads:
+  value:
+    - { number: "1", x: -3, y: 0, width: 2, length: 1.7 }
+    - { number: "2", x: 3, y: 0, width: 2, length: 1.7 }
+  src: p1 "Recommended Land Pattern [mm], 1,7 / 2,0 / 4,0 / 2,0 (see header)"

@@ -1,0 +1,19 @@
+# Würth Elektronik datasheet for order code 7447779002 ("WE-PD Robust SMT
+# Shielded Power Inductor", SIZE/TYPE 7345), 6 pages, A4 landscape.
+# we-online.com refuses curl (HTTP 403); fetched once with WebFetch, which
+# saved the original PDF. Read with pdftotext -layout; the page-1
+# "Dimensions: [mm]" and "Recommended Land Pattern: [mm]" drawings of
+# 744777910 were rendered at 200 dpi. Title block: REVISION "011.000",
+# DATE "2023-05-30", ORDER CODE "7447779002", STATUS "Valid" (document
+# release status, not a product lifecycle statement).
+schema_version: "0.2"
+kind: source
+id: wurth/7447779002-DS
+sha256: 3480ccdcf55110adca497810518bdf9149c8dafe5076aecebab8960b2638d42c
+retrieved: 2026-11-16
+url: https://www.we-online.com/components/products/datasheet/7447779002.pdf
+publisher: wurth
+document_id: "7447779002"
+document_type: datasheet
+revision: "011.000"
+date: 2023-05-30

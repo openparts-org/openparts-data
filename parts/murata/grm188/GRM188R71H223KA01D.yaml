@@ -1,0 +1,26 @@
+# 22000 pF X7R 50 V ±10% GRM188 (0603) MLCC, packaging code D
+# per the reference sheet's Package table (murata/GRM188R71H223KA01-01).
+# Package manufacturers/murata/CHIP0603-GRM188-C02E: reused: the sheet's L/W/T/e equal its numbers one for one
+# (sheet p1 "3. Type & Dimensions": L 1.6±0.1, W 0.8±0.1, T 0.8±0.1, e 0.2 to 0.5, g 0.5 min).
+# lifecycle: the sheet makes no production-status statement; unknown.
+schema_version: "0.2"
+kind: part
+id: murata/GRM188R71H223KA01D
+manufacturer: murata
+mpn: GRM188R71H223KA01D
+device: murata/GRM188-X7R
+package: manufacturers/murata/CHIP0603-GRM188-C02E
+sources: [murata/GRM188R71H223KA01-01]
+source: murata/GRM188R71H223KA01-01
+
+existence:
+  status: verified
+  src: p1 "Title GRM188R71H223KA01_ (_ = packaging code); 5.Package, mark D"
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 22000 pF, src: 'p1 "4.Rated value, (5) Nominal Capacitance"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "4.Rated value, (6) Capacitance Tolerance"' }
+  rated_voltage: { typ: 50 V, src: 'p1 "4.Rated value, (4) Rated Voltage DC 50 V"' }
+  dielectric:    { value: X7R, src: 'p1 "4.Rated value, (3) Public STD Code X7R(EIA)"' }

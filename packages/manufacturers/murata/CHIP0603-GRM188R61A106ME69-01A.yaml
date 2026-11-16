@@ -1,0 +1,35 @@
+# Murata GRM188 (0603/1608M) body with +/-0.15 mm tolerances, from the
+# reference sheet murata/GRM188R61A106ME69-01A page 2 "Type & Dimension"
+# (Size Code 1608M(0603)): L 1.6+/-0.15, W 0.8+/-0.15, T 0.8+/-0.15,
+# e 0.2 to 0.55, g 0.6 min. murata/GRM188R61E475KE11-01A page 2 prints the
+# same numbers. Not merged with CHIP0603-GRM188-C02E (+/-0.1, e 0.2-0.5)
+# or standards/CHIP0603-GRM188. No drawing ID is printed, so the package
+# is named after the sheet. min/max are the printed tolerances applied;
+# e is a range only (no typ).
+schema_version: "0.2"
+kind: package
+id: manufacturers/murata/CHIP0603-GRM188R61A106ME69-01A
+family: chip
+lead_count: 2
+source: murata/GRM188R61A106ME69-01A
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 0.65 mm
+    typ: 0.8 mm
+    max: 0.95 mm
+    src: p2 "Type & Dimension, ②W 0.8+/-0.15"
+  body_length:
+    min: 1.45 mm
+    typ: 1.6 mm
+    max: 1.75 mm
+    src: p2 "Type & Dimension, ②L 1.6+/-0.15"
+  body_height:
+    min: 0.65 mm
+    typ: 0.8 mm
+    max: 0.95 mm
+    src: p2 "Type & Dimension, ③T 0.8+/-0.15"
+  lead_length: { min: 0.2 mm, max: 0.55 mm, src: 'p2 "Type & Dimension, e 0.2 to 0.55"' }

@@ -1,0 +1,35 @@
+# 8.2 µH +/-30%, semi-shielded power inductor, per the Electrical
+# Specifications table (page 1). pdftotext garbles this table where the
+# drawing overlaps it, so the row was read from a 150 dpi render
+# (Q 15, test freq. 7.96 MHz, SRF 18 MHz typ, DCR 0.055 Ohm max,
+# Irms 2.7 A, Isat 3.3 A).
+# lifecycle unknown: the datasheet makes no production-status statement.
+schema_version: "0.2"
+kind: part
+id: bourns/SRN6045-8R2Y
+manufacturer: bourns
+mpn: SRN6045-8R2Y
+device: bourns/SRN6045-SERIES
+package: manufacturers/bourns/CHIP-BOURNS-SRN6045
+sources: [bourns/SRN6045]
+source: bourns/SRN6045
+
+existence:
+  status: verified
+  src: p1 "Electrical Specifications table, Part Number row SRN6045-8R2Y"
+
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance: { tol: ±30 %, src: 'p1 "Electrical Specifications @ 25 °C, SRN6045-8R2Y row, Tol."' }
+  inductance:
+    typ: 8.2 µH
+    at: { f: 100 kHz }
+    src: p1 "Electrical Specifications @ 25 °C, SRN6045-8R2Y row, L (@ 100 kHz/1 V)"
+  rated_current:
+    typ: 2.7 A
+    src: p1 "Electrical Specifications @ 25 °C, SRN6045-8R2Y row, Irms (temp. rise 40 °C)"
+  saturation_current:
+    typ: 3.3 A
+    src: p1 "Electrical Specifications @ 25 °C, SRN6045-8R2Y row, Isat (L drop 30 %)"
+  dcr: { max: 0.055 Ω, src: 'p1 "Electrical Specifications @ 25 °C, SRN6045-8R2Y row, DCR"' }
