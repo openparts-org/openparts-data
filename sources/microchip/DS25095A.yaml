@@ -1,0 +1,19 @@
+# Official Microchip datasheet for the MCP9808 digital temperature
+# sensor. Downloaded 2026-11-16 from the ww1.microchip.com URL below (52
+# PDF pages). document_id/revision from the printed footer
+# "DS25095A-page N"; Appendix B "Revision A (October 2011)". Printed
+# page numbers equal the PDF page indices up to page 42; after that the
+# PDF skips printed pages 43-44 (PDF page 43 = printed 45), so pages
+# cited here are PDF page indices. Package pages 38-41 were rendered and
+# read as images.
+schema_version: "0.2"
+kind: source
+id: microchip/DS25095@revA
+sha256: 9578bb72de18d76830ce34f256ef36b400542a3e7bbb9c6d0b74f0a72577ee11
+retrieved: 2026-11-16
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/25095A.pdf
+publisher: microchip
+document_id: DS25095
+document_type: datasheet
+revision: A
+date: 2011-10

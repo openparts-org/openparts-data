@@ -1,0 +1,18 @@
+# MPN from FN8085 Rev 9.01 Ordering Information (page 2), row ISL1208IB8Z, 8 Ld SOIC, drawing M8.15E.
+# lifecycle: the datasheet has no status field; left unknown.
+schema_version: "0.2"
+kind: part
+id: renesas/ISL1208IB8Z
+manufacturer: renesas
+mpn: ISL1208IB8Z
+device: renesas/ISL1208
+
+package:
+  value: manufacturers/renesas/M8.15E
+  src: 'p2 "Ordering Information, row ISL1208IB8Z, 8 Ld SOIC, PKG. DWG. # M8.15E"'
+
+sources: [renesas/FN8085@rev9.01]
+source: renesas/FN8085@rev9.01
+
+existence: { status: verified, src: 'p2 "Ordering Information, row ISL1208IB8Z"' }
+lifecycle: { status: unknown }

@@ -1,0 +1,19 @@
+# Official Renesas datasheet "ISL1208 I2C Real Time Clock/Calendar, Low
+# Power RTC with Battery Backed SRAM", FN8085 Rev 9.01, Jul 15, 2022
+# (title block and every page footer). Downloaded 2026-11-16 from
+# Renesas's own document URL below (served as application/pdf, 25 PDF
+# pages; printed "Page N of 24" equals the PDF page index, PDF page 25
+# is the unnumbered notice page). Text read with pdftotext -layout; the
+# M8.118 (page 22) and M8.15E (page 24) drawings were rendered and read
+# as images.
+schema_version: "0.2"
+kind: source
+id: renesas/FN8085@rev9.01
+sha256: 73335397f3926212bcb1d64a0aa6b301af400b3adab1f67953751db49772921c
+retrieved: 2026-11-16
+url: https://www.renesas.com/en/document/dst/isl1208-datasheet
+publisher: renesas
+document_id: FN8085
+document_type: datasheet
+revision: "9.01"
+date: 2022-07-15

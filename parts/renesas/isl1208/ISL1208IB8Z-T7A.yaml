@@ -1,0 +1,20 @@
+# MPN from FN8085 Rev 9.01 Ordering Information (page 2), row ISL1208IB8Z-T7A, 8 Ld SOIC, drawing M8.15E.
+# The reel row ISL1208IB8Z-T7A leaves the package and drawing columns blank; they are read from the
+# row ISL1208IB8Z above it (the table groups the reel options under the tube row).
+# lifecycle: the datasheet has no status field; left unknown.
+schema_version: "0.2"
+kind: part
+id: renesas/ISL1208IB8Z-T7A
+manufacturer: renesas
+mpn: ISL1208IB8Z-T7A
+device: renesas/ISL1208
+
+package:
+  value: manufacturers/renesas/M8.15E
+  src: 'p2 "Ordering Information, row ISL1208IB8Z, 8 Ld SOIC, PKG. DWG. # M8.15E"'
+
+sources: [renesas/FN8085@rev9.01]
+source: renesas/FN8085@rev9.01
+
+existence: { status: verified, src: 'p2 "Ordering Information, row ISL1208IB8Z-T7A"' }
+lifecycle: { status: unknown }

@@ -1,0 +1,23 @@
+# 24AA02E48: 2 Kbit I2C serial EEPROM with a factory-programmed EUI-48 node address.
+# Pin numbers from Table 2-1 Pin Function Table (DS20002124G page 6), column 5-Pin SOT-23,
+# checked against the package figure on page 1.
+schema_version: "0.2"
+kind: device
+id: microchip/24AA02E48-SOT23-5
+manufacturer: microchip
+category: eeprom
+family: 24AA02E48/24AA025E48/24AA02E64/24AA025E64
+source: microchip/DS20002124@revG
+
+parameters:
+  capacity: { typ: 2 Kbit, src: 'p1 "Description, 2 Kbit Electrically Erasable PROM"' }
+
+pins:
+  src:
+    - p6 "Table 2-1 Pin Function Table, column 5-Pin SOT-23"
+    - p1 "Packages (24AA02E48/24AA02E64), SOT-23"
+  "1": { name: SCL, type: clock }
+  "2": { name: VSS, type: ground }
+  "3": { name: SDA, type: io }
+  "4": { name: VCC, type: power }
+  "5": { name: NC, type: nc }

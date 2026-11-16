@@ -1,0 +1,34 @@
+# 8-bit I/O expander with SPI interface (MCP23S08). Pin numbers from Table 1-1
+# Pinout Description (DS20001919F page 4), the column named below; pin names
+# are the MCP23S08 names of the Package Types figures (pages 2-3), which the
+# combined Table 1-1 names (SCL/SCK, SDA/SI, A2/SO, NC/CS) resolve to.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP23S08-SOIC18
+manufacturer: microchip
+category: io_expander
+family: MCP23008/MCP23S08
+source: microchip/DS20001919@revF
+
+pins:
+  src:
+    - p4 "Table 1-1 Pinout Description, column PDIP/SOIC"
+    - p3 "Package Types, MCP23S08 PDIP/SOIC"
+  "1":  { name: SCK, type: clock }
+  "2":  { name: SI, type: input }
+  "3":  { name: SO, type: output }
+  "4":  { name: A1, type: input }
+  "5":  { name: A0, type: input }
+  "6":  { name: RESET, type: reset }
+  "7":  { name: CS, type: input }
+  "8":  { name: INT, type: output }
+  "9":  { name: VSS, type: ground }
+  "10": { name: GP0, type: io }
+  "11": { name: GP1, type: io }
+  "12": { name: GP2, type: io }
+  "13": { name: GP3, type: io }
+  "14": { name: GP4, type: io }
+  "15": { name: GP5, type: io }
+  "16": { name: GP6, type: io }
+  "17": { name: GP7, type: io }
+  "18": { name: VDD, type: power }

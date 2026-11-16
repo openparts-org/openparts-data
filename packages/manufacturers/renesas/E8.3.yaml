@@ -1,0 +1,29 @@
+# Renesas (Intersil) E8.3 "8 Lead Dual-In-Line Plastic Package (PDIP)",
+# JEDEC MS-001-BA Issue D, Rev. 0 12/93, as printed in FN2867 Rev.10.01
+# page 11 (table read as text). Note 1: inch dimensions control; the
+# millimetre column of the same table is copied as printed (min/max
+# only; no nominals printed).
+#
+# `dip` generator convention: body_width is the ROW SPACING, from
+# "eA 0.300 BSC" (7.62 mm), not E1. body_length = D, body_height = A2,
+# overall_height = A (max only), standoff = A1 (min only), lead_width =
+# B, lead_thickness = C. L (tip to seating plane) is a through-hole lead
+# length, not the gull-wing foot `lead_length` means; left out.
+schema_version: "0.2"
+kind: package
+id: manufacturers/renesas/E8.3
+family: dip
+lead_count: 8
+source: renesas/FN2867@rev10.01
+
+pitch: { typ: 2.54 mm, src: 'p11 "E8.3 table, e 2.54 BSC"' }
+geometry: { type: parametric, generator: dip }
+
+dimensions:
+  body_width:     { typ: 7.62 mm, src: 'p11 "E8.3 table, eA 7.62 BSC (row spacing)"' }
+  body_length:    { min: 9.01 mm, max: 10.16 mm, src: 'p11 "E8.3 table, D"' }
+  body_height:    { min: 2.93 mm, max: 4.95 mm, src: 'p11 "E8.3 table, A2"' }
+  lead_thickness: { min: 0.204 mm, max: 0.355 mm, src: 'p11 "E8.3 table, C"' }
+  overall_height: { max: 5.33 mm, src: 'p11 "E8.3 table, A (max only)"' }
+  standoff:       { min: 0.39 mm, src: 'p11 "E8.3 table, A1 (min only)"' }
+  lead_width:     { min: 0.356 mm, max: 0.558 mm, src: 'p11 "E8.3 table, B"' }

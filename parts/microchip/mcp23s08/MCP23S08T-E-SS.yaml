@@ -1,0 +1,23 @@
+# MCP23S08, DS20001919F page 41 Product Identification System, example e).
+# Package SS -> drawing C04-072B (page 38, rendered), every row equal to manufacturers/microchip/SSOP20-SS-C04-072B -- reused.
+# existence is "probable": the MPN appears only as an ordering example.
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP23S08T-E-SS
+manufacturer: microchip
+mpn: MCP23S08T-E/SS
+device: microchip/MCP23S08-SSOP20
+
+package:
+  value: manufacturers/microchip/SSOP20-SS-C04-072B
+  src: p41 "Product Identification System, Package SS (SSOP 5.30 mm, 20-Lead); drawing C04-072B p37-38"
+
+sources: [microchip/DS20001919@revF]
+source: microchip/DS20001919@revF
+
+existence:
+  status: probable
+  src: p41 "Product Identification System, MCP23S08 example e) MCP23S08T-E/SS"
+
+lifecycle: { status: unknown }

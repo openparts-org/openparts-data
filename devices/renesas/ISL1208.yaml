@@ -1,0 +1,22 @@
+# I2C real time clock/calendar with battery backup, 8-lead MSOP/SOIC pinout from the
+# Pin Descriptions table (FN8085 page 3), checked against the Pinouts figure
+# ISL1208 (8 LD MSOP, SOIC) TOP VIEW (same page). The TDFN (L8.3x3A) is not
+# covered. X1/X2 typed clock and VBAT power, as for microchip/MCP7940N.
+schema_version: "0.2"
+kind: device
+id: renesas/ISL1208
+manufacturer: renesas
+category: rtc
+family: ISL1208
+source: renesas/FN8085@rev9.01
+
+pins:
+  src: [p3 "Pin Descriptions table", 'p3 "Pinouts, ISL1208 (8 LD MSOP, SOIC) TOP VIEW"']
+  "1": { name: X1, type: clock }
+  "2": { name: X2, type: clock }
+  "3": { name: VBAT, type: power }
+  "4": { name: GND, type: ground }
+  "5": { name: SDA, type: io }
+  "6": { name: SCL, type: clock }
+  "7": { name: IRQ/FOUT, type: output }
+  "8": { name: VDD, type: power }

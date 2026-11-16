@@ -1,0 +1,36 @@
+# Renesas (Intersil) M8.15 "8 Lead Narrow Body Small Outline Plastic
+# Package", Rev 4, 1/12, as printed in FN2867 Rev.10.01 page 10
+# (rendered and read as an image). The drawing labels dimensions on the
+# views instead of a lettered table; millimetres (controlling, note 7)
+# copied as printed, min/max only (no nominals printed). Note 8: conforms
+# to JEDEC MS-012-AA.
+#
+# Not standards/SOIC8-3.90x4.90-P1.27 (Microchip C04-057): that drawing
+# states E1 3.90 BSC, D 4.90 BSC, E 6.00 BSC, c 0.17-0.25; M8.15 states
+# 3.80-4.00, 4.80-5.00, 5.80-6.20 and 0.19-0.25.
+# The land pattern (pad 2.20 x 0.60, rows 5.20 apart) is not recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/renesas/M8.15
+family: soic
+lead_count: 8
+source: renesas/FN2867@rev10.01
+
+pitch: { typ: 1.27 mm, src: 'p10 "M8.15 side view A, lead pitch 1.27 (0.050)"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:    { min: 3.8 mm, max: 4 mm, src: 'p10 "M8.15 top view, body width 4.00/3.80"' }
+  body_length:   { min: 4.8 mm, max: 5 mm, src: 'p10 "M8.15 side view A, body length 5.00/4.80"' }
+  lead_thickness:
+    min: 0.19 mm
+    max: 0.25 mm
+    src: p10 "M8.15 side view B, lead thickness 0.25/0.19"
+  lead_length:   { min: 0.4 mm, max: 1.27 mm, src: 'p10 "M8.15 detail A, foot length 1.27/0.40"' }
+  overall_width: { min: 5.8 mm, max: 6.2 mm, src: 'p10 "M8.15 top view, lead-tip span 6.20/5.80"' }
+  overall_height:
+    min: 1.35 mm
+    max: 1.75 mm
+    src: p10 "M8.15 side view A, seated height 1.75/1.35"
+  standoff:      { min: 0.1 mm, max: 0.25 mm, src: 'p10 "M8.15 side view A, standoff 0.25/0.10"' }
+  lead_width: { min: 0.33 mm, max: 0.51 mm, src: 'p10 "M8.15 side view A, lead width 0.51/0.33"' }

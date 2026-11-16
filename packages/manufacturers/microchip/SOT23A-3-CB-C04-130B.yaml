@@ -1,0 +1,45 @@
+# 3-lead SOT-23A (EIAJ SC-59 equivalent; Microchip package code CB).
+# All values from Microchip drawing C04-130B "3-Lead Plastic Small
+# Outline Transistor (CB) [SOT-23A]", DS22008E page 18 (rendered and read
+# as an image; encoded font). Millimetres, copied as printed (BSC values
+# as nominal, min/max-only rows as min/max only).
+#
+# Not manufacturers/microchip/SOT23-3-TT-C04-104C: CB has E1 1.20-1.80,
+# E 2.10-3.00, D 2.70-3.10, A 0.89-1.45, A2 0.90-1.30, A1 0.00-0.15,
+# L 0.15-0.60, c 0.09-0.26 (no nominals), which differ from TT.
+#
+# Mapping as SOT23-3-TT-C04-104C (for the `sot` generator): pitch = e1
+# (outside lead pitch, pin 1 to pin 2), body_width = D, body_length =
+# E1, overall_length = E. Top view: leads 1 and 2 on one edge, lead N
+# (3) alone on the opposite edge.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/SOT23A-3-CB-C04-130B
+family: sot
+lead_count: 3
+
+lead_layout:
+  value: [2, 1]
+  src:   'p18 "C04-130B top view: leads 1 and 2 on one edge, lead N (3) alone on the opposite edge"'
+
+source: microchip/DS22008@revE
+
+pitch: { typ: 1.9 mm, src: 'p18 "C04-130B table, Outside Lead Pitch e1 1.90 BSC"' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:     { min: 2.7 mm, max: 3.1 mm, src: 'p18 "C04-130B table, Overall Length D"' }
+  body_length:    { min: 1.2 mm, max: 1.8 mm, src: 'p18 "C04-130B table, Molded Package Width E1"' }
+  body_height:
+    min: 0.9 mm
+    max: 1.3 mm
+    src: p18 "C04-130B table, Molded Package Thickness A2"
+  lead_thickness: { min: 0.09 mm, max: 0.26 mm, src: 'p18 "C04-130B table, Lead Thickness c"' }
+  overall_length:
+    min: 2.1 mm
+    max: 3 mm
+    src: p18 "C04-130B table, Overall Width E (lead-tip span)"
+  overall_height: { min: 0.89 mm, max: 1.45 mm, src: 'p18 "C04-130B table, Overall Height A"' }
+  standoff:       { min: 0 mm, max: 0.15 mm, src: 'p18 "C04-130B table, Standoff A1"' }
+  lead_width:     { min: 0.3 mm, max: 0.51 mm, src: 'p18 "C04-130B table, Lead Width b"' }
+  lead_length:    { min: 0.15 mm, max: 0.6 mm, src: 'p18 "C04-130B table, Foot Length L"' }

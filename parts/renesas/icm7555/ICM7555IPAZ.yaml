@@ -1,0 +1,19 @@
+# MPN from FN2867 Rev.10.01 Ordering Information (page 2), row ICM7555IPAZ,
+# package drawing E8.3 (8 Ld PDIP, page 11).
+# lifecycle: the datasheet has no status field; left unknown.
+schema_version: "0.2"
+kind: part
+id: renesas/ICM7555IPAZ
+manufacturer: renesas
+mpn: ICM7555IPAZ
+device: renesas/ICM7555
+
+package:
+  value: manufacturers/renesas/E8.3
+  src: 'p2 "Ordering Information, row ICM7555IPAZ, PKG. DWG. # E8.3"'
+
+sources: [renesas/FN2867@rev10.01]
+source: renesas/FN2867@rev10.01
+
+existence: { status: verified, src: 'p2 "Ordering Information, row ICM7555IPAZ"' }
+lifecycle: { status: unknown }

@@ -1,0 +1,24 @@
+# 2 uA quiescent current LDO (all voltages), 3-pin SOT-23A (CB) pinout. From
+# Table 3-1 Pin Function Table (DS22008E page 11), column SOT-23A: GND 1, VOUT 2,
+# VIN 3, checked against the Package Types figure 3-Pin SOT-23A (page 1). The
+# SOT-89 and TO-92 pin maps differ and are not covered. VIN/VOUT typed power, as
+# for microchip/MCP1700-TT.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP1702-CB
+manufacturer: microchip
+category: linear_regulator
+family: MCP1702
+source: microchip/DS22008@revE
+
+parameters:
+  output_type:
+    value: fixed
+    src: p24 "Product Identification System, Extra Feature Code 0 = Fixed"
+  input_voltage_max: { max: 13.2 V, src: 'p3 "DC Characteristics, Input Operating Voltage VIN"' }
+
+pins:
+  src: ['p11 "Table 3-1 Pin Function Table, column SOT-23A"', 'p1 "Package Types, 3-Pin SOT-23A"']
+  "1": { name: GND, type: ground }
+  "2": { name: VOUT, type: power }
+  "3": { name: VIN, type: power }

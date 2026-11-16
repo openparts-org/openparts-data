@@ -1,0 +1,23 @@
+# MCP23008, DS20001919F page 41 Product Identification System, example f).
+# Package ML -> drawing C04-126 Rev C (page 36, rendered), every row equal to manufacturers/microchip/QFN20-4x4-P0.5-EP2.7-ML-C04-126C -- reused.
+# existence is "probable": the MPN appears only as an ordering example.
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP23008-E-ML
+manufacturer: microchip
+mpn: MCP23008-E/ML
+device: microchip/MCP23008-QFN20
+
+package:
+  value: manufacturers/microchip/QFN20-4x4-P0.5-EP2.7-ML-C04-126C
+  src: p41 "Product Identification System, Package ML (QFN 4x4x0.9 mm, 20-Lead); drawing C04-126 Rev C p35-36"
+
+sources: [microchip/DS20001919@revF]
+source: microchip/DS20001919@revF
+
+existence:
+  status: probable
+  src: p41 "Product Identification System, MCP23008 example f) MCP23008-E/ML"
+
+lifecycle: { status: unknown }

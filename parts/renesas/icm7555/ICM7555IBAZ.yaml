@@ -1,0 +1,19 @@
+# MPN from FN2867 Rev.10.01 Ordering Information (page 2), row ICM7555IBAZ,
+# package drawing M8.15 (8 Ld SOIC, page 10).
+# lifecycle: the datasheet has no status field; left unknown.
+schema_version: "0.2"
+kind: part
+id: renesas/ICM7555IBAZ
+manufacturer: renesas
+mpn: ICM7555IBAZ
+device: renesas/ICM7555
+
+package:
+  value: manufacturers/renesas/M8.15
+  src: 'p2 "Ordering Information, row ICM7555IBAZ, PKG. DWG. # M8.15"'
+
+sources: [renesas/FN2867@rev10.01]
+source: renesas/FN2867@rev10.01
+
+existence: { status: verified, src: 'p2 "Ordering Information, row ICM7555IBAZ"' }
+lifecycle: { status: unknown }

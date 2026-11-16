@@ -1,0 +1,21 @@
+# Digital temperature sensor with I2C/SMBus interface (MCP9808). Pin numbers from
+# Table 3-1 Pin Function Table (DS25095A page 11), column MSOP, checked against the
+# Package Types figure on page 1.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP9808-MSOP8
+manufacturer: microchip
+category: temperature_sensor
+family: MCP9808
+source: microchip/DS25095@revA
+
+pins:
+  src: ['p11 "Table 3-1 Pin Function Table, column MSOP"', 'p1 "Package Types, 8-Pin MSOP"']
+  "1": { name: SDA, type: io }
+  "2": { name: SCL, type: clock }
+  "3": { name: Alert, type: output }
+  "4": { name: GND, type: ground }
+  "5": { name: A2, type: input }
+  "6": { name: A1, type: input }
+  "7": { name: A0, type: input }
+  "8": { name: VDD, type: power }

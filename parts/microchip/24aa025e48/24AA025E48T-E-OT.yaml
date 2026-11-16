@@ -1,0 +1,23 @@
+# 24AA025E48, DS20002124G page 29 Product Identification System, example i).
+# Package OT, 6-lead (Table 2-1: 24AA025EXX is 6-pin SOT-23) -> drawing C04-028B (page 23, rendered), titled 6-Lead (OT) here; every row equals manufacturers/microchip/SOT23-6-CH-C04-028B -- reused.
+# existence is "probable": the MPN appears only as an ordering example.
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/24AA025E48T-E-OT
+manufacturer: microchip
+mpn: 24AA025E48T-E/OT
+device: microchip/24AA025E48-SOT23-6
+
+package:
+  value: manufacturers/microchip/SOT23-6-CH-C04-028B
+  src: p29 "Product Identification System, Package OT (SOT-23); 6-lead drawing C04-028B p23-24"
+
+sources: [microchip/DS20002124@revG]
+source: microchip/DS20002124@revG
+
+existence:
+  status: probable
+  src: p29 "Product Identification System, example i) 24AA025E48T-E/OT"
+
+lifecycle: { status: unknown }

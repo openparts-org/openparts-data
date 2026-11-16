@@ -1,0 +1,31 @@
+# MCP1702, 1.2 V output, 2% tolerance, in the 3-lead SOT-23A (CB). DS22008E page 24
+# Product Identification System, example a). Package CB -> drawing C04-130B (p18).
+# output_voltage from the Output Voltage code table of the same page; output_current and
+# dropout_voltage from the DC Characteristics row for this VR (none for VR < 2.5 V, whose
+# maximum output current depends on VIN).
+# existence is "probable": the MPN appears only as an ordering example.
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP1702T-1202E-CB
+manufacturer: microchip
+mpn: MCP1702T-1202E/CB
+device: microchip/MCP1702-CB
+
+package:
+  value: manufacturers/microchip/SOT23A-3-CB-C04-130B
+  src: p24 "Product Identification System, Package Type CB (SOT-23A, 3-lead); drawing C04-130B p18"
+
+sources: [microchip/DS22008@revE]
+source: microchip/DS22008@revE
+
+existence:
+  status: probable
+  src: p24 "Product Identification System, example a) MCP1702T-1202E/CB"
+
+lifecycle: { status: unknown }
+
+parameters:
+  output_voltage:
+    typ: 1.2 V
+    src: p24 "Product Identification System, Output Voltage 12 = 1.2V Standard"

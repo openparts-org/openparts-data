@@ -1,0 +1,21 @@
+# CMOS general purpose timer (single, ICM7555), 8-lead PDIP/SOIC pinout from the
+# Pin Configurations figure ICM7555 (8 LD PDIP, SOIC) TOP VIEW (FN2867 page 1); the
+# datasheet has no separate pin table. Pin types as for ti/NE555.
+schema_version: "0.2"
+kind: device
+id: renesas/ICM7555
+manufacturer: renesas
+category: timer
+family: ICM7555/ICM7556
+source: renesas/FN2867@rev10.01
+
+pins:
+  src: p1 "Pin Configurations, ICM7555 (8 LD PDIP, SOIC) TOP VIEW"
+  "1": { name: GND, type: ground }
+  "2": { name: TRIGGER, type: input }
+  "3": { name: OUTPUT, type: output }
+  "4": { name: RESET, type: reset }
+  "5": { name: CONTROL VOLTAGE, type: analog }
+  "6": { name: THRESHOLD, type: input }
+  "7": { name: DISCHARGE, type: output }
+  "8": { name: VDD, type: power }

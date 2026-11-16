@@ -1,0 +1,23 @@
+# MCP23S08, DS20001919F page 41 Product Identification System, example c).
+# Package SO -> drawing C04-051D (pages 32-33), the same drawing and numbers as standards/SOIC18-7.50x11.55-P1.27 -- reused.
+# existence is "probable": the MPN appears only as an ordering example.
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP23S08T-E-SO
+manufacturer: microchip
+mpn: MCP23S08T-E/SO
+device: microchip/MCP23S08-SOIC18
+
+package:
+  value: standards/SOIC18-7.50x11.55-P1.27
+  src: p41 "Product Identification System, Package SO (Plastic SOIC 300 mil, 18-Lead); drawing C04-051D p32-33"
+
+sources: [microchip/DS20001919@revF]
+source: microchip/DS20001919@revF
+
+existence:
+  status: probable
+  src: p41 "Product Identification System, MCP23S08 example c) MCP23S08T-E/SO"
+
+lifecycle: { status: unknown }

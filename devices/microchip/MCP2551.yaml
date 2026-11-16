@@ -1,0 +1,23 @@
+# High-speed CAN transceiver, 8-pin PDIP/SOIC pin map from Table 1-3
+# "MCP2551 Pinout" (DS20001667G page 5), checked against the "Package
+# Types" PDIP/SOIC figure (page 1); all 8 pins match. VREF ("Reference
+# Output Voltage", VDD/2) typed analog; RS ("Slope-Control Input",
+# selected by an external bias resistor) typed analog.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP2551
+manufacturer: microchip
+category: can_transceiver
+family: MCP2551
+source: microchip/DS20001667@revG
+
+pins:
+  src: [p5 "Table 1-3 "MCP2551 Pinout"", p1 ""Package Types" PDIP/SOIC (cross-check)"]
+  "1": { name: TXD, type: input }
+  "2": { name: VSS, type: ground }
+  "3": { name: VDD, type: power }
+  "4": { name: RXD, type: output }
+  "5": { name: VREF, type: analog }
+  "6": { name: CANL, type: io }
+  "7": { name: CANH, type: io }
+  "8": { name: RS, type: analog }

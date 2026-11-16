@@ -1,0 +1,18 @@
+# Official Microchip datasheet for MCP23008/MCP23S08 (8-bit I/O
+# expanders, I2C/SPI). Downloaded 2026-11-16 from the ww1.microchip.com
+# URL below (43 PDF pages). document_id/revision from the printed footer
+# "DS20001919F-page N"; Appendix A "Revision F (March 2019)". Printed
+# page numbers equal the PDF page indices. Text read with pdftotext
+# -layout; the SSOP (page 38) and QFN (page 36) dimension tables use an
+# encoded font and were rendered and read as images.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20001919@revF
+sha256: 3516fba5df6da78c2e7a58defaf90e4bdb9fb71f904e56b74b502fab0b4d112c
+retrieved: 2026-11-16
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/MCP23008-MCP23S08-Data-Sheet-20001919F.pdf
+publisher: microchip
+document_id: DS20001919
+document_type: datasheet
+revision: F
+date: 2019-03

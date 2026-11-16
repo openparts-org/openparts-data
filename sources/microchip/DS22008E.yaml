@@ -1,0 +1,18 @@
+# Official Microchip datasheet for the MCP1702 (250 mA, 2 uA quiescent
+# current CMOS LDO). Downloaded 2026-11-16 from the ww1.microchip.com
+# URL below (26 PDF pages). document_id/revision from the printed footer
+# "DS22008E-page N"; revision history "Revision E (November 2010)".
+# Printed page numbers equal the PDF page indices. Text read with
+# pdftotext -layout; package pages 17-22 use an encoded font and were
+# rendered and read as images.
+schema_version: "0.2"
+kind: source
+id: microchip/DS22008@revE
+sha256: eebbb32821ad97abd2476a321cae17d405442889940d2c70bd159563c4772ea9
+retrieved: 2026-11-16
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/22008E.pdf
+publisher: microchip
+document_id: DS22008
+document_type: datasheet
+revision: E
+date: 2010-11

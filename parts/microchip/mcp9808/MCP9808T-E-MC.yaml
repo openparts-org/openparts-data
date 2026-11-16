@@ -1,0 +1,23 @@
+# MCP9808, DS25095A PDF page 49 (printed 51) Product Identification System, example c).
+# Package MC -> drawing C04-123C (page 38, rendered): every row equals manufacturers/microchip/DFN8-2x3-P0.5-MC-C04-123C -- reused.
+# existence is "probable": the MPN appears only as an ordering example.
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP9808T-E-MC
+manufacturer: microchip
+mpn: MCP9808T-E/MC
+device: microchip/MCP9808-DFN8
+
+package:
+  value: manufacturers/microchip/DFN8-2x3-P0.5-MC-C04-123C
+  src: p49 "Product Identification System, Package MC (DFN 2x3, 8-lead); drawing C04-123C p38"
+
+sources: [microchip/DS25095@revA]
+source: microchip/DS25095@revA
+
+existence:
+  status: probable
+  src: p49 "Product Identification System, example c) MCP9808T-E/MC"
+
+lifecycle: { status: unknown }

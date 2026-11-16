@@ -1,0 +1,60 @@
+# Renesas (Intersil) M8.118 "8 Lead Mini Small Outline Plastic Package",
+# Rev 5, 5/2021, as printed in FN8085 Rev 9.01 page 22 (rendered and
+# read as an image). Dimensions are printed on the views as nominal
+# +/- tolerance (note 1: millimetres); recorded as min/typ/max = nominal
+# -/+ tolerance. Note 2: conforms to JEDEC MO-187-AA.
+#
+# Not manufacturers/microchip/MSOP8-MS-C04-111C (E1/D 3.00 BSC, E 4.90
+# BSC, b 0.22-0.40, L 0.40/0.60/0.80) nor standards/MSOP8-3.0x3.0-P0.65-
+# TI-DGK: M8.118 states 3.0 +/-0.05, 4.9 +/-0.15, b 0.25-0.36, L 0.55
+# +/-0.15. The land pattern (reference values only) is not recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/renesas/M8.118
+family: msop
+lead_count: 8
+source: renesas/FN8085@rev9.01
+
+pitch: { typ: 0.65 mm, src: 'p22 "M8.118 top view, pitch 0.65 BSC"' }
+geometry: { type: parametric, generator: msop }
+
+dimensions:
+  body_width:
+    min: 2.95 mm
+    typ: 3 mm
+    max: 3.05 mm
+    src: p22 "M8.118 top view, body width 3.0 +/-0.05"
+  body_length:
+    min: 2.95 mm
+    typ: 3 mm
+    max: 3.05 mm
+    src: p22 "M8.118 top view, body length 3.0 +/-0.05"
+  body_height:
+    min: 0.75 mm
+    typ: 0.85 mm
+    max: 0.95 mm
+    src: p22 "M8.118 side view 1, body thickness 0.85 +/-0.10"
+  lead_thickness:
+    min: 0.09 mm
+    max: 0.2 mm
+    src: p22 "M8.118 side view 2, lead thickness 0.09 - 0.20"
+  overall_width:
+    min: 4.75 mm
+    typ: 4.9 mm
+    max: 5.05 mm
+    src: p22 "M8.118 top view, lead-tip span 4.9 +/-0.15"
+  overall_height: { max: 1.1 mm, src: 'p22 "M8.118 side view 2, 1.10 MAX"' }
+  standoff:
+    min: 0.05 mm
+    typ: 0.1 mm
+    max: 0.15 mm
+    src: p22 "M8.118 side view 1, standoff 0.10 +/-0.05"
+  lead_width:
+    min: 0.25 mm
+    max: 0.36 mm
+    src: p22 "M8.118 side view 1, lead width 0.25 - 0.36"
+  lead_length:
+    min: 0.4 mm
+    typ: 0.55 mm
+    max: 0.7 mm
+    src: p22 "M8.118 detail X, foot length 0.55 +/-0.15"

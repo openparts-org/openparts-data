@@ -1,0 +1,23 @@
+# 25LC640A, DS21830F page 33 Product Identification System, example d).
+# Package ST -> drawing C04-086B (page 24, rendered): every row equals manufacturers/microchip/TSSOP8-ST-C04-086B -- reused.
+# existence is "probable": the MPN appears only as an ordering example.
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/25LC640AT-I-ST
+manufacturer: microchip
+mpn: 25LC640AT-I/ST
+device: microchip/25LC640A
+
+package:
+  value: manufacturers/microchip/TSSOP8-ST-C04-086B
+  src: p33 "Product Identification System, Package ST (TSSOP 4.4 mm, 8-lead); drawing C04-086B p24-25"
+
+sources: [microchip/DS21830@revF]
+source: microchip/DS21830@revF
+
+existence:
+  status: probable
+  src: p33 "Product Identification System, example d) 25LC640AT-I/ST"
+
+lifecycle: { status: unknown }

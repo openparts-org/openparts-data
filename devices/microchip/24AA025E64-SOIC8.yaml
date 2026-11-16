@@ -1,0 +1,26 @@
+# 24AA025E64: 2 Kbit I2C serial EEPROM with a factory-programmed EUI-64 node address.
+# Pin numbers from Table 2-1 Pin Function Table (DS20002124G page 6), column SOIC,
+# checked against the package figure on page 1.
+schema_version: "0.2"
+kind: device
+id: microchip/24AA025E64-SOIC8
+manufacturer: microchip
+category: eeprom
+family: 24AA02E48/24AA025E48/24AA02E64/24AA025E64
+source: microchip/DS20002124@revG
+
+parameters:
+  capacity: { typ: 2 Kbit, src: 'p1 "Description, 2 Kbit Electrically Erasable PROM"' }
+
+pins:
+  src:
+    - p6 "Table 2-1 Pin Function Table, column SOIC"
+    - p1 "Packages (24AA025E48/24AA025E64), SOIC"
+  "1": { name: A0, type: input }
+  "2": { name: A1, type: input }
+  "3": { name: A2, type: input }
+  "4": { name: VSS, type: ground }
+  "5": { name: SDA, type: io }
+  "6": { name: SCL, type: clock }
+  "7": { name: NC, type: nc }
+  "8": { name: VCC, type: power }

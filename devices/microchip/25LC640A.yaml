@@ -1,0 +1,28 @@
+# 64 Kbit SPI serial EEPROM (25LC640A, 2.5V version), standard pinout. Pin numbers
+# from Table 3-1 Pin Function Table (DS21830F page 13), column Pin Number,
+# checked against the Package Types figures TSSOP/MSOP (ST, MS) and PDIP/SOIC
+# (P, SN) on page 1 (same numbers). The X-rotated TSSOP (25XX640AX) differs and
+# is not covered. SCK typed input as in microchip/25LC256.
+schema_version: "0.2"
+kind: device
+id: microchip/25LC640A
+manufacturer: microchip
+category: eeprom
+family: 25AA640A/25LC640A
+source: microchip/DS21830@revF
+
+parameters:
+  capacity: { typ: 64 Kbit, src: 'p1 "Description, 64 kbit Serial Electrically Erasable PROMs"' }
+
+pins:
+  src:
+    - p13 "Table 3-1 Pin Function Table, column Pin Number"
+    - p1 "Package Types, TSSOP/MSOP (ST, MS) and PDIP/SOIC (P, SN)"
+  "1": { name: CS, type: input }
+  "2": { name: SO, type: output }
+  "3": { name: WP, type: input }
+  "4": { name: VSS, type: ground }
+  "5": { name: SI, type: input }
+  "6": { name: SCK, type: input }
+  "7": { name: HOLD, type: input }
+  "8": { name: VCC, type: power }

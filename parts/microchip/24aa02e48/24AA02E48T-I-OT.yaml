@@ -1,0 +1,23 @@
+# 24AA02E48, DS20002124G page 29 Product Identification System, example b).
+# Package OT, 5-lead (Table 2-1: 24AA02EXX is 5-pin SOT-23) -> drawing C04-091B (page 21, rendered): every row equals manufacturers/microchip/SOT23-5-OT-C04-091B -- reused.
+# existence is "probable": the MPN appears only as an ordering example.
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/24AA02E48T-I-OT
+manufacturer: microchip
+mpn: 24AA02E48T-I/OT
+device: microchip/24AA02E48-SOT23-5
+
+package:
+  value: manufacturers/microchip/SOT23-5-OT-C04-091B
+  src: p29 "Product Identification System, Package OT (SOT-23); 5-lead drawing C04-091B p21-22"
+
+sources: [microchip/DS20002124@revG]
+source: microchip/DS20002124@revG
+
+existence:
+  status: probable
+  src: p29 "Product Identification System, example b) 24AA02E48T-I/OT"
+
+lifecycle: { status: unknown }
