@@ -1,0 +1,18 @@
+# Model number printed verbatim in the ZH sheet's side-entry ordering
+# table (jst/eZH page 4, 4 circuits) -> existence verified.
+# lifecycle: the sheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: jst/S4B-ZR
+manufacturer: jst
+mpn: S4B-ZR
+device: jst/S4B-ZR
+package: manufacturers/jst/ZH-Header-Side-1x04-P1.50
+sources: [jst/eZH]
+source: jst/eZH
+
+existence:
+  status: verified
+  src: 'p4 ""Header/ Through-hole type" Side entry Model No. table, 2.7 mm soldering length, 4 circuits: "S4B-ZR""'
+
+lifecycle: { status: unknown }

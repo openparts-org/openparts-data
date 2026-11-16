@@ -1,0 +1,59 @@
+# JST XH shrouded header, side entry, 5 circuits, 2.5 mm pitch, THT
+# (S5B-XH-A), from jst/eXH (the side-entry header drawing, Model No. table
+# and PC board layout). Family right_angle_header with the housing over its
+# holes (canonical-data 20.1).
+# Frame: the PC board layout (p2, viewed from the connector mounting
+# surface) has No. 1 circuit at the right end of the row and the
+# "Side edge of header on PCB" (the front, mating face) "(C)" above it,
+# C = 9.2 for S*B-XH-A (p5 table header "C: 9.2 (mm)"); turned 90
+# degrees counter-clockwise (pin 1 to the top) that face is the -X face.
+# The housing is 4.5 + 7 = 11.5 deep (p2 assembly layout and p5 side
+# view): its centre lies 9.2 - 11.5 / 2 = 3.45 towards -X (body_offset
+# -3.45, nominal only), the holes under it. Height "(6.1)" and tail
+# "(3.4)" are parenthesised (reference) values. The S*B-XH-A-1 variant
+# (C 7.6) is a different package and is not recorded here.
+# No land is given, only the hole: the pad is the hole plus the generator's
+# annular-ring default. Walls, opening and the posts' place inside it are
+# not dimensioned (3D generator defaults). Wafer PA 66 natural (white), posts tin-plated (p5).
+schema_version: "0.2"
+kind: package
+id: manufacturers/jst/XH-Header-Side-1x05-P2.50
+family: right_angle_header
+lead_count: 5
+
+lead_layout:
+  value: [1, 5]
+  src:   p2 "PC board layout, Side entry type, No. 1 circuit; p5 Side entry Model No. table"
+
+source: jst/eXH
+
+pitch:
+  min: 2.45 mm
+  typ: 2.5 mm
+  max: 2.55 mm
+  src: p2 "PC board layout, Side entry type, hole pitch "2.5±0.05""
+
+geometry: { type: parametric, generator: right_angle_header }
+
+dimensions:
+  body_width:
+    typ: 11.5 mm
+    src: 'p2 "Assembly layout, Side entry type: housing "4.5" + "7" = 11.5 (also p5 side view)"'
+  body_length:
+    typ: 14.9 mm
+    src: 'p5 ""Header" Side entry type Model No. table, S5B-XH-A: B = 14.9"'
+  body_height:
+    typ: 6.1 mm
+    src: 'p2 "Assembly layout, Side entry type: height "(6.1)" (reference; also p5)"'
+  body_offset:
+    typ: -3.45 mm
+    src: 'p2 "Side entry layout "(C)"; p5 "C: 9.2 (mm)": 11.5/2 - 9.2"'
+  lead_width: { typ: 0.64 mm, src: 'p5 ""Header", Side entry type, front view: post "□0.64""' }
+  hole_diameter:
+    min: 0.9 mm
+    typ: 0.9 mm
+    max: 1 mm
+    src: 'p2 "PC board layout, Side entry type: hole "φ0.9 +0.1/0""'
+  tail_length:
+    typ: 3.4 mm
+    src: p5 "Header, Side entry type, side view, tail "(3.4)" (reference)"

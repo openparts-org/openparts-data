@@ -1,0 +1,18 @@
+# Model number printed verbatim in the XH sheet's side-entry ordering
+# table (jst/eXH page 5, 6 circuits) -> existence verified.
+# lifecycle: the sheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: jst/S6B-XH-A
+manufacturer: jst
+mpn: S6B-XH-A
+device: jst/S6B-XH-A
+package: manufacturers/jst/XH-Header-Side-1x06-P2.50
+sources: [jst/eXH]
+source: jst/eXH
+
+existence:
+  status: verified
+  src: 'p5 ""Header" Side entry type Model No. table, 6 circuits: "S6B-XH-A""'
+
+lifecycle: { status: unknown }

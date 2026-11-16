@@ -1,0 +1,59 @@
+# Samtec SMA-J-P-X-ST-EM1: SMA straight jack, edge mount, from
+# samtec/SMA-J-P-X-ST-EM1-MKT (revision G).
+# Frame (rf_coax, edge mount, canonical-data 20.6): top view of the
+# RECOMMENDED PCB LAYOUT, mating face (the barrel) toward +Y, X origin on
+# the centre pad / flange centre line (the layout is drawn symmetric about
+# it), Y origin on the "PCB EDGE" line. The flange's depth along the axis
+# is not dimensioned on the print, so body_length is left out: the
+# generator draws the flange from the PCB edge outward at its default
+# depth (3D and body outline only, never stored). "1.73 REF" in the bottom
+# view is the gap between the two leg pairs (the legs straddle the board,
+# "BOARD THICKNESS: 1.57 MM"), not a flange depth.
+# Flange "□6.35 REF" (top view): body_width and body_height. Thread
+# "Ø6.33 REF" (1/4-36 UNS-2A): mating_diameter. The barrel length beyond
+# the flange is not printed (9.52 REF runs to the flange's rear face):
+# mating_length left out.
+# Lands: the layout gives the top side only. The two lower legs solder to
+# the board's bottom side, but the print dimensions no bottom land, so no
+# bottom pad is recorded (pads `side: bottom` would carry them).
+schema_version: "0.2"
+kind: package
+id: manufacturers/samtec/SMA-J-P-X-ST-EM1
+family: rf_coax
+lead_count: { value: 3, src: 'p1 "RECOMMENDED PCB LAYOUT, centre pad and two outer pads"' }
+source: samtec/SMA-J-P-X-ST-EM1-MKT
+
+pitch: { unit: mm }
+
+connector:
+  gender: female
+  orientation: right_angle
+  interface: sma
+  edge_mount: true
+  src: 'p1 "Part number legend: -J: JACK; -ST: STRAIGHT; -EM1: EDGE MOUNT (mates parallel to the board)"'
+
+geometry: { type: parametric, generator: rf_coax }
+
+dimensions:
+  body_width:      { typ: 6.35 mm, src: 'p1 "Top view, flange "□6.35 REF""' }
+  body_length:     { unit: mm }
+  body_height:     { typ: 6.35 mm, src: 'p1 "Top view, flange "□6.35 REF" (square)"' }
+  mating_diameter: { typ: 6.33 mm, src: 'p1 "Side view, thread "Ø6.33 REF""' }
+
+# pads (RECOMMENDED PCB LAYOUT): outer pads 4.20 long from the PCB edge,
+# "4.30" apart inside and "7.00" outside -> width (7.00 - 4.30)/2 = 1.35,
+# x = ±(4.30 + 7.00)/4 = ±2.825, y = -4.20/2 = -2.10. Centre pad "1.27"
+# wide, "0.10" short of the edge and "0.50" short of the outer pads' top
+# -> length 4.20 - 0.50 - 0.10 = 3.60, y = -(0.10 + 3.60/2) = -1.90.
+pads:
+  value:
+    - { number: "1", x: 0, y: -1.9, width: 1.27, length: 3.6 }
+    - { number: "2", x: -2.825, y: -2.1, width: 1.35, length: 4.2 }
+    - { number: "2", x: 2.825, y: -2.1, width: 1.35, length: 4.2 }
+  src: p1 "RECOMMENDED PCB LAYOUT, 1.27/4.30/7.00/4.20/0.50/0.10 (see comment)"
+
+edge:
+  side: +y
+  requirement: required
+  pcb_edge: 0
+  src: p1 "RECOMMENDED PCB LAYOUT, PCB EDGE (the frame's Y origin)"

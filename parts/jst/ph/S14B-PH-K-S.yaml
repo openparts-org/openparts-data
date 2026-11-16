@@ -1,0 +1,18 @@
+# Model number printed verbatim in the PH sheet's side-entry ordering
+# table (jst/ePH page 3, 14 circuits) -> existence verified.
+# lifecycle: the sheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: jst/S14B-PH-K-S
+manufacturer: jst
+mpn: S14B-PH-K-S
+device: jst/S14B-PH-K-S
+package: manufacturers/jst/PH-Header-Side-1x14-P2.00
+sources: [jst/ePH]
+source: jst/ePH
+
+existence:
+  status: verified
+  src: 'p3 ""Header (Through-hole type)" Model No. table, 14 circuits: "S14B-PH-K-S""'
+
+lifecycle: { status: unknown }

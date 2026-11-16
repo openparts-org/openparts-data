@@ -1,0 +1,60 @@
+# JST PH shrouded header, side entry, 15 circuits, 2 mm pitch, THT
+# (S15B-PH-K-S), from jst/ePH (the side-entry header drawing, Model No. table
+# and PC board layout). Family right_angle_header with the housing over its
+# holes (canonical-data 20.1).
+# Frame: the PC board layout (p1, viewed from the connector mounting
+# surface) has No. 1 circuit at the left end of the row and the dashed
+# connector outline reaching "(6.25)" from the row to its far edge, the
+# front (mating) face; turned 90 degrees clockwise (pin 1 to the top,
+# pins numbered down the row) that face is the -X face. The housing is
+# 7.6 deep (p3 side view): its centre lies 6.25 - 7.6 / 2 = 2.45 towards
+# -X (body_offset -2.45, nominal only), the holes under it. The p3 front
+# view shows the "Mark of No. 1 circuit" at the other end: it is drawn
+# from the mating side; pins are numbered from the layout.
+# "(6.25)" and the tail "(3.4)" are parenthesised (reference) values;
+# the layout's note 3 calls its dimensions reference only. The post
+# size is not dimensioned (lead_width left out).
+# No land is given, only the hole: the pad is the hole plus the generator's
+# annular-ring default. Walls, opening and the posts' place inside it are
+# not dimensioned (3D generator defaults). Base housing PA natural (white), posts tin-plated (p3).
+schema_version: "0.2"
+kind: package
+id: manufacturers/jst/PH-Header-Side-1x15-P2.00
+family: right_angle_header
+lead_count: 15
+
+lead_layout:
+  value: [1, 15]
+  src:   p1 "PC board layout, Side entry type, No. 1 circuit; p3 Model No. table"
+
+source: jst/ePH
+
+pitch:
+  min: 1.95 mm
+  typ: 2 mm
+  max: 2.05 mm
+  src: p1 "PC board layout (Through-hole type), Side entry type, hole pitch "2±0.05" (note 2)"
+
+geometry: { type: parametric, generator: right_angle_header }
+
+dimensions:
+  body_width:
+    typ: 7.6 mm
+    src: 'p3 ""Header (Through-hole type)", Side entry type, side view: housing depth "7.6""'
+  body_length:
+    typ: 31.9 mm
+    src: 'p3 ""Header (Through-hole type)" Model No. table, S15B-PH-K-S: B = 31.9"'
+  body_height:
+    typ: 4.8 mm
+    src: 'p3 ""Header (Through-hole type)", Side entry type, side view: housing height "4.8""'
+  body_offset:
+    typ: -2.45 mm
+    src: 'p1 "PC board layout, Side entry, outline "(6.25)"; p3 depth "7.6": 7.6/2 - 6.25"'
+  hole_diameter:
+    min: 0.7 mm
+    typ: 0.7 mm
+    max: 0.8 mm
+    src: 'p1 "PC board layout (Through-hole type), Side entry type: hole "φ0.7 +0.1/0" (note 3)"'
+  tail_length:
+    typ: 3.4 mm
+    src: p3 "Header (Through-hole type), Side entry type, side view, tail "(3.4)" (reference)"

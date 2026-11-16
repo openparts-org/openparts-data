@@ -1,0 +1,15 @@
+# JST XH shrouded wire-to-board header, side entry, through-hole,
+# 3 circuits (jst/eXH page 5, Model No. table: S3B-XH-A). The sheet
+# names no signals: each circuit is named by its number (No. 1 circuit as
+# marked on the PC board layout), all passive.
+schema_version: "0.2"
+kind: device
+id: jst/S3B-XH-A
+manufacturer: jst
+category: connector
+family: XH
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive }

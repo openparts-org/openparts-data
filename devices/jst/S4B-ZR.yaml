@@ -1,0 +1,16 @@
+# JST ZH shrouded wire-to-board header, side entry, through-hole,
+# 4 circuits (jst/eZH page 4, Model No. table: S4B-ZR). The sheet
+# names no signals: each circuit is named by its number (No. 1 circuit as
+# marked on the PC board layout), all passive.
+schema_version: "0.2"
+kind: device
+id: jst/S4B-ZR
+manufacturer: jst
+category: connector
+family: ZH
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive }
+  "4": { name: "4", type: passive }
