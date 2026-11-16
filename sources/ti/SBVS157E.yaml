@@ -1,0 +1,15 @@
+# Official TI datasheet "TLV8x3 3-Pin Voltage Supervisors with Active-Low, Open-Drain Reset". Downloaded 2026-11-16 with curl from
+# the TI symlink URL below; revision read from the page header
+# "SBVS157E - APRIL 2011 - REVISED DECEMBER 2020". 25 PDF pages; text read with pdftotext -layout. Page
+# numbers in this dataset are PDF page indices. The PACKAGE OPTION
+# ADDENDUM at the end of the PDF is dated 15-Jul-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SBVS157E
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tlv803.pdf
+date: 2020-12
+publisher: ti
+document_id: SBVS157E
+document_type: datasheet
+revision: E

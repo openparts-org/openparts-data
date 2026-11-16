@@ -1,0 +1,30 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SLVSDG0B PDF page 22, addendum dated 10-Nov-2025): "TPS564208DDCR | Active |
+# Production | SOT-23-THIN (DDC) | 6". lifecycle "active" is that table's Status
+# column. Package: SOT-23-THIN (DDC) | 6, outline DDC0006A (4214841/E 08/2024) on page 26.
+# Its pdftotext -layout text matches ti/SLVSCB0E page 33 (where manufacturers/ti/DDC0006A
+# was read) line for line, page headers and footers stripped, so the
+# package is reused.
+schema_version: "0.2"
+kind: part
+id: ti/TPS564208DDCR
+manufacturer: ti
+mpn: TPS564208DDCR
+device: ti/TPS564208
+
+package:
+  value: manufacturers/ti/DDC0006A
+  src:
+    - p22 "Package Option Addendum, row "TPS564208DDCR", "SOT-23-THIN (DDC) | 6""
+    - p26 "PACKAGE OUTLINE DDC0006A (4214841/E 08/2024)"
+
+sources: [ti/SLVSDG0B]
+source: ti/SLVSDG0B
+
+existence:
+  status: verified
+  src: p22 "Package Option Addendum, Packaging Information table, row "TPS564208DDCR""
+
+lifecycle:
+  status: active
+  src: p22 "Package Option Addendum, row "TPS564208DDCR", Status "Active""

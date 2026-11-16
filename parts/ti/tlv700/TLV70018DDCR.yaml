@@ -1,0 +1,33 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SLVSA00E PDF page 20, addendum dated 10-Nov-2025): "TLV70018DDCR | Active |
+# Production | SOT-23-THIN (DDC) | 5". lifecycle "active" is that table's Status
+# column. Package: SOT-23-THIN (DDC) | 5, outline DDC0005A (4220752/C 08/2024) on page 36.
+# manufacturers/ti/DDC0005A was read from this outline page itself.
+schema_version: "0.2"
+kind: part
+id: ti/TLV70018DDCR
+manufacturer: ti
+mpn: TLV70018DDCR
+device: ti/TLV700-DDC
+
+package:
+  value: manufacturers/ti/DDC0005A
+  src:
+    - p20 "Package Option Addendum, row "TLV70018DDCR", "SOT-23-THIN (DDC) | 5""
+    - p36 "PACKAGE OUTLINE DDC0005A (4220752/C 08/2024)"
+
+sources: [ti/SLVSA00E]
+source: ti/SLVSA00E
+
+existence:
+  status: verified
+  src: p20 "Package Option Addendum, Packaging Information table, row "TLV70018DDCR""
+
+lifecycle:
+  status: active
+  src: p20 "Package Option Addendum, row "TLV70018DDCR", Status "Active""
+
+parameters:
+  output_voltage:
+    typ: 1.8 V
+    src: 'p17 "11.1.2 Device Nomenclature, Table 3, xx = nominal output voltage: 18"'

@@ -1,0 +1,39 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SLVSCJ8B PDF page 16, addendum dated 10-Nov-2025): "TPS7B6933QDCYRQ1 | Active |
+# Production | SOT-223 (DCY) | 4". lifecycle "active" is that table's Status
+# column. Package: SOT-223 (DCY) | 4, outline DCY0004A (4214843/C 05/2026) on page 23.
+# Its pdftotext -layout text matches ti/SNOS412Q page 44 (where standards/SOT223-3.5x6.5-P2.3-TabPin4-TI-DCY
+# was read) line for line, page headers and footers stripped, so the
+# package is reused.
+schema_version: "0.2"
+kind: part
+id: ti/TPS7B6933QDCYRQ1
+manufacturer: ti
+mpn: TPS7B6933QDCYRQ1
+device: ti/TPS7B69-Q1-DCY
+
+package:
+  value: standards/SOT223-3.5x6.5-P2.3-TabPin4-TI-DCY
+  src:
+    - p16 "Package Option Addendum, row "TPS7B6933QDCYRQ1", "SOT-223 (DCY) | 4""
+    - p23 "PACKAGE OUTLINE DCY0004A (4214843/C 05/2026)"
+
+sources: [ti/SLVSCJ8B]
+source: ti/SLVSCJ8B
+
+existence:
+  status: verified
+  src: p16 "Package Option Addendum, Packaging Information table, row "TPS7B6933QDCYRQ1""
+
+lifecycle:
+  status: active
+  src: p16 "Package Option Addendum, row "TPS7B6933QDCYRQ1", Status "Active""
+
+parameters:
+  output_voltage:
+    typ: 3.3 V
+    src: p10 "8.1 Overview, fixed output voltage 3.3 V (TPS7B6933-Q1)"
+  dropout_voltage:
+    max: 800 mV
+    at: { IOUT: 100 mA }
+    src: p5 "7.5 Elec. Char., VDROP, Fixed 3.3-V version, IO = 100 mA"

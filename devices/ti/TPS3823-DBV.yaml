@@ -1,0 +1,30 @@
+# TPS3823 supply-voltage supervisor with watchdog and manual reset
+# (push-pull active-low RESET per section 4 "Device Comparison Table",
+# page 3), DBV (SOT-23-5) pinout. From SLVS165O Table 5-1 "Pin
+# Functions" (page 4), column "TPS3820, TPS3823, TPS3823A, TPS3828":
+# RESET 1, GND 2, MR 3, WDI 4, VDD 5; checked against Figure 5-1 (same
+# page). RESET and MR carry an overbar in the datasheet (written
+# without it here, as ti/TPS3839-DBZ). One Device for all threshold
+# options (-25/-30/-33/-50); the threshold has no parameter key.
+# Category: the tree has no supervisor node, so the group "power" is
+# used, as for ti/TPS3839-DBZ. VDD is typed power.
+schema_version: "0.2"
+kind: device
+id: ti/TPS3823-DBV
+manufacturer: ti
+category: power
+family: TPS382x
+source: ti/SLVS165O
+
+parameters:
+  input_voltage_max: { max: 5.5 V, src: 'p5 "6.3 Recommended Operating Conditions, VDD"' }
+
+pins:
+  src:
+    - p4 "Table 5-1 "Pin Functions", column "TPS3820, TPS3823, TPS3823A, TPS3828""
+    - 'p4 "Figure 5-1 "5-Pin SOT-23 TPS3820, TPS3823, TPS3823A, TPS3828: DBV Package (Top View)""'
+  "1": { name: RESET, type: output }
+  "2": { name: GND, type: ground }
+  "3": { name: MR, type: input }
+  "4": { name: WDI, type: input }
+  "5": { name: VDD, type: power }

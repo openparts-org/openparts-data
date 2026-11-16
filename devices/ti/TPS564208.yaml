@@ -1,0 +1,31 @@
+# TPS564208 4.5-V to 17-V input, 4-A synchronous step-down converter (D-CAP2, continuous current mode), 6-pin SOT (DDC) pinout. From SLVSDG0B "Pin Functions"
+# table (page 3), checked against the "DDC Package 6-Pin SOT Top View"
+# figure (same page): GND 1, SW 2, VIN 3 down one side, VFB 4, EN 5,
+# VBST 6 up the other (6 opposite 1) -- the same map as ti/TPS563201.
+# Types as ti/TPS563201: GND -> ground, SW -> passive, VIN -> power,
+# VFB and EN -> input, VBST (gate-drive supply; the table marks it O)
+# -> power. output_current is the "4-A Converter" headline of
+# 1 Features (no IOUT row in the Recommended Operating Conditions).
+schema_version: "0.2"
+kind: device
+id: ti/TPS564208
+manufacturer: ti
+category: switching_regulator
+family: TPS56420x
+source: ti/SLVSDG0B
+
+parameters:
+  output_type: { value: adjustable, src: 'p1 "1 Features, Output Voltage Range: 0.76 V to 7 V"' }
+  input_voltage_max: { max: 17 V, src: 'p4 "6.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 4 A, src: 'p1 "1 Features, TPS564208 4-A Converter"' }
+
+pins:
+  src:
+    - p3 ""Pin Functions" table"
+    - p3 ""DDC Package 6-Pin SOT Top View" figure (all 6 pins matched)"
+  "1": { name: GND, type: ground }
+  "2": { name: SW, type: passive }
+  "3": { name: VIN, type: power }
+  "4": { name: VFB, type: input }
+  "5": { name: EN, type: input }
+  "6": { name: VBST, type: power }

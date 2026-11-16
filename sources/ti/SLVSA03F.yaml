@@ -1,0 +1,15 @@
+# Official TI datasheet "TLV809 3-Pin Supply Voltage Supervisor". Downloaded 2026-11-16 with curl from
+# the TI symlink URL below; revision read from the page header
+# "SLVSA03F - JUNE 2010 - REVISED DECEMBER 2020". 26 PDF pages; text read with pdftotext -layout. Page
+# numbers in this dataset are PDF page indices. The PACKAGE OPTION
+# ADDENDUM at the end of the PDF is dated 15-Jul-2026.
+schema_version: "0.2"
+kind: source
+id: ti/SLVSA03F
+retrieved: 2026-11-16
+url: https://www.ti.com/lit/ds/symlink/tlv809.pdf
+date: 2020-12
+publisher: ti
+document_id: SLVSA03F
+document_type: datasheet
+revision: F

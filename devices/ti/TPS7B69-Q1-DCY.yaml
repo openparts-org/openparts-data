@@ -1,0 +1,30 @@
+# TPS7B69xx-Q1 40-V, 150-mA ultra-low-IQ automotive LDO (fixed 2.5 /
+# 3.3 / 5 V), DCY (SOT-223) pinout. From SLVSCJ8B "Pin Functions"
+# table (page 3), column "SOT-223": IN 1, GND 2 and 4, OUT 3; checked
+# against the "DCY Package 4-Pin SOT-223 Top View" figure (same page),
+# where the tab is labelled GND 4. Outline DCY0004A numbers the tab
+# "4" (see the reused package). Types and parameters as
+# ti/TPS7B69-Q1-DBV.
+schema_version: "0.2"
+kind: device
+id: ti/TPS7B69-Q1-DCY
+manufacturer: ti
+category: linear_regulator
+family: TPS7B69xx-Q1
+source: ti/SLVSCJ8B
+
+parameters:
+  output_type:
+    value: fixed
+    src: 'p5 "7.5 Elec. Char., VO rows: Fixed 2.5-V / 3.3-V / 5-V version"'
+  input_voltage_max: { max: 40 V, src: 'p4 "7.3 Recommended Operating Conditions, VI"' }
+  output_current:    { max: 150 mA, src: 'p5 "7.5 Elec. Char., IO Output current"' }
+
+pins:
+  src:
+    - p3 ""Pin Functions" table, column "SOT-223""
+    - p3 ""DCY Package 4-Pin SOT-223 Top View" figure, tab GND 4"
+  "1": { name: IN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: OUT, type: power }
+  "4": { name: GND, type: ground }

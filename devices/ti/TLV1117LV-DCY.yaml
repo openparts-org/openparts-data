@@ -1,0 +1,29 @@
+# TLV1117LV 1-A positive fixed-voltage LDO (all fixed voltages), DCY
+# (SOT-223) pinout. From SBVS160C Table 5-1 "Pin Functions" (page 3):
+# GND 1, OUT 2 and Tab, IN 3; checked against Figure 5-1 "DCY Package, 4
+# Pins (SOT-223) (Top View)" (same page), tab labelled OUTPUT. Outline
+# DCY0004A numbers the tab "4" (see the reused package), so pin 4 is
+# OUT. IN/OUT typed power, as for ti/TLV1117-33.
+schema_version: "0.2"
+kind: device
+id: ti/TLV1117LV-DCY
+manufacturer: ti
+category: linear_regulator
+family: TLV1117LV
+source: ti/SBVS160C
+
+parameters:
+  output_type:
+    value: fixed
+    src: p1 "TLV1117LV 1-A, Positive Fixed-Voltage, Low-Dropout Regulator"
+  input_voltage_max: { max: 5.5 V, src: 'p4 "6.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 1 A, src: 'p4 "6.3 Recommended Operating Conditions, IOUT"' }
+
+pins:
+  src:
+    - p3 "Table 5-1 "Pin Functions" (GND 1, OUT 2 and Tab, IN 3)"
+    - p3 "Figure 5-1 "DCY Package, 4 Pins (SOT-223) (Top View)", tab labelled OUTPUT"
+  "1": { name: GND, type: ground }
+  "2": { name: OUT, type: power }
+  "3": { name: IN, type: power }
+  "4": { name: OUT, type: power }

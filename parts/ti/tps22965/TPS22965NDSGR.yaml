@@ -1,0 +1,30 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SLVSBJ0F PDF page 24, addendum dated 10-Nov-2025): "TPS22965NDSGR | Active |
+# Production | WSON (DSG) | 8". lifecycle "active" is that table's Status
+# column. Package: WSON (DSG) | 8, outline DSG0008A (4218900/E 08/2022) on page 29.
+# Its pdftotext -layout text matches ti/SLVSAM2E page 39 (where manufacturers/ti/DSG0008A
+# was read) line for line, page headers and footers stripped, so the
+# package is reused.
+schema_version: "0.2"
+kind: part
+id: ti/TPS22965NDSGR
+manufacturer: ti
+mpn: TPS22965NDSGR
+device: ti/TPS22965-DSG
+
+package:
+  value: manufacturers/ti/DSG0008A
+  src:
+    - p24 "Package Option Addendum, row "TPS22965NDSGR", "WSON (DSG) | 8""
+    - p29 "PACKAGE OUTLINE DSG0008A (4218900/E 08/2022)"
+
+sources: [ti/SLVSBJ0F]
+source: ti/SLVSBJ0F
+
+existence:
+  status: verified
+  src: p24 "Package Option Addendum, Packaging Information table, row "TPS22965NDSGR""
+
+lifecycle:
+  status: active
+  src: p24 "Package Option Addendum, row "TPS22965NDSGR", Status "Active""

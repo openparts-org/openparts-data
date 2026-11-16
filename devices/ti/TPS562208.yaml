@@ -1,0 +1,31 @@
+# TPS562208 4.5-V to 17-V input, 2-A synchronous step-down converter
+# (D-CAP2, continuous current mode), 6-pin SOT (DDC) pinout. From SLVSD91D
+# Table 4-1 "Pin Functions" (page 3), checked against Figure 4-1 "6-Pin
+# SOT DDC Package (Top View)" (same page): GND 1, SW 2, VIN 3, VFB 4,
+# EN 5, VBST 6 -- the same map as ti/TPS563201. Types as ti/TPS563201.
+# TPS562201 and TPS562208 share the datasheet and the pin map; they
+# differ in light-load mode only. output_current is the "2A converter"
+# headline of 1 Features.
+schema_version: "0.2"
+kind: device
+id: ti/TPS562208
+manufacturer: ti
+category: switching_regulator
+family: TPS56220x
+source: ti/SLVSD91D
+
+parameters:
+  output_type: { value: adjustable, src: 'p1 "1 Features, Output voltage range: 0.76V to 7V"' }
+  input_voltage_max: { max: 17 V, src: 'p4 "5.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 2 A, src: 'p1 "1 Features, TPS562201 and TPS562208 2A converter"' }
+
+pins:
+  src:
+    - p3 "Table 4-1 "Pin Functions""
+    - p3 "Figure 4-1 "6-Pin SOT DDC Package (Top View)" (all 6 pins matched)"
+  "1": { name: GND, type: ground }
+  "2": { name: SW, type: passive }
+  "3": { name: VIN, type: power }
+  "4": { name: VFB, type: input }
+  "5": { name: EN, type: input }
+  "6": { name: VBST, type: power }

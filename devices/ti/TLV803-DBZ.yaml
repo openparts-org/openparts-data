@@ -1,0 +1,26 @@
+# TLV803 3-pin voltage supervisor with active-low, open-drain reset, DBZ
+# (SOT-23-3) pinout. From SBVS157E "Pin Functions" table (page 4),
+# column "TLV803": GND 1, RESET 2, VDD 3; checked against Figure 6-1
+# "TLV803: DBZ Package 3-Pin SOT-23 Top View" (same page). TLV853 and
+# TLV863 (other pin maps) are not covered. RESET carries an overbar in
+# the datasheet (written without it here). One Device for all threshold
+# options (M/R/S/Z); the threshold has no parameter key. Category
+# "power" as ti/TPS3839-DBZ.
+schema_version: "0.2"
+kind: device
+id: ti/TLV803-DBZ
+manufacturer: ti
+category: power
+family: TLV8x3
+source: ti/SBVS157E
+
+parameters:
+  input_voltage_max: { max: 6 V, src: 'p5 "7.4 Recommended Operating Conditions, VDD"' }
+
+pins:
+  src:
+    - p4 ""Pin Functions" table, column "TLV803""
+    - 'p4 "Figure 6-1 "TLV803: DBZ Package 3-Pin SOT-23 Top View""'
+  "1": { name: GND, type: ground }
+  "2": { name: RESET, type: output }
+  "3": { name: VDD, type: power }

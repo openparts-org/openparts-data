@@ -1,0 +1,35 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SLVSA00E PDF page 21, addendum dated 10-Nov-2025): "TLV70025DCKR | Active |
+# Production | SC70 (DCK) | 5". lifecycle "active" is that table's Status
+# column. Package: SC70 (DCK) | 5, outline DCK0005A (4214834/G 11/2024) on page 33.
+# Its pdftotext -layout text matches ti/SCES295AB page 32 (where manufacturers/ti/DCK0005A
+# was read) line for line, page headers and footers stripped, so the
+# package is reused.
+schema_version: "0.2"
+kind: part
+id: ti/TLV70025DCKR
+manufacturer: ti
+mpn: TLV70025DCKR
+device: ti/TLV700-DCK
+
+package:
+  value: manufacturers/ti/DCK0005A
+  src:
+    - p21 "Package Option Addendum, row "TLV70025DCKR", "SC70 (DCK) | 5""
+    - p33 "PACKAGE OUTLINE DCK0005A (4214834/G 11/2024)"
+
+sources: [ti/SLVSA00E]
+source: ti/SLVSA00E
+
+existence:
+  status: verified
+  src: p21 "Package Option Addendum, Packaging Information table, row "TLV70025DCKR""
+
+lifecycle:
+  status: active
+  src: p21 "Package Option Addendum, row "TLV70025DCKR", Status "Active""
+
+parameters:
+  output_voltage:
+    typ: 2.5 V
+    src: 'p17 "11.1.2 Device Nomenclature, Table 3, xx = nominal output voltage: 25"'

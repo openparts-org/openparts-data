@@ -1,0 +1,30 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SBVS044F PDF page 21, addendum dated 8-Jan-2026): "TPS2115ADRBR | Active |
+# Production | SON (DRB) | 8". lifecycle "active" is that table's Status
+# column. Package: SON (DRB) | 8, outline DRB0008B (4218876/A 12/2017) on page 27.
+# Its pdftotext -layout text matches ti/SBVS045C page 28 (where manufacturers/ti/DRB0008B
+# was read) line for line, page headers and footers stripped, so the
+# package is reused.
+schema_version: "0.2"
+kind: part
+id: ti/TPS2115ADRBR
+manufacturer: ti
+mpn: TPS2115ADRBR
+device: ti/TPS2115A-DRB
+
+package:
+  value: manufacturers/ti/DRB0008B
+  src:
+    - p21 "Package Option Addendum, row "TPS2115ADRBR", "SON (DRB) | 8""
+    - p27 "PACKAGE OUTLINE DRB0008B (4218876/A 12/2017)"
+
+sources: [ti/SBVS044F]
+source: ti/SBVS044F
+
+existence:
+  status: verified
+  src: p21 "Package Option Addendum, Packaging Information table, row "TPS2115ADRBR""
+
+lifecycle:
+  status: active
+  src: p21 "Package Option Addendum, row "TPS2115ADRBR", Status "Active""

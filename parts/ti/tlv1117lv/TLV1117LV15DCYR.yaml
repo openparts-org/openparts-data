@@ -1,0 +1,35 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SBVS160C PDF page 18, addendum dated 14-Jun-2026): "TLV1117LV15DCYR | Active |
+# Production | SOT-223 (DCY) | 4". lifecycle "active" is that table's Status
+# column. Package: SOT-223 (DCY) | 4, outline DCY0004A (4214843/C 05/2026) on page 22.
+# Its pdftotext -layout text matches ti/SNOS412Q page 44 (where standards/SOT223-3.5x6.5-P2.3-TabPin4-TI-DCY
+# was read) line for line, page headers and footers stripped, so the
+# package is reused.
+schema_version: "0.2"
+kind: part
+id: ti/TLV1117LV15DCYR
+manufacturer: ti
+mpn: TLV1117LV15DCYR
+device: ti/TLV1117LV-DCY
+
+package:
+  value: standards/SOT223-3.5x6.5-P2.3-TabPin4-TI-DCY
+  src:
+    - p18 "Package Option Addendum, row "TLV1117LV15DCYR", "SOT-223 (DCY) | 4""
+    - p22 "PACKAGE OUTLINE DCY0004A (4214843/C 05/2026)"
+
+sources: [ti/SBVS160C]
+source: ti/SBVS160C
+
+existence:
+  status: verified
+  src: p18 "Package Option Addendum, Packaging Information table, row "TLV1117LV15DCYR""
+
+lifecycle:
+  status: active
+  src: p18 "Package Option Addendum, row "TLV1117LV15DCYR", Status "Active""
+
+parameters:
+  output_voltage:
+    typ: 1.5 V
+    src: 'p16 "9.1.2 Device Nomenclature, Table 9-1, xx = nominal output voltage: 15"'

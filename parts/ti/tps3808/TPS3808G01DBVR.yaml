@@ -1,0 +1,32 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SBVS050N PDF page 19, addendum dated 16-Jul-2026): "TPS3808G01DBVR | Active |
+# Production | SOT-23 (DBV) | 6". lifecycle "active" is that table's Status
+# column. Package: SOT-23 (DBV) | 6, outline DBV0006A (4214840/G 08/2024) on page 33.
+# Its pdftotext -layout text matches ti/SCES195N page 22 (where manufacturers/ti/DBV0006A
+# was read) line for line, page headers and footers stripped, so the
+# package is reused.
+# The supply-voltage threshold option has no parameter key and is not
+# recorded.
+schema_version: "0.2"
+kind: part
+id: ti/TPS3808G01DBVR
+manufacturer: ti
+mpn: TPS3808G01DBVR
+device: ti/TPS3808-DBV
+
+package:
+  value: manufacturers/ti/DBV0006A
+  src:
+    - p19 "Package Option Addendum, row "TPS3808G01DBVR", "SOT-23 (DBV) | 6""
+    - p33 "PACKAGE OUTLINE DBV0006A (4214840/G 08/2024)"
+
+sources: [ti/SBVS050N]
+source: ti/SBVS050N
+
+existence:
+  status: verified
+  src: p19 "Package Option Addendum, Packaging Information table, row "TPS3808G01DBVR""
+
+lifecycle:
+  status: active
+  src: p19 "Package Option Addendum, row "TPS3808G01DBVR", Status "Active""

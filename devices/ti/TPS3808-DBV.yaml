@@ -1,0 +1,32 @@
+# TPS3808 low-quiescent-current programmable-delay supervisor
+# (open-drain active-low RESET, SENSE input, manual reset), DBV
+# (SOT-23-6) pinout. From SBVS050N Table 5-1 "Pin Functions" (page 4),
+# column "SOT-23": RESET 1, GND 2, MR 3, CT 4, SENSE 5, VDD 6; checked
+# against Figure 5-1 "DBV Package 6-Pin SOT-23 Top View" (same page).
+# The WSON (DRV) pin map is not covered. RESET and MR carry an overbar
+# in the datasheet (written without it here). Types: RESET (O) ->
+# output, MR (I) -> input, CT (I, delay programming) and SENSE (I,
+# monitored voltage) -> analog, VDD -> power. One Device for the
+# adjustable (G01) and fixed threshold options. Category "power" as
+# ti/TPS3839-DBZ.
+schema_version: "0.2"
+kind: device
+id: ti/TPS3808-DBV
+manufacturer: ti
+category: power
+family: TPS3808
+source: ti/SBVS050N
+
+parameters:
+  input_voltage_max: { max: 6.5 V, src: 'p5 "6.3 Recommended Operating Conditions, VDD"' }
+
+pins:
+  src:
+    - p4 "Table 5-1 "Pin Functions", column "SOT-23""
+    - p4 "Figure 5-1 "DBV Package 6-Pin SOT-23 Top View""
+  "1": { name: RESET, type: output }
+  "2": { name: GND, type: ground }
+  "3": { name: MR, type: input }
+  "4": { name: CT, type: analog }
+  "5": { name: SENSE, type: analog }
+  "6": { name: VDD, type: power }

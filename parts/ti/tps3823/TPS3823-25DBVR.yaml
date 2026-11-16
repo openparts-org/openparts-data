@@ -1,0 +1,32 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SLVS165O PDF page 23, addendum dated 5-Aug-2026): "TPS3823-25DBVR | Active |
+# Production | SOT-23 (DBV) | 5". lifecycle "active" is that table's Status
+# column. Package: SOT-23 (DBV) | 5, outline DBV0005A (4214839/K 08/2024) on page 31.
+# Its pdftotext -layout text matches ti/SBOS833R page 94 (where manufacturers/ti/DBV0005A
+# was read) line for line, page headers and footers stripped, so the
+# package is reused.
+# The supply-voltage threshold option has no parameter key and is not
+# recorded.
+schema_version: "0.2"
+kind: part
+id: ti/TPS3823-25DBVR
+manufacturer: ti
+mpn: TPS3823-25DBVR
+device: ti/TPS3823-DBV
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src:
+    - p23 "Package Option Addendum, row "TPS3823-25DBVR", "SOT-23 (DBV) | 5""
+    - p31 "PACKAGE OUTLINE DBV0005A (4214839/K 08/2024)"
+
+sources: [ti/SLVS165O]
+source: ti/SLVS165O
+
+existence:
+  status: verified
+  src: p23 "Package Option Addendum, Packaging Information table, row "TPS3823-25DBVR""
+
+lifecycle:
+  status: active
+  src: p23 "Package Option Addendum, row "TPS3823-25DBVR", Status "Active""

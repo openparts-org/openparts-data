@@ -1,0 +1,32 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SNVSB03E PDF page 36, addendum dated 1-Nov-2026): "TPS3840PL45DBVR | Active |
+# Production | SOT-23 (DBV) | 5". lifecycle "active" is that table's Status
+# column. Package: SOT-23 (DBV) | 5, outline DBV0005A (4214839/K 08/2024) on page 48.
+# Its pdftotext -layout text matches ti/SBOS833R page 94 (where manufacturers/ti/DBV0005A
+# was read) line for line, page headers and footers stripped, so the
+# package is reused.
+# The supply-voltage threshold option has no parameter key and is not
+# recorded.
+schema_version: "0.2"
+kind: part
+id: ti/TPS3840PL45DBVR
+manufacturer: ti
+mpn: TPS3840PL45DBVR
+device: ti/TPS3840-DBV
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src:
+    - p36 "Package Option Addendum, row "TPS3840PL45DBVR", "SOT-23 (DBV) | 5""
+    - p48 "PACKAGE OUTLINE DBV0005A (4214839/K 08/2024)"
+
+sources: [ti/SNVSB03E]
+source: ti/SNVSB03E
+
+existence:
+  status: verified
+  src: p36 "Package Option Addendum, Packaging Information table, row "TPS3840PL45DBVR""
+
+lifecycle:
+  status: active
+  src: p36 "Package Option Addendum, row "TPS3840PL45DBVR", Status "Active""

@@ -1,0 +1,38 @@
+# TPS22975 5.7-V, 6-A, 16-mOhm single-channel load switch (TPS22975 with quick
+# output discharge, TPS22975N without), DSG (WSON-8, 2 x 2 mm, thermal pad)
+# pinout. From SLVSDD0B "Pin Functions" table (page 3): VIN 1 and 2, ON 3,
+# VBIAS 4, GND 5, CT 6, VOUT 7 and 8, Thermal Pad (exposed center pad,
+# "Tie to GND"); checked against the "DSG Package 8-Pin WSON Top View"
+# figure (same page). VIN/VOUT are the switch terminals -> power, VBIAS
+# (bias supply) -> power, ON -> input, CT (slew-rate capacitor) ->
+# analog, as ti/TPS22918-DBV. The pad is EP, as in ti/TPS62162-DSG.
+# input_voltage_max: the VIN row's max is "VBIAS"; the VBIAS row's max
+# 5.7 V is recorded. output_current is the absolute-maximum IMAX row, as
+# for ti/TPS22918-DBV.
+schema_version: "0.2"
+kind: device
+id: ti/TPS22975-DSG
+manufacturer: ti
+category: power_switch
+family: TPS22975
+source: ti/SLVSDD0B
+
+parameters:
+  input_voltage_max:
+    max: 5.7 V
+    src: p4 "7.3 Recommended Operating Conditions, VIN max = VBIAS; VBIAS"
+  output_current:
+    max: 6 A
+    src: p4 "7.1 Absolute Maximum Ratings, IMAX max. continuous switch current"
+
+pins:
+  src: [p3 ""Pin Functions" table", p3 ""DSG Package 8-Pin WSON Top View" figure"]
+  "1": { name: VIN, type: power }
+  "2": { name: VIN, type: power }
+  "3": { name: ON, type: input }
+  "4": { name: VBIAS, type: power }
+  "5": { name: GND, type: ground }
+  "6": { name: CT, type: analog }
+  "7": { name: VOUT, type: power }
+  "8": { name: VOUT, type: power }
+  EP:  { name: Thermal Pad, type: passive }

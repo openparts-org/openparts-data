@@ -1,0 +1,24 @@
+# TLV809 3-pin supply-voltage supervisor (active-low, push-pull RESET),
+# DBZ (SOT-23-3) pinout. From SLVSA03F "Pin Functions" table (page 4):
+# GND 1, RESET 2, VDD 3; checked against Figure 6-1 "DBV, DBZ Packages
+# 3-Pin SOT-23 Top View" (same page). Only the DBZ parts are covered
+# here (the DBV0003A outline has no package file yet). RESET carries an
+# overbar in the datasheet (written without it here). One Device for
+# all threshold options (I50/J25/K33/L30). Category "power" as
+# ti/TPS3839-DBZ.
+schema_version: "0.2"
+kind: device
+id: ti/TLV809-DBZ
+manufacturer: ti
+category: power
+family: TLV809
+source: ti/SLVSA03F
+
+parameters:
+  input_voltage_max: { max: 6 V, src: 'p5 "7.3 Recommended Operating Conditions, VDD"' }
+
+pins:
+  src: [p4 ""Pin Functions" table", 'p4 "Figure 6-1 "DBV, DBZ Packages 3-Pin SOT-23 Top View""']
+  "1": { name: GND, type: ground }
+  "2": { name: RESET, type: output }
+  "3": { name: VDD, type: power }

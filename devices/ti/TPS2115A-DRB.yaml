@@ -1,0 +1,36 @@
+# TPS2115A autoswitching power multiplexer (two inputs, one output),
+# DRB (SON-8 with thermal pad) pinout. From SBVS044F "TERMINAL
+# FUNCTIONS" table (page 6): STAT 1, D0 2, D1 3, ILIM 4, GND 5, IN2 6,
+# OUT 7, IN1 8, PAD ("Tie to GND"); checked against the "DRB PACKAGE"
+# top-view figure (same page), which shows GND on the pad. Types as
+# ti/TPS2113A-DRB: STAT (open-drain O) -> output, D0/D1 -> input, ILIM
+# -> input, IN1/IN2/OUT -> power; the pad is
+# EP. output_current is the absolute-maximum "Continuous output, IO
+# (TPS2115ADRB)" row, as ti/TPS22918-DBV uses its IMAX row.
+schema_version: "0.2"
+kind: device
+id: ti/TPS2115A-DRB
+manufacturer: ti
+category: power_switch
+family: TPS211xA
+source: ti/SBVS044F
+
+parameters:
+  input_voltage_max:
+    max: 5.5 V
+    src: p3 "RECOMMENDED OPERATING CONDITIONS, Input voltage at IN1 / IN2"
+  output_current:
+    max: 2.5 A
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Continuous output, IO (TPS2115ADRB), TJ <= 105°C"
+
+pins:
+  src: [p6 ""TERMINAL FUNCTIONS" table", p6 ""DRB PACKAGE" top-view figure"]
+  "1": { name: STAT, type: output }
+  "2": { name: D0, type: input }
+  "3": { name: D1, type: input }
+  "4": { name: ILIM, type: input }
+  "5": { name: GND, type: ground }
+  "6": { name: IN2, type: power }
+  "7": { name: OUT, type: power }
+  "8": { name: IN1, type: power }
+  EP:  { name: PAD, type: passive }

@@ -1,0 +1,30 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SLVSD76C PDF page 23, addendum dated 15-Jul-2026): "TPS22918DBVT | Active |
+# Production | SOT-23 (DBV) | 6". lifecycle "active" is that table's Status
+# column. Package: SOT-23 (DBV) | 6, outline DBV0006A (4214840/G 08/2024) on page 27.
+# Its pdftotext -layout text matches ti/SCES195N page 22 (where manufacturers/ti/DBV0006A
+# was read) line for line, page headers and footers stripped, so the
+# package is reused.
+schema_version: "0.2"
+kind: part
+id: ti/TPS22918DBVT
+manufacturer: ti
+mpn: TPS22918DBVT
+device: ti/TPS22918-DBV
+
+package:
+  value: manufacturers/ti/DBV0006A
+  src:
+    - p23 "Package Option Addendum, row "TPS22918DBVT", "SOT-23 (DBV) | 6""
+    - p27 "PACKAGE OUTLINE DBV0006A (4214840/G 08/2024)"
+
+sources: [ti/SLVSD76C]
+source: ti/SLVSD76C
+
+existence:
+  status: verified
+  src: p23 "Package Option Addendum, Packaging Information table, row "TPS22918DBVT""
+
+lifecycle:
+  status: active
+  src: p23 "Package Option Addendum, row "TPS22918DBVT", Status "Active""

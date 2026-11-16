@@ -1,0 +1,32 @@
+# MPN read from the PACKAGE OPTION ADDENDUM, Packaging Information table
+# (SLVSA03F PDF page 14, addendum dated 15-Jul-2026): "TLV809J25DBZR | Active |
+# Production | SOT-23 (DBZ) | 3". lifecycle "active" is that table's Status
+# column. Package: SOT-23 (DBZ) | 3, outline DBZ0003A (4214838/F 08/2024) on page 23.
+# Its pdftotext -layout text matches ti/SBVS032K page 34 (where manufacturers/ti/DBZ0003A
+# was read) line for line, page headers and footers stripped, so the
+# package is reused.
+# The supply-voltage threshold option has no parameter key and is not
+# recorded.
+schema_version: "0.2"
+kind: part
+id: ti/TLV809J25DBZR
+manufacturer: ti
+mpn: TLV809J25DBZR
+device: ti/TLV809-DBZ
+
+package:
+  value: manufacturers/ti/DBZ0003A
+  src:
+    - p14 "Package Option Addendum, row "TLV809J25DBZR", "SOT-23 (DBZ) | 3""
+    - p23 "PACKAGE OUTLINE DBZ0003A (4214838/F 08/2024)"
+
+sources: [ti/SLVSA03F]
+source: ti/SLVSA03F
+
+existence:
+  status: verified
+  src: p14 "Package Option Addendum, Packaging Information table, row "TLV809J25DBZR""
+
+lifecycle:
+  status: active
+  src: p14 "Package Option Addendum, row "TLV809J25DBZR", Status "Active""
