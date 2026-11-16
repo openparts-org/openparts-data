@@ -1,0 +1,86 @@
+# OMRON B3U ultra-small SMT tactile switch, side-actuated, without ground
+# terminal, with boss (B3U-3000P-B, -3000PM-B) -- page-3 drawing
+# "Side, Without Ground Terminal, with Boss" of omron/A162-E1-07.
+# Frame: the top view as drawn (terminals left and right) -- the
+# generator frame, no rotation. "Terminal Arrangement/Internal
+# Connections (Top View)" puts 2 left and 1 right -> pad_order
+# ["2", "1"] (positions left, right).
+# Dimensions without a printed tolerance take the page's stated "±0.2 mm"
+# general tolerance as min/max. lead_width is the terminal width "1.4".
+# Pads: "PCB Pad (Top View)": outer edges "4.2±0.1" apart, inner "2.6±0.1"
+# -> pads 0.8 wide at x = ±(4.2 + 2.6)/4 = ±1.7, "1.7±0.1" long.
+# Side-actuated (canonical-data 20.11): the knob leaves the housing's +Y
+# face as drawn (top view, knob at the top). actuator_length = "3.2"
+# (rear to knob tip) - "2.5" (housing) = 0.7 (typ only; equally "1.95"
+# centre to tip - 1.25). The knob is "1.7" wide and "1±0.1" thick (side
+# view); its height above the board is not dimensioned (generator
+# default: the housing's mid-height). No overall_height: nothing rises
+# above the housing.
+# The locating boss ("0.65±0.05 dia.", "0.5" below the base) takes the
+# PCB Pad's centred "Hole: 0.75 +0.1/0 dia.": a non-plated hole at the
+# origin, drill the nominal 0.75.
+schema_version: "0.2"
+kind: package
+id: manufacturers/omron/B3U-3000P-B
+family: tact_switch_smd
+lead_count: 2
+source: omron/A162-E1-07
+
+pitch:
+  typ: 3.4 mm
+  src: p3 "Side, Without Ground Terminal, with Boss, PCB Pad (Top View), pad centres (4.2 + 2.6)/2 apart"
+
+pad_order:
+  value: ["2", "1"]
+  src:   p3 "Side, Without Ground Terminal, with Boss, Terminal Arrangement/Internal Connections (Top View) (see header)"
+
+actuation: { value: side, src: 'p3 "Side-actuated Models (B3U-3000P-B, -3000PM-B)"' }
+
+geometry: { type: parametric, generator: tact_switch_smd }
+
+dimensions:
+  body_width:
+    min: 2.8 mm
+    typ: 3 mm
+    max: 3.2 mm
+    src: p3 "Side, Without Ground Terminal, with Boss, top view, housing 3 (±0.2 general tolerance)"
+  body_length:
+    min: 2.3 mm
+    typ: 2.5 mm
+    max: 2.7 mm
+    src: p3 "Side, Without Ground Terminal, with Boss, top view, housing 2.5 (±0.2 general tolerance)"
+  body_height:
+    min: 1.1 mm
+    typ: 1.2 mm
+    max: 1.35 mm
+    src: p3 "Side, Without Ground Terminal, with Boss, side view, housing 1.2 +0.15/-0.10"
+  actuator_thickness:
+    min: 0.9 mm
+    typ: 1 mm
+    max: 1.1 mm
+    src: p3 "Side, Without Ground Terminal, with Boss, side view, knob 1±0.1"
+  overall_width:
+    min: 3.8 mm
+    typ: 4 mm
+    max: 4.2 mm
+    src: p3 "Side, Without Ground Terminal, with Boss, top view, terminal end to end 4 (±0.2 general tolerance)"
+  lead_width:
+    min: 1.2 mm
+    typ: 1.4 mm
+    max: 1.6 mm
+    src: p3 "Side, Without Ground Terminal, with Boss, top view, terminal width 1.4 (±0.2 general tolerance)"
+  actuator_length:
+    typ: 0.7 mm
+    src: 'p3 "Side, Without Ground Terminal, with Boss, top view: knob tip to housing rear 3.2 minus housing 2.5"'
+  actuator_width:
+    min: 1.5 mm
+    typ: 1.7 mm
+    max: 1.9 mm
+    src: p3 "Side, Without Ground Terminal, with Boss, top view, knob 1.7 (±0.2 general tolerance)"
+
+pads:
+  value:
+    - { number: "2", x: -1.7, y: 0, width: 0.8, length: 1.7 }
+    - { number: "1", x: 1.7, y: 0, width: 0.8, length: 1.7 }
+    - { number: "", x: 0, y: 0, width: 0.75, length: 0.75, drill: 0.75, plated: false }
+  src: p3 "Side, Without Ground Terminal, with Boss, PCB Pad (Top View), 4.2±0.1, 2.6±0.1, 1.7±0.1, Hole 0.75"

@@ -1,0 +1,30 @@
+# OMRON B3F 6 x 6 mm THT tactile switch, flat type, height 4.3 mm,
+# OF 1.76 N {180 gf}, plunger Yellow ("B3F-1000-G Series, Flat type" rows of the page-2
+# "List of Models", with ground terminal, bag of 100). The model is
+# printed in the orderable model table -> existence verified. The
+# page-4 drawing lists B3F-1102-G by name. Lifecycle: no first-party status
+# read -> unknown.
+schema_version: "0.2"
+kind: part
+id: omron/B3F-1102-G
+manufacturer: omron
+mpn: B3F-1102-G
+device: omron/B3F-1100
+package: manufacturers/omron/B3F-6x6-THT-GND-H4.3
+sources: [omron/A070-E1-08]
+source: omron/A070-E1-08
+
+existence:
+  status: verified
+  src: p2 "List of Models, 6 x 6 mm Models, B3F-1000-G Series, Flat type, With ground terminal, B3F-1102-G"
+
+lifecycle: { status: unknown }
+
+parameters:
+  rated_current:
+    min: 0.1 mA
+    max: 50 mA
+    src: 'p3 "Ratings/Characteristics, Rating (resistive load): B3F-G: 100 uA to 50 mA, 3 to 24 VDC"'
+  actuation_force:
+    typ: 1.76 N
+    src: p2 "List of Models, 6 x 6 mm Models, row B3F-1102-G, Operating force (OF)"

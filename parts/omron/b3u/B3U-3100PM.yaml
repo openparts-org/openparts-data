@@ -1,0 +1,22 @@
+# OMRON B3U ultra-small SMT tactile switch, side-actuated, 3.2 mm, OF 1.59 N {162 gf},
+# with ground terminal, locating pin "Without boss",
+# embossed taping (small quantity, 1,000 per reel). The model is
+# printed in the page-1 "List of Models" table -> existence verified; the
+# page-3 drawing lists it by name. Operating characteristics are on
+# the device (series-wide). Lifecycle: no first-party status read ->
+# unknown.
+schema_version: "0.2"
+kind: part
+id: omron/B3U-3100PM
+manufacturer: omron
+mpn: B3U-3100PM
+device: omron/B3U-3100
+package: manufacturers/omron/B3U-3100P
+sources: [omron/A162-E1-07]
+source: omron/A162-E1-07
+
+existence:
+  status: verified
+  src: p1 "List of Models, B3U-3000 Series, Side-actuated, Without boss, With ground terminal, B3U-3100PM"
+
+lifecycle: { status: unknown }

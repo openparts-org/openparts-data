@@ -1,0 +1,36 @@
+# OMRON B3U ultra-small SMT tactile switch, side-actuated, without ground terminal (B3U-3000P series) (SPST-NO). The
+# datasheet names no signals: pins are named by the numbers in "Terminal
+# Arrangement/Internal Connections (Top View)" (2 left, 1 right, the
+# switch between them).
+schema_version: "0.2"
+kind: device
+id: omron/B3U-3000
+manufacturer: omron
+category: tact_switch
+family: B3U
+source: omron/A162-E1-07
+
+parameters:
+  rated_voltage:
+    min: 3 V
+    max: 12 V
+    src: 'p1 "Ratings/Characteristics, Rating (resistive load): 1 to 50 mA, 3 to 12 VDC"'
+  rated_current:
+    min: 1 mA
+    max: 50 mA
+    src: 'p1 "Ratings/Characteristics, Rating (resistive load): 1 to 50 mA, 3 to 12 VDC"'
+  actuation_force:
+    min: 1.1 N
+    typ: 1.59 N
+    max: 2.08 N
+    src: 'p1 "Operating Characteristics, Side-actuated (B3U-3000 Series), Operating force (OF): 1.59±0.49 N"'
+  travel:
+    min: 0.1 mm
+    typ: 0.2 mm
+    max: 0.4 mm
+    src: 'p1 "Operating Characteristics, Side-actuated (B3U-3000 Series), Pretravel (PT): 0.2 +0.2/-0.1 mm"'
+
+pins:
+  src: p3 "Side-actuated, Without Ground Terminal, Terminal Arrangement/Internal Connections (Top View)"
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

@@ -1,0 +1,86 @@
+# OMRON B3F side-operated through-hole tactile switch, 6 x 6 mm element
+# standing on edge in a bracket, projected plunger, plunger tip 6.15 mm from
+# the switch terminals' front (B3F-3150/3152/3155) -- page-5 drawing of omron/A070-E1-08.
+# Frame (canonical-data 20.11): the plunger leaves the +Y face, so the
+# drawing (plunger at the bottom of the top view) is read turned 180°.
+# Terminal Arrangement/Internal Connections (Top View): 1 and 2 (the
+# switch) beside the plunger, 3 and 4 (the bracket, 4 drawn to ground)
+# behind -> after the turn 2 front-left, 1 front-right, 4 rear-left, 3
+# rear-right. "No terminal numbers are indicated on the Switches."
+# Dimensions without a printed tolerance take the page's "±0.4 mm"
+# general tolerance. body_* is the outline: 7.3 wide (bracket included),
+# 6.25 from the housing front face to the rear (top view), 7.4 high.
+# Pads (PCB Processing Dimensions, no land given -> generator ring): the
+# switch holes "Two, 1±0.05 dia." 4.5±0.1 apart, the bracket holes "Two,
+# 1.5±0.05 dia." 7±0.1 apart, 2.5±0.1 behind them. Their Y comes from the
+# side view: the switch terminals are 2.25 behind the front face, so
+# y = 6.25/2 - 2.25 = 0.875 and 0.875 - 2.5 = -1.625.
+# actuator_length = plunger tip to terminal "6.15" - face to terminal
+# "2.25" = 3.9 (typ only); actuator_elevation the front view's "4".
+# The projected plunger is a "2.4 x 2.4±0.1" square stem ("1.8±0.1" of it
+# exposed) on a "3.5 dia." base: drawn as one square actuator
+# (actuator_width/_thickness) over the whole reach.
+schema_version: "0.2"
+kind: package
+id: manufacturers/omron/B3F-SIDE-THT-H6.15
+family: tact_switch_tht
+lead_count: 4
+source: omron/A070-E1-08
+
+pitch:
+  min: 2.4 mm
+  typ: 2.5 mm
+  max: 2.6 mm
+  src: p5 "B3F-3150/3152/3155, PCB Processing Dimensions, switch to bracket holes 2.5±0.1"
+
+actuation: { value: side, src: 'p5 "B3F-3150/3152/3155: Side-operated, Projected Plunger Type"' }
+
+geometry: { type: parametric, generator: tact_switch_tht }
+
+dimensions:
+  body_width:
+    min: 6.9 mm
+    typ: 7.3 mm
+    max: 7.7 mm
+    src: p5 "B3F-3150/3152/3155 top view, outline 7.3 (±0.4 general tolerance)"
+  body_length:
+    min: 5.85 mm
+    typ: 6.25 mm
+    max: 6.65 mm
+    src: p5 "B3F-3150/3152/3155 top view, front face to rear 6.25 (±0.4 general tolerance)"
+  body_height:
+    min: 7 mm
+    typ: 7.4 mm
+    max: 7.8 mm
+    src: p5 "B3F-3150/3152/3155 front view, board to top 7.4 (±0.4 general tolerance)"
+  actuator_thickness:
+    min: 2.3 mm
+    typ: 2.4 mm
+    max: 2.5 mm
+    src: p5 "B3F-3150/3152/3155 side view, plunger 2.4 x 2.4±0.1"
+  tail_length:
+    min: 3.1 mm
+    typ: 3.5 mm
+    max: 3.9 mm
+    src: p5 "B3F-3150/3152/3155 front view, board to terminal tip 3.5 (±0.4 general tolerance)"
+  actuator_length:
+    typ: 3.9 mm
+    src: 'p5 "B3F-3150/3152/3155 side view: 6.15±0.2 minus 2.25 (front face to terminal)"'
+  actuator_elevation:
+    min: 3.6 mm
+    typ: 4 mm
+    max: 4.4 mm
+    src: p5 "B3F-3150/3152/3155 front view, board to plunger centre 4 (±0.4 general tolerance)"
+  actuator_width:
+    min: 2.3 mm
+    typ: 2.4 mm
+    max: 2.5 mm
+    src: p5 "B3F-3150/3152/3155 side view, plunger 2.4 x 2.4±0.1"
+
+pads:
+  value:
+    - { number: "2", x: -2.25, y: 0.875, drill: 1 }
+    - { number: "1", x: 2.25, y: 0.875, drill: 1 }
+    - { number: "4", x: -3.5, y: -1.625, drill: 1.5 }
+    - { number: "3", x: 3.5, y: -1.625, drill: 1.5 }
+  src: p5 "B3F-3150/3152/3155, PCB Processing Dimensions (4.5, 7, 2.5±0.1); side view 2.25, top view 6.25 (see header)"

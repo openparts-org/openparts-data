@@ -1,0 +1,82 @@
+# OMRON B3F through-hole tactile switch, 6 x 6 mm, flat plunger, with
+# ground terminal, 7.5 mm terminal pitch, height 5.0 mm (B3F-1110) --
+# page-4 drawing "Standard, Flat Plunger Type (with Ground Terminal,
+# Pitch: 7.5 mm)" of omron/A070-E1-08. Orientation and pad numbers as the other
+# B3F drawings (page-4 note; "Terminal Arrangement/Internal Connections
+# (Top View)": 4 3 / 2 1, 5 below the housing, -Y). Dimensions without a
+# printed tolerance take the page's "±0.4 mm" general tolerance.
+# Pads: the PCB holes differ in drill ("Four, 1.2±0.05 dia." for the
+# terminals, "1±0.05 dia." for the ground terminal), so they are listed:
+# columns 7.5±0.1 apart (x = ±3.75), rows 4.5±0.1 (y = ±2.25), the fifth
+# 4.1±0.1 below the centre line; no land diameter is given (generator
+# ring default). row_spacing/hole_diameter repeat the terminal holes.
+schema_version: "0.2"
+kind: package
+id: manufacturers/omron/B3F-6x6-THT-GND-P7.5-H5.0
+family: tact_switch_tht
+lead_count: 5
+source: omron/A070-E1-08
+
+pitch:
+  min: 4.4 mm
+  typ: 4.5 mm
+  max: 4.6 mm
+  src: p4 "B3F-1110, PCB Processing Dimensions, hole rows 4.5±0.1"
+
+geometry: { type: parametric, generator: tact_switch_tht }
+
+dimensions:
+  body_width:
+    min: 5.8 mm
+    typ: 6 mm
+    max: 6.2 mm
+    src: p4 "B3F-1110 top view, housing 6±0.2 (horizontal)"
+  body_length:
+    min: 5.8 mm
+    typ: 6 mm
+    max: 6.2 mm
+    src: p4 "B3F-1110 top view, housing 6±0.2 (vertical)"
+  body_height:
+    min: 3 mm
+    typ: 3.4 mm
+    max: 3.8 mm
+    src: p4 "B3F-1110 front view, board to housing top 3.4 (±0.4 general tolerance)"
+  ground_terminal_offset:
+    min: 4 mm
+    typ: 4.1 mm
+    max: 4.2 mm
+    src: p4 "B3F-1110, PCB Processing Dimensions, centre line to fifth hole 4.1±0.1"
+  overall_height:
+    min: 4.8 mm
+    typ: 5 mm
+    max: 5.2 mm
+    src: p4 "B3F-1110 front view, board to plunger top 5±0.2"
+  row_spacing:
+    min: 7.4 mm
+    typ: 7.5 mm
+    max: 7.6 mm
+    src: p4 "B3F-1110, PCB Processing Dimensions, hole columns 7.5±0.1"
+  hole_diameter:
+    min: 1.15 mm
+    typ: 1.2 mm
+    max: 1.25 mm
+    src: p4 "B3F-1110, PCB Processing Dimensions, Four, 1.2±0.05 dia."
+  tail_length:
+    min: 3.1 mm
+    typ: 3.5 mm
+    max: 3.9 mm
+    src: p4 "B3F-1110 front view, board to terminal tip 3.5 (±0.4 general tolerance)"
+  actuator_diameter:
+    min: 3.1 mm
+    typ: 3.5 mm
+    max: 3.9 mm
+    src: p4 "B3F-1110 side view, plunger 3.5 dia. (±0.4 general tolerance)"
+
+pads:
+  value:
+    - { number: "4", x: -3.75, y: 2.25, drill: 1.2 }
+    - { number: "2", x: -3.75, y: -2.25, drill: 1.2 }
+    - { number: "1", x: 3.75, y: -2.25, drill: 1.2 }
+    - { number: "3", x: 3.75, y: 2.25, drill: 1.2 }
+    - { number: "5", x: 0, y: -4.1, drill: 1 }
+  src: 'p4 "B3F-1110, PCB Processing Dimensions: 7.5±0.1, 4.5±0.1, 4.1±0.1; 1.2±0.05 / 1±0.05 dia.; Terminal Arrangement"'

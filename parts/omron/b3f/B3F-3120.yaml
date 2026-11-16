@@ -1,0 +1,30 @@
+# OMRON B3F 6 x 6 mm THT tactile switch, side-operated, flat type, plunger tip 3.85 mm,
+# OF 0.98 N {100 gf}, plunger Black ("Side-operated B3F-3000 Series, Flat type" rows of the page-2
+# "List of Models", with ground terminal, bag of 100). The model is
+# printed in the orderable model table -> existence verified. The
+# page-5 drawing lists B3F-3120 by name. Lifecycle: no first-party status
+# read -> unknown.
+schema_version: "0.2"
+kind: part
+id: omron/B3F-3120
+manufacturer: omron
+mpn: B3F-3120
+device: omron/B3F-3100
+package: manufacturers/omron/B3F-SIDE-THT-H3.85
+sources: [omron/A070-E1-08]
+source: omron/A070-E1-08
+
+existence:
+  status: verified
+  src: p2 "List of Models, 6 x 6 mm Models, Side-operated B3F-3000 Series, Flat type, With ground terminal, B3F-3120"
+
+lifecycle: { status: unknown }
+
+parameters:
+  rated_current:
+    min: 1 mA
+    max: 50 mA
+    src: 'p3 "Ratings/Characteristics, Rating (resistive load): 1 to 50 mA, 3 to 24 VDC"'
+  actuation_force:
+    typ: 0.98 N
+    src: p2 "List of Models, 6 x 6 mm Models, row B3F-3120, Operating force (OF)"
