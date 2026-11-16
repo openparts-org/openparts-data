@@ -1,0 +1,27 @@
+# MPN from the "Product Identification System" (DS20001733L page 47),
+# example c). existence is "probable": an ordering example, not an
+# orderable list (Microchip product pages were not read). The id replaces
+# the "/" of the MPN with "-"; mpn keeps the real string. lifecycle: no
+# production-status statement in the datasheet; unknown.
+# Package: drawing C04-091-OT Rev F (pages 24-26): its table equals the Rev F table standards/SOT23-5-2.90x1.60-P0.95 was read from.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP6001RT-I-OT
+manufacturer: microchip
+mpn: MCP6001RT-I/OT
+device: microchip/MCP6001R
+
+package:
+  value: standards/SOT23-5-2.90x1.60-P0.95
+  src:
+    - p47 "Product Identification System, Package OT = SOT-23, 5-Lead"
+    - p25 "drawing C04-091-OT Rev F"
+
+sources: [microchip/DS20001733@revL]
+source: microchip/DS20001733@revL
+
+existence:
+  status: probable
+  src: p47 "Product Identification System, example c) MCP6001RT-I/OT"
+
+lifecycle: { status: unknown }

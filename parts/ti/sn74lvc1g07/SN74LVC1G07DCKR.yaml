@@ -1,0 +1,30 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCES296AG PDF page 15): row "SN74LVC1G07DCKR", "SC70 (DCK) | 5". lifecycle "active" is
+# that table's Status column. Package: outline DCK0005A (4214834/G) on
+# page 30; its outline and land-pattern pages (30-31) have pdftotext text
+# identical (page headers stripped) to ti/SCES295AB pages 32-33, from which
+# manufacturers/ti/DCK0005A was read. The device's pin table column covers
+# DBV and DCK alike, so the DBV device is reused.
+schema_version: "0.2"
+kind: part
+id: ti/SN74LVC1G07DCKR
+manufacturer: ti
+mpn: SN74LVC1G07DCKR
+device: ti/SN74LVC1G07-DBV
+
+package:
+  value: manufacturers/ti/DCK0005A
+  src:
+    - p15 "Package Option Addendum, row SN74LVC1G07DCKR, SC70 (DCK) | 5"
+    - p30 "PACKAGE OUTLINE DCK0005A (4214834/G)"
+
+sources: [ti/SCES296AG]
+source: ti/SCES296AG
+
+existence:
+  status: verified
+  src: p15 "Package Option Addendum, Packaging Information table, row SN74LVC1G07DCKR"
+
+lifecycle:
+  status: active
+  src: p15 "Package Option Addendum, row SN74LVC1G07DCKR, Status Active"

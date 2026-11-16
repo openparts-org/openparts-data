@@ -1,0 +1,21 @@
+# MPN "PCF8563TS/5" confirmed in Table 1 "Ordering information" of
+# nxp/PCF8563@rev11.1 (page 5): "PCF8563TS/5 ... SOT505-1". MPN is NXP's type number,
+# as for nxp/PCF8563T-5. No footnote on this row and no lifecycle statement: lifecycle unknown. Package: SOT505-1 outline (page 39), issue date 03-02-18, text rows equal those of PCA9306 Rev. 9.5 Figure 13 behind manufacturers/nxp/SOT505-1; reused.
+schema_version: "0.2"
+kind: part
+id: nxp/PCF8563TS-5
+manufacturer: nxp
+mpn: PCF8563TS/5
+device: nxp/PCF8563
+
+package:
+  value: manufacturers/nxp/SOT505-1
+  src:
+    - p5 "Table 1 Ordering information, row PCF8563TS/5, Package Version SOT505-1"
+    - p39 "Figure 31 Package outline SOT505-1 (TSSOP8)"
+
+sources: [nxp/PCF8563@rev11.1]
+source: nxp/PCF8563@rev11.1
+
+existence: { status: verified, src: 'p5 "Table 1 Ordering information, type number PCF8563TS/5"' }
+lifecycle: { status: unknown }

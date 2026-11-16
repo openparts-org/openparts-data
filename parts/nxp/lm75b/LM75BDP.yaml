@@ -1,0 +1,31 @@
+# MPN "LM75BDP" confirmed in Table 1 "Ordering information" of
+# nxp/LM75B@rev6.1 (page 3): "LM75BDP ... TSSOP8 ... SOT505-1"; Table 2
+# lists the orderable code LM75BDP,118 (13" reel). MPN is NXP's type
+# number, as for nxp/LM75BD. The device covers the TSSOP8 numbering
+# (shared by all packages per its Table 3).
+# Package: Fig 22 "Package outline SOT505-1 (TSSOP8)" (page 24), issue
+# date 03-02-18: its pdftotext rows equal those of the PCA9306 Rev. 9.5
+# Figure 13 (page 15) from which manufacturers/nxp/SOT505-1 was read
+# (only the column-header order of the text extraction differs); reused.
+# lifecycle: not stated in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/LM75BDP
+manufacturer: nxp
+mpn: LM75BDP
+device: nxp/LM75B
+
+package:
+  value: manufacturers/nxp/SOT505-1
+  src:
+    - p3 "Table 1 Ordering information, row LM75BDP, TSSOP8, SOT505-1"
+    - p24 "Fig 22. Package outline SOT505-1 (TSSOP8)"
+
+sources: [nxp/LM75B@rev6.1]
+source: nxp/LM75B@rev6.1
+
+existence:
+  status: verified
+  src: p3 "Table 1 Ordering information, LM75BDP; Table 2 orderable part number LM75BDP,118"
+
+lifecycle: { status: unknown }

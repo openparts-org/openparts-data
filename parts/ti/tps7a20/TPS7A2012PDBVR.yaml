@@ -1,0 +1,34 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SBVS338H PDF page 41): row "TPS7A2012PDBVR", "SOT-23 (DBV) | 5". lifecycle
+# "active" is that table's Status column. Package: outline DBV0005A
+# (4214839/K) on page 56, the drawing the sibling TPS7A2033PDBVR reuses
+# manufacturers/ti/DBV0005A for. output_voltage from the Table 8-1
+# ordering-code rule (xx = nominal VOUT, 100 mV resolution).
+schema_version: "0.2"
+kind: part
+id: ti/TPS7A2012PDBVR
+manufacturer: ti
+mpn: TPS7A2012PDBVR
+device: ti/TPS7A20-DBV
+
+package:
+  value: manufacturers/ti/DBV0005A
+  src:
+    - p41 "Package Option Addendum, row TPS7A2012PDBVR, SOT-23 (DBV) | 5"
+    - p56 "PACKAGE OUTLINE DBV0005A (4214839/K)"
+
+sources: [ti/SBVS338H]
+source: ti/SBVS338H
+
+existence:
+  status: verified
+  src: p41 "Package Option Addendum, Packaging Information table, row TPS7A2012PDBVR"
+
+lifecycle:
+  status: active
+  src: p41 "Package Option Addendum, row TPS7A2012PDBVR, Status Active"
+
+parameters:
+  output_voltage:
+    typ: 1.2 V
+    src: 'p33 "Table 8-1. Device Nomenclature, xx(x) = nominal output voltage: 12"'

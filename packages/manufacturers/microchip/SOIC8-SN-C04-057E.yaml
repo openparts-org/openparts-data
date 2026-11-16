@@ -1,0 +1,50 @@
+# 8-lead narrow (3.90 mm) SOIC (Microchip package code SN), drawing
+# C04-057-SN Rev E ("8-Lead Plastic Small Outline (SN) - Narrow, 3.90 mm
+# (.150 In.) Body [SOIC]"): dimension table on DS20001733L page 32
+# (text), recommended land pattern C04-2057-SN Rev E on page 33 (text).
+# Millimetres as printed; BSC values as nominal, min/max-only rows as
+# min/max only. Not standards/SOIC8-3.90x4.90-P1.27 (read from
+# C04-057-SN Rev D): a different drawing revision, so its own package.
+# body_height = A2 (MIN 1.25 only), overall_height = A (MAX 1.75 only).
+# Chamfer h, L1 (1.04 REF) and angles are not modelled.
+# pads: C "Contact Pad Spacing" 5.40 is pad-centre to pad-centre
+# (Microchip's land-pattern convention, as C/G on the SC70/SOT-23 land
+# patterns of this datasheet), so x = +/-2.70; Y1 1.55 (max) along x,
+# X1 0.60 (max) along y; pin 1 top-left, E 1.27 BSC.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/SOIC8-SN-C04-057E
+family: soic
+lead_count: { value: 8, src: 'p32 "C04-057-SN Rev E table, Number of Pins N 8"' }
+source: microchip/DS20001733@revL
+
+pitch: { typ: 1.27 mm, src: 'p32 "C04-057-SN Rev E table, Pitch e 1.27 BSC"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width: { typ: 3.9 mm, src: 'p32 "C04-057-SN Rev E table, Molded Package Width E1 3.90 BSC"' }
+  body_length:    { typ: 4.9 mm, src: 'p32 "C04-057-SN Rev E table, Overall Length D 4.90 BSC"' }
+  body_height:
+    min: 1.25 mm
+    src: p32 "C04-057-SN Rev E table, Molded Package Thickness A2 (MIN only)"
+  lead_thickness:
+    min: 0.17 mm
+    max: 0.25 mm
+    src: p32 "C04-057-SN Rev E table, Lead Thickness c"
+  overall_width:  { typ: 6 mm, src: 'p32 "C04-057-SN Rev E table, Overall Width E 6.00 BSC"' }
+  overall_height: { max: 1.75 mm, src: 'p32 "C04-057-SN Rev E table, Overall Height A (MAX only)"' }
+  standoff:       { min: 0.1 mm, max: 0.25 mm, src: 'p32 "C04-057-SN Rev E table, Standoff A1"' }
+  lead_width:     { min: 0.31 mm, max: 0.51 mm, src: 'p32 "C04-057-SN Rev E table, Lead Width b"' }
+  lead_length:    { min: 0.4 mm, max: 1.27 mm, src: 'p32 "C04-057-SN Rev E table, Foot Length L"' }
+
+pads:
+  value:
+    - { number: "1", x: -2.7, y: 1.905, width: 1.55, length: 0.6 }
+    - { number: "2", x: -2.7, y: 0.635, width: 1.55, length: 0.6 }
+    - { number: "3", x: -2.7, y: -0.635, width: 1.55, length: 0.6 }
+    - { number: "4", x: -2.7, y: -1.905, width: 1.55, length: 0.6 }
+    - { number: "5", x: 2.7, y: -1.905, width: 1.55, length: 0.6 }
+    - { number: "6", x: 2.7, y: -0.635, width: 1.55, length: 0.6 }
+    - { number: "7", x: 2.7, y: 0.635, width: 1.55, length: 0.6 }
+    - { number: "8", x: 2.7, y: 1.905, width: 1.55, length: 0.6 }
+  src: p33 "C04-2057-SN Rev E, C 5.40 (pad centres) -> x ±2.70; E 1.27 BSC; Y1 1.55 max, X1 0.60 max"

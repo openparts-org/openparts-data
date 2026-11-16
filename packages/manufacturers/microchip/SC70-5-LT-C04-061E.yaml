@@ -1,0 +1,67 @@
+# 5-lead SC70 (Microchip package code LT), drawing C04-061-LT Rev E
+# ("5-Lead Plastic Small Outline Transistor (LT) [SC70]"): dimension
+# table on DS20001733L page 22 (text), recommended land pattern
+# C04-2061-LT Rev E on page 23 (text). Millimetres as printed; BSC
+# values as nominal, min/max-only rows as min/max only.
+#
+# Land pattern (page 23 figure): pins 3, 2, 1 along one row, 4 opposite
+# 3 and 5 opposite 1 -- after turning pin 1 to the top-left this is the
+# generator's [3, 2] layout (1, 2, 3 down the left, 4 and 5 up the right).
+# Mapping as manufacturers/microchip/SOT23-5-OT-C04-091B: body_width =
+# D "Overall Length" 2.00 BSC (along the rows), body_length = E1
+# "Molded Package Width" 1.25 BSC (across the rows), overall_length = E
+# "Overall Width" 2.10 BSC (lead-tip span).
+# pads: C "Contact Pad Spacing" 2.20 is pad-centre to pad-centre (G
+# "Distance Between Pads" min 1.25 = 2.20 - Y 0.95), so x = +/-1.10;
+# X 0.45 (max) is the pad size along the row, Y 0.95 (max) across it.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/SC70-5-LT-C04-061E
+family: sot
+lead_count: { value: 5, src: 'p22 "C04-061-LT Rev E table, Number of Pins N 5"' }
+
+lead_layout:
+  value: [3, 2]
+  src:   p23 "C04-2061-LT Rev E land pattern, pads 3, 2, 1 in one row, 4 opposite 3, 5 opposite 1"
+
+source: microchip/DS20001733@revL
+
+pitch: { typ: 0.65 mm, src: 'p22 "C04-061-LT Rev E table, Pitch e 0.65 BSC"' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width: { typ: 2 mm, src: 'p22 "C04-061-LT Rev E table, Overall Length D 2.00 BSC"' }
+  body_length:
+    typ: 1.25 mm
+    src: p22 "C04-061-LT Rev E table, Molded Package Width E1 1.25 BSC"
+  body_height:
+    min: 0.8 mm
+    max: 1 mm
+    src: p22 "C04-061-LT Rev E table, Molded Package Thickness A2"
+  lead_thickness:
+    min: 0.08 mm
+    max: 0.26 mm
+    src: p22 "C04-061-LT Rev E table, Lead Thickness c"
+  overall_length:
+    typ: 2.1 mm
+    src: p22 "C04-061-LT Rev E table, Overall Width E 2.10 BSC (lead-tip span)"
+  overall_height:
+    min: 0.8 mm
+    max: 1.1 mm
+    src: p22 "C04-061-LT Rev E table, Overall Height A"
+  standoff:   { min: 0 mm, max: 0.1 mm, src: 'p22 "C04-061-LT Rev E table, Standoff A1"' }
+  lead_width: { min: 0.15 mm, max: 0.4 mm, src: 'p22 "C04-061-LT Rev E table, Terminal Width b"' }
+  lead_length:
+    min: 0.1 mm
+    typ: 0.2 mm
+    max: 0.46 mm
+    src: p22 "C04-061-LT Rev E table, Terminal Length L"
+
+pads:
+  value:
+    - { number: "1", x: -1.1, y: 0.65, width: 0.95, length: 0.45 }
+    - { number: "2", x: -1.1, y: 0, width: 0.95, length: 0.45 }
+    - { number: "3", x: -1.1, y: -0.65, width: 0.95, length: 0.45 }
+    - { number: "4", x: 1.1, y: -0.65, width: 0.95, length: 0.45 }
+    - { number: "5", x: 1.1, y: 0.65, width: 0.95, length: 0.45 }
+  src: p23 "C04-2061-LT Rev E, C 2.20 (pad centres) -> x ±1.10; E 0.65 BSC; X 0.45 max, Y 0.95 max"

@@ -1,0 +1,19 @@
+# -30V P-channel enhancement-mode MOSFET, SOT23 (Standard). Pin numbers
+# are NOT printed in DS36081: the page-1 "Top View, Pin Configuration"
+# box drawing labels the single top lead D, the bottom-left lead G and
+# the bottom-right lead S. Numbers map those positions onto this
+# dataset's sot convention (1 bottom-left, 2 bottom-right, 3 top), as
+# for diodes/DMG2305UX -- position-derived, flagged for review.
+schema_version: "0.2"
+kind: device
+id: diodes/DMP3099L
+manufacturer: diodes
+category: transistor
+family: DMP3099L
+source: diodes/DS36081
+
+pins:
+  src: p1 "Top View Pin Configuration box drawing (G bottom-left, S bottom-right, D top); no pin numbers printed"
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

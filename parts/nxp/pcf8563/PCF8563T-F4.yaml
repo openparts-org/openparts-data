@@ -1,0 +1,21 @@
+# MPN "PCF8563T/F4" confirmed in Table 1 "Ordering information" of
+# nxp/PCF8563@rev11.1 (page 5): "PCF8563T/F4 ... SOT96-1". MPN is NXP's type number,
+# as for nxp/PCF8563T-5. Row footnote [1]: not recommended for new designs, replacement PCF85063ATL (not in this dataset, so no replacement link). Package: the same SOT96-1 figure (page 38) sibling PCF8563T/5 reuses manufacturers/nxp/SOT96-1 for.
+schema_version: "0.2"
+kind: part
+id: nxp/PCF8563T-F4
+manufacturer: nxp
+mpn: PCF8563T/F4
+device: nxp/PCF8563
+
+package:
+  value: manufacturers/nxp/SOT96-1
+  src:
+    - p5 "Table 1 Ordering information, row PCF8563T/F4, Package Version SOT96-1"
+    - p38 "Figure 30 Package outline SOT96-1 (SO8)"
+
+sources: [nxp/PCF8563@rev11.1]
+source: nxp/PCF8563@rev11.1
+
+existence: { status: verified, src: 'p5 "Table 1 Ordering information, type number PCF8563T/F4"' }
+lifecycle: { status: nrnd, src: 'p5 "Table 1 note [1], Not recommended for new designs"' }

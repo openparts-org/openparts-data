@@ -1,0 +1,27 @@
+# MPN from the "Product Identification System" (DS20001733L page 47),
+# example d) (MCP6002). existence is "probable": an ordering example, not an
+# orderable list (Microchip product pages were not read). The id replaces
+# the "/" of the MPN with "-"; mpn keeps the real string. lifecycle: no
+# production-status statement in the datasheet; unknown.
+# Package: drawing C04-123C (page 27, rendered): every row equals the C04-123C table the package was read from (DS20001984H p20).
+schema_version: "0.2"
+kind: part
+id: microchip/MCP6002-E-MC
+manufacturer: microchip
+mpn: MCP6002-E/MC
+device: microchip/MCP6002-DFN8
+
+package:
+  value: manufacturers/microchip/DFN8-2x3-P0.5-MC-C04-123C
+  src:
+    - p47 "Product Identification System, Package MC = Plastic Dual Flat, 2x3x0.9 mm (DFN), 8-Lead"
+    - p27 "drawing C04-123C"
+
+sources: [microchip/DS20001733@revL]
+source: microchip/DS20001733@revL
+
+existence:
+  status: probable
+  src: p47 "Product Identification System, example d) (MCP6002) MCP6002-E/MC"
+
+lifecycle: { status: unknown }

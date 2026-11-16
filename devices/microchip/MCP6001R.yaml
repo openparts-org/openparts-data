@@ -1,0 +1,20 @@
+# Single 1-MHz low-power op amp, MCP6001R SOT-23-5 pinout. From
+# DS20001733L Table 3-1 "Pin Function Table" (page 11), column
+# "MCP6001R 5-Lead SOT-23": VOUT 1, VDD 2, VIN+ 3, VIN- 4, VSS 5 (the
+# supply pins are swapped against microchip/MCP6001). Types as for
+# microchip/MCP6001.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP6001R
+manufacturer: microchip
+category: op_amp
+family: MCP6001/1R/1U/2/4
+source: microchip/DS20001733@revL
+
+pins:
+  src: p11 "Table 3-1 Pin Function Table, column MCP6001R 5-Lead SOT-23"
+  "1": { name: VOUT, type: analog }
+  "2": { name: VDD, type: power }
+  "3": { name: VIN+, type: analog }
+  "4": { name: VIN-, type: analog }
+  "5": { name: VSS, type: power }

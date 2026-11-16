@@ -1,0 +1,29 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SBVS193D PDF page 21): row "TPS3839K50DBZR", "SOT-23 (DBZ) | 3". lifecycle "active"
+# is that table's Status column. The threshold option has no parameter
+# key and is not recorded. Package: outline DBZ0003A (4214838/F) on page
+# 28, the same drawing the sibling TPS3839G33DBZR reuses
+# manufacturers/ti/DBZ0003A for (same PDF, same sha256).
+schema_version: "0.2"
+kind: part
+id: ti/TPS3839K50DBZR
+manufacturer: ti
+mpn: TPS3839K50DBZR
+device: ti/TPS3839-DBZ
+
+package:
+  value: manufacturers/ti/DBZ0003A
+  src:
+    - p21 "Package Option Addendum, row TPS3839K50DBZR, SOT-23 (DBZ) | 3"
+    - p28 "PACKAGE OUTLINE DBZ0003A (4214838/F)"
+
+sources: [ti/SBVS193D]
+source: ti/SBVS193D
+
+existence:
+  status: verified
+  src: p21 "Package Option Addendum, Packaging Information table, row TPS3839K50DBZR"
+
+lifecycle:
+  status: active
+  src: p21 "Package Option Addendum, row TPS3839K50DBZR, Status Active"

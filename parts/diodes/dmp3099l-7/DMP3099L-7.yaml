@@ -1,0 +1,38 @@
+# DMP3099L-7: 3000-piece reel MPN from the DS36081 ordering table. Its SOT23
+# (Standard) outline table on page 5 matches
+# standards/SOT23-2.90x1.30-P1.83-DIODES value for value (A, A1, A2, b,
+# c, D, E, E1, e1, L). No lifecycle statement in the document.
+schema_version: "0.2"
+kind: part
+id: diodes/DMP3099L-7
+manufacturer: diodes
+mpn: DMP3099L-7
+device: diodes/DMP3099L
+
+package:
+  value: standards/SOT23-2.90x1.30-P1.83-DIODES
+  src: p5 "Package Outline Dimensions, SOT23 (Standard) table"
+
+sources: [diodes/DS36081]
+source: diodes/DS36081
+
+existence:
+  status: verified
+  src: p1 "Ordering Information table, row DMP3099L-7, SOT23 (Standard), 3000"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: p_channel, src: p1 "Title" }
+  drain_source_voltage: { max: -30 V, src: 'p2 "Maximum Ratings, VDSS"' }
+  drain_current:
+    - { max: -3.8 A, at: { VGS: -10 V, TA: 25 °C }, src: 'p2 "Maximum Ratings, ID, Steady State"' }
+    - { max: -2.9 A, at: { VGS: -10 V, TA: 70 °C }, src: 'p2 "Maximum Ratings, ID, Steady State"' }
+  rds_on:
+    - { max: 65 mΩ, at: { VGS: -10 V, ID: -3.8 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { max: 99 mΩ, at: { VGS: -4.5 V, ID: -3 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+  gate_threshold_voltage:
+    min: -2.1 V
+    max: -1 V
+    at: { ID: -250 µA }
+    src: p2 "Elec. Char., VGS(th), VDS=VGS"

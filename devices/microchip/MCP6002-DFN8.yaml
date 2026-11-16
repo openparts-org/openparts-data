@@ -1,0 +1,26 @@
+# Dual 1-MHz low-power op amp, 8-lead 2x3 DFN (MC) pinout. From
+# DS20001733L Table 3-1 "Pin Function Table" (page 11), column "MCP6002
+# 8-Lead 2x3 DFN": pins 1-8 as microchip/MCP6002, plus EP 9 "Exposed
+# Thermal Pad (EP); must be connected to VSS". Section 3.4 (same page):
+# "There is an internal electrical connection between the Exposed
+# Thermal Pad (EP) and the VSS pin" -> key "EP", name VSS, connected_to
+# pin 4 (as microchip/MCP73832-DFN8). Names and types as microchip/MCP6002.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP6002-DFN8
+manufacturer: microchip
+category: op_amp
+family: MCP6001/1R/1U/2/4
+source: microchip/DS20001733@revL
+
+pins:
+  src: p11 "Table 3-1 Pin Function Table, column MCP6002 8-Lead 2x3 DFN; Section 3.4 Exposed Thermal Pad"
+  "1": { name: VOUTA, type: analog }
+  "2": { name: VINA-, type: analog }
+  "3": { name: VINA+, type: analog }
+  "4": { name: VSS, type: power }
+  "5": { name: VINB+, type: analog }
+  "6": { name: VINB-, type: analog }
+  "7": { name: VOUTB, type: analog }
+  "8": { name: VDD, type: power }
+  EP:  { name: VSS, type: power, connected_to: "4" }
