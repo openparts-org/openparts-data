@@ -1,0 +1,51 @@
+# Same Sky TB0011-350 terminal block, 11 poles, 3.5 mm pitch, through
+# hole, from page 2 of samesky/TB0011-350-DS. One plated hole per pole;
+# the layout draws only the hole ("Ø1.10"), no land: generator ring.
+# Frame (terminal_block): top view, X right, Y up, wire entry toward +Y,
+# origin at the housing centre.
+# The "Recommended PCB Layout, Top View" puts the row "3.45" from the
+# outline edge of the "6.90" deep housing (top view), and the side view
+# dimensions the pin "3.45" from the face: the row is on the housing's
+# centre line, so the wire-entry side (+Y) changes no coordinate.
+# Row y = 6.90/2 - 3.45 = 0.
+# X: first hole "1.75" (= P/2) from the outline edge, "3.50" pitch -> the holes are centred on the housing length
+# L = 3.5 x 11 = 38.5 ("L" table, N = 11); x = (k - (11 - 1)/2) x 3.5.
+# The datasheet numbers no poles: pole 1 is the leftmost in this frame.
+# The interlocking lip beyond L is not part of the body.
+schema_version: "0.2"
+kind: package
+id: manufacturers/samesky/TB0011-350-11
+family: terminal_block
+
+lead_count:
+  value: 11
+  src: p2 "Recommended PCB Layout Top View, "Ø1.10", "1.75", "3.50", "3.45"; L/B table"
+
+source: samesky/TB0011-350-DS
+
+pitch:
+  typ: 3.5 mm
+  src: p2 "Recommended PCB Layout Top View, "Ø1.10", "1.75", "3.50", "3.45"; L/B table"
+
+connector: { orientation: right_angle, src: 'p1 "FEATURES, "horizontal with board""' }
+geometry: { type: parametric, generator: terminal_block }
+
+dimensions:
+  body_width:  { typ: 38.5 mm, src: p2 "Top view "L=3.50xN"; table L" N=11 "38.50" }
+  body_length: { typ: 6.9 mm, src: 'p2 "Top view, housing depth "6.90""' }
+  body_height: { typ: 8.5 mm, src: 'p2 "Front view, housing height "8.50""' }
+
+pads:
+  value:
+    - { number: "1", x: -17.5, y: 0, drill: 1.1 }
+    - { number: "2", x: -14, y: 0, drill: 1.1 }
+    - { number: "3", x: -10.5, y: 0, drill: 1.1 }
+    - { number: "4", x: -7, y: 0, drill: 1.1 }
+    - { number: "5", x: -3.5, y: 0, drill: 1.1 }
+    - { number: "6", x: 0, y: 0, drill: 1.1 }
+    - { number: "7", x: 3.5, y: 0, drill: 1.1 }
+    - { number: "8", x: 7, y: 0, drill: 1.1 }
+    - { number: "9", x: 10.5, y: 0, drill: 1.1 }
+    - { number: "10", x: 14, y: 0, drill: 1.1 }
+    - { number: "11", x: 17.5, y: 0, drill: 1.1 }
+  src: p2 "Recommended PCB Layout Top View, "Ø1.10", "1.75", "3.50", "3.45"; L/B table (see comment above)"

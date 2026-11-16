@@ -1,0 +1,18 @@
+# Model number printed verbatim in the SH sheet's Header table
+# (jst/eSH page 3, 16 circuits, Top entry type column) -> existence
+# verified. Lifecycle: the sheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: jst/BM16B-SRSS-TB
+manufacturer: jst
+mpn: BM16B-SRSS-TB
+device: jst/BM16B-SRSS-TB
+package: manufacturers/jst/SH-Header-Top-SMD-1x16-P1.00
+sources: [jst/eSH]
+source: jst/eSH
+
+existence:
+  status: verified
+  src: 'p3 "Header Model No. table, 16 circuits, Top entry type: BM16B-SRSS-TB"'
+
+lifecycle: { status: unknown }

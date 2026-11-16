@@ -1,0 +1,27 @@
+# JST SH SMT wire-to-board header, top entry, 16 circuits
+# (jst/eSH page 3, Header Model No. table: BM16B-SRSS-TB). The sheet names no
+# signals: each circuit is named by its number, all passive.
+schema_version: "0.2"
+kind: device
+id: jst/BM16B-SRSS-TB
+manufacturer: jst
+category: connector
+family: SH
+
+pins:
+  "1":  { name: "1", type: passive }
+  "2":  { name: "2", type: passive }
+  "3":  { name: "3", type: passive }
+  "4":  { name: "4", type: passive }
+  "5":  { name: "5", type: passive }
+  "6":  { name: "6", type: passive }
+  "7":  { name: "7", type: passive }
+  "8":  { name: "8", type: passive }
+  "9":  { name: "9", type: passive }
+  "10": { name: "10", type: passive }
+  "11": { name: "11", type: passive }
+  "12": { name: "12", type: passive }
+  "13": { name: "13", type: passive }
+  "14": { name: "14", type: passive }
+  "15": { name: "15", type: passive }
+  "16": { name: "16", type: passive }

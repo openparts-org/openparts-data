@@ -1,0 +1,23 @@
+# Same Sky TB0011-350 terminal block, 10 poles (samesky/TB0011-350-DS).
+# One passive pin per pole; the datasheet numbers no poles: pins
+# 1..10 from the left in the package frame (wire entry toward +Y).
+schema_version: "0.2"
+kind: device
+id: samesky/TB0011-350-10
+manufacturer: samesky
+category: connector
+family: TB0011-350
+source: samesky/TB0011-350-DS
+
+pins:
+  src:  p1 "PART NUMBER KEY, No. of Poles 10"
+  "1":  { name: "1", type: passive }
+  "2":  { name: "2", type: passive }
+  "3":  { name: "3", type: passive }
+  "4":  { name: "4", type: passive }
+  "5":  { name: "5", type: passive }
+  "6":  { name: "6", type: passive }
+  "7":  { name: "7", type: passive }
+  "8":  { name: "8", type: passive }
+  "9":  { name: "9", type: passive }
+  "10": { name: "10", type: passive }
