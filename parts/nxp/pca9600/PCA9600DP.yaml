@@ -1,0 +1,24 @@
+# MPN "PCA9600DP" (NXP type number) confirmed in Table 1 Ordering information (continued) of
+# nxp/PCA9600@rev6.2 (page 3). Device nxp/PCA9600, package manufacturers/nxp/SOT505-1.
+# lifecycle: not stated in the data sheet; recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCA9600DP
+manufacturer: nxp
+mpn: PCA9600DP
+device: nxp/PCA9600
+
+package:
+  value: manufacturers/nxp/SOT505-1
+  src:
+    - p3 "Table 1 Ordering information (continued), row PCA9600DP, SOT505-1"
+    - p25 "Figure 27 Package outline SOT505-1 (TSSOP8)"
+
+sources: [nxp/PCA9600@rev6.2]
+source: nxp/PCA9600@rev6.2
+
+existence:
+  status: verified
+  src: p3 "Table 1 Ordering information (continued), type number PCA9600DP"
+
+lifecycle: { status: unknown }

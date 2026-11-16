@@ -1,0 +1,27 @@
+# Bosch Sensortec BMA253 triaxial accelerometer, 12-pin LGA. Pin names
+# and I/O types from Table 24 "Pin description" (page 105) of
+# BST-BMA253-DS000-05 (Digital out -> output, Digital I/O -> io, Digital
+# in -> input, Supply -> power, Ground -> ground; NC "--" -> nc),
+# checked against Figure 22 "Pin-out top view".
+schema_version: "0.2"
+kind: device
+id: bosch/BMA253
+manufacturer: bosch
+category: imu
+family: BMA2
+source: bosch/BST-BMA253-DS000-05
+
+pins:
+  src:  p105 "Table 24 Pin description; Figure 22 pin-out top view"
+  "1":  { name: SDO, type: output }
+  "2":  { name: SDx, type: io }
+  "3":  { name: VDDIO, type: power }
+  "4":  { name: NC, type: nc }
+  "5":  { name: INT1, type: output }
+  "6":  { name: INT2, type: output }
+  "7":  { name: VDD, type: power }
+  "8":  { name: GNDIO, type: ground }
+  "9":  { name: GND, type: ground }
+  "10": { name: CSB, type: input }
+  "11": { name: PS, type: input }
+  "12": { name: SCx, type: input }

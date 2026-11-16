@@ -1,0 +1,26 @@
+# BME688: Bosch Sensortec's product name, used by distributors as the MPN.
+# existence: probable -- the title page names the product with technical
+# reference code 0 273 017 016; "BME688" is not printed as an orderable
+# part number.
+# lifecycle: unknown (no first-party status statement found).
+# Package: the BME680 package; Pictures 16/17 (pages 53-54) of this
+# datasheet print the same values as the BME680 drawings.
+schema_version: "0.2"
+kind: part
+id: bosch/BME688
+manufacturer: bosch
+mpn: BME688
+device: bosch/BME688
+
+package:
+  value: manufacturers/bosch/LGA8-3.0x3.0-P0.8-BME680
+  src: p53 "Picture 16 Package dimensions (same drawing as BME680 Picture 13)"
+
+sources: [bosch/BST-BME688-DS000-03]
+source: bosch/BST-BME688-DS000-03
+
+existence:
+  status: probable
+  src: 'p1 "title page: product BME688, technical reference code 0 273 017 016"'
+
+lifecycle: { status: unknown }

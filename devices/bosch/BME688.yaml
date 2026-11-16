@@ -1,0 +1,25 @@
+# Bosch Sensortec BME688, 8-pin LGA gas, pressure, humidity and
+# temperature sensor; category `sensor` (the tree has no combined
+# environmental-sensor node), as for bosch/BME280. Pin names and I/O
+# types from Table 26 "Pin description" (page 51) of BST-BME688-DS000-03 (Supply
+# -> power, GND "Ground" -> ground, In -> input, In/Out -> io), numbers
+# checked against the pin-out top/bottom view on the same page
+# (clockwise numbering in top view).
+schema_version: "0.2"
+kind: device
+id: bosch/BME688
+manufacturer: bosch
+category: sensor
+family: BME6
+source: bosch/BST-BME688-DS000-03
+
+pins:
+  src: p51 "Table 26 Pin description; pin-out top/bottom view"
+  "1": { name: GND, type: ground }
+  "2": { name: CSB, type: input }
+  "3": { name: SDI, type: io }
+  "4": { name: SCK, type: input }
+  "5": { name: SDO, type: io }
+  "6": { name: VDDIO, type: power }
+  "7": { name: GND, type: ground }
+  "8": { name: VDD, type: power }

@@ -1,0 +1,43 @@
+# PCA9685 16-channel 12-bit PWM Fm+ I2C-bus LED controller, TSSOP28
+# numbering: Table 3 "Pin description" (pages 6-7), TSSOP28 column and
+# Type column (I -> input, O -> output, I/O -> io), cross-checked against
+# Fig 2 "Pin configuration for TSSOP28" (page 6). The HVQFN28 numbering
+# is not covered.
+schema_version: "0.2"
+kind: device
+id: nxp/PCA9685
+manufacturer: nxp
+category: driver
+family: PCA9685
+source: nxp/PCA9685@rev4
+
+pins:
+  src:  p6 "Table 3 Pin description, TSSOP28 column (pages 6-7); Fig 2"
+  "1":  { name: A0, type: input }
+  "2":  { name: A1, type: input }
+  "3":  { name: A2, type: input }
+  "4":  { name: A3, type: input }
+  "5":  { name: A4, type: input }
+  "6":  { name: LED0, type: output }
+  "7":  { name: LED1, type: output }
+  "8":  { name: LED2, type: output }
+  "9":  { name: LED3, type: output }
+  "10": { name: LED4, type: output }
+  "11": { name: LED5, type: output }
+  "12": { name: LED6, type: output }
+  "13": { name: LED7, type: output }
+  "14": { name: VSS, type: ground }
+  "15": { name: LED8, type: output }
+  "16": { name: LED9, type: output }
+  "17": { name: LED10, type: output }
+  "18": { name: LED11, type: output }
+  "19": { name: LED12, type: output }
+  "20": { name: LED13, type: output }
+  "21": { name: LED14, type: output }
+  "22": { name: LED15, type: output }
+  "23": { name: OE, type: input }
+  "24": { name: A5, type: input }
+  "25": { name: EXTCLK, type: clock }
+  "26": { name: SCL, type: input }
+  "27": { name: SDA, type: io }
+  "28": { name: VDD, type: power }

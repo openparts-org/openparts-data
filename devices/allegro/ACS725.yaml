@@ -1,0 +1,25 @@
+# ACS725 Hall-effect linear current sensor IC, SOIC8. Pins from the
+# Terminal List (page 5): 1 and 2 IP+, 3 and 4 IP- ("terminals for
+# current being sampled; fused internally" -> pin 2 connected_to 1, pin 4
+# connected_to 3, typed passive), GND ground, FILTER (external bandwidth
+# capacitor) and VIOUT (analog output) analog, VCC power; cross-checked
+# against the Pinout Diagram on the same page. The tree has no current
+# sensor node; the sensor group is used.
+schema_version: "0.2"
+kind: device
+id: allegro/ACS725
+manufacturer: allegro
+category: sensor
+family: ACS725
+source: allegro/ACS725-DS-rev21
+
+pins:
+  src: p5 "Terminal List Table; Pinout Diagram"
+  "1": { name: IP+, type: passive }
+  "2": { name: IP+, type: passive, connected_to: "1" }
+  "3": { name: IP-, type: passive }
+  "4": { name: IP-, type: passive, connected_to: "3" }
+  "5": { name: GND, type: ground }
+  "6": { name: FILTER, type: analog }
+  "7": { name: VIOUT, type: analog }
+  "8": { name: VCC, type: power }

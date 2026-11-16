@@ -1,0 +1,16 @@
+# Allegro ACS724 datasheet, document ACS724-DS, Rev. 25 (page
+# footer / Revision History). Downloaded 2026-11-16 with curl from
+# Allegro's own URL below. 26 PDF pages; read with pdftotext -layout;
+# the package drawing page was rendered with pdftoppm and read visually.
+# Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: allegro/ACS724-DS-rev25
+sha256: 87148fef983738a5921596c131b2b9fb66a5373d0bf084eafb69b17ed47ec4c9
+retrieved: 2026-11-16
+url: https://www.allegromicro.com/-/media/files/datasheets/acs724-datasheet.pdf
+publisher: allegro
+document_id: ACS724-DS
+document_type: datasheet
+revision: "25"
+date: 2026-03-31

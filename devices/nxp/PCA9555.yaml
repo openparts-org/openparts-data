@@ -1,0 +1,38 @@
+# PCA9555 16-bit I2C-bus and SMBus I/O port with interrupt. Pins from
+# Table 3 "Pin description" (page 5), SO24/SSOP24/TSSOP24 column. INT
+# open-drain interrupt output. The HVQFN24/HWQFN24 numbering is not
+# covered.
+schema_version: "0.2"
+kind: device
+id: nxp/PCA9555
+manufacturer: nxp
+category: io_expander
+family: PCA9555
+source: nxp/PCA9555@rev10
+
+pins:
+  src:  p5 "Table 3 Pin description, SO24/SSOP24/TSSOP24 column"
+  "1":  { name: INT, type: output }
+  "2":  { name: A1, type: input }
+  "3":  { name: A2, type: input }
+  "4":  { name: IO0_0, type: io }
+  "5":  { name: IO0_1, type: io }
+  "6":  { name: IO0_2, type: io }
+  "7":  { name: IO0_3, type: io }
+  "8":  { name: IO0_4, type: io }
+  "9":  { name: IO0_5, type: io }
+  "10": { name: IO0_6, type: io }
+  "11": { name: IO0_7, type: io }
+  "12": { name: VSS, type: ground }
+  "13": { name: IO1_0, type: io }
+  "14": { name: IO1_1, type: io }
+  "15": { name: IO1_2, type: io }
+  "16": { name: IO1_3, type: io }
+  "17": { name: IO1_4, type: io }
+  "18": { name: IO1_5, type: io }
+  "19": { name: IO1_6, type: io }
+  "20": { name: IO1_7, type: io }
+  "21": { name: A0, type: input }
+  "22": { name: SCL, type: input }
+  "23": { name: SDA, type: io }
+  "24": { name: VDD, type: power }

@@ -1,0 +1,16 @@
+# Allegro ACS712 datasheet, document ACS712-DS, Rev. 22 (page
+# footer / Revision History). Downloaded 2026-11-16 with curl from
+# Allegro's own URL below. 16 PDF pages; read with pdftotext -layout;
+# the package drawing page was rendered with pdftoppm and read visually.
+# Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: allegro/ACS712-DS-rev22
+sha256: 21b345f7a98d36947d5562218b0bc730b80609b614e9fc4374f56993011466b9
+retrieved: 2026-11-16
+url: https://www.allegromicro.com/-/media/files/datasheets/acs712-datasheet.pdf
+publisher: allegro
+document_id: ACS712-DS
+document_type: datasheet
+revision: "22"
+date: 2024-02-13

@@ -1,0 +1,24 @@
+# MPN "PCA9600D" (NXP type number) confirmed in Table 1 Ordering information of
+# nxp/PCA9600@rev6.2 (page 2). Device nxp/PCA9600, package manufacturers/nxp/SOT96-1.
+# SOT96-1 reused: this data sheet's outline (Figure 26 Package outline SOT96-1 (SO8), page
+# 24) was compared row by row with the existing package; the
+# mm values and the issue date match.
+# lifecycle: not stated in the data sheet; recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCA9600D
+manufacturer: nxp
+mpn: PCA9600D
+device: nxp/PCA9600
+
+package:
+  value: manufacturers/nxp/SOT96-1
+  src:
+    - p2 "Table 1 Ordering information, row PCA9600D, SOT96-1"
+    - p24 "Figure 26 Package outline SOT96-1 (SO8)"
+
+sources: [nxp/PCA9600@rev6.2]
+source: nxp/PCA9600@rev6.2
+
+existence: { status: verified, src: 'p2 "Table 1 Ordering information, type number PCA9600D"' }
+lifecycle: { status: unknown }

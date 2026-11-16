@@ -1,0 +1,22 @@
+# PCA9515A I2C-bus repeater. Pins from Table 2 "Pin description", column
+# "SO8, TSSOP8" (page 3), cross-checked against Fig 2/Fig 3 (same page).
+# SCLn/SDAn are open-drain I/O (io); EN active HIGH enable input. The
+# HWSON8 numbering differs and is not covered.
+schema_version: "0.2"
+kind: device
+id: nxp/PCA9515A
+manufacturer: nxp
+category: interface
+family: PCA9515A
+source: nxp/PCA9515A@rev5
+
+pins:
+  src: p3 "Table 2 Pin description, SO8/TSSOP8 column; Fig 2, Fig 3"
+  "1": { name: n.c., type: nc }
+  "2": { name: SCL0, type: io }
+  "3": { name: SDA0, type: io }
+  "4": { name: GND, type: ground }
+  "5": { name: EN, type: input }
+  "6": { name: SDA1, type: io }
+  "7": { name: SCL1, type: io }
+  "8": { name: VCC, type: power }

@@ -1,0 +1,24 @@
+# MPN "PCF8591P" (NXP type number) confirmed in Table 1 Ordering information of
+# nxp/PCF8591@rev7 (page 2). Device nxp/PCF8591, package manufacturers/nxp/SOT38-4.
+# SOT38-4 reused: this data sheet's outline (DIP16 package outline SOT38-4, page
+# 21) was compared row by row with the existing package; the
+# mm values and the issue date match.
+# lifecycle: not stated in the data sheet; recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCF8591P
+manufacturer: nxp
+mpn: PCF8591P
+device: nxp/PCF8591
+
+package:
+  value: manufacturers/nxp/SOT38-4
+  src:
+    - p2 "Table 1 Ordering information, row PCF8591P, SOT38-4"
+    - p21 "DIP16 package outline SOT38-4"
+
+sources: [nxp/PCF8591@rev7]
+source: nxp/PCF8591@rev7
+
+existence: { status: verified, src: 'p2 "Table 1 Ordering information, type number PCF8591P"' }
+lifecycle: { status: unknown }

@@ -1,0 +1,23 @@
+# MPN "PCF85063ATT/A" (NXP type number) confirmed in Table 2 Ordering options of
+# nxp/PCF85063A@rev7.3 (page 2). Device nxp/PCF85063A, package manufacturers/nxp/SOT505-1.
+# Table 1 lists the type PCF85063ATT (TSSOP8, SOT505-1); Table 2 names
+# the type number PCF85063ATT/A (orderable PCF85063ATT/AJ).
+# lifecycle: not stated in the data sheet; recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCF85063ATT-A
+manufacturer: nxp
+mpn: PCF85063ATT/A
+device: nxp/PCF85063A
+
+package:
+  value: manufacturers/nxp/SOT505-1
+  src:
+    - p2 "Table 2 Ordering options, row PCF85063ATT/A, SOT505-1"
+    - p45 "Figure 34 Package outline SOT505-1 (TSSOP8) of PCF85063ATT"
+
+sources: [nxp/PCF85063A@rev7.3]
+source: nxp/PCF85063A@rev7.3
+
+existence: { status: verified, src: 'p2 "Table 2 Ordering options, type number PCF85063ATT/A"' }
+lifecycle: { status: unknown }

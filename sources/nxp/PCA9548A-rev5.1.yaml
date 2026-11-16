@@ -1,0 +1,17 @@
+# Official NXP PCA9548A product data sheet, "Rev. 5.1" dated 2015-10-01
+# (page footers). Downloaded 2026-11-16 with curl from nxp.com (URL
+# below). 30 PDF pages; read with pdftotext -layout; the package
+# outlines (pages 18-19) use an encoded font and were read from pages
+# rendered with pdftoppm. Page
+# numbers are PDF page indices (equal to the printed "n of 30").
+schema_version: "0.2"
+kind: source
+id: nxp/PCA9548A@rev5.1
+sha256: a090b5ec78996babb32d283bbb2a7136ff789e450abd8394fff9f0bf53ddcc92
+retrieved: 2026-11-16
+url: https://www.nxp.com/docs/en/data-sheet/PCA9548A.pdf
+publisher: nxp
+document_id: PCA9548A
+document_type: datasheet
+revision: "5.1"
+date: 2015-10-01

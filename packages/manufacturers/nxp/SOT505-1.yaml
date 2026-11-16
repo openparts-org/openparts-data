@@ -1,0 +1,57 @@
+# NXP SOT505-1, TSSOP8 ("plastic thin shrink small outline package; 8
+# leads; body width 3 mm"; NXP also calls it MSOP8). Values from Figure 13
+# "Package outline SOT505-1 (TSSOP8)" of the PCA9306 data sheet Rev. 9.5,
+# page 15 (mm row, text extracted; issue date 03-02-18). The same outline
+# is printed with identical mm values and issue date in the PCA9515A,
+# PCA9517A, PCA9536, PCT2075, PCF85063A and PCA9600 data sheets (compared
+# row by row).
+# body_width = E, body_length = D, overall_width = HE, body_height = A2,
+# overall_height = A (max only), standoff = A1, lead_width = bp,
+# lead_thickness = c, lead_length = Lp (L is the reference lead length,
+# not modelled). Only min/max are printed for most rows, so no typ is
+# recorded. A3, Q, v, w, y, Z and the foot angle are not modelled. No land
+# pattern is recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/nxp/SOT505-1
+family: tssop
+lead_count: 8
+source: nxp/PCA9306@rev9.5
+
+pitch: { typ: 0.65 mm, src: 'p15 "Figure 13 SOT505-1 DIMENSIONS (mm), e 0.65"' }
+geometry: { type: parametric, generator: tssop }
+
+dimensions:
+  body_width:
+    min: 2.9 mm
+    max: 3.1 mm
+    src: p15 "Figure 13 SOT505-1 DIMENSIONS (mm), E 3.1 / 2.9"
+  body_length:
+    min: 2.9 mm
+    max: 3.1 mm
+    src: p15 "Figure 13 SOT505-1 DIMENSIONS (mm), D 3.1 / 2.9"
+  body_height:
+    min: 0.8 mm
+    max: 0.95 mm
+    src: p15 "Figure 13 SOT505-1 DIMENSIONS (mm), A2 0.95 / 0.80"
+  lead_thickness:
+    min: 0.15 mm
+    max: 0.28 mm
+    src: p15 "Figure 13 SOT505-1 DIMENSIONS (mm), c 0.28 / 0.15"
+  overall_width:
+    min: 4.7 mm
+    max: 5.1 mm
+    src: p15 "Figure 13 SOT505-1 DIMENSIONS (mm), HE 5.1 / 4.7"
+  overall_height: { max: 1.1 mm, src: 'p15 "Figure 13 SOT505-1 DIMENSIONS (mm), A max. 1.1"' }
+  standoff:
+    min: 0.05 mm
+    max: 0.15 mm
+    src: p15 "Figure 13 SOT505-1 DIMENSIONS (mm), A1 0.15 / 0.05"
+  lead_width:
+    min: 0.25 mm
+    max: 0.45 mm
+    src: p15 "Figure 13 SOT505-1 DIMENSIONS (mm), bp 0.45 / 0.25"
+  lead_length:
+    min: 0.4 mm
+    max: 0.7 mm
+    src: p15 "Figure 13 SOT505-1 DIMENSIONS (mm), Lp 0.7 / 0.4"

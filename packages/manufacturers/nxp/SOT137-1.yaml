@@ -1,0 +1,53 @@
+# NXP SOT137-1, SO24 ("plastic small outline package; 24 leads; body
+# width 7.5 mm", JEDEC MS-013). Values from Fig 25 "Package outline
+# SOT137-1 (SO24)" of the PCA9555 data sheet Rev. 10, page 22 (mm row,
+# text extracted; issue date 03-02-19). The PCA9548A data sheet Rev. 5.1
+# prints the same outline (Fig 18, page 18, rendered): identical mm values
+# and issue date.
+# body_width = E, body_length = D, overall_width = HE, body_height = A2,
+# overall_height = A (max only), standoff = A1, lead_width = bp,
+# lead_thickness = c, lead_length = Lp (L is the reference lead length,
+# not modelled). Only min/max are printed for most rows, so no typ is
+# recorded. A3, Q, v, w, y, Z and the foot angle are not modelled. No land
+# pattern is recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/nxp/SOT137-1
+family: soic
+lead_count: 24
+source: nxp/PCA9555@rev10
+
+pitch: { typ: 1.27 mm, src: 'p22 "Fig 25 SOT137-1 DIMENSIONS (mm), e 1.27"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 7.4 mm
+    max: 7.6 mm
+    src: p22 "Fig 25 SOT137-1 DIMENSIONS (mm), E 7.6 / 7.4"
+  body_length:
+    min: 15.2 mm
+    max: 15.6 mm
+    src: p22 "Fig 25 SOT137-1 DIMENSIONS (mm), D 15.6 / 15.2"
+  body_height:
+    min: 2.25 mm
+    max: 2.45 mm
+    src: p22 "Fig 25 SOT137-1 DIMENSIONS (mm), A2 2.45 / 2.25"
+  lead_thickness:
+    min: 0.23 mm
+    max: 0.32 mm
+    src: p22 "Fig 25 SOT137-1 DIMENSIONS (mm), c 0.32 / 0.23"
+  overall_width:
+    min: 10 mm
+    max: 10.65 mm
+    src: p22 "Fig 25 SOT137-1 DIMENSIONS (mm), HE 10.65 / 10.00"
+  overall_height: { max: 2.65 mm, src: 'p22 "Fig 25 SOT137-1 DIMENSIONS (mm), A max. 2.65"' }
+  standoff: { min: 0.1 mm, max: 0.3 mm, src: 'p22 "Fig 25 SOT137-1 DIMENSIONS (mm), A1 0.3 / 0.1"' }
+  lead_width:
+    min: 0.36 mm
+    max: 0.49 mm
+    src: p22 "Fig 25 SOT137-1 DIMENSIONS (mm), bp 0.49 / 0.36"
+  lead_length:
+    min: 0.4 mm
+    max: 1.1 mm
+    src: p22 "Fig 25 SOT137-1 DIMENSIONS (mm), Lp 1.1 / 0.4"

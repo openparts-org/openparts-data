@@ -1,0 +1,20 @@
+# ACS724LLCTR-05AB-T: printed in the SELECTION GUIDE of allegro/ACS724-DS-rev25 (page
+# 2; tape and reel, 3000 pieces/reel) -> existence verified.
+# Package LC (page 24). Lifecycle unknown: the datasheet states no
+# production status.
+schema_version: "0.2"
+kind: part
+id: allegro/ACS724LLCTR-05AB-T
+manufacturer: allegro
+mpn: ACS724LLCTR-05AB-T
+device: allegro/ACS724
+
+package:
+  value: manufacturers/allegro/LC-SOIC8-ACS724
+  src: ['p2 "SELECTION GUIDE, ACS724LLCTR-05AB-T"', 'p24 "Figure 9 Package LC, 8-pin SOICN"']
+
+sources: [allegro/ACS724-DS-rev25]
+source: allegro/ACS724-DS-rev25
+
+existence: { status: verified, src: 'p2 "SELECTION GUIDE, Part Number ACS724LLCTR-05AB-T"' }
+lifecycle: { status: unknown }

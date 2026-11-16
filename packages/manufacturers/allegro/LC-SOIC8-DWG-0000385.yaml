@@ -1,0 +1,35 @@
+# Allegro package LC, 8-pin SOIC (reference Allegro DWG-0000385, Rev. 2 or
+# JEDEC MS-012AA), read from the "Package LC, 8-pin SOIC" drawing on page
+# 15 of allegro/ACS712-DS-rev22 (rendered). Values copied as printed:
+# BSC values as typ, +a/-b tolerances as min/typ/max.
+# body_width = E1 (3.90), body_length = D (4.90), overall_width = E
+# (6.00), overall_height = A, standoff = A1, lead_width = b, lead_thickness
+# = c, lead_length = L (foot). No land pattern is recorded (the drawing's
+# PCB layout views are reference only).
+schema_version: "0.2"
+kind: package
+id: manufacturers/allegro/LC-SOIC8-DWG-0000385
+family: soic
+lead_count: 8
+source: allegro/ACS712-DS-rev22
+
+pitch: { typ: 1.27 mm, src: 'p15 "Package LC, 1.27 BSC"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:     { typ: 3.9 mm, src: 'p15 "Package LC, 3.90 BSC"' }
+  body_length:    { typ: 4.9 mm, src: 'p15 "Package LC, 4.90 BSC"' }
+  lead_thickness: { min: 0.17 mm, typ: 0.21 mm, max: 0.25 mm, src: 'p15 "Package LC, 0.21+-0.04"' }
+  lead_length:
+    min: 0.4 mm
+    typ: 0.84 mm
+    max: 1.27 mm
+    src: p15 "Package LC, 0.84 +0.43/-0.44"
+  overall_width:  { typ: 6 mm, src: 'p15 "Package LC, 6.00 BSC"' }
+  overall_height:
+    min: 1.35 mm
+    typ: 1.62 mm
+    max: 1.75 mm
+    src: p15 "Package LC, 1.62 +0.13/-0.27"
+  standoff: { min: 0.1 mm, typ: 0.15 mm, max: 0.25 mm, src: 'p15 "Package LC, 0.15 +0.10/-0.05"' }
+  lead_width:     { min: 0.31 mm, typ: 0.41 mm, max: 0.51 mm, src: 'p15 "Package LC, 0.41+-0.10"' }

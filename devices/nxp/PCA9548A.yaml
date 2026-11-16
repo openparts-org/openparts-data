@@ -1,0 +1,38 @@
+# PCA9548A 8-channel I2C-bus switch with reset. Pins from Table 3 "Pin
+# description" (page 5), SO24/TSSOP24 column. SDn/SCn downstream channel
+# lines typed io (bidirectional switch); upstream SCL typed input, SDA io;
+# RESET active LOW reset input. The HVQFN24 numbering is not covered.
+schema_version: "0.2"
+kind: device
+id: nxp/PCA9548A
+manufacturer: nxp
+category: interface
+family: PCA9548A
+source: nxp/PCA9548A@rev5.1
+
+pins:
+  src:  p5 "Table 3 Pin description, SO24/TSSOP24 column"
+  "1":  { name: A0, type: input }
+  "2":  { name: A1, type: input }
+  "3":  { name: RESET, type: reset }
+  "4":  { name: SD0, type: io }
+  "5":  { name: SC0, type: io }
+  "6":  { name: SD1, type: io }
+  "7":  { name: SC1, type: io }
+  "8":  { name: SD2, type: io }
+  "9":  { name: SC2, type: io }
+  "10": { name: SD3, type: io }
+  "11": { name: SC3, type: io }
+  "12": { name: VSS, type: ground }
+  "13": { name: SD4, type: io }
+  "14": { name: SC4, type: io }
+  "15": { name: SD5, type: io }
+  "16": { name: SC5, type: io }
+  "17": { name: SD6, type: io }
+  "18": { name: SC6, type: io }
+  "19": { name: SD7, type: io }
+  "20": { name: SC7, type: io }
+  "21": { name: A2, type: input }
+  "22": { name: SCL, type: input }
+  "23": { name: SDA, type: io }
+  "24": { name: VDD, type: power }

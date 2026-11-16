@@ -1,0 +1,30 @@
+# PCF8591 8-bit A/D and D/A converter (I2C-bus). Pins from Table 4 "Pin
+# description" (page 4; one numbering for DIP16 and SO16). The datasheet
+# has no type column: AINn/AOUT analog, VREF analog, AGND ground, OSC
+# (oscillator input/output) clock, EXT (oscillator switch) input.
+schema_version: "0.2"
+kind: device
+id: nxp/PCF8591
+manufacturer: nxp
+category: adc
+family: PCF8591
+source: nxp/PCF8591@rev7
+
+pins:
+  src:  p4 "Table 4 Pin description"
+  "1":  { name: AIN0, type: analog }
+  "2":  { name: AIN1, type: analog }
+  "3":  { name: AIN2, type: analog }
+  "4":  { name: AIN3, type: analog }
+  "5":  { name: A0, type: input }
+  "6":  { name: A1, type: input }
+  "7":  { name: A2, type: input }
+  "8":  { name: VSS, type: ground }
+  "9":  { name: SDA, type: io }
+  "10": { name: SCL, type: input }
+  "11": { name: OSC, type: clock }
+  "12": { name: EXT, type: input }
+  "13": { name: AGND, type: ground }
+  "14": { name: VREF, type: analog }
+  "15": { name: AOUT, type: analog }
+  "16": { name: VDD, type: power }

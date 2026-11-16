@@ -1,0 +1,75 @@
+# Bosch Sensortec 12-pin LGA 2.0 x 2.0 mm (BMA253). Read from Figure 27
+# "Package outline dimensions" (section 9.1, page 109; "unless otherwise
+# specified tolerance: decimal +-0.05") and Figure 29 "Landing patterns"
+# (section 9.3, page 111) of BST-BMA253-DS000-05 (rendered).
+# Top view (Figure 22, page 105): 1-4 down the left edge, 5-6 bottom left
+# to right, 7-10 up the right edge, 11-12 top right to left -> plain CCW
+# numbering, lead_layout [4, 2, 4, 2]; the corner terminals 1, 4, 7, 10
+# belong to the side columns.
+# Terminals 12x 0.29+-0.05 (X) by 0.28+-0.05 (Y) for the side columns,
+# 0.1+-0.05 from the edge; pitch 0.5 (boxed). Heights: Max. 1.0 overall,
+# 0.82 REF mold (not recorded), substrate 0.13+-0.03 (not recorded).
+# pads (Figure 29): side lands 0.41 x 0.28, inner edge 0.61 from the
+# centre line -> x = +-(0.61 + 0.205) = +-0.815, y = +-0.25, +-0.75; top and
+# bottom lands 0.28 x 0.41 at x = +-0.25 (pitch 0.5, drawing scale), inner
+# edge 0.61 from the centre line -> y = +-0.815.
+# Not drawn: the pin-1 marking metal pad (internally connected to GND,
+# "external connection not recommended").
+schema_version: "0.2"
+kind: package
+id: manufacturers/bosch/LGA12-2.0x2.0-P0.5-BMA253
+family: lga
+lead_count: 12
+
+lead_layout:
+  value: [4, 2, 4, 2]
+  src:   'p105 "Figure 22 top view: 1-4 left, 5-6 bottom, 7-10 right, 11-12 top"'
+
+source: bosch/BST-BMA253-DS000-05
+
+pitch: { typ: 0.5 mm, src: 'p109 "Figure 27 bottom view, 0.5 boxed"' }
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:
+    min: 1.925 mm
+    typ: 2 mm
+    max: 2.075 mm
+    src: p109 "Figure 27 top view, 2+-0.075"
+  body_length:
+    min: 1.925 mm
+    typ: 2 mm
+    max: 2.075 mm
+    src: p109 "Figure 27 top view, 2+-0.075"
+  lead_inset:
+    min: 0.05 mm
+    typ: 0.1 mm
+    max: 0.15 mm
+    src: p109 "Figure 27 bottom view, 0.1+-0.05"
+  lead_length:
+    min: 0.24 mm
+    typ: 0.29 mm
+    max: 0.34 mm
+    src: p109 "Figure 27 bottom view, 12x 0.29+-0.05"
+  overall_height: { max: 1 mm, src: 'p109 "Figure 27 side view, Max. 1.0"' }
+  lead_width:
+    min: 0.23 mm
+    typ: 0.28 mm
+    max: 0.33 mm
+    src: p109 "Figure 27 bottom view, 12x 0.28+-0.05"
+
+pads:
+  value:
+    - { number: "1", x: -0.815, y: 0.75, width: 0.41, length: 0.28 }
+    - { number: "2", x: -0.815, y: 0.25, width: 0.41, length: 0.28 }
+    - { number: "3", x: -0.815, y: -0.25, width: 0.41, length: 0.28 }
+    - { number: "4", x: -0.815, y: -0.75, width: 0.41, length: 0.28 }
+    - { number: "5", x: -0.25, y: -0.815, width: 0.28, length: 0.41 }
+    - { number: "6", x: 0.25, y: -0.815, width: 0.28, length: 0.41 }
+    - { number: "7", x: 0.815, y: -0.75, width: 0.41, length: 0.28 }
+    - { number: "8", x: 0.815, y: -0.25, width: 0.41, length: 0.28 }
+    - { number: "9", x: 0.815, y: 0.25, width: 0.41, length: 0.28 }
+    - { number: "10", x: 0.815, y: 0.75, width: 0.41, length: 0.28 }
+    - { number: "11", x: 0.25, y: 0.815, width: 0.28, length: 0.41 }
+    - { number: "12", x: -0.25, y: 0.815, width: 0.28, length: 0.41 }
+  src: 'p111 "Figure 29: lands 0.41x0.28, inner edges 0.61 from centre, pitch 0.5"'

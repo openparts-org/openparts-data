@@ -1,0 +1,24 @@
+# TJA1021 LIN transceiver (ISO 17987/LIN 2.x/SAE J2602). Pins from Table
+# 3 "Pin description" (page 4; same numbering for SO8 and HVSON8),
+# cross-checked against Figure 2 (same page). There is no LIN category;
+# the interface group is used. LIN bus line io, INH inhibit output,
+# VBAT power.
+# SO8 variant (no exposed pad).
+schema_version: "0.2"
+kind: device
+id: nxp/TJA1021T
+manufacturer: nxp
+category: interface
+family: TJA1021
+source: nxp/TJA1021@rev9
+
+pins:
+  src: p4 "Table 3 Pin description; Figure 2"
+  "1": { name: RXD, type: output }
+  "2": { name: SLP_N, type: input }
+  "3": { name: WAKE_N, type: input }
+  "4": { name: TXD, type: input }
+  "5": { name: GND, type: ground }
+  "6": { name: LIN, type: io }
+  "7": { name: VBAT, type: power }
+  "8": { name: INH, type: output }

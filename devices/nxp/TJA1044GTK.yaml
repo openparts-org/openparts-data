@@ -1,0 +1,28 @@
+# TJA1044 high-speed CAN transceiver with Standby mode, variants without
+# VIO (TJA1044T, TJA1044GT, TJA1044GTK...): Table 3 "Pin description"
+# (page 5) -- pin 5 "n.c." for these variants -- cross-checked against
+# Figure 2 (same page). STB Standby mode control input. Pin EP: Table 3
+# note [2] (HVSON8 die ground also on the exposed center pad).
+# HVSON8 (SOT782-1) variant.
+schema_version: "0.2"
+kind: device
+id: nxp/TJA1044GTK
+manufacturer: nxp
+category: can_transceiver
+family: TJA1044
+source: nxp/TJA1044@rev8.0
+
+pins:
+  src: p5 "Table 3 Pin description (n.c. variants); Figure 2"
+  "1": { name: TXD, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: VCC, type: power }
+  "4": { name: RXD, type: output }
+  "5": { name: n.c., type: nc }
+  "6": { name: CANL, type: io }
+  "7": { name: CANH, type: io }
+  "8": { name: STB, type: input }
+  EP:
+    name: GND
+    type: ground
+    src: p5 "Table 3 note [2] HVSON8 exposed center pad = die ground"

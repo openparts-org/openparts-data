@@ -1,0 +1,79 @@
+# Bosch Sensortec 16-pin LGA 3.0 x 4.5 x 0.95 mm (BMI088). Read from Figure
+# 10 "Package dimensions" (section 8.1, page 54; note: unless otherwise
+# specified tolerance = decimal +-0.05) and Figure 11 "Landing pattern
+# recommendation" (section 8.2, page 55) of BST-BMI088-DS000-19
+# (rendered). The BMI085 datasheet BST-BMI085-DS000-16 prints the same
+# outline (Figure 10, page 43; compared value by value) but no land pattern.
+# Frame: Figure 11's orientation (3.0 across = X, 4.5 = Y), which is the
+# Figure 6 top view turned 90 deg clockwise: 1-7 down the right edge, 8
+# bottom centre, 9-15 up the left edge, 16 top centre. lead_layout
+# [7, 1, 7, 1] (left, bottom, right, top); pad_order = source numbers in
+# the generator's CCW position order (left edge from the top).
+# Terminals 0.475 x 0.250 (inward x across), pitch 0.50 (3.00 boxed over
+# six pitches), 0.10+-0.05 from the edge. Heights 0.82+-0.030 (body) and
+# 0.95+-0.050 (overall). Body 4.50 x 3.00 boxed (basic): typ only.
+# pads (Figure 11): 0.675 x 0.25 lands at 0.5 pitch, inner edges 0.925
+# from the centre line -> x = +-(0.925 + 0.675/2) = +-1.2625, pin 4/12 on
+# the centre line; pins 8/16 0.25 x 0.675 lands whose inner edge is 1.675
+# from the centre line -> y = +-(1.675 + 0.3375) = +-2.0125.
+# Not drawn: the non-electrical pin-1 mark (0.075 x 0.300) beside pin 1.
+schema_version: "0.2"
+kind: package
+id: manufacturers/bosch/LGA16-3.0x4.5-P0.5-BMI088
+family: lga
+lead_count: 16
+
+lead_layout:
+  value: [7, 1, 7, 1]
+  src:   'p52 "Figure 6 top view: 1-7 one long edge, 8 short edge, 9-15, 16 (clockwise)"'
+
+source: bosch/BST-BMI088-DS000-19
+
+pitch: { typ: 0.5 mm, src: 'p54 "Figure 10 bottom view, 0.50 boxed"' }
+
+pad_order:
+  value: ["15", "14", "13", "12", "11", "10", "9", "8", "7", "6", "5", "4", "3", "2", "1", "16"]
+  src:   p55 "Figure 11 top view, numbers in CCW position order from the left edge top"
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:  { typ: 3 mm, src: 'p54 "Figure 10 top view, 3.00 boxed"' }
+  body_length: { typ: 4.5 mm, src: 'p54 "Figure 10 top view, 4.50 boxed"' }
+  body_height:
+    min: 0.79 mm
+    typ: 0.82 mm
+    max: 0.85 mm
+    src: p54 "Figure 10 side view, 0.82+-0.030"
+  lead_inset:
+    min: 0.05 mm
+    typ: 0.1 mm
+    max: 0.15 mm
+    src: p54 "Figure 10 bottom view, 0.10+-0.05"
+  overall_height:
+    min: 0.9 mm
+    typ: 0.95 mm
+    max: 1 mm
+    src: p54 "Figure 10 side view, 0.95+-0.050"
+  lead_width:  { typ: 0.25 mm, src: 'p54 "Figure 10 bottom view, terminal 0.250"' }
+  lead_length: { typ: 0.475 mm, src: 'p54 "Figure 10 bottom view, terminal 0.475"' }
+
+pads:
+  value:
+    - { number: "1", x: 1.2625, y: 1.5, width: 0.675, length: 0.25 }
+    - { number: "2", x: 1.2625, y: 1, width: 0.675, length: 0.25 }
+    - { number: "3", x: 1.2625, y: 0.5, width: 0.675, length: 0.25 }
+    - { number: "4", x: 1.2625, y: 0, width: 0.675, length: 0.25 }
+    - { number: "5", x: 1.2625, y: -0.5, width: 0.675, length: 0.25 }
+    - { number: "6", x: 1.2625, y: -1, width: 0.675, length: 0.25 }
+    - { number: "7", x: 1.2625, y: -1.5, width: 0.675, length: 0.25 }
+    - { number: "8", x: 0, y: -2.0125, width: 0.25, length: 0.675 }
+    - { number: "9", x: -1.2625, y: -1.5, width: 0.675, length: 0.25 }
+    - { number: "10", x: -1.2625, y: -1, width: 0.675, length: 0.25 }
+    - { number: "11", x: -1.2625, y: -0.5, width: 0.675, length: 0.25 }
+    - { number: "12", x: -1.2625, y: 0, width: 0.675, length: 0.25 }
+    - { number: "13", x: -1.2625, y: 0.5, width: 0.675, length: 0.25 }
+    - { number: "14", x: -1.2625, y: 1, width: 0.675, length: 0.25 }
+    - { number: "15", x: -1.2625, y: 1.5, width: 0.675, length: 0.25 }
+    - { number: "16", x: 0, y: 2.0125, width: 0.25, length: 0.675 }
+  src: 'p55 "Figure 11: 0.675x0.25 lands, x = +-(0.925 + 0.3375), y pitch 0.5; 8/16 y = +-(1.675 + 0.3375)"'

@@ -1,0 +1,22 @@
+# MPN "PCA9306DP" (NXP type number) confirmed in Table 1 Ordering information of
+# nxp/PCA9306@rev9.5 (page 3). Device nxp/PCA9306, package manufacturers/nxp/SOT505-1.
+# PCA9306DP1 (SOT505-2, a different TSSOP8 outline) is not covered.
+# lifecycle: not stated in the data sheet; recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCA9306DP
+manufacturer: nxp
+mpn: PCA9306DP
+device: nxp/PCA9306
+
+package:
+  value: manufacturers/nxp/SOT505-1
+  src:
+    - p3 "Table 1 Ordering information, row PCA9306DP, SOT505-1"
+    - p15 "Figure 13 Package outline SOT505-1 (TSSOP8)"
+
+sources: [nxp/PCA9306@rev9.5]
+source: nxp/PCA9306@rev9.5
+
+existence: { status: verified, src: 'p3 "Table 1 Ordering information, type number PCA9306DP"' }
+lifecycle: { status: unknown }

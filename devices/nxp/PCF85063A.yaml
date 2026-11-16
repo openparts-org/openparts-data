@@ -1,0 +1,23 @@
+# PCF85063A tiny real-time clock/calendar, 8-pin numbering of PCF85063AT
+# (SO8) and PCF85063ATT (TSSOP8): Table 3 "Pin description" (page 4),
+# columns PCF85063AT and PCF85063ATT (identical). OSCI/OSCO (oscillator
+# input/output) typed clock as for nxp/PCF8563; other types from the
+# table's Type column. The DFN2626-10 numbering is not covered.
+schema_version: "0.2"
+kind: device
+id: nxp/PCF85063A
+manufacturer: nxp
+category: rtc
+family: PCF85063A
+source: nxp/PCF85063A@rev7.3
+
+pins:
+  src: p4 "Table 3 Pin description, columns PCF85063AT, PCF85063ATT"
+  "1": { name: OSCI, type: clock }
+  "2": { name: OSCO, type: clock }
+  "3": { name: INT, type: output }
+  "4": { name: VSS, type: ground }
+  "5": { name: SDA, type: io }
+  "6": { name: SCL, type: input }
+  "7": { name: CLKOUT, type: output }
+  "8": { name: VDD, type: power }

@@ -1,0 +1,21 @@
+# MPN "PCA9536DP" (NXP type number) confirmed in Table 1 Ordering information of
+# nxp/PCA9536@rev6 (page 2). Device nxp/PCA9536, package manufacturers/nxp/SOT505-1.
+# lifecycle: not stated in the data sheet; recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCA9536DP
+manufacturer: nxp
+mpn: PCA9536DP
+device: nxp/PCA9536
+
+package:
+  value: manufacturers/nxp/SOT505-1
+  src:
+    - p2 "Table 1 Ordering information, row PCA9536DP, SOT505-1"
+    - p16 "Fig 17 Package outline SOT505-1 (TSSOP8)"
+
+sources: [nxp/PCA9536@rev6]
+source: nxp/PCA9536@rev6
+
+existence: { status: verified, src: 'p2 "Table 1 Ordering information, type number PCA9536DP"' }
+lifecycle: { status: unknown }

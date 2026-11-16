@@ -1,0 +1,23 @@
+# PCT2075 I2C-bus Fm+ digital temperature sensor and thermal watchdog.
+# Pins from Table 3 "Pin description for SO8, TSSOP8 and HWSON8" (page
+# 5). SDA open-drain I/O (io), SCL "digital input" (input), OS
+# open-drain output. The TSOP6 numbering (Table 4) differs and is not
+# covered.
+schema_version: "0.2"
+kind: device
+id: nxp/PCT2075
+manufacturer: nxp
+category: temperature_sensor
+family: PCT2075
+source: nxp/PCT2075@rev10.1
+
+pins:
+  src: p5 "Table 3 Pin description for SO8, TSSOP8 and HWSON8"
+  "1": { name: SDA, type: io }
+  "2": { name: SCL, type: input }
+  "3": { name: OS, type: output }
+  "4": { name: GND, type: ground }
+  "5": { name: A2, type: input }
+  "6": { name: A1, type: input }
+  "7": { name: A0, type: input }
+  "8": { name: VCC, type: power }

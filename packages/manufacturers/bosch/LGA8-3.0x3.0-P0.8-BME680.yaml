@@ -1,0 +1,79 @@
+# Bosch Sensortec 8-pin metal-lid LGA 3.0 x 3.0 x 0.93 mm (BME680). Read
+# from Picture 13 "Package dimensions" (section 7.3, page 46) and Picture
+# 14 "Recommended landing pattern (top view)" (section 7.4, page 47) of
+# BST-BME680-DS001-09 (rendered). The BME688 datasheet BST-BME688-DS000-03
+# prints the same drawing and land pattern (Pictures 16/17, pages 53-54);
+# compared value by value.
+# Bottom view: terminals 0.400+-0.03 (labelled 12x on the drawing although
+# 8 terminals are drawn), pitch 0.80 (boxed), terminal rows 2.40 (boxed)
+# apart, 0.100+-0.05 from the body edge. Side view: 0.930+-0.07.
+# Frame and pad_order as for LGA8-2.5x2.5-P0.65-BME280: lead_layout
+# [4, 0, 4, 0], source numbers in the generator's CCW position order.
+# pads (landing pattern, top view): 0.40 x 0.40 lands inside 0.60 x
+# 0.60 solder-stop squares flush with the 3.00 outline -> land centres
+# 0.30 in from the edges: x = +-1.2; y = +-1.2, +-0.4 (0.60 + 0.20 gap =
+# 0.80 pitch). Pins 1-4 down the right edge, 5-8 up the left edge (8
+# top-left) -- clockwise in top view, as the datasheet says.
+schema_version: "0.2"
+kind: package
+id: manufacturers/bosch/LGA8-3.0x3.0-P0.8-BME680
+family: lga
+lead_count: 8
+
+lead_layout:
+  value: [4, 0, 4, 0]
+  src:   'p44 "Picture 11 top view: 1-4 right edge, 5-8 left edge (clockwise)"'
+
+source: bosch/BST-BME680-DS001-09
+
+pitch: { typ: 0.8 mm, src: 'p46 "Picture 13 bottom view, 0.80 boxed"' }
+
+pad_order:
+  value: ["8", "7", "6", "5", "4", "3", "2", "1"]
+  src:   p44 "Picture 11 top view, numbers in CCW position order"
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:
+    min: 2.95 mm
+    typ: 3 mm
+    max: 3.05 mm
+    src: p46 "Picture 13 top view, 3.00+-0.05"
+  body_length:
+    min: 2.95 mm
+    typ: 3 mm
+    max: 3.05 mm
+    src: p46 "Picture 13 top view, 3.00+-0.05"
+  body_height:
+    min: 0.86 mm
+    typ: 0.93 mm
+    max: 1 mm
+    src: p46 "Picture 13 side view, 0.930+-0.07"
+  lead_inset:
+    min: 0.05 mm
+    typ: 0.1 mm
+    max: 0.15 mm
+    src: p46 "Picture 13 bottom view, 0.100+-0.05"
+  lead_width:
+    min: 0.37 mm
+    typ: 0.4 mm
+    max: 0.43 mm
+    src: p46 "Picture 13 bottom view, terminal 0.400+-0.03"
+  lead_length:
+    min: 0.37 mm
+    typ: 0.4 mm
+    max: 0.43 mm
+    src: p46 "Picture 13 bottom view, terminal 0.400+-0.03"
+
+pads:
+  value:
+    - { number: "1", x: 1.2, y: 1.2, width: 0.4, length: 0.4 }
+    - { number: "2", x: 1.2, y: 0.4, width: 0.4, length: 0.4 }
+    - { number: "3", x: 1.2, y: -0.4, width: 0.4, length: 0.4 }
+    - { number: "4", x: 1.2, y: -1.2, width: 0.4, length: 0.4 }
+    - { number: "5", x: -1.2, y: -1.2, width: 0.4, length: 0.4 }
+    - { number: "6", x: -1.2, y: -0.4, width: 0.4, length: 0.4 }
+    - { number: "7", x: -1.2, y: 0.4, width: 0.4, length: 0.4 }
+    - { number: "8", x: -1.2, y: 1.2, width: 0.4, length: 0.4 }
+  src: 'p47 "Picture 14: lands 0.40 in 0.60 stop, x = +-(1.5 - 0.3), y = +-0.4, +-1.2"'

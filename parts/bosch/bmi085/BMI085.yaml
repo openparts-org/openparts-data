@@ -1,0 +1,26 @@
+# BMI085: Bosch Sensortec's product name, used by distributors as the MPN.
+# existence: probable -- the title page names the product with technical
+# reference code 0 273 141 366; "BMI085" is not printed as an orderable
+# part number.
+# lifecycle: unknown (no first-party status statement found).
+# Package: the BMI088 package; Figure 10 (page 43) of this datasheet
+# prints the same outline values (no land pattern is given here).
+schema_version: "0.2"
+kind: part
+id: bosch/BMI085
+manufacturer: bosch
+mpn: BMI085
+device: bosch/BMI085
+
+package:
+  value: manufacturers/bosch/LGA16-3.0x4.5-P0.5-BMI088
+  src: p43 "Figure 10 Package dimensions (same values as BMI088 Figure 10)"
+
+sources: [bosch/BST-BMI085-DS000-16]
+source: bosch/BST-BMI085-DS000-16
+
+existence:
+  status: probable
+  src: 'p1 "title page: product BMI085, technical reference code 0 273 141 366"'
+
+lifecycle: { status: unknown }

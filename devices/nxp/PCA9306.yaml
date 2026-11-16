@@ -1,0 +1,23 @@
+# PCA9306 dual bidirectional I2C-bus and SMBus voltage-level translator.
+# Pins from Table 3 "Pin description" (page 5; one column for SO8,
+# TSSOP8, VSSOP8, XQFN8, XSON8, X2SON8), cross-checked against Figures 3
+# and 5 (page 4). VREF1/VREF2 (reference supply voltages) typed power;
+# SCLn/SDAn are bidirectional pass-through lines, typed io.
+schema_version: "0.2"
+kind: device
+id: nxp/PCA9306
+manufacturer: nxp
+category: level_shifter
+family: PCA9306
+source: nxp/PCA9306@rev9.5
+
+pins:
+  src: p5 "Table 3 Pin description; Fig 3, Fig 5 (p4)"
+  "1": { name: GND, type: ground }
+  "2": { name: VREF1, type: power }
+  "3": { name: SCL1, type: io }
+  "4": { name: SDA1, type: io }
+  "5": { name: SDA2, type: io }
+  "6": { name: SCL2, type: io }
+  "7": { name: VREF2, type: power }
+  "8": { name: EN, type: input }

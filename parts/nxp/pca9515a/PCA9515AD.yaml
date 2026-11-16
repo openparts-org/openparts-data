@@ -1,0 +1,24 @@
+# MPN "PCA9515AD" (NXP type number) confirmed in Table 1 Ordering information of
+# nxp/PCA9515A@rev5 (page 2). Device nxp/PCA9515A, package manufacturers/nxp/SOT96-1.
+# SOT96-1 reused: this data sheet's outline (Fig 10 Package outline SOT96-1 (SO8), page
+# 11) was compared row by row with the existing package; the
+# mm values and the issue date match.
+# lifecycle: not stated in the data sheet; recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCA9515AD
+manufacturer: nxp
+mpn: PCA9515AD
+device: nxp/PCA9515A
+
+package:
+  value: manufacturers/nxp/SOT96-1
+  src:
+    - p2 "Table 1 Ordering information, row PCA9515AD, SOT96-1"
+    - p11 "Fig 10 Package outline SOT96-1 (SO8)"
+
+sources: [nxp/PCA9515A@rev5]
+source: nxp/PCA9515A@rev5
+
+existence: { status: verified, src: 'p2 "Table 1 Ordering information, type number PCA9515AD"' }
+lifecycle: { status: unknown }

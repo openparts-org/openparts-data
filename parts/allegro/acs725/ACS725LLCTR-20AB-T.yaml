@@ -1,0 +1,20 @@
+# ACS725LLCTR-20AB-T: printed in the SELECTION GUIDE of allegro/ACS725-DS-rev21 (page
+# 3; tape and reel, 3000 pieces/reel) -> existence verified.
+# Package LC (page 19). Lifecycle unknown: the datasheet states no
+# production status.
+schema_version: "0.2"
+kind: part
+id: allegro/ACS725LLCTR-20AB-T
+manufacturer: allegro
+mpn: ACS725LLCTR-20AB-T
+device: allegro/ACS725
+
+package:
+  value: manufacturers/allegro/LC-SOIC8-ACS724
+  src: ['p3 "SELECTION GUIDE, ACS725LLCTR-20AB-T"', 'p19 "Package LC, 8-pin SOICN"']
+
+sources: [allegro/ACS725-DS-rev21]
+source: allegro/ACS725-DS-rev21
+
+existence: { status: verified, src: 'p3 "SELECTION GUIDE, Part Number ACS725LLCTR-20AB-T"' }
+lifecycle: { status: unknown }

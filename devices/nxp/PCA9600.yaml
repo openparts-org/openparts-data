@@ -1,0 +1,23 @@
+# PCA9600 dual bidirectional I2C-bus buffer. Pins from Table 3 "Pin
+# description" (page 4), cross-checked against Figures 2 and 3 (same
+# page). SX/SY (I2C-bus SDA or SCL) io; TX/TY "transmit signal" typed
+# output and RX/RY "receive signal" typed input (judgement from the
+# description; the table has no type column).
+schema_version: "0.2"
+kind: device
+id: nxp/PCA9600
+manufacturer: nxp
+category: interface
+family: PCA9600
+source: nxp/PCA9600@rev6.2
+
+pins:
+  src: p4 "Table 3 Pin description; Figure 2, Figure 3"
+  "1": { name: SX, type: io }
+  "2": { name: RX, type: input }
+  "3": { name: TX, type: output }
+  "4": { name: GND, type: ground }
+  "5": { name: TY, type: output }
+  "6": { name: RY, type: input }
+  "7": { name: SY, type: io }
+  "8": { name: VCC, type: power }

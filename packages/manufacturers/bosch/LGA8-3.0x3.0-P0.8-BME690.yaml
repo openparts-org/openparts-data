@@ -1,0 +1,64 @@
+# Bosch Sensortec 8-pin LGA 3.0 x 3.0 x 0.95 mm (BME690). Read from
+# Picture 16 "Package dimensions" (section 7.3, page 53) and Picture 17
+# "Recommended landing pattern" (section 7.4, page 54) of
+# BST-BME690-DS001-04 (rendered). The outline differs from the BME680
+# drawing (height 0.95+-0.05, terminals 0.40x0.40+-0.05), so it is a
+# separate package; the land pattern is the same.
+# Body 3.00 x 3.00 boxed (basic; no tolerance printed, so typ only).
+# lead_inset not recorded: the bottom view's "(0.05)" references could not
+# be tied to the terminal edge with certainty.
+# pads (landing pattern, top view): 0.40 x 0.40 lands inside 0.60 x
+# 0.60 solder-stop squares flush with the 3.00 outline -> land centres
+# 0.30 in from the edges: x = +-1.2; y = +-1.2, +-0.4 (0.60 + 0.20 gap =
+# 0.80 pitch). Pins 1-4 down the right edge, 5-8 up the left edge (8
+# top-left) -- clockwise in top view, as the datasheet says.
+schema_version: "0.2"
+kind: package
+id: manufacturers/bosch/LGA8-3.0x3.0-P0.8-BME690
+family: lga
+lead_count: 8
+
+lead_layout:
+  value: [4, 0, 4, 0]
+  src:   'p53 "Picture 15 top view: 1-4 right edge, 5-8 left edge (clockwise)"'
+
+source: bosch/BST-BME690-DS001-04
+
+pitch: { typ: 0.8 mm, src: 'p53 "Picture 16 bottom view, 0.80 boxed"' }
+
+pad_order:
+  value: ["8", "7", "6", "5", "4", "3", "2", "1"]
+  src:   p53 "Picture 15 top view, numbers in CCW position order"
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:  { typ: 3 mm, src: 'p53 "Picture 16 top view, 3.00 boxed"' }
+  body_length: { typ: 3 mm, src: 'p53 "Picture 16 top view, 3.00 boxed"' }
+  body_height:
+    min: 0.9 mm
+    typ: 0.95 mm
+    max: 1 mm
+    src: p53 "Picture 16 side view, 0.95+-0.05"
+  lead_length:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.45 mm
+    src: p53 "Picture 16 bottom view, 0.40X0.40+-0.05 (8X)"
+  lead_width:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.45 mm
+    src: p53 "Picture 16 bottom view, 0.40X0.40+-0.05 (8X)"
+
+pads:
+  value:
+    - { number: "1", x: 1.2, y: 1.2, width: 0.4, length: 0.4 }
+    - { number: "2", x: 1.2, y: 0.4, width: 0.4, length: 0.4 }
+    - { number: "3", x: 1.2, y: -0.4, width: 0.4, length: 0.4 }
+    - { number: "4", x: 1.2, y: -1.2, width: 0.4, length: 0.4 }
+    - { number: "5", x: -1.2, y: -1.2, width: 0.4, length: 0.4 }
+    - { number: "6", x: -1.2, y: -0.4, width: 0.4, length: 0.4 }
+    - { number: "7", x: -1.2, y: 0.4, width: 0.4, length: 0.4 }
+    - { number: "8", x: -1.2, y: 1.2, width: 0.4, length: 0.4 }
+  src: 'p54 "Picture 17: lands 0.40 in 0.60 stop, x = +-(1.5 - 0.3), y = +-0.4, +-1.2"'

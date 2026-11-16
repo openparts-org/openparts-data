@@ -1,0 +1,24 @@
+# MPN "PCT2075D" (NXP type number) confirmed in Table 1 Ordering information of
+# nxp/PCT2075@rev10.1 (page 2). Device nxp/PCT2075, package manufacturers/nxp/SOT96-1.
+# SOT96-1 reused: this data sheet's outline (Figure 28 Package outline SOT96-1 (SO8), page
+# 24) was compared row by row with the existing package; the
+# mm values and the issue date match.
+# lifecycle: not stated in the data sheet; recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCT2075D
+manufacturer: nxp
+mpn: PCT2075D
+device: nxp/PCT2075
+
+package:
+  value: manufacturers/nxp/SOT96-1
+  src:
+    - p2 "Table 1 Ordering information, row PCT2075D, SOT96-1"
+    - p24 "Figure 28 Package outline SOT96-1 (SO8)"
+
+sources: [nxp/PCT2075@rev10.1]
+source: nxp/PCT2075@rev10.1
+
+existence: { status: verified, src: 'p2 "Table 1 Ordering information, type number PCT2075D"' }
+lifecycle: { status: unknown }

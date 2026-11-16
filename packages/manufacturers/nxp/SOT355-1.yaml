@@ -1,0 +1,56 @@
+# NXP SOT355-1, TSSOP24 ("plastic thin shrink small outline package; 24
+# leads; body width 4.4 mm", JEDEC MO-153). Values from Fig 27 "Package
+# outline SOT355-1 (TSSOP24)" of the PCA9555 data sheet Rev. 10, page 24
+# (mm row, text extracted; issue date 03-02-19). The PCA9548A data sheet
+# Rev. 5.1 prints the same outline (Fig 19, page 19, rendered): identical
+# mm values and issue date.
+# body_width = E, body_length = D, overall_width = HE, body_height = A2,
+# overall_height = A (max only), standoff = A1, lead_width = bp,
+# lead_thickness = c, lead_length = Lp (L is the reference lead length,
+# not modelled). Only min/max are printed for most rows, so no typ is
+# recorded. A3, Q, v, w, y, Z and the foot angle are not modelled. No land
+# pattern is recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/nxp/SOT355-1
+family: tssop
+lead_count: 24
+source: nxp/PCA9555@rev10
+
+pitch: { typ: 0.65 mm, src: 'p24 "Fig 27 SOT355-1 DIMENSIONS (mm), e 0.65"' }
+geometry: { type: parametric, generator: tssop }
+
+dimensions:
+  body_width:
+    min: 4.3 mm
+    max: 4.5 mm
+    src: p24 "Fig 27 SOT355-1 DIMENSIONS (mm), E 4.5 / 4.3"
+  body_length:
+    min: 7.7 mm
+    max: 7.9 mm
+    src: p24 "Fig 27 SOT355-1 DIMENSIONS (mm), D 7.9 / 7.7"
+  body_height:
+    min: 0.8 mm
+    max: 0.95 mm
+    src: p24 "Fig 27 SOT355-1 DIMENSIONS (mm), A2 0.95 / 0.80"
+  lead_thickness:
+    min: 0.1 mm
+    max: 0.2 mm
+    src: p24 "Fig 27 SOT355-1 DIMENSIONS (mm), c 0.2 / 0.1"
+  overall_width:
+    min: 6.2 mm
+    max: 6.6 mm
+    src: p24 "Fig 27 SOT355-1 DIMENSIONS (mm), HE 6.6 / 6.2"
+  overall_height: { max: 1.1 mm, src: 'p24 "Fig 27 SOT355-1 DIMENSIONS (mm), A max. 1.1"' }
+  standoff:
+    min: 0.05 mm
+    max: 0.15 mm
+    src: p24 "Fig 27 SOT355-1 DIMENSIONS (mm), A1 0.15 / 0.05"
+  lead_width:
+    min: 0.19 mm
+    max: 0.3 mm
+    src: p24 "Fig 27 SOT355-1 DIMENSIONS (mm), bp 0.30 / 0.19"
+  lead_length:
+    min: 0.5 mm
+    max: 0.75 mm
+    src: p24 "Fig 27 SOT355-1 DIMENSIONS (mm), Lp 0.75 / 0.50"

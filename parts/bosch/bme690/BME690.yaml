@@ -1,0 +1,24 @@
+# BME690: Bosch Sensortec's product name, used by distributors as the MPN.
+# existence: probable -- the title page names the product with sales part
+# number 0 273 017 048; "BME690" is not printed as an orderable part
+# number.
+# lifecycle: unknown (no first-party status statement found).
+schema_version: "0.2"
+kind: part
+id: bosch/BME690
+manufacturer: bosch
+mpn: BME690
+device: bosch/BME690
+
+package:
+  value: manufacturers/bosch/LGA8-3.0x3.0-P0.8-BME690
+  src: p53 "Picture 16 Package dimensions"
+
+sources: [bosch/BST-BME690-DS001-04]
+source: bosch/BST-BME690-DS001-04
+
+existence:
+  status: probable
+  src: 'p1 "title page: product BME690, sales part number 0 273 017 048"'
+
+lifecycle: { status: unknown }

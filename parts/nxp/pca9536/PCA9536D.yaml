@@ -1,0 +1,24 @@
+# MPN "PCA9536D" (NXP type number) confirmed in Table 1 Ordering information of
+# nxp/PCA9536@rev6 (page 2). Device nxp/PCA9536, package manufacturers/nxp/SOT96-1.
+# SOT96-1 reused: this data sheet's outline (Fig 16 Package outline SOT96-1 (SO8), page
+# 15) was compared row by row with the existing package; the
+# mm values and the issue date match.
+# lifecycle: not stated in the data sheet; recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCA9536D
+manufacturer: nxp
+mpn: PCA9536D
+device: nxp/PCA9536
+
+package:
+  value: manufacturers/nxp/SOT96-1
+  src:
+    - p2 "Table 1 Ordering information, row PCA9536D, SOT96-1"
+    - p15 "Fig 16 Package outline SOT96-1 (SO8)"
+
+sources: [nxp/PCA9536@rev6]
+source: nxp/PCA9536@rev6
+
+existence: { status: verified, src: 'p2 "Table 1 Ordering information, type number PCA9536D"' }
+lifecycle: { status: unknown }

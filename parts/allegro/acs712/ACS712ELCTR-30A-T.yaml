@@ -1,0 +1,20 @@
+# ACS712ELCTR-30A-T: printed in the SELECTION GUIDE of allegro/ACS712-DS-rev22 (page
+# 2; tape and reel, 3000 pieces/reel) -> existence verified.
+# Package LC (page 15). Lifecycle unknown: the datasheet states no
+# production status.
+schema_version: "0.2"
+kind: part
+id: allegro/ACS712ELCTR-30A-T
+manufacturer: allegro
+mpn: ACS712ELCTR-30A-T
+device: allegro/ACS712
+
+package:
+  value: manufacturers/allegro/LC-SOIC8-DWG-0000385
+  src: ['p2 "SELECTION GUIDE, ACS712ELCTR-30A-T"', 'p15 "Package LC, 8-pin SOIC"']
+
+sources: [allegro/ACS712-DS-rev22]
+source: allegro/ACS712-DS-rev22
+
+existence: { status: verified, src: 'p2 "SELECTION GUIDE, Part Number ACS712ELCTR-30A-T"' }
+lifecycle: { status: unknown }

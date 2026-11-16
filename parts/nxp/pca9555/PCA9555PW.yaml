@@ -1,0 +1,21 @@
+# MPN "PCA9555PW" (NXP type number) confirmed in Table 1 Ordering information of
+# nxp/PCA9555@rev10 (page 2). Device nxp/PCA9555, package manufacturers/nxp/SOT355-1.
+# lifecycle: not stated in the data sheet; recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCA9555PW
+manufacturer: nxp
+mpn: PCA9555PW
+device: nxp/PCA9555
+
+package:
+  value: manufacturers/nxp/SOT355-1
+  src:
+    - p2 "Table 1 Ordering information, row PCA9555PW, SOT355-1"
+    - p24 "Fig 27 Package outline SOT355-1 (TSSOP24)"
+
+sources: [nxp/PCA9555@rev10]
+source: nxp/PCA9555@rev10
+
+existence: { status: verified, src: 'p2 "Table 1 Ordering information, type number PCA9555PW"' }
+lifecycle: { status: unknown }

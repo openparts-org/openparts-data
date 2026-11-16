@@ -1,0 +1,21 @@
+# MPN "PCA9685PW" (NXP type number) confirmed in Table 1 Ordering information of
+# nxp/PCA9685@rev4 (page 4). Device nxp/PCA9685, package manufacturers/nxp/SOT361-1.
+# lifecycle: not stated in the data sheet; recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCA9685PW
+manufacturer: nxp
+mpn: PCA9685PW
+device: nxp/PCA9685
+
+package:
+  value: manufacturers/nxp/SOT361-1
+  src:
+    - p4 "Table 1 Ordering information, row PCA9685PW, SOT361-1"
+    - p44 "Fig 36 Package outline SOT361-1 (TSSOP28)"
+
+sources: [nxp/PCA9685@rev4]
+source: nxp/PCA9685@rev4
+
+existence: { status: verified, src: 'p4 "Table 1 Ordering information, type number PCA9685PW"' }
+lifecycle: { status: unknown }

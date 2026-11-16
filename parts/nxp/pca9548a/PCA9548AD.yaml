@@ -1,0 +1,21 @@
+# MPN "PCA9548AD" (NXP type number) confirmed in Table 1 Ordering information of
+# nxp/PCA9548A@rev5.1 (page 2). Device nxp/PCA9548A, package manufacturers/nxp/SOT137-1.
+# lifecycle: not stated in the data sheet; recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCA9548AD
+manufacturer: nxp
+mpn: PCA9548AD
+device: nxp/PCA9548A
+
+package:
+  value: manufacturers/nxp/SOT137-1
+  src:
+    - p2 "Table 1 Ordering information, row PCA9548AD, SOT137-1"
+    - p18 "Fig 18 Package outline SOT137-1 (SO24)"
+
+sources: [nxp/PCA9548A@rev5.1]
+source: nxp/PCA9548A@rev5.1
+
+existence: { status: verified, src: 'p2 "Table 1 Ordering information, type number PCA9548AD"' }
+lifecycle: { status: unknown }
