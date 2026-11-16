@@ -48,12 +48,12 @@ parameters:
     max: 500 mcd
     at: { VDD: 5 V, IF: 16 mA, TA: 25 °C }
     src: p4 "LED Characteristics, Brightness IV, Blue"
+  data_interface: { value: single_wire, src: 'p1 "General description: Single-wire RZ protocol"' }
   supply_voltage:
     min: 3.3 V
     max: 5.3 V
     at: { TA: 25 °C }
     src: p3 "Absolute Maximum Ratings, Power supply voltage VDD"
-  data_interface: { value: single_wire, src: 'p1 "General description: Single-wire RZ protocol"' }
   data_rate: { typ: 800 kbps, src: 'p1 "Features: Send data at speeds of 800Kbps"' }
 
 pins:
