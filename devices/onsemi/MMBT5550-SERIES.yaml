@@ -1,0 +1,16 @@
+# NPN high-voltage transistors MMBT5550L/MMBT5551L, SOT-23 (CASE 318 STYLE 6).
+# Pins from the page-1 symbol (1 BASE, 2 EMITTER, 3 COLLECTOR) and STYLE 6.
+# Voltage ratings differ per type and are carried by the Parts.
+schema_version: "0.2"
+kind: device
+id: onsemi/MMBT5550-SERIES
+manufacturer: onsemi
+category: transistor
+family: MMBT5550
+source: onsemi/MMBT5550LT1-D
+
+pins:
+  src: 'p1 "Symbol: 1 BASE, 2 EMITTER, 3 COLLECTOR; CASE 318 STYLE 6"'
+  "1": { name: Base, type: passive }
+  "2": { name: Emitter, type: passive }
+  "3": { name: Collector, type: passive }

@@ -1,0 +1,13 @@
+# onsemi datasheet FDV302P, "March, 2022 - Rev. 2", 7 pages, downloaded
+# with curl on 2026-11-16 (`file`: PDF). Read with pdftotext -layout and a
+# page-1 render (pdftoppm) for the package-shaped G/S/D symbol.
+schema_version: "0.2"
+kind: source
+id: onsemi/FDV302P-D
+retrieved: 2026-11-16
+url: https://www.onsemi.com/download/data-sheet/pdf/fdv302p-d.pdf
+date: 2022-03
+publisher: onsemi
+document_id: FDV302P/D
+document_type: datasheet
+revision: "2"

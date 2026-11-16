@@ -1,0 +1,26 @@
+# Switching diode, SOT-23 (CASE 318 STYLE 8). Pins from the page-1 symbol
+# (3 CATHODE, 1 ANODE) and STYLE 8 (1 ANODE, 2 NO CONNECTION, 3 CATHODE).
+schema_version: "0.2"
+kind: device
+id: onsemi/BAS16L
+manufacturer: onsemi
+category: diode
+family: BAS16
+source: onsemi/BAS16LT1-D
+
+parameters:
+  forward_voltage:
+    - { max: 715 mV, at: { IF: 1 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS, VF"' }
+    - { max: 855 mV, at: { IF: 10 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS, VF"' }
+    - { max: 1000 mV, at: { IF: 50 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS, VF"' }
+    - { max: 1250 mV, at: { IF: 150 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS, VF"' }
+  reverse_voltage: { max: 100 V, src: 'p1 "MAXIMUM RATINGS, VR"' }
+  forward_current: { max: 200 mA, src: 'p1 "MAXIMUM RATINGS, IF (Peak Forward Current)"' }
+
+pins:
+  src:
+    - 'p1 "Symbol: 3 CATHODE, 1 ANODE; CASE 318 STYLE 8"'
+    - 'p7 "CASE 318 STYLE 8: 1 ANODE, 2 NO CONNECTION, 3 CATHODE"'
+  "1": { name: Anode, type: passive }
+  "2": { name: NC, type: nc }
+  "3": { name: Cathode, type: passive }

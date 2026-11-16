@@ -1,0 +1,19 @@
+# NPN power transistor MJD31C (100 V), DPAK (CASE 369C STYLE 1). Pins
+# from STYLE 1 of the outline (1 BASE, 2 COLLECTOR, 3 EMITTER, 4 COLLECTOR)
+# and the page-1 symbol: the tab "4" is the collector, tied to lead 2.
+schema_version: "0.2"
+kind: device
+id: onsemi/MJD31C
+manufacturer: onsemi
+category: transistor
+family: MJD31
+source: onsemi/MJD31-D
+
+pins:
+  src:
+    - p1 "Pinout symbol, DPAK CASE 369C STYLE 1"
+    - 'p11 "CASE 369C STYLE 1: 1 BASE, 2 COLLECTOR, 3 EMITTER, 4 COLLECTOR"'
+  "1": { name: Base, type: passive }
+  "2": { name: Collector, type: passive }
+  "3": { name: Emitter, type: passive }
+  "4": { name: Collector, type: passive, connected_to: "2" }

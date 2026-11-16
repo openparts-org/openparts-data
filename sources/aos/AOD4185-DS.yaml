@@ -1,0 +1,14 @@
+# Official AOS datasheet "AOD4185/AOI4185 40V P-Channel MOSFET", footer "Rev 4.2", downloaded with
+# curl on 2026-11-16 (`file`: PDF). Read via pdftotext -layout and a page-1
+# render (pdftoppm) for the package pin images. No package outline in
+# this document.
+schema_version: "0.2"
+kind: source
+id: aos/AOD4185-DS
+retrieved: 2026-11-16
+url: https://www.aosmd.com/res/datasheets/AOD4185.pdf
+date: 2024-06
+publisher: aos
+document_id: AOD4185
+document_type: datasheet
+revision: "4.2"

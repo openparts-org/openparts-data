@@ -1,0 +1,25 @@
+# AOD240 40V n-channel MOSFET, TO252 (DPAK). The datasheet prints no pin
+# numbers: its page-1 "TO252 DPAK" Top View image labels the leads G and S
+# with the tab D (Bottom View: tab D), and the centre lead (D) is the short
+# stub. Numbers come from AOS's TO252 outline PO-00009, whose top view
+# numbers the leads 1 2 3 left to right (2 = trimmed centre stub) and whose
+# bottom view numbers the tab "4". Mapping the datasheet's Top View leads
+# onto that (leads pointing down: G left, S right) gives 1 = Gate,
+# 3 = Source, 4 = Drain (tab) -- position-derived, as aos/AOD403 and
+# aos/AOD4184A, flagged for review. Lead 2 (Drain, trimmed, no pad) is left
+# out.
+schema_version: "0.2"
+kind: device
+id: aos/AOD240
+manufacturer: aos
+category: transistor
+family: AOD240
+source: aos/AOD240-DS
+
+pins:
+  src:
+    - 'p1 ""TO252 DPAK" Top View / Bottom View images: leads G and S, tab D; no pin numbers printed -- see header"'
+    - aos/PO-00009 p1 "TO252 outline top view leads 1 2 3 (2 = stub), bottom view tab "4""
+  "1": { name: Gate, type: passive }
+  "3": { name: Source, type: passive }
+  "4": { name: Drain, type: passive }

@@ -1,0 +1,25 @@
+# Schottky barrier diode, 40 V, SOT-23 (CASE 318 STYLE 8). Pins from the page-1
+# symbol (3 CATHODE, 1 ANODE) and STYLE 8 (1 ANODE, 2 NO CONNECTION, 3 CATHODE).
+schema_version: "0.2"
+kind: device
+id: onsemi/BAS40L
+manufacturer: onsemi
+category: diode
+family: BAS40
+source: onsemi/BAS40LT1-D
+
+parameters:
+  forward_voltage:
+    - { max: 380 mV, at: { IF: 1 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS, VF"' }
+    - { max: 500 mV, at: { IF: 10 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS, VF"' }
+    - { max: 1 V, at: { IF: 40 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS, VF"' }
+  reverse_voltage: { max: 40 V, src: 'p1 "MAXIMUM RATINGS, VR"' }
+  forward_current: { max: 120 mA, src: 'p1 "MAXIMUM RATINGS, IF Forward Continuous Current"' }
+
+pins:
+  src:
+    - 'p1 "Symbol: 3 CATHODE, 1 ANODE; CASE 318 STYLE 8"'
+    - 'p6 "CASE 318 STYLE 8: 1 ANODE, 2 NO CONNECTION, 3 CATHODE"'
+  "1": { name: Anode, type: passive }
+  "2": { name: NC, type: nc }
+  "3": { name: Cathode, type: passive }

@@ -1,0 +1,20 @@
+# PNP power transistor, DPAK (CASE 369C STYLE 1). Pins from the page-1
+# symbol (COLLECTOR 2, 4; BASE 1; EMITTER 3) and STYLE 1 of the outline:
+# the tab "4" is the collector, tied to lead 2 (trimmed at the body in
+# the DPAK).
+schema_version: "0.2"
+kind: device
+id: onsemi/MJD45H11
+manufacturer: onsemi
+category: transistor
+family: MJD44H11
+source: onsemi/MJD44H11-D
+
+pins:
+  src:
+    - 'p1 "Pinout symbol: COLLECTOR 2, 4; 1 BASE; 3 EMITTER; DPAK CASE 369C STYLE 1"'
+    - 'p10 "CASE 369C STYLE 1: 1 BASE, 2 COLLECTOR, 3 EMITTER, 4 COLLECTOR"'
+  "1": { name: Base, type: passive }
+  "2": { name: Collector, type: passive }
+  "3": { name: Emitter, type: passive }
+  "4": { name: Collector, type: passive, connected_to: "2" }

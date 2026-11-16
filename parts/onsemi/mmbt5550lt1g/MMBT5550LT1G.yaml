@@ -1,0 +1,27 @@
+# MMBT5550LT1G: listed in the page-6 ORDERING INFORMATION table. No
+# lifecycle statement.
+# Package: the datasheet's SOT-23 CASE 318 ISSUE AU outline (98ASB42226B,
+# DATE 14 AUG 2024, page 8) renders pixel-identical (100 dpi crop of the
+# drawing and table, same md5) to the page standards/SOT23-2.90x1.30-P1.90
+# was read from (2N7002E/D Rev. 8 page 6). Reused; the package cites
+# onsemi/2N7002E-D.
+schema_version: "0.2"
+kind: part
+id: onsemi/MMBT5550LT1G
+manufacturer: onsemi
+mpn: MMBT5550LT1G
+device: onsemi/MMBT5550-SERIES
+package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/MMBT5550LT1-D]
+source: onsemi/MMBT5550LT1-D
+
+existence:
+  status: verified
+  src: p6 "ORDERING INFORMATION, MMBT5550LT1G, SOT-23 (Pb-Free), 3000 / Tape & Reel"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:                  { value: npn, src: p1 "Title" }
+  collector_emitter_voltage: { max: 140 V, src: 'p1 "MAXIMUM RATINGS, VCEO, MMBT5550 row"' }
+  collector_current:         { max: 600 mA, src: 'p1 "MAXIMUM RATINGS, IC Continuous"' }

@@ -1,0 +1,15 @@
+# P-channel MOSFET, -20 V, SOT-23 (CASE 318 STYLE 21). Pins from the page-1
+# marking diagram / pin assignment: 1 = Gate, 2 = Source, 3 = Drain.
+schema_version: "0.2"
+kind: device
+id: onsemi/NTR1P02
+manufacturer: onsemi
+category: transistor
+family: NTR1P02
+source: onsemi/NTR1P02T1-D
+
+pins:
+  src: p1 "Marking diagram / pin assignment, CASE 318 STYLE 21 (1 Gate, 2 Source, 3 Drain)"
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

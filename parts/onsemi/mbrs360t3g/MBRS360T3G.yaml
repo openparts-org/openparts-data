@@ -1,0 +1,20 @@
+# MBRS360T3G: listed in the page-1 ORDERING INFORMATION table as
+# "SMC". No lifecycle statement. Electrical values are on the Device.
+# Package: the datasheet's SMC CASE 403AC ISSUE B (98AON97675F) outline, page 8,
+# renders pixel-identical (100 dpi crop, same md5) to MBRS340T3/D Rev. 15 page 4,
+# the page standards/DO214AB-ONSEMI-403AC was read from. Reused.
+schema_version: "0.2"
+kind: part
+id: onsemi/MBRS360T3G
+manufacturer: onsemi
+mpn: MBRS360T3G
+device: onsemi/MBRS360
+package: standards/DO214AB-ONSEMI-403AC
+sources: [onsemi/MBRS360T3-D, onsemi/MBRS340T3-D]
+source: onsemi/MBRS360T3-D
+
+existence:
+  status: verified
+  src: p1 "ORDERING INFORMATION, MBRS360T3G, SMC (Pb-Free), 2,500 / Tape & Reel"
+
+lifecycle: { status: unknown }

@@ -1,0 +1,23 @@
+# BAV99-7-F: listed verbatim in the page-1 Ordering Information table
+# (SOT23, 3000, Tape & Reel). No lifecycle statement.
+# Package: the datasheet's letter-coded SOT23 Package Outline Dimensions
+# table (page 4; A 0.37/0.51/0.40 ... M 0.085/0.150/0.110, a 0-8 deg) is
+# value-for-value identical to the DS18001 Rev. 33-2 page-4 table that
+# standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001 was read from (compared
+# as extracted text, every row). Diodes prints no drawing ID or revision
+# for it -- reused on the identical table, flagged for review.
+schema_version: "0.2"
+kind: part
+id: diodes/BAV99-7-F
+manufacturer: diodes
+mpn: BAV99-7-F
+device: diodes/BAV99
+package: standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001
+sources: [diodes/DS12007, diodes/DS18001]
+source: diodes/DS12007
+
+existence:
+  status: verified
+  src: p1 "Ordering Information, BAV99-7-F, SOT23, 3000, Tape & Reel"
+
+lifecycle: { status: unknown }

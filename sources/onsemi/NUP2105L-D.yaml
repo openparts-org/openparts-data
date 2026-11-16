@@ -1,0 +1,13 @@
+# onsemi datasheet NUP2105L, SZNUP2105L, "June, 2026 - Rev. 12", 13 pages,
+# downloaded with curl on 2026-11-16 (`file`: PDF). Read with pdftotext -layout
+# and a page-1 render for the PIN 1/2/3 symbol.
+schema_version: "0.2"
+kind: source
+id: onsemi/NUP2105L-D
+retrieved: 2026-11-16
+url: https://www.onsemi.com/download/data-sheet/pdf/nup2105l-d.pdf
+date: 2026-06
+publisher: onsemi
+document_id: NUP2105L/D
+document_type: datasheet
+revision: "12"

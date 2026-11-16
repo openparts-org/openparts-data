@@ -1,0 +1,21 @@
+# 25 V P-channel digital FET, SOT-23 ("CASE 318-08", no STYLE given).
+# Pin numbers are NOT printed: the page-1 package-shaped symbol shows G on
+# the bottom-left lead, S on the bottom-right and D on the top lead.
+# Numbered as onsemi/FDV301N (1 bottom-left, 2 bottom-right, 3 top; also the
+# CASE 318 outline's own 1/2/3 top view) -- position-derived, flagged for
+# review.
+schema_version: "0.2"
+kind: device
+id: onsemi/FDV302P
+manufacturer: onsemi
+category: transistor
+family: FDV302P
+source: onsemi/FDV302P-D
+
+pins:
+  src:
+    - 'p1 "Package-shaped symbol: G bottom-left, S bottom-right, D top; no pin numbers printed (position-derived)"'
+    - 'p5 "CASE 318 TOP VIEW: bottom-left lead "1", bottom-right "2", top "3""'
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

@@ -1,0 +1,40 @@
+# AOD409: listed in the page-1 "Orderable Part Number" table (TO-252, Tape &
+# Reel). No lifecycle recorded.
+# Package: datasheet page 1 says "TO252 DPAK"; AOS's TO252 outline is
+# PO-00009 (Version X, re-downloaded 2026-11-16) -- linked by package name
+# only, as for aos/AOD403.
+schema_version: "0.2"
+kind: part
+id: aos/AOD409
+manufacturer: aos
+mpn: AOD409
+device: aos/AOD409
+
+package:
+  value: manufacturers/aos/TO252-6.10x6.60-P2.29-PO-00009-TabPin4
+  src: aos/PO-00009 p1 ""TO252 PACKAGE OUTLINE" PO-00009 Version X (linked by the datasheet's package name "TO252")"
+
+sources: [aos/AOD409-DS, aos/PO-00009]
+source: aos/AOD409-DS
+
+existence:
+  status: verified
+  src: p1 "Orderable Part Number table, AOD409, TO-252, Tape & Reel, 2500"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: p_channel, src: p1 "Title" }
+  drain_source_voltage: { max: -60 V, src: 'p1 "Abs. Max. Ratings, VDS"' }
+  drain_current:
+    - { max: -26 A, at: { TC: 25 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
+    - { max: -18 A, at: { TC: 100 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
+  rds_on:
+    - { typ: 32 mΩ, max: 40 mΩ, at: { VGS: -10 V, ID: -20 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { typ: 43 mΩ, max: 55 mΩ, at: { VGS: -4.5 V, ID: -20 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+  gate_threshold_voltage:
+    min: -2.4 V
+    typ: -1.9 V
+    max: -1.2 V
+    at: { ID: -250 µA }
+    src: p2 "Elec. Char., VGS(th), VDS=VGS"

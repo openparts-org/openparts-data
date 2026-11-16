@@ -1,0 +1,37 @@
+# SMBJ18A-E3/52: composed from the base P/N SMBJ18A (listed on page 2)
+# with the "-E3" suffix rule and a package code printed in the ordering
+# example table. The table is titled "ORDERING INFORMATION (Example)",
+# so existence is "probable" (add-part section 2). No lifecycle
+# statement in the document.
+# Package: page-5 SMB (DO-214AA) outline, standards/DO214AA-VISHAY-88392
+# (read from this page).
+schema_version: "0.2"
+kind: part
+id: vishay/SMBJ18A-E3-52
+manufacturer: vishay
+mpn: SMBJ18A-E3/52
+device: vishay/SMBJ-A-SERIES
+
+package:
+  value: standards/DO214AA-VISHAY-88392
+  src: p5 "PACKAGE OUTLINE DIMENSIONS -- see header"
+
+sources: [vishay/88392]
+source: vishay/88392
+
+existence:
+  status: probable
+  src:
+    - 'p3 "ORDERING INFORMATION (Example): "SMBJ5.0A-E3/52 | 0.106 | 52 | 750 | 7" diameter plastic tape and reel""'
+    - p2 "ELECTRICAL CHARACTERISTICS, row SMBJ18A; p1 MECHANICAL DATA, Base P/N-E3"
+
+lifecycle: { status: unknown }
+
+parameters:
+  forward_voltage:
+    max: 3.5 V
+    at: { IF: 50 A }
+    src: p2 "ELECTRICAL CHARACTERISTICS table, note (6), VF (unidirectional)"
+  reverse_voltage:
+    max: 18 V
+    src: p2 "ELECTRICAL CHARACTERISTICS table, (+)SMBJ18A row, Stand-off voltage VWM"

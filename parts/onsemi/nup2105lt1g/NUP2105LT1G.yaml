@@ -1,0 +1,22 @@
+# NUP2105LT1G: listed in the page-9 ORDERING INFORMATION table. No lifecycle
+# statement.
+# Package: the datasheet's SOT-23 CASE 318 ISSUE AU outline (98ASB42226B,
+# DATE 14 AUG 2024, page 11) renders pixel-identical (100 dpi crop of the
+# drawing and table, same md5) to the page standards/SOT23-2.90x1.30-P1.90
+# was read from (2N7002E/D Rev. 8 page 6). Reused; the package cites
+# onsemi/2N7002E-D.
+schema_version: "0.2"
+kind: part
+id: onsemi/NUP2105LT1G
+manufacturer: onsemi
+mpn: NUP2105LT1G
+device: onsemi/NUP2105L
+package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/NUP2105L-D]
+source: onsemi/NUP2105L-D
+
+existence:
+  status: verified
+  src: p9 "ORDERING INFORMATION, NUP2105LT1G, SOT-23 (Pb-Free), 3,000 / Tape & Reel"
+
+lifecycle: { status: unknown }

@@ -1,0 +1,28 @@
+# MJD31CT4G: listed in the page-8 ORDERING INFORMATION table. No lifecycle
+# statement.
+# Package: the datasheet's DPAK CASE 369C ISSUE L outline (98AON10527D, page
+# 10) renders pixel-identical (100 dpi crop of the drawing and table, same
+# md5) to MC7800/D Rev. 29 page 26, the page
+# manufacturers/onsemi/TO252-6.10x6.54-P2.29-369C-TabPin4 was read from.
+# The ordering table maps this MPN to "DPAK 369C". Reused; the package
+# cites onsemi/MC7800-D.
+schema_version: "0.2"
+kind: part
+id: onsemi/MJD31CT4G
+manufacturer: onsemi
+mpn: MJD31CT4G
+device: onsemi/MJD31C
+package: manufacturers/onsemi/TO252-6.10x6.54-P2.29-369C-TabPin4
+sources: [onsemi/MJD31-D, onsemi/MC7800-D]
+source: onsemi/MJD31-D
+
+existence:
+  status: verified
+  src: p8 "ORDERING INFORMATION, MJD31CT4G, DPAK 369C, 2,500 / Tape & Reel"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:                  { value: npn, src: 'p1 "Title, MJD31 (NPN)"' }
+  collector_emitter_voltage: { max: 100 V, src: 'p1 "MAXIMUM RATINGS, VCEO, MJD31C, MJD32C row"' }
+  collector_current:         { max: 3 A, src: 'p1 "MAXIMUM RATINGS, IC Continuous"' }

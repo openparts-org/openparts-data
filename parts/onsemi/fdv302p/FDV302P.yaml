@@ -1,0 +1,46 @@
+# FDV302P: 25 V P-channel digital FET, SOT-23-3, 3000/reel, from the page-1
+# ORDERING INFORMATION table. No lifecycle statement.
+# Package: the datasheet's SOT-23 CASE 318 ISSUE AU outline (98ASB42226B,
+# DATE 14 AUG 2024, page 5) renders pixel-identical (100 dpi crop of the
+# drawing and table, same md5) to the page standards/SOT23-2.90x1.30-P1.90
+# was read from (2N7002E/D Rev. 8 page 6). Reused; the package cites
+# onsemi/2N7002E-D.
+schema_version: "0.2"
+kind: part
+id: onsemi/FDV302P
+manufacturer: onsemi
+mpn: FDV302P
+device: onsemi/FDV302P
+package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/FDV302P-D]
+source: onsemi/FDV302P-D
+
+existence:
+  status: verified
+  src: p1 "ORDERING INFORMATION, FDV302P, SOT-23-3 (Pb-Free, Halide-Free), 3000 / Tape & Reel"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: p_channel, src: p1 "Title" }
+  drain_source_voltage: { max: -25 V, src: 'p1 "ABSOLUTE MAXIMUM RATINGS, VDSS"' }
+  drain_current:        { max: -0.12 A, src: 'p1 "ABSOLUTE MAXIMUM RATINGS, ID Continuous"' }
+  rds_on:
+    - typ: 7.9 Ω
+      max: 10 Ω
+      at: { VGS: -4.5 V, ID: -0.2 A }
+      src: p2 "ON CHARACTERISTICS, RDS(on)"
+    - typ: 10.6 Ω
+      max: 13 Ω
+      at: { VGS: -2.7 V, ID: -0.05 A }
+      src: p2 "ON CHARACTERISTICS, RDS(on)"
+    - typ: 12 Ω
+      max: 18 Ω
+      at: { VGS: -4.5 V, ID: -0.2 A, TJ: 125 °C }
+      src: p2 "ON CHARACTERISTICS, RDS(on)"
+  gate_threshold_voltage:
+    min: -1.5 V
+    typ: -1 V
+    max: -0.65 V
+    at: { ID: -250 µA }
+    src: p2 "ON CHARACTERISTICS, VGS(th), VDS=VGS"

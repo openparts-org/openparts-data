@@ -1,0 +1,34 @@
+# SMCJ15A-E3/57T: composed from the base P/N SMCJ15A (listed on page 2)
+# with the "-E3" suffix rule and a package code printed in the ordering
+# example table. The table is titled "ORDERING INFORMATION (Example)",
+# so existence is "probable" (add-part section 2). No lifecycle
+# statement in the document.
+# Package: page-5 SMC (DO-214AB) outline is identical, row for row
+# (pdftotext -layout diff), to Vishay 88751 page 3, so
+# standards/DO214AB-VISHAY-88751 is reused.
+schema_version: "0.2"
+kind: part
+id: vishay/SMCJ15A-E3-57T
+manufacturer: vishay
+mpn: SMCJ15A-E3/57T
+device: vishay/SMCJ-A-SERIES
+
+package:
+  value: standards/DO214AB-VISHAY-88751
+  src: p5 "PACKAGE OUTLINE DIMENSIONS -- see header"
+
+sources: [vishay/88394]
+source: vishay/88394
+
+existence:
+  status: probable
+  src:
+    - 'p3 "ORDERING INFORMATION (Example): "SMCJ5.0A-E3/57T | 0.211 | 57T | 850 | 7" diameter plastic tape and reel""'
+    - p2 "ELECTRICAL CHARACTERISTICS, row SMCJ15A; p1 MECHANICAL DATA, Base P/N-E3"
+
+lifecycle: { status: unknown }
+
+parameters:
+  reverse_voltage:
+    max: 15 V
+    src: p2 "ELECTRICAL CHARACTERISTICS table, (+)SMCJ15A row, Stand-off voltage VWM"

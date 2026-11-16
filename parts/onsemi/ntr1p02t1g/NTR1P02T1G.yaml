@@ -1,0 +1,43 @@
+# NTR1P02T1G: listed in the page-1 ORDERING INFORMATION table (the
+# "DISCONTINUED" Note 1 marks only NTR1P02T3G). No lifecycle statement for
+# this MPN.
+# Package: the datasheet's SOT-23 CASE 318 ISSUE AU outline (98ASB42226B,
+# DATE 14 AUG 2024, page 6) renders pixel-identical (100 dpi crop of the
+# drawing and table, same md5) to the page standards/SOT23-2.90x1.30-P1.90
+# was read from (2N7002E/D Rev. 8 page 6). Reused; the package cites
+# onsemi/2N7002E-D.
+schema_version: "0.2"
+kind: part
+id: onsemi/NTR1P02T1G
+manufacturer: onsemi
+mpn: NTR1P02T1G
+device: onsemi/NTR1P02
+package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/NTR1P02T1-D]
+source: onsemi/NTR1P02T1-D
+
+existence:
+  status: verified
+  src: p1 "ORDERING INFORMATION, NTR1P02T1G, SOT-23 (Pb-Free), 3000 / Tape & Reel"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: p_channel, src: p1 "Title" }
+  drain_source_voltage: { max: -20 V, src: 'p1 "MAXIMUM RATINGS, VDSS"' }
+  drain_current: { max: -1 A, at: { TA: 25 °C }, src: 'p1 "MAXIMUM RATINGS, ID Continuous"' }
+  rds_on:
+    - typ: 148 mΩ
+      max: 180 mΩ
+      at: { VGS: -10 V, ID: -1.5 A }
+      src: p2 "ON CHARACTERISTICS, RDS(on)"
+    - typ: 235 mΩ
+      max: 280 mΩ
+      at: { VGS: -4.5 V, ID: -0.75 A }
+      src: p2 "ON CHARACTERISTICS, RDS(on)"
+  gate_threshold_voltage:
+    min: -2.3 V
+    typ: -1.9 V
+    max: -1.1 V
+    at: { ID: -250 µA }
+    src: p2 "ON CHARACTERISTICS, VGS(th), VDS=VGS"

@@ -1,0 +1,47 @@
+# The datasheet has no ordering table; the MPN printed on it is the
+# device name "AOD444" (title, every page). No orderable-part listing was
+# read, so existence is "probable" (as aos/AOD403). No lifecycle recorded.
+# Package: datasheet page 1 says "TO252 DPAK"; AOS's TO252 outline is
+# PO-00009 (Version X, re-downloaded 2026-11-16) -- linked by package name
+# only, as for aos/AOD403.
+schema_version: "0.2"
+kind: part
+id: aos/AOD444
+manufacturer: aos
+mpn: AOD444
+device: aos/AOD444
+
+package:
+  value: manufacturers/aos/TO252-6.10x6.60-P2.29-PO-00009-TabPin4
+  src: aos/PO-00009 p1 ""TO252 PACKAGE OUTLINE" PO-00009 Version X (linked by the datasheet's package name "TO252")"
+
+sources: [aos/AOD444-DS, aos/PO-00009]
+source: aos/AOD444-DS
+
+existence:
+  status: probable
+  src: p1 "Title "AOD444" and package "TO252 DPAK"; no ordering table in the document"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 60 V, src: 'p1 "Abs. Max. Ratings, VDS"' }
+  drain_current:
+    - { max: 12 A, at: { TC: 25 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
+    - { max: 9 A, at: { TC: 100 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
+    - { max: 4 A, at: { TA: 25 °C }, src: 'p1 "Abs. Max. Ratings, IDSM"' }
+    - { max: 3 A, at: { TA: 70 °C }, src: 'p1 "Abs. Max. Ratings, IDSM"' }
+  rds_on:
+    - { typ: 47 mΩ, max: 60 mΩ, at: { VGS: 10 V, ID: 12 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - typ: 85 mΩ
+      max: 100 mΩ
+      at: { VGS: 10 V, ID: 12 A, TJ: 125 °C }
+      src: p2 "Elec. Char., RDS(ON)"
+    - { typ: 67 mΩ, max: 85 mΩ, at: { VGS: 4.5 V, ID: 6 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+  gate_threshold_voltage:
+    min: 1 V
+    typ: 2.4 V
+    max: 3 V
+    at: { ID: 250 µA }
+    src: p2 "Elec. Char., VGS(th), VDS=VGS"

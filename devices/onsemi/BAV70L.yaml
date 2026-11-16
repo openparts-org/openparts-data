@@ -1,0 +1,27 @@
+# Dual switching diode, common cathode, SOT-23 (CASE 318 STYLE 9). Pins from
+# the page-1 symbol (1 ANODE, 2 ANODE, 3 CATHODE) and STYLE 9. Values are per
+# diode ("EACH DIODE").
+schema_version: "0.2"
+kind: device
+id: onsemi/BAV70L
+manufacturer: onsemi
+category: diode
+family: BAV70
+source: onsemi/BAV70LT1-D
+
+parameters:
+  forward_voltage:
+    - { max: 715 mV, at: { IF: 1 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS (Each Diode), VF"' }
+    - { max: 855 mV, at: { IF: 10 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS (Each Diode), VF"' }
+    - { max: 1000 mV, at: { IF: 50 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS (Each Diode), VF"' }
+    - { max: 1250 mV, at: { IF: 150 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS (Each Diode), VF"' }
+  reverse_voltage: { max: 100 V, src: 'p1 "MAXIMUM RATINGS (EACH DIODE), VR"' }
+  forward_current: { max: 200 mA, src: 'p1 "MAXIMUM RATINGS (EACH DIODE), IF"' }
+
+pins:
+  src:
+    - 'p1 "Symbol: 1 ANODE, 2 ANODE, 3 CATHODE; CASE 318 STYLE 9"'
+    - 'p6 "CASE 318 STYLE 9: 1 ANODE, 2 ANODE, 3 CATHODE"'
+  "1": { name: Anode1, type: passive }
+  "2": { name: Anode2, type: passive }
+  "3": { name: Cathode, type: passive }

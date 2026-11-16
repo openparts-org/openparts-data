@@ -1,0 +1,26 @@
+# ESD5Z12T1G: named in the page-3 ELECTRICAL CHARACTERISTICS table (row
+# ESD5Z12T1G/T5G); the page-1 ORDERING INFORMATION gives the pattern
+# ESD5ZxxxT1G, SOD-523, 3000 / Tape & Reel. No lifecycle statement.
+# Package: the datasheet's SOD-523 CASE 502 ISSUE F outline (98AON11524D,
+# page 5) renders pixel-identical (100 dpi crop, same md5) to BAS16XV2T1/D
+# Rev. 10 page 4, the page standards/SOD523-ONSEMI-502 was read from. Reused.
+schema_version: "0.2"
+kind: part
+id: onsemi/ESD5Z12T1G
+manufacturer: onsemi
+mpn: ESD5Z12T1G
+device: onsemi/ESD5Z-SERIES
+package: standards/SOD523-ONSEMI-502
+sources: [onsemi/ESD5Z2.5T1-D, onsemi/BAS16XV2T1-D]
+source: onsemi/ESD5Z2.5T1-D
+
+existence:
+  status: verified
+  src:
+    - p3 "ELECTRICAL CHARACTERISTICS, row ESD5Z12T1G/T5G"
+    - p1 "ORDERING INFORMATION, ESD5ZxxxT1G, SOD-523, 3000 / Tape & Reel"
+
+lifecycle: { status: unknown }
+
+parameters:
+  reverse_voltage: { max: 12 V, src: 'p3 "ELECTRICAL CHARACTERISTICS, ESD5Z12T1G/T5G row, VRWM"' }

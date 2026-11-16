@@ -1,0 +1,25 @@
+# 60 V, 3 A Schottky power rectifier, SMC (CASE 403AC) or SMB (CASE 403A).
+# Page 1 Mechanical Characteristics: "Polarity Band on Plastic Body
+# Indicates Cathode Lead". No pin numbers are printed, so 1 = Cathode and
+# 2 = Anode follow the dataset's two-terminal diode convention (as
+# onsemi/MBRS340-SERIES). IF(AV) is left out: page 2 prints two values
+# (3.0 A @ TL 137 C, 4.0 A @ TL 127 C) without saying which package each is for.
+schema_version: "0.2"
+kind: device
+id: onsemi/MBRS360
+manufacturer: onsemi
+category: diode
+family: MBRS360
+source: onsemi/MBRS360T3-D
+
+parameters:
+  forward_voltage:
+    max: 0.63 V
+    at: { IF: 3 A, TJ: 25 °C }
+    src: p2 "ELECTRICAL CHARACTERISTICS, VF (Note 5)"
+  reverse_voltage: { max: 60 V, src: 'p2 "MAXIMUM RATINGS, VRRM / VRWM / VR"' }
+
+pins:
+  src: 'p1 "Mechanical Characteristics, Polarity: band indicates cathode lead"'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

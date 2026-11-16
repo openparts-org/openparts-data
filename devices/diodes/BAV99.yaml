@@ -1,0 +1,31 @@
+# Dual series switching diode, SOT23. From the page-1 "Top View Internal
+# Schematic" (rendered at 300 dpi): left diode anode on the bottom-left
+# lead, cathode to the top lead; right diode anode from the top lead,
+# cathode on the bottom-right lead -- the top lead is the common
+# cathode(1)/anode(2) node. Pin numbers are not printed; numbers follow
+# this dataset's sot convention (1 bottom-left, 2 bottom-right, 3 top), as
+# diodes/BAT54S -- position-derived, flagged for review.
+# Not recorded: forward_current -- the table's "Forward Continuous Current
+# IFM 300 mA" (Note 6) is kept out as the symbol suggests a peak value;
+# reverse_voltage uses VRRM/VRWM 75 V, not the non-repetitive VRM 100 V.
+schema_version: "0.2"
+kind: device
+id: diodes/BAV99
+manufacturer: diodes
+category: diode
+family: BAV99
+source: diodes/DS12007
+
+parameters:
+  forward_voltage:
+    - { max: 0.715 V, at: { IF: 1 mA }, src: 'p2 "Electrical Characteristics, VF"' }
+    - { max: 0.855 V, at: { IF: 10 mA }, src: 'p2 "Electrical Characteristics, VF"' }
+    - { max: 1 V, at: { IF: 50 mA }, src: 'p2 "Electrical Characteristics, VF"' }
+    - { max: 1.25 V, at: { IF: 150 mA }, src: 'p2 "Electrical Characteristics, VF"' }
+  reverse_voltage: { max: 75 V, src: 'p2 "Maximum Ratings, VRRM / VRWM"' }
+
+pins:
+  src: p1 "Top View Internal Schematic; position-derived numbering, see header"
+  "1": { name: Anode1, type: passive }
+  "2": { name: Cathode2, type: passive }
+  "3": { name: Cathode1/Anode2, type: passive }

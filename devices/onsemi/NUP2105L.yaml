@@ -1,0 +1,22 @@
+# Dual bidirectional voltage suppressor (CAN bus ESD protection), SOT-23
+# (CASE 318 STYLE 28). Pin numbers from the page-1 symbol: PIN 1 and PIN 2
+# each through a bidirectional suppressor to PIN 3 (CAN_H / CAN_L to the
+# common pin in the application figure). STYLE 28 calls all three ANODE, so
+# the symbol's labels are used as names.
+# No parameters: the working voltage VRWM 24 V is printed in the Min column
+# (no max), which reverse_voltage can't express faithfully -- left out.
+schema_version: "0.2"
+kind: device
+id: onsemi/NUP2105L
+manufacturer: onsemi
+category: diode
+family: NUP2105L
+source: onsemi/NUP2105L-D
+
+pins:
+  src:
+    - 'p1 "Symbol: PIN 1, PIN 2 via bidirectional suppressors to PIN 3; CASE 318 STYLE 28"'
+    - 'p12 "CASE 318 STYLE 28: 1 ANODE, 2 ANODE, 3 ANODE"'
+  "1": { name: PIN1, type: passive }
+  "2": { name: PIN2, type: passive }
+  "3": { name: PIN3, type: passive }

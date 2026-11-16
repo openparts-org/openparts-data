@@ -1,0 +1,33 @@
+# BSS123LT1G: listed in the page-2 ORDERING INFORMATION table. No lifecycle
+# statement.
+# Package: the datasheet's SOT-23 CASE 318 ISSUE AU outline (98ASB42226B,
+# DATE 14 AUG 2024, page 5) renders pixel-identical (100 dpi crop of the
+# drawing and table, same md5) to the page standards/SOT23-2.90x1.30-P1.90
+# was read from (2N7002E/D Rev. 8 page 6). Reused; the package cites
+# onsemi/2N7002E-D.
+schema_version: "0.2"
+kind: part
+id: onsemi/BSS123LT1G
+manufacturer: onsemi
+mpn: BSS123LT1G
+device: onsemi/BSS123
+package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/BSS123LT1-D]
+source: onsemi/BSS123LT1-D
+
+existence:
+  status: verified
+  src: p2 "ORDERING INFORMATION, BSS123LT1G, SOT-23 (Pb-Free), 3,000 / Tape & Reel"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 100 V, src: 'p1 "MAXIMUM RATINGS, VDSS"' }
+  drain_current:        { max: 0.17 A, src: 'p1 "MAXIMUM RATINGS, ID Continuous (Note 1)"' }
+  rds_on: { max: 6 Ω, at: { VGS: 10 V, ID: 100 mA }, src: 'p2 "ON CHARACTERISTICS, rDS(on)"' }
+  gate_threshold_voltage:
+    min: 1.6 V
+    max: 2.6 V
+    at: { ID: 1 mA }
+    src: p2 "ON CHARACTERISTICS, VGS(th), VDS=VGS"

@@ -1,0 +1,23 @@
+# Unidirectional ESD protection diodes ESD5Z2.5 ... ESD5Z12, SOD-523 (CASE 502
+# STYLE 1). Pins from the page-1 symbol (1 Cathode, 2 Anode) and STYLE 1 of
+# the outline. The working voltage is per Part; VF is common to all types.
+schema_version: "0.2"
+kind: device
+id: onsemi/ESD5Z-SERIES
+manufacturer: onsemi
+category: diode
+family: ESD5Z
+source: onsemi/ESD5Z2.5T1-D
+
+parameters:
+  forward_voltage:
+    max: 1.1 V
+    at: { IF: 10 mA }
+    src: p3 "ELECTRICAL CHARACTERISTICS heading, VF for all types"
+
+pins:
+  src:
+    - 'p1 "Symbol: 1 Cathode, 2 Anode; SOD-523 CASE 502 STYLE 1"'
+    - 'p5 "CASE 502 STYLE 1: PIN 1. CATHODE (POLARITY BAND), 2. ANODE"'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

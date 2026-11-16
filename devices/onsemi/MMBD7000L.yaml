@@ -1,0 +1,35 @@
+# Dual switching diode (series), SOT-23 (CASE 318 STYLE 11). Pins from the
+# page-1 symbol (1 ANODE, 2 CATHODE, 3 CATHODE/ANODE) and STYLE 11. Values are
+# per diode ("EACH DIODE").
+schema_version: "0.2"
+kind: device
+id: onsemi/MMBD7000L
+manufacturer: onsemi
+category: diode
+family: MMBD7000
+source: onsemi/MMBD7000LT1-D
+
+parameters:
+  forward_voltage:
+    - min: 0.55 V
+      max: 0.7 V
+      at: { IF: 1 mA }
+      src: p2 "ELECTRICAL CHARACTERISTICS (EACH DIODE), VF"
+    - min: 0.67 V
+      max: 0.82 V
+      at: { IF: 10 mA }
+      src: p2 "ELECTRICAL CHARACTERISTICS (EACH DIODE), VF"
+    - min: 0.75 V
+      max: 1.1 V
+      at: { IF: 100 mA }
+      src: p2 "ELECTRICAL CHARACTERISTICS (EACH DIODE), VF"
+  reverse_voltage: { max: 100 V, src: 'p1 "MAXIMUM RATINGS (EACH DIODE), VR"' }
+  forward_current: { max: 200 mA, src: 'p1 "MAXIMUM RATINGS (EACH DIODE), IF"' }
+
+pins:
+  src:
+    - 'p1 "Symbol: 1 ANODE, 2 CATHODE, 3 CATHODE/ANODE; CASE 318 STYLE 11"'
+    - 'p7 "CASE 318 STYLE 11: 1 ANODE, 2 CATHODE, 3 CATHODE-ANODE"'
+  "1": { name: Anode1, type: passive }
+  "2": { name: Cathode2, type: passive }
+  "3": { name: Cathode1/Anode2, type: passive }
