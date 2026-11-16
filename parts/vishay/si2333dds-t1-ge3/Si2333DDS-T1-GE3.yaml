@@ -1,0 +1,53 @@
+# Si2333DDS-T1-GE3: printed verbatim in the page-1 ordering information of
+# vishay/63861 (SOT-23) -- verified. No lifecycle statement in the
+# document. Package: manufacturers/vishay/SOT23-71196 (page 7, same
+# 71196 Rev. K page as the package's own source).
+schema_version: "0.2"
+kind: part
+id: vishay/Si2333DDS-T1-GE3
+manufacturer: vishay
+mpn: Si2333DDS-T1-GE3
+device: vishay/Si2333DDS
+package: manufacturers/vishay/SOT23-71196
+sources: [vishay/63861]
+source: vishay/63861
+
+existence: { status: verified, src: 'p1 "Ordering Information line, Si2333DDS-T1-GE3"' }
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: p_channel, src: 'p1 "Title, P-Channel 12 V (D-S) MOSFET"' }
+  drain_source_voltage: { max: -12 V, src: 'p1 "ABSOLUTE MAXIMUM RATINGS, VDS"' }
+  drain_current:
+    - max: -5 A
+      at: { TA: 25 °C, t: 5 s }
+      src: p1 "ABSOLUTE MAXIMUM RATINGS, ID, TA = 25 °C (notes b, c)"
+    - max: -4 A
+      at: { TA: 70 °C, t: 5 s }
+      src: p1 "ABSOLUTE MAXIMUM RATINGS, ID, TA = 70 °C (notes b, c)"
+  rds_on:
+    - typ: 23 mΩ
+      max: 28 mΩ
+      at: { VGS: -4.5 V, ID: -5 A }
+      src: p2 "SPECIFICATIONS, RDS(on) (0.023/0.028 Ω)"
+    - typ: 26 mΩ
+      max: 32 mΩ
+      at: { VGS: -3.7 V, ID: -4.6 A }
+      src: p2 "SPECIFICATIONS, RDS(on) (0.026/0.032 Ω)"
+    - typ: 33 mΩ
+      max: 40 mΩ
+      at: { VGS: -2.5 V, ID: -4.3 A }
+      src: p2 "SPECIFICATIONS, RDS(on) (0.033/0.04 Ω)"
+    - typ: 48 mΩ
+      max: 63 mΩ
+      at: { VGS: -1.8 V, ID: -1 A }
+      src: p2 "SPECIFICATIONS, RDS(on) (0.048/0.063 Ω)"
+    - typ: 75 mΩ
+      max: 150 mΩ
+      at: { VGS: -1.5 V, ID: -0.5 A }
+      src: p2 "SPECIFICATIONS, RDS(on) (0.075/0.15 Ω)"
+  gate_threshold_voltage:
+    min: -1 V
+    max: -0.4 V
+    at: { ID: -250 µA }
+    src: p2 "SPECIFICATIONS, VGS(th), VDS = VGS"

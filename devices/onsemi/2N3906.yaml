@@ -1,0 +1,17 @@
+# PNP general-purpose transistor, TO-92 (CASE 29-11). Pins from the page-1
+# symbol and CASE 29 STYLE 1 (page 8): 1 Emitter, 2 Base, 3 Collector.
+schema_version: "0.2"
+kind: device
+id: onsemi/2N3906
+manufacturer: onsemi
+category: transistor
+family: 2N3906
+source: onsemi/2N3906-D
+
+pins:
+  src:
+    - 'p1 "Symbol: 1 EMITTER, 2 BASE, 3 COLLECTOR; CASE 29 STYLE 1"'
+    - 'p8 "CASE 29-11 STYLE 1: 1 EMITTER, 2 BASE, 3 COLLECTOR"'
+  "1": { name: Emitter, type: passive }
+  "2": { name: Base, type: passive }
+  "3": { name: Collector, type: passive }

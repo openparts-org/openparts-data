@@ -1,0 +1,15 @@
+# Official onsemi datasheet, Publication Order Number BAT54LT1/D, Rev. 18
+# (2024-11), 6 pages, downloaded with curl on 2026-11-16 (HTTP 200,
+# PDF). Read with pdftotext -layout; page numbers are PDF page indices.
+# Pages 4-5: SOT-23 CASE 318 ISSUE AU (98ASB42226B) and its STYLE list.
+schema_version: "0.2"
+kind: source
+id: onsemi/BAT54LT1-D
+sha256: 10b5289a0ca2a181640e2d03c6d642b6dc642f4b8b93683d118b57a43b6926ae
+retrieved: 2026-11-16
+url: https://www.onsemi.com/pdf/datasheet/bat54lt1-d.pdf
+publisher: onsemi
+document_id: BAT54LT1/D
+document_type: datasheet
+revision: "18"
+date: 2024-11

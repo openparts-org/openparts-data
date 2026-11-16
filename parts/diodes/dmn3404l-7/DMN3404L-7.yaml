@@ -1,0 +1,48 @@
+# DMN3404L-7: Standard MPN from the DS31787 ordering table (3,000/Tape & Reel).
+# SOT23 (Standard) outline on page 7 matches SOT23-2.90x1.30-P1.83-DIODES
+# value for value (Min/Max/Typ of every row). No lifecycle statement.
+schema_version: "0.2"
+kind: part
+id: diodes/DMN3404L-7
+manufacturer: diodes
+mpn: DMN3404L-7
+device: diodes/DMN3404L
+package: standards/SOT23-2.90x1.30-P1.83-DIODES
+sources: [diodes/DS31787]
+source: diodes/DS31787
+
+existence:
+  status: verified
+  src: p1 "Ordering Information table, DMN3404L-7 | Standard | SOT23 (Standard) | 3000/Tape & Reel"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 30 V, src: 'p2 "Maximum Ratings, VDSS"' }
+  drain_current:
+    - max: 5.8 A
+      at: { VGS: 10 V, TA: 25 °C }
+      src: p2 "Maximum Ratings, ID, Steady State (Note 7)"
+    - max: 4 A
+      at: { VGS: 10 V, TA: 85 °C }
+      src: p2 "Maximum Ratings, ID, Steady State (Note 7)"
+  rds_on:
+    - typ: 24 mΩ
+      max: 28 mΩ
+      at: { VGS: 10 V, ID: 5.8 A }
+      src: p3 "Elec. Char., RDS(on) TJ = +25°C"
+    - typ: 33 mΩ
+      max: 42 mΩ
+      at: { VGS: 4.5 V, ID: 4.8 A }
+      src: p3 "Elec. Char., RDS(on) TJ = +25°C"
+    - typ: 63 mΩ
+      max: 82 mΩ
+      at: { VGS: 3 V, ID: 2 A }
+      src: p3 "Elec. Char., RDS(on) TJ = +25°C"
+  gate_threshold_voltage:
+    min: 1 V
+    typ: 1.5 V
+    max: 2 V
+    at: { ID: 250 µA }
+    src: p3 "Elec. Char., VGS(th), VDS = VGS"

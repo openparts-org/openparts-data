@@ -1,0 +1,39 @@
+# AO3422: the datasheet has no ordering table; the MPN printed on it is the
+# bare device name (title, page headers), so existence is "probable".
+# No lifecycle statement. Package: page 1 says SOT23; AOS's SOT23 outline is
+# PO-00001 -- linked by package name only (as for AO3400A).
+schema_version: "0.2"
+kind: part
+id: aos/AO3422
+manufacturer: aos
+mpn: AO3422
+device: aos/AO3422
+package: standards/SOT23-2.90x1.60-P1.90-AOS
+sources: [aos/AO3422-DS, aos/PO-00001]
+source: aos/AO3422-DS
+
+existence:
+  status: probable
+  src: p1 "Title AO3422 and package SOT23; no ordering table in the document"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 55 V, src: 'p1 "Abs. Max. Ratings, VDS"' }
+  drain_current:
+    - { max: 2.1 A, at: { TA: 25 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
+    - { max: 1.7 A, at: { TA: 70 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
+  rds_on:
+    - { typ: 125 mΩ, max: 160 mΩ, at: { VGS: 4.5 V, ID: 2.1 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - typ: 175 mΩ
+      max: 210 mΩ
+      at: { VGS: 4.5 V, ID: 2.1 A, TJ: 125 °C }
+      src: p2 "Elec. Char., RDS(ON)"
+    - { typ: 157 mΩ, max: 200 mΩ, at: { VGS: 2.5 V, ID: 1.5 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+  gate_threshold_voltage:
+    min: 0.6 V
+    typ: 1.3 V
+    max: 2 V
+    at: { ID: 250 µA }
+    src: p2 "Elec. Char., VGS(th), VDS=VGS"

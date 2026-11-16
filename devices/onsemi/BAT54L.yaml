@@ -1,0 +1,28 @@
+# Single Schottky barrier diode, 30 V, SOT-23 (CASE 318 STYLE 8). Pins from the page-1
+# symbol and STYLE 8 on page 5: 1 ANODE, 2 NO CONNECTION, 3 CATHODE. Electrical values are
+# per diode ("EACH DIODE" for the dual versions) and shared by every MPN.
+schema_version: "0.2"
+kind: device
+id: onsemi/BAT54L
+manufacturer: onsemi
+category: diode
+family: BAT54
+source: onsemi/BAT54LT1-D
+
+parameters:
+  forward_voltage:
+    - { typ: 0.22 V, max: 0.24 V, at: { IF: 0.1 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS, VF"' }
+    - { typ: 0.29 V, max: 0.32 V, at: { IF: 1 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS, VF"' }
+    - { typ: 0.35 V, max: 0.4 V, at: { IF: 10 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS, VF"' }
+    - { typ: 0.41 V, max: 0.5 V, at: { IF: 30 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS, VF"' }
+    - { typ: 0.52 V, max: 0.8 V, at: { IF: 100 mA }, src: 'p2 "ELECTRICAL CHARACTERISTICS, VF"' }
+  reverse_voltage: { max: 30 V, src: 'p1 "MAXIMUM RATINGS, VR"' }
+  forward_current: { max: 200 mA, src: 'p1 "MAXIMUM RATINGS, IF (DC)"' }
+
+pins:
+  src:
+    - p1 "Symbol / pinout, SOT-23 CASE 318 STYLE 8"
+    - 'p5 "CASE 318 STYLE 8: 1 ANODE, 2 NO CONNECTION, 3 CATHODE"'
+  "1": { name: Anode, type: passive }
+  "2": { name: NC, type: nc }
+  "3": { name: Cathode, type: passive }

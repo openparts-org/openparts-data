@@ -1,0 +1,15 @@
+# Official AOS datasheet AO3435 (footer Rev 2.1), downloaded with curl
+# 2026-11-16 from aosmd.com; read with pdftotext -layout. No ordering
+# table and no package outline in the document (outline: aos/PO-00001).
+# Note: the PDF's symbol font renders u as m and Ohm as W in extracted text.
+schema_version: "0.2"
+kind: source
+id: aos/AO3435-DS
+sha256: b8018739e54292564faab861145c034cc0a6a895fdda4686a1074ea111da8998
+retrieved: 2026-11-16
+url: https://www.aosmd.com/res/datasheets/AO3435.pdf
+publisher: aos
+document_id: AO3435
+document_type: datasheet
+revision: "2.1"
+date: 2023-08

@@ -1,0 +1,15 @@
+# Si2305CDS P-Channel 8 V (D-S) MOSFET, SOT-23 (TO-236). Pin numbers and roles from the
+# page-1 "Top View" (1 G, 2 S, 3 D) of vishay/64847.
+schema_version: "0.2"
+kind: device
+id: vishay/Si2305CDS
+manufacturer: vishay
+category: transistor
+family: Si2305CDS
+source: vishay/64847
+
+pins:
+  src: p1 "SOT-23 (TO-236) Top View (1 G, 2 S, 3 D)"
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

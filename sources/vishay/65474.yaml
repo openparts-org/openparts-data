@@ -1,0 +1,17 @@
+# Vishay Siliconix datasheet "Si2343CDS P-Channel 30 V (D-S) MOSFET", Document Number
+# 65474, footer "S25-1024-Rev. B, 08-Sep-2025", 9 pages. Downloaded 2026-11-16
+# with curl from vishay.com; read with pdftotext -layout. Page 7 is the appended
+# "SOT-23 (TO-236): 3-LEAD" package information, Document Number 71196
+# (ECN S-03946-Rev. K, 09-Jul-01, DWG 5479); its extracted text is identical
+# to page 6 of vishay/68645. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: vishay/65474
+sha256: f38e1bee092aaeb36e843d4096f65dce04f7cf4ee1222f6a2d089e454720e242
+retrieved: 2026-11-16
+url: https://www.vishay.com/docs/65474/si2343cds.pdf
+publisher: vishay
+document_id: "65474"
+document_type: datasheet
+revision: B
+date: 2025-09-08

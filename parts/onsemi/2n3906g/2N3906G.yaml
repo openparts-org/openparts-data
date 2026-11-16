@@ -1,0 +1,29 @@
+# 2N3906G: "TO-92 (Pb-Free), 5000 Units / Bulk" in the ORDERING INFORMATION
+# table (page 3); bulk = the straight-lead option of CASE 29-11. Reuses
+# TO92-BC547: the STRAIGHT LEAD table on page 7 (CASE 29-11 ISSUE AM,
+# 98ASB42022B) gives A 4.45-5.20, B 4.32-5.33, C 3.18-4.19, G 1.15-1.39 mm,
+# the values that package records. VCEO and IC are printed unsigned in
+# this datasheet (MMBT3906LT1/D prints them negative); recorded as printed.
+# No lifecycle statement.
+schema_version: "0.2"
+kind: part
+id: onsemi/2N3906G
+manufacturer: onsemi
+mpn: 2N3906G
+device: onsemi/2N3906
+package: standards/TO92-BC547
+sources: [onsemi/2N3906-D]
+source: onsemi/2N3906-D
+
+existence:
+  status: verified
+  src: p3 "ORDERING INFORMATION, 2N3906G, TO-92 (Pb-Free), 5000 Units / Bulk"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:                  { value: pnp, src: 'p1 "Title, PNP Silicon"' }
+  collector_emitter_voltage: { max: 40 V, src: 'p1 "Maximum Ratings, VCEO (printed without sign)"' }
+  collector_current:
+    max: 200 mA
+    src: p1 "Maximum Ratings, IC, Continuous (printed without sign)"

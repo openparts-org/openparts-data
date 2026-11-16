@@ -1,0 +1,41 @@
+# NTR4501NT1G: listed in the page-1 ORDERING INFORMATION table (NVR prefix =
+# automotive AEC-Q101 variant, same device). No lifecycle statement.
+# Package: the datasheet's SOT-23 CASE 318 ISSUE AU outline (98ASB42226B) is
+# the drawing standards/SOT23-2.90x1.30-P1.90 was read from (same case,
+# issue and document number as MMBT3906LT1/D and BZX84C2V4LT1/D). Reused.
+schema_version: "0.2"
+kind: part
+id: onsemi/NTR4501NT1G
+manufacturer: onsemi
+mpn: NTR4501NT1G
+device: onsemi/NTR4501N
+package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/NTR4501N-D]
+source: onsemi/NTR4501N-D
+
+existence:
+  status: verified
+  src: p1 "ORDERING INFORMATION, NTR4501NT1G, SOT-23 (Pb-Free), 3000 / Tape & Reel"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: 'p1 "Title, N-Channel"' }
+  drain_source_voltage: { max: 20 V, src: 'p1 "MAXIMUM RATINGS, VDSS"' }
+  drain_current:
+    - { max: 3.2 A, at: { TA: 25 °C }, src: 'p1 "MAXIMUM RATINGS, ID, Steady State (Note 1)"' }
+    - { max: 2.4 A, at: { TA: 85 °C }, src: 'p1 "MAXIMUM RATINGS, ID, Steady State (Note 1)"' }
+  rds_on:
+    - typ: 70 mΩ
+      max: 80 mΩ
+      at: { VGS: 4.5 V, ID: 3.6 A }
+      src: p2 "ON CHARACTERISTICS, RDS(on)"
+    - typ: 88 mΩ
+      max: 105 mΩ
+      at: { VGS: 2.5 V, ID: 3.1 A }
+      src: p2 "ON CHARACTERISTICS, RDS(on)"
+  gate_threshold_voltage:
+    min: 0.65 V
+    max: 1.2 V
+    at: { ID: 250 µA }
+    src: p2 "ON CHARACTERISTICS, VGS(TH), VGS = VDS"

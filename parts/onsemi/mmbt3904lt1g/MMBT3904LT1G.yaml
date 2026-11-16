@@ -1,0 +1,25 @@
+# MMBT3904LT1G: listed in the ORDERING INFORMATION table (page 7). No lifecycle
+# statement in the datasheet.
+# Package: the datasheet's SOT-23 CASE 318 ISSUE AU outline (98ASB42226B) is
+# the drawing standards/SOT23-2.90x1.30-P1.90 was read from (same case,
+# issue and document number as MMBT3906LT1/D and BZX84C2V4LT1/D). Reused.
+schema_version: "0.2"
+kind: part
+id: onsemi/MMBT3904LT1G
+manufacturer: onsemi
+mpn: MMBT3904LT1G
+device: onsemi/MMBT3904
+package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/MMBT3904LT1-D]
+source: onsemi/MMBT3904LT1-D
+
+existence:
+  status: verified
+  src: p7 "ORDERING INFORMATION, MMBT3904LT1G, SOT-23 (Pb-Free), 3,000 / Tape & Reel"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:                  { value: npn, src: p1 "Title" }
+  collector_emitter_voltage: { max: 40 V, src: 'p1 "Maximum Ratings, VCEO"' }
+  collector_current:         { max: 200 mA, src: 'p1 "Maximum Ratings, IC, Continuous"' }

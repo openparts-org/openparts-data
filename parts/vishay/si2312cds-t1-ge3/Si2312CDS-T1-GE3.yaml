@@ -1,0 +1,45 @@
+# Si2312CDS-T1-GE3: printed verbatim in the page-1 ordering information of
+# vishay/65900 (SOT-23) -- verified. No lifecycle statement in the
+# document. Package: manufacturers/vishay/SOT23-71196 (page 7, same
+# 71196 Rev. K page as the package's own source).
+schema_version: "0.2"
+kind: part
+id: vishay/Si2312CDS-T1-GE3
+manufacturer: vishay
+mpn: Si2312CDS-T1-GE3
+device: vishay/Si2312CDS
+package: manufacturers/vishay/SOT23-71196
+sources: [vishay/65900]
+source: vishay/65900
+
+existence: { status: verified, src: 'p1 "ORDERING INFORMATION, Si2312CDS-T1-GE3"' }
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: 'p1 "Title, N-Channel 20 V (D-S) MOSFET"' }
+  drain_source_voltage: { max: 20 V, src: 'p1 "ABSOLUTE MAXIMUM RATINGS, VDS"' }
+  drain_current:
+    - max: 5 A
+      at: { TA: 25 °C, t: 5 s }
+      src: p1 "ABSOLUTE MAXIMUM RATINGS, ID, TA = 25 °C (notes b, c)"
+    - max: 4 A
+      at: { TA: 70 °C, t: 5 s }
+      src: p1 "ABSOLUTE MAXIMUM RATINGS, ID, TA = 70 °C (notes b, c)"
+  rds_on:
+    - typ: 26.5 mΩ
+      max: 31.8 mΩ
+      at: { VGS: 4.5 V, ID: 5 A }
+      src: p2 "SPECIFICATIONS, RDS(on) (0.0265/0.0318 Ω)"
+    - typ: 29.6 mΩ
+      max: 35.6 mΩ
+      at: { VGS: 2.5 V, ID: 4.7 A }
+      src: p2 "SPECIFICATIONS, RDS(on) (0.0296/0.0356 Ω)"
+    - typ: 34.5 mΩ
+      max: 41.4 mΩ
+      at: { VGS: 1.8 V, ID: 4.3 A }
+      src: p2 "SPECIFICATIONS, RDS(on) (0.0345/0.0414 Ω)"
+  gate_threshold_voltage:
+    min: 0.45 V
+    max: 1 V
+    at: { ID: 250 µA }
+    src: p2 "SPECIFICATIONS, VGS(th), VDS = VGS"

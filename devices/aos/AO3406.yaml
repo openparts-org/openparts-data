@@ -1,0 +1,19 @@
+# N-channel MOSFET, SOT23 (page-1 title). Pin numbers are NOT printed in the
+# datasheet: the page-1 "SOT23 Top View" render shows G at the lead next to
+# the moulded pin-1 dot, S at the other lead of that row and D on the single
+# opposite lead -- the same layout as AO3400A (label positions compared via
+# pdftotext -bbox). Mapped onto the sot convention (1 G, 2 S, 3 D) --
+# position-derived, flagged for review.
+schema_version: "0.2"
+kind: device
+id: aos/AO3406
+manufacturer: aos
+category: transistor
+family: AO3406
+source: aos/AO3406-DS
+
+pins:
+  src: p1 "SOT23 Top View drawing; numbering position-derived (see header)"
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

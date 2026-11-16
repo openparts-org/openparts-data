@@ -1,0 +1,39 @@
+# BZX84C24LT1G: zener, VZ1 22.8 / 24 / 25.6 V (min/nom/max @ 5 mA), marking Y9.
+# The ordering table gives only the BZX84CxxxLT1G pattern; the page-3 table
+# row reads "BZX84C24LT1G" -- existence "probable" (as for the existing
+# BZX84C parts). No lifecycle statement.
+# Package: the datasheet's SOT-23 CASE 318 ISSUE AU outline (98ASB42226B) is
+# the drawing standards/SOT23-2.90x1.30-P1.90 was read from (same case,
+# issue and document number as MMBT3906LT1/D and BZX84C2V4LT1/D). Reused.
+schema_version: "0.2"
+kind: part
+id: onsemi/BZX84C24LT1G
+manufacturer: onsemi
+mpn: BZX84C24LT1G
+device: onsemi/BZX84C-SERIES
+package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/BZX84C2V4LT1-D]
+source: onsemi/BZX84C2V4LT1-D
+
+existence:
+  status: probable
+  src:
+    - p1 "ORDERING INFORMATION pattern row BZX84CxxxLT1G, SOT-23 (Pb-Free), 3,000 / Tape & Reel"
+    - p3 "Electrical Characteristics, Device* column BZX84C24LT1G, marking Y9"
+
+lifecycle: { status: unknown }
+
+parameters:
+  forward_voltage:
+    max: 0.9 V
+    at: { IF: 10 mA }
+    src: p3 "ELECTRICAL CHARACTERISTICS - BZX84CxxxLT1 SERIES, table header VF"
+  zener_voltage:
+    min: 22.8 V
+    typ: 24 V
+    max: 25.6 V
+    at: { IZT: 5 mA }
+    src: p3 "BZX84CxxxLT1 SERIES table, BZX84C24LT1G row, VZ1"
+  zener_test_current:
+    typ: 5 mA
+    src: p3 "BZX84CxxxLT1 SERIES table, BZX84C24LT1G row, IZT1 (VZ1 header)"

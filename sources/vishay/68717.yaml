@@ -1,0 +1,17 @@
+# Vishay Siliconix datasheet "Si2333CDS P-Channel 12 V (D-S) MOSFET", Document Number
+# 68717, footer "S20-0638-Rev. D, 24-Aug-2020", 8 pages. Downloaded 2026-11-16
+# with curl from vishay.com; read with pdftotext -layout. Page 6 is the appended
+# "SOT-23 (TO-236): 3-LEAD" package information, Document Number 71196
+# (ECN S-03946-Rev. K, 09-Jul-01, DWG 5479); its extracted text is identical
+# to page 6 of vishay/68645. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: vishay/68717
+sha256: c3117561a13cb50bc56ddcf9b4439611d42edb55e1640363ff65407362974b20
+retrieved: 2026-11-16
+url: https://www.vishay.com/docs/68717/si2333cd.pdf
+publisher: vishay
+document_id: "68717"
+document_type: datasheet
+revision: D
+date: 2020-08-24

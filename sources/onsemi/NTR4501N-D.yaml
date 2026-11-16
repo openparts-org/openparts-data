@@ -1,0 +1,16 @@
+# Official onsemi datasheet, Publication Order Number NTR4501N/D, Rev. 16
+# (2024-02), 8 pages, downloaded with curl on 2026-11-16 (HTTP 200,
+# PDF). Read with pdftotext -layout; page numbers are PDF page indices.
+# Pages 6-7: SOT-23 CASE 318 ISSUE AU (98ASB42226B) and its STYLE list.
+# The symbol font renders u as m and Ohm as W in extracted text.
+schema_version: "0.2"
+kind: source
+id: onsemi/NTR4501N-D
+sha256: 026753b9ae552f4bfec80d827e5e5d66f4e799ce94021562258a2777ef121e1d
+retrieved: 2026-11-16
+url: https://www.onsemi.com/pdf/datasheet/ntr4501n-d.pdf
+publisher: onsemi
+document_id: NTR4501N/D
+document_type: datasheet
+revision: "16"
+date: 2024-02

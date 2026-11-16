@@ -1,0 +1,18 @@
+# 30V N-channel enhancement-mode MOSFET, SOT23 (Standard). Pin numbers are
+# NOT printed in DS31787: the page-1 "Top View" box drawing labels the single
+# top lead D, the bottom-left lead G and the bottom-right lead S (same as
+# DMG2305UX). Numbers map those positions onto the sot convention (1
+# bottom-left, 2 bottom-right, 3 top) -- position-derived, flagged for review.
+schema_version: "0.2"
+kind: device
+id: diodes/DMN3404L
+manufacturer: diodes
+category: transistor
+family: DMN3404L
+source: diodes/DS31787
+
+pins:
+  src: p1 "Right-hand Top View box drawing (G bottom-left, S bottom-right, D top); no pin numbers printed -- see header"
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

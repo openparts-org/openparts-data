@@ -1,0 +1,17 @@
+# Vishay Siliconix datasheet "Si2305CDS P-Channel 8 V (D-S) MOSFET", Document Number
+# 64847, footer "S10-0720-Rev. C, 29-Mar-10", 9 pages. Downloaded 2026-11-16
+# with curl from vishay.com; read with pdftotext -layout. Page 7 is the appended
+# "SOT-23 (TO-236): 3-LEAD" package information, Document Number 71196
+# (ECN S-03946-Rev. K, 09-Jul-01, DWG 5479); its extracted text is identical
+# to page 6 of vishay/68645. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: vishay/64847
+sha256: bf52b403503e61abd438380bf6678a3cda72b80ad0258e1282d21f6c06b01f99
+retrieved: 2026-11-16
+url: https://www.vishay.com/docs/64847/si2305cd.pdf
+publisher: vishay
+document_id: "64847"
+document_type: datasheet
+revision: C
+date: 2010-03-29

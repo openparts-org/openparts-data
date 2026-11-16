@@ -1,0 +1,39 @@
+# AO3404A: the datasheet has no ordering table; the MPN printed on it is the
+# bare device name (title, page headers), so existence is "probable".
+# No lifecycle statement. Package: page 1 says SOT23; AOS's SOT23 outline is
+# PO-00001 -- linked by package name only (as for AO3400A).
+schema_version: "0.2"
+kind: part
+id: aos/AO3404A
+manufacturer: aos
+mpn: AO3404A
+device: aos/AO3404A
+package: standards/SOT23-2.90x1.60-P1.90-AOS
+sources: [aos/AO3404A-DS, aos/PO-00001]
+source: aos/AO3404A-DS
+
+existence:
+  status: probable
+  src: p1 "Title AO3404A and package SOT23; no ordering table in the document"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 30 V, src: 'p1 "Abs. Max. Ratings, VDS"' }
+  drain_current:
+    - { max: 5.8 A, at: { TA: 25 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
+    - { max: 4.9 A, at: { TA: 70 °C }, src: 'p1 "Abs. Max. Ratings, ID"' }
+  rds_on:
+    - { typ: 18.4 mΩ, max: 25 mΩ, at: { VGS: 10 V, ID: 5.8 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - typ: 26.2 mΩ
+      max: 36 mΩ
+      at: { VGS: 10 V, ID: 5.8 A, TJ: 125 °C }
+      src: p2 "Elec. Char., RDS(ON)"
+    - { typ: 24.5 mΩ, max: 35 mΩ, at: { VGS: 4.5 V, ID: 4.8 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+  gate_threshold_voltage:
+    min: 1.5 V
+    typ: 2.1 V
+    max: 2.6 V
+    at: { ID: 250 µA }
+    src: p2 "Elec. Char., VGS(th), VDS=VGS"

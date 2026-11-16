@@ -1,0 +1,17 @@
+# Vishay Siliconix datasheet "Si2312CDS N-Channel 20 V (D-S) MOSFET", Document Number
+# 65900, footer "S10-0641-Rev. A, 22-Mar-10", 9 pages. Downloaded 2026-11-16
+# with curl from vishay.com; read with pdftotext -layout. Page 7 is the appended
+# "SOT-23 (TO-236): 3-LEAD" package information, Document Number 71196
+# (ECN S-03946-Rev. K, 09-Jul-01, DWG 5479); its extracted text is identical
+# to page 6 of vishay/68645. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: vishay/65900
+sha256: 88c7955eac72ac22c93aec5cf075e15444a4f77db9dc5ce516fa736294b07f04
+retrieved: 2026-11-16
+url: https://www.vishay.com/docs/65900/si2312cd.pdf
+publisher: vishay
+document_id: "65900"
+document_type: datasheet
+revision: A
+date: 2010-03-22

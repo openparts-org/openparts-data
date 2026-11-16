@@ -1,0 +1,15 @@
+# Official AOS datasheet AO3418 (footer Rev 8.1), downloaded with curl
+# 2026-11-16 from aosmd.com; read with pdftotext -layout. No ordering
+# table and no package outline in the document (outline: aos/PO-00001).
+# Note: the PDF's symbol font renders u as m and Ohm as W in extracted text.
+schema_version: "0.2"
+kind: source
+id: aos/AO3418-DS
+sha256: dd05ca811a63dd6f99044bccc6a93d43ba1ae8080911e5ac1c2c125514becaa7
+retrieved: 2026-11-16
+url: https://www.aosmd.com/res/datasheets/AO3418.pdf
+publisher: aos
+document_id: AO3418
+document_type: datasheet
+revision: "8.1"
+date: 2023-12
