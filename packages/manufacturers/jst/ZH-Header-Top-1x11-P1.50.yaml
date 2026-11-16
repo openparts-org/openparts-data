@@ -1,0 +1,60 @@
+# JST ZH shrouded header, top entry, 11 circuits, 1.5 mm pitch, THT,
+# 2.7 mm soldering length (B11B-ZR), from jst/eZH page 4 ("Header/
+# Through-hole type", Top entry type drawing and Model No. table: A 15,
+# B 18) and page 2 (PC board layout, Through-hole type, Top entry).
+# Frame: the PC board layout (viewed from the connector mounting surface)
+# has No. 1 circuit at the right end of the row, the connector outline's
+# edge "(2.2)" above the row and "(Locking side)" below it; turned 90
+# degrees counter-clockwise (pin 1 to the top, pins numbered down the row)
+# the (2.2) edge is the -X face. The housing is 3.5 deep: its centre lies
+# 2.2 - 3.5 / 2 = 0.45 towards -X (body_offset -0.45, nominal only).
+# "(2.2)" and the tail "(2.7)" are parenthesised (reference) values; the
+# layout's note 3 calls its dimensions reference values.
+# No land is given, only the hole: the pad is the hole plus the
+# generator's annular-ring default. Pin "φ0.5" round. Wafer PA 66
+# (glass-filled) natural (ivory), pins brass, tin-plated (page 4
+# "Material and Surface finish").
+schema_version: "0.2"
+kind: package
+id: manufacturers/jst/ZH-Header-Top-1x11-P1.50
+family: shrouded_header
+lead_count: 11
+
+lead_layout:
+  value: [1, 11]
+  src:   p2 "PC board layout, Through-hole type, Top entry type, No. 1 circuit; p4 Model No. table"
+
+source: jst/eZH
+
+pitch:
+  min: 1.45 mm
+  typ: 1.5 mm
+  max: 1.55 mm
+  src: p2 "PC board layout, Through-hole type, Top entry type, hole pitch "1.5±0.05" (note 2)"
+
+geometry: { type: parametric, generator: shrouded_header }
+
+dimensions:
+  body_width:
+    typ: 3.5 mm
+    src: p4 "Header/ Through-hole type, Top entry type, side view, housing depth"
+  body_length:
+    typ: 18 mm
+    src: p4 "Header/ Through-hole type, Top entry Model No. table, B11B-ZR, B = 18"
+  body_height:
+    typ: 4.5 mm
+    src: p4 "Header/ Through-hole type, Top entry type, side view, housing height"
+  body_offset:
+    typ: -0.45 mm
+    src: p2 "PC board layout, Through-hole type, Top entry, outline "(2.2)" and "3.5" (see comment)"
+  lead_width:
+    typ: 0.5 mm
+    src: p4 "Header/ Through-hole type, Top entry type, front view, pin "φ0.5""
+  hole_diameter:
+    min: 0.67 mm
+    typ: 0.7 mm
+    max: 0.73 mm
+    src: p2 "PC board layout, Through-hole type, Top entry type, hole "φ0.7±0.03" (note 3)"
+  tail_length:
+    typ: 2.7 mm
+    src: p4 "Header/ Through-hole type, Top entry type, side view, tail "(2.7)" (reference)"

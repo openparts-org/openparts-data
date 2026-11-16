@@ -1,0 +1,18 @@
+# JST ZH shrouded wire-to-board header, top entry, through-hole,
+# 5 circuits (jst/eZH page 4, Top entry type Model No. table, 2.7 mm
+# soldering length: B5B-ZR). The sheet names no signals: each circuit is
+# named by its number (No. 1 circuit as marked on the drawings), all
+# passive.
+schema_version: "0.2"
+kind: device
+id: jst/B5B-ZR
+manufacturer: jst
+category: connector
+family: ZH
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive }
+  "4": { name: "4", type: passive }
+  "5": { name: "5", type: passive }

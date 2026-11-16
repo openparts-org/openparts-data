@@ -1,0 +1,18 @@
+# APT2012SECK: Super Bright Orange chip LED, Kingbright datasheet DSAD0946.
+# Package: the existing APT2012 outline -- this sheet's p1 PACKAGE
+# DIMENSIONS print the same numbers as apt2012ec (DSAD0943) (compared
+# visually side by side at 170 dpi), with the same blanket tolerance note
+# (Note 2: ±0.1).
+# lifecycle unknown: no production-status statement in the datasheet.
+schema_version: "0.2"
+kind: part
+id: kingbright/APT2012SECK
+manufacturer: kingbright
+mpn: APT2012SECK
+device: kingbright/APT2012SECK
+package: manufacturers/kingbright/CHIP-KINGBRIGHT-APT2012
+sources: [kingbright/DSAD0946]
+source: kingbright/DSAD0946
+
+existence: { status: verified, src: 'p1 "SELECTION GUIDE, Part Number APT2012SECK"' }
+lifecycle: { status: unknown }

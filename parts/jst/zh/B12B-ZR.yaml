@@ -1,0 +1,20 @@
+# Model number printed verbatim in the ZH sheet's Header/ Through-hole
+# type table (jst/eZH page 4, Top entry type, 2.7 mm soldering length
+# column, 12 circuits) -> existence verified. The "-3.4" variant
+# (B12B-ZR-3.4, 3.4 mm soldering length) is a separate MPN, not covered here.
+# lifecycle: the sheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: jst/B12B-ZR
+manufacturer: jst
+mpn: B12B-ZR
+device: jst/B12B-ZR
+package: manufacturers/jst/ZH-Header-Top-1x12-P1.50
+sources: [jst/eZH]
+source: jst/eZH
+
+existence:
+  status: verified
+  src: 'p4 "Header/ Through-hole type, Top entry Model No. table, 12 circuits, 2.7 mm soldering length: B12B-ZR"'
+
+lifecycle: { status: unknown }

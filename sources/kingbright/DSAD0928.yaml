@@ -1,0 +1,16 @@
+# Kingbright datasheet for APT1608SECK (1.6 x 0.8 mm SMD chip LED), 4 pages.
+# Footer on every page: "Spec No: DSAD0928 ... Rev No: V.17A Date:
+# 04/08/2023" (MM/DD/YYYY). Read with pdftotext plus a 170 dpi
+# render of page 1 (package drawing, schematic symbol and soldering
+# pattern are vector art). Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: kingbright/DSAD0928
+sha256: 9296f27d57e963ecd1c6d70fecf585cf948df825b9c899f2ba4bdb5c5aa48685
+retrieved: 2026-11-16
+url: https://www.kingbrightusa.com/images/catalog/spec/apt1608seck.pdf
+publisher: kingbright
+document_id: DSAD0928
+document_type: datasheet
+revision: V.17A
+date: 2023-04-08

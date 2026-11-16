@@ -1,0 +1,18 @@
+# Model number printed verbatim in the PH sheet's Header (SMT type)
+# table (jst/ePH page 4, Top entry type, 8 circuits) -> existence
+# verified. Lifecycle: the sheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: jst/B8B-PH-SM4-TB
+manufacturer: jst
+mpn: B8B-PH-SM4-TB
+device: jst/B8B-PH-SM4-TB
+package: manufacturers/jst/PH-Header-Top-SMD-1x08-P2.00
+sources: [jst/ePH]
+source: jst/ePH
+
+existence:
+  status: verified
+  src: 'p4 "Header (SMT type), Top entry Model No. table, 8 circuits: B8B-PH-SM4-TB"'
+
+lifecycle: { status: unknown }

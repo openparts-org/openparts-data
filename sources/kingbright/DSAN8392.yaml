@@ -1,0 +1,16 @@
+# Kingbright datasheet for APT1608LZGCK (1.6 x 0.8 mm SMD chip LED), 4 pages.
+# Footer on every page: "Spec No: DSAN8392 ... Rev No: V.8B Date:
+# 04/08/2023" (MM/DD/YYYY). Read with pdftotext plus a 170 dpi
+# render of page 1 (package drawing, schematic symbol and soldering
+# pattern are vector art). Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: kingbright/DSAN8392
+sha256: d8a1230e515c8593ad1e475eae43a129fb830679991420705b6ba9fdc2f8f85a
+retrieved: 2026-11-16
+url: https://www.kingbrightusa.com/images/catalog/spec/apt1608lzgck.pdf
+publisher: kingbright
+document_id: DSAN8392
+document_type: datasheet
+revision: V.8B
+date: 2023-04-08

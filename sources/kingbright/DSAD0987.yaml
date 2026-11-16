@@ -1,0 +1,16 @@
+# Kingbright datasheet for APT3216SRCPRV (3.2 x 1.6 mm SMD chip LED), 4 pages.
+# Footer on every page: "Spec No: DSAD0987 ... Rev No: V.13A Date:
+# 05/21/2018" (MM/DD/YYYY). Read with pdftotext plus a 170 dpi
+# render of page 1 (package drawing, schematic symbol and soldering
+# pattern are vector art). Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: kingbright/DSAD0987
+sha256: cd8f3c24de4dda9c075b72dc3960117c51fb7835bf278d8652487d7341b0c30b
+retrieved: 2026-11-16
+url: https://www.kingbrightusa.com/images/catalog/spec/apt3216srcprv.pdf
+publisher: kingbright
+document_id: DSAD0987
+document_type: datasheet
+revision: V.13A
+date: 2018-05-21

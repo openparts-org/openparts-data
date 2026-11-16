@@ -1,0 +1,19 @@
+# JST PH SMT wire-to-board header, top entry, 7 circuits
+# (jst/ePH page 4, Header (SMT type) Top entry Model No. table: B7B-PH-SM4-TB).
+# The sheet names no signals: each circuit is named by its number, all
+# passive. The two reinforcement tabs are the package's MP pads.
+schema_version: "0.2"
+kind: device
+id: jst/B7B-PH-SM4-TB
+manufacturer: jst
+category: connector
+family: PH
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive }
+  "4": { name: "4", type: passive }
+  "5": { name: "5", type: passive }
+  "6": { name: "6", type: passive }
+  "7": { name: "7", type: passive }

@@ -1,0 +1,16 @@
+# Kingbright datasheet for APT3216CGCK (3.2 x 1.6 mm SMD chip LED), 4 pages.
+# Footer on every page: "Spec No: DSAA6058 ... Rev No: V.20B Date:
+# 03/17/2025" (MM/DD/YYYY). Read with pdftotext plus a 170 dpi
+# render of page 1 (package drawing, schematic symbol and soldering
+# pattern are vector art). Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: kingbright/DSAA6058
+sha256: aec6c89c5b76f474b23231dd2b891dd18e14c3dcc92b9c4dcd7de8365073049b
+retrieved: 2026-11-16
+url: https://www.kingbrightusa.com/images/catalog/spec/apt3216cgck.pdf
+publisher: kingbright
+document_id: DSAA6058
+document_type: datasheet
+revision: V.20B
+date: 2025-03-17

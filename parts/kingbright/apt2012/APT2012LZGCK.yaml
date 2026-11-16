@@ -1,0 +1,18 @@
+# APT2012LZGCK: Green (InGaN) chip LED, Kingbright datasheet DSAN8398.
+# Package: the existing APT2012 outline -- this sheet's p1 PACKAGE
+# DIMENSIONS print the same numbers as apt2012ec (DSAD0943) (compared
+# visually side by side at 170 dpi), with the same blanket tolerance note
+# (Note 2: ±0.1).
+# lifecycle unknown: no production-status statement in the datasheet.
+schema_version: "0.2"
+kind: part
+id: kingbright/APT2012LZGCK
+manufacturer: kingbright
+mpn: APT2012LZGCK
+device: kingbright/APT2012LZGCK
+package: manufacturers/kingbright/CHIP-KINGBRIGHT-APT2012
+sources: [kingbright/DSAN8398]
+source: kingbright/DSAN8398
+
+existence: { status: verified, src: 'p1 "SELECTION GUIDE, Part Number APT2012LZGCK"' }
+lifecycle: { status: unknown }

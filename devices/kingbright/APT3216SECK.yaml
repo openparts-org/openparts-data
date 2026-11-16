@@ -1,0 +1,31 @@
+# Super Bright Orange SMD chip LED. Pin 1 = cathode, pin 2 = anode, from the
+# page-1 schematic symbol (cathode bar on the pin-1 side) and the
+# numbered bottom-view terminals.
+schema_version: "0.2"
+kind: device
+id: kingbright/APT3216SECK
+manufacturer: kingbright
+category: led
+family: APT3216SECK
+source: kingbright/DSAD0991
+
+parameters:
+  forward_voltage:
+    typ: 2.1 V
+    max: 2.5 V
+    at: { IF: 20 mA, TA: 25 °C }
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Forward Voltage VF, Super Bright Orange"
+  forward_current:
+    max: 30 mA
+    at: { TA: 25 °C }
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, DC Forward Current IF"
+  color: { value: orange, src: 'p1 "SELECTION GUIDE, Emitting Color Super Bright Orange"' }
+  wavelength:
+    typ: 605 nm
+    at: { IF: 20 mA, TA: 25 °C }
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Super Bright Orange"
+
+pins:
+  src: p1 "Schematic symbol "1 -|<- 2" (cathode bar at pin 1) and bottom-view pad numbers 1/2"
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

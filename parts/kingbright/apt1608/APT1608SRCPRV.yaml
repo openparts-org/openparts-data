@@ -1,0 +1,18 @@
+# APT1608SRCPRV: Super Bright Red (GaAlAs) chip LED, Kingbright datasheet DSAB3726.
+# Package: the existing APT1608 outline -- this sheet's p1 PACKAGE
+# DIMENSIONS print the same numbers as apt1608surck (DSAD0926) (compared
+# visually side by side at 170 dpi), with the same blanket tolerance note
+# (Note 2: ±0.1).
+# lifecycle unknown: no production-status statement in the datasheet.
+schema_version: "0.2"
+kind: part
+id: kingbright/APT1608SRCPRV
+manufacturer: kingbright
+mpn: APT1608SRCPRV
+device: kingbright/APT1608SRCPRV
+package: manufacturers/kingbright/CHIP-KINGBRIGHT-APT1608
+sources: [kingbright/DSAB3726]
+source: kingbright/DSAB3726
+
+existence: { status: verified, src: 'p1 "SELECTION GUIDE, Part Number APT1608SRCPRV"' }
+lifecycle: { status: unknown }

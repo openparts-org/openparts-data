@@ -1,0 +1,16 @@
+# Kingbright datasheet for APT1608SRCPRV (1.6 x 0.8 mm SMD chip LED), 4 pages.
+# Footer on every page: "Spec No: DSAB3726 ... Rev No: V.19A Date:
+# 10/25/2021" (MM/DD/YYYY). Read with pdftotext plus a 170 dpi
+# render of page 1 (package drawing, schematic symbol and soldering
+# pattern are vector art). Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: kingbright/DSAB3726
+sha256: 0ec09292d129f0ec8d1bbb817a25dc96776e6f228200eabb85c3d292c0cd04ae
+retrieved: 2026-11-16
+url: https://www.kingbrightusa.com/images/catalog/spec/apt1608srcprv.pdf
+publisher: kingbright
+document_id: DSAB3726
+document_type: datasheet
+revision: V.19A
+date: 2021-10-25

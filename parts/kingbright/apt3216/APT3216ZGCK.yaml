@@ -1,0 +1,18 @@
+# APT3216ZGCK: Green (InGaN) chip LED, Kingbright datasheet DSAM6353.
+# Package: the existing APT3216 outline -- this sheet's p1 PACKAGE
+# DIMENSIONS print the same numbers as apt3216ec (DSAD0986) (compared
+# visually side by side at 170 dpi), with the same blanket tolerance note
+# (Note 2: ±0.2).
+# lifecycle unknown: no production-status statement in the datasheet.
+schema_version: "0.2"
+kind: part
+id: kingbright/APT3216ZGCK
+manufacturer: kingbright
+mpn: APT3216ZGCK
+device: kingbright/APT3216ZGCK
+package: manufacturers/kingbright/CHIP-KINGBRIGHT-APT3216
+sources: [kingbright/DSAM6353]
+source: kingbright/DSAM6353
+
+existence: { status: verified, src: 'p1 "SELECTION GUIDE, Part Number APT3216ZGCK"' }
+lifecycle: { status: unknown }

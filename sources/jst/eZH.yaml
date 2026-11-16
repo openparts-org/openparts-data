@@ -1,0 +1,22 @@
+# JST "ZH CONNECTOR" catalogue sheet (English), 6 pages, A4 portrait:
+# "1.5 mm pitch/Wire-to-Board connectors/Crimp style and Mating style".
+# Downloaded with wget (curl got HTTP 403); PDF, encrypted with
+# copy/print allowed, read with pdftotext -layout and 300 dpi renders of
+# pages 2 and 4 (drawings). The sheet carries no document number or
+# revision: `revision`/`date` record the PDF's own creation date
+# (metadata, 2024-03-11 JST). PDF page index = the printed page number.
+# Used: page 2 "PC board layout and Assembly layout/ Through-hole type",
+# top entry type (note 1: viewed from the connector mounting surface;
+# note 3: the dimensions are reference values), page 4 "Header/
+# Through-hole type" top entry drawings and Model No. table.
+schema_version: "0.2"
+kind: source
+id: jst/eZH
+sha256: ea6ee36db6758fc569e4ae416e89c9db92896482ac3c3a6fb713d66cb513b2c5
+retrieved: 2026-11-16
+url: https://www.jst-mfg.com/product/pdf/eng/eZH.pdf
+publisher: jst
+document_id: eZH
+document_type: datasheet
+revision: unversioned (PDF created 2024-03-11)
+date: 2024-03-11
