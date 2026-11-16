@@ -1,0 +1,20 @@
+# Model number printed verbatim in the EH sheet's ordering table
+# (jst/eEH page 3, "Header" Model No. table, Top entry type column, 8 circuits)
+# -> existence verified. No colour letter = natural (white) (page 6
+# "Model number allocation"). lifecycle: the sheet states no production
+# status -> unknown.
+schema_version: "0.2"
+kind: part
+id: jst/B8B-EH
+manufacturer: jst
+mpn: B8B-EH
+device: jst/B8B-EH
+package: manufacturers/jst/EH-Header-Top-1x08-P2.50
+sources: [jst/eEH]
+source: jst/eEH
+
+existence:
+  status: verified
+  src: 'p3 ""Header" Model No. table, No. of circuits 8, Top entry type: "B8B-EH""'
+
+lifecycle: { status: unknown }

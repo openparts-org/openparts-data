@@ -1,0 +1,18 @@
+# Model number printed verbatim in the XH sheet's side-entry ordering
+# table (jst/eXH page 5, 14 circuits, column "C: 7.6 (mm)") -> existence
+# verified. lifecycle: the sheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: jst/S14B-XH-A-1
+manufacturer: jst
+mpn: S14B-XH-A-1
+device: jst/S14B-XH-A-1
+package: manufacturers/jst/XH-Header-Side-1x14-P2.50-C7.6
+sources: [jst/eXH]
+source: jst/eXH
+
+existence:
+  status: verified
+  src: 'p5 ""Header" Side entry type Model No. table, 14 circuits, C: 7.6 (mm): "S14B-XH-A-1""'
+
+lifecycle: { status: unknown }

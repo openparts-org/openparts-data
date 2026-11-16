@@ -1,0 +1,54 @@
+# JST EH shrouded header, side entry, 12 circuits, 2.5 mm pitch, THT
+# (S12B-EH), from jst/eEH page 3 ("Header", Side entry type and the
+# Model No. table: A 27.5, B 32.5) and page 2 (PC board layout).
+# Family right_angle_header with the housing over its holes
+# (canonical-data 20.1).
+# Frame: the PC board layout (p2, viewed from the connector mounting
+# surface) has No. 1 circuit at the left end of the row and the "Header
+# Mating side" edge of the outline "(6.7)" above it; turned 90 degrees
+# clockwise (pin 1 to the top) the mating face is the +X face. The side
+# view (p3) dimensions the housing along the board as "6" from the mating
+# face plus "2.2" to the rear (depth 6 + 2.2 = 8.2) and the post "6.7"
+# from the mating face: the centre lies 6.7 - 8.2 / 2 = 2.6 towards +X
+# (body_offset +2.6, nominal only), the holes under it. Height "4.2"
+# above the board, tail "3.2".
+# No land is given, only the hole: the pad is the hole plus the
+# generator's annular-ring default. Walls, opening and lock are not
+# dimensioned (3D generator defaults). Post brass, copper-undercoated,
+# tin-plated; wafer PA 66, natural (white) (p3).
+schema_version: "0.2"
+kind: package
+id: manufacturers/jst/EH-Header-Side-1x12-P2.50
+family: right_angle_header
+lead_count: 12
+
+lead_layout:
+  value: [1, 12]
+  src:   p2 "PC board layout, Side entry type, No. 1 circuit; p3 Header Model No. table"
+
+source: jst/eEH
+
+pitch:
+  min: 2.45 mm
+  typ: 2.5 mm
+  max: 2.55 mm
+  src: p2 "PC board layout, hole pitch "2.5±0.05" (note 2, not accumulated)"
+
+geometry: { type: parametric, generator: right_angle_header }
+
+dimensions:
+  body_width: { typ: 8.2 mm, src: 'p3 ""Header", Side entry type, side view: "6" + "2.2" = 8.2"' }
+  body_length: { typ: 32.5 mm, src: 'p3 ""Header" Model No. table, S12B-EH: Dimensions B = 32.5"' }
+  body_height:
+    typ: 4.2 mm
+    src: 'p3 ""Header", Side entry type, side view: housing height "4.2" (p2 "(4.2)")"'
+  body_offset:
+    typ: 2.6 mm
+    src: 'p3 "Header, Side entry side view: post 6.7 from mating face (p2 (6.7)), depth 6 + 2.2: 6.7 - 8.2/2"'
+  lead_width:  { typ: 0.64 mm, src: 'p3 ""Header", Side entry type, front view: post "□0.64""' }
+  hole_diameter:
+    min: 0.9 mm
+    typ: 0.9 mm
+    max: 1 mm
+    src: 'p2 "PC board layout, hole "φ0.9 +0.1/0" (note 3: reference values)"'
+  tail_length: { typ: 3.2 mm, src: 'p3 ""Header", Side entry type, side view: tail "3.2""' }

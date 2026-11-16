@@ -1,0 +1,20 @@
+# Model number printed verbatim in the EH sheet's ordering table
+# (jst/eEH page 3, "Header" Model No. table, Side entry type column, 2 circuits)
+# -> existence verified. No colour letter = natural (white) (page 6
+# "Model number allocation"). lifecycle: the sheet states no production
+# status -> unknown.
+schema_version: "0.2"
+kind: part
+id: jst/S2B-EH
+manufacturer: jst
+mpn: S2B-EH
+device: jst/S2B-EH
+package: manufacturers/jst/EH-Header-Side-1x02-P2.50
+sources: [jst/eEH]
+source: jst/eEH
+
+existence:
+  status: verified
+  src: 'p3 ""Header" Model No. table, No. of circuits 2, Side entry type: "S2B-EH""'
+
+lifecycle: { status: unknown }
