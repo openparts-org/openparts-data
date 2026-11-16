@@ -25,6 +25,18 @@ parameters:
     typ: 525 nm
     at: { IF: 2 mA, TA: 25 °C }
     src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Green"
+  peak_wavelength:
+    typ: 515 nm
+    at: { IF: 2 mA, TA: 25 °C }
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Wavelength at Peak Emission λpeak, Green"
+  viewing_angle: { typ: 130 °, src: 'p1 "Selection Guide, Viewing Angle 2θ1/2, APT1608LZGCK row"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Operating Temperature Top"
+  esd_hbm:
+    typ: 450 V
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Electrostatic Discharge Threshold (HBM)"
 
 pins:
   src: p1 "Schematic symbol "1 -|<- 2" (cathode bar at pin 1) and bottom-view pad numbers 1/2"

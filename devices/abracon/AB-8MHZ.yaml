@@ -9,6 +9,16 @@ id: abracon/AB-8MHZ
 manufacturer: abracon
 category: crystal
 family: AB
+source: abracon/ab-hc49u
+
+# Parameters (AI candidates, needs review).
+parameters:
+  aging:
+    tol: ±5 ppm
+    at: { TA: 25 °C }
+    src: p1 "STANDARD SPECIFICATIONS, Aging@25°C±3°C, First year"
+  drive_level:       { typ: 100 µW, max: 1000 µW, src: 'p1 "STANDARD SPECIFICATIONS, Drive Level"' }
+  shunt_capacitance: { max: 7 pF, src: 'p1 "STANDARD SPECIFICATIONS, Shunt capacitance (C0)"' }
 
 pins:
   "1": { name: XTAL1, type: passive }

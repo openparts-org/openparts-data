@@ -22,8 +22,7 @@ existence:
 
 lifecycle: { status: unknown }
 
-# Parameters (AI candidates, needs review). Frequency stability (+-50 ppm,
-# blank) has no vocabulary key.
+# Parameters (AI candidates, needs review).
 parameters:
   esr: { max: 50 Ω, src: 'p1 "TABLE 1 Standard ESR, 20.000-29.999 (Fund) row"' }
   frequency:
@@ -36,3 +35,11 @@ parameters:
     tol: ±20 ppm
     at: { TA: 25 °C }
     src: 'p1 "OPTIONS AND PART IDENTIFICATION, Freq. Tolerance: 2 = ±20 ppm"'
+  frequency_stability:
+    tol: ±50 ppm
+    at: { TA: -20..70 °C }
+    src: 'p1 "OPTIONS AND PART IDENTIFICATION, Freq. Stability: Blank = ±50 ppm (Operating Temp. B)"'
+  operating_temperature:
+    min: -20 °C
+    max: 70 °C
+    src: 'p1 "OPTIONS AND PART IDENTIFICATION, Operating Temp.: B = -20°C ~ +70°C"'

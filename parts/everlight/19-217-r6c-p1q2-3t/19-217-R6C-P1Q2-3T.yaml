@@ -17,8 +17,21 @@ lifecycle: { status: unknown }
 
 # Parameters (AI candidates, needs review).
 parameters:
+  peak_wavelength:
+    typ: 632 nm
+    at: { IF: 20 mA, TA: 25 °C }
+    src: p3 "Electro-Optical Characteristics, Peak Wavelength λp"
   luminous_intensity:
     min: 45 mcd
     max: 112 mcd
     at: { IF: 20 mA, TA: 25 °C }
     src: p3 "Electro-Optical Characteristics, Luminous Intensity Iv (bins P1-Q2, p4)"
+  viewing_angle:
+    typ: 120 °
+    at: { IF: 20 mA, TA: 25 °C }
+    src: p3 "Electro-Optical Characteristics, Viewing Angle 2θ1/2"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p2 "Absolute Maximum Ratings, Operating Temperature Topr"
+  esd_hbm: { typ: 2 kV, src: 'p2 "Absolute Maximum Ratings, Electrostatic Discharge ESDHBM"' }

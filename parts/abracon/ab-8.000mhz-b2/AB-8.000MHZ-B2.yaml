@@ -33,8 +33,7 @@ lifecycle: { status: unknown }
 
 # Parameters (AI candidates, needs review): from the OPTIONS AND PART
 # IDENTIFICATION legend (p2; options left blank if standard) and the
-# standard specifications / Table 1 (p1). Frequency stability is not a
-# vocabulary key.
+# standard specifications / Table 1 (p1).
 parameters:
   esr: { max: 35 Ω, src: 'p1 "Table 1, 8.000-9.999 MHz row, HC49/U Fundamental ESR"' }
   frequency: { typ: 8 MHz, src: 'p2 "OPTIONS AND PART IDENTIFICATION, Frequency in MHz: 8.000MHZ"' }
@@ -44,3 +43,11 @@ parameters:
   frequency_tolerance:
     tol: ±20 ppm
     src: 'p2 "OPTIONS AND PART IDENTIFICATION, Freq. Tolerance: 2 = ±20 ppm"'
+  frequency_stability:
+    tol: ±100 ppm
+    at: { TA: -20..70 °C }
+    src: p1 "STANDARD SPECIFICATIONS, Frequency Stability (standard; p2 option blank)"
+  operating_temperature:
+    min: -20 °C
+    max: 70 °C
+    src: 'p2 "OPTIONS AND PART IDENTIFICATION, Operating Temp.: B = -20°C ~ +70°C"'

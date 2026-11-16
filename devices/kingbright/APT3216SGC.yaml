@@ -26,6 +26,18 @@ parameters:
     typ: 568 nm
     at: { IF: 20 mA, TA: 25 °C }
     src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Super Bright Green"
+  peak_wavelength:
+    typ: 565 nm
+    at: { IF: 20 mA, TA: 25 °C }
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Wavelength at Peak Emission λpeak, Super Bright Green"
+  viewing_angle: { typ: 160 °, src: 'p1 "Selection Guide, Viewing Angle 2θ1/2, APT3216SGC row"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Operating Temperature Top"
+  esd_hbm:
+    typ: 8 kV
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Electrostatic Discharge Threshold (HBM)"
 
 pins:
   src: p1 "Schematic symbol "1 -|<- 2" (cathode bar at pin 1) and bottom-view pad numbers 1/2"

@@ -1,0 +1,17 @@
+# ECS ECS-3225MV MultiVolt SMD crystal oscillator datasheet, 2 pages, 3.2 x 2.5 x 1.2 mm.
+# No document number; p1 footer prints "Rev. 2026" (revision label);
+# date = pdfinfo CreationDate 2026-09-01. p1: Operating Conditions / Electrical Characteristics, Dimensions
+# (Figure 1), Pad Connections, Suggested Land Pattern (Figure 2), Part
+# Numbering Guide; p2: Developed Frequencies
+# (vector drawings, 300 dpi render). curl, HTTP 200.
+schema_version: "0.2"
+kind: source
+id: ecs/ECS-3225MV
+sha256: e7cb91f1a614bd05d0de6aaa8ba656d80660828bae6b1011a1ca007993ee88d0
+retrieved: 2026-11-16
+url: https://ecsxtal.com/store/pdf/ECS-3225MV.pdf
+publisher: ecs
+document_id: ECS-3225MV
+document_type: datasheet
+revision: Rev. 2026
+date: 2026-09-01

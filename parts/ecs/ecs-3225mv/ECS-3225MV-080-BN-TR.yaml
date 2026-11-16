@@ -1,0 +1,34 @@
+# ECS ECS-3225MV-080-BN-TR: ECS-3225MV MultiVolt CMOS oscillator, 8 MHz, B (+-50 ppm
+# inclusive stability), N (-40 ~ +85 C), TR (1k reel). Listed verbatim in
+# the product page's Ordering & Quality table -> existence verified; it
+# also decodes per the datasheet's PART NUMBERING GUIDE. lifecycle unknown.
+schema_version: "0.2"
+kind: part
+id: ecs/ECS-3225MV-080-BN-TR
+manufacturer: ecs
+mpn: ECS-3225MV-080-BN-TR
+device: ecs/ECS-3225MV-SERIES
+package: manufacturers/ecs/LGA4-3.2x2.5-ECS-3225MV
+sources: [ecs/ECS-3225MV, ecs/ECS-3225MV-product-page]
+source: ecs/ECS-3225MV
+
+existence:
+  status: verified
+  src: ecs/ECS-3225MV-product-page p1 "Ordering & Quality table, row ECS-3225MV-080-BN-TR"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  frequency: { typ: 8 MHz, src: 'p2 "DEVELOPED FREQUENCIES, code 080"' }
+  frequency_stability:
+    tol: ±50 ppm
+    at: { TA: -40..85 °C }
+    src: p1 "ELECTRICAL CHARACTERISTICS, Frequency Stability -40 ~ +85°C (BN Opt), inclusive"
+  supply_current:
+    max: 3 mA
+    src: p1 "ELECTRICAL CHARACTERISTICS, Input Current (No Load), 1.000 ~ 9.999 MHz"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "PART NUMBERING GUIDE, TEMP RANGE N = -40 ~ +85°C"

@@ -10,6 +10,17 @@ category: crystal
 family: ABS07
 source: abracon/ABS07
 
+# Parameters (AI candidates, needs review).
+parameters:
+  aging:
+    tol: ±3 ppm
+    at: { TA: 25 °C }
+    src: p1 "Key Electrical Specifications, Aging, @25°C± 3°C First year"
+  drive_level: { typ: 0.1 µW, max: 0.5 µW, src: 'p1 "Key Electrical Specifications, Drive Level"' }
+  shunt_capacitance:
+    max: 2 pF
+    src: p1 "Key Electrical Specifications, Shunt capacitance (C0)"
+
 pins:
   src: p4 "Mechanical Dimensions, "CONNECTIONS" diagram (2-terminal crystal symbol)"
   "1": { name: XTAL1, type: passive }

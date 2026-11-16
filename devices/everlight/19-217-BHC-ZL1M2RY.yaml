@@ -29,6 +29,19 @@ parameters:
     max: 475 nm
     at: { IF: 5 mA, TA: 25 °C }
     src: p3 "Electro-Optical Characteristics, Dominant Wavelength λd"
+  peak_wavelength:
+    typ: 468 nm
+    at: { IF: 5 mA, TA: 25 °C }
+    src: p3 "Electro-Optical Characteristics, Peak Wavelength λp"
+  viewing_angle:
+    typ: 120 °
+    at: { IF: 5 mA, TA: 25 °C }
+    src: p3 "Electro-Optical Characteristics, Viewing Angle 2θ1/2"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p2 "Absolute Maximum Ratings, Operating Temperature Topr"
+  esd_hbm: { typ: 150 V, src: 'p2 "Absolute Maximum Ratings, Electrostatic Discharge ESDHBM"' }
 
 pins:
   src: 'p6 "Package Outline Dimensions, Polarity: + (1), - (2); Cathode Mark"'

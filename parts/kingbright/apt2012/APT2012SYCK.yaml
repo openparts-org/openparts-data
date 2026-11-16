@@ -37,3 +37,15 @@ parameters:
     typ: 590 nm
     at: { IF: 20 mA, TA: 25 °C }
     src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, Super Bright Yellow"
+  peak_wavelength:
+    typ: 590 nm
+    at: { IF: 20 mA, TA: 25 °C }
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Wavelength at Peak Emission λpeak, Super Bright Yellow"
+  viewing_angle: { typ: 140 °, src: 'p1 "Selection Guide, Viewing Angle 2θ1/2, APT2012SYCK row"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Operating Temperature Top"
+  esd_hbm:
+    typ: 3 kV
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Electrostatic Discharge Threshold (HBM)"

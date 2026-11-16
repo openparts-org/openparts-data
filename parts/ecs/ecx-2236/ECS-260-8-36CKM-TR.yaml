@@ -1,7 +1,7 @@
 # ECS ECS-260-8-36CKM-TR: ECX-2236 crystal, 26 MHz, 8 pF. Listed verbatim in the ECX-2236
 # product page's Ordering & Quality table -> existence verified; it also
 # decodes per the datasheet's PART NUMBERING GUIDE. Values from that row
-# (stability and temperature range have no vocabulary key). lifecycle
+# (stability and temperature range included). lifecycle
 # unknown: no production-status statement.
 schema_version: "0.2"
 kind: part
@@ -29,3 +29,11 @@ parameters:
     tol: ±10 ppm
     at: { TA: 25 °C }
     src: p1 "Ordering & Quality table, row ECS-260-8-36CKM-TR, Tolerance"
+  frequency_stability:
+    tol: ±10 ppm
+    at: { TA: -20..70 °C }
+    src: p1 "Ordering & Quality table, row ECS-260-8-36CKM-TR, Stability"
+  operating_temperature:
+    min: -20 °C
+    max: 70 °C
+    src: p1 "Ordering & Quality table, row ECS-260-8-36CKM-TR, Operating Temperature"

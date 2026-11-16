@@ -7,9 +7,22 @@ id: epson/FC-12M
 manufacturer: epson
 category: crystal
 family: FC-12M
-source: epson/FC-12M-DS
+source: epson/FC-12M-BRIEF
+
+# Parameters (AI candidates, needs review).
+parameters:
+  aging:
+    tol: ±3 ppm
+    at: { TA: 25 °C }
+    src: p1 "Specifications, Frequency aging f_age, first year"
+  drive_level:       { max: 0.5 µW, src: 'p1 "Specifications, Level of drive DL"' }
+  shunt_capacitance: { typ: 1.3 pF, src: 'p1 "Specifications, Shunt capacitance C0, FC-12M"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "Specifications, Operating temperature range T_use"
 
 pins:
-  src: 'p1 ""Internal connection (TOP VIEW)" diagram, pads #1 and #2"'
+  src: 'epson/FC-12M-DS p1 ""Internal connection (TOP VIEW)" diagram, pads #1 and #2"'
   "1": { name: XTAL1, type: passive }
   "2": { name: XTAL2, type: passive }

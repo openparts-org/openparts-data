@@ -14,6 +14,25 @@ category: crystal
 family: ABM8-272
 source: abracon/456603@revB
 
+# Parameters (AI candidates, needs review).
+parameters:
+  frequency_stability:
+    tol: ±30 ppm
+    at: { TA: -40..85 °C }
+    src: p1 "Key Electrical Specifications, Frequency Stability over the Operating Temperature"
+  aging:
+    tol: ±5 ppm
+    at: { TA: 25 °C }
+    src: p1 "Key Electrical Specifications, Aging, @25±3°C, 1st year"
+  drive_level: { typ: 10 µW, max: 200 µW, src: 'p1 "Key Electrical Specifications, Drive Level"' }
+  shunt_capacitance:
+    max: 3 pF
+    src: p1 "Key Electrical Specifications, Shunt Capacitance (C0)"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "Key Electrical Specifications, Operating Temperature"
+
 pins:
   src: p2 "Mechanical Dimensions, Top View, pads 1-4"
   "1": { name: XTAL1, type: passive }

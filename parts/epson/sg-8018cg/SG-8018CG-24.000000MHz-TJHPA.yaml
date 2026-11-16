@@ -1,0 +1,21 @@
+# Epson SG-8018CG 24.000000MHz TJHPA: SG-8018CG programmable CMOS oscillator, 24 MHz, T (1.8 V
+# to 3.3 V typ.), J (+-50 ppm), H (-40 ~ +105 C), P (pin 1 = output
+# enable), A (default rise/fall). The MPN contains spaces as published;
+# the id replaces them with "-". existence: probable -- assembled from
+# the p2 product-name legend (only the 25 MHz example is printed).
+# lifecycle unknown.
+schema_version: "0.2"
+kind: part
+id: epson/SG-8018CG-24.000000MHz-TJHPA
+manufacturer: epson
+mpn: SG-8018CG 24.000000MHz TJHPA
+device: epson/SG-8018CG
+package: manufacturers/epson/LGA4-2.5x2.0-SG-8018CG
+sources: [epson/SG-8018CG-BRIEF]
+source: epson/SG-8018CG-BRIEF
+
+existence: { status: probable, src: 'p2 "Product Name (Standard Form) legend, CG, T, J, H, P, A"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters: { frequency: { typ: 24 MHz, src: 'p2 "Product Name (Standard Form), ③ Frequency"' } }

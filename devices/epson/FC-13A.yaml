@@ -8,6 +8,18 @@ category: crystal
 family: FC-13A
 source: epson/FC-13A-BRIEF
 
+# Parameters (AI candidates, needs review).
+parameters:
+  aging:
+    tol: ±3 ppm
+    at: { TA: 25 °C }
+    src: p1 "Specifications, Frequency aging f_age, first year"
+  shunt_capacitance: { typ: 0.9 pF, src: 'p1 "Specifications, Shunt capacitance C0"' }
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p1 "Specifications, Operating temperature range T_use"
+
 pins:
   src: 'p1 "Internal connection (TOP VIEW), pads #1 and #2"'
   "1": { name: XTAL1, type: passive }

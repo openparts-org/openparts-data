@@ -1,0 +1,67 @@
+# Abracon ASDMB 4-pad plastic QFN MEMS oscillator package, 2.5 x 2.0 mm,
+# from the p7 "Mechanical Dimensions" of abracon/ASDMB-DS (raster, 300 dpi
+# render). Frame (as manufacturers/abracon/LGA4-2.5x2.0-P1.25-ABM10): lga,
+# two terminals on each 2.0 mm side, body_width = the long side (X). TOP
+# VIEW numbering: 4 top-left, 3 top-right, 1 bottom-left (dot), 2
+# bottom-right -> pad_order [4, 1, 2, 3] (generator positions 1 TL, 2 BL,
+# 3 BR, 4 TR). lead_length = terminal size along X, lead_width = along Y.
+# BOTTOM VIEW: terminal 0.65+-0.05 along X, 0.65+-0.10 along Y, 1.65
+# between terminal centres in X (extension lines on the terminal centre
+# lines, checked on the render), 0.70 gap between terminals in Y (edge to
+# edge). pitch = 0.65 + 0.70 = 1.35 (sum of printed dims, nominal only):
+# reviewer check. Setback from the body edge not printed: lead_inset left
+# out. pads: "Recommended Land Pattern", pad 0.65 (X) x 0.85 (Y); 1.65 is
+# dimensioned between pad CENTRES in X, 0.70 is the gap between pad EDGES
+# in Y (both checked on the render; 0.20 = pad overhang past the body).
+# Centres x = +-0.825, y = +-(0.35 + 0.425) = +-0.775.
+schema_version: "0.2"
+kind: package
+id: manufacturers/abracon/LGA4-2.5x2.0-P1.35-ASDMB
+family: lga
+lead_count: 4
+
+lead_layout: { value: [2, 0, 2, 0], src: 'p7 "BOTTOM VIEW: two terminals on each 2.0 mm side"' }
+
+source: abracon/ASDMB-DS
+
+pitch:
+  typ: 1.35 mm
+  src: p7 "BOTTOM VIEW, 0.026 (0.65) terminal + 0.028 (0.70) gap (see header)"
+
+pad_order: { value: ["4", "1", "2", "3"], src: 'p7 "TOP VIEW numbering, pin 1 dot bottom left"' }
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:
+    min: 2.45 mm
+    typ: 2.5 mm
+    max: 2.55 mm
+    src: p7 "TOP VIEW 0.098+-0.002 [2.50+-0.05]"
+  body_length:
+    min: 1.95 mm
+    typ: 2 mm
+    max: 2.05 mm
+    src: p7 "TOP VIEW 0.079+-0.002 [2.00+-0.05]"
+  body_height:
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 0.9 mm
+    src: p7 "SIDE VIEW 0.033+-0.002 [0.85+-0.05]"
+  lead_length:
+    min: 0.6 mm
+    typ: 0.65 mm
+    max: 0.7 mm
+    src: p7 "BOTTOM VIEW 0.026+-0.002 [0.65+-0.05]"
+  lead_width:
+    min: 0.55 mm
+    typ: 0.65 mm
+    max: 0.75 mm
+    src: p7 "BOTTOM VIEW 0.026+-0.004 [0.65+-0.10]"
+
+pads:
+  value:
+    - { number: "1", x: -0.825, y: -0.775, width: 0.65, length: 0.85 }
+    - { number: "2", x: 0.825, y: -0.775, width: 0.65, length: 0.85 }
+    - { number: "3", x: 0.825, y: 0.775, width: 0.65, length: 0.85 }
+    - { number: "4", x: -0.825, y: 0.775, width: 0.65, length: 0.85 }
+  src: p7 "Recommended Land Pattern, [1.65], [0.70], [0.85], [0.65], [0.20] (see header)"

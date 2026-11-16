@@ -27,3 +27,11 @@ parameters:
     tol: ±15 ppm
     at: { TA: 25 °C }
     src: 'p1 "OPTIONS AND PART IDENTIFICATION, Freq. Tolerance: 7 = ±15 ppm"'
+  frequency_stability:
+    tol: ±15 ppm
+    at: { TA: -20..70 °C }
+    src: 'p1 "OPTIONS AND PART IDENTIFICATION, Freq. Stability: G = ±15 ppm (Operating Temp. B)"'
+  operating_temperature:
+    min: -20 °C
+    max: 70 °C
+    src: 'p1 "OPTIONS AND PART IDENTIFICATION, Operating Temp.: B = -20°C ~ +70°C"'

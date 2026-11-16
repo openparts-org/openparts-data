@@ -13,6 +13,26 @@ category: crystal
 family: 3x9X
 source: ecs/ECS-3x10X-3x9X
 
+# Parameters (AI candidates, needs review).
+parameters:
+  frequency_stability:
+    tol: ±50 ppm
+    at: { TA: -10..60 °C }
+    src: p1 "ELECTRICAL CHARACTERISTICS, Frequency Stability, -10 ~ +60°C"
+  aging:
+    tol: ±5 ppm
+    at: { TA: 25 °C }
+    src: p1 "ELECTRICAL CHARACTERISTICS, Aging (First Year) @ +25°C ±3°C"
+  drive_level:
+    min: 50 µW
+    max: 100 µW
+    src: p1 "ELECTRICAL CHARACTERISTICS, Drive Level DL (50 ~ 100)"
+  shunt_capacitance: { max: 5 pF, src: 'p1 "ELECTRICAL CHARACTERISTICS, Shunt Capacitance C0"' }
+  operating_temperature:
+    min: -10 °C
+    max: 60 °C
+    src: p1 "ELECTRICAL CHARACTERISTICS, Operating Temperature Topr"
+
 pins:
   src: p1 "Figure 2 "3x9X" outline drawing, 2 parallel wire leads"
   "1": { name: XTAL1, type: passive }

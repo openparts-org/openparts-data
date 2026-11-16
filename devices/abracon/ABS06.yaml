@@ -12,6 +12,14 @@ category: crystal
 family: ABS06
 source: abracon/ABS06-DS
 
+# Parameters (AI candidates, needs review).
+parameters:
+  aging:
+    tol: ±3 ppm
+    at: { TA: 25 °C }
+    src: p1 "STANDARD SPECIFICATIONS, Aging@25°C±3°C, First year"
+  drive_level: { typ: 0.1 µW, max: 0.5 µW, src: 'p1 "STANDARD SPECIFICATIONS, Drive Level"' }
+
 pins:
   src: p2 "Outline drawing, Internal Connection (Top View), 2-terminal crystal"
   "1": { name: XTAL1, type: passive }

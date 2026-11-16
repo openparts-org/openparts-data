@@ -13,6 +13,19 @@ category: crystal
 family: FC-135
 source: epson/FC-135_E_Ver2.0
 
+# Parameters (AI candidates, needs review).
+parameters:
+  aging:
+    tol: ±3 ppm
+    at: { TA: 25 °C }
+    src: p2 "[4] Static Characteristics, Frequency aging f_age, first year"
+  drive_level: { typ: 0.1 µW, max: 0.5 µW, src: 'p2 "[3] Operating Conditions, Level of drive DL"' }
+  shunt_capacitance: { typ: 1 pF, src: 'p2 "[4] Static Characteristics, Shunt capacitance C0"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p2 "[3] Operating Conditions, Operating temperature range T_use"
+
 pins:
   src: p1 ""Outline Drawing and Terminal Assignment" / Pin Connection table"
   "1": { name: XTAL1, type: passive }

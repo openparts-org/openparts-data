@@ -9,6 +9,15 @@ category: crystal
 family: ECX-1637
 source: ecs/ECX-1637
 
+# Parameters (AI candidates, needs review).
+parameters:
+  aging:
+    tol: ±5 ppm
+    at: { TA: 25 °C }
+    src: p1 "ELECTRICAL CHARACTERISTICS, Aging (First Year) @ +25°C ±3°C"
+  drive_level:       { max: 100 µW, src: 'p1 "ELECTRICAL CHARACTERISTICS, Drive Level DL"' }
+  shunt_capacitance: { max: 5 pF, src: 'p1 "ELECTRICAL CHARACTERISTICS, Shunt Capacitance Co"' }
+
 pins:
   src: p1 "Pad Connections table; Figure 1"
   "1": { name: In/Out, type: passive }

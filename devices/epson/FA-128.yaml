@@ -10,6 +10,31 @@ category: crystal
 family: FA-128
 source: epson/FA-128_E_Ver2.1
 
+# Parameters (AI candidates, needs review).
+parameters:
+  frequency_stability:
+    - tol: ±12 ppm
+      at: { TA: -20..75 °C }
+      src: p2 "[4] Static Characteristics, Frequency vs. temperature characteristics (Standard)"
+    - tol: ±17 ppm
+      at: { TA: -30..85 °C }
+      src: p2 "[4] Static Characteristics, Frequency vs. temperature characteristics (Standard)"
+    - tol: ±20 ppm
+      at: { TA: -40..85 °C }
+      src: p2 "[4] Static Characteristics, Frequency vs. temperature characteristics (Standard)"
+    - tol: ±30 ppm
+      at: { TA: -40..105 °C }
+      src: p2 "[4] Static Characteristics, Frequency vs. temperature characteristics (Standard)"
+  drive_level:
+    typ: 10 µW
+    max: 200 µW
+    src: 'p2 "[3] Operating Conditions, Level of drive DL (Recommended: 10 µW)"'
+  shunt_capacitance: { max: 3 pF, src: 'p2 "[4] Static Characteristics, Shunt capacitance C0"' }
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p2 "[3] Operating Conditions, Operating temperature range T_use"
+
 pins:
   src: p6 "[7] Internal connection (TOP VIEW), Pin/Connection table"
   "1": { name: XTAL1, type: passive }

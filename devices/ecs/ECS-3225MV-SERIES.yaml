@@ -1,0 +1,27 @@
+# ECS ECS-3225MV MultiVolt SMD crystal oscillator (HCMOS output), 4-pad
+# ceramic package. Frequency, stability and temperature range per Part.
+# Pin names from the p1 "PAD CONNECTIONS" table; pad 1 tri-state
+# ("0.7 * Vdd Min or NC" = output active).
+schema_version: "0.2"
+kind: device
+id: ecs/ECS-3225MV-SERIES
+manufacturer: ecs
+category: oscillator
+family: ECS-3225MV
+source: ecs/ECS-3225MV
+
+# Parameters (AI candidates, needs review).
+parameters:
+  aging: { tol: ±3 ppm, at: { TA: 25 °C }, src: 'p1 "ELECTRICAL CHARACTERISTICS, Aging, Per year"' }
+  clock_output: { value: cmos, src: 'p1 "ELECTRICAL CHARACTERISTICS, Output Load, CMOS"' }
+  supply_voltage:
+    min: 1.62 V
+    max: 3.63 V
+    src: p1 "ELECTRICAL CHARACTERISTICS, Supply Voltage"
+
+pins:
+  src: p1 "PAD CONNECTIONS table"
+  "1": { name: Tri-state, type: input }
+  "2": { name: Gnd, type: ground }
+  "3": { name: Output, type: clock_out }
+  "4": { name: Vdd, type: power }

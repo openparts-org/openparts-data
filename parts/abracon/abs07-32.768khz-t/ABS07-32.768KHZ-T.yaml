@@ -35,3 +35,7 @@ parameters:
     tol: ±20 ppm
     at: { TA: 25 °C }
     src: 'p3 "Options and Part Identification, Freq. Tolerance: Blank = ±20 ppm (p1 Key Electrical Specifications)"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p3 "Options and Part Identification, Operating Temp. Range: Blank = -40 ~ +85°C"'

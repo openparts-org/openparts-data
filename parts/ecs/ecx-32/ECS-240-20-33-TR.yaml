@@ -31,3 +31,11 @@ parameters:
     tol: ±50 ppm
     at: { TA: 25 °C }
     src: p1 "ELECTRICAL CHARACTERISTICS, Frequency Tolerance (Blank = Std in PART NUMBERING GUIDE)"
+  frequency_stability:
+    tol: ±50 ppm
+    at: { TA: -20..70 °C }
+    src: p1 "ELECTRICAL CHARACTERISTICS, Frequency Stability -20 ~ +70°C (Std)"
+  operating_temperature:
+    min: -20 °C
+    max: 70 °C
+    src: p1 "ELECTRICAL CHARACTERISTICS, Operating Temperature Topr (Std)"

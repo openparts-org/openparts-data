@@ -1,7 +1,7 @@
 # ECS ECS-320-8-37B-CKY-TR: ECX-1637B crystal, 32 MHz, 8 pF. Listed verbatim in the ECX-1637B
 # product page's Ordering & Quality table -> existence verified; it also
 # decodes per the datasheet's PART NUMBERING GUIDE. Values from that row
-# (stability and temperature range have no vocabulary key). lifecycle
+# (stability and temperature range included). lifecycle
 # unknown: no production-status statement.
 schema_version: "0.2"
 kind: part
@@ -29,3 +29,11 @@ parameters:
     tol: ±10 ppm
     at: { TA: 25 °C }
     src: p1 "Ordering & Quality table, row ECS-320-8-37B-CKY-TR, Tolerance"
+  frequency_stability:
+    tol: ±10 ppm
+    at: { TA: -30..85 °C }
+    src: p1 "Ordering & Quality table, row ECS-320-8-37B-CKY-TR, Stability"
+  operating_temperature:
+    min: -30 °C
+    max: 85 °C
+    src: p1 "Ordering & Quality table, row ECS-320-8-37B-CKY-TR, Operating Temperature"

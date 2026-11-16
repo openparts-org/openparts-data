@@ -1,0 +1,19 @@
+# Epson SG-8018 series (programmable CMOS crystal oscillator) brief sheet,
+# 3 pages, covering SG-8018CG/CE/CB/CA. No revision printed; date =
+# copyright year "(c)Seiko Epson Corporation 2025" (pdfinfo CreationDate
+# 2025-06-25). p1: specifications, pin description; p2: product name
+# (standard form, example "SG-8018CG 25.000000MHz TJHPA"), external
+# dimensions and recommended footprint (vector, 300 dpi render). The full
+# spec (download.epsondevice.com/td/pdf/app/SG-8018CG_en.pdf, Spec No
+# SG-8018series_E_Ver2.0) was not used. curl, HTTP 200.
+schema_version: "0.2"
+kind: source
+id: epson/SG-8018CG-BRIEF
+sha256: 224fbba4db89636dd47c69d756a119f0ce81ab47bfdb9254659036a04add4a28
+retrieved: 2026-11-16
+url: https://download.epsondevice.com/td/pdf/brief/SG-8018CG_en.pdf
+publisher: epson
+document_id: SG-8018CG
+document_type: datasheet
+revision: unknown
+date: "2025"

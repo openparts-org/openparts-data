@@ -1,7 +1,7 @@
 # ECS ECS-250-8-33Q-JES-TR: ECX-33Q crystal, 25 MHz, 8 pF. Listed verbatim in the ECX-33Q
 # product page's Ordering & Quality table -> existence verified; it also
 # decodes per the datasheet's PART NUMBERING GUIDE. Values from that row
-# (stability and temperature range have no vocabulary key). lifecycle
+# (stability and temperature range included). lifecycle
 # unknown: no production-status statement.
 schema_version: "0.2"
 kind: part
@@ -29,3 +29,11 @@ parameters:
     tol: ±20 ppm
     at: { TA: 25 °C }
     src: p1 "Ordering & Quality table, row ECS-250-8-33Q-JES-TR, Tolerance"
+  frequency_stability:
+    tol: ±50 ppm
+    at: { TA: -40..125 °C }
+    src: p1 "Ordering & Quality table, row ECS-250-8-33Q-JES-TR, Stability"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p1 "Ordering & Quality table, row ECS-250-8-33Q-JES-TR, Operating Temperature"

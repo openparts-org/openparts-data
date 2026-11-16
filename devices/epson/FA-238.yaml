@@ -10,6 +10,25 @@ category: crystal
 family: FA-238
 source: epson/FA-238-BRIEF
 
+# Parameters (AI candidates, needs review).
+parameters:
+  frequency_stability:
+    tol: ±30 ppm
+    at: { TA: -20..70 °C }
+    src: p1 "Specifications, Frequency versus temperature characteristics f_tem, FA-238V/FA-238"
+  aging:
+    tol: ±5 ppm
+    at: { TA: 25 °C }
+    src: p1 "Specifications, Frequency aging f_age, FA-238V/FA-238, first year"
+  drive_level:
+    typ: 10 µW
+    max: 200 µW
+    src: 'p1 "Specifications, Level of drive DL (Recommended: 10 µW)"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "Specifications, Operating temperature range T_use"
+
 pins:
   src: p1 "External dimensions, Internal connection (TOP VIEW)"
   "1": { name: XTAL1, type: passive }

@@ -1,0 +1,34 @@
+# Abracon ASDMB-25.000MHZ-LC-T: ASDMB MEMS CMOS oscillator, 25 MHz. existence: probable
+# -- assembled from the p6 "Options and Part Identification" legend, not an
+# orderable list: "L" (-40 ~ +85 C), "C" (+-50 ppm overall stability, STD;
+# p1 note 1: includes accuracy, temperature, load and supply), output
+# load blank (15 pF), "T" (1k pcs/reel). Supply current left out: the
+# p2-p4 tables depend on Vdd and the 1.0-39.9999 MHz max cell does not
+# extract cleanly. lifecycle unknown.
+schema_version: "0.2"
+kind: part
+id: abracon/ASDMB-25.000MHZ-LC-T
+manufacturer: abracon
+mpn: ASDMB-25.000MHZ-LC-T
+device: abracon/ASDMB
+package: manufacturers/abracon/LGA4-2.5x2.0-P1.35-ASDMB
+sources: [abracon/ASDMB-DS]
+source: abracon/ASDMB-DS
+
+existence:
+  status: probable
+  src: p6 "Options and Part Identification legend, L, C, blank (15pF), T"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  frequency: { typ: 25 MHz, src: 'p6 "Options and Part Identification, Frequency in MHz"' }
+  frequency_stability:
+    tol: ±50 ppm
+    at: { TA: -40..85 °C }
+    src: 'p6 "Options and Part Identification, Overall Freq. Stability: C = ±50ppm (STD), inclusive"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p6 "Options and Part Identification, Operating Temp.: L = -40°C ~ +85°C"'

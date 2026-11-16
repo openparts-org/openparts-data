@@ -2,7 +2,7 @@
 # assembled from the p1 OPTIONS & PART IDENTIFICATION legend, not printed
 # in an orderable list (same rule as abracon/ABM8-24.000MHZ-B2-T): load
 # capacitance, custom ESR and tolerance blank (standard), "E20" (-20 ~ +70 C,
-# +-20 ppm stability), "T" (1000 pcs/reel). Stability has no vocabulary key.
+# +-20 ppm stability), "T" (1000 pcs/reel).
 schema_version: "0.2"
 kind: part
 id: abracon/ABM10-24.000MHZ-E20-T
@@ -18,7 +18,7 @@ lifecycle: { status: unknown }
 
 # Parameters (AI candidates, needs review).
 parameters:
-  esr:       { max: 100 Ω, src: 'p1 "Table 1 standard ESR, 20.000 - 29.999 row"' }
+  esr: { max: 100 Ω, src: 'p1 "Table 1 standard ESR, 20.000 - 29.999 row"' }
   frequency: { typ: 24 MHz, src: 'p1 "OPTIONS & PART IDENTIFICATION, Frequency in MHz"' }
   load_capacitance:
     typ: 10 pF
@@ -27,3 +27,11 @@ parameters:
     tol: ±20 ppm
     at: { TA: 25 °C }
     src: p1 "STANDARD SPECIFICATIONS, Frequency Tolerance @+25°C (legend blank)"
+  frequency_stability:
+    tol: ±20 ppm
+    at: { TA: -20..70 °C }
+    src: p1 "OPTIONS & PART IDENTIFICATION, Operating Temp. / stability table, E20"
+  operating_temperature:
+    min: -20 °C
+    max: 70 °C
+    src: p1 "OPTIONS & PART IDENTIFICATION, Operating Temp. -20°C ~ +70°C row, E20"

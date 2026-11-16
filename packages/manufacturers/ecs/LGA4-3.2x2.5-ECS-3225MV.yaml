@@ -1,0 +1,42 @@
+# ECS ECS-3225MV 4-pad ceramic oscillator package, 3.2 x 2.5 mm, from p1
+# "DIMENSIONS (mm)" Figure 1 and Figure 2 (suggested land pattern) of
+# ecs/ECS-3225MV (raster drawing, 300 dpi render). Frame (as
+# manufacturers/ecs/LGA4-3.2x2.5-ECX-32): lga, two terminals on each
+# 2.5 mm side, body_width = 3.2 (X). TOP VIEW numbering: #4 top-left, #3
+# top-right, #1 bottom-left (dot), #2 bottom-right -> pad_order
+# [4, 1, 2, 3]. Bottom view prints 0.9 (X) and 0.65 (Y) terminal-related
+# dimensions whose extension lines start at the body outline, and gaps 1.2
+# (X) / 1.0 (Y); the terminal size itself is ambiguous, so
+# lead_length/lead_width are left out. pitch = the land pattern's printed
+# row pitch 1.60 (centre to centre), taken as the terminal pitch.
+# pads (Figure 2): 1.40 wide (X), 1.20 high (Y); 2.20 and 1.60 are
+# dimensioned between pad CENTRES (extension lines on the pad centre
+# crosses, checked on the render). Centres x = +-1.1, y = +-0.8.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ecs/LGA4-3.2x2.5-ECS-3225MV
+family: lga
+lead_count: 4
+
+lead_layout:
+  value: [2, 0, 2, 0]
+  src:   p1 "Figure 1, bottom view, two terminals on each 2.5 mm side"
+
+source: ecs/ECS-3225MV
+
+pitch: { typ: 1.6 mm, src: 'p1 "Figure 2 suggested land pattern, 1.60 (see header)"' }
+pad_order: { value: ["4", "1", "2", "3"], src: 'p1 "Figure 1, top view numbering #1-#4"' }
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:  { min: 3.1 mm, typ: 3.2 mm, max: 3.3 mm, src: 'p1 "Figure 1, top view 3.2±0.1"' }
+  body_length: { min: 2.4 mm, typ: 2.5 mm, max: 2.6 mm, src: 'p1 "Figure 1, top view 2.5±0.1"' }
+  body_height: { max: 1.2 mm, src: 'p1 "Figure 1, side view 1.2Max"' }
+
+pads:
+  value:
+    - { number: "1", x: -1.1, y: -0.8, width: 1.4, length: 1.2 }
+    - { number: "2", x: 1.1, y: -0.8, width: 1.4, length: 1.2 }
+    - { number: "3", x: 1.1, y: 0.8, width: 1.4, length: 1.2 }
+    - { number: "4", x: -1.1, y: 0.8, width: 1.4, length: 1.2 }
+  src: p1 "Figure 2 suggested land pattern, 2.20, 1.60, 1.40, 1.20 (see header)"

@@ -18,3 +18,10 @@ source: epson/FA-238-BRIEF
 
 existence: { status: verified, src: 'p1 "Title and Product Number list, FA-238"' }
 lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  frequency_tolerance:
+    tol: ±50 ppm
+    at: { TA: 25 °C }
+    src: p1 "Specifications, Frequency tolerance f_tol, FA-238V/FA-238 (standard)"

@@ -26,6 +26,18 @@ parameters:
     typ: 617 nm
     at: { IF: 20 mA, TA: 25 °C }
     src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Dominant Wavelength λdom, High Efficiency Red"
+  peak_wavelength:
+    typ: 627 nm
+    at: { IF: 20 mA, TA: 25 °C }
+    src: p2 "ELECTRICAL / OPTICAL CHARACTERISTICS, Wavelength at Peak Emission λpeak, High Efficiency Red"
+  viewing_angle: { typ: 150 °, src: 'p1 "Selection Guide, Viewing Angle 2θ1/2, APT1608EC row"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Operating Temperature Top"
+  esd_hbm:
+    typ: 8 kV
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Electrostatic Discharge Threshold (HBM)"
 
 pins:
   src: p1 "Schematic symbol (cathode bar at pin 1) and mechanical drawing's "Polarity mark" label"

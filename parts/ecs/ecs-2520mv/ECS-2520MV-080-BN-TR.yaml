@@ -1,0 +1,45 @@
+# ECS ECS-2520MV-080-BN-TR: ECS-2520MV MultiVolt CMOS oscillator, 8 MHz, B (+-50 ppm
+# inclusive stability), N (-40 ~ +85 C), tape & reel. Listed verbatim in
+# the product page's Ordering & Quality table -> existence verified; it
+# also decodes per the datasheet's PART NUMBERING GUIDE. Supply current:
+# the p1 max table per supply voltage, ~19 MHz column. lifecycle unknown.
+schema_version: "0.2"
+kind: part
+id: ecs/ECS-2520MV-080-BN-TR
+manufacturer: ecs
+mpn: ECS-2520MV-080-BN-TR
+device: ecs/ECS-2520MV-SERIES
+package: manufacturers/ecs/LGA4-2.5x2.0-ECS-2520MV
+sources: [ecs/ECS-2520MV, ecs/ECS-2520MV-product-page]
+source: ecs/ECS-2520MV
+
+existence:
+  status: verified
+  src: ecs/ECS-2520MV-product-page p1 "Ordering & Quality table, row ECS-2520MV-080-BN-TR"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  frequency: { typ: 8 MHz, src: 'p2 "DEVELOPED FREQUENCIES, code 080"' }
+  frequency_stability:
+    tol: ±50 ppm
+    at: { TA: -40..85 °C }
+    src: p1 "ELECTRICAL CHARACTERISTICS, Frequency Stability -40 ~ +85°C (BN Opt), inclusive"
+  supply_current:
+    - max: 6 mA
+      at: { VDD: 3.3 V }
+      src: p1 "CURRENT CONSUMPTION mA Max, +3.3V row, ~19 MHz column"
+    - max: 2.5 mA
+      at: { VDD: 1.8 V }
+      src: p1 "CURRENT CONSUMPTION mA Max, +1.8V row, ~19 MHz column"
+    - max: 4.5 mA
+      at: { VDD: 2.5 V }
+      src: p1 "CURRENT CONSUMPTION mA Max, +2.5V row, ~19 MHz column"
+    - max: 5.5 mA
+      at: { VDD: 3 V }
+      src: p1 "CURRENT CONSUMPTION mA Max, +3.0V row, ~19 MHz column"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "PART NUMBERING GUIDE, TEMP RANGE N = -40 ~ +85°C"

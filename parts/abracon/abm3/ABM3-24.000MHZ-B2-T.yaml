@@ -35,3 +35,11 @@ parameters:
     tol: ±20 ppm
     at: { TA: 25 °C }
     src: 'p2 "Options and Part Identification, Freq. Tolerance: 2 = ±20 ppm"'
+  frequency_stability:
+    tol: ±50 ppm
+    at: { TA: -20..70 °C }
+    src: 'p2 "Table 1 Available Combinations, B row, Std: ±50ppm (stability option blank)"'
+  operating_temperature:
+    min: -20 °C
+    max: 70 °C
+    src: 'p2 "Options and Part Identification, Operating Temp.: B = -20°C ~ +70°C"'
