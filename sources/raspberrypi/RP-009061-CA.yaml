@@ -1,0 +1,23 @@
+# Raspberry Pi Pico 2 STEP model ("STEP file" on the Pico-series
+# documentation page): zip "RP-009061-CA-2-Pico 2 - 3D STEP.zip" with
+# rpi_pico2.step (2025-07-22) and LICENSE.txt. Licence: MIT, "Copyright
+# (c) 2025 Raspberry Pi Ltd"; the file adds that it may incorporate
+# third-party models provided with permission to redistribute, and is
+# for guidance only. Raspberry Pi publishes no layout or BOM for the Pico
+# 2, so this is the only placement source. Read with a script over the
+# STEP assembly tree: each top-level component's product name, placement
+# (origin, x axis) and the bounding box of its vertices, in the model's
+# frame (board centre, +Y towards USB = the package frame). Pin-1 /
+# cathode indicator bodies give IC turns. Only positions, turns and box
+# sizes are taken; no geometry is copied, OpenParts generates its own.
+schema_version: "0.2"
+kind: source
+id: raspberrypi/RP-009061-CA
+sha256: 74974c52ee695a1d2c638d8288c798b42236c60d7de7af5345b9a5017f993f82
+retrieved: 2026-11-17
+url: https://pip.raspberrypi.com/documents/RP-009061-CA
+publisher: raspberrypi
+document_id: RP-009061-CA
+document_type: other
+revision: "2"
+date: 2025-07-22

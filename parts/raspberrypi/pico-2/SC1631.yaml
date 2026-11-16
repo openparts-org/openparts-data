@@ -14,11 +14,280 @@ manufacturer: raspberrypi
 mpn: SC1631
 device: raspberrypi/PICO-2
 package: standards/MODULE40-21x51-P2.54-PICO
-sources: [raspberrypi/RP-008299-DS@rev3]
-source: raspberrypi/RP-008299-DS@rev3
+sources: [raspberrypi/RP-008299-DS@rev3, raspberrypi/RP-009061-CA, raspberrypi/RP-008311-DS]
+source: raspberrypi/RP-009061-CA
 
 existence:
   status: verified
-  src: 'p20 "Appendix A.2 Ordering code, Table 3: "Raspberry Pi Pico 2  SC1631  5056561803951""'
+  src: 'raspberrypi/RP-008299-DS@rev3 p20 "Appendix A.2 Ordering code, Table 3: "Raspberry Pi Pico 2  SC1631  5056561803951""'
 
 lifecycle: { status: unknown }
+
+# Assembly (Canonical Data Specification 20.12): positions, turns and box
+# sizes from Raspberry Pi's MIT-licensed Pico 2 STEP model
+# (raspberrypi/RP-009061-CA; no layout or BOM is published). The STEP
+# carries no reference designators: U1-U3, X1, J1, SW1, D1, D2, Q1, L1,
+# L2 are assigned here by function, the passives are Cx<n>/Rx<n>. Parts
+# where the MPN is known (datasheet text, or the STEP product name for
+# the RT6150B-33GQW); the flash (W25Q32RV, not in the dataset) and the
+# rest are boxes of their STEP bounding box above the board. The BOOTSEL
+# box is the Pico's (TP-1221U).
+assembly:
+  - ref: Cx1
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: -4.5
+    y: -1.7
+    src: '"generic_capc0603x30 at (-4.5, -1.7), box 0.6 x 0.3 x 0.3"'
+  - ref: Cx2
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: -4.9
+    y: 0.3
+    src: '"generic_capc0603x30 at (-4.9, 0.3), box 0.6 x 0.3 x 0.3"'
+  - ref: Rx1
+    body: { width: 0.3, length: 0.6, height: 0.23, color: "#141414" }
+    x: -5.8
+    y: 6.6
+    src: '"generic_resc0603x23 at (-5.8, 6.6), box 0.3 x 0.6 x 0.23"'
+  - ref: Rx2
+    body: { width: 0.3, length: 0.6, height: 0.23, color: "#141414" }
+    x: -0.6
+    y: -6.7
+    src: '"generic_resc0603x23 at (-0.6, -6.7), box 0.3 x 0.6 x 0.23"'
+  - ref: L1
+    body: { width: 2, length: 2.5, height: 1.2, color: "#3b3d40" }
+    x: 6
+    y: 14.6
+    src: '"bourns_srn2512-2r2mh at (6, 14.6), box 2 x 2.5 x 1.2"'
+  - ref: Cx3
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: 3.45
+    y: -5
+    rotation: -45
+    src: '"generic_capc0603x30 at (3.45, -5), box 0.6 x 0.3 x 0.3"'
+  - ref: Rx3
+    body: { width: 0.6, length: 0.3, height: 0.23, color: "#141414" }
+    x: 2.5
+    y: -6.55
+    rotation: -45
+    src: '"generic_resc0603x23 at (2.5, -6.55), box 0.6 x 0.3 x 0.23"'
+  - ref: Rx4
+    body: { width: 1, length: 0.5, height: 0.35, color: "#141414" }
+    x: 5.5
+    y: 11.3
+    src: '"generic_resc1005x35 at (5.5, 11.3), box 1 x 0.5 x 0.35"'
+  - ref: Rx5
+    body: { width: 0.6, length: 0.3, height: 0.23, color: "#141414" }
+    x: 6.55
+    y: -0.65
+    src: '"generic_resc0603x23 at (6.55, -0.65), box 0.6 x 0.3 x 0.23"'
+  - ref: Cx4
+    body: { width: 2, length: 1.25, height: 1.25, color: "#b5916a" }
+    x: 2.9
+    y: 17.1
+    src: '"generic_capc2012x125 at (2.9, 17.1), box 2 x 1.25 x 1.25"'
+  - ref: Cx5
+    body: { width: 0.5, length: 1, height: 0.5, color: "#b5916a" }
+    x: 5.5
+    y: 4.25
+    src: '"generic_capc1005x50 at (5.5, 4.25), box 0.5 x 1 x 0.5"'
+  - ref: Cx6
+    body: { width: 0.5, length: 1, height: 0.5, color: "#b5916a" }
+    x: 0.2
+    y: -5.65
+    src: '"generic_capc1005x50 at (0.2, -5.65), box 0.5 x 1 x 0.5"'
+  - ref: Rx6
+    body: { width: 0.6, length: 0.3, height: 0.23, color: "#141414" }
+    x: 3.5
+    y: 18.6
+    src: '"generic_resc0603x23 at (3.5, 18.6), box 0.6 x 0.3 x 0.23"'
+  - ref: Cx7
+    body: { width: 0.3, length: 0.6, height: 0.3, color: "#b5916a" }
+    x: -5.2
+    y: -8
+    src: '"generic_capc0603x30 at (-5.2, -8), box 0.3 x 0.6 x 0.3"'
+  - ref: U1
+    part: raspberrypi/RP2350A
+    x: 0
+    y: -0.5
+    src:
+      - '"rpi_rp2350a at (0, -0.5), Pin1Indicator gives the turn"'
+      - raspberrypi/RP-008299-DS@rev3 p5 "support the RP2350 chip"
+  - ref: Rx7
+    body: { width: 0.3, length: 0.6, height: 0.23, color: "#141414" }
+    x: 5.85
+    y: 9.35
+    src: '"generic_resc0603x23 at (5.85, 9.35), box 0.3 x 0.6 x 0.23"'
+  - ref: J1
+    body: { width: 8, length: 6.075, height: 2.695, color: "#c8c8c8" }
+    x: 0
+    y: 23.763
+    src: '"edac_690-005-298-486 at (0, 23.763), box 8 x 6.075 x 2.695"'
+  - ref: Cx8
+    body: { width: 0.3, length: 0.6, height: 0.3, color: "#b5916a" }
+    x: -0.6
+    y: -7.8
+    src: '"generic_capc0603x30 at (-0.6, -7.8), box 0.3 x 0.6 x 0.3"'
+  - ref: Rx8
+    body: { width: 0.6, length: 0.3, height: 0.23, color: "#141414" }
+    x: 6.55
+    y: 0
+    src: '"generic_resc0603x23 at (6.55, 0), box 0.6 x 0.3 x 0.23"'
+  - ref: Cx9
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: -4.5
+    y: 2.2
+    src: '"generic_capc0603x30 at (-4.5, 2.2), box 0.6 x 0.3 x 0.3"'
+  - ref: Rx9
+    body: { width: 0.3, length: 0.6, height: 0.23, color: "#141414" }
+    x: 7.15
+    y: 9.35
+    src: '"generic_resc0603x23 at (7.15, 9.35), box 0.3 x 0.6 x 0.23"'
+  - ref: D1
+    body: { width: 1.7, length: 3.5, height: 1, color: "#2a2a2a" }
+    x: 6
+    y: 18.9
+    src: '"generic_sodfl3517x100 at (6, 18.9), box 1.7 x 3.5 x 1"'
+  - ref: Cx10
+    body: { width: 2, length: 1.25, height: 1.25, color: "#b5916a" }
+    x: 2.9
+    y: 12.1
+    src: '"generic_capc2012x125 at (2.9, 12.1), box 2 x 1.25 x 1.25"'
+  - ref: Cx11
+    body: { width: 1, length: 0.5, height: 0.5, color: "#b5916a" }
+    x: -4.7
+    y: 3.05
+    src: '"generic_capc1005x50 at (-4.7, 3.05), box 1 x 0.5 x 0.5"'
+  - ref: Rx10
+    body: { width: 0.3, length: 0.6, height: 0.23, color: "#141414" }
+    x: -1.1
+    y: 5.5
+    src: '"generic_resc0603x23 at (-1.1, 5.5), box 0.3 x 0.6 x 0.23"'
+  - ref: Rx11
+    body: { width: 0.5, length: 1, height: 0.35, color: "#141414" }
+    x: 4.1
+    y: 6.05
+    src: '"generic_resc1005x35 at (4.1, 6.05), box 0.5 x 1 x 0.35"'
+  - ref: Cx12
+    body: { width: 0.5, length: 1, height: 0.5, color: "#b5916a" }
+    x: 4.1
+    y: 4.25
+    src: '"generic_capc1005x50 at (4.1, 4.25), box 0.5 x 1 x 0.5"'
+  - ref: Cx13
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: 4.4
+    y: 2.25
+    src: '"generic_capc0603x30 at (4.4, 2.25), box 0.6 x 0.3 x 0.3"'
+  - ref: X1
+    part: abracon/ABM8-272-T3
+    x: -2.9
+    y: -7.5
+    rotation: 90
+    src:
+      - '"generic_xtalcc320x250x80-4 at (-2.9, -7.5), PinIndicator lower left"'
+      - raspberrypi/RP-008299-DS@rev3 p5 "crystal (Abracon ABM8-272-T3)"
+  - ref: Cx14
+    body: { width: 0.3, length: 0.6, height: 0.3, color: "#b5916a" }
+    x: -4.95
+    y: 8.85
+    src: '"generic_capc0603x30 at (-4.95, 8.85), box 0.3 x 0.6 x 0.3"'
+  - ref: Cx15
+    body: { width: 0.3, length: 0.6, height: 0.3, color: "#b5916a" }
+    x: -1.2
+    y: -5
+    src: '"generic_capc0603x30 at (-1.2, -5), box 0.3 x 0.6 x 0.3"'
+  - ref: Cx16
+    body: { width: 1, length: 0.5, height: 0.5, color: "#b5916a" }
+    x: 2
+    y: 3.9
+    src: '"generic_capc1005x50 at (2, 3.9), box 1 x 0.5 x 0.5"'
+  - ref: Q1
+    body: { width: 1.596, length: 1.6, height: 0.8, color: "#1c1c1e" }
+    x: 6.35
+    y: 7.2
+    src: '"generic_sot50p160x80-3 at (6.35, 7.2), box 1.596 x 1.6 x 0.8"'
+  - ref: Rx12
+    body: { width: 0.6, length: 0.3, height: 0.23, color: "#141414" }
+    x: -3
+    y: 18.3
+    src: '"generic_resc0603x23 at (-3, 18.3), box 0.6 x 0.3 x 0.23"'
+  - ref: Cx17
+    body: { width: 0.3, length: 0.6, height: 0.3, color: "#b5916a" }
+    x: 7.15
+    y: 4.6
+    src: '"generic_capc0603x30 at (7.15, 4.6), box 0.3 x 0.6 x 0.3"'
+  - ref: D2
+    body: { width: 1.6, length: 0.8, height: 0.6, color: "#f4f4f2" }
+    x: -5.7
+    y: 20.7
+    src: '"avago_qsme-c194 at (-5.7, 20.7), box 1.6 x 0.8 x 0.6"'
+  - ref: Cx18
+    body: { width: 1, length: 0.5, height: 0.5, color: "#b5916a" }
+    x: 2
+    y: 4.85
+    src: '"generic_capc1005x50 at (2, 4.85), box 1 x 0.5 x 0.5"'
+  - ref: U2
+    part: richtek/RT6150B-33GQW
+    x: 2.9
+    y: 14.6
+    rotation: 180
+    src: '"richtek_rt6150b-33gqw at (2.9, 14.6), Pin1Indicator gives the turn"'
+  - ref: Rx13
+    body: { width: 0.6, length: 0.3, height: 0.23, color: "#141414" }
+    x: 2.05
+    y: -7
+    rotation: -45
+    src: '"generic_resc0603x23 at (2.05, -7), box 0.6 x 0.3 x 0.23"'
+  - ref: Rx14
+    body: { width: 0.3, length: 0.6, height: 0.23, color: "#141414" }
+    x: -0.4
+    y: 5.5
+    src: '"generic_resc0603x23 at (-0.4, 5.5), box 0.3 x 0.6 x 0.23"'
+  - ref: Cx19
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: 4.9
+    y: 0
+    src: '"generic_capc0603x30 at (4.9, 0), box 0.6 x 0.3 x 0.3"'
+  - ref: Rx15
+    body: { width: 0.6, length: 0.3, height: 0.23, color: "#141414" }
+    x: -3
+    y: 19.1
+    src: '"generic_resc0603x23 at (-3, 19.1), box 0.6 x 0.3 x 0.23"'
+  - ref: Rx16
+    body: { width: 0.3, length: 0.6, height: 0.23, color: "#141414" }
+    x: 6.4
+    y: 4.6
+    src: '"generic_resc0603x23 at (6.4, 4.6), box 0.3 x 0.6 x 0.23"'
+  - ref: SW1
+    body: { width: 4.24, length: 3.2, height: 2.5, color: "#e8e8e8" }
+    x: -3.5
+    y: 13.5
+    rotation: 90
+    src:
+      - '"toneparts_tp-1221u-k9k5325 at (-3.5, 13.5), turned 90"'
+      - raspberrypi/RP-008311-DS "TP-1221U switch body bounding box 4.24 x 3.2, 2.5 high"
+  - ref: Cx20
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: -0.85
+    y: 3.9
+    rotation: 135
+    src: '"generic_capc0603x30 at (-0.85, 3.9), box 0.6 x 0.3 x 0.3"'
+  - ref: Cx21
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: 4.9
+    y: -0.65
+    src: '"generic_capc0603x30 at (4.9, -0.65), box 0.6 x 0.3 x 0.3"'
+  - ref: Rx17
+    body: { width: 0.3, length: 0.6, height: 0.23, color: "#141414" }
+    x: 6.5
+    y: 9.35
+    src: '"generic_resc0603x23 at (6.5, 9.35), box 0.3 x 0.6 x 0.23"'
+  - ref: L2
+    body: { width: 2, length: 1.6, height: 1, color: "#3b3d40" }
+    x: 2
+    y: 6.5
+    src: '"abracon_aota-b201610s3r3-101-t at (2, 6.5), box 2 x 1.6 x 1"'
+  - ref: U3
+    body: { width: 2, length: 3, height: 0.35, color: "#1c1c1e" }
+    x: -4.2
+    y: 6.4
+    src: '"winbond_w25q32rvxhjq at (-4.2, 6.4), box 2 x 3 x 0.35"'

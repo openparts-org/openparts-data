@@ -18,11 +18,51 @@ manufacturer: raspberrypi
 mpn: SC1633
 device: raspberrypi/PICO-2-W
 package: standards/MODULE40-21x51-P2.54-PICO-W
-sources: [raspberrypi/RP-008304-DS@rev3, raspberrypi/PIP-1088-pico-2-w]
-source: raspberrypi/PIP-1088-pico-2-w
+
+sources:
+  - raspberrypi/RP-008304-DS@rev3
+  - raspberrypi/PIP-1088-pico-2-w
+  - raspberrypi/RP-008306-DS
+  - raspberrypi/RP-009061-CA
+  - raspberrypi/RP-008311-DS
+
+source: raspberrypi/RP-009061-CA
 
 existence:
   status: probable
-  src: '"Page header under "Raspberry Pi Pico 2 W": "SC1633, SC1634" (which code is which variant is not stated)"'
+  src: 'raspberrypi/PIP-1088-pico-2-w "Page header under "Raspberry Pi Pico 2 W": "SC1633, SC1634" (which code is which variant is not stated)"'
 
 lifecycle: { status: unknown }
+
+# Assembly (Canonical Data Specification 20.12): Raspberry Pi publishes
+# neither a layout nor a STEP model for the Pico 2 W. Only the parts the
+# Pico 2 W schematic (RP-008306-DS) and datasheet name with the same MPN
+# as the Pico 2 AND that sit at the same place on every Pico board with a
+# published layout (Pico R3, Pico W, Pico 2: USB connector, BOOTSEL
+# switch, VBUS diode) are placed, at the Pico 2 STEP's position. The
+# RP2350, flash, crystal, regulator and shield moved between Pico and Pico
+# W, so they are left out rather than guessed.
+assembly:
+  - ref: J1
+    body: { width: 8, length: 6.075, height: 2.695, color: "#c8c8c8" }
+    x: 0
+    y: 23.763
+    src:
+      - raspberrypi/RP-008306-DS "J1 690-005-298-486"
+      - '"Pico 2 position (same MPN): edac_690-005-298-486 at (0, 23.763), box 8 x 6.075 x 2.695"'
+  - ref: SW1
+    body: { width: 4.24, length: 3.2, height: 2.5, color: "#e8e8e8" }
+    x: -3.5
+    y: 13.5
+    rotation: 90
+    src:
+      - raspberrypi/RP-008306-DS "SW1 TP-1221U-K9K5325"
+      - '"Pico 2 position (same MPN): toneparts_tp-1221u-k9k5325 at (-3.5, 13.5), turned 90"'
+      - raspberrypi/RP-008311-DS "TP-1221U switch body bounding box 4.24 x 3.2, 2.5 high"
+  - ref: D1
+    body: { width: 1.7, length: 3.5, height: 1, color: "#2a2a2a" }
+    x: 6
+    y: 18.9
+    src:
+      - 'raspberrypi/RP-008304-DS@rev3 p15 "Figure 8 powerchain: D1 MBR120VLSFT1G"'
+      - '"Pico 2 position (same diode): generic_sodfl3517x100 at (6, 18.9), box 1.7 x 3.5 x 1"'
