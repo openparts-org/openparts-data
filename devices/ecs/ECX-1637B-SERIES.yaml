@@ -1,0 +1,17 @@
+# ECS ECX-1637B fundamental SMD crystal, 4-pad 2.0 x 1.6 mm ceramic package. Pin names
+# from the p1 "Pad Connections" table (as ecs/ECX-32-SERIES); numbers
+# checked against the Figure 1 views (crystal between #1 and #3).
+schema_version: "0.2"
+kind: device
+id: ecs/ECX-1637B-SERIES
+manufacturer: ecs
+category: crystal
+family: ECX-1637B
+source: ecs/ECX-1637B
+
+pins:
+  src: p1 "Pad Connections table; Figure 1"
+  "1": { name: In/Out, type: passive }
+  "2": { name: Gnd, type: ground }
+  "3": { name: Out/In, type: passive }
+  "4": { name: Gnd, type: ground }

@@ -1,0 +1,27 @@
+# Epson TSX-3225 crystal unit for RF reference (16 to 50 MHz), 3.2 x 2.5 mm.
+# MPN: the model designator, as epson/FC-135: Epson's ordering scheme builds
+# the full product name from the model plus customer-specified frequency,
+# load capacitance and tolerance ("Product name (Standard form)"), and the
+# product number has unspecified "xxxx" digits, so no single fixed string
+# exists. lifecycle unknown: no production-status statement.
+# Frequency, load capacitance and ESR (by frequency) not fixed; the
+# tolerance column prints a single value (+-10 x 10-6 at +25 C).
+schema_version: "0.2"
+kind: part
+id: epson/TSX-3225
+manufacturer: epson
+mpn: TSX-3225
+device: epson/TSX-3225
+package: manufacturers/epson/LGA4-3.2x2.5-TSX-3225
+sources: [epson/FA-238-BRIEF]
+source: epson/FA-238-BRIEF
+
+existence: { status: verified, src: 'p1 "Title and Product Number list, TSX-3225"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  frequency_tolerance:
+    tol: ±10 ppm
+    at: { TA: 25 °C }
+    src: p1 "Specifications, Frequency tolerance f_tol, TSX-3225 column"

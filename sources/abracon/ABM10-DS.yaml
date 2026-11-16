@@ -1,0 +1,16 @@
+# Abracon ABM10 ceramic SMD crystal datasheet, 2 pages, 2.5 x 2.0 x 0.5 mm.
+# Footer on both pages "Revised: 04.21.15" (MM.DD.YY), used as the revision
+# label. p1: Standard Specifications, Table 1 (standard ESR), Options &
+# Part Identification; p2: outline drawing and recommended land pattern
+# (raster, read from 200/400 dpi renders). Downloaded with curl (HTTP 200).
+schema_version: "0.2"
+kind: source
+id: abracon/ABM10-DS
+sha256: 02cc6d648a5c4bd899218b850345acebbd0f7df1996e6c5119a14c94bed5058d
+retrieved: 2026-11-16
+url: https://abracon.com/Resonators/ABM10.pdf
+publisher: abracon
+document_id: ABM10
+document_type: datasheet
+revision: 04.21.15
+date: 2015-04-21

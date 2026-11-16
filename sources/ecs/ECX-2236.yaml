@@ -1,0 +1,16 @@
+# ECS ECX-2236 SMD crystal datasheet, 2 pages, 2.5 x 2.0 mm. No document number;
+# the part-numbering guide prints "Rev.2021" (revision label); date = pdfinfo
+# CreationDate. p1: electrical characteristics, ESR table, Figure 1
+# dimensions, Pad Connections, Figure 2 suggested land (vector, read from
+# 400/500 dpi renders), Part Numbering Guide. curl, HTTP 200.
+schema_version: "0.2"
+kind: source
+id: ecs/ECX-2236
+sha256: dfda265f7b2eeae33bc02c70b053910b322bacb512e473f71cb9388e2a5e71b4
+retrieved: 2026-11-16
+url: https://ecsxtal.com/store/pdf/ECX-2236.pdf
+publisher: ecs
+document_id: ECX-2236
+document_type: datasheet
+revision: Rev.2021
+date: 2021-07-27

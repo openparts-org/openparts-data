@@ -1,0 +1,16 @@
+# ECS ECX-33Q SMD crystal datasheet, 2 pages, 3.2 x 2.5 mm. No document number;
+# the part-numbering guide prints "Rev.2023" (revision label); date = pdfinfo
+# CreationDate. p1: electrical characteristics, ESR table, Figure 1
+# dimensions, Pad Connections, Figure 2 suggested land (vector, read from
+# 400/500 dpi renders), Part Numbering Guide. curl, HTTP 200.
+schema_version: "0.2"
+kind: source
+id: ecs/ECX-33Q
+sha256: b002fab26d2eb4b7255d0c2a9ced7577fe207fb1726430d19888133f1ef1e01b
+retrieved: 2026-11-16
+url: https://ecsxtal.com/store/pdf/ECX-33Q.pdf
+publisher: ecs
+document_id: ECX-33Q
+document_type: datasheet
+revision: Rev.2023
+date: 2023-12-13

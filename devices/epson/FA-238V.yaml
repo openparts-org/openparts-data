@@ -1,0 +1,18 @@
+# Epson FA-238V MHz-range crystal unit, 4-pad package.
+# Pin map from the "Internal connection (TOP VIEW)": crystal between #1
+# and #3; #2 and #4 connected to the cover ("Please connect to ground").
+# XTAL1/XTAL2 only for distinct names (electrically symmetric).
+schema_version: "0.2"
+kind: device
+id: epson/FA-238V
+manufacturer: epson
+category: crystal
+family: FA-238
+source: epson/FA-238-BRIEF
+
+pins:
+  src: p1 "External dimensions, Internal connection (TOP VIEW)"
+  "1": { name: XTAL1, type: passive }
+  "2": { name: GND, type: ground }
+  "3": { name: XTAL2, type: passive }
+  "4": { name: GND, type: ground }

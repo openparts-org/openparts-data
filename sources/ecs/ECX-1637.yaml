@@ -1,0 +1,16 @@
+# ECS ECX-1637 SMD crystal datasheet, 2 pages, 2.0 x 1.6 mm. No document number;
+# the part-numbering guide prints "Rev.2017" (revision label); date = pdfinfo
+# CreationDate. p1: electrical characteristics, ESR table, Figure 1
+# dimensions, Pad Connections, Figure 2 suggested land (vector, read from
+# 400/500 dpi renders), Part Numbering Guide. curl, HTTP 200.
+schema_version: "0.2"
+kind: source
+id: ecs/ECX-1637
+sha256: ec0afb62fb704a34c0ee273917e9ee4e9442329b6eb0dd7209f7b70fa6df5798
+retrieved: 2026-11-16
+url: https://ecsxtal.com/store/pdf/ECX-1637.pdf
+publisher: ecs
+document_id: ECX-1637
+document_type: datasheet
+revision: Rev.2017
+date: 2018-02-21

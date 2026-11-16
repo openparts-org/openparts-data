@@ -1,0 +1,30 @@
+# Abracon ABM8G-25.000MHZ-18-D2Y-T: ABM8G 3.2 x 2.5 mm crystal, 25 MHz. existence: probable --
+# assembled from the p1 OPTIONS & PART IDENTIFICATION legend (not an
+# orderable list): "18" (CL 18 pF), custom ESR blank, "D" (-40 ~ +85 C),
+# "2" (+-20 ppm tolerance), "Y" (+-30 ppm stability), "T" (1k pcs/reel).
+schema_version: "0.2"
+kind: part
+id: abracon/ABM8G-25.000MHZ-18-D2Y-T
+manufacturer: abracon
+mpn: ABM8G-25.000MHZ-18-D2Y-T
+device: abracon/ABM8G
+package: manufacturers/abracon/LGA4-3.2x2.5-ABM8G
+sources: [abracon/ABM8G-DS]
+source: abracon/ABM8G-DS
+
+existence: { status: probable, src: 'p1 "OPTIONS & PART IDENTIFICATION legend, 18, D, 2, Y, T"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  esr:
+    max: 60 Ω
+    src: p1 "STANDARD SPECIFICATIONS, Equivalent series resistance, 20.001MHz ~ 28.000MHz row"
+  frequency: { typ: 25 MHz, src: 'p1 "OPTIONS & PART IDENTIFICATION, Frequency in MHz"' }
+  load_capacitance:
+    typ: 18 pF
+    src: 'p1 "OPTIONS & PART IDENTIFICATION, Load Capacitance (pF): 18"'
+  frequency_tolerance:
+    tol: ±20 ppm
+    at: { TA: 25 °C }
+    src: 'p1 "OPTIONS & PART IDENTIFICATION, Freq. Tolerance: 2 = ±20 ppm"'

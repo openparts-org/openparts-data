@@ -1,0 +1,31 @@
+# ECS ECS-260-8-37-CKM-TR: ECX-1637 crystal, 26 MHz, 8 pF. Listed verbatim in the ECX-1637
+# product page's Ordering & Quality table -> existence verified; it also
+# decodes per the datasheet's PART NUMBERING GUIDE. Values from that row
+# (stability and temperature range have no vocabulary key). lifecycle
+# unknown: no production-status statement.
+schema_version: "0.2"
+kind: part
+id: ecs/ECS-260-8-37-CKM-TR
+manufacturer: ecs
+mpn: ECS-260-8-37-CKM-TR
+device: ecs/ECX-1637-SERIES
+package: manufacturers/ecs/LGA4-2.0x1.6-ECX-1637
+sources: [ecs/ECX-1637, ecs/ECX-1637-product-page]
+source: ecs/ECX-1637-product-page
+
+existence: { status: verified, src: 'p1 "Ordering & Quality table, row ECS-260-8-37-CKM-TR"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  esr: { max: 60 Ω, src: 'p1 "Ordering & Quality table, row ECS-260-8-37-CKM-TR, ESR"' }
+  frequency:
+    typ: 26 MHz
+    src: p1 "Ordering & Quality table, row ECS-260-8-37-CKM-TR, Frequency"
+  load_capacitance:
+    typ: 8 pF
+    src: p1 "Ordering & Quality table, row ECS-260-8-37-CKM-TR, Load Capacitance"
+  frequency_tolerance:
+    tol: ±10 ppm
+    at: { TA: 25 °C }
+    src: p1 "Ordering & Quality table, row ECS-260-8-37-CKM-TR, Tolerance"

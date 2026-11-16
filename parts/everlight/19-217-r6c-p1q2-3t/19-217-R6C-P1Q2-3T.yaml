@@ -1,0 +1,24 @@
+# Everlight 19-217/R6C-P1Q2/3T brilliant red chip LED, "3T" reel. Same
+# chip as everlight/19-217/R6C-P1Q2/6T: reuses that Device (its VF, IF and
+# dominant wavelength match this datasheet's p2-p3) and Package (the p6
+# Package Dimension matches: 1.6/0.8/0.4 +-0.1). lifecycle unknown.
+schema_version: "0.2"
+kind: part
+id: everlight/19-217/R6C-P1Q2/3T
+manufacturer: everlight
+mpn: 19-217/R6C-P1Q2/3T
+device: everlight/19-217-R6C-P1Q2
+package: manufacturers/everlight/CHIP-EVERLIGHT-19-217
+sources: [everlight/DSE-0008610]
+source: everlight/DSE-0008610
+
+existence: { status: verified, src: p1 "Title block 19-217/R6C-P1Q2/3T (every page header)" }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  luminous_intensity:
+    min: 45 mcd
+    max: 112 mcd
+    at: { IF: 20 mA, TA: 25 °C }
+    src: p3 "Electro-Optical Characteristics, Luminous Intensity Iv (bins P1-Q2, p4)"

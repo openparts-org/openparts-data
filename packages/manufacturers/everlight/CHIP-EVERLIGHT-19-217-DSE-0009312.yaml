@@ -1,0 +1,43 @@
+# Everlight 19-217 SMD reflector LED package as drawn on p6 "Package Outline
+# Dimensions" of everlight/DSE-0009312 (19-217/BHC-ZL1M2RY/3T; raster, 150
+# dpi render). Not manufacturers/everlight/CHIP-EVERLIGHT-19-217: this
+# drawing prints 1.6 / 0.8 without own tolerance, 0.4+-0.05 height and the
+# terminal size. Body min/max apply the drawing note "Tolerances unless
+# mentioned +-0.1mm". Terminals (bottom view) 0.4 along the length, 0.7
+# across (typ only).
+# pads ("Recommend Soldering Pad"): 0.8 x 0.8; 1.5 is dimensioned between pad
+# CENTRES (checked on the render): x = +-0.75. Pad 1 = anode (+).
+schema_version: "0.2"
+kind: package
+id: manufacturers/everlight/CHIP-EVERLIGHT-19-217-DSE-0009312
+family: chip
+lead_count: 2
+source: everlight/DSE-0009312
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 0.7 mm
+    typ: 0.8 mm
+    max: 0.9 mm
+    src: p6 "Package Outline Dimensions, top 0.8 (general tol +-0.1)"
+  body_length:
+    min: 1.5 mm
+    typ: 1.6 mm
+    max: 1.7 mm
+    src: p6 "Package Outline Dimensions, top 1.6 (general tol +-0.1)"
+  body_height:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.45 mm
+    src: p6 "Package Outline Dimensions, side 0.4+-0.05"
+  lead_length: { typ: 0.4 mm, src: 'p6 "Package Outline Dimensions, bottom 0.4"' }
+  lead_width:  { typ: 0.7 mm, src: 'p6 "Package Outline Dimensions, bottom 0.7"' }
+
+pads:
+  value:
+    - { number: "1", x: -0.75, y: 0, width: 0.8, length: 0.8 }
+    - { number: "2", x: 0.75, y: 0, width: 0.8, length: 0.8 }
+  src: p6 "Recommend Soldering Pad, 0.8 x 0.8, 1.5 (see header)"

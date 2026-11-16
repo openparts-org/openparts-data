@@ -1,0 +1,20 @@
+# Epson FA-238 MHz-range crystal unit (16 to 50 MHz), 3.2 x 2.5 mm.
+# MPN: the model designator, as epson/FC-135: Epson's ordering scheme builds
+# the full product name from the model plus customer-specified frequency,
+# load capacitance and tolerance ("Product name (Standard form)"), and the
+# product number has unspecified "xxxx" digits, so no single fixed string
+# exists. lifecycle unknown: no production-status statement.
+# frequency, load capacitance, ESR (by frequency) and tolerance (+-15 to
+# +-50 available) are not fixed by the model, so no parameters.
+schema_version: "0.2"
+kind: part
+id: epson/FA-238
+manufacturer: epson
+mpn: FA-238
+device: epson/FA-238
+package: manufacturers/epson/LGA4-3.2x2.5-FA-238
+sources: [epson/FA-238-BRIEF]
+source: epson/FA-238-BRIEF
+
+existence: { status: verified, src: 'p1 "Title and Product Number list, FA-238"' }
+lifecycle: { status: unknown }

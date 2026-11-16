@@ -1,0 +1,27 @@
+# Epson FA-128 MHz-range crystal unit (19.2 to 54 MHz), 2.0 x 1.6 mm.
+# MPN: the model designator, as epson/FC-135: Epson's ordering scheme builds
+# the full product name from the model plus customer-specified frequency,
+# load capacitance and tolerance ("Product name (Standard form)"), and the
+# product number has unspecified "xxxx" digits, so no single fixed string
+# exists. lifecycle unknown: no production-status statement.
+# Frequency, load capacitance ("6 to inf, Please specify") and ESR (by
+# frequency) not fixed; frequency tolerance is the "(Standard)" value.
+schema_version: "0.2"
+kind: part
+id: epson/FA-128
+manufacturer: epson
+mpn: FA-128
+device: epson/FA-128
+package: manufacturers/epson/LGA4-2.0x1.6-FA-128
+sources: [epson/FA-128_E_Ver2.1]
+source: epson/FA-128_E_Ver2.1
+
+existence: { status: verified, src: 'p1 "Title, 2.0 x 1.6 mm size MHz range crystal unit: FA-128"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  frequency_tolerance:
+    tol: ±10 ppm
+    at: { TA: 25 °C }
+    src: p2 "[4] Static Characteristics, Frequency tolerance (Standard) f_tol"

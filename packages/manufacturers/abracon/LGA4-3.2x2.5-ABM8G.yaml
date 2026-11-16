@@ -1,0 +1,48 @@
+# Abracon ABM8G 4-pad glass-sealed ceramic crystal package, 3.2 x 2.5 mm,
+# from the p2 outline drawing of abracon/ABM8G-DS (raster, 300 dpi render).
+# Frame (as manufacturers/abracon/LGA4-3.2x2.5-P1.5-ABM8): lga, two terminals
+# on each short side, body_width = the long side (X). TOP VIEW numbering:
+# 4 top-left, 3 top-right, 1 bottom-left, 2 bottom-right -> pad_order
+# [4, 1, 2, 3] (generator positions 1 TL, 2 BL, 3 BR, 4 TR). Pads are
+# numbered by the TOP VIEW (1 lower-left, 2 lower-right, 3 upper-right,
+# 4 upper-left). lead_length = terminal size along X, lead_width = along Y.
+# BOTTOM VIEW prints only reference gaps (1.2 ref in X, 0.9 ref in Y) and a
+# 0.1 ref setback; the terminal size is not printed, so lead_length and
+# lead_width are left out (not derived by subtraction). pitch = the land
+# pattern's printed row pitch 1.7 (centre to centre), taken as the terminal
+# pitch as for manufacturers/ecs/LGA4-3.2x2.5-ECX-32: reviewer check.
+# pads: "Recommended land pattern": pad 1.4 (X) x 1.2 (Y); 2.2 and 1.7 are
+# dimensioned between pad CENTRES (extension lines on the pad centre lines,
+# checked on the render; 1.7 - 1.2 = the printed 0.5 gap). Centres x = +-1.1,
+# y = +-0.85. Chamfer "may be on pin 4": not a pin-1 mark.
+schema_version: "0.2"
+kind: package
+id: manufacturers/abracon/LGA4-3.2x2.5-ABM8G
+family: lga
+lead_count: 4
+
+lead_layout: { value: [2, 0, 2, 0], src: 'p2 "BOTTOM VIEW: two terminals on each 2.5 mm side"' }
+
+source: abracon/ABM8G-DS
+
+pitch: { typ: 1.7 mm, src: 'p2 "Recommended land pattern, 0.067 (1.7) (see header)"' }
+
+pad_order:
+  value: ["4", "1", "2", "3"]
+  src:   'p2 "TOP VIEW numbering; note: Pin 1 bottom left per top marking"'
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:  { min: 3.1 mm, typ: 3.2 mm, max: 3.3 mm, src: p2 "top view 0.126+-.004 (3.2+-0.1)" }
+  body_length: { min: 2.4 mm, typ: 2.5 mm, max: 2.6 mm, src: p2 "top view 0.098+-.004 (2.5+-0.1)" }
+  body_height: { max: 1 mm, src: p2 "side view 0.039 max. (1.0 max.)" }
+  lead_inset:  { typ: 0.1 mm, src: 'p2 "BOTTOM VIEW, 0.004 ref. (0.1 ref.)"' }
+
+pads:
+  value:
+    - { number: "1", x: -1.1, y: -0.85, width: 1.4, length: 1.2 }
+    - { number: "2", x: 1.1, y: -0.85, width: 1.4, length: 1.2 }
+    - { number: "3", x: 1.1, y: 0.85, width: 1.4, length: 1.2 }
+    - { number: "4", x: -1.1, y: 0.85, width: 1.4, length: 1.2 }
+  src: p2 "Recommended land pattern, (1.4), (1.2), (2.2), (1.7), (0.5) (see header)"

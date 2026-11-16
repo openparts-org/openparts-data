@@ -1,0 +1,23 @@
+# Everlight 19-217/BHC-ZL1M2RY/3T blue chip LED, 3000 pcs per reel (p8).
+# lifecycle unknown (the footer's "LifecyclePhase: Approved" is a document
+# status, not a production status).
+schema_version: "0.2"
+kind: part
+id: everlight/19-217/BHC-ZL1M2RY/3T
+manufacturer: everlight
+mpn: 19-217/BHC-ZL1M2RY/3T
+device: everlight/19-217-BHC-ZL1M2RY
+package: manufacturers/everlight/CHIP-EVERLIGHT-19-217-DSE-0009312
+sources: [everlight/DSE-0009312]
+source: everlight/DSE-0009312
+
+existence: { status: verified, src: p1 "Title block 19-217/BHC-ZL1M2RY/3T (every page header)" }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  luminous_intensity:
+    min: 11.5 mcd
+    max: 28.5 mcd
+    at: { IF: 5 mA, TA: 25 °C }
+    src: p3 "Electro-Optical Characteristics, Luminous Intensity Iv (bins L1-M2)"

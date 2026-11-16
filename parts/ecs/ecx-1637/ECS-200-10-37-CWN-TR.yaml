@@ -1,0 +1,31 @@
+# ECS ECS-200-10-37-CWN-TR: ECX-1637 crystal, 20 MHz, 10 pF. Listed verbatim in the ECX-1637
+# product page's Ordering & Quality table -> existence verified; it also
+# decodes per the datasheet's PART NUMBERING GUIDE. Values from that row
+# (stability and temperature range have no vocabulary key). lifecycle
+# unknown: no production-status statement.
+schema_version: "0.2"
+kind: part
+id: ecs/ECS-200-10-37-CWN-TR
+manufacturer: ecs
+mpn: ECS-200-10-37-CWN-TR
+device: ecs/ECX-1637-SERIES
+package: manufacturers/ecs/LGA4-2.0x1.6-ECX-1637
+sources: [ecs/ECX-1637, ecs/ECX-1637-product-page]
+source: ecs/ECX-1637-product-page
+
+existence: { status: verified, src: 'p1 "Ordering & Quality table, row ECS-200-10-37-CWN-TR"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  esr: { max: 100 Ω, src: 'p1 "Ordering & Quality table, row ECS-200-10-37-CWN-TR, ESR"' }
+  frequency:
+    typ: 20 MHz
+    src: p1 "Ordering & Quality table, row ECS-200-10-37-CWN-TR, Frequency"
+  load_capacitance:
+    typ: 10 pF
+    src: p1 "Ordering & Quality table, row ECS-200-10-37-CWN-TR, Load Capacitance"
+  frequency_tolerance:
+    tol: ±10 ppm
+    at: { TA: 25 °C }
+    src: p1 "Ordering & Quality table, row ECS-200-10-37-CWN-TR, Tolerance"

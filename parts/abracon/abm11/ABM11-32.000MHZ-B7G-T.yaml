@@ -1,0 +1,29 @@
+# Abracon ABM11-32.000MHZ-B7G-T: ABM11 2.0 x 1.6 mm crystal, 32 MHz. existence: probable --
+# assembled from the p1 OPTIONS AND PART IDENTIFICATION legend (not an
+# orderable list): load capacitance and custom ESR blank (standard), "B"
+# (-20 ~ +70 C), "7" (+-15 ppm tolerance), "G" (+-15 ppm stability; allowed
+# with temp option B per footnote **), "T" (1k pcs/reel).
+schema_version: "0.2"
+kind: part
+id: abracon/ABM11-32.000MHZ-B7G-T
+manufacturer: abracon
+mpn: ABM11-32.000MHZ-B7G-T
+device: abracon/ABM11
+package: manufacturers/abracon/LGA4-2.0x1.6-P1.0-ABM11
+sources: [abracon/ABM11-DS]
+source: abracon/ABM11-DS
+
+existence: { status: probable, src: 'p1 "OPTIONS AND PART IDENTIFICATION legend, B, 7, G, T"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  esr: { max: 80 Ω, src: 'p1 "STANDARD SPECIFICATIONS, ESR (R1), 30.000~37.999 MHz row"' }
+  frequency: { typ: 32 MHz, src: 'p1 "OPTIONS AND PART IDENTIFICATION, Frequency in MHz"' }
+  load_capacitance:
+    typ: 10 pF
+    src: p1 "STANDARD SPECIFICATIONS, Load capacitance (CL) standard (legend blank)"
+  frequency_tolerance:
+    tol: ±15 ppm
+    at: { TA: 25 °C }
+    src: 'p1 "OPTIONS AND PART IDENTIFICATION, Freq. Tolerance: 7 = ±15 ppm"'

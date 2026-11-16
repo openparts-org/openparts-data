@@ -1,0 +1,51 @@
+# Epson FA-128 4-pad crystal package, 2.0 x 1.6 mm, from p6 "[7] Outline
+# Drawing and Recommended Footprint" of epson/FA-128_E_Ver2.1 (vector, 250
+# dpi render).
+# Frame (as manufacturers/abracon/LGA4-3.2x2.5-P1.5-ABM8): lga, two terminals
+# on each short side, body_width = the long side (X). TOP VIEW numbering:
+# 4 top-left, 3 top-right, 1 bottom-left, 2 bottom-right -> pad_order
+# [4, 1, 2, 3] (generator positions 1 TL, 2 BL, 3 BR, 4 TR). Pads are
+# numbered by the TOP VIEW (1 lower-left, 2 lower-right, 3 upper-right,
+# 4 upper-left). lead_length = terminal size along X, lead_width = along Y.
+# Terminals (bottom view): 0.6 along X, 0.65 X gap; 0.5 along Y, 0.45 Y gap.
+# The drawing is not to scale (0.6+0.65+0.6 = 1.85 < 2.0; no setback
+# printed). pitch = 0.5 + 0.45 = 0.95 (nominal sum).
+# pads: pad 0.95 (X) x 0.85 (Y); 1.45 and 1.15 are dimensioned between pad
+# CENTRES (extension lines on the pad centre lines). Centres x = +-0.725,
+# y = +-0.575. "C 0.2 Min." chamfer: not a pin-1 mark.
+schema_version: "0.2"
+kind: package
+id: manufacturers/epson/LGA4-2.0x1.6-FA-128
+family: lga
+lead_count: 4
+
+lead_layout:
+  value: [2, 0, 2, 0]
+  src:   'p6 "[7] Outline Drawing, bottom view: two terminals on each 1.6 mm side"'
+
+source: epson/FA-128_E_Ver2.1
+
+pitch:
+  typ: 0.95 mm
+  src: p6 "[7] Outline Drawing, bottom view 0.5 terminal + 0.45 gap (see header)"
+
+pad_order:
+  value: ["4", "1", "2", "3"]
+  src:   p6 "[7] Internal connection (TOP VIEW) and Pin/Connection table"
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:  { min: 1.9 mm, typ: 2 mm, max: 2.1 mm, src: 'p6 "[7] Outline Drawing, 2.0+-0.1"' }
+  body_length: { min: 1.5 mm, typ: 1.6 mm, max: 1.7 mm, src: 'p6 "[7] Outline Drawing, 1.6+-0.1"' }
+  body_height: { max: 0.5 mm, src: 'p6 "[7] Outline Drawing, 0.5 Max."' }
+  lead_length: { typ: 0.6 mm, src: 'p6 "[7] Outline Drawing, bottom view terminal 0.6"' }
+  lead_width:  { typ: 0.5 mm, src: 'p6 "[7] Outline Drawing, bottom view terminal 0.5"' }
+
+pads:
+  value:
+    - { number: "1", x: -0.725, y: -0.575, width: 0.95, length: 0.85 }
+    - { number: "2", x: 0.725, y: -0.575, width: 0.95, length: 0.85 }
+    - { number: "3", x: 0.725, y: 0.575, width: 0.95, length: 0.85 }
+    - { number: "4", x: -0.725, y: 0.575, width: 0.95, length: 0.85 }
+  src: p6 "[7] Recommended Footprint, 0.95, 0.85, 1.45, 1.15 (see header)"

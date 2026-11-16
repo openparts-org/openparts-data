@@ -1,0 +1,56 @@
+# Epson FA-238 / FA-238V 4-pad crystal package, 3.2 x 2.5 mm, from the p1
+# "External dimensions" and "Footprint (Recommended)" of epson/FA-238-BRIEF
+# (vector, 300 dpi render). FA-238V and FA-238 are drawn separately (corner
+# shapes differ) with identical dimensions, and share one footprint drawing.
+# Frame (as manufacturers/abracon/LGA4-3.2x2.5-P1.5-ABM8): lga, two terminals
+# on each short side, body_width = the long side (X). TOP VIEW numbering:
+# 4 top-left, 3 top-right, 1 bottom-left, 2 bottom-right -> pad_order
+# [4, 1, 2, 3] (generator positions 1 TL, 2 BL, 3 BR, 4 TR). Pads are
+# numbered by the TOP VIEW (1 lower-left, 2 lower-right, 3 upper-right,
+# 4 upper-left). lead_length = terminal size along X, lead_width = along Y.
+# Terminals (bottom view): 0.9 along X (to the body end), 1.2 X gap; 0.8
+# along Y, 0.7 Y gap. pitch = 0.8 + 0.7 = 1.5 (nominal sum).
+# pads: pad 1.4 (X) x 1.2 (Y); 2.2 and 1.6 are dimensioned between pad
+# CENTRES (extension lines on the pad centre lines, checked on the render).
+# Centres x = +-1.1, y = +-0.8.
+schema_version: "0.2"
+kind: package
+id: manufacturers/epson/LGA4-3.2x2.5-FA-238
+family: lga
+lead_count: 4
+
+lead_layout:
+  value: [2, 0, 2, 0]
+  src:   'p1 "External dimensions, bottom view: two terminals on each 2.5 mm side"'
+
+source: epson/FA-238-BRIEF
+
+pitch:
+  typ: 1.5 mm
+  src: p1 "External dimensions, bottom view 0.8 terminal + 0.7 gap (see header)"
+
+pad_order: { value: ["4", "1", "2", "3"], src: 'p1 "Internal connection (TOP VIEW), #1-#4"' }
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:
+    min: 3.1 mm
+    typ: 3.2 mm
+    max: 3.3 mm
+    src: p1 "External dimensions, FA-238V/FA-238 3.2+-0.1"
+  body_length:
+    min: 2.4 mm
+    typ: 2.5 mm
+    max: 2.6 mm
+    src: p1 "External dimensions, FA-238V/FA-238 2.5+-0.1"
+  body_height: { max: 0.7 mm, src: 'p1 "External dimensions, FA-238V/FA-238 0.7 Max."' }
+  lead_length: { typ: 0.9 mm, src: 'p1 "External dimensions, bottom view terminal 0.9"' }
+  lead_width:  { typ: 0.8 mm, src: 'p1 "External dimensions, bottom view terminal 0.8"' }
+
+pads:
+  value:
+    - { number: "1", x: -1.1, y: -0.8, width: 1.4, length: 1.2 }
+    - { number: "2", x: 1.1, y: -0.8, width: 1.4, length: 1.2 }
+    - { number: "3", x: 1.1, y: 0.8, width: 1.4, length: 1.2 }
+    - { number: "4", x: -1.1, y: 0.8, width: 1.4, length: 1.2 }
+  src: 'p1 "Footprint (Recommended), FA-238V / FA-238: 1.4, 1.2, 2.2, 1.6 (see header)"'

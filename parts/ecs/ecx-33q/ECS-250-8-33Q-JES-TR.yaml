@@ -1,0 +1,31 @@
+# ECS ECS-250-8-33Q-JES-TR: ECX-33Q crystal, 25 MHz, 8 pF. Listed verbatim in the ECX-33Q
+# product page's Ordering & Quality table -> existence verified; it also
+# decodes per the datasheet's PART NUMBERING GUIDE. Values from that row
+# (stability and temperature range have no vocabulary key). lifecycle
+# unknown: no production-status statement.
+schema_version: "0.2"
+kind: part
+id: ecs/ECS-250-8-33Q-JES-TR
+manufacturer: ecs
+mpn: ECS-250-8-33Q-JES-TR
+device: ecs/ECX-33Q-SERIES
+package: manufacturers/ecs/LGA4-3.2x2.5-ECX-33Q
+sources: [ecs/ECX-33Q, ecs/ECX-33Q-product-page]
+source: ecs/ECX-33Q-product-page
+
+existence: { status: verified, src: 'p1 "Ordering & Quality table, row ECS-250-8-33Q-JES-TR"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  esr: { max: 40 Ω, src: 'p1 "Ordering & Quality table, row ECS-250-8-33Q-JES-TR, ESR"' }
+  frequency:
+    typ: 25 MHz
+    src: p1 "Ordering & Quality table, row ECS-250-8-33Q-JES-TR, Frequency"
+  load_capacitance:
+    typ: 8 pF
+    src: p1 "Ordering & Quality table, row ECS-250-8-33Q-JES-TR, Load Capacitance"
+  frequency_tolerance:
+    tol: ±20 ppm
+    at: { TA: 25 °C }
+    src: p1 "Ordering & Quality table, row ECS-250-8-33Q-JES-TR, Tolerance"

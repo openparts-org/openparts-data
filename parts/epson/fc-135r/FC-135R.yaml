@@ -1,0 +1,31 @@
+# Epson FC-135R 32.768 kHz crystal unit, 3.2 x 1.5 mm, 2 pads.
+# MPN: the model designator, as epson/FC-135: Epson's ordering scheme builds
+# the full product name from the model plus customer-specified frequency,
+# load capacitance and tolerance ("Product name (Standard form)"), and the
+# product number has unspecified "xxxx" digits, so no single fixed string
+# exists. lifecycle unknown: no production-status statement.
+# load_capacitance left out: 7, 9, 12.5 pF "Please specify".
+schema_version: "0.2"
+kind: part
+id: epson/FC-135R
+manufacturer: epson
+mpn: FC-135R
+device: epson/FC-135R
+package: manufacturers/epson/CHIP-EPSON-FC-135R
+sources: [epson/FC-135R_E_Ver2.0]
+source: epson/FC-135R_E_Ver2.0
+
+existence:
+  status: verified
+  src: 'p1 "Title, 3.2 x 1.5 mm size 32.768 kHz Crystal Unit: FC-135R"'
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  esr: { max: 50 kΩ, src: 'p2 "[4] Static Characteristics, Motional resistance (ESR) R1"' }
+  frequency: { typ: 32.768 kHz, src: 'p2 "[4] Static Characteristics, Nominal frequency f_nom"' }
+  frequency_tolerance:
+    tol: ±20 ppm
+    at: { TA: 25 °C }
+    src: p2 "[4] Static Characteristics, Frequency tolerance f_tol (DL = 0.1 µW)"

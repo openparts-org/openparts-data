@@ -1,0 +1,63 @@
+# Abracon ABM11 4-pad ceramic crystal package, 2.0 x 1.6 mm, from the p2
+# "OUTLINE DRAWING" of abracon/ABM11-DS (raster, 300 dpi render).
+# Frame (as manufacturers/abracon/LGA4-3.2x2.5-P1.5-ABM8): lga, two terminals
+# on each short side, body_width = the long side (X). TOP VIEW numbering:
+# 4 top-left, 3 top-right, 1 bottom-left, 2 bottom-right -> pad_order
+# [4, 1, 2, 3] (generator positions 1 TL, 2 BL, 3 BR, 4 TR). Pads are
+# numbered by the TOP VIEW (1 lower-left, 2 lower-right, 3 upper-right,
+# 4 upper-left). lead_length = terminal size along X, lead_width = along Y.
+# Terminals (bottom view): 0.6 along X ("0.02 (0.6)"), 0.5+-0.1 along Y,
+# 0.7 X gap, 0.5 Y gap, 0.05 setback; 0.05+0.6+0.7+0.6+0.05 = 2.0 and
+# 0.05+0.5+0.5+0.5+0.05 = 1.6. pitch = 0.5 + 0.5 = 1.0 (nominal sum).
+# pads: "Recommended land pattern", pad 0.75 (X) x 0.65 (Y) "2X", 0.55 gap
+# between left/right pads and 0.35 gap between upper/lower pads (edge to
+# edge, checked on the render). Centres x = +-(0.275 + 0.375) = +-0.65,
+# y = +-(0.175 + 0.325) = +-0.5. Chamfer note: not a pin-1 mark.
+schema_version: "0.2"
+kind: package
+id: manufacturers/abracon/LGA4-2.0x1.6-P1.0-ABM11
+family: lga
+lead_count: 4
+
+lead_layout:
+  value: [2, 0, 2, 0]
+  src:   'p2 "OUTLINE DRAWING, bottom view: two terminals on each 1.6 mm side"'
+
+source: abracon/ABM11-DS
+
+pitch:
+  typ: 1 mm
+  src: p2 "OUTLINE DRAWING, bottom view, 0.5 terminal + 0.02 (0.5) gap (see header)"
+
+pad_order: { value: ["4", "1", "2", "3"], src: 'p2 "OUTLINE DRAWING, TOP VIEW numbering"' }
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:
+    min: 1.85 mm
+    typ: 2 mm
+    max: 2.15 mm
+    src: p2 "OUTLINE DRAWING, top view 0.079+-.006 (2.0+-0.15)"
+  body_length:
+    min: 1.45 mm
+    typ: 1.6 mm
+    max: 1.75 mm
+    src: p2 "OUTLINE DRAWING, top view 0.063+-.006 (1.6+-0.15)"
+  body_height: { max: 0.59 mm, src: 'p2 "OUTLINE DRAWING, side view 0.023 max. (0.59 max.)"' }
+  lead_inset:
+    typ: 0.05 mm
+    src: p2 "OUTLINE DRAWING, bottom view body edge to terminal 0.002 (0.05)"
+  lead_width:
+    min: 0.4 mm
+    typ: 0.5 mm
+    max: 0.6 mm
+    src: p2 "OUTLINE DRAWING, bottom view terminal 0.02+-0.004 (0.5+-0.1)"
+  lead_length: { typ: 0.6 mm, src: 'p2 "OUTLINE DRAWING, bottom view terminal 0.02 (0.6)"' }
+
+pads:
+  value:
+    - { number: "1", x: -0.65, y: -0.5, width: 0.75, length: 0.65 }
+    - { number: "2", x: 0.65, y: -0.5, width: 0.75, length: 0.65 }
+    - { number: "3", x: 0.65, y: 0.5, width: 0.75, length: 0.65 }
+    - { number: "4", x: -0.65, y: 0.5, width: 0.75, length: 0.65 }
+  src: p2 "Recommended land pattern, (0.75), (0.65) 2X, (0.55), (0.35) (see header)"

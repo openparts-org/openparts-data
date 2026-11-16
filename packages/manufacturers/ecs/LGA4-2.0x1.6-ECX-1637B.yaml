@@ -1,0 +1,53 @@
+# ECS ECX-1637B 4-pad ceramic crystal package, 2.0 x 1.6 mm, from p1 Figure 1
+# and Figure 2 (suggested land) of ecs/ECX-1637B (vector, 400 dpi render).
+# Frame (as manufacturers/abracon/LGA4-3.2x2.5-P1.5-ABM8): lga, two terminals
+# on each short side, body_width = the long side (X). TOP VIEW numbering:
+# 4 top-left, 3 top-right, 1 bottom-left, 2 bottom-right -> pad_order
+# [4, 1, 2, 3] (generator positions 1 TL, 2 BL, 3 BR, 4 TR). Pads are
+# numbered by the TOP VIEW (1 lower-left, 2 lower-right, 3 upper-right,
+# 4 upper-left). lead_length = terminal size along X, lead_width = along Y.
+# Terminals (bottom view): 0.65 along X, 0.7 X gap (0.65+0.7+0.65 = 2.0);
+# 0.55 along Y, 0.5 Y gap (0.55+0.5+0.55 = 1.6). pitch = 0.55 + 0.5 = 1.05.
+# pads (Figure 2): pad 0.85 (X) x 0.75 (Y), 0.5 X gap and 0.3 Y gap edge to
+# edge; 1.35 and 1.05 printed centre to centre (consistent). Centres
+# x = +-0.675, y = +-0.525.
+# Same land and terminals as ECX-1637; separate package because the
+# height tolerance differs (0.45+-0.05 vs +-0.1).
+schema_version: "0.2"
+kind: package
+id: manufacturers/ecs/LGA4-2.0x1.6-ECX-1637B
+family: lga
+lead_count: 4
+
+lead_layout:
+  value: [2, 0, 2, 0]
+  src:   'p1 "Figure 1, bottom view: two terminals on each 1.6 mm side"'
+
+source: ecs/ECX-1637B
+
+pitch: { typ: 1.05 mm, src: 'p1 "Figure 1, 0.55 terminal + 0.5 gap (see header)"' }
+
+pad_order:
+  value: ["4", "1", "2", "3"]
+  src:   p1 "Figure 1, top view numbering; Pad Connections"
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:  { min: 1.9 mm, typ: 2 mm, max: 2.1 mm, src: 'p1 "Figure 1, 2.0+-0.1"' }
+  body_length: { min: 1.5 mm, typ: 1.6 mm, max: 1.7 mm, src: 'p1 "Figure 1, 1.6+-0.1"' }
+  body_height:
+    min: 0.4 mm
+    typ: 0.45 mm
+    max: 0.5 mm
+    src: p1 "Figure 1, side view 0.45+-0.05"
+  lead_length: { typ: 0.65 mm, src: 'p1 "Figure 1, bottom view terminal 0.65"' }
+  lead_width:  { typ: 0.55 mm, src: 'p1 "Figure 1, bottom view terminal 0.55"' }
+
+pads:
+  value:
+    - { number: "1", x: -0.675, y: -0.525, width: 0.85, length: 0.75 }
+    - { number: "2", x: 0.675, y: -0.525, width: 0.85, length: 0.75 }
+    - { number: "3", x: 0.675, y: 0.525, width: 0.85, length: 0.75 }
+    - { number: "4", x: -0.675, y: 0.525, width: 0.85, length: 0.75 }
+  src: p1 "Figure 2 suggested land, 0.85 / 0.5 / 1.35, 0.75 / 0.3 / 1.05 (see header)"

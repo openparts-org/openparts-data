@@ -1,0 +1,36 @@
+# Everlight 19-217/BHC-ZL1M2RY blue (InGaN) 0603-size SMD reflector LED.
+# Pad 1 = anode (+), pad 2 = cathode (-) per the p6 polarity symbol, as
+# everlight/19-217-R6C-P1Q2. Values at IF = 5 mA (the table's condition).
+schema_version: "0.2"
+kind: device
+id: everlight/19-217-BHC-ZL1M2RY
+manufacturer: everlight
+category: led
+family: 19-217
+source: everlight/DSE-0009312
+
+parameters:
+  forward_voltage:
+    min: 2.5 V
+    max: 3.1 V
+    at: { IF: 5 mA, TA: 25 °C }
+    src: p3 "Electro-Optical Characteristics, Forward Voltage VF"
+  reverse_voltage:
+    max: 5 V
+    at: { TA: 25 °C }
+    src: p2 "Absolute Maximum Ratings, Reverse Voltage VR"
+  forward_current:
+    max: 10 mA
+    at: { TA: 25 °C }
+    src: p2 "Absolute Maximum Ratings, Forward Current IF"
+  color: { value: blue, src: 'p2 "Device Selection Guide, Emitted Color"' }
+  wavelength:
+    min: 465 nm
+    max: 475 nm
+    at: { IF: 5 mA, TA: 25 °C }
+    src: p3 "Electro-Optical Characteristics, Dominant Wavelength λd"
+
+pins:
+  src: 'p6 "Package Outline Dimensions, Polarity: + (1), - (2); Cathode Mark"'
+  "1": { name: Anode, type: passive }
+  "2": { name: Cathode, type: passive }

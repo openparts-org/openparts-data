@@ -1,0 +1,29 @@
+# Abracon ABM10-40.000MHZ-E20-T: ABM10 2.5 x 2.0 mm crystal, 40 MHz. existence: probable --
+# assembled from the p1 OPTIONS & PART IDENTIFICATION legend, not printed
+# in an orderable list (same rule as abracon/ABM8-24.000MHZ-B2-T): load
+# capacitance, custom ESR and tolerance blank (standard), "E20" (-20 ~ +70 C,
+# +-20 ppm stability), "T" (1000 pcs/reel). Stability has no vocabulary key.
+schema_version: "0.2"
+kind: part
+id: abracon/ABM10-40.000MHZ-E20-T
+manufacturer: abracon
+mpn: ABM10-40.000MHZ-E20-T
+device: abracon/ABM10
+package: manufacturers/abracon/LGA4-2.5x2.0-P1.25-ABM10
+sources: [abracon/ABM10-DS]
+source: abracon/ABM10-DS
+
+existence: { status: probable, src: 'p1 "OPTIONS & PART IDENTIFICATION legend, E20, T"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  esr:       { max: 70 Ω, src: 'p1 "Table 1 standard ESR, 30.000 - 55.000 row"' }
+  frequency: { typ: 40 MHz, src: 'p1 "OPTIONS & PART IDENTIFICATION, Frequency in MHz"' }
+  load_capacitance:
+    typ: 10 pF
+    src: p1 "STANDARD SPECIFICATIONS, Load capacitance (CL) standard (legend blank)"
+  frequency_tolerance:
+    tol: ±20 ppm
+    at: { TA: 25 °C }
+    src: p1 "STANDARD SPECIFICATIONS, Frequency Tolerance @+25°C (legend blank)"

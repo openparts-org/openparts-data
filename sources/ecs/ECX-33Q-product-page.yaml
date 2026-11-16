@@ -1,0 +1,14 @@
+# ECS ECX-33Q product page (manufacturer site), retrieved 2026-11-16 with curl.
+# Its Ordering & Quality table lists orderable MPNs, one row each (package
+# code, size, frequency, tolerance, stability, load capacitance, operating
+# temperature, ESR). No revision; the retrieval date is used.
+schema_version: "0.2"
+kind: source
+id: ecs/ECX-33Q-product-page
+retrieved: 2026-11-16
+url: https://ecsxtal.com/ecx-33q
+date: 2026-11-16
+publisher: ecs
+document_id: ECX-33Q product page
+document_type: product_page
+revision: 2026-11-16
