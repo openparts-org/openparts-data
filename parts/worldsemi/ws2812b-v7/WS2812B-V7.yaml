@@ -1,0 +1,16 @@
+# The datasheet's title names one product, "WS2812B-V7"; it prints no
+# ordering-code table (p9: "No version number is attached to Part
+# Number"; the p6 label leaves "P/N: WS" blank) -> existence probable.
+# lifecycle unknown: the datasheet states none.
+schema_version: "0.2"
+kind: part
+id: worldsemi/WS2812B-V7
+manufacturer: worldsemi
+mpn: WS2812B-V7
+device: worldsemi/WS2812B-V7
+package: manufacturers/worldsemi/SMD5050-WS2812B-V7
+sources: [worldsemi/WS2812B-V7@v1.3]
+source: worldsemi/WS2812B-V7@v1.3
+
+existence: { status: probable, src: p1 "Title" }
+lifecycle: { status: unknown }

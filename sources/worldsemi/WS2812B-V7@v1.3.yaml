@@ -1,0 +1,18 @@
+# Worldsemi datasheet "WS2812B-V7, Intelligent control LED integrated light
+# source" (9 pages, English). Every page is a scanned image (no text
+# layer): values were read from the page images (1190 x 1683 px).
+# Footer "V1.3"; the download list on world-semi.com
+# (/datasheet-availability.js) labels the file "1.0" and the page-9
+# "Modify Record" stops at V1.2 (2026-07-24): the footer is recorded as
+# the revision, and `date` is the PDF creation date (V1.3 has no dated
+# row).
+schema_version: "0.2"
+kind: source
+id: worldsemi/WS2812B-V7@v1.3
+sha256: 7f24644cb9521175b1116b419fe466994166cd48b06c442b5428faef6f114fac
+url: https://www.world-semi.com/downloads/datasheets/en/ws2812b-v7-1.0.pdf
+date: 2026-08-07
+publisher: worldsemi
+document_id: WS2812B-V7
+document_type: datasheet
+revision: V1.3

@@ -1,0 +1,48 @@
+# Samtec MMCX-J-P-X-RA-SM1: MMCX right-angle jack, surface mount, from
+# samtec/MMCX-J-P-X-RA-SM1-MKT (revision F; "ALL DIMENSIONS REFERENCE").
+# Frame (rf_coax, right angle): top view, barrel toward +Y, origin at the
+# base centre. The view with "6.50 (REF)" shows the part from the board
+# side with the barrel up the page and the centre contact at the centre
+# of the "3.50 REF" x "3.50 REF" base; the land is symmetric in X and Y.
+# Height: front view "3.80 (REF)" (base top to underside) above the legs
+# "0.80 (REF)" (standoff). Barrel "Ø3.50 (REF)"; length beyond the base =
+# "6.50 (REF)" - "3.50 REF" = 3.00.
+# Pads: no numbers on the print (see the device).
+schema_version: "0.2"
+kind: package
+id: manufacturers/samtec/MMCX-J-P-X-RA-SM1
+family: rf_coax
+lead_count: { value: 5, src: 'p1 "RECOMMENDED PCB LAYOUT, centre and four outer pads"' }
+source: samtec/MMCX-J-P-X-RA-SM1-MKT
+
+pitch: { unit: mm }
+
+connector:
+  gender: female
+  orientation: right_angle
+  interface: mmcx
+  src: 'p1 "Part number legend: GENDER -J: JACK; ORIENTATION -RA: RIGHT ANGLE; TERMINATION -SM1; DESCRIPTION"'
+
+geometry: { type: parametric, generator: rf_coax }
+
+dimensions:
+  body_width:      { typ: 3.5 mm, src: 'p1 "Board-side view, base width "3.50 REF""' }
+  body_length:     { typ: 3.5 mm, src: 'p1 "Board-side view, base depth "3.50 REF""' }
+  body_height:     { typ: 3.8 mm, src: 'p1 "Front view, "3.80 (REF)""' }
+  mating_diameter: { typ: 3.5 mm, src: 'p1 "Board-side view, barrel "Ø3.50 (REF)""' }
+  standoff:        { typ: 0.8 mm, src: 'p1 "Front view, legs "0.80 (REF)""' }
+  mating_length:   { typ: 3 mm, src: 'p1 "Board-side view, "6.50 (REF)" - base "3.50 REF""' }
+
+# pads (RECOMMENDED PCB LAYOUT): centre pad "Ø1.15" at the origin; four
+# square pads "□1.00 (TYP)" on a "□3.54 (TYP)" outer span -> centres
+# ±(3.54/2 - 1.00/2) = ±1.27 in X and Y (the legs' "2.54 REF" spacing).
+# The print draws the pattern wider in X than in Y, but dimensions it as
+# a square (□): the dimension is recorded.
+pads:
+  value:
+    - { number: "1", x: 0, y: 0, width: 1.15, length: 1.15, shape: circle }
+    - { number: "2", x: -1.27, y: 1.27, width: 1, length: 1 }
+    - { number: "2", x: 1.27, y: 1.27, width: 1, length: 1 }
+    - { number: "2", x: -1.27, y: -1.27, width: 1, length: 1 }
+    - { number: "2", x: 1.27, y: -1.27, width: 1, length: 1 }
+  src: p1 "RECOMMENDED PCB LAYOUT, Ø1.15, □1.00 (TYP), □3.54 (TYP) (see comment above)"

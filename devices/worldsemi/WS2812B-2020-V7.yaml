@@ -1,0 +1,65 @@
+# Worldsemi WS2812B-2020-V7: addressable RGB LED, a control IC and red,
+# green and blue dies in a 2020 package (worldsemi/WS2812B-2020-V7@v1.2).
+# LED Characteristics (p4) heading "TA=25°C, VDD=5V, VSS=0V"; the
+# "Condition (DC=5V)" column gives 16mA, the channel drive current: in
+# `at` as IF. Brightness and wavelength are min/max only (Typ. blank).
+# supply_voltage is the "Power supply voltage" row of the Absolute
+# Maximum Ratings table, "+3.3~+5.3" V. DOUBT: p1 Features says "LED's
+# rated operating voltage is 5V (Max. operating driving voltage mustn't
+# exceed 7V)", which disagrees with that table; the table is recorded.
+schema_version: "0.2"
+kind: device
+id: worldsemi/WS2812B-2020-V7
+manufacturer: worldsemi
+category: led
+family: WS2812B
+source: worldsemi/WS2812B-2020-V7@v1.2
+
+parameters:
+  color:
+    value: rgb
+    src: 'p1 "Features: Control circuit and RGB chip are integrated in a package of 2020"'
+  wavelength_red:
+    min: 620 nm
+    max: 625 nm
+    at: { VDD: 5 V, IF: 16 mA, TA: 25 °C }
+    src: p4 "LED Characteristics, Wavelength λd, Red"
+  wavelength_green:
+    min: 525 nm
+    max: 530 nm
+    at: { VDD: 5 V, IF: 16 mA, TA: 25 °C }
+    src: p4 "LED Characteristics, Wavelength λd, Green"
+  wavelength_blue:
+    min: 465 nm
+    max: 470 nm
+    at: { VDD: 5 V, IF: 16 mA, TA: 25 °C }
+    src: p4 "LED Characteristics, Wavelength λd, Blue"
+  luminous_intensity_red:
+    min: 400 mcd
+    max: 800 mcd
+    at: { VDD: 5 V, IF: 16 mA, TA: 25 °C }
+    src: p4 "LED Characteristics, Brightness IV, Red"
+  luminous_intensity_green:
+    min: 1500 mcd
+    max: 2600 mcd
+    at: { VDD: 5 V, IF: 16 mA, TA: 25 °C }
+    src: p4 "LED Characteristics, Brightness IV, Green"
+  luminous_intensity_blue:
+    min: 300 mcd
+    max: 500 mcd
+    at: { VDD: 5 V, IF: 16 mA, TA: 25 °C }
+    src: p4 "LED Characteristics, Brightness IV, Blue"
+  supply_voltage:
+    min: 3.3 V
+    max: 5.3 V
+    at: { TA: 25 °C }
+    src: p3 "Absolute Maximum Ratings, Power supply voltage VDD"
+  data_interface: { value: single_wire, src: 'p1 "General description: Single-wire RZ protocol"' }
+  data_rate: { typ: 800 kbps, src: 'p1 "Features: Send data at speeds of 800Kbps"' }
+
+pins:
+  src: p3 "PIN Function"
+  "1": { name: DO, type: output }
+  "2": { name: GND, type: ground }
+  "3": { name: DI, type: input }
+  "4": { name: VDD, type: power }

@@ -1,0 +1,65 @@
+# Samtec MMCX-J-P-X-ST-SM1: MMCX straight (vertical) jack, surface mount,
+# from samtec/MMCX-J-P-X-ST-SM1-MKT (revision E).
+# Frame (rf_coax, vertical): top view as drawn, origin at the base centre
+# (the layout and the base are drawn concentric about the centre pad).
+# Base "□3.45 (REF)" (top view); overall height "5.00 (REF)" (side view,
+# leg bottoms to barrel top). The base's own height and the barrel's
+# outer diameter are not printed ("Ø2.41 (REF)" in section A-A is not
+# clearly the outside): body_height and mating_diameter left out
+# (generator defaults).
+# Pads: no numbers on the print (see the device).
+schema_version: "0.2"
+kind: package
+id: manufacturers/samtec/MMCX-J-P-X-ST-SM1
+family: rf_coax
+lead_count: { value: 5, src: 'p1 "RECOMMENDED PCB LAYOUT, centre and four outer pads"' }
+source: samtec/MMCX-J-P-X-ST-SM1-MKT
+
+pitch: { unit: mm }
+
+connector:
+  gender: female
+  orientation: vertical
+  interface: mmcx
+  src: 'p1 "Part number legend: GENDER -J: JACK; ORIENTATION -ST: STRAIGHT; TERMINATION -SM1; DESCRIPTION"'
+
+geometry: { type: parametric, generator: rf_coax }
+
+dimensions:
+  body_width:     { typ: 3.45 mm, src: 'p1 "Top view, base "□3.45 (REF)""' }
+  body_length:    { typ: 3.45 mm, src: 'p1 "Top view, base "□3.45 (REF)""' }
+  overall_height: { typ: 5 mm, src: 'p1 "Side view, "5.00 (REF)""' }
+
+# pads (RECOMMENDED PCB LAYOUT): centre pad "Ø1.20" at the origin; four
+# square pads "1.35 (TYP)", outer span "3.95 TYP" -> centres
+# ±(3.95/2 - 1.35/2) = ±1.30 in X and Y. Each square's inner corner is
+# cut by the circle "Ø2.50" drawn about the centre pad (a concave arc,
+# not a straight chamfer): cutout centred on the origin.
+pads:
+  value:
+    - { number: "1", x: 0, y: 0, width: 1.2, length: 1.2, shape: circle }
+    - number: "2"
+      x: -1.3
+      y: 1.3
+      width: 1.35
+      length: 1.35
+      cutout: { x: 0, y: 0, diameter: 2.5 }
+    - number: "2"
+      x: 1.3
+      y: 1.3
+      width: 1.35
+      length: 1.35
+      cutout: { x: 0, y: 0, diameter: 2.5 }
+    - number: "2"
+      x: -1.3
+      y: -1.3
+      width: 1.35
+      length: 1.35
+      cutout: { x: 0, y: 0, diameter: 2.5 }
+    - number: "2"
+      x: 1.3
+      y: -1.3
+      width: 1.35
+      length: 1.35
+      cutout: { x: 0, y: 0, diameter: 2.5 }
+  src: p1 "RECOMMENDED PCB LAYOUT, Ø1.20, 1.35 (TYP), 3.95 TYP, Ø2.50 (see comment above)"

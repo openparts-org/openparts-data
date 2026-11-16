@@ -1,0 +1,19 @@
+# Samtec MMCX-J-P-X-RA-SM1 (MMCX RIGHT ANGLE, SMT JACK- 50 OHM),
+# samtec/MMCX-J-P-X-RA-SM1-MKT. The print names no pins and numbers no
+# pads. Numbered here as the MCX prints: "1" the centre contact (centre
+# pad), "2" the outer contact (all four ground pads). Names from the
+# part-number legend's plating specification "-H: 30µ" GOLD CENTER
+# CONTACT, 3µ" GOLD OUTER CONTACT"; the print states no electrical
+# function, so both are passive.
+schema_version: "0.2"
+kind: device
+id: samtec/MMCX-J-P-X-RA-SM1
+manufacturer: samtec
+category: connector
+family: MMCX-J-P-X-RA-SM1
+source: samtec/MMCX-J-P-X-RA-SM1-MKT
+
+pins:
+  src: 'p1 "Part number legend, PLATING SPECIFICATION -H: CENTER CONTACT, OUTER CONTACT"'
+  "1": { name: CENTER_CONTACT, type: passive }
+  "2": { name: OUTER_CONTACT, type: passive }

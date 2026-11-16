@@ -1,0 +1,38 @@
+# Worldsemi WS2812B-V7 5050 package, from worldsemi/WS2812B-V7@v1.3 p2
+# "Mechanical Dimensions(unit:mm)" ("Tolerance: ± 0.15mm" where none is
+# printed) and "Recommended pad size (unit: mm)".
+# Frame (smd_led): top view, origin at the body centre; pin 1 (VDD) upper
+# left, 2 lower left, 3 lower right (the cut corner), 4 upper right.
+# Terminals (back view): "5.4" tip to tip ("5.40±0.05" in the side view),
+# "0.9" x "0.9" each; their outer edges span "4.2" along Y, so the row
+# pitch is 4.2 - 0.9 = 3.3 (the pad layout gives 4.30 - 1.00 = 3.3 too).
+schema_version: "0.2"
+kind: package
+id: manufacturers/worldsemi/SMD5050-WS2812B-V7
+family: smd_led
+lead_count: { value: 4, src: p2 "PIN Configuration" }
+source: worldsemi/WS2812B-V7@v1.3
+
+pitch: { typ: 3.3 mm, src: 'p2 "Back View, "4.2" - "0.9""' }
+geometry: { type: parametric, generator: smd_led }
+
+dimensions:
+  body_width:     { typ: 5 mm, src: 'p2 "Top View, "5.0""' }
+  body_length:    { typ: 5 mm, src: 'p2 "Top View, "5.0""' }
+  lead_length:    { typ: 0.9 mm, src: 'p2 "Back View, "0.9" (along X)"' }
+  lead_width:     { typ: 0.9 mm, src: 'p2 "Back View, "0.9" (along Y)"' }
+  overall_width:  { min: 5.35 mm, typ: 5.4 mm, max: 5.45 mm, src: 'p2 "Side view, "5.40±0.05""' }
+  overall_height: { min: 1.52 mm, typ: 1.57 mm, max: 1.62 mm, src: 'p2 "Side view, "1.57±0.05""' }
+
+# pads (Recommended pad size): pads "1.50" (X) x "1.00" (Y); "3.40"
+# between the inner edges of the left and right pads, "4.30" over the
+# outer edges of the top and bottom pads -> centres x = ±(3.40/2 + 1.50/2)
+# = ±2.45, y = ±(4.30/2 - 1.00/2) = ±1.65. Numbers from the top-view PIN
+# Configuration.
+pads:
+  value:
+    - { number: "1", x: -2.45, y: 1.65, width: 1.5, length: 1 }
+    - { number: "2", x: -2.45, y: -1.65, width: 1.5, length: 1 }
+    - { number: "3", x: 2.45, y: -1.65, width: 1.5, length: 1 }
+    - { number: "4", x: 2.45, y: 1.65, width: 1.5, length: 1 }
+  src: p2 "Recommended pad size, 1.50, 1.00, 3.40, 4.30; PIN Configuration (see comment above)"

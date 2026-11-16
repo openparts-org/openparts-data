@@ -1,0 +1,35 @@
+# Worldsemi WS2812B-2020-V7 2020 package, from worldsemi/WS2812B-2020-V7@v1.2
+# p2 "Mechanical Dimensions(Unit:mm)" ("Tolerance: ± 0.15mm") and "PCB
+# Solder Pad".
+# Frame (smd_led): top view, origin at the body centre. Top view and PIN
+# Configuration: DI (3) upper left, VDD (4) lower left, GND (2) upper
+# right, DO (1) lower right. The PCB Solder Pad drawing is the top view
+# too: its polarity band lies right of centre, mirroring the Back View.
+# Body (Back View): "2.20" (X) x "2.00" (Y), terminals at "1.00" pitch;
+# height "0.84" (Side View).
+schema_version: "0.2"
+kind: package
+id: manufacturers/worldsemi/SMD2020-WS2812B-2020-V7
+family: smd_led
+lead_count: { value: 4, src: p2 "PIN Configuration" }
+source: worldsemi/WS2812B-2020-V7@v1.2
+
+pitch: { typ: 1 mm, src: 'p2 "Back View, "1.00""' }
+geometry: { type: parametric, generator: smd_led }
+
+dimensions:
+  body_width:     { typ: 2.2 mm, src: 'p2 "Back View, "2.20""' }
+  body_length:    { typ: 2 mm, src: 'p2 "Back View, "2.00""' }
+  overall_height: { typ: 0.84 mm, src: 'p2 "Side View, "0.84""' }
+
+# pads (PCB Solder Pad): pads "0.7" x "0.7"; "0.40" between the upper and
+# lower pads, "1.13" between the inner edges of the left and right pads
+# -> centres x = ±(1.13/2 + 0.7/2) = ±0.915, y = ±(0.40/2 + 0.7/2) =
+# ±0.55. Numbers from the top-view PIN Configuration (see header).
+pads:
+  value:
+    - { number: "3", x: -0.915, y: 0.55, width: 0.7, length: 0.7 }
+    - { number: "4", x: -0.915, y: -0.55, width: 0.7, length: 0.7 }
+    - { number: "2", x: 0.915, y: 0.55, width: 0.7, length: 0.7 }
+    - { number: "1", x: 0.915, y: -0.55, width: 0.7, length: 0.7 }
+  src: p2 "PCB Solder Pad, 0.7, 0.40, 1.13; PIN Configuration (see comment above)"
