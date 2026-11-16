@@ -1,0 +1,57 @@
+# Same Sky TB001-500 terminal block, 19 poles, 5 mm pitch, through
+# hole, from page 2 of samesky/TB001-500-DS. One plated hole per pole;
+# the layout draws only the hole ("Ø1.30"), no land: generator ring.
+# Frame (terminal_block): top view, X right, Y up, wire entry toward +Y,
+# origin at the housing centre.
+# The "PCB LAYOUT" (top view: the row sits "5.00" in front of the
+# outline's top edge, as the top view puts the screws "5.00" from the
+# back and SECTION A-A dimensions pin to back face "5.00"; the wire
+# entry is the sloped face, 9.00 - 5.00 = 4.00 in front of the row) has
+# the wire entry at the bottom: it is turned 180° (x -> -x, y -> -y).
+# Row y = 9.00/2 - 4.00 = +0.5.
+# X: first hole "2.50" (= P/2) from the outline edge, "P=5.00" -> the holes are centred on the housing length
+# L = 5 x 19 = 95 ("L" table, N = 19); x = (k - (19 - 1)/2) x 5.
+# The datasheet numbers no poles: pole 1 is the leftmost in this frame.
+# The interlocking lip beyond L is not part of the body.
+schema_version: "0.2"
+kind: package
+id: manufacturers/samesky/TB001-500-19
+family: terminal_block
+
+lead_count:
+  value: 19
+  src: p2 "PCB LAYOUT, "Ø1.30", "2.50", "P=5.00", "5.00", "9.00"; L/B table"
+
+source: samesky/TB001-500-DS
+
+pitch: { typ: 5 mm, src: 'p2 "PCB LAYOUT, "Ø1.30", "2.50", "P=5.00", "5.00", "9.00"; L/B table"' }
+connector: { orientation: right_angle, src: 'p1 "FEATURES, "horizontal with board""' }
+geometry: { type: parametric, generator: terminal_block }
+
+dimensions:
+  body_width:  { typ: 95 mm, src: p2 "PCB LAYOUT / front view "L=PxN"; table L" N=19 "95.00" }
+  body_length: { typ: 9 mm, src: 'p2 "Side view, housing depth "9.00"; PCB LAYOUT outline "9.00""' }
+  body_height: { typ: 12.5 mm, src: 'p2 "Side view, housing height "12.50""' }
+
+pads:
+  value:
+    - { number: "1", x: -45, y: 0.5, drill: 1.3 }
+    - { number: "2", x: -40, y: 0.5, drill: 1.3 }
+    - { number: "3", x: -35, y: 0.5, drill: 1.3 }
+    - { number: "4", x: -30, y: 0.5, drill: 1.3 }
+    - { number: "5", x: -25, y: 0.5, drill: 1.3 }
+    - { number: "6", x: -20, y: 0.5, drill: 1.3 }
+    - { number: "7", x: -15, y: 0.5, drill: 1.3 }
+    - { number: "8", x: -10, y: 0.5, drill: 1.3 }
+    - { number: "9", x: -5, y: 0.5, drill: 1.3 }
+    - { number: "10", x: 0, y: 0.5, drill: 1.3 }
+    - { number: "11", x: 5, y: 0.5, drill: 1.3 }
+    - { number: "12", x: 10, y: 0.5, drill: 1.3 }
+    - { number: "13", x: 15, y: 0.5, drill: 1.3 }
+    - { number: "14", x: 20, y: 0.5, drill: 1.3 }
+    - { number: "15", x: 25, y: 0.5, drill: 1.3 }
+    - { number: "16", x: 30, y: 0.5, drill: 1.3 }
+    - { number: "17", x: 35, y: 0.5, drill: 1.3 }
+    - { number: "18", x: 40, y: 0.5, drill: 1.3 }
+    - { number: "19", x: 45, y: 0.5, drill: 1.3 }
+  src: p2 "PCB LAYOUT, "Ø1.30", "2.50", "P=5.00", "5.00", "9.00"; L/B table (see comment above)"

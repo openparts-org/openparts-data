@@ -1,0 +1,64 @@
+# JST EH Type A shrouded header, top entry, 14 circuits, 2.5 mm pitch,
+# THT (B14B-EH-A), from jst/eEH page 4 ("Header/ Type A", Top entry type
+# <3 circuits or more> and the Model No. table: A 32.5, B 37.5) and page 2 (PC board layout,
+# Top entry type; page 6 "Model number allocation": Type A is a top entry
+# type header). Same housing outline, post, tail and offsets as B14B-EH
+# (B, 6, 5.1, 3.8, (1.6), (2.5), 3.2, post 0.64 square); the post length
+# above the wafer is 3.3 instead of 4 (note 2; page 6 "Length of post on
+# mating side of header: 3.3 mm"), not a recorded field.
+# Frame: the PC board layout (p2, viewed from the connector mounting
+# surface) has No. 1 circuit at the left end of the row, the connector
+# outline "(1.6)" above the row and the "(Locking side)" below it; turned
+# 90 degrees clockwise (pin 1 to the top) the face 1.6 from the row is
+# the +X face. The side view (p4) prints the same "(1.6)", the housing
+# being 3.8 deep: its centre lies 3.8 / 2 - 1.6 = 0.3 towards -X
+# (body_offset -0.3, nominal only). The front view's "(2.5)" from the
+# housing end to No. 1 circuit and B = A + 5 centre the row along Y.
+# No land is given, only the hole: the pad is the hole plus the
+# generator's annular-ring default. Walls and lock are not dimensioned
+# (not recorded). Post brass, copper-undercoated, tin-plated; wafer PA 66,
+# natural (white) (p4 "Material and Surface finish").
+schema_version: "0.2"
+kind: package
+id: manufacturers/jst/EH-Header-Top-1x14-P2.50-A
+family: shrouded_header
+lead_count: 14
+
+lead_layout:
+  value: [1, 14]
+  src:   p2 "PC board layout, Top entry type, No. 1 circuit; p4 Header/ Type A Model No. table"
+
+source: jst/eEH
+
+pitch:
+  min: 2.45 mm
+  typ: 2.5 mm
+  max: 2.55 mm
+  src: p2 "PC board layout, hole pitch "2.5±0.05" (note 2, not accumulated)"
+
+geometry: { type: parametric, generator: shrouded_header }
+
+dimensions:
+  body_width:
+    typ: 3.8 mm
+    src: 'p4 ""Header/ Type A", Top entry type <3 circuits or more>, side view: housing depth "3.8""'
+  body_length:
+    typ: 37.5 mm
+    src: 'p4 ""Header/ Type A" Model No. table, B14B-EH-A: Dimensions B = 37.5"'
+  body_height:
+    typ: 6 mm
+    src: 'p4 ""Header/ Type A", Top entry type <3 circuits or more>, front view: housing height "6""'
+  body_offset:
+    typ: -0.3 mm
+    src: 'p4 "Header/ Type A, Top entry side view: 3.8 deep, post (1.6) from face opposite lock (p2): 3.8/2 - 1.6"'
+  lead_width:
+    typ: 0.64 mm
+    src: 'p4 ""Header/ Type A", Top entry type <3 circuits or more>: post "□0.64""'
+  hole_diameter:
+    min: 0.9 mm
+    typ: 0.9 mm
+    max: 1 mm
+    src: 'p2 "PC board layout, hole "φ0.9 +0.1/0" (note 3: reference values)"'
+  tail_length:
+    typ: 3.2 mm
+    src: 'p4 ""Header/ Type A", Top entry type <3 circuits or more>, front view: tail "3.2""'

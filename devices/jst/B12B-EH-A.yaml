@@ -1,0 +1,24 @@
+# JST EH Type A shrouded wire-to-board header, top entry, through-hole,
+# 12 circuits (jst/eEH page 4, "Header/ Type A" Model No. table: B12B-EH-A).
+# The sheet names no signals: each circuit is named by its number (No. 1
+# circuit as marked on the drawings), all passive.
+schema_version: "0.2"
+kind: device
+id: jst/B12B-EH-A
+manufacturer: jst
+category: connector
+family: EH
+
+pins:
+  "1":  { name: "1", type: passive }
+  "2":  { name: "2", type: passive }
+  "3":  { name: "3", type: passive }
+  "4":  { name: "4", type: passive }
+  "5":  { name: "5", type: passive }
+  "6":  { name: "6", type: passive }
+  "7":  { name: "7", type: passive }
+  "8":  { name: "8", type: passive }
+  "9":  { name: "9", type: passive }
+  "10": { name: "10", type: passive }
+  "11": { name: "11", type: passive }
+  "12": { name: "12", type: passive }

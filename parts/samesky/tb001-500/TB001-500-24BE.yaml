@@ -1,0 +1,19 @@
+# Same Sky TB001-500-24BE: assembled from the datasheet's "PART NUMBER KEY"
+# (screw type "blank" = slot, poles 24, BE = blue, the standard housing colour) -> existence probable: the key is a part-numbering
+# legend, not an orderable list. lifecycle unknown: the datasheet states
+# none.
+schema_version: "0.2"
+kind: part
+id: samesky/TB001-500-24BE
+manufacturer: samesky
+mpn: TB001-500-24BE
+device: samesky/TB001-500-24
+package: manufacturers/samesky/TB001-500-24
+sources: [samesky/TB001-500-DS]
+source: samesky/TB001-500-DS
+
+existence:
+  status: probable
+  src: 'p1 "PART NUMBER KEY, TB001-500 - X XX XX: Screw Type blank = Slot, No. of Poles 24, *BE = blue (standard)"'
+
+lifecycle: { status: unknown }

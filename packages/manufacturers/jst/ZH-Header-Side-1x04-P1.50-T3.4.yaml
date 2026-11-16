@@ -1,0 +1,61 @@
+# JST ZH shrouded header, side entry, 4 circuits, 1.5 mm pitch, THT
+# (S4B-ZR-3.4, 3.4 mm soldering length), from jst/eZH (the side-entry header drawing, Model No. table
+# and PC board layout). Family right_angle_header with the housing over its
+# holes (canonical-data 20.1).
+# Frame: the PC board layout (p2, viewed from the connector mounting
+# surface) has No. 1 circuit at the right end of the row and the
+# connector outline "6" deep reaching "(4.6)" above the row to the
+# front (mating) face; turned 90 degrees counter-clockwise (pin 1 to the
+# top) that face is the -X face. p4's side view prints the row "4.6"
+# from the front and "1.4" from the back: the centre lies 4.6 - 6 / 2 =
+# 1.6 towards -X (body_offset -1.6, nominal only), the holes under it.
+# Tail "(3.4)" (drawing "(2.7)/(3.4)") is a parenthesised (reference) value. Pin "φ0.5"
+# round. Same housing, pin and hole as S4B-ZR (2.7 mm); only the tail
+# differs (note 2: 3.4 mm soldering length suits 1.6 mm boards).
+# No land is given, only the hole: the pad is the hole plus the generator's
+# annular-ring default. Walls, opening and the posts' place inside it are
+# not dimensioned (3D generator defaults). Wafer PA 66 (glass-filled) natural (ivory), pins tin-plated (p4).
+schema_version: "0.2"
+kind: package
+id: manufacturers/jst/ZH-Header-Side-1x04-P1.50-T3.4
+family: right_angle_header
+lead_count: 4
+
+lead_layout:
+  value: [1, 4]
+  src:   p2 "PC board layout, Through-hole, Side entry, No. 1 circuit; p4 Model No. table"
+
+source: jst/eZH
+
+pitch:
+  min: 1.45 mm
+  typ: 1.5 mm
+  max: 1.55 mm
+  src: p2 "PC board layout, Through-hole type, Side entry type, hole pitch "1.5±0.05""
+
+geometry: { type: parametric, generator: right_angle_header }
+
+dimensions:
+  body_width:
+    typ: 6 mm
+    src: p2 "PC board layout, Through-hole type, Side entry type, outline depth "6""
+  body_length:
+    typ: 7.5 mm
+    src: 'p4 ""Header/ Through-hole type" Side entry Model No. table, 3.4 mm soldering length, S4B-ZR-3.4: B = 7.5"'
+  body_height:
+    typ: 3.7 mm
+    src: 'p4 "Header/ Through-hole type, Side entry type, side view: housing height "3.7""'
+  body_offset:
+    typ: -1.6 mm
+    src: 'p4 "Side entry side view, row to front "4.6", to back "1.4": 4.6 - 6/2"'
+  lead_width:
+    typ: 0.5 mm
+    src: p4 "Header/ Through-hole type, Side entry type, front view, pin "φ0.5""
+  hole_diameter:
+    min: 0.67 mm
+    typ: 0.7 mm
+    max: 0.73 mm
+    src: p2 "PC board layout, Through-hole type, Side entry type, hole "φ0.7±0.03""
+  tail_length:
+    typ: 3.4 mm
+    src: p4 "Header/ Through-hole type, Side entry type, side view, tail "(2.7)/(3.4)", 3.4 (reference)"

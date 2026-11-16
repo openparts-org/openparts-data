@@ -1,0 +1,19 @@
+# Model number printed verbatim in the EH sheet's "Header/ Type A" table
+# (jst/eEH page 4, 3 circuits) -> existence verified. No colour letter =
+# natural (white) (page 6 "Model number allocation", Header/ Type A).
+# lifecycle: the sheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: jst/B3B-EH-A
+manufacturer: jst
+mpn: B3B-EH-A
+device: jst/B3B-EH-A
+package: manufacturers/jst/EH-Header-Top-1x03-P2.50-A
+sources: [jst/eEH]
+source: jst/eEH
+
+existence:
+  status: verified
+  src: 'p4 ""Header/ Type A" Model No. table, No. of circuits 3: "B3B-EH-A""'
+
+lifecycle: { status: unknown }

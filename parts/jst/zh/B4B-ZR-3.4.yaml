@@ -1,0 +1,19 @@
+# Model number printed verbatim in the ZH sheet's Header/ Through-hole
+# type table (jst/eZH page 4, Top entry type, 3.4 mm soldering length
+# column, 4 circuits) -> existence verified.
+# lifecycle: the sheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: jst/B4B-ZR-3.4
+manufacturer: jst
+mpn: B4B-ZR-3.4
+device: jst/B4B-ZR-3.4
+package: manufacturers/jst/ZH-Header-Top-1x04-P1.50-T3.4
+sources: [jst/eZH]
+source: jst/eZH
+
+existence:
+  status: verified
+  src: 'p4 "Header/ Through-hole type, Top entry Model No. table, 4 circuits, 3.4 mm soldering length: B4B-ZR-3.4"'
+
+lifecycle: { status: unknown }
