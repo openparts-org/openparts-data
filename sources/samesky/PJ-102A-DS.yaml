@@ -1,0 +1,20 @@
+# Same Sky datasheet "MODEL: PJ-102A | DESCRIPTION: DC POWER JACK".
+# 3 pages, US letter: p1 features ("2.0 mm center pin", "right-angle orientation", "through hole")/
+# specifications, p2 "MECHANICAL DRAWING" (views, "Recommended PCB Layout
+# Top View", schematic, "Center Pin Ø2.0 mm"), p3 "REVISION HISTORY".
+# Every page header: "date 03/11/2025" (MM/DD/YYYY); revision history last
+# row: rev "1.07", 03/11/2025.
+# Downloaded with curl from the URL below; the PDF's ModDate is the
+# download day (stamped by the server), CreationDate 2025-03-12, so no
+# sha256 is recorded. The drawing is vector art: dimensions read from
+# 130-500 dpi renders.
+schema_version: "0.2"
+kind: source
+id: samesky/PJ-102A-DS
+retrieved: 2026-11-16
+url: https://www.sameskydevices.com/product/resource/pj-102a.pdf
+date: 2025-03-11
+publisher: samesky
+document_id: PJ-102A
+document_type: datasheet
+revision: "1.07"

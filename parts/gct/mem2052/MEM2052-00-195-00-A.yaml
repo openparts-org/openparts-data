@@ -1,0 +1,18 @@
+# MPN assembled from the drawing's "Ordering Grid" (MEM2052 - Switch
+# "00 = Normally Open" - "195" - Locating Post "00 = Without" - Packing
+# "A = Tape & Reel (1000 per Reel)"; each field lists one option) ->
+# existence probable: the grid is a part-numbering legend, not an
+# orderable list.
+# lifecycle unknown: the drawing states none.
+schema_version: "0.2"
+kind: part
+id: gct/MEM2052-00-195-00-A
+manufacturer: gct
+mpn: MEM2052-00-195-00-A
+device: gct/MEM2052
+package: manufacturers/gct/MEM2052
+sources: [gct/MEM2052-DWG]
+source: gct/MEM2052-DWG
+
+existence: { status: probable, src: 'p1 "Ordering Grid: Switch, Locating Post, Packing Options"' }
+lifecycle: { status: unknown }

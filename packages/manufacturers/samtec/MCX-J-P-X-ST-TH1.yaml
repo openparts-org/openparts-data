@@ -1,0 +1,51 @@
+# Samtec MCX-J-P-X-ST-TH1: MCX straight (vertical) jack, through hole,
+# from samtec/MCX-J-P-X-ST-TH1-MKT (revision D).
+# Frame (rf_coax, vertical): top view as drawn, origin at the base centre
+# (base, legs and hole pattern drawn concentric about the centre pin).
+# Base "□6.000 (REF)" (top view); barrel "Ø4.500 (REF)". overall_height
+# = "8.510 (REF)" (barrel top to leg tips) - "2.700 (REF)" (leg tip to
+# the legs' shoulder, where the wide part of each leg ends and the
+# "□0.920" post continues) = 5.81: DOUBT -- the print does not label
+# the shoulder as the seating plane; it is the only stop drawn. The
+# "0.500 (REF)" is the base's underside recess, not its height; the
+# base height is not printed: body_height left out (generator default).
+# Holes: the layout draws only holes ("Ø1.40 (4 PLCS)", "Ø1.10"), no
+# lands and no "PTH" note; recorded as plated holes without a land
+# (generator default ring) -- the legs and centre pin are the -TH1
+# through-hole terminations.
+schema_version: "0.2"
+kind: package
+id: manufacturers/samtec/MCX-J-P-X-ST-TH1
+family: rf_coax
+lead_count: { value: 5, src: 'p1 "RECOMMENDED PCB LAYOUT, centre and four outer holes"' }
+source: samtec/MCX-J-P-X-ST-TH1-MKT
+
+pitch: { unit: mm }
+
+connector:
+  gender: female
+  orientation: vertical
+  interface: mcx
+  src: 'p1 "Part number legend: GENDER -J: JACK; ORIENTATION -ST: STRAIGHT; TERMINATION -TH1: THROUGH HOLE; DESCRIPTION"'
+
+geometry: { type: parametric, generator: rf_coax }
+
+dimensions:
+  body_width:      { typ: 6 mm, src: 'p1 "Top view, base "□6.000 (REF)""' }
+  body_length:     { typ: 6 mm, src: 'p1 "Top view, base "□6.000 (REF)""' }
+  mating_diameter: { typ: 4.5 mm, src: 'p1 "Side view, "Ø4.500 (REF)""' }
+  overall_height:
+    typ: 5.81 mm
+    src: p1 "Side view, "8.510 (REF)" - "2.700 (REF)" (see header)"
+
+# pads (RECOMMENDED PCB LAYOUT): four holes "Ø1.40 (4 PLCS)" on
+# "5.08" x "5.08" centres -> (±2.54, ±2.54); centre hole "Ø1.10" at the
+# origin. No land drawn.
+pads:
+  value:
+    - { number: "1", x: 0, y: 0, drill: 1.1 }
+    - { number: "2", x: -2.54, y: 2.54, drill: 1.4 }
+    - { number: "2", x: 2.54, y: 2.54, drill: 1.4 }
+    - { number: "2", x: -2.54, y: -2.54, drill: 1.4 }
+    - { number: "2", x: 2.54, y: -2.54, drill: 1.4 }
+  src: p1 "RECOMMENDED PCB LAYOUT (see comment above)"

@@ -1,0 +1,44 @@
+# Samtec SMA-J-P-X-ST-TH1: SMA straight (vertical) jack, through hole,
+# from samtec/SMA-J-P-X-ST-TH1-MKT (revision H).
+# Frame (rf_coax, vertical): top view as drawn, origin at the base centre
+# (base, legs and hole pattern drawn concentric about the centre pin).
+# Base "□7.00 REF" (top view). overall_height = "13.50 REF" (barrel
+# top to leg tips) - "3.95 REF" (base underside to leg tips) = 9.55.
+# Thread "1/4-36 UNS-2A REF": no barrel diameter in mm on this print,
+# mating_diameter left out. The base height is not printed: body_height
+# left out (generator default).
+# Holes: the layout gives "Ø1.60 (TYP) PTH" holes only, no land:
+# recorded without a land (generator default ring).
+schema_version: "0.2"
+kind: package
+id: manufacturers/samtec/SMA-J-P-X-ST-TH1
+family: rf_coax
+lead_count: { value: 5, src: 'p1 "RECOMMENDED PCB LAYOUT, centre and four outer holes"' }
+source: samtec/SMA-J-P-X-ST-TH1-MKT
+
+pitch: { unit: mm }
+
+connector:
+  gender: female
+  orientation: vertical
+  interface: sma
+  src: 'p1 "Part number legend: GENDER -J: JACK; ORIENTATION -ST: STRAIGHT; TERMINATION -TH1: THROUGH HOLE; DESCRIPTION"'
+
+geometry: { type: parametric, generator: rf_coax }
+
+dimensions:
+  body_width:     { typ: 7 mm, src: 'p1 "Top view, base "□7.00 REF""' }
+  body_length:    { typ: 7 mm, src: 'p1 "Top view, base "□7.00 REF""' }
+  overall_height: { typ: 9.55 mm, src: 'p1 "Side view, "13.50 REF" - "3.95 REF" (see header)"' }
+
+# pads (RECOMMENDED PCB LAYOUT): five holes "Ø1.60 (TYP) PTH"; corners
+# on "5.08 (TYP)" x "5.08 (TYP)" centres -> (±2.54, ±2.54); the centre
+# hole at the origin. No land drawn.
+pads:
+  value:
+    - { number: "1", x: 0, y: 0, drill: 1.6 }
+    - { number: "2", x: -2.54, y: 2.54, drill: 1.6 }
+    - { number: "2", x: 2.54, y: 2.54, drill: 1.6 }
+    - { number: "2", x: -2.54, y: -2.54, drill: 1.6 }
+    - { number: "2", x: 2.54, y: -2.54, drill: 1.6 }
+  src: p1 "RECOMMENDED PCB LAYOUT (see comment above)"

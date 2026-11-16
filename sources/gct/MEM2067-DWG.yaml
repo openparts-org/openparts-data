@@ -1,0 +1,25 @@
+# GCT product drawing MEM2067, "Micro SD Memory Card Connector SMT,
+# Hinged, 1.80mm Profile".
+# 3 pages; page 1 drawing (top, side, front and bottom views, "Section
+# A-A"), "Recommended PCB Layout" ("General Tolerance: ±0.05"; no "as
+# viewed from" note), "Micro SD Card Pin Out" table, "Ordering Grid";
+# page 2 card insertion steps ("Insert Card", "Close Lid", "Slide Lid To
+# Lock"); page 3 packaging.
+# Title block: Part Number "MEM2067", Drawing Date "10th January 2014",
+# Revision "B6", Date "21/05/25" (DD/MM/YY, = 2025-05-21; PDF ModDate
+# 2025-05-22 JST), 3rd angle projection, units mm.
+# Pages are A4 rotated (landscape); PDF page index = sheet number
+# ("Sheet No. 1/3"). The drawing is vector art with a text layer:
+# dimensions read from 150-600 dpi renders and checked against the
+# vector geometry (pdftocairo -svg). Fetched with wget.
+schema_version: "0.2"
+kind: source
+id: gct/MEM2067-DWG
+sha256: afaf83b93d5101e137d31f72ca4033374c619324d3151c73c470f3a7fd48cfc7
+retrieved: 2026-11-16
+url: https://gct.co/files/drawings/mem2067.pdf
+publisher: gct
+document_id: MEM2067
+document_type: datasheet
+revision: B6
+date: 2025-05-21

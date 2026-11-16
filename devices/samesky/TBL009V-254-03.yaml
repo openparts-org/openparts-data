@@ -1,0 +1,16 @@
+# Same Sky TBL009V-254 terminal block, 3 poles (samesky/TBL009V-254-DS).
+# One passive pin per pole (both holes of a pole carry its number); the datasheet numbers no poles: pins
+# 1..3 from the left in the package frame (wire entry toward +Y).
+schema_version: "0.2"
+kind: device
+id: samesky/TBL009V-254-03
+manufacturer: samesky
+category: connector
+family: TBL009V-254
+source: samesky/TBL009V-254-DS
+
+pins:
+  src: p1 "PART NUMBER KEY, No. of Poles 03"
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive }

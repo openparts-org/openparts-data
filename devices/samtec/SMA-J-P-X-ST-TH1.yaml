@@ -1,0 +1,18 @@
+# Samtec SMA-J-P-X-ST-TH1 (SMA STRAIGHT, THROUGH HOLE JACK- 50 OHM), samtec/SMA-J-P-X-ST-TH1-MKT.
+# The print names no pins and numbers no pads. Numbered here: "1" the
+# centre contact (centre pad/hole), "2" the outer contact (all four
+# legs). Names from the plating specification's "CENTER CONTACT" /
+# "OUTER CONTACT"; the print states no electrical function, so both are
+# passive (the outer contact is not marked ground).
+schema_version: "0.2"
+kind: device
+id: samtec/SMA-J-P-X-ST-TH1
+manufacturer: samtec
+category: connector
+family: SMA-J-P-X-ST-TH1
+source: samtec/SMA-J-P-X-ST-TH1-MKT
+
+pins:
+  src: 'p1 "PLATING SPECIFICATION: CENTER CONTACT, OUTER CONTACT"'
+  "1": { name: CENTER_CONTACT, type: passive }
+  "2": { name: OUTER_CONTACT, type: passive }

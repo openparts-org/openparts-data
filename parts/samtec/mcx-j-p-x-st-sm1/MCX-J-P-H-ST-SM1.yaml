@@ -1,0 +1,16 @@
+# MPN built from the print's part-number legend MCX-J-P-X-ST-SM1: "X" = the
+# plating specification, whose only listed option is "-H" -> existence
+# probable (a legend, not an orderable list). lifecycle unknown: the
+# print states none.
+schema_version: "0.2"
+kind: part
+id: samtec/MCX-J-P-H-ST-SM1
+manufacturer: samtec
+mpn: MCX-J-P-H-ST-SM1
+device: samtec/MCX-J-P-X-ST-SM1
+package: manufacturers/samtec/MCX-J-P-X-ST-SM1
+sources: [samtec/MCX-J-P-X-ST-SM1-MKT]
+source: samtec/MCX-J-P-X-ST-SM1-MKT
+
+existence: { status: probable, src: 'p1 "Part number legend: PLATING SPECIFICATION -H"' }
+lifecycle: { status: unknown }

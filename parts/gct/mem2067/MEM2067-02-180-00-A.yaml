@@ -1,0 +1,18 @@
+# MPN assembled from the drawing's "Ordering Grid" (MEM2067 - Switch
+# "02 = Without Switch" - "180" - Locating Post "00 = Without" - Packing
+# "A = Tape & Reel (Quantity per Reel: 1000 pcs)"; each field lists one
+# option) -> existence probable: the grid is a part-numbering legend,
+# not an orderable list.
+# lifecycle unknown: the drawing states none.
+schema_version: "0.2"
+kind: part
+id: gct/MEM2067-02-180-00-A
+manufacturer: gct
+mpn: MEM2067-02-180-00-A
+device: gct/MEM2067
+package: manufacturers/gct/MEM2067
+sources: [gct/MEM2067-DWG]
+source: gct/MEM2067-DWG
+
+existence: { status: probable, src: 'p1 "Ordering Grid: Switch, Locating Post, Packing Options"' }
+lifecycle: { status: unknown }

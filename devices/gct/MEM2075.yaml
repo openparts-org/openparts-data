@@ -1,0 +1,30 @@
+# GCT MEM2075 microSD card socket, push-push, 8 card contacts +
+# card-detect contact + shell (gct/MEM2075-DWG page 1 "Micro SD Card Pin
+# Assignment" table: Pin / Name / Type / Description; "VDD"/"Vss" as
+# printed with subscripts, written VDD/VSS).
+# "CD": the layout's "Card Detect" pad; the "Card Detect Switch Circuit"
+# shows "Card Detect" and "Ground" open "Without Card (Normally Open)"
+# and closed "Card Inserted".
+# "GND": the four shell pads, labelled "Ground" in the layout.
+schema_version: "0.2"
+kind: device
+id: gct/MEM2075
+manufacturer: gct
+category: connector
+family: MEM2075
+source: gct/MEM2075-DWG
+
+pins:
+  src:
+    - p1 "Micro SD Card Pin Assignment"
+    - p1 "Recommended PCB Layout pad labels "P1"-"P8", "Card Detect", "Ground""
+  CD:  { name: CD, type: passive }
+  GND: { name: GND, type: ground }
+  P1:  { name: DAT2, type: passive }
+  P2:  { name: CD/DAT3, type: passive }
+  P3:  { name: CMD, type: passive }
+  P4:  { name: VDD, type: power }
+  P5:  { name: CLK, type: passive }
+  P6:  { name: VSS, type: ground }
+  P7:  { name: DAT0, type: passive }
+  P8:  { name: DAT1, type: passive }

@@ -1,0 +1,19 @@
+# Same Sky TB0011-350-02BE: assembled from the datasheet's "PART NUMBER KEY"
+# (poles 02, body colour BE = blue) -> existence probable: the key is a part-numbering
+# legend, not an orderable list. lifecycle unknown: the datasheet states
+# none.
+schema_version: "0.2"
+kind: part
+id: samesky/TB0011-350-02BE
+manufacturer: samesky
+mpn: TB0011-350-02BE
+device: samesky/TB0011-350-02
+package: manufacturers/samesky/TB0011-350-02
+sources: [samesky/TB0011-350-DS]
+source: samesky/TB0011-350-DS
+
+existence:
+  status: probable
+  src: 'p1 "PART NUMBER KEY, TB0011 - 350 - XX XX: No. of Poles 02, Body Color BE = blue"'
+
+lifecycle: { status: unknown }

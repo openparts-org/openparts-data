@@ -1,0 +1,26 @@
+# GCT product drawing USB3085, "Micro USB Receptacle, Type AB, Surface
+# Mount, Horizontal, Bottom Mount, Without Peg".
+# 2 pages; page 1 drawing (top, front, side and bottom views, "PCB Mount
+# Orientation"), "RECOMMENDED P.C.B LAYOUT" ("AS VIEWED FROM COMPONENT
+# SIDE", "GENERAL TOLERANCE: ±0.05"), Specifications, "Ordering Grid";
+# page 2 packaging. The drawing has no pin-name table (only "Pin 1"/
+# "Pin 5" labels and "Current Rating: Signal(Pins 2,3,4)... Power
+# (Pins1,5)").
+# Title block: Part Number "USB3085", Drawing Date "4th April 2011",
+# Revision "D2", Date "15/02/17" (DD/MM/YY, = 2017-02-15; PDF ModDate
+# 2017-05-22), 3rd angle projection, units mm.
+# Pages are A4 rotated (landscape); PDF page index = sheet number
+# ("Sheet No. 1/2"). The drawing is vector art with a text layer:
+# dimensions read from 150-600 dpi renders and checked against the
+# vector geometry (pdftocairo -svg). Fetched with wget.
+schema_version: "0.2"
+kind: source
+id: gct/USB3085-DWG
+sha256: 486ab21983e7f729d453e0bf7264908370f857cc1ef458f36fec4c0e5a729e10
+retrieved: 2026-11-16
+url: https://gct.co/files/drawings/usb3085.pdf
+publisher: gct
+document_id: USB3085
+document_type: datasheet
+revision: D2
+date: 2017-02-15

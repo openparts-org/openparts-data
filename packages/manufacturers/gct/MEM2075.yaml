@@ -1,0 +1,78 @@
+# GCT MEM2075 microSD card socket, push-push, SMT, 1.40 mm profile,
+# with locating posts: 8 card contacts P1-P8, a "Card Detect" contact,
+# 4 "Ground" shell pads and 2 locating-post holes, from page 1 of
+# gct/MEM2075-DWG (revision A1, 10/09/20).
+# Frame (card_socket): top view, X right, Y up, card slot toward +Y,
+# origin at the centre of the component outline. The source's
+# "Recommended PCB Layout" ("As viewed from component side") draws the
+# card slot at the bottom (as the top view, whose card sticks out at the
+# bottom: "Micro SD Card -Push/-Lock/-Un Lock"): it is turned 180°
+# (x -> -x, y -> -y).
+# Outline: "15.05" wide (front and bottom views); "14.75" long, "14.50"
+# at the sides (side section view; the layout's dashed outline has the
+# same 0.25 step at its rear edge); the contact tails reach past the
+# rear edge.
+# Height "1.40±0.05" (side view; title "1.40mm Profile").
+# The locating posts ("Ordering Grid: Locating Post 01 = With") go into
+# two "Ø0.95" holes drawn without a land: non-plated.
+# Values printed without a tolerance carry the layout's "General
+# Tolerance: ±0.05" (not recorded as min/max).
+schema_version: "0.2"
+kind: package
+id: manufacturers/gct/MEM2075
+family: card_socket
+lead_count: { value: 13, src: 'p1 "Recommended PCB Layout, P1-P8, Card Detect, 4x Ground"' }
+source: gct/MEM2075-DWG
+
+pitch: { typ: 1.1 mm, src: 'p1 "Recommended PCB Layout, "8x 1.10""' }
+
+connector:
+  mechanism: push_push
+  interface: micro_sd
+  src: p1 "Title block, "Micro SD Memory Card Connector, SMT, Push-Push""
+
+geometry: { type: parametric, generator: card_socket }
+
+dimensions:
+  body_width:  { typ: 15.05 mm, src: p1 "Front view "15.05"; bottom view "15.05"" }
+  body_length: { typ: 14.75 mm, src: p1 "Side section view "14.75"" }
+  body_height:
+    min: 1.35 mm
+    typ: 1.4 mm
+    max: 1.45 mm
+    src: p1 "Side view "1.40±0.05"; title "1.40mm Profile""
+
+# pads (Recommended PCB Layout, layout frame first: x right from the
+# outline's centre, y up from the outline's front (slot) edge):
+# X: Ground pad centres "16.15" apart, "4x 1.10" wide; their inner edges
+# lie on the outline (16.15 - 1.10 = 15.05) -> ±8.075. Card Detect
+# centre "1.38" right of the left Ground centre -> -6.695; P8..P1 at
+# "8x 1.10" (P1 "8.80" from Card Detect -> 2.105; right Ground "5.97"
+# further -> 8.075, closes the chain); "9x 0.62" wide. Left post hole
+# "2.82" right of Card Detect -> -3.875, right hole "6.80" further ->
+# 2.925 ("4.60" to the right Ground pad's inner edge 7.525 -> 2.925).
+# Y: post holes "3.98" above the front edge; lower Ground centres "0.42"
+# above the holes -> 4.40; upper Ground centres "9.00" above those ->
+# 13.40 ("4x 2.40" high); contact centres "2.00" above the upper
+# Ground centres -> 15.40 ("9x 1.40" high).
+# Body centre y = 14.75/2 = 7.375; 180° turn: X = -x, Y = 7.375 - y.
+# (The vector geometry agrees within 0.01 mm except the holes, drawn
+# 0.02 mm lower than "3.98".)
+pads:
+  value:
+    - { number: P1, x: -2.105, y: -8.025, width: 0.62, length: 1.4 }
+    - { number: P2, x: -1.005, y: -8.025, width: 0.62, length: 1.4 }
+    - { number: P3, x: 0.095, y: -8.025, width: 0.62, length: 1.4 }
+    - { number: P4, x: 1.195, y: -8.025, width: 0.62, length: 1.4 }
+    - { number: P5, x: 2.295, y: -8.025, width: 0.62, length: 1.4 }
+    - { number: P6, x: 3.395, y: -8.025, width: 0.62, length: 1.4 }
+    - { number: P7, x: 4.495, y: -8.025, width: 0.62, length: 1.4 }
+    - { number: P8, x: 5.595, y: -8.025, width: 0.62, length: 1.4 }
+    - { number: CD, x: 6.695, y: -8.025, width: 0.62, length: 1.4 }
+    - { number: GND, x: 8.075, y: -6.025, width: 1.1, length: 2.4 }
+    - { number: GND, x: -8.075, y: -6.025, width: 1.1, length: 2.4 }
+    - { number: GND, x: 8.075, y: 2.975, width: 1.1, length: 2.4 }
+    - { number: GND, x: -8.075, y: 2.975, width: 1.1, length: 2.4 }
+    - { number: "", x: 3.875, y: 3.395, width: 0.95, length: 0.95, drill: 0.95, plated: false }
+    - { number: "", x: -2.925, y: 3.395, width: 0.95, length: 0.95, drill: 0.95, plated: false }
+  src: p1 "Recommended PCB Layout (see comment above)"

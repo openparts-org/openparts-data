@@ -1,0 +1,24 @@
+# GCT product drawing MEM2052, "Micro SD Memory Card Connector,
+# Push-Push, SMT, Card Entry Normal, 1.95mm Profile".
+# 2 pages; page 1 drawing (top, side, front and bottom views),
+# "Recommended PCB Layout" ("As viewed from component side", "General
+# Tolerance: ±0.05"), "MICRO SD CARD PIN OUT" table, "Card Detect Switch
+# Circuit", "Ordering Grid"; page 2 packaging.
+# Title block: Part Number "MEM2052", Drawing Date "23rd November 2022",
+# Revision "A3", Date "08/03/24" (DD/MM/YY, = 2024-03-08; matches the
+# PDF ModDate), 3rd angle projection, units mm.
+# Pages are A4 rotated (landscape); PDF page index = sheet number
+# ("Sheet No. 1/2"). The drawing is vector art with a text layer:
+# dimensions read from 150-600 dpi renders and checked against the
+# vector geometry (pdftocairo -svg). Fetched with wget.
+schema_version: "0.2"
+kind: source
+id: gct/MEM2052-DWG
+sha256: 96ebf828e6f02f17cd62cec311b53ca87530273bf242d6e3ecebbc82fbe911ce
+retrieved: 2026-11-16
+url: https://gct.co/files/drawings/mem2052.pdf
+publisher: gct
+document_id: MEM2052
+document_type: datasheet
+revision: A3
+date: 2024-03-08

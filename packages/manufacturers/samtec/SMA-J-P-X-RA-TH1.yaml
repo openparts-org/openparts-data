@@ -1,0 +1,60 @@
+# Samtec SMA-J-P-X-RA-TH1: SMA right-angle jack, through hole, from
+# samtec/SMA-J-P-X-RA-TH1-MKT (revision K, page 1).
+# Frame (rf_coax, right angle): top view, barrel toward +Y, origin at
+# the body (base) centre. The view with "15.10±0.10" shows the base from
+# the board side (leg ends and centre pin end-on), barrel up the page:
+# already barrel toward +Y; the hole pattern is symmetric in X.
+# Body (Table 1 item 1 "BODY"): width "Ø7.00 (REF)" (printed with a
+# diameter sign, measured across the base). DOUBT: the base's depth
+# along the barrel is not printed; it is drawn equal to its width, and
+# the centre pin lies "15.10" - "11.60" = 3.50 = 7.00/2 from the rear
+# face, i.e. at the centre of a 7.00 square: body_length 7.00 and the
+# origin on the centre pin rest on that reading.
+# Height: front view "13.80 (REF)" (body top to leg tips) - "3.94 (REF)"
+# (leg length below the base) = 9.86 above the base underside; the
+# barrel axis is "6.36 REF" above it (not a field: the generator draws
+# the barrel at its own height).
+# Barrel: "Ø6.33 (REF)" thread; length beyond the base = "15.10" -
+# 7.00 = 8.10 (rests on the body_length reading above).
+# Holes: "Ø1.60 (TYP)" only, no land and no "PTH" note; recorded as
+# plated holes without a land (generator default ring) -- the legs and
+# centre pin are the -TH1 through-hole terminations.
+schema_version: "0.2"
+kind: package
+id: manufacturers/samtec/SMA-J-P-X-RA-TH1
+family: rf_coax
+lead_count: { value: 5, src: 'p1 "RECOMMENDED PCB LAYOUT, centre and four outer holes"' }
+source: samtec/SMA-J-P-X-RA-TH1-MKT
+
+pitch: { unit: mm }
+
+connector:
+  gender: female
+  orientation: right_angle
+  interface: sma
+  src: 'p1 "Part number legend: GENDER -J: JACK; ORIENTATION -RA: RIGHT ANGLE; TERMINATION -TH1: THROUGH HOLE; DESCRIPTION"'
+
+geometry: { type: parametric, generator: rf_coax }
+
+dimensions:
+  body_width:      { typ: 7 mm, src: 'p1 "Bottom view, base "Ø7.00 (REF)""' }
+  body_length:
+    typ: 7 mm
+    src: p1 "Bottom view, base depth drawn equal to its width; "15.10" - "11.60" = 3.50 (see header)"
+  body_height:     { typ: 9.86 mm, src: 'p1 "Front view, "13.80 (REF)" - "3.94 (REF)""' }
+  mating_diameter: { typ: 6.33 mm, src: 'p1 "Bottom view, thread "Ø6.33 (REF)""' }
+  mating_length:
+    typ: 8.1 mm
+    src: p1 "Bottom view, "15.10±0.10" - body_length 7.00 (see header)"
+
+# pads (RECOMMENDED PCB LAYOUT): five holes "Ø1.60 (TYP)"; corners on
+# "5.08" x "5.08" centres -> (±2.54, ±2.54) about the centre hole, which
+# is the centre pin at the body centre (see header). No land drawn.
+pads:
+  value:
+    - { number: "1", x: 0, y: 0, drill: 1.6 }
+    - { number: "2", x: -2.54, y: 2.54, drill: 1.6 }
+    - { number: "2", x: 2.54, y: 2.54, drill: 1.6 }
+    - { number: "2", x: -2.54, y: -2.54, drill: 1.6 }
+    - { number: "2", x: 2.54, y: -2.54, drill: 1.6 }
+  src: p1 "RECOMMENDED PCB LAYOUT (see comment above)"

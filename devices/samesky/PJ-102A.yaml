@@ -1,0 +1,18 @@
+# Same Sky PJ-102A DC power jack (samesky/PJ-102A-DS p2 schematic,
+# terminals 1, 3, 2). Terminal numbers as in the schematic and the layout.
+# The datasheet names no pins: the names describe the schematic symbol
+# each number is drawn on (1: the centre pin symbol; 2: the sleeve
+# spring contact; 3: the switch contact touching terminal 2).
+schema_version: "0.2"
+kind: device
+id: samesky/PJ-102A
+manufacturer: samesky
+category: connector
+family: PJ-102A
+source: samesky/PJ-102A-DS
+
+pins:
+  src: ['p2 "SCHEMATIC, terminals 1, 3, 2"', 'p2 "Recommended PCB Layout, slot labels"']
+  "1": { name: center, type: passive }
+  "2": { name: sleeve, type: passive }
+  "3": { name: switch, type: passive }

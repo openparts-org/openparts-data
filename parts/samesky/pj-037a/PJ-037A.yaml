@@ -1,0 +1,16 @@
+# Same Sky PJ-037A: the datasheet is for this one model (every page
+# header "MODEL: PJ-037A", schematic table "Model PJ-037A") -> existence
+# verified, like a title-block order code. lifecycle unknown: the
+# datasheet states none.
+schema_version: "0.2"
+kind: part
+id: samesky/PJ-037A
+manufacturer: samesky
+mpn: PJ-037A
+device: samesky/PJ-037A
+package: manufacturers/samesky/PJ-037A
+sources: [samesky/PJ-037A-DS]
+source: samesky/PJ-037A-DS
+
+existence: { status: verified, src: 'p1 "MODEL: PJ-037A | DESCRIPTION: DC POWER JACK"' }
+lifecycle: { status: unknown }

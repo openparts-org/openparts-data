@@ -1,0 +1,20 @@
+# Same Sky PJ-002AH-SMT-TR DC power jack with internal switch
+# (samesky/PJ-002AH-SMT-TR-DS p1 "internal switch", p2 schematic).
+# Terminal numbers 1, 2, 3 as in the schematic and the layout ("1#",
+# "2#", "3#"); terminal 1 has two solder pads. The datasheet names no
+# pins: the names describe the schematic symbol each number is drawn on
+# (1: the centre pin symbol; 2: the sleeve spring contact; 3: the switch
+# contact touching terminal 2's spring).
+schema_version: "0.2"
+kind: device
+id: samesky/PJ-002AH-SMT-TR
+manufacturer: samesky
+category: connector
+family: PJ-002AH-SMT-TR
+source: samesky/PJ-002AH-SMT-TR-DS
+
+pins:
+  src: ['p2 "SCHEMATIC, terminals 1, 3, 2"', 'p2 "Recommended PCB Layout, pad labels 1#, 2#, 3#"']
+  "1": { name: center, type: passive }
+  "2": { name: sleeve, type: passive }
+  "3": { name: switch, type: passive }

@@ -1,0 +1,69 @@
+# GCT MEM2067 microSD card socket, hinged, SMT, 1.80 mm profile: 8 card
+# contacts and 4 SMT hold-down pads, from page 1 of gct/MEM2067-DWG
+# (revision B6, 21/05/25).
+# Frame (card_socket): top view, X right, Y up, card-entry end toward
+# +Y, origin at the centre of the component outline. The source's
+# "Recommended PCB Layout" draws the card-entry end (the dashed cut-out
+# arc of the outline) at the bottom: it is turned 180° (x -> -x,
+# y -> -y). The layout has no "as viewed from" note; it is drawn like
+# the top view beside it (same contact row offsets "4.475" and "7.70"
+# from the dash-dot centre line, cut-out at the bottom), so it is read
+# as the component-side view.
+# Outline: "13.60" wide (layout component outline; front view "13.60"),
+# "14.45" long (bottom view; the layout's dashed outline measures the
+# same); its centre line is the layout's dash-dot line ("6.80" from the
+# outline's left edge).
+# Height "1.80" (side view; title "1.80mm Profile").
+# The hold-down pads carry no label or signal in the drawing
+# ("SMT Hold-Down: Stainless Steel"); numbered "SH" here.
+# Values printed without a tolerance carry the layout's "General
+# Tolerance: ±0.05" (not recorded as min/max).
+schema_version: "0.2"
+kind: package
+id: manufacturers/gct/MEM2067
+family: card_socket
+lead_count: { value: 12, src: 'p1 "Recommended PCB Layout, contacts 1-8, 4 hold-down pads"' }
+source: gct/MEM2067-DWG
+
+pitch: { typ: 1.1 mm, src: 'p1 "Recommended PCB Layout, "1.10""' }
+
+connector:
+  mechanism: hinged
+  interface: micro_sd
+  src: p1 "Title block, "Micro SD Memory Card Connector SMT, Hinged""
+
+geometry: { type: parametric, generator: card_socket }
+
+dimensions:
+  body_width:
+    typ: 13.6 mm
+    src: p1 "Recommended PCB Layout, component outline "13.60"; front view "13.60""
+  body_length: { typ: 14.45 mm, src: 'p1 "Bottom view, "14.45""' }
+  body_height: { typ: 1.8 mm, src: p1 "Side view "1.80"; title "1.80mm Profile"" }
+
+# pads (Recommended PCB Layout, layout frame first: x right from the
+# dash-dot centre line, y down from the outline's top edge):
+# X: contact 8 centre "4.475" left of the centre line -> -4.475; contact
+# 1 "7.70" right of contact 8 -> 3.225; "1.10" pitch between (7 -3.375,
+# 6 -2.275, 5 -1.175, 4 -0.075, 3 1.025, 2 2.125); "8x 0.80" wide.
+# Hold-down pads: centres "13.89" apart about the centre line -> ±6.945;
+# "4x 1.50" wide, "4x 2.00" high.
+# Y: top hold-down centres "3.85" below the outline top; contact centres
+# "6.00" below them -> 9.85 ("8x 1.20" high); bottom hold-down centres
+# "8.20" below the top ones -> 12.05.
+# Body centre y = 14.45/2 = 7.225; 180° turn: X = -x, Y = y - 7.225.
+pads:
+  value:
+    - { number: "1", x: -3.225, y: 2.625, width: 0.8, length: 1.2 }
+    - { number: "2", x: -2.125, y: 2.625, width: 0.8, length: 1.2 }
+    - { number: "3", x: -1.025, y: 2.625, width: 0.8, length: 1.2 }
+    - { number: "4", x: 0.075, y: 2.625, width: 0.8, length: 1.2 }
+    - { number: "5", x: 1.175, y: 2.625, width: 0.8, length: 1.2 }
+    - { number: "6", x: 2.275, y: 2.625, width: 0.8, length: 1.2 }
+    - { number: "7", x: 3.375, y: 2.625, width: 0.8, length: 1.2 }
+    - { number: "8", x: 4.475, y: 2.625, width: 0.8, length: 1.2 }
+    - { number: SH, x: 6.945, y: -3.375, width: 1.5, length: 2 }
+    - { number: SH, x: -6.945, y: -3.375, width: 1.5, length: 2 }
+    - { number: SH, x: 6.945, y: 4.825, width: 1.5, length: 2 }
+    - { number: SH, x: -6.945, y: 4.825, width: 1.5, length: 2 }
+  src: p1 "Recommended PCB Layout (see comment above)"

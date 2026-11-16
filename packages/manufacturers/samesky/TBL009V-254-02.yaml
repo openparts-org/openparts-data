@@ -1,0 +1,50 @@
+# Same Sky TBL009V-254 push-button terminal block, 2 poles, 2.54 mm
+# pitch, vertical (wire entry from the top), through hole, from page 2
+# of samesky/TBL009V-254-DS. Two plated holes per pole (two pins per
+# 1-pole module, "5.08" apart front to back); the layout draws only the
+# holes ("Ø1.00"), no land: generator ring. The datasheet numbers neither
+# poles nor holes: both holes of a pole carry the pole's number, pole 1
+# leftmost in this frame.
+# Frame (terminal_block, top entry): pin rows along X, housing front
+# toward +Y, origin at the housing centre (L x 10.00).
+# The "P.C.B. LAYOUT" is a top view with the housing's back at the top:
+# its rows sit "2.10" and 2.10 + "5.08" = 7.18 from the top edge of the
+# "10.00" deep outline, as the side view dimensions the pins "2.10" and
+# "5.08" from the back face, and its first column "1.70" from the left
+# edge, as the front view does. Turned 180° (x -> -x, y -> -y) so the
+# front faces +Y.
+# Y: 10.00/2 - 2.10 = 2.90 (back row) -> -2.90; 5.00 - 7.18 = -2.18
+# (front row) -> +2.18.
+# X: L = 2.54 x 2 + 1.5 = 6.58 ("L" table N = 02); layout column k at
+# 1.70 + 2.54k from the left edge -> x = -(1.70 + 2.54k - 3.29).
+schema_version: "0.2"
+kind: package
+id: manufacturers/samesky/TBL009V-254-02
+family: terminal_block
+
+lead_count:
+  value: 4
+  src: p2 "P.C.B. LAYOUT, "Ø1.00", "1.70", "P=2.54", "2.10", "5.08", "10.00"; L/B table"
+
+source: samesky/TBL009V-254-DS
+
+pitch: { typ: 2.54 mm, src: 'p2 "Front view, "P=2.54±0.07"; P.C.B. LAYOUT "P=2.54""' }
+connector: { orientation: vertical, src: 'p1 "FEATURES, "vertical with board""' }
+geometry: { type: parametric, generator: terminal_block }
+
+dimensions:
+  body_width: { typ: 6.58 mm, src: p2 "Front view "L=2.54N+1.5"; table L N=02 "6.58"" }
+  body_length:
+    typ: 10 mm
+    src: p2 "Side view, housing depth "10.00"; P.C.B. LAYOUT outline "10.00""
+  body_height:
+    typ: 14 mm
+    src: p2 "Side view, housing height "14.00" (push buttons to "16.05(REF)")"
+
+pads:
+  value:
+    - { number: "1", x: -0.95, y: 2.18, drill: 1 }
+    - { number: "2", x: 1.59, y: 2.18, drill: 1 }
+    - { number: "1", x: -0.95, y: -2.9, drill: 1 }
+    - { number: "2", x: 1.59, y: -2.9, drill: 1 }
+  src: p2 "P.C.B. LAYOUT, "Ø1.00", "1.70", "P=2.54", "2.10", "5.08", "10.00"; L/B table (see comment above)"

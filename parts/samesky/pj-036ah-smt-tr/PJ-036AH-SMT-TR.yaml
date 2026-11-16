@@ -1,0 +1,15 @@
+# Same Sky PJ-036AH-SMT-TR: the datasheet is for this one model (every
+# page header "MODEL: PJ-036AH-SMT-TR") -> existence verified, like a
+# title-block order code. lifecycle unknown: the datasheet states none.
+schema_version: "0.2"
+kind: part
+id: samesky/PJ-036AH-SMT-TR
+manufacturer: samesky
+mpn: PJ-036AH-SMT-TR
+device: samesky/PJ-036AH-SMT-TR
+package: manufacturers/samesky/PJ-036AH-SMT-TR
+sources: [samesky/PJ-036AH-SMT-TR-DS]
+source: samesky/PJ-036AH-SMT-TR-DS
+
+existence: { status: verified, src: 'p1 "MODEL: PJ-036AH-SMT-TR | DESCRIPTION: DC POWER JACK"' }
+lifecycle: { status: unknown }

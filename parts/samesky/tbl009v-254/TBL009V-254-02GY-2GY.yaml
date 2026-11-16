@@ -1,0 +1,19 @@
+# Same Sky TBL009V-254-02GY-2GY: assembled from the datasheet's "PART NUMBER KEY"
+# (poles 02, body colour GY = gray, push button 2 + GY = gray, the standard colours) -> existence probable: the key is a part-numbering
+# legend, not an orderable list. lifecycle unknown: the datasheet states
+# none.
+schema_version: "0.2"
+kind: part
+id: samesky/TBL009V-254-02GY-2GY
+manufacturer: samesky
+mpn: TBL009V-254-02GY-2GY
+device: samesky/TBL009V-254-02
+package: manufacturers/samesky/TBL009V-254-02
+sources: [samesky/TBL009V-254-DS]
+source: samesky/TBL009V-254-DS
+
+existence:
+  status: probable
+  src: 'p1 "PART NUMBER KEY, TBL009V-254 - XX XX - 2XX: No. of Poles 02, Body Color *GY, Push Button Color *GY"'
+
+lifecycle: { status: unknown }

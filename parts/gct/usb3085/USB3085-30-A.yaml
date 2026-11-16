@@ -1,0 +1,17 @@
+# MPN assembled from the drawing's "Ordering Grid" (USB3085 - Contact
+# Plating "30 = 30u" Gold" - Packing Options "A = Tape & Reel (1.5K per
+# Reel)"; each field lists one option) -> existence probable: the grid
+# is a part-numbering legend, not an orderable list.
+# lifecycle unknown: the drawing states none.
+schema_version: "0.2"
+kind: part
+id: gct/USB3085-30-A
+manufacturer: gct
+mpn: USB3085-30-A
+device: gct/USB3085
+package: manufacturers/gct/USB3085
+sources: [gct/USB3085-DWG]
+source: gct/USB3085-DWG
+
+existence: { status: probable, src: 'p1 "Ordering Grid: Contact Plating, Packing Options"' }
+lifecycle: { status: unknown }

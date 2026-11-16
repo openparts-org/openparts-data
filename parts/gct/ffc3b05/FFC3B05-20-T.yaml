@@ -1,0 +1,22 @@
+# MPN assembled from the drawing's "Ordering Grid" (FFC3B05-XX-X:
+# No. of Contacts "04 - 30 (see dimension table)", Contact Plating
+# "T=Tin Plating over all (Standard)"; "G=Gold Flash over all (Only
+# available in 5&6 circuits)") -> existence probable: the grid is a
+# part-numbering legend, not an orderable list.
+# lifecycle eol_announced: page 1 carries GCT's "Pending Obsolescence"
+# watermark.
+schema_version: "0.2"
+kind: part
+id: gct/FFC3B05-20-T
+manufacturer: gct
+mpn: FFC3B05-20-T
+device: gct/FFC3B05-20
+package: manufacturers/gct/FFC3B05-20
+sources: [gct/FFC3B05-DWG]
+source: gct/FFC3B05-DWG
+
+existence:
+  status: probable
+  src: 'p1 "Ordering Grid: No. of Contacts, Contact Plating; dimension table row 20"'
+
+lifecycle: { status: eol_announced, src: p1 "Watermark "Pending Obsolescence"" }

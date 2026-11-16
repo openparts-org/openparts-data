@@ -1,0 +1,85 @@
+# GCT USB3076 Micro-USB B receptacle, SMT, horizontal, bottom mount,
+# outer shell stakes: 5 contact pads, 4 SMT shell pads and 2 plated
+# shell-stake slots, from page 1 of gct/USB3076-DWG (revision C6,
+# 17/07/23).
+# Frame (micro_usb_b): top view, X right, Y up, plug opening toward +Y,
+# origin at the centre of the shell outline. The source's "Recommended
+# PCB Layout" ("Viewed from Component Side", "PCB Edge" line at the
+# bottom) is turned 180° (x -> -x, y -> -y).
+# Shell: "7.40" wide, "5.55" long (top view). Side view: the stake
+# centre line is "2.75" behind the front face and "2.80" in front of the
+# rear face (2.75 + 2.80 = 5.55); the stakes sit in the layout's slots.
+# Height "2.35" (side view, board to shell top; a latch bump "0.31"
+# above it is not part of the body).
+# Values printed without a tolerance carry the layout's "General
+# Tolerance: ±0.05" (not recorded as min/max).
+schema_version: "0.2"
+kind: package
+id: manufacturers/gct/USB3076
+family: micro_usb_b
+lead_count: { value: 11, src: 'p1 "Recommended PCB Layout, 5 contacts, 4 shell pads, 2 slots"' }
+source: gct/USB3076-DWG
+
+pitch: { typ: 0.65 mm, src: 'p1 "Recommended PCB Layout, "0.65""' }
+
+connector:
+  orientation: right_angle
+  src: p1 "Title block, "Micro USB Receptacle, Type B, SMT, Horizontal""
+
+geometry: { type: parametric, generator: micro_usb_b }
+
+dimensions:
+  body_width:  { typ: 7.4 mm, src: 'p1 "Top view, shell width "7.40""' }
+  body_length: { typ: 5.55 mm, src: 'p1 "Top view, shell length "5.55""' }
+  body_height: { typ: 2.35 mm, src: 'p1 "Side view, board to shell top "2.35""' }
+
+# pads (Recommended PCB Layout, layout frame first: x right from Pin 3,
+# y down = toward the PCB edge, from the slots' centre line):
+# X: Pin 1 to Pin 5 "2.60", pitch "0.65" -> ±1.30, ±0.65, 0; "0.40"
+# wide. Side shell pads "1.02" outside Pin 1/Pin 5 -> ±2.32, "1.15"
+# wide. Middle shell pads "4.00" over both, "0.50" gap -> width
+# (4.00 - 0.50)/2 = 1.75, centres ±(0.25 + 0.875) = ±1.125. Slots
+# "7.15" apart -> ±3.575; land "1.05" x "1.85", drill "0.45" x "1.25".
+# Y: contact top edge "3.35" from the slot centre line, "1.40" high ->
+# centre -2.65; side pad centre line "2.23" from it -> -2.23 ("1.45"
+# high); the middle pads ("1.9" high) are drawn on the slot centre line
+# (no own Y dimension); PCB Edge "1.45" from it -> +1.45.
+# Body centre: front face 2.75 below the slot line, rear face 2.80
+# above -> centre y = -0.025. Relative to it: contacts -2.625, side pads
+# -2.205, slots and middle pads +0.025, PCB edge +1.475. 180° turn of
+# the drawing: X = -x, and Y = the downward y above (the opening, drawn
+# at the bottom, goes to +Y).
+pads:
+  value:
+    - { number: "1", x: 1.3, y: -2.625, width: 0.4, length: 1.4 }
+    - { number: "2", x: 0.65, y: -2.625, width: 0.4, length: 1.4 }
+    - { number: "3", x: 0, y: -2.625, width: 0.4, length: 1.4 }
+    - { number: "4", x: -0.65, y: -2.625, width: 0.4, length: 1.4 }
+    - { number: "5", x: -1.3, y: -2.625, width: 0.4, length: 1.4 }
+    - { number: SHELL, x: 2.32, y: -2.205, width: 1.15, length: 1.45 }
+    - { number: SHELL, x: -2.32, y: -2.205, width: 1.15, length: 1.45 }
+    - { number: SHELL, x: 1.125, y: 0.025, width: 1.75, length: 1.9 }
+    - { number: SHELL, x: -1.125, y: 0.025, width: 1.75, length: 1.9 }
+    - number: SHELL
+      x: 3.575
+      y: 0.025
+      width: 1.05
+      length: 1.85
+      drill: 0.45
+      drill_length: 1.25
+    - number: SHELL
+      x: -3.575
+      y: 0.025
+      width: 1.05
+      length: 1.85
+      drill: 0.45
+      drill_length: 1.25
+  src: p1 "Recommended PCB Layout; side view "2.75", "2.80" (see comment above)"
+
+# The layout draws the "PCB Edge" line 1.45 in front of the slot centre
+# line: y = +1.475 in the body-centred frame.
+edge:
+  side: +y
+  requirement: required
+  pcb_edge: 1.475
+  src: p1 "Recommended PCB Layout, PCB Edge line (see comment above)"

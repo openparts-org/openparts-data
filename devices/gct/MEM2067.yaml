@@ -1,0 +1,25 @@
+# GCT MEM2067 microSD card socket, hinged, 8 card contacts + 4 SMT
+# hold-down pads (gct/MEM2067-DWG page 1 "Micro SD Card Pin Out" table:
+# Pin / Name / Description, P1-P8; the layout numbers the pads "1"-"8").
+# No card-detect switch ("Switch 02 = Without Switch").
+# "SH": the four "SMT Hold-Down" pads; the drawing assigns them no
+# signal.
+schema_version: "0.2"
+kind: device
+id: gct/MEM2067
+manufacturer: gct
+category: connector
+family: MEM2067
+source: gct/MEM2067-DWG
+
+pins:
+  src: [p1 "Micro SD Card Pin Out", p1 "Recommended PCB Layout pad labels "8 7 6 5 4 3 2 1""]
+  "1": { name: DAT2, type: passive }
+  "2": { name: CD/DAT3, type: passive }
+  "3": { name: CMD, type: passive }
+  "4": { name: VDD, type: power }
+  "5": { name: CLK, type: passive }
+  "6": { name: VSS, type: ground }
+  "7": { name: DAT0, type: passive }
+  "8": { name: DAT1, type: passive }
+  SH:  { name: SH, type: passive }

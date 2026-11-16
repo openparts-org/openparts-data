@@ -1,0 +1,73 @@
+# GCT USB3085 Micro-USB AB receptacle, SMT, horizontal, bottom mount,
+# without peg: 5 contact pads and 4 SMT shell pads, from page 1 of
+# gct/USB3085-DWG (revision D2, 15/02/17).
+# Frame (micro_usb_b): top view, X right, Y up, plug opening toward +Y,
+# origin at the centre of the shell outline. The source's "RECOMMENDED
+# P.C.B LAYOUT" ("AS VIEWED FROM COMPONENT SIDE", "PCB EDGE" line at the
+# bottom) is turned 180° (x -> -x, y -> -y).
+# Shell: "7.40" wide (bottom view). Length: side view "2.15" from the
+# front face to the shell tabs' centre line and "2.85" from there to the
+# rear -> 5.00; the top view's "5.5±0.2" adds the front lip ("0.49").
+# The layout gives the shell pads' centre line ("1.45" from the PCB
+# edge) but no outline position: the outer shell pads are taken as the
+# tabs' lands (the layout's dashed outline is drawn so, its rear edge
+# 2.85 behind the pad centre line).
+# Height "2.35" (side view, board to shell top; "2.7" includes the
+# lead-in flares).
+# Values printed without a tolerance carry the layout's "GENERAL
+# TOLERANCE: ±0.05" (not recorded as min/max).
+schema_version: "0.2"
+kind: package
+id: manufacturers/gct/USB3085
+family: micro_usb_b
+lead_count: { value: 9, src: 'p1 "RECOMMENDED P.C.B LAYOUT, 5 contacts, 4 shell pads"' }
+source: gct/USB3085-DWG
+
+pitch: { unit: mm }
+
+connector:
+  orientation: right_angle
+  src: p1 "Title block, "Micro USB Receptacle, Type AB, Surface Mount, Horizontal""
+
+geometry: { type: parametric, generator: micro_usb_b }
+
+dimensions:
+  body_width:  { typ: 7.4 mm, src: 'p1 "Bottom view, shell width "7.40""' }
+  body_length:
+    typ: 5 mm
+    src: p1 "Side view "2.15" + "2.85" (front face, tab centre line, rear)"
+  body_height: { typ: 2.35 mm, src: 'p1 "Side view, board to shell top "2.35""' }
+
+# pads (RECOMMENDED P.C.B LAYOUT, layout frame first: x right from Pin 3,
+# y down = toward the PCB edge, from the shell pads' centre line):
+# X: Pin 1 to Pin 5 "2.60" -> ±1.30, Pin 2 to Pin 4 "1.30" -> ±0.65,
+# Pin 3 between; "0.40" wide. Outer shell pads "10.00" over both, "6.00"
+# between -> width 2.00, centres ±4.00; inner shell pads "4.30" over
+# both, "0.50" gap -> width (4.30 - 0.50)/2 = 1.90, centres ±1.20.
+# Y: contact centres "4.00" from the PCB edge, shell pad centres "1.45"
+# -> contacts -2.55 from the pad centre line ("1.40" high); shell pads
+# "2.00" high (all four drawn on the same lines); PCB EDGE +1.45.
+# Body centre: front face 2.15 below the pad centre line, rear 2.85
+# above -> centre y = -0.35. Relative to it: contacts -2.20, shell pads
+# +0.35, PCB edge +1.80. 180° turn of the drawing: X = -x, and Y = the
+# downward y above (the opening, drawn at the bottom, goes to +Y).
+pads:
+  value:
+    - { number: "1", x: 1.3, y: -2.2, width: 0.4, length: 1.4 }
+    - { number: "2", x: 0.65, y: -2.2, width: 0.4, length: 1.4 }
+    - { number: "3", x: 0, y: -2.2, width: 0.4, length: 1.4 }
+    - { number: "4", x: -0.65, y: -2.2, width: 0.4, length: 1.4 }
+    - { number: "5", x: -1.3, y: -2.2, width: 0.4, length: 1.4 }
+    - { number: SHELL, x: 4, y: 0.35, width: 2, length: 2 }
+    - { number: SHELL, x: 1.2, y: 0.35, width: 1.9, length: 2 }
+    - { number: SHELL, x: -1.2, y: 0.35, width: 1.9, length: 2 }
+    - { number: SHELL, x: -4, y: 0.35, width: 2, length: 2 }
+  src: p1 "RECOMMENDED P.C.B LAYOUT; side view "2.15", "2.85" (see comment above)"
+
+# The layout draws the "PCB EDGE" line 1.45 in front of the shell pads'
+# centre line: y = +1.80 in the body-centred frame.
+edge:
+  side: +y
+  requirement: required
+  pcb_edge: 1.8
+  src: p1 "RECOMMENDED P.C.B LAYOUT, PCB EDGE line (see comment above)"

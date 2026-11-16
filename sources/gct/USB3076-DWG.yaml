@@ -1,0 +1,26 @@
+# GCT product drawing USB3076, "Micro USB Receptacle, Type B, SMT,
+# Horizontal, Bottom Mount w/out Peg, w/Outer Shell Stakes, w/out Mating
+# Face Lead-In".
+# 2 pages; page 1 drawing (top, front, side and bottom views, "PCB Mount
+# Orientation"), "Recommended PCB Layout" ("Viewed from Component Side",
+# "General Tolerance: ±0.05"), Specifications, "Ordering Grid"; page 2
+# packaging. The drawing has no pin-name table (only "Pin 1"/"Pin 5"
+# labels and "Current Rating: Signal(Pins 2,3,4)... Power (Pins1,5)").
+# Title block: Part Number "USB3076", Drawing Date "26th August 2011",
+# Revision "C6", Date "17/07/23" (DD/MM/YY, = 2023-07-17; matches the
+# PDF ModDate), 3rd angle projection, units mm.
+# Pages are A4 rotated (landscape); PDF page index = sheet number
+# ("Sheet No. 1/2"). The drawing is vector art with a text layer:
+# dimensions read from 150-600 dpi renders and checked against the
+# vector geometry (pdftocairo -svg). Fetched with wget.
+schema_version: "0.2"
+kind: source
+id: gct/USB3076-DWG
+sha256: da6207488bdb1d9221d0bb4f51852dcd96b4541ecc1152732ac81e5d36a0afce
+retrieved: 2026-11-16
+url: https://gct.co/files/drawings/usb3076.pdf
+publisher: gct
+document_id: USB3076
+document_type: datasheet
+revision: C6
+date: 2023-07-17

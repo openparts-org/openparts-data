@@ -1,0 +1,69 @@
+# Same Sky PJ-002AH-SMT-TR DC power jack, SMT: 4 SMD solder pads (two of
+# them terminal 1) + 2 holes for the housing's locating bosses, from
+# page 2 of samesky/PJ-002AH-SMT-TR-DS (rev 1.10, 09/12/2024).
+# Frame (barrel_jack): top view, X right, Y up, plug opening toward +Y,
+# origin at the housing centre. The source's "Recommended PCB Layout,
+# Top View" draws the opening (front face) at the bottom: it is turned
+# 180° (x -> -x, y -> -y). Which edge is the front: the layout's "5"
+# (front-row pad centres to the outline edge without the rear terminal
+# notch) matches the side view's "5±0.3" (front face to the front boss);
+# the side view's other end carries the rear terminal ("14.9±0.3"
+# overall vs the housing). The view above the side view ("14±0.2",
+# bosses "1.2X1.5" and "Ø1.70") is the bottom view: it is the layout
+# mirrored.
+# Housing: "9±0.2" wide, "11±0.2" high (front view, seating plane to
+# top), "14±0.2" long (bottom view).
+# NOTE: the drawing does not say whether the two boss holes are plated;
+# they are drawn as plain circles without a land and receive the
+# housing's bosses: recorded as non-plated.
+schema_version: "0.2"
+kind: package
+id: manufacturers/samesky/PJ-002AH-SMT-TR
+family: barrel_jack
+lead_count: { value: 4, src: 'p2 "Recommended PCB Layout, pads 1#, 1#, 2#, 3#"' }
+source: samesky/PJ-002AH-SMT-TR-DS
+
+pitch: { unit: mm }
+connector: { gender: female, src: 'p1 "DESCRIPTION: DC POWER JACK"' }
+geometry: { type: parametric, generator: barrel_jack }
+
+dimensions:
+  body_width: { min: 8.8 mm, typ: 9 mm, max: 9.2 mm, src: 'p2 "Front view, housing width "9±0.2""' }
+  body_length:
+    min: 13.8 mm
+    typ: 14 mm
+    max: 14.2 mm
+    src: p2 "Bottom view, housing length "14±0.2""
+  body_height:
+    min: 10.8 mm
+    typ: 11 mm
+    max: 11.2 mm
+    src: p2 "Front view, seating plane to top "11±0.2""
+  pin_diameter:
+    min: 1.95 mm
+    typ: 2 mm
+    max: 2 mm
+    src: p2 "Front view, centre pin "Ø2.0 +0/-0.05"; schematic table "Center Pin Ø2.0 mm""
+  mating_diameter: { typ: 6.5 mm, src: 'p2 "Front view, opening "Ø6.50""' }
+
+# pads (Recommended PCB Layout, "PCB: ±0.05 mm"; layout frame first:
+# origin at the front edge's centre, y up = toward the rear):
+# X: pads span "17" outside, "9" between their inner edges -> width
+# (17 - 9)/2 = 4, centres ±(9/2 + 4/2) = ±6.5. Y: "4-2,5" (four pads
+# 2.5 long); front row centres "5" from the front edge, rear row "6"
+# further -> 11. Holes: "Ø1.7" on the front row's centre line (y 5, x 0);
+# "Ø1.8 +0.1/0" between the rows on the centre line, its Y from the side
+# view's boss spacing "4.5±0.1" -> y 5 + 4.5 = 9.5.
+# Housing centre y = 14/2 = 7 -> front row -2, rear row +4, Ø1.7 -2,
+# Ø1.8 +2.5. Then the 180° turn (x -> -x, y -> -y): the layout's left
+# pads (both "1#") go to +X; "2#" (front right) and "3#" (rear right)
+# to -X.
+pads:
+  value:
+    - { number: "1", x: 6.5, y: 2, width: 4, length: 2.5 }
+    - { number: "1", x: 6.5, y: -4, width: 4, length: 2.5 }
+    - { number: "2", x: -6.5, y: 2, width: 4, length: 2.5 }
+    - { number: "3", x: -6.5, y: -4, width: 4, length: 2.5 }
+    - { number: "", x: 0, y: 2, width: 1.7, length: 1.7, drill: 1.7, plated: false }
+    - { number: "", x: 0, y: -2.5, width: 1.8, length: 1.8, drill: 1.8, plated: false }
+  src: p2 "Recommended PCB Layout Top View; side view boss spacing "4.5±0.1" (see comment above)"

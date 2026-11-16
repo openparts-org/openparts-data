@@ -1,0 +1,17 @@
+# Same Sky PJ-037A DC power jack (samesky/PJ-037A-DS p2 schematic,
+# terminals 1, 2). Terminal numbers as in the schematic and the layout.
+# The datasheet names no pins: the names describe the schematic symbol
+# each number is drawn on (1: the centre pin symbol; 2: the sleeve
+# spring contact).
+schema_version: "0.2"
+kind: device
+id: samesky/PJ-037A
+manufacturer: samesky
+category: connector
+family: PJ-037A
+source: samesky/PJ-037A-DS
+
+pins:
+  src: ['p2 "SCHEMATIC, terminals 1, 2"', 'p2 "Recommended PCB Layout, slot labels"']
+  "1": { name: center, type: passive }
+  "2": { name: sleeve, type: passive }

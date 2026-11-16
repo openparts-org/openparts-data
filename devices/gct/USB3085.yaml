@@ -1,0 +1,25 @@
+# GCT USB3085 Micro-USB AB receptacle, 5 contacts + shell
+# (gct/USB3085-DWG page 1). The drawing has no pin-name table: it labels
+# "Pin 1" and "Pin 5" and rates "Signal(Pins 2,3,4): 1.0 A", "Power
+# (Pins1,5): 1.8A". The pins are therefore named by their numbers and
+# typed passive (no VBUS/D-/D+/ID/GND names are printed).
+# "SHELL": the four SMT shell pads ("Metallic Shell"); no signal is
+# assigned to them.
+schema_version: "0.2"
+kind: device
+id: gct/USB3085
+manufacturer: gct
+category: connector
+family: USB3085
+source: gct/USB3085-DWG
+
+pins:
+  src:
+    - p1 "RECOMMENDED P.C.B LAYOUT "Pin 1", "Pin 5""
+    - p1 "Electrical, Current Rating, Signal(Pins 2,3,4), Power (Pins1,5)"
+  "1":   { name: "1", type: passive }
+  "2":   { name: "2", type: passive }
+  "3":   { name: "3", type: passive }
+  "4":   { name: "4", type: passive }
+  "5":   { name: "5", type: passive }
+  SHELL: { name: SHELL, type: passive }

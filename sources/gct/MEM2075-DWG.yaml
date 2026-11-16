@@ -1,0 +1,24 @@
+# GCT product drawing MEM2075, "Micro SD Memory Card Connector,1.40mm
+# Profile SMT, Push-Push, with Normally open Switch".
+# 2 pages; page 1 drawing (top, side, front and bottom views),
+# "Recommended PCB Layout" ("As viewed from component side", "General
+# Tolerance: ±0.05"), "Micro SD Card Pin Assignment" table, "Card Detect
+# Switch Circuit", "Ordering Grid"; page 2 packaging.
+# Title block: Part Number "MEM2075", Drawing Date "19th December 2017",
+# Revision "A1", Date "10/09/20" (DD/MM/YY, = 2020-09-10; matches the
+# PDF ModDate), 3rd angle projection, units mm.
+# Pages are A4 rotated (landscape); PDF page index = sheet number
+# ("Sheet No. 1/2"). The drawing is vector art with a text layer:
+# dimensions read from 150-600 dpi renders and checked against the
+# vector geometry (pdftocairo -svg). Fetched with wget.
+schema_version: "0.2"
+kind: source
+id: gct/MEM2075-DWG
+sha256: 9f1a621a3f7c649fd51f8ea49189e91ab2a4345eefcf7024382a072b782e90a3
+retrieved: 2026-11-16
+url: https://gct.co/files/drawings/mem2075.pdf
+publisher: gct
+document_id: MEM2075
+document_type: datasheet
+revision: A1
+date: 2020-09-10

@@ -1,0 +1,41 @@
+# Same Sky TB004-508 terminal block, 2 poles, 5.08 mm pitch, through
+# hole, from page 2 of samesky/TB004-508-DS. One plated hole per pole;
+# the layout draws only the hole ("Ø1.60"), no land: generator ring.
+# Frame (terminal_block): top view, X right, Y up, wire entry toward +Y,
+# origin at the housing centre.
+# The "PCB LAYOUT" puts the row "5.10" from the outline edge of a
+# "10.20" deep outline, and SECTION A-A dimensions pin to back face
+# "5.10": the row is on the housing's centre line, so the wire-entry side
+# (+Y) changes no coordinate. Row y = 10.20/2 - 5.10 = 0.
+# X: first hole "2.54" (= P/2) from the outline edge, "P=5.08" -> the holes are centred on the housing length
+# L = 5.08 x 2 = 10.16 ("L" table, N = 02); x = (k - (2 - 1)/2) x 5.08.
+# The datasheet numbers no poles: pole 1 is the leftmost in this frame.
+# The interlocking lip beyond L is not part of the body.
+schema_version: "0.2"
+kind: package
+id: manufacturers/samesky/TB004-508-02
+family: terminal_block
+
+lead_count:
+  value: 2
+  src: p2 "PCB LAYOUT, "Ø1.60", "2.54", "P=5.08", "5.10", "10.20"; L/B table"
+
+source: samesky/TB004-508-DS
+
+pitch:
+  typ: 5.08 mm
+  src: p2 "PCB LAYOUT, "Ø1.60", "2.54", "P=5.08", "5.10", "10.20"; L/B table"
+
+connector: { orientation: right_angle, src: 'p1 "FEATURES, "horizontal with board""' }
+geometry: { type: parametric, generator: terminal_block }
+
+dimensions:
+  body_width:  { typ: 10.16 mm, src: p2 "PCB LAYOUT / front view "L=PxN"; table L" N=02 "10.16" }
+  body_length:
+    typ: 10.2 mm
+    src: p2 "Top view, housing depth "10.20"; PCB LAYOUT outline "10.20""
+  body_height: { typ: 14.1 mm, src: 'p2 "Front view, housing height "14.10""' }
+
+pads:
+  value: [{ number: "1", x: -2.54, y: 0, drill: 1.6 }, { number: "2", x: 2.54, y: 0, drill: 1.6 }]
+  src:   p2 "PCB LAYOUT, "Ø1.60", "2.54", "P=5.08", "5.10", "10.20"; L/B table (see comment above)"

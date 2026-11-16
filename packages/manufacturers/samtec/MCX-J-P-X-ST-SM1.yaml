@@ -1,0 +1,45 @@
+# Samtec MCX-J-P-X-ST-SM1: MCX straight (vertical) jack, surface mount,
+# from samtec/MCX-J-P-X-ST-SM1-MKT (revision C).
+# Frame (rf_coax, vertical): top view as drawn, origin at the base centre
+# (the layout and the base are drawn concentric about the centre pad).
+# Base "□5.88 (REF)" (top view); overall height "6.00 (REF)" (side
+# view, leg bottoms to barrel top); barrel "Ø4.50 (REF)". All three are
+# REF values on the print. The base's own height is not printed:
+# body_height left out (generator default).
+# Pads: no numbers on the print (see the device). The centre pad is round
+# ("Ø1.65") but recorded as a 1.65 x 1.65 rectangle (pads are
+# rectangles).
+schema_version: "0.2"
+kind: package
+id: manufacturers/samtec/MCX-J-P-X-ST-SM1
+family: rf_coax
+lead_count: { value: 5, src: 'p1 "RECOMMENDED PCB LAYOUT, centre and four outer pads"' }
+source: samtec/MCX-J-P-X-ST-SM1-MKT
+
+pitch: { unit: mm }
+
+connector:
+  gender: female
+  orientation: vertical
+  interface: mcx
+  src: 'p1 "Part number legend: GENDER -J: JACK; ORIENTATION -ST: STRAIGHT; TERMINATION -SM1: SURFACE MOUNT; DESCRIPTION"'
+
+geometry: { type: parametric, generator: rf_coax }
+
+dimensions:
+  body_width:      { typ: 5.88 mm, src: 'p1 "Top view, base "□5.88 (REF)""' }
+  body_length:     { typ: 5.88 mm, src: 'p1 "Top view, base "□5.88 (REF)""' }
+  mating_diameter: { typ: 4.5 mm, src: 'p1 "Side view, "Ø4.50 (REF)""' }
+  overall_height:  { typ: 6 mm, src: 'p1 "Side view, "6.00 (REF)""' }
+
+# pads (RECOMMENDED PCB LAYOUT): four square pads "□2.10 (4 PLCS)",
+# outer span "□6.54 (TYP)" -> centres ±(6.54/2 - 2.10/2) = ±2.22 in X
+# and Y; centre pad "Ø1.65" at the origin.
+pads:
+  value:
+    - { number: "1", x: 0, y: 0, width: 1.65, length: 1.65 }
+    - { number: "2", x: -2.22, y: 2.22, width: 2.1, length: 2.1 }
+    - { number: "2", x: 2.22, y: 2.22, width: 2.1, length: 2.1 }
+    - { number: "2", x: -2.22, y: -2.22, width: 2.1, length: 2.1 }
+    - { number: "2", x: 2.22, y: -2.22, width: 2.1, length: 2.1 }
+  src: p1 "RECOMMENDED PCB LAYOUT (see comment above)"

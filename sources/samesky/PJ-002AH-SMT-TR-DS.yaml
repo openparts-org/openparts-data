@@ -1,0 +1,19 @@
+# Same Sky datasheet "MODEL: PJ-002AH-SMT-TR | DESCRIPTION: DC POWER JACK".
+# 4 pages, US letter: p1 features/specifications/reflow profile, p2
+# "MECHANICAL DRAWING" (views, "Recommended PCB Layout Top View",
+# schematic, "Center Pin Ø2.0 mm"), p3 packaging, p4 "REVISION HISTORY".
+# Every page header: "date 09/12/2024" (MM/DD/YYYY); revision history last
+# row: rev "1.10", "CUI Devices rebranded to Same Sky", 09/12/2024.
+# Downloaded with curl from the URL below; the PDF's ModDate is the
+# download day (stamped by the server), CreationDate 2024-10-15, so no
+# sha256 is recorded. The drawing is vector art: dimensions read from 200-600 dpi renders.
+schema_version: "0.2"
+kind: source
+id: samesky/PJ-002AH-SMT-TR-DS
+retrieved: 2026-11-16
+url: https://www.sameskydevices.com/product/resource/pj-002ah-smt-tr.pdf
+date: 2024-09-12
+publisher: samesky
+document_id: PJ-002AH-SMT-TR
+document_type: datasheet
+revision: "1.10"

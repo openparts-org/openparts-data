@@ -1,0 +1,19 @@
+# Same Sky PJ-036AH-SMT-TR DC power jack (samesky/PJ-036AH-SMT-TR-DS
+# p2 schematic, three terminals). Terminal numbers 1, 2, 3 as in the
+# schematic and the layout ("1#", "2#", "3#"). The datasheet names no
+# pins: the names describe the schematic symbol each number is drawn on
+# (1: the centre pin symbol; 2: the sleeve spring contact; 3: the switch
+# contact beside terminal 2's spring).
+schema_version: "0.2"
+kind: device
+id: samesky/PJ-036AH-SMT-TR
+manufacturer: samesky
+category: connector
+family: PJ-036AH-SMT-TR
+source: samesky/PJ-036AH-SMT-TR-DS
+
+pins:
+  src: ['p2 "SCHEMATIC, terminals 1, 3, 2"', 'p2 "Recommended PCB Layout, pad labels 1#, 2#, 3#"']
+  "1": { name: center, type: passive }
+  "2": { name: sleeve, type: passive }
+  "3": { name: switch, type: passive }
