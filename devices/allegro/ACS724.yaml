@@ -13,6 +13,19 @@ category: sensor
 family: ACS724
 source: allegro/ACS724-DS-rev25
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 4.5 V, max: 5.5 V, src: 'p5 "Common Operating Characteristics, VCC"' }
+  supply_current:
+    typ: 10 mA
+    max: 14 mA
+    at: { VCC: 5 V }
+    src: p5 "Common Operating Characteristics, ICC, output open"
+  operating_temperature:
+    min: -40 °C
+    max: 150 °C
+    src: p3 "Absolute Maximum Ratings, Operating Ambient Temperature, Range L"
+
 pins:
   src: p4 "Terminal List Table; Pinout Diagram"
   "1": { name: IP+, type: passive }

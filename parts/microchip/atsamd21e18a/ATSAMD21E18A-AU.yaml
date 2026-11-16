@@ -29,3 +29,9 @@ existence:
   src: p15 "Section 3 Ordering Information; Table 2-1 Configuration Summary (p13); Table 42-3 ATSAMD21E18A-AU-SLL (p1065)"
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p15 "Ordering Information, U = -40 - 85 °C Matte Sn Plating"

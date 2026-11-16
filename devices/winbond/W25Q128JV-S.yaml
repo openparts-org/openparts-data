@@ -13,7 +13,11 @@ family: W25Q128JV
 source: winbond/W25Q128JV@revF
 
 parameters:
-  capacity: { typ: 128 Mbit, src: p5 "Section 1 General Description; Section 2 Features" }
+  capacity:       { typ: 128 Mbit, src: p5 "Section 1 General Description; Section 2 Features" }
+  supply_voltage: { min: 2.7 V, max: 3.6 V, src: 'p5 "Features, Single 2.7 to 3.6V supply"' }
+  esd_hbm:
+    typ: 2 kV
+    src: p61 "Absolute Maximum Ratings, VESD Human Body Model -2000 to +2000 V"
 
 pins:
   src: p6 "Section 3.3 "Pin Description SOIC 208-mil, WSON 6x5-mm / 8x6-mm" table and Figure 1a"

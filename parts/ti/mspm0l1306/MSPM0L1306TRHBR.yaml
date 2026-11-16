@@ -22,3 +22,9 @@ existence: { status: verified, src: 'p82 "Package Option Addendum, row "MSPM0L13
 lifecycle:
   status: active
   src: p82 "Package Option Addendum, row "MSPM0L1306TRHBR", Status "Active""
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p16 "7.3 Recommended Operating Conditions, TA Ambient temperature, T version"

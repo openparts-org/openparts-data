@@ -26,3 +26,9 @@ source: microchip/2586@revQ
 
 existence: { status: verified, src: 'p206 "Section 25.3, "ATtiny85" ordering table"' }
 lifecycle: { status: active }
+
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p206 "25 Ordering Information, ATtiny85-20SU, Supply Voltage 2.7 - 5.5 V"

@@ -19,3 +19,9 @@ source: renesas/R01DS0386EJ0180
 
 existence: { status: verified, src: 'p8 "Table 1.12 "Product list (1 of 2)", row R7FA2E1A92DNH"' }
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p8 "Product list, R7FA2E1A92DNH (92D rows), Operating temperature -40 to +85 °C"

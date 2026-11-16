@@ -21,3 +21,9 @@ source: renesas/R01DS0355EJ0110
 
 existence: { status: verified, src: 'p10 "Table 1.13 "Product list", row R7FA4M1AB3CFM"' }
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p10 "Product list, R7FA4M1AB3CFM, Operating temperature -40 to +105 °C"

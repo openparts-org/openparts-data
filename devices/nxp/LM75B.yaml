@@ -11,6 +11,24 @@ category: temperature_sensor
 family: LM75B
 source: nxp/LM75B@rev6.1
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.8 V
+    max: 5.5 V
+    src: p19 "Table 17 Recommended operating characteristics, VCC supply voltage"
+  supply_current:
+    typ: 100 µA
+    max: 200 µA
+    src: p20 "Table 18 Static characteristics, IDD(AV) average supply current, normal mode, I2C-bus inactive"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p19 "Table 17 Recommended operating characteristics, Tamb ambient temperature"
+  esd_hbm:
+    typ: 4.5 kV
+    src: p2 "2 Features, ESD protection exceeds 4500 V HBM per JESD22-A114"
+
 pins:
   src: [p5 "Table 3 "Pin description"", p4 "Fig 2 "Pin configuration for SO8""]
   "1": { name: SDA, type: io }

@@ -21,3 +21,9 @@ existence:
   src: p33 "Product Identification System, example a) 25AA640A-I/MS"
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p33 "Product Identification System, Temperature Range I = -40 to +85 °C"

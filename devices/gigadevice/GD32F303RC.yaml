@@ -18,6 +18,14 @@ category: microcontroller
 family: GD32F303
 source: gigadevice/GD32F303xx_Datasheet@rev2.0
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.6 V
+    max: 3.6 V
+    src: p53 "Table 4-2 DC operating conditions, VDD Supply voltage"
+  esd_hbm: { typ: 4 kV, src: 'p65 "Table 4-12 ESD characteristics, VESD(HBM) 4000 V"' }
+
 pins:
   src:
     - p36 "Table 2-6 "GD32F303Rx LQFP64 pin definitions" (PDF pages 36-39)"

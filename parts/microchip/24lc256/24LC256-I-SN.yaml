@@ -27,3 +27,9 @@ existence:
   src: p40 "Product Identification System, example f) "24LC256-I/SN""
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p40 "Product Identification System, Temperature Range I = -40 to +85 °C"

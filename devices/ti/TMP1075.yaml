@@ -13,6 +13,18 @@ category: temperature_sensor
 family: TMP1075
 source: ti/SBOS854F
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.7 V
+    max: 5.5 V
+    src: p5 "6.3 Recommended Operating Conditions, Supply voltage, TMP1075"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p5 "6.3 Recommended Operating Conditions, Operating free-air temperature TA, TMP1075"
+  esd_hbm: { typ: 2 kV, src: 'p5 "6.2 ESD Ratings, HBM 2000 V"' }
+
 pins:
   src:
     - p4 "Table 5-1 Pin Functions, column SOIC / VSSOP / WSON"

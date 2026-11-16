@@ -25,3 +25,9 @@ existence:
   src: p205 "Section 25.2, "ATtiny45" ordering table, "ATtiny45-20PU""
 
 lifecycle: { status: unknown }
+
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p205 "25 Ordering Information, ATtiny45-20PU, Supply Voltage 2.7 - 5.5 V"

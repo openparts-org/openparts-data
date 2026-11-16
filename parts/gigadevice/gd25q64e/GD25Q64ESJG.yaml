@@ -25,3 +25,9 @@ existence:
   src: p52 "Section 9.1 Valid Part Numbers, Temperature Range J table, row GD25Q64ESJG"
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: 'p51 "Ordering Information, Temperature Range J: Industrial+ (-40 to +105)"'

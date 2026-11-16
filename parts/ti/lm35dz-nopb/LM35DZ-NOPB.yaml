@@ -18,3 +18,9 @@ existence:
 lifecycle:
   status: active
   src: p23 "Same row, Status column "Active" (addendum dated 18-Sep-2026)"
+
+parameters:
+  operating_temperature:
+    min: 0 °C
+    max: 100 °C
+    src: p4 "6.3 Recommended Operating Conditions, Specified operating temperature, LM35D"

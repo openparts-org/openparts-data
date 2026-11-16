@@ -21,3 +21,9 @@ existence:
   src: 'p3 "Table 1-1 ESP32-C3-MINI-1 (ANT) Series Comparison, Part Number: ESP32-C3-MINI-1-H4X"'
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p3 "Table 1-1 ESP32-C3-MINI-1 Series Comparison, ESP32-C3-MINI-1-H4X, Ambient Temp."

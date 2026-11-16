@@ -22,3 +22,9 @@ source: microchip/DS22100@revF
 
 existence: { status: probable, src: p25 "Product Identification System (part-number legend)" }
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p25 "Product Identification System, Temperature Range I = -40 to +85 °C"

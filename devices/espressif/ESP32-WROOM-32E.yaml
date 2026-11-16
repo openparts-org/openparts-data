@@ -12,6 +12,13 @@ category: microcontroller
 family: ESP32-WROOM-32E
 source: espressif/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en@rev2.1
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 3.6 V
+    src: p28 "Table 14 Recommended Operating Conditions, VDD33"
+
 pins:
   src:  p11 "Table 3 Pin Definitions"
   "1":  { name: GND, type: ground }

@@ -17,6 +17,7 @@ parameters:
   capacity:
     typ: 1 Mbit
     src: 'p1 "Description: "The Microchip Technology Inc. 23A1024/23LC1024 are 1 Mbit Serial SRAM devices""'
+  supply_voltage: { min: 2.5 V, max: 5.5 V, src: 'p1 "Device Selection Table, 23LC1024 VCC Range"' }
 
 pins:
   src:

@@ -18,6 +18,7 @@ parameters:
   capacity:
     typ: 256 Kbit
     src: 'p1 "Description: "The Microchip Technology Inc. 24XX256 is a 32K x 8 (256 Kbit) Serial Electrically Erasable PROM""'
+  supply_voltage: { min: 2.5 V, max: 5.5 V, src: 'p1 "Device Selection Table, 24LC256 VCC Range"' }
 
 pins:
   src:

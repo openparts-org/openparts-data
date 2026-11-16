@@ -9,6 +9,21 @@ category: temperature_sensor
 family: MCP9808
 source: microchip/DS25095@revA
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p3 "DC Characteristics, Operating Voltage Range VDD"
+  supply_current:
+    typ: 200 µA
+    max: 400 µA
+    src: p3 "DC Characteristics, Operating Current IDD"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "Temperature Ranges, Operating Temperature Range TA"
+
 pins:
   src: ['p11 "Table 3-1 Pin Function Table, column MSOP"', 'p1 "Package Types, 8-Pin MSOP"']
   "1": { name: SDA, type: io }

@@ -11,6 +11,22 @@ category: temperature_sensor
 family: PCT2075
 source: nxp/PCT2075@rev10.1
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p19 "Table 19 Recommended operating characteristics, VCC supply voltage"
+  supply_current:
+    typ: 125 µA
+    max: 300 µA
+    src: p20 "Table 20 Static characteristics, ICC(AV) average supply current, normal mode, I2C-bus inactive"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p19 "Table 19 Recommended operating characteristics, Tamb ambient temperature"
+  esd_hbm: { typ: 2 kV, src: 'p2 "2 Features, ESD protection exceeds 2000 V HBM per JESD22-A114"' }
+
 pins:
   src: p5 "Table 3 Pin description for SO8, TSSOP8 and HWSON8"
   "1": { name: SDA, type: io }

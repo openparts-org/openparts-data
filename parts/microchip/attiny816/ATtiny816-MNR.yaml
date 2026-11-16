@@ -27,3 +27,9 @@ existence:
   src: p560 "Section 38.1 "Product Information", Ordering Code row "ATtiny816-MNR""
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p560 "Ordering Information, ATtiny816-MNR, Temperature -40 to +105 °C"

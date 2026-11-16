@@ -11,6 +11,14 @@ category: temperature_sensor
 family: LM35
 source: ti/SNIS159H
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 4 V
+    max: 30 V
+    src: p4 "6.3 Recommended Operating Conditions, Supply Voltage (+VS)"
+  esd_hbm: { typ: 2.5 kV, src: 'p4 "6.2 ESD Ratings, V(ESD) HBM ±2500 V"' }
+
 pins:
   src: p3 "Pin Functions table, TO92 column (+VS 1, VOUT 2, GND 3)"
   "1": { name: +VS, type: power }

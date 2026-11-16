@@ -23,3 +23,9 @@ source: espressif/esp32-s3_datasheet_en@rev2.2
 
 existence: { status: verified, src: 'p13 "Table 1-1 ESP32-S3 Series Comparison, row "ESP32-S3R8""' }
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 65 °C
+    src: p13 "Table 1-1 ESP32-S3 Series Comparison, ESP32-S3R8, Ambient Temp."

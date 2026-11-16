@@ -19,3 +19,6 @@ source: ramxeed/DS501-00017@rev11v3
 
 existence: { status: verified, src: 'p16 "ORDERING INFORMATION table, row MB85RC256VPNF-G-JNERE1"' }
 lifecycle: { status: unknown }
+
+parameters:
+  esd_hbm: { typ: 2 kV, src: 'p15 "ESD and Latch-up, ESD HBM, MB85RC256VPNF-G-JNERE1, |2000 V|"' }

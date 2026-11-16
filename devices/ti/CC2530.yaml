@@ -18,6 +18,18 @@ category: microcontroller
 family: CC2530
 source: ti/SWRS081B
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 3.6 V
+    src: p4 "Recommended Operating Conditions, Operating supply voltage"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "Recommended Operating Conditions, Operating ambient temperature range TA"
+  esd_hbm: { typ: 2 kV, src: 'p4 "Absolute Maximum Ratings, ESD, all pads, human-body model"' }
+
 pins:
   src:
     - p18 "Table 1. Pin Descriptions"

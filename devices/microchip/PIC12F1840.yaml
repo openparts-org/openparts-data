@@ -20,6 +20,14 @@ category: microcontroller
 family: PIC12(L)F1840
 source: microchip/DS40001441@revF
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.3 V
+    max: 5.5 V
+    at: { f: 16 MHz }
+    src: p305 "30.1 DC Characteristics Supply Voltage, D001 VDD, PIC12F1840, FOSC <= 16 MHz"
+
 pins:
   src:
     - p3 "Table 1 "8-PIN ALLOCATION TABLE (PIC12(L)F1840)", columns "8-Pin PDIP/SOIC/DFN/UDFN", "ADC" and "Basic""

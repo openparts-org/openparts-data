@@ -23,6 +23,16 @@ category: microcontroller
 family: CH32V203
 source: wch/CH32V203DS0@V3.0
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.4 V
+    max: 3.6 V
+    src: p39 "Table 4-2 General operating conditions, VDD Standard operating voltage"
+  esd_hbm:
+    typ: 3 kV
+    src: p39 "Absolute maximum ratings, VESD(HBM) 4K V, USB pins (PA11, PA12) 3K V"
+
 pins:
   src:
     - p23 "Table 3-1-1, LQFP48/QFN48X7 column (cont. p24-26)"

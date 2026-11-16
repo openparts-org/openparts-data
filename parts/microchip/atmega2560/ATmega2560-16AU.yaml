@@ -22,3 +22,9 @@ existence:
   src: p410 "Section 35.4 ATmega2560 ordering table, Ordering Code ATmega2560-16AU"
 
 lifecycle: { status: unknown }
+
+parameters:
+  supply_voltage:
+    min: 4.5 V
+    max: 5.5 V
+    src: p410 "35.4 Ordering Information ATmega2560, ATmega2560-16AU, Power Supply 4.5V - 5.5V"

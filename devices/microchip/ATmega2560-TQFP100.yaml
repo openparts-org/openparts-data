@@ -16,6 +16,13 @@ category: microcontroller
 family: ATmega640/1280/1281/2560/2561
 source: microchip/DS40002211@revA
 
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p410 "35.4 Ordering Information ATmega2560, Operation Range Industrial (-40 to 85)"
+
 pins:
   src:   p2 "Figure 1-1 TQFP-pinout ATmega640/1280/2560, pins 1-100"
   "1":   { name: PG5, type: io }

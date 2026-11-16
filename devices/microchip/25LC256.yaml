@@ -20,6 +20,7 @@ parameters:
   capacity:
     typ: 256 Kbit
     src: 'p1 "Description: "(25XX256) are 256-Kbit Serial Electrically Erasable PROMs""'
+  supply_voltage: { min: 2.5 V, max: 5.5 V, src: 'p1 "Device Selection Table, 25LC256 VCC Range"' }
 
 pins:
   src:

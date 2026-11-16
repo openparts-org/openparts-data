@@ -28,3 +28,9 @@ existence:
   src: p19 "Figure 2-1 Composition of the Ordering Numbers; SAMD51J19 row, Table 1-2 p18"
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p19 "Ordering Information, U = -40 to +85 °C Matte Sn Plating (Industrial)"

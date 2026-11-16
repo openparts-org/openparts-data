@@ -14,7 +14,11 @@ family: W25Q16JV
 source: winbond/W25Q16JV@revJ
 
 parameters:
-  capacity: { typ: 16 Mbit, src: 'p5 "Section 1 General Descriptions, W25Q16JV (16M-bit)"' }
+  capacity:       { typ: 16 Mbit, src: 'p5 "Section 1 General Descriptions, W25Q16JV (16M-bit)"' }
+  supply_voltage: { min: 2.7 V, max: 3.6 V, src: 'p5 "Features, Single 2.7 to 3.6V supply"' }
+  esd_hbm:
+    typ: 2 kV
+    src: p58 "Absolute Maximum Ratings, VESD Human Body Model -2000 to +2000 V"
 
 pins:
   src: p6 "Section 3.3 Pin Description SOIC 150/208-mil, WSON 6x5-mm, USON 2x3-mm/4x3-mm table and Figures 1a/1b"

@@ -20,6 +20,13 @@ category: microcontroller
 family: SAM D51
 source: microchip/DS60001507@revN
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.71 V
+    max: 3.63 V
+    src: p1859 "Table 54-2 General Operating Conditions, VDDIO / VDDANA"
+
 pins:
   src:  p22 "Figure 4-2 64-Pin TQFP and VQFN Package, pins 1-64"
   "1":  { name: PA00, type: io }

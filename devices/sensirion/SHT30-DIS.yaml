@@ -15,6 +15,20 @@ category: sensor
 family: SHT3x-DIS
 source: sensirion/Datasheet_SHT3x_DIS@v7
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.15 V
+    max: 5.5 V
+    src: p6 "Table 3 Electrical specifications, Supply voltage VDD"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p7 "Absolute minimum and maximum ratings, Operating temperature range"
+  esd_hbm:
+    typ: 4 kV
+    src: p7 "Absolute minimum and maximum ratings, ESD HBM (human body model)"
+
 pins:
   src: p8 "Table 7 SHT3x-DIS pin assignment"
   "1": { name: SDA, type: io }

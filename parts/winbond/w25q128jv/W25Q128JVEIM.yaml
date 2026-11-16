@@ -26,3 +26,9 @@ existence:
   src: p77 "Section 11.1 Valid Part Numbers and Top Side Marking, W25Q128JV-IM/JM table, W25Q128JVEIM (printed p76)"
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p75 "Ordering Information, Temperature Range I = Industrial (-40 to +85 °C)"

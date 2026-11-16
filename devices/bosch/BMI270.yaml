@@ -12,6 +12,18 @@ category: imu
 family: BMI2
 source: bosch/BST-BMI270-DS000-08
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.71 V
+    max: 3.6 V
+    src: p11 "Table 1 Basic electrical parameter specifications, Supply Voltage VDD"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p11 "Table 1 Basic electrical parameter specifications, Operating Temperature TA"
+  esd_hbm: { typ: 2 kV, src: 'p16 "Table 5 Absolute maximum ratings, ESD HBM at any pin"' }
+
 pins:
   src:  [p135 "Table 22 Pin-out and pin connections", p134 "7.1 Pin-out top view / bottom view"]
   "1":  { name: SDO, type: io }

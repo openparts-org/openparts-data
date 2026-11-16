@@ -20,6 +20,18 @@ category: microcontroller
 family: ESP32-C2
 source: espressif/esp8684_datasheet_en@rev2.3
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 3.6 V
+    src: p43 "Table 16 Recommended Operating Conditions, VDDA3P3, VDDA, VDD3P3_RTC, VDD3P3_CPU"
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p43 "Table 16 Recommended Operating Conditions, TA Ambient temperature"
+  esd_hbm: { typ: 2 kV, src: 'p46 "Reliability qualifications, ESD HBM ±2000 V"' }
+
 pins:
   "1":
     name: { value: ANT, src: 'p14 "Table 2 "Pin Overview", pins 1-20 (pins 21-25 on page 15)"' }

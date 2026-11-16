@@ -20,6 +20,14 @@ parameters:
   capacity:
     typ: 256 Kbit
     src: p1 "Title "256 K (32 K x 8) Bit I2C"; Description, 32,768 words x 8 bits"
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p11 "Recommended Operating Conditions, Power supply voltage VDD"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p11 "Recommended Operating Conditions, Operation ambient temperature TA"
 
 pins:
   src:

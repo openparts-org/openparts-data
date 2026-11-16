@@ -13,6 +13,20 @@ category: sensor
 family: SHTC3
 source: sensirion/Datasheet_SHTC3@v4
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.62 V
+    max: 3.6 V
+    src: p3 "Table 3 Electrical specifications, Supply voltage VDD"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "Table 4 Absolute maximum ratings, Operating temperature range"
+  esd_hbm:
+    typ: 2 kV
+    src: p4 "Table 4 Absolute maximum ratings, ESD HBM (human body model) -2 to 2 kV"
+
 pins:
   src: p6 "Table 7 SHTC3 pin assignment (top view)"
   "1": { name: VDD, type: power }

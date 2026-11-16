@@ -31,3 +31,9 @@ existence:
   src: p493 "Section 35.1 "Product Information", Ordering Code row "ATtiny402-SSNR""
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p493 "Ordering Information, ATtiny402-SSNR, Temperature -40 to +105 °C"

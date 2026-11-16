@@ -14,6 +14,18 @@ category: sensor
 family: SGP4x
 source: sensirion/Sensirion_Gas_Sensors_Datasheet_SGP41@v1.0
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.7 V
+    max: 3.6 V
+    src: p5 "Table 2 Electrical specifications, Supply voltage VDD, VDDH"
+  operating_temperature:
+    min: -10 °C
+    max: 50 °C
+    src: p6 "Table 4 Recommended humidity and temperature conditions, Operating conditions, Temperature"
+  esd_hbm: { typ: 2 kV, src: 'p7 "Table 5 Absolute minimum and maximum ratings, ESD HBM"' }
+
 pins:
   src: p7 "Table 6 Pin assignment (transparent top view)"
   "1": { name: VDD, type: power }

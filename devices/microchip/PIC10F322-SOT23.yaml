@@ -17,6 +17,14 @@ category: microcontroller
 family: PIC10(L)F320/322
 source: microchip/DS40001585@revD
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.3 V
+    max: 5.5 V
+    at: { f: 16 MHz }
+    src: p159 "Table 24-1 Supply Voltage, D001 VDD, PIC10F320/322, FOSC <= 16 MHz"
+
 pins:
   src:
     - p3 "Table 1 "6 AND 8-PIN ALLOCATION TABLE, PIC10(L)F320/322", column "6-Pin", columns "Analog", "Basic" and "ICSP""

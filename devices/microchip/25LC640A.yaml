@@ -13,6 +13,7 @@ source: microchip/DS21830@revF
 
 parameters:
   capacity: { typ: 64 Kbit, src: 'p1 "Description, 64 kbit Serial Electrically Erasable PROMs"' }
+  supply_voltage: { min: 2.5 V, max: 5.5 V, src: 'p1 "Device Selection Table, 25LC640A VCC Range"' }
 
 pins:
   src:

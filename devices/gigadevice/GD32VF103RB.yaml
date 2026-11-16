@@ -18,6 +18,18 @@ category: microcontroller
 family: GD32VF103
 source: gigadevice/GD32VF103_Datasheet@rev1.6
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.6 V
+    max: 3.6 V
+    src: p48 "Table 4-2 DC operating conditions, VDD Supply voltage"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p48 "Table 4-1 Absolute maximum ratings, TA Operating temperature range"
+  esd_hbm: { typ: 5 kV, src: 'p56 "Table 4-10 ESD characteristics, VESD(HBM) 5000 V"' }
+
 pins:
   src:
     - p27 "Table 2-5 "GD32VF103Rx LQFP64 pin definitions" (PDF pages 27-30)"

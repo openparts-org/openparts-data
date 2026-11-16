@@ -18,6 +18,7 @@ parameters:
   capacity:
     typ: 512 Kbit
     src: p1 "Description, "64K x 8 (512 Kbit) Serial Electrically Erasable PROM""
+  supply_voltage: { min: 2.5 V, max: 5.5 V, src: 'p1 "Device Selection Table, 24LC512 VCC Range"' }
 
 pins:
   src:

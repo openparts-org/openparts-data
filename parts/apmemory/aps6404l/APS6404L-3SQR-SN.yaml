@@ -19,3 +19,9 @@ source: apmemory/APS6404L-3SQR@rev2.7
 
 existence: { status: verified, src: 'p7 "Table 1 Ordering Information, row APS6404L-3SQR-SN"' }
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p7 "Ordering information, APS6404L-3SQR-SN, Tc = -40 to +85 °C"

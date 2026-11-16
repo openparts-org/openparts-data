@@ -15,6 +15,13 @@ category: microcontroller
 family: ESP32-C6-MINI-1
 source: espressif/esp32-c6-mini-1_mini-1u_datasheet_en@rev1.5
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 3.6 V
+    src: p26 "Table 6-2 Recommended Operating Conditions, VDD33"
+
 pins:
   src:
     - p10 "Table 3-1 Pin Definitions"

@@ -10,6 +10,17 @@ category: temperature_sensor
 family: MCP970X
 source: microchip/DS20001942@revL
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.3 V
+    max: 5.5 V
+    src: p3 "DC Electrical Characteristics, Operating Voltage Range VDD, MCP9700/9700A/9700B"
+  supply_current:
+    typ: 6 µA
+    max: 12 µA
+    src: p3 "DC Electrical Characteristics, Operating Current IDD"
+
 pins:
   src: p9 "Table 3-1 "Pin Function Table", SOT-23 column"
   "1": { name: VDD, type: power }

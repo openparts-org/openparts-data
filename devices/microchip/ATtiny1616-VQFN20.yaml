@@ -22,6 +22,13 @@ category: microcontroller
 family: tinyAVR 1-series
 source: microchip/DS40002204@revA
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.8 V
+    max: 5.5 V
+    src: p506 "Table 36-2 General Operating Conditions, VDD Operating supply voltage"
+
 pins:
   src:
     - p18 "Table 5-1 "PORT Function Multiplexing", column "VQFN 20-Pin", columns "Other/Special" and "ADC0""

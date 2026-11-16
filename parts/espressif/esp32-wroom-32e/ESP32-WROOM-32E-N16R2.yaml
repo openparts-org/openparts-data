@@ -20,3 +20,9 @@ existence:
   src: 'p3 "Table 1 ESP32-WROOM-32E Series Comparison, Part Number: ESP32-WROOM-32E-N16R2"'
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p3 "Series comparison table, ESP32-WROOM-32E-N16R2, Ambient Temp."

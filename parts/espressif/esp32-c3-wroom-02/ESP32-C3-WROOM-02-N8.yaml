@@ -22,3 +22,9 @@ existence:
   src: 'p3 "Table 1-1 ESP32-C3-WROOM-02 (ANT) Series Comparison, Part Number: ESP32-C3-WROOM-02-N8"'
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p3 "Table 1-1 ESP32-C3-WROOM-02 Series Comparison, ESP32-C3-WROOM-02-N8, Ambient Temp."

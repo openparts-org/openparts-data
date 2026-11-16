@@ -11,6 +11,18 @@ category: pressure_sensor
 family: BMP3
 source: bosch/BST-BMP388-DS001-07
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.65 V
+    max: 3.6 V
+    src: p7 "Table 2 General electrical parameter specifications, Supply Voltage VDD"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p7 "Table 2 General electrical parameter specifications, Operating temperature range TA, operational"
+  esd_hbm: { typ: 2 kV, src: 'p9 "Table 3 Absolute maximum ratings, ESD (HBM)"' }
+
 pins:
   src:  p46 "Table 50 Pin description; Figure 23 pin-out"
   "1":  { name: VDDIO, type: power }

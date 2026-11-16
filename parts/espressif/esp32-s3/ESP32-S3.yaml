@@ -10,6 +10,13 @@ mpn: ESP32-S3
 device: espressif/ESP32-S3
 package: standards/QFN56-ESP32-S3
 sources: [espressif/esp32-s3_datasheet_en@rev2.2]
+source: espressif/esp32-s3_datasheet_en@rev2.2
 
 existence: { status: verified }
 lifecycle: { status: active }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p13 "Table 1-1 ESP32-S3 Series Comparison, ESP32-S3 row, Ambient Temp."

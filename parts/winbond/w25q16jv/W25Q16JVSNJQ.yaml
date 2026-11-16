@@ -24,3 +24,9 @@ existence:
   src: p74 "Section 12.1 Valid Part Numbers, W25Q16JV-JQ table, row W25Q16JVSNJQ"
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p73 "Ordering Information, Temperature Range J = Industrial Plus (-40 to +105 °C)"

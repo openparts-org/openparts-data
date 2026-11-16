@@ -20,6 +20,13 @@ category: microcontroller
 family: ATtiny25/45/85
 source: microchip/2586@revQ
 
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p206 "25 Ordering Information, ATtiny85, -PU/-SU codes: Industrial (-40 to +85)"'
+
 pins:
   "1":
     name: { value: PB5, src: 'p2 "Figure 1-1, "Pinout ATtiny25/45/85" (PDIP/SOIC/TSSOP)"' }

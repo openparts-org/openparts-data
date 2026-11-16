@@ -13,6 +13,13 @@ mpn: ESP32-S2
 device: espressif/ESP32-S2
 package: standards/QFN56-ESP32-S2
 sources: [espressif/esp32-s2_datasheet_en@rev1.9]
+source: espressif/esp32-s2_datasheet_en@rev1.9
 
 existence: { status: probable }
 lifecycle: { status: active }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p11 "Table 1-1 ESP32-S2 Series Comparison, ESP32-S2, Ambient Temp."

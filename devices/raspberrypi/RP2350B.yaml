@@ -23,6 +23,16 @@ category: microcontroller
 family: RP2350
 source: raspberrypi/RP-008373-DS@rev3
 
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1337 "Table 1682 Thermal Performance, Ambient Temperature TC"
+  esd_hbm:
+    typ: 2 kV
+    src: p1336 "Table 1681 ESD performance for all pins, Human Body Model HBM"
+
 pins:
   "1":
     name:

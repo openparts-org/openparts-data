@@ -27,3 +27,9 @@ existence: { status: verified, src: 'p5 "Table 1, "Ordering information""' }
 
 # cover says Product data sheet = Production per the status legend; footnote 3: status may have changed since publication
 lifecycle: { status: active, src: p124 "Section 18.1 Data sheet status" }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p7 "Table 2 Ordering options, LPC1114FBD48/302, temperature F; p8 note 1: F = -40 to +85 °C"'

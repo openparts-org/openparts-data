@@ -28,6 +28,13 @@ category: microcontroller
 family: ATmega48A/PA/88A/PA/168A/PA/328/P
 source: microchip/DS40002061@revB
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.8 V
+    max: 5.5 V
+    src: p635 "38.8 Ordering Information ATmega328P, Power Supply 1.8 - 5.5 V"
+
 pins:
   "1":
     name: { value: PD3, src: 'p12 "Figure 1-1, "32 TQFP Top View", pins 1-8 (left edge)"' }

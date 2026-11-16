@@ -18,6 +18,10 @@ parameters:
   capacity:
     typ: 16 Mbit
     src: p5 "Section 2 General Descriptions, GD25Q16E (16M-bit) Serial flash"
+  supply_voltage:
+    min: 2.7 V
+    max: 3.6 V
+    src: p4 "Features, Single Power Supply Voltage, Full voltage range 2.7-3.6V"
 
 pins:
   src: p5 "Table 1. Pin Description for SOP8/USON8/WSON8 Package"

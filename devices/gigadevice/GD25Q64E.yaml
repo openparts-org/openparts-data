@@ -18,6 +18,10 @@ parameters:
   capacity:
     typ: 64 Mbit
     src: p5 "Section 2 General Descriptions, GD25Q64E (64M-bit) Serial flash"
+  supply_voltage:
+    min: 2.7 V
+    max: 3.6 V
+    src: p4 "Features, Single Power Supply Voltage, Full voltage range 2.7-3.6V"
 
 pins:
   src:

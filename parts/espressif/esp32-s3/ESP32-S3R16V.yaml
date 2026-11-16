@@ -26,3 +26,9 @@ existence:
   src: p13 "Table 1-1 ESP32-S3 Series Comparison, row "ESP32-S3R16V""
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 65 °C
+    src: p13 "Table 1-1 ESP32-S3 Series Comparison, ESP32-S3R16V, Ambient Temp."

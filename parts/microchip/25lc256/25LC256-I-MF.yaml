@@ -30,3 +30,9 @@ existence:
   src: 'p32 "Product Identification System (Non-Automotive) legend: Device, Temperature I, Package MF"'
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p32 "Product Identification System, Temperature Range I = -40 to +85 °C"

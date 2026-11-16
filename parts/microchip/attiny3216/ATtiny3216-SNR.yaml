@@ -30,3 +30,9 @@ existence:
   src: p565 "Section 38.1 "Product Information", Ordering Code row "ATtiny3216-SNR""
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p565 "Ordering Information, ATtiny3216-SNR, Temperature -40 to +105 °C"

@@ -19,3 +19,9 @@ source: wch/CH32V203DS0@V3.0
 
 existence: { status: verified, src: 'p59 "Chapter 5 Packages table, Order Model CH32V203C6T6"' }
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p38 "Table 4-1 Absolute maximum ratings, TA, model number ends in 6"

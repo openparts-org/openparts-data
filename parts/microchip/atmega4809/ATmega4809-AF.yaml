@@ -30,3 +30,9 @@ existence:
   src: p521 "Table 34-1 "Available Product Numbers", row "ATmega4809-AF""
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p521 "34 Ordering Information, ATmega4809-AF, Temperature -40 to +125 °C"

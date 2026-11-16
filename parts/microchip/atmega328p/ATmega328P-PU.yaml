@@ -22,3 +22,9 @@ existence:
   src: p635 "Section 38.8 "ATmega328P" ordering table, "ATmega328P-PU" / 28P3"
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p635 "38.8 Ordering Information ATmega328P, ATmega328P-PU, Industrial (-40 to 85)"

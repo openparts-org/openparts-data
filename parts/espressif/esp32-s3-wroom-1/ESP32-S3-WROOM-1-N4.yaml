@@ -21,3 +21,9 @@ existence:
   src: 'p3 "Table 1-1 ESP32-S3-WROOM-1 Series Comparison, Part Number: ESP32-S3-WROOM-1-N4"'
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p3 "Table 1-1 ESP32-S3-WROOM-1 Series Comparison, ESP32-S3-WROOM-1-N4, Ambient Temp."

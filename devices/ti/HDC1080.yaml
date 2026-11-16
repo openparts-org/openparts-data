@@ -14,6 +14,14 @@ category: sensor
 family: HDC1080
 source: ti/SNAS672A
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p4 "7.3 Recommended Operating Conditions, VDD Supply Voltage"
+  esd_hbm: { typ: 2 kV, src: 'p4 "7.2 ESD Ratings, HBM ±2000 V"' }
+
 pins:
   src: [p3 "Pin Functions table", p3 "DMB Package 6 Pin PWSON Top View (cross-check)"]
   "1": { name: SDA, type: io }

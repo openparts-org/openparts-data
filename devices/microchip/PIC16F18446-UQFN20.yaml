@@ -18,6 +18,14 @@ category: microcontroller
 family: PIC16(L)F18426/46
 source: microchip/DS40001985@revB
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.3 V
+    max: 5.5 V
+    at: { f: 16 MHz }
+    src: p632 "40.3.1 Supply Voltage, D002 VDD, PIC16F18426/46, FOSC <= 16 MHz"
+
 pins:
   src:
     - p8 "Table 4 20-Pin Allocation Table, 20-pin UQFN and ADC columns (cont. p9)"

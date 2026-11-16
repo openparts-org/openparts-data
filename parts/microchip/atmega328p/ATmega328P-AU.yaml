@@ -22,3 +22,9 @@ source: microchip/DS40002061@revB
 
 existence: { status: verified, src: 'p635 "Section 38.8, "ATmega328P" ordering table"' }
 lifecycle: { status: active }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p635 "38.8 Ordering Information ATmega328P, ATmega328P-AU, Industrial (-40 to 85)"

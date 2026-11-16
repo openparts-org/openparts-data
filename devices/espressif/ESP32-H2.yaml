@@ -24,6 +24,18 @@ source: espressif/esp32-h2_datasheet_en@rev1.3
 # diff_pair on the USB_D-/USB_D+ pins records the datasheet's default
 # assignment; its pin-function tables note that D- and D+ can be swapped
 # by an eFuse / register bit (Technical Reference Manual).
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 3.6 V
+    src: p53 "Table 5-2 Recommended Operating Conditions, VDD3P3, VBAT, VDDA_PMU, VDDPST1, VDDPST2"
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p53 "Table 5-2 Recommended Operating Conditions, TA Ambient temperature"
+  esd_hbm: { typ: 2 kV, src: 'p56 "Reliability qualifications, ESD HBM ±2000 V"' }
+
 pins:
   "1":  { name: { value: VDD3P3, src: 'p13 "Table 2-1 "Pin Overview", pins 1-14"' }, type: power }
   "2":  { name: VDD3P3, type: power }

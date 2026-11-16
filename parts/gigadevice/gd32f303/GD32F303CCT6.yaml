@@ -20,3 +20,9 @@ existence:
   src: p98 "Table 6-1 "Part ordering code for GD32F303xx devices", row GD32F303CCT6"
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p98 "Table 6-1 Part ordering code, GD32F303CCT6, Industrial -40 to +85"

@@ -12,6 +12,20 @@ category: microcontroller
 family: ESP32-C3
 source: espressif/esp32-c3_datasheet_en@rev2.4
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 3.6 V
+    src: espressif/esp32-c3_datasheet_en@rev2.5 p55 "Table 5-2 Recommended Operating Conditions, VDDA, VDD3P3, VDD3P3_RTC"
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: espressif/esp32-c3_datasheet_en@rev2.5 p12 "Table 1-1 ESP32-C3 Series Comparison, ESP32-C3FH4X, Ambient Temp."
+  esd_hbm:
+    typ: 2 kV
+    src: espressif/esp32-c3_datasheet_en@rev2.5 p59 "Reliability qualifications, ESD HBM ±2000 V"
+
 pins:
   "1":  { name: { value: LNA_IN, src: '"Table 2-1 Pin Overview, p.16-17"' }, type: analog }
   "2":  { name: VDD3P3, type: power }

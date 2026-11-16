@@ -30,3 +30,9 @@ existence:
   src: 'p29 "Product Identification System, example c) "24AA02T-I/OT: Industrial Temperature, 1.7V, SOT-23 package, tape and reel""'
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p29 "Product Identification System, Temperature Range I = -40 to +85 °C"

@@ -14,6 +14,13 @@ category: microcontroller
 family: ESP32-C3-MINI-1
 source: espressif/esp32-c3-mini-1_datasheet_en@rev2.2
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 3.6 V
+    src: p21 "Table 6-2 Recommended Operating Conditions, VDD33"
+
 pins:
   src:  p11 "Table 3-1 Pin Definitions"
   "1":  { name: GND, type: ground }

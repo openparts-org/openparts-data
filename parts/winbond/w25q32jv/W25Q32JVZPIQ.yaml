@@ -26,3 +26,9 @@ existence:
   src: p80 "Section 11.1 Valid Part Numbers and Top Side Marking, W25Q32JV-IQ/JQ valid part numbers table, row W25Q32JVZPIQ"
 
 lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p79 "Ordering Information, Temperature Range I = Industrial (-40 to +85 °C)"

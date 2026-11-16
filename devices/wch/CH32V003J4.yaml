@@ -20,6 +20,18 @@ category: microcontroller
 family: CH32V003
 source: wch/CH32V003DS0@V1.8
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p17 "Table 3-2 General operating conditions, VDD Standard operating voltage, ADC not used"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p17 "Table 3-2 General operating conditions, TA Ambient temperature"
+  esd_hbm: { typ: 4 kV, src: 'p17 "Absolute maximum ratings, VESD(HBM) 4K V"' }
+
 pins:
   src:
     - p13 "Table 2-1 Pin definitions, SOP8 column (cont. p14)"

@@ -21,6 +21,14 @@ source: espressif/esp32-s3_datasheet_en@rev2.2
 # diff_pair on the USB_D-/USB_D+ pins records the datasheet's default
 # assignment; its pin-function tables note that D- and D+ can be swapped
 # by an eFuse / register bit (Technical Reference Manual).
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 3.6 V
+    src: p64 "Table 5-2 Recommended Operating Conditions, VDDA, VDD3P3"
+  esd_hbm: { typ: 2 kV, src: 'p69 "Reliability qualifications, ESD HBM ±2000 V"' }
+
 pins:
   "1":  { name: { value: LNA_IN, src: '"Table 2-1 Pin Overview, p.16-17"' }, type: analog }
   "2":  { name: VDD3P3, type: power }

@@ -15,6 +15,7 @@ parameters:
   capacity:
     typ: 2 Kbit
     src: 'p1 "Description: "The Microchip Technology Inc. 24AA02/24LC02B (24XX02*) is a 2 Kbit Electrically Erasable PROM""'
+  supply_voltage: { min: 1.7 V, max: 5.5 V, src: 'p1 "Device Selection Table, 24AA02 VCC"' }
 
 pins:
   src:
