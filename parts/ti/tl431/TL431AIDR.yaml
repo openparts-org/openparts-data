@@ -32,3 +32,10 @@ existence:
 lifecycle:
   status: active
   src: p36 "Package option addendum table, row "TL431AIDR", Status "Active""
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p36 "Package Option Addendum, row TL431AIDR, Op Temp -40 to 85 C"

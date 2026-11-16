@@ -10,6 +10,28 @@ category: adc
 family: MCP3201
 source: microchip/DS21290@revF
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: 'p4 "Electrical Characteristics, Power Requirements: Operating Voltage VDD"'
+  supply_current:
+    typ: 300 µA
+    max: 400 µA
+    at: { VDD: 5 V }
+    src: 'p4 "Electrical Characteristics, Power Requirements: Operating Current IDD, VDD = 5.0V, DOUT unloaded"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p4 "Temperature Characteristics: Operating Temperature Range TA"'
+  esd_hbm:
+    typ: 4 kV
+    src: p3 "Absolute Maximum Ratings, ESD protection on all pins (HBM) > 4 kV"
+  channel_count:
+    value: "1"
+    src: 'p1 "Description: provides a single pseudo-differential input"'
+
 pins:
   src:
     - p15 "TABLE 3-1 PIN FUNCTION TABLE, column "MSOP, PDIP, SOIC, TSSOP""

@@ -10,6 +10,28 @@ category: adc
 family: PCF8591
 source: nxp/PCF8591@rev7
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.5 V
+    max: 6 V
+    src: 'p17 "Table 8 Characteristics, Supply: VDD supply voltage"'
+  supply_current:
+    typ: 125 µA
+    max: 250 µA
+    at: { f: 100 kHz }
+    src: 'p17 "Table 8 Characteristics: IDD operating, fSCL = 100 kHz, AOUT off"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p16 "Table 7 Limiting values: Tamb ambient temperature, operating device"'
+  esd_hbm:
+    typ: 3 kV
+    src: 'p16 "Table 7 Limiting values: VESD electrostatic discharge voltage, HBM"'
+  channel_count:
+    value: "4"
+    src: 'p1 "General description: four analog inputs (single ended or differential)"'
+
 pins:
   src:  p4 "Table 4 Pin description"
   "1":  { name: AIN0, type: analog }

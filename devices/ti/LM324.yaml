@@ -11,6 +11,50 @@ category: op_amp
 family: LMx24
 source: ti/SLOS066AE
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 30 V
+    src: p6 "6.3 Recommended Operating Conditions, VCC, LM324xx/LM224xx/LM2902xxx/LM124x column"
+  supply_current:
+    typ: 0.7 mA
+    max: 1.2 mA
+    at: { VCC: 5 V, VOUT: 2.5 V, TA: 0..70 °C }
+    src: 'p11 "6.7 Electrical Characteristics: ICC (four amplifiers), VO = 2.5 V, no load, LM324 column"'
+  operating_temperature:
+    min: 0 °C
+    max: 70 °C
+    src: p6 "6.3 Recommended Operating Conditions, TA, LM324xx row"
+  esd_hbm: { typ: 500 V, src: 'p5 "6.2 ESD Ratings, LM124...LM324, LM324A, LM2902: HBM"' }
+  channel_count:
+    value: "4"
+    src: 'p11 "6.7 Electrical Characteristics: ICC Supply current (four amplifiers)"'
+  gain_bandwidth:
+    typ: 1.2 MHz
+    at: { VS: 30 V, CL: 20 pF, RL: 1 MΩ, TA: 25 °C }
+    src: 'p13 "6.10 Operating Conditions: B1 unity-gain bandwidth (VCC = ±15 V)"'
+  slew_rate:
+    typ: 0.5 V/µs
+    at: { VS: 30 V, CL: 30 pF, RL: 1 MΩ, TA: 25 °C }
+    src: 'p13 "6.10 Operating Conditions: SR at unity gain (VCC = ±15 V)"'
+  input_offset_voltage:
+    typ: 3 mV
+    max: 7 mV
+    at: { VCC: 5 V, VOUT: 1.4 V, TA: 25 °C }
+    src: 'p11 "6.7 Electrical Characteristics: VIO, LM324 column, 25 °C"'
+  input_bias_current:
+    typ: 20 nA
+    max: 250 nA
+    at: { VCC: 5 V, VOUT: 1.4 V, TA: 25 °C }
+    src: 'p11 "6.7 Electrical Characteristics: IIB, LM324 column, 25 °C (printed -20/-250 nA)"'
+  rail_to_rail_input:
+    value: no
+    src: 'p11 "6.7 Electrical Characteristics: VICR 0 to VCC - 1.5 V, 25 °C"'
+  rail_to_rail_output:
+    value: no
+    src: 'p11 "6.7 Electrical Characteristics: VOH 27 V min / 28 V typ at VCC = MAX, RL ≥ 10 kΩ"'
+
 pins:
   src:
     - p3 "Table 5-1. Pin Functions, column D (SOIC) ... W (CFP)"

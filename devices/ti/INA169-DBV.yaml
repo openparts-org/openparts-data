@@ -11,6 +11,33 @@ category: current_sense_amplifier
 family: INA1x9
 source: ti/SBOS181F
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 60 V
+    src: p4 "6.3 Recommended Operating Conditions, V+ power-supply voltage, INA169"
+  supply_current:
+    typ: 60 µA
+    max: 125 µA
+    at: { VCC: 5 V, VIN: 12 V, TA: -40..85 °C }
+    src: 'p6 "6.5 Electrical Characteristics: Quiescent current, VSENSE = 0, IO = 0"'
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: 'p6 "6.5 Electrical Characteristics, Temperature range: Operating"'
+  esd_hbm: { typ: 1 kV, src: 'p4 "6.2 ESD Ratings, HBM"' }
+  channel_count: { value: "1", src: 'p3 "Pin Functions: one VIN+/VIN- input pair, one OUT"' }
+  input_offset_voltage:
+    typ: 0.2 mV
+    max: 1 mV
+    at: { VCC: 5 V, VIN: 12 V, TA: -40..85 °C }
+    src: 'p6 "6.5 Electrical Characteristics: Offset voltage RTI, INA169 (printed ±0.2/±1 mV)"'
+  input_bias_current:
+    typ: 10 µA
+    at: { VCC: 5 V, VIN: 12 V, TA: -40..85 °C }
+    src: 'p6 "6.5 Electrical Characteristics: Input bias current"'
+
 pins:
   src: [p3 "Pin Functions table", p3 "DBV Package 5-Pin SOT-23 Top View"]
   "1": { name: OUT, type: analog }

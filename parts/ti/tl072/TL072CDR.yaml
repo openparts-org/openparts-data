@@ -25,3 +25,46 @@ existence:
   src: p38 "Package Option Addendum, Packaging Information table, row TL072CDR"
 
 lifecycle: { status: active, src: 'p38 "Package Option Addendum, row TL072CDR, Status Active"' }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 4.5 V
+    max: 40 V
+    src: p11 "5.3 Recommended Operating Conditions, VS (VCC+)-(VCC-), All other devices row"
+  operating_temperature:
+    min: 0 °C
+    max: 70 °C
+    src:
+      - p11 "5.3 Recommended Operating Conditions, TA Specified temperature, TL07xC row"
+      - p38 "Package Option Addendum, row TL072CDR, Op Temp 0 to 70"
+  gain_bandwidth:
+    typ: 5.25 MHz
+    at: { VS: 30 V, TA: 25 °C }
+    src: 'p15 "5.8 EC (DC) TL07xC...: GBW, All other devices row"'
+  slew_rate:
+    min: 8 V/µs
+    typ: 20 V/µs
+    at: { VS: 30 V, CL: 100 pF, RL: 2 kΩ, TA: 25 °C }
+    src: 'p16 "5.9 EC (AC) TL07xC...: SR, TL07xC/AC/BC/I row"'
+  input_offset_voltage:
+    typ: 3 mV
+    max: 10 mV
+    at: { VS: 30 V, VOUT: 0 V, TA: 25 °C }
+    src: 'p15 "5.8 EC (DC) TL07xC...: VOS, TL07xC row, 25 C"'
+  input_bias_current:
+    typ: 65 pA
+    max: 200 pA
+    at: { VS: 30 V, VOUT: 0 V, TA: 25 °C }
+    src: 'p15 "5.8 EC (DC) TL07xC...: IB, TL07xC/AC/BC/I row, 25 C"'
+  supply_current_per_channel:
+    typ: 1.4 mA
+    max: 2.5 mA
+    at: { VS: 30 V, VOUT: 0 V, TA: 25 °C }
+    src: 'p16 "5.8 EC (DC) TL07xC... (continued): IQ quiescent current per amplifier, no load"'
+  rail_to_rail_input:
+    value: no
+    src: p11 "5.3 Recommended Operating Conditions, VI (VCC-) + 4 to (VCC+) + 0.1, All other devices"
+  rail_to_rail_output:
+    value: no
+    src: 'p15 "5.8 EC (DC) TL07xC...: VOM ±13.5 V typ at VS = ±15 V, RL = 10 kohm"'

@@ -19,6 +19,44 @@ category: comparator
 family: LMx39/LM2901
 source: ti/SLCS006Z
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 30 V
+    src: 'p6 "6.5 Recommended Operating Conditions, Non-B Versions: VCC, Non-V devices"'
+  supply_current:
+    typ: 0.8 mA
+    max: 2 mA
+    at: { VCC: 5 V, VOUT: 2.5 V, TA: 25 °C }
+    src: 'p10 "6.10 Electrical Characteristics LMx39: ICC (four comparators), no load, LM339 column"'
+  operating_temperature:
+    min: 0 °C
+    max: 70 °C
+    src: 'p6 "6.5 Recommended Operating Conditions, Non-B: LM339x row (printed as TJ)"'
+  esd_hbm: { typ: 2 kV, src: 'p6 "6.3 ESD Ratings, HBM"' }
+  channel_count:
+    value: "4"
+    src: 'p1 "Title: ... LM339, LM239, LM139, LM2901 Quad Differential Comparators"'
+  input_offset_voltage:
+    typ: 2 mV
+    max: 5 mV
+    at: { VCC: 5..30 V, VOUT: 1.4 V, TA: 25 °C }
+    src: 'p10 "6.10 Electrical Characteristics LMx39: VIO, LM339 column, 25 °C"'
+  input_bias_current:
+    typ: 25 nA
+    max: 250 nA
+    at: { VOUT: 1.4 V, TA: 25 °C }
+    src: 'p10 "6.10 Electrical Characteristics LMx39: IIB, LM339 column (printed -25/-250 nA)"'
+  rail_to_rail_input:
+    value: no
+    src: 'p10 "6.10 Electrical Characteristics LMx39: VICR 0 to VCC - 1.5 V, 25 °C"'
+  propagation_delay:
+    typ: 1.3 µs
+    at: { VCC: 5 V, VOD: 5 mV, CL: 15 pF, TA: 25 °C }
+    src: 'p12 "6.14 Switching Characteristics LMx39: response time, 100mV step with 5mV overdrive"'
+  output_structure: { value: open_collector, src: 'p19 "7.1 Overview: open-collector outputs"' }
+
 pins:
   src:
     - p4 "Table 5-1 "Pin Functions", column "D, DB, N, NS, PW, DYY, J""

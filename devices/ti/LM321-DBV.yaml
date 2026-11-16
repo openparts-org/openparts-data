@@ -12,6 +12,46 @@ category: op_amp
 family: LM321
 source: ti/SNOS935C
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 30 V
+    src: p4 "6.3 Recommended Operating Conditions, Supply Voltage"
+  supply_current:
+    typ: 0.43 mA
+    max: 1.15 mA
+    at: { VS: 5 V, TA: 25 °C }
+    src: 'p4 "6.5 Electrical Characteristics: IS Supply Current, No Load, V+ = 5 V"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "6.3 Recommended Operating Conditions, Temperature Range"
+  esd_hbm: { typ: 300 V, src: 'p3 "6.2 ESD Ratings, HBM"' }
+  channel_count: { value: "1", src: 'p1 "Title: LM321 Low Power Single Operational Amplifier"' }
+  gain_bandwidth:
+    typ: 1 MHz
+    at: { VS: 30 V, CL: 100 pF, RL: 2 kΩ, f: 100 kHz }
+    src: 'p5 "Electrical Characteristics (continued): GBW"'
+  slew_rate:
+    typ: 0.4 V/µs
+    at: { VS: 15 V, CL: 100 pF, RL: 2 kΩ }
+    src: 'p5 "Electrical Characteristics (continued): SR, Unity Gain"'
+  input_offset_voltage:
+    typ: 2 mV
+    max: 7 mV
+    at: { VS: 5 V, VOUT: 1.4 V, TA: 25 °C }
+    src: 'p4 "6.5 Electrical Characteristics: VOS (25 °C)"'
+  input_bias_current:
+    typ: 45 nA
+    max: 250 nA
+    at: { VS: 5 V, VOUT: 1.4 V, TA: 25 °C }
+    src: 'p4 "6.5 Electrical Characteristics: IB (25 °C)"'
+  rail_to_rail_input: { value: no, src: 'p4 "6.5 Electrical Characteristics: VCM 0 to V+ - 1.5 V"' }
+  rail_to_rail_output:
+    value: no
+    src: 'p4 "6.5 Electrical Characteristics: VOH 27 V min / 28 V typ at V+ = 30 V, RL = 10 kΩ"'
+
 pins:
   src:
     - p3 ""Pin Functions" table (NAME / NO.)"

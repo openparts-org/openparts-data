@@ -13,6 +13,7 @@ source: ti/SLVS139Z
 
 parameters:
   output_type: { value: adjustable, src: 'p1 "1 Features, Adjustable output voltage"' }
+  esd_hbm:     { typ: 2 kV, src: 'p4 "5.2 ESD Ratings, HBM, all pins"' }
 
 pins:
   src:

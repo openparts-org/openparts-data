@@ -12,6 +12,46 @@ category: op_amp
 family: OPAx344
 source: ti/SBOS107A
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: 'p2 "Specifications: Power Supply, Specified Voltage Range VS (operating 2.5 to 5.5 V)"'
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: 'p2 "Specifications: Temperature Range, Operating Range"'
+  esd_hbm: { typ: 4 kV, src: 'p4 "Absolute Maximum Ratings: ESD Tolerance (Human Body Model)"' }
+  channel_count:
+    value: "1"
+    src: p2 "Specifications column OPA344NA, UA, PA (single; OPA2344 dual, OPA4344 quad)"
+  gain_bandwidth:
+    typ: 1 MHz
+    at: { CL: 100 pF, RL: 10 kΩ, TA: 25 °C }
+    src: 'p2 "Specifications: Frequency Response, Gain-Bandwidth Product GBW"'
+  slew_rate:
+    typ: 0.8 V/µs
+    at: { CL: 100 pF, RL: 10 kΩ, TA: 25 °C }
+    src: 'p2 "Specifications: Frequency Response, Slew Rate SR"'
+  input_offset_voltage:
+    typ: 0.2 mV
+    max: 1 mV
+    at: { VS: 5.5 V, TA: 25 °C }
+    src: 'p2 "Specifications: Input Offset Voltage VOS, VS = +5.5 V (printed ±0.2/±1 mV)"'
+  input_bias_current:
+    typ: 0.2 pA
+    max: 10 pA
+    at: { TA: 25 °C }
+    src: 'p2 "Specifications: Input Bias Current IB (printed ±0.2/±10 pA)"'
+  supply_current_per_channel:
+    typ: 150 µA
+    max: 250 µA
+    at: { VS: 5.5 V, IOUT: 0 A, TA: 25 °C }
+    src: 'p2 "Specifications: Quiescent Current (per amplifier) IQ, VS = 5.5 V, IO = 0"'
+  rail_to_rail_input: { value: yes, src: 'p1 "Features: Rail-to-Rail Input"' }
+  rail_to_rail_output: { value: yes, src: 'p1 "Features: Rail-to-Rail Output (within 1 mV)"' }
+
 pins:
   src: p1 "Pin-configuration figure "OPA344, OPA345" SOT23-5"
   "1": { name: Out, type: analog }

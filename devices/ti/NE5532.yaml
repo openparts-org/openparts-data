@@ -11,6 +11,43 @@ category: op_amp
 family: NE5532
 source: ti/SLOS075K
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_current:
+    typ: 6 mA
+    max: 16 mA
+    at: { VS: 30 V, VOUT: 0 V, TA: 25 °C }
+    src: 'p4 "5.5 Electrical Characteristics: ICC total supply current, VCC± = ±15 V, no load"'
+  operating_temperature:
+    min: 0 °C
+    max: 70 °C
+    src: p3 "5.3 Recommended Operating Conditions, TA, NE5532, NE5532A row"
+  esd_hbm: { typ: 1 kV, src: 'p3 "5.2 ESD Ratings, HBM, all pins"' }
+  channel_count:
+    value: "2"
+    src: 'p1 "Title: NE5532x, SA5532x Dual Low-Noise Operational Amplifiers"'
+  gain_bandwidth:
+    typ: 12 MHz
+    at: { VS: 30 V, TA: 25 °C }
+    src: 'p4 "5.5 Electrical Characteristics: B1 unity-gain bandwidth (VCC± = ±15 V)"'
+  slew_rate:
+    typ: 5 V/µs
+    at: { VS: 30 V, TA: 25 °C }
+    src: 'p4 "5.6 Operating Characteristics: SR at unity gain, NE5532 and NE5532A columns"'
+  input_offset_voltage:
+    typ: 0.5 mV
+    max: 4 mV
+    at: { VS: 30 V, VOUT: 0 V, TA: 25 °C }
+    src: 'p4 "5.5 Electrical Characteristics: VIO, TA = 25 °C (VCC± = ±15 V)"'
+  input_bias_current:
+    typ: 200 nA
+    max: 800 nA
+    at: { VS: 30 V, TA: 25 °C }
+    src: 'p4 "5.5 Electrical Characteristics: IIB, TA = 25 °C (VCC± = ±15 V)"'
+  rail_to_rail_input:
+    value: no
+    src: 'p4 "5.5 Electrical Characteristics: VICR ±12 V min at VCC± = ±15 V"'
+
 pins:
   src: [p2 "Pin Functions table", 'p2 "Figure 4-1, NE5532x D/P/PS 8-pin top view (cross-check)"']
   "1": { name: 1OUT, type: analog }

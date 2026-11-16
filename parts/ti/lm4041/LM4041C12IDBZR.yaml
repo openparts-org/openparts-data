@@ -31,3 +31,7 @@ parameters:
   output_voltage:
     typ: 1.225 V
     src: p7 "5.5 LM4041x12I EC, LM4041C12I column, VZ at IZ = 100uA, 25C"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p21 "Package Option Addendum, row LM4041C12IDBZR, Op Temp -40 to 85 C"

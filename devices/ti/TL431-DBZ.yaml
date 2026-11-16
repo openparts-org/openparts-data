@@ -13,7 +13,9 @@ category: voltage_reference
 family: TL431
 source: ti/SLVS543S
 
-parameters: { output_type: { value: adjustable, src: p1 "1 Features; 3 Description" } }
+parameters:
+  output_type: { value: adjustable, src: p1 "1 Features; 3 Description" }
+  esd_hbm:     { typ: 2 kV, src: 'p5 "6.2 ESD Ratings, HBM"' }
 
 pins:
   src:

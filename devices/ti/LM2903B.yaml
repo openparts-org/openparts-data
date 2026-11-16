@@ -11,6 +11,37 @@ category: comparator
 family: LM2903B
 source: ti/SLCS005AH
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 36 V
+    src: p4 "5.2 Recommended Operating Conditions, VS, "B" version devices"
+  supply_current:
+    typ: 400 µA
+    max: 600 µA
+    at: { VS: 5 V, TA: 25 °C }
+    src: 'p7 "5.6 Electrical Characteristics LM2903B: IQ (all comparators), VS = 5V, no load"'
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "5.2 Recommended Operating Conditions, TA, LM2903, LM2903V, LM2903AV, LM2903B"
+  esd_hbm:       { typ: 2 kV, src: 'p5 "5.4 ESD Ratings, HBM"' }
+  channel_count: { value: "2", src: 'p1 "Title: ... LM393 and LM2903 Dual Comparators"' }
+  input_bias_current:
+    typ: 3.5 nA
+    max: 25 nA
+    at: { VS: 5 V, TA: 25 °C }
+    src: 'p7 "5.6 Electrical Characteristics LM2903B: IB, 25 °C (printed -3.5/-25 nA)"'
+  rail_to_rail_input:
+    value: no
+    src: 'p7 "5.6 Electrical Characteristics LM2903B: VCM (V-) to (V+) - 1.5V, VS = 3 to 36V"'
+  propagation_delay:
+    typ: 1000 ns
+    at: { VS: 5 V, VOD: 5 mV, CL: 15 pF, TA: 25 °C }
+    src: 'p7 "5.7 Switching Characteristics LM393B and LM2903B: tresponse high-to-low (only edge printed), 5mV overdrive"'
+  output_structure: { value: open_collector, src: 'p17 "6.1 Overview: open-collector outputs"' }
+
 pins:
   src: p3 "Figure 4-1 (8-pin SOIC/VSSOP/PDIP/SO/TSSOP top view) and Table 4-1 "Pin Functions""
   "1": { name: 1OUT, type: output }

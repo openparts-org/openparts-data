@@ -14,6 +14,48 @@ category: op_amp
 family: LMV3xx
 source: ti/SLOS263Y
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p5 "6.3 Recommended Operating Conditions, VCC (single-supply operation)"
+  supply_current:
+    typ: 210 µA
+    max: 440 µA
+    at: { VCC: 5 V, TA: 25 °C }
+    src: 'p7 "6.8 Electrical Characteristics VCC+ = 5 V: ICC, LMV358I (both amplifiers), 25 °C"'
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p5 "6.3 Recommended Operating Conditions, TA, I temperature (LMV321, LMV358, LMV324)"
+  esd_hbm:             { typ: 2 kV, src: 'p5 "6.2 ESD Ratings, HBM, all pins"' }
+  channel_count:
+    value: "2"
+    src: 'p1 "3 Description: single, dual, and quad (LMV321, LMV358, LMV324)"'
+  gain_bandwidth:
+    typ: 1 MHz
+    at: { VCC: 5 V, CL: 200 pF, TA: 25 °C }
+    src: 'p7 "6.8 Electrical Characteristics VCC+ = 5 V: B1 unity-gain bandwidth"'
+  slew_rate:
+    typ: 1 V/µs
+    at: { VCC: 5 V, TA: 25 °C }
+    src: 'p7 "6.8 Electrical Characteristics VCC+ = 5 V: SR"'
+  input_offset_voltage:
+    typ: 1.7 mV
+    max: 7 mV
+    at: { VCC: 5 V, TA: 25 °C }
+    src: 'p7 "6.8 Electrical Characteristics VCC+ = 5 V: VIO, TA = 25 °C"'
+  input_bias_current:
+    typ: 15 nA
+    max: 250 nA
+    at: { VCC: 5 V, TA: 25 °C }
+    src: 'p7 "6.8 Electrical Characteristics VCC+ = 5 V: IIB, TA = 25 °C"'
+  rail_to_rail_input:
+    value: no
+    src: 'p7 "6.8 Electrical Characteristics VCC+ = 5 V: VICR 0 to 4 V (CMRR ≥ 50 dB)"'
+  rail_to_rail_output: { value: yes, src: 'p1 "Features: Rail-to-rail output swing"' }
+
 pins:
   src:
     - 'p3 "Table 5-1 "Pin Functions: LMV358""'

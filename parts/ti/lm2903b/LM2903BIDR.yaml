@@ -23,3 +23,10 @@ existence:
 lifecycle:
   status: active
   src: p23 "PACKAGE OPTION ADDENDUM, row LM2903BIDR, Status column "Active""
+
+parameters:
+  input_offset_voltage:
+    typ: 0.37 mV
+    max: 2.5 mV
+    at: { VS: 5..36 V, TA: 25 °C }
+    src: 'p7 "5.6 Electrical Characteristics LM2903B: VIO, VS = 5 to 36V (non-DGK row; this part is SOIC D)"'

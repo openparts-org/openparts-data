@@ -29,3 +29,10 @@ existence:
   src: 'p47 "Product Identification System, example f) "MCP6004T-I/ST: Tape and Reel, Industrial Temperature, 14-Lead TSSOP Package""'
 
 lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p47 "Product Identification System, Temperature Range: I = -40°C to +85°C"'

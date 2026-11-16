@@ -23,6 +23,19 @@ parameters:
     min: -10 mA
     max: 10 mA
     src: p5 "6.3 Recommended Operating Conditions, IOUT"
+  supply_current:
+    - typ: 0.8 mA
+      max: 1 mA
+      at: { IOUT: 0 A, TA: 25 °C }
+      src: 'p8 "6.5 EC REF50xxI and REF50xxAI: Quiescent current, 25C"'
+    - max: 1.2 mA
+      at: { IOUT: 0 A, TA: -40..125 °C }
+      src: 'p8 "6.5 EC REF50xxI and REF50xxAI: Quiescent current, -40C to 125C"'
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p5 "6.3 Recommended Operating Conditions, TA Operating ambient temperature"
+  esd_hbm: { typ: 3 kV, src: 'p5 "6.2 ESD Ratings, HBM all pins, note (3) REF50xxI and REF50xxAI"' }
 
 pins:
   src:

@@ -12,6 +12,43 @@ category: current_sense_amplifier
 family: INA180
 source: ti/SBOS741H
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p7 "7.3 Recommended Operating Conditions, VS operating supply voltage"
+  supply_current:
+    typ: 197 µA
+    max: 260 µA
+    at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+    src: 'p8 "7.5 Electrical Characteristics: IQ, INA180, VSENSE = 10 mV"'
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p7 "7.3 Recommended Operating Conditions, TA operating free-air temperature"
+  esd_hbm:   { typ: 3 kV, src: 'p7 "7.2 ESD Ratings, HBM"' }
+  channel_count:
+    value: "1"
+    src: 'p4 "Table 5-1 Device Comparison: INA180A1..B4, number of channels 1"'
+  slew_rate: { typ: 2 V/µs, src: 'p8 "7.5 Electrical Characteristics: SR"' }
+  input_offset_voltage:
+    - typ: 100 µV
+      max: 500 µV
+      at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+      src: 'p8 "7.5 Electrical Characteristics: VOS RTI, VIN+ = 12 V (printed ±100/±500 µV)"'
+    - typ: 25 µV
+      max: 150 µV
+      at: { VS: 5 V, VIN: 0 V, TA: 25 °C }
+      src: 'p8 "7.5 Electrical Characteristics: VOS RTI, VIN+ = 0 V (printed ±25/±150 µV)"'
+  input_bias_current:
+    - typ: 80 µA
+      at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+      src: 'p8 "7.5 Electrical Characteristics: IIB, VSENSE = 0 mV, VIN+ = 12 V"'
+    - typ: 0.1 µA
+      at: { VS: 5 V, VIN: 0 V, TA: 25 °C }
+      src: 'p8 "7.5 Electrical Characteristics: IIB, VSENSE = 0 mV, VIN+ = 0 V"'
+
 pins:
   src:
     - 'p4 "Table 6-1 "Pin Functions: INA180 (Single Channel)", column "SOT-23 Pinout B""'

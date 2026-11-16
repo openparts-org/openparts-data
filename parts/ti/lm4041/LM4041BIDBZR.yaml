@@ -23,3 +23,10 @@ existence:
   src: p21 "Package Option Addendum, Packaging Information table, row LM4041BIDBZR"
 
 lifecycle: { status: active, src: 'p21 "Package Option Addendum, row LM4041BIDBZR, Status Active"' }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p21 "Package Option Addendum, row LM4041BIDBZR, Op Temp -40 to 85 C"

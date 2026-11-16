@@ -17,6 +17,9 @@ category: voltage_reference
 family: LM4040
 source: ti/SLOS456Q
 
+# Parameters (AI candidates, needs review).
+parameters: { esd_hbm: { typ: 2 kV, src: 'p5 "6.2 ESD Ratings, HBM, all pins"' } }
+
 pins:
   src:
     - p4 "Table 5-1 "Pin Functions", column "DBZ""

@@ -28,3 +28,10 @@ existence:
   src: 'p47 "Product Identification System, example d) "MCP6001UT-E/OT: Tape and Reel, Extended Temperature, 5-Lead SOT-23 Package""'
 
 lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: 'p47 "Product Identification System, Temperature Range: E = -40°C to +125°C"'

@@ -25,3 +25,10 @@ existence:
   src: p47 "Product Identification System, example c) (MCP6004) MCP6004-E/SL"
 
 lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: 'p47 "Product Identification System, Temperature Range: E = -40°C to +125°C"'

@@ -15,6 +15,44 @@ category: op_amp
 family: OPAx333
 source: ti/SBOS351E
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.8 V
+    max: 5.5 V
+    src: p5 "6.3 Recommended Operating Conditions, Supply voltage VS"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p5 "6.3 Recommended Operating Conditions, Specified temperature"
+  esd_hbm:             { typ: 4 kV, src: 'p5 "6.2 ESD Ratings, HBM"' }
+  channel_count:       { value: "2", src: 'p1 "3 Description: OPA2333 (dual version)"' }
+  gain_bandwidth:
+    typ: 350 kHz
+    at: { CL: 100 pF, RL: 10 kΩ, TA: 25 °C }
+    src: 'p7 "6.6 Electrical Characteristics: GBW"'
+  slew_rate:
+    typ: 0.16 V/µs
+    at: { RL: 10 kΩ, TA: 25 °C }
+    src: 'p7 "6.6 Electrical Characteristics: SR, G = +1"'
+  input_offset_voltage:
+    typ: 2 µV
+    max: 10 µV
+    at: { VS: 5 V, TA: 25 °C }
+    src: 'p7 "6.6 Electrical Characteristics: VOS, VS = 5 V"'
+  input_bias_current:
+    typ: 70 pA
+    max: 200 pA
+    at: { TA: 25 °C }
+    src: 'p7 "6.6 Electrical Characteristics: IB, TA = 25 °C (printed ±70/±200 pA)"'
+  supply_current_per_channel:
+    typ: 17 µA
+    max: 25 µA
+    at: { IOUT: 0 A, TA: 25 °C }
+    src: 'p7 "6.6 Electrical Characteristics: IQ quiescent current per amplifier, IO = 0 A"'
+  rail_to_rail_input:  { value: yes, src: 'p1 "Features: Rail-to-Rail Input/Output"' }
+  rail_to_rail_output: { value: yes, src: 'p1 "Features: Rail-to-Rail Input/Output"' }
+
 pins:
   src:
     - 'p4 ""Pin Functions: OPA2333" table, column "SOIC, VSSOP""'

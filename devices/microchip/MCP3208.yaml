@@ -10,6 +10,22 @@ category: adc
 family: MCP3204/3208
 source: microchip/DS21298@revE
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: 'p3 "Electrical Characteristics, Power Requirements: Operating Voltage VDD"'
+  supply_current:
+    typ: 320 µA
+    max: 400 µA
+    at: { VDD: 5 V }
+    src: 'p3 "Electrical Characteristics, Power Requirements: Operating Current IDD, VDD = VREF = 5V"'
+  esd_hbm: { typ: 4 kV, src: 'p2 "Absolute Maximum Ratings, ESD protection on all pins > 4 kV"' }
+  channel_count:
+    value: "8"
+    src: 'p1 "Description: MCP3208 ... eight single-ended inputs (or pseudo-differential pairs)"'
+
 pins:
   src:
     - p15 "Table 3-1 "Pin Function Table", column "MCP3208 PDIP, SOIC""

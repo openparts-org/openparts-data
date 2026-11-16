@@ -24,3 +24,10 @@ existence:
   src: 'p40 "Product Identification System, example g) "MCP3008-I/P: Industrial Temperature, PDIP package""'
 
 lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p40 "Product Identification System, Temperature Range: I = -40°C to +85°C (Industrial)"'

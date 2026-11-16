@@ -11,6 +11,47 @@ category: op_amp
 family: OPAx376
 source: ti/SBOS406G
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.2 V
+    max: 5.5 V
+    src: p6 "6.3 Recommended Operating Conditions, (V+) - (V-) Supply voltage"
+  operating_temperature:
+    min: -40 °C
+    max: 150 °C
+    src: p6 "6.3 Recommended Operating Conditions, TA Operating temperature"
+  esd_hbm:             { typ: 4 kV, src: 'p6 "6.2 ESD Ratings, HBM, all pins"' }
+  channel_count:       { value: "1", src: 'p1 "3 Description: The OPA376 (single version)"' }
+  gain_bandwidth:
+    typ: 5.5 MHz
+    at: { VS: 5.5 V, CL: 100 pF }
+    src: 'p8 "6.7 Electrical Characteristics: GBW"'
+  slew_rate:
+    typ: 2 V/µs
+    at: { VS: 5.5 V, CL: 100 pF }
+    src: 'p8 "6.7 Electrical Characteristics: SR, G = 1"'
+  input_offset_voltage:
+    typ: 5 µV
+    max: 25 µV
+    at: { TA: 25 °C }
+    src: p8 "6.7 Electrical Characteristics, VOS input offset voltage"
+  input_bias_current:
+    typ: 0.2 pA
+    max: 10 pA
+    at: { TA: 25 °C }
+    src: p8 "6.7 Electrical Characteristics, IB input bias current, TA = 25C"
+  supply_current_per_channel:
+    - typ: 760 µA
+      max: 950 µA
+      at: { VS: 5.5 V, IOUT: 0 A, TA: 25 °C }
+      src: p9 "6.7 Electrical Characteristics, IQ quiescent current per amplifier, TA = 25C"
+    - max: 1 mA
+      at: { TA: -40..125 °C }
+      src: p9 "6.7 Electrical Characteristics, IQ quiescent current per amplifier, -40C to +125C"
+  rail_to_rail_input:  { value: yes, src: 'p1 "1 Features: Rail-to-Rail Input and Output"' }
+  rail_to_rail_output: { value: yes, src: 'p1 "1 Features: Rail-to-Rail Input and Output"' }
+
 pins:
   src: ['p3 "Pin Functions: OPA376, column DBV"', p3 "DBV package top-view figure (cross-check)"]
   "1": { name: OUT, type: analog }

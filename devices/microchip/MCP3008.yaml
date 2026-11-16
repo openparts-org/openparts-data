@@ -9,6 +9,24 @@ category: adc
 family: MCP3004/3008
 source: microchip/DS20001295@revE
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: 'p5 "Electrical Characteristics, Power Requirements: Operating Voltage VDD"'
+  supply_current:
+    typ: 425 µA
+    max: 550 µA
+    at: { VDD: 5 V }
+    src: 'p5 "Electrical Characteristics, Power Requirements: Operating Current IDD, VDD = VREF = 5V"'
+  esd_hbm:
+    typ: 4 kV
+    src: 'p3 "Absolute Maximum Ratings, ESD protection on all pins: HBM ≤ 4kV"'
+  channel_count:
+    value: "8"
+    src: 'p1 "Description: MCP3008 ... eight single-ended inputs (or four pseudo-differential pairs)"'
+
 pins:
   src:  p15 "Table 3-1 "Pin Function Table", MCP3008 "PDIP, SOIC" column"
   "1":  { name: CH0, type: analog }

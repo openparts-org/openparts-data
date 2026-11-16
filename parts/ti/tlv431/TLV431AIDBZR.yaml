@@ -25,3 +25,10 @@ existence:
   src: p28 "Package Option Addendum, Packaging Information table, row TLV431AIDBZR"
 
 lifecycle: { status: active, src: 'p28 "Package Option Addendum, row TLV431AIDBZR, Status Active"' }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p28 "Package Option Addendum, row TLV431AIDBZR, Op Temp -40 to 85 C"

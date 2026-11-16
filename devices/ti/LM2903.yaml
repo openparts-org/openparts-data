@@ -11,6 +11,42 @@ category: comparator
 family: LM2903
 source: ti/SLCS005AH
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 30 V
+    src: p4 "5.2 Recommended Operating Conditions, VS, non-V devices"
+  supply_current:
+    typ: 0.8 mA
+    max: 1 mA
+    at: { VCC: 5 V, TA: 25 °C }
+    src: 'p10 "5.10 Electrical Characteristics: ICC, RL = ∞, VCC = 5 V, LM2903, LM2903V column"'
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "5.2 Recommended Operating Conditions, TA, LM2903, LM2903V, LM2903AV, LM2903B"
+  esd_hbm:       { typ: 2 kV, src: 'p5 "5.4 ESD Ratings, HBM"' }
+  channel_count: { value: "2", src: 'p1 "Title: ... LM393 and LM2903 Dual Comparators"' }
+  input_offset_voltage:
+    typ: 2 mV
+    max: 7 mV
+    at: { VCC: 5..30 V, VOUT: 1.4 V, TA: 25 °C }
+    src: 'p10 "5.10 Electrical Characteristics: VIO, LM2903, LM2903V column, 25 °C (VCC MAX 30 V non-V)"'
+  input_bias_current:
+    typ: 25 nA
+    max: 250 nA
+    at: { VOUT: 1.4 V, TA: 25 °C }
+    src: 'p10 "5.10 Electrical Characteristics: IIB, LM2903, LM2903V column (printed -25/-250 nA)"'
+  rail_to_rail_input:
+    value: no
+    src: 'p10 "5.10 Electrical Characteristics: VICR 0 to VCC - 1.5 V, 25 °C"'
+  propagation_delay:
+    typ: 1.3 µs
+    at: { VCC: 5 V, VOD: 5 mV, CL: 15 pF, TA: 25 °C }
+    src: 'p10 "5.11 Switching Characteristics: response time, 100 mV step, 5 mV overdrive"'
+  output_structure: { value: open_collector, src: 'p17 "6.1 Overview: open-collector outputs"' }
+
 pins:
   src: p3 "Figure 4-1 (8-pin SOIC/VSSOP/PDIP/SO/TSSOP top view) and Table 4-1 "Pin Functions""
   "1": { name: 1OUT, type: output }

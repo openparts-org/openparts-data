@@ -11,6 +11,11 @@ category: op_amp
 family: TL07x
 source: ti/SLOS080W
 
+# Parameters (AI candidates, needs review).
+parameters:
+  esd_hbm:       { typ: 2 kV, src: 'p10 "5.2 ESD Ratings, HBM"' }
+  channel_count: { value: "2", src: 'p5 "Table 4-3 Pin Functions: TL072x (1OUT, 2OUT)"' }
+
 pins:
   src:
     - 'p5 "Table 4-3. Pin Functions: TL072x"'

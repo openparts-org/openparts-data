@@ -12,6 +12,42 @@ category: op_amp
 family: TLV906x
 source: ti/SBOS839N
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 1.8 V, max: 5.5 V, src: 'p10 "6.3 Recommended Operating Conditions, VS"' }
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p10 "6.3 Recommended Operating Conditions, Specified temperature"
+  esd_hbm:             { typ: 4 kV, src: 'p10 "6.2 ESD Ratings, all other packages: HBM"' }
+  channel_count:
+    value: "4"
+    src: 'p1 "3 Description: TLV9061 (single), TLV9062 (dual), and TLV9064 (quad)"'
+  gain_bandwidth:
+    typ: 10 MHz
+    at: { VS: 5 V, RL: 10 kΩ, TA: 25 °C }
+    src: 'p13 "6.10 Electrical Characteristics: GBP, G = +1"'
+  slew_rate:
+    typ: 6.5 V/µs
+    at: { VS: 5 V, RL: 10 kΩ, TA: 25 °C }
+    src: 'p13 "6.10 Electrical Characteristics: SR, G = +1"'
+  input_offset_voltage:
+    typ: 0.3 mV
+    max: 1.6 mV
+    at: { VS: 5 V, TA: 25 °C }
+    src: 'p13 "6.10 Electrical Characteristics: VOS, VS = 5 V (printed ±0.3/±1.6 mV)"'
+  input_bias_current:
+    typ: 0.5 pA
+    at: { TA: 25 °C }
+    src: 'p13 "6.10 Electrical Characteristics: IB (printed ±0.5 pA)"'
+  supply_current_per_channel:
+    typ: 538 µA
+    max: 750 µA
+    at: { VS: 5.5 V, IOUT: 0 A, TA: 25 °C }
+    src: 'p14 "6.10 Electrical Characteristics: IQ quiescent current per amplifier, VS = 5.5 V"'
+  rail_to_rail_input:  { value: yes, src: 'p1 "Features: Rail-to-rail input and output"' }
+  rail_to_rail_output: { value: yes, src: 'p1 "Features: Rail-to-rail input and output"' }
+
 pins:
   src:
     - 'p8 "Table 5-5 "Pin Functions: TLV9064", column "SOIC, TSSOP""'

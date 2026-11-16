@@ -29,3 +29,7 @@ parameters:
   output_voltage:
     typ: 2.5 V
     src: p3 "4 Device Comparison Table, A grade, VKA 2.5V, orderable part number LM4040A25I"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p32 "Package Option Addendum, row LM4040A25IDBZR, Op Temp -40 to 85 C"
