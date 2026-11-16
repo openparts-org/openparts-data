@@ -13,6 +13,22 @@ category: level_shifter
 family: TXS0108E
 source: ti/SCES642L
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_current:
+    max: 8 µA
+    at: { TA: -40..85 °C }
+    src: p7 "5.5 Electrical Characteristics, ICCA + ICCB, VCCA 1.5 to 3.6, VCCB 2.3 to 5.5"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p6 "5.3 Recommended Operating Conditions, TA"
+  esd_hbm:       { typ: 2 kV, src: 'p5 "5.2 ESD Ratings, HBM"' }
+  channel_count: { value: "8", src: 'p1 "Title: 8-Bit Bi-Directional Voltage Translator"' }
+  data_rate:
+    max: 110 Mbps
+    src: p8 "5.9 Timing Requirements, Data rate, push-pull, VCCB 5V (open-drain 1.2 Mbps)"
+
 pins:
   src:
     - p4 "Table 4-1 "Pin Functions", column "PW, RGY, DGS""

@@ -10,6 +10,21 @@ category: io_expander
 family: MCP23008/MCP23S08
 source: microchip/DS20001919@revF
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.8 V
+    max: 5.5 V
+    src: p22 "2.1 DC Characteristics, D001 Supply Voltage VDD"
+  supply_current:
+    max: 1 mA
+    at: { f: 1 MHz }
+    src: p22 "2.1 DC Characteristics, D004 Supply Current IDD, SCL/SCK = 1 MHz"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p41 "Product Identification System, Temperature Range E (only range offered)"
+
 pins:
   src:  ['p4 "Table 1-1 Pinout Description, column SSOP"', 'p2 "Package Types, MCP23008 SSOP"']
   "1":  { name: SCL, type: clock }

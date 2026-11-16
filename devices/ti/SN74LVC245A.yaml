@@ -13,6 +13,45 @@ category: logic
 family: SN74LVC245A
 source: ti/SCAS218X
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.65 V
+    max: 3.6 V
+    src: p5 "7.3 Recommended Operating Conditions, VCC, Operating"
+  supply_current:
+    max: 10 µA
+    at: { VCC: 3.6 V, TA: -40..85 °C }
+    src: 'p6 "7.5 Electrical Characteristics: ICC, VI = VCC or GND, IO = 0, 3.6 V, -40 to 85 °C"'
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p5 "7.3 Recommended Operating Conditions, column -40°C TO 125°C"
+  esd_hbm: { typ: 2 kV, src: 'p4 "7.2 ESD Ratings, HBM, all pins"' }
+  channel_count: { value: "8", src: 'p1 "Title: Octal Bus Transceiver With 3-State Outputs"' }
+  propagation_delay:
+    min: 1.5 ns
+    max: 6.3 ns
+    at: { VCC: 3.3 V, CL: 50 pF, TA: -40..85 °C }
+    src: 'p6 "7.6 Switching Characteristics: tpd, 3.3 V ± 0.3 V, -40 to 85 °C (CL per p8 Figure 3 table)"'
+  logic_function:
+    value: bus_transceiver
+    src: 'p1 "Title: Octal Bus Transceiver With 3-State Outputs"'
+  output_current_high:
+    - max: 24 mA
+      at: { VCC: 3 V }
+      src: p5 "7.3 Recommended Operating Conditions, IOH, VCC = 3 V (printed -24 mA)"
+    - max: 12 mA
+      at: { VCC: 2.7 V }
+      src: p5 "7.3 Recommended Operating Conditions, IOH, VCC = 2.7 V (printed -12 mA)"
+  output_current_low:
+    - max: 24 mA
+      at: { VCC: 3 V }
+      src: p5 "7.3 Recommended Operating Conditions, IOL, VCC = 3 V"
+    - max: 12 mA
+      at: { VCC: 2.7 V }
+      src: p5 "7.3 Recommended Operating Conditions, IOL, VCC = 2.7 V"
+
 pins:
   src:
     - p3 ""Pin Functions" table, column "DB, DGV, DW, NS, PW, and RGY""

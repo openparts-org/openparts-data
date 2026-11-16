@@ -13,6 +13,17 @@ category: rs232_transceiver
 family: TRS3232E
 source: ti/SLLS790E
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_current:
+    typ: 0.3 mA
+    max: 1 mA
+    src: 'p6 "5.6 Electrical Characteristics: Device, ICC, no load, VCC = 3.3 V or 5 V"'
+  esd_hbm:
+    typ: 2 kV
+    src: p4 "5.2 ESD Ratings, HBM, all pins except RIN1/2, DOUT1/2 (those ±15 kV)"
+  channel_count: { value: "2", src: 'p1 "1 Features, Two drivers and two receivers"' }
+
 pins:
   src:
     - p3 "Table 4-1 "Pin Functions", column "NO.""

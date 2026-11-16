@@ -10,6 +10,28 @@ category: interface
 family: PCA9548A
 source: nxp/PCA9548A@rev5.1
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.3 V
+    max: 5.5 V
+    src: 'p1 "2. Features: Operating power supply voltage range"'
+  supply_current:
+    - typ: 65 µA
+      max: 100 µA
+      at: { VDD: 5.5 V, f: 100 kHz }
+      src: p15 "Table 8 Static characteristics at VDD = 4.5 V to 5.5 V, IDD, operating mode, fSCL = 100 kHz"
+    - typ: 30 µA
+      max: 50 µA
+      at: { VDD: 3.6 V, f: 100 kHz }
+      src: p14 "Table 7 Static characteristics at VDD = 2.3 V to 3.6 V, IDD, operating mode, fSCL = 100 kHz"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p13 "Table 5 Limiting values, Tamb ambient temperature, operating"
+  esd_hbm: { typ: 2 kV, src: 'p1 "2. Features: ESD protection exceeds 2000 V HBM per JESD22-A114"' }
+  channel_count: { value: "8", src: 'p1 "Title: 8-channel I2C-bus switch with reset"' }
+
 pins:
   src:  p5 "Table 3 Pin description, SO24/TSSOP24 column"
   "1":  { name: A0, type: input }

@@ -12,6 +12,21 @@ category: rs485_transceiver
 family: SNx5HVD308xE
 source: ti/SLLS562O
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 4.5 V
+    max: 5.5 V
+    src: p7 "6.3 Recommended Operating Conditions, Supply voltage VCC"
+  esd_hbm: { typ: 4 kV, src: 'p6 "6.2 ESD Ratings, HBM, All pins (bus pins and GND ±15 kV)"' }
+  data_rate:
+    max: 200 kbps
+    src: p7 "6.3 Recommended Operating Conditions, Signaling rate, SN65HVD3082E/SN75HVD3082E row (0.2 Mbps)"
+  bus_fault_voltage:
+    min: -9 V
+    max: 14 V
+    src: p6 "6.1 Absolute Maximum Ratings, Voltage at A or B"
+
 pins:
   src:
     - p4 "Table 5-1. Pin Functions"

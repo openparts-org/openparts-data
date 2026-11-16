@@ -12,6 +12,21 @@ category: can_transceiver
 family: MCP2561/2
 source: microchip/DS20005167@revC
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 4.5 V
+    max: 5.5 V
+    src: p9 "Electrical Characteristics, SUPPLY, VDD Pin Voltage Range"
+  esd_hbm:
+    typ: 4 kV
+    src: p8 "Absolute Maximum Ratings, ESD on all other pins, HBM (CANH/CANL ±8 kV)"
+  data_rate: { max: 1 Mbit/s, src: 'p1 "Features, Supports 1 Mb/s Operation"' }
+  bus_fault_voltage:
+    min: -58 V
+    max: 58 V
+    src: p8 "Absolute Maximum Ratings, DC Voltage at CANH, CANL and SPLIT"
+
 pins:
   src:
     - p4 "Table 1-2 MCP2561/2 Pinout, column MCP2561 PDIP, SOIC"

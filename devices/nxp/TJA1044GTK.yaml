@@ -12,6 +12,21 @@ category: can_transceiver
 family: TJA1044
 source: nxp/TJA1044@rev8.0
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 4.5 V
+    max: 5.5 V
+    src: 'p10 "Table 7 Static characteristics, Supply; pin VCC: VCC"'
+  esd_hbm: { typ: 4 kV, src: 'p9 "Table 5 Limiting values, VESD HBM on any pin (CANH/CANL ±8 kV)"' }
+  data_rate:
+    max: 5 Mbit/s
+    src: p2 "2.5 TJA1044 CAN FD (all variants except TJA1044T), data rates up to 5 Mbit/s"
+  bus_fault_voltage:
+    min: -42 V
+    max: 42 V
+    src: p9 "Table 5 Limiting values, Vx on pins CANH, CANL"
+
 pins:
   src: p5 "Table 3 Pin description (n.c. variants); Figure 2"
   "1": { name: TXD, type: input }

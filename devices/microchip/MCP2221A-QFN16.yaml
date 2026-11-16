@@ -17,6 +17,28 @@ category: interface
 family: MCP2221A
 source: microchip/DS20005565@revE
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 5.5 V
+    src: p57 "4.1 DC Characteristics, D001 Supply Voltage VDD"
+  supply_current:
+    - typ: 13 mA
+      max: 15 mA
+      at: { VDD: 5 V, f: 12 MHz }
+      src: p57 "4.1 DC Characteristics, D004 Supply Current IDD, VDD = 5.0V, FOSC = 12 MHz"
+    - typ: 10 mA
+      max: 12 mA
+      at: { VDD: 3 V, f: 12 MHz }
+      src: p57 "4.1 DC Characteristics, D004 Supply Current IDD, VDD = 3.0V, FOSC = 12 MHz"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p57 "4.1 DC Characteristics, Operating Conditions (I-Temp)"
+  esd_hbm:   { typ: 4 kV, src: 'p1 "Features: ESD Protection > 4 kV HBM"' }
+  data_rate: { max: 12 Mbps, src: 'p1 "Features: Supports Full-Speed USB (12 Mb/s)"' }
+
 pins:
   src:
     - p3 "Table 1-1 "Pinout Description", column "QFN""

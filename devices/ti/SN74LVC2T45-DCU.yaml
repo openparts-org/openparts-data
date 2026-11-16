@@ -10,6 +10,43 @@ category: level_shifter
 family: SN74LVC2T45
 source: ti/SCES516N
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.65 V
+    max: 5.5 V
+    src: p4 "5.3 Recommended Operating Conditions, Supply voltage, VCCA and VCCB rows"
+  supply_current:
+    max: 4 µA
+    at: { TA: -40..85 °C }
+    src: p6 "5.5 Electrical Characteristics, ICCA + ICCB, VCCA/VCCB 1.65V to 5.5V"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p5 "5.3 Recommended Operating Conditions, TA"
+  esd_hbm:       { typ: 4 kV, src: 'p4 "5.2 ESD Ratings, HBM"' }
+  channel_count: { value: "2", src: 'p1 "Title: Dual-Bit Dual-Supply Bus Transceiver"' }
+  propagation_delay:
+    min: 0.7 ns
+    max: 5.8 ns
+    at: { VCC: 3.3 V, TA: -40..85 °C }
+    src: 'p8 "5.8 Switching Characteristics: tPLH B to A, VCCA = VCCB = 3.3V ± 0.3V"'
+  output_current_high:
+    - max: 24 mA
+      at: { VCC: 3..3.6 V }
+      src: p5 "5.3 Recommended Operating Conditions, IOH, VCCO 3V to 3.6V (printed -24 mA)"
+    - max: 32 mA
+      at: { VCC: 4.5..5.5 V }
+      src: p5 "5.3 Recommended Operating Conditions, IOH, VCCO 4.5V to 5.5V (printed -32 mA)"
+  output_current_low:
+    - max: 24 mA
+      at: { VCC: 3..3.6 V }
+      src: p5 "5.3 Recommended Operating Conditions, IOL, VCCO 3V to 3.6V"
+    - max: 32 mA
+      at: { VCC: 4.5..5.5 V }
+      src: p5 "5.3 Recommended Operating Conditions, IOL, VCCO 4.5V to 5.5V"
+  data_rate: { max: 420 Mbps, src: 'p1 "1 Features, Maximum data rates, 3.3V to 5V translation"' }
+
 pins:
   src: ['p2 "Table 4-1. Pin Functions: DCT, DCU"', p2 "Figure 4-1. DCT or DCU Package (Top View)"]
   "1": { name: VCCA, type: power }

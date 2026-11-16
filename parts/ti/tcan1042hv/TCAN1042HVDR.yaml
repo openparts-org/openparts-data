@@ -28,3 +28,9 @@ existence:
 lifecycle:
   status: active
   src: p33 "PACKAGE OPTION ADDENDUM, row TCAN1042HVDR, Status column "Active""
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_rate:
+    max: 2 Mbps
+    src: p1 "3 Description, CAN FD networks up to 2 Mbps (non-G part numbers)"

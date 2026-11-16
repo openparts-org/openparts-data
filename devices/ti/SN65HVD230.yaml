@@ -12,6 +12,23 @@ category: can_transceiver
 family: SN65HVD230
 source: ti/SLOS346O
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 3.6 V
+    src: p6 "8.3 Recommended Operating Conditions, Supply voltage VCC"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p6 "8.3 Recommended Operating Conditions, Operating free-air temperature TA"
+  esd_hbm: { typ: 4 kV, src: 'p6 "8.2 ESD Ratings, HBM, All pins (CANH, CANL and GND ±16 kV)"' }
+  data_rate: { max: 1 Mbps, src: 'p1 "1 Features, Designed for Data Rates up to 1 Mbps"' }
+  bus_fault_voltage:
+    min: -4 V
+    max: 16 V
+    src: p5 "8.1 Absolute Maximum Ratings, Voltage at any bus terminal (CANH or CANL)"
+
 pins:
   src:
     - p5 ""Pin Functions" table (pins 1-8; rows Vref/RS for SN65HVD230 and SN65HVD231)"

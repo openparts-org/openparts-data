@@ -9,6 +9,32 @@ category: io_expander
 family: PCA9536
 source: nxp/PCA9536@rev6
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.3 V
+    max: 5.5 V
+    src: p12 "Table 10 Static characteristics, VDD supply voltage"
+  supply_current:
+    typ: 290 µA
+    max: 400 µA
+    at: { VDD: 5.5 V, f: 100 kHz }
+    src: p12 "Table 10 Static characteristics, IDD supply current, operating mode, fSCL = 100 kHz"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p12 "Table 10 Static characteristics, heading Tamb"
+  esd_hbm: { typ: 2 kV, src: 'p1 "2. Features: ESD protection exceeds 2000 V HBM per JESD22-A114"' }
+  output_current_low:
+    - min: 8 mA
+      typ: 17 mA
+      at: { VDD: 4.5 V, VOUT: 0.5 V }
+      src: p12 "Table 10 Static characteristics, I/Os, IOL, VOL = 0.5 V; VDD = 4.5 V"
+    - min: 8 mA
+      typ: 14 mA
+      at: { VDD: 3 V, VOUT: 0.5 V }
+      src: p12 "Table 10 Static characteristics, I/Os, IOL, VOL = 0.5 V; VDD = 3.0 V"
+
 pins:
   src: p4 "Table 3 Pin description; Fig 2, Fig 3"
   "1": { name: IO0, type: io }

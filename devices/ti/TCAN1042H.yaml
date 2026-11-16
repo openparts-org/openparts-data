@@ -13,6 +13,20 @@ category: can_transceiver
 family: TCAN1042H
 source: ti/SLLSES7D
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 4.5 V
+    max: 5.5 V
+    src: p8 "7.4 Recommended Operating Conditions, VCC 5-V Bus Supply Voltage Range"
+  esd_hbm:
+    typ: 6 kV
+    src: p6 "7.2 ESD Ratings, D (SOIC), HBM, All terminals (CANH/CANL to GND ±16 kV)"
+  bus_fault_voltage:
+    min: -70 V
+    max: 70 V
+    src: p6 "7.1 Absolute Maximum Ratings, VBUS CANH/CANL, devices with the H suffix"
+
 pins:
   src:
     - p5 "Table 6-1 "Pin Functions", column "(H), (G), (HG)""

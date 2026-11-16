@@ -28,3 +28,9 @@ existence:
 lifecycle:
   status: active
   src: p33 "PACKAGE OPTION ADDENDUM, row TCAN1042HGDR, Status column "Active""
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_rate:
+    max: 5 Mbps
+    src: p1 "3 Description, G suffix designed for data rates up to 5 Mbps"

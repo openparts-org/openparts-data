@@ -26,3 +26,10 @@ existence:
   src: p93 "Product Identification System, example e) "MCP2515T-I/SO""
 
 lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p93 "Product Identification System, Temperature Range I = Industrial"

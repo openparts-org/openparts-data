@@ -27,3 +27,10 @@ existence:
   src: p27 "Product Identification System, High-temperature example d) MCP2561-H/SN"
 
 lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 150 °C
+    src: p27 "PRODUCT IDENTIFICATION SYSTEM, Temperature Range H"

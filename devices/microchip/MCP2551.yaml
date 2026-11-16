@@ -11,6 +11,18 @@ category: can_transceiver
 family: MCP2551
 source: microchip/DS20001667@revG
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 4.5 V, max: 5.5 V, src: 'p9 "DC Specifications, heading condition VDD"' }
+  esd_hbm:
+    typ: 4 kV
+    src: p8 "Absolute Maximum Ratings, ESD protection on all other pins, HBM (CANH/CANL 6 kV)"
+  data_rate: { max: 1 Mbit/s, src: 'p1 "Features, Supports 1 Mb/s operation"' }
+  bus_fault_voltage:
+    min: -42 V
+    max: 42 V
+    src: p8 "Absolute Maximum Ratings, DC Voltage at CANH, CANL"
+
 pins:
   src: [p5 "Table 1-3 "MCP2551 Pinout"", p1 ""Package Types" PDIP/SOIC (cross-check)"]
   "1": { name: TXD, type: input }

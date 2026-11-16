@@ -21,6 +21,38 @@ category: logic
 family: SNx4HC595
 source: ti/SCLS041J
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 6 V
+    src: p4 "6.3 Recommended Operating Conditions, VCC, SN74HC595 column"
+  supply_current:
+    max: 8 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p5 "6.5 Electrical Characteristics: ICC, 6 V, TA = 25°C column"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA, SN74HC595 column"
+  esd_hbm: { typ: 2 kV, src: 'p4 "6.2 ESD Ratings, HBM"' }
+  propagation_delay:
+    - typ: 17 ns
+      max: 30 ns
+      at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+      src: 'p8 "6.7 Switching Characteristics: tpd RCLK to QA-QH, 50 pF, TA = 25°C, 4.5 V"'
+    - typ: 50 ns
+      max: 150 ns
+      at: { VCC: 2 V, CL: 50 pF, TA: 25 °C }
+      src: 'p8 "6.7 Switching Characteristics: tpd RCLK to QA-QH, 50 pF, TA = 25°C, 2 V"'
+    - typ: 14 ns
+      max: 26 ns
+      at: { VCC: 6 V, CL: 50 pF, TA: 25 °C }
+      src: 'p8 "6.7 Switching Characteristics: tpd RCLK to QA-QH, 50 pF, TA = 25°C, 6 V"'
+  logic_function:
+    value: shift_register
+    src: p1 "Title, 8-Bit Shift Registers With 3-State Output Registers"
+
 pins:
   src:
     - p3 "Table 5-1 "Pin Functions", column "SOIC, PDIP, SO, CDIP, SSOP, or TSSOP" (pins 1-15)"

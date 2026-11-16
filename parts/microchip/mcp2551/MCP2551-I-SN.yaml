@@ -18,3 +18,10 @@ source: microchip/DS20001667@revG
 
 existence: { status: probable, src: 'p23 "Product Identification System, example c) MCP2551-I/SN"' }
 lifecycle: { status: nrnd, src: p1 "Banner "Not Recommended for New Designs / Please use MCP2561"" }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p23 "PRODUCT IDENTIFICATION SYSTEM, Temperature Range I"

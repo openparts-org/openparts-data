@@ -11,6 +11,28 @@ category: io_expander
 family: PCF8574/PCF8574A
 source: nxp/PCF8574_PCF8574A@rev5
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.5 V
+    max: 6 V
+    src: p16 "Table 9 Static characteristics, VDD supply voltage"
+  supply_current:
+    typ: 40 µA
+    max: 100 µA
+    at: { VDD: 6 V, f: 100 kHz }
+    src: p16 "Table 9 Static characteristics, IDD supply current, operating mode, fSCL = 100 kHz"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p15 "Table 7 Limiting values, Tamb ambient temperature, operating"
+  esd_hbm: { typ: 2 kV, src: 'p1 "2. Features: ESD protection exceeds 2000 V HBM per JESD22-A114"' }
+  output_current_low:
+    min: 10 mA
+    typ: 25 mA
+    at: { VDD: 5 V, VOUT: 1 V }
+    src: p16 "Table 9 Static characteristics, I/Os P0 to P7, IOL LOW-level output current, VOL = 1 V"
+
 pins:
   src:  p4 "Table 3 "Pin description", DIP16/SO16 column; Fig 3/Fig 4"
   "1":  { name: A0, type: input }

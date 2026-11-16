@@ -11,6 +11,25 @@ category: rs485_transceiver
 family: SN65HVD7x
 source: ti/SLLSE11H
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 3.6 V
+    src: p5 "7.3 Recommended Operating Conditions, VCC Supply voltage"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p5 "7.3 Recommended Operating Conditions, TA Operating free-air temperature"
+  esd_hbm: { typ: 8 kV, src: 'p5 "7.2 ESD Ratings, HBM, all pins"' }
+  data_rate:
+    max: 250 kbps
+    src: p5 "7.3 Recommended Operating Conditions, 1/tUI Signaling rate, SN65HVD72 row"
+  bus_fault_voltage:
+    min: -13 V
+    max: 16.5 V
+    src: p5 "7.1 Absolute Maximum Ratings, Voltage at A or B inputs"
+
 pins:
   src:
     - p4 ""Pin Functions" table (NAME / NUMBER)"

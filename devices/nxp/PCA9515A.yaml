@@ -10,6 +10,30 @@ category: interface
 family: PCA9515A
 source: nxp/PCA9515A@rev5
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.3 V
+    max: 3.6 V
+    src: 'p1 "2. Features: Operating supply voltage range"'
+  supply_current:
+    typ: 1.7 mA
+    max: 5 mA
+    at: { VCC: 3..3.6 V }
+    src: p7 "Table 4 Static characteristics (VCC = 3.0 V to 3.6 V), ICCL, both channels LOW"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p6 "Table 3 Limiting values, Tamb, operating in free air"
+  esd_hbm: { typ: 2 kV, src: 'p2 "2. Features: ESD protection exceeds 2000 V HBM per JESD22-A114"' }
+  channel_count: { value: "2", src: 'p1 "2. Features: 2-channel, bidirectional buffer"' }
+  propagation_delay:
+    min: 33 ns
+    typ: 102 ns
+    max: 180 ns
+    at: { VCC: 3..3.6 V }
+    src: p9 "Table 7 Dynamic characteristics (VCC = 3.0 V to 3.6 V), tPLH (slower than tPHL)"
+
 pins:
   src: p3 "Table 2 Pin description, SO8/TSSOP8 column; Fig 2, Fig 3"
   "1": { name: n.c., type: nc }

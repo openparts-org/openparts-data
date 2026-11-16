@@ -11,6 +11,27 @@ category: level_shifter
 family: PCA9306
 source: nxp/PCA9306@rev9.5
 
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p6 "Table 6 Operating conditions, Tamb"
+  esd_hbm:          { typ: 2 kV, src: 'p2 "2 Features: ESD protection exceeds 2000 V HBM"' }
+  channel_count:
+    value: "2"
+    src: 'p1 "Title: Dual bidirectional I2C-bus and SMBus voltage-level translator"'
+  propagation_delay:
+    - min: 0 ns
+      max: 2.75 ns
+      at: { CL: 50 pF, RL: 300 Ω, TA: -40..105 °C }
+      src: p8 "Table 9 Dynamic characteristics (translating up), VI(EN) = 3.3 V, tPHL, CL = 50 pF"
+    - min: 0 ns
+      max: 0.8 ns
+      at: { CL: 15 pF, RL: 300 Ω, TA: -40..105 °C }
+      src: p8 "Table 9 Dynamic characteristics (translating up), VI(EN) = 3.3 V, tPHL, CL = 15 pF"
+  output_structure: { value: open_drain, src: 'p2 "2 Features, Open-drain I2C-bus I/O ports"' }
+
 pins:
   src: p5 "Table 3 Pin description; Fig 3, Fig 5 (p4)"
   "1": { name: GND, type: ground }

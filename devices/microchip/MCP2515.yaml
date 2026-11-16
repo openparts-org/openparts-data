@@ -12,6 +12,15 @@ category: can_controller
 family: MCP2515
 source: microchip/DS20001801@revK
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 2.7 V, max: 5.5 V, src: 'p74 "DC Characteristics, VDD Supply Voltage"' }
+  supply_current:
+    max: 10 mA
+    at: { VDD: 5.5 V, f: 25 MHz }
+    src: p74 "DC Characteristics, IDD Operating Current, FOSC = 25 MHz"
+  data_rate:      { max: 1 Mbps, src: 'p1 "Features: Implements CAN V2.0B at 1 Mb/s"' }
+
 pins:
   src:  'p4 "Table 1-1 "Pinout Description", "PDIP/SOIC Pin #" column and I/O/P type column"'
   "1":  { name: TXCAN, type: output }

@@ -11,6 +11,27 @@ category: interface
 family: PCA9600
 source: nxp/PCA9600@rev6.2
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.5 V
+    max: 15 V
+    src: p7 "Table 6 Characteristics, VCC Supply voltage, Operating"
+  supply_current:
+    - typ: 5.2 mA
+      max: 6.75 mA
+      at: { VCC: 5 V }
+      src: p7 "Table 6 Characteristics, ICC Supply current, VCC = 5 V; buses HIGH"
+    - typ: 5.5 mA
+      max: 7.3 mA
+      at: { VCC: 15 V }
+      src: p7 "Table 6 Characteristics, ICC Supply current, VCC = 15 V; buses HIGH"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p7 "Table 5 Limiting values, Tamb Ambient temperature, Operating"
+  esd_hbm: { typ: 3.5 kV, src: 'p2 "Features: ESD protection exceeds 3500 V HBM per JESD22-A114"' }
+
 pins:
   src: p4 "Table 3 Pin description; Figure 2, Figure 3"
   "1": { name: SX, type: io }

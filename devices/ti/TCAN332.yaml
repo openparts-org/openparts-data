@@ -11,6 +11,25 @@ category: can_transceiver
 family: TCAN33x
 source: ti/SLLSEQ7F
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 3.6 V
+    src: p5 "5.3 Recommended Operating Conditions, VCC Supply voltage"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p5 "5.3 Recommended Operating Conditions, TA Operational free-air temperature"
+  esd_hbm:
+    typ: 4 kV
+    src: p5 "5.2 ESD Ratings, HBM, All pins except CANH and CANL (CANH/CANL ±25 kV)"
+  data_rate: { max: 1 Mbps, src: 'p3 "Device Options table, TCAN332 row, DERATE column"' }
+  bus_fault_voltage:
+    min: -14 V
+    max: 14 V
+    src: p5 "5.1 Absolute Maximum Ratings, Voltage at any bus terminal (CANH or CANL)"
+
 pins:
   src:
     - p4 "Table 4-1 "Pin Functions", column "TCAN332""

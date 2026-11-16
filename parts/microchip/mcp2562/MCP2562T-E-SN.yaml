@@ -27,3 +27,10 @@ existence:
   src: 'p27 "Product Identification System, legend: Device MCP2562T + Temperature E + Package SN"'
 
 lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p27 "PRODUCT IDENTIFICATION SYSTEM, Temperature Range E"

@@ -28,3 +28,15 @@ existence:
 lifecycle:
   status: active
   src: p18 "PACKAGE OPTION ADDENDUM, row TRS3232EIPWR, Status column "Active""
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p5 "5.4 Recommended Operating Conditions, TA, TRS3232EI"
+  data_rate:
+    min: 150 kbps
+    typ: 250 kbps
+    at: { CL: 1000 pF, RL: 3 kΩ }
+    src: p7 "5.9 Switching Characteristics, Maximum data rate, D/DB/DW/PW packages"

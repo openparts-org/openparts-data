@@ -10,6 +10,27 @@ category: level_shifter
 family: PCA9517A
 source: nxp/PCA9517A@rev4.1
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_current:
+    typ: 1.5 mA
+    max: 5 mA
+    at: { VCC: 5.5 V, TA: -40..85 °C }
+    src: p10 "Table 5 Static characteristics, ICCH both channels HIGH (VCC(B) pin; VCC(A) pin 1 mA max)"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p9 "Table 4 Limiting values, Tamb operating in free air"
+  esd_hbm:          { typ: 5.5 kV, src: 'p2 "2 Features: ESD protection exceeds 5500 V HBM"' }
+  channel_count:    { value: "2", src: 'p2 "2 Features, 2 channel, bidirectional buffer"' }
+  propagation_delay:
+    min: 100 ns
+    typ: 170 ns
+    max: 250 ns
+    at: { VCC: 2.7..5.5 V, TA: -40..85 °C }
+    src: p11 "Table 6 Dynamic characteristics, tPLH port B to port A (slowest)"
+  output_structure: { value: open_drain, src: 'p2 "2 Features, Open-drain input/outputs"' }
+
 pins:
   src: p4 "Table 3 Pin description, SO8/TSSOP8 column"
   "1": { name: VCC(A), type: power }

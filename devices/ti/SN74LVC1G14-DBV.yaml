@@ -13,6 +13,43 @@ category: logic
 family: SN74LVC1G14
 source: ti/SCES218AA
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.65 V
+    max: 5.5 V
+    src: p6 "5.3 Recommended Operating Conditions, VCC, Operating"
+  supply_current:
+    max: 10 µA
+    at: { VCC: 1.65..5.5 V }
+    src: 'p7 "5.5 Electrical Characteristics: ICC, VI = 5.5 V or GND, IO = 0, -40 to 85 °C"'
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: 'p6 "5.3 Recommended Operating Conditions, TA, All other packages (YZP/YZV/DPW: -40 to 85 °C)"'
+  esd_hbm:        { typ: 2 kV, src: 'p5 "5.2 ESD Ratings, HBM"' }
+  channel_count:  { value: "1", src: 'p1 "Title: Single Schmitt-Trigger Inverter"' }
+  propagation_delay:
+    min: 1.5 ns
+    max: 4.6 ns
+    at: { VCC: 3.3 V, CL: 15 pF, TA: -40..85 °C }
+    src: 'p8 "5.6 Switching Characteristics -40°C to 85°C: tpd, 3.3 V ± 0.3 V, CL = 15 pF column"'
+  logic_function: { value: inverter, src: 'p1 "Title: Single Schmitt-Trigger Inverter"' }
+  output_current_high:
+    - max: 32 mA
+      at: { VCC: 4.5 V }
+      src: p6 "5.3 Recommended Operating Conditions, IOH, VCC = 4.5 V (printed -32 mA)"
+    - max: 24 mA
+      at: { VCC: 3 V }
+      src: p6 "5.3 Recommended Operating Conditions, IOH, VCC = 3 V (printed -24 mA)"
+  output_current_low:
+    - max: 32 mA
+      at: { VCC: 4.5 V }
+      src: p6 "5.3 Recommended Operating Conditions, IOL, VCC = 4.5 V"
+    - max: 24 mA
+      at: { VCC: 3 V }
+      src: p6 "5.3 Recommended Operating Conditions, IOL, VCC = 3 V"
+
 pins:
   src:
     - p4 "Table 4-1 "Pin Functions", column "DBV, DCK, DRL, DPW""

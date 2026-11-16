@@ -25,3 +25,10 @@ existence:
 lifecycle:
   status: active
   src: p27 "Package Option Addendum, row SN75HVD3082EDR, Status Active"
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: 0 °C
+    max: 70 °C
+    src: p7 "6.3 Recommended Operating Conditions, TA, SN75HVD3082E"

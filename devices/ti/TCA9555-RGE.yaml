@@ -14,6 +14,30 @@ category: io_expander
 family: TCA9555
 source: ti/SCPS200E
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 1.65 V, max: 5.5 V, src: 'p5 "7.3 Recommended Operating Conditions, VCC"' }
+  supply_current:
+    typ: 22 µA
+    max: 40 µA
+    at: { VCC: 5.5 V, f: 400 kHz }
+    src: p7 "7.5 Electrical Characteristics, ICC Quiescent current, Operating mode, fSCL = 400 kHz, 5.5 V"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p5 "7.3 Recommended Operating Conditions, TA"
+  esd_hbm: { typ: 2 kV, src: 'p5 "7.2 ESD Ratings, HBM"' }
+  output_current_high:
+    max: 10 mA
+    src: p5 "7.3 Recommended Operating Conditions, IOH, P07-P00, P17-P10 (printed -10 mA)"
+  output_current_low:
+    - max: 18 mA
+      at: { TJ: 85 °C }
+      src: p5 "7.3 Recommended Operating Conditions, IOL, P07-P00, P17-P10, Tj ≤ 85°C"
+    - max: 25 mA
+      at: { TJ: 65 °C }
+      src: p5 "7.3 Recommended Operating Conditions, IOL, P07-P00, P17-P10, Tj ≤ 65°C"
+
 pins:
   src:
     - p4 ""Pin Functions" table, column "RTW, RGE""

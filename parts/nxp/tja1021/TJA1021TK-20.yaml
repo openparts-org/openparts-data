@@ -22,3 +22,9 @@ source: nxp/TJA1021@rev9
 
 existence: { status: verified, src: 'p3 "Table 2 Ordering information, type number TJA1021TK/20"' }
 lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_rate:
+    max: 20 kbps
+    src: 'p3 "Table 2 Ordering information, note [1]: /20 variants up to 20 kBd"'

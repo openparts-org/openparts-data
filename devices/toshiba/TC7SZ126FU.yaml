@@ -9,6 +9,39 @@ category: logic
 family: TC7SZ126FU
 source: toshiba/TC7SZ126FU-datasheet-en
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 1.65 V, max: 5.5 V, src: 'p3 "8. Operating Ranges, Supply voltage VCC"' }
+  supply_current:
+    max: 2 µA
+    at: { VCC: 5.5 V, TA: 25 °C }
+    src: p3 "9.1 DC Characteristics (Ta = 25 °C), Quiescent supply current ICC"
+  channel_count:
+    value: "1"
+    src: 'p1 "1. Functional Description: Bus Buffer with 3-State Output"'
+  propagation_delay:
+    - min: 0.5 ns
+      typ: 2.5 ns
+      max: 5.2 ns
+      at: { VCC: 3.3 V, CL: 15 pF, RL: 1 MΩ, TA: 25 °C }
+      src: p6 "9.4 AC Characteristics, tPLH/tPHL, VCC 3.3 ± 0.3 V, CL 15 pF, RL 1 MΩ"
+    - min: 0.8 ns
+      typ: 2.6 ns
+      max: 5 ns
+      at: { VCC: 5 V, CL: 50 pF, RL: 500 Ω, TA: 25 °C }
+      src: p6 "9.4 AC Characteristics, tPLH/tPHL, VCC 5.0 ± 0.5 V, CL 50 pF, RL 500 Ω"
+  logic_function:
+    value: buffer
+    src: 'p1 "1. Functional Description: Bus Buffer with 3-State Output"'
+  output_current_high:
+    min: 24 mA
+    at: { VCC: 3 V }
+    src: p1 "2. Features (3), High output current ±24 mA (min) at VCC = 3.0 V"
+  output_current_low:
+    min: 24 mA
+    at: { VCC: 3 V }
+    src: p1 "2. Features (3), High output current ±24 mA (min) at VCC = 3.0 V"
+
 pins:
   src: p2 "4. Marking and Pin Assignment, Pin Assignment (Top view)"
   "1": { name: G, type: input }

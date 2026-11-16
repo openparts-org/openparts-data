@@ -24,3 +24,10 @@ source: microchip/DS20005167@revC
 
 existence: { status: probable, src: 'p27 "Product Identification System, example d) MCP2561-E/SN"' }
 lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p27 "PRODUCT IDENTIFICATION SYSTEM, Temperature Range E"

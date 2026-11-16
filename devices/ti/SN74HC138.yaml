@@ -11,6 +11,33 @@ category: logic
 family: SNx4HC138
 source: ti/SCLS107G
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 2 V, max: 6 V, src: 'p4 "6.3 Recommended Operating Conditions, VCC"' }
+  supply_current:
+    max: 8 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p5 "6.6 Electrical Characteristics, TA = 25°C: ICC, VCC = 6 V"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA, SN74HC138 row"
+  esd_hbm: { typ: 2 kV, src: 'p4 "6.2 ESD Ratings: SN74HC138, HBM"' }
+  propagation_delay:
+    - typ: 18 ns
+      max: 36 ns
+      at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+      src: 'p6 "6.9 Switching Characteristics, TA = 25°C, CL = 50 pF: tpd A, B, or C to any Y, 4.5 V"'
+    - typ: 67 ns
+      max: 180 ns
+      at: { VCC: 2 V, CL: 50 pF, TA: 25 °C }
+      src: 'p6 "6.9 Switching Characteristics, TA = 25°C, CL = 50 pF: tpd A, B, or C to any Y, 2 V"'
+    - typ: 15 ns
+      max: 31 ns
+      at: { VCC: 6 V, CL: 50 pF, TA: 25 °C }
+      src: 'p6 "6.9 Switching Characteristics, TA = 25°C, CL = 50 pF: tpd A, B, or C to any Y, 6 V"'
+  logic_function: { value: decoder, src: 'p1 "Title, 3-Line To 8-Line Decoders/Demultiplexers"' }
+
 pins:
   src:
     - p3 ""Pin Functions" table, column "SOIC, SSOP, PDIP, SO, TSSOP, CDIP, CFP""

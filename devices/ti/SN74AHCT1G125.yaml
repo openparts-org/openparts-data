@@ -11,6 +11,29 @@ category: logic
 family: SN74AHCT1G125
 source: ti/SCLS378P
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 4.5 V, max: 5.5 V, src: 'p4 "5.3 Recommended Operating Conditions, VCC"' }
+  supply_current:
+    max: 10 µA
+    at: { VCC: 5.5 V, TA: -40..85 °C }
+    src: 'p5 "5.5 Electrical Characteristics: ICC, VI = VCC or GND, IO = 0, 5.5 V, -40 to 85 °C"'
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "5.3 Recommended Operating Conditions, TA"
+  esd_hbm:            { typ: 1 kV, src: 'p4 "5.2 ESD Ratings, HBM, all pins"' }
+  channel_count: { value: "1", src: 'p1 "Title: Single Bus Buffer Gate With 3-State Output"' }
+  propagation_delay:
+    min: 1 ns
+    max: 6.5 ns
+    at: { VCC: 5 V, CL: 15 pF, TA: -40..85 °C }
+    src: 'p6 "5.6 Switching Characteristics: tPLH/tPHL A to Y, CL = 15 pF, -40 to 85 °C"'
+  logic_function: { value: buffer, src: 'p1 "Title: Single Bus Buffer Gate With 3-State Output"' }
+  output_current_high:
+    - { max: 8 mA, src: 'p4 "5.3 Recommended Operating Conditions, IOH (printed -8 mA)"' }
+  output_current_low: [{ max: 8 mA, src: 'p4 "5.3 Recommended Operating Conditions, IOL"' }]
+
 pins:
   src:
     - p3 "Table 4-1. Pin Functions"

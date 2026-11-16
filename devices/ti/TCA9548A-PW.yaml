@@ -13,6 +13,36 @@ category: interface
 family: TCA9548A
 source: ti/SCPS207H
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    - min: 1.65 V
+      max: 5.5 V
+      at: { TA: -40..85 °C }
+      src: p4 "5.3 Recommended Operating Conditions, VCC, -40 ℃ ≤ TA ≤ 85 ℃"
+    - min: 1.65 V
+      max: 3.6 V
+      at: { TA: 85..125 °C }
+      src: p4 "5.3 Recommended Operating Conditions, VCC, 85 ℃ < TA ≤ 125 ℃"
+  supply_current:
+    typ: 50 µA
+    max: 80 µA
+    at: { VCC: 5.5 V, f: 400 kHz }
+    src: p6 "5.5 Electrical Characteristics, ICC, Operating mode, fSCL = 400 kHz, 5.5 V"
+  operating_temperature:
+    - min: -40 °C
+      max: 125 °C
+      at: { VCC: 1.65..3.6 V }
+      src: p4 "5.3 Recommended Operating Conditions, TA, 1.65 V ≤ VCC ≤ 3.6 V"
+    - min: -40 °C
+      max: 85 °C
+      at: { VCC: 3.6..5.5 V }
+      src: p4 "5.3 Recommended Operating Conditions, TA, 3.6 V < VCC ≤ 5.5 V"
+  esd_hbm: { typ: 2 kV, src: 'p4 "5.2 ESD Ratings, HBM"' }
+  channel_count:
+    value: "8"
+    src: 'p12 "Overview: 8-channel, bidirectional translating I2C switch"'
+
 pins:
   src:
     - p3 "Table 4-1 "Pin Functions", column "TSSOP, VSSOP (PW, DGS)""

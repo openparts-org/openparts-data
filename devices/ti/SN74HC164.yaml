@@ -11,6 +11,38 @@ category: logic
 family: SNx4HC164
 source: ti/SCLS115G
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 6 V
+    src: p6 "7.3 Recommended Operating Conditions, VCC, SN74HC164 column"
+  supply_current:
+    max: 8 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p7 "7.5 Electrical Characteristics, TA = 25°C: ICC, 6 V"'
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p6 "7.3 Recommended Operating Conditions, TA, SN74HC164 column"
+  esd_hbm: { typ: 2 kV, src: 'p6 "7.2 ESD Ratings, HBM"' }
+  propagation_delay:
+    - typ: 23 ns
+      max: 35 ns
+      at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+      src: 'p10 "7.11 Switching Characteristics, TA = 25°C, CL = 50 pF: tpd CLK to any Q, 4.5 V"'
+    - typ: 115 ns
+      max: 175 ns
+      at: { VCC: 2 V, CL: 50 pF, TA: 25 °C }
+      src: 'p10 "7.11 Switching Characteristics, TA = 25°C, CL = 50 pF: tpd CLK to any Q, 2 V"'
+    - typ: 20 ns
+      max: 30 ns
+      at: { VCC: 6 V, CL: 50 pF, TA: 25 °C }
+      src: 'p10 "7.11 Switching Characteristics, TA = 25°C, CL = 50 pF: tpd CLK to any Q, 6 V"'
+  logic_function:
+    value: shift_register
+    src: p1 "Title, 8-Bit Parallel-Out Serial Shift Registers"
+
 pins:
   src:
     - p4 "Pin Functions table, column SOIC, PDIP, SO, CDIP, CFP, or TSSOP NO."

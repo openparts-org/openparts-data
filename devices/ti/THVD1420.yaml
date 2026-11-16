@@ -11,6 +11,27 @@ category: rs485_transceiver
 family: THVD14x0
 source: ti/SLLSF78B
 
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 5.5 V
+    src: p5 "5.4 Recommended Operating Conditions, VCC Supply voltage"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p5 "5.4 Recommended Operating Conditions, TA Operating ambient temperature"
+  esd_hbm:
+    typ: 4 kV
+    src: p4 "5.2 ESD Ratings, HBM, All other pins (bus terminals and GND ±16 kV)"
+  data_rate:
+    max: 12 Mbps
+    src: p5 "5.4 Recommended Operating Conditions, 1/tUI Signaling rate, THVD1420"
+  bus_fault_voltage:
+    min: -16 V
+    max: 16 V
+    src: p4 "5.1 Absolute Maximum Ratings, VA, VB Voltage at A or B inputs"
+
 pins:
   src: [p3 "Table 4-1. Pin Functions", 'p3 "Figure 4-1. SOIC-8 (D), SOT-8 (DRL) Package, Top View"']
   "1": { name: R, type: output }
