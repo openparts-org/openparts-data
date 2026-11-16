@@ -1,0 +1,53 @@
+# Panasonic FK series case size code D (ø6.3 x 5.8 L), from
+# panasonic/ABA0000C1181 p1 "Dimensions" (standard products) and p2
+# "Land / Pad pattern", standard products.
+# Frame (smd_electrolytic): top view, origin at the base plate's centre,
+# terminals along X with the + terminal (pad 1) at -X. The source draws
+# the terminals along Y (- at the top, + at the bottom); turned 90° here,
+# so the plate side B (along the terminals) is body_width and A is
+# body_length (both "6.6" for size D).
+# Left out: K (terminal reach past the plate) and P (gap between the
+# terminals, reference) have no field; the plate thickness and the + side
+# corner cuts are not dimensioned (3D defaults).
+# I is printed in parentheses ("( ) Reference size") and recorded as the
+# reference value it is.
+schema_version: "0.2"
+kind: package
+id: manufacturers/panasonic/FK-D-6.3x5.8
+family: smd_electrolytic
+lead_count: { value: 2, src: 'p1 "Dimensions, terminals (+) / (-)"' }
+source: panasonic/ABA0000C1181
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: smd_electrolytic }
+
+dimensions:
+  body_width:
+    min: 6.4 mm
+    typ: 6.6 mm
+    max: 6.8 mm
+    src: p1 "Dimensions, size D row, B (B±0.2)"
+  body_length:
+    min: 6.4 mm
+    typ: 6.6 mm
+    max: 6.8 mm
+    src: p1 "Dimensions, size D row, A (A±0.2)"
+  can_diameter:
+    min: 5.8 mm
+    typ: 6.3 mm
+    max: 6.8 mm
+    src: p1 "Dimensions, size D row, øD (drawing øD±0.5)"
+  lead_length:    { typ: 2.6 mm, src: 'p1 "Dimensions, size D row, (I) reference size"' }
+  overall_width:  { max: 7.8 mm, src: 'p1 "Dimensions, size D row, H max."' }
+  overall_height: { min: 5.5 mm, typ: 5.8 mm, max: 6.1 mm, src: 'p1 "Dimensions, size D row, L"' }
+  lead_width: { min: 0.55 mm, typ: 0.65 mm, max: 0.75 mm, src: 'p1 "Dimensions, size D row, W"' }
+
+# pads (Land / Pad pattern, standard products, size D): a = 1.8
+# between the lands, b = 3.2 along the terminal axis, c = 1.6 across;
+# turned 90° (see header): width = b, length = c, centres
+# x = ±(a/2 + b/2) = ±2.5, + land (pad 1) at -X.
+pads:
+  value:
+    - { number: "1", x: -2.5, y: 0, width: 3.2, length: 1.6 }
+    - { number: "2", x: 2.5, y: 0, width: 3.2, length: 1.6 }
+  src: p2 "Land / Pad pattern, Standard products, size D row, a b c"

@@ -1,0 +1,17 @@
+# Panasonic Industry "FK series" surface-mount aluminium electrolytic
+# capacitor catalog (PDF /Title "FK series catalog", 12 pages), read with
+# pdftotext -layout and rendered pages 1-3. Page footers carry different
+# dates: pages 1-5 "10-Feb-26", page 6 "10-May-24", pages 7-12
+# "1-Sep-25"; `date` is the newest (the dimension, land-pattern and
+# characteristics-list pages 1-4 carry it). No revision is printed: the
+# document number in the URL is used. PDF page index = printed page.
+schema_version: "0.2"
+kind: source
+id: panasonic/ABA0000C1181
+retrieved: 2026-11-16
+url: https://industrial.panasonic.com/cdbs/www-data/pdf/RDE0000/ABA0000C1181.pdf
+date: 2026-02-10
+publisher: panasonic
+document_id: ABA0000C1181
+document_type: datasheet
+revision: ABA0000C1181

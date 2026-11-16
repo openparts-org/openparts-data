@@ -1,0 +1,27 @@
+# Panasonic FK series EEEFK1C100R: 10 µF, 16 V, case size B (standard product,
+# reflow, taping). Listed verbatim in the p3 "Characteristics list"
+# Part No. column (Standard Product), the size code column giving the
+# package.
+# lifecycle unknown: the catalog states no status for this row.
+schema_version: "0.2"
+kind: part
+id: panasonic/EEEFK1C100R
+manufacturer: panasonic
+mpn: EEEFK1C100R
+device: panasonic/EEEFK1C100
+package: manufacturers/panasonic/FK-B-4x5.8
+sources: [panasonic/ABA0000C1181]
+source: panasonic/ABA0000C1181
+
+existence:
+  status: verified
+  src: p3 "Characteristics list, Part No. Standard Product column, EEEFK1C100R row"
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance: { typ: 10 µF, src: 'p3 "Characteristics list, EEEFK1C100R row, Capacitance"' }
+  tolerance:   { tol: ±20 %, src: 'p3 "Characteristics list, Capacitance column header (±20 %)"' }
+  rated_voltage:
+    typ: 16 V
+    src: p3 "Characteristics list, EEEFK1C100R row, Rated voltage group"
