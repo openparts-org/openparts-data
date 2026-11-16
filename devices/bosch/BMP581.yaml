@@ -20,7 +20,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p8 "Table 1 Pressure Performance, Temperature range TA"
+    src: p8 "Table 1 Pressure Performance, Temperature range TA (operating, the only TA range printed)"
 
 pins:
   src:  p46 "Table 28 Pin description; Figure 23 pin-out"

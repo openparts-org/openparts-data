@@ -21,7 +21,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: 'p204 "25 Ordering Information, ATtiny25, -PU/-SU codes: Industrial (-40 to +85)"'
+    src: p161 "Table 21-1 DC Characteristics, TA = -40 to +85 C (specified; -PU/-SU codes)"
 
 pins:
   src:

@@ -24,7 +24,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: 'p4 "Temperature Characteristics: Operating Temperature Range TA"'
+    src: 'p3 "Electrical Specifications header: TA = -40 to +85 C (specified)"'
   esd_hbm:
     typ: 4 kV
     src: p3 "Absolute Maximum Ratings, ESD protection on all pins (HBM) > 4 kV"

@@ -30,7 +30,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p422 "33.2 Ordering Information ATmega32U4, Operation Range Industrial (-40 to +85)"
+    src: p383 "Table 29-1 DC Characteristic, TA = -40 to 85 C (specified)"
 
 pins:
   "1":

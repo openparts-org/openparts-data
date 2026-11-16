@@ -21,7 +21,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p410 "35.4 Ordering Information ATmega2560, Operation Range Industrial (-40 to 85)"
+    src: 'p355 "DC Characteristics header: TA = -40 to 85 C, VCC 1.8-5.5 V (specified)"'
 
 pins:
   src:   p2 "Figure 1-1 TQFP-pinout ATmega640/1280/2560, pins 1-100"

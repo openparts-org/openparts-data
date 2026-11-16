@@ -27,7 +27,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p48 "Table 4-1 Absolute maximum ratings, TA Operating temperature range"
+    src: 'p47 "3.20 Package and operation temperature: -40 to +85 C, industrial level (operating)"'
   esd_hbm: { typ: 5 kV, src: 'p56 "Table 4-10 ESD characteristics, VESD(HBM) 5000 V"' }
 
 pins:

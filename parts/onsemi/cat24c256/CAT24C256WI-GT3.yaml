@@ -32,4 +32,4 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p9 "Ordering Information, CAT24C256WI-GT3, I = Industrial; p2 TA = -40 to +85 °C"
+    src: 'p2 "EC header: VCC = 1.8-5.5 V, TA = -40 to +85 C (specified, I grade)"'

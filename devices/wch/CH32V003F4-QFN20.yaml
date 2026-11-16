@@ -27,7 +27,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p17 "Table 3-2 General operating conditions, TA Ambient temperature"
+    src: p17 "Table 3-2 General operating conditions, TA Ambient temperature (operating)"
   esd_hbm: { typ: 4 kV, src: 'p17 "Absolute maximum ratings, VESD(HBM) 4K V"' }
 
 pins:

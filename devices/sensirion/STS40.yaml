@@ -21,7 +21,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 125 °C
-    src: p6 "Table 4 Absolute maximum ratings, Operating temperature range"
+    src: 'p5 "Electrical specifications: min/max valid over -40 to 125 C (specified)"'
   esd_hbm: { typ: 2 kV, src: 'p6 "Table 4 Absolute maximum ratings, ESD HBM"' }
 
 pins:

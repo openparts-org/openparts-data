@@ -22,7 +22,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 125 °C
-    src: p4 "Temperature Ranges, Operating Temperature Range TA"
+    src: p4 "Temperature Ranges, Specified Temperature Range TA -40 to +125 C (specified)"
 
 pins:
   src: ['p11 "Table 3-1 Pin Function Table, column MSOP"', 'p1 "Package Types, 8-Pin MSOP"']

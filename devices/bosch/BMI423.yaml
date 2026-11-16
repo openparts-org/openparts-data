@@ -21,7 +21,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p9 "Table 1 Basic Electrical Parameter Specification, Operating temperature TO"
+    src: p9 "Table 1 Basic Electrical Parameter Specification, Operating temperature TO (operating, the only TA range printed)"
   esd_hbm: { typ: 2 kV, src: 'p15 "Table 10 Absolute maximum ratings, ESD HBM at any pin, 2000 V"' }
 
 pins:

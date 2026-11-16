@@ -21,7 +21,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p10 "Table 3 Pressure parameter specification, Operating temperature TA"
+    src: p10 "Table 3 Pressure parameter specification, Operating temperature TA (operational; full-accuracy 0..65 C not used)"
   esd_hbm: { typ: 2 kV, src: 'p13 "Table 5 Absolute maximum ratings, ESD HBM, at any pin"' }
 
 pins:

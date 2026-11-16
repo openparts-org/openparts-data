@@ -24,7 +24,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 125 °C
-    src: p7 "Absolute minimum and maximum ratings, Operating temperature range"
+    src: 'p6 "Table 3 Electrical specifications header: min/max for T = -40 to 125 C (specified)"'
   esd_hbm:
     typ: 4 kV
     src: p7 "Absolute minimum and maximum ratings, ESD HBM (human body model)"

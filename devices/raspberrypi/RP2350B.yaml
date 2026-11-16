@@ -28,7 +28,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p1337 "Table 1682 Thermal Performance, Ambient Temperature TC"
+    src: p1337 "Table 1682 Thermal Performance, Ambient Temperature TC (only range printed; labelled Ambient, symbol TC)"
   esd_hbm:
     typ: 2 kV
     src: p1336 "Table 1681 ESD performance for all pins, Human Body Model HBM"

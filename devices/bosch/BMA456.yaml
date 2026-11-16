@@ -21,7 +21,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p8 "Electrical specification, Operating Temperature TA"
+    src: p8 "Electrical specification, Operating Temperature TA (operating, the only TA range printed)"
   esd_hbm: { typ: 2 kV, src: 'p10 "Absolute maximum ratings, ESD HBM, at any pin"' }
 
 pins:

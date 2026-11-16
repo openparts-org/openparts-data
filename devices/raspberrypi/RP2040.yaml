@@ -24,7 +24,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p616 "Table 624 Thermal Performance, Case Temperature TC"
+    src: p616 "Table 624 Thermal Performance, Case Temperature TC (case TC, only range printed; no TA)"
   esd_hbm: { typ: 2 kV, src: 'p615 "Table 623 ESD performance for all pins, Human Body Model HBM"' }
 
 pins:

@@ -28,7 +28,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 125 °C
-    src: p38 "Product Identification System, Temperature Range E (only range offered)"
+    src: 'p4 "Electrical Specifications header: 1.8-5.5 V at -40 to +125 C (specified)"'
   esd_hbm: { typ: 4 kV, src: 'p3 "Absolute Maximum Ratings, ESD protection on all pins (HBM:MM)"' }
 
 pins:

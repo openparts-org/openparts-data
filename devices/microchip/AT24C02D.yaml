@@ -19,7 +19,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p9 "Table 4-1 DC and AC Operating Range, Operating Temperature (Case), Industrial"
+    src: p9 "Table 4-1 DC and AC Operating Range, Operating Temperature (Case), Industrial (case TC; no TA range printed)"
 
 pins:
   src: p5 "Table 2-1 "Pin Function Table", 8-Lead SOIC column"

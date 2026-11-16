@@ -23,7 +23,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 125 °C
-    src: p41 "Product Identification System, Temperature Range E (only range offered)"
+    src: 'p22 "DC Characteristics header: 4.5-5.5 V at -40 to +125 C (E-Temp) (specified)"'
 
 pins:
   src:  ['p4 "Table 1-1 Pinout Description, column SSOP"', 'p2 "Package Types, MCP23008 SSOP"']

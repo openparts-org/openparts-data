@@ -38,7 +38,7 @@ parameters:
   operating_temperature:
     min: -40 °C
     max: 85 °C
-    src: p27 "3.1 DC Characteristics, Operating Conditions (I-Temp)"
+    src: 'p27 "3.1 DC Characteristics header: 3.0-5.5 V at -40 to +85 C (I-Temp) (specified)"'
   esd_hbm:   { typ: 4 kV, src: 'p1 "Features: ESD Protection >4 kV HBM"' }
   data_rate: { max: 12 Mbps, src: 'p1 "Features: Supports Full-Speed USB (12 Mb/s)"' }
 

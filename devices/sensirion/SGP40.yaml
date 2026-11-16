@@ -23,7 +23,7 @@ parameters:
   operating_temperature:
     min: -10 °C
     max: 50 °C
-    src: p6 "Table 4 Recommended humidity and temperature conditions, Operating conditions, Temperature"
+    src: p6 "Table 4 Recommended humidity and temperature conditions, Operating conditions, Temperature (recommended operating)"
   esd_hbm: { typ: 2 kV, src: 'p7 "Table 5 Absolute minimum and maximum ratings, ESD HBM"' }
 
 pins:
