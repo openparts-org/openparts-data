@@ -11,16 +11,96 @@ schema_version: "0.2"
 kind: part
 id: raspberrypi/SC0918
 manufacturer: raspberrypi
-mpn: { value: SC0918, src: '""SC0918" with a digit zero"' }
+mpn: { value: SC0918, src: raspberrypi/PIP-686-pico-w ""SC0918" with a digit zero" }
 device: raspberrypi/PICO-W
 package: standards/MODULE40-21x51-P2.54-PICO-W
-sources: [raspberrypi/RP-008312-DS@rev2, raspberrypi/PIP-686-pico-w]
-source: raspberrypi/PIP-686-pico-w
+
+sources:
+  - raspberrypi/RP-008312-DS@rev2
+  - raspberrypi/PIP-686-pico-w
+  - raspberrypi/RP-008380-DS
+  - raspberrypi/RP-008379-DS
+  - raspberrypi/RP-008311-DS
+  - richtek/DS6154AB-05
+  - edac/690-005-298-486
+
+source: raspberrypi/RP-008380-DS
 
 existence:
   status: verified
   src:
     - 'raspberrypi/RP-008312-DS@rev2 p20 "Appendix A.2 Ordering code, Table 1: "Raspberry Pi Pico W  SCO918  5056561803173" (letter O as printed)"'
-    - '"Page header under "Raspberry Pi Pico W": "SC0918, SC0919""'
+    - 'raspberrypi/PIP-686-pico-w "Page header under "Raspberry Pi Pico W": "SC0918, SC0919""'
 
 lifecycle: { status: unknown }
+
+# Assembly (Canonical Data Specification 20.12): placements from the
+# Pico W design files (raspberrypi/RP-008380-DS, Allegro board; no BOM
+# is published), MPNs from the Pico W datasheet text and Figure 8
+# (powerchain schematic) and the design's part library. Only the main
+# visible parts are placed; the passives, the LED (no MPN stated) and
+# the CYW43439 under the shield can (SH1) are left out.
+assembly:
+  - ref: U1
+    part: raspberrypi/RP2040
+    x: 0
+    y: 1.55
+    src:
+      - '"U1 placement (57-pad QFN-56 land)"'
+      - raspberrypi/RP-008312-DS@rev2 p5 "Pico W provides external circuitry to support the RP2040 chip"
+  - ref: U3
+    part: winbond/W25Q16JVUXIQ
+    x: -3.315
+    y: 8.695
+    src:
+      - '"U3 placement; DSN part W25Q16JVUXIQ USON 2x3mm"'
+      - raspberrypi/RP-008312-DS@rev2 p5 "flash memory (Winbond W25Q16JV)"
+  - ref: X1
+    part: abracon/ABM8-272-T3
+    x: -4.695
+    y: -4.91
+    rotation: -90
+    src:
+      - '"X1 placement (12 MHz crystal next to RP2040 XIN/XOUT)"'
+      - raspberrypi/RP-008312-DS@rev2 p5 "crystal (Abracon ABM8-272-T3)"
+  - ref: U2
+    body: { width: 4, length: 3, height: 0.8, color: "#1c1c1e" }
+    x: 2.27
+    y: 14.59
+    src:
+      - '"U2 placement"'
+      - 'raspberrypi/RP-008312-DS@rev2 p15 "Figure 8: U2 RT6154AGQW"'
+      - 'richtek/DS6154AB-05 p18 "WDFN-14AL 4x3: D 3.9-4.1, E 2.9-3.1, A max 0.8"'
+  - ref: D1
+    body: { width: 4.2, length: 1.65, height: 0.95, color: "#2a2a2a" }
+    x: 6
+    y: 18.9
+    rotation: 90
+    src:
+      - '"D1 placement"'
+      - 'raspberrypi/RP-008312-DS@rev2 p15 "Figure 8: D1 MBR120VLSFT1G"'
+      - raspberrypi/RP-008379-DS "Pico BOM item 6, MBR120VLSFT1G Size 4.2x1.65x0.95mm"
+  - ref: J1
+    body: { width: 6.9, length: 5, height: 2.6, color: "#c8c8c8" }
+    x: 0
+    y: 24
+    rotation: 180
+    src:
+      - '"J1 placement (footprint origin)"'
+      - 'raspberrypi/RP-008312-DS@rev2 p15 "Figure 8: J1 690-005-298-486"'
+      - edac/690-005-298-486 "shell width 6.90, depth 5.00, height 2.60"
+  - ref: SW1
+    body: { width: 4.24, length: 3.2, height: 2.5, color: "#e8e8e8" }
+    x: -3.5
+    y: 13.5
+    rotation: 90
+    src:
+      - '"SW1 placement; DSN part TP-1221U-K9K5325"'
+      - raspberrypi/RP-008311-DS "TP-1221U switch body bounding box 4.24 x 3.2, 2.5 high"
+  - ref: SH1
+    body: { width: 12, length: 10, height: 1.7, color: "#b9bbbe" }
+    x: -0.1
+    y: -12.5
+    src:
+      - '"SH1 origin (4.4, 8.0) = can corner; 12 x 10 can over U19, centre (10.4, 13.0)"'
+      - '"DSN part rf_shield_picow: WiFi/BT Shield Can 12.0x10.0x1.7mm"'

@@ -1,0 +1,31 @@
+# RT6150B buck-boost converter, WDFN-10L 2.5x2.5 pinout, from DS6150AB-06
+# "Pin Configuration" (TOP VIEW, page 2; one figure for both packages)
+# and the "Functional Pin Description" table (page 2): VOUT 1, LX2 2,
+# GND 3, LX1 4, VIN 5, EN 6, PS 7, VINA 8, GND 9, FB 10, and the exposed
+# pad 11 = GND ("3, 9, 11 (Exposed Pad)"), here pad EP.
+schema_version: "0.2"
+kind: device
+id: richtek/RT6150B-WDFN10
+manufacturer: richtek
+category: switching_regulator
+family: RT6150
+source: richtek/DS6150AB-06
+
+parameters:
+  input_voltage_max: { max: 5.5 V, src: 'p1 "Features: Input Voltage Range: 1.8V to 5.5V"' }
+
+pins:
+  src:
+    - p2 "Pin Configuration (TOP VIEW), WDFN-10L 3x3 / WDFN-10L 2.5x2.5"
+    - p2 "Functional Pin Description table"
+  "1":  { name: VOUT, type: power }
+  "2":  { name: LX2, type: passive }
+  "3":  { name: GND, type: ground }
+  "4":  { name: LX1, type: passive }
+  "5":  { name: VIN, type: power }
+  "6":  { name: EN, type: input }
+  "7":  { name: PS, type: input }
+  "8":  { name: VINA, type: power }
+  "9":  { name: GND, type: ground }
+  "10": { name: FB, type: input }
+  EP:   { name: GND, type: ground }

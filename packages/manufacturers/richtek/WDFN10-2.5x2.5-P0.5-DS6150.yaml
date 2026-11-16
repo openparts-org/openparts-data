@@ -1,0 +1,49 @@
+# Richtek "W-Type 10L DFN 2.5x2.5 Package" (WDFN-10L 2.5x2.5, the RT6150B's
+# package), from DS6150AB-06 page 13. Page 13 prints only the table; the
+# drawing it belongs to is the one on page 12 (same symbols, rendered
+# and read): terminal rows along the top and bottom edges, D and D2
+# horizontal (along the rows). Min/Max columns only, so no typ is
+# recorded; the pitch e is printed as one value.
+# Frame: D (along the rows) = body_length (Y), E = body_width (X);
+# exposed pad E2 = width (X), D2 = length (Y). body_height = A,
+# lead_thickness = A3.
+schema_version: "0.2"
+kind: package
+id: manufacturers/richtek/WDFN10-2.5x2.5-P0.5-DS6150
+family: dfn
+lead_count: { value: 10, src: 'p13 ""W-Type 10L DFN 2.5x2.5 Package", 10 terminals"' }
+source: richtek/DS6150AB-06
+
+pitch: { typ: 0.5 mm, src: 'p13 "W-Type 10L DFN 2.5x2.5 table, e 0.500"' }
+geometry: { type: parametric, generator: dfn }
+
+dimensions:
+  body_width:
+    min: 2.4 mm
+    max: 2.6 mm
+    src: p13 "W-Type 10L DFN 2.5x2.5 table, E 2.400 / 2.600 (across the rows)"
+  body_length:
+    min: 2.4 mm
+    max: 2.6 mm
+    src: p13 "W-Type 10L DFN 2.5x2.5 table, D 2.400 / 2.600 (along the rows)"
+  body_height:
+    min: 0.7 mm
+    max: 0.8 mm
+    src: p13 "W-Type 10L DFN 2.5x2.5 table, A 0.700 / 0.800"
+  exposed_pad:
+    src:    p13 "W-Type 10L DFN 2.5x2.5 table, E2 (X) and D2 (Y); drawing p12"
+    width:  { min: 1.15 mm, max: 1.25 mm }
+    length: { min: 1.95 mm, max: 2.05 mm }
+  standoff: { min: 0 mm, max: 0.05 mm, src: 'p13 "W-Type 10L DFN 2.5x2.5 table, A1 0.000 / 0.050"' }
+  lead_width:
+    min: 0.2 mm
+    max: 0.3 mm
+    src: p13 "W-Type 10L DFN 2.5x2.5 table, b 0.200 / 0.300"
+  lead_length:
+    min: 0.35 mm
+    max: 0.45 mm
+    src: p13 "W-Type 10L DFN 2.5x2.5 table, L 0.350 / 0.450"
+  lead_thickness:
+    min: 0.175 mm
+    max: 0.25 mm
+    src: p13 "W-Type 10L DFN 2.5x2.5 table, A3 0.175 / 0.250"

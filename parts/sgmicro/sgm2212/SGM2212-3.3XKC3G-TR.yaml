@@ -1,0 +1,31 @@
+# SGM2212-3.3XKC3G/TR: SGM2212 datasheet Rev. A.2 page 2 "PACKAGE/ORDERING
+# INFORMATION": model SGM2212-3.3, SOT-223-3, -40C to +125C, ordering
+# number "SGM2212-3.3XKC3G/TR", Tape and Reel, 2500. The file name and id
+# replace the "/" of the ordering number with "-".
+# Lifecycle: the datasheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: sgmicro/SGM2212-3.3XKC3G-TR
+manufacturer: sgmicro
+mpn: SGM2212-3.3XKC3G/TR
+device: sgmicro/SGM2212-3.3
+
+package:
+  value: standards/SOT223-3.5x6.5-P2.3-TabPin2-SGMicro
+  src: 'p2 "PACKAGE/ORDERING INFORMATION, SGM2212-3.3XKC3G/TR: SOT-223-3"'
+
+sources: [sgmicro/SGM2212@revA.2]
+source: sgmicro/SGM2212@revA.2
+
+existence:
+  status: verified
+  src: p2 "PACKAGE/ORDERING INFORMATION, ordering number "SGM2212-3.3XKC3G/TR""
+
+lifecycle: { status: unknown }
+
+parameters:
+  output_voltage: { typ: 3.3 V, src: 'p2 "PACKAGE/ORDERING INFORMATION, model SGM2212-3.3"' }
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p2 "PACKAGE/ORDERING INFORMATION, SGM2212-3.3XKC3G/TR, Specified Temperature Range (only range printed)"

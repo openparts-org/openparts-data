@@ -1,0 +1,43 @@
+# Seeed Studio XIAO RP2040 as a module: board outline and pin holes from the maker's design files
+# (seeed/XIAO-RP2040-SCH-PCB@v1.3): Seeed Studio XIAO RP2040 v1.3.kicad_pcb. Outline = the board-outline layer extents (rectangle; rounded
+# or notched corners are not modelled). Frame: board centre, +X right, +Y up, top view, USB end up.
+# The design is turned 90 deg from the design file. Pads: the plated header holes, numbered
+# counter-clockwise from the upper left (this dataset's numbering, not a maker pin number);
+# pin names are in the device. Land = the design pad diameter, drill = its hole.
+# The board edge is castellated too (half-holes on the edge): only the inner through-holes are
+# the pads here (a carrier footprint for pin headers).
+schema_version: "0.2"
+kind: package
+id: standards/MODULE14-18x21-P2.54-XIAO-RP2040
+family: module
+lead_count: 14
+source: seeed/XIAO-RP2040-SCH-PCB@v1.3
+
+pitch: { typ: 2.54 mm, src: '"header pads at 2.54 mm centres"' }
+geometry: { type: parametric, generator: module }
+
+dimensions:
+  body_width:    { typ: 17.78 mm, src: '"board outline extent along X (package frame)"' }
+  body_length:   { typ: 21.102 mm, src: '"board outline extent along Y (package frame)"' }
+  body_height:
+    typ: 1.6 mm
+    src: '"Seeed Studio XIAO RP2040 v1.3.kicad_pcb: (general (thickness 1.6))"'
+  hole_diameter: { typ: 0.95 mm, src: '"header pad drill"' }
+
+pads:
+  value:
+    - { number: "1", x: -7.72, y: 7.679, width: 1.5, length: 1.5, drill: 0.95, shape: circle }
+    - { number: "2", x: -7.62, y: 5.139, width: 1.5, length: 1.5, drill: 0.95, shape: circle }
+    - { number: "3", x: -7.62, y: 2.599, width: 1.5, length: 1.5, drill: 0.95, shape: circle }
+    - { number: "4", x: -7.62, y: 0.059, width: 1.5, length: 1.5, drill: 0.95, shape: circle }
+    - { number: "5", x: -7.62, y: -2.481, width: 1.5, length: 1.5, drill: 0.95, shape: circle }
+    - { number: "6", x: -7.62, y: -5.021, width: 1.5, length: 1.5, drill: 0.95, shape: circle }
+    - { number: "7", x: -7.72, y: -7.561, width: 1.5, length: 1.5, drill: 0.95, shape: circle }
+    - { number: "8", x: 7.72, y: -7.561, width: 1.5, length: 1.5, drill: 0.95, shape: circle }
+    - { number: "9", x: 7.62, y: -5.021, width: 1.5, length: 1.5, drill: 0.95, shape: circle }
+    - { number: "10", x: 7.62, y: -2.481, width: 1.5, length: 1.5, drill: 0.95, shape: circle }
+    - { number: "11", x: 7.62, y: 0.059, width: 1.5, length: 1.5, drill: 0.95, shape: circle }
+    - { number: "12", x: 7.62, y: 2.599, width: 1.5, length: 1.5, drill: 0.95, shape: circle }
+    - { number: "13", x: 7.62, y: 5.139, width: 1.5, length: 1.5, drill: 0.95, shape: circle }
+    - { number: "14", x: 7.72, y: 7.679, width: 1.5, length: 1.5, drill: 0.95, shape: circle }
+  src: '"header pads of J2, J4 (design-file positions, drill, pad diameter)"'

@@ -1,0 +1,31 @@
+# Seeed Studio XIAO RP2040 (102010428). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (seeed/XIAO-RP2040-SCH-PCB@v1.3),
+# converted to the package frame (board centre, top view; see the package comment).
+# Only components with an OpenParts part, or a box whose size AND height a source states,
+# are listed. Left out:
+#   J1 shielding cover, U3 P25Q16SH flash (Puya), U4 LDO (DFN1x1, no MPN), X3 crystal 2520, USB1
+#   USB-C, RESET0/BOOT0 TD-1183, RGB1/RGB2/PWR0 LEDs, D1/D2/D8/D9: no OpenParts part and no
+#   height in the footprint names; passives skipped
+# U6: under the J1 shielding cover on the real board; the cover (no height in the design data) is not modelled.
+schema_version: "0.2"
+kind: part
+id: seeed/102010428
+manufacturer: seeed
+mpn: "102010428"
+device: seeed/XIAO-RP2040
+package: standards/MODULE14-18x21-P2.54-XIAO-RP2040
+sources: [seeed/XIAO-RP2040-wiki, seeed/XIAO-RP2040-SCH-PCB@v1.3]
+source: seeed/XIAO-RP2040-SCH-PCB@v1.3
+
+existence:
+  status: probable
+  src: 'seeed/XIAO-RP2040-wiki "page metadata docsearch:sku_tag: 102010428, 100045204"'
+
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: U6
+    part: raspberrypi/RP2040
+    x: 1.626
+    y: -2.786
+    src: '"Seeed U6 at 145.715, -106.629 rot -90"'

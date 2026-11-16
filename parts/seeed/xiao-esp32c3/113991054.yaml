@@ -1,0 +1,49 @@
+# Seeed Studio XIAO ESP32C3 (113991054). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (seeed/XIAO-ESP32C3-KiCad@v1.3),
+# converted to the package frame (board centre, top view; see the package comment).
+# Only components with an OpenParts part, or a box whose size AND height a source states,
+# are listed. Left out:
+#   U2 TLV75733PDBVR, U1 (SOT-25, no value), USB0 UBF31-0171, BOOT0/RST0 TD-1183SN, D1 MSK4005,
+#   Q1, F1, CHG0 LED: no OpenParts part / no height; passives skipped
+schema_version: "0.2"
+kind: part
+id: seeed/113991054
+manufacturer: seeed
+mpn: "113991054"
+device: seeed/XIAO-ESP32C3
+package: standards/MODULE14-18x21-P2.54-XIAO-ESP32C3
+sources: [seeed/XIAO-ESP32C3-wiki, seeed/XIAO-ESP32C3-KiCad@v1.3]
+source: seeed/XIAO-ESP32C3-KiCad@v1.3
+
+existence:
+  status: probable
+  src: 'seeed/XIAO-ESP32C3-wiki "page metadata docsearch:sku_tag: 113991054, 102010633, 101991467"'
+
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: U4
+    part: espressif/ESP32-C3FH4
+    x: 2.388
+    y: -0.686
+    rotation: 90
+    src: '"XIAO U4 at 147.815, -107.391 rot -90"'
+  - ref: X4
+    body: { width: 2, length: 1.6, height: 0.5, color: "#c8c8c8" }
+    x: -1.778
+    y: -3.493
+    src: ['"XIAO X4 at 145.009, -103.226 rot -90"', '"X4 footprint name "X4-SMD-2.0X1.6X0.5MM""']
+  - ref: X2
+    body: { width: 1.6, length: 1, height: 0.5, color: "#c8c8c8" }
+    x: 4.064
+    y: -5.88
+    rotation: 180
+    src: ['"XIAO X2 at 142.621, -109.068 rot 90"', '"X2 footprint name "X2-SMD-1.6X1.0X0.5MM""']
+  - ref: ANT0
+    body: { width: 2.6, length: 2.6, height: 1, color: "#d4b060" }
+    x: 0
+    y: -8.382
+    rotation: 270
+    src:
+      - '"XIAO ANT0 at 140.119, -105.004 rot 180"'
+      - '"ANT0 footprint name "U-FL3P-SMD-2.6X2.6X1.0MM""'

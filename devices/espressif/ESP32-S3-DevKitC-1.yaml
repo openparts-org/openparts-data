@@ -1,0 +1,61 @@
+# ESP32-S3-DevKitC-1 development board, as a 44-pin through-hole module. Pin
+# names from the user guide's header tables ("Header Block": J1 and J3, No. /
+# Name / Type / Function); the module numbering runs down J1 (pins 1-22 =
+# J1 1-22) and up J3 (pin 23 = J3 pin 22 ... pin 44 = J3 pin 1), as the
+# package's counter-clockwise hole rows. Names are the silkscreen names the
+# tables give (GPIO numbers as bare numbers, G = ground). Types: P power (G
+# ground), I input (RST typed reset), I/O/T io, a dash nc.
+schema_version: "0.2"
+kind: device
+id: espressif/ESP32-S3-DevKitC-1
+manufacturer: espressif
+category: microcontroller
+family: ESP32-S3
+source: espressif/esp32-s3-devkitc-1-user-guide-v1.1
+
+pins:
+  src:  ['"Header Block, J1 table (No., Name, Type)"', '"Header Block, J3 table (No., Name, Type)"']
+  "1":  { name: 3V3, type: power }
+  "2":  { name: 3V3, type: power }
+  "3":  { name: RST, type: reset }
+  "4":  { name: "4", type: io }
+  "5":  { name: "5", type: io }
+  "6":  { name: "6", type: io }
+  "7":  { name: "7", type: io }
+  "8":  { name: "15", type: io }
+  "9":  { name: "16", type: io }
+  "10": { name: "17", type: io }
+  "11": { name: "18", type: io }
+  "12": { name: "8", type: io }
+  "13": { name: "3", type: io }
+  "14": { name: "46", type: io }
+  "15": { name: "9", type: io }
+  "16": { name: "10", type: io }
+  "17": { name: "11", type: io }
+  "18": { name: "12", type: io }
+  "19": { name: "13", type: io }
+  "20": { name: "14", type: io }
+  "21": { name: 5V, type: power }
+  "22": { name: G, type: ground }
+  "23": { name: G, type: ground }
+  "24": { name: G, type: ground }
+  "25": { name: "19", type: io }
+  "26": { name: "20", type: io }
+  "27": { name: "21", type: io }
+  "28": { name: "47", type: io }
+  "29": { name: "48", type: io }
+  "30": { name: "45", type: io }
+  "31": { name: "0", type: io }
+  "32": { name: "35", type: io }
+  "33": { name: "36", type: io }
+  "34": { name: "37", type: io }
+  "35": { name: "38", type: io }
+  "36": { name: "39", type: io }
+  "37": { name: "40", type: io }
+  "38": { name: "41", type: io }
+  "39": { name: "42", type: io }
+  "40": { name: "2", type: io }
+  "41": { name: "1", type: io }
+  "42": { name: RX, type: io }
+  "43": { name: TX, type: io }
+  "44": { name: G, type: ground }

@@ -1,0 +1,48 @@
+# 32-pad VQFN, 5x5 mm, 0.5 mm pitch, 3.10x3.10 mm exposed pad --
+# Microchip "32M1-A", "32-Lead Thin Plastic Quad Flat, No Lead Package
+# (S4B) - 5x5 mm Body [VQFN] Punch Singulated; 3.10x3.10 mm Exposed
+# Pad", drawing C04-21400 Rev A sheet 2, in the ATmega48A/PA/88A/PA/
+# 168A/PA/328/P data sheet DS40002061B section 39.3 (page 642),
+# dimension table read as text. A (overall height) is recorded as
+# body_height, as on the other QFN packages.
+schema_version: "0.2"
+kind: package
+id: standards/QFN32-5x5-P0.5-EP3.1
+family: qfn
+lead_count: 32
+source: microchip/DS40002061@revB
+
+pitch:
+  typ: 0.5 mm
+  src: p642 "Section 39.3 32M1-A, drawing C04-21400 sheet 2, "Pitch e 0.50 BSC""
+
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:     { typ: 5 mm, src: 'p642 "C04-21400 sheet 2, "Overall Width E 5.00 BSC""' }
+  body_length:    { typ: 5 mm, src: 'p642 "C04-21400 sheet 2, "Overall Length D 5.00 BSC""' }
+  body_height:
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 1 mm
+    src: p642 "C04-21400 sheet 2, "Overall Height A""
+  exposed_pad:
+    src:    p642 "C04-21400 sheet 2, "Exposed Pad Length D2" / "Exposed Pad Width E2""
+    width:  { min: 2.95 mm, typ: 3.1 mm, max: 3.25 mm }
+    length: { min: 2.95 mm, typ: 3.1 mm, max: 3.25 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p642 "C04-21400 sheet 2, "Standoff A1""
+  lead_width:
+    min: 0.18 mm
+    typ: 0.23 mm
+    max: 0.3 mm
+    src: p642 "C04-21400 sheet 2, "Terminal Width b""
+  lead_length:
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p642 "C04-21400 sheet 2, "Terminal Length L""
+  lead_thickness: { typ: 0.2 mm, src: 'p642 "C04-21400 sheet 2, "Terminal Thickness A3 0.20 REF""' }

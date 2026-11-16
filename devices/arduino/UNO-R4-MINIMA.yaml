@@ -1,0 +1,49 @@
+# Arduino UNO R4 Minima: the pins of the module package standards/MODULE32-69x53-P2.54-ARDUINO-UNO-R4,
+# named after the datasheet header tables (see below).
+# Types are this dataset's reading of the net names (GND ground; supply nets power;
+# reset nets reset; others io). AI candidate, needs review.
+# connected_to: a second header pad on the same design net as an earlier pin.
+# R4 Minima: names from the datasheet tables 10.1 Analog / 10.2 Digital (PDF page 13), header
+# pin 1 at the left end of each row as in the UNO layout; the table prints D0 as "D0/TX0".
+schema_version: "0.2"
+kind: device
+id: arduino/UNO-R4-MINIMA
+manufacturer: arduino
+category: microcontroller
+family: RA4M1
+source: arduino/ABX00080-datasheet@rev6
+
+pins:
+  src:  'p13 "10.1 Analog, 10.2 Digital: Pin / Function"'
+  "1":  { name: BOOT, type: io }
+  "2":  { name: IOREF, type: io }
+  "3":  { name: Reset, type: reset }
+  "4":  { name: 3V3, type: power }
+  "5":  { name: 5V, type: power }
+  "6":  { name: GND, type: ground }
+  "7":  { name: GND, type: ground }
+  "8":  { name: VIN, type: power }
+  "9":  { name: A0, type: io }
+  "10": { name: A1, type: io }
+  "11": { name: A2, type: io }
+  "12": { name: A3, type: io }
+  "13": { name: A4, type: io }
+  "14": { name: A5, type: io }
+  "15": { name: D0/TX0, type: io }
+  "16": { name: D1/TX0, type: io }
+  "17": { name: D2, type: io }
+  "18": { name: D3, type: io }
+  "19": { name: D4/CANTX0, type: io }
+  "20": { name: D5/CANRX0, type: io }
+  "21": { name: D6, type: io }
+  "22": { name: D7, type: io }
+  "23": { name: D8, type: io }
+  "24": { name: D9, type: io }
+  "25": { name: D10/CS, type: io }
+  "26": { name: D11/COPI, type: io }
+  "27": { name: D12/CIPO, type: io }
+  "28": { name: D13/SCK, type: io }
+  "29": { name: GND, type: ground }
+  "30": { name: AREF, type: analog }
+  "31": { name: SDA, type: io }
+  "32": { name: SCL, type: io }

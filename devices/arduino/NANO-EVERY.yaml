@@ -1,0 +1,46 @@
+# Arduino Nano Every: the pins of the module package standards/MODULE30-18x43-P2.54-ARDUINO-NANO-EVERY,
+# named after the net each header pad connects to in the maker's design file (arduino/ABX00028-cad-files@V4.0).
+# Types are this dataset's reading of the net names (GND ground; supply nets power;
+# reset nets reset; others io). AI candidate, needs review.
+# connected_to: a second header pad on the same design net as an earlier pin.
+# Pad land 1.524 mm: FAB pad symbol P_ROUND (30) (radius, mil), castellation track 60 mil.
+schema_version: "0.2"
+kind: device
+id: arduino/NANO-EVERY
+manufacturer: arduino
+category: microcontroller
+family: ATmega4809
+source: arduino/ABX00028-cad-files@V4.0
+
+pins:
+  src:  '"header pads JP2, JP3: net names"'
+  "1":  { name: SCK, type: io }
+  "2":  { name: 3V3, type: power }
+  "3":  { name: AREF, type: analog }
+  "4":  { name: A0, type: io }
+  "5":  { name: A1, type: io }
+  "6":  { name: A2, type: io }
+  "7":  { name: A3, type: io }
+  "8":  { name: A4/SDA, type: io }
+  "9":  { name: A5/SCL, type: io }
+  "10": { name: A6, type: io }
+  "11": { name: A7, type: io }
+  "12": { name: 5V, type: power }
+  "13": { name: RESETN, type: reset }
+  "14": { name: GND, type: ground }
+  "15": { name: VIN, type: power }
+  "16": { name: TX1, type: io }
+  "17": { name: RX1, type: io }
+  "18": { name: RESETN, type: reset, connected_to: "13" }
+  "19": { name: GND, type: ground }
+  "20": { name: D2, type: io }
+  "21": { name: D3~, type: io }
+  "22": { name: D4, type: io }
+  "23": { name: D5~, type: io }
+  "24": { name: D6~, type: io }
+  "25": { name: D7, type: io }
+  "26": { name: D8, type: io }
+  "27": { name: D9~, type: io }
+  "28": { name: D10~, type: io }
+  "29": { name: MOSI, type: io }
+  "30": { name: MISO, type: io }

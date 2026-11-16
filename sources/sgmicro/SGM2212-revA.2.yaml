@@ -1,0 +1,15 @@
+# SG Micro SGM2212 datasheet "800mA, Low Noise, Low Quiescent Current, High PSRR, Low Dropout Linear
+# Regulator", JULY 2023 - REV. A.2, 22 pages; linked from https://www.sg-micro.com/product/SGM2212
+# (the link carries a public access_token query, left out here). Downloaded 2026-11-17 with curl.
+# Read with pdftotext -layout. PDF page index = printed page number. Facts only.
+schema_version: "0.2"
+kind: source
+id: sgmicro/SGM2212@revA.2
+sha256: 9dbdd68baf96fe58ca011183b0c2bfba09a9ea9cce0b15755ab258cfda78d71b
+retrieved: 2026-11-17
+url: https://www.sg-micro.com/rect/assets/54089b71-cc25-4f36-af2e-34b07f00a108/SGM2212.pdf
+publisher: sgmicro
+document_id: SGM2212
+document_type: datasheet
+revision: A.2
+date: 2023-07

@@ -1,0 +1,34 @@
+# Adafruit QT Py RP2040 (4900). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (adafruit/Adafruit-QT-Py-RP2040-PCB@5b6ebd1),
+# converted to the package frame (board centre, top view; see the package comment).
+# Only components with an OpenParts part, or a box whose size AND height a source states,
+# are listed. Left out:
+#   U5 8MB QSPI flash (no MPN), X2 USB-C, CONN1 JST SH4, SW1/SW2 KMR2, LED1 SK6805 1515, Y1,
+#   D1/D2 NSR0320: no exact part / no height
+# U1: value "AP2112K-3.3" (ordering suffix not in the design).
+schema_version: "0.2"
+kind: part
+id: adafruit/4900
+manufacturer: adafruit
+mpn: "4900"
+device: adafruit/QT-PY-RP2040
+package: standards/MODULE14-18x20-P2.54-ADAFRUIT-QT-PY
+sources: [adafruit/Adafruit-QT-Py-RP2040-PCB@5b6ebd1]
+source: adafruit/Adafruit-QT-Py-RP2040-PCB@5b6ebd1
+
+existence: { status: verified, src: '"README: https://www.adafruit.com/product/4900"' }
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: IC2
+    part: raspberrypi/RP2040
+    x: 0.254
+    y: -3.162
+    side: bottom
+    src: '"Adafruit IC2 at 9.144, 6.998 rot 0"'
+  - ref: U1
+    part: diodes/AP2112K-3.3TRG1
+    x: -0.051
+    y: -0.483
+    rotation: 180
+    src: '"Adafruit U1 at 8.839, 9.677 rot 90"'

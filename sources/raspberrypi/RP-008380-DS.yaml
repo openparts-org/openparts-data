@@ -1,0 +1,22 @@
+# Raspberry Pi Pico W design files ("Design files (Cadence Allegro)"):
+# zip RP-008380-DS-1-RPi-PicoW-PUBLIC-20220607.zip with the Allegro board
+# rpi-picow-r3-2.brd and the OrCAD schematic RPI-PICOW-R2.DSN (no BOM).
+# The board was opened with KiCad 10's Allegro importer to read component
+# placements. Licence: the Pico-series documentation page says "Design
+# files for Raspberry Pi Pico W and Pico WH are openly available with no
+# limitations. Raspberry Pi grants permission to use, copy, modify, and
+# distribute the following designs for any purpose, with or without
+# fee." (the zip has no licence file). Facts only (positions); nothing
+# copied or rehosted. Positions are converted to the module package
+# frame (board centre (10.5, 25.5) subtracted).
+schema_version: "0.2"
+kind: source
+id: raspberrypi/RP-008380-DS
+sha256: 63bf2ffe4fe085c4cb035123f7c2892dd13b3d58754165a959ee86410cc311ef
+retrieved: 2026-11-17
+url: https://pip.raspberrypi.com/documents/RP-008380-DS
+publisher: raspberrypi
+document_id: RP-008380-DS
+document_type: reference_design
+revision: "1"
+date: 2022-06-07

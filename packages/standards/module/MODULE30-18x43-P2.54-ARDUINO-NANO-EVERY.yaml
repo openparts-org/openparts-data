@@ -1,0 +1,72 @@
+# Arduino Nano Every as a module: board outline and pin holes from the maker's design files
+# (arduino/ABX00028-cad-files@V4.0): NANOEveryV4.0.mnt / .fab / .csv. Outline = the board-outline layer extents (rectangle; rounded
+# or notched corners are not modelled). Frame: board centre, +X right, +Y up, top view, USB end up.
+# The design is turned -90 deg from the design file. Pads: the plated header holes, numbered
+# counter-clockwise from the upper left (this dataset's numbering, not a maker pin number);
+# pin names are in the device. Land = the design pad diameter, drill = its hole.
+schema_version: "0.2"
+kind: package
+id: standards/MODULE30-18x43-P2.54-ARDUINO-NANO-EVERY
+family: module
+lead_count: 30
+source: arduino/ABX00028-cad-files@V4.0
+
+pitch: { typ: 2.54 mm, src: '"header pads at 2.54 mm centres"' }
+geometry: { type: parametric, generator: module }
+
+dimensions:
+  body_width:    { typ: 17.78 mm, src: '"board outline extent along X (package frame)"' }
+  body_length:   { typ: 43.18 mm, src: '"board outline extent along Y (package frame)"' }
+  hole_diameter: { typ: 1.016 mm, src: '"header pad drill"' }
+
+pads:
+  value:
+    - { number: "1", x: -7.62, y: 17.78, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "2", x: -7.62, y: 15.24, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "3", x: -7.62, y: 12.7, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "4", x: -7.62, y: 10.16, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "5", x: -7.62, y: 7.62, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "6", x: -7.62, y: 5.08, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "7", x: -7.62, y: 2.54, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "8", x: -7.62, y: 0, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "9", x: -7.62, y: -2.54, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "10", x: -7.62, y: -5.08, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "11", x: -7.62, y: -7.62, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - number: "12"
+      x: -7.62
+      y: -10.16
+      width: 1.524
+      length: 1.524
+      drill: 1.016
+      shape: circle
+    - { number: "13", x: -7.62, y: -12.7, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - number: "14"
+      x: -7.62
+      y: -15.24
+      width: 1.524
+      length: 1.524
+      drill: 1.016
+      shape: circle
+    - number: "15"
+      x: -7.62
+      y: -17.78
+      width: 1.524
+      length: 1.524
+      drill: 1.016
+      shape: circle
+    - { number: "16", x: 7.62, y: -17.78, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "17", x: 7.62, y: -15.24, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "18", x: 7.62, y: -12.7, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "19", x: 7.62, y: -10.16, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "20", x: 7.62, y: -7.62, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "21", x: 7.62, y: -5.08, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "22", x: 7.62, y: -2.54, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "23", x: 7.62, y: 0, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "24", x: 7.62, y: 2.54, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "25", x: 7.62, y: 5.08, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "26", x: 7.62, y: 7.62, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "27", x: 7.62, y: 10.16, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "28", x: 7.62, y: 12.7, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "29", x: 7.62, y: 15.24, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+    - { number: "30", x: 7.62, y: 17.78, width: 1.524, length: 1.524, drill: 1.016, shape: circle }
+  src: '"header pads of JP2, JP3 (design-file positions, drill, pad diameter)"'

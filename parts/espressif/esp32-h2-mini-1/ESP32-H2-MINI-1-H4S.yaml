@@ -1,0 +1,25 @@
+# ESP32-H2-MINI-1-H4S: 4 MB (Quad SPI) flash, -40 ~ 105 C. Listed in the module
+# datasheet's series comparison table (p3 "Table 1: ESP32-H2-MINI-1 Series
+# Comparison") -> existence verified. Lifecycle: the table marks no status
+# (NRND/EOL) for this part -> unknown.
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-H2-MINI-1-H4S
+manufacturer: espressif
+mpn: ESP32-H2-MINI-1-H4S
+device: espressif/ESP32-H2-MINI-1
+package: manufacturers/espressif/MODULE53-13.2x16.6-ESP32-H2-MINI-1
+sources: [espressif/esp32-h2-mini-1_mini-1u_datasheet_en@rev1.6]
+source: espressif/esp32-h2-mini-1_mini-1u_datasheet_en@rev1.6
+
+existence:
+  status: verified
+  src: 'p3 "Table 1: ESP32-H2-MINI-1 Series Comparison, Part Number: ESP32-H2-MINI-1-H4S"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: 'p3 "Table 1: ESP32-H2-MINI-1 Series Comparison, ESP32-H2-MINI-1-H4S, Ambient Temp."'

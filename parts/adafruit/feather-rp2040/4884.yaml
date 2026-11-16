@@ -1,0 +1,37 @@
+# Adafruit Feather RP2040 (4884). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (adafruit/Adafruit-Feather-RP2040-PCB@ea88166),
+# converted to the package frame (board centre, top view; see the package comment).
+# Only components with an OpenParts part, or a box whose size AND height a source states,
+# are listed. Left out:
+#   U1 flash (value W25Q64JVSSIQ = SOIC-8, but footprint USON8 4x4: conflict), U2
+#   "RT9080/AP2112-3.3" (either), X6 USB-C CUSB31-CFM2AX-01-X, X1 JST PH2, CONN1 JST SH4, SW1
+#   KMR2, SW3, LED1 WS2812B 3535, Y1 12 MHz, Q3 DMG3415, D4 MBR0540, D1 NSR0320 (series name
+#   only): no exact part / no height
+schema_version: "0.2"
+kind: part
+id: adafruit/4884
+manufacturer: adafruit
+mpn: "4884"
+device: adafruit/FEATHER-RP2040
+package: standards/MODULE28-23x51-P2.54-ADAFRUIT-FEATHER
+sources: [adafruit/Adafruit-Feather-RP2040-PCB@ea88166]
+source: adafruit/Adafruit-Feather-RP2040-PCB@ea88166
+
+existence:
+  status: verified
+  src: '"README: product pages at https://www.adafruit.com/products/4884"'
+
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: IC1
+    part: raspberrypi/RP2040
+    x: 0
+    y: -9.017
+    rotation: 180
+    src: '"Adafruit IC1 at 34.417, 11.43 rot 270"'
+  - ref: U3
+    part: microchip/MCP73831T-2ACI-OT
+    x: 4.102
+    y: 6.858
+    src: '"Adafruit U3 at 18.542, 15.532 rot 0"'

@@ -1,0 +1,49 @@
+# SGM2212 800 mA LDO, fixed 3.3 V option. Pins from the SGM2212 datasheet
+# Rev. A.2 page 4 "PIN DESCRIPTION" (SOT-223-3 column: 1 GND, 2 VOUT,
+# 3 VIN, TAB VOUT), cross-checked against "PIN CONFIGURATIONS" SOT-223-3
+# (TOP VIEW). The tab carries pin number 2 in the package
+# (standards/SOT223-3.5x6.5-P2.3-TabPin2-SGMicro), so no extra pin here.
+# Only the SOT-223-3 pin numbering is recorded (the TO-252/TO-263 columns
+# match it; TDFN differs and is not modelled).
+schema_version: "0.2"
+kind: device
+id: sgmicro/SGM2212-3.3
+manufacturer: sgmicro
+category: linear_regulator
+family: SGM2212
+source: sgmicro/SGM2212@revA.2
+
+parameters:
+  output_type:
+    value: fixed
+    src: 'p1 "Features: Fixed Outputs of 1.2V, 1.8V, 2.5V, 2.8V, 3.3V, 5V"'
+  output_voltage:
+    - min: 3.267 V
+      typ: 3.3 V
+      max: 3.333 V
+      at: { IOUT: 10 mA, TJ: 25 °C }
+      src: p5 "Elec. Char., Output Voltage, SGM2212-3.3, IOUT = 10mA, TJ = +25C"
+    - min: 3.251 V
+      max: 3.349 V
+      at: { IOUT: 0..800 mA, TJ: -40..125 °C }
+      src: p5 "Elec. Char., Output Voltage, SGM2212-3.3, IOUT = 0 to 800mA"
+  input_voltage_max:
+    max: 20 V
+    src: p3 "Recommended Operating Conditions, Input Voltage Range 2.7V to 20V"
+  output_current: { max: 800 mA, src: 'p1 "Features: Output Current: 800mA"' }
+  dropout_voltage:
+    - typ: 240 mV
+      max: 280 mV
+      at: { IOUT: 500 mA, TJ: 25 °C }
+      src: p6 "Elec. Char., Dropout Voltage (VOUT = 3.3V), IOUT = 500mA, TJ = +25C"
+    - max: 380 mV
+      at: { IOUT: 500 mA, TJ: -40..125 °C }
+      src: p6 "Elec. Char., Dropout Voltage (VOUT = 3.3V), IOUT = 500mA"
+
+pins:
+  src:
+    - p4 "PIN DESCRIPTION table, SOT-223-3 column (1 GND, 2 VOUT, 3 VIN)"
+    - p4 "PIN CONFIGURATIONS SOT-223-3 (TOP VIEW), "TAB IS VOUT""
+  "1": { name: GND, type: ground }
+  "2": { name: VOUT, type: power }
+  "3": { name: VIN, type: power }

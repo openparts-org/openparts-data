@@ -1,0 +1,224 @@
+# Arduino UNO R3 as a module: board outline and pin holes from the maker's design files
+# (arduino/A000066-cad-files@Rev3e): UNO-TH_Rev3e.brd. Outline = the board-outline layer extents (rectangle; rounded
+# or notched corners are not modelled). Frame: board centre, +X right, +Y up, top view, as in the design file.
+# The design is turned 0 deg from the design file. Pads: the plated header holes, numbered
+# counter-clockwise from the upper left (this dataset's numbering, not a maker pin number);
+# pin names are in the device. Land = the design pad diameter, drill = its hole.
+schema_version: "0.2"
+kind: package
+id: standards/MODULE32-69x53-P2.54-ARDUINO-UNO
+family: module
+lead_count: 32
+source: arduino/A000066-cad-files@Rev3e
+
+pitch: { typ: 2.54 mm, src: '"header pads at 2.54 mm centres"' }
+geometry: { type: parametric, generator: module }
+
+dimensions:
+  body_width:    { typ: 68.58 mm, src: '"board outline extent along X (package frame)"' }
+  body_length:   { typ: 53.34 mm, src: '"board outline extent along Y (package frame)"' }
+  hole_diameter: { typ: 0.85 mm, src: '"header pad drill"' }
+
+pads:
+  value:
+    - number: "1"
+      x: -6.35
+      y: -24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "2"
+      x: -3.81
+      y: -24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "3"
+      x: -1.27
+      y: -24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - { number: "4", x: 1.27, y: -24.13, width: 1.4224, length: 1.4224, drill: 0.85, shape: circle }
+    - { number: "5", x: 3.81, y: -24.13, width: 1.4224, length: 1.4224, drill: 0.85, shape: circle }
+    - { number: "6", x: 6.35, y: -24.13, width: 1.4224, length: 1.4224, drill: 0.85, shape: circle }
+    - { number: "7", x: 8.89, y: -24.13, width: 1.4224, length: 1.4224, drill: 0.85, shape: circle }
+    - number: "8"
+      x: 11.43
+      y: -24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "9"
+      x: 16.51
+      y: -24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "10"
+      x: 19.05
+      y: -24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "11"
+      x: 21.59
+      y: -24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "12"
+      x: 24.13
+      y: -24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "13"
+      x: 26.67
+      y: -24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "14"
+      x: 29.21
+      y: -24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "15"
+      x: 29.21
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "16"
+      x: 26.67
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "17"
+      x: 24.13
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "18"
+      x: 21.59
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "19"
+      x: 19.05
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "20"
+      x: 16.51
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "21"
+      x: 13.97
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "22"
+      x: 11.43
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "23"
+      x: 7.366
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "24"
+      x: 4.826
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "25"
+      x: 2.286
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "26"
+      x: -0.254
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "27"
+      x: -2.794
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "28"
+      x: -5.334
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "29"
+      x: -7.874
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "30"
+      x: -10.414
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "31"
+      x: -12.954
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+    - number: "32"
+      x: -15.494
+      y: 24.13
+      width: 1.4224
+      length: 1.4224
+      drill: 0.85
+      shape: circle
+  src: '"header pads of AD, IOH, IOL, POWER (design-file positions, drill, pad diameter)"'

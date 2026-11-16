@@ -1,0 +1,40 @@
+# Adafruit QT Py RP2040 as a module: board outline and pin holes from the maker's design files
+# (adafruit/Adafruit-QT-Py-RP2040-PCB@5b6ebd1): Adafruit QT Py RP2040.brd. Outline = the board-outline layer extents (rectangle; rounded
+# or notched corners are not modelled). Frame: board centre, +X right, +Y up, top view, USB end up.
+# The design is turned 0 deg from the design file. Pads: the plated header holes, numbered
+# counter-clockwise from the upper left (this dataset's numbering, not a maker pin number);
+# pin names are in the device. Land = the design pad diameter, drill = its hole.
+# The board edge is castellated too (half-holes on the edge): only the inner through-holes are
+# the pads here (a carrier footprint for pin headers).
+schema_version: "0.2"
+kind: package
+id: standards/MODULE14-18x20-P2.54-ADAFRUIT-QT-PY
+family: module
+lead_count: 14
+source: adafruit/Adafruit-QT-Py-RP2040-PCB@5b6ebd1
+
+pitch: { typ: 2.54 mm, src: '"header pads at 2.54 mm centres"' }
+geometry: { type: parametric, generator: module }
+
+dimensions:
+  body_width:    { typ: 17.78 mm, src: '"board outline extent along X (package frame)"' }
+  body_length:   { typ: 20.32 mm, src: '"board outline extent along Y (package frame)"' }
+  hole_diameter: { typ: 1 mm, src: '"header pad drill"' }
+
+pads:
+  value:
+    - { number: "1", x: -7.62, y: 7.811, width: 1.778, length: 1.778, drill: 1, shape: circle }
+    - { number: "2", x: -7.62, y: 5.271, width: 1.778, length: 1.778, drill: 1, shape: circle }
+    - { number: "3", x: -7.62, y: 2.73, width: 1.778, length: 1.778, drill: 1, shape: circle }
+    - { number: "4", x: -7.62, y: 0.191, width: 1.778, length: 1.778, drill: 1, shape: circle }
+    - { number: "5", x: -7.62, y: -2.349, width: 1.778, length: 1.778, drill: 1, shape: circle }
+    - { number: "6", x: -7.62, y: -4.889, width: 1.778, length: 1.778, drill: 1, shape: circle }
+    - { number: "7", x: -7.62, y: -7.429, width: 1.778, length: 1.778, drill: 1, shape: circle }
+    - { number: "8", x: 7.62, y: -7.429, width: 1.778, length: 1.778, drill: 1, shape: circle }
+    - { number: "9", x: 7.62, y: -4.889, width: 1.778, length: 1.778, drill: 1, shape: circle }
+    - { number: "10", x: 7.62, y: -2.349, width: 1.778, length: 1.778, drill: 1, shape: circle }
+    - { number: "11", x: 7.62, y: 0.191, width: 1.778, length: 1.778, drill: 1, shape: circle }
+    - { number: "12", x: 7.62, y: 2.73, width: 1.778, length: 1.778, drill: 1, shape: circle }
+    - { number: "13", x: 7.62, y: 5.271, width: 1.778, length: 1.778, drill: 1, shape: circle }
+    - { number: "14", x: 7.62, y: 7.811, width: 1.778, length: 1.778, drill: 1, shape: circle }
+  src: '"header pads of JP1, JP3 (design-file positions, drill, pad diameter)"'

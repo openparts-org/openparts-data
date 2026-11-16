@@ -1,0 +1,54 @@
+# Winbond 8-pad USON 2x3x0.6 mm (package code UX), 0.5 mm pitch. From
+# section 11.3 of the W25Q16JV datasheet Revision J, PDF page 68
+# (printed 67); the drawing and its table are an image, rendered and
+# read. Frame: the drawing's D (3.00, horizontal; the pads are on its two
+# ends) = body_width (X), E (2.00, along the pad columns) = body_length
+# (Y). body_height = A. D1/E1 (0.20 x 1.60, the centre strip of the
+# bottom view) are not modelled: the drawing does not call it a pad and
+# the pad assignment (Figure 1b) gives no centre pin.
+schema_version: "0.2"
+kind: package
+id: manufacturers/winbond/USON8-3x2-P0.5-UX
+family: son
+
+lead_count:
+  value: 8
+  src: p68 "section 11.3 "8-Pad USON 2x3x0.6-mm (Package Code UX)", 8 pads, 4 on each end (bottom view)"
+
+source: winbond/W25Q16JV@revJ
+
+pitch: { typ: 0.5 mm, src: 'p68 "section 11.3 table, e 0.5 BSC"' }
+geometry: { type: parametric, generator: son }
+
+dimensions:
+  body_width:
+    min: 2.9 mm
+    typ: 3 mm
+    max: 3.1 mm
+    src: p68 "section 11.3 table, D 2.90 / 3.00 / 3.10 (horizontal, across the pad columns)"
+  body_length:
+    min: 1.9 mm
+    typ: 2 mm
+    max: 2.1 mm
+    src: p68 "section 11.3 table, E 1.90 / 2.00 / 2.10 (along the pad columns)"
+  body_height:
+    min: 0.5 mm
+    typ: 0.55 mm
+    max: 0.6 mm
+    src: p68 "section 11.3 table, A 0.50 / 0.55 / 0.60"
+  lead_thickness: { typ: 0.15 mm, src: 'p68 "section 11.3 table, A3 0.15 (nominal only)"' }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p68 "section 11.3 table, A1 0.00 / 0.02 / 0.05"
+  lead_width:
+    min: 0.2 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p68 "section 11.3 table, b 0.20 / 0.25 / 0.30"
+  lead_length:
+    min: 0.4 mm
+    typ: 0.45 mm
+    max: 0.5 mm
+    src: p68 "section 11.3 table, L 0.40 / 0.45 / 0.50"

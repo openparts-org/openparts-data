@@ -1,0 +1,31 @@
+# RT6150B, fixed 3.3 V output, Richtek Green, WDFN-10L 2.5x2.5. The
+# marking table of DS6150AB-06 (page 2) prints "RT6150B-33GQW" verbatim
+# -> existence verified. Ordering legend (page 1): 33 = 3.3V (only for
+# RT6150B), G = Green, QW = WDFN-10L (W-Type), B = WDFN-10L 2.5x2.5. The
+# regulator of the Raspberry Pi Pico (design file BOM, U2).
+# lifecycle: no production-status statement read -> unknown.
+schema_version: "0.2"
+kind: part
+id: richtek/RT6150B-33GQW
+manufacturer: richtek
+mpn: RT6150B-33GQW
+device: richtek/RT6150B-WDFN10
+
+package:
+  value: manufacturers/richtek/WDFN10-2.5x2.5-P0.5-DS6150
+  src: 'p1 "Ordering Information: B = WDFN-10L 2.5x2.5, QW = W-Type; outline p13"'
+
+sources: [richtek/DS6150AB-06]
+source: richtek/DS6150AB-06
+
+existence: { status: verified, src: 'p2 "Marking Information, RT6150B-33GQW, Product Code 03"' }
+lifecycle: { status: unknown }
+
+parameters:
+  output_voltage:
+    typ: 3.3 V
+    src: 'p1 "Ordering Information, Output Voltage 33 : 3.3V (Only for RT6150B)"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "Recommended Operating Conditions, Ambient Temperature Range"

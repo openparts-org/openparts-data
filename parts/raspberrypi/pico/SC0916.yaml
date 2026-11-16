@@ -11,11 +11,256 @@ manufacturer: raspberrypi
 mpn: SC0916
 device: raspberrypi/PICO
 package: standards/MODULE40-21x51-P2.54-PICO
-sources: [raspberrypi/RP-008307-DS@rev2]
-source: raspberrypi/RP-008307-DS@rev2
+
+sources:
+  - raspberrypi/RP-008307-DS@rev2
+  - raspberrypi/RP-008379-DS
+  - raspberrypi/RP-008311-DS
+  - edac/690-005-298-486
+  - diodes/DS31783-rev8-2
+
+source: raspberrypi/RP-008379-DS
 
 existence:
   status: verified
-  src: 'p25 "Appendix A.2 Ordering code, Table 6: second row of "Raspberry Pi Pico": "SC0916  0617588405587""'
+  src: 'raspberrypi/RP-008307-DS@rev2 p25 "Appendix A.2 Ordering code, Table 6: second row of "Raspberry Pi Pico": "SC0916  0617588405587""'
 
 lifecycle: { status: unknown }
+
+# Assembly (Canonical Data Specification 20.12): the Pico R3 design files
+# (raspberrypi/RP-008379-DS: Allegro board + BOM). Every fitted BOM line
+# is placed; not fitted ones (J0, J2, R4, R15, TP1-TP6) are left out.
+# OpenParts parts where the dataset has the MPN, else a box of the BOM
+# "Size" column (L along the pads); J1 from EDAC's drawing, Q1 from the
+# Diodes datasheet, SW1 (no maker datasheet served) from the Pico STEP.
+# SC0916 is assumed to be the same board as SC0915 (same model row).
+assembly:
+  - { ref: U1, part: raspberrypi/RP2040, x: 0, y: -0.5, src: '"BOM item 25; U1 placement"' }
+  - ref: U2
+    part: richtek/RT6150B-33GQW
+    x: 2.9
+    y: 14.6
+    rotation: 180
+    src: '"BOM item 26; U2 placement"'
+  - ref: U3
+    part: winbond/W25Q16JVUXIQ
+    x: -3.8
+    y: 6.4
+    rotation: 90
+    src: '"BOM item 27; U3 placement"'
+  - { ref: R1, part: yageo/RC0402FR-0710KL, x: 6.1, y: -0.9, src: '"BOM item 13; R1 placement"' }
+  - ref: R2
+    part: yageo/RC0402FR-07100KL
+    x: 3.5
+    y: 18.6
+    rotation: 180
+    src: '"BOM item 14; R2 placement"'
+  - ref: R6
+    part: yageo/RC0402FR-07100KL
+    x: 6.4
+    y: 4.6
+    rotation: -90
+    src: '"BOM item 14; R6 placement"'
+  - ref: R8
+    part: yageo/RC0402FR-07100KL
+    x: -2.7
+    y: 18.8
+    rotation: 180
+    src: '"BOM item 14; R8 placement"'
+  - { ref: R3, part: yageo/RC0402FR-07470RL, x: -2.7, y: 17.8, src: '"BOM item 15; R3 placement"' }
+  - ref: R11
+    part: yageo/RC0402FR-071KL
+    x: -5.5
+    y: 7.4
+    rotation: -90
+    src: '"BOM item 21; R11 placement"'
+  - { ref: R14, part: yageo/RC0402FR-071KL, x: -1.15, y: -7.1, src: '"BOM item 21; R14 placement"' }
+  - ref: C1
+    body: { width: 2, length: 1.25, height: 1.25, color: "#b5916a" }
+    x: 2.9
+    y: 17.1
+    rotation: 180
+    src: '"BOM item 1, Size 2.0x1.25x1.25mm; C1 placement"'
+  - ref: C2
+    body: { width: 2, length: 1.25, height: 1.25, color: "#b5916a" }
+    x: 2.9
+    y: 12.1
+    rotation: 180
+    src: '"BOM item 1, Size 2.0x1.25x1.25mm; C2 placement"'
+  - ref: C3
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: 6
+    y: 9.4
+    rotation: 90
+    src: '"BOM item 2, Size 0.6x0.3x0.3mm; C3 placement"'
+  - ref: C4
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: -4.5
+    y: 2.2
+    rotation: 180
+    src: '"BOM item 3, Size 0.6x0.3x0.3mm; C4 placement"'
+  - ref: C5
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: -4.5
+    y: -1.5
+    rotation: 180
+    src: '"BOM item 3, Size 0.6x0.3x0.3mm; C5 placement"'
+  - ref: C6
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: 4.6
+    y: -1.9
+    rotation: -45
+    src: '"BOM item 3, Size 0.6x0.3x0.3mm; C6 placement"'
+  - ref: C7
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: 4.5
+    y: 2.4
+    src: '"BOM item 3, Size 0.6x0.3x0.3mm; C7 placement"'
+  - ref: C8
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: 0
+    y: -5.5
+    rotation: -90
+    src: '"BOM item 3, Size 0.6x0.3x0.3mm; C8 placement"'
+  - ref: C9
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: 0.7
+    y: -5.5
+    rotation: -90
+    src: '"BOM item 3, Size 0.6x0.3x0.3mm; C9 placement"'
+  - ref: C10
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: 0
+    y: 4.6
+    rotation: 90
+    src: '"BOM item 3, Size 0.6x0.3x0.3mm; C10 placement"'
+  - ref: C11
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: -0.7
+    y: 4.6
+    rotation: 90
+    src: '"BOM item 3, Size 0.6x0.3x0.3mm; C11 placement"'
+  - ref: C15
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: -4.55
+    y: 8.85
+    rotation: 90
+    src: '"BOM item 3, Size 0.6x0.3x0.3mm; C15 placement"'
+  - ref: C12
+    body: { width: 1, length: 0.5, height: 0.5, color: "#b5916a" }
+    x: 2.2
+    y: 4.6
+    rotation: 90
+    src: '"BOM item 4, Size 1.0x0.5x0.5mm; C12 placement"'
+  - ref: C13
+    body: { width: 1, length: 0.5, height: 0.5, color: "#b5916a" }
+    x: 4.6
+    y: 4.6
+    rotation: 90
+    src: '"BOM item 4, Size 1.0x0.5x0.5mm; C13 placement"'
+  - ref: C14
+    body: { width: 1, length: 0.5, height: 0.5, color: "#b5916a" }
+    x: 3.1
+    y: 4.6
+    rotation: 90
+    src: '"BOM item 4, Size 1.0x0.5x0.5mm; C14 placement"'
+  - ref: C18
+    body: { width: 1, length: 0.5, height: 0.5, color: "#b5916a" }
+    x: -4.7
+    y: 3.05
+    rotation: 180
+    src: '"BOM item 4, Size 1.0x0.5x0.5mm; C18 placement"'
+  - ref: C16
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: -4.6
+    y: -9.55
+    rotation: 90
+    src: '"BOM item 5, Size 0.6x0.3x0.3mm; C16 placement"'
+  - ref: C17
+    body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
+    x: 0
+    y: -8.55
+    rotation: -90
+    src: '"BOM item 5, Size 0.6x0.3x0.3mm; C17 placement"'
+  - ref: D1
+    body: { width: 4.2, length: 1.65, height: 0.95, color: "#2a2a2a" }
+    x: 6
+    y: 18.9
+    rotation: 90
+    src: '"BOM item 6, Size 4.2x1.65x0.95mm; D1 placement"'
+  - ref: D2
+    body: { width: 1.6, length: 1.15, height: 0.55, color: "#f4f4f2" }
+    x: -5.7
+    y: 20.7
+    src: '"BOM item 7, Size 1.6x1.15x0.55mm; D2 placement"'
+  - ref: L1
+    body: { width: 2.5, length: 2, height: 1.2, color: "#3b3d40" }
+    x: 6
+    y: 14.6
+    rotation: -90
+    src: '"BOM item 11, Size 2.5x2x1.2mm; L1 placement"'
+  - ref: R5
+    body: { width: 1, length: 0.5, height: 0.35, color: "#141414" }
+    x: 6.9
+    y: 9.6
+    rotation: -90
+    src: '"BOM item 17, Size 1x0.5x0.35mm; R5 placement"'
+  - ref: R7
+    body: { width: 1.6, length: 0.8, height: 0.45, color: "#141414" }
+    x: 4.4
+    y: 9.1
+    rotation: -90
+    src: '"BOM item 18, Size 1.6x0.8x0.45mm; R7 placement"'
+  - ref: R9
+    body: { width: 1, length: 0.5, height: 0.35, color: "#141414" }
+    x: 5.5
+    y: 4.6
+    rotation: -90
+    src: '"BOM item 19, Size 1x0.5x0.35mm; R9 placement"'
+  - ref: R10
+    body: { width: 1, length: 0.5, height: 0.35, color: "#141414" }
+    x: 6.1
+    y: 0
+    rotation: 180
+    src: '"BOM item 20, Size 1x0.5x0.35mm; R10 placement"'
+  - ref: R12
+    body: { width: 0.6, length: 0.3, height: 0.23, color: "#141414" }
+    x: 0.7
+    y: 4.6
+    rotation: -90
+    src: '"BOM item 22, Size 0.6x0.3x0.23mm; R12 placement"'
+  - ref: R13
+    body: { width: 0.6, length: 0.3, height: 0.23, color: "#141414" }
+    x: 1.4
+    y: 4.6
+    rotation: -90
+    src: '"BOM item 22, Size 0.6x0.3x0.23mm; R13 placement"'
+  - ref: X1
+    body: { width: 3.2, length: 2.5, height: 0.6, color: "#d9dbde" }
+    x: -2.3
+    y: -9.05
+    src: '"BOM item 28, Size 3.2x2.5x0.6mm; X1 placement"'
+  - ref: Q1
+    body: { width: 0.8, length: 1.6, height: 0.8, color: "#1c1c1e" }
+    x: 6.4
+    y: 7.2
+    rotation: 90
+    src:
+      - '"BOM item 12 (DMG1012T, SOT523); Q1 placement"'
+      - 'diodes/DS31783-rev8-2 p6 "SOT523: E1 0.80, D 1.60, A1 + A2 = 0.05 + 0.75"'
+  - ref: J1
+    body: { width: 6.9, length: 5, height: 2.6, color: "#c8c8c8" }
+    x: 0
+    y: 24
+    rotation: 180
+    src:
+      - '"BOM item 9 (EDAC 690-005-298-486); J1 placement (footprint origin)"'
+      - edac/690-005-298-486 "shell width 6.90, depth 5.00, height 2.60"
+  - ref: SW1
+    body: { width: 4.24, length: 3.2, height: 2.5, color: "#e8e8e8" }
+    x: -3.5
+    y: 13.5
+    rotation: 90
+    src:
+      - '"BOM item 23 (TP-1221U-K9K5325); SW1 placement (footprint origin)"'
+      - raspberrypi/RP-008311-DS "switch body bounding box 4.24 x 3.2, 2.5 above the board"

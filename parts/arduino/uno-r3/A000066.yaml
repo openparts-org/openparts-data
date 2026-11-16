@@ -1,0 +1,72 @@
+# Arduino UNO R3 (A000066). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (arduino/A000066-cad-files@Rev3e),
+# converted to the package frame (board centre, top view; see the package comment).
+# Only components with an OpenParts part, or a box whose size AND height a source states,
+# are listed. Left out:
+#   U3 ATMEGA16U2-MU(R) (no OpenParts part yet), U2 LP2985-33DBVR, T1 FDN340P (pin-1 orientation
+#   of the Eagle SOT-23 not verified), X1 DC jack, X2 USB-B, RESET TS42031, Y1/Y2
+#   crystal/resonator, PC1/PC2 47u caps, D1 M7, D2/D3, LEDs, ICSP/ICSP1 headers: no body height
+#   in a source; small passives skipped
+# ZU4: fitted in a DIP-28 socket on the board; the socket is not modelled.
+schema_version: "0.2"
+kind: part
+id: arduino/A000066
+manufacturer: arduino
+mpn: A000066
+device: arduino/UNO-R3
+package: standards/MODULE32-69x53-P2.54-ARDUINO-UNO
+sources: [arduino/A000066-datasheet@rev5, arduino/A000066-cad-files@Rev3e]
+source: arduino/A000066-cad-files@Rev3e
+
+existence: { status: verified, src: 'arduino/A000066-datasheet@rev5 p1 "SKU: A000066"' }
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: ZU4
+    part: microchip/ATmega328P-PU
+    x: 12.065
+    y: -10.287
+    rotation: 270
+    src: '"UNO-TH_Rev3e.brd ZU4 at 46.355, 16.383 rot 180"'
+  - ref: U1
+    part: onsemi/NCP1117ST50T3G
+    x: -26.543
+    y: -9.271
+    rotation: 180
+    src: '"UNO-TH_Rev3e.brd U1 at 7.747, 17.399 rot 90"'
+  - ref: U5
+    part: ti/LMV358IDGKR
+    x: -15.239
+    y: -6.351
+    rotation: 180
+    src: '"UNO-TH_Rev3e.brd U5 at 19.05, 20.319 rot 90"'
+  - ref: IOL
+    body: { width: 20.32, length: 2.54, height: 8.5, color: "#202020" }
+    x: 20.32
+    y: 24.13
+    rotation: 180
+    src:
+      - '"UNO-TH_Rev3e.brd IOL at 54.61, 50.8 rot 180"'
+      - '"IOL element value "8x1F-H8.5" (8-way female, H 8.5), footprint 1X08 outline 20.32 x 2.54"'
+  - ref: IOH
+    body: { width: 25.4, length: 2.54, height: 8.5, color: "#202020" }
+    x: -4.064
+    y: 24.13
+    rotation: 180
+    src:
+      - '"UNO-TH_Rev3e.brd IOH at 30.226, 50.8 rot 180"'
+      - '"IOH element value "10x1F-H8.5" (10-way female, H 8.5), footprint 1X10 outline 25.4 x 2.54"'
+  - ref: AD
+    body: { width: 15.24, length: 2.54, height: 8.5, color: "#202020" }
+    x: 22.86
+    y: -24.13
+    src:
+      - '"UNO-TH_Rev3e.brd AD at 57.15, 2.54 rot 0"'
+      - '"AD element value "6x1F-H8.5" (6-way female, H 8.5), footprint 1X06 outline 15.24 x 2.54"'
+  - ref: POWER
+    body: { width: 20.32, length: 2.54, height: 8.5, color: "#202020" }
+    x: 2.54
+    y: -24.13
+    src:
+      - '"UNO-TH_Rev3e.brd POWER at 36.83, 2.54 rot 0"'
+      - '"POWER element value "8x1F-H8.5" (8-way female, H 8.5), footprint 1X08 outline 20.32 x 2.54"'

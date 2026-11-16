@@ -1,0 +1,47 @@
+# ESP32-H2-DevKitM-1 development board, as a 30-pin through-hole module. Pin
+# names from the user guide's header tables ("Header Block": J1 and J3, No. /
+# Name / Type / Function); the module numbering runs down J1 (pins 1-15 =
+# J1 1-15) and up J3 (pin 16 = J3 pin 15 ... pin 30 = J3 pin 1), as the
+# package's counter-clockwise hole rows. Names are the silkscreen names the
+# tables give (GPIO numbers as bare numbers, G = ground). Types: P power (G
+# ground), I input (RST typed reset), I/O/T io, a dash nc.
+schema_version: "0.2"
+kind: device
+id: espressif/ESP32-H2-DevKitM-1
+manufacturer: espressif
+category: microcontroller
+family: ESP32-H2
+source: espressif/esp32-h2-devkitm-1-user-guide
+
+pins:
+  src:  ['"Header Block, J1 table (No., Name, Type)"', '"Header Block, J3 table (No., Name, Type)"']
+  "1":  { name: 3V3, type: power }
+  "2":  { name: RST, type: reset }
+  "3":  { name: "0", type: io }
+  "4":  { name: "1", type: io }
+  "5":  { name: "2", type: io }
+  "6":  { name: "3", type: io }
+  "7":  { name: 13/N, type: io }
+  "8":  { name: 14/N, type: io }
+  "9":  { name: "4", type: io }
+  "10": { name: "5", type: io }
+  "11": { name: NC, type: nc }
+  "12": { name: VBAT, type: power }
+  "13": { name: G, type: ground }
+  "14": { name: 5V, type: power }
+  "15": { name: G, type: ground }
+  "16": { name: G, type: ground }
+  "17": { name: "26", type: io }
+  "18": { name: "27", type: io }
+  "19": { name: G, type: ground }
+  "20": { name: "9", type: io }
+  "21": { name: G, type: ground }
+  "22": { name: "22", type: io }
+  "23": { name: "8", type: io }
+  "24": { name: "12", type: io }
+  "25": { name: "25", type: io }
+  "26": { name: "11", type: io }
+  "27": { name: "10", type: io }
+  "28": { name: RX, type: io }
+  "29": { name: TX, type: io }
+  "30": { name: G, type: ground }

@@ -1,0 +1,26 @@
+# Raspberry Pi Pico R3 design files ("Design files (Cadence Allegro)" on
+# the Pico-series documentation page): zip
+# RP-008379-DS-1-RPi-Pico-R3-PUBLIC-20200119.zip with the Allegro board
+# RPI-PICO-R3a-PUBLIC.brd, the OrCAD schematic (.DSN + PDF) and the BOM
+# RPI-PICO_PCB-R3_BOM-R3-PUBLIC.xlsx. The board was opened with KiCad
+# 10's Allegro importer (kicad-cli pcb import) to read component
+# placements; the BOM gives reference -> MPN and the "Size" column.
+# Licence (LICENSE.txt in the zip): "These design files are made
+# available openly, with no limitations. Permission to use, copy,
+# modify, and/or distribute this design for any purpose with or without
+# fee is hereby granted." (as-is, no warranty). Facts only taken
+# (references, MPNs, positions, sizes); nothing copied or rehosted.
+# Locators: "<ref> placement" = the component's land-pattern centre and
+# rotation from the .brd, converted to the module package frame (board
+# centre (10.5, 25.5) of the 21 x 51 outline subtracted).
+schema_version: "0.2"
+kind: source
+id: raspberrypi/RP-008379-DS
+sha256: 90d120b7664bb1b7a458c50ab65ed087e28116e849f627793dc1ecf1585d415a
+retrieved: 2026-11-17
+url: https://pip.raspberrypi.com/documents/RP-008379-DS
+publisher: raspberrypi
+document_id: RP-008379-DS
+document_type: reference_design
+revision: "1"
+date: 2021-01-19

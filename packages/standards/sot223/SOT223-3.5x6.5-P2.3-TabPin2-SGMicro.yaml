@@ -1,0 +1,44 @@
+# SG Micro SOT-223-3 (3 leads + tab), from the SGM2212 datasheet Rev. A.2
+# page 14 "PACKAGE OUTLINE DIMENSIONS SOT-223-3" table (Symbol / MIN / MAX
+# in millimeters). The table prints MIN and MAX only (no nominal), so no
+# typ is recorded; the name uses the range midpoints (E 3.3-3.7, D
+# 6.3-6.7). e is printed "2.300 BSC".
+#
+# Tab number: page 4 "PIN CONFIGURATIONS" SOT-223-3 (TOP VIEW) numbers the
+# leads 1 GND, 2 VOUT, 3 VIN and says "TAB IS VOUT"; the "PIN
+# DESCRIPTION" table gives the tab the VOUT function (pin 2). The tab is
+# therefore numbered "2".
+#
+# Symbol mapping (as for the Diodes SOT223): E (across the leads) ->
+# body_width; D (along the lead row) -> body_length; E1 (lead toe to tab
+# toe) -> overall_width; b1 -> tab_width; b -> lead_width; c ->
+# lead_thickness; L -> lead_length (MIN only); A2 (body thickness) ->
+# body_height; A (MAX only) -> overall_height; A1 -> standoff.
+schema_version: "0.2"
+kind: package
+id: standards/SOT223-3.5x6.5-P2.3-TabPin2-SGMicro
+family: sot223
+lead_count: 3
+source: sgmicro/SGM2212@revA.2
+
+pitch: { typ: 2.3 mm, src: 'p14 "SOT-223-3 table, e "2.300 BSC""' }
+
+tab:
+  number: "2"
+  src:
+    - 'p4 "PIN CONFIGURATIONS, SOT-223-3 (TOP VIEW): 1 GND, 2 VOUT, 3 VIN, "TAB IS VOUT""'
+    - p4 "PIN DESCRIPTION table, TAB = VOUT"
+
+geometry: { type: parametric, generator: sot223 }
+
+dimensions:
+  body_width:     { min: 3.3 mm, max: 3.7 mm, src: 'p14 "SOT-223-3 table, E (3.300 / 3.700)"' }
+  body_length:    { min: 6.3 mm, max: 6.7 mm, src: 'p14 "SOT-223-3 table, D (6.300 / 6.700)"' }
+  body_height:    { min: 1.5 mm, max: 1.7 mm, src: 'p14 "SOT-223-3 table, A2 (1.500 / 1.700)"' }
+  tab_width:      { min: 2.9 mm, max: 3.1 mm, src: 'p14 "SOT-223-3 table, b1 (2.900 / 3.100)"' }
+  overall_width:  { min: 6.7 mm, max: 7.3 mm, src: 'p14 "SOT-223-3 table, E1 (6.700 / 7.300)"' }
+  overall_height: { max: 1.8 mm, src: 'p14 "SOT-223-3 table, A (MAX 1.800)"' }
+  standoff:       { min: 0.02 mm, max: 0.1 mm, src: 'p14 "SOT-223-3 table, A1 (0.020 / 0.100)"' }
+  lead_width:     { min: 0.66 mm, max: 0.84 mm, src: 'p14 "SOT-223-3 table, b (0.660 / 0.840)"' }
+  lead_length:    { min: 0.75 mm, src: 'p14 "SOT-223-3 table, L (MIN 0.750)"' }
+  lead_thickness: { min: 0.23 mm, max: 0.35 mm, src: 'p14 "SOT-223-3 table, c (0.230 / 0.350)"' }

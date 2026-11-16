@@ -1,0 +1,29 @@
+# SparkFun Thing Plus - ESP32 WROOM (WRL-15663). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (sparkfun/ESP32_Thing_Plus@ed6d941),
+# converted to the package frame (board centre, top view; see the package comment).
+# Only components with an OpenParts part, or a box whose size AND height a source states,
+# are listed. Left out:
+#   U2 ESP32-WROOM-32 module (variant not stated in the design: espressif part not chosen; no
+#   height), U4 CP210X (Silicon Labs, other agent), U1 MCP73831 (variant not stated), J5
+#   micro-B, JP2 JST 2-pin, J3 Qwiic, S1/S2 switches, Q1/Q2, D1-D3: no exact part / no height
+# U3: value "AP2112K-3.3V" (ordering suffix not in the design).
+schema_version: "0.2"
+kind: part
+id: sparkfun/WRL-15663
+manufacturer: sparkfun
+mpn: WRL-15663
+device: sparkfun/THING-PLUS-ESP32
+package: standards/MODULE28-23x58-P2.54-SPARKFUN-THING-PLUS
+sources: [sparkfun/ESP32_Thing_Plus@ed6d941]
+source: sparkfun/ESP32_Thing_Plus@ed6d941
+
+existence: { status: verified, src: '"README: SparkFun ESP32 Thing Plus (WRL-15663)"' }
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: U3
+    part: diodes/AP2112K-3.3TRG1
+    x: 1.905
+    y: 3.81
+    rotation: 270
+    src: '"Hardware/ESP32_Thing_Plus.brd U3 at 9.525, 25.4 rot 0"'

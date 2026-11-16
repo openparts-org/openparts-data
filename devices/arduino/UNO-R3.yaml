@@ -1,0 +1,47 @@
+# Arduino UNO R3: the pins of the module package standards/MODULE32-69x53-P2.54-ARDUINO-UNO,
+# named after the net each header pad connects to in the maker's design file (arduino/A000066-cad-files@Rev3e).
+# Types are this dataset's reading of the net names (GND ground; supply nets power;
+# reset nets reset; others io). AI candidate, needs review.
+# connected_to: a second header pad on the same design net as an earlier pin.
+schema_version: "0.2"
+kind: device
+id: arduino/UNO-R3
+manufacturer: arduino
+category: microcontroller
+family: ATmega328P
+source: arduino/A000066-cad-files@Rev3e
+
+pins:
+  src:  '"header pads AD, IOH, IOL, POWER: net names"'
+  "1":  { name: NC, type: nc }
+  "2":  { name: 5V, type: power }
+  "3":  { name: RESET, type: reset }
+  "4":  { name: 3V3, type: power }
+  "5":  { name: 5V, type: power }
+  "6":  { name: GND, type: ground }
+  "7":  { name: GND, type: ground }
+  "8":  { name: VIN, type: power }
+  "9":  { name: AD0, type: io }
+  "10": { name: AD1, type: io }
+  "11": { name: AD2, type: io }
+  "12": { name: AD3, type: io }
+  "13": { name: AD4/SDA, type: io }
+  "14": { name: AD5/SCL, type: io }
+  "15": { name: IO0, type: io }
+  "16": { name: IO1, type: io }
+  "17": { name: IO2, type: io }
+  "18": { name: IO3, type: io }
+  "19": { name: IO4, type: io }
+  "20": { name: IO5, type: io }
+  "21": { name: IO6, type: io }
+  "22": { name: IO7, type: io }
+  "23": { name: IO8, type: io }
+  "24": { name: IO9, type: io }
+  "25": { name: SS, type: io }
+  "26": { name: MOSI, type: io }
+  "27": { name: MISO, type: io }
+  "28": { name: SCK, type: io }
+  "29": { name: GND, type: ground }
+  "30": { name: AREF, type: analog }
+  "31": { name: AD4/SDA, type: io, connected_to: "13" }
+  "32": { name: AD5/SCL, type: io, connected_to: "14" }

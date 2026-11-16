@@ -1,0 +1,52 @@
+# SparkFun Thing Plus - ESP32 WROOM as a module: board outline and pin holes from the maker's design files
+# (sparkfun/ESP32_Thing_Plus@ed6d941): Hardware/ESP32_Thing_Plus.brd. Outline = the board-outline layer extents (rectangle; rounded
+# or notched corners are not modelled). Frame: board centre, +X right, +Y up, top view, USB end up.
+# The design is turned 180 deg from the design file. Pads: the plated header holes, numbered
+# counter-clockwise from the upper left (this dataset's numbering, not a maker pin number);
+# pin names are in the device. Land = the design pad diameter, drill = its hole.
+schema_version: "0.2"
+kind: package
+id: standards/MODULE28-23x58-P2.54-SPARKFUN-THING-PLUS
+family: module
+lead_count: 28
+source: sparkfun/ESP32_Thing_Plus@ed6d941
+
+pitch: { typ: 2.54 mm, src: '"header pads at 2.54 mm centres"' }
+geometry: { type: parametric, generator: module }
+
+dimensions:
+  body_width:    { typ: 22.86 mm, src: '"board outline extent along X (package frame)"' }
+  body_length:   { typ: 58.42 mm, src: '"board outline extent along Y (package frame)"' }
+  hole_diameter: { typ: 1.016 mm, src: '"header pad drill"' }
+
+pads:
+  value:
+    - { number: "1", x: -10.16, y: 15.24, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "2", x: -10.16, y: 12.7, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "3", x: -10.16, y: 10.16, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "4", x: -10.16, y: 7.62, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "5", x: -10.16, y: 5.08, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "6", x: -10.16, y: 2.54, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "7", x: -10.16, y: 0, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "8", x: -10.16, y: -2.54, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "9", x: -10.16, y: -5.08, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "10", x: -10.16, y: -7.62, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "11", x: -10.16, y: -10.16, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "12", x: -10.16, y: -12.7, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "13", x: -10.16, y: -15.24, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "14", x: -10.16, y: -17.78, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "15", x: -10.16, y: -20.32, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "16", x: -10.16, y: -22.86, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "17", x: 10.16, y: -22.86, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "18", x: 10.16, y: -20.32, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "19", x: 10.16, y: -17.78, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "20", x: 10.16, y: -15.24, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "21", x: 10.16, y: -12.7, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "22", x: 10.16, y: -10.16, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "23", x: 10.16, y: -7.62, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "24", x: 10.16, y: -5.08, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "25", x: 10.16, y: -2.54, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "26", x: 10.16, y: 0, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "27", x: 10.16, y: 2.54, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+    - { number: "28", x: 10.16, y: 5.08, width: 1.27, length: 1.27, drill: 1.016, shape: circle }
+  src: '"header pads of J2, J4 (design-file positions, drill, pad diameter)"'

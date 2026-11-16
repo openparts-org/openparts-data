@@ -1,0 +1,52 @@
+# ESP32-S2-DevKitM-1: ESP32-S2-DevKitM-1 ordering code from the user guide's ordering table
+# -> existence verified. On-board module: ESP32-S2-MINI-1 (ordering table); no OpenParts ESP32-S2-MINI-1 part yet, so
+# the module is a placeholder box (datasheet outline).
+# Assembly: components placed from the ESP32-S2-DevKitM-1 layout PDF (pad
+# centres of the top-copper plot, scaled by the board outline; see the
+# agent-scratch placement table). Only components with an OpenParts part
+# (or a datasheet outline with height) are drawn; the CP2102N USB-UART
+# bridge, USB connectors, buttons, LEDs, transistors, ESD diodes and
+# passives have no part/height source yet and are left out.
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-S2-DevKitM-1
+manufacturer: espressif
+mpn: ESP32-S2-DevKitM-1
+device: espressif/ESP32-S2-DevKitM-1
+package: manufacturers/espressif/MODULE42-25.4x54-P2.54-ESP32-S2-DevKitM-1
+
+sources:
+  - espressif/esp32-s2-devkitm-1-user-guide
+  - espressif/ESP32-S2-DevKitM-1_V1_PCB_Layout
+  - espressif/ESP32-S2-DevKitM-1_V1_Schematics
+  - espressif/ESP32-S2-DevKitM-1_V1_Dimensions
+
+source: espressif/ESP32-S2-DevKitM-1_V1_PCB_Layout
+
+existence:
+  status: verified
+  src: 'espressif/esp32-s2-devkitm-1-user-guide "Ordering Information table: ESP32-S2-DevKitM-1"'
+
+lifecycle:
+  status: obsolete
+  src: 'espressif/esp32-s2-devkitm-1-user-guide "Ordering Information table: ESP32-S2-DevKitM-1 (EOL)"'
+
+assembly:
+  - ref: U1
+    body: { width: 15.4, length: 20, height: 2.4, color: "#9aa0a6" }
+    x: -0.02
+    y: 21.61
+    src:
+      - espressif/ESP32-S2-DevKitM-1_V1_Dimensions p1 "U1 outline centre (vector)"
+      - 'espressif/esp32-s2-mini-1_esp32-s2-mini-1u_datasheet_en@rev1.6 p24 "Figure 8: 15.4±0.2 x 20±0.2, 2.4±0.15 high"'
+  - ref: U2
+    part: sgmicro/SGM2212-3.3XKC3G-TR
+    x: 0.74
+    y: 5.89
+    src: p1 "U2 pad envelope centre (pads 1-3 and tab pad 4); tab direction gives rotation"
+  - ref: D1
+    part: diodes/1N5819HW-7-F
+    x: -3.56
+    y: -16.84
+    rotation: 270
+    src: p1 "D1 pad centres; footprint pad 2 = cathode (silkscreen bar)"

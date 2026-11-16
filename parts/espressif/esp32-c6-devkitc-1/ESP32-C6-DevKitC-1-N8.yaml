@@ -1,0 +1,52 @@
+# ESP32-C6-DevKitC-1-N8: ESP32-C6-DevKitC-1 ordering code from the user guide's ordering table
+# -> existence verified. On-board module: ESP32-C6-WROOM-1-N8 (ordering table).
+# Assembly: components placed from the ESP32-C6-DevKitC-1 layout PDF (pad
+# centres of the top-copper plot, scaled by the board outline; see the
+# agent-scratch placement table). Only components with an OpenParts part
+# (or a datasheet outline with height) are drawn; the CP2102N USB-UART
+# bridge, USB connectors, buttons, LEDs, transistors, ESD diodes and
+# passives have no part/height source yet and are left out.
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-C6-DevKitC-1-N8
+manufacturer: espressif
+mpn: ESP32-C6-DevKitC-1-N8
+device: espressif/ESP32-C6-DevKitC-1
+package: manufacturers/espressif/MODULE32-25.4x51.8-P2.54-ESP32-C6-DevKitC-1
+
+sources:
+  - espressif/esp32-c6-devkitc-1-user-guide
+  - espressif/esp32-c6-devkitc-1-pcb-layout_v1.2
+  - espressif/esp32-c6-devkitc-1-schematics_v1.2
+  - espressif/esp32-c6-devkitc-1-dimensions_v1.2
+
+source: espressif/esp32-c6-devkitc-1-pcb-layout_v1.2
+
+existence:
+  status: verified
+  src: 'espressif/esp32-c6-devkitc-1-user-guide "Ordering Information table: ESP32-C6-DevKitC-1-N8"'
+
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: U4
+    part: espressif/ESP32-C6-WROOM-1-N8
+    x: 0.01
+    y: 16.5
+    src: p1 "U4 pad centres fitted to the module land pattern; module centre (0.01, 19.5), land centroid -2.995 in y"
+  - ref: U2
+    part: sgmicro/SGM2212-3.3XKC3G-TR
+    x: 3.55
+    y: 2.88
+    src: p1 "U2 pad envelope centre (pads 1-3 and tab pad 4); tab direction gives rotation"
+  - ref: D1
+    part: diodes/1N5819HW-7-F
+    x: -2.3
+    y: -16.01
+    rotation: 180
+    src: p1 "D1 pad centres; footprint pad 2 = cathode (silkscreen bar)"
+  - ref: D7
+    part: diodes/1N5819HW-7-F
+    x: 2.22
+    y: -16.01
+    src: p1 "D7 pad centres; footprint pad 2 = cathode (silkscreen bar)"

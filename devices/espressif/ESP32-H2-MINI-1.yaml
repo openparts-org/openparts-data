@@ -1,0 +1,77 @@
+# ESP32-H2-MINI-1 Bluetooth LE/802.15.4 module (PCB antenna). Pin numbers,
+# names and types from the module datasheet v1.6 pin definition table
+# (p10 "Table 3: Pin Definitions"), cross-checked against "Figure 3: Pin
+# Layout (Top View)" (p9); type P is power (ground for GND), I input,
+# I/O/T io, a dash nc. Table 3 lists GND and NC by number groups ("1, 2,
+# 11, 14, 36~53"; "4, 7, 17, 28, 29, 32~35"); pins 49-53 are the centre
+# ground grid and the four corner pads (Figure 3). VBAT (15) is typed
+# power ("Connected to internal 3V3 power supply (Default) or external
+# battery"). Alternate functions are not recorded here. The -U variant
+# (antenna connector) is a different board size and is not modelled.
+schema_version: "0.2"
+kind: device
+id: espressif/ESP32-H2-MINI-1
+manufacturer: espressif
+category: microcontroller
+family: ESP32-H2-MINI-1
+source: espressif/esp32-h2-mini-1_mini-1u_datasheet_en@rev1.6
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 3 V, max: 3.6 V, src: 'p24 "Recommended Operating Conditions, VDD33"' }
+
+pins:
+  src:  ['p10 "Table 3: Pin Definitions"', 'p9 "Figure 3: Pin Layout (cross-check)"']
+  "1":  { name: GND, type: ground }
+  "2":  { name: GND, type: ground }
+  "3":  { name: 3V3, type: power }
+  "4":  { name: NC, type: nc }
+  "5":  { name: IO2, type: io }
+  "6":  { name: IO3, type: io }
+  "7":  { name: NC, type: nc }
+  "8":  { name: EN, type: input }
+  "9":  { name: IO0, type: io }
+  "10": { name: IO1, type: io }
+  "11": { name: GND, type: ground }
+  "12": { name: IO13, type: io }
+  "13": { name: IO14, type: io }
+  "14": { name: GND, type: ground }
+  "15": { name: VBAT, type: power }
+  "16": { name: IO12, type: io }
+  "17": { name: NC, type: nc }
+  "18": { name: IO4, type: io }
+  "19": { name: IO5, type: io }
+  "20": { name: IO10, type: io }
+  "21": { name: IO11, type: io }
+  "22": { name: IO8, type: io }
+  "23": { name: IO9, type: io }
+  "24": { name: IO22, type: io }
+  "25": { name: IO25, type: io }
+  "26": { name: IO26, type: io }
+  "27": { name: IO27, type: io }
+  "28": { name: NC, type: nc }
+  "29": { name: NC, type: nc }
+  "30": { name: RXD0, type: io }
+  "31": { name: TXD0, type: io }
+  "32": { name: NC, type: nc }
+  "33": { name: NC, type: nc }
+  "34": { name: NC, type: nc }
+  "35": { name: NC, type: nc }
+  "36": { name: GND, type: ground }
+  "37": { name: GND, type: ground }
+  "38": { name: GND, type: ground }
+  "39": { name: GND, type: ground }
+  "40": { name: GND, type: ground }
+  "41": { name: GND, type: ground }
+  "42": { name: GND, type: ground }
+  "43": { name: GND, type: ground }
+  "44": { name: GND, type: ground }
+  "45": { name: GND, type: ground }
+  "46": { name: GND, type: ground }
+  "47": { name: GND, type: ground }
+  "48": { name: GND, type: ground }
+  "49": { name: GND, type: ground }
+  "50": { name: GND, type: ground }
+  "51": { name: GND, type: ground }
+  "52": { name: GND, type: ground }
+  "53": { name: GND, type: ground }

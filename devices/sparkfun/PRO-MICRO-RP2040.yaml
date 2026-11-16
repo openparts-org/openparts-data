@@ -1,0 +1,39 @@
+# SparkFun Pro Micro - RP2040: the pins of the module package standards/MODULE24-18x33-P2.54-SPARKFUN-PRO-MICRO,
+# named after the net each header pad connects to in the maker's design file (sparkfun/SparkFun_Pro_Micro-RP2040@6d461a6).
+# Types are this dataset's reading of the net names (GND ground; supply nets power;
+# reset nets reset; others io). AI candidate, needs review.
+# connected_to: a second header pad on the same design net as an earlier pin.
+schema_version: "0.2"
+kind: device
+id: sparkfun/PRO-MICRO-RP2040
+manufacturer: sparkfun
+category: microcontroller
+family: RP2040
+source: sparkfun/SparkFun_Pro_Micro-RP2040@6d461a6
+
+pins:
+  src:  '"header pads J3, J4: net names"'
+  "1":  { name: 0/TX0, type: io }
+  "2":  { name: 1/RX0, type: io }
+  "3":  { name: GND, type: ground }
+  "4":  { name: GND, type: ground }
+  "5":  { name: "2", type: io }
+  "6":  { name: "3", type: io }
+  "7":  { name: "4", type: io }
+  "8":  { name: "5", type: io }
+  "9":  { name: "6", type: io }
+  "10": { name: "7", type: io }
+  "11": { name: 8/TX1, type: io }
+  "12": { name: 9/RX1, type: io }
+  "13": { name: 21/SPI_CS, type: io }
+  "14": { name: 23/SPI_COPI, type: io }
+  "15": { name: 20/SPI_CIPO, type: io }
+  "16": { name: 22/SPI_SCK, type: io }
+  "17": { name: A0, type: io }
+  "18": { name: A1, type: io }
+  "19": { name: A2, type: io }
+  "20": { name: A3, type: io }
+  "21": { name: 3.3V, type: power }
+  "22": { name: RESET, type: reset }
+  "23": { name: GND, type: ground }
+  "24": { name: RAW, type: power }

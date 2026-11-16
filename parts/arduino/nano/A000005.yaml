@@ -1,0 +1,29 @@
+# Arduino Nano (A000005). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (arduino/A000005-cad-files@V3.3),
+# converted to the package frame (board centre, top view; see the package comment).
+# Only components with an OpenParts part, or a box whose size AND height a source states,
+# are listed. Left out:
+#   IC1 FT232RL (FTDI, SSOP28), IC2 LM1117IMPX-5.0 (TI, SOT-223), J3 USB mini-B, SW1
+#   IT-1185AP1C, Y1 CSTCE16M0V53-R0, LEDs KPT-2012*, D1 SS1P3L, C2/C5 TAJA475 tantalum, J4 ICSP:
+#   no part and no body height in a fetchable maker source or the design file; small passives
+#   (0603 C, CAY16 arrays, F1) skipped
+schema_version: "0.2"
+kind: part
+id: arduino/A000005
+manufacturer: arduino
+mpn: A000005
+device: arduino/NANO
+package: standards/MODULE30-18x43-P2.54-ARDUINO-NANO
+sources: [arduino/A000005-datasheet@rev5, arduino/A000005-cad-files@V3.3]
+source: arduino/A000005-cad-files@V3.3
+
+existence: { status: verified, src: 'arduino/A000005-datasheet@rev5 p1 "SKU: A000005"' }
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: IC3
+    part: microchip/ATmega328P-MUR
+    x: -0.051
+    y: 6.096
+    rotation: 135
+    src: '"NanoV3.3.brd IC3 at 15.494, 8.839 rot 225"'

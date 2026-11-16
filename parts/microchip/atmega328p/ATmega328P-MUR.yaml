@@ -1,0 +1,32 @@
+# MPN confirmed directly from the ordering table: section 38.8
+# "ATmega328P" (page 635) lists "ATmega328P-MUR" -- 20 MHz, 1.8-5.5 V,
+# package "32M1-A" (32-pad 5x5 mm VQFN), Industrial -40C to 85C; note 5
+# marks it Tape & Reel
+# The 32-pad VQFN shares the 32 TQFP pinout (Figure 1-1, page 12), so
+# the device is microchip/ATmega328P.
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATmega328P-MUR
+manufacturer: microchip
+mpn: ATmega328P-MUR
+device: microchip/ATmega328P
+
+package:
+  value: standards/QFN32-5x5-P0.5-EP3.1
+  src: p635 "38.8 Ordering Information ATmega328P, Package 32M1-A"
+
+sources: [microchip/DS40002061@revB]
+source: microchip/DS40002061@revB
+
+existence:
+  status: verified
+  src: p635 "Section 38.8, "ATmega328P" ordering table, ATmega328P-MUR"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p635 "38.8 Ordering Information ATmega328P, ATmega328P-MUR, Industrial (-40C to 85C)"
