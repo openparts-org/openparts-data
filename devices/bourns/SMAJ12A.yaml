@@ -1,0 +1,24 @@
+# SMAJ12A: 12V VRWM unidirectional 400W TVS diode, SMA (DO-214AC).
+# Electrical row on page 2 (marking IE, VBR 13.3-14.7V @ 1.0mA). Polarity
+# from Physical Specifications (page 3): "Cathode band indicates
+# unidirectional device". Pin 1 = cathode (banded end) per this
+# dataset's diode convention.
+schema_version: "0.2"
+kind: device
+id: bourns/SMAJ12A
+manufacturer: bourns
+category: diode
+family: SMAJ
+source: bourns/SMAJ
+
+parameters:
+  forward_voltage:
+    max: 3.5 V
+    at: { IPP: 35 A }
+    src: p1 "Max. Instantaneous Forward Voltage (unidirectional), SMAJ5.0A~SMAJ90A"
+  reverse_voltage: { max: 12 V, src: 'p2 "Electrical Characteristics, SMAJ12A row, VRWM"' }
+
+pins:
+  src: p3 "Physical Specifications, "Polarity ... Cathode band indicates unidirectional device""
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

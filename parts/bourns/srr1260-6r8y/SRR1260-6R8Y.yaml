@@ -1,0 +1,33 @@
+# 6.8uH +/-30%, Q 20 typ, SRF 28.20MHz typ, RDC max 18.0mOhm, Irms max 6.30A,
+# Isat typ 6.50A, per the Electrical Specifications table (page 1).
+# Package reused: this revision's Product Dimensions drawing gives the
+# same numbers as standards/CHIP-BOURNS-SRR1260 (one drawing for the whole series).
+# lifecycle unknown: the datasheet makes no production-status statement.
+schema_version: "0.2"
+kind: part
+id: bourns/SRR1260-6R8Y
+manufacturer: bourns
+mpn: SRR1260-6R8Y
+device: bourns/SRR1260-SERIES
+package: standards/CHIP-BOURNS-SRR1260
+sources: [bourns/SRR1260@rev03-26]
+source: bourns/SRR1260@rev03-26
+
+existence:
+  status: verified
+  src: p1 "Electrical Specifications table, Part Number row "SRR1260-6R8Y""
+
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance:
+    tol: ±30 %
+    src: p1 "Electrical Specifications, SRR1260-6R8Y row, Inductance Tol."
+  inductance: { typ: 6.8 µH, src: 'p1 "Electrical Specifications, SRR1260-6R8Y row, Inductance"' }
+  rated_current:
+    max: 6.3 A
+    src: p1 "Electrical Specifications, SRR1260-6R8Y row, I rms Max. (temp. rise 40 °C)"
+  saturation_current:
+    typ: 6.5 A
+    src: p1 "Electrical Specifications, SRR1260-6R8Y row, I sat Typ. (L drop 25 %)"
+  dcr: { max: 18 mΩ, src: 'p1 "Electrical Specifications, SRR1260-6R8Y row, RDC Max."' }

@@ -1,0 +1,17 @@
+# Murata per-part reference sheet "GRM21BR71E105KA99_ (0805, X7R:EIA, 1uF,
+# DC25V)", footer "GRM21BR71E105KA99-01", 30 pages; page 1 states "Product
+# specifications in this catalog are as of Mar.3,2016". Fetched with curl
+# from Murata's spec-sheet URL (301 redirect to pim.murata.com) on
+# 2026-11-16; read with pdftotext -layout (page 1: part-number system,
+# Type & Dimensions, Rated value, Package).
+schema_version: "0.2"
+kind: source
+id: murata/GRM21BR71E105KA99-01
+sha256: 4ae17d407c021cd0a24240147bb043038f30275f648a162660e656f37bd6fee2
+retrieved: 2026-11-16
+url: https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM21BR71E105KA99-01.pdf
+publisher: murata
+document_id: GRM21BR71E105KA99-01
+document_type: datasheet
+revision: -01
+date: 2016-03-03

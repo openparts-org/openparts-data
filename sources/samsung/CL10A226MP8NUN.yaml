@@ -1,0 +1,17 @@
+# Samsung Electro-Mechanics product page for CL10A226MP8NUN# (the "#" is the
+# packaging code). Read as raw HTML (curl, tags stripped). Page shows:
+# status "Mass Production"; packaging codes listed: C, E, F, L, R, W;
+# size 0603 (1608); L 1.60+/-0.25mm, W 0.80+/-0.25mm, T 0.80+/-0.25mm; X5R(-55 ~ +85);
+# capacitance 22.0uF, tolerance +/-20%, rated voltage 10 Vdc.
+# A live page, not a revisioned document: `revision`/`date` record its
+# own "Created : 2026/11/16 18:07:27" KST stamp at the time it was read. No page
+# numbers apply (single HTML page).
+schema_version: "0.2"
+kind: source
+id: samsung/CL10A226MP8NUN
+url: https://product.samsungsem.com/mlcc/CL10A226MP8NUN.do
+date: 2026-11-16
+revision: retrieved 2026-11-16
+publisher: samsung
+document_id: CL10A226MP8NUN#
+document_type: product_page

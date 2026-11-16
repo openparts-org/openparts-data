@@ -1,0 +1,20 @@
+# SMAJ24A: "How to Order" (page 1) decodes SMAJ 24 A with a blank reel
+# suffix as the 13-inch reel ("-H" = 7 inch); the part number is listed
+# verbatim in the page-2 table. Package: Product Dimensions (page 3),
+# one drawing for the series, recorded as standards/DO214AC-BOURNS-SMAJ.
+# No lifecycle statement.
+schema_version: "0.2"
+kind: part
+id: bourns/SMAJ24A
+manufacturer: bourns
+mpn: SMAJ24A
+device: bourns/SMAJ24A
+package: standards/DO214AC-BOURNS-SMAJ
+sources: [bourns/SMAJ]
+source: bourns/SMAJ
+
+existence:
+  status: verified
+  src: p2 "Electrical table row "SMAJ24A | IZ | ..."; page-1 "How to Order" (blank = 13 inch reel)"
+
+lifecycle: { status: unknown }

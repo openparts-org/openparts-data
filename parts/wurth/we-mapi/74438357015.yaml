@@ -1,0 +1,38 @@
+# Würth WE-MAPI 4030 power inductor, 1.5 µH ±20 %, order code 74438357015.
+# Order code printed verbatim in the datasheet's own title block
+# ("ORDER CODE 74438357015", every page) -> existence verified.
+# Package reused: page-1 "Dimensions: [mm]" prints the same set as
+# manufacturers/wurth/WE-MAPI-4030 (4.1 ±0.2 x 4.1 ±0.2, 3.1 max.,
+# terminal 1.25 ±0.2; pdftotext of page 1 compared).
+# lifecycle: the title block "STATUS Valid" is the document's release
+# status, not a product lifecycle statement; unknown.
+schema_version: "0.2"
+kind: part
+id: wurth/74438357015
+manufacturer: wurth
+mpn: "74438357015"
+device: wurth/WE-MAPI-4030
+package: manufacturers/wurth/WE-MAPI-4030
+sources: [wurth/74438357015-DS]
+source: wurth/74438357015-DS
+
+existence: { status: verified, src: 'p1 "Title block, "ORDER CODE 74438357015", "SIZE/TYPE 4030""' }
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance: { tol: ±20 %, src: 'p1 "Electrical Properties, Inductance L, Tol."' }
+  inductance:
+    typ: 1.5 µH
+    at: { f: 100 kHz }
+    src: p1 "Electrical Properties, Inductance L (100 kHz/ 10 mA)"
+  rated_current:
+    max: 8.2 A
+    src: p1 "Electrical Properties, Performance Rated Current IRP,40K (ΔT = 40K), max."
+  saturation_current:
+    typ: 11 A
+    src: p1 "Electrical Properties, Saturation Current @ 30% ISAT,30% (|ΔL/L| < 30 %), typ."
+  dcr:
+    typ: 17.1 mΩ
+    max: 20 mΩ
+    at: { TA: 20 °C }
+    src: p1 "Electrical Properties, DC Resistance RDC @ 20 °C, typ. and max. rows"

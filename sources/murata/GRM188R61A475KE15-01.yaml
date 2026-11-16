@@ -1,0 +1,17 @@
+# Murata per-part reference sheet "GRM188R61A475KE15_ (0603, X5R:EIA, 4.7uF,
+# DC10V)", footer "GRM188R61A475KE15-01", 30 pages; page 1 states "Product
+# specifications in this catalog are as of Mar.10,2016". Fetched with curl
+# from Murata's spec-sheet URL (301 redirect to pim.murata.com) on
+# 2026-11-16; read with pdftotext -layout (page 1: part-number system,
+# Type & Dimensions, Rated value, Package).
+schema_version: "0.2"
+kind: source
+id: murata/GRM188R61A475KE15-01
+sha256: d1a9d8f89ab0b2a6d05db906f32a6e74dcce18033e1cb45ae9b9d1a437e29b07
+retrieved: 2026-11-16
+url: https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61A475KE15-01.pdf
+publisher: murata
+document_id: GRM188R61A475KE15-01
+document_type: datasheet
+revision: -01
+date: 2016-03-10

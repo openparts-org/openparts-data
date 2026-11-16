@@ -1,0 +1,36 @@
+# 1.0uF X5R 25 V +/-10% 0603 MLCC, packaging code C
+# (C (cardboard tape, normal 7" reel), catalog p8). Literal MPN listed on Samsung's
+# product page (existence verified); fields decoded with the catalog
+# part-numbering legend (samsung/MLCC_2512 pp6-8), which matches the
+# page's Characteristics. Package: the page's L/W/T (1.60+/-0.10 / 0.80+/-0.10 / 0.80+/-0.10 mm)
+# -> CHIP0603-SAMSUNG-CL10-T8.
+# lifecycle: the product page shows "Status: Mass Production".
+schema_version: "0.2"
+kind: part
+id: samsung/CL10A105KA8NNNC
+manufacturer: samsung
+mpn: CL10A105KA8NNNC
+device: samsung/CL10-X5R
+package: standards/CHIP0603-SAMSUNG-CL10-T8
+sources: [samsung/CL10A105KA8NNN, samsung/MLCC_2512]
+source: samsung/CL10A105KA8NNN
+
+existence:
+  status: verified
+  src:
+    - samsung/MLCC_2512 p6 "Part Numbering, codes 1-4 (series CL, size 10, dielectric A, capacitance 105)"
+    - 'samsung/MLCC_2512 p7 "Part Numbering: 5 TOLERANCE K = +/-10%; 6 RATED VOLTAGE A = 25Vdc; 7 THICKNESS CODE 8"'
+    - samsung/MLCC_2512 p8 "Part Numbering, codes 8-11 (design N, 9 N, control N, packaging C)"
+    - '"List of part numbers with package codes, row CL10A105KA8NNNC"'
+
+lifecycle: { status: active, src: '"Characteristics, "Status: Mass Production""' }
+
+parameters:
+  capacitance: { typ: 1 uF, src: '"Product page CL10A105KA8NNN#, Characteristics, Capacitance"' }
+  tolerance:   { tol: ±10 %, src: '"Product page CL10A105KA8NNN#, Characteristics, Tolerance"' }
+  rated_voltage:
+    typ: 25 V
+    src: '"Product page CL10A105KA8NNN#, Characteristics, Rated Voltage"'
+  dielectric:
+    value: X5R
+    src: '"Product page CL10A105KA8NNN#, Characteristics, Temperature Characteristic"'

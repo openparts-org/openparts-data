@@ -1,0 +1,26 @@
+# 1uF X7R 50V ±10% GRM21B (0805) MLCC, packaging code L
+# (EMBOSSED W8P4, φ180mm reel) per the reference sheet's "5.Package" table.
+# Package: manufacturers/murata/CHIP0805-GRM21B-C02E reused: the sheet's dimensions equal its numbers one for one
+# (sheet p1 "3. Type & Dimensions": L 2.0±0.1, W 1.25±0.1, T 1.25±0.1, e 0.2 to 0.7, g 0.7 min).
+# lifecycle: the sheet makes no production-status statement; unknown.
+schema_version: "0.2"
+kind: part
+id: murata/GRM21BR71H105KA12L
+manufacturer: murata
+mpn: GRM21BR71H105KA12L
+device: murata/GRM21-X7R
+package: manufacturers/murata/CHIP0805-GRM21B-C02E
+sources: [murata/GRM21BR71H105KA12-01]
+source: murata/GRM21BR71H105KA12-01
+
+existence:
+  status: verified
+  src: p1 "Title GRM21BR71H105KA12_ (_ = packaging code); 5.Package, mark L"
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 1 uF, src: 'p1 "4.Rated value, (5) Nominal Capacitance"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "4.Rated value, (6) Capacitance Tolerance"' }
+  rated_voltage: { typ: 50 V, src: 'p1 "4.Rated value, (4) Rated Voltage DC 50 V"' }
+  dielectric:    { value: X7R, src: 'p1 "4.Rated value, (3) Public STD Code X7R(EIA)"' }

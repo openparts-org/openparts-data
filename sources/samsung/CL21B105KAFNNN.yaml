@@ -1,0 +1,17 @@
+# Samsung Electro-Mechanics product page for CL21B105KAFNNN# (the "#" is the
+# packaging code). Read as raw HTML (curl, tags stripped). Page shows:
+# status "Mass Production"; packaging codes listed: E, F, G;
+# size 0805 (2012); L 2.00+/-0.10mm, W 1.25+/-0.10mm, T 1.25+/-0.10mm; X7R(-55 ~ +125);
+# capacitance 1.0uF, tolerance +/-10%, rated voltage 25 Vdc.
+# A live page, not a revisioned document: `revision`/`date` record its
+# own "Created : 2026/11/16 18:07:23" KST stamp at the time it was read. No page
+# numbers apply (single HTML page).
+schema_version: "0.2"
+kind: source
+id: samsung/CL21B105KAFNNN
+url: https://product.samsungsem.com/mlcc/CL21B105KAFNNN.do
+date: 2026-11-16
+revision: retrieved 2026-11-16
+publisher: samsung
+document_id: CL21B105KAFNNN#
+document_type: product_page

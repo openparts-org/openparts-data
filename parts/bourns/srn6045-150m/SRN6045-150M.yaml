@@ -1,0 +1,34 @@
+# 15 µH +/-20%, semi-shielded power inductor, per the Electrical
+# Specifications table (page 1, read via pdftotext -layout; row values
+# Q 17, test freq. 2.52 MHz, SRF 13 MHz typ, DCR 0.0958 Ohm max,
+# Irms 1.9 A, Isat 2.3 A).
+# lifecycle unknown: the datasheet makes no production-status statement.
+schema_version: "0.2"
+kind: part
+id: bourns/SRN6045-150M
+manufacturer: bourns
+mpn: SRN6045-150M
+device: bourns/SRN6045-SERIES
+package: manufacturers/bourns/CHIP-BOURNS-SRN6045
+sources: [bourns/SRN6045]
+source: bourns/SRN6045
+
+existence:
+  status: verified
+  src: p1 "Electrical Specifications table, Part Number row SRN6045-150M"
+
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance: { tol: ±20 %, src: 'p1 "Electrical Specifications @ 25 °C, SRN6045-150M row, Tol."' }
+  inductance:
+    typ: 15 µH
+    at: { f: 100 kHz }
+    src: p1 "Electrical Specifications @ 25 °C, SRN6045-150M row, L (@ 100 kHz/1 V)"
+  rated_current:
+    typ: 1.9 A
+    src: p1 "Electrical Specifications @ 25 °C, SRN6045-150M row, Irms (temp. rise 40 °C)"
+  saturation_current:
+    typ: 2.3 A
+    src: p1 "Electrical Specifications @ 25 °C, SRN6045-150M row, Isat (L drop 30 %)"
+  dcr: { max: 0.0958 Ω, src: 'p1 "Electrical Specifications @ 25 °C, SRN6045-150M row, DCR"' }

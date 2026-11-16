@@ -1,0 +1,17 @@
+# Samsung Electro-Mechanics product page for CL21A475KBQNNN# (the "#" is the
+# packaging code). Read as raw HTML (curl, tags stripped). Page shows:
+# status "Mass Production"; packaging codes listed: E, F, G;
+# size 0805 (2012); L 2.00+/-0.15mm, W 1.25+/-0.15mm, T 1.25+/-0.15mm; X5R(-55 ~ +85);
+# capacitance 4.7uF, tolerance +/-10%, rated voltage 50 Vdc.
+# A live page, not a revisioned document: `revision`/`date` record its
+# own "Created : 2026/11/16 18:07:24" KST stamp at the time it was read. No page
+# numbers apply (single HTML page).
+schema_version: "0.2"
+kind: source
+id: samsung/CL21A475KBQNNN
+url: https://product.samsungsem.com/mlcc/CL21A475KBQNNN.do
+date: 2026-11-16
+revision: retrieved 2026-11-16
+publisher: samsung
+document_id: CL21A475KBQNNN#
+document_type: product_page

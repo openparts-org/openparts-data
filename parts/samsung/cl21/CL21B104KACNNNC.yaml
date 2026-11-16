@@ -1,0 +1,36 @@
+# 100.0nF X7R 25 V +/-10% 0805 MLCC, packaging code C
+# (C (cardboard tape, normal 7" reel), catalog p8). Literal MPN listed on Samsung's
+# product page (existence verified); fields decoded with the catalog
+# part-numbering legend (samsung/MLCC_2512 pp6-8), which matches the
+# page's Characteristics. Package: the page's L/W/T (2.00+/-0.10 / 1.25+/-0.10 / 0.85+/-0.10 mm)
+# -> CHIP0805-SAMSUNG-CL21-TC.
+# lifecycle: the product page shows "Status: Mass Production".
+schema_version: "0.2"
+kind: part
+id: samsung/CL21B104KACNNNC
+manufacturer: samsung
+mpn: CL21B104KACNNNC
+device: samsung/CL21-X7R
+package: manufacturers/samsung/CHIP0805-SAMSUNG-CL21-TC
+sources: [samsung/CL21B104KACNNN, samsung/MLCC_2512]
+source: samsung/CL21B104KACNNN
+
+existence:
+  status: verified
+  src:
+    - samsung/MLCC_2512 p6 "Part Numbering, codes 1-4 (series CL, size 21, dielectric B, capacitance 104)"
+    - 'samsung/MLCC_2512 p7 "Part Numbering: 5 TOLERANCE K = +/-10%; 6 RATED VOLTAGE A = 25Vdc; 7 THICKNESS CODE C"'
+    - samsung/MLCC_2512 p8 "Part Numbering, codes 8-11 (design N, 9 N, control N, packaging C)"
+    - '"List of part numbers with package codes, row CL21B104KACNNNC"'
+
+lifecycle: { status: active, src: '"Characteristics, "Status: Mass Production""' }
+
+parameters:
+  capacitance: { typ: 100 nF, src: '"Product page CL21B104KACNNN#, Characteristics, Capacitance"' }
+  tolerance: { tol: ±10 %, src: '"Product page CL21B104KACNNN#, Characteristics, Tolerance"' }
+  rated_voltage:
+    typ: 25 V
+    src: '"Product page CL21B104KACNNN#, Characteristics, Rated Voltage"'
+  dielectric:
+    value: X7R
+    src: '"Product page CL21B104KACNNN#, Characteristics, Temperature Characteristic"'

@@ -1,0 +1,17 @@
+# Murata per-part reference sheet "GRM188R71C104KA01_ (0603, X7R:EIA, 0.1uF,
+# DC16V)", footer "GRM188R71C104KA01-01", 30 pages; page 1 states "Product
+# specifications in this catalog are as of Feb.27,2016". Fetched with curl
+# from Murata's spec-sheet URL (301 redirect to pim.murata.com) on
+# 2026-11-16; read with pdftotext -layout (page 1: part-number system,
+# Type & Dimensions, Rated value, Package).
+schema_version: "0.2"
+kind: source
+id: murata/GRM188R71C104KA01-01
+sha256: a8d9e8e5a06aa235221c7e957837509e64a9f75e42230ee142f51f984b4cfa09
+retrieved: 2026-11-16
+url: https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R71C104KA01-01.pdf
+publisher: murata
+document_id: GRM188R71C104KA01-01
+document_type: datasheet
+revision: -01
+date: 2016-02-27
