@@ -10,7 +10,7 @@ schema_version: "0.2"
 kind: device
 id: espressif/ESP32-C3-MINI-1
 manufacturer: espressif
-category: microcontroller
+category: wireless_module
 family: ESP32-C3-MINI-1
 source: espressif/esp32-c3-mini-1_datasheet_en@rev2.2
 
@@ -20,6 +20,8 @@ parameters:
     min: 3 V
     max: 3.6 V
     src: p21 "Table 6-2 Recommended Operating Conditions, VDD33"
+  radio_protocol: { value: wifi_ble, src: p3 "general-purpose Wi-Fi and Bluetooth LE modules" }
+  antenna_type:   { value: pcb_trace, src: 'p3 "ESP32-C3-MINI-1: On-board PCB antenna"' }
 
 pins:
   src:  p11 "Table 3-1 Pin Definitions"

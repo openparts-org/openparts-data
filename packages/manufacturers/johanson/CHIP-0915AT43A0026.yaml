@@ -1,0 +1,35 @@
+# Johanson 0915AT43A0026 ceramic chip antenna outline (johanson/0915AT43A0026001E
+# p2 "Mechanical Dimensions", mm column). min/max are the printed
+# tolerances applied. The mounting/evaluation-board layouts are not
+# recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/johanson/CHIP-0915AT43A0026
+family: chip
+lead_count: 2
+source: johanson/0915AT43A0026001E
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 1.8 mm
+    typ: 2 mm
+    max: 2.2 mm
+    src: p2 "Mechanical Dimensions, W 2.00 ±0.20 mm"
+  body_length:
+    min: 6.8 mm
+    typ: 7 mm
+    max: 7.2 mm
+    src: p2 "Mechanical Dimensions, L 7.00 ±0.20 mm"
+  body_height:
+    min: 0.6 mm
+    typ: 0.8 mm
+    max: 0.9 mm
+    src: p2 "Mechanical Dimensions, T 0.80 +0.10/-0.20 mm"
+  lead_length:
+    min: 0.2 mm
+    typ: 0.5 mm
+    max: 0.8 mm
+    src: p2 "Mechanical Dimensions, a 0.50 ±0.30 mm"

@@ -1,0 +1,17 @@
+# Bourns "TC33 - 3 mm SMD Trimpot Trimming Potentiometer" datasheet,
+# page-2 footer "REV. 08/19". 3 PDF pages, downloaded 2026-11-17 with
+# plain curl from bourns.com; read with pdftotext and from 250/500 dpi
+# renders of page 1. Page 1: Electrical/Environmental/Physical
+# Characteristics, Product Dimensions (TC33X-1, TC33X-2), Recommended Land
+# Pattern; page 2: Standard Resistance Table, How To Order.
+schema_version: "0.2"
+kind: source
+id: bourns/TC33
+sha256: b13258ee9f777b70198554ad4ed43cab2167b2bdf31bdcbe52c4956bfff1adbf
+retrieved: 2026-11-17
+url: https://www.bourns.com/docs/Product-Datasheets/TC33.pdf
+publisher: bourns
+document_id: TC33
+document_type: datasheet
+revision: 08/19
+date: 2019-08

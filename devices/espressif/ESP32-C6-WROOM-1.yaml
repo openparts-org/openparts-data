@@ -7,7 +7,7 @@ schema_version: "0.2"
 kind: device
 id: espressif/ESP32-C6-WROOM-1
 manufacturer: espressif
-category: microcontroller
+category: wireless_module
 family: ESP32-C6-WROOM-1
 source: espressif/esp32-c6-wroom-1_wroom-1u_datasheet_en@rev1.4
 
@@ -21,6 +21,12 @@ parameters:
     min: -40 °C
     max: 85 °C
     src: p4 "Table 1-1 ESP32-C6-WROOM-1 Series Comparison, Ambient Temp. (all variants)"
+  radio_protocol:
+    value: wifi_ble_802154
+    src: p3 "Wi-Fi, IEEE 802.15.4, and Bluetooth LE modules"
+  antenna_type:
+    value: pcb_trace
+    src: p3 "Antenna Options, On-board PCB antenna (ESP32-C6-WROOM-1)"
 
 pins:
   src:  p11 "Table 3-1 Pin Definitions"

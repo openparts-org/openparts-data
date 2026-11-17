@@ -1,0 +1,19 @@
+# Alps Alpine EC11E18244AU: EC11E vertical, flat shaft 20 mm, 36 detents,
+# 18 pulses, with push-on switch (0.5 mm travel), Drawing No.2. Printed in the page-1 "Product
+# List" -> existence verified. Lifecycle: no status printed -> unknown.
+schema_version: "0.2"
+kind: part
+id: alps/EC11E18244AU
+manufacturer: alps
+mpn: EC11E18244AU
+device: alps/EC11E-SW
+package: manufacturers/alps/EC11E-SW
+sources: [alps/EC01-EC11E]
+source: alps/EC01-EC11E
+
+existence: { status: verified, src: 'p1 "Product List, Products No. EC11E18244AU"' }
+lifecycle: { status: unknown }
+
+parameters:
+  pulses_per_revolution: { value: "18", src: 'p1 "Product List, EC11E18244AU, Number of pulse"' }
+  detents:               { value: "36", src: 'p1 "Product List, EC11E18244AU, Number of detent"' }

@@ -1,14 +1,13 @@
 # Murata chip ferrite bead, BLM15A series (0402, "for General Use", code AG)
 # (murata/C31E-17 p1 Part Numbering, p11 series table). Category
-# `inductor`: the vocabulary has no ferrite-bead category (same choice
-# as the Wurth WE-CBF beads). Series-level device: impedance-specific
+# `ferrite_bead` (group inductor). Series-level device: impedance-specific
 # MPNs are Parts. Non-polar; the catalog does not number the
 # terminals, so they are 1 and 2 in the chip generator's X order.
 schema_version: "0.2"
 kind: device
 id: murata/BLM15AG
 manufacturer: murata
-category: inductor
+category: ferrite_bead
 family: BLM15
 
 pins:

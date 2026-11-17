@@ -1,0 +1,15 @@
+# Abracon ACAG0301-2450-T 2450 MHz ceramic chip antenna, 3000 pcs/reel.
+# The part number heads every datasheet page -> existence verified.
+# Lifecycle: no status printed -> unknown.
+schema_version: "0.2"
+kind: part
+id: abracon/ACAG0301-2450-T
+manufacturer: abracon
+mpn: ACAG0301-2450-T
+device: abracon/ACAG0301-2450
+package: manufacturers/abracon/CHIP-ACAG0301
+sources: [abracon/ACAG0301-2450-T]
+source: abracon/ACAG0301-2450-T
+
+existence: { status: verified, src: 'p1 "Title block, ACAG0301-2450-T"' }
+lifecycle: { status: unknown }

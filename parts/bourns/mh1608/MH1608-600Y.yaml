@@ -1,0 +1,24 @@
+# Bourns MH1608-600Y chip ferrite bead, 60 ohm ±25 % at 100 MHz. Printed
+# in the Electrical Specifications table (bourns/MH1608 p1) -> existence
+# verified. Lifecycle: no status printed -> unknown.
+schema_version: "0.2"
+kind: part
+id: bourns/MH1608-600Y
+manufacturer: bourns
+mpn: MH1608-600Y
+device: bourns/MH1608
+package: manufacturers/bourns/CHIP0603-MH1608
+sources: [bourns/MH1608]
+source: bourns/MH1608
+
+existence: { status: verified, src: 'p1 "Electrical Specifications, Model Number MH1608-600Y"' }
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance: { tol: ±25 %, src: 'p1 "Electrical Specifications, MH1608-600Y row, Impedance ±25 %"' }
+  rated_current: { max: 3 A, src: 'p1 "Electrical Specifications, MH1608-600Y row, IDC (A) Max."' }
+  dcr: { max: 40 mΩ, src: 'p1 "Electrical Specifications, MH1608-600Y row, RDC (mΩ) Max."' }
+  impedance:
+    typ: 60 Ω
+    at: { f: 100 MHz }
+    src: p1 "Electrical Specifications, MH1608-600Y row, Impedance at 100 MHz"

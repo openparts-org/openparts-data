@@ -1,0 +1,16 @@
+# Bourns "SRF4532 Series - Common Mode Chip Inductors" datasheet, footer
+# "REV. 02/20". 4 PDF pages, downloaded 2026-11-17 with plain curl from
+# bourns.com; read with pdftotext -layout and a 400 dpi render of page 1
+# (Electrical Specifications, General Specifications, Schematic,
+# Recommended Layout, Product Dimensions).
+schema_version: "0.2"
+kind: source
+id: bourns/SRF4532
+sha256: ed6cae1fcf3fd84cede0bf1be3403f92cbc64ef3575b233523854bff23f09de9
+retrieved: 2026-11-17
+url: https://www.bourns.com/docs/Product-Datasheets/SRF4532.pdf
+publisher: bourns
+document_id: SRF4532
+document_type: datasheet
+revision: 02/20
+date: 2020-02

@@ -8,7 +8,7 @@ schema_version: "0.2"
 kind: device
 id: espressif/ESP32-S3-WROOM-1
 manufacturer: espressif
-category: microcontroller
+category: wireless_module
 family: ESP32-S3-WROOM-1
 source: espressif/esp32-s3-wroom-1_wroom-1u_datasheet_en@rev1.8
 
@@ -18,6 +18,10 @@ parameters:
     min: 3 V
     max: 3.6 V
     src: p27 "Table 6-2 Recommended Operating Conditions, VDD33"
+  radio_protocol: { value: wifi_ble, src: p3 "generic Wi-Fi + Bluetooth LE MCU modules" }
+  antenna_type:
+    value: pcb_trace
+    src: 'p2 "Antenna Options, ESP32-S3-WROOM-1: On-board PCB antenna"'
 
 pins:
   src:  p11 "Table 3-1 Pin Definitions"

@@ -1,13 +1,12 @@
 # Würth WE-CBF SMT EMI suppression ferrite bead, size 0603: 300 Ohm @ 100 MHz +/-25 %, IR1 1500 mA, RDC 0.15 Ohm max, type High Current
-# ("Electrical Properties", datasheet page 1). Category `inductor`: the
-# vocabulary has no ferrite-bead category and the page-1 schematic is
-# an inductor symbol. Non-polar; the datasheet does not number the
+# ("Electrical Properties", datasheet page 1). Category `ferrite_bead`
+# (group inductor). Non-polar; the datasheet does not number the
 # terminals, so they are 1 and 2 in the chip generator's X order.
 schema_version: "0.2"
 kind: device
 id: wurth/742792641
 manufacturer: wurth
-category: inductor
+category: ferrite_bead
 family: WE-CBF
 
 pins:

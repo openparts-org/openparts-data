@@ -1,0 +1,18 @@
+# Alps Alpine "Encoders, 11mm Size Metal Shaft Type, EC11E Series" catalog
+# pages (2 pages, "Update:2510"), linked from the EC11E15244G1 product page
+# (tech.alpsalpine.com/e/products/detail/EC11E15244G1/), plain curl
+# 2026-11-17. Page 1: ratings, "Product List" (products No., detents,
+# pulses, push-on switch, travel, drawing No.). Page 2: Drawing No.1-3,
+# "Dimensions" and "Mounting Hole Dimensions" (raster images, read from a
+# 300/600 dpi render).
+schema_version: "0.2"
+kind: source
+id: alps/EC01-EC11E
+sha256: 08dae9fa97a2a97d9c9954e87455aff6f0cc557be1fb84fcb0f11608937ba241
+retrieved: 2026-11-17
+url: https://tech.alpsalpine.com/cms.media/product_catalog_ec_01_ec11e_en_611f078659.pdf
+publisher: alps
+document_id: EC01-EC11E
+document_type: datasheet
+revision: "2510"
+date: 2025-09-24

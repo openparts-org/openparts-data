@@ -1,0 +1,15 @@
+# Johanson 2450AT42A100E: 2450AT42A100 chip antenna, tape and reel. The
+# ordering code is printed in the datasheet -> existence verified.
+# Lifecycle: no status printed -> unknown.
+schema_version: "0.2"
+kind: part
+id: johanson/2450AT42A100E
+manufacturer: johanson
+mpn: 2450AT42A100E
+device: johanson/2450AT42A100
+package: manufacturers/johanson/CHIP-2450AT42A100
+sources: [johanson/2450AT42A100]
+source: johanson/2450AT42A100
+
+existence: { status: verified, src: 'p1 "P/N Suffix table, T&R Suffix = E, Eg. 2450AT42A100E"' }
+lifecycle: { status: unknown }

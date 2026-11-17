@@ -1,0 +1,29 @@
+# Johanson Technology 2450AT43F0100 ceramic chip antenna. Terminals from the
+# "Terminal Configuration" table: 1 feeding point, 2 NC (soldered for
+# mechanical anchoring).
+schema_version: "0.2"
+kind: device
+id: johanson/2450AT43F0100
+manufacturer: johanson
+category: antenna
+family: 2450AT43F0100
+source: johanson/2450AT43F0100
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "General Specifications, Operating Temperature"
+  frequency_band:
+    min: 2400 MHz
+    max: 2500 MHz
+    src: p1 "General Specifications, Operating Frequency (MHz)"
+  antenna_type:
+    value: chip
+    src: 'p1 "Title: 2.45 GHz wide band, small form factor SMD chip antenna"'
+  peak_gain: { typ: 2.1 dBi, src: 'p1 "General Specifications, Peak Gain (XZ-total)"' }
+
+pins:
+  src: p1 "Terminal Configuration table"
+  "1": { name: FEED, type: passive }
+  "2": { name: NC, type: nc }

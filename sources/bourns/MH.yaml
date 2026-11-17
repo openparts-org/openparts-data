@@ -1,0 +1,17 @@
+# Bourns "MH Series High Current Chip Ferrite Beads" datasheet (MH3261,
+# MH2029, MH1608), page-5 footer "REV. 12/18". 6 PDF pages, downloaded
+# 2026-11-17 with plain curl from bourns.com; read with pdftotext -layout.
+# Page 1: Electrical Specifications table (impedance at 100 MHz, RDC max,
+# IDC max) and General Specifications; page 5: Product Dimensions and
+# Recommended Land Pattern table (A..I per series).
+schema_version: "0.2"
+kind: source
+id: bourns/MH
+sha256: f69bf75b28f61b1fbf2e624f4e79203a320b70bc79d697bccda720a08d7e989e
+retrieved: 2026-11-17
+url: https://www.bourns.com/docs/Product-Datasheets/MH.pdf
+publisher: bourns
+document_id: MH
+document_type: datasheet
+revision: 12/18
+date: 2018-12

@@ -1,0 +1,23 @@
+# Alps Alpine EC11E 11 mm metal-shaft incremental encoder without push-on
+# switch (Drawing No.1 of alps/EC01-EC11E): A and B channel terminals and
+# the common C; the two "Dummy" terminals and the two mounting lugs carry
+# no circuit and are numbered "MP" (mechanical, passive). Series-level
+# device: detent/pulse counts are per Part.
+schema_version: "0.2"
+kind: device
+id: alps/EC11E
+manufacturer: alps
+category: rotary_encoder
+family: EC11E
+source: alps/EC01-EC11E
+
+parameters:
+  rated_voltage: { typ: 5 V, src: 'p1 "Ratings: 10mA 5V DC"' }
+  rated_current: { typ: 10 mA, src: 'p1 "Ratings: 10mA 5V DC"' }
+
+pins:
+  src: p2 "Drawing No.1, Dimensions front view A C B; Mounting Hole Dimensions, Dummy"
+  A:   { name: A, type: passive }
+  B:   { name: B, type: passive }
+  C:   { name: C, type: passive }
+  MP:  { name: MP, type: passive }

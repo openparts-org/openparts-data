@@ -6,13 +6,12 @@
 # input (RESET_N, asynchronous active-low reset -> reset), Digital I/O ->
 # io, Analog -> analog, Power -> power, except the DCPL* pins (regulator
 # outputs to external decoupling capacitors) -> power_out; N.C. -> nc.
-# category other: the category tree has no RF transceiver node (the
-# validator warns category.other).
+# category rf: a bare RF transceiver IC (the rf group node).
 schema_version: "0.2"
 kind: device
 id: ti/CC1120
 manufacturer: ti
-category: other
+category: rf
 family: CC1120
 source: ti/SWRS112H
 

@@ -1,0 +1,34 @@
+# Bourns SRF4532-220Y common-mode choke, 22 uH common mode. Printed in the
+# Electrical Specifications table -> existence verified. Lifecycle: no
+# status printed -> unknown.
+schema_version: "0.2"
+kind: part
+id: bourns/SRF4532-220Y
+manufacturer: bourns
+mpn: SRF4532-220Y
+device: bourns/SRF4532
+package: manufacturers/bourns/LGA4-4.5x3.2-SRF4532
+sources: [bourns/SRF4532]
+source: bourns/SRF4532
+
+existence: { status: verified, src: 'p1 "Electrical Specifications, Part Number SRF4532-220Y"' }
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance:
+    min: -30 %
+    max: 50 %
+    src: p1 "Electrical Specifications, SRF4532-220Y row, Tolerance +50 / -30 %"
+  inductance:
+    typ: 22 µH
+    at: { f: 100 kHz }
+    src: p1 "Electrical Specifications, SRF4532-220Y row, Inductance @ 100 KHz Common Mode"
+  rated_current:
+    max: 200 mA
+    src: p1 "Electrical Specifications, SRF4532-220Y row, IDC Max. (mA)"
+  dcr: { max: 2.65 Ω, src: 'p1 "Electrical Specifications, SRF4532-220Y row, DCR Max."' }
+  impedance:
+    min: 500 Ω
+    typ: 1000 Ω
+    at: { f: 10 MHz }
+    src: p1 "Electrical Specifications, SRF4532-220Y row, Impedance @ 10 MHz Common Mode"

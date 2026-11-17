@@ -1,0 +1,46 @@
+# Raspberry Pi RM2 castellated module, raspberrypi/RM2-DS "Figure 6 PCB
+# footprint" (p10) with the board of "Figure 4" (p8). Package frame: the
+# board centred on the origin, the antenna end (keep-out) at +y. Values
+# are printed callouts; positions are arithmetic between them:
+# Pads "1.0" wide (along the edge) x "2.0" long, reaching "0.5" past the
+# board edge (centre 0.5 inside: inset 0.5), pitch "1.5"; pins counted
+# counter-clockwise from the top left (section 2.5): 1-7 down the left
+# edge, 8-14 along the bottom, 15-21 up the right edge. Side rows: the
+# lowest pad centre "1.8" above the bottom edge, so pin 1 is 1.8 + 6 x
+# 1.5 = 10.8 above it, i.e. 16.5 - 10.8 = 5.7 below the top edge.
+# Bottom row: first pad centre "2.75" from the left edge (2.75 + 6 x 1.5
+# + 2.75 = 14.5).
+# Keep-out: "RF KEEP OUT" 35.5 x 18.5, its top "30.0" above the board's
+# bottom edge (bottom 11.5 above it: y = -8.25 + 11.5 .. -8.25 + 30),
+# centred on the board (the 14.5 board inside the 35.5 box), "must remain
+# free of any metal" (section 2.4). Height: the side view's "2.55"
+# overall; board and shield-can sizes are not printed.
+schema_version: "0.2"
+kind: package
+id: manufacturers/raspberrypi/MODULE21-14.5x16.5-RM2
+family: module
+lead_count: 21
+source: raspberrypi/RM2-DS
+
+pitch: { typ: 1.5 mm, src: 'p10 "Figure 6 PCB footprint, pad pitch "1.5""' }
+geometry: { type: parametric, generator: module }
+
+dimensions:
+  body_width:     { typ: 14.5 mm, src: 'p8 "Figure 4 mechanical diagram, width "14.5""' }
+  body_length:    { typ: 16.5 mm, src: 'p8 "Figure 4 mechanical diagram, height "16.5""' }
+  overall_height: { typ: 2.55 mm, src: 'p8 "Figure 4 mechanical diagram, side view "2.55""' }
+
+pad_rows:
+  value:
+    - { side: -x, first: 1, count: 7, pitch: 1.5, start: 5.7, inset: 0.5, pad: [1, 2] }
+    - { side: -y, first: 8, count: 7, pitch: 1.5, start: 2.75, inset: 0.5, pad: [1, 2] }
+    - { side: +x, first: 15, count: 7, pitch: 1.5, start: 1.8, inset: 0.5, pad: [1, 2] }
+  src: p10 "Figure 6 PCB footprint (see comment)"
+
+keepouts:
+  value:
+    - purpose: antenna
+      restricts: [components, copper]
+      rect: { x: 0, y: 12.5, width: 35.5, length: 18.5 }
+      side: +y
+  src: p10 "Figure 6 PCB footprint, RF KEEP OUT 35.5 x 18.5, 30.0 overall (see comment)"

@@ -1,0 +1,22 @@
+# Bourns MH3261 series high-current chip ferrite bead (3216 metric /
+# 1206), from the MH series datasheet. Series-level device: the
+# impedance-specific model numbers of the Electrical Specifications table
+# are Parts. Non-polar; the datasheet does not number the terminals, so
+# they are 1 and 2 in the chip generator's X order.
+schema_version: "0.2"
+kind: device
+id: bourns/MH3261
+manufacturer: bourns
+category: ferrite_bead
+family: MH3261
+source: bourns/MH
+
+parameters:
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p1 "General Specifications, Operating Temperature"
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

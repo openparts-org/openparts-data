@@ -1,0 +1,36 @@
+# Bourns MH3261 chip ferrite bead outline (bourns/MH p5 "Product
+# Dimensions" table, 3261 row): A (length) 3.2 ±0.2, B (width) 1.6 ±0.2,
+# C (height) 1.1 ±0.2, D (terminal) 0.5 ±0.2. min/max are the printed
+# tolerances applied. The land pattern (G 2.0, H 1.4, I 1.1) is not
+# recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/bourns/CHIP1206-MH3261
+family: chip
+lead_count: 2
+source: bourns/MH
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 1.4 mm
+    typ: 1.6 mm
+    max: 1.8 mm
+    src: p5 "Product Dimensions table, 3261 row, B"
+  body_length:
+    min: 3 mm
+    typ: 3.2 mm
+    max: 3.4 mm
+    src: p5 "Product Dimensions table, 3261 row, A"
+  body_height:
+    min: 0.9 mm
+    typ: 1.1 mm
+    max: 1.3 mm
+    src: p5 "Product Dimensions table, 3261 row, C"
+  lead_length:
+    min: 0.3 mm
+    typ: 0.5 mm
+    max: 0.7 mm
+    src: p5 "Product Dimensions table, 3261 row, D"

@@ -1,0 +1,33 @@
+# Bourns TC33 3 mm SMD single-turn trimming potentiometer (TC33X-1
+# continuous rotation, TC33X-2 rotational stop). Pins from the page-1
+# schematic: 1 CCW, 2 WIPER, 3 CW. Series-level device: the resistance is
+# per Part (Standard Resistance Table code).
+schema_version: "0.2"
+kind: device
+id: bourns/TC33
+manufacturer: bourns
+category: potentiometer
+family: TC33
+source: bourns/TC33
+
+parameters:
+  tolerance: { tol: ±25 %, src: 'p1 "Electrical Characteristics, Resistance Tolerance ±25 % std."' }
+  power_rating:
+    typ: 0.15 W
+    at: { TA: 70 °C }
+    src: p1 "Environmental Characteristics, Power Rating (50 VDC max.) 70 °C"
+  operating_temperature:
+    min: -40 °C
+    max: 100 °C
+    src: p1 "Environmental Characteristics, Temperature Range"
+  rotation_angle:
+    min: 250 °
+    typ: 270 °
+    max: 290 °
+    src: p1 "Electrical Characteristics, Adjustment Angle 270 ° ± 20 °"
+
+pins:
+  src: 'p1 "Schematic: 1 CCW, 2 WIPER, 3 CW"'
+  "1": { name: CCW, type: passive }
+  "2": { name: WIPER, type: passive }
+  "3": { name: CW, type: passive }

@@ -1,0 +1,24 @@
+# Bourns SRF4532 series bifilar-wound SMD common-mode choke. Pins from the
+# page-1 schematic: one winding 1-2, the other 4-3, dots at 1 and 4.
+# Series-level device: inductance and impedance are per Part.
+schema_version: "0.2"
+kind: device
+id: bourns/SRF4532
+manufacturer: bourns
+category: common_mode_choke
+family: SRF4532
+source: bourns/SRF4532
+
+parameters:
+  rated_voltage: { max: 50 V, src: 'p1 "General Specifications, Rated Voltage 50 VDC"' }
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p1 "General Specifications, Operating Temperature (temperature rise included)"
+
+pins:
+  src: p1 "Schematic, windings 1-2 and 4-3"
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive }
+  "4": { name: "4", type: passive }

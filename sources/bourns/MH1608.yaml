@@ -1,0 +1,16 @@
+# Bourns "MH1608 Series High Current Chip Ferrite Beads" datasheet,
+# page-4 footer "REV. 06/22". 5 PDF pages, downloaded 2026-11-17 with
+# plain curl from bourns.com; read with pdftotext -layout, page 4 also
+# rendered. Page 1: Electrical Specifications table and General
+# Specifications; page 4: Product Dimensions and Recommended Land Pattern.
+schema_version: "0.2"
+kind: source
+id: bourns/MH1608
+sha256: 3abc3231b7cf3871c8c167f1814ba683afb4537fec27a1466b50a4b709f46462
+retrieved: 2026-11-17
+url: https://www.bourns.com/docs/Product-Datasheets/MH1608.pdf
+publisher: bourns
+document_id: MH1608
+document_type: datasheet
+revision: 06/22
+date: 2022-06

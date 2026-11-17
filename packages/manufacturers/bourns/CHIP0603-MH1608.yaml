@@ -1,0 +1,35 @@
+# Bourns MH1608 chip ferrite bead outline (bourns/MH1608 p4 "Product
+# Dimensions"): length 1.6 ±0.15, width and height 0.80 ±0.15, terminal
+# 0.30 ±0.20. min/max are the printed tolerances applied. The page also
+# prints a land pattern (0.80 pads, 0.85 gap, 0.95 high), not recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/bourns/CHIP0603-MH1608
+family: chip
+lead_count: 2
+source: bourns/MH1608
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 0.65 mm
+    typ: 0.8 mm
+    max: 0.95 mm
+    src: p4 "Product Dimensions, end view 0.80 ±0.15"
+  body_length:
+    min: 1.45 mm
+    typ: 1.6 mm
+    max: 1.75 mm
+    src: p4 "Product Dimensions, top view 1.6 ±0.15"
+  body_height:
+    min: 0.65 mm
+    typ: 0.8 mm
+    max: 0.95 mm
+    src: p4 "Product Dimensions, side view 0.80 ±0.15"
+  lead_length:
+    min: 0.1 mm
+    typ: 0.3 mm
+    max: 0.5 mm
+    src: p4 "Product Dimensions, terminal electrode 0.30 ±0.20"

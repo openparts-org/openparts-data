@@ -1,0 +1,21 @@
+# Bourns TC33X-2-102E: TC33 style -2 (rotational stop), resistance code 102
+# (1,000 ohm per the Standard Resistance Table), E = 2500 pcs./7" reel;
+# composed from the How To Order fields, not printed verbatim -> probable. Lifecycle: no status printed -> unknown.
+schema_version: "0.2"
+kind: part
+id: bourns/TC33X-2-102E
+manufacturer: bourns
+mpn: TC33X-2-102E
+device: bourns/TC33
+package: manufacturers/bourns/TC33
+sources: [bourns/TC33]
+source: bourns/TC33
+
+existence:
+  status: probable
+  src: 'p2 "How To Order: Style -2, Resistance Code 102, E = 2500 pcs./7 in. Reel"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  resistance: { typ: 1 kΩ, src: 'p2 "Standard Resistance Table, Resistance Code 102: 1,000 ohms"' }

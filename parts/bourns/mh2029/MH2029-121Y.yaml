@@ -1,0 +1,24 @@
+# Bourns MH2029-121Y chip ferrite bead, 120 ohm ±25 % at 100 MHz. Printed
+# in the Electrical Specifications table (bourns/MH p1) -> existence
+# verified. Lifecycle: no status printed -> unknown.
+schema_version: "0.2"
+kind: part
+id: bourns/MH2029-121Y
+manufacturer: bourns
+mpn: MH2029-121Y
+device: bourns/MH2029
+package: manufacturers/bourns/CHIP0805-MH2029
+sources: [bourns/MH]
+source: bourns/MH
+
+existence: { status: verified, src: 'p1 "Electrical Specifications, Model Number MH2029-121Y"' }
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance: { tol: ±25 %, src: 'p1 "Electrical Specifications, MH2029-121Y row, Impedance ±25 %"' }
+  rated_current: { max: 2 A, src: 'p1 "Electrical Specifications, MH2029-121Y row, IDC (A) Max."' }
+  dcr: { max: 100 mΩ, src: 'p1 "Electrical Specifications, MH2029-121Y row, RDC (mΩ) Max."' }
+  impedance:
+    typ: 120 Ω
+    at: { f: 100 MHz }
+    src: p1 "Electrical Specifications, MH2029-121Y row, Impedance at 100 MHz"

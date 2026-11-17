@@ -1,0 +1,17 @@
+# Raspberry Pi "Raspberry Pi Radio Module 2" datasheet, colophon "Release
+# 7, Build date 20/02/2026". 17 PDF pages, downloaded 2026-11-17 with
+# plain curl from datasheets.raspberrypi.com; read with pdftotext -layout,
+# pages 8 and 10 also rendered (Figure 4 mechanical diagram, Figure 6 PCB
+# footprint). Page numbers are PDF page indices (the printed footer
+# numbers are one lower). CC BY-ND 4.0 per the colophon.
+schema_version: "0.2"
+kind: source
+id: raspberrypi/RM2-DS
+sha256: 0f611d884ce6cbc3dae5d7eb5f30ffbda5e2ec0632086c338dff4f2e74fc4007
+retrieved: 2026-11-17
+url: https://datasheets.raspberrypi.com/rm2/rm2-datasheet.pdf
+publisher: raspberrypi
+document_id: RM2-DS
+document_type: datasheet
+revision: "7"
+date: 2026-02-20

@@ -1,0 +1,15 @@
+# Johanson 2450AT18A100E-AEC: 2450AT18A100 antenna, AEC-Q200, tape and
+# reel (suffix E). The part number heads the detail specification ->
+# existence verified. Lifecycle: no status printed -> unknown.
+schema_version: "0.2"
+kind: part
+id: johanson/2450AT18A100E-AEC
+manufacturer: johanson
+mpn: 2450AT18A100E-AEC
+device: johanson/2450AT18A100
+package: manufacturers/johanson/CHIP-2450AT18A100
+sources: [johanson/2450AT18A100E-AEC]
+source: johanson/2450AT18A100E-AEC
+
+existence: { status: verified, src: 'p1 "General Specifications, Part Number 2450AT18A100E-AEC"' }
+lifecycle: { status: unknown }

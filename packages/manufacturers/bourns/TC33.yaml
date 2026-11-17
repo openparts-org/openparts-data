@@ -1,0 +1,37 @@
+# Bourns TC33 3 mm SMD trimmer (TC33X-1 and TC33X-2 share the housing
+# and the land pattern), bourns/TC33 page 1. Frame: top view as drawn
+# (pin 2 at the top, pins 1 and 3 at the bottom), origin on the centre of
+# the 3.0 x 3.8 outline. The top view places the rotor axis "1.75" below
+# the top edge and "2.0" above the bottom edge (sum 3.75 against the
+# printed 3.8; the top-edge figure is used): axis at y = 1.9 - 1.75 =
+# 0.15. Pads from the "Recommended Land Pattern": pin 2 "1.6" x "1.5",
+# its lower edge "0.7" above the axis (centre y = 0.15 + 0.7 + 0.75 =
+# 1.6); pins 1 and 3 "1.2" x "1.2", "0.8" apart (centres x = ±1.0), their
+# upper edge "1.2" below pin 2's lower edge (centre y = 0.15 + 0.7 - 1.2
+# - 0.6 = -0.95). Height: only the overall "1.2" (to the rotor top) is
+# printed; it is recorded as the housing's upper bound and overall_height
+# is left out (the validator needs the rotor top above the housing, and
+# the rotor height is not printed).
+schema_version: "0.2"
+kind: package
+id: manufacturers/bourns/TC33
+family: trimmer
+lead_count: { value: 3, src: 'p1 "Recommended Land Pattern, 3 pads"' }
+source: bourns/TC33
+
+pitch: { typ: 2 mm, src: 'p1 "Recommended Land Pattern, pads 1/3 "1.2" + gap "0.8""' }
+geometry: { type: parametric, generator: trimmer }
+
+dimensions:
+  body_width:  { typ: 3 mm, src: p1 "Product Dimensions TC33X-1/-2 top view "3.0"" }
+  body_length: { typ: 3.8 mm, src: p1 "Product Dimensions TC33X-1/-2 top view "3.8"" }
+  body_height:
+    max: 1.2 mm
+    src: p1 "Product Dimensions side view, overall "1.2" (the housing alone is not printed)"
+
+pads:
+  value:
+    - { number: "1", x: -1, y: -0.95, width: 1.2, length: 1.2 }
+    - { number: "2", x: 0, y: 1.6, width: 1.6, length: 1.5 }
+    - { number: "3", x: 1, y: -0.95, width: 1.2, length: 1.2 }
+  src: p1 "Recommended Land Pattern and top view (see comment)"

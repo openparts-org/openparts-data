@@ -1,0 +1,36 @@
+# Bourns MH2029 chip ferrite bead outline (bourns/MH p5 "Product
+# Dimensions" table, 2029 row): A (length) 2.0 ±0.2, B (width) 1.2 ±0.2,
+# C (height) 0.9 ±0.2, D (terminal) 0.5 ±0.2. min/max are the printed
+# tolerances applied. The land pattern (G 1.0, H 1.0, I 1.0) is not
+# recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/bourns/CHIP0805-MH2029
+family: chip
+lead_count: 2
+source: bourns/MH
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 1 mm
+    typ: 1.2 mm
+    max: 1.4 mm
+    src: p5 "Product Dimensions table, 2029 row, B"
+  body_length:
+    min: 1.8 mm
+    typ: 2 mm
+    max: 2.2 mm
+    src: p5 "Product Dimensions table, 2029 row, A"
+  body_height:
+    min: 0.7 mm
+    typ: 0.9 mm
+    max: 1.1 mm
+    src: p5 "Product Dimensions table, 2029 row, C"
+  lead_length:
+    min: 0.3 mm
+    typ: 0.5 mm
+    max: 0.7 mm
+    src: p5 "Product Dimensions table, 2029 row, D"

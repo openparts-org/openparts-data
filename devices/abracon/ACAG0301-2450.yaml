@@ -1,0 +1,26 @@
+# Abracon ACAG0301-2450 2450 MHz LTCC ceramic chip antenna. Terminals from
+# the page-2 "Product Dimensions" bottom view: 1 input, 2 NC.
+schema_version: "0.2"
+kind: device
+id: abracon/ACAG0301-2450
+manufacturer: abracon
+category: antenna
+family: ACAG0301
+source: abracon/ACAG0301-2450-T
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "Environmental Characteristics, Operating Temperature"
+  frequency_band:
+    min: 2400 MHz
+    max: 2500 MHz
+    src: p1 "Electrical Characteristics, Operating Frequency"
+  antenna_type: { value: chip, src: 'p1 "Description, multi-layer Ceramic Chip Antenna"' }
+  peak_gain:    { typ: 2.7 dBi, src: 'p1 "Electrical Characteristics, Peak Gain"' }
+
+pins:
+  src: p2 "Product Dimensions, bottom view terminals 1 input, 2 NC"
+  "1": { name: INPUT, type: passive }
+  "2": { name: NC, type: nc }

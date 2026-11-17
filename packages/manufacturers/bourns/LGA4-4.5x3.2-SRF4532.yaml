@@ -1,0 +1,48 @@
+# Bourns SRF4532 common-mode choke, 4 corner terminals (bourns/SRF4532
+# p1). Body 4.5 ±0.2 x 3.2 ±0.2 x 2.8 ±0.2; terminals 1.0 ±0.1 along X by
+# 1.2 ±0.1 along Y at each corner. Pads from the "Recommended Layout"
+# (top view: 4 3 over 1 2): "5.2" over both pads, "3.0" between them in X
+# -> pads 1.1 wide, centres x = ±(1.5 + 0.55) = ±2.05; "3.6" over both
+# rows, "0.9" between them -> pads 1.35 high, centres y = ±(0.45 + 0.675)
+# = ±1.125. The drawn chamfer on each pad's inner corner (0.7/0.85
+# straight edges) is not modelled: the pads are full rectangles.
+schema_version: "0.2"
+kind: package
+id: manufacturers/bourns/LGA4-4.5x3.2-SRF4532
+family: lga
+lead_count: 4
+
+lead_layout:
+  value: [2, 0, 2, 0]
+  src:   'p1 "Product Dimensions: two terminals on each 3.2 mm end"'
+
+source: bourns/SRF4532
+
+pitch:
+  typ: 2.25 mm
+  src: p1 "Recommended Layout, "3.6" - "0.9" -> pad 1.35, centres 2.25 apart (see comment)"
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:  { min: 4.3 mm, typ: 4.5 mm, max: 4.7 mm, src: 'p1 "Product Dimensions, 4.5 ±0.2"' }
+  body_length: { min: 3 mm, typ: 3.2 mm, max: 3.4 mm, src: 'p1 "Product Dimensions, 3.2 ±0.2"' }
+  body_height: { min: 2.6 mm, typ: 2.8 mm, max: 3 mm, src: 'p1 "Product Dimensions, 2.8 ±0.2"' }
+  lead_length:
+    min: 0.9 mm
+    typ: 1 mm
+    max: 1.1 mm
+    src: p1 "Product Dimensions, terminal 1.0 ±0.1"
+  lead_width:
+    min: 1.1 mm
+    typ: 1.2 mm
+    max: 1.3 mm
+    src: p1 "Product Dimensions, terminal 1.2 ±0.1"
+
+pads:
+  value:
+    - { number: "1", x: -2.05, y: -1.125, width: 1.1, length: 1.35 }
+    - { number: "2", x: 2.05, y: -1.125, width: 1.1, length: 1.35 }
+    - { number: "3", x: 2.05, y: 1.125, width: 1.1, length: 1.35 }
+    - { number: "4", x: -2.05, y: 1.125, width: 1.1, length: 1.35 }
+  src: p1 "Recommended Layout (see comment)"

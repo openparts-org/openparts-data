@@ -1,0 +1,29 @@
+# Johanson Technology 2450AT18A100 2.45 GHz ceramic chip antenna (the
+# AEC-Q200 detail specification, P/N 2450AT18A100E-AEC). Terminals from
+# the page-1 "Terminal Configuration" table: 1 Feeding Point, 2 NC.
+schema_version: "0.2"
+kind: device
+id: johanson/2450AT18A100
+manufacturer: johanson
+category: antenna
+family: 2450AT18A100
+source: johanson/2450AT18A100E-AEC
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p1 "General Specifications, Operating Temperature"
+  frequency_band:
+    min: 2400 MHz
+    max: 2500 MHz
+    src: p1 "General Specifications, Frequency Range"
+  antenna_type:
+    value: chip
+    src: 'p1 "Header: High Frequency Ceramic Solutions; title Mini 2.45 GHz Antenna"'
+  peak_gain: { typ: 0.5 dBi, src: 'p1 "General Specifications, Peak Gain (XZ-V)"' }
+
+pins:
+  src: p1 "Terminal Configuration table"
+  "1": { name: FEED, type: passive }
+  "2": { name: NC, type: nc }

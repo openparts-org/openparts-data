@@ -9,7 +9,7 @@ schema_version: "0.2"
 kind: device
 id: espressif/ESP32-S2-MINI-1
 manufacturer: espressif
-category: microcontroller
+category: wireless_module
 family: ESP32-S2-MINI-1
 source: espressif/esp32-s2-mini-1_esp32-s2-mini-1u_datasheet_en@rev1.6
 
@@ -19,6 +19,8 @@ parameters:
     typ: 3.3 V
     max: 3.6 V
     src: p15 "Table 10 Recommended Operating Conditions, VDD33"
+  radio_protocol: { value: wifi, src: 'p1 "Title: 2.4 GHz Wi-Fi (802.11 b/g/n) module"' }
+  antenna_type:   { value: pcb_trace, src: p2 "On-board PCB antenna (ESP32-S2-MINI-1)" }
 
 pins:
   src:  'p11 "Table 3: Pin Definitions (continued p12)"'

@@ -1,0 +1,49 @@
+# Alps Alpine EC11E vertical encoder without switch (Drawing No.1, the D/E holes are the "Dummy" terminals, numbered MP), alps/EC01-EC11E page 2.
+# Frame: top view as drawn ("Mounting Hole Dimensions", which matches the
+# front view of "Dimensions": A C B along the bottom, D E at the top),
+# origin on the shaft axis. Body: "11.7" wide; "6" + "6" from the shaft
+# axis to the top and bottom edges (body_length 12, so the axis is the
+# outline centre in Y); in X no offset is dimensioned, the shaft is taken
+# as centred (the lugs at ±12.5/2 are symmetric about it).
+# Holes (tolerance ±0.1): A C B on a row "7.5" below the lug centre line
+# (the shaft axis), "5" between A and B; D E (or dummies) "7" above it,
+# "5" apart; mounting lugs "12.5±0.05" apart, slots "1.5" (X) x "2.6" (Y);
+# "5-ø1" holes. Side view: frame "4.5" from the mounting face, shaft top
+# "24.5" above it (7 bushing + (20)), terminals "3.5" below it.
+schema_version: "0.2"
+kind: package
+id: manufacturers/alps/EC11E
+family: rotary_encoder
+lead_count: { value: 7, src: 'p2 "Drawing No.1, Mounting Hole Dimensions, 5-ø1 holes + 2 slots"' }
+source: alps/EC01-EC11E
+
+pitch: { typ: 2.5 mm, src: 'p2 "Drawing No.1, Mounting Hole Dimensions, A to B "5""' }
+geometry: { type: parametric, generator: rotary_encoder }
+
+dimensions:
+  body_width:  { typ: 11.7 mm, src: 'p2 "Drawing No.1, Dimensions front view "11.7""' }
+  body_length:
+    typ: 12 mm
+    src: p2 "Drawing No.1, Dimensions front view "6" + "6" from the shaft axis"
+  body_height:
+    typ: 4.5 mm
+    src: p2 "Drawing No.1, Dimensions side view "4.5" mounting face to bushing"
+  actuator_diameter:
+    min: 5.95 mm
+    max: 6 mm
+    src: p2 "Drawing No.1, Dimensions side view shaft "ø6 0/-0.05""
+  overall_height:
+    typ: 24.5 mm
+    src: p2 "Drawing No.1, Dimensions side view "24.5" mounting face to shaft end"
+  tail_length: { typ: 3.5 mm, src: 'p2 "Drawing No.1, Dimensions side view terminals "3.5""' }
+
+pads:
+  value:
+    - { number: A, x: -2.5, y: -7.5, drill: 1 }
+    - { number: C, x: 0, y: -7.5, drill: 1 }
+    - { number: B, x: 2.5, y: -7.5, drill: 1 }
+    - { number: MP, x: -2.5, y: 7, drill: 1 }
+    - { number: MP, x: 2.5, y: 7, drill: 1 }
+    - { number: MP, x: -6.25, y: 0, drill: 1.5, drill_length: 2.6, slot_axis: y }
+    - { number: MP, x: 6.25, y: 0, drill: 1.5, drill_length: 2.6, slot_axis: y }
+  src: p2 "Drawing No.1, Mounting Hole Dimensions (see comment)"

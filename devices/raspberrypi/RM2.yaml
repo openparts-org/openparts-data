@@ -1,0 +1,55 @@
+# Raspberry Pi Radio Module 2 (RM2): CYW43439 2.4 GHz Wi-Fi 4 + Bluetooth
+# 5.2 module with on-board PCB antenna, 21 castellated pads. Pins from
+# Table 2 (p11); names shortened from its Description column (gSPI SCLK
+# -> SCLK, gSPI Data In/Out -> DATA_IN/DATA_OUT, gSPI CS -> CS, Wi-Fi on
+# -> WL_ON, Bluetooth on -> BT_ON, Vin -> VIN). Types are this dataset's
+# reading: data into the module (SCLK, DATA_IN, CS, WL_ON, BT_ON) input,
+# DATA_OUT and nIRQ output, GPIOs io, VDDIO/VIN power, Ground ground,
+# No connect nc.
+schema_version: "0.2"
+kind: device
+id: raspberrypi/RM2
+manufacturer: raspberrypi
+category: wireless_module
+family: RM2
+source: raspberrypi/RM2-DS
+
+parameters:
+  data_interface: { value: spi, src: 'p4 "1.1 Features, Low-pin-count gSPI host interface"' }
+  supply_voltage:
+    min: 3 V
+    max: 4.8 V
+    src: p12 "2.6 Electrical specifications, Vin 3.0 V to 4.8 V"
+  operating_temperature:
+    min: -30 °C
+    max: 70 °C
+    src: p13 "Table 6, Ambient operating temperature"
+  esd_hbm:        { typ: 1 kV, src: 'p12 "Table 5, ESD_HAND_HBM, 1000 V"' }
+  radio_protocol:
+    value: wifi_bluetooth
+    src: p4 "1.1 Features, Wi-Fi 4 (802.11b/g/n); Bluetooth Classic and Bluetooth LE"
+  antenna_type: { value: pcb_trace, src: 'p5 "1.2 Architecture, Onboard 2.4 GHz PCB Antenna"' }
+
+pins:
+  src:  p11 "Table 2, the function of each pin"
+  "1":  { name: GND, type: ground }
+  "2":  { name: NC, type: nc }
+  "3":  { name: SCLK, type: input }
+  "4":  { name: GND, type: ground }
+  "5":  { name: DATA_IN, type: input }
+  "6":  { name: DATA_OUT, type: output }
+  "7":  { name: GND, type: ground }
+  "8":  { name: GPIO0, type: io }
+  "9":  { name: CS, type: input }
+  "10": { name: nIRQ, type: output }
+  "11": { name: GND, type: ground }
+  "12": { name: WL_ON, type: input }
+  "13": { name: BT_ON, type: input }
+  "14": { name: VDDIO, type: power }
+  "15": { name: GND, type: ground }
+  "16": { name: VIN, type: power }
+  "17": { name: GPIO2, type: io }
+  "18": { name: GPIO1, type: io }
+  "19": { name: NC, type: nc }
+  "20": { name: NC, type: nc }
+  "21": { name: GND, type: ground }
