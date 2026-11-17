@@ -1,0 +1,58 @@
+# GCT USB2066 Mini-USB B receptacle, SMT, horizontal: 5 contact pads, 4
+# SMT shell pads and 2 holes for the optional plastic posts, from page 1
+# of gct/USB2066-DWG (revision D1, 17/01/20).
+# Frame (mini_usb_b): top view, X right, Y up, plug opening toward +Y,
+# origin at the centre of the shell outline. The "Recommended P.C.B
+# Layout" ("as viewed from component side") has the contacts at the top
+# and the dashed component outline's front edge at the bottom: it is
+# turned 180° (x -> -x, y -> -y).
+# Shell: "7.70 ref." wide and "9.2" long (top view; "9.4" includes the
+# contact tails at the rear), "4.00" high (front view, board to shell
+# top; the side view's "3.90 ref." is a reference value).
+# Values printed without a tolerance carry the layout's "General
+# Tolerance: ±0.05" or the title block's (not recorded as min/max).
+schema_version: "0.2"
+kind: package
+id: manufacturers/gct/USB2066
+family: mini_usb_b
+lead_count: { value: 9, src: 'p1 "Recommended P.C.B Layout, 5 contacts, "4x 2.50" shell pads"' }
+source: gct/USB2066-DWG
+
+pitch: { typ: 0.8 mm, src: 'p1 "Recommended P.C.B Layout, "0.80""' }
+
+connector:
+  orientation: right_angle
+  src: p1 "Title block, "Mini USB Receptacle, Type B, 5 Pin, SMT, Horizontal""
+
+geometry: { type: parametric, generator: mini_usb_b }
+
+dimensions:
+  body_width:  { typ: 7.7 mm, src: 'p1 "Top view, shell width "7.70 ref.""' }
+  body_length: { typ: 9.2 mm, src: 'p1 "Top view, shell length "9.2""' }
+  body_height: { typ: 4 mm, src: 'p1 "Front view, board to shell top "4.00""' }
+
+# pads (layout frame: x right from the contacts' centre line, y up from
+# the lower shell pads' centre line): contacts "0.50" wide, "2.30" long,
+# pitch "0.80" ("3.20" pin 1 to pin 5) -> x -1.60 (Pin 1) .. +1.60 (Pin
+# 5); their lower edge "4.45" above -> centre y 4.45 + 2.30/2 = 5.60.
+# Shell pads "4x 2.00" wide, "4x 2.50" long, centres "8.90" apart in X
+# -> ±4.45, the two rows "5.50" apart -> y 0 and 5.50. Post holes "2x
+# Ø0.90", "4.40" apart -> ±2.20, "3.00" above -> y 3.00.
+# Body centre: the outline's front edge "2.95" below the lower shell
+# pads (y -2.95), the shell "9.2" long -> centre y -2.95 + 4.60 = 1.65.
+# Relative to it: contacts 3.95, upper shell pads 3.85, posts 1.35,
+# lower shell pads -1.65. Turned 180°: X = -x, Y = -y.
+pads:
+  value:
+    - { number: "1", x: 1.6, y: -3.95, width: 0.5, length: 2.3 }
+    - { number: "2", x: 0.8, y: -3.95, width: 0.5, length: 2.3 }
+    - { number: "3", x: 0, y: -3.95, width: 0.5, length: 2.3 }
+    - { number: "4", x: -0.8, y: -3.95, width: 0.5, length: 2.3 }
+    - { number: "5", x: -1.6, y: -3.95, width: 0.5, length: 2.3 }
+    - { number: SHELL, x: 4.45, y: -3.85, width: 2, length: 2.5 }
+    - { number: SHELL, x: -4.45, y: -3.85, width: 2, length: 2.5 }
+    - { number: SHELL, x: 4.45, y: 1.65, width: 2, length: 2.5 }
+    - { number: SHELL, x: -4.45, y: 1.65, width: 2, length: 2.5 }
+    - { number: "", x: 2.2, y: -1.35, drill: 0.9, plated: false }
+    - { number: "", x: -2.2, y: -1.35, drill: 0.9, plated: false }
+  src: p1 "Recommended P.C.B Layout; top view "9.2" (see comment above)"

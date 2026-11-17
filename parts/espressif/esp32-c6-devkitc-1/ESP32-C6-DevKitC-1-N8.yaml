@@ -4,8 +4,8 @@
 # centres of the top-copper plot, scaled by the board outline; see the
 # agent-scratch placement table). Stand-ins (stand_in_for, same package or
 # body/land as the design): U3 CP2102N -> Allegro QFN-28 5x5; USB-C
-# J2/J4 (no MPN) -> GCT USB4105; SW1/SW2 NTC013-AT1J-A160T stay boxes
-# (S3 BOM size); power LED D5 -> Kingbright 0603 red;
+# J2/J4 (no MPN) -> GCT USB4105; SW1/SW2 NTC013-AT1J-A160T -> Alps SKRP
+# (same 4.2x3.2x2.5 body and land); power LED D5 -> Kingbright 0603 red;
 # D11 1N4148W -> Diodes 1N4148W-7-F; ESD LESD5D5.0CT1G -> onsemi ESD5Z5.0T1G.
 # D6 WS2812B (variant not stated, 3.5x3.5 land) -> Worldsemi WS2812B-Mini-V6.
 # Left out: J5, passives. U6 is the real onsemi BC847BDW1T1G (SC-88).
@@ -65,21 +65,23 @@ assembly:
       - espressif/esp32-c6-devkitc-1-schematics_v1.2 "U3 CP2102N-A02-GQFN28"
       - '"stand-in matched on QFN-28 5x5, 0.5 pitch (CP2102N-A02-GQFN28 QFN28_0P5_5)"'
   - ref: SW1
-    body: { width: 4.2, length: 3.2, height: 2.5, color: "#2a2a2a" }
+    part: alps/SKRPABE010
+    stand_in_for: NTC013-AT1J-A160T
     x: 5
     y: -13.13
     src:
-      - p1 "SW1 pad envelope centre (4 pads)"
+      - p1 "SW1 pad envelope centre; 4 pads 1.05 x 0.65 at 4.15 x 2.15"
       - espressif/esp32-c6-devkitc-1-schematics_v1.2 "SW1 NTC013-AT1J-A160T"
-      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5, stem black"'
+      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5; stand-in: same body and land"'
   - ref: SW2
-    body: { width: 4.2, length: 3.2, height: 2.5, color: "#2a2a2a" }
+    part: alps/SKRPABE010
+    stand_in_for: NTC013-AT1J-A160T
     x: -5
     y: -13.13
     src:
-      - p1 "SW2 pad envelope centre (4 pads)"
+      - p1 "SW2 pad envelope centre; 4 pads 1.05 x 0.65 at 4.15 x 2.15"
       - espressif/esp32-c6-devkitc-1-schematics_v1.2 "SW2 NTC013-AT1J-A160T"
-      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5, stem black"'
+      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5; stand-in: same body and land"'
   - ref: D5
     part: kingbright/APT1608EC
     stand_in_for: power LED 0603, MPN not stated

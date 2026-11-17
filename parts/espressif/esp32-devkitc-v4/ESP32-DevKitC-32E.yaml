@@ -9,7 +9,7 @@
 # land pattern. D3 is the real BAT760-7. Stand-ins
 # (stand_in_for, same package or body/land): U2 AMS1117-3.3 -> Diodes
 # AP1117E33G-13 (SOT-223); U1 CP2102N -> Allegro QFN-28 5x5; SW1/SW2 (3x4x2,
-# no MPN) stay boxes; J1 micro-USB (no MPN) -> GCT USB3076; D1 -> Kingbright
+# no MPN) -> Alps SKRP; J1 micro-USB (no MPN) -> GCT USB3076; D1 -> Kingbright
 # 0603 red; Q1/Q2 S8050 -> onsemi MMBT2222A; D4-D6 LESD5D5.0CT1G -> onsemi
 # ESD5Z5.0T1G. Left out: headers, passives.
 schema_version: "0.2"
@@ -64,17 +64,23 @@ assembly:
     y: -15.748
     src: '"PADS D3 (SOD323): pad-extent centre; pin 1 (EXT_5V, cathode) at -x; BOM item 6 BAT760-7"'
   - ref: SW1
-    body: { width: 4, length: 3, height: 2, color: "#e8e8e8" }
+    part: alps/SKRPABE010
+    stand_in_for: SMT tact switch 3x4x2, 2 terminals, MPN not stated
     x: 8.03
     y: -20.27
     rotation: 90
-    src: '"PADS SW1 (SW_3X4X2MM, turned 90): outline 4 x 3 centre; BOM item 15 "3x4x2""'
+    src:
+      - '"PADS SW1 (SW_3X4X2MM, turned 90): outline 4 x 3 centre; BOM item 15 \"3x4x2\""'
+      - '"stand-in matched on SMT top-push body size (4.2 x 3.2 vs 4 x 3); 4 terminals vs 2"'
   - ref: SW2
-    body: { width: 4, length: 3, height: 2, color: "#e8e8e8" }
+    part: alps/SKRPABE010
+    stand_in_for: SMT tact switch 3x4x2, 2 terminals, MPN not stated
     x: -7.97
     y: -20.27
     rotation: 90
-    src: '"PADS SW2 (SW_3X4X2MM, turned 90): outline 4 x 3 centre; BOM item 15 "3x4x2""'
+    src:
+      - '"PADS SW2 (SW_3X4X2MM, turned 90): outline 4 x 3 centre; BOM item 15 \"3x4x2\""'
+      - '"stand-in matched on SMT top-push body size (4.2 x 3.2 vs 4 x 3); 4 terminals vs 2"'
   - ref: J1
     part: gct/USB3076-30-A
     stand_in_for: micro-USB B receptacle (DIP legs), MPN not stated

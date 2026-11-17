@@ -1,0 +1,25 @@
+# Vishay TNPW0402 e3 high stability thin film flat chip resistor.
+# Non-polarized 2-terminal part; terminals numbered only. power_rating is
+# left out: P70 depends on the operation mode (general / power / advanced,
+# p2), which the part number does not fix.
+schema_version: "0.2"
+kind: device
+id: vishay/TNPW0402
+manufacturer: vishay
+category: resistor
+family: TNPW
+source: vishay/28758
+
+# Parameters (AI candidates, needs review): family-wide values.
+parameters:
+  rated_voltage:
+    max: 75 V
+    src: p1 "TECHNICAL SPECIFICATIONS, TNPW0402 e3, Operating voltage Umax. ACRMS or DC"
+  operating_temperature:
+    min: -55 °C
+    max: 175 °C
+    src: p1 "TECHNICAL SPECIFICATIONS, Operating temperature range"
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

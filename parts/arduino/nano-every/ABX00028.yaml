@@ -4,9 +4,9 @@
 # Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
 # or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
 # real one) -- or a box whose size AND height a source states. Left out:
-#   IC1 MPM3610 (MPS), U3 ATSAMD11D14A-MUT, PB1 PTS820 4.2x3.2 switch (C&K: 403; no switch of that
-#   size yet), Q1/Q2 BSS138PS, D1 PRTR5V0U2X: no OpenParts part; passives skipped. DL1-DL4, D2 and
-#   J1 stand-ins sit on the .mnt centroids and angles (the mount file has no pads)
+#   IC1 MPM3610 (MPS), U3 ATSAMD11D14A-MUT, Q1/Q2 BSS138PS, D1 PRTR5V0U2X: no OpenParts part;
+#   passives skipped. DL1-DL4, D2, J1 and PB1 stand-ins sit on the .mnt centroids and angles (the
+#   mount file has no pads)
 # U1: BOM orders ATMEGA4809-AFR (the tape-and-reel code of ATmega4809-AF).
 schema_version: "0.2"
 kind: part
@@ -88,3 +88,11 @@ assembly:
     src:
       - '"NANOEveryV4.0.mnt J1 at 2.97, 8.89 rot 270"'
       - '"J1 footprint --ZX62-AB-5PA; placed on the mount-file centroid and angle (no pads in the file)"'
+  - ref: PB1
+    part: alps/SKRPABE010
+    stand_in_for: C&K PTS820 4.2x3.2 SMD tactile switch
+    x: 0
+    y: 10.5
+    src:
+      - '"NANOEveryV4.0.mnt PB1 at 11.09, 8.89 rot 90"'
+      - '"PB1 footprint PTS820-C&K_PTS820_NO_HOLES; placed on the mount-file centroid and angle (no pads in the file)"'

@@ -1,0 +1,26 @@
+# Same Sky UJ2-BH-TH series USB Type-B receptacle, 4 contacts + shell
+# (samesky/UJ2-BH-TH-DS). The datasheet numbers the contacts 1-4 (front
+# view and PCB layout) but names none of them: the pins are named by
+# their numbers and typed passive. "SHELL": the two shell-stake holes
+# ("2-ø2.30"); the datasheet assigns them no signal.
+schema_version: "0.2"
+kind: device
+id: samesky/UJ2-BH-TH
+manufacturer: samesky
+category: connector
+family: UJ2-BH-TH
+source: samesky/UJ2-BH-TH-DS
+
+parameters:
+  operating_temperature:
+    min: -20 °C
+    max: 85 °C
+    src: p1 "SPECIFICATIONS, operating temperature -20 / 85 °C"
+
+pins:
+  src:   ['p2 "Front view, contacts 1-4"', 'p2 "Recommended PCB Layout Top View, 1-4, 2-ø2.30"']
+  "1":   { name: "1", type: passive }
+  "2":   { name: "2", type: passive }
+  "3":   { name: "3", type: passive }
+  "4":   { name: "4", type: passive }
+  SHELL: { name: SHELL, type: passive }

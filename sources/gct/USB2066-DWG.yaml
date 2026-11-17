@@ -1,0 +1,25 @@
+# GCT product drawing USB2066, "Mini USB Receptacle, Type B, 5 Pin, SMT,
+# Horizontal, Optional Post, 9.40mm Length".
+# 2 pages; page 1 drawing (top, front and side views, "Detail A",
+# bottom view with the "Optional post"), "Recommended P.C.B Layout"
+# ("General Tolerance: ±0.05", "as viewed from component side"),
+# Specifications, "Ordering Grid"; page 2 packaging. Page 1 carries a
+# large red "OBSOLETE" stamp across the drawing (graphic, not text).
+# Title block: Part Number "USB2066", Drawing Date "4th June 2009",
+# Revision "D1", Date "17/01/20" (DD/MM/YY, = 2020-01-17), 3rd angle
+# projection, units mm. The drawing has no pin-name table (only "Pin 1"
+# and "Pin 5" labels).
+# Fetched with wget (curl got HTTP 403 from the same URL); the bytes are
+# identical over two downloads. Vector art with a text layer: dimensions
+# read from 110-400 dpi renders and the text layer.
+schema_version: "0.2"
+kind: source
+id: gct/USB2066-DWG
+sha256: 1dadd9fec927f717b8ac6fb8ab5ad13f68eb1511cff496ddef446770f48dfd03
+retrieved: 2026-11-17
+url: https://gct.co/files/drawings/usb2066.pdf
+publisher: gct
+document_id: USB2066
+document_type: datasheet
+revision: D1
+date: 2020-01-17

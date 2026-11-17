@@ -1,0 +1,21 @@
+# Same Sky datasheet "SERIES: UJ2-BH-TH | DESCRIPTION: USB RECEPTACLE".
+# 3 pages, US letter: p1 features ("USB type B jack", "horizontal
+# orientation", "through hole mounting"), part number key, specifications;
+# p2 "MECHANICAL DRAWING" (front, side and bottom views, "Recommended PCB
+# Layout Top View" with pin numbers 1-4 and the "PCB edge" line), p3
+# "REVISION HISTORY" (last row: rev "1.05", "modified tooling",
+# 02/25/2026). Every page header: "date 02/25/2026" (MM/DD/YYYY).
+# Downloaded with curl from the URL below; the PDF's ModDate is the
+# download moment (stamped by the server) and the bytes differ per
+# download, so no sha256 is recorded. The drawing is vector art:
+# dimensions read from 110-400 dpi renders.
+schema_version: "0.2"
+kind: source
+id: samesky/UJ2-BH-TH-DS
+retrieved: 2026-11-17
+url: https://www.sameskydevices.com/product/resource/uj2-bh-th.pdf
+date: 2026-02-25
+publisher: samesky
+document_id: UJ2-BH-TH
+document_type: datasheet
+revision: "1.05"

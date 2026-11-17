@@ -1,0 +1,16 @@
+# Vishay LL4148-GS18: an ordering code in the datasheet's "PARTS TABLE"
+# ("LL4148-GS08 or LL4148-GS18"; packaging "GS18/10K per 13" reel",
+# "GS08/2.5K per 7" reel") -> existence verified. lifecycle unknown: the
+# datasheet states none.
+schema_version: "0.2"
+kind: part
+id: vishay/LL4148-GS18
+manufacturer: vishay
+mpn: LL4148-GS18
+device: vishay/LL4148
+package: manufacturers/vishay/MiniMELF-SOD80
+sources: [vishay/85557]
+source: vishay/85557
+
+existence: { status: verified, src: 'p1 "PARTS TABLE, ORDERING CODE LL4148-GS08 or LL4148-GS18"' }
+lifecycle: { status: unknown }

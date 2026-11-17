@@ -1,0 +1,26 @@
+# Vishay Dale WSL2512 Power Metal Strip low-value (current-sense)
+# resistor. Non-polarized 2-terminal part; terminals numbered only.
+# rated_voltage is left out: the maximum working voltage is printed only
+# as (P x R)^1/2.
+schema_version: "0.2"
+kind: device
+id: vishay/WSL2512
+manufacturer: vishay
+category: resistor
+family: WSL
+source: vishay/30100
+
+# Parameters (AI candidates, needs review): family-wide values.
+parameters:
+  power_rating:
+    typ: 1 W
+    at: { TA: 70 °C }
+    src: p1 "STANDARD ELECTRICAL SPECIFICATIONS, WSL2512 row, POWER RATING P70 °C"
+  operating_temperature:
+    min: -65 °C
+    max: 170 °C
+    src: p2 "TECHNICAL SPECIFICATIONS, Operating temperature range"
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

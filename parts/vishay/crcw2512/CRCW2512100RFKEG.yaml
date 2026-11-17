@@ -1,0 +1,37 @@
+# 100 Ω +/-1 %, +/-100 ppm/K CRCW2512 thick film chip resistor
+# (EG = E67, 2000 pcs, blister tape 8 mm pitch, 7" reel). Not printed literally: assembled from the page-3
+# PART NUMBER AND PRODUCT DESCRIPTION legend (CRCW2512 | 100R | F | K | EG);
+# 100 Ω is inside the p2 CRCW2512 e3 +/-100 ppm/K, +/-1 % row (10 Ohm range
+# start per the +/-200 ppm/K row below it) -> existence probable.
+schema_version: "0.2"
+kind: part
+id: vishay/CRCW2512100RFKEG
+manufacturer: vishay
+mpn: CRCW2512100RFKEG
+device: vishay/CRCW2512-GENERAL-PURPOSE
+package: standards/CHIP2512-CRCW
+sources: [vishay/20035]
+source: vishay/20035
+
+existence:
+  status: probable
+  src:
+    - p3 "PART NUMBER AND PRODUCT DESCRIPTION legend"
+    - p2 "TEMPERATURE COEFFICIENT AND RESISTANCE RANGE, CRCW2512 e3, ±100 ppm/K ±1% row"
+    - p3 "PACKAGING, CRCW2512 e3, code EG"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review): resistance, tolerance and TCR from
+# the part-number legend; P70 from the technical specifications (for sizes
+# 1206 and up the p2 operation-mode table lists no alternative rating).
+parameters:
+  tolerance: { tol: ±1 %, src: 'p3 "PART NUMBER AND PRODUCT DESCRIPTION, TOLERANCE: F = ±1 %"' }
+  resistance: { typ: 100 Ω, src: 'p3 "PART NUMBER AND PRODUCT DESCRIPTION, RESISTANCE: 100R"' }
+  power_rating:
+    typ: 1 W
+    at: { TA: 70 °C }
+    src: p1 "TECHNICAL SPECIFICATIONS, CRCW2512 e3, Rated dissipation P70"
+  temperature_coefficient:
+    tol: ±100 ppm/K
+    src: 'p3 "PART NUMBER AND PRODUCT DESCRIPTION, TCR: K = ± 100 ppm/K"'

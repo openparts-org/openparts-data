@@ -1,0 +1,33 @@
+# 1 kΩ +/-0.1 %, +/-25 ppm/K TNPW0805 e3 thin film chip resistor, packaging
+# EA. Not printed literally: assembled from the page-4 PART NUMBER AND
+# PRODUCT DESCRIPTION legend (TNPW0805 | 1K00 | B | E | EA); 1 kΩ is
+# inside the p3/p4 TNPW0805 ±25 ppm/K, ±0.1 % range -> existence probable.
+schema_version: "0.2"
+kind: part
+id: vishay/TNPW08051K00BEEA
+manufacturer: vishay
+mpn: TNPW08051K00BEEA
+device: vishay/TNPW0805
+package: standards/CHIP0805-TNPW
+sources: [vishay/28758]
+source: vishay/28758
+
+existence:
+  status: probable
+  src:
+    - p4 "PART NUMBER AND PRODUCT DESCRIPTION legend"
+    - p3 "TEMPERATURE COEFFICIENT AND RESISTANCE RANGE, TNPW0805 e3, ± 25 ppm/K rows"
+    - p4 "PACKAGING, TNPW0805 e3, EA"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review): resistance, tolerance and TCR from
+# the part-number legend.
+parameters:
+  tolerance:
+    tol: ±0.1 %
+    src: 'p4 "PART NUMBER AND PRODUCT DESCRIPTION, TOLERANCE: B = ± 0.1 %"'
+  resistance: { typ: 1 kΩ, src: 'p4 "PART NUMBER AND PRODUCT DESCRIPTION, RESISTANCE: 1K00"' }
+  temperature_coefficient:
+    tol: ±25 ppm/K
+    src: 'p4 "PART NUMBER AND PRODUCT DESCRIPTION, TCR: E = ± 25 ppm/K"'

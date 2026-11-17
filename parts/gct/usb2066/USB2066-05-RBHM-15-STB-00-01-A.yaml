@@ -1,0 +1,22 @@
+# MPN assembled from the drawing's "Ordering Grid" (USB2066 - No. of
+# Contacts "05" - "RBHM" - Contact Plating "15 = 15u" Gold" - "STB" -
+# Offset "00 = No Offset" - Optional Post "01 = With Post" - Packing
+# Options "A = Tape & Reel (With Mylar)") -> existence probable: the
+# grid is a part-numbering legend, not an orderable list. The post
+# variant is chosen because the layout draws the post holes.
+# lifecycle obsolete: page 1 is stamped "OBSOLETE" (graphic stamp).
+schema_version: "0.2"
+kind: part
+id: gct/USB2066-05-RBHM-15-STB-00-01-A
+manufacturer: gct
+mpn: USB2066-05-RBHM-15-STB-00-01-A
+device: gct/USB2066
+package: manufacturers/gct/USB2066
+sources: [gct/USB2066-DWG]
+source: gct/USB2066-DWG
+
+existence:
+  status: probable
+  src: 'p1 "Ordering Grid: 05, RBHM, 15, STB, Offset 00, Optional Post 01, A"'
+
+lifecycle: { status: obsolete, src: p1 "OBSOLETE (stamp across the drawing)" }

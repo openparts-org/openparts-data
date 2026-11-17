@@ -42,8 +42,8 @@ lifecycle: { status: unknown }
 # switch, VBUS diode) are placed, at the Pico 2 STEP's position. The
 # RP2350, flash, crystal, regulator and shield moved between Pico and Pico
 # W, so they are left out rather than guessed. D1 is the real
-# MBR120VLSFT1G; J1 (EDAC 690-005-298-486) is a stand-in (GCT USB3076);
-# SW1 (TP-1221U) stays a box.
+# MBR120VLSFT1G; J1 (EDAC 690-005-298-486) and SW1 (TP-1221U) are
+# stand-ins (GCT USB3076, Alps SKRP).
 assembly:
   - ref: J1
     part: gct/USB3076-30-A
@@ -55,14 +55,15 @@ assembly:
       - raspberrypi/RP-008306-DS "J1 690-005-298-486"
       - '"Pico 2 position (same MPN): edac_690-005-298-486 box front at y 26.8; stand-in shell front there"'
   - ref: SW1
-    body: { width: 4.24, length: 3.2, height: 2.5, color: "#e8e8e8" }
+    part: alps/SKRPABE010
+    stand_in_for: TP-1221U-K9K5325
     x: -3.5
     y: 13.5
     rotation: 90
     src:
       - raspberrypi/RP-008306-DS "SW1 TP-1221U-K9K5325"
       - '"Pico 2 position (same MPN): toneparts_tp-1221u-k9k5325 at (-3.5, 13.5), turned 90"'
-      - raspberrypi/RP-008311-DS "TP-1221U switch body bounding box 4.24 x 3.2, 2.5 high"
+      - 'alps/TA02-SKRP "SKRP 4.2x3.2x2.5 body: stand-in matched on the TP-1221U 4.24 x 3.2 x 2.5 box"'
   - ref: D1
     part: onsemi/MBR120VLSFT1G
     x: 6

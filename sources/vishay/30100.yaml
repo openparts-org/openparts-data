@@ -1,0 +1,16 @@
+# Vishay Dale WSL Power Metal Strip resistors, low value, surface mount
+# (5 pages). Footer "Revision: 23-Nov-2023", Document Number 30100.
+# Downloaded 2026-11-17 with plain curl from vishay.com (HTTP 200, PDF);
+# read with pdftotext -layout plus a render of page 2 (technical
+# specifications and dimension table).
+schema_version: "0.2"
+kind: source
+id: vishay/30100
+sha256: 96c2dc89ae1e3039815ed6c41f566a6e9f6b53035f8e45ea2ada1697935a44dc
+retrieved: 2026-11-17
+url: https://www.vishay.com/docs/30100/wsl.pdf
+publisher: vishay
+document_id: "30100"
+document_type: datasheet
+revision: 23-Nov-2023
+date: 2023-11-23

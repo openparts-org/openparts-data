@@ -1,0 +1,33 @@
+# 50 mΩ +/-1 % WSL2010 current-sense resistor, lead (Pb)-free tape/reel
+# (EA). Not printed literally: assembled from the page-1 GLOBAL PART NUMBER
+# INFORMATION legend (WSL2010 | R0500 | F | EA); 0.05 Ohm is inside the
+# +/-1 % range (0.001 to 0.5 Ohm) of the WSL2010 row -> existence probable.
+schema_version: "0.2"
+kind: part
+id: vishay/WSL2010R0500FEA
+manufacturer: vishay
+mpn: WSL2010R0500FEA
+device: vishay/WSL2010
+package: standards/CHIP2010-WSL-R007
+sources: [vishay/30100]
+source: vishay/30100
+
+existence:
+  status: probable
+  src:
+    - p1 "GLOBAL PART NUMBER INFORMATION legend"
+    - p1 "STANDARD ELECTRICAL SPECIFICATIONS, WSL2010 row, TOL. ± 1.0 % 0.001 to 0.5"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review): resistance and tolerance from the
+# part-number legend; TCR is the component TCR (-55 °C to +155 °C) row
+# covering this value. Power rating is on the Device.
+parameters:
+  tolerance: { tol: ±1 %, src: 'p1 "GLOBAL PART NUMBER INFORMATION, TOLERANCE CODE: F = ± 1.0 %"' }
+  resistance:
+    typ: 50 mΩ
+    src: 'p1 "GLOBAL PART NUMBER INFORMATION, RESISTANCE VALUE: R = decimal, R0500"'
+  temperature_coefficient:
+    tol: ±75 ppm/°C
+    src: 'p2 "TECHNICAL SPECIFICATIONS, component TCR, WSL0805-WSL2816: ±75 for 7 mΩ to 500 mΩ"'

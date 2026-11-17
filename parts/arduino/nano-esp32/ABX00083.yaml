@@ -4,10 +4,9 @@
 # Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
 # or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
 # real one) -- or a box whose size AND height a source states. Left out:
-#   PB1 PTS820 (C&K: 403; no switch of that size), D1 SOT143B TVS (datasheet lists "D3 PRTR5V0U2X";
-#   Nexperia: 403), L3 MAKK2016T3R3M, Q1 (SOT523, no MPN): no part; passives skipped. Header holes:
-#   the inner plated 1.016 mm holes of JP1/JP2 (Pads6 binary of PCB.PcbDoc); the castellated edge
-#   half-holes are not pads here
+#   D1 SOT143B TVS (datasheet lists "D3 PRTR5V0U2X"; Nexperia: 403), L3 MAKK2016T3R3M, Q1 (SOT523,
+#   no MPN): no part; passives skipped. Header holes: the inner plated 1.016 mm holes of JP1/JP2
+#   (Pads6 binary of PCB.PcbDoc); the castellated edge half-holes are not pads here
 # M1: box centred on the M1 lands, 14.3 mm along their 12.9 mm extent and 10.4 mm along the 8.8 mm
 # one (datasheet p27 Figure 5); the module origin in the design is 0.95 mm off the land centre.
 schema_version: "0.2"
@@ -101,3 +100,11 @@ assembly:
     src:
       - '"PCB.PcbDoc D2 at 53, 57.075 rot 90"'
       - '"D2 footprint SOD123-1; stand-in fitted to its 2 pads (mean 0.005 mm)"'
+  - ref: PB1
+    part: alps/SKRPABE010
+    stand_in_for: C&K PTS820 4.2x3.2 SMD tactile switch
+    x: 0
+    y: 10.796
+    src:
+      - '"PCB.PcbDoc PB1 at 50.194, 54.29 rot 90"'
+      - '"PB1 footprint C&K_PTS820_NO_HOLES-1; stand-in fitted to its 2 pads (mean 1.075 mm)"'

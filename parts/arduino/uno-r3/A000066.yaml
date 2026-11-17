@@ -4,11 +4,10 @@
 # Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
 # or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
 # real one) -- or a box whose size AND height a source states. Left out:
-#   X2 USB-B PN61729 (no USB-B package family in the generator), Y1 16 MHz crystal (no MPN, "QS"
-#   footprint), Y2 CSTCE16M0V53-R0 (Murata spec not served as a plain PDF), PC1/PC2 47u caps, D2/D3
-#   CD1206-S01575 (Bourns: 403; MiniMELF, no MELF package family), the DIP-28 socket under ZU4: no
-#   part or no body height; IOH (10-way socket) stays a box: Wurth refuses plain fetches now and
-#   Samtec prints give no PCB hole for SSW sockets; small passives skipped
+#   Y1 16 MHz crystal (no MPN, "QS" footprint), Y2 CSTCE16M0V53-R0 (Murata spec not served as a
+#   plain PDF), PC1/PC2 47u caps, the DIP-28 socket under ZU4: no part or no body height; IOH
+#   (10-way socket) stays a box: Wurth refuses plain fetches now and Samtec prints give no PCB hole
+#   for SSW sockets; small passives skipped
 # ZU4: fitted in a DIP-28 socket on the board; the socket (no MPN or height in the design) is not
 # modelled.
 # T1: Eagle pads 1/2/3 = nets USBVCC/+5V/GATE_CMD = drain/source/gate, i.e. FDN340P pins 3/2/1;
@@ -175,3 +174,30 @@ assembly:
     src:
       - '"UNO-TH_Rev3e.brd ICSP1 at 18.288, 46.228 rot 180"'
       - '"ICSP1 value 3x2 M, footprint 2X03; stand-in fitted to its 6 pads (mean 0 mm)"'
+  - ref: X2
+    part: samesky/UJ2-BH-1-TH
+    stand_in_for: USB Type-B receptacle (value USB-B_TH, footprint PN61729), MPN not stated
+    x: -28.47
+    y: 11.43
+    rotation: 180
+    src:
+      - '"UNO-TH_Rev3e.brd X2 at 3.81, 38.1 rot 270"'
+      - '"X2 value USB-B_TH, footprint PN61729; stand-in fitted to its 6 pads (mean 0.007 mm)"'
+  - ref: D2
+    part: vishay/LL4148-GS08
+    stand_in_for: Bourns CD1206-S01575 (MiniMELF)
+    x: 25.146
+    y: 1.27
+    rotation: 270
+    src:
+      - '"UNO-TH_Rev3e.brd D2 at 59.436, 27.94 rot 270"'
+      - '"D2 value CD1206-S01575, footprint MINIMELF; stand-in fitted to its 2 pads (mean 0.175 mm)"'
+  - ref: D3
+    part: vishay/LL4148-GS08
+    stand_in_for: Bourns CD1206-S01575 (MiniMELF)
+    x: -21.209
+    y: 19.558
+    rotation: 90
+    src:
+      - '"UNO-TH_Rev3e.brd D3 at 13.081, 46.228 rot 90"'
+      - '"D3 value CD1206-S01575, footprint MINIMELF; stand-in fitted to its 2 pads (mean 0.175 mm)"'

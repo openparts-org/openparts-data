@@ -4,8 +4,7 @@
 # Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
 # or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
 # real one) -- or a box whose size AND height a source states. Left out:
-#   IC1 FT232RL (FTDI: 403 to plain fetches; SSOP28, no same-package stand-in), J3 USB mini-B
-#   ("14850", maker not named; no mini-B package family in the generator), SW1 IT-1185AP1C (no
+#   IC1 FT232RL (FTDI: 403 to plain fetches; SSOP28, no same-package stand-in), SW1 IT-1185AP1C (no
 #   switch of that footprint), Y1 CSTCE16M0V53-R0 resonator (Murata spec not served as a plain PDF),
 #   D1 SS1P3L (no SMP-package part), C2/C5 TAJA475 tantalum: no part; small passives (0603 C, CAY16
 #   arrays, F1) skipped
@@ -100,3 +99,12 @@ assembly:
     src:
       - '"NanoV3.3.brd J4 at 40.538, 8.89 rot 90"'
       - '"J4 footprint 2X03; stand-in fitted to its 6 pads (mean 0 mm)"'
+  - ref: J3
+    part: gct/USB2066-05-RBHM-15-STB-00-01-A
+    stand_in_for: Mini-USB B receptacle ("14850", maker not named)
+    x: 0
+    y: 17.553
+    rotation: 180
+    src:
+      - '"NanoV3.3.brd J3 at 7.061, 7.29 rot 90"'
+      - '"J3 footprint USB-MINI-B_2; stand-in fitted to its 9 pads (mean 0.18 mm)"'

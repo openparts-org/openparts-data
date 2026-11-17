@@ -40,8 +40,8 @@ lifecycle: { status: unknown }
 # (powerchain schematic) and the design's part library. Only the main
 # visible parts are placed; the passives, the LED (no MPN stated) and
 # the CYW43439 under the shield can (SH1) are left out. Stand-ins
-# (stand_in_for): J1 EDAC 690-005-298-486 -> GCT USB3076; SW1 TP-1221U
-# stays a box.
+# (stand_in_for): J1 EDAC 690-005-298-486 -> GCT USB3076; SW1 TP-1221U ->
+# Alps SKRP (same 4.2x3.2x2.5 body).
 assembly:
   - ref: U1
     part: raspberrypi/RP2040
@@ -90,13 +90,15 @@ assembly:
       - 'raspberrypi/RP-008312-DS@rev2 p15 "Figure 8: J1 690-005-298-486"'
       - raspberrypi/RP-009061-CA "edac_690-005-298-486 box front at y 26.8; stand-in shell front placed there"
   - ref: SW1
-    body: { width: 4.24, length: 3.2, height: 2.5, color: "#e8e8e8" }
+    part: alps/SKRPABE010
+    stand_in_for: TP-1221U-K9K5325
     x: -3.5
     y: 13.5
     rotation: 90
     src:
       - '"SW1 placement; DSN part TP-1221U-K9K5325"'
       - raspberrypi/RP-008311-DS "TP-1221U switch body bounding box 4.24 x 3.2, 2.5 high"
+      - 'alps/TA02-SKRP "SKRP 4.2x3.2x2.5 body: stand-in matched on the TP-1221U 4.24 x 3.2 x 2.5 box"'
   - ref: SH1
     body: { width: 12, length: 10, height: 1.7, color: "#b9bbbe" }
     x: -0.1

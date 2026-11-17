@@ -1,0 +1,59 @@
+# Same Sky UJ2-BH-TH USB Type-B receptacle, through hole, horizontal
+# (right angle): 4 contact holes "4-ø0.92" and 2 shell-stake holes
+# "2-ø2.30" (no lands drawn: generator ring), from page 2 of
+# samesky/UJ2-BH-TH-DS (rev 1.05, 02/25/2026).
+# Frame (usb_b): top view, X right, Y up, plug opening toward +Y, origin
+# at the centre of the body outline. The "Recommended PCB Layout Top
+# View" has the "PCB edge" (the opening) at the bottom: it is turned 180°
+# (x -> -x, y -> -y). Its pin 1 (upper right) thus lands at -X, as the
+# front view (seen into the opening) draws contact 1 on the right.
+# Body: "12.20 MAX." wide, "10.80 MAX." high (front view, seating plane
+# to top, the "0.30" stand-off bumps included), "16.50 MAX." long (side
+# view); only maxima are printed, so the body is drawn at them.
+schema_version: "0.2"
+kind: package
+id: manufacturers/samesky/UJ2-BH-TH
+family: usb_b
+lead_count: { value: 6, src: 'p2 "Recommended PCB Layout, 4-ø0.92 and 2-ø2.30"' }
+source: samesky/UJ2-BH-TH-DS
+
+pitch: { typ: 2.5 mm, src: 'p2 "Recommended PCB Layout, "2.50""' }
+
+connector:
+  orientation: right_angle
+  src: p1 "FEATURES, "USB type B jack", "horizontal orientation", "through hole mounting""
+
+geometry: { type: parametric, generator: usb_b }
+
+dimensions:
+  body_width:  { max: 12.2 mm, src: 'p2 "Front view, "12.20 MAX.""' }
+  body_length: { max: 16.5 mm, src: 'p2 "Side view, "16.50 MAX.""' }
+  body_height: { max: 10.8 mm, src: 'p2 "Front view, "10.80 MAX.""' }
+  tail_length: { typ: 3.5 mm, src: 'p2 "Front view, seating plane to tail tip "3.5""' }
+
+# pads (layout frame: x right, y up from the shell-hole centre line, the
+# PCB edge below): contacts "2.50" apart in X -> ±1.25; the row of 3/4
+# "2.71" above the shell holes, the row of 1/2 "2.00" above that (4.71);
+# shell holes "12.04" apart -> ±6.02; PCB edge "10.28" below them.
+# Body centre: the side view puts the rear contact row (1/2) "1.63" in
+# front of the rear face, so the rear face is at y = 4.71 + 1.63 = 6.34
+# and the centre at 6.34 - 16.50/2 = -1.91 (the front face at -10.16,
+# 0.12 behind the PCB edge). Relative to the centre: 1/2 at y 6.62, 3/4
+# at 4.62, shell holes at 1.91. Turned 180°: X = -x, Y = -y.
+pads:
+  value:
+    - { number: "1", x: -1.25, y: -6.62, drill: 0.92 }
+    - { number: "2", x: 1.25, y: -6.62, drill: 0.92 }
+    - { number: "3", x: 1.25, y: -4.62, drill: 0.92 }
+    - { number: "4", x: -1.25, y: -4.62, drill: 0.92 }
+    - { number: SHELL, x: 6.02, y: -1.91, drill: 2.3 }
+    - { number: SHELL, x: -6.02, y: -1.91, drill: 2.3 }
+  src: p2 "Recommended PCB Layout; side view "1.63", "16.50 MAX." (see comment above)"
+
+# The layout's "PCB edge" line, 10.28 below the shell holes: y = 1.91 -
+# 10.28 = -8.37 in the centred layout frame -> +8.37 turned.
+edge:
+  side: +y
+  requirement: required
+  pcb_edge: 8.37
+  src: p2 "Recommended PCB Layout, "PCB edge", "10.28" (see comment above)"

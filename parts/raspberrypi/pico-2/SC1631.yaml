@@ -31,8 +31,8 @@ lifecycle: { status: unknown }
 # where the MPN is known (datasheet text, or the STEP product name for
 # the RT6150B-33GQW, and the flash W25Q32RVXHJQ); the
 # rest are boxes of their STEP bounding box above the board. Stand-ins
-# (stand_in_for): J1 EDAC 690-005-298-486 -> GCT USB3076; SW1 TP-1221U
-# stays a box; D1, Q1 -> the Pico's MBR120VLSFT1G / DMG1012T-7 (same
+# (stand_in_for): J1 EDAC 690-005-298-486 -> GCT USB3076; SW1 TP-1221U ->
+# Alps SKRP; D1, Q1 -> the Pico's MBR120VLSFT1G / DMG1012T-7 (same
 # SOD-123FL / SOT-523 boxes); D2 -> Kingbright 0603 green LED; L1
 # (Bourns SRN2512) -> Murata LQM2HPN2R2MG0L. L2 is the real Abracon
 # AOTA-B201610S3R3-101-T.
@@ -271,13 +271,14 @@ assembly:
     y: 4.6
     src: '"generic_resc0603x23 at (6.4, 4.6), box 0.3 x 0.6 x 0.23"'
   - ref: SW1
-    body: { width: 4.24, length: 3.2, height: 2.5, color: "#e8e8e8" }
+    part: alps/SKRPABE010
+    stand_in_for: TP-1221U-K9K5325
     x: -3.5
     y: 13.5
     rotation: 90
     src:
       - '"toneparts_tp-1221u-k9k5325 at (-3.5, 13.5), turned 90"'
-      - raspberrypi/RP-008311-DS "TP-1221U switch body bounding box 4.24 x 3.2, 2.5 high"
+      - 'alps/TA02-SKRP "SKRP 4.2x3.2x2.5 body: stand-in matched on the TP-1221U 4.24 x 3.2 x 2.5 box"'
   - ref: Cx20
     body: { width: 0.6, length: 0.3, height: 0.3, color: "#b5916a" }
     x: -0.85

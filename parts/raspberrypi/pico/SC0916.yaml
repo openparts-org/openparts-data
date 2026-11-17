@@ -33,7 +33,7 @@ lifecycle: { status: unknown }
 # "Size" column (L along the pads). D1 and Q1 are OpenParts parts.
 # Stand-ins (stand_in_for): J1 EDAC 690-005-298-486 -> GCT USB3076 (SMT
 # micro-B; EDAC's land pattern has shaped pads, not modelled); SW1
-# TP-1221U (no maker datasheet served) stays a box from the Pico STEP;
+# TP-1221U (no maker datasheet served) -> Alps SKRP (same 4.2x3.2x2.5 body);
 # D2 -> Kingbright 0603 green LED; X1 -> Abracon ABM8-272-T3 (3.2x2.5);
 # L1 -> Murata LQM2HPN2R2MG0L (2.5x2.0 chip inductor).
 # SC0916 is assumed to be the same board as SC0915 (same model row).
@@ -264,10 +264,12 @@ assembly:
       - edac/690-005-298-486 "micro-USB B, SMT; shell 6.90 x 5.00 x 2.60 (stand-in 7.40 x 5.55 x 2.35)"
       - raspberrypi/RP-009061-CA "edac_690-005-298-486 box front at y 26.8; stand-in shell front placed there"
   - ref: SW1
-    body: { width: 4.24, length: 3.2, height: 2.5, color: "#e8e8e8" }
+    part: alps/SKRPABE010
+    stand_in_for: TP-1221U-K9K5325
     x: -3.5
     y: 13.5
     rotation: 90
     src:
       - '"BOM item 23 (TP-1221U-K9K5325); SW1 placement (footprint origin)"'
       - raspberrypi/RP-008311-DS "switch body bounding box 4.24 x 3.2, 2.5 above the board"
+      - 'alps/TA02-SKRP "SKRP 4.2x3.2x2.5 body: stand-in matched on the TP-1221U 4.24 x 3.2 x 2.5 box"'

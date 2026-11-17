@@ -1,0 +1,46 @@
+# Vishay MiniMELF (SOD-80), page 3 of vishay/85557 ("PACKAGE DIMENSIONS
+# in millimeters (inches): MiniMELF (SOD-80)", drawing 6.560-5005.01-4).
+# Frame (melf): top view, axis along X, origin at the body centre, pad 1
+# (cathode, the drawing's left end with the "Cathode indentification"
+# band) at -X, as drawn.
+# Body: length "3.7"/"3.3" (max/min), diameter "1.6"/"1.4", end cap
+# "0.47 max."; the note "The gap between plug and glass can be either on
+# cathode or anode side" states the glass body and its end plugs.
+schema_version: "0.2"
+kind: package
+id: manufacturers/vishay/MiniMELF-SOD80
+family: melf
+
+lead_count:
+  value: 2
+  src: p3 "PACKAGE DIMENSIONS, MiniMELF (SOD-80); Foot print recommendation, 2 lands"
+
+source: vishay/85557
+
+pitch: { unit: mm }
+
+construction:
+  value: glass
+  src: p3 "* The gap between plug and glass can be either on cathode or anode side"
+
+geometry: { type: parametric, generator: melf }
+
+dimensions:
+  body_width:
+    min: 1.4 mm
+    max: 1.6 mm
+    src: p3 "PACKAGE DIMENSIONS, diameter "1.6 (0.063)" / "1.4 (0.055)""
+  body_length:
+    min: 3.3 mm
+    max: 3.7 mm
+    src: p3 "PACKAGE DIMENSIONS, length "3.7 (0.146)" / "3.3 (0.130)""
+  lead_length: { max: 0.47 mm, src: 'p3 "PACKAGE DIMENSIONS, end cap "0.47 (0.019) max.""' }
+
+# pads ("Foot print recommendation"): gap "2.5 max.", land "1.25 min."
+# along the axis, "2 min." across, "5 ref." overall (2.5 + 2 x 1.25 =
+# 5). Drawn at the printed limits: centres ±(2.5/2 + 1.25/2) = ±1.875.
+pads:
+  value:
+    - { number: "1", x: -1.875, y: 0, width: 1.25, length: 2 }
+    - { number: "2", x: 1.875, y: 0, width: 1.25, length: 2 }
+  src: p3 "Foot print recommendation, "2.5 max.", "1.25 min.", "2 min.", "5 ref." (see comment above)"

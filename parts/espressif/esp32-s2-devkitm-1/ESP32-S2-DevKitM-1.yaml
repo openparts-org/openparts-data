@@ -6,7 +6,7 @@
 # agent-scratch placement table). D6 SK68XXMINI-HS -> Worldsemi
 # WS2812B-Mini-V6 (3535 stand-in).
 # Stand-ins (stand_in_for, same package or body/land as the design): U3
-# CP2102N -> Allegro QFN-28 5x5; SW1/SW2 NTC013-AT1J-A160T stay boxes;
+# CP2102N -> Allegro QFN-28 5x5; SW1/SW2 NTC013-AT1J-A160T -> Alps SKRP;
 # micro-USB J2 (no MPN) -> GCT USB3076; power LED D5 -> Kingbright 0603;
 # Q1/Q2 L8050QLT1G -> onsemi MMBT2222A (SOT-23); ESD D2-D4 LESD5D5.0CT1G ->
 # onsemi ESD5Z5.0T1G (SOD-523). Left out: passives.
@@ -75,23 +75,25 @@ assembly:
       - 'p1 "D6 pads: 4 at 1.8 x 3.3, pin 3 upper right; centre; pins as on the S3 design"'
       - espressif/ESP32-S2-DevKitM-1_V1_Schematics "D6 SK68XXMINI-HS"
   - ref: SW1
-    body: { width: 4.2, length: 3.2, height: 2.5, color: "#2a2a2a" }
-    x: -6.98
-    y: -23.82
+    part: alps/SKRPABE010
+    stand_in_for: NTC013-AT1J-A160T
+    x: -6.985
+    y: -23.825
     rotation: 90
     src:
-      - p1 "SW1 pad envelope centre (4 pads)"
+      - p1 "SW1 pad envelope centre; 4 pads 0.65 x 1.05 at 2.15 x 4.15 (turned 90)"
       - espressif/ESP32-S2-DevKitM-1_V1_Schematics "SW1 NTC013-AT1J-A160T"
-      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5, stem black"'
+      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5; stand-in: same body and land"'
   - ref: SW2
-    body: { width: 4.2, length: 3.2, height: 2.5, color: "#2a2a2a" }
-    x: 6.98
-    y: -23.82
+    part: alps/SKRPABE010
+    stand_in_for: NTC013-AT1J-A160T
+    x: 6.985
+    y: -23.825
     rotation: 90
     src:
-      - p1 "SW2 pad envelope centre (4 pads)"
+      - p1 "SW2 pad envelope centre; 4 pads 0.65 x 1.05 at 2.15 x 4.15 (turned 90)"
       - espressif/ESP32-S2-DevKitM-1_V1_Schematics "SW2 NTC013-AT1J-A160T"
-      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5, stem black"'
+      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5; stand-in: same body and land"'
   - ref: D5
     part: kingbright/APT1608EC
     stand_in_for: power LED 0603, MPN not stated

@@ -1,0 +1,19 @@
+# Same Sky UJ2-BH-1-TH: the series datasheet's part number key
+# "UJ2-BH - X X - TH" with insulator colour "blank" = black and contact
+# plating "1 = 3 µ"" -> existence probable (a part-numbering key, not an
+# orderable list). lifecycle unknown: the datasheet states none.
+schema_version: "0.2"
+kind: part
+id: samesky/UJ2-BH-1-TH
+manufacturer: samesky
+mpn: UJ2-BH-1-TH
+device: samesky/UJ2-BH-TH
+package: manufacturers/samesky/UJ2-BH-TH
+sources: [samesky/UJ2-BH-TH-DS]
+source: samesky/UJ2-BH-TH-DS
+
+existence:
+  status: probable
+  src: p1 "PART NUMBER KEY, UJ2-BH - X X - TH; blank = black, 1 = 3 µ""
+
+lifecycle: { status: unknown }

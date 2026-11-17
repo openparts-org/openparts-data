@@ -1,0 +1,28 @@
+# Small-signal fast switching diode, MiniMELF (SOD-80). The datasheet
+# prints no pin numbers: pin 1 = cathode (the banded end: "Cathode band
+# color: black", the drawing's "Cathode indentification" band), pin 2 =
+# anode, as the dataset's other two-terminal diodes.
+schema_version: "0.2"
+kind: device
+id: vishay/LL4148
+manufacturer: vishay
+category: diode
+family: LL4148
+source: vishay/85557
+
+parameters:
+  forward_voltage:
+    max: 1 V
+    at: { IF: 50 mA }
+    src: p2 "ELECTRICAL CHARACTERISTICS, Forward voltage, IF = 50 mA, LL4148, VF max. 1"
+  reverse_voltage:
+    max: 100 V
+    src: p1 "ABSOLUTE MAXIMUM RATINGS, Repetitive peak reverse voltage VRRM 100"
+  forward_current:
+    max: 300 mA
+    src: p1 "ABSOLUTE MAXIMUM RATINGS, Forward continuous current IF 300"
+
+pins:
+  src: ['p1 "MECHANICAL DATA, Cathode band color: black"', p3 "Cathode indentification"]
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

@@ -1,0 +1,27 @@
+# GCT USB2066 Mini-USB B receptacle, 5 contacts + shell
+# (gct/USB2066-DWG page 1). The drawing has no pin-name table: it labels
+# "Pin 1" and "Pin 5" (front view and layout). The pins are therefore
+# named by their numbers and typed passive. "SHELL": the four SMT shell
+# pads ("Metallic Shell"); no signal is assigned to them.
+schema_version: "0.2"
+kind: device
+id: gct/USB2066
+manufacturer: gct
+category: connector
+family: USB2066
+source: gct/USB2066-DWG
+
+parameters:
+  operating_temperature:
+    min: -50 °C
+    max: 85 °C
+    src: p1 "Electrical, Operating Temperature -50°C to +85°C"
+
+pins:
+  src:   ['p1 "Recommended P.C.B Layout "Pin 1", "Pin 5""', 'p1 "Front view "Pin 1", "Pin 5""']
+  "1":   { name: "1", type: passive }
+  "2":   { name: "2", type: passive }
+  "3":   { name: "3", type: passive }
+  "4":   { name: "4", type: passive }
+  "5":   { name: "5", type: passive }
+  SHELL: { name: SHELL, type: passive }

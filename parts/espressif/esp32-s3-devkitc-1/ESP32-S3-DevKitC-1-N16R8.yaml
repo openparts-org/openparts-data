@@ -7,7 +7,7 @@
 # footprint names, descriptions and "H" heights). D6 SK68XXMINI-HS -> Worldsemi
 # WS2812B-Mini-V6 (3535). Stand-ins
 # (stand_in_for, same package or body/land): U3 CP2102N -> Allegro QFN-28
-# 5x5; SW1/SW2 NTC013 stay boxes; J2/J4 1110-205001 -> GCT USB3076; D5 ->
+# 5x5; SW1/SW2 NTC013 -> Alps SKRP; J2/J4 1110-205001 -> GCT USB3076; D5 ->
 # Kingbright 0603 red; Q1/Q2 L8050QLT1G -> onsemi MMBT2222A (SOT-23);
 # D2-D4/D8-D10 LESD5D5.0CT1G -> onsemi ESD5Z5.0T1G (SOD-523). Left out:
 # headers, passives.
@@ -84,21 +84,21 @@ assembly:
       - '"PADS ASCII D5 (LED0603): pad-extent centre; pin 2 (GND, cathode) at the -y end"'
       - '"BOM item 13: red LED, LED0603, H0.6, FC-DA1608HRK-620D; stand-in: red 0603 LED"'
   - ref: SW1
-    body: { width: 4.2, length: 3.2, height: 2.5, color: "#2a2a2a" }
+    part: alps/SKRPABE010
+    stand_in_for: NTC013-AT1J-A160T
     x: -5.18
     y: -17.47
-    rotation: 180
     src:
-      - '"PADS ASCII SW1 (SW4-4P2X3P2X2P5-SMT, turned 180): pad-extent centre"'
-      - '"BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5, stem black"'
+      - '"PADS ASCII SW1 (SW4-4P2X3P2X2P5-SMT): pad-extent centre; 4 pads 1.05 x 0.65 at 4.15 x 2.15"'
+      - '"BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5, 1.57N; stand-in: same body, land and force"'
   - ref: SW2
-    body: { width: 4.2, length: 3.2, height: 2.5, color: "#2a2a2a" }
+    part: alps/SKRPABE010
+    stand_in_for: NTC013-AT1J-A160T
     x: 5.21
     y: -17.47
-    rotation: 180
     src:
-      - '"PADS ASCII SW2 (SW4-4P2X3P2X2P5-SMT, turned 180): pad-extent centre"'
-      - '"BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5, stem black"'
+      - '"PADS ASCII SW2 (SW4-4P2X3P2X2P5-SMT): pad-extent centre; 4 pads 1.05 x 0.65 at 4.15 x 2.15"'
+      - '"BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5, 1.57N; stand-in: same body, land and force"'
   - ref: J2
     part: gct/USB3076-30-A
     stand_in_for: Minle 1110-205001 (micro-USB B)
