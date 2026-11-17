@@ -1,0 +1,30 @@
+# Vishay CRCW2512 e3 thick film chip resistor. Dimensions from the
+# page-11 "DIMENSIONS AND MASS" table, row CRCW2512 e3: L 6.3 ±0.20, W 3.15 ±0.15,
+# H 0.6 ±0.10 mm. T1/T2 (terminal lengths) are left out, like the
+# dataset's other CRCW packages.
+schema_version: "0.2"
+kind: package
+id: standards/CHIP2512-CRCW
+family: chip
+lead_count: 2
+source: vishay/20035
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 3 mm
+    typ: 3.15 mm
+    max: 3.3 mm
+    src: p11 "DIMENSIONS AND MASS, CRCW2512 e3, W 3.15 ± 0.15"
+  body_length:
+    min: 6.1 mm
+    typ: 6.3 mm
+    max: 6.5 mm
+    src: p11 "DIMENSIONS AND MASS, CRCW2512 e3, L 6.3 ±0.20"
+  body_height:
+    min: 0.5 mm
+    typ: 0.6 mm
+    max: 0.7 mm
+    src: p11 "DIMENSIONS AND MASS, CRCW2512 e3, H 0.6 ± 0.10"

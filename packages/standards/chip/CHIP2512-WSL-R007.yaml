@@ -1,0 +1,36 @@
+# Vishay WSL2512 Power Metal Strip resistor body. Page-2 DIMENSIONS
+# table, row WSL2512, resistance range 0.007 to 0.5 Ohm (inch values
+# with mm in parentheses; the mm values are recorded): L (6.35 ± 0.254),
+# W (3.18 ± 0.254), H (0.635 ± 0.254), T (0.762 ± 0.254). T, the terminal
+# length, depends on the resistance range, so this package only fits parts in the 0.007 to 0.5 Ohm range.
+schema_version: "0.2"
+kind: package
+id: standards/CHIP2512-WSL-R007
+family: chip
+lead_count: 2
+source: vishay/30100
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 2.926 mm
+    typ: 3.18 mm
+    max: 3.434 mm
+    src: p2 "DIMENSIONS, WSL2512 row, W (3.18 ± 0.254)"
+  body_length:
+    min: 6.096 mm
+    typ: 6.35 mm
+    max: 6.604 mm
+    src: p2 "DIMENSIONS, WSL2512 row, L (6.35 ± 0.254)"
+  body_height:
+    min: 0.381 mm
+    typ: 0.635 mm
+    max: 0.889 mm
+    src: p2 "DIMENSIONS, WSL2512 row, H (0.635 ± 0.254)"
+  lead_length:
+    min: 0.508 mm
+    typ: 0.762 mm
+    max: 1.016 mm
+    src: p2 "DIMENSIONS, WSL2512 0.007 to 0.5 Ω row, T (0.762 ± 0.254)"

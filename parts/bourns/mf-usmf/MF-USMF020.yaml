@@ -1,0 +1,28 @@
+# MF-USMF PTC resettable fuse, Vmax 30 V, Ihold 0.20 A. The model
+# MF-USMF020 is printed verbatim in the Electrical Characteristics table of
+# bourns/MF-USMF@revU (page 1) -> existence verified. Lifecycle unknown: the
+# datasheet says some models are not recommended for new designs without
+# marking which ones in the text layer.
+schema_version: "0.2"
+kind: part
+id: bourns/MF-USMF020
+manufacturer: bourns
+mpn: MF-USMF020
+device: bourns/MF-USMF-SERIES
+package: standards/CHIP1210-MF-USMF-C080-110
+sources: [bourns/MF-USMF@revU]
+source: bourns/MF-USMF@revU
+
+existence: { status: verified, src: 'p1 "Electrical Characteristics, MF-USMF020 row"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review): PTC resettable fuse. The datasheet
+# has no 'rated current/voltage' column; rated_current is the hold current
+# Ihold at 23 °C and rated_voltage the maximum voltage Vmax (same mapping
+# as bourns/MF-MSMF050; reviewer: confirm it for PPTC devices).
+parameters:
+  rated_voltage: { max: 30 V, src: 'p1 "Electrical Characteristics, MF-USMF020 row, Vmax"' }
+  rated_current:
+    typ: 0.2 A
+    at: { TA: 23 °C }
+    src: p1 "Electrical Characteristics, MF-USMF020 row, Ihold at 23 °C"

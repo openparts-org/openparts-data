@@ -1,0 +1,36 @@
+# Panasonic ERJ2R thick film chip resistor (0402 inch). Read from the
+# page-4 "Dimensions (not to scale)" table, row ERJ2R: L 1.00±0.05,
+# W 0.50±0.05, a 0.20±0.10, T 0.35±0.05 mm. a (top electrode length, per the
+# drawing) is recorded as lead_length; b (bottom electrode) is not
+# representable separately.
+schema_version: "0.2"
+kind: package
+id: standards/CHIP0402-ERJ2R
+family: chip
+lead_count: 2
+source: panasonic/AOA0000C304
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 0.45 mm
+    typ: 0.5 mm
+    max: 0.55 mm
+    src: 'p4 "Dimensions table, row ERJ2R, column W: 0.50±0.05"'
+  body_length:
+    min: 0.95 mm
+    typ: 1 mm
+    max: 1.05 mm
+    src: 'p4 "Dimensions table, row ERJ2R, column L: 1.00±0.05"'
+  body_height:
+    min: 0.3 mm
+    typ: 0.35 mm
+    max: 0.4 mm
+    src: 'p4 "Dimensions table, row ERJ2R, column T: 0.35±0.05"'
+  lead_length:
+    min: 0.1 mm
+    typ: 0.2 mm
+    max: 0.3 mm
+    src: 'p4 "Dimensions table, row ERJ2R, column a (top electrode): 0.20±0.10"'

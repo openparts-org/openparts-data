@@ -1,0 +1,35 @@
+# 1 kΩ +/-0.1 %, +/-10 ppm/°C RG2012 thin film chip resistor,
+# packaging T5. Not printed literally: assembled from the page-1 "Part
+# numbering system" (RG2012 | N | 102 | B | T5); 1 kΩ is inside the
+# RG2012 ±10(N), ±0.1 % (B) range 47≦R≦475k -> existence probable.
+schema_version: "0.2"
+kind: part
+id: susumu/RG2012N-102-B-T5
+manufacturer: susumu
+mpn: RG2012N-102-B-T5
+device: susumu/RG2012
+package: standards/CHIP0805-RG2012
+sources: [susumu/RG-SERIES]
+source: susumu/RG-SERIES
+
+existence:
+  status: probable
+  src:
+    - p1 "Part numbering system"
+    - p1 "Electrical Specification, RG2012 ±10(N) row, ±0.1% (B) 47≦R≦475k"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review): tolerance and TCR from the codes the
+# Electrical Specification table names (B, N); resistance from the part
+# numbering system.
+parameters:
+  tolerance:
+    tol: ±0.1 %
+    src: p1 "Electrical Specification, Resistance tolerance column ±0.1% (B)"
+  resistance:
+    typ: 1 kΩ
+    src: 'p1 "Part numbering system, Nominal resistance value (E-24: 3 digit): 102"'
+  temperature_coefficient:
+    tol: ±10 ppm/°C
+    src: p1 "Electrical Specification, RG2012, TCR ±10(N)"

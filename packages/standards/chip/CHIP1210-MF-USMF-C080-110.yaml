@@ -1,0 +1,27 @@
+# Bourns MF-USMF PTC resettable fuse body. Bourns' "Product Dimensions"
+# table gives min/max only (no nominal), page 2, rows MF-USMF010, MF-USMF020:
+# A 3.00-3.43 (length), B 2.35-2.80 (width), C 0.80-1.1 (height) mm.
+# D (terminal length) is printed as a minimum only and is left out.
+schema_version: "0.2"
+kind: package
+id: standards/CHIP1210-MF-USMF-C080-110
+family: chip
+lead_count: 2
+source: bourns/MF-USMF@revU
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 2.35 mm
+    max: 2.8 mm
+    src: p2 "Product Dimensions, MF-USMF010 row, B (min/max)"
+  body_length:
+    min: 3 mm
+    max: 3.43 mm
+    src: p2 "Product Dimensions, MF-USMF010 row, A (min/max)"
+  body_height:
+    min: 0.8 mm
+    max: 1.1 mm
+    src: p2 "Product Dimensions, MF-USMF010 row, C (min/max)"

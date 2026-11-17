@@ -1,0 +1,37 @@
+# 10 kΩ +/-1 %, RC2010 thick film chip resistor, standard power (code 07),
+# embossed taping reel 7" (178 mm). Not printed literally: assembled from the page-2 ordering
+# information (RC | 2010 | F | K | - | 07 | 10K | L); 10 kΩ is inside the
+# 1 % (E24/E96) range of the RC2010 row -> existence probable. Lifecycle not
+# stated -> unknown.
+schema_version: "0.2"
+kind: part
+id: yageo/RC2010FK-0710KL
+manufacturer: yageo
+mpn: RC2010FK-0710KL
+device: yageo/RC2010-GENERAL-PURPOSE
+package: standards/CHIP2010-RC
+sources: [yageo/PYU-RC_GROUP@V14]
+source: yageo/PYU-RC_GROUP@V14
+
+existence:
+  status: probable
+  src:
+    - p2 "Ordering Information - Global Part Number, codes (1)-(7)"
+    - p6 "Table 3, RC2010 row, 1% (E24/E96) 1Ω≦R≦10MΩ"
+    - p7 "Table 4, RC2010 row, embossed taping reel 7 inch"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review): resistance and tolerance from the
+# ordering-code table; power is the standard-power rating (code 07); TCR
+# from the RC2010 row for this resistance value.
+parameters:
+  tolerance: { tol: ±1 %, src: 'p2 "ORDERING INFORMATION, (2) TOLERANCE: F = ±1.0%"' }
+  resistance: { typ: 10 kΩ, src: 'p2 "ORDERING INFORMATION, (6) RESISTANCE VALUE: 10K"' }
+  power_rating:
+    typ: 0.75 W
+    at: { TA: 70 °C }
+    src: 'p7 "POWER RATING, rated power at 70℃: RC2010=3/4 W (code 07)"'
+  temperature_coefficient:
+    tol: ±100 ppm/°C
+    src: p6 "Table 3, RC2010 standard-power row, TCR 10Ω<R≦10MΩ"

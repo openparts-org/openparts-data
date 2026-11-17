@@ -1,0 +1,26 @@
+# Yageo RC1210 (RC_L series) body dimensions, read from the page-4
+# Table 1 "DIMENSION" row RC1210 of yageo/PYU-RC_GROUP@V14 (pdftotext -layout):
+# L 3.10+/-0.10, W 2.60+/-0.15, H 0.55+/-0.10 mm. I1/I2 (terminal lengths) are
+# left out, like the dataset's other RC packages.
+schema_version: "0.2"
+kind: package
+id: standards/CHIP1210-RC
+family: chip
+lead_count: 2
+source: yageo/PYU-RC_GROUP@V14
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 2.45 mm
+    typ: 2.6 mm
+    max: 2.75 mm
+    src: p4 "Table 1, RC1210 row, W 2.60±0.15"
+  body_length: { min: 3 mm, typ: 3.1 mm, max: 3.2 mm, src: 'p4 "Table 1, RC1210 row, L 3.10±0.10"' }
+  body_height:
+    min: 0.45 mm
+    typ: 0.55 mm
+    max: 0.65 mm
+    src: p4 "Table 1, RC1210 row, H 0.55±0.10"

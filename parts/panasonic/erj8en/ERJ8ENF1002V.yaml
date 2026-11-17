@@ -1,0 +1,39 @@
+# 10 kΩ +/-1 % ERJ8EN (1206), packaging V (punched carrier taping 4 mm pitch, 5,000 pcs). Written
+# without hyphen as the datasheet's part-number boxes show it. Not printed
+# literally: built from the page-2 part-number explanation; the ERJ8EN
+# ratings row (page 3) gives 10 to 2.2 M Ohm, E24/E96 at +/-1 % -> existence
+# probable.
+schema_version: "0.2"
+kind: part
+id: panasonic/ERJ8ENF1002V
+manufacturer: panasonic
+mpn: ERJ8ENF1002V
+device: panasonic/ERJ8EN
+package: standards/CHIP1206-ERJ8EN
+sources: [panasonic/AOA0000C304]
+source: panasonic/AOA0000C304
+
+existence:
+  status: probable
+  src:
+    - p2 "Explanation of part numbers, ERJ8EN ±1 % series"
+    - p3 "Ratings <±1 %>, ERJ8EN row, Resistance range 10 to 2.2 M"
+
+lifecycle:
+  status: nrnd
+  src: p3 "Ratings <±1 %>, ERJ8EN row marked NRFND (Not recommended for new design)"
+
+# Parameters (AI candidates, needs review): resistance and tolerance from
+# 'Explanation of part numbers'; power and T.C.R. from the Ratings row.
+parameters:
+  tolerance:
+    tol: ±1 %
+    src: 'p2 "Explanation of part numbers (8EN, ±1 %), Resistance tolerance: F = ±1 %"'
+  resistance:
+    typ: 10 kΩ
+    src: 'p2 "Explanation of part numbers (8EN, ±1 %), Resistance value: 1002"'
+  power_rating:
+    typ: 0.25 W
+    at: { TA: 70 °C }
+    src: p3 "Ratings <±1 %>, ERJ8EN row, Power rating (70 ℃)"
+  temperature_coefficient: { tol: ±100 ppm/K, src: 'p3 "Ratings <±1 %>, ERJ8EN row, T.C.R. ±100"' }

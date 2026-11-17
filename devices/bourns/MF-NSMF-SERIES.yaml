@@ -1,0 +1,21 @@
+# Bourns MF-NSMF Series PTC resettable fuse (1206 footprint). A
+# 2-terminal PPTC fuse has no polarity; terminals are numbered only,
+# like the dataset's chip resistor devices.
+schema_version: "0.2"
+kind: device
+id: bourns/MF-NSMF-SERIES
+manufacturer: bourns
+category: fuse
+family: MF-NSMF
+source: bourns/MF-NSMF@revAF
+
+# Parameters (AI candidates, needs review): family-wide values.
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p2 "Environmental Characteristics, Operating Temperature"
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

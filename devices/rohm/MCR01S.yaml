@@ -1,0 +1,21 @@
+# ROHM MCR01S MQP general purpose thick film chip resistor
+# <High power> (0402). Non-polarized 2-terminal part; terminals
+# numbered only. rated_voltage is the limiting element voltage (page-1
+# "3. RATING"); the rated voltage of a value is sqrt(P x R) up to it.
+schema_version: "0.2"
+kind: device
+id: rohm/MCR01S
+manufacturer: rohm
+category: resistor
+family: MCRS
+source: rohm/MCR01S-datasheet-en
+
+# Parameters (AI candidates, needs review): family-wide values.
+parameters:
+  rated_voltage:         { max: 75 V, src: 'p1 "3. RATING, LIMITING ELEMENT VOLTAGE"' }
+  power_rating: { typ: 0.1 W, at: { TA: 70 °C }, src: 'p1 "3. RATING, RATED POWER at Ta=70°C"' }
+  operating_temperature: { min: -55 °C, max: 155 °C, src: 'p1 "3. RATING, OPERATING TEMPERATURE"' }
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

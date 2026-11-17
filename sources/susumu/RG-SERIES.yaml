@@ -1,0 +1,16 @@
+# Susumu "Metal thin film chip resistors (the highest precision), RG
+# series" catalog section (2 pages, printed catalog pages 17-18). No
+# revision is printed; the date is the PDF CreationDate (2026-01-09).
+# Downloaded 2026-11-17 with plain curl from susumu.co.jp (HTTP 200, PDF);
+# read with pdftotext -layout plus a 110 dpi render of page 1.
+schema_version: "0.2"
+kind: source
+id: susumu/RG-SERIES
+sha256: 6f94347f479933c9cc42a094366d61220ad59e3de780bf7aeda067a0a1fbc206
+retrieved: 2026-11-17
+url: https://www.susumu.co.jp/common/pdf/n_catalog_partition01_en.pdf
+publisher: susumu
+document_id: n_catalog_partition01_en
+document_type: datasheet
+revision: catalog partition 01 (PDF created 2026-01-09)
+date: 2026-01-09

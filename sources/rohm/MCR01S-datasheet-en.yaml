@@ -1,0 +1,16 @@
+# ROHM MCR01S MQP series general purpose chip resistor <High power>
+# product specification (10 pages: product specification 1/7-3/7, package
+# specifications, notices). Footer "2025.10.01 - Rev.MCR01S-IA-006E". Downloaded
+# 2026-11-17 with plain curl from ROHM's fscdn.rohm.com datasheet link
+# (HTTP 200, PDF); read with pdftotext -layout.
+schema_version: "0.2"
+kind: source
+id: rohm/MCR01S-datasheet-en
+sha256: 2ee8d479c166dac405bc4433750026c20c4826e6b6e54af0315f464889705879
+retrieved: 2026-11-17
+url: https://fscdn.rohm.com/en/products/databook/datasheet/passive/resistor/chip_resistor/mcr01s-e.pdf
+publisher: rohm
+document_id: MCR01S-IA-006E
+document_type: datasheet
+revision: MCR01S-IA-006E
+date: 2025-10-01

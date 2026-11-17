@@ -1,0 +1,28 @@
+# MF-NSMF PTC resettable fuse, Vmax 6 V, Ihold 1.50 A. The model
+# MF-NSMF150 is printed verbatim in the Electrical Characteristics table of
+# bourns/MF-NSMF@revAF (page 2) -> existence verified. Lifecycle unknown: the
+# datasheet says some models are not recommended for new designs without
+# marking which ones in the text layer.
+schema_version: "0.2"
+kind: part
+id: bourns/MF-NSMF150
+manufacturer: bourns
+mpn: MF-NSMF150
+device: bourns/MF-NSMF-SERIES
+package: standards/CHIP1206-MF-NSMF-S1-C040-070
+sources: [bourns/MF-NSMF@revAF]
+source: bourns/MF-NSMF@revAF
+
+existence: { status: verified, src: 'p2 "Electrical Characteristics, MF-NSMF150 row"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review): PTC resettable fuse. The datasheet
+# has no 'rated current/voltage' column; rated_current is the hold current
+# Ihold at 23 °C and rated_voltage the maximum voltage Vmax (same mapping
+# as bourns/MF-MSMF050; reviewer: confirm it for PPTC devices).
+parameters:
+  rated_voltage: { max: 6 V, src: 'p2 "Electrical Characteristics, MF-NSMF150 row, Vmax"' }
+  rated_current:
+    typ: 1.5 A
+    at: { TA: 23 °C }
+    src: p2 "Electrical Characteristics, MF-NSMF150 row, Ihold at 23 °C"

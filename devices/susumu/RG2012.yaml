@@ -1,0 +1,23 @@
+# Susumu RG2012 metal thin film precision chip resistor (0805).
+# Non-polarized 2-terminal part; terminals numbered only. power_rating is
+# left out: the catalog lists Low / Regular / High power ratings that the
+# part number does not select.
+schema_version: "0.2"
+kind: device
+id: susumu/RG2012
+manufacturer: susumu
+category: resistor
+family: RG
+source: susumu/RG-SERIES
+
+# Parameters (AI candidates, needs review): family-wide values.
+parameters:
+  rated_voltage: { max: 150 V, src: 'p1 "Electrical Specification, RG2012 row, Maximum voltage"' }
+  operating_temperature:
+    min: -55 °C
+    max: 155 °C
+    src: p1 "Electrical Specification, Operating temperature"
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

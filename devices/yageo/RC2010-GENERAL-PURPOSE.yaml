@@ -1,0 +1,23 @@
+# Yageo RC2010 general-purpose thick film chip resistor (RC_L series).
+# A 2-terminal resistor has no polarity; terminals are numbered only.
+# Device-wide values from the RC2010 rows of the page-6 electrical
+# characteristics table (printed "Table 3", continuing Table 2).
+schema_version: "0.2"
+kind: device
+id: yageo/RC2010-GENERAL-PURPOSE
+manufacturer: yageo
+category: resistor
+family: RC2010
+source: yageo/PYU-RC_GROUP@V14
+
+# Parameters (AI candidates, needs review): family-wide values.
+parameters:
+  rated_voltage: { max: 200 V, src: 'p6 "Table 3, RC2010 row, Maximum working voltage 200V"' }
+  operating_temperature:
+    min: -55 °C
+    max: 155 °C
+    src: p6 "Table 3, RC2010 row, Operating temperature range"
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

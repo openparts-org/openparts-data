@@ -1,0 +1,28 @@
+# MF-FSMF PTC resettable fuse, Vmax 9 V, Ihold 0.20 A. The model
+# MF-FSMF020X is printed verbatim in the Electrical Characteristics table of
+# bourns/MF-FSMF@revK (page 1) -> existence verified. Lifecycle unknown: the
+# datasheet says some models are not recommended for new designs without
+# marking which ones in the text layer.
+schema_version: "0.2"
+kind: part
+id: bourns/MF-FSMF020X
+manufacturer: bourns
+mpn: MF-FSMF020X
+device: bourns/MF-FSMF-SERIES
+package: standards/CHIP0603-MF-FSMF-C030-065
+sources: [bourns/MF-FSMF@revK]
+source: bourns/MF-FSMF@revK
+
+existence: { status: verified, src: 'p1 "Electrical Characteristics, MF-FSMF020X row"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review): PTC resettable fuse. The datasheet
+# has no 'rated current/voltage' column; rated_current is the hold current
+# Ihold at 23 °C and rated_voltage the maximum voltage Vmax (same mapping
+# as bourns/MF-MSMF050; reviewer: confirm it for PPTC devices).
+parameters:
+  rated_voltage: { max: 9 V, src: 'p1 "Electrical Characteristics, MF-FSMF020X row, Vmax"' }
+  rated_current:
+    typ: 0.2 A
+    at: { TA: 23 °C }
+    src: p1 "Electrical Characteristics, MF-FSMF020X row, Ihold at 23 °C"

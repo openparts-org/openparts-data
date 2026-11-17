@@ -1,0 +1,30 @@
+# 10 kΩ +/-1 % MCR18S chip resistor, packaging EQP (7-inch reel).
+# Not printed literally: assembled from the page-1 "2. PRODUCT MODEL"
+# legend (MCR18S | EQP | F | (no special code above 10 Ohm) | 1002); 10 kΩ
+# is inside Table 1's F (±1%) 10≦R≦2.2M row -> existence probable.
+schema_version: "0.2"
+kind: part
+id: rohm/MCR18SEQPF1002
+manufacturer: rohm
+mpn: MCR18SEQPF1002
+device: rohm/MCR18S
+package: standards/CHIP1206-MCR18S
+sources: [rohm/MCR18S-datasheet-en]
+source: rohm/MCR18S-datasheet-en
+
+existence:
+  status: probable
+  src: [p1 "2. PRODUCT MODEL legend", 'p1 "Table 1, F (±1%) 10≦R≦2.2M (E24,E96) row"']
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review): resistance and tolerance from the
+# product-model legend; TCR from Table 1. Power is on the Device.
+parameters:
+  tolerance: { tol: ±1 %, src: 'p1 "2. PRODUCT MODEL, TOLERANCE: F (±1%)"' }
+  resistance:
+    typ: 10 kΩ
+    src: 'p1 "2. PRODUCT MODEL, NOMINAL RESISTANCE (IEC CODE, 4 digits for F): 1002"'
+  temperature_coefficient:
+    tol: ±100 ppm/°C
+    src: p1 "Table 1, F (±1%) 10≦R≦2.2M row, TCR +25°C/+125°C"

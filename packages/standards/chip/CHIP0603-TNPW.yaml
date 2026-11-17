@@ -1,0 +1,34 @@
+# Vishay TNPW0603 e3 thin film chip resistor. Page-15 "DIMENSIONS AND
+# MASS" table, row TNPW0603 e3: L 1.55 ± 0.05, W 0.85 ± 0.10, H 0.45 ± 0.10,
+# Tt/Tb 0.3 ± 0.20 mm (Tt, the top terminal length, recorded as lead_length).
+schema_version: "0.2"
+kind: package
+id: standards/CHIP0603-TNPW
+family: chip
+lead_count: 2
+source: vishay/28758
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 0.75 mm
+    typ: 0.85 mm
+    max: 0.95 mm
+    src: p15 "DIMENSIONS AND MASS, TNPW0603 e3, W 0.85 ± 0.10"
+  body_length:
+    min: 1.5 mm
+    typ: 1.55 mm
+    max: 1.6 mm
+    src: p15 "DIMENSIONS AND MASS, TNPW0603 e3, L 1.55 ± 0.05"
+  body_height:
+    min: 0.35 mm
+    typ: 0.45 mm
+    max: 0.55 mm
+    src: p15 "DIMENSIONS AND MASS, TNPW0603 e3, H 0.45 ± 0.10"
+  lead_length:
+    min: 0.1 mm
+    typ: 0.3 mm
+    max: 0.5 mm
+    src: p15 "DIMENSIONS AND MASS, TNPW0603 e3, Tt / Tb 0.3 ± 0.20"

@@ -1,0 +1,27 @@
+# Bourns MF-FSMF PTC resettable fuse body. Bourns' "Product Dimensions"
+# table gives min/max only (no nominal), page 2, rows MF-FSMF050X:
+# A 1.45-1.85 (length), B 0.65-1.05 (width), C 0.65-1.00 (height) mm.
+# D (terminal length) is printed as a minimum only and is left out.
+schema_version: "0.2"
+kind: package
+id: standards/CHIP0603-MF-FSMF-C065-100
+family: chip
+lead_count: 2
+source: bourns/MF-FSMF@revK
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 0.65 mm
+    max: 1.05 mm
+    src: p2 "Product Dimensions, MF-FSMF050X row, B (min/max)"
+  body_length:
+    min: 1.45 mm
+    max: 1.85 mm
+    src: p2 "Product Dimensions, MF-FSMF050X row, A (min/max)"
+  body_height:
+    min: 0.65 mm
+    max: 1 mm
+    src: p2 "Product Dimensions, MF-FSMF050X row, C (min/max)"

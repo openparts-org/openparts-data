@@ -1,0 +1,30 @@
+# 1 kΩ +/-1 % MCR01S chip resistor, packaging MQP (7-inch reel).
+# Not printed literally: assembled from the page-1 "2. PRODUCT MODEL"
+# legend (MCR01S | MQP | F | (no special code above 10 Ohm) | 1001); 1 kΩ
+# is inside Table 1's F (±1%) 10≦R≦10M row -> existence probable.
+schema_version: "0.2"
+kind: part
+id: rohm/MCR01SMQPF1001
+manufacturer: rohm
+mpn: MCR01SMQPF1001
+device: rohm/MCR01S
+package: standards/CHIP0402-MCR01S
+sources: [rohm/MCR01S-datasheet-en]
+source: rohm/MCR01S-datasheet-en
+
+existence:
+  status: probable
+  src: [p1 "2. PRODUCT MODEL legend", 'p1 "Table 1, F (±1%) 10≦R≦10M (E24,E96) row"']
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review): resistance and tolerance from the
+# product-model legend; TCR from Table 1. Power is on the Device.
+parameters:
+  tolerance: { tol: ±1 %, src: 'p1 "2. PRODUCT MODEL, TOLERANCE: F (±1%)"' }
+  resistance:
+    typ: 1 kΩ
+    src: 'p1 "2. PRODUCT MODEL, NOMINAL RESISTANCE (IEC CODE, 4 digits for F): 1001"'
+  temperature_coefficient:
+    tol: ±100 ppm/°C
+    src: p1 "Table 1, F (±1%) 10≦R≦10M row, TCR +25°C/+125°C"

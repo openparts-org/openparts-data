@@ -1,0 +1,28 @@
+# MF-PSMF PTC resettable fuse, Vmax 6 V, Ihold 0.35 A. The model
+# MF-PSMF035X is printed verbatim in the Electrical Characteristics table of
+# bourns/MF-PSMF@revQ (page 1) -> existence verified. Lifecycle unknown: the
+# datasheet says some models are not recommended for new designs without
+# marking which ones in the text layer.
+schema_version: "0.2"
+kind: part
+id: bourns/MF-PSMF035X
+manufacturer: bourns
+mpn: MF-PSMF035X
+device: bourns/MF-PSMF-SERIES
+package: standards/CHIP0805-MF-PSMF-C048-085
+sources: [bourns/MF-PSMF@revQ]
+source: bourns/MF-PSMF@revQ
+
+existence: { status: verified, src: 'p1 "Electrical Characteristics, MF-PSMF035X row"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review): PTC resettable fuse. The datasheet
+# has no 'rated current/voltage' column; rated_current is the hold current
+# Ihold at 23 °C and rated_voltage the maximum voltage Vmax (same mapping
+# as bourns/MF-MSMF050; reviewer: confirm it for PPTC devices).
+parameters:
+  rated_voltage: { max: 6 V, src: 'p1 "Electrical Characteristics, MF-PSMF035X row, Vmax"' }
+  rated_current:
+    typ: 0.35 A
+    at: { TA: 23 °C }
+    src: p1 "Electrical Characteristics, MF-PSMF035X row, Ihold at 23 °C"

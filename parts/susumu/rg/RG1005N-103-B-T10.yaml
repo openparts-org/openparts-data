@@ -1,0 +1,35 @@
+# 10 kΩ +/-0.1 %, +/-10 ppm/°C RG1005 thin film chip resistor,
+# packaging T10. Not printed literally: assembled from the page-1 "Part
+# numbering system" (RG1005 | N | 103 | B | T10); 10 kΩ is inside the
+# RG1005 ±10(N), ±0.1 % (B) range 47≦R≦100k -> existence probable.
+schema_version: "0.2"
+kind: part
+id: susumu/RG1005N-103-B-T10
+manufacturer: susumu
+mpn: RG1005N-103-B-T10
+device: susumu/RG1005
+package: standards/CHIP0402-RG1005
+sources: [susumu/RG-SERIES]
+source: susumu/RG-SERIES
+
+existence:
+  status: probable
+  src:
+    - p1 "Part numbering system"
+    - p1 "Electrical Specification, RG1005 ±10(N) row, ±0.1% (B) 47≦R≦100k"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review): tolerance and TCR from the codes the
+# Electrical Specification table names (B, N); resistance from the part
+# numbering system.
+parameters:
+  tolerance:
+    tol: ±0.1 %
+    src: p1 "Electrical Specification, Resistance tolerance column ±0.1% (B)"
+  resistance:
+    typ: 10 kΩ
+    src: 'p1 "Part numbering system, Nominal resistance value (E-24: 3 digit): 103"'
+  temperature_coefficient:
+    tol: ±10 ppm/°C
+    src: p1 "Electrical Specification, RG1005, TCR ±10(N)"

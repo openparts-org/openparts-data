@@ -1,0 +1,32 @@
+# Bourns MF-MSMF PTC resettable fuse body, Style 2. Bourns' "Product Dimensions"
+# table gives min/max only (no nominal), page 5, rows MF-MSMF110/16X, MF-MSMF150/12X:
+# A 4.37-4.83 (length), B 3.07-3.41 (width), C 0.35-0.80 (height) mm.
+# D 0.30-1.20 (bottom terminal length, Style 2 drawing) is recorded as
+# lead_length; the Style 2 half-moon notch is not representable.
+schema_version: "0.2"
+kind: package
+id: standards/CHIP1812-MF-MSMF-S2-C035-080
+family: chip
+lead_count: 2
+source: bourns/MF-MSMF@revBE
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 3.07 mm
+    max: 3.41 mm
+    src: p5 "Product Dimensions, MF-MSMF110/16X row, B (min/max)"
+  body_length:
+    min: 4.37 mm
+    max: 4.83 mm
+    src: p5 "Product Dimensions, MF-MSMF110/16X row, A (min/max)"
+  body_height:
+    min: 0.35 mm
+    max: 0.8 mm
+    src: p5 "Product Dimensions, MF-MSMF110/16X row, C (min/max)"
+  lead_length:
+    min: 0.3 mm
+    max: 1.2 mm
+    src: p5 "Product Dimensions, MF-MSMF110/16X row, D (min/max), Style 2"

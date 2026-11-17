@@ -1,0 +1,35 @@
+# Susumu RG2012 (0805 inch) thin film chip resistor. Page-1
+# "Dimensions" table, row RG2012: L 2.00±0.20, W 1.25±0.20, a 0.40±0.20,
+# t 0.40±0.10 mm. a (top electrode length per the outline) is recorded as
+# lead_length; b (bottom electrode) is not representable separately.
+schema_version: "0.2"
+kind: package
+id: standards/CHIP0805-RG2012
+family: chip
+lead_count: 2
+source: susumu/RG-SERIES
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 1.05 mm
+    typ: 1.25 mm
+    max: 1.45 mm
+    src: p1 "Dimensions, RG2012 row, W 1.25±0.20"
+  body_length:
+    min: 1.8 mm
+    typ: 2 mm
+    max: 2.2 mm
+    src: p1 "Dimensions, RG2012 row, L 2.00±0.20"
+  body_height:
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p1 "Dimensions, RG2012 row, t 0.40±0.10"
+  lead_length:
+    min: 0.2 mm
+    typ: 0.4 mm
+    max: 0.6 mm
+    src: p1 "Dimensions, RG2012 row, a 0.40±0.20"

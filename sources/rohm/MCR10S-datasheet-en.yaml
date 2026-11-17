@@ -1,0 +1,16 @@
+# ROHM MCR10S EQP series general purpose chip resistor <High power>
+# product specification (10 pages: product specification 1/7-3/7, package
+# specifications, notices). Footer "2025.10.01 - Rev.MCR10S-IA-006E". Downloaded
+# 2026-11-17 with plain curl from ROHM's fscdn.rohm.com datasheet link
+# (HTTP 200, PDF); read with pdftotext -layout.
+schema_version: "0.2"
+kind: source
+id: rohm/MCR10S-datasheet-en
+sha256: 10176cefbb4ecf54438573488976eae97aff809af73c5249c845a5ea8ac9eaca
+retrieved: 2026-11-17
+url: https://fscdn.rohm.com/en/products/databook/datasheet/passive/resistor/chip_resistor/mcr10s-e.pdf
+publisher: rohm
+document_id: MCR10S-IA-006E
+document_type: datasheet
+revision: MCR10S-IA-006E
+date: 2025-10-01

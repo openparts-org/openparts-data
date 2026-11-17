@@ -1,0 +1,35 @@
+# Susumu RG1608 (0603 inch) thin film chip resistor. Page-1
+# "Dimensions" table, row RG1608: L 1.60±0.20, W 0.80±0.20, a 0.30±0.20,
+# t 0.40±0.10 mm. a (top electrode length per the outline) is recorded as
+# lead_length; b (bottom electrode) is not representable separately.
+schema_version: "0.2"
+kind: package
+id: standards/CHIP0603-RG1608
+family: chip
+lead_count: 2
+source: susumu/RG-SERIES
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 0.6 mm
+    typ: 0.8 mm
+    max: 1 mm
+    src: p1 "Dimensions, RG1608 row, W 0.80±0.20"
+  body_length:
+    min: 1.4 mm
+    typ: 1.6 mm
+    max: 1.8 mm
+    src: p1 "Dimensions, RG1608 row, L 1.60±0.20"
+  body_height:
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p1 "Dimensions, RG1608 row, t 0.40±0.10"
+  lead_length:
+    min: 0.1 mm
+    typ: 0.3 mm
+    max: 0.5 mm
+    src: p1 "Dimensions, RG1608 row, a 0.30±0.20"

@@ -1,0 +1,37 @@
+# 100 Ω +/-1 % ERJ6EN (0805), packaging V (punched carrier taping 4 mm pitch, 5,000 pcs). Written
+# without hyphen as the datasheet's part-number boxes show it. Not printed
+# literally: built from the page-2 part-number explanation; the ERJ6EN
+# ratings row (page 3) gives 10 to 2.2 M Ohm, E24/E96 at +/-1 % -> existence
+# probable.
+schema_version: "0.2"
+kind: part
+id: panasonic/ERJ6ENF1000V
+manufacturer: panasonic
+mpn: ERJ6ENF1000V
+device: panasonic/ERJ6EN
+package: standards/CHIP0805-ERJ6E
+sources: [panasonic/AOA0000C304]
+source: panasonic/AOA0000C304
+
+existence:
+  status: probable
+  src:
+    - p2 "Explanation of part numbers, ERJ6EN ±1 % series"
+    - p3 "Ratings <±1 %>, ERJ6EN row, Resistance range 10 to 2.2 M"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review): resistance and tolerance from
+# 'Explanation of part numbers'; power and T.C.R. from the Ratings row.
+parameters:
+  tolerance:
+    tol: ±1 %
+    src: 'p2 "Explanation of part numbers (6EN, ±1 %), Resistance tolerance: F = ±1 %"'
+  resistance:
+    typ: 100 Ω
+    src: 'p2 "Explanation of part numbers (6EN, ±1 %), Resistance value: 1000"'
+  power_rating:
+    typ: 0.125 W
+    at: { TA: 70 °C }
+    src: p3 "Ratings <±1 %>, ERJ6EN row, Power rating (70 ℃)"
+  temperature_coefficient: { tol: ±100 ppm/K, src: 'p3 "Ratings <±1 %>, ERJ6EN row, T.C.R. ±100"' }

@@ -1,0 +1,27 @@
+# Bourns MF-NSMF PTC resettable fuse body, Style 1. Bourns' "Product Dimensions"
+# table gives min/max only (no nominal), page 9, rows MF-NSMF075, MF-NSMF110, MF-NSMF150:
+# A 3.00-3.40 (length), B 1.40-1.80 (width), C 0.40-0.70 (height) mm.
+# D (terminal length) is printed as a minimum only and is left out.
+schema_version: "0.2"
+kind: package
+id: standards/CHIP1206-MF-NSMF-S1-C040-070
+family: chip
+lead_count: 2
+source: bourns/MF-NSMF@revAF
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 1.4 mm
+    max: 1.8 mm
+    src: p9 "Product Dimensions, MF-NSMF075 row, B (min/max)"
+  body_length:
+    min: 3 mm
+    max: 3.4 mm
+    src: p9 "Product Dimensions, MF-NSMF075 row, A (min/max)"
+  body_height:
+    min: 0.4 mm
+    max: 0.7 mm
+    src: p9 "Product Dimensions, MF-NSMF075 row, C (min/max)"
