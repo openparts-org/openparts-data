@@ -1,0 +1,28 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCLS141G PDF page 12, addendum dated 13-Nov-2026): row "SN74HC374DWR",
+# "SOIC (DW) | 20". lifecycle "active" is that table's Status column.
+# Package: outline DW0020A (4220724/A) on page 29; same drawing number and
+# revision as the reused package manufacturers/ti/DW0020A.
+schema_version: "0.2"
+kind: part
+id: ti/SN74HC374DWR
+manufacturer: ti
+mpn: SN74HC374DWR
+device: ti/SN74HC374
+
+package:
+  value: manufacturers/ti/DW0020A
+  src:
+    - p12 "Package Option Addendum, row "SN74HC374DWR", "SOIC (DW) | 20""
+    - p29 "PACKAGE OUTLINE DW0020A (4220724/A)"
+
+sources: [ti/SCLS141G]
+source: ti/SCLS141G
+
+existence:
+  status: verified
+  src: p12 "Package Option Addendum, Packaging Information table, row "SN74HC374DWR""
+
+lifecycle:
+  status: active
+  src: p12 "Package Option Addendum, row "SN74HC374DWR", Status "Active""

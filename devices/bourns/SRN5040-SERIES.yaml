@@ -1,0 +1,21 @@
+# SRN5040 series 2-terminal SMD semi-shielded power inductor, shared by
+# every value in the series' Electrical Specifications table (the
+# inductance value is the only per-MPN difference).
+schema_version: "0.2"
+kind: device
+id: bourns/SRN5040-SERIES
+manufacturer: bourns
+category: inductor
+family: SRN5040
+source: bourns/SRN5040
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p1 "General Specifications, Operating Temperature (temperature rise included)"
+
+pins:
+  src: p1 "Electrical Schematic (single inductor symbol, 2 terminals)"
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

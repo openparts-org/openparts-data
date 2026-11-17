@@ -1,0 +1,22 @@
+# 4-channel low-capacitance TVS diode array, SOT26. Pins from the page-1
+# SOT26 Top View, which prints the numbers: 1 CH 1, 2 GND, 3 CH 2, 4 CH 3,
+# 5 VDD, 6 CH 4. Channel pins typed passive (TVS terminals, as
+# ti/TPD4E1U06); VDD is the array's supply-rail connection.
+schema_version: "0.2"
+kind: device
+id: diodes/D5V0F4U6SO
+manufacturer: diodes
+category: diode
+family: D5V0F4U6SO
+source: diodes/DS35472
+
+parameters: { reverse_voltage: { max: 5.5 V, src: 'p2 "Electrical Characteristics, VRWM"' } }
+
+pins:
+  src: 'p1 "SOT26 Top View: CH 4 6, VDD 5, CH 3 4 / CH 1 1, GND 2, CH 2 3"'
+  "1": { name: CH1, type: passive }
+  "2": { name: GND, type: ground }
+  "3": { name: CH2, type: passive }
+  "4": { name: CH3, type: passive }
+  "5": { name: VDD, type: power }
+  "6": { name: CH4, type: passive }

@@ -1,0 +1,19 @@
+# 30 V N-channel MOSFET, SOT-23/SUPERSOT-23 (CASE 527AG). The page-1
+# pin drawing labels the single top lead D, the bottom-left lead G and
+# the bottom-right lead S without numbers; numbered as FDN340P (whose
+# datasheet prints 1 = Gate, 2 = Source, 3 = Drain on the same drawing)
+# and this dataset's sot convention -- position-derived, flagged for
+# review.
+schema_version: "0.2"
+kind: device
+id: onsemi/FDN337N
+manufacturer: onsemi
+category: transistor
+family: FDN337N
+source: onsemi/FDN337N-D
+
+pins:
+  src: 'p1 "Pin drawing: D top, G bottom-left, S bottom-right; no numbers printed -- see header"'
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

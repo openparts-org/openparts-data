@@ -1,0 +1,29 @@
+# Bourns SRP4020TA series power inductor body, from the page-1 Product
+# Dimensions drawing. The chip generator draws the body as a box;
+# terminal/pad features are not recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/bourns/CHIP-BOURNS-SRP4020TA
+family: chip
+lead_count: 2
+source: bourns/SRP4020TA
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 3.81 mm
+    typ: 4.06 mm
+    max: 4.31 mm
+    src: p1 "Product Dimensions, Lead Frame Terminal, 4.06 +/-0.25 (.160 +/-.010)"
+  body_length:
+    min: 4.2 mm
+    typ: 4.45 mm
+    max: 4.7 mm
+    src: p1 "Product Dimensions, Lead Frame Terminal, 4.45 +/-0.25 (.175 +/-.010)"
+  body_height:
+    min: 1.8 mm
+    typ: 2 mm
+    max: 2.2 mm
+    src: p1 "Product Dimensions, Lead Frame Terminal, 2.0 +/-0.2 (.079 +/-.008)"

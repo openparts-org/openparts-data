@@ -1,0 +1,30 @@
+# MPN from the PACKAGE OPTION ADDENDUM (SLLSFJ0F page 41), Status Active, SOIC (D) | 8.
+# The PDF carries two D outlines, D0008B (4221445/C, pages 38-40) and D0008A
+# (pages 45-47); D0008B's printed dimensions and land pattern equal
+# manufacturers/ti/D0008B, which is reused.
+schema_version: "0.2"
+kind: part
+id: ti/ISO6721BDR
+manufacturer: ti
+mpn: ISO6721BDR
+device: ti/ISO6721-D
+
+package:
+  value: manufacturers/ti/D0008B
+  src:
+    - p41 "PACKAGE OPTION ADDENDUM, row ISO6721BDR, "SOIC (D) | 8""
+    - p38 "PACKAGE OUTLINE D0008B (4221445/C 02/2019)"
+
+sources: [ti/SLLSFJ0F]
+source: ti/SLLSFJ0F
+
+existence:
+  status: verified
+  src: p41 "PACKAGE OPTION ADDENDUM, Packaging Information table, row ISO6721BDR"
+
+lifecycle: { status: active, src: 'p41 "PACKAGE OPTION ADDENDUM, row ISO6721BDR, Status "Active""' }
+
+parameters:
+  default_output:
+    value: high
+    src: p1 "3 Description, default output high without suffix F, low with F"

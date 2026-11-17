@@ -1,0 +1,18 @@
+# Official Microchip datasheet "MCP25625 CAN Controller with Integrated Transceiver". Downloaded 2026-11-17 with curl
+# from ww1.microchip.com (URL below). document_id / revision from the
+# printed footer "DS20005282C-page N"; the Revision History lists "Revision C (January 2019)".
+# 90 PDF pages; text read with pdftotext -layout. Page numbers in this
+# dataset are PDF page indices (they equal the printed page numbers).
+# Package drawings that are image pages were rendered and read as
+# images. sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20005282@revC
+sha256: e4fba63531389fbf4e0d7505d8f650b4d4a6a38b4c2533fcb853d68732020601
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/MCP25625-CAN-Controller-Data-Sheet-20005282C.pdf
+publisher: microchip
+document_id: DS20005282
+document_type: datasheet
+revision: C
+date: 2019-01

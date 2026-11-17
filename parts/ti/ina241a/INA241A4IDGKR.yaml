@@ -1,0 +1,34 @@
+# MPN from the Package Option Addendum of SBOSA30D (page 28),
+# row "INA241A4IDGKR", VSSOP (DGK) | 8, Status Active. Package outline DGK0008A (4214862/A)
+# on page 41, the drawing revision the reused package was read from.
+schema_version: "0.2"
+kind: part
+id: ti/INA241A4IDGKR
+manufacturer: ti
+mpn: INA241A4IDGKR
+device: ti/INA241A
+
+package:
+  value: standards/MSOP8-3.0x3.0-P0.65-TI-DGK
+  src:
+    - p28 "Package Option Addendum, row INA241A4IDGKR, VSSOP (DGK) | 8"
+    - p41 "PACKAGE OUTLINE DGK0008A (4214862/A)"
+
+sources: [ti/SBOSA30D]
+source: ti/SBOSA30D
+
+existence:
+  status: verified
+  src: p28 "Package Option Addendum, Packaging Information table, row INA241A4IDGKR"
+
+lifecycle:
+  status: active
+  src: p28 "Package Option Addendum, row INA241A4IDGKR, Status Active"
+
+# Parameters (AI candidates, needs review).
+parameters:
+  input_offset_voltage:
+    - typ: 3 µV
+      max: 10 µV
+      at: { VS: 5 V, VIN: 48 V, TA: 25 °C }
+      src: p5 "6.5 EC, Vos input-referred, INA241A3, INA241A4 (printed ±3/±10)"

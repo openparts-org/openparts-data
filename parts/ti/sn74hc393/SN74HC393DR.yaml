@@ -1,0 +1,28 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCLS143E PDF page 13, addendum dated 11-Nov-2026): row "SN74HC393DR",
+# "SOIC (D) | 14". lifecycle "active" is that table's Status column.
+# Package: outline D0014A (4220718/A) on page 22; same drawing number and
+# revision as the reused package manufacturers/ti/D0014A.
+schema_version: "0.2"
+kind: part
+id: ti/SN74HC393DR
+manufacturer: ti
+mpn: SN74HC393DR
+device: ti/SN74HC393
+
+package:
+  value: manufacturers/ti/D0014A
+  src:
+    - p13 "Package Option Addendum, row "SN74HC393DR", "SOIC (D) | 14""
+    - p22 "PACKAGE OUTLINE D0014A (4220718/A)"
+
+sources: [ti/SCLS143E]
+source: ti/SCLS143E
+
+existence:
+  status: verified
+  src: p13 "Package Option Addendum, Packaging Information table, row "SN74HC393DR""
+
+lifecycle:
+  status: active
+  src: p13 "Package Option Addendum, row "SN74HC393DR", Status "Active""

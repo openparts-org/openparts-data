@@ -1,0 +1,25 @@
+# 2N4401G: listed in the page-2 ORDERING INFORMATION table (TO-92,
+# 5000 Units / Bulk -- the straight-lead bulk pack; the RLRA/RLRP
+# tape-and-reel OPNs use the bent-lead form and are not added). No
+# lifecycle statement. Package: CASE 29-11 ISSUE AM, 98ASB42022B, the
+# drawing standards/TO92-BC547 was read from. Reused.
+schema_version: "0.2"
+kind: part
+id: onsemi/2N4401G
+manufacturer: onsemi
+mpn: 2N4401G
+device: onsemi/2N4401
+package: standards/TO92-BC547
+sources: [onsemi/2N4401-D, onsemi/98ASB42022B]
+source: onsemi/2N4401-D
+
+existence:
+  status: verified
+  src: p2 "ORDERING INFORMATION, 2N4401G | TO-92 | 5000 Units / Bulk"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:                  { value: npn, src: p1 "Title" }
+  collector_emitter_voltage: { max: 40 V, src: 'p1 "MAXIMUM RATINGS, VCEO"' }
+  collector_current:         { max: 600 mA, src: 'p1 "MAXIMUM RATINGS, IC Continuous"' }

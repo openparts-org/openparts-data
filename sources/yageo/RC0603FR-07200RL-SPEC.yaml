@@ -1,0 +1,15 @@
+# YAGEO per-part spec sheet for RC0603FR-07200RL, served by the manufacturer's own
+# spec-sheet download endpoint (plain curl, PDF; a non-existent MPN returns
+# HTTP 404). The sheet carries no revision; it prints only "Generated
+# 11/17/2026", recorded as date/revision. Read via pdftotext -layout.
+schema_version: "0.2"
+kind: source
+id: yageo/RC0603FR-07200RL-SPEC
+sha256: 457504e1be54e9776103d27a02be13b1025b67127139dbd148791a39e986fde9
+retrieved: 2026-11-17
+url: https://yageogroup.com/component-documentation/download/specsheet/RC0603FR-07200RL
+publisher: yageo
+document_id: RC0603FR-07200RL
+document_type: datasheet
+revision: generated 2026-11-17
+date: 2026-11-17

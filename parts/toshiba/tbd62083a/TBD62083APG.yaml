@@ -1,0 +1,26 @@
+# TBD62083APG: the datasheet (page 1) prints the product name with its
+# package P-DIP18-300-2.54-001 but has no ordering table, and the static HTML of
+# Toshiba's product page lists no orderable part number -> the product
+# name is recorded as the MPN, existence `probable` (as for
+# toshiba/TB67H451FNG). Lifecycle `unknown`.
+schema_version: "0.2"
+kind: part
+id: toshiba/TBD62083APG
+manufacturer: toshiba
+mpn: TBD62083APG
+device: toshiba/TBD62083A
+
+package:
+  value: manufacturers/toshiba/P-DIP18-300-2.54-001
+  src:
+    - p1 "Features, Package PG type P-DIP18-300-2.54-001"
+    - p8 "Package Dimensions, P-DIP18-300-2.54-001"
+
+sources: [toshiba/TBD62083A-datasheet-en]
+source: toshiba/TBD62083A-datasheet-en
+
+existence:
+  status: probable
+  src: p1 "TBD62083APG listed in the title, package P-DIP18-300-2.54-001 (no ordering table)"
+
+lifecycle: { status: unknown }

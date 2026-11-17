@@ -1,0 +1,25 @@
+# Bourns SRN5040 series power inductor body, from the page-1 Product
+# Dimensions drawing. The chip generator draws the body as a box;
+# terminal/pad features are not recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/bourns/CHIP-BOURNS-SRN5040
+family: chip
+lead_count: 2
+source: bourns/SRN5040
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 4.8 mm
+    typ: 5 mm
+    max: 5.2 mm
+    src: p1 "Product Dimensions, 5.0 +/-0.2 (.197 +/-.008), vertical"
+  body_length:
+    min: 4.8 mm
+    typ: 5 mm
+    max: 5.2 mm
+    src: p1 "Product Dimensions, 5.0 +/-0.2 (.197 +/-.008), horizontal"
+  body_height: { max: 4 mm, src: 'p1 "Product Dimensions, side view 4.0 (.157) MAX."' }

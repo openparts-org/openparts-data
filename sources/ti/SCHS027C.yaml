@@ -1,0 +1,17 @@
+# Official TI datasheet "CD4017B, CD4022B Types CMOS Counter/Dividers". Downloaded 2026-11-17 from
+# the TI symlink URL below with curl (HTTP 200, PDF); revision read from
+# the page header "SCHS027C - Revised February 2004". 22 PDF pages; text read with
+# pdftotext -layout (only the addendum and outline pages carry text; pages 1-4 are scans and were rendered and read). Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM is dated 18-Sep-2026 (newer than the
+# datasheet revision). sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SCHS027C
+sha256: bbb6f63e1110f9053191d091b179f0032becac857b4e1469a0c4e6616ad74bd5
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/cd4017b.pdf
+publisher: ti
+document_id: SCHS027C
+document_type: datasheet
+revision: C
+date: 2004-02

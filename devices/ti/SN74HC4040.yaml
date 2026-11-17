@@ -1,0 +1,62 @@
+# 12-bit asynchronous binary counter SN74HC4040, 16-pin pin map read from
+# the rendered "J, W, D, DB, N, NS, or PW Package 16-Pin ... Top View"
+# diagram (SCLS160E page 3; image only). Outputs QA (first stage) to QL
+# (12th stage); CLR (active high) typed reset. FK (LCCC) not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN74HC4040
+manufacturer: ti
+category: logic
+family: SNx4HC4040
+source: ti/SCLS160E
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 6 V
+    src: p4 "5.2 Recommended Operating Conditions, VCC, SN74HC4040 column"
+  supply_current:
+    max: 8 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p5 "5.4 Electrical Characteristics: ICC, VI = VCC or 0, 6 V, TA = 25°C column"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "5.2 Recommended Operating Conditions, TA, SN74HC4040 column"
+  channel_count:
+    value: "1"
+    src: p1 "Title, 12-Bit Asynchronous Binary Counters (one counter per package)"
+  propagation_delay:
+    - typ: 16 ns
+      max: 30 ns
+      at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+      src: p6 "5.6 Switching Characteristics CL = 50 pF, tpd CLK to QA, 4.5 V, TA = 25°C"
+    - typ: 62 ns
+      max: 150 ns
+      at: { VCC: 2 V, CL: 50 pF, TA: 25 °C }
+      src: p6 "5.6 Switching Characteristics CL = 50 pF, tpd CLK to QA, 2 V, TA = 25°C"
+    - typ: 12 ns
+      max: 26 ns
+      at: { VCC: 6 V, CL: 50 pF, TA: 25 °C }
+      src: p6 "5.6 Switching Characteristics CL = 50 pF, tpd CLK to QA, 6 V, TA = 25°C"
+  logic_function: { value: counter, src: 'p1 "Title, 12-Bit Asynchronous Binary Counters"' }
+
+pins:
+  src:  p3 "16-Pin CDIP, CFP, SOIC, SSOP, PDIP, SO, or TSSOP Top View diagram (rendered)"
+  "1":  { name: QL, type: output }
+  "2":  { name: QF, type: output }
+  "3":  { name: QE, type: output }
+  "4":  { name: QG, type: output }
+  "5":  { name: QD, type: output }
+  "6":  { name: QC, type: output }
+  "7":  { name: QB, type: output }
+  "8":  { name: GND, type: ground }
+  "9":  { name: QA, type: output }
+  "10": { name: CLK, type: clock }
+  "11": { name: CLR, type: reset }
+  "12": { name: QI, type: output }
+  "13": { name: QH, type: output }
+  "14": { name: QJ, type: output }
+  "15": { name: QK, type: output }
+  "16": { name: VCC, type: power }

@@ -1,0 +1,46 @@
+# Toshiba P-SOP16-0410-1.27-002 (16-lead SOP, 3.9 mm body, 1.27 mm pitch), read from
+# the rendered "Package Dimensions" page of the TBD62003A series
+# datasheet (2026-05-13, PDF page 9; image only). Unit mm; the drawing
+# prints min/max pairs ("MIN 9.9 ~ MAX 10.10"), recorded as min/max.
+# Mapping: 9.9-10.10 body length; 3.84-4.04 body width; 5.84-6.24
+# lead-tip span; 1.40-1.73 overall height (no separate body thickness);
+# standoff 0.05-0.18; lead width 0.356-0.456; foot 0.40-0.70. Left out:
+# "(0.35)" reference, "0.2TYP" lead thickness callout of the side view
+# (it is not labelled as thickness). Pins 1-8 along one long edge, 9-16
+# back along the other.
+schema_version: "0.2"
+kind: package
+id: manufacturers/toshiba/P-SOP16-0410-1.27-002
+family: soic
+lead_count: 16
+source: toshiba/TBD62003A-datasheet-en
+
+pitch: { typ: 1.27 mm, src: 'p9 "P-SOP16-0410-1.27-002, 1.27 BSC"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 3.84 mm
+    max: 4.04 mm
+    src: p9 "P-SOP16-0410-1.27-002 top view, MIN 3.84 ~ MAX 4.04"
+  body_length:
+    min: 9.9 mm
+    max: 10.1 mm
+    src: p9 "P-SOP16-0410-1.27-002 top view, MIN 9.9 ~ MAX 10.10"
+  lead_length: { min: 0.4 mm, max: 0.7 mm, src: 'p9 "P-SOP16-0410-1.27-002 DETAIL A, 0.40 ~ 0.70"' }
+  lead_width:
+    min: 0.356 mm
+    max: 0.456 mm
+    src: p9 "P-SOP16-0410-1.27-002 top view, MIN 0.356 ~ MAX 0.456"
+  overall_width:
+    min: 5.84 mm
+    max: 6.24 mm
+    src: p9 "P-SOP16-0410-1.27-002 side view, MIN 5.84 ~ MAX 6.24"
+  overall_height:
+    min: 1.4 mm
+    max: 1.73 mm
+    src: p9 "P-SOP16-0410-1.27-002 side view, MIN 1.40 ~ MAX 1.73"
+  standoff:
+    min: 0.05 mm
+    max: 0.18 mm
+    src: p9 "P-SOP16-0410-1.27-002 side view, MIN 0.05 ~ MAX 0.18"

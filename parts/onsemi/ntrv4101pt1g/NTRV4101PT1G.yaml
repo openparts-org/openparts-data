@@ -1,0 +1,50 @@
+# NTRV4101PT1G: listed in the page-1 ORDERING INFORMATION table (NTRV prefix: automotive AEC-Q101 variant).
+# No lifecycle statement for this OPN. Package: the datasheet's SOT-23
+# CASE 318 ISSUE AU outline (98ASB42226B) is the drawing
+# standards/SOT23-2.90x1.30-P1.90 was read from (same case, issue and
+# document number, as NTR4501NT1G). Reused.
+schema_version: "0.2"
+kind: part
+id: onsemi/NTRV4101PT1G
+manufacturer: onsemi
+mpn: NTRV4101PT1G
+device: onsemi/NTR4101P
+package: standards/SOT23-2.90x1.30-P1.90
+sources: [onsemi/NTR4101P-D]
+source: onsemi/NTR4101P-D
+
+existence:
+  status: verified
+  src: p1 "ORDERING INFORMATION, NTRV4101PT1G, SOT-23 (Pb-Free), 3000 / Tape & Reel"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: p_channel, src: p1 "Title" }
+  drain_source_voltage: { max: -20 V, src: 'p1 "MAXIMUM RATINGS, VDSS"' }
+  drain_current:
+    - max: -2.4 A
+      at: { TA: 25 °C }
+      src: p1 "MAXIMUM RATINGS, ID Continuous, Steady State (Note 1)"
+    - max: -1.7 A
+      at: { TA: 85 °C }
+      src: p1 "MAXIMUM RATINGS, ID Continuous, Steady State (Note 1)"
+  rds_on:
+    - typ: 70 mΩ
+      max: 85 mΩ
+      at: { VGS: -4.5 V, ID: -1.6 A }
+      src: p2 "ON CHARACTERISTICS, RDS(on)"
+    - typ: 90 mΩ
+      max: 120 mΩ
+      at: { VGS: -2.5 V, ID: -1.3 A }
+      src: p2 "ON CHARACTERISTICS, RDS(on)"
+    - typ: 112 mΩ
+      max: 210 mΩ
+      at: { VGS: -1.8 V, ID: -0.9 A }
+      src: p2 "ON CHARACTERISTICS, RDS(on)"
+  gate_threshold_voltage:
+    min: -1.2 V
+    typ: -0.72 V
+    max: -0.4 V
+    at: { ID: -250 µA }
+    src: p2 "ON CHARACTERISTICS, VGS(th), VGS = VDS"

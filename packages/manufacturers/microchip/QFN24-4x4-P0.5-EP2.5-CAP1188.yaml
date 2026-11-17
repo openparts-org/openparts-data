@@ -1,0 +1,84 @@
+# CAP1188 24-pin QFN 4mm x 4mm (Microchip/SMSC package code CP), read
+# from DS00001620C "FIGURE 7-2: Package Dimensions" (page 68) and
+# "FIGURE 7-6: Land Dimensions" (page 70) -- image tables, rendered and
+# read. Millimetres as printed. Pin 1 top of the left edge,
+# counter-clockwise (FIGURE 2-1 pin diagram, page 5).
+#
+# pads: Pad X 0.28 (across the pitch) x Pad Y 0.69 (along the terminal),
+# e 0.50; GD/GE 3.05 (min) -- 3.10 (max) is the gap between the inner
+# ends of opposite pad rows (FIGURE 7-3) -> centres at 3.05/2 + 0.69/2 =
+# ±1.87 (the min used); centre pad D2'/E2' 2.50.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/QFN24-4x4-P0.5-EP2.5-CAP1188
+family: qfn
+lead_count: { value: 24, src: p67 "FIGURE 7-1 CAP1188 Package Drawing - 24-Pin QFN 4mm x 4mm" }
+source: microchip/DS00001620C
+
+pitch: { typ: 0.5 mm, src: 'p68 "FIGURE 7-2 table, e 0.50 BSC TERMINAL PITCH"' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:
+    min: 3.9 mm
+    typ: 4 mm
+    max: 4.1 mm
+    src: p68 "FIGURE 7-2 table, D/E 3.90 / 4.00 / 4.10 X/Y BODY SIZE"
+  body_length:
+    min: 3.9 mm
+    typ: 4 mm
+    max: 4.1 mm
+    src: p68 "FIGURE 7-2 table, D/E 3.90 / 4.00 / 4.10 X/Y BODY SIZE"
+  body_height:
+    min: 0.7 mm
+    typ: 0.85 mm
+    max: 1 mm
+    src: p68 "FIGURE 7-2 table, A 0.70 / 0.85 / 1.00 OVERALL PACKAGE HEIGHT"
+  exposed_pad:
+    src:    p68 "FIGURE 7-2 table, D2/E2 2.40 / 2.50 / 2.60 X/Y EXPOSED PAD SIZE"
+    width:  { min: 2.4 mm, typ: 2.5 mm, max: 2.6 mm }
+    length: { min: 2.4 mm, typ: 2.5 mm, max: 2.6 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p68 "FIGURE 7-2 table, A1 0 / 0.02 / 0.05 STANDOFF"
+  lead_width:
+    min: 0.18 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p68 "FIGURE 7-2 table, b 0.18 / 0.25 / 0.30 TERMINAL WIDTH"
+  lead_length:
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p68 "FIGURE 7-2 table, L 0.30 / 0.40 / 0.50 TERMINAL LENGTH"
+
+pads:
+  value:
+    - { number: "1", x: -1.87, y: 1.25, width: 0.69, length: 0.28 }
+    - { number: "2", x: -1.87, y: 0.75, width: 0.69, length: 0.28 }
+    - { number: "3", x: -1.87, y: 0.25, width: 0.69, length: 0.28 }
+    - { number: "4", x: -1.87, y: -0.25, width: 0.69, length: 0.28 }
+    - { number: "5", x: -1.87, y: -0.75, width: 0.69, length: 0.28 }
+    - { number: "6", x: -1.87, y: -1.25, width: 0.69, length: 0.28 }
+    - { number: "7", x: -1.25, y: -1.87, width: 0.28, length: 0.69 }
+    - { number: "8", x: -0.75, y: -1.87, width: 0.28, length: 0.69 }
+    - { number: "9", x: -0.25, y: -1.87, width: 0.28, length: 0.69 }
+    - { number: "10", x: 0.25, y: -1.87, width: 0.28, length: 0.69 }
+    - { number: "11", x: 0.75, y: -1.87, width: 0.28, length: 0.69 }
+    - { number: "12", x: 1.25, y: -1.87, width: 0.28, length: 0.69 }
+    - { number: "13", x: 1.87, y: -1.25, width: 0.69, length: 0.28 }
+    - { number: "14", x: 1.87, y: -0.75, width: 0.69, length: 0.28 }
+    - { number: "15", x: 1.87, y: -0.25, width: 0.69, length: 0.28 }
+    - { number: "16", x: 1.87, y: 0.25, width: 0.69, length: 0.28 }
+    - { number: "17", x: 1.87, y: 0.75, width: 0.69, length: 0.28 }
+    - { number: "18", x: 1.87, y: 1.25, width: 0.69, length: 0.28 }
+    - { number: "19", x: 1.25, y: 1.87, width: 0.28, length: 0.69 }
+    - { number: "20", x: 0.75, y: 1.87, width: 0.28, length: 0.69 }
+    - { number: "21", x: 0.25, y: 1.87, width: 0.28, length: 0.69 }
+    - { number: "22", x: -0.25, y: 1.87, width: 0.28, length: 0.69 }
+    - { number: "23", x: -0.75, y: 1.87, width: 0.28, length: 0.69 }
+    - { number: "24", x: -1.25, y: 1.87, width: 0.28, length: 0.69 }
+    - { number: EP, x: 0, y: 0, width: 2.5, length: 2.5 }
+  src: p70 "FIGURE 7-6 Land Pattern Dimensions, GD/GE 3.05, D2'/E2' 2.50, Pad X 0.28, Pad Y 0.69, e 0.50"

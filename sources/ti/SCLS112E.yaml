@@ -1,0 +1,17 @@
+# Official TI datasheet "SNx4HC153 Dual 4-Line To 1-Line Data Selectors/Multiplexers". Downloaded 2026-11-17 from
+# the TI symlink URL below with curl (HTTP 200, PDF); revision read from
+# the page header "SCLS112E - DECEMBER 1982 - REVISED FEBRUARY 2022". 29 PDF pages; text read with
+# pdftotext -layout; the pin-configuration page (3) is an image and was rendered and read. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM is dated 18-Sep-2026 (newer than the
+# datasheet revision). sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS112E
+sha256: 597f9aa76565c7179a7d265e7d12121e1910613dc1dd04cae1d24958c1795caa
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/sn74hc153.pdf
+publisher: ti
+document_id: SCLS112E
+document_type: datasheet
+revision: E
+date: 2022-02

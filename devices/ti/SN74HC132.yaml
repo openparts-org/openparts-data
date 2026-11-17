@@ -1,0 +1,60 @@
+# Quadruple 2-input NAND gate with Schmitt-trigger inputs SN74HC132,
+# 14-pin pin map from the "Pin Functions" table (SCLS034H page 3, column
+# "SOIC, SSOP, PDIP, SO, TSSOP"), checked against Figure 5-1 (same page).
+# 6.7 prints tpd as a 25 °C typical and a -40 to 85 °C maximum only.
+schema_version: "0.2"
+kind: device
+id: ti/SN74HC132
+manufacturer: ti
+category: logic
+family: SNx4HC132
+source: ti/SCLS034H
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 2 V, max: 6 V, src: 'p4 "6.3 Recommended Operating Conditions, VCC"' }
+  supply_current:
+    max: 2 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p5 "6.5 Electrical Characteristics - Commercial: ICC, 6 V, 25°C MAX"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA, SN74HC132 row"
+  esd_hbm: { typ: 2 kV, src: 'p4 "6.2 ESD Ratings, HBM"' }
+  channel_count: { value: "4", src: 'p1 "3 Description, four independent 2-input NAND gates"' }
+  propagation_delay:
+    - typ: 18 ns
+      at: { VCC: 4.5 V, TA: 25 °C }
+      src: 'p6 "6.7 Switching Characteristics - Commercial: tpd A or B to Y, 4.5 V, 25°C TYP"'
+    - max: 31 ns
+      at: { VCC: 4.5 V, TA: -40..85 °C }
+      src: 'p6 "6.7 Switching Characteristics - Commercial: tpd A or B to Y, 4.5 V, -40°C to 85°C MAX"'
+    - typ: 60 ns
+      at: { VCC: 2 V, TA: 25 °C }
+      src: 'p6 "6.7 Switching Characteristics - Commercial: tpd A or B to Y, 2 V, 25°C TYP"'
+    - max: 156 ns
+      at: { VCC: 2 V, TA: -40..85 °C }
+      src: 'p6 "6.7 Switching Characteristics - Commercial: tpd A or B to Y, 2 V, -40°C to 85°C MAX"'
+  logic_function:
+    value: nand
+    src: p1 "Title, Quadruple 2-Input NAND Gates with Schmitt-Trigger Inputs"
+
+pins:
+  src:
+    - p3 ""Pin Functions" table, column "SOIC, SSOP, PDIP, SO, TSSOP""
+    - p3 "Figure 5-1 D, DB, N, NS, J, W, or PW Package Top View (cross-check)"
+  "1":  { name: 1A, type: input }
+  "2":  { name: 1B, type: input }
+  "3":  { name: 1Y, type: output }
+  "4":  { name: 2A, type: input }
+  "5":  { name: 2B, type: input }
+  "6":  { name: 2Y, type: output }
+  "7":  { name: GND, type: ground }
+  "8":  { name: 3Y, type: output }
+  "9":  { name: 3A, type: input }
+  "10": { name: 3B, type: input }
+  "11": { name: 4Y, type: output }
+  "12": { name: 4A, type: input }
+  "13": { name: 4B, type: input }
+  "14": { name: VCC, type: power }

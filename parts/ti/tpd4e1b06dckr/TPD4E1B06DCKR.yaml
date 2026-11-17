@@ -1,0 +1,26 @@
+# Orderable MPN and status from the PACKAGE OPTION ADDENDUM (page 14):
+# row TPD4E1B06DCKR, Active, SC70 (DCK) 6 pins. Package DCK0006A (4214835/D) on
+# page 21: the same drawing number and revision as manufacturers/ti/DCK0006A. Reused.
+schema_version: "0.2"
+kind: part
+id: ti/TPD4E1B06DCKR
+manufacturer: ti
+mpn: TPD4E1B06DCKR
+device: ti/TPD4E1B06
+
+package:
+  value: manufacturers/ti/DCK0006A
+  src:
+    - p14 "PACKAGE OPTION ADDENDUM, row TPD4E1B06DCKR, Package "SC70 (DCK) | 6""
+    - p21 "PACKAGE OUTLINE DCK0006A (4214835/D)"
+
+sources: [ti/SLVSBQ8E]
+source: ti/SLVSBQ8E
+
+existence:
+  status: verified
+  src: p14 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TPD4E1B06DCKR"
+
+lifecycle:
+  status: active
+  src: p14 "PACKAGE OPTION ADDENDUM, row TPD4E1B06DCKR, Status column "Active""

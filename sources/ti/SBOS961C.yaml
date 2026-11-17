@@ -1,0 +1,16 @@
+# Official TI datasheet "INA290 2.7-V to 120-V current sense amplifier". Downloaded 2026-11-17 with curl
+# from the TI symlink URL below; revision read from the page header
+# "SBOS961C – JUNE 2020 – REVISED JUNE 2021". 45 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page indices.
+# sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: ti/SBOS961C
+sha256: 6745dfe00d8d4801faba4dd240fd8cea6187353ad2c339882c49303527a105af
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/ina290.pdf
+publisher: ti
+document_id: SBOS961C
+document_type: datasheet
+revision: C
+date: 2021-06

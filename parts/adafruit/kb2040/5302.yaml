@@ -1,0 +1,125 @@
+# Adafruit KB2040 (5302). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (adafruit/Adafruit-KB2040-PCB@b4160dc),
+# converted to the package frame (board centre, top view; see the package comment). x/y/rotation
+# come from fitting each OpenParts footprint onto the design pads of that element.
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one). Left out:
+#   passives, solder jumper and test points
+# U2: value "AP2112K-3.3" (ordering suffix not in the design).
+schema_version: "0.2"
+kind: part
+id: adafruit/5302
+manufacturer: adafruit
+mpn: "5302"
+device: adafruit/KB2040
+package: standards/MODULE26-18x33-P2.54-ADAFRUIT-KB2040
+sources: [adafruit/Adafruit-KB2040-PCB@b4160dc]
+source: adafruit/Adafruit-KB2040-PCB@b4160dc
+
+existence: { status: verified, src: '"README: http://www.adafruit.com/products/5302"' }
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: IC2
+    part: raspberrypi/RP2040
+    x: 0.292
+    y: -2.857
+    src:
+      - '"Adafruit IC2 at 19.367, 9.182 rot 90"'
+      - '"IC2 value RP2040_QFN56, footprint QFN56_7MM_REDUCEDEPAD; fitted to its 57 pads (mean 0.029 mm)"'
+  - ref: U5
+    part: winbond/W25Q64JVXGIQ
+    stand_in_for: 8 MB QSPI flash, MPN not stated (value "8MB QSPI Flash"), USON8 4x4
+    x: -3.239
+    y: 4.191
+    src:
+      - '"Adafruit U5 at 12.319, 5.652 rot 90"'
+      - '"U5 value 8MB QSPI Flash, footprint USON8_4X4; stand-in fitted to its 9 pads (mean 0.071 mm)"'
+  - ref: U2
+    part: diodes/AP2112K-3.3TRG1
+    x: 2.045
+    y: 7.811
+    rotation: 180
+    src:
+      - '"Adafruit U2 at 8.7, 10.935 rot 180"'
+      - '"U2 value AP2112K-3.3, footprint SOT23-5; fitted to its 5 pads (mean 0.15 mm)"'
+  - ref: D1
+    part: onsemi/NSR0320MW2T1G
+    stand_in_for: NSR0320 (series name only)
+    x: -0.572
+    y: 7.747
+    rotation: 90
+    src:
+      - '"Adafruit D1 at 8.763, 8.319 rot 0"'
+      - '"D1 value NSR0320, footprint SOD-323F; stand-in fitted to its 2 pads (mean 0.1 mm)"'
+  - ref: D3
+    part: onsemi/NSR0320MW2T1G
+    stand_in_for: NSR0320 (series name only)
+    x: -5.042
+    y: -9.423
+    rotation: 90
+    src:
+      - '"Adafruit D3 at 25.933, 3.848 rot 0"'
+      - '"D3 value NSR0320, footprint SOD-323F; stand-in fitted to its 2 pads (mean 0.1 mm)"'
+  - ref: D2
+    part: kingbright/APT1608CGCK
+    stand_in_for: 0603 LED, green, MPN not stated
+    x: 5.461
+    y: 15.05
+    rotation: 90
+    src:
+      - '"Adafruit D2 at 1.46, 14.351 rot 270"'
+      - '"D2 value GREEN, footprint CHIPLED_0603_NOOUTLINE; stand-in fitted to its 2 pads (mean 0.075 mm)"'
+  - ref: LED1
+    part: worldsemi/WS2812B-1313-V6
+    stand_in_for: SK6805 1515 addressable RGB LED (value WS2812B_SK6805_1515)
+    x: 4.458
+    y: -7.468
+    rotation: 90
+    src:
+      - '"Adafruit LED1 at 23.978, 13.348 rot 0"'
+      - '"LED1 value WS2812B_SK6805_1515, footprint SK6805_1515; stand-in fitted to its 4 pads (mean 0.112 mm)"'
+  - ref: SW2
+    part: alps/SKRPABE010
+    stand_in_for: C&K KMR2 4.2x2.8 SMD tactile switch (value KMR2)
+    x: 4.953
+    y: -13.716
+    rotation: 90
+    src:
+      - '"Adafruit SW2 at 30.226, 13.843 rot 0"'
+      - '"SW2 value KMR2, footprint BTN_KMR2_4.6X2.8; stand-in fitted to its 4 pads (mean 0.276 mm)"'
+  - ref: SW3
+    part: alps/SKRPABE010
+    stand_in_for: C&K KMR2 4.2x2.8 SMD tactile switch (value KMR2)
+    x: -5.016
+    y: -13.716
+    rotation: 90
+    src:
+      - '"Adafruit SW3 at 30.226, 3.873 rot 180"'
+      - '"SW3 value KMR2, footprint BTN_KMR2_4.6X2.8; stand-in fitted to its 4 pads (mean 0.276 mm)"'
+  - ref: X6
+    part: gct/USB4105-GF-A
+    stand_in_for: CUSB31-CFM2AX-01-X USB Type-C receptacle
+    x: 0
+    y: 12.902
+    rotation: 180
+    src:
+      - '"Adafruit X6 at 2.603, 8.89 rot 270"'
+      - '"X6 value USB TYPE C, footprint USB_C_CUSB31-CFM2AX-01-X; stand-in fitted to its 16 pads (mean 0.0 mm)"'
+  - ref: CONN1
+    part: jst/SM04B-SRSS-TB
+    stand_in_for: STEMMA QT 4-pin JST SH receptacle, MPN not stated
+    x: 0
+    y: -13.468
+    src:
+      - '"Adafruit CONN1 at 30.48, 8.89 rot 90"'
+      - '"CONN1 value STEMMA_I2C_QTSKINNY, footprint JST_SH4_SKINNY; stand-in fitted to its 6 pads (mean 0.012 mm)"'
+  - ref: Y1
+    part: abracon/ABM10-16.000MHZ-E20-T
+    stand_in_for: 12 MHz crystal 2.5x2.0, MPN not stated
+    x: -1.206
+    y: -8.636
+    src:
+      - '"Adafruit Y1 at 25.146, 7.684 rot 180"'
+      - '"Y1 value 12MHZ, footprint CRYSTAL_2.5X2; stand-in fitted to its 4 pads (mean 0.0 mm)"'

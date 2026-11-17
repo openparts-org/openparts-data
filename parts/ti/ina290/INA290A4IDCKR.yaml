@@ -1,0 +1,34 @@
+# MPN from the Package Option Addendum of SBOS961C (page 28),
+# row "INA290A4IDCKR", SC70 (DCK) | 5, Status Active. Package outline DCK0005A (4214834/G)
+# on page 35, the drawing revision the reused package was read from.
+schema_version: "0.2"
+kind: part
+id: ti/INA290A4IDCKR
+manufacturer: ti
+mpn: INA290A4IDCKR
+device: ti/INA290-DCK
+
+package:
+  value: manufacturers/ti/DCK0005A
+  src:
+    - p28 "Package Option Addendum, row INA290A4IDCKR, SC70 (DCK) | 5"
+    - p35 "PACKAGE OUTLINE DCK0005A (4214834/G)"
+
+sources: [ti/SBOS961C]
+source: ti/SBOS961C
+
+existence:
+  status: verified
+  src: p28 "Package Option Addendum, Packaging Information table, row INA290A4IDCKR"
+
+lifecycle:
+  status: active
+  src: p28 "Package Option Addendum, row INA290A4IDCKR, Status Active"
+
+# Parameters (AI candidates, needs review).
+parameters:
+  input_offset_voltage:
+    - typ: 2 µV
+      max: 12 µV
+      at: { VS: 5 V, VIN: 48 V, TA: 25 °C }
+      src: p6 "6.5 EC, Vos input-referred, A4, A5 devices (printed 2 / ±12)"

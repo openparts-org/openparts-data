@@ -1,0 +1,70 @@
+# Single positive-edge-triggered D-type flip-flop with clear and preset
+# SN74LVC1G74, 8-pin pin map of the DCU (VSSOP) package (shared with DCT)
+# from the "Pin Functions" table (SCES794G page 4) and Figure 5-1 "DCT
+# 8-Pin SM8 and DCU 8-Pin VSSOP Package Top View". Pin 3 is the inverted
+# output (printed Q with an overbar; Q_N here), CLR and PRE are active
+# low (_N). The RSE (UQFN) pin map differs and is not covered.
+# TA -40 to 125 °C is the DCT/DCU row of 6.3 (RSE/DQE: -40 to 85 °C).
+schema_version: "0.2"
+kind: device
+id: ti/SN74LVC1G74-DCU
+manufacturer: ti
+category: logic
+family: SN74LVC1G74
+source: ti/SCES794G
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.65 V
+    max: 5.5 V
+    src: p6 "6.3 Recommended Operating Conditions, VCC, Operating"
+  supply_current:
+    max: 10 µA
+    at: { VCC: 1.65..5.5 V }
+    src: 'p7 "6.5 Electrical Characteristics: ICC, VI = 5.5 V or GND, IO = 0"'
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p6 "6.3 Recommended Operating Conditions, TA, DCT/DCU Package row"
+  esd_hbm: { typ: 2 kV, src: 'p5 "6.2 ESD Ratings, HBM, all pins"' }
+  channel_count: { value: "1", src: 'p1 "Title, Single Positive-Edge-Triggered D-Type Flip-Flop"' }
+  propagation_delay:
+    - min: 2.6 ns
+      max: 6.2 ns
+      at: { VCC: 3.3 V, TA: -40..85 °C }
+      src: 'p7 "6.7 Switching Characteristics: tpd CLK to Q-bar (slower edge row), VCC = 3.3 V, -40°C to 85°C"'
+    - min: 1.6 ns
+      max: 4.4 ns
+      at: { VCC: 5 V, TA: -40..85 °C }
+      src: 'p7 "6.7 Switching Characteristics: tpd CLK to Q-bar (slower edge row), VCC = 5 V, -40°C to 85°C"'
+  logic_function:
+    value: flip_flop
+    src: p1 "Title, Single Positive-Edge-Triggered D-Type Flip-Flop with Clear and Preset"
+  output_current_high:
+    - max: 32 mA
+      at: { VCC: 4.5 V }
+      src: p6 "6.3 Recommended Operating Conditions, IOH, VCC = 4.5 V (printed -32 mA)"
+    - max: 24 mA
+      at: { VCC: 3 V }
+      src: p6 "6.3 Recommended Operating Conditions, IOH, VCC = 3 V (printed -24 mA)"
+  output_current_low:
+    - max: 32 mA
+      at: { VCC: 4.5 V }
+      src: p6 "6.3 Recommended Operating Conditions, IOL, VCC = 4.5 V"
+    - max: 24 mA
+      at: { VCC: 3 V }
+      src: p6 "6.3 Recommended Operating Conditions, IOL, VCC = 3 V"
+
+pins:
+  src:
+    - p4 ""Pin Functions" table (NAME / NO. / TYPE)"
+    - p4 "Figure 5-1 DCT 8-Pin SM8 and DCU 8-Pin VSSOP Package Top View"
+  "1": { name: CLK, type: clock }
+  "2": { name: D, type: input }
+  "3": { name: Q_N, type: output }
+  "4": { name: GND, type: ground }
+  "5": { name: Q, type: output }
+  "6": { name: CLR_N, type: reset }
+  "7": { name: PRE_N, type: input }
+  "8": { name: VCC, type: power }

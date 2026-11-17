@@ -1,0 +1,81 @@
+# Bosch Sensortec BMP585 8-pin LGA, 3.25 x 3.25 mm, 1.86 mm high (metal
+# lid with gel-filled port). Read from section 9.1 (page 63 note:
+# "dimensions are in millimeters, tolerances are +-0.05mm"), Figure 28
+# top view (page 63), Figure 29 bottom view (page 64) and Figure 30 side
+# view (page 65); all images, rendered and read.
+#
+# Body: "3.25 +-0.05" both ways (Figure 28; Table 3 "3.2 x 3.2 / 3.25 x
+# 3.25 / 3.3 x 3.3" on page 12 shows +-0.05). Height "1.86 +-0.1"
+# (Figure 30; Table 3 package height 1.76 / 1.86 / 1.96).
+# Terminals: "0.55 +-0.05 (8x)" and "0.8 +-0.05 (8x)", pad to body edge
+# "0.125 umlaufend / CIRCUMFERENTIAL". Pad centres from the printed
+# callouts: corner and side-middle pads are 0.55 wide (X), so their
+# centre X = 3.25/2 - 0.125 - 0.55/2 = 1.225, the boxed "1.225" across
+# the bottom; corner pads are 0.8 tall, centre Y = 1.625 - 0.125 - 0.4 =
+# 1.1, the boxed "1.1" on the right; the top/bottom middle pads are 0.55
+# tall (0.8 wide), centre Y = 1.625 - 0.125 - 0.275 = 1.225, the boxed
+# "1.225" on the right. The centre "L/M Pad" (pin 9, laser marking,
+# solder-resist covered, "No external connection possible") is not a
+# terminal and is left out; lead_count 8.
+# Numbering (Figure 22 top view): top row 1 8 7, middle 2 (9) 6, bottom
+# 3 4 5 -> lead_layout [3, 1, 3, 1] counter-clockwise from pin 1.
+# Lands: section 9.3.3 recommends the bottom-view outline as landing
+# pattern with "Footprint +25 um on each side" -> pads 0.6 x 0.85.
+# Not modelled: the lid opening diameters (Figure 30), the pin 1 marker.
+schema_version: "0.2"
+kind: package
+id: manufacturers/bosch/LGA8-3.25x3.25-BMP585
+family: lga
+lead_count: 8
+
+lead_layout:
+  value: [3, 1, 3, 1]
+  src:   'p45 "Figure 22 top view: 1-3 down the left, 4 bottom centre, 5-7 up the right, 8 top centre"'
+
+source: bosch/BST-BMP585-DS003-02
+
+pitch:
+  typ: 1.1 mm
+  src: p64 "Figure 29 bottom view, boxed 1.1 (corner pad centre to side pad centre)"
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:
+    min: 3.2 mm
+    typ: 3.25 mm
+    max: 3.3 mm
+    src: p63 "Figure 28 top view, 3.25 +-0.05"
+  body_length:
+    min: 3.2 mm
+    typ: 3.25 mm
+    max: 3.3 mm
+    src: p63 "Figure 28 top view, 3.25 +-0.05"
+  body_height:
+    min: 1.76 mm
+    typ: 1.86 mm
+    max: 1.96 mm
+    src: p65 "Figure 30 side view, 1.86 +-0.1"
+  lead_inset: { typ: 0.125 mm, src: 'p64 "Figure 29 bottom view, 0.125 circumferential"' }
+  lead_width:
+    min: 0.5 mm
+    typ: 0.55 mm
+    max: 0.6 mm
+    src: p64 "Figure 29 bottom view, 0.55 +-0.05 (8x)"
+  lead_length:
+    min: 0.75 mm
+    typ: 0.8 mm
+    max: 0.85 mm
+    src: p64 "Figure 29 bottom view, 0.8 +-0.05 (8x)"
+
+pads:
+  value:
+    - { number: "1", x: -1.225, y: 1.1, width: 0.6, length: 0.85 }
+    - { number: "2", x: -1.225, y: 0, width: 0.6, length: 0.85 }
+    - { number: "3", x: -1.225, y: -1.1, width: 0.6, length: 0.85 }
+    - { number: "4", x: 0, y: -1.225, width: 0.85, length: 0.6 }
+    - { number: "5", x: 1.225, y: -1.1, width: 0.6, length: 0.85 }
+    - { number: "6", x: 1.225, y: 0, width: 0.6, length: 0.85 }
+    - { number: "7", x: 1.225, y: 1.1, width: 0.6, length: 0.85 }
+    - { number: "8", x: 0, y: 1.225, width: 0.85, length: 0.6 }
+  src: p67 "9.3.3 Landing pattern, Figure 29 outline + 25 um per side; centres from Figure 29 callouts"

@@ -1,0 +1,45 @@
+# INA290 2.7 V to 120 V high-side current-sense amplifier, DCK (SC70-5)
+# pin map from Table 5-1 "Pin Functions: INA290 (Single Channel)"
+# (SBOS961C page 3), checked against Figure 5-1. The dual INA2290 and
+# quad INA4290 in the same datasheet are not modelled. Offset voltage
+# depends on the gain option and is on the Parts; gain (20-500 V/V) and
+# bandwidth have no parameter key.
+schema_version: "0.2"
+kind: device
+id: ti/INA290-DCK
+manufacturer: ti
+category: current_sense_amplifier
+family: INA290
+source: ti/SBOS961C
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 2.7 V, max: 20 V, src: 'p5 "6.3 Recommended Operating Conditions, VS"' }
+  supply_current:
+    typ: 370 µA
+    max: 500 µA
+    at: { VS: 5 V, VIN: 48 V, TA: 25 °C }
+    src: p7 "6.5 Electrical Characteristics, IQ, INA290"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p5 "6.3 Recommended Operating Conditions, TA"
+  esd_hbm:   { typ: 2 kV, src: 'p5 "6.2 ESD Ratings, HBM all pins ±2000 V"' }
+  channel_count: { value: "1", src: 'p3 "Table 5-1 Pin Functions: INA290 (Single Channel)"' }
+  slew_rate: { typ: 2 V/µs, src: 'p6 "6.5 Electrical Characteristics, SR"' }
+  input_bias_current:
+    min: 10 µA
+    typ: 20 µA
+    max: 30 µA
+    at: { VS: 5 V, VIN: 48 V, TA: 25 °C }
+    src: p6 "6.5 Electrical Characteristics, IB, IB+ and IB-, VSENSE = 0 mV"
+
+pins:
+  src:
+    - 'p3 "Table 5-1 Pin Functions: INA290 (Single Channel)"'
+    - p3 "Figure 5-1 INA290 DCK Package 5-Pin SC-70 Top View"
+  "1": { name: OUT, type: analog }
+  "2": { name: GND, type: ground }
+  "3": { name: VS, type: power }
+  "4": { name: IN+, type: analog }
+  "5": { name: IN-, type: analog }

@@ -1,0 +1,35 @@
+# 25LC512-I/SN: 25LC512 EEPROM, industrial temperature, package SN.
+# existence "probable": the MPN is assembled from the Product Identification System legend
+# (DS20002065E page 35: Device "25LC512", Tape and Reel "Blank = Standard packaging",
+# Temperature I, Package "SN = Plastic Small Outline - Narrow, 3.90 mm Body, 8-Lead (SOIC)"); the legend is not an
+# orderable list. Package drawing C04-057-SN Rev J, dimension table on page 28
+# (same table values as the standard package's C04-057-SN Rev D (all rows compared)). lifecycle: no production-status statement -> unknown. The id
+# replaces the "/" of the MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/25LC512-I-SN
+manufacturer: microchip
+mpn: 25LC512-I/SN
+device: microchip/25LC512
+
+package:
+  value: standards/SOIC8-3.90x4.90-P1.27
+  src:
+    - p35 "Product Identification System, Package SN"
+    - p28 "drawing C04-057-SN Rev J dimension table"
+
+sources: [microchip/DS20002065@revE]
+source: microchip/DS20002065@revE
+
+existence:
+  status: probable
+  src: 'p35 "Product Identification System legend: Device 25LC512, blank, Temperature I, Package SN"'
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p2 "DC Characteristics header: Industrial (I) TA = -40 to +85 C"'

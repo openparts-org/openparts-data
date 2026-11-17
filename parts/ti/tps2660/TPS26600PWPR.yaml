@@ -1,0 +1,27 @@
+# MPN from the PACKAGE OPTION ADDENDUM (SLVSDG2G page 43), Status Active, HTSSOP (PWP) | 16.
+# Outline PWP0016A drawing 4214868/A 02/2017 (page 51), the same drawing and
+# revision manufacturers/ti/PWP0016A was read from; thermal pad 3.3/2.7 x 3.3/2.7
+# as there. TPS26600: adjustable OVP cut-off, circuit breaker with auto-retry.
+schema_version: "0.2"
+kind: part
+id: ti/TPS26600PWPR
+manufacturer: ti
+mpn: TPS26600PWPR
+device: ti/TPS2660-PWP
+
+package:
+  value: manufacturers/ti/PWP0016A
+  src:
+    - p43 "PACKAGE OPTION ADDENDUM, row TPS26600PWPR, "HTSSOP (PWP) | 16""
+    - p51 "PACKAGE OUTLINE PWP0016A (4214868/A 02/2017)"
+
+sources: [ti/SLVSDG2G]
+source: ti/SLVSDG2G
+
+existence:
+  status: verified
+  src: p43 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TPS26600PWPR"
+
+lifecycle:
+  status: active
+  src: p43 "PACKAGE OPTION ADDENDUM, row TPS26600PWPR, Status "Active""

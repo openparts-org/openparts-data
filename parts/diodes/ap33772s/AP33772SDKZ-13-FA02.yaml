@@ -1,0 +1,22 @@
+# MPN from DS46176 Rev. 10 - 2 "Ordering Information" (page 19):
+# AP33772SDKZ-13-FA02, W-QFN4040-24 (Type A1), standard firmware, 3000 /
+# 13" tape & reel. (AP33772SDKZ-13-FXXX, customized firmware, is a
+# placeholder code and not recorded.)
+schema_version: "0.2"
+kind: part
+id: diodes/AP33772SDKZ-13-FA02
+manufacturer: diodes
+mpn: AP33772SDKZ-13-FA02
+device: diodes/AP33772S
+
+package:
+  value: manufacturers/diodes/W-QFN4040-24-TypeA1-DS46176
+  src:
+    - p19 "Ordering Information, AP33772SDKZ-13-FA02, W-QFN4040-24 (Type A1)"
+    - p20 "Package Outline Dimensions, W-QFN4040-24 (Type A1)"
+
+sources: [diodes/DS46176]
+source: diodes/DS46176
+
+existence: { status: verified, src: 'p19 "Ordering Information, row AP33772SDKZ-13-FA02"' }
+lifecycle: { status: unknown }

@@ -1,0 +1,25 @@
+# MPN per DS00001572B "PRODUCT IDENTIFICATION SYSTEM" (page 57) and
+# "FIGURE 6-5 CAP1203 PACKAGE MARKING" (page 51, CAP1203-1-SN-TR):
+# address option 1, SN = 8-pin SOIC, TR = tape and reel. Package
+# drawing "8-Lead Plastic Small Outline (SN) - Narrow, 3.90 mm Body"
+# C04-057C (pages 46-47): its printed table equals the C04-057-SN Rev E
+# table manufacturers/microchip/SOIC8-SN-C04-057E was read from, so that
+# package is reused.
+schema_version: "0.2"
+kind: part
+id: microchip/CAP1203-1-SN-TR
+manufacturer: microchip
+mpn: CAP1203-1-SN-TR
+device: microchip/CAP1203-SOIC
+
+package:
+  value: manufacturers/microchip/SOIC8-SN-C04-057E
+  src:
+    - p57 "PRODUCT IDENTIFICATION SYSTEM, Package SN 8-pin SOIC"
+    - p47 "FIGURE 6-1, 8-Lead Plastic Small Outline (SN), drawing C04-057C"
+
+sources: [microchip/DS00001572B]
+source: microchip/DS00001572B
+
+existence: { status: verified, src: 'p51 "FIGURE 6-5 CAP1203 PACKAGE MARKING, CAP1203-1-SN-TR"' }
+lifecycle: { status: unknown }

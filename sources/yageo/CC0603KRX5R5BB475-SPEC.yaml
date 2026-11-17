@@ -1,0 +1,15 @@
+# YAGEO per-part spec sheet for CC0603KRX5R5BB475, served by the manufacturer's own
+# spec-sheet download endpoint (plain curl, PDF; a non-existent MPN returns
+# HTTP 404). The sheet carries no revision; it prints only "Generated
+# 11/17/2026", recorded as date/revision. Read via pdftotext -layout.
+schema_version: "0.2"
+kind: source
+id: yageo/CC0603KRX5R5BB475-SPEC
+sha256: ce57d1ca45c9411dd93a235e8e2d3e937dd8478867156166ca90c710be8559b6
+retrieved: 2026-11-17
+url: https://yageogroup.com/component-documentation/download/specsheet/CC0603KRX5R5BB475
+publisher: yageo
+document_id: CC0603KRX5R5BB475
+document_type: datasheet
+revision: generated 2026-11-17
+date: 2026-11-17

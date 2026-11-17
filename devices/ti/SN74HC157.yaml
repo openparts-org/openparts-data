@@ -1,0 +1,69 @@
+# Quadruple 2-line to 1-line data selector/multiplexer SN74HC157, 16-pin
+# pin map from the "Pin Functions" table (SCLS113F page 3, column "SOIC
+# or TSSOP"), checked against the 16-pin top view on the same page.
+# Names as printed; A/B is the address select (B carries an overbar), G
+# the active-low strobe. The table's TYPE column prints O for 2A/2B and I
+# for 2Y/3Y, contradicting its DESCRIPTION column ("data input" /
+# "data output") and the block diagram; the types here follow the
+# descriptions. FK (LCCC) numbering not covered.
+# SN74HC157 recommended TA is -55 to 125 °C in this revision (table 4.2).
+schema_version: "0.2"
+kind: device
+id: ti/SN74HC157
+manufacturer: ti
+category: logic
+family: SNx4HC157
+source: ti/SCLS113F
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 6 V
+    src: p4 "Recommended Operating Conditions, VCC, SN74HC157 column"
+  supply_current:
+    max: 8 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p5 "Electrical Characteristics: ICC, VI = VCC or 0, 6 V, TA = 25°C column"'
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p4 "Recommended Operating Conditions, TA, SN74HC157 column"
+  channel_count:
+    value: "4"
+    src: p1 "Title, Quadruple 2-Line to 1-Line Data Selectors/Multiplexers"
+  propagation_delay:
+    - typ: 18 ns
+      max: 25 ns
+      at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+      src: p5 "4.5 Switching Characteristics CL = 50 pF, tpd A/B to Y, 4.5 V, TA = 25°C"
+    - typ: 67 ns
+      max: 125 ns
+      at: { VCC: 2 V, CL: 50 pF, TA: 25 °C }
+      src: p5 "4.5 Switching Characteristics CL = 50 pF, tpd A/B to Y, 2 V, TA = 25°C"
+    - typ: 14 ns
+      max: 21 ns
+      at: { VCC: 6 V, CL: 50 pF, TA: 25 °C }
+      src: p5 "4.5 Switching Characteristics CL = 50 pF, tpd A/B to Y, 6 V, TA = 25°C"
+  logic_function: { value: multiplexer, src: 'p1 "Title, Data Selectors/Multiplexers"' }
+
+pins:
+  src:
+    - p3 ""Pin Functions" table, column "SOIC or TSSOP""
+    - p3 "16-Pin CDIP, SOIC, SSOP, PDIP, SO, TSSOP Top View (cross-check)"
+  "1":  { name: A/B, type: input }
+  "2":  { name: 1A, type: input }
+  "3":  { name: 1B, type: input }
+  "4":  { name: 1Y, type: output }
+  "5":  { name: 2A, type: input }
+  "6":  { name: 2B, type: input }
+  "7":  { name: 2Y, type: output }
+  "8":  { name: GND, type: ground }
+  "9":  { name: 3Y, type: output }
+  "10": { name: 3B, type: input }
+  "11": { name: 3A, type: input }
+  "12": { name: 4Y, type: output }
+  "13": { name: 4B, type: input }
+  "14": { name: 4A, type: input }
+  "15": { name: G, type: input }
+  "16": { name: VCC, type: power }

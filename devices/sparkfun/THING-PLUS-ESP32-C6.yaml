@@ -1,0 +1,43 @@
+# SparkFun Thing Plus - ESP32-C6: the pins of the module package standards/MODULE28-23x58-P2.54-SPARKFUN-THING-PLUS,
+# named after the net each header pad connects to in the maker's design file (sparkfun/SparkFun_Thing_Plus_ESP32_C6@fb7352f).
+# Types are this dataset's reading of the net names (GND ground; supply nets power;
+# reset nets reset; others io). "!" (active-low bar) and a leading "+" are dropped. AI candidate, needs review.
+# connected_to: a second header pad on the same design net as an earlier pin.
+schema_version: "0.2"
+kind: device
+id: sparkfun/THING-PLUS-ESP32-C6
+manufacturer: sparkfun
+category: microcontroller
+family: ESP32-C6
+source: sparkfun/SparkFun_Thing_Plus_ESP32_C6@fb7352f
+
+pins:
+  src:  '"header pads J1: net names"'
+  "1":  { name: ESP_EN, type: reset }
+  "2":  { name: 3.3V, type: power }
+  "3":  { name: LED_DO, type: io }
+  "4":  { name: GND, type: ground }
+  "5":  { name: IO0, type: io }
+  "6":  { name: IO1, type: io }
+  "7":  { name: IO2, type: io }
+  "8":  { name: IO3, type: io }
+  "9":  { name: IO4, type: io }
+  "10": { name: IO5, type: io }
+  "11": { name: IO19/SCK, type: io }
+  "12": { name: IO20/PICO, type: io }
+  "13": { name: IO21/POCI, type: io }
+  "14": { name: IO17/RX, type: io }
+  "15": { name: IO16/TX, type: io }
+  "16": { name: IO9/BOOT, type: io }
+  "17": { name: IO6/SDA, type: io }
+  "18": { name: IO7/SCL, type: io }
+  "19": { name: IO15/LP, type: io }
+  "20": { name: IO23/STAT, type: io }
+  "21": { name: IO8, type: io }
+  "22": { name: IO10, type: io }
+  "23": { name: IO11/ALRT, type: io }
+  "24": { name: IO22/SD_DET, type: io }
+  "25": { name: IO18/CS, type: io }
+  "26": { name: V_USB, type: power }
+  "27": { name: VREG_EN, type: input }
+  "28": { name: V_BATT, type: power }

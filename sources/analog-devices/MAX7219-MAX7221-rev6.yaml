@@ -1,0 +1,16 @@
+# Analog Devices (Maxim) MAX7219/MAX7221 serially interfaced 8-digit LED display drivers
+# datasheet, document 19-4452 Rev 6 (8/21) per page 1 and the Revision History. The
+# first curl attempt timed out; downloaded with wget.
+# Downloaded 2026-11-17 with a plain wget from the URL below; 15 PDF pages,
+# text read with pdftotext -layout. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: analog-devices/MAX7219-MAX7221-rev6
+sha256: 7585bd4469c4355ea7e7d7193710605f2ab96afa14491c377420d057f9c8d5eb
+retrieved: 2026-11-17
+url: https://www.analog.com/media/en/technical-documentation/data-sheets/MAX7219-MAX7221.pdf
+publisher: analog-devices
+document_id: 19-4452
+document_type: datasheet
+revision: "6"
+date: 2021-08

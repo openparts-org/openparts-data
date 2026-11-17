@@ -1,0 +1,53 @@
+# TPS2596xx 2.7-19 V, 0.125-2 A, 89 mΩ eFuse, 8-pin SOIC PowerPAD (DDA).
+# Pinout from SLVSET8A "Pin Functions" (page 4), checked against the
+# "8-Pin SOIC" top-view figure; the thermal pad "must be connected to
+# system ground" (EP). Pin 8 is OVLO (TPS25963x) or OVCSEL (TPS25962x,
+# pin-selectable 3.8 / 5.7 / 13.8 V clamp), page 3 Device Comparison
+# Table. No Parts yet: this PDF has no package outline pages (the
+# addendum lists "SO PowerPAD" without a drawing), so the DDA outline
+# could not be checked against manufacturers/ti/DDA0008B.
+# operating_temperature: the only range printed is TJ.
+schema_version: "0.2"
+kind: device
+id: ti/TPS2596-DDA
+manufacturer: ti
+category: efuse
+family: TPS2596
+source: ti/SLVSET8A
+
+# Parameters (AI candidates, needs review).
+parameters:
+  on_resistance:
+    - typ: 89 mΩ
+      max: 92.6 mΩ
+      at: { TJ: 25 °C }
+      src: p7 "Electrical Characteristics, RON, VIN > 4 V, IOUT = 0.2 A, TJ = 25 ℃"
+    - max: 131 mΩ
+      src: p7 "Electrical Characteristics, RON, VIN > 4 V, IOUT = 0.2 A, TJ = -40 to 125 ℃"
+  input_voltage_max:
+    max: 19 V
+    src: p5 "Recommended Operating Conditions, VIN Input Voltage Range"
+  output_current:
+    max: 2 A
+    src: p5 "Recommended Operating Conditions, IMAX Continuous Switch Current"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p5 "Recommended Operating Conditions, TJ Junction temperature"
+  esd_hbm: { typ: 2 kV, src: 'p5 "ESD Ratings, HBM all pins ±2000 V"' }
+  current_limit:
+    min: 0.125 A
+    max: 2 A
+    src: p1 "Features, Adjustable current limit, Current range 0.125-A to 2-A"
+
+pins:
+  src: [p4 "Pin Functions", p4 "8-Pin SOIC top view"]
+  "1": { name: GND, type: ground }
+  "2": { name: dVdt, type: analog }
+  "3": { name: EN/UVLO, type: analog }
+  "4": { name: IN, type: power }
+  "5": { name: OUT, type: power }
+  "6": { name: FLT, type: output }
+  "7": { name: ILM, type: analog }
+  "8": { name: OVLO/OVCSEL, type: analog }
+  EP:  { name: GND, type: ground }

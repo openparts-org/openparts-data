@@ -1,0 +1,17 @@
+# Official TI datasheet "SNx4HC157 Quadruple 2-Line to 1-Line Data Selectors/Multiplexers". Downloaded 2026-11-17 from
+# the TI symlink URL below with curl (HTTP 200, PDF); revision read from
+# the page header "SCLS113F - DECEMBER 1982 - REVISED FEBRUARY 2025". 37 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM is dated 18-Sep-2026 (newer than the
+# datasheet revision). sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS113F
+sha256: b538506b021f7c25c9a5f76e014b69ac9ff9fcb9a8a031ba989d8a8989e40fe3
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/sn74hc157.pdf
+publisher: ti
+document_id: SCLS113F
+document_type: datasheet
+revision: F
+date: 2025-02

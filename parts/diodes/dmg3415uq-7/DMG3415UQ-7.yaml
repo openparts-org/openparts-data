@@ -1,0 +1,42 @@
+# DMG3415UQ-7: listed in the page-1 Ordering Information table of DS44374
+# (Automotive compliance).
+# Lifecycle: page-1 banner "NOT RECOMMENDED FOR NEW DESIGN"; replacement
+# DMP2070UQ (banner "USE DMP2070UQ"; not in the dataset, not linked).
+# Package: The letter-coded SOT23 Package Outline Dimensions table on page 6
+# (A 0.37/0.51/0.40 ... K1 0.903/1.10/1.025, M 0.085/0.150/0.110) is
+# value-for-value the DS18001 table that
+# standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001 was read from (compared
+# as extracted text, every row). Reused.
+schema_version: "0.2"
+kind: part
+id: diodes/DMG3415UQ-7
+manufacturer: diodes
+mpn: DMG3415UQ-7
+device: diodes/DMG3415UQ
+package: standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001
+sources: [diodes/DS44374, diodes/DS18001]
+source: diodes/DS44374
+
+existence: { status: verified, src: 'p1 "Ordering Information table, DMG3415UQ-7 | SOT23"' }
+lifecycle: { status: nrnd, src: p1 "Banner "NOT RECOMMENDED FOR NEW DESIGN"" }
+
+parameters:
+  polarity:             { value: p_channel, src: p1 "Title" }
+  drain_source_voltage: { max: -20 V, src: 'p2 "Maximum Ratings, VDSS"' }
+  drain_current:
+    - max: -4 A
+      at: { VGS: -4.5 V, TA: 25 °C }
+      src: p2 "Maximum Ratings, ID Continuous, Steady State (Note 6)"
+    - max: -3.5 A
+      at: { VGS: -4.5 V, TA: 70 °C }
+      src: p2 "Maximum Ratings, ID Continuous, Steady State (Note 6)"
+  rds_on:
+    - { typ: 31 mΩ, max: 42.5 mΩ, at: { VGS: -4.5 V, ID: -4 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { typ: 40 mΩ, max: 53 mΩ, at: { VGS: -2.5 V, ID: -3.5 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { typ: 51 mΩ, max: 71 mΩ, at: { VGS: -1.8 V, ID: -2 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+  gate_threshold_voltage:
+    min: -1 V
+    typ: -0.55 V
+    max: -0.3 V
+    at: { ID: -250 µA }
+    src: p2 "Elec. Char., VGS(TH), VDS = VGS"

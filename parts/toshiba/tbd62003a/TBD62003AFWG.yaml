@@ -1,0 +1,26 @@
+# TBD62003AFWG: the datasheet (page 1) prints the product name with its
+# package P-SOP16-0410-1.27-002 but has no ordering table, and the static HTML of
+# Toshiba's product page lists no orderable part number -> the product
+# name is recorded as the MPN, existence `probable` (as for
+# toshiba/TB67H451FNG). Lifecycle `unknown`.
+schema_version: "0.2"
+kind: part
+id: toshiba/TBD62003AFWG
+manufacturer: toshiba
+mpn: TBD62003AFWG
+device: toshiba/TBD62003A
+
+package:
+  value: manufacturers/toshiba/P-SOP16-0410-1.27-002
+  src:
+    - p1 "Features, Package FWG type P-SOP16-0410-1.27-002"
+    - p9 "Package Dimensions, P-SOP16-0410-1.27-002"
+
+sources: [toshiba/TBD62003A-datasheet-en]
+source: toshiba/TBD62003A-datasheet-en
+
+existence:
+  status: probable
+  src: p1 "TBD62003AFWG listed in the title, package P-SOP16-0410-1.27-002 (no ordering table)"
+
+lifecycle: { status: unknown }

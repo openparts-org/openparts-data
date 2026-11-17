@@ -1,0 +1,16 @@
+# Official TI datasheet "INA241x -5V to 110V bidirectional current sense amplifier with enhanced PWM rejection". Downloaded 2026-11-17 with curl
+# from the TI symlink URL below; revision read from the page header
+# "SBOSA30D – MARCH 2022 – REVISED DECEMBER 2024". 44 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page indices.
+# sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: ti/SBOSA30D
+sha256: d0f0d3a73c1bc2b4fe42d9cd6a4270c316d1164f8f86dc027f802428950029e8
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/ina241a.pdf
+publisher: ti
+document_id: SBOSA30D
+document_type: datasheet
+revision: D
+date: 2024-12

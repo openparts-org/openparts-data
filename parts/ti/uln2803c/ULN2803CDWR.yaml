@@ -1,0 +1,25 @@
+# MPN from the Package Option Addendum of SLRS076B (page 15), row
+# "ULN2803CDWR", SOIC (DW) | 20, Status Active, op temp -40 to 85.
+# Package outline DW0020A (4220724/A) on page 18, the same drawing
+# revision manufacturers/ti/DW0020A was read from.
+schema_version: "0.2"
+kind: part
+id: ti/ULN2803CDWR
+manufacturer: ti
+mpn: ULN2803CDWR
+device: ti/ULN2803C
+
+package:
+  value: manufacturers/ti/DW0020A
+  src:
+    - p15 "Package Option Addendum, row ULN2803CDWR, SOIC (DW) | 20"
+    - p18 "PACKAGE OUTLINE DW0020A (4220724/A)"
+
+sources: [ti/SLRS076B]
+source: ti/SLRS076B
+
+existence:
+  status: verified
+  src: p15 "Package Option Addendum, Packaging Information table, row ULN2803CDWR"
+
+lifecycle: { status: active, src: 'p15 "Package Option Addendum, row ULN2803CDWR, Status Active"' }

@@ -1,0 +1,17 @@
+# Official TI datasheet "SNx4HC273 Octal D-Type Flip-Flops With Clear". Downloaded 2026-11-17 from
+# the TI symlink URL below with curl (HTTP 200, PDF); revision read from
+# the page header "SCLS136F - DECEMBER 1982 - REVISED APRIL 2022". 37 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM is dated 15-Nov-2026 (newer than the
+# datasheet revision). sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS136F
+sha256: bc7285121cf0f82c88469ca12a33357df1fc24c99c6b469b189d8c9f07640249
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/sn74hc273.pdf
+publisher: ti
+document_id: SCLS136F
+document_type: datasheet
+revision: F
+date: 2022-04

@@ -1,0 +1,50 @@
+# ISO7710 single-channel digital isolator, D (8-pin SOIC narrow) pinout
+# from SLLSER9E "Pin Functions" (page 3, D column: VCC1 on 1 and 3),
+# checked against "Figure 4-2. D Package 8-Pin SOIC Top View". The D
+# package has its own VISO rating (3000 VRMS vs 5000 VRMS for DW), hence
+# a device per package. Default-output option (F suffix) per Part.
+schema_version: "0.2"
+kind: device
+id: ti/ISO7710-D
+manufacturer: ti
+category: digital_isolator
+family: ISO7710
+source: ti/SLLSER9E
+
+# Parameters (AI candidates, needs review).
+parameters:
+  isolation_voltage:
+    min: 3000 V
+    at: { t: 60 s }
+    src: p8 "Insulation Specifications, VISO withstand isolation voltage, D column 3000 VRMS"
+  cmr: { min: 85 kV/µs, src: 'p11 "5.9 Electrical Characteristics—5-V Supply, CMTI"' }
+  supply_voltage:
+    min: 2.25 V
+    max: 5.5 V
+    src: p6 "Recommended Operating Conditions, VCC1, VCC2 Supply voltage"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p6 "Recommended Operating Conditions, TA Ambient temperature"
+  esd_hbm: { typ: 6 kV, src: 'p5 "5.2 ESD Ratings, HBM all pins ±6000 V"' }
+  channel_count: { value: "1", src: 'p1 "Title, Reinforced Single-Channel Digital Isolator"' }
+  propagation_delay:
+    typ: 11 ns
+    max: 17 ns
+    at: { VCC: 5 V }
+    src: p14 "5.15 Switching Characteristics—5-V Supply, tPLH, tPHL"
+  data_rate: { max: 100 Mbps, src: 'p6 "Recommended Operating Conditions, DR Data Rate"' }
+  reverse_channel_count:
+    value: "0"
+    src: p3 "Pin Functions, one IN (side 1) and one OUT (side 2)"
+
+pins:
+  src: ['p3 "Pin Functions, D column"', p3 "Figure 4-2. D Package 8-Pin SOIC Top View"]
+  "1": { name: VCC1, type: power }
+  "2": { name: IN, type: input }
+  "3": { name: VCC1, type: power }
+  "4": { name: GND1, type: ground }
+  "5": { name: GND2, type: ground }
+  "6": { name: OUT, type: output }
+  "7": { name: NC, type: nc }
+  "8": { name: VCC2, type: power }

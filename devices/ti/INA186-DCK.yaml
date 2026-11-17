@@ -1,0 +1,48 @@
+# INA186 current-sense amplifier, DCK (SC70-6) pin map from the "Table 5-1 Pin Functions"
+# (page 3), DCK column, checked against Figure 5-1 (DCK Package 6-Pin
+# SC70 Top View). The DDF/YFD/RSW maps differ and have an ENABLE pin;
+# they are not covered by this device. Gain options A1-A5
+# (25/50/100/200/500 V/V) have no parameter key; offset and bias limits
+# are common to all gain options.
+schema_version: "0.2"
+kind: device
+id: ti/INA186-DCK
+manufacturer: ti
+category: current_sense_amplifier
+family: INA186
+source: ti/SBOS318B
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 1.7 V, max: 5.5 V, src: 'p4 "6.3 Recommended Operating Conditions, VS"' }
+  supply_current:
+    typ: 48 µA
+    max: 65 µA
+    at: { VS: 1.8 V, TA: 25 °C }
+    src: p5 "6.5 Electrical Characteristics, IQ, VSENSE = 0 mV"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA"
+  esd_hbm:       { typ: 3 kV, src: 'p4 "6.2 ESD Ratings, HBM ±3000 V"' }
+  channel_count: { value: "1", src: 'p3 "Pin Functions, single IN+/IN-/OUT"' }
+  slew_rate: { typ: 0.3 V/µs, at: { VS: 5 V }, src: 'p5 "6.5 Electrical Characteristics, SR"' }
+  input_offset_voltage:
+    typ: 3 µV
+    max: 50 µV
+    at: { VS: 1.8 V, VIN: 12 V, TA: 25 °C }
+    src: p5 "6.5 Electrical Characteristics, VOS RTI (printed -3 / ±50 µV)"
+  input_bias_current:
+    typ: 0.5 nA
+    max: 3 nA
+    at: { VIN: 12 V, TA: 25 °C }
+    src: p5 "6.5 Electrical Characteristics, IIB, VSENSE = 0 mV"
+
+pins:
+  src: ['p3 "Table 5-1 Pin Functions, DCK column"', p3 "Figure 5-1 DCK Package 6-Pin SC70 Top View"]
+  "1": { name: REF, type: analog }
+  "2": { name: GND, type: ground }
+  "3": { name: VS, type: power }
+  "4": { name: IN+, type: analog }
+  "5": { name: IN-, type: analog }
+  "6": { name: OUT, type: analog }

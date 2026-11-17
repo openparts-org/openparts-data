@@ -1,0 +1,47 @@
+# ULN2803C 8-channel Darlington transistor array (2.7 kOhm series base
+# resistors), 20-pin DW SOIC pin map from Table 4-1 "Pin Functions"
+# (SLRS076B page 3): nB = input (I), nC = output (O). GND ("Common
+# emitter shared by all channels") is typed ground; COM ("Common cathode
+# node for flyback diodes", I/O) is typed passive as for ti/ULN2003A;
+# pins 10 and 11 are NC. Figure 4-1 is an image without text.
+# operating_temperature is left out: the Recommended Operating
+# Conditions give only the junction range (TJ -40 to 85 °C).
+# collector_emitter_voltage has no key for this category.
+schema_version: "0.2"
+kind: device
+id: ti/ULN2803C
+manufacturer: ti
+category: darlington_array
+family: ULN2803C
+source: ti/SLRS076B
+
+# Parameters (AI candidates, needs review).
+parameters:
+  output_current:
+    max: 500 mA
+    src: p4 "5.1 Absolute Maximum Ratings, IC peak collector current"
+  esd_hbm:       { typ: 2 kV, src: 'p4 "5.2 ESD Ratings, HBM all pins ±2000 V"' }
+  channel_count: { value: "8", src: 'p1 "3 Description, eight NPN Darlington pairs"' }
+
+pins:
+  src:  p3 "Table 4-1 "Pin Functions""
+  "1":  { name: 1B, type: input }
+  "2":  { name: 2B, type: input }
+  "3":  { name: 3B, type: input }
+  "4":  { name: 4B, type: input }
+  "5":  { name: 5B, type: input }
+  "6":  { name: 6B, type: input }
+  "7":  { name: 7B, type: input }
+  "8":  { name: 8B, type: input }
+  "9":  { name: GND, type: ground }
+  "10": { name: NC, type: nc }
+  "11": { name: NC, type: nc }
+  "12": { name: COM, type: passive }
+  "13": { name: 8C, type: output }
+  "14": { name: 7C, type: output }
+  "15": { name: 6C, type: output }
+  "16": { name: 5C, type: output }
+  "17": { name: 4C, type: output }
+  "18": { name: 3C, type: output }
+  "19": { name: 2C, type: output }
+  "20": { name: 1C, type: output }

@@ -1,0 +1,31 @@
+# MPN from the Package Option Addendum of SLLS047N (page 13), row
+# "MAX232N", PDIP (N) | 16, Status Active. Package outline N (R-PDIP-T**) 4040049/E
+# on page 26.
+schema_version: "0.2"
+kind: part
+id: ti/MAX232N
+manufacturer: ti
+mpn: MAX232N
+device: ti/MAX232
+
+package:
+  value: manufacturers/ti/N-R-PDIP-T16
+  src:
+    - p13 "Package Option Addendum, row MAX232N, PDIP (N) | 16"
+    - p26 "MECHANICAL DATA N (R-PDIP-T**) 4040049/E, 16 pins"
+
+sources: [ti/SLLS047N]
+source: ti/SLLS047N
+
+existence:
+  status: verified
+  src: p13 "Package Option Addendum, Packaging Information table, row MAX232N"
+
+lifecycle: { status: active, src: 'p13 "Package Option Addendum, row MAX232N, Status Active"' }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: 0 °C
+    max: 70 °C
+    src: p4 "5.3 Recommended Operating Conditions, TA, MAX232"

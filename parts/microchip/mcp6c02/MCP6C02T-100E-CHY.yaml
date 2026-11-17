@@ -1,0 +1,38 @@
+# MPN from the Product Identification System (DS20006129C page 57),
+# example c): "MCP6C02T-100E/CHY" (Tape and Reel, gain 100 V/V, E-temp, SOT-23);
+# also in the package marking table on page 45. Package drawing C04-028C
+# (CH, CHY) on pages 46-47.
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP6C02T-100E-CHY
+manufacturer: microchip
+mpn: MCP6C02T-100E/CHY
+device: microchip/MCP6C02
+
+package:
+  value: manufacturers/microchip/SOT23-6-CH-C04-028C
+  src: p57 "Product Identification System, CHY = 6-lead SOT-23; drawing C04-028C (CH, CHY) p46-47"
+
+sources: [microchip/DS20006129@revC]
+source: microchip/DS20006129@revC
+
+# existence is `probable`: the MPN is printed only as an example of the
+# part-numbering legend, not in an orderable list.
+existence:
+  status: probable
+  src: p57 "Product Identification System, example c) MCP6C02T-100E/CHY"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p12 "Table 1-4 Temperature Specifications, Specified Temperature Range, E-Temp parts"
+  input_offset_voltage:
+    typ: 1.5 µV
+    max: 12 µV
+    at: { TA: 25 °C }
+    src: p7 "Table 1-2 DC Electrical Characteristics, VOS, gain 100 row (printed ±1.5, -12/+12)"

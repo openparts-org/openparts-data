@@ -1,0 +1,126 @@
+# Adafruit Feather M4 Express (3857). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (adafruit/Adafruit-Feather-M4-Express-PCB@d98407a),
+# converted to the package frame (board centre, top view; see the package comment). x/y/rotation
+# come from fitting each OpenParts footprint onto the design pads of that element.
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one). Left out:
+#   LED1 WS2812B 3535 (its pads put DIN and VDD on one side; the WorldSemi Mini-V6 has them on
+#   opposite sides: no matching part), L2 10 uH inductor (INDUCTOR_1007, no MPN), passives and
+#   test points
+# U$14: value "ATSAMD51J", footprint PQFN64 (the J19A in QFN64 is the -MU member).
+schema_version: "0.2"
+kind: part
+id: adafruit/3857
+manufacturer: adafruit
+mpn: "3857"
+device: adafruit/FEATHER-M4-EXPRESS
+package: standards/MODULE28-23x51-P2.54-ADAFRUIT-FEATHER-M4
+sources: [adafruit/Adafruit-Feather-M4-Express-PCB@d98407a]
+source: adafruit/Adafruit-Feather-M4-Express-PCB@d98407a
+
+existence: { status: verified, src: '"README: https://www.adafruit.com/products/3857"' }
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: U$14
+    part: microchip/ATSAMD51J19A-MU
+    x: -0.381
+    y: -4.763
+    src:
+      - '"Adafruit U$14 at 30.163, 11.049 rot 90"'
+      - '"U$14 value ATSAMD51J, footprint PQFN64-1; fitted to its 65 pads (mean 0.039 mm)"'
+  - ref: U1
+    part: winbond/W25Q16JVUXIQ
+    stand_in_for: 2 MB QSPI flash, MPN not stated (value "2MB Flash"), USON8
+    x: -2.997
+    y: -11.113
+    src:
+      - '"Adafruit U1 at 36.513, 8.433 rot 90"'
+      - '"U1 value 2MB Flash, footprint USON8; stand-in fitted to its 8 pads (mean 0.2 mm)"'
+  - ref: U2
+    part: diodes/AP2112K-3.3TRG1
+    stand_in_for: value "AP2112-3.3" (ordering code not stated), SOT23-5
+    x: -0.508
+    y: 10.668
+    src:
+      - '"Adafruit U2 at 14.732, 10.922 rot 0"'
+      - '"U2 value AP2112-3.3, footprint SOT23-5; stand-in fitted to its 5 pads (mean 0.15 mm)"'
+  - ref: U3
+    part: microchip/MCP73831T-2ACI-OT
+    x: 3.683
+    y: 7.048
+    src:
+      - '"Adafruit U3 at 18.352, 15.113 rot 0"'
+      - '"U3 value MCP73831T-2ACI/OT, footprint SOT23-5; fitted to its 5 pads (mean 0.18 mm)"'
+  - ref: Q3
+    part: diodes/DMG2305UX-7
+    stand_in_for: DMG3415 P-channel MOSFET (value DMG341), SOT-23
+    x: -1.588
+    y: 16.002
+    src:
+      - '"Adafruit Q3 at 9.398, 9.842 rot 0"'
+      - '"Q3 value DMG341, footprint SOT23-R; stand-in fitted to its 3 pads (mean 0.076 mm)"'
+  - ref: D4
+    part: onsemi/MBR120VLSFT1G
+    stand_in_for: MBR120 Schottky, SOD-123 (maker not stated)
+    x: 0.889
+    y: 15.049
+    rotation: 90
+    src:
+      - '"Adafruit D4 at 10.351, 12.319 rot 180"'
+      - '"D4 value MBR120, footprint SOD-123; stand-in fitted to its 2 pads (mean 0.22 mm)"'
+  - ref: X3
+    part: gct/USB3076-30-A
+    stand_in_for: 4UCON 20329 micro-B receptacle (value microUSB)
+    x: 0
+    y: 21.63
+    rotation: 180
+    src:
+      - '"Adafruit X3 at 4.445, 11.43 rot 270"'
+      - '"X3 value microUSB, footprint 4UCONN_20329_V2; stand-in fitted to its 11 pads (mean 0.281 mm)"'
+  - ref: X1
+    part: jst/S2B-PH-SM4-TB
+    stand_in_for: JST PH 2-pin side-entry SMD header, MPN not stated
+    x: 6.749
+    y: 14.605
+    rotation: 90
+    src:
+      - '"Adafruit X1 at 10.795, 19.304 rot 0"'
+      - '"X1 value JSTPH, footprint JSTPH2; stand-in fitted to its 4 pads (mean 0.179 mm)"'
+  - ref: X2
+    part: abracon/ABS07-32.768KHZ-T
+    stand_in_for: 32.768 kHz crystal 3.2x1.5, MPN not stated
+    x: -6.934
+    y: 3.594
+    rotation: 90
+    src:
+      - '"Adafruit X2 at 21.806, 4.496 rot 180"'
+      - '"X2 value 32.768, footprint XTAL3215; stand-in fitted to its 2 pads (mean 0.3 mm)"'
+  - ref: SW1
+    part: alps/SKRPABE010
+    stand_in_for: C&K KMR2 4.2x2.8 SMD tactile switch (value KMR2)
+    x: -4.89
+    y: 16.002
+    rotation: 90
+    src:
+      - '"Adafruit SW1 at 9.398, 6.54 rot 180"'
+      - '"SW1 value KMR2, footprint BTN_KMR2_4.6X2.8; stand-in fitted to its 4 pads (mean 0.276 mm)"'
+  - ref: CHG
+    part: kingbright/APT2012SECK
+    stand_in_for: 0805 LED, orange, MPN not stated
+    x: -5.842
+    y: 22.987
+    rotation: 90
+    src:
+      - '"Adafruit CHG at 2.413, 5.588 rot 270"'
+      - '"CHG value ORANGE, footprint CHIPLED_0805_NOOUTLINE; stand-in fitted to its 2 pads (mean 0.1 mm)"'
+  - ref: L
+    part: kingbright/APT2012SURCK
+    stand_in_for: 0805 LED, red, MPN not stated
+    x: 5.929
+    y: 22.755
+    rotation: 270
+    src:
+      - '"Adafruit L at 2.645, 17.359 rot 90"'
+      - '"L value RED, footprint CHIPLED_0805_NOOUTLINE; stand-in fitted to its 2 pads (mean 0.1 mm)"'

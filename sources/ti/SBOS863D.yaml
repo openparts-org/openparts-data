@@ -1,0 +1,16 @@
+# Official TI datasheet "INA190 current-sense amplifier". Downloaded 2026-11-17 with curl
+# from the TI symlink URL below; revision read from the page header
+# "SBOS863D – MARCH 2018 – REVISED NOVEMBER 2019". 47 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page indices.
+# sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: ti/SBOS863D
+sha256: f895752e035ab3c1ba556fa269a2bd1b25974e4dd09f7dd79963668a13db66c0
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/ina190.pdf
+publisher: ti
+document_id: SBOS863D
+document_type: datasheet
+revision: D
+date: 2019-11

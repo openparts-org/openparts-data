@@ -1,0 +1,18 @@
+# Microchip "AVR128DB28/32/48/64 Data Sheet" (Complete Data Sheet),
+# DS40002247B, 730 PDF pages. Downloaded 2026-11-17 with curl from the
+# Microchip URL below (HTTP 200, PDF). Revision B from the page footers
+# "DS40002247B-page N"; date from the page footers "© 2023" and the PDF
+# CreationDate (2023-01-18). Text read with pdftotext -layout; the SOIC
+# drawing (page 691) was rendered and read. PDF page index = printed
+# page number.
+schema_version: "0.2"
+kind: source
+id: microchip/DS40002247B
+sha256: 0d66ae71ca5ec7ccfb824e13d34d0b740dffe5dd4e277ded42ee0fa135ea6108
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/AVR128DB28-32-48-64-DataSheet-DS40002247.pdf
+publisher: microchip
+document_id: DS40002247
+document_type: datasheet
+revision: B
+date: 2023-01

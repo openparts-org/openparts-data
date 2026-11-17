@@ -1,0 +1,146 @@
+# SparkFun Thing Plus - RP2040 (DEV-17745). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (sparkfun/SparkFun_Thing_Plus-RP2040@38fd2d2),
+# converted to the package frame (board centre, top view; see the package comment). x/y/rotation
+# come from fitting each OpenParts footprint onto the design pads of that element.
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one). Left out:
+#   U2 MAX17048 fuel gauge (DFN-8 2x2: no OpenParts part), J6 microSD socket, J1 2x5 1.27 mm SWD
+#   header, S1/S2 5.2 mm tactile switches (no part of that size), passives
+# Package standards/MODULE28-23x58-P2.54-SPARKFUN-THING-PLUS is shared with another board of
+# this form factor: the 28 header holes of this design have the same positions and drill (land
+# here 1.8796 mm).
+schema_version: "0.2"
+kind: part
+id: sparkfun/DEV-17745
+manufacturer: sparkfun
+mpn: DEV-17745
+device: sparkfun/THING-PLUS-RP2040
+package: standards/MODULE28-23x58-P2.54-SPARKFUN-THING-PLUS
+sources: [sparkfun/SparkFun_Thing_Plus-RP2040@38fd2d2]
+source: sparkfun/SparkFun_Thing_Plus-RP2040@38fd2d2
+
+existence: { status: verified, src: '"README: SparkFun Thing Plus RP2040 (DEV-17745)"' }
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: U5
+    part: raspberrypi/RP2040
+    x: -0.635
+    y: -14.097
+    rotation: 90
+    src:
+      - '"SparkFun U5 at 12.065, 43.307 rot 270"'
+      - '"U5 value RP2040, footprint QFN-56; fitted to its 57 pads (mean 0.016 mm)"'
+  - ref: U4
+    part: winbond/W25Q128JVPIQ
+    stand_in_for: value W25QXX128MBIT (W25Q 128M member not stated), WSON-8 6x5
+    x: -0.127
+    y: -3.683
+    rotation: 180
+    side: bottom
+    src:
+      - '"SparkFun U4 at 11.557, 32.893 rot M0"'
+      - '"U4 value W25QXX128MBIT, footprint WSON-8-6X5-SKINNY_CENTERPAD; stand-in fitted to its 8 pads (mean 0.21 mm)"'
+  - ref: U3
+    part: microchip/MCP73831T-2ACI-OT
+    stand_in_for: value MCP73831 (charge-voltage option not stated), SOT23-5
+    x: -0.508
+    y: 3.556
+    src:
+      - '"SparkFun U3 at 11.938, 25.654 rot 90"'
+      - '"U3 value MCP73831, footprint SOT23-5; stand-in fitted to its 5 pads (mean 0.18 mm)"'
+  - ref: U7
+    part: diodes/AP2112K-3.3TRG1
+    stand_in_for: 3.3 V LDO in SOT23-5, MPN not stated (value 3.3V)
+    x: -3.81
+    y: 8.89
+    rotation: 180
+    src:
+      - '"SparkFun U7 at 15.24, 20.32 rot 270"'
+      - '"U7 value 3.3V, footprint SOT23-5; stand-in fitted to its 5 pads (mean 0.15 mm)"'
+  - ref: Q1
+    part: diodes/DMG2305UX-7
+    stand_in_for: P-MOSFET SOT-23, value "20V/4.2A/52mOhm/1.4W", MPN not stated
+    x: -0.839
+    y: 12.7
+    src:
+      - '"SparkFun Q1 at 12.319, 16.51 rot 90"'
+      - '"Q1 value 20V/4.2A/52mΩ/1.4W, footprint SOT23-3; stand-in fitted to its 3 pads (mean 0.123 mm)"'
+  - ref: D2
+    part: onsemi/NSR0320MW2T1G
+    stand_in_for: SOD-323 Schottky diode, MPN not stated
+    x: -3.81
+    y: 12.7
+    rotation: 90
+    src:
+      - '"SparkFun D2 at 15.24, 16.51 rot 270"'
+      - '"D2 value 1A/23V/620mV, footprint SOD-323; stand-in fitted to its 2 pads (mean 0.05 mm)"'
+  - ref: D1
+    part: kingbright/APT1608SYCK
+    stand_in_for: 0603 LED, yellow, MPN not stated
+    x: 0
+    y: -1.27
+    src:
+      - '"SparkFun D1 at 11.43, 30.48 rot 0"'
+      - '"D1 value Yellow, footprint LED-0603; stand-in fitted to its 2 pads (mean 0.027 mm)"'
+  - ref: D3
+    part: kingbright/APT1608SURCK
+    stand_in_for: 0603 LED, red, MPN not stated
+    x: -7.62
+    y: 22.86
+    src:
+      - '"SparkFun D3 at 19.05, 6.35 rot 0"'
+      - '"D3 value RED, footprint LED-0603; stand-in fitted to its 2 pads (mean 0.052 mm)"'
+  - ref: D4
+    part: kingbright/APT1608QBC-D
+    stand_in_for: 0603 LED, blue, MPN not stated
+    x: -0.127
+    y: -3.81
+    rotation: 180
+    src:
+      - '"SparkFun D4 at 11.557, 33.02 rot 180"'
+      - '"D4 value BLUE, footprint LED-0603; stand-in fitted to its 2 pads (mean 0.027 mm)"'
+  - ref: U6
+    part: worldsemi/WS2812B-2020-V7
+    stand_in_for: value WS2812-2020 (version not stated)
+    x: 0
+    y: -25.4
+    src:
+      - '"SparkFun U6 at 11.43, 54.61 rot 0"'
+      - '"U6 value WS2812-2020, footprint WS2812-2020; stand-in fitted to its 4 pads (mean 0.0 mm)"'
+  - ref: J5
+    part: gct/USB4105-GF-A
+    stand_in_for: USB Type-C receptacle 16P, MPN not stated
+    x: 0
+    y: 25.74
+    rotation: 180
+    src:
+      - '"SparkFun J5 at 11.43, 6.35 rot 0"'
+      - '"J5 value USB C, footprint USB-C-16P-4LAYER-ISOLATED; stand-in fitted to its 20 pads (mean 0.011 mm)"'
+  - ref: J3
+    part: jst/SM04B-SRSS-TB
+    stand_in_for: Qwiic 4-pin JST SH right-angle receptacle, MPN not stated
+    x: 8.25
+    y: 19.812
+    rotation: 90
+    src:
+      - '"SparkFun J3 at 5.08, 9.398 rot 270"'
+      - '"J3 value Qwiic, footprint JST04_1MM_RA; stand-in fitted to its 6 pads (mean 0.1 mm)"'
+  - ref: J4
+    part: jst/S2B-PH-SM4-TB
+    stand_in_for: JST PH 2-pin side-entry SMD header, MPN not stated
+    x: 6.749
+    y: 11.176
+    rotation: 90
+    src:
+      - '"SparkFun J4 at 3.556, 18.034 rot 90"'
+      - '"J4 value (none), footprint JST-2-SMD; stand-in fitted to its 4 pads (mean 0.179 mm)"'
+  - ref: Y2
+    part: abracon/ABM10-16.000MHZ-E20-T
+    stand_in_for: 12 MHz crystal 2.5x2.0, MPN not stated
+    x: 5.979
+    y: -15.244
+    src:
+      - '"SparkFun Y2 at 5.461, 44.45 rot 270"'
+      - '"Y2 value 12MHz, footprint CRYSTAL-SMD-2X2.5MM; stand-in fitted to its 4 pads (mean 0.079 mm)"'

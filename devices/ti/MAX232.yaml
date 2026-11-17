@@ -1,0 +1,52 @@
+# Dual EIA-232 driver/receiver MAX232, 16-pin D/DW/N/NS pin map from
+# Figure 4-1 "MAX232: D, DW, N or NS Package; MAX232I: D, DW, or N
+# Package (Top View)" (SLLS047N page 3), checked against Table 4-1
+# "Pin Functions" on the same page. Table 4-1 omits pin 12; R1OUT at
+# pin 12 is read from Figure 4-1. Charge-pump capacitor leads (type
+# "-") typed passive; VS+/VS- ("charge pump output for storage
+# capacitor only", type O) typed output, as for ti/TRS3232E.
+schema_version: "0.2"
+kind: device
+id: ti/MAX232
+manufacturer: ti
+category: rs232_transceiver
+family: MAX232
+source: ti/SLLS047N
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 4.5 V, max: 5.5 V, src: 'p4 "5.3 Recommended Operating Conditions, VCC"' }
+  supply_current:
+    typ: 8 mA
+    max: 10 mA
+    at: { VCC: 5.5 V, TA: 25 °C }
+    src: 'p5 "5.5 Electrical Characteristics, Device: ICC, all outputs open"'
+  esd_hbm:       { typ: 2 kV, src: 'p4 "5.2 ESD Ratings, HBM all pins 2000 V"' }
+  channel_count: { value: "2", src: 'p1 "1 Features, Two drivers and two receivers"' }
+  propagation_delay:
+    typ: 500 ns
+    src: p5 "5.8 Switching Characteristics, receiver tPLH and tPHL, TTL load (both 500 ns typ)"
+  data_rate:
+    typ: 120 kbps
+    src: p5 "5.8 Switching Characteristics, Data rate, one TOUT switching"
+
+pins:
+  src:
+    - 'p3 "Figure 4-1 "MAX232: D, DW, N or NS Package" (Top View)"'
+    - p3 "Table 4-1 "Pin Functions" (pin 12 not listed; from the figure)"
+  "1":  { name: C1+, type: passive }
+  "2":  { name: VS+, type: output }
+  "3":  { name: C1-, type: passive }
+  "4":  { name: C2+, type: passive }
+  "5":  { name: C2-, type: passive }
+  "6":  { name: VS-, type: output }
+  "7":  { name: T2OUT, type: output }
+  "8":  { name: R2IN, type: input }
+  "9":  { name: R2OUT, type: output }
+  "10": { name: T2IN, type: input }
+  "11": { name: T1IN, type: input }
+  "12": { name: R1OUT, type: output }
+  "13": { name: R1IN, type: input }
+  "14": { name: T1OUT, type: output }
+  "15": { name: GND, type: ground }
+  "16": { name: VCC, type: power }

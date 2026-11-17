@@ -1,0 +1,19 @@
+# Bosch Sensortec BMP585 datasheet, downloaded 2026-11-17 with curl
+# directly from bosch-sensortec.com (URL below). Title page: "Document
+# revision 1.2", "Document release date March 2024", "Document number
+# BST-BMP585-DS003-02", sales part number "0 273 017 038". 71 PDF pages;
+# the PDF page index equals the printed "N | 71" page number. Text read
+# with pdftotext -layout; the package drawings (pages 63-65) are images,
+# rendered with pdftoppm and read visually. sha256 is of the PDF as
+# downloaded.
+schema_version: "0.2"
+kind: source
+id: bosch/BST-BMP585-DS003-02
+sha256: 3110ebeb52eecfe87afb24517a84078614a29329f48ca1e7903227e7e19472b1
+retrieved: 2026-11-17
+url: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp585-ds003.pdf
+publisher: bosch
+document_id: BST-BMP585-DS003-02
+document_type: datasheet
+revision: "1.2"
+date: 2024-03

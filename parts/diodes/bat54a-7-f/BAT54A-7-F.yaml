@@ -1,0 +1,18 @@
+# BAT54A-7-F: from the DS11005 ordering table (3,000, Tape & Reel). No
+# lifecycle statement. Package: the SOT23 (Standard) outline of DS11005,
+# which standards/SOT23-2.90x1.30-P1.83-DIODES was read from.
+schema_version: "0.2"
+kind: part
+id: diodes/BAT54A-7-F
+manufacturer: diodes
+mpn: BAT54A-7-F
+device: diodes/BAT54A
+package: standards/SOT23-2.90x1.30-P1.83-DIODES
+sources: [diodes/DS11005]
+source: diodes/DS11005
+
+existence:
+  status: verified
+  src: p1 "Ordering Information table, BAT54A-7-F | SOT23 (Standard) | 3,000 | Tape & Reel"
+
+lifecycle: { status: unknown }

@@ -1,0 +1,38 @@
+# MPN from the Package Option Addendum of SBOS378A (page 27),
+# row "INA185A4IDRLR", SOT-5X3 (DRL) | 6, Status Active. Package outline DRL0006A (4223266/F)
+# on page 31, the drawing revision the reused package was read from.
+schema_version: "0.2"
+kind: part
+id: ti/INA185A4IDRLR
+manufacturer: ti
+mpn: INA185A4IDRLR
+device: ti/INA185-DRL
+
+package:
+  value: manufacturers/ti/DRL0006A
+  src:
+    - p27 "Package Option Addendum, row INA185A4IDRLR, SOT-5X3 (DRL) | 6"
+    - p31 "PACKAGE OUTLINE DRL0006A (4223266/F)"
+
+sources: [ti/SBOS378A]
+source: ti/SBOS378A
+
+existence:
+  status: verified
+  src: p27 "Package Option Addendum, Packaging Information table, row INA185A4IDRLR"
+
+lifecycle:
+  status: active
+  src: p27 "Package Option Addendum, row INA185A4IDRLR, Status Active"
+
+# Parameters (AI candidates, needs review).
+parameters:
+  input_offset_voltage:
+    - typ: 25 µV
+      max: 100 µV
+      at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+      src: p5 "5.5 EC, VOS RTI, VIN+ = 12 V, A4 device (printed ±25/±100)"
+    - typ: 5 µV
+      max: 55 µV
+      at: { VS: 5 V, VIN: 0 V, TA: 25 °C }
+      src: p5 "5.5 EC, VOS RTI, VIN+ = 0 V, A2, A3, A4 devices (printed ±5/±55)"

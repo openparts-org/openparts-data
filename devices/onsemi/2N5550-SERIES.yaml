@@ -1,0 +1,19 @@
+# NPN high-voltage transistors 2N5550 / 2N5551, TO-92 (CASE 29 STYLE 1):
+# one device for both types -- VCEO differs per type and is carried by
+# the Part. Pins from the CASE 29-11 STYLE 1 list (PIN 1. EMITTER
+# 2. BASE 3. COLLECTOR).
+schema_version: "0.2"
+kind: device
+id: onsemi/2N5550-SERIES
+manufacturer: onsemi
+category: transistor
+family: 2N555
+source: onsemi/2N5550-D
+
+parameters: { collector_current: { max: 600 mA, src: 'p2 "MAXIMUM RATINGS, IC Continuous"' } }
+
+pins:
+  src: [p2 "CASE 29 STYLE 1", 'p6 "CASE 29-11 STYLE 1: PIN 1. EMITTER 2. BASE 3. COLLECTOR"']
+  "1": { name: Emitter, type: passive }
+  "2": { name: Base, type: passive }
+  "3": { name: Collector, type: passive }

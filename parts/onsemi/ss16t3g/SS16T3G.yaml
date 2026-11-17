@@ -1,0 +1,19 @@
+# SS16T3G: listed in the page-1 ORDERING INFORMATION table (SMA,
+# 5,000 / Tape & Reel). No lifecycle statement. Package: CASE 403D ISSUE J
+# (DATE 22 OCT 2021), the drawing standards/DO214AC-ONSEMI-403D was read
+# from (MBRA140T3/D page 5). Reused.
+schema_version: "0.2"
+kind: part
+id: onsemi/SS16T3G
+manufacturer: onsemi
+mpn: SS16T3G
+device: onsemi/SS16
+package: standards/DO214AC-ONSEMI-403D
+sources: [onsemi/SS16-D, onsemi/MBRA140T3-D]
+source: onsemi/SS16-D
+
+existence:
+  status: verified
+  src: p1 "ORDERING INFORMATION, SS16T3G | SMA (Pb-Free) | 5,000 / Tape & Reel"
+
+lifecycle: { status: unknown }

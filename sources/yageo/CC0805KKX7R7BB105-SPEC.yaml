@@ -1,0 +1,15 @@
+# YAGEO per-part spec sheet for CC0805KKX7R7BB105, served by the manufacturer's own
+# spec-sheet download endpoint (plain curl, PDF; a non-existent MPN returns
+# HTTP 404). The sheet carries no revision; it prints only "Generated
+# 11/17/2026", recorded as date/revision. Read via pdftotext -layout.
+schema_version: "0.2"
+kind: source
+id: yageo/CC0805KKX7R7BB105-SPEC
+sha256: a6f829cb7d4a3781770e1b8de098a5fbf55331c1f7bbffb17a27eba9742258b6
+retrieved: 2026-11-17
+url: https://yageogroup.com/component-documentation/download/specsheet/CC0805KKX7R7BB105
+publisher: yageo
+document_id: CC0805KKX7R7BB105
+document_type: datasheet
+revision: generated 2026-11-17
+date: 2026-11-17

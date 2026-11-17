@@ -1,0 +1,33 @@
+# MPN "W25Q256JVEJQ" printed in section 9.9 "Valid Part Numbers and Top Side
+# Marking" of winbond/W25Q256JV@revI (W25Q256JV-IQ/JQ valid part numbers, PDF page 92, printed 91) under
+# "WSON-8 8x6mm" -> existence verified. Package code: section 9.8 legend
+# (PDF page 91); outline section 9.4 (PDF page 87); its table equals the W25Q128JV Rev F section 10.4 table the package was read from, row for row.
+# lifecycle: not stated in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: winbond/W25Q256JVEJQ
+manufacturer: winbond
+mpn: W25Q256JVEJQ
+device: winbond/W25Q256JV-E
+
+package:
+  value: manufacturers/winbond/WSON8-8x6-P1.27-E
+  src:
+    - 'p91 "Section 9.8 Ordering Information legend: E = 8-pad WSON 8x6mm"'
+    - p87 "Section 9.4 8-Pad WSON 8x6-mm (Package Code E)"
+
+sources: [winbond/W25Q256JV@revI]
+source: winbond/W25Q256JV@revI
+
+existence:
+  status: verified
+  src: p92 "Section 9.9 Valid Part Numbers, W25Q256JV-IQ/JQ valid part numbers, W25Q256JVEJQ"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p79 "9.2 Operating Ranges, TA Industrial Plus -40 to 105 C"

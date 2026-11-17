@@ -1,0 +1,38 @@
+# FDN335N: listed in the ordering table (page 5), 3000 / Tape & Reel.
+# No lifecycle statement. Package: page 6 prints CASE 527AG ISSUE A
+# (98AON34319E, DATE 09 DEC 2019), the drawing
+# manufacturers/onsemi/SOT23-2.92x1.40-P1.90-527AG was read from (FDN340P/D
+# page 5). Reused.
+schema_version: "0.2"
+kind: part
+id: onsemi/FDN335N
+manufacturer: onsemi
+mpn: FDN335N
+device: onsemi/FDN335N
+package: manufacturers/onsemi/SOT23-2.92x1.40-P1.90-527AG
+sources: [onsemi/FDN335N-D, onsemi/FDN340P-D]
+source: onsemi/FDN335N-D
+
+existence:
+  status: verified
+  src: p5 "PACKAGE MARKING AND ORDERING INFORMATION, FDN335N | 335M | SOT-23/SUPERSOT-23 | 3000 / Tape & Reel"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 20 V, src: 'p1 "Abs. Max. Ratings, VDSS"' }
+  drain_current:        { max: 1.7 A, src: 'p1 "Abs. Max. Ratings, ID Continuous (Note 1a)"' }
+  rds_on:
+    - { typ: 0.055 Ω, max: 0.07 Ω, at: { VGS: 4.5 V, ID: 1.7 A }, src: 'p2 "Elec. Char., RDS(on)"' }
+    - typ: 0.079 Ω
+      max: 0.12 Ω
+      at: { VGS: 4.5 V, ID: 1.7 A, TJ: 125 °C }
+      src: p2 "Elec. Char., RDS(on)"
+    - { typ: 0.078 Ω, max: 0.1 Ω, at: { VGS: 2.5 V, ID: 1.5 A }, src: 'p2 "Elec. Char., RDS(on)"' }
+  gate_threshold_voltage:
+    min: 0.4 V
+    typ: 0.9 V
+    max: 1.5 V
+    at: { ID: 250 µA }
+    src: p2 "Elec. Char., VGS(th), VDS = VGS"

@@ -1,0 +1,35 @@
+# 24LC16B-I/SN: 24LC16B EEPROM, industrial temperature, package SN.
+# existence "probable": the MPN is assembled from the Product Identification System legend
+# (DS20001703R page 45: Device "24LC16B", Tape and Reel "Blank = Standard packaging",
+# Temperature I, Package "SN = Plastic Small Outline - Narrow, 3.90 mm Body, 8-Lead (SOIC)"); the legend is not an
+# orderable list. Package drawing C04-00057-SN Rev L, dimension table on page 27
+# (same table values as the standard package's C04-057-SN Rev D (all rows compared)). lifecycle: no production-status statement -> unknown. The id
+# replaces the "/" of the MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/24LC16B-I-SN
+manufacturer: microchip
+mpn: 24LC16B-I/SN
+device: microchip/24LC16B
+
+package:
+  value: standards/SOIC8-3.90x4.90-P1.27
+  src:
+    - p45 "Product Identification System, Package SN"
+    - p27 "drawing C04-00057-SN Rev L dimension table"
+
+sources: [microchip/DS20001703@revR]
+source: microchip/DS20001703@revR
+
+existence:
+  status: probable
+  src: 'p45 "Product Identification System legend: Device 24LC16B, blank, Temperature I, Package SN"'
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p3 "DC Characteristics header: Industrial (I) TA = -40 to +85 C"'

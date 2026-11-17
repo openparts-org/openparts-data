@@ -1,0 +1,18 @@
+# Panasonic FK series 470 µF (code 471), 6.3 V (code 0J), ±20 % SMD
+# aluminium electrolytic capacitor (codes per panasonic/ABA0000C1181 p3
+# "Explanation of part numbers"). The source names the terminals only by
+# polarity, (+) and (-) on the p1 "Dimensions" drawing; numbered here in
+# the smd_electrolytic convention (pin 1 = +, the pad at -X), as the
+# dataset's radial electrolytics.
+schema_version: "0.2"
+kind: device
+id: panasonic/EEEFK0J471
+manufacturer: panasonic
+category: capacitor
+family: FK
+source: panasonic/ABA0000C1181
+
+pins:
+  src: p1 "Dimensions drawing, terminal polarity symbols (+) / (-)"
+  "1": { name: +, type: passive }
+  "2": { name: -, type: passive }

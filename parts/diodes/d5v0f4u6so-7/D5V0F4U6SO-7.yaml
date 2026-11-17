@@ -1,0 +1,19 @@
+# D5V0F4U6SO-7: page-1 Ordering Information table (marking TV7, 7-inch
+# reel, 3,000). No lifecycle statement (page header "NEW PRODUCT").
+# Package: the page-3 SOT26 table is row for row the DS36292 table that
+# standards/SOT26-3.00x1.60-P0.95-DIODES was read from.
+schema_version: "0.2"
+kind: part
+id: diodes/D5V0F4U6SO-7
+manufacturer: diodes
+mpn: D5V0F4U6SO-7
+device: diodes/D5V0F4U6SO
+package: standards/SOT26-3.00x1.60-P0.95-DIODES
+sources: [diodes/DS35472, diodes/DS36292]
+source: diodes/DS35472
+
+existence:
+  status: verified
+  src: p1 "Ordering Information, D5V0F4U6SO-7, Standard, TV7, 3,000/Tape & Reel"
+
+lifecycle: { status: unknown }

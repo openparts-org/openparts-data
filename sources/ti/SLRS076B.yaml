@@ -1,0 +1,16 @@
+# Official TI datasheet "ULN2803C Darlington Transistor Array". Downloaded 2026-11-17 with curl
+# from the TI symlink URL below; revision read from the page header
+# "SLRS076B – AUGUST 2022 – REVISED SEPTEMBER 2024". 21 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page indices.
+# sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: ti/SLRS076B
+sha256: 12d7302794e2a590d744efe718bb47781720e8ce1999c038772f9af961181f00
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/uln2803c.pdf
+publisher: ti
+document_id: SLRS076B
+document_type: datasheet
+revision: B
+date: 2024-09

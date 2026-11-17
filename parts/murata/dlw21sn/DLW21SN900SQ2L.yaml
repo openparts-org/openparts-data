@@ -1,0 +1,26 @@
+# Murata DLW21SN900SQ2L chip common-mode choke (90 Ω typ. at 100 MHz), L = taping.
+# Printed in the item 3 "Rating" table of murata/JEFL243C-0003X-01 -> existence
+# verified. Lifecycle: no status printed -> unknown.
+schema_version: "0.2"
+kind: part
+id: murata/DLW21SN900SQ2L
+manufacturer: murata
+mpn: DLW21SN900SQ2L
+device: murata/DLW21SN-SQ2
+package: manufacturers/murata/LGA4-2.0x1.2-DLW21SN
+sources: [murata/JEFL243C-0003X-01]
+source: murata/JEFL243C-0003X-01
+
+existence: { status: verified, src: 'p1 "3. Rating, Murata Part Number DLW21SN900SQ2L"' }
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance:
+    tol: ±25 %
+    src: p1 "3. Rating, DLW21SN900SQ2L row, Common Mode Impedance 90 ± 25 %"
+  rated_current: { max: 330 mA, src: 'p1 "3. Rating, DLW21SN900SQ2L row, Rated Current (mA)"' }
+  dcr:           { max: 0.35 Ω, src: 'p1 "3. Rating, DLW21SN900SQ2L row, DC Resistance (Ω max.)"' }
+  impedance:
+    typ: 90 Ω
+    at: { f: 100 MHz }
+    src: p1 "3. Rating, DLW21SN900SQ2L row, Common Mode Impedance (at 100MHz) 90 ± 25 %"

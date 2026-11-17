@@ -1,0 +1,19 @@
+# DT1042-04SO-7: page-1 Ordering Information table (marking BC1, 7-inch
+# reel, 3,000). The datasheet is marked ADVANCE INFORMATION; no lifecycle
+# statement. Package: page-4 SOT26 table, which
+# standards/SOT26-3.00x1.60-P0.95-DIODES was read from.
+schema_version: "0.2"
+kind: part
+id: diodes/DT1042-04SO-7
+manufacturer: diodes
+mpn: DT1042-04SO-7
+device: diodes/DT1042-04SO
+package: standards/SOT26-3.00x1.60-P0.95-DIODES
+sources: [diodes/DS36292]
+source: diodes/DS36292
+
+existence:
+  status: verified
+  src: p1 "Ordering Information, DT1042-04SO-7, Standard, BC1, 3,000/Tape & Reel"
+
+lifecycle: { status: unknown }

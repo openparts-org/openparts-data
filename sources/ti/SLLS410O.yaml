@@ -1,0 +1,16 @@
+# Official TI datasheet "MAX3232 3-V to 5.5-V Multichannel RS-232 Line Driver and Receiver With ±15-kV ESD Protection". Downloaded 2026-11-17 with curl
+# from the TI symlink URL below; revision read from the page header
+# "SLLS410O – JANUARY 2000 – REVISED JUNE 2021". 30 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page indices.
+# sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: ti/SLLS410O
+sha256: f8497fd138dd31accec7a08d77d79218dd982325eb2d985fd04b3f6573818849
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/max3232.pdf
+publisher: ti
+document_id: SLLS410O
+document_type: datasheet
+revision: O
+date: 2021-06

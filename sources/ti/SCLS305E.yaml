@@ -1,0 +1,17 @@
+# Official TI datasheet "SNx4HC541 Octal Buffers and Line Drivers With 3-State Outputs". Downloaded 2026-11-17 from
+# the TI symlink URL below with curl (HTTP 200, PDF); revision read from
+# the page header "SCLS305E - JANUARY 1996 - REVISED MAY 2022". 34 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM is dated 18-Sep-2026 (newer than the
+# datasheet revision). sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS305E
+sha256: aa3d917b3426b9c1cc38108a7609b939560def54b5efc578ed1fadb6098b7229
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/sn74hc541.pdf
+publisher: ti
+document_id: SCLS305E
+document_type: datasheet
+revision: E
+date: 2022-05

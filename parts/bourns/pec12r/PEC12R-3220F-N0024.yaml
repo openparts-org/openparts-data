@@ -1,0 +1,23 @@
+# Bourns PEC12R-3220F-N0024: PEC12R style 3 (Horizontal Mount - Axial PC Pin/with Bushing), detent option 2
+# (24 Detents), shaft length 20 mm, Insulated Flatted Shaft, No Switch, 24 pulses per
+# rotation. The MPN is assembled from the How To Order legend (page
+# 1), not printed in an orderable list -> existence probable.
+# Lifecycle: no status printed -> unknown.
+schema_version: "0.2"
+kind: part
+id: bourns/PEC12R-3220F-N0024
+manufacturer: bourns
+mpn: PEC12R-3220F-N0024
+device: bourns/PEC12R
+package: manufacturers/bourns/PEC12R-3-L20
+sources: [bourns/PEC12R]
+source: bourns/PEC12R
+
+existence: { status: probable, src: 'p1 "How To Order, PEC12R-3220F-N0024 per legend"' }
+lifecycle: { status: unknown }
+
+parameters:
+  pulses_per_revolution:
+    value: "24"
+    src: p1 "How To Order, Resolution 0024 = 24 Pulses per 360 ° Rotation"
+  detents: { value: "24", src: 'p1 "How To Order, Detent Option 2 = 24 Detents"' }

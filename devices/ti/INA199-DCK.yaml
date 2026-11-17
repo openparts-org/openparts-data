@@ -1,0 +1,52 @@
+# INA199 voltage-output current-shunt monitor, DCK (SC70-6) pin map
+# from Table 5-1 "Pin Functions" (SBOS469H page 3), SC70 column, checked
+# against Figure 5-1. The RSW (UQFN) map differs. The ESD rating
+# depends on the version (A: 2 kV, B/C: 3.5 kV) and is on the Parts;
+# only the A-version parts are added. Gain (50/100/200 V/V) has no
+# parameter key. Supply pin named V+ as printed.
+schema_version: "0.2"
+kind: device
+id: ti/INA199-DCK
+manufacturer: ti
+category: current_sense_amplifier
+family: INA199
+source: ti/SBOS469H
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 26 V
+    at: { TA: -40..125 °C }
+    src: p6 "6.5 Electrical Characteristics, VS operating voltage range"
+  supply_current:
+    typ: 65 µA
+    max: 100 µA
+    at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+    src: p6 "6.5 Electrical Characteristics, IQ, VSENSE = 0 mV"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p5 "6.3 Recommended Operating Conditions, TA"
+  channel_count: { value: "1", src: 'p3 "Table 5-1 Pin Functions, single IN+/IN-/OUT"' }
+  slew_rate:     { typ: 0.4 V/µs, src: 'p6 "6.5 Electrical Characteristics, SR"' }
+  input_offset_voltage:
+    typ: 5 µV
+    max: 150 µV
+    at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+    src: p6 "6.5 Electrical Characteristics, VOS RTI (printed ±5 / ±150 µV)"
+  input_bias_current:
+    typ: 28 µA
+    at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+    src: p6 "6.5 Electrical Characteristics, IB, VSENSE = 0 mV"
+
+pins:
+  src:
+    - p3 "Table 5-1 Pin Functions, SC70 column"
+    - p3 "Figure 5-1 DCK Package 6-Pin SC70 Top View"
+  "1": { name: REF, type: analog }
+  "2": { name: GND, type: ground }
+  "3": { name: V+, type: power }
+  "4": { name: IN+, type: analog }
+  "5": { name: IN-, type: analog }
+  "6": { name: OUT, type: analog }

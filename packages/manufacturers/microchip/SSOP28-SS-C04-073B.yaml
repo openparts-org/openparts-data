@@ -1,0 +1,55 @@
+# 28-lead SSOP, 5.30 mm body, 0.65 mm pitch: Microchip drawing C04-073B
+# ("28-Lead Plastic Shrink Small Outline (SS) - 5.30 mm Body [SSOP]"),
+# DS20005282C (MCP25625) page 83, an image page read from a render.
+# Every row of the table equals the Rev C table of
+# manufacturers/microchip/SSOP28-SS-C04-073C; kept as its own package
+# because the drawing revision differs. Copied as printed (MIN/NOM/MAX;
+# min-only and max-only rows kept as such). body_height = A2,
+# overall_height = A (MAX 2.00 only). L1 (1.25 REF) and the foot angle
+# are not modelled.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/SSOP28-SS-C04-073B
+family: ssop
+lead_count: { value: 28, src: 'p83 "C04-073B table, "Number of Pins N 28""' }
+source: microchip/DS20005282@revC
+
+pitch: { typ: 0.65 mm, src: 'p83 "C04-073B table, "Pitch e 0.65 BSC""' }
+geometry: { type: parametric, generator: ssop }
+
+dimensions:
+  body_width:
+    min: 5 mm
+    typ: 5.3 mm
+    max: 5.6 mm
+    src: p83 "C04-073B table, "Molded Package Width E1 5.00 / 5.30 / 5.60""
+  body_length:
+    min: 9.9 mm
+    typ: 10.2 mm
+    max: 10.5 mm
+    src: p83 "C04-073B table, "Overall Length D 9.90 / 10.20 / 10.50""
+  body_height:
+    min: 1.65 mm
+    typ: 1.75 mm
+    max: 1.85 mm
+    src: p83 "C04-073B table, "Molded Package Thickness A2 1.65 / 1.75 / 1.85""
+  lead_thickness:
+    min: 0.09 mm
+    max: 0.25 mm
+    src: p83 "C04-073B table, "Lead Thickness c 0.09 / - / 0.25""
+  overall_width:
+    min: 7.4 mm
+    typ: 7.8 mm
+    max: 8.2 mm
+    src: p83 "C04-073B table, "Overall Width E 7.40 / 7.80 / 8.20""
+  overall_height: { max: 2 mm, src: 'p83 "C04-073B table, "Overall Height A" (MAX 2.00 only)"' }
+  standoff:       { min: 0.05 mm, src: 'p83 "C04-073B table, "Standoff A1" (MIN 0.05 only)"' }
+  lead_width:
+    min: 0.22 mm
+    max: 0.38 mm
+    src: p83 "C04-073B table, "Lead Width b 0.22 / - / 0.38""
+  lead_length:
+    min: 0.55 mm
+    typ: 0.75 mm
+    max: 0.95 mm
+    src: p83 "C04-073B table, "Foot Length L 0.55 / 0.75 / 0.95""

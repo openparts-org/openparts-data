@@ -1,0 +1,15 @@
+# YAGEO per-part spec sheet for RC1206FR-07100KL, served by the manufacturer's own
+# spec-sheet download endpoint (plain curl, PDF; a non-existent MPN returns
+# HTTP 404). The sheet carries no revision; it prints only "Generated
+# 11/17/2026", recorded as date/revision. Read via pdftotext -layout.
+schema_version: "0.2"
+kind: source
+id: yageo/RC1206FR-07100KL-SPEC
+sha256: a6898fc8ea7214c107813a9f4504019dd664bcef72e981eb5d6d5f21284a9c35
+retrieved: 2026-11-17
+url: https://yageogroup.com/component-documentation/download/specsheet/RC1206FR-07100KL
+publisher: yageo
+document_id: RC1206FR-07100KL
+document_type: datasheet
+revision: generated 2026-11-17
+date: 2026-11-17

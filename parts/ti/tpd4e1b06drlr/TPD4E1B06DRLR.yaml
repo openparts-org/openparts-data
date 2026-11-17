@@ -1,0 +1,26 @@
+# Orderable MPN and status from the PACKAGE OPTION ADDENDUM (page 14):
+# row TPD4E1B06DRLR, Active, SOT-5X3 (DRL) 6 pins. Package DRL0006A (4223266/F) on
+# page 18: the same drawing number and revision as manufacturers/ti/DRL0006A. Reused.
+schema_version: "0.2"
+kind: part
+id: ti/TPD4E1B06DRLR
+manufacturer: ti
+mpn: TPD4E1B06DRLR
+device: ti/TPD4E1B06-DRL
+
+package:
+  value: manufacturers/ti/DRL0006A
+  src:
+    - p14 "PACKAGE OPTION ADDENDUM, row TPD4E1B06DRLR, Package "SOT-5X3 (DRL) | 6""
+    - p18 "PACKAGE OUTLINE DRL0006A (4223266/F)"
+
+sources: [ti/SLVSBQ8E]
+source: ti/SLVSBQ8E
+
+existence:
+  status: verified
+  src: p14 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TPD4E1B06DRLR"
+
+lifecycle:
+  status: active
+  src: p14 "PACKAGE OPTION ADDENDUM, row TPD4E1B06DRLR, Status column "Active""

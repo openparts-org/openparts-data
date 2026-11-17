@@ -1,0 +1,50 @@
+# INA240 bidirectional current-sense amplifier with enhanced PWM
+# rejection, D (SOIC-8) pin map from Table 6-1 "Pin Functions"
+# (SBOS662C page 3), D (SOIC) column, checked against Figure 6-2. The
+# PW (TSSOP) map differs and is not covered. Gain options A1-A4
+# (20/50/100/200 V/V) and bandwidth have no parameter key.
+schema_version: "0.2"
+kind: device
+id: ti/INA240-D
+manufacturer: ti
+category: current_sense_amplifier
+family: INA240
+source: ti/SBOS662C
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 2.7 V, max: 5.5 V, src: 'p4 "7.3 Recommended Operating Conditions, VS"' }
+  supply_current:
+    typ: 1.8 mA
+    max: 2.4 mA
+    at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+    src: p5 "7.5 Electrical Characteristics, IQ, VSENSE = 0 mV"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "7.3 Recommended Operating Conditions, TA"
+  esd_hbm:       { typ: 2 kV, src: 'p4 "7.2 ESD Ratings, HBM ±2000 V"' }
+  channel_count: { value: "1", src: 'p3 "Table 6-1 Pin Functions, single IN+/IN-/OUT"' }
+  slew_rate:     { typ: 2 V/µs, src: 'p5 "7.5 Electrical Characteristics, SR"' }
+  input_offset_voltage:
+    typ: 5 µV
+    max: 25 µV
+    at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+    src: p5 "7.5 Electrical Characteristics, VOS input-referred (printed ±5 / ±25 µV)"
+  input_bias_current:
+    typ: 90 µA
+    at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+    src: p5 "7.5 Electrical Characteristics, IB, IB+, IB-, VSENSE = 0 mV"
+
+pins:
+  src:
+    - p3 "Table 6-1 Pin Functions, D (SOIC) column"
+    - p3 "Figure 6-2 INA240 D Package 8-Pin SOIC Top View"
+  "1": { name: IN-, type: analog }
+  "2": { name: GND, type: ground }
+  "3": { name: REF2, type: analog }
+  "4": { name: NC, type: nc }
+  "5": { name: OUT, type: analog }
+  "6": { name: VS, type: power }
+  "7": { name: REF1, type: analog }
+  "8": { name: IN+, type: analog }

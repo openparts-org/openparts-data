@@ -1,0 +1,42 @@
+# W25Q256JV 256M-bit SPI flash, 16-pin SOIC 300-mil pin numbering
+# (package code F; adds a dedicated /RESET pin and N/C pins, so a
+# separate device from the 8-pad numbering, as winbond/W25Q128JV-F).
+# Transcribed from section 3.4 "Pin Description SOIC 300-mil" (PDF page
+# 8, printed 7), cross-checked against Figure 1b on the same page.
+schema_version: "0.2"
+kind: device
+id: winbond/W25Q256JV-F
+manufacturer: winbond
+category: flash
+family: W25Q256JV
+source: winbond/W25Q256JV@revI
+
+# Parameters (AI candidates, needs review).
+parameters:
+  capacity: { typ: 256 Mbit, src: 'p6 "Section 2 Features, W25Q256JV: 256M-bit / 32M-byte"' }
+  supply_voltage:
+    min: 2.7 V
+    max: 3.6 V
+    src: p6 "Section 2 Features, Single 2.7 to 3.6V supply"
+  esd_hbm:
+    typ: 2 kV
+    src: p79 "9.1 Absolute Maximum Ratings, VESD Human Body Model -2000 to +2000 V"
+
+pins:
+  src:  p8 "Section 3.4 "Pin Description SOIC 300-mil" table and Figure 1b"
+  "1":  { name: /HOLD or /RESET, type: io, alternate_functions: [IO3] }
+  "2":  { name: VCC, type: power }
+  "3":  { name: /RESET, type: reset }
+  "4":  { name: N/C, type: nc }
+  "5":  { name: N/C, type: nc }
+  "6":  { name: N/C, type: nc }
+  "7":  { name: /CS, type: input }
+  "8":  { name: DO, type: io, alternate_functions: [IO1] }
+  "9":  { name: /WP, type: io, alternate_functions: [IO2] }
+  "10": { name: GND, type: ground }
+  "11": { name: N/C, type: nc }
+  "12": { name: N/C, type: nc }
+  "13": { name: N/C, type: nc }
+  "14": { name: N/C, type: nc }
+  "15": { name: DI, type: io, alternate_functions: [IO0] }
+  "16": { name: CLK, type: input }

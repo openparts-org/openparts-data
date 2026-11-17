@@ -1,0 +1,54 @@
+# FUSB302B programmable USB Type-C controller with USB PD 2.0 physical
+# layer, 14-lead MLP (WQFN14 2.5x2.5) pinout from FUSB302B/D Rev. 5
+# "Figure 5. FUSB302BMPX Pin Assignment" (page 5, TOP THROUGH VIEW) and
+# "Table 3. PIN DESCRIPTION". The centre pad is "Connect to GND for
+# Thermal" (EP). The 9-ball WLCSP (FUSB302BUCX) is another pinout and not
+# included. Operating range per Part (Table 1: BVMPX -40-105 °C).
+# CC1 and CC2 are each assigned to two terminals (10/11, 1/14) in
+# Figure 5; recorded as connected_to (one terminal each).
+schema_version: "0.2"
+kind: device
+id: onsemi/FUSB302B
+manufacturer: onsemi
+category: usb_pd_controller
+family: FUSB302B
+source: onsemi/FUSB302B-D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: 'p5 "Table 3. PIN DESCRIPTION, SCL / SDA I2C"' }
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p13 "Table 8. RECOMMENDED OPERATING CONDITIONS, VVDD, Note 3 functional only, specs from 3.0 V"
+  esd_hbm: { typ: 4 kV, src: 'p13 "Table 7. ABSOLUTE MAXIMUM RATINGS, ESD Human Body Model 4 kV"' }
+  bus_fault_voltage:
+    min: -0.5 V
+    max: 6 V
+    src: p13 "Table 7. ABSOLUTE MAXIMUM RATINGS, VCC_HDDRP CC pins"
+  usb_power_role:
+    value: dual_role
+    src: p1 "Features, Dual-role Functionality with Autonomous DRP Toggle"
+  usb_pd_revision:
+    value: "2.0"
+    src: p1 "Features, USB Power Delivery (PD) 2.0, Version 1.2 Support"
+
+pins:
+  src:
+    - p5 "Figure 5. FUSB302BMPX Pin Assignment, TOP THROUGH VIEW"
+    - p5 "Table 3. PIN DESCRIPTION"
+  "1":  { name: CC2, type: io }
+  "2":  { name: VBUS, type: input }
+  "3":  { name: VDD, type: power }
+  "4":  { name: VDD, type: power }
+  "5":  { name: INT_N, type: output }
+  "6":  { name: SCL, type: input }
+  "7":  { name: SDA, type: io }
+  "8":  { name: GND, type: ground }
+  "9":  { name: GND, type: ground }
+  "10": { name: CC1, type: io }
+  "11": { name: CC1, type: io, connected_to: "10" }
+  "12": { name: VCONN, type: power }
+  "13": { name: VCONN, type: power }
+  "14": { name: CC2, type: io, connected_to: "1" }
+  EP:   { name: GND, type: ground }

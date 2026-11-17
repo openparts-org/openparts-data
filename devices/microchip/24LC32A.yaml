@@ -1,0 +1,35 @@
+# 32-Kbit I2C serial EEPROM (2.5 V 24LC32A of the 24AA32A/24LC32A
+# family). Pinout from DS20001713P Table 2-1 "Pin Function Table" (page
+# 5), PDIP/SOIC columns; the MSOP, SOIJ, TSSOP, DFN and TDFN columns give
+# the same numbers, so this device covers them; the DFN/TDFN exposed pad
+# "can be connected to VSS or left floating" (note 1) -> no EP pin. The
+# SOT-23 and rotated-TSSOP (24LC32AX) numberings are not covered.
+# Types as in microchip/24LC02B: A0-A2, WP, SCL -> input; SDA -> io.
+schema_version: "0.2"
+kind: device
+id: microchip/24LC32A
+manufacturer: microchip
+category: eeprom
+family: 24AA32A/24LC32A
+source: microchip/DS20001713@revP
+
+# Parameters (AI candidates, needs review).
+parameters:
+  capacity:
+    typ: 32 Kbit
+    src: 'p1 "Description: 24XX32A is a 32-Kbit EEPROM, single block of 4K x 8-bit"'
+  supply_voltage:
+    min: 2.5 V
+    max: 5.5 V
+    src: p1 "Device Selection Table, 24LC32A VCC Range 2.5V-5.5V"
+
+pins:
+  src: p5 "Table 2-1 "Pin Function Table", columns PDIP and SOIC (MSOP, SOIJ, TSSOP, DFN, TDFN give the same numbers)"
+  "1": { name: A0, type: input }
+  "2": { name: A1, type: input }
+  "3": { name: A2, type: input }
+  "4": { name: VSS, type: ground }
+  "5": { name: SDA, type: io }
+  "6": { name: SCL, type: input }
+  "7": { name: WP, type: input }
+  "8": { name: VCC, type: power }

@@ -1,0 +1,34 @@
+# MMSZ5257BT1G: 33 V zener (VZ 31.35 / 33 / 34.65 V @ 3.8 mA), marking M2,
+# SOD-123. As MMSZ5231BT1G: the ORDERING INFORMATION table (page 1)
+# gives only the pattern "MMSZ52xxBT1G | SOD-123 (Pb-Free) | 3,000 / Tape
+# & Reel"; the full string is printed in the "Device*" column of the
+# page-3 Electrical Characteristics table, which is not an ordering
+# table -- so existence is "probable" (flagged for review). Package:
+# CASE 425 ISSUE H (page 7), standards/SOD123-ONSEMI-425, as
+# MMSZ5231BT1G. No lifecycle statement.
+schema_version: "0.2"
+kind: part
+id: onsemi/MMSZ5257BT1G
+manufacturer: onsemi
+mpn: MMSZ5257BT1G
+device: onsemi/MMSZ5221B-SERIES
+package: standards/SOD123-ONSEMI-425
+sources: [onsemi/MMSZ5221BT1-D]
+source: onsemi/MMSZ5221BT1-D
+
+existence:
+  status: probable
+  src: 'p3 "Electrical Characteristics table, Device* column: "MMSZ5257BT1G", marking "M2""'
+
+lifecycle: { status: unknown }
+
+parameters:
+  zener_voltage:
+    min: 31.35 V
+    typ: 33 V
+    max: 34.65 V
+    at: { IZT: 3.8 mA }
+    src: p3 "5% TOLERANCE FG ELECTRICAL CHARACTERISTICS, MMSZ5257BT1G row, VZ (Notes 3, 4)"
+  zener_test_current:
+    typ: 3.8 mA
+    src: p3 "5% TOLERANCE FG ELECTRICAL CHARACTERISTICS, MMSZ5257BT1G row, IZT"

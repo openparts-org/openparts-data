@@ -1,0 +1,16 @@
+# onsemi FUSB302B programmable USB Type-C controller with PD datasheet.
+# Revision from page 1 "August, 2021 - Rev. 5", Publication Order Number FUSB302B/D.
+# Includes the CASE 510BR WQFN14 outline (page 31, rendered and read).
+# Downloaded 2026-11-17 with a plain curl/wget from the URL below; 33 PDF pages,
+# text read with pdftotext -layout. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: onsemi/FUSB302B-D
+sha256: 057d35081979dfcf6d6019cd5438638d02173b78cf8460b4b6fb30222d69687a
+retrieved: 2026-11-17
+url: https://www.onsemi.com/download/data-sheet/pdf/fusb302b-d.pdf
+publisher: onsemi
+document_id: FUSB302B/D
+document_type: datasheet
+revision: "5"
+date: 2021-08

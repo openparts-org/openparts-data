@@ -1,0 +1,47 @@
+# 14-lead narrow (3.90 mm) SOIC, Microchip drawing C04-065C
+# ("14-Lead Plastic Small Outline (SL) - Narrow, 3.90 mm Body [SOIC]"),
+# dimension table on DS20005688B (MCP2517FD) page 85, an image page
+# read from a render. Every row of the table equals the C04-065-SL Rev D
+# table of manufacturers/microchip/SOIC14-SL-C04-065D; kept as its own
+# package because the drawing revision differs. Copied as printed: BSC
+# values as nominal, min/max-only rows as min/max only. body_height = A2
+# (MIN 1.25 only), overall_height = A (MAX 1.75 only). Chamfer h, L1
+# (1.04 REF) and the angles are not modelled.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/SOIC14-SL-C04-065C
+family: soic
+lead_count: { value: 14, src: 'p85 "C04-065C sheet 2 table, "Number of Pins N 14""' }
+source: microchip/DS20005688@revB
+
+pitch: { typ: 1.27 mm, src: 'p85 "C04-065C sheet 2 table, "Pitch e 1.27 BSC""' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    typ: 3.9 mm
+    src: p85 "C04-065C sheet 2 table, "Molded Package Width E1 3.90 BSC""
+  body_length:   { typ: 8.65 mm, src: 'p85 "C04-065C sheet 2 table, "Overall Length D 8.65 BSC""' }
+  body_height:
+    min: 1.25 mm
+    src: p85 "C04-065C sheet 2 table, "Molded Package Thickness A2" (MIN 1.25 only)"
+  lead_thickness:
+    min: 0.1 mm
+    max: 0.25 mm
+    src: p85 "C04-065C sheet 2 table, "Lead Thickness c 0.10 / - / 0.25""
+  overall_width: { typ: 6 mm, src: 'p85 "C04-065C sheet 2 table, "Overall Width E 6.00 BSC""' }
+  overall_height:
+    max: 1.75 mm
+    src: p85 "C04-065C sheet 2 table, "Overall Height A" (MAX 1.75 only)"
+  standoff:
+    min: 0.1 mm
+    max: 0.25 mm
+    src: p85 "C04-065C sheet 2 table, "Standoff A1 0.10 / - / 0.25""
+  lead_width:
+    min: 0.31 mm
+    max: 0.51 mm
+    src: p85 "C04-065C sheet 2 table, "Lead Width b 0.31 / - / 0.51""
+  lead_length:
+    min: 0.4 mm
+    max: 1.27 mm
+    src: p85 "C04-065C sheet 2 table, "Foot Length L 0.40 / - / 1.27""

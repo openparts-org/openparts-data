@@ -1,0 +1,168 @@
+# SparkFun Thing Plus - RP2350 (WRL-25134). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (sparkfun/SparkFun_Thing_Plus_RP2350@2171777),
+# converted to the package frame (board centre, top view; see the package comment). x/y/rotation
+# come from fitting each OpenParts footprint onto the design pads of that element.
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one). Left out:
+#   U11 APS6404L-3SQR-ZR PSRAM (USON-8; OpenParts has the SOP-8 -SN only), U4 LM66200, U8
+#   MAX17048, U10 ESD array, Q1 SOT-416 transistor: no OpenParts part of that package; J6 microSD
+#   socket, L1/FB1, passives and jumpers
+# Package standards/MODULE28-23x58-P2.54-SPARKFUN-THING-PLUS is shared with another board of
+# this form factor: the 28 header holes of this design have the same positions and drill (land
+# here 1.8796 mm).
+# U2: value "RM2" (Raspberry Pi RM2 radio module).
+schema_version: "0.2"
+kind: part
+id: sparkfun/WRL-25134
+manufacturer: sparkfun
+mpn: WRL-25134
+device: sparkfun/THING-PLUS-RP2350
+package: standards/MODULE28-23x58-P2.54-SPARKFUN-THING-PLUS
+sources: [sparkfun/SparkFun_Thing_Plus_RP2350@2171777]
+source: sparkfun/SparkFun_Thing_Plus_RP2350@2171777
+
+existence: { status: verified, src: '"README: SparkFun Thing Plus - RP2350 (WRL-25134)"' }
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: U1
+    part: raspberrypi/RP2350A
+    x: 0
+    y: -2.54
+    src:
+      - '"SparkFun U1 at 11.43, 31.75 rot 180"'
+      - '"U1 value RP2350A, footprint RP2350A; fitted to its 61 pads (mean 0.013 mm)"'
+  - ref: U2
+    part: raspberrypi/RMC20452T
+    x: 0
+    y: -18.105
+    rotation: 180
+    src:
+      - '"SparkFun U2 at 11.43, 50.165 rot 0"'
+      - '"U2 value RM2, footprint RM2; fitted to its 21 pads (mean 0.0 mm)"'
+  - ref: U5
+    part: winbond/W25Q128JVPIQ
+    stand_in_for: value W25QXX128MBIT (W25Q 128M member not stated), WSON-8 6x5
+    x: 0
+    y: 7.62
+    rotation: 180
+    side: bottom
+    src:
+      - '"SparkFun U5 at 11.43, 21.59 rot M0"'
+      - '"U5 value W25QXX128MBIT, footprint WSON-8-6X5-SKINNY_CENTERPAD; stand-in fitted to its 8 pads (mean 0.21 mm)"'
+  - ref: U3
+    part: richtek/RT9080-33GJ5
+    x: -1.905
+    y: 12.7
+    rotation: 180
+    side: bottom
+    src:
+      - '"SparkFun U3 at 13.335, 16.51 rot M90"'
+      - '"U3 value RT9080-33GJ5, footprint SOT23-5; fitted to its 5 pads (mean 0.21 mm)"'
+  - ref: U9
+    part: richtek/RT9080-33GJ5
+    x: -3.175
+    y: 15.24
+    rotation: 180
+    src:
+      - '"SparkFun U9 at 14.605, 13.97 rot 270"'
+      - '"U9 value RT9080-33GJ5, footprint SOT23-5; fitted to its 5 pads (mean 0.21 mm)"'
+  - ref: U6
+    part: microchip/MCP73831T-2ACI-OT
+    stand_in_for: value MCP73831 (charge-voltage option not stated), SOT23-5
+    x: 7.62
+    y: 12.7
+    rotation: 270
+    side: bottom
+    src:
+      - '"SparkFun U6 at 3.81, 16.51 rot M180"'
+      - '"U6 value MCP73831, footprint SOT23-5; stand-in fitted to its 5 pads (mean 0.18 mm)"'
+  - ref: U7
+    part: worldsemi/WS2812B-2020-V7
+    stand_in_for: value WS2812_2020 (version not stated)
+    x: 5.08
+    y: -6.985
+    rotation: 90
+    src:
+      - '"SparkFun U7 at 6.35, 36.195 rot 90"'
+      - '"U7 value WS2812_2020, footprint WS2812-2020; stand-in fitted to its 4 pads (mean 0.0 mm)"'
+  - ref: D2
+    part: kingbright/APT1608SURCK
+    stand_in_for: 0603 LED, red, MPN not stated
+    x: -6.731
+    y: 23.114
+    src:
+      - '"SparkFun D2 at 18.161, 6.096 rot 0"'
+      - '"D2 value Red, footprint LED-0603; stand-in fitted to its 2 pads (mean 0.052 mm)"'
+  - ref: D3
+    part: kingbright/APT1608SYCK
+    stand_in_for: 0603 LED, yellow, MPN not stated
+    x: 3.81
+    y: 16.51
+    src:
+      - '"SparkFun D3 at 7.62, 12.7 rot 0"'
+      - '"D3 value Yellow, footprint LED-0603; stand-in fitted to its 2 pads (mean 0.027 mm)"'
+  - ref: D4
+    part: kingbright/APT1608QBC-D
+    stand_in_for: 0603 LED, blue, MPN not stated
+    x: 5.08
+    y: -10.16
+    rotation: 270
+    src:
+      - '"SparkFun D4 at 6.35, 39.37 rot 270"'
+      - '"D4 value Blue, footprint LED-0603; stand-in fitted to its 2 pads (mean 0.027 mm)"'
+  - ref: J2
+    part: jst/S2B-PH-SM4-TB
+    stand_in_for: JST PH 2-pin side-entry SMD header, MPN not stated
+    x: 6.495
+    y: 11.43
+    rotation: 90
+    src:
+      - '"SparkFun J2 at 3.81, 17.78 rot 90"'
+      - '"J2 value (none), footprint JST-2-SMD; stand-in fitted to its 4 pads (mean 0.179 mm)"'
+  - ref: J3
+    part: jst/SM04B-SRSS-TB
+    stand_in_for: Qwiic 4-pin JST SH right-angle receptacle, MPN not stated
+    x: 8.25
+    y: 20.32
+    rotation: 90
+    src:
+      - '"SparkFun J3 at 5.08, 8.89 rot 270"'
+      - '"J3 value QWIIC_RIGHT_ANGLE, footprint JST04_1MM_RA; stand-in fitted to its 6 pads (mean 0.1 mm)"'
+  - ref: J4
+    part: gct/USB4105-GF-A
+    stand_in_for: USB Type-C receptacle 16P, MPN not stated
+    x: 0
+    y: 25.74
+    rotation: 180
+    src:
+      - '"SparkFun J4 at 11.43, 6.35 rot 0"'
+      - '"J4 value (none), footprint USB-C-16P_4LAYER-PADS; stand-in fitted to its 16 pads (mean 0.013 mm)"'
+  - ref: BOOT
+    part: alps/SKRPABE010
+    stand_in_for: 4.6x2.8 mm SMD tactile switch, MPN not stated
+    x: -5.08
+    y: 19.685
+    rotation: 90
+    src:
+      - '"SparkFun BOOT at 16.51, 9.525 rot 90"'
+      - '"BOOT value MOMENTARY-SWITCH-SPST-SMD-4.6X2.8MM, fp TACTILE_SWITCH_SMD_4.6X2.8MM; stand-in fitted to its 4 pads (mean 0"'
+  - ref: RESET
+    part: alps/SKRPABE010
+    stand_in_for: 4.6x2.8 mm SMD tactile switch, MPN not stated
+    x: -9.525
+    y: 19.685
+    rotation: 90
+    src:
+      - '"SparkFun RESET at 20.955, 9.525 rot 270"'
+      - '"RESET value MOMENTARY-SWITCH-SPST-SMD-4.6X2.8MM, fp TACTILE_SWITCH_SMD_4.6X2.8MM; stand-in fitted to its 4 pads (mean "'
+  - ref: Y1
+    part: abracon/ABM10-16.000MHZ-E20-T
+    stand_in_for: 12 MHz crystal 2.5x2.0, MPN not stated
+    x: -5.584
+    y: -7.61
+    rotation: 90
+    src:
+      - '"SparkFun Y1 at 17.018, 36.83 rot 0"'
+      - '"Y1 value 12MHz, footprint CRYSTAL-SMD-2X2.5MM; stand-in fitted to its 4 pads (mean 0.079 mm)"'

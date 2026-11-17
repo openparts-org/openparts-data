@@ -1,0 +1,66 @@
+# Diodes Incorporated SOT26 (6-lead SOT-23 class), from the "Package
+# Outline Dimensions" SOT26 table of DT1042-04SO DS36292 Rev. 2-2 page 4
+# (columns Min / Max / Typ; Typ recorded as nominal). The identical table
+# (every row, compared as extracted text) is printed in D5V0F4U6SO
+# DS35472 Rev. 4-2 page 3. Same letters and values as the SOT25 table
+# of standards/SOT25-3.00x1.60-P0.95-DIODES, with three leads per side.
+#
+# Symbol mapping (as the SOT25 package): A = lead width, B = body across
+# the rows, C = lead-tip span, D = pitch, H = body length, J = standoff,
+# L = foot length, M = lead thickness. K (1.00/1.30/1.10, a height whose
+# lower reference is not clear from the drawing) is left out.
+#
+# `sot` generator mapping: body_length = B (leads exit across it),
+# body_width = H, overall_length = C. Pins 1-3 on one side, 4-6 opposite
+# (pin 4 opposite pin 3), per the page-1 SOT26 top views.
+schema_version: "0.2"
+kind: package
+id: standards/SOT26-3.00x1.60-P0.95-DIODES
+family: sot
+lead_count: 6
+
+lead_layout:
+  value: [3, 3]
+  src:   'p1 "SOT26 Top View: I/O1 Vss I/O2 on one side, I/O4 Vcc I/O3 on the other"'
+
+source: diodes/DS36292
+
+pitch: { typ: 0.95 mm, src: 'p4 "SOT26 table, "D" (Typ 0.95)"' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:
+    min: 2.9 mm
+    typ: 3 mm
+    max: 3.1 mm
+    src: p4 "SOT26 table, "H" (2.90 / 3.10 / Typ 3.00)"
+  body_length:
+    min: 1.5 mm
+    typ: 1.6 mm
+    max: 1.7 mm
+    src: p4 "SOT26 table, "B" (1.50 / 1.70 / Typ 1.60)"
+  lead_thickness:
+    min: 0.1 mm
+    typ: 0.15 mm
+    max: 0.2 mm
+    src: p4 "SOT26 table, "M" (0.10 / 0.20 / Typ 0.15)"
+  lead_length:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.55 mm
+    src: p4 "SOT26 table, "L" (0.35 / 0.55 / Typ 0.40)"
+  overall_length:
+    min: 2.7 mm
+    typ: 2.8 mm
+    max: 3 mm
+    src: p4 "SOT26 table, "C" (2.70 / 3.00 / Typ 2.80)"
+  standoff:
+    min: 0.013 mm
+    typ: 0.05 mm
+    max: 0.1 mm
+    src: p4 "SOT26 table, "J" (0.013 / 0.10 / Typ 0.05)"
+  lead_width:
+    min: 0.35 mm
+    typ: 0.38 mm
+    max: 0.5 mm
+    src: p4 "SOT26 table, "A" (0.35 / 0.50 / Typ 0.38)"

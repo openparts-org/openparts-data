@@ -1,0 +1,27 @@
+# Panasonic FK series EEEFK1A471P: 470 µF, 10 V, case size F (standard product,
+# reflow, taping). Listed verbatim in the p3 "Characteristics list"
+# Part No. column (Standard Product), the size code column giving the
+# package.
+# lifecycle unknown: the catalog states no status for this row.
+schema_version: "0.2"
+kind: part
+id: panasonic/EEEFK1A471P
+manufacturer: panasonic
+mpn: EEEFK1A471P
+device: panasonic/EEEFK1A471
+package: manufacturers/panasonic/FK-F-8x10.2
+sources: [panasonic/ABA0000C1181]
+source: panasonic/ABA0000C1181
+
+existence:
+  status: verified
+  src: p3 "Characteristics list, Part No. Standard Product column, EEEFK1A471P row"
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance: { typ: 470 µF, src: 'p3 "Characteristics list, EEEFK1A471P row, Capacitance"' }
+  tolerance:   { tol: ±20 %, src: 'p3 "Characteristics list, Capacitance column header (±20 %)"' }
+  rated_voltage:
+    typ: 10 V
+    src: p3 "Characteristics list, EEEFK1A471P row, Rated voltage group"

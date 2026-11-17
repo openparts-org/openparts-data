@@ -1,0 +1,67 @@
+# Octal D-type edge-triggered flip-flop with 3-state outputs SN74HC374,
+# 20-pin pin map read from the rendered "J, W, DB, DW, N, NS, or PW
+# package 20-Pin CDIP, CFP, SSOP, SOIC, PDIP, SO, or TSSOP Top View"
+# diagram (SCLS141G page 3; image only, no pin-function table). OE carries an
+# overbar (active low). FK (LCCC) not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN74HC374
+manufacturer: ti
+category: logic
+family: SNx4HC374
+source: ti/SCLS141G
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 6 V
+    src: p4 "Recommended Operating Conditions, VCC, SN74HC374 column"
+  supply_current:
+    max: 8 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p5 "5.4 Electrical Characteristics: ICC, VI = VCC or 0, 6 V, TA = 25°C column"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "Recommended Operating Conditions, TA, SN74HC374 column"
+  channel_count: { value: "8", src: 'p1 "Title, Octal ... D-Type Flip-Flops With 3-State Outputs"' }
+  propagation_delay:
+    - typ: 17 ns
+      max: 36 ns
+      at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+      src: p6 "5.6 Switching Characteristics CL = 50 pF, tpd CLK to any Q, 4.5 V, TA = 25°C"
+    - typ: 63 ns
+      max: 180 ns
+      at: { VCC: 2 V, CL: 50 pF, TA: 25 °C }
+      src: p6 "5.6 Switching Characteristics CL = 50 pF, tpd CLK to any Q, 2 V, TA = 25°C"
+    - typ: 15 ns
+      max: 31 ns
+      at: { VCC: 6 V, CL: 50 pF, TA: 25 °C }
+      src: p6 "5.6 Switching Characteristics CL = 50 pF, tpd CLK to any Q, 6 V, TA = 25°C"
+  logic_function:
+    value: flip_flop
+    src: p1 "Title, Octal D-Type Flip-Flops With 3-State Outputs"
+
+pins:
+  src:  p3 "20-Pin CDIP, CFP, SSOP, SOIC, PDIP, SO, or TSSOP Top View diagram (rendered)"
+  "1":  { name: OE, type: input }
+  "2":  { name: 1Q, type: output }
+  "3":  { name: 1D, type: input }
+  "4":  { name: 2D, type: input }
+  "5":  { name: 2Q, type: output }
+  "6":  { name: 3Q, type: output }
+  "7":  { name: 3D, type: input }
+  "8":  { name: 4D, type: input }
+  "9":  { name: 4Q, type: output }
+  "10": { name: GND, type: ground }
+  "11": { name: CLK, type: clock }
+  "12": { name: 5Q, type: output }
+  "13": { name: 5D, type: input }
+  "14": { name: 6D, type: input }
+  "15": { name: 6Q, type: output }
+  "16": { name: 7Q, type: output }
+  "17": { name: 7D, type: input }
+  "18": { name: 8D, type: input }
+  "19": { name: 8Q, type: output }
+  "20": { name: VCC, type: power }

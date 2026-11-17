@@ -1,0 +1,59 @@
+# Dual 4-bit binary (ripple) counter SN74HC393, 14-pin pin map from Table
+# 3-1 "Pin Functions" (SCLS143E page 3), which covers the SN74HC393 D,
+# DB, N, NS and PW packages. 1CLR/2CLR (clear, active high) typed reset.
+# The table's descriptions of 1QC/1QD repeat "B Output" (a typo; names
+# used as printed).
+schema_version: "0.2"
+kind: device
+id: ti/SN74HC393
+manufacturer: ti
+category: logic
+family: SNx4HC393
+source: ti/SCLS143E
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 6 V
+    src: p4 "4.2 Recommended Operating Conditions, VCC, SN74HC393 column"
+  supply_current:
+    max: 8 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p5 "4.4 Electrical Characteristics: ICC, VI = VCC or 0, 6 V, TA = 25°C column"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "4.2 Recommended Operating Conditions, TA, SN74HC393 column"
+  channel_count:  { value: "2", src: 'p1 "Title, Dual 4-Bit Binary Counters"' }
+  propagation_delay:
+    - typ: 32 ns
+      max: 58 ns
+      at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+      src: p6 "4.6 Switching Characteristics CL = 50 pF, tpd CLK to QD, 4.5 V, TA = 25°C"
+    - typ: 100 ns
+      max: 290 ns
+      at: { VCC: 2 V, CL: 50 pF, TA: 25 °C }
+      src: p6 "4.6 Switching Characteristics CL = 50 pF, tpd CLK to QD, 2 V, TA = 25°C"
+    - typ: 24 ns
+      max: 50 ns
+      at: { VCC: 6 V, CL: 50 pF, TA: 25 °C }
+      src: p6 "4.6 Switching Characteristics CL = 50 pF, tpd CLK to QD, 6 V, TA = 25°C"
+  logic_function: { value: counter, src: 'p1 "Title, Dual 4-Bit Binary Counters"' }
+
+pins:
+  src:  p3 "Table 3-1 "Pin Functions" (NAME / NO. / TYPE)"
+  "1":  { name: 1CLK, type: clock }
+  "2":  { name: 1CLR, type: reset }
+  "3":  { name: 1QA, type: output }
+  "4":  { name: 1QB, type: output }
+  "5":  { name: 1QC, type: output }
+  "6":  { name: 1QD, type: output }
+  "7":  { name: GND, type: ground }
+  "8":  { name: 2QD, type: output }
+  "9":  { name: 2QC, type: output }
+  "10": { name: 2QB, type: output }
+  "11": { name: 2QA, type: output }
+  "12": { name: 2CLR, type: reset }
+  "13": { name: 2CLK, type: clock }
+  "14": { name: VCC, type: power }

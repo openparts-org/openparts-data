@@ -1,0 +1,29 @@
+# 4-channel low-capacitance TVS diode array, SOT26. The page-1 Top View
+# names the leads I/O4, Vcc, I/O3 on the top side and I/O1, Vss, I/O2 on
+# the bottom side but prints no numbers; numbered with the standard SOT26
+# convention (1-3 bottom left to right, 4-6 top right to left), the same
+# layout D5V0F4U6SO prints with numbers -- position-derived, flagged for
+# review.
+schema_version: "0.2"
+kind: device
+id: diodes/DT1042-04SO
+manufacturer: diodes
+category: diode
+family: DT1042-04SO
+source: diodes/DS36292
+
+parameters:
+  reverse_voltage: { max: 5 V, src: 'p2 "Electrical Characteristics, VRWM (VCC to VSS)"' }
+  operating_temperature:
+    min: -55 °C
+    max: 85 °C
+    src: p2 "Maximum Ratings, Operating Temperature TOP"
+
+pins:
+  src: 'p1 "SOT26 Top View: I/O4 Vcc I/O3 (top) / I/O1 Vss I/O2 (bottom); position-derived numbering"'
+  "1": { name: IO1, type: passive }
+  "2": { name: VSS, type: ground }
+  "3": { name: IO2, type: passive }
+  "4": { name: IO3, type: passive }
+  "5": { name: VCC, type: power }
+  "6": { name: IO4, type: passive }

@@ -1,0 +1,35 @@
+# TPD4S009 4-channel ESD protection for two differential pairs, pin map
+# of the DBV (SOT-23-6) and DCK (SC70-6) packages, printed as one figure
+# "TPD4S009 DBV OR DCK PACKAGE 6-PIN SOT TOP VIEW": 1 D1+, 2 GND, 3 D2+,
+# 4 D2-, 5 VCC, 6 D1-. Data pins typed passive.
+schema_version: "0.2"
+kind: device
+id: ti/TPD4S009
+manufacturer: ti
+category: diode
+family: TPD4S009
+source: ti/SLVS817G
+
+parameters:
+  forward_voltage:
+    min: 0.6 V
+    typ: 0.8 V
+    max: 0.95 V
+    at: { IF: 8 mA }
+    src: p6 "6.5 Electrical Characteristics, VD lower clamp diode, IIO = 8 mA"
+  reverse_voltage:
+    max: 5.5 V
+    src: p6 "6.5 Electrical Characteristics, VRWM (any IO pin to ground)"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p6 "6.3 Recommended Operating Conditions, TA"
+
+pins:
+  src: p4 "TPD4S009 DBV OR DCK PACKAGE 6-PIN SOT TOP VIEW"
+  "1": { name: D1+, type: passive }
+  "2": { name: GND, type: ground }
+  "3": { name: D2+, type: passive }
+  "4": { name: D2-, type: passive }
+  "5": { name: VCC, type: power }
+  "6": { name: D1-, type: passive }

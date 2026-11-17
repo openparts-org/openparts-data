@@ -1,0 +1,119 @@
+# Adafruit QT Py ESP32-S2 (5325). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (adafruit/Adafruit-QT-Py-ESP32-S2-PCB@7df4eac),
+# converted to the package frame (board centre, top view; see the package comment). x/y/rotation
+# come from fitting each OpenParts footprint onto the design pads of that element.
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one). Left out:
+#   L1/L2 0402 antenna-match parts, passives and test points
+# U1: value "AP2112K-3.3" (ordering suffix not in the design).
+schema_version: "0.2"
+kind: part
+id: adafruit/5325
+manufacturer: adafruit
+mpn: "5325"
+device: adafruit/QT-PY-ESP32-S2
+package: standards/MODULE14-18x21-P2.54-ADAFRUIT-QT-PY-ESP32
+sources: [adafruit/Adafruit-QT-Py-ESP32-S2-PCB@7df4eac]
+source: adafruit/Adafruit-QT-Py-ESP32-S2-PCB@7df4eac
+
+existence: { status: verified, src: '"README: http://www.adafruit.com/products/5325"' }
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: U$15
+    part: espressif/ESP32-S2
+    stand_in_for: ESP32-S2 in QFN56 7x7 (value "ESP32-S2QFN54"; flash/PSRAM variant not stated)
+    x: 1.397
+    y: -1.156
+    rotation: 180
+    side: bottom
+    src:
+      - '"Adafruit U$15 at 10.287, 9.195 rot M180"'
+      - '"U$15 value ESP32-S2QFN54, footprint QFN56_7X7; stand-in fitted to its 57 pads (mean 0.035 mm)"'
+  - ref: U1
+    part: diodes/AP2112K-3.3TRG1
+    x: 1.968
+    y: -0.483
+    rotation: 270
+    src:
+      - '"Adafruit U1 at 10.858, 9.868 rot 180"'
+      - '"U1 value AP2112K-3.3, footprint SOT23-5; fitted to its 5 pads (mean 0.15 mm)"'
+  - ref: D1
+    part: onsemi/NSR0320MW2T1G
+    stand_in_for: NSR0320 (series name only)
+    x: 3.607
+    y: 6.426
+    side: bottom
+    src:
+      - '"Adafruit D1 at 12.497, 16.777 rot M0"'
+      - '"D1 value   NSR0320, footprint SOD-323_MINI; stand-in fitted to its 2 pads (mean 0.03 mm)"'
+  - ref: D2
+    part: onsemi/NSR0320MW2T1G
+    stand_in_for: NSR0320 (series name only)
+    x: 5.524
+    y: 8.572
+    rotation: 270
+    side: bottom
+    src:
+      - '"Adafruit D2 at 14.415, 18.923 rot M270"'
+      - '"D2 value   NSR0320, footprint SOD-323_MINI; stand-in fitted to its 2 pads (mean 0.03 mm)"'
+  - ref: LED1
+    part: worldsemi/WS2812B-1313-V6
+    stand_in_for: SK6805 1515 addressable RGB LED (value WS2812B_SK6805_1515)
+    x: 4.204
+    y: -3.353
+    rotation: 180
+    src:
+      - '"Adafruit LED1 at 13.094, 6.998 rot 0"'
+      - '"LED1 value WS2812B_SK6805_1515, footprint SK6805_1515; stand-in fitted to its 4 pads (mean 0.112 mm)"'
+  - ref: Q1
+    part: alps/SKRPABE010
+    stand_in_for: C&K KMR2 4.2x2.8 SMD tactile switch (value KMR2)
+    x: -2.794
+    y: 0.698
+    src:
+      - '"Adafruit Q1 at 6.096, 11.049 rot 180"'
+      - '"Q1 value BOOT0, footprint BTN_KMR2_4.6X2.8; stand-in fitted to its 4 pads (mean 0.276 mm)"'
+  - ref: Q2
+    part: alps/SKRPABE010
+    stand_in_for: C&K KMR2 4.2x2.8 SMD tactile switch (value KMR2)
+    x: -2.794
+    y: -3.239
+    src:
+      - '"Adafruit Q2 at 6.096, 7.112 rot 180"'
+      - '"Q2 value reset, footprint BTN_KMR2_4.6X2.8; stand-in fitted to its 4 pads (mean 0.276 mm)"'
+  - ref: X6
+    part: gct/USB4105-GF-A
+    stand_in_for: CUSB31-CFM2AX-01-X USB Type-C receptacle
+    x: 0
+    y: 6.552
+    rotation: 180
+    src:
+      - '"Adafruit X6 at 8.89, 17.907 rot 180"'
+      - '"X6 value USB TYPE C, footprint USB_C_CUSB31-CFM2AX-01-X; stand-in fitted to its 16 pads (mean 0.0 mm)"'
+  - ref: CONN1
+    part: jst/SM04B-SRSS-TB
+    stand_in_for: STEMMA QT 4-pin JST SH receptacle, MPN not stated
+    x: 2.184
+    y: -7.271
+    src:
+      - '"Adafruit CONN1 at 11.074, 2.578 rot 0"'
+      - '"CONN1 value STEMMA_I2C_QTSKINNY, footprint JST_SH4_SKINNY; stand-in fitted to its 6 pads (mean 0.012 mm)"'
+  - ref: Y1
+    part: abracon/ABM11-40.000MHZ-B7G-T
+    stand_in_for: 40 MHz crystal 2.0x1.6, MPN not stated
+    x: 1.651
+    y: -7.582
+    side: bottom
+    src:
+      - '"Adafruit Y1 at 10.541, 2.769 rot M270"'
+      - '"Y1 value 40MHz, footprint CRYSTAL_2X1.6; stand-in fitted to its 4 pads (mean 0.025 mm)"'
+  - ref: X1
+    part: johanson/2450AT18A100E-AEC
+    stand_in_for: Johanson 2450AT18B100 2.4 GHz chip antenna (footprint ANT_2450AT18B100)
+    x: -4.064
+    y: -9.017
+    src:
+      - '"Adafruit X1 at 4.826, 1.333 rot 180"'
+      - '"X1 value (none), footprint ANT_2450AT18B100; stand-in fitted to its 2 pads (mean 0.0 mm)"'

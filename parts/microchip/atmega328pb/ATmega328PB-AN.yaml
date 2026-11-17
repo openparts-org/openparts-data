@@ -1,0 +1,27 @@
+# ATmega328PB-AN: printed in the Ordering Code column of section 3 "Ordering
+# Information" (DS40001906C page 12): 20 MHz, 1.8 - 5.5 V, package
+# 32A, Industrial (-40°C to 105°C).
+# Package: the 32A drawing (Microchip C04-074B, page 454) is the drawing standards/TQFP32-7x7-P0.8 was read from.
+# lifecycle: the datasheet has no production-status statement; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATmega328PB-AN
+manufacturer: microchip
+mpn: ATmega328PB-AN
+device: microchip/ATmega328PB
+
+package:
+  value: standards/TQFP32-7x7-P0.8
+  src: p12 "3. Ordering Information, row ATmega328PB-AN, Package 32A"
+
+sources: [microchip/DS40001906C]
+source: microchip/DS40001906C
+
+existence: { status: verified, src: 'p12 "3. Ordering Information, Ordering Code ATmega328PB-AN"' }
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p12 "3. Ordering Information, row ATmega328PB-AN, Operational Range Industrial (-40°C to 105°C)"

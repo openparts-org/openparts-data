@@ -1,0 +1,26 @@
+# MPN from the PACKAGE OPTION ADDENDUM (SLLSEP3G page 37): "ISO7720FDR | Active |
+# Production | SOIC (D) | 8". Package outline D0008B drawing 4221445/C 02/2019
+# (pages 34-35); its printed dimensions and IPC-7351 land pattern equal
+# manufacturers/ti/D0008B (read from 4221445/B), so that package is reused.
+schema_version: "0.2"
+kind: part
+id: ti/ISO7720FDR
+manufacturer: ti
+mpn: ISO7720FDR
+device: ti/ISO7720-D
+
+package:
+  value: manufacturers/ti/D0008B
+  src:
+    - p37 "PACKAGE OPTION ADDENDUM, row ISO7720FDR, "SOIC (D) | 8""
+    - p34 "PACKAGE OUTLINE D0008B (4221445/C 02/2019)"
+
+sources: [ti/SLLSEP3G]
+source: ti/SLLSEP3G
+
+existence:
+  status: verified
+  src: p37 "PACKAGE OPTION ADDENDUM, Packaging Information table, row ISO7720FDR"
+
+lifecycle: { status: active, src: 'p37 "PACKAGE OPTION ADDENDUM, row ISO7720FDR, Status "Active""' }
+parameters: { default_output: { value: low, src: 'p1 "Features, ISO772xF default output Low"' } }

@@ -1,0 +1,114 @@
+# SparkFun Qwiic Pro Micro - USB-C (ATmega32U4) (DEV-15795). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (sparkfun/Pro_Micro@df836f3),
+# converted to the package frame (board centre, top view; see the package comment). x/y/rotation
+# come from fitting each OpenParts footprint onto the design pads of that element.
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one). Left out:
+#   F1 0805 PTC fuse, JP14 USB solder pads, passives and jumpers
+# Package standards/MODULE24-18x33-P2.54-SPARKFUN-PRO-MICRO is shared with another board of this
+# form factor: the 24 header holes of this design have the same positions and drill (land here
+# 1.016 mm).
+# U3: value "32U4", footprint QFN-44 (the QFN-44 member is -MU).
+schema_version: "0.2"
+kind: part
+id: sparkfun/DEV-15795
+manufacturer: sparkfun
+mpn: DEV-15795
+device: sparkfun/QWIIC-PRO-MICRO
+package: standards/MODULE24-18x33-P2.54-SPARKFUN-PRO-MICRO
+sources: [sparkfun/Pro_Micro@df836f3]
+source: sparkfun/Pro_Micro@df836f3
+
+existence: { status: verified, src: '"README: Qwiic Pro Micro - USB-C (ATmega32U4) [DEV-15795]"' }
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: U3
+    part: microchip/ATmega32U4-MU
+    x: 0
+    y: -2.54
+    rotation: 315
+    src:
+      - '"SparkFun U3 at 8.89, 13.97 rot 315"'
+      - '"U3 value 32U4, footprint QFN-44-NOPAD_1:1-LESS_PASTE; fitted to its 44 pads (mean 0.062 mm)"'
+  - ref: U1
+    part: diodes/AP2112K-3.3TRG1
+    stand_in_for: 3.3 V LDO in SOT23-5, MPN not stated (value 3.3V)
+    x: 0
+    y: 4.445
+    rotation: 180
+    src:
+      - '"SparkFun U1 at 8.89, 20.955 rot 90"'
+      - '"U1 value 3.3V, footprint SOT23-5; stand-in fitted to its 5 pads (mean 0.15 mm)"'
+  - ref: Y2
+    part: abracon/ABM11-16.000MHZ-B7G-T
+    stand_in_for: 16 MHz crystal 2.0x1.6, MPN not stated
+    x: -3.81
+    y: -8.89
+    rotation: 90
+    src:
+      - '"SparkFun Y2 at 5.08, 7.62 rot 0"'
+      - '"Y2 value 16MHz, footprint CRYSTAL-SMD-2.0X1.6MM; stand-in fitted to its 4 pads (mean 0.025 mm)"'
+  - ref: J5
+    part: gct/USB4105-GF-A
+    stand_in_for: USB Type-C receptacle 16P, MPN not stated
+    x: 0
+    y: 13.04
+    rotation: 180
+    src:
+      - '"SparkFun J5 at 8.89, 26.67 rot 180"'
+      - '"J5 value (none), footprint USB-C-16P-5; stand-in fitted to its 20 pads (mean 0.011 mm)"'
+  - ref: J2
+    part: jst/SM04B-SRSS-TB
+    stand_in_for: Qwiic 4-pin JST SH right-angle receptacle, MPN not stated
+    x: 1.651
+    y: -13.484
+    src:
+      - '"SparkFun J2 at 10.541, 4.926 rot 0"'
+      - '"J2 value QWIIC_RIGHT_ANGLE, footprint JST04_1MM_RA; stand-in fitted to its 6 pads (mean 0.1 mm)"'
+  - ref: S1
+    part: alps/SKRPABE010
+    stand_in_for: 4.6x2.8 mm SMD tactile switch, MPN not stated
+    x: -3.556
+    y: -13.589
+    rotation: 90
+    src:
+      - '"SparkFun S1 at 5.334, 2.921 rot 90"'
+      - '"S1 value Reset, footprint TACTILE_SWITCH_SMD_4.6X2.8MM; stand-in fitted to its 4 pads (mean 0.276 mm)"'
+  - ref: D2
+    part: onsemi/NSR0320MW2T1G
+    stand_in_for: SOD-323 Schottky diode, MPN not stated
+    x: 0
+    y: 6.858
+    rotation: 180
+    src:
+      - '"SparkFun D2 at 8.89, 23.368 rot 180"'
+      - '"D2 value 3A/10V/280mV, footprint SOD-323; stand-in fitted to its 2 pads (mean 0.05 mm)"'
+  - ref: D1
+    part: kingbright/APT1608SYCK
+    stand_in_for: 0603 LED, yellow, MPN not stated
+    x: 0
+    y: -10.16
+    rotation: 180
+    src:
+      - '"SparkFun D1 at 8.89, 6.35 rot 0"'
+      - '"D1 value Yellow, footprint LED-0603; stand-in fitted to its 2 pads (mean 0.027 mm)"'
+  - ref: D3
+    part: kingbright/APT1608CGCK
+    stand_in_for: 0603 LED, green, MPN not stated
+    x: 0
+    y: -8.89
+    rotation: 180
+    src:
+      - '"SparkFun D3 at 8.89, 7.62 rot 0"'
+      - '"D3 value GREEN, footprint LED-0603; stand-in fitted to its 2 pads (mean 0.052 mm)"'
+  - ref: LED1
+    part: kingbright/APT1608SURCK
+    stand_in_for: 0603 LED, red, MPN not stated
+    x: -4.826
+    y: 6.35
+    rotation: 90
+    src:
+      - '"SparkFun LED1 at 4.064, 22.86 rot 270"'
+      - '"LED1 value RED, footprint LED-0603; stand-in fitted to its 2 pads (mean 0.052 mm)"'

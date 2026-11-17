@@ -1,0 +1,43 @@
+# DMG2302U-7: listed in the page-1 Ordering Information table of DS31838.
+# Lifecycle: page-1 banner "NOT RECOMMENDED FOR NEW DESIGN"; replacement
+# DMN2056U (banner "USE DMN2056U"; linked to diodes/DMN2056U-7).
+# Package: The letter-coded SOT23 Package Outline Dimensions table on page 5
+# (A 0.37/0.51/0.40 ... K1 0.903/1.10/1.025, M 0.085/0.150/0.110) is
+# value-for-value the DS18001 table that
+# standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001 was read from (compared
+# as extracted text, every row). Reused.
+schema_version: "0.2"
+kind: part
+id: diodes/DMG2302U-7
+manufacturer: diodes
+mpn: DMG2302U-7
+device: diodes/DMG2302U
+package: standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001
+sources: [diodes/DS31838, diodes/DS18001]
+source: diodes/DS31838
+
+existence: { status: verified, src: 'p1 "Ordering Information table, DMG2302U-7 | SOT23"' }
+
+lifecycle:
+  status: nrnd
+  replacement: [diodes/DMN2056U-7]
+  src: p1 "Banner "NOT RECOMMENDED FOR NEW DESIGN", "USE DMN2056U""
+
+parameters:
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 20 V, src: 'p2 "Maximum Ratings, VDSS"' }
+  drain_current:
+    - max: 4.2 A
+      at: { TA: 25 °C }
+      src: p2 "Maximum Ratings, ID Continuous, Steady State (Note 5)"
+    - max: 3.4 A
+      at: { TA: 70 °C }
+      src: p2 "Maximum Ratings, ID Continuous, Steady State (Note 5)"
+  rds_on:
+    - { max: 90 mΩ, at: { VGS: 4.5 V, ID: 3.6 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { max: 120 mΩ, at: { VGS: 2.5 V, ID: 3.1 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+  gate_threshold_voltage:
+    min: 0.4 V
+    max: 1 V
+    at: { ID: 50 µA }
+    src: p2 "Elec. Char., VGS(TH), VDS = VGS"

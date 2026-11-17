@@ -1,0 +1,20 @@
+# 60 V N-channel logic-level power MOSFET, DPAK (CASE 369C STYLE 2).
+# Pins from STYLE 2 of the outline (1 GATE, 2 DRAIN, 3 SOURCE, 4 DRAIN)
+# and the page-1 marking diagram (Gate 1, Drain 2/4, Source 3): the tab
+# "4" is the drain, tied to lead 2.
+schema_version: "0.2"
+kind: device
+id: onsemi/NTD3055L104
+manufacturer: onsemi
+category: transistor
+family: NTD3055L104
+source: onsemi/NTD3055L104-D
+
+pins:
+  src:
+    - 'p1 "Marking diagram: 1 Gate, 2 Drain, 3 Source, 4 Drain; DPAK STYLE 2"'
+    - 'p9 "CASE 369C STYLE 2: 1 GATE, 2 DRAIN, 3 SOURCE, 4 DRAIN"'
+  "1": { name: Gate, type: passive }
+  "2": { name: Drain, type: passive }
+  "3": { name: Source, type: passive }
+  "4": { name: Drain, type: passive, connected_to: "2" }

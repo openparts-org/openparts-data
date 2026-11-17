@@ -1,0 +1,33 @@
+# DMG2301L-7: listed in the page-1 Ordering Information table of DS37540. No lifecycle statement.
+# Package: SOT23 (Standard) A/A1/A2/b/c/D/E/E1/e/e1/L table on page 6 matches
+# standards/SOT23-2.90x1.30-P1.83-DIODES row for row (compared as
+# extracted text: A 0.90/1.15/1.025, D 2.80/3.00/2.90, E 2.25/2.55/2.40,
+# E1 1.20/1.40/1.30, b 0.30/0.51/0.40, c 0.080/0.202/0.11 ...). Reused.
+schema_version: "0.2"
+kind: part
+id: diodes/DMG2301L-7
+manufacturer: diodes
+mpn: DMG2301L-7
+device: diodes/DMG2301L
+package: standards/SOT23-2.90x1.30-P1.83-DIODES
+sources: [diodes/DS37540, diodes/DS11005]
+source: diodes/DS37540
+
+existence: { status: verified, src: 'p1 "Ordering Information table, DMG2301L-7 | SOT23"' }
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: p_channel, src: p1 "Title" }
+  drain_source_voltage: { max: -20 V, src: 'p2 "Maximum Ratings, VDSS"' }
+  drain_current:
+    max: -3 A
+    at: { VGS: -4.5 V, TA: 25 °C }
+    src: p2 "Maximum Ratings, ID Continuous, Steady State (Note 5)"
+  rds_on:
+    - { max: 120 mΩ, at: { VGS: -4.5 V, ID: -2.8 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { max: 150 mΩ, at: { VGS: -2.5 V, ID: -2 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+  gate_threshold_voltage:
+    min: -1.2 V
+    max: -0.4 V
+    at: { ID: -250 µA }
+    src: p2 "Elec. Char., VGS(TH), VDS = VGS"

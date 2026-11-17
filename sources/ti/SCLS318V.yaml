@@ -1,0 +1,17 @@
+# Official TI datasheet "SN74AHC1G04 Single Inverter Gate". Downloaded 2026-11-17 from
+# the TI symlink URL below with curl (HTTP 200, PDF); revision read from
+# the page header "SCLS318V - MARCH 1996 - REVISED FEBRUARY 2024". 26 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM is dated 15-Jul-2026 (newer than the
+# datasheet revision). sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS318V
+sha256: 880e5b3989b61227f74cd60e621aeee851648e34e701fb012a0ff97983ed4bb8
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/sn74ahc1g04.pdf
+publisher: ti
+document_id: SCLS318V
+document_type: datasheet
+revision: V
+date: 2024-02

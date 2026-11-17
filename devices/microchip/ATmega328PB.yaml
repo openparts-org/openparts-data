@@ -1,0 +1,61 @@
+# ATmega328PB, 32-pin pin map from Figure 5-1 "32 TQFP Pinout
+# ATmega328PB" (DS40001906C page 14, rendered and read), identical to
+# Figure 5-2 "32 VQFN Pinout" (page 15) except the VQFN bottom pad
+# ("Bottom pad should be soldered to ground"), which is not a numbered
+# pin and is not modelled. Unlike the ATmega328P, pins 3 and 6 are PE0/
+# PE1 and pins 19/22 are PE2/PE3 (ADC6/ADC7 as port pins).
+# Types: VCC/AVCC power, GND ground, AREF analog, port pins io.
+# alternate_functions carry only the ADC channels, RESET (PC6) and the
+# crystal pins (PB6/PB7) as printed in the figure; the other peripheral
+# functions (PTC, timers, USART/SPI/TWI) are not modelled.
+schema_version: "0.2"
+kind: device
+id: microchip/ATmega328PB
+manufacturer: microchip
+category: microcontroller
+family: ATmega328PB
+source: microchip/DS40001906C
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.8 V
+    max: 5.5 V
+    src: p12 "3. Ordering Information, Power Supply [V] 1.8 - 5.5"
+
+pins:
+  src:
+    - p14 "Figure 5-1. 32 TQFP Pinout ATmega328PB (rendered)"
+    - p15 "Figure 5-2. 32 VQFN Pinout ATmega328PB (cross-check)"
+  "1":  { name: PD3, type: io }
+  "2":  { name: PD4, type: io }
+  "3":  { name: PE0, type: io }
+  "4":  { name: VCC, type: power }
+  "5":  { name: GND, type: ground }
+  "6":  { name: PE1, type: io }
+  "7":  { name: PB6, type: io, alternate_functions: [XTAL1, TOSC1] }
+  "8":  { name: PB7, type: io, alternate_functions: [XTAL2, TOSC2] }
+  "9":  { name: PD5, type: io }
+  "10": { name: PD6, type: io }
+  "11": { name: PD7, type: io }
+  "12": { name: PB0, type: io }
+  "13": { name: PB1, type: io }
+  "14": { name: PB2, type: io }
+  "15": { name: PB3, type: io }
+  "16": { name: PB4, type: io }
+  "17": { name: PB5, type: io }
+  "18": { name: AVCC, type: power }
+  "19": { name: PE2, type: io, alternate_functions: [ADC6] }
+  "20": { name: AREF, type: analog }
+  "21": { name: GND, type: ground }
+  "22": { name: PE3, type: io, alternate_functions: [ADC7] }
+  "23": { name: PC0, type: io, alternate_functions: [ADC0] }
+  "24": { name: PC1, type: io, alternate_functions: [ADC1] }
+  "25": { name: PC2, type: io, alternate_functions: [ADC2] }
+  "26": { name: PC3, type: io, alternate_functions: [ADC3] }
+  "27": { name: PC4, type: io, alternate_functions: [ADC4] }
+  "28": { name: PC5, type: io, alternate_functions: [ADC5] }
+  "29": { name: PC6, type: io, alternate_functions: [RESET] }
+  "30": { name: PD0, type: io }
+  "31": { name: PD1, type: io }
+  "32": { name: PD2, type: io }

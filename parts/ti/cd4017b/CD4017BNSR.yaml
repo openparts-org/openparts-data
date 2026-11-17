@@ -1,0 +1,28 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCHS027C PDF page 7, addendum dated 18-Sep-2026): row "CD4017BNSR",
+# "SOP (NS) | 16". lifecycle "active" is that table's Status column.
+# Package: outline NS0016A (4220735/A) on page 13; same drawing number and
+# revision as the reused package manufacturers/ti/NS0016A.
+schema_version: "0.2"
+kind: part
+id: ti/CD4017BNSR
+manufacturer: ti
+mpn: CD4017BNSR
+device: ti/CD4017B
+
+package:
+  value: manufacturers/ti/NS0016A
+  src:
+    - p7 "Package Option Addendum, row "CD4017BNSR", "SOP (NS) | 16""
+    - p13 "PACKAGE OUTLINE NS0016A (4220735/A)"
+
+sources: [ti/SCHS027C]
+source: ti/SCHS027C
+
+existence:
+  status: verified
+  src: p7 "Package Option Addendum, Packaging Information table, row "CD4017BNSR""
+
+lifecycle:
+  status: active
+  src: p7 "Package Option Addendum, row "CD4017BNSR", Status "Active""

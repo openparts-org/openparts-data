@@ -1,0 +1,68 @@
+# TPS25750S USB Type-C and USB PD controller (5-V/3-A source switch,
+# gate drivers for external sink FETs), 32-pin QFN RSM. Pinout from
+# SLVSFR7A "Table 6-2. TPS25750S Pin Functions" (page 6), checked against
+# "Figure 6-2. Top View of the TPS25750S 32-pin QFN RSM Package" (page
+# 4), whose thermal pad is labelled "(GND)". The TPS25750D (38-pin RJK,
+# integrated 7-A sink switch) is another pinout and not included.
+schema_version: "0.2"
+kind: device
+id: ti/TPS25750S
+manufacturer: ti
+category: usb_pd_controller
+family: TPS25750
+source: ti/SLVSFR7A
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:  { value: i2c, src: 'p6 "Table 6-2, I2Cs_SCL / I2Cs_SDA I2C slave"' }
+  supply_voltage:
+    min: 3 V
+    max: 3.6 V
+    src: p9 "7.3.2 TPS25750S - Recommended Operating Conditions, VI VIN_3V3"
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p9 "7.3.2 Recommended Operating Conditions, TA, IPP_5V ≤ 1.5 A (85 °C max at 3 A)"
+  esd_hbm:         { typ: 1 kV, src: 'p8 "7.2 ESD Ratings, HBM all pins ±1000 V"' }
+  usb_power_role:
+    value: dual_role
+    src: p1 "Features, optimized for power provider (source) and power consumer (sink) (DRP) applications"
+  usb_pd_revision: { value: "3.0", src: 'p1 "Features, USB PD 3.0 compliant"' }
+
+pins:
+  src:
+    - p6 "Table 6-2. TPS25750S Pin Functions"
+    - p4 "Figure 6-2. Top View of the TPS25750S 32-pin QFN RSM Package"
+  "1":  { name: LDO_3V3, type: power_out }
+  "2":  { name: ADCIN1, type: analog }
+  "3":  { name: ADCIN2, type: analog }
+  "4":  { name: LDO_1V5, type: power_out }
+  "5":  { name: GPIO0, type: io }
+  "6":  { name: GPIO1, type: io }
+  "7":  { name: GPIO2, type: io }
+  "8":  { name: I2Cs_SDA, type: io }
+  "9":  { name: I2Cs_SCL, type: input }
+  "10": { name: I2Cs_IRQ, type: output }
+  "11": { name: GND, type: ground }
+  "12": { name: GND, type: ground }
+  "13": { name: GPIO11, type: output }
+  "14": { name: GND, type: ground }
+  "15": { name: I2Cm_SDA, type: io }
+  "16": { name: I2Cm_SCL, type: output }
+  "17": { name: I2Cm_IRQ, type: input }
+  "18": { name: GPIO3, type: io }
+  "19": { name: VSYS, type: power }
+  "20": { name: GATE_VSYS, type: output }
+  "21": { name: GATE_VBUS, type: output }
+  "22": { name: GPIO4, type: io }
+  "23": { name: GPIO5, type: io }
+  "24": { name: CC1, type: io }
+  "25": { name: CC2, type: io }
+  "26": { name: VBUS, type: power }
+  "27": { name: VBUS, type: power }
+  "28": { name: PP5V, type: power }
+  "29": { name: PP5V, type: power }
+  "30": { name: GPIO7, type: io }
+  "31": { name: GPIO6, type: io }
+  "32": { name: VIN_3V3, type: power }
+  EP:   { name: GND, type: ground }

@@ -1,0 +1,23 @@
+# 4.7 µF X5R 10 V 0603 general-purpose MLCC (YAGEO CC series).
+# Existence: YAGEO's own per-part spec sheet (yageo/CC0603KRX5R6BB475-SPEC) carries this
+# exact MPN as its title. Values from the sheet's "Specifications" table.
+# Package: the sheet's L/W/T (1.6mm +/-0.1mm / 0.8mm +/-0.1mm / 0.8mm +/-0.1mm) equal dimension code
+# DA of yageo/UPY-GPHC_X7R@V29 Table 1 -> manufacturers/yageo/CC0603-DA. Lifecycle not stated -> unknown.
+schema_version: "0.2"
+kind: part
+id: yageo/CC0603KRX5R6BB475
+manufacturer: yageo
+mpn: CC0603KRX5R6BB475
+device: yageo/CC0603-X5R
+package: manufacturers/yageo/CC0603-DA
+sources: [yageo/CC0603KRX5R6BB475-SPEC]
+source: yageo/CC0603KRX5R6BB475-SPEC
+
+existence: { status: verified, src: 'p1 "Spec sheet title, part number"' }
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 4.7 µF, src: 'p1 "Specifications, Capacitance"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "Specifications, Tolerance"' }
+  rated_voltage: { typ: 10 V, src: 'p1 "Specifications, Voltage DC"' }
+  dielectric:    { value: X5R, src: 'p1 "Specifications, Temp. Coefficient"' }

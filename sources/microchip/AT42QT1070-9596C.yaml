@@ -1,0 +1,16 @@
+# Atmel (Microchip) AT42QT1070 seven-channel QTouch touch sensor IC datasheet.
+# Revision from the page footers "9596C-AT42-05/2013". The 14S1 package page (24)
+# is rendered and read (its text layer is not readable).
+# Downloaded 2026-11-17 with a plain curl/wget from the URL below; 34 PDF pages,
+# text read with pdftotext -layout. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: microchip/AT42QT1070-9596C
+sha256: c5342032750ad22faecb787a96b4ef4896ee013472025613b28d429ca25cc5d8
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-9596-AT42-QTouch-BSW-AT42QT1070_Datasheet.pdf
+publisher: microchip
+document_id: 9596C-AT42
+document_type: datasheet
+revision: C
+date: 2013-05

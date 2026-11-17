@@ -1,0 +1,43 @@
+# Bourns PEC12R-3xxxF-S vertical-shaft PCB-mount encoder, shaft length L = 20 mm
+# (bourns/PEC12R page 3, drawing "PEC12R-3xxxF-S" and its PCB hole layout).
+# Frame: top view as drawn (A C B along the bottom, switch terminals 1 2 at the top; the
+# hole layout has the same orientation as the front view), origin on the
+# shaft axis. The hole layout dimensions the A/C/B row "7.5" below and
+# the switch row "7.0" above the line through the two mounting slots; the
+# front view draws the lugs on the shaft centre line, so that line is
+# taken as the shaft axis. In X the shaft is taken as centred
+# between the slots ("13.2" apart); A to B "5.0", C midway (not
+# dimensioned separately). Holes "1.0 +0.2/-0"; slots "2" (X) x "2.6" (Y).
+# Body "12.4" (X) x "13.4" (Y); its centre is not dimensioned against the
+# shaft and is taken on the axis. Height: "6.6" from the mounting surface
+# to the bushing; L ("20") from the mounting surface to the shaft end.
+schema_version: "0.2"
+kind: package
+id: manufacturers/bourns/PEC12R-3-L20-SW
+family: rotary_encoder
+lead_count: { value: 7, src: 'p3 "PEC12R-3xxxF-S PCB layout, 1.0 DIA. 5 PLCS. + 2 slots"' }
+source: bourns/PEC12R
+
+pitch: { typ: 2.5 mm, src: 'p3 "PEC12R-3xxxF-S PCB layout, A to B "5.0", C midway"' }
+geometry: { type: parametric, generator: rotary_encoder }
+
+dimensions:
+  body_width:     { typ: 12.4 mm, src: p3 "PEC12R-3xxxF-S front view "12.4"" }
+  body_length:    { typ: 13.4 mm, src: p3 "PEC12R-3xxxF-S front view "13.4"" }
+  body_height: { typ: 6.6 mm, src: p3 "PEC12R-3xxxF-S side view "6.6" mounting surface to bushing" }
+  actuator_diameter:
+    min: 5.9 mm
+    max: 6 mm
+    src: p3 "PEC12R-3xxxF-S side view, shaft "6.0 +0/-0.1" DIA."
+  overall_height: { typ: 20 mm, src: p3 "PEC12R-3xxxF-S side view L; shaft table L = 20" }
+
+pads:
+  value:
+    - { number: A, x: -2.5, y: -7.5, drill: 1 }
+    - { number: C, x: 0, y: -7.5, drill: 1 }
+    - { number: B, x: 2.5, y: -7.5, drill: 1 }
+    - { number: "1", x: -2.5, y: 7, drill: 1 }
+    - { number: "2", x: 2.5, y: 7, drill: 1 }
+    - { number: MP, x: -6.6, y: 0, drill: 2, drill_length: 2.6, slot_axis: y }
+    - { number: MP, x: 6.6, y: 0, drill: 2, drill_length: 2.6, slot_axis: y }
+  src: p3 "PEC12R-3xxxF-S PCB layout, "13.2", "5.0", "7.5", "7.0" (see comment)"

@@ -1,0 +1,31 @@
+# AVR128DB28-I/SO: 128 KB/16 KB, 28 pins, SOIC, 1.8-5.5V, -40°C to +85°C, Tube.
+# MPN printed verbatim in Table 41-1 "Available Product Numbers"
+# (DS40002247B page 683) -> existence verified. Package: Microchip drawing
+# C04-052C (pages 690-691), the same drawing number and revision the reused
+# package manufacturers/microchip/SOIC28-SO-C04-052C was read from.
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/AVR128DB28-I-SO
+manufacturer: microchip
+mpn: AVR128DB28-I/SO
+device: microchip/AVR128DB28
+
+package:
+  value: manufacturers/microchip/SOIC28-SO-C04-052C
+  src: p683 "Table 41-1 Available Product Numbers, row AVR128DB28-I/SO, Package Type SOIC"
+
+sources: [microchip/DS40002247B]
+source: microchip/DS40002247B
+
+existence:
+  status: verified
+  src: p683 "Table 41-1 Available Product Numbers, Ordering Code AVR128DB28-I/SO"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p683 "Table 41-1 Available Product Numbers, row AVR128DB28-I/SO, Temperature Range"

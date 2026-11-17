@@ -1,0 +1,42 @@
+# CAP1203 3-channel capacitive touch sensor, 8-pin SOIC. Pinout from
+# DS00001572B "TABLE 1-1 PIN DESCRIPTION FOR CAP1203" (page 5, SOIC Pin
+# # column), checked against "FIGURE 1-2 CAP1203 8-PIN SOIC" (page 4).
+# The 8-pin TDFN has the same numbering plus an exposed pad and is not
+# included. SMBus address option (-1 / -2) per Part. The sensing method
+# is not stated.
+schema_version: "0.2"
+kind: device
+id: microchip/CAP1203-SOIC
+manufacturer: microchip
+category: touch_sensor
+family: CAP1203
+source: microchip/DS00001572B
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: i2c
+    src: p1 "Features, SMBus / I2C Compliant Communication Interface"
+  supply_voltage:
+    min: 3 V
+    max: 5.5 V
+    src: p7 "Electrical Specifications, Supply Voltage VDD"
+  operating_temperature:
+    min: 0 °C
+    max: 85 °C
+    src: p7 "Electrical Specifications header, VDD = 3V to 5.5V, TA = 0°C to 85°C"
+  esd_hbm: { typ: 8 kV, src: 'p6 "Absolute Maximum Ratings, ESD Rating, All Pins, HBM 8000 V"' }
+  channel_count: { value: "3", src: 'p1 "Title, 3-Channel Capacitive Touch Sensor"' }
+
+pins:
+  src:
+    - p5 "TABLE 1-1 PIN DESCRIPTION FOR CAP1203, SOIC Pin column"
+    - p4 "FIGURE 1-2 CAP1203 8-PIN SOIC"
+  "1": { name: ALERT#, type: output }
+  "2": { name: SMDATA, type: io }
+  "3": { name: SMCLK, type: input }
+  "4": { name: VDD, type: power }
+  "5": { name: GND, type: ground }
+  "6": { name: CS3, type: analog }
+  "7": { name: CS2, type: analog }
+  "8": { name: CS1, type: analog }

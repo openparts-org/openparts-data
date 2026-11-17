@@ -1,0 +1,48 @@
+# AT42QT1070 seven-channel QTouch touch sensor IC, 14-pin SOIC. Pinout
+# from 9596C "Table 1-1. Pin Listings (14-pin SOIC)" (page 4), Comms
+# Mode names (Standalone Mode names in the table: OUT0-OUT4 on pins 3,
+# 8, 7, 6, 5), checked against "1.1 Pinout Configuration - Comms Mode
+# (14-pin SOIC)" (page 2). KEY pins are listed as type O (Key 4..0 are
+# the electrode connections; typed io here). The 20-pin VQFN is another
+# pinout and not included.
+schema_version: "0.2"
+kind: device
+id: microchip/AT42QT1070-SOIC
+manufacturer: microchip
+category: touch_sensor
+family: AT42QT1070
+source: microchip/AT42QT1070-9596C
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: 'p1 "Features, I2C-compatible slave mode (400 kHz)"' }
+  supply_voltage:
+    min: 1.8 V
+    max: 5.5 V
+    src: p22 "6.2 Recommended Operating Conditions, Vdd +1.8 V to 5.5 V"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p22 "6.2 Recommended Operating Conditions, Operating temperature"
+  channel_count:
+    value: "7"
+    src: p1 "Title, Seven-channel QTouch Touch Sensor IC; Comms mode 1 – 7 keys"
+
+pins:
+  src:
+    - p4 "Table 1-1. Pin Listings (14-pin SOIC), Comms Mode names"
+    - p2 "1.1 Pinout Configuration – Comms Mode (14-pin SOIC)"
+  "1":  { name: VDD, type: power }
+  "2":  { name: MODE, type: input }
+  "3":  { name: SDA, type: io }
+  "4":  { name: RESET, type: reset }
+  "5":  { name: CHANGE, type: output }
+  "6":  { name: SCL, type: io }
+  "7":  { name: KEY6, type: io }
+  "8":  { name: KEY5, type: io }
+  "9":  { name: KEY4, type: io }
+  "10": { name: KEY3, type: io }
+  "11": { name: KEY2, type: io }
+  "12": { name: KEY1, type: io }
+  "13": { name: KEY0, type: io }
+  "14": { name: VSS, type: ground }

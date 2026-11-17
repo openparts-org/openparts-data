@@ -1,0 +1,59 @@
+# Dual RS-232 line driver/receiver MAX3232, 16-pin D/DB/DW/PW pin map
+# from Table 5-1 "Pin Functions" column "NO." (SLLS410O page 3) checked
+# against Figure 5-1 (same page; all four packages share it). The
+# datasheet's minus signs (C1-, C2-, V-) are written as ASCII "-".
+# Charge-pump capacitor leads (type "-") typed passive; V+/V- ("charge
+# pump output for storage capacitor only", type O) typed output, as for
+# ti/TRS3232E. The supply range is printed as two rows (VCC = 3.3 V:
+# 3-3.6 V; VCC = 5 V: 4.5-5.5 V), recorded as disjoint ranges.
+schema_version: "0.2"
+kind: device
+id: ti/MAX3232
+manufacturer: ti
+category: rs232_transceiver
+family: MAX3232
+source: ti/SLLS410O
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    ranges: [{ min: 3 V, max: 3.6 V }, { min: 4.5 V, max: 5.5 V }]
+    src:    p4 "6.3 Recommended Operating Conditions, VCC rows VCC = 3.3 V and VCC = 5 V"
+  supply_current:
+    typ: 0.3 mA
+    max: 1 mA
+    src: 'p5 "6.5 Electrical Characteristics, Device: ICC, no load, VCC = 3.3 V to 5 V"'
+  esd_hbm:
+    typ: 3 kV
+    src: p4 "6.2 ESD Ratings, HBM all other pins 3000 V (RIN, DOUT, GND 15000 V)"
+  channel_count: { value: "2", src: 'p1 "1 Features, Two drivers and two receivers"' }
+  propagation_delay:
+    typ: 300 ns
+    at: { CL: 150 pF }
+    src: p6 "6.8 Switching Characteristics, receiver tPLH and tPHL (both 300 ns typ)"
+  data_rate:
+    min: 150 kbps
+    typ: 250 kbps
+    at: { CL: 1000 pF, RL: 3 kΩ }
+    src: p6 "6.8 Switching Characteristics, Maximum data rate, one DOUT switching"
+
+pins:
+  src:
+    - p3 "Table 5-1 "Pin Functions", column "NO.""
+    - p3 "Figure 5-1 "D, DB, DW, or PW Package, 16-Pin SOIC, SSOP, or TSSOP, Top View" (cross-check)"
+  "1":  { name: C1+, type: passive }
+  "2":  { name: V+, type: output }
+  "3":  { name: C1-, type: passive }
+  "4":  { name: C2+, type: passive }
+  "5":  { name: C2-, type: passive }
+  "6":  { name: V-, type: output }
+  "7":  { name: DOUT2, type: output }
+  "8":  { name: RIN2, type: input }
+  "9":  { name: ROUT2, type: output }
+  "10": { name: DIN2, type: input }
+  "11": { name: DIN1, type: input }
+  "12": { name: ROUT1, type: output }
+  "13": { name: RIN1, type: input }
+  "14": { name: DOUT1, type: output }
+  "15": { name: GND, type: ground }
+  "16": { name: VCC, type: power }

@@ -1,0 +1,59 @@
+# Murata DLW21SN (SQ2 / HQ2) chip common-mode choke, 2.0 x 1.2 x 1.2 mm,
+# from murata/JEFL243C-0003X-01 page 2 "5. Style and Dimensions" (the
+# HQ2 spec JEFL243C-0010R-01 page 2 prints the same outline) and page 9
+# "16.7 Standard Land Dimensions (Reflow)". Frame as the other lga
+# 4-terminal parts: two electrodes on each 1.2 mm end, body_width = the
+# 2.0 mm side (X). Bottom-view drawing numbering (1) top-left, (2)
+# top-right, (3) bottom-right, (4) bottom-left -> pad_order [1, 4, 3, 2]
+# (generator positions 1 TL, 2 BL, 3 BR, 4 TR). Electrodes "(0.45)"
+# along X, "(0.4)" along Y with a "(0.4)" gap (reference values): centres
+# 0.8 apart in Y. Land pattern: "2.6" over both columns, "0.8" between
+# them -> lands 0.9 wide, centres x = ±(0.4 + 0.45) = ±0.85; "1.2" over
+# both rows, "0.4" between them -> lands 0.4 high, centres y = ±(0.2 +
+# 0.2) = ±0.4.
+schema_version: "0.2"
+kind: package
+id: manufacturers/murata/LGA4-2.0x1.2-DLW21SN
+family: lga
+lead_count: 4
+
+lead_layout:
+  value: [2, 0, 2, 0]
+  src:   p2 "5. Style and Dimensions, electrodes (1)(4) and (2)(3) on the two 1.2 mm ends"
+
+source: murata/JEFL243C-0003X-01
+
+pitch:
+  typ: 0.8 mm
+  src: p2 "5. Style and Dimensions, electrode "(0.4)" + gap "(0.4)" (reference values)"
+
+pad_order:
+  value: ["1", "4", "3", "2"]
+  src:   p2 "5. Style and Dimensions, terminal numbers (1)-(4)"
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width: { min: 1.8 mm, typ: 2 mm, max: 2.2 mm, src: 'p2 "5. Style and Dimensions, 2.0±0.2"' }
+  body_length:
+    min: 1 mm
+    typ: 1.2 mm
+    max: 1.4 mm
+    src: p2 "5. Style and Dimensions, 1.2±0.2 (end view)"
+  body_height:
+    min: 1 mm
+    typ: 1.2 mm
+    max: 1.4 mm
+    src: p2 "5. Style and Dimensions, 1.2±0.2 (side view)"
+  lead_length:
+    typ: 0.45 mm
+    src: p2 "5. Style and Dimensions, electrode (0.45) reference value"
+  lead_width: { typ: 0.4 mm, src: 'p2 "5. Style and Dimensions, electrode (0.4) reference value"' }
+
+pads:
+  value:
+    - { number: "1", x: -0.85, y: 0.4, width: 0.9, length: 0.4 }
+    - { number: "2", x: 0.85, y: 0.4, width: 0.9, length: 0.4 }
+    - { number: "3", x: 0.85, y: -0.4, width: 0.9, length: 0.4 }
+    - { number: "4", x: -0.85, y: -0.4, width: 0.9, length: 0.4 }
+  src: p9 "16.7 Standard Land Dimensions, "2.6", "0.8", "1.2", "0.4" (see comment)"

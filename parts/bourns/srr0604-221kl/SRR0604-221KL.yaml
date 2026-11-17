@@ -1,0 +1,32 @@
+# 220 µH +/-10%, SRR0604 shielded power inductor, per the page-1
+# Electrical Specifications table (read from a 110 dpi render, checked
+# against the pdftotext layout). lifecycle unknown: no production-status statement.
+schema_version: "0.2"
+kind: part
+id: bourns/SRR0604-221KL
+manufacturer: bourns
+mpn: SRR0604-221KL
+device: bourns/SRR0604-SERIES
+package: manufacturers/bourns/CHIP-BOURNS-SRR0604
+sources: [bourns/SRR0604]
+source: bourns/SRR0604
+
+existence:
+  status: verified
+  src: p1 "Electrical Specifications, SRR0604-221KL row (Part Number)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance: { tol: ±10 %, src: 'p1 "Electrical Specifications, SRR0604-221KL row, Tol. %"' }
+  inductance:
+    typ: 220 µH
+    at: { f: 1 kHz }
+    src: p1 "Electrical Specifications, SRR0604-221KL row, Inductance 1 KHz"
+  rated_current:
+    max: 0.25 A
+    src: p1 "Electrical Specifications, SRR0604-221KL row, I rms Max. (temp. rise 40 °C max.)"
+  saturation_current:
+    typ: 0.32 A
+    src: p1 "Electrical Specifications, SRR0604-221KL row, I sat Typ. (ind. drop 10 % typ.)"
+  dcr: { max: 1.7 Ω, src: 'p1 "Electrical Specifications, SRR0604-221KL row, RDC Max. (Ω)"' }

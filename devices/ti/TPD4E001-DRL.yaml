@@ -1,0 +1,36 @@
+# TPD4E001, pin map of the DRL (SOT-5X3, 6 pins) package. From the Pin
+# Functions table, "DRS, DRL, DPK" column (GND 3, IOx 1/2/4/5, VCC 6),
+# checked against Figure 4-1 "DRL Package 6-Pin SOT Top View" for the IO
+# names.
+schema_version: "0.2"
+kind: device
+id: ti/TPD4E001-DRL
+manufacturer: ti
+category: diode
+family: TPD4E001
+source: ti/SLLS682P
+
+parameters:
+  forward_voltage:
+    min: 0.65 V
+    max: 0.95 V
+    at: { IF: 10 mA }
+    src: p5 "5.6 Electrical Characteristics, VF Diode forward voltage"
+  reverse_voltage:
+    max: 5.5 V
+    src: p5 "5.6 Electrical Characteristics, VRWM (IO pin to GND pin)"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "5.4 Recommended Operating Conditions, TA"
+
+pins:
+  src:
+    - p3 "Pin Functions, DRS, DRL, DPK column"
+    - p3 "Figure 4-1 DRL Package 6-Pin SOT Top View (IO names)"
+  "1": { name: IO1, type: passive }
+  "2": { name: IO2, type: passive }
+  "3": { name: GND, type: ground }
+  "4": { name: IO3, type: passive }
+  "5": { name: IO4, type: passive }
+  "6": { name: VCC, type: power }

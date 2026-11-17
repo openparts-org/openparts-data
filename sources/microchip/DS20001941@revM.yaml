@@ -1,0 +1,19 @@
+# Official Microchip datasheet "24AA1025/24LC1025/24FC1025 1024-Kbit I2C Serial EEPROM". Downloaded 2026-11-17
+# with curl from ww1.microchip.com (URL below; found with a search
+# restricted to ww1.microchip.com, the microchip.com product pages refuse
+# plain fetches). document_id / revision from the printed footer
+# "DS20001941M-page N"; the Revision History's latest entry is
+# "Revision M (11/2021)". 31 PDF pages; text read with pdftotext -layout.
+# Page numbers in this dataset are PDF page indices (they equal the
+# printed page numbers). sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20001941@revM
+sha256: 624e3a2b9ebc0052d3c062004dcbaa72e473548c443202dafd6c77c2ade504bb
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/MPD/ProductDocuments/DataSheets/24AA1025-24LC1025-24FC1025-1024-Kbit-I2C-Serial-EEPROM-20001941M.pdf
+publisher: microchip
+document_id: DS20001941
+document_type: datasheet
+revision: M
+date: 2021-11

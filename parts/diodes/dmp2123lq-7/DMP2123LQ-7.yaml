@@ -1,0 +1,35 @@
+# DMP2123LQ-7: listed in the page-1 Ordering Information table of DS38317
+# (Automotive compliance). No lifecycle statement.
+# Package: The letter-coded SOT23 Package Outline Dimensions table on page 4
+# (A 0.37/0.51/0.40 ... K1 0.903/1.10/1.025, M 0.085/0.150/0.110) is
+# value-for-value the DS18001 table that
+# standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001 was read from (compared
+# as extracted text, every row). Reused.
+schema_version: "0.2"
+kind: part
+id: diodes/DMP2123LQ-7
+manufacturer: diodes
+mpn: DMP2123LQ-7
+device: diodes/DMP2123LQ
+package: standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001
+sources: [diodes/DS38317, diodes/DS18001]
+source: diodes/DS38317
+
+existence: { status: verified, src: 'p1 "Ordering Information table, DMP2123LQ-7 | SOT23"' }
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: p_channel, src: p1 "Title" }
+  drain_source_voltage: { max: -20 V, src: 'p2 "Maximum Ratings, VDSS"' }
+  drain_current:
+    - { max: -3 A, at: { TA: 25 °C }, src: 'p2 "Maximum Ratings, ID Continuous (Note 6)"' }
+    - { max: -2.4 A, at: { TA: 70 °C }, src: 'p2 "Maximum Ratings, ID Continuous (Note 6)"' }
+  rds_on:
+    - { typ: 51 mΩ, max: 72 mΩ, at: { VGS: -4.5 V, ID: -3.5 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { typ: 87 mΩ, max: 108 mΩ, at: { VGS: -2.7 V, ID: -3 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { typ: 99 mΩ, max: 123 mΩ, at: { VGS: -2.5 V, ID: -2.6 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+  gate_threshold_voltage:
+    min: -1.25 V
+    max: -0.6 V
+    at: { ID: -250 µA }
+    src: p2 "Elec. Char., VGS(TH), VDS = VGS"

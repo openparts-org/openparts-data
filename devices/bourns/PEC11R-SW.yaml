@@ -1,0 +1,35 @@
+# Bourns PEC11R 12 mm incremental encoder with push momentary switch (the
+# -xxxxF-S styles): A and B channel terminals and the common C, the switch
+# between the terminals numbered 1 and 2 ("Switch Circuit"), and the two
+# mounting lugs numbered "MP" (mechanical, passive). Series-level device:
+# detents, pulses and shaft are per Part.
+schema_version: "0.2"
+kind: device
+id: bourns/PEC11R-SW
+manufacturer: bourns
+category: rotary_encoder
+family: PEC11R
+source: bourns/PEC11R
+
+parameters:
+  rated_voltage: { typ: 5 V, src: 'p1 "Electrical Characteristics, Contact Rating 10 mA @ 5 VDC"' }
+  rated_current:
+    typ: 10 mA
+    src: p1 "Electrical Characteristics, Contact Rating 10 mA @ 5 VDC"
+  operating_temperature:
+    min: -30 °C
+    max: 70 °C
+    src: p1 "Environmental Characteristics, Operating Temperature Range"
+  rotation_angle:
+    typ: 360 °
+    src: p1 "Mechanical Characteristics, Mechanical Angle 360 ° continuous"
+  push_switch: { value: yes, src: 'p1 "Switch Characteristics, Contact Push ON Momentary SPST"' }
+
+pins:
+  src: p2 "PEC11R-xxxxF-S dimensions, A/C/B channels and switch terminals 1, 2"
+  "1": { name: SW1, type: passive }
+  "2": { name: SW2, type: passive }
+  A:   { name: A, type: passive }
+  B:   { name: B, type: passive }
+  C:   { name: C, type: passive }
+  MP:  { name: MP, type: passive }

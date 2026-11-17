@@ -1,0 +1,19 @@
+# PNP small-signal transistor, SOT23. The page-1 "Top View Pinout" is
+# drawn turned (single lead on the left: C; two leads on the right: E
+# upper, B lower). Turned into this dataset's sot convention (1
+# bottom-left, 2 bottom-right, 3 top) it reads 1 = Base, 2 = Emitter,
+# 3 = Collector (as diodes/MMBT5551). Pin numbers are not printed --
+# position-derived, flagged for review.
+schema_version: "0.2"
+kind: device
+id: diodes/MMBT3906
+manufacturer: diodes
+category: transistor
+family: MMBT3906
+source: diodes/DS30059
+
+pins:
+  src: p1 "Top View Pinout (C left; E upper right; B lower right); position-derived numbering, see header"
+  "1": { name: Base, type: passive }
+  "2": { name: Emitter, type: passive }
+  "3": { name: Collector, type: passive }

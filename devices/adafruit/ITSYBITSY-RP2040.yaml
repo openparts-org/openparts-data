@@ -1,0 +1,48 @@
+# Adafruit ItsyBitsy RP2040: the pins of the module package standards/MODULE33-18x36-P2.54-ADAFRUIT-ITSYBITSY,
+# named after the net each header pad connects to in the maker's design file (adafruit/Adafruit-ItsyBitsy-RP2040-PCB@b12f7b3).
+# Types are this dataset's reading of the net names (GND ground; supply nets power;
+# reset nets reset; others io). "!" (active-low bar) and a leading "+" are dropped. AI candidate, needs review.
+# connected_to: a second header pad on the same design net as an earlier pin.
+schema_version: "0.2"
+kind: device
+id: adafruit/ITSYBITSY-RP2040
+manufacturer: adafruit
+category: microcontroller
+family: RP2040
+source: adafruit/Adafruit-ItsyBitsy-RP2040-PCB@b12f7b3
+
+pins:
+  src:  '"header pads JP2, JP4, JP1: net names"'
+  "1":  { name: 3V3, type: power }
+  "2":  { name: 3V3, type: power }
+  "3":  { name: VHI, type: power }
+  "4":  { name: A0, type: io }
+  "5":  { name: A1, type: io }
+  "6":  { name: A2, type: io }
+  "7":  { name: A3, type: io }
+  "8":  { name: D24, type: io }
+  "9":  { name: D25, type: io }
+  "10": { name: SCK, type: io }
+  "11": { name: MOSI, type: io }
+  "12": { name: MISO, type: io }
+  "13": { name: D2, type: io }
+  "14": { name: EN, type: input }
+  "15": { name: SWDIO, type: io }
+  "16": { name: SWCLK, type: io }
+  "17": { name: D3, type: io }
+  "18": { name: D4, type: io }
+  "19": { name: RX, type: io }
+  "20": { name: TX, type: io }
+  "21": { name: SDA, type: io }
+  "22": { name: SCL, type: io }
+  "23": { name: D5_5V, type: io }
+  "24": { name: D7, type: io }
+  "25": { name: D9, type: io }
+  "26": { name: D10, type: io }
+  "27": { name: D11, type: io }
+  "28": { name: D12, type: io }
+  "29": { name: D13, type: io }
+  "30": { name: VBUS, type: power }
+  "31": { name: GND, type: ground }
+  "32": { name: VBAT, type: power }
+  "33": { name: RESET, type: reset }

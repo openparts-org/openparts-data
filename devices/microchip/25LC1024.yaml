@@ -1,0 +1,32 @@
+# 25LC1024 1-Mbit SPI serial EEPROM. Pinout from DS20002064E Table 2-1
+# "Pin Function Table" (page 6), columns 8-Lead PDIP / SOIJ; the DFN-S
+# column gives the same numbers, its exposed pad "can be connected to VSS
+# or left floating" (note 1) -> no EP pin. Overbars of CS and HOLD
+# (active low) are not represented in the names. Types as
+# microchip/25LC256: CS, WP, SI, SCK, HOLD -> input; SO -> output.
+schema_version: "0.2"
+kind: device
+id: microchip/25LC1024
+manufacturer: microchip
+category: eeprom
+family: 25LC1024
+source: microchip/DS20002064@revE
+
+# Parameters (AI candidates, needs review).
+parameters:
+  capacity: { typ: 1024 Kbit, src: 'p1 "Description: 25LC1024 is a 1024-Kbit serial EEPROM"' }
+  supply_voltage:
+    min: 2.5 V
+    max: 5.5 V
+    src: p1 "Device Selection Table, 25LC1024 VCC Range 2.5V-5.5V"
+
+pins:
+  src: p6 "Table 2-1 "Pin Function Table", columns 8-Lead PDIP and 8-Lead SOIJ (DFN-S gives the same numbers)"
+  "1": { name: CS, type: input }
+  "2": { name: SO, type: output }
+  "3": { name: WP, type: input }
+  "4": { name: VSS, type: ground }
+  "5": { name: SI, type: input }
+  "6": { name: SCK, type: input }
+  "7": { name: HOLD, type: input }
+  "8": { name: VCC, type: power }

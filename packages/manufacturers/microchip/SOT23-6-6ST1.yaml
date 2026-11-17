@@ -1,0 +1,57 @@
+# 6-lead SOT23, 2.90 x 1.60 mm (Atmel/Microchip drawing 6ST1 rev. B,
+# "6ST1, 6-lead, 2.90 x 1.60 mm Plastic Small Outline Package (SOT23)",
+# JEDEC MO-178 variation AB), read from DS40001946A (AT42QT1010) section
+# 5.6.1, PDF page 21 (COMMON DIMENSIONS table). Millimetres as printed.
+#
+# Top view: pins 1, 2, 3 left to right along the bottom edge, 4, 5, 6
+# right to left along the top (pin 1 ID at pin 1) -- the generator's
+# counter-clockwise [3, 3] layout.
+#
+# Mapping (as manufacturers/microchip/SOT23-6-CH-C04-028B): body_width =
+# D (long axis), body_length = E1, overall_length = E (lead-tip span),
+# body_height = A2, overall_height = A, standoff = A1, lead_length = L,
+# lead_thickness = c, lead_width = b. No land pattern in the source.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/SOT23-6-6ST1
+family: sot
+lead_count: 6
+
+lead_layout:
+  value: [3, 3]
+  src:   'p21 "6ST1 top view: leads 1, 2, 3 along the bottom edge, 6, 5, 4 along the top"'
+
+source: microchip/DS40001946A
+
+pitch: { typ: 0.95 mm, src: 'p21 "6ST1 COMMON DIMENSIONS, e 0.95 BSC"' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:
+    min: 2.8 mm
+    typ: 2.9 mm
+    max: 3 mm
+    src: p21 "6ST1 COMMON DIMENSIONS, D 2.80 / 2.90 / 3.00"
+  body_length:
+    min: 1.5 mm
+    typ: 1.6 mm
+    max: 1.75 mm
+    src: p21 "6ST1 COMMON DIMENSIONS, E1 1.50 / 1.60 / 1.75"
+  body_height: { min: 0.9 mm, max: 1.3 mm, src: 'p21 "6ST1 COMMON DIMENSIONS, A2 0.90 / - / 1.30"' }
+  lead_thickness:
+    min: 0.09 mm
+    max: 0.2 mm
+    src: p21 "6ST1 COMMON DIMENSIONS, c 0.09 / - / 0.20"
+  overall_length:
+    min: 2.6 mm
+    typ: 2.8 mm
+    max: 3 mm
+    src: p21 "6ST1 COMMON DIMENSIONS, E 2.60 / 2.80 / 3.00"
+  overall_height: { max: 1.45 mm, src: 'p21 "6ST1 COMMON DIMENSIONS, A max 1.45"' }
+  standoff:       { min: 0 mm, max: 0.15 mm, src: 'p21 "6ST1 COMMON DIMENSIONS, A1 0 / - / 0.15"' }
+  lead_width: { min: 0.3 mm, max: 0.5 mm, src: 'p21 "6ST1 COMMON DIMENSIONS, b 0.30 / - / 0.50"' }
+  lead_length:
+    min: 0.3 mm
+    typ: 0.45 mm
+    max: 0.55 mm
+    src: p21 "6ST1 COMMON DIMENSIONS, L 0.30 / 0.45 / 0.55"

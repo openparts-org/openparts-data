@@ -1,0 +1,37 @@
+# Toshiba DIP16-P-300-2.54A (16-pin 300-mil plastic DIP), read from the rendered
+# "Package Dimensions" page of the TBD62003A series datasheet
+# (2026-05-13, PDF page 8; image only). Unit mm.
+# body_width (the `dip` generator's ROW SPACING) = boxed basic "7.62".
+# body_length "19.25 +-0.2" ("19.75MAX" overall left out); lead width
+# "0.5 +-0.1"; lead thickness "0.25 +0.1/-0.05"; standoff "0.51MIN".
+# Left out (the stacked side-view callouts "3.5 +-0.2", "4.15 +-0.3",
+# "3.3 +-0.3" are not attributable to a single datum with certainty):
+# body/overall height, lead length; molded width "6.4 +-0.2".
+schema_version: "0.2"
+kind: package
+id: manufacturers/toshiba/DIP16-P-300-2.54A
+family: dip
+lead_count: 16
+source: toshiba/TBD62003A-datasheet-en
+
+pitch: { typ: 2.54 mm, src: 'p8 "DIP16-P-300-2.54A, boxed 2.54"' }
+geometry: { type: parametric, generator: dip }
+
+dimensions:
+  body_width: { typ: 7.62 mm, src: 'p8 "DIP16-P-300-2.54A end view, boxed 7.62"' }
+  body_length:
+    min: 19.05 mm
+    typ: 19.25 mm
+    max: 19.45 mm
+    src: p8 "DIP16-P-300-2.54A side view, 19.25 +-0.2"
+  lead_thickness:
+    min: 0.2 mm
+    typ: 0.25 mm
+    max: 0.35 mm
+    src: p8 "DIP16-P-300-2.54A end view, 0.25 +0.1/-0.05"
+  lead_width:
+    min: 0.4 mm
+    typ: 0.5 mm
+    max: 0.6 mm
+    src: p8 "DIP16-P-300-2.54A side view, 0.5 +-0.1"
+  standoff:   { min: 0.51 mm, src: 'p8 "DIP16-P-300-2.54A side view, 0.51MIN"' }

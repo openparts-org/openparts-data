@@ -1,0 +1,16 @@
+# 30 V N-channel MOSFET, SOT-23 (CASE 318 STYLE 21). Pins from the
+# page-1 MARKING DIAGRAM & PIN ASSIGNMENT, which prints the numbers:
+# 3 Drain, 1 Gate, 2 Source.
+schema_version: "0.2"
+kind: device
+id: onsemi/NTR4170N
+manufacturer: onsemi
+category: transistor
+family: NTR4170N
+source: onsemi/NTR4170N-D
+
+pins:
+  src: 'p1 "MARKING DIAGRAM & PIN ASSIGNMENT: 3 Drain, 1 Gate, 2 Source; CASE 318 STYLE 21"'
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

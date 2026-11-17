@@ -1,0 +1,32 @@
+# MPN from the Product Identification System (DS20005688B page 95),
+# example a): "MCP2517FD-H/SL" (High Temperature, Plastic SOIC 150 mil, 14-lead).
+# SL drawing C04-065C (page 85).
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP2517FD-H-SL
+manufacturer: microchip
+mpn: MCP2517FD-H/SL
+device: microchip/MCP2517FD
+
+package:
+  value: manufacturers/microchip/SOIC14-SL-C04-065C
+  src: p95 "Product Identification System, SL = Plastic SOIC (150 mil Body), 14-Lead; drawing C04-065C p85"
+
+sources: [microchip/DS20005688@revB]
+source: microchip/DS20005688@revB
+
+# existence is `probable`: the MPN is printed only as an example of the
+# part-numbering legend, not in an orderable list.
+existence:
+  status: probable
+  src: p95 "Product Identification System, example a) MCP2517FD-H/SL"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 150 °C
+    src: p76 "Table 7-1 DC Characteristics, High (H) TAMB = -40 to +150 C"

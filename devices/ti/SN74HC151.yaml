@@ -1,0 +1,62 @@
+# 8-line to 1-line data selector/multiplexer SN74HC151, 16-pin pin map
+# from the "J, D, N, NS, or PW Package 16-Pin CDIP, SOIC, PDIP, SO, TSSOP
+# Top View" diagram (SCLS110F page 3; this revision has no pin-function
+# table). Y is the true output, W the inverted output; G is the strobe
+# (active low, overbar). Types from the Description (data inputs D0-D7,
+# select A/B/C). FK (LCCC) numbering not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN74HC151
+manufacturer: ti
+category: logic
+family: SNx4HC151
+source: ti/SCLS110F
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 6 V
+    src: p4 "Recommended Operating Conditions, VCC, SN74HC151 column"
+  supply_current:
+    max: 8 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p5 "Electrical Characteristics: ICC, VI = VCC or 0, 6 V, TA = 25°C column"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "Recommended Operating Conditions, TA, SN74HC151 column"
+  channel_count: { value: "1", src: 'p1 "Title, 8-Line To 1-Line Data Selectors/Multiplexers"' }
+  propagation_delay:
+    - typ: 30 ns
+      max: 50 ns
+      at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+      src: p5 "5.5 Switching Characteristics CL = 50 pF, tpd A, B, or C to Y or W, 4.5 V, TA = 25°C"
+    - typ: 94 ns
+      max: 250 ns
+      at: { VCC: 2 V, CL: 50 pF, TA: 25 °C }
+      src: p5 "5.5 Switching Characteristics CL = 50 pF, tpd A, B, or C to Y or W, 2 V, TA = 25°C"
+    - typ: 25 ns
+      max: 43 ns
+      at: { VCC: 6 V, CL: 50 pF, TA: 25 °C }
+      src: p5 "5.5 Switching Characteristics CL = 50 pF, tpd A, B, or C to Y or W, 6 V, TA = 25°C"
+  logic_function: { value: multiplexer, src: 'p1 "Title, Data Selectors/Multiplexers"' }
+
+pins:
+  src:  p3 "16-Pin CDIP, SOIC, PDIP, SO, TSSOP Top View diagram (J, D, N, NS, or PW Package)"
+  "1":  { name: D3, type: input }
+  "2":  { name: D2, type: input }
+  "3":  { name: D1, type: input }
+  "4":  { name: D0, type: input }
+  "5":  { name: Y, type: output }
+  "6":  { name: W, type: output }
+  "7":  { name: G, type: input }
+  "8":  { name: GND, type: ground }
+  "9":  { name: C, type: input }
+  "10": { name: B, type: input }
+  "11": { name: A, type: input }
+  "12": { name: D7, type: input }
+  "13": { name: D6, type: input }
+  "14": { name: D5, type: input }
+  "15": { name: D4, type: input }
+  "16": { name: VCC, type: power }

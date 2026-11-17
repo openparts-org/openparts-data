@@ -1,0 +1,32 @@
+# 25LC1024-I/P: 25LC1024 EEPROM, industrial temperature, package P.
+# existence "probable": the MPN is printed as example a) of the Product Identification System
+# (DS20002064E page 30: Device "25LC1024", Tape and Reel "Blank = Standard packaging",
+# Temperature I, Package "P = Plastic Dual In-Line - 300 mil Body, 8-Lead (PDIP)"); the legend is not an
+# orderable list. Package drawing C04-018-P Rev E, dimension table on page 24
+# (the drawing revision the package was read from). lifecycle: no production-status statement -> unknown. The id
+# replaces the "/" of the MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/25LC1024-I-P
+manufacturer: microchip
+mpn: 25LC1024-I/P
+device: microchip/25LC1024
+
+package:
+  value: manufacturers/microchip/PDIP8-P-C04-018E
+  src:
+    - p30 "Product Identification System, Package P"
+    - p24 "drawing C04-018-P Rev E dimension table"
+
+sources: [microchip/DS20002064@revE]
+source: microchip/DS20002064@revE
+
+existence: { status: probable, src: 'p30 "Product Identification System, example a) 25LC1024-I/P"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p2 "DC Characteristics header: Industrial (I) TA = -40 to +85 C"'

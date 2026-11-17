@@ -1,0 +1,41 @@
+# FDN337N: listed in the ordering table (page 1), 3000 / Tape & Reel.
+# No lifecycle statement. Package: page 5 prints CASE 527AG ISSUE A
+# (98AON34319E, DATE 09 DEC 2019), the drawing
+# manufacturers/onsemi/SOT23-2.92x1.40-P1.90-527AG was read from (FDN340P/D
+# page 5). Reused.
+schema_version: "0.2"
+kind: part
+id: onsemi/FDN337N
+manufacturer: onsemi
+mpn: FDN337N
+device: onsemi/FDN337N
+package: manufacturers/onsemi/SOT23-2.92x1.40-P1.90-527AG
+sources: [onsemi/FDN337N-D, onsemi/FDN340P-D]
+source: onsemi/FDN337N-D
+
+existence:
+  status: verified
+  src: p1 "ORDERING INFORMATION, FDN337N | SOT-23-3 (Pb-Free) | 3000 / Tape & Reel"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 30 V, src: 'p1 "Abs. Max. Ratings, VDSS"' }
+  drain_current: { max: 2.2 A, src: 'p1 "Abs. Max. Ratings, ID Drain/Output Current - Continuous"' }
+  rds_on:
+    - typ: 0.054 Ω
+      max: 0.065 Ω
+      at: { VGS: 4.5 V, ID: 2.2 A }
+      src: p2 "Elec. Char., RDS(on)"
+    - typ: 0.08 Ω
+      max: 0.11 Ω
+      at: { VGS: 4.5 V, ID: 2.2 A, TJ: 125 °C }
+      src: p2 "Elec. Char., RDS(on)"
+    - { typ: 0.07 Ω, max: 0.082 Ω, at: { VGS: 2.5 V, ID: 2 A }, src: 'p2 "Elec. Char., RDS(on)"' }
+  gate_threshold_voltage:
+    min: 0.4 V
+    typ: 0.7 V
+    max: 1 V
+    at: { ID: 250 µA }
+    src: p2 "Elec. Char., VGS(th), VDS = VGS"

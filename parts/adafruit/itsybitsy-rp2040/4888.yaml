@@ -1,0 +1,135 @@
+# Adafruit ItsyBitsy RP2040 (4888). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (adafruit/Adafruit-ItsyBitsy-RP2040-PCB@b12f7b3),
+# converted to the package frame (board centre, top view; see the package comment). x/y/rotation
+# come from fitting each OpenParts footprint onto the design pads of that element.
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one). Left out:
+#   passives and test points
+# U2: value "AP2112K-3.3" (ordering suffix not in the design).
+schema_version: "0.2"
+kind: part
+id: adafruit/4888
+manufacturer: adafruit
+mpn: "4888"
+device: adafruit/ITSYBITSY-RP2040
+package: standards/MODULE33-18x36-P2.54-ADAFRUIT-ITSYBITSY
+sources: [adafruit/Adafruit-ItsyBitsy-RP2040-PCB@b12f7b3]
+source: adafruit/Adafruit-ItsyBitsy-RP2040-PCB@b12f7b3
+
+existence: { status: verified, src: '"README: http://www.adafruit.com/products/4888"' }
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: IC3
+    part: raspberrypi/RP2040
+    x: 0.317
+    y: -2.73
+    rotation: 180
+    src:
+      - '"Adafruit IC3 at 20.511, 9.207 rot 270"'
+      - '"IC3 value RP2040_QFN56, footprint QFN56_7MM_REDUCEDEPAD; fitted to its 57 pads (mean 0.029 mm)"'
+  - ref: U1
+    part: winbond/W25Q64JVXGIQ
+    stand_in_for: QSPI flash, value "GD25x16", USON8 4x4
+    x: -0.127
+    y: -10.681
+    rotation: 90
+    src:
+      - '"Adafruit U1 at 28.461, 8.763 rot 180"'
+      - '"U1 value GD25x16, footprint USON8_4X4; stand-in fitted to its 9 pads (mean 0.071 mm)"'
+  - ref: U2
+    part: diodes/AP2112K-3.3TRG1
+    x: -1.651
+    y: 8.763
+    rotation: 180
+    src:
+      - '"Adafruit U2 at 9.017, 7.239 rot 180"'
+      - '"U2 value AP2112K-3.3, footprint SOT23-5; fitted to its 5 pads (mean 0.15 mm)"'
+  - ref: IC1
+    part: ti/SN74AHCT1G125DCKR
+    stand_in_for: value 74HCT1G125DBV on an SC70-5 footprint
+    x: 4.191
+    y: 3.81
+    src:
+      - '"Adafruit IC1 at 13.97, 13.081 rot 0"'
+      - '"IC1 value 74HCT1G125DBV, footprint SC70-5; stand-in fitted to its 5 pads (mean 0.25 mm)"'
+  - ref: D1
+    part: onsemi/NSR0320MW2T1G
+    stand_in_for: NSR0320 (series name only)
+    x: 5.004
+    y: 12.167
+    rotation: 90
+    src:
+      - '"Adafruit D1 at 5.613, 13.894 rot 0"'
+      - '"D1 value NSR0320, footprint SOD-323F; stand-in fitted to its 2 pads (mean 0.1 mm)"'
+  - ref: D2
+    part: onsemi/NSR0320MW2T1G
+    stand_in_for: NSR0320 (series name only)
+    x: 2.908
+    y: 10.795
+    rotation: 180
+    src:
+      - '"Adafruit D2 at 6.985, 11.798 rot 90"'
+      - '"D2 value NSR0320, footprint SOD-323F; stand-in fitted to its 2 pads (mean 0.1 mm)"'
+  - ref: D3
+    part: onsemi/NSR0320MW2T1G
+    stand_in_for: NSR0320 (series name only)
+    x: 0.559
+    y: -14.554
+    rotation: 180
+    src:
+      - '"Adafruit D3 at 32.334, 9.449 rot 90"'
+      - '"D3 value NSR0320, footprint SOD-323F; stand-in fitted to its 2 pads (mean 0.1 mm)"'
+  - ref: L
+    part: kingbright/APT1608SURCK
+    stand_in_for: 0603 LED, red, MPN not stated
+    x: 3.128
+    y: 7.898
+    src:
+      - '"Adafruit L at 9.883, 12.018 rot 180"'
+      - '"L value RED, footprint CHIPLED_0603_NOOUTLINE; stand-in fitted to its 2 pads (mean 0.075 mm)"'
+  - ref: LED1
+    part: worldsemi/WS2812B-1313-V6
+    stand_in_for: SK6805 1515 addressable RGB LED (value WS2812B_SK6805_1515)
+    x: -3.988
+    y: 4.686
+    rotation: 180
+    src:
+      - '"Adafruit LED1 at 13.094, 4.902 rot 90"'
+      - '"LED1 value WS2812B_SK6805_1515, footprint SK6805_1515; stand-in fitted to its 4 pads (mean 0.112 mm)"'
+  - ref: SW2
+    part: alps/SKRPABE010
+    stand_in_for: C&K KMR2 4.2x2.8 SMD tactile switch (value KMR2)
+    x: -3.937
+    y: -12.446
+    rotation: 90
+    src:
+      - '"Adafruit SW2 at 30.226, 4.953 rot 180"'
+      - '"SW2 value KMR2, footprint BTN_KMR2_4.6X2.8; stand-in fitted to its 4 pads (mean 0.276 mm)"'
+  - ref: SW3
+    part: alps/SKRPABE010
+    stand_in_for: C&K KMR2 4.2x2.8 SMD tactile switch (value KMR2)
+    x: 3.937
+    y: -12.446
+    rotation: 90
+    src:
+      - '"Adafruit SW3 at 30.226, 12.827 rot 180"'
+      - '"SW3 value KMR2, footprint BTN_KMR2_4.6X2.8; stand-in fitted to its 4 pads (mean 0.276 mm)"'
+  - ref: X3
+    part: gct/USB3076-30-A
+    stand_in_for: 4UCON 20329 micro-B receptacle (value microUSB)
+    x: 0
+    y: 14.01
+    rotation: 180
+    src:
+      - '"Adafruit X3 at 4.445, 8.89 rot 270"'
+      - '"X3 value microUSB, footprint 4UCONN_20329_NARROW; stand-in fitted to its 11 pads (mean 0.281 mm)"'
+  - ref: Y1
+    part: abracon/ABM10-16.000MHZ-E20-T
+    stand_in_for: 12 MHz crystal 2.5x2.0, MPN not stated
+    x: 1.575
+    y: 5.779
+    src:
+      - '"Adafruit Y1 at 12.002, 10.465 rot 0"'
+      - '"Y1 value 12MHZ, footprint CRYSTAL_2.5X2; stand-in fitted to its 4 pads (mean 0.0 mm)"'

@@ -1,0 +1,30 @@
+# YAGEO CC series MLCC body, dimension code E0 (yageo/UPY-GPHC_X7R@V29
+# p3 Table 1, 0805 row E0). L2/L3/L4 (termination band) are not
+# modelled by the chip generator and are left out. Matches the L/W/T of
+# the per-part spec sheets that use it.
+schema_version: "0.2"
+kind: package
+id: manufacturers/yageo/CC0805-E0
+family: chip
+lead_count: 2
+source: yageo/UPY-GPHC_X7R@V29
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 1.15 mm
+    typ: 1.25 mm
+    max: 1.35 mm
+    src: p3 "Table 1, 0805 row code E0, W = 1.25 +/- 0.1 mm"
+  body_length:
+    min: 1.9 mm
+    typ: 2 mm
+    max: 2.1 mm
+    src: p3 "Table 1, 0805 row code E0, L1 = 2 +/- 0.1 mm"
+  body_height:
+    min: 0.5 mm
+    typ: 0.6 mm
+    max: 0.7 mm
+    src: p3 "Table 1, 0805 row code E0, T = 0.6 +/- 0.1 mm"

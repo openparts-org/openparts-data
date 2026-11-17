@@ -1,0 +1,28 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCLS305E PDF page 16, addendum dated 18-Sep-2026): row "SN74HC541PWR",
+# "TSSOP (PW) | 20". lifecycle "active" is that table's Status column.
+# Package: outline PW0020A (4220206/A) on page 27; same drawing number and
+# revision as the reused package standards/TSSOP20-4.4x6.5-P0.65-TI-PW.
+schema_version: "0.2"
+kind: part
+id: ti/SN74HC541PWR
+manufacturer: ti
+mpn: SN74HC541PWR
+device: ti/SN74HC541
+
+package:
+  value: standards/TSSOP20-4.4x6.5-P0.65-TI-PW
+  src:
+    - p16 "Package Option Addendum, row "SN74HC541PWR", "TSSOP (PW) | 20""
+    - p27 "PACKAGE OUTLINE PW0020A (4220206/A)"
+
+sources: [ti/SCLS305E]
+source: ti/SCLS305E
+
+existence:
+  status: verified
+  src: p16 "Package Option Addendum, Packaging Information table, row "SN74HC541PWR""
+
+lifecycle:
+  status: active
+  src: p16 "Package Option Addendum, row "SN74HC541PWR", Status "Active""

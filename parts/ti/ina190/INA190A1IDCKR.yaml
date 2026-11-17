@@ -1,0 +1,26 @@
+# MPN from the Package Option Addendum of SBOS863D (page 31),
+# row "INA190A1IDCKR", SC70 (DCK) | 6, Status Active. Package outline DCK0006A (4214835/D)
+# on page 38, the drawing revision the reused package was read from.
+schema_version: "0.2"
+kind: part
+id: ti/INA190A1IDCKR
+manufacturer: ti
+mpn: INA190A1IDCKR
+device: ti/INA190-DCK
+
+package:
+  value: manufacturers/ti/DCK0006A
+  src:
+    - p31 "Package Option Addendum, row INA190A1IDCKR, SC70 (DCK) | 6"
+    - p38 "PACKAGE OUTLINE DCK0006A (4214835/D)"
+
+sources: [ti/SBOS863D]
+source: ti/SBOS863D
+
+existence:
+  status: verified
+  src: p31 "Package Option Addendum, Packaging Information table, row INA190A1IDCKR"
+
+lifecycle:
+  status: active
+  src: p31 "Package Option Addendum, row INA190A1IDCKR, Status Active"

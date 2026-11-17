@@ -1,0 +1,27 @@
+# 1 A 60 V Schottky rectifier, SMA (CASE 403D). Pins from the outline
+# STYLE 1 (PIN 1. CATHODE (POLARITY BAND) 2. ANODE) and page-1 "Polarity:
+# Cathode Lead Indicated by Polarity Band".
+schema_version: "0.2"
+kind: device
+id: onsemi/SS16
+manufacturer: onsemi
+category: diode
+family: SS16
+source: onsemi/SS16-D
+
+parameters:
+  forward_voltage:
+    - { max: 0.72 V, at: { IF: 1 A, TJ: 25 °C }, src: 'p2 "ELECTRICAL CHARACTERISTICS, VF max"' }
+    - { max: 0.51 V, at: { IF: 0.1 A, TJ: 25 °C }, src: 'p2 "ELECTRICAL CHARACTERISTICS, VF max"' }
+  reverse_voltage: { max: 60 V, src: 'p2 "MAXIMUM RATINGS, VRRM/VRWM/VR"' }
+  forward_current:
+    max: 1 A
+    at: { TC: 105 °C }
+    src: p2 "MAXIMUM RATINGS, IO (At Rated VR, TC = 105°C)"
+
+pins:
+  src:
+    - 'p4 "CASE 403D STYLE 1: PIN 1. CATHODE (POLARITY BAND) 2. ANODE"'
+    - p1 "Mechanical Characteristics, Polarity"
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

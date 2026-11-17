@@ -1,0 +1,23 @@
+# CH340N: printed in the "Order Model" column of the Chapter 3 "Package"
+# table of the WCH CH340 datasheet V3D (PDF page 2), row "SOP-8, 3.9mm 150mil, 1.27mm 50mil".
+# Package: the datasheet prints no outline drawing, only the package
+# name, body width and pin pitch ("SOP-8, 3.9mm 150mil, 1.27mm 50mil"). The WCH outline of the same
+# name, body width and pitch from the CH32V003 datasheet is reused
+# (flagged for review: assumed to be the same WCH outline).
+# lifecycle: no production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: wch/CH340N
+manufacturer: wch
+mpn: CH340N
+device: wch/CH340N
+
+package:
+  value: manufacturers/wch/SOP8-3.9x5-P1.27-WCH
+  src: 'p2 "3. Package table, row CH340N: SOP-8, 3.9mm 150mil, 1.27mm 50mil"'
+
+sources: [wch/CH340DS1@V3D]
+source: wch/CH340DS1@V3D
+
+existence: { status: verified, src: 'p2 "3. Package table, Order Model CH340N"' }
+lifecycle: { status: unknown }

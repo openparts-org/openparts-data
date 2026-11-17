@@ -1,0 +1,23 @@
+# 20 kΩ, +/-1%, RC0402 general-purpose thick-film chip resistor, 7" reel.
+# Existence: YAGEO's own per-part spec sheet (yageo/RC0402FR-0720KL-SPEC) carries this
+# exact MPN as its title. Values from that sheet's "Specifications" table.
+# Package: the sheet's L/W/T (1mm +/-0.05mm / 0.5mm +/-0.05mm / 0.35mm +/-0.05mm) equal standards/CHIP0402-RC.
+# Lifecycle not stated -> unknown.
+schema_version: "0.2"
+kind: part
+id: yageo/RC0402FR-0720KL
+manufacturer: yageo
+mpn: RC0402FR-0720KL
+device: yageo/RC0402-GENERAL-PURPOSE
+package: standards/CHIP0402-RC
+sources: [yageo/RC0402FR-0720KL-SPEC]
+source: yageo/RC0402FR-0720KL-SPEC
+
+existence: { status: verified, src: 'p1 "Spec sheet title, part number"' }
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance:               { tol: ±1 %, src: 'p1 "Specifications, Resistance Tolerance"' }
+  resistance:              { typ: 20 kΩ, src: 'p1 "Specifications, Resistance"' }
+  power_rating:            { typ: 0.063 W, at: { TA: 70 °C }, src: 'p1 "Specifications, Power"' }
+  temperature_coefficient: { tol: ±100 ppm/°C, src: 'p1 "Specifications, Temp. Coefficient"' }

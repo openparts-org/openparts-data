@@ -1,0 +1,28 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCLS161D PDF page 7, addendum dated 18-Sep-2026): row "SN74HC4060PWRG4",
+# "TSSOP (PW) | 16". lifecycle "active" is that table's Status column.
+# Package: outline PW0016A (4220204/B) on page 13; same drawing number and
+# revision as the reused package standards/TSSOP16-4.4x5.0-P0.65-TI-PW.
+schema_version: "0.2"
+kind: part
+id: ti/SN74HC4060PWRG4
+manufacturer: ti
+mpn: SN74HC4060PWRG4
+device: ti/SN74HC4060
+
+package:
+  value: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+  src:
+    - p7 "Package Option Addendum, row "SN74HC4060PWRG4", "TSSOP (PW) | 16""
+    - p13 "PACKAGE OUTLINE PW0016A (4220204/B)"
+
+sources: [ti/SCLS161D]
+source: ti/SCLS161D
+
+existence:
+  status: verified
+  src: p7 "Package Option Addendum, Packaging Information table, row "SN74HC4060PWRG4""
+
+lifecycle:
+  status: active
+  src: p7 "Package Option Addendum, row "SN74HC4060PWRG4", Status "Active""

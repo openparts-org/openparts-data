@@ -1,0 +1,52 @@
+# ISO7720 dual-channel digital isolator (both channels in the same direction), D (8-pin SOIC
+# narrow) pinout from SLLSEP3G "Table 5-1. Pin Functions" (page 6, D/DWV
+# columns), checked against "Figure 5-3. ISO7720 D and DWV Package 8-Pin SOIC
+# Top View". The D package has its own (lower) VISO rating, hence a
+# device per package. Default-output option (F suffix) per Part.
+schema_version: "0.2"
+kind: device
+id: ti/ISO7720-D
+manufacturer: ti
+category: digital_isolator
+family: ISO772x
+source: ti/SLLSEP3G
+
+# Parameters (AI candidates, needs review).
+parameters:
+  isolation_voltage:
+    min: 3000 V
+    at: { t: 60 s }
+    src: p11 "Insulation Specifications, VISO withstand isolation voltage, D column 3000 VRMS"
+  cmr: { min: 85 kV/µs, src: 'p14 "6.9 Electrical Characteristics—5-V Supply, CMTI"' }
+  supply_voltage:
+    min: 2.25 V
+    max: 5.5 V
+    src: p8 "6.3 Recommended Operating Conditions, VCC1, VCC2 Supply voltage"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p8 "6.3 Recommended Operating Conditions, TA Ambient temperature"
+  esd_hbm:       { typ: 6 kV, src: 'p7 "6.2 ESD Ratings, HBM all pins ±6000 V"' }
+  channel_count: { value: "2", src: p1 "Dual-Channel Digital Isolators" }
+  propagation_delay:
+    typ: 11 ns
+    max: 17 ns
+    at: { VCC: 5 V }
+    src: p17 "6.15 Switching Characteristics—5-V Supply, tPLH, tPHL"
+  data_rate: { max: 100 Mbps, src: 'p8 "6.3 Recommended Operating Conditions, DR Data Rate"' }
+  reverse_channel_count:
+    value: "0"
+    src: p1 "3 Description, ISO7720 both channels same direction; ISO7721 opposite direction"
+
+pins:
+  src:
+    - p6 "Table 5-1. Pin Functions, D/DWV columns"
+    - p5 "Figure 5-3. ISO7720 D and DWV Package Top View"
+  "1": { name: VCC1, type: power }
+  "2": { name: INA, type: input }
+  "3": { name: INB, type: input }
+  "4": { name: GND1, type: ground }
+  "5": { name: GND2, type: ground }
+  "6": { name: OUTB, type: output }
+  "7": { name: OUTA, type: output }
+  "8": { name: VCC2, type: power }

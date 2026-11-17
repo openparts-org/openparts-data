@@ -1,0 +1,19 @@
+# Official Microchip datasheet "25LC512 512-Kbit SPI Bus Serial EEPROM". Downloaded 2026-11-17
+# with curl from ww1.microchip.com (URL below; found with a search
+# restricted to ww1.microchip.com, the microchip.com product pages refuse
+# plain fetches). document_id / revision from the printed footer
+# "DS20002065E-page N"; the Revision History's latest entry is
+# "Revision E (07/2022)". 38 PDF pages; text read with pdftotext -layout.
+# Page numbers in this dataset are PDF page indices (they equal the
+# printed page numbers). sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20002065@revE
+sha256: c4706197bd3aa55c7e2e884953a264881b73a768bc89902c0709545642b740ea
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/MPD/ProductDocuments/DataSheets/25LC512-512-Kbit-SPI-Bus-Serial-EEPROM-Data-Sheet-20002065.pdf
+publisher: microchip
+document_id: DS20002065
+document_type: datasheet
+revision: E
+date: 2022-07

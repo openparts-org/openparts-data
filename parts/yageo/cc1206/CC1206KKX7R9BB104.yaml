@@ -1,0 +1,23 @@
+# 0.1 µF X7R 50 V 1206 general-purpose MLCC (YAGEO CC series).
+# Existence: YAGEO's own per-part spec sheet (yageo/CC1206KKX7R9BB104-SPEC) carries this
+# exact MPN as its title. Values from the sheet's "Specifications" table.
+# Package: the sheet's L/W/T (3.2mm +/-0.15mm / 1.6mm +/-0.15mm / 0.85mm +/-0.1mm) equal dimension code
+# F0 of yageo/UPY-GPHC_X7R@V29 Table 1 -> manufacturers/yageo/CC1206-F0. Lifecycle not stated -> unknown.
+schema_version: "0.2"
+kind: part
+id: yageo/CC1206KKX7R9BB104
+manufacturer: yageo
+mpn: CC1206KKX7R9BB104
+device: yageo/CC1206-X7R
+package: manufacturers/yageo/CC1206-F0
+sources: [yageo/CC1206KKX7R9BB104-SPEC]
+source: yageo/CC1206KKX7R9BB104-SPEC
+
+existence: { status: verified, src: 'p1 "Spec sheet title, part number"' }
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 0.1 µF, src: 'p1 "Specifications, Capacitance"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "Specifications, Tolerance"' }
+  rated_voltage: { typ: 50 V, src: 'p1 "Specifications, Voltage DC"' }
+  dielectric:    { value: X7R, src: 'p1 "Specifications, Temp. Coefficient"' }

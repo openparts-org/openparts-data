@@ -1,0 +1,15 @@
+# YAGEO per-part spec sheet for CC0402JRNPO9BN220, served by the manufacturer's own
+# spec-sheet download endpoint (plain curl, PDF; a non-existent MPN returns
+# HTTP 404). The sheet carries no revision; it prints only "Generated
+# 11/17/2026", recorded as date/revision. Read via pdftotext -layout.
+schema_version: "0.2"
+kind: source
+id: yageo/CC0402JRNPO9BN220-SPEC
+sha256: 9275d1541b9cb8bcdcd46a486b1db4c9777b57fd2557177f206c40d9a7138bc1
+retrieved: 2026-11-17
+url: https://yageogroup.com/component-documentation/download/specsheet/CC0402JRNPO9BN220
+publisher: yageo
+document_id: CC0402JRNPO9BN220
+document_type: datasheet
+revision: generated 2026-11-17
+date: 2026-11-17

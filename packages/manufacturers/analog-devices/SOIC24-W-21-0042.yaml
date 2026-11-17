@@ -1,0 +1,46 @@
+# Analog Devices (Maxim) 24-lead SOIC, 0.300" (7.5 mm) body, outline
+# 21-0042 rev. Q "PACKAGE OUTLINE, SOIC .300"" (JEDEC MS-013), read from
+# the rendered drawing (same source as
+# manufacturers/analog-devices/SOIC16-W-21-0042). COMMON DIMENSIONS
+# table (mm columns) plus VARIATION D (N 24, MS013 AD), whose package-
+# code list includes W24+1 (MAX7219/MAX7221 "24 SOIC W24+1"). Only
+# min/max are printed. Mapping as the 16-lead variant: body_width = E,
+# body_length = D (variation D), overall_width = H, overall_height = A,
+# standoff = A1, lead_width = b, lead_thickness = c, lead_length = L.
+schema_version: "0.2"
+kind: package
+id: manufacturers/analog-devices/SOIC24-W-21-0042
+family: soic
+lead_count: { value: 24, src: 'p1 "21-0042 VARIATION D, N 24"' }
+source: analog-devices/21-0042@revQ
+
+pitch: { typ: 1.27 mm, src: 'p1 "21-0042 COMMON DIMENSIONS (MM), e 1.27 BSC"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 7.4 mm
+    max: 7.6 mm
+    src: p1 "21-0042 COMMON DIMENSIONS (MM), E 7.40 / 7.60"
+  body_length: { min: 15.2 mm, max: 15.6 mm, src: 'p1 "21-0042 VARIATION D (MM), D 15.20 / 15.60"' }
+  lead_thickness:
+    min: 0.23 mm
+    max: 0.32 mm
+    src: p1 "21-0042 COMMON DIMENSIONS (MM), c 0.23 / 0.32"
+  lead_length:
+    min: 0.4 mm
+    max: 1.27 mm
+    src: p1 "21-0042 COMMON DIMENSIONS (MM), L 0.40 / 1.27"
+  overall_width:
+    min: 10 mm
+    max: 10.65 mm
+    src: p1 "21-0042 COMMON DIMENSIONS (MM), H 10.00 / 10.65"
+  overall_height:
+    min: 2.35 mm
+    max: 2.65 mm
+    src: p1 "21-0042 COMMON DIMENSIONS (MM), A 2.35 / 2.65"
+  standoff: { min: 0.1 mm, max: 0.3 mm, src: 'p1 "21-0042 COMMON DIMENSIONS (MM), A1 0.10 / 0.30"' }
+  lead_width:
+    min: 0.35 mm
+    max: 0.49 mm
+    src: p1 "21-0042 COMMON DIMENSIONS (MM), b 0.35 / 0.49"

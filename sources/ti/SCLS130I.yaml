@@ -1,0 +1,17 @@
+# Official TI datasheet "SNx4HC244 Octal Buffers and Line Drivers With 3-State Outputs". Downloaded 2026-11-17 from
+# the TI symlink URL below with curl (HTTP 200, PDF); revision read from
+# the page header "SCLS130I - DECEMBER 1982 - REVISED FEBRUARY 2026". 42 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM is dated 18-Sep-2026 (newer than the
+# datasheet revision). sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS130I
+sha256: 96fab8d66e73471202eddee965c22a78430f330c328a901cc6d78094915f49e9
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/sn74hc244.pdf
+publisher: ti
+document_id: SCLS130I
+document_type: datasheet
+revision: I
+date: 2026-02

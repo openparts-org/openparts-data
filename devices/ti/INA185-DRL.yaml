@@ -1,0 +1,48 @@
+# INA185 bidirectional current-sense amplifier (DRL, SOT-563). Pin map from
+# Table 4-1 "Pin Functions" (SBOS378A page 3), SOT-563 column, checked
+# against Figure 4-1 on the same page. The SC70 (DCK) map differs (own
+# device). Offset voltage depends on the gain option and is on the
+# Parts. Gain (20/50/100/200 V/V) and bandwidth have no parameter key.
+schema_version: "0.2"
+kind: device
+id: ti/INA185-DRL
+manufacturer: ti
+category: current_sense_amplifier
+family: INA185
+source: ti/SBOS378A
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 2.7 V, max: 5.5 V, src: 'p4 "5.3 Recommended Operating Conditions, VS"' }
+  supply_current:
+    typ: 200 µA
+    max: 260 µA
+    at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+    src: p5 "5.5 Electrical Characteristics, IQ, VSENSE = 0 mV"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "5.3 Recommended Operating Conditions, TA"
+  esd_hbm:   { typ: 3 kV, src: 'p4 "5.2 ESD Ratings, HBM ±3000 V"' }
+  channel_count:
+    value: "1"
+    src: p1 "single bidirectional current-sense amplifier (Description)"
+  slew_rate: { typ: 2 V/µs, src: 'p5 "5.5 Electrical Characteristics, SR"' }
+  input_bias_current:
+    - typ: 75 µA
+      at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+      src: p5 "5.5 Electrical Characteristics, IIB, VSENSE = 0 mV"
+    - typ: 6 µA
+      at: { VS: 5 V, VIN: 0 V, TA: 25 °C }
+      src: p5 "5.5 Electrical Characteristics, IIB, VSENSE = 0 mV, VCM = 0 V (printed -6 µA)"
+
+pins:
+  src:
+    - p3 "Table 4-1 Pin Functions, SOT-563 column"
+    - p3 "Figure 4-1 INA185 DRL Package 6-Pin SOT-563 Top View"
+  "1": { name: OUT, type: analog }
+  "2": { name: GND, type: ground }
+  "3": { name: IN+, type: analog }
+  "4": { name: IN-, type: analog }
+  "5": { name: REF, type: analog }
+  "6": { name: VS, type: power }

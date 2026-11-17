@@ -1,0 +1,42 @@
+# Bosch Sensortec BMP585 barometric pressure sensor (gel-filled, metal
+# lid with a round opening), 8-pin 3.25 x 3.25 mm LGA. Pin names and I/O
+# types from Table 26 "Pin description" (section 6.1, page 45), numbers
+# checked against Figure 22 "Pin out bottom and top view" (same page).
+# Supply -> power, In -> input, In/Out -> io, Out -> output; pin 6
+# "VSSIO/VSS" (Ground) -> ground. Pad 9 "L/M Pad" (laser marking, "No
+# external connection possible due to S/R coverage") is not a pin and is
+# left out. VDD is the "Analog power supply" and VDDIO the "Digital
+# interface power supply" -> analog_/digital_supply_voltage.
+schema_version: "0.2"
+kind: device
+id: bosch/BMP585
+manufacturer: bosch
+category: pressure_sensor
+family: BMP5
+source: bosch/BST-BMP585-DS003-02
+
+# Parameters (AI candidates, needs review).
+parameters:
+  analog_supply_voltage:
+    min: 1.71 V
+    max: 3.6 V
+    src: p12 "Table 4 Electrical characteristics, Power supply voltage VDD"
+  digital_supply_voltage:
+    min: 1.08 V
+    max: 3.6 V
+    src: p12 "Table 4 Electrical characteristics, Power supply voltage I/Os VDDIO"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p11 "Table 1 Pressure Performance, Temperature range TA (operational range)"
+
+pins:
+  src: [p45 "Table 26 Pin description", p45 "Figure 22 Pin out bottom and top view"]
+  "1": { name: SCX, type: input }
+  "2": { name: SDX, type: io }
+  "3": { name: SDO, type: io }
+  "4": { name: VDDIO, type: power }
+  "5": { name: INT, type: output }
+  "6": { name: VSS, type: ground }
+  "7": { name: CSB, type: input }
+  "8": { name: VDD, type: power }

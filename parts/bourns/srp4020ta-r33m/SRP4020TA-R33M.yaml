@@ -1,0 +1,35 @@
+# 0.33 µH +/-20%, SRP4020TA shielded (carbonyl powder core, AEC-Q200) power inductor, per the page-1
+# Electrical Specifications table (read from a 110 dpi render, checked
+# against the pdftotext layout). lifecycle unknown: no production-status statement.
+schema_version: "0.2"
+kind: part
+id: bourns/SRP4020TA-R33M
+manufacturer: bourns
+mpn: SRP4020TA-R33M
+device: bourns/SRP4020TA-SERIES
+package: manufacturers/bourns/CHIP-BOURNS-SRP4020TA
+sources: [bourns/SRP4020TA]
+source: bourns/SRP4020TA
+
+existence:
+  status: verified
+  src: p1 "Electrical Specifications, SRP4020TA-R33M row (Part Number)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance: { tol: ±20 %, src: 'p1 "Electrical Specifications, SRP4020TA-R33M row, Tol. %"' }
+  inductance:
+    typ: 0.33 µH
+    at: { f: 100 kHz }
+    src: p1 "Electrical Specifications, SRP4020TA-R33M row, L (@ 100 KHz / 1 V)"
+  rated_current:
+    typ: 10 A
+    src: p1 "Electrical Specifications, SRP4020TA-R33M row, Irms (temp. rise 40 °C)"
+  saturation_current:
+    typ: 18 A
+    src: p1 "Electrical Specifications, SRP4020TA-R33M row, Isat (L drop 20 %)"
+  dcr:
+    typ: 7.8 mΩ
+    max: 8.6 mΩ
+    src: p1 "Electrical Specifications, SRP4020TA-R33M row, DCR (mΩ) Typ./Max."

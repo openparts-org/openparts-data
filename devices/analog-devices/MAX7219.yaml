@@ -1,0 +1,59 @@
+# MAX7219 serially interfaced 8-digit common-cathode LED display driver
+# (7-segment digits, bar graphs or 64 individual LEDs; 8x8 display
+# RAM), 24-pin DIP/SO. Pinout from 19-4452 Rev 6 "Pin Configuration"
+# (page 1, top view, DIP/SO) and "Pin Description" (page 5).
+# The MAX7219's interface is a 4-wire serial interface (DIN, CLK, LOAD,
+# DOUT); SPI compatibility is stated for the MAX7221 only, so no
+# data_interface is recorded.
+schema_version: "0.2"
+kind: device
+id: analog-devices/MAX7219
+manufacturer: analog-devices
+category: display_driver
+family: MAX7219
+source: analog-devices/MAX7219-MAX7221-rev6
+
+# Parameters (AI candidates, needs review).
+parameters:
+  output_current:
+    min: 30 mA
+    typ: 40 mA
+    max: 45 mA
+    at: { VCC: 5 V, TA: 25 °C }
+    src: p2 "Electrical Characteristics, ISEG Segment Drive Source Current, VOUT = V+ - 1V"
+  supply_voltage:
+    min: 4 V
+    max: 5.5 V
+    src: p2 "Electrical Characteristics, V+ Operating Supply Voltage"
+  display_type:
+    value: led
+    src: p1 "General Description, 7-segment numeric LED displays, bar-graph, 64 LEDs"
+  segment_count: { value: "8", src: 'p5 "Pin Description, SEG A-SEG G, DP"' }
+  common_count:  { value: "8", src: 'p5 "Pin Description, DIG 0-DIG 7 eight-digit drive lines"' }
+
+pins:
+  src:  ['p1 "Pin Configuration, TOP VIEW, DIP/SO"', p5 "Pin Description"]
+  "1":  { name: DIN, type: input }
+  "2":  { name: DIG0, type: output }
+  "3":  { name: DIG4, type: output }
+  "4":  { name: GND, type: ground }
+  "5":  { name: DIG6, type: output }
+  "6":  { name: DIG2, type: output }
+  "7":  { name: DIG3, type: output }
+  "8":  { name: DIG7, type: output }
+  "9":  { name: GND, type: ground }
+  "10": { name: DIG5, type: output }
+  "11": { name: DIG1, type: output }
+  "12": { name: LOAD, type: input }
+  "13": { name: CLK, type: input }
+  "14": { name: SEG_A, type: output }
+  "15": { name: SEG_F, type: output }
+  "16": { name: SEG_B, type: output }
+  "17": { name: SEG_G, type: output }
+  "18": { name: ISET, type: analog }
+  "19": { name: V+, type: power }
+  "20": { name: SEG_C, type: output }
+  "21": { name: SEG_E, type: output }
+  "22": { name: SEG_DP, type: output }
+  "23": { name: SEG_D, type: output }
+  "24": { name: DOUT, type: output }

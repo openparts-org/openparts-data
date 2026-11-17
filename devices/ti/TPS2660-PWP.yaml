@@ -1,0 +1,64 @@
+# TPS2660x 60-V, 2.23-A industrial eFuse with reverse polarity
+# protection, PWP (16-pin HTSSOP PowerPAD) pinout from SLVSDG2G "Pin
+# Functions" (pages 4-5, HTSSOP column), checked against the "PWP
+# Package 16-Pin HTSSOP Top View" figure (page 4). One pinout for
+# TPS26600/1/2; the variants differ in OVP (adjustable cut-off vs fixed
+# 38-V clamp) and fault response (page 4 "Device Comparison"), so the
+# variant facts are on the Parts. PowerPAD: "connect to RTN plane"
+# (written EP, ground-typed like other PowerPAD devices).
+# operating_temperature: the Electrical Characteristics are specified
+# for -40 °C <= TA = TJ <= +125 °C.
+schema_version: "0.2"
+kind: device
+id: ti/TPS2660-PWP
+manufacturer: ti
+category: efuse
+family: TPS2660
+source: ti/SLVSDG2G
+
+# Parameters (AI candidates, needs review).
+parameters:
+  on_resistance:
+    typ: 150 mΩ
+    max: 160 mΩ
+    at: { TJ: 25 °C }
+    src: p8 "7.5 Electrical Characteristics, RON IN to OUT total ON resistance, TJ = 25°C"
+  input_voltage_max:
+    max: 60 V
+    src: p6 "7.3 Recommended Operating Conditions, IN input voltage"
+  supply_current:
+    typ: 300 µA
+    max: 390 µA
+    src: p7 "7.5 Electrical Characteristics, IQ(ON) Enabled, V(SHDN) = 2 V"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p7 "7.5 Electrical Characteristics header, –40°C ≤ TA = TJ ≤ +125°C"
+  esd_hbm: { typ: 1 kV, src: 'p6 "7.2 ESD Ratings, HBM ±1000 V"' }
+  current_limit:
+    min: 0.1 A
+    max: 2.23 A
+    src: p1 "Features, 0.1-A to 2.23-A Adjustable current limit"
+
+pins:
+  src:
+    - p4 "Pin Functions, HTSSOP column"
+    - p5 "Pin Functions (continued), HTSSOP column"
+    - p4 "PWP Package 16-Pin HTSSOP Top View"
+  "1":  { name: IN, type: power }
+  "2":  { name: IN, type: power }
+  "3":  { name: UVLO, type: analog }
+  "4":  { name: NC, type: nc }
+  "5":  { name: OVP, type: analog }
+  "6":  { name: MODE, type: input }
+  "7":  { name: SHDN, type: input }
+  "8":  { name: RTN, type: ground }
+  "9":  { name: GND, type: ground }
+  "10": { name: IMON, type: analog }
+  "11": { name: ILIM, type: analog }
+  "12": { name: dVdT, type: analog }
+  "13": { name: NC, type: nc }
+  "14": { name: FLT, type: output }
+  "15": { name: OUT, type: power }
+  "16": { name: OUT, type: power }
+  EP:   { name: RTN, type: ground }

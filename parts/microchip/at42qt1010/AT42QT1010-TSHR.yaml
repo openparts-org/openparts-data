@@ -1,0 +1,21 @@
+# MPN from DS40001946A "5.8 Part Number" table (page 23):
+# "AT42QT1010-TSHR | 6-pin SOT23 RoHS compliant IC". Package drawing 6ST1
+# (section 5.6.1, page 21).
+schema_version: "0.2"
+kind: part
+id: microchip/AT42QT1010-TSHR
+manufacturer: microchip
+mpn: AT42QT1010-TSHR
+device: microchip/AT42QT1010-SOT23
+
+package:
+  value: manufacturers/microchip/SOT23-6-6ST1
+  src:
+    - p23 "5.8 Part Number, AT42QT1010-TSHR 6-pin SOT23"
+    - p21 "5.6.1 6-pin SOT23-6, drawing 6ST1"
+
+sources: [microchip/DS40001946A]
+source: microchip/DS40001946A
+
+existence: { status: verified, src: 'p23 "5.8 Part Number table, row AT42QT1010-TSHR"' }
+lifecycle: { status: unknown }

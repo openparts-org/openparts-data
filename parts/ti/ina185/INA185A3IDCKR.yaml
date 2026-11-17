@@ -1,0 +1,38 @@
+# MPN from the Package Option Addendum of SBOS378A (page 27),
+# row "INA185A3IDCKR", SC70 (DCK) | 6, Status Active. Package outline DCK0006A (4214835/D)
+# on page 34, the drawing revision the reused package was read from.
+schema_version: "0.2"
+kind: part
+id: ti/INA185A3IDCKR
+manufacturer: ti
+mpn: INA185A3IDCKR
+device: ti/INA185-DCK
+
+package:
+  value: manufacturers/ti/DCK0006A
+  src:
+    - p27 "Package Option Addendum, row INA185A3IDCKR, SC70 (DCK) | 6"
+    - p34 "PACKAGE OUTLINE DCK0006A (4214835/D)"
+
+sources: [ti/SBOS378A]
+source: ti/SBOS378A
+
+existence:
+  status: verified
+  src: p27 "Package Option Addendum, Packaging Information table, row INA185A3IDCKR"
+
+lifecycle:
+  status: active
+  src: p27 "Package Option Addendum, row INA185A3IDCKR, Status Active"
+
+# Parameters (AI candidates, needs review).
+parameters:
+  input_offset_voltage:
+    - typ: 25 µV
+      max: 130 µV
+      at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+      src: p5 "5.5 EC, VOS RTI, VIN+ = 12 V, A2, A3 devices (printed ±25/±130)"
+    - typ: 5 µV
+      max: 55 µV
+      at: { VS: 5 V, VIN: 0 V, TA: 25 °C }
+      src: p5 "5.5 EC, VOS RTI, VIN+ = 0 V, A2, A3, A4 devices (printed ±5/±55)"

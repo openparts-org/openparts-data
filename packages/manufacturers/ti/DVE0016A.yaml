@@ -1,0 +1,66 @@
+# TI DVE0016A "SO-MOD - 2.65 mm max height" (16-lead wide SOIC module
+# body, 1.27 mm pitch; drawing 4224275/D 10/2023 on the outline page,
+# 4224275/A 10/2023 printed on the board-layout page), read from the
+# PACKAGE OUTLINE page of SNVSB38D (UCC12050, PDF page 32) and the
+# EXAMPLE BOARD LAYOUT page (page 33). Millimetres as printed. Its
+# printed numbers equal manufacturers/ti/DW0016B (another drawing), so
+# the dimensions and the IPC-7351 NOMINAL land pattern are recorded the
+# same way: 16X (2) x (0.6) pads, (9.3) row spacing -> x = ±4.65, 14X
+# (1.27) pitch. Pin 1 top-left.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DVE0016A
+family: soic
+lead_count: 16
+source: ti/SNVSB38D
+
+pitch:
+  typ: 1.27 mm
+  src: p32 "PACKAGE OUTLINE DVE0016A (4224275/D), "14X 1.27" (basic); "2X 8.89""
+
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 7.4 mm
+    max: 7.6 mm
+    src: p32 "DVE0016A, body width "7.6 / 7.4 NOTE 4" (datum B)"
+  body_length:
+    min: 10.1 mm
+    max: 10.5 mm
+    src: p32 "DVE0016A, body length "10.5 / 10.1 NOTE 3" (datum A)"
+  lead_thickness:
+    min: 0.1 mm
+    max: 0.33 mm
+    src: p32 "DVE0016A, lead thickness "0.33 / 0.10 TYP""
+  lead_length:
+    min: 0.4 mm
+    max: 1.27 mm
+    src: p32 "DVE0016A DETAIL A, foot length "1.27 / 0.40""
+  overall_width:
+    min: 9.97 mm
+    max: 10.63 mm
+    src: p32 "DVE0016A, lead-tip span "10.63 / 9.97 TYP" (min/max only)"
+  overall_height: { max: 2.65 mm, src: 'p32 "DVE0016A side view, "2.65 MAX""' }
+  standoff:       { min: 0.1 mm, max: 0.3 mm, src: 'p32 "DVE0016A DETAIL A, standoff "0.3 / 0.1""' }
+  lead_width:     { min: 0.31 mm, max: 0.51 mm, src: 'p32 "DVE0016A, "16X 0.51 / 0.31""' }
+
+pads:
+  value:
+    - { number: "1", x: -4.65, y: 4.445, width: 2, length: 0.6 }
+    - { number: "2", x: -4.65, y: 3.175, width: 2, length: 0.6 }
+    - { number: "3", x: -4.65, y: 1.905, width: 2, length: 0.6 }
+    - { number: "4", x: -4.65, y: 0.635, width: 2, length: 0.6 }
+    - { number: "5", x: -4.65, y: -0.635, width: 2, length: 0.6 }
+    - { number: "6", x: -4.65, y: -1.905, width: 2, length: 0.6 }
+    - { number: "7", x: -4.65, y: -3.175, width: 2, length: 0.6 }
+    - { number: "8", x: -4.65, y: -4.445, width: 2, length: 0.6 }
+    - { number: "9", x: 4.65, y: -4.445, width: 2, length: 0.6 }
+    - { number: "10", x: 4.65, y: -3.175, width: 2, length: 0.6 }
+    - { number: "11", x: 4.65, y: -1.905, width: 2, length: 0.6 }
+    - { number: "12", x: 4.65, y: -0.635, width: 2, length: 0.6 }
+    - { number: "13", x: 4.65, y: 0.635, width: 2, length: 0.6 }
+    - { number: "14", x: 4.65, y: 1.905, width: 2, length: 0.6 }
+    - { number: "15", x: 4.65, y: 3.175, width: 2, length: 0.6 }
+    - { number: "16", x: 4.65, y: 4.445, width: 2, length: 0.6 }
+  src: p33 "DVE0016A LAND PATTERN EXAMPLE, IPC-7351 NOMINAL - 16X (2) x (0.6), (9.3) rows, 14X (1.27)"

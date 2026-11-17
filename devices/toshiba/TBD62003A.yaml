@@ -1,0 +1,40 @@
+# TBD62003A 7-channel sink-type DMOS transistor array with output clamp
+# diodes (Toshiba's successor class to the ULN200x / ULN280x Darlington
+# arrays; category darlington_array is the closest node). Pin map from
+# "Pin explanations" (datasheet page 2); the pin-connection drawing on
+# page 1 is an image. All packages (PG, FG, FNG, FWG) share it. COMMON
+# (clamp-diode common) is typed passive as ti/ULN2003A's COM. The
+# datasheet also covers the TBD62004A series (different input
+# thresholds), not modelled here. channel_count is left out: "7" is not
+# in the key's value list.
+schema_version: "0.2"
+kind: device
+id: toshiba/TBD62003A
+manufacturer: toshiba
+category: darlington_array
+family: TBD62003A
+source: toshiba/TBD62003A-datasheet-en
+
+# Parameters (AI candidates, needs review).
+parameters:
+  output_current:        { max: 500 mA, src: 'p3 "Absolute Maximum Ratings, IOUT 500 mA/ch"' }
+  operating_temperature: { min: -40 °C, max: 85 °C, src: p4 "Operating Ranges (Ta = -40 to 85 °C)" }
+
+pins:
+  src:  p2 "Pin explanations, Pin No. / Pin name"
+  "1":  { name: I1, type: input }
+  "2":  { name: I2, type: input }
+  "3":  { name: I3, type: input }
+  "4":  { name: I4, type: input }
+  "5":  { name: I5, type: input }
+  "6":  { name: I6, type: input }
+  "7":  { name: I7, type: input }
+  "8":  { name: GND, type: ground }
+  "9":  { name: COMMON, type: passive }
+  "10": { name: O7, type: output }
+  "11": { name: O6, type: output }
+  "12": { name: O5, type: output }
+  "13": { name: O4, type: output }
+  "14": { name: O3, type: output }
+  "15": { name: O2, type: output }
+  "16": { name: O1, type: output }

@@ -1,0 +1,26 @@
+# Orderable MPN and status from the PACKAGE OPTION ADDENDUM (page 14):
+# row TPD4E001DBVR, Active, SOT-23 (DBV) 6 pins. Package DBV0006A (4214840/G) on
+# page 24: the same drawing number and revision as manufacturers/ti/DBV0006A. Reused.
+schema_version: "0.2"
+kind: part
+id: ti/TPD4E001DBVR
+manufacturer: ti
+mpn: TPD4E001DBVR
+device: ti/TPD4E001
+
+package:
+  value: manufacturers/ti/DBV0006A
+  src:
+    - p14 "PACKAGE OPTION ADDENDUM, row TPD4E001DBVR, Package "SOT-23 (DBV) | 6""
+    - p24 "PACKAGE OUTLINE DBV0006A (4214840/G)"
+
+sources: [ti/SLLS682P]
+source: ti/SLLS682P
+
+existence:
+  status: verified
+  src: p14 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TPD4E001DBVR"
+
+lifecycle:
+  status: active
+  src: p14 "PACKAGE OPTION ADDENDUM, row TPD4E001DBVR, Status column "Active""

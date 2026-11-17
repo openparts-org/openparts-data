@@ -1,0 +1,47 @@
+# Adafruit Metro RP2040: the pins of the module package standards/MODULE32-69x53-P2.54-ADAFRUIT-METRO,
+# named after the net each header pad connects to in the maker's design file (adafruit/Adafruit-Metro-RP2040-PCB@9fe571e).
+# Types are this dataset's reading of the net names (GND ground; supply nets power;
+# reset nets reset; others io). "!" (active-low bar) and a leading "+" are dropped. AI candidate, needs review.
+# connected_to: a second header pad on the same design net as an earlier pin.
+schema_version: "0.2"
+kind: device
+id: adafruit/METRO-RP2040
+manufacturer: adafruit
+category: microcontroller
+family: RP2040
+source: adafruit/Adafruit-Metro-RP2040-PCB@9fe571e
+
+pins:
+  src:  '"header pads POWER, AD, IOL, IOH: net names"'
+  "1":  { name: NC, type: nc }
+  "2":  { name: 3.3V, type: power }
+  "3":  { name: RESET, type: reset }
+  "4":  { name: 3.3V, type: power }
+  "5":  { name: 5V, type: power }
+  "6":  { name: GND, type: ground }
+  "7":  { name: GND, type: ground }
+  "8":  { name: VIN, type: power }
+  "9":  { name: A0, type: io }
+  "10": { name: A1, type: io }
+  "11": { name: A2, type: io }
+  "12": { name: A3, type: io }
+  "13": { name: D24, type: io }
+  "14": { name: D25, type: io }
+  "15": { name: RXD, type: io }
+  "16": { name: TXD, type: io }
+  "17": { name: D2, type: io }
+  "18": { name: D3, type: io }
+  "19": { name: D4, type: io }
+  "20": { name: D5, type: io }
+  "21": { name: D6, type: io }
+  "22": { name: D7, type: io }
+  "23": { name: D8, type: io }
+  "24": { name: D9, type: io }
+  "25": { name: D10, type: io }
+  "26": { name: D11, type: io }
+  "27": { name: D12, type: io }
+  "28": { name: D13, type: io }
+  "29": { name: GND, type: ground }
+  "30": { name: 3.3V, type: power }
+  "31": { name: SDA, type: io }
+  "32": { name: SCL, type: io }

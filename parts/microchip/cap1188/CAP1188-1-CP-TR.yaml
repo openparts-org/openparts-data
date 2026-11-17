@@ -1,0 +1,21 @@
+# MPN from DS00001620C "PRODUCT IDENTIFICATION SYSTEM" (page 77) example:
+# "CAP1188-1-CP-TR 24-pin QFN 4mm x 4mm (RoHS compliant) ... Reel size is
+# 4,000 pieces"; temperature range blank = 0 °C to +85 °C.
+schema_version: "0.2"
+kind: part
+id: microchip/CAP1188-1-CP-TR
+manufacturer: microchip
+mpn: CAP1188-1-CP-TR
+device: microchip/CAP1188
+
+package:
+  value: manufacturers/microchip/QFN24-4x4-P0.5-EP2.5-CAP1188
+  src:
+    - p77 "PRODUCT IDENTIFICATION SYSTEM, CAP1188-1-CP-TR 24-pin QFN 4mm x 4mm"
+    - p67 "FIGURE 7-1 CAP1188 Package Drawing - 24-Pin QFN 4mm x 4mm"
+
+sources: [microchip/DS00001620C]
+source: microchip/DS00001620C
+
+existence: { status: verified, src: 'p77 "PRODUCT IDENTIFICATION SYSTEM, example CAP1188-1-CP-TR"' }
+lifecycle: { status: unknown }

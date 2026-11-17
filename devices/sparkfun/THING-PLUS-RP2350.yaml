@@ -1,0 +1,43 @@
+# SparkFun Thing Plus - RP2350: the pins of the module package standards/MODULE28-23x58-P2.54-SPARKFUN-THING-PLUS,
+# named after the net each header pad connects to in the maker's design file (sparkfun/SparkFun_Thing_Plus_RP2350@2171777).
+# Types are this dataset's reading of the net names (GND ground; supply nets power;
+# reset nets reset; others io). "!" (active-low bar) and a leading "+" are dropped. AI candidate, needs review.
+# connected_to: a second header pad on the same design net as an earlier pin.
+schema_version: "0.2"
+kind: device
+id: sparkfun/THING-PLUS-RP2350
+manufacturer: sparkfun
+category: microcontroller
+family: RP2350
+source: sparkfun/SparkFun_Thing_Plus_RP2350@2171777
+
+pins:
+  src:  '"header pads J1: net names"'
+  "1":  { name: RESET, type: reset }
+  "2":  { name: 3.3V, type: power }
+  "3":  { name: VDDA, type: io }
+  "4":  { name: GND, type: ground }
+  "5":  { name: GPIO26/A0, type: io }
+  "6":  { name: GPIO27/A1, type: io }
+  "7":  { name: GPIO28/A2, type: io }
+  "8":  { name: GPIO5, type: io }
+  "9":  { name: GPIO11, type: io }
+  "10": { name: GPIO12, type: io }
+  "11": { name: SCK, type: io }
+  "12": { name: PICO, type: io }
+  "13": { name: POCI, type: io }
+  "14": { name: RX, type: io }
+  "15": { name: TX, type: io }
+  "16": { name: LED_OUT, type: io }
+  "17": { name: SDA, type: io }
+  "18": { name: SCL, type: io }
+  "19": { name: GPIO22, type: io }
+  "20": { name: GPIO21, type: io }
+  "21": { name: GPIO20, type: io }
+  "22": { name: GPIO19, type: io }
+  "23": { name: GPIO18, type: io }
+  "24": { name: GPIO17, type: io }
+  "25": { name: GPIO16, type: io }
+  "26": { name: V_USB, type: power }
+  "27": { name: EN, type: input }
+  "28": { name: V_BATT, type: power }

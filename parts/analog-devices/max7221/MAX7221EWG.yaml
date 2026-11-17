@@ -1,0 +1,28 @@
+# MPN from 19-4452 Rev 6 "Ordering Information" (page 14): MAX7221EWG,
+# -40°C to +85°C, 24 Wide SO. Package Information (page 14): 24 SOIC,
+# package code W24+1, outline 21-0042 -> variation D (N 24) of that
+# drawing, manufacturers/analog-devices/SOIC24-W-21-0042.
+schema_version: "0.2"
+kind: part
+id: analog-devices/MAX7221EWG
+manufacturer: analog-devices
+mpn: MAX7221EWG
+device: analog-devices/MAX7221
+
+package:
+  value: manufacturers/analog-devices/SOIC24-W-21-0042
+  src:
+    - p14 "Ordering Information, MAX7221EWG 24 Wide SO"
+    - p14 "Package Information, 24 SOIC W24+1, outline 21-0042"
+
+sources: [analog-devices/MAX7219-MAX7221-rev6, analog-devices/21-0042@revQ]
+source: analog-devices/MAX7219-MAX7221-rev6
+
+existence: { status: verified, src: 'p14 "Ordering Information, row MAX7221EWG"' }
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p14 "Ordering Information, MAX7221EWG TEMP RANGE"

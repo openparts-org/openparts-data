@@ -1,0 +1,45 @@
+# USB to serial (UART) bridge CH340N (built-in clock), 8-pin SOP pin
+# map from the Chapter 4 "Pin" table (CH340DS1 V3D pages 3-4), column
+# "SOP8 Pin No.". Names ending in # are active low and written _N. V3 is
+# the internal 3.3 V regulator pin: typed power. supply_voltage: the two
+# printed operating modes as disjoint ranges.
+schema_version: "0.2"
+kind: device
+id: wch/CH340N
+manufacturer: wch
+category: interface
+family: CH340
+source: wch/CH340DS1@V3D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    ranges: [{ min: 3.1 V, max: 3.6 V }, { min: 4 V, max: 5.3 V }]
+    src:
+      - p9 "6.3 3.3V Electrical Parameters, VCC (V3 connected to VCC), CH340C/N/K/E/X/B row"
+      - p8 "6.2 5V Electrical Parameters, VCC (V3 only to a capacitor)"
+  supply_current:
+    - typ: 7 mA
+      max: 20 mA
+      at: { VCC: 5 V, TA: 25 °C }
+      src: p8 "6.2 5V Electrical Parameters, ICC during operation, CH340G/C/N/K/E/X/T/R row"
+    - typ: 4 mA
+      max: 12 mA
+      at: { VCC: 3.3 V, TA: 25 °C }
+      src: p9 "6.3 3.3V Electrical Parameters, ICC during operation, CH340G/C/N/K/E/X/T/R row"
+  operating_temperature:
+    min: -20 °C
+    max: 70 °C
+    src: p8 "6.1 Absolute Maximum Value, TA ambient temperature during operation, CH340C/N/K/E/X/B row"
+  data_rate: { max: 2 Mbps, src: 'p1 "2. Features, communication baud rate of 50bps~2Mbps"' }
+
+pins:
+  src: p3 "4. Pin table, SOP8 Pin No. column"
+  "1": { name: UD+, type: io }
+  "2": { name: UD-, type: io }
+  "3": { name: GND, type: ground }
+  "4": { name: RTS_N, type: output }
+  "5": { name: VCC, type: power }
+  "6": { name: TXD, type: output }
+  "7": { name: RXD, type: input }
+  "8": { name: V3, type: power }

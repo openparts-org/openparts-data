@@ -1,0 +1,17 @@
+# Official TI datasheet "SNx4HC4040 12-Bit Asynchronous Binary Counters". Downloaded 2026-11-17 from
+# the TI symlink URL below with curl (HTTP 200, PDF); revision read from
+# the page header "SCLS160E - DECEMBER 1982 - REVISED MARCH 2022". 31 PDF pages; text read with
+# pdftotext -layout; the pin-configuration page (3) is an image and was rendered and read. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM is dated 18-Sep-2026 (newer than the
+# datasheet revision). sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS160E
+sha256: c80a9ba365c156fb342c1d4af46f2be4d032b9b0cbf73b8b0c0bb6bd698500b9
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/sn74hc4040.pdf
+publisher: ti
+document_id: SCLS160E
+document_type: datasheet
+revision: E
+date: 2022-03

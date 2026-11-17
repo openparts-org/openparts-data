@@ -1,0 +1,14 @@
+# YAGEO CC1206 X7R (Class 2) general-purpose MLCC (CC series), series-level
+# device; value/voltage-specific MPNs are Parts, each pointing at the
+# package of its dimension code (per-part spec sheet L/W/T). Non-polarized;
+# terminals numbered only.
+schema_version: "0.2"
+kind: device
+id: yageo/CC1206-X7R
+manufacturer: yageo
+category: capacitor
+family: CC1206
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

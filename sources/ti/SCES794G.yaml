@@ -1,0 +1,17 @@
+# Official TI datasheet "SN74LVC1G74 Single Positive-Edge-Triggered D-Type Flip-Flop with Clear and Preset". Downloaded 2026-11-17 from
+# the TI symlink URL below with curl (HTTP 200, PDF); revision read from
+# the page header "SCES794G - OCTOBER 2009 - REVISED SEPTEMBER 2021". 31 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM is dated 15-Jul-2026 (newer than the
+# datasheet revision). sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SCES794G
+sha256: e46a5a867fec742290000dca5ed3b291535f3c4418ef2ae267acc4ab51b26d8a
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/sn74lvc1g74.pdf
+publisher: ti
+document_id: SCES794G
+document_type: datasheet
+revision: G
+date: 2021-09

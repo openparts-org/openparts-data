@@ -1,0 +1,26 @@
+# Murata DLW21SN_SQ2_ chip common-mode choke coil (2.0 x 1.2 mm, wire
+# wound). Pins from the page-2 "Equivalent Circuit": one winding (1)-(2),
+# the other (4)-(3), dots at the (1) and (4) ends; "No Polarity".
+# Series-level device: impedance, rated current and DC resistance are per
+# Part (item 3 "Rating").
+schema_version: "0.2"
+kind: device
+id: murata/DLW21SN-SQ2
+manufacturer: murata
+category: common_mode_choke
+family: DLW21SN
+source: murata/JEFL243C-0003X-01
+
+parameters:
+  rated_voltage: { max: 50 V, src: 'p1 "3. Rating, Rated Voltage V(DC) 50"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "3. Rating, Operating Temperature -40 to +85°C"
+
+pins:
+  src: p2 "Equivalent Circuit, windings (1)-(2) and (4)-(3)"
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }
+  "3": { name: "3", type: passive }
+  "4": { name: "4", type: passive }

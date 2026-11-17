@@ -1,0 +1,16 @@
+# Official TI datasheet "MAX232 Dual EIA-232 Drivers and Receivers". Downloaded 2026-11-17 with curl
+# from the TI symlink URL below; revision read from the page header
+# "SLLS047N – FEBRUARY 1989 – REVISED FEBRUARY 2024". 27 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page indices.
+# sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: ti/SLLS047N
+sha256: 47d45fefa0db5981246ce9e8cc336cbb19ba1b369b09e4335bc75ded732d0345
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/max232.pdf
+publisher: ti
+document_id: SLLS047N
+document_type: datasheet
+revision: N
+date: 2024-02

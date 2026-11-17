@@ -1,0 +1,31 @@
+# TPD3E001 3-channel ESD protection array with a VCC pin, pin map of the
+# DRL (SOT-5X3, 5 pins) package (DRY and DRS number differently). From
+# the Pin Functions table, DRL NO. column (IOx 1, 2, 4; GND 3; VCC 5),
+# checked against the "DRL Package 5-Pin SOT Top View" figure for the IO
+# names.
+schema_version: "0.2"
+kind: device
+id: ti/TPD3E001-DRL
+manufacturer: ti
+category: diode
+family: TPD3E001
+source: ti/SLLS683F
+
+parameters:
+  forward_voltage:
+    min: 0.65 V
+    max: 0.95 V
+    at: { IF: 10 mA }
+    src: p5 "6.5 Electrical Characteristics, VF Diode forward voltage"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA"
+
+pins:
+  src: ['p3 "Pin Functions, DRL NO. column"', p3 "DRL Package 5-Pin SOT Top View (IO names)"]
+  "1": { name: IO1, type: passive }
+  "2": { name: IO2, type: passive }
+  "3": { name: GND, type: ground }
+  "4": { name: IO3, type: passive }
+  "5": { name: VCC, type: power }

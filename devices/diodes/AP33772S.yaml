@@ -1,0 +1,60 @@
+# AP33772S I2C USB PD3.1 EPR sink controller, W-QFN4040-24 (Type A1).
+# Pinout from DS46176 Rev. 10 - 2 "Table 1. Pin Descriptions of AP33772S
+# Sink Controller" (page 3), checked against "Pin Assignments (Top
+# View)" (page 1). EPAD: "suggested to connect to Ground".
+schema_version: "0.2"
+kind: device
+id: diodes/AP33772S
+manufacturer: diodes
+category: usb_pd_controller
+family: AP33772S
+source: diodes/DS46176
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: 'p1 "Description, I2C interface pins (SCL, SDA)"' }
+  supply_voltage:
+    min: 3.3 V
+    max: 31 V
+    src: p5 "Recommended Operating Conditions, VVCC Power Supply Voltage at VCC Pin"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p5 "Recommended Operating Conditions, TA Operating Ambient Temperature"
+  esd_hbm: { typ: 2 kV, src: 'p5 "Absolute Maximum Ratings, ESD Human Body Model 2 kV"' }
+  bus_fault_voltage:
+    min: -0.3 V
+    max: 34 V
+    src: p5 "Absolute Maximum Ratings, VCC1, VCC2 Input Voltage at CC1, CC2 Pins"
+  usb_power_role: { value: sink, src: 'p1 "Title, I2C USB PD3.1 EPR SINK CONTROLLER"' }
+  usb_pd_revision: { value: "3.1", src: 'p1 "Features, USB PD3.1 v1.6 Certified with TID: 10062"' }
+
+pins:
+  src:
+    - p3 "Table 1. Pin Descriptions of AP33772S Sink Controller"
+    - p1 "Pin Assignments (Top View), W-QFN4040-24 (Type A1)"
+  "1":  { name: ISENP, type: analog }
+  "2":  { name: NC, type: nc }
+  "3":  { name: GND, type: ground }
+  "4":  { name: SDA, type: io }
+  "5":  { name: SCL, type: io }
+  "6":  { name: FLIP, type: output }
+  "7":  { name: GPIO, type: io }
+  "8":  { name: LED, type: output }
+  "9":  { name: INT, type: output }
+  "10": { name: NC, type: nc }
+  "11": { name: VSEL, type: analog }
+  "12": { name: V18, type: power_out }
+  "13": { name: OTP, type: analog }
+  "14": { name: NC, type: nc }
+  "15": { name: IFB, type: analog }
+  "16": { name: CC2, type: io }
+  "17": { name: CC1, type: io }
+  "18": { name: DN, type: analog }
+  "19": { name: DP, type: analog }
+  "20": { name: V5V, type: power_out }
+  "21": { name: NC, type: nc }
+  "22": { name: VOUT, type: analog }
+  "23": { name: PWR_EN, type: output }
+  "24": { name: VCC, type: power }
+  EP:   { name: GND, type: ground }

@@ -1,0 +1,28 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCLS148H PDF page 11, addendum dated 18-Sep-2026): row "SN74HC574DBR",
+# "SSOP (DB) | 20". lifecycle "active" is that table's Status column.
+# Package: outline DB0020A (4214851/B) on page 17; same drawing number and
+# revision as the reused package standards/SSOP20-5.3x7.2-P0.65-TI-DB.
+schema_version: "0.2"
+kind: part
+id: ti/SN74HC574DBR
+manufacturer: ti
+mpn: SN74HC574DBR
+device: ti/SN74HC574
+
+package:
+  value: standards/SSOP20-5.3x7.2-P0.65-TI-DB
+  src:
+    - p11 "Package Option Addendum, row "SN74HC574DBR", "SSOP (DB) | 20""
+    - p17 "PACKAGE OUTLINE DB0020A (4214851/B)"
+
+sources: [ti/SCLS148H]
+source: ti/SCLS148H
+
+existence:
+  status: verified
+  src: p11 "Package Option Addendum, Packaging Information table, row "SN74HC574DBR""
+
+lifecycle:
+  status: active
+  src: p11 "Package Option Addendum, row "SN74HC574DBR", Status "Active""

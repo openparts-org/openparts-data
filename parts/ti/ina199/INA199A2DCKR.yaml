@@ -1,0 +1,28 @@
+# MPN from the Package Option Addendum of SBOS469H (page 25),
+# row "INA199A2DCKR", SC70 (DCK) | 6, Status Active. Package outline DCK0006A (4214835/D)
+# on page 36, the drawing revision the reused package was read from.
+schema_version: "0.2"
+kind: part
+id: ti/INA199A2DCKR
+manufacturer: ti
+mpn: INA199A2DCKR
+device: ti/INA199-DCK
+
+package:
+  value: manufacturers/ti/DCK0006A
+  src:
+    - p25 "Package Option Addendum, row INA199A2DCKR, SC70 (DCK) | 6"
+    - p36 "PACKAGE OUTLINE DCK0006A (4214835/D)"
+
+sources: [ti/SBOS469H]
+source: ti/SBOS469H
+
+existence:
+  status: verified
+  src: p25 "Package Option Addendum, Packaging Information table, row INA199A2DCKR"
+
+lifecycle: { status: active, src: 'p25 "Package Option Addendum, row INA199A2DCKR, Status Active"' }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  esd_hbm: { typ: 2 kV, src: 'p4 "6.2 ESD Ratings, INA199A1/A2/A3 in DCK and RSW, HBM ±2000 V"' }

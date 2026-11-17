@@ -1,0 +1,19 @@
+# WCH CH340 datasheet (USB to serial port chip), English, document
+# CH340DS1-EN, version "3D" (cover page and page footers "V3D"). 17 PDF
+# pages; downloaded 2026-11-17 with curl from the WCH download URL below
+# (HTTP 200, PDF). Text read with pdftotext -layout; the parameter table
+# on page 8 was rendered and read to place values in their columns. The
+# datasheet prints no date and no package outline drawings (only the
+# Chapter 3 package table: body width and pin pitch); date from the PDF
+# CreationDate (2025-03-12).
+schema_version: "0.2"
+kind: source
+id: wch/CH340DS1@V3D
+sha256: 4d7b150edfda88e44eb8f499c22693318666968125ff17f652ca9983d9929e5e
+retrieved: 2026-11-17
+url: https://www.wch-ic.com/download/file?id=79
+publisher: wch
+document_id: CH340DS1
+document_type: datasheet
+revision: V3D
+date: 2025-03

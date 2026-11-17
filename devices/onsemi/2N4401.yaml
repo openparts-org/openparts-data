@@ -1,0 +1,18 @@
+# NPN switching transistor, TO-92 (CASE 29 STYLE 1). Pins from STYLE 1
+# of the CASE 29-11 style list (PIN 1. EMITTER 2. BASE 3. COLLECTOR) and
+# the page-1 symbol (1 EMITTER, 2 BASE, 3 COLLECTOR).
+schema_version: "0.2"
+kind: device
+id: onsemi/2N4401
+manufacturer: onsemi
+category: transistor
+family: 2N4401
+source: onsemi/2N4401-D
+
+pins:
+  src:
+    - p1 "Symbol / CASE 29 STYLE 1"
+    - 'p8 "CASE 29-11 STYLE 1: PIN 1. EMITTER 2. BASE 3. COLLECTOR"'
+  "1": { name: Emitter, type: passive }
+  "2": { name: Base, type: passive }
+  "3": { name: Collector, type: passive }

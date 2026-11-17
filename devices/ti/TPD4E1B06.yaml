@@ -1,0 +1,28 @@
+# TPD4E1B06 4-channel bidirectional ESD protection array, pin map of the
+# DCK (SC70-6) package (DRL numbers differently: ti/TPD4E1B06-DRL). From
+# Table 4-1 Pin Functions, DCK column: IO1 1, IO2 2, GND 3, IO3 4, IO4 5,
+# NC 6 ("Not internally connected"). Channel pins (type I/O) typed
+# passive (TVS terminals, as ti/TPD4E1U06).
+schema_version: "0.2"
+kind: device
+id: ti/TPD4E1B06
+manufacturer: ti
+category: diode
+family: TPD4E1B06
+source: ti/SLVSBQ8E
+
+parameters:
+  reverse_voltage: { min: -5.5 V, max: 5.5 V, src: 'p5 "5.5 Electrical Characteristics, VRWM"' }
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "5.3 Recommended Operating Conditions, TA"
+
+pins:
+  src: p3 "Table 4-1 Pin Functions, DCK column"
+  "1": { name: IO1, type: passive }
+  "2": { name: IO2, type: passive }
+  "3": { name: GND, type: ground }
+  "4": { name: IO3, type: passive }
+  "5": { name: IO4, type: passive }
+  "6": { name: NC, type: nc }

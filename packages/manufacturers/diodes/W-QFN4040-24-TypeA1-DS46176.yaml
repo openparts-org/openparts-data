@@ -1,0 +1,47 @@
+# Diodes W-QFN4040-24 (Type A1): 24-terminal 4x4 mm QFN, 0.5 mm pitch,
+# 2.7 mm exposed pad, read from the "Package Outline Dimensions" and
+# "Suggested Pad Layout" tables of DS46176 Rev. 10 - 2 (AP33772S, PDF
+# page 20). Millimetres as printed. Pin 1 top of the left edge,
+# counter-clockwise (page 1 Pin Assignments, top view).
+#
+# Lands: derived by the generator from the body dimensions; the
+# recommended land pattern as read put terminal pads over the centre
+# pad (lead review: re-read before adding explicit pads).
+schema_version: "0.2"
+kind: package
+id: manufacturers/diodes/W-QFN4040-24-TypeA1-DS46176
+family: qfn
+lead_count: { value: 24, src: p20 "W-QFN4040-24 (Type A1)" }
+source: diodes/DS46176
+
+pitch: { typ: 0.5 mm, src: 'p20 "Package Outline Dimensions table, e 0.50 BSC"' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:     { typ: 4 mm, src: 'p20 "Package Outline Dimensions table, E 4.00 BSC"' }
+  body_length:    { typ: 4 mm, src: 'p20 "Package Outline Dimensions table, D 4.00 BSC"' }
+  body_height:
+    min: 0.7 mm
+    typ: 0.75 mm
+    max: 0.8 mm
+    src: p20 "Package Outline Dimensions table, A 0.70 / 0.80 / 0.75"
+  exposed_pad:
+    src:    p20 "Package Outline Dimensions table, D2 = E2 2.65 / 2.75 / 2.70"
+    width:  { min: 2.65 mm, typ: 2.7 mm, max: 2.75 mm }
+    length: { min: 2.65 mm, typ: 2.7 mm, max: 2.75 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p20 "Package Outline Dimensions table, A1 0.00 / 0.05 / 0.02"
+  lead_width:
+    min: 0.18 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p20 "Package Outline Dimensions table, b 0.18 / 0.30 / 0.25"
+  lead_length:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.45 mm
+    src: p20 "Package Outline Dimensions table, L 0.35 / 0.45 / 0.40"
+  lead_thickness: { typ: 0.203 mm, src: 'p20 "Package Outline Dimensions table, A3 0.203 REF"' }

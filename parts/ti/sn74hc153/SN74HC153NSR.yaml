@@ -1,0 +1,28 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCLS112E PDF page 12, addendum dated 18-Sep-2026): row "SN74HC153NSR",
+# "SOP (NS) | 16". lifecycle "active" is that table's Status column.
+# Package: outline NS0016A (4220735/A) on page 26; same drawing number and
+# revision as the reused package manufacturers/ti/NS0016A.
+schema_version: "0.2"
+kind: part
+id: ti/SN74HC153NSR
+manufacturer: ti
+mpn: SN74HC153NSR
+device: ti/SN74HC153
+
+package:
+  value: manufacturers/ti/NS0016A
+  src:
+    - p12 "Package Option Addendum, row "SN74HC153NSR", "SOP (NS) | 16""
+    - p26 "PACKAGE OUTLINE NS0016A (4220735/A)"
+
+sources: [ti/SCLS112E]
+source: ti/SCLS112E
+
+existence:
+  status: verified
+  src: p12 "Package Option Addendum, Packaging Information table, row "SN74HC153NSR""
+
+lifecycle:
+  status: active
+  src: p12 "Package Option Addendum, row "SN74HC153NSR", Status "Active""

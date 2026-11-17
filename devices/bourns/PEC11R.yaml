@@ -1,0 +1,33 @@
+# Bourns PEC11R 12 mm incremental encoder without switch (the -xxxxF-N
+# styles): A and B channel terminals and the common C (dimension drawings,
+# "A CHANNEL / C COMMON / B CHANNEL"), and the two mounting lugs numbered
+# "MP" (mechanical, passive). Series-level device: detents, pulses and
+# shaft are per Part.
+schema_version: "0.2"
+kind: device
+id: bourns/PEC11R
+manufacturer: bourns
+category: rotary_encoder
+family: PEC11R
+source: bourns/PEC11R
+
+parameters:
+  rated_voltage: { typ: 5 V, src: 'p1 "Electrical Characteristics, Contact Rating 10 mA @ 5 VDC"' }
+  rated_current:
+    typ: 10 mA
+    src: p1 "Electrical Characteristics, Contact Rating 10 mA @ 5 VDC"
+  operating_temperature:
+    min: -30 °C
+    max: 70 °C
+    src: p1 "Environmental Characteristics, Operating Temperature Range"
+  rotation_angle:
+    typ: 360 °
+    src: p1 "Mechanical Characteristics, Mechanical Angle 360 ° continuous"
+  push_switch: { value: no, src: 'p3 "How To Order, Switch Configuration N = No Switch"' }
+
+pins:
+  src: p2 "PEC11R-xxxxF-N dimensions, A CHANNEL / C COMMON / B CHANNEL"
+  A:   { name: A, type: passive }
+  B:   { name: B, type: passive }
+  C:   { name: C, type: passive }
+  MP:  { name: MP, type: passive }

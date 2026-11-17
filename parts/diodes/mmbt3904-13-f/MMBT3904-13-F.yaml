@@ -1,0 +1,27 @@
+# MMBT3904-13-F: listed verbatim in the page-1 Ordering Information table
+# (SOT23, marking K1N, 13-inch reel, 10,000). No lifecycle statement.
+# Package: The letter-coded SOT23 Package Outline Dimensions table on page 6
+# (A 0.37/0.51/0.40 ... K1 0.903/1.10/1.025, M 0.085/0.150/0.110) is
+# value-for-value the DS18001 table that
+# standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001 was read from (compared
+# as extracted text, every row). Reused.
+schema_version: "0.2"
+kind: part
+id: diodes/MMBT3904-13-F
+manufacturer: diodes
+mpn: MMBT3904-13-F
+device: diodes/MMBT3904
+package: standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001
+sources: [diodes/DS30036, diodes/DS18001]
+source: diodes/DS30036
+
+existence:
+  status: verified
+  src: p1 "Ordering Information, MMBT3904-13-F, SOT23, K1N, 13-inch reel, 10,000"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:                  { value: npn, src: p1 "Title" }
+  collector_emitter_voltage: { max: 40 V, src: 'p2 "Absolute Maximum Ratings, VCEO"' }
+  collector_current:         { max: 200 mA, src: 'p2 "Absolute Maximum Ratings, IC"' }

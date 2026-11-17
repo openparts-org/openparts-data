@@ -1,0 +1,16 @@
+# Official TI datasheet "INA185 current-sense amplifier". Downloaded 2026-11-17 with curl
+# from the TI symlink URL below; revision read from the page header
+# "SBOS378A – MARCH 2019 – REVISED NOVEMBER 2023". 37 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page indices.
+# sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: ti/SBOS378A
+sha256: d1b65f23841d266c7bdbe0ae0ceea3d2de92095a40b5202b4753d503cf0e789f
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/ina185.pdf
+publisher: ti
+document_id: SBOS378A
+document_type: datasheet
+revision: A
+date: 2023-11

@@ -1,0 +1,23 @@
+# 1 MΩ, +/-1%, RC1206 general-purpose thick-film chip resistor, 7" reel.
+# Existence: YAGEO's own per-part spec sheet (yageo/RC1206FR-071ML-SPEC) carries this
+# exact MPN as its title. Values from that sheet's "Specifications" table.
+# Package: the sheet's L/W/T (3.1mm +/-0.1mm / 1.6mm +/-0.1mm / 0.55mm +/-0.1mm) equal standards/CHIP1206-RC.
+# Lifecycle not stated -> unknown.
+schema_version: "0.2"
+kind: part
+id: yageo/RC1206FR-071ML
+manufacturer: yageo
+mpn: RC1206FR-071ML
+device: yageo/RC1206-GENERAL-PURPOSE
+package: standards/CHIP1206-RC
+sources: [yageo/RC1206FR-071ML-SPEC]
+source: yageo/RC1206FR-071ML-SPEC
+
+existence: { status: verified, src: 'p1 "Spec sheet title, part number"' }
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance:               { tol: ±1 %, src: 'p1 "Specifications, Resistance Tolerance"' }
+  resistance:              { typ: 1 MΩ, src: 'p1 "Specifications, Resistance"' }
+  power_rating:            { typ: 0.25 W, at: { TA: 70 °C }, src: 'p1 "Specifications, Power"' }
+  temperature_coefficient: { tol: ±100 ppm/°C, src: 'p1 "Specifications, Temp. Coefficient"' }

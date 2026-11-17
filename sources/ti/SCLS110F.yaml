@@ -1,0 +1,17 @@
+# Official TI datasheet "SNx4HC151 8-Line To 1-Line Data Selectors/Multiplexers". Downloaded 2026-11-17 from
+# the TI symlink URL below with curl (HTTP 200, PDF); revision read from
+# the page header "SCLS110F - DECEMBER 1982 - REVISED FEBRUARY 2022". 28 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM is dated 27-Oct-2026 (newer than the
+# datasheet revision). sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS110F
+sha256: b91a208c05c438f63b35cb49a12813dd7b1acc77bc508edfd75bbdfa35ec1c70
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/sn74hc151.pdf
+publisher: ti
+document_id: SCLS110F
+document_type: datasheet
+revision: F
+date: 2022-02

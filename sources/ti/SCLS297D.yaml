@@ -1,0 +1,17 @@
+# Official TI datasheet "SN54HC161, SN74HC161 4-Bit Synchronous Binary Counters". Downloaded 2026-11-17 from
+# the TI symlink URL below with curl (HTTP 200, PDF); revision read from
+# the page header "SCLS297D - JANUARY 1996 - REVISED SEPTEMBER 2003". 31 PDF pages; text read with
+# pdftotext -layout; page 1 (pinout) rendered and read. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM is dated 10-Aug-2026 (newer than the
+# datasheet revision). sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS297D
+sha256: 8d7d98ecbbcaed7cd0e488436c1ae3b45baadd58362766e61edffc4cf7b6f7fc
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/sn74hc161.pdf
+publisher: ti
+document_id: SCLS297D
+document_type: datasheet
+revision: D
+date: 2003-09

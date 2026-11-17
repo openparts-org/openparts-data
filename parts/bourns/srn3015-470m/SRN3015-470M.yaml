@@ -1,0 +1,32 @@
+# 47 µH +/-20%, SRN3015 semi-shielded power inductor, per the page-1
+# Electrical Specifications table (read from a 110 dpi render, checked
+# against the pdftotext layout). lifecycle unknown: no production-status statement.
+schema_version: "0.2"
+kind: part
+id: bourns/SRN3015-470M
+manufacturer: bourns
+mpn: SRN3015-470M
+device: bourns/SRN3015-SERIES
+package: manufacturers/bourns/CHIP-BOURNS-SRN3015
+sources: [bourns/SRN3015]
+source: bourns/SRN3015
+
+existence:
+  status: verified
+  src: p1 "Electrical Specifications, SRN3015-470M row (Part Number)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance: { tol: ±20 %, src: 'p1 "Electrical Specifications, SRN3015-470M row, Tol. %"' }
+  inductance:
+    typ: 47 µH
+    at: { f: 1 MHz }
+    src: p1 "Electrical Specifications, SRN3015-470M row, L (@ 0.1 V / 1 MHz)"
+  rated_current:
+    typ: 0.4 A
+    src: p1 "Electrical Specifications, SRN3015-470M row, Irms (temp. rise 40 °C)"
+  saturation_current:
+    typ: 0.38 A
+    src: p1 "Electrical Specifications, SRN3015-470M row, Isat (L drop 30 %)"
+  dcr: { max: 1.406 Ω, src: 'p1 "Electrical Specifications, SRN3015-470M row, DCR (Ω) Max."' }

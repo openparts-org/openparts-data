@@ -1,0 +1,28 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCLS034H PDF page 18, addendum dated 22-Sep-2026): row "SN74HC132PWR",
+# "TSSOP (PW) | 14". lifecycle "active" is that table's Status column.
+# Package: outline PW0014A (4220202/B) on page 40; same drawing number and
+# revision as the reused package manufacturers/ti/PW0014A.
+schema_version: "0.2"
+kind: part
+id: ti/SN74HC132PWR
+manufacturer: ti
+mpn: SN74HC132PWR
+device: ti/SN74HC132
+
+package:
+  value: manufacturers/ti/PW0014A
+  src:
+    - p18 "Package Option Addendum, row "SN74HC132PWR", "TSSOP (PW) | 14""
+    - p40 "PACKAGE OUTLINE PW0014A (4220202/B)"
+
+sources: [ti/SCLS034H]
+source: ti/SCLS034H
+
+existence:
+  status: verified
+  src: p18 "Package Option Addendum, Packaging Information table, row "SN74HC132PWR""
+
+lifecycle:
+  status: active
+  src: p18 "Package Option Addendum, row "SN74HC132PWR", Status "Active""

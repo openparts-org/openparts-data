@@ -1,0 +1,68 @@
+# TI DW0016B "SOIC - 2.65 mm max height" (16-lead wide SOIC, 1.27 mm
+# pitch; drawing 4221009/B 07/2016, JEDEC MS-013 per its note 5), read
+# from the PACKAGE OUTLINE page of SLLSEP4K (PDF page 46) and the EXAMPLE
+# BOARD LAYOUT page (page 47). Millimetres as printed. The printed body
+# numbers equal manufacturers/ti/DW0016A, but it is a different TI
+# drawing (number, isolation land pattern), so it is its own package.
+# Ranges only for the body; only "2.65 MAX" overall height, no A2.
+# pads: "LAND PATTERN EXAMPLE, IPC-7351 NOMINAL" (left of the two
+# variants; the right one is the HV / isolation option): 16X (2) x
+# (0.6) pads, pad-centre row spacing (9.3) -> x = ±4.65; 14X (1.27)
+# pitch -> y = ±0.635 ... ±4.445. Pin 1 top-left.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DW0016B
+family: soic
+lead_count: 16
+source: ti/SLLSEP4K
+
+pitch:
+  typ: 1.27 mm
+  src: p46 "PACKAGE OUTLINE DW0016B (4221009/B), "14X 1.27" (basic); "2X 8.89""
+
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 7.4 mm
+    max: 7.6 mm
+    src: p46 "DW0016B, body width "7.6 / 7.4 NOTE 4" (datum B)"
+  body_length:
+    min: 10.1 mm
+    max: 10.5 mm
+    src: p46 "DW0016B, body length "10.5 / 10.1 NOTE 3" (datum A)"
+  lead_thickness:
+    min: 0.1 mm
+    max: 0.33 mm
+    src: p46 "DW0016B, lead thickness "0.33 / 0.10 TYP""
+  lead_length:
+    min: 0.4 mm
+    max: 1.27 mm
+    src: p46 "DW0016B DETAIL A, foot length "1.27 / 0.40""
+  overall_width:
+    min: 9.97 mm
+    max: 10.63 mm
+    src: p46 "DW0016B, lead-tip span "10.63 / 9.97 TYP" (min/max only)"
+  overall_height: { max: 2.65 mm, src: 'p46 "DW0016B side view, "2.65 MAX""' }
+  standoff:       { min: 0.1 mm, max: 0.3 mm, src: 'p46 "DW0016B DETAIL A, standoff "0.3 / 0.1""' }
+  lead_width:     { min: 0.31 mm, max: 0.51 mm, src: 'p46 "DW0016B, "16X 0.51 / 0.31""' }
+
+pads:
+  value:
+    - { number: "1", x: -4.65, y: 4.445, width: 2, length: 0.6 }
+    - { number: "2", x: -4.65, y: 3.175, width: 2, length: 0.6 }
+    - { number: "3", x: -4.65, y: 1.905, width: 2, length: 0.6 }
+    - { number: "4", x: -4.65, y: 0.635, width: 2, length: 0.6 }
+    - { number: "5", x: -4.65, y: -0.635, width: 2, length: 0.6 }
+    - { number: "6", x: -4.65, y: -1.905, width: 2, length: 0.6 }
+    - { number: "7", x: -4.65, y: -3.175, width: 2, length: 0.6 }
+    - { number: "8", x: -4.65, y: -4.445, width: 2, length: 0.6 }
+    - { number: "9", x: 4.65, y: -4.445, width: 2, length: 0.6 }
+    - { number: "10", x: 4.65, y: -3.175, width: 2, length: 0.6 }
+    - { number: "11", x: 4.65, y: -1.905, width: 2, length: 0.6 }
+    - { number: "12", x: 4.65, y: -0.635, width: 2, length: 0.6 }
+    - { number: "13", x: 4.65, y: 0.635, width: 2, length: 0.6 }
+    - { number: "14", x: 4.65, y: 1.905, width: 2, length: 0.6 }
+    - { number: "15", x: 4.65, y: 3.175, width: 2, length: 0.6 }
+    - { number: "16", x: 4.65, y: 4.445, width: 2, length: 0.6 }
+  src: p47 "DW0016B LAND PATTERN EXAMPLE, IPC-7351 NOMINAL - 16X (2) x (0.6), (9.3) rows, 14X (1.27)"

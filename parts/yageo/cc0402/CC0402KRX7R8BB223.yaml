@@ -1,0 +1,23 @@
+# 0.022 µF X7R 25 V 0402 general-purpose MLCC (YAGEO CC series).
+# Existence: YAGEO's own per-part spec sheet (yageo/CC0402KRX7R8BB223-SPEC) carries this
+# exact MPN as its title. Values from the sheet's "Specifications" table.
+# Package: the sheet's L/W/T (1mm +/-0.05mm / 0.5mm +/-0.05mm / 0.5mm +/-0.05mm) equal dimension code
+# CA of yageo/UPY-GPHC_X7R@V29 Table 1 -> manufacturers/yageo/CC0402-CA. Lifecycle not stated -> unknown.
+schema_version: "0.2"
+kind: part
+id: yageo/CC0402KRX7R8BB223
+manufacturer: yageo
+mpn: CC0402KRX7R8BB223
+device: yageo/CC0402-X7R
+package: manufacturers/yageo/CC0402-CA
+sources: [yageo/CC0402KRX7R8BB223-SPEC]
+source: yageo/CC0402KRX7R8BB223-SPEC
+
+existence: { status: verified, src: 'p1 "Spec sheet title, part number"' }
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 0.022 µF, src: 'p1 "Specifications, Capacitance"' }
+  tolerance:     { tol: ±10 %, src: 'p1 "Specifications, Tolerance"' }
+  rated_voltage: { typ: 25 V, src: 'p1 "Specifications, Voltage DC"' }
+  dielectric:    { value: X7R, src: 'p1 "Specifications, Temp. Coefficient"' }

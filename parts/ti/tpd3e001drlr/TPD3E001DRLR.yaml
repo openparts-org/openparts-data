@@ -1,0 +1,26 @@
+# Orderable MPN and status from the PACKAGE OPTION ADDENDUM (page 11):
+# row TPD3E001DRLR, Active, SOT-5X3 (DRL) 5 pins. Package DRL0005A (4220753/E) on
+# page 19: the same drawing number and revision as manufacturers/ti/DRL0005A. Reused.
+schema_version: "0.2"
+kind: part
+id: ti/TPD3E001DRLR
+manufacturer: ti
+mpn: TPD3E001DRLR
+device: ti/TPD3E001-DRL
+
+package:
+  value: manufacturers/ti/DRL0005A
+  src:
+    - p11 "PACKAGE OPTION ADDENDUM, row TPD3E001DRLR, Package "SOT-5X3 (DRL) | 5""
+    - p19 "PACKAGE OUTLINE DRL0005A (4220753/E)"
+
+sources: [ti/SLLS683F]
+source: ti/SLLS683F
+
+existence:
+  status: verified
+  src: p11 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TPD3E001DRLR"
+
+lifecycle:
+  status: active
+  src: p11 "PACKAGE OPTION ADDENDUM, row TPD3E001DRLR, Status column "Active""

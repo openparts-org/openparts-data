@@ -1,0 +1,54 @@
+# UCC12050 isolated DC/DC module (integrated transformer, 5-kVRMS
+# reinforced isolation, 500 mW), 16-pin SO-MOD DVE. An isolated DC/DC
+# converter is recorded as switching_regulator (canonical-data 14.1).
+# Pinout from SNVSB38D "Table 5-1. Pin Functions" (page 3), checked
+# against "DVE Package 16-Pin SOIC Top View". NC 6-8 are internally
+# connected and belong to the primary side (connect to GNDP); NC 10-12
+# belong to the isolated side (connect to GNDS). VISO is selectable by
+# the SEL pin (5.0 / 5.4 / 3.3 / 3.7 V, page 3), so output_voltage and
+# output_type are not recorded.
+schema_version: "0.2"
+kind: device
+id: ti/UCC12050
+manufacturer: ti
+category: switching_regulator
+family: UCC12050
+source: ti/SNVSB38D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  isolation_voltage:
+    min: 5000 V
+    at: { t: 60 s }
+    src: p6 "Insulation Specifications, VISO Withstand isolation voltage 5000 VRMS, t = 60 s"
+  input_voltage_max:
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, VINP Primary side supply voltage 4.5 / 5.0 / 5.5"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "6.3 Recommended Operating Conditions, Ta Ambient temperature"
+  esd_hbm: { typ: 3 kV, src: 'p4 "6.2 ESD Ratings, HBM ±3000 V"' }
+  output_power:
+    max: 500 mW
+    at: { TA: 25 °C }
+    src: p4 "6.3 Recommended Operating Conditions, PVISO VISO output power at Ta = 25°C"
+
+pins:
+  src:  [p3 "Table 5-1. Pin Functions", p3 "DVE Package 16-Pin SOIC Top View"]
+  "1":  { name: EN, type: input }
+  "2":  { name: GNDP, type: ground }
+  "3":  { name: VINP, type: power }
+  "4":  { name: SYNC, type: input }
+  "5":  { name: SYNC_OK, type: output }
+  "6":  { name: NC, type: nc }
+  "7":  { name: NC, type: nc }
+  "8":  { name: NC, type: nc }
+  "9":  { name: GNDS, type: ground }
+  "10": { name: NC, type: nc }
+  "11": { name: NC, type: nc }
+  "12": { name: NC, type: nc }
+  "13": { name: SEL, type: input }
+  "14": { name: VISO, type: power_out }
+  "15": { name: GNDS, type: ground }
+  "16": { name: GNDS, type: ground }

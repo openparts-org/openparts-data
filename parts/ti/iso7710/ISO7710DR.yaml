@@ -1,0 +1,29 @@
+# MPN from the PACKAGE OPTION ADDENDUM (SLLSER9E page 35), Status Active, SOIC (D) | 8.
+# Outline D0008B 4221445/C 02/2019 (pages 29-31): printed dimensions and IPC-7351
+# land pattern equal manufacturers/ti/D0008B (read from 4221445/B), so it is reused.
+schema_version: "0.2"
+kind: part
+id: ti/ISO7710DR
+manufacturer: ti
+mpn: ISO7710DR
+device: ti/ISO7710-D
+
+package:
+  value: manufacturers/ti/D0008B
+  src:
+    - p35 "PACKAGE OPTION ADDENDUM, row ISO7710DR, "SOIC (D) | 8""
+    - p29 "PACKAGE OUTLINE D0008B (4221445/C 02/2019)"
+
+sources: [ti/SLLSER9E]
+source: ti/SLLSER9E
+
+existence:
+  status: verified
+  src: p35 "PACKAGE OPTION ADDENDUM, Packaging Information table, row ISO7710DR"
+
+lifecycle: { status: active, src: 'p35 "PACKAGE OPTION ADDENDUM, row ISO7710DR, Status "Active""' }
+
+parameters:
+  default_output:
+    value: high
+    src: p1 "Features, default output high (ISO7710) and low (ISO7710F)"

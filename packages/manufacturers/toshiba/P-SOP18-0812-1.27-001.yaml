@@ -1,0 +1,47 @@
+# Toshiba P-SOP18-0812-1.27-001 (18-lead wide SOP, 7.5 mm body, 1.27 mm pitch), read
+# from the rendered "Package Dimensions" page of the TBD62083A series
+# datasheet (2026-05-13, PDF page 9; image only). Unit mm; ranges printed
+# "a~b" recorded as min/max.
+# Mapping: 11.35-11.68 body length; 7.37-7.62 body width; 10.01-10.64
+# lead-tip span; "2.4 +-0.2" body thickness -> body_height; "2.85 MAX"
+# overall_height; standoff 0.1-0.25; lead thickness 0.204-0.33; lead
+# width 0.36-0.51; foot "0.85 +-0.15". Left out: "0.67TYP" end
+# distance, "1.4 TYP" and "0.25" detail references. Pins 1-9 along one
+# long edge, 10-18 back along the other.
+schema_version: "0.2"
+kind: package
+id: manufacturers/toshiba/P-SOP18-0812-1.27-001
+family: soic
+lead_count: 18
+source: toshiba/TBD62083A-datasheet-en
+
+pitch: { typ: 1.27 mm, src: 'p9 "P-SOP18-0812-1.27-001, boxed 1.27"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width: { min: 7.37 mm, max: 7.62 mm, src: 'p9 "P-SOP18-0812-1.27-001 top view, 7.37~7.62"' }
+  body_length:
+    min: 11.35 mm
+    max: 11.68 mm
+    src: p9 "P-SOP18-0812-1.27-001 top view, 11.35~11.68"
+  body_height:
+    min: 2.2 mm
+    typ: 2.4 mm
+    max: 2.6 mm
+    src: p9 "P-SOP18-0812-1.27-001 side view, 2.4 +-0.2"
+  lead_thickness:
+    min: 0.204 mm
+    max: 0.33 mm
+    src: p9 "P-SOP18-0812-1.27-001 detail, 0.204~0.33"
+  overall_width:
+    min: 10.01 mm
+    max: 10.64 mm
+    src: p9 "P-SOP18-0812-1.27-001 top view, 10.01~10.64"
+  overall_height: { max: 2.85 mm, src: 'p9 "P-SOP18-0812-1.27-001 side view, 2.85 MAX"' }
+  standoff: { min: 0.1 mm, max: 0.25 mm, src: 'p9 "P-SOP18-0812-1.27-001 side view, 0.1~0.25"' }
+  lead_width: { min: 0.36 mm, max: 0.51 mm, src: 'p9 "P-SOP18-0812-1.27-001 top view, 0.36~0.51"' }
+  lead_length:
+    min: 0.7 mm
+    typ: 0.85 mm
+    max: 1 mm
+    src: p9 "P-SOP18-0812-1.27-001 detail, 0.85 +-0.15"

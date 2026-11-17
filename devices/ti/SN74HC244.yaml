@@ -1,0 +1,69 @@
+# Octal buffer/line driver with 3-state outputs SN74HC244, 20-pin pin map
+# from the pin-function table (SCLS130I page 3) checked against Figure
+# 4-1 "DB, DW, J, N, NS, PW, W Package" top view on the same page.
+# 1OE/2OE carry an overbar (active low). FK (LCCC) not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN74HC244
+manufacturer: ti
+category: logic
+family: SNx4HC244
+source: ti/SCLS130I
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 6 V
+    src: p4 "Recommended Operating Conditions, VCC, SN74HC244 row"
+  supply_current:
+    max: 8 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p5 "5.5 Electrical Characteristics (TA = 25°C): ICC, VI = VCC or 0, 6 V, TA = 25°C column"'
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "Recommended Operating Conditions, TA, SN74HC244 row"
+  esd_hbm:       { typ: 2 kV, src: 'p4 "ESD Ratings, HBM"' }
+  channel_count: { value: "8", src: 'p1 "Title, Octal Buffers and Line Drivers"' }
+  propagation_delay:
+    - typ: 13 ns
+      max: 23 ns
+      at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+      src: p7 "5.9 Switching Characteristics CL = 50 pF, tpd A to Y, 4.5 V, TA = 25°C"
+    - typ: 40 ns
+      max: 115 ns
+      at: { VCC: 2 V, CL: 50 pF, TA: 25 °C }
+      src: p7 "5.9 Switching Characteristics CL = 50 pF, tpd A to Y, 2 V, TA = 25°C"
+    - typ: 11 ns
+      max: 20 ns
+      at: { VCC: 6 V, CL: 50 pF, TA: 25 °C }
+      src: p7 "5.9 Switching Characteristics CL = 50 pF, tpd A to Y, 6 V, TA = 25°C"
+  logic_function:
+    value: buffer
+    src: p1 "Title, Octal Buffers and Line Drivers With 3-State Outputs"
+
+pins:
+  src:
+    - p3 "pin-function table (NAME / NO. / TYPE)"
+    - p3 "Figure 4-1 DB, DW, J, N, NS, PW, W Package Top View (cross-check)"
+  "1":  { name: 1OE, type: input }
+  "2":  { name: 1A1, type: input }
+  "3":  { name: 2Y4, type: output }
+  "4":  { name: 1A2, type: input }
+  "5":  { name: 2Y3, type: output }
+  "6":  { name: 1A3, type: input }
+  "7":  { name: 2Y2, type: output }
+  "8":  { name: 1A4, type: input }
+  "9":  { name: 2Y1, type: output }
+  "10": { name: GND, type: ground }
+  "11": { name: 2A1, type: input }
+  "12": { name: 1Y4, type: output }
+  "13": { name: 2A2, type: input }
+  "14": { name: 1Y3, type: output }
+  "15": { name: 2A3, type: input }
+  "16": { name: 1Y2, type: output }
+  "17": { name: 2A4, type: input }
+  "18": { name: 1Y1, type: output }
+  "19": { name: 2OE, type: input }
+  "20": { name: VCC, type: power }

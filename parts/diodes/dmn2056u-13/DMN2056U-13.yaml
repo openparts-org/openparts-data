@@ -1,0 +1,38 @@
+# DMN2056U-13: listed in the page-1 Ordering Information table of DS38480. No lifecycle statement.
+# Package: SOT23 (Standard) A/A1/A2/b/c/D/E/E1/e/e1/L table on page 7 matches
+# standards/SOT23-2.90x1.30-P1.83-DIODES row for row (compared as
+# extracted text: A 0.90/1.15/1.025, D 2.80/3.00/2.90, E 2.25/2.55/2.40,
+# E1 1.20/1.40/1.30, b 0.30/0.51/0.40, c 0.080/0.202/0.11 ...). Reused.
+schema_version: "0.2"
+kind: part
+id: diodes/DMN2056U-13
+manufacturer: diodes
+mpn: DMN2056U-13
+device: diodes/DMN2056U
+package: standards/SOT23-2.90x1.30-P1.83-DIODES
+sources: [diodes/DS38480, diodes/DS11005]
+source: diodes/DS38480
+
+existence: { status: verified, src: 'p1 "Ordering Information table, DMN2056U-13 | SOT23"' }
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 20 V, src: 'p2 "Maximum Ratings, VDSS"' }
+  drain_current:
+    - max: 4 A
+      at: { VGS: 4.5 V, TA: 25 °C }
+      src: p2 "Maximum Ratings, ID Continuous, Steady State (Note 6)"
+    - max: 3.2 A
+      at: { VGS: 4.5 V, TA: 70 °C }
+      src: p2 "Maximum Ratings, ID Continuous, Steady State (Note 6)"
+  rds_on:
+    - { typ: 30 mΩ, max: 38 mΩ, at: { VGS: 4.5 V, ID: 3.6 A }, src: 'p3 "Elec. Char., RDS(ON)"' }
+    - { typ: 34 mΩ, max: 45 mΩ, at: { VGS: 2.5 V, ID: 3.1 A }, src: 'p3 "Elec. Char., RDS(ON)"' }
+    - { typ: 52 mΩ, max: 85 mΩ, at: { VGS: 1.5 V, ID: 2 A }, src: 'p3 "Elec. Char., RDS(ON)"' }
+  gate_threshold_voltage:
+    min: 0.4 V
+    typ: 0.6 V
+    max: 1 V
+    at: { ID: 250 µA }
+    src: p3 "Elec. Char., VGS(TH), VDS = VGS"

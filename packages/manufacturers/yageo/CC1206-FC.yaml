@@ -1,0 +1,30 @@
+# YAGEO CC series MLCC body, dimension code FC (yageo/UPY-GPHC_X7R@V29
+# p3 Table 1, 1206 row FC). L2/L3/L4 (termination band) are not
+# modelled by the chip generator and are left out. Matches the L/W/T of
+# the per-part spec sheets that use it.
+schema_version: "0.2"
+kind: package
+id: manufacturers/yageo/CC1206-FC
+family: chip
+lead_count: 2
+source: yageo/UPY-GPHC_X7R@V29
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 1.4 mm
+    typ: 1.6 mm
+    max: 1.8 mm
+    src: p3 "Table 1, 1206 row code FC, W = 1.6 +/- 0.2 mm"
+  body_length:
+    min: 2.9 mm
+    typ: 3.2 mm
+    max: 3.5 mm
+    src: p3 "Table 1, 1206 row code FC, L1 = 3.2 +/- 0.3 mm"
+  body_height:
+    min: 1.4 mm
+    typ: 1.6 mm
+    max: 1.8 mm
+    src: p3 "Table 1, 1206 row code FC, T = 1.6 +/- 0.2 mm"

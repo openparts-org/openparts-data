@@ -1,0 +1,41 @@
+# DMG3420UQ-7: listed in the page-1 Ordering Information table of DS41788
+# (Automotive compliance). No lifecycle statement.
+# Package: The letter-coded SOT23 Package Outline Dimensions table on page 6
+# (A 0.37/0.51/0.40 ... K1 0.903/1.10/1.025, M 0.085/0.150/0.110) is
+# value-for-value the DS18001 table that
+# standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001 was read from (compared
+# as extracted text, every row). Reused.
+schema_version: "0.2"
+kind: part
+id: diodes/DMG3420UQ-7
+manufacturer: diodes
+mpn: DMG3420UQ-7
+device: diodes/DMG3420UQ
+package: standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001
+sources: [diodes/DS41788, diodes/DS18001]
+source: diodes/DS41788
+
+existence: { status: verified, src: 'p1 "Ordering Information table, DMG3420UQ-7 | SOT23"' }
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 20 V, src: 'p2 "Maximum Ratings, VDSS"' }
+  drain_current:
+    - max: 5.47 A
+      at: { TA: 25 °C }
+      src: p2 "Maximum Ratings, ID Continuous, Steady State (Note 6)"
+    - max: 3.43 A
+      at: { TA: 85 °C }
+      src: p2 "Maximum Ratings, ID Continuous, Steady State (Note 6)"
+  rds_on:
+    - { typ: 21 mΩ, max: 29 mΩ, at: { VGS: 10 V, ID: 6 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { typ: 25 mΩ, max: 35 mΩ, at: { VGS: 4.5 V, ID: 5 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { typ: 34 mΩ, max: 48 mΩ, at: { VGS: 2.5 V, ID: 4 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { typ: 65 mΩ, max: 91 mΩ, at: { VGS: 1.8 V, ID: 2 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+  gate_threshold_voltage:
+    min: 0.5 V
+    typ: 0.95 V
+    max: 1.2 V
+    at: { ID: 250 µA }
+    src: p2 "Elec. Char., VGS(TH), VDS = VGS"

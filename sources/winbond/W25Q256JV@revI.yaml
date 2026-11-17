@@ -1,0 +1,18 @@
+# Official Winbond W25Q256JV datasheet ("3V 256M-bit serial flash memory
+# with dual/quad SPI", Industrial & Industrial Plus grade). Cover page:
+# "Publication Release Date: October 23, 2018 / Revision I" (the newest
+# W25Q256JV SPI revision found under winbond.com/resource-files).
+# Downloaded 2026-11-17 with curl from the URL below; 94 PDF pages, read
+# with pdftotext -layout. Page numbers in provenance are PDF page indices
+# (printed page = PDF page - 1). sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: winbond/W25Q256JV@revI
+sha256: 5dc1d32599339fdc6237e052d408db74bd957bc40793df7669f9995d0bba10b8
+retrieved: 2026-11-17
+url: https://www.winbond.com/resource-files/w25q256jv%20spi%20revi%2010232018%20plus.pdf
+publisher: winbond
+document_id: W25Q256JV
+document_type: datasheet
+revision: I
+date: 2018-10

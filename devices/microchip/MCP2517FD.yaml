@@ -1,0 +1,45 @@
+# External CAN FD controller with SPI, 14-lead SOIC pin map from
+# Table 1-1 "MCP2517FD Standard Pinout Version" (page 3), SOIC column; the
+# VDFN adds the exposed pad (pin 15, "connect to VSS") and is not
+# covered by this device. Pin types from the table's Pin Type column (P/I/
+# O, I/O); OSC1/OSC2 typed clock and SCK clock as for microchip/MCP2515.
+# The active-low pins (INT, INT0, INT1, nCS) are written as printed.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP2517FD
+manufacturer: microchip
+category: can_controller
+family: MCP2517FD
+source: microchip/DS20005688@revB
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p76 "Table 7-1 DC Characteristics, VDD Voltage Range"
+  supply_current:
+    typ: 15 mA
+    max: 20 mA
+    at: { f: 40 MHz }
+    src: p76 "Table 7-1 DC Characteristics, IDD, 40 MHz SYSCLK, 20 MHz SPI activity"
+  data_rate:
+    max: 8 Mbps
+    src: p1 "Features, Data Bit Rate up to 8 Mbps (Arbitration Bit Rate up to 1 Mbps)"
+
+pins:
+  src:  p3 "Table 1-1 "MCP2517FD Standard Pinout Version", SOIC column"
+  "1":  { name: TXCAN, type: output }
+  "2":  { name: RXCAN, type: input }
+  "3":  { name: CLKO/SOF, type: output }
+  "4":  { name: INT, type: output }
+  "5":  { name: OSC2, type: clock }
+  "6":  { name: OSC1, type: clock }
+  "7":  { name: VSS, type: ground }
+  "8":  { name: INT1/GPIO1, type: io }
+  "9":  { name: INT0/GPIO0/XSTBY, type: io }
+  "10": { name: SCK, type: clock }
+  "11": { name: SDI, type: input }
+  "12": { name: SDO, type: output }
+  "13": { name: nCS, type: input }
+  "14": { name: VDD, type: power }

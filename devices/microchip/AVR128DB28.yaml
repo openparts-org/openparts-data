@@ -1,0 +1,60 @@
+# AVR128DB28 in the 28-pin packages (SSOP, SOIC and SPDIP share one pin
+# map: section 2.1 "28-pin SSOP, SOIC and SPDIP", DS40002247B page 14).
+# Pin numbers from section 3.1 "I/O Multiplexing", column
+# "SOIC28/SSOP28/SPDIP28" (pages 18-19, pdftotext), checked pin for pin
+# against the section 2.1 pinout (page 14). Pin 15 is printed "GND" in
+# the pinout figure and "AGND" in the 3.1 table; the figure name is used.
+#
+# Types: VDD/AVDD/VDDIO2 power, GND ground, port pins io. PF6 carries
+# RESET (table note 6 marks PF6 specially; typed io like the other port
+# pins), UPDI is the dedicated programming/debug pin (io). AVDD is
+# internally connected to VDD (page 14 note); VDDIO2 is the separate
+# MVIO supply (1.62-5.5 V, Table 39-3; no key for a second I/O rail, so
+# only VDD is recorded as supply_voltage). alternate_functions carry only
+# the "Special" and "ADC0" columns; OPAMP/AC/ZCD/USART/SPI/TWI/TCx/
+# EVSYS/CCL mappings are not modelled.
+schema_version: "0.2"
+kind: device
+id: microchip/AVR128DB28
+manufacturer: microchip
+category: microcontroller
+family: AVR DB
+source: microchip/DS40002247B
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 1.8 V, max: 5.5 V, src: 'p606 "Table 39-3 Supply Voltage, VDD"' }
+
+pins:
+  src:
+    - p18 "Section 3.1 "I/O Multiplexing", column "SOIC28/SSOP28/SPDIP28", columns "Special" and "ADC0""
+    - p19 "Section 3.1 table (continued), rows PD6-GND"
+    - p14 "Section 2.1 "28-pin SSOP, SOIC and SPDIP" pinout (cross-check)"
+  "1":  { name: PA7, type: io, alternate_functions: [CLKOUT] }
+  "2":  { name: PC0, type: io }
+  "3":  { name: PC1, type: io }
+  "4":  { name: PC2, type: io }
+  "5":  { name: PC3, type: io }
+  "6":  { name: VDDIO2, type: power }
+  "7":  { name: PD1, type: io, alternate_functions: [AIN1] }
+  "8":  { name: PD2, type: io, alternate_functions: [AIN2] }
+  "9":  { name: PD3, type: io, alternate_functions: [AIN3] }
+  "10": { name: PD4, type: io, alternate_functions: [AIN4] }
+  "11": { name: PD5, type: io, alternate_functions: [AIN5] }
+  "12": { name: PD6, type: io, alternate_functions: [AIN6] }
+  "13": { name: PD7, type: io, alternate_functions: [VREFA, AIN7] }
+  "14": { name: AVDD, type: power }
+  "15": { name: GND, type: ground }
+  "16": { name: PF0, type: io, alternate_functions: [XTAL32K1, AIN16] }
+  "17": { name: PF1, type: io, alternate_functions: [XTAL32K2, AIN17] }
+  "18": { name: PF6, type: io, alternate_functions: [RESET] }
+  "19": { name: UPDI, type: io }
+  "20": { name: VDD, type: power }
+  "21": { name: GND, type: ground }
+  "22": { name: PA0, type: io, alternate_functions: [XTALHF1, EXTCLK] }
+  "23": { name: PA1, type: io, alternate_functions: [XTALHF2] }
+  "24": { name: PA2, type: io }
+  "25": { name: PA3, type: io }
+  "26": { name: PA4, type: io }
+  "27": { name: PA5, type: io }
+  "28": { name: PA6, type: io }

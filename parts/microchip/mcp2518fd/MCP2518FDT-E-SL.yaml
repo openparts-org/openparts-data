@@ -1,0 +1,33 @@
+# MPN from the Product Identification System (DS20006027B page 95),
+# example a): "MCP2518FDT-E/SL" (Tape and Reel, Extended Temperature, Plastic SOIC
+# 150 mil, 14-lead). SL drawing C04-065-SL Rev D (pages 86-88), the
+# revision manufacturers/microchip/SOIC14-SL-C04-065D was read from.
+# The id replaces the "/" of the MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP2518FDT-E-SL
+manufacturer: microchip
+mpn: MCP2518FDT-E/SL
+device: microchip/MCP2518FD
+
+package:
+  value: manufacturers/microchip/SOIC14-SL-C04-065D
+  src: p95 "Product Identification System, SL = Plastic SOIC (150 mil Body), 14-Lead; drawing C04-065-SL Rev D p86-88"
+
+sources: [microchip/DS20006027@revB]
+source: microchip/DS20006027@revB
+
+# existence is `probable`: the MPN is printed only as an example of the
+# part-numbering legend, not in an orderable list.
+existence:
+  status: probable
+  src: p95 "Product Identification System, example a) MCP2518FDT-E/SL"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p78 "Table 7-1 DC Characteristics, Extended (E) TAMB = -40 to +125 C"

@@ -1,0 +1,37 @@
+# Toshiba P-DIP18-300-2.54-001 (18-pin 300-mil plastic DIP), read from the rendered
+# "Package Dimensions" page of the TBD62083A series datasheet
+# (2026-05-13, PDF page 8; image only). Unit mm.
+# body_width (the `dip` generator's ROW SPACING) = "7.62BSC". body_length
+# "22.86 +-0.10"; body thickness "3.30 +-0.20" -> body_height; "4.80MAX"
+# overall_height; lead width "0.38~0.55"; lead thickness "0.21~0.35".
+# Left out: "0.40~0.80" at the side view (datum unclear), molded width
+# "6.40 +-0.10", lead span "8.80 +2.10/-1.18", the "3.30" lead length
+# with an unreadable tolerance, the "1.52 +-0.05" shoulder width.
+schema_version: "0.2"
+kind: package
+id: manufacturers/toshiba/P-DIP18-300-2.54-001
+family: dip
+lead_count: 18
+source: toshiba/TBD62083A-datasheet-en
+
+pitch: { typ: 2.54 mm, src: 'p8 "P-DIP18-300-2.54-001, 2.54BSC"' }
+geometry: { type: parametric, generator: dip }
+
+dimensions:
+  body_width:     { typ: 7.62 mm, src: 'p8 "P-DIP18-300-2.54-001 end view, 7.62BSC"' }
+  body_length:
+    min: 22.76 mm
+    typ: 22.86 mm
+    max: 22.96 mm
+    src: p8 "P-DIP18-300-2.54-001 top view, 22.86 +-0.10"
+  body_height:
+    min: 3.1 mm
+    typ: 3.3 mm
+    max: 3.5 mm
+    src: p8 "P-DIP18-300-2.54-001 side view, 3.30 +-0.20"
+  lead_thickness:
+    min: 0.21 mm
+    max: 0.35 mm
+    src: p8 "P-DIP18-300-2.54-001 end view, 0.21~0.35"
+  overall_height: { max: 4.8 mm, src: 'p8 "P-DIP18-300-2.54-001 side view, 4.80MAX"' }
+  lead_width: { min: 0.38 mm, max: 0.55 mm, src: 'p8 "P-DIP18-300-2.54-001 side view, 0.38~0.55"' }

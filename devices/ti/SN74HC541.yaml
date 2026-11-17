@@ -1,0 +1,66 @@
+# Octal buffer/line driver with 3-state outputs SN74HC541, 20-pin pin map
+# from the "Pin Functions" table (SCLS305E page 3). OE1/OE2 are active
+# low (both low enables the outputs). FK (LCCC) not covered.
+schema_version: "0.2"
+kind: device
+id: ti/SN74HC541
+manufacturer: ti
+category: logic
+family: SNx4HC541
+source: ti/SCLS305E
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 6 V
+    src: p4 "Recommended Operating Conditions, VCC, SN74HC541 row"
+  supply_current:
+    max: 8 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p5 "6.5 Electrical Characteristics, TA = 25°C: ICC, VI = VCC or 0, 6 V, TA = 25°C column"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "Recommended Operating Conditions, TA, SN74HC541 row"
+  esd_hbm:       { typ: 2 kV, src: 'p4 "ESD Ratings, HBM"' }
+  channel_count: { value: "8", src: 'p1 "Title, Octal Buffers and Line Drivers"' }
+  propagation_delay:
+    - typ: 12 ns
+      max: 23 ns
+      at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+      src: p6 "6.8 Switching Characteristics CL = 50 pF, tpd A to Y, 4.5 V, TA = 25°C"
+    - typ: 40 ns
+      max: 115 ns
+      at: { VCC: 2 V, CL: 50 pF, TA: 25 °C }
+      src: p6 "6.8 Switching Characteristics CL = 50 pF, tpd A to Y, 2 V, TA = 25°C"
+    - typ: 10 ns
+      max: 20 ns
+      at: { VCC: 6 V, CL: 50 pF, TA: 25 °C }
+      src: p6 "6.8 Switching Characteristics CL = 50 pF, tpd A to Y, 6 V, TA = 25°C"
+  logic_function:
+    value: buffer
+    src: p1 "Title, Octal Buffers and Line Drivers With 3-State Outputs"
+
+pins:
+  src:  p3 ""Pin Functions" table (NO. / NAME / I/O)"
+  "1":  { name: OE1, type: input }
+  "2":  { name: A1, type: input }
+  "3":  { name: A2, type: input }
+  "4":  { name: A3, type: input }
+  "5":  { name: A4, type: input }
+  "6":  { name: A5, type: input }
+  "7":  { name: A6, type: input }
+  "8":  { name: A7, type: input }
+  "9":  { name: A8, type: input }
+  "10": { name: GND, type: ground }
+  "11": { name: Y8, type: output }
+  "12": { name: Y7, type: output }
+  "13": { name: Y6, type: output }
+  "14": { name: Y5, type: output }
+  "15": { name: Y4, type: output }
+  "16": { name: Y3, type: output }
+  "17": { name: Y2, type: output }
+  "18": { name: Y1, type: output }
+  "19": { name: OE2, type: input }
+  "20": { name: VCC, type: power }

@@ -1,0 +1,58 @@
+# Single inverter gate SN74AHC1G04, 5-pin pin map from Table 4-1 "Pin
+# Functions" (SCLS318V page 3), identical for the DBV, DCK and DRL
+# packages (all three top views on the same page). Pin 1 is NC.
+schema_version: "0.2"
+kind: device
+id: ti/SN74AHC1G04
+manufacturer: ti
+category: logic
+family: SN74AHC1G04
+source: ti/SCLS318V
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 2 V, max: 5.5 V, src: 'p4 "5.3 Recommended Operating Conditions, VCC"' }
+  supply_current:
+    max: 1 µA
+    at: { VCC: 5.5 V, TA: 25 °C }
+    src: 'p5 "5.5 Electrical Characteristics: ICC, 5.5 V, TA = 25°C MAX"'
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "5.3 Recommended Operating Conditions, TA"
+  esd_hbm:        { typ: 3.5 kV, src: 'p4 "5.2 ESD Ratings, HBM, all pins"' }
+  channel_count:  { value: "1", src: 'p1 "3 Description, contains one inverter gate"' }
+  propagation_delay:
+    - typ: 3.8 ns
+      max: 5.5 ns
+      at: { VCC: 5 V, CL: 15 pF, TA: 25 °C }
+      src: 'p6 "5.7 Switching Characteristics VCC = 5 V: tPLH/tPHL A to Y, CL = 15 pF, TA = 25°C"'
+    - typ: 5 ns
+      max: 7.1 ns
+      at: { VCC: 3.3 V, CL: 15 pF, TA: 25 °C }
+      src: 'p6 "5.6 Switching Characteristics VCC = 3.3 V: tPLH/tPHL A to Y, CL = 15 pF, TA = 25°C"'
+  logic_function: { value: inverter, src: 'p1 "Title, Single Inverter Gate"' }
+  output_current_high:
+    - max: 8 mA
+      at: { VCC: 5 V }
+      src: p4 "5.3 Recommended Operating Conditions, IOH, VCC = 5 V ± 0.5 V (printed -8 mA)"
+    - max: 4 mA
+      at: { VCC: 3.3 V }
+      src: p4 "5.3 Recommended Operating Conditions, IOH, VCC = 3.3 V ± 0.3 V (printed -4 mA)"
+  output_current_low:
+    - max: 8 mA
+      at: { VCC: 5 V }
+      src: p4 "5.3 Recommended Operating Conditions, IOL, VCC = 5 V ± 0.5 V"
+    - max: 4 mA
+      at: { VCC: 3.3 V }
+      src: p4 "5.3 Recommended Operating Conditions, IOL, VCC = 3.3 V ± 0.3 V"
+
+pins:
+  src:
+    - p3 "Table 4-1 "Pin Functions" (NO. / NAME / TYPE)"
+    - p3 "DBV, DCK, DRL PACKAGE top views (cross-check)"
+  "1": { name: NC, type: nc }
+  "2": { name: A, type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: Y, type: output }
+  "5": { name: VCC, type: power }

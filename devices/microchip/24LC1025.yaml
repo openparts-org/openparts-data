@@ -1,0 +1,34 @@
+# 1024-Kbit I2C serial EEPROM (2.5 V 24LC1025 of the
+# 24AA1025/24LC1025/24FC1025 family). Pinout from DS20001941M Table 2-1
+# "Pin Function Table" (page 7), PDIP/SOIJ/SOIC columns (identical). A2
+# is a "Non-Configurable Chip Select" that "must be hard-wired to logical
+# '1' state (VCC)" -- still an input, recorded as input. A0, A1, WP, SCL
+# -> input; SDA -> io.
+schema_version: "0.2"
+kind: device
+id: microchip/24LC1025
+manufacturer: microchip
+category: eeprom
+family: 24AA1025/24LC1025/24FC1025
+source: microchip/DS20001941@revM
+
+# Parameters (AI candidates, needs review).
+parameters:
+  capacity:
+    typ: 1024 Kbit
+    src: 'p1 "Description: 24XX1025 is a 1024-Kbit EEPROM, two blocks of 64K x 8 bit"'
+  supply_voltage:
+    min: 2.5 V
+    max: 5.5 V
+    src: p1 "Device Selection Table, 24LC1025 VCC Range 2.5V-5.5V"
+
+pins:
+  src: p7 "Table 2-1 "Pin Function Table", columns PDIP, SOIJ and SOIC (identical)"
+  "1": { name: A0, type: input }
+  "2": { name: A1, type: input }
+  "3": { name: A2, type: input }
+  "4": { name: VSS, type: ground }
+  "5": { name: SDA, type: io }
+  "6": { name: SCL, type: input }
+  "7": { name: WP, type: input }
+  "8": { name: VCC, type: power }

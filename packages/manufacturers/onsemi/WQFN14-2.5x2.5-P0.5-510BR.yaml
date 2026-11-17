@@ -1,0 +1,61 @@
+# onsemi WQFN14 2.5x2.5, 0.5P, CASE 510BR issue O (document 98AON13629G,
+# 31 Aug 2016), the "14-lead MLP" of the FUSB302B, read from the rendered
+# MECHANICAL CASE OUTLINE page of FUSB302B/D Rev. 5 (PDF page 31).
+# Millimetres as printed. 3 terminals on the left and right edges, 4 on
+# the top and bottom (bottom view: 1-3 up the left, 4-7 along the top,
+# 8-10 down the right, 11-14 along the bottom; seen from the top: 1-3
+# down the left edge, 4-7 along the bottom, 8-10 up the right, 11-14
+# along the top right to left -- as the datasheet's Figure 5 "TOP
+# THROUGH VIEW", page 5). Family lga: the qfn generator needs the same
+# count on every side; lead_layout [left, bottom, right, top] = [3, 4, 3, 4].
+#
+# Lands: derived by the generator from the body dimensions; the
+# recommended land pattern as read put terminal pads over the centre
+# pad (lead review: re-read before adding explicit pads).
+schema_version: "0.2"
+kind: package
+id: manufacturers/onsemi/WQFN14-2.5x2.5-P0.5-510BR
+family: lga
+lead_count: { value: 14, src: 'p31 "CASE 510BR bottom view, terminals 1-14"' }
+
+lead_layout:
+  value: [3, 4, 3, 4]
+  src:   p31 "CASE 510BR bottom view, 3 terminals on the left/right edges, 4 on the top/bottom"
+
+source: onsemi/FUSB302B-D
+
+pitch: { typ: 0.5 mm, src: 'p31 "CASE 510BR bottom view, "0.50" (basic)"' }
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:
+    min: 2.45 mm
+    typ: 2.5 mm
+    max: 2.55 mm
+    src: p31 "CASE 510BR bottom view, "2.50±0.05""
+  body_length: { typ: 2.5 mm, src: 'p31 "CASE 510BR top view, "2.50" (basic)"' }
+  body_height:
+    min: 0.7 mm
+    typ: 0.75 mm
+    max: 0.8 mm
+    src: p31 "CASE 510BR front view, "0.75±0.05""
+  exposed_pad:
+    src:    p31 "CASE 510BR bottom view, "1.45±0.05" both ways"
+    width:  { min: 1.4 mm, typ: 1.45 mm, max: 1.5 mm }
+    length: { min: 1.4 mm, typ: 1.45 mm, max: 1.5 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.025 mm
+    max: 0.05 mm
+    src: p31 "CASE 510BR front view, "0.025±0.025""
+  lead_width:
+    min: 0.18 mm
+    typ: 0.24 mm
+    max: 0.3 mm
+    src: p31 "CASE 510BR bottom view, "0.24±0.06 (14X)""
+  lead_length: { typ: 0.3 mm, src: 'p31 "CASE 510BR bottom view, "0.30(14X)""' }
+  lead_thickness:
+    min: 0.1 mm
+    typ: 0.15 mm
+    max: 0.2 mm
+    src: p31 "CASE 510BR front view, "0.15±0.05""

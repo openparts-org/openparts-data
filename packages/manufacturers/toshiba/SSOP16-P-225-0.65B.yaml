@@ -1,0 +1,62 @@
+# Toshiba SSOP16-P-225-0.65B (16-lead SSOP, 4.4 mm body, 0.65 mm pitch), read from
+# the rendered "Package Dimensions" page of the TBD62003A series
+# datasheet (2026-05-13, PDF page 9; image only). Unit mm.
+# Mapping: "5.0 +-0.2" body length (D); "4.4 +-0.2" body width (E1);
+# "6.4 +-0.3" lead-tip span; "1.2 +-0.2" body thickness -> body_height;
+# "1.6 MAX" overall_height; standoff "0.1 +0.1/-0.05"; lead thickness
+# "0.15 +0.1/-0.05"; foot "0.45 +-0.2"; lead width "0.22 +-0.1".
+# Left out: "5.5MAX" overall length, "5.72 (225mil)" boxed reference,
+# "0.23TYP" end distance. Pins 1-8 along one long edge, 9-16 back along
+# the other (pin 1 at the index mark).
+schema_version: "0.2"
+kind: package
+id: manufacturers/toshiba/SSOP16-P-225-0.65B
+family: ssop
+lead_count: 16
+source: toshiba/TBD62003A-datasheet-en
+
+pitch: { typ: 0.65 mm, src: 'p9 "SSOP16-P-225-0.65B, boxed 0.65"' }
+geometry: { type: parametric, generator: ssop }
+
+dimensions:
+  body_width:
+    min: 4.2 mm
+    typ: 4.4 mm
+    max: 4.6 mm
+    src: p9 "SSOP16-P-225-0.65B top view, 4.4 +-0.2"
+  body_length:
+    min: 4.8 mm
+    typ: 5 mm
+    max: 5.2 mm
+    src: p9 "SSOP16-P-225-0.65B side view, 5.0 +-0.2"
+  body_height:
+    min: 1 mm
+    typ: 1.2 mm
+    max: 1.4 mm
+    src: p9 "SSOP16-P-225-0.65B side view, 1.2 +-0.2"
+  lead_thickness:
+    min: 0.1 mm
+    typ: 0.15 mm
+    max: 0.25 mm
+    src: p9 "SSOP16-P-225-0.65B terminal detail, 0.15 +0.1/-0.05"
+  overall_width:
+    min: 6.1 mm
+    typ: 6.4 mm
+    max: 6.7 mm
+    src: p9 "SSOP16-P-225-0.65B top view, 6.4 +-0.3"
+  overall_height: { max: 1.6 mm, src: 'p9 "SSOP16-P-225-0.65B side view, 1.6MAX"' }
+  standoff:
+    min: 0.05 mm
+    typ: 0.1 mm
+    max: 0.2 mm
+    src: p9 "SSOP16-P-225-0.65B side view, 0.1 +0.1/-0.05"
+  lead_width:
+    min: 0.12 mm
+    typ: 0.22 mm
+    max: 0.32 mm
+    src: p9 "SSOP16-P-225-0.65B top view, 0.22 +-0.1"
+  lead_length:
+    min: 0.25 mm
+    typ: 0.45 mm
+    max: 0.65 mm
+    src: p9 "SSOP16-P-225-0.65B terminal detail, 0.45 +-0.2"

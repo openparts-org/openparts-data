@@ -1,0 +1,19 @@
+# Official Microchip datasheet "24AA16/24LC16B/24FC16 16-Kbit I2C Serial EEPROM". Downloaded 2026-11-17
+# with curl from ww1.microchip.com (URL below; found with a search
+# restricted to ww1.microchip.com, the microchip.com product pages refuse
+# plain fetches). document_id / revision from the printed footer
+# "DS20001703R-page N"; the Revision History's latest entry is
+# "Revision R (10/2025)". 47 PDF pages; text read with pdftotext -layout.
+# Page numbers in this dataset are PDF page indices (they equal the
+# printed page numbers). sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20001703@revR
+sha256: 2fb9477ed67fadea281acea4a67bd62ab4de8a78359d5e6491b36f364cbbed4b
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/MPD/ProductDocuments/DataSheets/24AA16-24LC16B-24FC16-16Kbit-I2C-Serial-EEPROM-DS20001703.pdf
+publisher: microchip
+document_id: DS20001703
+document_type: datasheet
+revision: R
+date: 2025-10

@@ -1,0 +1,48 @@
+# Atmel/Microchip drawing 14S1 rev. B "14-lead, 0.150" Wide Body, Plastic
+# Gull Wing Small Outline Package (SOIC)" (1/15/13; JEDEC MS-012 variation
+# AB per its note 1), read from the rendered page 24 of the AT42QT1070
+# datasheet 9596C (section 6.7). The table is in inches (MIN / MAX, no
+# nominal); the values below are the printed inches x 25.4, rounded to
+# 0.001 mm (the inch figure is in each locator). Mapping as the other
+# SOICs: body_width = E, body_length = D, overall_width = H,
+# overall_height = A (no A2), standoff = A1, lead_width = b, lead_length
+# = L. No lead thickness or land pattern is printed.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/SOIC14-14S1
+family: soic
+lead_count: { value: 14, src: 'p24 "14S1, 14-lead SOIC"' }
+source: microchip/AT42QT1070-9596C
+
+pitch: { typ: 1.27 mm, src: 'p24 "14S1 COMMON DIMENSIONS, e 0.050 BSC (inches)"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 3.802 mm
+    max: 3.998 mm
+    src: p24 "14S1 COMMON DIMENSIONS (inches), E 0.1497 / 0.1574"
+  body_length:
+    min: 8.552 mm
+    max: 8.748 mm
+    src: p24 "14S1 COMMON DIMENSIONS (inches), D 0.3367 / 0.3444"
+  lead_length:
+    min: 0.406 mm
+    max: 1.27 mm
+    src: p24 "14S1 COMMON DIMENSIONS (inches), L 0.0160 / 0.0500"
+  lead_width:
+    min: 0.33 mm
+    max: 0.508 mm
+    src: p24 "14S1 COMMON DIMENSIONS (inches), b 0.0130 / 0.0200"
+  overall_width:
+    min: 5.801 mm
+    max: 6.198 mm
+    src: p24 "14S1 COMMON DIMENSIONS (inches), H 0.2284 / 0.2440"
+  overall_height:
+    min: 1.351 mm
+    max: 1.748 mm
+    src: p24 "14S1 COMMON DIMENSIONS (inches), A 0.0532 / 0.0688"
+  standoff:
+    min: 0.102 mm
+    max: 0.249 mm
+    src: p24 "14S1 COMMON DIMENSIONS (inches), A1 0.0040 / 0.0098"

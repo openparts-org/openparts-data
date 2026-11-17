@@ -1,0 +1,15 @@
+# YAGEO per-part spec sheet for RC0805FR-07200KL, served by the manufacturer's own
+# spec-sheet download endpoint (plain curl, PDF; a non-existent MPN returns
+# HTTP 404). The sheet carries no revision; it prints only "Generated
+# 11/17/2026", recorded as date/revision. Read via pdftotext -layout.
+schema_version: "0.2"
+kind: source
+id: yageo/RC0805FR-07200KL-SPEC
+sha256: 9a1c200836224b91abe6ab335f5a92a28f43992f67ac8b5b49f4d454362112f9
+retrieved: 2026-11-17
+url: https://yageogroup.com/component-documentation/download/specsheet/RC0805FR-07200KL
+publisher: yageo
+document_id: RC0805FR-07200KL
+document_type: datasheet
+revision: generated 2026-11-17
+date: 2026-11-17

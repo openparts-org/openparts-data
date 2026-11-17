@@ -1,0 +1,40 @@
+# DMG6968U-7: listed in the page-1 Ordering Information table of DS31738.
+# Lifecycle: page-1 banner "NOT RECOMMENDED FOR NEW DESIGN"; replacement
+# DMN2024U (banner "USE DMN2024U"; not in the dataset, not linked).
+# Package: The letter-coded SOT23 Package Outline Dimensions table on page 5
+# (A 0.37/0.51/0.40 ... K1 0.903/1.10/1.025, M 0.085/0.150/0.110) is
+# value-for-value the DS18001 table that
+# standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001 was read from (compared
+# as extracted text, every row). Reused.
+schema_version: "0.2"
+kind: part
+id: diodes/DMG6968U-7
+manufacturer: diodes
+mpn: DMG6968U-7
+device: diodes/DMG6968U
+package: standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001
+sources: [diodes/DS31738, diodes/DS18001]
+source: diodes/DS31738
+
+existence: { status: verified, src: 'p1 "Ordering Information table, DMG6968U-7 | SOT23"' }
+lifecycle: { status: nrnd, src: p1 "Banner "NOT RECOMMENDED FOR NEW DESIGN"" }
+
+parameters:
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 20 V, src: 'p2 "Maximum Ratings, VDSS"' }
+  drain_current:
+    - max: 6.5 A
+      at: { TA: 25 °C }
+      src: p2 "Maximum Ratings, ID Continuous, Steady State (Note 5)"
+    - max: 5.2 A
+      at: { TA: 70 °C }
+      src: p2 "Maximum Ratings, ID Continuous, Steady State (Note 5)"
+  rds_on:
+    - { typ: 21 mΩ, max: 25 mΩ, at: { VGS: 4.5 V, ID: 6.5 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { typ: 23 mΩ, max: 29 mΩ, at: { VGS: 2.5 V, ID: 5.5 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { typ: 28 mΩ, max: 36 mΩ, at: { VGS: 1.8 V, ID: 3.5 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+  gate_threshold_voltage:
+    min: 0.5 V
+    max: 0.9 V
+    at: { ID: 250 µA }
+    src: p2 "Elec. Char., VGS(TH), VDS = VGS"

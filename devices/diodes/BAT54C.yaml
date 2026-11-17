@@ -1,0 +1,36 @@
+# Dual common-cathode Schottky diode, SOT23 (Standard). From the page-1
+# "BAT54C" connection drawing (rendered at 400 dpi): both diodes'
+# cathodes join the top lead, their anodes are the bottom-left and
+# bottom-right leads. Pin numbers are not printed; numbers follow this
+# dataset's sot convention (1 bottom-left, 2 bottom-right, 3 top) --
+# position-derived, flagged for review (matches onsemi CASE 318 STYLE 9
+# of BAT54CL).
+schema_version: "0.2"
+kind: device
+id: diodes/BAT54C
+manufacturer: diodes
+category: diode
+family: BAT54
+source: diodes/DS11005
+
+parameters:
+  forward_voltage:
+    - max: 800 mV
+      at: { IF: 100 mA }
+      src: p2 "Electrical Characteristics, Forward Voltage VF"
+    - max: 240 mV
+      at: { IF: 0.1 mA }
+      src: p2 "Electrical Characteristics, Forward Voltage VF"
+    - { max: 320 mV, at: { IF: 1 mA }, src: 'p2 "Electrical Characteristics, Forward Voltage VF"' }
+    - { max: 400 mV, at: { IF: 10 mA }, src: 'p2 "Electrical Characteristics, Forward Voltage VF"' }
+    - { max: 500 mV, at: { IF: 30 mA }, src: 'p2 "Electrical Characteristics, Forward Voltage VF"' }
+  reverse_voltage: { max: 30 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR"' }
+  forward_current:
+    max: 200 mA
+    src: p2 "Maximum Ratings, Average Rectified Output Current (Note 5) IO"
+
+pins:
+  src: p1 "Connection drawing labelled "BAT54C"; position-derived numbering, see header"
+  "1": { name: Anode1, type: passive }
+  "2": { name: Anode2, type: passive }
+  "3": { name: Cathode, type: passive }

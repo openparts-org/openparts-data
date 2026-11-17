@@ -1,0 +1,46 @@
+# TUSB320 / TUSB320I USB Type-C configuration-channel logic and port
+# control (no PD messaging), 12-pin X2QFN RWB. Pinout from SLLSEN9F
+# "Table 5-1. Pin Functions" (page 4), checked against "Figure 5-1. RWB
+# Package, 12-Pin X2QFN (Top View)". The two grades differ only in the
+# operating range (TUSB320 0-70 °C, TUSB320I -40-85 °C, page 5), so
+# operating_temperature belongs on Parts. No Parts yet: the RWB0012A
+# land pattern (page 34) does not dimension the side pads' position, so
+# no package was recorded.
+schema_version: "0.2"
+kind: device
+id: ti/TUSB320
+manufacturer: ti
+category: usb_pd_controller
+family: TUSB320
+source: ti/SLLSEN9F
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:    { value: i2c, src: 'p1 "Features, I2C or GPIO control"' }
+  supply_voltage:
+    min: 2.7 V
+    max: 5 V
+    src: p5 "6.3 Recommended Operating Conditions, VDD Supply voltage range"
+  esd_hbm:           { typ: 7 kV, src: 'p5 "6.2 ESD Ratings, HBM ±7000 V"' }
+  bus_fault_voltage: { min: -0.3 V, max: 6 V, src: 'p5 "6.1 Absolute Maximum Ratings, CC1, CC2"' }
+  usb_power_role:
+    value: dual_role
+    src: 'p1 "Features, Mode configuration: DFP (source), UFP (sink), Dual role port – DRP"'
+  usb_pd_revision:
+    value: none
+    src: p1 "Title, Type-C Configuration Channel Logic and Port Control"
+
+pins:
+  src:  [p4 "Table 5-1. Pin Functions", 'p4 "Figure 5-1. RWB Package, 12-Pin X2QFN (Top View)"']
+  "1":  { name: CC1, type: io }
+  "2":  { name: CC2, type: io }
+  "3":  { name: PORT, type: input }
+  "4":  { name: VBUS_DET, type: input }
+  "5":  { name: ADDR, type: input }
+  "6":  { name: INT_N/OUT3, type: output }
+  "7":  { name: SDA/OUT1, type: io }
+  "8":  { name: SCL/OUT2, type: io }
+  "9":  { name: ID, type: output }
+  "10": { name: GND, type: ground }
+  "11": { name: EN_N, type: input }
+  "12": { name: VDD, type: power }

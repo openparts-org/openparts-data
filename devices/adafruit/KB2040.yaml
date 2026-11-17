@@ -1,0 +1,41 @@
+# Adafruit KB2040: the pins of the module package standards/MODULE26-18x33-P2.54-ADAFRUIT-KB2040,
+# named after the net each header pad connects to in the maker's design file (adafruit/Adafruit-KB2040-PCB@b4160dc).
+# Types are this dataset's reading of the net names (GND ground; supply nets power;
+# reset nets reset; others io). "!" (active-low bar) and a leading "+" are dropped. AI candidate, needs review.
+# connected_to: a second header pad on the same design net as an earlier pin.
+schema_version: "0.2"
+kind: device
+id: adafruit/KB2040
+manufacturer: adafruit
+category: microcontroller
+family: RP2040
+source: adafruit/Adafruit-KB2040-PCB@b4160dc
+
+pins:
+  src:  '"header pads JP1, JP2: net names"'
+  "1":  { name: D+, type: io }
+  "2":  { name: D0, type: io }
+  "3":  { name: D1, type: io }
+  "4":  { name: GND, type: ground }
+  "5":  { name: GND, type: ground }
+  "6":  { name: D2, type: io }
+  "7":  { name: D3, type: io }
+  "8":  { name: D4, type: io }
+  "9":  { name: D5, type: io }
+  "10": { name: D6, type: io }
+  "11": { name: D7, type: io }
+  "12": { name: D8, type: io }
+  "13": { name: D9, type: io }
+  "14": { name: D10, type: io }
+  "15": { name: MOSI, type: io }
+  "16": { name: MISO, type: io }
+  "17": { name: SCLK, type: io }
+  "18": { name: A0, type: io }
+  "19": { name: A1, type: io }
+  "20": { name: A2, type: io }
+  "21": { name: A3, type: io }
+  "22": { name: 3.3V, type: power }
+  "23": { name: RESET, type: reset }
+  "24": { name: GND, type: ground }
+  "25": { name: RAW, type: power }
+  "26": { name: D-, type: io }

@@ -1,0 +1,15 @@
+# YAGEO per-part spec sheet for RC0402FR-072KL, served by the manufacturer's own
+# spec-sheet download endpoint (plain curl, PDF; a non-existent MPN returns
+# HTTP 404). The sheet carries no revision; it prints only "Generated
+# 11/17/2026", recorded as date/revision. Read via pdftotext -layout.
+schema_version: "0.2"
+kind: source
+id: yageo/RC0402FR-072KL-SPEC
+sha256: 88e370a72e8f6dd6db97dbc3f612735bb7f675ffcd146d34f1a037f63d06ecbd
+retrieved: 2026-11-17
+url: https://yageogroup.com/component-documentation/download/specsheet/RC0402FR-072KL
+publisher: yageo
+document_id: RC0402FR-072KL
+document_type: datasheet
+revision: generated 2026-11-17
+date: 2026-11-17

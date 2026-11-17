@@ -1,0 +1,32 @@
+# 10 µH +/-20%, SRR0604 shielded power inductor, per the page-1
+# Electrical Specifications table (read from a 110 dpi render, checked
+# against the pdftotext layout). lifecycle unknown: no production-status statement.
+schema_version: "0.2"
+kind: part
+id: bourns/SRR0604-100ML
+manufacturer: bourns
+mpn: SRR0604-100ML
+device: bourns/SRR0604-SERIES
+package: manufacturers/bourns/CHIP-BOURNS-SRR0604
+sources: [bourns/SRR0604]
+source: bourns/SRR0604
+
+existence:
+  status: verified
+  src: p1 "Electrical Specifications, SRR0604-100ML row (Part Number)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance: { tol: ±20 %, src: 'p1 "Electrical Specifications, SRR0604-100ML row, Tol. %"' }
+  inductance:
+    typ: 10 µH
+    at: { f: 1 kHz }
+    src: p1 "Electrical Specifications, SRR0604-100ML row, Inductance 1 KHz"
+  rated_current:
+    max: 1.3 A
+    src: p1 "Electrical Specifications, SRR0604-100ML row, I rms Max. (temp. rise 40 °C max.)"
+  saturation_current:
+    typ: 1.8 A
+    src: p1 "Electrical Specifications, SRR0604-100ML row, I sat Typ. (ind. drop 10 % typ.)"
+  dcr: { max: 0.12 Ω, src: 'p1 "Electrical Specifications, SRR0604-100ML row, RDC Max. (Ω)"' }

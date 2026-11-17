@@ -1,0 +1,63 @@
+# ISO7741 quad-channel digital isolator (three forward, one reverse
+# channel, output enables), DW (16-pin SOIC wide) pinout from SLLSEP4K
+# "Table 4-1. Pin Functions" (page 5, ISO7741 column), checked against
+# "Figure 4-2. ISO7741 DW and DBQ Packages ... Top View" (page 4). DW
+# has its own VISO rating (5000 VRMS vs 3000 VRMS for DBQ), hence a
+# device per package. data_rate from the Features (page 1): the
+# Recommended Operating Conditions DR row prints "50" while its note
+# (2) says 100 Mbps is the maximum specified rate.
+schema_version: "0.2"
+kind: device
+id: ti/ISO7741-DW
+manufacturer: ti
+category: digital_isolator
+family: ISO774x
+source: ti/SLLSEP4K
+
+# Parameters (AI candidates, needs review).
+parameters:
+  isolation_voltage:
+    min: 5000 V
+    at: { t: 60 s }
+    src: p10 "Insulation Specifications, VISO maximum withstanding isolation voltage, DW-16 5000 VRMS"
+  cmr: { min: 85 kV/µs, src: 'p13 "5.9 Electrical Characteristics—5-V Supply, CMTI"' }
+  supply_voltage:
+    min: 2.25 V
+    max: 5.5 V
+    src: p7 "Recommended Operating Conditions, VCC1, VCC2 Supply Voltage"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p7 "Recommended Operating Conditions, TA Ambient temperature"
+  esd_hbm:       { typ: 6 kV, src: 'p6 "5.2 ESD Ratings, HBM all pins ±6000 V"' }
+  channel_count: { value: "4", src: 'p2 "3 Description, quad-channel digital isolators"' }
+  propagation_delay:
+    typ: 12.7 ns
+    max: 17 ns
+    at: { VCC: 5 V }
+    src: p19 "5.15 Switching Characteristics—5-V Supply, tPLH, tPHL"
+  data_rate:     { max: 100 Mbps, src: 'p1 "Features, 100Mbps data rate"' }
+  reverse_channel_count:
+    value: "1"
+    src: p2 "3 Description, ISO7741 three forward and one reverse-direction channels"
+
+pins:
+  src:
+    - p5 "Table 4-1. Pin Functions, ISO7741 column"
+    - p4 "Figure 4-2. ISO7741 DW and DBQ Packages 16-Pin SOIC-WB and QSOP Top View"
+  "1":  { name: VCC1, type: power }
+  "2":  { name: GND1, type: ground }
+  "3":  { name: INA, type: input }
+  "4":  { name: INB, type: input }
+  "5":  { name: INC, type: input }
+  "6":  { name: OUTD, type: output }
+  "7":  { name: EN1, type: input }
+  "8":  { name: GND1, type: ground }
+  "9":  { name: GND2, type: ground }
+  "10": { name: EN2, type: input }
+  "11": { name: IND, type: input }
+  "12": { name: OUTC, type: output }
+  "13": { name: OUTB, type: output }
+  "14": { name: OUTA, type: output }
+  "15": { name: GND2, type: ground }
+  "16": { name: VCC2, type: power }

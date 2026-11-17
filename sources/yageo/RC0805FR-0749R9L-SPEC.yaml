@@ -1,0 +1,15 @@
+# YAGEO per-part spec sheet for RC0805FR-0749R9L, served by the manufacturer's own
+# spec-sheet download endpoint (plain curl, PDF; a non-existent MPN returns
+# HTTP 404). The sheet carries no revision; it prints only "Generated
+# 11/17/2026", recorded as date/revision. Read via pdftotext -layout.
+schema_version: "0.2"
+kind: source
+id: yageo/RC0805FR-0749R9L-SPEC
+sha256: 42954564e2cc5e4c600715312a9fc2777da1546d322dcdc722a73bbfaed5cd6e
+retrieved: 2026-11-17
+url: https://yageogroup.com/component-documentation/download/specsheet/RC0805FR-0749R9L
+publisher: yageo
+document_id: RC0805FR-0749R9L
+document_type: datasheet
+revision: generated 2026-11-17
+date: 2026-11-17

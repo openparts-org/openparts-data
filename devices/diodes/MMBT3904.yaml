@@ -1,0 +1,18 @@
+# NPN small-signal transistor, SOT23. The page-1 "Top View
+# Pinout" labels the single top lead C, the bottom-left lead B and the
+# bottom-right lead E. Pin numbers are not printed; numbers follow this
+# dataset's sot convention (1 bottom-left, 2 bottom-right, 3 top) --
+# position-derived, flagged for review.
+schema_version: "0.2"
+kind: device
+id: diodes/MMBT3904
+manufacturer: diodes
+category: transistor
+family: MMBT3904
+source: diodes/DS30036
+
+pins:
+  src: p1 "Top View Pinout (C top; B bottom-left; E bottom-right); position-derived numbering, see header"
+  "1": { name: Base, type: passive }
+  "2": { name: Emitter, type: passive }
+  "3": { name: Collector, type: passive }

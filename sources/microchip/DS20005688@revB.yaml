@@ -1,0 +1,18 @@
+# Official Microchip datasheet "MCP2517FD External CAN FD Controller with SPI Interface". Downloaded 2026-11-17 with curl
+# from ww1.microchip.com (URL below). document_id / revision from the
+# printed footer "DS20005688B-page N"; the Revision History lists "Revision B (May 2018)".
+# 98 PDF pages; text read with pdftotext -layout. Page numbers in this
+# dataset are PDF page indices (they equal the printed page numbers).
+# Package drawings that are image pages were rendered and read as
+# images. sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20005688@revB
+sha256: d3861bb7c9ee8cc8f5e7de0d881d3e8994f3eb13743dce9ec3b4d05ecaf2f358
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/MCP2517FD-External-CAN-FD-Controller-with-SPI-Interface-20005688B.pdf
+publisher: microchip
+document_id: DS20005688
+document_type: datasheet
+revision: B
+date: 2018-05

@@ -1,0 +1,29 @@
+# Adafruit QT Py ESP32-S3 (8 MB flash, no PSRAM): the pins of the module package standards/MODULE14-18x21-P2.54-ADAFRUIT-QT-PY-ESP32,
+# named after the net each header pad connects to in the maker's design file (adafruit/Adafruit-QT-Py-ESP32-S3-PCB@333b35f).
+# Types are this dataset's reading of the net names (GND ground; supply nets power;
+# reset nets reset; others io). "!" (active-low bar) and a leading "+" are dropped. AI candidate, needs review.
+# connected_to: a second header pad on the same design net as an earlier pin.
+schema_version: "0.2"
+kind: device
+id: adafruit/QT-PY-ESP32-S3
+manufacturer: adafruit
+category: microcontroller
+family: ESP32-S3
+source: adafruit/Adafruit-QT-Py-ESP32-S3-PCB@333b35f
+
+pins:
+  src:  '"header pads JP1, JP3: net names"'
+  "1":  { name: A0, type: io }
+  "2":  { name: A1, type: io }
+  "3":  { name: A2, type: io }
+  "4":  { name: A3, type: io }
+  "5":  { name: SDA, type: io }
+  "6":  { name: SCL, type: io }
+  "7":  { name: TX, type: io }
+  "8":  { name: RX, type: io }
+  "9":  { name: SCK, type: io }
+  "10": { name: MISO, type: io }
+  "11": { name: MOSI, type: io }
+  "12": { name: 3.3V, type: power }
+  "13": { name: GND, type: ground }
+  "14": { name: 5V, type: power }

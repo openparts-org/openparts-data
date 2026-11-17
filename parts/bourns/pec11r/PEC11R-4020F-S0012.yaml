@@ -1,0 +1,23 @@
+# Bourns PEC11R-4020F-S0012: PEC11R style 4 (PC Pin Horizontal / Rear Facing), detent option 0
+# (No Detents), shaft length 20 mm, Metal Flatted Shaft, Push Momentary Switch, 12 pulses per
+# rotation. The MPN is assembled from the How To Order legend (page
+# 3), not printed in an orderable list -> existence probable.
+# Lifecycle: no status printed -> unknown.
+schema_version: "0.2"
+kind: part
+id: bourns/PEC11R-4020F-S0012
+manufacturer: bourns
+mpn: PEC11R-4020F-S0012
+device: bourns/PEC11R-SW
+package: manufacturers/bourns/PEC11R-4-L20-SW
+sources: [bourns/PEC11R]
+source: bourns/PEC11R
+
+existence: { status: probable, src: 'p3 "How To Order, PEC11R-4020F-S0012 per legend"' }
+lifecycle: { status: unknown }
+
+parameters:
+  pulses_per_revolution:
+    value: "12"
+    src: p3 "How To Order, Resolution 0012 = 12 Pulses per 360 ° Rotation"
+  detents: { value: "0", src: 'p3 "How To Order, Detent Option 0 = No Detents"' }

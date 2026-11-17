@@ -1,0 +1,43 @@
+# AT42QT1010 one-key capacitive touch / proximity sensor IC, 6-pin
+# SOT23-6. Pinout from DS40001946A "Table 1-1. Pin Listing" (section
+# 1.2.1, page 5), checked against the "6-pin SOT23-6" pinout figure
+# (section 1.1.1); OUT is push-pull ("O = Output only, push-pull"). The
+# 8-pin UDFN/USON is another pinout and not included. Operating
+# temperature is listed under Absolute Maximum Specifications (page
+# 17), the only operating range printed. The datasheet describes
+# "charge-transfer" sensing without naming self/mutual capacitance.
+schema_version: "0.2"
+kind: device
+id: microchip/AT42QT1010-SOT23
+manufacturer: microchip
+category: touch_sensor
+family: AT42QT1010
+source: microchip/DS40001946A
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.8 V
+    max: 5.5 V
+    src: p17 "5.2 Recommended Operating Conditions, Vdd +1.8 to 5.5 V"
+  supply_current:
+    typ: 378.5 µA
+    at: { VDD: 3 V }
+    src: p20 "Table 5-3, Idd Supply current, Fast mode, 3.0 V"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p17 "5.1 Absolute Maximum Specifications, Operating temperature"
+  channel_count: { value: "1", src: 'p1 "Features, Number of Keys: One"' }
+  output_structure:
+    value: push_pull
+    src: p5 "Table 1-1, OUT pin type O (Output only, push-pull)"
+
+pins:
+  src: [p5 "Table 1-1. Pin Listing (6-pin SOT23-6)", p5 "1.1.1 6-pin SOT23-6 pinout"]
+  "1": { name: OUT, type: output }
+  "2": { name: VSS, type: ground }
+  "3": { name: SNSK, type: io }
+  "4": { name: SNS, type: io }
+  "5": { name: VDD, type: power }
+  "6": { name: SYNC/MODE, type: input }

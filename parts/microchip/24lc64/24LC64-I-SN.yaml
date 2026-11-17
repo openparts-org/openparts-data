@@ -1,0 +1,35 @@
+# 24LC64-I/SN: 24LC64 EEPROM, industrial temperature, package SN.
+# existence "probable": the MPN is assembled from the Product Identification System legend
+# (DS20001189V page 46: Device "24LC64", Tape and Reel "Blank = Standard packaging",
+# Temperature I, Package "SN = Plastic Small Outline - Narrow, 3.90 mm Body, 8-Lead (SOIC)"); the legend is not an
+# orderable list. Package drawing C04-057-SN Rev K, dimension table on page 31
+# (same table values as the standard package's C04-057-SN Rev D (all rows compared)). lifecycle: no production-status statement -> unknown. The id
+# replaces the "/" of the MPN with "-"; mpn keeps the real string.
+schema_version: "0.2"
+kind: part
+id: microchip/24LC64-I-SN
+manufacturer: microchip
+mpn: 24LC64-I/SN
+device: microchip/24LC64
+
+package:
+  value: standards/SOIC8-3.90x4.90-P1.27
+  src:
+    - p46 "Product Identification System, Package SN"
+    - p31 "drawing C04-057-SN Rev K dimension table"
+
+sources: [microchip/DS20001189@revV]
+source: microchip/DS20001189@revV
+
+existence:
+  status: probable
+  src: 'p46 "Product Identification System legend: Device 24LC64, blank, Temperature I, Package SN"'
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p3 "DC Characteristics header: Industrial (I) TA = -40 to +85 C"'

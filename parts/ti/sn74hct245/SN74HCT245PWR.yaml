@@ -1,0 +1,28 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCLS020H PDF page 15, addendum dated 27-Oct-2026): row "SN74HCT245PWR",
+# "TSSOP (PW) | 20". lifecycle "active" is that table's Status column.
+# Package: outline PW0020A (4220206/A) on page 28; same drawing number and
+# revision as the reused package standards/TSSOP20-4.4x6.5-P0.65-TI-PW.
+schema_version: "0.2"
+kind: part
+id: ti/SN74HCT245PWR
+manufacturer: ti
+mpn: SN74HCT245PWR
+device: ti/SN74HCT245
+
+package:
+  value: standards/TSSOP20-4.4x6.5-P0.65-TI-PW
+  src:
+    - p15 "Package Option Addendum, row "SN74HCT245PWR", "TSSOP (PW) | 20""
+    - p28 "PACKAGE OUTLINE PW0020A (4220206/A)"
+
+sources: [ti/SCLS020H]
+source: ti/SCLS020H
+
+existence:
+  status: verified
+  src: p15 "Package Option Addendum, Packaging Information table, row "SN74HCT245PWR""
+
+lifecycle:
+  status: active
+  src: p15 "Package Option Addendum, row "SN74HCT245PWR", Status "Active""

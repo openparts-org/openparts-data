@@ -1,0 +1,39 @@
+# DMP3098LQ-7: listed in the page-1 Ordering Information table of DS37337
+# (Automotive compliance). No lifecycle statement.
+# Package: The letter-coded SOT23 Package Outline Dimensions table on page 4
+# (A 0.37/0.51/0.40 ... K1 0.903/1.10/1.025, M 0.085/0.150/0.110) is
+# value-for-value the DS18001 table that
+# standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001 was read from (compared
+# as extracted text, every row). Reused.
+schema_version: "0.2"
+kind: part
+id: diodes/DMP3098LQ-7
+manufacturer: diodes
+mpn: DMP3098LQ-7
+device: diodes/DMP3098LQ
+package: standards/SOT23-2.90x1.30-P1.83-DIODES-DS18001
+sources: [diodes/DS37337, diodes/DS18001]
+source: diodes/DS37337
+
+existence: { status: verified, src: 'p1 "Ordering Information table, DMP3098LQ-7 | SOT23"' }
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: p_channel, src: p1 "Title" }
+  drain_source_voltage: { max: -30 V, src: 'p2 "Maximum Ratings, VDSS"' }
+  drain_current:
+    - max: -3.8 A
+      at: { VGS: -10 V, TA: 25 °C }
+      src: p2 "Maximum Ratings, ID Continuous, Steady State (Note 6)"
+    - max: -2.9 A
+      at: { VGS: -10 V, TA: 70 °C }
+      src: p2 "Maximum Ratings, ID Continuous, Steady State (Note 6)"
+  rds_on:
+    - { typ: 56 mΩ, max: 70 mΩ, at: { VGS: -10 V, ID: -3.8 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+    - { typ: 98 mΩ, max: 120 mΩ, at: { VGS: -4.5 V, ID: -3 A }, src: 'p2 "Elec. Char., RDS(ON)"' }
+  gate_threshold_voltage:
+    min: -2.1 V
+    typ: -1.8 V
+    max: -1 V
+    at: { ID: -250 µA }
+    src: p2 "Elec. Char., VGS(TH), VDS = VGS"

@@ -1,0 +1,71 @@
+# CAN 2.0B controller with integrated high-speed CAN transceiver, SSOP-28
+# pin map from the "Package Types" SSOP drawing (DS20005282C page 2),
+# checked against Table 1-1 "MCP25625 Pin Description" (page 4), whose
+# SSOP numbers sit in the second number column in the text layer. The
+# 6x6 QFN numbering differs and is not covered. The controller (TxCAN/
+# RxCAN) and the transceiver (TXD/RXD) are wired together externally.
+# Three supplies: VDD (controller), VDDA (transceiver), VIO (transceiver
+# digital I/O). VDDA is recorded as analog_supply_voltage and VDD as
+# digital_supply_voltage (no supply_voltage, per the separate-rails rule);
+# VIO 2.7-5.5 V has no key of its own.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP25625
+manufacturer: microchip
+category: can_controller
+family: MCP25625
+source: microchip/DS20005282@revC
+
+# Parameters (AI candidates, needs review).
+parameters:
+  analog_supply_voltage:
+    min: 4.5 V
+    max: 5.5 V
+    src: p71 "Table 7-7 DC Characteristics (CAN transceiver), VDDA Voltage Range"
+  digital_supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p68 "Table 7-1 DC Characteristics (CAN controller), VDD Supply Voltage"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p77 "Table 7-9 Thermal Specifications, Specified Temperature Range"
+  esd_hbm:
+    typ: 4 kV
+    src: p67 "7.1 Absolute Maximum Ratings, ESD all other pins (IEC 801; HBM) ±4 kV (CANH/CANL ±8 kV)"
+  data_rate: { max: 1 Mbps, src: 'p1 "General Features, Up to 1 Mb/s Operation"' }
+  bus_fault_voltage:
+    min: -58 V
+    max: 58 V
+    src: p67 "7.1 Absolute Maximum Ratings, DC Voltage at CANH, CANL"
+
+pins:
+  src:  ['p2 "Package Types, MCP25625 SSOP"', p4 "Table 1-1 MCP25625 Pin Description"]
+  "1":  { name: VIO, type: power }
+  "2":  { name: NC, type: nc }
+  "3":  { name: CANL, type: io }
+  "4":  { name: CANH, type: io }
+  "5":  { name: STBY, type: input }
+  "6":  { name: Tx1RTS, type: input }
+  "7":  { name: Tx2RTS, type: input }
+  "8":  { name: OSC2, type: clock }
+  "9":  { name: OSC1, type: clock }
+  "10": { name: GND, type: ground }
+  "11": { name: Rx1BF, type: output }
+  "12": { name: Rx0BF, type: output }
+  "13": { name: INT, type: output }
+  "14": { name: SCK, type: clock }
+  "15": { name: SI, type: input }
+  "16": { name: SO, type: output }
+  "17": { name: CS, type: input }
+  "18": { name: RESET, type: reset }
+  "19": { name: VDD, type: power }
+  "20": { name: TxCAN, type: output }
+  "21": { name: RxCAN, type: input }
+  "22": { name: CLKOUT, type: output }
+  "23": { name: Tx0RTS, type: input }
+  "24": { name: TXD, type: input }
+  "25": { name: NC, type: nc }
+  "26": { name: VSS, type: ground }
+  "27": { name: VDDA, type: power }
+  "28": { name: RXD, type: output }

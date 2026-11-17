@@ -1,0 +1,66 @@
+# 14-stage asynchronous binary counter with oscillator SN74HC4060, 16-pin
+# pin map from the "SN74HC4060 ... D, DB, N, NS, OR PW PACKAGE (TOP VIEW)"
+# diagram (SCLS161D page 1, rendered). CLKI is the oscillator/clock input,
+# CLKO and CLKO (overbar) the oscillator outputs, here CLKO_N for pin 10
+# (overbar) and CLKO for pin 9; Q outputs are stages D-N (QA-QC not
+# brought out). CLR (active high) typed reset.
+schema_version: "0.2"
+kind: device
+id: ti/SN74HC4060
+manufacturer: ti
+category: logic
+family: SNx4HC4060
+source: ti/SCLS161D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 6 V
+    src: p3 "recommended operating conditions, VCC, SN74HC4060 column"
+  supply_current:
+    max: 8 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p3 "electrical characteristics: ICC, VI = VCC or 0, 6 V, TA = 25°C column"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p3 "recommended operating conditions, TA, SN74HC4060 column"
+  channel_count:
+    value: "1"
+    src: p1 "Title, 14-STAGE ASYNCHRONOUS BINARY COUNTERS AND OSCILLATORS"
+  propagation_delay:
+    - typ: 58 ns
+      max: 98 ns
+      at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+      src: p4 "switching characteristics CL = 50 pF, tpd CLKI to QD, 4.5 V, TA = 25°C"
+    - typ: 240 ns
+      max: 490 ns
+      at: { VCC: 2 V, CL: 50 pF, TA: 25 °C }
+      src: p4 "switching characteristics CL = 50 pF, tpd CLKI to QD, 2 V, TA = 25°C"
+    - typ: 42 ns
+      max: 83 ns
+      at: { VCC: 6 V, CL: 50 pF, TA: 25 °C }
+      src: p4 "switching characteristics CL = 50 pF, tpd CLKI to QD, 6 V, TA = 25°C"
+  logic_function:
+    value: counter
+    src: p1 "Title, 14-STAGE ASYNCHRONOUS BINARY COUNTERS AND OSCILLATORS"
+
+pins:
+  src:  p1 "SN74HC4060 ... D, DB, N, NS, OR PW PACKAGE (TOP VIEW)"
+  "1":  { name: QL, type: output }
+  "2":  { name: QM, type: output }
+  "3":  { name: QN, type: output }
+  "4":  { name: QF, type: output }
+  "5":  { name: QE, type: output }
+  "6":  { name: QG, type: output }
+  "7":  { name: QD, type: output }
+  "8":  { name: GND, type: ground }
+  "9":  { name: CLKO, type: clock_out }
+  "10": { name: CLKO_N, type: clock_out }
+  "11": { name: CLKI, type: clock }
+  "12": { name: CLR, type: reset }
+  "13": { name: QI, type: output }
+  "14": { name: QH, type: output }
+  "15": { name: QJ, type: output }
+  "16": { name: VCC, type: power }

@@ -1,0 +1,18 @@
+# 20 V P-channel enhancement-mode MOSFET, SOT23. Pin numbers are not
+# printed in DS37540: the page-1 "Top View" box drawing labels the single
+# top lead D, the bottom-left lead G and the bottom-right lead S. Numbers
+# map those positions onto this dataset's sot convention (1 bottom-left,
+# 2 bottom-right, 3 top) -- position-derived, flagged for review.
+schema_version: "0.2"
+kind: device
+id: diodes/DMG2301L
+manufacturer: diodes
+category: transistor
+family: DMG2301L
+source: diodes/DS37540
+
+pins:
+  src: p1 "Top View box drawing (G bottom-left, S bottom-right, D top); no pin numbers printed -- see header"
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

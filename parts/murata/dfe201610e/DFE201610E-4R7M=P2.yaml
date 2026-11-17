@@ -1,0 +1,39 @@
+# 4.7 µH +/-20 % DFE201610E metal-alloy power inductor (3,000 pcs/reel).
+# Currents: the table prints "Max. (Typ.)" pairs (1.6(1.8) A, 1.1(1.3) A);
+# only the Typ. figure is recorded, since "Max." here is the rated limit,
+# lower than Typ., and has no min/typ/max slot that fits. DCR: Max. and (Typ.).
+# lifecycle unknown: the sheet makes no production-status statement.
+schema_version: "0.2"
+kind: part
+id: murata/DFE201610E-4R7M=P2
+manufacturer: murata
+mpn: DFE201610E-4R7M=P2
+device: murata/DFE201610E-SERIES
+package: manufacturers/murata/CHIP-DFE201610E
+sources: [murata/DFE201610E]
+source: murata/DFE201610E
+
+existence:
+  status: verified
+  src: p1 "STANDARD PART NUMBERS, DFE201610E-4R7M=P2 row (Part Number)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance:
+    tol: ±20 %
+    src: p1 "STANDARD PART NUMBERS, DFE201610E-4R7M=P2 row, Tolerance (%)"
+  inductance:
+    typ: 4.7 µH
+    at: { f: 1 MHz }
+    src: p1 "STANDARD PART NUMBERS, DFE201610E-4R7M=P2 row, Inductance L (µH), test freq. 1 MHz"
+  rated_current:
+    typ: 1.3 A
+    src: p1 "STANDARD PART NUMBERS, DFE201610E-4R7M=P2 row, Temperature Rise Current, ΔT=40 °C, (Typ.)"
+  saturation_current:
+    typ: 1.8 A
+    src: p1 "STANDARD PART NUMBERS, DFE201610E-4R7M=P2 row, Inductance Decrease Current, ΔL/L=30 %, (Typ.)"
+  dcr:
+    typ: 240 mΩ
+    max: 288 mΩ
+    src: p1 "STANDARD PART NUMBERS, DFE201610E-4R7M=P2 row, DC Resistance (mΩ) Max. (Typ.)"

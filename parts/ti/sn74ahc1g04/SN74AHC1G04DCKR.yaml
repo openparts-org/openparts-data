@@ -1,0 +1,28 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCLS318V PDF page 13, addendum dated 15-Jul-2026): row "SN74AHC1G04DCKR",
+# "SC70 (DCK) | 5". lifecycle "active" is that table's Status column.
+# Package: outline DCK0005A (4214834/G) on page 23; same drawing number and
+# revision as the reused package manufacturers/ti/DCK0005A.
+schema_version: "0.2"
+kind: part
+id: ti/SN74AHC1G04DCKR
+manufacturer: ti
+mpn: SN74AHC1G04DCKR
+device: ti/SN74AHC1G04
+
+package:
+  value: manufacturers/ti/DCK0005A
+  src:
+    - p13 "Package Option Addendum, row "SN74AHC1G04DCKR", "SC70 (DCK) | 5""
+    - p23 "PACKAGE OUTLINE DCK0005A (4214834/G)"
+
+sources: [ti/SCLS318V]
+source: ti/SCLS318V
+
+existence:
+  status: verified
+  src: p13 "Package Option Addendum, Packaging Information table, row "SN74AHC1G04DCKR""
+
+lifecycle:
+  status: active
+  src: p13 "Package Option Addendum, row "SN74AHC1G04DCKR", Status "Active""

@@ -1,0 +1,29 @@
+# Bourns SRR0604 series power inductor body, from the page-1 Product
+# Dimensions drawing. The chip generator draws the body as a box;
+# terminal/pad features are not recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/bourns/CHIP-BOURNS-SRR0604
+family: chip
+lead_count: 2
+source: bourns/SRR0604
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 6.2 mm
+    typ: 6.5 mm
+    max: 6.8 mm
+    src: p1 "Product Dimensions, 6.50 +/-0.3 (.256 +/-.012), side view"
+  body_length:
+    min: 6.2 mm
+    typ: 6.5 mm
+    max: 6.8 mm
+    src: p1 "Product Dimensions, 6.50 +/-0.3 (.256 +/-.012), top view"
+  body_height:
+    min: 4.3 mm
+    typ: 4.6 mm
+    max: 4.9 mm
+    src: p1 "Product Dimensions, 4.60 +/-0.3 (.181 +/-.012)"

@@ -1,0 +1,66 @@
+# CAP1188 8-channel capacitive touch sensor with 8 LED drivers, 24-pin
+# QFN. Pinout from DS00001620C "TABLE 2-1: PIN DESCRIPTION FOR CAP1188"
+# (pages 5-7), checked against "FIGURE 2-1: CAP1188 Pin Diagram (24-Pin
+# QFN)" (page 5); the bottom pad is GND. Multi-function pins are named
+# as in the table (WAKE/SPI_MOSI, SMDATA/SPI_MSIO/SPI_MISO,
+# SMCLK/BC_CLK/SPI_CLK). LED1-LED8 are open-drain by default
+# (configurable push-pull). The sensing method is not stated.
+schema_version: "0.2"
+kind: device
+id: microchip/CAP1188
+manufacturer: microchip
+category: touch_sensor
+family: CAP1188
+source: microchip/DS00001620C
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    values: [i2c, spi]
+    src:    'p1 "Features, Multiple Communication Interfaces: SMBus / I2C, SPI"'
+  supply_voltage:
+    min: 3 V
+    max: 3.6 V
+    src: p10 "3.0 Electrical Specifications table, Supply Voltage VDD"
+  supply_current:
+    typ: 500 µA
+    max: 600 µA
+    src: p10 "Electrical Specifications, IDD, Capacitive Sensing Active, No LEDs active"
+  operating_temperature:
+    min: 0 °C
+    max: 85 °C
+    src: p10 "Electrical Specifications header, VDD = 3V to 3.6V, TA = 0°C to 85°C"
+  esd_hbm: { typ: 8 kV, src: 'p9 "Absolute Maximum Ratings, ESD Rating, All Pins, HBM 8000 V"' }
+  channel_count:
+    value: "8"
+    src: p1 "Title, 8 Channel Capacitive Touch Sensor with 8 LED Drivers"
+
+pins:
+  src:
+    - p5 "TABLE 2-1 PIN DESCRIPTION FOR CAP1188 (pages 5-7)"
+    - p5 "FIGURE 2-1 CAP1188 Pin Diagram (24-Pin QFN)"
+  "1":  { name: SPI_CS#, type: input }
+  "2":  { name: WAKE/SPI_MOSI, type: io }
+  "3":  { name: SMDATA/SPI_MSIO/SPI_MISO, type: io }
+  "4":  { name: SMCLK/BC_CLK/SPI_CLK, type: input }
+  "5":  { name: LED1, type: output }
+  "6":  { name: LED2, type: output }
+  "7":  { name: LED3, type: output }
+  "8":  { name: LED4, type: output }
+  "9":  { name: LED5, type: output }
+  "10": { name: LED6, type: output }
+  "11": { name: LED7, type: output }
+  "12": { name: LED8, type: output }
+  "13": { name: ALERT#, type: output }
+  "14": { name: ADDR_COMM, type: analog }
+  "15": { name: CS8, type: analog }
+  "16": { name: CS7, type: analog }
+  "17": { name: CS6, type: analog }
+  "18": { name: CS5, type: analog }
+  "19": { name: CS4, type: analog }
+  "20": { name: CS3, type: analog }
+  "21": { name: CS2, type: analog }
+  "22": { name: CS1, type: analog }
+  "23": { name: VDD, type: power }
+  "24": { name: RESET, type: input }
+  EP:   { name: GND, type: ground }

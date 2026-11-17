@@ -1,0 +1,154 @@
+# Adafruit ESP32-S3 Feather (8 MB flash, no PSRAM) (5323). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (adafruit/Adafruit-Feather-ESP32-S3-PCB@2c95ed5),
+# converted to the package frame (board centre, top view; see the package comment). x/y/rotation
+# come from fitting each OpenParts footprint onto the design pads of that element.
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one). Left out:
+#   IC1 LC709203F fuel gauge (WLCSP9: no OpenParts part), passives and test points
+# Package standards/MODULE28-23x51-P2.54-ADAFRUIT-FEATHER-M4 is shared with another board of
+# this form factor: the 28 header holes of this design have the same positions and drill (land
+# here 1.6764 mm).
+schema_version: "0.2"
+kind: part
+id: adafruit/5323
+manufacturer: adafruit
+mpn: "5323"
+device: adafruit/FEATHER-ESP32-S3
+package: standards/MODULE28-23x51-P2.54-ADAFRUIT-FEATHER-M4
+sources: [adafruit/Adafruit-Feather-ESP32-S3-PCB@2c95ed5]
+source: adafruit/Adafruit-Feather-ESP32-S3-PCB@2c95ed5
+
+existence: { status: verified, src: '"README: http://www.adafruit.com/products/5323"' }
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: U1
+    part: espressif/ESP32-S2-MINI-1-N4
+    stand_in_for: ESP32-S3-MINI-1 module, 8 MB flash, no PSRAM (README); same MINI-1 15.4x20.5 land pattern
+    x: 0
+    y: -12.935
+    rotation: 180
+    src:
+      - '"Adafruit U1 at 40.64, 11.43 rot 270"'
+      - '"U1 value ESP32-S3-MINI-1, footprint QFN60_ESP32-S2-MINI-1_EXP; stand-in fitted to its 73 pads (mean 0.0 mm)"'
+  - ref: U2
+    part: diodes/AP2112K-3.3TRG1
+    stand_in_for: value "AP2112/RT9080-3.3" (either fitted), SOT23-5
+    x: -1.27
+    y: 9.855
+    src:
+      - '"Adafruit U2 at 15.545, 10.16 rot 0"'
+      - '"U2 value AP2112/RT9080-3.3, footprint SOT23-5; stand-in fitted to its 5 pads (mean 0.15 mm)"'
+  - ref: U5
+    part: diodes/AP2112K-3.3TRG1
+    stand_in_for: value "AP2112/RT9080-3.3" (either fitted), SOT23-5
+    x: -5.842
+    y: -0.127
+    src:
+      - '"Adafruit U5 at 25.527, 5.588 rot 0"'
+      - '"U5 value AP2112/RT9080-3.3, footprint SOT23-5; stand-in fitted to its 5 pads (mean 0.15 mm)"'
+  - ref: U3
+    part: microchip/MCP73831T-2ACI-OT
+    x: 4.826
+    y: 7.29
+    src:
+      - '"Adafruit U3 at 18.11, 16.256 rot 0"'
+      - '"U3 value MCP73831T-2ACI/OT, footprint SOT23-5; fitted to its 5 pads (mean 0.18 mm)"'
+  - ref: U4
+    part: bosch/BME280
+    x: 4.572
+    y: 0.635
+    rotation: 270
+    src:
+      - '"Adafruit U4 at 24.765, 16.002 rot 90"'
+      - '"U4 value BME280, footprint BME280; fitted to its 8 pads (mean 0.0 mm)"'
+  - ref: Q3
+    part: diodes/DMG2305UX-7
+    stand_in_for: DMG3415U P-channel MOSFET, SOT-23
+    x: -1.918
+    y: 14.999
+    src:
+      - '"Adafruit Q3 at 10.401, 9.512 rot 0"'
+      - '"Q3 value DMG3415U, footprint SOT23-R; stand-in fitted to its 3 pads (mean 0.076 mm)"'
+  - ref: D4
+    part: diodes/B0540W
+    stand_in_for: value MBR540 Schottky, SOD-123
+    x: 0.559
+    y: 13.919
+    rotation: 90
+    src:
+      - '"Adafruit D4 at 11.481, 11.989 rot 180"'
+      - '"D4 value MBR540, footprint SOD-123; stand-in fitted to its 2 pads (mean 0.21 mm)"'
+  - ref: X3
+    part: gct/USB4105-GF-A
+    stand_in_for: CUSB31-CFM2AX-01-X USB Type-C receptacle
+    x: 0
+    y: 21.728
+    rotation: 180
+    src:
+      - '"Adafruit X3 at 2.667, 11.43 rot 270"'
+      - '"X3 value USB C, footprint USB_C_CUSB31-CFM2AX-01-X; stand-in fitted to its 16 pads (mean 0.0 mm)"'
+  - ref: CONN1
+    part: jst/BM04B-SRSS-TB
+    stand_in_for: STEMMA QT 4-pin JST SH receptacle, MPN not stated (footprint JST_SH4_RA = top-entry lands)
+    x: 0
+    y: 2.699
+    rotation: 90
+    src:
+      - '"Adafruit CONN1 at 22.352, 11.43 rot 270"'
+      - '"CONN1 value JST SH, footprint JST_SH4_RA; stand-in fitted to its 6 pads (mean 0.012 mm)"'
+  - ref: X1
+    part: jst/S2B-PH-SM4-TB
+    stand_in_for: JST PH 2-pin side-entry SMD header (value JSTPH), MPN not stated
+    x: 6.812
+    y: 14.478
+    rotation: 90
+    src:
+      - '"Adafruit X1 at 10.922, 19.367 rot 0"'
+      - '"X1 value JSTPH, footprint JSTPH2_BATT; stand-in fitted to its 4 pads (mean 0.179 mm)"'
+  - ref: LED1
+    part: worldsemi/WS2812B-1313-V6
+    stand_in_for: SK6805 1515 addressable RGB LED (value WS2812B_SK6805_1515)
+    x: -3.302
+    y: -4.001
+    rotation: 90
+    src:
+      - '"Adafruit LED1 at 29.401, 8.128 rot 0"'
+      - '"LED1 value WS2812B_SK6805_1515, footprint SK6805_1515; stand-in fitted to its 4 pads (mean 0.112 mm)"'
+  - ref: SW1
+    part: alps/SKRPABE010
+    stand_in_for: C&K KMR2 4.2x2.8 SMD tactile switch (value KMR2)
+    x: -6.223
+    y: 4.445
+    rotation: 90
+    src:
+      - '"Adafruit SW1 at 20.955, 5.207 rot 0"'
+      - '"SW1 value KMR2, footprint BTN_KMR2_4.6X2.8; stand-in fitted to its 4 pads (mean 0.276 mm)"'
+  - ref: SW2
+    part: alps/SKRPABE010
+    stand_in_for: C&K KMR2 4.2x2.8 SMD tactile switch (value KMR2)
+    x: -6.287
+    y: 14.605
+    rotation: 90
+    src:
+      - '"Adafruit SW2 at 10.795, 5.144 rot 0"'
+      - '"SW2 value KMR2, footprint BTN_KMR2_4.6X2.8; stand-in fitted to its 4 pads (mean 0.276 mm)"'
+  - ref: CHG
+    part: kingbright/APT1608SECK
+    stand_in_for: 0603 LED, orange, MPN not stated
+    x: -5.969
+    y: 23.939
+    rotation: 90
+    src:
+      - '"Adafruit CHG at 1.46, 5.461 rot 270"'
+      - '"CHG value ORANGE, footprint CHIPLED_0603_NOOUTLINE; stand-in fitted to its 2 pads (mean 0.075 mm)"'
+  - ref: D3
+    part: kingbright/APT1608SURCK
+    stand_in_for: 0603 LED, red, MPN not stated
+    x: 6.096
+    y: 23.939
+    rotation: 270
+    src:
+      - '"Adafruit D3 at 1.46, 17.526 rot 90"'
+      - '"D3 value RED, footprint CHIPLED_0603_NOOUTLINE; stand-in fitted to its 2 pads (mean 0.075 mm)"'

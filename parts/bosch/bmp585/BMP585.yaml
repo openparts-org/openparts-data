@@ -1,0 +1,20 @@
+# BMP585: Bosch Sensortec's product name, used as the MPN (as
+# bosch/BMP581). existence: probable -- the datasheet title page names
+# the product and gives the Bosch sales part number "0 273 017 038", but
+# prints no ordering table with "BMP585". lifecycle: unknown.
+# Package: drawings of this datasheet (pages 63-65).
+schema_version: "0.2"
+kind: part
+id: bosch/BMP585
+manufacturer: bosch
+mpn: BMP585
+device: bosch/BMP585
+package: manufacturers/bosch/LGA8-3.25x3.25-BMP585
+sources: [bosch/BST-BMP585-DS003-02]
+source: bosch/BST-BMP585-DS003-02
+
+existence:
+  status: probable
+  src: 'p1 "title page: product BMP585, sales part number 0 273 017 038 (no ordering table)"'
+
+lifecycle: { status: unknown }

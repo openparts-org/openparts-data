@@ -1,0 +1,32 @@
+# 22 µH +/-20%, SRN5040 semi-shielded power inductor, per the page-1
+# Electrical Specifications table (read from a 110 dpi render, checked
+# against the pdftotext layout). lifecycle unknown: no production-status statement.
+schema_version: "0.2"
+kind: part
+id: bourns/SRN5040-220M
+manufacturer: bourns
+mpn: SRN5040-220M
+device: bourns/SRN5040-SERIES
+package: manufacturers/bourns/CHIP-BOURNS-SRN5040
+sources: [bourns/SRN5040]
+source: bourns/SRN5040
+
+existence:
+  status: verified
+  src: p1 "Electrical Specifications, SRN5040-220M row (Part Number)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance: { tol: ±20 %, src: 'p1 "Electrical Specifications, SRN5040-220M row, Tol. %"' }
+  inductance:
+    typ: 22 µH
+    at: { f: 100 kHz }
+    src: p1 "Electrical Specifications, SRN5040-220M row, L (@ 100 KHz / 1 V)"
+  rated_current:
+    typ: 1.4 A
+    src: p1 "Electrical Specifications, SRN5040-220M row, Irms (temp. rise 40 °C)"
+  saturation_current:
+    typ: 1.6 A
+    src: p1 "Electrical Specifications, SRN5040-220M row, Isat (L drop 30 %)"
+  dcr: { max: 0.152 Ω, src: 'p1 "Electrical Specifications, SRN5040-220M row, DCR (Ω) Max."' }

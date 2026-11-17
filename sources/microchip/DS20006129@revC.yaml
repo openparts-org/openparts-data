@@ -1,0 +1,18 @@
+# Official Microchip datasheet "MCP6C02 Zero-Drift, 65V High-Side Current Sense Amplifier". Downloaded 2026-11-17 with curl
+# from ww1.microchip.com (URL below). document_id / revision from the
+# printed footer "DS20006129C-page N"; the Revision History lists "Revision C (January 2021)".
+# 60 PDF pages; text read with pdftotext -layout. Page numbers in this
+# dataset are PDF page indices (they equal the printed page numbers).
+# Package drawings that are image pages were rendered and read as
+# images. sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20006129@revC
+sha256: 8f83a00c6bea0e6ea57cf769aff4cb0516db814c886bfb5b2c63120dc97a9661
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ProductDocuments/DataSheets/Zero-Drift-65V-High-Side-Current-Sense-Amplifier-DS20006129C.pdf
+publisher: microchip
+document_id: DS20006129
+document_type: datasheet
+revision: C
+date: 2021-01

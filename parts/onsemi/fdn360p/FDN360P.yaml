@@ -1,0 +1,41 @@
+# FDN360P: listed in the ordering table (page 1), 3000 / Tape & Reel.
+# No lifecycle statement. Package: page 5 prints CASE 527AG ISSUE A
+# (98AON34319E, DATE 09 DEC 2019), the drawing
+# manufacturers/onsemi/SOT23-2.92x1.40-P1.90-527AG was read from (FDN340P/D
+# page 5). Reused.
+schema_version: "0.2"
+kind: part
+id: onsemi/FDN360P
+manufacturer: onsemi
+mpn: FDN360P
+device: onsemi/FDN360P
+package: manufacturers/onsemi/SOT23-2.92x1.40-P1.90-527AG
+sources: [onsemi/FDN360P-D, onsemi/FDN340P-D]
+source: onsemi/FDN360P-D
+
+existence:
+  status: verified
+  src: p1 "ORDERING INFORMATION, FDN360P | SOT-23 (Pb-Free, Halide Free) | 3000 / Tape & Reel"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: p_channel, src: p1 "Title" }
+  drain_source_voltage: { max: -30 V, src: 'p1 "Abs. Max. Ratings, VDSS"' }
+  drain_current:        { max: -2 A, src: 'p1 "Abs. Max. Ratings, ID Continuous (Note 1a)"' }
+  rds_on:
+    - { typ: 63 mΩ, max: 80 mΩ, at: { VGS: -10 V, ID: -2 A }, src: 'p2 "Elec. Char., RDS(on)"' }
+    - typ: 90 mΩ
+      max: 136 mΩ
+      at: { VGS: -10 V, ID: -2 A, TJ: 125 °C }
+      src: p2 "Elec. Char., RDS(on)"
+    - typ: 100 mΩ
+      max: 125 mΩ
+      at: { VGS: -4.5 V, ID: -1.5 A }
+      src: p2 "Elec. Char., RDS(on)"
+  gate_threshold_voltage:
+    min: -3 V
+    typ: -1.9 V
+    max: -1 V
+    at: { ID: -250 µA }
+    src: p2 "Elec. Char., VGS(th), VDS = VGS"

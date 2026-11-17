@@ -1,0 +1,56 @@
+# TPS25947xx 2.7-23 V, 5.5 A, 28 mΩ eFuse with true reverse current
+# blocking, 10-pin VQFN-HR (RPW). Pinout from SLVSFC9C "Table 5-1. Pin
+# Functions" (pages 5-6), checked against "Figure 5-1. TPS25947xx RPW
+# Package 10-Pin QFN Top View". Pins 2-4 change function with the
+# variant (page 4 Device Comparison Table: TPS259470x OVLO / AUXOFF /
+# FLT; TPS259472x OVCSEL / PG / PGTH; TPS259474x OVLO / PG / PGTH,
+# circuit breaker); names are written as in the figure. The OVC
+# thresholds of TPS259472x are pin-selectable (3.88 / 5.74 / 13.85 V
+# typ, page 9), so no overvoltage_threshold is recorded. No Parts yet:
+# the RPW0010A (VQFN-HR) outline was not recorded as a package.
+# operating_temperature: the only range printed is TJ (Recommended
+# Operating Conditions).
+schema_version: "0.2"
+kind: device
+id: ti/TPS25947
+manufacturer: ti
+category: efuse
+family: TPS25947
+source: ti/SLVSFC9C
+
+# Parameters (AI candidates, needs review).
+parameters:
+  on_resistance:
+    - typ: 28.2 mΩ
+      at: { VIN: 12 V, TJ: 25 °C }
+      src: p9 "6.5 Electrical Characteristics, RON, VIN = 12V, IOUT = 3A, TJ = 25°C"
+    - max: 45 mΩ
+      src: p9 "6.5 Electrical Characteristics, RON, 2.7 ≤ VIN ≤ 23V, IOUT = 3A, –40°C ≤ TJ ≤ 125°C"
+  input_voltage_max:
+    max: 23 V
+    src: p8 "6.3 Recommended Operating Conditions, VIN Input Voltage Range"
+  output_current:
+    max: 5.5 A
+    src: p8 "6.3 Recommended Operating Conditions, IMAX Continuous Switch Current, TJ ≤ 125°C"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p8 "6.3 Recommended Operating Conditions, TJ Junction temperature"
+  esd_hbm: { typ: 2 kV, src: 'p7 "6.2 ESD Ratings, HBM ±2000 V"' }
+  current_limit:
+    min: 0.5 A
+    max: 6 A
+    src: p1 "Features, Adjustable threshold (ILIM) 0.5A to 6A"
+
+pins:
+  src:  [p5 "Table 5-1. Pin Functions", p5 "Figure 5-1. TPS25947xx RPW Package 10-Pin QFN Top View"]
+  "1":  { name: EN/UVLO, type: analog }
+  "2":  { name: OVLO/OVCSEL, type: analog }
+  "3":  { name: PG/AUXOFF, type: output }
+  "4":  { name: PGTH/FLT, type: io }
+  "5":  { name: IN, type: power }
+  "6":  { name: OUT, type: power }
+  "7":  { name: DVDT, type: analog }
+  "8":  { name: GND, type: ground }
+  "9":  { name: ILM, type: analog }
+  "10": { name: ITIMER, type: analog }

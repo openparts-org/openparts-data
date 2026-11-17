@@ -1,0 +1,17 @@
+# Official TI datasheet "SN54HC4060, SN74HC4060 14-Stage Asynchronous Binary Counters and Oscillators". Downloaded 2026-11-17 from
+# the TI symlink URL below with curl (HTTP 200, PDF); revision read from
+# the page header "SCLS161D - DECEMBER 1982 - REVISED SEPTEMBER 2003". 24 PDF pages; text read with
+# pdftotext -layout; page 1 (pinout) rendered and read. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM is dated 18-Sep-2026 (newer than the
+# datasheet revision). sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS161D
+sha256: e0d763603b69eb80b37afcc26f4378c2aa6d9e5b6d27c0a555c2c0397af0823a
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/sn74hc4060.pdf
+publisher: ti
+document_id: SCLS161D
+document_type: datasheet
+revision: D
+date: 2003-09

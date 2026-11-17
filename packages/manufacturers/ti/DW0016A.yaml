@@ -1,0 +1,48 @@
+# TI DW0016A "SOIC - 2.65 mm max height" (16-lead wide SOIC, 1.27 mm
+# pitch; drawing 4220721/A 07/2016, JEDEC MS-013 per its note 5), read
+# from the outline page of SLLS410O (PDF page 24). Millimetres as
+# printed. The same drawing revision is in SLLS047N page 23.
+#
+# Top view: pins 1-8 down the left edge, 9-16 up the right edge.
+# Ranges only: E1 "7.6/7.4 NOTE 4" (body_width, datum B), D "10.5/10.1
+# NOTE 3" (body_length, datum A); lead span "10.63/9.97 TYP" recorded as
+# min/max. Only the overall height "2.65 MAX" is given -- no A2 -- so it
+# is overall_height max with no body_height (as manufacturers/ti/DW0020A).
+# Pitch "14X 1.27" (basic); "2X 8.89" basic is pin 1 to pin 8.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DW0016A
+family: soic
+lead_count: 16
+source: ti/SLLS410O
+
+pitch:
+  typ: 1.27 mm
+  src: p24 "PACKAGE OUTLINE DW0016A (4220721/A), "14X 1.27" (basic); "2X 8.89" basic"
+
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 7.4 mm
+    max: 7.6 mm
+    src: p24 "DW0016A, body width "7.6 / 7.4 NOTE 4" (datum B)"
+  body_length:
+    min: 10.1 mm
+    max: 10.5 mm
+    src: p24 "DW0016A, body length "10.5 / 10.1 NOTE 3" (datum A)"
+  lead_thickness:
+    min: 0.1 mm
+    max: 0.33 mm
+    src: p24 "DW0016A, lead thickness "0.33 / 0.10 TYP""
+  lead_length:
+    min: 0.4 mm
+    max: 1.27 mm
+    src: p24 "DW0016A DETAIL A, foot length "1.27 / 0.40""
+  overall_width:
+    min: 9.97 mm
+    max: 10.63 mm
+    src: p24 "DW0016A, lead-tip span "10.63 / 9.97 TYP" (min/max only)"
+  overall_height: { max: 2.65 mm, src: 'p24 "DW0016A side view, "2.65 MAX""' }
+  standoff:       { min: 0.1 mm, max: 0.3 mm, src: 'p24 "DW0016A DETAIL A, standoff "0.3 / 0.1""' }
+  lead_width:     { min: 0.31 mm, max: 0.51 mm, src: 'p24 "DW0016A, "16X 0.51 / 0.31""' }

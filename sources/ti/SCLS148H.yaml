@@ -1,0 +1,17 @@
+# Official TI datasheet "SNx4HC574 Octal Edge-Triggered D-Type Flip-Flops With 3-State Outputs". Downloaded 2026-11-17 from
+# the TI symlink URL below with curl (HTTP 200, PDF); revision read from
+# the page header "SCLS148H - DECEMBER 1982 - REVISED MAY 2022". 31 PDF pages; text read with
+# pdftotext -layout; the pin-configuration page (3) is an image and was rendered and read. Page numbers in this dataset are PDF page
+# indices. The PACKAGE OPTION ADDENDUM is dated 18-Sep-2026 (newer than the
+# datasheet revision). sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SCLS148H
+sha256: 41dc3007ca8c8f8e801784e554cd496a4e8037b92563144db608ed257fe399a8
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/sn74hc574.pdf
+publisher: ti
+document_id: SCLS148H
+document_type: datasheet
+revision: H
+date: 2022-05

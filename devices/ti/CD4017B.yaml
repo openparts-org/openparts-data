@@ -1,0 +1,70 @@
+# CMOS decade counter/divider with 10 decoded outputs CD4017B, 16-pin pin
+# map read from the rendered "TOP VIEW CD4017B TERMINAL DIAGRAM" (SCHS027C
+# page 1, scanned), cross-checked against the Fig. 1 logic diagram pin
+# numbers (page 2). Decoded outputs named by their count (0-9) as printed,
+# prefixed Q here (Q0-Q9). RESET (active high) typed reset; CLOCK INHIBIT
+# written CLOCK_INHIBIT, CARRY OUT written CARRY_OUT.
+# operating_temperature: the only printed range is the absolute-maximum
+# "OPERATING-TEMPERATURE RANGE (TA)", which is also the span of the static
+# electrical-characteristics table.
+schema_version: "0.2"
+kind: device
+id: ti/CD4017B
+manufacturer: ti
+category: logic
+family: CD4017B
+source: ti/SCHS027C
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 18 V
+    src: p1 "RECOMMENDED OPERATING CONDITIONS, Supply-Voltage Range"
+  supply_current:
+    typ: 0.04 µA
+    max: 5 µA
+    at: { VDD: 5 V, TA: 25 °C }
+    src: 'p3 "STATIC ELECTRICAL CHARACTERISTICS: Quiescent Device Current IDD, VDD 5 V, +25 column"'
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p3 "MAXIMUM RATINGS, OPERATING-TEMPERATURE RANGE (TA)"
+  channel_count: { value: "1", src: p1 "CD4017B-Decade Counter with 10 Decoded Outputs" }
+  propagation_delay:
+    - typ: 325 ns
+      max: 650 ns
+      at: { VDD: 5 V, CL: 50 pF, TA: 25 °C }
+      src: p4 "DYNAMIC ELECTRICAL CHARACTERISTICS, Propagation Delay Time Decode Out, VDD 5 V"
+    - typ: 135 ns
+      max: 270 ns
+      at: { VDD: 10 V, CL: 50 pF, TA: 25 °C }
+      src: p4 "DYNAMIC ELECTRICAL CHARACTERISTICS, Propagation Delay Time Decode Out, VDD 10 V"
+    - typ: 85 ns
+      max: 170 ns
+      at: { VDD: 15 V, CL: 50 pF, TA: 25 °C }
+      src: p4 "DYNAMIC ELECTRICAL CHARACTERISTICS, Propagation Delay Time Decode Out, VDD 15 V"
+  logic_function:
+    value: counter
+    src: p1 "Title, CMOS Counter/Dividers; CD4017B-Decade Counter"
+
+pins:
+  src:
+    - p1 "TOP VIEW CD4017B TERMINAL DIAGRAM (scanned, rendered)"
+    - p2 "Fig. 1 logic diagram pin numbers (cross-check)"
+  "1":  { name: Q5, type: output }
+  "2":  { name: Q1, type: output }
+  "3":  { name: Q0, type: output }
+  "4":  { name: Q2, type: output }
+  "5":  { name: Q6, type: output }
+  "6":  { name: Q7, type: output }
+  "7":  { name: Q3, type: output }
+  "8":  { name: VSS, type: ground }
+  "9":  { name: Q8, type: output }
+  "10": { name: Q4, type: output }
+  "11": { name: Q9, type: output }
+  "12": { name: CARRY_OUT, type: output }
+  "13": { name: CLOCK_INHIBIT, type: input }
+  "14": { name: CLOCK, type: clock }
+  "15": { name: RESET, type: reset }
+  "16": { name: VDD, type: power }

@@ -1,0 +1,19 @@
+# Official Microchip datasheet "25LC1024 1-Mbit SPI Bus Serial EEPROM". Downloaded 2026-11-17
+# with curl from ww1.microchip.com (URL below; found with a search
+# restricted to ww1.microchip.com, the microchip.com product pages refuse
+# plain fetches). document_id / revision from the printed footer
+# "DS20002064E-page N"; the Revision History's latest entry is
+# "Revision E (08/21)". 33 PDF pages; text read with pdftotext -layout.
+# Page numbers in this dataset are PDF page indices (they equal the
+# printed page numbers). sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20002064@revE
+sha256: 6acad20107f3c52dc9b647d3a576954d2cd99652101b02782b7f17c9d2a67a7c
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/25LC1024-1-Mbit-SPI-Bus-Serial-EEPROM-20002064E.pdf
+publisher: microchip
+document_id: DS20002064
+document_type: datasheet
+revision: E
+date: 2021-08

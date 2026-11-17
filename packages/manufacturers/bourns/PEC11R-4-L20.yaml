@@ -1,0 +1,40 @@
+# Bourns PEC11R-4xxxF-N vertical-shaft PCB-mount encoder, shaft length L = 20 mm
+# (bourns/PEC11R page 2, drawing "PEC11R-4xxxF-N" and its PCB hole layout).
+# Frame: top view as drawn (A C B along the bottom; the
+# hole layout has the same orientation as the front view), origin on the
+# shaft axis. The side view dimensions the A/C/B row "7.5" below the
+# shaft axis, which is the line through the two
+# mounting slots in the hole layout. In X the shaft is taken as centred
+# between the slots ("13.2" apart); A to B "5.0", C midway (not
+# dimensioned separately). Holes "1.0 +0.1/-0"; slots "1.8" (X) x "2.6" (Y).
+# Body "12.5" (X) x "13.4" (Y); its centre is not dimensioned against the
+# shaft and is taken on the axis. Height: "6.5" from the mounting surface
+# to the bushing; L ("20") from the mounting surface to the shaft end.
+schema_version: "0.2"
+kind: package
+id: manufacturers/bourns/PEC11R-4-L20
+family: rotary_encoder
+lead_count: { value: 5, src: 'p2 "PEC11R-4xxxF-N PCB layout, 1.0 DIA. 3 PLCS. + 2 slots"' }
+source: bourns/PEC11R
+
+pitch: { typ: 2.5 mm, src: 'p2 "PEC11R-4xxxF-N PCB layout, A to B "5.0", C midway"' }
+geometry: { type: parametric, generator: rotary_encoder }
+
+dimensions:
+  body_width:     { typ: 12.5 mm, src: p2 "PEC11R-4xxxF-N front view "12.5"" }
+  body_length:    { typ: 13.4 mm, src: p2 "PEC11R-4xxxF-N front view "13.4"" }
+  body_height: { typ: 6.5 mm, src: p2 "PEC11R-4xxxF-N side view "6.5" mounting surface to bushing" }
+  actuator_diameter:
+    min: 5.9 mm
+    max: 6.1 mm
+    src: p2 "PEC11R-4xxxF-N side view, shaft "6.0 ± 0.1" DIA."
+  overall_height: { typ: 20 mm, src: p2 "PEC11R-4xxxF-N side view L; shaft table L = 20" }
+
+pads:
+  value:
+    - { number: A, x: -2.5, y: -7.5, drill: 1 }
+    - { number: C, x: 0, y: -7.5, drill: 1 }
+    - { number: B, x: 2.5, y: -7.5, drill: 1 }
+    - { number: MP, x: -6.6, y: 0, drill: 1.8, drill_length: 2.6, slot_axis: y }
+    - { number: MP, x: 6.6, y: 0, drill: 1.8, drill_length: 2.6, slot_axis: y }
+  src: p2 "PEC11R-4xxxF-N PCB layout, "13.2", "5.0", "7.5" (see comment)"

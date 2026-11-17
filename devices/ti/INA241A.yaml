@@ -1,0 +1,48 @@
+# INA241A -5 V to 110 V bidirectional current-sense amplifier, pin map
+# from Table 5-1 "Pin Functions: D, DDF and DGK Packages" (SBOSA30D
+# pages 2-3) with the pin figures on page 2; the three packages share
+# it. Offset voltage depends on the gain option and is on the Parts.
+# Gain (10/20/50/100/200 V/V) has no parameter key. The INA241B
+# (lower-precision grade) in the same datasheet is not modelled.
+schema_version: "0.2"
+kind: device
+id: ti/INA241A
+manufacturer: ti
+category: current_sense_amplifier
+family: INA241A
+source: ti/SBOSA30D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 2.7 V, max: 20 V, src: 'p4 "6.3 Recommended Operating Conditions, VS"' }
+  supply_current:
+    typ: 2.5 mA
+    max: 3 mA
+    at: { VS: 5 V, VIN: 48 V, TA: 25 °C }
+    src: p7 "6.5 Electrical Characteristics, IQ, VSENSE = 0mV"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA"
+  esd_hbm:       { typ: 2 kV, src: 'p4 "6.2 ESD Ratings, HBM all pins ±2000 V"' }
+  channel_count: { value: "1", src: 'p2 "Table 5-1 Pin Functions, single IN+/IN-/OUT"' }
+  slew_rate:     { typ: 8 V/µs, src: 'p6 "6.5 Electrical Characteristics, SR, rising"' }
+  input_bias_current:
+    min: 25 µA
+    typ: 35 µA
+    max: 45 µA
+    at: { VS: 5 V, VIN: 48 V, TA: 25 °C }
+    src: p5 "6.5 Electrical Characteristics, IB, IB+, IB-, VSENSE = 0mV"
+
+pins:
+  src:
+    - 'p2 "Table 5-1 Pin Functions: D, DDF and DGK Packages, and pin figures"'
+    - p3 "Table 5-1 (continued)"
+  "1": { name: IN-, type: analog }
+  "2": { name: GND, type: ground }
+  "3": { name: REF2, type: analog }
+  "4": { name: NC, type: nc }
+  "5": { name: OUT, type: analog }
+  "6": { name: VS, type: power }
+  "7": { name: REF1, type: analog }
+  "8": { name: IN+, type: analog }

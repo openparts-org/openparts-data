@@ -1,0 +1,145 @@
+# Adafruit Metro RP2040 (5786). Package = the board with its header holes; assembly = the
+# components on it whose placement comes from the maker's design file (adafruit/Adafruit-Metro-RP2040-PCB@9fe571e),
+# converted to the package frame (board centre, top view; see the package comment). x/y/rotation
+# come from fitting each OpenParts footprint onto the design pads of that element.
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one). Left out:
+#   LED2 WS2812B 3535 (pin arrangement differs from the WorldSemi Mini-V6: no matching part),
+#   female headers POWER/AD/IOL/IOH (values 20609/20610/20611, maker not stated), ICSP 2x3, SWD
+#   2x5 1.27 mm, X1 microSD socket, SW1 slide switch, SW2/SW3 right-angle tact switches, SW4 DPDT
+#   EG1390, PC1/PC2 47 uF caps, F2 fuse, passives
+# U2: value "AP2112K-3.3" (ordering suffix not in the design).
+schema_version: "0.2"
+kind: part
+id: adafruit/5786
+manufacturer: adafruit
+mpn: "5786"
+device: adafruit/METRO-RP2040
+package: standards/MODULE32-69x53-P2.54-ADAFRUIT-METRO
+sources: [adafruit/Adafruit-Metro-RP2040-PCB@9fe571e]
+source: adafruit/Adafruit-Metro-RP2040-PCB@9fe571e
+
+existence: { status: verified, src: '"README: http://www.adafruit.com/products/5786"' }
+lifecycle: { status: unknown }
+
+assembly:
+  - ref: IC2
+    part: raspberrypi/RP2040
+    x: 8.255
+    y: 8.382
+    rotation: 270
+    src:
+      - '"Adafruit IC2 at 42.545, 35.052 rot 270"'
+      - '"IC2 value RP2040_QFN56, footprint QFN56_7MM_REDUCEDEPAD; fitted to its 57 pads (mean 0.029 mm)"'
+  - ref: U6
+    part: winbond/W25Q128JVSIQ
+    stand_in_for: value W25Q128 (suffix not stated), SOIC-8 208 mil
+    x: 16.891
+    y: 13.589
+    rotation: 270
+    src:
+      - '"Adafruit U6 at 51.181, 40.259 rot 180"'
+      - '"U6 value W25Q128, footprint SOIC8_208MIL; stand-in fitted to its 8 pads (mean 0.235 mm)"'
+  - ref: U1
+    part: onsemi/NCP1117ST50T3G
+    x: 1.372
+    y: -15.621
+    src:
+      - '"Adafruit U1 at 35.662, 11.049 rot 270"'
+      - '"U1 value NCP1117ST50T3G, footprint SOT223-R; fitted to its 4 pads (mean 0.0 mm)"'
+  - ref: U2
+    part: diodes/AP2112K-3.3TRG1
+    x: 5.207
+    y: -10.795
+    rotation: 90
+    src:
+      - '"Adafruit U2 at 39.497, 15.875 rot 0"'
+      - '"U2 value AP2112K-3.3, footprint SOT23-DBV; fitted to its 5 pads (mean 0.15 mm)"'
+  - ref: T2
+    part: diodes/DMP3099L-7
+    stand_in_for: DMP3098L P-channel MOSFET, SOT-23
+    x: -14.224
+    y: -15.748
+    src:
+      - '"Adafruit T2 at 20.066, 10.922 rot 270"'
+      - '"T2 value DMP3098L, footprint SOT23-WIDE; stand-in fitted to its 3 pads (mean 0.076 mm)"'
+  - ref: TR1
+    part: diodes/DMP3099L-7
+    stand_in_for: DMP3098L P-channel MOSFET, SOT-23
+    x: -5.867
+    y: -8.611
+    rotation: 180
+    src:
+      - '"Adafruit TR1 at 28.423, 18.059 rot 90"'
+      - '"TR1 value DMP3098L, footprint SOT23-WIDE; stand-in fitted to its 3 pads (mean 0.076 mm)"'
+  - ref: D1
+    part: onsemi/MBR120VLSFT1G
+    stand_in_for: MBR120 Schottky, SOD-123 (maker not stated)
+    x: -15.875
+    y: -19.202
+    rotation: 180
+    src:
+      - '"Adafruit D1 at 18.415, 7.468 rot 180"'
+      - '"D1 value MBR120, footprint SOD-123; stand-in fitted to its 2 pads (mean 0.22 mm)"'
+  - ref: X3
+    part: gct/USB4105-GF-A
+    stand_in_for: CUSB31-CFM2AX-01-X USB Type-C receptacle
+    x: -30.428
+    y: 11.43
+    rotation: 270
+    src:
+      - '"Adafruit X3 at 4.128, 38.1 rot 270"'
+      - '"X3 value USB Type C, footprint USB_C_CUSB31-CFM2AX-01-X; stand-in fitted to its 16 pads (mean 0.0 mm)"'
+  - ref: CONN1
+    part: jst/SM04B-SRSS-TB
+    stand_in_for: STEMMA QT 4-pin JST SH receptacle, MPN not stated
+    x: -26.035
+    y: 23.501
+    rotation: 180
+    src:
+      - '"Adafruit CONN1 at 8.255, 50.165 rot 180"'
+      - '"CONN1 value STEMMA_I2C_QT, footprint JST_SH4; stand-in fitted to its 6 pads (mean 0.012 mm)"'
+  - ref: DEBUG
+    part: jst/SM03B-SRSS-TB
+    stand_in_for: JST SH 3-pin side-entry receptacle (debug port), MPN not stated
+    x: 30.995
+    y: -12.446
+    rotation: 90
+    src:
+      - '"Adafruit DEBUG at 65.278, 14.224 rot 90"'
+      - '"DEBUG value JST_SH3, footprint JST_SH3; stand-in fitted to its 5 pads (mean 0.013 mm)"'
+  - ref: X5
+    part: samesky/PJ-102AH
+    stand_in_for: 2.1 mm DC barrel jack, through-hole, MPN not stated
+    x: -26.874
+    y: -21.25
+    rotation: 270
+    src:
+      - '"Adafruit X5 at 7.366, 5.08 rot 0"'
+      - '"X5 value 2.1mm, footprint DCJACK_2MM_PTH; stand-in fitted to its 3 pads (mean 0.05 mm)"'
+  - ref: Y1
+    part: abracon/ABM10-16.000MHZ-E20-T
+    stand_in_for: 12 MHz crystal 2.5x2.0, MPN not stated
+    x: -1.334
+    y: 11.557
+    rotation: 90
+    src:
+      - '"Adafruit Y1 at 32.956, 38.227 rot 180"'
+      - '"Y1 value 12MHz_12pF, footprint CRYSTAL_2.5X2; stand-in fitted to its 4 pads (mean 0.0 mm)"'
+  - ref: L
+    part: kingbright/APT1608SURCK
+    stand_in_for: 0603 LED, red, MPN not stated
+    x: -32.41
+    y: 5.436
+    src:
+      - '"Adafruit L at 1.88, 32.106 rot 90"'
+      - '"L value RED, footprint CHIPLED_0603_NOOUTLINE; stand-in fitted to its 2 pads (mean 0.075 mm)"'
+  - ref: ON
+    part: kingbright/APT1608CGCK
+    stand_in_for: 0603 LED, green, MPN not stated
+    x: -32.36
+    y: 3.835
+    src:
+      - '"Adafruit ON at 1.93, 30.505 rot 90"'
+      - '"ON value GREEN, footprint CHIPLED_0603_NOOUTLINE; stand-in fitted to its 2 pads (mean 0.075 mm)"'

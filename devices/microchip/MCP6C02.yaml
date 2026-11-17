@@ -1,0 +1,46 @@
+# Zero-drift 65 V high-side current-sense amplifier, 6-lead SOT-23 pin
+# map from Table 3-1 "Pin Function Table" (DS20006129C page 31), SOT-23
+# column, checked against "Package Types (Top View)" on page 1. The
+# 3x3 VDFN (H-temp) numbering differs and is not covered. VIP is both
+# the non-inverting input and the high-side supply; its bias current
+# IBP is recorded as input_bias_current. Offset voltage depends on the
+# gain option (20/50/100 V/V) and is on the Parts. Gain and bandwidth
+# have no parameter key.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP6C02
+manufacturer: microchip
+category: current_sense_amplifier
+family: MCP6C02
+source: microchip/DS20006129@revC
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 5.5 V
+    src: p10 "Table 1-2 DC Electrical Characteristics, Low Supply Voltage VDD"
+  supply_current:
+    min: 300 µA
+    typ: 490 µA
+    max: 725 µA
+    at: { TA: 25 °C }
+    src: p10 "Table 1-2 DC Electrical Characteristics, Quiescent Current at VDD, IDD"
+  channel_count: { value: "1", src: 'p1 "Features, Single Amplifier: MCP6C02"' }
+  input_bias_current:
+    min: 120 µA
+    typ: 170 µA
+    max: 215 µA
+    at: { TA: 25 °C }
+    src: p7 "Table 1-2 DC Electrical Characteristics, VIP's Input Bias Current IBP"
+
+pins:
+  src:
+    - p31 "Table 3-1 Pin Function Table, SOT-23 column"
+    - p1 "Package Types (Top View), MCP6C02 SOT-23"
+  "1": { name: VOUT, type: analog }
+  "2": { name: VSS, type: ground }
+  "3": { name: VIP, type: analog }
+  "4": { name: VIM, type: analog }
+  "5": { name: VREF, type: analog }
+  "6": { name: VDD, type: power }
