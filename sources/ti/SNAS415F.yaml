@@ -1,0 +1,20 @@
+# Official TI datasheet "ADC121C021/C021Q/C027 I2C-compatible, 12-bit ADC with alert function". Downloaded 2026-11-17 with wget from
+# the TI symlink URL below; revision read from the page header
+# "SNAS415F - JANUARY 2008 - REVISED MARCH 2013". 47 PDF pages; text read with pdftotext -layout. Pin
+# configuration, specification tables and the PACKAGE OPTION ADDENDUM
+# were read from the extracted text; package outline pages named in the
+# part files were matched by drawing number and revision. Page numbers
+# in this dataset are PDF page indices. The PACKAGE OPTION ADDENDUM (PDF
+# page 36) is dated 1-Nov-2025 (newer than the datasheet revision).
+# sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SNAS415F
+sha256: f464ed23e391a5812bcaf1694d18cd19171bed36871f783d5d43afa82681a134
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/adc121c021.pdf
+publisher: ti
+document_id: SNAS415F
+document_type: datasheet
+revision: F
+date: 2013-03

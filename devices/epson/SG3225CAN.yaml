@@ -1,0 +1,27 @@
+# Epson SG3225CAN crystal oscillator (SPXO, CMOS output), 4-pad 3.2 x
+# 2.5 mm ceramic package. Pin names from the p2 "Pin Map" table (shared
+# by all models of the sheet): 1 ST-bar (standby, written "ST"), 2 GND,
+# 3 OUT, 4 VCC. Frequency, tolerance/temperature option and supply range
+# per Part (product name).
+schema_version: "0.2"
+kind: device
+id: epson/SG3225CAN
+manufacturer: epson
+category: oscillator
+family: SG3225CAN
+source: epson/SG-CAN-STF-BRIEF
+
+# Parameters (AI candidates, needs review).
+parameters:
+  aging:
+    tol: ±3 ppm
+    at: { TA: 25 °C }
+    src: 'p1 "Specifications, Frequency aging f_age: ±3 × 10-6 / year Max., +25 °C, first year"'
+  clock_output: { value: cmos, src: 'p1 "Title, OUTPUT: CMOS"' }
+
+pins:
+  src: p2 "Pin Map table"
+  "1": { name: ST, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: OUT, type: clock_out }
+  "4": { name: VCC, type: power }

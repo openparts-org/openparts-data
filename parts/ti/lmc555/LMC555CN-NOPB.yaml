@@ -1,0 +1,27 @@
+schema_version: "0.2"
+kind: part
+id: ti/LMC555CN/NOPB
+manufacturer: ti
+mpn: LMC555CN/NOPB
+device: ti/LMC555
+
+package:
+  value: standards/DIP8-W7.62-P2.54
+  src: ti/MPDI001 p1 "P (R-PDIP-T8) drawing 4040082/E, note C (JEDEC MS-001 BA) -- see ti/NE555P"
+
+sources: [ti/SNAS558N, ti/MPDI001]
+source: ti/SNAS558N
+
+existence:
+  status: verified
+  src: p20 "Package option addendum table, row "LMC555CN/NOPB" (PDIP (P) | 8)"
+
+lifecycle:
+  status: active
+  src: p20 "Package option addendum table, row "LMC555CN/NOPB", Status "Active""
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "5.3 Recommended Operating Conditions, Temperature, LMC555CM, MM, N, TP row"

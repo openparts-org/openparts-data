@@ -1,0 +1,16 @@
+# Official NXP PCF85263A product data sheet, "Rev. 5.4 — 12 December
+# 2025" (page footers). Downloaded 2026-11-17 with wget from nxp.com
+# (URL below). 102 PDF pages; read with pdftotext -layout; the package
+# outlines on pages 78 and 80 were rendered and read as images. Page
+# numbers are PDF page indices ("n / 102").
+schema_version: "0.2"
+kind: source
+id: nxp/PCF85263A@rev5.4
+sha256: cd95c0144f7b54d67fce40ff6e11bf1c3b3593e82f316b1c62061c8ddce456c6
+retrieved: 2026-11-17
+url: https://www.nxp.com/docs/en/data-sheet/PCF85263A.pdf
+publisher: nxp
+document_id: PCF85263A
+document_type: datasheet
+revision: "5.4"
+date: 2025-12-12

@@ -1,0 +1,47 @@
+# PCF85263A tiny RTC/calendar with alarm, battery switch-over and time
+# stamp input. 8-pin numbering of PCF85263AT (SO8) and PCF85263ATT
+# (TSSOP8): Table 3 "Pin description" (Rev. 5.4 pages 8-9), columns
+# PCF85263AT and PCF85263ATT (identical). The DFN2626-10, TSSOP10 and
+# WLCSP12 numberings differ and are not covered. Types from the table's
+# Type column: OSCI input -> clock, OSCO output -> clock_out, VBAT/VDD
+# supply -> power, VSS -> ground, SDA io, SCL ("Serial clock input")
+# clock, INTA (CLK) (open-drain interrupt / clock output) output.
+# supply_voltage: interface-inactive row 0.9-5.5 V (the table header
+# range); with the interface active (400 kHz) the minimum is 1.8 V.
+schema_version: "0.2"
+kind: device
+id: nxp/PCF85263A
+manufacturer: nxp
+category: rtc
+family: PCF85263A
+source: nxp/PCF85263A@rev5.4
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 0.9 V
+    max: 5.5 V
+    src: 'p70 "Table 67 VDD, interface inactive fSCL = 0 Hz (interface active 400 kHz: 1.8 to 5.5 V)"'
+  supply_current:
+    typ: 320 nA
+    max: 480 nA
+    at: { VDD: 3.3 V, TA: 25 °C }
+    src: p70 "Table 67 IDD, CLKOUT disabled, interface inactive, battery switch enabled, Tamb 25 C"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p69 "Table 66 Limiting values, Tamb ambient temperature, operating device"
+  esd_hbm: { typ: 3.5 kV, src: 'p69 "Table 66 Limiting values, VESD HBM ±3500 V"' }
+
+pins:
+  src:
+    - p8 "Table 3 Pin description, columns PCF85263AT (SO8), PCF85263ATT (TSSOP8)"
+    - p9 "Table 3 Pin description (continued), columns PCF85263AT, PCF85263ATT"
+  "1": { name: OSCI, type: clock }
+  "2": { name: OSCO, type: clock_out }
+  "3": { name: VBAT, type: power }
+  "4": { name: VSS, type: ground }
+  "5": { name: SDA, type: io }
+  "6": { name: SCL, type: clock }
+  "7": { name: INTA (CLK), type: output }
+  "8": { name: VDD, type: power }

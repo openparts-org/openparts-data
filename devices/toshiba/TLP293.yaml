@@ -1,0 +1,46 @@
+# TLP293 photocoupler (IRED + phototransistor) in SO4. Pin assignment
+# from section 4 "Packaging and Pin Assignment" on page 1 of the TLP293
+# datasheet (2026-08-05): 1 Anode, 2 Cathode, 3 Emitter, 4 Collector.
+# All typed passive (as toshiba/TLP291). The CTR rank is per Part.
+schema_version: "0.2"
+kind: device
+id: toshiba/TLP293
+manufacturer: toshiba
+category: optocoupler
+family: TLP293
+source: toshiba/TLP293-datasheet-en
+
+parameters:
+  forward_voltage:
+    min: 1.1 V
+    typ: 1.25 V
+    max: 1.4 V
+    at: { IF: 10 mA }
+    src: p3 "7. Electrical Characteristics, LED, Input forward voltage VF"
+  reverse_voltage:
+    max: 5 V
+    src: p2 "6. Absolute Maximum Ratings, LED, Input reverse voltage VR"
+  forward_current:
+    max: 50 mA
+    src: p2 "6. Absolute Maximum Ratings, LED, Input forward current IF"
+  collector_emitter_voltage:
+    max: 80 V
+    src: p2 "6. Absolute Maximum Ratings, Detector, Collector-emitter voltage VCEO"
+  collector_current:
+    max: 50 mA
+    src: p2 "6. Absolute Maximum Ratings, Detector, Collector current IC"
+  isolation_voltage:
+    min: 3750 V
+    at: { t: 60 s }
+    src: p4 "9. Isolation Characteristics, Isolation voltage BVS (AC, Vrms)"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p2 "6. Absolute Maximum Ratings, Operating temperature Topr"
+
+pins:
+  src: 'p1 "4. Packaging and Pin Assignment: 1 Anode, 2 Cathode, 3 Emitter, 4 Collector"'
+  "1": { name: ANODE, type: passive }
+  "2": { name: CATHODE, type: passive }
+  "3": { name: EMITTER, type: passive }
+  "4": { name: COLLECTOR, type: passive }

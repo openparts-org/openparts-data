@@ -1,0 +1,47 @@
+# DAC8552 16-bit dual-channel SPI voltage-output DAC, 8-pin MSOP (DGK)
+# pin map from "PIN DESCRIPTIONS" (SLAS430A page 4), checked against the
+# "PIN CONFIGURATION, DGK PACKAGE MSOP-8 (Top View)" figure on the same
+# page; all 8 pins match. SYNC is active low (overbar; written without
+# it). VREF, VOUTA/VOUTB typed analog, SYNC and DIN input, SCLK clock.
+# No ESD rating is printed.
+schema_version: "0.2"
+kind: device
+id: ti/DAC8552
+manufacturer: ti
+category: dac
+family: DAC8552
+source: ti/SLAS430A
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: 'p3 "ELECTRICAL CHARACTERISTICS, POWER REQUIREMENTS: VDD 2.7 / 5.5 V"'
+  supply_current:
+    - typ: 340 µA
+      max: 500 µA
+      at: { VDD: 3.6..5.5 V }
+      src: p3 "ELECTRICAL CHARACTERISTICS, IDD (normal mode), VDD = 3.6V to 5.5V"
+    - typ: 310 µA
+      max: 480 µA
+      at: { VDD: 2.7..3.6 V }
+      src: p3 "ELECTRICAL CHARACTERISTICS, IDD (normal mode), VDD = 2.7V to 3.6V"
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: 'p3 "ELECTRICAL CHARACTERISTICS, TEMPERATURE RANGE: Specified performance"'
+  channel_count: { value: "2", src: 'p1 "Description: a 16-bit, dual channel, voltage output DAC"' }
+
+pins:
+  src:
+    - p4 "PIN DESCRIPTIONS table"
+    - p4 "PIN CONFIGURATION, DGK PACKAGE MSOP-8 (Top View) (cross-check)"
+  "1": { name: VDD, type: power }
+  "2": { name: VREF, type: analog }
+  "3": { name: VOUTB, type: analog }
+  "4": { name: VOUTA, type: analog }
+  "5": { name: SYNC, type: input }
+  "6": { name: SCLK, type: clock }
+  "7": { name: DIN, type: input }
+  "8": { name: GND, type: ground }

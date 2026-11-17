@@ -1,0 +1,38 @@
+# TS5A23157 dual SPDT analog switch, 10-pin pin map of the DGS (VSSOP)
+# package from SCDS165F "Pin Functions" (page 3) and the DGS top-view
+# figure; the RSE (UQFN) map is not covered. NCx are the normally-closed
+# switch ports (I/O), not no-connects. Switch I/O -> analog, INx select
+# -> input.
+schema_version: "0.2"
+kind: device
+id: ti/TS5A23157
+manufacturer: ti
+category: analog_switch
+family: TS5A23157
+source: ti/SCDS165F
+
+parameters:
+  supply_voltage: { min: 1.65 V, max: 5.5 V, src: 'p4 "6.3 Recommended Operating Conditions, V+"' }
+  supply_current:
+    max: 1 µA
+    at: { VCC: 5.5 V, TA: 25 °C }
+    src: p6 "6.5 Elec. Char. 5-V Supply (continued), I+ positive supply current, 25°C"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA"
+  esd_hbm:       { typ: 2000 V, src: 'p4 "6.2 ESD Ratings, HBM"' }
+  channel_count: { value: "2", src: 'p3 "Pin Functions: switch 1 and switch 2"' }
+
+pins:
+  src:  p3 "DGS Package 10-Pin VSSOP (Top View) and Pin Functions table"
+  "1":  { name: IN1, type: input }
+  "2":  { name: NO1, type: analog }
+  "3":  { name: GND, type: ground }
+  "4":  { name: NO2, type: analog }
+  "5":  { name: IN2, type: input }
+  "6":  { name: COM2, type: analog }
+  "7":  { name: NC2, type: analog }
+  "8":  { name: V+, type: power }
+  "9":  { name: NC1, type: analog }
+  "10": { name: COM1, type: analog }

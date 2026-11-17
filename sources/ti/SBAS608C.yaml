@@ -1,0 +1,20 @@
+# Official TI datasheet "ADS7042 ultra-low power, ultra-small size, 12-bit, 1-MSPS SAR ADC". Downloaded 2026-11-17 with wget from
+# the TI symlink URL below; revision read from the page header
+# "SBAS608C - JUNE 2014 - REVISED DECEMBER 2015". 46 PDF pages; text read with pdftotext -layout. Pin
+# configuration, specification tables and the PACKAGE OPTION ADDENDUM
+# were read from the extracted text; package outline pages named in the
+# part files were matched by drawing number and revision. Page numbers
+# in this dataset are PDF page indices. The PACKAGE OPTION ADDENDUM (PDF
+# page 39) is dated 10-Nov-2025 (newer than the datasheet revision).
+# sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SBAS608C
+sha256: 96d5f335d91126fd3de13a4f0e287a82a9d10a50ab87629da4dcb0b2b9d802e0
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/ads7042.pdf
+publisher: ti
+document_id: SBAS608C
+document_type: datasheet
+revision: C
+date: 2015-12

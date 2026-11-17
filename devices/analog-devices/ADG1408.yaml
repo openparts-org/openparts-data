@@ -1,0 +1,48 @@
+# ADG1408 8:1 iCMOS analog multiplexer (4 Ohm RON), 16-pin pin map of the
+# RU-16 TSSOP from Table 8 "ADG1408 Pin Function Descriptions", TSSOP
+# column (page 10) and Figure 2; the LFCSP map is not covered. Sx/D ->
+# analog, A0-A2/EN -> input, VDD and VSS (most negative supply) ->
+# power, GND ground. supply_voltage is the 12 V single-supply range
+# (VSS = 0 V); the dual-supply range is printed only as +/-4.5 to
+# +/-16.5 V. The data sheet gives no HBM ESD figure.
+schema_version: "0.2"
+kind: device
+id: analog-devices/ADG1408
+manufacturer: analog-devices
+category: analog_switch
+family: ADG1408
+source: analog-devices/ADG1408_1409-revD
+
+parameters:
+  supply_voltage:
+    min: 5 V
+    max: 16.5 V
+    src: p6 "12 V Single Supply table, Power Requirements, VDD min/max (VSS = 0 V)"
+  supply_current:
+    typ: 0.002 µA
+    at: { VDD: 16.5 V, TA: 25 °C }
+    src: p4 "Table 2 (15 V dual supply), IDD, +25 °C, digital inputs 0 V or VDD, VSS = -16.5 V"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p9 "Absolute Maximum Ratings, Operating Temperature Range, Industrial (Y Version)"
+  channel_count: { value: "1", src: 'p10 "Table 8 ADG1408 Pin Function Descriptions: one drain D"' }
+
+pins:
+  src:  p10 "Table 8 ADG1408 Pin Function Descriptions, TSSOP column; Figure 2"
+  "1":  { name: A0, type: input }
+  "2":  { name: EN, type: input }
+  "3":  { name: VSS, type: power }
+  "4":  { name: S1, type: analog }
+  "5":  { name: S2, type: analog }
+  "6":  { name: S3, type: analog }
+  "7":  { name: S4, type: analog }
+  "8":  { name: D, type: analog }
+  "9":  { name: S8, type: analog }
+  "10": { name: S7, type: analog }
+  "11": { name: S6, type: analog }
+  "12": { name: S5, type: analog }
+  "13": { name: VDD, type: power }
+  "14": { name: GND, type: ground }
+  "15": { name: A2, type: input }
+  "16": { name: A1, type: input }

@@ -1,0 +1,30 @@
+# MPN "MCP3421A0T-E/CH" is PROBABLE: printed as ordering example a) in
+# the Product Identification System of microchip/DS22003@revE (page 39)
+# and in the SOT-23 package-marking table (page 35), not in an orderable
+# list. A0 = default address, T = tape and reel, E = -40 to +125 C.
+# Package: CH drawing C04-028B (page 36) -> manufacturers/microchip/
+# SOT23-6-CH-C04-028B (same drawing and revision, reused).
+# lifecycle: not stated in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP3421A0T-E-CH
+manufacturer: microchip
+mpn: MCP3421A0T-E/CH
+device: microchip/MCP3421
+
+package:
+  value: manufacturers/microchip/SOT23-6-CH-C04-028B
+  src:
+    - p39 "Product Identification System, Package "CH = Plastic Small Outline Transistor (SOT-23-6), 6-lead""
+    - p36 "6-Lead Plastic Small Outline Transistor (CH) [SOT-23], Microchip Technology Drawing C04-028B"
+
+sources: [microchip/DS22003@revE]
+source: microchip/DS22003@revE
+
+existence:
+  status: probable
+  src:
+    - p39 "Product Identification System, example a) MCP3421A0T-E/CH"
+    - p35 "Package Marking Information, SOT-23 table, row MCP3421A0T-E/CH"
+
+lifecycle: { status: unknown }

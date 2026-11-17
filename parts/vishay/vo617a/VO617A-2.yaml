@@ -1,0 +1,19 @@
+schema_version: "0.2"
+kind: part
+id: vishay/VO617A-2
+manufacturer: vishay
+mpn: VO617A-2
+device: vishay/VO617A
+package: { value: manufacturers/vishay/DIP4-83430, src: 'p8 "Fig. 17 Package Drawings, DIP-4"' }
+sources: [vishay/83430]
+source: vishay/83430
+
+existence: { status: verified, src: 'p2 "Ordering Information, DIP-4 row, CTR 63 to 125"' }
+lifecycle: { status: unknown }
+
+parameters:
+  current_transfer_ratio:
+    min: 63 %
+    max: 125 %
+    at: { VCE: 5 V, IF: 5 mA, TA: 25 °C }
+    src: p4 "Current Transfer Ratio, VO617A-2 row"

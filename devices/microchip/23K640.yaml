@@ -1,0 +1,39 @@
+# 23K640 64-Kbit SPI serial SRAM (2.7-3.6 V member of 23A640/23K640),
+# 8-lead PDIP/SOIC/TSSOP pinout from the "Pin Function Table" and the
+# "Package Types" figure "PDIP/SOIC/TSSOP (P, SN, ST)" (DS22126E page
+# 1). Pin 3 is NC in the figure (typed nc). Types: CS, SI, SCK, HOLD
+# input (HOLD and CS overbars not represented); SO output; VSS ground;
+# VCC power. The operating temperature depends on the grade (I or E) in
+# the MPN and is recorded on the Part.
+schema_version: "0.2"
+kind: device
+id: microchip/23K640
+manufacturer: microchip
+category: sram
+family: 23A640/23K640
+source: microchip/DS22126@revE
+
+# Parameters (AI candidates, needs review).
+parameters:
+  capacity:
+    typ: 64 Kbit
+    src: 'p1 "Description: "The ... 23X640 are 64 Kbit Serial SRAM devices""'
+  supply_voltage:
+    min: 2.7 V
+    max: 3.6 V
+    src: p2 "Table 1-1 D001 VCC Supply voltage, 23K640 (I, E-Temp)"
+  supply_current:
+    max: 10 mA
+    src: p2 "Table 1-1 D008 ICC Read Operating current, FCLK = 20 MHz row"
+  esd_hbm: { typ: 2 kV, src: 'p2 "Absolute Maximum Ratings: ESD protection on all pins 2kV"' }
+
+pins:
+  src: [p1 ""Pin Function Table"", 'p1 ""Package Types" figure "PDIP/SOIC/TSSOP (P, SN, ST)""']
+  "1": { name: CS, type: input }
+  "2": { name: SO, type: output }
+  "3": { name: NC, type: nc }
+  "4": { name: VSS, type: ground }
+  "5": { name: SI, type: input }
+  "6": { name: SCK, type: input }
+  "7": { name: HOLD, type: input }
+  "8": { name: VCC, type: power }

@@ -1,0 +1,44 @@
+# DS3231M ±5 ppm I2C RTC with integrated MEMS resonator. Pin map of the
+# 8-pin SO (DS3231MZ+) from the "Pin Description" table, column "8 SO"
+# (19-5312 Rev 7, pages 7-8), checked against the 8-pin "Pin
+# Configuration" figure (page 7); all 8 pins match. The 16-pin SO
+# (DS3231M+) numbering differs and is not covered. 32KHZ (open-drain
+# 32.768 kHz output) clock_out; INT/SQW (open-drain interrupt / 1 Hz)
+# output; RST (active-low open-drain reset I/O) reset; VBAT/VCC power;
+# SDA io; SCL ("Serial-Clock Input") clock. No ESD rating is printed.
+schema_version: "0.2"
+kind: device
+id: analog-devices/DS3231M
+manufacturer: analog-devices
+category: rtc
+family: DS3231M
+source: analog-devices/DS3231M@rev7
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.3 V
+    max: 5.5 V
+    src: p2 "Recommended Operating Conditions, Supply Voltage VCC"
+  supply_current:
+    max: 200 µA
+    at: { VCC: 3.63 V }
+    src: p2 "DC Electrical Characteristics, Active Supply Current ICCA, VCC = +3.63V"
+  operating_temperature:
+    min: -45 °C
+    max: 85 °C
+    src: p2 "Absolute Maximum Ratings, Operating Temperature Range -45 to +85 C"
+
+pins:
+  src:
+    - p7 "Pin Description table, column "8 SO""
+    - p8 "Pin Description (continued), column "8 SO""
+    - p7 "Pin Configuration, 8-pin SO (cross-check)"
+  "1": { name: 32KHZ, type: clock_out }
+  "2": { name: VCC, type: power }
+  "3": { name: INT/SQW, type: output }
+  "4": { name: RST, type: reset }
+  "5": { name: GND, type: ground }
+  "6": { name: VBAT, type: power }
+  "7": { name: SDA, type: io }
+  "8": { name: SCL, type: clock }

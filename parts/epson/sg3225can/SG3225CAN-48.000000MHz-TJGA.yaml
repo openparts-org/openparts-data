@@ -1,0 +1,44 @@
+# Epson SG3225CAN 48.000000MHz TJGA: SG3225CAN CMOS oscillator, 48 MHz (a p1 standard
+# frequency), T (1.8 V to 3.3 V typ.), JG (+-50 ppm / -40 ~ +85 C), A
+# (default internal code). The MPN contains spaces as published; the id
+# replaces them with "-". existence: probable -- assembled from the p1
+# product-name legend (only a 25 MHz SG2016CAN example is printed).
+# Supply current: the 3.3 V +-10 % column, 40 MHz < fo ≤ 60 MHz row.
+# lifecycle unknown.
+schema_version: "0.2"
+kind: part
+id: epson/SG3225CAN-48.000000MHz-TJGA
+manufacturer: epson
+mpn: SG3225CAN 48.000000MHz TJGA
+device: epson/SG3225CAN
+package: manufacturers/epson/LGA4-3.2x2.5-SG3225CAN
+sources: [epson/SG-CAN-STF-BRIEF]
+source: epson/SG-CAN-STF-BRIEF
+
+existence:
+  status: probable
+  src: p1 "Product name (Standard form) legend, SG3225CAN, T, JG, A"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  frequency:
+    typ: 48 MHz
+    src: p1 "Specifications, Output frequency fo, standard frequency 48 MHz"
+  frequency_stability:
+    tol: ±50 ppm
+    at: { TA: -40..85 °C }
+    src: 'p1 "Product name legend e/f JG: ±50 × 10-6 / -40 °C to +85 °C (f_tol)"'
+  supply_voltage:
+    min: 1.6 V
+    max: 3.63 V
+    src: p1 "Specifications, Supply voltage range VCC, 1.2 MHz ≤ fo ≤ 60 MHz"
+  supply_current:
+    max: 2.6 mA
+    at: { VCC: 3.3 V }
+    src: p1 "Specifications, Current consumption ICC, VCC = 3.3 V ± 10 %, 40 MHz < fo ≤ 60 MHz, no load"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "Product name legend e/f JG, -40 °C to +85 °C"

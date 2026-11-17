@@ -1,0 +1,20 @@
+# Official TI datasheet "DACx311 2-V to 5.5-V, 80-uA, 8-, 10- and 12-bit single-channel DACs in SC70". Downloaded 2026-11-17 with wget from
+# the TI symlink URL below; revision read from the page header
+# "SBAS442D - AUGUST 2008 - REVISED AUGUST 2023". 40 PDF pages; text read with pdftotext -layout. Pin
+# configuration, specification tables and the PACKAGE OPTION ADDENDUM
+# were read from the extracted text; package outline pages named in the
+# part files were matched by drawing number and revision. Page numbers
+# in this dataset are PDF page indices. The PACKAGE OPTION ADDENDUM (PDF
+# page 33) is dated 9-Nov-2025 (newer than the datasheet revision).
+# sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SBAS442D
+sha256: 212625aa6189ace37d2de191312be50f0da5bf8b6c455d5c0ca318645dc09ca1
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/dac7311.pdf
+publisher: ti
+document_id: SBAS442D
+document_type: datasheet
+revision: D
+date: 2023-08

@@ -1,0 +1,17 @@
+# Official DS3231M data sheet (Maxim Integrated layout, now Analog
+# Devices), footer "19-5312; Rev 7; 3/15" (Revision History: 7, 3/15).
+# Downloaded 2026-11-17 with wget from analog.com (URL below). 20 PDF
+# pages; read with pdftotext -layout (the text layer prints the degree
+# sign as "NC"; those temperatures are °C). Page numbers are PDF page
+# indices. Package outlines are separate documents (21-0041, 21-0042).
+schema_version: "0.2"
+kind: source
+id: analog-devices/DS3231M@rev7
+sha256: dcc1cd00b353b9f3cb6dc054a0ddf3eadea31c064f322b49b0ac4af08ef65fea
+retrieved: 2026-11-17
+url: https://www.analog.com/media/en/technical-documentation/data-sheets/DS3231M.pdf
+publisher: analog-devices
+document_id: 19-5312
+document_type: datasheet
+revision: "7"
+date: 2015-03

@@ -1,0 +1,29 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SNAS265J
+# (page 29): "DAC121S101CIMKX/NOPB Active Production SOT-23- 3000 | LARGE T&R Yes SN Level-1-260C-UNLIM -40 to 105 X61C".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet).
+# Package: SOT-23-THIN (DDC), outline DDC0006A (4214841/E) on page 36 -> manufacturers/ti/DDC0006A
+# (same drawing number and revision as the source that package was read from).
+schema_version: "0.2"
+kind: part
+id: ti/DAC121S101CIMKX-NOPB
+manufacturer: ti
+mpn: DAC121S101CIMKX/NOPB
+device: ti/DAC121S101-DDC
+
+package:
+  value: manufacturers/ti/DDC0006A
+  src:
+    - p29 "PACKAGE OPTION ADDENDUM, row DAC121S101CIMKX/NOPB, Package column "SOT-23-THIN (DDC)""
+    - p36 "PACKAGE OUTLINE DDC0006A (4214841/E)"
+
+sources: [ti/SNAS265J]
+source: ti/SNAS265J
+
+existence:
+  status: verified
+  src: p29 "PACKAGE OPTION ADDENDUM, Packaging Information table, row DAC121S101CIMKX/NOPB"
+
+lifecycle:
+  status: active
+  src: p29 "PACKAGE OPTION ADDENDUM, row DAC121S101CIMKX/NOPB, Status column "Active""

@@ -1,0 +1,53 @@
+# 1-cell 1.5-A linear Li-Ion charger with power path, BQ24072 RGT
+# (VQFN-16) pinout. From SLUS810N Table 7-1 "Pin Functions" (pages 8-9),
+# column "'72, '73": TS 1, BAT 2 and 3, CE 4, EN2 5, EN1 6, PGOOD 7, VSS 8,
+# CHG 9, OUT 10 and 11, ILIM 12, IN 13, TMR 14, TD 15, ISET 16;
+# checked against Figure 7-1 "BQ24072, BQ24073 RGT0016B Package 16 Pins Top View" (page 7). CE, CHG and PGOOD carry
+# overbars in the datasheet (written without them). The thermal pad row
+# (page 9) states an internal electrical connection between the pad and
+# VSS -> pin "EP" named VSS, type ground. Programming pins (ILIM, ISET,
+# TMR, TS -> analog; IN/OUT/BAT -> power.
+schema_version: "0.2"
+kind: device
+id: ti/BQ24072-RGT
+manufacturer: ti
+category: battery_charger
+family: BQ2407x
+source: ti/SLUS810N
+
+parameters:
+  output_voltage: { typ: 4.2 V, src: 'p6 "6 Device Comparison Table, BQ24072 row, VBAT(REG)"' }
+  input_voltage_max:
+    max: 6.4 V
+    src: p10 "8.3 Recommended Operating Conditions, IN operating voltage range, '72/'73/'75/'79 row"
+  output_current:
+    max: 1.5 A
+    src: p10 "8.3 Recommended Operating Conditions, ICHG current, BAT pin (charging)"
+  esd_hbm:        { typ: 2 kV, src: 'p10 "8.2 ESD Ratings, HBM ±2000 V"' }
+
+pins:
+  src:
+    - p8 "Table 7-1 "Pin Functions", column "'72, '73""
+    - p9 "Table 7-1 "Pin Functions" (continued), column "'72, '73""
+    - p7 "Figure 7-1 "BQ24072, BQ24073 RGT0016B Package 16 Pins Top View""
+  "1":  { name: TS, type: analog }
+  "2":  { name: BAT, type: power }
+  "3":  { name: BAT, type: power }
+  "4":  { name: CE, type: input }
+  "5":  { name: EN2, type: input }
+  "6":  { name: EN1, type: input }
+  "7":  { name: PGOOD, type: output }
+  "8":  { name: VSS, type: ground }
+  "9":  { name: CHG, type: output }
+  "10": { name: OUT, type: power }
+  "11": { name: OUT, type: power }
+  "12": { name: ILIM, type: analog }
+  "13": { name: IN, type: power }
+  "14": { name: TMR, type: analog }
+  "15": { name: TD, type: input }
+  "16": { name: ISET, type: analog }
+  EP:
+    name:
+      value: VSS
+      src: 'p9 "Table 7-1, "Thermal Pad" row: internal electrical connection to VSS"'
+    type: ground

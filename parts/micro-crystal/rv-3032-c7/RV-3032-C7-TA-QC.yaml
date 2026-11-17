@@ -1,0 +1,25 @@
+# MPN "RV-3032-C7 TA QC" is PROBABLE: it is the ordering-code example printed in
+# "1.3 ORDERING INFORMATION" of micro-crystal/RV-3032-C7@rev1.3 (page 8): TA = standard operating
+# temperature range -40 to +85 °C, QC = standard commercial grade (QA =
+# automotive). Micro Crystal's full ordering strings (with frequency /
+# accuracy fields) are not printed in the manual. Package: "C7" package
+# figure on page 145 -> manufacturers/micro-crystal/LGA8-3.2x1.5-P0.9-RV-C7
+# (drawing RV-3032-C7_Pack-drw_20200615; every value equals the
+# RV-3028-C7 figure the package was read from).
+# lifecycle: not stated in the manual; unknown.
+schema_version: "0.2"
+kind: part
+id: micro-crystal/RV-3032-C7-TA-QC
+manufacturer: micro-crystal
+mpn: RV-3032-C7 TA QC
+device: micro-crystal/RV-3032-C7
+
+package:
+  value: manufacturers/micro-crystal/LGA8-3.2x1.5-P0.9-RV-C7
+  src: p145 "Package dimensions (bottom view), RV-3032-C7 Package"
+
+sources: [micro-crystal/RV-3032-C7@rev1.3]
+source: micro-crystal/RV-3032-C7@rev1.3
+
+existence: { status: probable, src: 'p8 "1.3 ORDERING INFORMATION, Example: RV-3032-C7 TA QC"' }
+lifecycle: { status: unknown }

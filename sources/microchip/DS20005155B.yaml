@@ -1,0 +1,18 @@
+# Official Microchip datasheet "23A512/23LC512 512Kbit SPI Serial SRAM with SDI and SQI Interface". Downloaded 2026-11-17 with wget
+# from ww1.microchip.com (URL below). document_id / revision from the
+# printed footer "DS20005155B-page N"; the Revision History lists "Revision B (November 2013)".
+# 32 PDF pages; text read with pdftotext -layout. Page numbers in this
+# dataset are PDF page indices (they equal the printed page numbers).
+# Package drawing numbers were rendered and read as images. sha256 is of
+# the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20005155@revB
+sha256: e532894d3a6090a2ba2d5eb4b1b059b9c087d2b2710d181818b214fe9c950e56
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/20005155B.pdf
+publisher: microchip
+document_id: DS20005155
+document_type: datasheet
+revision: B
+date: 2013-11

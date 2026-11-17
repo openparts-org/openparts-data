@@ -1,0 +1,46 @@
+# TMUX1108 5-V 8:1 single-ended multiplexer, 16-pin pin map of the PW
+# (TSSOP) package from SCDS388B Table 5-1 "Pin Functions", TSSOP column
+# (page 3); the RSV (UQFN) map is not covered. Sx/D -> analog, A0-A2/EN
+# -> input, VDD and VSS (negative supply) -> power, GND ground.
+schema_version: "0.2"
+kind: device
+id: ti/TMUX1108
+manufacturer: ti
+category: analog_switch
+family: TMUX1108
+source: ti/SCDS388B
+
+parameters:
+  supply_voltage:
+    min: 1.08 V
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, VDD positive power supply (single)"
+  supply_current:
+    typ: 0.008 µA
+    at: { VDD: 5 V, TA: 25 °C }
+    src: p6 "6.5 Electrical Characteristics (VDD = 5V), IDD, 25°C"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA"
+  esd_hbm:       { typ: 2000 V, src: 'p4 "6.2 ESD Ratings, HBM, all pins"' }
+  channel_count: { value: "1", src: 'p3 "Table 5-1 Pin Functions: one drain D"' }
+
+pins:
+  src:  p3 "Table 5-1 Pin Functions, TSSOP column"
+  "1":  { name: A0, type: input }
+  "2":  { name: EN, type: input }
+  "3":  { name: VSS, type: power }
+  "4":  { name: S1, type: analog }
+  "5":  { name: S2, type: analog }
+  "6":  { name: S3, type: analog }
+  "7":  { name: S4, type: analog }
+  "8":  { name: D, type: analog }
+  "9":  { name: S8, type: analog }
+  "10": { name: S7, type: analog }
+  "11": { name: S6, type: analog }
+  "12": { name: S5, type: analog }
+  "13": { name: VDD, type: power }
+  "14": { name: GND, type: ground }
+  "15": { name: A2, type: input }
+  "16": { name: A1, type: input }

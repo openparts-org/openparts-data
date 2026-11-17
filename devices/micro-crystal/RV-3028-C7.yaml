@@ -1,0 +1,44 @@
+# RV-3028-C7 extreme-low-power RTC module (embedded 32.768 kHz crystal),
+# I2C, 8-terminal C7 ceramic package. Pin map from "2.2 PIN DESCRIPTION"
+# (Application Manual Rev. 1.4, page 9), checked against the "2.1
+# PINOUT" figure (same page). CLKOUT (push-pull clock output) clock_out;
+# INT (open-drain, active LOW) output; SCL ("I2C Serial Clock Input")
+# clock; SDA io; VBACKUP/VDD power; EVI (External Event Input) input.
+# supply_voltage: the operating-parameters header range "VDD = 1.2 to
+# 5.5 V", equal to the I2C-bus (100 kHz) row; timekeeping alone runs
+# from 1.1 V (same table).
+schema_version: "0.2"
+kind: device
+id: micro-crystal/RV-3028-C7
+manufacturer: micro-crystal
+category: rtc
+family: RV-3028-C7
+source: micro-crystal/RV-3028-C7@rev1.4
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.2 V
+    max: 5.5 V
+    src: 'p97 "6.2 Operating Parameters, VDD, I2C-bus (100 kHz) row (timekeeping mode: 1.1 to 5.5 V)"'
+  supply_current:
+    typ: 45 nA
+    max: 60 nA
+    at: { VDD: 3 V, TA: 25 °C }
+    src: p97 "6.2 Operating Parameters, IDD timekeeping, I2C inactive, CLKOUT disabled, VDD = 3.0 V, TA = 25°C"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p96 "6.1 Absolute Maximum Ratings, TOPR Operating Temperature"
+  esd_hbm: { typ: 2 kV, src: 'p96 "6.1 Absolute Maximum Ratings, VESD HBM ±2000 V"' }
+
+pins:
+  src: [p9 "2.2 PIN DESCRIPTION table", 'p9 "2.1 PINOUT figure, top view (cross-check)"']
+  "1": { name: CLKOUT, type: clock_out }
+  "2": { name: INT, type: output }
+  "3": { name: SCL, type: clock }
+  "4": { name: SDA, type: io }
+  "5": { name: VSS, type: ground }
+  "6": { name: VBACKUP, type: power }
+  "7": { name: VDD, type: power }
+  "8": { name: EVI, type: input }

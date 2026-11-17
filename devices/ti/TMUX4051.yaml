@@ -1,0 +1,45 @@
+# TMUX4051 24-V 8:1 multiplexer (4051-pinout), 16-pin pin map of the PW
+# (TSSOP) and DYY packages from SCDS445E Table 5-1 "Pin Functions
+# TMUX4051" (page 4). EN is active low per its description (switches on
+# "when this pin is low"); name as printed. Sx/D -> analog, A0-A2/EN ->
+# input, VDD and VSS (negative supply) -> power, GND ground.
+schema_version: "0.2"
+kind: device
+id: ti/TMUX4051
+manufacturer: ti
+category: analog_switch
+family: TMUX405x
+source: ti/SCDS445E
+
+parameters:
+  supply_voltage: { min: 5 V, max: 24 V, src: 'p8 "6.4 Recommended Operating Conditions, VDD"' }
+  supply_current:
+    typ: 17 µA
+    max: 60 µA
+    at: { VDD: 5 V, TA: 25 °C }
+    src: p9 "6.5 Electrical Characteristics, IDD, VDD 5V, VSS 0V, 25°C"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p8 "6.4 Recommended Operating Conditions, TA"
+  esd_hbm:       { typ: 2000 V, src: 'p7 "6.2 ESD Ratings, HBM, all pins"' }
+  channel_count: { value: "1", src: 'p4 "Table 5-1 Pin Functions TMUX4051: one drain D"' }
+
+pins:
+  src:  p4 "Table 5-1 Pin Functions TMUX4051"
+  "1":  { name: S4, type: analog }
+  "2":  { name: S6, type: analog }
+  "3":  { name: D, type: analog }
+  "4":  { name: S7, type: analog }
+  "5":  { name: S5, type: analog }
+  "6":  { name: EN, type: input }
+  "7":  { name: VSS, type: power }
+  "8":  { name: GND, type: ground }
+  "9":  { name: A2, type: input }
+  "10": { name: A1, type: input }
+  "11": { name: A0, type: input }
+  "12": { name: S3, type: analog }
+  "13": { name: S0, type: analog }
+  "14": { name: S1, type: analog }
+  "15": { name: S2, type: analog }
+  "16": { name: VDD, type: power }

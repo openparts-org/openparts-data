@@ -1,0 +1,35 @@
+# MPN "DS1307ZN+" (industrial, 8 SO 150 mil) from the "ORDERING
+# INFORMATION" table of analog-devices/DS1307@2015-03 (page 1); a
+# tape-and-reel variant DS1307ZN+T&R is listed too. The PACKAGE
+# INFORMATION table (page 13) gives document no. 21-0041 for the 8 SO
+# (no package code) -> 21-0041 rev. V VARIATION A (8 leads) ->
+# manufacturers/analog-devices/SOIC8-S-21-0041.
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: analog-devices/DS1307ZN+
+manufacturer: analog-devices
+mpn: DS1307ZN+
+device: analog-devices/DS1307
+
+package:
+  value: manufacturers/analog-devices/SOIC8-S-21-0041
+  src:
+    - p13 "PACKAGE INFORMATION, 8 SO, document no. 21-0041"
+    - analog-devices/21-0041@revV p1 "VARIATION A (N 8)"
+
+sources: [analog-devices/DS1307@2015-03, analog-devices/21-0041@revV]
+source: analog-devices/DS1307@2015-03
+
+existence:
+  status: verified
+  src: p1 "ORDERING INFORMATION, row DS1307ZN+, -40°C to +85°C, 8 SO (150 mils)"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "ORDERING INFORMATION, DS1307ZN+ TEMP RANGE -40 to +85 C"

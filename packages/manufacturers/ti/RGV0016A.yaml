@@ -1,0 +1,54 @@
+# TI RGV0016A "VQFN - 1 mm max height" (16 terminals, 4x4 mm, 0.65 mm
+# pitch, exposed thermal pad 17; drawing 4219037/A 06/2019), read from
+# the rendered PACKAGE OUTLINE page of SBOS576C (INA3221, PDF page 47).
+# Millimetres as printed.
+#
+# Mapping as for manufacturers/ti/RGT0016C: D/E "4.15/3.85" limits ->
+# body_width/body_length (no nominal printed); A "1.0/0.8" (no A2) ->
+# body_height; A1 "0.05/0.00" -> standoff; b "16X 0.38/0.23" ->
+# lead_width; L "16X 0.65/0.45" -> lead_length; thermal pad
+# "2.16±0.1" both ways -> exposed_pad nominal with min/max.
+# Bottom view numbers 1-4 / 5-8 / 9-12 / 13-16 around the pad; seen from
+# the top this is the standard CCW order (pin 1 top of the left edge),
+# matching Figure 5-1 (page 3).
+# Left out: "(0.2) TYP" side-wall metal and "(0.37) TYP" (reference
+# values), "2X 1.95" row spans.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/RGV0016A
+family: qfn
+lead_count: 16
+source: ti/SBOS576C
+
+pitch: { typ: 0.65 mm, src: 'p47 "RGV0016A outline (4219037/A), bottom view, basic "12X 0.65""' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:
+    min: 3.85 mm
+    max: 4.15 mm
+    src: p47 "RGV0016A outline (4219037/A), top view "4.15 / 3.85""
+  body_length:
+    min: 3.85 mm
+    max: 4.15 mm
+    src: p47 "RGV0016A outline (4219037/A), top view "4.15 / 3.85""
+  body_height:
+    min: 0.8 mm
+    max: 1 mm
+    src: p47 "RGV0016A outline (4219037/A), side view "1.0 / 0.8""
+  exposed_pad:
+    src:    p47 "RGV0016A outline (4219037/A), bottom view, thermal pad "2.16±0.1" both ways"
+    width:  { min: 2.06 mm, typ: 2.16 mm, max: 2.26 mm }
+    length: { min: 2.06 mm, typ: 2.16 mm, max: 2.26 mm }
+  standoff:
+    min: 0 mm
+    max: 0.05 mm
+    src: p47 "RGV0016A outline (4219037/A), side view "0.05 / 0.00""
+  lead_width:
+    min: 0.23 mm
+    max: 0.38 mm
+    src: p47 "RGV0016A outline (4219037/A), bottom view "16X 0.38 / 0.23""
+  lead_length:
+    min: 0.45 mm
+    max: 0.65 mm
+    src: p47 "RGV0016A outline (4219037/A), bottom view "16X 0.65 / 0.45""

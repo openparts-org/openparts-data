@@ -1,0 +1,29 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SNAS265J
+# (page 29): "DAC121S101CIMM/NOPB Active Production VSSOP (DGK) | 8 1000 | SMALL T&R Yes SN Level-1-260C-UNLIM -40 to 105 X60C".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet).
+# Package: VSSOP (DGK), outline DGK0008A (4214862/A) on page 33 -> standards/MSOP8-3.0x3.0-P0.65-TI-DGK
+# (same drawing number and revision as the source that package was read from).
+schema_version: "0.2"
+kind: part
+id: ti/DAC121S101CIMM-NOPB
+manufacturer: ti
+mpn: DAC121S101CIMM/NOPB
+device: ti/DAC121S101-DGK
+
+package:
+  value: standards/MSOP8-3.0x3.0-P0.65-TI-DGK
+  src:
+    - p29 "PACKAGE OPTION ADDENDUM, row DAC121S101CIMM/NOPB, Package column "VSSOP (DGK)""
+    - p33 "PACKAGE OUTLINE DGK0008A (4214862/A)"
+
+sources: [ti/SNAS265J]
+source: ti/SNAS265J
+
+existence:
+  status: verified
+  src: p29 "PACKAGE OPTION ADDENDUM, Packaging Information table, row DAC121S101CIMM/NOPB"
+
+lifecycle:
+  status: active
+  src: p29 "PACKAGE OPTION ADDENDUM, row DAC121S101CIMM/NOPB, Status column "Active""

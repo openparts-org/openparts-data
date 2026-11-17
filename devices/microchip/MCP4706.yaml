@@ -1,0 +1,46 @@
+# 8-bit single-channel I2C DAC with EEPROM (MCP4706, family MCP47X6),
+# 6-lead SOT-23 pin map from Table 3-1 "MCP47X6 Pinout Description",
+# column "SOT-23 6L" (DS22272C page 33), checked against the SOT-23-6
+# "Package Types" figure (page 1). The 2x2 DFN-6 numbering (column "DFN
+# 6L", plus exposed pad 7) differs and is not covered. Types: VOUT/VREF
+# (analog) analog, VSS ("Ground reference pin") ground, VDD power, SDA
+# io, SCL ("I2C Serial Clock Pin") clock.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP4706
+manufacturer: microchip
+category: dac
+family: MCP47X6
+source: microchip/DS22272@revC
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: 'p4 "Electrical Characteristics, Power Requirements: Input Voltage VDD"'
+  supply_current:
+    typ: 210 µA
+    max: 400 µA
+    src: p4 "Elec. Char., Input Current IDD, VREF1:VREF0 = 00, VOUT unloaded"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: 'p13 "Temperature Characteristics: Specified Temperature Range TA"'
+  esd_hbm:
+    typ: 6 kV
+    src: 'p3 "Absolute Maximum Ratings: ESD protection on all pins ≥ 6 kV (HBM)"'
+  channel_count:
+    value: "1"
+    src: 'p1 "Description: single channel 8-bit, 10-bit, and 12-bit ... DAC"'
+
+pins:
+  src:
+    - p33 "Table 3-1 "MCP47X6 Pinout Description", column "SOT-23 6L""
+    - p1 ""Package Types" SOT-23-6 figure (cross-check)"
+  "1": { name: VOUT, type: analog }
+  "2": { name: VSS, type: ground }
+  "3": { name: VDD, type: power }
+  "4": { name: SDA, type: io }
+  "5": { name: SCL, type: clock }
+  "6": { name: VREF, type: analog }

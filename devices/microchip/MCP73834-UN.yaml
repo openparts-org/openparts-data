@@ -1,0 +1,40 @@
+# Stand-alone 1-A linear Li-Ion / Li-Polymer charge management
+# controller, MCP73834 10-lead MSOP (UN) pinout. From DS22005B Table 3-1
+# "Pin Function Table" (page 11), MSOP-10 column: VDD 1 and 2, STAT1 3,
+# STAT2 4, VSS 5, PROG 6, TE 7 (row "PG, TE": "MCP73833: Power Good
+# output, MCP73834: Timer Enable input"), THERM 8, VBAT 9 and 10; checked
+# against the "Package Types" MSOP-10 figure (page 1). The MSOP has no
+# exposed pad ("EP ... —" in the MSOP-10 column). STAT1/STAT2 are
+# open-drain status outputs; PROG (current set resistor) and THERM
+# (thermistor input) -> analog; VDD/VBAT -> power.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP73834-UN
+manufacturer: microchip
+category: battery_charger
+family: MCP7383x
+source: microchip/DS22005@revB
+
+parameters:
+  input_voltage_max: { max: 6 V, src: 'p3 "DC Characteristics, Supply Voltage VDD, Charging"' }
+  output_current:    { max: 1 A, src: 'p1 "Features, Programmable Charge Current: 1A Maximum"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p5 "Temperature Specifications, Specified Temperature Range TA"
+  esd_hbm:
+    typ: 4 kV
+    src: p3 "Absolute Maximum Ratings, ESD protection on all pins, HBM ≥ 4 kV"
+
+pins:
+  src:  ['p11 "Table 3-1 Pin Function Table, MSOP-10 column"', 'p1 "Package Types, MSOP-10 figure"']
+  "1":  { name: VDD, type: power }
+  "2":  { name: VDD, type: power }
+  "3":  { name: STAT1, type: output }
+  "4":  { name: STAT2, type: output }
+  "5":  { name: VSS, type: ground }
+  "6":  { name: PROG, type: analog }
+  "7":  { name: TE, type: input }
+  "8":  { name: THERM, type: analog }
+  "9":  { name: VBAT, type: power }
+  "10": { name: VBAT, type: power }

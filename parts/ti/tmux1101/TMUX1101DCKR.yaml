@@ -1,0 +1,17 @@
+schema_version: "0.2"
+kind: part
+id: ti/TMUX1101DCKR
+manufacturer: ti
+mpn: TMUX1101DCKR
+device: ti/TMUX1101
+package: { value: manufacturers/ti/DCK0005A, src: p35 "DCK0005A package outline (4214834/G)" }
+sources: [ti/SCDS410D]
+source: ti/SCDS410D
+
+existence:
+  status: verified
+  src: p28 "Package option addendum table, row "TMUX1101DCKR" (SC70 (DCK) | 5)"
+
+lifecycle:
+  status: active
+  src: p28 "Package option addendum table, row "TMUX1101DCKR", Status "Active""

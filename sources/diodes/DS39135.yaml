@@ -1,0 +1,17 @@
+# Official Diodes Incorporated datasheet for AP22811 (single-channel
+# current-limited power distribution load switch), downloaded 2026-11-17
+# with curl from diodes.com (URL below). Footer: "Document number:
+# DS39135 Rev. 6 - 2", "July 2023". 17 PDF pages; text read with
+# pdftotext -layout; the SOT25 outline (page 15) was rendered and read
+# as an image. Page numbers are PDF page indices ("N of 17").
+schema_version: "0.2"
+kind: source
+id: diodes/DS39135
+sha256: 33d9df96433bbb9ebc84c4f47008831fe98ecc06948f308da74ad1089f17cd3c
+retrieved: 2026-11-17
+url: https://www.diodes.com/assets/Datasheets/AP22811.pdf
+publisher: diodes
+document_id: DS39135
+document_type: datasheet
+revision: 6-2
+date: 2023-07

@@ -1,0 +1,18 @@
+# Official DS3231 data sheet (Maxim Integrated layout, now Analog
+# Devices), footer "19-5170; Rev 10; 3/15"; the Revision History lists
+# revision 10 dated 3/15. Downloaded 2026-11-17 with wget from
+# analog.com (URL below; curl failed there with an HTTP/2 stream error,
+# wget fetched the PDF). 20 PDF pages; read with pdftotext -layout. Page
+# numbers are PDF page indices. The package outline (21-0042) is a
+# separate document: analog-devices/21-0042@revQ.
+schema_version: "0.2"
+kind: source
+id: analog-devices/DS3231@rev10
+sha256: dc81cd89bee82d0c57b654d6315e03dec913fb8fe753cc80b2a3f1cca71cbb34
+retrieved: 2026-11-17
+url: https://www.analog.com/media/en/technical-documentation/data-sheets/DS3231.pdf
+publisher: analog-devices
+document_id: 19-5170
+document_type: datasheet
+revision: "10"
+date: 2015-03

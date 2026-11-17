@@ -1,0 +1,32 @@
+# MPN "DS1307Z+" (commercial, 8 SO 150 mil) from the "ORDERING
+# INFORMATION" table of analog-devices/DS1307@2015-03 (page 1). Package
+# as for DS1307ZN+ (21-0041 VARIATION A).
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: analog-devices/DS1307Z+
+manufacturer: analog-devices
+mpn: DS1307Z+
+device: analog-devices/DS1307
+
+package:
+  value: manufacturers/analog-devices/SOIC8-S-21-0041
+  src:
+    - p13 "PACKAGE INFORMATION, 8 SO, document no. 21-0041"
+    - analog-devices/21-0041@revV p1 "VARIATION A (N 8)"
+
+sources: [analog-devices/DS1307@2015-03, analog-devices/21-0041@revV]
+source: analog-devices/DS1307@2015-03
+
+existence:
+  status: verified
+  src: p1 "ORDERING INFORMATION, row DS1307Z+, 0°C to +70°C, 8 SO (150 mils)"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: 0 °C
+    max: 70 °C
+    src: p1 "ORDERING INFORMATION, DS1307Z+ TEMP RANGE 0 to +70 C"

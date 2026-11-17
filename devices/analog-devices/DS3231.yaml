@@ -1,0 +1,47 @@
+# DS3231 extremely accurate I2C RTC with integrated TCXO and crystal,
+# 16-pin SO. Pin map from the "Pin Description" table (19-5170 Rev 10,
+# page 9), checked against the "Pin Configuration" figure (page 18); all
+# 16 pins match. 32kHz (open-drain 32 kHz output) clock_out; INT/SQW
+# (open-drain interrupt / square wave) output; RST (active-low open-drain
+# reset I/O with pushbutton input) reset; pins 5-12 "N.C." ("No
+# Connection. Must be connected to ground.") nc; SDA io; SCL ("Serial
+# Clock Input") clock; VCC/VBAT power. Overbars are not represented.
+# operating_temperature depends on the grade (DS3231S 0..70 °C, DS3231SN
+# -40..85 °C) and is recorded on the Parts. No ESD rating is printed.
+schema_version: "0.2"
+kind: device
+id: analog-devices/DS3231
+manufacturer: analog-devices
+category: rtc
+family: DS3231
+source: analog-devices/DS3231@rev10
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.3 V
+    max: 5.5 V
+    src: p2 "Recommended Operating Conditions, Supply Voltage VCC"
+  supply_current:
+    max: 200 µA
+    at: { VCC: 3.63 V }
+    src: p2 "Electrical Characteristics, Active Supply Current ICCA, VCC = 3.63V"
+
+pins:
+  src:  [p9 "Pin Description table", 'p18 "Pin Configuration, SO (cross-check)"']
+  "1":  { name: 32kHz, type: clock_out }
+  "2":  { name: VCC, type: power }
+  "3":  { name: INT/SQW, type: output }
+  "4":  { name: RST, type: reset }
+  "5":  { name: N.C., type: nc }
+  "6":  { name: N.C., type: nc }
+  "7":  { name: N.C., type: nc }
+  "8":  { name: N.C., type: nc }
+  "9":  { name: N.C., type: nc }
+  "10": { name: N.C., type: nc }
+  "11": { name: N.C., type: nc }
+  "12": { name: N.C., type: nc }
+  "13": { name: GND, type: ground }
+  "14": { name: VBAT, type: power }
+  "15": { name: SDA, type: io }
+  "16": { name: SCL, type: clock }

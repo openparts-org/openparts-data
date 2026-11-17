@@ -1,0 +1,48 @@
+# Vishay DIP-8 optocoupler outline of the 6N137/VO26xx family, read from
+# the rendered "PACKAGE DIMENSIONS (in millimeters)" drawing, "DIP-8"
+# views, on page 11 of datasheet 84732 (Rev. 2.2). No drawing number is
+# printed; the id uses the document number. Values with a printed
+# tolerance are recorded as nominal plus the resulting min/max.
+#
+# `dip` generator convention: body_width = row spacing (end view "7.62
+# typ."), body_length = side view "9.75 +/- 0.15" (10.16 max with the
+# lead shoulders), body_height = mold "3.55 +/- 0.20", standoff = "0.70
+# +/- 0.20" (body bottom to the shoulder). The molded width "6.70 +/-
+# 0.15" has no dip field. The option 6 (400 mil) form is not covered.
+schema_version: "0.2"
+kind: package
+id: manufacturers/vishay/DIP8-84732
+family: dip
+lead_count: 8
+source: vishay/84732
+
+pitch: { typ: 2.54 mm, src: 'p11 "DIP-8, side view, "2.54 nom.""' }
+geometry: { type: parametric, generator: dip }
+
+dimensions:
+  body_width: { typ: 7.62 mm, src: 'p11 "DIP-8, end view, "7.62 typ.""' }
+  body_length:
+    min: 9.6 mm
+    typ: 9.75 mm
+    max: 9.9 mm
+    src: p11 "DIP-8, side view, "9.75 +/- 0.15""
+  body_height:
+    min: 3.35 mm
+    typ: 3.55 mm
+    max: 3.75 mm
+    src: p11 "DIP-8, side view, "3.55 +/- 0.20""
+  lead_thickness:
+    min: 0.15 mm
+    typ: 0.25 mm
+    max: 0.35 mm
+    src: p11 "DIP-8, end view, "0.25 +/- 0.10""
+  standoff:
+    min: 0.5 mm
+    typ: 0.7 mm
+    max: 0.9 mm
+    src: p11 "DIP-8, side view, "0.70 +/- 0.20""
+  lead_width:
+    min: 0.4 mm
+    typ: 0.5 mm
+    max: 0.6 mm
+    src: p11 "DIP-8, side view, "0.50 +/- 0.10""

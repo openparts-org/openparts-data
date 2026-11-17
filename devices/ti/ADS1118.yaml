@@ -1,0 +1,46 @@
+# ADS1118 16-bit SPI delta-sigma ADC with temperature sensor, pin map
+# for the DGS (10-pin VSSOP) and RUG (10-pin X2QFN) packages from the
+# "Pin Functions" table (SBAS457F page 5; one numbering for both),
+# checked against the "DGS Package 10-Pin VSSOP Top View" figure on the
+# same page; all 10 pins match. CS active low (overbar; written without
+# it). SCLK clock, CS and DIN input, DOUT/DRDY output, AIN0..AIN3 analog.
+schema_version: "0.2"
+kind: device
+id: ti/ADS1118
+manufacturer: ti
+category: adc
+family: ADS1118
+source: ti/SBAS457F
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 5.5 V
+    src: p6 "7.3 Recommended Operating Conditions, VDD Power supply"
+  supply_current:
+    typ: 150 µA
+    max: 200 µA
+    at: { VDD: 3.3 V, TA: 25 °C }
+    src: p8 "7.5 Elec. Char., IVDD Supply current, Operating, TA = 25°C (table default VDD = 3.3 V)"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p6 "7.3 Recommended Operating Conditions, TA Operating ambient temperature"
+  esd_hbm: { typ: 4 kV, src: 'p6 "7.2 ESD Ratings, HBM ±4000 V"' }
+  channel_count:
+    value: "4"
+    src: p5 "5 Device Comparison Table, ADS1118 row, Input channels 2 (4)"
+
+pins:
+  src:  [p5 "Pin Functions table", p5 "DGS Package 10-Pin VSSOP Top View figure (cross-check)"]
+  "1":  { name: SCLK, type: clock }
+  "2":  { name: CS, type: input }
+  "3":  { name: GND, type: ground }
+  "4":  { name: AIN0, type: analog }
+  "5":  { name: AIN1, type: analog }
+  "6":  { name: AIN2, type: analog }
+  "7":  { name: AIN3, type: analog }
+  "8":  { name: VDD, type: power }
+  "9":  { name: DOUT/DRDY, type: output }
+  "10": { name: DIN, type: input }

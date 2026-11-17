@@ -1,0 +1,20 @@
+# Official TI datasheet "ADS1220 4-channel, 2-kSPS, low-power, 24-bit ADC with integrated PGA and reference". Downloaded 2026-11-17 with wget from
+# the TI symlink URL below; revision read from the page header
+# "SBAS501D - MAY 2013 - REVISED MAY 2026". 78 PDF pages; text read with pdftotext -layout. Pin
+# configuration, specification tables and the PACKAGE OPTION ADDENDUM
+# were read from the extracted text; package outline pages named in the
+# part files were matched by drawing number and revision. Page numbers
+# in this dataset are PDF page indices. The PACKAGE OPTION ADDENDUM (PDF
+# page 69) is dated 8-Jan-2026 (older than the May 2026 datasheet revision).
+# sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SBAS501D
+sha256: 218e25810febc1d740287cebe0678d844817a5db9191cba59cb471647ace3ac4
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/ads1220.pdf
+publisher: ti
+document_id: SBAS501D
+document_type: datasheet
+revision: D
+date: 2026-05

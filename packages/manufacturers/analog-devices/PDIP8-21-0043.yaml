@@ -1,0 +1,38 @@
+# Analog Devices (Maxim) 8-lead plastic DIP, 0.300" row spacing, outline
+# 21-0043 rev. F "PACKAGE OUTLINE, PDIP .300"" (JEDEC MS-001), read from
+# the rendered drawing. Main table (millimetre columns) plus the
+# VARIATIONS row N 8 (MS001 AB). body_width = eA (row spacing, 7.62
+# BSC), body_length = D (8-pin row), body_height = A2, overall_height =
+# A (max only), standoff = A1 (min only), lead_width = B (lower lead
+# width; drawing letter "b" in the side view), lead_thickness = C.
+# E/E1 (shoulder and body widths), B1, D1, A3, eB and L are not modelled.
+schema_version: "0.2"
+kind: package
+id: manufacturers/analog-devices/PDIP8-21-0043
+family: dip
+lead_count: { value: 8, src: 'p1 "21-0043 VARIATIONS table, N 8 (MS001 AB)"' }
+source: analog-devices/21-0043@revF
+
+pitch: { typ: 2.54 mm, src: 'p1 "21-0043 table (MILLIMETERS), e 2.54 BSC"' }
+geometry: { type: parametric, generator: dip }
+
+dimensions:
+  body_width: { typ: 7.62 mm, src: 'p1 "21-0043 table (MILLIMETERS), eA 7.62 BSC (row spacing)"' }
+  body_length:
+    min: 8.84 mm
+    max: 9.91 mm
+    src: p1 "21-0043 VARIATIONS (MILLIMETERS), N 8 row, D 8.84 / 9.91"
+  body_height:
+    min: 3.18 mm
+    max: 4.45 mm
+    src: p1 "21-0043 table (MILLIMETERS), A2 3.18 / 4.45"
+  lead_thickness:
+    min: 0.2 mm
+    max: 0.355 mm
+    src: p1 "21-0043 table (MILLIMETERS), C 0.2 / 0.355"
+  overall_height: { max: 4.572 mm, src: 'p1 "21-0043 table (MILLIMETERS), A max 4.572"' }
+  standoff:       { min: 0.38 mm, src: 'p1 "21-0043 table (MILLIMETERS), A1 min 0.38"' }
+  lead_width:
+    min: 0.381 mm
+    max: 0.56 mm
+    src: p1 "21-0043 table (MILLIMETERS), B 0.381 / 0.56"

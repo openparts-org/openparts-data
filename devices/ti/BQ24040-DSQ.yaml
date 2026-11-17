@@ -1,0 +1,43 @@
+# 1-A single-input, single-cell Li-Ion linear charger, BQ24040 DSQ
+# (WSON-10, 2 x 2 mm) pinout. From SLUS941H Table 6-1 "Pin Functions"
+# (pages 4-5), column "BQ24040 BQ24045": IN 1, ISET 2, VSS 3, PRE-TERM
+# 4, PG 5, NC 6, ISET2 7, CHG 8, TS 9, OUT 10; checked against Figure
+# 6-1 "BQ24040 and BQ24045 DSQ Package 10-Pin WSON Top View" (page 4).
+# Thermal pad: "Connect exposed thermal pad to VSS terminal ... Do not
+# use the thermal pad as the primary ground input" -> EP passive.
+# ISET/ISET2/PRE-TERM/TS -> analog (programming and NTC inputs);
+# CHG/PG open-drain status -> output.
+schema_version: "0.2"
+kind: device
+id: ti/BQ24040-DSQ
+manufacturer: ti
+category: battery_charger
+family: BQ2404x
+source: ti/SLUS941H
+
+parameters:
+  output_voltage: { typ: 4.2 V, src: 'p4 "5 Device Comparison, BQ24040 row, VO(REG)"' }
+  input_voltage_max:
+    max: 6.45 V
+    src: p6 "7.3 Recommended Operating Conditions, IN operating voltage range, restricted by VDPM and VOVP"
+  output_current:
+    max: 1 A
+    src: p6 "7.3 Recommended Operating Conditions, IOUT current, OUT terminal"
+  esd_hbm:        { typ: 3 kV, src: 'p6 "7.2 ESD Ratings, HBM ±3000 V"' }
+
+pins:
+  src:
+    - p4 "Table 6-1 "Pin Functions", column "BQ24040 BQ24045""
+    - p5 "Table 6-1 "Pin Functions" (continued)"
+    - p4 "Figure 6-1 "BQ24040 and BQ24045 DSQ Package 10-Pin WSON Top View""
+  "1":  { name: IN, type: power }
+  "2":  { name: ISET, type: analog }
+  "3":  { name: VSS, type: ground }
+  "4":  { name: PRE-TERM, type: analog }
+  "5":  { name: PG, type: output }
+  "6":  { name: NC, type: nc }
+  "7":  { name: ISET2, type: analog }
+  "8":  { name: CHG, type: output }
+  "9":  { name: TS, type: analog }
+  "10": { name: OUT, type: power }
+  EP:   { name: Thermal Pad, type: passive }

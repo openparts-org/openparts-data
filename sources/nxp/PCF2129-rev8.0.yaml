@@ -1,0 +1,16 @@
+# Official NXP PCF2129 product data sheet, "Rev. 8.0 — 18 July 2022"
+# (page footers). Downloaded 2026-11-17 with wget from nxp.com (URL
+# below). 80 PDF pages; read with pdftotext -layout; the SO16 outline
+# (page 67) was read from the text layer. Page numbers are PDF page
+# indices (equal to the printed "n / 80").
+schema_version: "0.2"
+kind: source
+id: nxp/PCF2129@rev8.0
+sha256: 20e87d8fc40d3a5e72c9c148ba5b563061c54cbd093b99db962d52f649271a3e
+retrieved: 2026-11-17
+url: https://www.nxp.com/docs/en/data-sheet/PCF2129.pdf
+publisher: nxp
+document_id: PCF2129
+document_type: datasheet
+revision: "8.0"
+date: 2022-07-18

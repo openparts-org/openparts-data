@@ -1,0 +1,24 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SBOS576C PDF page 42, addendum dated 23-Oct-2026): "INA3221AIRGVR | Active | Production | VQFN (RGV) | 16 | 2500 | LARGE T&R | ... | -40 to 125 | INA".
+# lifecycle "active" is that table's Status column.
+schema_version: "0.2"
+kind: part
+id: ti/INA3221AIRGVR
+manufacturer: ti
+mpn: INA3221AIRGVR
+device: ti/INA3221
+
+package:
+  value: manufacturers/ti/RGV0016A
+  src: p42 "Package Option Addendum, row "INA3221AIRGVR", "VQFN (RGV) | 16"; outline RGV0016A (4219037/A) on page 47"
+
+sources: [ti/SBOS576C]
+source: ti/SBOS576C
+
+existence:
+  status: verified
+  src: p42 "Package Option Addendum, Packaging Information table, row "INA3221AIRGVR""
+
+lifecycle:
+  status: active
+  src: p42 "Package Option Addendum, row "INA3221AIRGVR", Status "Active""

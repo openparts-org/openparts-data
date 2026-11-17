@@ -1,0 +1,45 @@
+# NE556 dual precision timer (NE556 grade of SLFS023I; NA556/SA556/SE556
+# are not covered). 14-pin pin map of the D (SOIC), DB, N and NS
+# packages from Figure 4-1 and Table 4-1 "Pin Functions" (page 2).
+# Timer number prefix as in the figure (1DISCH, 2OUT ...). Types as for
+# ti/NE555. supply_current is the whole package (both timers).
+schema_version: "0.2"
+kind: device
+id: ti/NE556
+manufacturer: ti
+category: timer
+family: xx556
+source: ti/SLFS023I
+
+parameters:
+  supply_voltage:
+    min: 4.5 V
+    max: 16 V
+    src: p3 "5.3 Recommended Operating Conditions, VCC, NA556, NE556, SA556 row"
+  supply_current:
+    typ: 6 mA
+    max: 12 mA
+    at: { VCC: 5 V, TA: 25 °C }
+    src: p6 "5.5 Elec. Char. (continued), ICC, output low, no load, VCC = 5V, NE556 row"
+  operating_temperature:
+    min: 0 °C
+    max: 70 °C
+    src: p3 "5.3 Recommended Operating Conditions, TA, NE556 row"
+  esd_hbm: { typ: 500 V, src: 'p3 "5.2 ESD Ratings, HBM"' }
+
+pins:
+  src:  p2 "Figure 4-1 (Top View) and Table 4-1 "Pin Functions""
+  "1":  { name: 1DISCH, type: output }
+  "2":  { name: 1THRES, type: input }
+  "3":  { name: 1CONT, type: analog }
+  "4":  { name: 1RESET, type: reset }
+  "5":  { name: 1OUT, type: output }
+  "6":  { name: 1TRIG, type: input }
+  "7":  { name: GND, type: ground }
+  "8":  { name: 2TRIG, type: input }
+  "9":  { name: 2OUT, type: output }
+  "10": { name: 2RESET, type: reset }
+  "11": { name: 2CONT, type: analog }
+  "12": { name: 2THRES, type: input }
+  "13": { name: 2DISCH, type: output }
+  "14": { name: VCC, type: power }

@@ -1,0 +1,39 @@
+# TLC556 dual LinCMOS timer (SLFS047D). 14-pin pin map of the D (SOIC),
+# J and N packages from Figure 4-1 "D, J, or N Package (Top View)"
+# (rendered page 3, timer prefixes 1/2) and Table 4-1 "Pin Functions:
+# D, J, and N Packages". Types as for ti/NE555. Operating temperature
+# depends on the grade (C/I/M) and is on the Parts; supply_current is
+# the whole package (both timers).
+schema_version: "0.2"
+kind: device
+id: ti/TLC556
+manufacturer: ti
+category: timer
+family: TLC556
+source: ti/SLFS047D
+
+parameters:
+  supply_voltage: { min: 2 V, max: 15 V, src: 'p4 "5.3 Recommended Operating Conditions, VDD"' }
+  supply_current:
+    typ: 360 µA
+    max: 700 µA
+    at: { VDD: 5 V, TA: 25 °C }
+    src: p8 "5.6 Elec. Char. VDD = 5V (continued), IDD, 25°C"
+  esd_hbm:        { typ: 1000 V, src: 'p4 "5.2 ESD Ratings, HBM"' }
+
+pins:
+  src:  p3 "Figure 4-1 "D, J, or N Package (Top View)" and Table 4-1"
+  "1":  { name: 1DISCH, type: output }
+  "2":  { name: 1THRES, type: input }
+  "3":  { name: 1CONT, type: analog }
+  "4":  { name: 1RESET, type: reset }
+  "5":  { name: 1OUT, type: output }
+  "6":  { name: 1TRIG, type: input }
+  "7":  { name: GND, type: ground }
+  "8":  { name: 2TRIG, type: input }
+  "9":  { name: 2OUT, type: output }
+  "10": { name: 2RESET, type: reset }
+  "11": { name: 2CONT, type: analog }
+  "12": { name: 2THRES, type: input }
+  "13": { name: 2DISCH, type: output }
+  "14": { name: VDD, type: power }

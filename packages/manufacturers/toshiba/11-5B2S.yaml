@@ -1,0 +1,57 @@
+# Toshiba 11-5B2S: the 4-pin DIP (through-hole, 7.62 mm row spacing) of
+# the TLP241A photorelay, read from the rendered "Package Dimensions"
+# drawing (TLP241A, Unit: mm) on page 14 of the TLP241A datasheet
+# (2026-04-07). Values with a printed tolerance are recorded as nominal
+# plus the resulting min/max.
+#
+# `dip` generator convention: body_width = row spacing (end view "7.62
+# +/- 0.25"), body_length = side view "4.58 +/- 0.25", body_height =
+# mold "3.65 +0.15/-0.25", standoff = "0.8 +/- 0.25" (body bottom to the
+# lead shoulder). The molded width "6.4 +/- 0.25" has no dip field; the
+# 2.5 min lead length below the shoulder is not recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/toshiba/11-5B2S
+family: dip
+lead_count: 4
+source: toshiba/TLP241A-datasheet-en
+
+pitch:
+  min: 2.29 mm
+  typ: 2.54 mm
+  max: 2.79 mm
+  src: p14 "Package Dimensions 11-5B2S, side view, "2.54 +/- 0.25""
+
+geometry: { type: parametric, generator: dip }
+
+dimensions:
+  body_width:
+    min: 7.37 mm
+    typ: 7.62 mm
+    max: 7.87 mm
+    src: p14 "Package Dimensions 11-5B2S, end view, "7.62 +/- 0.25""
+  body_length:
+    min: 4.33 mm
+    typ: 4.58 mm
+    max: 4.83 mm
+    src: p14 "Package Dimensions 11-5B2S, side view, "4.58 +/- 0.25""
+  body_height:
+    min: 3.4 mm
+    typ: 3.65 mm
+    max: 3.8 mm
+    src: p14 "Package Dimensions 11-5B2S, side view, "3.65 +0.15/-0.25""
+  lead_thickness:
+    min: 0.2 mm
+    typ: 0.25 mm
+    max: 0.35 mm
+    src: p14 "Package Dimensions 11-5B2S, end view, "0.25 +0.10/-0.05""
+  standoff:
+    min: 0.55 mm
+    typ: 0.8 mm
+    max: 1.05 mm
+    src: p14 "Package Dimensions 11-5B2S, side view, "0.8 +/- 0.25""
+  lead_width:
+    min: 0.4 mm
+    typ: 0.5 mm
+    max: 0.6 mm
+    src: p14 "Package Dimensions 11-5B2S, side view, "0.5 +/- 0.1""

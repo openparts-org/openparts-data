@@ -1,0 +1,18 @@
+# Official Microchip datasheet "MCP3002 2.7V Dual Channel 10-Bit A/D Converter with SPI Serial Interface". Downloaded 2026-11-17 with wget
+# from ww1.microchip.com (URL below). document_id / revision from the
+# printed footer "DS21294E-page N"; the Revision History lists "Revision E (November 2011)".
+# 34 PDF pages; text read with pdftotext -layout. Page numbers in this
+# dataset are PDF page indices (they equal the printed page numbers).
+# Package drawing numbers were rendered and read as images. sha256 is of
+# the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS21294@revE
+sha256: f56619dae10231a038d3c8021fdbca7bf082240da940f47077ca794a049e6286
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/21294E.pdf
+publisher: microchip
+document_id: DS21294
+document_type: datasheet
+revision: E
+date: 2011-11

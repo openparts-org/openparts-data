@@ -1,0 +1,39 @@
+# LM555 timer, 8-pin pin map of the D (SOIC), DGK (VSSOP) and P (PDIP)
+# packages from SNAS548D "Pin Functions" table (page 3). Names as
+# printed. Types as for ti/NE555. The ESD rating is stated for the SOIC
+# package only (note 2), so esd_hbm is left out. supply_voltage is the
+# Electrical Characteristics "Supply Voltage" row (4.5-16 V); the
+# Recommended Operating Conditions only print an 18 V maximum.
+schema_version: "0.2"
+kind: device
+id: ti/LM555
+manufacturer: ti
+category: timer
+family: LM555
+source: ti/SNAS548D
+
+parameters:
+  supply_voltage:
+    min: 4.5 V
+    max: 16 V
+    src: p5 "6.5 Electrical Characteristics, Supply Voltage"
+  supply_current:
+    typ: 3 mA
+    max: 6 mA
+    at: { VCC: 5 V, TA: 25 °C }
+    src: p5 "6.5 Electrical Characteristics, Supply Current, VCC = 5 V, RL = inf (low state)"
+  operating_temperature:
+    min: 0 °C
+    max: 70 °C
+    src: p4 "6.3 Recommended Operating Conditions, Temperature TA"
+
+pins:
+  src: p3 "Pin Functions table"
+  "1": { name: GND, type: ground }
+  "2": { name: Trigger, type: input }
+  "3": { name: Output, type: output }
+  "4": { name: Reset, type: reset }
+  "5": { name: Control Voltage, type: analog }
+  "6": { name: Threshold, type: input }
+  "7": { name: Discharge, type: output }
+  "8": { name: V+, type: power }

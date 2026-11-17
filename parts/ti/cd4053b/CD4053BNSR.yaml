@@ -1,0 +1,17 @@
+schema_version: "0.2"
+kind: part
+id: ti/CD4053BNSR
+manufacturer: ti
+mpn: CD4053BNSR
+device: ti/CD4053B
+package: { value: manufacturers/ti/NS0016A, src: p36 "NS0016A package outline (4220735/A)" }
+sources: [ti/SCHS047O]
+source: ti/SCHS047O
+
+existence:
+  status: verified
+  src: p25 "Package option addendum table, row "CD4053BNSR" (SOP (NS) | 16)"
+
+lifecycle:
+  status: active
+  src: p25 "Package option addendum table, row "CD4053BNSR", Status "Active""

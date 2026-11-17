@@ -1,0 +1,32 @@
+# MPN "23K640-I/ST" is PROBABLE: printed as ordering example a) in the
+# Product Identification System of microchip/DS22126@revE (page 25), not in
+# an orderable list (the SN/P combinations are not printed as examples for
+# 23K640). I = -40 to +85 C, ST = 8-lead TSSOP.
+# Package: ST drawing C04-086B (page 19) -> manufacturers/microchip/
+# TSSOP8-ST-C04-086B (same drawing and revision, reused).
+# lifecycle: not stated in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/23K640-I-ST
+manufacturer: microchip
+mpn: 23K640-I/ST
+device: microchip/23K640
+
+package:
+  value: manufacturers/microchip/TSSOP8-ST-C04-086B
+  src:
+    - p25 "Product Identification System, Package ST (8-lead TSSOP)"
+    - p19 "8-Lead Plastic Thin Shrink Small Outline (ST), Microchip Technology Drawing C04-086B"
+
+sources: [microchip/DS22126@revE]
+source: microchip/DS22126@revE
+
+existence: { status: probable, src: 'p25 "Product Identification System, example a) 23K640-I/ST"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review). I grade from the MPN.
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p2 "Table 1-1 DC Characteristics header: Industrial (I): TA = -40°C to +85°C"'

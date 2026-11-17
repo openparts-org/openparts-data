@@ -1,0 +1,17 @@
+schema_version: "0.2"
+kind: part
+id: ti/CD4066BM96
+manufacturer: ti
+mpn: CD4066BM96
+device: ti/CD4066B
+package: { value: manufacturers/ti/D0014A, src: p24 "D0014A package outline (4220718/A)" }
+sources: [ti/SCHS051J]
+source: ti/SCHS051J
+
+existence:
+  status: verified
+  src: p19 "Package option addendum table, row "CD4066BM96" (SOIC (D) | 14)"
+
+lifecycle:
+  status: active
+  src: p19 "Package option addendum table, row "CD4066BM96", Status "Active""

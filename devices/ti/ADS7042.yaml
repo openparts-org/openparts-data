@@ -1,0 +1,41 @@
+# ADS7042 12-bit 1-MSPS SPI SAR ADC, 8-pin leaded VSSOP (DCU) pin map
+# from the "Pin Functions" table, column "DCU" (SBAS608C page 6), checked
+# against the "DCU Package 8-Pin Leaded VSSOP Top View" figure on the
+# same page; all 8 pins match. The RUG (X2QFN) numbering is not covered.
+# CS active low (overbar; written without it). AVDD/DVDD power, AINP/
+# AINM analog, SCLK clock, CS input, SDO output.
+# supply_voltage: AVDD and DVDD both 1.65-3.6 V. supply_current is left
+# out: only the analog IAVDD is printed.
+schema_version: "0.2"
+kind: device
+id: ti/ADS7042
+manufacturer: ti
+category: adc
+family: ADS7042
+source: ti/SBAS608C
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.65 V
+    max: 3.6 V
+    src: p7 "8.3 Recommended Operating Conditions, AVDD and DVDD supply voltage range"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p7 "8.3 Recommended Operating Conditions, TA Operating free-air temperature"
+  esd_hbm:       { typ: 2 kV, src: 'p7 "8.2 ESD Ratings, HBM ±2000 V"' }
+  channel_count: { value: "1", src: 'p6 "Pin Functions, one input pair AINP/AINM"' }
+
+pins:
+  src:
+    - p6 "Pin Functions table, column "DCU""
+    - p6 "DCU Package 8-Pin Leaded VSSOP Top View figure (cross-check)"
+  "1": { name: DVDD, type: power }
+  "2": { name: SCLK, type: clock }
+  "3": { name: SDO, type: output }
+  "4": { name: CS, type: input }
+  "5": { name: AINM, type: analog }
+  "6": { name: AINP, type: analog }
+  "7": { name: AVDD, type: power }
+  "8": { name: GND, type: ground }

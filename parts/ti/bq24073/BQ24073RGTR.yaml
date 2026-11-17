@@ -1,0 +1,29 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SLUS810N PDF page 44, addendum dated 18-Sep-2026): "BQ24073RGTR | Active | Production | VQFN (RGT) | 16 | 3000 | LARGE T&R | ... | -40 to 85 | CKQ".
+# lifecycle "active" is that table's Status column.
+# Package conflict (reviewer point): Figures 7-1/7-2 (page 7) caption the
+# BQ24072/73/74 pinout "RGT0016B Package", but the only RGT outline this
+# datasheet prints is RGT0016C (page 52), and the Device Comparison Table
+# (page 6) lists RGT0016C in its PACKAGE column for all variants. No
+# RGT0016B drawing could be found, so manufacturers/ti/RGT0016C is used.
+schema_version: "0.2"
+kind: part
+id: ti/BQ24073RGTR
+manufacturer: ti
+mpn: BQ24073RGTR
+device: ti/BQ24073-RGT
+
+package:
+  value: manufacturers/ti/RGT0016C
+  src: p44 "Package Option Addendum, row "BQ24073RGTR", "VQFN (RGT) | 16"; outline RGT0016C on page 52"
+
+sources: [ti/SLUS810N]
+source: ti/SLUS810N
+
+existence:
+  status: verified
+  src: p44 "Package Option Addendum, Packaging Information table, row "BQ24073RGTR""
+
+lifecycle:
+  status: active
+  src: p44 "Package Option Addendum, row "BQ24073RGTR", Status "Active""

@@ -1,0 +1,14 @@
+# Official TI datasheet (SN74HC4066 quadruple bilateral analog switch). Revision read from the page header
+# "SCLS325K – MARCH 1996 – REVISED FEBRUARY 2024". 35 PDF pages, text read with pdftotext -layout;
+# page numbers are PDF page indices. Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: ti/SCLS325K
+sha256: eecba13e80cd18e1d9e5e7e4675f08d17df6beab0e7a0ad259950b29f26c8fc8
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/sn74hc4066.pdf
+publisher: ti
+document_id: SCLS325K
+document_type: datasheet
+revision: K
+date: 2024-02

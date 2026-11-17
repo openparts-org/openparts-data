@@ -1,0 +1,16 @@
+# Official TI datasheet for INA260 (36-V I2C current/voltage/power monitor with integrated shunt). Downloaded 2026-11-17 with curl from the
+# TI symlink URL below; revision read from the page header
+# "SBOS656C – JULY 2016 – REVISED DECEMBER 2016". 37 PDF pages; text read with pdftotext -layout, the
+# package outline drawing pages rendered with pdftoppm. Page numbers in
+# this dataset are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: ti/SBOS656C
+sha256: 5160ed4af198b093e541beb3fe5f1048f00233fa23cd4f4822391acad9f94dcf
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/ina260.pdf
+publisher: ti
+document_id: SBOS656C
+document_type: datasheet
+revision: C
+date: 2016-12

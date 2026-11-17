@@ -1,0 +1,20 @@
+# Official TI datasheet "ADS7830 8-bit, 8-channel sampling ADC with I2C interface". Downloaded 2026-11-17 with wget from
+# the TI symlink URL below; revision read from the page header
+# "SBAS302C - DECEMBER 2003 - REVISED OCTOBER 2012". 27 PDF pages; text read with pdftotext -layout. Pin
+# configuration, specification tables and the PACKAGE OPTION ADDENDUM
+# were read from the extracted text; package outline pages named in the
+# part files were matched by drawing number and revision. Page numbers
+# in this dataset are PDF page indices. The PACKAGE OPTION ADDENDUM (PDF
+# page 20) is dated 11-Nov-2025 (newer than the datasheet revision).
+# sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SBAS302C
+sha256: 281576c308fec33e342b87d430df3ba349a44456386599ae77c5b46d1d53c1c3
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/ads7830.pdf
+publisher: ti
+document_id: SBAS302C
+document_type: datasheet
+revision: C
+date: 2012-10

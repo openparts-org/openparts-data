@@ -1,0 +1,31 @@
+schema_version: "0.2"
+kind: part
+id: ti/TLC555IP
+manufacturer: ti
+mpn: TLC555IP
+device: ti/TLC555
+
+package:
+  value: standards/DIP8-W7.62-P2.54
+  src: ti/MPDI001 p1 "P (R-PDIP-T8) drawing 4040082/E, note C (JEDEC MS-001 BA) -- see ti/NE555P"
+
+sources: [ti/SLFS043K, ti/MPDI001]
+source: ti/SLFS043K
+
+existence:
+  status: verified
+  src: p29 "Package option addendum table, row "TLC555IP" (PDIP (P) | 8)"
+
+lifecycle:
+  status: active
+  src: p29 "Package option addendum table, row "TLC555IP", Status "Active""
+
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 15 V
+    src: p4 "5.3 Recommended Operating Conditions, VDD, TLC555I row"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "5.3 Recommended Operating Conditions, TA, TLC555I row"

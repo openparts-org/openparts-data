@@ -1,0 +1,23 @@
+schema_version: "0.2"
+kind: part
+id: ti/TLC556CDR
+manufacturer: ti
+mpn: TLC556CDR
+device: ti/TLC556
+package: { value: manufacturers/ti/D0014A, src: p28 "D0014A package outline (4220718)" }
+sources: [ti/SLFS047D]
+source: ti/SLFS047D
+
+existence:
+  status: verified
+  src: p22 "Package option addendum table, row "TLC556CDR" (SOIC (D) | 14)"
+
+lifecycle:
+  status: active
+  src: p22 "Package option addendum table, row "TLC556CDR", Status "Active""
+
+parameters:
+  operating_temperature:
+    min: 0 °C
+    max: 70 °C
+    src: p4 "5.3 Recommended Operating Conditions, TA, TLC556C row"

@@ -1,0 +1,40 @@
+# DAC8571 16-bit I2C voltage-output DAC, 8-pin MSOP (DGK) pin map from
+# the "PIN DESCRIPTION" table (SLAS373A page 2), checked against the
+# "PIN CONFIGURATIONS" figure on the same page; all 8 pins match. VREF,
+# V(SENSE) and VOUT typed analog, A0 (device address select) input,
+# SCL ("Serial clock input") clock, SDA io, GND ground.
+# supply_current is left out: the IDD rows depend on the fast-settling /
+# low-power mode (a register setting the MPN does not fix). No ESD
+# rating is printed.
+schema_version: "0.2"
+kind: device
+id: ti/DAC8571
+manufacturer: ti
+category: dac
+family: DAC8571
+source: ti/SLAS373A
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: 'p3 "ELECTRICAL CHARACTERISTICS, POWER REQUIREMENTS: VDD 2.7 / 5.5 V"'
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p3 "ELECTRICAL CHARACTERISTICS header, all specifications -40°C to 105°C"
+  channel_count:
+    value: "1"
+    src: 'p1 "Description: a small low-power, 16-bit voltage output DAC"'
+
+pins:
+  src: [p2 "PIN DESCRIPTION table", p2 "PIN CONFIGURATIONS figure (cross-check)"]
+  "1": { name: VDD, type: power }
+  "2": { name: VREF, type: analog }
+  "3": { name: V(SENSE), type: analog }
+  "4": { name: VOUT, type: analog }
+  "5": { name: A0, type: input }
+  "6": { name: SCL, type: clock }
+  "7": { name: SDA, type: io }
+  "8": { name: GND, type: ground }

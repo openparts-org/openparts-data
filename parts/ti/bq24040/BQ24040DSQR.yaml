@@ -1,0 +1,24 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SLUS941H PDF page 33, addendum dated 10-Aug-2026): "BQ24040DSQR | Active | Production | WSON (DSQ) | 10 | 3000 | LARGE T&R | ... | 0 to 125 | NXE".
+# lifecycle "active" is that table's Status column.
+schema_version: "0.2"
+kind: part
+id: ti/BQ24040DSQR
+manufacturer: ti
+mpn: BQ24040DSQR
+device: ti/BQ24040-DSQ
+
+package:
+  value: manufacturers/ti/DSQ0010A
+  src: p33 "Package Option Addendum, row "BQ24040DSQR", "WSON (DSQ) | 10"; outline DSQ0010A (4218906/A) on page 37"
+
+sources: [ti/SLUS941H]
+source: ti/SLUS941H
+
+existence:
+  status: verified
+  src: p33 "Package Option Addendum, Packaging Information table, row "BQ24040DSQR""
+
+lifecycle:
+  status: active
+  src: p33 "Package Option Addendum, row "BQ24040DSQR", Status "Active""

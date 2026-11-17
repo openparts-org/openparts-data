@@ -1,0 +1,15 @@
+# Official Vishay datasheet "6N137, VO2601, VO2611, VO2630, VO2631, VO4661 High Speed Optocoupler, 10 MBd", document number 84732. Revision and
+# date from the page footer "Rev. 2.2, 15-Mar-2023". 16 PDF pages, text read with
+# pdftotext -layout; the package drawing (page 11) is vector art and was
+# rendered and read as an image. Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: vishay/84732
+sha256: e838b59beab53ddad0fedf094df8bd32fc35297fda7d500fd24ddd188924f6d2
+retrieved: 2026-11-17
+url: https://www.vishay.com/docs/84732/6n137.pdf
+publisher: vishay
+document_id: "84732"
+document_type: datasheet
+revision: "2.2"
+date: 2023-03-15

@@ -1,0 +1,42 @@
+# ADS1100 16-bit self-calibrating I2C delta-sigma ADC, 6-pin SOT23 (DBV)
+# pin map from the "PIN CONFIGURATION Top View SOT23" figure (SBAS239B
+# page 2); the datasheet has no pin-description table. VIN+ 1, GND 2,
+# SCL 3, SDA 4, VDD 5, VIN- 6 (minus sign written as ASCII "-"). VIN+/
+# VIN- typed analog, SCL clock, SDA io. The I2C address (A0..A7 in the
+# MPN) does not change the pinout, so all address variants share this
+# Device. No ESD rating is printed.
+schema_version: "0.2"
+kind: device
+id: ti/ADS1100
+manufacturer: ti
+category: adc
+family: ADS1100
+source: ti/SBAS239B
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: 'p3 "ELECTRICAL CHARACTERISTICS, POWER-SUPPLY REQUIREMENTS: Power-Supply Voltage VDD"'
+  supply_current:
+    typ: 90 µA
+    max: 150 µA
+    at: { VDD: 5 V }
+    src: p3 "ELECTRICAL CHARACTERISTICS, Supply Current, Active Mode (table default VDD = 5V)"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p3 "ELECTRICAL CHARACTERISTICS header, all specifications at -40°C to +85°C"
+  channel_count:
+    value: "1"
+    src: p2 "PIN CONFIGURATION, one differential input pair VIN+/VIN-"
+
+pins:
+  src: p2 "PIN CONFIGURATION, Top View SOT23 figure"
+  "1": { name: VIN+, type: analog }
+  "2": { name: GND, type: ground }
+  "3": { name: SCL, type: clock }
+  "4": { name: SDA, type: io }
+  "5": { name: VDD, type: power }
+  "6": { name: VIN-, type: analog }

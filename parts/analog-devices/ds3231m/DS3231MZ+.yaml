@@ -1,0 +1,31 @@
+# MPN "DS3231MZ+" (8-pin SO) from the "Ordering Information" table
+# of analog-devices/DS3231M@rev7 (page 1); "+" denotes lead(Pb)-free /
+# RoHS. Package code S8MK+1, outline 21-0041 (Package Information, page
+# 19); 21-0041 rev. V lists S8MK+1 under VARIATION A (8 leads) ->
+# manufacturers/analog-devices/SOIC8-S-21-0041 (new).
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: analog-devices/DS3231MZ+
+manufacturer: analog-devices
+mpn: DS3231MZ+
+device: analog-devices/DS3231M
+
+package:
+  value: manufacturers/analog-devices/SOIC8-S-21-0041
+  src:
+    - p19 "Package Information, 8 SO, package code S8MK+1, outline 21-0041"
+    - analog-devices/21-0041@revV p1 "VARIATION A, PKG. CODE list incl. S8MK+1"
+
+sources: [analog-devices/DS3231M@rev7, analog-devices/21-0041@revV]
+source: analog-devices/DS3231M@rev7
+
+existence: { status: verified, src: 'p1 "Ordering Information, row DS3231MZ+, 8 SO"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -45 °C
+    max: 85 °C
+    src: p1 "Ordering Information, DS3231MZ+ TEMP RANGE -45 to +85 C"

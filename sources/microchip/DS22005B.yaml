@@ -1,0 +1,19 @@
+# Official Microchip datasheet for MCP73833/4 (stand-alone linear Li-Ion /
+# Li-Polymer charge management controllers). Downloaded 2026-11-17 with
+# curl from ww1.microchip.com (URL below). document_id/revision from the
+# printed footer "DS22005B-page N"; date from Appendix A "Revision B
+# (May 2009)". 32 PDF pages; text read with pdftotext -layout. Printed
+# page numbers equal PDF page indices. The package outline pages
+# (24-25) use an encoded font and were rendered (pdftoppm) and read as
+# images.
+schema_version: "0.2"
+kind: source
+id: microchip/DS22005@revB
+sha256: 70b297a13b77cebffcbd203b1718c6310c8f341697e462cb35e3dee8bc847b7f
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/22005b.pdf
+publisher: microchip
+document_id: DS22005
+document_type: datasheet
+revision: B
+date: 2009-05

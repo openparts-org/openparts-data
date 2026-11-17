@@ -1,0 +1,17 @@
+schema_version: "0.2"
+kind: part
+id: ti/TS5A3157DBVR
+manufacturer: ti
+mpn: TS5A3157DBVR
+device: ti/TS5A3157
+package: { value: manufacturers/ti/DBV0006A, src: p28 "DBV0006A package outline (4214840/G)" }
+sources: [ti/SCDS219D]
+source: ti/SCDS219D
+
+existence:
+  status: verified
+  src: p21 "Package option addendum table, row "TS5A3157DBVR" (SOT-23 (DBV) | 6)"
+
+lifecycle:
+  status: active
+  src: p21 "Package option addendum table, row "TS5A3157DBVR", Status "Active""

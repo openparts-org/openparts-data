@@ -1,0 +1,20 @@
+# Official TI datasheet "ADS1100 self-calibrating, 16-bit ADC". Downloaded 2026-11-17 with wget from
+# the TI symlink URL below; revision read from the page header
+# "SBAS239B - MAY 2002 - REVISED NOVEMBER 2003". 23 PDF pages; text read with pdftotext -layout. Pin
+# configuration, specification tables and the PACKAGE OPTION ADDENDUM
+# were read from the extracted text; package outline pages named in the
+# part files were matched by drawing number and revision. Page numbers
+# in this dataset are PDF page indices. The PACKAGE OPTION ADDENDUM (PDF
+# page 16) is dated 11-Nov-2025 (newer than the datasheet revision).
+# sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SBAS239B
+sha256: 8a11a01923552b728d68c42d7d726bc8f54a68e69bffdbaa43c1c56a2c86721f
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/ads1100.pdf
+publisher: ti
+document_id: SBAS239B
+document_type: datasheet
+revision: B
+date: 2003-11

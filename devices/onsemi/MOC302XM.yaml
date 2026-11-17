@@ -1,0 +1,43 @@
+# MOC3020M/MOC3021M/MOC3022M/MOC3023M 400 V random-phase triac driver
+# optocouplers (IRED + light-activated bilateral switch), 6-pin DIP.
+# The four MPNs differ only in LED trigger current IFT (30/15/10/5 mA
+# max), which has no parameter key. Pin assignment from Figure 1
+# "Schematic" on page 1 of MOC3023M/D: 1 ANODE, 2 CATHODE, 3 N/C,
+# 4 MAIN TERM., 5 NC* ("DO NOT CONNECT (TRIAC SUBSTRATE)"), 6 MAIN
+# TERM.; the two main terminals are named MT4/MT6 (pin names must be
+# unique). Output ratings (VDRM 400 V, ITSM) have no optocoupler key.
+schema_version: "0.2"
+kind: device
+id: onsemi/MOC302XM
+manufacturer: onsemi
+category: optocoupler
+family: MOC302XM
+source: onsemi/MOC3023M-D
+
+parameters:
+  forward_voltage:
+    typ: 1.15 V
+    max: 1.5 V
+    at: { IF: 10 mA, TA: 25 °C }
+    src: p4 "Electrical Characteristics, Emitter, Input Forward Voltage VF"
+  reverse_voltage: { max: 3 V, src: 'p3 "Absolute Maximum Ratings, Emitter, Reverse Voltage VR"' }
+  forward_current:
+    max: 60 mA
+    src: p3 "Absolute Maximum Ratings, Emitter, Continuous Forward Current IF"
+  isolation_voltage:
+    min: 4170 V
+    at: { t: 60 s }
+    src: p4 "Isolation Characteristics, VISO (VACRMS, t = 1 Minute)"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p3 "Absolute Maximum Ratings, Operating Temperature TOPR"
+
+pins:
+  src: p1 "Figure 1. Schematic"
+  "1": { name: ANODE, type: passive }
+  "2": { name: CATHODE, type: passive }
+  "3": { name: N/C, type: nc }
+  "4": { name: MT4, type: passive }
+  "5": { name: NC, type: nc }
+  "6": { name: MT6, type: passive }

@@ -1,0 +1,20 @@
+# TLP250H, through-hole DIP8 (TOSHIBA 11-10C4S). The order code
+# "TLP250H(F" is listed under the orderable part numbers on Toshiba's
+# TLP250H product page (retrieved 2026-11-17); the datasheet prints no
+# ordering table, so existence is `probable`.
+schema_version: "0.2"
+kind: part
+id: toshiba/TLP250H(F
+manufacturer: toshiba
+mpn: TLP250H(F
+device: toshiba/TLP250H
+
+package:
+  value: manufacturers/toshiba/11-10C4S
+  src: p11 "Package Dimensions, TLP250H, TOSHIBA 11-10C4S"
+
+sources: [toshiba/TLP250H-datasheet-en]
+source: toshiba/TLP250H-datasheet-en
+
+existence: { status: probable, src: 'p2 "4. Packaging, TLP250H through-hole type 11-10C4S"' }
+lifecycle: { status: unknown }

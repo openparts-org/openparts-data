@@ -1,0 +1,28 @@
+# MPN "MCP79412-I/SN" is PROBABLE: printed as ordering example f) in the
+# Product Identification System of microchip/DS20002266@revH (page 63),
+# not in an orderable list. I = -40 to +85 C.
+# SN = 8-lead SOIC (3.90 mm body). Package: SN drawing C04-057C (rendered);
+# the same drawing revision is already read as standards/SOIC8-3.90x4.90-P1.27
+# (microchip/23LC1024T-I-SN, row-by-row match), which is reused.
+# lifecycle: not stated in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP79412-I-SN
+manufacturer: microchip
+mpn: MCP79412-I/SN
+device: microchip/MCP79412
+
+package:
+  value: standards/SOIC8-3.90x4.90-P1.27
+  src:
+    - p63 "Product Identification System, Package "SN = 8-Lead Plastic Small Outline (3.90 mm body)""
+    - p48 "8-Lead Plastic Small Outline (SN), Microchip Technology Drawing No. C04-057C Sheet 2 of 2"
+
+sources: [microchip/DS20002266@revH]
+source: microchip/DS20002266@revH
+
+existence:
+  status: probable
+  src: p63 "Product Identification System, example f) MCP79412-I/SN"
+
+lifecycle: { status: unknown }

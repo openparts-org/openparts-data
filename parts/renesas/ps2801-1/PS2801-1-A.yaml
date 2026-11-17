@@ -1,0 +1,26 @@
+schema_version: "0.2"
+kind: part
+id: renesas/PS2801-1-A
+manufacturer: renesas
+mpn: PS2801-1-A
+device: renesas/PS2801-1
+
+package:
+  value: manufacturers/renesas/SSOP4-PS2801-1
+  src: p2 "Package Dimensions (UNIT mm), PS2801-1"
+
+sources: [renesas/R08DS0096EJ0600]
+source: renesas/R08DS0096EJ0600
+
+existence:
+  status: verified
+  src: p4 "Ordering Information, Order Number column, PS2801-1-A (Embossed Tape 50 pcs)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  current_transfer_ratio:
+    min: 80 %
+    max: 600 %
+    at: { VCE: 5 V, IF: 5 mA, TA: 25 °C }
+    src: p5 "Electrical Characteristics, Coupled, CTR (no CTR rank in the order number)"

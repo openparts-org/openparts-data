@@ -1,0 +1,21 @@
+schema_version: "0.2"
+kind: part
+id: ti/TS5A23157DGSR
+manufacturer: ti
+mpn: TS5A23157DGSR
+device: ti/TS5A23157
+
+package:
+  value: standards/MSOP10-3.0x3.0-P0.5-TI-DGS
+  src: p26 "DGS0010A package outline (4221984/A)"
+
+sources: [ti/SCDS165F]
+source: ti/SCDS165F
+
+existence:
+  status: verified
+  src: p22 "Package option addendum table, row "TS5A23157DGSR" (VSSOP (DGS) | 10)"
+
+lifecycle:
+  status: active
+  src: p22 "Package option addendum table, row "TS5A23157DGSR", Status "Active""

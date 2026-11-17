@@ -1,0 +1,18 @@
+# Official Microchip datasheet "MCP3202 2.7V Dual Channel 12-Bit A/D Converter with SPI Serial Interface". Downloaded 2026-11-17 with wget
+# from ww1.microchip.com (URL below). document_id / revision from the
+# printed footer "DS21034F-page N"; the Revision History lists "Revision F (November 2011)".
+# 34 PDF pages; text read with pdftotext -layout. Page numbers in this
+# dataset are PDF page indices (they equal the printed page numbers).
+# Package drawing numbers were rendered and read as images. sha256 is of
+# the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS21034@revF
+sha256: f06725fac4793db344845d0db9a9f7e1d3dedd3b879fc1c570b01824c41e6559
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/21034F.pdf
+publisher: microchip
+document_id: DS21034
+document_type: datasheet
+revision: F
+date: 2011-11

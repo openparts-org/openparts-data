@@ -1,0 +1,46 @@
+# ECS ECS-327MVATX package size 2 (2.5 x 2.0 mm, 1.0 mm max), 4-pad
+# ceramic, from p2 Figure 2 "Top, Side, Bottom views and Suggested
+# Land" of ecs/ECS-327MVATX (raster figure, 150 dpi render). Frame as
+# manufacturers/ecs/LGA4-2.5x2.0-ECS-2520MV: lga, two terminals on each
+# 2.0 mm side, body_width = 2.5 (X). Top view numbers #4 top-left, #3
+# top-right, #1 bottom-left (dot), #2 bottom-right -> pad_order
+# [4, 1, 2, 3].
+# Bottom view prints 0.675, 0.575, 0.65, 0.95; the terminal size itself
+# is not unambiguous, so lead_length/lead_width are left out.
+# pitch = suggested land 0.9 + 0.5 = 1.4 (sum of printed dims): reviewer
+# check.
+# pads (suggested land): 1.1 wide (X), 0.9 high (Y); 0.7 (X) and 0.5 (Y)
+# are gaps between pad EDGES, 1.8 the X centre distance (= 1.1 + 0.7,
+# consistent). Centres x = +-0.9, y = +-(0.25 + 0.45) = +-0.7.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ecs/LGA4-2.5x2.0-ECS-327MVATX
+family: lga
+lead_count: 4
+
+lead_layout:
+  value: [2, 0, 2, 0]
+  src:   p2 "Figure 2, bottom view, two terminals on each 2.0 mm side"
+
+source: ecs/ECS-327MVATX
+
+pitch: { typ: 1.4 mm, src: 'p2 "Figure 2 suggested land, 0.9 + 0.5 (see header)"' }
+
+pad_order:
+  value: ["4", "1", "2", "3"]
+  src:   'p2 "Figure 2, top view numbering #1-#4 (see header)"'
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:  { min: 2.4 mm, typ: 2.5 mm, max: 2.6 mm, src: 'p2 "Figure 2, top view 2.5±0.1"' }
+  body_length: { min: 1.9 mm, typ: 2 mm, max: 2.1 mm, src: 'p2 "Figure 2, top view 2.0±0.1"' }
+  body_height: { max: 1 mm, src: 'p2 "Figure 2, side view 1.0Max"' }
+
+pads:
+  value:
+    - { number: "1", x: -0.9, y: -0.7, width: 1.1, length: 0.9 }
+    - { number: "2", x: 0.9, y: -0.7, width: 1.1, length: 0.9 }
+    - { number: "3", x: 0.9, y: 0.7, width: 1.1, length: 0.9 }
+    - { number: "4", x: -0.9, y: 0.7, width: 1.1, length: 0.9 }
+  src: p2 "Figure 2 suggested land, 1.1 / 0.7 / 1.1, 0.9 / 0.5 / 0.9, 1.8 (see header)"

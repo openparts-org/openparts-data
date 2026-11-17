@@ -1,0 +1,24 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SLVSEN5B PDF page 20, addendum dated 10-Nov-2025): "TPS22919DCKR | Active | Production | SC70 (DCK) | 6 | 3000 | LARGE T&R | ... | -40 to 105 | 1CS".
+# lifecycle "active" is that table's Status column.
+schema_version: "0.2"
+kind: part
+id: ti/TPS22919DCKR
+manufacturer: ti
+mpn: TPS22919DCKR
+device: ti/TPS22919-DCK
+
+package:
+  value: manufacturers/ti/DCK0006A
+  src: p20 "Package Option Addendum, row "TPS22919DCKR", "SC70 (DCK) | 6"; outline DCK0006A (4214835/D) on page 24"
+
+sources: [ti/SLVSEN5B]
+source: ti/SLVSEN5B
+
+existence:
+  status: verified
+  src: p20 "Package Option Addendum, Packaging Information table, row "TPS22919DCKR""
+
+lifecycle:
+  status: active
+  src: p20 "Package Option Addendum, row "TPS22919DCKR", Status "Active""

@@ -1,0 +1,18 @@
+# Official Microchip datasheet "MCP4902/4912/4922 8/10/12-Bit Dual Voltage Output Digital-to-Analog Converter with SPI Interface". Downloaded 2026-11-17 with wget
+# from ww1.microchip.com (URL below). document_id / revision from the
+# printed footer "DS22250A-page N"; the Revision History lists "Revision A (April 2010)". 48 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page indices
+# (they equal the printed page numbers). Package drawing numbers and
+# dimension tables were rendered and read as images. sha256 is of the
+# PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS22250@revA
+sha256: 8c507a2bce321888b4ff7f76e18824480116b32256e573ab4fdbb377e8b86484
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/22250A.pdf
+publisher: microchip
+document_id: DS22250
+document_type: datasheet
+revision: A
+date: 2010-04

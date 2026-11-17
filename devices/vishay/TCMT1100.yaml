@@ -1,0 +1,43 @@
+# TCMT110. series optocoupler (IRED + phototransistor), half-pitch
+# SOP-4. Pin assignment from the page-1 pin diagram of datasheet 83510:
+# 1 A, 2 C (cathode), 3 E, 4 C (collector); all typed passive. The CTR
+# group is per Part (TCMT1100..TCMT1109). isolation_voltage is the AC
+# isolation test voltage VISO (Vrms). operating_temperature is the only
+# printed range (absolute maximum ratings).
+schema_version: "0.2"
+kind: device
+id: vishay/TCMT1100
+manufacturer: vishay
+category: optocoupler
+family: TCMT110x
+source: vishay/83510
+
+parameters:
+  forward_voltage:
+    typ: 1.35 V
+    max: 1.6 V
+    at: { IF: 50 mA }
+    src: p2 "Electrical Characteristics, Input, Forward voltage VF"
+  reverse_voltage: { max: 6 V, src: 'p2 "Absolute Maximum Ratings, Input, Reverse voltage VR"' }
+  forward_current: { max: 60 mA, src: 'p2 "Absolute Maximum Ratings, Input, Forward current IF"' }
+  collector_emitter_voltage:
+    max: 70 V
+    src: p2 "Absolute Maximum Ratings, Output, Collector emitter voltage VCEO"
+  collector_current:
+    max: 50 mA
+    src: p2 "Absolute Maximum Ratings, Output, Collector current IC"
+  isolation_voltage:
+    min: 3750 V
+    at: { t: 60 s }
+    src: p4 "Safety and Insulation Ratings, VISO (VRMS, UL1577, t = 1 min)"
+  operating_temperature:
+    min: -40 °C
+    max: 100 °C
+    src: p2 "Absolute Maximum Ratings, Operating ambient temperature range Tamb"
+
+pins:
+  src: 'p1 "Pin diagram: 1 A, 2 C, 3 E, 4 C"'
+  "1": { name: ANODE, type: passive }
+  "2": { name: CATHODE, type: passive }
+  "3": { name: EMITTER, type: passive }
+  "4": { name: COLLECTOR, type: passive }

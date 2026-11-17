@@ -1,0 +1,15 @@
+# Official Vishay datasheet "CNY17 Optocoupler, Phototransistor Output, with Base Connection", document number 83606. Revision and
+# date from the page footer "Rev. 2.1, 08-Jan-14". 9 PDF pages, text read with
+# pdftotext -layout; the package drawing (page 7) is vector art and was
+# rendered and read as an image. Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: vishay/83606
+sha256: 17f3003da8e8adb94e87b41bdb39918670c4a879ab098da69ce18457e78623a2
+retrieved: 2026-11-17
+url: https://www.vishay.com/docs/83606/cny17.pdf
+publisher: vishay
+document_id: "83606"
+document_type: datasheet
+revision: "2.1"
+date: 2014-01-08

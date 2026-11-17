@@ -1,0 +1,27 @@
+schema_version: "0.2"
+kind: part
+id: ti/LMC555CMMX/NOPB
+manufacturer: ti
+mpn: LMC555CMMX/NOPB
+device: ti/LMC555
+
+package:
+  value: standards/MSOP8-3.0x3.0-P0.65-TI-DGK
+  src: p32 "DGK0008A package outline (4214862)"
+
+sources: [ti/SNAS558N]
+source: ti/SNAS558N
+
+existence:
+  status: verified
+  src: p20 "Package option addendum table, row "LMC555CMMX/NOPB" (VSSOP (DGK) | 8)"
+
+lifecycle:
+  status: active
+  src: p20 "Package option addendum table, row "LMC555CMMX/NOPB", Status "Active""
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "5.3 Recommended Operating Conditions, Temperature, LMC555CM, MM, N, TP row"

@@ -1,0 +1,46 @@
+# DAC7571 12-bit I2C voltage-output DAC, 6-pin SOT-23 (DBV) pin map from
+# the "PIN DESCRIPTION (SOT23-6)" table (SLAS374D page 2), checked
+# against the "PIN CONFIGURATIONS" top-view figure on the same page; all
+# 6 pins match. VOUT typed analog, A0 (device address select) input,
+# SCL ("Serial Clock Input") clock, SDA io. No ESD rating is printed.
+schema_version: "0.2"
+kind: device
+id: ti/DAC7571
+manufacturer: ti
+category: dac
+family: DAC7571
+source: ti/SLAS374D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: 'p3 "ELECTRICAL CHARACTERISTICS, POWER REQUIREMENTS: VDD 2.7 / 5.5 V"'
+  supply_current:
+    - typ: 135 µA
+      max: 200 µA
+      at: { VDD: 3.6..5.5 V }
+      src: p3 "ELECTRICAL CHARACTERISTICS, IDD (normal operation), VDD = +3.6 V to +5.5 V"
+    - typ: 115 µA
+      max: 160 µA
+      at: { VDD: 2.7..3.6 V }
+      src: p3 "ELECTRICAL CHARACTERISTICS, IDD (normal operation), VDD = +2.7 V to +3.6 V"
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p3 "ELECTRICAL CHARACTERISTICS header, all specifications -40°C to +105°C"
+  channel_count:
+    value: "1"
+    src: 'p1 "Description: a low-power, single channel, 12-bit ... DAC"'
+
+pins:
+  src:
+    - p2 "PIN DESCRIPTION (SOT23-6) table"
+    - p2 "PIN CONFIGURATIONS, (TOP VIEW) figure (cross-check)"
+  "1": { name: VOUT, type: analog }
+  "2": { name: GND, type: ground }
+  "3": { name: VDD, type: power }
+  "4": { name: SDA, type: io }
+  "5": { name: SCL, type: clock }
+  "6": { name: A0, type: input }

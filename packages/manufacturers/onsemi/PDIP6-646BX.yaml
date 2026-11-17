@@ -1,0 +1,27 @@
+# onsemi CASE 646BX "PDIP6 8.51x6.35, 2.54P", ISSUE O (document
+# 98AON13449G, 31 JUL 2016), read from the rendered mechanical case
+# outline on page 9 of the MOC3023M/D datasheet. Ranges printed as
+# "min-max" are recorded as min/max only (no nominal).
+#
+# `dip` generator convention: body_width = row spacing "7.62 (TYP)",
+# body_length = "8.13-8.89" along the rows, body_height = mold
+# "3.28-3.53", overall_height = "5.08 (MAX)", standoff = "0.38 (MIN)".
+# The molded width 6.10-6.60 has no dip field.
+schema_version: "0.2"
+kind: package
+id: manufacturers/onsemi/PDIP6-646BX
+family: dip
+lead_count: 6
+source: onsemi/MOC3023M-D
+
+pitch: { typ: 2.54 mm, src: 'p9 "CASE 646BX, "2.54 BSC""' }
+geometry: { type: parametric, generator: dip }
+
+dimensions:
+  body_width:     { typ: 7.62 mm, src: 'p9 "CASE 646BX, end view, "7.62 (TYP)""' }
+  body_length:    { min: 8.13 mm, max: 8.89 mm, src: 'p9 "CASE 646BX, top view, "8.13-8.89""' }
+  body_height:    { min: 3.28 mm, max: 3.53 mm, src: 'p9 "CASE 646BX, side view, "3.28-3.53""' }
+  lead_thickness: { min: 0.2 mm, max: 0.3 mm, src: 'p9 "CASE 646BX, end view, "0.20-0.30""' }
+  overall_height: { max: 5.08 mm, src: 'p9 "CASE 646BX, side view, "5.08 (MAX)""' }
+  standoff:       { min: 0.38 mm, src: 'p9 "CASE 646BX, side view, "0.38 (MIN)""' }
+  lead_width:     { min: 0.41 mm, max: 0.51 mm, src: 'p9 "CASE 646BX, side view, "0.41-0.51""' }

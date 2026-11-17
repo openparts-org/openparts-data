@@ -1,0 +1,18 @@
+# ECS ECS-2520S SMD HCMOS crystal oscillator datasheet, 2 pages, 2.5 x
+# 2.0 x 0.9 mm. No document number; p1 footer prints "Rev.2022"
+# (revision label); date = pdfinfo CreationDate 2022-11-22. p1:
+# Operating Conditions / Electrical Characteristics, Dimensions (Figure
+# 1), Pad Connections, Suggested Land Pattern (Figure 2), Part Numbering
+# Guide; p2: Frequency Abbreviations (vector drawings, 130 dpi render).
+# curl, HTTP 200.
+schema_version: "0.2"
+kind: source
+id: ecs/ECS-2520S
+sha256: 7f523cb423810010065842fd1169cd151d88d212b4df89c7f2d6f1c9d08da331
+retrieved: 2026-11-17
+url: https://ecsxtal.com/store/pdf/ECS-2520S.pdf
+publisher: ecs
+document_id: ECS-2520S
+document_type: datasheet
+revision: Rev.2022
+date: 2022-11-22

@@ -1,0 +1,42 @@
+# TI DSQ0010A "WSON - 0.8 mm max height" (10 terminals, 2x2 mm, 0.4 mm
+# pitch, exposed thermal pad 11; drawing 4218906/A 04/2019), read from
+# the rendered PACKAGE OUTLINE page of SLUS941H (BQ24040, PDF page 37).
+# Millimetres as printed.
+#
+# Mapping as for manufacturers/ti/DSG0008A: body 2.1/1.9 both ways (no
+# nominal printed) -> body_width/body_length min/max; A 0.8/0.7 (no A2)
+# -> body_height; A1 0.05/0.00 -> standoff; b "10X 0.25/0.15" ->
+# lead_width; L "10X 0.4/0.2" -> lead_length; thermal pad "0.9±0.1"
+# across the terminal rows and "1.5±0.1" along them -> exposed_pad.
+# Bottom view numbers terminals 1-5 up one edge and 6-10 down the
+# other; seen from the top this is pin 1 top-left, down the left, up the
+# right (SOIC order), matching Figure 6-1 (page 4: IN 1 opposite OUT 10).
+# Left out: "(0.2) TYP" side-wall metal (not A3), "2X 1.6" row span,
+# and the EXAMPLE BOARD LAYOUT (page 38, reference values only).
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DSQ0010A
+family: son
+lead_count: 10
+source: ti/SLUS941H
+
+pitch: { typ: 0.4 mm, src: 'p37 "DSQ0010A outline (4218906/A), bottom view, basic 8X 0.4"' }
+geometry: { type: parametric, generator: son }
+
+dimensions:
+  body_width:
+    min: 1.9 mm
+    max: 2.1 mm
+    src: p37 "DSQ0010A outline, top view, width 2.1/1.9 (across the terminal rows)"
+  body_length: { min: 1.9 mm, max: 2.1 mm, src: 'p37 "DSQ0010A outline, top view, length 2.1/1.9"' }
+  body_height: { min: 0.7 mm, max: 0.8 mm, src: 'p37 "DSQ0010A outline, side view 0.8/0.7"' }
+  exposed_pad:
+    src:    p37 "DSQ0010A outline, bottom view, thermal pad 0.9±0.1 across, 1.5±0.1 along the rows"
+    width:  { min: 0.8 mm, typ: 0.9 mm, max: 1 mm }
+    length: { min: 1.4 mm, typ: 1.5 mm, max: 1.6 mm }
+  standoff:    { min: 0 mm, max: 0.05 mm, src: 'p37 "DSQ0010A outline, side view 0.05/0.00"' }
+  lead_width:
+    min: 0.15 mm
+    max: 0.25 mm
+    src: p37 "DSQ0010A outline, bottom view 10X 0.25/0.15"
+  lead_length: { min: 0.2 mm, max: 0.4 mm, src: 'p37 "DSQ0010A outline, bottom view 10X 0.4/0.2"' }

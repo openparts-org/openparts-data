@@ -1,0 +1,30 @@
+# SN74LVC1G66 single bilateral analog switch, 5-pin pin map of the DBV
+# (SOT-23), DCK (SC70) and DRL packages from SCES323R "Pin Functions"
+# table, "SOT NO." column (page 4); the 6-pin USON/X2SON and DSBGA maps
+# are not covered. A/B switch terminals -> analog, C control -> input.
+# Operating temperature depends on the package (DBV/DCK -40..125 °C)
+# and is on the Parts.
+schema_version: "0.2"
+kind: device
+id: ti/SN74LVC1G66
+manufacturer: ti
+category: analog_switch
+family: SN74LVC1G66
+source: ti/SCES323R
+
+parameters:
+  supply_voltage: { min: 1.65 V, max: 5.5 V, src: 'p6 "5.3 Recommended Operating Conditions, VCC"' }
+  supply_current:
+    max: 1 µA
+    at: { VCC: 5.5 V, TA: 25 °C }
+    src: p7 "Electrical Characteristics, ICC, VCC 5.5V, TA = 25°C"
+  esd_hbm:        { typ: 2000 V, src: 'p5 "5.2 ESD Ratings, HBM"' }
+  channel_count:  { value: "1", src: 'p4 "Pin Functions: one switch A-B"' }
+
+pins:
+  src: p4 "Pin Functions table, SOT NO. column"
+  "1": { name: A, type: analog }
+  "2": { name: B, type: analog }
+  "3": { name: GND, type: ground }
+  "4": { name: C, type: input }
+  "5": { name: VCC, type: power }

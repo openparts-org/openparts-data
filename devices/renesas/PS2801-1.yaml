@@ -1,0 +1,44 @@
+# PS2801-1 photocoupler (GaAs LED + NPN phototransistor), 4-pin SSOP.
+# Pin assignment from "PIN CONNECTION (Top View)" on page 1 of
+# R08DS0096EJ0600: 1 Anode, 2 Cathode, 3 Emitter, 4 Collector; all
+# typed passive. The PS2801-4 (16-pin quad) is not covered.
+# isolation_voltage is the BV rating (Vr.m.s., 1 minute).
+schema_version: "0.2"
+kind: device
+id: renesas/PS2801-1
+manufacturer: renesas
+category: optocoupler
+family: PS2801
+source: renesas/R08DS0096EJ0600
+
+parameters:
+  forward_voltage:
+    typ: 1.1 V
+    max: 1.4 V
+    at: { IF: 5 mA, TA: 25 °C }
+    src: p5 "Electrical Characteristics, Diode, Forward Voltage VF"
+  reverse_voltage: { max: 6 V, src: 'p4 "Absolute Maximum Ratings, Diode, Reverse Voltage VR"' }
+  forward_current:
+    max: 50 mA
+    src: p4 "Absolute Maximum Ratings, Diode, Forward Current (DC) IF"
+  collector_emitter_voltage:
+    max: 80 V
+    src: p4 "Absolute Maximum Ratings, Transistor, Collector to Emitter Voltage VCEO"
+  collector_current:
+    max: 50 mA
+    src: p4 "Absolute Maximum Ratings, Transistor, Collector Current IC"
+  isolation_voltage:
+    min: 2500 V
+    at: { t: 60 s }
+    src: p4 "Absolute Maximum Ratings, Isolation Voltage BV (Vr.m.s., note *2, AC 1 minute)"
+  operating_temperature:
+    min: -55 °C
+    max: 100 °C
+    src: p4 "Absolute Maximum Ratings, Operating Ambient Temperature TA"
+
+pins:
+  src: 'p1 "PIN CONNECTION (Top View) PS2801-1: 1 Anode, 2 Cathode, 3 Emitter, 4 Collector"'
+  "1": { name: ANODE, type: passive }
+  "2": { name: CATHODE, type: passive }
+  "3": { name: EMITTER, type: passive }
+  "4": { name: COLLECTOR, type: passive }

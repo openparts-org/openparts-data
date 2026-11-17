@@ -1,0 +1,31 @@
+# Type number "PCF2129T" (SO16, SOT162-1) from Table 1 "Ordering
+# information" of nxp/PCF2129@rev8.0 (page 2); Table 2 "Ordering
+# options" lists the orderable part number PCF2129T/2,518 (reel 13",
+# Tamb -40 to +85 °C). MPN is NXP's type number, as for the other NXP
+# parts. Package: Figure 50 "Package outline SOT162-1 (SO16) of
+# PCF2129T" (page 67, text layer, issue date 03-02-19): every mm value
+# (A 2.65 max, A1 0.1-0.3, A2 2.25-2.45, bp 0.36-0.49, c 0.23-0.32, D
+# 10.1-10.5, E 7.4-7.6, e 1.27, HE 10.00-10.65, Lp 0.4-1.1) equals
+# manufacturers/nxp/SOT162-1; reused.
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCF2129T
+manufacturer: nxp
+mpn: PCF2129T
+device: nxp/PCF2129
+
+package:
+  value: manufacturers/nxp/SOT162-1
+  src:
+    - p2 "Table 1 Ordering information, row PCF2129T, SO16, SOT162-1"
+    - p67 "Figure 50 Package outline SOT162-1 (SO16) of PCF2129T"
+
+sources: [nxp/PCF2129@rev8.0]
+source: nxp/PCF2129@rev8.0
+
+existence:
+  status: verified
+  src: p2 "Table 2 Ordering options, type PCF2129T, orderable part number PCF2129T/2,518"
+
+lifecycle: { status: unknown }

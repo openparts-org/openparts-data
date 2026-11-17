@@ -1,0 +1,52 @@
+# DAC7311 12-bit low-power SPI voltage-output DAC, 6-pin SC70 (DCK) pin
+# map from Table 6-1 "Pin Functions" (SBAS442D page 3; one table for
+# DAC5311/6311/7311), checked against Figure 6-1 "DCK Package, 6-Pin SC70
+# (Top View)" on the same page; all 6 pins match. SYNC is active low
+# (overbar; written without it). AVDD/VREF ("Power supply input") typed
+# power, SCLK clock, DIN and SYNC input, VOUT analog.
+schema_version: "0.2"
+kind: device
+id: ti/DAC7311
+manufacturer: ti
+category: dac
+family: DACx311
+source: ti/SBAS442D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 5.5 V
+    src: p4 "7.3 Recommended Operating Conditions, AVDD Supply voltage"
+  supply_current:
+    - typ: 110 µA
+      max: 180 µA
+      at: { VDD: 3.6..5.5 V }
+      src: p6 "7.5 Elec. Char., IDD Normal mode, midscale code, AVDD = 3.6 V to 5.5 V"
+    - typ: 95 µA
+      max: 150 µA
+      at: { VDD: 2.7..3.6 V }
+      src: p6 "7.5 Elec. Char., IDD Normal mode, midscale code, AVDD = 2.7 V to 3.6 V"
+    - typ: 80 µA
+      max: 140 µA
+      at: { VDD: 2..2.7 V }
+      src: p6 "7.5 Elec. Char., IDD Normal mode, midscale code, AVDD = 2.0 V to 2.7 V"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "7.3 Recommended Operating Conditions, TA Operating temperature"
+  esd_hbm: { typ: 1 kV, src: 'p4 "7.2 ESD Ratings, HBM ±1000 V"' }
+  channel_count:
+    value: "1"
+    src: p3 "Table 6-1 Pin Functions, single VOUT (Analog output voltage from DAC)"
+
+pins:
+  src:
+    - p3 "Table 6-1 Pin Functions"
+    - p3 "Figure 6-1 DCK Package, 6-Pin SC70 (Top View) (cross-check)"
+  "1": { name: SYNC, type: input }
+  "2": { name: SCLK, type: clock }
+  "3": { name: DIN, type: input }
+  "4": { name: AVDD/VREF, type: power }
+  "5": { name: GND, type: ground }
+  "6": { name: VOUT, type: analog }

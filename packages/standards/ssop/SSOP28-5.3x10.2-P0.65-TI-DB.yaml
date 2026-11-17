@@ -1,0 +1,50 @@
+# 28-lead SSOP, 5.3 mm body, 0.65 mm pitch (TI "DB", JEDEC MO-150
+# referenced by the drawing's note 5). All values read from the rendered
+# "PACKAGE OUTLINE DB0028A" drawing (4214853/B 03/2018, "SSOP - 2 mm max
+# height") in the ADS1255/ADS1256 datasheet SBAS288K, PDF page 43.
+#
+# Named with the -TI-DB suffix because the numbers are TI's drawing
+# tolerances, not the JEDEC table itself (same convention as
+# standards/SSOP20-5.3x7.2-P0.65-TI-DB). E1 and D are given only as
+# limits and recorded as min/max. Lead span E is printed "8.2/7.4 TYP"
+# and recorded as min/max only. Only the overall height A (2 MAX) is
+# given -- no A2 -- so it is recorded as overall_height max, with no
+# body_height. Standoff is "0.05 MIN" only. Lead thickness is the
+# reference value "(0.15) TYP". Top view: pins 1-14 down the left edge,
+# 15-28 up the right edge (28 opposite 1).
+schema_version: "0.2"
+kind: package
+id: standards/SSOP28-5.3x10.2-P0.65-TI-DB
+family: ssop
+lead_count: 28
+source: ti/SBAS288K
+
+pitch:
+  typ: 0.65 mm
+  src: p43 "PACKAGE OUTLINE DB0028A (4214853/B), "26X 0.65" (boxed basic dimension)"
+
+geometry: { type: parametric, generator: ssop }
+
+dimensions:
+  body_width:
+    min: 5 mm
+    max: 5.6 mm
+    src: p43 "PACKAGE OUTLINE DB0028A, body width "5.6/5.0 NOTE 4" (datum B); min/max only"
+  body_length:
+    min: 9.9 mm
+    max: 10.5 mm
+    src: p43 "PACKAGE OUTLINE DB0028A, body length "10.5/9.9 NOTE 3" (datum A); min/max only"
+  lead_thickness:
+    typ: 0.15 mm
+    src: p43 "PACKAGE OUTLINE DB0028A, side view "(0.15) TYP" (reference value)"
+  lead_length:
+    min: 0.55 mm
+    max: 0.95 mm
+    src: p43 "PACKAGE OUTLINE DB0028A, DETAIL A "0.95/0.55""
+  overall_width:
+    min: 7.4 mm
+    max: 8.2 mm
+    src: p43 "PACKAGE OUTLINE DB0028A, lead tip span "8.2/7.4 TYP" (min/max only)"
+  overall_height: { max: 2 mm, src: 'p43 "PACKAGE OUTLINE DB0028A, DETAIL A "2 MAX""' }
+  standoff:       { min: 0.05 mm, src: 'p43 "PACKAGE OUTLINE DB0028A, DETAIL A "0.05 MIN""' }
+  lead_width: { min: 0.22 mm, max: 0.38 mm, src: 'p43 "PACKAGE OUTLINE DB0028A, "28X 0.38/0.22""' }

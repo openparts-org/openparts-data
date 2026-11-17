@@ -1,0 +1,40 @@
+# DS1307 64 x 8 serial I2C real-time clock, 8-pin SO (150 mil) and PDIP
+# (300 mil) with the same numbering. Pin map from the "PIN DESCRIPTION"
+# table (page 6), checked against the "PIN CONFIGURATIONS" figure (page
+# 1, both packages); all 8 pins match. X1 (crystal input / external
+# 32.768 kHz input) clock, X2 (crystal output) clock_out; VBAT/VCC power;
+# SDA io; SCL ("Serial Clock Input") clock; SQW/OUT (open-drain square
+# wave / output driver) output. operating_temperature depends on the
+# grade (commercial 0..70 °C, industrial "N" -40..85 °C) and is recorded
+# on the Parts. No ESD rating is printed.
+schema_version: "0.2"
+kind: device
+id: analog-devices/DS1307
+manufacturer: analog-devices
+category: rtc
+family: DS1307
+source: analog-devices/DS1307@2015-03
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 4.5 V
+    typ: 5 V
+    max: 5.5 V
+    src: p2 "RECOMMENDED DC OPERATING CONDITIONS, Supply Voltage VCC"
+  supply_current:
+    max: 1.5 mA
+    src: p2 "DC ELECTRICAL CHARACTERISTICS, Active Supply Current ICCA (fSCL = 100kHz)"
+
+pins:
+  src:
+    - p6 "PIN DESCRIPTION table"
+    - p1 "PIN CONFIGURATIONS, SO (150 mils) and PDIP (300 mils) (cross-check)"
+  "1": { name: X1, type: clock }
+  "2": { name: X2, type: clock_out }
+  "3": { name: VBAT, type: power }
+  "4": { name: GND, type: ground }
+  "5": { name: SDA, type: io }
+  "6": { name: SCL, type: clock }
+  "7": { name: SQW/OUT, type: output }
+  "8": { name: VCC, type: power }

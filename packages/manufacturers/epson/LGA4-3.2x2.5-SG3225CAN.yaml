@@ -1,0 +1,57 @@
+# Epson SG3225CAN 4-pad ceramic oscillator package, 3.2 x 2.5 mm, from
+# the p2 "External dimensions" and "Footprint (Recommended)" SG3225CAN
+# boxes of epson/SG-CAN-STF-BRIEF (vector, 200 dpi render). Frame (as
+# manufacturers/epson/LGA4-2.5x2.0-SG-8018CG): lga, two terminals on each
+# 2.5 mm side, body_width = 3.2 (X). Top view numbering: #4 top-left, #3
+# top-right, #1 bottom-left, #2 bottom-right -> pad_order [4, 1, 2, 3].
+# The bottom view prints 0.1 setback, 0.85 / 1.3 in X and 0.7 / 0.9 in
+# Y; terminal sizes are not unambiguous, so lead_length/lead_width are
+# left out. pitch = the footprint's printed row pitch 1.9 (between pad
+# centre crosses), taken as the terminal pitch: reviewer check.
+# pads: footprint pad 1.4 (X) x 1.2 (Y); 2.4 (X) and 1.9 (Y) are between
+# pad CENTRES (extension lines on the "+" centre marks, checked on the
+# render). Centres x = +-1.2, y = +-0.95.
+schema_version: "0.2"
+kind: package
+id: manufacturers/epson/LGA4-3.2x2.5-SG3225CAN
+family: lga
+lead_count: 4
+
+lead_layout:
+  value: [2, 0, 2, 0]
+  src:   p2 "External dimensions SG3225CAN, two terminals on each 2.5 mm side"
+
+source: epson/SG-CAN-STF-BRIEF
+
+pitch: { typ: 1.9 mm, src: 'p2 "Footprint (Recommended) SG3225CAN, 1.9 (see header)"' }
+
+pad_order:
+  value: ["4", "1", "2", "3"]
+  src:   'p2 "External dimensions SG3225CAN, top view #1-#4"'
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:
+    min: 3 mm
+    typ: 3.2 mm
+    max: 3.4 mm
+    src: p2 "External dimensions SG3225CAN, 3.2±0.2"
+  body_length:
+    min: 2.3 mm
+    typ: 2.5 mm
+    max: 2.7 mm
+    src: p2 "External dimensions SG3225CAN, 2.5±0.2"
+  body_height:
+    min: 0.9 mm
+    typ: 1.05 mm
+    max: 1.2 mm
+    src: p2 "External dimensions SG3225CAN, 1.05±0.15"
+
+pads:
+  value:
+    - { number: "1", x: -1.2, y: -0.95, width: 1.4, length: 1.2 }
+    - { number: "2", x: 1.2, y: -0.95, width: 1.4, length: 1.2 }
+    - { number: "3", x: 1.2, y: 0.95, width: 1.4, length: 1.2 }
+    - { number: "4", x: -1.2, y: 0.95, width: 1.4, length: 1.2 }
+  src: p2 "Footprint (Recommended) SG3225CAN, 1.4, 1.2, 2.4, 1.9 (see header)"

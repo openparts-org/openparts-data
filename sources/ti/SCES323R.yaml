@@ -1,0 +1,14 @@
+# Official TI datasheet (SN74LVC1G66 single bilateral analog switch). Revision read from the page header
+# "SCES323R – JUNE 2001 – REVISED SEPTEMBER 2025". 44 PDF pages, text read with pdftotext -layout;
+# page numbers are PDF page indices. Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: ti/SCES323R
+sha256: fd95264bb45c277a343e3571ec3512c6d153d403173913b53607d72faca44241
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/sn74lvc1g66.pdf
+publisher: ti
+document_id: SCES323R
+document_type: datasheet
+revision: R
+date: 2025-09

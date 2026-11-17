@@ -1,0 +1,37 @@
+# 0.8-A single-cell Li-Ion/Li-Pol linear charger, DBV (SOT-23-6)
+# pinout. From SLUSCE2D "Pin Functions" table (page 3): TS 1, OUT 2,
+# CHG 3, ISET 4, GND 5, VIN 6; checked against the "DBV Package 6-Pin
+# SOT-23 Top View" figure (same page). CHG is the open-drain status
+# output; ISET (programming resistor) and TS (NTC input) -> analog;
+# VIN/OUT -> power.
+schema_version: "0.2"
+kind: device
+id: ti/BQ21040-DBV
+manufacturer: ti
+category: battery_charger
+family: BQ21040
+source: ti/SLUSCE2D
+
+parameters:
+  output_voltage:
+    min: 4.16 V
+    typ: 4.2 V
+    max: 4.23 V
+    at: { VIN: 5.5 V }
+    src: p5 "7.5 Electrical Characteristics, VOUT(REG) battery regulation voltage, IL = 25 mA"
+  input_voltage_max:
+    max: 6.45 V
+    src: p4 "7.3 Recommended Operating Conditions, IN operating voltage range, restricted by VDPM and VOVP"
+  output_current:
+    max: 0.8 A
+    src: p4 "7.3 Recommended Operating Conditions, IOUT current, OUT terminal"
+  esd_hbm: { typ: 2 kV, src: 'p4 "7.2 ESD Ratings, HBM ±2000 V"' }
+
+pins:
+  src: [p3 ""Pin Functions" table", p3 ""DBV Package 6-Pin SOT-23 Top View""]
+  "1": { name: TS, type: analog }
+  "2": { name: OUT, type: power }
+  "3": { name: CHG, type: output }
+  "4": { name: ISET, type: analog }
+  "5": { name: GND, type: ground }
+  "6": { name: VIN, type: power }

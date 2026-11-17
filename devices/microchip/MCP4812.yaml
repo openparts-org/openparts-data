@@ -1,0 +1,46 @@
+# 10-bit dual-channel SPI DAC with internal 2.048 V reference
+# (MCP4812), 8-pin pin map from Table 3-1 "Pin Function Table for
+# MCP4802/4812/4822", column "MSOP, PDIP, SOIC" (DS20002249B page 15).
+# Types: VDD power, VSS ground, SCK ("Serial Clock Input") clock, CS /
+# SDI / LDAC inputs, VOUTA/VOUTB analog. Overbars (CS, LDAC) are not
+# represented.
+# operating_temperature: the "Specified Temperature Range" row of the
+# Temperature Characteristics (page 7) is used; note that the
+# Electrical Characteristics header (page 3) states TA = -40 to +85 C.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP4812
+manufacturer: microchip
+category: dac
+family: MCP4802/4812/4822
+source: microchip/DS20002249@revB
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: 'p3 "Electrical Characteristics, Power Requirements: Input Voltage VDD"'
+  supply_current:
+    typ: 415 µA
+    max: 750 µA
+    src: p3 "Elec. Char., Input Current IDD, digital inputs grounded, VOUT unloaded"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: 'p7 "Temperature Characteristics: Specified Temperature Range TA"'
+  esd_hbm:
+    typ: 4 kV
+    src: 'p3 "Absolute Maximum Ratings: ESD protection on all pins 4 kV (HBM)"'
+  channel_count: { value: "2", src: 'p15 "Table 3-1: VOUTA "DACA Output", VOUTB "DACB Output""' }
+
+pins:
+  src: p15 "Table 3-1 "Pin Function Table for MCP4802/4812/4822", column "MSOP, PDIP, SOIC""
+  "1": { name: VDD, type: power }
+  "2": { name: CS, type: input }
+  "3": { name: SCK, type: clock }
+  "4": { name: SDI, type: input }
+  "5": { name: LDAC, type: input }
+  "6": { name: VOUTB, type: analog }
+  "7": { name: VSS, type: ground }
+  "8": { name: VOUTA, type: analog }

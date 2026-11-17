@@ -1,0 +1,18 @@
+# Official Microchip datasheet "MCP79410/MCP79411/MCP79412 Battery-Backed I2C Real-Time Clock/Calendar with SRAM, EEPROM and Protected EEPROM". Downloaded 2026-11-17 with wget
+# from ww1.microchip.com (URL below). document_id / revision from the
+# printed footer "DS20002266H-page N"; the Revision History lists "Revision H (08/2016)".
+# 66 PDF pages; text read with pdftotext -layout. Page numbers in this
+# dataset are PDF page indices (they equal the printed page numbers).
+# Package drawing numbers were rendered and read as images. sha256 is of
+# the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20002266@revH
+sha256: f5e77764ca761a870b05d57109dd4dc9d768448fd6a6c0441c95edf73eafaa45
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/20002266H.pdf
+publisher: microchip
+document_id: DS20002266
+document_type: datasheet
+revision: H
+date: 2016-08

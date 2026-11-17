@@ -1,0 +1,57 @@
+# 10-bit dual-channel SPI DAC with external references (MCP4912),
+# 14-pin PDIP/SOIC/TSSOP pin map from Table 3-1 "Pin Function Table"
+# (DS22250A page 17). Pins 2, 6 and 7 are "NC - No Connection" (typed
+# nc). Types: VDD power, VSS ground, SCK ("Serial Clock Input") clock,
+# CS / SDI / LDAC / SHDN inputs, VOUTx / VREFx analog. Overbars (CS,
+# LDAC, SHDN) are not represented. Same pin map as microchip/MCP4922.
+# operating_temperature: the "Specified Temperature Range" row of the
+# Temperature Characteristics (page 8) is used; note that the
+# Electrical Characteristics header (page 3) states TA = -40 to +85 C.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP4912
+manufacturer: microchip
+category: dac
+family: MCP4902/4912/4922
+source: microchip/DS22250@revA
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: 'p3 "Electrical Characteristics, Power Requirements: Operating Voltage VDD"'
+  supply_current:
+    - typ: 350 µA
+      max: 700 µA
+      at: { VDD: 5 V }
+      src: p3 "Elec. Char., Operating Current IDD, VDD = 5V row"
+    - typ: 250 µA
+      max: 500 µA
+      at: { VDD: 3 V }
+      src: p3 "Elec. Char., Operating Current IDD, VDD = 3V row"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: 'p8 "Temperature Characteristics: Specified Temperature Range TA"'
+  esd_hbm:
+    typ: 4 kV
+    src: 'p3 "Absolute Maximum Ratings: ESD protection on all pins 4 kV (HBM)"'
+  channel_count: { value: "2", src: 'p17 "Table 3-1: VOUTA "DACA Output", VOUTB "DACB Output""' }
+
+pins:
+  src:  p17 "Table 3-1 "Pin Function Table""
+  "1":  { name: VDD, type: power }
+  "2":  { name: NC, type: nc }
+  "3":  { name: CS, type: input }
+  "4":  { name: SCK, type: clock }
+  "5":  { name: SDI, type: input }
+  "6":  { name: NC, type: nc }
+  "7":  { name: NC, type: nc }
+  "8":  { name: LDAC, type: input }
+  "9":  { name: SHDN, type: input }
+  "10": { name: VOUTB, type: analog }
+  "11": { name: VREFB, type: analog }
+  "12": { name: VSS, type: ground }
+  "13": { name: VREFA, type: analog }
+  "14": { name: VOUTA, type: analog }

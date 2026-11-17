@@ -1,0 +1,18 @@
+# Official Microchip datasheet "MCP4802/4812/4822 8/10/12-Bit Dual Voltage Output Digital-to-Analog Converter with Internal VREF and SPI Interface". Downloaded 2026-11-17 with wget
+# from ww1.microchip.com (URL below). document_id / revision from the
+# printed footer "DS20002249B-page N"; the Revision History lists "Revision B (May 2015)". 50 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page indices
+# (they equal the printed page numbers). Package drawing numbers and
+# dimension tables were rendered and read as images. sha256 is of the
+# PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20002249@revB
+sha256: 1f0b231636222ea5bf4147dde3e54a7c1a2f39b0eac14e2e4320ff8d2a4dc765
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/20002249B.pdf
+publisher: microchip
+document_id: DS20002249
+document_type: datasheet
+revision: B
+date: 2015-05

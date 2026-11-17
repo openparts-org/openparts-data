@@ -1,0 +1,45 @@
+# 10-lead MSOP (Microchip package code UN). All values from Microchip
+# drawing C04-021B "10-Lead Plastic Micro Small Outline Package (UN)
+# [MSOP]", dimension table on PDF page 60 of DS22187E (MCP4728),
+# rendered and read as an image; sheet shows pin 1 at the hatched
+# corner, pins 1..5 along one long edge. Millimetres, copied as printed
+# (BSC values as typ, min/max-only rows as min/max only). Footprint "L1
+# 0.95 REF" and foot angle 0-8 deg are not recorded.
+#
+# Not merged into standards/MSOP10-3.0x3.0-P0.5-TI-DGS: that TI drawing
+# gives E1/D as 2.9-3.1 ranges, span 4.75-5.05, b 0.17-0.27, while this
+# one has E1/D 3.00 BSC, E 4.90 BSC, b 0.15-0.33 and an A2 row.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/MSOP10-UN-C04-021B
+family: msop
+lead_count: { value: 10, src: 'p60 "C04-021B table, "Number of Pins N 10""' }
+source: microchip/DS22187@revE
+
+pitch: { typ: 0.5 mm, src: 'p60 "C04-021B table, "Pitch e 0.50 BSC""' }
+geometry: { type: parametric, generator: msop }
+
+dimensions:
+  body_width:     { typ: 3 mm, src: 'p60 "C04-021B table, "Molded Package Width E1 3.00 BSC""' }
+  body_length:    { typ: 3 mm, src: 'p60 "C04-021B table, "Overall Length D 3.00 BSC""' }
+  body_height:
+    min: 0.75 mm
+    typ: 0.85 mm
+    max: 0.95 mm
+    src: p60 "C04-021B table, "Molded Package Thickness A2 0.75 / 0.85 / 0.95""
+  lead_thickness:
+    min: 0.08 mm
+    max: 0.23 mm
+    src: p60 "C04-021B table, "Lead Thickness c 0.08 / - / 0.23""
+  overall_width:  { typ: 4.9 mm, src: 'p60 "C04-021B table, "Overall Width E 4.90 BSC""' }
+  overall_height: { max: 1.1 mm, src: 'p60 "C04-021B table, "Overall Height A - / - / 1.10""' }
+  standoff: { min: 0 mm, max: 0.15 mm, src: 'p60 "C04-021B table, "Standoff A1 0.00 / - / 0.15""' }
+  lead_width:
+    min: 0.15 mm
+    max: 0.33 mm
+    src: p60 "C04-021B table, "Lead Width b 0.15 / - / 0.33""
+  lead_length:
+    min: 0.4 mm
+    typ: 0.6 mm
+    max: 0.8 mm
+    src: p60 "C04-021B table, "Foot Length L 0.40 / 0.60 / 0.80""

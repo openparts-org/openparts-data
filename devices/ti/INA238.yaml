@@ -1,0 +1,47 @@
+# 85-V, 16-bit I2C power monitor, DGS (VSSOP-10) pinout. Pin map
+# from SLYS025B Table 4-1 "Pin Functions" (page 3) and Figure 4-1 "DGS
+# Package 10-Pin VSSOP Top View" (same page): all 10 pins match. SCL
+# ("I2C clock input") is typed clock; ALERT (open-drain alert output)
+# output; VBUS/IN+/IN- analog inputs. The datasheet's minus sign in IN-
+# is written as ASCII "-".
+schema_version: "0.2"
+kind: device
+id: ti/INA238
+manufacturer: ti
+category: power_monitor
+family: INA238
+source: ti/SLYS025B
+
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p4 "5.3 Recommended Operating Conditions, VS operating supply range"
+  supply_current:
+    - typ: 640 µA
+      max: 750 µA
+      at: { VS: 3.3 V, TA: 25 °C }
+      src: p6 "5.5 Electrical Characteristics, IQ quiescent current, VSENSE = 0 V"
+    - max: 1.1 mA
+      at: { VS: 3.3 V, TA: -40..125 °C }
+      src: p6 "5.5 Electrical Characteristics, IQ quiescent current, VSENSE = 0 V, TA = -40°C to +125°C"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "5.3 Recommended Operating Conditions, TA ambient temperature"
+  esd_hbm: { typ: 2 kV, src: 'p4 "5.2 ESD Ratings, HBM all pins ±2000 V"' }
+
+pins:
+  src:
+    - p3 "Table 4-1 "Pin Functions""
+    - p3 "Figure 4-1 "DGS Package 10-Pin VSSOP Top View" (cross-check, all 10 pins matched)"
+  "1":  { name: A1, type: input }
+  "2":  { name: A0, type: input }
+  "3":  { name: ALERT, type: output }
+  "4":  { name: SDA, type: io }
+  "5":  { name: SCL, type: clock }
+  "6":  { name: VS, type: power }
+  "7":  { name: GND, type: ground }
+  "8":  { name: VBUS, type: analog }
+  "9":  { name: IN-, type: analog }
+  "10": { name: IN+, type: analog }

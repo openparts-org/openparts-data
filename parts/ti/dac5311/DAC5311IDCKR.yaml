@@ -1,0 +1,29 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SBAS442D
+# (page 33): "DAC5311IDCKR Active Production SC70 (DCK) | 6 3000 | LARGE T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 D53".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet).
+# Package: SC70 (DCK), outline DCK0006A (4214835/D) on page 37 -> manufacturers/ti/DCK0006A
+# (same drawing number and revision as the source that package was read from).
+schema_version: "0.2"
+kind: part
+id: ti/DAC5311IDCKR
+manufacturer: ti
+mpn: DAC5311IDCKR
+device: ti/DAC5311
+
+package:
+  value: manufacturers/ti/DCK0006A
+  src:
+    - p33 "PACKAGE OPTION ADDENDUM, row DAC5311IDCKR, Package column "SC70 (DCK)""
+    - p37 "PACKAGE OUTLINE DCK0006A (4214835/D)"
+
+sources: [ti/SBAS442D]
+source: ti/SBAS442D
+
+existence:
+  status: verified
+  src: p33 "PACKAGE OPTION ADDENDUM, Packaging Information table, row DAC5311IDCKR"
+
+lifecycle:
+  status: active
+  src: p33 "PACKAGE OPTION ADDENDUM, row DAC5311IDCKR, Status column "Active""

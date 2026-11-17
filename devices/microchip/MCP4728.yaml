@@ -1,0 +1,49 @@
+# 12-bit quad I2C DAC with EEPROM (MCP4728), 10-lead MSOP pin map from
+# Table 3-1 "Pin Function Table" (DS22187E page 21). The only package is
+# the 10-lead MSOP (page 1 "10-Lead MSOP Package"). Types: VDD power,
+# VSS ("Ground reference") ground, SCL (open-drain input, "I2C Serial
+# Clock Input") clock, SDA io, LDAC (Schmitt-trigger input) input,
+# RDY/BSY (open-drain output) output, VOUT A..D analog. RDY/BSY and LDAC
+# overbars are not represented.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP4728
+manufacturer: microchip
+category: dac
+family: MCP4728
+source: microchip/DS22187@revE
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: 'p3 "Electrical Characteristics, Power Requirements: Operating Voltage VDD"'
+  supply_current:
+    typ: 800 µA
+    max: 1400 µA
+    at: { VDD: 5.5 V }
+    src: p3 "Elec. Char., IDD_EXT, VREF = VDD, all 4 channels in Normal mode"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: 'p10 "Temperature Characteristics: Specified Temperature Range TA"'
+  esd_hbm:
+    typ: 4 kV
+    src: 'p3 "Absolute Maximum Ratings: ESD protection on all pins ≥ 4 kV HBM"'
+  channel_count:
+    value: "4"
+    src: 'p1 "Features: 12-Bit Voltage Output DAC with Four Buffered Outputs"'
+
+pins:
+  src:  p21 "Table 3-1 "Pin Function Table""
+  "1":  { name: VDD, type: power }
+  "2":  { name: SCL, type: clock }
+  "3":  { name: SDA, type: io }
+  "4":  { name: LDAC, type: input }
+  "5":  { name: RDY/BSY, type: output }
+  "6":  { name: VOUT A, type: analog }
+  "7":  { name: VOUT B, type: analog }
+  "8":  { name: VOUT C, type: analog }
+  "9":  { name: VOUT D, type: analog }
+  "10": { name: VSS, type: ground }

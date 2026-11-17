@@ -1,0 +1,44 @@
+# Micro Crystal "C7" ceramic RTC-module package, 8 terminals, 3.2 x 1.5 x
+# 0.8 mm max, metal lid connected to VSS (pin 5). Read from the rendered
+# "RV-3028-C7 Package" figure (drawing RV-3028-C7_Pack-drw_20180208) on
+# page 107 of the RV-3028-C7 Application Manual Rev. 1.4. The RV-8803-C7
+# manual (Rev. 1.7, page 64, drawing RV-8803-C7_Pack-drw_20180515) and
+# the RV-3032-C7 manual (Rev. 1.3, page 145, drawing
+# RV-3032-C7_Pack-drw_20200615) print the same figure with identical
+# values (3.2, 1.5, 0.9, 0.5, 0.4, 0.8 max, 0.15); one package is shared.
+#
+# Frame: top view (pinout figure, page 9) has pins 1-4 along the bottom
+# edge left to right and 5-8 along the top edge right to left
+# (counter-clockwise), so lead_layout [left, bottom, right, top] =
+# [0, 4, 0, 4]. body_width (X) = 3.2 (long side), body_length (Y) = 1.5.
+# Terminals from the bottom view: 0.4 wide (along the edge, X) and 0.5
+# deep (Y, from the long edge). The figure says "All dimensions in mm
+# typical" with "Tolerances: unless otherwise specified ±0.1mm"; values
+# are recorded as typ only. The side-view 0.15 (lid feature) and the
+# recommended land pattern (0.5 x 0.8 pads at 0.9 pitch, rows 0.4 apart)
+# are not modelled; lead_inset is not printed.
+schema_version: "0.2"
+kind: package
+id: manufacturers/micro-crystal/LGA8-3.2x1.5-P0.9-RV-C7
+family: lga
+lead_count: 8
+
+lead_layout:
+  value: [0, 4, 0, 4]
+  src:   'p9 "2.1 PINOUT top view: #1-#4 bottom row, #5-#8 top row (counter-clockwise)"'
+
+source: micro-crystal/RV-3028-C7@rev1.4
+
+pitch: { typ: 0.9 mm, src: 'p107 "8.1 Package dimensions (bottom view), 0,9"' }
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:     { typ: 3.2 mm, src: 'p107 "8.1 Package dimensions (bottom view), 3,2"' }
+  body_length:    { typ: 1.5 mm, src: 'p107 "8.1 Package dimensions (bottom view), 1,5"' }
+  lead_length:
+    typ: 0.5 mm
+    src: p107 "8.1 Package dimensions (bottom view), terminal depth 0,5"
+  lead_width:
+    typ: 0.4 mm
+    src: p107 "8.1 Package dimensions (bottom view), terminal width 0,4"
+  overall_height: { max: 0.8 mm, src: 'p107 "8.1 Package dimensions, side view "0,8 max""' }

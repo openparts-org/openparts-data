@@ -1,0 +1,50 @@
+# ADS1219 4-channel 24-bit I2C delta-sigma ADC, 16-pin TSSOP (PW) pin
+# map from the "Pin Functions" table, column "PW" (SBAS924A page 3),
+# checked against the "PW Package 16-Pin TSSOP Top View" figure on the
+# same page; all 16 pins match. The RTE (WQFN) numbering is not covered.
+# DRDY and RESET are active low (overbars; written without them). AVDD/
+# DVDD power, AGND/DGND ground, AIN0..AIN3/REFP/REFN analog, A0/A1/
+# RESET input, DRDY output, SCL ("Serial clock input") clock, SDA io.
+# supply_voltage: AVDD and DVDD have the same 2.3-5.5 V range.
+# supply_current is left out: only separate IAVDD and IDVDD are printed.
+schema_version: "0.2"
+kind: device
+id: ti/ADS1219
+manufacturer: ti
+category: adc
+family: ADS1219
+source: ti/SBAS924A
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.3 V
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, Analog (AVDD to AGND) and Digital (DVDD to DGND) power supply"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA Operating ambient temperature"
+  esd_hbm:       { typ: 2 kV, src: 'p4 "6.2 ESD Ratings, HBM ±2000 V"' }
+  channel_count: { value: "4", src: 'p3 "Pin Functions, AIN0..AIN3 Analog input 0..3"' }
+
+pins:
+  src:
+    - p3 "Pin Functions table, column "PW""
+    - p3 "PW Package 16-Pin TSSOP Top View figure (cross-check)"
+  "1":  { name: A0, type: input }
+  "2":  { name: A1, type: input }
+  "3":  { name: RESET, type: input }
+  "4":  { name: DGND, type: ground }
+  "5":  { name: AGND, type: ground }
+  "6":  { name: AIN3, type: analog }
+  "7":  { name: AIN2, type: analog }
+  "8":  { name: REFN, type: analog }
+  "9":  { name: REFP, type: analog }
+  "10": { name: AIN1, type: analog }
+  "11": { name: AIN0, type: analog }
+  "12": { name: AVDD, type: power }
+  "13": { name: DVDD, type: power }
+  "14": { name: DRDY, type: output }
+  "15": { name: SDA, type: io }
+  "16": { name: SCL, type: clock }

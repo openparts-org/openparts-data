@@ -1,0 +1,48 @@
+# CNY17 optocoupler (IRED + NPN phototransistor with base connection),
+# DIP-6. Pin assignment (names expanded from the diagram letters; "C"
+# is used for both cathode and collector) from the page-1 pin diagram
+# of datasheet 83606:
+# 1 A, 2 C (cathode), 3 NC, 4 E, 5 C (collector), 6 B. Diode and
+# transistor terminals typed passive (as toshiba/TLP291); NC -> nc.
+# The CTR rank is per Part. isolation_voltage is the VISO rating
+# (Vrms, t = 1 min). operating_temperature is the only printed range
+# (absolute maximum ratings, Tamb).
+schema_version: "0.2"
+kind: device
+id: vishay/CNY17
+manufacturer: vishay
+category: optocoupler
+family: CNY17
+source: vishay/83606
+
+parameters:
+  forward_voltage:
+    typ: 1.39 V
+    max: 1.65 V
+    at: { IF: 60 mA }
+    src: p2 "Electrical Characteristics, Input, Forward voltage VF"
+  reverse_voltage: { max: 6 V, src: 'p2 "Absolute Maximum Ratings, Input, Reverse voltage VR"' }
+  forward_current: { max: 60 mA, src: 'p2 "Absolute Maximum Ratings, Input, Forward current IF"' }
+  collector_emitter_voltage:
+    max: 70 V
+    src: p2 "Absolute Maximum Ratings, Output, Collector emitter breakdown voltage BVCEO"
+  collector_current:
+    max: 50 mA
+    src: p2 "Absolute Maximum Ratings, Output, Collector current IC"
+  isolation_voltage:
+    min: 5000 V
+    at: { t: 60 s }
+    src: p2 "Absolute Maximum Ratings, Coupler, Isolation test voltage VISO (VRMS, t = 1 min)"
+  operating_temperature:
+    min: -55 °C
+    max: 110 °C
+    src: p2 "Absolute Maximum Ratings, Operating temperature Tamb"
+
+pins:
+  src: 'p1 "Pin diagram: 1 A, 2 C, 3 NC, 4 E, 5 C, 6 B"'
+  "1": { name: ANODE, type: passive }
+  "2": { name: CATHODE, type: passive }
+  "3": { name: NC, type: nc }
+  "4": { name: EMITTER, type: passive }
+  "5": { name: COLLECTOR, type: passive }
+  "6": { name: BASE, type: passive }

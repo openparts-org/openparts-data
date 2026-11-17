@@ -1,0 +1,36 @@
+# MPN "DS3231SN#" (industrial grade, 16 SO) from the "Ordering
+# Information" table of analog-devices/DS3231@rev10 (page 18); "#"
+# denotes an RoHS-compliant device. Package code W16#H2, outline 21-0042,
+# per the "Package Information" table (page 18); 21-0042 rev. Q lists
+# W16#H2 under VARIATION A (16 leads) -> manufacturers/analog-devices/
+# SOIC16-W-21-0042 (new). operating_temperature is the grade's range
+# (Ordering Information and Absolute Maximum Ratings, page 2).
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: analog-devices/DS3231SN#
+manufacturer: analog-devices
+mpn: DS3231SN#
+device: analog-devices/DS3231
+
+package:
+  value: manufacturers/analog-devices/SOIC16-W-21-0042
+  src:
+    - p18 "Package Information, 16 SO, package code W16#H2, outline 21-0042"
+    - analog-devices/21-0042@revQ p1 "VARIATION A, PKG. CODE list incl. W16#H2"
+
+sources: [analog-devices/DS3231@rev10, analog-devices/21-0042@revQ]
+source: analog-devices/DS3231@rev10
+
+existence:
+  status: verified
+  src: p18 "Ordering Information, row DS3231SN#, -40°C to +85°C, 16 SO"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p18 "Ordering Information, DS3231SN# TEMP RANGE -40 to +85 C"

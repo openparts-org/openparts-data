@@ -1,0 +1,49 @@
+# CD4052B dual 4-channel analog multiplexer/demultiplexer, 16-pin pin
+# map of the E, M, NS and PW packages from SCHS047O Table 4-2 "Pin
+# Functions CD4052B" (page 4), checked against Figure 4-2 (page 3).
+# Names condensed from the table ("Y CH 0 IN/OUT" -> Y_CH0_IN/OUT).
+# Types as for ti/CD4051B: switch I/O -> analog, INH/A/B -> input,
+# VDD/VEE power, VSS ground. channel_count 2 = the two 4:1 sections.
+# The datasheet's Recommended Operating Conditions give no supply
+# range, so supply_voltage is left out.
+schema_version: "0.2"
+kind: device
+id: ti/CD4052B
+manufacturer: ti
+category: analog_switch
+family: CD405xB
+source: ti/SCHS047O
+
+parameters:
+  supply_current:
+    typ: 17 µA
+    max: 60 µA
+    at: { VDD: 5 V, TA: 25 °C }
+    src: p6 "5.5 Electrical Characteristics, Quiescent Device Current IDD, VDD 5V, 25°C"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p5 "5.3 Recommended Operating Conditions, Temperature Range"
+  esd_hbm: { typ: 3000 V, src: 'p5 "5.2 ESD Ratings, HBM, all pins"' }
+  channel_count: { value: "2", src: 'p4 "Table 4-2 Pin Functions CD4052B: X and Y sections"' }
+
+pins:
+  src:
+    - p4 "Table 4-2 "Pin Functions CD4052B""
+    - p3 "Figure 4-2 "CD4052B E, M, NS, and PW Package" (Top View)"
+  "1":  { name: Y_CH0_IN/OUT, type: analog }
+  "2":  { name: Y_CH2_IN/OUT, type: analog }
+  "3":  { name: Y_COM_OUT/IN, type: analog }
+  "4":  { name: Y_CH3_IN/OUT, type: analog }
+  "5":  { name: Y_CH1_IN/OUT, type: analog }
+  "6":  { name: INH, type: input }
+  "7":  { name: VEE, type: power }
+  "8":  { name: VSS, type: ground }
+  "9":  { name: B, type: input }
+  "10": { name: A, type: input }
+  "11": { name: X_CH3_IN/OUT, type: analog }
+  "12": { name: X_CH0_IN/OUT, type: analog }
+  "13": { name: X_COM_IN/OUT, type: analog }
+  "14": { name: X_CH1_IN/OUT, type: analog }
+  "15": { name: X_CH2_IN/OUT, type: analog }
+  "16": { name: VDD, type: power }

@@ -1,0 +1,52 @@
+# ADS1220 4-channel 24-bit SPI delta-sigma ADC with PGA and reference,
+# 16-pin TSSOP (PW) pin map from Table 5-1 "Pin Functions", column "PW"
+# (SBAS501D page 4), checked against Figure 5-2 "PW Package, 16-Pin
+# TSSOP" (same page); all 16 pins match. The RVA (VQFN) numbering is not
+# covered. CS, DRDY and DOUT/DRDY's DRDY are active low (overbars;
+# written without them). AVDD/DVDD power, AVSS/DGND ground, analog
+# inputs and reference inputs analog, CS/DIN/CLK input, SCLK clock,
+# DOUT/DRDY and DRDY output.
+# supply_voltage: unipolar AVDD-AVSS and DVDD both 2.3-5.5 V (the bipolar
+# ±2.5 V analog option is not recorded). supply_current is left out: only
+# separate IAVDD and IDVDD are printed.
+schema_version: "0.2"
+kind: device
+id: ti/ADS1220
+manufacturer: ti
+category: adc
+family: ADS1220
+source: ti/SBAS501D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.3 V
+    max: 5.5 V
+    src: p6 "6.3 Recommended Operating Conditions, Unipolar analog (AVDD to AVSS) and Digital (DVDD) power supply"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p6 "6.3 Recommended Operating Conditions, TA Operating ambient temperature"
+  esd_hbm: { typ: 2 kV, src: 'p5 "6.2 ESD Ratings, HBM ±2000 V"' }
+  channel_count: { value: "4", src: 'p4 "Table 5-1 Pin Functions, AIN0..AIN3 Analog input 0..3"' }
+
+pins:
+  src:
+    - p4 "Table 5-1 Pin Functions, column "PW""
+    - p4 "Figure 5-2 PW Package, 16-Pin TSSOP (cross-check)"
+  "1":  { name: SCLK, type: clock }
+  "2":  { name: CS, type: input }
+  "3":  { name: CLK, type: input }
+  "4":  { name: DGND, type: ground }
+  "5":  { name: AVSS, type: ground }
+  "6":  { name: AIN3/REFN1, type: analog }
+  "7":  { name: AIN2, type: analog }
+  "8":  { name: REFN0, type: analog }
+  "9":  { name: REFP0, type: analog }
+  "10": { name: AIN1, type: analog }
+  "11": { name: AIN0/REFP1, type: analog }
+  "12": { name: AVDD, type: power }
+  "13": { name: DVDD, type: power }
+  "14": { name: DRDY, type: output }
+  "15": { name: DOUT/DRDY, type: output }
+  "16": { name: DIN, type: input }

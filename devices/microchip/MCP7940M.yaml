@@ -1,0 +1,41 @@
+# Low-cost I2C real-time clock/calendar with SRAM, no battery backup (MCP7940M), 8-pin map from Table 2-1 "Pin Function Table"
+# (page 6): the SOIC, MSOP, TSSOP and TDFN columns are identical (1-8);
+# the TDFN exposed pad ("can be connected to Vss or left floating") has
+# no pin here. Names as printed. X1/X2 (crystal input/output, X1 also
+# external clock input) typed clock; MFP (open-drain multifunction
+# output) output; SCL ("Serial Clock") clock. Pin 3 is "NC, Not
+# Connected" (typed nc), VBAT on microchip/MCP7940N.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP7940M
+manufacturer: microchip
+category: rtc
+family: MCP7940M
+source: microchip/DS20002292@revB
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.8 V
+    max: 5.5 V
+    src: 'p3 "Table 1-1 DC Characteristics header: Industrial (I): VCC = +1.8V to 5.5V"'
+  supply_current:
+    typ: 1.2 µA
+    at: { VCC: 3.3 V }
+    src: p3 "Table 1-1 DC Characteristics, D11 ICCT Timekeeping Current, VCC = 3.3V"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p3 "Table 1-1 DC Characteristics header: Industrial (I) TA = -40°C to +85°C"'
+  esd_hbm: { typ: 4 kV, src: 'p3 "Absolute Maximum Ratings: ESD protection on all pins ≥ 4 kV"' }
+
+pins:
+  src: p6 "Table 2-1 "Pin Function Table", column "8-pin SOIC""
+  "1": { name: X1, type: clock }
+  "2": { name: X2, type: clock }
+  "3": { name: NC, type: nc }
+  "4": { name: Vss, type: ground }
+  "5": { name: SDA, type: io }
+  "6": { name: SCL, type: clock }
+  "7": { name: MFP, type: output }
+  "8": { name: VCC, type: power }

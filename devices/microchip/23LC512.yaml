@@ -1,0 +1,37 @@
+# 23LC512 512-Kbit SPI/SDI/SQI serial SRAM, 8-lead SOIC/TSSOP/PDIP
+# pinout from the "Pin Function Table" and "Package Types" figure
+# "SOIC/TSSOP/PDIP" (DS20005155B page 1). Multi-function names kept as
+# printed (SO/SIO1, SI/SIO0, HOLD/SIO3; CS and HOLD overbars not
+# represented). Types as for microchip/23LC1024: CS, SCK input; SIO pins
+# io; VSS ground; VCC power. The operating temperature depends on the
+# grade (I or E) in the MPN and is recorded on the Part.
+schema_version: "0.2"
+kind: device
+id: microchip/23LC512
+manufacturer: microchip
+category: sram
+family: 23A512/23LC512
+source: microchip/DS20005155@revB
+
+# Parameters (AI candidates, needs review).
+parameters:
+  capacity:
+    typ: 512 Kbit
+    src: 'p1 "Description: "23A512/23LC512 are 512Kbit Serial SRAM devices""'
+  supply_voltage: { min: 2.5 V, max: 5.5 V, src: 'p1 "Device Selection Table, 23LC512 VCC Range"' }
+  supply_current:
+    typ: 3 mA
+    max: 10 mA
+    at: { VCC: 5.5 V }
+    src: p2 "Table 1-1 D008 ICC Read Operating current, FCLK = 20 MHz, 5.5V row"
+
+pins:
+  src: [p1 ""Pin Function Table"", p1 ""Package Types" figure "SOIC/TSSOP/PDIP" (all 8 pins)"]
+  "1": { name: CS, type: input }
+  "2": { name: SO/SIO1, type: io }
+  "3": { name: SIO2, type: io }
+  "4": { name: VSS, type: ground }
+  "5": { name: SI/SIO0, type: io }
+  "6": { name: SCK, type: input }
+  "7": { name: HOLD/SIO3, type: io }
+  "8": { name: VCC, type: power }

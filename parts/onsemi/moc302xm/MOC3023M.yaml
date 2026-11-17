@@ -1,0 +1,20 @@
+# MOC3023M, 6-pin through-hole DIP (CASE 646BX). The ordering table (page 7)
+# lists the MOC3010M codes and states that the same orderable part
+# number system applies to the MOC3020M-MOC3023M families, where the
+# plain "M" code is "DIP 6-Pin" (50 units/tube); MOC3023M is also printed
+# as a device name on page 1. Existence is `probable` for that reason.
+schema_version: "0.2"
+kind: part
+id: onsemi/MOC3023M
+manufacturer: onsemi
+mpn: MOC3023M
+device: onsemi/MOC302XM
+package: { value: manufacturers/onsemi/PDIP6-646BX, src: 'p9 "CASE 646BX PDIP6 8.51x6.35, 2.54P"' }
+sources: [onsemi/MOC3023M-D]
+source: onsemi/MOC3023M-D
+
+existence:
+  status: probable
+  src: p7 "Ordering Information, MOC3010M DIP 6-Pin row and note on MOC302xM families"
+
+lifecycle: { status: unknown }

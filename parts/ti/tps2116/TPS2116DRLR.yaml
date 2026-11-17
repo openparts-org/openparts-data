@@ -1,0 +1,24 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SLVSFG1A PDF page 19, addendum dated 31-Oct-2025): "TPS2116DRLR | Active | Production | SOT-5X3 (DRL) | 8 | 4000 | LARGE T&R | ... | -40 to 125 | 2116".
+# lifecycle "active" is that table's Status column.
+schema_version: "0.2"
+kind: part
+id: ti/TPS2116DRLR
+manufacturer: ti
+mpn: TPS2116DRLR
+device: ti/TPS2116-DRL
+
+package:
+  value: manufacturers/ti/DRL0008A
+  src: p19 "Package Option Addendum, row "TPS2116DRLR", "SOT-5X3 (DRL) | 8"; outline DRL0008A (4224486/G) on page 22"
+
+sources: [ti/SLVSFG1A]
+source: ti/SLVSFG1A
+
+existence:
+  status: verified
+  src: p19 "Package Option Addendum, Packaging Information table, row "TPS2116DRLR""
+
+lifecycle:
+  status: active
+  src: p19 "Package Option Addendum, row "TPS2116DRLR", Status "Active""

@@ -1,0 +1,17 @@
+# Official Toshiba TLP241A datasheet (English), the "Data sheet/English" link
+# (docget.jsp?did=14237) on Toshiba's TLP241A product page. Toshiba prints no
+# document number; the revision is identified by the date in every page
+# footer, "2026-04-07" ("Rev.9.0.A"). 19 PDF pages, read with pdftotext -layout;
+# the package drawing (page 14) is vector art and was rendered and read
+# as an image. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/TLP241A-datasheet-en
+sha256: 0bc1d298098dce5a7fbcb1d805f7fe387462a4676993895f934c5a9ebece9eb5
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=14237&prodName=TLP241A
+publisher: toshiba
+document_id: TLP241A_datasheet_en
+document_type: datasheet
+revision: 2026-04-07
+date: 2026-04-07

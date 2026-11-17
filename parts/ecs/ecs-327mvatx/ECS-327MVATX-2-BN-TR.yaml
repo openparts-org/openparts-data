@@ -1,0 +1,27 @@
+# ECS ECS-327MVATX-2-BN-TR: ECS-327MVATX 32.768 kHz MultiVolt oscillator, package
+# size 2 (2.5 x 2.0 mm), B (+-50 ppm inclusive stability), N (-40 ~
+# +85 C), -TR (1K reel). existence: probable -- assembled from the p1
+# PART NUMBERING GUIDE. lifecycle unknown.
+schema_version: "0.2"
+kind: part
+id: ecs/ECS-327MVATX-2-BN-TR
+manufacturer: ecs
+mpn: ECS-327MVATX-2-BN-TR
+device: ecs/ECS-327MVATX-2
+package: manufacturers/ecs/LGA4-2.5x2.0-ECS-327MVATX
+sources: [ecs/ECS-327MVATX]
+source: ecs/ECS-327MVATX
+
+existence: { status: probable, src: 'p1 "PART NUMBERING GUIDE, 2, B, N, -TR"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  frequency_stability:
+    tol: ±50 ppm
+    at: { TA: -40..85 °C }
+    src: p1 "PART NUMBERING GUIDE, STABILITY B = ±50 ppm (inclusive, note *)"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "PART NUMBERING GUIDE, TEMP RANGE N = -40 ~ +85°C"

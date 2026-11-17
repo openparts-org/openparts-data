@@ -1,0 +1,17 @@
+schema_version: "0.2"
+kind: part
+id: ti/SN74HC4066PWR
+manufacturer: ti
+mpn: SN74HC4066PWR
+device: ti/SN74HC4066
+package: { value: manufacturers/ti/PW0014A, src: p32 "PW0014A package outline" }
+sources: [ti/SCLS325K]
+source: ti/SCLS325K
+
+existence:
+  status: verified
+  src: p19 "Package option addendum table, row "SN74HC4066PWR" (TSSOP (PW) | 14)"
+
+lifecycle:
+  status: active
+  src: p19 "Package option addendum table, row "SN74HC4066PWR", Status "Active""

@@ -1,0 +1,17 @@
+schema_version: "0.2"
+kind: part
+id: ti/CD4066BPWR
+manufacturer: ti
+mpn: CD4066BPWR
+device: ti/CD4066B
+package: { value: manufacturers/ti/PW0014A, src: p32 "PW0014A package outline (4220202/B)" }
+sources: [ti/SCHS051J]
+source: ti/SCHS051J
+
+existence:
+  status: verified
+  src: p19 "Package option addendum table, row "CD4066BPWR" (TSSOP (PW) | 14)"
+
+lifecycle:
+  status: active
+  src: p19 "Package option addendum table, row "CD4066BPWR", Status "Active""

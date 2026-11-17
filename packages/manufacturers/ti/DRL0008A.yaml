@@ -1,0 +1,45 @@
+# TI DRL0008A "SOT-5X3 - 0.6 mm max height" (8-lead SOT-5X3; drawing
+# 4224486/G 11/2024, note 4: JEDEC MO-293 variation UDAD), read from
+# the rendered outline page of SLVSFG1A (TPS2116) page 22.
+#
+# Field mapping for the `sot` generator (leads exit across
+# body_length), as in manufacturers/ti/DRL0006A: body_width = "2.2 /
+# 2.0 NOTE 3" (along the lead rows, datum A), body_length = "1.3 / 1.1"
+# (molded width, datum B), overall_length = lead-tip span "1.7 / 1.5".
+# lead_layout [4, 4]: pins 1-4 down the left edge, 5-8 back up the
+# right (8 opposite 1; top view, page 22 and Figure 5-1 on page 3).
+# lead_length is the bottom view's "8X 0.4 / 0.2" (the only lead-length
+# callout on this drawing).
+# Land pattern (page 23) not recorded as pads, as for DRL0006A.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DRL0008A
+family: sot
+lead_count: 8
+lead_layout: [4, 4]
+source: ti/SLVSFG1A
+
+pitch:
+  typ: 0.5 mm
+  src: p22 "DRL0008A outline (4224486/G), "6X 0.5" (basic; "2X 1.5" across pins 1-4)"
+
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:
+    min: 2 mm
+    max: 2.2 mm
+    src: p22 "DRL0008A outline, body along the rows "2.2 / 2.0 NOTE 3""
+  body_length:
+    min: 1.1 mm
+    max: 1.3 mm
+    src: p22 "DRL0008A outline, molded body width "1.3 / 1.1""
+  lead_thickness: { min: 0.08 mm, max: 0.18 mm, src: 'p22 "DRL0008A side view, "0.18 / 0.08""' }
+  lead_length:    { min: 0.2 mm, max: 0.4 mm, src: 'p22 "DRL0008A bottom view, "8X 0.4 / 0.2""' }
+  overall_length:
+    min: 1.5 mm
+    max: 1.7 mm
+    src: p22 "DRL0008A outline, lead-tip span "1.7 / 1.5""
+  overall_height: { max: 0.6 mm, src: p22 "DRL0008A side view "0.6 MAX"" }
+  standoff:       { min: 0 mm, max: 0.05 mm, src: 'p22 "DRL0008A outline, "0.05 / 0.00""' }
+  lead_width:     { min: 0.17 mm, max: 0.27 mm, src: 'p22 "DRL0008A outline, "8X 0.27 / 0.17""' }

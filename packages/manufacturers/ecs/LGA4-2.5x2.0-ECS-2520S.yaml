@@ -1,0 +1,49 @@
+# ECS ECS-2520S 4-pad ceramic oscillator package, 2.5 x 2.0 x 0.9 mm,
+# from p1 "DIMENSIONS (mm)" Figure 1 and Figure 2 (suggested land
+# pattern) of ecs/ECS-2520S (vector drawing, 130 dpi render). Frame as
+# manufacturers/ecs/LGA4-2.5x2.0-ECS-2520MV: lga, two terminals on each
+# 2.0 mm side, body_width = 2.5 (X). Figure 1's top view numbers #4
+# top-left, #3 top-right, #1 bottom-left (index circle), #2
+# bottom-right -> pad_order [4, 1, 2, 3].
+# Same outline and land pattern numbers as ECS-2520MV except the height
+# (0.9±0.1 here, 0.8±0.1 there), hence a separate package.
+# Bottom view prints the 0.95 X gap between terminals, 0.775 from the
+# terminal edge to the body edge, 0.65 Y gap and 0.675; the terminal
+# size itself is not printed, so lead_length/lead_width are left out.
+# pitch = land pattern 0.8 + 0.65 = 1.45 (sum of printed dims; no centre
+# pitch is printed): reviewer check.
+# pads (Figure 2): 0.9 wide (X), 0.8 high (Y); 0.95 and 0.65 are gaps
+# between pad EDGES. Centres x = +-(0.475 + 0.45) = +-0.925, y = +-(0.325
+# + 0.4) = +-0.725, numbered by the top view.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ecs/LGA4-2.5x2.0-ECS-2520S
+family: lga
+lead_count: 4
+
+lead_layout:
+  value: [2, 0, 2, 0]
+  src:   p1 "Figure 1, bottom view, two terminals on each 2.0 mm side"
+
+source: ecs/ECS-2520S
+
+pitch: { typ: 1.45 mm, src: 'p1 "Figure 2 suggested land pattern, 0.8 + 0.65 (see header)"' }
+
+pad_order:
+  value: ["4", "1", "2", "3"]
+  src:   'p1 "Figure 1, top view numbering #1-#4 (see header)"'
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:  { min: 2.4 mm, typ: 2.5 mm, max: 2.6 mm, src: 'p1 "Figure 1, top view 2.5±0.1"' }
+  body_length: { min: 1.9 mm, typ: 2 mm, max: 2.1 mm, src: 'p1 "Figure 1, top view 2.0±0.1"' }
+  body_height: { min: 0.8 mm, typ: 0.9 mm, max: 1 mm, src: 'p1 "Figure 1, side view 0.9±0.1"' }
+
+pads:
+  value:
+    - { number: "1", x: -0.925, y: -0.725, width: 0.9, length: 0.8 }
+    - { number: "2", x: 0.925, y: -0.725, width: 0.9, length: 0.8 }
+    - { number: "3", x: 0.925, y: 0.725, width: 0.9, length: 0.8 }
+    - { number: "4", x: -0.925, y: 0.725, width: 0.9, length: 0.8 }
+  src: p1 "Figure 2 suggested land pattern, 0.9 / 0.95, 0.8 / 0.65 (see header)"

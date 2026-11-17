@@ -1,0 +1,14 @@
+# Official TI datasheet (TMUX1101/TMUX1102 SPST switches). Revision read from the page header
+# "SCDS410D – MARCH 2019 – REVISED FEBRUARY 2024". 38 PDF pages, text read with pdftotext -layout;
+# page numbers are PDF page indices. Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: ti/SCDS410D
+sha256: c1b3a8da1ddef89f535f615c9fb92a3cff4c096b1a75d546e7b57d6a9aa64155
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/tmux1101.pdf
+publisher: ti
+document_id: SCDS410D
+document_type: datasheet
+revision: D
+date: 2024-02

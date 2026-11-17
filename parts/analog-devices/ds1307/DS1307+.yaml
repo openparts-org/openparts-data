@@ -1,0 +1,34 @@
+# MPN "DS1307+" (commercial, 8 PDIP 300 mil) from the "ORDERING
+# INFORMATION" table of analog-devices/DS1307@2015-03 (page 1). The
+# PACKAGE INFORMATION table (page 13) gives document no. 21-0043 for the
+# 8 PDIP -> 21-0043 rev. F, 8-pin row -> manufacturers/analog-devices/
+# PDIP8-21-0043 (new).
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: analog-devices/DS1307+
+manufacturer: analog-devices
+mpn: DS1307+
+device: analog-devices/DS1307
+
+package:
+  value: manufacturers/analog-devices/PDIP8-21-0043
+  src:
+    - p13 "PACKAGE INFORMATION, 8 PDIP, document no. 21-0043"
+    - analog-devices/21-0043@revF p1 "VARIATIONS row N 8"
+
+sources: [analog-devices/DS1307@2015-03, analog-devices/21-0043@revF]
+source: analog-devices/DS1307@2015-03
+
+existence:
+  status: verified
+  src: p1 "ORDERING INFORMATION, row DS1307+, 0°C to +70°C, 8 PDIP (300 mils)"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: 0 °C
+    max: 70 °C
+    src: p1 "ORDERING INFORMATION, DS1307+ TEMP RANGE 0 to +70 C"

@@ -1,0 +1,37 @@
+# Single-cell Li-Ion / Li-Polymer linear charge management controller,
+# MCP73811 5-lead SOT-23 (OT) pinout. From DS22036B Table 3-1 "Pin
+# Function Tables" (page 9): CE 1, VSS 2, VBAT 3, VDD 4, PROG 5; checked
+# against the "Package Types" 5-Pin SOT-23 figure (page 1). CE is the
+# active-high charge enable input; PROG is a digital input on the MCP73811 (Low = 85 mA, High = 450 mA; section 3.5).
+schema_version: "0.2"
+kind: device
+id: microchip/MCP73811-OT
+manufacturer: microchip
+category: battery_charger
+family: MCP7381x
+source: microchip/DS22036@revB
+
+parameters:
+  output_voltage:
+    typ: 4.2 V
+    at: { IOUT: 10 mA }
+    src: p3 "DC Characteristics, Regulated Output Voltage VREG"
+  input_voltage_max: { max: 6 V, src: 'p3 "DC Characteristics, Supply Voltage VDD"' }
+  output_current:
+    typ: 450 mA
+    src: p3 "DC Characteristics, Fast Charge Current Regulation IREG, MCP73811 - PROG = High"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "Temperature Specifications, Specified Temperature Range TA"
+  esd_hbm:
+    typ: 4 kV
+    src: p3 "Absolute Maximum Ratings, ESD protection on all pins, HBM ≥ 4 kV"
+
+pins:
+  src: ['p9 "Table 3-1 Pin Function Tables, SOT-23-5"', 'p1 "Package Types, 5-Pin SOT-23"']
+  "1": { name: CE, type: input }
+  "2": { name: VSS, type: ground }
+  "3": { name: VBAT, type: power }
+  "4": { name: VDD, type: power }
+  "5": { name: PROG, type: input }

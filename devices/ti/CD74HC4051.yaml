@@ -1,0 +1,48 @@
+# CD74HC4051 high-speed CMOS 8-channel analog multiplexer (HC type of
+# SCHS122O; the HCT types are not covered). 16-pin pin map of the N,
+# D, NS and PW packages from Table 4-1 "Pin Functions for CDxHCx4051B"
+# (page 3) and Figure 4-1. Names condensed ("CH A4 IN/OUT" ->
+# CH_A4_IN/OUT, "!E" -> /E); types as for ti/CD4051B (VEE negative
+# supply -> power).
+schema_version: "0.2"
+kind: device
+id: ti/CD74HC4051
+manufacturer: ti
+category: analog_switch
+family: CDx4HC405x
+source: ti/SCHS122O
+
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 6 V
+    src: p7 "5.4 Recommended Operating Conditions, VCC, CD54 and 74HC types"
+  supply_current:
+    max: 12 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: p10 "5.5 Elec. Char. HC (continued), Quiescent Device Current ICC Max, VEE 0, VCC 6, 25°C"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p7 "5.4 Recommended Operating Conditions, TA"
+  esd_hbm: { typ: 500 V, src: 'p6 "5.2 ESD Ratings, HBM, all pins"' }
+  channel_count: { value: "1", src: 'p3 "Table 4-1 Pin Functions for CDxHCx4051B: one COM OUT/IN"' }
+
+pins:
+  src:  p3 "Table 4-1 Pin Functions for CDxHCx4051B; Figure 4-1 (Top View)"
+  "1":  { name: CH_A4_IN/OUT, type: analog }
+  "2":  { name: CH_A6_IN/OUT, type: analog }
+  "3":  { name: COM_OUT/IN, type: analog }
+  "4":  { name: CH_A7_IN/OUT, type: analog }
+  "5":  { name: CH_A5_IN/OUT, type: analog }
+  "6":  { name: /E, type: input }
+  "7":  { name: VEE, type: power }
+  "8":  { name: GND, type: ground }
+  "9":  { name: S2, type: input }
+  "10": { name: S1, type: input }
+  "11": { name: S0, type: input }
+  "12": { name: CH_A3_IN/OUT, type: analog }
+  "13": { name: CH_A0_IN/OUT, type: analog }
+  "14": { name: CH_A1_IN/OUT, type: analog }
+  "15": { name: CH_A2_IN/OUT, type: analog }
+  "16": { name: VCC, type: power }

@@ -1,0 +1,19 @@
+# Epson crystal oscillator (SPXO, CMOS output) brief sheet covering
+# SG2016CAN / SG3225CAN / SG5032CAN / SG7050CAN / SG-210STF, 3 pages.
+# No document number or revision printed; footer "©Seiko Epson
+# Corporation 2025"; date = pdfinfo ModDate 2026-07-10. p1:
+# specifications, standard frequencies, product-name legends; p2:
+# External dimensions and Footprint (Recommended) per model, pin map
+# (vector drawings, 200 dpi render). The same file is served at
+# .../brief/SG7050CAN_en.pdf (identical md5). curl, HTTP 200.
+schema_version: "0.2"
+kind: source
+id: epson/SG-CAN-STF-BRIEF
+sha256: 0d223ef1c34ffa51bc80dbdf38091a8cdf22a1a36acb5857b4e094231f3f0904
+retrieved: 2026-11-17
+url: https://download.epsondevice.com/td/pdf/brief/SG-210STF_en.pdf
+publisher: epson
+document_id: SG2016CAN-SG3225CAN-SG5032CAN-SG7050CAN-SG-210STF
+document_type: datasheet
+revision: unknown
+date: 2026-07-10

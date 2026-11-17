@@ -1,0 +1,55 @@
+# 26-V triple-channel I2C shunt and bus voltage monitor, RGV (VQFN-16,
+# 4 x 4 mm) pinout. From SBOS576C Table 5-1 "Pin Functions" and Figure
+# 5-1 "RGV Package 16-Pin VQFN Top View" (page 3): IN-3 1, IN+3 2, GND
+# 3, VS 4, A0 5, SCL 6, SDA 7, Warning 8, Critical 9, PV 10, IN-1 11,
+# IN+1 12, TC 13, IN-2 14, IN+2 15, VPU 16 (minus signs written as ASCII
+# "-"). GND typed ground and VS power from their descriptions (Type
+# "Analog"); VPU (pull-up supply input for the PV circuitry) analog;
+# Critical/Warning/PV/TC are open-drain alert outputs. Thermal pad
+# "must be connected to ground or left floating" -> EP passive.
+schema_version: "0.2"
+kind: device
+id: ti/INA3221
+manufacturer: ti
+category: power_monitor
+family: INA3221
+source: ti/SBOS576C
+
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, operating supply voltage"
+  supply_current:
+    typ: 350 µA
+    max: 450 µA
+    at: { VS: 3.3 V, TA: 25 °C }
+    src: p6 "6.5 Electrical Characteristics (continued), POWER SUPPLY, quiescent current"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "6.3 Recommended Operating Conditions, operating temperature TA"
+  esd_hbm: { typ: 2.5 kV, src: 'p4 "6.2 ESD Ratings, HBM ±2500 V"' }
+  channel_count:
+    value: "3"
+    src: p3 "Table 5-1, IN+1/IN-1, IN+2/IN-2, IN+3/IN-3 channel shunt inputs"
+
+pins:
+  src:  [p3 "Table 5-1 "Pin Functions"", p3 "Figure 5-1 "RGV Package 16-Pin VQFN Top View""]
+  "1":  { name: IN-3, type: analog }
+  "2":  { name: IN+3, type: analog }
+  "3":  { name: GND, type: ground }
+  "4":  { name: VS, type: power }
+  "5":  { name: A0, type: input }
+  "6":  { name: SCL, type: clock }
+  "7":  { name: SDA, type: io }
+  "8":  { name: Warning, type: output }
+  "9":  { name: Critical, type: output }
+  "10": { name: PV, type: output }
+  "11": { name: IN-1, type: analog }
+  "12": { name: IN+1, type: analog }
+  "13": { name: TC, type: output }
+  "14": { name: IN-2, type: analog }
+  "15": { name: IN+2, type: analog }
+  "16": { name: VPU, type: analog }
+  EP:   { name: Thermal Pad, type: passive }

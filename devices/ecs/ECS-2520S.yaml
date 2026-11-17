@@ -1,0 +1,27 @@
+# ECS ECS-2520S SMD HCMOS tight-stability crystal oscillator, 4-pad 2.5 x
+# 2.0 mm ceramic package. Pin names from the p1 "PAD CONNECTIONS" table;
+# pad 1 tri-state ("High or NC" = output active). Frequency, supply
+# voltage and stability per Part.
+schema_version: "0.2"
+kind: device
+id: ecs/ECS-2520S
+manufacturer: ecs
+category: oscillator
+family: ECS-2520S
+source: ecs/ECS-2520S
+
+# Parameters (AI candidates, needs review).
+parameters:
+  clock_output:   { value: cmos, src: 'p1 "ELECTRICAL CHARACTERISTICS, Output, HCMOS"' }
+  supply_current: { max: 7 mA, src: 'p1 "ELECTRICAL CHARACTERISTICS, Current Consumption"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "ELECTRICAL CHARACTERISTICS, Operating Temp"
+
+pins:
+  src: p1 "PAD CONNECTIONS table"
+  "1": { name: Tri-state, type: input }
+  "2": { name: Gnd, type: ground }
+  "3": { name: Output, type: clock_out }
+  "4": { name: Vdd, type: power }

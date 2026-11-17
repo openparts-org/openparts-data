@@ -1,0 +1,50 @@
+# Vishay DIP-6 optocoupler outline (drawing number 22530), read from
+# the rendered "PACKAGE DIMENSIONS in millimeters" drawing on page 7 of
+# the CNY17 datasheet (document 83606, Rev. 2.1). Values with a printed
+# tolerance are recorded as nominal plus the resulting min/max.
+#
+# `dip` generator convention (as standards/DIP8-W7.62-P2.54): body_width
+# is the ROW SPACING, here the end view's "7.62 +/- 0.3" across the
+# leads at the body; body_length = top/side view "7.3 +/- 0.5" along the
+# rows; body_height = mold "3.5 +/- 0.3"; standoff = "0.5 typ." from the
+# body bottom to the lead shoulder. The molded width "6.5 +/- 0.5" has
+# no dip field and is not recorded; nor are the 3.3 +/- 0.5 lead length
+# below the shoulder or the 7.62-9.98 spread of the lead tips.
+schema_version: "0.2"
+kind: package
+id: manufacturers/vishay/DIP6-22530
+family: dip
+lead_count: 6
+source: vishay/83606
+
+pitch:
+  min: 2.29 mm
+  typ: 2.54 mm
+  max: 2.79 mm
+  src: p7 "Package dimensions, side view, "2.54 +/- 0.25""
+
+geometry: { type: parametric, generator: dip }
+
+dimensions:
+  body_width:
+    min: 7.32 mm
+    typ: 7.62 mm
+    max: 7.92 mm
+    src: p7 "Package dimensions, end view, row spacing "7.62 +/- 0.3""
+  body_length:
+    min: 6.8 mm
+    typ: 7.3 mm
+    max: 7.8 mm
+    src: p7 "Package dimensions, side view, "7.3 +/- 0.5""
+  body_height:
+    min: 3.2 mm
+    typ: 3.5 mm
+    max: 3.8 mm
+    src: p7 "Package dimensions, side view, "3.5 +/- 0.3""
+  lead_thickness: { typ: 0.26 mm, src: 'p7 "Package dimensions, end view, "0.26""' }
+  standoff:       { typ: 0.5 mm, src: 'p7 "Package dimensions, side view, "0.5 typ.""' }
+  lead_width:
+    min: 0.4 mm
+    typ: 0.5 mm
+    max: 0.6 mm
+    src: p7 "Package dimensions, side view, "0.5 +/- 0.1""

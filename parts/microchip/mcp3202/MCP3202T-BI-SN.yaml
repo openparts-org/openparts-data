@@ -1,0 +1,29 @@
+# MPN "MCP3202T-BI/SN" is PROBABLE: printed as ordering example d) in
+# the Product Identification System of microchip/DS21034@revF (page 31),
+# not in an orderable list. T = tape and reel, B = ±1 LSB INL grade, I =
+# -40 to +85 C, SN = 8-lead SOIC (150 mil).
+# Package: SN drawing C04-057C (sheets on pages 25-26, rendered); the
+# same drawing revision is already read as standards/SOIC8-3.90x4.90-P1.27
+# (microchip/23LC1024T-I-SN, row-by-row match), which is reused.
+# lifecycle: not stated in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP3202T-BI-SN
+manufacturer: microchip
+mpn: MCP3202T-BI/SN
+device: microchip/MCP3202
+
+package:
+  value: standards/SOIC8-3.90x4.90-P1.27
+  src:
+    - p31 "Product Identification System, Package "SN = Plastic SOIC (150 mil Body), 8-Lead""
+    - p26 "8-Lead Plastic Small Outline (SN), Microchip Technology Drawing No. C04-057C Sheet 2 of 2"
+
+sources: [microchip/DS21034@revF]
+source: microchip/DS21034@revF
+
+existence:
+  status: probable
+  src: p31 "Product Identification System, example d) MCP3202T-BI/SN"
+
+lifecycle: { status: unknown }

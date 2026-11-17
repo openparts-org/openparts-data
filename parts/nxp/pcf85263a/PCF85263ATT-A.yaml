@@ -1,0 +1,30 @@
+# Type number "PCF85263ATT/A" (TSSOP8, SOT505-1) from Table 1 "Ordering
+# information" of nxp/PCF85263A@rev5.4 (page 5); Table 2 "Ordering
+# options" lists orderable PCF85263ATT/AJ (reel 13", Tamb -40 to +85
+# °C). Package: Figure 47 "Package outline SOT505-1 (TSSOP8),
+# PCF85263ATT" (page 80, rendered; issue date 03-02-18): every mm value
+# (A 1.1 max, A1 0.05-0.15, A2 0.80-0.95, bp 0.25-0.45, c 0.15-0.28, D
+# 2.9-3.1, E 2.9-3.1, e 0.65, HE 4.7-5.1, Lp 0.4-0.7) equals
+# manufacturers/nxp/SOT505-1; reused.
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCF85263ATT-A
+manufacturer: nxp
+mpn: PCF85263ATT/A
+device: nxp/PCF85263A
+
+package:
+  value: manufacturers/nxp/SOT505-1
+  src:
+    - p5 "Table 1 Ordering information, row PCF85263ATT/A, TSSOP8, SOT505-1"
+    - p80 "Figure 47 Package outline SOT505-1 (TSSOP8), PCF85263ATT"
+
+sources: [nxp/PCF85263A@rev5.4]
+source: nxp/PCF85263A@rev5.4
+
+existence:
+  status: verified
+  src: p5 "Table 2 Ordering options, type PCF85263ATT/A, orderable PCF85263ATT/AJ"
+
+lifecycle: { status: unknown }

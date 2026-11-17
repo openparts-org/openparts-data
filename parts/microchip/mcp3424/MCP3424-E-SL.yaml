@@ -1,0 +1,27 @@
+# MPN "MCP3424-E/SL" is PROBABLE: printed as MCP3424 ordering example a)
+# in the Product Identification System of microchip/DS22088@revC (page
+# 55), not in an orderable list. E = -40 to +125 C.
+# Package: SL drawing C04-065B (page 49) -> manufacturers/microchip/
+# SOIC14-SL-C04-065B (same drawing and revision, reused).
+# lifecycle: not stated in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP3424-E-SL
+manufacturer: microchip
+mpn: MCP3424-E/SL
+device: microchip/MCP3424
+
+package:
+  value: manufacturers/microchip/SOIC14-SL-C04-065B
+  src:
+    - p55 "Product Identification System, Package "SL = Plastic SOIC (150 mil Body), 14-lead""
+    - p49 "14-Lead Plastic Small Outline (SL), Microchip Technology Drawing C04-065B"
+
+sources: [microchip/DS22088@revC]
+source: microchip/DS22088@revC
+
+existence:
+  status: probable
+  src: p55 "Product Identification System, MCP3424 example a) MCP3424-E/SL"
+
+lifecycle: { status: unknown }

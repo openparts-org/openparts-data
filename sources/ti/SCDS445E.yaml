@@ -1,0 +1,14 @@
+# Official TI datasheet (TMUX4051/4052/4053 multiplexers). Revision read from the page header
+# "SCDS445E – MAY 2022 – REVISED SEPTEMBER 2024". 41 PDF pages, text read with pdftotext -layout;
+# page numbers are PDF page indices. Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: ti/SCDS445E
+sha256: 82f9517ce7e3fec88ed5100b0af854750a5d0e9d1532d7499a249021c6ca47fc
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/tmux4051.pdf
+publisher: ti
+document_id: SCDS445E
+document_type: datasheet
+revision: E
+date: 2024-09

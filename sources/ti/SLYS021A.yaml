@@ -1,0 +1,16 @@
+# Official TI datasheet for INA228 (85-V, 20-bit I2C power/energy/charge monitor). Downloaded 2026-11-17 with curl from the
+# TI symlink URL below; revision read from the page header
+# "SLYS021A – JANUARY 2021 – REVISED MAY 2022". 48 PDF pages; text read with pdftotext -layout, the
+# package outline drawing pages rendered with pdftoppm. Page numbers in
+# this dataset are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: ti/SLYS021A
+sha256: a138d39eeee04f8388426fed204c2f4012e75d36e95b60b0751ef003cd277447
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/ina228.pdf
+publisher: ti
+document_id: SLYS021A
+document_type: datasheet
+revision: A
+date: 2022-05

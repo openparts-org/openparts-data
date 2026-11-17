@@ -1,0 +1,33 @@
+# MPN "DS3231S#" (commercial grade, 16 SO) from the "Ordering
+# Information" table of analog-devices/DS3231@rev10 (page 18). Package
+# as for DS3231SN#: W16#H2, outline 21-0042 rev. Q VARIATION A ->
+# manufacturers/analog-devices/SOIC16-W-21-0042.
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: analog-devices/DS3231S#
+manufacturer: analog-devices
+mpn: DS3231S#
+device: analog-devices/DS3231
+
+package:
+  value: manufacturers/analog-devices/SOIC16-W-21-0042
+  src:
+    - p18 "Package Information, 16 SO, package code W16#H2, outline 21-0042"
+    - analog-devices/21-0042@revQ p1 "VARIATION A, PKG. CODE list incl. W16#H2"
+
+sources: [analog-devices/DS3231@rev10, analog-devices/21-0042@revQ]
+source: analog-devices/DS3231@rev10
+
+existence:
+  status: verified
+  src: p18 "Ordering Information, row DS3231S#, 0°C to +70°C, 16 SO"
+
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: 0 °C
+    max: 70 °C
+    src: p18 "Ordering Information, DS3231S# TEMP RANGE 0 to +70 C"

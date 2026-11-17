@@ -1,0 +1,18 @@
+# Official Microchip datasheet "MCP7940M Low-Cost I2C Real-Time Clock/Calendar with SRAM". Downloaded 2026-11-17 with wget
+# from ww1.microchip.com (URL below). document_id / revision from the
+# printed footer "DS20002292B-page N"; the Revision History lists "Revision B (06/2014)".
+# 52 PDF pages; text read with pdftotext -layout. Page numbers in this
+# dataset are PDF page indices (they equal the printed page numbers).
+# Package drawing numbers were rendered and read as images. sha256 is of
+# the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20002292@revB
+sha256: 63a4ffda667afdede96cd950735e86c2651ef0b487e0c7a24c8cc696e0d4f374
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/20002292B.pdf
+publisher: microchip
+document_id: DS20002292
+document_type: datasheet
+revision: B
+date: 2014-06

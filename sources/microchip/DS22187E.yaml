@@ -1,0 +1,19 @@
+# Official Microchip datasheet "MCP4728 12-Bit, Quad Digital-to-Analog
+# Converter with EEPROM Memory". Downloaded 2026-11-17 with wget from
+# ww1.microchip.com (URL below). document_id / revision from the printed
+# footer "DS22187E-page N"; the Revision History lists "Revision E
+# (October 2010)". 68 PDF pages; text read with pdftotext -layout. Page
+# numbers in this dataset are PDF page indices (they equal the printed
+# page numbers). The MSOP-10 (UN) drawing C04-021B (page 60) was
+# rendered and read as an image. sha256 is of the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS22187@revE
+sha256: 7e6515c45a02ffe4ad7506f3347cce7714cdd56659ff2fb22b858fc0472f381e
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/22187E.pdf
+publisher: microchip
+document_id: DS22187
+document_type: datasheet
+revision: E
+date: 2010-10

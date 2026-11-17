@@ -1,0 +1,47 @@
+# DAC80501 16-bit voltage-output DAC with internal reference (SPI or I2C,
+# selected by the SPI2C pin), 10-pin VSSOP (DGS) pin map from Table 6-1
+# "Pin Functions", column "DGS (VSSOP)" (SBAS794E page 3), checked
+# against Figure 6-1 "DGS Package, 10-Pin VSSOP (Top View)" on the same
+# page; all 10 pins match. The DQF (8-pin WSON) numbering is not
+# covered. The power-on-reset option (M = midscale, Z = zero scale) is in
+# the MPN and does not change the pinout. VOUT and VREFIO typed analog,
+# SCLK/SCL clock, SDIN/SDA io, SYNC/A0 and SPI2C input, NC nc.
+# supply_current is left out: IVDD is printed per reference configuration
+# (internal/external, a register setting the MPN does not fix).
+schema_version: "0.2"
+kind: device
+id: ti/DAC80501
+manufacturer: ti
+category: dac
+family: DACx0501
+source: ti/SBAS794E
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p4 "7.3 Recommended Operating Conditions, VDD to AGND Positive supply voltage to ground"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "7.3 Recommended Operating Conditions, TA Operating temperature"
+  esd_hbm: { typ: 2 kV, src: 'p4 "7.2 ESD Ratings, HBM all pins ±2000 V"' }
+  channel_count:
+    value: "1"
+    src: p3 "Table 6-1 Pin Functions, single VOUT (Analog output voltage from the DAC)"
+
+pins:
+  src:
+    - p3 "Table 6-1 Pin Functions, column "DGS (VSSOP)""
+    - p3 "Figure 6-1 DGS Package, 10-Pin VSSOP (Top View) (cross-check)"
+  "1":  { name: VDD, type: power }
+  "2":  { name: VOUT, type: analog }
+  "3":  { name: NC, type: nc }
+  "4":  { name: AGND, type: ground }
+  "5":  { name: SPI2C, type: input }
+  "6":  { name: SCLK/SCL, type: clock }
+  "7":  { name: SYNC/A0, type: input }
+  "8":  { name: SDIN/SDA, type: io }
+  "9":  { name: NC, type: nc }
+  "10": { name: VREFIO, type: analog }

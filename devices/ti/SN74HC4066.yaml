@@ -1,0 +1,41 @@
+# SN74HC4066 quadruple bilateral analog switch, 14-pin pin map of the D
+# (SOIC) and PW (TSSOP) packages from SCLS325K Figure 4-1 and Table 4-1
+# "Pin Functions" (page 3). nA/nB switch I/O -> analog, nC control ->
+# input.
+schema_version: "0.2"
+kind: device
+id: ti/SN74HC4066
+manufacturer: ti
+category: analog_switch
+family: SN74HC4066
+source: ti/SCLS325K
+
+parameters:
+  supply_voltage: { min: 1 V, max: 6 V, src: 'p4 "5.3 Recommended Operating Conditions, VCC"' }
+  supply_current:
+    max: 2 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: p5 "5.5 Electrical Characteristics, ICC, VCC 6V, TA = 25°C"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "5.3 Recommended Operating Conditions, TA"
+  esd_hbm:       { typ: 1000 V, src: 'p4 "5.2 ESD Ratings, HBM"' }
+  channel_count: { value: "4", src: 'p3 "Table 4-1 Pin Functions: switches 1-4"' }
+
+pins:
+  src:  p3 "Figure 4-1 (Top View) and Table 4-1 Pin Functions"
+  "1":  { name: 1A, type: analog }
+  "2":  { name: 1B, type: analog }
+  "3":  { name: 2B, type: analog }
+  "4":  { name: 2A, type: analog }
+  "5":  { name: 2C, type: input }
+  "6":  { name: 3C, type: input }
+  "7":  { name: GND, type: ground }
+  "8":  { name: 3A, type: analog }
+  "9":  { name: 3B, type: analog }
+  "10": { name: 4B, type: analog }
+  "11": { name: 4A, type: analog }
+  "12": { name: 4C, type: input }
+  "13": { name: 1C, type: input }
+  "14": { name: VCC, type: power }

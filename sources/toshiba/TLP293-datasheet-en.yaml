@@ -1,0 +1,17 @@
+# Official Toshiba TLP293 datasheet (English), the "Data sheet/English" link
+# (docget.jsp?did=14419) on Toshiba's TLP293 product page. Toshiba prints no
+# document number; the revision is identified by the date in every page
+# footer, "2026-08-05" ("Rev.7.0"). 15 PDF pages, read with pdftotext -layout;
+# the package is named on page 1 (TOSHIBA 11-3C1, the outline already in
+# packages/). Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/TLP293-datasheet-en
+sha256: 61652cfa24751a311aaf382755cca9fee955329258917a14e8e9b733541e5684
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=14419&prodName=TLP293
+publisher: toshiba
+document_id: TLP293_datasheet_en
+document_type: datasheet
+revision: 2026-08-05
+date: 2026-08-05

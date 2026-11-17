@@ -1,0 +1,45 @@
+# TLP250H gate-driver photocoupler (IRED + photo IC, totem-pole output,
+# +/-2.5 A), DIP8. Pin assignment from section 5 "Pin Assignment" on
+# page 2 of the TLP250H datasheet (2026-05-13): 1 N.C., 2 Anode,
+# 3 Cathode, 4 N.C., 5 GND, 6 VO (Output), 7 N.C., 8 VCC. LED terminals
+# passive. The output-side supply (VCC 10-30 V) and peak output current
+# have no optocoupler key and are not recorded. operating_temperature is
+# the range the electrical characteristics are specified over.
+schema_version: "0.2"
+kind: device
+id: toshiba/TLP250H
+manufacturer: toshiba
+category: optocoupler
+family: TLP250H
+source: toshiba/TLP250H-datasheet-en
+
+parameters:
+  forward_voltage:
+    min: 1.4 V
+    typ: 1.57 V
+    max: 1.8 V
+    at: { IF: 10 mA, TA: 25 °C }
+    src: p6 "10. Electrical Characteristics, Input forward voltage VF"
+  reverse_voltage: { max: 6 V, src: 'p4 "Absolute Maximum Ratings, LED, Input reverse voltage VR"' }
+  forward_current:
+    max: 20 mA
+    src: p4 "Absolute Maximum Ratings, LED, Input forward current IF"
+  isolation_voltage:
+    min: 3750 V
+    at: { t: 60 s }
+    src: p6 "Isolation Characteristics, Isolation voltage BVS (AC, Vrms)"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p6 "10. Electrical Characteristics, table condition Ta = -40 to 125 °C"
+
+pins:
+  src: 'p2 "5. Pin Assignment: 1 N.C., 2 Anode, 3 Cathode, 4 N.C., 5 GND, 6 VO, 7 N.C., 8 VCC"'
+  "1": { name: NC, type: nc }
+  "2": { name: ANODE, type: passive }
+  "3": { name: CATHODE, type: passive }
+  "4": { name: NC, type: nc }
+  "5": { name: GND, type: ground }
+  "6": { name: VO, type: output }
+  "7": { name: NC, type: nc }
+  "8": { name: VCC, type: power }

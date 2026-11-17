@@ -1,0 +1,16 @@
+schema_version: "0.2"
+kind: part
+id: analog-devices/ADG1408YRUZ
+manufacturer: analog-devices
+mpn: ADG1408YRUZ
+device: analog-devices/ADG1408
+
+package:
+  value: manufacturers/analog-devices/RU-16
+  src: p19 "Ordering Guide, Package Option RU-16; Figure 37"
+
+sources: [analog-devices/ADG1408_1409-revD]
+source: analog-devices/ADG1408_1409-revD
+
+existence: { status: verified, src: 'p19 "Ordering Guide, row ADG1408YRUZ (16-Lead TSSOP, RU-16)"' }
+lifecycle: { status: unknown }

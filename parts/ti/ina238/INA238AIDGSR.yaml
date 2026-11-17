@@ -1,0 +1,26 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SLYS025B PDF page 39, addendum dated 11-Sep-2026): "INA238AIDGSR | Active | Production | VSSOP (DGS) | 10 | 2500 | LARGE T&R | ... | -40 to 125 | 238I".
+# lifecycle "active" is that table's Status column.
+# Outline DGS0010A (4221984/A 05/2015) is the drawing revision
+# standards/MSOP10-3.0x3.0-P0.5-TI-DGS was read from, so it is reused.
+schema_version: "0.2"
+kind: part
+id: ti/INA238AIDGSR
+manufacturer: ti
+mpn: INA238AIDGSR
+device: ti/INA238
+
+package:
+  value: standards/MSOP10-3.0x3.0-P0.5-TI-DGS
+  src: p39 "Package Option Addendum, row "INA238AIDGSR", "VSSOP (DGS) | 10"; outline DGS0010A (4221984/A 05/2015) on page 43"
+
+sources: [ti/SLYS025B]
+source: ti/SLYS025B
+
+existence:
+  status: verified
+  src: p39 "Package Option Addendum, Packaging Information table, row "INA238AIDGSR""
+
+lifecycle:
+  status: active
+  src: p39 "Package Option Addendum, row "INA238AIDGSR", Status "Active""

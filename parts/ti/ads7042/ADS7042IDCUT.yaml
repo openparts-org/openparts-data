@@ -1,0 +1,29 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SBAS608C
+# (page 39): "ADS7042IDCUT Active Production VSSOP (DCU) | 8 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 125 7042".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet).
+# Package: VSSOP (DCU), outline DCU0008A (4225266/A) on page 43 -> manufacturers/ti/DCU0008A
+# (same drawing number and revision as the source that package was read from).
+schema_version: "0.2"
+kind: part
+id: ti/ADS7042IDCUT
+manufacturer: ti
+mpn: ADS7042IDCUT
+device: ti/ADS7042
+
+package:
+  value: manufacturers/ti/DCU0008A
+  src:
+    - p39 "PACKAGE OPTION ADDENDUM, row ADS7042IDCUT, Package column "VSSOP (DCU)""
+    - p43 "PACKAGE OUTLINE DCU0008A (4225266/A)"
+
+sources: [ti/SBAS608C]
+source: ti/SBAS608C
+
+existence:
+  status: verified
+  src: p39 "PACKAGE OPTION ADDENDUM, Packaging Information table, row ADS7042IDCUT"
+
+lifecycle:
+  status: active
+  src: p39 "PACKAGE OPTION ADDENDUM, row ADS7042IDCUT, Status column "Active""

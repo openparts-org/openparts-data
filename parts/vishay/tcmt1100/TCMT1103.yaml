@@ -1,0 +1,22 @@
+schema_version: "0.2"
+kind: part
+id: vishay/TCMT1103
+manufacturer: vishay
+mpn: TCMT1103
+device: vishay/TCMT1100
+package: { value: manufacturers/vishay/SOP4-83510, src: p7 "Package Dimensions" }
+sources: [vishay/83510]
+source: vishay/83510
+
+existence:
+  status: verified
+  src: p1 "Ordering Information, SSOP-4 row, CTR 100 to 200 (10 mA)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  current_transfer_ratio:
+    min: 100 %
+    max: 200 %
+    at: { VCE: 5 V, IF: 10 mA, TA: 25 °C }
+    src: p3 "Current Transfer Ratio, TCMT1103 row"

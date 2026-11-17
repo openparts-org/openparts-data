@@ -1,0 +1,62 @@
+# ADS1256 8-channel 24-bit SPI delta-sigma ADC, 28-pin SSOP (DB) pin map
+# from the "Terminal Functions" table, column "ADS1256" (SBAS288K page
+# 5), checked against the "PIN ASSIGNMENTS, SSOP PACKAGE (TOP VIEW)"
+# ADS1256 figure on the same page; all 28 pins match. SYNC/PDWN, RESET,
+# CS and DRDY are active low (overbars; written without them). XTAL1/
+# CLKIN and XTAL2 (crystal oscillator connections) typed clock, D0/
+# CLKOUT and D1..D3 (digital I/O) io, SCLK clock.
+# operating_temperature is the specified range of the Electrical
+# Characteristics (-40..85 °C; the operating range is -40..105 °C).
+# supply_voltage and supply_current are left out: AVDD (4.75-5.25 V) and
+# DVDD (1.8-3.6 V) have separate ranges and currents. No ESD rating is
+# printed.
+schema_version: "0.2"
+kind: device
+id: ti/ADS1256
+manufacturer: ti
+category: adc
+family: ADS1255/ADS1256
+source: ti/SBAS288K
+
+# Parameters (AI candidates, needs review).
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p4 "ELECTRICAL CHARACTERISTICS, Temperature Range: Specified"'
+  channel_count:
+    value: "8"
+    src: p5 "Terminal Functions, ADS1256 column, AIN0..AIN7 Analog input 0..7"
+
+pins:
+  src:
+    - p5 "Terminal Functions table, column "ADS1256""
+    - p5 "PIN ASSIGNMENTS, SSOP PACKAGE (TOP VIEW), ADS1256 figure (cross-check)"
+  "1":  { name: AVDD, type: power }
+  "2":  { name: AGND, type: ground }
+  "3":  { name: VREFN, type: analog }
+  "4":  { name: VREFP, type: analog }
+  "5":  { name: AINCOM, type: analog }
+  "6":  { name: AIN0, type: analog }
+  "7":  { name: AIN1, type: analog }
+  "8":  { name: AIN2, type: analog }
+  "9":  { name: AIN3, type: analog }
+  "10": { name: AIN4, type: analog }
+  "11": { name: AIN5, type: analog }
+  "12": { name: AIN6, type: analog }
+  "13": { name: AIN7, type: analog }
+  "14": { name: SYNC/PDWN, type: input }
+  "15": { name: RESET, type: input }
+  "16": { name: DVDD, type: power }
+  "17": { name: DGND, type: ground }
+  "18": { name: XTAL2, type: clock }
+  "19": { name: XTAL1/CLKIN, type: clock }
+  "20": { name: CS, type: input }
+  "21": { name: DRDY, type: output }
+  "22": { name: DOUT, type: output }
+  "23": { name: DIN, type: input }
+  "24": { name: SCLK, type: clock }
+  "25": { name: D0/CLKOUT, type: io }
+  "26": { name: D1, type: io }
+  "27": { name: D2, type: io }
+  "28": { name: D3, type: io }

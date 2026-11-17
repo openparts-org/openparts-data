@@ -1,0 +1,43 @@
+# 2.7 V dual-channel 10-bit SAR ADC with SPI interface (MCP3002), 8-pin
+# pin map from Table 3-1 "Pin Function Table", column "MSOP, PDIP, SOIC,
+# TSSOP" (page 12). Types: CS/SHDN and DIN input, CH0/CH1 analog, VSS
+# ground, DOUT output, CLK ("Serial Clock") clock, VDD/VREF ("Power
+# Supply and Reference Voltage Input") power.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP3002
+manufacturer: microchip
+category: adc
+family: MCP3002
+source: microchip/DS21294@revE
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: 'p3 "Electrical Characteristics, Power Requirements: Operating Voltage VDD"'
+  supply_current:
+    typ: 525 µA
+    max: 650 µA
+    at: { VDD: 5 V }
+    src: p3 "Elec. Char., Operating Current IDD, VDD = 5.0V, DOUT unloaded"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p4 "Temperature Ranges: Specified Temperature Range TA"'
+  esd_hbm:
+    typ: 4 kV
+    src: 'p2 "Absolute Maximum Ratings: ESD Protection On All Pins (HBM) 4 kV"'
+  channel_count: { value: "2", src: 'p12 "Table 3-1: CH0, CH1 "Channel 0/1 Analog Input""' }
+
+pins:
+  src: p12 "Table 3-1 "Pin Function Table", column "MSOP, PDIP, SOIC, TSSOP""
+  "1": { name: CS/SHDN, type: input }
+  "2": { name: CH0, type: analog }
+  "3": { name: CH1, type: analog }
+  "4": { name: VSS, type: ground }
+  "5": { name: DIN, type: input }
+  "6": { name: DOUT, type: output }
+  "7": { name: CLK, type: clock }
+  "8": { name: VDD/VREF, type: power }

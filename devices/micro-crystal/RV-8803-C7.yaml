@@ -1,0 +1,44 @@
+# RV-8803-C7 DTCXO temperature-compensated RTC module, I2C, 8-terminal
+# C7 ceramic package. Pin map from "2.2 PIN DESCRIPTION" (Application
+# Manual Rev. 1.7, page 8), checked against the "2.1 PINOUT" figure
+# (same page). SDA io; CLKOUT (push-pull clock output) clock_out; VDD
+# power; CLKOE (input enabling CLKOUT) input; INT (open-drain, active
+# LOW) output; EVI (External Event Interrupt Input) input; SCL ("I2C
+# Serial Clock Input") clock.
+# operating_temperature: -40..+85 °C; the manual notes support of +85 to
+# +105 °C "with limitations" (footnote 4), not recorded.
+schema_version: "0.2"
+kind: device
+id: micro-crystal/RV-8803-C7
+manufacturer: micro-crystal
+category: rtc
+family: RV-8803-C7
+source: micro-crystal/RV-8803-C7@rev1.7
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.5 V
+    max: 5.5 V
+    src: p55 "7.2 Operating Parameters, VDD Power Supply Voltage, time-keeping mode / I2C-bus (100 kHz)"
+  supply_current:
+    typ: 240 nA
+    max: 600 nA
+    at: { VDD: 3 V }
+    src: p55 "7.2 Operating Parameters, IVDD timekeeping, I2C inactive, CLKOUT disabled, VDD = 3.0 V"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p54 "7.1 Absolute Maximum Ratings, TOPR Operating Temperature -40 to +85 (4)"
+  esd_hbm: { typ: 2 kV, src: 'p54 "7.1 Absolute Maximum Ratings, VESD HBM ±2000 V"' }
+
+pins:
+  src: [p8 "2.2 PIN DESCRIPTION table", 'p8 "2.1 PINOUT figure, top view (cross-check)"']
+  "1": { name: SDA, type: io }
+  "2": { name: CLKOUT, type: clock_out }
+  "3": { name: VDD, type: power }
+  "4": { name: CLKOE, type: input }
+  "5": { name: VSS, type: ground }
+  "6": { name: INT, type: output }
+  "7": { name: EVI, type: input }
+  "8": { name: SCL, type: clock }

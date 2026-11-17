@@ -1,0 +1,20 @@
+# Official TI datasheet "ADS1219 4-channel, 1-kSPS, 24-bit delta-sigma ADC with I2C interface". Downloaded 2026-11-17 with wget from
+# the TI symlink URL below; revision read from the page header
+# "SBAS924A - JULY 2018 - REVISED NOVEMBER 2018". 56 PDF pages; text read with pdftotext -layout. Pin
+# configuration, specification tables and the PACKAGE OPTION ADDENDUM
+# were read from the extracted text; package outline pages named in the
+# part files were matched by drawing number and revision. Page numbers
+# in this dataset are PDF page indices. The PACKAGE OPTION ADDENDUM (PDF
+# page 44) is dated 10-Nov-2025 (newer than the datasheet revision).
+# sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SBAS924A
+sha256: 27bc93840376b1a06911a9c79fa7021d93fba22012a93467bb1c1522bcf28559
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/ads1219.pdf
+publisher: ti
+document_id: SBAS924A
+document_type: datasheet
+revision: A
+date: 2018-11

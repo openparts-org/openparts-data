@@ -1,0 +1,23 @@
+schema_version: "0.2"
+kind: part
+id: ti/LMC555IMX/NOPB
+manufacturer: ti
+mpn: LMC555IMX/NOPB
+device: ti/LMC555
+package: { value: manufacturers/ti/D0008A, src: p25 "D0008A package outline (4214825)" }
+sources: [ti/SNAS558N]
+source: ti/SNAS558N
+
+existence:
+  status: verified
+  src: p21 "Package option addendum table, row "LMC555IMX/NOPB" (SOIC (D) | 8)"
+
+lifecycle:
+  status: active
+  src: p21 "Package option addendum table, row "LMC555IMX/NOPB", Status "Active""
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "5.3 Recommended Operating Conditions, Temperature, LMC555IM row"

@@ -1,0 +1,27 @@
+schema_version: "0.2"
+kind: part
+id: ti/TLC555IDR
+manufacturer: ti
+mpn: TLC555IDR
+device: ti/TLC555
+package: { value: manufacturers/ti/D0008A, src: p38 "D0008A package outline (4214825)" }
+sources: [ti/SLFS043K]
+source: ti/SLFS043K
+
+existence:
+  status: verified
+  src: p29 "Package option addendum table, row "TLC555IDR" (SOIC (D) | 8)"
+
+lifecycle:
+  status: active
+  src: p29 "Package option addendum table, row "TLC555IDR", Status "Active""
+
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 15 V
+    src: p4 "5.3 Recommended Operating Conditions, VDD, TLC555I row"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "5.3 Recommended Operating Conditions, TA, TLC555I row"

@@ -1,0 +1,27 @@
+# MPN "MCP3423-E/UN" is PROBABLE: printed as MCP3423 ordering example c)
+# in the Product Identification System of microchip/DS22088@revC (page
+# 55), not in an orderable list. E = -40 to +125 C.
+# Package: UN drawing C04-021B (page 48) -> manufacturers/microchip/
+# MSOP10-UN-C04-021B (same drawing and revision, read from DS22187E).
+# lifecycle: not stated in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP3423-E-UN
+manufacturer: microchip
+mpn: MCP3423-E/UN
+device: microchip/MCP3423
+
+package:
+  value: manufacturers/microchip/MSOP10-UN-C04-021B
+  src:
+    - p55 "Product Identification System, Package "UN = Plastic Micro Small Outline (MSOP), 10-lead""
+    - p48 "10-Lead Plastic Micro Small Outline Package (UN), Microchip Technology Drawing C04-021B"
+
+sources: [microchip/DS22088@revC]
+source: microchip/DS22088@revC
+
+existence:
+  status: probable
+  src: p55 "Product Identification System, MCP3423 example c) MCP3423-E/UN"
+
+lifecycle: { status: unknown }

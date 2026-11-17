@@ -1,0 +1,47 @@
+# DAC121S101 12-bit SPI micro-power voltage-output DAC, 6-pin SOT (DDC)
+# pin map from the "Pin Functions" table, column "SOT NO." (SNAS265J
+# page 3), checked against the "DDC Package 6-Pin SOT Top View" figure on
+# the same page. SYNC is active low (overbar; written without it). VA
+# ("Power supply and Reference input") typed power, VOUT analog, SCLK
+# clock, DIN and SYNC input.
+# operating_temperature is the DAC121S101 row (the -Q1 is -40..125 °C).
+schema_version: "0.2"
+kind: device
+id: ti/DAC121S101-DDC
+manufacturer: ti
+category: dac
+family: DAC121S101
+source: ti/SNAS265J
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p5 "7.3 Recommended Operating Conditions, Supply Voltage, VA"
+  supply_current:
+    - max: 260 µA
+      at: { VDD: 5.5 V, TA: 25 °C, f: 30 MHz }
+      src: p6 "7.5 Elec. Char., IA Supply Current, Normal Mode, fSCLK = 30 MHz, VA = 5.5 V, TA = 25°C"
+    - max: 177 µA
+      at: { VDD: 3.6 V, TA: 25 °C, f: 30 MHz }
+      src: p6 "7.5 Elec. Char., IA Supply Current, Normal Mode, fSCLK = 30 MHz, VA = 3.6 V, TA = 25°C"
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p5 "7.3 Recommended Operating Conditions, Operating Temperature Range, DAC121S101"
+  esd_hbm: { typ: 2.5 kV, src: 'p4 "7.2 ESD Ratings, Human body model (HBM) ±2500 V"' }
+  channel_count:
+    value: "1"
+    src: p3 "Pin Functions, single VOUT pin (DAC Analog Output Voltage)"
+
+pins:
+  src:
+    - p3 "Pin Functions table, column "SOT NO.""
+    - p3 ""DDC Package 6-Pin SOT Top View" figure (cross-check)"
+  "1": { name: VOUT, type: analog }
+  "2": { name: GND, type: ground }
+  "3": { name: VA, type: power }
+  "4": { name: DIN, type: input }
+  "5": { name: SCLK, type: clock }
+  "6": { name: SYNC, type: input }

@@ -1,0 +1,18 @@
+# Official Microchip datasheet "23A640/23K640 64K SPI Bus Low-Power Serial SRAM". Downloaded 2026-11-17 with wget
+# from ww1.microchip.com (URL below). document_id / revision from the
+# printed footer "DS22126E-page N"; the Revision History lists "Revision E (10/2010)".
+# 28 PDF pages; text read with pdftotext -layout. Page numbers in this
+# dataset are PDF page indices (they equal the printed page numbers).
+# Package drawing numbers were rendered and read as images. sha256 is of
+# the PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS22126@revE
+sha256: 6d7c5906b6bb39c0c393723c37f9c4ee473d0b4b23a8813acc2c2b01c448b95e
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/22126E.pdf
+publisher: microchip
+document_id: DS22126
+document_type: datasheet
+revision: E
+date: 2010-10

@@ -1,0 +1,48 @@
+# CD4053B triple 2-channel analog multiplexer/demultiplexer (3x SPDT),
+# 16-pin pin map of the E, M, NS and PW packages from SCHS047O Table
+# 4-3 "Pin Functions CD4053B" (page 4), checked against Figure 4-3
+# (page 3). Names condensed from the table ("AX OR AY OUT/IN" ->
+# A_COM_OUT/IN, per its description "A common out/in"). Types as for
+# ti/CD4051B. channel_count 3 = the A/B/C switch sections. No supply
+# range in the Recommended Operating Conditions; left out.
+schema_version: "0.2"
+kind: device
+id: ti/CD4053B
+manufacturer: ti
+category: analog_switch
+family: CD405xB
+source: ti/SCHS047O
+
+parameters:
+  supply_current:
+    typ: 17 µA
+    max: 60 µA
+    at: { VDD: 5 V, TA: 25 °C }
+    src: p6 "5.5 Electrical Characteristics, Quiescent Device Current IDD, VDD 5V, 25°C"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p5 "5.3 Recommended Operating Conditions, Temperature Range"
+  esd_hbm: { typ: 3000 V, src: 'p5 "5.2 ESD Ratings, HBM, all pins"' }
+  channel_count: { value: "3", src: 'p4 "Table 4-3 Pin Functions CD4053B: A, B and C sections"' }
+
+pins:
+  src:
+    - p4 "Table 4-3 "Pin Functions CD4053B""
+    - p3 "Figure 4-3 "CD4053B E, M, NS, and PW Package" (Top View)"
+  "1":  { name: BY_IN/OUT, type: analog }
+  "2":  { name: BX_IN/OUT, type: analog }
+  "3":  { name: CY_IN/OUT, type: analog }
+  "4":  { name: C_COM_OUT/IN, type: analog }
+  "5":  { name: CX_IN/OUT, type: analog }
+  "6":  { name: INH, type: input }
+  "7":  { name: VEE, type: power }
+  "8":  { name: VSS, type: ground }
+  "9":  { name: C, type: input }
+  "10": { name: B, type: input }
+  "11": { name: A, type: input }
+  "12": { name: AX_IN/OUT, type: analog }
+  "13": { name: AY_IN/OUT, type: analog }
+  "14": { name: A_COM_OUT/IN, type: analog }
+  "15": { name: B_COM_OUT/IN, type: analog }
+  "16": { name: VDD, type: power }

@@ -1,0 +1,23 @@
+schema_version: "0.2"
+kind: part
+id: vishay/CNY17-4
+manufacturer: vishay
+mpn: CNY17-4
+device: vishay/CNY17
+
+package:
+  value: manufacturers/vishay/DIP6-22530
+  src: p7 "Package dimensions (drawing 22530), DIP-6"
+
+sources: [vishay/83606]
+source: vishay/83606
+
+existence: { status: verified, src: 'p1 "Ordering Information, DIP-6 row, CTR bin 160 to 320"' }
+lifecycle: { status: unknown }
+
+parameters:
+  current_transfer_ratio:
+    min: 160 %
+    max: 320 %
+    at: { VCE: 5 V, IF: 10 mA, TA: 25 °C }
+    src: p3 "Current Transfer Ratio, CNY17-4 row"

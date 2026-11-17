@@ -1,0 +1,21 @@
+schema_version: "0.2"
+kind: part
+id: ti/LM555CN/NOPB
+manufacturer: ti
+mpn: LM555CN/NOPB
+device: ti/LM555
+
+package:
+  value: standards/DIP8-W7.62-P2.54
+  src: ti/MPDI001 p1 "P (R-PDIP-T8) drawing 4040082/E, note C (JEDEC MS-001 BA) -- see ti/NE555P"
+
+sources: [ti/SNAS548D, ti/MPDI001]
+source: ti/SNAS548D
+
+existence:
+  status: verified
+  src: p17 "Package option addendum table, row "LM555CN/NOPB" (PDIP (P) | 8)"
+
+lifecycle:
+  status: active
+  src: p17 "Package option addendum table, row "LM555CN/NOPB", Status "Active""

@@ -1,0 +1,14 @@
+# Official TI datasheet (TLC555 LinCMOS timer). Revision read from the page header
+# "SLFS043K – AUGUST 1983 – REVISED JANUARY 2026". 47 PDF pages, text read with pdftotext -layout;
+# page numbers are PDF page indices. Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: ti/SLFS043K
+sha256: 18595d6adcc30d45c14fcf6eee24f23c971025e469560ed2cd21617c180a4eef
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/tlc555.pdf
+publisher: ti
+document_id: SLFS043K
+document_type: datasheet
+revision: K
+date: 2026-01

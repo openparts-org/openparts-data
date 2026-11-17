@@ -1,0 +1,37 @@
+# 5.5-V, 1.5-A single-channel load switch with quick output discharge,
+# DCK (SC-70-6) pinout. From SLVSEN5B "Pin Functions" table (page 3):
+# IN 1, GND 2, ON 3, NC 4, QOD 5, VOUT 6; checked against the "DCK
+# Package 6-Pin SC-70 Top View" figure (same page). IN/VOUT are the
+# switch terminals -> power; QOD (quick output discharge) -> analog;
+# NC "No connect pin, leave floating" -> nc.
+schema_version: "0.2"
+kind: device
+id: ti/TPS22919-DCK
+manufacturer: ti
+category: power_switch
+family: TPS22919
+source: ti/SLVSEN5B
+
+parameters:
+  input_voltage_max:
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, VIN input voltage range"
+  output_current:
+    max: 1.5 A
+    src: p4 "6.1 Absolute Maximum Ratings, IMAX maximum continuous current"
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA ambient temperature"
+  esd_hbm: { typ: 2 kV, src: 'p4 "6.2 ESD Ratings, HBM all pins ±2000 V"' }
+
+pins:
+  src:
+    - p3 ""Pin Functions" table (IN 1, GND 2, ON 3, NC 4, QOD 5, VOUT 6)"
+    - p3 ""DCK Package 6-Pin SC-70 Top View""
+  "1": { name: IN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: ON, type: input }
+  "4": { name: NC, type: nc }
+  "5": { name: QOD, type: analog }
+  "6": { name: VOUT, type: power }

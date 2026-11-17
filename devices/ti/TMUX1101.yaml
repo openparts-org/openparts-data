@@ -1,0 +1,32 @@
+# TMUX1101 5-V SPST analog switch (normally open), 5-pin pin map of the
+# DCK (SC70) and DBV (SOT-23) packages from SCDS410D Table 5-1 "Pin
+# Functions" (page 3; one pin-number column for both packages). D/S
+# switch terminals -> analog, SEL -> input, VDD power, GND ground.
+schema_version: "0.2"
+kind: device
+id: ti/TMUX1101
+manufacturer: ti
+category: analog_switch
+family: TMUX110x
+source: ti/SCDS410D
+
+parameters:
+  supply_voltage: { min: 1.08 V, max: 5.5 V, src: 'p4 "6.3 Recommended Operating Conditions, VDD"' }
+  supply_current:
+    typ: 0.003 µA
+    at: { VDD: 5 V, TA: 25 °C }
+    src: p6 "6.5 Electrical Characteristics (VDD = 5V), IDD, 25°C"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA"
+  esd_hbm:       { typ: 2000 V, src: 'p4 "6.2 ESD Ratings, HBM, all pins"' }
+  channel_count: { value: "1", src: 'p3 "Table 5-1 Pin Functions: one D/S switch"' }
+
+pins:
+  src: p3 "Table 5-1 Pin Functions"
+  "1": { name: D, type: analog }
+  "2": { name: S, type: analog }
+  "3": { name: GND, type: ground }
+  "4": { name: SEL, type: input }
+  "5": { name: VDD, type: power }

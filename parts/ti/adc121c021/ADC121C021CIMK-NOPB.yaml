@@ -1,0 +1,29 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SNAS415F
+# (page 36): "ADC121C021CIMK/NOPB Active Production SOT-23- 1000 | SMALL T&R Yes SN Level-1-260C-UNLIM -40 to 105 X30C".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet).
+# Package: SOT-23-THIN (DDC), outline DDC0006A (4214841/E) on page 44 -> manufacturers/ti/DDC0006A
+# (same drawing number and revision as the source that package was read from).
+schema_version: "0.2"
+kind: part
+id: ti/ADC121C021CIMK-NOPB
+manufacturer: ti
+mpn: ADC121C021CIMK/NOPB
+device: ti/ADC121C021-DDC
+
+package:
+  value: manufacturers/ti/DDC0006A
+  src:
+    - p36 "PACKAGE OPTION ADDENDUM, row ADC121C021CIMK/NOPB, Package column "SOT-23-THIN (DDC)""
+    - p44 "PACKAGE OUTLINE DDC0006A (4214841/E)"
+
+sources: [ti/SNAS415F]
+source: ti/SNAS415F
+
+existence:
+  status: verified
+  src: p36 "PACKAGE OPTION ADDENDUM, Packaging Information table, row ADC121C021CIMK/NOPB"
+
+lifecycle:
+  status: active
+  src: p36 "PACKAGE OPTION ADDENDUM, row ADC121C021CIMK/NOPB, Status column "Active""

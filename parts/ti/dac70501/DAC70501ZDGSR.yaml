@@ -1,0 +1,29 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SBAS794E
+# (page 39): "DAC70501ZDGSR Active Production VSSOP (DGS) | 10 2500 | LARGE T&R Yes NIPDAUAG | SN Level-2-260C-1 YEAR -40 to 125 751Z".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet).
+# Package: VSSOP (DGS), outline DGS0010A (4221984/A) on page 45 -> standards/MSOP10-3.0x3.0-P0.5-TI-DGS
+# (same drawing number and revision as the source that package was read from).
+schema_version: "0.2"
+kind: part
+id: ti/DAC70501ZDGSR
+manufacturer: ti
+mpn: DAC70501ZDGSR
+device: ti/DAC70501
+
+package:
+  value: standards/MSOP10-3.0x3.0-P0.5-TI-DGS
+  src:
+    - p39 "PACKAGE OPTION ADDENDUM, row DAC70501ZDGSR, Package column "VSSOP (DGS)""
+    - p45 "PACKAGE OUTLINE DGS0010A (4221984/A)"
+
+sources: [ti/SBAS794E]
+source: ti/SBAS794E
+
+existence:
+  status: verified
+  src: p39 "PACKAGE OPTION ADDENDUM, Packaging Information table, row DAC70501ZDGSR"
+
+lifecycle:
+  status: active
+  src: p39 "PACKAGE OPTION ADDENDUM, row DAC70501ZDGSR, Status column "Active""

@@ -1,0 +1,17 @@
+schema_version: "0.2"
+kind: part
+id: ti/TMUX1101DBVR
+manufacturer: ti
+mpn: TMUX1101DBVR
+device: ti/TMUX1101
+package: { value: manufacturers/ti/DBV0005A, src: p32 "DBV0005A package outline (4214839/K)" }
+sources: [ti/SCDS410D]
+source: ti/SCDS410D
+
+existence:
+  status: verified
+  src: p28 "Package option addendum table, row "TMUX1101DBVR" (SOT-23 (DBV) | 5)"
+
+lifecycle:
+  status: active
+  src: p28 "Package option addendum table, row "TMUX1101DBVR", Status "Active""

@@ -1,0 +1,15 @@
+# Official Vishay datasheet "TCMT110. Series Optocoupler, Phototransistor Output, Half Pitch Mini-Flat Package", document number 83510. Revision and
+# date from the page footer "Rev. 3.1, 25-Jun-2018". 9 PDF pages, text read with
+# pdftotext -layout; the package drawing (page 7) is vector art and was
+# rendered and read as an image. Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: vishay/83510
+sha256: 23b23578891d5bc7623fe5aa33d976e42846f1c175c48186edcfda604d436606
+retrieved: 2026-11-17
+url: https://www.vishay.com/docs/83510/tcmt1100.pdf
+publisher: vishay
+document_id: "83510"
+document_type: datasheet
+revision: "3.1"
+date: 2018-06-25

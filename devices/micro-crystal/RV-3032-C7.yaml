@@ -1,0 +1,45 @@
+# RV-3032-C7 DTCXO temperature-compensated RTC module, I2C, 8-terminal
+# C7 ceramic package. Pin map from "2.2 PIN DESCRIPTION" (Application
+# Manual Rev. 1.3, page 10), checked against the "2.1 PINOUT" figure
+# (same page). VBACKUP/VDD power; SDA io; INT (open-drain, active LOW)
+# output; EVI (External Event Input) input; CLKOUT (push-pull clock
+# output) clock_out; SCL ("I2C Serial Clock Input") clock.
+# supply_voltage: the operating-parameters header range "VDD = 1.4 to
+# 5.5 V", equal to the I2C-bus (100 kHz) row; timekeeping alone runs
+# from 1.3 V. operating_temperature: -40..+85 °C; +85 to +105 °C is
+# supported "with limitations" (footnote 4), not recorded.
+schema_version: "0.2"
+kind: device
+id: micro-crystal/RV-3032-C7
+manufacturer: micro-crystal
+category: rtc
+family: RV-3032-C7
+source: micro-crystal/RV-3032-C7@rev1.3
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.4 V
+    max: 5.5 V
+    src: 'p128 "7.2 Operating Parameters, VDD, I2C-bus (100 kHz) row (timekeeping mode: 1.3 to 5.5 V)"'
+  supply_current:
+    typ: 160 nA
+    max: 210 nA
+    at: { VDD: 3 V, TA: 25 °C }
+    src: p128 "7.2 Operating Parameters, IDD timekeeping, I2C inactive, CLKOUT disabled, VDD = 3.0 V, TA = 25°C"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p127 "7.1 Absolute Maximum Ratings, TOPR Operating Temperature -40 to +85 (4)"
+  esd_hbm: { typ: 2 kV, src: 'p127 "7.1 Absolute Maximum Ratings, VESD HBM ±2000 V"' }
+
+pins:
+  src: [p10 "2.2 PIN DESCRIPTION table", 'p10 "2.1 PINOUT figure, top view (cross-check)"']
+  "1": { name: VBACKUP, type: power }
+  "2": { name: SDA, type: io }
+  "3": { name: INT, type: output }
+  "4": { name: EVI, type: input }
+  "5": { name: VSS, type: ground }
+  "6": { name: VDD, type: power }
+  "7": { name: CLKOUT, type: clock_out }
+  "8": { name: SCL, type: clock }

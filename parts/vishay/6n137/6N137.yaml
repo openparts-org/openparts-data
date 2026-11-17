@@ -1,0 +1,12 @@
+schema_version: "0.2"
+kind: part
+id: vishay/6N137
+manufacturer: vishay
+mpn: 6N137
+device: vishay/6N137
+package: { value: manufacturers/vishay/DIP8-84732, src: 'p11 "Package Dimensions, DIP-8"' }
+sources: [vishay/84732]
+source: vishay/84732
+
+existence: { status: verified, src: 'p1 "Ordering Information, DIP-8 row, CMR 1000 V/us"' }
+lifecycle: { status: unknown }

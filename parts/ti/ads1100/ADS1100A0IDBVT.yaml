@@ -1,0 +1,29 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SBAS239B
+# (page 16): "ADS1100A0IDBVT Active Production SOT-23 (DBV) | 6 250 | SMALL T&R Yes NIPDAU Level-1-260C-UNLIM -40 to 85 AD0".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet).
+# Package: SOT-23 (DBV), outline DBV0006A (4214840/G) on page 20 -> manufacturers/ti/DBV0006A
+# (same drawing number and revision as the source that package was read from).
+schema_version: "0.2"
+kind: part
+id: ti/ADS1100A0IDBVT
+manufacturer: ti
+mpn: ADS1100A0IDBVT
+device: ti/ADS1100
+
+package:
+  value: manufacturers/ti/DBV0006A
+  src:
+    - p16 "PACKAGE OPTION ADDENDUM, row ADS1100A0IDBVT, Package column "SOT-23 (DBV)""
+    - p20 "PACKAGE OUTLINE DBV0006A (4214840/G)"
+
+sources: [ti/SBAS239B]
+source: ti/SBAS239B
+
+existence:
+  status: verified
+  src: p16 "PACKAGE OPTION ADDENDUM, Packaging Information table, row ADS1100A0IDBVT"
+
+lifecycle:
+  status: active
+  src: p16 "PACKAGE OPTION ADDENDUM, row ADS1100A0IDBVT, Status column "Active""

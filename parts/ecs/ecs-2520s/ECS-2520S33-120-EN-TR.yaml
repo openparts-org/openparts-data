@@ -1,0 +1,25 @@
+# ECS ECS-2520S33-120-EN-TR: ECS-2520S HCMOS oscillator, 33 (+3.3 V), 120 = 12
+# MHz (p2 FREQUENCY ABBREVIATIONS), E (+-15 ppm inclusive stability), N
+# (-40 ~ +85 C), TR (tape & reel, 1K). existence: probable -- assembled
+# from the p1 PART NUMBERING GUIDE. lifecycle unknown.
+schema_version: "0.2"
+kind: part
+id: ecs/ECS-2520S33-120-EN-TR
+manufacturer: ecs
+mpn: ECS-2520S33-120-EN-TR
+device: ecs/ECS-2520S
+package: manufacturers/ecs/LGA4-2.5x2.0-ECS-2520S
+sources: [ecs/ECS-2520S]
+source: ecs/ECS-2520S
+
+existence: { status: probable, src: 'p1 "PART NUMBERING GUIDE, 33, 120, E, N, TR"' }
+lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  frequency: { typ: 12 MHz, src: 'p2 "FREQUENCY ABBREVIATIONS, code 120"' }
+  frequency_stability:
+    tol: ±15 ppm
+    at: { TA: -40..85 °C }
+    src: p1 "ELECTRICAL CHARACTERISTICS, Frequency Stability EN (-40 ~ +85°C), inclusive"
+  supply_voltage: { typ: 3.3 V, src: 'p1 "PART NUMBERING GUIDE, Voltage 33 = +3.3V (Vdd ±10%)"' }

@@ -1,0 +1,53 @@
+# ADS7830 8-bit, 8-channel I2C sampling ADC, 16-pin TSSOP (PW) pin map
+# from "PIN DESCRIPTIONS" (SBAS302C page 2), checked against the "PIN
+# CONFIGURATION, PW PACKAGE TSSOP-16 (Top View)" figure on the same page;
+# all 16 pins match. CH0..CH7, COM and REFIN/REFOUT typed analog, A0/A1
+# (slave address bits) input, SCL clock, SDA io, +VDD power.
+# supply_voltage is left out: the two Electrical Characteristics tables
+# give separate specified ranges (2.7-3.6 V and 4.75-5.25 V), no single
+# range. No ESD rating is printed. f = SCL clock frequency.
+schema_version: "0.2"
+kind: device
+id: ti/ADS7830
+manufacturer: ti
+category: adc
+family: ADS7830
+source: ti/SBAS302C
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_current:
+    - typ: 225 µA
+      max: 320 µA
+      at: { VDD: 2.7 V, f: 3.4 MHz }
+      src: p4 "Elec. Char. +2.7V, Quiescent Current, High-Speed Mode SCL = 3.4MHz"
+    - typ: 750 µA
+      max: 1000 µA
+      at: { VDD: 5 V, f: 3.4 MHz }
+      src: p6 "Elec. Char. +5V, Quiescent Current, High-Speed Mode SCL = 3.4MHz"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: 'p4 "Elec. Char. +2.7V, TEMPERATURE RANGE: Specified Performance"'
+  channel_count: { value: "8", src: 'p2 "PIN DESCRIPTIONS, CH0..CH7 Analog Input Channel 0..7"' }
+
+pins:
+  src:
+    - p2 "PIN DESCRIPTIONS table"
+    - p2 "PIN CONFIGURATION, PW PACKAGE TSSOP-16 (Top View) (cross-check)"
+  "1":  { name: CH0, type: analog }
+  "2":  { name: CH1, type: analog }
+  "3":  { name: CH2, type: analog }
+  "4":  { name: CH3, type: analog }
+  "5":  { name: CH4, type: analog }
+  "6":  { name: CH5, type: analog }
+  "7":  { name: CH6, type: analog }
+  "8":  { name: CH7, type: analog }
+  "9":  { name: GND, type: ground }
+  "10": { name: REFIN/REFOUT, type: analog }
+  "11": { name: COM, type: analog }
+  "12": { name: A0, type: input }
+  "13": { name: A1, type: input }
+  "14": { name: SCL, type: clock }
+  "15": { name: SDA, type: io }
+  "16": { name: +VDD, type: power }

@@ -1,0 +1,16 @@
+# Official TI datasheet for bq21040 (0.8-A single-input, single-cell Li-Ion/Li-Pol linear charger, SOT-23). Downloaded 2026-11-17 with curl from the
+# TI symlink URL below; revision read from the page header
+# "SLUSCE2D – APRIL 2016 – REVISED JANUARY 2019". 31 PDF pages; text read with pdftotext -layout, the
+# package outline drawing pages rendered with pdftoppm. Page numbers in
+# this dataset are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: ti/SLUSCE2D
+sha256: 66c454e4978439d20bfa64038ffd8e0b85bb0d9c0cc421c6b7a972cbdbb82f3f
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/bq21040.pdf
+publisher: ti
+document_id: SLUSCE2D
+document_type: datasheet
+revision: D
+date: 2019-01

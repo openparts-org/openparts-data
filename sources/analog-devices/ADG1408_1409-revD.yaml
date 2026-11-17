@@ -1,0 +1,18 @@
+# Official Analog Devices data sheet "ADG1408/ADG1409 4 Ohm RON, 4-/8-
+# Channel, +/-15 V/+12 V/+/-5 V iCMOS Multiplexers", Rev. D (page 1 and
+# every page footer "Rev. D | Page N of 19"; revision history "6/2016 -
+# Rev. C to Rev. D"). Downloaded with wget after curl failed with an
+# HTTP/2 stream error (one retry with another standard tool). 19 PDF
+# pages = printed pages; text read with pdftotext -layout; the RU-16
+# outline (page 19) was rendered and read as an image.
+schema_version: "0.2"
+kind: source
+id: analog-devices/ADG1408_1409-revD
+sha256: 8589fc50b566d2d5569eb2d33fb2deed238e98642e4e11f81c0f6c1f61c47b2b
+retrieved: 2026-11-17
+url: https://www.analog.com/media/en/technical-documentation/data-sheets/ADG1408_1409.pdf
+publisher: analog-devices
+document_id: ADG1408_1409
+document_type: datasheet
+revision: D
+date: 2016-06

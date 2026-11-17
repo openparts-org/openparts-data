@@ -1,0 +1,17 @@
+# Official DS1307 data sheet (Maxim Integrated layout, now Analog
+# Devices). It prints no 19-xxxx number or revision letter; the page 1
+# footer reads "REV: 3/15" and the last Revision History entry is
+# 3/15, so the id carries the date. Downloaded 2026-11-17 with wget from
+# analog.com (URL below). 14 PDF pages; read with pdftotext -layout.
+# Page numbers are PDF page indices ("n of 14").
+schema_version: "0.2"
+kind: source
+id: analog-devices/DS1307@2015-03
+sha256: c81233053aa1da1571258d117bf4ce7bcef8f6225e6895259add55809189516a
+retrieved: 2026-11-17
+url: https://www.analog.com/media/en/technical-documentation/data-sheets/DS1307.pdf
+publisher: analog-devices
+document_id: DS1307
+document_type: datasheet
+revision: 3/15
+date: 2015-03

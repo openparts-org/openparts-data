@@ -1,0 +1,30 @@
+# Type number "PCF8523T/1" from Table 2 "Ordering options" of
+# nxp/PCF8523@rev7 (page 2): sales item 935293581118, orderable part
+# number PCF8523T/1,118 (tape and reel, 13 inch). Table 1 gives the type
+# PCF8523T as SO8, SOT96-1. Package: Fig 39 "Package outline SOT96-1
+# (SO8) of PCF8523T" (page 56, rendered; issue date 03-02-18): every mm
+# value (A 1.75 max, A1 0.10-0.25, A2 1.25-1.45, bp 0.36-0.49, c
+# 0.19-0.25, D 4.8-5.0, E 3.8-4.0, e 1.27, HE 5.8-6.2, Lp 0.4-1.0)
+# equals manufacturers/nxp/SOT96-1; reused.
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCF8523T-1
+manufacturer: nxp
+mpn: PCF8523T/1
+device: nxp/PCF8523
+
+package:
+  value: manufacturers/nxp/SOT96-1
+  src:
+    - p2 "Table 1 Ordering information, row PCF8523T, SO8, SOT96-1"
+    - p56 "Fig 39 Package outline SOT96-1 (SO8) of PCF8523T"
+
+sources: [nxp/PCF8523@rev7]
+source: nxp/PCF8523@rev7
+
+existence:
+  status: verified
+  src: p2 "Table 2 Ordering options, PCF8523T/1, orderable part number PCF8523T/1,118"
+
+lifecycle: { status: unknown }

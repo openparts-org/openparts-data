@@ -1,0 +1,43 @@
+# 23LCV512 512 Kbit SPI/SDI serial SRAM with external battery backup (VBAT),
+# 8-lead SOIC/TSSOP/PDIP pinout from the "Pin Function Table" and the
+# "Package Types" figure "SOIC/TSSOP/PDIP" (page 1). Names as printed
+# (Vss, Vcc, SO/SIO1, SI/SIO0); pin 3 is NC in the figure (typed nc).
+# Types: CS, SCK input; SO/SIO1, SI/SIO0 io; VBAT ("External Backup
+# Supply Input") and Vcc power; Vss ground. Preliminary datasheet.
+schema_version: "0.2"
+kind: device
+id: microchip/23LCV512
+manufacturer: microchip
+category: sram
+family: 23LCV512
+source: microchip/DS25157@revA
+
+# Parameters (AI candidates, needs review).
+parameters:
+  capacity:
+    typ: 512 Kbit
+    src: 'p1 "Description: "The ... 23LCV512 is a 512 Kbit Serial SRAM device""'
+  supply_voltage:
+    min: 2.5 V
+    max: 5.5 V
+    src: p2 "Table 1-1 D001 VCC Supply voltage, 23LCV512"
+  supply_current:
+    typ: 3 mA
+    max: 10 mA
+    at: { VCC: 5.5 V }
+    src: p2 "Table 1-1 D008 ICC Read Operating current, FCLK = 20 MHz, 5.5V"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p2 "Table 1-1 DC Characteristics header: Industrial (I): TA = -40°C to +85°C"'
+
+pins:
+  src: [p1 ""Pin Function Table"", p1 ""Package Types" figure "SOIC/TSSOP/PDIP""]
+  "1": { name: CS, type: input }
+  "2": { name: SO/SIO1, type: io }
+  "3": { name: NC, type: nc }
+  "4": { name: Vss, type: ground }
+  "5": { name: SI/SIO0, type: io }
+  "6": { name: SCK, type: input }
+  "7": { name: VBAT, type: power }
+  "8": { name: Vcc, type: power }

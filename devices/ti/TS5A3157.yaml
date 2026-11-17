@@ -1,0 +1,34 @@
+# TS5A3157 single SPDT analog switch, 6-pin pin map of the DBV (SOT-23)
+# and DCK (SC70) packages from SCDS219D Figure 4-1 and Table 4-1 "Pin
+# Functions" (page 3). NC is the normally-closed switch port (I/O), not
+# a no-connect. NO/NC/COM -> analog, IN select -> input.
+schema_version: "0.2"
+kind: device
+id: ti/TS5A3157
+manufacturer: ti
+category: analog_switch
+family: TS5A3157
+source: ti/SCDS219D
+
+parameters:
+  supply_voltage: { min: 1.65 V, max: 5.5 V, src: 'p5 "5.4 Recommended Operating Conditions, V+"' }
+  supply_current:
+    typ: 2.5 µA
+    max: 5 µA
+    at: { VCC: 5.5 V, TA: 25 °C }
+    src: p7 "5.5 Electrical Characteristics, I+ supply current, V+ 5.5, 25°C"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p5 "5.4 Recommended Operating Conditions, TA"
+  esd_hbm:       { typ: 2000 V, src: 'p4 "5.2 ESD Ratings, HBM"' }
+  channel_count: { value: "1", src: 'p3 "Table 4-1 Pin Functions: one COM/NO/NC switch"' }
+
+pins:
+  src: p3 "Figure 4-1 DBV and DCK Packages (Top View) and Table 4-1 Pin Functions"
+  "1": { name: NO, type: analog }
+  "2": { name: GND, type: ground }
+  "3": { name: NC, type: analog }
+  "4": { name: COM, type: analog }
+  "5": { name: V+, type: power }
+  "6": { name: IN, type: input }

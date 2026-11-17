@@ -1,0 +1,17 @@
+# Official NXP PCF8523 product data sheet, "Rev. 7 — 28 April 2015"
+# (page footers). Downloaded 2026-11-17 with wget from nxp.com (URL
+# below). 78 PDF pages; read with pdftotext -layout (the text layer
+# drops minus signs; signed values were read in context). The SO8
+# outline (page 56) is an encoded font and was rendered and read as an
+# image. Page numbers are PDF page indices ("n of 78").
+schema_version: "0.2"
+kind: source
+id: nxp/PCF8523@rev7
+sha256: 409cb5ca8b0d04bcd4df3f2db463bcf35225b339bca2c5b0ee621636e7d42c3b
+retrieved: 2026-11-17
+url: https://www.nxp.com/docs/en/data-sheet/PCF8523.pdf
+publisher: nxp
+document_id: PCF8523
+document_type: datasheet
+revision: "7"
+date: 2015-04-28

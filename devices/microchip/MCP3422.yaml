@@ -1,0 +1,48 @@
+# 18-bit 2-channel delta-sigma I2C ADC with 2.048 V reference (MCP3422,
+# family MCP3422/3/4), pin map from Table 3-1 "Pin Function Table",
+# column "MCP3422 MSOP, SOIC" (DS22088C page 11), checked against the "Package Types"
+# figure (page 2). The 2x3 DFN uses the same numbering plus exposed pad 9 (not covered). Types: CHn+/CHn- analog, VSS ground, VDD
+# power, SDA io, SCL ("Serial Clock Pin") clock, Adr0/Adr1 (address
+# selection) input.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP3422
+manufacturer: microchip
+category: adc
+family: MCP3422/3/4
+source: microchip/DS22088@revC
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: 'p6 "Electrical Specifications, Power Requirements: Voltage Range VDD"'
+  supply_current:
+    typ: 145 µA
+    max: 180 µA
+    at: { VDD: 5 V }
+    src: p6 "Elec. Spec., Supply Current during Conversion IDDA, VDD = 5.0V"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p7 "Temperature Characteristics: Specified Temperature Range TA"'
+  esd_hbm:
+    typ: 6 kV
+    src: 'p5 "Absolute Maximum Ratings: ESD protection on all pins ≥ 6 kV HBM"'
+  channel_count:
+    value: "2"
+    src: 'p2 "Description: MCP3422 and MCP3423 have two, MCP3424 four differential input channels"'
+
+pins:
+  src:
+    - p11 "Table 3-1 "Pin Function Table", column "MCP3422 MSOP, SOIC""
+    - p2 ""Package Types" figure (cross-check)"
+  "1": { name: CH1+, type: analog }
+  "2": { name: CH1-, type: analog }
+  "3": { name: VDD, type: power }
+  "4": { name: SDA, type: io }
+  "5": { name: SCL, type: clock }
+  "6": { name: VSS, type: ground }
+  "7": { name: CH2+, type: analog }
+  "8": { name: CH2-, type: analog }

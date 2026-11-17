@@ -1,0 +1,23 @@
+schema_version: "0.2"
+kind: part
+id: ti/SN74LVC1G66DCKR
+manufacturer: ti
+mpn: SN74LVC1G66DCKR
+device: ti/SN74LVC1G66
+package: { value: manufacturers/ti/DCK0005A, src: p31 "DCK0005A package outline (4214834/G)" }
+sources: [ti/SCES323R]
+source: ti/SCES323R
+
+existence:
+  status: verified
+  src: p21 "Package option addendum table, row "SN74LVC1G66DCKR" (SC70 (DCK) | 5)"
+
+lifecycle:
+  status: active
+  src: p21 "Package option addendum table, row "SN74LVC1G66DCKR", Status "Active""
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p6 "5.3 Recommended Operating Conditions, TA, DCK, DBV Packages row"

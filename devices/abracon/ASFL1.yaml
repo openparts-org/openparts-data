@@ -1,0 +1,31 @@
+# Abracon ASFL1 3.3 V HCMOS/TTL compatible SMD crystal clock oscillator,
+# 4-pad 5.0 x 3.2 mm ceramic package. Pin names from the p2 "Pin /
+# Function" table; pin 1 tri-state ("1" or open = oscillation).
+# Frequency, operating temperature and stability per Part.
+schema_version: "0.2"
+kind: device
+id: abracon/ASFL1
+manufacturer: abracon
+category: oscillator
+family: ASFL1
+source: abracon/ASFL1-DS
+
+# Parameters (AI candidates, needs review).
+parameters:
+  aging:
+    tol: ±5 ppm
+    at: { TA: 25 °C }
+    src: p1 "Standard Specifications, Aging -5.0 / +5.0 ppm, @+25°C first year"
+  clock_output: { value: cmos, src: 'p1 "Title, 3.3V HCMOS/TTL compatible; Output Load 15 pF"' }
+  supply_voltage:
+    min: 2.97 V
+    typ: 3.3 V
+    max: 3.63 V
+    src: p1 "Standard Specifications, Supply Voltage (Vdd)"
+
+pins:
+  src: p2 "Pin / Function table"
+  "1": { name: Tri-State, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: Output, type: clock_out }
+  "4": { name: Vdd, type: power }

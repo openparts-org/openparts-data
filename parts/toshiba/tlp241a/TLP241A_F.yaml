@@ -1,0 +1,23 @@
+# TLP241A, through-hole DIP4 (TOSHIBA 11-5B2S, magazine). The order code
+# is a row of section 20 "Ordering Information (Example of Item Name)"
+# (page 13: "TLP241A(F", TH, magazine 100 pcs); the table is labelled an
+# example, so existence is `probable`.
+schema_version: "0.2"
+kind: part
+id: toshiba/TLP241A(F
+manufacturer: toshiba
+mpn: TLP241A(F
+device: toshiba/TLP241A
+
+package:
+  value: manufacturers/toshiba/11-5B2S
+  src: p14 "Package Dimensions, TLP241A, TOSHIBA 11-5B2S"
+
+sources: [toshiba/TLP241A-datasheet-en]
+source: toshiba/TLP241A-datasheet-en
+
+existence:
+  status: probable
+  src: p13 "20. Ordering Information (Example of Item Name), row TLP241A(F"
+
+lifecycle: { status: unknown }

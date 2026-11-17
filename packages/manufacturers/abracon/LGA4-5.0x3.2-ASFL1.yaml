@@ -1,0 +1,56 @@
+# Abracon ASFL1 4-pad ceramic oscillator package, 5.0 x 3.2 x 1.3 mm max,
+# from the p2 "OUTLINE DRAWING" of abracon/ASFL1-DS (raster, 300 dpi
+# render of the bottom view and land pattern). Frame as
+# manufacturers/abracon/LGA4-2.5x2.0-P1.35-ASDMB: lga, two terminals on
+# each short side's row, body_width = the long side (X). Top view
+# numbering: 4 top-left, 3 top-right, 1 bottom-left (dot), 2
+# bottom-right -> pad_order [4, 1, 2, 3].
+# Bottom view: "2.5±0.1" between terminal centres in X (extension lines
+# on the castellation centres), "1.0±0.15" terminal extent in Y;
+# "1.2±0.1" and "0.8±0.1" are drawn not to scale and their reference
+# edges are not clear -> lead_length/lead_width left out.
+# pitch = the land pattern's 2.2 between pad centres in Y (inches 0.087),
+# taken as the terminal pitch: reviewer check.
+# pads (Recommended land pattern): 1.7 (X) x 1.5 (Y); 2.54 (X) and 2.2
+# (Y) between pad CENTRES (extension lines on the pad centres, checked on
+# the render). Centres x = +-1.27, y = +-1.1.
+schema_version: "0.2"
+kind: package
+id: manufacturers/abracon/LGA4-5.0x3.2-ASFL1
+family: lga
+lead_count: 4
+
+lead_layout:
+  value: [2, 0, 2, 0]
+  src:   'p2 "Outline drawing, bottom view: two terminals on each long side"'
+
+source: abracon/ASFL1-DS
+
+pitch: { typ: 2.2 mm, src: 'p2 "Recommended land pattern, 0.087 (2.2) (see header)"' }
+
+pad_order:
+  value: ["4", "1", "2", "3"]
+  src:   p2 "Outline drawing, top view numbering, pin 1 dot bottom left"
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:
+    min: 4.8 mm
+    typ: 5 mm
+    max: 5.2 mm
+    src: p2 "Outline drawing, top view 0.2±0.008 (5.0±0.2)"
+  body_length:
+    min: 3 mm
+    typ: 3.2 mm
+    max: 3.4 mm
+    src: p2 "Outline drawing, top view 0.13±0.008 (3.2±0.2)"
+  body_height: { max: 1.3 mm, src: 'p2 "Outline drawing, side view 0.051 max. (1.3 max.)"' }
+
+pads:
+  value:
+    - { number: "1", x: -1.27, y: -1.1, width: 1.7, length: 1.5 }
+    - { number: "2", x: 1.27, y: -1.1, width: 1.7, length: 1.5 }
+    - { number: "3", x: 1.27, y: 1.1, width: 1.7, length: 1.5 }
+    - { number: "4", x: -1.27, y: 1.1, width: 1.7, length: 1.5 }
+  src: p2 "Recommended land pattern, (2.54), (2.2), (1.7), (1.5) (see header)"

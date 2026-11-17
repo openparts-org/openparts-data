@@ -1,0 +1,28 @@
+# MPN from the "Product Identification System" (DS22036B page 19),
+# example a) "MCP73811T-420I/OT: 4.2V Charger, SOT-23-5 pkg." -- an
+# ordering example, not an orderable list -> existence probable (the
+# page 15 marking table also lists it). Fields: T = tape and reel, 420 =
+# 4.2V "Standard", I = -40°C to +85°C, OT = SOT-23 5-lead -> drawing
+# C04-091B (page 16, rendered), the drawing
+# manufacturers/microchip/SOT23-5-OT-C04-091B was read from (all rows
+# match). The id replaces the "/" with "-". lifecycle: no
+# production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP73811T-420I-OT
+manufacturer: microchip
+mpn: MCP73811T-420I/OT
+device: microchip/MCP73811-OT
+
+package:
+  value: manufacturers/microchip/SOT23-5-OT-C04-091B
+  src: p19 "Product Identification System, Package Type "OT = Small Outline Transistor (SOT-23), 5-lead""
+
+sources: [microchip/DS22036@revB]
+source: microchip/DS22036@revB
+
+existence:
+  status: probable
+  src: p19 "Product Identification System, example a) "MCP73811T-420I/OT""
+
+lifecycle: { status: unknown }

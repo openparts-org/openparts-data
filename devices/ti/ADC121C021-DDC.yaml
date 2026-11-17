@@ -1,0 +1,47 @@
+# ADC121C021 12-bit I2C ADC with alert, 6-lead SOT (DDC; TI calls it SOT-23-THIN in the drawing)
+# pin map from the "Package Pinouts" table, row "ADC121C021, SOT" (SNAS415F
+# page 3); names and types from "PIN DESCRIPTIONS" (same page). VA
+# ("Power and unbuffered reference voltage") typed power, VIN analog,
+# ALERT (open-drain digital output) output, SCL ("Serial Clock Input")
+# clock, SDA io, ADR0/ADR1 (tri-level address inputs) input.
+# esd_hbm is the 2500 V HBM that holds for all pins (SDA alone is rated
+# 8000 V HBM per JESD22). f = SCL clock frequency.
+schema_version: "0.2"
+kind: device
+id: ti/ADC121C021-DDC
+manufacturer: ti
+category: adc
+family: ADC121C021
+source: ti/SNAS415F
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 2.7 V, max: 5.5 V, src: 'p5 "Operating Ratings, Supply Voltage, VA"' }
+  supply_current:
+    - typ: 0.08 mA
+      max: 0.14 mA
+      at: { VDD: 2.7..3.6 V, f: 400 kHz }
+      src: p7 "Elec. Char., IN Supply Current, Continuous Operation Mode, fSCL=400kHz, VA = 2.7V to 3.6V"
+    - typ: 0.16 mA
+      max: 0.3 mA
+      at: { VDD: 4.5..5.5 V, f: 400 kHz }
+      src: p7 "Elec. Char., IN Supply Current, Continuous Operation Mode, fSCL=400kHz, VA = 4.5V to 5.5V"
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p5 "Operating Ratings, Operating Temperature Range"
+  esd_hbm:
+    typ: 2.5 kV
+    src: p4 "Abs. Max., ESD Susceptibility per JESD22, VA, GND, VIN, ALERT, ADDR Pins, HBM"
+  channel_count: { value: "1", src: 'p3 "PIN DESCRIPTIONS, single VIN analog input"' }
+
+pins:
+  src:
+    - p3 "Package Pinouts table, row "ADC121C021, SOT""
+    - p3 "PIN DESCRIPTIONS table (names, types)"
+  "1": { name: VA, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: VIN, type: analog }
+  "4": { name: ALERT, type: output }
+  "5": { name: SCL, type: clock }
+  "6": { name: SDA, type: io }

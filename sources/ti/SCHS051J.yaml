@@ -1,0 +1,14 @@
+# Official TI datasheet (CD4066B quad bilateral switch). Revision read from the page header
+# "SCHS051J – NOVEMBER 1998 – REVISED AUGUST 2024". 35 PDF pages, text read with pdftotext -layout;
+# page numbers are PDF page indices. Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: ti/SCHS051J
+sha256: fa9d767c96a509b8d2a25086fcc93d5ddae3b4e90e6a3f889089c788776520bd
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/cd4066b.pdf
+publisher: ti
+document_id: SCHS051J
+document_type: datasheet
+revision: J
+date: 2024-08

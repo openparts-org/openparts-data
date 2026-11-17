@@ -1,0 +1,45 @@
+# PCF8523 real-time clock/calendar with battery backup. Pin map of the SO8
+# type PCF8523T from Table 5 "Pin description" (Rev. 7 page 5), column
+# "SO8 (PCF8523T)" (the HVSON8 column is identical; TSSOP14 and bare die
+# differ and are not covered). OSCI (oscillator input) clock, OSCO
+# (oscillator output) clock_out, as the table's Type column (input /
+# output) for the crystal pins; VBAT/VDD power; SDA io; SCL ("serial
+# clock input") clock; INT1/CLKOUT (open-drain interrupt 1 / clock
+# output) output.
+# supply_voltage: the table header range "VDD = 1.2 V to 5.5 V" equals
+# the VDD row for I2C-bus inactive (clock data integrity) over -40..85
+# °C; with the I2C bus active the minimum is 1.6 V (same table).
+schema_version: "0.2"
+kind: device
+id: nxp/PCF8523
+manufacturer: nxp
+category: rtc
+family: PCF8523
+source: nxp/PCF8523@rev7
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.2 V
+    max: 5.5 V
+    src: 'p50 "Table 48 VDD, I2C-bus inactive, Tamb -40 to +85 C (I2C-bus active row: 1.6 to 5.5 V)"'
+  supply_current:
+    typ: 150 nA
+    at: { VDD: 3 V, TA: 25 °C }
+    src: p50 "Table 48 IDD, I2C inactive, interrupts/clock-out off, PM[2:0]=111, Tamb 25 C, VDD 3.0 V"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p49 "Table 47 Limiting values, Tamb ambient temperature, operating device"
+  esd_hbm: { typ: 2 kV, src: 'p49 "Table 47 Limiting values, VESD HBM for all PCF8523, 2000 V"' }
+
+pins:
+  src: p5 "Table 5 Pin description, column SO8 (PCF8523T)"
+  "1": { name: OSCI, type: clock }
+  "2": { name: OSCO, type: clock_out }
+  "3": { name: VBAT, type: power }
+  "4": { name: VSS, type: ground }
+  "5": { name: SDA, type: io }
+  "6": { name: SCL, type: clock }
+  "7": { name: INT1/CLKOUT, type: output }
+  "8": { name: VDD, type: power }

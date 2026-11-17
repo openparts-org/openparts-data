@@ -1,0 +1,20 @@
+# Official TI datasheet "DAC8571 16-bit, low power, voltage output, I2C interface DAC". Downloaded 2026-11-17 with wget from
+# the TI symlink URL below; revision read from the page header
+# "SLAS373A - DECEMBER 2002 - REVISED JULY 2003". 32 PDF pages; text read with pdftotext -layout. Pin
+# configuration, specification tables and the PACKAGE OPTION ADDENDUM
+# were read from the extracted text; package outline pages named in the
+# part files were matched by drawing number and revision. Page numbers
+# in this dataset are PDF page indices. The PACKAGE OPTION ADDENDUM (PDF
+# page 26) is dated 11-Nov-2025 (newer than the datasheet revision).
+# sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SLAS373A
+sha256: 56d1011b3f89523009f051ae8d3ab8b49e02c0d5cd687f794ce1abb20e7317db
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/dac8571.pdf
+publisher: ti
+document_id: SLAS373A
+document_type: datasheet
+revision: A
+date: 2003-07

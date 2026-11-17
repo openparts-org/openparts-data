@@ -1,0 +1,23 @@
+# MPN read from the "Ordering Information" table (DS39135 page 14): row
+# "AP22811AW5-7 | -7 | W5 | SOT25 | 3000 | 7" Tape & Reel"; enable
+# option A = Active High. Marking identification code 5Y (same page).
+# Package: SOT25 outline table (page 15) is identical, dimension for
+# dimension, to the DS39724 table standards/SOT25-3.00x1.60-P0.95-DIODES
+# was read from, so that package is reused. lifecycle: the datasheet
+# carries no production-status statement; unknown.
+schema_version: "0.2"
+kind: part
+id: diodes/AP22811AW5-7
+manufacturer: diodes
+mpn: AP22811AW5-7
+device: diodes/AP22811-W5
+
+package:
+  value: standards/SOT25-3.00x1.60-P0.95-DIODES
+  src: p14 "Ordering Information, row "AP22811AW5-7", Package Code W5 = SOT25; outline p15"
+
+sources: [diodes/DS39135]
+source: diodes/DS39135
+
+existence: { status: verified, src: 'p14 "Ordering Information table, row "AP22811AW5-7""' }
+lifecycle: { status: unknown }

@@ -1,0 +1,33 @@
+# TLP293 in SO4 (TOSHIBA 11-3C1, named on datasheet page 1; the outline
+# file was read from the TLP291 datasheet). The order code is listed under
+# the orderable part numbers on Toshiba's TLP293 product page
+# (toshiba.semicon-storage.com/ap-en/semiconductor/product/isolators-solid-state-relays/detail.TLP293.html,
+# retrieved 2026-11-17); the datasheet gives only the order-code format
+# (section 16 "Ordering Information", example "TLP293(GR-TPL,E"), so
+# existence is `probable` (as toshiba/TLP785(GB-LF6,F).
+schema_version: "0.2"
+kind: part
+id: toshiba/TLP293(GB-TPL,E
+manufacturer: toshiba
+mpn: TLP293(GB-TPL,E
+device: toshiba/TLP293
+
+package:
+  value: manufacturers/toshiba/11-3C1
+  src: p1 "4. Packaging and Pin Assignment, TOSHIBA 11-3C1"
+
+sources: [toshiba/TLP293-datasheet-en]
+source: toshiba/TLP293-datasheet-en
+
+existence:
+  status: probable
+  src: p13 "16. Ordering Information, order-code format (part number, CTR rank, tape type TPL)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  current_transfer_ratio:
+    min: 100 %
+    max: 600 %
+    at: { VCE: 5 V, IF: 5 mA, TA: 25 °C }
+    src: p3 "Table 8.1 CTR Rank, rank GB, IF = 5 mA"

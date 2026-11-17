@@ -1,0 +1,17 @@
+# Official Toshiba TLP250H datasheet (English), the "Data sheet/English" link
+# (docget.jsp?did=13872) on Toshiba's TLP250H product page. Toshiba prints no
+# document number; the revision is identified by the date in every page
+# footer, "2026-05-13" ("Rev.4.0.B"). 16 PDF pages, read with pdftotext -layout;
+# the package drawing (page 11) is vector art and was rendered and read
+# as an image. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/TLP250H-datasheet-en
+sha256: aa98fc688a86b354d4adccfa9bfdb6fece0adb5444ec1f4dabc9e3af4abad46b
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=13872&prodName=TLP250H
+publisher: toshiba
+document_id: TLP250H_datasheet_en
+document_type: datasheet
+revision: 2026-05-13
+date: 2026-05-13

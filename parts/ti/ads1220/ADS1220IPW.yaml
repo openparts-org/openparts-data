@@ -1,0 +1,29 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SBAS501D
+# (page 69): "ADS1220IPW Active Production TSSOP (PW) | 16 90 | TUBE Yes NIPDAU Level-2-260C-1 YEAR -40 to 125 ADS1220".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet).
+# Package: TSSOP (PW), outline PW0016A (4220204/B) on page 74 -> standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+# (same drawing number and revision as the source that package was read from).
+schema_version: "0.2"
+kind: part
+id: ti/ADS1220IPW
+manufacturer: ti
+mpn: ADS1220IPW
+device: ti/ADS1220
+
+package:
+  value: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+  src:
+    - p69 "PACKAGE OPTION ADDENDUM, row ADS1220IPW, Package column "TSSOP (PW)""
+    - p74 "PACKAGE OUTLINE PW0016A (4220204/B)"
+
+sources: [ti/SBAS501D]
+source: ti/SBAS501D
+
+existence:
+  status: verified
+  src: p69 "PACKAGE OPTION ADDENDUM, Packaging Information table, row ADS1220IPW"
+
+lifecycle:
+  status: active
+  src: p69 "PACKAGE OPTION ADDENDUM, row ADS1220IPW, Status column "Active""

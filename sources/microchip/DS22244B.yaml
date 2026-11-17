@@ -1,0 +1,18 @@
+# Official Microchip datasheet "MCP4801/4811/4821 8/10/12-Bit Voltage Output Digital-to-Analog Converter with Internal VREF and SPI Interface". Downloaded 2026-11-17 with wget
+# from ww1.microchip.com (URL below). document_id / revision from the
+# printed footer "DS22244B-page N"; the Revision History lists "Revision B (April 2010)". 48 PDF pages; text read with
+# pdftotext -layout. Page numbers in this dataset are PDF page indices
+# (they equal the printed page numbers). Package drawing numbers and
+# dimension tables were rendered and read as images. sha256 is of the
+# PDF as downloaded.
+schema_version: "0.2"
+kind: source
+id: microchip/DS22244@revB
+sha256: e4bf1d222bf746efca9cbc5e7f10518b19bb1cefebcadf35a337d5e3460df9da
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/22244B.pdf
+publisher: microchip
+document_id: DS22244
+document_type: datasheet
+revision: B
+date: 2010-04

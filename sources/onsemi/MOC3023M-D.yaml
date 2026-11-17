@@ -1,0 +1,16 @@
+# Official onsemi datasheet "6-Pin DIP Random-Phase Triac Driver Output
+# Optocoupler (250/400 V Peak)" for MOC3010M-MOC3023M, publication order
+# number MOC3023M/D, "June, 2023 - Rev. 3" (page 1 footer). 12 PDF
+# pages, text read with pdftotext -layout; the CASE 646BX outline (page
+# 9) was rendered and read as an image. Downloaded with curl.
+schema_version: "0.2"
+kind: source
+id: onsemi/MOC3023M-D
+sha256: 262cc827dfd4b0910b39571be96f47868bb3218dd8c320abcdd2c5b5a906e9d4
+retrieved: 2026-11-17
+url: https://www.onsemi.com/pdf/datasheet/moc3023m-d.pdf
+publisher: onsemi
+document_id: MOC3023M-D
+document_type: datasheet
+revision: "3"
+date: 2023-06

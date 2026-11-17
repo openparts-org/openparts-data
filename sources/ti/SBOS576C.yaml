@@ -1,0 +1,16 @@
+# Official TI datasheet for INA3221 (26-V, triple-channel I2C shunt and bus voltage monitor). Downloaded 2026-11-17 with curl from the
+# TI symlink URL below; revision read from the page header
+# "SBOS576C – MAY 2012 – REVISED SEPTEMBER 2026". 50 PDF pages; text read with pdftotext -layout, the
+# package outline drawing pages rendered with pdftoppm. Page numbers in
+# this dataset are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: ti/SBOS576C
+sha256: d622c93ffe599b246fd3c6285996f219786235b635a30cca512229919a5f4ebc
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/ina3221.pdf
+publisher: ti
+document_id: SBOS576C
+document_type: datasheet
+revision: C
+date: 2026-09

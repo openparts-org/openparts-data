@@ -1,0 +1,47 @@
+# 12-bit single-channel SPI DAC with internal 2.048 V reference
+# (MCP4821), 8-pin pin map from Table 3-1 "Pin Function Table for
+# MCP4801/4811/4821", column "MSOP, PDIP, SOIC, DFN" (DS22244B page 15).
+# The DFN's exposed pad (EP, pin 9 in the DFN column) is not covered.
+# Types: VDD power, VSS ground, SCK ("Serial Clock Input") clock, CS /
+# SDI / LDAC / SHDN inputs, VOUT analog. Overbars (CS, LDAC, SHDN) are
+# not represented.
+# operating_temperature: the "Specified Temperature Range" row of the
+# Temperature Characteristics (page 7) is used; note that the
+# Electrical Characteristics header (page 3) states TA = -40 to +85 C.
+schema_version: "0.2"
+kind: device
+id: microchip/MCP4821
+manufacturer: microchip
+category: dac
+family: MCP4801/4811/4821
+source: microchip/DS22244@revB
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: 'p3 "Electrical Characteristics, Power Requirements: Operating Voltage VDD"'
+  supply_current:
+    typ: 330 µA
+    max: 400 µA
+    src: p3 "Elec. Char., Operating Current IDD, digital inputs grounded, VOUT unloaded"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: 'p7 "Temperature Characteristics: Specified Temperature Range TA"'
+  esd_hbm:
+    typ: 4 kV
+    src: 'p3 "Absolute Maximum Ratings: ESD protection on all pins 4 kV (HBM)"'
+  channel_count: { value: "1", src: 'p1 "Related Products table, row MCP4821, No. of Channel 1"' }
+
+pins:
+  src: p15 "Table 3-1 "Pin Function Table for MCP4801/4811/4821", column "MSOP, PDIP, SOIC, DFN""
+  "1": { name: VDD, type: power }
+  "2": { name: CS, type: input }
+  "3": { name: SCK, type: clock }
+  "4": { name: SDI, type: input }
+  "5": { name: LDAC, type: input }
+  "6": { name: SHDN, type: input }
+  "7": { name: VSS, type: ground }
+  "8": { name: VOUT, type: analog }

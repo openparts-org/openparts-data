@@ -1,0 +1,58 @@
+# Vishay half-pitch mini-flat SOP-4 (SSOP-4) of the TCMT110. series,
+# read from the rendered "PACKAGE DIMENSIONS in millimeters" drawing on
+# page 7 of datasheet 83510 (Rev. 3.1). No drawing number is printed;
+# the id uses the document number. Values with a printed tolerance are
+# recorded as nominal plus the resulting min/max.
+#
+# soic mapping: pins 1-2 on one side, 3-4 on the other. body_width =
+# "4.40 typ." across the rows, body_length = "2.60 +/- 0.20" along the
+# rows (2.85 max with flash), body_height = "2.00 +/- 0.10" above the
+# "0.10 +/- 0.10" standoff, overall_width = lead-tip span "7.00 +/-
+# 0.30", lead_length = foot "0.60 +0.20/-0.30".
+schema_version: "0.2"
+kind: package
+id: manufacturers/vishay/SOP4-83510
+family: soic
+lead_count: 4
+source: vishay/83510
+
+pitch: { typ: 1.27 mm, src: 'p7 "Package dimensions, "1.27 nom.""' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width: { typ: 4.4 mm, src: 'p7 "Package dimensions, end view, "4.40 typ.""' }
+  body_length:
+    min: 2.4 mm
+    typ: 2.6 mm
+    max: 2.8 mm
+    src: p7 "Package dimensions, side view, "2.60 +/- 0.20""
+  body_height:
+    min: 1.9 mm
+    typ: 2 mm
+    max: 2.1 mm
+    src: p7 "Package dimensions, side view, "2.00 +/- 0.10""
+  lead_thickness:
+    min: 0.15 mm
+    typ: 0.2 mm
+    max: 0.25 mm
+    src: p7 "Package dimensions, end view, "0.2 +/- 0.05""
+  overall_width:
+    min: 6.7 mm
+    typ: 7 mm
+    max: 7.3 mm
+    src: p7 "Package dimensions, end view, lead-tip span "7.00 +/- 0.30""
+  standoff:
+    min: 0 mm
+    typ: 0.1 mm
+    max: 0.2 mm
+    src: p7 "Package dimensions, side view, "0.10 +/- 0.10""
+  lead_width:
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p7 "Package dimensions, side view, "0.4 +/- 0.1""
+  lead_length:
+    min: 0.3 mm
+    typ: 0.6 mm
+    max: 0.8 mm
+    src: p7 "Package dimensions, end view, foot "0.60 +0.20/-0.30""

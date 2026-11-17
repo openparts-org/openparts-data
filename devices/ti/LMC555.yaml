@@ -1,0 +1,34 @@
+# LMC555 CMOS timer, 8-pin pin map of the D (SOIC), DGK (VSSOP) and P
+# (PDIP) packages from SNAS558N Table 4-1 "Pin Functions" (page 3);
+# the YPB (DSBGA) bump map is not covered. Names as printed (CONTROL
+# VOLTAGE, V+). Types as for ti/NE555 (DISCHARGE is an open-collector
+# output despite the table's "Input" type). The datasheet prints no
+# recommended supply range (only the 15 V absolute maximum), so
+# supply_voltage is left out; operating temperature depends on the
+# grade (CM/IM) and is on the Parts.
+schema_version: "0.2"
+kind: device
+id: ti/LMC555
+manufacturer: ti
+category: timer
+family: LMC555
+source: ti/SNAS558N
+
+parameters:
+  supply_current:
+    typ: 180 µA
+    max: 250 µA
+    at: { VS: 5 V, TA: 25 °C }
+    src: p5 "5.5 Electrical Characteristics, IS supply current, VS = 5 V row"
+  esd_hbm: { typ: 1500 V, src: 'p4 "5.2 ESD Ratings, HBM"' }
+
+pins:
+  src: p3 "Table 4-1 "Pin Functions", D (SOIC), DGK (VSSOP), P (PDIP) column"
+  "1": { name: GROUND, type: ground }
+  "2": { name: TRIGGER, type: input }
+  "3": { name: OUTPUT, type: output }
+  "4": { name: RESET, type: reset }
+  "5": { name: CONTROL VOLTAGE, type: analog }
+  "6": { name: THRESHOLD, type: input }
+  "7": { name: DISCHARGE, type: output }
+  "8": { name: V+, type: power }

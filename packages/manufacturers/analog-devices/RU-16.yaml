@@ -1,0 +1,41 @@
+# Analog Devices RU-16, 16-lead TSSOP (4.4 mm body, 0.65 mm pitch,
+# "COMPLIANT TO JEDEC STANDARDS MO-153-AB"), read from the rendered
+# Figure 37 on page 19 (Outline Dimensions) of the ADG1408/ADG1409 data
+# sheet Rev. D. Three stacked numbers are recorded as max/nom/min, two
+# as min/max. body_width = E1, body_length = D, overall_width = E (6.40
+# BSC), overall_height = A (1.20 MAX), standoff = A1, lead_width = b,
+# lead_thickness = c, lead_length = L.
+schema_version: "0.2"
+kind: package
+id: manufacturers/analog-devices/RU-16
+family: tssop
+lead_count: 16
+source: analog-devices/ADG1408_1409-revD
+
+pitch: { typ: 0.65 mm, src: 'p19 "Figure 37 RU-16, "0.65 BSC""' }
+geometry: { type: parametric, generator: tssop }
+
+dimensions:
+  body_width:
+    min: 4.3 mm
+    typ: 4.4 mm
+    max: 4.5 mm
+    src: p19 "Figure 37 RU-16, body width 4.50/4.40/4.30"
+  body_length:
+    min: 4.9 mm
+    typ: 5 mm
+    max: 5.1 mm
+    src: p19 "Figure 37 RU-16, body length 5.10/5.00/4.90"
+  lead_thickness:
+    min: 0.09 mm
+    max: 0.2 mm
+    src: p19 "Figure 37 RU-16, lead thickness 0.20/0.09"
+  lead_length:
+    min: 0.45 mm
+    typ: 0.6 mm
+    max: 0.75 mm
+    src: p19 "Figure 37 RU-16, foot length 0.75/0.60/0.45"
+  overall_width:  { typ: 6.4 mm, src: 'p19 "Figure 37 RU-16, lead span "6.40 BSC""' }
+  overall_height: { max: 1.2 mm, src: 'p19 "Figure 37 RU-16, "1.20 MAX""' }
+  standoff:       { min: 0.05 mm, max: 0.15 mm, src: 'p19 "Figure 37 RU-16, standoff 0.15/0.05"' }
+  lead_width:     { min: 0.19 mm, max: 0.3 mm, src: 'p19 "Figure 37 RU-16, lead width 0.30/0.19"' }

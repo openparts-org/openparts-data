@@ -1,0 +1,17 @@
+# Official Renesas datasheet "PS2801-1, PS2801-4 High Isolation Voltage
+# SSOP Photocoupler", R08DS0096EJ0600 Rev.6.00, August 21, 2026 (title
+# block and every page footer). Downloaded with curl from the Renesas
+# document URL below (application/pdf, 16 PDF pages; printed "Page N of
+# 15" equals the PDF page index). Text read with pdftotext -layout; the
+# PS2801-1 package drawing (page 2) was rendered and read as an image.
+schema_version: "0.2"
+kind: source
+id: renesas/R08DS0096EJ0600
+sha256: 801a20a1aecaf09f440ba091601f0ad09c9409c1e3a9ae6bd20b7fc164dfc405
+retrieved: 2026-11-17
+url: https://www.renesas.com/us/en/document/dst/ps2801-1-ps2801-4-data-sheet
+publisher: renesas
+document_id: R08DS0096EJ0600
+document_type: datasheet
+revision: "6.00"
+date: 2026-08-21

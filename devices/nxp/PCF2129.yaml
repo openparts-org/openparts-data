@@ -1,0 +1,54 @@
+# PCF2129 accurate RTC with integrated quartz crystal (TCXO), I2C/SPI.
+# Pin map of the SO16 type PCF2129T from Table 3 "Pin description of
+# PCF2129" (Rev. 8.0 page 5), column PCF2129T. The SO20 PCF2129AT
+# numbering differs and is not covered. Pins 9-12 "n.c." (not connected;
+# do not connect) typed nc. SCL (combined serial clock input) clock;
+# SDI, IFS, TS input; SDO (push-pull SPI output) output; SDA/CE io;
+# CLKOUT (open-drain clock output) clock_out; INT (open-drain) output;
+# BBS ("output voltage (battery backed)") power_out; VBAT/VDD power.
+# supply_current: the interface-inactive row at VDD = 3.3 V with
+# PWRMNG = 111, TSOFF = 1, COF = 111 (the only IDD row with a max at
+# 3.3 V); the configuration is named in the locator.
+schema_version: "0.2"
+kind: device
+id: nxp/PCF2129
+manufacturer: nxp
+category: rtc
+family: PCF2129
+source: nxp/PCF2129@rev8.0
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.8 V
+    max: 4.2 V
+    src: p54 "Table 78 Static characteristics, VDD supply voltage"
+  supply_current:
+    typ: 700 nA
+    max: 1500 nA
+    at: { VDD: 3.3 V }
+    src: p54 "Table 78 IDD, interface inactive, PWRMNG=111, TSOFF=1, COF=111, VDD = 3.3 V"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p54 "Table 77 Limiting values, Tamb ambient temperature, operating device"
+  esd_hbm: { typ: 4 kV, src: 'p53 "Table 77 Limiting values, VESD HBM ±4 000 V"' }
+
+pins:
+  src:  p5 "Table 3 Pin description of PCF2129, column PCF2129T"
+  "1":  { name: SCL, type: clock }
+  "2":  { name: SDI, type: input }
+  "3":  { name: SDO, type: output }
+  "4":  { name: SDA/CE, type: io }
+  "5":  { name: IFS, type: input }
+  "6":  { name: TS, type: input }
+  "7":  { name: CLKOUT, type: clock_out }
+  "8":  { name: VSS, type: ground }
+  "9":  { name: n.c., type: nc }
+  "10": { name: n.c., type: nc }
+  "11": { name: n.c., type: nc }
+  "12": { name: n.c., type: nc }
+  "13": { name: INT, type: output }
+  "14": { name: BBS, type: power_out }
+  "15": { name: VBAT, type: power }
+  "16": { name: VDD, type: power }

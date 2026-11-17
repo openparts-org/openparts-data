@@ -1,0 +1,29 @@
+# Orderable MPN confirmed in the PACKAGE OPTION ADDENDUM of SLAS373A
+# (page 26): "DAC8571IDGKR Active Production VSSOP (DGK) | 8 2500 | LARGE T&R Yes Call TI | Nipdauag Level-2-260C-1 YEAR -40 to 105 D871".
+# Lifecycle "Active" is read from the same row's Status column (TI's own
+# addendum inside the datasheet).
+# Package: VSSOP (DGK), outline DGK0008A (4214862/A) on page 29 -> standards/MSOP8-3.0x3.0-P0.65-TI-DGK
+# (same drawing number and revision as the source that package was read from).
+schema_version: "0.2"
+kind: part
+id: ti/DAC8571IDGKR
+manufacturer: ti
+mpn: DAC8571IDGKR
+device: ti/DAC8571
+
+package:
+  value: standards/MSOP8-3.0x3.0-P0.65-TI-DGK
+  src:
+    - p26 "PACKAGE OPTION ADDENDUM, row DAC8571IDGKR, Package column "VSSOP (DGK)""
+    - p29 "PACKAGE OUTLINE DGK0008A (4214862/A)"
+
+sources: [ti/SLAS373A]
+source: ti/SLAS373A
+
+existence:
+  status: verified
+  src: p26 "PACKAGE OPTION ADDENDUM, Packaging Information table, row DAC8571IDGKR"
+
+lifecycle:
+  status: active
+  src: p26 "PACKAGE OPTION ADDENDUM, row DAC8571IDGKR, Status column "Active""

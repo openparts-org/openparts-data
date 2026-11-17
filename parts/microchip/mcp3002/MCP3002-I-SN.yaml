@@ -1,0 +1,25 @@
+# MPN "MCP3002-I/SN" is PROBABLE: printed as ordering example b) in the
+# Product Identification System of microchip/DS21294@revE (page 31), not in
+# an orderable list. I = -40 to +85 C, SN = 8-lead SOIC (150 mil).
+# Package: SN drawing C04-057C (sheets on pages 25-26, rendered); the
+# same drawing revision is already read as standards/SOIC8-3.90x4.90-P1.27
+# (microchip/23LC1024T-I-SN, row-by-row match), which is reused.
+# lifecycle: not stated in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/MCP3002-I-SN
+manufacturer: microchip
+mpn: MCP3002-I/SN
+device: microchip/MCP3002
+
+package:
+  value: standards/SOIC8-3.90x4.90-P1.27
+  src:
+    - p31 "Product Identification System, Package SN (SOIC, 150 mil, 8-lead)"
+    - p26 "8-Lead Plastic Small Outline (SN), Microchip Technology Drawing No. C04-057C Sheet 2 of 2"
+
+sources: [microchip/DS21294@revE]
+source: microchip/DS21294@revE
+
+existence: { status: probable, src: 'p31 "Product Identification System, example b) MCP3002-I/SN"' }
+lifecycle: { status: unknown }

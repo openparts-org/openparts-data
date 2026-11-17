@@ -1,0 +1,14 @@
+# Official TI datasheet (TMUX1108 8:1 multiplexer). Revision read from the page header
+# "SCDS388B – NOVEMBER 2018 – REVISED FEBRUARY 2024". 39 PDF pages, text read with pdftotext -layout;
+# page numbers are PDF page indices. Downloaded with curl (HTTP 200, PDF).
+schema_version: "0.2"
+kind: source
+id: ti/SCDS388B
+sha256: 7d5128ebf44182f63cc92b3b1315858a4f0a477d8eb622e37919e39228f2a47c
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/tmux1108.pdf
+publisher: ti
+document_id: SCDS388B
+document_type: datasheet
+revision: B
+date: 2024-02

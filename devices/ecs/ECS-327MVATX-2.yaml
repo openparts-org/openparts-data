@@ -1,0 +1,28 @@
+# ECS ECS-327MVATX 32.768 kHz MultiVolt crystal oscillator (CMOS output),
+# package size code 2 (2.5 x 2.0 mm, p1 Part Numbering Guide "2 = 2.5 x
+# 2.0 mm"). One Device per package size (the datasheet offers sizes 1,
+# 2, 3, 5 and 7 with the same pad connections). Pin names from the p2
+# "PAD CONNECTIONS" table; pad 1 tri-state ("1" or NC = oscillation,
+# internal pull-up). Stability and temperature range per Part.
+schema_version: "0.2"
+kind: device
+id: ecs/ECS-327MVATX-2
+manufacturer: ecs
+category: oscillator
+family: ECS-327MVATX
+source: ecs/ECS-327MVATX
+
+# Parameters (AI candidates, needs review).
+parameters:
+  frequency: { typ: 32.768 kHz, src: 'p1 "ELECTRICAL CHARACTERISTICS, Frequency Range 32.768 kHz"' }
+  aging: { tol: ±3 ppm, at: { TA: 25 °C }, src: 'p1 "ELECTRICAL CHARACTERISTICS, Aging @ +25°C"' }
+  clock_output:   { value: cmos, src: 'p1 "ELECTRICAL CHARACTERISTICS, Output Load, CMOS"' }
+  supply_voltage: { min: 1.6 V, max: 3.6 V, src: 'p1 "ELECTRICAL CHARACTERISTICS, Supply Voltage"' }
+  supply_current: { max: 200 µA, src: 'p1 "ELECTRICAL CHARACTERISTICS, Supply Current"' }
+
+pins:
+  src: p2 "PAD CONNECTIONS table"
+  "1": { name: Tri-state, type: input }
+  "2": { name: Gnd, type: ground }
+  "3": { name: Output, type: clock_out }
+  "4": { name: Vdd, type: power }

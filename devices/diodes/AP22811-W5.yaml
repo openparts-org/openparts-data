@@ -1,0 +1,37 @@
+# Single-channel current-limited high-side power distribution load
+# switch (USB), SOT25 (W5) pinout. From DS39135 "Pin Descriptions"
+# (page 2), SOT25 column: OUT 1, GND 2, FLG 3, EN/EN 4, IN 5; checked
+# against the "Pin Assignments" SOT25 top view (page 1). Pin 4 is EN
+# (active high) on AP22811A and EN-bar (active low) on AP22811B; written
+# without the overbar as "EN" (same pin, same pinout for both options).
+# FLG is the open-drain fault flag -> output; IN/OUT -> power.
+# Diodes recommends AP22811 in place of AP22802 ("NOT RECOMMENDED FOR
+# NEW DESIGN, USE AP22811" on the AP22802 datasheet DS36218).
+schema_version: "0.2"
+kind: device
+id: diodes/AP22811-W5
+manufacturer: diodes
+category: power_switch
+family: AP22811
+source: diodes/DS39135
+
+parameters:
+  input_voltage_max: { max: 5.5 V, src: 'p3 "Recommended Operating Conditions, VIN input voltage"' }
+  output_current: { max: 2 A, src: 'p3 "Recommended Operating Conditions, IOUT output current"' }
+  supply_current:
+    typ: 80 µA
+    at: { VIN: 5 V, TA: 25 °C }
+    src: p4 "Electrical Characteristics, IQ input quiescent current, enabled, OUT open"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p3 "Recommended Operating Conditions, TA operating ambient temperature"
+  esd_hbm: { typ: 2 kV, src: 'p3 "Absolute Maximum Ratings, ESD HBM 2000 V"' }
+
+pins:
+  src: ['p2 "Pin Descriptions, SOT25 column"', 'p1 "Pin Assignments, SOT25 top view"']
+  "1": { name: OUT, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: FLG, type: output }
+  "4": { name: EN, type: input }
+  "5": { name: IN, type: power }
