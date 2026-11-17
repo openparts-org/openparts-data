@@ -1,0 +1,99 @@
+# ESP32-S2-MINI-1 as a surface-mount module: the recommended land pattern
+# (p25 "Figure 10: ESP32-S2-MINI-1 Recommended PCB Land Pattern") with the
+# board and shield can of p24 "Figure 8: ESP32-S2-MINI-1 Physical
+# Dimensions" (vector drawings). Package frame: the board centred on the
+# origin, the antenna end at +y (top). Every value is a printed callout;
+# positions are plain arithmetic between callouts:
+# Rows: 60 pads "0.4" x "0.8" (LGA), 15 per side; the outer rows' and
+# columns' centres "14" apart both ways, the first-to-last pad centres of
+# each side "11.9" apart (pitch 11.9 / 14 = 0.85; "1.7" = 2 pitches about
+# the centre line). The pad area's horizontal centre line is "7.7" above
+# the bottom edge (y = -10 + 7.7 = -2.3); across, the rows are centred on
+# the "15.4" board (x = +-7, inset 0.7). Top row y = -2.3 + 7 = 4.7 (inset
+# 5.3), bottom row -9.3 (inset 0.7). Column pins 1-15 run down the left
+# side from y = -2.3 + 7 x 0.85 = 3.65 (6.35 below the top edge); 16-30
+# along the bottom from x = -5.95 (1.75 from the left edge); 31-45 up the
+# right side from y = -8.25 (1.75 above the bottom edge); 46-60 along the
+# top from x = 5.95 (1.75 from the right edge) (p10 Figure 3 pin layout).
+# Corner pads 62-65 "4 x 0.8 x 0.8" at the row/column crossings (x = +-7,
+# y = 4.7 / -9.3): 62 top-left, 63 bottom-left, 64 bottom-right, 65
+# top-right (p10 Figure 3). Ground pad 61: 3 x 3 pads "1.2" square, "4.5"
+# overall (pitch (4.5 - 1.2)/2 = 1.65), centred on the pad area's centre
+# lines (x = 0, y = -2.3).
+# Shield: can "14" x "13.55" (p24 top view), its right side "0.7" and its
+# bottom "0.5" in from the board edges: centre x = 7.7 - 0.7 - 7 = 0, y =
+# -10 + 0.5 + 6.775 = -2.725; its top is the overall height.
+# Keep-out: the land pattern's "Antenna Area" (15.4 x "4.5" at the top),
+# which the pin layout figure calls the keepout zone; the hardware design
+# guidelines suggest the antenna outside the base board (section 7).
+schema_version: "0.2"
+kind: package
+id: manufacturers/espressif/MODULE65-15.4x20-ESP32-S2-MINI-1
+family: module
+lead_count: 65
+source: espressif/esp32-s2-mini-1_esp32-s2-mini-1u_datasheet_en@rev1.6
+
+pitch:
+  typ: 0.85 mm
+  src: p25 "Figure 10 Recommended PCB Land Pattern, "11.9" over 14 pitches, "1.7" = 2 pitches"
+
+geometry: { type: parametric, generator: module }
+
+dimensions:
+  body_width:
+    min: 15.2 mm
+    typ: 15.4 mm
+    max: 15.6 mm
+    src: p24 "Figure 8 ESP32-S2-MINI-1 Physical Dimensions, "15.4±0.2""
+  body_length:
+    min: 19.8 mm
+    typ: 20 mm
+    max: 20.2 mm
+    src: p24 "Figure 8 ESP32-S2-MINI-1 Physical Dimensions, "20±0.2""
+  body_height:
+    typ: 0.8 mm
+    src: p24 "Figure 8 ESP32-S2-MINI-1 Physical Dimensions, side view, board "0.8""
+  overall_height:
+    min: 2.25 mm
+    typ: 2.4 mm
+    max: 2.55 mm
+    src: p24 "Figure 8 ESP32-S2-MINI-1 Physical Dimensions, side view "2.4±0.15""
+
+pad_rows:
+  value:
+    - { side: -x, first: 1, count: 15, pitch: 0.85, start: 6.35, inset: 0.7, pad: [0.4, 0.8] }
+    - { side: -y, first: 16, count: 15, pitch: 0.85, start: 1.75, inset: 0.7, pad: [0.4, 0.8] }
+    - { side: +x, first: 31, count: 15, pitch: 0.85, start: 1.75, inset: 0.7, pad: [0.4, 0.8] }
+    - { side: +y, first: 46, count: 15, pitch: 0.85, start: 1.75, inset: 5.3, pad: [0.4, 0.8] }
+  src: p25 "Figure 10 ESP32-S2-MINI-1 Recommended PCB Land Pattern (see comment)"
+
+pad_grids:
+  value:
+    - { numbers: ["61"], columns: 3, rows: 3, pitch: [1.65, 1.65], pad: [1.2, 1.2], x: 0, y: -2.3 }
+    - { numbers: ["62"], columns: 1, rows: 1, pitch: [1, 1], pad: [0.8, 0.8], x: -7, y: 4.7 }
+    - { numbers: ["63"], columns: 1, rows: 1, pitch: [1, 1], pad: [0.8, 0.8], x: -7, y: -9.3 }
+    - { numbers: ["64"], columns: 1, rows: 1, pitch: [1, 1], pad: [0.8, 0.8], x: 7, y: -9.3 }
+    - { numbers: ["65"], columns: 1, rows: 1, pitch: [1, 1], pad: [0.8, 0.8], x: 7, y: 4.7 }
+  src: p25 "Figure 10 ESP32-S2-MINI-1 Recommended PCB Land Pattern (see comment)"
+
+shield:
+  x: 0
+  y: -2.725
+  width: 14
+  length: 13.55
+  src: p24 "Figure 8 ESP32-S2-MINI-1 Physical Dimensions, top view (see comment)"
+
+edge:
+  side: +y
+  requirement: recommended
+  src: 'espressif/esp32-s2_hardware_design_guidelines_en@rev1.6 p26 "Section 7: place the on-board PCB antenna outside the base board, feed point near the edge"'
+
+keepouts:
+  value:
+    - purpose: antenna
+      restricts: [components, copper]
+      rect: { x: 0, y: 7.75, width: 15.4, length: 4.5 }
+      side: +y
+  src:
+    - p25 "Figure 10 ESP32-S2-MINI-1 Recommended PCB Land Pattern, "Antenna Area" at the top, "4.5""
+    - 'espressif/esp32-s2_hardware_design_guidelines_en@rev1.6 p26 "Section 7: cut off the base board on both sides of the antenna and below it"'

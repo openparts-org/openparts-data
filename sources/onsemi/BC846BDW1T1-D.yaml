@@ -1,0 +1,19 @@
+# onsemi "Dual General Purpose Transistors, NPN Duals" BC846BDW1,
+# BC847BDW1, BC848CDW1 datasheet, Publication Order Number BC846BDW1T1/D,
+# Rev. 16 (September 2026), 15 pages, plain curl. Read via pdftotext
+# -layout: p1 pinout diagram, maximum ratings; p2 electrical
+# characteristics; p10 ordering information; p12-13 the SC-88 (CASE
+# 419B-02, issue Z) outline. The p12 dimension table and the recommended
+# footprint are drawn as graphics: read from the page rendered at 150 dpi
+# (printed values only).
+schema_version: "0.2"
+kind: source
+id: onsemi/BC846BDW1T1-D
+sha256: e611174e7a3035ed3eff076e95441e8a8af29c8b34e8b28c808b619e20eb9d89
+retrieved: 2026-11-17
+url: https://www.onsemi.com/pdf/datasheet/bc846bdw1t1-d.pdf
+publisher: onsemi
+document_id: BC846BDW1T1/D
+document_type: datasheet
+revision: "16"
+date: 2026-09

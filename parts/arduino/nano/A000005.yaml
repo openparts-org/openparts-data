@@ -1,13 +1,14 @@
 # Arduino Nano (A000005). Package = the board with its header holes; assembly = the
 # components on it whose placement comes from the maker's design file (arduino/A000005-cad-files@V3.3),
 # converted to the package frame (board centre, top view; see the package comment).
-# Only components with an OpenParts part, or a box whose size AND height a source states,
-# are listed. Left out:
-#   IC1 FT232RL (FTDI datasheet: 403 to plain fetches), J3 USB mini-B ("14850", maker not
-#   named), SW1 IT-1185AP1C, Y1 CSTCE16M0V53-R0 (Murata spec not served as a plain PDF), LEDs
-#   KPT-2012* (Kingbright spec URLs 404), D1 SS1P3L, C2/C5 TAJA475 tantalum, J4 ICSP, J1/J2
-#   headers: no part and no body height in a fetchable maker source or the design file; small
-#   passives (0603 C, CAY16 arrays, F1) skipped
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one) -- or a box whose size AND height a source states. Left out:
+#   IC1 FT232RL (FTDI: 403 to plain fetches; SSOP28, no same-package stand-in), J3 USB mini-B
+#   ("14850", maker not named; no mini-B package family in the generator), SW1 IT-1185AP1C (no
+#   switch of that footprint), Y1 CSTCE16M0V53-R0 resonator (Murata spec not served as a plain PDF),
+#   D1 SS1P3L (no SMP-package part), C2/C5 TAJA475 tantalum: no part; small passives (0603 C, CAY16
+#   arrays, F1) skipped
 # IC2: value/PART_NUMBER "LM1117IMPX-5.0" (the /NOPB ordering suffix is not in the design; TI
 # orders it only as /NOPB); bottom side; pads 1 COM, 2 +5V, 3 VIN, 4 +5V (tab) = the device pins
 # 1-4.
@@ -38,3 +39,64 @@ assembly:
     rotation: 90
     side: bottom
     src: '"NanoV3.3.brd IC2 at 33.147, 6.477 rot 270"'
+  - ref: L
+    part: kingbright/APT2012SYCK
+    stand_in_for: 0805 LED, yellow, MPN not stated
+    x: -4.572
+    y: -7.366
+    rotation: 90
+    src:
+      - '"NanoV3.3.brd L at 28.956, 4.318 rot 270"'
+      - '"L value Yellow, footprint CHIPLED_0805; stand-in fitted to its 2 pads (mean 0.1 mm)"'
+  - ref: PWR
+    part: kingbright/APT2012CGCK
+    stand_in_for: 0805 LED, green, MPN not stated
+    x: -1.524
+    y: -7.366
+    rotation: 90
+    src:
+      - '"NanoV3.3.brd PWR at 28.956, 7.366 rot 270"'
+      - '"PWR value Green, footprint CHIPLED_0805; stand-in fitted to its 2 pads (mean 0.1 mm)"'
+  - ref: RX
+    part: kingbright/APT2012SURCK
+    stand_in_for: 0805 LED, red, MPN not stated
+    x: 1.524
+    y: -7.366
+    rotation: 270
+    src:
+      - '"NanoV3.3.brd RX at 28.956, 10.414 rot 90"'
+      - '"RX value Red, footprint CHIPLED_0805; stand-in fitted to its 2 pads (mean 0.1 mm)"'
+  - ref: TX
+    part: kingbright/APT2012CGCK
+    stand_in_for: 0805 LED, green, MPN not stated
+    x: 4.572
+    y: -7.366
+    rotation: 270
+    src:
+      - '"NanoV3.3.brd TX at 28.956, 13.462 rot 90"'
+      - '"TX value Green, footprint CHIPLED_0805; stand-in fitted to its 2 pads (mean 0.1 mm)"'
+  - ref: J1
+    part: samtec/TSW-115-07-T-S
+    stand_in_for: 15-way 2.54 mm pin header, MPN not stated
+    x: 7.62
+    y: 0
+    src:
+      - '"NanoV3.3.brd J1 at 39.37, 16.51 rot 180"'
+      - '"J1 value XXXX_STRIPNANO, footprint HEAD15-NOSS; stand-in fitted to its 15 pads (mean 0 mm)"'
+  - ref: J2
+    part: samtec/TSW-115-07-T-S
+    stand_in_for: 15-way 2.54 mm pin header, MPN not stated
+    x: -7.62
+    y: 0
+    src:
+      - '"NanoV3.3.brd J2 at 39.37, 1.27 rot 180"'
+      - '"J2 value XXXX_STRIPNANO, footprint HEAD15-NOSS; stand-in fitted to its 15 pads (mean 0 mm)"'
+  - ref: J4
+    part: samtec/TSW-103-07-T-D
+    stand_in_for: 2x3 ICSP pin header, MPN not stated
+    x: 0
+    y: -18.948
+    rotation: 90
+    src:
+      - '"NanoV3.3.brd J4 at 40.538, 8.89 rot 90"'
+      - '"J4 footprint 2X03; stand-in fitted to its 6 pads (mean 0 mm)"'

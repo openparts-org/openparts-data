@@ -1,11 +1,13 @@
 # Seeed Studio XIAO RP2040 (102010428). Package = the board with its header holes; assembly = the
 # components on it whose placement comes from the maker's design file (seeed/XIAO-RP2040-SCH-PCB@v1.3),
 # converted to the package frame (board centre, top view; see the package comment).
-# Only components with an OpenParts part, or a box whose size AND height a source states,
-# are listed. Left out:
-#   J1 shielding cover, U3 P25Q16SH flash (Puya), U4 LDO (DFN1x1, no MPN), X3 crystal 2520, USB1
-#   USB-C, RESET0/BOOT0 TD-1183, RGB1/RGB2/PWR0 LEDs, D1/D2/D8/D9: no OpenParts part and no
-#   height in the footprint names; passives skipped
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one) -- or a box whose size AND height a source states. Left out:
+#   J1 shielding cover (no height in the design data), U4 LDO (DFN1x1, no MPN), RGB1 RGB LED (2427
+#   4-pad; the Worldsemi 2427 land pattern is not readable from its drawing): no part; passives
+#   skipped. D2: value "NRS0320MW2T1G" (onsemi NSR0320MW2T1G is SOD-323) but footprint SOD523 -- the
+#   stand-in follows the footprint
 # U6: under the J1 shielding cover on the real board; the cover (no height in the design data) is not modelled.
 schema_version: "0.2"
 kind: part
@@ -29,3 +31,93 @@ assembly:
     x: 1.626
     y: -2.786
     src: '"Seeed U6 at 145.715, -106.629 rot -90"'
+  - ref: USB1
+    part: gct/USB4105-GF-A
+    stand_in_for: USB 2.0 Type-C receptacle 16P, MPN not stated
+    x: 0
+    y: 7.15
+    rotation: 180
+    src:
+      - '"Seeed USB1 at 153.132, -105.004 rot 180"'
+      - '"USB1 value USB2.0-TYPE-C, footprint USB2.0-TYPE-C; stand-in fitted to its 18 pads (mean 0.183 mm)"'
+  - ref: RESET0
+    part: omron/B3U-1000P
+    stand_in_for: TD-1183 tactile switch (value BUTTON_TD1183SA)
+    x: -4.064
+    y: -9.111
+    src:
+      - '"Seeed RESET0 at 139.391, -100.94 rot 90"'
+      - '"RESET0 value BUTTON_TD1183SA, footprint BUTTON_TD1183SA; stand-in fitted to its 2 pads (mean 0.025 mm)"'
+  - ref: BOOT0
+    part: omron/B3U-1000P
+    stand_in_for: TD-1183 tactile switch (value BUTTON_TD1183SA)
+    x: 4.064
+    y: -9.111
+    src:
+      - '"Seeed BOOT0 at 139.391, -109.068 rot 90"'
+      - '"BOOT0 value BUTTON_TD1183SA, footprint BUTTON_TD1183SA; stand-in fitted to its 2 pads (mean 0.025 mm)"'
+  - ref: PWR0
+    part: kingbright/APHHS1005QBC-D
+    stand_in_for: 0402 LED, red, MPN not stated
+    x: 5.766
+    y: 5.215
+    rotation: 180
+    src:
+      - '"Seeed PWR0 at 153.716, -110.769 rot -90"'
+      - '"PWR0 value RED, footprint LED-0402; stand-in fitted to its 2 pads (mean 0.003 mm)"'
+  - ref: X3
+    part: abracon/ABM10-16.000MHZ-E20-T
+    stand_in_for: 2520 4-pad crystal (value CRYSTAL_4P_2520), MPN not stated
+    x: -4.455
+    y: -5.248
+    src:
+      - '"Seeed X3 at 143.253, -100.548 rot 180"'
+      - '"X3 value CRYSTAL_4P_2520, footprint CRYSTAL_4P_2520; stand-in fitted to its 4 pads (mean 0 mm)"'
+  - ref: D2
+    part: onsemi/BAS16XV2T1G
+    stand_in_for: value "NRS0320MW2T1G" (onsemi NSR0320MW2T1G is SOD-323) on a SOD523 footprint
+    x: -4.406
+    y: -3.319
+    rotation: 180
+    src:
+      - '"Seeed D2 at 145.182, -100.647 rot 90"'
+      - '"D2 value NRS0320MW2T1G, footprint SOD523; stand-in fitted to its 2 pads (mean 0.2 mm)"'
+  - ref: U3
+    part: winbond/W25Q16JVUXIQ
+    stand_in_for: Puya P25Q16SH 16 Mbit flash, USON8 3x2
+    x: -3.835
+    y: 1.43
+    src:
+      - '"Seeed U3 at 149.931, -101.168 rot -90"'
+      - '"U3 footprint FLASH_GD25Q16CEIG_2_GD25Q16CEIG_USON8_3X2MM; stand-in fitted to its 9 pads (mean 0.145 mm)"'
+  - ref: D1
+    part: toshiba/DF2S6.8FS
+    x: -2.083
+    y: 2.98
+    src:
+      - '"Seeed D1 at 151.481, -102.921 rot -90"'
+      - '"D1 value DF2S6.8FS, footprint SOD-923; fitted to its pads"'
+  - ref: D8
+    part: toshiba/DF2S6.8FS
+    x: -0.102
+    y: 2.98
+    rotation: 180
+    src:
+      - '"Seeed D8 at 151.481, -104.902 rot 90"'
+      - '"D8 value DF2S6.8FS, footprint SOD-923; fitted to its pads"'
+  - ref: D9
+    part: toshiba/DF2S6.8FS
+    x: 1.88
+    y: 2.98
+    rotation: 180
+    src:
+      - '"Seeed D9 at 151.481, -106.883 rot 90"'
+      - '"D9 value DF2S6.8FS, footprint SOD-923; fitted to its pads"'
+  - ref: RGB2
+    part: worldsemi/WS2812B-1313-V6
+    stand_in_for: 1010 4-pad RGB LED (value LED_RGB_4P-1010), MPN not stated
+    x: 5.668
+    y: 7.526
+    src:
+      - '"Seeed RGB2 at 156.028, -110.671 rot 180"'
+      - '"RGB2 value LED_RGB_4P-1010, footprint 1010-4P; stand-in fitted to its 4 pads (mean 0.035 mm)"'

@@ -1,11 +1,11 @@
 # Seeed Studio XIAO SAMD21 (102010328). Package = the board with its header holes; assembly = the
 # components on it whose placement comes from the maker's design file (seeed/XIAO-SAMD21-SCH-PCB@v2.1),
 # converted to the package frame (board centre, top view; see the package comment).
-# Only components with an OpenParts part, or a box whose size AND height a source states,
-# are listed. Left out:
-#   MP1 shielding cover (footprint "SHIELDING-COVER-12.3X11.9X0.2MM": 0.2 is the sheet
-#   thickness, no height), U1 XC6206P332MR (Torex: 403), USB1 USB-C (no MPN), LEDs (LED-0402, no
-#   height): no part / no body height; passives skipped
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one) -- or a box whose size AND height a source states. Left out:
+#   MP1 shielding cover (footprint "SHIELDING-COVER-12.3X11.9X0.2MM": 0.2 is the sheet thickness, no
+#   height); passives skipped
 # U2: value "ATSAMD21G18-QFN48"; under the MP1 shielding cover on the real board (cover not
 # modelled: its "0.2" is sheet thickness, no height).
 schema_version: "0.2"
@@ -32,9 +32,64 @@ assembly:
     rotation: 90
     src: '"XIAO SAMD21 (Pre-Soldered)_v2.1.kicad_pcb U2 at 147.112, -106.328 rot 0"'
   - ref: X1
-    body: { width: 2, length: 1.2, height: 0.55, color: "#c8c8c8" }
+    part: abracon/ABS06-32.768KHZ-T
+    stand_in_for: 32.768 kHz crystal 2.0x1.2, MPN not stated
     x: -0.635
     y: -7.993
     src:
       - '"XIAO SAMD21 (Pre-Soldered)_v2.1.kicad_pcb X1 at 140.508, -104.369 rot -90"'
-      - '"X1 footprint name "X2-SMD-L2.0X1.2X0.55MM""'
+      - '"X1 value 32.768KHz, footprint X2-SMD-L2.0X1.2X0.55MM; stand-in fitted to its 2 pads (mean 0.088 mm)"'
+  - ref: USB1
+    part: gct/USB4105-GF-A
+    stand_in_for: USB 2.0 Type-C receptacle 16P, MPN not stated
+    x: 0
+    y: 7.099
+    rotation: 180
+    src:
+      - '"XIAO SAMD21 (Pre-Soldered)_v2.1.kicad_pcb USB1 at 153.081, -105.004 rot 180"'
+      - '"USB1 value USB2.0-TYPE-C, footprint USB2.0-TYPE-C; stand-in fitted to its 18 pads (mean 0.183 mm)"'
+  - ref: U1
+    part: microchip/MCP1700T-3302E-TT
+    stand_in_for: Torex XC6206P332MR 3.3 V LDO, SOT-23
+    x: -3.937
+    y: -5.326
+    rotation: 90
+    src:
+      - '"XIAO SAMD21 (Pre-Soldered)_v2.1.kicad_pcb U1 at 143.175, -101.067 rot -90"'
+      - '"U1 value XC6206P332MR, footprint SOT-23; stand-in fitted to its 3 pads (mean 0.135 mm)"'
+  - ref: L0
+    part: kingbright/APHHS1005QBC-D
+    stand_in_for: 0402 LED, yellow, MPN not stated
+    x: 5.334
+    y: 8.39
+    rotation: 270
+    src:
+      - '"XIAO SAMD21 (Pre-Soldered)_v2.1.kicad_pcb L0 at 156.891, -110.338 rot 0"'
+      - '"L0 value YELLOW, footprint LED-0402; stand-in fitted to its 2 pads (mean 0.003 mm)"'
+  - ref: PWR0
+    part: kingbright/APHHS1005QBC-D
+    stand_in_for: 0402 LED, green, MPN not stated
+    x: 5.334
+    y: 6.485
+    rotation: 270
+    src:
+      - '"XIAO SAMD21 (Pre-Soldered)_v2.1.kicad_pcb PWR0 at 154.986, -110.338 rot 0"'
+      - '"PWR0 value GREEN, footprint LED-0402; stand-in fitted to its 2 pads (mean 0.003 mm)"'
+  - ref: RX0
+    part: kingbright/APHHS1005QBC-D
+    stand_in_for: 0402 LED, blue, MPN not stated
+    x: 6.096
+    y: 6.485
+    rotation: 270
+    src:
+      - '"XIAO SAMD21 (Pre-Soldered)_v2.1.kicad_pcb RX0 at 154.986, -111.1 rot 0"'
+      - '"RX0 value BLUE, footprint LED-0402; stand-in fitted to its 2 pads (mean 0.003 mm)"'
+  - ref: TX0
+    part: kingbright/APHHS1005QBC-D
+    stand_in_for: 0402 LED, blue, MPN not stated
+    x: 6.096
+    y: 8.39
+    rotation: 270
+    src:
+      - '"XIAO SAMD21 (Pre-Soldered)_v2.1.kicad_pcb TX0 at 156.891, -111.1 rot 0"'
+      - '"TX0 value BLUE, footprint LED-0402; stand-in fitted to its 2 pads (mean 0.003 mm)"'

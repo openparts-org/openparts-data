@@ -1,0 +1,60 @@
+# GigaDevice 8-pad USON 3x4 mm, 0.80 mm pitch. From section 10.2
+# "Package USON8 (3x4mm)" of the GD25Q64E datasheet Rev 1.6, page 56
+# (table in the text layer, views checked on the rendered page).
+# Frame: the bottom view has pads 1-4 and 5-8 in two columns, e along
+# them; D (3.00, drawn horizontally across the two rows) = body_width
+# (X), E (4.00, along the rows) = body_length (Y). body_height = A.
+# lead_thickness = c (side view). The bottom view's two small metal tabs
+# (D1 0.20 x E1 0.80, e1 0.80 apart) are, per note 1, an exposed metal
+# area "not connected to any internal signal"; they are not modelled as
+# a pad (no exposed_pad). Coplanarity / edge tolerance (note 2) not
+# modelled.
+schema_version: "0.2"
+kind: package
+id: manufacturers/gigadevice/USON8-3x4-P0.8
+family: son
+lead_count: 8
+source: gigadevice/DS-00484-GD25Q64E@rev1.6
+
+pitch:
+  typ: 0.8 mm
+  src: p56 "Section 10.2 Package USON8 (3x4mm), Dimensions table, "e" 0.80 BSC"
+
+geometry: { type: parametric, generator: son }
+
+dimensions:
+  body_width:
+    min: 2.9 mm
+    typ: 3 mm
+    max: 3.1 mm
+    src: p56 "Section 10.2 Dimensions table, D 2.90 / 3.00 / 3.10 (across the two pad rows)"
+  body_length:
+    min: 3.9 mm
+    typ: 4 mm
+    max: 4.1 mm
+    src: p56 "Section 10.2 Dimensions table, E 3.90 / 4.00 / 4.10 (along the pad rows)"
+  body_height:
+    min: 0.5 mm
+    typ: 0.55 mm
+    max: 0.6 mm
+    src: p56 "Section 10.2 Dimensions table, A 0.50 / 0.55 / 0.60"
+  lead_thickness:
+    min: 0.1 mm
+    typ: 0.15 mm
+    max: 0.2 mm
+    src: p56 "Section 10.2 Dimensions table, c 0.10 / 0.15 / 0.20 (side view)"
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p56 "Section 10.2 Dimensions table, A1 0.00 / 0.02 / 0.05"
+  lead_width:
+    min: 0.25 mm
+    typ: 0.3 mm
+    max: 0.35 mm
+    src: p56 "Section 10.2 Dimensions table, b 0.25 / 0.30 / 0.35"
+  lead_length:
+    min: 0.5 mm
+    typ: 0.6 mm
+    max: 0.7 mm
+    src: p56 "Section 10.2 Dimensions table, L 0.50 / 0.60 / 0.70"

@@ -1,0 +1,89 @@
+# ESP32-S2-MINI-1 Wi-Fi module (PCB antenna). Pin numbers, names and types
+# from the module datasheet's pin definition table (p11-12 "Table 3: Pin
+# Definitions"); type P is power (ground for GND), I input, I/O/T io, a dash
+# nc. Alternate functions are not recorded here. Table 3 lists GND by number
+# groups ("1, 2, 30, 42, 43, 46-65"); pins 61-65 are the ground and corner
+# pads (p10 Figure 3). The -U variant (antenna connector) is a different
+# board size and is not modelled.
+schema_version: "0.2"
+kind: device
+id: espressif/ESP32-S2-MINI-1
+manufacturer: espressif
+category: microcontroller
+family: ESP32-S2-MINI-1
+source: espressif/esp32-s2-mini-1_esp32-s2-mini-1u_datasheet_en@rev1.6
+
+parameters:
+  supply_voltage:
+    min: 3 V
+    typ: 3.3 V
+    max: 3.6 V
+    src: p15 "Table 10 Recommended Operating Conditions, VDD33"
+
+pins:
+  src:  'p11 "Table 3: Pin Definitions (continued p12)"'
+  "1":  { name: GND, type: ground }
+  "2":  { name: GND, type: ground }
+  "3":  { name: 3V3, type: power }
+  "4":  { name: IO0, type: io }
+  "5":  { name: IO1, type: io }
+  "6":  { name: IO2, type: io }
+  "7":  { name: IO3, type: io }
+  "8":  { name: IO4, type: io }
+  "9":  { name: IO5, type: io }
+  "10": { name: IO6, type: io }
+  "11": { name: IO7, type: io }
+  "12": { name: IO8, type: io }
+  "13": { name: IO9, type: io }
+  "14": { name: IO10, type: io }
+  "15": { name: IO11, type: io }
+  "16": { name: IO12, type: io }
+  "17": { name: IO13, type: io }
+  "18": { name: IO14, type: io }
+  "19": { name: IO15, type: io }
+  "20": { name: IO16, type: io }
+  "21": { name: IO17, type: io }
+  "22": { name: IO18, type: io }
+  "23": { name: IO19, type: io }
+  "24": { name: IO20, type: io }
+  "25": { name: IO21, type: io }
+  "26": { name: IO26, type: io }
+  "27": { name: NC, type: nc }
+  "28": { name: IO33, type: io }
+  "29": { name: IO34, type: io }
+  "30": { name: GND, type: ground }
+  "31": { name: IO35, type: io }
+  "32": { name: IO36, type: io }
+  "33": { name: IO37, type: io }
+  "34": { name: IO38, type: io }
+  "35": { name: IO39, type: io }
+  "36": { name: IO40, type: io }
+  "37": { name: IO41, type: io }
+  "38": { name: IO42, type: io }
+  "39": { name: TXD0, type: io }
+  "40": { name: RXD0, type: io }
+  "41": { name: IO45, type: io }
+  "42": { name: GND, type: ground }
+  "43": { name: GND, type: ground }
+  "44": { name: IO46, type: input }
+  "45": { name: EN, type: input }
+  "46": { name: GND, type: ground }
+  "47": { name: GND, type: ground }
+  "48": { name: GND, type: ground }
+  "49": { name: GND, type: ground }
+  "50": { name: GND, type: ground }
+  "51": { name: GND, type: ground }
+  "52": { name: GND, type: ground }
+  "53": { name: GND, type: ground }
+  "54": { name: GND, type: ground }
+  "55": { name: GND, type: ground }
+  "56": { name: GND, type: ground }
+  "57": { name: GND, type: ground }
+  "58": { name: GND, type: ground }
+  "59": { name: GND, type: ground }
+  "60": { name: GND, type: ground }
+  "61": { name: GND, type: ground }
+  "62": { name: GND, type: ground }
+  "63": { name: GND, type: ground }
+  "64": { name: GND, type: ground }
+  "65": { name: GND, type: ground }

@@ -1,0 +1,30 @@
+# ESP32-S2-MINI-1-N4: listed in the module datasheet's series comparison table
+# (p3 Table 1 ESP32-S2-MINI-1 (ANT) Series Comparison) -> existence
+# verified, with its lifecycle mark.
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-S2-MINI-1-N4
+manufacturer: espressif
+mpn: ESP32-S2-MINI-1-N4
+device: espressif/ESP32-S2-MINI-1
+package: manufacturers/espressif/MODULE65-15.4x20-ESP32-S2-MINI-1
+
+sources:
+  - espressif/esp32-s2-mini-1_esp32-s2-mini-1u_datasheet_en@rev1.6
+  - espressif/esp32-s2_hardware_design_guidelines_en@rev1.6
+
+source: espressif/esp32-s2-mini-1_esp32-s2-mini-1u_datasheet_en@rev1.6
+
+existence:
+  status: verified
+  src: 'p3 "Table 1 ESP32-S2-MINI-1 (ANT) Series Comparison, Ordering Code: ESP32-S2-MINI-1-N4"'
+
+lifecycle:
+  status: nrnd
+  src: 'p3 "Table 1 ESP32-S2-MINI-1 (ANT) Series Comparison: ESP32-S2-MINI-1-N4 (NRND)"'
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p3 "Table 1 ESP32-S2-MINI-1 Series Comparison, ESP32-S2-MINI-1-N4, Ambient Temp."

@@ -1,0 +1,22 @@
+# Alps Alpine SKRPABE010: SKRP standard type, top push, 1.57 N, 0.2 mm
+# travel, 100,000 cycles, 4.2x3.2x2.5 mm. Printed in the page-1 "Product
+# List" -> existence verified. Lifecycle: no status printed -> unknown.
+schema_version: "0.2"
+kind: part
+id: alps/SKRPABE010
+manufacturer: alps
+mpn: SKRPABE010
+device: alps/SKRP
+package: manufacturers/alps/SKRP
+sources: [alps/TA02-SKRP]
+source: alps/TA02-SKRP
+
+existence:
+  status: verified
+  src: p1 "Product List, Standard type, SKRPABE010, Top push, 1.57 N, 0.2 mm, 4.2x3.2x2.5"
+
+lifecycle: { status: unknown }
+
+parameters:
+  actuation_force: { typ: 1.57 N, src: 'p1 "Product List, SKRPABE010, Operating force (N): 1.57"' }
+  travel:          { typ: 0.2 mm, src: 'p1 "Product List, SKRPABE010, Travel (mm): 0.2"' }

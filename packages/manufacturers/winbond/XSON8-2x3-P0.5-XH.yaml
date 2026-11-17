@@ -1,0 +1,59 @@
+# Winbond 8-pad XSON 2x3x0.4 mm (package code XH), 0.50 mm pitch, centre
+# metal pad. From section 9.3 of the W25Q32RV datasheet Revision F, PDF
+# page 78 (printed 77); rendered and read from the image (the table is not
+# in the text layer). Frame: the bottom view's E (3.00, horizontal, the
+# terminal rows are on its two ends) = body_width (X), D (2.00, along the
+# rows) = body_length (Y); exposed pad E2 (horizontal) = width (X), D2 =
+# length (Y). body_height = A. lead_thickness = C "0.127 Ref.".
+# Coplanarity y and K (Ref.) not modelled. The page note: the centre pad
+# "is not connected to any internal electrical signals" -- no EP pin.
+schema_version: "0.2"
+kind: package
+id: manufacturers/winbond/XSON8-2x3-P0.5-XH
+family: son
+
+lead_count:
+  value: 8
+  src: p78 "section 9.3 "8-Pad XSON 2x3x0.4-mm (Package Code XH)", 8 pads in the bottom view"
+
+source: winbond/W25Q32RV@revF
+
+pitch: { typ: 0.5 mm, src: 'p78 "section 9.3 table, "e --- / 0.50 / ---""' }
+geometry: { type: parametric, generator: son }
+
+dimensions:
+  body_width:
+    min: 2.9 mm
+    typ: 3 mm
+    max: 3.1 mm
+    src: p78 "section 9.3 table, E 2.90 / 3.00 / 3.10 (across the terminal rows)"
+  body_length:
+    min: 1.9 mm
+    typ: 2 mm
+    max: 2.1 mm
+    src: p78 "section 9.3 table, D 1.90 / 2.00 / 2.10 (along the terminal rows)"
+  body_height:
+    min: 0.3 mm
+    typ: 0.35 mm
+    max: 0.4 mm
+    src: p78 "section 9.3 table, "A 0.30 / 0.35 / 0.40""
+  exposed_pad:
+    src:    p78 "section 9.3 table, E2 0.15/0.20/0.25 (X) and D2 1.55/1.60/1.65 (Y)"
+    width:  { min: 0.15 mm, typ: 0.2 mm, max: 0.25 mm }
+    length: { min: 1.55 mm, typ: 1.6 mm, max: 1.65 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p78 "section 9.3 table, "A1 0.00 / 0.02 / 0.05""
+  lead_width:
+    min: 0.2 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p78 "section 9.3 table, "b 0.20 / 0.25 / 0.30""
+  lead_length:
+    min: 0.4 mm
+    typ: 0.45 mm
+    max: 0.5 mm
+    src: p78 "section 9.3 table, "L 0.40 / 0.45 / 0.50""
+  lead_thickness: { typ: 0.127 mm, src: 'p78 "section 9.3 table, "C 0.127 Ref.""' }

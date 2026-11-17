@@ -1,0 +1,43 @@
+# Alps Alpine SKRP TACT switch, SMT, 4.2 x 3.2 mm, height 2.5 mm -- page-2
+# "Drawing No.1" of alps/TA02-SKRP (raster drawing, no tolerances printed).
+# Frame: the top view as drawn (terminals at the four corners, X = the
+# "4.2" direction) -- the generator frame, no rotation. Terminal numbers
+# from the top view: 1 upper left, 2 upper right, 3 lower left, 4 lower
+# right.
+# Top view: housing "4.2" x "3.2", terminal toe to toe "4.6". Height:
+# the page-1 Product List "4.2x3.2x2.5" (W x D x H) and the side view's
+# "2.5" -> body_height 2.5 (whole switch; no housing/stem split recorded).
+# Pads ("Land Dimensions"): X inner edges "3.1", outer "5.2" -> 1.05 wide
+# at x = +-(3.1 + 5.2)/4 = +-2.075; Y inner "1.5", outer "2.8" -> 0.65
+# long at y = +-1.075.
+# Terminal width is not printed: lead_width is left out.
+schema_version: "0.2"
+kind: package
+id: manufacturers/alps/SKRP
+family: tact_switch_smd
+lead_count: 4
+source: alps/TA02-SKRP
+
+pitch: { typ: 2.15 mm, src: 'p2 "Land Dimensions, pad centres (1.5 + 2.8)/2 apart in Y"' }
+
+pad_order:
+  value: ["1", "3", "4", "2"]
+  src:   p2 "Dimensions, top view terminal numbers 1/2 upper, 3/4 lower (see header)"
+
+geometry: { type: parametric, generator: tact_switch_smd }
+
+dimensions:
+  body_width:    { typ: 4.2 mm, src: 'p2 "Dimensions, top view, housing "4.2""' }
+  body_length:   { typ: 3.2 mm, src: 'p2 "Dimensions, top view, housing "3.2""' }
+  body_height:
+    typ: 2.5 mm
+    src: p1 "Product List, Dimensions (WxDxH) 4.2x3.2x2.5"; p2 side view "2.5"
+  overall_width: { typ: 4.6 mm, src: 'p2 "Dimensions, top view, terminal toe to toe "4.6""' }
+
+pads:
+  value:
+    - { number: "1", x: -2.075, y: 1.075, width: 1.05, length: 0.65 }
+    - { number: "3", x: -2.075, y: -1.075, width: 1.05, length: 0.65 }
+    - { number: "4", x: 2.075, y: -1.075, width: 1.05, length: 0.65 }
+    - { number: "2", x: 2.075, y: 1.075, width: 1.05, length: 0.65 }
+  src: p2 "Land Dimensions, "3.1", "5.2", "1.5", "2.8" (see header)"

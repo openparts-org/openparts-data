@@ -1,11 +1,10 @@
 # SparkFun Pro Micro - RP2040 (DEV-17717). Package = the board with its header holes; assembly = the
 # components on it whose placement comes from the maker's design file (sparkfun/SparkFun_Pro_Micro-RP2040@6d461a6),
 # converted to the package frame (board centre, top view; see the package comment).
-# Only components with an OpenParts part, or a box whose size AND height a source states,
-# are listed. Left out:
-#   U1 3.3V regulator (internal code VREG-12457), U3 WS2812-2020 (series/version not stated), J5
-#   USB-C, J2 Qwiic (JST SH, MPN not named), S1/S2 4.6x2.8 switches, Y1, D2, F1, LED1: no exact
-#   part / no body height
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one) -- or a box whose size AND height a source states. Left out:
+#   S1/S2 4.6x2.8 switches (no switch of that size), F1 0805 fuse: no part; passives skipped
 schema_version: "0.2"
 kind: part
 id: sparkfun/DEV-17717
@@ -26,10 +25,72 @@ assembly:
     y: -5.08
     src: '"Hardware/SparkFun_ProMicro-RP2040.brd U2 at 8.89, 11.43 rot 0"'
   - ref: U4
-    body: { width: 6, length: 5, height: 0.75, color: "#303030" }
+    part: winbond/W25Q128JVPIQ
+    stand_in_for: value W25QXX128MBIT (W25Q 128 Mbit, WSON 6x5)
     x: 0
     y: 2.794
     src:
       - '"Hardware/SparkFun_ProMicro-RP2040.brd U4 at 8.89, 19.304 rot 0"'
-      - '"U4 value W25QXX128MBIT, footprint WSON-8-6X5-SKINNY_CENTERPAD"'
-      - winbond/W25Q128JV@revF p70 "10.3 8-Pad WSON 6x5-mm, D 6.00 across the rows, E 5.00, A 0.75 (W25Q 128M member not named)"
+      - '"U4 value W25QXX128MBIT, footprint WSON-8-6X5-SKINNY_CENTERPAD; stand-in fitted to its 8 pads (mean 0.21 mm)"'
+  - ref: J5
+    part: gct/USB4105-GF-A
+    stand_in_for: USB Type-C receptacle 16P, MPN not stated
+    x: 0
+    y: 13.04
+    rotation: 180
+    src:
+      - '"Hardware/SparkFun_ProMicro-RP2040.brd J5 at 8.89, 26.67 rot 180"'
+      - '"J5 value USB Female Type C Connector, footprint USB-C-16P_4LAYER-PADS; stand-in fitted to its 16 pads (mean 0.013 mm)"'
+  - ref: J2
+    part: jst/SM04B-SRSS-TB
+    stand_in_for: Qwiic 4-pin JST SH receptacle, MPN not stated
+    x: 0
+    y: -13.33
+    src:
+      - '"Hardware/SparkFun_ProMicro-RP2040.brd J2 at 8.89, 5.08 rot 0"'
+      - '"J2 value Qwiic, footprint JST04_1MM_RA; stand-in fitted to its 6 pads (mean 0.1 mm)"'
+  - ref: U3
+    part: worldsemi/WS2812B-2020-V7
+    stand_in_for: value WS2812-2020 (version not stated)
+    x: 6.71
+    y: 14.99
+    rotation: 270
+    src:
+      - '"Hardware/SparkFun_ProMicro-RP2040.brd U3 at 15.6, 31.5 rot 90"'
+      - '"U3 value WS2812-2020, footprint WS2812-2020; stand-in fitted to its 4 pads (mean 0 mm)"'
+  - ref: U1
+    part: diodes/AP2112K-3.3TRG1
+    stand_in_for: 3.3 V regulator, SOT23-5, MPN not stated
+    x: 0
+    y: 7.62
+    rotation: 270
+    src:
+      - '"Hardware/SparkFun_ProMicro-RP2040.brd U1 at 8.89, 24.13 rot 180"'
+      - '"U1 value 3.3V, footprint SOT23-5; stand-in fitted to its 5 pads (mean 0.15 mm)"'
+  - ref: D2
+    part: onsemi/NSR0320MW2T1G
+    stand_in_for: Schottky 3A/10V/280mV, SOD-323, MPN not stated
+    x: -2.286
+    y: 7.62
+    rotation: 270
+    src:
+      - '"Hardware/SparkFun_ProMicro-RP2040.brd D2 at 6.604, 24.13 rot 270"'
+      - '"D2 value 3A/10V/280mV, footprint SOD-323; stand-in fitted to its 2 pads (mean 0.05 mm)"'
+  - ref: LED1
+    part: kingbright/APT1608SURCK
+    stand_in_for: 0603 LED, red, MPN not stated
+    x: -6.985
+    y: 14.732
+    rotation: 180
+    src:
+      - '"Hardware/SparkFun_ProMicro-RP2040.brd LED1 at 1.905, 31.242 rot 0"'
+      - '"LED1 value RED, footprint LED-0603; stand-in fitted to its 2 pads (mean 0.052 mm)"'
+  - ref: Y1
+    part: abracon/ABM10-16.000MHZ-E20-T
+    stand_in_for: 12 MHz crystal 2.0x2.5, MPN not stated
+    x: -5.203
+    y: -9.642
+    rotation: 90
+    src:
+      - '"Hardware/SparkFun_ProMicro-RP2040.brd Y1 at 3.683, 6.858 rot 180"'
+      - '"Y1 value 12MHz, footprint CRYSTAL-SMD-2X2.5MM; stand-in fitted to its 4 pads (mean 0.079 mm)"'

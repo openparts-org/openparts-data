@@ -1,0 +1,12 @@
+schema_version: "0.2"
+kind: device
+id: toshiba/DF2S6.8FS
+manufacturer: toshiba
+category: diode
+family: DF2S6.8FS
+source: toshiba/DF2S6.8FS-datasheet-en
+
+pins:
+  src: 'p1 "2. Packaging and Internal Circuit, 1: Cathode / 2: Anode"'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

@@ -1,11 +1,12 @@
 # Arduino Nano Every (ABX00028). Package = the board with its header holes; assembly = the
 # components on it whose placement comes from the maker's design file (arduino/ABX00028-cad-files@V4.0),
 # converted to the package frame (board centre, top view; see the package comment).
-# Only components with an OpenParts part, or a box whose size AND height a source states,
-# are listed. Left out:
-#   IC1 MPM3610 (MPS), U3 ATSAMD11D14A-MUT, J1 ZX62-AB-5PA (Hirose: refuses plain fetches), PB1
-#   PTS820 (C&K: 403), Q1/Q2 BSS138PS, D1 PRTR5V0U2X: no OpenParts part and no body height in
-#   the design data; passives skipped
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one) -- or a box whose size AND height a source states. Left out:
+#   IC1 MPM3610 (MPS), U3 ATSAMD11D14A-MUT, PB1 PTS820 4.2x3.2 switch (C&K: 403; no switch of that
+#   size yet), Q1/Q2 BSS138PS, D1 PRTR5V0U2X: no OpenParts part; passives skipped. DL1-DL4, D2 and
+#   J1 stand-ins sit on the .mnt centroids and angles (the mount file has no pads)
 # U1: BOM orders ATMEGA4809-AFR (the tape-and-reel code of ATmega4809-AF).
 schema_version: "0.2"
 kind: part
@@ -34,42 +35,56 @@ assembly:
     rotation: 270
     src: '"NANOEveryV4.0.mnt U2 at 19.76, 4.85 rot 90"'
   - ref: DL1
-    body: { width: 1.6, length: 0.8, height: 0.8, color: "#e8c840" }
+    part: kingbright/APT1608SYCK
+    stand_in_for: HSMY-C190 (0603 yellow)
     x: -5.79
     y: 19.69
     rotation: 90
     src:
       - '"NANOEveryV4.0.mnt DL1 at 1.9, 3.1 rot 180"'
-      - '"DL1 footprint name "LEDC1608X80N" (IPC-7351: 1.6 x 0.8 mm body, 0.80 mm high)"'
+      - '"DL1 footprint YELLOW-LEDC1608X80N-AK; placed on the mount-file centroid and angle (no pads in the file)"'
   - ref: DL2
-    body: { width: 1.6, length: 0.8, height: 0.8, color: "#40c040" }
+    part: kingbright/APT1608CGCK
+    stand_in_for: HSMG-C190 (0603 green)
     x: 5.81
     y: 19.69
     rotation: 90
     src:
       - '"NANOEveryV4.0.mnt DL2 at 1.9, 14.7 rot 180"'
-      - '"DL2 footprint name "LEDC1608X80N" (IPC-7351: 1.6 x 0.8 mm body, 0.80 mm high)"'
+      - '"DL2 footprint GREEN-LEDC1608X80N-AK; placed on the mount-file centroid and angle (no pads in the file)"'
   - ref: DL3
-    body: { width: 1.6, length: 0.8, height: 0.8, color: "#e8c840" }
+    part: kingbright/APT1608SYCK
+    stand_in_for: HSMY-C190 (0603 yellow)
     x: -0.44
     y: -4.01
     rotation: 180
     src:
       - '"NANOEveryV4.0.mnt DL3 at 25.6, 8.45 rot 270"'
-      - '"DL3 footprint name "LEDC1608X80N" (IPC-7351: 1.6 x 0.8 mm body, 0.80 mm high)"'
+      - '"DL3 footprint YELLOW-LEDC1608X80N-AK; placed on the mount-file centroid and angle (no pads in the file)"'
   - ref: DL4
-    body: { width: 1.6, length: 0.8, height: 0.8, color: "#e8c840" }
+    part: kingbright/APT1608SYCK
+    stand_in_for: HSMY-C190 (0603 yellow)
     x: -0.44
     y: -2.46
     rotation: 180
     src:
       - '"NANOEveryV4.0.mnt DL4 at 24.05, 8.45 rot 270"'
-      - '"DL4 footprint name "LEDC1608X80N" (IPC-7351: 1.6 x 0.8 mm body, 0.80 mm high)"'
+      - '"DL4 footprint YELLOW-LEDC1608X80N-AK; placed on the mount-file centroid and angle (no pads in the file)"'
   - ref: D2
-    body: { width: 3.5, length: 1.7, height: 1.1, color: "#303030" }
+    part: onsemi/MBR120VLSFT1G
+    stand_in_for: PMEG6020AELRX (SOD123FL)
     x: 4.06
     y: 13.69
     rotation: 90
     src:
       - '"NANOEveryV4.0.mnt D2 at 7.9, 12.95 rot 180"'
-      - '"D2 footprint name "SODFL3517X110N" (IPC-7351: 3.5 x 1.7 mm, 1.10 mm high)"'
+      - '"D2 footprint PMEG6020-SODFL3517X110N; placed on the mount-file centroid and angle (no pads in the file)"'
+  - ref: J1
+    part: gct/USB3085-30-A
+    stand_in_for: Hirose ZX62-AB-5PA micro-USB receptacle
+    x: 0
+    y: 18.62
+    rotation: 180
+    src:
+      - '"NANOEveryV4.0.mnt J1 at 2.97, 8.89 rot 270"'
+      - '"J1 footprint --ZX62-AB-5PA; placed on the mount-file centroid and angle (no pads in the file)"'

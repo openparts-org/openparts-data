@@ -1,11 +1,10 @@
 # Seeed Studio XIAO ESP32C3 (113991054). Package = the board with its header holes; assembly = the
 # components on it whose placement comes from the maker's design file (seeed/XIAO-ESP32C3-KiCad@v1.3),
 # converted to the package frame (board centre, top view; see the package comment).
-# Only components with an OpenParts part, or a box whose size AND height a source states,
-# are listed. Left out:
-#   U1 (SOT-25, no value), USB0 UBF31-0171 (maker not named), BOOT0/RST0 TD-1183SN-A3N-D1R, D1
-#   MSK4005, Q1 LP0404N3T5G, F1, CHG0 LED: no OpenParts part / no body height in a fetchable
-#   maker source or the footprint names; passives skipped
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one) -- or a box whose size AND height a source states. Left out:
+#   U1 (SOT-25, no value), Q1 LP0404N3T5G, F1: no OpenParts part / no body height; passives skipped
 schema_version: "0.2"
 kind: part
 id: seeed/113991054
@@ -30,10 +29,14 @@ assembly:
     rotation: 90
     src: '"XIAO U4 at 147.815, -107.391 rot -90"'
   - ref: X4
-    body: { width: 2, length: 1.6, height: 0.5, color: "#c8c8c8" }
+    part: abracon/ABM11-40.000MHZ-B7G-T
+    stand_in_for: 40 MHz crystal 2.0x1.6 (value 40MHz/306011483)
     x: -1.778
     y: -3.493
-    src: ['"XIAO X4 at 145.009, -103.226 rot -90"', '"X4 footprint name "X4-SMD-2.0X1.6X0.5MM""']
+    rotation: 90
+    src:
+      - '"XIAO X4 at 145.009, -103.226 rot -90"'
+      - '"X4 value 40MHz/306011483, footprint X4-SMD-2.0X1.6X0.5MM; stand-in fitted to its 4 pads (mean 0.05 mm)"'
   - ref: X2
     body: { width: 1.6, length: 1, height: 0.5, color: "#c8c8c8" }
     x: 4.064
@@ -54,3 +57,45 @@ assembly:
     y: -0.317
     rotation: 270
     src: '"XIAO U2 at 148.184, -100.559 rot 90"'
+  - ref: USB0
+    part: gct/USB4105-GF-A
+    stand_in_for: UBF31-0171 USB Type-C receptacle (maker not named)
+    x: 0
+    y: 7.154
+    rotation: 180
+    src:
+      - '"XIAO USB0 at 153.137, -105.004 rot 180"'
+      - '"USB0 value UBF31-0171, footprint USB2.0-TYPE-C; stand-in fitted to its 18 pads (mean 0.183 mm)"'
+  - ref: BOOT0
+    part: omron/B3U-1000P
+    stand_in_for: TD-1183SN-A3N-D1R tactile switch
+    x: -4.445
+    y: -8.954
+    src:
+      - '"XIAO BOOT0 at 139.548, -100.559 rot 90"'
+      - '"BOOT0 value TD-1183SN-A3N-D1R, footprint BUTTON_TD1183SA; stand-in fitted to its 2 pads (mean 0.025 mm)"'
+  - ref: RST0
+    part: omron/B3U-1000P
+    stand_in_for: TD-1183SN-A3N-D1R tactile switch
+    x: 4.445
+    y: -8.954
+    src:
+      - '"XIAO RST0 at 139.548, -109.449 rot -90"'
+      - '"RST0 value TD-1183SN-A3N-D1R, footprint BUTTON_TD1183SA; stand-in fitted to its 2 pads (mean 0.025 mm)"'
+  - ref: CHG0
+    part: kingbright/APHHS1005QBC-D
+    stand_in_for: 0402 LED, red, MPN not stated
+    x: 5.715
+    y: 9.855
+    src:
+      - '"XIAO CHG0 at 158.356, -110.719 rot 90"'
+      - '"CHG0 value RED, footprint LED-0402; stand-in fitted to its 2 pads (mean 0.003 mm)"'
+  - ref: D1
+    part: onsemi/BAS16XV2T1G
+    stand_in_for: MSK4005 diode, SOD-523
+    x: -2.413
+    y: 0.063
+    rotation: 270
+    src:
+      - '"XIAO D1 at 148.565, -102.591 rot 180"'
+      - '"D1 value MSK4005, footprint SOD-523; stand-in fitted to its 2 pads (mean 0.05 mm)"'

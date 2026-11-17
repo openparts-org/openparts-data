@@ -1,0 +1,19 @@
+# Alps Alpine "TACT Switch Surface Mount Type, 4.2x3.2mm Compact High
+# Operating Force (Surface Mount), SKRP Series" catalog pages (2 pages,
+# "Update:2510"), linked from the SKRPABE010 product page
+# (tech.alpsalpine.com/e/products/detail/SKRPABE010/), plain curl
+# 2026-11-17. Page 1: series ratings, "Product List" (products No.,
+# operating force, travel, life, W x D x H 4.2x3.2x2.5). Page 2 "Drawing
+# No.1": Dimensions (top and side views), Land Dimensions ("Viewed from
+# mounting face"), Circuit Diagram -- drawn as raster images.
+schema_version: "0.2"
+kind: source
+id: alps/TA02-SKRP
+sha256: 649444e2b648c20cfa1ae929edac3fc6234fcd7da2a07a6c98a9673db39b159d
+retrieved: 2026-11-17
+url: https://tech.alpsalpine.com/cms.media/product_catalog_ta_02_skrp_en_2cd80f610b.pdf
+publisher: alps
+document_id: TA02-SKRP
+document_type: datasheet
+revision: "2510"
+date: 2025-09-29

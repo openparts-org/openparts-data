@@ -1,0 +1,47 @@
+# Toshiba 1-1L1S ("fSC", equivalent SOD-923 per page 1), 2-terminal
+# flat-lead package, from the page-8 "Package Dimensions" drawing of
+# toshiba/DF2S6.8FS-datasheet-en (unit mm). Top view: body "0.6 ±0.05"
+# across the leads, "0.8 ±0.05" along them, lead-tip span "1 ±0.05";
+# terminals "0.2 ±0.05" wide, "0.1 ±0.05" thick; height "0.48 +0.02/-0.03".
+# The cathode band is on the pin-1 end (page 1 figure).
+schema_version: "0.2"
+kind: package
+id: manufacturers/toshiba/1-1L1S
+family: sod
+lead_count: 2
+source: toshiba/DF2S6.8FS-datasheet-en
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: sod }
+
+dimensions:
+  body_width:
+    min: 0.55 mm
+    typ: 0.6 mm
+    max: 0.65 mm
+    src: p8 "Package Dimensions top view, body "0.6 ±0.05" across the leads"
+  body_length:
+    min: 0.75 mm
+    typ: 0.8 mm
+    max: 0.85 mm
+    src: p8 "Package Dimensions top view, body "0.8 ±0.05" along the leads"
+  body_height:
+    min: 0.45 mm
+    typ: 0.48 mm
+    max: 0.5 mm
+    src: p8 "Package Dimensions end view, height "0.48 +0.02/-0.03""
+  lead_thickness:
+    min: 0.05 mm
+    typ: 0.1 mm
+    max: 0.15 mm
+    src: p8 "Package Dimensions side view, lead thickness "0.1 ±0.05""
+  overall_length:
+    min: 0.95 mm
+    typ: 1 mm
+    max: 1.05 mm
+    src: p8 "Package Dimensions top view, lead-tip span "1 ±0.05""
+  lead_width:
+    min: 0.15 mm
+    typ: 0.2 mm
+    max: 0.25 mm
+    src: p8 "Package Dimensions top view, lead width "0.2 ±0.05""

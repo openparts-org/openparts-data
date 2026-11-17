@@ -1,0 +1,24 @@
+# Product name as the datasheet title and the XIAO RP2040 design print it
+# (Toshiba's stock-check row adds the packing code ",L3M"). Start of
+# commercial production 2003-04 (page 1); lifecycle not stated -> unknown.
+schema_version: "0.2"
+kind: part
+id: toshiba/DF2S6.8FS
+manufacturer: toshiba
+mpn: DF2S6.8FS
+device: toshiba/DF2S6.8FS
+
+package:
+  value: manufacturers/toshiba/1-1L1S
+  src: 'p8 "Package Name(s), TOSHIBA: 1-1L1S, Nickname: fSC"'
+
+sources: [toshiba/DF2S6.8FS-datasheet-en]
+source: toshiba/DF2S6.8FS-datasheet-en
+
+existence: { status: verified, src: p1 "DF2S6.8FS ESD Protection Diodes Silicon Epitaxial Planar" }
+lifecycle: { status: unknown }
+
+parameters:
+  reverse_voltage:
+    max: 5 V
+    src: p2 "Electrical Characteristics, Working peak reverse voltage VRWM 5 V max"

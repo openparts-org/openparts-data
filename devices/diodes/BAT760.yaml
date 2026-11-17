@@ -1,0 +1,35 @@
+# BAT760: 30 V, 1 A surface-mount Schottky barrier rectifier, SOD323
+# (DS30498). Polarity from the page-1 Mechanical Data ("Terminal
+# Connections: Cathode Band"); no pin numbers printed: numbered in the
+# generator's position convention (pin 1 at -X), cathode = 1, anode = 2.
+schema_version: "0.2"
+kind: device
+id: diodes/BAT760
+manufacturer: diodes
+category: diode
+family: BAT760
+source: diodes/DS30498
+
+parameters:
+  forward_voltage:
+    - typ: 245 mV
+      max: 270 mV
+      at: { IF: 10 mA }
+      src: p2 "Electrical Characteristics, Forward Voltage Drop VF"
+    - typ: 320 mV
+      max: 350 mV
+      at: { IF: 100 mA }
+      src: p2 "Electrical Characteristics, Forward Voltage Drop VF"
+    - typ: 495 mV
+      max: 550 mV
+      at: { IF: 1 A }
+      src: p2 "Electrical Characteristics, Forward Voltage Drop VF"
+  reverse_voltage: { max: 30 V, src: 'p2 "Maximum Ratings, VRRM/VRWM/VR 30 V"' }
+  forward_current:
+    max: 1 A
+    src: p2 "Maximum Ratings, Average Rectified Output Current IO 1 A"
+
+pins:
+  src: 'p1 "Mechanical Data: "Terminal Connections: Cathode Band"; numbering by generator convention, see header"'
+  "1": { name: Cathode, type: passive }
+  "2": { name: Anode, type: passive }

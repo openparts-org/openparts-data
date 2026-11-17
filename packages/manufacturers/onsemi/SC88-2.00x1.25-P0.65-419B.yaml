@@ -1,0 +1,54 @@
+# onsemi SC-88 / SOT-363 (CASE 419B-02, issue Z, "SC-88 2.00x1.25x0.90,
+# 0.65P"), from the p12 "MECHANICAL CASE OUTLINE" of onsemi/BC846BDW1T1-D
+# (dimension table read from the rendered page). Pin numbers from the top
+# view: 1 2 3 along the bottom, 6 5 4 along the top -- the generator's
+# counter-clockwise [3, 3] layout.
+# Mapping for the `sot` generator (leads exit across body_length):
+# body_width = D "2.00 BSC" (along the lead rows), body_length = E1 "1.25
+# BSC", overall_length = E "2.10 BSC", body_height = A2 0.70/0.90/1.00,
+# overall_height = A max 1.10, standoff = A1 0.00-0.10, lead_width = b
+# 0.15/0.20/0.25, lead_thickness = c 0.08/0.15/0.22, lead_length = L
+# 0.26/0.36/0.46. Not modelled: L2 0.15 BSC (gauge plane).
+# Cross-checked: the same CASE 419B-02 ISSUE Z outline (dated 18 APR 2024) on
+# p9 of onsemi/MBT3904DW1T1-D gives identical values row for row.
+schema_version: "0.2"
+kind: package
+id: manufacturers/onsemi/SC88-2.00x1.25-P0.65-419B
+family: sot
+lead_count: 6
+
+lead_layout:
+  value: [3, 3]
+  src:   p12 "CASE 419B-02 top view, 1 2 3 along the bottom, 6 5 4 along the top"
+
+source: onsemi/BC846BDW1T1-D
+
+pitch: { typ: 0.65 mm, src: 'p12 "CASE 419B-02 table, e "0.65 BSC""' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:     { typ: 2 mm, src: 'p12 "CASE 419B-02 table, D "2.00 BSC" -- see mapping note"' }
+  body_length: { typ: 1.25 mm, src: 'p12 "CASE 419B-02 table, E1 "1.25 BSC" -- see mapping note"' }
+  body_height:
+    min: 0.7 mm
+    typ: 0.9 mm
+    max: 1 mm
+    src: p12 "CASE 419B-02 table, A2 "0.70 / 0.90 / 1.00""
+  lead_thickness:
+    min: 0.08 mm
+    typ: 0.15 mm
+    max: 0.22 mm
+    src: p12 "CASE 419B-02 table, c "0.08 / 0.15 / 0.22""
+  overall_length: { typ: 2.1 mm, src: 'p12 "CASE 419B-02 table, E "2.10 BSC" (lead-tip span)"' }
+  overall_height: { max: 1.1 mm, src: 'p12 "CASE 419B-02 table, A "--- / --- / 1.10""' }
+  standoff: { min: 0 mm, max: 0.1 mm, src: 'p12 "CASE 419B-02 table, A1 "0.00 / --- / 0.10""' }
+  lead_width:
+    min: 0.15 mm
+    typ: 0.2 mm
+    max: 0.25 mm
+    src: p12 "CASE 419B-02 table, b "0.15 / 0.20 / 0.25""
+  lead_length:
+    min: 0.26 mm
+    typ: 0.36 mm
+    max: 0.46 mm
+    src: p12 "CASE 419B-02 table, L "0.26 / 0.36 / 0.46""

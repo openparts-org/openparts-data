@@ -1,0 +1,39 @@
+# Abracon AOTA-B201610 molded power inductor body, 2.0 x 1.6 x 1.0 mm, from
+# the p4 "Mechanical Specifications" of abracon/AOTA-B201610S3R3-101-T
+# (Inch[mm]). body_length is the top view's "2.00±0.20" (along the two
+# terminals, as the bottom view draws them at its ends), body_width the
+# "1.60±0.20"; terminal "0.60±0.20" (bottom view) = lead_length; the
+# terminals run the full body width (bottom view) -> lead_width = 1.60.
+# Height "1.00 MAX." (front view).
+schema_version: "0.2"
+kind: package
+id: manufacturers/abracon/AOTA-B201610
+family: chip
+lead_count: 2
+source: abracon/AOTA-B201610S3R3-101-T
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:
+    min: 1.4 mm
+    typ: 1.6 mm
+    max: 1.8 mm
+    src: p4 "Mechanical Specifications, top view 0.063±0.008 [1.60±0.20]"
+  body_length:
+    min: 1.8 mm
+    typ: 2 mm
+    max: 2.2 mm
+    src: p4 "Mechanical Specifications, top view 0.079±0.008 [2.00±0.20]"
+  body_height: { max: 1 mm, src: 'p4 "Mechanical Specifications, front view 0.039 MAX. [1.00]"' }
+  lead_length:
+    min: 0.4 mm
+    typ: 0.6 mm
+    max: 0.8 mm
+    src: p4 "Mechanical Specifications, bottom view terminal 0.024±0.008 [0.60±0.20]"
+  lead_width:
+    min: 1.4 mm
+    typ: 1.6 mm
+    max: 1.8 mm
+    src: p4 "Mechanical Specifications, terminals over the full 1.60±0.20 body width (bottom view)"

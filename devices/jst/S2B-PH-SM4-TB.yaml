@@ -1,0 +1,14 @@
+# JST PH SMT wire-to-board header, side entry, 2 circuits
+# (jst/ePH page 4, Header (SMT type) Side entry Model No. table: S2B-PH-SM4-TB).
+# The sheet names no signals: each circuit is named by its number, all
+# passive. The two reinforcement tabs are the package's MP pads.
+schema_version: "0.2"
+kind: device
+id: jst/S2B-PH-SM4-TB
+manufacturer: jst
+category: connector
+family: PH
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

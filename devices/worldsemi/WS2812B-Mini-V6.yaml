@@ -1,0 +1,30 @@
+# Worldsemi WS2812B-Mini-V6: addressable RGB LED, a control IC and red,
+# green and blue dies in a 3535 package (worldsemi/WS2812B-Mini-V6@v1.3).
+# supply_voltage is the "Power supply voltage" row of the Absolute Maximum
+# Ratings table, "+3.3~+5.3" V.
+schema_version: "0.2"
+kind: device
+id: worldsemi/WS2812B-Mini-V6
+manufacturer: worldsemi
+category: led
+family: WS2812B
+source: worldsemi/WS2812B-Mini-V6@v1.3
+
+parameters:
+  color:
+    value: rgb
+    src: 'p1 "Features: Control circuit and RGB chip are integrated in a 3535 package"'
+  data_interface: { value: single_wire, src: 'p1 "General description: Single-wire RZ protocol"' }
+  supply_voltage:
+    min: 3.3 V
+    max: 5.3 V
+    at: { TA: 25 °C }
+    src: p3 "Absolute Maximum Ratings, Power supply voltage VDD"
+  data_rate:      { typ: 800 kbps, src: 'p1 "Features: Send data at speeds of 800Kbps"' }
+
+pins:
+  src: p2 "PIN Function"
+  "1": { name: VDD, type: power }
+  "2": { name: DOUT, type: output }
+  "3": { name: VSS, type: ground }
+  "4": { name: DIN, type: input }

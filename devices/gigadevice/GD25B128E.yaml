@@ -1,0 +1,33 @@
+# GD25B128E 128M-bit SPI NOR flash (3 V, uniform 4 KB sectors), 8-pin
+# USON8/WSON8 pin numbering, transcribed from the pin description table
+# cited below (the SOP8 table, Table 2, gives the same names on the same
+# numbers). Unlike the GD25Q parts, pins 3 and 7 are IO2 and IO3 only (no
+# WP#/HOLD# function); the datasheet names the other I/O pins in the
+# Standard-SPI form with the Quad IOn name in parentheses: the IOn name is
+# kept as an alternate function. The WSON8 exposed pad "is not connected
+# to any internal signal" (package note) -- no EP pin.
+schema_version: "0.2"
+kind: device
+id: gigadevice/GD25B128E
+manufacturer: gigadevice
+category: flash
+family: GD25B128E
+source: gigadevice/DS-00594-GD25B128E@rev1.1
+
+parameters:
+  capacity: { typ: 128 Mbit, src: 'p4 "1 Features, 128M-bit Serial NOR Flash, 16M-Byte"' }
+  supply_voltage:
+    min: 2.7 V
+    max: 3.6 V
+    src: 'p4 "1 Features, Single Power Supply Voltage, Full voltage range: 2.7-3.6V"'
+
+pins:
+  src: p5 "Table 1. Pin Description for USON8/WSON8 Package"
+  "1": { name: CS#, type: input }
+  "2": { name: SO, type: io, alternate_functions: [IO1] }
+  "3": { name: IO2, type: io }
+  "4": { name: VSS, type: ground }
+  "5": { name: SI, type: io, alternate_functions: [IO0] }
+  "6": { name: SCLK, type: input }
+  "7": { name: IO3, type: io }
+  "8": { name: VCC, type: power }

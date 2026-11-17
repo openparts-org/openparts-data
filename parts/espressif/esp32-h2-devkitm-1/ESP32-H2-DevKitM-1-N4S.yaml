@@ -2,11 +2,13 @@
 # -> existence verified. On-board module: ESP32-H2-MINI-1-H4S (ordering table).
 # Assembly: components placed from the ESP32-H2-DevKitM-1 layout PDF (pad
 # centres of the top-copper plot, scaled by the board outline; see the
-# agent-scratch placement table). U3 CP2102N and SW1/SW2 NTC013-AT1J-A160T
-# (MPNs in the schematic) are boxes sized from the ESP32-S3-DevKitC-1
-# reference design BOM, which lists the same MPNs with footprint, size and
-# height. Left out: USB-C J2/J4 and the power LED (no MPN), D6 WS2812B
-# (variant not stated), U6 BC847BDW1T1G, D11, ESD diodes, passives.
+# agent-scratch placement table). Stand-ins (stand_in_for, same package or
+# body/land as the design): U3 CP2102N -> Allegro QFN-28 5x5; USB-C
+# J2/J4 (no MPN) -> GCT USB4105; SW1/SW2 NTC013-AT1J-A160T stay boxes
+# (S3 BOM size); power LED D5 -> Kingbright 0603 red;
+# D11 1N4148W -> Diodes 1N4148W-7-F; ESD LESD5D5.0CT1G -> onsemi ESD5Z5.0T1G.
+# D6 WS2812B (variant not stated, 3.5x3.5 land) -> Worldsemi WS2812B-Mini-V6.
+# Left out: J5, passives. U6 is the real onsemi BC847BDW1T1G (SC-88).
 schema_version: "0.2"
 kind: part
 id: espressif/ESP32-H2-DevKitM-1-N4S
@@ -53,13 +55,15 @@ assembly:
     y: -14.54
     src: p1 "D7 pad centres; footprint pad 2 = cathode (silkscreen bar)"
   - ref: U3
-    body: { width: 5, length: 5, height: 0.8, color: "#1c1c1e" }
+    part: allegro/A4988SETTR-T
+    stand_in_for: CP2102N-A02-GQFN28
     x: 2.32
     y: -3.87
+    rotation: 270
     src:
-      - p1 "U3 pad envelope centre (29 pads)"
+      - p1 "U3 pad envelope centre (29 pads); pin 1 top row, right end -> turned 270"
       - espressif/esp32-h2-devkitm-1_v1.2_schematics "U3 CP2102N-A02-GQFN28"
-      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 20: CP2102N-A02-GQFN28, QFN28_0P5_5, H0.8"'
+      - '"stand-in matched on QFN-28 5x5, 0.5 pitch (CP2102N-A02-GQFN28 QFN28_0P5_5)"'
   - ref: SW1
     body: { width: 4.2, length: 3.2, height: 2.5, color: "#2a2a2a" }
     x: 5.71
@@ -76,3 +80,106 @@ assembly:
       - p1 "SW2 pad envelope centre (4 pads)"
       - espressif/esp32-h2-devkitm-1_v1.2_schematics "SW2 NTC013-AT1J-A160T"
       - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5, stem black"'
+  - ref: D5
+    part: kingbright/APT1608EC
+    stand_in_for: power LED 0603, MPN not stated
+    x: 3.556
+    y: 9.938
+    src:
+      - p1 "D5 pads (4.38, 9.94) / (2.73, 9.94); cathode taken at pin 2 as on the S3 design"
+      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 13: red LED, LED0603; stand-in: red 0603 LED"'
+  - ref: J2
+    part: gct/USB4105-GF-A
+    stand_in_for: USB-C 16P receptacle, MPN not stated
+    x: -7.2
+    y: -19.375
+    src:
+      - p1 "J2 contact row y -16.835, pin 1 x -10.6; shell slots x +-4.32 from centre; stand-in contacts aligned"
+      - espressif/esp32-h2-devkitm-1_v1.2_schematics "J2 USB_TYPEC_16P_F"
+  - ref: J4
+    part: gct/USB4105-GF-A
+    stand_in_for: USB-C 16P receptacle, MPN not stated
+    x: 7.2
+    y: -19.375
+    src:
+      - p1 "J4 contact row y -16.835, pin 1 x 3.8; shell slots x +-4.32 from centre; stand-in contacts aligned"
+      - espressif/esp32-h2-devkitm-1_v1.2_schematics "J4 USB_TYPEC_16P_F"
+  - ref: D11
+    part: diodes/1N4148W-7-F
+    stand_in_for: 1N4148W, maker not stated
+    x: -5.588
+    y: 0.356
+    src:
+      - p1 "D11 pads x -7.163 / -4.013, y 0.356 (SOD-123 land); polarity not shown in the plot"
+      - espressif/esp32-h2-devkitm-1_v1.2_schematics "D11 1N4148W"
+  - ref: D2
+    part: onsemi/ESD5Z5.0T1G
+    stand_in_for: LESD5D5.0CT1G
+    x: -4.89
+    y: -14.478
+    rotation: 90
+    src:
+      - p1 "D2 SOD-523 pads, centre"
+      - espressif/esp32-h2-devkitm-1_v1.2_schematics "D2 LESD5D5.0CT1G"
+  - ref: D3
+    part: onsemi/ESD5Z5.0T1G
+    stand_in_for: LESD5D5.0CT1G
+    x: -8.573
+    y: -14.478
+    rotation: 90
+    src:
+      - p1 "D3 SOD-523 pads, centre"
+      - espressif/esp32-h2-devkitm-1_v1.2_schematics "D3 LESD5D5.0CT1G"
+  - ref: D4
+    part: onsemi/ESD5Z5.0T1G
+    stand_in_for: LESD5D5.0CT1G
+    x: -6.922
+    y: -14.478
+    rotation: 90
+    src:
+      - p1 "D4 SOD-523 pads, centre"
+      - espressif/esp32-h2-devkitm-1_v1.2_schematics "D4 LESD5D5.0CT1G"
+  - ref: D8
+    part: onsemi/ESD5Z5.0T1G
+    stand_in_for: LESD5D5.0CT1G
+    x: 5.182
+    y: -14.478
+    rotation: 90
+    src:
+      - p1 "D8 SOD-523 pads, centre"
+      - espressif/esp32-h2-devkitm-1_v1.2_schematics "D8 LESD5D5.0CT1G"
+  - ref: D9
+    part: onsemi/ESD5Z5.0T1G
+    stand_in_for: LESD5D5.0CT1G
+    x: 7.239
+    y: -14.478
+    rotation: 90
+    src:
+      - p1 "D9 SOD-523 pads, centre"
+      - espressif/esp32-h2-devkitm-1_v1.2_schematics "D9 LESD5D5.0CT1G"
+  - ref: D10
+    part: onsemi/ESD5Z5.0T1G
+    stand_in_for: LESD5D5.0CT1G
+    x: 8.636
+    y: -14.478
+    rotation: 90
+    src:
+      - p1 "D10 SOD-523 pads, centre"
+      - espressif/esp32-h2-devkitm-1_v1.2_schematics "D10 LESD5D5.0CT1G"
+  - ref: U6
+    part: onsemi/BC847BDW1T1G
+    x: 8.064
+    y: -3.359
+    rotation: 90
+    src:
+      - 'p1 "U6 pads: 1-3 along the bottom (pin 1 left), 4-6 along the top; centre"'
+      - espressif/esp32-h2-devkitm-1_v1.2_schematics "U6 BC847BDW1T1G"
+  - ref: D6
+    part: worldsemi/WS2812B-Mini-V6
+    stand_in_for: WS2812B, variant not stated (3535 land)
+    x: -6.54
+    y: -4.572
+    rotation: 90
+    src:
+      - 'p1 "D6 pads: 4 at 1.8 x 3.3, pin 3 lower left; centre; pins as on the S3 design"'
+      - espressif/esp32-h2-devkitm-1_v1.2_schematics "D6 WS2812B"

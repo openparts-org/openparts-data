@@ -1,0 +1,34 @@
+# MPN "GD25B128EWIG" printed verbatim in section 9.1 "Valid Part Numbers"
+# (Temperature Range I table) of gigadevice/DS-00594-GD25B128E@rev1.1, page 46,
+# row "GD25B128EWIG / 128Mbit / WSON8 (6x5mm)". The orderable code adds a
+# packing letter (Y/R, "Packing Options" column) -- this record is the
+# product number as the table prints it. Package outline: section 10.2
+# "Package WSON8 (6x5mm)" (page 48); its dimension rows equal those of
+# GD25Q64E Rev 1.6 section 10.5, from which the referenced package was
+# read (A, A1, c, b, D, D2, E, E2, e, L compared row by row), so that
+# package is reused. lifecycle: not stated in the datasheet -> unknown.
+schema_version: "0.2"
+kind: part
+id: gigadevice/GD25B128EWIG
+manufacturer: gigadevice
+mpn: GD25B128EWIG
+device: gigadevice/GD25B128E
+
+package:
+  value: manufacturers/gigadevice/WSON8-6x5-P1.27
+  src: p46 "Section 9.1 Valid Part Numbers, row GD25B128EWIG, Package Type WSON8 (6x5mm); outline section 10.2 (p48)"
+
+sources: [gigadevice/DS-00594-GD25B128E@rev1.1]
+source: gigadevice/DS-00594-GD25B128E@rev1.1
+
+existence:
+  status: verified
+  src: p46 "Section 9.1 Valid Part Numbers, Temperature Range I table, row GD25B128EWIG"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p41 "8.5 DC Characteristics header: T=-40 to 85 C, VCC=2.7~3.6V (specified)"'

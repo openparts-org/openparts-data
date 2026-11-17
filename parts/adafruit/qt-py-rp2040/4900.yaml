@@ -1,10 +1,11 @@
 # Adafruit QT Py RP2040 (4900). Package = the board with its header holes; assembly = the
 # components on it whose placement comes from the maker's design file (adafruit/Adafruit-QT-Py-RP2040-PCB@5b6ebd1),
 # converted to the package frame (board centre, top view; see the package comment).
-# Only components with an OpenParts part, or a box whose size AND height a source states,
-# are listed. Left out:
-#   U5 8MB QSPI flash (no MPN), X2 USB-C, CONN1 JST SH4, SW1/SW2 KMR2, LED1 SK6805 1515, Y1,
-#   D1/D2 NSR0320: no exact part / no height
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one) -- or a box whose size AND height a source states. Left out:
+#   SW1/SW2 KMR2 4.6x2.8 (no switch of that size): no part; passives skipped. LED1: the 1515 SK6805
+#   stands in as a Worldsemi 1313 (0.2 mm smaller)
 # U1: value "AP2112K-3.3" (ordering suffix not in the design).
 schema_version: "0.2"
 kind: part
@@ -32,3 +33,68 @@ assembly:
     y: -0.483
     rotation: 180
     src: '"Adafruit U1 at 8.839, 9.677 rot 90"'
+  - ref: X2
+    part: gct/USB4105-GF-A
+    stand_in_for: CUSB31-CFM2AX-01-X USB Type-C receptacle
+    x: 0
+    y: 6.755
+    rotation: 180
+    src:
+      - '"Adafruit X2 at 8.89, 17.92 rot 180"'
+      - '"X2 value USB Type C, footprint USB_C_CUSB31-CFM2AX-01-X; stand-in fitted to its 16 pads (mean 0 mm)"'
+  - ref: CONN1
+    part: jst/SM04B-SRSS-TB
+    stand_in_for: STEMMA QT 4-pin JST SH receptacle, MPN not stated
+    x: -1.88
+    y: -7.271
+    src:
+      - '"Adafruit CONN1 at 7.01, 2.388 rot 0"'
+      - '"CONN1 value STEMMA_I2C_QTSKINNY, footprint JST_SH4_SKINNY; stand-in fitted to its 6 pads (mean 0.012 mm)"'
+  - ref: D1
+    part: onsemi/NSR0320MW2T1G
+    stand_in_for: NSR0320 (series name only)
+    x: 2.832
+    y: 1.727
+    rotation: 90
+    src:
+      - '"Adafruit D1 at 11.722, 11.887 rot 90"'
+      - '"D1 value NSR0320, footprint SOD-323_MINI; stand-in fitted to its 2 pads (mean 0.03 mm)"'
+  - ref: D2
+    part: onsemi/NSR0320MW2T1G
+    stand_in_for: NSR0320 (series name only)
+    x: -1.626
+    y: 9.068
+    rotation: 180
+    side: bottom
+    src:
+      - '"Adafruit D2 at 7.264, 19.228 rot 180"'
+      - '"D2 value NSR0320, footprint SOD-323_MINI; stand-in fitted to its 2 pads (mean 0.03 mm)"'
+  - ref: U5
+    part: winbond/W25Q64JVXGIQ
+    stand_in_for: 8 MB QSPI flash, USON8 4x4, MPN not stated
+    x: -0.318
+    y: 5.778
+    rotation: 270
+    side: bottom
+    src:
+      - '"Adafruit U5 at 8.572, 15.938 rot 270"'
+      - '"U5 value 8MB QSPI Flash, footprint USON8_4X4; stand-in fitted to its 9 pads (mean 0.071 mm)"'
+  - ref: Y1
+    part: abracon/ABM10-16.000MHZ-E20-T
+    stand_in_for: 12 MHz crystal 2.5x2.0 (value 12MHZ)
+    x: 1.613
+    y: -8.547
+    rotation: 90
+    side: bottom
+    src:
+      - '"Adafruit Y1 at 10.503, 1.613 rot 0"'
+      - '"Y1 value 12MHZ, footprint CRYSTAL_2.5X2; stand-in fitted to its 4 pads (mean 0 mm)"'
+  - ref: LED1
+    part: worldsemi/WS2812B-1313-V6
+    stand_in_for: SK6805 1515 addressable RGB LED (value WS2812B_SK6805_1515)
+    x: 4.458
+    y: -3.759
+    rotation: 180
+    src:
+      - '"Adafruit LED1 at 13.348, 6.401 rot 90"'
+      - '"LED1 value WS2812B_SK6805_1515, footprint SK6805_1515; stand-in fitted to its 4 pads (mean 0.112 mm)"'

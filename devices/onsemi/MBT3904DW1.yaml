@@ -1,0 +1,20 @@
+# onsemi MBT3904DW1 dual NPN general-purpose transistor (two MMBT3904-class
+# dies) in SC-88/SOT-363, CASE 419B STYLE 1.
+schema_version: "0.2"
+kind: device
+id: onsemi/MBT3904DW1
+manufacturer: onsemi
+category: transistor
+family: MBT3904DW1
+source: onsemi/MBT3904DW1T1-D
+
+pins:
+  src:
+    - 'p1 "MBT3904DW1T1 STYLE 1 diagram: Q1 (3)(4)(5), Q2 (1)(2)(6)"'
+    - 'p10 "CASE 419B STYLE 1: 1 EMITTER 2, 2 BASE 2, 3 COLLECTOR 1, 4 EMITTER 1, 5 BASE 1, 6 COLLECTOR 2"'
+  "1": { name: E2, type: passive }
+  "2": { name: B2, type: passive }
+  "3": { name: C1, type: passive }
+  "4": { name: E1, type: passive }
+  "5": { name: B1, type: passive }
+  "6": { name: C2, type: passive }

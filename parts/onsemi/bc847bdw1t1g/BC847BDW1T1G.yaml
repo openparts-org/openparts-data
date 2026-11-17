@@ -1,0 +1,24 @@
+# BC847BDW1T1G: printed in the p10 ordering table (SOT-363, Pb-Free,
+# 3,000 / Tape & Reel, marking 1F) -> existence verified. Lifecycle: not
+# in the "DISCONTINUED" list; no status printed -> unknown.
+schema_version: "0.2"
+kind: part
+id: onsemi/BC847BDW1T1G
+manufacturer: onsemi
+mpn: BC847BDW1T1G
+device: onsemi/BC847BDW1
+package: manufacturers/onsemi/SC88-2.00x1.25-P0.65-419B
+sources: [onsemi/BC846BDW1T1-D]
+source: onsemi/BC846BDW1T1-D
+
+existence:
+  status: verified
+  src: p10 "ORDERING INFORMATION, BC847BDW1T1G, marking 1F, SOT-363 (Pb-Free), 3,000 / Tape & Reel"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -55 °C
+    max: 150 °C
+    src: p1 "THERMAL CHARACTERISTICS, Junction and Storage Temperature Range -55 to +150 °C"

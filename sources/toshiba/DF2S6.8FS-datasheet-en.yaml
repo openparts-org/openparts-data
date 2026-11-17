@@ -1,0 +1,16 @@
+# Toshiba DF2S6.8FS datasheet (English), 9 PDF pages, footer
+# "2026-04-07 Rev.6.0.A". Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=22219); downloaded 2026-11-17 with curl.
+# Read with pdftotext -layout; the package drawing (page 8) was rendered
+# with pdftoppm and read as an image.
+schema_version: "0.2"
+kind: source
+id: toshiba/DF2S6.8FS-datasheet-en
+sha256: 89723734b394badbd0ec5e54d811527e8cc04554519dc26d31135a789f87d3a9
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=22219&prodName=DF2S6.8FS
+publisher: toshiba
+document_id: DF2S6.8FS_datasheet_en
+document_type: datasheet
+revision: 6.0.A
+date: 2026-04-07

@@ -39,7 +39,9 @@ lifecycle: { status: unknown }
 # is published), MPNs from the Pico W datasheet text and Figure 8
 # (powerchain schematic) and the design's part library. Only the main
 # visible parts are placed; the passives, the LED (no MPN stated) and
-# the CYW43439 under the shield can (SH1) are left out.
+# the CYW43439 under the shield can (SH1) are left out. Stand-ins
+# (stand_in_for): J1 EDAC 690-005-298-486 -> GCT USB3076; SW1 TP-1221U
+# stays a box.
 assembly:
   - ref: U1
     part: raspberrypi/RP2040
@@ -78,14 +80,15 @@ assembly:
     rotation: 90
     src: ['"D1 placement"', 'raspberrypi/RP-008312-DS@rev2 p15 "Figure 8: D1 MBR120VLSFT1G"']
   - ref: J1
-    body: { width: 6.9, length: 5, height: 2.6, color: "#c8c8c8" }
+    part: gct/USB3076-30-A
+    stand_in_for: EDAC 690-005-298-486
     x: 0
-    y: 24
+    y: 22.85
     rotation: 180
     src:
-      - '"J1 placement (footprint origin)"'
+      - '"J1 placement (land centre x 0)"'
       - 'raspberrypi/RP-008312-DS@rev2 p15 "Figure 8: J1 690-005-298-486"'
-      - edac/690-005-298-486 "shell width 6.90, depth 5.00, height 2.60"
+      - raspberrypi/RP-009061-CA "edac_690-005-298-486 box front at y 26.8; stand-in shell front placed there"
   - ref: SW1
     body: { width: 4.24, length: 3.2, height: 2.5, color: "#e8e8e8" }
     x: -3.5

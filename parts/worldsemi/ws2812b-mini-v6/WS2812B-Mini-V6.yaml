@@ -1,0 +1,21 @@
+# The datasheet's title names one product, "WS2812B-Mini-V6"; it prints no
+# ordering-code table -> existence probable. lifecycle unknown: the
+# datasheet states none.
+schema_version: "0.2"
+kind: part
+id: worldsemi/WS2812B-Mini-V6
+manufacturer: worldsemi
+mpn: WS2812B-Mini-V6
+device: worldsemi/WS2812B-Mini-V6
+package: manufacturers/worldsemi/SMD3535-WS2812B-Mini-V6
+sources: [worldsemi/WS2812B-Mini-V6@v1.3]
+source: worldsemi/WS2812B-Mini-V6@v1.3
+
+existence: { status: probable, src: p1 "Title" }
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p3 "Absolute Maximum Ratings, Working temperature Topt -40~+85"

@@ -1,0 +1,18 @@
+# Samtec marketing print TSW-XXX-XX-XXX-X-XX-XXX, ".025[0.64] SQ. POST
+# TERMINAL STRIP ASSEMBLY" (6 sheets). Title block "REVISION DS", drawn
+# "08/24/1988" (the original drawing date); the revision carries no date
+# of its own: `date` is the PDF creation date. Dimensions in inches with
+# [mm]. Used: sheet 1 part-number legend, sheet 2 Fig 1 (body .100 high,
+# -S .100 / -D .200 wide, pitch .100) and Table 8, sheet 5 Table 4 (pin
+# length "L"), sheet 6 Table 1 (post "C" per lead style); read from
+# 70-150 dpi renders, text checked with pdftotext.
+schema_version: "0.2"
+kind: source
+id: samtec/TSW-XXX-XX-XXX-X-XX-XXX-MKT
+sha256: 047ecedcc921fb0aed7127f08b9ba0fc1200d92d33fb7ded1b311d0ed8f42063
+url: https://suddendocs.samtec.com/prints/tsw-xxx-xx-xxx-x-xx-xxx-mkt.pdf
+date: 2024-09-26
+publisher: samtec
+document_id: TSW-XXX-XX-XXX-X-XX-XXX
+document_type: datasheet
+revision: DS

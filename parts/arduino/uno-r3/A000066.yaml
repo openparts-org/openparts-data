@@ -1,12 +1,14 @@
 # Arduino UNO R3 (A000066). Package = the board with its header holes; assembly = the
 # components on it whose placement comes from the maker's design file (arduino/A000066-cad-files@Rev3e),
 # converted to the package frame (board centre, top view; see the package comment).
-# Only components with an OpenParts part, or a box whose size AND height a source states,
-# are listed. Left out:
-#   X1 DC jack, X2 USB-B (PN61729), RESET TS42031-160R-TR-7260, Y1 16 MHz crystal (no MPN), Y2
-#   CSTCE16M0V53-R0 (Murata spec not served as a plain PDF), PC1/PC2 47u caps, D1 M7, D2/D3
-#   CD1206-S01575 (Bourns: 403), LEDs, ICSP/ICSP1 headers, and the DIP-28 socket under ZU4: no
-#   body height in a fetchable maker source or the design file; small passives skipped
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one) -- or a box whose size AND height a source states. Left out:
+#   X2 USB-B PN61729 (no USB-B package family in the generator), Y1 16 MHz crystal (no MPN, "QS"
+#   footprint), Y2 CSTCE16M0V53-R0 (Murata spec not served as a plain PDF), PC1/PC2 47u caps, D2/D3
+#   CD1206-S01575 (Bourns: 403; MiniMELF, no MELF package family), the DIP-28 socket under ZU4: no
+#   part or no body height; IOH (10-way socket) stays a box: Wurth refuses plain fetches now and
+#   Samtec prints give no PCB hole for SSW sockets; small passives skipped
 # ZU4: fitted in a DIP-28 socket on the board; the socket (no MPN or height in the design) is not
 # modelled.
 # T1: Eagle pads 1/2/3 = nets USBVCC/+5V/GATE_CMD = drain/source/gate, i.e. FDN340P pins 3/2/1;
@@ -45,13 +47,14 @@ assembly:
     rotation: 180
     src: '"UNO-TH_Rev3e.brd U5 at 19.05, 20.319 rot 90"'
   - ref: IOL
-    body: { width: 20.32, length: 2.54, height: 8.5, color: "#202020" }
+    part: wurth/61300811821
+    stand_in_for: 8-way female header, H 8.5 (value 8x1F-H8.5)
     x: 20.32
     y: 24.13
-    rotation: 180
+    rotation: 90
     src:
       - '"UNO-TH_Rev3e.brd IOL at 54.61, 50.8 rot 180"'
-      - '"IOL element value "8x1F-H8.5" (8-way female, H 8.5), footprint 1X08 outline 20.32 x 2.54"'
+      - '"IOL value 8x1F-H8.5, footprint 1X08; stand-in fitted to its 8 pads (mean 0 mm)"'
   - ref: IOH
     body: { width: 25.4, length: 2.54, height: 8.5, color: "#202020" }
     x: -4.064
@@ -61,19 +64,23 @@ assembly:
       - '"UNO-TH_Rev3e.brd IOH at 30.226, 50.8 rot 180"'
       - '"IOH element value "10x1F-H8.5" (10-way female, H 8.5), footprint 1X10 outline 25.4 x 2.54"'
   - ref: AD
-    body: { width: 15.24, length: 2.54, height: 8.5, color: "#202020" }
+    part: wurth/61300611821
+    stand_in_for: 6-way female header, H 8.5 (value 6x1F-H8.5)
     x: 22.86
     y: -24.13
+    rotation: 90
     src:
       - '"UNO-TH_Rev3e.brd AD at 57.15, 2.54 rot 0"'
-      - '"AD element value "6x1F-H8.5" (6-way female, H 8.5), footprint 1X06 outline 15.24 x 2.54"'
+      - '"AD value 6x1F-H8.5, footprint 1X06; stand-in fitted to its 6 pads (mean 0 mm)"'
   - ref: POWER
-    body: { width: 20.32, length: 2.54, height: 8.5, color: "#202020" }
+    part: wurth/61300811821
+    stand_in_for: 8-way female header, H 8.5 (value 8x1F-H8.5)
     x: 2.54
     y: -24.13
+    rotation: 90
     src:
       - '"UNO-TH_Rev3e.brd POWER at 36.83, 2.54 rot 0"'
-      - '"POWER element value "8x1F-H8.5" (8-way female, H 8.5), footprint 1X08 outline 20.32 x 2.54"'
+      - '"POWER value 8x1F-H8.5, footprint 1X08; stand-in fitted to its 8 pads (mean 0 mm)"'
   - ref: T1
     part: onsemi/FDN340P
     x: -26.162
@@ -91,3 +98,80 @@ assembly:
     y: 8.001
     rotation: 90
     src: '"UNO-TH_Rev3e.brd U3 at 19.939, 34.671 rot 90"'
+  - ref: L
+    part: kingbright/APT2012SYCK
+    stand_in_for: 0805 LED, yellow, MPN not stated
+    x: -6.35
+    y: 15.494
+    rotation: 180
+    src:
+      - '"UNO-TH_Rev3e.brd L at 27.94, 42.164 rot 270"'
+      - '"L value YELLOW, footprint CHIP-LED0805; stand-in fitted to its 2 pads (mean 0.1 mm)"'
+  - ref: ON
+    part: kingbright/APT2012CGCK
+    stand_in_for: 0805 LED, green, MPN not stated
+    x: 24.13
+    y: 9.906
+    rotation: 180
+    src:
+      - '"UNO-TH_Rev3e.brd ON at 58.42, 36.576 rot 270"'
+      - '"ON value GREEN, footprint CHIP-LED0805; stand-in fitted to its 2 pads (mean 0.1 mm)"'
+  - ref: RX
+    part: kingbright/APT2012SYCK
+    stand_in_for: 0805 LED, yellow, MPN not stated
+    x: -6.35
+    y: 7.62
+    src:
+      - '"UNO-TH_Rev3e.brd RX at 27.94, 34.29 rot 90"'
+      - '"RX value YELLOW, footprint CHIP-LED0805; stand-in fitted to its 2 pads (mean 0.1 mm)"'
+  - ref: TX
+    part: kingbright/APT2012SYCK
+    stand_in_for: 0805 LED, yellow, MPN not stated
+    x: -6.35
+    y: 9.906
+    src:
+      - '"UNO-TH_Rev3e.brd TX at 27.94, 36.576 rot 90"'
+      - '"TX value YELLOW, footprint CHIP-LED0805; stand-in fitted to its 2 pads (mean 0.1 mm)"'
+  - ref: D1
+    part: diodes/S1MB-13-F
+    stand_in_for: value M7 (1 A rectifier), SMB footprint
+    x: -12.7
+    y: -23.876
+    rotation: 180
+    src:
+      - '"UNO-TH_Rev3e.brd D1 at 21.59, 2.794 rot 180"'
+      - '"D1 value M7, footprint SMB; stand-in fitted to its 2 pads (mean 0.14 mm)"'
+  - ref: RESET
+    part: omron/B3FS-1050
+    stand_in_for: TS42031-160R-TR-7260 6x6 SMD tactile switch
+    x: -27.94
+    y: 22.733
+    src:
+      - '"UNO-TH_Rev3e.brd RESET at 6.35, 49.403 rot 0"'
+      - '"RESET value TS42031-160R-TR-7260, footprint TS42; stand-in fitted to its 5 pads (mean 0.866 mm)"'
+  - ref: X1
+    part: samesky/PJ-102AH
+    stand_in_for: DC barrel jack (value POWERSUPPLY_DC21MMX), MPN not stated
+    x: -25.603
+    y: -20.335
+    rotation: 270
+    src:
+      - '"UNO-TH_Rev3e.brd X1 at 5.334, 8.382 rot 90"'
+      - '"X1 value POWERSUPPLY_DC21MMX, footprint POWERSUPPLY_DC-21MM; stand-in fitted to its 9 pads (mean 0.493 mm)"'
+  - ref: ICSP
+    part: samtec/TSW-103-07-T-D
+    stand_in_for: 2x3 ICSP pin header (value 3x2 M), MPN not stated
+    x: 30.607
+    y: 1.27
+    src:
+      - '"UNO-TH_Rev3e.brd ICSP at 64.897, 27.94 rot 270"'
+      - '"ICSP value 3x2 M, footprint 2X03; stand-in fitted to its 6 pads (mean 0 mm)"'
+  - ref: ICSP1
+    part: samtec/TSW-103-07-T-D
+    stand_in_for: 2x3 ICSP pin header (value 3x2 M), MPN not stated
+    x: -16.002
+    y: 19.558
+    rotation: 270
+    src:
+      - '"UNO-TH_Rev3e.brd ICSP1 at 18.288, 46.228 rot 180"'
+      - '"ICSP1 value 3x2 M, footprint 2X03; stand-in fitted to its 6 pads (mean 0 mm)"'

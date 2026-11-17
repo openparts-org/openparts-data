@@ -1,0 +1,18 @@
+# Model number printed verbatim in the PH sheet's Header (SMT type)
+# table (jst/ePH page 4, Side entry type, 2 circuits) -> existence
+# verified. Lifecycle: the sheet states no production status -> unknown.
+schema_version: "0.2"
+kind: part
+id: jst/S2B-PH-SM4-TB
+manufacturer: jst
+mpn: S2B-PH-SM4-TB
+device: jst/S2B-PH-SM4-TB
+package: manufacturers/jst/PH-Header-Side-SMD-1x02-P2.00
+sources: [jst/ePH]
+source: jst/ePH
+
+existence:
+  status: verified
+  src: 'p4 "Header (SMT type), Side entry Model No. table, 2 circuits: S2B-PH-SM4-TB"'
+
+lifecycle: { status: unknown }

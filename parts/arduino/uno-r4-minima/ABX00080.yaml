@@ -1,11 +1,12 @@
 # Arduino UNO R4 Minima (ABX00080). Package = the board with its header holes; assembly = the
 # components on it whose placement comes from the maker's design file (arduino/ABX00080-cad-files@2025-12-23),
 # converted to the package frame (board centre, top view; see the package comment).
-# Only components with an OpenParts part, or a box whose size AND height a source states,
-# are listed. Left out:
-#   J3 CX90B-16P (Hirose), J4 19TW-746 DC jack, JANALOG/JDIGITAL 20TW-995/994 and J1/J2 headers
-#   (4UCON/Adam Tech), PB1 1571636-3 (TE: refuses), D2/D3 PMEG6020AELRX, D4 PRTR5V0U2X, Y1: no
-#   height in the design data; passives skipped. Header holes from the NC drill file
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one) -- or a box whose size AND height a source states. Left out:
+#   JANALOG/JDIGITAL 20TW-995/994 (14-/18-way sockets; Wurth refuses plain fetches now, Samtec SSW
+#   prints give no PCB hole) and J2 HPH2-A-10-SGA 1.27 mm 2x5 header (no part), D4 PRTR5V0U2X, Y1
+#   (footprint only, not in the BOM): no part; passives skipped. Header holes from the NC drill file
 #   PCB-RoundHoles.TXT (0.85 mm, plated); pin names from the datasheet tables 10.1/10.2
 schema_version: "0.2"
 kind: part
@@ -41,34 +42,90 @@ assembly:
     rotation: 270
     src: ['"PCB.PcbDoc L3 at 30.236, 42.498 rot 270"', '"L3 BOM L3 description "4.5x4.5x1.8mm""']
   - ref: DL1
-    body: { width: 1.6, length: 0.8, height: 0.8, color: "#e8c840" }
+    part: kingbright/APT1608SYCK
+    stand_in_for: Kingbright KPT-1608YC (0603 yellow)
     x: -6.35
     y: 9.906
     rotation: 180
     src:
       - '"PCB.PcbDoc DL1 at 53.34, 61.976 rot 180"'
-      - '"DL1 footprint name "LEDC1608X80N" (IPC-7351: 1.6 x 0.8 mm body, 0.80 mm high)"'
+      - '"DL1 footprint LEDC1608X80N-AK; stand-in fitted to its 2 pads (mean 0.125 mm)"'
   - ref: DL2
-    body: { width: 1.6, length: 0.8, height: 0.8, color: "#e8c840" }
+    part: kingbright/APT1608SYCK
+    stand_in_for: Kingbright KPT-1608YC (0603 yellow)
     x: -6.35
     y: 7.62
     rotation: 180
     src:
       - '"PCB.PcbDoc DL2 at 53.34, 59.69 rot 180"'
-      - '"DL2 footprint name "LEDC1608X80N" (IPC-7351: 1.6 x 0.8 mm body, 0.80 mm high)"'
+      - '"DL2 footprint LEDC1608X80N-AK; stand-in fitted to its 2 pads (mean 0.125 mm)"'
   - ref: DL3
-    body: { width: 1.6, length: 0.8, height: 0.8, color: "#40c040" }
+    part: kingbright/APT1608CGCK
+    stand_in_for: Broadcom HSMG-C190 (0603 green)
     x: 24.13
     y: 9.906
     rotation: 180
     src:
       - '"PCB.PcbDoc DL3 at 83.82, 61.976 rot 180"'
-      - '"DL3 footprint name "LEDC1608X80N" (IPC-7351: 1.6 x 0.8 mm body, 0.80 mm high)"'
+      - '"DL3 footprint LEDC1608X80N-AK; stand-in fitted to its 2 pads (mean 0.1 mm)"'
   - ref: DL4
-    body: { width: 1.6, length: 0.8, height: 0.8, color: "#e8c840" }
+    part: kingbright/APT1608SYCK
+    stand_in_for: Kingbright KPT-1608YC (0603 yellow)
     x: -6.35
     y: 15.494
     rotation: 180
     src:
       - '"PCB.PcbDoc DL4 at 53.34, 67.564 rot 180"'
-      - '"DL4 footprint name "LEDC1608X80N" (IPC-7351: 1.6 x 0.8 mm body, 0.80 mm high)"'
+      - '"DL4 footprint LEDC1608X80N-AK; stand-in fitted to its 2 pads (mean 0.125 mm)"'
+  - ref: J3
+    part: gct/USB4105-GF-A
+    stand_in_for: Hirose CX90B-16P USB Type-C receptacle
+    x: -30.915
+    y: 11.196
+    rotation: 270
+    src:
+      - '"PCB.PcbDoc J3 at 28.938, 63.266 rot 270"'
+      - '"J3 footprint CX90B-16P-Footprint-1; stand-in fitted to its 24 pads (mean 0.554 mm)"'
+  - ref: PB1
+    part: omron/B3FS-1050
+    stand_in_for: TE 1571636-3 6x6 SMD pushbutton
+    x: -27.94
+    y: 22.733
+    src:
+      - '"PCB.PcbDoc PB1 at 31.75, 74.803 rot 0"'
+      - '"PB1 footprint TS42; stand-in fitted to its 5 pads (mean 0.866 mm)"'
+  - ref: D2
+    part: onsemi/MBR120VLSFT1G
+    stand_in_for: Nexperia PMEG6020AELRX (SOD123FL)
+    x: -24.552
+    y: -0.723
+    rotation: 180
+    src:
+      - '"PCB.PcbDoc D2 at 35.138, 51.347 rot 180"'
+      - '"D2 footprint SOD123-1; stand-in fitted to its 2 pads (mean 0.005 mm)"'
+  - ref: D3
+    part: onsemi/MBR120VLSFT1G
+    stand_in_for: Nexperia PMEG6020AELRX (SOD123FL)
+    x: -24.552
+    y: 1.977
+    rotation: 180
+    src:
+      - '"PCB.PcbDoc D3 at 35.138, 54.047 rot 180"'
+      - '"D3 footprint SOD123-1; stand-in fitted to its 2 pads (mean 0.005 mm)"'
+  - ref: J4
+    part: samesky/PJ-102AH
+    stand_in_for: 4UCON 19TW-746 DC power jack 2.1x5.5 mm
+    x: -25.5
+    y: -20.689
+    rotation: 270
+    src:
+      - '"PCB.PcbDoc J4 at 31.09, 33.706 rot 0"'
+      - '"J4 footprint POWERSUPPLY_DC-21MM; stand-in fitted to its 3 pads (mean 0.152 mm)"'
+  - ref: J1
+    part: samtec/TSW-103-07-T-D
+    stand_in_for: Adam Tech PH2-06-UA 2x3 pin header
+    x: 30.607
+    y: 1.27
+    src:
+      - '"PCB.PcbDoc J1 at 90.297, 53.34 rot 90"'
+      - '"J1 footprint 2X03; stand-in fitted to its 6 pads (mean 0 mm)"'

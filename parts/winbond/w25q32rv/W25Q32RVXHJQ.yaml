@@ -1,0 +1,25 @@
+# W25Q32RVXHJQ: printed in section 9.8 "Valid Part Numbers and Top Side
+# Marking" (XSON-8 2x3x0.4(max.)mm, Industrial Plus -40 to +105 °C; note 1:
+# special order) -> existence verified. Lifecycle: no status printed ->
+# unknown.
+schema_version: "0.2"
+kind: part
+id: winbond/W25Q32RVXHJQ
+manufacturer: winbond
+mpn: W25Q32RVXHJQ
+device: winbond/W25Q32RV
+package: manufacturers/winbond/XSON8-2x3-P0.5-XH
+sources: [winbond/W25Q32RV@revF]
+source: winbond/W25Q32RV@revF
+
+existence:
+  status: verified
+  src: p83 "9.8 Valid Part Numbers, XH XSON-8 2x3x0.4(max.)mm, 32M-bit, W25Q32RVXHJQ"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p83 "9.8 W25Q32RV-JQ valid part numbers, Industrial Plus (-40°C to +105°C)"

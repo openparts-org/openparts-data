@@ -1,12 +1,13 @@
 # Adafruit Feather RP2040 (4884). Package = the board with its header holes; assembly = the
 # components on it whose placement comes from the maker's design file (adafruit/Adafruit-Feather-RP2040-PCB@ea88166),
 # converted to the package frame (board centre, top view; see the package comment).
-# Only components with an OpenParts part, or a box whose size AND height a source states,
-# are listed. Left out:
-#   U1 flash (value W25Q64JVSSIQ = SOIC-8, but footprint USON8 4x4: conflict), U2
-#   "RT9080/AP2112-3.3" (either), X6 USB-C CUSB31-CFM2AX-01-X, X1 JST PH2, CONN1 JST SH4, SW1
-#   KMR2, SW3, LED1 WS2812B 3535, Y1 12 MHz, Q3 DMG3415, D4 MBR0540, D1 NSR0320 (series name
-#   only): no exact part / no height
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one) -- or a box whose size AND height a source states. Left out:
+#   SW1 KMR2 4.6x2.8 and SW3 right-angle mini switch (no switch of that size), LED1 WS2812B 3535
+#   (Worldsemi Mini drawing: pad positions not readable unambiguously), X2 2x5 1.27 mm SWD
+#   footprint: no part; passives skipped. U1: value W25Q64JVSSIQ is the SOIC-8 member, the footprint
+#   is USON8 4x4 -- the stand-in follows the footprint
 schema_version: "0.2"
 kind: part
 id: adafruit/4884
@@ -35,3 +36,99 @@ assembly:
     x: 4.102
     y: 6.858
     src: '"Adafruit U3 at 18.542, 15.532 rot 0"'
+  - ref: X6
+    part: gct/USB4105-GF-A
+    stand_in_for: CUSB31-CFM2AX-01-X USB Type-C receptacle
+    x: 0
+    y: 21.791
+    rotation: 180
+    src:
+      - '"Adafruit X6 at 3.873, 11.43 rot 270"'
+      - '"X6 value USB Type C, footprint USB_C_CUSB31-CFM2AX-01-X; stand-in fitted to its 16 pads (mean 0 mm)"'
+  - ref: CONN1
+    part: jst/SM04B-SRSS-TB
+    stand_in_for: STEMMA QT 4-pin JST SH receptacle, MPN not stated
+    x: -3.175
+    y: -22.359
+    src:
+      - '"Adafruit CONN1 at 47.752, 8.255 rot 90"'
+      - '"CONN1 value STEMMA_I2C_QT, footprint JST_SH4; stand-in fitted to its 6 pads (mean 0.012 mm)"'
+  - ref: D1
+    part: onsemi/NSR0320MW2T1G
+    stand_in_for: NSR0320 (series name only)
+    x: 6.985
+    y: -17.907
+    rotation: 270
+    src:
+      - '"Adafruit D1 at 43.307, 18.415 rot 0"'
+      - '"D1 value NSR0320, footprint SOD-323_MINI; stand-in fitted to its 2 pads (mean 0.03 mm)"'
+  - ref: D4
+    part: diodes/B0540W
+    stand_in_for: MBR0540 Schottky, SOD-123
+    x: 0.762
+    y: 13.398
+    rotation: 90
+    src:
+      - '"Adafruit D4 at 12.002, 12.192 rot 180"'
+      - '"D4 value MBR0540, footprint SOD-123; stand-in fitted to its 2 pads (mean 0.21 mm)"'
+  - ref: Q3
+    part: diodes/DMG2305UX-7
+    stand_in_for: DMG3415 P-channel MOSFET, SOT-23
+    x: -1.651
+    y: 14.033
+    src:
+      - '"Adafruit Q3 at 11.367, 9.779 rot 0"'
+      - '"Q3 value DMG3415, footprint SOT23-R; stand-in fitted to its 3 pads (mean 0.076 mm)"'
+  - ref: U2
+    part: diodes/AP2112K-3.3TRG1
+    stand_in_for: value "RT9080/AP2112-3.3" (either fitted), SOT23-5
+    x: -0.445
+    y: 8.89
+    src:
+      - '"Adafruit U2 at 16.51, 10.986 rot 0"'
+      - '"U2 value RT9080/AP2112-3.3, footprint SOT23-5; stand-in fitted to its 5 pads (mean 0.15 mm)"'
+  - ref: U1
+    part: winbond/W25Q64JVXGIQ
+    stand_in_for: value W25Q64JVSSIQ (SOIC-8) on a USON8 4x4 footprint
+    x: 2.604
+    y: -16.637
+    rotation: 180
+    src:
+      - '"Adafruit U1 at 42.037, 14.034 rot 270"'
+      - '"U1 value W25Q64JVSSIQ, footprint USON8_4X4; stand-in fitted to its 9 pads (mean 0.071 mm)"'
+  - ref: X1
+    part: jst/S2B-PH-SM4-TB
+    stand_in_for: JST PH 2-pin side-entry SMD header (value JSTPH), MPN not stated
+    x: 6.749
+    y: 14.478
+    rotation: 90
+    src:
+      - '"Adafruit X1 at 10.922, 17.653 rot 0"'
+      - '"X1 value JSTPH, footprint JSTPH2_BATT; stand-in fitted to its 4 pads (mean 0.179 mm)"'
+  - ref: Y1
+    part: abracon/ABM10-16.000MHZ-E20-T
+    stand_in_for: 12 MHz crystal 2.5x2.0 (value 12MHz/12pF)
+    x: 4.762
+    y: -2.921
+    rotation: 90
+    src:
+      - '"Adafruit Y1 at 28.321, 16.192 rot 270"'
+      - '"Y1 value 12MHz/12pF, footprint CRYSTAL_2.5X2; stand-in fitted to its 4 pads (mean 0 mm)"'
+  - ref: CHG
+    part: kingbright/APT1608SECK
+    stand_in_for: 0603 LED, orange, MPN not stated
+    x: -6.033
+    y: 23.622
+    rotation: 90
+    src:
+      - '"Adafruit CHG at 1.778, 5.397 rot 270"'
+      - '"CHG value ORANGE, footprint CHIPLED_0603_NOOUTLINE; stand-in fitted to its 2 pads (mean 0.075 mm)"'
+  - ref: L
+    part: kingbright/APT1608SURCK
+    stand_in_for: 0603 LED, red, MPN not stated
+    x: 5.992
+    y: 23.581
+    rotation: 270
+    src:
+      - '"Adafruit L at 1.819, 17.422 rot 90"'
+      - '"L value RED, footprint CHIPLED_0603_NOOUTLINE; stand-in fitted to its 2 pads (mean 0.075 mm)"'

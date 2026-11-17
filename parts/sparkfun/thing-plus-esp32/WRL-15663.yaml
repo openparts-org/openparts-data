@@ -1,12 +1,12 @@
 # SparkFun Thing Plus - ESP32 WROOM (WRL-15663). Package = the board with its header holes; assembly = the
 # components on it whose placement comes from the maker's design file (sparkfun/ESP32_Thing_Plus@ed6d941),
 # converted to the package frame (board centre, top view; see the package comment).
-# Only components with an OpenParts part, or a box whose size AND height a source states,
-# are listed. Left out:
-#   U4 CP2102N (deviceset "CP2102N", QFN24; Silicon Labs: 403), J5 micro-B, JP2 JST 2-pin, J3
-#   Qwiic (MPNs not named), S1/S2 switches, Q1/Q2, D1-D3: no exact part / no body height. U2:
-#   the module variant is not named in the design (hookup guide: "ESP32-D0WDQ6", "16MB of
-#   flash"), so a box, not an OpenParts module part
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one) -- or a box whose size AND height a source states. Left out:
+#   U4 CP2102N (QFN24; Silicon Labs: 403), S1/S2 4.6x2.8 switches: no part; passives skipped. U2:
+#   the module variant is not named in the design (hookup guide "ESP32-D0WDQ6", "16MB of flash");
+#   the stand-in is an ESP32-WROOM-32E with 16 MB flash, same 25.5 x 18 module footprint
 # U3: value "AP2112K-3.3V" (ordering suffix not in the design).
 schema_version: "0.2"
 kind: part
@@ -29,19 +29,90 @@ assembly:
     rotation: 270
     src: '"Hardware/ESP32_Thing_Plus.brd U3 at 9.525, 25.4 rot 0"'
   - ref: U2
-    body: { width: 25.5, length: 18, height: 3.1, color: "#c8c8c8" }
+    part: espressif/ESP32-WROOM-32E-N16
+    stand_in_for: ESP-WROOM-32 module (variant not stated)
     x: 0
-    y: -16.42
-    rotation: 270
+    y: -12.52
+    rotation: 180
     src:
-      - '"Hardware/ESP32_Thing_Plus.brd U2 at 11.43, 41.88 rot 90"'
-      - '"U2 deviceset ESP-WROOM-32, package ESP-WROOM-32-NARROW, outline 25.754 x 18.254 (box centred on it)"'
-      - 'espressif/esp32-wroom-32_datasheet_en@v3.8 p36 "9 Module Dimensions: 25.50 x 18.00, 3.10 high"'
+      - '"Hardware/ESP32_Thing_Plus.brd U2 at 11.43, 44.45 rot 90"'
+      - '"U2 value ESP-WROOM-32NARROW, footprint ESP-WROOM-32-NARROW; stand-in fitted to its 39 pads (mean 0.567 mm)"'
   - ref: U1
-    body: { width: 2.9, length: 1.6, height: 1.45, color: "#303030" }
+    part: microchip/MCP73831T-2ACI-OT
+    stand_in_for: value MCP73831 (charge-voltage option not stated)
     x: 5.08
     y: 3.81
+    rotation: 90
     src:
       - '"Hardware/ESP32_Thing_Plus.brd U1 at 6.35, 25.4 rot 180"'
-      - '"U1 value MCP73831, package SOT23-5 (charge-voltage option not stated)"'
-      - 'microchip/DS20001984@revH p23 "SOT-23 C04-091-OT: D 2.90, E1 1.60, A max 1.45"'
+      - '"U1 value MCP73831, footprint SOT23-5; stand-in fitted to its 5 pads (mean 0.18 mm)"'
+  - ref: J5
+    part: gct/USB3076-30-A
+    stand_in_for: micro-USB B receptacle, MPN not stated
+    x: -0.021
+    y: 26.321
+    rotation: 180
+    src:
+      - '"Hardware/ESP32_Thing_Plus.brd J5 at 11.451, 4.242 rot 0"'
+      - '"J5 footprint USB-MICROB-PTH-MILL; stand-in fitted to its 15 pads (mean 0.4 mm)"'
+  - ref: JP2
+    part: jst/S2B-PH-SM4-TB
+    stand_in_for: JST PH 2-pin side-entry SMD header (LiPo), MPN not stated
+    x: 6.825
+    y: 11.43
+    rotation: 90
+    src:
+      - '"Hardware/ESP32_Thing_Plus.brd JP2 at 3.48, 17.78 rot 90"'
+      - '"JP2 value LiPo, footprint JST-2-SMD; stand-in fitted to its 4 pads (mean 0.179 mm)"'
+  - ref: J3
+    part: jst/SM04B-SRSS-TB
+    stand_in_for: Qwiic 4-pin JST SH receptacle, MPN not stated
+    x: 8.25
+    y: 19.812
+    rotation: 90
+    src:
+      - '"Hardware/ESP32_Thing_Plus.brd J3 at 5.08, 9.398 rot 270"'
+      - '"J3 footprint 1X04_1MM_RA; stand-in fitted to its 6 pads (mean 0.1 mm)"'
+  - ref: D2
+    part: onsemi/NSR0320MW2T1G
+    stand_in_for: Schottky 1A/23V/620mV, SOD-323, MPN not stated
+    x: 0.889
+    y: 10.795
+    rotation: 90
+    src:
+      - '"Hardware/ESP32_Thing_Plus.brd D2 at 10.541, 18.415 rot 270"'
+      - '"D2 value 1A/23V/620mV, footprint SOD-323; stand-in fitted to its 2 pads (mean 0.05 mm)"'
+  - ref: Q1
+    part: diodes/DMG2305UX-7
+    stand_in_for: MOSFET 2.5A/30V, SOT-23, MPN not stated
+    x: -0.585
+    y: 8.255
+    src:
+      - '"Hardware/ESP32_Thing_Plus.brd Q1 at 12.065, 20.955 rot 90"'
+      - '"Q1 value 2.5A/30V, footprint SOT23-3@1; stand-in fitted to its 3 pads (mean 0.123 mm)"'
+  - ref: D1
+    part: kingbright/APT1608SYCK
+    stand_in_for: 0603 LED, yellow, MPN not stated
+    x: -5.08
+    y: 26.67
+    rotation: 90
+    src:
+      - '"Hardware/ESP32_Thing_Plus.brd D1 at 16.51, 2.54 rot 90"'
+      - '"D1 value Yellow, footprint LED-0603; stand-in fitted to its 2 pads (mean 0.027 mm)"'
+  - ref: D3
+    part: kingbright/APT1608QBC-D
+    stand_in_for: 0603 LED, blue, MPN not stated
+    x: 5.334
+    y: -0.381
+    src:
+      - '"Hardware/ESP32_Thing_Plus.brd D3 at 6.096, 29.591 rot 0"'
+      - '"D3 value BLUE, footprint LED-0603; stand-in fitted to its 2 pads (mean 0.027 mm)"'
+  - ref: Q2
+    part: onsemi/MBT3904DW1T1G
+    x: -5.08
+    y: -0.762
+    rotation: 90
+    src:
+      - '"Hardware/ESP32_Thing_Plus.brd Q2 at 16.51, 29.972 rot 180"'
+      - '"Q2 value MBT3904DW1T1, footprint SC70-6; fitted to its pads"'
+      - '"Q2 value MBT3904DW1T1 (onsemi orders it as MBT3904DW1T1G, Pb-free)"'

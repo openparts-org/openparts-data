@@ -1,13 +1,15 @@
 # ESP32-S2-DevKitM-1: ESP32-S2-DevKitM-1 ordering code from the user guide's ordering table
-# -> existence verified. On-board module: ESP32-S2-MINI-1 (ordering table); no OpenParts ESP32-S2-MINI-1 part yet, so
-# the module is a placeholder box (datasheet outline).
+# -> existence verified. On-board module: ESP32-S2-MINI-1 (ordering table): U1 is the
+# ESP32-S2-MINI-1-N4 part as a stand-in (4 MB flash, no PSRAM; N4 or H4 not stated).
 # Assembly: components placed from the ESP32-S2-DevKitM-1 layout PDF (pad
 # centres of the top-copper plot, scaled by the board outline; see the
-# agent-scratch placement table). U3 CP2102N, D6 SK68XXMINI-HS and SW1/SW2
-# NTC013-AT1J-A160T (MPNs in the schematic) are boxes sized from the
-# ESP32-S3-DevKitC-1 reference design BOM, which lists the same MPNs with
-# footprint, size and height. Left out: micro-USB J2 and the power LED (no
-# MPN), Q1/Q2 L8050QLT1G (LRC datasheet not served, no body outline), passives.
+# agent-scratch placement table). D6 SK68XXMINI-HS -> Worldsemi
+# WS2812B-Mini-V6 (3535 stand-in).
+# Stand-ins (stand_in_for, same package or body/land as the design): U3
+# CP2102N -> Allegro QFN-28 5x5; SW1/SW2 NTC013-AT1J-A160T stay boxes;
+# micro-USB J2 (no MPN) -> GCT USB3076; power LED D5 -> Kingbright 0603;
+# Q1/Q2 L8050QLT1G -> onsemi MMBT2222A (SOT-23); ESD D2-D4 LESD5D5.0CT1G ->
+# onsemi ESD5Z5.0T1G (SOD-523). Left out: passives.
 schema_version: "0.2"
 kind: part
 id: espressif/ESP32-S2-DevKitM-1
@@ -35,12 +37,13 @@ lifecycle:
 
 assembly:
   - ref: U1
-    body: { width: 15.4, length: 20, height: 2.4, color: "#9aa0a6" }
+    part: espressif/ESP32-S2-MINI-1-N4
+    stand_in_for: ESP32-S2-MINI-1 with 4 MB flash, no PSRAM (N4 or H4 not stated)
     x: -0.02
-    y: 21.61
+    y: 19.31
     src:
-      - espressif/ESP32-S2-DevKitM-1_V1_Dimensions p1 "U1 outline centre (vector)"
-      - 'espressif/esp32-s2-mini-1_esp32-s2-mini-1u_datasheet_en@rev1.6 p24 "Figure 8: 15.4±0.2 x 20±0.2, 2.4±0.15 high"'
+      - 'p1 "U1 pad centres (pins 1-60 and 61): pad-area centre (-0.022, 19.308)"'
+      - 'espressif/esp32-s2-devkitm-1-user-guide "Ordering Information: ESP32-S2-DevKitM-1, ESP32-S2-MINI-1, 4 MB flash, no PSRAM"'
   - ref: U2
     part: sgmicro/SGM2212-3.3XKC3G-TR
     x: 0.74
@@ -53,21 +56,24 @@ assembly:
     rotation: 270
     src: p1 "D1 pad centres; footprint pad 2 = cathode (silkscreen bar)"
   - ref: U3
-    body: { width: 5, length: 5, height: 0.8, color: "#1c1c1e" }
+    part: allegro/A4988SETTR-T
+    stand_in_for: CP2102N-A02-GQFN28
     x: 0.89
     y: -10.24
+    rotation: 270
     src:
-      - p1 "U3 pad envelope centre (29 pads)"
+      - p1 "U3 pad envelope centre (29 pads); pin 1 top row, right end -> turned 270"
       - espressif/ESP32-S2-DevKitM-1_V1_Schematics "U3 CP2102N-A02-GQFN28"
-      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 20: CP2102N-A02-GQFN28, QFN28_0P5_5, H0.8"'
+      - '"stand-in matched on QFN-28 5x5, 0.5 pitch (CP2102N-A02-GQFN28 QFN28_0P5_5)"'
   - ref: D6
-    body: { width: 3.5, length: 3.5, height: 1.9, color: "#f4f4f2" }
-    x: -5.21
+    part: worldsemi/WS2812B-Mini-V6
+    stand_in_for: SK68XXMINI-HS (3535 RGB LED)
+    x: -5.207
     y: -1.6
+    rotation: 270
     src:
-      - p1 "D6 pad envelope centre (4 pads)"
+      - 'p1 "D6 pads: 4 at 1.8 x 3.3, pin 3 upper right; centre; pins as on the S3 design"'
       - espressif/ESP32-S2-DevKitM-1_V1_Schematics "D6 SK68XXMINI-HS"
-      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 14: SK68XXMINI-HS (WS2812B-Mini-V3), LED3535B, 3535, H1.9"'
   - ref: SW1
     body: { width: 4.2, length: 3.2, height: 2.5, color: "#2a2a2a" }
     x: -6.98
@@ -86,3 +92,65 @@ assembly:
       - p1 "SW2 pad envelope centre (4 pads)"
       - espressif/ESP32-S2-DevKitM-1_V1_Schematics "SW2 NTC013-AT1J-A160T"
       - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 18: NTC013-AT1J-A160T, 4.2x3.2x2.5, stem black"'
+  - ref: D5
+    part: kingbright/APT1608EC
+    stand_in_for: power LED 0603, MPN not stated
+    x: 6.477
+    y: 3.735
+    rotation: 90
+    src:
+      - p1 "D5 pads (6.48, 4.56) / (6.48, 2.91); cathode taken at pin 2 as on the S3 design"
+      - 'espressif/ESP32-S3-DevKitC-1_Reference_Design "BOM item 13: red LED, LED0603; stand-in: red 0603 LED"'
+  - ref: J2
+    part: gct/USB3076-30-A
+    stand_in_for: micro-USB B receptacle, MPN not stated
+    x: 0
+    y: -22.989
+    src:
+      - p1 "J2 contacts 1-5 at y -21.539, pin 1 x -1.4; shell pads x +-3.575; stand-in contacts aligned"
+      - espressif/ESP32-S2-DevKitM-1_V1_Schematics "J2 MICRO USB"
+  - ref: Q1
+    part: onsemi/MMBT2222ALT1G
+    stand_in_for: L8050QLT1G
+    x: 5.08
+    y: -1.6
+    rotation: 90
+    src:
+      - p1 "Q1 pins 1, 2 at y -2.75, pin 3 at y -0.45; centre, turned 90"
+      - espressif/ESP32-S2-DevKitM-1_V1_Schematics "Q1 L8050QLT1G"
+  - ref: Q2
+    part: onsemi/MMBT2222ALT1G
+    stand_in_for: L8050QLT1G
+    x: -0.127
+    y: -1.6
+    rotation: 90
+    src:
+      - p1 "Q2 pins 1, 2 at y -2.75, pin 3 at y -0.45; centre, turned 90"
+      - espressif/ESP32-S2-DevKitM-1_V1_Schematics "Q2 L8050QLT1G"
+  - ref: D2
+    part: onsemi/ESD5Z5.0T1G
+    stand_in_for: LESD5D5.0CT1G
+    x: -2.159
+    y: -16.713
+    rotation: 90
+    src:
+      - p1 "D2 SOD-523 pads, centre"
+      - espressif/ESP32-S2-DevKitM-1_V1_Schematics "D2 LESD5D5.0CT1G"
+  - ref: D3
+    part: onsemi/ESD5Z5.0T1G
+    stand_in_for: LESD5D5.0CT1G
+    x: -0.889
+    y: -16.713
+    rotation: 90
+    src:
+      - p1 "D3 SOD-523 pads, centre"
+      - espressif/ESP32-S2-DevKitM-1_V1_Schematics "D3 LESD5D5.0CT1G"
+  - ref: D4
+    part: onsemi/ESD5Z5.0T1G
+    stand_in_for: LESD5D5.0CT1G
+    x: 0.285
+    y: -16.687
+    rotation: 90
+    src:
+      - p1 "D4 SOD-523 pads, centre"
+      - espressif/ESP32-S2-DevKitM-1_V1_Schematics "D4 LESD5D5.0CT1G"

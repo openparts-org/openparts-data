@@ -1,13 +1,13 @@
 # Seeed Studio XIAO ESP32S3 Sense (113991115). Package = the board with its header holes; assembly = the
 # components on it whose placement comes from the maker's design file (seeed/XIAO-ESP32S3-Sense-SCH-PCB@V1.51),
 # converted to the package frame (board centre, top view; see the package comment).
-# Only components with an OpenParts part, or a box whose size AND height a source states,
-# are listed. Left out:
+# Listed: components with an OpenParts part -- where the real component has no fetchable datasheet
+# or no stated MPN, an equivalent part of the same footprint type and size (`stand_in_for` names the
+# real one) -- or a box whose size AND height a source states. Left out:
 #   the camera expansion board that ships with the Sense (a separate board on J3; no layout
-#   published), U2 (no value), USB0 UBF31-0171 (maker not named), L4, D2 LMBR4010BST5G, Q1
-#   LP0404N3T5G, LEDs: no part / no body height; passives skipped. Header holes: the inner
-#   plated 0.95 mm holes of footprint U9 "XIAO-14P-Add-On"; the castellated 0.7 mm edge
-#   half-holes are not pads here
+#   published), U2 (no value), L4, D2 LMBR4010BST5G, Q1 LP0404N3T5G: no part / no body height;
+#   passives skipped. Header holes: the inner plated 0.95 mm holes of footprint U9 "XIAO-14P-Add-
+#   On"; the castellated 0.7 mm edge half-holes are not pads here
 # J3: the B2B connector for the Sense camera board; the wiki specification table lists "1x B2B
 # Connector" only for the Sense, and Seeed publishes this one design (title "XIAO ESP32-S3-Sense")
 # for both boards, so this part is the Sense SKU.
@@ -90,10 +90,36 @@ assembly:
       - '"XIAO ESP32S3_V1.51.kicad_pcb U3 at 144.296, -108.606 rot 90"'
       - '"U3 footprint name "BGA6-0.35-0.745X10.95X0.4MM" (10.95: courtyard is 1.095)"'
   - ref: U5
-    body: { width: 3, length: 4, height: 0.55, color: "#303030" }
+    part: gigadevice/GD25Q64ENIG
     x: -4.166
     y: 1.377
     src:
-      - '"XIAO ESP32S3_V1.51.kicad_pcb U5 at 144.335, -103.626 rot 0"'
-      - '"U5 value GD25Q64ENIGR, footprint USON8-0.8-4X3MM"'
-      - 'gigadevice/DS-00484-GD25Q64E@rev1.6 p56 "10.2 Package USON8 (3x4mm): D 3.00, E 4.00, A 0.55 nom"'
+      - '"XIAO ESP32S3_V1.51.kicad_pcb U5 at 144.31, -103.626 rot 0"'
+      - '"U5 value GD25Q64ENIGR, footprint USON8-0.8-4X3MM; fitted to its pads"'
+  - ref: USB0
+    part: gct/USB4105-GF-A
+    stand_in_for: UBF31-0171 USB Type-C receptacle (maker not named)
+    x: 0
+    y: 7.244
+    rotation: 180
+    src:
+      - '"XIAO ESP32S3_V1.51.kicad_pcb USB0 at 148.501, -100.278 rot -90"'
+      - '"USB0 value UBF31-0171, footprint USB2.0-TYPE-C; stand-in fitted to its 18 pads (mean 0.183 mm)"'
+  - ref: CHG0
+    part: kingbright/APHHS1005QBC-D
+    stand_in_for: 0402 LED, red, MPN not stated
+    x: -5.842
+    y: 6.707
+    rotation: 180
+    src:
+      - '"XIAO ESP32S3_V1.51.kicad_pcb CHG0 at 142.659, -98.297 rot 0"'
+      - '"CHG0 value RED, footprint LED-0402; stand-in fitted to its 2 pads (mean 0.003 mm)"'
+  - ref: D3
+    part: kingbright/APHHS1005QBC-D
+    stand_in_for: 0402 LED, yellow, MPN not stated
+    x: 5.893
+    y: 6.707
+    rotation: 180
+    src:
+      - '"XIAO ESP32S3_V1.51.kicad_pcb D3 at 154.394, -98.297 rot 0"'
+      - '"D3 value Yellow, footprint LED-0402; stand-in fitted to its 2 pads (mean 0.003 mm)"'

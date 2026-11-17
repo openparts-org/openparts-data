@@ -1,0 +1,32 @@
+# MPN "GD25Q64ENIG" printed verbatim in section 9.1 "Valid Part Numbers"
+# (Temperature Range I table) of gigadevice/DS-00484-GD25Q64E@rev1.6, page 52, row
+# "GD25Q64ENIG / 64Mbit / USON8 (3x4mm)". The orderable code adds the packing
+# letter (R only for this package, "Packing Options" column) -- this record
+# is the product number as the table prints it. Package outline: section
+# 10.2 "Package USON8 (3x4mm)" (page 56). lifecycle: not stated in the
+# datasheet -> unknown.
+schema_version: "0.2"
+kind: part
+id: gigadevice/GD25Q64ENIG
+manufacturer: gigadevice
+mpn: GD25Q64ENIG
+device: gigadevice/GD25Q64E
+
+package:
+  value: manufacturers/gigadevice/USON8-3x4-P0.8
+  src: p52 "Section 9.1 Valid Part Numbers, row GD25Q64ENIG, Package Type USON8 (3x4mm); outline section 10.2 (p56)"
+
+sources: [gigadevice/DS-00484-GD25Q64E@rev1.6]
+source: gigadevice/DS-00484-GD25Q64E@rev1.6
+
+existence:
+  status: verified
+  src: p52 "Section 9.1 Valid Part Numbers, Temperature Range I table, row GD25Q64ENIG"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p41 "8.5 DC Characteristics header: TA = -40 to 85 C, VCC 2.7-3.6 V (specified)"'

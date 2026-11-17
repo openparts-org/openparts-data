@@ -1,0 +1,37 @@
+# Worldsemi WS2812B-Mini-V6 3535 package, from worldsemi/WS2812B-Mini-V6@v1.3
+# p2 "Mechanical Dimensions(unit:mm)" ("Tolerance: ± 0.15mm"),
+# "PIN Configuration" and "Recommended pad size (unit: mm)".
+# Frame (smd_led): top view, origin at the body centre. PIN Configuration
+# (top view): VDD (1) upper left, DOUT (2) lower left, VSS (3) lower
+# right, DIN (4) upper right; the pad drawing numbers the pads the same.
+# Body: the pad drawing's package outline "3.50" x "3.50" (the mechanical
+# top view prints "3.46±0.5" on one side only); height "1.9 0/-0.1"
+# (side view).
+# Pads: "1.80" x "1.00"; centres "3.13" apart across (x = ±1.565) and
+# "1.78" apart up (y = ±0.89).
+schema_version: "0.2"
+kind: package
+id: manufacturers/worldsemi/SMD3535-WS2812B-Mini-V6
+family: smd_led
+lead_count: { value: 4, src: p2 "PIN Configuration" }
+source: worldsemi/WS2812B-Mini-V6@v1.3
+
+pitch: { typ: 1.78 mm, src: 'p2 "Recommended pad size, "1.78""' }
+geometry: { type: parametric, generator: smd_led }
+
+dimensions:
+  body_width:  { typ: 3.5 mm, src: 'p2 "Recommended pad size, outline "3.50""' }
+  body_length: { typ: 3.5 mm, src: 'p2 "Recommended pad size, outline "3.50""' }
+  overall_height:
+    min: 1.8 mm
+    typ: 1.9 mm
+    max: 1.9 mm
+    src: p2 "Mechanical Dimensions, side view "1.9 0/-0.1""
+
+pads:
+  value:
+    - { number: "1", x: -1.565, y: 0.89, width: 1.8, length: 1 }
+    - { number: "2", x: -1.565, y: -0.89, width: 1.8, length: 1 }
+    - { number: "3", x: 1.565, y: -0.89, width: 1.8, length: 1 }
+    - { number: "4", x: 1.565, y: 0.89, width: 1.8, length: 1 }
+  src: p2 "Recommended pad size, 1.80, 1.00, 3.13, 1.78; PIN Configuration (see comment above)"

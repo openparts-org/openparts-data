@@ -1,0 +1,13 @@
+# Abracon AOTA-B201610S3R3-101-T 3.3 µH molded power inductor. The
+# datasheet numbers no pins (polarity dot only): pins 1 and 2 in the
+# generator's position convention.
+schema_version: "0.2"
+kind: device
+id: abracon/AOTA-B201610S3R3-101-T
+manufacturer: abracon
+category: inductor
+family: AOTA-B201610
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

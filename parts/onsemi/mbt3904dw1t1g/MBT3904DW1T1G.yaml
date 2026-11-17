@@ -1,0 +1,21 @@
+# The Thing Plus design names "MBT3904DW1T1"; the datasheet's ordering table
+# lists MBT3904DW1T1G (SOT-363, Pb-Free). lifecycle unknown: the ordering
+# table marks other rows "DISCONTINUED" but states nothing for this one.
+schema_version: "0.2"
+kind: part
+id: onsemi/MBT3904DW1T1G
+manufacturer: onsemi
+mpn: MBT3904DW1T1G
+device: onsemi/MBT3904DW1
+package: manufacturers/onsemi/SC88-2.00x1.25-P0.65-419B
+sources: [onsemi/MBT3904DW1T1-D]
+source: onsemi/MBT3904DW1T1-D
+
+existence:
+  status: verified
+  src: p1 "ORDERING INFORMATION, MBT3904DW1T1G, SOT-363 (Pb-Free), 3000 / Tape & Reel"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity: { value: npn, src: 'p1 "Dual General Purpose Transistors; STYLE 1 diagram: two NPN"' }
