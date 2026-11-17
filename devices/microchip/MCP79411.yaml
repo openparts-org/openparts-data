@@ -28,6 +28,11 @@ parameters:
     max: 85 °C
     src: 'p3 "Table 1-1 DC Characteristics header: Industrial (I) TA = -40°C to +85°C"'
   esd_hbm: { typ: 4 kV, src: 'p3 "Absolute Maximum Ratings: ESD protection on all pins ≥ 4 kV"' }
+  backup_current:
+    typ: 925 nA
+    max: 1200 nA
+    at: { VBAT: 3 V }
+    src: p4 "DC Characteristics, D15 IBATT Timekeeping Backup Current, VBAT = 3.0V, VCC = VSS"
 
 pins:
   src: p8 "Table 3-1 "Pin Function Table", column "8-pin SOIC""

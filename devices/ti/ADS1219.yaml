@@ -17,16 +17,39 @@ source: ti/SBAS924A
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: i2c, src: 'p1 "Features, I2C-Compatible Interface"' }
   supply_voltage:
     min: 2.3 V
     max: 5.5 V
     src: p4 "6.3 Recommended Operating Conditions, Analog (AVDD to AGND) and Digital (DVDD to DGND) power supply"
+  analog_supply_voltage:
+    min: 2.3 V
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, Analog power supply AVDD to AGND"
+  digital_supply_voltage:
+    min: 2.3 V
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, Digital power supply DVDD to DGND"
+  analog_supply_current:
+    typ: 250 µA
+    src: p6 "IAVDD, AVDD = 3.3 V, conversion mode, internal reference selected"
+  digital_supply_current:
+    typ: 65 µA
+    max: 100 µA
+    src: p6 "IDVDD, DVDD = 3.3 V, conversion mode"
   operating_temperature:
     min: -40 °C
     max: 125 °C
     src: p4 "6.3 Recommended Operating Conditions, TA Operating ambient temperature"
-  esd_hbm:       { typ: 2 kV, src: 'p4 "6.2 ESD Ratings, HBM ±2000 V"' }
-  channel_count: { value: "4", src: 'p3 "Pin Functions, AIN0..AIN3 Analog input 0..3"' }
+  esd_hbm:        { typ: 2 kV, src: 'p4 "6.2 ESD Ratings, HBM ±2000 V"' }
+  channel_count:  { value: "4", src: 'p3 "Pin Functions, AIN0..AIN3 Analog input 0..3"' }
+  resolution:     { value: "24", src: 'p1 "Title, 1-kSPS, 24-Bit, Delta-Sigma ADC"' }
+  sample_rate: { max: 1 kSPS, src: 'p1 "Features, Programmable Data Rates: Up to 1 kSPS"' }
+  reference:
+    values: [internal, external]
+    src:
+      - p1 "Features, Internal 2.048-V Reference"
+      - p3 "Pin Functions, REFP Positive reference input"
 
 pins:
   src:

@@ -10,6 +10,14 @@ category: rtc
 family: ISL1208
 source: renesas/FN8085@rev9.01
 
+# Parameters (AI candidates, needs review).
+parameters:
+  backup_current:
+    typ: 400 nA
+    max: 950 nA
+    at: { VBAT: 3 V }
+    src: p4 "DC Operating Characteristics, IBAT Battery Supply Current, VBAT = 3V"
+
 pins:
   src: [p3 "Pin Descriptions table", 'p3 "Pinouts, ISL1208 (8 LD MSOP, SOIC) TOP VIEW"']
   "1": { name: X1, type: clock }

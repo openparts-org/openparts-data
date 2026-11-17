@@ -16,6 +16,7 @@ source: ti/SBAS302C
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: i2c, src: 'p1 "Features, SUPPORTS ALL THREE I2C MODES"' }
   supply_current:
     - typ: 225 µA
       max: 320 µA
@@ -30,6 +31,13 @@ parameters:
     max: 125 °C
     src: 'p4 "Elec. Char. +2.7V, TEMPERATURE RANGE: Specified Performance"'
   channel_count: { value: "8", src: 'p2 "PIN DESCRIPTIONS, CH0..CH7 Analog Input Channel 0..7"' }
+  resolution:     { value: "8", src: 'p1 "Features, 8 BITS NO MISSING CODES"' }
+  sample_rate:
+    max: 70 kSPS
+    src: 'p3 "Sampling Dynamics, Throughput Frequency, High-Speed Mode: SCL = 3.4MHz"'
+  reference:
+    values: [internal, external]
+    src:    p2 "Pin Descriptions, REFIN/REFOUT Internal +2.5V Reference, External Reference Input"
 
 pins:
   src:

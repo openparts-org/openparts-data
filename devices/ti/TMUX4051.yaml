@@ -12,6 +12,23 @@ family: TMUX405x
 source: ti/SCDS445E
 
 parameters:
+  on_resistance:
+    - typ: 75 Ω
+      max: 1050 Ω
+      at: { VDD: 5 V, TA: 25 °C }
+      src: p10 "6.5 EC, RON, VDD = 5V, VSS = 0V, ID = -1mA, 25°C"
+    - typ: 60 Ω
+      max: 400 Ω
+      at: { VDD: 10 V, TA: 25 °C }
+      src: p10 "6.5 EC, RON, VDD = 10V, VSS = 0V, ID = -1mA, 25°C"
+    - typ: 60 Ω
+      max: 240 Ω
+      at: { VDD: 24 V, TA: 25 °C }
+      src: p10 "6.5 EC, RON, VDD = 24V, VSS = 0V, ID = -1mA, 25°C"
+  on_resistance_flatness:
+    typ: 60 Ω
+    max: 150 Ω
+    src: p10 "6.5 EC, RON FLAT, all supplies, ID = -1mA; typ 25°C, max -55°C to 85°C"
   supply_voltage: { min: 5 V, max: 24 V, src: 'p8 "6.4 Recommended Operating Conditions, VDD"' }
   supply_current:
     typ: 17 µA

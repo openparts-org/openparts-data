@@ -11,6 +11,19 @@ family: CD4066B
 source: ti/SCHS051J
 
 parameters:
+  on_resistance:
+    - typ: 125 Ω
+      max: 240 Ω
+      at: { VDD: 15 V, TA: 25 °C }
+      src: p7 "5.5 Electrical Characteristics, rON, VDD = 15V, TA = 25°C"
+    - typ: 470 Ω
+      max: 1050 Ω
+      at: { VDD: 5 V, TA: 25 °C }
+      src: p7 "5.5 Electrical Characteristics, rON, VDD = 5V, TA = 25°C"
+    - typ: 180 Ω
+      max: 400 Ω
+      at: { VDD: 10 V, TA: 25 °C }
+      src: p7 "5.5 Electrical Characteristics, rON, VDD = 10V, TA = 25°C"
   supply_voltage: { min: 3 V, max: 18 V, src: 'p4 "5.3 Recommended Operating Conditions, VDD"' }
   supply_current:
     typ: 4 µA

@@ -1,0 +1,18 @@
+# Official TI datasheet "TPA3116D2 15-W, 30-W, 50-W Filter-Free Class-D
+# Stereo Amplifier Family With AM Avoidance" (TPA3116D2, TPA3118D2,
+# TPA3130D2), header "SLOS708G - APRIL 2012 - REVISED DECEMBER 2017".
+# Downloaded 2026-11-17 with curl from the TI symlink URL below; 49 PDF
+# pages (the package option addendum and DAD0032A / DAP0032C drawings
+# appended). Page numbers are PDF page indices. Text read with
+# pdftotext -layout; the DAD0032A outline (page 39) rendered.
+schema_version: "0.2"
+kind: source
+id: ti/SLOS708G
+sha256: 4339471f438d786c444b4776925e75cf3a4ceafb8d6fad5de709d080670271a0
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/tpa3116d2.pdf
+publisher: ti
+document_id: SLOS708G
+document_type: datasheet
+revision: G
+date: 2017-12

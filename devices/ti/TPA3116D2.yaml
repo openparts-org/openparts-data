@@ -1,0 +1,88 @@
+# TPA3116D2 2 x 50 W filter-free class-D stereo amplifier, DAD package
+# (32-pin HTSSOP, PowerPAD up -- the only TPA3116D2 package; TPA3118D2 /
+# TPA3130D2 are the DAP pad-down variants of the same datasheet, not
+# recorded). Pins: SLOS708G page 3 "DAD Package ... TPA3116D2 Only, Top
+# View" and page 4 "Pin Functions" (TYPE: I -> input, DO open-drain
+# FAULTZ -> output, PO GVDD -> power_out (internal gate supply),
+# PO OUTxx -> output, BST -> passive, DIO SYNC -> io, P ->
+# power, G -> ground). Pin 33 "PowerPAD" (top side, connect to GND or
+# leave floating) has no board land and no pin (pad-up package).
+# Values: 6.3 Recommended Operating Conditions (page 5), 6.5 DC and 6.6
+# AC Electrical Characteristics (pages 6-7; TA = 25 °C, AVCC = PVCC,
+# RL = 4 Ω unless noted).
+schema_version: "0.2"
+kind: device
+id: ti/TPA3116D2
+manufacturer: ti
+category: audio_amplifier
+family: TPA3116D2
+source: ti/SLOS708G
+
+parameters:
+  supply_voltage:
+    min: 4.5 V
+    max: 26 V
+    src: p5 "6.3 Recommended Operating Conditions, VCC PVCC, AVCC"
+  supply_current:
+    typ: 32 mA
+    max: 50 mA
+    at: { VCC: 24 V }
+    src: p6 "6.5 DC Electrical Characteristics, ICC, SDZ = 2 V, no load or filter, PVCC = 24 V"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "Features, -40°C to 85°C Ambient Temperature Range"
+  esd_hbm:         { typ: 2 kV, src: 'p5 "6.2 ESD Ratings, HBM ±2000 V"' }
+  channel_count:   { value: "2", src: 'p1 "Title, Class-D Stereo Amplifier"' }
+  amplifier_class: { value: d, src: 'p1 "Title, Filter-Free Class-D Stereo Amplifier"' }
+  output_power:
+    - typ: 50 W
+      at: { VCC: 21 V, RL: 4 Ω, THD: 10 % }
+      src: p7 "6.6 AC Electrical Characteristics, PO, THD+N = 10%, f = 1 kHz, PVCC = 21 V"
+    - typ: 25 W
+      at: { VCC: 14.4 V, RL: 4 Ω, THD: 10 % }
+      src: p7 "6.6 AC Electrical Characteristics, PO, THD+N = 10%, f = 1 kHz, PVCC = 14.4 V"
+  thd_n:
+    typ: 0.1 %
+    at: { VCC: 21 V, RL: 4 Ω }
+    src: p7 "6.6 AC Electrical Characteristics, THD+N, f = 1 kHz, PO = 25 W (half-power)"
+  snr:
+    typ: 102 dB
+    src: p7 "6.6 AC Electrical Characteristics, SNR, THD+N < 1%, Gain = 20 dB, A-weighted"
+
+pins:
+  src:
+    - p3 "DAD Package 32-Pin HTSSOP With PowerPAD Up, TPA3116D2 Only, Top View"
+    - p4 "Pin Functions"
+  "1":  { name: MODSEL, type: input }
+  "2":  { name: SDZ, type: input }
+  "3":  { name: FAULTZ, type: output }
+  "4":  { name: RINP, type: analog }
+  "5":  { name: RINN, type: analog }
+  "6":  { name: PLIMIT, type: analog }
+  "7":  { name: GVDD, type: power_out }
+  "8":  { name: GAIN/SLV, type: analog }
+  "9":  { name: GND, type: ground }
+  "10": { name: LINP, type: analog }
+  "11": { name: LINN, type: analog }
+  "12": { name: MUTE, type: input }
+  "13": { name: AM2, type: input }
+  "14": { name: AM1, type: input }
+  "15": { name: AM0, type: input }
+  "16": { name: SYNC, type: io }
+  "17": { name: AVCC, type: power }
+  "18": { name: PVCC, type: power }
+  "19": { name: PVCC, type: power }
+  "20": { name: BSNL, type: passive }
+  "21": { name: OUTNL, type: output }
+  "22": { name: GND, type: ground }
+  "23": { name: OUTPL, type: output }
+  "24": { name: BSPL, type: passive }
+  "25": { name: GND, type: ground }
+  "26": { name: BSNR, type: passive }
+  "27": { name: OUTNR, type: output }
+  "28": { name: GND, type: ground }
+  "29": { name: OUTPR, type: output }
+  "30": { name: BSPR, type: passive }
+  "31": { name: PVCC, type: power }
+  "32": { name: PVCC, type: power }

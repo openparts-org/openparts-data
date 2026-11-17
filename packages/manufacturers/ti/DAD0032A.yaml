@@ -1,0 +1,41 @@
+# TI DAD0032A "PowerPAD TSSOP - 1.15 mm max height" (32-lead HTSSOP,
+# 0.65 mm pitch, thermal pad on the TOP face: "Pad Up"), drawing
+# 4222646/B 02/2020 (JEDEC MO-153 per its notes), read from the PACKAGE
+# OUTLINE page of SLOS708G (PDF page 39, rendered). Millimetres as
+# printed; min/max only, no nominal except the 8.3 / 7.9 "TYP" span.
+# Exposed thermal pad: "4.11 / 3.31" across the rows (width), "4.36 /
+# 3.26" along the rows (length); `face: top` (page 1 "DAD (32-Pin
+# HTSSOP Pad Up)"; page 3 "32-Pin HTSSOP With PowerPAD Up") -> no board
+# land, no EP pin. Lead thickness only "(0.15) TYP" (reference). Pins
+# 1-16 down the left edge, 17-32 up the right (page 3 top view). The
+# example land pattern (page 40: 32X (1.5) x (0.45), (7.5)) is all
+# reference values and is not recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DAD0032A
+family: tssop
+lead_count: 32
+source: ti/SLOS708G
+
+pitch: { typ: 0.65 mm, src: 'p39 "DAD0032A, "30X 0.65" (basic)"' }
+geometry: { type: parametric, generator: tssop }
+
+dimensions:
+  body_width: { min: 6 mm, max: 6.2 mm, src: 'p39 "DAD0032A, body width "6.2 / 6.0" (datum B)"' }
+  body_length:
+    min: 10.9 mm
+    max: 11.1 mm
+    src: p39 "DAD0032A, body length "11.1 / 10.9 NOTE 3" (datum A)"
+  lead_thickness:
+    typ: 0.15 mm
+    src: p39 "DAD0032A, "(0.15) TYP" -- reference value per note 1"
+  exposed_pad:
+    width: { min: 3.31 mm, max: 4.11 mm }
+    length: { min: 3.26 mm, max: 4.36 mm }
+    face: top
+    src: p39 "DAD0032A exposed thermal pad "4.11 / 3.31" across, "4.36 / 3.26" along the rows (top side)"
+  overall_width:  { min: 7.9 mm, max: 8.3 mm, src: 'p39 "DAD0032A, lead-tip span "8.3 TYP / 7.9""' }
+  overall_height: { min: 1 mm, max: 1.15 mm, src: 'p39 "DAD0032A DETAIL A, "1.15 / 1.00""' }
+  standoff:       { min: 0.05 mm, max: 0.15 mm, src: 'p39 "DAD0032A DETAIL A, "0.15 / 0.05""' }
+  lead_width:     { min: 0.19 mm, max: 0.3 mm, src: 'p39 "DAD0032A, "32X 0.30 / 0.19""' }
+  lead_length:    { min: 0.5 mm, max: 0.75 mm, src: 'p39 "DAD0032A DETAIL A, "0.75 / 0.50""' }

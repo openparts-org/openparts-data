@@ -15,6 +15,7 @@ source: ti/SBAS444E
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: i2c, src: 'p1 "Features, I2C interface: four pin-selectable addresses"' }
   supply_voltage:
     min: 2 V
     max: 5.5 V
@@ -28,10 +29,13 @@ parameters:
     min: -40 °C
     max: 125 °C
     src: 'p4 "5.3 Recommended Operating Conditions: TA operating ambient temperature"'
-  esd_hbm: { typ: 2 kV, src: 'p4 "5.2 ESD Ratings, HBM"' }
+  esd_hbm:    { typ: 2 kV, src: 'p4 "5.2 ESD Ratings, HBM"' }
   channel_count:
     value: "4"
     src: 'p1 "Description: two differential or four single-ended inputs"'
+  resolution: { value: "16", src: 'p1 "Title, 860SPS, 16-Bit ADCs"' }
+  sample_rate: { max: 860 SPS, src: 'p1 "Features, Programmable data rate: 8SPS to 860SPS"' }
+  reference: { value: internal, src: 'p1 "Features, Internal low-drift voltage reference"' }
 
 pins:
   src:

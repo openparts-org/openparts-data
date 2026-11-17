@@ -21,5 +21,11 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  coil_voltage:    { typ: 48 V, src: 'p2 "Ratings, Coil, Standard, Rated voltage 48 VDC"' }
+  coil_voltage: { typ: 48 V, src: 'p2 "Ratings, Coil, Standard, Rated voltage 48 VDC"' }
   coil_resistance: { typ: 4000 Ω, src: 'p2 "Ratings, Coil, Standard, 48 VDC row, Coil resistance"' }
+  must_operate_voltage:
+    max: 36 V
+    src: p2 "Ratings, Coil, Standard, 48 VDC row, Must operate 75 % max. of rated"
+  must_release_voltage:
+    min: 2.4 V
+    src: p2 "Ratings, Coil, Standard, 48 VDC row, Must release 5 % min. of rated"

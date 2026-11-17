@@ -18,6 +18,11 @@ parameters:
     at: { VDD: 5 V, TA: 25 °C }
     src: p8 "5.6 Elec. Char. VDD = 5V (continued), IDD, 25°C, all grades"
   esd_hbm: { typ: 1000 V, src: 'p4 "5.2 ESD Ratings, HBM"' }
+  max_frequency:
+    min: 1.2 MHz
+    typ: 2.1 MHz
+    at: { VDD: 5 V, TA: 25 °C }
+    src: p10 "5.8, fmax Maximum frequency in astable mode, RA = 470Ω, CT = 200pF"
 
 pins:
   src: 'p3 "Figure 4-1 and Table 4-1 Pin Functions: D, P, PS, and JG Packages"'

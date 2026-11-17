@@ -31,6 +31,16 @@ parameters:
     min: 5000 V
     at: { t: 60 s }
     src: p5 "Isolation Characteristics, Isolation voltage BVS (AC, Vrms)"
+  trigger_current:
+    typ: 0.5 mA
+    max: 3 mA
+    src: p5 "13. Coupled Electrical Characteristics, Trigger LED current IFT, ION = 1.0 A"
+  off_state_voltage: { max: 40 V, src: 'p3 "8. Absolute Maximum Ratings, Detector, VOFF"' }
+  on_resistance:
+    typ: 60 mΩ
+    max: 100 mΩ
+    at: { IF: 5 mA, IL: 2 A }
+    src: p5 "13. Coupled Electrical Characteristics, RON, ION = 2.0 A, t < 1 s"
   operating_temperature:
     min: -20 °C
     max: 85 °C

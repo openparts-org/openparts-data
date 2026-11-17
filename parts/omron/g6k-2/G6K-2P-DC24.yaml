@@ -28,3 +28,9 @@ parameters:
   coil_resistance:
     typ: 5220 Ω
     src: 'p3 "Ratings, Coil: Single-side Stable Models, 24 VDC row, Coil resistance"'
+  must_operate_voltage:
+    max: 19.2 V
+    src: 'p3 "Ratings, Coil: Single-side Stable Models, 24 VDC row, Must operate 80 % max. of rated"'
+  must_release_voltage:
+    min: 2.4 V
+    src: 'p3 "Ratings, Coil: Single-side Stable Models, 24 VDC row, Must release 10 % min. of rated"'

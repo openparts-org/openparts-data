@@ -28,6 +28,7 @@ parameters:
     src: p4 "6.3 Recommended Operating Conditions, TA Operating ambient temperature"
   esd_hbm:              { typ: 2.5 kV, src: 'p4 "6.2 ESD Ratings, HBM all pins ±2500 V"' }
   magnetic_sensor_type: { value: linear, src: p1 "DRV5053 Analog-Bipolar Hall Effect Sensor" }
+  bandwidth:            { min: 20 kHz, src: 'p5 "6.7 Magnetic Characteristics, ƒBW Bandwidth"' }
 
 pins:
   src: ['p3 "Table 5-1 Pin Functions, column DBZ"', p3 "DBZ Package 3-Pin SOT-23 Top View"]

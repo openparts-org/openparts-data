@@ -1,0 +1,19 @@
+# TLP2745(TP,E: standard lead forming (11-4N1A), tape and reel (1500 pcs),
+# printed verbatim in the table of section 18 "Ordering Information
+# (Example of Item Name)" on page 14 -> existence verified. Lifecycle
+# not stated -> unknown.
+schema_version: "0.2"
+kind: part
+id: toshiba/TLP2745(TP,E
+manufacturer: toshiba
+mpn: TLP2745(TP,E
+device: toshiba/TLP2745
+package: { value: manufacturers/toshiba/11-4N1A, src: 'p15 "Package Dimensions, TOSHIBA 11-4N1A"' }
+sources: [toshiba/TLP2745-datasheet-en]
+source: toshiba/TLP2745-datasheet-en
+
+existence:
+  status: verified
+  src: p14 "18. Ordering Information, item name TLP2745(TP,E, Tape and reel (1500 pcs)"
+
+lifecycle: { status: unknown }

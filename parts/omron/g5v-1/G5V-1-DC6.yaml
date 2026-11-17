@@ -25,3 +25,9 @@ parameters:
   coil_resistance:
     typ: 240 Ω
     src: p1 "Ratings, Coil, G5V-1 (Standard), 6 VDC row, Coil resistance"
+  must_operate_voltage:
+    max: 4.8 V
+    src: p1 "Ratings, Coil, G5V-1 (Standard), 6 VDC row, Must operate 80 % max. of rated"
+  must_release_voltage:
+    min: 0.6 V
+    src: p1 "Ratings, Coil, G5V-1 (Standard), 6 VDC row, Must release 10 % min. of rated"

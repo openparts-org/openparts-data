@@ -1,0 +1,62 @@
+# TDK InvenSense ICS-43434 6-terminal LGA_CAV (bottom-port MEMS
+# microphone), 3.50 x 2.65 x 0.98 mm. Read from Figure 15 "Outline
+# Dimensions" (page 19, rendered), Figure 13 "PCB Land Pattern Layout"
+# (page 17, rendered) and Figure 3 "Pin Configuration (top view)"
+# (page 10).
+#
+# Frame: the top view of Figure 3 (sound port / ring at the top, pins
+# 5 6 1 along the bottom edge left to right, 4 and 2 above them at the
+# left and right). body_width (X) = 2.65, body_length (Y) = 3.50.
+# Land pattern: Figure 13 is the same layout turned 90° (ring on the
+# right); its pads are 0.522 x 0.600 (5X) 1:1 with the terminals
+# (0.600 along the row, 0.522 across), rows 0.900 apart, columns 0.822
+# apart, ring centre 1.252 from the 2-pad column, ring ø1.625 / ø1.025.
+# Ring centre from the ring-side edge 1.040 (Figure 15) -> y = 3.50/2 -
+# 1.040 = 0.71; 2-pad row y = 0.71 - 1.252 = -0.542; 3-pad row y =
+# -0.542 - 0.822 = -1.364 (= -(1.75 - 0.125 - 0.522/2), the 0.125 edge
+# gap of Figure 15). x = -0.9 / 0 / +0.9.
+# `lga`: the bottom row (5, 6, 1) is the perimeter row (lead_layout
+# [0, 3, 0, 0], renumbered by pad_order); 4, 2 and the GND ring 3 are
+# extra `pads`. The PCB sound hole is not drawn in Figure 13 (the text
+# recommends a minimum ø0.5), so it is not recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/tdk/LGA6-3.50x2.65-ICS-43434
+family: lga
+lead_count: 6
+
+lead_layout: { value: [0, 3, 0, 0], src: 'p10 "Figure 3 top view, 5 6 1 along the bottom edge"' }
+
+source: tdk/DS-000069@rev1.2
+
+pitch: { typ: 0.9 mm, src: 'p17 "Figure 13, 0.900 pad row spacing"' }
+
+pad_order:
+  value: ["5", "6", "1", "2", "3", "4"]
+  src:   p10 "Figure 3 top view, bottom row 5 6 1 left to right; 4, 2 and ring 3 off the perimeter"
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:  { typ: 2.65 mm, src: 'p19 "Figure 15, 2.65"' }
+  body_length: { typ: 3.5 mm, src: 'p19 "Figure 15, 3.50"' }
+  body_height: { typ: 0.98 mm, src: 'p19 "Figure 15 side view, 0.98"' }
+  lead_inset:  { typ: 0.125 mm, src: 'p19 "Figure 15 bottom view, 0.125 pad to body edge"' }
+  lead_width:  { typ: 0.6 mm, src: 'p19 "Figure 15 bottom view, 0.600 (5X)"' }
+  lead_length: { typ: 0.522 mm, src: 'p19 "Figure 15 bottom view, 0.522 (5X)"' }
+
+pads:
+  value:
+    - { number: "5", x: -0.9, y: -1.364, width: 0.6, length: 0.522 }
+    - { number: "6", x: 0, y: -1.364, width: 0.6, length: 0.522 }
+    - { number: "1", x: 0.9, y: -1.364, width: 0.6, length: 0.522 }
+    - { number: "4", x: -0.9, y: -0.542, width: 0.6, length: 0.522 }
+    - { number: "2", x: 0.9, y: -0.542, width: 0.6, length: 0.522 }
+    - number: "3"
+      x: 0
+      y: 0.71
+      width: 1.625
+      length: 1.625
+      shape: annular
+      inner_diameter: 1.025
+  src: p17 "Figure 13 land pattern (0.522/0.600, 0.900, 0.822, 1.252, ø1.625/ø1.025); ring y = 1.75 - 1.040 (p19)"

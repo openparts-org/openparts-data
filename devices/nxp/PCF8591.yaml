@@ -12,6 +12,7 @@ source: nxp/PCF8591@rev7
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: i2c, src: 'p1 "Features, Serial input and output via I2C-bus"' }
   supply_voltage:
     min: 2.5 V
     max: 6 V
@@ -31,6 +32,8 @@ parameters:
   channel_count:
     value: "4"
     src: 'p1 "General description: four analog inputs (single ended or differential)"'
+  resolution: { value: "8", src: 'p1 "Features, 8-bit successive approximation A/D conversion"' }
+  reference: { value: external, src: 'p4 "Pin description, VREF 14 voltage reference input"' }
 
 pins:
   src:  p4 "Table 4 Pin description"

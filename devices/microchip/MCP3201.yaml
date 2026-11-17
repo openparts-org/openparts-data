@@ -12,6 +12,7 @@ source: microchip/DS21290@revF
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: spi, src: 'p1 "Features, SPI Serial Interface (modes 0,0 and 1,1)"' }
   supply_voltage:
     min: 2.7 V
     max: 5.5 V
@@ -31,6 +32,12 @@ parameters:
   channel_count:
     value: "1"
     src: 'p1 "Description: provides a single pseudo-differential input"'
+  resolution: { value: "12", src: 'p1 "Features, 12-Bit Resolution"' }
+  sample_rate:
+    max: 100 kSPS
+    at: { VDD: 5 V }
+    src: p1 "Features, 100 ksps Maximum Sampling Rate at VDD = 5V"
+  reference: { value: external, src: 'p15 "Pin Function Table, VREF Reference Voltage Input"' }
 
 pins:
   src:

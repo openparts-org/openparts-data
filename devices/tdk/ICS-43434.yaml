@@ -1,9 +1,9 @@
 # TDK InvenSense ICS-43434 bottom-port MEMS microphone with I2S output
 # (6-terminal LGA_CAV, 3.50 x 2.65 x 0.98 mm). Pins from DS-000069 page
 # 10 "Table 8. Pin Function Descriptions" (TYPE column). Values from the
-# High-Performance Mode table (page 4). No Part/Package: the land pattern
+# High-Performance Mode table (page 4). Package: the land pattern
 # (page 17) has a ring-shaped GND pad (pin 3, ø1.025 / ø1.625 around
-# the sound port), which the package pad shapes cannot express yet.
+# the sound port), an annular pad in manufacturers/tdk/LGA6-3.50x2.65-ICS-43434.
 schema_version: "0.2"
 kind: device
 id: tdk/ICS-43434

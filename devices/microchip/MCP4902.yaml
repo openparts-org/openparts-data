@@ -17,6 +17,7 @@ source: microchip/DS22250@revA
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: spi, src: 'p1 "Features, SPI Interface with 20 MHz Clock Support"' }
   supply_voltage:
     min: 2.7 V
     max: 5.5 V
@@ -38,6 +39,8 @@ parameters:
     typ: 4 kV
     src: 'p3 "Absolute Maximum Ratings: ESD protection on all pins 4 kV (HBM)"'
   channel_count: { value: "2", src: 'p17 "Table 3-1: VOUTA "DACA Output", VOUTB "DACB Output""' }
+  resolution: { value: "8", src: 'p1 "Features, MCP4902: Dual 8-Bit Voltage Output DAC"' }
+  reference: { value: external, src: 'p1 "Features, External Voltage Reference Inputs"' }
 
 pins:
   src:  p17 "Table 3-1 "Pin Function Table""

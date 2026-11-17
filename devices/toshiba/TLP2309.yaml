@@ -1,0 +1,53 @@
+# TLP2309 1 Mbit/s inverter-logic photocoupler (transistor output, open collector), 2.7-20 V, SO6 (TOSHIBA 11-4L1S: 6 lead positions,
+# pin 2 absent). Pin assignment from section 4 "Packaging and Pin
+# Assignment" on page 2 of the TLP2309 datasheet (2026-04-07): 1 Anode,
+# 3 Cathode, 4 GND, 5 VO, 6 VCC. LED terminals passive.
+# operating_temperature is the range the electrical characteristics are
+# specified over (or the operating range when only that is printed).
+schema_version: "0.2"
+kind: device
+id: toshiba/TLP2309
+manufacturer: toshiba
+category: optocoupler
+family: TLP2309
+source: toshiba/TLP2309-datasheet-en
+
+parameters:
+  forward_voltage:
+    min: 1.45 V
+    typ: 1.55 V
+    max: 1.7 V
+    at: { IF: 10 mA, TA: 25 °C }
+    src: p4 "9. Electrical Characteristics (Ta = 25 °C), Input forward voltage VF, IF = 10 mA"
+  reverse_voltage:
+    max: 5 V
+    src: p3 "7. Absolute Maximum Ratings, LED, Input reverse voltage VR"
+  forward_current:
+    max: 25 mA
+    src: p3 "7. Absolute Maximum Ratings, LED, Input forward current IF"
+  isolation_voltage:
+    min: 3750 V
+    at: { t: 60 s }
+    src: p4 "10. Isolation Characteristics, Isolation voltage BVS (AC, 60 s, Vrms)"
+  cmr:
+    min: 15 kV/µs
+    src: p4 "11. Switching Characteristics, CMH 15 / CML -15 kV/µs (min), VCC = 3.3 V / 5 V"
+  supply_voltage:
+    min: 2.7 V
+    max: 20 V
+    src: p3 "8. Recommended Operating Conditions, Supply voltage VCC"
+  operating_temperature:
+    min: -40 °C
+    max: 110 °C
+    src: p3 "8. Recommended Operating Conditions, Operating temperature Topr"
+  propagation_delay:
+    max: 1 µs
+    src: p4 "11. Switching Characteristics, tpHL / tpLH, IF = 0 <-> 10 mA, RL = 1.9 kΩ"
+
+pins:
+  src: 'p2 "4. Packaging and Pin Assignment: 1 Anode, 3 Cathode, 4 GND, 5 VO, 6 VCC"'
+  "1": { name: ANODE, type: passive }
+  "3": { name: CATHODE, type: passive }
+  "4": { name: GND, type: ground }
+  "5": { name: VO, type: output }
+  "6": { name: VCC, type: power }

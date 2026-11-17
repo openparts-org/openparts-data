@@ -32,6 +32,10 @@ parameters:
     max: 85 °C
     src: p49 "Table 47 Limiting values, Tamb ambient temperature, operating device"
   esd_hbm: { typ: 2 kV, src: 'p49 "Table 47 Limiting values, VESD HBM for all PCF8523, 2000 V"' }
+  backup_current:
+    typ: 1200 nA
+    at: { VBAT: 3 V, TA: 25 °C }
+    src: p50 "Table 48 IDD note [5], CLKOUT 32 kHz, PM[2:0]=000, VBAT or VDD = 3.0 V, Tamb 25 C"
 
 pins:
   src: p5 "Table 5 Pin description, column SO8 (PCF8523T)"

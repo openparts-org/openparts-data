@@ -22,6 +22,22 @@ parameters:
     min: 4.5 V
     max: 5.5 V
     src: p4 "6.3 Recommended Operating Conditions, VCC Analog supply voltage 4.5 / 5 / 5.5"
+  analog_supply_voltage:
+    min: 4.5 V
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, VCC Analog supply voltage"
+  digital_supply_voltage:
+    min: 2.7 V
+    max: 3.6 V
+    src: p4 "6.3 Recommended Operating Conditions, VDD Digital supply voltage"
+  analog_supply_current:
+    typ: 8.6 mA
+    max: 11 mA
+    src: p6 "Power Supply Requirements, ICC Analog supply current, fS = 48 kHz, 96 kHz"
+  digital_supply_current:
+    typ: 5.9 mA
+    max: 8 mA
+    src: p6 "Power Supply Requirements, IDD Digital supply current, fS = 48 kHz"
   operating_temperature:
     min: -40 °C
     max: 85 °C

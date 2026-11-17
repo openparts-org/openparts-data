@@ -1,0 +1,55 @@
+# TLP5701 IGBT / MOSFET gate-driver photocoupler, totem-pole output, ±0.6 A, 10-30 V, SO6L (TOSHIBA 11-4N1A, all 6 leads; the
+# (LF4) wide-forming variant 11-4N101A is not recorded). Pin assignment
+# from section 5 "Pin Assignment" on page 2 of the TLP5701 datasheet
+# (2026-04-22): 1 Anode, 2 N.C., 3 Cathode, 4 GND, 5 VO, 6 VCC. LED
+# terminals passive. operating_temperature is the range the electrical
+# characteristics are specified over.
+schema_version: "0.2"
+kind: device
+id: toshiba/TLP5701
+manufacturer: toshiba
+category: optocoupler
+family: TLP5701
+source: toshiba/TLP5701-datasheet-en
+
+parameters:
+  forward_voltage:
+    min: 1.4 V
+    typ: 1.57 V
+    max: 1.8 V
+    at: { IF: 10 mA, TA: 25 °C }
+    src: p4 "10. Electrical Characteristics, Input forward voltage VF, IF = 10 mA"
+  reverse_voltage:
+    max: 5 V
+    src: p3 "8. Absolute Maximum Ratings, LED, Input reverse voltage VR"
+  forward_current:
+    max: 25 mA
+    src: p3 "8. Absolute Maximum Ratings, LED, Input forward current IF"
+  isolation_voltage:
+    min: 5000 V
+    at: { t: 60 s }
+    src: p5 "11. Isolation Characteristics, Isolation voltage BVS (AC, 60 s, Vrms)"
+  cmr: { min: 20 kV/µs, src: 'p5 "12. Switching Characteristics, CMH / CML, VCM = 1000 Vp-p"' }
+  supply_voltage:
+    min: 10 V
+    max: 30 V
+    src: p4 "9. Recommended Operating Conditions, Supply voltage VCC"
+  operating_temperature:
+    min: -40 °C
+    max: 110 °C
+    src: p4 "10. Electrical Characteristics, table condition Ta = -40 to 110 °C"
+  propagation_delay:
+    max: 500 ns
+    src: p5 "12. Switching Characteristics, tpLH / tpHL, IF = 0 <-> 5 mA, VCC = 30 V"
+  output_current_peak:
+    max: 0.6 A
+    src: p3 "8. Absolute Maximum Ratings, Detector, IOPH / IOPL"
+
+pins:
+  src: 'p2 "5. Pin Assignment: 1 Anode, 2 N.C., 3 Cathode, 4 GND, 5 VO, 6 VCC"'
+  "1": { name: ANODE, type: passive }
+  "2": { name: NC, type: nc }
+  "3": { name: CATHODE, type: passive }
+  "4": { name: GND, type: ground }
+  "5": { name: VO, type: output }
+  "6": { name: VCC, type: power }

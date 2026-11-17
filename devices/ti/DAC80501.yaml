@@ -18,6 +18,9 @@ source: ti/SBAS794E
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface:
+    values: [spi, i2c]
+    src:    'p1 "Features, Pin-selectable serial interface: SPI or I2C compatible"'
   supply_voltage:
     min: 2.7 V
     max: 5.5 V
@@ -26,10 +29,14 @@ parameters:
     min: -40 °C
     max: 125 °C
     src: p4 "7.3 Recommended Operating Conditions, TA Operating temperature"
-  esd_hbm: { typ: 2 kV, src: 'p4 "7.2 ESD Ratings, HBM all pins ±2000 V"' }
+  esd_hbm:    { typ: 2 kV, src: 'p4 "7.2 ESD Ratings, HBM all pins ±2000 V"' }
   channel_count:
     value: "1"
     src: p3 "Table 6-1 Pin Functions, single VOUT (Analog output voltage from the DAC)"
+  resolution: { value: "16", src: 'p1 "Description, 16-bit DAC80501"' }
+  reference:
+    values: [internal, external]
+    src:    p3 "Pin Functions, VREFIO reference output (internal) or input (external)"
 
 pins:
   src:

@@ -28,10 +28,23 @@ parameters:
     min: 3750 V
     at: { t: 60 s }
     src: p6 "Isolation Characteristics, Isolation voltage BVS (AC, Vrms)"
+  cmr:
+    min: 40 kV/µs
+    at: { VCC: 30 V, TA: 25 °C }
+    src: p7 "12. Switching Characteristics, CMH / CML, VCM = 1000 Vp-p"
+  supply_voltage:
+    min: 10 V
+    max: 30 V
+    src: p5 "9. Recommended Operating Conditions, Supply voltage VCC (Note 2)"
   operating_temperature:
     min: -40 °C
     max: 125 °C
     src: p6 "10. Electrical Characteristics, table condition Ta = -40 to 125 °C"
+  propagation_delay:
+    max: 500 ns
+    at: { VCC: 30 V }
+    src: p7 "12. Switching Characteristics, tpLH / tpHL, Rg = 20 Ω, Cg = 10 nF"
+  output_current_peak: { max: 2.5 A, src: 'p4 "Absolute Maximum Ratings, Detector, IOPH / IOPL"' }
 
 pins:
   src: 'p2 "5. Pin Assignment: 1 N.C., 2 Anode, 3 Cathode, 4 N.C., 5 GND, 6 VO, 7 N.C., 8 VCC"'

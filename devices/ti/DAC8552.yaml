@@ -14,6 +14,7 @@ source: ti/SLAS430A
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: spi, src: 'p1 "Description, standard 3-wire serial interface"' }
   supply_voltage:
     min: 2.7 V
     max: 5.5 V
@@ -32,6 +33,8 @@ parameters:
     max: 105 °C
     src: 'p3 "ELECTRICAL CHARACTERISTICS, TEMPERATURE RANGE: Specified performance"'
   channel_count: { value: "2", src: 'p1 "Description: a 16-bit, dual channel, voltage output DAC"' }
+  resolution:     { value: "16", src: 'p1 "Title, 16-BIT, DUAL CHANNEL"' }
+  reference: { value: external, src: 'p1 "Description, requires an external reference voltage"' }
 
 pins:
   src:

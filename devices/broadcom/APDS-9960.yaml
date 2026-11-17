@@ -5,8 +5,8 @@
 # LDR (LED driver, constant-current) output; LEDK (LED cathode, wired
 # to LDR) passive; LEDA (LED anode, to VLEDA) power; GND ground; SCL
 # clock; VDD power.
-# light_sensor_type ambient_proximity: the module also senses RGB colour
-# and gestures; the enumeration has no combined value.
+# light_sensor_type ambient_color_proximity_gesture: ALS, RGB colour,
+# proximity and gesture sensing in one module.
 schema_version: "0.2"
 kind: device
 id: broadcom/APDS-9960
@@ -32,7 +32,7 @@ parameters:
     max: 85 °C
     src: p3 "Recommended Operating Conditions, Operating ambient temperature TA"
   light_sensor_type:
-    value: ambient_proximity
+    value: ambient_color_proximity_gesture
     src: p1 "Digital Proximity, Ambient Light, RGB and Gesture Sensor"
 
 pins:

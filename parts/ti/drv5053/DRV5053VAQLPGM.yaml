@@ -24,3 +24,12 @@ existence:
 lifecycle:
   status: active
   src: p18 "PACKAGE OPTION ADDENDUM, row DRV5053VAQLPGM, Status Active"
+
+# Parameters (AI candidates, needs review).
+parameters:
+  magnetic_sensitivity:
+    min: 45 mV/mT
+    typ: 90 mV/mT
+    max: 140 mV/mT
+    at: { VCC: 3.3 V }
+    src: 'p6 "6.7 Magnetic Characteristics, DRV5053VA: –90 mV/mT, S Sensitivity, magnitude (negative slope)"'

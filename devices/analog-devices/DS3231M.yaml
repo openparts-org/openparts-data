@@ -28,6 +28,15 @@ parameters:
     min: -45 °C
     max: 85 °C
     src: p2 "Absolute Maximum Ratings, Operating Temperature Range -45 to +85 C"
+  timekeeping_accuracy:
+    tol: ±5 ppm
+    at: { TA: -45..85 °C }
+    src: p2 "Electrical Characteristics—Frequency And Timekeeping, 1Hz Frequency Tolerance"
+  backup_current:
+    typ: 2 µA
+    max: 3 µA
+    at: { VBAT: 3.63 V }
+    src: p3 "DC Electrical Characteristics—VBAT Current Consumption, IBATT, VBAT = +3.63V, EN32KHZ = 0"
 
 pins:
   src:

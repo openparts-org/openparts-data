@@ -11,6 +11,11 @@ family: SN74HC4066
 source: ti/SCLS325K
 
 parameters:
+  on_resistance:
+    typ: 50 Ω
+    max: 85 Ω
+    at: { VCC: 4.5 V, TA: 25 °C }
+    src: p5 "Electrical Characteristics, ron, IT = -1mA, VI = 0 to VCC, VCC = 4.5V, 25°C"
   supply_voltage: { min: 1 V, max: 6 V, src: 'p4 "5.3 Recommended Operating Conditions, VCC"' }
   supply_current:
     max: 2 µA

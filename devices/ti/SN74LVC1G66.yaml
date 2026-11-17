@@ -13,6 +13,11 @@ family: SN74LVC1G66
 source: ti/SCES323R
 
 parameters:
+  on_resistance:
+    typ: 5.5 Ω
+    max: 10 Ω
+    at: { VCC: 4.5 V }
+    src: p7 "Electrical Characteristics, ron, VI = VCC or GND, IS = 32mA, VCC = 4.5V"
   supply_voltage: { min: 1.65 V, max: 5.5 V, src: 'p6 "5.3 Recommended Operating Conditions, VCC"' }
   supply_current:
     max: 1 µA

@@ -12,6 +12,11 @@ category: dac
 family: MCP492X
 source: microchip/DS21897@revB
 
+parameters:
+  data_interface: { value: spi, src: 'p1 "Features, SPI Interface with 20 MHz Clock Support"' }
+  resolution:     { value: "12", src: 'p1 "Features, 12-Bit Resolution"' }
+  reference:      { value: external, src: 'p1 "Features, External VREF Input"' }
+
 pins:
   src:
     - p15 "Table 3-1 "Pin Function Table", column "MCP4921 Pin No.""

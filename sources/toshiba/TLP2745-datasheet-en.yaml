@@ -1,0 +1,17 @@
+# Official Toshiba TLP2745 datasheet (English), the "Data sheet/English" link
+# (docget.jsp?did=29405) on Toshiba's TLP2745 product page. Toshiba prints no
+# document number; the revision is identified by the date in every page
+# footer, "2026-04-22" ("Rev.8.0"). 17 PDF pages, read with pdftotext -layout;
+# land pattern (page 10) and package dimensions (page 15, TOSHIBA
+# 11-4N1A) rendered. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/TLP2745-datasheet-en
+sha256: e53dfca0297237715211a9d0cc1a1dd5dbf5bf5d0fa3472b58f0e8ba6b4872a0
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=29405&prodName=TLP2745
+publisher: toshiba
+document_id: TLP2745_datasheet_en
+document_type: datasheet
+revision: 2026-04-22
+date: 2026-04-22

@@ -15,6 +15,7 @@ source: microchip/DS22187@revE
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: i2c, src: 'p1 "Features, I2C Interface"' }
   supply_voltage:
     min: 2.7 V
     max: 5.5 V
@@ -34,6 +35,12 @@ parameters:
   channel_count:
     value: "4"
     src: 'p1 "Features: 12-Bit Voltage Output DAC with Four Buffered Outputs"'
+  resolution:
+    value: "12"
+    src: p1 "Features, 12-Bit Voltage Output DAC with Four Buffered Outputs"
+  reference:
+    values: [internal, external]
+    src:    p1 "Features, Internal or External Voltage Reference Selection"
 
 pins:
   src:  p21 "Table 3-1 "Pin Function Table""

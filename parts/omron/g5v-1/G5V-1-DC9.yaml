@@ -25,3 +25,9 @@ parameters:
   coil_resistance:
     typ: 540 Ω
     src: p1 "Ratings, Coil, G5V-1 (Standard), 9 VDC row, Coil resistance"
+  must_operate_voltage:
+    max: 7.2 V
+    src: p1 "Ratings, Coil, G5V-1 (Standard), 9 VDC row, Must operate 80 % max. of rated"
+  must_release_voltage:
+    min: 0.9 V
+    src: p1 "Ratings, Coil, G5V-1 (Standard), 9 VDC row, Must release 10 % min. of rated"

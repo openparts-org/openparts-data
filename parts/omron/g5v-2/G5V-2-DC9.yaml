@@ -21,5 +21,11 @@ existence:
 lifecycle: { status: unknown }
 
 parameters:
-  coil_voltage:    { typ: 9 V, src: 'p2 "Ratings, Coil, Standard, Rated voltage 9 VDC"' }
+  coil_voltage: { typ: 9 V, src: 'p2 "Ratings, Coil, Standard, Rated voltage 9 VDC"' }
   coil_resistance: { typ: 162 Ω, src: 'p2 "Ratings, Coil, Standard, 9 VDC row, Coil resistance"' }
+  must_operate_voltage:
+    max: 6.75 V
+    src: p2 "Ratings, Coil, Standard, 9 VDC row, Must operate 75 % max. of rated"
+  must_release_voltage:
+    min: 0.45 V
+    src: p2 "Ratings, Coil, Standard, 9 VDC row, Must release 5 % min. of rated"

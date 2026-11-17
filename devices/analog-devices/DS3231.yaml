@@ -26,6 +26,15 @@ parameters:
     max: 200 µA
     at: { VCC: 3.63 V }
     src: p2 "Electrical Characteristics, Active Supply Current ICCA, VCC = 3.63V"
+  timekeeping_accuracy:
+    tol: ±2 ppm
+    at: { TA: 0..40 °C }
+    src: p1 "Features, Accuracy ±2ppm from 0°C to +40°C"
+  backup_current:
+    typ: 0.84 µA
+    max: 3 µA
+    at: { VBAT: 3.63 V }
+    src: p3 "Electrical Characteristics (VCC = 0V), Timekeeping Battery Current IBATT, VBAT = 3.63V"
 
 pins:
   src:  [p9 "Pin Description table", 'p18 "Pin Configuration, SO (cross-check)"']

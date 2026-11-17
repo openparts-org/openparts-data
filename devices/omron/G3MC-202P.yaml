@@ -26,6 +26,9 @@ parameters:
   contact_voltage:
     max: 264 V
     src: p2 "Ratings, Output, G3MC-202P, Load voltage range 75 to 264 VAC"
+  must_release_voltage:
+    min: 1 V
+    src: p2 "Ratings, Input, Must release voltage level 1 VDC min. (5/12/24 VDC versions)"
   contact_form:
     value: 1a
     src: p3 "Terminal Arrangement/Internal Connections, one LOAD output 1-2"

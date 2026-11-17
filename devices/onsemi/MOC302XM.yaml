@@ -28,6 +28,9 @@ parameters:
     min: 4170 V
     at: { t: 60 s }
     src: p4 "Isolation Characteristics, VISO (VACRMS, t = 1 Minute)"
+  off_state_voltage:
+    max: 400 V
+    src: p3 "Absolute Maximum Ratings, Detector, VDRM (MOC3020M-MOC3023M)"
   operating_temperature:
     min: -40 °C
     max: 85 °C

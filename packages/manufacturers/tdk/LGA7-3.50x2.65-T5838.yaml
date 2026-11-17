@@ -1,0 +1,74 @@
+# TDK InvenSense T5838 LGA_CAV (bottom-port MEMS microphone, 7 pads:
+# 4 large, 2 small, GND ring), 3.5 x 2.65 x 0.98 mm. Read from Figure 38
+# "Outline Dimensions" (page 41, rendered), Figure 36 "Recommended PCB
+# Land Pattern Layout" (page 39, rendered) and Figure 3 "Pin
+# Configuration (Top View)" (page 11). (The figure title says
+# "5-Terminal"; the drawing and Table 10 have pads 1-7.)
+#
+# Frame: the top view of Figure 3 (ring at the top, 5 and 4 the small
+# top corner pads, 6 / 2 the middle row, 7 / 1 the bottom row).
+# body_width (X) = 2.65, body_length (Y) = 3.5.
+# Figure 38 bottom view (3.5 along its X): large pads 0.522 x 0.725,
+# 0.125 from the edges, columns 0.822 apart, ring centre 1.252 from the
+# second column, small pads 0.3 x 0.3 0.765 beyond the ring centre and
+# 0.125 from the edges; rows 1.675 apart; ring ø1.625 / ø1.025 on the
+# centre line. Figure 36 (1:1) prints the same 0.522x0.725 (x4),
+# 0.30x0.30 (x2), 0.822, 1.252, 0.765, 1.675, 1.05.
+# Top-view coordinates: bottom row y = -(1.75 - 0.125 - 0.522/2) =
+# -1.364; middle row -1.364 + 0.822 = -0.542; ring y = -0.542 + 1.252 =
+# 0.71; small pads y = 0.71 + 0.765 = 1.475; large pads x = ±1.675/2 =
+# ±0.8375; small pads x = ±1.05 (Figure 36 "1.05").
+# `lga`: the bottom row (7, 1) is the perimeter row (lead_layout
+# [0, 2, 0, 0], renumbered by pad_order); the rest are extra `pads`.
+# The PCB sound hole (text: 0.5 to 1 mm recommended) is not drawn in
+# Figure 36, so it is not recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/tdk/LGA7-3.50x2.65-T5838
+family: lga
+lead_count: 7
+
+lead_layout: { value: [0, 2, 0, 0], src: 'p11 "Figure 3 top view, 7 and 1 along the bottom edge"' }
+
+source: tdk/DS-000383@rev1.2
+
+pitch: { typ: 1.675 mm, src: 'p41 "Figure 38 bottom view, 1.675 row spacing"' }
+
+pad_order:
+  value: ["7", "1", "2", "3", "4", "5", "6"]
+  src:   p11 "Figure 3 top view, bottom row 7 1 left to right; 2-6 off the perimeter"
+
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:
+    min: 2.5 mm
+    typ: 2.65 mm
+    max: 2.8 mm
+    src: p41 "Figure 38, 2.65, tolerance ±0.15 unless specified"
+  body_length:
+    min: 3.35 mm
+    typ: 3.5 mm
+    max: 3.65 mm
+    src: p41 "Figure 38, 3.50, tolerance ±0.15 unless specified"
+  body_height: { typ: 0.98 mm, src: 'p41 "Figure 38 side view, 0.98"' }
+  lead_inset:  { typ: 0.125 mm, src: 'p41 "Figure 38 bottom view, 0.125 pad to body edge"' }
+  lead_width:  { typ: 0.725 mm, src: 'p41 "Figure 38 bottom view, 0.725"' }
+  lead_length: { typ: 0.522 mm, src: 'p41 "Figure 38 bottom view, 0.522"' }
+
+pads:
+  value:
+    - { number: "7", x: -0.8375, y: -1.364, width: 0.725, length: 0.522 }
+    - { number: "1", x: 0.8375, y: -1.364, width: 0.725, length: 0.522 }
+    - { number: "6", x: -0.8375, y: -0.542, width: 0.725, length: 0.522 }
+    - { number: "2", x: 0.8375, y: -0.542, width: 0.725, length: 0.522 }
+    - number: "3"
+      x: 0
+      y: 0.71
+      width: 1.625
+      length: 1.625
+      shape: annular
+      inner_diameter: 1.025
+    - { number: "5", x: -1.05, y: 1.475, width: 0.3, length: 0.3 }
+    - { number: "4", x: 1.05, y: 1.475, width: 0.3, length: 0.3 }
+  src: p39 "Figure 36 land pattern (0.522x0.725, 0.30x0.30, ø1.625/ø1.025, 0.822, 1.252, 0.765, 1.675, 1.05)"

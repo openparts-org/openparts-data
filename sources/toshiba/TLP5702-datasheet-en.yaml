@@ -1,0 +1,17 @@
+# Official Toshiba TLP5702 datasheet (English), the "Data sheet/English" link
+# (docget.jsp?did=15207) on Toshiba's TLP5702 product page. Toshiba prints no
+# document number; the revision is identified by the date in every page
+# footer, "2026-04-28" ("Rev.8.0"). 19 PDF pages, read with pdftotext -layout;
+# land pattern (page 12) and package dimensions (page 17, TOSHIBA
+# 11-4N1A) rendered. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/TLP5702-datasheet-en
+sha256: 28046e9d36ae8eca8c81e924f11c56f1f32bb87e2a14ea3227261819b011281e
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=15207&prodName=TLP5702
+publisher: toshiba
+document_id: TLP5702_datasheet_en
+document_type: datasheet
+revision: 2026-04-28
+date: 2026-04-28

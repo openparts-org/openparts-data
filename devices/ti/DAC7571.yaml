@@ -13,6 +13,7 @@ source: ti/SLAS374D
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: i2c, src: 'p1 "Features, I2C Interface up to 3.4 Mbps"' }
   supply_voltage:
     min: 2.7 V
     max: 5.5 V
@@ -33,6 +34,7 @@ parameters:
   channel_count:
     value: "1"
     src: 'p1 "Description: a low-power, single channel, 12-bit ... DAC"'
+  resolution:     { value: "12", src: 'p1 "Title, 12-BIT DIGITAL-TO-ANALOG CONVERTER"' }
 
 pins:
   src:

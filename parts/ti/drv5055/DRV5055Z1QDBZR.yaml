@@ -36,3 +36,9 @@ parameters:
       max: 22 mT
       at: { VCC: 3.3 V, TA: 25 °C }
       src: p6 "5.5 Electrical Characteristics, BL Linear magnetic sensing range, DRV5055A1/Z1, VCC = 3.3 V"
+  magnetic_sensitivity:
+    min: 95 mV/mT
+    typ: 100 mV/mT
+    max: 105 mV/mT
+    at: { VCC: 5 V, TA: 25 °C }
+    src: p6 "5.6 Magnetic Characteristics, S Sensitivity, DRV5055Z1, VCC = 5 V"

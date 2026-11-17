@@ -11,6 +11,17 @@ category: analog_switch
 family: SN74LVC1G3157
 source: ti/SCES424O
 
+parameters:
+  on_resistance:
+    typ: 6 Ω
+    max: 7 Ω
+    at: { VCC: 4.5 V }
+    src: p7 "5.5 EC, rON, VCC 4.5, VI = 0 V, IO = 30 mA; typ 25°C, max -40 to +125°C"
+  on_resistance_flatness:
+    typ: 4 Ω
+    at: { VCC: 4.5 V, TA: 25 °C }
+    src: p8 "5.5 EC, ron(flat), VCC 4.5, 0 ≤ VBn ≤ VCC, IA = -30 mA, 25°C"
+
 pins:
   src: p3 "Table 4-1. Pin Functions, column SOT-23, SC70, SON, X2SON, or SOT"
   "1": { name: B2, type: analog }

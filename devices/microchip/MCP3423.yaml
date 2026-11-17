@@ -14,6 +14,7 @@ source: microchip/DS22088@revC
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: i2c, src: 'p1 "Features, I2C Interface"' }
   supply_voltage:
     min: 2.7 V
     max: 5.5 V
@@ -33,6 +34,11 @@ parameters:
   channel_count:
     value: "2"
     src: 'p2 "Description: MCP3422 and MCP3423 have two, MCP3424 four differential input channels"'
+  resolution:     { value: "18", src: 'p1 "Features, 18-bit ΔΣ ADC; 3.75 SPS (18 bits)"' }
+  sample_rate:
+    max: 240 SPS
+    src: p1 "Features, Programmable Data Rate Options, 240 SPS (12 bits)"
+  reference: { value: internal, src: 'p1 "Features, On-Board Voltage Reference (VREF)"' }
 
 pins:
   src:

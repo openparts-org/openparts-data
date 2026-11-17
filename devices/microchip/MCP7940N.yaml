@@ -14,6 +14,14 @@ category: rtc
 family: MCP7940N
 source: microchip/DS20005010@revH
 
+# Parameters (AI candidates, needs review).
+parameters:
+  backup_current:
+    typ: 925 nA
+    max: 1200 nA
+    at: { VBAT: 3 V }
+    src: p3 "DC Characteristics, D14 IBATT Timekeeping backup current, VBAT = 3.0V, VCC = VSS"
+
 pins:
   src: p8 "Table 3-1 "Pin Function Table", column "8-pin SOIC""
   "1": { name: X1, type: clock }

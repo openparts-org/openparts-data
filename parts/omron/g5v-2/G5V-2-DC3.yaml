@@ -18,5 +18,11 @@ existence: { status: verified, src: 'p1 "Ordering Information, Note: Example: G5
 lifecycle: { status: unknown }
 
 parameters:
-  coil_voltage:    { typ: 3 V, src: 'p2 "Ratings, Coil, Standard, Rated voltage 3 VDC"' }
+  coil_voltage: { typ: 3 V, src: 'p2 "Ratings, Coil, Standard, Rated voltage 3 VDC"' }
   coil_resistance: { typ: 18 Ω, src: 'p2 "Ratings, Coil, Standard, 3 VDC row, Coil resistance"' }
+  must_operate_voltage:
+    max: 2.25 V
+    src: p2 "Ratings, Coil, Standard, 3 VDC row, Must operate 75 % max. of rated"
+  must_release_voltage:
+    min: 0.15 V
+    src: p2 "Ratings, Coil, Standard, 3 VDC row, Must release 5 % min. of rated"

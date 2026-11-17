@@ -30,10 +30,23 @@ parameters:
     min: 5300 V
     at: { t: 60 s }
     src: p7 "Safety and Insulation Ratings, VISO (VRMS, UL1577, t = 1 min)"
+  cmr:
+    min: 1 kV/µs
+    at: { VCC: 5 V }
+    src: p6 "Common Mode Transient Immunity, |CMH| / |CML| at |VCM| = 10 V, note (1) 6N137"
+  supply_voltage:
+    min: 4.5 V
+    max: 5.5 V
+    src: p3 "Recommended Operating Conditions, Supply voltage VCC"
   operating_temperature:
     min: -40 °C
     max: 100 °C
     src: p3 "Recommended Operating Conditions, Operating temperature Tamb"
+  propagation_delay:
+    typ: 50 ns
+    max: 75 ns
+    at: { VCC: 5 V, CL: 15 pF, RL: 350 Ω }
+    src: p5 "Switching Characteristics, tPHL (slower typ), 75 ns 6N137 only, note (1)"
 
 pins:
   src: p1 "Single channel pin diagram (6N137, VO2601, VO2611)"

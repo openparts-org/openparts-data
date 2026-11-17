@@ -31,6 +31,15 @@ parameters:
     max: 85 °C
     src: p96 "6.1 Absolute Maximum Ratings, TOPR Operating Temperature"
   esd_hbm: { typ: 2 kV, src: 'p96 "6.1 Absolute Maximum Ratings, VESD HBM ±2000 V"' }
+  timekeeping_accuracy:
+    tol: ±1 ppm
+    at: { TA: 25 °C }
+    src: p6 "1. Overview, Factory calibrated time accuracy ±1 ppm @ 25°C"
+  backup_current:
+    typ: 95 nA
+    max: 150 nA
+    at: { VBAT: 3 V, TA: 25 °C }
+    src: p97 "6.2 Operating Parameters, IBACKUP:DSM, VBACKUP = 3.0 V, TA = 25°C"
 
 pins:
   src: [p9 "2.2 PIN DESCRIPTION table", 'p9 "2.1 PINOUT figure, top view (cross-check)"']

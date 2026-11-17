@@ -14,6 +14,7 @@ source: ti/SBAS457F
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: spi, src: 'p1 "Title, SPI-Compatible"' }
   supply_voltage:
     min: 2 V
     max: 5.5 V
@@ -27,10 +28,13 @@ parameters:
     min: -40 °C
     max: 125 °C
     src: p6 "7.3 Recommended Operating Conditions, TA Operating ambient temperature"
-  esd_hbm: { typ: 4 kV, src: 'p6 "7.2 ESD Ratings, HBM ±4000 V"' }
+  esd_hbm:        { typ: 4 kV, src: 'p6 "7.2 ESD Ratings, HBM ±4000 V"' }
   channel_count:
     value: "4"
     src: p5 "5 Device Comparison Table, ADS1118 row, Input channels 2 (4)"
+  resolution:     { value: "16", src: 'p1 "Title, SPI-Compatible, 16-Bit ADC"' }
+  sample_rate: { max: 860 SPS, src: 'p1 "Features, Programmable Data Rate: 8 SPS to 860 SPS"' }
+  reference: { value: internal, src: 'p1 "Features, Internal Low-Drift Voltage Reference"' }
 
 pins:
   src:  [p5 "Pin Functions table", p5 "DGS Package 10-Pin VSSOP Top View figure (cross-check)"]

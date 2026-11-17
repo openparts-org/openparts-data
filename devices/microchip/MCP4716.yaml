@@ -15,6 +15,7 @@ source: microchip/DS22272@revC
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: i2c, src: 'p1 "Title, with EEPROM and I2C Interface"' }
   supply_voltage:
     min: 2.7 V
     max: 5.5 V
@@ -33,6 +34,10 @@ parameters:
   channel_count:
     value: "1"
     src: 'p1 "Description: single channel 8-bit, 10-bit, and 12-bit ... DAC"'
+  resolution:     { value: "10", src: 'p1 "Features, 10-bit: MCP4716"' }
+  reference:
+    value: external
+    src: 'p1 "Features, DAC Voltage Reference Options: VREF Pin or VDD"'
 
 pins:
   src:

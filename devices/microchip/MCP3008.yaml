@@ -11,6 +11,7 @@ source: microchip/DS20001295@revE
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: spi, src: 'p1 "Features, SPI serial interface (modes 0,0 and 1,1)"' }
   supply_voltage:
     min: 2.7 V
     max: 5.5 V
@@ -26,6 +27,9 @@ parameters:
   channel_count:
     value: "8"
     src: 'p1 "Description: MCP3008 ... eight single-ended inputs (or four pseudo-differential pairs)"'
+  resolution:     { value: "10", src: 'p1 "Features, 10-bit resolution"' }
+  sample_rate: { max: 200 kSPS, at: { VDD: 5 V }, src: 'p1 "Features, 200 ksps max. at VDD = 5V"' }
+  reference:      { value: external, src: 'p15 "Pin Function Table, VREF Reference Voltage Input"' }
 
 pins:
   src:  p15 "Table 3-1 "Pin Function Table", MCP3008 "PDIP, SOIC" column"

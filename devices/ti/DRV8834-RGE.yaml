@@ -21,6 +21,9 @@ source: ti/SLVSB19D
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface:
+    values: [step_dir, phase_enable]
+    src:    'p1 "1 Features, Two Control Modes: STEP/DIRECTION indexer, PHASE/ENABLE"'
   rds_on:
     typ: 305 mΩ
     at: { VM: 5 V, TA: 25 °C }

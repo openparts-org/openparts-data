@@ -29,3 +29,10 @@ existence:
   src: p2 "Table 2 Ordering options, type PCF2129T, orderable part number PCF2129T/2,518"
 
 lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  timekeeping_accuracy:
+    tol: ±8 ppm
+    at: { TA: -30..80 °C }
+    src: p59 "Table 79 Frequency characteristics, Δf/f, PCF2129T, Tamb -30 to +80 °C, max"

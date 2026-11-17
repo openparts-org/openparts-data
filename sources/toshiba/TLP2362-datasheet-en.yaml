@@ -1,0 +1,18 @@
+# Official Toshiba TLP2362 datasheet (English), the "Data sheet/English" link
+# (docget.jsp?did=7706) on Toshiba's TLP2362 product page. Toshiba prints no
+# document number; the revision is identified by the date in every page
+# footer, "2026-04-02" ("Rev.10.0"). 17 PDF pages, read with pdftotext -layout;
+# pin assignment (page 2), land pattern (page 11) and package
+# dimensions (page 16, TOSHIBA 11-4L1S) rendered. Page numbers are PDF
+# page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/TLP2362-datasheet-en
+sha256: ba76c8241b8f6a07ae80a2f2bbf478e2baaa321d3e6e9246e3a000f1ba4f7f47
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=7706&prodName=TLP2362
+publisher: toshiba
+document_id: TLP2362_datasheet_en
+document_type: datasheet
+revision: 2026-04-02
+date: 2026-04-02

@@ -3,8 +3,8 @@
 # with the "DBV Package 6-Pin SOT-23 Top View" figure (same page). SW (switching node, inductor)
 # typed passive; FB (current feedback) and COMP (error-amplifier
 # compensation) analog; GND ("O" in the table) ground; CTRL
-# (enable / PWM / one-wire digital dimming) input. data_interface left
-# out: CTRL accepts PWM or one-wire digital dimming.
+# (enable / PWM / one-wire digital dimming) input. data_interface lists both
+# CTRL modes: PWM and one-wire digital dimming.
 schema_version: "0.2"
 kind: device
 id: ti/TPS61165-DBV
@@ -15,6 +15,9 @@ source: ti/SLVS790E
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface:
+    values: [single_wire, pwm]
+    src:    p1 "1 Features, Flexible one-wire digital and PWM brightness control"
   supply_voltage:
     min: 3 V
     max: 18 V

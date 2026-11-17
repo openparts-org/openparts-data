@@ -1,0 +1,18 @@
+# Official Toshiba TLP2366 datasheet (English), the "Data sheet/English" link
+# (docget.jsp?did=8527) on Toshiba's TLP2366 product page. Toshiba prints no
+# document number; the revision is identified by the date in every page
+# footer, "2026-04-07" ("Rev.8.0.A"). 18 PDF pages, read with pdftotext -layout;
+# pin assignment (page 2), land pattern (page 12) and package
+# dimensions (page 17, TOSHIBA 11-4L1S) rendered. Page numbers are PDF
+# page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/TLP2366-datasheet-en
+sha256: 0747a477ac5281ec4f60dd17481033f3208df9382629506033b741b185890a45
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=8527&prodName=TLP2366
+publisher: toshiba
+document_id: TLP2366_datasheet_en
+document_type: datasheet
+revision: 2026-04-07
+date: 2026-04-07

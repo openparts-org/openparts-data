@@ -17,3 +17,12 @@ source: allegro/A1324-DS@rev9
 
 existence: { status: verified, src: 'p2 "Selection Guide, row A1326LLHLT-T"' }
 lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  magnetic_sensitivity:
+    min: 2.375 mV/G
+    typ: 2.5 mV/G
+    max: 2.625 mV/G
+    at: { VCC: 5 V, TA: 25 °C }
+    src: p4 "Operating Characteristics, Sensitivity Sens, A1326, TA = 25°C"

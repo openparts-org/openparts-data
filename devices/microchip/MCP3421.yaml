@@ -12,6 +12,7 @@ source: microchip/DS22003@revE
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: i2c, src: 'p1 "Features, Supports I2C Serial Interface"' }
   supply_voltage:
     min: 2.7 V
     max: 5.5 V
@@ -31,6 +32,11 @@ parameters:
   channel_count:
     value: "1"
     src: 'p1 "Description: single channel ... A/D converter with differential inputs"'
+  resolution:     { value: "18", src: 'p1 "Features, 18-bit ΔΣ ADC; 3.75 SPS (18 bits)"' }
+  sample_rate:
+    max: 240 SPS
+    src: p1 "Features, Programmable Data Rate Options, 240 SPS (12 bits)"
+  reference:      { value: internal, src: 'p1 "Features, On-Board Voltage Reference"' }
 
 pins:
   src: p9 "Table 3-1 "Pin Function Table""

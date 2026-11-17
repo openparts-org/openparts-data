@@ -1,0 +1,15 @@
+# ICS-43434: printed in the "ORDERING GUIDE" table on page 19 of
+# DS-000069 rev 1.2 (-40 to +85 °C, 6-Terminal LGA_CAV, 10,000, 13"
+# tape and reel) -> existence verified. Lifecycle not stated -> unknown.
+schema_version: "0.2"
+kind: part
+id: tdk/ICS-43434
+manufacturer: tdk
+mpn: ICS-43434
+device: tdk/ICS-43434
+package: manufacturers/tdk/LGA6-3.50x2.65-ICS-43434
+sources: [tdk/DS-000069@rev1.2]
+source: tdk/DS-000069@rev1.2
+
+existence: { status: verified, src: 'p19 "ORDERING GUIDE, PART ICS-43434"' }
+lifecycle: { status: unknown }

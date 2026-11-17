@@ -1,0 +1,66 @@
+# Toshiba SO6 outline 11-4L1S (small-outline photocoupler package with
+# 2 x 3 lead positions at 1.27 mm and pin 2's position empty: 5 leads
+# 1, 3 | 4, 5, 6), read from the rendered "Package Dimensions" drawing
+# (page 16) and "14. Land Pattern Dimensions (for reference only)"
+# (page 11) of the TLP2361 datasheet (2026-04-07). Millimetres; values
+# with a printed tolerance are recorded as nominal plus min/max.
+#
+# soic mapping: pins 1 and 3 on one side, 4-5-6 on the other (pin 1
+# opposite 6, 3 opposite 4: counter-clockwise numbering), so lead_count
+# = 6 positions and pad_order leaves position 2 empty. body_width =
+# 4.55 (+0.25/-0.15) across the rows, body_length = 3.7 (+0.25/-0.15)
+# along the rows, overall_width = lead-tip span 7.0 +/- 0.4, lead width
+# 0.4 (no tolerance printed), pitch 1.27 (2.54 between pins 1 and 3).
+# overall_height 2.1 +/- 0.1 is the seating-plane-to-top height.
+# Not recorded: (0.1) standoff and 0.15 lead thickness (no tolerance,
+# drawn as reference), lead foot printed only as "0.5 Min" (recorded as
+# lead_length min).
+# Land pattern: 0.8 (along the row) x 1.2 (across) lands, 1.27 pitch,
+# rows 6.3 apart centre to centre -> x = ±3.15, y = 1.27 / 0 / -1.27.
+schema_version: "0.2"
+kind: package
+id: manufacturers/toshiba/11-4L1S
+family: soic
+lead_count: 6
+source: toshiba/TLP2361-datasheet-en
+
+pitch: { typ: 1.27 mm, src: 'p16 "Package Dimensions 11-4L1S, lead pitch "1.27" (1-3 "2.54")"' }
+
+pad_order:
+  value: ["1", "", "3", "4", "5", "6"]
+  src:   p16 "Package Dimensions 11-4L1S, top view, leads 1 3 / 6 5 4 (pin 2 position empty)"
+
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 4.4 mm
+    typ: 4.55 mm
+    max: 4.8 mm
+    src: p16 "Package Dimensions 11-4L1S, top view, "4.55 +0.25/-0.15" across the lead rows"
+  body_length:
+    min: 3.55 mm
+    typ: 3.7 mm
+    max: 3.95 mm
+    src: p16 "Package Dimensions 11-4L1S, side view, "3.7 +0.25/-0.15" along the lead rows"
+  lead_length: { min: 0.5 mm, src: 'p16 "Package Dimensions 11-4L1S, end view, foot "0.5 Min""' }
+  lead_width: { typ: 0.4 mm, src: 'p16 "Package Dimensions 11-4L1S, side view, lead width "0.4""' }
+  overall_width:
+    min: 6.6 mm
+    typ: 7 mm
+    max: 7.4 mm
+    src: p16 "Package Dimensions 11-4L1S, end view, lead-tip span "7.0 +/- 0.4""
+  overall_height:
+    min: 2 mm
+    typ: 2.1 mm
+    max: 2.2 mm
+    src: p16 "Package Dimensions 11-4L1S, side view, height "2.1 +/- 0.1""
+
+pads:
+  value:
+    - { number: "1", x: -3.15, y: 1.27, width: 1.2, length: 0.8 }
+    - { number: "3", x: -3.15, y: -1.27, width: 1.2, length: 0.8 }
+    - { number: "4", x: 3.15, y: -1.27, width: 1.2, length: 0.8 }
+    - { number: "5", x: 3.15, y: 0, width: 1.2, length: 0.8 }
+    - { number: "6", x: 3.15, y: 1.27, width: 1.2, length: 0.8 }
+  src: p11 "14. Land Pattern Dimensions, 0.8 x 1.2 lands, pitch 1.27 (2.54), rows 6.3 apart (centres ±3.15)"

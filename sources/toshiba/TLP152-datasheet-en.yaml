@@ -1,0 +1,18 @@
+# Official Toshiba TLP152 datasheet (English), the "Data sheet/English" link
+# (docget.jsp?did=13615) on Toshiba's TLP152 product page. Toshiba prints no
+# document number; the revision is identified by the date in every page
+# footer, "2026-04-07" ("Rev.7.0.A"). 14 PDF pages, read with pdftotext -layout;
+# pin assignment (page 2), land pattern (page 8) and package
+# dimensions (page 13, TOSHIBA 11-4L1S) rendered. Page numbers are PDF
+# page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/TLP152-datasheet-en
+sha256: cfe402b8df2071a46dd2e1364712907f072c032dc3138ed9b869ac2d9123da75
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=13615&prodName=TLP152
+publisher: toshiba
+document_id: TLP152_datasheet_en
+document_type: datasheet
+revision: 2026-04-07
+date: 2026-04-07

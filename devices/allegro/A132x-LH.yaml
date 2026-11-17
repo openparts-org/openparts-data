@@ -35,6 +35,9 @@ parameters:
   magnetic_sensor_type:
     value: linear
     src: p1 "Low-Noise Linear Hall-Effect Sensor ICs with Analog Output"
+  bandwidth:
+    typ: 17 kHz
+    src: p4 "Operating Characteristics, Internal Bandwidth BWi, small signal -3 dB"
 
 pins:
   src: ['p3 "Terminal List Table, column LH"', 'p3 "Pinout Diagrams, LH Package"']

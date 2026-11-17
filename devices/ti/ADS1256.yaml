@@ -20,6 +20,23 @@ source: ti/SBAS288K
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: spi, src: 'p1 "Features, 5V Tolerant SPI-Compatible Serial Interface"' }
+  analog_supply_voltage:
+    min: 4.75 V
+    max: 5.25 V
+    src: p4 "Electrical Characteristics, Power-Supply, AVDD"
+  digital_supply_voltage:
+    min: 1.8 V
+    max: 3.6 V
+    src: p4 "Electrical Characteristics, Power-Supply, DVDD"
+  analog_supply_current:
+    typ: 7 mA
+    max: 10 mA
+    src: p4 "AVDD current, Normal mode, PGA = 1, Buffer off"
+  digital_supply_current:
+    typ: 0.9 mA
+    max: 2 mA
+    src: p4 "DVDD current, Normal mode, CLKOUT off, DVDD = 3.3V"
   operating_temperature:
     min: -40 °C
     max: 85 °C
@@ -27,6 +44,9 @@ parameters:
   channel_count:
     value: "8"
     src: p5 "Terminal Functions, ADS1256 column, AIN0..AIN7 Analog input 0..7"
+  resolution:  { value: "24", src: 'p1 "Features, 24 Bits, No Missing Codes"' }
+  sample_rate: { max: 30 kSPS, src: 'p1 "Features, Data Output Rates to 30kSPS"' }
+  reference: { value: external, src: 'p5 "Terminal Functions, VREFP Positive reference input"' }
 
 pins:
   src:

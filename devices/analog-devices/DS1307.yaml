@@ -25,6 +25,11 @@ parameters:
   supply_current:
     max: 1.5 mA
     src: p2 "DC ELECTRICAL CHARACTERISTICS, Active Supply Current ICCA (fSCL = 100kHz)"
+  backup_current:
+    typ: 300 nA
+    max: 500 nA
+    at: { VBAT: 3 V }
+    src: p2 "DC Electrical Characteristics (VCC = 0V), IBAT1, OSC ON, SQW/OUT OFF"
 
 pins:
   src:

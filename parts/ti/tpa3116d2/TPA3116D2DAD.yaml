@@ -1,0 +1,19 @@
+# TPA3116D2DAD: SLOS708G package option addendum (page 33) row "TPA3116D2DAD Active
+# Production HTSSOP (DAD) | 32 46 | TUBE" -- MPN printed verbatim (existence
+# verified); lifecycle "Active" is TI's Status column. Package DAD =
+# outline DAD0032A (page 39).
+schema_version: "0.2"
+kind: part
+id: ti/TPA3116D2DAD
+manufacturer: ti
+mpn: TPA3116D2DAD
+device: ti/TPA3116D2
+package: { value: manufacturers/ti/DAD0032A, src: p39 "DAD0032A package outline" }
+sources: [ti/SLOS708G]
+source: ti/SLOS708G
+
+existence:
+  status: verified
+  src: p33 "Package option addendum, row TPA3116D2DAD, HTSSOP (DAD) | 32"
+
+lifecycle: { status: active, src: 'p33 "Package option addendum, row TPA3116D2DAD, Status Active"' }

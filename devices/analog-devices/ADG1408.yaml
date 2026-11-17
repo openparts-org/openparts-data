@@ -14,6 +14,16 @@ family: ADG1408
 source: analog-devices/ADG1408_1409-revD
 
 parameters:
+  on_resistance:
+    typ: 4 Ω
+    max: 4.7 Ω
+    at: { VS: 30 V, TA: 25 °C }
+    src: p3 "Table 2, 15 V dual supply, RON, +25 °C, VS = ±10 V, IS = -10 mA"
+  on_resistance_flatness:
+    typ: 0.5 Ω
+    max: 0.72 Ω
+    at: { VS: 30 V, TA: 25 °C }
+    src: p3 "Table 2, 15 V dual supply, RFLAT(ON), +25 °C"
   supply_voltage:
     min: 5 V
     max: 16.5 V

@@ -16,6 +16,7 @@ source: ti/SNAS415F
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: i2c, src: 'p1 "Features, I2C-Compatible 2-Wire Interface"' }
   supply_voltage: { min: 2.7 V, max: 5.5 V, src: 'p5 "Operating Ratings, Supply Voltage, VA"' }
   supply_current:
     - typ: 0.08 mA
@@ -33,7 +34,9 @@ parameters:
   esd_hbm:
     typ: 2.5 kV
     src: p4 "Abs. Max., ESD Susceptibility per JESD22, VA, GND, VIN, ALERT, ADDR Pins, HBM"
-  channel_count: { value: "1", src: 'p3 "PIN DESCRIPTIONS, single VIN analog input"' }
+  channel_count:  { value: "1", src: 'p3 "PIN DESCRIPTIONS, single VIN analog input"' }
+  resolution: { value: "12", src: 'p1 "Features, Resolution: 12 Bits (No Missing Codes)"' }
+  sample_rate: { max: 188.9 kSPS, src: 'p1 "Features, Throughput Rate: 188.9 ksps (Max)"' }
 
 pins:
   src:

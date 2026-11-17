@@ -19,16 +19,37 @@ source: ti/SBAS501D
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface:         { value: spi, src: 'p1 "Features, SPI-compatible interface (mode 1)"' }
   supply_voltage:
     min: 2.3 V
     max: 5.5 V
     src: p6 "6.3 Recommended Operating Conditions, Unipolar analog (AVDD to AVSS) and Digital (DVDD) power supply"
+  analog_supply_voltage:
+    min: 2.3 V
+    max: 5.5 V
+    src: p6 "6.3 Recommended Operating Conditions, Unipolar analog power supply AVDD to AVSS"
+  digital_supply_voltage:
+    min: 2.3 V
+    max: 5.5 V
+    src: p6 "6.3 Recommended Operating Conditions, Digital power supply DVDD to DGND"
+  analog_supply_current:
+    typ: 340 µA
+    max: 490 µA
+    src: p8 "IAVDD, AVDD = 3.3 V, normal mode, gain = 1 to 16"
+  digital_supply_current: { typ: 75 µA, max: 110 µA, src: 'p8 "IDVDD, DVDD = 3.3 V, normal mode"' }
   operating_temperature:
     min: -40 °C
     max: 125 °C
     src: p6 "6.3 Recommended Operating Conditions, TA Operating ambient temperature"
-  esd_hbm: { typ: 2 kV, src: 'p5 "6.2 ESD Ratings, HBM ±2000 V"' }
+  esd_hbm:                { typ: 2 kV, src: 'p5 "6.2 ESD Ratings, HBM ±2000 V"' }
   channel_count: { value: "4", src: 'p4 "Table 5-1 Pin Functions, AIN0..AIN3 Analog input 0..3"' }
+  resolution:             { value: "24", src: 'p1 "Title, 2kSPS, Low-Power, 24-Bit ADC"' }
+  sample_rate: { max: 2 kSPS, src: 'p1 "Features, Programmable data rates: Up to 2kSPS"' }
+  reference:
+    values: [internal, external]
+    src:
+      - p1 "Features, Internal 2.048V reference"
+      - p4 "Pin Functions, REFP0 Positive reference input 0"
 
 pins:
   src:

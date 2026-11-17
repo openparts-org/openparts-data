@@ -18,3 +18,9 @@ existence:
   src: p7 "Ordering Information, MOC3010M DIP 6-Pin row and note on MOC302xM families"
 
 lifecycle: { status: unknown }
+
+# Parameters (AI candidates, needs review).
+parameters:
+  trigger_current:
+    max: 5 mA
+    src: p4 "Transfer Characteristics, LED Trigger Current IFT, MOC3023M row"

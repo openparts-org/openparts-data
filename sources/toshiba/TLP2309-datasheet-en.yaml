@@ -1,0 +1,18 @@
+# Official Toshiba TLP2309 datasheet (English), the "Data sheet/English" link
+# (docget.jsp?did=8380) on Toshiba's TLP2309 product page. Toshiba prints no
+# document number; the revision is identified by the date in every page
+# footer, "2026-04-07" ("Rev.11.0.A"). 17 PDF pages, read with pdftotext -layout;
+# pin assignment (page 2), land pattern (page 11) and package
+# dimensions (page 16, TOSHIBA 11-4L1S) rendered. Page numbers are PDF
+# page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/TLP2309-datasheet-en
+sha256: 36985a35ee4b32560fdd316cba42487a14806ae4cf83e17e673d6ea5b2a89bed
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=8380&prodName=TLP2309
+publisher: toshiba
+document_id: TLP2309_datasheet_en
+document_type: datasheet
+revision: 2026-04-07
+date: 2026-04-07

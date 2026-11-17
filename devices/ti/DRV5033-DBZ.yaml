@@ -30,6 +30,7 @@ parameters:
   magnetic_sensor_type:
     value: omnipolar_switch
     src: p1 "1 Features, Digital Omnipolar-Switch Hall Sensor"
+  bandwidth: { min: 20 kHz, typ: 30 kHz, src: 'p6 "6.7 Magnetic Characteristics, ƒBW Bandwidth"' }
 
 pins:
   src: ['p4 "Pin Functions table, column DBZ"', p4 "DBZ Package 3-Pin SOT-23 Top View"]

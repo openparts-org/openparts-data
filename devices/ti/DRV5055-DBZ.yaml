@@ -29,6 +29,7 @@ parameters:
     src: p4 "5.3 Recommended Operating Conditions, TA Operating ambient temperature"
   esd_hbm:              { typ: 2.5 kV, src: 'p4 "5.2 ESD Ratings, HBM ±2500 V"' }
   magnetic_sensor_type: { value: linear, src: p1 "DRV5055 Ratiometric Linear Hall-Effect Sensor" }
+  bandwidth: { typ: 20 kHz, src: 'p5 "5.5 Electrical Characteristics, fBW Sensing bandwidth"' }
 
 pins:
   src:

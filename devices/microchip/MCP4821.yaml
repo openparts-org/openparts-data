@@ -18,6 +18,7 @@ source: microchip/DS22244@revB
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface: { value: spi, src: 'p1 "Features, SPI Interface with 20 MHz Clock Support"' }
   supply_voltage:
     min: 2.7 V
     max: 5.5 V
@@ -34,6 +35,8 @@ parameters:
     typ: 4 kV
     src: 'p3 "Absolute Maximum Ratings: ESD protection on all pins 4 kV (HBM)"'
   channel_count: { value: "1", src: 'p1 "Related Products table, row MCP4821, No. of Channel 1"' }
+  resolution: { value: "12", src: 'p1 "Features, MCP4821: 12-Bit Voltage Output DAC"' }
+  reference: { value: internal, src: 'p1 "Features, 2.048V Internal Voltage Reference"' }
 
 pins:
   src: p15 "Table 3-1 "Pin Function Table for MCP4801/4811/4821", column "MSOP, PDIP, SOIC, DFN""

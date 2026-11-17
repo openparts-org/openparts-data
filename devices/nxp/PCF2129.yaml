@@ -33,6 +33,10 @@ parameters:
     max: 85 °C
     src: p54 "Table 77 Limiting values, Tamb ambient temperature, operating device"
   esd_hbm: { typ: 4 kV, src: 'p53 "Table 77 Limiting values, VESD HBM ±4 000 V"' }
+  backup_current:
+    typ: 2150 nA
+    at: { VBAT: 3.3 V }
+    src: p55 "Table 78 IDD note [3], PWRMNG=000, TSOFF=0, COF=111, VDD or VBAT = 3.3 V"
 
 pins:
   src:  p5 "Table 3 Pin description of PCF2129, column PCF2129T"

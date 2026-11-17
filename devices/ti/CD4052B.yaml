@@ -15,6 +15,19 @@ family: CD405xB
 source: ti/SCHS047O
 
 parameters:
+  on_resistance:
+    - typ: 125 Ω
+      max: 240 Ω
+      at: { VDD: 15 V, TA: 25 °C }
+      src: p6 "5.5 Electrical Characteristics, rON, VDD = 15V, 25°C"
+    - typ: 470 Ω
+      max: 1050 Ω
+      at: { VDD: 5 V, TA: 25 °C }
+      src: p6 "5.5 Electrical Characteristics, rON, VDD = 5V, 25°C"
+    - typ: 180 Ω
+      max: 400 Ω
+      at: { VDD: 10 V, TA: 25 °C }
+      src: p6 "5.5 Electrical Characteristics, rON, VDD = 10V, 25°C"
   supply_current:
     typ: 17 µA
     max: 60 µA

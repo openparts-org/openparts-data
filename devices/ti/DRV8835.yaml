@@ -3,7 +3,7 @@
 # 12-Pin WSON With Exposed Thermal Pad Top View" figure (same page). The
 # table row "GND, Thermal pad | 6" -> pin 6 and the thermal pad (EP)
 # both GND, ground. VM (motor supply) and VCC (device supply) power.
-# data_interface left out: MODE selects IN/IN or PHASE/ENABLE.
+# data_interface: MODE selects IN/IN (pwm) or PHASE/ENABLE.
 # operating_temperature left out: recommended conditions and
 # electrical characteristics are stated at TA = 25 °C only.
 schema_version: "0.2"
@@ -16,6 +16,9 @@ source: ti/SLVSB18H
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface:
+    values: [pwm, phase_enable]
+    src:    p1 "1 Features, Flexible PWM or PHASE/ENABLE Interface"
   rds_on: { typ: 305 mΩ, src: 'p1 "1 Features, Low-MOSFET ON-Resistance: HS + LS 305 mΩ"' }
   output_current:
     max: 1.5 A

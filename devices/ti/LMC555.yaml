@@ -21,6 +21,10 @@ parameters:
     at: { VS: 5 V, TA: 25 °C }
     src: p5 "5.5 Electrical Characteristics, IS supply current, VS = 5 V row"
   esd_hbm: { typ: 1500 V, src: 'p4 "5.2 ESD Ratings, HBM"' }
+  max_frequency:
+    typ: 3 MHz
+    at: { VS: 5 V }
+    src: p5 "Electrical Characteristics, fMAX Maximum frequency, test circuit, VS = 5 V"
 
 pins:
   src: p3 "Table 4-1 "Pin Functions", D (SOIC), DGK (VSSOP), P (PDIP) column"

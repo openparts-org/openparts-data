@@ -12,6 +12,15 @@ family: CDx4HC405x
 source: ti/SCHS122O
 
 parameters:
+  on_resistance:
+    - typ: 70 Ω
+      max: 160 Ω
+      at: { VCC: 4.5 V, TA: 25 °C }
+      src: p9 "5.5 HC Devices, rON, VIS = VCC or VEE, VEE = 0, VCC = 4.5 V, 25°C"
+    - typ: 60 Ω
+      max: 140 Ω
+      at: { VCC: 6 V, TA: 25 °C }
+      src: p9 "5.5 HC Devices, rON, VIS = VCC or VEE, VEE = 0, VCC = 6 V, 25°C"
   supply_voltage:
     min: 2 V
     max: 6 V

@@ -1,0 +1,52 @@
+# TLP2748 inverter-logic photocoupler, totem-pole output, 4.5-30 V, SO6L (TOSHIBA 11-4N1A, all 6 leads; the
+# (LF4) wide-forming variant 11-4N101A is not recorded). Pin assignment
+# from section 5 "Pin Assignment" on page 2 of the TLP2748 datasheet
+# (2026-04-28): 1 Anode, 2 N.C., 3 Cathode, 4 GND, 5 VO, 6 VCC. LED
+# terminals passive. operating_temperature is the range the electrical
+# characteristics are specified over.
+schema_version: "0.2"
+kind: device
+id: toshiba/TLP2748
+manufacturer: toshiba
+category: optocoupler
+family: TLP2748
+source: toshiba/TLP2748-datasheet-en
+
+parameters:
+  forward_voltage:
+    min: 1.35 V
+    typ: 1.55 V
+    max: 1.65 V
+    at: { IF: 3 mA, TA: 25 °C }
+    src: p4 "10. Electrical Characteristics, Input forward voltage VF, IF = 3 mA"
+  reverse_voltage:
+    max: 5 V
+    src: p3 "8. Absolute Maximum Ratings, LED, Input reverse voltage VR"
+  forward_current:
+    max: 15 mA
+    src: p3 "8. Absolute Maximum Ratings, LED, Input forward current IF"
+  isolation_voltage:
+    min: 5000 V
+    at: { t: 60 s }
+    src: p4 "11. Isolation Characteristics, Isolation voltage BVS (AC, 60 s, Vrms)"
+  cmr: { min: 30 kV/µs, src: 'p5 "12. Switching Characteristics, CMH / CML, VCC = 30 V"' }
+  supply_voltage:
+    min: 4.5 V
+    max: 30 V
+    src: p4 "9. Recommended Operating Conditions, Supply voltage VCC (Note 2)"
+  operating_temperature:
+    min: -40 °C
+    max: 110 °C
+    src: p4 "10. Electrical Characteristics, table condition Ta = -40 to 110 °C"
+  propagation_delay:
+    max: 120 ns
+    src: p5 "12. Switching Characteristics, tpHL / tpLH, IF = 0 <-> 3 mA"
+
+pins:
+  src: 'p2 "5. Pin Assignment: 1 Anode, 2 N.C., 3 Cathode, 4 GND, 5 VO, 6 VCC"'
+  "1": { name: ANODE, type: passive }
+  "2": { name: NC, type: nc }
+  "3": { name: CATHODE, type: passive }
+  "4": { name: GND, type: ground }
+  "5": { name: VO, type: output }
+  "6": { name: VCC, type: power }

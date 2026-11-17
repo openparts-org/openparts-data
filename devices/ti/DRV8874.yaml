@@ -17,6 +17,9 @@ source: ti/SLVSF66A
 
 # Parameters (AI candidates, needs review).
 parameters:
+  data_interface:
+    values: [phase_enable, pwm]
+    src:    p1 "1 Features, Selectable input control modes (PMODE), PH/EN and PWM"
   rds_on: { typ: 200 mΩ, src: 'p1 "1 Features, DRV8874: 200-mΩ (High-Side + Low-Side)"' }
   supply_current:
     typ: 3 mA

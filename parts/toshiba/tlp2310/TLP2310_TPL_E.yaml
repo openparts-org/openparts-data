@@ -1,0 +1,25 @@
+# TLP2310 in SO6 (TOSHIBA 11-4L1S, named on datasheet page 2). The order
+# code is printed as the example in section 17 "Ordering Information"
+# (page 16: part number TLP2310, tape type TPL, RoHS code E) and listed
+# among the orderable part numbers on Toshiba's TLP2310 product page
+# (retrieved 2026-11-17); the datasheet gives it only as the format
+# example, so existence is `probable` (as toshiba/TLP293(TPL,E).
+schema_version: "0.2"
+kind: part
+id: toshiba/TLP2310(TPL,E
+manufacturer: toshiba
+mpn: TLP2310(TPL,E
+device: toshiba/TLP2310
+
+package:
+  value: manufacturers/toshiba/11-4L1S
+  src: p2 "4. Packaging and Pin Assignment, 11-4L1S"
+
+sources: [toshiba/TLP2310-datasheet-en]
+source: toshiba/TLP2310-datasheet-en
+
+existence:
+  status: probable
+  src: p16 "17. Ordering Information, example TLP2310(TPL,E (part number, tape type TPL, E)"
+
+lifecycle: { status: unknown }

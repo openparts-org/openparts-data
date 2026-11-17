@@ -2,10 +2,9 @@
 # activity detect. Pins from DS-000383 page 11 "Table 10. Pin Function
 # Descriptions" (no TYPE column: DATA output, SELECT/THSEL/CLK inputs,
 # WAKE output, GND ground, VDD power -- this file's reading of the
-# function text). Values from "1.2 High Quality Mode" (page 5). No
-# Part/Package: the land pattern has a ring GND pad around the sound
-# port, which the package pad shapes cannot express yet; the orderable
-# code is MMICT5838-00-012 (page 1).
+# function text). Values from "1.2 High Quality Mode" (page 5). The
+# land pattern's ring GND pad around the sound port is an annular pad in
+# manufacturers/tdk/LGA7-3.50x2.65-T5838; part MMICT5838-00-012 (page 1).
 schema_version: "0.2"
 kind: device
 id: tdk/T5838

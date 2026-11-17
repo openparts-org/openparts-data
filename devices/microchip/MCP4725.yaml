@@ -12,6 +12,11 @@ category: dac
 family: MCP4725
 source: microchip/DS22039@revD
 
+parameters:
+  data_interface: { value: i2c, src: 'p1 "Features, I2C Interface"' }
+  resolution:     { value: "12", src: 'p1 "Features, 12-Bit Resolution"' }
+  reference:      { value: external, src: 'p1 "Features, External Voltage Reference (VDD)"' }
+
 pins:
   src:
     - p13 "Table 3-1 "Pin Function Table", column "MCP4725 SOT-23""

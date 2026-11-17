@@ -9,6 +9,12 @@ category: timer
 family: ICM7555/ICM7556
 source: renesas/FN2867@rev10.01
 
+parameters:
+  max_frequency:
+    typ: 1 MHz
+    at: { VDD: 5 V, TA: 25 °C }
+    src: p4 "Electrical Specifications, Oscillator Frequency fMAX, VDD = 5V, RA = 470Ω, RB = 270Ω"
+
 pins:
   src: p1 "Pin Configurations, ICM7555 (8 LD PDIP, SOIC) TOP VIEW"
   "1": { name: GND, type: ground }
