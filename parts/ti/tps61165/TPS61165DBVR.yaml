@@ -1,0 +1,21 @@
+# TPS61165DBVR: SLVS790E PACKAGE OPTION ADDENDUM (page 24) row "TPS61165DBVR Active Production
+# SOT-23 (DBV) | 6" -- MPN printed verbatim in TI's orderable list (existence
+# verified); lifecycle "Active" is TI's own Status column.
+# Package: outline DBV0006A (page 32).
+schema_version: "0.2"
+kind: part
+id: ti/TPS61165DBVR
+manufacturer: ti
+mpn: TPS61165DBVR
+device: ti/TPS61165-DBV
+package: { value: manufacturers/ti/DBV0006A, src: p32 "PACKAGE OUTLINE DBV0006A (4214840/G)" }
+sources: [ti/SLVS790E]
+source: ti/SLVS790E
+
+existence:
+  status: verified
+  src: p24 "PACKAGE OPTION ADDENDUM, row "TPS61165DBVR" (SOT-23 (DBV) | 6)"
+
+lifecycle:
+  status: active
+  src: p24 "PACKAGE OPTION ADDENDUM, row "TPS61165DBVR", Status "Active""

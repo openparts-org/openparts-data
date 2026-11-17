@@ -1,0 +1,23 @@
+# DRV8848PWPR: SLLSEL7B PACKAGE OPTION ADDENDUM (page 20) row "DRV8848PWPR Active Production
+# HTSSOP (PWP) | 16" -- MPN printed verbatim in TI's orderable list (existence
+# verified); lifecycle "Active" is TI's own Status column.
+# Package: outline PWP0016A (page 25).
+# The datasheet prints two PWP outlines (PWP0016A page 25, PWP0016C page
+# 28) without saying which one an MPN ships in; the first is recorded.
+schema_version: "0.2"
+kind: part
+id: ti/DRV8848PWPR
+manufacturer: ti
+mpn: DRV8848PWPR
+device: ti/DRV8848
+package: { value: manufacturers/ti/PWP0016A, src: p25 "PACKAGE OUTLINE PWP0016A (4214868/A)" }
+sources: [ti/SLLSEL7B]
+source: ti/SLLSEL7B
+
+existence:
+  status: verified
+  src: p20 "PACKAGE OPTION ADDENDUM, row "DRV8848PWPR" (HTSSOP (PWP) | 16)"
+
+lifecycle:
+  status: active
+  src: p20 "PACKAGE OPTION ADDENDUM, row "DRV8848PWPR", Status "Active""

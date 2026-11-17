@@ -1,0 +1,51 @@
+# PCA9634 8-bit Fm+ I2C-bus LED driver, SO20 / TSSOP20 numbering: Table
+# 3 "Pin description" (page 6), column "SO20, TSSOP20". The HVQFN20
+# numbering is not covered.
+schema_version: "0.2"
+kind: device
+id: nxp/PCA9634
+manufacturer: nxp
+category: led_driver
+family: PCA9634
+source: nxp/PCA9634@rev7.1
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: 'p1 "Title, 8-bit Fm+ I2C-bus LED driver"' }
+  output_current:
+    max: 25 mA
+    at: { VDD: 5 V }
+    src: p1 "1 General description, 25 mA current sink capability at 5 V"
+  supply_voltage: { min: 2.3 V, max: 5.5 V, src: 'p26 "Table 18 Static characteristics, VDD"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p26 "Table 18 Static characteristics, Tamb = -40 °C to +85 °C"
+  esd_hbm: { typ: 2 kV, src: 'p2 "2 Features, ESD protection exceeds 2000 V HBM per JESD22-A114"' }
+  channel_count:  { value: "8", src: 'p6 "Table 3 Pin description, LED0-LED7"' }
+  led_driver_type:
+    value: pwm
+    src: p1 "1 General description, Individual PWM controller per LED output"
+
+pins:
+  src:  p6 "Table 3 Pin description, column SO20, TSSOP20"
+  "1":  { name: A0, type: input }
+  "2":  { name: A1, type: input }
+  "3":  { name: A2, type: input }
+  "4":  { name: A3, type: input }
+  "5":  { name: A4, type: input }
+  "6":  { name: LED0, type: output }
+  "7":  { name: LED1, type: output }
+  "8":  { name: LED2, type: output }
+  "9":  { name: LED3, type: output }
+  "10": { name: VSS, type: ground }
+  "11": { name: LED4, type: output }
+  "12": { name: LED5, type: output }
+  "13": { name: LED6, type: output }
+  "14": { name: LED7, type: output }
+  "15": { name: OE, type: input }
+  "16": { name: A5, type: input }
+  "17": { name: A6, type: input }
+  "18": { name: SCL, type: input }
+  "19": { name: SDA, type: io }
+  "20": { name: VDD, type: power }

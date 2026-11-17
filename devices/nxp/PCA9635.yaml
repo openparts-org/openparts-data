@@ -1,0 +1,65 @@
+# PCA9635 16-bit Fm+ I2C-bus LED driver, TSSOP28 numbering: Table 3
+# "Pin description" (pages 5-6), Type column (I -> input, O -> output,
+# I/O -> io, power supply -> power / ground), cross-checked against
+# Figure 2 "Pin configuration for TSSOP28" (page 5).
+schema_version: "0.2"
+kind: device
+id: nxp/PCA9635
+manufacturer: nxp
+category: led_driver
+family: PCA9635
+source: nxp/PCA9635@rev7.1
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: 'p1 "Title, 16-bit Fm+ I2C-bus LED driver"' }
+  output_current:
+    max: 25 mA
+    at: { VDD: 5 V }
+    src: p1 "1 General description, 25 mA current sink capability at 5 V"
+  supply_voltage: { min: 2.3 V, max: 5.5 V, src: 'p25 "Table 18 Static characteristics, VDD"' }
+  supply_current:
+    typ: 2.5 mA
+    max: 10 mA
+    at: { VDD: 5.5 V }
+    src: p25 "Table 18 Static characteristics, IDD operating mode; no load; fSCL = 1 MHz"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p25 "Table 18 Static characteristics, Tamb = -40 °C to +85 °C"
+  esd_hbm: { typ: 2 kV, src: 'p2 "2 Features, ESD protection exceeds 2000 V HBM per JESD22-A114"' }
+  channel_count: { value: "16", src: 'p1 "1 General description, 16-bit LED driver (LED0-LED15)"' }
+  led_driver_type:
+    value: pwm
+    src: p1 "1 General description, individual PWM controller per LED output"
+
+pins:
+  src:  p5 "Table 3 Pin description (pages 5-6); Figure 2 Pin configuration for TSSOP28"
+  "1":  { name: A0, type: input }
+  "2":  { name: A1, type: input }
+  "3":  { name: A2, type: input }
+  "4":  { name: A3, type: input }
+  "5":  { name: A4, type: input }
+  "6":  { name: LED0, type: output }
+  "7":  { name: LED1, type: output }
+  "8":  { name: LED2, type: output }
+  "9":  { name: LED3, type: output }
+  "10": { name: LED4, type: output }
+  "11": { name: LED5, type: output }
+  "12": { name: LED6, type: output }
+  "13": { name: LED7, type: output }
+  "14": { name: VSS, type: ground }
+  "15": { name: LED8, type: output }
+  "16": { name: LED9, type: output }
+  "17": { name: LED10, type: output }
+  "18": { name: LED11, type: output }
+  "19": { name: LED12, type: output }
+  "20": { name: LED13, type: output }
+  "21": { name: LED14, type: output }
+  "22": { name: LED15, type: output }
+  "23": { name: OE, type: input }
+  "24": { name: A5, type: input }
+  "25": { name: A6, type: input }
+  "26": { name: SCL, type: input }
+  "27": { name: SDA, type: io }
+  "28": { name: VDD, type: power }

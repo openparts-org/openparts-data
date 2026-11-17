@@ -1,0 +1,66 @@
+# NXP SOT1172-3, HTSSOP28 ("plastic thermal enhanced thin shrink small
+# outline package; 28 leads; body width 4.4 mm; lead pitch 0.65 mm;
+# exposed die pad"). Values from Figure 29 "Package outline SOT1172-3
+# (HTSSOP28)" of the PCA9955B data sheet Rev. 2.3, page 52 (mm rows
+# max/nom/min, text extracted). body_width = E, body_length = D,
+# overall_width = HE, body_height = A2, overall_height = A (max only),
+# standoff = A1, lead_width = bp, lead_thickness = c, lead_length = Lp
+# (L is the reference lead length, not modelled); exposed die pad Eh
+# across (width), Dh along the rows (length). A3, Q, v, w, y, Z and the
+# foot angle are not modelled. No land pattern is recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/nxp/SOT1172-3
+family: tssop
+lead_count: 28
+source: nxp/PCA9955B@rev2.3
+
+pitch: { typ: 0.65 mm, src: 'p52 "Figure 29 SOT1172-3 Dimensions (mm), e 0.65"' }
+geometry: { type: parametric, generator: tssop }
+
+dimensions:
+  body_width:
+    min: 4.3 mm
+    typ: 4.4 mm
+    max: 4.5 mm
+    src: p52 "Figure 29 SOT1172-3 Dimensions (mm), E 4.3 / 4.4 / 4.5"
+  body_length:
+    min: 9.6 mm
+    typ: 9.7 mm
+    max: 9.8 mm
+    src: p52 "Figure 29 SOT1172-3 Dimensions (mm), D 9.6 / 9.7 / 9.8"
+  body_height:
+    min: 0.85 mm
+    typ: 0.9 mm
+    max: 0.95 mm
+    src: p52 "Figure 29 SOT1172-3 Dimensions (mm), A2 0.85 / 0.90 / 0.95"
+  exposed_pad:
+    src:    p52 "Figure 29 SOT1172-3 Dimensions (mm), Eh 2.8 / 2.9 / 3.0, Dh 3.9 / 4.0 / 4.1"
+    width:  { min: 2.8 mm, typ: 2.9 mm, max: 3 mm }
+    length: { min: 3.9 mm, typ: 4 mm, max: 4.1 mm }
+  overall_width:
+    min: 6.2 mm
+    typ: 6.4 mm
+    max: 6.6 mm
+    src: p52 "Figure 29 SOT1172-3 Dimensions (mm), HE 6.2 / 6.4 / 6.6"
+  overall_height: { max: 1.1 mm, src: 'p52 "Figure 29 SOT1172-3 Dimensions (mm), A max 1.1"' }
+  standoff:
+    min: 0.05 mm
+    typ: 0.1 mm
+    max: 0.15 mm
+    src: p52 "Figure 29 SOT1172-3 Dimensions (mm), A1 0.05 / 0.10 / 0.15"
+  lead_width:
+    min: 0.19 mm
+    typ: 0.22 mm
+    max: 0.3 mm
+    src: p52 "Figure 29 SOT1172-3 Dimensions (mm), bp 0.19 / 0.22 / 0.30"
+  lead_length:
+    min: 0.5 mm
+    typ: 0.62 mm
+    max: 0.75 mm
+    src: p52 "Figure 29 SOT1172-3 Dimensions (mm), Lp 0.50 / 0.62 / 0.75"
+  lead_thickness:
+    min: 0.1 mm
+    typ: 0.15 mm
+    max: 0.2 mm
+    src: p52 "Figure 29 SOT1172-3 Dimensions (mm), c 0.10 / 0.15 / 0.20"

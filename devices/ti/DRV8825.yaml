@@ -1,0 +1,80 @@
+# DRV8825 bipolar stepper driver with microstepping indexer, PWP (28-pin
+# HTSSOP PowerPAD) pin map. Pin Functions table (SLVSA73F pages 3-4).
+# GND is pins 14 and 28. nFAULT/nHOME are open-drain ("OD") -- typed
+# output. CP1/CP2/VCP (charge-pump capacitor terminals) typed passive,
+# V3P3OUT (3.3-V regulator output) power_out, AVREF/BVREF analog,
+# ISENA/ISENB (bridge ground / sense resistor) passive. The pin table
+# has no thermal-pad row; 11.3.2 Heatsinking (page 23) says the exposed
+# pad must be connected to PCB copper -> pin "EP" named PAD, passive.
+# rds_on = HS 0.2 + LS 0.2 Ω (typ, TJ 25 °C), arithmetic between the two
+# printed rows.
+schema_version: "0.2"
+kind: device
+id: ti/DRV8825
+manufacturer: ti
+category: motor_driver
+family: DRV8825
+source: ti/SLVSA73F
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: step_dir, src: 'p1 "1 Features, Simple STEP/DIR Interface"' }
+  rds_on:
+    typ: 0.4 Ω
+    at: { VM: 24 V, IOUT: 1 A, TJ: 25 °C }
+    src: p6 "7.5 Electrical Characteristics, RDS(ON) HS 0.2 + LS 0.2 Ω (sum)"
+  output_current:
+    max: 2.5 A
+    at: { VM: 24 V, TA: 25 °C }
+    src: p1 "1 Features, 2.5-A Maximum Drive Current at 24 V and TA = 25°C"
+  supply_current:
+    typ: 5 mA
+    max: 8 mA
+    at: { VM: 24 V }
+    src: p6 "7.5 Electrical Characteristics, IVM"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p6 "7.5 Electrical Characteristics, over -40°C to 85°C"
+  esd_hbm:        { typ: 2 kV, src: 'p4 "7.2 Handling Ratings, HBM all pins ±2000 V"' }
+  channel_count:  { value: "2", src: 'p1 "3 Description, two H-bridge drivers"' }
+  motor_type:
+    value: stepper
+    src: p1 "3 Description, intended to drive a bipolar stepper motor"
+  motor_supply_voltage:
+    min: 8.2 V
+    max: 45 V
+    src: p4 "7.3 Recommended Operating Conditions, V(VMx)"
+  microstepping:  { value: "32", src: 'p1 "1 Features, Up to 1/32 Microstepping"' }
+
+pins:
+  src:  [p3 "Pin Functions (continued on p4)", p23 "11.3.2 Heatsinking (exposed pad)"]
+  "1":  { name: CP1, type: passive }
+  "2":  { name: CP2, type: passive }
+  "3":  { name: VCP, type: passive }
+  "4":  { name: VMA, type: power }
+  "5":  { name: AOUT1, type: output }
+  "6":  { name: ISENA, type: passive }
+  "7":  { name: AOUT2, type: output }
+  "8":  { name: BOUT2, type: output }
+  "9":  { name: ISENB, type: passive }
+  "10": { name: BOUT1, type: output }
+  "11": { name: VMB, type: power }
+  "12": { name: AVREF, type: analog }
+  "13": { name: BVREF, type: analog }
+  "14": { name: GND, type: ground }
+  "15": { name: V3P3OUT, type: power_out }
+  "16": { name: nRESET, type: input }
+  "17": { name: nSLEEP, type: input }
+  "18": { name: nFAULT, type: output }
+  "19": { name: DECAY, type: input }
+  "20": { name: DIR, type: input }
+  "21": { name: nENBL, type: input }
+  "22": { name: STEP, type: input }
+  "23": { name: NC, type: nc }
+  "24": { name: MODE0, type: input }
+  "25": { name: MODE1, type: input }
+  "26": { name: MODE2, type: input }
+  "27": { name: nHOME, type: output }
+  "28": { name: GND, type: ground }
+  EP:   { name: PAD, type: passive }

@@ -1,0 +1,21 @@
+# DRV8876PWPR: SLVSDS7B PACKAGE OPTION ADDENDUM (page 36) row "DRV8876PWPR Active Production
+# HTSSOP (PWP) | 16" -- MPN printed verbatim in TI's orderable list (existence
+# verified); lifecycle "Active" is TI's own Status column.
+# Package: outline PWP0016A (page 45).
+schema_version: "0.2"
+kind: part
+id: ti/DRV8876PWPR
+manufacturer: ti
+mpn: DRV8876PWPR
+device: ti/DRV8876-PWP
+package: { value: manufacturers/ti/PWP0016A, src: p45 "PACKAGE OUTLINE PWP0016A (4214868/A)" }
+sources: [ti/SLVSDS7B]
+source: ti/SLVSDS7B
+
+existence:
+  status: verified
+  src: p36 "PACKAGE OPTION ADDENDUM, row "DRV8876PWPR" (HTSSOP (PWP) | 16)"
+
+lifecycle:
+  status: active
+  src: p36 "PACKAGE OPTION ADDENDUM, row "DRV8876PWPR", Status "Active""

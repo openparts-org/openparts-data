@@ -1,0 +1,16 @@
+# TMC2209 datasheet (Trinamic, now Analog Devices), "Rev. 1.09 /
+# 2023-FEB-16" (page headers). Downloaded 2026-11-17 with wget from
+# analog.com (curl failed with an HTTP/2 stream error; one retry with
+# wget). 86 PDF pages; read with pdftotext -layout; the QFN28 drawing
+# (page 83) rendered. PDF page index = the printed page number.
+schema_version: "0.2"
+kind: source
+id: analog-devices/TMC2209-DS@rev1.09
+sha256: 1d9e8eed9ad2edc17b112c1d54e3c468c34102a629bc3dbf729828919a7b0893
+retrieved: 2026-11-17
+url: https://www.analog.com/media/en/technical-documentation/data-sheets/TMC2209_datasheet_rev1.09.pdf
+publisher: analog-devices
+document_id: TMC2209-DS
+document_type: datasheet
+revision: "1.09"
+date: 2023-02-16

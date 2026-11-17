@@ -1,0 +1,19 @@
+# A5984GLPTR-T: printed in the Selection Guide (page 2) -> existence verified.
+# Package: Figure 20: LP Package, 24-Pin TSSOP with Exposed Thermal Pad (page 27). Lifecycle unknown: the datasheet states no
+# production status.
+schema_version: "0.2"
+kind: part
+id: allegro/A5984GLPTR-T
+manufacturer: allegro
+mpn: A5984GLPTR-T
+device: allegro/A5984-LP
+
+package:
+  value: manufacturers/allegro/LP-TSSOP24-DWG-0000379
+  src: 'p27 "Figure 20: LP Package, 24-Pin TSSOP with Exposed Thermal Pad"'
+
+sources: [allegro/A5984-DS@rev4]
+source: allegro/A5984-DS@rev4
+
+existence: { status: verified, src: 'p2 "Selection Guide, Part Number A5984GLPTR-T"' }
+lifecycle: { status: unknown }

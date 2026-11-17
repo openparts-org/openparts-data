@@ -1,0 +1,53 @@
+# Trinamic / Analog Devices QFN28 (5x5 mm, 0.5 mm pitch, exposed die
+# attach pad) of the TMC2209, from "22.1 Dimensional Drawings QFN28"
+# (TMC2209 datasheet Rev. 1.09, page 83, rendered) and its dimension
+# table (page 84). Millimetres. The datasheet notes the exposed pad and
+# lead length differ from the TMC2208 package.
+#
+# D / E "5.0" (nom only) -> body_width / body_length typ; A 0.8/0.85/0.9
+# -> overall_height (A2 0.65 nom -> body_height); A1 0/0.035/0.05 ->
+# standoff; A3 0.203 -> lead_thickness; b 0.2/0.25/0.3 -> lead_width;
+# L 0.35/0.4/0.45 -> lead_length; J / K 3.6/3.7/3.8 -> exposed pad;
+# e 0.5. Top view: pin 1 at the top of the left edge, CCW (standard).
+# No land pattern is given.
+schema_version: "0.2"
+kind: package
+id: manufacturers/analog-devices/QFN28-5x5-TMC2209
+family: qfn
+lead_count: 28
+source: analog-devices/TMC2209-DS@rev1.09
+
+pitch: { typ: 0.5 mm, src: 'p84 "22.1 dimension table, lead pitch e 0.5"' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:  { typ: 5 mm, src: 'p84 "22.1 dimension table, body size X D 5.0"' }
+  body_length: { typ: 5 mm, src: 'p84 "22.1 dimension table, body size Y E 5.0"' }
+  body_height: { typ: 0.65 mm, src: 'p84 "22.1 dimension table, mold thickness A2 0.65"' }
+  exposed_pad:
+    src:    p84 "22.1 dimension table, exposed die pad size X J / Y K 3.6 / 3.7 / 3.8"
+    width:  { min: 3.6 mm, typ: 3.7 mm, max: 3.8 mm }
+    length: { min: 3.6 mm, typ: 3.7 mm, max: 3.8 mm }
+  overall_height:
+    min: 0.8 mm
+    typ: 0.85 mm
+    max: 0.9 mm
+    src: p84 "22.1 dimension table, total thickness A"
+  standoff:
+    min: 0 mm
+    typ: 0.035 mm
+    max: 0.05 mm
+    src: p84 "22.1 dimension table, stand off A1"
+  lead_width:
+    min: 0.2 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p84 "22.1 dimension table, lead width b"
+  lead_length:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.45 mm
+    src: p84 "22.1 dimension table, lead length L"
+  lead_thickness:
+    typ: 0.203 mm
+    src: p84 "22.1 dimension table, lead frame thickness A3 0.203"

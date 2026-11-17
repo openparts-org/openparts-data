@@ -1,0 +1,80 @@
+# DRV8834 dual H-bridge stepper / DC motor driver, RGE (24-pin VQFN)
+# pin map. Pin Functions table, VQFN column (SLVSB19D pages 3-4),
+# cross-checked with the "RGE Package 24-Pin VQFN Top View" figure (page
+# 3). GND is pin 18 and the PowerPAD ("Both the GND pin and device
+# PowerPAD must be connected to ground") -> EP named GND, ground. VM is
+# pins 15 and 16. nFAULT open-drain -> output; VCP (I/O, capacitor to
+# VM) passive; VINT (internal supply bypass) power_out; VREFO
+# (reference output) power_out; AVREF/BVREF and the tri-level
+# ADECAY/BDECAY analog/input as typed below; AISEN/BISEN (bridge ground
+# / sense resistor) passive. The HTSSOP (PWP) variant has another pin
+# map and no outline in this datasheet, so it is not covered.
+# operating_temperature left out: the recommended conditions are stated
+# at TA = 25 °C only.
+schema_version: "0.2"
+kind: device
+id: ti/DRV8834-RGE
+manufacturer: ti
+category: motor_driver
+family: DRV8834
+source: ti/SLVSB19D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  rds_on:
+    typ: 305 mΩ
+    at: { VM: 5 V, TA: 25 °C }
+    src: 'p1 "1 Features, Low RDS(ON): 305-mΩ HS + LS"'
+  output_current:
+    max: 1.5 A
+    at: { VM: 5 V, TA: 25 °C }
+    src: p1 "1 Features, Output Current 1.5-A Continuous per H-Bridge"
+  supply_current:
+    typ: 2.4 mA
+    max: 4 mA
+    at: { VM: 5 V }
+    src: p7 "7.5 Electrical Characteristics, IVM"
+  esd_hbm:       { typ: 4 kV, src: 'p5 "7.2 ESD Ratings, HBM all pins ±4000 V"' }
+  channel_count: { value: "2", src: 'p1 "1 Features, Dual-H-Bridge Current-Control Motor Driver"' }
+  motor_type:
+    value: brushed_dc_or_stepper
+    src: p1 "1 Features, Capable of Driving Two DC Motors or One Stepper Motor"
+  motor_supply_voltage:
+    min: 2.5 V
+    max: 10.8 V
+    src: p5 "7.3 Recommended Operating Conditions, VM"
+  output_current_peak:
+    max: 2.2 A
+    at: { VM: 5 V, TA: 25 °C }
+    src: p1 "1 Features, 2.2-A Peak per H-Bridge"
+  microstepping: { value: "32", src: 'p1 "1 Features, Up to 1/32-Step Microstepping"' }
+
+pins:
+  src:
+    - p3 "Pin Functions, VQFN column (continued on p4)"
+    - p3 "RGE Package 24-Pin VQFN Top View (cross-check)"
+  "1":  { name: AOUT1, type: output }
+  "2":  { name: AISEN, type: passive }
+  "3":  { name: AOUT2, type: output }
+  "4":  { name: BOUT2, type: output }
+  "5":  { name: BISEN, type: passive }
+  "6":  { name: BOUT1, type: output }
+  "7":  { name: nENBL/AENBL, type: input }
+  "8":  { name: STEP/BENBL, type: input }
+  "9":  { name: DIR/BPHASE, type: input }
+  "10": { name: M0/APHASE, type: input }
+  "11": { name: M1, type: input }
+  "12": { name: CONFIG, type: input }
+  "13": { name: nFAULT, type: output }
+  "14": { name: VCP, type: passive }
+  "15": { name: VM, type: power }
+  "16": { name: VM, type: power }
+  "17": { name: VINT, type: power_out }
+  "18": { name: GND, type: ground }
+  "19": { name: AVREF, type: analog }
+  "20": { name: BVREF, type: analog }
+  "21": { name: VREFO, type: power_out }
+  "22": { name: nSLEEP, type: input }
+  "23": { name: BDECAY, type: input }
+  "24": { name: ADECAY, type: input }
+  EP:   { name: GND, type: ground }

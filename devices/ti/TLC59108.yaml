@@ -1,0 +1,57 @@
+# TLC59108 8-channel Fm+ I2C-bus constant-current LED sink driver, PW
+# (20-pin TSSOP) pin map. Pin Functions table (SLDS156B page 4),
+# cross-checked with the "PW Package 20-Pin TSSOP (Top View)" figure
+# (same page). GND is pins 8, 13 and 16. REXT (external current-set
+# resistor) typed analog; RESET active-low reset. The RGY (VQFN) variant
+# shares the numbering but has a thermal pad and no outline in this
+# datasheet, so only PW is covered.
+schema_version: "0.2"
+kind: device
+id: ti/TLC59108
+manufacturer: ti
+category: led_driver
+family: TLC59108
+source: ti/SLDS156B
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: i2c
+    src: p1 "Title, 8-Bit Fm+ I2C-Bus Constant-Current LED Sink Driver"
+  output_current:
+    min: 5 mA
+    max: 120 mA
+    src: p5 "7.3 Recommended Operating Conditions, IO output current OUT0 to OUT7"
+  supply_voltage: { min: 3 V, max: 5.5 V, src: 'p5 "7.3 Recommended Operating Conditions, VCC"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p5 "7.3 Recommended Operating Conditions, TA"
+  esd_hbm: { typ: 2 kV, src: 'p5 "7.2 ESD Ratings, HBM ±2000 V"' }
+  channel_count: { value: "8", src: 'p1 "1 Features, Eight Constant-Current Output Channels"' }
+  led_driver_type:
+    value: constant_current
+    src: p1 "1 Features, Eight Constant-Current Output Channels"
+
+pins:
+  src:  [p4 "Pin Functions", p4 "PW Package 20-Pin TSSOP (Top View) (cross-check)"]
+  "1":  { name: REXT, type: analog }
+  "2":  { name: A0, type: input }
+  "3":  { name: A1, type: input }
+  "4":  { name: A2, type: input }
+  "5":  { name: A3, type: input }
+  "6":  { name: OUT0, type: output }
+  "7":  { name: OUT1, type: output }
+  "8":  { name: GND, type: ground }
+  "9":  { name: OUT2, type: output }
+  "10": { name: OUT3, type: output }
+  "11": { name: OUT4, type: output }
+  "12": { name: OUT5, type: output }
+  "13": { name: GND, type: ground }
+  "14": { name: OUT6, type: output }
+  "15": { name: OUT7, type: output }
+  "16": { name: GND, type: ground }
+  "17": { name: RESET, type: reset }
+  "18": { name: SCL, type: input }
+  "19": { name: SDA, type: io }
+  "20": { name: VCC, type: power }

@@ -1,0 +1,36 @@
+# TI DAP0032C "PowerPAD TSSOP - 1.2 mm max height" (32-lead, 0.65 mm pitch, exposed thermal pad;
+# drawing 4223691/A 05/2017, JEDEC MO-153 per its notes), read from the PACKAGE
+# OUTLINE page of SBVS114B (PDF page 36). Millimetres as printed; min/max
+# only, no nominal. Only "1.2 MAX" is given (no A2): overall_height
+# only. Lead thickness only as "(0.15) TYP" (reference value). Thermal
+# pad (bottom view): "3.04 / 2.46" across the rows (width), "3.74 / 3.16"
+# along the rows (length). Pins 1-16 down the left edge, the
+# rest up the right edge (top view). No land pattern recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DAP0032C
+family: tssop
+lead_count: 32
+source: ti/SBVS114B
+
+pitch: { typ: 0.65 mm, src: 'p36 "DAP0032C (4223691/A 05/2017), "30X 0.65" (basic)"' }
+geometry: { type: parametric, generator: tssop }
+
+dimensions:
+  body_width:     { min: 6 mm, max: 6.2 mm, src: 'p36 "DAP0032C, body width "6.2 / 6" (datum B)"' }
+  body_length:
+    min: 10.9 mm
+    max: 11.1 mm
+    src: p36 "DAP0032C, body length "11.1 / 10.9 NOTE 3" (datum A)"
+  lead_thickness:
+    typ: 0.15 mm
+    src: p36 "DAP0032C, "(0.15) TYP" -- reference value per note 1"
+  exposed_pad:
+    src:    p36 "DAP0032C thermal pad "3.04 / 2.46" across, "3.74 / 3.16" along the rows"
+    width:  { min: 2.46 mm, max: 3.04 mm }
+    length: { min: 3.16 mm, max: 3.74 mm }
+  overall_width:  { min: 7.9 mm, max: 8.3 mm, src: 'p36 "DAP0032C, lead-tip span "8.3 TYP / 7.9""' }
+  overall_height: { max: 1.2 mm, src: 'p36 "DAP0032C DETAIL A, "1.2 MAX""' }
+  standoff:       { min: 0.05 mm, max: 0.15 mm, src: 'p36 "DAP0032C DETAIL A, "0.15 / 0.05""' }
+  lead_width:     { min: 0.19 mm, max: 0.3 mm, src: 'p36 "DAP0032C, "32X 0.30 / 0.19""' }
+  lead_length:    { min: 0.5 mm, max: 0.75 mm, src: 'p36 "DAP0032C DETAIL A, "0.75 / 0.50""' }

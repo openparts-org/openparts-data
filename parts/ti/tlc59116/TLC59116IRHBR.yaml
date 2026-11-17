@@ -1,0 +1,21 @@
+# TLC59116IRHBR: SLDS157E PACKAGE OPTION ADDENDUM (page 33) row "TLC59116IRHBR Active Production
+# VQFN (RHB) | 32" -- MPN printed verbatim in TI's orderable list (existence
+# verified); lifecycle "Active" is TI's own Status column.
+# Package: outline RHB0032E (page 39).
+schema_version: "0.2"
+kind: part
+id: ti/TLC59116IRHBR
+manufacturer: ti
+mpn: TLC59116IRHBR
+device: ti/TLC59116-RHB
+package: { value: manufacturers/ti/RHB0032E, src: p39 "PACKAGE OUTLINE RHB0032E (4223442/B)" }
+sources: [ti/SLDS157E]
+source: ti/SLDS157E
+
+existence:
+  status: verified
+  src: p33 "PACKAGE OPTION ADDENDUM, row "TLC59116IRHBR" (VQFN (RHB) | 32)"
+
+lifecycle:
+  status: active
+  src: p33 "PACKAGE OPTION ADDENDUM, row "TLC59116IRHBR", Status "Active""

@@ -1,0 +1,21 @@
+# TLC5947DAPR: SBVS114B PACKAGE OPTION ADDENDUM (page 23) row "TLC5947DAPR Active Production
+# HTSSOP (DAP) | 32" -- MPN printed verbatim in TI's orderable list (existence
+# verified); lifecycle "Active" is TI's own Status column.
+# Package: outline DAP0032C (page 36).
+schema_version: "0.2"
+kind: part
+id: ti/TLC5947DAPR
+manufacturer: ti
+mpn: TLC5947DAPR
+device: ti/TLC5947-DAP
+package: { value: manufacturers/ti/DAP0032C, src: p36 "PACKAGE OUTLINE DAP0032C (4223691/A)" }
+sources: [ti/SBVS114B]
+source: ti/SBVS114B
+
+existence:
+  status: verified
+  src: p23 "PACKAGE OPTION ADDENDUM, row "TLC5947DAPR" (HTSSOP (DAP) | 32)"
+
+lifecycle:
+  status: active
+  src: p23 "PACKAGE OPTION ADDENDUM, row "TLC5947DAPR", Status "Active""

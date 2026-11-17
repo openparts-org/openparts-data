@@ -1,0 +1,19 @@
+# A4954ELPTR-T: printed in the Selection Guide (page 2) -> existence verified.
+# Package: Figure 8: Package LP, 16-Pin TSSOP with exposed thermal pad (page 9). Lifecycle unknown: the datasheet states no
+# production status.
+schema_version: "0.2"
+kind: part
+id: allegro/A4954ELPTR-T
+manufacturer: allegro
+mpn: A4954ELPTR-T
+device: allegro/A4954
+
+package:
+  value: manufacturers/allegro/LP-TSSOP16-DWG-0000379
+  src: 'p9 "Figure 8: Package LP, 16-Pin TSSOP with exposed thermal pad"'
+
+sources: [allegro/A4954-DS@rev8]
+source: allegro/A4954-DS@rev8
+
+existence: { status: verified, src: 'p2 "Selection Guide, Part Number A4954ELPTR-T"' }
+lifecycle: { status: unknown }

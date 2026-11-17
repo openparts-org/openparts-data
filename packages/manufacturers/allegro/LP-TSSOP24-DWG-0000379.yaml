@@ -1,0 +1,35 @@
+# Allegro LP package, 24-pin TSSOP with exposed thermal pad (reference
+# Allegro DWG-0000379 Rev. 3, JEDEC MO-153), read from the rendered
+# drawing on page 27 of 5984-DS Rev. 4 (Figure 20). Millimetres, "For Reference Only".
+#
+# Body "4.40 ±0.10" across the rows -> body_width; "7.80 ±0.10" along
+# them -> body_length; lead tips "6.40 ±0.20" -> overall_width; "1.20
+# MAX" -> overall_height; standoff "0.15 / 0.025"; lead width "0.30 /
+# 0.19"; lead thickness "0.2 / 0.09"; foot "0.60 ±0.15" ->
+# lead_length; pitch "0.65 BSC". Exposed pad "3.00" (3 NOM) across the
+# rows, "4.32 NOM" along them -> typ only. Pins 1-12 along one long
+# edge, the rest back along the other. The PCB Layout Reference View is
+# not recorded as pads.
+schema_version: "0.2"
+kind: package
+id: manufacturers/allegro/LP-TSSOP24-DWG-0000379
+family: tssop
+lead_count: 24
+source: allegro/A5984-DS@rev4
+
+pitch: { typ: 0.65 mm, src: 'p27 "Package LP, "0.65 BSC""' }
+geometry: { type: parametric, generator: tssop }
+
+dimensions:
+  body_width:     { min: 4.3 mm, typ: 4.4 mm, max: 4.5 mm, src: 'p27 "Package LP, "4.40 ±0.10""' }
+  body_length:    { min: 7.7 mm, typ: 7.8 mm, max: 7.9 mm, src: 'p27 "Package LP, "7.80 ±0.10""' }
+  lead_thickness: { min: 0.09 mm, max: 0.2 mm, src: 'p27 "Package LP, "0.2 / 0.09""' }
+  exposed_pad:
+    src:    p27 "Package LP, exposed pad 3.00 x 4.32 (nominal)"
+    width:  { typ: 3 mm }
+    length: { typ: 4.32 mm }
+  overall_width:  { min: 6.2 mm, typ: 6.4 mm, max: 6.6 mm, src: 'p27 "Package LP, "6.40 ±0.20""' }
+  overall_height: { max: 1.2 mm, src: 'p27 "Package LP, "1.20 MAX""' }
+  standoff:       { min: 0.025 mm, max: 0.15 mm, src: 'p27 "Package LP, "0.15 / 0.025""' }
+  lead_width:     { min: 0.19 mm, max: 0.3 mm, src: 'p27 "Package LP, "0.30 / 0.19""' }
+  lead_length:    { min: 0.45 mm, typ: 0.6 mm, max: 0.75 mm, src: 'p27 "Package LP, "0.60 ±0.15""' }

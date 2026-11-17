@@ -1,0 +1,45 @@
+# TI DSS0012A "WSON - 0.8 mm max height" (12 terminals, 2x3 mm, 0.5 mm
+# pitch, exposed thermal pad 13; drawing 4222684/A 02/2016), read from
+# the rendered PACKAGE OUTLINE page of SLVSB18H (PDF page 22).
+# Millimetres as printed. Body "2.1 / 1.9" across the terminal rows,
+# "3.1 / 2.9" along them (no nominal). Only "0.8 MAX" is given (no A2).
+# Bottom view: "12X 0.3 / 0.2" is the terminal width (b, along the
+# row), "12X 0.35 / 0.25" the terminal length (L); thermal pad
+# "0.9±0.1" across, "2±0.1" along the rows. Bottom view numbers 1-6 up
+# the left, 7-12 down the right; seen from the top: pin 1 top-left,
+# down the left, up the right (SOIC order). Left out: side-wall metal
+# "(0.2) TYP", pad notches "4X (0.2)", "(0.7)", optional terminal
+# detail. No land pattern recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DSS0012A
+family: son
+lead_count: 12
+source: ti/SLVSB18H
+
+pitch: { typ: 0.5 mm, src: 'p22 "DSS0012A outline (4222684/A), bottom view, basic "10X 0.5""' }
+geometry: { type: parametric, generator: son }
+
+dimensions:
+  body_width:
+    min: 1.9 mm
+    max: 2.1 mm
+    src: p22 "DSS0012A outline, top view "2.1 / 1.9" (across the rows)"
+  body_length:
+    min: 2.9 mm
+    max: 3.1 mm
+    src: p22 "DSS0012A outline, top view "3.1 / 2.9" (along the rows)"
+  body_height: { max: 0.8 mm, src: 'p22 "DSS0012A outline, side view "0.8 MAX""' }
+  exposed_pad:
+    src:    p22 "DSS0012A outline, bottom view, thermal pad "0.9±0.1" across x "2±0.1" along the rows"
+    width:  { min: 0.8 mm, typ: 0.9 mm, max: 1 mm }
+    length: { min: 1.9 mm, typ: 2 mm, max: 2.1 mm }
+  standoff:    { min: 0 mm, max: 0.05 mm, src: 'p22 "DSS0012A outline, side view "0.05 / 0.00""' }
+  lead_width:
+    min: 0.2 mm
+    max: 0.3 mm
+    src: p22 "DSS0012A outline, bottom view "12X 0.3 / 0.2""
+  lead_length:
+    min: 0.25 mm
+    max: 0.35 mm
+    src: p22 "DSS0012A outline, bottom view "12X 0.35 / 0.25""

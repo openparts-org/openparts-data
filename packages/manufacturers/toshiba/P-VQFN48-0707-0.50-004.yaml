@@ -1,0 +1,43 @@
+# Toshiba P-VQFN48-0707-0.50-004 (48-terminal VQFN, 7x7 mm, 0.5 mm
+# pitch, exposed thermal pad), read from the rendered "12. Package
+# dimensions" page of the TB67S249FTG datasheet Rev.3.5 (PDF page 28;
+# image only). Unit mm.
+#
+# Body "7.0" both ways (boxed basic) -> typ; "1.0MAX" seating plane to
+# top -> body_height max (no A2); "0.05MAX" standoff -> max only;
+# terminal width "0.25±0.05"; terminal length "0.4±0.1"; pitch "0.5"
+# (boxed); exposed pad "5.5TYP" both ways -> typ only. The four corner
+# pads ("0.75TYP" from the edges) are not modelled.
+# Numbering: the bottom view shows 1-12 along one edge; seen from the
+# top this is the standard CCW order (pin 1 at the top of the left
+# edge), matching "Figure 3.1 Pin Assignments" (top view, page 2) after
+# a 90° turn. No land pattern is given.
+schema_version: "0.2"
+kind: package
+id: manufacturers/toshiba/P-VQFN48-0707-0.50-004
+family: qfn
+lead_count: 48
+source: toshiba/TB67S249FTG-datasheet-en
+
+pitch: { typ: 0.5 mm, src: 'p28 "Package dimensions P-VQFN48-0707-0.50-004, pitch 0.5"' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:  { typ: 7 mm, src: 'p28 "P-VQFN48-0707-0.50-004, body 7.0"' }
+  body_length: { typ: 7 mm, src: 'p28 "P-VQFN48-0707-0.50-004, body 7.0"' }
+  body_height: { max: 1 mm, src: 'p28 "P-VQFN48-0707-0.50-004, side view 1.0MAX"' }
+  exposed_pad:
+    src:    p28 "P-VQFN48-0707-0.50-004, bottom view, exposed pad 5.5TYP x 5.5TYP"
+    width:  { typ: 5.5 mm }
+    length: { typ: 5.5 mm }
+  standoff:    { max: 0.05 mm, src: 'p28 "P-VQFN48-0707-0.50-004, side view 0.05MAX"' }
+  lead_width:
+    min: 0.2 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p28 "P-VQFN48-0707-0.50-004, terminal width 0.25±0.05"
+  lead_length:
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p28 "P-VQFN48-0707-0.50-004, terminal length 0.4±0.1"

@@ -1,0 +1,63 @@
+# DRV8876 H-bridge brushed-DC motor driver with current sense and
+# regulation, RGT pin map. Pin Functions table, RGT column (SLVSDS7B
+# page 3), cross-checked with the "DRV8876 RGT Package 16-Pin VQFN Top View" figure (same
+# page). CPH/CPL/VCP (charge-pump terminals, "PWR") typed passive;
+# nFAULT open-drain -> output; IPROPI (analog current output) analog;
+# VREF analog. PMODE/IMODE are tri-/quad-level inputs (input). The
+# table's "PAD" row (no number, "Connect to system ground") -> pin "EP"
+# named PAD, passive. rds_on is the printed "High-Side + Low-Side"
+# feature value (page 1).
+schema_version: "0.2"
+kind: device
+id: ti/DRV8876-RGT
+manufacturer: ti
+category: motor_driver
+family: DRV8876
+source: ti/SLVSDS7B
+
+# Parameters (AI candidates, needs review).
+parameters:
+  rds_on: { typ: 700 mΩ, src: 'p1 "1 Features, DRV8876: 700-mΩ (High-Side + Low-Side)"' }
+  supply_current:
+    typ: 3 mA
+    max: 7 mA
+    at: { VM: 24 V }
+    src: p5 "6.5 Electrical Characteristics, IVM VM active mode current"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA"
+  esd_hbm:       { typ: 2 kV, src: 'p4 "6.2 ESD Ratings, HBM ±2000 V"' }
+  channel_count: { value: "1", src: 'p3 "Pin Functions, one H-bridge (OUT1, OUT2)"' }
+  motor_type:
+    value: brushed_dc
+    src: p1 "1 Features, Drives one bidirectional brushed DC motor"
+  motor_supply_voltage:
+    min: 4.5 V
+    max: 37 V
+    src: p4 "6.3 Recommended Operating Conditions, VVM"
+  output_current_peak:
+    max: 3.5 A
+    src: p4 "6.3 Recommended Operating Conditions, IOUT peak output current"
+
+pins:
+  src:
+    - p3 "Pin Functions, RGT column"
+    - p3 "DRV8876 RGT Package 16-Pin VQFN Top View (cross-check)"
+  "1":  { name: nSLEEP, type: input }
+  "2":  { name: nFAULT, type: output }
+  "3":  { name: VREF, type: analog }
+  "4":  { name: IPROPI, type: analog }
+  "5":  { name: IMODE, type: input }
+  "6":  { name: OUT1, type: output }
+  "7":  { name: PGND, type: ground }
+  "8":  { name: OUT2, type: output }
+  "9":  { name: VM, type: power }
+  "10": { name: VCP, type: passive }
+  "11": { name: CPH, type: passive }
+  "12": { name: CPL, type: passive }
+  "13": { name: GND, type: ground }
+  "14": { name: PMODE, type: input }
+  "15": { name: EN/IN1, type: input }
+  "16": { name: PH/IN2, type: input }
+  EP:   { name: PAD, type: passive }

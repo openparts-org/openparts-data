@@ -1,0 +1,21 @@
+# LP5024RSMR: SLVSEB8C PACKAGE OPTION ADDENDUM (page 48) row "LP5024RSMR Active Production
+# VQFN (RSM) | 32" -- MPN printed verbatim in TI's orderable list (existence
+# verified); lifecycle "Active" is TI's own Status column.
+# Package: outline RSM0032B (page 53).
+schema_version: "0.2"
+kind: part
+id: ti/LP5024RSMR
+manufacturer: ti
+mpn: LP5024RSMR
+device: ti/LP5024-RSM
+package: { value: manufacturers/ti/RSM0032B, src: p53 "PACKAGE OUTLINE RSM0032B (4219108/B)" }
+sources: [ti/SLVSEB8C]
+source: ti/SLVSEB8C
+
+existence:
+  status: verified
+  src: p48 "PACKAGE OPTION ADDENDUM, row "LP5024RSMR" (VQFN (RSM) | 32)"
+
+lifecycle:
+  status: active
+  src: p48 "PACKAGE OPTION ADDENDUM, row "LP5024RSMR", Status "Active""

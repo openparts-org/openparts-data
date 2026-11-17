@@ -1,0 +1,48 @@
+# DRV8835 dual low-voltage H-bridge, DSS (12-pin WSON) pin map. Pin
+# Functions table (SLVSB18H page 4), cross-checked with the "DSS Package
+# 12-Pin WSON With Exposed Thermal Pad Top View" figure (same page). The
+# table row "GND, Thermal pad | 6" -> pin 6 and the thermal pad (EP)
+# both GND, ground. VM (motor supply) and VCC (device supply) power.
+# data_interface left out: MODE selects IN/IN or PHASE/ENABLE.
+# operating_temperature left out: recommended conditions and
+# electrical characteristics are stated at TA = 25 °C only.
+schema_version: "0.2"
+kind: device
+id: ti/DRV8835
+manufacturer: ti
+category: motor_driver
+family: DRV8835
+source: ti/SLVSB18H
+
+# Parameters (AI candidates, needs review).
+parameters:
+  rds_on: { typ: 305 mΩ, src: 'p1 "1 Features, Low-MOSFET ON-Resistance: HS + LS 305 mΩ"' }
+  output_current:
+    max: 1.5 A
+    src: p5 "6.3 Recommended Operating Conditions, IOUT H-bridge output current"
+  supply_voltage: { min: 2 V, max: 7 V, src: 'p5 "6.3 Recommended Operating Conditions, VCC"' }
+  esd_hbm:       { typ: 2 kV, src: 'p5 "6.2 ESD Ratings, HBM ±2000 V"' }
+  channel_count: { value: "2", src: 'p1 "1 Features, Dual-H-Bridge Motor Driver"' }
+  motor_type:
+    value: brushed_dc_or_stepper
+    src: p1 "1 Features, Capable of Driving Two DC Motors or One Stepper Motor"
+  motor_supply_voltage:
+    min: 0 V
+    max: 11 V
+    src: p5 "6.3 Recommended Operating Conditions, VM"
+
+pins:
+  src:  [p4 "Pin Functions", p4 "DSS Package 12-Pin WSON Top View (cross-check)"]
+  "1":  { name: VM, type: power }
+  "2":  { name: AOUT1, type: output }
+  "3":  { name: AOUT2, type: output }
+  "4":  { name: BOUT1, type: output }
+  "5":  { name: BOUT2, type: output }
+  "6":  { name: GND, type: ground }
+  "7":  { name: BIN2/BENBL, type: input }
+  "8":  { name: BIN1/BPHASE, type: input }
+  "9":  { name: AIN2/AENBL, type: input }
+  "10": { name: AIN1/APHASE, type: input }
+  "11": { name: MODE, type: input }
+  "12": { name: VCC, type: power }
+  EP:   { name: GND, type: ground }

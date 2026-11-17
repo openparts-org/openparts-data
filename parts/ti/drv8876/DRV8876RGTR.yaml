@@ -1,0 +1,21 @@
+# DRV8876RGTR: SLVSDS7B PACKAGE OPTION ADDENDUM (page 36) row "DRV8876RGTR Active Production
+# VQFN (RGT) | 16" -- MPN printed verbatim in TI's orderable list (existence
+# verified); lifecycle "Active" is TI's own Status column.
+# Package: outline RGT0016C (page 41).
+schema_version: "0.2"
+kind: part
+id: ti/DRV8876RGTR
+manufacturer: ti
+mpn: DRV8876RGTR
+device: ti/DRV8876-RGT
+package: { value: manufacturers/ti/RGT0016C, src: p41 "PACKAGE OUTLINE RGT0016C (4222419/E)" }
+sources: [ti/SLVSDS7B]
+source: ti/SLVSDS7B
+
+existence:
+  status: verified
+  src: p36 "PACKAGE OPTION ADDENDUM, row "DRV8876RGTR" (VQFN (RGT) | 16)"
+
+lifecycle:
+  status: active
+  src: p36 "PACKAGE OPTION ADDENDUM, row "DRV8876RGTR", Status "Active""

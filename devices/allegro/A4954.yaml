@@ -1,0 +1,58 @@
+# A4954 dual full-bridge DMOS PWM motor driver, LP (16-pin TSSOP with
+# exposed thermal pad). Pin map from the "Terminal List Table"
+# (A4954-DS Rev. 8, page 3), cross-checked with the pinout figure on the
+# same page (its caption reads "Package LJ, 8-Pin SOIC Pinouts" but it
+# draws the 16-pin LP pinout). GND is pins 1 and 8, VBB pins 9 and 16.
+# LSS12/LSS34 (power return - sense resistor connection) typed passive;
+# VREF12/VREF34 analog. The PAD row ("Exposed pad for enhanced thermal
+# dissipation", no number) -> pin "EP" named PAD, passive.
+schema_version: "0.2"
+kind: device
+id: allegro/A4954
+manufacturer: allegro
+category: motor_driver
+family: A4954
+source: allegro/A4954-DS@rev8
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: pwm, src: 'p1 "DESCRIPTION, externally applied PWM control signals"' }
+  rds_on:
+    typ: 0.8 Ω
+    max: 1.12 Ω
+    at: { IOUT: 1.5 A, TJ: 25 °C }
+    src: p4 "ELECTRICAL CHARACTERISTICS, RDS(on) Sink + Source Total"
+  supply_current:
+    typ: 10 mA
+    src: p4 "ELECTRICAL CHARACTERISTICS, Load Supply Current IBB, fPWM < 30 kHz"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p2 "SELECTION GUIDE, A4954ELPTR-T, Ambient Operating Temperature"
+  channel_count:       { value: "2", src: 'p1 "Title, Dual Full-Bridge DMOS PWM Motor Driver"' }
+  motor_type: { value: brushed_dc, src: 'p1 "DESCRIPTION, PWM control of two DC motors"' }
+  motor_supply_voltage:
+    min: 8 V
+    max: 40 V
+    src: p4 "ELECTRICAL CHARACTERISTICS, Load Supply Voltage Range VBB"
+  output_current_peak: { max: 2 A, src: 'p1 "DESCRIPTION, peak output currents to ±2 A"' }
+
+pins:
+  src:  [p3 "Terminal List Table", 'p3 "Pinout figure (16-pin LP, cross-check)"']
+  "1":  { name: GND, type: ground }
+  "2":  { name: VREF34, type: analog }
+  "3":  { name: IN3, type: input }
+  "4":  { name: IN4, type: input }
+  "5":  { name: IN2, type: input }
+  "6":  { name: IN1, type: input }
+  "7":  { name: VREF12, type: analog }
+  "8":  { name: GND, type: ground }
+  "9":  { name: VBB, type: power }
+  "10": { name: OUT1, type: output }
+  "11": { name: LSS12, type: passive }
+  "12": { name: OUT2, type: output }
+  "13": { name: OUT3, type: output }
+  "14": { name: LSS34, type: passive }
+  "15": { name: OUT4, type: output }
+  "16": { name: VBB, type: power }
+  EP:   { name: PAD, type: passive }

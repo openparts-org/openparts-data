@@ -1,0 +1,21 @@
+# TPS61169DCKR: SNVSA40B PACKAGE OPTION ADDENDUM (page 18) row "TPS61169DCKR Active Production
+# SC70 (DCK) | 5" -- MPN printed verbatim in TI's orderable list (existence
+# verified); lifecycle "Active" is TI's own Status column.
+# Package: outline DCK0005A (page 21).
+schema_version: "0.2"
+kind: part
+id: ti/TPS61169DCKR
+manufacturer: ti
+mpn: TPS61169DCKR
+device: ti/TPS61169
+package: { value: manufacturers/ti/DCK0005A, src: p21 "PACKAGE OUTLINE DCK0005A (4214834/G)" }
+sources: [ti/SNVSA40B]
+source: ti/SNVSA40B
+
+existence:
+  status: verified
+  src: p18 "PACKAGE OPTION ADDENDUM, row "TPS61169DCKR" (SC70 (DCK) | 5)"
+
+lifecycle:
+  status: active
+  src: p18 "PACKAGE OPTION ADDENDUM, row "TPS61169DCKR", Status "Active""

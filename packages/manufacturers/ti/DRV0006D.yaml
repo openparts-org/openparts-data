@@ -1,0 +1,43 @@
+# TI DRV0006D "WSON - 0.8 mm max height" (6 terminals, 2x2 mm, 0.65 mm
+# pitch, exposed thermal pad 7; drawing 4225563/A 12/2019), read from
+# the rendered PACKAGE OUTLINE page of SLVS790E (PDF page 29).
+# Millimetres as printed. Body "2.1 / 1.9" both ways (no nominal);
+# side view "0.8 / 0.7" (no A2, recorded as body_height). Bottom view:
+# "6X 0.35 / 0.25" terminal width (b), "6X 0.3 / 0.2" terminal length
+# (L); thermal pad "1±0.1" across, "1.6±0.1" along the rows. Bottom view
+# numbers 1-3 up the left, 4-6 down the right; seen from the top: pin 1
+# top-left, down the left, up the right. Left out: side-wall metal
+# "(0.2) TYP", "2X 1.3" row span. No land pattern recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DRV0006D
+family: son
+lead_count: 6
+source: ti/SLVS790E
+
+pitch: { typ: 0.65 mm, src: 'p29 "DRV0006D outline (4225563/A), bottom view, basic "4X 0.65""' }
+geometry: { type: parametric, generator: son }
+
+dimensions:
+  body_width:
+    min: 1.9 mm
+    max: 2.1 mm
+    src: p29 "DRV0006D outline, top view "2.1 / 1.9" (across the rows)"
+  body_length:
+    min: 1.9 mm
+    max: 2.1 mm
+    src: p29 "DRV0006D outline, top view "2.1 / 1.9" (along the rows)"
+  body_height: { min: 0.7 mm, max: 0.8 mm, src: 'p29 "DRV0006D outline, side view "0.8 / 0.7""' }
+  exposed_pad:
+    src:    p29 "DRV0006D outline, bottom view, thermal pad "1±0.1" x "1.6±0.1""
+    width:  { min: 0.9 mm, typ: 1 mm, max: 1.1 mm }
+    length: { min: 1.5 mm, typ: 1.6 mm, max: 1.7 mm }
+  standoff:    { min: 0 mm, max: 0.05 mm, src: 'p29 "DRV0006D outline, side view "0.05 / 0.00""' }
+  lead_width:
+    min: 0.25 mm
+    max: 0.35 mm
+    src: p29 "DRV0006D outline, bottom view "6X 0.35 / 0.25""
+  lead_length:
+    min: 0.2 mm
+    max: 0.3 mm
+    src: p29 "DRV0006D outline, bottom view "6X 0.3 / 0.2""

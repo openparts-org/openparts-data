@@ -1,0 +1,36 @@
+# TI PWP0028C "PowerPAD TSSOP - 1.2 mm max height" (28-lead, 0.65 mm pitch, exposed thermal pad;
+# drawing 4223582/A 03/2017, JEDEC MO-153 per its notes), read from the PACKAGE
+# OUTLINE page of SLVSA73F (PDF page 30). Millimetres as printed; min/max
+# only, no nominal. Only "1.2 MAX" is given (no A2): overall_height
+# only. Lead thickness only as "(0.15) TYP" (reference value). Thermal
+# pad (bottom view): "3.1 / 2.4" across the rows (width), "5.18 / 4.48"
+# along the rows (length). Pins 1-14 down the left edge, the
+# rest up the right edge (top view). No land pattern recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/PWP0028C
+family: tssop
+lead_count: 28
+source: ti/SLVSA73F
+
+pitch: { typ: 0.65 mm, src: 'p30 "PWP0028C (4223582/A 03/2017), "26X 0.65" (basic)"' }
+geometry: { type: parametric, generator: tssop }
+
+dimensions:
+  body_width: { min: 4.3 mm, max: 4.5 mm, src: 'p30 "PWP0028C, body width "4.5 / 4.3" (datum B)"' }
+  body_length:
+    min: 9.6 mm
+    max: 9.8 mm
+    src: p30 "PWP0028C, body length "9.8 / 9.6 NOTE 3" (datum A)"
+  lead_thickness:
+    typ: 0.15 mm
+    src: p30 "PWP0028C, "(0.15) TYP" -- reference value per note 1"
+  exposed_pad:
+    src:    p30 "PWP0028C thermal pad "3.1 / 2.4" across, "5.18 / 4.48" along the rows"
+    width:  { min: 2.4 mm, max: 3.1 mm }
+    length: { min: 4.48 mm, max: 5.18 mm }
+  overall_width:  { min: 6.2 mm, max: 6.6 mm, src: 'p30 "PWP0028C, lead-tip span "6.6 TYP / 6.2""' }
+  overall_height: { max: 1.2 mm, src: 'p30 "PWP0028C DETAIL A, "1.2 MAX""' }
+  standoff:       { min: 0.05 mm, max: 0.15 mm, src: 'p30 "PWP0028C DETAIL A, "0.15 / 0.05""' }
+  lead_width:     { min: 0.19 mm, max: 0.3 mm, src: 'p30 "PWP0028C, "28X 0.30 / 0.19""' }
+  lead_length:    { min: 0.5 mm, max: 0.75 mm, src: 'p30 "PWP0028C DETAIL A, "0.75 / 0.50""' }

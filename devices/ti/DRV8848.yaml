@@ -1,0 +1,65 @@
+# DRV8848 dual H-bridge motor driver (PWM interface), PWP (16-pin
+# HTSSOP PowerPAD) pin map. Pin Functions table (SLLSEL7B page 3),
+# cross-checked with "Figure 4-1. PWP Package 16-Pin HTSSOP Top View"
+# (same page). GND is pin 13 and the PowerPAD ("Both the GND pin and
+# device PowerPAD ... must be connected to ground") -> EP named GND,
+# ground. nFAULT open-drain -> output; VINT (internal regulator bypass)
+# power_out; VREF (full-scale current reference input) analog;
+# AISEN/BISEN (winding sense, resistor to GND) passive.
+schema_version: "0.2"
+kind: device
+id: ti/DRV8848
+manufacturer: ti
+category: motor_driver
+family: DRV8848
+source: ti/SLLSEL7B
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: pwm, src: 'p1 "1 Features, PWM Control Interface"' }
+  rds_on:
+    typ: 900 mΩ
+    at: { TA: 25 °C }
+    src: p1 "1 Features, HS + LS = 900mΩ (Typical, 25°C)"
+  output_current:
+    max: 2 A
+    at: { VM: 12 V, TA: 25 °C }
+    src: p1 "1 Features, 2A Maximum Driver Current at 12V and TA = 25°C (per H-bridge)"
+  supply_current:
+    min: 1.2 mA
+    typ: 1.35 mA
+    max: 1.5 mA
+    src: p5 "5.5 Electrical Characteristics, IVM VM operating supply current"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "5.3 Recommended Operating Conditions, TA"
+  esd_hbm:        { typ: 4 kV, src: 'p4 "5.2 ESD Ratings, HBM all pins ±4000 V"' }
+  channel_count:  { value: "2", src: 'p1 "1 Features, Dual H-Bridge Motor Driver"' }
+  motor_type:
+    value: brushed_dc_or_stepper
+    src: p1 "1 Features, Single/Dual Brushed DC, Stepper"
+  motor_supply_voltage:
+    min: 4 V
+    max: 18 V
+    src: p4 "5.3 Recommended Operating Conditions, VVM"
+
+pins:
+  src:  [p3 "Pin Functions", p3 "Figure 4-1. PWP Package 16-Pin HTSSOP Top View (cross-check)"]
+  "1":  { name: nSLEEP, type: input }
+  "2":  { name: AOUT1, type: output }
+  "3":  { name: AISEN, type: passive }
+  "4":  { name: AOUT2, type: output }
+  "5":  { name: BOUT2, type: output }
+  "6":  { name: BISEN, type: passive }
+  "7":  { name: BOUT1, type: output }
+  "8":  { name: nFAULT, type: output }
+  "9":  { name: BIN1, type: input }
+  "10": { name: BIN2, type: input }
+  "11": { name: VREF, type: analog }
+  "12": { name: VM, type: power }
+  "13": { name: GND, type: ground }
+  "14": { name: VINT, type: power_out }
+  "15": { name: AIN2, type: input }
+  "16": { name: AIN1, type: input }
+  EP:   { name: GND, type: ground }

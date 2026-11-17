@@ -1,0 +1,43 @@
+# TB67H451FNG PWM chopper type brushed DC motor driver, HSOP8. Pin map
+# from "Pin Description" (page 4) and "Pin Assignment" (page 2, top
+# view). RS (motor output current sense pin) typed passive; VREF
+# (output current setting) analog. As for the TB67H450FNG, the
+# datasheet does not state what the package's exposed pad connects to,
+# so it is no device pin here.
+schema_version: "0.2"
+kind: device
+id: toshiba/TB67H451FNG
+manufacturer: toshiba
+category: motor_driver
+family: TB67H451FNG
+source: toshiba/TB67H451FNG-datasheet-en
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: pwm
+    src: p7 "controlled by constant current PWM, but also by direct PWM; with IN control signals"
+  rds_on:
+    typ: 0.6 Ω
+    max: 0.8 Ω
+    at: { VM: 24 V, IOUT: 1.5 A, TJ: 25 °C }
+    src: p12 "Electrical Characteristics 1, Ron(H+L) (high side + low side)"
+  output_current: { typ: 1.5 A, max: 3 A, src: 'p11 "Operating Range, motor output current Iout"' }
+  operating_temperature: { min: -40 °C, max: 85 °C, src: p11 "Operating Range (Ta = -40 to 85°C)" }
+  channel_count:         { value: "1", src: p1 "One channel of motor output block is embedded" }
+  motor_type:            { value: brushed_dc, src: p1 "PWM Chopper Type DC Brushed Motor Driver" }
+  motor_supply_voltage:
+    min: 4.5 V
+    max: 44 V
+    src: p11 "Operating Range, motor power supply voltage VM"
+
+pins:
+  src: ['p4 "Pin Description, pin No. 1 to 8"', p2 "Pin Assignment (Top View) (cross-check)"]
+  "1": { name: GND, type: ground }
+  "2": { name: IN2, type: input }
+  "3": { name: IN1, type: input }
+  "4": { name: VREF, type: analog }
+  "5": { name: VM, type: power }
+  "6": { name: OUT1, type: output }
+  "7": { name: RS, type: passive }
+  "8": { name: OUT2, type: output }

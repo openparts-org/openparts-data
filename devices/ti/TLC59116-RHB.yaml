@@ -1,0 +1,73 @@
+# TLC59116 16-channel Fm+ I2C-bus constant-current LED sink driver, RHB
+# (32-pin VQFN) pin map. Pin Functions table, "RHB NO." column (SLDS157E
+# pages 4-5), cross-checked with the "RHB PACKAGE (TOP VIEW)" figure
+# (page 4). NC = 12, 13, 28, 29. The figure note "If used, the exposed
+# thermal pad must be connected as a secondary ground" -> pin "EP"
+# named GND, ground. REXT (external current-set resistor) typed analog;
+# RESET active-low reset. The PW (TSSOP-28) variant has another pin map
+# and no outline in this datasheet, so it is not covered.
+schema_version: "0.2"
+kind: device
+id: ti/TLC59116-RHB
+manufacturer: ti
+category: led_driver
+family: TLC59116
+source: ti/SLDS157E
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: i2c
+    src: p1 "Title, 16-Channel FM+ I2C-Bus Constant-Current LED Sink Driver"
+  output_current:
+    min: 5 mA
+    max: 120 mA
+    src: p6 "7.3 Recommended Operating Conditions, IO output current per channel OUT0 to OUT15"
+  supply_voltage: { min: 3 V, max: 5.5 V, src: 'p6 "7.3 Recommended Operating Conditions, VCC"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p6 "7.3 Recommended Operating Conditions, TA"
+  esd_hbm: { typ: 1.5 kV, src: 'p6 "7.2 Handling Ratings, HBM all pins 1500 V"' }
+  channel_count: { value: "16", src: 'p1 "1 Features, 16 Constant-Current Output Channels"' }
+  led_driver_type:
+    value: constant_current
+    src: p1 "1 Features, 16 Constant-Current Output Channels"
+
+pins:
+  src:
+    - p4 "Pin Functions, RHB NO. column (continued on p5)"
+    - p4 "RHB PACKAGE (TOP VIEW), exposed thermal pad note"
+  "1":  { name: A2, type: input }
+  "2":  { name: A3, type: input }
+  "3":  { name: OUT0, type: output }
+  "4":  { name: OUT1, type: output }
+  "5":  { name: OUT2, type: output }
+  "6":  { name: OUT3, type: output }
+  "7":  { name: GND, type: ground }
+  "8":  { name: OUT4, type: output }
+  "9":  { name: OUT5, type: output }
+  "10": { name: OUT6, type: output }
+  "11": { name: OUT7, type: output }
+  "12": { name: NC, type: nc }
+  "13": { name: NC, type: nc }
+  "14": { name: OUT8, type: output }
+  "15": { name: OUT9, type: output }
+  "16": { name: OUT10, type: output }
+  "17": { name: OUT11, type: output }
+  "18": { name: GND, type: ground }
+  "19": { name: OUT12, type: output }
+  "20": { name: OUT13, type: output }
+  "21": { name: OUT14, type: output }
+  "22": { name: OUT15, type: output }
+  "23": { name: GND, type: ground }
+  "24": { name: RESET, type: reset }
+  "25": { name: SCL, type: input }
+  "26": { name: SDA, type: io }
+  "27": { name: VCC, type: power }
+  "28": { name: NC, type: nc }
+  "29": { name: NC, type: nc }
+  "30": { name: REXT, type: analog }
+  "31": { name: A0, type: input }
+  "32": { name: A1, type: input }
+  EP:   { name: GND, type: ground }

@@ -1,0 +1,21 @@
+# DRV8834RGER: SLVSB19D PACKAGE OPTION ADDENDUM (page 33) row "DRV8834RGER Active Production
+# VQFN (RGE) | 24" -- MPN printed verbatim in TI's orderable list (existence
+# verified); lifecycle "Active" is TI's own Status column.
+# Package: outline RGE0024B (page 42).
+schema_version: "0.2"
+kind: part
+id: ti/DRV8834RGER
+manufacturer: ti
+mpn: DRV8834RGER
+device: ti/DRV8834-RGE
+package: { value: manufacturers/ti/RGE0024B, src: p42 "PACKAGE OUTLINE RGE0024B (4219013/A)" }
+sources: [ti/SLVSB19D]
+source: ti/SLVSB19D
+
+existence:
+  status: verified
+  src: p33 "PACKAGE OPTION ADDENDUM, row "DRV8834RGER" (VQFN (RGE) | 24)"
+
+lifecycle:
+  status: active
+  src: p33 "PACKAGE OPTION ADDENDUM, row "DRV8834RGER", Status "Active""

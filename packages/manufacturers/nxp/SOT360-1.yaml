@@ -1,0 +1,53 @@
+# NXP SOT360-1, TSSOP20 ("plastic thin shrink small outline package; 20
+# leads; body width 4.4 mm"). Values from Fig 23 "Package outline
+# SOT360-1 (TSSOP20)" of the PCA9634 data sheet Rev. 7.1, page 31 (mm
+# row, text extracted). body_width = E, body_length = D, overall_width
+# = HE, body_height = A2, overall_height = A (max only), standoff = A1,
+# lead_width = bp, lead_thickness = c, lead_length = Lp (L is the
+# reference lead length, not modelled). Only min/max are printed, so no
+# typ is recorded. A3, Q, v, w, y, Z and the foot angle are not
+# modelled. No land pattern is recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/nxp/SOT360-1
+family: tssop
+lead_count: 20
+source: nxp/PCA9634@rev7.1
+
+pitch: { typ: 0.65 mm, src: 'p31 "Fig 23 SOT360-1 DIMENSIONS (mm), e 0.65"' }
+geometry: { type: parametric, generator: tssop }
+
+dimensions:
+  body_width:
+    min: 4.3 mm
+    max: 4.5 mm
+    src: p31 "Fig 23 SOT360-1 DIMENSIONS (mm), E 4.5 / 4.3"
+  body_length:
+    min: 6.4 mm
+    max: 6.6 mm
+    src: p31 "Fig 23 SOT360-1 DIMENSIONS (mm), D 6.6 / 6.4"
+  body_height:
+    min: 0.8 mm
+    max: 0.95 mm
+    src: p31 "Fig 23 SOT360-1 DIMENSIONS (mm), A2 0.95 / 0.80"
+  lead_thickness:
+    min: 0.1 mm
+    max: 0.2 mm
+    src: p31 "Fig 23 SOT360-1 DIMENSIONS (mm), c 0.2 / 0.1"
+  overall_width:
+    min: 6.2 mm
+    max: 6.6 mm
+    src: p31 "Fig 23 SOT360-1 DIMENSIONS (mm), HE 6.6 / 6.2"
+  overall_height: { max: 1.1 mm, src: 'p31 "Fig 23 SOT360-1 DIMENSIONS (mm), A max. 1.1"' }
+  standoff:
+    min: 0.05 mm
+    max: 0.15 mm
+    src: p31 "Fig 23 SOT360-1 DIMENSIONS (mm), A1 0.15 / 0.05"
+  lead_width:
+    min: 0.19 mm
+    max: 0.3 mm
+    src: p31 "Fig 23 SOT360-1 DIMENSIONS (mm), bp 0.30 / 0.19"
+  lead_length:
+    min: 0.5 mm
+    max: 0.75 mm
+    src: p31 "Fig 23 SOT360-1 DIMENSIONS (mm), Lp 0.75 / 0.50"

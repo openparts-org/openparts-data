@@ -1,0 +1,21 @@
+# DRV8825PWPR: SLVSA73F PACKAGE OPTION ADDENDUM (page 25) row "DRV8825PWPR Active Production
+# HTSSOP (PWP) | 28" -- MPN printed verbatim in TI's orderable list (existence
+# verified); lifecycle "Active" is TI's own Status column.
+# Package: outline PWP0028C (page 30).
+schema_version: "0.2"
+kind: part
+id: ti/DRV8825PWPR
+manufacturer: ti
+mpn: DRV8825PWPR
+device: ti/DRV8825
+package: { value: manufacturers/ti/PWP0028C, src: p30 "PACKAGE OUTLINE PWP0028C (4223582/A)" }
+sources: [ti/SLVSA73F]
+source: ti/SLVSA73F
+
+existence:
+  status: verified
+  src: p25 "PACKAGE OPTION ADDENDUM, row "DRV8825PWPR" (HTSSOP (PWP) | 28)"
+
+lifecycle:
+  status: active
+  src: p25 "PACKAGE OPTION ADDENDUM, row "DRV8825PWPR", Status "Active""

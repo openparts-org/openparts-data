@@ -1,0 +1,27 @@
+# A4950KLJTR-T: printed in the Selection Guide (page 2) -> existence verified.
+# Package: LJ, 8-Pin SOICN with exposed thermal pad (page 8). Lifecycle unknown: the datasheet states no
+# production status.
+# operating_temperature: the Selection Guide's ambient range for this
+# part number.
+schema_version: "0.2"
+kind: part
+id: allegro/A4950KLJTR-T
+manufacturer: allegro
+mpn: A4950KLJTR-T
+device: allegro/A4950
+
+package:
+  value: manufacturers/allegro/LJ-SOIC8-DWG-0000380
+  src: p8 "Package LJ, 8-Pin SOICN with exposed thermal pad"
+
+sources: [allegro/A4950-DS@rev7]
+source: allegro/A4950-DS@rev7
+
+existence: { status: verified, src: 'p2 "Selection Guide, Part Number A4950KLJTR-T"' }
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p2 "Selection Guide, A4950KLJTR-T, Ambient Operating Temperature"

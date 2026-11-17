@@ -1,0 +1,74 @@
+# TLC5947 24-channel 12-bit PWM constant-current LED driver, DAP (32-pin
+# HTSSOP PowerPAD) pin map. Pin Functions table, "DAP NO." column
+# (SBVS114B pages 3-4), cross-checked with the "32-PINS DAP PACKAGE (TOP
+# VIEW)" figure (page 3). IREF (I/O, external current-set resistor to
+# GND) typed analog; SOUT serial data output. The figure shows "Thermal
+# Pad (Bottom Side)" without a pin-table row -> pin "EP" named PAD,
+# passive. The RHB (VQFN) variant has another pin map and is marked
+# "product preview" in the pin figure, so it is not covered.
+# data_interface clock_data: SIN/SCLK/XLAT serial shift-register input.
+schema_version: "0.2"
+kind: device
+id: ti/TLC5947-DAP
+manufacturer: ti
+category: led_driver
+family: TLC5947
+source: ti/SBVS114B
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: clock_data
+    src: p4 "Pin Functions, SIN serial input, SCLK serial data shift clock"
+  output_current:
+    min: 2 mA
+    max: 30 mA
+    src: p5 "6.3 Recommended Operating Conditions, IOLC constant output sink current OUT0 to OUT23"
+  supply_voltage: { min: 3 V, max: 5.5 V, src: 'p5 "6.3 Recommended Operating Conditions, VCC"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p5 "6.3 Recommended Operating Conditions, TA"
+  esd_hbm:       { typ: 2.5 kV, src: 'p4 "6.2 ESD Ratings, HBM all pins ±2500 V"' }
+  channel_count: { value: "24", src: 'p1 "1 Features, 24 Channels"' }
+  led_driver_type:
+    value: constant_current
+    src: p1 "1 Features, 24 Channels, Constant-Current Sink Output"
+
+pins:
+  src:
+    - p3 "Pin Functions, DAP NO. column (continued on p4)"
+    - p3 "32-PINS DAP PACKAGE (TOP VIEW), Thermal Pad (Bottom Side)"
+  "1":  { name: GND, type: ground }
+  "2":  { name: BLANK, type: input }
+  "3":  { name: SCLK, type: input }
+  "4":  { name: SIN, type: input }
+  "5":  { name: OUT0, type: output }
+  "6":  { name: OUT1, type: output }
+  "7":  { name: OUT2, type: output }
+  "8":  { name: OUT3, type: output }
+  "9":  { name: OUT4, type: output }
+  "10": { name: OUT5, type: output }
+  "11": { name: OUT6, type: output }
+  "12": { name: OUT7, type: output }
+  "13": { name: OUT8, type: output }
+  "14": { name: OUT9, type: output }
+  "15": { name: OUT10, type: output }
+  "16": { name: OUT11, type: output }
+  "17": { name: OUT12, type: output }
+  "18": { name: OUT13, type: output }
+  "19": { name: OUT14, type: output }
+  "20": { name: OUT15, type: output }
+  "21": { name: OUT16, type: output }
+  "22": { name: OUT17, type: output }
+  "23": { name: OUT18, type: output }
+  "24": { name: OUT19, type: output }
+  "25": { name: OUT20, type: output }
+  "26": { name: OUT21, type: output }
+  "27": { name: OUT22, type: output }
+  "28": { name: OUT23, type: output }
+  "29": { name: SOUT, type: output }
+  "30": { name: XLAT, type: input }
+  "31": { name: IREF, type: analog }
+  "32": { name: VCC, type: power }
+  EP:   { name: PAD, type: passive }

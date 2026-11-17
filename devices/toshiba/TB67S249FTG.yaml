@@ -1,0 +1,102 @@
+# TB67S249FTG clock-in controlled bipolar stepping motor driver, QFN48
+# (P-VQFN48-0707-0.50-004). Pin map from "Table 4.1 Pin Function
+# Description" (page 3), cross-checked with "Figure 3.1 Pin
+# Assignments" (page 2, top view). GND is pins 8, 29, 30; the figure
+# note "Please solder the corner pad and the rear thermal pad ... to the
+# GND pattern of the PCB" -> pin "EP" named GND, ground (the four corner
+# pads are not modelled). RSAGND/RSBGND (motor power ground) ground;
+# VCC (internal regulator monitor) power_out; VREFA/VREFB analog; OSCM
+# (oscillator monitor / setting) passive; MO, LO1, LO2 (open-drain flag
+# outputs) output; AGC/CLIM/FLIM/BOOST/LTH/DMODE setup pins input.
+# The paired motor outputs (13-14 OUTA+, 17-18 OUTA-, 19-20 OUTB-,
+# 23-24 OUTB+) share names; the datasheet says to connect same-name
+# pins together but not that they are internally connected, so (as for
+# the TB6612FNG) they are typed power so the duplicate names are
+# allowed -- flagged for review.
+schema_version: "0.2"
+kind: device
+id: toshiba/TB67S249FTG
+manufacturer: toshiba
+category: motor_driver
+family: TB67S249FTG
+source: toshiba/TB67S249FTG-datasheet-en
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: step_dir
+    src: p3 "Table 4.1, CLK step clock input, CW/CCW current direction"
+  rds_on:
+    typ: 0.33 Ω
+    max: 0.45 Ω
+    at: { VM: 24 V, TJ: 25 °C }
+    src: p24 "Table 10.4 Electrical Characteristics 1, Ron (H+L)"
+  output_current:       { typ: 2.25 A, max: 4.5 A, src: 'p23 "Table 9.3 Operating Ranges, IOUT"' }
+  supply_current:
+    min: 4 mA
+    typ: 6 mA
+    max: 8 mA
+    at: { VM: 24 V }
+    src: p24 "Table 10.4, IM3 (OUT open, ENABLE High, standby released)"
+  operating_temperature:
+    min: -20 °C
+    max: 85 °C
+    src: p23 "9. Operation ranges (Ta = -20 to 85°C)"
+  channel_count:        { value: "2", src: 'p3 "Table 4.1, Ach / Bch motor outputs"' }
+  motor_type: { value: stepper, src: p1 "Clock-in control Bipolar stepping motor driver" }
+  motor_supply_voltage: { min: 10 V, max: 47 V, src: 'p23 "Table 9.3 Operating Ranges, VM"' }
+  microstepping: { value: "32", src: 'p1 "2. Features, Full ... 1/16, 1/32 step resolution"' }
+
+pins:
+  src:
+    - p3 "Table 4.1 Pin Function Description"
+    - p2 "Figure 3.1 Pin Assignments (cross-check, thermal pad note)"
+  "1":  { name: AGC0, type: input }
+  "2":  { name: AGC1, type: input }
+  "3":  { name: CLIM0, type: input }
+  "4":  { name: CLIM1, type: input }
+  "5":  { name: FLIM, type: input }
+  "6":  { name: BOOST, type: input }
+  "7":  { name: LTH, type: input }
+  "8":  { name: GND, type: ground }
+  "9":  { name: NC, type: nc }
+  "10": { name: VMA, type: power }
+  "11": { name: VMA, type: power }
+  "12": { name: NC, type: nc }
+  "13": { name: OUTA+, type: power }
+  "14": { name: OUTA+, type: power }
+  "15": { name: RSAGND, type: ground }
+  "16": { name: RSAGND, type: ground }
+  "17": { name: OUTA-, type: power }
+  "18": { name: OUTA-, type: power }
+  "19": { name: OUTB-, type: power }
+  "20": { name: OUTB-, type: power }
+  "21": { name: RSBGND, type: ground }
+  "22": { name: RSBGND, type: ground }
+  "23": { name: OUTB+, type: power }
+  "24": { name: OUTB+, type: power }
+  "25": { name: NC, type: nc }
+  "26": { name: VMB, type: power }
+  "27": { name: VMB, type: power }
+  "28": { name: NC, type: nc }
+  "29": { name: GND, type: ground }
+  "30": { name: GND, type: ground }
+  "31": { name: VREFB, type: analog }
+  "32": { name: VREFA, type: analog }
+  "33": { name: VCC, type: power_out }
+  "34": { name: VCC, type: power_out }
+  "35": { name: OSCM, type: passive }
+  "36": { name: NC, type: nc }
+  "37": { name: NC, type: nc }
+  "38": { name: NC, type: nc }
+  "39": { name: DMODE0, type: input }
+  "40": { name: DMODE1, type: input }
+  "41": { name: DMODE2, type: input }
+  "42": { name: CW/CCW, type: input }
+  "43": { name: CLK, type: input }
+  "44": { name: ENABLE, type: input }
+  "45": { name: RESET, type: input }
+  "46": { name: MO, type: output }
+  "47": { name: LO1, type: output }
+  "48": { name: LO2, type: output }
+  EP:   { name: GND, type: ground }

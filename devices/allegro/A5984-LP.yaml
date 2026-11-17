@@ -1,0 +1,79 @@
+# A5984 DMOS microstepping driver with translator, LP (24-pin TSSOP with
+# exposed thermal pad) pin map. "Terminal List Table", LP column
+# (5984-DS Rev. 4, page 5). ENABLE, RESET and SLEEP are printed with an
+# overbar (active low) -- named here with an "n" prefix. GND is pins 13
+# and 24. CP1/CP2/VCP (charge pump) passive; REF analog; ROSC (timing
+# set) passive; SENSE1/SENSE2 (sense resistor terminals) passive;
+# nFAULT output. The PAD row (no number; footnote: the GND pins must be
+# tied together externally by connecting to the PAD ground plane) ->
+# pin "EP" named PAD, passive. The ES (24-QFN) and ET (32-QFN) variants
+# have other pin maps and are not covered.
+schema_version: "0.2"
+kind: device
+id: allegro/A5984-LP
+manufacturer: allegro
+category: motor_driver
+family: A5984
+source: allegro/A5984-DS@rev4
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: step_dir
+    src: p1 "DESCRIPTION, one pulse on the STEP input drives the motor one microstep"
+  rds_on:
+    typ: 640 mΩ
+    max: 860 mΩ
+    at: { IOUT: 2 A, TA: 25 °C }
+    src: p6 "ELECTRICAL CHARACTERISTICS, Output On Resistance RDS(on), Source + Sink Driver"
+  supply_current:
+    typ: 7.5 mA
+    max: 10 mA
+    at: { VM: 40 V }
+    src: p6 "ELECTRICAL CHARACTERISTICS, Motor Supply Current IBB, fPWM < 50 kHz"
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Operating Ambient Temperature, Range G"
+  channel_count: { value: "2", src: 'p4 "Functional Block Diagram, two DMOS Full Bridges"' }
+  motor_type:
+    value: stepper
+    src: p1 "DESCRIPTION, designed to operate bipolar stepper motors"
+  motor_supply_voltage:
+    min: 8 V
+    max: 40 V
+    src: p6 "ELECTRICAL CHARACTERISTICS, Load Supply Voltage Range VBB, Operating"
+  output_current_peak:
+    max: 2 A
+    src: p1 "DESCRIPTION, output drive capacity of up to 40 V and ±2 A"
+  microstepping:
+    value: "32"
+    src: p1 "FEATURES, Microstepping up to 32 microsteps per full step"
+
+pins:
+  src:  p5 "Terminal List Table, LP column"
+  "1":  { name: CP1, type: passive }
+  "2":  { name: CP2, type: passive }
+  "3":  { name: VCP, type: passive }
+  "4":  { name: nFAULT, type: output }
+  "5":  { name: MS1, type: input }
+  "6":  { name: MS2, type: input }
+  "7":  { name: nRESET, type: input }
+  "8":  { name: ROSC, type: passive }
+  "9":  { name: nSLEEP, type: input }
+  "10": { name: MS3, type: input }
+  "11": { name: STEP, type: input }
+  "12": { name: REF, type: analog }
+  "13": { name: GND, type: ground }
+  "14": { name: DIR, type: input }
+  "15": { name: OUT1B, type: output }
+  "16": { name: VBB1, type: power }
+  "17": { name: SENSE1, type: passive }
+  "18": { name: OUT1A, type: output }
+  "19": { name: OUT2A, type: output }
+  "20": { name: SENSE2, type: passive }
+  "21": { name: VBB2, type: power }
+  "22": { name: OUT2B, type: output }
+  "23": { name: nENABLE, type: input }
+  "24": { name: GND, type: ground }
+  EP:   { name: PAD, type: passive }

@@ -1,0 +1,79 @@
+# LP5024 24-channel 12-bit PWM I2C RGB LED driver, LP5024RSM pin map. Table 5-1
+# "Pin Functions", column "LP5024RSM" (SLVSEB8C pages 5-6), cross-checked with
+# "Figure 5-2. LP5024 RSM Package 32-Pin VQFN Top View" (page 4/5). The
+# GND row says "Exposed thermal pad also serves the ground pin" -> pin
+# "EP" named GND, ground.
+# ADDR0/ADDR1 (address selection, must not float) input; IREF (output
+# current reference setting) analog; VCAP (internal LDO output,
+# capacitor to GND) power_out; EN enable input.
+schema_version: "0.2"
+kind: device
+id: ti/LP5024-RSM
+manufacturer: ti
+category: led_driver
+family: LP50xx
+source: ti/SLVSEB8C
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: 'p1 "Title, I2C RGB LED Drivers"' }
+  output_current:
+    max: 25.5 mA
+    src: p1 "1 Features, 25.5mA maximum per channel with VCC in full range"
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p7 "6.3 Recommended Operating Conditions, Input voltage on VCC"
+  supply_current:
+    typ: 5 mA
+    max: 8 mA
+    src: p8 "6.5 Electrical Characteristics, IVCC normal-mode supply current, 10-mA LED current per OUTx"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p7 "6.3 Recommended Operating Conditions, TA"
+  esd_hbm:        { typ: 4 kV, src: 'p7 "6.2 ESD Ratings, HBM ±4000 V"' }
+  channel_count:
+    value: "24"
+    src: 'p1 "Title, 18-, 24-Channel ... RGB LED Drivers (LP5024: 24)"'
+  led_driver_type:
+    value: constant_current
+    src: p1 "1 Features, constant-current sinks with high precision"
+
+pins:
+  src:
+    - p5 "Table 5-1. Pin Functions, LP5024RSM column (continued on p6)"
+    - p4 "Figure 5-2. LP5024 RSM Package 32-Pin VQFN Top View (cross-check)"
+  "1":  { name: OUT0, type: output }
+  "2":  { name: OUT1, type: output }
+  "3":  { name: OUT2, type: output }
+  "4":  { name: OUT3, type: output }
+  "5":  { name: OUT4, type: output }
+  "6":  { name: OUT5, type: output }
+  "7":  { name: OUT6, type: output }
+  "8":  { name: OUT7, type: output }
+  "9":  { name: OUT8, type: output }
+  "10": { name: OUT9, type: output }
+  "11": { name: OUT10, type: output }
+  "12": { name: OUT11, type: output }
+  "13": { name: OUT12, type: output }
+  "14": { name: OUT13, type: output }
+  "15": { name: OUT14, type: output }
+  "16": { name: OUT15, type: output }
+  "17": { name: OUT16, type: output }
+  "18": { name: OUT17, type: output }
+  "19": { name: OUT18, type: output }
+  "20": { name: OUT19, type: output }
+  "21": { name: OUT20, type: output }
+  "22": { name: OUT21, type: output }
+  "23": { name: OUT22, type: output }
+  "24": { name: OUT23, type: output }
+  "25": { name: ADDR0, type: input }
+  "26": { name: ADDR1, type: input }
+  "27": { name: VCC, type: power }
+  "28": { name: SDA, type: io }
+  "29": { name: SCL, type: input }
+  "30": { name: EN, type: input }
+  "31": { name: IREF, type: analog }
+  "32": { name: VCAP, type: power_out }
+  EP:   { name: GND, type: ground }

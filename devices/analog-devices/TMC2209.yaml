@@ -1,0 +1,95 @@
+# TMC2209 two-phase stepper motor driver (Trinamic, now Analog Devices),
+# QFN28. Pin map from "2.2 Signal Descriptions TMC2209" (Rev. 1.09,
+# pages 9-10), cross-checked with "Figure 2.1 TMC2209 Pinning Top View"
+# (page 9). GND is pins 3 and 18, VS pins 22 and 28. Pin 25 ("-",
+# "unused, may be connected to GND") typed nc and named NC. The exposed
+# die pad row ("Connect ... to a GND plane ... Serves as GND pin for
+# power drivers and analogue circuitry"; figure "Pad=GND") -> pin "EP"
+# named GND, ground. CPO/CPI/VCP (charge pump) passive; 5VOUT (internal
+# regulator output) power_out; VCC_IO (IO supply) power; VREF (AI)
+# analog; BRA/BRB (sense resistor connections) passive; PDN_UART (DIO)
+# io; DIAG/INDEX (DO) output. rds_on = RONL 0.170 + RONH 0.170 Ω typ
+# (max 0.21 + 0.21), arithmetic between printed rows.
+schema_version: "0.2"
+kind: device
+id: analog-devices/TMC2209
+manufacturer: analog-devices
+category: motor_driver
+family: TMC2209
+source: analog-devices/TMC2209-DS@rev1.09
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: step_dir
+    src: p1 "STEP/DIR Interface with 8, 16, 32 or 64 microstep pin setting"
+  rds_on:
+    typ: 0.34 Ω
+    max: 0.42 Ω
+    at: { VM: 24 V, IOUT: 200 mA }
+    src: p76 "20.2 Motor driver section, RONL + RONH (0.170 + 0.170, max 0.21 + 0.21), 25°C"
+  output_current:
+    max: 1.4 A
+    src: p75 "20.1 Operational Range, IRMS RMS motor coil current per coil"
+  supply_voltage:
+    min: 3 V
+    max: 5.25 V
+    src: p75 "20.1 Operational Range, VVIO I/O supply voltage"
+  supply_current:
+    typ: 7 mA
+    max: 10 mA
+    at: { VM: 24 V }
+    src: p76 "20.2 Power supply current, IS total supply current, driver disabled, fCLK=12MHz"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p84 "22.2 Package Codes, TMC2209-LA temperature range"
+  esd_hbm:
+    typ: 2 kV
+    src: p75 "19 Absolute Maximum Ratings, ESD-Protection for handling (HBM)"
+  channel_count: { value: "2", src: 'p1 "Two-Phase Bipolar Stepper Motors (coil A, coil B)"' }
+  motor_type: { value: stepper, src: p1 "Step/Dir Drivers for Two-Phase Bipolar Stepper Motors" }
+  motor_supply_voltage:
+    min: 5.5 V
+    max: 29 V
+    src: p75 "20.1 Operational Range, VVS supply voltage (using internal +5V regulator)"
+  output_current_peak:
+    max: 2.8 A
+    src: p75 "20.1 Operational Range, IOx peak output current per motor coil output"
+  microstepping:
+    value: "256"
+    src: p1 "Smooth Running 256 microsteps by MicroPlyer interpolation"
+
+pins:
+  src:
+    - p9 "2.2 Signal Descriptions TMC2209 (continued on p10)"
+    - p9 "Figure 2.1 TMC2209 Pinning Top View (cross-check)"
+  "1":  { name: OB2, type: output }
+  "2":  { name: ENN, type: input }
+  "3":  { name: GND, type: ground }
+  "4":  { name: CPO, type: passive }
+  "5":  { name: CPI, type: passive }
+  "6":  { name: VCP, type: passive }
+  "7":  { name: SPREAD, type: input }
+  "8":  { name: 5VOUT, type: power_out }
+  "9":  { name: MS1_AD0, type: input }
+  "10": { name: MS2_AD1, type: input }
+  "11": { name: DIAG, type: output }
+  "12": { name: INDEX, type: output }
+  "13": { name: CLK, type: input }
+  "14": { name: PDN_UART, type: io }
+  "15": { name: VCC_IO, type: power }
+  "16": { name: STEP, type: input }
+  "17": { name: VREF, type: analog }
+  "18": { name: GND, type: ground }
+  "19": { name: DIR, type: input }
+  "20": { name: STDBY, type: input }
+  "21": { name: OA2, type: output }
+  "22": { name: VS, type: power }
+  "23": { name: BRA, type: passive }
+  "24": { name: OA1, type: output }
+  "25": { name: NC, type: nc }
+  "26": { name: OB1, type: output }
+  "27": { name: BRB, type: passive }
+  "28": { name: VS, type: power }
+  EP:   { name: GND, type: ground }

@@ -1,0 +1,32 @@
+# TPS61169 38-V boost WLED driver with PWM control, DCK (5-pin SC70) pin
+# map. Table 4-1 "Pin Functions" (SNVSA40B page 3), cross-checked with
+# "Figure 4-1. DCK Package 5-Pin SC70 (Top View)" (same page). SW (drain
+# of the internal power FET, switching node) typed passive; FB (current
+# feedback, sense resistor to GND) analog; GND ("O" in the table)
+# ground. operating_temperature left out: no ambient range in the
+# recommended operating conditions.
+schema_version: "0.2"
+kind: device
+id: ti/TPS61169
+manufacturer: ti
+category: led_driver
+family: TPS61169
+source: ti/SNVSA40B
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:  { value: pwm, src: 'p1 "1 Features, PWM brightness control"' }
+  supply_voltage:  { min: 2.7 V, max: 5.5 V, src: 'p4 "5.3 Recommended Operating Conditions, VIN"' }
+  esd_hbm:         { typ: 2 kV, src: 'p4 "5.2 ESD Ratings, HBM ±2000 V"' }
+  channel_count:   { value: "1", src: 'p1 "1 Features, Drives LED string up to 38V"' }
+  led_driver_type: { value: switching, src: 'p1 "Title, 38V High Current-Boost WLED Driver"' }
+
+pins:
+  src:
+    - p3 "Table 4-1. Pin Functions"
+    - p3 "Figure 4-1. DCK Package 5-Pin SC70 (Top View) (cross-check)"
+  "1": { name: SW, type: passive }
+  "2": { name: GND, type: ground }
+  "3": { name: FB, type: analog }
+  "4": { name: CTRL, type: input }
+  "5": { name: VIN, type: power }

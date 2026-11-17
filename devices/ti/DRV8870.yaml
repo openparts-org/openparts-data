@@ -1,0 +1,51 @@
+# DRV8870 brushed-DC motor driver (H-bridge, PWM control), DDA (8-pin
+# HSOP / SO PowerPAD) pin map. Pin Functions table (SLVSCY8B page 3);
+# cross-checked with the "DDA Package 8-Pin HSOP Top View" figure (page
+# 3). GND (logic ground, "PWR") typed ground; ISEN (high-current ground
+# path / sense resistor) typed passive; VREF analog input. The table's
+# "PAD" row (thermal pad, no number) says "Connect to board ground" -- a
+# connection instruction -> pin "EP" named PAD, type passive.
+# rds_on is the printed "HS + LS" feature value (page 1).
+schema_version: "0.2"
+kind: device
+id: ti/DRV8870
+manufacturer: ti
+category: motor_driver
+family: DRV8870
+source: ti/SLVSCY8B
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:      { value: pwm, src: 'p1 "1 Features, PWM Control Interface"' }
+  rds_on:              { typ: 565 mΩ, src: 'p1 "1 Features, 565-mΩ Typical RDS(on) (HS + LS)"' }
+  supply_current:
+    typ: 3 mA
+    max: 10 mA
+    at: { VM: 12 V }
+    src: p5 "6.5 Electrical Characteristics, IVM"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA"
+  esd_hbm:             { typ: 6 kV, src: 'p4 "6.2 ESD Ratings, HBM ±6000 V"' }
+  channel_count:       { value: "1", src: 'p1 "1 Features, H-Bridge Motor Driver"' }
+  motor_type: { value: brushed_dc, src: 'p1 "Title: 3.6-A Brushed DC Motor Driver (PWM Control)"' }
+  motor_supply_voltage:
+    min: 6.5 V
+    max: 45 V
+    src: p4 "6.3 Recommended Operating Conditions, VM"
+  output_current_peak: { max: 3.6 A, src: 'p4 "6.3 Recommended Operating Conditions, Ipeak"' }
+
+pins:
+  src:
+    - p3 "Pin Functions (GND 1 ... OUT2 8, PAD -)"
+    - p3 "DDA Package 8-Pin HSOP Top View (cross-check)"
+  "1": { name: GND, type: ground }
+  "2": { name: IN2, type: input }
+  "3": { name: IN1, type: input }
+  "4": { name: VREF, type: analog }
+  "5": { name: VM, type: power }
+  "6": { name: OUT1, type: output }
+  "7": { name: ISEN, type: passive }
+  "8": { name: OUT2, type: output }
+  EP:  { name: PAD, type: passive }

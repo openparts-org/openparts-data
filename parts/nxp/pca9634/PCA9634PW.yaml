@@ -1,0 +1,21 @@
+# MPN "PCA9634PW" (NXP type number) confirmed in Table 1 Ordering information of
+# nxp/PCA9634@rev7.1 (page 3). Device nxp/PCA9634, package manufacturers/nxp/SOT360-1.
+# lifecycle: not stated in the data sheet; recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCA9634PW
+manufacturer: nxp
+mpn: PCA9634PW
+device: nxp/PCA9634
+
+package:
+  value: manufacturers/nxp/SOT360-1
+  src:
+    - p3 "Table 1 Ordering information, row PCA9634PW, TSSOP20 (SOT360-1)"
+    - p31 "Fig 23 Package outline SOT360-1 (TSSOP20)"
+
+sources: [nxp/PCA9634@rev7.1]
+source: nxp/PCA9634@rev7.1
+
+existence: { status: verified, src: 'p3 "Table 1 Ordering information, type number PCA9634PW"' }
+lifecycle: { status: unknown }

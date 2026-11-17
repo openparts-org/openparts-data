@@ -1,0 +1,21 @@
+# DRV8835DSSR: SLVSB18H PACKAGE OPTION ADDENDUM (page 18) row "DRV8835DSSR Active Production
+# WSON (DSS) | 12" -- MPN printed verbatim in TI's orderable list (existence
+# verified); lifecycle "Active" is TI's own Status column.
+# Package: outline DSS0012A (page 22).
+schema_version: "0.2"
+kind: part
+id: ti/DRV8835DSSR
+manufacturer: ti
+mpn: DRV8835DSSR
+device: ti/DRV8835
+package: { value: manufacturers/ti/DSS0012A, src: p22 "PACKAGE OUTLINE DSS0012A (4222684/A)" }
+sources: [ti/SLVSB18H]
+source: ti/SLVSB18H
+
+existence:
+  status: verified
+  src: p18 "PACKAGE OPTION ADDENDUM, row "DRV8835DSSR" (WSON (DSS) | 12)"
+
+lifecycle:
+  status: active
+  src: p18 "PACKAGE OPTION ADDENDUM, row "DRV8835DSSR", Status "Active""

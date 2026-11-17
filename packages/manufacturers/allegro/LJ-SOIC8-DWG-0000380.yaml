@@ -1,0 +1,36 @@
+# Allegro LJ package, 8-pin SOICN with exposed thermal pad (reference
+# Allegro DWG-0000380 Rev. 2 and JEDEC MS-012BA), read from the rendered
+# drawing on page 8 of A4950-DS Rev. 7. Millimetres, "For Reference
+# Only".
+#
+# Body "3.90 ±0.10" across the rows -> body_width; "4.90 ±0.10" along
+# them -> body_length; lead tips "6.00 ±0.20" -> overall_width; "1.73
+# MAX" -> overall_height; standoff "0.15 / 0.00"; lead width "0.51 /
+# 0.31"; lead thickness "0.25 / 0.17"; foot "1.27 / 0.40" ->
+# lead_length; pitch "1.27 BSC". Exposed pad "2.41 NOM" across the rows,
+# "3.30 NOM" along them -> typ only. Pins 1-4 along one long edge, 5-8
+# back along the other (SOIC order). The PCB Layout Reference View is
+# not recorded as pads.
+schema_version: "0.2"
+kind: package
+id: manufacturers/allegro/LJ-SOIC8-DWG-0000380
+family: soic
+lead_count: 8
+source: allegro/A4950-DS@rev7
+
+pitch: { typ: 1.27 mm, src: 'p8 "Package LJ, "1.27 BSC""' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:     { min: 3.8 mm, typ: 3.9 mm, max: 4 mm, src: 'p8 "Package LJ, "3.90 ±0.10""' }
+  body_length:    { min: 4.8 mm, typ: 4.9 mm, max: 5 mm, src: 'p8 "Package LJ, "4.90 ±0.10""' }
+  lead_thickness: { min: 0.17 mm, max: 0.25 mm, src: 'p8 "Package LJ, "0.25 / 0.17""' }
+  exposed_pad:
+    src:    p8 "Package LJ, exposed pad "2.41 NOM" x "3.30 NOM""
+    width:  { typ: 2.41 mm }
+    length: { typ: 3.3 mm }
+  overall_width:  { min: 5.8 mm, typ: 6 mm, max: 6.2 mm, src: 'p8 "Package LJ, "6.00 ±0.20""' }
+  overall_height: { max: 1.73 mm, src: 'p8 "Package LJ, "1.73 MAX""' }
+  standoff:       { min: 0 mm, max: 0.15 mm, src: 'p8 "Package LJ, "0.15 / 0.00""' }
+  lead_width:     { min: 0.31 mm, max: 0.51 mm, src: 'p8 "Package LJ, "0.51 / 0.31""' }
+  lead_length:    { min: 0.4 mm, max: 1.27 mm, src: 'p8 "Package LJ, "1.27 / 0.40""' }

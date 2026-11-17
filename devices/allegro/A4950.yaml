@@ -1,0 +1,46 @@
+# A4950 full-bridge DMOS PWM motor driver, LJ (8-pin SOICN with exposed
+# thermal pad). Pin map from the "Terminal List Table" (A4950-DS Rev.
+# 7, page 2), cross-checked with the "Pinout Diagram" (same page). LSS
+# (power return - sense resistor connection) typed passive; VREF analog.
+# The PAD row ("Exposed pad for enhanced thermal dissipation", no
+# number) -> pin "EP" named PAD, passive. operating_temperature is per
+# temperature grade (E / K) and recorded on the Parts.
+schema_version: "0.2"
+kind: device
+id: allegro/A4950
+manufacturer: allegro
+category: motor_driver
+family: A4950
+source: allegro/A4950-DS@rev7
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: pwm, src: 'p1 "DESCRIPTION, externally applied PWM control signals"' }
+  rds_on:
+    typ: 0.6 Ω
+    max: 0.8 Ω
+    at: { IOUT: 2.5 A, TJ: 25 °C }
+    src: p3 "ELECTRICAL CHARACTERISTICS, RDS(on) Sink + Source Total"
+  supply_current:
+    typ: 10 mA
+    max: 20 mA
+    src: p3 "ELECTRICAL CHARACTERISTICS, Load Supply Current IBB, fPWM < 30 kHz"
+  channel_count:       { value: "1", src: 'p1 "Title, Full-Bridge DMOS PWM Motor Driver"' }
+  motor_type:          { value: brushed_dc, src: 'p1 "DESCRIPTION, PWM control of DC motors"' }
+  motor_supply_voltage:
+    min: 8 V
+    max: 40 V
+    src: p3 "ELECTRICAL CHARACTERISTICS, Load Supply Voltage Range VBB"
+  output_current_peak: { max: 3.5 A, src: 'p1 "DESCRIPTION, peak output currents to ±3.5 A"' }
+
+pins:
+  src: [p2 "Terminal List Table", p2 "Pinout Diagram (cross-check)"]
+  "1": { name: GND, type: ground }
+  "2": { name: IN2, type: input }
+  "3": { name: IN1, type: input }
+  "4": { name: VREF, type: analog }
+  "5": { name: VBB, type: power }
+  "6": { name: OUT1, type: output }
+  "7": { name: LSS, type: passive }
+  "8": { name: OUT2, type: output }
+  EP:  { name: PAD, type: passive }

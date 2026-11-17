@@ -1,0 +1,21 @@
+# TPS61165DRVR: SLVS790E PACKAGE OPTION ADDENDUM (page 24) row "TPS61165DRVR Active Production
+# WSON (DRV) | 6" -- MPN printed verbatim in TI's orderable list (existence
+# verified); lifecycle "Active" is TI's own Status column.
+# Package: outline DRV0006D (page 29).
+schema_version: "0.2"
+kind: part
+id: ti/TPS61165DRVR
+manufacturer: ti
+mpn: TPS61165DRVR
+device: ti/TPS61165-DRV
+package: { value: manufacturers/ti/DRV0006D, src: p29 "PACKAGE OUTLINE DRV0006D (4225563/A)" }
+sources: [ti/SLVS790E]
+source: ti/SLVS790E
+
+existence:
+  status: verified
+  src: p24 "PACKAGE OPTION ADDENDUM, row "TPS61165DRVR" (WSON (DRV) | 6)"
+
+lifecycle:
+  status: active
+  src: p24 "PACKAGE OPTION ADDENDUM, row "TPS61165DRVR", Status "Active""

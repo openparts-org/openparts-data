@@ -1,0 +1,21 @@
+# MPN "PCA9955BTW" (NXP type number) confirmed in Table 1 Ordering information of
+# nxp/PCA9955B@rev2.3 (page 5). Device nxp/PCA9955B, package manufacturers/nxp/SOT1172-3.
+# lifecycle: not stated in the data sheet; recorded as unknown.
+schema_version: "0.2"
+kind: part
+id: nxp/PCA9955BTW
+manufacturer: nxp
+mpn: PCA9955BTW
+device: nxp/PCA9955B
+
+package:
+  value: manufacturers/nxp/SOT1172-3
+  src:
+    - p5 "Table 1 Ordering information, row PCA9955BTW, HTSSOP28 (SOT1172-3)"
+    - p52 "Figure 29 Package outline SOT1172-3 (HTSSOP28)"
+
+sources: [nxp/PCA9955B@rev2.3]
+source: nxp/PCA9955B@rev2.3
+
+existence: { status: verified, src: 'p5 "Table 1 Ordering information, type number PCA9955BTW"' }
+lifecycle: { status: unknown }

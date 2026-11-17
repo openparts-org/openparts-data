@@ -1,0 +1,41 @@
+# PCA9632 4-bit Fm+ I2C-bus low power LED driver, TSSOP8 / HVSON8
+# numbering: Table 3 "Pin description for TSSOP8 and HVSON8" (page 5),
+# cross-checked against Figure 2 "Pin configuration for TSSOP8" (same
+# page). Only the 8-pin TSSOP8 part (no exposed pad) is covered; the
+# TSSOP10 (DP2) variant has address pins and another numbering.
+schema_version: "0.2"
+kind: device
+id: nxp/PCA9632
+manufacturer: nxp
+category: led_driver
+family: PCA9632
+source: nxp/PCA9632@rev6
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: 'p1 "Title, 4-bit Fm+ I2C-bus low power LED driver"' }
+  output_current:
+    max: 25 mA
+    at: { VDD: 5 V }
+    src: p1 "1 General description, 25 mA current sink capability at 5 V"
+  supply_voltage: { min: 2.3 V, max: 5.5 V, src: 'p24 "Table 19 Static characteristics, VDD"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p24 "Table 19 Static characteristics, Tamb = -40 °C to +85 °C"
+  esd_hbm: { typ: 5 kV, src: 'p2 "2 Features, ESD protection exceeds 5000 V HBM per JESD22-A114"' }
+  channel_count:  { value: "4", src: 'p5 "Table 3 Pin description, LED0-LED3"' }
+  led_driver_type:
+    value: pwm
+    src: p1 "1 General description, Individual PWM controller per LED output"
+
+pins:
+  src: p5 "Table 3 Pin description for TSSOP8 and HVSON8; Figure 2 Pin configuration for TSSOP8"
+  "1": { name: LED0, type: output }
+  "2": { name: LED1, type: output }
+  "3": { name: LED2, type: output }
+  "4": { name: LED3, type: output }
+  "5": { name: VSS, type: ground }
+  "6": { name: SCL, type: input }
+  "7": { name: SDA, type: io }
+  "8": { name: VDD, type: power }

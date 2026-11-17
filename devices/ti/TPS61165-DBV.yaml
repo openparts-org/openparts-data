@@ -1,0 +1,44 @@
+# TPS61165 high-brightness white LED boost driver, DBV pin map. Pin
+# Functions table, "SOT-23 NO." column (SLVS790E page 3), cross-checked
+# with the "DBV Package 6-Pin SOT-23 Top View" figure (same page). SW (switching node, inductor)
+# typed passive; FB (current feedback) and COMP (error-amplifier
+# compensation) analog; GND ("O" in the table) ground; CTRL
+# (enable / PWM / one-wire digital dimming) input. data_interface left
+# out: CTRL accepts PWM or one-wire digital dimming.
+schema_version: "0.2"
+kind: device
+id: ti/TPS61165-DBV
+manufacturer: ti
+category: led_driver
+family: TPS61165
+source: ti/SLVS790E
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 18 V
+    src: p4 "7.2 Recommended Operating Conditions, VI input voltage range"
+  supply_current:
+    max: 2.3 mA
+    at: { VIN: 3.6 V }
+    src: p5 "7.4 Electrical Characteristics, IQ operating quiescent current, PWM switching no load"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "7.2 Recommended Operating Conditions, TA"
+  channel_count: { value: "1", src: 'p1 "3 Description, LEDs in series (one string)"' }
+  led_driver_type:
+    value: switching
+    src: p1 "Title, High-Brightness, White LED Driver (boost converter)"
+
+pins:
+  src:
+    - p3 "Pin Functions, SOT-23 NO. column"
+    - p3 "DBV Package 6-Pin SOT-23 Top View (cross-check)"
+  "1": { name: VIN, type: power }
+  "2": { name: CTRL, type: input }
+  "3": { name: SW, type: passive }
+  "4": { name: GND, type: ground }
+  "5": { name: COMP, type: analog }
+  "6": { name: FB, type: analog }

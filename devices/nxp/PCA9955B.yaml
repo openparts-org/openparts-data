@@ -1,0 +1,60 @@
+# PCA9955B 16-channel Fm+ I2C-bus 57 mA constant current LED driver,
+# HTSSOP28 numbering: Table 3 "Pin description" (pages 7-8),
+# cross-checked against Figure 2 "Pin configuration for HTSSOP28" (page
+# 7). VSS is pins 10, 19 and 24; the figure note "Thermal pad;
+# connected to VSS" -> pin "EP" named VSS, ground. REXT (current-set
+# resistor input) typed analog; RESET active-low reset.
+schema_version: "0.2"
+kind: device
+id: nxp/PCA9955B
+manufacturer: nxp
+category: led_driver
+family: PCA9955B
+source: nxp/PCA9955B@rev2.3
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: 'p1 "Title, Fm+ I2C-bus"' }
+  output_current: { max: 57 mA, src: 'p1 "Title, 57 mA constant current LED driver"' }
+  supply_voltage: { min: 3 V, max: 5.5 V, src: 'p47 "Table 33 Static characteristics, VDD"' }
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p47 "Table 33 Static characteristics, Tamb = -40 °C to +105 °C"
+  esd_hbm: { typ: 4 kV, src: 'p3 "2 Features, ESD protection exceeds 4000 V HBM per JESD22-A114"' }
+  channel_count:  { value: "16", src: 'p1 "Title, 16-channel"' }
+  led_driver_type:
+    value: constant_current
+    src: p1 "Title, 16-channel Fm+ I2C-bus 57 mA constant current LED driver"
+
+pins:
+  src:  p7 "Table 3 Pin description (pages 7-8); Figure 2 Pin configuration for HTSSOP28"
+  "1":  { name: REXT, type: analog }
+  "2":  { name: AD0, type: input }
+  "3":  { name: AD1, type: input }
+  "4":  { name: AD2, type: input }
+  "5":  { name: OE, type: input }
+  "6":  { name: LED0, type: output }
+  "7":  { name: LED1, type: output }
+  "8":  { name: LED2, type: output }
+  "9":  { name: LED3, type: output }
+  "10": { name: VSS, type: ground }
+  "11": { name: LED4, type: output }
+  "12": { name: LED5, type: output }
+  "13": { name: LED6, type: output }
+  "14": { name: LED7, type: output }
+  "15": { name: LED8, type: output }
+  "16": { name: LED9, type: output }
+  "17": { name: LED10, type: output }
+  "18": { name: LED11, type: output }
+  "19": { name: VSS, type: ground }
+  "20": { name: LED12, type: output }
+  "21": { name: LED13, type: output }
+  "22": { name: LED14, type: output }
+  "23": { name: LED15, type: output }
+  "24": { name: VSS, type: ground }
+  "25": { name: RESET, type: reset }
+  "26": { name: SCL, type: input }
+  "27": { name: SDA, type: io }
+  "28": { name: VDD, type: power }
+  EP:   { name: VSS, type: ground }

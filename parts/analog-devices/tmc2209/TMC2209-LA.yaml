@@ -1,0 +1,19 @@
+# TMC2209-LA: listed under "ORDER CODES" (TMC2209 datasheet Rev. 1.09, page 2)
+# -> existence verified. Package QFN28 5x5 mm (22.1, pages 83-84).
+# Lifecycle unknown: the datasheet states no production status.
+schema_version: "0.2"
+kind: part
+id: analog-devices/TMC2209-LA
+manufacturer: analog-devices
+mpn: TMC2209-LA
+device: analog-devices/TMC2209
+
+package:
+  value: manufacturers/analog-devices/QFN28-5x5-TMC2209
+  src: p83 "22.1 Dimensional Drawings QFN28"
+
+sources: [analog-devices/TMC2209-DS@rev1.09]
+source: analog-devices/TMC2209-DS@rev1.09
+
+existence: { status: verified, src: 'p2 "ORDER CODES, TMC2209-LA"' }
+lifecycle: { status: unknown }
