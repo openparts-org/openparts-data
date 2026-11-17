@@ -16,13 +16,12 @@ source: bourns/MF-USMF@revU
 existence: { status: verified, src: 'p1 "Electrical Characteristics, MF-USMF110 row"' }
 lifecycle: { status: unknown }
 
-# Parameters (AI candidates, needs review): PTC resettable fuse. The datasheet
-# has no 'rated current/voltage' column; rated_current is the hold current
-# Ihold at 23 °C and rated_voltage the maximum voltage Vmax (same mapping
-# as bourns/MF-MSMF050; reviewer: confirm it for PPTC devices).
+# Parameters (AI candidates, needs review): PTC resettable fuse:
+# the datasheet's hold current Ihold is hold_current and its maximum
+# voltage Vmax max_voltage (the PPTC keys, Canonical Data 11.1).
 parameters:
-  rated_voltage: { max: 6 V, src: 'p1 "Electrical Characteristics, MF-USMF110 row, Vmax"' }
-  rated_current:
+  hold_current:
     typ: 1.1 A
     at: { TA: 23 °C }
     src: p1 "Electrical Characteristics, MF-USMF110 row, Ihold at 23 °C"
+  max_voltage: { max: 6 V, src: 'p1 "Electrical Characteristics, MF-USMF110 row, Vmax"' }

@@ -14,14 +14,14 @@ source: littelfuse/1206L@2011-05-15
 existence: { status: verified }
 lifecycle: { status: active }
 
-# Parameters (AI candidates, needs review), read from Littelfuse's own
-# datasheet hosted by Digi-Key (littelfuse/1206L@2011-05-15). PTC
-# resettable fuse: rated_current is the hold current I hold and
-# rated_voltage the maximum voltage V max (reviewer: confirm this mapping
-# for PPTC devices).
+# Parameters (AI candidates, needs review): PTC resettable fuse,
+# read from Littelfuse's own datasheet hosted by Digi-Key
+# (littelfuse/1206L@2011-05-15); the datasheet's hold current Ihold is
+# hold_current and its maximum voltage Vmax max_voltage (the PPTC keys,
+# Canonical Data 11.1).
 parameters:
-  rated_voltage: { max: 6 V, src: 'p1 "Electrical Characteristics, 1206L050 row, V max"' }
-  rated_current:
+  hold_current:
     typ: 0.5 A
     at: { TA: 20 °C }
     src: p1 "Electrical Characteristics, 1206L050 row, I hold (still air)"
+  max_voltage: { max: 6 V, src: 'p1 "Electrical Characteristics, 1206L050 row, V max"' }
