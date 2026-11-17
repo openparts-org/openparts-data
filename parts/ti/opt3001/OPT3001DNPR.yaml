@@ -1,0 +1,25 @@
+# OPT3001DNPR: orderable part number printed in the PACKAGE OPTION
+# ADDENDUM of SBOS681C (page 37, addendum dated 29-Jul-2026), USON (DNP)
+# | 6; lifecycle "active" from the same row's Status column. Package:
+# outline DNP0006A (4221434/C) on page 41.
+schema_version: "0.2"
+kind: part
+id: ti/OPT3001DNPR
+manufacturer: ti
+mpn: OPT3001DNPR
+device: ti/OPT3001
+
+package:
+  value: manufacturers/ti/DNP0006A
+  src:
+    - p37 "PACKAGE OPTION ADDENDUM, row OPT3001DNPR, USON (DNP) | 6"
+    - p41 "PACKAGE OUTLINE DNP0006A (4221434/C)"
+
+sources: [ti/SBOS681C]
+source: ti/SBOS681C
+
+existence:
+  status: verified
+  src: p37 "PACKAGE OPTION ADDENDUM, Packaging Information table, row OPT3001DNPR"
+
+lifecycle: { status: active, src: 'p37 "PACKAGE OPTION ADDENDUM, row OPT3001DNPR, Status Active"' }

@@ -1,0 +1,22 @@
+# TLV320AIC3204IRHBT: SLOS602E package option addendum (page 47) row "TLV320AIC3204IRHBT Active
+# Production VQFN (RHB) | 32" -- MPN printed verbatim (existence
+# verified); lifecycle "Active" is TI's Status column. RHB = outline
+# RHB0032E 4223442/B 08/2019 (page 52), the drawing recorded in
+# manufacturers/ti/RHB0032E.
+schema_version: "0.2"
+kind: part
+id: ti/TLV320AIC3204IRHBT
+manufacturer: ti
+mpn: TLV320AIC3204IRHBT
+device: ti/TLV320AIC3204
+package: { value: manufacturers/ti/RHB0032E, src: p52 "PACKAGE OUTLINE RHB0032E 4223442/B 08/2019" }
+sources: [ti/SLOS602E]
+source: ti/SLOS602E
+
+existence:
+  status: verified
+  src: p47 "Package option addendum, row TLV320AIC3204IRHBT, VQFN (RHB) | 32"
+
+lifecycle:
+  status: active
+  src: p47 "Package option addendum, row TLV320AIC3204IRHBT, Status Active"

@@ -1,0 +1,18 @@
+# TI datasheet "PCM510xA 2.1 VRMS, 112/106/100 dB Audio Stereo DAC with
+# PLL and 32-bit, 384 kHz PCM Interface" (PCM5100A/5101A/5102A and -Q1),
+# SLAS859C (May 2012, revised May 2015), 44 pages, downloaded 2026-11-17
+# with curl from the URL below. Read with pdftotext -layout. The package
+# option addendum (pages 36-37) is newer than the revision; the PW
+# outline 4220206/A 02/2017 is printed on pages 41-43. Page numbers are
+# PDF page indices.
+schema_version: "0.2"
+kind: source
+id: ti/SLAS859C
+sha256: a522083606b8e994875883215046fbdb92fd362996ca97719d259fbe9df07a85
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/pcm5102a.pdf
+publisher: ti
+document_id: SLAS859C
+document_type: datasheet
+revision: C
+date: 2015-05

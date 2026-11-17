@@ -1,0 +1,41 @@
+# OMRON G3MC-202P solid-state relay (phototriac isolation, zero cross,
+# 2 A at 100 to 240 VAC, DC input). Pins from J108-E1-05 page 3
+# "Terminal Arrangement/Internal Connections (Bottom View)": 1 and 2
+# LOAD (AC output), 3 INPUT (+), 4 INPUT (-). Typed passive.
+# contact_form 1a: the SSR's single normally-open output. Input rated
+# voltage (5 / 12 / 24 VDC versions, page 2) is not fixed by the model
+# name in the List of Models and is left out.
+schema_version: "0.2"
+kind: device
+id: omron/G3MC-202P
+manufacturer: omron
+category: relay
+family: G3MC
+source: omron/J108-E1-05
+
+parameters:
+  isolation_voltage:
+    typ: 2500 V
+    at: { t: 60 s }
+    src: p2 "Characteristics, Dielectric strength 2,500 VAC for 1 min between input and output"
+  operating_temperature:
+    min: -30 °C
+    max: 80 °C
+    src: p2 "Characteristics, Ambient operating temperature -30°C to 80°C"
+  contact_current: { max: 2 A, src: 'p2 "Ratings, Output, G3MC-202P, Load current 0.1 to 2 A"' }
+  contact_voltage:
+    max: 264 V
+    src: p2 "Ratings, Output, G3MC-202P, Load voltage range 75 to 264 VAC"
+  contact_form:
+    value: 1a
+    src: p3 "Terminal Arrangement/Internal Connections, one LOAD output 1-2"
+  relay_type:
+    value: solid_state
+    src: p1 "Solid State Relays, List of Models, Isolation Phototriac"
+
+pins:
+  src: p3 "G3MC-202P, Terminal Arrangement/Internal Connections (Bottom View)"
+  "1": { name: LOAD1, type: passive }
+  "2": { name: LOAD2, type: passive }
+  "3": { name: IN+, type: passive }
+  "4": { name: IN-, type: passive }

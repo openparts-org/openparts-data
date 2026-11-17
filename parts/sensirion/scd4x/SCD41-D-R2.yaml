@@ -1,0 +1,22 @@
+# SCD41-D-R2: printed in Table 42 "Part names and product numbers for ordering
+# SCD4x" (datasheet v1.7 page 27; SCD41 CO2 sensor SMD component as reel,
+# 600 sensors per reel) -> existence verified. lifecycle: unknown.
+schema_version: "0.2"
+kind: part
+id: sensirion/SCD41-D-R2
+manufacturer: sensirion
+mpn: SCD41-D-R2
+device: sensirion/SCD41
+
+package:
+  value: manufacturers/sensirion/MODULE20-10.1x10.1-SCD4x
+  src: p24 "4.1 Package Outline, Figure 3"
+
+sources: [sensirion/CD_DS_SCD4x_Datasheet_D1@v1.7]
+source: sensirion/CD_DS_SCD4x_Datasheet_D1@v1.7
+
+existence:
+  status: verified
+  src: p27 "Table 42 Part names and product numbers for ordering SCD4x, row SCD41-D-R2"
+
+lifecycle: { status: unknown }

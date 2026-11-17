@@ -1,0 +1,66 @@
+# TLV320ADC3140 quad-channel 768-kHz audio ADC, RTW (WQFN-24). Pins from
+# SBAS993B pages 4-5 "Pin Functions" and the "RTW Package 24-Pin WQFN
+# Top View". TYPE: Analog supply / Digital supply -> power (AREG, DREG
+# regulator outputs -> power_out); AVSS ground; VREF filter output ->
+# passive; MICBIAS -> power_out; INxP_GPIx / INxM_GPOx multipurpose
+# analog inputs -> analog; Digital I/O -> io; Digital input -> input;
+# SDOUT output. SHDNZ is active low. Thermal pad (VSS): "shorted to
+# internal device ground" -> key EP named VSS, ground. Category
+# audio_codec: the audio-group node for audio converters. supply_voltage
+# is AVDD in 3.3-V operation (1.8-V operation 1.7-1.9 V in the same
+# table).
+schema_version: "0.2"
+kind: device
+id: ti/TLV320ADC3140
+manufacturer: ti
+category: audio_codec
+family: TLV320ADC3140
+source: ti/SBAS993B
+
+parameters:
+  data_interface:
+    value: tdm
+    src: p1 "Description, supports TDM, I2S, or left-justified (LJ) audio formats"
+  supply_voltage:
+    min: 3 V
+    max: 3.6 V
+    src: p6 "7.3 Recommended Operating Conditions, AVDD 3.3-V operation 3.0 / 3.3 / 3.6"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p6 "7.3 Recommended Operating Conditions, TA"
+  esd_hbm:    { typ: 2 kV, src: 'p6 "7.2 ESD Ratings, HBM ±2000 V"' }
+  channel_count: { value: "4", src: 'p1 "Features, 4-channel analog microphones or line-in"' }
+  resolution: { value: "32", src: 'p1 "Features, Word length: 16, 20, 24, or 32 bits"' }
+  sample_rate:
+    min: 8 kHz
+    max: 768 kHz
+    src: p1 "Features, ADC sample rate (fS) = 8 kHz to 768 kHz"
+
+pins:
+  src:  [p4 "Pin Functions (pages 4-5)", p4 "RTW Package 24-Pin WQFN Top View"]
+  "1":  { name: AVDD, type: power }
+  "2":  { name: AREG, type: power_out }
+  "3":  { name: VREF, type: passive }
+  "4":  { name: AVSS, type: ground }
+  "5":  { name: MICBIAS, type: power_out }
+  "6":  { name: IN1P_GPI1, type: analog }
+  "7":  { name: IN1M_GPO1, type: analog }
+  "8":  { name: IN2P_GPI2, type: analog }
+  "9":  { name: IN2M_GPO2, type: analog }
+  "10": { name: IN3P_GPI3, type: analog }
+  "11": { name: IN3M_GPO3, type: analog }
+  "12": { name: IN4P_GPI4, type: analog }
+  "13": { name: IN4M_GPO4, type: analog }
+  "14": { name: SHDNZ, type: input }
+  "15": { name: ADDR1_MISO, type: io }
+  "16": { name: ADDR0_SCLK, type: input }
+  "17": { name: SCL_MOSI, type: input }
+  "18": { name: SDA_SSZ, type: io }
+  "19": { name: IOVDD, type: power }
+  "20": { name: GPIO1, type: io }
+  "21": { name: SDOUT, type: output }
+  "22": { name: BCLK, type: io }
+  "23": { name: FSYNC, type: io }
+  "24": { name: DREG, type: power_out }
+  EP:   { name: VSS, type: ground }

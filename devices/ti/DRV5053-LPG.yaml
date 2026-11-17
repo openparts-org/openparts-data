@@ -1,0 +1,36 @@
+# DRV5053 analog-bipolar Hall effect sensor, LPG (3-pin TO-92) pinout.
+# From SLIS153D Table 5-1 Pin Functions column LPG: VCC 1, GND 2, OUT 3, checked against
+# the LPG Package figure on the same page.
+schema_version: "0.2"
+kind: device
+id: ti/DRV5053-LPG
+manufacturer: ti
+category: magnetic_sensor
+family: DRV5053
+source: ti/SLIS153D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: analog
+    src: 'p3 "Table 5-1 Pin Functions, OUT: Hall sensor analog output"'
+  supply_voltage:
+    min: 2.5 V
+    max: 38 V
+    src: p4 "6.3 Recommended Operating Conditions, VCC Power supply voltage"
+  supply_current:
+    typ: 2.7 mA
+    at: { TA: 25 °C }
+    src: p5 "6.5 Electrical Characteristics, ICC Operating supply current, VCC = 2.5 V to 38 V"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA Operating ambient temperature"
+  esd_hbm:              { typ: 2.5 kV, src: 'p4 "6.2 ESD Ratings, HBM all pins ±2500 V"' }
+  magnetic_sensor_type: { value: linear, src: p1 "DRV5053 Analog-Bipolar Hall Effect Sensor" }
+
+pins:
+  src: ['p3 "Table 5-1 Pin Functions, column LPG"', p3 "LPG Package 3-Pin TO-92 Top View"]
+  "1": { name: VCC, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: OUT, type: output }

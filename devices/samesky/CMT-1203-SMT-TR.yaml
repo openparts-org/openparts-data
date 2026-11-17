@@ -1,0 +1,36 @@
+# Same Sky CMT-1203-SMT-TR piezo buzzer transducer (datasheet samesky/CMT-1203-SMT-TR-DS).
+# Pins from the page-2 recommended PCB layout: 1 = 1, 2 = 2; typed passive.
+schema_version: "0.2"
+kind: device
+id: samesky/CMT-1203-SMT-TR
+manufacturer: samesky
+category: buzzer
+family: CMT-1203
+source: samesky/CMT-1203-SMT-TR-DS
+
+parameters:
+  rated_current:
+    max: 5 mA
+    at: { VIN: 5 V, f: 4 kHz }
+    src: p1 "Specifications, current consumption at 5 Vp-p, 4,000 Hz square wave"
+  frequency:      { typ: 4 kHz, src: 'p1 "Specifications, rated frequency 4,000 Hz"' }
+  supply_voltage: { max: 25 V, src: 'p1 "Specifications, operating voltage max 25 Vp-p"' }
+  operating_temperature:
+    min: -40 °C
+    max: 120 °C
+    src: p1 "Specifications, operating temperature"
+  sound_pressure:
+    min: 81 dB
+    at: { VIN: 5 V, f: 4 kHz, d: 10 cm }
+    src: p1 "Specifications, sound pressure level at 10 cm, 5 Vp-p, 4,000 Hz, min 81 dB"
+  buzzer_type:
+    value: piezo
+    src: 'p1 "MODEL: CMT-1203-SMT-TR | DESCRIPTION: PIEZO BUZZER TRANSDUCER"'
+  buzzer_drive:
+    value: external
+    src: p1 "Description PIEZO BUZZER TRANSDUCER; Features, externally driven"
+
+pins:
+  src: p2 "Recommended PCB Layout Top View (no polarity marked)"
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

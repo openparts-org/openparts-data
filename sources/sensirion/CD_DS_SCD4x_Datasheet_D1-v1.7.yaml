@@ -1,0 +1,17 @@
+# Sensirion datasheet "SCD4x - Breaking the size barrier in optical CO2
+# sensing", footer "Version 1.7 - April 2025", 30 pages. Downloaded
+# 2026-11-17 with curl from sensirion.com (no document number printed; the
+# file name is used as the id). PDF page index = printed "N/30" page
+# number. Package and land-pattern drawings (page 24) and the pin
+# assignment figure (page 5) rendered and read visually.
+schema_version: "0.2"
+kind: source
+id: sensirion/CD_DS_SCD4x_Datasheet_D1@v1.7
+sha256: 9bbb142d27ba1b92f6701d88a3994c99b1b6a79f2036d022076f74cadc1a3f86
+retrieved: 2026-11-17
+url: https://sensirion.com/media/documents/48C4B7FB/67FE0194/CD_DS_SCD4x_Datasheet_D1.pdf
+publisher: sensirion
+document_id: CD_DS_SCD4x_Datasheet_D1
+document_type: datasheet
+revision: "1.7"
+date: 2025-04

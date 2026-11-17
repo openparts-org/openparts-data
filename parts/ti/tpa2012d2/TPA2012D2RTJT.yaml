@@ -1,0 +1,21 @@
+# TPA2012D2RTJT: SLOS438F package option addendum (page 25) row "TPA2012D2RTJT Active
+# Production QFN (RTJ) | 20" -- MPN printed verbatim (existence
+# verified); lifecycle "Active" is TI's Status column. Package RTJ =
+# outline RTJ0020D (page 34).
+schema_version: "0.2"
+kind: part
+id: ti/TPA2012D2RTJT
+manufacturer: ti
+mpn: TPA2012D2RTJT
+device: ti/TPA2012D2-RTJ
+package: { value: manufacturers/ti/RTJ0020D, src: p34 "RTJ0020D package outline" }
+sources: [ti/SLOS438F]
+source: ti/SLOS438F
+
+existence:
+  status: verified
+  src: p25 "Package option addendum, row TPA2012D2RTJT, QFN (RTJ) | 20"
+
+lifecycle:
+  status: active
+  src: p25 "Package option addendum, row TPA2012D2RTJT, Status Active"

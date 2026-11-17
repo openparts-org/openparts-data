@@ -1,0 +1,25 @@
+# TLV320ADC3140IRTWT: SBAS993B package option addendum (page 116) row "TLV320ADC3140IRTWT Active
+# Production WQFN (RTW) | 24" -- MPN printed verbatim (existence
+# verified); lifecycle "Active" is TI's Status column. RTW = the
+# 4206244/C outline printed on page 121.
+schema_version: "0.2"
+kind: part
+id: ti/TLV320ADC3140IRTWT
+manufacturer: ti
+mpn: TLV320ADC3140IRTWT
+device: ti/TLV320ADC3140
+
+package:
+  value: manufacturers/ti/RTW-4206244C
+  src: p121 "RTW (S-PWQFN-N24) MECHANICAL DATA 4206244/C"
+
+sources: [ti/SBAS993B]
+source: ti/SBAS993B
+
+existence:
+  status: verified
+  src: p116 "Package option addendum, row TLV320ADC3140IRTWT, WQFN (RTW) | 24"
+
+lifecycle:
+  status: active
+  src: p116 "Package option addendum, row TLV320ADC3140IRTWT, Status Active"

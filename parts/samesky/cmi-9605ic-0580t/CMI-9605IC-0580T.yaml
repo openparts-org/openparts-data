@@ -1,0 +1,18 @@
+# Same Sky CMI-9605IC-0580T: the datasheet is for this one model (every page header
+# "MODEL: CMI-9605IC-0580T") -> existence verified. lifecycle unknown: the datasheet
+# states none.
+schema_version: "0.2"
+kind: part
+id: samesky/CMI-9605IC-0580T
+manufacturer: samesky
+mpn: CMI-9605IC-0580T
+device: samesky/CMI-9605IC-0580T
+package: manufacturers/samesky/CMI-9605IC-0580T
+sources: [samesky/CMI-9605IC-0580T-DS]
+source: samesky/CMI-9605IC-0580T-DS
+
+existence:
+  status: verified
+  src: 'p1 "MODEL: CMI-9605IC-0580T | DESCRIPTION: MAGNETIC BUZZER INDICATOR"'
+
+lifecycle: { status: unknown }

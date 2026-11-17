@@ -1,0 +1,17 @@
+# Diodes Incorporated PAM8403 datasheet "Filterless 3W Class-D Stereo
+# Audio Amplifier", document DS36439 Rev. 2-3 (footer "September 2020",
+# 11 pages; page 1 banner "NOT RECOMMENDED FOR NEW DESIGN, USE PAM8406").
+# Downloaded 2026-11-17 with curl from the URL below. Read with
+# pdftotext -layout; page 10 "Package Outline Dimensions, SO-16" as text
+# and rendered image. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: diodes/DS36439
+sha256: 9d853d04cace827e5349bd89cbf412292b855089669c7910cf0c062940c735b1
+retrieved: 2026-11-17
+url: https://www.diodes.com/assets/Datasheets/PAM8403.pdf
+publisher: diodes
+document_id: DS36439
+document_type: datasheet
+revision: 2-3
+date: 2020-09

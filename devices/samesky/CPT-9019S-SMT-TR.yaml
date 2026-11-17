@@ -1,0 +1,34 @@
+# Same Sky CPT-9019S-SMT-TR piezo buzzer transducer (datasheet samesky/CPT-9019S-SMT-TR-DS).
+# Pins from the page-2 recommended PCB layout: 1 = 1, 2 = 2; typed passive.
+schema_version: "0.2"
+kind: device
+id: samesky/CPT-9019S-SMT-TR
+manufacturer: samesky
+category: buzzer
+family: CPT-9019S
+source: samesky/CPT-9019S-SMT-TR-DS
+
+parameters:
+  rated_current:
+    max: 5 mA
+    at: { VIN: 3 V, f: 4 kHz }
+    src: p1 "Specifications, current consumption at 3 Vp-p, 4,000 Hz square wave"
+  frequency:      { typ: 4 kHz, src: 'p1 "Specifications, rated frequency 4,000 Hz"' }
+  supply_voltage: { max: 25 V, src: 'p1 "Specifications, operating voltage max 25 Vp-p"' }
+  operating_temperature:
+    min: -30 °C
+    max: 70 °C
+    src: p1 "Specifications, operating temperature"
+  sound_pressure:
+    min: 65 dB
+    at: { VIN: 3 V, f: 4 kHz, d: 10 cm }
+    src: p1 "Specifications, sound pressure level at 10 cm, 3 Vp-p, 4,000 Hz, min 65 dB"
+  buzzer_type:
+    value: piezo
+    src: 'p1 "MODEL: CPT-9019S-SMT-TR | DESCRIPTION: PIEZO BUZZER TRANSDUCER"'
+  buzzer_drive:   { value: external, src: 'p1 "Features, externally driven"' }
+
+pins:
+  src: p2 "Recommended PCB Layout Top View (no polarity marked)"
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

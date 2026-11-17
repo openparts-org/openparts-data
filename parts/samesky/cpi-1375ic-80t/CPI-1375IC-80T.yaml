@@ -1,0 +1,18 @@
+# Same Sky CPI-1375IC-80T: the datasheet is for this one model (every page header
+# "MODEL: CPI-1375IC-80T") -> existence verified. lifecycle unknown: the datasheet
+# states none.
+schema_version: "0.2"
+kind: part
+id: samesky/CPI-1375IC-80T
+manufacturer: samesky
+mpn: CPI-1375IC-80T
+device: samesky/CPI-1375IC-80T
+package: manufacturers/samesky/CPI-1375IC-80T
+sources: [samesky/CPI-1375IC-80T-DS]
+source: samesky/CPI-1375IC-80T-DS
+
+existence:
+  status: verified
+  src: 'p1 "MODEL: CPI-1375IC-80T | DESCRIPTION: PIEZO BUZZER INDICATOR"'
+
+lifecycle: { status: unknown }

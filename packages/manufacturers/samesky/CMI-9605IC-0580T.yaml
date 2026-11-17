@@ -1,0 +1,25 @@
+# Same Sky CMI-9605IC-0580T magnetic buzzer indicator, from samesky/CMI-9605IC-0580T-DS page 2 "MECHANICAL
+# DRAWING" and "Recommended PCB Layout Top View". Frame: that top view,
+# origin on the body centre. Layout: (+) pad at the top, (-) at the bottom, 5.0 apart on the vertical centre line.
+schema_version: "0.2"
+kind: package
+id: manufacturers/samesky/CMI-9605IC-0580T
+family: buzzer
+lead_count: { value: 2, src: p2 "Recommended PCB Layout Top View" }
+source: samesky/CMI-9605IC-0580T-DS
+
+pitch: { typ: 5 mm, src: 'p2 "Recommended PCB Layout, pad centre distance"' }
+geometry: { type: parametric, generator: buzzer }
+
+dimensions:
+  body_width:   { typ: 9.6 mm, src: 'p2 "Mechanical drawing, Ø9.6±0.2"' }
+  body_length:  { typ: 9.6 mm, src: 'p2 "Mechanical drawing, Ø9.6±0.2"' }
+  body_height:  { typ: 5 mm, src: 'p2 "Mechanical drawing, height 5"' }
+  can_diameter: { typ: 9.6 mm, src: 'p2 "Mechanical drawing, Ø9.6±0.2"' }
+  tail_length:  { typ: 5.5 mm, src: 'p2 "Mechanical drawing, pin length 5.5"' }
+
+pads:
+  value:
+    - { number: "1", x: 0, y: 2.5, width: 2, length: 2, drill: 0.8, shape: circle }
+    - { number: "2", x: 0, y: -2.5, width: 2, length: 2, drill: 0.8, shape: circle }
+  src: p2 "Recommended PCB Layout Top View, 5.0, 2-Ø2 Pads, 2-Ø0.8 Hole"

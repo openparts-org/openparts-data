@@ -1,0 +1,37 @@
+# OMRON G5V-2 PCB relay (DIL, 8 PCB terminals), from K046-E1-06 page 4
+# "Dimensions" and "PCB Mounting Holes (Bottom View)" (rendered and read
+# as an image). Housing 20.5 max x 10.1 max x 11.5 max (average 20.3 x
+# 9.9 x 11.4). Holes: "Eight, 1 dia. holes"; columns at 0 / 7.62 / 12.70
+# / 17.78 (7.62 + 5.08 + 5.08), rows 7.62 apart; the average body edges
+# sit (1.3) beyond the outer columns and (1.2) beyond the rows, so the
+# grid is centred on the housing (centre 8.89 from column 1). Frame: top
+# view = the bottom view mirrored left-right, long side along X: pin 1 at
+# (+8.89, +3.81), then 4, 6, 8 towards -X on the same row; 16, 13, 11, 9
+# below.
+schema_version: "0.2"
+kind: package
+id: manufacturers/omron/G5V-2
+family: relay
+lead_count: { value: 8, src: 'p4 "PCB Mounting Holes (Bottom View), Eight, 1 dia. holes"' }
+source: omron/K046-E1-06
+
+pitch: { typ: 2.54 mm, src: 'p4 "PCB Mounting Holes (Bottom View), grid 2.54"' }
+geometry: { type: parametric, generator: relay }
+
+dimensions:
+  body_width:  { max: 20.5 mm, src: 'p4 "Dimensions, 20.5max. (20.3)*"' }
+  body_length: { max: 10.1 mm, src: 'p4 "Dimensions, 10.1max. (9.9)*"' }
+  body_height: { max: 11.5 mm, src: 'p4 "Dimensions, 11.5max. (11.4)*"' }
+  tail_length: { typ: 3.5 mm, src: 'p4 "Dimensions, terminal length 3.5"' }
+
+pads:
+  value:
+    - { number: "1", x: 8.89, y: 3.81, drill: 1 }
+    - { number: "4", x: 1.27, y: 3.81, drill: 1 }
+    - { number: "6", x: -3.81, y: 3.81, drill: 1 }
+    - { number: "8", x: -8.89, y: 3.81, drill: 1 }
+    - { number: "9", x: -8.89, y: -3.81, drill: 1 }
+    - { number: "11", x: -3.81, y: -3.81, drill: 1 }
+    - { number: "13", x: 1.27, y: -3.81, drill: 1 }
+    - { number: "16", x: 8.89, y: -3.81, drill: 1 }
+  src: p4 "PCB Mounting Holes (Bottom View) 7.62 / 5.08 / 5.08 x 7.62, mirrored to top view"

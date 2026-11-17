@@ -1,0 +1,47 @@
+# ENS160 digital metal-oxide multi-gas sensor (TVOC, eCO2, AQI), 9-pad
+# LGA. Pins from Table 1 "Pin description" (SC-001224-DS-9 page 5),
+# checked against Figure 2 "Pin diagram" (same page). Types: MOSI/SDA
+# io; SCLK/SCL clock; MISO/ADDR io; VDD, VDDIO power; INTn output; CSn
+# input; VSS (pins 8 and 9) ground.
+# operating_temperature: the only range printed (Table 2, TAMB
+# "Operating Ambient Temperature"; page 1 lists the same range).
+schema_version: "0.2"
+kind: device
+id: sciosense/ENS160
+manufacturer: sciosense
+category: gas_sensor
+family: ENS160
+source: sciosense/SC-001224-DS-9
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: i2c_spi
+    src: p2 "Properties, I2C and SPI interfaces with separate VDDIO"
+  supply_voltage: { min: 1.71 V, max: 1.98 V, src: 'p2 "Wide operating ranges, VDD 1.71 to 1.98V"' }
+  supply_current:
+    typ: 29 mA
+    src: p7 "4 Electrical characteristics, IDD Average Supply Current, STANDARD (OP_MODE 0x02)"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p6 "Table 2 Absolute Maximum Ratings, TAMB Operating Ambient Temperature"
+  esd_hbm: { typ: 2 kV, src: 'p6 "Table 2 Absolute Maximum Ratings, ESDHBM ± 2000 V"' }
+  target_gas:
+    value: voc
+    src: p2 "detection of a wide range of volatile organic compounds (VOCs)"
+  sensing_principle:
+    value: metal_oxide
+    src: p2 "digital multi-gas sensor solution, based on metal oxide (MOX) technology"
+
+pins:
+  src: [p5 "Table 1 Pin description", 'p5 "Figure 2 Pin diagram, top view"']
+  "1": { name: MOSI/SDA, type: io }
+  "2": { name: SCLK/SCL, type: clock }
+  "3": { name: MISO/ADDR, type: io }
+  "4": { name: VDD, type: power }
+  "5": { name: VDDIO, type: power }
+  "6": { name: INTn, type: output }
+  "7": { name: CSn, type: input }
+  "8": { name: VSS, type: ground }
+  "9": { name: VSS, type: ground }

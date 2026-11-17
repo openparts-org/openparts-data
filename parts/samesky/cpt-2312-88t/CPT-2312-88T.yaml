@@ -1,0 +1,18 @@
+# Same Sky CPT-2312-88T: the datasheet is for this one model (every page header
+# "MODEL: CPT-2312-88T") -> existence verified. lifecycle unknown: the datasheet
+# states none.
+schema_version: "0.2"
+kind: part
+id: samesky/CPT-2312-88T
+manufacturer: samesky
+mpn: CPT-2312-88T
+device: samesky/CPT-2312-88T
+package: manufacturers/samesky/CPT-2312-88T
+sources: [samesky/CPT-2312-88T-DS]
+source: samesky/CPT-2312-88T-DS
+
+existence:
+  status: verified
+  src: 'p1 "MODEL: CPT-2312-88T | DESCRIPTION: PIEZO BUZZER TRANSDUCER"'
+
+lifecycle: { status: unknown }

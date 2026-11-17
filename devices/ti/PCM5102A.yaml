@@ -1,0 +1,64 @@
+# PCM5102A stereo audio DAC with PLL and 32-bit / 384 kHz PCM interface
+# (consumer grade; the -Q1 grade is not covered), PW (TSSOP-20). Pins
+# from SLAS859C page 5 "Pin Functions" (numbers 1-20). Types: TYPE "P"
+# supplies -> power (LDOO, the internal logic rail terminal, power_out);
+# grounds "—" -> ground; CAPP/CAPM charge-pump flying capacitor ->
+# passive; VNEG negative charge-pump rail decoupling -> power_out;
+# OUTL/OUTR analog outputs -> output; control/clock/data inputs ->
+# input. Category audio_codec: the audio-group node for audio
+# converters (no separate audio DAC node). Electrical characteristics
+# for consumer grade are specified at TA = 25 °C; the per-MPN Op temp is
+# on the Parts.
+schema_version: "0.2"
+kind: device
+id: ti/PCM5102A
+manufacturer: ti
+category: audio_codec
+family: PCM510xA
+source: ti/SLAS859C
+
+parameters:
+  data_interface:
+    value: i2s
+    src: 'p5 "Pin Functions, FMT: Audio format selection: I2S (Low) / Left-justified (High)"'
+  supply_voltage:
+    min: 3 V
+    max: 3.46 V
+    src: p6 "8.3 Recommended Operating Conditions, AVDD, VCOM mode 3 / 3.3 / 3.46"
+  esd_hbm: { typ: 2 kV, src: 'p6 "8.2 ESD Ratings, HBM ±2000 V"' }
+  channel_count:
+    value: "2"
+    src: p5 "Pin Functions, OUTL / OUTR (left and right DAC channels)"
+  resolution:
+    value: "32"
+    src: p7 "8.5 Electrical Characteristics, Resolution 16 / 24 / 32 Bits (max)"
+  sample_rate:
+    min: 8 kHz
+    max: 384 kHz
+    src: p7 "8.5 Electrical Characteristics, fS Sampling frequency 8 / 384 kHz"
+  snr:
+    typ: 112 dB
+    src: p8 "Electrical Characteristics, Signal-to-noise ratio, PCM5102A, EIAJ, A-weighted, fS = 48 kHz"
+
+pins:
+  src:  [p5 "Pin Functions", p5 "PW 20-Pin Package (Top View)"]
+  "1":  { name: CPVDD, type: power }
+  "2":  { name: CAPP, type: passive }
+  "3":  { name: CPGND, type: ground }
+  "4":  { name: CAPM, type: passive }
+  "5":  { name: VNEG, type: power_out }
+  "6":  { name: OUTL, type: output }
+  "7":  { name: OUTR, type: output }
+  "8":  { name: AVDD, type: power }
+  "9":  { name: AGND, type: ground }
+  "10": { name: DEMP, type: input }
+  "11": { name: FLT, type: input }
+  "12": { name: SCK, type: input }
+  "13": { name: BCK, type: input }
+  "14": { name: DIN, type: input }
+  "15": { name: LRCK, type: input }
+  "16": { name: FMT, type: input }
+  "17": { name: XSMT, type: input }
+  "18": { name: LDOO, type: power_out }
+  "19": { name: DGND, type: ground }
+  "20": { name: DVDD, type: power }

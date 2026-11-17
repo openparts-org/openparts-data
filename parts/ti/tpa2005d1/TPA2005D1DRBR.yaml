@@ -1,0 +1,21 @@
+# TPA2005D1DRBR: SLOS369G package option addendum (page 30) row
+# "TPA2005D1DRBR Active Production SON (DRB) | 8" -- MPN printed verbatim
+# (existence verified); lifecycle "Active" is TI's Status column.
+# Package DRB = outline DRB0008A (page 36).
+schema_version: "0.2"
+kind: part
+id: ti/TPA2005D1DRBR
+manufacturer: ti
+mpn: TPA2005D1DRBR
+device: ti/TPA2005D1
+package: { value: manufacturers/ti/DRB0008A, src: p36 "DRB0008A package outline" }
+sources: [ti/SLOS369G]
+source: ti/SLOS369G
+
+existence:
+  status: verified
+  src: p30 "Package option addendum, row TPA2005D1DRBR, SON (DRB) | 8"
+
+lifecycle:
+  status: active
+  src: p30 "Package option addendum, row TPA2005D1DRBR, Status Active"

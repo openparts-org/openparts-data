@@ -1,0 +1,66 @@
+# TLV320AIC3204 ultra-low-power stereo audio codec, RHB (VQFN-32). Pins
+# from SLOS602E pages 5-7 "Pin Functions" (TYPE column: DI -> input, DO
+# -> output, DIO -> io, AI -> analog, AO line/headphone outputs ->
+# output, Power -> power, Ground -> ground). REF (reference filtering)
+# -> passive; MICBIAS (bias output) -> power_out; RESET is active low.
+# Multi-function pins keep the table's primary/secondary name. Thermal
+# pad: "Connect to PCB ground plane. Not internally connected." -> key
+# EP, passive. supply_voltage is the AVDD range (LDOIN 1.9-3.6 V, IOVDD
+# 1.1-3.6 V and DVDD 1.26-1.95 V are in the same table).
+schema_version: "0.2"
+kind: device
+id: ti/TLV320AIC3204
+manufacturer: ti
+category: audio_codec
+family: TLV320AIC3204
+source: ti/SLOS602E
+
+parameters:
+  data_interface: { value: i2s, src: 'p1 "Simplified Block Diagram, Primary I2S Interface"' }
+  supply_voltage:
+    min: 1.5 V
+    max: 1.95 V
+    src: p8 "7.3 Recommended Operating Conditions, AVDD 1.5 / 1.8 / 1.95"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p8 "7.3 Recommended Operating Conditions, TOPR"
+  esd_hbm:        { typ: 2 kV, src: 'p8 "7.2 ESD Ratings, HBM, all pins ±2000 V"' }
+  channel_count:  { value: "2", src: p1 "Stereo audio codec; stereo DAC and ADC" }
+  snr:            { typ: 100 dB, src: 'p1 "Features, Stereo Audio DAC with 100dB SNR"' }
+
+pins:
+  src:  [p5 "Pin Functions (pages 5-7)", p5 "RHB Package (Bottom View)"]
+  "1":  { name: MCLK, type: input }
+  "2":  { name: BCLK, type: io }
+  "3":  { name: WCLK, type: io }
+  "4":  { name: DIN/MFP1, type: input }
+  "5":  { name: DOUT/MFP2, type: output }
+  "6":  { name: IOVDD, type: power }
+  "7":  { name: IOVSS, type: ground }
+  "8":  { name: SCLK/MFP3, type: input }
+  "9":  { name: SCL/SS, type: input }
+  "10": { name: SDA/MOSI, type: input }
+  "11": { name: MISO/MFP4, type: output }
+  "12": { name: SPI_SELECT, type: input }
+  "13": { name: IN1_L, type: analog }
+  "14": { name: IN1_R, type: analog }
+  "15": { name: IN2_L, type: analog }
+  "16": { name: IN2_R, type: analog }
+  "17": { name: AVSS, type: ground }
+  "18": { name: REF, type: passive }
+  "19": { name: MICBIAS, type: power_out }
+  "20": { name: IN3_L, type: analog }
+  "21": { name: IN3_R, type: analog }
+  "22": { name: LOL, type: output }
+  "23": { name: LOR, type: output }
+  "24": { name: AVDD, type: power }
+  "25": { name: HPL, type: output }
+  "26": { name: LDOIN/HPVDD, type: power }
+  "27": { name: HPR, type: output }
+  "28": { name: DVSS, type: ground }
+  "29": { name: DVDD, type: power }
+  "30": { name: LDO_SELECT, type: input }
+  "31": { name: RESET, type: input }
+  "32": { name: GPIO/MFP5, type: io }
+  EP:   { name: EP, type: passive }

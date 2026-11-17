@@ -1,0 +1,55 @@
+# TPA2005D1 1.4-W mono filter-free class-D audio amplifier, DRB (VSON-8)
+# and DGN (HVSSOP-8) pin map: SLOS369G page 3 "Pin Functions", column
+# "DRB, DGN", and the DRB/DGN Top View figures: SHUTDOWN 1, NC 2, IN+ 3,
+# IN- 4, VO+ 5, VDD 6, GND 7, VO- 8. "Thermal Pad: Must be soldered to a
+# grounded pad on the PCB" -> key EP named GND, typed ground. The table
+# types VDD as "I" -> power; SHUTDOWN is active low (overbar); IN+/IN- analog inputs typed analog.
+schema_version: "0.2"
+kind: device
+id: ti/TPA2005D1
+manufacturer: ti
+category: audio_amplifier
+family: TPA2005D1
+source: ti/SLOS369G
+
+parameters:
+  supply_voltage: { min: 2.5 V, max: 5.5 V, src: 'p4 "7.3 Recommended Operating Conditions, VDD"' }
+  supply_current:
+    typ: 3.4 mA
+    max: 4.5 mA
+    at: { VDD: 5.5 V }
+    src: p5 "7.5 Electrical Characteristics, I(Q), no load"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "7.3 Recommended Operating Conditions, TA"
+  esd_hbm:         { typ: 3 kV, src: 'p4 "7.2 ESD Ratings, HBM ±3000 V"' }
+  channel_count:   { value: "1", src: 'p3 "Device Comparison Table, TPA2005D1, Mono"' }
+  amplifier_class: { value: d, src: 'p3 "Device Comparison Table, TPA2005D1, Class D"' }
+  output_power:
+    - typ: 1.45 W
+      at: { VDD: 5 V, RL: 8 Ω, THD: 10 % }
+      src: p5 "7.6 Operating Characteristics, PO, THD+N = 10%, f = 1 kHz, VDD = 5 V"
+    - typ: 1.18 W
+      at: { VDD: 5 V, RL: 8 Ω, THD: 1 % }
+      src: p5 "7.6 Operating Characteristics, PO, THD+N = 1%, f = 1 kHz, VDD = 5 V"
+  thd_n:
+    typ: 0.18 %
+    at: { VDD: 5 V, RL: 8 Ω }
+    src: p5 "7.6 Operating Characteristics, THD+N, PO = 1 W, f = 1 kHz"
+  snr:
+    typ: 97 dB
+    at: { VDD: 5 V, RL: 8 Ω }
+    src: p5 "7.6 Operating Characteristics, SNR, PO = 1 W"
+
+pins:
+  src: ['p3 "Pin Functions, column DRB, DGN"', p3 "DRB Package 8-Pin VSON Top View"]
+  "1": { name: SHUTDOWN, type: input }
+  "2": { name: NC, type: nc }
+  "3": { name: IN+, type: analog }
+  "4": { name: IN-, type: analog }
+  "5": { name: VO+, type: output }
+  "6": { name: VDD, type: power }
+  "7": { name: GND, type: ground }
+  "8": { name: VO-, type: output }
+  EP:  { name: GND, type: ground }

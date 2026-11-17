@@ -1,0 +1,17 @@
+# Broadcom (Avago Technologies branded) data sheet "APDS-9960 Digital
+# Proximity, Ambient Light, RGB and Gesture Sensor", AV02-4191EN, last-page
+# footer "AV02-4191EN - November 13, 2015". Downloaded 2026-11-17 with curl
+# from docs.broadcom.com. 38 PDF pages; text read with pdftotext -layout,
+# the package outline and PCB pad layout (page 35) on the rendered page.
+# Page numbers are PDF page indices. Facts only.
+schema_version: "0.2"
+kind: source
+id: broadcom/AV02-4191EN
+sha256: 70810e8a0d9d5a91b4741d12785c0e44178b80039f150c5bb6a36acef2ccb8ee
+retrieved: 2026-11-17
+url: https://docs.broadcom.com/doc/AV02-4191EN
+publisher: broadcom
+document_id: AV02-4191EN
+document_type: datasheet
+revision: AV02-4191EN
+date: 2015-11-13

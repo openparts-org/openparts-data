@@ -1,0 +1,16 @@
+# Same Sky datasheet "MODEL: CMT-8540S-SMT-TR | DESCRIPTION: MAGNETIC BUZZER TRANSDUCER",
+# page headers dated 2024-09-11; revision history last row rev "1.04".
+# p1 features and SPECIFICATIONS table, p2 MECHANICAL DRAWING with the
+# "Recommended PCB Layout Top View" (vector art, read from 130-dpi
+# renders). Downloaded with curl on 2026-11-17 from the URL below; the
+# server stamps the PDF on download, so no sha256 is recorded.
+schema_version: "0.2"
+kind: source
+id: samesky/CMT-8540S-SMT-TR-DS
+retrieved: 2026-11-17
+url: https://www.sameskydevices.com/product/resource/cmt-8540s-smt-tr.pdf
+date: 2024-09-11
+publisher: samesky
+document_id: CMT-8540S-SMT-TR
+document_type: datasheet
+revision: "1.04"

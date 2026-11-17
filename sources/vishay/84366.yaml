@@ -1,0 +1,16 @@
+# Vishay datasheet "VEML6030 High Accuracy Ambient Light Sensor With I2C
+# Interface", Document Number 84366, footer "Rev. 1.8, 28-Nov-2024".
+# Downloaded 2026-11-17 with curl from vishay.com. 14 PDF pages; text read
+# with pdftotext -layout, the package drawing (page 10) on the rendered
+# page. Page numbers are PDF page indices. Facts only.
+schema_version: "0.2"
+kind: source
+id: vishay/84366
+sha256: 46bc766f22f7e933afba4c3d1e84ca836b6f3e013d1c9b73402fbb3447471b56
+retrieved: 2026-11-17
+url: https://www.vishay.com/docs/84366/veml6030.pdf
+publisher: vishay
+document_id: "84366"
+document_type: datasheet
+revision: "1.8"
+date: 2024-11-28

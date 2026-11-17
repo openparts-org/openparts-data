@@ -1,0 +1,42 @@
+# OMRON G5V-1 low signal relay, SPDT (1c), standard models (G5V-1 DC@).
+# Pins from K048-E1-07 page 4 "Terminal Arrangement/Internal Connections
+# (Bottom View)": coil between 2 and 9 ("No coil polarity"); 5 and 6 are
+# joined and carry the movable contact (COM); the contact rests on 1
+# (NC) and moves to 10 (NO). All typed passive. The coil ends are named
+# COIL1 (pin 2) and COIL2 (pin 9) here; the source names neither.
+# Coil voltage and resistance differ per rated coil voltage: on the
+# Parts. The G5V-1-T90 (90 °C) models are not included.
+schema_version: "0.2"
+kind: device
+id: omron/G5V-1
+manufacturer: omron
+category: relay
+family: G5V-1
+source: omron/K048-E1-07
+
+parameters:
+  isolation_voltage:
+    typ: 1000 V
+    at: { t: 60 s }
+    src: p2 "Characteristics, Dielectric strength between coil and contacts 1,000 VAC, 1 min"
+  operating_temperature:
+    min: -40 °C
+    max: 70 °C
+    src: p2 "Characteristics, Ambient operating temperature -40°C to 70°C (Standard)"
+  contact_current: { max: 1 A, src: 'p1 "Ratings, Contacts, Max. switching current 1A"' }
+  contact_voltage:
+    max: 125 V
+    src: p1 "Ratings, Contacts, Max. switching voltage 125 VAC, 60 VDC"
+  contact_form:    { value: 1c, src: 'p1 "Ordering Information, Contact form SPDT (1c)"' }
+  relay_type:
+    value: electromechanical
+    src: p1 "Standard Model Specifications, Plastic sealed, single crossbar contact"
+
+pins:
+  src:  p4 "Terminal Arrangement/Internal Connections (Bottom View)"
+  "1":  { name: NC, type: passive }
+  "2":  { name: COIL1, type: passive }
+  "5":  { name: COM, type: passive, connected_to: "6" }
+  "6":  { name: COM, type: passive }
+  "9":  { name: COIL2, type: passive }
+  "10": { name: NO, type: passive }

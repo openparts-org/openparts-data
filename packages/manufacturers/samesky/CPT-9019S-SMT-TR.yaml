@@ -1,0 +1,23 @@
+# Same Sky CPT-9019S-SMT-TR piezo buzzer transducer, from samesky/CPT-9019S-SMT-TR-DS page 2 "MECHANICAL
+# DRAWING" and "Recommended PCB Layout Top View". Frame: that top view,
+# origin on the body centre. Layout: pads 4.2 (X) wide, 10.0 outside and 6.0 inside the pair -> 2.0 long, centres at y = ±4.0; no polarity marked (1 top, 2 bottom here).
+schema_version: "0.2"
+kind: package
+id: manufacturers/samesky/CPT-9019S-SMT-TR
+family: buzzer
+lead_count: { value: 2, src: p2 "Recommended PCB Layout Top View" }
+source: samesky/CPT-9019S-SMT-TR-DS
+
+pitch: { typ: 8 mm, src: 'p2 "Recommended PCB Layout, pad centre distance"' }
+geometry: { type: parametric, generator: buzzer }
+
+dimensions:
+  body_width:  { typ: 9 mm, src: 'p2 "Mechanical drawing, 9.0"' }
+  body_length: { typ: 9 mm, src: 'p2 "Mechanical drawing, 9.0"' }
+  body_height: { typ: 1.9 mm, src: 'p2 "Mechanical drawing, height 1.9"' }
+
+pads:
+  value:
+    - { number: "1", x: 0, y: 4, width: 4.2, length: 2 }
+    - { number: "2", x: 0, y: -4, width: 4.2, length: 2 }
+  src: p2 "Recommended PCB Layout Top View, 4.2 wide, 10.0 outside, 6.0 inside; y = (10 + 6)/4"

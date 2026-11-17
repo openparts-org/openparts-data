@@ -1,0 +1,23 @@
+# OMRON G5LE-1 DC12: G5LE-1 (SPDT, flux protection, standard) with 12 VDC
+# rated coil. Ordering note (K100-E1-08 page 1): add the rated coil
+# voltage to the model number, example "G5LE-1 DC5"; the id replaces the
+# space with "-". existence: probable -- assembled from the note. lifecycle
+# unknown. No coil resistance: the document has no coil table.
+schema_version: "0.2"
+kind: part
+id: omron/G5LE-1-DC12
+manufacturer: omron
+mpn: G5LE-1 DC12
+device: omron/G5LE-1
+package: manufacturers/omron/G5LE-1
+sources: [omron/K100-E1-08]
+source: omron/K100-E1-08
+
+existence:
+  status: probable
+  src: 'p1 "Ordering Information, G5LE-1, rated coil voltage 12 VDC; Note: add the rated coil voltage"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  coil_voltage: { typ: 12 V, src: 'p1 "Ordering Information, G5LE-1, Rated coil voltage 12 VDC"' }

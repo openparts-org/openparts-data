@@ -1,0 +1,45 @@
+# TMAG5170 high-precision 3D linear Hall-effect sensor with SPI, DGK
+# (8-pin VSSOP). Pins from Table 5-1 "Pin Functions" (SBASAF4 page 3),
+# checked against Figure 5-1 "DGK Package 8-Pin VSSOP Top View" (same
+# page). Types: SCK -> clock; SDI, CS -> input; SDO -> output; ALERT
+# (I/O) -> io; TEST (type P, "TI test pin. Should be grounded in
+# application") -> passive, name kept as printed.
+# The magnetic range per version (A1 / A2) is on the Parts.
+schema_version: "0.2"
+kind: device
+id: ti/TMAG5170
+manufacturer: ti
+category: magnetic_sensor
+family: TMAG5170
+source: ti/SBASAF4
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: spi, src: 'p3 "Table 5-1 Pin Functions: SCK, SDI, SDO, CS"' }
+  supply_voltage:
+    min: 2.3 V
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, VVCC Main supply voltage"
+  supply_current:
+    typ: 3.4 mA
+    at: { VCC: 5.5 V }
+    src: p5 "6.5 Electrical Characteristics, IACT Active mode current from VCC, CS high"
+  operating_temperature:
+    min: -40 °C
+    max: 150 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA Operating free air temperature"
+  esd_hbm:        { typ: 3.5 kV, src: 'p4 "6.2 ESD Ratings, HBM all pins ±3500 V"' }
+  magnetic_sensor_type:
+    value: 3d
+    src: p1 "TMAG5170 High-Precision 3D Linear Hall-Effect Sensor With SPI"
+
+pins:
+  src: [p3 "Table 5-1 Pin Functions", p3 "Figure 5-1 DGK Package 8-Pin VSSOP Top View"]
+  "1": { name: SCK, type: clock }
+  "2": { name: SDI, type: input }
+  "3": { name: SDO, type: output }
+  "4": { name: CS, type: input }
+  "5": { name: VCC, type: power }
+  "6": { name: GND, type: ground }
+  "7": { name: TEST, type: passive }
+  "8": { name: ALERT, type: io }

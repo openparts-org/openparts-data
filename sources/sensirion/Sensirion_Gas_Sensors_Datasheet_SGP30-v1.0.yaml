@@ -1,0 +1,17 @@
+# Sensirion "Datasheet SGP30 Indoor Air Quality Sensor for TVOC and CO2eq
+# Measurements", footer "Version 1.0 - May 2020 - D1", 19 pages.
+# Downloaded 2026-11-17 with curl from sensirion.com (no document number
+# printed; the file name is used as the id). PDF page index = printed
+# "N/19" page number. Package outline and landing pattern (page 14)
+# rendered and read visually.
+schema_version: "0.2"
+kind: source
+id: sensirion/Sensirion_Gas_Sensors_Datasheet_SGP30@v1.0
+sha256: edf8a16d205ef1ba044a8ce951acb097b0ada4639b856c71819d167a3d0cf58a
+retrieved: 2026-11-17
+url: https://sensirion.com/media/documents/984E0DD5/61644B8B/Sensirion_Gas_Sensors_Datasheet_SGP30.pdf
+publisher: sensirion
+document_id: Sensirion_Gas_Sensors_Datasheet_SGP30
+document_type: datasheet
+revision: "1.0"
+date: 2020-05

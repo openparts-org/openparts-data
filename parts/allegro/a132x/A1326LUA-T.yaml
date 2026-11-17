@@ -1,0 +1,19 @@
+# A1326LUA-T: printed in the SELECTION GUIDE of A1324-DS Rev. 9 (page 2):
+# package UA, 500 pieces per bag; footnote [2] Contact factory for availability; typical sensitivity 2.500 mV/G -> existence verified.
+# lifecycle: unknown (no first-party status in the document).
+schema_version: "0.2"
+kind: part
+id: allegro/A1326LUA-T
+manufacturer: allegro
+mpn: A1326LUA-T
+device: allegro/A132x-UA
+
+package:
+  value: manufacturers/allegro/UA-SIP3-DWG-0000404
+  src: ['p2 "Selection Guide, row A1326LUA-T"', p12 "Package UA drawing"]
+
+sources: [allegro/A1324-DS@rev9]
+source: allegro/A1324-DS@rev9
+
+existence: { status: verified, src: 'p2 "Selection Guide, row A1326LUA-T"' }
+lifecycle: { status: unknown }

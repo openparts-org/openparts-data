@@ -1,0 +1,59 @@
+# PCM1808 24-bit, 96-kHz stereo audio ADC, PW (TSSOP-14). Pins from
+# SLES177B page 3 "Pin Functions" and the "14-Pin TSSOP PW Package Top
+# View". Types: VCC/VDD supplies -> power; AGND/DGND -> ground; VREF
+# reference decoupling -> passive; VINL/VINR analog inputs -> analog;
+# BCK/LRCK "I/O" -> io; DOUT output; SCKI/MD0/MD1/FMT input. Category
+# audio_codec: the audio-group node for audio converters.
+# supply_voltage is the analog VCC range (VDD digital 2.7-3.6 V is in
+# the same table).
+schema_version: "0.2"
+kind: device
+id: ti/PCM1808
+manufacturer: ti
+category: audio_codec
+family: PCM1808
+source: ti/SLES177B
+
+parameters:
+  data_interface:
+    value: i2s
+    src: p5 "6.5 Electrical Characteristics, Audio data interface format I2S, left-justified"
+  supply_voltage:
+    min: 4.5 V
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, VCC Analog supply voltage 4.5 / 5 / 5.5"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA"
+  esd_hbm: { typ: 4 kV, src: 'p4 "6.2 ESD Ratings, HBM, all pins ±4000 V"' }
+  channel_count:
+    value: "2"
+    src: p3 "Pin Functions, VINL / VINR (L- and R-channel analog inputs)"
+  resolution: { value: "24", src: 'p5 "6.5 Electrical Characteristics, Resolution 24 Bits"' }
+  sample_rate:
+    min: 8 kHz
+    typ: 48 kHz
+    max: 96 kHz
+    src: p5 "6.5 Electrical Characteristics, fS Sampling frequency 8 / 48 / 96 kHz"
+  snr:
+    min: 95 dB
+    typ: 99 dB
+    src: p6 "6.5 Electrical Characteristics, S/N, fS = 48 kHz, A-weighted"
+
+pins:
+  src:  [p3 "Pin Functions", p3 "14-Pin TSSOP PW Package Top View"]
+  "1":  { name: VREF, type: passive }
+  "2":  { name: AGND, type: ground }
+  "3":  { name: VCC, type: power }
+  "4":  { name: VDD, type: power }
+  "5":  { name: DGND, type: ground }
+  "6":  { name: SCKI, type: input }
+  "7":  { name: LRCK, type: io }
+  "8":  { name: BCK, type: io }
+  "9":  { name: DOUT, type: output }
+  "10": { name: MD0, type: input }
+  "11": { name: MD1, type: input }
+  "12": { name: FMT, type: input }
+  "13": { name: VINL, type: analog }
+  "14": { name: VINR, type: analog }

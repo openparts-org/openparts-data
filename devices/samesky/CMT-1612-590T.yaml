@@ -1,0 +1,46 @@
+# Same Sky CMT-1612-590T magnetic buzzer transducer (datasheet samesky/CMT-1612-590T-DS).
+# Pins from the page-2 recommended PCB layout: 1 = 1, 2 = 2; typed passive.
+schema_version: "0.2"
+kind: device
+id: samesky/CMT-1612-590T
+manufacturer: samesky
+category: buzzer
+family: CMT-1612
+source: samesky/CMT-1612-590T-DS
+
+parameters:
+  rated_voltage: { typ: 5 V, src: 'p1 "Specifications, rated voltage 5.0 Vo-p"' }
+  rated_current:
+    max: 65 mA
+    at: { f: 2.048 kHz }
+    src: p1 "Specifications, current consumption at rated voltage, 2,048 Hz, max 65 mA"
+  frequency:     { typ: 2.048 kHz, src: 'p1 "Specifications, rated frequency 2,048 Hz"' }
+  supply_voltage:
+    min: 3 V
+    max: 7 V
+    src: p1 "Specifications, operating voltage 3.0 / 7.0 Vo-p"
+  operating_temperature:
+    min: -35 °C
+    max: 80 °C
+    src: p1 "Specifications, operating temperature"
+  sound_pressure:
+    min: 85 dBA
+    typ: 90 dBA
+    at: { VIN: 5 V, f: 2.048 kHz, d: 10 cm }
+    src: p1 "Specifications, sound pressure level at 10 cm, rated voltage, 85 / 90 dBA"
+  buzzer_type:
+    value: magnetic
+    src: 'p1 "MODEL: CMT-1612-590T | DESCRIPTION: MAGNETIC BUZZER TRANSDUCER"'
+  buzzer_drive:
+    value: external
+    src: p1 "Specifications, rated at 2,048 Hz, ½ duty square wave drive (transducer)"
+  coil_resistance:
+    min: 25 Ω
+    typ: 30 Ω
+    max: 35 Ω
+    src: p1 "Specifications, coil resistance 25 / 30 / 35 Ω"
+
+pins:
+  src: p2 "Recommended PCB Layout (no polarity marked)"
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

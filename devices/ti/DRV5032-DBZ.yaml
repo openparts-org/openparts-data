@@ -1,0 +1,38 @@
+# DRV5032 ultra-low-power digital-switch Hall sensor, DBZ (3-pin SOT-23)
+# pinout of the FA, FB, FC, AJ and ZE versions. From SLVSDC7H Table 5-1
+# "Pin Functions" (page 3), column "SOT-23 (FA, FB, FC, AJ, ZE)": VCC 1,
+# OUT 2, GND 3, checked against Figure 5-1 (same page). The DU version
+# (OUT2 on pin 2, unipolar) is not covered by this device.
+# All covered versions are omnipolar (Table 4-1 "Device Comparison",
+# page 2); thresholds, output type and sampling rate differ per version
+# and are recorded on the Parts.
+schema_version: "0.2"
+kind: device
+id: ti/DRV5032-DBZ
+manufacturer: ti
+category: magnetic_sensor
+family: DRV5032
+source: ti/SLVSDC7H
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.65 V
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, VCC Power supply voltage"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA Operating ambient temperature"
+  esd_hbm: { typ: 6 kV, src: 'p4 "6.2 ESD Ratings, HBM ±6000 V"' }
+  magnetic_sensor_type:
+    value: omnipolar_switch
+    src: p2 "Table 4-1 Device Comparison, FA/FB/FC/AJ/ZE magnetic response Omnipolar"
+
+pins:
+  src:
+    - p3 "Table 5-1 Pin Functions, column SOT-23 (FA, FB, FC, AJ, ZE)"
+    - p3 "Figure 5-1 FA, FB, FC, AJ, ZE Versions DBZ Package 3-Pin SOT-23 Top View"
+  "1": { name: VCC, type: power }
+  "2": { name: OUT, type: output }
+  "3": { name: GND, type: ground }

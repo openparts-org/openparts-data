@@ -1,0 +1,23 @@
+# SGP30: Table 14 "SGP30 ordering options" (Datasheet SGP30 v1.0 page
+# 16) prints the part name "SGP30, TAPE ON REEL, 2500 PCS" (product
+# number 1-101646-01); the MPN is the name before the packaging text ->
+# existence verified. lifecycle: unknown.
+schema_version: "0.2"
+kind: part
+id: sensirion/SGP30
+manufacturer: sensirion
+mpn: SGP30
+device: sensirion/SGP30
+
+package:
+  value: manufacturers/sensirion/DFN6-2.45x2.45-P0.8-SGP30
+  src: p14 "8.3 Package Outline, Figure 14"
+
+sources: [sensirion/Sensirion_Gas_Sensors_Datasheet_SGP30@v1.0]
+source: sensirion/Sensirion_Gas_Sensors_Datasheet_SGP30@v1.0
+
+existence:
+  status: verified
+  src: p16 "Table 14 SGP30 ordering options, SGP30, TAPE ON REEL, 2500 PCS"
+
+lifecycle: { status: unknown }

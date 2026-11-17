@@ -1,0 +1,48 @@
+# DRV5032AJLPGM: orderable part number printed in the PACKAGE OPTION ADDENDUM
+# of SLVSDC7H (page 24, addendum dated 30-Sep-2026), TO-92 (LPG) | 3; lifecycle
+# "active" from the same row's Status column. Version AJ (open-drain, 20 Hz
+# sampling per Table 4-1, page 2); thresholds from 6.6 (page 6), recorded
+# as magnitudes of the printed ± values.
+schema_version: "0.2"
+kind: part
+id: ti/DRV5032AJLPGM
+manufacturer: ti
+mpn: DRV5032AJLPGM
+device: ti/DRV5032-LPG
+
+package:
+  value: manufacturers/ti/LPG0003A
+  src:
+    - p24 "PACKAGE OPTION ADDENDUM, row DRV5032AJLPGM, TO-92 (LPG) | 3"
+    - p33 "PACKAGE OUTLINE LPG0003A (4221343/C)"
+
+sources: [ti/SLVSDC7H]
+source: ti/SLVSDC7H
+
+existence:
+  status: verified
+  src: p24 "PACKAGE OPTION ADDENDUM, Packaging Information table, row DRV5032AJLPGM"
+
+lifecycle:
+  status: active
+  src: p24 "PACKAGE OPTION ADDENDUM, row DRV5032AJLPGM, Status Active"
+
+parameters:
+  supply_current:
+    typ: 1.6 µA
+    max: 3.5 µA
+    at: { VCC: 3 V }
+    src: p5 "6.5 Electrical Characteristics, DU, FA, FC, FD, AJ, ZE VERSIONS, ICC(AVG)"
+  output_structure:
+    value: open_drain
+    src: p2 "Table 4-1 Device Comparison row DRV5032AJ output type"
+  operate_point:
+    min: 4 mT
+    typ: 7 mT
+    max: 9.5 mT
+    src: p6 "6.6 Magnetic Characteristics, AJ VERSION, BOP (magnitude of ±)"
+  release_point:
+    min: 3 mT
+    typ: 5.6 mT
+    max: 7.5 mT
+    src: p6 "6.6 Magnetic Characteristics, AJ VERSION, BRP (magnitude of ±)"

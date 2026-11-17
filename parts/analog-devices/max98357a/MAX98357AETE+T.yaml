@@ -1,0 +1,19 @@
+# MAX98357AETE+T: printed in the 19-6779 Rev 16 Ordering Information table (page
+# 34): "MAX98357AETE+T -40°C to +85°C 16 TQFN" -> existence verified. Package code
+# T1633+4 (page 35 Package Information, 16 TQFN). lifecycle unknown.
+schema_version: "0.2"
+kind: part
+id: analog-devices/MAX98357AETE+T
+manufacturer: analog-devices
+mpn: MAX98357AETE+T
+device: analog-devices/MAX98357A-TQFN
+
+package:
+  value: manufacturers/analog-devices/TQFN16-T1633-4
+  src: p35 "Package Information, 16 TQFN, T1633+4, 21-0136"
+
+sources: [analog-devices/MAX98357A-MAX98357B-rev16]
+source: analog-devices/MAX98357A-MAX98357B-rev16
+
+existence: { status: verified, src: 'p34 "Ordering Information, MAX98357AETE+T, 16 TQFN"' }
+lifecycle: { status: unknown }

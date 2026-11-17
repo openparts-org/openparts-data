@@ -1,0 +1,40 @@
+# OMRON G5LE-1 PCB power relay, SPDT (1c), standard type, flux
+# protection (G5LE-1 DC@). Pins from K100-E1-08 page 3 "Terminal
+# Arrangement/Internal Connections (Bottom View), SPDT (1c)": coil
+# between 2 and 5 (named COIL1/COIL2 here; no polarity is drawn); 1 is
+# joined to the movable contact (COM), which rests on 4 (NC) and moves to
+# 3 (NO). Typed passive. Coil voltage per Part (the document prints no
+# coil resistance table).
+schema_version: "0.2"
+kind: device
+id: omron/G5LE-1
+manufacturer: omron
+category: relay
+family: G5LE
+source: omron/K100-E1-08
+
+parameters:
+  isolation_voltage:
+    typ: 2000 V
+    at: { t: 60 s }
+    src: p2 "Characteristics, Dielectric strength between coil and contacts 2,000 VAC, 1 min"
+  operating_temperature:
+    min: -25 °C
+    max: 85 °C
+    src: p2 "Characteristics, Ambient operating temperature -25°C to 85°C"
+  contact_current:
+    max: 10 A
+    src: p1 "Ratings, Standard type, Resistive load, Max. switching current 10 A"
+  contact_voltage:
+    max: 250 V
+    src: p1 "Ratings, Standard type, Max. switching voltage 250 VAC, 125 VDC"
+  contact_form: { value: 1c, src: 'p1 "Ordering Information, G5LE-1, SPDT (1c)"' }
+  relay_type: { value: electromechanical, src: 'p1 "Ratings, Contact type Single, Ag-alloy"' }
+
+pins:
+  src: p3 "Terminal Arrangement/Internal Connections (Bottom View), SPDT (1c)"
+  "1": { name: COM, type: passive }
+  "2": { name: COIL1, type: passive }
+  "3": { name: NO, type: passive }
+  "4": { name: NC, type: passive }
+  "5": { name: COIL2, type: passive }

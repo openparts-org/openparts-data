@@ -1,0 +1,39 @@
+# OMRON G6K-2P PCB-terminal relay (2.54 mm pitch), from K106-E1-11 page
+# 6 "G6K-2P" dimensions and "PCB Mounting Holes (Bottom VIEW)" (rendered
+# and read as an image). Housing 10 ±0.2 x 6.5 ±0.2 x 5 high, terminals
+# 3.5. Holes: "Eight, 0.85-dia. holes", columns 2.54 apart (7.62 span,
+# (1.19) from the body ends), rows 5.08 apart ((0.71) from the body
+# sides) -> grid centred on the housing. Frame: top view = the bottom
+# view mirrored left-right: pin 1 at (+3.81, +2.54), 2 3 4 towards -X;
+# 8 7 6 5 below.
+schema_version: "0.2"
+kind: package
+id: manufacturers/omron/G6K-2P
+family: relay
+
+lead_count:
+  value: 8
+  src: p6 "G6K-2P, PCB Mounting Holes (Bottom VIEW), Eight, 0.85-dia. holes"
+
+source: omron/K106-E1-11
+
+pitch: { typ: 2.54 mm, src: 'p6 "G6K-2P, PCB Mounting Holes (Bottom VIEW), 2.54"' }
+geometry: { type: parametric, generator: relay }
+
+dimensions:
+  body_width:  { min: 9.8 mm, typ: 10 mm, max: 10.2 mm, src: 'p6 "G6K-2P, 10±0.2"' }
+  body_length: { min: 6.3 mm, typ: 6.5 mm, max: 6.7 mm, src: 'p6 "G6K-2P, 6.5±0.2"' }
+  body_height: { typ: 5 mm, src: 'p6 "G6K-2P, height 5"' }
+  tail_length: { typ: 3.5 mm, src: 'p6 "G6K-2P, terminal length 3.5"' }
+
+pads:
+  value:
+    - { number: "1", x: 3.81, y: 2.54, drill: 0.85 }
+    - { number: "2", x: 1.27, y: 2.54, drill: 0.85 }
+    - { number: "3", x: -1.27, y: 2.54, drill: 0.85 }
+    - { number: "4", x: -3.81, y: 2.54, drill: 0.85 }
+    - { number: "5", x: -3.81, y: -2.54, drill: 0.85 }
+    - { number: "6", x: -1.27, y: -2.54, drill: 0.85 }
+    - { number: "7", x: 1.27, y: -2.54, drill: 0.85 }
+    - { number: "8", x: 3.81, y: -2.54, drill: 0.85 }
+  src: p6 "G6K-2P PCB Mounting Holes (Bottom VIEW) 2.54 x 5.08, mirrored to top view"

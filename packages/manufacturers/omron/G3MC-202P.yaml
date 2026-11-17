@@ -1,0 +1,33 @@
+# OMRON G3MC-202P(L)(-VD)(-1) SIP solid-state relay, from J108-E1-05
+# page 3 "Dimensions" and "PCB Dimensions (Bottom View)" (rendered and
+# read as an image). Housing 24.5 max long, 4.5 max thick, 20.5 max high;
+# terminals 3.5 below the 0.8 standoff. Holes "Four, 1.0-dia. holes" in
+# one row: 4, 3 (2.54 apart), 2 (10.16 further), 1 (7.62 further), 20.32
+# span. The drawing does not dimension the row against the housing end:
+# this file centres the row on the 24.5 housing (a presentation choice,
+# not a source value). Frame: top view = the bottom view mirrored: pin 1
+# at x = -10.16, 2 at -2.54, 3 at +7.62, 4 at +10.16, y = 0.
+schema_version: "0.2"
+kind: package
+id: manufacturers/omron/G3MC-202P
+family: relay
+lead_count: { value: 4, src: 'p3 "PCB Dimensions (Bottom View), Four, 1.0-dia. holes"' }
+source: omron/J108-E1-05
+
+pitch: { typ: 2.54 mm, src: 'p3 "G3MC-202P, PCB Dimensions, 2.54"' }
+geometry: { type: parametric, generator: relay }
+
+dimensions:
+  body_width:  { max: 24.5 mm, src: 'p3 "G3MC-202P(-VD)(-1), 24.5 max"' }
+  body_length: { max: 4.5 mm, src: 'p3 "G3MC-202P(-VD)(-1), 4.5 max."' }
+  body_height: { max: 20.5 mm, src: 'p3 "G3MC-202P(-VD)(-1), 20.5 max."' }
+  tail_length: { typ: 3.5 mm, src: 'p3 "G3MC-202P(-VD)(-1), 3.5"' }
+  standoff:    { typ: 0.8 mm, src: 'p3 "G3MC-202P(-VD)(-1), 0.8"' }
+
+pads:
+  value:
+    - { number: "1", x: -10.16, y: 0, drill: 1 }
+    - { number: "2", x: -2.54, y: 0, drill: 1 }
+    - { number: "3", x: 7.62, y: 0, drill: 1 }
+    - { number: "4", x: 10.16, y: 0, drill: 1 }
+  src: p3 "G3MC-202P front view 2.54 / 10.16 / 7.62; PCB Dimensions; mirrored to top view, centred"

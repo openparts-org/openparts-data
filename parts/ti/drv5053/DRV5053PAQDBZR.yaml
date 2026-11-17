@@ -1,0 +1,26 @@
+# DRV5053PAQDBZR: orderable part number printed in the PACKAGE OPTION ADDENDUM
+# of SLIS153D (page 17, addendum dated 9-Nov-2025), SOT-23 (DBZ) | 3; lifecycle
+# "active" from the same row's Status column.
+schema_version: "0.2"
+kind: part
+id: ti/DRV5053PAQDBZR
+manufacturer: ti
+mpn: DRV5053PAQDBZR
+device: ti/DRV5053-DBZ
+
+package:
+  value: manufacturers/ti/DBZ0003A
+  src:
+    - p17 "PACKAGE OPTION ADDENDUM, row DRV5053PAQDBZR, SOT-23 (DBZ) | 3"
+    - p22 "PACKAGE OUTLINE DBZ0003A (4214838/F)"
+
+sources: [ti/SLIS153D]
+source: ti/SLIS153D
+
+existence:
+  status: verified
+  src: p17 "PACKAGE OPTION ADDENDUM, Packaging Information table, row DRV5053PAQDBZR"
+
+lifecycle:
+  status: active
+  src: p17 "PACKAGE OPTION ADDENDUM, row DRV5053PAQDBZR, Status Active"

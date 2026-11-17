@@ -1,0 +1,16 @@
+# Same Sky datasheet "MODEL: CPT-2312-88T | DESCRIPTION: PIEZO BUZZER TRANSDUCER",
+# page headers dated 2024-09-11; revision history last row rev "1.03".
+# p1 features and SPECIFICATIONS table, p2 MECHANICAL DRAWING with the
+# "Recommended PCB Layout Top View" (vector art, read from 130-dpi
+# renders). Downloaded with curl on 2026-11-17 from the URL below; the
+# server stamps the PDF on download, so no sha256 is recorded.
+schema_version: "0.2"
+kind: source
+id: samesky/CPT-2312-88T-DS
+retrieved: 2026-11-17
+url: https://www.sameskydevices.com/product/resource/cpt-2312-88t.pdf
+date: 2024-09-11
+publisher: samesky
+document_id: CPT-2312-88T
+document_type: datasheet
+revision: "1.03"

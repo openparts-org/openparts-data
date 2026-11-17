@@ -1,0 +1,50 @@
+# TDK InvenSense ICS-43434 bottom-port MEMS microphone with I2S output
+# (6-terminal LGA_CAV, 3.50 x 2.65 x 0.98 mm). Pins from DS-000069 page
+# 10 "Table 8. Pin Function Descriptions" (TYPE column). Values from the
+# High-Performance Mode table (page 4). No Part/Package: the land pattern
+# (page 17) has a ring-shaped GND pad (pin 3, ø1.025 / ø1.625 around
+# the sound port), which the package pad shapes cannot express yet.
+schema_version: "0.2"
+kind: device
+id: tdk/ICS-43434
+manufacturer: tdk
+category: microphone
+family: ICS-43434
+source: tdk/DS-000069@rev1.2
+
+parameters:
+  data_interface:
+    value: i2s
+    src: p1 "General Description, industry standard 24-bit I2S interface"
+  supply_voltage: { min: 1.65 V, max: 3.63 V, src: 'p4 "Table 1 General, Supply Voltage (VDD)"' }
+  supply_current:
+    typ: 490 µA
+    max: 550 µA
+    at: { VDD: 1.8 V }
+    src: p4 "Table 2 High-Performance Mode, Supply Current, no load"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p19 "Ordering Guide, ICS-43434, Temp range"
+  snr:
+    typ: 65 dB
+    src: p4 "Table 2 High-Performance Mode, SNR, 20 kHz bandwidth, A-weighted, 65 dBA"
+  sensitivity_digital:
+    min: -27 dBFS
+    typ: -26 dBFS
+    max: -25 dBFS
+    src: p4 "Table 2 High-Performance Mode, Sensitivity, 1 kHz, 94 dB SPL"
+  acoustic_overload_point:
+    typ: 120 dBSPL
+    src: p4 "Table 2 High-Performance Mode, Acoustic Overload Point, 10% THD"
+
+pins:
+  src:
+    - p10 "Table 8. Pin Function Descriptions"
+    - p10 "Figure 3. Pin Configuration (top view, terminal side down)"
+  "1": { name: WS, type: input }
+  "2": { name: LR, type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: SCK, type: input }
+  "5": { name: VDD, type: power }
+  "6": { name: SD, type: output }

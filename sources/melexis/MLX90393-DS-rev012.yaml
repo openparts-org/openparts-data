@@ -1,0 +1,16 @@
+# Melexis "MLX90393 Triaxis Magnetic Node Datasheet", document 3901090393,
+# footer "REVISION 012 - NOV 18, 2025", 45 pages. Downloaded 2026-11-17
+# with curl from melexis.com. Text read with pdftotext -layout, the QFN-16
+# outline (Figure 26, page 37) on the rendered page. PDF page index =
+# printed "Page N of 45". Facts only.
+schema_version: "0.2"
+kind: source
+id: melexis/MLX90393-DS@rev012
+sha256: b622dfc463eeb13cee8397ad3f01a5df2d8c506197fdb37154845449845cbfa2
+retrieved: 2026-11-17
+url: https://www.melexis.com/-/media/files/documents/datasheets/mlx90393-datasheet-melexis.pdf
+publisher: melexis
+document_id: "3901090393"
+document_type: datasheet
+revision: 012
+date: 2025-11-18

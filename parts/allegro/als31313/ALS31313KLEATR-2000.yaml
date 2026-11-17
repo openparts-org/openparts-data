@@ -1,0 +1,27 @@
+# ALS31313KLEATR-2000: printed in the SELECTION GUIDE of ALS31313-DS Rev. 9 (page 2;
+# 4000 pieces per 13-inch reel) -> existence verified. lifecycle:
+# unknown.
+schema_version: "0.2"
+kind: part
+id: allegro/ALS31313KLEATR-2000
+manufacturer: allegro
+mpn: ALS31313KLEATR-2000
+device: allegro/ALS31313
+
+package:
+  value: manufacturers/allegro/LE-TSSOP8-ALS31313
+  src:
+    - p2 "Selection Guide, Package Type LEA = 8-lead TSSOP"
+    - p24 "Figure 10 TSSOP8 (LE) Package Drawing"
+
+sources: [allegro/ALS31313-DS@rev9]
+source: allegro/ALS31313-DS@rev9
+
+existence: { status: verified, src: 'p2 "Selection Guide, row ALS31313KLEATR-2000"' }
+lifecycle: { status: unknown }
+
+parameters:
+  magnetic_range:
+    min: -2000 G
+    max: 2000 G
+    src: p9 "ALS31313KLEATR-2000 Performance Characteristics, Optimized Sensing Range BIN"

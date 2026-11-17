@@ -1,0 +1,31 @@
+# NXP SOT1628-1, 98ARE10742D rev A: thermally enhanced quad flat
+# non-leaded package, 20 terminals, 0.4 pitch, 3 x 3 x 0.6 mm, as
+# printed in the SGTL5000 data sheet Rev. 7 pages 62-64 (rendered and
+# read as images). Body "3" (boxed basic, no tolerance) both ways;
+# height 0.5/0.6 (overall, "MAX 0.425" mold above the leads not
+# recorded); A1 0.00/0.05; exposed die attach pad 1.60/1.80 both ways;
+# b 0.15/0.25 (note 4); L 0.30/0.50; terminal thickness "(0.152)"
+# reference, not recorded. View M-M (bottom) numbers 1-5 down the
+# right side -> seen from the top pin 1 at the top of the left side,
+# counter-clockwise.
+schema_version: "0.2"
+kind: package
+id: manufacturers/nxp/SOT1628-1
+family: qfn
+lead_count: { value: 20, src: 'p62 "98ARE10742D, 20 TERMINAL, 0.4 PITCH (3 X 3 X 0.6)"' }
+source: nxp/SGTL5000-rev7
+
+pitch: { typ: 0.4 mm, src: 'p62 "98ARE10742D view M-M, 16X 0.4"' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:     { typ: 3 mm, src: 'p62 "98ARE10742D, top view 3 (basic)"' }
+  body_length:    { typ: 3 mm, src: 'p62 "98ARE10742D, top view 3 (basic)"' }
+  lead_length:    { min: 0.3 mm, max: 0.5 mm, src: 'p62 "98ARE10742D view M-M, 20X 0.50 / 0.30"' }
+  exposed_pad:
+    src:    p62 "98ARE10742D view M-M, exposed die attach pad 1.80 / 1.60 both ways"
+    width:  { min: 1.6 mm, max: 1.8 mm }
+    length: { min: 1.6 mm, max: 1.8 mm }
+  overall_height: { min: 0.5 mm, max: 0.6 mm, src: 'p63 "98ARE10742D detail G, 0.6 / 0.5"' }
+  standoff:       { min: 0 mm, max: 0.05 mm, src: 'p63 "98ARE10742D detail G, 0.05 / 0.00"' }
+  lead_width:     { min: 0.15 mm, max: 0.25 mm, src: 'p62 "98ARE10742D view M-M, 20X 0.25 / 0.15"' }

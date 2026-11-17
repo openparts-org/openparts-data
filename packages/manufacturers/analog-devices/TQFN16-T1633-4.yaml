@@ -1,0 +1,53 @@
+# Maxim 16-lead thin QFN 3x3x0.75 mm, package code T1633+4, outline
+# 21-0136 rev O, as printed in the MAX98357A/B datasheet (19-6779 Rev
+# 16) pages 36-37 (rendered and read as images). Column "16L 3x3" of the
+# dimension table: A 0.70/0.75/0.80, b 0.20/0.25/0.30, D = E
+# 2.90/3.00/3.10, e 0.50 BSC, L 0.30/0.40/0.50, A1 0/0.02/0.05; exposed
+# pad row T1633-4: D2 = E2 0.95/1.10/1.25. A2 "0.20 REF" (terminal
+# thickness) not recorded. Pin 1 per JESD95-1 SPP-012 (note 4),
+# numbering counter-clockwise seen from the top.
+schema_version: "0.2"
+kind: package
+id: manufacturers/analog-devices/TQFN16-T1633-4
+family: qfn
+lead_count: { value: 16, src: 'p37 "21-0136 table, 16L 3x3, N 16"' }
+source: analog-devices/MAX98357A-MAX98357B-rev16
+
+pitch: { typ: 0.5 mm, src: 'p37 "21-0136 table, 16L 3x3, e 0.50 BSC."' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:
+    min: 2.9 mm
+    typ: 3 mm
+    max: 3.1 mm
+    src: p37 "21-0136 table, 16L 3x3, E 2.90/3.00/3.10"
+  body_length:
+    min: 2.9 mm
+    typ: 3 mm
+    max: 3.1 mm
+    src: p37 "21-0136 table, 16L 3x3, D 2.90/3.00/3.10"
+  body_height:
+    min: 0.7 mm
+    typ: 0.75 mm
+    max: 0.8 mm
+    src: p37 "21-0136 table, 16L 3x3, A 0.70/0.75/0.80"
+  exposed_pad:
+    src:    p37 "21-0136 Exposed Pad Variations, T1633-4, D2 / E2 0.95/1.10/1.25"
+    width:  { min: 0.95 mm, typ: 1.1 mm, max: 1.25 mm }
+    length: { min: 0.95 mm, typ: 1.1 mm, max: 1.25 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p37 "21-0136 table, 16L 3x3, A1 0/0.02/0.05"
+  lead_width:
+    min: 0.2 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p37 "21-0136 table, 16L 3x3, b 0.20/0.25/0.30"
+  lead_length:
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p37 "21-0136 table, 16L 3x3, L 0.30/0.40/0.50"

@@ -1,0 +1,39 @@
+# DRV5055 ratiometric linear Hall effect sensor, LPG (3-pin TO-92) pinout.
+# From SBAS640C Table 4-1 Pin Functions column LPG: VCC 1, GND 2, OUT 3, checked against
+# Figure 4-2 on the same page. supply_voltage is left out: 5.3
+# Recommended Operating Conditions prints two isolated VCC ranges
+# (3 V to 3.63 V and 4.5 V to 5.5 V, page 4), not one range.
+schema_version: "0.2"
+kind: device
+id: ti/DRV5055-LPG
+manufacturer: ti
+category: magnetic_sensor
+family: DRV5055
+source: ti/SBAS640C
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:       { value: analog, src: 'p3 "Table 4-1 Pin Functions, OUT: Analog output"' }
+  supply_current:
+    - typ: 3 mA
+      max: 5 mA
+      at: { VCC: 5 V }
+      src: p5 "5.5 Electrical Characteristics, ICC, VCC = 5.0V, B = 0mT"
+    - typ: 2 mA
+      max: 4 mA
+      at: { VCC: 3.3 V }
+      src: p5 "5.5 Electrical Characteristics, ICC, VCC = 3.3V, B = 0mT"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "5.3 Recommended Operating Conditions, TA Operating ambient temperature"
+  esd_hbm:              { typ: 2.5 kV, src: 'p4 "5.2 ESD Ratings, HBM ±2500 V"' }
+  magnetic_sensor_type: { value: linear, src: p1 "DRV5055 Ratiometric Linear Hall-Effect Sensor" }
+
+pins:
+  src:
+    - p3 "Table 4-1 Pin Functions, column LPG"
+    - p3 "Figure 4-2 LPG Package 3-Pin TO-92 Top View"
+  "1": { name: VCC, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: OUT, type: output }

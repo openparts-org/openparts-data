@@ -1,0 +1,23 @@
+# Same Sky CPT-1203-03-SMT-TR piezo buzzer transducer, from samesky/CPT-1203-03-SMT-TR-DS page 2 "MECHANICAL
+# DRAWING" and "Recommended PCB Layout Top View". Frame: that top view,
+# origin on the body centre. Layout: pads 6 (X) x 3 (Y), 15 outside the two pads -> centres at y = ±6; no polarity marked (1 top, 2 bottom here).
+schema_version: "0.2"
+kind: package
+id: manufacturers/samesky/CPT-1203-03-SMT-TR
+family: buzzer
+lead_count: { value: 2, src: p2 "Recommended PCB layout" }
+source: samesky/CPT-1203-03-SMT-TR-DS
+
+pitch: { typ: 12 mm, src: 'p2 "Recommended PCB Layout, pad centre distance"' }
+geometry: { type: parametric, generator: buzzer }
+
+dimensions:
+  body_width:  { typ: 12 mm, src: 'p2 "Mechanical drawing, 12±0.5"' }
+  body_length: { typ: 12 mm, src: 'p2 "Mechanical drawing, 12±0.5"' }
+  body_height: { typ: 3 mm, src: 'p2 "Mechanical drawing, height 3±0.5"' }
+
+pads:
+  value:
+    - { number: "1", x: 0, y: 6, width: 6, length: 3 }
+    - { number: "2", x: 0, y: -6, width: 6, length: 3 }
+  src: p2 "Recommended PCB layout, 6 x 3 pads, 15 outside; y = (15 - 3)/2"

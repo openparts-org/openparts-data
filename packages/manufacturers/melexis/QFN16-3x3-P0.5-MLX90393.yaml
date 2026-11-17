@@ -1,0 +1,37 @@
+# Melexis MLX90393 QFN-16, 3 x 3 x 1 mm, 0.5 mm pitch, with wettable
+# flanks (package code LW), read from Figure 26 "QFN-16 - Package Outline
+# Drawing" (datasheet revision 012 page 37), rendered.
+#
+# Mapping as manufacturers/ti/RGT0016C: "2.90 / 3.10" both ways ->
+# body_width / body_length; "0.80 / 1.00" -> body_height; "0.00-0.05" ->
+# standoff; "0.18 / 0.30" -> lead_width; "0.30-0.50" -> lead_length;
+# exposed pad "1.55 / 1.80" both ways -> exposed_pad (no typ printed;
+# min/max only). Pitch "0.50".
+# The bottom view numbers 1-2-3 along one edge with 16 on the adjacent
+# edge next to pin 1: the counter-clockwise QFN order seen from the top.
+# Left out: "0.42 +-0.10", "1.50 +-0.20" (die / sensitive spot), "0.20
+# REF", "0.20" pad-corner callout. No land pattern is given.
+schema_version: "0.2"
+kind: package
+id: manufacturers/melexis/QFN16-3x3-P0.5-MLX90393
+family: qfn
+lead_count: 16
+source: melexis/MLX90393-DS@rev012
+
+pitch: { typ: 0.5 mm, src: 'p37 "Figure 26 QFN-16, side view "0.50""' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:
+    min: 2.9 mm
+    max: 3.1 mm
+    src: p37 "Figure 26 QFN-16, "2.90 / 3.10" (horizontal)"
+  body_length: { min: 2.9 mm, max: 3.1 mm, src: 'p37 "Figure 26 QFN-16, "2.90 / 3.10" (vertical)"' }
+  body_height: { min: 0.8 mm, max: 1 mm, src: 'p37 "Figure 26 QFN-16 side view, "0.80 / 1.00""' }
+  exposed_pad:
+    src:    p37 "Figure 26 QFN-16 bottom view, exposed pad "1.55 / 1.80" both ways"
+    width:  { min: 1.55 mm, max: 1.8 mm }
+    length: { min: 1.55 mm, max: 1.8 mm }
+  standoff:    { min: 0 mm, max: 0.05 mm, src: 'p37 "Figure 26 QFN-16 side view, "0.00-0.05""' }
+  lead_width:  { min: 0.18 mm, max: 0.3 mm, src: 'p37 "Figure 26 QFN-16 side view, "0.18 / 0.30""' }
+  lead_length: { min: 0.3 mm, max: 0.5 mm, src: 'p37 "Figure 26 QFN-16 bottom view, "0.30-0.50""' }

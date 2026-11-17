@@ -1,0 +1,47 @@
+# ALS31313 3D linear Hall-effect sensor with I2C output, package LE
+# (8-pin TSSOP). Pins from the "Terminal List Table" (ALS31313-DS Rev. 9
+# page 4), checked against "Package LE, 8-Pin TSSOP Pinout Diagram"
+# (same page). Types: VCC power; ADR0, ADR1 (address select via
+# resistive divider) input; GND ground; INT output; NC ("Not internally
+# connected. Connect to GND") nc; SDA (open-drain) io; SCL clock.
+# Sensing range per factory configuration on the Parts.
+schema_version: "0.2"
+kind: device
+id: allegro/ALS31313
+manufacturer: allegro
+category: magnetic_sensor
+family: ALS31313
+source: allegro/ALS31313-DS@rev9
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: i2c
+    src: p4 "Terminal List Table, SDA I2C serial data, SCL I2C serial clock"
+  supply_voltage:
+    min: 2.65 V
+    max: 3.5 V
+    src: p5 "Electrical Characteristics, Supply Voltage VCC, normal operation"
+  supply_current:
+    typ: 3.4 mA
+    max: 3.9 mA
+    at: { VCC: 3 V }
+    src: p5 "Electrical Characteristics, ICC(ACTIVE)"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p3 "Absolute Maximum Ratings, Operating Ambient Temperature TA, Range K"
+  magnetic_sensor_type:
+    value: 3d
+    src: p1 "Automotive Grade, 3D Linear Hall-Effect Sensor with I2C Output"
+
+pins:
+  src: [p4 "Terminal List Table", 'p4 "Package LE, 8-Pin TSSOP Pinout Diagram"']
+  "1": { name: VCC, type: power }
+  "2": { name: ADR0, type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: INT, type: output }
+  "5": { name: NC, type: nc }
+  "6": { name: ADR1, type: input }
+  "7": { name: SDA, type: io }
+  "8": { name: SCL, type: clock }

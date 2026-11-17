@@ -1,0 +1,53 @@
+# NXP SGTL5000 low-power stereo codec with headphone amp, 20-pin QFN
+# (3 x 3 mm; SPI not supported in this package, page 1 note). Pins from
+# the Rev. 7 page 4-5 "Table 1. SGTL5000 Pin Definitions", column "20
+# Pin QFN"; the exposed PAD is GND ("The PAD must be soldered to
+# ground") -> key EP named GND, ground. Types from the Pin Function
+# column: Power -> power; Analog outputs (HP_R/HP_L, LINEOUT_R/L) ->
+# output; analog inputs (LINEIN_R/L, MIC) -> analog; HP_VGND (virtual
+# ground, never to 0 V) and VAG (DAC VAG filter) -> passive; MIC_BIAS ->
+# power_out; I2S_DOUT output, CTRL_DATA io, other digital pins input;
+# VDDD (digital supply) -> power.
+schema_version: "0.2"
+kind: device
+id: nxp/SGTL5000-QFN20
+manufacturer: nxp
+category: audio_codec
+family: SGTL5000
+source: nxp/SGTL5000-rev7
+
+parameters:
+  data_interface: { value: i2s, src: 'p1 "Features, Digital I/O, I2S port"' }
+  supply_voltage:
+    min: 1.62 V
+    max: 3.6 V
+    src: p1 "Features, Power Supplies, Designed to operate from 1.62 to 3.6 volts"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "Ordering Information, Temperature Range (TA) -40 to 85 °C"
+  channel_count:  { value: "2", src: p1 "Low Power Stereo Codec with Headphone Amp" }
+
+pins:
+  src:  p4 "Table 1. SGTL5000 Pin Definitions, column 20 Pin QFN"
+  "1":  { name: HP_R, type: output }
+  "2":  { name: HP_VGND, type: passive }
+  "3":  { name: VDDA, type: power }
+  "4":  { name: HP_L, type: output }
+  "5":  { name: VAG, type: passive }
+  "6":  { name: LINEOUT_R, type: output }
+  "7":  { name: LINEOUT_L, type: output }
+  "8":  { name: LINEIN_R, type: analog }
+  "9":  { name: LINEIN_L, type: analog }
+  "10": { name: MIC, type: analog }
+  "11": { name: MIC_BIAS, type: power_out }
+  "12": { name: VDDIO, type: power }
+  "13": { name: SYS_MCLK, type: input }
+  "14": { name: I2S_LRCLK, type: input }
+  "15": { name: I2S_SCLK, type: input }
+  "16": { name: I2S_DOUT, type: output }
+  "17": { name: I2S_DIN, type: input }
+  "18": { name: CTRL_DATA, type: io }
+  "19": { name: CTRL_CLK, type: input }
+  "20": { name: VDDD, type: power }
+  EP:   { name: GND, type: ground }

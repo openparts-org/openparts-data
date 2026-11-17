@@ -1,0 +1,52 @@
+# VCNL4040 proximity and ambient light sensor with infrared emitter, I2C
+# interface and interrupt, 8-pad 2 x 4 mm leadless package (M3OE). Pins
+# from "PIN DESCRIPTIONS" (document 84274 page 2), checked against the
+# pin table of Fig. 14 (page 14). The two CATHODE pins are the sensor
+# cathode (pin 2) and the LED cathode (pin 5), named as Fig. 14 prints
+# them. Types: GND ground; VDD power; CATHODE (sensor) power (2.5 V to
+# 3.6 V per "Cathode (sensor) voltage", page 3); ANODE (IRED) power;
+# CATHODE (LED) passive (LED driver sink); INT output; SDAT io; SCLK
+# clock.
+schema_version: "0.2"
+kind: device
+id: vishay/VCNL4040
+manufacturer: vishay
+category: light_sensor
+family: VCNL4040
+source: vishay/84274
+
+# Parameters (AI candidates, needs review).
+parameters:
+  peak_wavelength:
+    typ: 550 nm
+    src: p3 "BASIC CHARACTERISTICS, Peak sensitivity wavelength of ALS"
+  data_interface: { value: i2c, src: 'p1 "FEATURES, Output type I2C bus (ALS / PS)"' }
+  supply_voltage:
+    min: 2.5 V
+    max: 3.6 V
+    src: p2 "RECOMMENDED OPERATING CONDITIONS, Supply voltage VDD"
+  supply_current:
+    typ: 300 µA
+    src: p3 "BASIC CHARACTERISTICS, Supply current IDD, excluded LED driving"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p2 "RECOMMENDED OPERATING CONDITIONS, Operation temperature range Tamb"
+  light_sensor_type:
+    value: ambient_proximity
+    src: p1 "Fully Integrated Proximity and Ambient Light Sensor With Infrared Emitter"
+  illuminance_range:
+    min: 0.0125 lx
+    max: 6553 lx
+    src: p3 "BASIC CHARACTERISTICS, Detectable intensity, Minimum / Maximum"
+
+pins:
+  src: [p2 "PIN DESCRIPTIONS", 'p14 "Fig. 14 VCNL4040 Package Dimensions, pin table"']
+  "1": { name: GND, type: ground }
+  "2": { name: CATHODE (sensor), type: power }
+  "3": { name: VDD, type: power }
+  "4": { name: ANODE, type: power }
+  "5": { name: CATHODE (LED), type: passive }
+  "6": { name: INT, type: output }
+  "7": { name: SDAT, type: io }
+  "8": { name: SCLK, type: clock }

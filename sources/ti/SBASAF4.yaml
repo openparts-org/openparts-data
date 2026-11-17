@@ -1,0 +1,16 @@
+# Official TI datasheet "TMAG5170 High-Precision 3D Linear Hall-Effect Sensor
+# With SPI". Downloaded 2026-11-17 with curl from the TI symlink URL below;
+# page header "SBASAF4 - SEPTEMBER 2021" (original release, no revision
+# letter). 61 PDF pages; text read with pdftotext -layout. Page numbers are
+# PDF page indices. TI copyright: facts only.
+schema_version: "0.2"
+kind: source
+id: ti/SBASAF4
+sha256: 9a888e7e03c7f68c15a6f18b6773a9821fcedb01d236a671fe2e81eeaf3a0d6a
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/tmag5170.pdf
+publisher: ti
+document_id: SBASAF4
+document_type: datasheet
+revision: original
+date: 2021-09

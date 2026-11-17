@@ -1,0 +1,16 @@
+# ROHM datasheet "Digital 16bit Serial Output Type Ambient Light Sensor IC
+# BH1730FVC", TSZ02201-0M3M0F616050-1-2, footer "8.Jun.2016 Rev.001".
+# Downloaded 2026-11-17 with curl from fscdn.rohm.com. 23 PDF pages; text
+# read with pdftotext -layout, the WSOF6 drawing (page 19) on the rendered
+# page. Page numbers are PDF page indices. Facts only.
+schema_version: "0.2"
+kind: source
+id: rohm/BH1730FVC-datasheet-en
+sha256: 012d391bb2712fc3f22d6596e83ad49075e294dd797b5a40634467dc567d0572
+retrieved: 2026-11-17
+url: https://fscdn.rohm.com/en/products/databook/datasheet/ic/sensor/light/bh1730fvc-e.pdf
+publisher: rohm
+document_id: TSZ02201-0M3M0F616050-1-2
+document_type: datasheet
+revision: 001
+date: 2016-06-08

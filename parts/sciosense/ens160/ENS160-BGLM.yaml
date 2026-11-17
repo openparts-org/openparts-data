@@ -1,0 +1,22 @@
+# ENS160-BGLM: printed in Table 40 "Ordering information" (SC-001224-DS-9 page
+# 41): 9-pin LGA, tape & reel, 500 pcs -> existence verified.
+# lifecycle: unknown (Document Status "Production" refers to the
+# datasheet).
+schema_version: "0.2"
+kind: part
+id: sciosense/ENS160-BGLM
+manufacturer: sciosense
+mpn: ENS160-BGLM
+device: sciosense/ENS160
+
+package:
+  value: manufacturers/sciosense/LGA9-3x3-P1.05-ENS160
+  src:
+    - p41 "Table 40 Ordering information, row ENS160-BGLM, 9-pin LGA"
+    - p39 "Figure 17 LGA package drawing"
+
+sources: [sciosense/SC-001224-DS-9]
+source: sciosense/SC-001224-DS-9
+
+existence: { status: verified, src: 'p41 "Table 40 Ordering information, row ENS160-BGLM"' }
+lifecycle: { status: unknown }

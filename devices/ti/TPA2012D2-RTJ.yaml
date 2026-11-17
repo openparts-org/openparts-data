@@ -1,0 +1,68 @@
+# TPA2012D2 2.1-W/channel stereo class-D audio amplifier, RTJ (WQFN-20)
+# pin map: SLOS438F page 3 "Pin Functions", column WQFN, and the "RTJ
+# Package 20-Pin WQFN Top View" figure. Thermal pad: "Connect the
+# thermal pad of WQFN package to PCB GND" -> key EP named GND, ground.
+# SDL/SDR are active-low shutdowns; G0/G1 gain select. AVDD/PVDD and
+# AGND/PGND power/ground; PGND (4, 12) and PVDD (3, 13) appear twice.
+schema_version: "0.2"
+kind: device
+id: ti/TPA2012D2-RTJ
+manufacturer: ti
+category: audio_amplifier
+family: TPA2012D2
+source: ti/SLOS438F
+
+parameters:
+  supply_voltage:
+    min: 2.5 V
+    max: 5.5 V
+    src: p4 "7.3 Recommended Operating Conditions, VSS (AVDD, PVDD)"
+  supply_current:
+    typ: 6 mA
+    max: 9 mA
+    at: { VDD: 5.5 V }
+    src: p5 "7.5 Electrical Characteristics, IDD, no load or output filter"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "7.3 Recommended Operating Conditions, TA"
+  esd_hbm:         { typ: 2 kV, src: 'p4 "7.2 ESD Ratings, HBM ±2000 V"' }
+  channel_count:
+    value: "2"
+    src: p5 "7.5 Electrical Characteristics, PO, Output power (per channel)"
+  amplifier_class: { value: d, src: 'p3 "Device Comparison Table, TPA2012D2, Class D"' }
+  output_power:
+    - typ: 1.4 W
+      at: { VDD: 5 V, RL: 8 Ω, THD: 10 % }
+      src: p5 "7.5, PO (per channel), VDD = 5 V, f = 1 kHz, THD = 10%, RL = 8 Ω"
+    - typ: 2.1 W
+      at: { VDD: 5 V, RL: 4 Ω, THD: 10 % }
+      src: p5 "7.5, PO (per channel), VDD = 5 V, f = 1 kHz, THD = 10%, RL = 4 Ω"
+  thd_n:
+    typ: 0.14 %
+    at: { VDD: 5 V, RL: 8 Ω }
+    src: p5 "7.5 Operating Characteristics RL = 8 Ω, THD+N, PO = 1 W, AV = 6 dB, f = 1 kHz"
+
+pins:
+  src:  ['p3 "Pin Functions, column WQFN"', p3 "RTJ Package 20-Pin WQFN Top View"]
+  "1":  { name: G1, type: input }
+  "2":  { name: OUTL+, type: output }
+  "3":  { name: PVDD, type: power }
+  "4":  { name: PGND, type: ground }
+  "5":  { name: OUTL-, type: output }
+  "6":  { name: NC, type: nc }
+  "7":  { name: SDL, type: input }
+  "8":  { name: SDR, type: input }
+  "9":  { name: AVDD, type: power }
+  "10": { name: NC, type: nc }
+  "11": { name: OUTR-, type: output }
+  "12": { name: PGND, type: ground }
+  "13": { name: PVDD, type: power }
+  "14": { name: OUTR+, type: output }
+  "15": { name: G0, type: input }
+  "16": { name: INR+, type: analog }
+  "17": { name: INR-, type: analog }
+  "18": { name: AGND, type: ground }
+  "19": { name: INL-, type: analog }
+  "20": { name: INL+, type: analog }
+  EP:   { name: GND, type: ground }

@@ -1,0 +1,38 @@
+# OMRON G5LE-1 (SPDT) PCB power relay, 5 PCB terminals, from K100-E1-08
+# page 3 "Dimensions" and "PCB Mounting Holes (Bottom View)" (rendered
+# and read as an image). Housing 22.5 max x 16.5 max x 19.0 max (average
+# 21.6 x 15.6 x 18.56); terminals 3.5. Holes "Five, 1.3 +0.2/0 dia.":
+# from the bottom-view outline (22.5 x 16.5 by its chain dimensions
+# (2.55) + 2 + 12.2 + (5.75) and (2.25) + 12 + (2.25)): pin 1 at 2.55 from
+# the left end on the centre line; 2 and 5 at 4.55, 3 and 4 at 16.75, each
+# pair 12 apart about the centre line. Centred on the 22.5 x 16.5
+# outline (centre 11.25): 1 at x -8.7, 2/5 at -6.7, 3/4 at +5.5, y ±6.
+# Frame: top view = the bottom view mirrored left-right (x negated).
+schema_version: "0.2"
+kind: package
+id: manufacturers/omron/G5LE-1
+family: relay
+
+lead_count:
+  value: 5
+  src: p3 "PCB Mounting Holes (Bottom View), SPDT (1c), Five, 1.3 dia. holes"
+
+source: omron/K100-E1-08
+
+pitch: { typ: 12 mm, src: 'p3 "PCB Mounting Holes (Bottom View), SPDT (1c), 12"' }
+geometry: { type: parametric, generator: relay }
+
+dimensions:
+  body_width:  { max: 22.5 mm, src: 'p3 "G5LE-1, (21.6)* 22.5 max."' }
+  body_length: { max: 16.5 mm, src: 'p3 "G5LE-1, (15.6)* 16.5 max."' }
+  body_height: { max: 19 mm, src: 'p3 "G5LE-1, (18.56)* 19.0 max."' }
+  tail_length: { typ: 3.5 mm, src: 'p3 "G5LE-1, terminal length 3.5"' }
+
+pads:
+  value:
+    - { number: "1", x: 8.7, y: 0, drill: 1.3 }
+    - { number: "2", x: 6.7, y: 6, drill: 1.3 }
+    - { number: "3", x: -5.5, y: 6, drill: 1.3 }
+    - { number: "4", x: -5.5, y: -6, drill: 1.3 }
+    - { number: "5", x: 6.7, y: -6, drill: 1.3 }
+  src: p3 "PCB Mounting Holes (Bottom View) SPDT (2.55) 2 12.2 (5.75), (2.25) 12 (2.25); mirrored, centred"

@@ -1,0 +1,50 @@
+# Vishay VCNL4040M3OE 8-pad leadless optical package (IRED + sensor),
+# 2 x 4 x 1.1 mm, 1.075 mm pitch. Read from "PACKAGE INFORMATION
+# (VCNL4040M3OE)" (Fig. 14) and "LAYOUT PAD INFORMATION (VCNL4040M3OE)"
+# (Fig. 15) on page 14 of document 84274 rev. 2.0, rendered.
+#
+# Mapping: top view "2 +- 0.1" x "4 +- 0.1" -> body_width /
+# body_length; side view "1.1 +- 0.05" -> body_height; bottom view
+# "1.075" -> pitch, terminal "0.5" across x "0.675 x 8" along the column
+# -> lead_length / lead_width (untoleranced, typ).
+# Orientation: the top view puts pin 1 at the lower right, 1-4 up the
+# right column, 5-8 down the left (5 upper left, 8 lower left). Rotated
+# by 180 degrees here so pin 1 is upper left: 1-4 down the left, 5-8 up
+# the right (the family's counter-clockwise order).
+# pads (Fig. 15): "0.7 x 8" wide, "0.725 x 8" long, "1.4" pad centre to
+# centre across the columns -> x = +-0.7, "1.075" centre to centre
+# along the columns -> y = +-0.5375, +-1.6125.
+# Left out: the LED and sensor window positions (0.85, 1.45, 2.6, 0.55,
+# diameters 1.2 / 1.1).
+schema_version: "0.2"
+kind: package
+id: manufacturers/vishay/DFN8-2x4-P1.075-VCNL4040
+family: dfn
+lead_count: 8
+source: vishay/84274
+
+pitch: { typ: 1.075 mm, src: 'p14 "Fig. 14 bottom view, "1.075" (3 x)"' }
+geometry: { type: parametric, generator: dfn }
+
+dimensions:
+  body_width:  { min: 1.9 mm, typ: 2 mm, max: 2.1 mm, src: 'p14 "Fig. 14 top view, "2 +- 0.1""' }
+  body_length: { min: 3.9 mm, typ: 4 mm, max: 4.1 mm, src: 'p14 "Fig. 14 top view, "4 +- 0.1""' }
+  body_height:
+    min: 1.05 mm
+    typ: 1.1 mm
+    max: 1.15 mm
+    src: p14 "Fig. 14 side view, "1.1 +- 0.05""
+  lead_length: { typ: 0.5 mm, src: 'p14 "Fig. 14 bottom view, terminal "0.5""' }
+  lead_width:  { typ: 0.675 mm, src: 'p14 "Fig. 14 bottom view, "0.675 x 8""' }
+
+pads:
+  value:
+    - { number: "1", x: -0.7, y: 1.6125, width: 0.7, length: 0.725 }
+    - { number: "2", x: -0.7, y: 0.5375, width: 0.7, length: 0.725 }
+    - { number: "3", x: -0.7, y: -0.5375, width: 0.7, length: 0.725 }
+    - { number: "4", x: -0.7, y: -1.6125, width: 0.7, length: 0.725 }
+    - { number: "5", x: 0.7, y: -1.6125, width: 0.7, length: 0.725 }
+    - { number: "6", x: 0.7, y: -0.5375, width: 0.7, length: 0.725 }
+    - { number: "7", x: 0.7, y: 0.5375, width: 0.7, length: 0.725 }
+    - { number: "8", x: 0.7, y: 1.6125, width: 0.7, length: 0.725 }
+  src: 'p14 "Fig. 15 footprint: 0.7 x 0.725 pads, 1.4 c-c across, 1.075 c-c along (rotated 180 deg)"'

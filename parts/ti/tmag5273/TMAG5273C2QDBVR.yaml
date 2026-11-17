@@ -1,0 +1,33 @@
+# TMAG5273C2QDBVR: orderable part number printed in the PACKAGE OPTION ADDENDUM
+# of SLYS045C (page 57, addendum dated 13-Jan-2026), SOT-23 (DBV) | 6;
+# lifecycle "active" from the same row's Status column. The PDF has no
+# outline drawing; DBV0006A is TI's 6-pin SOT-23 (DBV) outline, recorded
+# from SCES195N (drawing 4214840/G). magnetic_range is the wider of the
+# two register-selectable ranges (BIN, _RANGE = 1b).
+schema_version: "0.2"
+kind: part
+id: ti/TMAG5273C2QDBVR
+manufacturer: ti
+mpn: TMAG5273C2QDBVR
+device: ti/TMAG5273
+
+package:
+  value: manufacturers/ti/DBV0006A
+  src: p57 "PACKAGE OPTION ADDENDUM, row TMAG5273C2QDBVR, SOT-23 (DBV) | 6"
+
+sources: [ti/SLYS045C]
+source: ti/SLYS045C
+
+existence:
+  status: verified
+  src: p57 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TMAG5273C2QDBVR"
+
+lifecycle:
+  status: active
+  src: p57 "PACKAGE OPTION ADDENDUM, row TMAG5273C2QDBVR, Status Active"
+
+parameters:
+  magnetic_range:
+    min: -266 mT
+    max: 266 mT
+    src: p9 "5.8 Magnetic Characteristics For A2, B2, C2, D2, BIN Linear magnetic range, _RANGE = 1b (wider setting)"

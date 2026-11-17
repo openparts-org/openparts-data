@@ -1,0 +1,17 @@
+# Allegro datasheet "ALS31313 Automotive Grade, 3D Linear Hall-Effect Sensor
+# with I2C Output and Advanced Low Power Management", footer "ALS31313-DS,
+# Rev. 9 May 18, 2021". Downloaded 2026-11-17 with curl from
+# allegromicro.com. 25 PDF pages; text read with pdftotext -layout, the LE
+# package drawing (page 24) on the rendered page. Page numbers are PDF page
+# indices. Facts only.
+schema_version: "0.2"
+kind: source
+id: allegro/ALS31313-DS@rev9
+sha256: f8002f1a5ad3a07e88f21f3220f7f208ff35fbaa31ec151e1388b84d20bf9024
+retrieved: 2026-11-17
+url: https://www.allegromicro.com/-/media/files/datasheets/als31313-datasheet.pdf
+publisher: allegro
+document_id: ALS31313-DS
+document_type: datasheet
+revision: "9"
+date: 2021-05-18

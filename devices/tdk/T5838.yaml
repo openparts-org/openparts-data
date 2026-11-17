@@ -1,0 +1,54 @@
+# TDK InvenSense T5838 PDM digital MEMS microphone with acoustic
+# activity detect. Pins from DS-000383 page 11 "Table 10. Pin Function
+# Descriptions" (no TYPE column: DATA output, SELECT/THSEL/CLK inputs,
+# WAKE output, GND ground, VDD power -- this file's reading of the
+# function text). Values from "1.2 High Quality Mode" (page 5). No
+# Part/Package: the land pattern has a ring GND pad around the sound
+# port, which the package pad shapes cannot express yet; the orderable
+# code is MMICT5838-00-012 (page 1).
+schema_version: "0.2"
+kind: device
+id: tdk/T5838
+manufacturer: tdk
+category: microphone
+family: T5838
+source: tdk/DS-000383@rev1.2
+
+parameters:
+  data_interface:
+    value: pdm
+    src: 'p11 "Table 10, DATA: Digital Output Signal; CLK: Clock Input (PDM)"'
+  supply_voltage:
+    min: 1.62 V
+    max: 1.98 V
+    src: p5 "Table 1 General, Supply Voltage (VDD) 1.62 / 1.8 / 1.98"
+  supply_current:
+    typ: 310 µA
+    max: 340 µA
+    at: { VDD: 1.8 V }
+    src: p5 "Table 2 High Quality Mode, Supply Current, no load"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "Ordering Information, MMICT5838-00-012, Temp range"
+  snr:
+    typ: 68 dB
+    src: p5 "Table 2 High Quality Mode, SNR, 20 kHz bandwidth, A-weighted, 68 dBA"
+  sensitivity_digital:
+    min: -42 dBFS
+    typ: -41 dBFS
+    max: -40 dBFS
+    src: p5 "Table 2 High Quality Mode, Sensitivity, 1 kHz, 94 dB SPL"
+  acoustic_overload_point:
+    typ: 133 dBSPL
+    src: p5 "Table 2 High Quality Mode, Acoustic Overload Point, 10% THD"
+
+pins:
+  src: p11 "Table 10. Pin Function Descriptions"
+  "1": { name: DATA, type: output }
+  "2": { name: SELECT, type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: WAKE, type: output }
+  "5": { name: THSEL, type: input }
+  "6": { name: CLK, type: input }
+  "7": { name: VDD, type: power }

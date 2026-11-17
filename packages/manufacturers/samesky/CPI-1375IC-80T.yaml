@@ -1,0 +1,25 @@
+# Same Sky CPI-1375IC-80T piezo buzzer indicator, from samesky/CPI-1375IC-80T-DS page 2 "MECHANICAL
+# DRAWING" and "Recommended PCB Layout Top View". Frame: that top view,
+# origin on the body centre. Layout: (+) pad on the left, (-) on the right, 7.6 apart on the horizontal centre line.
+schema_version: "0.2"
+kind: package
+id: manufacturers/samesky/CPI-1375IC-80T
+family: buzzer
+lead_count: { value: 2, src: p2 "Recommended PCB Layout Top View" }
+source: samesky/CPI-1375IC-80T-DS
+
+pitch: { typ: 7.6 mm, src: 'p2 "Recommended PCB Layout, pad centre distance"' }
+geometry: { type: parametric, generator: buzzer }
+
+dimensions:
+  body_width:   { typ: 13.8 mm, src: 'p2 "Mechanical drawing, Ø13.8"' }
+  body_length:  { typ: 13.8 mm, src: 'p2 "Mechanical drawing, Ø13.8"' }
+  body_height:  { typ: 7.5 mm, src: 'p2 "Mechanical drawing, height 7.5"' }
+  can_diameter: { typ: 13.8 mm, src: 'p2 "Mechanical drawing, Ø13.8"' }
+  tail_length:  { typ: 5.5 mm, src: 'p2 "Mechanical drawing, pin length 5.5"' }
+
+pads:
+  value:
+    - { number: "1", x: -3.8, y: 0, width: 2.5, length: 2.5, drill: 0.9, shape: circle }
+    - { number: "2", x: 3.8, y: 0, width: 2.5, length: 2.5, drill: 0.9, shape: circle }
+  src: p2 "Recommended PCB Layout Top View, 7.6, 2-Ø2.5 Pads, 2-Ø0.9 Hole"

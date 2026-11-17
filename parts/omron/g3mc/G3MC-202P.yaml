@@ -1,0 +1,19 @@
+# OMRON G3MC-202P: zero-cross, 2 A at 100 to 240 VAC, UL/CSA standard
+# model, printed in the J108-E1-05 page 1 List of Models (rows 5 / 12 /
+# 24 VDC rated input voltage share this model name) -> existence
+# verified. lifecycle unknown.
+schema_version: "0.2"
+kind: part
+id: omron/G3MC-202P
+manufacturer: omron
+mpn: G3MC-202P
+device: omron/G3MC-202P
+package: manufacturers/omron/G3MC-202P
+sources: [omron/J108-E1-05]
+source: omron/J108-E1-05
+
+existence:
+  status: verified
+  src: p1 "List of Models, 2 A at 100 to 240 VAC, zero cross Yes, G3MC-202P"
+
+lifecycle: { status: unknown }

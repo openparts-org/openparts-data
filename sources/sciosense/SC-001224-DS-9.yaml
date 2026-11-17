@@ -1,0 +1,16 @@
+# ScioSense "ENS160 Digital Metal-Oxide Multi-Gas Sensor" datasheet, footer
+# "ENS160 Datasheet Version 1.3 SC-001224-DS-9 / 2023-03-29 / Production",
+# 44 pages. Downloaded 2026-11-17 with curl from sciosense.com. Text read
+# with pdftotext -layout, the LGA drawing (Figure 17, page 39) on the
+# rendered page. Page numbers are PDF page indices. Facts only.
+schema_version: "0.2"
+kind: source
+id: sciosense/SC-001224-DS-9
+sha256: dbe06607f42bef636900da5f732b249ff595e5495fd84fd16e7d36ea3a1ca410
+retrieved: 2026-11-17
+url: https://www.sciosense.com/wp-content/uploads/2023/12/ENS160-Datasheet.pdf
+publisher: sciosense
+document_id: SC-001224-DS-9
+document_type: datasheet
+revision: "1.3"
+date: 2023-03-29

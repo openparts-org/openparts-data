@@ -1,0 +1,41 @@
+# Same Sky CPI-1375IC-80T piezo buzzer indicator (datasheet samesky/CPI-1375IC-80T-DS).
+# Pins from the page-2 recommended PCB layout: 1 = +, 2 = -; typed passive.
+schema_version: "0.2"
+kind: device
+id: samesky/CPI-1375IC-80T
+manufacturer: samesky
+category: buzzer
+family: CPI-1375IC
+source: samesky/CPI-1375IC-80T-DS
+
+parameters:
+  rated_voltage: { typ: 12 V, src: 'p1 "Specifications, rated voltage 12 Vdc"' }
+  rated_current:
+    max: 7 mA
+    src: p1 "Specifications, current consumption at rated voltage, max 7 mA"
+  frequency:
+    min: 3.9 kHz
+    typ: 4 kHz
+    max: 4.1 kHz
+    src: p1 "Specifications, rated frequency 3,900 / 4,000 / 4,100 Hz"
+  supply_voltage:
+    min: 3.5 V
+    max: 16 V
+    src: p1 "Specifications, operating voltage 3.5 / 16 Vdc"
+  operating_temperature:
+    min: -30 °C
+    max: 70 °C
+    src: p1 "Specifications, operating temperature"
+  sound_pressure:
+    min: 88 dB
+    at: { VIN: 12 V, d: 10 cm }
+    src: p1 "Specifications, sound pressure level at 10 cm, rated voltage, min 88 dB"
+  buzzer_type:
+    value: piezo
+    src: 'p1 "MODEL: CPI-1375IC-80T | DESCRIPTION: PIEZO BUZZER INDICATOR"'
+  buzzer_drive:  { value: internal, src: 'p1 "Features, piezo, internally driven"' }
+
+pins:
+  src: p2 "Recommended PCB Layout Top View, (+) / (-)"
+  "1": { name: +, type: passive }
+  "2": { name: -, type: passive }

@@ -1,0 +1,48 @@
+# OPT3001 ambient light sensor (ALS), DNP (6-pin USON). Pins from the
+# "Pin Functions" table (SBOS681C page 3), checked against the "DNP
+# Package 6-Pin USON Top View" figure (same page). Types: VDD power, GND
+# (listed Power) ground, ADDR input, SCL clock, INT (open-drain) output,
+# SDA io. The table lists no thermal pad, so no pin is added for the
+# DNP0006A exposed pad (its land 7 stays a pad without a pin).
+schema_version: "0.2"
+kind: device
+id: ti/OPT3001
+manufacturer: ti
+category: light_sensor
+family: OPT3001
+source: ti/SBOS681C
+
+# Parameters (AI candidates, needs review).
+parameters:
+  peak_wavelength:
+    typ: 550 nm
+    src: p5 "6.5 Electrical Characteristics, Peak irradiance spectral responsivity"
+  data_interface:    { value: i2c, src: 'p3 "Pin Functions, SCL: I2C clock"' }
+  supply_voltage:
+    min: 1.6 V
+    max: 3.6 V
+    src: p5 "6.5 Electrical Characteristics, VDD Operating range"
+  supply_current:
+    typ: 1.8 µA
+    max: 2.5 µA
+    at: { VDD: 3.6 V }
+    src: p5 "6.5 Electrical Characteristics, IQ Quiescent current, Dark, Active"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "6.3 Recommended Operating Conditions, Operating temperature"
+  esd_hbm:           { typ: 2 kV, src: 'p4 "6.2 ESD Ratings, HBM ±2000 V"' }
+  light_sensor_type: { value: ambient, src: p1 "OPT3001 Ambient Light Sensor (ALS)" }
+  illuminance_range:
+    min: 0.01 lx
+    max: 83000 lx
+    src: p1 "1 Features, Measurements 0.01 lux to 83 k lux"
+
+pins:
+  src: [p3 "Pin Functions", p3 "DNP Package 6-Pin USON Top View"]
+  "1": { name: VDD, type: power }
+  "2": { name: ADDR, type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: SCL, type: clock }
+  "5": { name: INT, type: output }
+  "6": { name: SDA, type: io }

@@ -1,0 +1,53 @@
+# OPT4001 high-speed, high-precision digital ambient light sensor, DTS
+# (SOT-5X3, 8 pins) variant. Pins from Table 6-2 "Pin Functions"
+# (SBOS993A page 4), checked against Figure 6-2 (same page; captioned
+# "DTS Package, 6-Pin USON, Top View" in the source although it shows 8
+# pins). Types: VDD power, GND (listed Power) ground, ADDR input, SCL
+# clock, INT and SDA (Digital I/O) io, NC nc. The 4-pin PicoStar (YMN)
+# variant has another pin map and illuminance range and is not covered.
+# illuminance_range: the SOT-5X3 figures (page 1). operating_temperature
+# from the Features list (page 1); 7.3 gives only a junction range.
+schema_version: "0.2"
+kind: device
+id: ti/OPT4001-DTS
+manufacturer: ti
+category: light_sensor
+family: OPT4001
+source: ti/SBOS993A
+
+# Parameters (AI candidates, needs review).
+parameters:
+  peak_wavelength:
+    typ: 550 nm
+    src: p6 "7.5 Electrical Characteristics, Peak irradiance spectral responsivity"
+  data_interface: { value: i2c, src: 'p4 "Table 6-2 Pin Functions, SCL I2C clock"' }
+  supply_voltage:
+    min: 1.6 V
+    max: 3.6 V
+    src: p5 "7.3 Recommended Operating Conditions, VDD Supply voltage"
+  supply_current:
+    typ: 30 µA
+    src: p7 "7.5 Electrical Characteristics, IQACTIVE Active Current, Full-scale lux"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "1 Features, Operating temperature range"
+  esd_hbm:        { typ: 2 kV, src: 'p5 "7.2 ESD Ratings, HBM all pins ±2000 V"' }
+  light_sensor_type:
+    value: ambient
+    src: p1 "OPT4001 High Speed, High Precision, Digital Ambient Light Sensor"
+  illuminance_range:
+    min: 0.0004375 lx
+    max: 117000 lx
+    src: p1 "1 Features, 437.5 µlux to 117 klux for SOT-5x3 package variant"
+
+pins:
+  src: [p4 "Table 6-2 Pin Functions", p4 "Figure 6-2 DTS Package Top View"]
+  "1": { name: VDD, type: power }
+  "2": { name: ADDR, type: input }
+  "3": { name: NC, type: nc }
+  "4": { name: GND, type: ground }
+  "5": { name: SCL, type: clock }
+  "6": { name: NC, type: nc }
+  "7": { name: INT, type: io }
+  "8": { name: SDA, type: io }

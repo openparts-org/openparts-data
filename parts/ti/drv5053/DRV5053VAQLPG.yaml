@@ -1,0 +1,26 @@
+# DRV5053VAQLPG: orderable part number printed in the PACKAGE OPTION ADDENDUM
+# of SLIS153D (page 18, addendum dated 9-Nov-2025), TO-92 (LPG) | 3; lifecycle
+# "active" from the same row's Status column.
+schema_version: "0.2"
+kind: part
+id: ti/DRV5053VAQLPG
+manufacturer: ti
+mpn: DRV5053VAQLPG
+device: ti/DRV5053-LPG
+
+package:
+  value: manufacturers/ti/LPG0003A
+  src:
+    - p18 "PACKAGE OPTION ADDENDUM, row DRV5053VAQLPG, TO-92 (LPG) | 3"
+    - p25 "PACKAGE OUTLINE LPG0003A (4221343/C)"
+
+sources: [ti/SLIS153D]
+source: ti/SLIS153D
+
+existence:
+  status: verified
+  src: p18 "PACKAGE OPTION ADDENDUM, Packaging Information table, row DRV5053VAQLPG"
+
+lifecycle:
+  status: active
+  src: p18 "PACKAGE OPTION ADDENDUM, row DRV5053VAQLPG, Status Active"

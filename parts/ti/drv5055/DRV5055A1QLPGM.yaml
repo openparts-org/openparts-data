@@ -1,0 +1,38 @@
+# DRV5055A1QLPGM: orderable part number printed in the PACKAGE OPTION ADDENDUM
+# of SBAS640C (page 22, addendum dated 14-Jun-2026), TO-92 (LPG) | 3; lifecycle
+# "active" from the same row's Status column. magnetic_range is the printed BL (±, typ column)
+# at VCC = 5 V and 3.3 V, TA = 25 °C (5.5, page 6).
+schema_version: "0.2"
+kind: part
+id: ti/DRV5055A1QLPGM
+manufacturer: ti
+mpn: DRV5055A1QLPGM
+device: ti/DRV5055-LPG
+
+package:
+  value: manufacturers/ti/LPG0003A
+  src:
+    - p22 "PACKAGE OPTION ADDENDUM, row DRV5055A1QLPGM, TO-92 (LPG) | 3"
+    - p32 "PACKAGE OUTLINE LPG0003A (4221343/C)"
+
+sources: [ti/SBAS640C]
+source: ti/SBAS640C
+
+existence:
+  status: verified
+  src: p22 "PACKAGE OPTION ADDENDUM, Packaging Information table, row DRV5055A1QLPGM"
+
+lifecycle:
+  status: active
+  src: p22 "PACKAGE OPTION ADDENDUM, row DRV5055A1QLPGM, Status Active"
+
+parameters:
+  magnetic_range:
+    - min: -21 mT
+      max: 21 mT
+      at: { VCC: 5 V, TA: 25 °C }
+      src: p6 "5.5 Electrical Characteristics, BL Linear magnetic sensing range, DRV5055A1/Z1, VCC = 5 V"
+    - min: -22 mT
+      max: 22 mT
+      at: { VCC: 3.3 V, TA: 25 °C }
+      src: p6 "5.5 Electrical Characteristics, BL Linear magnetic sensing range, DRV5055A1/Z1, VCC = 3.3 V"

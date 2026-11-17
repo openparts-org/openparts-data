@@ -1,0 +1,17 @@
+# Official TI datasheet "DRV5032 Ultra-Low-Power Digital-Switch Hall Effect Sensor".
+# Downloaded 2026-11-17 with curl from the TI symlink URL below; page header
+# "SLVSDC7H - APRIL 2017 - REVISED DECEMBER 2024". 43 PDF pages; text read
+# with pdftotext -layout, the LPG0003A outline (page 33) on the rendered page.
+# Page numbers are PDF page indices. PACKAGE OPTION ADDENDUM dated
+# 30-Sep-2026. TI copyright: facts only.
+schema_version: "0.2"
+kind: source
+id: ti/SLVSDC7H
+sha256: 9a15811a5aa536d683e286814d415dbd86c13a5e38a1e6c732cbaba18741bde7
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/drv5032.pdf
+publisher: ti
+document_id: SLVSDC7H
+document_type: datasheet
+revision: H
+date: 2024-12

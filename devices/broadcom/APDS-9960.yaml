@@ -1,0 +1,47 @@
+# APDS-9960 digital proximity, ambient light, RGB and gesture sensor
+# with integrated IR LED, 8-pad module. Pins from "I/O Pins
+# Configuration" (AV02-4191EN page 3), checked against the PINOUT list
+# on the package page (page 35). Types: SDA io; INT (open drain) output;
+# LDR (LED driver, constant-current) output; LEDK (LED cathode, wired
+# to LDR) passive; LEDA (LED anode, to VLEDA) power; GND ground; SCL
+# clock; VDD power.
+# light_sensor_type ambient_proximity: the module also senses RGB colour
+# and gestures; the enumeration has no combined value.
+schema_version: "0.2"
+kind: device
+id: broadcom/APDS-9960
+manufacturer: broadcom
+category: light_sensor
+family: APDS-9960
+source: broadcom/AV02-4191EN
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: 'p1 "Features, I2C-bus Fast Mode Compatible Interface"' }
+  supply_voltage:
+    min: 2.4 V
+    max: 3.6 V
+    src: p3 "Recommended Operating Conditions, Power supply voltage VDD"
+  supply_current:
+    typ: 200 µA
+    max: 250 µA
+    at: { VDD: 3 V, TA: 25 °C }
+    src: p3 "Operating Characteristics, IDD supply current, Active ALS state"
+  operating_temperature:
+    min: -30 °C
+    max: 85 °C
+    src: p3 "Recommended Operating Conditions, Operating ambient temperature TA"
+  light_sensor_type:
+    value: ambient_proximity
+    src: p1 "Digital Proximity, Ambient Light, RGB and Gesture Sensor"
+
+pins:
+  src: [p3 "I/O Pins Configuration", 'p35 "Package Outline Dimensions, PINOUT"']
+  "1": { name: SDA, type: io }
+  "2": { name: INT, type: output }
+  "3": { name: LDR, type: output }
+  "4": { name: LEDK, type: passive }
+  "5": { name: LEDA, type: power }
+  "6": { name: GND, type: ground }
+  "7": { name: SCL, type: clock }
+  "8": { name: VDD, type: power }

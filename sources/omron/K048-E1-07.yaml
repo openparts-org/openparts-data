@@ -1,0 +1,20 @@
+# OMRON "Low Signal Relay G5V-1" datasheet, Cat. No. K048-E1-07 (printed
+# on the last page), 5 pages, from
+# https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5v_1.pdf (curl,
+# 2026-11-17; PDF title "G5V-1", ModDate 2016-12-20 -- the document
+# prints no date; `date` is the ModDate). PDF page index = printed page
+# number. Page 1: Ordering Information and Ratings (coil table per rated
+# voltage, contacts); page 2: Characteristics; page 4: Dimensions, PCB
+# Mounting Holes (Bottom View) and Terminal Arrangement (Bottom View),
+# rendered and read as an image.
+schema_version: "0.2"
+kind: source
+id: omron/K048-E1-07
+sha256: 1d264d1ebbd17bd1dbac42133ffbd27d31ced85ad549a8bd28f0381df848dd0f
+retrieved: 2026-11-17
+url: https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5v_1.pdf
+publisher: omron
+document_id: K048-E1
+document_type: datasheet
+revision: 07
+date: 2016-12-20

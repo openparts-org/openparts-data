@@ -1,0 +1,20 @@
+# VCNL4040M3OE: ordering code printed in the ORDERING INFORMATION table
+# of document 84274 rev. 2.0 (page 2; tape and reel, 4.0 mm x 2.0 mm x
+# 1.1 mm). The -H5 interposer variant (4.34 x 2.35 x 3.65 mm) has another
+# package and is not covered. lifecycle: unknown.
+schema_version: "0.2"
+kind: part
+id: vishay/VCNL4040M3OE
+manufacturer: vishay
+mpn: VCNL4040M3OE
+device: vishay/VCNL4040
+
+package:
+  value: manufacturers/vishay/DFN8-2x4-P1.075-VCNL4040
+  src: p14 "PACKAGE INFORMATION (VCNL4040M3OE), Fig. 14 and Fig. 15"
+
+sources: [vishay/84274]
+source: vishay/84274
+
+existence: { status: verified, src: 'p2 "ORDERING INFORMATION, ordering code VCNL4040M3OE"' }
+lifecycle: { status: unknown }

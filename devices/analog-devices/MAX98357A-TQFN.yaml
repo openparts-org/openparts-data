@@ -1,0 +1,65 @@
+# MAX98357A PCM-input (I2S/LJ/TDM) class-D mono amplifier, 16-pin TQFN
+# pin map: 19-6779 page 15 "Pin Description", column TQFN, and the TQFN
+# "TOP VIEW" figure. GND appears at 3, 11, 15 and VDD at 7, 8; N.C. at
+# 5, 6, 12, 13. EP: "not internally connected", connect to a ground
+# plane for heat -> key EP, typed passive. The WLP variant is not
+# covered.
+schema_version: "0.2"
+kind: device
+id: analog-devices/MAX98357A-TQFN
+manufacturer: analog-devices
+category: audio_amplifier
+family: MAX98357A
+source: analog-devices/MAX98357A-MAX98357B-rev16
+
+parameters:
+  data_interface: { value: i2s, src: 'p1 "General Description, MAX98357A supporting I2S data"' }
+  supply_voltage:
+    min: 2.5 V
+    max: 5.5 V
+    src: p4 "Electrical Characteristics, Supply Voltage Range VDD"
+  supply_current:
+    typ: 2.75 mA
+    max: 3.35 mA
+    at: { VDD: 5 V, TA: 25 °C }
+    src: p4 "Electrical Characteristics, Quiescent Current IDD, TA = +25°C"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "Absolute Maximum Ratings, Operating Temperature Range"
+  channel_count:   { value: "1", src: 'p15 "Pin Description, one OUTP/OUTN speaker output"' }
+  amplifier_class: { value: d, src: p1 "PCM Input Class D Amplifier" }
+  output_power:
+    - typ: 3.2 W
+      at: { VDD: 5 V, RL: 4 Ω, THD: 10 % }
+      src: p5 "Electrical Characteristics, POUT, THD+N 10%, gain 12dB, ZSPK = 4Ω + 33µH"
+    - typ: 1.8 W
+      at: { VDD: 5 V, RL: 8 Ω, THD: 10 % }
+      src: p5 "Electrical Characteristics, POUT, THD+N 10%, gain 12dB, ZSPK = 8Ω + 68µH"
+    - typ: 1.4 W
+      at: { VDD: 5 V, RL: 8 Ω, THD: 1 % }
+      src: p5 "Electrical Characteristics, POUT, THD+N = 1%, gain 12dB, ZSPK = 8Ω + 68µH"
+  thd_n:
+    typ: 0.013 %
+    at: { VDD: 5 V, RL: 8 Ω }
+    src: p5 "Electrical Characteristics, THD+N, f = 1kHz, POUT = 0.5W, ZSPK = 8Ω + 68µH"
+
+pins:
+  src:  ['p15 "Pin Description, column TQFN"', 'p15 "Pin Configurations, TQFN TOP VIEW"']
+  "1":  { name: DIN, type: input }
+  "2":  { name: GAIN_SLOT, type: input }
+  "3":  { name: GND, type: ground }
+  "4":  { name: SD_MODE, type: input }
+  "5":  { name: NC, type: nc }
+  "6":  { name: NC, type: nc }
+  "7":  { name: VDD, type: power }
+  "8":  { name: VDD, type: power }
+  "9":  { name: OUTP, type: output }
+  "10": { name: OUTN, type: output }
+  "11": { name: GND, type: ground }
+  "12": { name: NC, type: nc }
+  "13": { name: NC, type: nc }
+  "14": { name: LRCLK, type: input }
+  "15": { name: GND, type: ground }
+  "16": { name: BCLK, type: input }
+  EP:   { name: EP, type: passive }

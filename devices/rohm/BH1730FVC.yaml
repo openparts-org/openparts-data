@@ -1,0 +1,48 @@
+# BH1730FVC digital 16-bit ambient light sensor IC with I2C bus, WSOF6.
+# Pins from "Pin Description" (TSZ02201-0M3M0F616050-1-2 page 2),
+# checked against "Pin Configuration, TOP VIEW" (same page). Types: VCC
+# power, INT output, GND ground, SDA io, DVI ("I2C bus I/O voltage")
+# power, SCL clock.
+schema_version: "0.2"
+kind: device
+id: rohm/BH1730FVC
+manufacturer: rohm
+category: light_sensor
+family: BH1730FVC
+source: rohm/BH1730FVC-datasheet-en
+
+# Parameters (AI candidates, needs review).
+parameters:
+  peak_wavelength:
+    typ: 600 nm
+    src: p4 "Electrical Characteristics, Peak Wave Length of Type0 (visible)"
+  data_interface: { value: i2c, src: 'p1 "Features, I2C bus Interface"' }
+  supply_voltage:
+    min: 2.4 V
+    max: 3.6 V
+    src: p3 "Recommended Operating Conditions, Supply Voltage VCC"
+  supply_current:
+    typ: 150 µA
+    max: 200 µA
+    at: { VCC: 3 V, TA: 25 °C }
+    src: p4 "Electrical Characteristics, Supply Current ICC1"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p3 "Recommended Operating Conditions (Ta = -40 to +85 °C)"
+  light_sensor_type:
+    value: ambient
+    src: p1 "Digital 16bit Serial Output Type Ambient Light Sensor IC"
+  illuminance_range:
+    min: 0.001 lx
+    max: 100000 lx
+    src: p1 "Key Specifications, Detection Range 0.001 lx to 100k lx"
+
+pins:
+  src: [p2 "Pin Description", 'p2 "Pin Configuration, TOP VIEW"']
+  "1": { name: VCC, type: power }
+  "2": { name: INT, type: output }
+  "3": { name: GND, type: ground }
+  "4": { name: SDA, type: io }
+  "5": { name: DVI, type: power }
+  "6": { name: SCL, type: clock }

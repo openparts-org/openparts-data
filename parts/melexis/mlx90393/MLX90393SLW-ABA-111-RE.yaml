@@ -1,0 +1,32 @@
+# MLX90393SLW-ABA-111-RE: assembled from a Table 1 row (Product MLX90393, temperature S, package LW,
+# option ABA-111, packing RE) in the form of the Table 2 example -> existence
+# probable.
+# Package LW = QFN-16 3x3x1 mm with wettable flanks; temperature code S
+# (-20 °C to 85 °C). lifecycle: unknown.
+schema_version: "0.2"
+kind: part
+id: melexis/MLX90393SLW-ABA-111-RE
+manufacturer: melexis
+mpn: MLX90393SLW-ABA-111-RE
+device: melexis/MLX90393-LW
+
+package:
+  value: manufacturers/melexis/QFN16-3x3-P0.5-MLX90393
+  src:
+    - p4 "Table 1 Product Ordering Codes, Package Code LW = QFN-16 3x3x1mm"
+    - p37 "Figure 26 QFN-16 Package Outline Drawing"
+
+sources: [melexis/MLX90393-DS@rev012]
+source: melexis/MLX90393-DS@rev012
+
+existence:
+  status: probable
+  src: p4 "Table 1 Product Ordering Codes, row MLX90393 S LW ABA-111 RE"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -20 °C
+    max: 85 °C
+    src: p11 "11 Thermal Specification, TOPERATING Operating temperature range [S code]"

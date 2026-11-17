@@ -1,0 +1,41 @@
+# Allegro package LE, 8-pin TSSOP (reference JEDEC MO-153AA), read from
+# Figure 10 "TSSOP8 (LE) Package Drawing" (ALS31313-DS Rev. 9 page 24),
+# rendered ("For Reference Only - Not for Tooling Use").
+#
+# Mapping as standards/TSSOP16-4.4x5.0-P0.65-TI-PW: body_width = "4.40
+# +-0.10" (across the rows), body_length = "3.00 +-0.10", overall_width =
+# "6.40 BSC", pitch "0.65 BSC", lead width "0.30/0.19", foot "0.60
+# +0.15/-0.10", standoff "0.15/0.05", height "1.10 MAX".
+# Left out: the lead thickness (printed "0.02 / 0.09", read as a
+# misprint), "1.00 REF", "0.25 BSC" gauge, the PCB layout reference view
+# (1.70 x 6.40).
+schema_version: "0.2"
+kind: package
+id: manufacturers/allegro/LE-TSSOP8-ALS31313
+family: tssop
+lead_count: 8
+source: allegro/ALS31313-DS@rev9
+
+pitch: { typ: 0.65 mm, src: 'p24 "Figure 10 TSSOP8 (LE), "0.65 BSC""' }
+geometry: { type: parametric, generator: tssop }
+
+dimensions:
+  body_width:
+    min: 4.3 mm
+    typ: 4.4 mm
+    max: 4.5 mm
+    src: p24 "Figure 10 TSSOP8 (LE), "4.40 +-0.10""
+  body_length:
+    min: 2.9 mm
+    typ: 3 mm
+    max: 3.1 mm
+    src: p24 "Figure 10 TSSOP8 (LE), "3.00 +-0.10""
+  lead_length:
+    min: 0.5 mm
+    typ: 0.6 mm
+    max: 0.75 mm
+    src: p24 "Figure 10 TSSOP8 (LE), foot "0.60 +0.15/-0.10""
+  lead_width:     { min: 0.19 mm, max: 0.3 mm, src: 'p24 "Figure 10 TSSOP8 (LE), "0.30 / 0.19""' }
+  overall_width:  { typ: 6.4 mm, src: 'p24 "Figure 10 TSSOP8 (LE), "6.40 BSC""' }
+  overall_height: { max: 1.1 mm, src: 'p24 "Figure 10 TSSOP8 (LE), "1.10 MAX""' }
+  standoff:       { min: 0.05 mm, max: 0.15 mm, src: 'p24 "Figure 10 TSSOP8 (LE), "0.15 / 0.05""' }

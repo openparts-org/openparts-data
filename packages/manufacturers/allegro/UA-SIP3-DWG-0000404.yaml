@@ -1,0 +1,47 @@
+# Allegro package UA, 3-pin ultramini SIP (Allegro DWG-0000404, Rev. 1),
+# read from the rendered drawing on page 12 of A1324-DS Rev. 9 ("For
+# Reference Only - Not For Tooling Use").
+#
+# Mapping (as manufacturers/ti/LPG0003A, `to92` family): body_width =
+# "4.09 +0.08/-0.05" (branded-face width), body_height = "3.02
+# +0.08/-0.05", body_length = "1.52 +-0.05" (thickness); pitch "1.27 NOM
+# (2x)"; lead width "0.43 +0.05/-0.07 (3x)", lead thickness "0.41
+# +0.03/-0.06". Pin 1 at the left of the branded face (branding view).
+# Left out: "3.00 +-0.05", "3.10 MAX" / "1.68 MAX" (with gate burrs),
+# "14.99 +-0.25" lead length, Hall element position.
+schema_version: "0.2"
+kind: package
+id: manufacturers/allegro/UA-SIP3-DWG-0000404
+family: to92
+lead_count: 3
+source: allegro/A1324-DS@rev9
+
+pitch: { typ: 1.27 mm, src: 'p12 "Package UA, "1.27 NOM (2x)""' }
+geometry: { type: parametric, generator: to92 }
+
+dimensions:
+  body_width:
+    min: 4.04 mm
+    typ: 4.09 mm
+    max: 4.17 mm
+    src: p12 "Package UA front view, "4.09 +0.08/-0.05""
+  body_length:
+    min: 1.47 mm
+    typ: 1.52 mm
+    max: 1.57 mm
+    src: p12 "Package UA top view, "1.52 +-0.05""
+  body_height:
+    min: 2.97 mm
+    typ: 3.02 mm
+    max: 3.1 mm
+    src: p12 "Package UA front view, "3.02 +0.08/-0.05""
+  lead_thickness:
+    min: 0.35 mm
+    typ: 0.41 mm
+    max: 0.44 mm
+    src: p12 "Package UA side view, "0.41 +0.03/-0.06""
+  lead_width:
+    min: 0.36 mm
+    typ: 0.43 mm
+    max: 0.48 mm
+    src: p12 "Package UA, "0.43 +0.05/-0.07 (3x)""

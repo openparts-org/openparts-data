@@ -1,0 +1,41 @@
+# DRV5033AJQDBZR: orderable part number printed in the PACKAGE OPTION ADDENDUM
+# of SLIS152G (page 22, addendum dated 24-Jun-2026), SOT-23 (DBZ) | 3; lifecycle
+# "active" from the same row's Status column. Thresholds from 6.7 (page 6), recorded as magnitudes
+# of the printed ± values.
+schema_version: "0.2"
+kind: part
+id: ti/DRV5033AJQDBZR
+manufacturer: ti
+mpn: DRV5033AJQDBZR
+device: ti/DRV5033-DBZ
+
+package:
+  value: manufacturers/ti/DBZ0003A
+  src:
+    - p22 "PACKAGE OPTION ADDENDUM, row DRV5033AJQDBZR, SOT-23 (DBZ) | 3"
+    - p26 "PACKAGE OUTLINE DBZ0003A (4214838/F)"
+
+sources: [ti/SLIS152G]
+source: ti/SLIS152G
+
+existence:
+  status: verified
+  src: p22 "PACKAGE OPTION ADDENDUM, Packaging Information table, row DRV5033AJQDBZR"
+
+lifecycle:
+  status: active
+  src: p22 "PACKAGE OPTION ADDENDUM, row DRV5033AJQDBZR, Status Active"
+
+parameters:
+  operate_point:
+    min: 3 mT
+    typ: 6.9 mT
+    max: 12 mT
+    at: { TA: -40..125 °C }
+    src: p6 "6.7 Magnetic Characteristics, DRV5033AJ, BOP (magnitude of ±)"
+  release_point:
+    min: 1 mT
+    typ: 3.5 mT
+    max: 5 mT
+    at: { TA: -40..125 °C }
+    src: p6 "6.7 Magnetic Characteristics, DRV5033AJ, BRP (magnitude of ±)"

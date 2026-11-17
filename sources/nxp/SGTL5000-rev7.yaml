@@ -1,0 +1,17 @@
+# NXP data sheet "SGTL5000 Low Power Stereo Codec with Headphone Amp",
+# Document Number SGTL5000, Rev. 7, 1/2022, 72 pages, downloaded
+# 2026-11-17 with curl from the URL below. Read with pdftotext -layout;
+# the 20-terminal QFN mechanical outline 98ARE10742D rev A (SOT1628-1,
+# pages 62-64) rendered and read as images. PDF page index = printed
+# page number.
+schema_version: "0.2"
+kind: source
+id: nxp/SGTL5000-rev7
+sha256: 46813e82439b6100889fa5bea6b1b0046c78af1fbd7aeb82be768344befa4978
+retrieved: 2026-11-17
+url: https://www.nxp.com/docs/en/data-sheet/SGTL5000.pdf
+publisher: nxp
+document_id: SGTL5000
+document_type: datasheet
+revision: "7"
+date: 2022-01

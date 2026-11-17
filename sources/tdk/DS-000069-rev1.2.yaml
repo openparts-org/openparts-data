@@ -1,0 +1,18 @@
+# TDK InvenSense datasheet "ICS-43434 Multi-Mode Microphone with I2S
+# Digital Output", DS-000069 Revision 1.2 (Release Date 08/29/2016), 21
+# pages, the PDF linked from the invensense.tdk.com ICS-43434 product
+# page, served from TDK's own CDN; downloaded 2026-11-17 with curl. PDF
+# page index = printed "Page N of 21". Text read with pdftotext -layout;
+# pin configuration (page 10), land pattern (page 17) and outline (page
+# 19) rendered and read as images.
+schema_version: "0.2"
+kind: source
+id: tdk/DS-000069@rev1.2
+sha256: 6f87312bec5078aef44866f4e765137aad0a085b144f3a4f27d697f28f68b0c8
+retrieved: 2026-11-17
+url: https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-03/DS-000069-ICS-43434-v1.2.pdf
+publisher: tdk
+document_id: DS-000069
+document_type: datasheet
+revision: "1.2"
+date: 2016-08-29

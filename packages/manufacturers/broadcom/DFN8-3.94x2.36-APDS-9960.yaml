@@ -1,0 +1,70 @@
+# Broadcom APDS-9960 8-pad dual flat no-lead optical module package
+# (receiver + IR emitter), 3.94 x 2.36 x 1.35 mm. Read from "Package
+# Outline Dimensions" and "PCB Pad Layout" (AV02-4191EN page 35),
+# rendered.
+#
+# Mapping: "2.36+-0.20" (across the pad columns) -> body_width,
+# "3.94+-0.20" -> body_length, "1.35+-0.10" -> body_height; terminals
+# "0.60+-0.08 (x8)" both ways -> lead_width / lead_length; pitch = 0.60
+# + "(0.41) (x6)" gap = 1.01 (bottom view; the gap is a reference
+# value).
+# Pin order (top view, page 35): 1-4 down the right column, 5-8 up the
+# left column (8 upper left) -- clockwise seen from the top, the mirror
+# of the family's default order, so the footprint comes from `pads`.
+# pads ("PCB Pad Layout"): 0.60 wide, "0.72 (x8)" long, "0.80" gap
+# between the columns -> x = +-(0.80/2 + 0.60/2) = +-0.70; "0.25 (x6)"
+# gaps -> 0.97 pitch, y = +-0.485, +-1.455; pin 1 upper right as on the
+# top view.
+# Left out: window positions and diameters, "3.73+-0.10", "2.10+-0.10",
+# "(1.15)", "0.05" edge offsets, "(0.80)" bottom-view gap.
+schema_version: "0.2"
+kind: package
+id: manufacturers/broadcom/DFN8-3.94x2.36-APDS-9960
+family: dfn
+lead_count: 8
+source: broadcom/AV02-4191EN
+
+pitch:
+  typ: 1.01 mm
+  src: p35 "Package Outline, bottom view, 0.60+-0.08 terminal + (0.41) (x6) gap"
+
+geometry: { type: parametric, generator: dfn }
+
+dimensions:
+  body_width:
+    min: 2.16 mm
+    typ: 2.36 mm
+    max: 2.56 mm
+    src: p35 "Package Outline Dimensions, "2.36+-0.20""
+  body_length:
+    min: 3.74 mm
+    typ: 3.94 mm
+    max: 4.14 mm
+    src: p35 "Package Outline Dimensions, "3.94+-0.20""
+  body_height:
+    min: 1.25 mm
+    typ: 1.35 mm
+    max: 1.45 mm
+    src: p35 "Package Outline Dimensions, "1.35+-0.10""
+  lead_length:
+    min: 0.52 mm
+    typ: 0.6 mm
+    max: 0.68 mm
+    src: p35 "Package Outline, bottom view, "0.60+-0.08 (x8)" (across)"
+  lead_width:
+    min: 0.52 mm
+    typ: 0.6 mm
+    max: 0.68 mm
+    src: p35 "Package Outline, bottom view, "0.60+-0.08 (x8)" (along the column)"
+
+pads:
+  value:
+    - { number: "1", x: 0.7, y: 1.455, width: 0.6, length: 0.72 }
+    - { number: "2", x: 0.7, y: 0.485, width: 0.6, length: 0.72 }
+    - { number: "3", x: 0.7, y: -0.485, width: 0.6, length: 0.72 }
+    - { number: "4", x: 0.7, y: -1.455, width: 0.6, length: 0.72 }
+    - { number: "5", x: -0.7, y: -1.455, width: 0.6, length: 0.72 }
+    - { number: "6", x: -0.7, y: -0.485, width: 0.6, length: 0.72 }
+    - { number: "7", x: -0.7, y: 0.485, width: 0.6, length: 0.72 }
+    - { number: "8", x: -0.7, y: 1.455, width: 0.6, length: 0.72 }
+  src: 'p35 "PCB Pad Layout: 0.60 x 0.72 (x8), 0.80 between columns, 0.25 (x6) gaps; pin order from the top view"'

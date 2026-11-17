@@ -1,0 +1,20 @@
+# OMRON "PCB Power Relay G5LE" datasheet, Cat. No. K100-E1-08 (printed on
+# the last page, "© OMRON Corporation 2007-2018"), 4 pages, from
+# https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5le.pdf (curl,
+# 2026-11-17; PDF title "G5LE", ModDate 2021-05-07 -- no printed date;
+# `date` is the ModDate). PDF page index = printed page number. Page 1:
+# Ordering Information and Ratings (contacts; the document has no coil
+# table); page 2: Characteristics; page 3: Dimensions, PCB Mounting
+# Holes and Terminal Arrangement (Bottom View), rendered and read as an
+# image.
+schema_version: "0.2"
+kind: source
+id: omron/K100-E1-08
+sha256: faf3b16409722ace13979dec61565d44942894d59509fdaa68a408ed2eba1827
+retrieved: 2026-11-17
+url: https://omronfs.omron.com/en_US/ecb/products/pdf/en-g5le.pdf
+publisher: omron
+document_id: K100-E1
+document_type: datasheet
+revision: 08
+date: 2021-05-07

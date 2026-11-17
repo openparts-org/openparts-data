@@ -1,0 +1,22 @@
+# AH1806-W-7: printed in the Ordering Information table (DS36104 page 5):
+# package code W (SC59), 3,000/Tape & Reel, suffix -7 -> existence
+# verified. lifecycle: unknown (the page carries a "NEW PRODUCT" side
+# label, not a status table).
+schema_version: "0.2"
+kind: part
+id: diodes/AH1806-W-7
+manufacturer: diodes
+mpn: AH1806-W-7
+device: diodes/AH1806-W
+
+package:
+  value: manufacturers/diodes/SC59-DS36104
+  src:
+    - p5 "Ordering Information, AH1806-W-7, W = SC59"
+    - p7 "Package Outline Dimensions, Package Type SC59"
+
+sources: [diodes/DS36104]
+source: diodes/DS36104
+
+existence: { status: verified, src: 'p5 "Ordering Information, row AH1806-W-7"' }
+lifecycle: { status: unknown }

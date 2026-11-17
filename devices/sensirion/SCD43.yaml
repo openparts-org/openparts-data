@@ -1,0 +1,71 @@
+# SCD43 photoacoustic NDIR CO2 sensor (SCD4x family), 20-pad LGA module
+# with a centre ground land. Pins from Table 6 "Pin assignment (top
+# view)" (datasheet v1.7 page 5; pin numbers and names read from its
+# figure): 6 and 20 GND, 7 VDD, 19 VDDH ("Supply voltage IR source, must
+# be connected to VDD"), 9 SCL, 10 SDA, the four centre pads "21 GND",
+# all other pads DNC ("Do not connect, pads must be soldered to a
+# floating pad") -> nc.
+# concentration_range: the SCD43 specified measurement range (page 1
+# Product Variants); the output range is 0 - 40'000 ppm (Table 1).
+# operating_temperature: Table 5 "Temperature operating conditions".
+schema_version: "0.2"
+kind: device
+id: sensirion/SCD43
+manufacturer: sensirion
+category: gas_sensor
+family: SCD4x
+source: sensirion/CD_DS_SCD4x_Datasheet_D1@v1.7
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: 'p1 "Features, Digital I2C interface"' }
+  supply_voltage:
+    min: 2.4 V
+    max: 5.5 V
+    src: p4 "Table 4 SCD4x electrical specifications, Supply voltage DC VDD"
+  supply_current:
+    - typ: 15 mA
+      max: 18 mA
+      at: { VDD: 3.3 V }
+      src: p4 "Table 4, Average supply current for periodic measurement, VDD = 3.3 V"
+    - typ: 11 mA
+      max: 13 mA
+      at: { VDD: 5 V }
+      src: p4 "Table 4, Average supply current for periodic measurement, VDD = 5 V"
+  operating_temperature:
+    min: -10 °C
+    max: 60 °C
+    src: p4 "Table 5 SCD4x operation conditions, Temperature operating conditions"
+  esd_hbm:        { typ: 2 kV, src: 'p4 "Table 5, ESD HBM (pads and metal cap)"' }
+  target_gas:     { value: co2, src: p1 "Breaking the size barrier in optical CO2 sensing" }
+  sensing_principle:
+    value: photoacoustic
+    src: p1 "Features, Photoacoustic NDIR sensor technology PASens"
+  concentration_range:
+    min: 400 ppm
+    max: 5000 ppm
+    src: p1 "Product Variants, SCD43 specified measurement range"
+
+pins:
+  src:  p5 "Table 6 Pin assignment (top view)"
+  "1":  { name: DNC, type: nc }
+  "2":  { name: DNC, type: nc }
+  "3":  { name: DNC, type: nc }
+  "4":  { name: DNC, type: nc }
+  "5":  { name: DNC, type: nc }
+  "6":  { name: GND, type: ground }
+  "7":  { name: VDD, type: power }
+  "8":  { name: DNC, type: nc }
+  "9":  { name: SCL, type: clock }
+  "10": { name: SDA, type: io }
+  "11": { name: DNC, type: nc }
+  "12": { name: DNC, type: nc }
+  "13": { name: DNC, type: nc }
+  "14": { name: DNC, type: nc }
+  "15": { name: DNC, type: nc }
+  "16": { name: DNC, type: nc }
+  "17": { name: DNC, type: nc }
+  "18": { name: DNC, type: nc }
+  "19": { name: VDDH, type: power }
+  "20": { name: GND, type: ground }
+  "21": { name: GND, type: ground }

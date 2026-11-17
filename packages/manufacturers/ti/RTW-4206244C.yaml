@@ -1,0 +1,29 @@
+# TI RTW (S-PWQFN-N24) 24-terminal WQFN, 4x4 mm, 0.5 mm pitch, as
+# printed in SBAS993B: MECHANICAL DATA 4206244/C 07/11 (page 121) and
+# the exposed thermal pad sheet 4206249-5/P 05/15 (page 122), both read
+# from rendered images. Body 3.85/4.15 (limits only); A 0.70/0.80
+# (overall height, no A2 -> no body_height); A1 0.00/0.05; L 0.30/0.50;
+# b 0.18/0.30; e 0.50; thermal pad 2.70 ±0.10 square. Not the same as
+# manufacturers/ti/RTW0024B (drawing 4219135/B, pad 2.45 ±0.1). Pin 1
+# at the top of the left edge seen from the top, counter-clockwise.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/RTW-4206244C
+family: qfn
+lead_count: { value: 24, src: 'p121 "RTW (S-PWQFN-N24) 4206244/C, terminals 1-24"' }
+source: ti/SBAS993B
+
+pitch: { typ: 0.5 mm, src: 'p121 "RTW (S-PWQFN-N24) 4206244/C, 0,50 (basic)"' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:     { min: 3.85 mm, max: 4.15 mm, src: 'p121 "RTW 4206244/C, top view 4,15 / 3,85"' }
+  body_length:    { min: 3.85 mm, max: 4.15 mm, src: 'p121 "RTW 4206244/C, top view 4,15 / 3,85"' }
+  lead_length:    { min: 0.3 mm, max: 0.5 mm, src: 'p121 "RTW 4206244/C, 24X 0,50 / 0,30"' }
+  exposed_pad:
+    src:    p122 "Exposed Thermal Pad Dimensions 4206249-5/P, 2,70±0,10 x 2,70±0,10"
+    width:  { min: 2.6 mm, typ: 2.7 mm, max: 2.8 mm }
+    length: { min: 2.6 mm, typ: 2.7 mm, max: 2.8 mm }
+  overall_height: { min: 0.7 mm, max: 0.8 mm, src: 'p121 "RTW 4206244/C, side view 0,80 / 0,70"' }
+  standoff:       { min: 0 mm, max: 0.05 mm, src: 'p121 "RTW 4206244/C, side view 0,05 / 0,00"' }
+  lead_width:     { min: 0.18 mm, max: 0.3 mm, src: 'p121 "RTW 4206244/C, 24X 0,30 / 0,18"' }

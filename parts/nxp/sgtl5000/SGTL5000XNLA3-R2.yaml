@@ -1,0 +1,21 @@
+# NXP SGTL5000XNLA3/R2: printed in the Rev. 7 page-1 Ordering
+# Information table ("SGTL5000XNLA3/R2 ... 20 Sawn QFN", -40 to 85 °C);
+# the package column heading names 98ARE10742D for SGTL5000XNLA3 ->
+# existence verified. The id replaces "/" with "-". lifecycle unknown
+# (only the XNAA3/R2 punch-QFN version carries an EOL note).
+schema_version: "0.2"
+kind: part
+id: nxp/SGTL5000XNLA3-R2
+manufacturer: nxp
+mpn: SGTL5000XNLA3/R2
+device: nxp/SGTL5000-QFN20
+
+package:
+  value: manufacturers/nxp/SOT1628-1
+  src: p1 "Features table, 98ARE10742D 20-PIN QFN, SGTL5000XNLA3"
+
+sources: [nxp/SGTL5000-rev7]
+source: nxp/SGTL5000-rev7
+
+existence: { status: verified, src: 'p1 "Ordering Information, SGTL5000XNLA3/R2, 20 Sawn QFN"' }
+lifecycle: { status: unknown }

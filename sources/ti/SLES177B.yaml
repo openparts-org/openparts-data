@@ -1,0 +1,17 @@
+# TI datasheet "PCM1808 Single-Ended, Analog-Input 24-Bit, 96-kHz Stereo
+# A/D Converter", SLES177B (April 2006, revised August 2015), 32 pages,
+# downloaded 2026-11-17 with curl from the URL below. Read with
+# pdftotext -layout. The package option addendum (page 24) is newer than
+# the revision; the PW0014A outline 4220202/B 12/2023 is on pages 29-31.
+# Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: ti/SLES177B
+sha256: 4ac1a7ec0c05ee972ba52ad8ebbd7cc661ce1c4dff59cf33429b684ca0595547
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/pcm1808.pdf
+publisher: ti
+document_id: SLES177B
+document_type: datasheet
+revision: B
+date: 2015-08

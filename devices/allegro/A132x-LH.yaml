@@ -1,0 +1,43 @@
+# A1324 / A1325 / A1326 low-noise linear Hall-effect sensor ICs with
+# analog output, package LH (3-pin SOT23W). One die family with factory-programmed
+# sensitivities (5.0 / 3.125 / 2.5 mV/G, Selection Guide page 2); the
+# three part numbers are Parts of this device. Pins from the "Terminal
+# List Table" (A1324-DS Rev. 9 page 3), column LH: VCC 1, VOUT 2, GND 3, checked
+# against the "LH Package" pinout diagram (same page).
+# operating_temperature: Operating Characteristics are "Valid throughout
+# TA range"; the L range is -40 to 150 °C (Absolute Maximum Ratings).
+schema_version: "0.2"
+kind: device
+id: allegro/A132x-LH
+manufacturer: allegro
+category: magnetic_sensor
+family: A1324
+source: allegro/A1324-DS@rev9
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: analog
+    src: p1 "Low-Noise Linear Hall-Effect Sensor ICs with Analog Output"
+  supply_voltage:
+    min: 4.5 V
+    max: 5.5 V
+    src: p4 "Operating Characteristics, Supply Voltage VCC"
+  supply_current:
+    typ: 6.9 mA
+    max: 9 mA
+    at: { VCC: 5 V }
+    src: p4 "Operating Characteristics, Supply Current ICC, no load on VOUT"
+  operating_temperature:
+    min: -40 °C
+    max: 150 °C
+    src: p2 "Absolute Maximum Ratings, Operating Ambient Temperature TA, L temperature range"
+  magnetic_sensor_type:
+    value: linear
+    src: p1 "Low-Noise Linear Hall-Effect Sensor ICs with Analog Output"
+
+pins:
+  src: ['p3 "Terminal List Table, column LH"', 'p3 "Pinout Diagrams, LH Package"']
+  "1": { name: VCC, type: power }
+  "2": { name: VOUT, type: output }
+  "3": { name: GND, type: ground }

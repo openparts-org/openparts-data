@@ -8,15 +8,50 @@
 # and typed input; VO+/VO- are the speaker outputs (output); IN+/IN-
 # analog. The U-DFN3030-8 exposed pad is not covered (its connection is
 # not stated).
-# category: the tree has no audio-amplifier node, so the `analog` group
-# is used.
+# category: audio_amplifier (re-categorised from `analog` once the
+# audio group existed, 2026-11-17).
 schema_version: "0.2"
 kind: device
 id: diodes/PAM8302A
 manufacturer: diodes
-category: analog
+category: audio_amplifier
 family: PAM8302A
 source: diodes/DS41333
+
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 5.5 V
+    src: p3 "Recommended Operating Conditions, Supply Voltage Range 2.0 to 5.5"
+  supply_current:
+    typ: 4 mA
+    max: 8 mA
+    src: p3 "Electrical Characteristics, Quiescent Current IQ, No Load (table default VIN = 3.6V)"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p3 "Recommended Operating Conditions, Operation Temperature Range"
+  channel_count:   { value: "1", src: 'p1 "Description, Class-D mono audio amplifier"' }
+  amplifier_class: { value: d, src: 'p1 "Description, Class-D mono audio amplifier"' }
+  output_power:
+    - min: 2.25 W
+      typ: 2.5 W
+      at: { VDD: 5 V, RL: 4 Ω, THD: 10 % }
+      src: p3 "Electrical Characteristics, PO, f = 1kHz, RL = 4Ω, THD+N = 10%, VDD = 5V"
+    - min: 1.35 W
+      typ: 1.5 W
+      at: { VDD: 5 V, RL: 8 Ω, THD: 10 % }
+      src: p3 "Electrical Characteristics, PO, f = 1kHz, RL = 8Ω, THD+N = 10%, VDD = 5V"
+    - min: 1.15 W
+      typ: 1.3 W
+      at: { VDD: 5 V, RL: 8 Ω, THD: 1 % }
+      src: p3 "Electrical Characteristics, PO, f = 1kHz, RL = 8Ω, THD+N = 1%, VDD = 5V"
+  thd_n:
+    typ: 0.45 %
+    max: 0.5 %
+    at: { RL: 8 Ω }
+    src: p3 "Electrical Characteristics, THD+N, RL = 8Ω, PO = 0.5W, f = 1kHz"
+  snr: { min: 75 dB, typ: 80 dB, src: 'p3 "Electrical Characteristics, SNR, f = 20 to 20kHz"' }
 
 pins:
   src:

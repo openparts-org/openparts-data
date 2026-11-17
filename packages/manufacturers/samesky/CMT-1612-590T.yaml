@@ -1,0 +1,25 @@
+# Same Sky CMT-1612-590T magnetic buzzer transducer, from samesky/CMT-1612-590T-DS page 2 "MECHANICAL
+# DRAWING" and "Recommended PCB Layout Top View". Frame: that top view,
+# origin on the body centre. Layout: two pads 5.0 apart on the vertical centre line; the layout marks no polarity (the side view's (+)/(-) is not tied to it), numbered 1 top, 2 bottom here.
+schema_version: "0.2"
+kind: package
+id: manufacturers/samesky/CMT-1612-590T
+family: buzzer
+lead_count: { value: 2, src: p2 "Recommended PCB Layout" }
+source: samesky/CMT-1612-590T-DS
+
+pitch: { typ: 5 mm, src: 'p2 "Recommended PCB Layout, pad centre distance"' }
+geometry: { type: parametric, generator: buzzer }
+
+dimensions:
+  body_width:   { typ: 16 mm, src: 'p2 "Mechanical drawing, Ø16"' }
+  body_length:  { typ: 16 mm, src: 'p2 "Mechanical drawing, Ø16"' }
+  body_height:  { typ: 12 mm, src: 'p2 "Mechanical drawing, height 12"' }
+  can_diameter: { typ: 16 mm, src: 'p2 "Mechanical drawing, Ø16"' }
+  tail_length:  { typ: 3.5 mm, src: 'p2 "Mechanical drawing, pin length 3.5"' }
+
+pads:
+  value:
+    - { number: "1", x: 0, y: 2.5, width: 2.5, length: 2.5, drill: 0.9, shape: circle }
+    - { number: "2", x: 0, y: -2.5, width: 2.5, length: 2.5, drill: 0.9, shape: circle }
+  src: p2 "Recommended PCB Layout, 5.0, 2-Ø2.5 Pads, 2-Ø0.9 Hole"

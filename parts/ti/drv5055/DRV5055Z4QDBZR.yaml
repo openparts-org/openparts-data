@@ -1,0 +1,38 @@
+# DRV5055Z4QDBZR: orderable part number printed in the PACKAGE OPTION ADDENDUM
+# of SBAS640C (page 23, addendum dated 14-Jun-2026), SOT-23 (DBZ) | 3; lifecycle
+# "active" from the same row's Status column. magnetic_range is the printed BL (±, typ column)
+# at VCC = 5 V and 3.3 V, TA = 25 °C (5.5, page 6).
+schema_version: "0.2"
+kind: part
+id: ti/DRV5055Z4QDBZR
+manufacturer: ti
+mpn: DRV5055Z4QDBZR
+device: ti/DRV5055-DBZ
+
+package:
+  value: manufacturers/ti/DBZ0003A
+  src:
+    - p23 "PACKAGE OPTION ADDENDUM, row DRV5055Z4QDBZR, SOT-23 (DBZ) | 3"
+    - p29 "PACKAGE OUTLINE DBZ0003A (4214838/F)"
+
+sources: [ti/SBAS640C]
+source: ti/SBAS640C
+
+existence:
+  status: verified
+  src: p23 "PACKAGE OPTION ADDENDUM, Packaging Information table, row DRV5055Z4QDBZR"
+
+lifecycle:
+  status: active
+  src: p23 "PACKAGE OPTION ADDENDUM, row DRV5055Z4QDBZR, Status Active"
+
+parameters:
+  magnetic_range:
+    - min: -169 mT
+      max: 169 mT
+      at: { VCC: 5 V, TA: 25 °C }
+      src: p6 "5.5 Electrical Characteristics, BL Linear magnetic sensing range, DRV5055A4/Z4, VCC = 5 V"
+    - min: -176 mT
+      max: 176 mT
+      at: { VCC: 3.3 V, TA: 25 °C }
+      src: p6 "5.5 Electrical Characteristics, BL Linear magnetic sensing range, DRV5055A4/Z4, VCC = 3.3 V"

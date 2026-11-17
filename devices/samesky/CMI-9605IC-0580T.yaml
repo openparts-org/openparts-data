@@ -1,0 +1,38 @@
+# Same Sky CMI-9605IC-0580T magnetic buzzer indicator (datasheet samesky/CMI-9605IC-0580T-DS).
+# Pins from the page-2 recommended PCB layout: 1 = +, 2 = -; typed passive.
+schema_version: "0.2"
+kind: device
+id: samesky/CMI-9605IC-0580T
+manufacturer: samesky
+category: buzzer
+family: CMI-9605IC
+source: samesky/CMI-9605IC-0580T-DS
+
+parameters:
+  rated_voltage: { typ: 5 V, src: 'p1 "Specifications, rated voltage 5 Vdc"' }
+  rated_current:
+    max: 30 mA
+    src: p1 "Specifications, current consumption at rated voltage, max 30 mA"
+  frequency:
+    min: 2.6 kHz
+    typ: 2.7 kHz
+    max: 2.8 kHz
+    src: p1 "Specifications, rated frequency 2,600 / 2,700 / 2,800 Hz"
+  supply_voltage: { min: 3 V, max: 7 V, src: 'p1 "Specifications, operating voltage 3 / 7 Vdc"' }
+  operating_temperature:
+    min: -30 °C
+    max: 70 °C
+    src: p1 "Specifications, operating temperature"
+  sound_pressure:
+    min: 80 dB
+    at: { VIN: 5 V, d: 10 cm }
+    src: p1 "Specifications, sound pressure level at 10 cm, rated voltage, min 80 dB"
+  buzzer_type:
+    value: magnetic
+    src: 'p1 "MODEL: CMI-9605IC-0580T | DESCRIPTION: MAGNETIC BUZZER INDICATOR"'
+  buzzer_drive:  { value: internal, src: 'p1 "Features, internally driven"' }
+
+pins:
+  src: p2 "Recommended PCB Layout Top View, (+) / (-)"
+  "1": { name: +, type: passive }
+  "2": { name: -, type: passive }

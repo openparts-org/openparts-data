@@ -1,0 +1,43 @@
+# VEML6030 high-accuracy ambient light sensor with I2C interface, 6-pad
+# 2 x 2 mm leadless package. Pins from the "Top View Pinning" figure on
+# the package page (document 84366 page 10): 1 GND, 2 SDA, 3 INT, 4 ADD
+# (printed "A_DD", the address select), 5 SCL, 6 VDD; the datasheet has
+# no pin table. Types: SDA io, INT output, ADD input, SCL clock.
+# operating_temperature: the only range printed (Absolute Maximum
+# Ratings, "Ambient temperature range").
+schema_version: "0.2"
+kind: device
+id: vishay/VEML6030
+manufacturer: vishay
+category: light_sensor
+family: VEML6030
+source: vishay/84366
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: 'p1 "FEATURES, Communication via I2C interface"' }
+  supply_voltage: { min: 2.5 V, max: 3.6 V, src: 'p2 "BASIC CHARACTERISTICS, Supply voltage VDD"' }
+  supply_current:
+    typ: 45 µA
+    at: { VDD: 3.3 V }
+    src: p2 "BASIC CHARACTERISTICS, Operation mode current IDD, PSM_EN = disable"
+  operating_temperature:
+    min: -25 °C
+    max: 85 °C
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, Ambient temperature range Tamb"
+  light_sensor_type:
+    value: ambient
+    src: p1 "High Accuracy Ambient Light Sensor With I2C Interface"
+  illuminance_range:
+    min: 0 lx
+    max: 140000 lx
+    src: p1 "PRODUCT SUMMARY, ambient light range (lx) 0 to 140 000"
+
+pins:
+  src: p10 "PACKAGE DIMENSIONS, Top View Pinning"
+  "1": { name: GND, type: ground }
+  "2": { name: SDA, type: io }
+  "3": { name: INT, type: output }
+  "4": { name: ADD, type: input }
+  "5": { name: SCL, type: clock }
+  "6": { name: VDD, type: power }

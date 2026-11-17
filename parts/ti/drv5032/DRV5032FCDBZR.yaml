@@ -1,0 +1,48 @@
+# DRV5032FCDBZR: orderable part number printed in the PACKAGE OPTION ADDENDUM
+# of SLVSDC7H (page 25, addendum dated 30-Sep-2026), SOT-23 (DBZ) | 3; lifecycle
+# "active" from the same row's Status column. Version FC (open-drain, 20 Hz
+# sampling per Table 4-1, page 2); thresholds from 6.6 (page 6), recorded
+# as magnitudes of the printed ± values.
+schema_version: "0.2"
+kind: part
+id: ti/DRV5032FCDBZR
+manufacturer: ti
+mpn: DRV5032FCDBZR
+device: ti/DRV5032-DBZ
+
+package:
+  value: manufacturers/ti/DBZ0003A
+  src:
+    - p25 "PACKAGE OPTION ADDENDUM, row DRV5032FCDBZR, SOT-23 (DBZ) | 3"
+    - p30 "PACKAGE OUTLINE DBZ0003A (4214838/F)"
+
+sources: [ti/SLVSDC7H]
+source: ti/SLVSDC7H
+
+existence:
+  status: verified
+  src: p25 "PACKAGE OPTION ADDENDUM, Packaging Information table, row DRV5032FCDBZR"
+
+lifecycle:
+  status: active
+  src: p25 "PACKAGE OPTION ADDENDUM, row DRV5032FCDBZR, Status Active"
+
+parameters:
+  supply_current:
+    typ: 1.6 µA
+    max: 3.5 µA
+    at: { VCC: 3 V }
+    src: p5 "6.5 Electrical Characteristics, DU, FA, FC, FD, AJ, ZE VERSIONS, ICC(AVG)"
+  output_structure:
+    value: open_drain
+    src: p2 "Table 4-1 Device Comparison row DRV5032FC output type"
+  operate_point:
+    min: 1.5 mT
+    typ: 3 mT
+    max: 4.8 mT
+    src: p6 "6.6 Magnetic Characteristics, FA, FB, FC VERSIONS, BOP (magnitude of ±)"
+  release_point:
+    min: 0.5 mT
+    typ: 1.5 mT
+    max: 3 mT
+    src: p6 "6.6 Magnetic Characteristics, FA, FB, FC VERSIONS, BRP (magnitude of ±)"

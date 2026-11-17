@@ -1,0 +1,17 @@
+# Analog Devices (Maxim) datasheet "MAX98357A/MAX98357B Tiny, Low-Cost,
+# PCM Class D Amplifier with Class AB Performance", 19-6779 Rev 16
+# (2/26), 38 pages, downloaded 2026-11-17 with wget from the URL below
+# (curl's first attempt hit an HTTP/2 stream error; the wget retry
+# returned the PDF). Read with pdftotext -layout; the TQFN package
+# outline 21-0136 rev O (pages 36-37) rendered and read as images.
+schema_version: "0.2"
+kind: source
+id: analog-devices/MAX98357A-MAX98357B-rev16
+sha256: dea228ad619901d34c2f5f106243bdb9b9e95e38989d4d66fd6c6c489bfa6f1c
+retrieved: 2026-11-17
+url: https://www.analog.com/media/en/technical-documentation/data-sheets/MAX98357A-MAX98357B.pdf
+publisher: analog-devices
+document_id: 19-6779
+document_type: datasheet
+revision: "16"
+date: 2026-02

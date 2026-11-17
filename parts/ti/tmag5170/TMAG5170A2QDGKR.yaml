@@ -1,0 +1,36 @@
+# TMAG5170A2QDGKR: orderable part number printed in the PACKAGE OPTION ADDENDUM
+# of SBASAF4 (page 54, addendum dated 9-Nov-2025), VSSOP (DGK) | 8;
+# lifecycle "active" from the same row's Status column. Package: the
+# DGK0008A drawing on page 58 has the same number and revision
+# (4214862/A 04/2023) as the one standards/MSOP8-3.0x3.0-P0.65-TI-DGK was
+# read from. magnetic_range is the widest of the three register-selectable
+# ranges (BIN_A2, x_RANGE = 10b).
+schema_version: "0.2"
+kind: part
+id: ti/TMAG5170A2QDGKR
+manufacturer: ti
+mpn: TMAG5170A2QDGKR
+device: ti/TMAG5170
+
+package:
+  value: standards/MSOP8-3.0x3.0-P0.65-TI-DGK
+  src:
+    - p54 "PACKAGE OPTION ADDENDUM, row TMAG5170A2QDGKR, VSSOP (DGK) | 8"
+    - p58 "PACKAGE OUTLINE DGK0008A (4214862/A 04/2023)"
+
+sources: [ti/SBASAF4]
+source: ti/SBASAF4
+
+existence:
+  status: verified
+  src: p54 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TMAG5170A2QDGKR"
+
+lifecycle:
+  status: active
+  src: p54 "PACKAGE OPTION ADDENDUM, row TMAG5170A2QDGKR, Status Active"
+
+parameters:
+  magnetic_range:
+    min: -300 mT
+    max: 300 mT
+    src: p8 "6.6 Magnetic Characteristics, BIN_A2 Linear magnetic range, x_RANGE = 10b (widest setting)"

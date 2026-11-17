@@ -1,0 +1,17 @@
+# TDK InvenSense datasheet "T5838" (PDM digital MEMS microphone with
+# acoustic activity detect), DS-000383 Revision 1.2 (Release Date
+# 9/4/2025), 45 pages, the PDF linked from the invensense.tdk.com T5838
+# product page, served from TDK's own CDN; downloaded 2026-11-17 with
+# curl. PDF page index = printed "Page N of 45". Text read with
+# pdftotext -layout.
+schema_version: "0.2"
+kind: source
+id: tdk/DS-000383@rev1.2
+sha256: 5befb710bfe7a415cdc1aba41ebc18b484d7f9fc320ce15a7481507531cf58a4
+retrieved: 2026-11-17
+url: https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-03/DS-000383-T5838-Datasheet-v1.2.pdf
+publisher: tdk
+document_id: DS-000383
+document_type: datasheet
+revision: "1.2"
+date: 2025-09-04

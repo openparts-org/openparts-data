@@ -1,0 +1,39 @@
+# Same Sky CPT-1203-03-SMT-TR piezo buzzer transducer (datasheet samesky/CPT-1203-03-SMT-TR-DS).
+# Pins from the page-2 recommended PCB layout: 1 = 1, 2 = 2; typed passive.
+schema_version: "0.2"
+kind: device
+id: samesky/CPT-1203-03-SMT-TR
+manufacturer: samesky
+category: buzzer
+family: CPT-1203
+source: samesky/CPT-1203-03-SMT-TR-DS
+
+parameters:
+  rated_voltage: { typ: 3 V, src: 'p1 "Specifications, rated voltage 3 Vp-p"' }
+  rated_current:
+    max: 5 mA
+    at: { f: 4 kHz }
+    src: p1 "Specifications, current consumption at rated voltage, 4,000 Hz, max 5 mA"
+  frequency:
+    min: 3.5 kHz
+    typ: 4 kHz
+    max: 4.5 kHz
+    src: p1 "Specifications, rated frequency 3,500 / 4,000 / 4,500 Hz"
+  supply_voltage: { min: 1 V, max: 20 V, src: 'p1 "Specifications, operating voltage 1 / 20 Vp-p"' }
+  operating_temperature:
+    min: -40 °C
+    max: 80 °C
+    src: p1 "Specifications, operating temperature"
+  sound_pressure:
+    min: 75 dB
+    at: { VIN: 3 V, f: 4 kHz, d: 10 cm }
+    src: p1 "Specifications, sound pressure level at 10 cm, 3 Vp-p, 4,000 Hz, min 75 dB"
+  buzzer_type:
+    value: piezo
+    src: 'p1 "MODEL: CPT-1203-03-SMT-TR | DESCRIPTION: PIEZO BUZZER TRANSDUCER"'
+  buzzer_drive:  { value: external, src: 'p1 "Features, piezo, no driving circuit"' }
+
+pins:
+  src: p2 "Recommended PCB layout (no polarity marked)"
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

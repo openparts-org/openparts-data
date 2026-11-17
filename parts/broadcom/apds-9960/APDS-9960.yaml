@@ -1,0 +1,19 @@
+# APDS-9960: part number printed in "Ordering Information" (AV02-4191EN
+# page 1; tape & reel, 5000 per reel). lifecycle: unknown (no
+# first-party status in the document).
+schema_version: "0.2"
+kind: part
+id: broadcom/APDS-9960
+manufacturer: broadcom
+mpn: APDS-9960
+device: broadcom/APDS-9960
+
+package:
+  value: manufacturers/broadcom/DFN8-3.94x2.36-APDS-9960
+  src: p35 "Package Outline Dimensions and PCB Pad Layout"
+
+sources: [broadcom/AV02-4191EN]
+source: broadcom/AV02-4191EN
+
+existence: { status: verified, src: 'p1 "Ordering Information, Part Number APDS-9960"' }
+lifecycle: { status: unknown }

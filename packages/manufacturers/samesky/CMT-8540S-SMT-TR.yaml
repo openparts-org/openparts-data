@@ -1,0 +1,25 @@
+# Same Sky CMT-8540S-SMT-TR magnetic buzzer transducer, from samesky/CMT-8540S-SMT-TR-DS page 2 "MECHANICAL
+# DRAWING" and "Recommended PCB Layout Top View". Frame: that top view,
+# origin on the body centre. Layout: four 2.5 x 2.5 pads, 9.5 outside both ways (7.0 between centres) -> centres at ±3.5. +POLARITY lower right (pad 1), -POLARITY upper right (pad 2); the left pads carry no polarity label: mechanical pads, numbered MP.
+schema_version: "0.2"
+kind: package
+id: manufacturers/samesky/CMT-8540S-SMT-TR
+family: buzzer
+lead_count: { value: 4, src: p2 "Recommended PCB Layout Top View" }
+source: samesky/CMT-8540S-SMT-TR-DS
+
+pitch: { typ: 7 mm, src: 'p2 "Recommended PCB Layout, pad centre distance"' }
+geometry: { type: parametric, generator: buzzer }
+
+dimensions:
+  body_width:  { min: 8.5 mm, max: 8.7 mm, src: 'p2 "Mechanical drawing, 8.5 +0.2/-0"' }
+  body_length: { min: 8.5 mm, max: 8.7 mm, src: 'p2 "Mechanical drawing, 8.5 +0.2/-0"' }
+  body_height: { min: 4 mm, max: 4.2 mm, src: 'p2 "Mechanical drawing, height 4.0 +0.2/-0"' }
+
+pads:
+  value:
+    - { number: "1", x: 3.5, y: -3.5, width: 2.5, length: 2.5 }
+    - { number: "2", x: 3.5, y: 3.5, width: 2.5, length: 2.5 }
+    - { number: MP, x: -3.5, y: 3.5, width: 2.5, length: 2.5 }
+    - { number: MP, x: -3.5, y: -3.5, width: 2.5, length: 2.5 }
+  src: p2 "Recommended PCB Layout Top View, 2.5 x 2.5 pads, 9.5 x 9.5 outside, 7.0; ±(9.5 - 2.5)/2"

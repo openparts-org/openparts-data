@@ -1,0 +1,18 @@
+# Same Sky CMT-8540S-SMT-TR: the datasheet is for this one model (every page header
+# "MODEL: CMT-8540S-SMT-TR") -> existence verified. lifecycle unknown: the datasheet
+# states none.
+schema_version: "0.2"
+kind: part
+id: samesky/CMT-8540S-SMT-TR
+manufacturer: samesky
+mpn: CMT-8540S-SMT-TR
+device: samesky/CMT-8540S-SMT-TR
+package: manufacturers/samesky/CMT-8540S-SMT-TR
+sources: [samesky/CMT-8540S-SMT-TR-DS]
+source: samesky/CMT-8540S-SMT-TR-DS
+
+existence:
+  status: verified
+  src: 'p1 "MODEL: CMT-8540S-SMT-TR | DESCRIPTION: MAGNETIC BUZZER TRANSDUCER"'
+
+lifecycle: { status: unknown }

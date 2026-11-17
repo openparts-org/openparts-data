@@ -1,0 +1,18 @@
+# Same Sky CPT-9019S-SMT-TR: the datasheet is for this one model (every page header
+# "MODEL: CPT-9019S-SMT-TR") -> existence verified. lifecycle unknown: the datasheet
+# states none.
+schema_version: "0.2"
+kind: part
+id: samesky/CPT-9019S-SMT-TR
+manufacturer: samesky
+mpn: CPT-9019S-SMT-TR
+device: samesky/CPT-9019S-SMT-TR
+package: manufacturers/samesky/CPT-9019S-SMT-TR
+sources: [samesky/CPT-9019S-SMT-TR-DS]
+source: samesky/CPT-9019S-SMT-TR-DS
+
+existence:
+  status: verified
+  src: 'p1 "MODEL: CPT-9019S-SMT-TR | DESCRIPTION: PIEZO BUZZER TRANSDUCER"'
+
+lifecycle: { status: unknown }

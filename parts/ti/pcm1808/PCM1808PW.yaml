@@ -1,0 +1,20 @@
+# PCM1808PW: SLES177B package option addendum (page 24) row "PCM1808PW Active
+# Production TSSOP (PW) | 14" -- MPN printed verbatim (existence
+# verified); lifecycle "Active" is TI's Status column. PW = outline
+# PW0014A 4220202/B 12/2023 (pages 29-31), the revision recorded in
+# manufacturers/ti/PW0014A.
+schema_version: "0.2"
+kind: part
+id: ti/PCM1808PW
+manufacturer: ti
+mpn: PCM1808PW
+device: ti/PCM1808
+package: { value: manufacturers/ti/PW0014A, src: p29 "PACKAGE OUTLINE PW0014A 4220202/B 12/2023" }
+sources: [ti/SLES177B]
+source: ti/SLES177B
+
+existence:
+  status: verified
+  src: p24 "Package option addendum, row PCM1808PW, TSSOP (PW) | 14"
+
+lifecycle: { status: active, src: 'p24 "Package option addendum, row PCM1808PW, Status Active"' }

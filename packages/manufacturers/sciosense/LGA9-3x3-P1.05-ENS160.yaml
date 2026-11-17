@@ -1,0 +1,56 @@
+# ScioSense ENS160 9-pad LGA, 3 x 3 x 0.9 mm, 3 x 3 pad grid at 1.05 mm
+# pitch. Read from Table 39 "LGA package dimensions" (page 40) and
+# Figure 17 "LGA package drawing" (page 39, rendered).
+#
+# Mapping: D / E "3.0 BSC" -> body_width / body_length; A "0.83 / 0.9"
+# total thickness -> body_height; W / L "0.65 / 0.7 / 0.75" ->
+# lead_width / lead_length; e "1.05 BSC" -> pitch; "0.1" pad to body edge
+# (Figure 17 bottom view) -> lead_inset.
+# Pad numbers (Figure 2 top view, page 5, matching the Figure 17 bottom
+# view mirrored): top row 1 8 7, middle row 2 9 6, bottom row 3 4 5.
+# pads: Figure 18 note 3 "Add 0.05mm all around the nominal lead width
+# and length for the PCB land pattern" -> 0.7 + 2 x 0.05 = 0.8 square
+# lands on the 1.05 grid.
+# The `lga` family counts the 8 perimeter pads per side ([3, 1, 3, 1],
+# counter-clockwise from pin 1, matching the source's numbering) and
+# takes the centre pad 9 (same W x L terminal) as exposed_pad.
+# Left out: the 0.3 sensor opening (0.8 / 0.8 from the corner).
+schema_version: "0.2"
+kind: package
+id: manufacturers/sciosense/LGA9-3x3-P1.05-ENS160
+family: lga
+lead_count: 8
+
+lead_layout:
+  value: [3, 1, 3, 1]
+  src:   'p5 "Figure 2 top view: 1-3 down the left, 4 bottom centre, 5-7 up the right, 8 top centre, 9 centre"'
+
+source: sciosense/SC-001224-DS-9
+
+pitch: { typ: 1.05 mm, src: 'p40 "Table 39 LGA package dimensions, Lead Pitch e 1.05 BSC"' }
+geometry: { type: parametric, generator: lga }
+
+dimensions:
+  body_width:  { typ: 3 mm, src: 'p40 "Table 39, Body Size E 3.0 BSC"' }
+  body_length: { typ: 3 mm, src: 'p40 "Table 39, Body Size D 3.0 BSC"' }
+  body_height: { typ: 0.83 mm, max: 0.9 mm, src: 'p40 "Table 39, Total thickness A"' }
+  exposed_pad:
+    src:    p40 "Table 39, centre pad 9 Lead Width W x Lead Length L"
+    width:  { min: 0.65 mm, typ: 0.7 mm, max: 0.75 mm }
+    length: { min: 0.65 mm, typ: 0.7 mm, max: 0.75 mm }
+  lead_width:  { min: 0.65 mm, typ: 0.7 mm, max: 0.75 mm, src: 'p40 "Table 39, Lead Width W"' }
+  lead_length: { min: 0.65 mm, typ: 0.7 mm, max: 0.75 mm, src: 'p40 "Table 39, Lead Length L"' }
+  lead_inset:  { typ: 0.1 mm, src: 'p39 "Figure 17 bottom view, pad to body edge 0.1"' }
+
+pads:
+  value:
+    - { number: "1", x: -1.05, y: 1.05, width: 0.8, length: 0.8 }
+    - { number: "2", x: -1.05, y: 0, width: 0.8, length: 0.8 }
+    - { number: "3", x: -1.05, y: -1.05, width: 0.8, length: 0.8 }
+    - { number: "4", x: 0, y: -1.05, width: 0.8, length: 0.8 }
+    - { number: "5", x: 1.05, y: -1.05, width: 0.8, length: 0.8 }
+    - { number: "6", x: 1.05, y: 0, width: 0.8, length: 0.8 }
+    - { number: "7", x: 1.05, y: 1.05, width: 0.8, length: 0.8 }
+    - { number: "8", x: 0, y: 1.05, width: 0.8, length: 0.8 }
+    - { number: "9", x: 0, y: 0, width: 0.8, length: 0.8 }
+  src: p40 "Figure 18 land pattern, note 3 (nominal 0.7 + 0.05 all around), grid e 1.05; numbers from Figure 2"

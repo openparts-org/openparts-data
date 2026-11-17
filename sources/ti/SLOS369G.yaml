@@ -1,0 +1,17 @@
+# TI datasheet "TPA2005D1 1.4-W Mono Filter-Free Class-D Audio Power
+# Amplifier", SLOS369G (July 2002, revised October 2015), 43 pages,
+# downloaded 2026-11-17 with curl from the URL below. Read with
+# pdftotext -layout; outline drawing DRB0008A (page 36) rendered and
+# read as an image. The package option addendum (page 30) is newer than
+# the revision. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: ti/SLOS369G
+sha256: f5d959414918bfe749614efed55750bb482df91bdd924a1799fcc5f27eb2c63c
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/tpa2005d1.pdf
+publisher: ti
+document_id: SLOS369G
+document_type: datasheet
+revision: G
+date: 2015-10

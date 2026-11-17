@@ -1,0 +1,16 @@
+# Official TI datasheet "OPT3001 Ambient Light Sensor (ALS)". Downloaded
+# 2026-11-17 with curl from the TI symlink URL below; page header "SBOS681C -
+# JULY 2014 - REVISED NOVEMBER 2017". 44 PDF pages; text read with
+# pdftotext -layout, the DNP0006A outline on the rendered pages. Page
+# numbers are PDF page indices. TI copyright: facts only.
+schema_version: "0.2"
+kind: source
+id: ti/SBOS681C
+sha256: f2ab3d4822cbd4e6b702b09c4c22144f6d0583931e0cfc168394de9ab942ca11
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/opt3001.pdf
+publisher: ti
+document_id: SBOS681C
+document_type: datasheet
+revision: C
+date: 2017-11

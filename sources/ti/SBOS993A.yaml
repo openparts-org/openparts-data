@@ -1,0 +1,17 @@
+# Official TI datasheet "OPT4001 High Speed, High Precision, Digital Ambient
+# Light Sensor". Downloaded 2026-11-17 with curl from the TI symlink URL
+# below; page header "SBOS993A - DECEMBER 2021 - REVISED DECEMBER 2022". 54
+# PDF pages; text read with pdftotext -layout, the DTS0008A outline on the
+# rendered pages. Page numbers are PDF page indices. TI copyright: facts
+# only.
+schema_version: "0.2"
+kind: source
+id: ti/SBOS993A
+sha256: 6b28bf2cc20228c567966fc801408e7f77d599ad15b6ef6be62281b38aa549c1
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/opt4001.pdf
+publisher: ti
+document_id: SBOS993A
+document_type: datasheet
+revision: A
+date: 2022-12

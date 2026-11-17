@@ -1,0 +1,20 @@
+# MPN printed verbatim in the "Ordering Information" table (DS36439 page
+# 9): Part Number "PAM8403DR", Package Type "SO-16"/"SOP-16", 2500
+# Units/Tape&Reel. lifecycle: page 1 banner "NOT RECOMMENDED FOR NEW
+# DESIGN, USE PAM8406" -> nrnd.
+schema_version: "0.2"
+kind: part
+id: diodes/PAM8403DR
+manufacturer: diodes
+mpn: PAM8403DR
+device: diodes/PAM8403
+
+package:
+  value: manufacturers/diodes/SO16-3.90x9.90-P1.27-DS36439
+  src: p10 "Package Outline Dimensions, SO-16"
+
+sources: [diodes/DS36439]
+source: diodes/DS36439
+
+existence: { status: verified, src: 'p9 "Ordering Information table, Part Number PAM8403DR"' }
+lifecycle: { status: nrnd, src: 'p1 "NOT RECOMMENDED FOR NEW DESIGN, USE PAM8406"' }

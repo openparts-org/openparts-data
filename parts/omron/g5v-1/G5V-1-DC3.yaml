@@ -1,0 +1,24 @@
+# OMRON G5V-1 DC3: G5V-1 standard model with 3 VDC rated coil. The ordering
+# note (K048-E1-07 page 1) says to add the rated coil voltage to the model
+# number, example "G5V-1 DC3"; the id replaces the space with "-".
+# existence: verified (the example prints it). lifecycle unknown.
+# Coil values: page 1 Ratings, Coil, G5V-1 (Standard), row 3 VDC (measured
+# at 23 °C coil temperature, ±10 %).
+schema_version: "0.2"
+kind: part
+id: omron/G5V-1-DC3
+manufacturer: omron
+mpn: G5V-1 DC3
+device: omron/G5V-1
+package: manufacturers/omron/G5V-1
+sources: [omron/K048-E1-07]
+source: omron/K048-E1-07
+
+existence: { status: verified, src: 'p1 "Ordering Information, Note: example G5V-1 DC3"' }
+lifecycle: { status: unknown }
+
+parameters:
+  coil_voltage: { typ: 3 V, src: 'p1 "Ratings, Coil, G5V-1 (Standard), Rated voltage 3 VDC"' }
+  coil_resistance:
+    typ: 60 Ω
+    src: p1 "Ratings, Coil, G5V-1 (Standard), 3 VDC row, Coil resistance"

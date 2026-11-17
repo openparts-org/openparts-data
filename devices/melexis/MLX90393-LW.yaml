@@ -1,0 +1,50 @@
+# MLX90393 Triaxis magnetic node (3-axis magnetometer, I2C / SPI),
+# QFN-16 (package code LW). Pins from Table 3 "Pinout Description"
+# (datasheet revision 012 page 7). Types: INT (I/O out) output; MS/CS
+# (I/O in) input; SCL/SCLK clock; SDA/MOSI (I/O bi) io; MISO output;
+# INT/TRIG (I/O bi) io; VDD_IO, VDD power; A1, A0 (I2C address LSB)
+# input; VSS ground; N/C nc. The exposed pad "can be left floating or
+# shorted to ground" (page 7): no pin. The UTDFN-8 (LQ) variant has
+# another pin map and is not covered. operating_temperature depends on
+# the temperature code and is on the Parts.
+schema_version: "0.2"
+kind: device
+id: melexis/MLX90393-LW
+manufacturer: melexis
+category: magnetic_sensor
+family: MLX90393
+source: melexis/MLX90393-DS@rev012
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: i2c_spi
+    src: p7 "Table 3 Pinout Description, wiring I2C / 4-wire SPI / 3-wire SPI"
+  supply_voltage:
+    min: 2.2 V
+    max: 3.6 V
+    src: p10 "10 General Electrical Specifications, VDD Analog Supply Voltage"
+  supply_current:
+    typ: 100 µA
+    src: p10 "10 General Electrical Specifications, IDD,NOM Nominal Current (TXYZ, 10 Hz)"
+  esd_hbm:              { typ: 2.5 kV, src: 'p9 "Table 5 Absolute Maximum Ratings, ESDHBM"' }
+  magnetic_sensor_type: { value: 3d, src: 'p1 "MLX90393 Triaxis Magnetic Node, 3-axis"' }
+
+pins:
+  src:  p7 "Table 3 Pinout Description"
+  "1":  { name: INT, type: output }
+  "2":  { name: MS/CS, type: input }
+  "3":  { name: SCL/SCLK, type: clock }
+  "4":  { name: N/C, type: nc }
+  "5":  { name: SDA/MOSI, type: io }
+  "6":  { name: MISO, type: output }
+  "7":  { name: INT/TRIG, type: io }
+  "8":  { name: VDD_IO, type: power }
+  "9":  { name: N/C, type: nc }
+  "10": { name: N/C, type: nc }
+  "11": { name: A1, type: input }
+  "12": { name: A0, type: input }
+  "13": { name: VSS, type: ground }
+  "14": { name: N/C, type: nc }
+  "15": { name: VDD, type: power }
+  "16": { name: N/C, type: nc }

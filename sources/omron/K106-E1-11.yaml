@@ -1,0 +1,20 @@
+# OMRON "Surface Mounting Relay G6K" datasheet, Cat. No. K106-E1-11
+# (printed on the last page), 10 pages, from
+# https://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k.pdf (curl,
+# 2026-11-17; PDF title "G6K", ModDate 2018-02-01 -- no printed date;
+# `date` is the ModDate). PDF page index = printed page number. Page 2:
+# Ordering Information; page 3: Ratings and Characteristics; page 6:
+# Dimensions, Mounting Dimensions / PCB Mounting Holes and Terminal
+# Arrangement of the single-side stable models, rendered and read as an
+# image.
+schema_version: "0.2"
+kind: source
+id: omron/K106-E1-11
+sha256: 25d2046127b3ffa7e7a2047b7467c67587559e8e05111347260d5a892c0bec57
+retrieved: 2026-11-17
+url: https://omronfs.omron.com/en_US/ecb/products/pdf/en-g6k.pdf
+publisher: omron
+document_id: K106-E1
+document_type: datasheet
+revision: "11"
+date: 2018-02-01

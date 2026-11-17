@@ -1,0 +1,66 @@
+# PAM8403 filterless 3 W class-D stereo audio amplifier, SOP-16.
+# Pins from DS36439 page 2 "Pin Descriptions" (numbers 1-16). MUTE and
+# SHND are active-low control inputs (typed input); VREF is the internal
+# reference bypass (typed passive); INL/INR analog. PVDD (4, 13) and
+# PGND (2, 15) appear twice. The datasheet marks the part "NOT
+# RECOMMENDED FOR NEW DESIGN" (page 1).
+schema_version: "0.2"
+kind: device
+id: diodes/PAM8403
+manufacturer: diodes
+category: audio_amplifier
+family: PAM8403
+source: diodes/DS36439
+
+parameters:
+  supply_voltage:
+    min: 2.5 V
+    max: 5.5 V
+    src: p3 "Recommended Operating Conditions, Supply Voltage Range 2.5 to 5.5"
+  supply_current:
+    typ: 16 mA
+    at: { VDD: 5 V }
+    src: p4 "Electrical Characteristics, IQ Quiescent Current, VDD = 5.0V, No Load"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p3 "Recommended Operating Conditions, Operation Temperature Range"
+  channel_count:   { value: "2", src: p1 "Filterless 3W Class-D Stereo Audio Amplifier" }
+  amplifier_class: { value: d, src: p1 "Filterless 3W Class-D Stereo Audio Amplifier" }
+  output_power:
+    - typ: 3.2 W
+      at: { VDD: 5 V, RL: 4 Ω, THD: 10 % }
+      src: p4 "Electrical Characteristics, PO, THD+N = 10%, f = 1KHz, RL = 4Ω, VDD = 5.0V"
+    - typ: 1.8 W
+      at: { VDD: 5 V, RL: 8 Ω, THD: 10 % }
+      src: p4 "Electrical Characteristics, PO, THD+N = 10%, f = 1KHz, RL = 8Ω, VDD = 5.0V"
+    - typ: 1.4 W
+      at: { VDD: 5 V, RL: 8 Ω, THD: 1 % }
+      src: p4 "Electrical Characteristics, PO, THD+N = 1%, f = 1KHz, RL = 8Ω, VDD = 5.0V"
+  thd_n:
+    typ: 0.15 %
+    at: { VDD: 5 V, RL: 8 Ω }
+    src: p4 "Electrical Characteristics, THD+N, VDD = 5.0V, PO = 1W, RL = 8Ω, f = 1kHz"
+  snr:
+    typ: 80 dB
+    at: { VDD: 5 V }
+    src: p4 "Electrical Characteristics, SNR, VDD = 5.0V, VORMS = 1V, GV = 20db, f = 1kHz"
+
+pins:
+  src:  p2 "Pin Descriptions"
+  "1":  { name: +OUT_L, type: output }
+  "2":  { name: PGND, type: ground }
+  "3":  { name: -OUT_L, type: output }
+  "4":  { name: PVDD, type: power }
+  "5":  { name: MUTE, type: input }
+  "6":  { name: VDD, type: power }
+  "7":  { name: INL, type: analog }
+  "8":  { name: VREF, type: passive }
+  "9":  { name: NC, type: nc }
+  "10": { name: INR, type: analog }
+  "11": { name: GND, type: ground }
+  "12": { name: SHND, type: input }
+  "13": { name: PVDD, type: power }
+  "14": { name: -OUT_R, type: output }
+  "15": { name: PGND, type: ground }
+  "16": { name: +OUT_R, type: output }

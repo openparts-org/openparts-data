@@ -1,0 +1,19 @@
+# OMRON "Solid State Relays G3MC" datasheet, Cat. No. J108-E1-05 (printed
+# on the last page), 4 pages, from
+# https://omronfs.omron.com/en_US/ecb/products/pdf/en-g3mc.pdf (curl,
+# 2026-11-17; PDF title "G3MC", ModDate 2015-01-23 -- no printed date;
+# `date` is the ModDate). PDF page index = printed page number. Page 1:
+# List of Models; page 2: Ratings and Characteristics; page 3:
+# Dimensions, PCB Dimensions and Terminal Arrangement (Bottom View),
+# rendered and read as an image.
+schema_version: "0.2"
+kind: source
+id: omron/J108-E1-05
+sha256: 15da911c0300baefa4b71bf06cd7f5b6dd7c540e700afc2cfbfcc5f12d950631
+retrieved: 2026-11-17
+url: https://omronfs.omron.com/en_US/ecb/products/pdf/en-g3mc.pdf
+publisher: omron
+document_id: J108-E1
+document_type: datasheet
+revision: 05
+date: 2015-01-23

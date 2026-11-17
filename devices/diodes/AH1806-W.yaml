@@ -1,0 +1,56 @@
+# AH1806 high-sensitivity micropower omnipolar Hall-effect switch, SC59
+# (suffix W) pinout. Pins from "Pin Descriptions, Packages: SC59 and
+# SIP-3" (DS36104 page 2): 1 VDD, 2 GND, 3 OUTPUT, checked against the
+# SC59 "Pin Assignments (Top View)" (page 1). OUTPUT is the single
+# open-drain output. The SOT553 (Z) and SIP-3 (P) packages are not
+# covered.
+# operate_point / release_point: magnitudes of the south-pole values
+# (Bops, Brps) over VDD = 2.5 V to 5.5 V; the north-pole rows are the
+# same magnitudes with the 10 / 4 G limit on the other side (Bopn -45 /
+# -30 / -10, Brpn -40 / -20 / -4).
+schema_version: "0.2"
+kind: device
+id: diodes/AH1806-W
+manufacturer: diodes
+category: magnetic_sensor
+family: AH1806
+source: diodes/DS36104
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.5 V
+    max: 5.5 V
+    src: p3 "Recommended Operating Conditions, VDD Supply Voltage"
+  supply_current:
+    typ: 8 µA
+    max: 16 µA
+    at: { VDD: 3 V, TA: 25 °C }
+    src: p3 "Electrical Characteristics, IDD(avg) Average Supply Current"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p3 "Recommended Operating Conditions, TA Operating Temperature Range"
+  esd_hbm:          { typ: 6 kV, src: 'p3 "Absolute Maximum Ratings, ESD HBM"' }
+  output_structure: { value: open_drain, src: 'p1 "Features, Single Open Drain Output"' }
+  magnetic_sensor_type:
+    value: omnipolar_switch
+    src: p1 "High Sensitivity Micropower Omnipolar Hall-Effect Switch"
+  operate_point:
+    min: 10 G
+    typ: 30 G
+    max: 45 G
+    at: { TA: 25 °C }
+    src: p4 "Magnetic Characteristics, Bops (south pole), VDD = 2.5V to 5.5V"
+  release_point:
+    min: 4 G
+    typ: 20 G
+    max: 40 G
+    at: { TA: 25 °C }
+    src: p4 "Magnetic Characteristics, Brps (south pole), VDD = 2.5V to 5.5V"
+
+pins:
+  src: ['p2 "Pin Descriptions, Packages SC59 and SIP-3"', 'p1 "Pin Assignments, SC59 (Top View)"']
+  "1": { name: VDD, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: OUTPUT, type: output }

@@ -1,0 +1,74 @@
+# Allegro package LH, 3-pin SOT23W (Allegro DWG-0000628, Rev. 1), read
+# from the rendered drawing on page 11 of A1324-DS Rev. 9 ("For
+# Reference Only - Not for Tooling Use").
+#
+# Top view: pins 1 and 2 on one edge, pin 3 alone on the opposite edge
+# -- lead_layout [2, 1]; pitch = pin 1 to pin 2 = 2 x "0.95 BSC" = 1.9
+# (as for manufacturers/ti/DBZ0003A).
+# Field mapping for the `sot` generator, as for DBZ0003A: body_width =
+# "2.975 +0.125/-0.075" (along the pin 1-2 row), body_length = "1.91
+# +0.19/-0.06" (molded width across the rows), overall_length = "2.90
+# +0.10/-0.20" (lead-tip span). Height "1.00 +-0.13", standoff "0.05
+# +0.10/-0.05", lead width "0.40 +-0.10", lead thickness "0.180
+# +0.020/-0.053", foot "0.38 NOM" ("0.25 MIN").
+# Left out: "1.49", "0.96", "0.55 REF" (Hall element / reference
+# positions), "0.57 +-0.04" / "0.41 +-0.04" (body parts), the PCB layout
+# reference view (0.70 x 1.00 lands, 2.40, 0.95).
+schema_version: "0.2"
+kind: package
+id: manufacturers/allegro/LH-SOT23W-DWG-0000628
+family: sot
+lead_count: 3
+
+lead_layout:
+  value: [2, 1]
+  src:   'p11 "Package LH top view: pins 1 and 2 on one edge, pin 3 alone on the opposite edge"'
+
+source: allegro/A1324-DS@rev9
+
+pitch:
+  typ: 1.9 mm
+  src: p11 "Package LH, side view "0.95 BSC" from pin 1 to the centre line (x 2)"
+
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:
+    min: 2.9 mm
+    typ: 2.975 mm
+    max: 3.1 mm
+    src: p11 "Package LH, "2.975 +0.125/-0.075" along the pin 1-2 row"
+  body_length:
+    min: 1.85 mm
+    typ: 1.91 mm
+    max: 2.1 mm
+    src: p11 "Package LH, "1.91 +0.19/-0.06" molded width"
+  lead_thickness:
+    min: 0.127 mm
+    typ: 0.18 mm
+    max: 0.2 mm
+    src: p11 "Package LH end view, "0.180 +0.020/-0.053""
+  lead_length:
+    min: 0.25 mm
+    typ: 0.38 mm
+    src: p11 "Package LH end view, foot "0.25 MIN, 0.38 NOM""
+  overall_length:
+    min: 2.7 mm
+    typ: 2.9 mm
+    max: 3 mm
+    src: p11 "Package LH, lead-tip span "2.90 +0.10/-0.20""
+  overall_height:
+    min: 0.87 mm
+    typ: 1 mm
+    max: 1.13 mm
+    src: p11 "Package LH side view, "1.00 +-0.13""
+  standoff:
+    min: 0 mm
+    typ: 0.05 mm
+    max: 0.15 mm
+    src: p11 "Package LH side view, "0.05 +0.10/-0.05""
+  lead_width:
+    min: 0.3 mm
+    typ: 0.4 mm
+    max: 0.5 mm
+    src: p11 "Package LH side view, "0.40 +-0.10""

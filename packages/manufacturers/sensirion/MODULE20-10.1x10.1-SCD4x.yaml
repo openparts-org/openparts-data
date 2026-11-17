@@ -1,0 +1,63 @@
+# Sensirion SCD4x CO2 sensor: an LGA module (sensor can on a 10.1 x 10.1
+# mm board) with 20 edge pads (5 per side, 1.25 mm pitch) and a centre
+# ground land. Read from Figure 3 "Sensor package dimensions" and Figure
+# 4a "Recommended SCD4x footprint (top view): landing pads" (datasheet
+# v1.7 page 24), rendered at 300 dpi.
+#
+# Board: "10.1 +-0.3" both ways -> body_width / body_length; board
+# thickness "0.8 +-0.2" (side view) -> body_height; "10.1 x 10.1 x 6.5
+# mm3" (page 1 Features) -> overall_height.
+# pad_rows (Figure 4a, with Figure 3 for the positions): pads "1.5"
+# long x "0.8" wide, "16 x 1.25" pitch; Figure 3 puts the side-pad and
+# top/bottom-pad centres "4 +-0.05" from the centre and the outer pads
+# "2.5 +-0.05" from the centre line. Hence inset = 10.1/2 - 4 = 1.05
+# (Figure 4a: pad outer end "(0.3)" from the board edge, 1.05 - 1.5/2 =
+# 0.3) and start = 10.1/2 - 2.5 = 2.55. Numbering from Table 6 (page 5,
+# top view): 1-5 down the left edge, 6-10 left to right along the bottom,
+# 11-15 up the right edge, 16-20 right to left along the top -- the
+# counter-clockwise row order.
+# Centre land 21 (GND): Figure 4a draws one "4.8" x "4.8" land over the
+# four package ground pads (Figure 3: "2 +-0.05" from the centre line to
+# their outer edges).
+# Left out: the NPTH 0.25 thermal-relief hole of the package (Figure 3,
+# "2.94 +-0.1" from the centre lines; Figure 4b asks for a 0.6 keep-free
+# area there), the cap outline (7.8, 8.5, 5.5), paste and mask layers.
+schema_version: "0.2"
+kind: package
+id: manufacturers/sensirion/MODULE20-10.1x10.1-SCD4x
+family: module
+lead_count: 21
+source: sensirion/CD_DS_SCD4x_Datasheet_D1@v1.7
+
+pitch: { typ: 1.25 mm, src: 'p24 "Figure 4a landing pads, "16 x 1.25""' }
+geometry: { type: parametric, generator: module }
+
+dimensions:
+  body_width:
+    min: 9.8 mm
+    typ: 10.1 mm
+    max: 10.4 mm
+    src: p24 "Figure 3 top view, "10.1 +-0.3" (horizontal)"
+  body_length:
+    min: 9.8 mm
+    typ: 10.1 mm
+    max: 10.4 mm
+    src: p24 "Figure 3 top view, "10.1 +-0.3" (vertical)"
+  body_height:
+    min: 0.6 mm
+    typ: 0.8 mm
+    max: 1 mm
+    src: p24 "Figure 3 side view, board "0.8 +-0.2""
+  overall_height: { typ: 6.5 mm, src: 'p1 "Features, Small form factor 10.1 x 10.1 x 6.5 mm3"' }
+
+pads:
+  value: [{ number: "21", x: 0, y: 0, width: 4.8, length: 4.8 }]
+  src:   p24 "Figure 4a landing pads, centre land "4.8" x "4.8""
+
+pad_rows:
+  value:
+    - { side: -x, first: 1, count: 5, pitch: 1.25, start: 2.55, inset: 1.05, pad: [0.8, 1.5] }
+    - { side: -y, first: 6, count: 5, pitch: 1.25, start: 2.55, inset: 1.05, pad: [0.8, 1.5] }
+    - { side: +x, first: 11, count: 5, pitch: 1.25, start: 2.55, inset: 1.05, pad: [0.8, 1.5] }
+    - { side: +y, first: 16, count: 5, pitch: 1.25, start: 2.55, inset: 1.05, pad: [0.8, 1.5] }
+  src: p24 "Figure 4a 1.5 x 0.8 pads, 16 x 1.25, (0.3); Figure 3 "4 +-0.05", "2.5 +-0.05" (see comment)"

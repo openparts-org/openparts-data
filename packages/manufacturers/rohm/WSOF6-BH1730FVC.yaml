@@ -1,0 +1,54 @@
+# ROHM WSOF6 (flat-lead 6-pin, 1.6 x 2.6 mm body, 0.5 mm pitch), drawing
+# EX127-5002, read from "Physical Dimension, Tape and Reel Information"
+# (BH1730FVC datasheet page 19), rendered.
+#
+# The drawing shows pins 1-2-3 along the lower edge and 6-5-4 along the
+# upper edge (pin 1 lower left at the 1PIN MARK). Turned by 90 degrees
+# that is the `sot` [3, 3] layout (1-3 down the left, 4-6 up the right).
+# Field mapping as for manufacturers/ti/DBV0006A (leads exit across
+# body_length): body_width = "1.6+-0.1" (along the rows), body_length =
+# "2.6+-0.1" (across the rows), overall_length = "3.0+-0.1" (lead-tip
+# span). Lead width "0.22+-0.05", lead thickness "0.145+-0.05", lead
+# length beyond the body "0.3" (untoleranced), height "0.75MAX".
+# Left out: the burr maxima "(Max1.8 include. BURR)", "(Max2.8 include.
+# BURR)" and the bottom-view reference outline (1.2) x (1.5), (0.45),
+# (0.15).
+schema_version: "0.2"
+kind: package
+id: manufacturers/rohm/WSOF6-BH1730FVC
+family: sot
+lead_count: 6
+
+lead_layout:
+  value: [3, 3]
+  src:   'p19 "WSOF6 top view: pins 1, 2, 3 on one edge, 6, 5, 4 opposite (pin 1 at the 1PIN MARK)"'
+
+source: rohm/BH1730FVC-datasheet-en
+
+pitch: { typ: 0.5 mm, src: 'p19 "WSOF6 (EX127-5002), side view "0.5""' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:
+    min: 1.5 mm
+    typ: 1.6 mm
+    max: 1.7 mm
+    src: p19 "WSOF6, body along the pin rows "1.6+-0.1""
+  body_length:
+    min: 2.5 mm
+    typ: 2.6 mm
+    max: 2.7 mm
+    src: p19 "WSOF6, body across the pin rows "2.6+-0.1""
+  lead_thickness:
+    min: 0.095 mm
+    typ: 0.145 mm
+    max: 0.195 mm
+    src: p19 "WSOF6 end view, "0.145+-0.05""
+  lead_length:    { typ: 0.3 mm, src: 'p19 "WSOF6 top view, lead beyond the body "0.3""' }
+  overall_length:
+    min: 2.9 mm
+    typ: 3 mm
+    max: 3.1 mm
+    src: p19 "WSOF6, lead-tip span "3.0+-0.1""
+  overall_height: { max: 0.75 mm, src: 'p19 "WSOF6 side view, "0.75MAX""' }
+  lead_width:     { min: 0.17 mm, typ: 0.22 mm, max: 0.27 mm, src: 'p19 "WSOF6, "0.22+-0.05""' }

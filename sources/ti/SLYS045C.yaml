@@ -1,0 +1,17 @@
+# Official TI datasheet "TMAG5273 Low-Power Linear 3D Hall-Effect Sensor With
+# I2C Interface". Downloaded 2026-11-17 with curl from the TI symlink URL
+# below; page header "SLYS045C - JUNE 2021 - REVISED APRIL 2026". 61 PDF
+# pages (no package outline drawing in this PDF); text read with pdftotext
+# -layout. Page numbers are PDF page indices. PACKAGE OPTION ADDENDUM dated
+# 13-Jan-2026. TI copyright: facts only.
+schema_version: "0.2"
+kind: source
+id: ti/SLYS045C
+sha256: 3fed45fde64b43affb501a9cc1408e527741df93c576987180c02f3bd5738a88
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/tmag5273.pdf
+publisher: ti
+document_id: SLYS045C
+document_type: datasheet
+revision: C
+date: 2026-04

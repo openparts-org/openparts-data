@@ -1,0 +1,19 @@
+# BH1730FVC-TR: printed in "Ordering Information" (page 18) as part
+# number BH1730, package FVC (WSOF6) and packaging TR (embossed tape and
+# reel). lifecycle: unknown (no first-party status in the document).
+schema_version: "0.2"
+kind: part
+id: rohm/BH1730FVC-TR
+manufacturer: rohm
+mpn: BH1730FVC-TR
+device: rohm/BH1730FVC
+
+package:
+  value: manufacturers/rohm/WSOF6-BH1730FVC
+  src: ['p18 "Ordering Information, FVC = WSOF6"', 'p19 "Physical Dimension, WSOF6 (EX127-5002)"']
+
+sources: [rohm/BH1730FVC-datasheet-en]
+source: rohm/BH1730FVC-datasheet-en
+
+existence: { status: verified, src: 'p18 "Ordering Information, BH1730FVC-TR"' }
+lifecycle: { status: unknown }
