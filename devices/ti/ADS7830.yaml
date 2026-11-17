@@ -3,9 +3,9 @@
 # CONFIGURATION, PW PACKAGE TSSOP-16 (Top View)" figure on the same page;
 # all 16 pins match. CH0..CH7, COM and REFIN/REFOUT typed analog, A0/A1
 # (slave address bits) input, SCL clock, SDA io, +VDD power.
-# supply_voltage is left out: the two Electrical Characteristics tables
-# give separate specified ranges (2.7-3.6 V and 4.75-5.25 V), no single
-# range. No ESD rating is printed. f = SCL clock frequency.
+# supply_voltage: the two Electrical Characteristics tables give
+# separate specified ranges (2.7-3.6 V and 4.75-5.25 V), as `ranges`.
+# No ESD rating is printed. f = SCL clock frequency.
 schema_version: "0.2"
 kind: device
 id: ti/ADS7830
@@ -17,6 +17,11 @@ source: ti/SBAS302C
 # Parameters (AI candidates, needs review).
 parameters:
   data_interface: { value: i2c, src: 'p1 "Features, SUPPORTS ALL THREE I2C MODES"' }
+  supply_voltage:
+    ranges: [{ min: 2.7 V, max: 3.6 V }, { min: 4.75 V, max: 5.25 V }]
+    src:
+      - p4 "Elec. Char. +2.7V, Power-Supply Voltage +VDD, Specified Performance"
+      - p6 "Elec. Char. +5V, Power-Supply Voltage +VDD, Specified Performance"
   supply_current:
     - typ: 225 µA
       max: 320 µA

@@ -43,6 +43,9 @@ parameters:
     value: "1"
     src: p3 "Table 6-1 Pin Functions, single VOUT (Analog output voltage from DAC)"
   resolution: { value: "8", src: 'p1 "Description, 8-bit DAC5311"' }
+  reference:
+    value: supply
+    src: p22 "8.3.1 DAC Section, no reference input pin, the power supply (AVDD) acts as the reference"
 
 pins:
   src:

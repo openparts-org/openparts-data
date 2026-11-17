@@ -30,7 +30,7 @@ parameters:
     src: 'p3 "Ratings, Coil: Single-side Stable Models, 12 VDC row, Coil resistance"'
   must_operate_voltage:
     max: 9.6 V
-    src: 'p3 "Ratings, Coil: Single-side Stable Models, 12 VDC row, Must operate 80 % max. of rated"'
+    src: 'p3 "Ratings, Coil: Single-side Stable Models, Must operate 80 % max. of rated; 12 V coil -> 9.6 V (computed)"'
   must_release_voltage:
     min: 1.2 V
-    src: 'p3 "Ratings, Coil: Single-side Stable Models, 12 VDC row, Must release 10 % min. of rated"'
+    src: 'p3 "Ratings, Coil: Single-side Stable Models, Must release 10 % min. of rated; 12 V coil -> 1.2 V (computed)"'

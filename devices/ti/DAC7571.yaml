@@ -35,6 +35,7 @@ parameters:
     value: "1"
     src: 'p1 "Description: a low-power, single channel, 12-bit ... DAC"'
   resolution:     { value: "12", src: 'p1 "Title, 12-BIT DIGITAL-TO-ANALOG CONVERTER"' }
+  reference: { value: supply, src: 'p13 "D/A Section, Figure 39: resistor string REF(+) at VDD"' }
 
 pins:
   src:

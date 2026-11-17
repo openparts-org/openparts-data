@@ -36,8 +36,8 @@ parameters:
     src: 'p1 "Description: single channel 8-bit, 10-bit, and 12-bit ... DAC"'
   resolution:     { value: "10", src: 'p1 "Features, 10-bit: MCP4716"' }
   reference:
-    value: external
-    src: 'p1 "Features, DAC Voltage Reference Options: VREF Pin or VDD"'
+    values: [external, supply]
+    src:    'p1 "Features, DAC Voltage Reference Options: VREF Pin or VDD"'
 
 pins:
   src:

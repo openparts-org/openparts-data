@@ -1,8 +1,8 @@
 # DRV5055 ratiometric linear Hall effect sensor, DBZ (3-pin SOT-23) pinout.
 # From SBAS640C Table 4-1 Pin Functions column DBZ: VCC 1, OUT 2, GND 3, checked against
-# Figure 4-1 on the same page. supply_voltage is left out: 5.3
+# Figure 4-1 on the same page. supply_voltage: 5.3
 # Recommended Operating Conditions prints two isolated VCC ranges
-# (3 V to 3.63 V and 4.5 V to 5.5 V, page 4), not one range.
+# (3 V to 3.63 V and 4.5 V to 5.5 V, page 4), recorded as `ranges`.
 schema_version: "0.2"
 kind: device
 id: ti/DRV5055-DBZ
@@ -14,6 +14,9 @@ source: ti/SBAS640C
 # Parameters (AI candidates, needs review).
 parameters:
   data_interface:       { value: analog, src: 'p3 "Table 4-1 Pin Functions, OUT: Analog output"' }
+  supply_voltage:
+    ranges: [{ min: 3 V, max: 3.63 V }, { min: 4.5 V, max: 5.5 V }]
+    src:    p4 "5.3 Recommended Operating Conditions, VCC (two isolated operating VCC ranges)"
   supply_current:
     - typ: 3 mA
       max: 5 mA

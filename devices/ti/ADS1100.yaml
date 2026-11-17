@@ -34,6 +34,7 @@ parameters:
     src: p2 "PIN CONFIGURATION, one differential input pair VIN+/VIN-"
   resolution:     { value: "16", src: 'p1 "Features, 16-BITS NO MISSING CODES"' }
   sample_rate: { max: 128 SPS, src: 'p1 "Features, PROGRAMMABLE DATA RATE: 8SPS to 128SPS"' }
+  reference: { value: supply, src: 'p15 "For the ADS1100, the reference is the power supply"' }
 
 pins:
   src: p2 "PIN CONFIGURATION, Top View SOT23 figure"

@@ -4,8 +4,7 @@
 # reference decoupling -> passive; VINL/VINR analog inputs -> analog;
 # BCK/LRCK "I/O" -> io; DOUT output; SCKI/MD0/MD1/FMT input. Category
 # audio_codec: the audio-group node for audio converters.
-# supply_voltage is the analog VCC range (VDD digital 2.7-3.6 V is in
-# the same table).
+# Separate rails: analog VCC and digital VDD (analog_/digital_supply_*).
 schema_version: "0.2"
 kind: device
 id: ti/PCM1808
@@ -18,10 +17,6 @@ parameters:
   data_interface:
     value: i2s
     src: p5 "6.5 Electrical Characteristics, Audio data interface format I2S, left-justified"
-  supply_voltage:
-    min: 4.5 V
-    max: 5.5 V
-    src: p4 "6.3 Recommended Operating Conditions, VCC Analog supply voltage 4.5 / 5 / 5.5"
   analog_supply_voltage:
     min: 4.5 V
     max: 5.5 V

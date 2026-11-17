@@ -37,6 +37,9 @@ parameters:
   channel_count:  { value: "1", src: 'p3 "PIN DESCRIPTIONS, single VIN analog input"' }
   resolution: { value: "12", src: 'p1 "Features, Resolution: 12 Bits (No Missing Codes)"' }
   sample_rate: { max: 188.9 kSPS, src: 'p1 "Features, Throughput Rate: 188.9 ksps (Max)"' }
+  reference:
+    value: supply
+    src: p17 "Reference Voltage, uses the supply (VA) as the reference"
 
 pins:
   src:

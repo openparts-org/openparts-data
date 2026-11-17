@@ -36,6 +36,9 @@ parameters:
     max: 100 kSPS
     at: { VDD: 5 V }
     src: p1 "Features, 100 ksps maximum sampling rate at VDD = 5V"
+  reference:
+    value: supply
+    src: p12 "Table 3-1, VDD/VREF Power Supply and Reference Voltage Input"
 
 pins:
   src: p12 "Table 3-1 "Pin Function Table", column "MSOP, PDIP, SOIC, TSSOP""

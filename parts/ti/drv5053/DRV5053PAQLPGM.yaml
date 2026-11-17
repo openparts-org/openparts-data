@@ -28,8 +28,8 @@ lifecycle:
 # Parameters (AI candidates, needs review).
 parameters:
   magnetic_sensitivity:
-    min: 10 mV/mT
-    typ: 23 mV/mT
-    max: 35 mV/mT
+    min: -35 mV/mT
+    typ: -23 mV/mT
+    max: -10 mV/mT
     at: { VCC: 3.3 V }
-    src: 'p5 "6.7 Magnetic Characteristics, DRV5053PA: –23 mV/mT, S Sensitivity, magnitude (negative slope)"'
+    src: 'p5 "6.7 Magnetic Characteristics, DRV5053PA: –23 mV/mT, S Sensitivity"'

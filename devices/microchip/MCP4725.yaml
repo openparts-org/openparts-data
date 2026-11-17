@@ -15,7 +15,7 @@ source: microchip/DS22039@revD
 parameters:
   data_interface: { value: i2c, src: 'p1 "Features, I2C Interface"' }
   resolution:     { value: "12", src: 'p1 "Features, 12-Bit Resolution"' }
-  reference:      { value: external, src: 'p1 "Features, External Voltage Reference (VDD)"' }
+  reference:      { value: supply, src: 'p19 "5.3 Voltage Reference, VREF = VDD"' }
 
 pins:
   src:

@@ -38,6 +38,7 @@ parameters:
     value: "1"
     src: p3 "Pin Functions, single VOUT pin (DAC Analog Output Voltage)"
   resolution: { value: "12", src: 'p1 "Key Specifications, 12-Bit Resolution"' }
+  reference: { value: supply, src: 'p3 "Pin Functions, VA Power supply and Reference input"' }
 
 pins:
   src:

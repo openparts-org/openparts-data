@@ -5,8 +5,7 @@
 # DRDY and RESET are active low (overbars; written without them). AVDD/
 # DVDD power, AGND/DGND ground, AIN0..AIN3/REFP/REFN analog, A0/A1/
 # RESET input, DRDY output, SCL ("Serial clock input") clock, SDA io.
-# supply_voltage: AVDD and DVDD have the same 2.3-5.5 V range.
-# supply_current is left out: only separate IAVDD and IDVDD are printed.
+# Separate rails: AVDD and DVDD (same 2.3-5.5 V range), IAVDD and IDVDD.
 schema_version: "0.2"
 kind: device
 id: ti/ADS1219
@@ -18,10 +17,6 @@ source: ti/SBAS924A
 # Parameters (AI candidates, needs review).
 parameters:
   data_interface: { value: i2c, src: 'p1 "Features, I2C-Compatible Interface"' }
-  supply_voltage:
-    min: 2.3 V
-    max: 5.5 V
-    src: p4 "6.3 Recommended Operating Conditions, Analog (AVDD to AGND) and Digital (DVDD to DGND) power supply"
   analog_supply_voltage:
     min: 2.3 V
     max: 5.5 V

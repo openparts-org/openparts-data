@@ -6,9 +6,8 @@
 # written without them). AVDD/DVDD power, AVSS/DGND ground, analog
 # inputs and reference inputs analog, CS/DIN/CLK input, SCLK clock,
 # DOUT/DRDY and DRDY output.
-# supply_voltage: unipolar AVDD-AVSS and DVDD both 2.3-5.5 V (the bipolar
-# ±2.5 V analog option is not recorded). supply_current is left out: only
-# separate IAVDD and IDVDD are printed.
+# Separate rails: unipolar AVDD-AVSS and DVDD, both 2.3-5.5 V (the bipolar
+# ±2.5 V analog option is not recorded); IAVDD and IDVDD per rail.
 schema_version: "0.2"
 kind: device
 id: ti/ADS1220
@@ -20,10 +19,6 @@ source: ti/SBAS501D
 # Parameters (AI candidates, needs review).
 parameters:
   data_interface:         { value: spi, src: 'p1 "Features, SPI-compatible interface (mode 1)"' }
-  supply_voltage:
-    min: 2.3 V
-    max: 5.5 V
-    src: p6 "6.3 Recommended Operating Conditions, Unipolar analog (AVDD to AVSS) and Digital (DVDD) power supply"
   analog_supply_voltage:
     min: 2.3 V
     max: 5.5 V
@@ -46,10 +41,11 @@ parameters:
   resolution:             { value: "24", src: 'p1 "Title, 2kSPS, Low-Power, 24-Bit ADC"' }
   sample_rate: { max: 2 kSPS, src: 'p1 "Features, Programmable data rates: Up to 2kSPS"' }
   reference:
-    values: [internal, external]
+    values: [internal, external, supply]
     src:
       - p1 "Features, Internal 2.048V reference"
       - p4 "Pin Functions, REFP0 Positive reference input 0"
+      - p26 "8.3.3 Voltage Reference, the analog supply (AVDD – AVSS) can be used as a reference"
 
 pins:
   src:

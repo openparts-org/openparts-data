@@ -5,8 +5,8 @@
 # -> passive; MICBIAS (bias output) -> power_out; RESET is active low.
 # Multi-function pins keep the table's primary/secondary name. Thermal
 # pad: "Connect to PCB ground plane. Not internally connected." -> key
-# EP, passive. supply_voltage is the AVDD range (LDOIN 1.9-3.6 V, IOVDD
-# 1.1-3.6 V and DVDD 1.26-1.95 V are in the same table).
+# EP, passive. AVDD and DVDD are analog_/digital_supply_voltage
+# (LDOIN 1.9-3.6 V and IOVDD 1.1-3.6 V, in the same table, have no key).
 schema_version: "0.2"
 kind: device
 id: ti/TLV320AIC3204
@@ -17,10 +17,6 @@ source: ti/SLOS602E
 
 parameters:
   data_interface: { value: i2s, src: 'p1 "Simplified Block Diagram, Primary I2S Interface"' }
-  supply_voltage:
-    min: 1.5 V
-    max: 1.95 V
-    src: p8 "7.3 Recommended Operating Conditions, AVDD 1.5 / 1.8 / 1.95"
   analog_supply_voltage:
     min: 1.5 V
     max: 1.95 V

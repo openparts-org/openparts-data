@@ -4,8 +4,8 @@
 # same page; all 8 pins match. The RUG (X2QFN) numbering is not covered.
 # CS active low (overbar; written without it). AVDD/DVDD power, AINP/
 # AINM analog, SCLK clock, CS input, SDO output.
-# supply_voltage: AVDD and DVDD both 1.65-3.6 V. supply_current is left
-# out: only the analog IAVDD is printed.
+# AVDD and DVDD (both 1.65-3.6 V) are separate rails: analog_/digital_
+# supply_voltage; only the analog IAVDD is printed.
 schema_version: "0.2"
 kind: device
 id: ti/ADS7042
@@ -17,10 +17,6 @@ source: ti/SBAS608C
 # Parameters (AI candidates, needs review).
 parameters:
   data_interface: { value: spi, src: 'p1 "Features, SPI-Compatible Serial Interface: 16 MHz"' }
-  supply_voltage:
-    min: 1.65 V
-    max: 3.6 V
-    src: p7 "8.3 Recommended Operating Conditions, AVDD and DVDD supply voltage range"
   analog_supply_voltage:
     min: 1.65 V
     max: 3.6 V
@@ -40,6 +36,9 @@ parameters:
   channel_count: { value: "1", src: 'p6 "Pin Functions, one input pair AINP/AINM"' }
   resolution:    { value: "12", src: 'p1 "Title, 12-Bit, 1-MSPS, SAR ADC"' }
   sample_rate: { max: 1 MSPS, src: 'p1 "Features, 1-MSPS Throughput with Zero Data Latency"' }
+  reference:
+    value: supply
+    src: p6 "Pin Functions, AVDD also provides the reference voltage to the ADC"
 
 pins:
   src:

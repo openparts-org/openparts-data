@@ -25,7 +25,7 @@ parameters:
   coil_resistance: { typ: 50 Ω, src: 'p2 "Ratings, Coil, Standard, 5 VDC row, Coil resistance"' }
   must_operate_voltage:
     max: 3.75 V
-    src: p2 "Ratings, Coil, Standard, 5 VDC row, Must operate 75 % max. of rated"
+    src: p2 "Ratings, Coil, Standard, Must operate 75 % max. of rated; 5 V coil -> 3.75 V (computed)"
   must_release_voltage:
     min: 0.25 V
-    src: p2 "Ratings, Coil, Standard, 5 VDC row, Must release 5 % min. of rated"
+    src: p2 "Ratings, Coil, Standard, Must release 5 % min. of rated; 5 V coil -> 0.25 V (computed)"

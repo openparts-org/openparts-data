@@ -21,14 +21,13 @@ parameters:
   data_interface:
     value: i2s
     src: 'p5 "Pin Functions, FMT: Audio format selection: I2S (Low) / Left-justified (High)"'
-  supply_voltage:
-    min: 3 V
-    max: 3.46 V
-    src: p6 "8.3 Recommended Operating Conditions, AVDD, VCOM mode 3 / 3.3 / 3.46"
   analog_supply_voltage:
     min: 3 V
     max: 3.46 V
     src: p6 "8.3 Recommended Operating Conditions, AVDD, VCOM mode"
+  digital_supply_voltage:
+    ranges: [{ min: 1.65 V, max: 1.95 V }, { min: 3.1 V, max: 3.46 V }]
+    src:    p6 "8.3 Recommended Operating Conditions, DVDD, 1.8 V DVDD / 3.3 V DVDD"
   analog_supply_current:
     typ: 11 mA
     max: 16 mA
