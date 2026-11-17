@@ -1,0 +1,36 @@
+# WCH 20-pin QFN, 3 x 3 mm body, 0.4 mm pitch, 1.9 mm exposed pad:
+# CH32X035 datasheet V2.3 section 4.5 "QFN20 Package" (PDF page 44,
+# image, rendered and read). Same body and pitch as the CH32V003 QFN20
+# (manufacturers/wch/QFN20-3x3-P0.4-EP1.8-WCH) but a different exposed
+# pad ("1.9 +-0.15") and terminal length ("0.25 +-0.07"), so a separate
+# package. Pin 1 sits at the left end of the bottom edge in the top
+# view, numbered counter-clockwise (#5 bottom right, #6 bottom of the
+# right edge, #20 bottom of the left edge): the same CCW sequence as the
+# generator, turned 90 degrees.
+# The exposed pad: one side labelled, pad drawn square (chamfered at
+# pin 1); the same value is recorded for width and length. Height
+# "0.75 +-0.05" is the only package height (the parenthesised values are
+# not recorded: what they measure is not labelled). Standoff
+# "0.025 +-0.025". Pitch "0.4" is printed without tolerance.
+schema_version: "0.2"
+kind: package
+id: manufacturers/wch/QFN20-3x3-P0.4-EP1.9-WCH
+family: qfn
+lead_count: { value: 20, src: 'p44 "Section 4.5 QFN20 drawing, pins #1-#20"' }
+source: wch/CH32X035DS0@V2.3
+
+pitch: { typ: 0.4 mm, src: 'p44 "Section 4.5 QFN20, bottom view pitch 0.4"' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  src:         p44 "Section 4.5 QFN20 drawing"
+  body_width:  { min: 2.9 mm, typ: 3 mm, max: 3.1 mm }
+  body_length: { min: 2.9 mm, typ: 3 mm, max: 3.1 mm }
+  body_height: { min: 0.7 mm, typ: 0.75 mm, max: 0.8 mm }
+  exposed_pad:
+    src:    p44 "Section 4.5 QFN20 bottom view, pad side 1.9 +-0.15 (one side labelled, pad drawn square)"
+    width:  { min: 1.75 mm, typ: 1.9 mm, max: 2.05 mm }
+    length: { min: 1.75 mm, typ: 1.9 mm, max: 2.05 mm }
+  standoff:    { min: 0 mm, typ: 0.025 mm, max: 0.05 mm }
+  lead_width:  { min: 0.15 mm, typ: 0.2 mm, max: 0.25 mm }
+  lead_length: { min: 0.18 mm, typ: 0.25 mm, max: 0.32 mm }

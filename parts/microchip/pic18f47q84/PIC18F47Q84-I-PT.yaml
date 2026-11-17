@@ -1,0 +1,32 @@
+# PIC18F47Q84-I/PT: industrial temperature (-40 to +85 C), 44-lead TQFP, tube.
+# existence: probable -- assembled from the "Product Identification
+# System" legend (DS40002213C page 1143); the data sheet has no table of
+# orderable codes.
+# Package: drawing C04-076C (p1132), the drawing of
+# standards/TQFP44-10x10-P0.8.
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/PIC18F47Q84-I-PT
+manufacturer: microchip
+mpn: PIC18F47Q84-I/PT
+device: microchip/PIC18F47Q84-TQFP44
+
+package:
+  value: standards/TQFP44-10x10-P0.8
+  src: p1143 "Product Identification System, Package PT = 44-lead TQFP"
+
+sources: [microchip/DS40002213@revC]
+source: microchip/DS40002213@revC
+
+existence:
+  status: probable
+  src: p1143 "Product Identification System legend (Device, Temperature I, Package)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1086 "Standard Operating Conditions, Industrial Temperature TA -40 to +85 C"

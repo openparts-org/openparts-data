@@ -1,0 +1,76 @@
+# ATSAMD51G19A (SAM D51G, 512KB flash) pinout for the 48-pin VQFN (the
+# only package of SAM D51G, Table 1-2 PDF page 18), from data sheet
+# DS60001507N section 4.1, Figure 4-1 "48-Pin VQFN Package" (PDF page 21,
+# rendered and read; the text extraction agrees).
+# Types: GND/GNDANA ground; VDDIO/VDDANA/VDDCORE power; VSW (the switching
+# regulator output, a supply pin) power; RESETN reset; ports io.
+# `alternate_functions` only for the USB pair: PA24 USB/DM and PA25
+# USB/DP (Table 6-1 "Multiplexed Peripheral Signals", peripheral
+# function H, PDF page 33), as for ATSAMD51J19A.
+# Exposed pad: Figure 4-1 note 1 only recommends connecting it to ground
+# in the PCB, so no EP pin is recorded.
+schema_version: "0.2"
+kind: device
+id: microchip/ATSAMD51G19A
+manufacturer: microchip
+category: microcontroller
+family: SAM D51
+source: microchip/DS60001507@revN
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.71 V
+    max: 3.63 V
+    src: p1859 "Table 54-2 General Operating Conditions, VDDIO / VDDANA"
+
+pins:
+  src:  p21 "Figure 4-1 48-Pin VQFN Package, pins 1-48"
+  "1":  { name: PA00, type: io }
+  "2":  { name: PA01, type: io }
+  "3":  { name: PA02, type: io }
+  "4":  { name: PA03, type: io }
+  "5":  { name: GNDANA, type: ground }
+  "6":  { name: VDDANA, type: power }
+  "7":  { name: PB08, type: io }
+  "8":  { name: PB09, type: io }
+  "9":  { name: PA04, type: io }
+  "10": { name: PA05, type: io }
+  "11": { name: PA06, type: io }
+  "12": { name: PA07, type: io }
+  "13": { name: PA08, type: io }
+  "14": { name: PA09, type: io }
+  "15": { name: PA10, type: io }
+  "16": { name: PA11, type: io }
+  "17": { name: VDDIO, type: power }
+  "18": { name: GND, type: ground }
+  "19": { name: PB10, type: io }
+  "20": { name: PB11, type: io }
+  "21": { name: PA12, type: io }
+  "22": { name: PA13, type: io }
+  "23": { name: PA14, type: io }
+  "24": { name: PA15, type: io }
+  "25": { name: PA16, type: io }
+  "26": { name: PA17, type: io }
+  "27": { name: PA18, type: io }
+  "28": { name: PA19, type: io }
+  "29": { name: PA20, type: io }
+  "30": { name: PA21, type: io }
+  "31": { name: PA22, type: io }
+  "32": { name: PA23, type: io }
+  "33": { name: PA24, type: io, alternate_functions: [USB/DM] }
+  "34": { name: PA25, type: io, alternate_functions: [USB/DP] }
+  "35": { name: GND, type: ground }
+  "36": { name: VDDIO, type: power }
+  "37": { name: PB22, type: io }
+  "38": { name: PB23, type: io }
+  "39": { name: PA27, type: io }
+  "40": { name: RESETN, type: reset }
+  "41": { name: VDDCORE, type: power }
+  "42": { name: GND, type: ground }
+  "43": { name: VSW, type: power }
+  "44": { name: VDDIO, type: power }
+  "45": { name: PA30, type: io }
+  "46": { name: PA31, type: io }
+  "47": { name: PB02, type: io }
+  "48": { name: PB03, type: io }

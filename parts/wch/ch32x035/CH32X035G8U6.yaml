@@ -1,0 +1,21 @@
+# CH32X035G8U6: printed verbatim in the "Order Model" column of the Chapter 4
+# "Package and Ordering Information" table of WCH CH32X035 datasheet V2.3
+# (PDF page 40, row QFN28).
+# lifecycle: the datasheet carries no production-status statement;
+# unknown.
+schema_version: "0.2"
+kind: part
+id: wch/CH32X035G8U6
+manufacturer: wch
+mpn: CH32X035G8U6
+device: wch/CH32X035G8-QFN28
+
+package:
+  value: manufacturers/wch/QFN28-4x4-P0.4-EP2.7-WCH
+  src: p40 "Chapter 4 package table, row CH32X035G8U6, Package Form QFN28"
+
+sources: [wch/CH32X035DS0@V2.3]
+source: wch/CH32X035DS0@V2.3
+
+existence: { status: verified, src: 'p40 "Chapter 4 package table, Order Model CH32X035G8U6"' }
+lifecycle: { status: unknown }

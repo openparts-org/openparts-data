@@ -1,0 +1,65 @@
+# Nichicon UWT chip-type aluminium electrolytic, case φ6.3 x 7.7 L, from
+# nichicon/e-uwt page 1: "Chip Type" drawings (rendered) and the
+# dimension table column "6.3 × 7.7" (A 2.4, B 6.6, C 6.6, E 2.2, L 7.7,
+# H 0.5 to 0.8). Frame (smd_electrolytic): top view, origin at the
+# plate's centre, terminals along X with the + terminal (pad 1) at -X;
+# the source draws the terminals along Y (+ at the top), turned 90° here.
+# Mapping: B (plate side along the terminals, B±0.2) -> body_width; C
+# (C±0.2) -> body_length; øD±0.5 -> can_diameter; L ((L±0.3) note 2) ->
+# overall_height; A (terminal, A±0.2) -> lead_length; H (terminal width,
+# printed as a range) -> lead_width; overall_width = A + E + A = 7.0
+# (arithmetic of the printed stack "A±0.2 E A±0.2", tip to tip; no
+# tolerance printed for E, so typ only).
+# pads: nichicon/guide_all_E page 14 "Recommended Land Size", Chip type
+# standard type, size "φ6.3": X 1.6 (across), Y 3.5 (along the terminal
+# axis), a 1.9 (between the lands); turned 90°: width = Y, length = X,
+# centres x = ±(a/2 + Y/2) = ±2.7, + land (pad 1) at -X.
+schema_version: "0.2"
+kind: package
+id: manufacturers/nichicon/UWT-6.3x7.7
+family: smd_electrolytic
+lead_count: { value: 2, src: 'p1 "Chip Type drawing, terminals Positive / Negative"' }
+source: nichicon/e-uwt
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: smd_electrolytic }
+
+dimensions:
+  body_width:
+    min: 6.4 mm
+    typ: 6.6 mm
+    max: 6.8 mm
+    src: p1 "Dimension table, 6.3x7.7 column, B (B±0.2)"
+  body_length:
+    min: 6.4 mm
+    typ: 6.6 mm
+    max: 6.8 mm
+    src: p1 "Dimension table, 6.3x7.7 column, C (C±0.2)"
+  can_diameter:
+    min: 5.8 mm
+    typ: 6.3 mm
+    max: 6.8 mm
+    src: p1 "Dimension table header, 6.3x7.7; drawing øD±0.5"
+  lead_length:
+    min: 2.2 mm
+    typ: 2.4 mm
+    max: 2.6 mm
+    src: p1 "Dimension table, 6.3x7.7 column, A (A±0.2)"
+  overall_width:
+    typ: 7 mm
+    src: p1 "Dimension table, 6.3x7.7 column, A + E + A (2.4 + 2.2 + 2.4)"
+  overall_height:
+    min: 7.4 mm
+    typ: 7.7 mm
+    max: 8 mm
+    src: p1 "Dimension table, 6.3x7.7 column, L; drawing (L±0.3) note 2"
+  lead_width:
+    min: 0.5 mm
+    max: 0.8 mm
+    src: p1 "Dimension table, 6.3x7.7 column, H 0.5 to 0.8"
+
+pads:
+  value:
+    - { number: "1", x: -2.7, y: 0, width: 3.5, length: 1.6 }
+    - { number: "2", x: 2.7, y: 0, width: 3.5, length: 1.6 }
+  src: nichicon/guide_all_E p14 "Recommended Land Size, Chip type standard type, φ6.3 row, X Y a"

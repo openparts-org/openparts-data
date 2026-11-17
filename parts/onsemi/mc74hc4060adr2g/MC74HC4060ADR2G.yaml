@@ -1,0 +1,19 @@
+# MPN from the "ORDERING INFORMATION" table (MC74HC4060A/D page 10): row
+# "MC74HC4060ADR2G", SOIC-16, 2500 / Tape & Reel. Lifecycle not stated in the
+# datasheet: unknown.
+schema_version: "0.2"
+kind: part
+id: onsemi/MC74HC4060ADR2G
+manufacturer: onsemi
+mpn: MC74HC4060ADR2G
+device: onsemi/MC74HC4060A
+
+package:
+  value: manufacturers/onsemi/SOIC16-3.90x9.90-P1.27-751B
+  src: ['p10 "ORDERING INFORMATION, row MC74HC4060ADR2G, SOIC-16"', p11 "SOIC-16 CASE 751B outline"]
+
+sources: [onsemi/MC74HC4060A-D]
+source: onsemi/MC74HC4060A-D
+
+existence: { status: verified, src: 'p10 "ORDERING INFORMATION, row MC74HC4060ADR2G"' }
+lifecycle: { status: unknown }

@@ -1,0 +1,68 @@
+# onsemi TSOP-5 3.00x1.50x0.95, 0.95P, CASE 483 ISSUE P (98ARB18753C,
+# 01 APR 2024), read from the rendered mechanical case outline on page
+# 12 of NCV8114/D Rev. 6. Millimetres; table columns MIN / NOM / MAX.
+# Top view: leads 1, 2, 3 along the bottom edge (pin 1 bottom left), 4
+# and 5 along the top (5 above 1) -> lead_layout [3, 2]. Note 5 allows
+# an optional trimmed lead in the middle top position; not modelled.
+#
+# Mapping for the `sot` generator: body_width = D (along the lead rows),
+# body_length = E1 (molded width), overall_length = E (lead-tip span),
+# body_height = A2 "0.950 REF" (left out: reference only), overall_height
+# = A, standoff = A1, lead_width = b, lead_thickness = c, lead_length =
+# L. Not modelled: gauge plane 0.250, angle. The recommended mounting
+# footprint (0.950 pitch, 1.900, 2.400, 1.000 x 0.700) is left to the
+# generator.
+schema_version: "0.2"
+kind: package
+id: manufacturers/onsemi/TSOP5-3.00x1.50-P0.95-483
+family: sot
+lead_count: 5
+
+lead_layout: { value: [3, 2], src: 'p12 "CASE 483 TOP VIEW: 1 2 3 on one edge, 5 4 on the other"' }
+
+source: onsemi/NCV8114-D
+
+pitch: { typ: 0.95 mm, src: 'p12 "CASE 483 table, e "0.950 BSC""' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:
+    min: 2.85 mm
+    typ: 3 mm
+    max: 3.15 mm
+    src: p12 "CASE 483 table, D 2.850 / 3.000 / 3.150"
+  body_length:
+    min: 1.35 mm
+    typ: 1.5 mm
+    max: 1.65 mm
+    src: p12 "CASE 483 table, E1 1.350 / 1.500 / 1.650"
+  lead_thickness:
+    min: 0.1 mm
+    typ: 0.18 mm
+    max: 0.26 mm
+    src: p12 "CASE 483 table, c 0.100 / 0.180 / 0.260"
+  lead_length:
+    min: 0.2 mm
+    typ: 0.4 mm
+    max: 0.6 mm
+    src: p12 "CASE 483 table, L 0.200 / 0.400 / 0.600"
+  overall_length:
+    min: 2.5 mm
+    typ: 2.75 mm
+    max: 3 mm
+    src: p12 "CASE 483 table, E 2.500 / 2.750 / 3.000"
+  overall_height:
+    min: 0.9 mm
+    typ: 1 mm
+    max: 1.1 mm
+    src: p12 "CASE 483 table, A 0.900 / 1.000 / 1.100"
+  standoff:
+    min: 0.01 mm
+    typ: 0.055 mm
+    max: 0.1 mm
+    src: p12 "CASE 483 table, A1 0.010 / 0.055 / 0.100"
+  lead_width:
+    min: 0.25 mm
+    typ: 0.375 mm
+    max: 0.5 mm
+    src: p12 "CASE 483 table, b 0.250 / 0.375 / 0.500"

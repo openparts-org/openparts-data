@@ -1,0 +1,20 @@
+# MPN built from the print's part-number legend TSW-XXX-XX-XXX-X-XX-XXX:
+# -140 (positions, .100 spacing; -1: -01 THRU -50), -07 (lead style, Table 1),
+# -T (plating "MATTE TIN CONTACT AND TAIL"), -S (row specification); no
+# options -> existence probable (a legend, not an orderable list).
+# lifecycle unknown: the print states none.
+schema_version: "0.2"
+kind: part
+id: samtec/TSW-140-07-T-S
+manufacturer: samtec
+mpn: TSW-140-07-T-S
+device: samtec/TSW-140-07-X-S
+package: manufacturers/samtec/TSW-140-07-X-S
+sources: [samtec/TSW-XXX-XX-XXX-X-XX-XXX-MKT, samtec/TSW-XXX-XX-X-X-XX-XXX-FOOTPRINT]
+source: samtec/TSW-XXX-XX-XXX-X-XX-XXX-MKT
+
+existence:
+  status: probable
+  src: 'p1 "part-number legend: -1 .100 spacing, lead style, -T matte tin, -S SINGLE"'
+
+lifecycle: { status: unknown }

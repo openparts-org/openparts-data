@@ -1,0 +1,21 @@
+# MPN from the "ORDERING INFORMATION" table (MC74HC595A/D page 13): row
+# "MC74HC595ADTR2G", TSSOP-16, 2500 / Tape & Reel. Lifecycle not stated in the
+# datasheet: unknown.
+schema_version: "0.2"
+kind: part
+id: onsemi/MC74HC595ADTR2G
+manufacturer: onsemi
+mpn: MC74HC595ADTR2G
+device: onsemi/MC74HC595A
+
+package:
+  value: manufacturers/onsemi/TSSOP16-4.40x5.00-P0.65-948F
+  src:
+    - p13 "ORDERING INFORMATION, row MC74HC595ADTR2G, TSSOP-16"
+    - p17 "TSSOP-16 CASE 948F outline"
+
+sources: [onsemi/MC74HC595A-D]
+source: onsemi/MC74HC595A-D
+
+existence: { status: verified, src: 'p13 "ORDERING INFORMATION, row MC74HC595ADTR2G"' }
+lifecycle: { status: unknown }

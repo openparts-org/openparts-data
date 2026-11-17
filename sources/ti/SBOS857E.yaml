@@ -1,0 +1,16 @@
+# Official TI datasheet "TMP23x Low-Power, High-Accuracy Analog Output Temperature Sensors". Downloaded 2026-11-17 with curl from the
+# TI symlink URL below; revision read from the page header "SBOS857E - SEPTEMBER 2017 - REVISED MAY 2019".
+# 25 PDF pages; text read with pdftotext -layout. Page numbers are PDF
+# page indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is
+# dated 25-Aug-2026 (newer than the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SBOS857E
+sha256: b6cc86fe06205427c86180c9321c76518b3eb17ff8c9763a17c0ec0d331e9898
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/tmp235.pdf
+publisher: ti
+document_id: SBOS857E
+document_type: datasheet
+revision: E
+date: 2019-05

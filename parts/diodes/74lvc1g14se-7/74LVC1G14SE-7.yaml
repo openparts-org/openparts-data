@@ -1,0 +1,23 @@
+# MPN from the "Ordering Information" table (DS35123 page 2): row
+# "74LVC1G14SE-7", package code SE, SOT353, 3000/Tape & Reel. lifecycle: no
+# production-status statement in the datasheet; unknown.
+# Package: "Package Outline Dimensions" SOT353 table on page 10; the
+# values match the reused package manufacturers/diodes/SOT353-2.10x1.30-P0.65-DS35123.
+schema_version: "0.2"
+kind: part
+id: diodes/74LVC1G14SE-7
+manufacturer: diodes
+mpn: 74LVC1G14SE-7
+device: diodes/74LVC1G14
+
+package:
+  value: manufacturers/diodes/SOT353-2.10x1.30-P0.65-DS35123
+  src:
+    - p2 ""Ordering Information" table, row "74LVC1G14SE-7", SOT353"
+    - p10 ""Package Outline Dimensions" SOT353"
+
+sources: [diodes/DS35123]
+source: diodes/DS35123
+
+existence: { status: verified, src: 'p2 ""Ordering Information" table, row "74LVC1G14SE-7""' }
+lifecycle: { status: unknown }

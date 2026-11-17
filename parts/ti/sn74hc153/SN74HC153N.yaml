@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCLS112E PDF page 12): row "SN74HC153N", "PDIP (N) | 16". lifecycle "active" is
+# that table's Status column ("Active").
+# Package: legacy outline N (R-PDIP-T**) 4040049/E (image page) on page 25. Same drawing number and revision as the reused package manufacturers/ti/N-R-PDIP-T16.
+schema_version: "0.2"
+kind: part
+id: ti/SN74HC153N
+manufacturer: ti
+mpn: SN74HC153N
+device: ti/SN74HC153
+
+package:
+  value: manufacturers/ti/N-R-PDIP-T16
+  src:
+    - p12 "Package Option Addendum, row "SN74HC153N", "PDIP (N) | 16""
+    - p25 "MECHANICAL DATA N (R-PDIP-T**) 4040049/E, 16 pins"
+
+sources: [ti/SCLS112E]
+source: ti/SCLS112E
+
+existence:
+  status: verified
+  src: p12 "Package Option Addendum, Packaging Information table, row "SN74HC153N""
+
+lifecycle:
+  status: active
+  src: p12 "Package Option Addendum, row "SN74HC153N", Status "Active""

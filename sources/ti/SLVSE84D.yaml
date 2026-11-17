@@ -1,0 +1,18 @@
+# Official TI datasheet "TLV767 1-A, 16-V Precision Linear Voltage
+# Regulator". Downloaded 2026-11-17 with curl from the TI symlink URL
+# below (HTTP 200, PDF); revision from the page header "SLVSE84D -
+# DECEMBER 2017 - REVISED JULY 2021". 41 PDF pages, read with pdftotext
+# -layout. Page numbers are PDF page indices. Only the DBV outline
+# (DBV0005A, 4214839/K) is printed in full; DRV and DGN appear only as
+# generic package views.
+schema_version: "0.2"
+kind: source
+id: ti/SLVSE84D
+sha256: ccd8ab3a9c21bcb9649d3773bb694ef8936fd5a67bbc80d159d37671ea42e562
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/tlv767.pdf
+publisher: ti
+document_id: SLVSE84D
+document_type: datasheet
+revision: D
+date: 2021-07

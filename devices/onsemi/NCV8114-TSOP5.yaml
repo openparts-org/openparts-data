@@ -1,0 +1,36 @@
+# NCV8114 300-mA CMOS LDO (automotive, AEC-Q100), TSOP-5. Pinout from
+# NCV8114/D Rev. 6 "PIN FUNCTION DESCRIPTION" (page 2): IN 1, GND 2, EN
+# 3, N/C 4, OUT 5, checked against the page-1 "PIN CONNECTIONS" top
+# view. N/C "Not connected. This pin can be tied to ground" -> nc.
+# NCV8114A (active output discharge) and NCV8114B share the pinout.
+# operating_temperature: the Electrical Characteristics are specified
+# over TJ -40..125 °C (Recommended Operating Conditions, TJ).
+schema_version: "0.2"
+kind: device
+id: onsemi/NCV8114-TSOP5
+manufacturer: onsemi
+category: linear_regulator
+family: NCV8114
+source: onsemi/NCV8114-D
+
+parameters:
+  output_type:
+    value: fixed
+    src: 'p1 "Features, Available in Fixed Voltage Options: 0.9 V to 3.6 V"'
+  input_voltage_max: { max: 5.5 V, src: 'p3 "RECOMMENDED OPERATING CONDITIONS, Input Voltage VIN"' }
+  output_current: { max: 300 mA, src: 'p1 "title, Low Dropout 300 mA"' }
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p3 "RECOMMENDED OPERATING CONDITIONS, Junction Temperature TJ"
+  esd_hbm:
+    typ: 2 kV
+    src: p2 "ABSOLUTE MAXIMUM RATINGS, ESD Capability, Human Body Model 2000 V"
+
+pins:
+  src: [p2 "PIN FUNCTION DESCRIPTION", p1 "PIN CONNECTIONS (Top View)"]
+  "1": { name: IN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: EN, type: input }
+  "4": { name: N/C, type: nc }
+  "5": { name: OUT, type: power }

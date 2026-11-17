@@ -1,0 +1,27 @@
+# Panasonic FK series EEVFK1C152Q: 1500 µF, 16 V, case size H13 (ø12.5 x 13.5,
+# standard product, reflow, taping). Listed verbatim in the p3
+# "Characteristics list" Part No. column (Standard Product), the size
+# code column giving the package.
+# lifecycle unknown: the catalog states no status for this row.
+schema_version: "0.2"
+kind: part
+id: panasonic/EEVFK1C152Q
+manufacturer: panasonic
+mpn: EEVFK1C152Q
+device: panasonic/EEVFK1C152
+package: manufacturers/panasonic/FK-H13-12.5x13.5
+sources: [panasonic/ABA0000C1181]
+source: panasonic/ABA0000C1181
+
+existence:
+  status: verified
+  src: p3 "Characteristics list, Part No. Standard Product column, EEVFK1C152Q row"
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance: { typ: 1500 µF, src: 'p3 "Characteristics list, EEVFK1C152Q row, Capacitance"' }
+  tolerance:   { tol: ±20 %, src: 'p3 "Characteristics list, Capacitance column header (±20 %)"' }
+  rated_voltage:
+    typ: 16 V
+    src: p3 "Characteristics list, EEVFK1C152Q row, Rated voltage group"

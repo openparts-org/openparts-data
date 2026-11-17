@@ -17,6 +17,19 @@ parameters:
     at: { IPP: 35 A }
     src: p1 "Max. Instantaneous Forward Voltage (unidirectional), SMAJ5.0A~SMAJ90A"
   reverse_voltage: { max: 15 V, src: 'p2 "Electrical Characteristics, SMAJ15A row, VRWM"' }
+  clamping_voltage:
+    - max: 24.4 V
+      at: { IPP: 16.4 A }
+      src: p2 "Electrical Characteristics, SMAJ15A/SMAJ15CA row, Vc @ Ipp (10/1000 µs)"
+    - max: 31.7 V
+      at: { IPP: 82 A }
+      src: p2 "Electrical Characteristics, SMAJ15A/SMAJ15CA row, Vc @ Ipp (8/20 µs)"
+  peak_pulse_current:
+    max: 16.4 A
+    src: p2 "Electrical Characteristics, SMAJ15A/SMAJ15CA row, Ipp (10/1000 µs)"
+  peak_pulse_power:
+    max: 400 W
+    src: p1 "Electrical Characteristics, Minimum Peak Pulse Power Dissipation PPK (TP = 1 ms)"
 
 pins:
   src: p3 "Physical Specifications, "Polarity ... Cathode band indicates unidirectional device""

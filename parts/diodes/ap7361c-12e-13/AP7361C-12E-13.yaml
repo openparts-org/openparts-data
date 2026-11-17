@@ -1,0 +1,30 @@
+# MPN built from the "Ordering Information" legend of DS37274 Rev. 5-2
+# (page 13): AP7361C - XX (Output "12 : 1.2V") + E (Package "E :
+# SOT223") + -13 (Packing "13 : 13' Tape & Reel"); the part-number row
+# "AP7361C-XXE-13 | E | SOT223 | 2500/Tape & Reel". The SOT223 marking
+# table (page 15) lists "12 for 1.2V". Existence probable (built
+# from the legend, not printed in full); no production-status statement:
+# lifecycle unknown.
+# dropout_voltage left out: Note 7 applies VDROPOUT only to outputs above 1.2 V.
+schema_version: "0.2"
+kind: part
+id: diodes/AP7361C-12E-13
+manufacturer: diodes
+mpn: AP7361C-12E-13
+device: diodes/AP7361C-SOT223
+
+package:
+  value: standards/SOT223-3.5x6.5-P2.3-TabPin2-Diodes
+  src: p19 "Package Outline Dimensions (4) SOT223, table identical to DS31009 SOT223"
+
+sources: [diodes/DS37274]
+source: diodes/DS37274
+
+existence:
+  status: probable
+  src: 'p13 "Ordering Information legend, 12 : 1.2V, E : SOT223, row AP7361C-XXE-13"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  output_voltage: { typ: 1.2 V, src: 'p13 "Ordering Information legend, Output 12 : 1.2V"' }

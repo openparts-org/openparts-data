@@ -1,0 +1,20 @@
+# Nichicon "UWT Chip Type, Wide Temperature Range" series catalog pages
+# (catalog number CAT.8100N stamped on each page; no revision or date
+# printed). Downloaded 2026-11-17 from nichicon.co.jp (HTTP 200, PDF;
+# the first curl attempt saved a 404 page, a wget of the same URL got the
+# PDF). 3 pages: page 1 specifications, drawings and the dimension
+# table (rendered and read as an image), pages 2-3 the ratings table
+# with part numbers (pdftotext -layout). `date` is the PDF
+# /ModDate (2024-09-06), as no date is printed. Land sizes are not in
+# this document: see nichicon/guide_all_E.
+schema_version: "0.2"
+kind: source
+id: nichicon/e-uwt
+sha256: 10dd3d365042b0eb1dcd8edb4e5daf6799e289a4b66cd2122ff79418d4aabce9
+retrieved: 2026-11-17
+url: https://www.nichicon.co.jp/english/series_items/catalog_pdf/e-uwt.pdf
+publisher: nichicon
+document_id: CAT.8100N-UWT
+document_type: datasheet
+revision: CAT.8100N
+date: 2024-09-06

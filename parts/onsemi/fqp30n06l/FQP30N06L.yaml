@@ -1,0 +1,49 @@
+# FQP30N06L: printed verbatim in the "Package Marking and Ordering
+# Information" table (FQP30N06L Rev. C0/C1, page 3): Part Number "FQP30N06L",
+# Package TO-220, Tube, 50 units -> existence verified.
+# Package: page 8 Mechanical Dimensions, PN_TO220-003.
+# No lifecycle statement for this MPN.
+schema_version: "0.2"
+kind: part
+id: onsemi/FQP30N06L
+manufacturer: onsemi
+mpn: FQP30N06L
+device: onsemi/FQP30N06L
+
+package:
+  value: manufacturers/onsemi/PN_TO220-003
+  src: p8 "Mechanical Dimensions, Figure 16 "TO220, Molded, 3-Lead, Jedec Variation AB", PN_TO220-003"
+
+sources: [onsemi/FQP30N06L-D]
+source: onsemi/FQP30N06L-D
+
+existence:
+  status: verified
+  src: p3 "Package Marking and Ordering Information, Part Number "FQP30N06L", TO-220, Tube, 50 units"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: p2 "Title" }
+  drain_source_voltage: { max: 60 V, src: 'p2 "Absolute Maximum Ratings, VDSS"' }
+  drain_current:
+    - max: 32 A
+      at: { TC: 25 °C }
+      src: p2 "Absolute Maximum Ratings, ID Continuous (TC = 25°C)"
+    - max: 22.6 A
+      at: { TC: 100 °C }
+      src: p2 "Absolute Maximum Ratings, ID Continuous (TC = 100°C)"
+  rds_on:
+    - typ: 0.027 Ω
+      max: 0.035 Ω
+      at: { VGS: 10 V, ID: 16 A }
+      src: p3 "Elec. Char., On Characteristics, RDS(on) Static Drain-Source On-Resistance, VGS = 10 V"
+    - typ: 0.035 Ω
+      max: 0.045 Ω
+      at: { VGS: 5 V, ID: 16 A }
+      src: p3 "Elec. Char., On Characteristics, RDS(on) Static Drain-Source On-Resistance, VGS = 5 V"
+  gate_threshold_voltage:
+    min: 1 V
+    max: 2.5 V
+    at: { ID: 250 µA }
+    src: p3 "Elec. Char., On Characteristics, VGS(th), VDS = VGS"

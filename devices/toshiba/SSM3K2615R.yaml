@@ -1,0 +1,15 @@
+# SSM3K2615R N-channel MOSFET in Toshiba SOT-23F. Pin assignment from page 1
+# of the datasheet: 1 Gate, 2 Source, 3 Drain. All typed passive.
+schema_version: "0.2"
+kind: device
+id: toshiba/SSM3K2615R
+manufacturer: toshiba
+category: transistor
+family: SSM3K2615R
+source: toshiba/SSM3K2615R-datasheet-en
+
+pins:
+  src: p1 "3. Packaging and Pin Assignment, 1 Gate / 2 Source / 3 Drain"
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

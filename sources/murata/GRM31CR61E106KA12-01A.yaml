@@ -1,0 +1,16 @@
+# Murata per-part reference sheet for GRM31CR61E106KA12_ (_ = packaging code),
+# footer "GRM31CR61E106KA12-01A", 30 pages. Fetched with curl from Murata's
+# own pim.murata.com asset URL on 2026-11-17.
+# Read with pdftotext -layout; page 1 holds the part-number system, Rated Value (dimensions) and Package tables.
+# Page 1 states "Product specifications in this catalog are as of 11月.23,2017".
+schema_version: "0.2"
+kind: source
+id: murata/GRM31CR61E106KA12-01A
+sha256: 736bc24f6214b9d23e1087b2b9bb1909f02aa25be282cbda0cdcb55dd329b195
+retrieved: 2026-11-17
+url: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM31CR61E106KA12-01A-EN_PDF_CERAMICCAPACITORSMD
+publisher: murata
+document_id: GRM31CR61E106KA12-01A
+document_type: datasheet
+revision: -01A
+date: 2017-11-23

@@ -1,0 +1,43 @@
+# ATtiny3224 (tinyAVR 2-series), 14-pin SOIC (SL) and TSSOP (ST), same pin numbering. Pin
+# names/numbers from Table 3-1 "PORT Function Multiplexing", column
+# "TSSOP/SOIC 14-pin" (DS40002345B page 18, text), cross-checked against
+# Section 2.1 "14-Pin SOIC, TSSOP" (page 14). The pin table is the same in all three
+# tinyAVR 2-series data sheets (DS40002234B/DS40002311B/DS40002345B).
+#
+# Types: VDD power, GND ground, port pins io. alternate_functions carry
+# only the "Other/Special" and "ADC0" columns (entries the table marks as
+# alternative pin locations included: EVOUTA on PA7, EVOUTB on PB7,
+# RESET on PB4); AC/USART/SPI/TWI/TCA/TCB/CCL columns are not modelled.
+schema_version: "0.2"
+kind: device
+id: microchip/ATtiny3224
+manufacturer: microchip
+category: microcontroller
+family: tinyAVR 2-series
+source: microchip/DS40002345@revB
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.8 V
+    max: 5.5 V
+    src: p475 "Table 33-2 General Operating Conditions, VDD Operating supply voltage, Industrial"
+
+pins:
+  src:
+    - p18 "Table 3-1 PORT Function Multiplexing, column TSSOP/SOIC 14-pin, Other/Special and ADC0"
+    - p14 "Section 2.1 14-Pin SOIC, TSSOP pinout figure (cross-check)"
+  "1":  { name: VDD, type: power }
+  "2":  { name: PA4, type: io, alternate_functions: [AIN4] }
+  "3":  { name: PA5, type: io, alternate_functions: [VREFA, AIN5] }
+  "4":  { name: PA6, type: io, alternate_functions: [AIN6] }
+  "5":  { name: PA7, type: io, alternate_functions: [EVOUTA, AIN7] }
+  "6":  { name: PB3, type: io, alternate_functions: [TOSC1] }
+  "7":  { name: PB2, type: io, alternate_functions: [TOSC2, EVOUTB] }
+  "8":  { name: PB1, type: io, alternate_functions: [AIN10] }
+  "9":  { name: PB0, type: io, alternate_functions: [AIN11] }
+  "10": { name: PA0, type: io, alternate_functions: [RESET, UPDI] }
+  "11": { name: PA1, type: io, alternate_functions: [AIN1] }
+  "12": { name: PA2, type: io, alternate_functions: [EVOUTA, AIN2] }
+  "13": { name: PA3, type: io, alternate_functions: [EXTCLK, AIN3] }
+  "14": { name: GND, type: ground }

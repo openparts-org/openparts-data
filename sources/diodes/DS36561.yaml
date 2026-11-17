@@ -1,0 +1,16 @@
+# Diodes Incorporated datasheet "AP3429/A 1.0MHZ, 2A Step-Down DC-DC
+# Buck Converter", document number DS36561 Rev. 7 - 2, footer date
+# "August 2024". Downloaded 2026-11-17 with curl from diodes.com
+# (first-party, HTTP 200, PDF). 11 pages, read with pdftotext -layout.
+# Page numbers cited are PDF page indices (= printed "n of 11").
+schema_version: "0.2"
+kind: source
+id: diodes/DS36561
+sha256: d8178b5266db67b3d8bcec330d423d0e104b9c7b2cdf4aa8ae15e832f0a55ee2
+retrieved: 2026-11-17
+url: https://www.diodes.com/assets/Datasheets/AP3429.pdf
+publisher: diodes
+document_id: DS36561
+document_type: datasheet
+revision: 7-2
+date: 2024-08

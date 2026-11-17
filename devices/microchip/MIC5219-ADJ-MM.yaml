@@ -1,0 +1,47 @@
+# MIC5219 500-mA LDO, 8-lead MSOP (MM), adjustable (ADJ feedback input on pin 4). Pinout from
+# DS20006021A Table 3-1 "Pin Function Table", MSOP-8 column (page 12):
+# EN 1, IN 2, OUT 3, ADJ 4 (ADJ), GND 5-8 ("internally connected"),
+# checked against the page-2 "Package Types" MSOP-8 view.
+# output_current: "500 mA Continuous" for the MSOP-8 package (page 1).
+# operating_temperature: TA from Temperature Specifications (page 8).
+schema_version: "0.2"
+kind: device
+id: microchip/MIC5219-ADJ-MM
+manufacturer: microchip
+category: linear_regulator
+family: MIC5219
+source: microchip/DS20006021A
+
+parameters:
+  output_type:
+    value: adjustable
+    src: p2 "Package Types, MIC5219YMM MSOP-8 Adjustable Voltages"
+  input_voltage_max:
+    max: 12 V
+    src: p5 "Operating Ratings, Supply Input Voltage (VIN) +2.5V to +12V"
+  output_current: { max: 500 mA, src: 'p1 "Features, MSOP-8 Package - 500 mA Continuous"' }
+  dropout_voltage:
+    - typ: 350 mV
+      max: 500 mV
+      at: { IOUT: 500 mA, TJ: 25 °C }
+      src: p6 "Elec. Char. (cont.), Dropout Voltage, IOUT = 500 mA"
+    - max: 600 mV
+      at: { IOUT: 500 mA, TJ: -40..125 °C }
+      src: p6 "Elec. Char. (cont.), Dropout Voltage, IOUT = 500 mA, bold row"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p8 "Temperature Specifications, Operating Ambient Temperature Range TA"
+
+pins:
+  src:
+    - p12 "Table 3-1 Pin Function Table, MSOP-8 column"
+    - p2 "Package Types, MSOP-8 (MM) (Top View)"
+  "1": { name: EN, type: input }
+  "2": { name: IN, type: power }
+  "3": { name: OUT, type: power }
+  "4": { name: ADJ, type: input }
+  "5": { name: GND, type: ground }
+  "6": { name: GND, type: ground }
+  "7": { name: GND, type: ground }
+  "8": { name: GND, type: ground }

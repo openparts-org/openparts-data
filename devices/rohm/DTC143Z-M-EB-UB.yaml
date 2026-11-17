@@ -1,0 +1,27 @@
+# DTC143Z series NPN digital transistor (bias resistors built in),
+# variants DTC143ZM (VMT3), DTC143ZEB (EMT3F) and DTC143ZUB (UMT3F), which share one
+# inner circuit and pin map on page 1: (1) IN through R1 to the base,
+# (2) GND (emitter), (3) OUT (collector). The DTC143ZE/UA/KA variants
+# (EMT3/UMT3/SMT3) number the pins differently ((1) GND, (2) IN) and are
+# not covered by this device. Pins typed passive as for other
+# transistors. The built-in R1 and R2/R1 values have no parameter key.
+schema_version: "0.2"
+kind: device
+id: rohm/DTC143Z-M-EB-UB
+manufacturer: rohm
+category: transistor
+family: DTC143Z
+source: rohm/DTC143Z-datasheet-en
+
+parameters:
+  polarity:                  { value: npn, src: 'p1 "Title, NPN Digital Transistor"' }
+  collector_emitter_voltage: { max: 50 V, src: 'p2 "Absolute maximum ratings, Supply voltage VCC"' }
+  collector_current:
+    max: 100 mA
+    src: p2 "Absolute maximum ratings, Collector current IC(MAX)"
+
+pins:
+  src: 'p1 "Inner circuit, DTC143ZM/ DTC143ZEB/ DTC143ZUB: (1) IN via R1, (2) GND, (3) OUT"'
+  "1": { name: IN, type: passive }
+  "2": { name: GND, type: passive }
+  "3": { name: OUT, type: passive }

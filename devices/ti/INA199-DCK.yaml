@@ -2,8 +2,8 @@
 # from Table 5-1 "Pin Functions" (SBOS469H page 3), SC70 column, checked
 # against Figure 5-1. The RSW (UQFN) map differs. The ESD rating
 # depends on the version (A: 2 kV, B/C: 3.5 kV) and is on the Parts;
-# only the A-version parts are added. Gain (50/100/200 V/V) has no
-# parameter key. Supply pin named V+ as printed.
+# only the A-version parts are added. Gain (50/100/200 V/V) and the
+# version-dependent VCM range are on the Parts. Supply pin named V+.
 schema_version: "0.2"
 kind: device
 id: ti/INA199-DCK
@@ -22,7 +22,7 @@ parameters:
   supply_current:
     typ: 65 µA
     max: 100 µA
-    at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+    at: { VS: 5 V, VCM: 12 V, TA: 25 °C }
     src: p6 "6.5 Electrical Characteristics, IQ, VSENSE = 0 mV"
   operating_temperature:
     min: -40 °C
@@ -33,11 +33,11 @@ parameters:
   input_offset_voltage:
     typ: 5 µV
     max: 150 µV
-    at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+    at: { VS: 5 V, VCM: 12 V, TA: 25 °C }
     src: p6 "6.5 Electrical Characteristics, VOS RTI (printed ±5 / ±150 µV)"
   input_bias_current:
     typ: 28 µA
-    at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+    at: { VS: 5 V, VCM: 12 V, TA: 25 °C }
     src: p6 "6.5 Electrical Characteristics, IB, VSENSE = 0 mV"
 
 pins:

@@ -18,6 +18,14 @@ parameters:
   reverse_voltage:
     max: 15 V
     src: p3 "Electrical Characteristics table, SMAJ15(C)A row, VRWM (note 8, C suffix)"
+  clamping_voltage:
+    max: 24.4 V
+    at: { IPP: 16.4 A }
+    src: p3 "Electrical Characteristics, SMAJ15(C)A row, Max. Clamping Voltage VC @ IPP"
+  peak_pulse_current:
+    max: 16.4 A
+    src: p3 "Electrical Characteristics, SMAJ15(C)A row, Max. Peak Pulse Current IPP"
+  peak_pulse_power: { max: 400 W, src: 'p2 "Maximum Ratings, Peak Pulse Power Dissipation PPK"' }
 
 pins:
   src: p1 "Mechanical Data, Polarity Indicator (none for bidirectional); numbering per header"

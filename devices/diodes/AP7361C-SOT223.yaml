@@ -1,0 +1,33 @@
+# AP7361C 1-A LDO, SOT223 (fixed output, no enable). Pinout from DS37274
+# "Pin Descriptions" (page 2), SOT223 column: IN 1, OUT 3, GND 2 (no
+# ADJ, no EN: "The ON/OFF feature is not available in the SOT223",
+# page 11), checked against the page-1 SOT223 top view and the page-15
+# marking view "Pin 1: IN, Pin 2: GND, Pin 3: OUT". The tab is not
+# labelled in the source; the package used numbers it "2" (the middle
+# lead, here GND) -- reviewer point.
+# operating_temperature: TA from Recommended Operating Conditions.
+# esd_hbm left out: printed only as ">2 KV".
+schema_version: "0.2"
+kind: device
+id: diodes/AP7361C-SOT223
+manufacturer: diodes
+category: linear_regulator
+family: AP7361C
+source: diodes/DS37274
+
+parameters:
+  output_type: { value: fixed, src: 'p2 "Pin Descriptions, SOT223 column: no ADJ pin"' }
+  input_voltage_max: { max: 6 V, src: 'p4 "Recommended Operating Conditions, VIN Input Voltage"' }
+  output_current: { max: 1 A, src: 'p4 "Recommended Operating Conditions, IOUT Output Current"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "Recommended Operating Conditions, TA Operating Ambient Temperature"
+
+pins:
+  src:
+    - p2 "Pin Descriptions, SOT223 column (IN 1, OUT 3, GND 2)"
+    - p1 "Pin Assignments, SOT223 (Top View)"
+  "1": { name: IN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: OUT, type: power }

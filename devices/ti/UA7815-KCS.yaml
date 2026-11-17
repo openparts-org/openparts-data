@@ -1,0 +1,39 @@
+# uA7815 1.5-A fixed 15-V regulator, KCS (TO-220) pinout. SLVS056P
+# "Pin Functions" (page 3): COMMON 2, INPUT 1, OUTPUT 3, one table for
+# all packages; "KCS OR KCT (TO-220) PACKAGE (TOP VIEW)" labels the tab
+# COMMON. The TO-220 tab is not a board pad: pins 1-3 only (as
+# ti/UA7805-KCS).
+schema_version: "0.2"
+kind: device
+id: ti/UA7815-KCS
+manufacturer: ti
+category: linear_regulator
+family: UA7815
+source: ti/SLVS056P
+
+parameters:
+  output_type:       { value: fixed, src: p1 "Title" }
+  output_voltage:
+    - min: 14.4 V
+      typ: 15 V
+      max: 15.6 V
+      at: { VIN: 17.5..30 V, IOUT: 5..1000 mA, TJ: 25 °C }
+      src: p9 "7.9 Elec. Char. uA7815, Output voltage, PD <= 15 W, 25°C"
+    - min: 14.25 V
+      max: 15.75 V
+      at: { VIN: 17.5..30 V, IOUT: 5..1000 mA, TJ: 0..125 °C }
+      src: p9 "7.9 Elec. Char. uA7815, Output voltage, PD <= 15 W, 0°C to 125°C"
+  input_voltage_max: { max: 30 V, src: 'p4 "7.3 Recommended Operating Conditions, VI, uA7815"' }
+  output_current:    { max: 1.5 A, src: 'p4 "7.3 Recommended Operating Conditions, IO"' }
+  dropout_voltage:
+    typ: 2 V
+    at: { IOUT: 1 A, TJ: 25 °C }
+    src: p9 "7.9 Elec. Char. uA7815, Dropout voltage"
+
+pins:
+  src:
+    - 'p3 ""Pin Functions" table: COMMON 2, INPUT 1, OUTPUT 3"'
+    - 'p3 ""KCS OR KCT (TO-220) PACKAGE (TOP VIEW)": OUTPUT/COMMON/INPUT, tab COMMON"'
+  "1": { name: INPUT, type: power }
+  "2": { name: COMMON, type: ground }
+  "3": { name: OUTPUT, type: power }

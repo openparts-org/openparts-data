@@ -1,0 +1,19 @@
+# DTC114YUBTL: Part No. "DTC114YUB" with taping code "TL" in the page-1
+# Packaging specifications table; the ROHM product page names "DTC114YUBTL"
+# with Status "Recommended" (-> lifecycle active).
+schema_version: "0.2"
+kind: part
+id: rohm/DTC114YUBTL
+manufacturer: rohm
+mpn: DTC114YUBTL
+device: rohm/DTC114Y-M-EB-UB
+
+package:
+  value: manufacturers/rohm/UMT3F
+  src: rohm/DTC114Y-datasheet-en p8 "Dimensions, SOT-323FL (UMT3F)"
+
+sources: [rohm/DTC114Y-datasheet-en, rohm/DTC114YUBTL-product-page]
+source: rohm/DTC114YUBTL-product-page
+
+existence: { status: verified, src: p1 "Part Number DTC114YUBTL" }
+lifecycle: { status: active, src: p1 "Status Recommended" }

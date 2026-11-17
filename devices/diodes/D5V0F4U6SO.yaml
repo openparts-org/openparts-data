@@ -10,7 +10,14 @@ category: diode
 family: D5V0F4U6SO
 source: diodes/DS35472
 
-parameters: { reverse_voltage: { max: 5.5 V, src: 'p2 "Electrical Characteristics, VRWM"' } }
+parameters:
+  reverse_voltage:    { max: 5.5 V, src: 'p2 "Electrical Characteristics, VRWM"' }
+  clamping_voltage:
+    typ: 10 V
+    max: 12 V
+    at: { IPP: 1 A }
+    src: p2 "Electrical Characteristics, Reverse Clamping Voltage VCL, IPP = 1 A, tp = 8/20 µs"
+  peak_pulse_current: { max: 3 A, src: 'p2 "Maximum Ratings, Peak Pulse Current IPP, 8/20 µs"' }
 
 pins:
   src: 'p1 "SOT26 Top View: CH 4 6, VDD 5, CH 3 4 / CH 1 1, GND 2, CH 2 3"'

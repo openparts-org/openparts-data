@@ -1,0 +1,18 @@
+# Microchip data sheet "MIC5219 500 mA Peak Output LDO Regulator",
+# DS20006021A (Revision A, May 2018, converted from the Micrel
+# document). Downloaded 2026-11-17 with curl from ww1.microchip.com
+# (HTTP 200, PDF). 32 pages, read with pdftotext -layout; the MSOP-8
+# drawing (page 25, Micrel "MSOP-8LD-PL-1") rendered and read as an
+# image. The PDF prints no SOT23-5 outline. Page numbers are PDF page
+# indices (= printed "DS20006021A-page n").
+schema_version: "0.2"
+kind: source
+id: microchip/DS20006021A
+sha256: 75b54e281b470424bbbb03dfb14cd44fd045ca07c2b397090b9cb03dc4eb7a8d
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/MIC5219-500mA-Peak-Output-LDO-Regulator-DS20006021A.pdf
+publisher: microchip
+document_id: DS20006021
+document_type: datasheet
+revision: A
+date: 2018-05

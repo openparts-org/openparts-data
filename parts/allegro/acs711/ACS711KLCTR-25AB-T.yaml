@@ -1,0 +1,29 @@
+# ACS711KLCTR-25AB-T: printed in the SELECTION GUIDE of allegro/ACS711A-DS-rev9 (page
+# 2; -T variant, 8-pin SOICN, 3000 pieces/reel) -> existence verified.
+# Package LC (page 20, reference Allegro DWG-0000385 Rev. 2). Operating
+# temperature from the same Selection Guide row (TA range). Lifecycle
+# unknown: the datasheet states no production status for this row.
+schema_version: "0.2"
+kind: part
+id: allegro/ACS711KLCTR-25AB-T
+manufacturer: allegro
+mpn: ACS711KLCTR-25AB-T
+device: allegro/ACS711-LC
+
+package:
+  value: manufacturers/allegro/LC-SOIC8-DWG-0000385
+  src:
+    - p2 "SELECTION GUIDE, ACS711KLCTR-25AB-T, 8-pin SOICN"
+    - p20 "Package LC, 8-pin SOIC (reference DWG-0000385, Rev. 2)"
+
+sources: [allegro/ACS711A-DS-rev9]
+source: allegro/ACS711A-DS-rev9
+
+existence: { status: verified, src: 'p2 "SELECTION GUIDE, Part Number ACS711KLCTR-25AB-T"' }
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p2 "SELECTION GUIDE, ACS711KLCTR-25AB-T row, TA"

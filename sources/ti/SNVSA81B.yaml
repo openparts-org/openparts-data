@@ -1,0 +1,16 @@
+# Official TI datasheet "LMR14030 SIMPLE SWITCHER Power Converter 40V
+# 3.5A, 2.2MHz Step-Down". Downloaded 2026-11-17 with curl from the TI
+# symlink URL below (HTTP 200, PDF); revision from the page header
+# "SNVSA81B - FEBRUARY 2015 - REVISED DECEMBER 2024". 34 PDF pages,
+# read with pdftotext -layout. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: ti/SNVSA81B
+sha256: b640e58d7a8fe2790271e8916c1e32389aa57b1aa96c36ed67b5e47dad86ef43
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/lmr14030.pdf
+publisher: ti
+document_id: SNVSA81B
+document_type: datasheet
+revision: B
+date: 2024-12

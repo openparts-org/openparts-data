@@ -4,8 +4,9 @@
 # I/O/T io, a dash nc. Alternate functions are not recorded here. Table 3-1
 # lists GND, NC by number groups ("1, 2, 11, 14, 36-53"; "4, 7, 9, 10, 15,
 # 17, 24, 25, 28, 29, 32-35"); pins 49-53 are the ground and corner pads
-# (p10 Figure 3-1). The -U variant (antenna connector) is a different board
-# size and is not modelled.
+# (p10 Figure 3-1). The -U variant (antenna connector) is a different
+# board size: device
+# espressif/ESP32-C3-MINI-1U.
 schema_version: "0.2"
 kind: device
 id: espressif/ESP32-C3-MINI-1

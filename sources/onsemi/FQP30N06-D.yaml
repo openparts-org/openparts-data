@@ -1,0 +1,16 @@
+# Fairchild-format onsemi datasheet "FQP30N06" (10 pages: onsemi cover
+# page 1, Fairchild datasheet pages 2-9, onsemi back page 10), footer
+# "FQP30N06 Rev. C1", header date November 2013, downloaded with curl from the
+# URL below. Read with pdftotext -layout; page 8 "Mechanical
+# Dimensions" (Figure 16, TO220 Molded 3-Lead, drawing file
+# MKT-TO220Y03REV1, package PN_TO220-003) rendered and read as an
+# image. Page numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: onsemi/FQP30N06-D
+url: https://www.onsemi.com/download/data-sheet/pdf/fqp30n06-d.pdf
+date: 2013-11
+revision: C1
+publisher: onsemi
+document_id: FQP30N06 Rev. C1
+document_type: datasheet

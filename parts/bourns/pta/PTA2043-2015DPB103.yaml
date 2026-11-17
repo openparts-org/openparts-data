@@ -1,0 +1,26 @@
+# Bourns PTA2043-2015DPB103: PTA, stroke length 20 mm, 4 = no dust cover,
+# 3 = single gang, 2 = PC pins down facing, 0 = no detent, standard lever
+# length 15 mm, DP metal lever, B = linear taper, resistance code 103
+# (10,000 ohms per the Standard Resistance Table). The MPN is assembled
+# from the How To Order legend (page 1), not printed in an orderable list
+# -> existence probable. Lifecycle: no status printed -> unknown.
+schema_version: "0.2"
+kind: part
+id: bourns/PTA2043-2015DPB103
+manufacturer: bourns
+mpn: PTA2043-2015DPB103
+device: bourns/PTA
+package: manufacturers/bourns/PTA2043
+sources: [bourns/PTA]
+source: bourns/PTA
+
+existence: { status: probable, src: 'p1 "How To Order, PTA2043-2015DPB103 per legend"' }
+lifecycle: { status: unknown }
+
+parameters:
+  tolerance:    { tol: ±20 %, src: 'p1 "Standard Resistance Tolerance, 1 KΩ<R<1 MΩ"' }
+  resistance:
+    typ: 10 kΩ
+    src: 'p4 "Standard Resistance Table, Resistance Code 103: 10,000 ohms"'
+  power_rating: { typ: 0.1 W, src: 'p1 "Power Rating, Linear, 20 mm"' }
+  taper:        { value: linear, src: 'p1 "How To Order, Resistance Taper B = Linear Taper"' }

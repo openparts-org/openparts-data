@@ -1,0 +1,24 @@
+# MC7812CTG: MC7812C (12 V, TJ 0 to +125 C), TO-220 (Pb-free),
+# 50 Units / Rail, printed verbatim in MC7800/D Rev. 29 ORDERING
+# INFORMATION (page 23). Package "TO-220 T SUFFIX CASE 221AB" (page 1),
+# outline page 25 (= standalone 98AON23085D).
+# No lifecycle statement for this MPN.
+schema_version: "0.2"
+kind: part
+id: onsemi/MC7812CTG
+manufacturer: onsemi
+mpn: MC7812CTG
+device: onsemi/MC7812C
+
+package:
+  value: manufacturers/onsemi/TO220-221AB
+  src: [p1 "TO-220 T SUFFIX CASE 221AB", onsemi/98AON23085D p1 "CASE 221AB outline"]
+
+sources: [onsemi/MC7800-D, onsemi/98AON23085D]
+source: onsemi/MC7800-D
+
+existence:
+  status: verified
+  src: 'p23 "ORDERING INFORMATION: "MC7812CTG | 12 V | TJ = 0°C to +125°C | TO-220 | 50 Units / Rail""'
+
+lifecycle: { status: unknown }

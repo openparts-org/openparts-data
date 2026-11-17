@@ -1,0 +1,53 @@
+# 14-Stage Binary Ripple Counter With Oscillator MC74HC4060A (onsemi), 16-pin pin map of the SOIC-16 and
+# TSSOP-16 packages ("LOGIC DIAGRAM pin numbers (rendered); Pin 16 = VCC, Pin 8 = GND"). Osc Out 1 (pin 10), Osc Out 2 (pin 9), Osc In (pin 11) written with
+# _. RESET (active high) typed reset.
+# The QFN16 variant (where present) is not covered.
+schema_version: "0.2"
+kind: device
+id: onsemi/MC74HC4060A
+manufacturer: onsemi
+category: logic
+family: MC74HC4060A
+source: onsemi/MC74HC4060A-D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2.5 V
+    max: 6 V
+    src: p2 "RECOMMENDED OPERATING CONDITIONS, MC74HC, VCC (min 2.5*; 2.0 V with external clock on pin 11)"
+  supply_current:
+    max: 4 µA
+    at: { VCC: 6 V, TA: -55..25 °C }
+    src: p3 "DC ELECTRICAL CHARACTERISTICS, ICC Maximum Quiescent Supply Current, 6.0 V, -55 to 25°C"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p2 "RECOMMENDED OPERATING CONDITIONS, MC74HC, TA Operating Free-Air Temperature"
+  channel_count: { value: "1", src: 'p1 "Title: 14-Stage Binary Ripple Counter With Oscillator"' }
+  propagation_delay:
+    max: 60 ns
+    at: { VCC: 4.5 V, CL: 50 pF, TA: -55..25 °C }
+    src: p3 "AC ELECTRICAL CHARACTERISTICS, tPLH/tPHL Osc In to Q4, 4.5 V, -55 to 25°C (CL 50 pF test circuit)"
+  logic_function:
+    value: counter
+    src: 'p1 "Title: 14-Stage Binary Ripple Counter With Oscillator"'
+
+pins:
+  src:  p1 "LOGIC DIAGRAM pin numbers (rendered); Pin 16 = VCC, Pin 8 = GND"
+  "1":  { name: Q12, type: output }
+  "2":  { name: Q13, type: output }
+  "3":  { name: Q14, type: output }
+  "4":  { name: Q6, type: output }
+  "5":  { name: Q5, type: output }
+  "6":  { name: Q7, type: output }
+  "7":  { name: Q4, type: output }
+  "8":  { name: GND, type: ground }
+  "9":  { name: OSC_OUT_2, type: clock_out }
+  "10": { name: OSC_OUT_1, type: clock_out }
+  "11": { name: OSC_IN, type: clock }
+  "12": { name: RESET, type: reset }
+  "13": { name: Q9, type: output }
+  "14": { name: Q8, type: output }
+  "15": { name: Q10, type: output }
+  "16": { name: VCC, type: power }

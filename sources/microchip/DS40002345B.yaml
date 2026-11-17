@@ -1,0 +1,18 @@
+# Official Microchip "ATtiny3224/3226/3227" Complete Data Sheet, 574 pages
+# (tinyAVR 2-series). Downloaded directly from ww1.microchip.com (URL below)
+# with curl on 2026-11-17. document_id/revision from the printed footer
+# "DS40002345B-page N"; date from section 37.1 "Rev.B - 12/2021". PDF page index =
+# printed page number. Read with pdftotext -layout: pinouts (pages 14-17),
+# Table 3-1 (page 18), Table 33-2 (page 475), Table 35-1 (pages 541-542),
+# Table 36-1 drawing numbers (page 543) extract as clean text.
+schema_version: "0.2"
+kind: source
+id: microchip/DS40002345@revB
+sha256: 46552fd94778cc50d9fbad7d528e0dca5c68d3cb7d0e3d320355aa6e5def7f85
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/MCU08/ProductDocuments/DataSheets/ATtiny3224-3226-3227-Data-Sheet-DS40002345B.pdf
+publisher: microchip
+document_id: DS40002345
+document_type: datasheet
+revision: B
+date: 2021-12

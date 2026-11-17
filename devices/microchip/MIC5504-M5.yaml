@@ -1,0 +1,45 @@
+# MIC5504 300-mA LDO (auto-discharge, internal EN pull-down), 5-lead
+# SOT23 (M5). Pinout from DS20006006C "Package Types" SOT23-5 (M5) top
+# view (page 1): VIN 1, GND 2, EN 3, NC 4, VOUT 5. The 4-lead UDFN (MT)
+# pinout is not covered.
+# operating_temperature: the only range printed is TJ.
+# dropout_voltage: one row for all output options; the PDF text does not
+# show which limits are bold (-40..+125 °C), so no TJ condition is given.
+schema_version: "0.2"
+kind: device
+id: microchip/MIC5504-M5
+manufacturer: microchip
+category: linear_regulator
+family: MIC5501/2/3/4
+source: microchip/DS20006006C
+
+parameters:
+  output_type: { value: fixed, src: 'p1 "Features, Fixed Output Voltages from 1.0V to 3.3V"' }
+  input_voltage_max:
+    max: 5.5 V
+    src: p3 "Operating Ratings, Supply Voltage (VIN) +2.5V to +5.5V"
+  output_current: { max: 300 mA, src: 'p1 "Features, 300 mA Ensured Output Current"' }
+  dropout_voltage:
+    - typ: 160 mV
+      max: 380 mV
+      at: { IOUT: 300 mA }
+      src: p3 "Electrical Characteristics, Dropout Voltage, IOUT = 300 mA"
+    - typ: 80 mV
+      max: 190 mV
+      at: { IOUT: 150 mA }
+      src: p3 "Electrical Characteristics, Dropout Voltage, IOUT = 150 mA"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p5 "Temperature Specifications, Operating Junction Temperature Range TJ"
+  esd_hbm:
+    typ: 3 kV
+    src: 'p3 "Absolute Maximum Ratings, ESD Rating 3 kV (Note 2: human body model)"'
+
+pins:
+  src: p1 "Package Types, MIC5501/4 SOT23-5 (M5) (Top View)"
+  "1": { name: VIN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: EN, type: input }
+  "4": { name: NC, type: nc }
+  "5": { name: VOUT, type: power }

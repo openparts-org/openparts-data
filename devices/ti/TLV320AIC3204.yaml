@@ -6,7 +6,7 @@
 # Multi-function pins keep the table's primary/secondary name. Thermal
 # pad: "Connect to PCB ground plane. Not internally connected." -> key
 # EP, passive. AVDD and DVDD are analog_/digital_supply_voltage
-# (LDOIN 1.9-3.6 V and IOVDD 1.1-3.6 V, in the same table, have no key).
+# and IOVDD is io_supply_voltage (LDOIN 1.9-3.6 V has no key).
 schema_version: "0.2"
 kind: device
 id: ti/TLV320AIC3204
@@ -25,6 +25,10 @@ parameters:
     min: 1.26 V
     max: 1.95 V
     src: p8 "7.3 Recommended Operating Conditions, DVDD"
+  io_supply_voltage:
+    min: 1.1 V
+    max: 3.6 V
+    src: p8 "7.3 Recommended Operating Conditions, IOVDD referenced to IOVSS"
   operating_temperature:
     min: -40 °C
     max: 85 °C

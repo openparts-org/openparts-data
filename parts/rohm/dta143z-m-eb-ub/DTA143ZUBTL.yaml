@@ -1,0 +1,19 @@
+# DTA143ZUBTL: Part No. "DTA143ZUB" with taping code "TL" in the page-1
+# Packaging specifications table; the ROHM product page names "DTA143ZUBTL"
+# with Status "Recommended" (-> lifecycle active).
+schema_version: "0.2"
+kind: part
+id: rohm/DTA143ZUBTL
+manufacturer: rohm
+mpn: DTA143ZUBTL
+device: rohm/DTA143Z-M-EB-UB
+
+package:
+  value: manufacturers/rohm/UMT3F
+  src: rohm/DTA143Z-datasheet-en p8 "Dimensions, SOT-323FL (UMT3F)"
+
+sources: [rohm/DTA143Z-datasheet-en, rohm/DTA143ZUBTL-product-page]
+source: rohm/DTA143ZUBTL-product-page
+
+existence: { status: verified, src: p1 "Part Number DTA143ZUBTL" }
+lifecycle: { status: active, src: p1 "Status Recommended" }

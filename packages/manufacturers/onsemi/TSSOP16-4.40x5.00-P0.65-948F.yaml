@@ -1,0 +1,29 @@
+# onsemi CASE 948F ISSUE B "TSSOP-16 WB" (DATE 19 OCT 2006), read from the
+# outline page of the MC74HC595A/D datasheet Rev. 27 (PDF page 17; text).
+# The MC74HC165A/D and MC74HC4060A/D datasheets print the same case and
+# issue. Millimetre columns (controlling dimension: millimetre), MIN /
+# MAX only. Letters as printed: A 4.90-5.10 (body length, note 3), B
+# 4.30-4.50 (body width, note 4), C max 1.20 (overall height), D
+# 0.05-0.15 (standoff), F 0.50-0.75 (foot length), G 0.65 BSC (pitch), J
+# 0.09-0.20 (lead thickness), K 0.19-0.30 (lead width), L 6.40 BSC
+# (lead-tip span). Not recorded: H, J1, K1, M and the recommended
+# soldering footprint.
+schema_version: "0.2"
+kind: package
+id: manufacturers/onsemi/TSSOP16-4.40x5.00-P0.65-948F
+family: tssop
+lead_count: 16
+source: onsemi/MC74HC595A-D
+
+pitch: { typ: 0.65 mm, src: 'p17 "CASE 948F table, G 0.65 BSC"' }
+geometry: { type: parametric, generator: tssop }
+
+dimensions:
+  body_width:     { min: 4.3 mm, max: 4.5 mm, src: 'p17 "CASE 948F table, B 4.30 / 4.50"' }
+  body_length:    { min: 4.9 mm, max: 5.1 mm, src: 'p17 "CASE 948F table, A 4.90 / 5.10"' }
+  lead_thickness: { min: 0.09 mm, max: 0.2 mm, src: 'p17 "CASE 948F table, J 0.09 / 0.20"' }
+  lead_length:    { min: 0.5 mm, max: 0.75 mm, src: 'p17 "CASE 948F table, F 0.50 / 0.75"' }
+  overall_width:  { typ: 6.4 mm, src: 'p17 "CASE 948F table, L 6.40 BSC"' }
+  overall_height: { max: 1.2 mm, src: 'p17 "CASE 948F table, C --- / 1.20"' }
+  standoff:       { min: 0.05 mm, max: 0.15 mm, src: 'p17 "CASE 948F table, D 0.05 / 0.15"' }
+  lead_width:     { min: 0.19 mm, max: 0.3 mm, src: 'p17 "CASE 948F table, K 0.19 / 0.30"' }

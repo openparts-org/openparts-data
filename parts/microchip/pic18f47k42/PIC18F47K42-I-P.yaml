@@ -1,0 +1,32 @@
+# PIC18F47K42-I/P: industrial temperature (-40 to +85 C), 40-lead PDIP, tube.
+# existence: probable -- assembled from the "Product Identification
+# System" legend (DS40001919G page 839); the data sheet has no table of
+# orderable codes.
+# Package: drawing C04-016B (p815), the drawing of
+# manufacturers/microchip/PDIP40-P-C04-016B.
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/PIC18F47K42-I-P
+manufacturer: microchip
+mpn: PIC18F47K42-I/P
+device: microchip/PIC18F47K42-PDIP40
+
+package:
+  value: manufacturers/microchip/PDIP40-P-C04-016B
+  src: p839 "Product Identification System, Package P = 40-lead PDIP"
+
+sources: [microchip/DS40001919@revG]
+source: microchip/DS40001919@revG
+
+existence:
+  status: probable
+  src: p839 "Product Identification System legend (Device, Temperature I, Package)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p739 "44.2 Standard Operating Conditions, Industrial Temperature TA -40 to +85 C"

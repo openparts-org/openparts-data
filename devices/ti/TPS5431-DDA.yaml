@@ -1,0 +1,42 @@
+# TPS5431 3-A step-down converter with integrated high-side MOSFET,
+# DDA (8-pin HSOIC PowerPAD) pinout. From SLVS632L Figure 4-1 "DDA
+# Package 8-Pin HSOIC With Thermal Pad (Top View)" and Table 4-1 "Pin
+# Functions" (page 3): BOOT 1, NC 2, NC 3, VSENSE 4, ENA 5, GND 6, VIN
+# 7, PH 8, DAP (thermal pad, "GND pin must be connected to the exposed
+# pad"). Types: BOOT bootstrap supply -> power; NC "Not connected
+# internally" -> nc; VSENSE, ENA "I" -> input; VIN supply -> power;
+# PH switch node -> passive; DAP -> ground.
+# operating_temperature: the only range printed is TJ.
+schema_version: "0.2"
+kind: device
+id: ti/TPS5431-DDA
+manufacturer: ti
+category: switching_regulator
+family: TPS543x
+source: ti/SLVS632L
+
+parameters:
+  output_type:
+    value: adjustable
+    src: 'p1 "1 Features, wide output voltage range: adjustable down to 1.22V"'
+  input_voltage_max:
+    max: 23 V
+    src: p4 "5.3 Recommended Operating Conditions, Input voltage range, TPS5431"
+  output_current: { max: 3 A, src: 'p1 "1 Features, up to 3A continuous (4A peak) output current"' }
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "5.3 Recommended Operating Conditions, TJ"
+  esd_hbm: { typ: 2 kV, src: 'p4 "5.2 ESD Ratings, HBM ±2000 V"' }
+
+pins:
+  src: p3 "Figure 4-1 DDA Package (Top View) and Table 4-1 Pin Functions"
+  "1": { name: BOOT, type: power }
+  "2": { name: NC, type: nc }
+  "3": { name: NC, type: nc }
+  "4": { name: VSENSE, type: input }
+  "5": { name: ENA, type: input }
+  "6": { name: GND, type: ground }
+  "7": { name: VIN, type: power }
+  "8": { name: PH, type: passive }
+  EP:  { name: DAP, type: ground }

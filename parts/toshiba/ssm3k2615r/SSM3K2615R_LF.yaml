@@ -1,0 +1,42 @@
+# Order code "SSM3K2615R,LF" is listed under "Orderable part number (example)"
+# on Toshiba's SSM3K2615R product page; the page says listed numbers are
+# representative, and the datasheet has no ordering table -> existence
+# `probable`. Lifecycle `unknown` (not stated).
+schema_version: "0.2"
+kind: part
+id: toshiba/SSM3K2615R,LF
+manufacturer: toshiba
+mpn: SSM3K2615R,LF
+device: toshiba/SSM3K2615R
+package: { value: manufacturers/toshiba/SOT-23F, src: 'p8 "Package Dimensions, Nickname: SOT-23F"' }
+sources: [toshiba/SSM3K2615R-datasheet-en, toshiba/SSM3K2615R-product-page]
+source: toshiba/SSM3K2615R-datasheet-en
+
+existence:
+  status: probable
+  src: toshiba/SSM3K2615R-product-page p1 "Orderable part number (example), SSM3K2615R,LF"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: 'p1 "Title, Silicon N-Channel MOS""' }
+  drain_source_voltage: { max: 60 V, src: 'p2 "4. Absolute Maximum Ratings, VDSS"' }
+  drain_current:        { max: 2 A, src: 'p2 "4. Absolute Maximum Ratings, Drain current DC ID"' }
+  rds_on:
+    - typ: 0.38 Ω
+      max: 0.58 Ω
+      at: { VGS: 3.3 V, ID: 0.5 A }
+      src: p3 "6.1 Static Characteristics, RDS(ON), ID = 0.5A / VGS = 3.3V row"
+    - typ: 0.33 Ω
+      max: 0.44 Ω
+      at: { VGS: 4 V, ID: 1 A }
+      src: p3 "6.1 Static Characteristics, RDS(ON), ID = 1A / VGS = 4V row"
+    - typ: 0.23 Ω
+      max: 0.3 Ω
+      at: { VGS: 10 V, ID: 1 A }
+      src: p3 "6.1 Static Characteristics, RDS(ON), ID = 1A / VGS = 10V row"
+  gate_threshold_voltage:
+    min: 0.8 V
+    max: 2 V
+    at: { VDS: 10 V, ID: 1 mA }
+    src: p3 "6.1 Static Characteristics, Vth (Min 0.8 / Max 2.0)"

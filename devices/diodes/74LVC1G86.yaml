@@ -1,0 +1,58 @@
+# Single 2 Input Exclusive OR Gate 74LVC1G86 (Diodes Incorporated), 5-pin pin map of the SOT25
+# and SOT353 packages from the page 1 "Pin Assignments" SOT25 / SOT353
+# (Top View) diagram (DS32201, rendered). The SOT553 and DFN packages are not
+# covered. operating_temperature: the recommended TA range, also the
+# widest range of the Electrical Characteristics.
+schema_version: "0.2"
+kind: device
+id: diodes/74LVC1G86
+manufacturer: diodes
+category: logic
+family: 74LVC1G86
+source: diodes/DS32201
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.65 V
+    max: 5.5 V
+    src: p3 "Recommended Operating Conditions, VCC Operating Voltage, Operating"
+  supply_current:
+    typ: 0.1 µA
+    max: 10 µA
+    at: { VCC: 5.5 V, TA: -40..85 °C }
+    src: p4 "Electrical Characteristics, ICC, VCC 5.5V, TA = -40°C to +85°C columns (Typ / Max)"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p3 "Recommended Operating Conditions, TA Operating Free-Air Temperature"
+  esd_hbm:          { typ: 2 kV, src: 'p3 "Absolute Maximum Ratings, ESD HBM"' }
+  channel_count:    { value: "1", src: 'p1 "Title: Single 2 Input Exclusive OR Gate"' }
+  propagation_delay:
+    min: 0.5 ns
+    typ: 2.3 ns
+    max: 5 ns
+    at: { VCC: 3.3 V, CL: 50 pF, TA: -40..85 °C }
+    src: p5 "Switching Characteristics, tpd to Y, 3.3V ± 0.3V, TA = -40°C to +85°C (CL 50pF per test table)"
+  output_structure: { value: push_pull, src: 'p1 "Description: push-pull output"' }
+  logic_function:   { value: xor, src: 'p1 "Title: Single 2 Input Exclusive OR Gate"' }
+  output_current_high:
+    - max: 32 mA
+      at: { VCC: 4.5 V }
+      src: p3 "Recommended Operating Conditions, IOH, VCC = 4.5V (printed -32 mA)"
+    - max: 24 mA
+      at: { VCC: 3 V }
+      src: p3 "Recommended Operating Conditions, IOH, VCC = 3V (printed -24 mA)"
+  output_current_low:
+    - max: 32 mA
+      at: { VCC: 4.5 V }
+      src: p3 "Recommended Operating Conditions, IOL, VCC = 4.5V"
+    - { max: 24 mA, at: { VCC: 3 V }, src: 'p3 "Recommended Operating Conditions, IOL, VCC = 3V"' }
+
+pins:
+  src: p1 ""Pin Assignments" SOT25 / SOT353 (Top View) (rendered)"
+  "1": { name: A, type: input }
+  "2": { name: B, type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: Y, type: output }
+  "5": { name: VCC, type: power }

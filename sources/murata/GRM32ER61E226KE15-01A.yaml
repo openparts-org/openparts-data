@@ -1,0 +1,16 @@
+# Murata per-part reference sheet for GRM32ER61E226KE15_ (_ = packaging code),
+# footer "GRM32ER61E226KE15-01A", 33 pages. Fetched with curl from Murata's
+# own pim.murata.com asset URL on 2026-11-17.
+# Read with pdftotext -layout; page 2 holds the part-number system, Type & Dimension, Rated Value and Package tables (page 1 is Scope).
+# Page 2 states "Product specifications in this catalog are as of 6月.26,2026".
+schema_version: "0.2"
+kind: source
+id: murata/GRM32ER61E226KE15-01A
+sha256: eb674d39579eb98f9dd46fb8687c5425e237399d31e1b0cdeba4446956a3b7e2
+retrieved: 2026-11-17
+url: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM32ER61E226KE15-01A-EN_PDF_CERAMICCAPACITORSMD
+publisher: murata
+document_id: GRM32ER61E226KE15-01A
+document_type: datasheet
+revision: -01A
+date: 2026-06-26

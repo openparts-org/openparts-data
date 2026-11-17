@@ -1,0 +1,49 @@
+# 8-Bit Shift Register/Latch (3-state) TC74HC595A (TC74HC595AP DIP16, TC74HC595AF SOP16), 16-pin pin
+# map read from the rendered page 1 "Pin Assignment" (TOP VIEW) of the
+# TC74HC595AP/TC74HC595AF datasheet. SCLR (pin 10) and G (pin 13, output enable) carry an overbar (active low);
+# written without it. SCK/RCK typed clock, SCLR reset.
+schema_version: "0.2"
+kind: device
+id: toshiba/TC74HC595A
+manufacturer: toshiba
+category: logic
+family: TC74HC595A
+source: toshiba/TC74HC595AP-datasheet-en
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 2 V, max: 6 V, src: 'p5 "Operating Ranges, Supply voltage VCC 2 to 6 V"' }
+  supply_current:
+    max: 4 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p5 "Electrical Characteristics: Quiescent supply current ICC, VCC 6.0, Ta = 25°C Max"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p5 "Operating Ranges, Operating temperature Topr"
+  channel_count: { value: "1", src: 'p1 "Title: 8-Bit Shift Register/Latch (3-state)"' }
+  propagation_delay:
+    typ: 20 ns
+    max: 30 ns
+    at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+    src: p7 "AC Characteristics (CL = 50 pF), Propagation delay time (RCK-Qn), VCC 4.5, Ta = 25°C"
+  logic_function: { value: shift_register, src: 'p1 "Title: 8-Bit Shift Register/Latch (3-state)"' }
+
+pins:
+  src:  p1 ""Pin Assignment" (TOP VIEW) (rendered)"
+  "1":  { name: QB, type: output }
+  "2":  { name: QC, type: output }
+  "3":  { name: QD, type: output }
+  "4":  { name: QE, type: output }
+  "5":  { name: QF, type: output }
+  "6":  { name: QG, type: output }
+  "7":  { name: QH, type: output }
+  "8":  { name: GND, type: ground }
+  "9":  { name: QH', type: output }
+  "10": { name: SCLR, type: reset }
+  "11": { name: SCK, type: clock }
+  "12": { name: RCK, type: clock }
+  "13": { name: G, type: input }
+  "14": { name: SI, type: input }
+  "15": { name: QA, type: output }
+  "16": { name: VCC, type: power }

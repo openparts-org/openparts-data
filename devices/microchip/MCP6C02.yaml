@@ -4,8 +4,8 @@
 # 3x3 VDFN (H-temp) numbering differs and is not covered. VIP is both
 # the non-inverting input and the high-side supply; its bias current
 # IBP is recorded as input_bias_current. Offset voltage depends on the
-# gain option (20/50/100 V/V) and is on the Parts. Gain and bandwidth
-# have no parameter key.
+# gain option (20/50/100 V/V) and is on the Parts, as is `gain`.
+# Bandwidth has no parameter key.
 schema_version: "0.2"
 kind: device
 id: microchip/MCP6C02
@@ -33,6 +33,10 @@ parameters:
     max: 215 µA
     at: { TA: 25 °C }
     src: p7 "Table 1-2 DC Electrical Characteristics, VIP's Input Bias Current IBP"
+  common_mode_voltage:
+    min: 3 V
+    max: 65 V
+    src: p8 "Table 1-2 Input Common-Mode Voltage (VIP), VIPL max 3.0 V (VIP rising), VIPH min 65 V"
 
 pins:
   src:

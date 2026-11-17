@@ -1,0 +1,12 @@
+# Murata GRM32 X5R 1210 (3225M) general-purpose MLCC, series-level device;
+# value-specific MPNs are Parts. Non-polarized two-terminal part.
+schema_version: "0.2"
+kind: device
+id: murata/GRM32-X5R
+manufacturer: murata
+category: capacitor
+family: GRM32
+
+pins:
+  "1": { name: "1", type: passive }
+  "2": { name: "2", type: passive }

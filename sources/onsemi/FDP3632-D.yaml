@@ -1,0 +1,14 @@
+# onsemi datasheet "MOSFET - Power, N-Channel, POWERTRENCH 100 V, 80 A,
+# 9 mOhm -- FDH3632, FDP3632, FDB3632", Publication Order Number
+# FDP3632/D, footer "September, 2024 - Rev. 6", downloaded with curl
+# from the URL below. Read with pdftotext -layout. Page 1 names the
+# TO-220-3 package "CASE 340AT" (outline 98AON13818G, separate source).
+schema_version: "0.2"
+kind: source
+id: onsemi/FDP3632-D
+url: https://www.onsemi.com/download/data-sheet/pdf/fdp3632-d.pdf
+date: 2024-09
+revision: "6"
+publisher: onsemi
+document_id: FDP3632/D
+document_type: datasheet

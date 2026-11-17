@@ -1,0 +1,58 @@
+# Toshiba SOP16-P-300-1.27A (16-pin 300-mil SOP, 5.3 mm body, 1.27 mm
+# pitch), read from the rendered "Package Dimensions" page of the
+# TC74HC595AP/AF datasheet (2026-04-21, PDF page 9; image only). Unit mm.
+# The TC74HC165AP/AF and TC74HC4060AP/AF datasheets print the identical
+# drawing (page 9, pixel-identical render).
+# body width "5.3 +-0.2", lead-tip span "7.8 +-0.3", body length
+# "10.3 +-0.2" ("10.8MAX" incl. protrusions not recorded), "1.9MAX"
+# height, standoff "0.1 +0.1/-0.05", lead width "0.43 +0.07/-0.04", lead
+# thickness "0.15 +0.075/-0.035", foot "0.8 +-0.2", boxed pitch 1.27.
+# Left out: "1.5 +-0.2" (its lower reference line is not clear), the
+# angles, 0.705TYP (end lead offset).
+schema_version: "0.2"
+kind: package
+id: manufacturers/toshiba/SOP16-P-300-1.27A
+family: soic
+lead_count: 16
+source: toshiba/TC74HC595AP-datasheet-en
+
+pitch: { typ: 1.27 mm, src: 'p9 "SOP16-P-300-1.27A, boxed 1.27"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:
+    min: 5.1 mm
+    typ: 5.3 mm
+    max: 5.5 mm
+    src: p9 "SOP16-P-300-1.27A top view, 5.3 +-0.2"
+  body_length:
+    min: 10.1 mm
+    typ: 10.3 mm
+    max: 10.5 mm
+    src: p9 "SOP16-P-300-1.27A side view, 10.3 +-0.2"
+  lead_thickness:
+    min: 0.115 mm
+    typ: 0.15 mm
+    max: 0.225 mm
+    src: p9 "SOP16-P-300-1.27A lead detail, 0.15 +0.075/-0.035"
+  lead_length:
+    min: 0.6 mm
+    typ: 0.8 mm
+    max: 1 mm
+    src: p9 "SOP16-P-300-1.27A lead detail, 0.8 +-0.2"
+  overall_width:
+    min: 7.5 mm
+    typ: 7.8 mm
+    max: 8.1 mm
+    src: p9 "SOP16-P-300-1.27A top view, 7.8 +-0.3"
+  overall_height: { max: 1.9 mm, src: 'p9 "SOP16-P-300-1.27A side view, 1.9MAX"' }
+  standoff:
+    min: 0.05 mm
+    typ: 0.1 mm
+    max: 0.2 mm
+    src: p9 "SOP16-P-300-1.27A side view, 0.1 +0.1/-0.05"
+  lead_width:
+    min: 0.39 mm
+    typ: 0.43 mm
+    max: 0.5 mm
+    src: p9 "SOP16-P-300-1.27A top view, 0.43 +0.07/-0.04"

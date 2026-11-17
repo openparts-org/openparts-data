@@ -1,0 +1,28 @@
+# MPN from the ORDERING INFORMATION table of NCV8114/D Rev. 6 (page 11):
+# "NCV8114ASN300T1G | 3.0 V | DEG | With output active discharge function | TSOP-5 | 3000 / Tape & Reel" (listed
+# above the DISCONTINUED block). No production status printed for it:
+# lifecycle unknown.
+schema_version: "0.2"
+kind: part
+id: onsemi/NCV8114ASN300T1G
+manufacturer: onsemi
+mpn: NCV8114ASN300T1G
+device: onsemi/NCV8114-TSOP5
+
+package:
+  value: manufacturers/onsemi/TSOP5-3.00x1.50-P0.95-483
+  src: p12 "MECHANICAL CASE OUTLINE TSOP-5 CASE 483 ISSUE P"
+
+sources: [onsemi/NCV8114-D]
+source: onsemi/NCV8114-D
+
+existence: { status: verified, src: 'p11 "ORDERING INFORMATION, row NCV8114ASN300T1G"' }
+lifecycle: { status: unknown }
+
+parameters:
+  output_voltage: { typ: 3 V, src: 'p11 "ORDERING INFORMATION, NCV8114ASN300T1G, Voltage Option"' }
+  dropout_voltage:
+    typ: 160 mV
+    max: 260 mV
+    at: { IOUT: 300 mA, TJ: -40..125 °C }
+    src: p3 "ELECTRICAL CHARACTERISTICS, Dropout Voltage, IOUT = 300 mA, VOUT = 3.0 V"

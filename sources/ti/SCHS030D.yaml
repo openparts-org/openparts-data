@@ -1,0 +1,20 @@
+# Official TI datasheet "CD4020B, CD4024B, CD4040B Types CMOS Ripple-Carry
+# Binary Counter/Dividers". Downloaded 2026-11-17 from the TI symlink URL
+# below with curl (HTTP 200, PDF); revision read from the page header
+# "SCHS030D - Revised December 2003". 30 PDF pages; pages 1-4 are scans
+# and were rendered and read; the addendum and outline pages were read
+# with pdftotext -layout, the legacy outline drawings (image pages) were
+# rendered. Page numbers in this dataset are PDF page indices. The
+# PACKAGE OPTION ADDENDUM is dated 23-Oct-2026 (newer than the datasheet
+# revision). sha256 is of the PDF as downloaded on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SCHS030D
+sha256: c3ff23cc958f2a15f60b93bbe18e9b73d22786481339f7e1b7315a4b9476d901
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/cd4040b.pdf
+publisher: ti
+document_id: SCHS030D
+document_type: datasheet
+revision: D
+date: 2003-12

@@ -1,0 +1,58 @@
+# PIC16F876A pinout for the 28-pin PDIP/SOIC/SSOP packages, from
+# DS39582C Table 1-2 "PIC16F873A/876A Pinout Description" PDIP/SOIC/SSOP
+# column (pages 7-9), checked against the 28-Pin PDIP, SOIC, SSOP pin
+# diagram (page 2).
+# Types: VDD power, VSS ground, MCLR/VPP input, OSC1/CLKI input and
+# OSC2/CLKO output (Table 1-3 I/O/P type), port pins io (RA4 is
+# open-drain when an output, still io). `alternate_functions`: the
+# analog, reference and programming functions printed in the pin name
+# (AN, VREF, CVREF, PGC/PGD/PGM, INT, T0CKI/C1OUT); the serial, CCP and
+# PSP functions are not listed. Pin map shared by PIC16F873A and
+# PIC16F876A; this Device is used for PIC16F876A parts.
+schema_version: "0.2"
+kind: device
+id: microchip/PIC16F876A-28
+manufacturer: microchip
+category: microcontroller
+family: PIC16F87XA
+source: microchip/DS39582@revC
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 4 V
+    max: 5.5 V
+    src: p175 "17.1 DC Characteristics, D001 VDD Supply Voltage, 16F87XA, All configurations"
+
+pins:
+  src:
+    - p7 "Table 1-2 PIC16F873A/876A Pinout Description, PDIP/SOIC/SSOP Pin# column (cont. p8-9)"
+    - p2 "Pin Diagrams, 28-Pin PDIP, SOIC, SSOP"
+  "1":  { name: MCLR, type: input, alternate_functions: [VPP] }
+  "2":  { name: RA0, type: io, alternate_functions: [AN0] }
+  "3":  { name: RA1, type: io, alternate_functions: [AN1] }
+  "4":  { name: RA2, type: io, alternate_functions: [AN2, VREF-, CVREF] }
+  "5":  { name: RA3, type: io, alternate_functions: [AN3, VREF+] }
+  "6":  { name: RA4, type: io, alternate_functions: [T0CKI, C1OUT] }
+  "7":  { name: RA5, type: io, alternate_functions: [AN4] }
+  "8":  { name: VSS, type: ground }
+  "9":  { name: OSC1, type: input, alternate_functions: [CLKI] }
+  "10": { name: OSC2, type: output, alternate_functions: [CLKO] }
+  "11": { name: RC0, type: io }
+  "12": { name: RC1, type: io }
+  "13": { name: RC2, type: io }
+  "14": { name: RC3, type: io }
+  "15": { name: RC4, type: io }
+  "16": { name: RC5, type: io }
+  "17": { name: RC6, type: io }
+  "18": { name: RC7, type: io }
+  "19": { name: VSS, type: ground }
+  "20": { name: VDD, type: power }
+  "21": { name: RB0, type: io, alternate_functions: [INT] }
+  "22": { name: RB1, type: io }
+  "23": { name: RB2, type: io }
+  "24": { name: RB3, type: io, alternate_functions: [PGM] }
+  "25": { name: RB4, type: io }
+  "26": { name: RB5, type: io }
+  "27": { name: RB6, type: io, alternate_functions: [PGC] }
+  "28": { name: RB7, type: io, alternate_functions: [PGD] }

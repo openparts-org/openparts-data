@@ -1,0 +1,17 @@
+# Toshiba SSM3K16FV datasheet (English), 5 PDF pages, footer date
+# 2026-04-14, no revision number printed. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=591); downloaded 2026-11-17 with curl.
+# Read with pdftotext -layout; the image-only package drawing was
+# rendered with pdftoppm and read as an image. Page numbers are PDF
+# page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/SSM3K16FV-datasheet-en
+sha256: d21a83af9b2b943298be3bb421c33d806ce549134bc49d29cbe5b68cbb6ef130
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=591&prodName=SSM3K16FV
+publisher: toshiba
+document_id: SSM3K16FV_datasheet_en
+document_type: datasheet
+revision: 2026-04-14
+date: 2026-04-14

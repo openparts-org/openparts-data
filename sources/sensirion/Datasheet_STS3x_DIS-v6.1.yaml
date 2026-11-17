@@ -1,0 +1,17 @@
+# Sensirion "Datasheet STS3x-DIS" (High-Accuracy Digital Temperature
+# Sensor IC), footer "November 2023 - Version 6.1", 18 pages. Downloaded
+# 2026-11-17 with curl from the datasheet link on the sensirion.com
+# STS35-DIS catalogue page. No document number is printed; the file name
+# is used as the id. PDF page index = printed "N/18" page number. Read
+# with pdftotext -layout (tables 2, 4, 5, 19, 20 and Figure 9 labels).
+schema_version: "0.2"
+kind: source
+id: sensirion/Datasheet_STS3x_DIS@v6.1
+sha256: ee663f32c3f471cfe2b9812c7ab625edeb9cbb94f2efe9e9ff711e32bb0a5b45
+retrieved: 2026-11-17
+url: https://sensirion.com/media/documents/1DA31AFD/65D613A8/Datasheet_STS3x_DIS.pdf
+publisher: sensirion
+document_id: Datasheet_STS3x_DIS
+document_type: datasheet
+revision: "6.1"
+date: 2023-11

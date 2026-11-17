@@ -1,0 +1,32 @@
+# ATTINY3227-MUR: 32 KB/3 KB, 24 pins, VQFN, tape & reel, -40 to +85 C. Ordering
+# code printed in Table 35-1 "Available Product Numbers" (DS40002345B page
+# 541); package letter decoded with the Product Identification
+# System (page 542).
+# lifecycle: no production-status statement in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATTINY3227-MUR
+manufacturer: microchip
+mpn: ATTINY3227-MUR
+device: microchip/ATtiny3227
+
+package:
+  value: manufacturers/microchip/VQFN24-4x4-P0.5-EP2.6-C04-21386
+  src:
+    - p541 "Table 35-1 row ATTINY3227-MUR, Package Type"
+    - p565 "Section 36.3 24-Pin VQFN, drawing C04-21386 Rev A sheet 2"
+
+sources: [microchip/DS40002345@revB]
+source: microchip/DS40002345@revB
+
+existence:
+  status: verified
+  src: p541 "Table 35-1 Available Product Numbers, row ATTINY3227-MUR"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p475 "Table 33-2 General Operating Conditions, TA Industrial -40 to 85"

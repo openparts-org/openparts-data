@@ -1,0 +1,17 @@
+# Toshiba SSM3K15AFU datasheet (English), 5 PDF pages, footer date
+# 2026-04-14, no revision number printed. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=5878); downloaded 2026-11-17 with curl.
+# Read with pdftotext -layout; the image-only package drawing was
+# rendered with pdftoppm and read as an image. Page numbers are PDF
+# page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/SSM3K15AFU-datasheet-en
+sha256: c74a1dbe27e7cb836891fd3cd1bc99c4d23870f0c3a697d0ca0cff1af913f83d
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=5878&prodName=SSM3K15AFU
+publisher: toshiba
+document_id: SSM3K15AFU_datasheet_en
+document_type: datasheet
+revision: 2026-04-14
+date: 2026-04-14

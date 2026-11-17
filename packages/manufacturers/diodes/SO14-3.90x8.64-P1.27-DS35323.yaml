@@ -1,0 +1,25 @@
+# 14-lead SO-14 (narrow SOIC) from the 74HC14 datasheet DS35323 Rev. 2-2,
+# page 7 "Package Outline Dimensions, Package Type: SO-14" (text; columns
+# Min / Max). D 8.53-8.74 (body length), E 3.80-3.99 (body width), H
+# 5.80-6.20 (lead-tip span), A 1.47-1.73 (overall height), A1 0.10-0.25,
+# B 0.33-0.51 (lead width), L 0.38-1.27, e 1.27 Typ. A2 is printed as
+# "1.45 Typ" only and the lead thickness is not printed; neither is
+# recorded. Angles and the suggested pad layout are not recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/diodes/SO14-3.90x8.64-P1.27-DS35323
+family: soic
+lead_count: 14
+source: diodes/DS35323
+
+pitch: { typ: 1.27 mm, src: 'p7 "SO-14 table, e 1.27 Typ"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:     { min: 3.8 mm, max: 3.99 mm, src: 'p7 "SO-14 table, E 3.80 / 3.99"' }
+  body_length:    { min: 8.53 mm, max: 8.74 mm, src: 'p7 "SO-14 table, D 8.53 / 8.74"' }
+  lead_length:    { min: 0.38 mm, max: 1.27 mm, src: 'p7 "SO-14 table, L 0.38 / 1.27"' }
+  lead_width:     { min: 0.33 mm, max: 0.51 mm, src: 'p7 "SO-14 table, B 0.33 / 0.51"' }
+  overall_width:  { min: 5.8 mm, max: 6.2 mm, src: 'p7 "SO-14 table, H 5.80 / 6.20"' }
+  overall_height: { min: 1.47 mm, max: 1.73 mm, src: 'p7 "SO-14 table, A 1.47 / 1.73"' }
+  standoff:       { min: 0.1 mm, max: 0.25 mm, src: 'p7 "SO-14 table, A1 0.10 / 0.25"' }

@@ -1,0 +1,38 @@
+# TMP100 digital temperature sensor, 6-pin SOT-23 (DBV). Pins from
+# "Pin Functions", column TMP100 (SBOS231I page 3). V+ is type "I";
+# typed power from its description ("Supply voltage"); SCL clock, SDA
+# io, ADD0/ADD1 address-select inputs. The TMP101 (ALERT instead of
+# ADD1 on pin 3) is the separate Device ti/TMP101.
+schema_version: "0.2"
+kind: device
+id: ti/TMP100
+manufacturer: ti
+category: temperature_sensor
+family: TMP10x
+source: ti/SBOS231I
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: p1 "TMP10x Temperature Sensor With I2C and SMBus Interface" }
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, Supply voltage"
+  supply_current:
+    typ: 45 µA
+    max: 75 µA
+    src: p5 "6.5 Electrical Characteristics, IQ Quiescent current, serial bus inactive"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p4 "6.3 Recommended Operating Conditions, Operating free-air temperature TA"
+  esd_hbm: { typ: 2 kV, src: 'p4 "6.2 ESD Ratings, HBM ±2000 V"' }
+
+pins:
+  src: p3 "Pin Functions, column TMP100"
+  "1": { name: SCL, type: clock }
+  "2": { name: GND, type: ground }
+  "3": { name: ADD1, type: input }
+  "4": { name: V+, type: power }
+  "5": { name: ADD0, type: input }
+  "6": { name: SDA, type: io }

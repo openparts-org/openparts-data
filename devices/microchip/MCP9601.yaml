@@ -1,0 +1,57 @@
+# MCP9601 thermocouple EMF-to-temperature converter, 20-lead 5x5 MQFN (MX)
+# -- the only package. Pins from TABLE 3-1 "Pin Function Table", column
+# MCP9601/L01/RL01 (DS20005426G page 17), checked against Package Types
+# (page 2). GND pins 1, 3, 5, 13, 17 are electrical ground; pins listed
+# "Not Electrical Ground; must be tied to Ground" are typed ground too.
+# VIN+/VIN- (thermocouple inputs) analog; Alert 1-4 push-pull outputs;
+# ADDR is a voltage-level address input. EP (pin 21) "must be connected
+# to GND" -> ground. Pin names "SC Alert" / "OC Alert" written with an
+# underscore. Category temperature_sensor (thermocouple converter).
+schema_version: "0.2"
+kind: device
+id: microchip/MCP9601
+manufacturer: microchip
+category: temperature_sensor
+family: MCP960x
+source: microchip/DS20005426G
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: 'p1 "Features, Two-Wire Interface: I2C Compatible"' }
+  supply_voltage: { min: 2.7 V, max: 5.5 V, src: 'p7 "DC Characteristics, Operating Voltage VDD"' }
+  supply_current:
+    typ: 0.3 mA
+    max: 0.5 mA
+    at: { VDD: 3.3 V, TA: 85 °C }
+    src: p7 "DC Characteristics, I2C Inactive Current IDD (conditions VDD = 3.3V, TA = +85°C)"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p8 "Temperature Characteristics, Specified Temperature Range TA"
+  esd_hbm:
+    typ: 4 kV
+    src: p3 "Absolute Maximum Ratings, ESD Protection on All Pins (HBM:MM) 4 kV"
+
+pins:
+  src:  ['p17 "TABLE 3-1 Pin Function Table, column MCP9601/L01/RL01"', p2 "Package Types"]
+  "1":  { name: GND, type: ground }
+  "2":  { name: VIN+, type: analog }
+  "3":  { name: GND, type: ground }
+  "4":  { name: VIN-, type: analog }
+  "5":  { name: GND, type: ground }
+  "6":  { name: VSENSE, type: analog }
+  "7":  { name: SC_ALERT, type: output }
+  "8":  { name: VDD, type: power }
+  "9":  { name: OC_ALERT, type: output }
+  "10": { name: GND, type: ground }
+  "11": { name: ALERT1, type: output }
+  "12": { name: ALERT2, type: output }
+  "13": { name: GND, type: ground }
+  "14": { name: ALERT3, type: output }
+  "15": { name: ALERT4, type: output }
+  "16": { name: ADDR, type: input }
+  "17": { name: GND, type: ground }
+  "18": { name: GND, type: ground }
+  "19": { name: SCL, type: clock }
+  "20": { name: SDA, type: io }
+  EP:   { name: EP, type: ground }

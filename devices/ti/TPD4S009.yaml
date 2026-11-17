@@ -20,6 +20,12 @@ parameters:
   reverse_voltage:
     max: 5.5 V
     src: p6 "6.5 Electrical Characteristics, VRWM (any IO pin to ground)"
+  peak_pulse_current:
+    max: 2.5 A
+    src: p5 "6.1 Absolute Maximum Ratings, Peak pulse current (tp = 8/20 µs)"
+  peak_pulse_power:
+    max: 25 W
+    src: p5 "6.1 Absolute Maximum Ratings, Peak pulse power (tp = 8/20 µs)"
   operating_temperature:
     min: -40 °C
     max: 85 °C

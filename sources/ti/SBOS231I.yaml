@@ -1,0 +1,17 @@
+# Official TI datasheet "TMP10x Temperature Sensor With I2C and SMBus Interface with ...". Downloaded 2026-11-17 with curl from the
+# TI symlink URL below; revision read from the page header "SBOS231I - JANUARY 2002 - REVISED NOVEMBER 2015".
+# 31 PDF pages; text read with pdftotext -layout, package drawings read
+# from pages rendered with pdftoppm. Page numbers are PDF page indices.
+# The PACKAGE OPTION ADDENDUM at the end of the PDF is dated 21-Apr-2026 (newer
+# than the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SBOS231I
+sha256: 4099b7e562d9333140b60526c32908a082ef300d019266161e9a2b118e52fc29
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/tmp100.pdf
+publisher: ti
+document_id: SBOS231I
+document_type: datasheet
+revision: I
+date: 2015-11

@@ -1,0 +1,19 @@
+# Microchip "PIC18F27/47/57Q43" data sheet (covers PIC18F25/26/27/45/46/
+# 47/55/56/57Q43), document DS40002147E (footer "DS40002147E-page n",
+# "Preliminary Datasheet"; date from Appendix A Revision History "E 12/2020", page 950), 955 PDF pages. Downloaded with curl
+# from ww1.microchip.com/downloads/en/DeviceDoc (URL below); the newer
+# aemDocuments copy answered 403 via the filehandler redirect, so revision
+# E is the one read. PDF page indices equal the printed page numbers. Pin
+# allocation tables (pages 15-19) and package tables read with pdftotext
+# -layout; page 15 and the SOIC page 929 also rendered and read.
+schema_version: "0.2"
+kind: source
+id: microchip/DS40002147@revE
+sha256: 4cd1aa631d40064ac2e7a69a37e92c05e67e27688491e205f3a6385f367f4fd9
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47-57Q43-Data-Sheet-DS40002147E.pdf
+publisher: microchip
+document_id: DS40002147
+document_type: datasheet
+revision: E
+date: 2020-12

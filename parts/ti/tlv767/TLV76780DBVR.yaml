@@ -1,0 +1,25 @@
+# Orderable MPN in the Package Option Addendum of SLVSE84D (page 27):
+# "TLV76780DBVR | Active | Production | SOT-23 (DBV) | 5 | 3000 | LARGE
+# T&R"; marking 2D2T. The only DBV orderable listed. Output voltage
+# from Table 12-1 "Available Options": two digits for 100-mV
+# resolution, "80" -> 8.0 V.
+schema_version: "0.2"
+kind: part
+id: ti/TLV76780DBVR
+manufacturer: ti
+mpn: TLV76780DBVR
+device: ti/TLV767-DBV
+package: { value: manufacturers/ti/DBV0005A, src: p33 "PACKAGE OUTLINE DBV0005A (4214839/K)" }
+sources: [ti/SLVSE84D]
+source: ti/SLVSE84D
+
+existence:
+  status: verified
+  src: p27 "Package Option Addendum, Packaging Information, row TLV76780DBVR"
+
+lifecycle: { status: active, src: 'p27 "Package Option Addendum, row TLV76780DBVR, Status Active"' }
+
+parameters:
+  output_voltage:
+    typ: 8 V
+    src: 'p25 "Table 12-1 Available Options, xx(x) nominal output voltage, two digits for 100 mV: 80"'

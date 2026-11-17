@@ -22,3 +22,4 @@ existence:
   src: p28 "Package Option Addendum, Packaging Information table, row INA240A4DR"
 
 lifecycle: { status: active, src: 'p28 "Package Option Addendum, row INA240A4DR, Status Active"' }
+parameters: { gain: { typ: 200 V/V, src: 'p5 "7.5 Electrical Characteristics, G gain, INA240A4"' } }

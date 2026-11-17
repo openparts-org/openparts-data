@@ -12,7 +12,21 @@ category: diode
 family: TPD4E1U06
 source: ti/SLVSBQ9E
 
-parameters: { reverse_voltage: { max: 5.5 V, src: 'p5 "5.6 Electrical Characteristics, VRWM"' } }
+parameters:
+  reverse_voltage: { max: 5.5 V, src: 'p5 "5.6 Electrical Characteristics, VRWM"' }
+  clamping_voltage:
+    - typ: 11 V
+      at: { IPP: 1 A }
+      src: p5 "5.6 Electrical Characteristics, VCLAMP, IPP = 1 A, tp = 8/20 µs, I/O to GND"
+    - typ: 15 V
+      at: { IPP: 3 A }
+      src: p5 "5.6 Electrical Characteristics, VCLAMP, IPP = 3 A, tp = 8/20 µs, I/O to GND"
+  peak_pulse_current:
+    max: 3 A
+    src: p4 "5.1 Absolute Maximum Ratings, IPP IEC 61000-4-5 surge (8/20 µs) peak pulse current"
+  peak_pulse_power:
+    max: 45 W
+    src: p4 "5.1 Absolute Maximum Ratings, PPP IEC 61000-4-5 surge (8/20 µs) peak pulse power"
 
 pins:
   src:

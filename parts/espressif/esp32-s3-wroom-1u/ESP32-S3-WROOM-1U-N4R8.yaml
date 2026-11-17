@@ -1,0 +1,25 @@
+# ESP32-S3-WROOM-1U-N4R8: listed in the module datasheet's series comparison
+# table (p3 Table 1-2 ESP32-S3-WROOM-1U Series Comparison) -> existence
+# verified. Lifecycle: the datasheet states no status for this part ->
+# unknown.
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-S3-WROOM-1U-N4R8
+manufacturer: espressif
+mpn: ESP32-S3-WROOM-1U-N4R8
+device: espressif/ESP32-S3-WROOM-1U
+package: manufacturers/espressif/MODULE41-18x19.2-ESP32-S3-WROOM-1U
+sources: [espressif/esp32-s3-wroom-1_wroom-1u_datasheet_en@rev1.8]
+source: espressif/esp32-s3-wroom-1_wroom-1u_datasheet_en@rev1.8
+
+existence:
+  status: verified
+  src: 'p3 "Table 1-2 ESP32-S3-WROOM-1U Series Comparison, Part Number: ESP32-S3-WROOM-1U-N4R8"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 65 °C
+    src: p3 "Table 1-2 ESP32-S3-WROOM-1U Series Comparison, ESP32-S3-WROOM-1U-N4R8, Ambient Temp."

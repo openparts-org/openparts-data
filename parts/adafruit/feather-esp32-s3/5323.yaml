@@ -24,14 +24,14 @@ lifecycle: { status: unknown }
 
 assembly:
   - ref: U1
-    part: espressif/ESP32-S2-MINI-1-N4
-    stand_in_for: ESP32-S3-MINI-1 module, 8 MB flash, no PSRAM (README); same MINI-1 15.4x20.5 land pattern
+    part: espressif/ESP32-S3-MINI-1-N8
     x: 0
     y: -12.935
     rotation: 180
     src:
       - '"Adafruit U1 at 40.64, 11.43 rot 270"'
-      - '"U1 value ESP32-S3-MINI-1, footprint QFN60_ESP32-S2-MINI-1_EXP; stand-in fitted to its 73 pads (mean 0.0 mm)"'
+      - '"U1 value ESP32-S3-MINI-1 (8 MB flash, no PSRAM per README), footprint QFN60_ESP32-S2-MINI-1_EXP; 73 pads"'
+      - '"Fit of the S2-MINI-1 footprint (mean 0.0 mm); the S3-MINI-1 land is identical, so the same placement"'
   - ref: U2
     part: diodes/AP2112K-3.3TRG1
     stand_in_for: value "AP2112/RT9080-3.3" (either fitted), SOT23-5

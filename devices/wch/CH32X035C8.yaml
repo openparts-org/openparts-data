@@ -1,0 +1,111 @@
+# CH32X035 pinout for CH32X035C8T6 (LQFP48), from WCH CH32X035 datasheet V2.3
+# Table 2-1 "CH32X035 Pin definitions" (LQFP48 column, PDF pages 17-19),
+# checked against the Section 2.1 CH32X035C8T6 pinout figure (PDF page 13): same pin at the same numbers.
+# Names are the port names (main function after reset).
+# Types: VDD power, GND ground, port pins io (table types I/O, I/O/A).
+# `alternate_functions`: ADC channels (Table 2-1 "A<n>" = ADC channel n,
+# written ADC_IN<n>) and, from the "Default alternate function" column,
+# UDM/UDP (USB, PC16/PC17), CC1/CC2 (USB PD, PC14/PC15), DIO/DCK (debug,
+# PC18/PC19) and RST where the table and its notes give it to this
+# package; timer/USART/SPI/I2C/OPA/CMP functions and remaps (Table 2-3)
+# are not listed.
+# Note 8 (PDF page 19): PC17 is the BOOT detection pin (high at power-up
+# enters the BOOT area).
+# CH32X035C8: 62K flash, 20K SRAM (product resource table, PDF page 2,
+# row CH32X035C8T6).
+# Note 4 (PDF page 18): on this package PC10 is shorted inside the chip to
+# PC17 (pin 33) and PC11 to PC16 (pin 32); neither IO of a pair may be
+# configured as an output (the pinout figure labels the pins
+# PC17/.../PC10 and PC16/.../PC11). Recorded by the PC16/PC17 names.
+schema_version: "0.2"
+kind: device
+id: wch/CH32X035C8
+manufacturer: wch
+category: microcontroller
+family: CH32X035
+source: wch/CH32X035DS0@V2.3
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 5.5 V
+    src: p26 "Table 3-2 General operating conditions, VDD, USB/PD function disabled (3.0-5.3 V with USB/PD)"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p25 "Table 3-1 Absolute maximum ratings, TA Ambient temperature during operation"
+  esd_hbm:
+    typ: 4 kV
+    src: p25 "Table 3-1 Absolute maximum ratings, VESD(HBM) common I/O pins 4K V"
+
+pins:
+  src:
+    - p17 "Table 2-1 CH32X035 Pin definitions, LQFP48 column (cont. p18-19)"
+    - p13 "Section 2.1 CH32X035C8T6 pinout"
+  "1":  { name: PA15, type: io }
+  "2":  { name: PA16, type: io }
+  "3":  { name: PA17, type: io }
+  "4":  { name: PA18, type: io }
+  "5":  { name: PA19, type: io }
+  "6":  { name: PA20, type: io }
+  "7":  { name: PA21, type: io, alternate_functions: [RST] }
+  "8":  { name: PA22, type: io }
+  "9":  { name: PA23, type: io }
+  "10": { name: PA0, type: io, alternate_functions: [ADC_IN0] }
+  "11": { name: PA1, type: io, alternate_functions: [ADC_IN1] }
+  "12": { name: PA2, type: io, alternate_functions: [ADC_IN2] }
+  "13": { name: PA3, type: io, alternate_functions: [ADC_IN3] }
+  "14": { name: PA4, type: io, alternate_functions: [ADC_IN4] }
+  "15": { name: PA5, type: io, alternate_functions: [ADC_IN5] }
+  "16": { name: PA6, type: io, alternate_functions: [ADC_IN6] }
+  "17": { name: PA7, type: io, alternate_functions: [ADC_IN7] }
+  "18": { name: PC6, type: io }
+  "19": { name: PC7, type: io }
+  "20": { name: PB0, type: io, alternate_functions: [ADC_IN8] }
+  "21": { name: PB1, type: io, alternate_functions: [ADC_IN9] }
+  "22": { name: PB2, type: io }
+  "23": { name: PB3, type: io }
+  "24": { name: PB4, type: io }
+  "25": { name: PB5, type: io }
+  "26": { name: PB6, type: io }
+  "27": { name: PB7, type: io }
+  "28": { name: PB8, type: io }
+  "29": { name: PB9, type: io }
+  "30": { name: PB10, type: io }
+  "31": { name: PB11, type: io }
+  "32":
+    name: PC16
+    type: io
+    alternate_functions: [UDM]
+    diff_pair:
+      partner: "33"
+      polarity: n
+      standard: usb2
+      function: UDM
+      src: p18 "Table 2-1, PC16 UDM / PC17 UDP default alternate functions"
+  "33":
+    name: PC17
+    type: io
+    alternate_functions: [UDP]
+    diff_pair:
+      partner: "32"
+      polarity: p
+      standard: usb2
+      function: UDP
+      src: p18 "Table 2-1, PC16 UDM / PC17 UDP default alternate functions"
+  "34": { name: PC18, type: io, alternate_functions: [DIO] }
+  "35": { name: PB12, type: io }
+  "36": { name: PB13, type: io }
+  "37": { name: PC19, type: io, alternate_functions: [DCK] }
+  "38": { name: PC14, type: io, alternate_functions: [CC1] }
+  "39": { name: PC15, type: io, alternate_functions: [CC2] }
+  "40": { name: PA8, type: io }
+  "41": { name: PA9, type: io }
+  "42": { name: PA10, type: io }
+  "43": { name: PA11, type: io }
+  "44": { name: PA12, type: io }
+  "45": { name: PA13, type: io }
+  "46": { name: PA14, type: io }
+  "47": { name: GND, type: ground }
+  "48": { name: VDD, type: power }

@@ -1,0 +1,26 @@
+# STS31-DIS-2.5kS: printed verbatim in Table 20 "STS3x-DIS ordering options"
+# (Datasheet STS3x-DIS v6.1, page 16, Name column, with its Order Number)
+# -> existence verified. lifecycle: unknown (no first-party status).
+# Package: the SHT3x-DIS DFN (Table 19 / Figure 9 of this datasheet give
+# the same outline and land pattern).
+schema_version: "0.2"
+kind: part
+id: sensirion/STS31-DIS-2.5kS
+manufacturer: sensirion
+mpn: STS31-DIS-2.5kS
+device: sensirion/STS31-DIS
+
+package:
+  value: manufacturers/sensirion/DFN8-2.5x2.5-P0.5-SHT3x
+  src:
+    - p14 "Table 19 Package outline (same values as the SHT3x-DIS DFN)"
+    - p15 "Figure 9 Recommended metal land pattern"
+
+sources: [sensirion/Datasheet_STS3x_DIS@v6.1]
+source: sensirion/Datasheet_STS3x_DIS@v6.1
+
+existence:
+  status: verified
+  src: p16 "Table 20 STS3x-DIS ordering options, row STS31-DIS-2.5kS"
+
+lifecycle: { status: unknown }

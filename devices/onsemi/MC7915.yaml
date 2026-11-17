@@ -1,0 +1,36 @@
+# MC7915B / MC7915C -15 V, 1.0 A negative regulator, TO-220 CASE
+# 221AB pinout. MC7900/D Rev. 21 page 1: "Pin 1. Ground 2. Input
+# 3. Output"; the TO-220 heatsink surface is "connected to Pin 2" and is
+# not a board pad of a vertical TO-220 (pins 1-3 only). One
+# electrical-characteristics table covers both grades ("MC7915B,
+# MC7915C"; Tlow = -40 C for B, 0 C for C).
+schema_version: "0.2"
+kind: device
+id: onsemi/MC7915
+manufacturer: onsemi
+category: linear_regulator
+family: MC7900
+source: onsemi/MC7900-D
+
+parameters:
+  output_type: { value: fixed, src: p1 "Description" }
+  output_voltage:
+    - min: -15.6 V
+      typ: -15 V
+      max: -14.4 V
+      at: { TJ: 25 °C }
+      src: p6 "Elec. Char. MC7915B, MC7915C, Output Voltage (TJ = +25°C)"
+    - min: -15.75 V
+      max: -14.25 V
+      at: { VIN: -30..-17.5 V, IOUT: 5..1000 mA }
+      src: p6 "Elec. Char. MC7915B, MC7915C, Output Voltage, 5.0 mA <= IO <= 1.0 A, P <= 15 W"
+  dropout_voltage:
+    typ: 1.3 V
+    at: { IOUT: 1 A, TJ: 25 °C }
+    src: p6 "Elec. Char. MC7915B, MC7915C, Dropout Voltage (IO = 1.0 A, TJ = +25°C)"
+
+pins:
+  src: p1 "Pinout box "Pin 1. Ground 2. Input 3. Output"; heatsink surface connected to Pin 2"
+  "1": { name: Ground, type: ground }
+  "2": { name: Input, type: power }
+  "3": { name: Output, type: power }

@@ -1,0 +1,17 @@
+# Toshiba SSM3K44MFV datasheet (English), 5 PDF pages, footer date
+# 2026-04-14, no revision number printed. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=363); downloaded 2026-11-17 with curl.
+# Read with pdftotext -layout; the image-only package drawing was
+# rendered with pdftoppm and read as an image. Page numbers are PDF
+# page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/SSM3K44MFV-datasheet-en
+sha256: 529c02c801730e3c1752354d519aae8c155b4acd47bf52a63ec519f18c8afa95
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=363&prodName=SSM3K44MFV
+publisher: toshiba
+document_id: SSM3K44MFV_datasheet_en
+document_type: datasheet
+revision: 2026-04-14
+date: 2026-04-14

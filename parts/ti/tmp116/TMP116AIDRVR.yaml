@@ -1,0 +1,27 @@
+# Orderable MPN printed in the PACKAGE OPTION ADDENDUM of the datasheet;
+# lifecycle "Active" read from the same row's Status column (TI's own
+# addendum inside the datasheet, newer than the datasheet revision).
+# Package: WSON (DRV), outline DRV0006B (4223922/A) on page 40.
+schema_version: "0.2"
+kind: part
+id: ti/TMP116AIDRVR
+manufacturer: ti
+mpn: TMP116AIDRVR
+device: ti/TMP116
+
+package:
+  value: manufacturers/ti/DRV0006B
+  src:
+    - p43 "PACKAGE OPTION ADDENDUM, row TMP116AIDRVR, Package column"
+    - p40 "PACKAGE OUTLINE DRV0006B (4223922/A)"
+
+sources: [ti/SBOS740A]
+source: ti/SBOS740A
+
+existence:
+  status: verified
+  src: p43 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TMP116AIDRVR"
+
+lifecycle:
+  status: active
+  src: p43 "PACKAGE OPTION ADDENDUM, row TMP116AIDRVR, Status column Active"

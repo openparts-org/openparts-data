@@ -1,0 +1,39 @@
+# TMP236 analog-output temperature sensor, 5-pin SC70 (DCK). Pins from "Pin
+# Functions", column SC70 (SBOS857E page 3). VDD (type I, "Positive
+# supply input") typed power; VOUT (O, voltage proportional to
+# temperature) analog; GND ground; NC (no internal connection) nc. The
+# other package has another pin map (separate Device).
+schema_version: "0.2"
+kind: device
+id: ti/TMP236-DCK
+manufacturer: ti
+category: temperature_sensor
+family: TMP23x
+source: ti/SBOS857E
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: analog
+    src: p1 "TMP23x Low-Power, High-Accuracy Analog Output Temperature Sensors"
+  supply_voltage:
+    min: 3.1 V
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, VDD Input voltage (TMP236)"
+  supply_current:
+    typ: 10 µA
+    at: { VDD: 3.1 V, TA: 25 °C }
+    src: p5 "6.5 Electrical Characteristics, IDD Operating current, TMP236"
+  operating_temperature:
+    min: -40 °C
+    max: 150 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA Operating free-air temperature"
+  esd_hbm: { typ: 4 kV, src: 'p4 "6.2 ESD Ratings, HBM ±4000 V"' }
+
+pins:
+  src: p3 "Pin Functions, column SC70"
+  "1": { name: NC, type: nc }
+  "2": { name: GND, type: ground }
+  "3": { name: VOUT, type: analog }
+  "4": { name: VDD, type: power }
+  "5": { name: NC, type: nc }

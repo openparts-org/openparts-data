@@ -1,0 +1,39 @@
+# Bourns PTV09 9 mm carbon potentiometer, single gang (PTV09A). Pins from
+# the page-1 schematic: 1 and 3 the element ends, 2 the wiper; the two
+# mounting lugs (slots in the recommended PCB layouts) are "MP"
+# (mechanical, passive). Series-level device: the resistance is per Part
+# (Standard Resistance Table code). The taper letter of the MPN ("B") is
+# not decoded in this datasheet, so no taper is recorded.
+schema_version: "0.2"
+kind: device
+id: bourns/PTV09
+manufacturer: bourns
+category: potentiometer
+family: PTV09
+source: bourns/PTV09
+
+parameters:
+  tolerance: { tol: ±20 %, src: 'p1 "Electrical Characteristics, Standard Resistance Tolerance"' }
+  rated_voltage:
+    max: 20 V
+    src: p1 "Environmental Characteristics, Maximum Operating Voltage 20 VDC"
+  power_rating:
+    typ: 0.05 W
+    src: p1 "Environmental Characteristics, Power Rating (Linear and Audio)"
+  operating_temperature:
+    min: -10 °C
+    max: 50 °C
+    src: p1 "Environmental Characteristics, Operating Temperature"
+  rotation_angle:
+    min: 270 °
+    typ: 280 °
+    max: 290 °
+    src: p1 "Mechanical Characteristics, Mechanical Angle 280 ° ±10 °"
+  resistive_element: { value: carbon, src: 'p1 "Features, Carbon element"' }
+
+pins:
+  src: p1 "Schematic, terminals 1, 2, 3; PCB layouts, 2 lug slots"
+  "1": { name: "1", type: passive }
+  "2": { name: WIPER, type: passive }
+  "3": { name: "3", type: passive }
+  MP:  { name: MP, type: passive }

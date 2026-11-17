@@ -1,0 +1,43 @@
+# TMP116 / TMP116N high-accuracy digital temperature sensor, 6-pin WSON
+# (DRV) -- the only package of the device. Pins from "Pin Functions"
+# (SBOS740A page 3), checked against the "DRV Package 6-Pin WSON Top
+# View" figure (same page). V+ is type "I" in the table; typed power
+# from its description ("Supply voltage"); SCL clock, ALERT (open-drain
+# output) output, SDA io. The thermal pad is not listed as a pin.
+# TMP116 and TMP116N differ only in accuracy grade (one Device).
+schema_version: "0.2"
+kind: device
+id: ti/TMP116
+manufacturer: ti
+category: temperature_sensor
+family: TMP116
+source: ti/SBOS740A
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: i2c
+    src: p3 "Pin Functions, SCL Serial clock / SDA (I2C- and SMBus-compatible)"
+  supply_voltage:
+    min: 1.9 V
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, V+ Supply voltage"
+  supply_current:
+    typ: 16 µA
+    max: 22 µA
+    at: { TA: 25 °C }
+    src: p5 "6.5 Electrical Characteristics, IQ, 1-Hz conversion cycle, 8 averages mode, serial bus inactive"
+  operating_temperature:
+    min: -55 °C
+    max: 150 °C
+    src: p4 "6.3 Recommended Operating Conditions, TA Operating free-air temperature"
+  esd_hbm: { typ: 2 kV, src: 'p4 "6.2 ESD Ratings, HBM ±2000 V"' }
+
+pins:
+  src: [p3 "Pin Functions", p3 "DRV Package 6-Pin WSON Top View (cross-check)"]
+  "1": { name: SCL, type: clock }
+  "2": { name: GND, type: ground }
+  "3": { name: ALERT, type: output }
+  "4": { name: ADD0, type: input }
+  "5": { name: V+, type: power }
+  "6": { name: SDA, type: io }

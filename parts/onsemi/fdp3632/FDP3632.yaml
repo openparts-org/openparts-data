@@ -1,0 +1,42 @@
+# FDP3632: printed verbatim in the datasheet's ORDERING INFORMATION
+# table (page 1) -> existence verified.
+# Package: datasheet page 1 "CASE 340AT"; outline from the standalone
+# drawing 98AON13818G.
+# No lifecycle statement for this MPN.
+schema_version: "0.2"
+kind: part
+id: onsemi/FDP3632
+manufacturer: onsemi
+mpn: FDP3632
+device: onsemi/FDP3632
+
+package:
+  value: manufacturers/onsemi/TO220-3LD-340AT
+  src: [p1 "Package callout "CASE 340AT"", onsemi/98AON13818G p1 "CASE 340AT outline"]
+
+sources: [onsemi/FDP3632-D, onsemi/98AON13818G]
+source: onsemi/FDP3632-D
+
+existence:
+  status: verified
+  src: p1 "ORDERING INFORMATION, "FDP3632 | TO-220 (Pb-Free) | 50 Units / Tube""
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: p1 "Title" }
+  drain_source_voltage: { max: 100 V, src: 'p1 "MOSFET Maximum Ratings, VDSS"' }
+  drain_current:
+    max: 80 A
+    at: { VGS: 10 V, TC: 111 °C }
+    src: p1 "MOSFET Maximum Ratings, ID Continuous (TC < 111°C, VGS = 10 V)"
+  rds_on:
+    typ: 7.5 mΩ
+    max: 9 mΩ
+    at: { VGS: 10 V, ID: 80 A }
+    src: p2 "Elec. Char., On Characteristics, RDS(ON), ID = 80 A, VGS = 10 V"
+  gate_threshold_voltage:
+    min: 2 V
+    max: 4 V
+    at: { ID: 250 µA }
+    src: p2 "Elec. Char., On Characteristics, VGS(TH), VGS = VDS"

@@ -1,0 +1,29 @@
+# ATSAMD51G19A-MU: assembled with Figure 2-1 "Composition of the Ordering
+# Numbers" (DS60001507N PDF page 19): SAM D51, G = 48 pins, 19 = 512 KB, A = default variant, package type "M = VQFN" (48-pin VQFN drawing C04-21425 Rev A, section 59.3.1, PDF pages 1940-1941), grade "U = -40C to +85C
+# Matte Sn Plating (Industrial)", tray. The base device is listed in the
+# configuration summary (Table 1-2, SAMD51G19 row, PDF page 18).
+# existence is "probable", not "verified": the full string does not
+# appear in an orderable list in this data sheet, and Figure 2-1 note 1
+# says "Not all combinations are valid".
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATSAMD51G19A-MU
+manufacturer: microchip
+mpn: ATSAMD51G19A-MU
+device: microchip/ATSAMD51G19A
+package: { value: standards/QFN48-7x7-P0.5-EP5.15, src: 'p19 "Figure 2-1, Package Type M = VQFN"' }
+sources: [microchip/DS60001507@revN]
+source: microchip/DS60001507@revN
+
+existence:
+  status: probable
+  src: p19 "Figure 2-1 Composition of the Ordering Numbers; SAMD51G19 row, Table 1-2 p18"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: 'p1868 "54 Electrical Characteristics at 85 C, DC header: -40 <= TA <= +85 C (specified)"'

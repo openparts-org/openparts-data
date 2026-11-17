@@ -1,0 +1,63 @@
+# Bourns PEC11R-2xxxF-N right-angle encoder ("PC Pin Vertical / Side Facing 10 mm": the
+# housing stands on the board, the shaft parallel to it), no switch,
+# shaft length L = 15 mm (bourns/PEC11R page 1, drawing "PEC11R-2xxxF-Nxxxx",
+# its PCB hole layout, and the page-3 flatted shaft table L/LB).
+# Frame (spec 20.14): top view turned so the shaft points to +Y, origin
+# on the centre of the housing outline "12.5" (X, front view) x "5.5"
+# (Y, side view: rear face to mounting surface; the mounting surface is
+# the +Y face). The A/C/B holes and both lug slots lie on one line
+# (hole-layout centre line); the side view puts it "2.6" from the rear
+# face and "3.0" from the mounting surface (sum 5.6 against the printed
+# 5.5); the mounting-surface figure is used: y = 2.75 - 3.0 = -0.25.
+# In X the front view's centre line runs through the shaft and C; A to B
+# "5.0". The hole layout prints "10.8" between the inner edges of the two
+# lug slots ("2" wide): slot centres 10.8 + 2 = 12.8 apart.
+# Holes "1.0 +0.1/-0"; slots "2 +0.2/-0" (X) x "2.1 +0.2/-0" (Y).
+# Orientation: the front view (seen from the shaft end) prints A C B
+# left to right, which in the shaft-up top view puts A at +X (the hole
+# layout is the same top view drawn with the shaft toward the reader).
+# Housing height: the front view's "13.4" (its standoff above the board
+# is not printed). Shaft: L from the mounting surface ("15"), bushing M7
+# x 0.75, LB "5" (page-3 flatted shaft table).
+schema_version: "0.2"
+kind: package
+id: manufacturers/bourns/PEC11R-2-L15
+family: rotary_encoder
+lead_count: { value: 5, src: 'p1 "PEC11R-2xxxF-Nxxxx PCB layout, 1.0 DIA. 3 PLCS. + 2 slots"' }
+source: bourns/PEC11R
+
+pitch:
+  typ: 2.5 mm
+  src: p1 "PEC11R-2xxxF-Nxxxx PCB layout, A to B "5.0", C on the centre line"
+
+actuation: { value: side, src: 'p3 "How To Order, 2 = PC Pin Vertical / Side Facing 10 mm"' }
+
+geometry: { type: parametric, generator: rotary_encoder }
+
+dimensions:
+  body_width:       { typ: 12.5 mm, src: p1 "PEC11R-2xxxF-Nxxxx front view "12.5"" }
+  body_length:
+    typ: 5.5 mm
+    src: p1 "PEC11R-2xxxF-Nxxxx side view "5.5" rear face to mounting surface"
+  body_height: { typ: 13.4 mm, src: p1 "PEC11R-2xxxF-Nxxxx front view "13.4" (housing height)" }
+  bushing_length:   { typ: 5 mm, src: 'p3 "Shaft Dimensions, flatted shaft table L 15 / LB 5"' }
+  actuator_diameter:
+    min: 5.9 mm
+    max: 6.1 mm
+    src: p1 "PEC11R-2xxxF-Nxxxx side view, shaft "6.0 ± 0.1" DIA."
+  actuator_length:
+    typ: 15 mm
+    src: p3 "Shaft Dimensions, flatted shaft L = 15 from mounting surface"
+  actuator_elevation:
+    typ: 10 mm
+    src: p1 "PEC11R-2xxxF-Nxxxx side view '10' shaft axis to housing bottom"
+  bushing_diameter: { typ: 7 mm, src: 'p1 "PEC11R-2xxxF-Nxxxx side view, M7 x 0.75"' }
+
+pads:
+  value:
+    - { number: A, x: 2.5, y: -0.25, drill: 1 }
+    - { number: C, x: 0, y: -0.25, drill: 1 }
+    - { number: B, x: -2.5, y: -0.25, drill: 1 }
+    - { number: MP, x: -6.4, y: -0.25, drill: 2, drill_length: 2.1, slot_axis: y }
+    - { number: MP, x: 6.4, y: -0.25, drill: 2, drill_length: 2.1, slot_axis: y }
+  src: p1 "PEC11R-2xxxF-Nxxxx PCB layout and side view, "5.0", '10.8' between the slots + slot '2' = 12.8 c-c (see comment)"

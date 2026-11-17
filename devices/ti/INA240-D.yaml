@@ -2,7 +2,7 @@
 # rejection, D (SOIC-8) pin map from Table 6-1 "Pin Functions"
 # (SBOS662C page 3), D (SOIC) column, checked against Figure 6-2. The
 # PW (TSSOP) map differs and is not covered. Gain options A1-A4
-# (20/50/100/200 V/V) and bandwidth have no parameter key.
+# (20/50/100/200 V/V) are `gain` on the Parts; bandwidth has no key.
 schema_version: "0.2"
 kind: device
 id: ti/INA240-D
@@ -17,7 +17,7 @@ parameters:
   supply_current:
     typ: 1.8 mA
     max: 2.4 mA
-    at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+    at: { VS: 5 V, VCM: 12 V, TA: 25 °C }
     src: p5 "7.5 Electrical Characteristics, IQ, VSENSE = 0 mV"
   operating_temperature:
     min: -40 °C
@@ -29,12 +29,16 @@ parameters:
   input_offset_voltage:
     typ: 5 µV
     max: 25 µV
-    at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+    at: { VS: 5 V, VCM: 12 V, TA: 25 °C }
     src: p5 "7.5 Electrical Characteristics, VOS input-referred (printed ±5 / ±25 µV)"
   input_bias_current:
     typ: 90 µA
-    at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+    at: { VS: 5 V, VCM: 12 V, TA: 25 °C }
     src: p5 "7.5 Electrical Characteristics, IB, IB+, IB-, VSENSE = 0 mV"
+  common_mode_voltage:
+    min: -4 V
+    max: 80 V
+    src: p5 "7.5 Electrical Characteristics, VCM common-mode input range"
 
 pins:
   src:

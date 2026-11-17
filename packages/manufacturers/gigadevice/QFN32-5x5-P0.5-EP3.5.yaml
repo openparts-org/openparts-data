@@ -1,0 +1,26 @@
+# GigaDevice QFN32, 5 x 5 mm body, 0.5 mm pitch, 3.5 mm exposed pad:
+# GD32E230xx datasheet Table 5-4 "QFN32 package dimensions" (PDF page
+# 79) with Figure 5-7 "QFN32 package outline". Pin 1 at the top of the
+# left side, counter-clockwise (Figure 2-5, PDF page 14).
+schema_version: "0.2"
+kind: package
+id: manufacturers/gigadevice/QFN32-5x5-P0.5-EP3.5
+family: qfn
+lead_count: 32
+source: gigadevice/GD32E230xx_Datasheet@rev2.6
+
+pitch: { typ: 0.5 mm, src: 'p79 "Table 5-4 QFN32 package dimensions, symbol e"' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  src:         p79 "Table 5-4 QFN32 package dimensions"
+  body_width:  { min: 4.9 mm, typ: 5 mm, max: 5.1 mm, src: 'p79 "Table 5-4, symbol E"' }
+  body_length: { min: 4.9 mm, typ: 5 mm, max: 5.1 mm, src: 'p79 "Table 5-4, symbol D"' }
+  body_height: { min: 0.7 mm, typ: 0.75 mm, max: 0.8 mm, src: 'p79 "Table 5-4, symbol A"' }
+  exposed_pad:
+    src:    p79 "Table 5-4, symbols D2 / E2"
+    width:  { min: 3.4 mm, typ: 3.5 mm, max: 3.6 mm }
+    length: { min: 3.4 mm, typ: 3.5 mm, max: 3.6 mm }
+  standoff:    { min: 0 mm, typ: 0.02 mm, max: 0.05 mm, src: 'p79 "Table 5-4, symbol A1"' }
+  lead_width:  { min: 0.18 mm, typ: 0.25 mm, max: 0.3 mm, src: 'p79 "Table 5-4, symbol b"' }
+  lead_length: { min: 0.35 mm, typ: 0.4 mm, max: 0.45 mm, src: 'p79 "Table 5-4, symbol L"' }

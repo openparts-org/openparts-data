@@ -1,0 +1,36 @@
+# ATTINY427-MF: 4 KB/512B, 24 pins, VQFN, -40 to +125 C. Ordering
+# code printed in Table 35-1 "Available Product Numbers" (DS40002311B page
+# 541); package letter decoded with the Product Identification
+# System (page 542).
+# lifecycle: no production-status statement in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATTINY427-MF
+manufacturer: microchip
+mpn: ATTINY427-MF
+device: microchip/ATtiny427
+
+package:
+  value: manufacturers/microchip/VQFN24-4x4-P0.5-EP2.6-C04-21386
+  src:
+    - p541 "Table 35-1 row ATTINY427-MF, Package Type"
+    - p565 "Section 36.3 24-Pin VQFN, drawing C04-21386 Rev A sheet 2"
+
+sources: [microchip/DS40002311@revB]
+source: microchip/DS40002311@revB
+
+existence:
+  status: verified
+  src: p541 "Table 35-1 Available Product Numbers, row ATTINY427-MF"
+
+lifecycle: { status: unknown }
+
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p475 "Table 33-2 General Operating Conditions, VDD, VAO - Auto Grade and Extended Operating temperature range"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p475 "Table 33-2 General Operating Conditions, TA Extended -40 to 125"

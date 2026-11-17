@@ -1,0 +1,17 @@
+# Toshiba SSM3J327R datasheet (English), 9 PDF pages, footer date
+# 2026-05-26, Rev.3.0. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=2051); downloaded 2026-11-17 with curl.
+# Read with pdftotext -layout; the image-only package drawing was
+# rendered with pdftoppm and read as an image. Page numbers are PDF
+# page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/SSM3J327R-datasheet-en
+sha256: 20f7ea0ad57be512e0fcc6fe6e65b59851a9698c8f5070e25d1477caeeaa7699
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=2051&prodName=SSM3J327R
+publisher: toshiba
+document_id: SSM3J327R_datasheet_en
+document_type: datasheet
+revision: "3.0"
+date: 2026-05-26

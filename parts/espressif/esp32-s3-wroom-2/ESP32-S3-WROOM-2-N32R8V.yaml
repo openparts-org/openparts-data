@@ -1,0 +1,30 @@
+# ESP32-S3-WROOM-2-N32R8V: listed in the module datasheet's series comparison table
+# (p3 Table 1-1 ESP32-S3-WROOM-2 Series Comparison) -> existence verified;
+# marked "(EOL)" there -> eol_announced.
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-S3-WROOM-2-N32R8V
+manufacturer: espressif
+mpn: ESP32-S3-WROOM-2-N32R8V
+device: espressif/ESP32-S3-WROOM-2
+package: manufacturers/espressif/MODULE41-18x25.5-ESP32-S3-WROOM-2
+
+sources:
+  - espressif/esp32-s3-wroom-2_datasheet_en@rev1.7
+  - espressif/esp32-s3_hardware_design_guidelines_en@rev1.8
+
+source: espressif/esp32-s3-wroom-2_datasheet_en@rev1.7
+
+existence:
+  status: verified
+  src: 'p3 "Table 1-1 ESP32-S3-WROOM-2 Series Comparison, Part Number: ESP32-S3-WROOM-2-N32R8V"'
+
+lifecycle:
+  status: eol_announced
+  src: 'p3 "Table 1-1 ESP32-S3-WROOM-2 Series Comparison: ESP32-S3-WROOM-2-N32R8V (EOL)"'
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 65 °C
+    src: p3 "Table 1-1 ESP32-S3-WROOM-2 Series Comparison, Ambient Temp. -40 ~ 65"

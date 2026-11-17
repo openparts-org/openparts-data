@@ -1,0 +1,21 @@
+# Official TI datasheet "CD4060B Types CMOS 14-Stage Ripple-Carry Binary
+# Counter/Divider and Oscillator". Downloaded 2026-11-17 from the TI
+# symlink URL below with curl (HTTP 200, PDF); revision read from the
+# page header "SCHS049C - Revised October 2003". 29 PDF pages; pages 1-4
+# are scans and were rendered and read. The PDF carries two package
+# addenda: an old one (pages 5-14, dated 15-Oct-2009) and the current one
+# (pages 15-28, PACKAGE OPTION ADDENDUM dated 18-Sep-2026); ordering
+# codes and outlines are cited from the current one. Page numbers in
+# this dataset are PDF page indices. sha256 is of the PDF as downloaded
+# on 2026-11-17.
+schema_version: "0.2"
+kind: source
+id: ti/SCHS049C
+sha256: 393cbd8ba22d5db0e972aa6cf8dc94467197eb3ae5e6f130503db7d9f1be8c2c
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/cd4060b.pdf
+publisher: ti
+document_id: SCHS049C
+document_type: datasheet
+revision: C
+date: 2003-10

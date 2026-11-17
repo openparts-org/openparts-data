@@ -30,9 +30,10 @@ parameters:
   input_offset_voltage:
     - typ: 100 µV
       max: 450 µV
-      at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+      at: { VS: 5 V, VCM: 12 V, TA: 25 °C }
       src: p5 "5.5 EC, VOS RTI, VIN+ = 12 V, A1 devices (printed ±100/±450)"
     - typ: 25 µV
       max: 135 µV
-      at: { VS: 5 V, VIN: 0 V, TA: 25 °C }
+      at: { VS: 5 V, VCM: 0 V, TA: 25 °C }
       src: p5 "5.5 EC, VOS RTI, VIN+ = 0 V, A1 devices (printed ±25/±135)"
+  gain: { typ: 20 V/V, src: 'p5 "5.5 Electrical Characteristics, G gain, A1 devices"' }

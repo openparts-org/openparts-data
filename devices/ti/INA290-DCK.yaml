@@ -2,8 +2,8 @@
 # pin map from Table 5-1 "Pin Functions: INA290 (Single Channel)"
 # (SBOS961C page 3), checked against Figure 5-1. The dual INA2290 and
 # quad INA4290 in the same datasheet are not modelled. Offset voltage
-# depends on the gain option and is on the Parts; gain (20-500 V/V) and
-# bandwidth have no parameter key.
+# depends on the gain option and is on the Parts, as is gain (20-500
+# V/V); bandwidth has no parameter key. VCM min is printed as "VS".
 schema_version: "0.2"
 kind: device
 id: ti/INA290-DCK
@@ -18,7 +18,7 @@ parameters:
   supply_current:
     typ: 370 µA
     max: 500 µA
-    at: { VS: 5 V, VIN: 48 V, TA: 25 °C }
+    at: { VS: 5 V, VCM: 48 V, TA: 25 °C }
     src: p7 "6.5 Electrical Characteristics, IQ, INA290"
   operating_temperature:
     min: -40 °C
@@ -31,8 +31,11 @@ parameters:
     min: 10 µA
     typ: 20 µA
     max: 30 µA
-    at: { VS: 5 V, VIN: 48 V, TA: 25 °C }
+    at: { VS: 5 V, VCM: 48 V, TA: 25 °C }
     src: p6 "6.5 Electrical Characteristics, IB, IB+ and IB-, VSENSE = 0 mV"
+  common_mode_voltage:
+    max: 120 V
+    src: p5 "6.3 Recommended Operating Conditions, VCM common-mode input range (printed min VS, max 120 V)"
 
 pins:
   src:

@@ -1,0 +1,23 @@
+# MPN from the "Ordering Information" table (DS35124 page 9): row
+# "74LVC1G17W5-7", package code W5, SOT25, 3000/Tape & Reel. lifecycle: no
+# production-status statement in the datasheet; unknown.
+# Package: "Package Outline Dimensions" SOT25 table on page 11; the
+# values match the reused package standards/SOT25-3.00x1.60-P0.95-DIODES.
+schema_version: "0.2"
+kind: part
+id: diodes/74LVC1G17W5-7
+manufacturer: diodes
+mpn: 74LVC1G17W5-7
+device: diodes/74LVC1G17
+
+package:
+  value: standards/SOT25-3.00x1.60-P0.95-DIODES
+  src:
+    - p9 ""Ordering Information" table, row "74LVC1G17W5-7", SOT25"
+    - p11 ""Package Outline Dimensions" SOT25"
+
+sources: [diodes/DS35124]
+source: diodes/DS35124
+
+existence: { status: verified, src: 'p9 ""Ordering Information" table, row "74LVC1G17W5-7""' }
+lifecycle: { status: unknown }

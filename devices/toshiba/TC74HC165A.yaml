@@ -1,0 +1,49 @@
+# 8-Bit Shift Register (P-IN, S-OUT) TC74HC165A (TC74HC165AP DIP16, TC74HC165AF SOP16), 16-pin pin
+# map read from the rendered page 1 "Pin Assignment" (TOP VIEW) of the
+# TC74HC165AP/TC74HC165AF datasheet. S/L (pin 1, load active low) is written S/L; QH with overbar (pin 7)
+# is written QH_N, CK INH (pin 15) CK_INH. CK typed clock.
+schema_version: "0.2"
+kind: device
+id: toshiba/TC74HC165A
+manufacturer: toshiba
+category: logic
+family: TC74HC165A
+source: toshiba/TC74HC165AP-datasheet-en
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 2 V, max: 6 V, src: 'p5 "Operating Ranges, Supply voltage VCC 2 to 6 V"' }
+  supply_current:
+    max: 4 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p5 "Electrical Characteristics: Quiescent supply current ICC, VCC 6.0, Ta = 25°C Max"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p5 "Operating Ranges, Operating temperature Topr"
+  channel_count: { value: "1", src: 'p1 "Title: 8-Bit Shift Register (P-IN, S-OUT)"' }
+  propagation_delay:
+    typ: 18 ns
+    max: 30 ns
+    at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+    src: p7 "AC Characteristics (CL = 50 pF), Propagation delay time (CK, CK INH-QH, QH-bar), VCC 4.5, Ta = 25°C"
+  logic_function: { value: shift_register, src: 'p1 "Title: 8-Bit Shift Register (P-IN, S-OUT)"' }
+
+pins:
+  src:  p1 ""Pin Assignment" (TOP VIEW) (rendered)"
+  "1":  { name: S/L, type: input }
+  "2":  { name: CK, type: clock }
+  "3":  { name: E, type: input }
+  "4":  { name: F, type: input }
+  "5":  { name: G, type: input }
+  "6":  { name: H, type: input }
+  "7":  { name: QH_N, type: output }
+  "8":  { name: GND, type: ground }
+  "9":  { name: QH, type: output }
+  "10": { name: SI, type: input }
+  "11": { name: A, type: input }
+  "12": { name: B, type: input }
+  "13": { name: C, type: input }
+  "14": { name: D, type: input }
+  "15": { name: CK_INH, type: input }
+  "16": { name: VCC, type: power }

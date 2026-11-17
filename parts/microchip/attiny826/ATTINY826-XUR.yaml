@@ -1,0 +1,32 @@
+# ATTINY826-XUR: 8 KB/1 KB, 20 pins, SSOP, tape & reel, -40 to +85 C. Ordering
+# code printed in Table 35-1 "Available Product Numbers" (DS40002311B page
+# 542); package letter decoded with the Product Identification
+# System (page 542).
+# lifecycle: no production-status statement in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATTINY826-XUR
+manufacturer: microchip
+mpn: ATTINY826-XUR
+device: microchip/ATtiny826-SOIC20
+
+package:
+  value: manufacturers/microchip/SSOP20-SS-C04-072B
+  src:
+    - p542 "Table 35-1 row ATTINY826-XUR, Package Type"
+    - p556 "Section 36.3 20-Pin SSOP, drawing C04-072B"
+
+sources: [microchip/DS40002311@revB]
+source: microchip/DS40002311@revB
+
+existence:
+  status: verified
+  src: p542 "Table 35-1 Available Product Numbers, row ATTINY826-XUR"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p475 "Table 33-2 General Operating Conditions, TA Industrial -40 to 85"

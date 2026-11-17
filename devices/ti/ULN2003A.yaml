@@ -12,6 +12,12 @@ category: darlington_array
 family: ULN2003A
 source: ti/SLRS027T
 
+# Parameters (AI candidates, needs review).
+parameters:
+  collector_emitter_voltage:
+    max: 50 V
+    src: p4 "5.1 Absolute Maximum Ratings, VCC collector-emitter voltage"
+
 pins:
   src:  p3 "Figure 4-1 (16-pin top view) and Table 4-1 "Pin Functions""
   "1":  { name: 1B, type: input }

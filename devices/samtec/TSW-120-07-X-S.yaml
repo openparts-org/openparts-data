@@ -1,0 +1,30 @@
+# Samtec TSW 1 x 20 straight terminal strip, lead style -07 (samtec/TSW-XXX-XX-XXX-X-XX-XXX-MKT sheet 1 legend). The print names no signals: each
+# position is named by its number, all passive.
+schema_version: "0.2"
+kind: device
+id: samtec/TSW-120-07-X-S
+manufacturer: samtec
+category: connector
+family: TSW
+
+pins:
+  "1":  { name: "1", type: passive }
+  "2":  { name: "2", type: passive }
+  "3":  { name: "3", type: passive }
+  "4":  { name: "4", type: passive }
+  "5":  { name: "5", type: passive }
+  "6":  { name: "6", type: passive }
+  "7":  { name: "7", type: passive }
+  "8":  { name: "8", type: passive }
+  "9":  { name: "9", type: passive }
+  "10": { name: "10", type: passive }
+  "11": { name: "11", type: passive }
+  "12": { name: "12", type: passive }
+  "13": { name: "13", type: passive }
+  "14": { name: "14", type: passive }
+  "15": { name: "15", type: passive }
+  "16": { name: "16", type: passive }
+  "17": { name: "17", type: passive }
+  "18": { name: "18", type: passive }
+  "19": { name: "19", type: passive }
+  "20": { name: "20", type: passive }

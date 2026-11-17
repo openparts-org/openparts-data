@@ -1,0 +1,31 @@
+# PIC16F1847-I/P: industrial temperature (-40 to +85 C), 18-lead PDIP, tube.
+# existence: probable -- assembled from the "Product Identification
+# System" legend (DS41453B PDF page 407, printed 409), which also
+# prints it as example b).
+# Package: drawing C04-007B (PDF p385), manufacturers/microchip/PDIP18-P-C04-007B.
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/PIC16F1847-I-P
+manufacturer: microchip
+mpn: PIC16F1847-I/P
+device: microchip/PIC16F1847-18
+
+package:
+  value: manufacturers/microchip/PDIP18-P-C04-007B
+  src: p407 "Product Identification System, Package P = Plastic DIP"
+
+sources: [microchip/DS41453@revB]
+source: microchip/DS41453@revB
+
+existence:
+  status: probable
+  src: p407 "Product Identification System, example b) PIC16F1847 - I/P, Industrial temp., PDIP package"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p348 "30.1 DC Characteristics, PIC16F1847 Operating temperature -40 C <= TA <= +85 C for industrial"

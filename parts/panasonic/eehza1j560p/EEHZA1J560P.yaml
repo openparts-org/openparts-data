@@ -1,0 +1,30 @@
+# Panasonic ZA series EEHZA1J560P: 56 µF, 63 V, case size G (standard
+# product, taping). Listed verbatim in the p2 "Characteristics list"
+# Part number column (Standard product).
+# Package: the ZA "Dimensions" table (p1, size G row) prints the same
+# numbers as the FK catalog's size G row, so the FK package
+# manufacturers/panasonic/FK-G-10x10.2 (FK outline + FK land pattern) is
+# reused; this ZA document prints no land pattern.
+# lifecycle unknown: the catalog states no status for this row.
+schema_version: "0.2"
+kind: part
+id: panasonic/EEHZA1J560P
+manufacturer: panasonic
+mpn: EEHZA1J560P
+device: panasonic/EEHZA1J560
+package: manufacturers/panasonic/FK-G-10x10.2
+sources: [panasonic/ABA0000C1221, panasonic/ABA0000C1181]
+source: panasonic/ABA0000C1221
+
+existence:
+  status: verified
+  src: p2 "Characteristics list, Part number Standard product column, EEHZA1J560P row"
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance: { typ: 56 µF, src: 'p2 "Characteristics list, EEHZA1J560P row, Capacitance"' }
+  tolerance:   { tol: ±20 %, src: 'p2 "Characteristics list, Capacitance column header (±20 %)"' }
+  rated_voltage:
+    typ: 63 V
+    src: p2 "Characteristics list, EEHZA1J560P row, Rated voltage group"

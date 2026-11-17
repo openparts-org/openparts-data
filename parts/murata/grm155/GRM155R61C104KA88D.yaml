@@ -1,0 +1,28 @@
+# 0.1 µF X5R 16 V ±10% GRM155 MLCC, packaging code D
+# per the reference sheet's Package table (murata/GRM155R61C104KA88-01A).
+# Package standards/CHIP0402-GRM155: reused: L/W/T equal its numbers one for one
+# (sheet p2 "Type & Dimension": L 1.0+/-0.05, W 0.5+/-0.05, T 0.5+/-0.05, e 0.15 to 0.35, g 0.3 min.).
+# lifecycle: the sheet makes no production-status statement; unknown.
+schema_version: "0.2"
+kind: part
+id: murata/GRM155R61C104KA88D
+manufacturer: murata
+mpn: GRM155R61C104KA88D
+device: murata/GRM155-R61
+package: standards/CHIP0402-GRM155
+sources: [murata/GRM155R61C104KA88-01A]
+source: murata/GRM155R61C104KA88-01A
+
+existence:
+  status: verified
+  src: p2 "Title GRM155R61C104KA88_ (_ = Package); Package table, code D"
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 0.1 µF, src: 'p2 "Rated Value, Nominal Capacitance 0.1μF"' }
+  tolerance:     { tol: ±10 %, src: 'p2 "Rated Value, Capacitance Tolerance +/-10%"' }
+  rated_voltage: { typ: 16 V, src: 'p2 "Rated Value, Rated Voltage DC 16 V"' }
+  dielectric:
+    value: X5R
+    src: p2 "Rated Value, Temperature Characteristics, Public STD Code X5R(EIA)"

@@ -1,0 +1,50 @@
+# Samtec TSW 1 x 40 straight terminal strip, lead style -07 (samtec/TSW-XXX-XX-XXX-X-XX-XXX-MKT sheet 1 legend). The print names no signals: each
+# position is named by its number, all passive.
+schema_version: "0.2"
+kind: device
+id: samtec/TSW-140-07-X-S
+manufacturer: samtec
+category: connector
+family: TSW
+
+pins:
+  "1":  { name: "1", type: passive }
+  "2":  { name: "2", type: passive }
+  "3":  { name: "3", type: passive }
+  "4":  { name: "4", type: passive }
+  "5":  { name: "5", type: passive }
+  "6":  { name: "6", type: passive }
+  "7":  { name: "7", type: passive }
+  "8":  { name: "8", type: passive }
+  "9":  { name: "9", type: passive }
+  "10": { name: "10", type: passive }
+  "11": { name: "11", type: passive }
+  "12": { name: "12", type: passive }
+  "13": { name: "13", type: passive }
+  "14": { name: "14", type: passive }
+  "15": { name: "15", type: passive }
+  "16": { name: "16", type: passive }
+  "17": { name: "17", type: passive }
+  "18": { name: "18", type: passive }
+  "19": { name: "19", type: passive }
+  "20": { name: "20", type: passive }
+  "21": { name: "21", type: passive }
+  "22": { name: "22", type: passive }
+  "23": { name: "23", type: passive }
+  "24": { name: "24", type: passive }
+  "25": { name: "25", type: passive }
+  "26": { name: "26", type: passive }
+  "27": { name: "27", type: passive }
+  "28": { name: "28", type: passive }
+  "29": { name: "29", type: passive }
+  "30": { name: "30", type: passive }
+  "31": { name: "31", type: passive }
+  "32": { name: "32", type: passive }
+  "33": { name: "33", type: passive }
+  "34": { name: "34", type: passive }
+  "35": { name: "35", type: passive }
+  "36": { name: "36", type: passive }
+  "37": { name: "37", type: passive }
+  "38": { name: "38", type: passive }
+  "39": { name: "39", type: passive }
+  "40": { name: "40", type: passive }

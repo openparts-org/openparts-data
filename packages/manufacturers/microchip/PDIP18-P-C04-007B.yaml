@@ -1,0 +1,51 @@
+# 18-lead 300 mil plastic DIP. Values from Microchip drawing C04-007B
+# ("18-Lead Plastic Dual In-Line (P) - 300 mil Body [PDIP]"), DS41453B
+# (PIC16(L)F1847) PDF page 385, an image page, rendered and read. The
+# table is in inches; values below are exact x25.4 conversions of the
+# printed MIN/NOM/MAX, nothing else.
+# body_width (the `dip` generator's row spacing) = 7.62 mm, the "300 mil
+# Body" of the drawing title (the table has E .300/.310/.325 and eB max
+# .430, no eA row) -- same reading as manufacturers/microchip/
+# PDIP16-P-C04-017B. body_length = D, body_height = A2, overall_height =
+# A (max only), standoff = A1 (min only). L (tip to seating plane) is
+# not lead_length.
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/PDIP18-P-C04-007B
+family: dip
+lead_count: 18
+source: microchip/DS41453@revB
+
+pitch: { typ: 2.54 mm, src: 'p385 "C04-007B table (inches), "Pitch e .100 BSC" -> 2.54 mm"' }
+geometry: { type: parametric, generator: dip }
+
+dimensions:
+  body_width:
+    typ: 7.62 mm
+    src: p385 "C04-007B title "18-Lead Plastic Dual In-Line (P) - 300 mil Body [PDIP]" -> 7.62 mm row spacing"
+  body_length:
+    min: 22.352 mm
+    typ: 22.86 mm
+    max: 23.368 mm
+    src: p385 "C04-007B table (inches), "Overall Length D .880 / .900 / .920""
+  body_height:
+    min: 2.921 mm
+    typ: 3.302 mm
+    max: 4.953 mm
+    src: p385 "C04-007B table (inches), "Molded Package Thickness A2 .115 / .130 / .195""
+  lead_thickness:
+    min: 0.2032 mm
+    typ: 0.254 mm
+    max: 0.3556 mm
+    src: p385 "C04-007B table (inches), "Lead Thickness c .008 / .010 / .014""
+  overall_height:
+    max: 5.334 mm
+    src: p385 "C04-007B table (inches), "Top to Seating Plane A" (MAX .210 only)"
+  standoff:
+    min: 0.381 mm
+    src: p385 "C04-007B table (inches), "Base to Seating Plane A1" (MIN .015 only)"
+  lead_width:
+    min: 0.3556 mm
+    typ: 0.4572 mm
+    max: 0.5588 mm
+    src: p385 "C04-007B table (inches), "Lower Lead Width b .014 / .018 / .022""

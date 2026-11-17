@@ -35,3 +35,10 @@ parameters:
   reverse_voltage:
     max: 12 V
     src: p2 "ELECTRICAL CHARACTERISTICS table, (+)SMBJ12A row, Stand-off voltage VWM"
+  clamping_voltage:
+    max: 19.9 V
+    at: { IPP: 30.2 A }
+    src: p2 "ELECTRICAL CHARACTERISTICS, (+)SMBJ12A row, Maximum clamping voltage VC at IPPM"
+  peak_pulse_current:
+    max: 30.2 A
+    src: p2 "ELECTRICAL CHARACTERISTICS, (+)SMBJ12A row, IPPM (10/1000 µs per p1 Maximum Ratings)"

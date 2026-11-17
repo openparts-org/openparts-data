@@ -18,6 +18,10 @@ parameters:
     min: 4.5 V
     max: 5.5 V
     src: 'p8 "Table 7 Static characteristics, Supply; pin VCC: VCC"'
+  io_supply_voltage:
+    min: 2.8 V
+    max: 5.5 V
+    src: 'p8 "Table 7 Static characteristics, I/O level adapter supply; pin VIO: VIO"'
   esd_hbm:
     typ: 4 kV
     src: p7 "Table 5 Limiting values, VESD HBM at any other pin (CANH/CANL ±8 kV)"

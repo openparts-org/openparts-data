@@ -1,0 +1,41 @@
+# ATSAMD21J18A-MU: decoded with section 3 "SAM D21 Ordering Information"
+# (DS40001882L page 15): ATSAMD 21 J 18 A - MU = SAM D21, 64 pins,
+# 256KB flash, default variant A, package type "M = VQFN", package grade
+# "U = -40 - 85C Matte Sn Plating", tray. Table 2-1 "Configuration
+# Summary" (page 13) lists ATSAMD21J18A in "TQFP, QFN" 64-pin packages.
+# existence is "probable", not "verified": the exact string "ATSAMD21J18A-MU"
+# does not appear in any ordering table of this data sheet (only the SIL2
+# code "ATSAMD21J18A-MU-SLL", page 1065); it is assembled from the ordering-code
+# scheme, whose note 1 says "Not all combinations are valid".
+# Package: the 64-pin VQFN (TMB) drawing C04-21441 (page 1072: 9.00 BSC,
+# e 0.50, D2/E2 4.60/4.70/4.80, b 0.15/0.20/0.25, L 0.30/0.40/0.55, A
+# 0.80/0.90/1.00) has the same outline as the reused Atmel "PA" drawing
+# package (A there has no NOM). The 5LX VQFN is ordered as "MM".
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATSAMD21J18A-MU
+manufacturer: microchip
+mpn: ATSAMD21J18A-MU
+device: microchip/ATSAMD21J18A
+
+package:
+  value: manufacturers/microchip/VQFN64-9x9-P0.5-EP4.7-PA
+  src:
+    - p15 "Section 3, Package Type "M = VQFN""
+    - p1072 "Section 44.1, drawing C04-21441-TMB Rev A sheet 2"
+
+sources: [microchip/DS40001882@revL]
+source: microchip/DS40001882@revL
+
+existence:
+  status: probable
+  src: p15 "Section 3 Ordering Information; Table 2-1 Configuration Summary (p13); ATSAMD21J18A-MU-SLL (p1065)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p907 "Table 37-3 General Operating Conditions, TA -40 to 85 C (specified)"

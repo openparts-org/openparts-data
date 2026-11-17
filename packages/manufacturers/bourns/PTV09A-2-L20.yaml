@@ -1,0 +1,57 @@
+# Bourns PTV09A-2 ("Vertical/Side Mount, Bushingless, 10 mm Height": the housing stands on the
+# board, the shaft parallel to it), shaft length L = 20 mm (bourns/PTV09
+# page 1, drawing "PTV09A-2"; page 1 "RECOMMENDED PCB LAYOUT (VERTICAL/SIDE
+# MOUNT)"; page 2 F-type shaft table).
+# Frame (spec 20.14): top view turned so the shaft points to +Y, origin
+# on the centre of the housing outline "10.0" (X, front view) x 9.2 (Y):
+# the side view puts the rear of the housing "2.4" behind and its front
+# face "6.8" in front of the lug centre line, 2.4 + 6.8 = 9.2, so the lug
+# line is at y = 4.6 - 6.8 = -2.2. The pins are "3.3" in front of it
+# (side view and PCB layout): y = -2.2 + 3.3 = 1.1. In X the pins are
+# "5.0" apart (1 to 3), 2 on the layout's centre line; the lug slots
+# ("1.8" wide) have "8.2" between their inner edges: centres 8.2 + 1.8
+# = 10.0 apart. Holes "1.0 +0.2/-0"; slots "1.8 +0.2/-0" (X) x "2.2
+# +0.2/-0" (Y). Orientation: the PCB layout is drawn with the shaft
+# toward the reader (the pins lie on the shaft side of the lugs in the
+# side view); turned shaft-up, pin 1 is at +X, as in the front view
+# (seen from the shaft end, the same pin order as the horizontal styles).
+# Heights: shaft axis "10.0" above the board, housing top "5.5" above
+# the axis: 10 + 5.5 = 15.5. Shaft: L ("20") from the lug centre line to
+# the shaft end, so beyond the housing face L - 6.8 = 13.2.
+schema_version: "0.2"
+kind: package
+id: manufacturers/bourns/PTV09A-2-L20
+family: potentiometer
+lead_count: { value: 5, src: 'p1 "PCB layout (vertical/side mount), 1.0 DIA. 3 PLCS. + 2 slots"' }
+source: bourns/PTV09
+
+pitch:
+  typ: 2.5 mm
+  src: p1 "PCB layout (vertical/side mount), 1 to 3 "5.0", 2 on the centre line"
+
+actuation:
+  value: side
+  src: p1 "How To Order, 2 = Vertical/Side Mount, Bushingless, 10 mm Height"
+
+geometry: { type: parametric, generator: potentiometer }
+
+dimensions:
+  body_width:         { typ: 10 mm, src: p1 "PTV09A-2 front view "10.0"" }
+  body_length: { typ: 9.2 mm, src: p1 "PTV09A-2 side view "2.4" + "6.8" about the lug centre line" }
+  body_height:
+    typ: 15.5 mm
+    src: p1 "PTV09A-2 side view "10.0" axis above board + "5.5" axis to top"
+  actuator_elevation: { typ: 10 mm, src: p1 "PTV09A-2 side view "10.0" shaft axis above board" }
+  actuator_diameter:  { min: 5.9 mm, max: 6 mm, src: 'p2 "Shaft Styles, F-Type "6.0 +0.0/-0.1""' }
+  actuator_length:
+    typ: 13.2 mm
+    src: p1 "PTV09A-2 side view L (20) from lug centre line - "6.8""
+
+pads:
+  value:
+    - { number: "1", x: 2.5, y: 1.1, drill: 1 }
+    - { number: "2", x: 0, y: 1.1, drill: 1 }
+    - { number: "3", x: -2.5, y: 1.1, drill: 1 }
+    - { number: MP, x: -5, y: -2.2, drill: 1.8, drill_length: 2.2, slot_axis: y }
+    - { number: MP, x: 5, y: -2.2, drill: 1.8, drill_length: 2.2, slot_axis: y }
+  src: p1 "PCB layout (vertical/side mount) "8.2", "3.3", "5.0" + PTV09A-2 side view (see comment)"

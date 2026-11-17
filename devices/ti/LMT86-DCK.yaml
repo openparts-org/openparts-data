@@ -1,0 +1,38 @@
+# LMT86 analog temperature sensor (output inversely proportional to
+# temperature), 5-pin SC70 (DCK). Pins from "Table 5-1 Pin Functions", column SOT (SC70) (SNIS169F
+# page 3). SC70: 1 and 2 GND (2: direct connection to the back side of the die), 4 and 5 VDD; repeated pins are listed by number with the same name.
+# OUT (Analog Output) analog, VDD power, GND ground. Each package has its
+# own pin map (separate Devices).
+schema_version: "0.2"
+kind: device
+id: ti/LMT86-DCK
+manufacturer: ti
+category: temperature_sensor
+family: LMT86
+source: ti/SNIS169F
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: analog, src: p1 "LMT86 Analog Temperature Sensor" }
+  supply_voltage:
+    min: 2.2 V
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, Supply voltage (VDD)"
+  supply_current:
+    typ: 5.4 µA
+    max: 9 µA
+    at: { TA: -50..150 °C }
+    src: p5 "6.5 Electrical Characteristics, IS Supply current, TA = -50 to 150 °C"
+  operating_temperature:
+    min: -50 °C
+    max: 150 °C
+    src: p4 "6.3 Recommended Operating Conditions, Specified temperature"
+  esd_hbm:        { typ: 2.5 kV, src: 'p4 "6.2 ESD Ratings, HBM ±2500 V"' }
+
+pins:
+  src: p3 "Table 5-1 Pin Functions, column SOT (SC70)"
+  "1": { name: GND, type: ground }
+  "2": { name: GND, type: ground }
+  "3": { name: OUT, type: analog }
+  "4": { name: VDD, type: power }
+  "5": { name: VDD, type: power }

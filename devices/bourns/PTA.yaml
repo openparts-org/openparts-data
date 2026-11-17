@@ -1,0 +1,27 @@
+# Bourns PTA low-profile slide potentiometer, single gang (PTAxx43). Pins
+# from the page-2 schematic: 1 and 3 the element ends, 2 the wiper; the
+# four housing lugs (1.7 mm holes in the hole layout) are "MP"
+# (mechanical, passive). Series-level device: resistance, tolerance (it
+# depends on the resistance), taper and power rating (it depends on the
+# travel) are per Part.
+schema_version: "0.2"
+kind: device
+id: bourns/PTA
+manufacturer: bourns
+category: potentiometer
+family: PTA
+source: bourns/PTA
+
+parameters:
+  operating_temperature:
+    min: -10 °C
+    max: 50 °C
+    src: p1 "Environmental Characteristics, Operating Temperature"
+  resistive_element: { value: carbon, src: 'p1 "Features, Carbon element"' }
+
+pins:
+  src: p2 "Schematic SINGLE GANG 1, 2, 3; hole layout 1.7 DIA. 4 PLCS. lugs"
+  "1": { name: "1", type: passive }
+  "2": { name: WIPER, type: passive }
+  "3": { name: "3", type: passive }
+  MP:  { name: MP, type: passive }

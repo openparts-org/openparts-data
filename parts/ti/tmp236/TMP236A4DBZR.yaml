@@ -1,0 +1,27 @@
+# Orderable MPN printed in the PACKAGE OPTION ADDENDUM of the datasheet;
+# lifecycle "Active" read from the same row's Status column (TI's own
+# addendum inside the datasheet, newer than the datasheet revision).
+# Package: SOT-23 (DBZ), outline DBZ0003A (4214838/F) on page 19.
+schema_version: "0.2"
+kind: part
+id: ti/TMP236A4DBZR
+manufacturer: ti
+mpn: TMP236A4DBZR
+device: ti/TMP236-DBZ
+
+package:
+  value: manufacturers/ti/DBZ0003A
+  src:
+    - p14 "PACKAGE OPTION ADDENDUM, row TMP236A4DBZR, Package column"
+    - p19 "PACKAGE OUTLINE DBZ0003A (4214838/F)"
+
+sources: [ti/SBOS857E]
+source: ti/SBOS857E
+
+existence:
+  status: verified
+  src: p14 "PACKAGE OPTION ADDENDUM, Packaging Information table, row TMP236A4DBZR"
+
+lifecycle:
+  status: active
+  src: p14 "PACKAGE OPTION ADDENDUM, row TMP236A4DBZR, Status column Active"

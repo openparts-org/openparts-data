@@ -22,7 +22,7 @@ parameters:
   supply_current:
     typ: 197 µA
     max: 260 µA
-    at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+    at: { VS: 5 V, VCM: 12 V, TA: 25 °C }
     src: 'p8 "7.5 Electrical Characteristics: IQ, INA180, VSENSE = 10 mV"'
   operating_temperature:
     min: -40 °C
@@ -36,19 +36,23 @@ parameters:
   input_offset_voltage:
     - typ: 100 µV
       max: 500 µV
-      at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+      at: { VS: 5 V, VCM: 12 V, TA: 25 °C }
       src: 'p8 "7.5 Electrical Characteristics: VOS RTI, VIN+ = 12 V (printed ±100/±500 µV)"'
     - typ: 25 µV
       max: 150 µV
-      at: { VS: 5 V, VIN: 0 V, TA: 25 °C }
+      at: { VS: 5 V, VCM: 0 V, TA: 25 °C }
       src: 'p8 "7.5 Electrical Characteristics: VOS RTI, VIN+ = 0 V (printed ±25/±150 µV)"'
   input_bias_current:
     - typ: 80 µA
-      at: { VS: 5 V, VIN: 12 V, TA: 25 °C }
+      at: { VS: 5 V, VCM: 12 V, TA: 25 °C }
       src: 'p8 "7.5 Electrical Characteristics: IIB, VSENSE = 0 mV, VIN+ = 12 V"'
     - typ: 0.1 µA
-      at: { VS: 5 V, VIN: 0 V, TA: 25 °C }
+      at: { VS: 5 V, VCM: 0 V, TA: 25 °C }
       src: 'p8 "7.5 Electrical Characteristics: IIB, VSENSE = 0 mV, VIN+ = 0 V"'
+  common_mode_voltage:
+    min: -0.2 V
+    max: 26 V
+    src: p7 "7.3 Recommended Operating Conditions, VCM common-mode input voltage (IN+ and IN-)"
 
 pins:
   src:

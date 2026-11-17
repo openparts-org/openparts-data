@@ -1,0 +1,52 @@
+# ATtiny426 (tinyAVR 2-series), 20-pin VQFN 3x3 (REB). Pin
+# names/numbers from Table 3-1 "PORT Function Multiplexing", column
+# "VQFN 20-pin" (DS40002311B page 18, text), cross-checked against
+# Section 2.3 "20-Pin VQFN" (page 16). The pin table is the same in all three
+# tinyAVR 2-series data sheets (DS40002234B/DS40002311B/DS40002345B).
+#
+# Types: VDD power, GND ground, port pins io. alternate_functions carry
+# only the "Other/Special" and "ADC0" columns (entries the table marks as
+# alternative pin locations included: EVOUTA on PA7, EVOUTB on PB7,
+# RESET on PB4); AC/USART/SPI/TWI/TCA/TCB/CCL columns are not modelled.
+#
+# Exposed pad: section 4.1.1 (page 19) says the center pad "is not
+# electrically connected to the internal circuit of the chip", so no EP pin.
+schema_version: "0.2"
+kind: device
+id: microchip/ATtiny426-VQFN20
+manufacturer: microchip
+category: microcontroller
+family: tinyAVR 2-series
+source: microchip/DS40002311@revB
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.8 V
+    max: 5.5 V
+    src: p475 "Table 33-2 General Operating Conditions, VDD Operating supply voltage, Industrial"
+
+pins:
+  src:
+    - p18 "Table 3-1 PORT Function Multiplexing, column VQFN 20-pin, Other/Special and ADC0"
+    - p16 "Section 2.3 20-Pin VQFN pinout figure (cross-check)"
+  "1":  { name: PA2, type: io, alternate_functions: [EVOUTA, AIN2] }
+  "2":  { name: PA3, type: io, alternate_functions: [EXTCLK, AIN3] }
+  "3":  { name: GND, type: ground }
+  "4":  { name: VDD, type: power }
+  "5":  { name: PA4, type: io, alternate_functions: [AIN4] }
+  "6":  { name: PA5, type: io, alternate_functions: [VREFA, AIN5] }
+  "7":  { name: PA6, type: io, alternate_functions: [AIN6] }
+  "8":  { name: PA7, type: io, alternate_functions: [EVOUTA, AIN7] }
+  "9":  { name: PB5, type: io, alternate_functions: [CLKOUT, AIN8] }
+  "10": { name: PB4, type: io, alternate_functions: [RESET, AIN9] }
+  "11": { name: PB3, type: io, alternate_functions: [TOSC1] }
+  "12": { name: PB2, type: io, alternate_functions: [TOSC2, EVOUTB] }
+  "13": { name: PB1, type: io, alternate_functions: [AIN10] }
+  "14": { name: PB0, type: io, alternate_functions: [AIN11] }
+  "15": { name: PC0, type: io, alternate_functions: [AIN12] }
+  "16": { name: PC1, type: io, alternate_functions: [AIN13] }
+  "17": { name: PC2, type: io, alternate_functions: [EVOUTC, AIN14] }
+  "18": { name: PC3, type: io, alternate_functions: [AIN15] }
+  "19": { name: PA0, type: io, alternate_functions: [RESET, UPDI] }
+  "20": { name: PA1, type: io, alternate_functions: [AIN1] }

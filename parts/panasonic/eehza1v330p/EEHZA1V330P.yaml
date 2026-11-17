@@ -1,0 +1,30 @@
+# Panasonic ZA series EEHZA1V330P: 33 µF, 35 V, case size D (standard
+# product, taping). Listed verbatim in the p2 "Characteristics list"
+# Part number column (Standard product).
+# Package: the ZA "Dimensions" table (p1, size D row) prints the same
+# numbers as the FK catalog's size D row, so the FK package
+# manufacturers/panasonic/FK-D-6.3x5.8 (FK outline + FK land pattern) is
+# reused; this ZA document prints no land pattern.
+# lifecycle unknown: the catalog states no status for this row.
+schema_version: "0.2"
+kind: part
+id: panasonic/EEHZA1V330P
+manufacturer: panasonic
+mpn: EEHZA1V330P
+device: panasonic/EEHZA1V330
+package: manufacturers/panasonic/FK-D-6.3x5.8
+sources: [panasonic/ABA0000C1221, panasonic/ABA0000C1181]
+source: panasonic/ABA0000C1221
+
+existence:
+  status: verified
+  src: p2 "Characteristics list, Part number Standard product column, EEHZA1V330P row"
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance: { typ: 33 µF, src: 'p2 "Characteristics list, EEHZA1V330P row, Capacitance"' }
+  tolerance:   { tol: ±20 %, src: 'p2 "Characteristics list, Capacitance column header (±20 %)"' }
+  rated_voltage:
+    typ: 35 V
+    src: p2 "Characteristics list, EEHZA1V330P row, Rated voltage group"

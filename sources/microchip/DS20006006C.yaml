@@ -1,0 +1,17 @@
+# Microchip data sheet "MIC5501/2/3/4 300 mA Single Output LDO in Small
+# Packages", DS20006006C (Revision C, March 2024 per Appendix A
+# Revision History). Downloaded 2026-11-17 with curl from
+# ww1.microchip.com (HTTP 200, PDF); the microchip.com product page
+# answered 403. 26 pages, read with pdftotext -layout. Page numbers are
+# PDF page indices (= printed "DS20006006C-page n").
+schema_version: "0.2"
+kind: source
+id: microchip/DS20006006C
+sha256: 98db303190e6575f4c08d633df00883e1dcc28d22b6ce09c1490796883ad9017
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/aemDocuments/documents/APID/ProductDocuments/DataSheets/MIC5501-02-03-04-300mA-Single-Output-LDO-in-Small-Packages-DS20006006.pdf
+publisher: microchip
+document_id: DS20006006
+document_type: datasheet
+revision: C
+date: 2024-03

@@ -35,3 +35,10 @@ parameters:
   reverse_voltage:
     max: 33 V
     src: p2 "ELECTRICAL CHARACTERISTICS table, (+)SMBJ33A row, Stand-off voltage VWM"
+  clamping_voltage:
+    max: 53.3 V
+    at: { IPP: 11.3 A }
+    src: p2 "ELECTRICAL CHARACTERISTICS, (+)SMBJ33A row, Maximum clamping voltage VC at IPPM"
+  peak_pulse_current:
+    max: 11.3 A
+    src: p2 "ELECTRICAL CHARACTERISTICS, (+)SMBJ33A row, IPPM (10/1000 µs per p1 Maximum Ratings)"

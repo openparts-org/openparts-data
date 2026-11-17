@@ -1,0 +1,23 @@
+# 22 µF X5R 16 V 1206 general-purpose MLCC (YAGEO CC series).
+# Existence: YAGEO's own per-part spec sheet (yageo/CC1206MKX5R7BB226-SPEC) carries this
+# exact MPN as its title. Values from the sheet's "Specifications" table.
+# Package: the sheet's L/W/T (3.2mm +/-0.3mm / 1.6mm +/-0.3mm / 1.6mm+/-0.2mm) equal dimension code
+# FC of yageo/UPY-GPHC_X5R@V32 Table 1 -> manufacturers/yageo/CC1206-FC-X5R. Lifecycle not stated -> unknown.
+schema_version: "0.2"
+kind: part
+id: yageo/CC1206MKX5R7BB226
+manufacturer: yageo
+mpn: CC1206MKX5R7BB226
+device: yageo/CC1206-X5R
+package: manufacturers/yageo/CC1206-FC-X5R
+sources: [yageo/CC1206MKX5R7BB226-SPEC]
+source: yageo/CC1206MKX5R7BB226-SPEC
+
+existence: { status: verified, src: 'p1 "Spec sheet title, part number"' }
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 22 µF, src: 'p1 "Specifications, Capacitance"' }
+  tolerance:     { tol: ±20 %, src: 'p1 "Specifications, Tolerance"' }
+  rated_voltage: { typ: 16 V, src: 'p1 "Specifications, Voltage DC"' }
+  dielectric:    { value: X5R, src: 'p1 "Specifications, Temp. Coefficient"' }

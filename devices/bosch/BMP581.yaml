@@ -21,6 +21,10 @@ parameters:
     min: -40 °C
     max: 85 °C
     src: p8 "Table 1 Pressure Performance, Temperature range TA (operating, the only TA range printed)"
+  pressure_range:
+    min: 30 kPa
+    max: 125 kPa
+    src: p8 "Table 1 Pressure Performance, Pressure measurement range P"
 
 pins:
   src:  p46 "Table 28 Pin description; Figure 23 pin-out"

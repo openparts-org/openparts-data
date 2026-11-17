@@ -1,0 +1,19 @@
+# Microchip "PIC18(L)F26/27/45/46/47/55/56/57K42" data sheet, document
+# DS40001919G (footer "DS40001919G-page n", (c) 2017-2021), 841 PDF
+# pages. Downloaded with curl from ww1.microchip.com/downloads/en/DeviceDoc
+# (URL below). Date from Appendix A "Revision G (03/2021)" (page 837).
+# PDF page indices equal the printed page numbers. Pin allocation tables
+# (pages 9-13) read with pdftotext -layout; the package drawings on pages
+# 803-818 use an encoded font and were rendered to read their drawing
+# numbers.
+schema_version: "0.2"
+kind: source
+id: microchip/DS40001919@revG
+sha256: dc561c5218c927f30ba2a48e098eb72198da47dea5385efab6ef37a498c20179
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18(L)F26-27-45-46-47-55-56-57K42-Data-Sheet-40001919G.pdf
+publisher: microchip
+document_id: DS40001919
+document_type: datasheet
+revision: G
+date: 2021-03

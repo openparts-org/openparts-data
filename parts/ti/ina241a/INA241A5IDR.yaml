@@ -28,5 +28,6 @@ parameters:
   input_offset_voltage:
     - typ: 2 µV
       max: 8 µV
-      at: { VS: 5 V, VIN: 48 V, TA: 25 °C }
+      at: { VS: 5 V, VCM: 48 V, TA: 25 °C }
       src: p5 "6.5 EC, Vos input-referred, INA241A5 (printed ±2/±8)"
+  gain: { typ: 200 V/V, src: 'p5 "6.5 Electrical Characteristics, G gain, A5, B5 Devices"' }

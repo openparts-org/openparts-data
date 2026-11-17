@@ -2,8 +2,8 @@
 # and types from the module datasheet's pin definition table (p11 "Table 3-1
 # Pin Definitions"; p12 cont.); type P is power (ground for GND/EPAD), I
 # input, I/O and I/O/T io, a dash nc. Alternate functions are not recorded
-# here.  The -U variant (antenna connector) is a different board size and is
-# not modelled.
+# here.  The -U variant (antenna connector) is a different board size: device
+# espressif/ESP32-S3-WROOM-1U.
 schema_version: "0.2"
 kind: device
 id: espressif/ESP32-S3-WROOM-1

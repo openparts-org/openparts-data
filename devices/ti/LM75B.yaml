@@ -1,0 +1,44 @@
+# LM75B digital temperature sensor and thermal watchdog, 8-pin SOIC (D)
+# and VSSOP (DGK) with the same pin map. Pins from "Pin Functions"
+# (SNIS153D page 3). SDA (bidirectional, open drain) io, SCL (clock
+# input) clock, O.S. (overtemperature shutdown, open-drain output)
+# output, A0-A2 address inputs, +VS (positive supply input) power, GND
+# ground. The -3 / -5 ordering suffix selects the supply voltage the
+# Electrical Characteristics are tested at (3.3 V / 5 V); the
+# recommended supply range is common. The LM75C in the same datasheet is
+# not covered.
+schema_version: "0.2"
+kind: device
+id: ti/LM75B
+manufacturer: ti
+category: temperature_sensor
+family: LM75x
+source: ti/SNIS153D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: 'p3 "Pin Functions, SCL I2C Clock Input"' }
+  supply_voltage:
+    min: 3 V
+    max: 5.5 V
+    src: p4 "6.3 Recommended Operating Conditions, Supply Voltage Range (+VS) LM75B"
+  supply_current:
+    typ: 0.25 mA
+    max: 0.5 mA
+    src: p5 "6.5 Electrical Characteristics, LM75B Quiescent Current, I2C Inactive (max over -55 to 125 °C)"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p4 "6.3 Recommended Operating Conditions, Specified Temperature Range"
+  esd_hbm:        { typ: 2.5 kV, src: 'p4 "6.2 ESD Ratings, LM75B HBM ±2500 V"' }
+
+pins:
+  src: p3 "Pin Functions"
+  "1": { name: SDA, type: io }
+  "2": { name: SCL, type: clock }
+  "3": { name: O.S., type: output }
+  "4": { name: GND, type: ground }
+  "5": { name: A2, type: input }
+  "6": { name: A1, type: input }
+  "7": { name: A0, type: input }
+  "8": { name: +VS, type: power }

@@ -1,0 +1,27 @@
+# Orderable MPN printed in the PACKAGE OPTION ADDENDUM of the datasheet;
+# lifecycle "Active" read from the same row's Status column (TI's own
+# addendum inside the datasheet, newer than the datasheet revision).
+# Package: TO-92 (LP), outline LP0003A (4215214/C) on page 27.
+schema_version: "0.2"
+kind: part
+id: ti/LMT87LP
+manufacturer: ti
+mpn: LMT87LP
+device: ti/LMT87-LP
+
+package:
+  value: standards/TO92-TI-LP0003A
+  src:
+    - p17 "PACKAGE OPTION ADDENDUM, row LMT87LP, Package column"
+    - p27 "PACKAGE OUTLINE LP0003A (4215214/C)"
+
+sources: [ti/SNIS170E]
+source: ti/SNIS170E
+
+existence:
+  status: verified
+  src: p17 "PACKAGE OPTION ADDENDUM, Packaging Information table, row LMT87LP"
+
+lifecycle:
+  status: active
+  src: p17 "PACKAGE OPTION ADDENDUM, row LMT87LP, Status column Active"

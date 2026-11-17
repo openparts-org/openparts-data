@@ -1,0 +1,53 @@
+# PIC18F27Q43 (PIC18-Q43) pinout for the 28-pin SPDIP/SOIC/SSOP packages, from DS40002147E
+# pin allocation table (28-pin SPDIP/SOIC/SSOP column) checked against the 28-pin pin diagram: same names at the same numbers.
+# Types: VDD power, VSS ground, RE3 input (MCLR/VPP/RE3 is input-only),
+# other port pins io; NC pins nc. `alternate_functions`: the ADC channel
+# from the allocation table's A/D column, plus MCLR/VPP and ICSPCLK/
+# ICSPDAT from the pin diagram; PPS-remappable peripheral functions are
+# not listed. The same pin map applies to every member of the family
+# with this pin count; this Device is used for PIC18F27Q43 parts.
+schema_version: "0.2"
+kind: device
+id: microchip/PIC18F27Q43-28
+manufacturer: microchip
+category: microcontroller
+family: PIC18-Q43
+source: microchip/DS40002147@revE
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 1.8 V, max: 5.5 V, src: 'p894 "Table 47-1 Supply Voltage, D002 VDD"' }
+
+pins:
+  src:
+    - p15 "Table 3-1 28-Pin Allocation Table, SPDIP/SOIC/SSOP and A/D columns (cont. p16)"
+    - p11 "Figure 2-1 28-Pin SPDIP/SSOP/SOIC"
+    - p321 "MCLR/VPP pin is an input-only pin"
+  "1":  { name: RE3, type: input, alternate_functions: [MCLR, VPP] }
+  "2":  { name: RA0, type: io, alternate_functions: [ANA0] }
+  "3":  { name: RA1, type: io, alternate_functions: [ANA1] }
+  "4":  { name: RA2, type: io, alternate_functions: [ANA2] }
+  "5":  { name: RA3, type: io, alternate_functions: [ANA3] }
+  "6":  { name: RA4, type: io, alternate_functions: [ANA4] }
+  "7":  { name: RA5, type: io, alternate_functions: [ANA5] }
+  "8":  { name: VSS, type: ground }
+  "9":  { name: RA7, type: io, alternate_functions: [ANA7] }
+  "10": { name: RA6, type: io, alternate_functions: [ANA6] }
+  "11": { name: RC0, type: io, alternate_functions: [ANC0] }
+  "12": { name: RC1, type: io, alternate_functions: [ANC1] }
+  "13": { name: RC2, type: io, alternate_functions: [ANC2] }
+  "14": { name: RC3, type: io, alternate_functions: [ANC3] }
+  "15": { name: RC4, type: io, alternate_functions: [ANC4] }
+  "16": { name: RC5, type: io, alternate_functions: [ANC5] }
+  "17": { name: RC6, type: io, alternate_functions: [ANC6] }
+  "18": { name: RC7, type: io, alternate_functions: [ANC7] }
+  "19": { name: VSS, type: ground }
+  "20": { name: VDD, type: power }
+  "21": { name: RB0, type: io, alternate_functions: [ANB0] }
+  "22": { name: RB1, type: io, alternate_functions: [ANB1] }
+  "23": { name: RB2, type: io, alternate_functions: [ANB2] }
+  "24": { name: RB3, type: io, alternate_functions: [ANB3] }
+  "25": { name: RB4, type: io, alternate_functions: [ANB4] }
+  "26": { name: RB5, type: io, alternate_functions: [ANB5] }
+  "27": { name: RB6, type: io, alternate_functions: [ANB6, ICSPCLK] }
+  "28": { name: RB7, type: io, alternate_functions: [ANB7, ICSPDAT] }

@@ -1,0 +1,94 @@
+# CH32X035 pinout for CH32X035G8U6 (QFN28), from WCH CH32X035 datasheet V2.3
+# Table 2-1 "CH32X035 Pin definitions" (QFN28 column, PDF pages 17-19),
+# checked against the Section 2.1 CH32X035G8U6 pinout figure (PDF page 14): same pin at the same numbers.
+# Names are the port names (main function after reset).
+# Types: VDD power, GND ground, port pins io (table types I/O, I/O/A).
+# `alternate_functions`: ADC channels (Table 2-1 "A<n>" = ADC channel n,
+# written ADC_IN<n>) and, from the "Default alternate function" column,
+# UDM/UDP (USB, PC16/PC17), CC1/CC2 (USB PD, PC14/PC15), DIO/DCK (debug,
+# PC18/PC19) and RST where the table and its notes give it to this
+# package; timer/USART/SPI/I2C/OPA/CMP functions and remaps (Table 2-3)
+# are not listed.
+# Note 8 (PDF page 19): PC17 is the BOOT detection pin (high at power-up
+# enters the BOOT area).
+# CH32X035G8 in QFN28 (CH32X035G8U6): 62K flash, 20K SRAM (product resource table, PDF page 2).
+# The QSOP28 model CH32X035G8R6 has a different pinout and is not covered.
+# Note 4: PC10 shorted inside the chip to PC17 (pin 27), PC11 to PC16
+# (pin 26). Note 5: PB1 and PB5 are shorted inside the chip (pin 16; the
+# figure labels it PB1/.../PB5); neither may be configured as an output.
+# Recorded by the PB1/PC16/PC17 names.
+# Exposed pad: Table 2-1 gives QFN28 pin "0" as GND (P), recorded as pin
+# key EP.
+schema_version: "0.2"
+kind: device
+id: wch/CH32X035G8-QFN28
+manufacturer: wch
+category: microcontroller
+family: CH32X035
+source: wch/CH32X035DS0@V2.3
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 5.5 V
+    src: p26 "Table 3-2 General operating conditions, VDD, USB/PD function disabled (3.0-5.3 V with USB/PD)"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p25 "Table 3-1 Absolute maximum ratings, TA Ambient temperature during operation"
+  esd_hbm:
+    typ: 4 kV
+    src: p25 "Table 3-1 Absolute maximum ratings, VESD(HBM) common I/O pins 4K V"
+
+pins:
+  src:
+    - p17 "Table 2-1 CH32X035 Pin definitions, QFN28 column (cont. p18-19)"
+    - p14 "Section 2.1 CH32X035G8U6 pinout"
+  "1":  { name: PC15, type: io, alternate_functions: [CC2] }
+  "2":  { name: VDD, type: power }
+  "3":  { name: PC0, type: io, alternate_functions: [ADC_IN10] }
+  "4":  { name: PC3, type: io, alternate_functions: [ADC_IN13] }
+  "5":  { name: PA0, type: io, alternate_functions: [ADC_IN0] }
+  "6":  { name: PA1, type: io, alternate_functions: [ADC_IN1] }
+  "7":  { name: PA2, type: io, alternate_functions: [ADC_IN2] }
+  "8":  { name: PA3, type: io, alternate_functions: [ADC_IN3] }
+  "9":  { name: PA4, type: io, alternate_functions: [ADC_IN4] }
+  "10": { name: PA5, type: io, alternate_functions: [ADC_IN5] }
+  "11": { name: PA6, type: io, alternate_functions: [ADC_IN6] }
+  "12": { name: PA7, type: io, alternate_functions: [ADC_IN7] }
+  "13": { name: PB0, type: io, alternate_functions: [ADC_IN8] }
+  "14": { name: PB3, type: io }
+  "15": { name: PB4, type: io }
+  "16": { name: PB1, type: io, alternate_functions: [ADC_IN9] }
+  "17": { name: PB6, type: io }
+  "18": { name: PB7, type: io }
+  "19": { name: PB8, type: io }
+  "20": { name: PB9, type: io }
+  "21": { name: PB10, type: io }
+  "22": { name: PB11, type: io }
+  "23": { name: PB12, type: io }
+  "24": { name: PC19, type: io, alternate_functions: [DCK] }
+  "25": { name: PC18, type: io, alternate_functions: [DIO] }
+  "26":
+    name: PC16
+    type: io
+    alternate_functions: [UDM]
+    diff_pair:
+      partner: "27"
+      polarity: n
+      standard: usb2
+      function: UDM
+      src: p18 "Table 2-1, PC16 UDM / PC17 UDP default alternate functions"
+  "27":
+    name: PC17
+    type: io
+    alternate_functions: [UDP]
+    diff_pair:
+      partner: "26"
+      polarity: p
+      standard: usb2
+      function: UDP
+      src: p18 "Table 2-1, PC16 UDM / PC17 UDP default alternate functions"
+  "28": { name: PC14, type: io, alternate_functions: [CC1] }
+  EP:   { name: GND, type: ground }

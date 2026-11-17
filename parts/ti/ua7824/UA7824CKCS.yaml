@@ -1,0 +1,21 @@
+# UA7824CKCS: SLVS056P PACKAGE OPTION ADDENDUM (page 17) row "UA7824CKCS
+# Active  Production  TO-220 (KCS) | 3" -- MPN printed verbatim in TI's
+# orderable list (existence verified); lifecycle "Active" is TI's own
+# Status column. Package KCS = outline KCS0003B (SLVS056P page 24).
+schema_version: "0.2"
+kind: part
+id: ti/UA7824CKCS
+manufacturer: ti
+mpn: UA7824CKCS
+device: ti/UA7824-KCS
+package: { value: manufacturers/ti/KCS0003B, src: p24 "KCS0003B package outline" }
+sources: [ti/SLVS056P]
+source: ti/SLVS056P
+
+existence:
+  status: verified
+  src: p17 "Package option addendum table, row "UA7824CKCS" (TO-220 (KCS) | 3)"
+
+lifecycle:
+  status: active
+  src: p17 "Package option addendum table, row "UA7824CKCS", Status "Active""

@@ -36,3 +36,6 @@ parameters:
     max: 14 µV
     at: { TA: 25 °C }
     src: p7 "Table 1-2 DC Electrical Characteristics, VOS, gain 50 row (printed ±1.65, -14/+14)"
+  gain:
+    typ: 50 V/V
+    src: p8 "Table 1-2 DC Electrical Characteristics, Differential Gain GDM, MCP6C02-050"

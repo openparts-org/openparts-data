@@ -1,0 +1,26 @@
+# GigaDevice LQFP32, 7 x 7 mm body, 0.8 mm pitch: GD32E230xx datasheet
+# Table 5-3 "LQFP32 package dimensions" (PDF page 77) with Figure 5-5
+# "LQFP32 package outline". Values min/typ/max as printed; symbols
+# without a typ are recorded min/max only.
+schema_version: "0.2"
+kind: package
+id: manufacturers/gigadevice/LQFP32-7x7-P0.8
+family: lqfp
+lead_count: 32
+source: gigadevice/GD32E230xx_Datasheet@rev2.6
+
+pitch: { typ: 0.8 mm, src: 'p77 "Table 5-3 LQFP32 package dimensions, symbol e"' }
+geometry: { type: parametric, generator: lqfp }
+
+dimensions:
+  src:            p77 "Table 5-3 LQFP32 package dimensions"
+  body_width:     { min: 6.9 mm, typ: 7 mm, max: 7.1 mm, src: 'p77 "Table 5-3, symbol E1"' }
+  body_length:    { min: 6.9 mm, typ: 7 mm, max: 7.1 mm, src: 'p77 "Table 5-3, symbol D1"' }
+  body_height:    { min: 1.35 mm, typ: 1.4 mm, max: 1.45 mm, src: 'p77 "Table 5-3, symbol A2"' }
+  lead_thickness: { min: 0.13 mm, max: 0.17 mm, src: 'p77 "Table 5-3, symbol c (no typ)"' }
+  overall_width:  { min: 8.8 mm, typ: 9 mm, max: 9.2 mm, src: 'p77 "Table 5-3, symbol E"' }
+  overall_length: { min: 8.8 mm, typ: 9 mm, max: 9.2 mm, src: 'p77 "Table 5-3, symbol D"' }
+  overall_height: { max: 1.6 mm, src: 'p77 "Table 5-3, symbol A (max only)"' }
+  standoff:       { min: 0.05 mm, max: 0.15 mm, src: 'p77 "Table 5-3, symbol A1 (no typ)"' }
+  lead_width:     { min: 0.33 mm, max: 0.41 mm, src: 'p77 "Table 5-3, symbol b (no typ)"' }
+  lead_length:    { min: 0.45 mm, max: 0.75 mm, src: 'p77 "Table 5-3, symbol L (no typ)"' }

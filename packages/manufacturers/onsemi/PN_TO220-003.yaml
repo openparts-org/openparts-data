@@ -1,0 +1,73 @@
+# Fairchild/onsemi PN_TO220-003 "TO220, Molded, 3-Lead, Jedec Variation
+# AB" (drawing file MKT-TO220Y03REV1), read from the rendered image of
+# FQP30N06L Rev. C1 page 8 "Mechanical Dimensions" (Figure 16). All
+# dimensions in millimetres, min/max pairs only (no nominals). The same
+# drawing (same image, same callouts) is in FQP30N06 / FQP13N10 /
+# FQP12P10 Rev. C0/C1 page 8. No lead numbers and no land pattern are
+# printed (drill and pad: generator defaults).
+#
+# Mapping (frame to220): bottom view molded width 9.80-10.20 ->
+# body_width (front view tab/body width 9.70-10.10 not used); bottom
+# view depth 4.30-4.70 -> body_length; front view molding 9.00-9.40 ->
+# body_height; overall_height (tab top to body underside) = tab section
+# 6.30-6.70 + molding 9.00-9.40 = 15.30-16.10 (sum of the two stacked
+# printed callouts; consistent with the side-view reference "(15.38)");
+# lead 0.70-0.90 -> lead_width; 0.45-0.60 -> lead_thickness; side view
+# 12.88-13.28 (body underside to lead tip) -> tail_length; "O 3.50-3.70"
+# -> mounting_hole_diameter; 2.70-2.90 (tab top to hole centre) ->
+# mounting_hole_inset; "2.34-2.74 3X" lead-to-lead -> pitch (min/max;
+# no nominal printed, generator uses the midpoint).
+# Left out: tab thickness 1.20-1.40, lead shoulder 1.42-1.62/1.17-1.37,
+# 9.78-10.38 (shoulder to tip), 2.20-2.60 (tab back to lead; no nominal
+# for body_offset), references (18.95 MAX), (2.46), (3.00), (2.06).
+schema_version: "0.2"
+kind: package
+id: manufacturers/onsemi/PN_TO220-003
+family: to220
+lead_count: 3
+source: onsemi/FQP30N06L-D
+
+pitch:
+  min: 2.34 mm
+  max: 2.74 mm
+  src: p8 "Mechanical Dimensions Fig. 16, lead pitch "2.74 / 2.34 3X""
+
+geometry: { type: parametric, generator: to220 }
+
+dimensions:
+  body_width:
+    min: 9.8 mm
+    max: 10.2 mm
+    src: p8 "Mechanical Dimensions Fig. 16, bottom view width "10.20 / 9.80""
+  body_length:
+    min: 4.3 mm
+    max: 4.7 mm
+    src: p8 "Mechanical Dimensions Fig. 16, bottom view depth "4.70 / 4.30""
+  body_height:
+    min: 9 mm
+    max: 9.4 mm
+    src: p8 "Mechanical Dimensions Fig. 16, front view molding height "9.40 / 9.00""
+  tail_length:
+    min: 12.88 mm
+    max: 13.28 mm
+    src: p8 "Mechanical Dimensions Fig. 16 side view, body underside to lead tip "13.28 / 12.88""
+  overall_height:
+    min: 15.3 mm
+    max: 16.1 mm
+    src: p8 "Fig. 16 side view, tab "6.70 / 6.30" + molding "9.40 / 9.00" (sum); ref "(15.38)""
+  lead_width:
+    min: 0.7 mm
+    max: 0.9 mm
+    src: p8 "Mechanical Dimensions Fig. 16, lead width "0.90 / 0.70""
+  lead_thickness:
+    min: 0.45 mm
+    max: 0.6 mm
+    src: p8 "Mechanical Dimensions Fig. 16 side view, lead thickness "0.60 / 0.45""
+  mounting_hole_diameter:
+    min: 3.5 mm
+    max: 3.7 mm
+    src: p8 "Mechanical Dimensions Fig. 16, hole "Ø 3.70 / 3.50""
+  mounting_hole_inset:
+    min: 2.7 mm
+    max: 2.9 mm
+    src: p8 "Mechanical Dimensions Fig. 16, tab top to hole centre "2.90 / 2.70""

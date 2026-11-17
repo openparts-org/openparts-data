@@ -1,0 +1,65 @@
+# TDK InvenSense ICM-20948 9-axis motion tracking device, 24-pin 3x3 mm
+# QFN. Pin names as printed in Table 10 "Signal Descriptions" (section
+# 4.1, page 19); numbers checked against Figure 3 "Pin out Diagram"
+# (same page). The table has no I/O-type column: types from the
+# descriptions -- VDD / VDDIO power, GND ground, REGOUT (regulator
+# filter capacitor) passive, RESV reserved (19 "Do not connect", 20
+# "Connect to GND"), NC (1-6, 14-17 "Do not connect") nc, nCS and FSYNC
+# inputs, INT1 output, AUX_CL (I2C master clock) clock, AUX_DA and the
+# multi-function data pins io, SCL / SCLK (slave clock input) input.
+# The exposed die pad has no electrical connection (section 4.4): no pin.
+# supply_voltage is VDD; VDDIO is 1.71-1.95 V (Table 4) and is not a
+# separate key.
+schema_version: "0.2"
+kind: device
+id: tdk/ICM-20948
+manufacturer: tdk
+category: imu
+family: ICM-20948
+source: tdk/DS-000189@rev1.6
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    values: [i2c, spi]
+    src:    p19 "Table 10 Signal Descriptions, SCL / SCLK and SDA / SDI (I2C or SPI)"
+  supply_voltage:
+    min: 1.71 V
+    typ: 1.8 V
+    max: 3.6 V
+    src: p13 "Table 4 D.C. Electrical Characteristics, Supply Voltages VDD"
+  supply_current:
+    typ: 3.11 mA
+    src: p13 "Table 4 Supply Currents, 9-Axis (DMP disabled), Low-Noise Mode, Compass Continuous"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p13 "Table 4, Specified Temperature Range"
+  esd_hbm: { typ: 2 kV, src: 'p18 "Table 9 Absolute Maximum Ratings, ESD Protection 2kV (HBM)"' }
+
+pins:
+  src:  p19 "Table 10 Signal Descriptions; Figure 3 Pin out Diagram"
+  "1":  { name: NC, type: nc }
+  "2":  { name: NC, type: nc }
+  "3":  { name: NC, type: nc }
+  "4":  { name: NC, type: nc }
+  "5":  { name: NC, type: nc }
+  "6":  { name: NC, type: nc }
+  "7":  { name: AUX_CL, type: clock }
+  "8":  { name: VDDIO, type: power }
+  "9":  { name: AD0 / SDO, type: io }
+  "10": { name: REGOUT, type: passive }
+  "11": { name: FSYNC, type: input }
+  "12": { name: INT1, type: output }
+  "13": { name: VDD, type: power }
+  "14": { name: NC, type: nc }
+  "15": { name: NC, type: nc }
+  "16": { name: NC, type: nc }
+  "17": { name: NC, type: nc }
+  "18": { name: GND, type: ground }
+  "19": { name: RESV, type: reserved }
+  "20": { name: RESV, type: reserved }
+  "21": { name: AUX_DA, type: io }
+  "22": { name: nCS, type: input }
+  "23": { name: SCL / SCLK, type: input }
+  "24": { name: SDA / SDI, type: io }

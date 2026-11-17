@@ -1,0 +1,17 @@
+# Toshiba SSM3J168F datasheet (English), 8 PDF pages, footer date
+# 2026-07-13, Rev.8.0. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=55835); downloaded 2026-11-17 with curl.
+# Read with pdftotext -layout; the image-only package drawing was
+# rendered with pdftoppm and read as an image. Page numbers are PDF
+# page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/SSM3J168F-datasheet-en
+sha256: 3c8d7fa006be8d6c5aadc169fb2bad1a62da732cdbf2611d3e1d613d26addc9e
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=55835&prodName=SSM3J168F
+publisher: toshiba
+document_id: SSM3J168F_datasheet_en
+document_type: datasheet
+revision: "8.0"
+date: 2026-07-13

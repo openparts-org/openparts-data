@@ -1,0 +1,29 @@
+# Panasonic FK series EEEFK1K100XP: 10 µF, 80 V, case size D8 (ø6.3 x 7.7,
+# standard product, reflow, taping; "X" = D8 size code per p3
+# "Explanation of part numbers"). Listed verbatim in the p5
+# "Characteristics list" Part No. column (Standard Product), the size
+# code column giving the package. The capacitance cell is shared with
+# the adjacent row(s) of the same value.
+# lifecycle unknown: the catalog states no status for this row.
+schema_version: "0.2"
+kind: part
+id: panasonic/EEEFK1K100XP
+manufacturer: panasonic
+mpn: EEEFK1K100XP
+device: panasonic/EEEFK1K100
+package: manufacturers/panasonic/FK-D8-6.3x7.7
+sources: [panasonic/ABA0000C1181]
+source: panasonic/ABA0000C1181
+
+existence:
+  status: verified
+  src: p5 "Characteristics list, Part No. Standard Product column, EEEFK1K100XP row"
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance: { typ: 10 µF, src: 'p5 "Characteristics list, EEEFK1K100XP row, Capacitance"' }
+  tolerance:   { tol: ±20 %, src: 'p5 "Characteristics list, Capacitance column header (±20 %)"' }
+  rated_voltage:
+    typ: 80 V
+    src: p5 "Characteristics list, EEEFK1K100XP row, Rated voltage group"

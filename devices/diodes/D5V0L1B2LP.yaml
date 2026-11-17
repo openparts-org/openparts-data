@@ -15,6 +15,27 @@ parameters:
   reverse_voltage:
     max: 5 V
     src: p2 "Electrical Characteristics, Reverse Standoff Voltage VRWM"
+  clamping_voltage:
+    - typ: 7 V
+      max: 9 V
+      at: { IPP: 1 A }
+      src: p2 "Electrical Characteristics, Clamping Voltage VCL, IPP = 1 A, tP = 8/20 µs"
+    - typ: 8.7 V
+      max: 10.7 V
+      at: { IPP: 3 A }
+      src: p2 "Electrical Characteristics, Clamping Voltage VCL, IPP = 3 A, tP = 8/20 µs"
+    - typ: 10.5 V
+      max: 12 V
+      at: { IPP: 5 A }
+      src: p2 "Electrical Characteristics, Clamping Voltage VCL, IPP = 5 A, tP = 8/20 µs"
+    - typ: 11.5 V
+      max: 14 V
+      at: { IPP: 6 A }
+      src: p2 "Electrical Characteristics, Clamping Voltage VCL, IPP = 6 A, tP = 8/20 µs"
+  peak_pulse_current: { max: 6 A, src: 'p2 "Maximum Ratings, Peak Pulse Current IPP, 8/20 µs"' }
+  peak_pulse_power:
+    max: 84 W
+    src: p2 "Maximum Ratings, Peak Pulse Power Dissipation PPP, 8/20 µs"
 
 pins:
   src: 'p1 "Device Schematic: "Pin 1" and "Pin 2", bi-directional (back-to-back) TVS between them"'

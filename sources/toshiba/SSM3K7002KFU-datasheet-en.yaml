@@ -1,0 +1,17 @@
+# Toshiba SSM3K7002KFU datasheet (English), 8 PDF pages, footer date
+# 2026-11-09, Rev.7.0. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=35715); downloaded 2026-11-17 with curl.
+# Read with pdftotext -layout; the image-only package drawing was
+# rendered with pdftoppm and read as an image. Page numbers are PDF
+# page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/SSM3K7002KFU-datasheet-en
+sha256: 232a888a7bd3953035bd91c6e365604644b973e08cf14db81d3810f2551adc70
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=35715&prodName=SSM3K7002KFU
+publisher: toshiba
+document_id: SSM3K7002KFU_datasheet_en
+document_type: datasheet
+revision: "7.0"
+date: 2026-11-09

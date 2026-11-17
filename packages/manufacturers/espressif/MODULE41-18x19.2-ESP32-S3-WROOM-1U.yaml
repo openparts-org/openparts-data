@@ -1,0 +1,74 @@
+# ESP32-S3-WROOM-1U (external antenna connector) as a surface-mount module:
+# the recommended land pattern (p46 "Figure 11-2 ESP32-S3-WROOM-1U
+# Recommended PCB Land Pattern") with the board and shield can of p42
+# "Figure 10-2 ESP32-S3-WROOM-1U Physical Dimensions". Package frame: the
+# board centred on the origin, the connector end at +y (top). Every value is
+# a printed callout; positions are plain arithmetic between callouts:
+# Rows: 40 pads "1.5" x "0.9" at "1.27"; pad centres on lines "17.5" apart
+# (0.25 inside the "18" board, reaching "0.5" past the edge); pin 1 "1.19"
+# below the top edge (1.19 + "16.51" + "1.5" = "19.2"), pin 14 "1.5" above
+# the bottom edge; the bottom row 15-26 starts "2.015" from the left edge;
+# pins 27-40 run up the right edge from "1.5" above the bottom.
+# Grid: 3 x 3 pads "0.9" with "0.5" gaps ("3.7" overall: pitch 1.4); centre
+# "7.5" from the left edge (x = -1.5) and "10.29" above the bottom edge (y =
+# -9.6 + 10.29 = 0.69).
+# Shield: the can is L-shaped ("15.65" wide, "17.5" tall at the left, "13.1"
+# tall under the connector corner, "10.75" wide above it). Only its full-width
+# lower part is modelled: 15.65 x 13.1, bottom "1.1" above the board edge,
+# right side "1.08" in from the right edge: centre x = 9 - 1.08 - 7.825 =
+# 0.095, y = -9.6 + 1.1 + 6.55 = -1.95; its top is the overall height.
+# No antenna keep-out (external antenna).
+schema_version: "0.2"
+kind: package
+id: manufacturers/espressif/MODULE41-18x19.2-ESP32-S3-WROOM-1U
+family: module
+lead_count: 41
+source: espressif/esp32-s3-wroom-1_wroom-1u_datasheet_en@rev1.8
+
+pitch:
+  typ: 1.27 mm
+  src: p46 "Figure 11-2 ESP32-S3-WROOM-1U Recommended PCB Land Pattern, pad pitch"
+
+geometry: { type: parametric, generator: module }
+
+dimensions:
+  body_width:
+    min: 17.8 mm
+    typ: 18 mm
+    max: 18.2 mm
+    src: p42 "Figure 10-2 ESP32-S3-WROOM-1U Physical Dimensions, "18±0.2""
+  body_length:
+    min: 19 mm
+    typ: 19.2 mm
+    max: 19.4 mm
+    src: p42 "Figure 10-2 ESP32-S3-WROOM-1U Physical Dimensions, "19.2±0.2""
+  body_height:
+    typ: 0.8 mm
+    src: p42 "Figure 10-2 ESP32-S3-WROOM-1U Physical Dimensions, side view, board "0.8""
+  hole_diameter:
+    typ: 0.55 mm
+    src: p42 "Figure 10-2 ESP32-S3-WROOM-1U Physical Dimensions, "40 x Ø0.55" castellations"
+  overall_height:
+    min: 3.05 mm
+    typ: 3.2 mm
+    max: 3.35 mm
+    src: p42 "Figure 10-2 ESP32-S3-WROOM-1U Physical Dimensions, side view "3.2±0.15""
+
+pad_rows:
+  value:
+    - { side: -x, first: 1, count: 14, pitch: 1.27, start: 1.19, inset: 0.25, pad: [0.9, 1.5] }
+    - { side: -y, first: 15, count: 12, pitch: 1.27, start: 2.015, inset: 0.25, pad: [0.9, 1.5] }
+    - { side: +x, first: 27, count: 14, pitch: 1.27, start: 1.5, inset: 0.25, pad: [0.9, 1.5] }
+  src: p46 "Figure 11-2 ESP32-S3-WROOM-1U Recommended PCB Land Pattern (see comment)"
+
+pad_grids:
+  value:
+    - { numbers: ["41"], columns: 3, rows: 3, pitch: [1.4, 1.4], pad: [0.9, 0.9], x: -1.5, y: 0.69 }
+  src: p46 "Figure 11-2 ESP32-S3-WROOM-1U Recommended PCB Land Pattern (see comment)"
+
+shield:
+  x: 0.095
+  y: -1.95
+  width: 15.65
+  length: 13.1
+  src: p42 "Figure 10-2 ESP32-S3-WROOM-1U Physical Dimensions, top view (see comment)"

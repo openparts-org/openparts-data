@@ -19,6 +19,19 @@ parameters:
   reverse_voltage:
     max: 24 V
     src: p2 "Electrical Characteristics, Bidirectional SMAJ24CA row, VRWM"
+  clamping_voltage:
+    - max: 38.9 V
+      at: { IPP: 10.3 A }
+      src: p2 "Electrical Characteristics, SMAJ24A/SMAJ24CA row, Vc @ Ipp (10/1000 µs)"
+    - max: 50.6 V
+      at: { IPP: 51.5 A }
+      src: p2 "Electrical Characteristics, SMAJ24A/SMAJ24CA row, Vc @ Ipp (8/20 µs)"
+  peak_pulse_current:
+    max: 10.3 A
+    src: p2 "Electrical Characteristics, SMAJ24A/SMAJ24CA row, Ipp (10/1000 µs)"
+  peak_pulse_power:
+    max: 400 W
+    src: p1 "Electrical Characteristics, Minimum Peak Pulse Power Dissipation PPK (TP = 1 ms)"
 
 pins:
   src: p3 "Physical Specifications, Polarity (no cathode band = bidirectional device)"

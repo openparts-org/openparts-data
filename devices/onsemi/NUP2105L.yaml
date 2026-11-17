@@ -13,6 +13,23 @@ category: diode
 family: NUP2105L
 source: onsemi/NUP2105L-D
 
+parameters:
+  clamping_voltage:
+    - typ: 33 V
+      max: 40 V
+      at: { IPP: 5 A }
+      src: p2 "ELECTRICAL CHARACTERISTICS, VC Clamping Voltage, IPP = 5 A, 8/20 Waveform"
+    - typ: 37 V
+      max: 44 V
+      at: { IPP: 8 A }
+      src: p2 "ELECTRICAL CHARACTERISTICS, VC Clamping Voltage, IPP = 8 A, 8/20 Waveform"
+  peak_pulse_current:
+    max: 8 A
+    src: p1 "MAXIMUM RATINGS, Maximum Peak Pulse Current IPP, 8/20"
+  peak_pulse_power:
+    max: 350 W
+    src: p1 "MAXIMUM RATINGS, Peak Power Dissipation PPK, 8/20 Double Exponential Waveform"
+
 pins:
   src:
     - 'p1 "Symbol: PIN 1, PIN 2 via bidirectional suppressors to PIN 3; CASE 318 STYLE 28"'

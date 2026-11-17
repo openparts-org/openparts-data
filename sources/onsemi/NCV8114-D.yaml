@@ -1,0 +1,17 @@
+# onsemi datasheet "Voltage Regulator - CMOS, Low Dropout 300 mA,
+# NCV8114", Publication Order Number NCV8114/D, "July, 2023 - Rev. 6".
+# Downloaded 2026-11-17 with curl from onsemi.com (HTTP 200, PDF). 13
+# pages, read with pdftotext -layout; page 12 (TSOP-5 CASE 483 ISSUE P,
+# 98ARB18753C, dated 01 APR 2024) rendered and read as an image. Page
+# numbers are PDF page indices.
+schema_version: "0.2"
+kind: source
+id: onsemi/NCV8114-D
+sha256: ff8a81e01ccc03bb72bbcf143c01e16e325784464af6df1408440ce1f2bb0cbc
+retrieved: 2026-11-17
+url: https://www.onsemi.com/pdf/datasheet/ncv8114-d.pdf
+publisher: onsemi
+document_id: NCV8114/D
+document_type: datasheet
+revision: "6"
+date: 2023-07

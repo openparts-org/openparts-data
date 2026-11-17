@@ -1,0 +1,21 @@
+# LM7815CT/NOPB: SNOSBT0L PACKAGE OPTION ADDENDUM (page 24) row "LM7815CT/NOPB
+# Active  Production  TO-220 (NDE) | 3" -- MPN printed verbatim in TI's
+# orderable list (existence verified); lifecycle "Active" is TI's own
+# Status column. Package NDE = outline NDE0003B (SNOSBT0L page 28).
+schema_version: "0.2"
+kind: part
+id: ti/LM7815CT/NOPB
+manufacturer: ti
+mpn: LM7815CT/NOPB
+device: ti/LM7815-NDE
+package: { value: manufacturers/ti/NDE0003B, src: p28 "NDE0003B package outline" }
+sources: [ti/SNOSBT0L]
+source: ti/SNOSBT0L
+
+existence:
+  status: verified
+  src: p24 "Package option addendum table, row "LM7815CT/NOPB" (TO-220 (NDE) | 3)"
+
+lifecycle:
+  status: active
+  src: p24 "Package option addendum table, row "LM7815CT/NOPB", Status "Active""

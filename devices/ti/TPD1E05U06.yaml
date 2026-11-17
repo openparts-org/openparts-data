@@ -12,7 +12,21 @@ category: diode
 family: TPDxE05U06
 source: ti/SLVSBO7O
 
-parameters: { reverse_voltage: { max: 5.5 V, src: 'p7 "5.4 Electrical Characteristics, VRWM"' } }
+parameters:
+  reverse_voltage: { max: 5.5 V, src: 'p7 "5.4 Electrical Characteristics, VRWM"' }
+  clamping_voltage:
+    - typ: 10 V
+      at: { IPP: 1 A }
+      src: p7 "5.4 Electrical Characteristics, VClamp, IPP = 1 A, TLP, from I/O to GND"
+    - typ: 14 V
+      at: { IPP: 5 A }
+      src: p7 "5.4 Electrical Characteristics, VClamp, IPP = 5 A, TLP, from I/O to GND"
+  peak_pulse_current:
+    max: 2.5 A
+    src: p6 "Absolute Maximum Ratings, Peak Pulse, IEC 61000-4-5 Current (8/20us)"
+  peak_pulse_power:
+    max: 40 W
+    src: p6 "Absolute Maximum Ratings, Peak Pulse, IEC 61000-4-5 Power (8/20us)"
 
 pins:
   src:

@@ -1,0 +1,62 @@
+# Nichicon UWT chip-type aluminium electrolytic, case φ8 x 10 L, from
+# nichicon/e-uwt page 1: "Chip Type" drawings (rendered) and the
+# dimension table column "8 × 10" (A 2.9, B 8.3, C 8.3, E 3.1, L 10,
+# H 0.8 to 1.1). Frame (smd_electrolytic): top view, origin at the
+# plate's centre, terminals along X with the + terminal (pad 1) at -X;
+# the source draws the terminals along Y (+ at the top), turned 90° here.
+# Mapping: B (plate side along the terminals, B±0.2) -> body_width; C
+# (C±0.2) -> body_length; øD±0.5 -> can_diameter; L (L±0.5) ->
+# overall_height; A (terminal, A±0.2) -> lead_length; H (terminal width,
+# printed as a range) -> lead_width; overall_width = A + E + A = 8.9
+# (arithmetic of the printed stack "A±0.2 E A±0.2", tip to tip; no
+# tolerance printed for E, so typ only).
+# pads: nichicon/guide_all_E page 14 "Recommended Land Size", Chip type
+# standard type, size "φ8 × 10L": X 2.5 (across), Y 3.5 (along the terminal
+# axis), a 3.0 (between the lands); turned 90°: width = Y, length = X,
+# centres x = ±(a/2 + Y/2) = ±3.25, + land (pad 1) at -X.
+schema_version: "0.2"
+kind: package
+id: manufacturers/nichicon/UWT-8x10
+family: smd_electrolytic
+lead_count: { value: 2, src: 'p1 "Chip Type drawing, terminals Positive / Negative"' }
+source: nichicon/e-uwt
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: smd_electrolytic }
+
+dimensions:
+  body_width:
+    min: 8.1 mm
+    typ: 8.3 mm
+    max: 8.5 mm
+    src: p1 "Dimension table, 8x10 column, B (B±0.2)"
+  body_length:
+    min: 8.1 mm
+    typ: 8.3 mm
+    max: 8.5 mm
+    src: p1 "Dimension table, 8x10 column, C (C±0.2)"
+  can_diameter:
+    min: 7.5 mm
+    typ: 8 mm
+    max: 8.5 mm
+    src: p1 "Dimension table header, 8x10; drawing øD±0.5"
+  lead_length:
+    min: 2.7 mm
+    typ: 2.9 mm
+    max: 3.1 mm
+    src: p1 "Dimension table, 8x10 column, A (A±0.2)"
+  overall_width:
+    typ: 8.9 mm
+    src: p1 "Dimension table, 8x10 column, A + E + A (2.9 + 3.1 + 2.9)"
+  overall_height:
+    min: 9.5 mm
+    typ: 10 mm
+    max: 10.5 mm
+    src: p1 "Dimension table, 8x10 column, L; drawing L±0.5"
+  lead_width: { min: 0.8 mm, max: 1.1 mm, src: 'p1 "Dimension table, 8x10 column, H 0.8 to 1.1"' }
+
+pads:
+  value:
+    - { number: "1", x: -3.25, y: 0, width: 3.5, length: 2.5 }
+    - { number: "2", x: 3.25, y: 0, width: 3.5, length: 2.5 }
+  src: nichicon/guide_all_E p14 "Recommended Land Size, Chip type standard type, φ8 × 10L row, X Y a"

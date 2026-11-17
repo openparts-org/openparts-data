@@ -1,0 +1,36 @@
+# ROHM TSMT3 (SOT-346T / SC-96) 3-lead gull-wing package, read from the
+# letter-coded dimension table on page 11 of rohm/RQ5E035AT-datasheet-en
+# (rendered image; mm MIN/MAX recorded, ranges only).
+#
+# sot mapping (as standards/SOT523-1.60x0.80-P1.00-DIODES): body_width
+# = D, body_length = E, overall_length = HE, overall_height = A (max
+# only), body_height = A2, standoff = A1, lead_width = b,
+# lead_thickness = c, lead_length = Lp. Pitch = 2 x e ("e 0.95", basic;
+# lead 1 to the centre line). Top view: leads 1, 2 bottom edge, 3 top
+# edge. A3, L1, Q, x and the "Pattern of terminal position areas" (b2,
+# e1, l1; not a soldering pattern) are not recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/rohm/TSMT3
+family: sot
+lead_count: 3
+
+lead_layout:
+  value: [2, 1]
+  src:   'p11 "Dimensions SOT-346T (TSMT3) top view: leads 1, 2 bottom edge, lead 3 top edge (page 1 outline)"'
+
+source: rohm/RQ5E035AT-datasheet-en
+
+pitch: { typ: 1.9 mm, src: 'p11 "TSMT3 table, e 0.95 (lead 1 to centre line); pin 1 to 2 = 2 x e"' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:     { min: 2.8 mm, max: 3 mm, src: 'p11 "TSMT3 table, D 2.80/3.00"' }
+  body_length:    { min: 1.5 mm, max: 1.8 mm, src: 'p11 "TSMT3 table, E 1.50/1.80"' }
+  body_height:    { min: 0.75 mm, max: 0.95 mm, src: 'p11 "TSMT3 table, A2 0.75/0.95"' }
+  lead_thickness: { min: 0.1 mm, max: 0.26 mm, src: 'p11 "TSMT3 table, c 0.10/0.26"' }
+  overall_length: { min: 2.6 mm, max: 3 mm, src: 'p11 "TSMT3 table, HE 2.60/3.00"' }
+  overall_height: { max: 1 mm, src: 'p11 "TSMT3 table, A -/1.00"' }
+  standoff:       { min: 0 mm, max: 0.1 mm, src: 'p11 "TSMT3 table, A1 0.00/0.10"' }
+  lead_width:     { min: 0.35 mm, max: 0.5 mm, src: 'p11 "TSMT3 table, b 0.35/0.50"' }
+  lead_length:    { min: 0.4 mm, max: 0.7 mm, src: 'p11 "TSMT3 table, Lp 0.40/0.70"' }

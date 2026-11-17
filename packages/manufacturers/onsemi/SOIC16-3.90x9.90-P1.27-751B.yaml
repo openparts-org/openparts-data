@@ -1,0 +1,54 @@
+# onsemi CASE 751B ISSUE M "SOIC-16 9.90x3.90x1.37 1.27P" (document
+# 98ASB42566B, DATE 18 OCT 2024), read from the rendered outline page of
+# the MC74HC595A/D datasheet Rev. 27 (PDF page 15; image page). The
+# MC74HC165A/D and MC74HC4060A/D datasheets print the same case and
+# issue. Millimetres, MIN / NOM / MAX as printed.
+# D 9.90 BSC (body length), E1 3.90 BSC (body width), E 6.00 BSC
+# (lead-tip span), A 1.35/1.55/1.75, A1 0.10/0.18/0.25, A2
+# 1.25/1.37/1.50, b 0.35/0.42/0.49, c 0.19/0.22/0.25, L 0.40/0.83/1.25,
+# e 1.27 BSC. Not recorded: h, L1 (REF), angle, tolerances, the
+# recommended mounting footprint.
+schema_version: "0.2"
+kind: package
+id: manufacturers/onsemi/SOIC16-3.90x9.90-P1.27-751B
+family: soic
+lead_count: 16
+source: onsemi/MC74HC595A-D
+
+pitch: { typ: 1.27 mm, src: 'p15 "CASE 751B table, e 1.27 BSC"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:    { typ: 3.9 mm, src: 'p15 "CASE 751B table, E1 3.90 BSC"' }
+  body_length:   { typ: 9.9 mm, src: 'p15 "CASE 751B table, D 9.90 BSC"' }
+  body_height:
+    min: 1.25 mm
+    typ: 1.37 mm
+    max: 1.5 mm
+    src: p15 "CASE 751B table, A2 1.25 / 1.37 / 1.50"
+  lead_thickness:
+    min: 0.19 mm
+    typ: 0.22 mm
+    max: 0.25 mm
+    src: p15 "CASE 751B table, c 0.19 / 0.22 / 0.25"
+  overall_width: { typ: 6 mm, src: 'p15 "CASE 751B table, E 6.00 BSC"' }
+  overall_height:
+    min: 1.35 mm
+    typ: 1.55 mm
+    max: 1.75 mm
+    src: p15 "CASE 751B table, A 1.35 / 1.55 / 1.75"
+  standoff:
+    min: 0.1 mm
+    typ: 0.18 mm
+    max: 0.25 mm
+    src: p15 "CASE 751B table, A1 0.10 / 0.18 / 0.25"
+  lead_width:
+    min: 0.35 mm
+    typ: 0.42 mm
+    max: 0.49 mm
+    src: p15 "CASE 751B table, b 0.35 / 0.42 / 0.49"
+  lead_length:
+    min: 0.4 mm
+    typ: 0.83 mm
+    max: 1.25 mm
+    src: p15 "CASE 751B table, L 0.40 / 0.83 / 1.25"

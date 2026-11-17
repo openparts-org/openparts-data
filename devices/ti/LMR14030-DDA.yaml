@@ -1,0 +1,40 @@
+# LMR14030 40-V, 3.5-A step-down converter, DDA (8-pin HSOIC with
+# thermal pad) pinout. From SNVSA81B Figure 4-1 "DDA HSOIC 8-Pin (Top
+# View)" and Table 4-1 "Pin Functions" (page 3): BOOT 1, VIN 2, EN 3,
+# RT/SYNC 4, FB 5, SS 6, GND 7, SW 8, Thermal Pad 9. Types from the
+# table: BOOT "O" but a bootstrap-capacitor supply -> power; VIN supply
+# -> power; EN, RT/SYNC, FB "I" -> input; SS "O" (soft-start capacitor)
+# -> passive; GND, Thermal Pad "G" -> ground; SW "O", switch node ->
+# passive.
+# operating_temperature: the only range printed is TJ.
+schema_version: "0.2"
+kind: device
+id: ti/LMR14030-DDA
+manufacturer: ti
+category: switching_regulator
+family: LMR14030
+source: ti/SNVSA81B
+
+parameters:
+  output_type:
+    value: adjustable
+    src: p4 "5.3 Recommended Operating Conditions, VOUT 0.8 to 28 V"
+  input_voltage_max: { max: 40 V, src: 'p4 "5.3 Recommended Operating Conditions, VIN"' }
+  output_current:    { max: 3.5 A, src: 'p1 "1 Features, 3.5A continuous output current"' }
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "5.3 Recommended Operating Conditions, Operating junction temperature, TJ"
+  esd_hbm:           { typ: 2 kV, src: 'p4 "5.2 ESD Ratings, HBM"' }
+
+pins:
+  src: p3 "Figure 4-1 DDA HSOIC 8-Pin (Top View) and Table 4-1 Pin Functions"
+  "1": { name: BOOT, type: power }
+  "2": { name: VIN, type: power }
+  "3": { name: EN, type: input }
+  "4": { name: RT/SYNC, type: input }
+  "5": { name: FB, type: input }
+  "6": { name: SS, type: passive }
+  "7": { name: GND, type: ground }
+  "8": { name: SW, type: passive }
+  EP:  { name: Thermal Pad, type: ground }

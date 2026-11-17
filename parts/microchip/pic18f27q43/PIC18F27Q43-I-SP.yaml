@@ -1,0 +1,32 @@
+# PIC18F27Q43-I/SP: industrial temperature (-40 to +85 C), 28-lead SPDIP, tube.
+# existence: probable -- assembled from the "Product Identification
+# System" legend (DS40002147E page 952); the data sheet has no table of
+# orderable codes.
+# Package: drawing C04-070B (p927), the drawing of
+# standards/DIP28-W7.62-P2.54.
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/PIC18F27Q43-I-SP
+manufacturer: microchip
+mpn: PIC18F27Q43-I/SP
+device: microchip/PIC18F27Q43-28
+
+package:
+  value: standards/DIP28-W7.62-P2.54
+  src: p952 "Product Identification System, Package SP = 28-lead SPDIP"
+
+sources: [microchip/DS40002147@revE]
+source: microchip/DS40002147@revE
+
+existence:
+  status: probable
+  src: p952 "Product Identification System legend (Device, Temperature I, Package)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p893 "47.2 Standard Operating Conditions, Industrial Temperature TA -40 to +85 C"

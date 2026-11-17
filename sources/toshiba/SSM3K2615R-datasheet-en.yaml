@@ -1,0 +1,17 @@
+# Toshiba SSM3K2615R datasheet (English), 9 PDF pages, footer date
+# 2026-07-05, Rev.5.0. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=15672); downloaded 2026-11-17 with curl.
+# Read with pdftotext -layout; the image-only package drawing was
+# rendered with pdftoppm and read as an image. Page numbers are PDF
+# page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/SSM3K2615R-datasheet-en
+sha256: b0461d532a9967e9adb77254b11b0dfbe80cb7f49d7702a663e5451b02e76254
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=15672&prodName=SSM3K2615R
+publisher: toshiba
+document_id: SSM3K2615R_datasheet_en
+document_type: datasheet
+revision: "5.0"
+date: 2026-07-05

@@ -24,3 +24,16 @@ lifecycle: { status: unknown }
 
 parameters:
   reverse_voltage: { max: 5 V, src: 'p3 "ELECTRICAL CHARACTERISTICS, ESD5Z5.0T1G/T5G row, VRWM"' }
+  clamping_voltage:
+    - typ: 11.6 V
+      at: { IPP: 5 A }
+      src: p3 "ELECTRICAL CHARACTERISTICS, ESD5Z5.0T1G/T5G row, VC typ @ IPP = 5.0 A (waveform per Figure 5)"
+    - max: 18.6 V
+      at: { IPP: 9.4 A }
+      src: p3 "ELECTRICAL CHARACTERISTICS, ESD5Z5.0T1G/T5G row, VC max @ max IPP (waveform per Figure 5)"
+  peak_pulse_current:
+    max: 9.4 A
+    src: p3 "ELECTRICAL CHARACTERISTICS, ESD5Z5.0T1G/T5G row, IPP max (waveform per Figure 5)"
+  peak_pulse_power:
+    max: 174 W
+    src: p3 "ELECTRICAL CHARACTERISTICS, ESD5Z5.0T1G/T5G row, Ppk max (waveform per Figure 5)"

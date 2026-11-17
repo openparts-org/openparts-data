@@ -1,0 +1,27 @@
+# Orderable MPN in the Package Option Addendum of SLVS632L (page 28):
+# "TPS5430DDA | Active | Production | SO PowerPAD"; Op temp -40 to 125,
+# marking 5430. Lifecycle from the same row's Status column.
+# Package: the PDF prints two DDA outlines, DDA0008J (4221637/B, pages
+# 33-35) and DDA0008B (4214849/B, pages 36-38), and the addendum does
+# not say which applies to which orderable; same body, lead and pitch
+# callouts, thermal pad "2.6" vs "2.71" max. Mapped to
+# manufacturers/ti/DDA0008B (the outline already in the dataset).
+schema_version: "0.2"
+kind: part
+id: ti/TPS5430DDA
+manufacturer: ti
+mpn: TPS5430DDA
+device: ti/TPS5430-DDA
+
+package:
+  value: manufacturers/ti/DDA0008B
+  src: p36 "PACKAGE OUTLINE DDA0008B (4214849/B); DDA0008J also printed on p33"
+
+sources: [ti/SLVS632L]
+source: ti/SLVS632L
+
+existence:
+  status: verified
+  src: p28 "Package Option Addendum, Packaging Information, row TPS5430DDA"
+
+lifecycle: { status: active, src: 'p28 "Package Option Addendum, row TPS5430DDA, Status Active"' }

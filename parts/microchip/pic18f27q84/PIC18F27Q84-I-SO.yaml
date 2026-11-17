@@ -1,0 +1,32 @@
+# PIC18F27Q84-I/SO: industrial temperature (-40 to +85 C), 28-lead SOIC, tube.
+# existence: probable -- assembled from the "Product Identification
+# System" legend (DS40002213C page 1143); the data sheet has no table of
+# orderable codes.
+# Package: drawing C04-052C (p1119), the drawing of
+# manufacturers/microchip/SOIC28-SO-C04-052C.
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/PIC18F27Q84-I-SO
+manufacturer: microchip
+mpn: PIC18F27Q84-I/SO
+device: microchip/PIC18F27Q84-28
+
+package:
+  value: manufacturers/microchip/SOIC28-SO-C04-052C
+  src: p1143 "Product Identification System, Package SO = 28-lead SOIC"
+
+sources: [microchip/DS40002213@revC]
+source: microchip/DS40002213@revC
+
+existence:
+  status: probable
+  src: p1143 "Product Identification System legend (Device, Temperature I, Package)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1086 "Standard Operating Conditions, Industrial Temperature TA -40 to +85 C"

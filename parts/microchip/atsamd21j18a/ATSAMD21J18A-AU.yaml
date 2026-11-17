@@ -1,0 +1,37 @@
+# ATSAMD21J18A-AU: decoded with section 3 "SAM D21 Ordering Information"
+# (DS40001882L page 15): ATSAMD 21 J 18 A - AU = SAM D21, 64 pins,
+# 256KB flash, default variant A, package type "A = TQFP", package grade
+# "U = -40 - 85C Matte Sn Plating", tray. Table 2-1 "Configuration
+# Summary" (page 13) lists ATSAMD21J18A in "TQFP, QFN" 64-pin packages.
+# existence is "probable", not "verified": the exact string "ATSAMD21J18A-AU"
+# does not appear in any ordering table of this data sheet (only the SIL2
+# code "ATSAMD21J18A-AU-SLL", page 1065); it is assembled from the ordering-code
+# scheme, whose note 1 says "Not all combinations are valid".
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATSAMD21J18A-AU
+manufacturer: microchip
+mpn: ATSAMD21J18A-AU
+device: microchip/ATSAMD21J18A
+
+package:
+  value: manufacturers/microchip/TQFP64-10x10-P0.5-PT-C04-085C
+  src:
+    - p15 "Section 3, Package Type "A = TQFP""
+    - p1069 "Section 44.1, drawing C04-085C sheet 2"
+
+sources: [microchip/DS40001882@revL]
+source: microchip/DS40001882@revL
+
+existence:
+  status: probable
+  src: p15 "Section 3 Ordering Information; Table 2-1 Configuration Summary (p13); ATSAMD21J18A-AU-SLL (p1065)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p907 "Table 37-3 General Operating Conditions, TA -40 to 85 C (specified)"

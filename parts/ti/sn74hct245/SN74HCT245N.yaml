@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCLS020H PDF page 15): row "SN74HCT245N", "PDIP (N) | 20". lifecycle "active" is
+# that table's Status column ("Active").
+# Package: legacy outline N (R-PDIP-T**) 4040049/E (image page) on page 21. Same drawing number and revision as the reused package manufacturers/ti/N-R-PDIP-T20.
+schema_version: "0.2"
+kind: part
+id: ti/SN74HCT245N
+manufacturer: ti
+mpn: SN74HCT245N
+device: ti/SN74HCT245
+
+package:
+  value: manufacturers/ti/N-R-PDIP-T20
+  src:
+    - p15 "Package Option Addendum, row "SN74HCT245N", "PDIP (N) | 20""
+    - p21 "MECHANICAL DATA N (R-PDIP-T**) 4040049/E, 20 pins"
+
+sources: [ti/SCLS020H]
+source: ti/SCLS020H
+
+existence:
+  status: verified
+  src: p15 "Package Option Addendum, Packaging Information table, row "SN74HCT245N""
+
+lifecycle:
+  status: active
+  src: p15 "Package Option Addendum, row "SN74HCT245N", Status "Active""

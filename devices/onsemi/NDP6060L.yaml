@@ -1,0 +1,22 @@
+# logic-level N-channel MOSFET 60 V, 48 A (NDP6060L), TO-220-3LD CASE 340AT. The datasheet
+# prints the lead functions only as "G D S" labels on the page-1
+# package image (no numbers); the outline 98AON13818G has no STYLE list
+# and numbers its front-view leads 1 2 3 left to right. Read as the
+# front view: 1 = Gate, 2 = Drain, 3 = Source -- position-derived,
+# flagged for review (as onsemi/FQP27P06). The tab (drain) is not a
+# footprint pad of a vertical TO-220 and is not listed.
+schema_version: "0.2"
+kind: device
+id: onsemi/NDP6060L
+manufacturer: onsemi
+category: transistor
+family: NDP6060L
+source: onsemi/98AON13818G
+
+pins:
+  src:
+    - onsemi/NDP6060L-D p1 "TO-220-3LD CASE 340AT image, leads labelled "G D S"; no numbers"
+    - p1 "Front view leads numbered "1 2 3" left to right"
+  "1": { name: Gate, type: passive }
+  "2": { name: Drain, type: passive }
+  "3": { name: Source, type: passive }

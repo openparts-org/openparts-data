@@ -1,0 +1,46 @@
+# Order code "SSM3K16FV,L3F" is listed under "Orderable part number (example)"
+# on Toshiba's SSM3K16FV product page; the page says listed numbers are
+# representative, and the datasheet has no ordering table -> existence
+# `probable`. Lifecycle `unknown` (not stated).
+schema_version: "0.2"
+kind: part
+id: toshiba/SSM3K16FV,L3F
+manufacturer: toshiba
+mpn: SSM3K16FV,L3F
+device: toshiba/SSM3K16FV
+
+package:
+  value: manufacturers/toshiba/VESM
+  src: p1 "page-1 outline drawing, package name VESM"
+
+sources: [toshiba/SSM3K16FV-datasheet-en, toshiba/SSM3K16FV-product-page]
+source: toshiba/SSM3K16FV-datasheet-en
+
+existence:
+  status: probable
+  src: toshiba/SSM3K16FV-product-page p1 "Orderable part number (example), SSM3K16FV,L3F"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: 'p1 "Title, Silicon N Channel MOS Type""' }
+  drain_source_voltage: { max: 20 V, src: 'p1 "Absolute Maximum Ratings, VDS"' }
+  drain_current:        { max: 100 mA, src: 'p1 "Absolute Maximum Ratings, Drain current DC ID"' }
+  rds_on:
+    - typ: 1.5 Ω
+      max: 3 Ω
+      at: { VGS: 4 V, ID: 10 mA }
+      src: p2 "Electrical Characteristics, RDS(ON), ID = 10mA / VGS = 4V row"
+    - typ: 2.2 Ω
+      max: 4 Ω
+      at: { VGS: 2.5 V, ID: 10 mA }
+      src: p2 "Electrical Characteristics, RDS(ON), ID = 10mA / VGS = 2.5V row"
+    - typ: 5.2 Ω
+      max: 15 Ω
+      at: { VGS: 1.5 V, ID: 1 mA }
+      src: p2 "Electrical Characteristics, RDS(ON), ID = 1mA / VGS = 1.5V row"
+  gate_threshold_voltage:
+    min: 0.6 V
+    max: 1.1 V
+    at: { VDS: 3 V, ID: 0.1 mA }
+    src: p2 "Electrical Characteristics, Vth (Min 0.6 / Max 1.1)"

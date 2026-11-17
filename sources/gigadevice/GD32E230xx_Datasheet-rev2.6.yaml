@@ -1,0 +1,17 @@
+# Official GigaDevice GD32E230xx datasheet, fetched 2026-11-17 with curl
+# from GigaDevice's GD32 MCU site (gd32mcu.com). Read via pdftotext
+# -layout; pinout figures (PDF pages 13-15) rendered and read. Revision
+# and date from the "Revision history" table (PDF page 92): "2.6 Update
+# ordering information, add GD32E230F8V7TR ... Apr. 18, 2024" (latest
+# entry). 93 PDF pages. PDF page index = printed page number + 1.
+schema_version: "0.2"
+kind: source
+id: gigadevice/GD32E230xx_Datasheet@rev2.6
+sha256: 889ea6e268851f030d13e21ba34d68354695ed07214e5c406978088ecc6cd023
+retrieved: 2026-11-17
+url: https://www.gd32mcu.com/data/documents/datasheet/GD32E230xx_Datasheet_Rev2.6.pdf
+publisher: gigadevice
+document_id: GD32E230xx_Datasheet
+document_type: datasheet
+revision: "2.6"
+date: 2024-04-18

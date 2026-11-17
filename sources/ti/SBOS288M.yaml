@@ -1,0 +1,17 @@
+# Official TI datasheet "TMPx75 Temperature Sensor With I2C and SMBus Interface in Industry Standard LM75 Form Factor and Pinout". Downloaded 2026-11-17 with curl from the
+# TI symlink URL below; revision read from the page header "SBOS288M - JANUARY 2004 - REVISED DECEMBER 2020".
+# 35 PDF pages; text read with pdftotext -layout, package drawings read
+# from pages rendered with pdftoppm. Page numbers are PDF page indices.
+# The PACKAGE OPTION ADDENDUM at the end of the PDF is dated 17-Jun-2026 (newer
+# than the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SBOS288M
+sha256: 30ddeda575764440fc4354326dd4eb17459839ca37eaee3593a0e5fb5c0cbc06
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/tmp75.pdf
+publisher: ti
+document_id: SBOS288M
+document_type: datasheet
+revision: M
+date: 2020-12

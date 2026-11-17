@@ -1,0 +1,45 @@
+# FQP12P10: printed verbatim in the "Package Marking and Ordering
+# Information" table (FQP12P10 Rev. C0/C1, page 3): Part Number "FQP12P10",
+# Package TO-220, Tube, 50 units -> existence verified.
+# Package: page 8 Mechanical Dimensions, PN_TO220-003.
+# No lifecycle statement for this MPN.
+schema_version: "0.2"
+kind: part
+id: onsemi/FQP12P10
+manufacturer: onsemi
+mpn: FQP12P10
+device: onsemi/FQP12P10
+
+package:
+  value: manufacturers/onsemi/PN_TO220-003
+  src: p8 "Mechanical Dimensions, Figure 16 "TO220, Molded, 3-Lead, Jedec Variation AB", PN_TO220-003"
+
+sources: [onsemi/FQP12P10-D, onsemi/FQP30N06L-D]
+source: onsemi/FQP12P10-D
+
+existence:
+  status: verified
+  src: p3 "Package Marking and Ordering Information, Part Number "FQP12P10", TO-220, Tube, 50 units"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: p_channel, src: p2 "Title" }
+  drain_source_voltage: { max: -100 V, src: 'p2 "Absolute Maximum Ratings, VDSS"' }
+  drain_current:
+    - max: -11.5 A
+      at: { TC: 25 °C }
+      src: p2 "Absolute Maximum Ratings, ID Continuous (TC = 25°C)"
+    - max: -8.1 A
+      at: { TC: 100 °C }
+      src: p2 "Absolute Maximum Ratings, ID Continuous (TC = 100°C)"
+  rds_on:
+    typ: 0.24 Ω
+    max: 0.29 Ω
+    at: { VGS: -10 V, ID: -5.75 A }
+    src: p3 "Elec. Char., On Characteristics, RDS(on) Static Drain-Source On-Resistance"
+  gate_threshold_voltage:
+    min: -4 V
+    max: -2 V
+    at: { ID: -250 µA }
+    src: p3 "Elec. Char., On Characteristics, VGS(th), VDS = VGS"

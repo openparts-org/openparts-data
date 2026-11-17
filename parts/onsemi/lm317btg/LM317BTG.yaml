@@ -1,0 +1,24 @@
+# LM317BTG: printed verbatim in LM317/D Rev. 18 ORDERING INFORMATION
+# (page 10): TO-220 (Pb-Free), 50 Units / Rail, TJ = -40 °C to +125 °C.
+# Package "TO-220 T SUFFIX CASE 221AB" (page 1), outline page 12
+# (= standalone 98AON23085D).
+# No lifecycle statement for this MPN.
+schema_version: "0.2"
+kind: part
+id: onsemi/LM317BTG
+manufacturer: onsemi
+mpn: LM317BTG
+device: onsemi/LM317-T
+
+package:
+  value: manufacturers/onsemi/TO220-221AB
+  src: [p1 "TO-220 T SUFFIX CASE 221AB", onsemi/98AON23085D p1 "CASE 221AB outline"]
+
+sources: [onsemi/LM317-D, onsemi/98AON23085D]
+source: onsemi/LM317-D
+
+existence:
+  status: verified
+  src: 'p10 "ORDERING INFORMATION: "LM317BTG | TO-220 (Pb-Free) | 50 Units / Rail""'
+
+lifecycle: { status: unknown }

@@ -1,0 +1,60 @@
+# onsemi TO-220 SINGLE GAUGE, CASE 221AB ISSUE A (98AON23085D, DATE 16
+# NOV 2010), read from the standalone outline: lettered drawing plus an
+# INCHES / MILLIMETERS MIN/MAX table (no nominals; "CONTROLLING
+# DIMENSION: INCHES", millimetre column recorded). Front view numbers
+# the leads "1 2 3" left to right; the STYLE list names terminal 4 (the
+# tab), which is not a board pad.
+#
+# Mapping (frame to220): B (9.66-10.28, front view width) ->
+# body_width; C (4.07-4.82, side view body front to tab back) ->
+# body_length; A (14.48-15.75, tab top to body underside) ->
+# overall_height; D (0.64-0.88) -> lead_width; J (0.46-0.64) ->
+# lead_thickness; K (12.70-14.27, body underside to lead tip) ->
+# tail_length; F (3.61-3.73) -> mounting_hole_diameter; Q (2.54-3.04,
+# tab top to hole centre) -> mounting_hole_inset; G (2.42-2.66) ->
+# pitch (min/max only). body_height (flagged for review): no letter of
+# its own; T (5.97-6.47, tab top to molding top) is stacked on A, so the
+# molding is A - T, worst case 14.48 - 6.47 = 8.01 to 15.75 - 5.97 =
+# 9.78. Left out: H, L, N, R, S, U, V, Z (shoulder, tab, zone);
+# body_offset (no nominal). No land pattern printed.
+schema_version: "0.2"
+kind: package
+id: manufacturers/onsemi/TO220-221AB
+family: to220
+lead_count: 3
+source: onsemi/98AON23085D
+
+pitch: { min: 2.42 mm, max: 2.66 mm, src: 'p1 "MILLIMETERS table, "G" (2.42 / 2.66)"' }
+geometry: { type: parametric, generator: to220 }
+
+dimensions:
+  body_width:
+    min: 9.66 mm
+    max: 10.28 mm
+    src: p1 "MILLIMETERS table, "B" (9.66 / 10.28), front view width"
+  body_length:
+    min: 4.07 mm
+    max: 4.82 mm
+    src: p1 "MILLIMETERS table, "C" (4.07 / 4.82), side view"
+  body_height:
+    min: 8.01 mm
+    max: 9.78 mm
+    src: p1 "MILLIMETERS table, "A" (14.48 / 15.75) minus "T" (5.97 / 6.47), worst case"
+  tail_length:
+    min: 12.7 mm
+    max: 14.27 mm
+    src: p1 "MILLIMETERS table, "K" (12.70 / 14.27), body underside to lead tip"
+  overall_height:
+    min: 14.48 mm
+    max: 15.75 mm
+    src: p1 "MILLIMETERS table, "A" (14.48 / 15.75), tab top to body underside"
+  lead_width: { min: 0.64 mm, max: 0.88 mm, src: 'p1 "MILLIMETERS table, "D" (0.64 / 0.88)"' }
+  lead_thickness: { min: 0.46 mm, max: 0.64 mm, src: 'p1 "MILLIMETERS table, "J" (0.46 / 0.64)"' }
+  mounting_hole_diameter:
+    min: 3.61 mm
+    max: 3.73 mm
+    src: p1 "MILLIMETERS table, "F" (3.61 / 3.73)"
+  mounting_hole_inset:
+    min: 2.54 mm
+    max: 3.04 mm
+    src: p1 "MILLIMETERS table, "Q" (2.54 / 3.04), tab top to hole centre"

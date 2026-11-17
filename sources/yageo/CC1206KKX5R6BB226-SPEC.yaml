@@ -1,0 +1,15 @@
+# YAGEO per-part spec sheet for CC1206KKX5R6BB226, served by the manufacturer's own
+# spec-sheet download endpoint (plain curl, PDF; a non-existent MPN returns
+# HTTP 404). The sheet carries no revision; it prints only "Generated
+# 11/17/2026", recorded as date/revision. Read via pdftotext -layout.
+schema_version: "0.2"
+kind: source
+id: yageo/CC1206KKX5R6BB226-SPEC
+sha256: 979e514e184a31b305b9f9800f87611d52ee6af614c008a54efae9cc6b752712
+retrieved: 2026-11-17
+url: https://yageogroup.com/component-documentation/download/specsheet/CC1206KKX5R6BB226
+publisher: yageo
+document_id: CC1206KKX5R6BB226
+document_type: datasheet
+revision: generated 2026-11-17
+date: 2026-11-17

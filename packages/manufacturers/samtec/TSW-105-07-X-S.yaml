@@ -1,0 +1,44 @@
+# Samtec TSW straight .025 [0.64] square-post terminal strip, 1 x 5,
+# 2.54 mm pitch, lead style -07, from samtec/TSW-XXX-XX-XXX-X-XX-XXX-MKT:
+# sheet 2 Fig 1 (body .100 [2.54] high, -S .100 [2.54] wide; overall length
+# "A" = No. of pos x .100 [2.54] = 12.70 mm, Table 8 tolerance), sheet 6 Table 1
+# (-07: post "C" .230 [5.84] above the body), sheet 5 Table 4 (pin
+# T-1S6-07: "L" .430 [10.92] overall) -> tail below the body
+# 10.92 - 5.84 - 2.54 = 2.54. Holes from samtec/TSW-XXX-XX-X-X-XX-XXX-FOOTPRINT
+# (".040 [1.02] DIA (TYP)"). Pin 1 at the end of the row; pins run
+# 1..N along the row (generator numbering).
+schema_version: "0.2"
+kind: package
+id: manufacturers/samtec/TSW-105-07-X-S
+family: header
+lead_count: 5
+
+lead_layout:
+  value: [1, 5]
+  src:   'p1 "part-number legend: No. of positions per row -105, row specification -S"'
+
+source: samtec/TSW-XXX-XX-XXX-X-XX-XXX-MKT
+
+pitch: { typ: 2.54 mm, src: 'p1 "TERMINAL SPACE SPEC. -1=.100[2.54] FILL EVERY POSITION"' }
+geometry: { type: parametric, generator: header }
+
+dimensions:
+  body_width:  { typ: 2.54 mm, src: 'p2 "Fig 1, -S end view: body .100 [2.54] REF"' }
+  body_length:
+    min: 12.32 mm
+    typ: 12.7 mm
+    max: 13.08 mm
+    src: p1 ""A" = NO. OF POS. x .100[2.54]"; p2 Table 8 -S, -D "+.015/-.015 [+0.38/-0.38]"
+  body_height: { typ: 2.54 mm, src: 'p2 "Fig 1, body height .100 [2.54] REF"' }
+  tail_length:
+    typ: 2.54 mm
+    src: p5 "Table 4, T-1S6-07 L .430 [10.92]; with p6 Table 1 -07 C .230 [5.84], see comment"
+  lead_width: { typ: 0.64 mm, src: 'p1 "DESCRIPTION: .025[0.64] SQ. POST TERMINAL STRIP ASSEMBLY"' }
+  hole_diameter:
+    typ: 1.02 mm
+    src: samtec/TSW-XXX-XX-X-X-XX-XXX-FOOTPRINT p1 ".040 [1.02] DIA (TYP)"
+  mating_length:
+    min: 5.64 mm
+    typ: 5.84 mm
+    max: 6.04 mm
+    src: p6 "Table 1, lead style -07 C .230 [5.84]; tolerance C ±.008 [0.20] per sheet 2"

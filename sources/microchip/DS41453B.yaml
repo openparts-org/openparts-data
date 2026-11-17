@@ -1,0 +1,21 @@
+# Microchip "PIC16(L)F1847" data sheet (18/20/28-pin), document DS41453B
+# (footer "DS41453B-page n", marked "Preliminary", (c) 2011), 408 PDF
+# pages. Downloaded with curl from ww1.microchip.com (URL below); the
+# newer 40001453E file name answered 301 to the filehandler redirect, so
+# revision B is the one read. Date from Appendix "Revision B (May, 2011)"
+# (PDF page 395). Locators use PDF page indices: they equal the printed
+# numbers up to about page 300, later the printed numbers run 2 higher
+# (PDF 348 = printed 350, PDF 407 = printed 409). Pin diagrams (page 5)
+# read with pdftotext -layout; the package drawings (pages 385-394) are
+# images and were rendered and read.
+schema_version: "0.2"
+kind: source
+id: microchip/DS41453@revB
+sha256: 99ecef96a6cdb934d63a8cad6e28d2147e76be2d079ced298a2610c16c3eb8fc
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/41453B.pdf
+publisher: microchip
+document_id: DS41453
+document_type: datasheet
+revision: B
+date: 2011-05

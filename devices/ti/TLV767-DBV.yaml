@@ -1,0 +1,37 @@
+# TLV767 1-A, 16-V LDO, fixed-output DBV (SOT-23-5) pinout. From
+# SLVSE84D Figure 5-5 "DBV Package (Fixed)" (page 3) and Table 5-1 "Pin
+# Functions", DBV (Fixed) column (page 4): IN 1, GND 2, EN 3, DNC 4,
+# OUT 5. DNC "Do not connect to a biased voltage. Tie this pin to
+# ground or leave floating" -> nc. The DRV/DGN pinouts (adjustable FB
+# or fixed SNS) are not covered: this PDF prints no detailed DRV/DGN
+# outline. dropout_voltage left out: Elec. Char. prints VDO only for
+# the DGN and DRV packages.
+# operating_temperature: the only range printed is TJ.
+schema_version: "0.2"
+kind: device
+id: ti/TLV767-DBV
+manufacturer: ti
+category: linear_regulator
+family: TLV767
+source: ti/SLVSE84D
+
+parameters:
+  output_type:       { value: fixed, src: 'p4 "Table 5-1 Pin Functions, DBV (Fixed) column"' }
+  input_voltage_max: { max: 16 V, src: 'p5 "6.3 Recommended Operating Conditions, VIN"' }
+  output_current:
+    max: 1 A
+    at: { VIN: 3 V }
+    src: p5 "6.3 Recommended Operating Conditions, IOUT (VIN >= 3 V)"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p5 "6.3 Recommended Operating Conditions, TJ"
+  esd_hbm:           { typ: 3 kV, src: 'p5 "6.2 ESD Ratings, HBM all pins ±3000 V"' }
+
+pins:
+  src: [p3 "Figure 5-5 DBV Package (Fixed)", 'p4 "Table 5-1 Pin Functions, DBV (Fixed) column"']
+  "1": { name: IN, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: EN, type: input }
+  "4": { name: DNC, type: nc }
+  "5": { name: OUT, type: power }

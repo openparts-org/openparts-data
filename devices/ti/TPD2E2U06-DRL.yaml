@@ -12,7 +12,21 @@ category: diode
 family: TPD2E2U06
 source: ti/SLLSEG9C
 
-parameters: { reverse_voltage: { max: 5.5 V, src: 'p4 "6.5 Electrical Characteristics, VRWM"' } }
+parameters:
+  reverse_voltage: { max: 5.5 V, src: 'p4 "6.5 Electrical Characteristics, VRWM"' }
+  clamping_voltage:
+    - typ: 9.7 V
+      at: { IPP: 1 A }
+      src: p4 "6.5 Electrical Characteristics, VCLAMP IO to GND, IPP = 1 A, TLP"
+    - typ: 12.4 V
+      at: { IPP: 5 A }
+      src: p4 "6.5 Electrical Characteristics, VCLAMP IO to GND, IPP = 5 A, TLP"
+  peak_pulse_current:
+    max: 5.5 A
+    src: p3 "6.1 Absolute Maximum Ratings, IPP peak pulse current (tp = 8/20 µs)"
+  peak_pulse_power:
+    max: 85 W
+    src: p3 "6.1 Absolute Maximum Ratings, PPP peak pulse power (tp = 8/20 µs) DRL package"
 
 pins:
   src: ['p3 "Pin Functions, DRL column"', p3 "DRL Package 5-Pin SOT Top View (cross-check)"]

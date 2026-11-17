@@ -1,0 +1,16 @@
+# Murata per-part reference sheet for GRM155R60J106ME05_ (_ = packaging code),
+# footer "GRM155R60J106ME05-01A", 33 pages. Fetched with curl from Murata's
+# own pim.murata.com asset URL on 2026-11-17.
+# Read with pdftotext -layout; page 2 holds the part-number system, Type & Dimension, Rated Value and Package tables (page 1 is Scope).
+# Page 2 states "Product specifications in this catalog are as of 6月.13,2026".
+schema_version: "0.2"
+kind: source
+id: murata/GRM155R60J106ME05-01A
+sha256: 6b0499e7dca56a1e65093a14299b9feb599684fbc88845bf12c0accb0929e90c
+retrieved: 2026-11-17
+url: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM155R60J106ME05-01A-EN_PDF_CERAMICCAPACITORSMD
+publisher: murata
+document_id: GRM155R60J106ME05-01A
+document_type: datasheet
+revision: -01A
+date: 2026-06-13

@@ -22,6 +22,10 @@ parameters:
     max: 85 °C
     src: p6 "Table 2, Operating temperature range TA, operational -40..85 C (full-accuracy 0..65 C not used)"
   esd_hbm: { typ: 2 kV, src: 'p8 "Table 3 Absolute maximum ratings, ESD (HBM)"' }
+  pressure_range:
+    min: 300 hPa
+    max: 1250 hPa
+    src: p6 "Table 2 General electrical parameter specifications, Operating pressure range P"
 
 pins:
   src:  p45 "Table 50 Pin description; Figure 23 pin-out"

@@ -1,0 +1,16 @@
+# Official TI datasheet "LMT87 2.7-V, SC70/TO-92/TO-92S, Analog Temperature Sensor ...". Downloaded 2026-11-17 with curl from the
+# TI symlink URL below; revision read from the page header "SNIS170E - JANUARY 2014 - REVISED OCTOBER 2017".
+# 30 PDF pages; text read with pdftotext -layout. Page numbers are PDF
+# page indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is
+# dated 12-Sep-2026 (newer than the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SNIS170E
+sha256: 1565a02c15ee8333c71c443e2a0c4a37b4d7f01cd12351290bef2451db02c7a5
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/lmt87.pdf
+publisher: ti
+document_id: SNIS170E
+document_type: datasheet
+revision: E
+date: 2017-10

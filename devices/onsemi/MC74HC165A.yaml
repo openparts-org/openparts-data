@@ -1,0 +1,56 @@
+# 8-Bit Serial or Parallel-Input/Serial-Output Shift Register MC74HC165A (onsemi), 16-pin pin map of the SOIC-16 and
+# TSSOP-16 packages ("Figure 1. Pin Assignments" (rendered)). QH with overbar (pin 7) written QH_N; SERIAL SHIFT/PARALLEL LOAD
+# (pin 1, PARALLEL LOAD overbarred) and CLOCK INHIBIT written with _.
+# The QFN16 variant (where present) is not covered.
+schema_version: "0.2"
+kind: device
+id: onsemi/MC74HC165A
+manufacturer: onsemi
+category: logic
+family: MC74HC165A
+source: onsemi/MC74HC165A-D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 6 V
+    src: p3 "RECOMMENDED OPERATING CONDITIONS, MC74HC, VCC DC Supply Voltage"
+  supply_current:
+    max: 4 µA
+    at: { VCC: 6 V, TA: -55..25 °C }
+    src: p4 "DC ELECTRICAL CHARACTERISTICS, ICC Maximum Quiescent Supply Current, 6.0 V, -55 to 25°C"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p3 "RECOMMENDED OPERATING CONDITIONS, MC74HC, TA Operating Free-Air Temperature"
+  esd_hbm: { typ: 2 kV, src: 'p3 "MAXIMUM RATINGS, VESD Human Body Model"' }
+  channel_count:
+    value: "1"
+    src: 'p1 "Title: 8-Bit Serial or Parallel-Input/Serial-Output Shift Register"'
+  propagation_delay:
+    max: 30 ns
+    at: { VCC: 4.5 V, CL: 50 pF, TA: -55..25 °C }
+    src: p4 "AC ELECTRICAL CHARACTERISTICS, tPLH/tPHL Clock to QH, 4.5 V, -55 to 25°C (CL 50 pF test circuit)"
+  logic_function:
+    value: shift_register
+    src: 'p1 "Title: 8-Bit Serial or Parallel-Input/Serial-Output Shift Register"'
+
+pins:
+  src:  p2 "Figure 1. Pin Assignments (rendered)"
+  "1":  { name: SERIAL_SHIFT/PARALLEL_LOAD, type: input }
+  "2":  { name: CLOCK, type: clock }
+  "3":  { name: E, type: input }
+  "4":  { name: F, type: input }
+  "5":  { name: G, type: input }
+  "6":  { name: H, type: input }
+  "7":  { name: QH_N, type: output }
+  "8":  { name: GND, type: ground }
+  "9":  { name: QH, type: output }
+  "10": { name: SA, type: input }
+  "11": { name: A, type: input }
+  "12": { name: B, type: input }
+  "13": { name: C, type: input }
+  "14": { name: D, type: input }
+  "15": { name: CLOCK_INHIBIT, type: input }
+  "16": { name: VCC, type: power }

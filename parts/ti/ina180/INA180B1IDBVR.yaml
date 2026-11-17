@@ -24,3 +24,6 @@ existence:
 lifecycle:
   status: active
   src: p32 "Package Option Addendum, row "INA180B1IDBVR", Status "Active""
+
+parameters:
+  gain: { typ: 20 V/V, src: 'p4 "Table 5-1 Device Comparison, INA180B1, gain 20 V/V"' }

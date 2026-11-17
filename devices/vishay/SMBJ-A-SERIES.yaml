@@ -14,6 +14,11 @@ category: diode
 family: SMBJ
 source: vishay/88392
 
+parameters:
+  peak_pulse_power:
+    max: 600 W
+    src: p1 "MAXIMUM RATINGS, Peak pulse power dissipation with a 10/1000 µs waveform PPPM"
+
 pins:
   src: 'p1 "MECHANICAL DATA: "Polarity: for unidirectional types the band denotes cathode end""'
   "1": { name: Cathode, type: passive }

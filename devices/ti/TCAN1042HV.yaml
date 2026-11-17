@@ -19,6 +19,10 @@ parameters:
     min: 4.5 V
     max: 5.5 V
     src: p8 "7.4 Recommended Operating Conditions, VCC 5-V Bus Supply Voltage Range"
+  io_supply_voltage:
+    min: 3 V
+    max: 5.5 V
+    src: p8 "7.4 Recommended Operating Conditions, VIO I/O Level-Shifting Voltage Range"
   esd_hbm:
     typ: 6 kV
     src: p6 "7.2 ESD Ratings, D (SOIC), HBM, All terminals (CANH/CANL to GND ±16 kV)"

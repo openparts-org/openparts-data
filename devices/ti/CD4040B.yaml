@@ -1,0 +1,68 @@
+# CMOS 12-stage ripple-carry binary counter/divider CD4040B, 16-pin pin
+# map read from the rendered "TERMINAL ASSIGNMENTS, CD4040B, TOP VIEW"
+# diagram (SCHS030D page 1, scanned), cross-checked against the CD4040B
+# FUNCTIONAL DIAGRAM pin numbers on the same page. The clock input is
+# printed as the Greek letter phi, written CLK here; R (RESET, active
+# high) typed reset.
+# operating_temperature: the only printed range is the absolute-maximum
+# "OPERATING-TEMPERATURE RANGE (TA)", which is also the span of the static
+# electrical-characteristics table (as ti/CD4017B).
+schema_version: "0.2"
+kind: device
+id: ti/CD4040B
+manufacturer: ti
+category: logic
+family: CD4040B
+source: ti/SCHS030D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 18 V
+    src: p2 "RECOMMENDED OPERATING CONDITIONS, Supply Voltage Range"
+  supply_current:
+    typ: 0.04 µA
+    max: 5 µA
+    at: { VDD: 5 V, TA: 25 °C }
+    src: 'p3 "STATIC ELECTRICAL CHARACTERISTICS: Quiescent Device Current IDD, VDD 5 V, +25 column"'
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p1 "MAXIMUM RATINGS, OPERATING-TEMPERATURE RANGE (TA)"
+  channel_count: { value: "1", src: p1 "CD4040B - 12 Stage (one counter per package)" }
+  propagation_delay:
+    - typ: 180 ns
+      max: 360 ns
+      at: { VDD: 5 V, CL: 50 pF, TA: 25 °C }
+      src: p4 "DYNAMIC ELECTRICAL CHARACTERISTICS, Propagation Delay Time phi to Q1 Out, VDD 5 V"
+    - typ: 80 ns
+      max: 160 ns
+      at: { VDD: 10 V, CL: 50 pF, TA: 25 °C }
+      src: p4 "DYNAMIC ELECTRICAL CHARACTERISTICS, Propagation Delay Time phi to Q1 Out, VDD 10 V"
+    - typ: 65 ns
+      max: 130 ns
+      at: { VDD: 15 V, CL: 50 pF, TA: 25 °C }
+      src: p4 "DYNAMIC ELECTRICAL CHARACTERISTICS, Propagation Delay Time phi to Q1 Out, VDD 15 V"
+  logic_function: { value: counter, src: 'p1 "Title, CMOS Ripple-Carry Binary Counter/Dividers"' }
+
+pins:
+  src:
+    - p1 "TERMINAL ASSIGNMENTS, CD4040B TOP VIEW (scanned, rendered)"
+    - p1 "CD4040B FUNCTIONAL DIAGRAM pin numbers (cross-check)"
+  "1":  { name: Q12, type: output }
+  "2":  { name: Q6, type: output }
+  "3":  { name: Q5, type: output }
+  "4":  { name: Q7, type: output }
+  "5":  { name: Q4, type: output }
+  "6":  { name: Q3, type: output }
+  "7":  { name: Q2, type: output }
+  "8":  { name: VSS, type: ground }
+  "9":  { name: Q1, type: output }
+  "10": { name: CLK, type: clock }
+  "11": { name: RESET, type: reset }
+  "12": { name: Q9, type: output }
+  "13": { name: Q8, type: output }
+  "14": { name: Q10, type: output }
+  "15": { name: Q11, type: output }
+  "16": { name: VDD, type: power }

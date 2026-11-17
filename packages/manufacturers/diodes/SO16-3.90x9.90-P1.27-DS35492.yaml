@@ -1,0 +1,27 @@
+# 16-lead SO-16 (narrow SOIC) from the 74HC595 datasheet DS35492 Rev. 4-2,
+# page 9 "Package Outline Dimensions, Package Type: SO-16" (text; columns
+# Min / Max / Typ). Kept separate from
+# manufacturers/diodes/SO16-3.90x9.90-P1.27-DS36439 because this table
+# prints A max 1.260 (that one 1.75). D 9.80-10.00, E 5.90-6.10 (lead-tip
+# span), E1 3.80-4.00 (body width), A2 1.02 min only (no body_height),
+# A1 0.10-0.23, b 0.31-0.51, c 0.10-0.25, L 0.40-1.27, e 1.27 BSC. Not
+# recorded: h, X/Y, L1/L2, R/R1, angles, the suggested pad layout.
+schema_version: "0.2"
+kind: package
+id: manufacturers/diodes/SO16-3.90x9.90-P1.27-DS35492
+family: soic
+lead_count: 16
+source: diodes/DS35492
+
+pitch: { typ: 1.27 mm, src: 'p9 "SO-16 table, e 1.27 BSC"' }
+geometry: { type: parametric, generator: soic }
+
+dimensions:
+  body_width:     { min: 3.8 mm, max: 4 mm, src: 'p9 "SO-16 table, E1 3.80 / 4.00"' }
+  body_length:    { min: 9.8 mm, max: 10 mm, src: 'p9 "SO-16 table, D 9.80 / 10.00"' }
+  lead_thickness: { min: 0.1 mm, max: 0.25 mm, src: 'p9 "SO-16 table, c 0.10 / 0.25"' }
+  lead_length:    { min: 0.4 mm, max: 1.27 mm, src: 'p9 "SO-16 table, L 0.40 / 1.27"' }
+  overall_width:  { min: 5.9 mm, max: 6.1 mm, src: 'p9 "SO-16 table, E 5.90 / 6.10"' }
+  overall_height: { max: 1.26 mm, src: 'p9 "SO-16 table, A -- / 1.260"' }
+  standoff:       { min: 0.1 mm, max: 0.23 mm, src: 'p9 "SO-16 table, A1 0.10 / 0.23"' }
+  lead_width:     { min: 0.31 mm, max: 0.51 mm, src: 'p9 "SO-16 table, b 0.31 / 0.51"' }

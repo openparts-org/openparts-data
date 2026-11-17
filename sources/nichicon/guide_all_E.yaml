@@ -1,0 +1,18 @@
+# Nichicon aluminium electrolytic capacitor guide pages (catalog number
+# CAT.8100M; PDF /Title "2024CAT8100M_p001_008.indd"), 32 pages,
+# including "Surface Mount Type, Recommended Land Size" (page 14,
+# rendered and read as an image), which the series pages (e.g.
+# nichicon/e-uwt) refer to. Downloaded 2026-11-17 with curl from
+# nichicon.co.jp (HTTP 200, PDF). No date printed; `date` is the PDF
+# /ModDate (2024-01-25).
+schema_version: "0.2"
+kind: source
+id: nichicon/guide_all_E
+sha256: b9f2094aa4b6df96148960d34c04cf900a2163dea9ff0aecd185907de850dfdf
+retrieved: 2026-11-17
+url: https://www.nichicon.co.jp/english/_assets/images/products/catalog/corporate/digital/guide_all_E.pdf
+publisher: nichicon
+document_id: CAT.8100M-guide
+document_type: application_note
+revision: CAT.8100M
+date: 2024-01-25

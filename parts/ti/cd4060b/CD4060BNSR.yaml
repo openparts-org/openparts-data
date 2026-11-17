@@ -1,0 +1,25 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCHS049C PDF page 15): row "CD4060BNSR", "SOP (NS) | 16". lifecycle "nrnd" is
+# that table's Status column ("NRND").
+# Package: outline NS0016A (4220735/A) on page 26. Same drawing number and revision as the reused package manufacturers/ti/NS0016A.
+schema_version: "0.2"
+kind: part
+id: ti/CD4060BNSR
+manufacturer: ti
+mpn: CD4060BNSR
+device: ti/CD4060B
+
+package:
+  value: manufacturers/ti/NS0016A
+  src:
+    - p15 "Package Option Addendum, row "CD4060BNSR", "SOP (NS) | 16""
+    - p26 "PACKAGE OUTLINE NS0016A (4220735/A)"
+
+sources: [ti/SCHS049C]
+source: ti/SCHS049C
+
+existence:
+  status: verified
+  src: p15 "Package Option Addendum, Packaging Information table, row "CD4060BNSR""
+
+lifecycle: { status: nrnd, src: 'p15 "Package Option Addendum, row "CD4060BNSR", Status "NRND""' }

@@ -1,0 +1,25 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCHS030D PDF page 5): row "CD4040BE", "PDIP (N) | 16". lifecycle "active" is
+# that table's Status column ("Active").
+# Package: legacy outline N (R-PDIP-T**) 4040049/E (image page) on page 23. Same drawing number and revision as the reused package manufacturers/ti/N-R-PDIP-T16.
+schema_version: "0.2"
+kind: part
+id: ti/CD4040BE
+manufacturer: ti
+mpn: CD4040BE
+device: ti/CD4040B
+
+package:
+  value: manufacturers/ti/N-R-PDIP-T16
+  src:
+    - p5 "Package Option Addendum, row "CD4040BE", "PDIP (N) | 16""
+    - p23 "MECHANICAL DATA N (R-PDIP-T**) 4040049/E, 16 pins"
+
+sources: [ti/SCHS030D]
+source: ti/SCHS030D
+
+existence:
+  status: verified
+  src: p5 "Package Option Addendum, Packaging Information table, row "CD4040BE""
+
+lifecycle: { status: active, src: 'p5 "Package Option Addendum, row "CD4040BE", Status "Active""' }

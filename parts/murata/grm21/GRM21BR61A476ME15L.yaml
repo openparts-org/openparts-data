@@ -1,0 +1,28 @@
+# 47 µF X5R 10 V ±20% GRM21B MLCC, packaging code L
+# per the reference sheet's Package table (murata/GRM21BR61A476ME15-01A).
+# Package manufacturers/murata/CHIP0805-GRM21BR61E226ME44-01A: reused: L/W/T equal its numbers one for one
+# (sheet p2 "Type & Dimension": L 2.0+/-0.2, W 1.25+/-0.2, T 1.25+/-0.2, e 0.2 to 0.7, g 0.7 min.).
+# lifecycle: the sheet makes no production-status statement; unknown.
+schema_version: "0.2"
+kind: part
+id: murata/GRM21BR61A476ME15L
+manufacturer: murata
+mpn: GRM21BR61A476ME15L
+device: murata/GRM21-X5R
+package: manufacturers/murata/CHIP0805-GRM21BR61E226ME44-01A
+sources: [murata/GRM21BR61A476ME15-01A]
+source: murata/GRM21BR61A476ME15-01A
+
+existence:
+  status: verified
+  src: p2 "Title GRM21BR61A476ME15_ (_ = Package); Package table, code L"
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 47 µF, src: 'p2 "Rated Value, Nominal Capacitance 47μF"' }
+  tolerance:     { tol: ±20 %, src: 'p2 "Rated Value, Capacitance Tolerance +/-20%"' }
+  rated_voltage: { typ: 10 V, src: 'p2 "Rated Value, Rated Voltage DC 10 V"' }
+  dielectric:
+    value: X5R
+    src: p2 "Rated Value, Temperature Characteristics, Public STD Code X5R(EIA)"

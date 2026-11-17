@@ -1,0 +1,18 @@
+# Official TI datasheet "TPS543x 3A, Wide Input Range, Step-Down
+# Converter" (TPS5430, TPS5431). Downloaded 2026-11-17 with curl from
+# the TI symlink URL below (HTTP 200, PDF); revision from the page
+# header "SLVS632L - JANUARY 2006 - REVISED APRIL 2026". 39 PDF pages,
+# read with pdftotext -layout. Page numbers are PDF page indices. The
+# PDF prints two DDA outlines (DDA0008J 4221637/B, pages 33-35, and
+# DDA0008B 4214849/B, pages 36-38).
+schema_version: "0.2"
+kind: source
+id: ti/SLVS632L
+sha256: 78a50620c7ce4b116244964347627364f2b816888e3aa46413fa4adbc71bb6a5
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/tps5430.pdf
+publisher: ti
+document_id: SLVS632L
+document_type: datasheet
+revision: L
+date: 2026-04

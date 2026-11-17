@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCHS030D PDF page 6): row "CD4040BPWR", "TSSOP (PW) | 16". lifecycle "active" is
+# that table's Status column ("Active").
+# Package: outline PW0016A (4220204/B) on page 20. Same drawing number and revision as the reused package standards/TSSOP16-4.4x5.0-P0.65-TI-PW.
+schema_version: "0.2"
+kind: part
+id: ti/CD4040BPWR
+manufacturer: ti
+mpn: CD4040BPWR
+device: ti/CD4040B
+
+package:
+  value: standards/TSSOP16-4.4x5.0-P0.65-TI-PW
+  src:
+    - p6 "Package Option Addendum, row "CD4040BPWR", "TSSOP (PW) | 16""
+    - p20 "PACKAGE OUTLINE PW0016A (4220204/B)"
+
+sources: [ti/SCHS030D]
+source: ti/SCHS030D
+
+existence:
+  status: verified
+  src: p6 "Package Option Addendum, Packaging Information table, row "CD4040BPWR""
+
+lifecycle:
+  status: active
+  src: p6 "Package Option Addendum, row "CD4040BPWR", Status "Active""

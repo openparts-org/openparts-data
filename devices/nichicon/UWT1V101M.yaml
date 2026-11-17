@@ -1,0 +1,17 @@
+# Nichicon UWT series 100 µF, 35 V (code 1V), ±20 % (M) chip-type
+# aluminium electrolytic capacitor (type numbering system, nichicon/e-uwt
+# page 1). The source marks the terminals only as Positive / Negative on
+# the "Chip Type" drawing; numbered in the smd_electrolytic convention
+# (pin 1 = +, the pad at -X).
+schema_version: "0.2"
+kind: device
+id: nichicon/UWT1V101M
+manufacturer: nichicon
+category: capacitor
+family: UWT
+source: nichicon/e-uwt
+
+pins:
+  src: p1 "Chip Type drawing, terminals Positive / Negative"
+  "1": { name: +, type: passive }
+  "2": { name: -, type: passive }

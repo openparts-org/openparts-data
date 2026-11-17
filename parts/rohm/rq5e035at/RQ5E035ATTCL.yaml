@@ -1,0 +1,34 @@
+# RQ5E035ATTCL: "RQ5E035AT" with taping code "TCL" in the page-1 Packaging
+# specifications; the ROHM product page names "RQ5E035ATTCL" with Status
+# "Recommended" (-> lifecycle active).
+schema_version: "0.2"
+kind: part
+id: rohm/RQ5E035ATTCL
+manufacturer: rohm
+mpn: RQ5E035ATTCL
+device: rohm/RQ5E035AT
+package: { value: manufacturers/rohm/TSMT3, src: 'p11 "Dimensions, SOT-346T (TSMT3)"' }
+sources: [rohm/RQ5E035AT-datasheet-en, rohm/RQ5E035ATTCL-product-page]
+source: rohm/RQ5E035AT-datasheet-en
+
+existence: { status: verified, src: rohm/RQ5E035ATTCL-product-page p1 "Part Number RQ5E035ATTCL" }
+lifecycle: { status: active, src: rohm/RQ5E035ATTCL-product-page p1 "Status Recommended" }
+
+parameters:
+  polarity:             { value: p_channel, src: 'p1 "Title, Pch MOSFET"' }
+  drain_source_voltage: { max: -30 V, src: 'p1 "Absolute maximum ratings, VDSS"' }
+  drain_current: { max: -3.5 A, src: 'p1 "Absolute maximum ratings, Continuous drain current ID"' }
+  rds_on:
+    - typ: 38 mΩ
+      max: 50 mΩ
+      at: { VGS: -10 V, ID: -3.5 A }
+      src: p2 "Electrical characteristics, RDS(on), VGS = -10V, ID = -3.5A row"
+    - typ: 54 mΩ
+      max: 70 mΩ
+      at: { VGS: -4.5 V, ID: -3.5 A }
+      src: p2 "Electrical characteristics, RDS(on), VGS = -4.5V, ID = -3.5A row"
+  gate_threshold_voltage:
+    min: -2.5 V
+    max: -1 V
+    at: { ID: -1 mA }
+    src: p2 "Electrical characteristics, VGS(th) (VDS = VGS, printed Min -1.0 / Max -2.5)"

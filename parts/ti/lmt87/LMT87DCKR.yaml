@@ -1,0 +1,27 @@
+# Orderable MPN printed in the PACKAGE OPTION ADDENDUM of the datasheet;
+# lifecycle "Active" read from the same row's Status column (TI's own
+# addendum inside the datasheet, newer than the datasheet revision).
+# Package: SC70 (DCK), outline DCK0005A (4214834/G) on page 24.
+schema_version: "0.2"
+kind: part
+id: ti/LMT87DCKR
+manufacturer: ti
+mpn: LMT87DCKR
+device: ti/LMT87-DCK
+
+package:
+  value: manufacturers/ti/DCK0005A
+  src:
+    - p17 "PACKAGE OPTION ADDENDUM, row LMT87DCKR, Package column"
+    - p24 "PACKAGE OUTLINE DCK0005A (4214834/G)"
+
+sources: [ti/SNIS170E]
+source: ti/SNIS170E
+
+existence:
+  status: verified
+  src: p17 "PACKAGE OPTION ADDENDUM, Packaging Information table, row LMT87DCKR"
+
+lifecycle:
+  status: active
+  src: p17 "PACKAGE OPTION ADDENDUM, row LMT87DCKR, Status column Active"

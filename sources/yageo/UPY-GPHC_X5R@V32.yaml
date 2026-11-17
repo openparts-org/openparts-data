@@ -1,0 +1,18 @@
+# YAGEO "Surface Mount Multilayer Ceramic Capacitors, General purpose &
+# High capacitance, Class 2, X5R" product specification, footer "Sep.
+# 16, 2026 V.32" (20 pages). Downloaded 2026-11-17 with plain curl from
+# YAGEO's datasheet asset endpoint (HTTP 200, PDF). Read via pdftotext
+# -layout. Table 1 / Table 9 (page 3 / page 8) give the X5R dimension
+# codes; its 1206 FC row (W 1.6 ± 0.30) differs from the X7R
+# specification's FC row (W 1.6 ± 0.20, yageo/UPY-GPHC_X7R@V29).
+schema_version: "0.2"
+kind: source
+id: yageo/UPY-GPHC_X5R@V32
+sha256: 582ca3b22551f00e1646926dbf8f657d60571d7c53c63b193e37a1fd85a9934d
+retrieved: 2026-11-17
+url: https://yageogroup.com/content/datasheet/asset/file/UPY-GPHC_X5R_4V-TO-50V
+publisher: yageo
+document_id: UPY-GPHC_X5R
+document_type: datasheet
+revision: V.32
+date: 2026-09-16

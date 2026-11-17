@@ -14,6 +14,20 @@ source: diodes/DS36292
 
 parameters:
   reverse_voltage: { max: 5 V, src: 'p2 "Electrical Characteristics, VRWM (VCC to VSS)"' }
+  clamping_voltage:
+    - typ: 7.7 V
+      max: 9 V
+      at: { IPP: 6 A }
+      src: p2 "Electrical Characteristics, Reverse Clamping Voltage VC_I/O, IPP = 6 A, I/O to VSS, 8/20 µs"
+    - typ: 6.3 V
+      at: { IPP: 9 A }
+      src: p2 "Electrical Characteristics, Reverse Clamping Voltage VC_Vcc, IPP = 9 A, VCC to VSS, 8/20 µs"
+  peak_pulse_current:
+    max: 6 A
+    src: p2 "Maximum Ratings, Peak Pulse Current IPP_I/O (printed ±6 A), I/O to VSS, 8/20 µs"
+  peak_pulse_power:
+    max: 55 W
+    src: p2 "Maximum Ratings, Peak Pulse Power PPP_I/O, I/O to VSS, 8/20 µs"
   operating_temperature:
     min: -55 °C
     max: 85 °C

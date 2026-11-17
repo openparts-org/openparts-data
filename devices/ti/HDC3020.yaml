@@ -1,0 +1,48 @@
+# HDC3020 relative humidity and temperature sensor (HDC302x family),
+# 8-pin WSON with sensor cavity (DEF). Pins from Table 5-1 "Pin
+# Functions" (SNAS778D page 4). Types: SDA (I/O) io, SCL clock, ADDR /
+# ADDR1 inputs, ALERT (push-pull output) output, RESET (active low)
+# reset, VDD (P) power, GND (G) ground. The thermal pad is listed as
+# pin 9, type G ("can be soldered, or left unsoldered") -> ground.
+# The HDC3021 (DEH, with tape) and HDC3022 (DEJ, with filter) share the
+# pin map but use other packages; not covered here.
+# Category `sensor`: the tree has no humidity-sensor node.
+# operating_temperature: the range the Electrical Characteristics are
+# specified over (TA = -40 to 125 °C, page 6; also 6.3 TTEMP); the RH
+# element's own operating range is -20 to 80 °C (6.3 TRH, page 5).
+schema_version: "0.2"
+kind: device
+id: ti/HDC3020
+manufacturer: ti
+category: sensor
+family: HDC302x
+source: ti/SNAS778D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: 'p4 "Table 5-1 Pin Functions, SCL Serial clock line for I2C"' }
+  supply_voltage:
+    min: 1.62 V
+    max: 5.5 V
+    src: p5 "6.3 Recommended Operating Conditions, VDD Supply voltage"
+  supply_current:
+    typ: 110 µA
+    max: 170 µA
+    src: p7 "6.5 Electrical Characteristics, IDD_ACTIVE Active Current, Low Power Mode 0"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p6 "6.5 Electrical Characteristics, header TA = -40°C to 125°C"
+  esd_hbm: { typ: 2 kV, src: 'p5 "6.2 ESD Ratings, HBM ±2000 V"' }
+
+pins:
+  src: p4 "Table 5-1 Pin Functions"
+  "1": { name: SDA, type: io }
+  "2": { name: ADDR, type: input }
+  "3": { name: ALERT, type: output }
+  "4": { name: SCL, type: clock }
+  "5": { name: VDD, type: power }
+  "6": { name: RESET, type: reset }
+  "7": { name: ADDR1, type: input }
+  "8": { name: GND, type: ground }
+  "9": { name: PAD, type: ground }

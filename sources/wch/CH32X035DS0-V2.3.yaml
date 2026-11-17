@@ -1,0 +1,20 @@
+# Official WCH "CH32X035 Datasheet" V2.3 (English, 47 PDF pages; covers
+# CH32X035 and CH32X033). Downloaded 2026-11-17 with curl from the
+# wch-ic.com download endpoint below (served as CH32X035DS0.PDF).
+# Version "V2.3" printed on the cover and every page footer; the
+# datasheet prints no date, so the date is the PDF CreationDate
+# (2026-09-15). PDF page index = printed page number + 2 (printed "40"
+# is PDF page 42). Pin tables read with pdftotext -layout and checked
+# against the rendered pinout figures (PDF pages 12-16); the package
+# drawings (PDF pages 41-45) are images and were rendered and read.
+schema_version: "0.2"
+kind: source
+id: wch/CH32X035DS0@V2.3
+sha256: 1714c07d9448bc87ec667a602eba3e4c784a6ca7ca25ef125445df0ee4cc755d
+retrieved: 2026-11-17
+url: https://www.wch-ic.com/download/file?id=381
+publisher: wch
+document_id: CH32X035DS0
+document_type: datasheet
+revision: "2.3"
+date: 2026-09

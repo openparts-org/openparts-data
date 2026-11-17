@@ -1,0 +1,32 @@
+# PIC16F1847-I/SO: industrial temperature (-40 to +85 C), 18-lead SOIC 7.50 mm, tube.
+# existence: probable -- assembled from the "Product Identification
+# System" legend (DS41453B PDF page 407, printed 409).
+# Package: drawing C04-051C (PDF p386-387); its table (e 1.27, E 10.30,
+# E1 7.50, D 11.55, A2 2.05 min, A1 0.10-0.30, b 0.31-0.51, L 0.40-1.27)
+# matches standards/SOIC18-7.50x11.55-P1.27 (from C04-051D).
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/PIC16F1847-I-SO
+manufacturer: microchip
+mpn: PIC16F1847-I/SO
+device: microchip/PIC16F1847-18
+
+package:
+  value: standards/SOIC18-7.50x11.55-P1.27
+  src: p407 "Product Identification System, Package SO = SOIC"
+
+sources: [microchip/DS41453@revB]
+source: microchip/DS41453@revB
+
+existence:
+  status: probable
+  src: p407 "Product Identification System legend (Device, Temperature I, Package)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p348 "30.1 DC Characteristics, PIC16F1847 Operating temperature -40 C <= TA <= +85 C for industrial"

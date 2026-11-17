@@ -1,0 +1,27 @@
+# Panasonic FK series EEEFK1K470P: 47 µF, 80 V, case size G (ø10.0 x 10.2,
+# standard product, reflow, taping). Listed verbatim in the p5
+# "Characteristics list" Part No. column (Standard Product), the size
+# code column giving the package.
+# lifecycle unknown: the catalog states no status for this row.
+schema_version: "0.2"
+kind: part
+id: panasonic/EEEFK1K470P
+manufacturer: panasonic
+mpn: EEEFK1K470P
+device: panasonic/EEEFK1K470
+package: manufacturers/panasonic/FK-G-10x10.2
+sources: [panasonic/ABA0000C1181]
+source: panasonic/ABA0000C1181
+
+existence:
+  status: verified
+  src: p5 "Characteristics list, Part No. Standard Product column, EEEFK1K470P row"
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance: { typ: 47 µF, src: 'p5 "Characteristics list, EEEFK1K470P row, Capacitance"' }
+  tolerance:   { tol: ±20 %, src: 'p5 "Characteristics list, Capacitance column header (±20 %)"' }
+  rated_voltage:
+    typ: 80 V
+    src: p5 "Characteristics list, EEEFK1K470P row, Rated voltage group"

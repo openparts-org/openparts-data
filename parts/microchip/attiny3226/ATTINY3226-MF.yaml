@@ -1,0 +1,39 @@
+# ATTINY3226-MF: 32 KB/3 KB, 20 pins, VQFN, -40 to +125 C. Ordering
+# code printed in Table 35-1 "Available Product Numbers" (DS40002345B page
+# 541); package letter decoded with the Product Identification
+# System (page 542).
+# Conflict in the row: the row prints Pin Count 24, but the code's "6"
+# means 20 pins (page 542). Decoded with the Product Identification
+# System (page 542) instead, so existence is "probable".
+# lifecycle: no production-status statement in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATTINY3226-MF
+manufacturer: microchip
+mpn: ATTINY3226-MF
+device: microchip/ATtiny3226-VQFN20
+
+package:
+  value: manufacturers/microchip/VQFN20-3x3-P0.4-EP1.7-C04-21380
+  src:
+    - p541 "Table 35-1 row ATTINY3226-MF, Package Type"
+    - p559 "Section 36.3 20-Pin VQFN, drawing C04-21380 Rev A sheet 2"
+
+sources: [microchip/DS40002345@revB]
+source: microchip/DS40002345@revB
+
+existence:
+  status: probable
+  src: p541 "Table 35-1 Available Product Numbers, row ATTINY3226-MF"
+
+lifecycle: { status: unknown }
+
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p475 "Table 33-2 General Operating Conditions, VDD, VAO - Auto Grade and Extended Operating temperature range"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p475 "Table 33-2 General Operating Conditions, TA Extended -40 to 125"

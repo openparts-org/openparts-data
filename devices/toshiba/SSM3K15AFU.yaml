@@ -1,0 +1,15 @@
+# SSM3K15AFU N-channel MOSFET in Toshiba USM. Pin assignment from page 1
+# of the datasheet: 1 Gate, 2 Source, 3 Drain. All typed passive.
+schema_version: "0.2"
+kind: device
+id: toshiba/SSM3K15AFU
+manufacturer: toshiba
+category: transistor
+family: SSM3K15AFU
+source: toshiba/SSM3K15AFU-datasheet-en
+
+pins:
+  src: p1 "page-1 outline drawing pin legend, 1 Gate / 2 Source / 3 Drain"
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

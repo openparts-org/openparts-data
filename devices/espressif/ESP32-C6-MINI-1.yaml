@@ -6,7 +6,8 @@
 # number groups ("1, 2, 11, 14, 36~53"; 4, 7, 21, 32-35); pins 49-53 are
 # the centre ground grid and the four corner pads (Figure 3-1).
 # Alternate functions are not recorded here. The -U variant (antenna
-# connector) is a different board size and is not modelled.
+# connector) is a different board size: device
+# espressif/ESP32-C6-MINI-1U.
 schema_version: "0.2"
 kind: device
 id: espressif/ESP32-C6-MINI-1

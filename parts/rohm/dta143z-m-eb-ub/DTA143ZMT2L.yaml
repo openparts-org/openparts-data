@@ -1,0 +1,19 @@
+# DTA143ZMT2L: Part No. "DTA143ZM" with taping code "T2L" in the page-1
+# Packaging specifications table; the ROHM product page names "DTA143ZMT2L"
+# with Status "Recommended" (-> lifecycle active).
+schema_version: "0.2"
+kind: part
+id: rohm/DTA143ZMT2L
+manufacturer: rohm
+mpn: DTA143ZMT2L
+device: rohm/DTA143Z-M-EB-UB
+
+package:
+  value: manufacturers/rohm/VMT3
+  src: rohm/DTA143Z-datasheet-en p5 "Dimensions, SOT-723 (VMT3)"
+
+sources: [rohm/DTA143Z-datasheet-en, rohm/DTA143ZMT2L-product-page]
+source: rohm/DTA143ZMT2L-product-page
+
+existence: { status: verified, src: p1 "Part Number DTA143ZMT2L" }
+lifecycle: { status: active, src: p1 "Status Recommended" }

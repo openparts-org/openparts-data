@@ -1,0 +1,27 @@
+# Orderable MPN printed in the PACKAGE OPTION ADDENDUM of the datasheet;
+# lifecycle "Active" read from the same row's Status column (TI's own
+# addendum inside the datasheet, newer than the datasheet revision).
+# Package: WSON (DEF), outline DEF0008A-C01 (4228892/B) on page 41.
+schema_version: "0.2"
+kind: part
+id: ti/HDC3020DEFR
+manufacturer: ti
+mpn: HDC3020DEFR
+device: ti/HDC3020
+
+package:
+  value: manufacturers/ti/DEF0008A-C01
+  src:
+    - p50 "PACKAGE OPTION ADDENDUM, row HDC3020DEFR, Package column"
+    - p41 "PACKAGE OUTLINE DEF0008A-C01 (4228892/B)"
+
+sources: [ti/SNAS778D]
+source: ti/SNAS778D
+
+existence:
+  status: verified
+  src: p50 "PACKAGE OPTION ADDENDUM, Packaging Information table, row HDC3020DEFR"
+
+lifecycle:
+  status: active
+  src: p50 "PACKAGE OPTION ADDENDUM, row HDC3020DEFR, Status column Active"

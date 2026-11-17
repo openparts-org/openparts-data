@@ -1,0 +1,42 @@
+# Bourns PTA2043 single-gang slide potentiometer, 20 mm travel (bourns/PTA
+# page 2, drawing "PTAxx43", its hole layout and the Single Gang
+# Dimensions table: A 35, C 22.8, D 25.2, E 33.5, Travel 20).
+# Frame (spec 20.14): top view as drawn, X along the travel, origin on
+# the centre of the housing outline A (35) x "9.0" (top view). The hole
+# layout's centre lines (and the side and end views) are symmetric about
+# the housing centre: pins 1 and 2 at -E/2 = -16.75, pin 3 at +E/2,
+# pins 1 and 3 "3.5"/2 = 1.75 above and pin 2 1.75 below the centre line
+# (pin 3 is drawn in pin 1's row; the end view shows two pin rows
+# "3.5" apart); lug holes C/2 = 11.4 (upper pair) and D/2 = 12.6 (lower
+# pair) from the centre, the rows "8.5"/2 = 4.25 above and below. Holes:
+# "1.2 MIN." DIA. (pins), "1.7 MIN." DIA. (lugs), recorded at the printed
+# minimum. Housing height "6.5" above the board (side view, to the
+# seating line). The lever top above the board is not printed (lever L is
+# measured from its own flange), so overall_height is left out; the
+# lever's thickness across the travel is not printed either.
+schema_version: "0.2"
+kind: package
+id: manufacturers/bourns/PTA2043
+family: slide_potentiometer
+lead_count: { value: 7, src: 'p2 "PTAxx43 hole layout, 1.2 DIA. 3 PLCS. + 1.7 DIA. 4 PLCS."' }
+source: bourns/PTA
+
+pitch: { typ: 3.5 mm, src: 'p2 "PTAxx43 hole layout, pins 1 to 2 "3.5""' }
+geometry: { type: parametric, generator: slide_potentiometer }
+
+dimensions:
+  body_width:      { typ: 35 mm, src: 'p2 "Single Gang Dimensions, PTA2043 A"' }
+  body_length:     { typ: 9 mm, src: p2 "PTAxx43 top view "9.0"" }
+  body_height:     { typ: 6.5 mm, src: p2 "PTAxx43 side view "6.5"" }
+  actuator_travel: { typ: 20 mm, src: 'p2 "Single Gang Dimensions, PTA2043 Travel"' }
+
+pads:
+  value:
+    - { number: "1", x: -16.75, y: 1.75, drill: 1.2 }
+    - { number: "2", x: -16.75, y: -1.75, drill: 1.2 }
+    - { number: "3", x: 16.75, y: 1.75, drill: 1.2 }
+    - { number: MP, x: -11.4, y: 4.25, drill: 1.7 }
+    - { number: MP, x: 11.4, y: 4.25, drill: 1.7 }
+    - { number: MP, x: -12.6, y: -4.25, drill: 1.7 }
+    - { number: MP, x: 12.6, y: -4.25, drill: 1.7 }
+  src: p2 "PTAxx43 hole layout C, D, E, "3.5", "8.5"; table PTA2043 (see comment)"

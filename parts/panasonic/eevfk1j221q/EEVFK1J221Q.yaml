@@ -1,0 +1,27 @@
+# Panasonic FK series EEVFK1J221Q: 220 µF, 63 V, case size H13 (ø12.5 x 13.5,
+# standard product, reflow, taping). Listed verbatim in the p4
+# "Characteristics list" Part No. column (Standard Product), the size
+# code column giving the package.
+# lifecycle unknown: the catalog states no status for this row.
+schema_version: "0.2"
+kind: part
+id: panasonic/EEVFK1J221Q
+manufacturer: panasonic
+mpn: EEVFK1J221Q
+device: panasonic/EEVFK1J221
+package: manufacturers/panasonic/FK-H13-12.5x13.5
+sources: [panasonic/ABA0000C1181]
+source: panasonic/ABA0000C1181
+
+existence:
+  status: verified
+  src: p4 "Characteristics list, Part No. Standard Product column, EEVFK1J221Q row"
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance: { typ: 220 µF, src: 'p4 "Characteristics list, EEVFK1J221Q row, Capacitance"' }
+  tolerance:   { tol: ±20 %, src: 'p4 "Characteristics list, Capacitance column header (±20 %)"' }
+  rated_voltage:
+    typ: 63 V
+    src: p4 "Characteristics list, EEVFK1J221Q row, Rated voltage group"

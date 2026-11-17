@@ -1,0 +1,23 @@
+# MPN from the "Ordering Information" table of DS36561 Rev. 7-2 (page
+# 9): "AP3429AKTTR-G1 | L2E | -40 to +85°C | TSOT25 | 3000 | Tape & Reel";
+# Product Version "A = AP3429A". No production-status statement: lifecycle
+# unknown.
+schema_version: "0.2"
+kind: part
+id: diodes/AP3429AKTTR-G1
+manufacturer: diodes
+mpn: AP3429AKTTR-G1
+device: diodes/AP3429-TSOT25
+
+package:
+  value: manufacturers/diodes/TSOT25-2.90x1.60-P0.95-DS36561
+  src: p10 "Package Outline Dimensions, TSOT25"
+
+sources: [diodes/DS36561]
+source: diodes/DS36561
+
+existence:
+  status: verified
+  src: p9 "Ordering Information, Orderable Part Number AP3429AKTTR-G1"
+
+lifecycle: { status: unknown }

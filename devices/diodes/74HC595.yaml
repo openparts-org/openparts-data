@@ -1,0 +1,58 @@
+# 8-bit shift register with 8-bit output register 74HC595 (Diodes
+# Incorporated), 16-pin pin map from the "Pin Descriptions" table
+# (DS35492 page 2), checked against the page 1 "Pin Assignments" (Top
+# View). Pin 10 (master reset) and pin 13 (output enable) are active low
+# (overbar), written MR and OE here; pin 10's name is printed only as an
+# overbar symbol in the text layer and is taken from the functional
+# diagram ("10 MR"). SHCP/STCP typed clock, MR reset.
+schema_version: "0.2"
+kind: device
+id: diodes/74HC595
+manufacturer: diodes
+category: logic
+family: 74HC595
+source: diodes/DS35492
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 6 V
+    src: p4 "Recommended Operating Conditions, VCC Supply Voltage"
+  supply_current:
+    max: 8 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p5 "Electrical Characteristics: ICC, VI = GND or VCC, IO = 0, 6.0V, TA = +25°C Max"'
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p4 "Recommended Operating Conditions, TA Operating Free-Air Temperature"
+  esd_hbm: { typ: 2 kV, src: 'p4 "Absolute Maximum Ratings, ESD HBM"' }
+  channel_count: { value: "1", src: 'p1 "Title: 8-Bit Shift Register with 8-Bit Output Register"' }
+  propagation_delay:
+    typ: 20 ns
+    max: 35 ns
+    at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+    src: p6 "Switching Characteristics, tPD STCP to Qn, CL = 50pF, 4.5V, TA = +25°C"
+  logic_function:
+    value: shift_register
+    src: 'p1 "Title: 8-Bit Shift Register with 8-Bit Output Register"'
+
+pins:
+  src:  [p2 ""Pin Descriptions" table", p1 ""Pin Assignments" (Top View) (cross-check)"]
+  "1":  { name: Q1, type: output }
+  "2":  { name: Q2, type: output }
+  "3":  { name: Q3, type: output }
+  "4":  { name: Q4, type: output }
+  "5":  { name: Q5, type: output }
+  "6":  { name: Q6, type: output }
+  "7":  { name: Q7, type: output }
+  "8":  { name: GND, type: ground }
+  "9":  { name: Q7S, type: output }
+  "10": { name: MR, type: reset }
+  "11": { name: SHCP, type: clock }
+  "12": { name: STCP, type: clock }
+  "13": { name: OE, type: input }
+  "14": { name: DS, type: input }
+  "15": { name: Q0, type: output }
+  "16": { name: VCC, type: power }

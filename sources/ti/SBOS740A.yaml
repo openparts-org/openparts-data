@@ -1,0 +1,17 @@
+# Official TI datasheet "TMP116 High-Accuracy, Low-Power, Digital Temperature Sensor With SMBus- and I2C-Compatible Interface". Downloaded 2026-11-17 with curl from the
+# TI symlink URL below; revision read from the page header "SBOS740A - MAY 2017 - REVISED MAY 2019".
+# 47 PDF pages; text read with pdftotext -layout, package drawings read
+# from pages rendered with pdftoppm. Page numbers are PDF page indices.
+# The PACKAGE OPTION ADDENDUM at the end of the PDF is dated 25-Sep-2026 (newer
+# than the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SBOS740A
+sha256: 93cd03c207c2871918ef9341a4baf189e2c0ea9a795673a7011e367c4e75c1c0
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/tmp116.pdf
+publisher: ti
+document_id: SBOS740A
+document_type: datasheet
+revision: A
+date: 2019-05

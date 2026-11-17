@@ -1,0 +1,74 @@
+# CMOS 14-stage ripple-carry binary counter/divider and oscillator
+# CD4060B, 16-pin pin map read from the rendered "TERMINAL DIAGRAM (TOP
+# VIEW)" (SCHS049C page 4, scanned), cross-checked against the
+# FUNCTIONAL DIAGRAM pin numbers (page 1). Stages Q4-Q10 and Q12-Q14 are
+# brought out. The oscillator pins are printed with the Greek letter
+# phi: phi-I (pin 11, clock/oscillator input) written PHI_I, phi-O
+# (pin 9) PHI_O and phi-O overbar (pin 10) PHI_O_N. RESET (active high)
+# typed reset.
+# operating_temperature: the only printed range is the absolute-maximum
+# "OPERATING-TEMPERATURE RANGE (TA)", which is also the span of the static
+# electrical-characteristics table (as ti/CD4017B).
+schema_version: "0.2"
+kind: device
+id: ti/CD4060B
+manufacturer: ti
+category: logic
+family: CD4060B
+source: ti/SCHS049C
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 18 V
+    src: p2 "RECOMMENDED OPERATING CONDITIONS, Supply-Voltage Range"
+  supply_current:
+    typ: 0.04 µA
+    max: 5 µA
+    at: { VDD: 5 V, TA: 25 °C }
+    src: 'p2 "STATIC ELECTRICAL CHARACTERISTICS: Quiescent Device Current IDD, VDD 5 V, +25 column"'
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p1 "MAXIMUM RATINGS, OPERATING-TEMPERATURE RANGE (TA)"
+  channel_count:
+    value: "1"
+    src: p1 "Title, CMOS 14-Stage Ripple-Carry Binary Counter/Divider and Oscillator"
+  propagation_delay:
+    - typ: 370 ns
+      max: 740 ns
+      at: { VDD: 5 V, CL: 50 pF, TA: 25 °C }
+      src: p3 "DYNAMIC ELECTRICAL CHARACTERISTICS, Propagation Delay Time phi-I to Q4 Out, VDD 5 V"
+    - typ: 150 ns
+      max: 300 ns
+      at: { VDD: 10 V, CL: 50 pF, TA: 25 °C }
+      src: p3 "DYNAMIC ELECTRICAL CHARACTERISTICS, Propagation Delay Time phi-I to Q4 Out, VDD 10 V"
+    - typ: 100 ns
+      max: 200 ns
+      at: { VDD: 15 V, CL: 50 pF, TA: 25 °C }
+      src: p3 "DYNAMIC ELECTRICAL CHARACTERISTICS, Propagation Delay Time phi-I to Q4 Out, VDD 15 V"
+  logic_function:
+    value: counter
+    src: p1 "Title, CMOS 14-Stage Ripple-Carry Binary Counter/Divider and Oscillator"
+
+pins:
+  src:
+    - p4 "TERMINAL DIAGRAM (TOP VIEW) (scanned, rendered)"
+    - p1 "FUNCTIONAL DIAGRAM pin numbers (cross-check)"
+  "1":  { name: Q12, type: output }
+  "2":  { name: Q13, type: output }
+  "3":  { name: Q14, type: output }
+  "4":  { name: Q6, type: output }
+  "5":  { name: Q5, type: output }
+  "6":  { name: Q7, type: output }
+  "7":  { name: Q4, type: output }
+  "8":  { name: VSS, type: ground }
+  "9":  { name: PHI_O, type: clock_out }
+  "10": { name: PHI_O_N, type: clock_out }
+  "11": { name: PHI_I, type: clock }
+  "12": { name: RESET, type: reset }
+  "13": { name: Q9, type: output }
+  "14": { name: Q8, type: output }
+  "15": { name: Q10, type: output }
+  "16": { name: VDD, type: power }

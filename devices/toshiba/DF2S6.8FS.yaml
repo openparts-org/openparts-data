@@ -6,6 +6,12 @@ category: diode
 family: DF2S6.8FS
 source: toshiba/DF2S6.8FS-datasheet-en
 
+parameters:
+  clamping_voltage:
+    typ: 9 V
+    at: { IPP: 1 A }
+    src: 'p2 "4. Electrical Characteristics, Clamp voltage VC, IPP = 1 A (Note 1: IEC61000-4-5 8/20 µs)"'
+
 pins:
   src: 'p1 "2. Packaging and Internal Circuit, 1: Cathode / 2: Anode"'
   "1": { name: Cathode, type: passive }

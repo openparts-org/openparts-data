@@ -1,0 +1,39 @@
+# LM7815 / LM340-15 1.5-A fixed 15-V regulator, NDE (TO-220) pinout.
+# SNOSBT0L "Pin Functions" (page 3): INPUT 1, GND 2, OUTPUT 3; the
+# "LM7805, LM7812, and LM7815 NDE Package 3-Pin TO-220 Top View" figure
+# labels the tab GND. The TO-220 tab is not a board pad: pins 1-3 only
+# (as ti/LM7805-NDE). Table "6.8 LM340 / LM7815 Electrical
+# Characteristics" covers both LM7815 and LM340-15 (LM340T-15/NOPB).
+schema_version: "0.2"
+kind: device
+id: ti/LM7815-NDE
+manufacturer: ti
+category: linear_regulator
+family: LM7815
+source: ti/SNOSBT0L
+
+parameters:
+  output_type:    { value: fixed, src: p1 "Title; 1 Features" }
+  output_voltage:
+    - min: 14.4 V
+      typ: 15 V
+      max: 15.6 V
+      at: { IOUT: 5..1000 mA, TJ: 25 °C }
+      src: p8 "LM340 / LM7815 Elec. Char., VO, TJ = 25°C"
+    - min: 14.25 V
+      max: 15.75 V
+      at: { VIN: 17.5..30 V, IOUT: 5..1000 mA }
+      src: p8 "LM340 / LM7815 Elec. Char., VO, PD <= 15 W"
+  output_current: { max: 1.5 A, src: p1 "1 Features" }
+  dropout_voltage:
+    typ: 2 V
+    at: { IOUT: 1 A, TJ: 25 °C }
+    src: p8 "LM340 / LM7815 Elec. Char., Dropout voltage"
+
+pins:
+  src:
+    - 'p3 ""Pin Functions": INPUT 1, GND 2, OUTPUT 3"'
+    - p3 ""LM7805, LM7812, and LM7815 NDE Package 3-Pin TO-220 Top View" (OUTPUT/GND/INPUT, tab GND)"
+  "1": { name: INPUT, type: power }
+  "2": { name: GND, type: ground }
+  "3": { name: OUTPUT, type: power }

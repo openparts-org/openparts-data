@@ -1,0 +1,58 @@
+# Panasonic FK series case size code G (ø10 x 10.2 L), from
+# panasonic/ABA0000C1181 p1 "Dimensions" (standard products) and p2
+# "Land / Pad pattern", standard products. Same frame and mapping as
+# manufacturers/panasonic/FK-D-6.3x5.8: top view, origin at the base
+# plate's centre, terminals along X with the + terminal (pad 1) at -X;
+# the source draws the terminals along Y, so plate side B is body_width
+# and A is body_length (both "10.3" for size G).
+# Left out: K (terminal reach past the plate) and P (gap between the
+# terminals, reference) have no field. I is printed in parentheses ("( )
+# Reference size") and recorded as the reference value it is.
+schema_version: "0.2"
+kind: package
+id: manufacturers/panasonic/FK-G-10x10.2
+family: smd_electrolytic
+lead_count: { value: 2, src: 'p1 "Dimensions, terminals (+) / (-)"' }
+source: panasonic/ABA0000C1181
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: smd_electrolytic }
+
+dimensions:
+  body_width:
+    min: 10.1 mm
+    typ: 10.3 mm
+    max: 10.5 mm
+    src: p1 "Dimensions, size G row, B (B±0.2)"
+  body_length:
+    min: 10.1 mm
+    typ: 10.3 mm
+    max: 10.5 mm
+    src: p1 "Dimensions, size G row, A (A±0.2)"
+  can_diameter:
+    min: 9.5 mm
+    typ: 10 mm
+    max: 10.5 mm
+    src: p1 "Dimensions, size G row, øD (drawing øD±0.5)"
+  lead_length:   { typ: 3.5 mm, src: 'p1 "Dimensions, size G row, (I) reference size"' }
+  overall_width: { max: 12 mm, src: 'p1 "Dimensions, size G row, H max."' }
+  overall_height:
+    min: 9.9 mm
+    typ: 10.2 mm
+    max: 10.5 mm
+    src: p1 "Dimensions, size G row, L (10.2±0.3)"
+  lead_width:
+    min: 0.7 mm
+    typ: 0.9 mm
+    max: 1.1 mm
+    src: p1 "Dimensions, size G row, W (0.9±0.2)"
+
+# pads (Land / Pad pattern, standard products, size G): a = 4.6
+# between the lands, b = 4.1 along the terminal axis, c = 2 across;
+# turned 90° (see header): width = b, length = c, centres
+# x = ±(a/2 + b/2) = ±4.35, + land (pad 1) at -X.
+pads:
+  value:
+    - { number: "1", x: -4.35, y: 0, width: 4.1, length: 2 }
+    - { number: "2", x: 4.35, y: 0, width: 4.1, length: 2 }
+  src: p2 "Land / Pad pattern, Standard products, size G row, a b c"

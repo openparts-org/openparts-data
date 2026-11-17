@@ -1,0 +1,40 @@
+# ROHM UMT3F (SOT-323FL / SC-85) 3-lead flat-lead package as printed on
+# page 10 of rohm/RU1C001UN-datasheet-en (rendered image; mm MIN/MAX
+# recorded, ranges only). Differs from manufacturers/rohm/UMT3F (DTC
+# series table) in A ("0.80/1.10" vs "0.85/1.05") and prints no A2 but
+# an e1 ("1.20/1.40", pin 1 to pin 2), hence a separate document.
+#
+# sot mapping (as standards/SOT523-1.60x0.80-P1.00-DIODES): body_width
+# = D, body_length = E, overall_length = HE, overall_height = A,
+# standoff = A1, lead_width = b, lead_thickness = c, pitch = e1 with
+# typ = 2 x e ("e 0.65"). Top view: leads 1, 2 bottom edge, 3 top edge.
+# The page also prints a "Soldering footprint" (pads 0.80 x 0.90); not
+# recorded -- the generator derives lands. L, Lp, x not recorded.
+schema_version: "0.2"
+kind: package
+id: manufacturers/rohm/UMT3F-RU1C001UN
+family: sot
+lead_count: 3
+
+lead_layout:
+  value: [2, 1]
+  src:   'p10 "Dimensions SOT-323FL (UMT3F) top view: leads 1, 2 bottom edge, lead 3 top edge"'
+
+source: rohm/RU1C001UN-datasheet-en
+
+pitch:
+  min: 1.2 mm
+  typ: 1.3 mm
+  max: 1.4 mm
+  src: p10 "UMT3F table, e1 1.20/1.40; e 0.65 (2 x e = 1.3)"
+
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:     { min: 1.9 mm, max: 2.1 mm, src: 'p10 "UMT3F table, D 1.90/2.10"' }
+  body_length:    { min: 1.15 mm, max: 1.35 mm, src: 'p10 "UMT3F table, E 1.15/1.35"' }
+  lead_thickness: { min: 0.08 mm, max: 0.18 mm, src: 'p10 "UMT3F table, c 0.08/0.18"' }
+  lead_width:     { min: 0.27 mm, max: 0.42 mm, src: 'p10 "UMT3F table, b 0.27/0.42"' }
+  overall_length: { min: 2 mm, max: 2.2 mm, src: 'p10 "UMT3F table, HE 2.00/2.20"' }
+  overall_height: { min: 0.8 mm, max: 1.1 mm, src: 'p10 "UMT3F table, A 0.80/1.10"' }
+  standoff:       { min: 0 mm, max: 0.1 mm, src: 'p10 "UMT3F table, A1 0.00/0.10"' }

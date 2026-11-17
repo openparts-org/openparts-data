@@ -1,0 +1,46 @@
+# Order code "SSM3J133TU,LF" is listed under "Orderable part number (example)"
+# on Toshiba's SSM3J133TU product page; the page says listed numbers are
+# representative, and the datasheet has no ordering table -> existence
+# `probable`. Lifecycle `unknown` (not stated).
+schema_version: "0.2"
+kind: part
+id: toshiba/SSM3J133TU,LF
+manufacturer: toshiba
+mpn: SSM3J133TU,LF
+device: toshiba/SSM3J133TU
+package: { value: manufacturers/toshiba/UFM, src: 'p1 "page-1 outline drawing, package name UFM"' }
+sources: [toshiba/SSM3J133TU-datasheet-en, toshiba/SSM3J133TU-product-page]
+source: toshiba/SSM3J133TU-datasheet-en
+
+existence:
+  status: probable
+  src: toshiba/SSM3J133TU-product-page p1 "Orderable part number (example), SSM3J133TU,LF"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: p_channel, src: 'p1 "Title, Silicon P-Channel MOS Type""' }
+  drain_source_voltage: { max: -20 V, src: 'p1 "Absolute Maximum Ratings, VDSS"' }
+  drain_current:        { max: -5.5 A, src: 'p1 "Absolute Maximum Ratings, Drain current DC ID"' }
+  rds_on:
+    - typ: 24.9 mΩ
+      max: 29.8 mΩ
+      at: { VGS: -4.5 V, ID: -3 A }
+      src: p2 "Electrical Characteristics, RDS(ON), ID = -3A / VGS = -4.5V row"
+    - typ: 31.1 mΩ
+      max: 39.7 mΩ
+      at: { VGS: -2.5 V, ID: -2.5 A }
+      src: p2 "Electrical Characteristics, RDS(ON), ID = -2.5A / VGS = -2.5V row"
+    - typ: 38.8 mΩ
+      max: 56 mΩ
+      at: { VGS: -1.8 V, ID: -1.5 A }
+      src: p2 "Electrical Characteristics, RDS(ON), ID = -1.5A / VGS = -1.8V row"
+    - typ: 47.4 mΩ
+      max: 88.4 mΩ
+      at: { VGS: -1.5 V, ID: -0.5 A }
+      src: p2 "Electrical Characteristics, RDS(ON), ID = -0.5A / VGS = -1.5V row"
+  gate_threshold_voltage:
+    min: -1 V
+    max: -0.3 V
+    at: { VDS: -3 V, ID: -1 mA }
+    src: p2 "Electrical Characteristics, Vth (printed Min -0.3 / Max -1.0)"

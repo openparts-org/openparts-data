@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCLS107G PDF page 15): row "SN74HC138DR", "SOIC (D) | 16". lifecycle "active" is
+# that table's Status column ("Active").
+# Package: legacy outline D (R-PDSO-G16) 4040047-6/M 06/11 (image page) on page 24. Same drawing number and revision as the reused package manufacturers/ti/D-R-PDSO-G16.
+schema_version: "0.2"
+kind: part
+id: ti/SN74HC138DR
+manufacturer: ti
+mpn: SN74HC138DR
+device: ti/SN74HC138
+
+package:
+  value: manufacturers/ti/D-R-PDSO-G16
+  src:
+    - p15 "Package Option Addendum, row "SN74HC138DR", "SOIC (D) | 16""
+    - p24 "MECHANICAL DATA D (R-PDSO-G16) 4040047-6/M"
+
+sources: [ti/SCLS107G]
+source: ti/SCLS107G
+
+existence:
+  status: verified
+  src: p15 "Package Option Addendum, Packaging Information table, row "SN74HC138DR""
+
+lifecycle:
+  status: active
+  src: p15 "Package Option Addendum, row "SN74HC138DR", Status "Active""

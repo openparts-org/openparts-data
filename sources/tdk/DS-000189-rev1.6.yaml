@@ -1,0 +1,17 @@
+# TDK InvenSense datasheet DS-000189 Revision 1.6 (Release Date
+# 03/12/2024), the "Datasheet" PDF linked from the invensense.tdk.com
+# ICM-20948 product page, served from TDK's own CDN. 89 pages; the PDF
+# page index equals the printed "Page N of 89". Text read with pdftotext
+# -layout; the pin-out figure (page 19) and the package drawing (page
+# 84) were rendered with pdftoppm.
+schema_version: "0.2"
+kind: source
+id: tdk/DS-000189@rev1.6
+sha256: 0588625f4f1d6d27382a4322f48073dc0ce569e537c63786b13aab3eeb76b718
+retrieved: 2026-11-17
+url: https://d17t6iyxenbwp1.cloudfront.net/s3fs-public/2026-03/ds-000189-icm-20948-datasheet.pdf
+publisher: tdk
+document_id: DS-000189
+document_type: datasheet
+revision: "1.6"
+date: 2024-03-12

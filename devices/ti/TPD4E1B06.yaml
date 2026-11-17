@@ -13,6 +13,19 @@ source: ti/SLVSBQ8E
 
 parameters:
   reverse_voltage: { min: -5.5 V, max: 5.5 V, src: 'p5 "5.5 Electrical Characteristics, VRWM"' }
+  clamping_voltage:
+    - typ: 10.9 V
+      at: { IPP: 1 A }
+      src: p5 "5.5 Electrical Characteristics, VCLAMP, IPP = 1 A, tp = 8/20 µs"
+    - typ: 14.5 V
+      at: { IPP: 3 A }
+      src: p5 "5.5 Electrical Characteristics, VCLAMP, IPP = 3 A, tp = 8/20 µs"
+  peak_pulse_current:
+    max: 3 A
+    src: p4 "5.1 Absolute Maximum Ratings, IPP peak pulse current (tp = 8/20 µs), IO pin to GND"
+  peak_pulse_power:
+    max: 45 W
+    src: p4 "5.1 Absolute Maximum Ratings, PPP peak pulse power (tp = 8/20 µs)"
   operating_temperature:
     min: -40 °C
     max: 125 °C

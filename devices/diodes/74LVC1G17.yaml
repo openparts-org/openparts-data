@@ -1,0 +1,56 @@
+# Single Schmitt-Trigger Buffer 74LVC1G17 (Diodes Incorporated), 5-pin pin map of the SOT25
+# and SOT353 packages from the page 1 "Pin Assignments" SOT25 / SOT353
+# (Top View) diagram (DS35124, rendered). The SOT553 and DFN packages are not
+# covered. operating_temperature: the recommended TA range, also the
+# widest range of the Electrical Characteristics.
+schema_version: "0.2"
+kind: device
+id: diodes/74LVC1G17
+manufacturer: diodes
+category: logic
+family: 74LVC1G17
+source: diodes/DS35124
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.65 V
+    max: 5.5 V
+    src: p3 "Recommended Operating Conditions, VCC Operating Voltage, Operating"
+  supply_current:
+    max: 10 µA
+    at: { VCC: 1.65..5.5 V, TA: -40..85 °C }
+    src: p4 "Electrical Characteristics (TA = -40°C to +85°C), ICC, VI = 5.5V or GND, IO = 0, 1.65V to 5.5V"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p3 "Recommended Operating Conditions, TA Operating Free-Air Temperature"
+  esd_hbm:          { typ: 2 kV, src: 'p2 "Absolute Maximum Ratings, ESD HBM"' }
+  channel_count:    { value: "1", src: 'p1 "Title: Single Schmitt-Trigger Buffer"' }
+  propagation_delay:
+    min: 0.7 ns
+    max: 4.6 ns
+    at: { VCC: 3.3 V, CL: 15 pF, TA: -40..85 °C }
+    src: p6 "Switching Characteristics, TA = -40°C to +85°C, CL = 15pF, tpd A to Y, VCC = 3.3V ± 0.3V"
+  output_structure: { value: push_pull, src: 'p1 "Description: push-pull output"' }
+  logic_function:   { value: buffer, src: 'p1 "Title: Single Schmitt-Trigger Buffer"' }
+  output_current_high:
+    - max: 32 mA
+      at: { VCC: 4.5 V }
+      src: p3 "Recommended Operating Conditions, IOH, VCC = 4.5V (printed -32 mA)"
+    - max: 24 mA
+      at: { VCC: 3 V }
+      src: p3 "Recommended Operating Conditions, IOH, VCC = 3V (printed -24 mA)"
+  output_current_low:
+    - max: 32 mA
+      at: { VCC: 4.5 V }
+      src: p3 "Recommended Operating Conditions, IOL, VCC = 4.5V"
+    - { max: 24 mA, at: { VCC: 3 V }, src: 'p3 "Recommended Operating Conditions, IOL, VCC = 3V"' }
+
+pins:
+  src: p1 ""Pin Assignments" SOT25 / SOT353 (Top View) (rendered)"
+  "1": { name: NC, type: nc }
+  "2": { name: A, type: input }
+  "3": { name: GND, type: ground }
+  "4": { name: Y, type: output }
+  "5": { name: VCC, type: power }

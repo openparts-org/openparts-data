@@ -1,0 +1,29 @@
+# MPN printed in Table 6-1 "Part ordering code for GD32E230xx devices"
+# (PDF page 89): "GD32E230K8T6", LQFP32, Green, Industrial -40 °C to +85 °C (grade 6).
+# lifecycle: the datasheet carries no production-status statement, so it
+# is left unknown.
+schema_version: "0.2"
+kind: part
+id: gigadevice/GD32E230K8T6
+manufacturer: gigadevice
+mpn: GD32E230K8T6
+device: gigadevice/GD32E230K8
+
+package:
+  value: manufacturers/gigadevice/LQFP32-7x7-P0.8
+  src: p89 "Table 6-1 "Part ordering code for GD32E230xx devices", row GD32E230K8T6, Package column"
+
+sources: [gigadevice/GD32E230xx_Datasheet@rev2.6]
+source: gigadevice/GD32E230xx_Datasheet@rev2.6
+
+existence:
+  status: verified
+  src: p89 "Table 6-1 "Part ordering code for GD32E230xx devices", row GD32E230K8T6"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p47 "Table 4-1 Absolute maximum ratings, Operating temperature range for grade 6 device"

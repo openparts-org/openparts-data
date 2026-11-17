@@ -9,8 +9,8 @@
 # RESET (table note 6 marks PF6 specially; typed io like the other port
 # pins), UPDI is the dedicated programming/debug pin (io). AVDD is
 # internally connected to VDD (page 14 note); VDDIO2 is the separate
-# MVIO supply (1.62-5.5 V, Table 39-3; no key for a second I/O rail, so
-# only VDD is recorded as supply_voltage). alternate_functions carry only
+# MVIO supply (1.62-5.5 V, Table 39-3), recorded as io_supply_voltage;
+# VDD is supply_voltage. alternate_functions carry only
 # the "Special" and "ADC0" columns; OPAMP/AC/ZCD/USART/SPI/TWI/TCx/
 # EVSYS/CCL mappings are not modelled.
 schema_version: "0.2"
@@ -23,7 +23,8 @@ source: microchip/DS40002247B
 
 # Parameters (AI candidates, needs review).
 parameters:
-  supply_voltage: { min: 1.8 V, max: 5.5 V, src: 'p606 "Table 39-3 Supply Voltage, VDD"' }
+  supply_voltage:    { min: 1.8 V, max: 5.5 V, src: 'p606 "Table 39-3 Supply Voltage, VDD"' }
+  io_supply_voltage: { min: 1.62 V, max: 5.5 V, src: 'p606 "Table 39-3 Supply Voltage, VDDIO2"' }
 
 pins:
   src:

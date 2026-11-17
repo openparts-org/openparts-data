@@ -1,0 +1,50 @@
+# Hex inverter with Schmitt-trigger inputs 74HC14 (Diodes Incorporated),
+# 14-pin pin map from the "Pin Descriptions" table (DS35323 page 2),
+# checked against the page 1 "Pin Assignments" (Top View).
+schema_version: "0.2"
+kind: device
+id: diodes/74HC14
+manufacturer: diodes
+category: logic
+family: 74HC14
+source: diodes/DS35323
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 6 V
+    src: p3 "Recommended Operating Conditions, VCC Supply Voltage"
+  supply_current:
+    max: 20 µA
+    at: { VCC: 6 V, TA: -40..85 °C }
+    src: 'p4 "Electrical Characteristics: ICC, VI = GND or VCC, IO = 0, 6.0V, TA = -40°C to +85°C"'
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p3 "Recommended Operating Conditions, TA Operating Free-Air Temperature"
+  esd_hbm: { typ: 2 kV, src: 'p3 "Absolute Maximum Ratings, ESD HBM"' }
+  channel_count: { value: "6", src: 'p1 "Title: Hex Inverters with Schmitt Trigger Inputs"' }
+  propagation_delay:
+    typ: 15 ns
+    max: 25 ns
+    at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+    src: p4 "Switching Characteristics, tPD AN to YN, CL = 50 pF, 4.5V, TA = +25°C"
+  logic_function: { value: inverter, src: 'p1 "Title: Hex Inverters with Schmitt Trigger Inputs"' }
+
+pins:
+  src:  [p2 ""Pin Descriptions" table", p1 ""Pin Assignments" (Top View) (cross-check)"]
+  "1":  { name: 1A, type: input }
+  "2":  { name: 1Y, type: output }
+  "3":  { name: 2A, type: input }
+  "4":  { name: 2Y, type: output }
+  "5":  { name: 3A, type: input }
+  "6":  { name: 3Y, type: output }
+  "7":  { name: GND, type: ground }
+  "8":  { name: 4Y, type: output }
+  "9":  { name: 4A, type: input }
+  "10": { name: 5Y, type: output }
+  "11": { name: 5A, type: input }
+  "12": { name: 6Y, type: output }
+  "13": { name: 6A, type: input }
+  "14": { name: VCC, type: power }

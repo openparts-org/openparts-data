@@ -1,0 +1,25 @@
+# ESP32-C6-MINI-1U-H4: listed in the module datasheet's series comparison
+# table (p4 Table 1-2 ESP32-C6-MINI-1U (CONN) Series Comparison) ->
+# existence verified. Lifecycle: the datasheet states no status for this
+# part -> unknown.
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-C6-MINI-1U-H4
+manufacturer: espressif
+mpn: ESP32-C6-MINI-1U-H4
+device: espressif/ESP32-C6-MINI-1U
+package: manufacturers/espressif/MODULE53-13.2x12.5-ESP32-C6-MINI-1U
+sources: [espressif/esp32-c6-mini-1_mini-1u_datasheet_en@rev1.5]
+source: espressif/esp32-c6-mini-1_mini-1u_datasheet_en@rev1.5
+
+existence:
+  status: verified
+  src: 'p4 "Table 1-2 ESP32-C6-MINI-1U (CONN) Series Comparison, Part Number: ESP32-C6-MINI-1U-H4"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p4 "Table 1-2 ESP32-C6-MINI-1U Series Comparison, ESP32-C6-MINI-1U-H4, Ambient Temp."

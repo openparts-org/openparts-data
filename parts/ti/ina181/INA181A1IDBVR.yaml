@@ -27,3 +27,6 @@ existence:
 lifecycle:
   status: active
   src: p40 "Package Option Addendum, row INA181A1IDBVR, Status Active"
+
+parameters:
+  gain: { typ: 20 V/V, src: 'p8 "6.5 Electrical Characteristics, G gain, A1 devices"' }

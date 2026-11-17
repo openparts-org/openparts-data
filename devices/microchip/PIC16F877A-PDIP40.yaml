@@ -1,0 +1,69 @@
+# PIC16F877A pinout for the 40-pin PDIP, from DS39582C Table 1-3
+# "PIC16F874A/877A Pinout Description" PDIP column (pages 10-13),
+# checked against the 40-Pin PDIP pin diagram (page 3).
+# Types: VDD power, VSS ground, MCLR/VPP input, OSC1/CLKI input and
+# OSC2/CLKO output (Table 1-3 I/O/P type), port pins io (RA4 is
+# open-drain when an output, still io). `alternate_functions`: the
+# analog, reference and programming functions printed in the pin name
+# (AN, VREF, CVREF, PGC/PGD/PGM, INT, T0CKI/C1OUT); the serial, CCP and
+# PSP functions are not listed. Pin map shared by PIC16F874A and
+# PIC16F877A; this Device is used for PIC16F877A parts.
+schema_version: "0.2"
+kind: device
+id: microchip/PIC16F877A-PDIP40
+manufacturer: microchip
+category: microcontroller
+family: PIC16F87XA
+source: microchip/DS39582@revC
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 4 V
+    max: 5.5 V
+    src: p175 "17.1 DC Characteristics, D001 VDD Supply Voltage, 16F87XA, All configurations"
+
+pins:
+  src:
+    - p10 "Table 1-3 PIC16F874A/877A Pinout Description, PDIP Pin# column (cont. p11-13)"
+    - p3 "Pin Diagrams, 40-Pin PDIP"
+  "1":  { name: MCLR, type: input, alternate_functions: [VPP] }
+  "2":  { name: RA0, type: io, alternate_functions: [AN0] }
+  "3":  { name: RA1, type: io, alternate_functions: [AN1] }
+  "4":  { name: RA2, type: io, alternate_functions: [AN2, VREF-, CVREF] }
+  "5":  { name: RA3, type: io, alternate_functions: [AN3, VREF+] }
+  "6":  { name: RA4, type: io, alternate_functions: [T0CKI, C1OUT] }
+  "7":  { name: RA5, type: io, alternate_functions: [AN4] }
+  "8":  { name: RE0, type: io, alternate_functions: [AN5] }
+  "9":  { name: RE1, type: io, alternate_functions: [AN6] }
+  "10": { name: RE2, type: io, alternate_functions: [AN7] }
+  "11": { name: VDD, type: power }
+  "12": { name: VSS, type: ground }
+  "13": { name: OSC1, type: input, alternate_functions: [CLKI] }
+  "14": { name: OSC2, type: output, alternate_functions: [CLKO] }
+  "15": { name: RC0, type: io }
+  "16": { name: RC1, type: io }
+  "17": { name: RC2, type: io }
+  "18": { name: RC3, type: io }
+  "19": { name: RD0, type: io }
+  "20": { name: RD1, type: io }
+  "21": { name: RD2, type: io }
+  "22": { name: RD3, type: io }
+  "23": { name: RC4, type: io }
+  "24": { name: RC5, type: io }
+  "25": { name: RC6, type: io }
+  "26": { name: RC7, type: io }
+  "27": { name: RD4, type: io }
+  "28": { name: RD5, type: io }
+  "29": { name: RD6, type: io }
+  "30": { name: RD7, type: io }
+  "31": { name: VSS, type: ground }
+  "32": { name: VDD, type: power }
+  "33": { name: RB0, type: io, alternate_functions: [INT] }
+  "34": { name: RB1, type: io }
+  "35": { name: RB2, type: io }
+  "36": { name: RB3, type: io, alternate_functions: [PGM] }
+  "37": { name: RB4, type: io }
+  "38": { name: RB5, type: io }
+  "39": { name: RB6, type: io, alternate_functions: [PGC] }
+  "40": { name: RB7, type: io, alternate_functions: [PGD] }

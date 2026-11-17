@@ -1,0 +1,19 @@
+# DTC114YMT2L: Part No. "DTC114YM" with taping code "T2L" in the page-1
+# Packaging specifications table; the ROHM product page names "DTC114YMT2L"
+# with Status "Recommended" (-> lifecycle active).
+schema_version: "0.2"
+kind: part
+id: rohm/DTC114YMT2L
+manufacturer: rohm
+mpn: DTC114YMT2L
+device: rohm/DTC114Y-M-EB-UB
+
+package:
+  value: manufacturers/rohm/VMT3
+  src: rohm/DTC114Y-datasheet-en p5 "Dimensions, SOT-723 (VMT3)"
+
+sources: [rohm/DTC114Y-datasheet-en, rohm/DTC114YMT2L-product-page]
+source: rohm/DTC114YMT2L-product-page
+
+existence: { status: verified, src: p1 "Part Number DTC114YMT2L" }
+lifecycle: { status: active, src: p1 "Status Recommended" }

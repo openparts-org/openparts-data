@@ -1,0 +1,19 @@
+# DTC124EEBTL: Part No. "DTC124EEB" with taping code "TL" in the page-1
+# Packaging specifications table; the ROHM product page names "DTC124EEBTL"
+# with Status "Recommended" (-> lifecycle active).
+schema_version: "0.2"
+kind: part
+id: rohm/DTC124EEBTL
+manufacturer: rohm
+mpn: DTC124EEBTL
+device: rohm/DTC124E-M-EB-UB
+
+package:
+  value: manufacturers/rohm/EMT3F
+  src: rohm/DTC124E-datasheet-en p6 "Dimensions, SOT-416FL (EMT3F)"
+
+sources: [rohm/DTC124E-datasheet-en, rohm/DTC124EEBTL-product-page]
+source: rohm/DTC124EEBTL-product-page
+
+existence: { status: verified, src: p1 "Part Number DTC124EEBTL" }
+lifecycle: { status: active, src: p1 "Status Recommended" }

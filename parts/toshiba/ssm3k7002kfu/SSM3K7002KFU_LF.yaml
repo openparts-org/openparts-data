@@ -1,0 +1,42 @@
+# Order code "SSM3K7002KFU,LF" is listed under "Orderable part number (example)"
+# on Toshiba's SSM3K7002KFU product page; the page says listed numbers are
+# representative, and the datasheet has no ordering table -> existence
+# `probable`. Lifecycle `unknown` (not stated).
+schema_version: "0.2"
+kind: part
+id: toshiba/SSM3K7002KFU,LF
+manufacturer: toshiba
+mpn: SSM3K7002KFU,LF
+device: toshiba/SSM3K7002KFU
+package: { value: manufacturers/toshiba/USM, src: 'p7 "Package Dimensions, Nickname: USM"' }
+sources: [toshiba/SSM3K7002KFU-datasheet-en, toshiba/SSM3K7002KFU-product-page]
+source: toshiba/SSM3K7002KFU-datasheet-en
+
+existence:
+  status: probable
+  src: toshiba/SSM3K7002KFU-product-page p1 "Orderable part number (example), SSM3K7002KFU,LF"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: 'p1 "Title, Silicon N-Channel MOS""' }
+  drain_source_voltage: { max: 60 V, src: 'p2 "4. Absolute Maximum Ratings, VDSS"' }
+  drain_current: { max: 400 mA, src: 'p2 "4. Absolute Maximum Ratings, Drain current DC ID"' }
+  rds_on:
+    - typ: 1.2 Ω
+      max: 1.75 Ω
+      at: { VGS: 4.5 V, ID: 100 mA }
+      src: p3 "5.1 Static Characteristics, RDS(ON), ID = 100mA / VGS = 4.5V row"
+    - typ: 1.15 Ω
+      max: 1.65 Ω
+      at: { VGS: 5 V, ID: 100 mA }
+      src: p3 "5.1 Static Characteristics, RDS(ON), ID = 100mA / VGS = 5V row"
+    - typ: 1.05 Ω
+      max: 1.5 Ω
+      at: { VGS: 10 V, ID: 100 mA }
+      src: p3 "5.1 Static Characteristics, RDS(ON), ID = 100mA / VGS = 10V row"
+  gate_threshold_voltage:
+    min: 1.1 V
+    max: 2.1 V
+    at: { ID: 250 µA }
+    src: p3 "5.1 Static Characteristics, Vth (VDS = VGS, Min 1.1 / Max 2.1)"

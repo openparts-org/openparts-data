@@ -1,0 +1,25 @@
+# MPN printed in the PRODUCT IDENTIFICATION SYSTEM of DS20006021A (page
+# 29), example d) 8-Lead MSOP, CPN table: "MIC5219-3.3YMM 100/Tube". Lifecycle
+# unknown (no status printed).
+schema_version: "0.2"
+kind: part
+id: microchip/MIC5219-3.3YMM
+manufacturer: microchip
+mpn: MIC5219-3.3YMM
+device: microchip/MIC5219-FIXED-MM
+
+package:
+  value: manufacturers/microchip/MSOP8-MSOP-8LD-PL-1
+  src: p25 "8-Lead MSOP Package Outline, drawing MSOP-8LD-PL-1"
+
+sources: [microchip/DS20006021A]
+source: microchip/DS20006021A
+
+existence:
+  status: verified
+  src: p29 "PRODUCT IDENTIFICATION SYSTEM, d) 8-Lead MSOP, CPN MIC5219-3.3YMM"
+
+lifecycle: { status: unknown }
+
+parameters:
+  output_voltage: { typ: 3.3 V, src: 'p29 "PRODUCT IDENTIFICATION SYSTEM, Voltage 3.3 = 3.3V"' }

@@ -1,0 +1,24 @@
+# Order code "TC74HC165AP(F)" is listed under "Orderable part number (example)" on
+# Toshiba's TC74HC165AP product page; the page says listed numbers are
+# representative, and the datasheet has no ordering table -> existence
+# `probable` (as toshiba/TC7SZ00FU,LJ). Lifecycle `unknown` (not stated).
+# Package: page 8 "Package Dimensions" DIP16-P-300-2.54A (same drawing as the reused package, read from the rendered page).
+schema_version: "0.2"
+kind: part
+id: toshiba/TC74HC165AP(F)
+manufacturer: toshiba
+mpn: TC74HC165AP(F)
+device: toshiba/TC74HC165A
+
+package:
+  value: manufacturers/toshiba/DIP16-P-300-2.54A
+  src: ['p1 "Weight, DIP16-P-300-2.54A"', 'p8 "Package Dimensions, DIP16-P-300-2.54A"']
+
+sources: [toshiba/TC74HC165AP-datasheet-en, toshiba/TC74HC165AP-product-page]
+source: toshiba/TC74HC165AP-datasheet-en
+
+existence:
+  status: probable
+  src: toshiba/TC74HC165AP-product-page p1 "Orderable part number (example), TC74HC165AP(F)"
+
+lifecycle: { status: unknown }

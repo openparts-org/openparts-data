@@ -1,0 +1,25 @@
+# Nichicon UWT UWT1V4R7MCL1GB: 4.7 µF, 35 V, case φ4 x 5.4 (ratings table, nichicon/e-uwt
+# page 3, Part Number column; the Case Size column gives the package).
+# lifecycle unknown: the catalog states no status for this row.
+schema_version: "0.2"
+kind: part
+id: nichicon/UWT1V4R7MCL1GB
+manufacturer: nichicon
+mpn: UWT1V4R7MCL1GB
+device: nichicon/UWT1V4R7M
+package: manufacturers/nichicon/UWT-4x5.4
+sources: [nichicon/e-uwt, nichicon/guide_all_E]
+source: nichicon/e-uwt
+
+existence: { status: verified, src: 'p3 "Ratings table, Part Number column, UWT1V4R7MCL1GB row"' }
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance: { typ: 4.7 µF, src: 'p3 "Ratings table, UWT1V4R7MCL1GB row, Rated Capacitance"' }
+  tolerance:
+    tol: ±20 %
+    at: { TA: 20 °C, f: 120 Hz }
+    src: p1 "Specifications, Capacitance Tolerance ±20% at 120Hz, 20°C"
+  rated_voltage:
+    typ: 35 V
+    src: p3 "Ratings table, UWT1V4R7MCL1GB row, Rated Voltage group (35 (1V))"

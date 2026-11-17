@@ -1,0 +1,36 @@
+# ATTINY824-SSFR: 8 KB/1 KB, 14 pins, SOIC, tape & reel, -40 to +125 C. Ordering
+# code printed in Table 35-1 "Available Product Numbers" (DS40002311B page
+# 541); package letter decoded with the Product Identification
+# System (page 542).
+# lifecycle: no production-status statement in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATTINY824-SSFR
+manufacturer: microchip
+mpn: ATTINY824-SSFR
+device: microchip/ATtiny824
+
+package:
+  value: manufacturers/microchip/SOIC14-SL-C04-065D
+  src:
+    - p541 "Table 35-1 row ATTINY824-SSFR, Package Type"
+    - p548 "Section 36.3 14-Pin SOIC, drawing C04-065-SL Rev D sheet 2"
+
+sources: [microchip/DS40002311@revB]
+source: microchip/DS40002311@revB
+
+existence:
+  status: verified
+  src: p541 "Table 35-1 Available Product Numbers, row ATTINY824-SSFR"
+
+lifecycle: { status: unknown }
+
+parameters:
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p475 "Table 33-2 General Operating Conditions, VDD, VAO - Auto Grade and Extended Operating temperature range"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: p475 "Table 33-2 General Operating Conditions, TA Extended -40 to 125"

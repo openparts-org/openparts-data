@@ -1,0 +1,14 @@
+# onsemi datasheet "MOSFET - N-Channel, Field Effect Transistor,
+# Enhancement Mode -- NDP6060L / NDB6060L", Publication Order Number
+# NDP6060L/D, footer "January, 2023 - Rev. 6", downloaded with curl from
+# the URL below. Read with pdftotext -layout. Page 1 names the
+# TO-220-3LD package "CASE 340AT" (outline 98AON13818G, separate source).
+schema_version: "0.2"
+kind: source
+id: onsemi/NDP6060L-D
+url: https://www.onsemi.com/download/data-sheet/pdf/ndp6060l-d.pdf
+date: 2023-01
+revision: "6"
+publisher: onsemi
+document_id: NDP6060L/D
+document_type: datasheet

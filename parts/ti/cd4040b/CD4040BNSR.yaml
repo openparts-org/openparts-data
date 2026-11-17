@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCHS030D PDF page 6): row "CD4040BNSR", "SOP (NS) | 16". lifecycle "active" is
+# that table's Status column ("Active").
+# Package: outline NS0016A (4220735/A) on page 27. Same drawing number and revision as the reused package manufacturers/ti/NS0016A.
+schema_version: "0.2"
+kind: part
+id: ti/CD4040BNSR
+manufacturer: ti
+mpn: CD4040BNSR
+device: ti/CD4040B
+
+package:
+  value: manufacturers/ti/NS0016A
+  src:
+    - p6 "Package Option Addendum, row "CD4040BNSR", "SOP (NS) | 16""
+    - p27 "PACKAGE OUTLINE NS0016A (4220735/A)"
+
+sources: [ti/SCHS030D]
+source: ti/SCHS030D
+
+existence:
+  status: verified
+  src: p6 "Package Option Addendum, Packaging Information table, row "CD4040BNSR""
+
+lifecycle:
+  status: active
+  src: p6 "Package Option Addendum, row "CD4040BNSR", Status "Active""

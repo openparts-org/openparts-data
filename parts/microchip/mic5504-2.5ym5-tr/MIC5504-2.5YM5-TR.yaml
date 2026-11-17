@@ -1,0 +1,31 @@
+# MPN built from the PRODUCT IDENTIFICATION SYSTEM of DS20006006C (page
+# 23): MIC5504 + "-2.5" (Output Voltage "2.5 = 2.5V", listed for
+# MIC5504 without the /MT-only restriction) + "Y" (-40°C to +125°C) +
+# "M5" (5-Lead SOT23) + "-TR" (3,000/Reel (SOT23)). Existence probable
+# (legend, not printed in full); lifecycle unknown.
+# Package: drawing C04-091-6BX Rev H (pages 18-20), table values equal
+# to standards/SOT23-5-2.90x1.60-P0.95 (C04-091-OT).
+schema_version: "0.2"
+kind: part
+id: microchip/MIC5504-2.5YM5-TR
+manufacturer: microchip
+mpn: MIC5504-2.5YM5-TR
+device: microchip/MIC5504-M5
+
+package:
+  value: standards/SOT23-5-2.90x1.60-P0.95
+  src: p19 "5-Lead SOT-23 (6BX), Drawing C04-091-6BX Rev H sheet 2 table"
+
+sources: [microchip/DS20006006C]
+source: microchip/DS20006006C
+
+existence:
+  status: probable
+  src: p23 "PRODUCT IDENTIFICATION SYSTEM legend, MIC5504, 2.5, Y, M5, TR"
+
+lifecycle: { status: unknown }
+
+parameters:
+  output_voltage:
+    typ: 2.5 V
+    src: p23 "PRODUCT IDENTIFICATION SYSTEM, Output Voltage 2.5 = 2.5V"

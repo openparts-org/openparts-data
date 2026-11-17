@@ -1,0 +1,16 @@
+# Official TI datasheet "LM75x Digital Temperature Sensor and Thermal Watchdog With Two-Wire Interface". Downloaded 2026-11-17 with curl from the
+# TI symlink URL below; revision read from the page header "SNIS153D - JULY 2009 - REVISED OCTOBER 2015".
+# 34 PDF pages; text read with pdftotext -layout. Page numbers are PDF
+# page indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is
+# dated 18-Sep-2026 (newer than the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SNIS153D
+sha256: c7c30af8f5b29a41c765a82c9cf0f5457ccbf06007b7d283473db04dbe4fdfbd
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/lm75b.pdf
+publisher: ti
+document_id: SNIS153D
+document_type: datasheet
+revision: D
+date: 2015-10

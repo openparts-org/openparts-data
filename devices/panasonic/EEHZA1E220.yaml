@@ -1,0 +1,18 @@
+# Panasonic ZA series 22 µF (code 220), 25 V (code 1E), ±20 %
+# conductive polymer hybrid aluminium electrolytic capacitor, surface
+# mount (codes per panasonic/ABA0000C1221 p2 "Explanation of part
+# numbers"). The source names the terminals only by polarity, (+) and
+# (-) on the p1 "Dimensions" drawing; numbered in the smd_electrolytic
+# convention (pin 1 = +, the pad at -X).
+schema_version: "0.2"
+kind: device
+id: panasonic/EEHZA1E220
+manufacturer: panasonic
+category: capacitor
+family: ZA
+source: panasonic/ABA0000C1221
+
+pins:
+  src: p1 "Dimensions drawing, terminal polarity symbols (+) / (-)"
+  "1": { name: +, type: passive }
+  "2": { name: -, type: passive }

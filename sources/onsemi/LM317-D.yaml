@@ -1,0 +1,14 @@
+# onsemi datasheet "Voltage Regulator - Adjustable Output, Positive
+# 1.5 A -- LM317, NCV317", Publication Order Number LM317/D, footer
+# "September, 2026 - Rev. 18", 14 pages, downloaded with curl from the
+# URL below. Read with pdftotext -layout. TO-220 "T SUFFIX CASE 221AB"
+# (outline embedded on page 12, same issue as 98AON23085D).
+schema_version: "0.2"
+kind: source
+id: onsemi/LM317-D
+url: https://www.onsemi.com/download/data-sheet/pdf/lm317-d.pdf
+date: 2026-09
+revision: "18"
+publisher: onsemi
+document_id: LM317/D
+document_type: datasheet

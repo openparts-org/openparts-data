@@ -1,0 +1,114 @@
+# ATSAMD51J20A (SAM D51J, 1 MB flash) pinout for the 64-pin TQFP and
+# VQFN packages, from data sheet DS60001507N section 4.2, Figure 4-2
+# "64-Pin TQFP and VQFN Package" (PDF page 22; the figure covers every
+# SAM D51J device, so the pins equal ATSAMD51J19A's, rendered and read: the
+# figure's labels are rotated and do not extract cleanly as text).
+# Types: GND/GNDANA ground; VDDIO/VDDIOB/VDDANA/VDDCORE power; VSW (the
+# switching regulator output, a supply pin) power; RESETN reset; ports
+# io (PA00/PA01 XIN32/XOUT32 and PB22/PB23 XIN1/XOUT1 stay io: they are
+# general-purpose port pins).
+# `alternate_functions` only for the USB pair: PA24 USB/DM and PA25
+# USB/DP (Table 6-1 "Multiplexed Peripheral Signals", peripheral
+# function H, PDF page 33); other functions are not listed.
+# Exposed pad (VQFN only): Figure 4-2 note 1 and section 59.3.4 only
+# recommend connecting it to ground and say it is not electrically
+# connected inside the device, so no EP pin is recorded.
+schema_version: "0.2"
+kind: device
+id: microchip/ATSAMD51J20A
+manufacturer: microchip
+category: microcontroller
+family: SAM D51
+source: microchip/DS60001507@revN
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.71 V
+    max: 3.63 V
+    src: p1859 "Table 54-2 General Operating Conditions, VDDIO / VDDANA"
+
+pins:
+  src:  p22 "Figure 4-2 64-Pin TQFP and VQFN Package, pins 1-64"
+  "1":  { name: PA00, type: io }
+  "2":  { name: PA01, type: io }
+  "3":  { name: PA02, type: io }
+  "4":  { name: PA03, type: io }
+  "5":  { name: PB04, type: io }
+  "6":  { name: PB05, type: io }
+  "7":  { name: GNDANA, type: ground }
+  "8":  { name: VDDANA, type: power }
+  "9":  { name: PB06, type: io }
+  "10": { name: PB07, type: io }
+  "11": { name: PB08, type: io }
+  "12": { name: PB09, type: io }
+  "13": { name: PA04, type: io }
+  "14": { name: PA05, type: io }
+  "15": { name: PA06, type: io }
+  "16": { name: PA07, type: io }
+  "17": { name: PA08, type: io }
+  "18": { name: PA09, type: io }
+  "19": { name: PA10, type: io }
+  "20": { name: PA11, type: io }
+  "21": { name: VDDIOB, type: power }
+  "22": { name: GND, type: ground }
+  "23": { name: PB10, type: io }
+  "24": { name: PB11, type: io }
+  "25": { name: PB12, type: io }
+  "26": { name: PB13, type: io }
+  "27": { name: PB14, type: io }
+  "28": { name: PB15, type: io }
+  "29": { name: PA12, type: io }
+  "30": { name: PA13, type: io }
+  "31": { name: PA14, type: io }
+  "32": { name: PA15, type: io }
+  "33": { name: GND, type: ground }
+  "34": { name: VDDIO, type: power }
+  "35": { name: PA16, type: io }
+  "36": { name: PA17, type: io }
+  "37": { name: PA18, type: io }
+  "38": { name: PA19, type: io }
+  "39": { name: PB16, type: io }
+  "40": { name: PB17, type: io }
+  "41": { name: PA20, type: io }
+  "42": { name: PA21, type: io }
+  "43": { name: PA22, type: io }
+  "44": { name: PA23, type: io }
+  "45":
+    name: PA24
+    type: io
+    alternate_functions: [USB/DM]
+    diff_pair:
+      partner: "46"
+      polarity: n
+      standard: usb2
+      function: USB/DM
+      src: p33 "Table 6-1 Multiplexed Peripheral Signals, PA24/PA25 rows, function H USB/DM, USB/DP"
+  "46":
+    name: PA25
+    type: io
+    alternate_functions: [USB/DP]
+    diff_pair:
+      partner: "45"
+      polarity: p
+      standard: usb2
+      function: USB/DP
+      src: p33 "Table 6-1 Multiplexed Peripheral Signals, PA24/PA25 rows, function H USB/DM, USB/DP"
+  "47": { name: GND, type: ground }
+  "48": { name: VDDIO, type: power }
+  "49": { name: PB22, type: io }
+  "50": { name: PB23, type: io }
+  "51": { name: PA27, type: io }
+  "52": { name: RESETN, type: reset }
+  "53": { name: VDDCORE, type: power }
+  "54": { name: GND, type: ground }
+  "55": { name: VSW, type: power }
+  "56": { name: VDDIO, type: power }
+  "57": { name: PA30, type: io }
+  "58": { name: PA31, type: io }
+  "59": { name: PB30, type: io }
+  "60": { name: PB31, type: io }
+  "61": { name: PB00, type: io }
+  "62": { name: PB01, type: io }
+  "63": { name: PB02, type: io }
+  "64": { name: PB03, type: io }

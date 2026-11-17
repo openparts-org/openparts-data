@@ -1,0 +1,19 @@
+# Official Microchip datasheet "MCP960X/L0X/RL0X - Thermocouple EMF to
+# Temperature Converter" (57 PDF pages). Downloaded 2026-11-17 with curl
+# from the ww1.microchip.com DeviceDoc URL below (HTTP 200, PDF).
+# document_id and revision from the printed footer "DS20005426G-page N";
+# Revision History "Revision G (April 2021)". Printed page numbers equal
+# the PDF page indices. Table 3-1, Package Types, the electrical tables
+# and the MQFN drawing C04-186B (pages 49-51, dimension tables as text)
+# read with pdftotext -layout.
+schema_version: "0.2"
+kind: source
+id: microchip/DS20005426G
+sha256: 39f1fcca8fb1afd6a02d7bfc8a05c6884012db378434e78df416e6c0688e8558
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/MCP960X-Data-Sheet-20005426.pdf
+publisher: microchip
+document_id: DS20005426
+document_type: datasheet
+revision: G
+date: 2021-04

@@ -1,0 +1,15 @@
+# RU1C001UN N-channel MOSFET (SOT-323FL (UMT3F)). Pin assignment from the page-1
+# "Inner circuit": (1) Gate, (2) Source, (3) Drain. All typed passive.
+schema_version: "0.2"
+kind: device
+id: rohm/RU1C001UN
+manufacturer: rohm
+category: transistor
+family: RU1C001UN
+source: rohm/RU1C001UN-datasheet-en
+
+pins:
+  src: p1 "Inner circuit, (1) Gate / (2) Source / (3) Drain"
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

@@ -1,0 +1,26 @@
+# MC7912BTG: MC7912B (-12 V), TO-220 (Pb-free), 50 Units/Rail,
+# printed verbatim in MC7900/D Rev. 21 ORDERING INFORMATION (page 11);
+# the temperature-range cell is printed once per voltage group
+# (TJ = -40°C to +125°C for the B grade per the table's Tlow note).
+# Package "TO-220 T SUFFIX CASE 221AB" (page 1), outline page 13
+# (= standalone 98AON23085D).
+# No lifecycle statement for this MPN.
+schema_version: "0.2"
+kind: part
+id: onsemi/MC7912BTG
+manufacturer: onsemi
+mpn: MC7912BTG
+device: onsemi/MC7912
+
+package:
+  value: manufacturers/onsemi/TO220-221AB
+  src: [p1 "TO-220 T SUFFIX CASE 221AB", onsemi/98AON23085D p1 "CASE 221AB outline"]
+
+sources: [onsemi/MC7900-D, onsemi/98AON23085D]
+source: onsemi/MC7900-D
+
+existence:
+  status: verified
+  src: 'p11 "ORDERING INFORMATION: "MC7912BTG | TO-220 (Pb-Free) | 50 Units/Rail""'
+
+lifecycle: { status: unknown }

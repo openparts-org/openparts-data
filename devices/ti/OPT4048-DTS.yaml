@@ -1,0 +1,49 @@
+# OPT4048 tristimulus XYZ colour sensor, DTS (SOT-5X3, 8 pins) -- the
+# only package. Pins from Table 6-1 "Pin Functions" (SBOSA84 page 3),
+# checked against the pin-configuration figure on the same page. Types:
+# VDD power, GND (listed Power) ground, ADDR input, SCL clock, INT and
+# SDA (Digital I/O) io, NC nc.
+# operating_temperature from the Features list (page 1); 7.3 gives only
+# a junction range. peak_wavelength left out: four channels, each with
+# its own peak (X/Y/Z/W).
+schema_version: "0.2"
+kind: device
+id: ti/OPT4048-DTS
+manufacturer: ti
+category: light_sensor
+family: OPT4048
+source: ti/SBOSA84
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: i2c, src: 'p3 "Table 6-1 Pin Functions, SCL I2C clock"' }
+  supply_voltage:
+    min: 1.6 V
+    max: 3.6 V
+    src: p4 "7.3 Recommended Operating Conditions, VDD Supply voltage"
+  supply_current:
+    typ: 29 µA
+    src: p6 "7.5 Electrical Characteristics, IQACTIVE Active Current, Full-scale lux"
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p1 "1 Features, Operating temperature range"
+  esd_hbm:        { typ: 2 kV, src: 'p4 "7.2 ESD Ratings, HBM all pins ±2000 V"' }
+  light_sensor_type:
+    value: color
+    src: p1 "OPT4048 High Speed High Precision Tristimulus XYZ Color Sensor"
+  illuminance_range:
+    min: 0.00215 lx
+    max: 144000 lx
+    src: p1 "1 Features, 26 bits of effective dynamic range from 2.15 mlux to 144 klux"
+
+pins:
+  src: [p3 "Table 6-1 Pin Functions", p3 "Figure 6-1 DTS Package 8-Pin SOT-5X3 Top View"]
+  "1": { name: VDD, type: power }
+  "2": { name: ADDR, type: input }
+  "3": { name: NC, type: nc }
+  "4": { name: GND, type: ground }
+  "5": { name: SCL, type: clock }
+  "6": { name: NC, type: nc }
+  "7": { name: INT, type: io }
+  "8": { name: SDA, type: io }

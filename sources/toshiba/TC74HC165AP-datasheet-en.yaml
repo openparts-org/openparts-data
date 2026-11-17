@@ -1,0 +1,18 @@
+# Toshiba TC74HC165AP/TC74HC165AF datasheet (English), 10 pages, every footer
+# dated 2026-04-21 (no revision number printed). Linked as "TC74HC165AP Data
+# sheet/English" from Toshiba's TC74HC165AP product page (document id
+# 11268); downloaded 2026-11-17 with curl. Read with pdftotext
+# -layout; the pin assignment (page 1) and the package dimension pages
+# (8-9) are images, read from renders. PDF page index = the printed page
+# number.
+schema_version: "0.2"
+kind: source
+id: toshiba/TC74HC165AP-datasheet-en
+sha256: c268c6601bf6ad1c1bb88efb262378e9c6448935a773f4ba843c0758e8fa4a81
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=11268&prodName=TC74HC165AP
+publisher: toshiba
+document_id: TC74HC165AP-datasheet-en
+document_type: datasheet
+revision: 2026-04-21
+date: 2026-04-21

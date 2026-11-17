@@ -1,0 +1,21 @@
+# LM340T-12/NOPB: SNOSBT0L PACKAGE OPTION ADDENDUM (page 22) row "LM340T-12/NOPB
+# Active  Production  TO-220 (NDE) | 3" -- MPN printed verbatim in TI's
+# orderable list (existence verified); lifecycle "Active" is TI's own
+# Status column. Package NDE = outline NDE0003B (SNOSBT0L page 28).
+schema_version: "0.2"
+kind: part
+id: ti/LM340T-12/NOPB
+manufacturer: ti
+mpn: LM340T-12/NOPB
+device: ti/LM7812-NDE
+package: { value: manufacturers/ti/NDE0003B, src: p28 "NDE0003B package outline" }
+sources: [ti/SNOSBT0L]
+source: ti/SNOSBT0L
+
+existence:
+  status: verified
+  src: p22 "Package option addendum table, row "LM340T-12/NOPB" (TO-220 (NDE) | 3)"
+
+lifecycle:
+  status: active
+  src: p22 "Package option addendum table, row "LM340T-12/NOPB", Status "Active""

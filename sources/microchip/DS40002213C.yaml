@@ -1,0 +1,20 @@
+# Microchip "PIC18F27/47/57Q84" data sheet, document DS40002213C (footer
+# "DS40002213C-page n", "Preliminary Datasheet", (c) 2020), 1146 PDF
+# pages. Downloaded with curl from ww1.microchip.com/downloads/en/DeviceDoc
+# (URL below); the aemDocuments copy is behind the filehandler redirect
+# (403), so revision C is the one read. Its Appendix A revision history
+# (page 1141) lists only revisions A (05/2020) and B (06/2020); revision
+# C carries no date, so only the copyright year 2020 is recorded. PDF
+# page indices equal the printed page numbers. Pin tables and package
+# tables read with pdftotext -layout; SOIC page 1120 rendered.
+schema_version: "0.2"
+kind: source
+id: microchip/DS40002213@revC
+sha256: 8ec8106185b70baa4c35b521ed0b02a6f093230597b69b7be45789a844169639
+retrieved: 2026-11-17
+url: https://ww1.microchip.com/downloads/en/DeviceDoc/PIC18F27-47-57Q84-Data-Sheet-DS40002213C.pdf
+publisher: microchip
+document_id: DS40002213
+document_type: datasheet
+revision: C
+date: "2020"

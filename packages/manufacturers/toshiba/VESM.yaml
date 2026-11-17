@@ -1,0 +1,65 @@
+# Toshiba VESM (SOT-723 size) 3-lead flat-lead package, read from the
+# rendered "Package Dimensions" page of the SSM3K56MFV datasheet (page
+# 7, image only; toshiba/SSM3K56MFV-datasheet-en). The package table
+# names "TOSHIBA: 1-1Q1S" and "Nickname: VESM"; the id is the nickname
+# because the page-1 outlines of the SSM3K15AMFV, SSM3K16FV and
+# SSM3K44MFV datasheets print the same values under "TOSHIBA 2-1L1B"
+# (older code for the same VESM outline). Millimetres; a toleranced
+# value is recorded as nominal plus the resulting min/max.
+#
+# sot mapping (as manufacturers/toshiba/SOT-23F): body_width = body
+# along the two-lead row "1.2 +/-0.05", body_length = across the rows
+# "0.8 +/-0.05", overall_length = lead-tip span "1.2 +/-0.05", pitch =
+# pin 1 to pin 2 (two boxed basic "0.4" = 0.8). Top view: leads 1, 2 on
+# the bottom edge, 3 on the top edge. Leads are flat (drawn by the `sot`
+# generator as for SOT-23F); the height "0.5 +/-0.05" is overall_height.
+# Lead width: leads 1 and 2 are "0.22 +/-0.05", lead 3 is "0.32 +/-0.05";
+# the generator takes one width, so the pin-1/2 value is recorded and
+# the wider lead 3 is not modelled. The bottom-view reference "(0.1)" is
+# not recorded. No land pattern in the source.
+schema_version: "0.2"
+kind: package
+id: manufacturers/toshiba/VESM
+family: sot
+lead_count: 3
+
+lead_layout:
+  value: [2, 1]
+  src:   'p7 "Package Dimensions top view: leads 1, 2 on the bottom edge, lead 3 on the top edge"'
+
+source: toshiba/SSM3K56MFV-datasheet-en
+
+pitch: { typ: 0.8 mm, src: 'p7 "Package Dimensions, two boxed basic "0.4" between leads 1 and 2"' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:
+    min: 1.15 mm
+    typ: 1.2 mm
+    max: 1.25 mm
+    src: p7 "Package Dimensions top view, body "1.2 +/-0.05" along the lead rows"
+  body_length:
+    min: 0.75 mm
+    typ: 0.8 mm
+    max: 0.85 mm
+    src: p7 "Package Dimensions top view, body "0.8 +/-0.05" across the lead rows"
+  lead_thickness:
+    min: 0.08 mm
+    typ: 0.13 mm
+    max: 0.18 mm
+    src: p7 "Package Dimensions end view, lead thickness "0.13 +/-0.05""
+  lead_width:
+    min: 0.17 mm
+    typ: 0.22 mm
+    max: 0.27 mm
+    src: p7 "Package Dimensions top view, leads 1/2 width "0.22 +/-0.05" (lead 3 "0.32 +/-0.05")"
+  overall_length:
+    min: 1.15 mm
+    typ: 1.2 mm
+    max: 1.25 mm
+    src: p7 "Package Dimensions top view, lead-tip span "1.2 +/-0.05""
+  overall_height:
+    min: 0.45 mm
+    typ: 0.5 mm
+    max: 0.55 mm
+    src: p7 "Package Dimensions side view, height "0.5 +/-0.05""

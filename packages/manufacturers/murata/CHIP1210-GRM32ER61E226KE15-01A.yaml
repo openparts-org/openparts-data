@@ -1,0 +1,20 @@
+# Murata GRM32E (3225M (1210)) body from the reference sheet murata/GRM32ER61E226KE15-01A
+# page 2 "Type & Dimension": L 3.2+/-0.3, W 2.5+/-0.2, T 2.5+/-0.2. No existing
+# package carries these tolerances. No drawing ID is printed, so the
+# package is named after the sheet. min/max are the printed tolerances
+# applied.
+schema_version: "0.2"
+kind: package
+id: manufacturers/murata/CHIP1210-GRM32ER61E226KE15-01A
+family: chip
+lead_count: 2
+source: murata/GRM32ER61E226KE15-01A
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: chip }
+
+dimensions:
+  body_width:  { min: 2.3 mm, typ: 2.5 mm, max: 2.7 mm, src: 'p2 "Type & Dimension, W 2.5+/-0.2"' }
+  body_length: { min: 2.9 mm, typ: 3.2 mm, max: 3.5 mm, src: 'p2 "Type & Dimension, L 3.2+/-0.3"' }
+  body_height: { min: 2.3 mm, typ: 2.5 mm, max: 2.7 mm, src: 'p2 "Type & Dimension, T 2.5+/-0.2"' }
+  lead_length: { min: 0.3 mm, src: 'p2 "Type & Dimension, e 0.3 min."' }

@@ -1,0 +1,64 @@
+# Toshiba UFM (SOT-323F size) 3-lead flat-lead package, read from the
+# page-1 outline drawing of the SSM3K127TU datasheet (rendered image;
+# toshiba/SSM3K127TU-datasheet-en; table "TOSHIBA 2-2U1A", JEDEC and
+# JEITA "—"). The SSM3J133TU datasheet page 1 prints the same values and
+# code. The id is the nickname (as manufacturers/toshiba/SOT-23F).
+# Millimetres; a toleranced value is recorded as nominal plus the
+# resulting min/max.
+#
+# The drawing is rotated: leads 1, 2 on the left edge, lead 3 on the
+# right. sot mapping (as SOT-23F): body_width = body along the two-lead
+# row "2.0 +/-0.1", body_length = across the rows "1.7 +/-0.1",
+# overall_length = lead-tip span "2.1 +/-0.1". Pitch: lead 1 is
+# "0.65 +/-0.05" from the lead-3 centre line, lead 2 symmetric, so pin 1
+# to pin 2 = 2 x 0.65 = 1.3 (nominal arithmetic). Leads are flat; the
+# side-view height "0.7 +/-0.05" is overall_height. No land pattern.
+schema_version: "0.2"
+kind: package
+id: manufacturers/toshiba/UFM
+family: sot
+lead_count: 3
+
+lead_layout:
+  value: [2, 1]
+  src:   'p1 "outline drawing (rotated): leads 1, 2 on one edge, lead 3 on the opposite edge"'
+
+source: toshiba/SSM3K127TU-datasheet-en
+
+pitch:
+  typ: 1.3 mm
+  src: p1 "outline, lead 1 "0.65 +/-0.05" from the centre line; 2 x 0.65 between leads 1 and 2"
+
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:
+    min: 1.9 mm
+    typ: 2 mm
+    max: 2.1 mm
+    src: p1 "outline drawing, body "2.0 +/-0.1" along the lead-1/2 edge"
+  body_length:
+    min: 1.6 mm
+    typ: 1.7 mm
+    max: 1.8 mm
+    src: p1 "outline drawing, body "1.7 +/-0.1" across the lead rows"
+  lead_thickness:
+    min: 0.116 mm
+    typ: 0.166 mm
+    max: 0.216 mm
+    src: p1 "outline drawing side view, lead thickness "0.166 +/-0.05""
+  lead_width:
+    min: 0.25 mm
+    typ: 0.3 mm
+    max: 0.4 mm
+    src: p1 "outline drawing, lead width "0.3 +0.1/-0.05""
+  overall_length:
+    min: 2 mm
+    typ: 2.1 mm
+    max: 2.2 mm
+    src: p1 "outline drawing, lead-tip span "2.1 +/-0.1""
+  overall_height:
+    min: 0.65 mm
+    typ: 0.7 mm
+    max: 0.75 mm
+    src: p1 "outline drawing side view, height "0.7 +/-0.05""

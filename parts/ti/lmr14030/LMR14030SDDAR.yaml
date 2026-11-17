@@ -1,0 +1,22 @@
+# Orderable MPN in the Package Option Addendum of SNVSA81B (page 25):
+# "LMR14030SDDAR | Active | Production | SO PowerPAD"; Op temp -40 to 125,
+# marking DB3SP. Lifecycle from the same row's Status column.
+# Package: the only outline printed is DDA0008B (4214849/B 09/2025,
+# pages 31-33) -> manufacturers/ti/DDA0008B.
+schema_version: "0.2"
+kind: part
+id: ti/LMR14030SDDAR
+manufacturer: ti
+mpn: LMR14030SDDAR
+device: ti/LMR14030-DDA
+package: { value: manufacturers/ti/DDA0008B, src: p31 "PACKAGE OUTLINE DDA0008B (4214849/B)" }
+sources: [ti/SNVSA81B]
+source: ti/SNVSA81B
+
+existence:
+  status: verified
+  src: p25 "Package Option Addendum, Packaging Information, row LMR14030SDDAR"
+
+lifecycle:
+  status: active
+  src: p25 "Package Option Addendum, row LMR14030SDDAR, Status Active"

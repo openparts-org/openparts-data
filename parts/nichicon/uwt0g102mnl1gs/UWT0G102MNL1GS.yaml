@@ -1,0 +1,25 @@
+# Nichicon UWT UWT0G102MNL1GS: 1000 µF, 4 V, case φ8 x 10 (ratings table, nichicon/e-uwt
+# page 2, Part Number column; the Case Size column gives the package).
+# lifecycle unknown: the catalog states no status for this row.
+schema_version: "0.2"
+kind: part
+id: nichicon/UWT0G102MNL1GS
+manufacturer: nichicon
+mpn: UWT0G102MNL1GS
+device: nichicon/UWT0G102M
+package: manufacturers/nichicon/UWT-8x10
+sources: [nichicon/e-uwt, nichicon/guide_all_E]
+source: nichicon/e-uwt
+
+existence: { status: verified, src: 'p2 "Ratings table, Part Number column, UWT0G102MNL1GS row"' }
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance: { typ: 1000 µF, src: 'p2 "Ratings table, UWT0G102MNL1GS row, Rated Capacitance"' }
+  tolerance:
+    tol: ±20 %
+    at: { TA: 20 °C, f: 120 Hz }
+    src: p1 "Specifications, Capacitance Tolerance ±20% at 120Hz, 20°C"
+  rated_voltage:
+    typ: 4 V
+    src: p2 "Ratings table, UWT0G102MNL1GS row, Rated Voltage group (4 (0G))"

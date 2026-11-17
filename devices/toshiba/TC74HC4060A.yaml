@@ -1,0 +1,51 @@
+# 14-Stage Binary Counter/Oscillator TC74HC4060A (TC74HC4060AP DIP16, TC74HC4060AF SOP16), 16-pin pin
+# map read from the rendered page 1 "Pin Assignment" (TOP VIEW) of the
+# TC74HC4060AP/TC74HC4060AF datasheet. The oscillator pins are printed with the Greek letter phi and an overbar
+# on pins 9 and 11: phi-O-bar (pin 9) PHI_O_N, phi-O (pin 10) PHI_O,
+# phi-I-bar (pin 11, clock/oscillator input) PHI_I_N. CLR (active high)
+# typed reset.
+schema_version: "0.2"
+kind: device
+id: toshiba/TC74HC4060A
+manufacturer: toshiba
+category: logic
+family: TC74HC4060A
+source: toshiba/TC74HC4060AP-datasheet-en
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage: { min: 2 V, max: 6 V, src: 'p3 "Operating Ranges, Supply voltage VCC 2 to 6 V"' }
+  supply_current:
+    max: 4 µA
+    at: { VCC: 6 V, TA: 25 °C }
+    src: 'p4 "Electrical Characteristics: Quiescent supply current ICC, VCC 6.0, Ta = 25°C Max"'
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p3 "Operating Ranges, Operating temperature Topr"
+  channel_count:  { value: "1", src: 'p1 "Title: 14-Stage Binary Counter/Oscillator"' }
+  propagation_delay:
+    typ: 41 ns
+    max: 60 ns
+    at: { VCC: 4.5 V, CL: 50 pF, TA: 25 °C }
+    src: p6 "AC Characteristics (CL = 50 pF), Propagation delay time (phi-I to Q4), VCC 4.5, Ta = 25°C"
+  logic_function: { value: counter, src: 'p1 "Title: 14-Stage Binary Counter/Oscillator"' }
+
+pins:
+  src:  p1 ""Pin Assignment" (TOP VIEW) (rendered)"
+  "1":  { name: Q12, type: output }
+  "2":  { name: Q13, type: output }
+  "3":  { name: Q14, type: output }
+  "4":  { name: Q6, type: output }
+  "5":  { name: Q5, type: output }
+  "6":  { name: Q7, type: output }
+  "7":  { name: Q4, type: output }
+  "8":  { name: GND, type: ground }
+  "9":  { name: PHI_O_N, type: clock_out }
+  "10": { name: PHI_O, type: clock_out }
+  "11": { name: PHI_I_N, type: clock }
+  "12": { name: CLR, type: reset }
+  "13": { name: Q9, type: output }
+  "14": { name: Q8, type: output }
+  "15": { name: Q10, type: output }
+  "16": { name: VCC, type: power }

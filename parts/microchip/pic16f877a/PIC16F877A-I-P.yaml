@@ -1,0 +1,34 @@
+# PIC16F877A-I/P: industrial temperature (-40 to +85 C), 40-lead PDIP 600 mil.
+# existence: probable -- assembled from the "Product Identification
+# System" legend (DS39582C page 231); the legend
+# also prints PIC16F877A-I/P as its example c).
+# Package: this data sheet prints drawing C04-016 (p211, NOM
+# column included: D 2.045-2.065 in, E1 .530-.560 in); its successor C04-016B
+# (manufacturers/microchip/PDIP40-P-C04-016B, from DS40002147E) has wider
+# tolerances that contain these values.
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/PIC16F877A-I-P
+manufacturer: microchip
+mpn: PIC16F877A-I/P
+device: microchip/PIC16F877A-PDIP40
+
+package:
+  value: manufacturers/microchip/PDIP40-P-C04-016B
+  src: p231 "Product Identification System, Package P = PDIP"
+
+sources: [microchip/DS39582@revC]
+source: microchip/DS39582@revC
+
+existence:
+  status: probable
+  src: p231 "Product Identification System; example c) PIC16F877A-I/P = Industrial temp., PDIP package"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p175 "17.1 DC Characteristics, Operating temperature -40 C <= TA <= +85 C for industrial"

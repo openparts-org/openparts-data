@@ -1,0 +1,17 @@
+# Official TI datasheet "OPT4048 High Speed High Precision Tristimulus XYZ Color Sensor". Downloaded 2026-11-17 with curl from the
+# TI symlink URL below; revision read from the page header "SBOSA84 - DECEMBER 2022".
+# 44 PDF pages; text read with pdftotext -layout, package drawings read
+# from pages rendered with pdftoppm. Page numbers are PDF page indices.
+# The PACKAGE OPTION ADDENDUM at the end of the PDF is dated 31-Oct-2025 (newer
+# than the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SBOSA84
+sha256: bc4a9ef6b2205e38439dd59514eff819bb75e33126736c2cb93649d09b0d7ea4
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/opt4048.pdf
+publisher: ti
+document_id: SBOSA84
+document_type: datasheet
+revision: original
+date: 2022-12

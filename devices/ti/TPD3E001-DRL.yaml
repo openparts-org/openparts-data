@@ -17,6 +17,12 @@ parameters:
     max: 0.95 V
     at: { IF: 10 mA }
     src: p5 "6.5 Electrical Characteristics, VF Diode forward voltage"
+  peak_pulse_current:
+    max: 5.5 A
+    src: p4 "6.1 Absolute Maximum Ratings, A row (label printed as power, sic), tp = 8/20 µs"
+  peak_pulse_power:
+    max: 90 W
+    src: p4 "6.1 Absolute Maximum Ratings, Peak pulse power (tp = 8/20 µs), W row"
   operating_temperature:
     min: -40 °C
     max: 85 °C

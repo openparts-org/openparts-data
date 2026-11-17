@@ -1,0 +1,17 @@
+# Toshiba SSM3K56MFV datasheet (English), 8 PDF pages, footer date
+# 2026-04-14, Rev.2.0.A. Linked as "Data sheet/English" from Toshiba's
+# product page (docget.jsp?did=13823); downloaded 2026-11-17 with curl.
+# Read with pdftotext -layout; the image-only package drawing was
+# rendered with pdftoppm and read as an image. Page numbers are PDF
+# page indices.
+schema_version: "0.2"
+kind: source
+id: toshiba/SSM3K56MFV-datasheet-en
+sha256: 8bd180f806d71f8cd7a994eddcf90dd363eceff8fb9007c69c361a28992f70d8
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=13823&prodName=SSM3K56MFV
+publisher: toshiba
+document_id: SSM3K56MFV_datasheet_en
+document_type: datasheet
+revision: 2.0.A
+date: 2026-04-14

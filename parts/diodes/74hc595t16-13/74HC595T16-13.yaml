@@ -1,0 +1,21 @@
+# MPN from the "Ordering Information" table (DS35492 page 8): row
+# "74HC595T16-13", package code T16, TSSOP-16, 2500/Tape & Reel. lifecycle: no
+# production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: diodes/74HC595T16-13
+manufacturer: diodes
+mpn: 74HC595T16-13
+device: diodes/74HC595
+
+package:
+  value: manufacturers/diodes/TSSOP16-4.40x5.00-P0.65-DS35492
+  src:
+    - p8 ""Ordering Information" table, row "74HC595T16-13", TSSOP-16"
+    - p9 ""Package Outline Dimensions" TSSOP-16"
+
+sources: [diodes/DS35492]
+source: diodes/DS35492
+
+existence: { status: verified, src: 'p8 ""Ordering Information" table, row "74HC595T16-13""' }
+lifecycle: { status: unknown }

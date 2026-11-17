@@ -1,0 +1,68 @@
+# Diodes Incorporated SOT353 (5-lead SC70 class, 0.65 mm pitch). Values
+# from the "Package Outline Dimensions", "Package Type: SOT353" table of
+# the 74LVC1G14 datasheet DS35123 Rev. 6-2, page 10 (text; Min / Max /
+# Typ as printed, Typ recorded as nominal as in
+# standards/SOT25-3.00x1.60-P0.95-DIODES). The other Diodes 74LVC1G
+# datasheets print the same table, except the A2 Typ (0.95 here, 1.00 in
+# e.g. DS32199), so body_height is recorded as min/max only.
+#
+# `sot` generator mapping (as the Diodes SOT25 package): body_width = D
+# (body length along the lead rows), body_length = E1 (body width across
+# the rows), overall_length = E (lead-tip span). F (0.40-0.45) and the
+# angle are not recorded. Pins 1-3 on one side, 4 opposite 3 and 5
+# opposite 1 (page 1 "Pin Assignments", SOT25 / SOT353 top view).
+schema_version: "0.2"
+kind: package
+id: manufacturers/diodes/SOT353-2.10x1.30-P0.65-DS35123
+family: sot
+lead_count: 5
+
+lead_layout:
+  value: [3, 2]
+  src:   'p1 ""Pin Assignments" SOT25 / SOT353 (Top View): pins 1-3 on one side, 4 and 5 on the other"'
+
+source: diodes/DS35123
+
+pitch: { typ: 0.65 mm, src: 'p10 "SOT353 table, "e" 0.650 BSC"' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:
+    min: 1.8 mm
+    typ: 2.15 mm
+    max: 2.2 mm
+    src: p10 "SOT353 table, "D" (1.80 / 2.20 / Typ 2.15)"
+  body_length:
+    min: 1.15 mm
+    typ: 1.3 mm
+    max: 1.35 mm
+    src: p10 "SOT353 table, "E1" (1.15 / 1.35 / Typ 1.30)"
+  body_height:
+    min: 0.9 mm
+    max: 1 mm
+    src: p10 "SOT353 table, "A2" (0.90 / 1.00; Typ 0.95 not recorded)"
+  lead_thickness:
+    min: 0.1 mm
+    typ: 0.11 mm
+    max: 0.22 mm
+    src: p10 "SOT353 table, "c" (0.10 / 0.22 / Typ 0.11)"
+  overall_length:
+    min: 2 mm
+    typ: 2.1 mm
+    max: 2.2 mm
+    src: p10 "SOT353 table, "E" (2.00 / 2.20 / Typ 2.10)"
+  standoff:
+    min: 0 mm
+    typ: 0.05 mm
+    max: 0.1 mm
+    src: p10 "SOT353 table, "A1" (0.00 / 0.10 / Typ 0.05)"
+  lead_width:
+    min: 0.1 mm
+    typ: 0.25 mm
+    max: 0.3 mm
+    src: p10 "SOT353 table, "b" (0.10 / 0.30 / Typ 0.25)"
+  lead_length:
+    min: 0.25 mm
+    typ: 0.3 mm
+    max: 0.4 mm
+    src: p10 "SOT353 table, "L" (0.25 / 0.40 / Typ 0.30)"

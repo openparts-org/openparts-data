@@ -1,0 +1,65 @@
+# TI DEF0008A-C01, WSON-8 with a sensor cavity, 2.5x2.5 mm, 0.5 mm pitch,
+# 0.8 mm max height (HDC3020). Outline drawing DEF0008A-C01 (4228892/B
+# 08/2022) in SNAS778D page 41 and its Example Board Layout on page 42,
+# read from the rendered drawings.
+#
+# Mapping: body limits "2.6 / 2.4" both ways -> body_width (across the
+# two terminal rows) / body_length; side view "0.8 / 0.7" -> body_height;
+# "0.05 / 0.00" -> standoff; "8X 0.3 / 0.2" (along the row) -> lead_width;
+# "8X 0.45 / 0.35" (across the row) -> lead_length; thermal pad
+# "1.2 +- 0.1" x "1.9 +- 0.1" -> exposed_pad (pin 9).
+# Top view: pin 1 top-left, 1-4 down the left, 5-8 up the right (SOIC
+# order), as in the land pattern example (page 42).
+# pads: the Example Board Layout (page 42): lands 8X (0.6) x 8X (0.25),
+# pitch 6X (0.5), land centres (2.3) apart across the rows -> x = +-1.15,
+# y = +-0.25 / +-0.75; thermal land (1.2) x (1.9) at the centre (pad 9).
+# The sensor cavity (sensing area, top) is not modelled.
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/DEF0008A-C01
+family: son
+lead_count: 8
+source: ti/SNAS778D
+
+pitch: { typ: 0.5 mm, src: 'p41 "DEF0008A-C01 outline (4228892/B), bottom view, basic "6X 0.5""' }
+geometry: { type: parametric, generator: son }
+
+dimensions:
+  body_width:
+    min: 2.4 mm
+    max: 2.6 mm
+    src: p41 "DEF0008A-C01 outline, top view "2.6 / 2.4" (across the rows)"
+  body_length:
+    min: 2.4 mm
+    max: 2.6 mm
+    src: p41 "DEF0008A-C01 outline, top view "2.6 / 2.4" (along the rows)"
+  body_height:
+    min: 0.7 mm
+    max: 0.8 mm
+    src: p41 "DEF0008A-C01 outline, side view "0.8 / 0.7""
+  exposed_pad:
+    src:    p41 "DEF0008A-C01 outline, bottom view, thermal pad "1.2+-0.1" x "1.9+-0.1""
+    width:  { min: 1.1 mm, typ: 1.2 mm, max: 1.3 mm }
+    length: { min: 1.8 mm, typ: 1.9 mm, max: 2 mm }
+  standoff: { min: 0 mm, max: 0.05 mm, src: 'p41 "DEF0008A-C01 outline, side view "0.05 / 0.00""' }
+  lead_width:
+    min: 0.2 mm
+    max: 0.3 mm
+    src: p41 "DEF0008A-C01 outline, bottom view "8X 0.3 / 0.2""
+  lead_length:
+    min: 0.35 mm
+    max: 0.45 mm
+    src: p41 "DEF0008A-C01 outline, bottom view "8X 0.45 / 0.35""
+
+pads:
+  value:
+    - { number: "1", x: -1.15, y: 0.75, width: 0.6, length: 0.25 }
+    - { number: "2", x: -1.15, y: 0.25, width: 0.6, length: 0.25 }
+    - { number: "3", x: -1.15, y: -0.25, width: 0.6, length: 0.25 }
+    - { number: "4", x: -1.15, y: -0.75, width: 0.6, length: 0.25 }
+    - { number: "5", x: 1.15, y: -0.75, width: 0.6, length: 0.25 }
+    - { number: "6", x: 1.15, y: -0.25, width: 0.6, length: 0.25 }
+    - { number: "7", x: 1.15, y: 0.25, width: 0.6, length: 0.25 }
+    - { number: "8", x: 1.15, y: 0.75, width: 0.6, length: 0.25 }
+    - { number: "9", x: 0, y: 0, width: 1.2, length: 1.9 }
+  src: 'p42 "DEF0008A-C01 Example Board Layout: 8X (0.6) x 8X (0.25), 6X (0.5), (2.3) across, thermal land (1.2) x (1.9)"'

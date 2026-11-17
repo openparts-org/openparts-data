@@ -1,0 +1,31 @@
+# PIC16F877A-I/PT: industrial temperature (-40 to +85 C), 44-lead TQFP 10x10x1 mm.
+# existence: probable -- assembled from the "Product Identification
+# System" legend (DS39582C page 231).
+# Package: drawing C04-076 (p212); its values (pitch 0.80, D/E 12.00, D1/E1
+# 10.00, A2 1.00, L 0.60) match standards/TQFP44-10x10-P0.8.
+# lifecycle: not stated in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/PIC16F877A-I-PT
+manufacturer: microchip
+mpn: PIC16F877A-I/PT
+device: microchip/PIC16F877A-TQFP44
+
+package:
+  value: standards/TQFP44-10x10-P0.8
+  src: p231 "Product Identification System, Package PT = TQFP (Thin Quad Flatpack)"
+
+sources: [microchip/DS39582@revC]
+source: microchip/DS39582@revC
+
+existence:
+  status: probable
+  src: p231 "PIC16F87XA Product Identification System legend (Device, Temperature I, Package)"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p175 "17.1 DC Characteristics, Operating temperature -40 C <= TA <= +85 C for industrial"

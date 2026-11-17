@@ -26,3 +26,8 @@ lifecycle: { status: active, src: 'p25 "Package Option Addendum, row INA199A3DCK
 # Parameters (AI candidates, needs review).
 parameters:
   esd_hbm: { typ: 2 kV, src: 'p4 "6.2 ESD Ratings, INA199A1/A2/A3 in DCK and RSW, HBM ±2000 V"' }
+  gain: { typ: 200 V/V, src: 'p6 "6.5 Electrical Characteristics, G gain, INA199x3"' }
+  common_mode_voltage:
+    min: -0.3 V
+    max: 26 V
+    src: p6 "6.5 Electrical Characteristics, VCM common-mode input range, Version A, TA = -40 to 125 °C"

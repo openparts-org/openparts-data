@@ -36,3 +36,6 @@ parameters:
     max: 12 µV
     at: { TA: 25 °C }
     src: p7 "Table 1-2 DC Electrical Characteristics, VOS, gain 100 row (printed ±1.5, -12/+12)"
+  gain:
+    typ: 100 V/V
+    src: p8 "Table 1-2 DC Electrical Characteristics, Differential Gain GDM, MCP6C02-100"

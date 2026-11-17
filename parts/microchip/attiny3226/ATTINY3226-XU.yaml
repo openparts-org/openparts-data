@@ -1,0 +1,32 @@
+# ATTINY3226-XU: 32 KB/3 KB, 20 pins, SSOP, -40 to +85 C. Ordering
+# code printed in Table 35-1 "Available Product Numbers" (DS40002345B page
+# 541); package letter decoded with the Product Identification
+# System (page 542).
+# lifecycle: no production-status statement in the data sheet; unknown.
+schema_version: "0.2"
+kind: part
+id: microchip/ATTINY3226-XU
+manufacturer: microchip
+mpn: ATTINY3226-XU
+device: microchip/ATtiny3226-SOIC20
+
+package:
+  value: manufacturers/microchip/SSOP20-SS-C04-072B
+  src:
+    - p541 "Table 35-1 row ATTINY3226-XU, Package Type"
+    - p556 "Section 36.3 20-Pin SSOP, drawing C04-072B"
+
+sources: [microchip/DS40002345@revB]
+source: microchip/DS40002345@revB
+
+existence:
+  status: verified
+  src: p541 "Table 35-1 Available Product Numbers, row ATTINY3226-XU"
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p475 "Table 33-2 General Operating Conditions, TA Industrial -40 to 85"

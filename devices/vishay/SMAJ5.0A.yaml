@@ -16,6 +16,16 @@ parameters:
   reverse_voltage:
     max: 5 V
     src: p2 "ELECTRICAL CHARACTERISTICS table, (+)SMAJ5.0A row, Stand-off voltage VWM"
+  clamping_voltage:
+    max: 9.2 V
+    at: { IPP: 43.5 A }
+    src: p2 "ELECTRICAL CHARACTERISTICS, (+)SMAJ5.0A row, Maximum clamping voltage VC at IPPM"
+  peak_pulse_current:
+    max: 43.5 A
+    src: p2 "ELECTRICAL CHARACTERISTICS, (+)SMAJ5.0A row, IPPM (10/1000 µs per p1 Maximum Ratings)"
+  peak_pulse_power:
+    max: 400 W
+    src: p1 "MAXIMUM RATINGS, Peak pulse power dissipation with a 10/1000 µs waveform PPPM"
 
 pins:
   src: p1 "Mechanical Data, Polarity; SMA (DO-214AC) image"

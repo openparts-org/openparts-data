@@ -1,0 +1,21 @@
+# MPN from the "Ordering Information" table (DS35323 page 6): row
+# "74HC14T14-13", package code T14, TSSOP-14, 2500/Tape & Reel. lifecycle: no
+# production-status statement in the datasheet; unknown.
+schema_version: "0.2"
+kind: part
+id: diodes/74HC14T14-13
+manufacturer: diodes
+mpn: 74HC14T14-13
+device: diodes/74HC14
+
+package:
+  value: manufacturers/diodes/TSSOP14-4.40x5.00-P0.65-DS35323
+  src:
+    - p6 ""Ordering Information" table, row "74HC14T14-13", TSSOP-14"
+    - p7 ""Package Outline Dimensions" TSSOP-14"
+
+sources: [diodes/DS35323]
+source: diodes/DS35323
+
+existence: { status: verified, src: 'p6 ""Ordering Information" table, row "74HC14T14-13""' }
+lifecycle: { status: unknown }

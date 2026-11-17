@@ -1,0 +1,18 @@
+# Toshiba TC74HC595AP/TC74HC595AF datasheet (English), 10 pages, every footer
+# dated 2026-04-21 (no revision number printed). Linked as "TC74HC595AP Data
+# sheet/English" from Toshiba's TC74HC595AP product page (document id
+# 16512); downloaded 2026-11-17 with curl. Read with pdftotext
+# -layout; the pin assignment (page 1) and the package dimension pages
+# (8-9) are images, read from renders. PDF page index = the printed page
+# number.
+schema_version: "0.2"
+kind: source
+id: toshiba/TC74HC595AP-datasheet-en
+sha256: 9c2c5b69b8a48a991dd4f632d80630139a28c1201bd49324ae811554e3f8e92a
+retrieved: 2026-11-17
+url: https://toshiba.semicon-storage.com/info/docget.jsp?did=16512&prodName=TC74HC595AP
+publisher: toshiba
+document_id: TC74HC595AP-datasheet-en
+document_type: datasheet
+revision: 2026-04-21
+date: 2026-04-21

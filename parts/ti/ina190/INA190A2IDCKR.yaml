@@ -24,3 +24,6 @@ existence:
 lifecycle:
   status: active
   src: p31 "Package Option Addendum, row INA190A2IDCKR, Status Active"
+
+parameters:
+  gain: { typ: 50 V/V, src: 'p5 "6.5 Electrical Characteristics, G gain, A2 devices"' }

@@ -1,0 +1,25 @@
+# CH32X035C8T6: printed verbatim in the "Order Model" column of the Chapter 4
+# "Package and Ordering Information" table of WCH CH32X035 datasheet V2.3
+# (PDF page 40, row LQFP48).
+# lifecycle: the datasheet carries no production-status statement;
+# unknown.
+schema_version: "0.2"
+kind: part
+id: wch/CH32X035C8T6
+manufacturer: wch
+mpn: CH32X035C8T6
+device: wch/CH32X035C8
+
+package:
+  value: manufacturers/wch/LQFP48-7x7-P0.5-WCH
+  src: p40 "Chapter 4 package table, row CH32X035C8T6, Package Form LQFP48"
+
+sources: [wch/CH32X035DS0@V2.3]
+source: wch/CH32X035DS0@V2.3
+
+existence: { status: verified, src: 'p40 "Chapter 4 package table, Order Model CH32X035C8T6"' }
+lifecycle: { status: unknown }
+
+# Package: the LQFP48 drawing (section 4.2, PDF page 42) prints the same
+# nominal values as the CH32V203 LQFP48 drawing the package cites (7.00 /
+# 9.00 / 0.5 / 0.2 / 0.6 / 0.1 / 0.15 / LQFP 1.5).

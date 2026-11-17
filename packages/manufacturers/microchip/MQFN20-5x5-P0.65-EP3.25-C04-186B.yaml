@@ -1,0 +1,81 @@
+# 20-lead MQFN (also called VQFN; Microchip package code MX/NU),
+# 5x5x1.0 mm, 0.65 mm pitch, 3.25 mm exposed pad: drawing C04-186B,
+# DS20005426G (MCP960x) pages 49-50 (dimension table, text) and its
+# recommended land pattern on page 51 (table, text).
+# body_height = A (no A2 given). lead_thickness = A3 "0.20 REF" -- a
+# reference value. K (min 0.20) and the land pattern's thermal vias (V
+# 0.30, EV 1.00) are not modelled. Pin 1 top of the left edge, counter-
+# clockwise (Package Types, page 2: 1-5 down the left edge, 6-10 along
+# the bottom, 16-20 right to left along the top).
+#
+# pads: land pattern in the qfn frame (top view, X right, Y up, origin at
+# the centre). Contact pad spacing C1 = C2 = 4.50 -> rows at +-2.25;
+# pitch E 0.65, 5 pads per side -> centres at 0, +-0.65, +-1.30; pad X1
+# 0.40 (max) across the pitch, Y1 0.55 (max) along the terminal. The
+# optional centre pad X2/Y2 3.35 x 3.35 (max) is pad EP (Table 3-1 pin
+# 21, "must be connected to GND").
+schema_version: "0.2"
+kind: package
+id: manufacturers/microchip/MQFN20-5x5-P0.65-EP3.25-C04-186B
+family: qfn
+lead_count: { value: 20, src: 'p50 "C04-186B sheet 2 table, "Number of Pins N 20""' }
+source: microchip/DS20005426G
+
+pitch: { typ: 0.65 mm, src: 'p50 "C04-186B sheet 2 table, "Pitch e 0.65 BSC""' }
+geometry: { type: parametric, generator: qfn }
+
+dimensions:
+  body_width:  { typ: 5 mm, src: 'p50 "C04-186B sheet 2 table, "Overall Width E 5.00 BSC""' }
+  body_length: { typ: 5 mm, src: 'p50 "C04-186B sheet 2 table, "Overall Length D 5.00 BSC""' }
+  body_height:
+    min: 0.9 mm
+    typ: 0.95 mm
+    max: 1 mm
+    src: p50 "C04-186B sheet 2 table, "Overall Height A 0.90 / 0.95 / 1.00""
+  exposed_pad:
+    src:    p50 "C04-186B sheet 2 table, "Exposed Pad Width E2" and "Exposed Pad Length D2" 3.15 / 3.25 / 3.35"
+    width:  { min: 3.15 mm, typ: 3.25 mm, max: 3.35 mm }
+    length: { min: 3.15 mm, typ: 3.25 mm, max: 3.35 mm }
+  standoff:
+    min: 0 mm
+    typ: 0.02 mm
+    max: 0.05 mm
+    src: p50 "C04-186B sheet 2 table, "Standoff A1 0.00 / 0.02 / 0.05""
+  lead_width:
+    min: 0.25 mm
+    typ: 0.3 mm
+    max: 0.35 mm
+    src: p50 "C04-186B sheet 2 table, "Terminal Width b 0.25 / 0.30 / 0.35""
+  lead_length:
+    min: 0.35 mm
+    typ: 0.4 mm
+    max: 0.45 mm
+    src: p50 "C04-186B sheet 2 table, "Terminal Length L 0.35 / 0.40 / 0.45""
+  lead_thickness:
+    typ: 0.2 mm
+    src: p50 "C04-186B sheet 2 table, "Terminal Thickness A3 0.20 REF" (reference value)"
+
+pads:
+  value:
+    - { number: "1", x: -2.25, y: 1.3, width: 0.55, length: 0.4 }
+    - { number: "2", x: -2.25, y: 0.65, width: 0.55, length: 0.4 }
+    - { number: "3", x: -2.25, y: 0, width: 0.55, length: 0.4 }
+    - { number: "4", x: -2.25, y: -0.65, width: 0.55, length: 0.4 }
+    - { number: "5", x: -2.25, y: -1.3, width: 0.55, length: 0.4 }
+    - { number: "6", x: -1.3, y: -2.25, width: 0.4, length: 0.55 }
+    - { number: "7", x: -0.65, y: -2.25, width: 0.4, length: 0.55 }
+    - { number: "8", x: 0, y: -2.25, width: 0.4, length: 0.55 }
+    - { number: "9", x: 0.65, y: -2.25, width: 0.4, length: 0.55 }
+    - { number: "10", x: 1.3, y: -2.25, width: 0.4, length: 0.55 }
+    - { number: "11", x: 2.25, y: -1.3, width: 0.55, length: 0.4 }
+    - { number: "12", x: 2.25, y: -0.65, width: 0.55, length: 0.4 }
+    - { number: "13", x: 2.25, y: 0, width: 0.55, length: 0.4 }
+    - { number: "14", x: 2.25, y: 0.65, width: 0.55, length: 0.4 }
+    - { number: "15", x: 2.25, y: 1.3, width: 0.55, length: 0.4 }
+    - { number: "16", x: 1.3, y: 2.25, width: 0.4, length: 0.55 }
+    - { number: "17", x: 0.65, y: 2.25, width: 0.4, length: 0.55 }
+    - { number: "18", x: 0, y: 2.25, width: 0.4, length: 0.55 }
+    - { number: "19", x: -0.65, y: 2.25, width: 0.4, length: 0.55 }
+    - { number: "20", x: -1.3, y: 2.25, width: 0.4, length: 0.55 }
+    - { number: EP, x: 0, y: 0, width: 3.35, length: 3.35 }
+  src: p51 "C04-186B land pattern, C1=C2 4.50 -> +-2.25, E 0.65 -> 0/+-0.65/+-1.30, X1 0.40, Y1 0.55, X2=Y2 3.35"

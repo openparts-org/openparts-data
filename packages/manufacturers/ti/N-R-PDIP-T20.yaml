@@ -1,0 +1,39 @@
+# TI legacy drawing N (R-PDIP-T**) "Plastic Dual-In-Line Package",
+# 20-pin column (drawing 4040049/E 12/2002, JEDEC MS-001 variation AD
+# per its table), read from the rendered MECHANICAL DATA page of
+# SCLS131F (PDF page 31; an image page). Inches with millimetres in
+# parentheses; the millimetre values are recorded. The same drawing
+# (4040049/E) is printed in the other SN74HC 20-pin datasheets.
+#
+# body_width (the `dip` generator's ROW SPACING) = 7.62 mm: the drawing
+# prints only the lead span at the gauge plane, "0.325 (8,26) / 0.300
+# (7,62)", whose lower end is the 300-mil row spacing (same reading as
+# manufacturers/ti/N-R-PDIP-T16). Flagged for review. Molded width
+# "0.260 (6,60) / 0.240 (6,10)" is not modelled. body_length = dim A for
+# 20 pins (0.940-1.060 in; JEDEC note: MS-001 except the 20-pin minimum
+# body length). The 20-pin end-lead shape is a vendor option (note D).
+schema_version: "0.2"
+kind: package
+id: manufacturers/ti/N-R-PDIP-T20
+family: dip
+lead_count: 20
+source: ti/SCLS131F
+
+pitch: { typ: 2.54 mm, src: 'p31 "N (R-PDIP-T**) 4040049/E, pitch "0.100 (2,54)""' }
+geometry: { type: parametric, generator: dip }
+
+dimensions:
+  body_width:
+    typ: 7.62 mm
+    src: p31 "N (R-PDIP-T**), lead span "0.325 (8,26) / 0.300 (7,62)"; 300-mil row spacing (lower end)"
+  body_length:
+    min: 23.88 mm
+    max: 26.92 mm
+    src: p31 "N (R-PDIP-T**) table, 20 pins, "A MAX 1.060 (26,92)", "A MIN 0.940 (23,88)""
+  lead_thickness: { typ: 0.25 mm, src: 'p31 "N (R-PDIP-T**) end view, "0.010 (0,25) NOM""' }
+  lead_width:
+    min: 0.38 mm
+    max: 0.53 mm
+    src: p31 "N (R-PDIP-T**), lead width "0.021 (0,53) / 0.015 (0,38)""
+  overall_height: { max: 5.08 mm, src: 'p31 "N (R-PDIP-T**) side view, "0.200 (5,08) MAX""' }
+  standoff:       { min: 0.51 mm, src: 'p31 "N (R-PDIP-T**) side view, "0.020 (0,51) MIN""' }

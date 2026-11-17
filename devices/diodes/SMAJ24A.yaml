@@ -19,6 +19,14 @@ parameters:
     at: { IPP: 35 A }
     src: p2 "Maximum Ratings, Instantaneous Forward Voltage VF (Notes 5-7, unidirectional)"
   reverse_voltage: { max: 24 V, src: 'p3 "Electrical Characteristics table, SMAJ24(C)A row, VRWM"' }
+  clamping_voltage:
+    max: 38.9 V
+    at: { IPP: 10.3 A }
+    src: p3 "Electrical Characteristics, SMAJ24(C)A row, Max. Clamping Voltage VC @ IPP"
+  peak_pulse_current:
+    max: 10.3 A
+    src: p3 "Electrical Characteristics, SMAJ24(C)A row, Max. Peak Pulse Current IPP"
+  peak_pulse_power: { max: 400 W, src: 'p2 "Maximum Ratings, Peak Pulse Power Dissipation PPK"' }
 
 pins:
   src: p1 "Mechanical Data, Polarity Indicator; numbering per header"

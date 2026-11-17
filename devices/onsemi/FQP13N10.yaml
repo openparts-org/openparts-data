@@ -1,0 +1,21 @@
+# N-Channel QFET MOSFET 100 V, 12.8 A, 180 mΩ (FQP13N10), TO-220 3-lead (Fairchild
+# PN_TO220-003). The datasheet (FQP13N10 Rev. C0/C1) prints the lead
+# functions only as "G D S" labels on the page-2 TO-220 image, left to
+# right, with no lead numbers, and the Mechanical Dimensions drawing
+# (page 8) numbers no leads either. Pins 1-3 are numbered left to right
+# as drawn (front view, leads down): 1 = Gate, 2 = Drain, 3 = Source --
+# position-derived, flagged for review (as onsemi/FQP27P06). The tab
+# (drain) is not a footprint pad of a vertical TO-220 and is not listed.
+schema_version: "0.2"
+kind: device
+id: onsemi/FQP13N10
+manufacturer: onsemi
+category: transistor
+family: FQP13N10
+source: onsemi/FQP13N10-D
+
+pins:
+  src: p2 "TO-220 package image, leads labelled "G D S" left to right; no lead numbers"
+  "1": { name: Gate, type: passive }
+  "2": { name: Drain, type: passive }
+  "3": { name: Source, type: passive }

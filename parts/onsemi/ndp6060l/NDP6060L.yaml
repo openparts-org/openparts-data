@@ -1,0 +1,44 @@
+# NDP6060L: printed verbatim in the datasheet's ORDERING INFORMATION
+# table (page 1) -> existence verified.
+# Package: datasheet page 1 "CASE 340AT"; outline from the standalone
+# drawing 98AON13818G.
+# No lifecycle statement for this MPN.
+schema_version: "0.2"
+kind: part
+id: onsemi/NDP6060L
+manufacturer: onsemi
+mpn: NDP6060L
+device: onsemi/NDP6060L
+
+package:
+  value: manufacturers/onsemi/TO220-3LD-340AT
+  src: [p1 "Package callout "CASE 340AT"", onsemi/98AON13818G p1 "CASE 340AT outline"]
+
+sources: [onsemi/NDP6060L-D, onsemi/98AON13818G]
+source: onsemi/NDP6060L-D
+
+existence:
+  status: verified
+  src: p1 "ORDERING INFORMATION, "NDP6060L | TO-220-3LD (Pb-Free / Halide Free) | 800 Units / Tube""
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: p1 "Title; N-CHANNEL MOSFET" }
+  drain_source_voltage: { max: 60 V, src: 'p1 "Maximum Ratings, VDSS"' }
+  drain_current:
+    max: 48 A
+    at: { TC: 25 °C }
+    src: p1 "Maximum Ratings (TC = 25°C), ID Continuous"
+  rds_on:
+    - max: 25 mΩ
+      at: { VGS: 5 V, ID: 24 A }
+      src: p2 "Elec. Char., On Characteristics, RDS(ON), VGS = 5 V, ID = 24 A"
+    - max: 20 mΩ
+      at: { VGS: 10 V }
+      src: p2 "Elec. Char., RDS(ON), VGS = 10 V row (ID column printed as "VDS = 24 A")"
+  gate_threshold_voltage:
+    min: 1 V
+    max: 2 V
+    at: { ID: 250 µA }
+    src: p2 "Elec. Char., On Characteristics, VGS(th), VDS = VGS"

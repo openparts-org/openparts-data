@@ -1,0 +1,27 @@
+# MPN read from the Package Option Addendum, Packaging Information table
+# (SCLS264R PDF page 14): row "SN74AHCT125DR", "SOIC (D) | 14". lifecycle "active" is
+# that table's Status column ("Active").
+# Package: outline D0014A (4220718/A) on page 20. Same drawing number and revision as the reused package manufacturers/ti/D0014A.
+schema_version: "0.2"
+kind: part
+id: ti/SN74AHCT125DR
+manufacturer: ti
+mpn: SN74AHCT125DR
+device: ti/SN74AHCT125
+
+package:
+  value: manufacturers/ti/D0014A
+  src:
+    - p14 "Package Option Addendum, row "SN74AHCT125DR", "SOIC (D) | 14""
+    - p20 "PACKAGE OUTLINE D0014A (4220718/A)"
+
+sources: [ti/SCLS264R]
+source: ti/SCLS264R
+
+existence:
+  status: verified
+  src: p14 "Package Option Addendum, Packaging Information table, row "SN74AHCT125DR""
+
+lifecycle:
+  status: active
+  src: p14 "Package Option Addendum, row "SN74AHCT125DR", Status "Active""

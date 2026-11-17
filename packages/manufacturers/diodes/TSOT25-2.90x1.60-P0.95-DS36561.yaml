@@ -1,0 +1,42 @@
+# Diodes TSOT25 (5-lead thin SOT-23), from "Package Outline Dimensions"
+# on page 10 of DS36561 Rev. 7-2 (AP3429/A, August 2024). Millimetres
+# ("All Dimensions in mm"); columns Min / Max / Typ. Same letter use as
+# the TSOT26 of DS41326 (manufacturers/diodes/TSOT26-...-DS41326): D is
+# the body length along the lead rows, E1 the molded width, E the
+# lead-tip span, A2 the body thickness, A1 the standoff.
+#
+# Pin numbering from the "Pin Assignments" top view (page 1): EN 1, GND
+# 2, LX 3 down one side, VIN 4, FB 5 up the other -> lead_layout [3, 2].
+#
+# Mapping for the `sot` generator: body_width = D typ 2.90, body_length
+# = E1 typ 1.60, overall_length = E typ 2.80, body_height = A2
+# 0.84-0.90, overall_height = A max 1.00, standoff = A1 0.01-0.10,
+# lead_width = b 0.30-0.45, lead_thickness = c 0.12-0.20, lead_length =
+# L 0.30-0.50. Not modelled: L2 0.25 BSC (gauge plane), angles; the
+# "Suggested Pad Layout" (C 0.950, X 0.700, Y 1.000, Y1 3.199) is left
+# to the generator.
+schema_version: "0.2"
+kind: package
+id: manufacturers/diodes/TSOT25-2.90x1.60-P0.95-DS36561
+family: sot
+lead_count: 5
+
+lead_layout:
+  value: [3, 2]
+  src:   'p1 "Pin Assignments, TSOT25 (Top View): 1 EN, 2 GND, 3 LX on one side, 5 FB, 4 VIN opposite"'
+
+source: diodes/DS36561
+
+pitch: { typ: 0.95 mm, src: 'p10 "TSOT25 table, e "0.95 BSC" (e1 "1.90 BSC")"' }
+geometry: { type: parametric, generator: sot }
+
+dimensions:
+  body_width:     { typ: 2.9 mm, src: 'p10 "TSOT25 table, D "- / - / 2.90" -- see mapping note"' }
+  body_length:    { typ: 1.6 mm, src: 'p10 "TSOT25 table, E1 "- / - / 1.60" -- see mapping note"' }
+  body_height:    { min: 0.84 mm, max: 0.9 mm, src: 'p10 "TSOT25 table, A2 "0.84 / 0.90 / -""' }
+  lead_thickness: { min: 0.12 mm, max: 0.2 mm, src: 'p10 "TSOT25 table, c "0.12 / 0.20 / -""' }
+  overall_length: { typ: 2.8 mm, src: 'p10 "TSOT25 table, E "- / - / 2.80" (lead-tip span)"' }
+  overall_height: { max: 1 mm, src: 'p10 "TSOT25 table, A "- / 1.00 / -""' }
+  standoff:       { min: 0.01 mm, max: 0.1 mm, src: 'p10 "TSOT25 table, A1 "0.01 / 0.10 / -""' }
+  lead_width:     { min: 0.3 mm, max: 0.45 mm, src: 'p10 "TSOT25 table, b "0.30 / 0.45 / -""' }
+  lead_length:    { min: 0.3 mm, max: 0.5 mm, src: 'p10 "TSOT25 table, L "0.30 / 0.50 / -""' }

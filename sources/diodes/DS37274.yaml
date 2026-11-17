@@ -1,0 +1,20 @@
+# Diodes Incorporated datasheet "AP7361C 1A Low Dropout Adjustable and
+# Fixed-Mode Regulator with Enable", document number DS37274 Rev. 5 - 2,
+# footer date "October 2020". The page margins carry an "ADVANCE
+# INFORMATION / NEW PRODUCT" side label. Downloaded 2026-11-17 with curl
+# from diodes.com (first-party, HTTP 200, PDF); the AP7361 (non-C)
+# datasheet at the same site is marked "NOT RECOMMENDED FOR NEW DESIGN -
+# USE AP7361C". 22 pages, read with pdftotext -layout; page 1 rendered
+# for the pin assignments. Page numbers are PDF page indices (= printed
+# "n of 22").
+schema_version: "0.2"
+kind: source
+id: diodes/DS37274
+sha256: 9b64f49c5975b2baf2360248a75212599bde8bf083d315d936e4f1c93b2e1f92
+retrieved: 2026-11-17
+url: https://www.diodes.com/assets/Datasheets/AP7361C.pdf
+publisher: diodes
+document_id: DS37274
+document_type: datasheet
+revision: 5-2
+date: 2020-10

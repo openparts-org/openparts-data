@@ -1,0 +1,28 @@
+# 22 µF X5R 25 V ±10% GRM32E MLCC, packaging code L
+# per the reference sheet's Package table (murata/GRM32ER61E226KE15-01A).
+# Package manufacturers/murata/CHIP1210-GRM32ER61E226KE15-01A: drawing recorded from this sheet's numbers (no existing package matches them)
+# (sheet p2 "Type & Dimension": L 3.2+/-0.3, W 2.5+/-0.2, T 2.5+/-0.2, e 0.3 min., g 1.0 min.).
+# lifecycle: the sheet makes no production-status statement; unknown.
+schema_version: "0.2"
+kind: part
+id: murata/GRM32ER61E226KE15L
+manufacturer: murata
+mpn: GRM32ER61E226KE15L
+device: murata/GRM32-X5R
+package: manufacturers/murata/CHIP1210-GRM32ER61E226KE15-01A
+sources: [murata/GRM32ER61E226KE15-01A]
+source: murata/GRM32ER61E226KE15-01A
+
+existence:
+  status: verified
+  src: p2 "Title GRM32ER61E226KE15_ (_ = Package); Package table, code L"
+
+lifecycle: { status: unknown }
+
+parameters:
+  capacitance:   { typ: 22 µF, src: 'p2 "Rated Value, Nominal Capacitance 22μF"' }
+  tolerance:     { tol: ±10 %, src: 'p2 "Rated Value, Capacitance Tolerance +/-10%"' }
+  rated_voltage: { typ: 25 V, src: 'p2 "Rated Value, Rated Voltage DC 25 V"' }
+  dielectric:
+    value: X5R
+    src: p2 "Rated Value, Temperature Characteristics, Public STD Code X5R(EIA)"

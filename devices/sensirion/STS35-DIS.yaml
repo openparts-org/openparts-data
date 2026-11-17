@@ -1,0 +1,51 @@
+# STS35-DIS digital temperature sensor (STS3x-DIS family, accuracy
+# class "35" per Table 1), 8-pin DFN. Pins from Table 5 "STS3x-DIS pin
+# assignment (transparent top view)" (Datasheet STS3x-DIS v6.1, page 6),
+# numbers checked against the figure in the same table. Types from the
+# comments: SDA "input / output" -> io, SCL "input / output" -> io (as
+# SHT3x-DIS), ADDR input, ALERT output, VDD power, nRESET (reset, active
+# low) reset, VSS ground. R "No electrical function; to be connected to
+# VSS" -> nc. Die pad "internally connected to VSS" (Table 5 note) -> pin
+# EP, VSS, ground. Package outline (Table 19) and land pattern
+# (Figure 9) match the SHT3x-DIS DFN package value for value, which is
+# reused.
+schema_version: "0.2"
+kind: device
+id: sensirion/STS35-DIS
+manufacturer: sensirion
+category: temperature_sensor
+family: STS3x-DIS
+source: sensirion/Datasheet_STS3x_DIS@v6.1
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface:
+    value: i2c
+    src: p1 "Features, I2C Interface with communication speeds up to 1 MHz"
+  supply_voltage:
+    min: 2.15 V
+    max: 5.5 V
+    src: p4 "Table 2 Electrical specifications, Supply voltage VDD"
+  supply_current:
+    typ: 600 µA
+    max: 1500 µA
+    src: p4 "Table 2 Electrical specifications, Supply current IDD, measuring"
+  operating_temperature:
+    min: -40 °C
+    max: 125 °C
+    src: 'p4 "Table 2 header: min. & max. values for T = -40 to 125 °C"'
+  esd_hbm: { typ: 4 kV, src: 'p5 "Table 4 Minimum and maximum ratings, ESD HBM"' }
+
+pins:
+  src: p6 "Table 5 STS3x-DIS pin assignment"
+  "1": { name: SDA, type: io }
+  "2": { name: ADDR, type: input }
+  "3": { name: ALERT, type: output }
+  "4": { name: SCL, type: io }
+  "5": { name: VDD, type: power }
+  "6": { name: nRESET, type: reset }
+  "7": { name: R, type: nc }
+  "8": { name: VSS, type: ground }
+  EP:
+    name: { value: VSS, src: 'p6 "Table 5 note: die pad internally connected to VSS"' }
+    type: ground

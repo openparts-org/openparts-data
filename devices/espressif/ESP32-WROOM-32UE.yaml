@@ -1,0 +1,68 @@
+# ESP32-WROOM-32UE Wi-Fi/Bluetooth module (external antenna connector). Pin
+# numbers, names and types from the module datasheet's pin definition table
+# (p11 "Table 3 Pin Definitions"; p12 cont.); the pin layout applies to
+# WROOM-32E and WROOM-32UE alike (p10 Note A). Type P is power (ground for
+# GND/EPAD), I input, I/O and I/O/T io, a dash nc. Alternate functions are
+# not recorded here.
+schema_version: "0.2"
+kind: device
+id: espressif/ESP32-WROOM-32UE
+manufacturer: espressif
+category: wireless_module
+family: ESP32-WROOM-32E
+source: espressif/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en@rev2.1
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 3.6 V
+    src: p28 "Table 14 Recommended Operating Conditions, VDD33"
+  radio_protocol:
+    value: wifi_bluetooth
+    src: p2 "Bluetooth V4.2 BR/EDR and Bluetooth LE; 802.11b/g/n"
+  antenna_type:
+    value: external_connector
+    src: 'p2 "Antenna Options, ESP32-WROOM-32UE: external antenna via a connector"'
+
+pins:
+  src:  p11 "Table 3 Pin Definitions"
+  "1":  { name: GND, type: ground }
+  "2":  { name: 3V3, type: power }
+  "3":  { name: EN, type: input }
+  "4":  { name: SENSOR_VP, type: input }
+  "5":  { name: SENSOR_VN, type: input }
+  "6":  { name: IO34, type: input }
+  "7":  { name: IO35, type: input }
+  "8":  { name: IO32, type: io }
+  "9":  { name: IO33, type: io }
+  "10": { name: IO25, type: io }
+  "11": { name: IO26, type: io }
+  "12": { name: IO27, type: io }
+  "13": { name: IO14, type: io }
+  "14": { name: IO12, type: io }
+  "15": { name: GND, type: ground }
+  "16": { name: IO13, type: io }
+  "17": { name: NC, type: nc }
+  "18": { name: NC, type: nc }
+  "19": { name: NC, type: nc }
+  "20": { name: NC, type: nc }
+  "21": { name: NC, type: nc }
+  "22": { name: NC, type: nc }
+  "23": { name: IO15, type: io }
+  "24": { name: IO2, type: io }
+  "25": { name: IO0, type: io }
+  "26": { name: IO4, type: io }
+  "27": { name: IO16, type: io }
+  "28": { name: IO17, type: io }
+  "29": { name: IO5, type: io }
+  "30": { name: IO18, type: io }
+  "31": { name: IO19, type: io }
+  "32": { name: NC, type: nc }
+  "33": { name: IO21, type: io }
+  "34": { name: RXD0, type: io }
+  "35": { name: TXD0, type: io }
+  "36": { name: IO22, type: io }
+  "37": { name: IO23, type: io }
+  "38": { name: GND, type: ground }
+  "39": { name: GND, type: ground, src: 'p10 "Figure 3 Pin Layout (Top View): centre pad 39 GND"' }

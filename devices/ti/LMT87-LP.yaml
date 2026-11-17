@@ -1,0 +1,36 @@
+# LMT87 analog temperature sensor (output inversely proportional to
+# temperature), 3-pin TO-92 (LP). Pins from "Pin Functions", column TO-92 (SNIS170E
+# page 4).
+# OUT (Analog Output) analog, VDD power, GND ground. Each package has its
+# own pin map (separate Devices).
+schema_version: "0.2"
+kind: device
+id: ti/LMT87-LP
+manufacturer: ti
+category: temperature_sensor
+family: LMT87
+source: ti/SNIS170E
+
+# Parameters (AI candidates, needs review).
+parameters:
+  data_interface: { value: analog, src: p1 "LMT87 Analog Temperature Sensor" }
+  supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p5 "7.3 Recommended Operating Conditions, Supply voltage (VDD)"
+  supply_current:
+    typ: 5.4 µA
+    max: 9 µA
+    at: { TA: -50..150 °C }
+    src: p6 "7.5 Electrical Characteristics, IS Supply current, TA = -50 to 150 °C"
+  operating_temperature:
+    min: -50 °C
+    max: 150 °C
+    src: p5 "7.3 Recommended Operating Conditions, Specified temperature"
+  esd_hbm:        { typ: 2.5 kV, src: 'p5 "7.2 ESD Ratings, HBM ±2500 V"' }
+
+pins:
+  src: p4 "Pin Functions, column TO-92"
+  "1": { name: VDD, type: power }
+  "2": { name: OUT, type: analog }
+  "3": { name: GND, type: ground }

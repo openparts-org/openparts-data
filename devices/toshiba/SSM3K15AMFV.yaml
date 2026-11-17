@@ -1,0 +1,15 @@
+# SSM3K15AMFV N-channel MOSFET in Toshiba VESM. Pin assignment from page 1
+# of the datasheet: 1 Gate, 2 Source, 3 Drain. All typed passive.
+schema_version: "0.2"
+kind: device
+id: toshiba/SSM3K15AMFV
+manufacturer: toshiba
+category: transistor
+family: SSM3K15AMFV
+source: toshiba/SSM3K15AMFV-datasheet-en
+
+pins:
+  src: p1 "page-1 outline drawing pin legend, 1 Gate / 2 Source / 3 Drain"
+  "1": { name: Gate, type: passive }
+  "2": { name: Source, type: passive }
+  "3": { name: Drain, type: passive }

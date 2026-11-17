@@ -1,0 +1,88 @@
+# ESP32-C6-MINI-1U (external antenna connector) as a surface-mount module:
+# the recommended land pattern (p45 "Figure 11-2 ESP32-C6-MINI-1U
+# Recommended PCB Land Pattern") with the board and shield can of p41
+# "Figure 10-2 ESP32-C6-MINI-1U Physical Dimensions". Package frame: the
+# board centred on the origin, the connector end at +y (top). Every value
+# is a printed callout; positions are plain arithmetic between callouts:
+# Rows: 48 pads "0.4" x "0.8" at "0.8" (LGA): the left and right columns'
+# centres "11.8" apart (x = +-5.9, inset 0.7), the top and bottom rows'
+# centres "9.8" apart about the pad area centre line, which lies "5.6" above
+# the bottom edge (y = -6.25 + 5.6 = -0.65): rows at y = 4.25 (inset 2.0
+# from the top edge) and -5.55 (inset 0.7). 11 pads per column, 13 per row,
+# each centred on the pad area ("1.6" = 2 pitches about the centre line):
+# pin 1 at y = -0.65 + 5 x 0.8 = 3.35 (2.9 below the top edge), pin 12 at x
+# = -4.8 (1.8 from the left edge), pin 25 at y = -4.65 (1.6 above the
+# bottom edge), pin 36 at x = 4.8 (1.8 from the right edge).
+# Grids: ground pads 49: 3 x 3 of "1.45" with "0.6" gaps ("5.4" overall:
+# pitch 2.05) about the pad area centre (0, -0.65); corner pads 50-53 "4 x
+# 0.7" square, centres "11.9" apart across and "9.9" apart up the area (x =
+# +-5.95, y = -0.65 +- 4.95); 50 top-right, 51 bottom-right, 52
+# bottom-left, 53 top-left (p10 Figure 3-1, applicable to MINI-1U).
+# Shield: the can is L-shaped ("12.25" wide, "11.55" tall at the right,
+# "8.70" tall under the connector corner, "9.18" wide above it). Only its
+# full-width lower part is modelled: 12.25 x 8.7, bottom "0.48" above the
+# board edge, right side "0.48" in from the right edge: centre x = 6.6 -
+# 0.48 - 6.125 = -0.005, y = -6.25 + 0.48 + 4.35 = -1.42; its top is the
+# overall height. No antenna keep-out (external antenna).
+schema_version: "0.2"
+kind: package
+id: manufacturers/espressif/MODULE53-13.2x12.5-ESP32-C6-MINI-1U
+family: module
+lead_count: 53
+source: espressif/esp32-c6-mini-1_mini-1u_datasheet_en@rev1.5
+
+pitch:
+  typ: 0.8 mm
+  src: p45 "Figure 11-2 ESP32-C6-MINI-1U Recommended PCB Land Pattern, "48 x 0.80""
+
+geometry: { type: parametric, generator: module }
+
+dimensions:
+  body_width:
+    min: 13 mm
+    typ: 13.2 mm
+    max: 13.4 mm
+    src: p41 "Figure 10-2 ESP32-C6-MINI-1U Physical Dimensions, "13.20±0.2""
+  body_length:
+    min: 12.3 mm
+    typ: 12.5 mm
+    max: 12.7 mm
+    src: p41 "Figure 10-2 ESP32-C6-MINI-1U Physical Dimensions, "12.50±0.2""
+  body_height:
+    typ: 0.8 mm
+    src: p41 "Figure 10-2 ESP32-C6-MINI-1U Physical Dimensions, side view, board "0.8""
+  overall_height:
+    min: 2.25 mm
+    typ: 2.4 mm
+    max: 2.55 mm
+    src: p41 "Figure 10-2 ESP32-C6-MINI-1U Physical Dimensions, side view "2.40±0.15""
+
+pad_rows:
+  value:
+    - { side: -x, first: 1, count: 11, pitch: 0.8, start: 2.9, inset: 0.7, pad: [0.4, 0.8] }
+    - { side: -y, first: 12, count: 13, pitch: 0.8, start: 1.8, inset: 0.7, pad: [0.4, 0.8] }
+    - { side: +x, first: 25, count: 11, pitch: 0.8, start: 1.6, inset: 0.7, pad: [0.4, 0.8] }
+    - { side: +y, first: 36, count: 13, pitch: 0.8, start: 1.8, inset: 2, pad: [0.4, 0.8] }
+  src: p45 "Figure 11-2 ESP32-C6-MINI-1U Recommended PCB Land Pattern (see comment)"
+
+pad_grids:
+  value:
+    - numbers: ["49"]
+      columns: 3
+      rows: 3
+      pitch: [2.05, 2.05]
+      pad: [1.45, 1.45]
+      x: 0
+      y: -0.65
+    - { numbers: ["50"], columns: 1, rows: 1, pitch: [1, 1], pad: [0.7, 0.7], x: 5.95, y: 4.3 }
+    - { numbers: ["51"], columns: 1, rows: 1, pitch: [1, 1], pad: [0.7, 0.7], x: 5.95, y: -5.6 }
+    - { numbers: ["52"], columns: 1, rows: 1, pitch: [1, 1], pad: [0.7, 0.7], x: -5.95, y: -5.6 }
+    - { numbers: ["53"], columns: 1, rows: 1, pitch: [1, 1], pad: [0.7, 0.7], x: -5.95, y: 4.3 }
+  src: p45 "Figure 11-2 ESP32-C6-MINI-1U Recommended PCB Land Pattern (see comment)"
+
+shield:
+  x: -0.005
+  y: -1.42
+  width: 12.25
+  length: 8.7
+  src: p41 "Figure 10-2 ESP32-C6-MINI-1U Physical Dimensions, top view (see comment)"

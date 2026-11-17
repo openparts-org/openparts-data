@@ -7,7 +7,7 @@
 # Three supplies: VDD (controller), VDDA (transceiver), VIO (transceiver
 # digital I/O). VDDA is recorded as analog_supply_voltage and VDD as
 # digital_supply_voltage (no supply_voltage, per the separate-rails rule);
-# VIO 2.7-5.5 V has no key of its own.
+# VIO 2.7-5.5 V is io_supply_voltage.
 schema_version: "0.2"
 kind: device
 id: microchip/MCP25625
@@ -26,6 +26,10 @@ parameters:
     min: 2.7 V
     max: 5.5 V
     src: p68 "Table 7-1 DC Characteristics (CAN controller), VDD Supply Voltage"
+  io_supply_voltage:
+    min: 2.7 V
+    max: 5.5 V
+    src: p71 "Table 7-7 DC Characteristics (CAN transceiver), VIO Digital Supply Voltage Range"
   operating_temperature:
     min: -40 °C
     max: 125 °C

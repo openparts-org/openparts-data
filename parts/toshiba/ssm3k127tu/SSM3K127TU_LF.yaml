@@ -1,0 +1,42 @@
+# Order code "SSM3K127TU,LF" is listed under "Orderable part number (example)"
+# on Toshiba's SSM3K127TU product page; the page says listed numbers are
+# representative, and the datasheet has no ordering table -> existence
+# `probable`. Lifecycle `unknown` (not stated).
+schema_version: "0.2"
+kind: part
+id: toshiba/SSM3K127TU,LF
+manufacturer: toshiba
+mpn: SSM3K127TU,LF
+device: toshiba/SSM3K127TU
+package: { value: manufacturers/toshiba/UFM, src: 'p1 "page-1 outline drawing, package name UFM"' }
+sources: [toshiba/SSM3K127TU-datasheet-en, toshiba/SSM3K127TU-product-page]
+source: toshiba/SSM3K127TU-datasheet-en
+
+existence:
+  status: probable
+  src: toshiba/SSM3K127TU-product-page p1 "Orderable part number (example), SSM3K127TU,LF"
+
+lifecycle: { status: unknown }
+
+parameters:
+  polarity:             { value: n_channel, src: 'p1 "Title, Silicon N-Channel MOS Type""' }
+  drain_source_voltage: { max: 30 V, src: 'p1 "Absolute Maximum Ratings, VDSS"' }
+  drain_current:        { max: 2 A, src: 'p1 "Absolute Maximum Ratings, Drain current DC ID"' }
+  rds_on:
+    - typ: 93 mΩ
+      max: 123 mΩ
+      at: { VGS: 4 V, ID: 1 A }
+      src: p2 "Electrical Characteristics, RDS(ON), ID = 1A / VGS = 4V row"
+    - typ: 115 mΩ
+      max: 167 mΩ
+      at: { VGS: 2.5 V, ID: 0.8 A }
+      src: p2 "Electrical Characteristics, RDS(ON), ID = 0.8A / VGS = 2.5V row"
+    - typ: 155 mΩ
+      max: 286 mΩ
+      at: { VGS: 1.8 V, ID: 0.5 A }
+      src: p2 "Electrical Characteristics, RDS(ON), ID = 0.5A / VGS = 1.8V row"
+  gate_threshold_voltage:
+    min: 0.4 V
+    max: 1 V
+    at: { VDS: 3 V, ID: 1 mA }
+    src: p2 "Electrical Characteristics, Vth (Min 0.4 / Max 1.0)"

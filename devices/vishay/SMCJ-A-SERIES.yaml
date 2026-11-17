@@ -14,6 +14,11 @@ category: diode
 family: SMCJ
 source: vishay/88394
 
+parameters:
+  peak_pulse_power:
+    max: 1500 W
+    src: p1 "MAXIMUM RATINGS, Peak pulse power dissipation with a 10/1000 µs waveform PPPM"
+
 pins:
   src: 'p1 "MECHANICAL DATA: "Polarity: for unidirectional types the band denotes cathode end""'
   "1": { name: Cathode, type: passive }

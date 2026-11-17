@@ -1,0 +1,19 @@
+# Panasonic Industry "ZA series" conductive polymer hybrid aluminium
+# electrolytic capacitor catalog (PDF /Title "ZA series catalog", 10
+# pages), linked as "Datasheet" from the EEHZA1H101P product page.
+# Downloaded 2026-11-17 with curl (HTTP 200, PDF); read with pdftotext
+# -layout. Page footers "01-Sep-25". No revision printed: the document
+# number in the URL is used. The ZA dimension table (page 1) prints the
+# same numbers as the FK catalog (panasonic/ABA0000C1181) for size codes
+# C, D, D8, F and G; this document has no land pattern table.
+schema_version: "0.2"
+kind: source
+id: panasonic/ABA0000C1221
+sha256: 2db4706383495ad02cf593eda90007864bde1bcf43c4f9f513bc7c6685502598
+retrieved: 2026-11-17
+url: https://industrial.panasonic.com/cdbs/www-data/pdf/RDD0000/ABA0000C1221.pdf
+publisher: panasonic
+document_id: ABA0000C1221
+document_type: datasheet
+revision: ABA0000C1221
+date: 2025-09-01

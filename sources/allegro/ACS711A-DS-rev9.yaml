@@ -1,0 +1,16 @@
+# Allegro ACS711 datasheet, document ACS711A-DS, Rev. 9 (page 1 footer
+# "ACS711A-DS, Rev. 9 January 24, 2025"; the Revision History row 9 says
+# January 25, 2025). Downloaded 2026-11-17 with curl from Allegro's own
+# URL below. 22 PDF pages; read with pdftotext -layout. Page numbers are
+# PDF page indices.
+schema_version: "0.2"
+kind: source
+id: allegro/ACS711A-DS-rev9
+sha256: be02d41a71b47dc3af0c0a097c21b2b320a26a45fb882a1e6c319669a9dc2c36
+retrieved: 2026-11-17
+url: https://www.allegromicro.com/-/media/files/datasheets/acs711-datasheet.pdf
+publisher: allegro
+document_id: ACS711A-DS
+document_type: datasheet
+revision: "9"
+date: 2025-01-24

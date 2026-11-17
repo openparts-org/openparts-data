@@ -1,0 +1,16 @@
+# Murata per-part reference sheet for GRM21BR71A106KA73_ (_ = packaging code),
+# footer "GRM21BR71A106KA73-01A", 33 pages. Fetched with curl from Murata's
+# own pim.murata.com asset URL on 2026-11-17.
+# Read with pdftotext -layout; page 2 holds the part-number system, Type & Dimension, Rated Value and Package tables (page 1 is Scope).
+# Page 2 states "Product specifications in this catalog are as of 6月.25,2026".
+schema_version: "0.2"
+kind: source
+id: murata/GRM21BR71A106KA73-01A
+sha256: cf24cf777f5c4c41a735e91d7dc0f52ab80be2efb36a7d8fadfedcc322a84ab2
+retrieved: 2026-11-17
+url: https://pim.murata.com/asset/pim4/ceramicCapacitorSMD/GRM21BR71A106KA73-01A-EN_PDF_CERAMICCAPACITORSMD
+publisher: murata
+document_id: GRM21BR71A106KA73-01A
+document_type: datasheet
+revision: -01A
+date: 2026-06-25

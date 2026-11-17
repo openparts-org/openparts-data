@@ -1,0 +1,96 @@
+# ATSAMD21J18A (SAM D21J, 256KB flash / 32KB SRAM, variant A) pinout for
+# the 64-pin QFN64/TQFP64 packages, from data sheet DS40001882L section
+# 5.1.1 "QFN64 / TQFP64" (SAM D21J, page 18; text extraction read in pin
+# order), cross-checked against Table 7-1 "PORT Function Multiplexing"
+# SAMD2xJ pin column (pages 28-29): every port pin's number agrees.
+# Types: PA00/PA01 (XIN32/XOUT32) and PA14/PA15 (XIN/XOUT) stay `io`
+# because they are general-purpose port pins; VDDCORE is the "regulated
+# output supply" (figure legend) -> power; VDDIN/VDDIO/VDDANA power;
+# GNDANA/GND -> ground; RESET -> reset.
+# `alternate_functions` lists only the ADC AIN[n] channels from Table
+# 7-1's ADC column (AIN0-AIN19); EIC/SERCOM/TC/PTC functions are not listed.
+# Exposed pad (QFN64): as for ATSAMD21G18A, no page of this data sheet
+# says what it must be connected to, so no "EP" pin is recorded.
+schema_version: "0.2"
+kind: device
+id: microchip/ATSAMD21J18A
+manufacturer: microchip
+category: microcontroller
+family: SAM D21
+source: microchip/DS40001882@revL
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 1.62 V
+    max: 3.63 V
+    src: p907 "Table 37-3 General Operating Conditions, VDD Power supply voltage"
+
+pins:
+  src:
+    - p18 "Section 5.1.1 QFN64 / TQFP64 pinout (SAM D21J), all 64 pins"
+    - p28 "Table 7-1 PORT Function Multiplexing, SAMD2xJ column + ADC column (continued p29)"
+  "1":  { name: PA00, type: io }
+  "2":  { name: PA01, type: io }
+  "3":  { name: PA02, type: io, alternate_functions: [AIN0] }
+  "4":  { name: PA03, type: io, alternate_functions: [AIN1] }
+  "5":  { name: PB04, type: io, alternate_functions: [AIN12] }
+  "6":  { name: PB05, type: io, alternate_functions: [AIN13] }
+  "7":  { name: GNDANA, type: ground }
+  "8":  { name: VDDANA, type: power }
+  "9":  { name: PB06, type: io, alternate_functions: [AIN14] }
+  "10": { name: PB07, type: io, alternate_functions: [AIN15] }
+  "11": { name: PB08, type: io, alternate_functions: [AIN2] }
+  "12": { name: PB09, type: io, alternate_functions: [AIN3] }
+  "13": { name: PA04, type: io, alternate_functions: [AIN4] }
+  "14": { name: PA05, type: io, alternate_functions: [AIN5] }
+  "15": { name: PA06, type: io, alternate_functions: [AIN6] }
+  "16": { name: PA07, type: io, alternate_functions: [AIN7] }
+  "17": { name: PA08, type: io, alternate_functions: [AIN16] }
+  "18": { name: PA09, type: io, alternate_functions: [AIN17] }
+  "19": { name: PA10, type: io, alternate_functions: [AIN18] }
+  "20": { name: PA11, type: io, alternate_functions: [AIN19] }
+  "21": { name: VDDIO, type: power }
+  "22": { name: GND, type: ground }
+  "23": { name: PB10, type: io }
+  "24": { name: PB11, type: io }
+  "25": { name: PB12, type: io }
+  "26": { name: PB13, type: io }
+  "27": { name: PB14, type: io }
+  "28": { name: PB15, type: io }
+  "29": { name: PA12, type: io }
+  "30": { name: PA13, type: io }
+  "31": { name: PA14, type: io }
+  "32": { name: PA15, type: io }
+  "33": { name: GND, type: ground }
+  "34": { name: VDDIO, type: power }
+  "35": { name: PA16, type: io }
+  "36": { name: PA17, type: io }
+  "37": { name: PA18, type: io }
+  "38": { name: PA19, type: io }
+  "39": { name: PB16, type: io }
+  "40": { name: PB17, type: io }
+  "41": { name: PA20, type: io }
+  "42": { name: PA21, type: io }
+  "43": { name: PA22, type: io }
+  "44": { name: PA23, type: io }
+  "45": { name: PA24, type: io }
+  "46": { name: PA25, type: io }
+  "47": { name: GND, type: ground }
+  "48": { name: VDDIO, type: power }
+  "49": { name: PB22, type: io }
+  "50": { name: PB23, type: io }
+  "51": { name: PA27, type: io }
+  "52": { name: RESET, type: reset }
+  "53": { name: PA28, type: io }
+  "54": { name: GND, type: ground }
+  "55": { name: VDDCORE, type: power }
+  "56": { name: VDDIN, type: power }
+  "57": { name: PA30, type: io }
+  "58": { name: PA31, type: io }
+  "59": { name: PB30, type: io }
+  "60": { name: PB31, type: io }
+  "61": { name: PB00, type: io, alternate_functions: [AIN8] }
+  "62": { name: PB01, type: io, alternate_functions: [AIN9] }
+  "63": { name: PB02, type: io, alternate_functions: [AIN10] }
+  "64": { name: PB03, type: io, alternate_functions: [AIN11] }

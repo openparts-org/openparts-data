@@ -1,0 +1,67 @@
+# ESP32-S3-WROOM-1U Wi-Fi/Bluetooth module (external antenna connector).
+# Pin numbers, names and types from the module datasheet's pin definition
+# table (p11 "Table 3-1 Pin Definitions"; p12 cont.), which covers WROOM-1
+# and WROOM-1U alike; type P is power (ground for GND/EPAD), I input, I/O
+# and I/O/T io. Alternate functions are not recorded here.
+schema_version: "0.2"
+kind: device
+id: espressif/ESP32-S3-WROOM-1U
+manufacturer: espressif
+category: wireless_module
+family: ESP32-S3-WROOM-1
+source: espressif/esp32-s3-wroom-1_wroom-1u_datasheet_en@rev1.8
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 3 V
+    max: 3.6 V
+    src: p27 "Table 6-2 Recommended Operating Conditions, VDD33"
+  radio_protocol: { value: wifi_ble, src: p3 "generic Wi-Fi + Bluetooth LE MCU modules" }
+  antenna_type:
+    value: external_connector
+    src: 'p2 "Antenna Options, ESP32-S3-WROOM-1U: External antenna via a connector"'
+
+pins:
+  src:  p11 "Table 3-1 Pin Definitions"
+  "1":  { name: GND, type: ground }
+  "2":  { name: 3V3, type: power }
+  "3":  { name: EN, type: input }
+  "4":  { name: IO4, type: io }
+  "5":  { name: IO5, type: io }
+  "6":  { name: IO6, type: io }
+  "7":  { name: IO7, type: io }
+  "8":  { name: IO15, type: io }
+  "9":  { name: IO16, type: io }
+  "10": { name: IO17, type: io }
+  "11": { name: IO18, type: io }
+  "12": { name: IO8, type: io }
+  "13": { name: IO19, type: io }
+  "14": { name: IO20, type: io }
+  "15": { name: IO3, type: io }
+  "16": { name: IO46, type: io }
+  "17": { name: IO9, type: io }
+  "18": { name: IO10, type: io }
+  "19": { name: IO11, type: io }
+  "20": { name: IO12, type: io }
+  "21": { name: IO13, type: io }
+  "22": { name: IO14, type: io }
+  "23": { name: IO21, type: io }
+  "24": { name: IO47, type: io }
+  "25": { name: IO48, type: io }
+  "26": { name: IO45, type: io }
+  "27": { name: IO0, type: io }
+  "28": { name: IO35, type: io }
+  "29": { name: IO36, type: io }
+  "30": { name: IO37, type: io }
+  "31": { name: IO38, type: io }
+  "32": { name: IO39, type: io }
+  "33": { name: IO40, type: io }
+  "34": { name: IO41, type: io }
+  "35": { name: IO42, type: io }
+  "36": { name: RXD0, type: io }
+  "37": { name: TXD0, type: io }
+  "38": { name: IO2, type: io }
+  "39": { name: IO1, type: io }
+  "40": { name: GND, type: ground }
+  "41": { name: EPAD, type: ground }

@@ -1,0 +1,46 @@
+# RU1C001UNTCL: "RU1C001UN" with taping code "TCL" in the page-1 Packaging
+# specifications; the ROHM product page names "RU1C001UNTCL" with Status
+# "Recommended" (-> lifecycle active).
+schema_version: "0.2"
+kind: part
+id: rohm/RU1C001UNTCL
+manufacturer: rohm
+mpn: RU1C001UNTCL
+device: rohm/RU1C001UN
+package: { value: manufacturers/rohm/UMT3F-RU1C001UN, src: 'p10 "Dimensions, SOT-323FL (UMT3F)"' }
+sources: [rohm/RU1C001UN-datasheet-en, rohm/RU1C001UNTCL-product-page]
+source: rohm/RU1C001UN-datasheet-en
+
+existence: { status: verified, src: rohm/RU1C001UNTCL-product-page p1 "Part Number RU1C001UNTCL" }
+lifecycle: { status: active, src: rohm/RU1C001UNTCL-product-page p1 "Status Recommended" }
+
+parameters:
+  polarity:             { value: n_channel, src: 'p1 "Title, Nch MOSFET"' }
+  drain_source_voltage: { max: 20 V, src: 'p1 "Absolute maximum ratings, VDSS"' }
+  drain_current: { max: 100 mA, src: 'p1 "Absolute maximum ratings, Continuous drain current ID"' }
+  rds_on:
+    - typ: 2.5 Ω
+      max: 3.5 Ω
+      at: { VGS: 4.5 V, ID: 100 mA }
+      src: p2 "Electrical characteristics, RDS(on), VGS = 4.5V, ID = 100mA row"
+    - typ: 3 Ω
+      max: 4.2 Ω
+      at: { VGS: 2.5 V, ID: 100 mA }
+      src: p2 "Electrical characteristics, RDS(on), VGS = 2.5V, ID = 100mA row"
+    - typ: 3.8 Ω
+      max: 5.3 Ω
+      at: { VGS: 1.8 V, ID: 50 mA }
+      src: p2 "Electrical characteristics, RDS(on), VGS = 1.8V, ID = 50mA row"
+    - typ: 4.5 Ω
+      max: 9 Ω
+      at: { VGS: 1.5 V, ID: 20 mA }
+      src: p2 "Electrical characteristics, RDS(on), VGS = 1.5V, ID = 20mA row"
+    - typ: 6 Ω
+      max: 18 Ω
+      at: { VGS: 1.2 V, ID: 10 mA }
+      src: p2 "Electrical characteristics, RDS(on), VGS = 1.2V, ID = 10mA row"
+  gate_threshold_voltage:
+    min: 0.3 V
+    max: 1 V
+    at: { VDS: 10 V, ID: 100 µA }
+    src: p2 "Electrical characteristics, VGS(th) (Min 0.3 / Max 1.0)"

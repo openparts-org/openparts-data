@@ -1,0 +1,16 @@
+# Official TI datasheet "TMP275 ±0.5°C Temperature Sensor With I2C and SMBus Interface in Industry Standard ...". Downloaded 2026-11-17 with curl from the
+# TI symlink URL below; revision read from the page header "SBOS363F - JUNE 2006 - REVISED MAY 2018".
+# 35 PDF pages; text read with pdftotext -layout. Page numbers are PDF
+# page indices. The PACKAGE OPTION ADDENDUM at the end of the PDF is
+# dated 12-Mar-2026 (newer than the datasheet revision).
+schema_version: "0.2"
+kind: source
+id: ti/SBOS363F
+sha256: 2dcfdfbfeb2fe195df628408c5cf34ad5623ad16668844c7543e190c22c2313e
+retrieved: 2026-11-17
+url: https://www.ti.com/lit/ds/symlink/tmp275.pdf
+publisher: ti
+document_id: SBOS363F
+document_type: datasheet
+revision: F
+date: 2018-05

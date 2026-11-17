@@ -1,0 +1,58 @@
+# Panasonic FK series case size code H13 (ø12.5 x 13.5 L), from
+# panasonic/ABA0000C1181 p1 "Dimensions" (standard products) and p2
+# "Land / Pad pattern", standard products. Same frame and mapping as
+# manufacturers/panasonic/FK-D-6.3x5.8: top view, origin at the base
+# plate's centre, terminals along X with the + terminal (pad 1) at -X;
+# the source draws the terminals along Y, so plate side B is body_width
+# and A is body_length (both "13.5" for size H13).
+# Left out: K (terminal reach past the plate) and P (gap between the
+# terminals, reference) have no field. I is printed in parentheses ("( )
+# Reference size") and recorded as the reference value it is.
+schema_version: "0.2"
+kind: package
+id: manufacturers/panasonic/FK-H13-12.5x13.5
+family: smd_electrolytic
+lead_count: { value: 2, src: 'p1 "Dimensions, terminals (+) / (-)"' }
+source: panasonic/ABA0000C1181
+
+pitch: { unit: mm }
+geometry: { type: parametric, generator: smd_electrolytic }
+
+dimensions:
+  body_width:
+    min: 13.3 mm
+    typ: 13.5 mm
+    max: 13.7 mm
+    src: p1 "Dimensions, size H13 row, B (B±0.2)"
+  body_length:
+    min: 13.3 mm
+    typ: 13.5 mm
+    max: 13.7 mm
+    src: p1 "Dimensions, size H13 row, A (A±0.2)"
+  can_diameter:
+    min: 12 mm
+    typ: 12.5 mm
+    max: 13 mm
+    src: p1 "Dimensions, size H13 row, øD (drawing øD±0.5)"
+  lead_length:   { typ: 4.7 mm, src: 'p1 "Dimensions, size H13 row, (I) reference size"' }
+  overall_width: { max: 15 mm, src: 'p1 "Dimensions, size H13 row, H max."' }
+  overall_height:
+    min: 13 mm
+    typ: 13.5 mm
+    max: 14 mm
+    src: p1 "Dimensions, size H13 row, L (13.5±0.5)"
+  lead_width:
+    min: 0.6 mm
+    typ: 0.9 mm
+    max: 1.2 mm
+    src: p1 "Dimensions, size H13 row, W (0.9±0.3)"
+
+# pads (Land / Pad pattern, standard products, size H13): a = 3.9
+# between the lands, b = 6.2 along the terminal axis, c = 2 across;
+# turned 90° (see header): width = b, length = c, centres
+# x = ±(a/2 + b/2) = ±5.05, + land (pad 1) at -X.
+pads:
+  value:
+    - { number: "1", x: -5.05, y: 0, width: 6.2, length: 2 }
+    - { number: "2", x: 5.05, y: 0, width: 6.2, length: 2 }
+  src: p2 "Land / Pad pattern, Standard products, size H13 row, a b c"

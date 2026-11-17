@@ -1,0 +1,24 @@
+# ESP32-WROOM-32UE-H4: listed in the module datasheet's series comparison table
+# (p3 Table 2 ESP32-WROOM-32UE Series Comparison) -> existence verified.
+# Lifecycle: the datasheet states no status for this part -> unknown.
+schema_version: "0.2"
+kind: part
+id: espressif/ESP32-WROOM-32UE-H4
+manufacturer: espressif
+mpn: ESP32-WROOM-32UE-H4
+device: espressif/ESP32-WROOM-32UE
+package: manufacturers/espressif/MODULE39-18x19.2-ESP32-WROOM-32UE
+sources: [espressif/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en@rev2.1]
+source: espressif/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en@rev2.1
+
+existence:
+  status: verified
+  src: 'p3 "Table 2 ESP32-WROOM-32UE Series Comparison, Part Number: ESP32-WROOM-32UE-H4"'
+
+lifecycle: { status: unknown }
+
+parameters:
+  operating_temperature:
+    min: -40 °C
+    max: 105 °C
+    src: p3 "Table 2 ESP32-WROOM-32UE Series Comparison, ESP32-WROOM-32UE-H4, Ambient Temp."

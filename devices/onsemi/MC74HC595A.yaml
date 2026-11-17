@@ -1,0 +1,55 @@
+# 8-Bit Serial-Input/Serial or Parallel-Output Shift Register with Latched 3-State Outputs MC74HC595A (onsemi), 16-pin pin map of the SOIC-16 and
+# TSSOP-16 packages ("Figure 1. Pin Assignments, SOIC, TSSOP"). RESET (pin 10) and OUTPUT ENABLE (pin 13) are active low per the
+# function description; names written without overbar, spaces as _.
+# The QFN16 variant (where present) is not covered.
+schema_version: "0.2"
+kind: device
+id: onsemi/MC74HC595A
+manufacturer: onsemi
+category: logic
+family: MC74HC595A
+source: onsemi/MC74HC595A-D
+
+# Parameters (AI candidates, needs review).
+parameters:
+  supply_voltage:
+    min: 2 V
+    max: 6 V
+    src: p3 "RECOMMENDED OPERATING CONDITIONS, MC74HC, VCC DC Supply Voltage"
+  supply_current:
+    max: 4 µA
+    at: { VCC: 6 V, TA: -55..25 °C }
+    src: p4 "DC ELECTRICAL CHARACTERISTICS, ICC Maximum Quiescent Supply Current, 6.0 V, -55 to 25°C"
+  operating_temperature:
+    min: -55 °C
+    max: 125 °C
+    src: p3 "RECOMMENDED OPERATING CONDITIONS, MC74HC, TA Operating Free-Air Temperature"
+  channel_count:
+    value: "1"
+    src: 'p1 "Title: 8-Bit Serial-Input/Serial or Parallel-Output Shift Register with Latched 3-State Outputs"'
+  propagation_delay:
+    max: 28 ns
+    at: { VCC: 4.5 V, CL: 50 pF, TA: -55..25 °C }
+    src: p5 "AC ELECTRICAL CHARACTERISTICS, tPLH/tPHL Latch Clock to QA - QH, 4.5 V, -55 to 25°C (CL 50 pF test circuit)"
+  logic_function:
+    value: shift_register
+    src: 'p1 "Title: 8-Bit Serial-Input/Serial or Parallel-Output Shift Register with Latched 3-State Outputs"'
+
+pins:
+  src:  p2 "Figure 1. Pin Assignments, SOIC, TSSOP"
+  "1":  { name: QB, type: output }
+  "2":  { name: QC, type: output }
+  "3":  { name: QD, type: output }
+  "4":  { name: QE, type: output }
+  "5":  { name: QF, type: output }
+  "6":  { name: QG, type: output }
+  "7":  { name: QH, type: output }
+  "8":  { name: GND, type: ground }
+  "9":  { name: SQH, type: output }
+  "10": { name: RESET, type: reset }
+  "11": { name: SHIFT_CLOCK, type: clock }
+  "12": { name: LATCH_CLOCK, type: clock }
+  "13": { name: OUTPUT_ENABLE, type: input }
+  "14": { name: A, type: input }
+  "15": { name: QA, type: output }
+  "16": { name: VCC, type: power }

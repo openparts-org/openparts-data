@@ -1,0 +1,36 @@
+# AP3429 / AP3429A 2-A, 1-MHz synchronous step-down converter, TSOT25.
+# Pinout from DS36561 "Pin Descriptions" (page 2): EN 1, GND 2, LX 3,
+# VIN 4, FB 5, checked against the page-1 "Pin Assignments" top view.
+# AP3429 (latch-off short-circuit / OVP protection) and AP3429A (hiccup
+# mode) share pinout and ratings (page 1 Features); the variant is the
+# ordering code's Product Version letter (page 9). Types: EN, FB input;
+# LX switch node -> passive; VIN supply -> power.
+schema_version: "0.2"
+kind: device
+id: diodes/AP3429-TSOT25
+manufacturer: diodes
+category: switching_regulator
+family: AP3429
+source: diodes/DS36561
+
+parameters:
+  output_type:    { value: adjustable, src: 'p1 "Features, Output Voltage: 0.6V to VIN"' }
+  input_voltage_max:
+    max: 5.5 V
+    src: p4 "Recommended Operating Conditions, VIN Input Voltage Range"
+  output_current: { max: 2 A, src: 'p1 "Features, Output Current: Up to 2A"' }
+  operating_temperature:
+    min: -40 °C
+    max: 85 °C
+    src: p4 "Recommended Operating Conditions, TA Operating Ambient Temperature"
+  esd_hbm: { typ: 2 kV, src: 'p4 "Absolute Maximum Ratings, VHBM ESD (Human Body Model) 2000 V"' }
+
+pins:
+  src:
+    - p2 "Pin Descriptions (1 EN, 2 GND, 3 LX, 4 VIN, 5 FB)"
+    - p1 "Pin Assignments, TSOT25 (Top View)"
+  "1": { name: EN, type: input }
+  "2": { name: GND, type: ground }
+  "3": { name: LX, type: passive }
+  "4": { name: VIN, type: power }
+  "5": { name: FB, type: input }

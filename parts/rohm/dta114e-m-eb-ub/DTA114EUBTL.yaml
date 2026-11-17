@@ -1,0 +1,19 @@
+# DTA114EUBTL: Part No. "DTA114EUB" with taping code "TL" in the page-1
+# Packaging specifications table; the ROHM product page names "DTA114EUBTL"
+# with Status "Recommended" (-> lifecycle active).
+schema_version: "0.2"
+kind: part
+id: rohm/DTA114EUBTL
+manufacturer: rohm
+mpn: DTA114EUBTL
+device: rohm/DTA114E-M-EB-UB
+
+package:
+  value: manufacturers/rohm/UMT3F
+  src: rohm/DTA114E-datasheet-en p8 "Dimensions, SOT-323FL (UMT3F)"
+
+sources: [rohm/DTA114E-datasheet-en, rohm/DTA114EUBTL-product-page]
+source: rohm/DTA114EUBTL-product-page
+
+existence: { status: verified, src: p1 "Part Number DTA114EUBTL" }
+lifecycle: { status: active, src: p1 "Status Recommended" }
