@@ -37,18 +37,20 @@ pins:
   "2":  { name: P401, type: io }
   "3":  { name: VCL, type: power }
   "4":
-    name: P215/XCIN
+    name: P215
     type:
       value: input
       src: 'p32 "Table 2.9 "I/O VOH, VOL (3)" Note 1: "Except for Ports P200, P214, and P215, which are input ports""'
+    alternate_functions: [XCIN]
   "5":
-    name: P214/XCOUT
+    name: P214
     type:
       value: input
       src: 'p32 "Table 2.9 "I/O VOH, VOL (3)" Note 1: "Except for Ports P200, P214, and P215, which are input ports""'
+    alternate_functions: [XCOUT]
   "6":  { name: VSS, type: ground }
-  "7":  { name: P213/XTAL, type: io }
-  "8":  { name: P212/EXTAL, type: io }
+  "7":  { name: P213, type: io, alternate_functions: [XTAL] }
+  "8":  { name: P212, type: io, alternate_functions: [EXTAL] }
   "9":  { name: VCC, type: power }
   "10": { name: P409, type: io }
   "11": { name: P408, type: io }
@@ -60,7 +62,7 @@ pins:
   "17": { name: P207, type: io }
   "18": { name: P206, type: io }
   "19": { name: RES, type: reset }
-  "20": { name: P201/MD, type: io }
+  "20": { name: P201, type: io, alternate_functions: [MD] }
   "21":
     name: P200
     type:
@@ -68,8 +70,8 @@ pins:
       src: 'p32 "Table 2.9 "I/O VOH, VOL (3)" Note 1: "Except for Ports P200, P214, and P215, which are input ports""'
   "22": { name: P302, type: io }
   "23": { name: P301, type: io }
-  "24": { name: P300/SWCLK, type: io }
-  "25": { name: P108/SWDIO, type: io }
+  "24": { name: P300, type: io, alternate_functions: [SWCLK] }
+  "25": { name: P108, type: io, alternate_functions: [SWDIO] }
   "26": { name: P109, type: io }
   "27": { name: P110, type: io }
   "28": { name: P111, type: io }
@@ -88,8 +90,8 @@ pins:
   "41": { name: P012, type: io }
   "42": { name: AVCC0, type: power }
   "43": { name: AVSS0, type: ground }
-  "44": { name: P011/VREFL0, type: io }
-  "45": { name: P010/VREFH0, type: io }
+  "44": { name: P011, type: io, alternate_functions: [VREFL0] }
+  "45": { name: P010, type: io, alternate_functions: [VREFH0] }
   "46": { name: P002, type: io }
   "47": { name: P001, type: io }
   "48": { name: P000, type: io }

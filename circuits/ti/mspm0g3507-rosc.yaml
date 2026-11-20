@@ -19,6 +19,6 @@ roles:
       temperature_coefficient: { max: 25 ppm/K }
       tolerance: { min: -0.1 %, max: 0.1 % }
       src: p76 "9.1.1"
-    pins: { "1": host.PA2/ROSC, "2": GND }
+    pins: { "1": host.PA2, "2": GND }
     level: example
     src: p76 "9.1.1"

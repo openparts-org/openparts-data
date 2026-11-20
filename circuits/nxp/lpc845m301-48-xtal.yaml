@@ -16,19 +16,19 @@ nets: { GND: { kind: ground } }
 roles:
   C_X1:
     requires: { category: capacitor, src: p78 "14.2" }
-    pins:     { "1": host.PIO0_8/XTALIN, "2": GND }
-    place:    { near: host.PIO0_8/XTALIN, src: p79 "14.2.1" }
+    pins:     { "1": host.PIO0_8, "2": GND }
+    place:    { near: host.PIO0_8, src: p79 "14.2.1" }
     level:    { value: required, word: need, src: p78 "14.2" }
   C_X2:
     requires: { category: capacitor, src: p78 "14.2" }
-    pins:     { "1": host.PIO0_9/XTALOUT, "2": GND }
-    place:    { near: host.PIO0_9/XTALOUT, src: p79 "14.2.1" }
+    pins:     { "1": host.PIO0_9, "2": GND }
+    place:    { near: host.PIO0_9, src: p79 "14.2.1" }
     level:    { value: required, word: need, src: p78 "14.2" }
   X1:
     requires: { category: crystal, src: p78 "14.2" }
-    pins:     { "1": host.PIO0_8/XTALIN, "2": host.PIO0_9/XTALOUT }
-    place:    { near: host.PIO0_8/XTALIN, src: p79 "14.2.1" }
+    pins:     { "1": host.PIO0_8, "2": host.PIO0_9 }
+    place:    { near: host.PIO0_8, src: p79 "14.2.1" }
     level:    { value: required, word: need, src: p78 "14.2" }
 
 placement:
-  - { keep_short: [host.PIO0_8/XTALIN, host.PIO0_9/XTALOUT], src: p79 "14.2.1" }
+  - { keep_short: [host.PIO0_8, host.PIO0_9], src: p79 "14.2.1" }

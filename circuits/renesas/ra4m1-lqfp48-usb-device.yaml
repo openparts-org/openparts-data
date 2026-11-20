@@ -17,11 +17,11 @@ nets:
   USB_DP: { kind: signal }
 
 connect:
-  P914/USB_DP:
+  P914:
     net: USB_DP
     level: { value: recommended, word: should }
     src: renesas/R01DS0355EJ0110 p14 "Table 1.15, USB_DP"
-  P915/USB_DM:
+  P915:
     net: USB_DM
     level: { value: recommended, word: should }
     src: renesas/R01DS0355EJ0110 p14 "Table 1.15, USB_DM"

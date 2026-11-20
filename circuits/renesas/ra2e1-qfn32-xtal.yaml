@@ -15,16 +15,16 @@ nets: { GND: { kind: ground } }
 roles:
   C_L1:
     requires: { category: capacitor, src: p15 "Figure 10" }
-    pins: { "1": host.P212/EXTAL, "2": GND }
+    pins: { "1": host.P212, "2": GND }
     level: example
     src: p15 "Figure 10"
   C_L2:
     requires: { category: capacitor, src: p15 "Figure 10" }
-    pins: { "1": host.P213/XTAL, "2": GND }
+    pins: { "1": host.P213, "2": GND }
     level: example
     src: p15 "Figure 10"
   X1:
     requires: { category: crystal, frequency: { min: 1 MHz, max: 20 MHz }, src: p12 "Table 5" }
-    pins: { "1": host.P212/EXTAL, "2": host.P213/XTAL }
+    pins: { "1": host.P212, "2": host.P213 }
     level: example
     src: p15 "Figure 10"

@@ -30,51 +30,57 @@ pins:
   src:
     - p18 "Table 4-1 "Pin Attributes" (pages 18-21), column "PIN NUMBER PT""
     - p10 "Figure 4-1 "48-Pin PT (LQFP) (Top View) - MSP430FR235x" (cross-check, all 48 pins matched)"
-  "1":  { name: P1.2/UCB0SIMO/UCB0SDA/TB0TRG/OA0-/A2/Veref-, type: io }
-  "2":  { name: P1.1/UCB0CLK/ACLK/OA0O/COMP0.1/A1, type: io }
-  "3":  { name: P1.0/UCB0STE/SMCLK/COMP0.0/A0/Veref+, type: io }
+  "1":  { name: P1.2, type: io, alternate_functions: [UCB0SIMO, UCB0SDA, TB0TRG, OA0-, A2, Veref-] }
+  "2":  { name: P1.1, type: io, alternate_functions: [UCB0CLK, ACLK, OA0O, COMP0.1, A1] }
+  "3":  { name: P1.0, type: io, alternate_functions: [UCB0STE, SMCLK, COMP0.0, A0, Veref+] }
   "4":  { name: TEST/SBWTCK, type: input }
   "5":  { name: RST/NMI/SBWTDIO, type: reset }
   "6":  { name: DVCC, type: power }
   "7":  { name: DVSS, type: ground }
-  "8":  { name: P2.7/TB0CLK/XIN, type: io }
-  "9":  { name: P2.6/MCLK/XOUT, type: io }
-  "10": { name: P2.5/COMP1.0, type: io }
-  "11": { name: P2.4/COMP1.1, type: io }
-  "12": { name: P4.7/UCB1SOMI/UCB1SCL, type: io }
-  "13": { name: P4.6/UCB1SIMO/UCB1SDA, type: io }
-  "14": { name: P4.5/UCB1CLK, type: io }
-  "15": { name: P4.4/UCB1STE, type: io }
-  "16": { name: P6.6/TB3CLK, type: io }
-  "17": { name: P6.5/TB3.6, type: io }
-  "18": { name: P6.4/TB3.5, type: io }
-  "19": { name: P6.3/TB3.4, type: io }
-  "20": { name: P6.2/TB3.3, type: io }
-  "21": { name: P6.1/TB3.2, type: io }
-  "22": { name: P6.0/TB3.1, type: io }
-  "23": { name: P4.3/UCA1TXD/UCA1SIMO/UCA1TXD, type: io }
-  "24": { name: P4.2/UCA1RXD/UCA1SOMI/UCA1RXD, type: io }
-  "25": { name: P4.1/UCA1CLK, type: io }
-  "26": { name: P4.0/UCA1STE/ISOTXD/ISORXD, type: io }
-  "27": { name: P2.3/TB1TRG, type: io }
-  "28": { name: P2.2/TB1CLK, type: io }
-  "29": { name: P2.1/TB1.2/COMP1.O, type: io }
-  "30": { name: P2.0/TB1.1/COMP0.O, type: io }
-  "31": { name: P1.7/UCA0TXD/UCA0SIMO/TB0.2/TDO/OA1+/A7/VREF+, type: io }
-  "32": { name: P1.6/UCA0RXD/UCA0SOMI/TB0.1/TDI/TCLK/OA1-/A6, type: io }
-  "33": { name: P1.5/UCA0CLK/TMS/OA1O/A5, type: io }
-  "34": { name: P1.4/UCA0STE/TCK/A4, type: io }
-  "35": { name: P3.7/OA3+, type: io }
-  "36": { name: P3.6/OA3-, type: io }
-  "37": { name: P3.5/OA3O, type: io }
-  "38": { name: P3.4/SMCLK, type: io }
+  "8":  { name: P2.7, type: io, alternate_functions: [TB0CLK, XIN] }
+  "9":  { name: P2.6, type: io, alternate_functions: [MCLK, XOUT] }
+  "10": { name: P2.5, type: io, alternate_functions: [COMP1.0] }
+  "11": { name: P2.4, type: io, alternate_functions: [COMP1.1] }
+  "12": { name: P4.7, type: io, alternate_functions: [UCB1SOMI, UCB1SCL] }
+  "13": { name: P4.6, type: io, alternate_functions: [UCB1SIMO, UCB1SDA] }
+  "14": { name: P4.5, type: io, alternate_functions: [UCB1CLK] }
+  "15": { name: P4.4, type: io, alternate_functions: [UCB1STE] }
+  "16": { name: P6.6, type: io, alternate_functions: [TB3CLK] }
+  "17": { name: P6.5, type: io, alternate_functions: [TB3.6] }
+  "18": { name: P6.4, type: io, alternate_functions: [TB3.5] }
+  "19": { name: P6.3, type: io, alternate_functions: [TB3.4] }
+  "20": { name: P6.2, type: io, alternate_functions: [TB3.3] }
+  "21": { name: P6.1, type: io, alternate_functions: [TB3.2] }
+  "22": { name: P6.0, type: io, alternate_functions: [TB3.1] }
+  "23": { name: P4.3, type: io, alternate_functions: [UCA1TXD, UCA1SIMO, UCA1TXD] }
+  "24": { name: P4.2, type: io, alternate_functions: [UCA1RXD, UCA1SOMI, UCA1RXD] }
+  "25": { name: P4.1, type: io, alternate_functions: [UCA1CLK] }
+  "26": { name: P4.0, type: io, alternate_functions: [UCA1STE, ISOTXD, ISORXD] }
+  "27": { name: P2.3, type: io, alternate_functions: [TB1TRG] }
+  "28": { name: P2.2, type: io, alternate_functions: [TB1CLK] }
+  "29": { name: P2.1, type: io, alternate_functions: [TB1.2, COMP1.O] }
+  "30": { name: P2.0, type: io, alternate_functions: [TB1.1, COMP0.O] }
+  "31":
+    name: P1.7
+    type: io
+    alternate_functions: [UCA0TXD, UCA0SIMO, TB0.2, TDO, OA1+, A7, VREF+]
+  "32":
+    name: P1.6
+    type: io
+    alternate_functions: [UCA0RXD, UCA0SOMI, TB0.1, TDI, TCLK, OA1-, A6]
+  "33": { name: P1.5, type: io, alternate_functions: [UCA0CLK, TMS, OA1O, A5] }
+  "34": { name: P1.4, type: io, alternate_functions: [UCA0STE, TCK, A4] }
+  "35": { name: P3.7, type: io, alternate_functions: [OA3+] }
+  "36": { name: P3.6, type: io, alternate_functions: [OA3-] }
+  "37": { name: P3.5, type: io, alternate_functions: [OA3O] }
+  "38": { name: P3.4, type: io, alternate_functions: [SMCLK] }
   "39": { name: P5.4, type: io }
-  "40": { name: P5.3/TB2TRG/A11, type: io }
-  "41": { name: P5.2/TB2CLK/A10, type: io }
-  "42": { name: P5.1/TB2.2/MFM.TX/A9, type: io }
-  "43": { name: P5.0/TB2.1/MFM.RX/A8, type: io }
-  "44": { name: P3.3/OA2+, type: io }
-  "45": { name: P3.2/OA2-, type: io }
-  "46": { name: P3.1/OA2O, type: io }
-  "47": { name: P3.0/MCLK, type: io }
-  "48": { name: P1.3/UCB0SOMI/UCB0SCL/OA0+/A3, type: io }
+  "40": { name: P5.3, type: io, alternate_functions: [TB2TRG, A11] }
+  "41": { name: P5.2, type: io, alternate_functions: [TB2CLK, A10] }
+  "42": { name: P5.1, type: io, alternate_functions: [TB2.2, MFM.TX, A9] }
+  "43": { name: P5.0, type: io, alternate_functions: [TB2.1, MFM.RX, A8] }
+  "44": { name: P3.3, type: io, alternate_functions: [OA2+] }
+  "45": { name: P3.2, type: io, alternate_functions: [OA2-] }
+  "46": { name: P3.1, type: io, alternate_functions: [OA2O] }
+  "47": { name: P3.0, type: io, alternate_functions: [MCLK] }
+  "48": { name: P1.3, type: io, alternate_functions: [UCB0SOMI, UCB0SCL, OA0+, A3] }

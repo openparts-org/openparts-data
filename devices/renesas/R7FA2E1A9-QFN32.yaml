@@ -35,18 +35,20 @@ pins:
     - p21 "Table 1.15 "Pin list" (pages 21-23), column "32-pin LQFP/QFN" (cross-check, all 32 pins matched)"
   "1":  { name: VCL, type: power }
   "2":
-    name: P215/XCIN
+    name: P215
     type:
       value: input
       src: 'p32 "Table 2.9 "I/O VOH, VOL (3)" Note 1: "Except for Ports P200, P214, and P215, which are input ports""'
+    alternate_functions: [XCIN]
   "3":
-    name: P214/XCOUT
+    name: P214
     type:
       value: input
       src: 'p32 "Table 2.9 "I/O VOH, VOL (3)" Note 1: "Except for Ports P200, P214, and P215, which are input ports""'
+    alternate_functions: [XCOUT]
   "4":  { name: VSS, type: ground }
-  "5":  { name: P213/XTAL, type: io }
-  "6":  { name: P212/EXTAL, type: io }
+  "5":  { name: P213, type: io, alternate_functions: [XTAL] }
+  "6":  { name: P212, type: io, alternate_functions: [EXTAL] }
   "7":  { name: VCC, type: power }
   "8":  { name: P407, type: io }
   "9":  { name: P914, type: io }
@@ -54,14 +56,14 @@ pins:
   "11": { name: P208, type: io }
   "12": { name: P207, type: io }
   "13": { name: RES, type: reset }
-  "14": { name: P201/MD, type: io }
+  "14": { name: P201, type: io, alternate_functions: [MD] }
   "15":
     name: P200
     type:
       value: input
       src: 'p32 "Table 2.9 "I/O VOH, VOL (3)" Note 1: "Except for Ports P200, P214, and P215, which are input ports""'
-  "16": { name: P300/SWCLK, type: io }
-  "17": { name: P108/SWDIO, type: io }
+  "16": { name: P300, type: io, alternate_functions: [SWCLK] }
+  "17": { name: P108, type: io, alternate_functions: [SWDIO] }
   "18": { name: P109, type: io }
   "19": { name: P110, type: io }
   "20": { name: P112, type: io }
@@ -75,5 +77,5 @@ pins:
   "28": { name: P012, type: io }
   "29": { name: AVCC0, type: power }
   "30": { name: AVSS0, type: ground }
-  "31": { name: P011/VREFL0, type: io }
-  "32": { name: P010/VREFH0, type: io }
+  "31": { name: P011, type: io, alternate_functions: [VREFL0] }
+  "32": { name: P010, type: io, alternate_functions: [VREFH0] }

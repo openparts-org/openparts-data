@@ -36,51 +36,51 @@ pins:
   src:
     - p12 "Table 4 "Pin description" (pages 12-16), columns "LQFP48" and "HVQFN48""
     - p9 "Fig 5 "Pin configuration LQFP48 package" and Fig 6 (page 10) HVQFN48 (cross-check, all 48 pins matched)"
-  "1":  { name: PIO1_8/CAPT_YL, type: io }
-  "2":  { name: PIO0_13/ADC_10, type: io }
-  "3":  { name: PIO1_9/CAPT_YH, type: io }
+  "1":  { name: PIO1_8, type: io, alternate_functions: [CAPT_YL] }
+  "2":  { name: PIO0_13, type: io, alternate_functions: [ADC_10] }
+  "3":  { name: PIO1_9, type: io, alternate_functions: [CAPT_YH] }
   "4":  { name: PIO0_12, type: io }
   "5":  { name: RESET/PIO0_5, type: reset }
-  "6":  { name: PIO0_4/ADC_11/TRSTN/WAKEUP, type: io }
-  "7":  { name: PIO0_28/WKTCLKIN, type: io }
+  "6":  { name: PIO0_4, type: io, alternate_functions: [ADC_11, TRSTN, WAKEUP] }
+  "7":  { name: PIO0_28, type: io, alternate_functions: [WKTCLKIN] }
   "8":  { name: SWCLK/PIO0_3/TCK, type: io }
-  "9":  { name: PIO0_31/CAPT_X0, type: io }
+  "9":  { name: PIO0_31, type: io, alternate_functions: [CAPT_X0] }
   "10": { name: SWDIO/PIO0_2/TMS, type: io }
-  "11": { name: PIO1_0/CAPT_X1, type: io }
-  "12": { name: PIO0_11/I2C0_SDA, type: io }
-  "13": { name: PIO0_10/I2C0_SCL, type: io }
-  "14": { name: PIO1_1/CAPT_X2, type: io }
+  "11": { name: PIO1_0, type: io, alternate_functions: [CAPT_X1] }
+  "12": { name: PIO0_11, type: io, alternate_functions: [I2C0_SDA] }
+  "13": { name: PIO0_10, type: io, alternate_functions: [I2C0_SCL] }
+  "14": { name: PIO1_1, type: io, alternate_functions: [CAPT_X2] }
   "15": { name: PIO0_16, type: io }
-  "16": { name: PIO1_2/CAPT_X3, type: io }
+  "16": { name: PIO1_2, type: io, alternate_functions: [CAPT_X3] }
   "17": { name: PIO0_27, type: io }
   "18": { name: PIO0_26, type: io }
   "19": { name: PIO0_25, type: io }
   "20": { name: PIO0_24, type: io }
-  "21": { name: PIO1_3/CAPT_X4, type: io }
+  "21": { name: PIO1_3, type: io, alternate_functions: [CAPT_X4] }
   "22": { name: PIO0_15, type: io }
-  "23": { name: PIO1_4/CAPT_X5, type: io }
-  "24": { name: PIO0_1/ACMP_I2/CLKIN/TDI, type: io }
-  "25": { name: PIO0_9/XTALOUT, type: io }
-  "26": { name: PIO0_8/XTALIN, type: io }
-  "27": { name: PIO1_5/CAPT_X6, type: io }
-  "28": { name: PIO1_6/CAPT_X7, type: io }
+  "23": { name: PIO1_4, type: io, alternate_functions: [CAPT_X5] }
+  "24": { name: PIO0_1, type: io, alternate_functions: [ACMP_I2, CLKIN, TDI] }
+  "25": { name: PIO0_9, type: io, alternate_functions: [XTALOUT] }
+  "26": { name: PIO0_8, type: io, alternate_functions: [XTALIN] }
+  "27": { name: PIO1_5, type: io, alternate_functions: [CAPT_X6] }
+  "28": { name: PIO1_6, type: io, alternate_functions: [CAPT_X7] }
   "29": { name: VDD, type: power }
   "30": { name: VSS, type: ground }
   "31": { name: VREFN, type: analog }
   "32": { name: VREFP, type: analog }
-  "33": { name: PIO0_7/ADC_0, type: io }
-  "34": { name: PIO0_6/ADC_1/ACMPVREF, type: io }
-  "35": { name: PIO1_7/CAPT_X8, type: io }
-  "36": { name: PIO0_0/ACMP_I1/TDO, type: io }
-  "37": { name: PIO0_14/ACMP_I3/ADC_2, type: io }
-  "38": { name: PIO0_29/DACOUT_1, type: io }
-  "39": { name: PIO0_23/ADC_3/ACMP_I4, type: io }
+  "33": { name: PIO0_7, type: io, alternate_functions: [ADC_0] }
+  "34": { name: PIO0_6, type: io, alternate_functions: [ADC_1, ACMPVREF] }
+  "35": { name: PIO1_7, type: io, alternate_functions: [CAPT_X8] }
+  "36": { name: PIO0_0, type: io, alternate_functions: [ACMP_I1, TDO] }
+  "37": { name: PIO0_14, type: io, alternate_functions: [ACMP_I3, ADC_2] }
+  "38": { name: PIO0_29, type: io, alternate_functions: [DACOUT_1] }
+  "39": { name: PIO0_23, type: io, alternate_functions: [ADC_3, ACMP_I4] }
   "40": { name: VDDA, type: power }
   "41": { name: VSSA, type: ground }
-  "42": { name: PIO0_30/ACMP_I5, type: io }
-  "43": { name: PIO0_22/ADC_4, type: io }
-  "44": { name: PIO0_21/ADC_5, type: io }
-  "45": { name: PIO0_20/ADC_6, type: io }
-  "46": { name: PIO0_19/ADC_7, type: io }
-  "47": { name: PIO0_18/ADC_8, type: io }
-  "48": { name: PIO0_17/ADC_9/DACOUT_0, type: io }
+  "42": { name: PIO0_30, type: io, alternate_functions: [ACMP_I5] }
+  "43": { name: PIO0_22, type: io, alternate_functions: [ADC_4] }
+  "44": { name: PIO0_21, type: io, alternate_functions: [ADC_5] }
+  "45": { name: PIO0_20, type: io, alternate_functions: [ADC_6] }
+  "46": { name: PIO0_19, type: io, alternate_functions: [ADC_7] }
+  "47": { name: PIO0_18, type: io, alternate_functions: [ADC_8] }
+  "48": { name: PIO0_17, type: io, alternate_functions: [ADC_9, DACOUT_0] }

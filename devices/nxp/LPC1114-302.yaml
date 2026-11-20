@@ -37,50 +37,50 @@ pins:
     - p29 "Table 8, LPC1113/14 pin description (LQFP48), pp. 29-32"
     - p13 "Figure 3, pin configuration diagram (visual cross-check, all 48 pins matched exactly)"
   "1":  { name: PIO2_6, type: io }
-  "2":  { name: PIO2_0/DTR/SSEL1, type: io }
+  "2":  { name: PIO2_0, type: io, alternate_functions: [DTR, SSEL1] }
   "3":  { name: RESET/PIO0_0, type: reset }
-  "4":  { name: PIO0_1/CLKOUT/CT32B0_MAT2, type: io }
+  "4":  { name: PIO0_1, type: io, alternate_functions: [CLKOUT, CT32B0_MAT2] }
   "5":  { name: VSS, type: ground }
   "6":  { name: XTALIN, type: clock }
   "7":  { name: XTALOUT, type: clock }
   "8":  { name: VDD, type: power }
-  "9":  { name: PIO1_8/CT16B1_CAP0, type: io }
-  "10": { name: PIO0_2/SSEL0/CT16B0_CAP0, type: io }
+  "9":  { name: PIO1_8, type: io, alternate_functions: [CT16B1_CAP0] }
+  "10": { name: PIO0_2, type: io, alternate_functions: [SSEL0, CT16B0_CAP0] }
   "11": { name: PIO2_7, type: io }
   "12": { name: PIO2_8, type: io }
-  "13": { name: PIO2_1/DSR/SCK1, type: io }
+  "13": { name: PIO2_1, type: io, alternate_functions: [DSR, SCK1] }
   "14": { name: PIO0_3, type: io }
-  "15": { name: PIO0_4/SCL, type: io }
-  "16": { name: PIO0_5/SDA, type: io }
-  "17": { name: PIO1_9/CT16B1_MAT0, type: io }
+  "15": { name: PIO0_4, type: io, alternate_functions: [SCL] }
+  "16": { name: PIO0_5, type: io, alternate_functions: [SDA] }
+  "17": { name: PIO1_9, type: io, alternate_functions: [CT16B1_MAT0] }
   "18": { name: PIO3_4, type: io }
   "19": { name: PIO2_4, type: io }
   "20": { name: PIO2_5, type: io }
   "21": { name: PIO3_5, type: io }
-  "22": { name: PIO0_6/SCK0, type: io }
-  "23": { name: PIO0_7/CTS, type: io }
+  "22": { name: PIO0_6, type: io, alternate_functions: [SCK0] }
+  "23": { name: PIO0_7, type: io, alternate_functions: [CTS] }
   "24": { name: PIO2_9, type: io }
   "25": { name: PIO2_10, type: io }
-  "26": { name: PIO2_2/DCD/MISO1, type: io }
-  "27": { name: PIO0_8/MISO0/CT16B0_MAT0, type: io }
-  "28": { name: PIO0_9/MOSI0/CT16B0_MAT1, type: io }
+  "26": { name: PIO2_2, type: io, alternate_functions: [DCD, MISO1] }
+  "27": { name: PIO0_8, type: io, alternate_functions: [MISO0, CT16B0_MAT0] }
+  "28": { name: PIO0_9, type: io, alternate_functions: [MOSI0, CT16B0_MAT1] }
   "29": { name: SWCLK/PIO0_10/SCK0/CT16B0_MAT2, type: io }
-  "30": { name: PIO1_10/AD6/CT16B1_MAT1, type: io, alternate_functions: [AD6] }
-  "31": { name: PIO2_11/SCK0, type: io }
+  "30": { name: PIO1_10, type: io, alternate_functions: [AD6, CT16B1_MAT1] }
+  "31": { name: PIO2_11, type: io, alternate_functions: [SCK0] }
   "32": { name: R/PIO0_11/AD0/CT32B0_MAT3, type: io, alternate_functions: [AD0] }
   "33": { name: R/PIO1_0/AD1/CT32B1_CAP0, type: io, alternate_functions: [AD1] }
   "34": { name: R/PIO1_1/AD2/CT32B1_MAT0, type: io, alternate_functions: [AD2] }
   "35": { name: R/PIO1_2/AD3/CT32B1_MAT1, type: io, alternate_functions: [AD3] }
-  "36": { name: PIO3_0/DTR, type: io }
-  "37": { name: PIO3_1/DSR, type: io }
-  "38": { name: PIO2_3/RI/MOSI1, type: io }
+  "36": { name: PIO3_0, type: io, alternate_functions: [DTR] }
+  "37": { name: PIO3_1, type: io, alternate_functions: [DSR] }
+  "38": { name: PIO2_3, type: io, alternate_functions: [RI, MOSI1] }
   "39": { name: SWDIO/PIO1_3/AD4/CT32B1_MAT2, type: io, alternate_functions: [AD4] }
-  "40": { name: PIO1_4/AD5/CT32B1_MAT3/WAKEUP, type: io, alternate_functions: [AD5] }
+  "40": { name: PIO1_4, type: io, alternate_functions: [AD5, CT32B1_MAT3, WAKEUP] }
   "41": { name: VSS, type: ground }
-  "42": { name: PIO1_11/AD7, type: io, alternate_functions: [AD7] }
-  "43": { name: PIO3_2/DCD, type: io }
+  "42": { name: PIO1_11, type: io, alternate_functions: [AD7] }
+  "43": { name: PIO3_2, type: io, alternate_functions: [DCD] }
   "44": { name: VDD, type: power }
-  "45": { name: PIO1_5/RTS/CT32B0_CAP0, type: io }
-  "46": { name: PIO1_6/RXD/CT32B0_MAT0, type: io }
-  "47": { name: PIO1_7/TXD/CT32B0_MAT1, type: io }
-  "48": { name: PIO3_3/RI, type: io }
+  "45": { name: PIO1_5, type: io, alternate_functions: [RTS, CT32B0_CAP0] }
+  "46": { name: PIO1_6, type: io, alternate_functions: [RXD, CT32B0_MAT0] }
+  "47": { name: PIO1_7, type: io, alternate_functions: [TXD, CT32B0_MAT1] }
+  "48": { name: PIO3_3, type: io, alternate_functions: [RI] }

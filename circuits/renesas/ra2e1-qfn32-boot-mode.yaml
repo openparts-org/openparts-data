@@ -1,4 +1,4 @@
-# RA2E1 (QFN32) MD pin (P201/MD) boot mode selection: the Quick Design
+# RA2E1 (QFN32) MD pin (P201) boot mode selection: the Quick Design
 # Guide's typical circuit, 10 kOhm pull-up to 3.3 V (single-chip mode,
 # MD = 1) and a jumper through 1.5 kOhm to ground (SCI boot mode,
 # MD = 0). The internal pull-up may replace the external one. AI
@@ -18,7 +18,7 @@ nets:
 roles:
   J_MD:
     requires: { category: connector, src: p9 "Figure 5" }
-    pins: { "1": MD_SEL, "2": host.P201/MD }
+    pins: { "1": MD_SEL, "2": host.P201 }
     level: example
     src: p9 "Figure 5"
   R_MD_PD:
@@ -28,5 +28,5 @@ roles:
     src: p9 "Figure 5"
   R_MD_PU:
     requires: { category: resistor, resistance: { typ: 10 kΩ }, src: p9 "Figure 5" }
-    pins:     { "1": VCC, "2": host.P201/MD }
+    pins:     { "1": VCC, "2": host.P201 }
     level:    { value: optional, word: may, src: p9 "3" }

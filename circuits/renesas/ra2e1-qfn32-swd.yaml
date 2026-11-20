@@ -16,9 +16,9 @@ nets:
   VCC:   { kind: power }
 
 connect:
-  P108/SWDIO: { net: SWDIO, level: example, src: p7 "Figure 1" }
-  P300/SWCLK: { net: SWCLK, level: example, src: p7 "Figure 1" }
-  RES:        { net: RES, level: example, src: p7 "Figure 1" }
+  P108: { net: SWDIO, level: example, src: p7 "Figure 1" }
+  P300: { net: SWCLK, level: example, src: p7 "Figure 1" }
+  RES:  { net: RES, level: example, src: p7 "Figure 1" }
 
 roles:
   R_RES:

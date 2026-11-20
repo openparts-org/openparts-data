@@ -32,7 +32,7 @@ parameters:
 pins:
   src:  p27 "the pin table (pages 27-30; Figure 4 Pin Out Diagram on page 31) Signal Descriptions; Pin Out Diagram figure"
   "1":  { name: AP_SDO / AP_AD0, type: io }
-  "2":  { name: RESV / AUX1_SDIO / AUX1_SDI / MAS_DA, type: io }
+  "2":  { name: RESV, type: io, alternate_functions: [AUX1_SDIO, AUX1_SDI, MAS_DA] }
   "3":  { name: RESV / AUX1_SCLK / MAS_CLK, type: io }
   "4":  { name: INT1 / INT, type: output }
   "5":  { name: VDDIO, type: power }

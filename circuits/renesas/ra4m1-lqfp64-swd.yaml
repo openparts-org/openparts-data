@@ -17,10 +17,10 @@ nets:
   VCC:   { kind: power }
 
 connect:
-  P108/TMS/SWDIO: { net: SWDIO, level: example, src: p8 "Figure 1" }
-  P109/TDO/SWO:   { net: SWO, level: example, src: p8 "Figure 1" }
-  P300/TCK/SWCLK: { net: SWCLK, level: example, src: p8 "Figure 1" }
-  RES:            { net: RES, level: example, src: p8 "Figure 1" }
+  P108: { net: SWDIO, level: example, src: p8 "Figure 1" }
+  P109: { net: SWO, level: example, src: p8 "Figure 1" }
+  P300: { net: SWCLK, level: example, src: p8 "Figure 1" }
+  RES:  { net: RES, level: example, src: p8 "Figure 1" }
 
 roles:
   R_RES:

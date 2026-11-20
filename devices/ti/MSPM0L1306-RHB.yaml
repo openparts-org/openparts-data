@@ -35,7 +35,7 @@ pins:
   "3":  { name: NRST, type: reset }
   "4":  { name: VDD, type: power }
   "5":  { name: VSS, type: ground }
-  "6":  { name: PA2/ROSC, type: io }
+  "6":  { name: PA2, type: io, alternate_functions: [ROSC] }
   "7":  { name: PA3, type: io }
   "8":  { name: PA4, type: io }
   "9":  { name: PA5, type: io }
@@ -48,19 +48,19 @@ pins:
   "16": { name: PA12, type: io }
   "17": { name: PA13, type: io }
   "18": { name: PA14, type: io }
-  "19": { name: PA15/A9, type: io }
-  "20": { name: PA16/A8, type: io }
+  "19": { name: PA15, type: io, alternate_functions: [A9] }
+  "20": { name: PA16, type: io, alternate_functions: [A8] }
   "21": { name: PA17, type: io }
-  "22": { name: PA18/A7, type: io }
-  "23": { name: PA19/SWDIO, type: io }
-  "24": { name: PA20/SWCLK/A6, type: io }
-  "25": { name: PA21/A5/VREF-, type: io }
-  "26": { name: PA22/A4, type: io }
-  "27": { name: PA23/VREF+, type: io }
-  "28": { name: PA24/A3, type: io }
-  "29": { name: PA25/A2, type: io }
-  "30": { name: PA26/A1, type: io }
-  "31": { name: PA27/A0, type: io }
+  "22": { name: PA18, type: io, alternate_functions: [A7] }
+  "23": { name: PA19, type: io, alternate_functions: [SWDIO] }
+  "24": { name: PA20, type: io, alternate_functions: [SWCLK, A6] }
+  "25": { name: PA21, type: io, alternate_functions: [A5, VREF-] }
+  "26": { name: PA22, type: io, alternate_functions: [A4] }
+  "27": { name: PA23, type: io, alternate_functions: [VREF+] }
+  "28": { name: PA24, type: io, alternate_functions: [A3] }
+  "29": { name: PA25, type: io, alternate_functions: [A2] }
+  "30": { name: PA26, type: io, alternate_functions: [A1] }
+  "31": { name: PA27, type: io, alternate_functions: [A0] }
   "32": { name: VCORE, type: power }
   EP:
     name: QFN Pad

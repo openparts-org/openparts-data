@@ -56,13 +56,13 @@ roles:
     level:    { value: required, word: must, src: 'p28 "Table 2.1, Caution"' }
   C_VREF:
     requires: { category: capacitor, capacitance: { typ: 100 nF }, src: 'p28 "Table 2.1, Caution"' }
-    pins: { "1": host.P012/VREFH, "2": host.P013/VREFL }
-    place: { near: host.P012/VREFH, src: 'p28 "Table 2.1, Caution"' }
+    pins: { "1": host.P012, "2": host.P013 }
+    place: { near: host.P012, src: 'p28 "Table 2.1, Caution"' }
     level: example
     src: p28 "Table 2.1, Caution"
   C_VREF0:
     requires: { category: capacitor, capacitance: { typ: 100 nF }, src: 'p28 "Table 2.1, Caution"' }
-    pins: { "1": host.P010/VREFH0, "2": host.P011/VREFL0 }
-    place: { near: host.P010/VREFH0, src: 'p28 "Table 2.1, Caution"' }
+    pins: { "1": host.P010, "2": host.P011 }
+    place: { near: host.P010, src: 'p28 "Table 2.1, Caution"' }
     level: example
     src: p28 "Table 2.1, Caution"

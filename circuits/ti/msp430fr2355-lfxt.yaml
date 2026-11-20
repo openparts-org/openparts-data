@@ -14,14 +14,14 @@ nets: { GND: { kind: ground } }
 roles:
   C_XIN:
     requires: { category: capacitor, src: 'p35 "Table 5-3, note 7"' }
-    pins:     { "1": host.P2.7/TB0CLK/XIN, "2": GND }
+    pins:     { "1": host.P2.7, "2": GND }
     level:    { value: required, word: required, src: p110 "7.1.2" }
   C_XOUT:
     requires: { category: capacitor, src: 'p35 "Table 5-3, note 7"' }
-    pins:     { "1": host.P2.6/MCLK/XOUT, "2": GND }
+    pins:     { "1": host.P2.6, "2": GND }
     level:    { value: required, word: required, src: p110 "7.1.2" }
   X1:
     requires: { category: crystal, frequency: { typ: 32.768 kHz }, src: 'p35 "Table 5-3, fXT1,LF"' }
-    pins: { "1": host.P2.7/TB0CLK/XIN, "2": host.P2.6/MCLK/XOUT }
+    pins: { "1": host.P2.7, "2": host.P2.6 }
     level: example
     src: p110 "7.1.2"

@@ -15,14 +15,14 @@ nets: { GND: { kind: ground } }
 roles:
   C_L1:
     requires: { category: capacitor, src: p23 "Figure 14" }
-    pins: { "1": host.P212/EXTAL, "2": GND }
-    place: { near: host.P212/EXTAL, src: p23 "5.8" }
+    pins: { "1": host.P212, "2": GND }
+    place: { near: host.P212, src: p23 "5.8" }
     level: example
     src: p23 "Figure 14"
   C_L2:
     requires: { category: capacitor, src: p23 "Figure 14" }
-    pins: { "1": host.P213/XTAL, "2": GND }
-    place: { near: host.P213/XTAL, src: p23 "5.8" }
+    pins: { "1": host.P213, "2": GND }
+    place: { near: host.P213, src: p23 "5.8" }
     level: example
     src: p23 "Figure 14"
   X1:
@@ -30,7 +30,7 @@ roles:
       category: crystal
       frequency: { min: 1 MHz, max: 20 MHz }
       src: p19 "Table 7, note 3"
-    pins: { "1": host.P212/EXTAL, "2": host.P213/XTAL }
-    place: { near: host.P212/EXTAL, src: p23 "5.8" }
+    pins: { "1": host.P212, "2": host.P213 }
+    place: { near: host.P212, src: p23 "5.8" }
     level: example
     src: p23 "Figure 14"

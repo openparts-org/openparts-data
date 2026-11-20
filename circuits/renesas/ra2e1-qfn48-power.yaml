@@ -45,7 +45,7 @@ roles:
     level:    { value: required, word: must, src: 'p25 "Table 2.1, Caution"' }
   C_VREF0:
     requires: { category: capacitor, capacitance: { typ: 100 nF }, src: 'p25 "Table 2.1, Caution"' }
-    pins: { "1": host.P010/VREFH0, "2": host.P011/VREFL0 }
-    place: { near: host.P010/VREFH0, src: 'p25 "Table 2.1, Caution"' }
+    pins: { "1": host.P010, "2": host.P011 }
+    place: { near: host.P010, src: 'p25 "Table 2.1, Caution"' }
     level: example
     src: p25 "Table 2.1, Caution"

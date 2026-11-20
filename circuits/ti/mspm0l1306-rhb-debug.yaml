@@ -13,6 +13,6 @@ nets:
   SWDIO: { kind: signal }
 
 connect:
-  NRST:          { net: NRST, level: example, src: p52 "Figure 9-1" }
-  PA19/SWDIO:    { net: SWDIO, level: example, src: p52 "Figure 9-1" }
-  PA20/SWCLK/A6: { net: SWCLK, level: example, src: p52 "Figure 9-1" }
+  NRST: { net: NRST, level: example, src: p52 "Figure 9-1" }
+  PA19: { net: SWDIO, level: example, src: p52 "Figure 9-1" }
+  PA20: { net: SWCLK, level: example, src: p52 "Figure 9-1" }

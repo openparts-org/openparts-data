@@ -34,18 +34,20 @@ pins:
   "4":  { name: VBATT, type: power }
   "5":  { name: VCL, type: power }
   "6":
-    name: P215/XCIN
+    name: P215
     type:
       value: input
       src: 'p35 "Table 2.9 "I/O VOH, VOL (3)" Note 1: "Except for ports P200, P214, P215, which are input ports""'
+    alternate_functions: [XCIN]
   "7":
-    name: P214/XCOUT
+    name: P214
     type:
       value: input
       src: 'p35 "Table 2.9 "I/O VOH, VOL (3)" Note 1: "Except for ports P200, P214, P215, which are input ports""'
+    alternate_functions: [XCOUT]
   "8":  { name: VSS, type: ground }
-  "9":  { name: P213/XTAL, type: io }
-  "10": { name: P212/EXTAL, type: io }
+  "9":  { name: P213, type: io, alternate_functions: [XTAL] }
+  "10": { name: P212, type: io, alternate_functions: [EXTAL] }
   "11": { name: VCC, type: power }
   "12": { name: P411, type: io }
   "13": { name: P410, type: io }
@@ -53,15 +55,15 @@ pins:
   "15": { name: P408, type: io }
   "16": { name: P407, type: io }
   "17": { name: VSS_USB, type: ground }
-  "18": { name: P915/USB_DM, type: io }
-  "19": { name: P914/USB_DP, type: io }
+  "18": { name: P915, type: io, alternate_functions: [USB_DM] }
+  "19": { name: P914, type: io, alternate_functions: [USB_DP] }
   "20": { name: VCC_USB, type: power }
   "21": { name: VCC_USB_LDO, type: power }
   "22": { name: P206, type: io }
   "23": { name: P205, type: io }
   "24": { name: P204, type: io }
   "25": { name: RES, type: reset }
-  "26": { name: P201/MD, type: io }
+  "26": { name: P201, type: io, alternate_functions: [MD] }
   "27":
     name: P200
     type:
@@ -71,10 +73,10 @@ pins:
   "29": { name: P303, type: io }
   "30": { name: P302, type: io }
   "31": { name: P301, type: io }
-  "32": { name: P300/TCK/SWCLK, type: io }
-  "33": { name: P108/TMS/SWDIO, type: io }
-  "34": { name: P109/TDO/SWO, type: io }
-  "35": { name: P110/TDI, type: io }
+  "32": { name: P300, type: io, alternate_functions: [TCK, SWCLK] }
+  "33": { name: P108, type: io, alternate_functions: [TMS, SWDIO] }
+  "34": { name: P109, type: io, alternate_functions: [TDO, SWO] }
+  "35": { name: P110, type: io, alternate_functions: [TDI] }
   "36": { name: P111, type: io }
   "37": { name: P112, type: io }
   "38": { name: P113, type: io }
@@ -93,12 +95,12 @@ pins:
   "51": { name: P502, type: io }
   "52": { name: P015, type: io }
   "53": { name: P014, type: io }
-  "54": { name: P013/VREFL, type: io }
-  "55": { name: P012/VREFH, type: io }
+  "54": { name: P013, type: io, alternate_functions: [VREFL] }
+  "55": { name: P012, type: io, alternate_functions: [VREFH] }
   "56": { name: AVCC0, type: power }
   "57": { name: AVSS0, type: ground }
-  "58": { name: P011/VREFL0, type: io }
-  "59": { name: P010/VREFH0, type: io }
+  "58": { name: P011, type: io, alternate_functions: [VREFL0] }
+  "59": { name: P010, type: io, alternate_functions: [VREFH0] }
   "60": { name: P004, type: io }
   "61": { name: P003, type: io }
   "62": { name: P002, type: io }

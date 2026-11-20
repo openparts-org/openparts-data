@@ -35,26 +35,26 @@ pins:
     - p8 "Figure 4-1 "24-Pin RGE Package (Top View)" (cross-check, all 24 pins matched)"
   "1":  { name: RST/NMI/SBWTDIO, type: reset }
   "2":  { name: TEST/SBWTCK, type: input }
-  "3":  { name: P1.4/UCA0TXD/UCA0SIMO/TA1.2/TCK/A4/VREF+, type: io }
-  "4":  { name: P1.5/UCA0RXD/UCA0SOMI/TA1.1/TMS/A5, type: io }
-  "5":  { name: P1.6/UCA0CLK/TA1CLK/TDI/TCLK/A6, type: io }
-  "6":  { name: P1.7/UCA0STE/SMCLK/TDO/A7, type: io }
-  "7":  { name: P1.0/UCB0STE/TA0CLK/A0/Veref+, type: io }
-  "8":  { name: P1.1/UCB0CLK/TA0.1/A1, type: io }
-  "9":  { name: P1.2/UCB0SIMO/UCB0SDA/TA0.2/A2/Veref-, type: io }
-  "10": { name: P1.3/UCB0SOMI/UCB0SCL/MCLK/A3, type: io }
-  "11": { name: P2.2/ACLK, type: io }
+  "3":  { name: P1.4, type: io, alternate_functions: [UCA0TXD, UCA0SIMO, TA1.2, TCK, A4, VREF+] }
+  "4":  { name: P1.5, type: io, alternate_functions: [UCA0RXD, UCA0SOMI, TA1.1, TMS, A5] }
+  "5":  { name: P1.6, type: io, alternate_functions: [UCA0CLK, TA1CLK, TDI, TCLK, A6] }
+  "6":  { name: P1.7, type: io, alternate_functions: [UCA0STE, SMCLK, TDO, A7] }
+  "7":  { name: P1.0, type: io, alternate_functions: [UCB0STE, TA0CLK, A0, Veref+] }
+  "8":  { name: P1.1, type: io, alternate_functions: [UCB0CLK, TA0.1, A1] }
+  "9":  { name: P1.2, type: io, alternate_functions: [UCB0SIMO, UCB0SDA, TA0.2, A2, Veref-] }
+  "10": { name: P1.3, type: io, alternate_functions: [UCB0SOMI, UCB0SCL, MCLK, A3] }
+  "11": { name: P2.2, type: io, alternate_functions: [ACLK] }
   "12": { name: P3.0, type: io }
   "13": { name: P2.3, type: io }
-  "14": { name: P3.1/UCA1STE, type: io }
-  "15": { name: P2.4/UCA1CLK, type: io }
-  "16": { name: P2.5/UCA1RXD/UCA1SOMI, type: io }
-  "17": { name: P2.6/UCA1TXD/UCA1SIMO, type: io }
+  "14": { name: P3.1, type: io, alternate_functions: [UCA1STE] }
+  "15": { name: P2.4, type: io, alternate_functions: [UCA1CLK] }
+  "16": { name: P2.5, type: io, alternate_functions: [UCA1RXD, UCA1SOMI] }
+  "17": { name: P2.6, type: io, alternate_functions: [UCA1TXD, UCA1SIMO] }
   "18": { name: DVSS, type: ground }
   "19": { name: P2.7, type: io }
   "20": { name: P3.2, type: io }
-  "21": { name: P2.0/XOUT, type: io }
-  "22": { name: P2.1/XIN, type: io }
+  "21": { name: P2.0, type: io, alternate_functions: [XOUT] }
+  "22": { name: P2.1, type: io, alternate_functions: [XIN] }
   "23": { name: DVSS, type: ground }
   "24": { name: DVCC, type: power }
   EP:

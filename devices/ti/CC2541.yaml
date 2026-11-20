@@ -66,10 +66,10 @@ pins:
   "29": { name: AVDD4, type: power }
   "30": { name: RBIAS, type: analog }
   "31": { name: AVDD6, type: power }
-  "32": { name: P2_4/OSC32K_Q1, type: io }
-  "33": { name: P2_3/OSC32K_Q2, type: io }
-  "34": { name: P2_2/DC, type: io }
-  "35": { name: P2_1/DD, type: io }
+  "32": { name: P2_4, type: io, alternate_functions: [OSC32K_Q1] }
+  "33": { name: P2_3, type: io, alternate_functions: [OSC32K_Q2] }
+  "34": { name: P2_2, type: io, alternate_functions: [DC] }
+  "35": { name: P2_1, type: io, alternate_functions: [DD] }
   "36": { name: P2_0, type: io }
   "37": { name: P1_7, type: io }
   "38": { name: P1_6, type: io }
